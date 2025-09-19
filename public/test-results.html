@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Results - ACT Prep</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #fafbfc;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .completion-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: white;
+            border-radius: 8px;
+            padding: 0.25rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-tab {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            background: transparent;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.2s ease;
+        }
+
+        .nav-tab.active {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .score-overview {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 2rem;
+            align-items: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .score-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: conic-gradient(#10b981 0deg, #10b981 var(--percentage), #f1f5f9 var(--percentage), #f1f5f9 360deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .score-circle::before {
+            content: '';
+            position: absolute;
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .score-text {
+            position: relative;
+            z-index: 1;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .score-details h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-breakdown {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .breakdown-item {
+            text-align: center;
+        }
+
+        .breakdown-value {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .breakdown-value.correct { color: #10b981; }
+        .breakdown-value.incorrect { color: #ef4444; }
+        .breakdown-value.time { color: #6366f1; }
+
+        .breakdown-label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .topic-analytics {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .topic-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .topic-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .topic-card:hover {
+            border-color: #d1d5db;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .topic-header {
+            padding: 1rem;
+            background: #f8fafc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .topic-name {
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        .topic-summary {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .topic-score {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .topic-score.high { color: #10b981; }
+        .topic-score.medium { color: #f59e0b; }
+        .topic-score.low { color: #ef4444; }
+
+        .expand-icon {
+            font-size: 0.8rem;
+            color: #666;
+            transition: transform 0.2s ease;
+        }
+
+        .topic-card.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .topic-details {
+            display: none;
+            padding: 1rem;
+            border-top: 1px solid #e5e7eb;
+            background: white;
+        }
+
+        .topic-card.expanded .topic-details {
+            display: block;
+        }
+
+        .question-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .question-bubble {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .question-bubble.correct {
+            background: #dcfce7;
+            color: #166534;
+            border: 2px solid #bbf7d0;
+        }
+
+        .question-bubble.incorrect {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 2px solid #fecaca;
+        }
+
+        .question-bubble:hover {
+            transform: scale(1.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .topic-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 6px;
+        }
+
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .question-detail-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .question-detail-modal.active {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            margin: 2rem auto;
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .answer-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .answer-box {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .correct-answer {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        .your-answer {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        .your-answer.correct {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        .time-spent {
+            background: #f0f9ff;
+            color: #0369a1;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .recommendations {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .recommendation-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .recommendation-item {
+            background: rgba(255,255,255,0.8);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #6366f1;
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: white;
+            color: #1a1a1a;
+            border: 1px solid #e5e7eb;
+        }
+
+        .btn-outline:hover {
+            background: #f9fafb;
+            border-color: #d1d5db;
+        }
+
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .loading-spinner {
+            width: 32px;
+            height: 32px;
+            border: 3px solid #f1f5f9;
+            border-top: 3px solid #1a1a1a;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .score-overview {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .score-breakdown {
+                justify-content: center;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .actions {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <h3>Analyzing Your Performance...</h3>
+        <p>Calculating detailed results</p>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Test Results Analysis</h1>
+            <div class="completion-badge" id="completionBadge">
+                Completed • --
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" data-tab="overview">Overview</button>
+            <button class="nav-tab" data-tab="topics">By Topic</button>
+            <button class="nav-tab" data-tab="questions">All Questions</button>
+        </div>
+
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content active">
+            <div class="score-overview">
+                <div class="score-circle" id="scoreCircle">
+                    <span class="score-text" id="scoreText">--</span>
+                </div>
+                
+                <div class="score-details">
+                    <h2 id="scoreTitle">Calculating...</h2>
+                    <p id="scoreSubtitle">Please wait</p>
+                </div>
+                
+                <div class="score-breakdown">
+                    <div class="breakdown-item">
+                        <div class="breakdown-value correct" id="correctCount">--</div>
+                        <div class="breakdown-label">Correct</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-value incorrect" id="incorrectCount">--</div>
+                        <div class="breakdown-label">Incorrect</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-value time" id="totalTime">--</div>
+                        <div class="breakdown-label">Total Time</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recommendations">
+                <h3>Personalized Recommendations</h3>
+                <div class="recommendation-grid" id="recommendationsList">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Topics Tab -->
+        <div id="topics" class="tab-content">
+            <div class="topic-analytics">
+                <h3 class="section-title">Performance by Topic</h3>
+                <div class="topic-grid" id="topicGrid">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- All Questions Tab -->
+        <div id="questions" class="tab-content">
+            <div class="topic-analytics">
+                <h3 class="section-title">All 50 Questions</h3>
+                <div class="question-grid" id="allQuestionsGrid">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <a href="index.html?tab=lessons" class="btn btn-primary">Start Studying</a>
+            <a href="test-review.html" class="btn btn-outline">Review Test</a>
+            <a href="diagnostic-test.html" class="btn btn-outline">Retake Test</a>
+            <a href="index.html" class="btn btn-outline">Home</a>
+        </div>
+    </div>
+
+    <!-- Question Detail Modal -->
+    <div class="question-detail-modal" id="questionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Question Details</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chapterNames = {
+            'sentence-structure': 'Sentence Structure',
+            'commas': 'Comma Usage',
+            'word-choice': 'Word Choice', 
+            'transitions': 'Transitions',
+            'pronouns': 'Pronouns',
+            'redundancy': 'Redundancy',
+            'modifiers': 'Modifiers',
+            'verbs': 'Verb Agreement',
+            'punctuation': 'Punctuation',
+            'which-choice': 'Which Choice Questions',
+            'adding-deleting': 'Adding/Deleting Info',
+            'logical-placement': 'Logical Placement',
+            'parallel-structure': 'Parallel Structure'
+        };
+
+        const correctAnswers = {
+            q1: 'C', q2: 'G', q3: 'A', q4: 'F', q5: 'A',
+            q6: 'F', q7: 'D', q8: 'J', q9: 'B', q10: 'G',
+            q11: 'B', q12: 'J', q13: 'C', q14: 'H', q15: 'D',
+            q16: 'J', q17: 'D', q18: 'H', q19: 'A', q20: 'J',
+            q21: 'D', q22: 'F', q23: 'C', q24: 'H', q25: 'D',
+            q26: 'G', q27: 'D', q28: 'F', q29: 'A', q30: 'G',
+            q31: 'C', q32: 'F', q33: 'A', q34: 'H', q35: 'A',
+            q36: 'G', q37: 'B', q38: 'G', q39: 'D', q40: 'J',
+            q41: 'A', q42: 'G', q43: 'D', q44: 'H', q45: 'D',
+            q46: 'F', q47: 'B', q48: 'F', q49: 'D', q50: 'H'
+        };
+
+        // Question to chapter mapping (from your diagnostic test)
+        const questionChapters = {
+            1: 'sentence-structure', 2: 'commas', 3: 'word-choice', 4: 'transitions', 5: 'pronouns',
+            6: 'word-choice', 7: 'redundancy', 8: 'modifiers', 9: 'verbs', 10: 'word-choice',
+            11: 'punctuation', 12: 'sentence-structure', 13: 'word-choice', 14: 'transitions', 15: 'which-choice',
+            16: 'commas', 17: 'redundancy', 18: 'adding-deleting', 19: 'redundancy', 20: 'transitions',
+            21: 'verbs', 22: 'pronouns', 23: 'transitions', 24: 'adding-deleting', 25: 'logical-placement',
+            26: 'adding-deleting', 27: 'word-choice', 28: 'word-choice', 29: 'pronouns', 30: 'transitions',
+            31: 'pronouns', 32: 'adding-deleting', 33: 'verbs', 34: 'word-choice', 35: 'logical-placement',
+            36: 'adding-deleting', 37: 'word-choice', 38: 'sentence-structure', 39: 'redundancy', 40: 'pronouns',
+            41: 'parallel-structure', 42: 'punctuation', 43: 'adding-deleting', 44: 'logical-placement', 45: 'which-choice',
+            46: 'punctuation', 47: 'pronouns', 48: 'word-choice', 49: 'transitions', 50: 'adding-deleting'
+        };
+
+        let testResults = {};
+        let questionResults = {};
+
+        function formatTime(ms) {
+            if (!ms || ms === 0) return '0s';
+            const totalSeconds = Math.floor(ms / 1000);
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+            
+            if (minutes > 0) {
+                return `${minutes}m ${seconds}s`;
+            }
+            return `${seconds}s`;
+        }
+
+        function getScoreLevel(percentage) {
+            return percentage >= 75 ? 'high' : percentage >= 50 ? 'medium' : 'low';
+        }
+
+        function calculateResults() {
+            const results = JSON.parse(localStorage.getItem('diagnosticTestResults'));
+            
+            if (!results) {
+                window.location.href = 'diagnostic-test.html';
+                return;
+            }
+
+            testResults = results;
+            const { answers, timeSpentPerQuestion } = results;
+            
+            let correctCount = 0;
+            const chapterStats = {};
+            questionResults = {};
+            
+            // Process each question
+            for (let i = 1; i <= 50; i++) {
+                const questionKey = `q${i}`;
+                const userAnswer = answers[questionKey];
+                const correctAnswer = correctAnswers[questionKey];
+                const timeKey = `q${i}`;
+                const timeSpent = timeSpentPerQuestion[timeKey] || 0;
+                const chapter = questionChapters[i];
+                const isCorrect = userAnswer?.answer === correctAnswer;
+                
+                if (isCorrect) correctCount++;
+                
+                // Store individual question result
+                questionResults[i] = {
+                    userAnswer: userAnswer?.answer || 'No Answer',
+                    correctAnswer: correctAnswer,
+                    isCorrect: isCorrect,
+                    timeSpent: timeSpent,
+                    chapter: chapter
+                };
+                
+                // Update chapter stats
+                if (!chapterStats[chapter]) {
+                    chapterStats[chapter] = {
+                        total: 0,
+                        correct: 0,
+                        totalTime: 0,
+                        questions: []
+                    };
+                }
+                
+                chapterStats[chapter].total++;
+                if (isCorrect) chapterStats[chapter].correct++;
+                chapterStats[chapter].totalTime += timeSpent;
+                chapterStats[chapter].questions.push(i);
+            }
+
+            // Calculate total time spent
+            const totalTimeSpent = Object.values(timeSpentPerQuestion).reduce((sum, time) => sum + time, 0);
+            const overallAccuracy = Math.round((correctCount / 50) * 100);
+
+            // Update overview
+            updateOverview(correctCount, overallAccuracy, totalTimeSpent);
+            
+            // Update topics
+            updateTopics(chapterStats);
+            
+            // Update all questions view
+            updateAllQuestions();
+            
+            // Generate recommendations
+            generateRecommendations(chapterStats, overallAccuracy, totalTimeSpent);
+        }
+
+        function updateOverview(correctCount, accuracy, totalTime) {
+            document.getElementById('scoreText').textContent = `${correctCount}/50`;
+            document.getElementById('scoreTitle').textContent = `${accuracy}% Accuracy`;
+            document.getElementById('scoreSubtitle').textContent = getPerformanceLevel(accuracy);
+            document.getElementById('correctCount').textContent = correctCount;
+            document.getElementById('incorrectCount').textContent = 50 - correctCount;
+            document.getElementById('totalTime').textContent = formatTime(totalTime);
+            document.getElementById('completionBadge').textContent = `Completed • ${formatTime(totalTime)}`;
+            
+            // Update score circle
+            const scoreCircle = document.getElementById('scoreCircle');
+            const percentage = (accuracy / 100) * 360;
+            scoreCircle.style.setProperty('--percentage', `${percentage}deg`);
+        }
+
+        function getPerformanceLevel(accuracy) {
+            if (accuracy >= 90) return 'Excellent Performance';
+            if (accuracy >= 75) return 'Good Performance';
+            if (accuracy >= 60) return 'Fair Performance';
+            return 'Needs Improvement';
+        }
+
+        function updateTopics(chapterStats) {
+            const topicGrid = document.getElementById('topicGrid');
+            const topics = Object.entries(chapterStats)
+                .map(([chapter, stats]) => ({
+                    chapter,
+                    name: chapterNames[chapter] || chapter,
+                    accuracy: Math.round((stats.correct / stats.total) * 100),
+                    correct: stats.correct,
+                    total: stats.total,
+                    avgTime: formatTime(stats.totalTime / stats.total),
+                    questions: stats.questions
+                }))
+                .sort((a, b) => b.accuracy - a.accuracy);
+
+            topicGrid.innerHTML = topics.map(topic => `
+                <div class="topic-card" data-chapter="${topic.chapter}">
+                    <div class="topic-header" onclick="toggleTopic('${topic.chapter}')">
+                        <div class="topic-name">${topic.name}</div>
+                        <div class="topic-summary">
+                            <span class="topic-score ${getScoreLevel(topic.accuracy)}">${topic.accuracy}% (${topic.correct}/${topic.total})</span>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                    </div>
+                    <div class="topic-details">
+                        <div class="question-grid">
+                            ${topic.questions.map(qNum => `
+                                <div class="question-bubble ${questionResults[qNum].isCorrect ? 'correct' : 'incorrect'}" 
+                                     onclick="showQuestionDetail(${qNum})">
+                                    ${qNum}
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="topic-stats">
+                            <div class="stat-item">
+                                <div class="stat-value">${topic.accuracy}%</div>
+                                <div class="stat-label">Accuracy</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">${topic.correct}/${topic.total}</div>
+                                <div class="stat-label">Correct</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">${topic.avgTime}</div>
+                                <div class="stat-label">Avg Time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateAllQuestions() {
+            const questionsGrid = document.getElementById('allQuestionsGrid');
+            questionsGrid.innerHTML = '';
+            
+            for (let i = 1; i <= 50; i++) {
+                const result = questionResults[i];
+                const bubble = document.createElement('div');
+                bubble.className = `question-bubble ${result.isCorrect ? 'correct' : 'incorrect'}`;
+                bubble.textContent = i;
+                bubble.onclick = () => showQuestionDetail(i);
+                questionsGrid.appendChild(bubble);
+            }
+        }
+
+        function generateRecommendations(chapterStats, accuracy, totalTime) {
+            const recommendations = [];
+            
+            // Find weakest topics
+            const weakTopics = Object.entries(chapterStats)
+                .filter(([chapter, stats]) => (stats.correct / stats.total) < 0.6)
+                .sort((a, b) => (a[1].correct / a[1].total) - (b[1].correct / b[1].total))
+                .slice(0, 3);
+
+            if (weakTopics.length > 0) {
+                recommendations.push(`Focus on ${chapterNames[weakTopics[0][0]]} - your weakest area at ${Math.round((weakTopics[0][1].correct / weakTopics[0][1].total) * 100)}%`);
+            }
+
+            // Time management
+            const avgTimePerQ = totalTime / 50;
+            if (avgTimePerQ > 45000) { // More than 45 seconds per question
+                recommendations.push('Practice timing - you averaged ' + formatTime(avgTimePerQ) + ' per question');
+            }
+
+            // Overall performance
+            if (accuracy < 60) {
+                recommendations.push('Review fundamental grammar concepts before moving to advanced topics');
+            } else if (accuracy >= 80) {
+                recommendations.push('Great job! Focus on consistency and speed to maximize your score');
+            }
+
+            document.getElementById('recommendationsList').innerHTML = 
+                recommendations.map(rec => `<div class="recommendation-item">${rec}</div>`).join('');
+        }
+
+        function toggleTopic(chapter) {
+            const card = document.querySelector(`[data-chapter="${chapter}"]`);
+            card.classList.toggle('expanded');
+        }
+
+        function showQuestionDetail(questionNum) {
+            const result = questionResults[questionNum];
+            const modal = document.getElementById('questionModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            
+            modalTitle.textContent = `Question ${questionNum}`;
+            
+            const isCorrect = result.isCorrect;
+            const statusClass = isCorrect ? 'correct' : 'incorrect';
+            const statusText = isCorrect ? 'Correct' : 'Incorrect';
+            
+            modalBody.innerHTML = `
+                <div style="text-align: center; margin-bottom: 1.5rem;">
+                    <div class="question-bubble ${statusClass}" style="display: inline-flex; width: 60px; height: 60px; font-size: 1.2rem;">
+                        ${questionNum}
+                    </div>
+                    <h4 style="margin-top: 0.5rem; color: ${isCorrect ? '#166534' : '#dc2626'};">${statusText}</h4>
+                </div>
+                
+                <div class="answer-comparison">
+                    <div class="correct-answer">
+                        <h5>Correct Answer</h5>
+                        <div style="font-size: 1.2rem; font-weight: 600; margin-top: 0.5rem;">${result.correctAnswer}</div>
+                    </div>
+                    <div class="your-answer ${isCorrect ? 'correct' : ''}">
+                        <h5>Your Answer</h5>
+                        <div style="font-size: 1.2rem; font-weight: 600; margin-top: 0.5rem;">${result.userAnswer}</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1rem;">
+                    <strong>Topic:</strong> ${chapterNames[result.chapter] || result.chapter}
+                </div>
+                
+                <div class="time-spent">
+                    Time spent: ${formatTime(result.timeSpent)}
+                </div>
+            `;
+            
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('questionModal').classList.remove('active');
+        }
+
+        // Tab functionality
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('questionModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Initialize results after loading
+        setTimeout(() => {
+            calculateResults();
+            document.getElementById('loading').style.display = 'none';
+        }, 1500);
+    </script>
+</body>
+</html>

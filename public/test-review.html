@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Review - ACT Prep</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #fafbfc;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: white;
+            border-bottom: 2px solid #e9ecef;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .progress-info {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .question-nav {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-btn {
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background: #333;
+        }
+
+        .nav-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .content {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 450px;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .passage-section {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 2rem;
+            height: fit-content;
+        }
+
+        .passage-selector {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .passage-btn {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            color: #666;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .passage-btn.active {
+            background: #1a1a1a;
+            color: white;
+            border-color: #1a1a1a;
+        }
+
+        .passage-content {
+            display: none;
+        }
+
+        .passage-content.active {
+            display: block;
+        }
+
+        .passage-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            text-align: center;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .passage-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .passage-text p {
+            margin-bottom: 1.2rem;
+        }
+
+        .underlined {
+            text-decoration: underline;
+            font-weight: 500;
+            color: #1a1a1a;
+            position: relative;
+            cursor: pointer;
+            padding: 0 2px;
+        }
+
+        .underlined::after {
+            content: attr(data-question);
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #1a1a1a;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .underlined.current {
+            background-color: #fff3cd;
+            border-radius: 3px;
+        }
+
+        .underlined.correct {
+            background-color: #d4edda;
+        }
+
+        .underlined.incorrect {
+            background-color: #f8d7da;
+        }
+
+        .questions-section {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+            max-height: calc(100vh - 140px);
+            overflow-y: auto;
+        }
+
+        .question-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+            background: #f8f9fa;
+        }
+
+        .question-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-status {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .status-correct {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-incorrect {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .topic-badge {
+            background: #e9ecef;
+            color: #495057;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .question-content {
+            padding: 1.5rem;
+        }
+
+        .question-text {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .answer-choices {
+            margin-bottom: 2rem;
+        }
+
+        .answer-choice {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            border: 2px solid #f0f0f0;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .answer-choice.correct-answer {
+            border-color: #28a745;
+            background: #d4edda;
+        }
+
+        .answer-choice.user-answer {
+            border-color: #007bff;
+            background: #cce5ff;
+        }
+
+        .answer-choice.user-answer.incorrect {
+            border-color: #dc3545;
+            background: #f8d7da;
+        }
+
+        .answer-choice:hover {
+            background: #f8f9fa;
+            border-color: #adb5bd;
+        }
+
+        .answer-choice.selected {
+            border-color: #007bff;
+            background: #e7f3ff;
+            box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+        }
+
+        .explanation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .analysis-toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+        }
+
+        .analysis-toggle-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .choice-explanation-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #dee2e6;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .choice-explanation-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #28a745, #20c997);
+        }
+
+        .choice-explanation-box.incorrect::before {
+            background: linear-gradient(90deg, #dc3545, #fd7e14);
+        }
+
+        .explanation-content {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .explanation-nav-hint {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #6c757d;
+            text-align: center;
+        }
+
+        .complete-analysis-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e9ecef;
+            background: linear-gradient(135deg, #fafbfc 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .close-btn {
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+            padding: 0.5rem;
+            margin: -0.5rem;
+            transition: color 0.2s ease;
+            border-radius: 6px;
+        }
+
+        .close-btn:hover {
+            color: #dc3545;
+            background: #f8f9fa;
+        }
+
+        .answer-letter {
+            font-weight: 600;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .answer-text {
+            flex: 1;
+            font-size: 0.9rem;
+        }
+
+        .answer-icon {
+            font-size: 1.2rem;
+            margin-left: auto;
+        }
+
+        .explanation-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .explanation-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .explanation-content {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .explanation-content h4 {
+            color: #1a1a1a;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .explanation-content p {
+            margin-bottom: 0.75rem;
+        }
+
+        .explanation-content ul, .explanation-content ol {
+            margin: 0.5rem 0 0.75rem 1.5rem;
+        }
+
+        .explanation-content li {
+            margin-bottom: 0.25rem;
+        }
+
+        .concept-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .navigation {
+            padding: 1.5rem 2rem;
+            background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #333;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .progress-bar {
+            width: 200px;
+            height: 6px;
+            background: #e9ecef;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #28a745;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        /* Question Navigator Popup */
+        .navigator-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            backdrop-filter: blur(4px);
+        }
+
+        .navigator-overlay.active {
+            display: block;
+        }
+
+        .question-navigator {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-height: 80vh;
+            max-width: 90vw;
+            overflow-y: auto;
+            animation: fadeInScale 0.3s ease-out;
+        }
+
+        .question-navigator.active {
+            display: block;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .navigator-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navigator-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .navigator-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 0.5rem;
+            padding: 1.5rem;
+        }
+
+        .nav-question {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-question:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .nav-question.current {
+            border-color: #1a1a1a;
+            box-shadow: 0 0 0 2px rgba(26,26,26,0.2);
+        }
+
+        .nav-question.correct {
+            background: #dcfce7;
+            color: #166534;
+            border-color: #bbf7d0;
+        }
+
+        .nav-question.incorrect {
+            background: #fef2f2;
+            color: #dc2626;
+            border-color: #fecaca;
+        }
+
+        @media (max-width: 1024px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .questions-section {
+                position: static;
+                max-height: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 1rem;
+            }
+            
+            .header {
+                padding: 1rem;
+            }
+            
+            .header-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .loading-spinner {
+            width: 32px;
+            height: 32px;
+            border: 3px solid #f1f5f9;
+            border-top: 3px solid #1a1a1a;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <h3>Loading Test Review...</h3>
+        <p>Preparing detailed explanations</p>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Test Review with Explanations</h1>
+            <div class="header-info">
+                <div class="progress-info">
+                    <span>Question <span id="currentQuestionNum">1</span> of 50</span>
+                    <span>Score: <span id="overallScore">--/50</span></span>
+                </div>
+                <div class="question-nav">
+                    <button class="nav-btn" onclick="previousQuestion()" id="prevBtn">← Previous</button>
+                    <button class="nav-btn" onclick="toggleQuestionNavigator()" id="jumpBtn">Question Navigator</button>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <button class="nav-btn" onclick="nextQuestion()" id="nextBtn">Next →</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Passage Section (same as diagnostic test) -->
+            <div class="passage-section">
+                <div class="passage-selector">
+                    <button class="passage-btn active" onclick="switchPassage(1)" data-passage="1">Passage I</button>
+                    <button class="passage-btn" onclick="switchPassage(2)" data-passage="2">Passage II</button>
+                    <button class="passage-btn" onclick="switchPassage(3)" data-passage="3">Passage III</button>
+                    <button class="passage-btn" onclick="switchPassage(4)" data-passage="4">Passage IV</button>
+                    <button class="passage-btn" onclick="switchPassage(5)" data-passage="5">Passage V</button>
+                    <button class="passage-btn" onclick="switchPassage(6)" data-passage="6">Passage VI</button>
+                </div>
+
+                <!-- Include all 6 passages from diagnostic test here -->
+                <div class="passage-content active" id="passage1">
+                    <div class="passage-title">PASSAGE I<br>Alex Atala and Brazilian Cuisine</div>
+                    <div class="passage-text">
+                        <p><span class="underlined" data-question="1">At first</span>, Brazilian chef Alex Atala opened his restaurant in São Paulo in 1999, people told him he'd never succeed. In a country where European cuisine was held in the highest regard, they said, no one would patronize a restaurant serving Brazilian food. Atala, whose restaurant has consistently ranked among the world's best, has long disproven the naysayers. Using traditional Brazilian <span class="underlined" data-question="2">ingredients, such as, manioc root and even ants—</span>in innovative ways, he has <span class="underlined" data-question="3">thrilled</span> diners from around the world.</p>
+
+                        <p><span class="underlined" data-question="4">Still, Atala felt he could do more for his country</span> and its cuisine. In 2012, he founded Instituto Atá to help promote lesser-known ingredients, particularly those of the Amazon basin, while working to protect Brazil's biodiversity. Hearts of palm, for example, were typically harvested from Brazil's wild juçara palms in an unsustainable way. Needing eight years to mature, the <span class="underlined" data-question="5">tree dies once its</span> large heart is removed. Atala began persuading producers to cultivate Amazonian pupunha palms, which grow clusters of stems, each with a small heart. Careful harvesting ensures that the tree will <span class="underlined" data-question="6">live to yield</span> more hearts, resulting in environmentally friendly production.</p>
+
+                        <p>Atala prioritizes his working relationships with Amazonian tribes. Utilizing their historical <span class="underlined" data-question="7">know-how they have</span>, he aims to bolster tribe members' livelihoods while exposing a wider audience to Brazilian ingredients. For instance, Baniwa women have farmed distinctly flavorful chili peppers for <span class="underlined" data-question="8">centuries that use</span> indigenous agricultural techniques, to create a seasoning called pimenta jiquitaia. Partnering with Instituto Atá <span class="underlined" data-question="9">have enabled</span> these women from a remote rain forest region to scale up production and market their product globally.</p>
+
+                        <p>Expanding awareness of the rich diversity of Brazil's native ingredients, Atala continues to lead in <span class="underlined" data-question="10">deciphering</span> the country's food culture. With his characteristic passion and intensity, the renowned chef seeks to inspire Brazilians to rediscover the connections between culture, nature, and food.</p>
+                    </div>
+                </div>
+
+                <!-- Add other passages here... -->
+                <div class="passage-content" id="passage2">
+                    <div class="passage-title">PASSAGE II<br>Rediscovering Hrosvitha</div>
+                    <div class="passage-text">
+                        <p>Hrosvitha, a <span class="underlined" data-question="11">medieval author and dramatist—is</span> one of the earliest known European women playwrights. Although little is known about her life, scholars agree Hrosvitha was born to a noble family around 935 CE. As a relation of Holy Roman Emperor Otto I, she most likely spent her early years as part of his court.</p>
+
+                        <p>Later, sometime before 959 CE, she entered the abbey at Gandersheim. <span class="underlined" data-question="12">It was an abbey as a significant center of learning.</span></p>
+
+                        <p>Hrosvitha entered Gandersheim as a canoness rather than a nun. Her title did not require a vow of poverty, but Hrosvitha did take the abbey's customary vow of chastity, which absolved her of an obligation to marry. This circumstance made it okay for her to keep her <span class="underlined" data-question="13">financial status without incurring responsibilities to</span> a husband and children. <span class="underlined" data-question="14">Nevertheless</span>, Hrosvitha had a greater level of independence—she could acquire property, receive guests, employ servants, and visit the royal court—than most women of her time.</p>
+
+                        <p>Hrosvitha produced at least nine known religious poems, two historical epics (about the court of Otto I and <span class="underlined" data-question="15">Gandersheim), and six comedy-dramas.</span> It is for these dramas that she is best known today.</p>
+                    </div>
+                </div>
+
+                <!-- Continue with other passages... -->
+            </div>
+
+            <!-- Question Review Section -->
+            <div class="questions-section">
+                <div class="question-header">
+                    <div class="question-title" id="questionTitle">Question 1</div>
+                    <div class="question-status">
+                        <a href="test-results.html" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">← Back to Results</a>
+                        <span class="status-badge" id="statusBadge">Loading...</span>
+                        <span class="topic-badge" id="topicBadge">Topic</span>
+                    </div>
+                </div>
+
+                <div class="question-content" id="questionContent">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Question Navigator Popup (like diagnostic test) -->
+        <div class="navigator-overlay" id="navigatorOverlay" onclick="toggleQuestionNavigator()"></div>
+        <div class="question-navigator" id="questionNavigator">
+            <div class="navigator-header">
+                <h3>Jump to Question</h3>
+                <button class="close-btn" onclick="toggleQuestionNavigator()">&times;</button>
+            </div>
+            <div class="navigator-grid" id="navigatorGrid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        let testResults = {};
+        let questionResults = {};
+        let totalQuestions = 50;
+
+        // Answer explanations for all 50 questions
+        const answerExplanations = {
+            1: {
+                correct: 'C',
+                explanation: {
+                    title: 'Sentence Structure - Introductory Elements',
+                    content: `<h4>Why C ("When") is correct:</h4>
+                    <p>The sentence needs a subordinating conjunction to properly connect the dependent clause with the independent clause. "When" creates a logical time relationship between Atala opening his restaurant and people telling him he'd never succeed.</p>
+
+                    <h4>Why the other choices are incorrect:</h4>
+                    <ul>
+                        <li><strong>A (NO CHANGE - "At first"):</strong> Creates an unclear relationship and awkward construction</li>
+                        <li><strong>B ("Years ago"):</strong> Too vague and doesn't establish the proper causal relationship</li>
+                        <li><strong>D (Delete):</strong> Would create a run-on sentence without proper connection</li>
+                    </ul>
+
+                    <div class="concept-box">
+                        <strong>Key Concept:</strong> When joining dependent and independent clauses, use appropriate subordinating conjunctions (when, while, because, although, etc.) to show the relationship between ideas.
+                    </div>`
+                },
+                choiceExplanations: {
+                    'A': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "At first" creates an unclear temporal relationship and results in awkward sentence construction. It doesn't properly connect the two clauses or establish when people told him he'd never succeed.`
+                    },
+                    'B': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Years ago" is too vague and doesn't establish the proper causal relationship between opening the restaurant and people's doubts. It also creates a confusing timeline.`
+                    },
+                    'C': {
+                        isCorrect: true,
+                        explanation: `<strong>Correct:</strong> "When" is the best subordinating conjunction here. It creates a clear temporal relationship showing that people's doubts occurred at the time Atala opened his restaurant. This creates proper sentence flow and logical connection.`
+                    },
+                    'D': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> Deleting the underlined portion would create a run-on sentence. The two independent clauses need proper connection, and removing the transitional element would make the sentence grammatically unacceptable.`
+                    }
+                }
+            },
+            2: {
+                correct: 'G',
+                explanation: {
+                    title: 'Punctuation - Dashes vs. Commas',
+                    content: `<h4>Why G ("ingredients—such as manioc root") is correct:</h4>
+                    <p>The phrase "such as manioc root and even ants" is a parenthetical example that should be set off with dashes for emphasis. The dash after "ingredients" should be matched with a dash after "ants" to properly enclose the parenthetical information.</p>
+
+                    <h4>Why the other choices are incorrect:</h4>
+                    <ul>
+                        <li><strong>F (NO CHANGE):</strong> Incorrectly uses commas around "such as," which creates confusion with the comma after "ingredients"</li>
+                        <li><strong>H:</strong> Places the dash in the wrong position, breaking up "such as" from its examples</li>
+                        <li><strong>J:</strong> Uses commas incorrectly, creating a confusing series of commas</li>
+                    </ul>
+
+                    <div class="concept-box">
+                        <strong>Key Concept:</strong> Use dashes to set off parenthetical information that you want to emphasize. Dashes are stronger than commas and add emphasis to the enclosed material. Always use dashes in pairs.
+                    </div>`
+                },
+                choiceExplanations: {
+                    'F': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> This creates confusing punctuation with commas around "such as" while also having a comma after "ingredients." This results in unclear sentence structure and poor readability.`
+                    },
+                    'G': {
+                        isCorrect: true,
+                        explanation: `<strong>Correct:</strong> Using a dash after "ingredients" sets up the parenthetical phrase properly. This should be paired with a dash after "ants" to create symmetrical punctuation that emphasizes the examples.`
+                    },
+                    'H': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> Placing the dash between "such as" and "manioc root" incorrectly separates the introductory phrase from its examples, making the sentence confusing.`
+                    },
+                    'J': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> This choice creates too many commas in succession, making the sentence difficult to read and understand. The punctuation doesn't properly set off the parenthetical information.`
+                    }
+                }
+            },
+            3: {
+                correct: 'A',
+                explanation: {
+                    title: 'Word Choice - Connotation',
+                    content: `<h4>Why A ("thrilled") is correct:</h4>
+                    <p>The question asks for a word that emphasizes the positive experience diners have had. "Thrilled" conveys excitement and strong positive emotion, which fits the context of diners from around the world having exceptional experiences at a world-renowned restaurant.</p>
+
+                    <h4>Why the other choices are incorrect:</h4>
+                    <ul>
+                        <li><strong>B ("mystified"):</strong> Suggests confusion rather than enjoyment; doesn't convey a positive dining experience</li>
+                        <li><strong>C ("shocked"):</strong> Can have negative connotations and doesn't necessarily indicate a positive experience</li>
+                        <li><strong>D ("startled"):</strong> Implies surprise but not necessarily positive surprise or enjoyment</li>
+                    </ul>
+
+                    <div class="concept-box">
+                        <strong>Key Concept:</strong> Pay attention to connotation (the emotional association of words) in addition to denotation (literal meaning). Choose words that match the intended tone and feeling of the passage.
+                    </div>`
+                },
+                choiceExplanations: {
+                    'A': {
+                        isCorrect: true,
+                        explanation: `<strong>Correct:</strong> "Thrilled" perfectly captures the positive, exciting experience diners have at Atala's restaurant. It conveys strong positive emotion and enthusiasm, which matches the context of a world-renowned restaurant serving innovative cuisine.`
+                    },
+                    'B': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Mystified" suggests confusion or bewilderment. While diners might be surprised by innovative techniques, this word doesn't emphasize the positive experience the question asks for.`
+                    },
+                    'C': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Shocked" can have negative connotations and suggests an unpleasant surprise. This doesn't emphasize the positive dining experience that the context requires.`
+                    },
+                    'D': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Startled" implies being suddenly surprised or alarmed. While it suggests surprise, it doesn't necessarily convey the positive enjoyment that the question seeks to emphasize.`
+                    }
+                }
+            },
+            4: {
+                correct: 'F',
+                explanation: {
+                    title: 'Transitions - Paragraph Flow',
+                    content: `<h4>Why F (NO CHANGE - "Still, Atala felt he could do more for his country") is correct:</h4>
+                    <p>This sentence provides the best transition from the previous paragraph about Atala's restaurant success to this paragraph about his broader environmental and cultural work. "Still" indicates that despite his success, he wanted to do more, creating a logical flow.</p>
+
+                    <h4>Why the other choices are incorrect:</h4>
+                    <ul>
+                        <li><strong>G:</strong> "Atala is known for sometimes incorporating fragrances" doesn't connect to the previous paragraph or introduce the new topic effectively</li>
+                        <li><strong>H:</strong> Information about his European training doesn't transition well to his work with Brazilian ingredients</li>
+                        <li><strong>J:</strong> While his affection for his homeland is relevant, this choice doesn't specifically introduce his environmental work</li>
+                    </ul>
+
+                    <div class="concept-box">
+                        <strong>Key Concept:</strong> Good transitions connect the previous paragraph's main idea to the current paragraph's focus, showing the relationship between ideas and maintaining logical flow.
+                    </div>`
+                },
+                choiceExplanations: {
+                    'F': {
+                        isCorrect: true,
+                        explanation: `<strong>Correct:</strong> "Still" creates a perfect transition showing that despite his restaurant success, Atala wanted to do more. This connects the previous paragraph about his achievements to this paragraph about his broader environmental and cultural work.`
+                    },
+                    'G': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> This sentence about incorporating fragrances doesn't connect to the previous paragraph about restaurant success or introduce the environmental work discussed in this paragraph.`
+                    },
+                    'H': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> Information about European training doesn't provide a logical transition from restaurant success to environmental work with Brazilian ingredients. It's off-topic for this paragraph.`
+                    },
+                    'J': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> While mentioning affection for his homeland is relevant, this choice doesn't specifically introduce or transition to his environmental conservation work discussed in this paragraph.`
+                    }
+                }
+            },
+            5: {
+                correct: 'A',
+                explanation: {
+                    title: 'Pronoun Agreement',
+                    content: `<h4>Why A (NO CHANGE - "tree dies once its") is correct:</h4>
+                    <p>"Tree" is singular, so it requires the singular possessive pronoun "its" to refer to the tree's heart. The sentence structure is also grammatically correct.</p>
+
+                    <h4>Why the other choices are incorrect:</h4>
+                    <ul>
+                        <li><strong>B ("tree dies once their"):</strong> "Their" is plural and doesn't agree with the singular "tree"</li>
+                        <li><strong>C ("trees die once its"):</strong> "Trees" is plural but "its" is singular, creating disagreement</li>
+                        <li><strong>D ("tree dies once it's"):</strong> "It's" is a contraction meaning "it is," which doesn't make sense in this context ("once it is large heart is removed")</li>
+                    </ul>
+
+                    <div class="concept-box">
+                        <strong>Key Concept:</strong> Pronouns must agree in number with their antecedents. Use "its" (possessive) not "it's" (contraction for "it is"). Remember: if you can substitute "it is," use "it's"; otherwise use "its."
+                    </div>`
+                },
+                choiceExplanations: {
+                    'A': {
+                        isCorrect: true,
+                        explanation: `<strong>Correct:</strong> "Tree" is singular, so "its" (singular possessive pronoun) correctly refers to the tree's heart. The sentence maintains proper subject-verb and pronoun agreement.`
+                    },
+                    'B': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Their" is a plural possessive pronoun, but "tree" is singular. Pronouns must agree in number with their antecedents.`
+                    },
+                    'C': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> This creates disagreement - "trees" is plural but "its" is singular. Either use "trees die once their" or "tree dies once its."`
+                    },
+                    'D': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "It's" is a contraction for "it is." This would read "once it is large heart is removed," which is grammatically incorrect and nonsensical.`
+                    }
+                }
+            },
+            6: {
+                correct: 'F',
+                explanation: {
+                    title: 'Word Choice - Tone and Style',
+                    content: `<h4>Why F (NO CHANGE - "live to yield") is correct:</h4>
+                    <p>"Live to yield" maintains the formal, informative tone of the passage while clearly expressing that the trees will survive to produce more hearts. This choice fits the academic/journalistic style of the essay.</p>
+
+                    <h4>Why the other choices are incorrect:</h4>
+                    <ul>
+                        <li><strong>G ("pull through and spawn"):</strong> Too informal and casual for the essay's tone; "spawn" is not typically used for plant reproduction</li>
+                        <li><strong>H ("continue to churn out"):</strong> "Churn out" is too informal and has mechanical connotations that don't fit the natural/biological context</li>
+                        <li><strong>J ("keep doling out"):</strong> Very informal and colloquial; doesn't match the serious tone of environmental conservation</li>
+                    </ul>
+
+                    <div class="concept-box">
+                        <strong>Key Concept:</strong> Maintain consistent tone throughout an essay. Match word choices to the formality level and style of the passage. Avoid slang or overly casual expressions in academic writing.
+                    </div>`
+                },
+                choiceExplanations: {
+                    'F': {
+                        isCorrect: true,
+                        explanation: `<strong>Correct:</strong> "Live to yield" maintains the formal, academic tone of the essay while clearly expressing that trees will survive to produce more hearts. This fits the environmental conservation context perfectly.`
+                    },
+                    'G': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Pull through and spawn" is too informal and casual. "Spawn" is typically used for fish or insects, not plant reproduction. This doesn't match the essay's serious tone.`
+                    },
+                    'H': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Churn out" is informal and has mechanical/industrial connotations that don't fit the natural, biological context of tree growth and environmental conservation.`
+                    },
+                    'J': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Keep doling out" is very informal and colloquial. This casual language doesn't match the serious, academic tone discussing environmental conservation and sustainable farming.`
+                    }
+                }
+            },
+            7: {
+                correct: 'D',
+                explanation: {
+                    title: 'Redundancy - Eliminating Wordiness',
+                    content: `<h4>Why D ("knowledge of local plants,") is correct:</h4>
+                    <p>This choice is the most concise and clear. It eliminates redundancy while maintaining all the necessary meaning. "Knowledge of local plants" is direct and specific.</p>
+
+                    <h4>Why the other choices are incorrect:</h4>
+                    <ul>
+                        <li><strong>A (NO CHANGE):</strong> "Know-how they have" is redundant and awkward; "know-how" already implies possession</li>
+                        <li><strong>B:</strong> "Knowledge that tribe members know" is redundant; saying both "knowledge" and "know" is unnecessary</li>
+                        <li><strong>C:</strong> "Knowledge of local plants in the area" is redundant; "local" and "in the area" mean the same thing</li>
+                    </ul>
+
+                    <div class="concept-box">
+                        <strong>Key Concept:</strong> Avoid redundancy by eliminating words or phrases that repeat the same meaning. Choose the most concise option that maintains clarity and meaning.
+                    </div>`
+                },
+                choiceExplanations: {
+                    'A': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Know-how they have" is redundant and awkward. "Know-how" already implies possession, so adding "they have" is unnecessary and creates wordy, unclear writing.`
+                    },
+                    'B': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Knowledge that tribe members know" is redundant because "knowledge" and "know" express the same concept. This creates unnecessary wordiness.`
+                    },
+                    'C': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Knowledge of local plants in the area" is redundant because "local" and "in the area" mean essentially the same thing. This creates unnecessary repetition.`
+                    },
+                    'D': {
+                        isCorrect: true,
+                        explanation: `<strong>Correct:</strong> "Knowledge of local plants" is concise and clear, eliminating all redundancy while maintaining the complete meaning. This is the most effective and efficient choice.`
+                    }
+                }
+            },
+            8: {
+                correct: 'J',
+                explanation: {
+                    title: 'Modifiers - Participial Phrases',
+                    content: `<h4>Why J ("centuries, using") is correct:</h4>
+                    <p>"Using indigenous agricultural techniques" is a participial phrase that correctly modifies "Baniwa women." The comma before "using" properly separates this modifying phrase from the main clause.</p>
+
+                    <h4>Why the other choices are incorrect:</h4>
+                    <ul>
+                        <li><strong>F (NO CHANGE):</strong> "centuries that use" incorrectly makes "centuries" the subject doing the using, when it should be the women</li>
+                        <li><strong>G ("centuries, which use"):</strong> "Which" refers to "centuries," but centuries don't use techniques—people do</li>
+                        <li><strong>H ("centuries who use"):</strong> "Who" should refer to people, but it's positioned to refer to "centuries"</li>
+                    </ul>
+
+                    <div class="concept-box">
+                        <strong>Key Concept:</strong> Modifying phrases should clearly refer to the correct noun. Participial phrases (starting with -ing verbs) should modify the nearest logical noun, and relative pronouns (who, which, that) should clearly refer to appropriate antecedents.
+                    </div>`
+                },
+                choiceExplanations: {
+                    'F': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Centuries that use" incorrectly makes centuries the subject doing the using. Centuries (time periods) cannot use techniques—only people can use techniques.`
+                    },
+                    'G': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Which" refers back to "centuries," suggesting that centuries use the techniques. This is illogical because time periods cannot use farming techniques.`
+                    },
+                    'H': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Who" should refer to people, but it's positioned to modify "centuries." Time periods cannot be referred to with "who." This creates a misplaced modifier.`
+                    },
+                    'J': {
+                        isCorrect: true,
+                        explanation: `<strong>Correct:</strong> "Using indigenous agricultural techniques" is a participial phrase that correctly modifies "Baniwa women." This makes it clear that the women are the ones using the techniques, which is logical and grammatically correct.`
+                    }
+                }
+            },
+            9: {
+                correct: 'B',
+                explanation: {
+                    title: 'Subject-Verb Agreement',
+                    content: `<h4>Why B ("has enabled") is correct:</h4>
+                    <p>The subject of this sentence is "Partnering with Instituto Atá," which is a gerund phrase acting as a singular noun. Singular subjects require singular verbs, so "has enabled" is correct.</p>
+
+                    <h4>Why the other choices are incorrect:</h4>
+                    <ul>
+                        <li><strong>A (NO CHANGE - "have enabled"):</strong> "Have" is plural, but the subject "Partnering" is singular</li>
+                        <li><strong>C ("are enabling"):</strong> "Are" is plural and doesn't agree with the singular gerund subject</li>
+                        <li><strong>D ("enable"):</strong> This is the base form without a helping verb, which doesn't work grammatically in this context</li>
+                    </ul>
+
+                    <div class="concept-box">
+                        <strong>Key Concept:</strong> Gerund phrases (verb + -ing acting as nouns) are singular and take singular verbs. Don't be confused by other nouns in the sentence; identify the true subject of the verb.
+                    </div>`
+                },
+                choiceExplanations: {
+                    'A': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Have" is a plural verb, but the subject "Partnering with Instituto Atá" is a gerund phrase that acts as a singular noun and requires a singular verb.`
+                    },
+                    'B': {
+                        isCorrect: true,
+                        explanation: `<strong>Correct:</strong> "Has" is a singular verb that correctly agrees with the singular gerund phrase subject "Partnering with Instituto Atá." Gerund phrases always take singular verbs.`
+                    },
+                    'C': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Are" is plural and doesn't agree with the singular gerund subject. Don't be confused by "these women" later in the sentence—the verb must agree with "Partnering."'`
+                    },
+                    'D': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Enable" is the base form without a helping verb. This doesn't work grammatically in this context and doesn't show proper tense or agreement.`
+                    }
+                }
+            },
+            10: {
+                correct: 'G',
+                explanation: {
+                    title: 'Word Choice - Precision and Clarity',
+                    content: `<h4>Why G ("transforming") is correct:</h4>
+                    <p>"Transforming" means changing or revolutionizing, which fits the context of Atala changing how people understand Brazil's food culture. It suggests positive, meaningful change rather than just figuring something out.</p>
+
+                    <h4>Why the other choices are incorrect:</h4>
+                    <ul>
+                        <li><strong>F (NO CHANGE - "deciphering"):</strong> Means decoding or interpreting something mysterious, but Brazilian food culture isn't encoded or mysterious—it needs to be changed and elevated</li>
+                        <li><strong>H ("dislocating"):</strong> Means displacing or moving out of place, which has negative connotations and doesn't fit the positive context</li>
+                        <li><strong>J ("contorting"):</strong> Means twisting or distorting, which implies making something unnatural or wrong</li>
+                    </ul>
+
+                    <div class="concept-box">
+                        <strong>Key Concept:</strong> Choose words that precisely convey the intended meaning and tone. Consider both denotation (literal meaning) and connotation (emotional associations) when selecting the best word.
+                    </div>`
+                },
+                choiceExplanations: {
+                    'F': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Deciphering" suggests interpreting something mysterious or encoded. Brazilian food culture isn't a mystery to decode—it needs to be changed and elevated, not decoded.`
+                    },
+                    'G': {
+                        isCorrect: true,
+                        explanation: `<strong>Correct:</strong> "Transforming" perfectly captures Atala's role in changing and revolutionizing how people understand Brazilian food culture. It suggests positive, meaningful change and innovation.`
+                    },
+                    'H': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Dislocating" means displacing or moving something out of its proper place. This has negative connotations and doesn't fit the positive context of Atala's cultural work.`
+                    },
+                    'J': {
+                        isCorrect: false,
+                        explanation: `<strong>Incorrect:</strong> "Contorting" means twisting or distorting into an unnatural shape. This implies making something wrong or unnatural, which contradicts Atala's positive cultural impact.`
+                    }
+                }
+            }
+        };
+
+        // Question data structure
+        const questionsData = {
+            1: {
+                text: "Which choice makes the sentence most grammatically acceptable?",
+                choices: [
+                    { letter: 'A', text: 'NO CHANGE' },
+                    { letter: 'B', text: 'Years ago,' },
+                    { letter: 'C', text: 'When' },
+                    { letter: 'D', text: 'Delete the underlined portion.' }
+                ]
+            },
+            2: {
+                text: "Which choice makes the sentence most grammatically acceptable?",
+                choices: [
+                    { letter: 'F', text: 'NO CHANGE' },
+                    { letter: 'G', text: 'ingredients—such as manioc root' },
+                    { letter: 'H', text: 'ingredients such as—manioc root' },
+                    { letter: 'J', text: 'ingredients such as, manioc root,' }
+                ]
+            },
+            3: {
+                text: "The writer wants to emphasize the positive experience diners have had at Atala's restaurant. Which choice best accomplishes that goal?",
+                choices: [
+                    { letter: 'A', text: 'NO CHANGE' },
+                    { letter: 'B', text: 'mystified' },
+                    { letter: 'C', text: 'shocked' },
+                    { letter: 'D', text: 'startled' }
+                ]
+            },
+            4: {
+                text: "Given that all the choices are accurate, which one provides the best transition from the preceding paragraph to this paragraph?",
+                choices: [
+                    { letter: 'F', text: 'NO CHANGE' },
+                    { letter: 'G', text: 'Atala is known for sometimes incorporating fragrances into his dishes as well.' },
+                    { letter: 'H', text: 'In fact, Atala\'s culinary training took place in classic European restaurants.' },
+                    { letter: 'J', text: 'Atala\'s obvious affection for his homeland is said to be infectious.' }
+                ]
+            },
+            5: {
+                text: "Which choice makes the sentence most grammatically acceptable?",
+                choices: [
+                    { letter: 'A', text: 'NO CHANGE' },
+                    { letter: 'B', text: 'tree dies once their' },
+                    { letter: 'C', text: 'trees die once its' },
+                    { letter: 'D', text: 'tree dies once it\'s' }
+                ]
+            },
+            6: {
+                text: "Which choice most effectively maintains the essay's tone?",
+                choices: [
+                    { letter: 'F', text: 'NO CHANGE' },
+                    { letter: 'G', text: 'pull through and spawn' },
+                    { letter: 'H', text: 'continue to churn out' },
+                    { letter: 'J', text: 'keep doling out' }
+                ]
+            },
+            7: {
+                text: "Which choice is least redundant in context?",
+                choices: [
+                    { letter: 'A', text: 'NO CHANGE' },
+                    { letter: 'B', text: 'knowledge that tribe members know about local plants,' },
+                    { letter: 'C', text: 'knowledge of local plants in the area,' },
+                    { letter: 'D', text: 'knowledge of local plants,' }
+                ]
+            },
+            8: {
+                text: "Which choice makes the sentence most grammatically acceptable?",
+                choices: [
+                    { letter: 'F', text: 'NO CHANGE' },
+                    { letter: 'G', text: 'centuries, which use' },
+                    { letter: 'H', text: 'centuries who use' },
+                    { letter: 'J', text: 'centuries, using' }
+                ]
+            },
+            9: {
+                text: "Which choice makes the sentence most grammatically acceptable?",
+                choices: [
+                    { letter: 'A', text: 'NO CHANGE' },
+                    { letter: 'B', text: 'has enabled' },
+                    { letter: 'C', text: 'are enabling' },
+                    { letter: 'D', text: 'enable' }
+                ]
+            },
+            10: {
+                text: "Which choice is clearest and most precise in context?",
+                choices: [
+                    { letter: 'F', text: 'NO CHANGE' },
+                    { letter: 'G', text: 'transforming' },
+                    { letter: 'H', text: 'dislocating' },
+                    { letter: 'J', text: 'contorting' }
+                ]
+            },
+            11: {
+                text: "Which choice makes the sentence most grammatically acceptable?",
+                choices: [
+                    { letter: 'A', text: 'NO CHANGE' },
+                    { letter: 'B', text: 'author and dramatist,' },
+                    { letter: 'C', text: 'author, and dramatist' },
+                    { letter: 'D', text: 'author and dramatist' }
+                ]
+            },
+            12: {
+                text: "Which choice makes the sentence most grammatically acceptable?",
+                choices: [
+                    { letter: 'F', text: 'NO CHANGE' },
+                    { letter: 'G', text: 'Gandersheim and, historically, this abbey was' },
+                    { letter: 'H', text: 'Gandersheim, it was an abbey' },
+                    { letter: 'J', text: 'Gandersheim, an abbey' }
+                ]
+            },
+            13: {
+                text: "Which choice most effectively maintains the essay's tone?",
+                choices: [
+                    { letter: 'A', text: 'NO CHANGE' },
+                    { letter: 'B', text: 'permitted her to hang on to' },
+                    { letter: 'C', text: 'allowed her to retain' },
+                    { letter: 'D', text: 'let her keep up' }
+                ]
+            },
+            14: {
+                text: "Which transition word or phrase is most logical in context?",
+                choices: [
+                    { letter: 'F', text: 'NO CHANGE' },
+                    { letter: 'G', text: 'On the other hand,' },
+                    { letter: 'H', text: 'As a result,' },
+                    { letter: 'J', text: 'In contrast,' }
+                ]
+            },
+            15: {
+                text: "Which choice best helps indicate that each historical epic covered different subject matter?",
+                choices: [
+                    { letter: 'A', text: 'NO CHANGE' },
+                    { letter: 'B', text: '(each focused on the court of Otto I and' },
+                    { letter: 'C', text: '(focusing on the court of Otto I as well as' },
+                    { letter: 'D', text: '(one about the court of Otto I, the other about' }
+                ]
+            }
+            // Add remaining 35 questions...
+        };
+
+        const correctAnswers = {
+            q1: 'C', q2: 'G', q3: 'A', q4: 'F', q5: 'A',
+            q6: 'F', q7: 'D', q8: 'J', q9: 'B', q10: 'G'
+            // Include all 50 correct answers...
+        };
+
+        const questionChapters = {
+            1: 'sentence-structure', 2: 'commas', 3: 'word-choice', 4: 'transitions', 5: 'pronouns',
+            6: 'word-choice', 7: 'redundancy', 8: 'modifiers', 9: 'verbs', 10: 'word-choice'
+            // Include all 50 mappings...
+        };
+
+        const chapterNames = {
+            'sentence-structure': 'Sentence Structure',
+            'commas': 'Comma Usage',
+            'word-choice': 'Word Choice',
+            'transitions': 'Transitions',
+            'pronouns': 'Pronouns',
+            'redundancy': 'Redundancy',
+            'modifiers': 'Modifiers',
+            'verbs': 'Verb Agreement',
+            'punctuation': 'Punctuation',
+            'which-choice': 'Which Choice Questions',
+            'adding-deleting': 'Adding/Deleting Info',
+            'logical-placement': 'Logical Placement',
+            'parallel-structure': 'Parallel Structure'
+        };
+
+        const questionPassages = {
+            1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1,
+            11: 2, 12: 2, 13: 2, 14: 2, 15: 2
+            // Include all mappings...
+        };
+
+        function loadTestResults() {
+            const results = JSON.parse(localStorage.getItem('diagnosticTestResults'));
+
+            if (!results) {
+                window.location.href = 'diagnostic-test.html';
+                return;
+            }
+
+            testResults = results;
+            const { answers } = results;
+
+            let correctCount = 0;
+
+            // Process each question
+            for (let i = 1; i <= 50; i++) {
+                const questionKey = `q${i}`;
+                const userAnswer = answers[questionKey];
+                const correctAnswer = correctAnswers[questionKey];
+                const isCorrect = userAnswer?.answer === correctAnswer;
+
+                if (isCorrect) correctCount++;
+
+                questionResults[i] = {
+                    userAnswer: userAnswer?.answer || 'No Answer',
+                    correctAnswer: correctAnswer,
+                    isCorrect: isCorrect,
+                    chapter: questionChapters[i]
+                };
+            }
+
+            document.getElementById('overallScore').textContent = `${correctCount}/50`;
+            setupQuestionNavigator();
+            updateQuestion();
+        }
+
+        function setupQuestionNavigator() {
+            const navigatorGrid = document.getElementById('navigatorGrid');
+            let gridHTML = '';
+
+            for (let i = 1; i <= 50; i++) {
+                const result = questionResults[i];
+                let statusClass = '';
+
+                if (result.isCorrect) {
+                    statusClass = 'correct';
+                } else {
+                    statusClass = 'incorrect';
+                }
+
+                gridHTML += `
+                    <div class="nav-question ${statusClass}" onclick="goToQuestionFromNavigator(${i})">
+                        ${i}
+                    </div>
+                `;
+            }
+
+            navigatorGrid.innerHTML = gridHTML;
+        }
+
+        function toggleQuestionNavigator() {
+            const overlay = document.getElementById('navigatorOverlay');
+            const navigator = document.getElementById('questionNavigator');
+
+            overlay.classList.toggle('active');
+            navigator.classList.toggle('active');
+
+            // Update current question highlight
+            document.querySelectorAll('.nav-question').forEach(q => q.classList.remove('current'));
+            const currentNavQuestion = document.querySelector(`.nav-question:nth-child(${currentQuestion})`);
+            if (currentNavQuestion) {
+                currentNavQuestion.classList.add('current');
+            }
+        }
+
+        function goToQuestionFromNavigator(questionNum) {
+            currentQuestion = questionNum;
+            updateQuestion();
+            toggleQuestionNavigator();
+        }
+
+        function updateQuestion() {
+            const questionData = questionsData[currentQuestion];
+            const result = questionResults[currentQuestion];
+            
+            if (!questionData || !result) return;
+            
+            // Update header
+            document.getElementById('currentQuestionNum').textContent = currentQuestion;
+            document.getElementById('questionTitle').textContent = `Question ${currentQuestion}`;
+            
+            // Update status badge
+            const statusBadge = document.getElementById('statusBadge');
+            const topicBadge = document.getElementById('topicBadge');
+            
+            statusBadge.textContent = result.isCorrect ? 'Correct' : 'Incorrect';
+            statusBadge.className = `status-badge ${result.isCorrect ? 'status-correct' : 'status-incorrect'}`;
+            topicBadge.textContent = chapterNames[result.chapter] || result.chapter;
+            
+            // Update progress bar
+            const progressFill = document.getElementById('progressFill');
+            progressFill.style.width = `${(currentQuestion / 50) * 100}%`;
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentQuestion === 1;
+            document.getElementById('nextBtn').disabled = currentQuestion === 50;
+            
+            // Update passage highlighting
+            updatePassageHighlighting();
+            
+            // Update question content
+            updateQuestionContent(questionData, result);
+            
+            // Switch to appropriate passage
+            const passageNum = questionPassages[currentQuestion];
+            if (passageNum) {
+                switchPassage(passageNum);
+            }
+        }
+
+        function updateQuestionContent(questionData, result) {
+            const questionContent = document.getElementById('questionContent');
+            const explanation = answerExplanations[currentQuestion];
+
+            let choicesHTML = questionData.choices.map(choice => {
+                let choiceClass = 'answer-choice';
+                let icon = '';
+
+                // Mark correct answer
+                if (choice.letter === result.correctAnswer) {
+                    choiceClass += ' correct-answer';
+                    icon = '✓';
+                }
+
+                // Mark user's answer
+                if (choice.letter === result.userAnswer) {
+                    choiceClass += ' user-answer';
+                    if (!result.isCorrect) {
+                        choiceClass += ' incorrect';
+                        icon = icon || '✗';
+                    } else {
+                        icon = '✓';
+                    }
+                }
+
+                return `
+                    <div class="${choiceClass}" onclick="showChoiceExplanation('${choice.letter}', this)" style="cursor: pointer;">
+                        <span class="answer-letter">${choice.letter}.</span>
+                        <span class="answer-text">${choice.text}</span>
+                        ${icon ? `<span class="answer-icon">${icon}</span>` : ''}
+                    </div>
+                `;
+            }).join('');
+
+            questionContent.innerHTML = `
+                <div class="question-text">${questionData.text}</div>
+                <div class="answer-choices">
+                    ${choicesHTML}
+                </div>
+                <div class="explanation-section">
+                    <div class="explanation-header">
+                        <div class="explanation-title" id="explanationTitle">${explanation ? explanation.title : 'Explanation'}</div>
+                        <button class="analysis-toggle-btn" onclick="showCompleteExplanation()" id="completeExplanationBtn" style="display: none;">
+                            📊 Complete Analysis
+                        </button>
+                    </div>
+                    <div class="explanation-content" id="explanationContent">
+                        ${explanation ? explanation.content : '<p>Explanation coming soon...</p>'}
+                    </div>
+                </div>
+            `;
+
+            // Automatically show explanation: user's wrong answer if they got it wrong, correct answer if no answer or correct
+            if (explanation && explanation.choiceExplanations) {
+                setTimeout(() => {
+                    let defaultChoice;
+                    if (!result.isCorrect && result.userAnswer && result.userAnswer !== 'No Answer') {
+                        // Show user's wrong answer explanation
+                        defaultChoice = result.userAnswer;
+                    } else {
+                        // Show correct answer explanation (if no answer or if they got it right)
+                        defaultChoice = result.correctAnswer;
+                    }
+                    if (defaultChoice) {
+                        showChoiceExplanation(defaultChoice);
+                    }
+                }, 100);
+            }
+        }
+
+        function updatePassageHighlighting() {
+            // Clear all highlighting
+            document.querySelectorAll('.underlined').forEach(span => {
+                span.classList.remove('current', 'correct', 'incorrect');
+            });
+            
+            // Highlight current question
+            const currentSpan = document.querySelector(`[data-question="${currentQuestion}"]`);
+            if (currentSpan) {
+                currentSpan.classList.add('current');
+                const result = questionResults[currentQuestion];
+                if (result) {
+                    currentSpan.classList.add(result.isCorrect ? 'correct' : 'incorrect');
+                }
+            }
+        }
+
+        function switchPassage(passageNum) {
+            document.querySelectorAll('.passage-content').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.passage-btn').forEach(btn => btn.classList.remove('active'));
+            
+            const targetPassage = document.getElementById(`passage${passageNum}`);
+            const targetButton = document.querySelector(`[data-passage="${passageNum}"]`);
+            
+            if (targetPassage && targetButton) {
+                targetPassage.classList.add('active');
+                targetButton.classList.add('active');
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < 50) {
+                currentQuestion++;
+                updateQuestion();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 1) {
+                currentQuestion--;
+                updateQuestion();
+            }
+        }
+
+        function goToQuestion() {
+            const questionNum = prompt('Enter question number (1-50):');
+            const num = parseInt(questionNum);
+
+            if (num >= 1 && num <= 50) {
+                currentQuestion = num;
+                updateQuestion();
+            } else {
+                alert('Please enter a valid question number between 1 and 50.');
+            }
+        }
+
+        function showChoiceExplanation(choiceLetter, clickedElement = null) {
+            const explanation = answerExplanations[currentQuestion];
+            if (!explanation || !explanation.choiceExplanations || !explanation.choiceExplanations[choiceLetter]) {
+                return;
+            }
+
+            // Remove selected class from all choices
+            document.querySelectorAll('.answer-choice').forEach(choice => {
+                choice.classList.remove('selected');
+            });
+
+            // Add selected class to the appropriate choice
+            if (clickedElement) {
+                clickedElement.closest('.answer-choice').classList.add('selected');
+            } else {
+                // Find the choice by letter when called programmatically
+                const targetChoice = Array.from(document.querySelectorAll('.answer-choice')).find(choice =>
+                    choice.querySelector('.answer-letter').textContent === `${choiceLetter}.`
+                );
+                if (targetChoice) {
+                    targetChoice.classList.add('selected');
+                }
+            }
+
+            // Update explanation content
+            const choiceExplanation = explanation.choiceExplanations[choiceLetter];
+            const explanationTitle = document.getElementById('explanationTitle');
+            const explanationContent = document.getElementById('explanationContent');
+            const completeBtn = document.getElementById('completeExplanationBtn');
+
+            explanationTitle.textContent = `Choice ${choiceLetter} Explanation`;
+            completeBtn.style.display = 'block';
+
+            explanationContent.innerHTML = `
+                <div class="choice-explanation-box ${choiceExplanation.isCorrect ? '' : 'incorrect'}">
+                    ${choiceExplanation.explanation}
+                </div>
+                <div class="explanation-nav-hint">
+                    💡 <strong>Tip:</strong> Click on other answer choices to see their explanations, or use the Complete Analysis button above for a comprehensive breakdown.
+                </div>
+            `;
+        }
+
+        function showCompleteExplanation() {
+            const explanation = answerExplanations[currentQuestion];
+            if (!explanation) return;
+
+            // Remove selected class from all choices
+            document.querySelectorAll('.answer-choice').forEach(choice => {
+                choice.classList.remove('selected');
+            });
+
+            const explanationTitle = document.getElementById('explanationTitle');
+            const explanationContent = document.getElementById('explanationContent');
+            const completeBtn = document.getElementById('completeExplanationBtn');
+
+            explanationTitle.textContent = explanation.explanation.title;
+            completeBtn.style.display = 'none';
+            explanationContent.innerHTML = `
+                <div class="complete-analysis-section">
+                    ${explanation.explanation.content}
+                </div>
+            `;
+        }
+
+        // Handle underlined text clicks
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('underlined')) {
+                const questionNum = parseInt(e.target.getAttribute('data-question'));
+                if (questionNum) {
+                    currentQuestion = questionNum;
+                    updateQuestion();
+                }
+            }
+        });
+
+        // Initialize
+        setTimeout(() => {
+            loadTestResults();
+            document.getElementById('loading').style.display = 'none';
+        }, 1000);
+    </script>
+</body>
+</html>

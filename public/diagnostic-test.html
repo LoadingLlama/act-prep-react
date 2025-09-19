@@ -1,0 +1,2151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACT Diagnostic Test - English Section</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .test-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .test-header {
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .test-header h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .test-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .test-meta {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .timer {
+            background: #1a1a1a;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .test-content {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .passage-section {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 2rem;
+            height: fit-content;
+        }
+
+        .passage-selector {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .passage-btn {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            color: #666;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .passage-btn.active {
+            background: #1a1a1a;
+            color: white;
+            border-color: #1a1a1a;
+        }
+
+        .passage-content {
+            display: none;
+        }
+
+        .passage-content.active {
+            display: block;
+        }
+
+        .passage-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            text-align: center;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .passage-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .passage-text p {
+            margin-bottom: 1.2rem;
+        }
+
+        .underlined {
+            text-decoration: underline;
+            font-weight: 500;
+            color: #1a1a1a;
+            position: relative;
+            cursor: pointer;
+            padding: 0 2px;
+        }
+
+        .underlined::after {
+            content: attr(data-question);
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #1a1a1a;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .underlined:hover {
+            background-color: #f0f8ff;
+        }
+
+        .questions-section {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 2rem;
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .questions-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            text-align: left;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .navigator-toggle {
+            background: transparent;
+            color: #666;
+            border: 1px solid #e0e0e0;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin-left: auto;
+        }
+
+        .navigator-toggle:hover {
+            background: #f8f9fa;
+            border-color: #1a1a1a;
+            color: #1a1a1a;
+        }
+
+        .question-navigator {
+            display: none;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 0.4rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            max-height: 80vh;
+            max-width: 90vw;
+            overflow-y: auto;
+            animation: fadeInScale 0.3s ease-out;
+        }
+
+        .navigator-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            backdrop-filter: blur(4px);
+        }
+
+        .navigator-overlay.active {
+            display: block;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .nav-question {
+            background: white;
+            border: 2px solid #e0e0e0;
+            color: #999;
+            padding: 0.6rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.2s ease;
+            font-size: 0.85rem;
+            position: relative;
+            opacity: 0.4;
+        }
+
+        .nav-question:hover {
+            border-color: #1a1a1a;
+            background: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            opacity: 1;
+        }
+
+        .nav-question.active {
+            background: #1a1a1a;
+            color: white;
+            border-color: #1a1a1a;
+            opacity: 1;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26,26,26,0.3);
+            font-weight: 900;
+            border-width: 3px;
+        }
+
+        .nav-question.answered {
+            background: #28a745;
+            color: white;
+            border-color: #28a745;
+            opacity: 1;
+            font-weight: 800;
+        }
+
+        .nav-question.answered.active {
+            background: #1a1a1a;
+            color: white;
+            border-color: #1a1a1a;
+            font-weight: 800;
+        }
+
+        .nav-question.flagged::after {
+            content: '🚩';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            font-size: 0.8rem;
+        }
+
+        .nav-question.flagged {
+            border-color: #ffc107;
+            box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.3);
+            background: #fff3cd;
+        }
+
+        .current-question-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .flag-btn {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #666;
+            border: 1px solid #dee2e6;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-left: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .flag-btn:hover {
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            border-color: #adb5bd;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .flag-btn.flagged {
+            background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+            color: white;
+            border-color: #e0a800;
+        }
+
+        .flag-btn.flagged:hover {
+            background: linear-gradient(135deg, #e0a800 0%, #d39e00 100%);
+            border-color: #d39e00;
+        }
+
+        .flag-icon {
+            font-size: 0.9rem;
+            transition: transform 0.2s ease;
+        }
+
+        .flag-btn:hover .flag-icon {
+            transform: scale(1.1);
+        }
+
+        .question {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            background: #fafafa;
+            display: none;
+        }
+
+        .question.active {
+            border-color: #1a1a1a;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: block;
+        }
+
+        .question-number {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .question-text {
+            margin-bottom: 1rem;
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .answer-choices {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .answer-choice {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .answer-choice:hover {
+            border-color: #1a1a1a;
+            background: #f8f9fa;
+        }
+
+        .answer-choice.selected {
+            border-color: #1a1a1a;
+            background: #f0f8ff;
+            font-weight: 500;
+        }
+
+        .answer-choice input[type="radio"] {
+            margin: 0;
+            transform: scale(1.2);
+        }
+
+        .answer-text {
+            flex: 1;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .btn {
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #333;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .progress-indicator {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 1024px) {
+            .test-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .questions-section {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .test-content {
+                padding: 1rem;
+            }
+            
+            .test-header {
+                padding: 1rem;
+            }
+            
+            .test-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>ACT Diagnostic Test - English Section</h1>
+            <div class="test-info">
+                <div class="test-meta">
+                    <span>6 Passages</span>
+                    <span>Questions 1-50</span>
+                    <span>35 minutes total</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button class="btn btn-danger" onclick="submitTest()" style="margin: 0;">Submit Test</button>
+                    <div class="timer" id="timer">35:00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-content">
+            <div class="passage-section">
+                <!-- Passage Selector -->
+                <div class="passage-selector">
+                    <button class="passage-btn active" onclick="switchPassage(1)" data-passage="1">Passage I</button>
+                    <button class="passage-btn" onclick="switchPassage(2)" data-passage="2">Passage II</button>
+                    <button class="passage-btn" onclick="switchPassage(3)" data-passage="3">Passage III</button>
+                    <button class="passage-btn" onclick="switchPassage(4)" data-passage="4">Passage IV</button>
+                    <button class="passage-btn" onclick="switchPassage(5)" data-passage="5">Passage V</button>
+                    <button class="passage-btn" onclick="switchPassage(6)" data-passage="6">Passage VI</button>
+                </div>
+
+                <!-- Passage I -->
+                <div class="passage-content active" id="passage1">
+                    <div class="passage-title">PASSAGE I<br>Alex Atala and Brazilian Cuisine</div>
+                    <div class="passage-text">
+                        <p><span class="underlined" data-question="1">At first</span>, Brazilian chef Alex Atala opened his restaurant in São Paulo in 1999, people told him he'd never succeed. In a country where European cuisine was held in the highest regard, they said, no one would patronize a restaurant serving Brazilian food. Atala, whose restaurant has consistently ranked among the world's best, has long disproven the naysayers. Using traditional Brazilian <span class="underlined" data-question="2">ingredients, such as, manioc root and even ants—</span>in innovative ways, he has <span class="underlined" data-question="3">thrilled</span> diners from around the world.</p>
+
+                        <p><span class="underlined" data-question="4">Still, Atala felt he could do more for his country</span> and its cuisine. In 2012, he founded Instituto Atá to help promote lesser-known ingredients, particularly those of the Amazon basin, while working to protect Brazil's biodiversity. Hearts of palm, for example, were typically harvested from Brazil's wild juçara palms in an unsustainable way. Needing eight years to mature, the <span class="underlined" data-question="5">tree dies once its</span> large heart is removed. Atala began persuading producers to cultivate Amazonian pupunha palms, which grow clusters of stems, each with a small heart. Careful harvesting ensures that the tree will <span class="underlined" data-question="6">live to yield</span> more hearts, resulting in environmentally friendly production.</p>
+
+                        <p>Atala prioritizes his working relationships with Amazonian tribes. Utilizing their historical <span class="underlined" data-question="7">know-how they have</span>, he aims to bolster tribe members' livelihoods while exposing a wider audience to Brazilian ingredients. For instance, Baniwa women have farmed distinctly flavorful chili peppers for <span class="underlined" data-question="8">centuries that use</span> indigenous agricultural techniques, to create a seasoning called pimenta jiquitaia. Partnering with Instituto Atá <span class="underlined" data-question="9">have enabled</span> these women from a remote rain forest region to scale up production and market their product globally.</p>
+
+                        <p>Expanding awareness of the rich diversity of Brazil's native ingredients, Atala continues to lead in <span class="underlined" data-question="10">deciphering</span> the country's food culture. With his characteristic passion and intensity, the renowned chef seeks to inspire Brazilians to rediscover the connections between culture, nature, and food.</p>
+                    </div>
+                </div>
+
+                <!-- Passage II -->
+                <div class="passage-content" id="passage2">
+                    <div class="passage-title">PASSAGE II<br>Rediscovering Hrosvitha</div>
+                    <div class="passage-text">
+                        <p>Hrosvitha, a <span class="underlined" data-question="11">medieval author and dramatist—is</span> one of the earliest known European women playwrights. Although little is known about her life, scholars agree Hrosvitha was born to a noble family around 935 CE. As a relation of Holy Roman Emperor Otto I, she most likely spent her early years as part of his court.</p>
+
+                        <p>Later, sometime before 959 CE, she entered the abbey at Gandersheim. <span class="underlined" data-question="12">It was an abbey as a significant center of learning.</span></p>
+
+                        <p>Hrosvitha entered Gandersheim as a canoness rather than a nun. Her title did not require a vow of poverty, but Hrosvitha did take the abbey's customary vow of chastity, which absolved her of an obligation to marry. This circumstance made it okay for her to keep her <span class="underlined" data-question="13">financial status without incurring responsibilities to</span> a husband and children. <span class="underlined" data-question="14">Nevertheless</span>, Hrosvitha had a greater level of independence—she could acquire property, receive guests, employ servants, and visit the royal court—than most women of her time.</p>
+
+                        <p>Hrosvitha produced at least nine known religious poems, two historical epics (about the court of Otto I and <span class="underlined" data-question="15">Gandersheim), and six comedy-dramas.</span> It is for these dramas that she is best known today.</p>
+                    </div>
+                </div>
+
+                <!-- Passage III -->
+                <div class="passage-content" id="passage3">
+                    <div class="passage-title">PASSAGE III<br>A Musical Detour</div>
+                    <div class="passage-text">
+                        <p>Every night while driving home from a hectic day at work, my three-year-old twins quarreling in the backseat, I take a short detour. I turn off the gridlocked highway, onto a stretch of Route 66 that is<span class="underlined" data-question="16">, surrounded by</span> arid New Mexico hills. When we're nearly three miles into our detour, I roll down the windows. Looking pointedly <span class="underlined" data-question="17">into the rearview mirror, windows rolled down, I say</span> something about not throwing anything out of the car, but neither boy is listening. I check my speed. [A] Carefully, I steer toward the fog line. "Here it is, boys!" I yell at the backseat, the passenger-side tires finding the rumble strips etched into the asphalt.</p>
+
+                        <p>Normal rumble strips create that loud, grating noise when you drive over them—<span class="underlined" data-question="18">like a built-in alarm for drivers who drift too close to the road's edge.</span> These strips are different. The boys abruptly stop their squalling as the car begins to vibrate. Then, instead of that jolting warning noise, we hear the distinct strain of the song "America the Beautiful." [B] The road is playing us a song.</p>
+
+                        <p>I've been taking this detour out of Albuquerque for two years, ever since these musical rumble strips <span class="underlined" data-question="19">were installed.</span> City planners wanted to find out whether the novelty of hearing a snippet of song would give drivers an incentive to obey the speed limit; the tune is only recognizable if they're going a reasonable forty-five miles per hour. Whether this strategy works, I don't know.</p>
+
+                        <p>[C] For me, <span class="underlined" data-question="20">this brief musical interlude is a charming curiosity, a welcome interruption in my work-week slog.</span> Even though constant traffic has worn down the musical rumble strips and warped the sound of some of the notes, there are currently no plans to restore the strips.</p>
+
+                        <p>After the last one of the notes <span class="underlined" data-question="21">fades into the darkening</span> sky, I glance back at the boys, <span class="underlined" data-question="22">who have been lulled by the wonder of the song.</span> [D] I stop worrying about work, about how many toy cars might have gotten lost between there and home. <span class="underlined" data-question="23">Until then, I feel like everything is going to</span> be just fine. <span class="underlined" data-question="24">At this point, the writer is considering adding the following accurate sentence: I hear there is another musical road in the US, somewhere in California. Should the writer make this addition?</span></p>
+
+                        <p><span class="underlined" data-question="25">The writer wants to add the following sentence to the essay: It is marvelously quiet. The sentence would most logically be placed at:</span></p>
+                    </div>
+                </div>
+
+                <!-- Passage IV -->
+                <div class="passage-content" id="passage4">
+                    <div class="passage-title">PASSAGE IV<br>The Case for Visible Storage</div>
+                    <div class="passage-text">
+                        <p>Public museums exist for two main reasons: to educate the public and provide stewardship <span class="underlined" data-question="26">(legal and ethical management, care, documentation, and use) of</span> their collections. Unfortunately, due to space constraints, a typical museum only exhibits about ten percent of the items in its collection; the other ninety percent remains in storage. <span class="underlined" data-question="27">When displaying such a small portion of</span> artifacts severely limits public access and therefore public education. Furthermore, maintaining such a large number of artifacts in storage while acquiring additional items makes finding enough suitable storage space difficult, especially for delicate items. [A]</p>
+
+                        <p>To remain true to the goals of education and stewardship, museums should dedicate public access space to visible storage. [B] Also known as open storage, visible storage <span class="underlined" data-question="28">provides ways to display many items in</span> small or irregular spaces, allowing more artifacts to be on exhibit. [C]</p>
+
+                        <p>In a traditional museum display, each artifact is labeled and positioned at eye level with plenty of space between it and the other objects. <span class="underlined" data-question="29">between it and the other objects.</span> <span class="underlined" data-question="30">Subsequently</span>, artifacts in visible storage spaces are placed close together and are often displayed from floor to ceiling with few labels. Areas of a museum that cannot house a traditional display, therefore, might be ideal for a visible storage display. Ceramic pottery <span class="underlined" data-question="31">where it might otherwise</span> be positioned in individual glass cases might be lined up on shelves behind a glass wall. An antique fork and spoon fastened to a large informational board might instead be part of an entire set of silverware arranged under glass in pull-out cabinet drawers. [D]</p>
+
+                        <p>While some artifacts can never be displayed <span class="underlined" data-question="32">(whether because of light sensitivity or the request of a donor)</span>, many pieces that <span class="underlined" data-question="33">can—and should—be viewed are not.</span></p>
+
+                        <p><span class="underlined" data-question="34">Whereas a museum designates areas for visible storage</span>, it uses space efficiently, providing safe displays for artifacts and allowing visitors greater access to independently study the works that make the museum unique. <span class="underlined" data-question="35">The writer wants to add the following sentence to the essay: This potentially compromises stewardship. For the sake of logic and cohesion, the sentence should be placed at:</span></p>
+                    </div>
+                </div>
+
+                <!-- Passage V -->
+                <div class="passage-content" id="passage5">
+                    <div class="passage-title">PASSAGE V<br>The Sociable Weavers' Complex Nest</div>
+                    <div class="passage-text">
+                        <p>In the sparse yet relatively green environment of the Kalahari Desert, birds known as sociable weavers build their enormous nests atop the desert's signature camelhorn trees. Slung across the branches, each nest—<span class="underlined" data-question="36">which can measure up to thirteen feet wide and seven feet thick</span>—is a sprawling community home to hundreds of birds.</p>
+
+                        <p>A weaver nest does not resemble a common bowl-like bird nest. Although the weavers use typical materials such as sticks, grass, and feathers to construct their nests, the nests look more like <span class="underlined" data-question="37">disorganized piles.</span> Built within each nest are as many as one hundred four-to-six-inch-wide chambers. A bird enters a chamber by flying to the underside of the nest<span class="underlined" data-question="38">, it squeezes</span> through a one-inch-wide entrance hole, and continuing up a passageway to a chamber. In each chamber, up to five of the sparrow-sized birds can huddle <span class="underlined" data-question="39">as a group together when the Kalahari nights get cold.</span></p>
+
+                        <p>The multi-chamber construction of the weaver nest has drawn comparisons to that of an apartment building. Indeed, the nests exemplify communal living at <span class="underlined" data-question="40">there most</span> effective. Each one houses multiple generations of birds, all of whom work together to maintain their home.</p>
+                    </div>
+                </div>
+
+                <!-- Passage VI -->
+                <div class="passage-content" id="passage6">
+                    <div class="passage-title">PASSAGE VI<br>The Artful Stitch of Paj Ntaub</div>
+                    <div class="passage-text">
+                        <p>She depicts flowers with layers of petals, intricate spirals and rosettes, teardrops bending within circles, and <span class="underlined" data-question="41">dizzying mazes of lines—</span>embroidering them in vibrant reds, blues, pinks, yellows, and greens on fabric of delicate silk or cotton. Pang Xiong Sirirathasuk Sikoun is a master of paj ntaub, or "flower cloth" embroidery, the most difficult of the <span class="underlined" data-question="42">century's-oldest</span> Hmong needlework arts.</p>
+
+                        <p><span class="underlined" data-question="43">Paj ntaub is increasingly made in lighter, softer shades today.</span> She's been creating stitched textiles since she was a young woman living in northern Laos. For the past several decades, she's been designing paj ntaub in Philadelphia, Pennsylvania, where she also teaches her craft.</p>
+
+                        <p>Flower cloth <span class="underlined" data-question="44">(commonly as a shirt, dress, coat, or collar)</span> is made to be worn as clothing and, depending on the amount of needlework on the piece, is designed either for everyday wear or for a special occasion.</p>
+
+                        <p>With pattern names such as "elephant's foot" and "snail house" and images of animals framed by geometric designs, <span class="underlined" data-question="45">paj ntaub patterns are versatile.</span> What distinguishes paj ntaub from other Hmong needlework arts are the artist's use of tiny, tight stitches and several complex techniques. One technique is reverse <span class="underlined" data-question="46">appliqué, in which</span> shapes are cut out from, rather than added on top of, the embroidered fabric. Another is elaborate overstitching: thousands of layered stitches are applied to <span class="underlined" data-question="47">its surface.</span></p>
+
+                        <p>Pang Xiong regrets that most people she knows today wear only <span class="underlined" data-question="48">regular clothes.</span> When she was growing up in Laos, she explains, she had few items of clothing, but each garment she owned was handcrafted paj ntaub.</p>
+
+                        <p><span class="underlined" data-question="49">However, she</span> still wears flower cloth every day and would like to inspire others to do so. Pang Xiong teaches paj ntaub in art museums—including at the Smithsonian Institution, where some of her textiles are on permanent display—and in community settings around Philadelphia. <span class="underlined" data-question="50">Recently, she worked with nine young Hmong women in a formal apprenticeship.</span> Pang Xiong is showing a new generation the joys of paj ntaub and beautiful handcrafted clothing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="questions-section">
+                <div class="questions-title">
+                    Question Navigator
+                    <button class="navigator-toggle" onclick="toggleNavigator()" id="navigatorToggle">
+                        Show Grid
+                    </button>
+                </div>
+                
+                <!-- Question Navigator Grid (Hidden by default) -->
+                <div class="question-navigator" id="questionNavigator">
+                    <button class="nav-question active" onclick="jumpToQuestion(1)" data-question="1">1</button>
+                    <button class="nav-question" onclick="jumpToQuestion(2)" data-question="2">2</button>
+                    <button class="nav-question" onclick="jumpToQuestion(3)" data-question="3">3</button>
+                    <button class="nav-question" onclick="jumpToQuestion(4)" data-question="4">4</button>
+                    <button class="nav-question" onclick="jumpToQuestion(5)" data-question="5">5</button>
+                    <button class="nav-question" onclick="jumpToQuestion(6)" data-question="6">6</button>
+                    <button class="nav-question" onclick="jumpToQuestion(7)" data-question="7">7</button>
+                    <button class="nav-question" onclick="jumpToQuestion(8)" data-question="8">8</button>
+                    <button class="nav-question" onclick="jumpToQuestion(9)" data-question="9">9</button>
+                    <button class="nav-question" onclick="jumpToQuestion(10)" data-question="10">10</button>
+                    <button class="nav-question" onclick="jumpToQuestion(11)" data-question="11">11</button>
+                    <button class="nav-question" onclick="jumpToQuestion(12)" data-question="12">12</button>
+                    <button class="nav-question" onclick="jumpToQuestion(13)" data-question="13">13</button>
+                    <button class="nav-question" onclick="jumpToQuestion(14)" data-question="14">14</button>
+                    <button class="nav-question" onclick="jumpToQuestion(15)" data-question="15">15</button>
+                    <button class="nav-question" onclick="jumpToQuestion(16)" data-question="16">16</button>
+                    <button class="nav-question" onclick="jumpToQuestion(17)" data-question="17">17</button>
+                    <button class="nav-question" onclick="jumpToQuestion(18)" data-question="18">18</button>
+                    <button class="nav-question" onclick="jumpToQuestion(19)" data-question="19">19</button>
+                    <button class="nav-question" onclick="jumpToQuestion(20)" data-question="20">20</button>
+                    <button class="nav-question" onclick="jumpToQuestion(21)" data-question="21">21</button>
+                    <button class="nav-question" onclick="jumpToQuestion(22)" data-question="22">22</button>
+                    <button class="nav-question" onclick="jumpToQuestion(23)" data-question="23">23</button>
+                    <button class="nav-question" onclick="jumpToQuestion(24)" data-question="24">24</button>
+                    <button class="nav-question" onclick="jumpToQuestion(25)" data-question="25">25</button>
+                    <button class="nav-question" onclick="jumpToQuestion(26)" data-question="26">26</button>
+                    <button class="nav-question" onclick="jumpToQuestion(27)" data-question="27">27</button>
+                    <button class="nav-question" onclick="jumpToQuestion(28)" data-question="28">28</button>
+                    <button class="nav-question" onclick="jumpToQuestion(29)" data-question="29">29</button>
+                    <button class="nav-question" onclick="jumpToQuestion(30)" data-question="30">30</button>
+                    <button class="nav-question" onclick="jumpToQuestion(31)" data-question="31">31</button>
+                    <button class="nav-question" onclick="jumpToQuestion(32)" data-question="32">32</button>
+                    <button class="nav-question" onclick="jumpToQuestion(33)" data-question="33">33</button>
+                    <button class="nav-question" onclick="jumpToQuestion(34)" data-question="34">34</button>
+                    <button class="nav-question" onclick="jumpToQuestion(35)" data-question="35">35</button>
+                    <button class="nav-question" onclick="jumpToQuestion(36)" data-question="36">36</button>
+                    <button class="nav-question" onclick="jumpToQuestion(37)" data-question="37">37</button>
+                    <button class="nav-question" onclick="jumpToQuestion(38)" data-question="38">38</button>
+                    <button class="nav-question" onclick="jumpToQuestion(39)" data-question="39">39</button>
+                    <button class="nav-question" onclick="jumpToQuestion(40)" data-question="40">40</button>
+                    <button class="nav-question" onclick="jumpToQuestion(41)" data-question="41">41</button>
+                    <button class="nav-question" onclick="jumpToQuestion(42)" data-question="42">42</button>
+                    <button class="nav-question" onclick="jumpToQuestion(43)" data-question="43">43</button>
+                    <button class="nav-question" onclick="jumpToQuestion(44)" data-question="44">44</button>
+                    <button class="nav-question" onclick="jumpToQuestion(45)" data-question="45">45</button>
+                    <button class="nav-question" onclick="jumpToQuestion(46)" data-question="46">46</button>
+                    <button class="nav-question" onclick="jumpToQuestion(47)" data-question="47">47</button>
+                    <button class="nav-question" onclick="jumpToQuestion(48)" data-question="48">48</button>
+                    <button class="nav-question" onclick="jumpToQuestion(49)" data-question="49">49</button>
+                    <button class="nav-question" onclick="jumpToQuestion(50)" data-question="50">50</button>
+                </div>
+
+                <!-- Navigator Overlay -->
+                <div class="navigator-overlay" id="navigatorOverlay" onclick="toggleNavigator()"></div>
+
+                <div class="current-question-title" id="currentQuestionTitle">Question 1
+                    <button class="flag-btn" onclick="toggleFlag()" id="flagBtn">
+                        <span class="flag-icon">🏳️</span>Flag
+                    </button>
+                </div>
+                
+                <!-- All 50 Questions -->
+                <div class="question active" id="question1">
+                    <div class="question-number">1.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q1" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q1" value="B">
+                            <span class="answer-text">B. Years ago,</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q1" value="C">
+                            <span class="answer-text">C. When</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q1" value="D">
+                            <span class="answer-text">D. Delete the underlined portion.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question2">
+                    <div class="question-number">2.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q2" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q2" value="G">
+                            <span class="answer-text">G. ingredients—such as manioc root</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q2" value="H">
+                            <span class="answer-text">H. ingredients such as—manioc root</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q2" value="J">
+                            <span class="answer-text">J. ingredients such as, manioc root,</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question3">
+                    <div class="question-number">3.</div>
+                    <div class="question-text">The writer wants to emphasize the positive experience diners have had at Atala's restaurant. Which choice best accomplishes that goal?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q3" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q3" value="B">
+                            <span class="answer-text">B. mystified</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q3" value="C">
+                            <span class="answer-text">C. shocked</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q3" value="D">
+                            <span class="answer-text">D. startled</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question4">
+                    <div class="question-number">4.</div>
+                    <div class="question-text">Given that all the choices are accurate, which one provides the best transition from the preceding paragraph to this paragraph?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q4" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q4" value="G">
+                            <span class="answer-text">G. Atala is known for sometimes incorporating fragrances into his dishes as well.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q4" value="H">
+                            <span class="answer-text">H. In fact, Atala's culinary training took place in classic European restaurants.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q4" value="J">
+                            <span class="answer-text">J. Atala's obvious affection for his homeland is said to be infectious.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question5">
+                    <div class="question-number">5.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q5" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q5" value="B">
+                            <span class="answer-text">B. tree dies once their</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q5" value="C">
+                            <span class="answer-text">C. trees die once its</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q5" value="D">
+                            <span class="answer-text">D. tree dies once it's</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question6">
+                    <div class="question-number">6.</div>
+                    <div class="question-text">Which choice most effectively maintains the essay's tone?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q6" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q6" value="G">
+                            <span class="answer-text">G. pull through and spawn</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q6" value="H">
+                            <span class="answer-text">H. continue to churn out</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q6" value="J">
+                            <span class="answer-text">J. keep doling out</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question7">
+                    <div class="question-number">7.</div>
+                    <div class="question-text">Which choice is least redundant in context?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q7" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q7" value="B">
+                            <span class="answer-text">B. knowledge that tribe members know about local plants,</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q7" value="C">
+                            <span class="answer-text">C. knowledge of local plants in the area,</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q7" value="D">
+                            <span class="answer-text">D. knowledge of local plants,</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question8">
+                    <div class="question-number">8.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q8" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q8" value="G">
+                            <span class="answer-text">G. centuries, which use</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q8" value="H">
+                            <span class="answer-text">H. centuries who use</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q8" value="J">
+                            <span class="answer-text">J. centuries, using</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question9">
+                    <div class="question-number">9.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q9" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q9" value="B">
+                            <span class="answer-text">B. has enabled</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q9" value="C">
+                            <span class="answer-text">C. are enabling</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q9" value="D">
+                            <span class="answer-text">D. enable</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question10">
+                    <div class="question-number">10.</div>
+                    <div class="question-text">Which choice is clearest and most precise in context?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q10" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q10" value="G">
+                            <span class="answer-text">G. transforming</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q10" value="H">
+                            <span class="answer-text">H. dislocating</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q10" value="J">
+                            <span class="answer-text">J. contorting</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question11">
+                    <div class="question-number">11.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q11" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q11" value="B">
+                            <span class="answer-text">B. author and dramatist,</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q11" value="C">
+                            <span class="answer-text">C. author, and dramatist</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q11" value="D">
+                            <span class="answer-text">D. author and dramatist</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question12">
+                    <div class="question-number">12.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q12" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q12" value="G">
+                            <span class="answer-text">G. Gandersheim and, historically, this abbey was</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q12" value="H">
+                            <span class="answer-text">H. Gandersheim, it was an abbey</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q12" value="J">
+                            <span class="answer-text">J. Gandersheim, an abbey</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question13">
+                    <div class="question-number">13.</div>
+                    <div class="question-text">Which choice most effectively maintains the essay's tone?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q13" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q13" value="B">
+                            <span class="answer-text">B. permitted her to hang on to</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q13" value="C">
+                            <span class="answer-text">C. allowed her to retain</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q13" value="D">
+                            <span class="answer-text">D. let her keep up</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question14">
+                    <div class="question-number">14.</div>
+                    <div class="question-text">Which transition word or phrase is most logical in context?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q14" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q14" value="G">
+                            <span class="answer-text">G. On the other hand,</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q14" value="H">
+                            <span class="answer-text">H. As a result,</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q14" value="J">
+                            <span class="answer-text">J. In contrast,</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question15">
+                    <div class="question-number">15.</div>
+                    <div class="question-text">Which choice best helps indicate that each historical epic covered different subject matter?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q15" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q15" value="B">
+                            <span class="answer-text">B. (each focused on the court of Otto I and</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q15" value="C">
+                            <span class="answer-text">C. (focusing on the court of Otto I as well as</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q15" value="D">
+                            <span class="answer-text">D. (one about the court of Otto I, the other about</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question16">
+                    <div class="question-number">16.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q16" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q16" value="G">
+                            <span class="answer-text">G. highway onto a stretch of Route 66, that is,</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q16" value="H">
+                            <span class="answer-text">H. highway onto a stretch, of Route 66 that is</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q16" value="J">
+                            <span class="answer-text">J. highway onto a stretch of Route 66 that is</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question17">
+                    <div class="question-number">17.</div>
+                    <div class="question-text">Which choice is least redundant in context?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q17" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q17" value="B">
+                            <span class="answer-text">B. into the rearview mirror, three miles into our detour,</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q17" value="C">
+                            <span class="answer-text">C. behind me by looking into the rearview mirror,</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q17" value="D">
+                            <span class="answer-text">D. into the rearview mirror,</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question18">
+                    <div class="question-number">18.</div>
+                    <div class="question-text">If the writer were to delete the underlined portion (adjusting the punctuation as needed), the paragraph would primarily lose:</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q18" value="F">
+                            <span class="answer-text">F. information that indicates how prevalent rumble strips are on roadways.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q18" value="G">
+                            <span class="answer-text">G. a detail that reveals the narrator's opinion of distracted drivers.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q18" value="H">
+                            <span class="answer-text">H. information that clarifies a primary function of rumble strips.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q18" value="J">
+                            <span class="answer-text">J. a detail that indicates what the rumble strips look like.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question19">
+                    <div class="question-number">19.</div>
+                    <div class="question-text">Which choice is least redundant in context?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q19" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q19" value="B">
+                            <span class="answer-text">B. were implemented just outside Albuquerque.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q19" value="C">
+                            <span class="answer-text">C. that play music were put in.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q19" value="D">
+                            <span class="answer-text">D. were added a couple years ago.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question20">
+                    <div class="question-number">20.</div>
+                    <div class="question-text">Given that all the choices are accurate, which one most effectively leads into the rest of the essay?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q20" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q20" value="G">
+                            <span class="answer-text">G. lots of other drivers, not just me, still make this detour to hear the tune.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q20" value="H">
+                            <span class="answer-text">H. sometimes drivers will turn around and drive over the strips again.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q20" value="J">
+                            <span class="answer-text">J. this detour on our drive home never fails to buoy my spirits.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question21">
+                    <div class="question-number">21.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q21" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q21" value="B">
+                            <span class="answer-text">B. have disappeared</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q21" value="C">
+                            <span class="answer-text">C. disappear</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q21" value="D">
+                            <span class="answer-text">D. fade</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question22">
+                    <div class="question-number">22.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q22" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q22" value="G">
+                            <span class="answer-text">G. whom have</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q22" value="H">
+                            <span class="answer-text">H. they have</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q22" value="J">
+                            <span class="answer-text">J. whose</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question23">
+                    <div class="question-number">23.</div>
+                    <div class="question-text">Which transition word or phrase is most logical in context?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q23" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q23" value="B">
+                            <span class="answer-text">B. Now and then,</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q23" value="C">
+                            <span class="answer-text">C. For now,</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q23" value="D">
+                            <span class="answer-text">D. Later,</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question24">
+                    <div class="question-number">24.</div>
+                    <div class="question-text">At this point, the writer is considering adding the following accurate sentence: I hear there is another musical road in the US, somewhere in California. Should the writer make this addition?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q24" value="F">
+                            <span class="answer-text">F. Yes, because it makes clear that the narrator has plans to travel on other musical roads.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q24" value="G">
+                            <span class="answer-text">G. Yes, because it indicates that the musical road in New Mexico is not unique.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q24" value="H">
+                            <span class="answer-text">H. No, because it draws the focus away from the New Mexico musical road and its effect on the narrator.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q24" value="J">
+                            <span class="answer-text">J. No, because it fails to provide specific details about the construction of the musical road in California.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question25">
+                    <div class="question-number">25.</div>
+                    <div class="question-text">The writer wants to add the following sentence to the essay: It is marvelously quiet. The sentence would most logically be placed at:</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q25" value="A">
+                            <span class="answer-text">A. Point A in Paragraph 1.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q25" value="B">
+                            <span class="answer-text">B. Point B in Paragraph 2.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q25" value="C">
+                            <span class="answer-text">C. Point C in Paragraph 3.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q25" value="D">
+                            <span class="answer-text">D. Point D in Paragraph 4.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question26">
+                    <div class="question-number">26.</div>
+                    <div class="question-text">If the writer were to delete the underlined portion, the essay would primarily lose a:</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q26" value="F">
+                            <span class="answer-text">F. suggestion that not all public museums provide proper stewardship for their artifacts.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q26" value="G">
+                            <span class="answer-text">G. clarification of what public museum stewardship entails.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q26" value="H">
+                            <span class="answer-text">H. list of reasons for educating the public on stewardship.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q26" value="J">
+                            <span class="answer-text">J. description of the daily tasks performed by curators.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question27">
+                    <div class="question-number">27.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q27" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q27" value="B">
+                            <span class="answer-text">B. With the display of</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q27" value="C">
+                            <span class="answer-text">C. While displaying</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q27" value="D">
+                            <span class="answer-text">D. Displaying</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question28">
+                    <div class="question-number">28.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q28" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q28" value="G">
+                            <span class="answer-text">G. storage makes providing</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q28" value="H">
+                            <span class="answer-text">H. storage, which provides</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q28" value="J">
+                            <span class="answer-text">J. storage, providing</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question29">
+                    <div class="question-number">29.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q29" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q29" value="B">
+                            <span class="answer-text">B. between them</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q29" value="C">
+                            <span class="answer-text">C. among them</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q29" value="D">
+                            <span class="answer-text">D. among it</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question30">
+                    <div class="question-number">30.</div>
+                    <div class="question-text">Which transition word is most logical in context?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q30" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q30" value="G">
+                            <span class="answer-text">G. Conversely,</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q30" value="H">
+                            <span class="answer-text">H. Namely,</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q30" value="J">
+                            <span class="answer-text">J. Granted,</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question31">
+                    <div class="question-number">31.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q31" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q31" value="B">
+                            <span class="answer-text">B. that which</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q31" value="C">
+                            <span class="answer-text">C. that</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q31" value="D">
+                            <span class="answer-text">D. Delete the underlined portion.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question32">
+                    <div class="question-number">32.</div>
+                    <div class="question-text">At this point, the writer is considering adding the following parenthetical phrase: (whether because of light sensitivity or the request of a donor) Given that the information is accurate, should the writer make this addition here?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q32" value="F">
+                            <span class="answer-text">F. Yes, because it gives specific examples to help explain why some objects can never be displayed in a museum.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q32" value="G">
+                            <span class="answer-text">G. Yes, because it offers specific examples of items that require special storage.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q32" value="H">
+                            <span class="answer-text">H. No, because it detracts from the paragraph's focus on the ideal museum layout.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q32" value="J">
+                            <span class="answer-text">J. No, because it diminishes the role museums play in educating the public.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question33">
+                    <div class="question-number">33.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q33" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q33" value="B">
+                            <span class="answer-text">B. can and should—</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q33" value="C">
+                            <span class="answer-text">C. can, and should</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q33" value="D">
+                            <span class="answer-text">D. can and, should</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question34">
+                    <div class="question-number">34.</div>
+                    <div class="question-text">Which choice is clearest and most precise in context?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q34" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q34" value="G">
+                            <span class="answer-text">G. Although</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q34" value="H">
+                            <span class="answer-text">H. When</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q34" value="J">
+                            <span class="answer-text">J. Since</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question35">
+                    <div class="question-number">35.</div>
+                    <div class="question-text">The writer wants to add the following sentence to the essay: This potentially compromises stewardship. For the sake of logic and cohesion, the sentence should be placed at:</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q35" value="A">
+                            <span class="answer-text">A. Point A in Paragraph 1.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q35" value="B">
+                            <span class="answer-text">B. Point B in Paragraph 2.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q35" value="C">
+                            <span class="answer-text">C. Point C in Paragraph 2.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q35" value="D">
+                            <span class="answer-text">D. Point D in Paragraph 3.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question36">
+                    <div class="question-number">36.</div>
+                    <div class="question-text">If the writer were to delete the phrase "which can measure up to thirteen feet wide and seven feet thick" from the preceding sentence (adjusting the punctuation as needed), the sentence would primarily lose:</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q36" value="F">
+                            <span class="answer-text">F. specific information that illustrates the minimum height at which the weavers begin building their nests.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q36" value="G">
+                            <span class="answer-text">G. specific information that underscores the enormousness of the weavers' nests.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q36" value="H">
+                            <span class="answer-text">H. details that clarify how the weavers are able to survive in the Kalahari Desert.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q36" value="J">
+                            <span class="answer-text">J. details that explain how the weavers' nests differ from other birds' nests.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question37">
+                    <div class="question-number">37.</div>
+                    <div class="question-text">The writer wants to emphasize the unusual appearance of the weavers' nests by using playful language to evoke a specific image. Which choice best accomplishes this goal?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q37" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q37" value="B">
+                            <span class="answer-text">B. carelessly plunked-down haystacks.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q37" value="C">
+                            <span class="answer-text">C. collections of disparate items.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q37" value="D">
+                            <span class="answer-text">D. large knots.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question38">
+                    <div class="question-number">38.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q38" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q38" value="G">
+                            <span class="answer-text">G. then squeezes</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q38" value="H">
+                            <span class="answer-text">H. squeezing</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q38" value="J">
+                            <span class="answer-text">J. to squeeze</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question39">
+                    <div class="question-number">39.</div>
+                    <div class="question-text">Which choice is least redundant in context?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q39" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q39" value="B">
+                            <span class="answer-text">B. all together, staying warm when the temperature drops and gets colder at night.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q39" value="C">
+                            <span class="answer-text">C. and stay warm when temperatures plummet at night and it's cold.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q39" value="D">
+                            <span class="answer-text">D. for warmth during the cold Kalahari nights.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question40">
+                    <div class="question-number">40.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q40" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q40" value="G">
+                            <span class="answer-text">G. when its at it's</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q40" value="H">
+                            <span class="answer-text">H. at it's</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q40" value="J">
+                            <span class="answer-text">J. at its</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question41">
+                    <div class="question-number">41.</div>
+                    <div class="question-text">Which choice best maintains the stylistic pattern of descriptions established earlier in the sentence?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q41" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q41" value="B">
+                            <span class="answer-text">B. something with a dizzying effect—</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q41" value="C">
+                            <span class="answer-text">C. mazes that she creates—</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q41" value="D">
+                            <span class="answer-text">D. so many lines—</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question42">
+                    <div class="question-number">42.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q42" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q42" value="G">
+                            <span class="answer-text">G. centuries-old</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q42" value="H">
+                            <span class="answer-text">H. centuries'-old</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q42" value="J">
+                            <span class="answer-text">J. century's-old</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question43">
+                    <div class="question-number">43.</div>
+                    <div class="question-text">The writer is considering deleting the underlined sentence. Should the sentence be kept or deleted?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q43" value="A">
+                            <span class="answer-text">A. Kept, because it compares Pang Xiong's embroidery style with that of modern paj ntaub.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q43" value="B">
+                            <span class="answer-text">B. Kept, because it places the subject of the essay in a modern context.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q43" value="C">
+                            <span class="answer-text">C. Deleted, because it detracts from the paragraph's focus on the various styles of ancient Hmong needlework arts.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q43" value="D">
+                            <span class="answer-text">D. Deleted, because it adds a detail that is irrelevant to the paragraph's introduction of Pang Xiong's connection to paj ntaub.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question44">
+                    <div class="question-number">44.</div>
+                    <div class="question-text">The best placement for the underlined portion would be:</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q44" value="F">
+                            <span class="answer-text">F. where it is now.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q44" value="G">
+                            <span class="answer-text">G. after the word made.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q44" value="H">
+                            <span class="answer-text">H. after the word clothing.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q44" value="J">
+                            <span class="answer-text">J. after the word needlework.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question45">
+                    <div class="question-number">45.</div>
+                    <div class="question-text">Which choice most clearly builds on the information provided earlier in the sentence about a common theme in paj ntaub patterns and images?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q45" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q45" value="B">
+                            <span class="answer-text">B. only a master artist is able to create paj ntaub clothing for special occasions.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q45" value="C">
+                            <span class="answer-text">C. paj ntaub patterns are extraordinarily colorful.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q45" value="D">
+                            <span class="answer-text">D. paj ntaub celebrates the natural world.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question46">
+                    <div class="question-number">46.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q46" value="F">
+                            <span class="answer-text">F. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q46" value="G">
+                            <span class="answer-text">G. appliqué which</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q46" value="H">
+                            <span class="answer-text">H. appliqué and</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q46" value="J">
+                            <span class="answer-text">J. appliqué,</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question47">
+                    <div class="question-number">47.</div>
+                    <div class="question-text">Which choice makes the sentence most grammatically acceptable?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q47" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q47" value="B">
+                            <span class="answer-text">B. the surface of the fabric.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q47" value="C">
+                            <span class="answer-text">C. the surface of it.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q47" value="D">
+                            <span class="answer-text">D. their surface.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question48">
+                    <div class="question-number">48.</div>
+                    <div class="question-text">The writer is considering revising the underlined portion to the following: mass-produced. Should the writer make this revision?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q48" value="F">
+                            <span class="answer-text">F. Yes, because the revision creates a clearer contrast between the homogeneous styles of clothing that are popular today and the handcrafted paj ntaub.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q48" value="G">
+                            <span class="answer-text">G. Yes, because the revision emphasizes Pang Xiong's desire for her handcrafted paj ntaub to be sold on a large scale in stores.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q48" value="H">
+                            <span class="answer-text">H. No, because the original word reinforces the idea that although paj ntaub clothing can be used for everyday wear, it should be saved for special occasions.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q48" value="J">
+                            <span class="answer-text">J. No, because the original word more specifically describes the type of clothing Pang Xiong disapproves of.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question49">
+                    <div class="question-number">49.</div>
+                    <div class="question-text">Which transition word or phrase, if any, is most logical in context?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q49" value="A">
+                            <span class="answer-text">A. NO CHANGE</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q49" value="B">
+                            <span class="answer-text">B. For example, she</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q49" value="C">
+                            <span class="answer-text">C. Besides, she</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q49" value="D">
+                            <span class="answer-text">D. She</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question" id="question50">
+                    <div class="question-number">50.</div>
+                    <div class="question-text">Which of the following true statements, if added here, would best build on the ideas presented in this paragraph and connect to the final sentence of the essay?</div>
+                    <div class="answer-choices">
+                        <label class="answer-choice">
+                            <input type="radio" name="q50" value="F">
+                            <span class="answer-text">F. She loves when people, no matter what their ethnicity, wear traditional clothing every day.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q50" value="G">
+                            <span class="answer-text">G. She often teaches paj ntaub to Hmong adults her age who want to learn new techniques.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q50" value="H">
+                            <span class="answer-text">H. Recently, she worked with nine young Hmong women in a formal apprenticeship.</span>
+                        </label>
+                        <label class="answer-choice">
+                            <input type="radio" name="q50" value="J">
+                            <span class="answer-text">J. One of her own favorite pieces tells the story of her family.</span>
+                        </label>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="btn btn-secondary" onclick="goBack()">← Back to Home</button>
+            <div class="progress-indicator">Question <span id="currentQuestionNum">1</span> of 50</div>
+            <div class="btn-group">
+                <button class="btn btn-danger" onclick="submitTest()">Submit Test</button>
+                <button class="btn" onclick="nextQuestion()" id="nextBtn">Next Question →</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        let answers = {};
+        let timeRemaining = 35 * 60;
+        let questionStartTime = Date.now();
+        let timeSpentPerQuestion = {};
+        let flaggedQuestions = new Set();
+        let currentPassage = 1;
+        
+
+        // Question chapter mapping (15 English chapters only)
+        const questionChapters = {
+            1: 'sentence-structure', 2: 'commas', 3: 'word-choice', 4: 'transitions', 5: 'pronouns',
+            6: 'word-choice', 7: 'redundancy', 8: 'modifiers', 9: 'verbs', 10: 'word-choice',
+            11: 'punctuation', 12: 'sentence-structure', 13: 'word-choice', 14: 'transitions', 15: 'which-choice',
+            16: 'commas', 17: 'redundancy', 18: 'adding-deleting', 19: 'redundancy', 20: 'transitions',
+            21: 'verbs', 22: 'pronouns', 23: 'transitions', 24: 'adding-deleting', 25: 'logical-placement',
+            26: 'adding-deleting', 27: 'word-choice', 28: 'word-choice', 29: 'pronouns', 30: 'transitions',
+            31: 'pronouns', 32: 'adding-deleting', 33: 'verbs', 34: 'word-choice', 35: 'logical-placement',
+            36: 'adding-deleting', 37: 'word-choice', 38: 'sentence-structure', 39: 'redundancy', 40: 'pronouns',
+            41: 'parallel-structure', 42: 'punctuation', 43: 'adding-deleting', 44: 'logical-placement', 45: 'which-choice',
+            46: 'punctuation', 47: 'pronouns', 48: 'word-choice', 49: 'transitions', 50: 'adding-deleting'
+        };
+
+        // Question to passage mapping
+        const questionPassages = {
+            1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1,
+            11: 2, 12: 2, 13: 2, 14: 2, 15: 2,
+            16: 3, 17: 3, 18: 3, 19: 3, 20: 3, 21: 3, 22: 3, 23: 3, 24: 3, 25: 3,
+            26: 4, 27: 4, 28: 4, 29: 4, 30: 4, 31: 4, 32: 4, 33: 4, 34: 4, 35: 4,
+            36: 5, 37: 5, 38: 5, 39: 5, 40: 5,
+            41: 6, 42: 6, 43: 6, 44: 6, 45: 6, 46: 6, 47: 6, 48: 6, 49: 6, 50: 6
+        };
+
+        // Timer functionality
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer').textContent = 
+                `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeRemaining > 0) {
+                timeRemaining--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                alert('Time is up!');
+                submitTest();
+            }
+        }
+
+        function recordQuestionTime(questionNum) {
+            const timeSpent = Date.now() - questionStartTime;
+            timeSpentPerQuestion[`q${questionNum}`] = timeSpent;
+            questionStartTime = Date.now();
+        }
+
+        function toggleNavigator() {
+            const navigator = document.getElementById('questionNavigator');
+            const overlay = document.getElementById('navigatorOverlay');
+            const toggleBtn = document.getElementById('navigatorToggle');
+            
+            if (navigator.style.display === 'none' || navigator.style.display === '') {
+                navigator.style.display = 'grid';
+                overlay.classList.add('active');
+                toggleBtn.textContent = 'Hide Grid';
+            } else {
+                navigator.style.display = 'none';
+                overlay.classList.remove('active');
+                toggleBtn.textContent = 'Show Grid';
+            }
+        }
+
+        function highlightQuestion(questionNum) {
+            recordQuestionTime(currentQuestion);
+            
+            const targetPassage = questionPassages[questionNum];
+            if (targetPassage && targetPassage !== currentPassage) {
+                switchPassage(targetPassage);
+            }
+            
+            // Clear all active states
+            document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+            document.querySelectorAll('.nav-question').forEach(btn => btn.classList.remove('active'));
+            
+            // Set new active states
+            const targetQuestion = document.getElementById(`question${questionNum}`);
+            const targetNavButton = document.querySelector(`.nav-question[data-question="${questionNum}"]`);
+            
+            if (targetQuestion) {
+                targetQuestion.classList.add('active');
+            }
+            
+            if (targetNavButton) {
+                targetNavButton.classList.add('active');
+            }
+            
+            currentQuestion = parseInt(questionNum);
+            
+            document.getElementById('currentQuestionNum').textContent = currentQuestion;
+            document.getElementById('currentQuestionTitle').innerHTML = `Question ${currentQuestion}
+                <button class="flag-btn ${flaggedQuestions.has(currentQuestion) ? 'flagged' : ''}" onclick="toggleFlag()" id="flagBtn">
+                    <span class="flag-icon">${flaggedQuestions.has(currentQuestion) ? '🚩' : '🏳️'}</span>
+                    ${flaggedQuestions.has(currentQuestion) ? 'Unflag' : 'Flag'}
+                </button>`;
+            
+            const nextBtn = document.getElementById('nextBtn');
+            if (currentQuestion === 50) {
+                nextBtn.textContent = 'Submit Test';
+                nextBtn.onclick = submitTest;
+            } else {
+                nextBtn.textContent = 'Next Question →';
+                nextBtn.onclick = nextQuestion;
+            }
+        }
+
+        function switchPassage(passageNum) {
+            document.querySelectorAll('.passage-content').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.passage-btn').forEach(btn => btn.classList.remove('active'));
+            
+            const targetPassage = document.getElementById(`passage${passageNum}`);
+            const targetButton = document.querySelector(`[data-passage="${passageNum}"]`);
+            
+            if (targetPassage && targetButton) {
+                targetPassage.classList.add('active');
+                targetButton.classList.add('active');
+                currentPassage = passageNum;
+            }
+        }
+
+        function jumpToQuestion(questionNum) {
+            highlightQuestion(questionNum);
+            // Close navigator after selection
+            toggleNavigator();
+        }
+
+        function toggleFlag() {
+            if (flaggedQuestions.has(currentQuestion)) {
+                flaggedQuestions.delete(currentQuestion);
+            } else {
+                flaggedQuestions.add(currentQuestion);
+            }
+            
+            const navButton = document.querySelector(`.nav-question[data-question="${currentQuestion}"]`);
+            const flagBtn = document.getElementById('flagBtn');
+            
+            if (flaggedQuestions.has(currentQuestion)) {
+                if (navButton) navButton.classList.add('flagged');
+                if (flagBtn) {
+                    flagBtn.innerHTML = '<span class="flag-icon">🚩</span>Unflag';
+                    flagBtn.classList.add('flagged');
+                }
+            } else {
+                if (navButton) navButton.classList.remove('flagged');
+                if (flagBtn) {
+                    flagBtn.innerHTML = '<span class="flag-icon">🏳️</span>Flag';
+                    flagBtn.classList.remove('flagged');
+                }
+            }
+        }
+
+        function nextQuestion() {
+            recordQuestionTime(currentQuestion);
+            
+            if (currentQuestion < 50) {
+                highlightQuestion(currentQuestion + 1);
+            } else {
+                submitTest();
+            }
+        }
+
+        function goBack() {
+            if (confirm('Are you sure you want to leave the test? Your progress will be lost.')) {
+                window.location.href = 'index.html';
+            }
+        }
+
+        function updateAnsweredStatus() {
+            // First, remove answered class from all buttons
+            document.querySelectorAll('.nav-question').forEach(btn => {
+                btn.classList.remove('answered');
+            });
+            
+            // Then add answered class to all questions that have been answered
+            Object.keys(answers).forEach(questionKey => {
+                const questionNum = questionKey.replace('q', '');
+                const navButton = document.querySelector(`.nav-question[data-question="${questionNum}"]`);
+                if (navButton) {
+                    navButton.classList.add('answered');
+                }
+            });
+        }
+
+        function submitTest() {
+            recordQuestionTime(currentQuestion);
+            
+            const analytics = calculateAnalytics();
+            
+            const testResults = {
+                answers: answers,
+                timeSpentPerQuestion: timeSpentPerQuestion,
+                analytics: analytics,
+                completedAt: new Date().toISOString(),
+                totalTimeSpent: Object.values(timeSpentPerQuestion).reduce((a, b) => a + b, 0)
+            };
+            
+            localStorage.setItem('diagnosticTestResults', JSON.stringify(testResults));
+            
+            // Redirect to results page
+            window.location.href = 'test-results.html';
+        }
+
+        function calculateAnalytics() {
+            const analytics = {
+                chapterPerformance: {},
+                totalQuestions: Object.keys(answers).length,
+                averageTimePerQuestion: 0
+            };
+            
+            Object.values(answers).forEach(answerData => {
+                if (!analytics.chapterPerformance[answerData.chapter]) {
+                    analytics.chapterPerformance[answerData.chapter] = {
+                        questionsAnswered: 0,
+                        totalTime: 0,
+                        averageTime: 0
+                    };
+                }
+                
+                analytics.chapterPerformance[answerData.chapter].questionsAnswered++;
+                analytics.chapterPerformance[answerData.chapter].totalTime += answerData.timeSpent;
+            });
+            
+            Object.keys(analytics.chapterPerformance).forEach(chapter => {
+                const chapterData = analytics.chapterPerformance[chapter];
+                chapterData.averageTime = chapterData.totalTime / chapterData.questionsAnswered;
+            });
+            
+            const totalTime = Object.values(timeSpentPerQuestion).reduce((a, b) => a + b, 0);
+            analytics.averageTimePerQuestion = totalTime / Object.keys(timeSpentPerQuestion).length;
+            
+            return analytics;
+        }
+
+        // Handle answer selection
+        document.addEventListener('change', function(e) {
+            if (e.target.type === 'radio') {
+                const questionDiv = e.target.closest('.question');
+                questionDiv.querySelectorAll('.answer-choice').forEach(choice => {
+                    choice.classList.remove('selected');
+                });
+                
+                e.target.closest('.answer-choice').classList.add('selected');
+                
+                const questionNum = e.target.name.replace('q', '');
+                answers[e.target.name] = {
+                    answer: e.target.value,
+                    chapter: questionChapters[parseInt(questionNum)],
+                    timeSpent: timeSpentPerQuestion[`q${questionNum}`] || 0
+                };
+                
+                updateAnsweredStatus();
+            }
+        });
+
+        // Handle underlined text clicks
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('underlined')) {
+                const questionNum = e.target.getAttribute('data-question');
+                if (questionNum) {
+                    highlightQuestion(parseInt(questionNum));
+                }
+            }
+        });
+
+        // Start timer
+        updateTimer();
+        
+        // Initialize time tracking
+        questionStartTime = Date.now();
+    </script>
+</body>
+</html>

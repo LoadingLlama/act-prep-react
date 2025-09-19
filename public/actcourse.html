@@ -1,0 +1,1834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACT Prep</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 2rem 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .nav-container {
+            padding: 0 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .nav-tabs {
+            display: flex;
+            border-bottom: 1px solid #e5e5e5;
+            justify-content: center;
+            position: relative;
+        }
+
+        .tab {
+            background: none;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            font-weight: 400;
+        }
+
+        .tab:hover {
+            color: #1a1a1a;
+        }
+
+        .tab.active {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .tab-indicator {
+            position: absolute;
+            bottom: -1px;
+            height: 2px;
+            background-color: #1a1a1a;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 1px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 0 2rem 2rem;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .card:hover {
+            border-color: #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transform: translateY(-1px);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: #1a1a1a;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .btn {
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #1a1a1a;
+            border: 1px solid #e0e0e0;
+        }
+
+        .btn-secondary:hover {
+            background: #f8f8f8;
+            border-color: #d0d0d0;
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .lessons-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .lesson-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border: 1px solid #f0f0f0;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            background: #ffffff;
+            cursor: pointer;
+        }
+
+        .lesson-item:hover {
+            border-color: #e0e0e0;
+            background: #fafafa;
+        }
+
+        .lesson-info h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            color: #1a1a1a;
+        }
+
+        .lesson-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .lesson-status {
+            font-size: 0.85rem;
+            color: #666;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            background: #f5f5f5;
+        }
+
+        .completed {
+            background: #e8f5e8;
+            color: #2d5a2d;
+        }
+
+        .in-progress {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .section-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .section-filter {
+            background: transparent;
+            border: 1px solid #e0e0e0;
+            color: #666;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .section-filter:hover {
+            border-color: #d0d0d0;
+            color: #1a1a1a;
+        }
+
+        .section-filter.active {
+            background: #1a1a1a;
+            color: white;
+            border-color: #1a1a1a;
+        }
+
+        .section-header {
+            grid-column: 1 / -1;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .section-header h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin: 0;
+        }
+
+        .lesson-item.hidden {
+            display: none;
+        }
+
+        .section-header.hidden {
+            display: none;
+        }
+
+        /* Lesson Modal Styles */
+        .lesson-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .lesson-modal.active {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .lesson-content {
+            background: white;
+            border-radius: 8px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            margin: 2rem auto;
+        }
+
+        .lesson-header {
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+        }
+
+        .lesson-header h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .lesson-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            padding: 0.5rem;
+        }
+
+        .lesson-close:hover {
+            color: #1a1a1a;
+        }
+
+        .lesson-body {
+            padding: 2rem;
+            line-height: 1.7;
+        }
+
+        .lesson-body h3 {
+            margin: 2rem 0 1rem;
+            color: #1a1a1a;
+            font-size: 1.3rem;
+        }
+
+        .lesson-body p {
+            margin-bottom: 1rem;
+        }
+
+        .lesson-body ul, .lesson-body ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .lesson-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        .lesson-footer {
+            padding: 1rem 2rem 2rem;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Enhanced lesson content styling */
+        .lesson-intro {
+            font-size: 1.1rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-left: 4px solid #1a1a1a;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .concept-box {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .concept-box h4 {
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .tip-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .tip-box h4 {
+            color: #856404;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .example-box {
+            background: #e8f5e8;
+            border: 1px solid #28a745;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .correction-box {
+            background: #f0f8ff;
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .rules-box {
+            background: #fff;
+            border: 2px solid #1a1a1a;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .rules-box h4 {
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .practice-box {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .practice-box h4 {
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .key-takeaway {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .key-takeaway h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .clause-label {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .fanboys-tip {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .fanboys-tip h4 {
+            color: #1976d2;
+            margin-bottom: 1rem;
+        }
+
+        .fanboys-tip ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 0;
+        }
+
+        .fanboys-tip li {
+            background: #1976d2;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .lesson-nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-back {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-back:hover {
+            background: #5a6268;
+        }
+
+        .btn-complete {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-complete:hover {
+            background: #218838;
+        }
+        /* Enhanced Button Styles */
+        .btn {
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-icon {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            margin-right: 0.5rem;
+        }
+
+        .btn-back:hover .btn-icon {
+            transform: translateX(-3px);
+        }
+
+        /* Lesson Status Controls */
+        .lesson-status-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .status-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-status {
+            background: #f8f9fa;
+            color: #666;
+            border: 2px solid #e9ecef;
+            padding: 0.75rem 1.25rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(1);
+        }
+
+        .btn-status:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .btn-status.active {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-status[data-status="not-started"] {
+            background: #f8f9fa;
+            border-color: #dee2e6;
+            color: #6c757d;
+        }
+
+        .btn-status[data-status="not-started"].active {
+            background: #e9ecef;
+            border-color: #adb5bd;
+            color: #495057;
+        }
+
+        .btn-status[data-status="in-progress"] {
+            background: #fff3cd;
+            border-color: #ffc107;
+            color: #856404;
+        }
+
+        .btn-status[data-status="in-progress"].active {
+            background: #ffc107;
+            border-color: #e0a800;
+            color: #fff;
+        }
+
+        .btn-status[data-status="completed"] {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+
+        .btn-status[data-status="completed"].active {
+            background: #28a745;
+            border-color: #1e7e34;
+            color: #fff;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: currentColor;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .btn-status.active .status-dot {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        /* Premium Transitions */
+        .lesson-modal {
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .lesson-modal.active {
+            animation: modalSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .lesson-content {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .lesson-footer {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        /* Mobile Responsive Updates */
+        @media (max-width: 768px) {
+            .status-buttons {
+                flex-direction: column;
+            }
+            
+            .btn-status {
+                justify-content: center;
+            }
+            
+            .lesson-footer {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            header {
+                padding: 1rem 0;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .nav-container {
+                padding: 0;
+            }
+            
+            .tab {
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .content {
+                padding: 0 0 2rem;
+            }
+            
+            .test-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lesson-modal {
+                padding: 1rem;
+            }
+
+            .lesson-content {
+                margin: 1rem auto;
+            }
+
+            .lesson-footer {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .lesson-nav-buttons {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">ACT Prep</h1>
+            <p class="subtitle">Master the ACT with focused practice and lessons</p>
+        </header>
+
+        <!-- Navigation -->
+        <div class="nav-container">
+            <div class="nav-tabs">
+                <button class="tab active" data-tab="tests">Tests</button>
+                <button class="tab" data-tab="lessons">Lessons</button>
+                <div class="tab-indicator"></div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Tests Tab -->
+            <div id="tests" class="tab-content active">
+                <div class="content-section">
+                    <h2 class="section-title">Practice Tests</h2>
+                    <div class="test-grid">
+                        <div class="card">
+                            <h3>Diagnostic Test</h3>
+                            <p>Take this first to understand your current level and identify areas for improvement.</p>
+                            <a href="diagnostic-test.html" class="btn">Start Diagnostic</a>
+                        </div>
+                        <div class="card">
+                            <h3>Full Practice Test 1</h3>
+                            <p>Complete 4-section ACT practice test with detailed explanations and scoring.</p>
+                            <button class="btn">Start Test</button>
+                        </div>
+                        <div class="card">
+                            <h3>English Section Practice</h3>
+                            <p>Focus on grammar, punctuation, and rhetorical skills with targeted questions.</p>
+                            <button class="btn">Start Practice</button>
+                        </div>
+                        <div class="card">
+                            <h3>Math Section Practice</h3>
+                            <p>Algebra, geometry, and trigonometry problems with step-by-step solutions.</p>
+                            <button class="btn">Start Practice</button>
+                        </div>
+                        <div class="card">
+                            <h3>Reading Section Practice</h3>
+                            <p>Improve comprehension and analysis skills with timed reading passages.</p>
+                            <button class="btn">Start Practice</button>
+                        </div>
+                        <div class="card">
+                            <h3>Science Section Practice</h3>
+                            <p>Data interpretation and scientific reasoning practice questions.</p>
+                            <button class="btn">Start Practice</button>
+                        </div>
+                        <div class="card">
+                            <h3>Full Practice Test 2</h3>
+                            <p>Additional complete practice test to track your improvement over time.</p>
+                            <button class="btn">Start Test</button>
+                        </div>
+                        <div class="card">
+                            <h3>Full Practice Test 3</h3>
+                            <p>Continue building test-taking stamina and refining your strategies.</p>
+                            <button class="btn">Start Test</button>
+                        </div>
+                        <div class="card">
+                            <h3>Full Practice Test 4</h3>
+                            <p>Final practice test to ensure you're ready for test day.</p>
+                            <button class="btn">Start Test</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lessons Tab -->
+            <div id="lessons" class="tab-content">
+                <div class="content-section">
+                    <h2 class="section-title">Study Lessons</h2>
+                    
+                    <!-- Section Filters -->
+                    <div class="section-filters">
+                        <button class="section-filter active" data-section="all">All Sections</button>
+                        <button class="section-filter" data-section="english">English</button>
+                        <button class="section-filter" data-section="math">Math</button>
+                        <button class="section-filter" data-section="reading">Reading</button>
+                        <button class="section-filter" data-section="science">Science</button>
+                    </div>
+
+                    <div class="lessons-grid">
+                        <!-- Introduction -->
+                        <div class="lesson-item" data-section="all" onclick="openLesson('getting-started')">
+                            <div class="lesson-info">
+                                <h4>Getting Started with the ACT</h4>
+                                <p>Test format, timing, and scoring overview</p>
+                            </div>
+                            <span class="lesson-status completed">Completed</span>
+                        </div>
+
+                        <!-- English Section -->
+                        <div class="section-header" data-section="english">
+                            <h3>English Section</h3>
+                        </div>
+
+                        <div class="lesson-item" data-section="english" onclick="openLesson('sentence-structure')">
+                            <div class="lesson-info">
+                                <h4>Chapter 1: Sentence Structure</h4>
+                                <p>Independent clauses, dependent clauses, compound sentences, and comma splices</p>
+                            </div>
+                            <span class="lesson-status completed">Completed</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="english" onclick="openLesson('commas')">
+                            <div class="lesson-info">
+                                <h4>Chapter 2: Commas - 4 Types</h4>
+                                <p>Unnecessary information, names rule, listing commas, and adjective lists</p>
+                            </div>
+                            <span class="lesson-status completed">Completed</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="english" onclick="openLesson('punctuation')">
+                            <div class="lesson-info">
+                                <h4>Chapter 3: Other Punctuation</h4>
+                                <p>Semicolons, colons, dashes, apostrophes, and quotation marks</p>
+                            </div>
+                            <span class="lesson-status in-progress">In Progress</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="english" onclick="openLesson('verbs')">
+                            <div class="lesson-info">
+                                <h4>Chapter 4: Verbs</h4>
+                                <p>Subject-verb agreement, verb tense, and irregular verbs</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="english" onclick="openLesson('pronouns')">
+                            <div class="lesson-info">
+                                <h4>Chapter 5: Pronouns</h4>
+                                <p>Pronoun case, who vs. whom, pronoun agreement, and ambiguous pronouns</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="english" onclick="openLesson('modifiers')">
+                            <div class="lesson-info">
+                                <h4>Chapter 6: Misplaced Modifiers</h4>
+                                <p>Identifying and correcting misplaced modifiers in sentences</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="english" onclick="openLesson('parallel-structure')">
+                            <div class="lesson-info">
+                                <h4>Chapter 7: Parallel Structure</h4>
+                                <p>Parallel structure in lists and comparisons</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="english" onclick="openLesson('misc-topics')">
+                            <div class="lesson-info">
+                                <h4>Chapter 8: Miscellaneous Topics</h4>
+                                <p>Commonly confused words, active vs. passive voice, and prepositional idioms</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="english" onclick="openLesson('grammar-review')">
+                            <div class="lesson-info">
+                                <h4>Chapter 9: Grammar Review</h4>
+                                <p>Comprehensive review of all grammar concepts</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="english" onclick="openLesson('redundancy')">
+                            <div class="lesson-info">
+                                <h4>Chapter 10: Redundancy & Wordiness</h4>
+                                <p>Identifying and eliminating redundant and wordy expressions</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="english" onclick="openLesson('word-choice')">
+                            <div class="lesson-info">
+                                <h4>Chapter 11: Word Choice</h4>
+                                <p>Selecting the clearest and most precise words in context</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="english" onclick="openLesson('transitions')">
+                            <div class="lesson-info">
+                                <h4>Chapter 12: Transitions</h4>
+                                <p>Choosing logical transitions between sentences and paragraphs</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="english" onclick="openLesson('which-choice')">
+                            <div class="lesson-info">
+                                <h4>Chapter 13: Which Choice Questions</h4>
+                                <p>Answering specific "which choice" questions about content</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="english" onclick="openLesson('adding-deleting')">
+                            <div class="lesson-info">
+                                <h4>Chapter 14: Adding or Deleting Information</h4>
+                                <p>Determining when to add or delete information from passages</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="english" onclick="openLesson('logical-placement')">
+                            <div class="lesson-info">
+                                <h4>Chapter 15: Logical Placement</h4>
+                                <p>Placing sentences in the most logical order within paragraphs</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                       <!-- Math Section -->
+                        <div class="section-header" data-section="math">
+                            <h3>Math Section - Most Common Topics</h3>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('backsolving')">
+                            <div class="lesson-info">
+                                <h4>Chapter 1: Backsolving</h4>
+                                <p>Powerful test-taking trick for working backwards from answer choices</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('substitution')">
+                            <div class="lesson-info">
+                                <h4>Chapter 2: Substitution</h4>
+                                <p>Test-taking strategy for plugging in values</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('geometry-angles')">
+                            <div class="lesson-info">
+                                <h4>Chapter 3: Geometry Part 1 - Angles</h4>
+                                <p>Intersecting lines, parallel lines, interior angles</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('geometry-shapes')">
+                            <div class="lesson-info">
+                                <h4>Chapter 4: Geometry Part 2 - Shapes</h4>
+                                <p>Area, volume, right triangles, special triangles</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('lines')">
+                            <div class="lesson-info">
+                                <h4>Chapter 5: Lines</h4>
+                                <p>Slope, equations of lines, midpoint, distance formulas</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('fractions')">
+                            <div class="lesson-info">
+                                <h4>Chapter 6: Fractions</h4>
+                                <p>Operations with fractions and calculator techniques</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('algebra-skills')">
+                            <div class="lesson-info">
+                                <h4>Chapter 7: Algebra Skills</h4>
+                                <p>PEMDAS, negative numbers, combining terms</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('number-theory')">
+                            <div class="lesson-info">
+                                <h4>Chapter 8: Number Theory</h4>
+                                <p>Types of numbers, GCD, LCM, solution types</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('percentages')">
+                            <div class="lesson-info">
+                                <h4>Chapter 9: Percentages</h4>
+                                <p>Percentage calculations, increase/decrease</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('ratios-proportions')">
+                            <div class="lesson-info">
+                                <h4>Chapter 10: Ratios and Proportions</h4>
+                                <p>Ratio problems, proportions, direct/indirect variation</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('functions')">
+                            <div class="lesson-info">
+                                <h4>Chapter 11: Functions</h4>
+                                <p>Function notation, composition, domain, range</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('statistics-basics')">
+                            <div class="lesson-info">
+                                <h4>Chapter 12: Mean, Median, Mode, and Range</h4>
+                                <p>Basic statistics and weighted averages</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('exponents-roots')">
+                            <div class="lesson-info">
+                                <h4>Chapter 13: Exponents and Roots</h4>
+                                <p>Exponent rules and simplifying radicals</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="section-header" data-section="math">
+                            <h3>Math Section - Common Topics</h3>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('logarithms')">
+                            <div class="lesson-info">
+                                <h4>Chapter 14: Logarithms</h4>
+                                <p>Logarithm basics and change of base rule</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('systems-equations')">
+                            <div class="lesson-info">
+                                <h4>Chapter 15: Systems of Equations</h4>
+                                <p>Elimination, substitution, word problems</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('quadratics')">
+                            <div class="lesson-info">
+                                <h4>Chapter 16: Quadratics</h4>
+                                <p>Factoring, quadratic formula, vertex form</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('trigonometry')">
+                            <div class="lesson-info">
+                                <h4>Chapter 17: Trigonometry</h4>
+                                <p>SOH-CAH-TOA, unit circle, trig functions</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="section-header" data-section="math">
+                            <h3>Math Section - Sometimes Tested</h3>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('absolute-value')">
+                            <div class="lesson-info">
+                                <h4>Chapter 18: Absolute Value</h4>
+                                <p>Absolute value equations and inequalities</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('matrices')">
+                            <div class="lesson-info">
+                                <h4>Chapter 19: Matrices</h4>
+                                <p>Matrix operations and determinants</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('repeating-patterns')">
+                            <div class="lesson-info">
+                                <h4>Chapter 20: Repeating Patterns</h4>
+                                <p>Patterns in decimals and powers</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('circles-ellipses')">
+                            <div class="lesson-info">
+                                <h4>Chapter 21: Circles, Ellipses, and Hyperbolas</h4>
+                                <p>Conic sections and their equations</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('probability')">
+                            <div class="lesson-info">
+                                <h4>Chapter 22: Probability</h4>
+                                <p>Basic probability rules and calculations</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('permutations-combinations')">
+                            <div class="lesson-info">
+                                <h4>Chapter 23: Permutations, Combinations, and Organized Counting</h4>
+                                <p>Counting principles and arrangements</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('sequences')">
+                            <div class="lesson-info">
+                                <h4>Chapter 24: Sequences</h4>
+                                <p>Arithmetic and geometric sequences</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('complex-numbers')">
+                            <div class="lesson-info">
+                                <h4>Chapter 25: Complex Numbers</h4>
+                                <p>Operations with imaginary numbers</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('word-problems')">
+                            <div class="lesson-info">
+                                <h4>Chapter 26: Word Problems</h4>
+                                <p>Strategies for solving word problems</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('inequalities')">
+                            <div class="lesson-info">
+                                <h4>Chapter 27: Inequalities</h4>
+                                <p>Solving and graphing inequalities</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('exponential-growth')">
+                            <div class="lesson-info">
+                                <h4>Chapter 28: Exponential Growth and Decay</h4>
+                                <p>Exponential functions and applications</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="section-header" data-section="math">
+                            <h3>Math Section - Rarely Tested</h3>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('unit-conversion')">
+                            <div class="lesson-info">
+                                <h4>Chapter 29: Unit Conversion</h4>
+                                <p>Converting units and dimensional analysis</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('scientific-notation')">
+                            <div class="lesson-info">
+                                <h4>Chapter 30: Scientific Notation</h4>
+                                <p>Working with very large and small numbers</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('arcs-sectors')">
+                            <div class="lesson-info">
+                                <h4>Chapter 31: Arcs and Sectors</h4>
+                                <p>Circle arc lengths and sector areas</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('vectors')">
+                            <div class="lesson-info">
+                                <h4>Chapter 32: Vectors</h4>
+                                <p>Vector operations and components</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('transforming-functions')">
+                            <div class="lesson-info">
+                                <h4>Chapter 33: Shifting and Transforming Functions</h4>
+                                <p>Function transformations and translations</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('statistics-advanced')">
+                            <div class="lesson-info">
+                                <h4>Chapter 34: Statistics</h4>
+                                <p>Standard deviation, distributions, data analysis</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                        <div class="lesson-item" data-section="math" onclick="openLesson('miscellaneous-topics')">
+                            <div class="lesson-info">
+                                <h4>Chapter 35: Miscellaneous Topics</h4>
+                                <p>Venn diagrams, logic, patterns, advanced topics</p>
+                            </div>
+                            <span class="lesson-status">Not Started</span>
+                        </div>
+
+                      <!-- Reading Section -->
+                      <div class="section-header" data-section="reading">
+                        <h3>Reading Section</h3>
+                    </div>
+
+                    <div class="lesson-item" data-section="reading" onclick="openLesson('reading-intro')">
+                        <div class="lesson-info">
+                            <h4>Introduction to the Reading Test</h4>
+                            <p>What is on the ACT Reading Test and what you'll learn in this course</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="reading" onclick="openLesson('core-principles')">
+                        <div class="lesson-info">
+                            <h4>Chapter 1: 7 Core Principles for ACT Reading</h4>
+                            <p>Essential principles to understand the difference between correct and incorrect answers</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="reading" onclick="openLesson('finding-correct-answer')">
+                        <div class="lesson-info">
+                            <h4>Chapter 2: 3 Strategies for Finding the Correct Answer</h4>
+                            <p>Put your finger on evidence, read like a lawyer, and eliminate incorrect choices</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="reading" onclick="openLesson('reading-approaches')">
+                        <div class="lesson-info">
+                            <h4>Chapter 3: How to Approach the Reading Test</h4>
+                            <p>Finding the right approach for you: 6 different methods to tackle ACT Reading</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="reading" onclick="openLesson('pacing-time-management')">
+                        <div class="lesson-info">
+                            <h4>Chapter 4: Pacing and 10 Time Management Skills</h4>
+                            <p>Master timing and learn essential skills to finish all 4 passages</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="reading" onclick="openLesson('question-types')">
+                        <div class="lesson-info">
+                            <h4>Chapter 5: How to Spot and Approach the 7 Most Common Types of Questions</h4>
+                            <p>Broad passage, clear evidence, inference, purpose, main idea, words in context, and comparing passages</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="reading" onclick="openLesson('breaking-down-questions')">
+                        <div class="lesson-info">
+                            <h4>Chapter 6: Breaking Down Questions</h4>
+                            <p>How to identify exactly what the ACT is asking you</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="reading" onclick="openLesson('answer-choices')">
+                        <div class="lesson-info">
+                            <h4>Chapter 7: How to Approach the Answer Choices</h4>
+                            <p>When to read answer choices and how to use them effectively</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="reading" onclick="openLesson('correct-vs-incorrect')">
+                        <div class="lesson-info">
+                            <h4>Chapter 8: Correct vs. Incorrect Answer Choices</h4>
+                            <p>5 common types of incorrect answers and how to effectively find the correct answer</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="reading" onclick="openLesson('words-in-context')">
+                        <div class="lesson-info">
+                            <h4>Chapter 9: Words in Context Questions</h4>
+                            <p>How to approach vocabulary questions and determine meaning from context</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="reading" onclick="openLesson('comparing-passages')">
+                        <div class="lesson-info">
+                            <h4>Chapter 10: Tips for Comparing Passages Questions</h4>
+                            <p>Strategies for dual text passages and comparing passage questions</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="reading" onclick="openLesson('working-backwards')">
+                        <div class="lesson-info">
+                            <h4>Chapter 11: Working Backwards</h4>
+                            <p>Advanced strategy for going straight to questions without reading the passage first</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="reading" onclick="openLesson('maximizing-score')">
+                        <div class="lesson-info">
+                            <h4>Chapter 12: 7 Tips to Maximize Your Reading Score</h4>
+                            <p>Essential tips including time management, answer patterns, and practice strategies</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="reading" onclick="openLesson('practice-passages')">
+                        <div class="lesson-info">
+                            <h4>Chapter 13: Practice Passages</h4>
+                            <p>8 full practice passages with detailed explanations to apply your skills</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                       <!-- Science Section -->
+                       <div class="section-header" data-section="science">
+                        <h3>Science Section - Introduction</h3>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('science-introduction')">
+                        <div class="lesson-info">
+                            <h4>Introduction to Science Test</h4>
+                            <p>Test format, timing, and question types overview</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('passage-approach')">
+                        <div class="lesson-info">
+                            <h4>Chapter 1: How to Approach the Passages</h4>
+                            <p>Charts & graphs strategies, conflicting viewpoints approach, and general tips</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('question-diagnosis')">
+                        <div class="lesson-info">
+                            <h4>Question Diagnosis</h4>
+                            <p>Where to look for information in science passages</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="section-header" data-section="science">
+                        <h3>Science Section - Figures & Tables Question Types</h3>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('specific-data-point')">
+                        <div class="lesson-info">
+                            <h4>Specific Data Point Questions</h4>
+                            <p>Finding exact values from charts, graphs, and tables</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('trends')">
+                        <div class="lesson-info">
+                            <h4>Trends Questions</h4>
+                            <p>Identifying patterns and trends in charts, graphs, and tables</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('approximation')">
+                        <div class="lesson-info">
+                            <h4>Approximation Questions</h4>
+                            <p>Estimating values between or outside given data points</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('multiple-figures')">
+                        <div class="lesson-info">
+                            <h4>Multiple Figures Questions</h4>
+                            <p>Using information from multiple charts, graphs, or tables</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('figures-text')">
+                        <div class="lesson-info">
+                            <h4>Figures + Text Questions</h4>
+                            <p>Combining information from figures and experimental descriptions</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="section-header" data-section="science">
+                        <h3>Science Section - Advanced Question Types</h3>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('two-part-answers')">
+                        <div class="lesson-info">
+                            <h4>2-Part Answers</h4>
+                            <p>Questions with claims and supporting evidence in answer choices</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('cannot-be-determined')">
+                        <div class="lesson-info">
+                            <h4>Cannot Be Determined</h4>
+                            <p>Recognizing when information is not provided in the passage</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('equations-as-answers')">
+                        <div class="lesson-info">
+                            <h4>Equations as Answers</h4>
+                            <p>Identifying which equation correctly models experimental data</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('mixing')">
+                        <div class="lesson-info">
+                            <h4>Mixing</h4>
+                            <p>Predicting results when combining solutions or substances</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('scatter-plots')">
+                        <div class="lesson-info">
+                            <h4>Scatter Plots</h4>
+                            <p>Reading scatter plot graphs and frequency of data collection</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('inverse-trends-multiple-axes')">
+                        <div class="lesson-info">
+                            <h4>Inverse Trends and Graphs with Multiple Axes</h4>
+                            <p>Complex graphs with multiple y-axes and reverse trend analysis</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('math-on-science')">
+                        <div class="lesson-info">
+                            <h4>Math on the Science Test</h4>
+                            <p>Basic calculations and estimation without a calculator</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="section-header" data-section="science">
+                        <h3>Science Section - Knowledge & Thinking</h3>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('water-knowledge')">
+                        <div class="lesson-info">
+                            <h4>Water Knowledge</h4>
+                            <p>Boiling point, freezing point, evaporation, and condensation</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('experimental-setup')">
+                        <div class="lesson-info">
+                            <h4>Experimental Setup</h4>
+                            <p>Understanding why certain experimental procedures are used</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('other-outside-knowledge')">
+                        <div class="lesson-info">
+                            <h4>Other Outside Knowledge</h4>
+                            <p>Genetics, biology, chemistry, and physics concepts for the ACT</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="section-header" data-section="science">
+                        <h3>Science Section - Practice</h3>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('practice-passages')">
+                        <div class="lesson-info">
+                            <h4>Practice Passages</h4>
+                            <p>Full practice passages with detailed explanations</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+                    <div class="lesson-item" data-section="science" onclick="openLesson('conflicting-viewpoints-practice')">
+                        <div class="lesson-info">
+                            <h4>Conflicting Viewpoints Practice Passage</h4>
+                            <p>Practice with the unique conflicting viewpoints passage type</p>
+                        </div>
+                        <span class="lesson-status">Not Started</span>
+                    </div>
+
+        <!-- Lesson Modal -->
+        <div class="lesson-modal" id="lessonModal">
+            <div class="lesson-content">
+                <div class="lesson-header">
+                    <h2 id="lessonTitle">Lesson Title</h2>
+                    <button class="lesson-close" onclick="closeLessonModal()">&times;</button>
+                </div>
+                <div class="lesson-body" id="lessonBody">
+                    <!-- Lesson content will be loaded here -->
+                </div>
+                <div class="lesson-footer">
+                    <div class="lesson-nav-buttons">
+                        <button class="btn btn-back" onclick="closeLessonModal()">
+                            <span class="btn-icon">←</span>
+                            Back to Lessons
+                        </button>
+                    </div>
+                    <div class="lesson-status-controls">
+                        <div class="status-buttons">
+                            <button class="btn btn-status" data-status="not-started" onclick="setLessonStatus('not-started')">
+                                <span class="status-dot"></span>
+                                Not Started
+                            </button>
+                            <button class="btn btn-status" data-status="in-progress" onclick="setLessonStatus('in-progress')">
+                                <span class="status-dot"></span>
+                                In Progress
+                            </button>
+                            <button class="btn btn-status" data-status="completed" onclick="setLessonStatus('completed')">
+                                <span class="status-dot"></span>
+                                Completed
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- English Lessons Script JS -->
+    <script src="english-lessons.js"></script>
+    <!-- Math Lessons Script JS -->
+    <script src="math-lessons.js"></script>
+    <!-- Reading Lessons Script JS -->
+    <script src="reading-lessons.js"></script>
+    <!-- Science Lessons Script JS -->
+    <script src="science-lessons.js"></script>
+
+
+
+    <script>
+        let currentLesson = null;
+        let completedLessons = JSON.parse(localStorage.getItem('completedLessons') || '["getting-started", "sentence-structure", "commas"]');
+
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+        const indicator = document.querySelector('.tab-indicator');
+
+        function updateIndicator(activeTab) {
+            if (!activeTab || !indicator) return;
+            const tabRect = activeTab.getBoundingClientRect();
+            const navRect = activeTab.parentElement.getBoundingClientRect();
+            const left = tabRect.left - navRect.left;
+            const width = tabRect.width;
+            
+            indicator.style.left = left + 'px';
+            indicator.style.width = width + 'px';
+        }
+
+        // Initialize tab indicator
+        setTimeout(() => {
+            const activeTab = document.querySelector('.tab.active');
+            updateIndicator(activeTab);
+        }, 100);
+
+        // Tab functionality
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(tc => tc.classList.remove('active'));
+                
+                tab.classList.add('active');
+                
+                const targetContent = document.getElementById(tab.dataset.tab);
+                targetContent.classList.add('active');
+                
+                updateIndicator(tab);
+            });
+        });
+
+        // Section filtering functionality
+        const sectionFilters = document.querySelectorAll('.section-filter');
+        const lessonItems = document.querySelectorAll('.lesson-item');
+        const sectionHeaders = document.querySelectorAll('.section-header');
+
+        sectionFilters.forEach(filter => {
+            filter.addEventListener('click', () => {
+                sectionFilters.forEach(f => f.classList.remove('active'));
+                filter.classList.add('active');
+                
+                const selectedSection = filter.dataset.section;
+                
+                lessonItems.forEach(item => {
+                    if (selectedSection === 'all' || item.dataset.section === selectedSection) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+                
+                sectionHeaders.forEach(header => {
+                    if (selectedSection === 'all' || header.dataset.section === selectedSection) {
+                        header.classList.remove('hidden');
+                    } else {
+                        header.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Lesson content database
+
+
+        // Lesson modal functions
+        function openLesson(lessonId) {
+            currentLesson = lessonId;
+            const lesson = lessonContent[lessonId];
+            
+            if (lesson) {
+                document.getElementById('lessonTitle').textContent = lesson.title;
+                document.getElementById('lessonBody').innerHTML = lesson.content;
+            } else {
+                document.getElementById('lessonTitle').textContent = 'Lesson Coming Soon';
+                document.getElementById('lessonBody').innerHTML = '<p>This lesson content is being prepared. Check back soon!</p>';
+            }
+            
+            // Set initial status button state
+            const currentStatus = getCurrentLessonStatus(lessonId);
+            updateStatusButtons(currentStatus);
+            
+            document.getElementById('lessonModal').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeLessonModal() {
+            const modal = document.getElementById('lessonModal');
+            const content = modal.querySelector('.lesson-content');
+            
+            // Add closing animation
+            content.style.transform = 'scale(0.95) translateY(20px)';
+            content.style.opacity = '0.8';
+            
+            setTimeout(() => {
+                modal.classList.remove('active');
+                content.style.transform = '';
+                content.style.opacity = '';
+                document.body.style.overflow = ''; // Re-enable background scrolling
+                currentLesson = null;
+            }, 200);
+        }
+
+        function setLessonStatus(status) {
+            if (!currentLesson) return;
+            
+            // Remove from any existing status arrays
+            completedLessons = completedLessons.filter(id => id !== currentLesson);
+            let inProgressLessons = JSON.parse(localStorage.getItem('inProgressLessons') || '["punctuation"]');
+            inProgressLessons = inProgressLessons.filter(id => id !== currentLesson);
+            
+            // Add to appropriate array
+            if (status === 'completed') {
+                completedLessons.push(currentLesson);
+            } else if (status === 'in-progress') {
+                inProgressLessons.push(currentLesson);
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('completedLessons', JSON.stringify(completedLessons));
+            localStorage.setItem('inProgressLessons', JSON.stringify(inProgressLessons));
+            
+            // Update UI
+            updateLessonStatuses();
+            updateStatusButtons(status);
+            
+            // Add success animation
+            const activeButton = document.querySelector(`.btn-status[data-status="${status}"]`);
+            if (activeButton) {
+                activeButton.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    activeButton.style.transform = '';
+                }, 200);
+            }
+        }
+
+        function updateStatusButtons(currentStatus) {
+            const buttons = document.querySelectorAll('.btn-status');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.status === currentStatus) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        function getCurrentLessonStatus(lessonId) {
+            const completedLessons = JSON.parse(localStorage.getItem('completedLessons') || '[]');
+            const inProgressLessons = JSON.parse(localStorage.getItem('inProgressLessons') || '["punctuation"]');
+            
+            if (completedLessons.includes(lessonId)) return 'completed';
+            if (inProgressLessons.includes(lessonId)) return 'in-progress';
+            return 'not-started';
+        }
+
+        function updateLessonStatuses() {
+            const inProgressLessons = JSON.parse(localStorage.getItem('inProgressLessons') || '["punctuation"]');
+            
+            document.querySelectorAll('.lesson-item').forEach(item => {
+                const lessonId = item.getAttribute('onclick')?.match(/openLesson\('([^']+)'\)/)?.[1];
+                if (lessonId) {
+                    const statusElement = item.querySelector('.lesson-status');
+                    
+                    if (completedLessons.includes(lessonId)) {
+                        statusElement.textContent = 'Completed';
+                        statusElement.className = 'lesson-status completed';
+                    } else if (inProgressLessons.includes(lessonId)) {
+                        statusElement.textContent = 'In Progress';
+                        statusElement.className = 'lesson-status in-progress';
+                    } else {
+                        statusElement.textContent = 'Not Started';
+                        statusElement.className = 'lesson-status';
+                    }
+                }
+            });
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('lessonModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLessonModal();
+            }
+        });
+
+        // Update lesson statuses on page load
+        updateLessonStatuses();
+
+        // Update indicator on window resize
+        window.addEventListener('resize', () => {
+            const activeTab = document.querySelector('.tab.active');
+            updateIndicator(activeTab);
+        });
+    </script>
+</body>
+</html>
