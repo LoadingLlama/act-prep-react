@@ -21,34 +21,41 @@ const useStyles = createUseStyles({
     margin: '0 auto',
     minHeight: '100vh',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    background: '#fafbfc'
   },
   header: {
-    padding: '2rem 2rem 0',
+    padding: '1rem 2rem',
     textAlign: 'center',
-    marginBottom: '2rem'
+    marginBottom: '1rem',
+    background: 'transparent'
   },
   logo: {
-    fontSize: '2.5rem',
-    fontWeight: 300,
-    letterSpacing: '-0.02em',
+    fontSize: '1.75rem',
+    fontWeight: 400,
+    letterSpacing: '-0.01em',
     color: '#1a1a1a',
-    marginBottom: '0.5rem'
+    marginBottom: '0.25rem'
   },
   subtitle: {
     color: '#666',
-    fontSize: '1.1rem',
-    fontWeight: 300
+    fontSize: '0.95rem',
+    fontWeight: 400,
+    opacity: 0.8
   },
   navContainer: {
-    padding: '0 2rem',
-    marginBottom: '3rem'
+    padding: '0',
+    marginBottom: '1.5rem',
+    background: 'transparent'
   },
   navTabs: {
     display: 'flex',
     borderBottom: '1px solid #e5e5e5',
     justifyContent: 'center',
-    position: 'relative'
+    position: 'relative',
+    maxWidth: '1200px',
+    margin: '0 auto',
+    width: '100%'
   },
   tab: {
     background: 'none',
@@ -73,16 +80,18 @@ const useStyles = createUseStyles({
     bottom: '-1px',
     height: '2px',
     backgroundColor: '#1a1a1a',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    transition: 'all 0.3s ease',
     borderRadius: '1px'
   },
   content: {
     flex: 1,
-    padding: '0 2rem 2rem'
+    padding: '0 2rem 2rem',
+    maxWidth: '1200px',
+    margin: '0 auto',
+    width: '100%'
   },
   tabContent: {
     display: 'none',
-    animation: '$fadeIn 0.4s ease-in-out',
     '&.active': {
       display: 'block'
     }
@@ -98,34 +107,35 @@ const useStyles = createUseStyles({
     }
   },
   contentSection: {
-    maxWidth: '800px',
-    margin: '0 auto'
+    margin: '0'
   },
   sectionTitle: {
-    fontSize: '2rem',
-    fontWeight: 300,
-    marginBottom: '2rem',
-    textAlign: 'center',
-    color: '#1a1a1a'
+    fontSize: '1.5rem',
+    fontWeight: 500,
+    color: '#1a1a1a',
+    marginBottom: '1rem',
+    textAlign: 'left'
   },
   testGrid: {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
     gap: '1.5rem',
-    marginTop: '2rem'
+    marginTop: '0'
   },
   card: {
-    background: '#ffffff',
-    border: '1px solid #f0f0f0',
-    borderRadius: '8px',
+    background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+    border: '1px solid #dee2e6',
+    borderRadius: '12px',
     padding: '2rem',
     marginBottom: '1.5rem',
-    transition: 'all 0.2s ease',
-    boxShadow: '0 1px 3px rgba(0,0,0,0.02)',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+    cursor: 'pointer',
     '&:hover': {
-      borderColor: '#e0e0e0',
-      boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-      transform: 'translateY(-1px)'
+      background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+      borderColor: '#adb5bd',
+      transform: 'translateY(-4px)',
+      boxShadow: '0 12px 30px rgba(0,0,0,0.15)'
     },
     '& h3': {
       fontSize: '1.3rem',
@@ -140,66 +150,96 @@ const useStyles = createUseStyles({
     }
   },
   btn: {
-    background: '#1a1a1a',
-    color: 'white',
-    border: 'none',
+    background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+    color: '#666',
+    border: '1px solid #dee2e6',
     padding: '0.75rem 1.5rem',
     borderRadius: '6px',
     cursor: 'pointer',
     fontSize: '0.95rem',
     fontWeight: 500,
-    transition: 'all 0.2s ease',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     textDecoration: 'none',
     display: 'inline-block',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
     '&:hover': {
-      background: '#333',
-      transform: 'translateY(-1px)'
+      background: 'linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%)',
+      borderColor: '#adb5bd',
+      transform: 'translateY(-1px)',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+      color: '#333'
     }
   },
   sectionFilters: {
     display: 'flex',
     justifyContent: 'center',
     gap: '1rem',
-    marginBottom: '2rem',
+    marginBottom: '1rem',
     flexWrap: 'wrap'
   },
   sectionFilter: {
-    background: 'transparent',
-    border: '1px solid #e0e0e0',
+    background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+    border: '1px solid #dee2e6',
     color: '#666',
     padding: '0.5rem 1rem',
     borderRadius: '20px',
     cursor: 'pointer',
     fontSize: '0.9rem',
-    transition: 'all 0.2s ease',
+    fontWeight: 500,
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
     '&:hover': {
-      borderColor: '#d0d0d0',
-      color: '#1a1a1a'
+      background: 'linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%)',
+      borderColor: '#adb5bd',
+      transform: 'translateY(-1px)',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+      color: '#333'
     },
     '&.active': {
       background: '#1a1a1a',
       color: 'white',
-      borderColor: '#1a1a1a'
+      borderColor: '#1a1a1a',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
     }
   },
   lessonsGrid: {
     display: 'grid',
-    gap: '1rem',
-    marginTop: '2rem'
+    gap: '0.75rem',
+    marginTop: '0'
   },
   lessonItem: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '1.5rem',
-    border: '1px solid #f0f0f0',
-    borderRadius: '6px',
-    transition: 'all 0.2s ease',
+    padding: '1.25rem',
+    border: '1px solid #e5e7eb',
+    borderRadius: '8px',
+    transition: 'all 0.3s ease',
     background: '#ffffff',
     cursor: 'pointer',
+    marginBottom: '0.5rem',
+    position: 'relative',
+    borderLeft: '4px solid #e5e7eb',
     '&:hover': {
-      borderColor: '#e0e0e0',
-      background: '#fafafa'
+      background: '#f8f9fa',
+      borderColor: '#d1d5db',
+      transform: 'translateX(4px)'
+    },
+    '&.completed': {
+      background: '#f0fdf4',
+      borderLeftColor: '#16a34a',
+      opacity: 0.8,
+      '& h4': {
+        textDecoration: 'line-through',
+        color: '#666'
+      },
+      '& p': {
+        color: '#999'
+      }
+    },
+    '&.in-progress': {
+      borderLeftColor: '#ffc107',
+      background: '#fffbf0'
     },
     '&.hidden': {
       display: 'none'
@@ -224,19 +264,21 @@ const useStyles = createUseStyles({
     borderRadius: '12px',
     background: '#f5f5f5',
     '&.completed': {
-      background: '#e8f5e8',
-      color: '#2d5a2d'
+      background: 'linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)',
+      color: '#065f46',
+      border: '1px solid #10b981'
     },
     '&.in-progress': {
-      background: '#fff3cd',
-      color: '#856404'
+      background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)',
+      color: '#92400e',
+      border: '1px solid #f59e0b'
     }
   },
   sectionHeader: {
     gridColumn: '1 / -1',
-    margin: '2rem 0 1rem',
+    margin: '1rem 0 0.75rem',
     paddingBottom: '0.5rem',
-    borderBottom: '1px solid #f0f0f0',
+    borderBottom: '1px solid #e5e5e5',
     '&.hidden': {
       display: 'none'
     },
@@ -253,39 +295,58 @@ const useStyles = createUseStyles({
     position: 'fixed',
     top: 0,
     left: 0,
-    right: 0,
-    bottom: 0,
-    background: 'rgba(0, 0, 0, 0.5)',
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#ffffff',
     zIndex: 1000,
-    padding: '2rem',
-    overflowY: 'auto',
+    overflow: 'auto',
     '&.active': {
-      display: 'flex',
-      alignItems: 'flex-start',
-      justifyContent: 'center'
+      display: 'flex'
     }
   },
   lessonContent: {
     background: 'white',
-    borderRadius: '8px',
-    maxWidth: '800px',
     width: '100%',
-    maxHeight: '90vh',
-    overflowY: 'auto',
-    margin: '2rem auto'
+    minHeight: '100vh',
+    display: 'flex',
+    lineHeight: '1.6',
+    fontSize: '15px',
+    color: '#2d3748'
   },
-  lessonHeader: {
-    padding: '2rem 2rem 1rem',
-    borderBottom: '1px solid #e0e0e0',
+  lessonSidebar: {
+    width: '280px',
+    background: '#fafbfc',
+    borderRight: '1px solid #e2e8f0',
+    padding: '2rem 1.5rem',
     position: 'sticky',
     top: 0,
+    height: '100vh',
+    overflow: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '2rem'
+  },
+  lessonMain: {
+    flex: 1,
+    maxWidth: '800px',
+    margin: '0 auto',
+    padding: '0'
+  },
+  lessonHeader: {
+    padding: '2rem 3rem 1.5rem',
     background: 'white',
-    zIndex: 10
+    borderBottom: '1px solid #e2e8f0',
+    position: 'sticky',
+    top: 0,
+    zIndex: 100,
+    textAlign: 'left'
   },
   lessonTitle: {
-    fontSize: '1.5rem',
-    fontWeight: 500,
-    marginBottom: '0.5rem'
+    fontSize: '2.2rem',
+    fontWeight: 300,
+    color: '#1a1a1a',
+    margin: '0 0 0.5rem 0',
+    letterSpacing: '-0.01em'
   },
   lessonClose: {
     position: 'absolute',
@@ -302,26 +363,62 @@ const useStyles = createUseStyles({
     }
   },
   lessonBody: {
-    padding: '2rem',
-    lineHeight: 1.7,
+    padding: '0 3rem 6rem',
+    lineHeight: 1.65,
+    fontSize: '15px',
+    maxWidth: '700px',
+    '& h1, & h2, & h3, & h4': {
+      color: '#1a202c',
+      fontWeight: '600',
+      marginTop: '2rem',
+      marginBottom: '0.75rem',
+      lineHeight: '1.3'
+    },
+    '& h1': {
+      fontSize: '1.75rem',
+      borderBottom: '2px solid #e2e8f0',
+      paddingBottom: '0.5rem'
+    },
+    '& h2': {
+      fontSize: '1.5rem',
+      color: '#2d3748'
+    },
     '& h3': {
-      margin: '2rem 0 1rem',
-      color: '#1a1a1a',
-      fontSize: '1.3rem'
+      fontSize: '1.25rem',
+      color: '#4a5568'
     },
     '& p': {
-      marginBottom: '1rem'
+      marginBottom: '1rem',
+      lineHeight: '1.65'
     },
     '& ul, & ol': {
-      margin: '1rem 0 1rem 2rem'
+      margin: '1rem 0',
+      paddingLeft: '1.5rem'
     },
     '& li': {
-      marginBottom: '0.5rem'
+      marginBottom: '0.5rem',
+      lineHeight: '1.6'
     },
-    // Enhanced lesson content styling
+    '& blockquote': {
+      borderLeft: '3px solid #cbd5e0',
+      paddingLeft: '1rem',
+      margin: '1.25rem 0',
+      fontStyle: 'italic',
+      color: '#4a5568',
+      background: '#f7fafc',
+      padding: '0.75rem 1rem',
+      borderRadius: '0 6px 6px 0'
+    },
+    '& code': {
+      backgroundColor: '#edf2f7',
+      padding: '2px 4px',
+      borderRadius: '3px',
+      fontSize: '0.9em',
+      fontFamily: 'Monaco, Consolas, monospace'
+    },
     '& .lesson-intro': {
-      fontSize: '1.1rem',
-      color: '#666',
+      fontSize: '1rem',
+      color: '#718096',
       fontStyle: 'italic',
       marginBottom: '2rem',
       padding: '1rem',
@@ -373,13 +470,64 @@ const useStyles = createUseStyles({
       }
     }
   },
-  lessonFooter: {
-    padding: '1rem 2rem 2rem',
-    textAlign: 'center',
-    borderTop: '1px solid #e0e0e0',
+  floatingControls: {
+    position: 'fixed',
+    top: '50%',
+    right: '20px',
+    transform: 'translateY(-50%)',
+    background: 'rgba(255, 255, 255, 0.95)',
+    borderRadius: '12px',
+    padding: '1rem',
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+    backdropFilter: 'blur(10px)',
+    border: '1px solid rgba(226, 232, 240, 0.8)',
+    zIndex: 1001,
     display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center'
+    flexDirection: 'column',
+    gap: '0.75rem',
+    minWidth: '160px'
+  },
+  sidebarSection: {
+    '& h4': {
+      fontSize: '0.9rem',
+      fontWeight: '600',
+      color: '#4a5568',
+      marginBottom: '0.75rem',
+      textTransform: 'uppercase',
+      letterSpacing: '0.05em'
+    }
+  },
+  keyTerms: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem',
+    '& .term': {
+      padding: '0.5rem 0.75rem',
+      background: 'white',
+      borderRadius: '6px',
+      fontSize: '0.85rem',
+      color: '#2d3748',
+      border: '1px solid #e2e8f0',
+      cursor: 'pointer',
+      transition: 'all 0.2s',
+      '&:hover': {
+        background: '#f7fafc',
+        borderColor: '#cbd5e0'
+      }
+    }
+  },
+  progressBar: {
+    width: '100%',
+    height: '6px',
+    background: '#e2e8f0',
+    borderRadius: '3px',
+    overflow: 'hidden',
+    '& .fill': {
+      height: '100%',
+      background: 'linear-gradient(90deg, #48bb78, #38a169)',
+      borderRadius: '3px',
+      transition: 'width 0.3s ease'
+    }
   }
 });
 
@@ -492,6 +640,11 @@ function App() {
   const [lessonContent, setLessonContent] = useState({});
   const [currentLesson, setCurrentLesson] = useState(null);
   const [lessonModalOpen, setLessonModalOpen] = useState(false);
+  const [lessonProgress, setLessonProgress] = useState(() => {
+    // Load progress from localStorage
+    const saved = localStorage.getItem('actPrepProgress');
+    return saved ? JSON.parse(saved) : {};
+  });
 
   useEffect(() => {
     // Load lesson content from script files
@@ -537,6 +690,22 @@ function App() {
     setCurrentLesson(lessonId);
     setLessonModalOpen(true);
     document.body.style.overflow = 'hidden';
+    // No automatic status change - user controls status manually
+  };
+
+  const updateLessonProgress = (lessonId, status) => {
+    const newProgress = { ...lessonProgress, [lessonId]: status };
+    setLessonProgress(newProgress);
+    localStorage.setItem('actPrepProgress', JSON.stringify(newProgress));
+  };
+
+  const markLessonComplete = (lessonId) => {
+    updateLessonProgress(lessonId, 'completed');
+    closeLessonModal();
+  };
+
+  const getLessonStatus = (lessonId) => {
+    return lessonProgress[lessonId] || 'not-started';
   };
 
   const closeLessonModal = () => {
@@ -603,11 +772,14 @@ function App() {
   const LessonsContent = () => {
     const filteredLessons = activeSection === 'all' ? lessonStructure : lessonStructure.filter(lesson => lesson.section === activeSection);
 
+    // Keep original lesson order - no sorting by status
+    const sortedLessons = filteredLessons;
+
     // Group lessons by section for headers
     const groupedLessons = [];
     let currentSection = '';
 
-    filteredLessons.forEach(lesson => {
+    sortedLessons.forEach(lesson => {
       if (lesson.section !== 'all' && lesson.section !== currentSection) {
         currentSection = lesson.section;
         const sectionTitle =
@@ -671,14 +843,64 @@ function App() {
                 );
               } else {
                 return (
-                  <div key={item.id} className={classes.lessonItem} onClick={() => openLesson(item.id)}>
+                  <div key={item.id} className={`${classes.lessonItem} ${getLessonStatus(item.id)}`} onClick={() => openLesson(item.id)}>
                     <div className={classes.lessonInfo}>
                       <h4>{item.title}</h4>
                       <p>{item.desc}</p>
                     </div>
-                    <span className={`${classes.lessonStatus} ${item.status === 'completed' ? 'completed' : item.status === 'in-progress' ? 'in-progress' : ''}`}>
-                      {item.status === 'completed' ? 'Completed' : item.status === 'in-progress' ? 'In Progress' : 'Not Started'}
-                    </span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', zIndex: 3, position: 'relative' }}>
+                      {getLessonStatus(item.id) === 'completed' && (
+                        <div style={{
+                          width: '24px',
+                          height: '24px',
+                          background: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)',
+                          color: '#065f46',
+                          border: '1px solid #059669',
+                          borderRadius: '50%',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '14px',
+                          fontWeight: 'bold',
+                          boxShadow: '0 2px 8px rgba(5, 150, 105, 0.15)'
+                        }}>✓</div>
+                      )}
+                      {getLessonStatus(item.id) === 'in-progress' && (
+                        <div style={{
+                          width: '24px',
+                          height: '24px',
+                          background: 'linear-gradient(135deg, #fefce8 0%, #fef3c7 100%)',
+                          color: '#92400e',
+                          border: '1px solid #d97706',
+                          borderRadius: '50%',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '14px',
+                          fontWeight: 'bold',
+                          boxShadow: '0 2px 8px rgba(217, 119, 6, 0.15)'
+                        }}>⏱</div>
+                      )}
+                      {getLessonStatus(item.id) === 'not-started' && (
+                        <div style={{
+                          width: '24px',
+                          height: '24px',
+                          background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
+                          color: '#64748b',
+                          borderRadius: '50%',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '14px',
+                          fontWeight: 'bold',
+                          border: '1px solid #cbd5e1',
+                          boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+                        }}>○</div>
+                      )}
+                      <span className={`${classes.lessonStatus} ${getLessonStatus(item.id) === 'completed' ? 'completed' : getLessonStatus(item.id) === 'in-progress' ? 'in-progress' : ''}`}>
+                        {getLessonStatus(item.id) === 'completed' ? 'Completed' : getLessonStatus(item.id) === 'in-progress' ? 'In Progress' : 'Not Started'}
+                      </span>
+                    </div>
                   </div>
                 );
               }
@@ -691,30 +913,214 @@ function App() {
 
   const LessonModal = () => {
     const lesson = lessonContent[currentLesson];
+    const currentLessonData = lessonStructure.find(item => item.id === currentLesson);
+
+    // Extract key terms from lesson content (simplified)
+    const extractKeyTerms = (content) => {
+      if (!content) return [];
+      const terms = [];
+      // Simple extraction of terms in bold or emphasized text
+      const boldMatches = content.match(/<b[^>]*>(.*?)<\/b>/gi) || [];
+      const strongMatches = content.match(/<strong[^>]*>(.*?)<\/strong>/gi) || [];
+      const emMatches = content.match(/<em[^>]*>(.*?)<\/em>/gi) || [];
+
+      [...boldMatches, ...strongMatches, ...emMatches].forEach(match => {
+        const term = match.replace(/<[^>]*>/g, '').trim();
+        if (term.length > 3 && term.length < 30 && !terms.includes(term)) {
+          terms.push(term);
+        }
+      });
+
+      return terms.slice(0, 8); // Limit to 8 terms
+    };
+
+    const keyTerms = extractKeyTerms(lesson?.content);
+    const completedLessons = lessonStructure.filter(l => getLessonStatus(l.id) === 'completed').length;
+    const totalLessons = lessonStructure.length;
+    const progressPercent = (completedLessons / totalLessons) * 100;
 
     return (
-      <div className={`${classes.lessonModal} ${lessonModalOpen ? 'active' : ''}`} onClick={(e) => e.target === e.currentTarget && closeLessonModal()}>
+      <div className={`${classes.lessonModal} ${lessonModalOpen ? 'active' : ''}`}>
         <div className={classes.lessonContent}>
-          <div className={classes.lessonHeader}>
-            <h2 className={classes.lessonTitle}>
-              {lesson ? lesson.title : 'Lesson Coming Soon'}
-            </h2>
-            <button className={classes.lessonClose} onClick={closeLessonModal}>
-              &times;
-            </button>
-          </div>
-          <div className={classes.lessonBody}>
-            {lesson ? (
-              <div dangerouslySetInnerHTML={{ __html: lesson.content }} />
-            ) : (
-              <p>This lesson content is being prepared. Check back soon!</p>
+          {/* Sidebar */}
+          <div className={classes.lessonSidebar}>
+            <div className={classes.sidebarSection}>
+              <h4>Progress</h4>
+              <div style={{ fontSize: '0.85rem', color: '#718096', marginBottom: '0.5rem' }}>
+                {completedLessons} of {totalLessons} lessons completed
+              </div>
+              <div className={classes.progressBar}>
+                <div className="fill" style={{ width: `${progressPercent}%` }}></div>
+              </div>
+            </div>
+
+            {keyTerms.length > 0 && (
+              <div className={classes.sidebarSection}>
+                <h4>Key Terms</h4>
+                <div className={classes.keyTerms}>
+                  {keyTerms.map((term, index) => (
+                    <div key={index} className="term">{term}</div>
+                  ))}
+                </div>
+              </div>
             )}
+
+            <div className={classes.sidebarSection}>
+              <h4>Lesson Info</h4>
+              <div style={{ fontSize: '0.85rem', color: '#718096', lineHeight: '1.5' }}>
+                <div style={{ marginBottom: '0.5rem' }}>
+                  <strong>Section:</strong> {currentLessonData?.section || 'General'}
+                </div>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  padding: '0.5rem',
+                  background: 'white',
+                  borderRadius: '6px',
+                  border: '1px solid #e2e8f0'
+                }}>
+                  <span style={{
+                    width: '8px',
+                    height: '8px',
+                    borderRadius: '50%',
+                    background: getLessonStatus(currentLesson) === 'completed' ? '#48bb78' :
+                               getLessonStatus(currentLesson) === 'in-progress' ? '#ed8936' : '#cbd5e0'
+                  }}></span>
+                  <span style={{ fontSize: '0.8rem', fontWeight: '500' }}>
+                    {getLessonStatus(currentLesson) === 'completed' ? 'Completed' :
+                     getLessonStatus(currentLesson) === 'in-progress' ? 'In Progress' : 'Not Started'}
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className={classes.lessonFooter}>
-            <button className={classes.btn} onClick={closeLessonModal}>
-              ← Back to Lessons
-            </button>
+
+          {/* Main Content */}
+          <div className={classes.lessonMain}>
+            <div className={classes.lessonHeader}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div>
+                  <h1 className={classes.lessonTitle} style={{ fontSize: '1.75rem', margin: '0 0 0.5rem 0' }}>
+                    {lesson ? lesson.title : 'Lesson Coming Soon'}
+                  </h1>
+                  {currentLessonData && (
+                    <p style={{
+                      color: '#718096',
+                      fontSize: '0.95rem',
+                      margin: 0,
+                      fontWeight: '400'
+                    }}>
+                      {currentLessonData.desc}
+                    </p>
+                  )}
+                </div>
+                <button
+                  onClick={closeLessonModal}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    fontSize: '1.5rem',
+                    color: '#a0aec0',
+                    cursor: 'pointer',
+                    width: '32px',
+                    height: '32px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderRadius: '6px',
+                    transition: 'all 0.2s'
+                  }}
+                  onMouseOver={(e) => e.target.style.background = '#f7fafc'}
+                  onMouseOut={(e) => e.target.style.background = 'transparent'}
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+            <div className={classes.lessonBody}>
+              {lesson ? (
+                <div dangerouslySetInnerHTML={{ __html: lesson.content }} />
+              ) : (
+                <div style={{
+                  textAlign: 'center',
+                  padding: '4rem 2rem',
+                  color: '#a0aec0',
+                  fontSize: '1rem'
+                }}>
+                  <p>This lesson content is being prepared. Check back soon!</p>
+                </div>
+              )}
+            </div>
           </div>
+        </div>
+
+        {/* Floating Controls */}
+        <div className={classes.floatingControls}>
+          <button
+            onClick={closeLessonModal}
+            style={{
+              background: 'linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%)',
+              border: '1px solid #e2e8f0',
+              borderRadius: '6px',
+              padding: '0.5rem',
+              color: '#4a5568',
+              fontWeight: '500',
+              cursor: 'pointer',
+              fontSize: '0.8rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem'
+            }}
+          >
+            ← Back
+          </button>
+          <button
+            onClick={() => updateLessonProgress(currentLesson, 'not-started')}
+            style={{
+              background: 'linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%)',
+              border: '1px solid #e2e8f0',
+              borderRadius: '6px',
+              padding: '0.5rem',
+              color: '#718096',
+              fontWeight: '500',
+              cursor: 'pointer',
+              fontSize: '0.8rem'
+            }}
+          >
+            Reset
+          </button>
+          <button
+            onClick={() => updateLessonProgress(currentLesson, 'in-progress')}
+            style={{
+              background: 'linear-gradient(135deg, #fffaf0 0%, #fef5e7 100%)',
+              border: '1px solid #ed8936',
+              borderRadius: '6px',
+              padding: '0.5rem',
+              color: '#c05621',
+              fontWeight: '500',
+              cursor: 'pointer',
+              fontSize: '0.8rem'
+            }}
+          >
+            In Progress
+          </button>
+          <button
+            onClick={() => updateLessonProgress(currentLesson, 'completed')}
+            style={{
+              background: 'linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%)',
+              border: '1px solid #48bb78',
+              borderRadius: '6px',
+              padding: '0.5rem',
+              color: '#276749',
+              fontWeight: '500',
+              cursor: 'pointer',
+              fontSize: '0.8rem'
+            }}
+          >
+            Complete ✓
+          </button>
         </div>
       </div>
     );
@@ -741,6 +1147,13 @@ function App() {
           >
             Lessons
           </button>
+          <div
+            className={classes.tabIndicator}
+            style={{
+              left: activeTab === 'tests' ? '0%' : '50%',
+              width: '50%'
+            }}
+          />
         </div>
       </div>
 
