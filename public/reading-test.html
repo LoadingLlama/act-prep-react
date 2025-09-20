@@ -1438,9 +1438,6 @@
                 <!-- Navigation -->
                 <div class="navigation">
                     <button class="nav-button" id="prevBtn" onclick="previousQuestion()" disabled>← Previous</button>
-                    <div class="question-info">
-                        <span id="questionIndicator">Question 1 of 36</span>
-                    </div>
                     <button class="nav-button primary" id="nextBtn" onclick="nextQuestion()">Next →</button>
                 </div>
                 </div>
@@ -1516,7 +1513,6 @@
                 document.getElementById('nextBtn').disabled = false;
             }
 
-            document.getElementById('questionIndicator').textContent = `Question ${currentQuestion} of ${totalQuestions}`;
             document.getElementById('questionCounter').textContent = `Question ${currentQuestion} of ${totalQuestions}`;
             document.getElementById('itemNumber').textContent = `Item ${currentQuestion}`;
 
