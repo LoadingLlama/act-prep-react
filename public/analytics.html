@@ -401,6 +401,97 @@
             margin-top: 1rem;
         }
 
+        .section-scores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-score-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #e5e7eb;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .section-score {
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .section-score.high {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .section-score.medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .section-score.low {
+            background: #fef2f2;
+            color: #dc2626;
+        }
+
+        .section-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .section-stat {
+            text-align: center;
+            padding: 0.75rem;
+            background: #f8fafc;
+            border-radius: 6px;
+        }
+
+        .section-stat-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.25rem;
+        }
+
+        .section-stat-label {
+            font-size: 0.7rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .section-details-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .section-detail-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #e5e7eb;
+        }
+
         .recommendations {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
             border-radius: 12px;
@@ -534,6 +625,7 @@
         <!-- Navigation Tabs -->
         <div class="nav-tabs">
             <button class="nav-tab active" data-tab="overview">Overview</button>
+            <button class="nav-tab" data-tab="sections">By Section</button>
             <button class="nav-tab" data-tab="topics">By Topic</button>
             <button class="nav-tab" data-tab="questions">All Questions</button>
         </div>
@@ -544,12 +636,12 @@
                 <div class="score-circle" id="scoreCircle">
                     <span class="score-text" id="scoreText">--</span>
                 </div>
-                
+
                 <div class="score-details">
                     <h2 id="scoreTitle">Calculating...</h2>
                     <p id="scoreSubtitle">Please wait</p>
                 </div>
-                
+
                 <div class="score-breakdown">
                     <div class="breakdown-item">
                         <div class="breakdown-value correct" id="correctCount">--</div>
@@ -566,9 +658,24 @@
                 </div>
             </div>
 
+            <!-- Section Scores Grid -->
+            <div class="section-scores-grid" id="sectionScoresGrid">
+                <!-- Populated by JavaScript -->
+            </div>
+
             <div class="recommendations">
                 <h3>Personalized Recommendations</h3>
                 <div class="recommendation-grid" id="recommendationsList">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Sections Tab -->
+        <div id="sections" class="tab-content">
+            <div class="topic-analytics">
+                <h3 class="section-title">Performance by Section</h3>
+                <div class="section-details-grid" id="sectionDetailsGrid">
                     <!-- Populated by JavaScript -->
                 </div>
             </div>
@@ -587,7 +694,7 @@
         <!-- All Questions Tab -->
         <div id="questions" class="tab-content">
             <div class="topic-analytics">
-                <h3 class="section-title">All 50 Questions</h3>
+                <h3 class="section-title">All 171 Questions</h3>
                 <div class="question-grid" id="allQuestionsGrid">
                     <!-- Populated by JavaScript -->
                 </div>
@@ -616,10 +723,18 @@
     </div>
 
     <script>
+        // Test configuration
+        const testSections = [
+            { name: 'English', questions: 50, startQ: 1, endQ: 50 },
+            { name: 'Math', questions: 45, startQ: 51, endQ: 95 },
+            { name: 'Reading', questions: 36, startQ: 96, endQ: 131 },
+            { name: 'Science', questions: 40, startQ: 132, endQ: 171 }
+        ];
+
         const chapterNames = {
             'sentence-structure': 'Sentence Structure',
             'commas': 'Comma Usage',
-            'word-choice': 'Word Choice', 
+            'word-choice': 'Word Choice',
             'transitions': 'Transitions',
             'pronouns': 'Pronouns',
             'redundancy': 'Redundancy',
@@ -632,7 +747,9 @@
             'parallel-structure': 'Parallel Structure'
         };
 
+        // Placeholder correct answers - you'll need to populate these with actual answers
         const correctAnswers = {
+            // English (q1-q50)
             q1: 'C', q2: 'G', q3: 'A', q4: 'F', q5: 'A',
             q6: 'F', q7: 'D', q8: 'J', q9: 'B', q10: 'G',
             q11: 'B', q12: 'J', q13: 'C', q14: 'H', q15: 'D',
@@ -642,10 +759,38 @@
             q31: 'C', q32: 'F', q33: 'A', q34: 'H', q35: 'A',
             q36: 'G', q37: 'B', q38: 'G', q39: 'D', q40: 'J',
             q41: 'A', q42: 'G', q43: 'D', q44: 'H', q45: 'D',
-            q46: 'F', q47: 'B', q48: 'F', q49: 'D', q50: 'H'
+            q46: 'F', q47: 'B', q48: 'F', q49: 'D', q50: 'H',
+            // Math (q51-q95) - placeholder answers
+            q51: 'A', q52: 'F', q53: 'C', q54: 'H', q55: 'D',
+            q56: 'G', q57: 'B', q58: 'J', q59: 'A', q60: 'F',
+            q61: 'C', q62: 'H', q63: 'D', q64: 'G', q65: 'B',
+            q66: 'J', q67: 'A', q68: 'F', q69: 'C', q70: 'H',
+            q71: 'D', q72: 'G', q73: 'B', q74: 'J', q75: 'A',
+            q76: 'F', q77: 'C', q78: 'H', q79: 'D', q80: 'G',
+            q81: 'B', q82: 'J', q83: 'A', q84: 'F', q85: 'C',
+            q86: 'H', q87: 'D', q88: 'G', q89: 'B', q90: 'J',
+            q91: 'A', q92: 'F', q93: 'C', q94: 'H', q95: 'D',
+            // Reading (q96-q131) - placeholder answers
+            q96: 'A', q97: 'F', q98: 'C', q99: 'H', q100: 'D',
+            q101: 'G', q102: 'B', q103: 'J', q104: 'A', q105: 'F',
+            q106: 'C', q107: 'H', q108: 'D', q109: 'G', q110: 'B',
+            q111: 'J', q112: 'A', q113: 'F', q114: 'C', q115: 'H',
+            q116: 'D', q117: 'G', q118: 'B', q119: 'J', q120: 'A',
+            q121: 'F', q122: 'C', q123: 'H', q124: 'D', q125: 'G',
+            q126: 'B', q127: 'J', q128: 'A', q129: 'F', q130: 'C',
+            q131: 'H',
+            // Science (q132-q171) - placeholder answers
+            q132: 'A', q133: 'F', q134: 'C', q135: 'H', q136: 'D',
+            q137: 'G', q138: 'B', q139: 'J', q140: 'A', q141: 'F',
+            q142: 'C', q143: 'H', q144: 'D', q145: 'G', q146: 'B',
+            q147: 'J', q148: 'A', q149: 'F', q150: 'C', q151: 'H',
+            q152: 'D', q153: 'G', q154: 'B', q155: 'J', q156: 'A',
+            q157: 'F', q158: 'C', q159: 'H', q160: 'D', q161: 'G',
+            q162: 'B', q163: 'J', q164: 'A', q165: 'F', q166: 'C',
+            q167: 'H', q168: 'D', q169: 'G', q170: 'B', q171: 'J'
         };
 
-        // Question to chapter mapping (from your diagnostic test)
+        // English question to chapter mapping
         const questionChapters = {
             1: 'sentence-structure', 2: 'commas', 3: 'word-choice', 4: 'transitions', 5: 'pronouns',
             6: 'word-choice', 7: 'redundancy', 8: 'modifiers', 9: 'verbs', 10: 'word-choice',
@@ -661,13 +806,14 @@
 
         let testResults = {};
         let questionResults = {};
+        let sectionResults = {};
 
         function formatTime(ms) {
             if (!ms || ms === 0) return '0s';
             const totalSeconds = Math.floor(ms / 1000);
             const minutes = Math.floor(totalSeconds / 60);
             const seconds = totalSeconds % 60;
-            
+
             if (minutes > 0) {
                 return `${minutes}m ${seconds}s`;
             }
@@ -679,87 +825,236 @@
         }
 
         function calculateResults() {
-            const results = JSON.parse(localStorage.getItem('diagnosticTestResults'));
-            
-            if (!results) {
-                window.location.href = 'diagnostic-test.html';
+            // Gather results from all test sections
+            const englishResults = JSON.parse(localStorage.getItem('englishTestResults')) || {};
+            const mathResults = JSON.parse(localStorage.getItem('mathTestResults')) || {};
+            const readingResults = JSON.parse(localStorage.getItem('readingTestResults')) || {};
+            const scienceResults = JSON.parse(localStorage.getItem('scienceTestResults')) || {};
+
+            // Combine all answers and timing data
+            const allAnswers = {
+                ...englishResults.answers,
+                ...mathResults.answers,
+                ...readingResults.answers,
+                ...scienceResults.answers
+            };
+
+            const allTimeSpent = {
+                ...englishResults.timeSpentPerQuestion,
+                ...mathResults.timeSpentPerQuestion,
+                ...readingResults.timeSpentPerQuestion,
+                ...scienceResults.timeSpentPerQuestion
+            };
+
+            if (Object.keys(allAnswers).length === 0) {
+                // Generate sample data for demo purposes
+                generateSampleData();
                 return;
             }
 
-            testResults = results;
-            const { answers, timeSpentPerQuestion } = results;
-            
-            let correctCount = 0;
+            let totalCorrect = 0;
             const chapterStats = {};
             questionResults = {};
-            
-            // Process each question
-            for (let i = 1; i <= 50; i++) {
-                const questionKey = `q${i}`;
-                const userAnswer = answers[questionKey];
-                const correctAnswer = correctAnswers[questionKey];
-                const timeKey = `q${i}`;
-                const timeSpent = timeSpentPerQuestion[timeKey] || 0;
-                const chapter = questionChapters[i];
-                const isCorrect = userAnswer?.answer === correctAnswer;
-                
-                if (isCorrect) correctCount++;
-                
-                // Store individual question result
-                questionResults[i] = {
-                    userAnswer: userAnswer?.answer || 'No Answer',
-                    correctAnswer: correctAnswer,
-                    isCorrect: isCorrect,
-                    timeSpent: timeSpent,
-                    chapter: chapter
-                };
-                
-                // Update chapter stats
-                if (!chapterStats[chapter]) {
-                    chapterStats[chapter] = {
-                        total: 0,
-                        correct: 0,
-                        totalTime: 0,
-                        questions: []
+            sectionResults = {};
+
+            // Process each section
+            testSections.forEach(section => {
+                let sectionCorrect = 0;
+                let sectionTotalTime = 0;
+
+                for (let i = section.startQ; i <= section.endQ; i++) {
+                    const questionKey = `q${i}`;
+                    const userAnswer = allAnswers[questionKey];
+                    const correctAnswer = correctAnswers[questionKey];
+                    const timeSpent = allTimeSpent[questionKey] || 0;
+                    const chapter = questionChapters[i]; // Only English has chapter mapping
+                    const isCorrect = userAnswer?.answer === correctAnswer;
+
+                    if (isCorrect) {
+                        totalCorrect++;
+                        sectionCorrect++;
+                    }
+
+                    sectionTotalTime += timeSpent;
+
+                    // Store individual question result
+                    questionResults[i] = {
+                        userAnswer: userAnswer?.answer || 'No Answer',
+                        correctAnswer: correctAnswer,
+                        isCorrect: isCorrect,
+                        timeSpent: timeSpent,
+                        chapter: chapter,
+                        section: section.name
                     };
+
+                    // Update chapter stats (English only)
+                    if (chapter && section.name === 'English') {
+                        if (!chapterStats[chapter]) {
+                            chapterStats[chapter] = {
+                                total: 0,
+                                correct: 0,
+                                totalTime: 0,
+                                questions: []
+                            };
+                        }
+
+                        chapterStats[chapter].total++;
+                        if (isCorrect) chapterStats[chapter].correct++;
+                        chapterStats[chapter].totalTime += timeSpent;
+                        chapterStats[chapter].questions.push(i);
+                    }
                 }
-                
-                chapterStats[chapter].total++;
-                if (isCorrect) chapterStats[chapter].correct++;
-                chapterStats[chapter].totalTime += timeSpent;
-                chapterStats[chapter].questions.push(i);
-            }
+
+                // Store section results
+                sectionResults[section.name] = {
+                    correct: sectionCorrect,
+                    total: section.questions,
+                    accuracy: Math.round((sectionCorrect / section.questions) * 100),
+                    totalTime: sectionTotalTime,
+                    avgTime: sectionTotalTime / section.questions
+                };
+            });
 
             // Calculate total time spent
-            const totalTimeSpent = Object.values(timeSpentPerQuestion).reduce((sum, time) => sum + time, 0);
-            const overallAccuracy = Math.round((correctCount / 50) * 100);
+            const totalTimeSpent = Object.values(allTimeSpent).reduce((sum, time) => sum + time, 0);
+            const totalQuestions = testSections.reduce((sum, section) => sum + section.questions, 0);
+            const overallAccuracy = Math.round((totalCorrect / totalQuestions) * 100);
 
-            // Update overview
-            updateOverview(correctCount, overallAccuracy, totalTimeSpent);
-            
-            // Update topics
+            // Update all displays
+            updateOverview(totalCorrect, totalQuestions, overallAccuracy, totalTimeSpent);
+            updateSectionScores();
+            updateSectionDetails();
             updateTopics(chapterStats);
-            
-            // Update all questions view
             updateAllQuestions();
-            
-            // Generate recommendations
-            generateRecommendations(chapterStats, overallAccuracy, totalTimeSpent);
+            generateRecommendations(overallAccuracy, totalTimeSpent);
         }
 
-        function updateOverview(correctCount, accuracy, totalTime) {
-            document.getElementById('scoreText').textContent = `${correctCount}/50`;
-            document.getElementById('scoreTitle').textContent = `${accuracy}% Accuracy`;
+        function generateSampleData() {
+            // Generate sample results for demonstration
+            sectionResults = {
+                'English': { correct: 42, total: 50, accuracy: 84, totalTime: 1800000, avgTime: 36000 },
+                'Math': { correct: 38, total: 45, accuracy: 84, totalTime: 2700000, avgTime: 60000 },
+                'Reading': { correct: 28, total: 36, accuracy: 78, totalTime: 2100000, avgTime: 58333 },
+                'Science': { correct: 32, total: 40, accuracy: 80, totalTime: 2000000, avgTime: 50000 }
+            };
+
+            questionResults = {};
+            for (let i = 1; i <= 171; i++) {
+                const section = testSections.find(s => i >= s.startQ && i <= s.endQ);
+                const isCorrect = Math.random() > 0.2; // 80% correct rate for demo
+                questionResults[i] = {
+                    userAnswer: isCorrect ? correctAnswers[`q${i}`] : 'B',
+                    correctAnswer: correctAnswers[`q${i}`],
+                    isCorrect: isCorrect,
+                    timeSpent: Math.random() * 60000 + 10000,
+                    section: section.name
+                };
+            }
+
+            const totalCorrect = Object.values(sectionResults).reduce((sum, section) => sum + section.correct, 0);
+            const totalQuestions = Object.values(sectionResults).reduce((sum, section) => sum + section.total, 0);
+            const totalTime = Object.values(sectionResults).reduce((sum, section) => sum + section.totalTime, 0);
+            const overallAccuracy = Math.round((totalCorrect / totalQuestions) * 100);
+
+            updateOverview(totalCorrect, totalQuestions, overallAccuracy, totalTime);
+            updateSectionScores();
+            updateSectionDetails();
+            updateAllQuestions();
+            generateRecommendations(overallAccuracy, totalTime);
+        }
+
+        function updateOverview(correctCount, totalQuestions, accuracy, totalTime) {
+            document.getElementById('scoreText').textContent = `${correctCount}/${totalQuestions}`;
+            document.getElementById('scoreTitle').textContent = `${accuracy}% Overall Accuracy`;
             document.getElementById('scoreSubtitle').textContent = getPerformanceLevel(accuracy);
             document.getElementById('correctCount').textContent = correctCount;
-            document.getElementById('incorrectCount').textContent = 50 - correctCount;
+            document.getElementById('incorrectCount').textContent = totalQuestions - correctCount;
             document.getElementById('totalTime').textContent = formatTime(totalTime);
             document.getElementById('completionBadge').textContent = `Completed • ${formatTime(totalTime)}`;
-            
+
             // Update score circle
             const scoreCircle = document.getElementById('scoreCircle');
             const percentage = (accuracy / 100) * 360;
             scoreCircle.style.setProperty('--percentage', `${percentage}deg`);
+        }
+
+        function updateSectionScores() {
+            const grid = document.getElementById('sectionScoresGrid');
+            grid.innerHTML = testSections.map(section => {
+                const results = sectionResults[section.name];
+                if (!results) return '';
+
+                const scoreLevel = getScoreLevel(results.accuracy);
+                return `
+                    <div class="section-score-card">
+                        <div class="section-header">
+                            <div class="section-name">${section.name}</div>
+                            <div class="section-score ${scoreLevel}">${results.correct}/${results.total}</div>
+                        </div>
+                        <div class="section-stats">
+                            <div class="section-stat">
+                                <div class="section-stat-value">${results.accuracy}%</div>
+                                <div class="section-stat-label">Accuracy</div>
+                            </div>
+                            <div class="section-stat">
+                                <div class="section-stat-value">${formatTime(results.totalTime)}</div>
+                                <div class="section-stat-label">Total Time</div>
+                            </div>
+                            <div class="section-stat">
+                                <div class="section-stat-value">${formatTime(results.avgTime)}</div>
+                                <div class="section-stat-label">Avg/Question</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function updateSectionDetails() {
+            const grid = document.getElementById('sectionDetailsGrid');
+            grid.innerHTML = testSections.map(section => {
+                const results = sectionResults[section.name];
+                if (!results) return '';
+
+                const questions = [];
+                for (let i = section.startQ; i <= section.endQ; i++) {
+                    if (questionResults[i]) {
+                        questions.push(questionResults[i]);
+                    }
+                }
+
+                return `
+                    <div class="section-detail-card">
+                        <h4>${section.name} Section - ${results.accuracy}% (${results.correct}/${results.total})</h4>
+                        <div class="question-grid" style="margin-top: 1rem;">
+                            ${questions.map((result, index) => `
+                                <div class="question-bubble ${result.isCorrect ? 'correct' : 'incorrect'}"
+                                     onclick="showQuestionDetail(${section.startQ + index})">
+                                    ${section.startQ + index}
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="section-stats" style="margin-top: 1.5rem;">
+                            <div class="section-stat">
+                                <div class="section-stat-value">${results.accuracy}%</div>
+                                <div class="section-stat-label">Accuracy</div>
+                            </div>
+                            <div class="section-stat">
+                                <div class="section-stat-value">${results.correct}/${results.total}</div>
+                                <div class="section-stat-label">Correct</div>
+                            </div>
+                            <div class="section-stat">
+                                <div class="section-stat-value">${formatTime(results.totalTime)}</div>
+                                <div class="section-stat-label">Total Time</div>
+                            </div>
+                            <div class="section-stat">
+                                <div class="section-stat-value">${formatTime(results.avgTime)}</div>
+                                <div class="section-stat-label">Avg/Question</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
         }
 
         function getPerformanceLevel(accuracy) {
@@ -823,44 +1118,62 @@
         function updateAllQuestions() {
             const questionsGrid = document.getElementById('allQuestionsGrid');
             questionsGrid.innerHTML = '';
-            
-            for (let i = 1; i <= 50; i++) {
+
+            for (let i = 1; i <= 171; i++) {
                 const result = questionResults[i];
-                const bubble = document.createElement('div');
-                bubble.className = `question-bubble ${result.isCorrect ? 'correct' : 'incorrect'}`;
-                bubble.textContent = i;
-                bubble.onclick = () => showQuestionDetail(i);
-                questionsGrid.appendChild(bubble);
+                if (result) {
+                    const bubble = document.createElement('div');
+                    bubble.className = `question-bubble ${result.isCorrect ? 'correct' : 'incorrect'}`;
+                    bubble.textContent = i;
+                    bubble.onclick = () => showQuestionDetail(i);
+                    questionsGrid.appendChild(bubble);
+                }
             }
         }
 
-        function generateRecommendations(chapterStats, accuracy, totalTime) {
+        function generateRecommendations(accuracy, totalTime) {
             const recommendations = [];
-            
-            // Find weakest topics
-            const weakTopics = Object.entries(chapterStats)
-                .filter(([chapter, stats]) => (stats.correct / stats.total) < 0.6)
-                .sort((a, b) => (a[1].correct / a[1].total) - (b[1].correct / b[1].total))
-                .slice(0, 3);
 
-            if (weakTopics.length > 0) {
-                recommendations.push(`Focus on ${chapterNames[weakTopics[0][0]]} - your weakest area at ${Math.round((weakTopics[0][1].correct / weakTopics[0][1].total) * 100)}%`);
+            // Find weakest sections
+            const sortedSections = Object.entries(sectionResults)
+                .sort((a, b) => a[1].accuracy - b[1].accuracy);
+
+            if (sortedSections.length > 0) {
+                const weakestSection = sortedSections[0];
+                recommendations.push(`Focus on ${weakestSection[0]} - your lowest scoring section at ${weakestSection[1].accuracy}%`);
+            }
+
+            // Overall performance recommendations
+            if (accuracy >= 90) {
+                recommendations.push('Excellent performance! You\'re well-prepared for the ACT. Focus on maintaining consistency and speed.');
+            } else if (accuracy >= 75) {
+                recommendations.push('Good performance! Review your weakest areas and practice timing to boost your score.');
+            } else if (accuracy >= 60) {
+                recommendations.push('Fair performance. Focus on strengthening fundamentals in your weakest sections.');
+            } else {
+                recommendations.push('Significant improvement needed. Consider reviewing basic concepts across all sections.');
             }
 
             // Time management
-            const avgTimePerQ = totalTime / 50;
-            if (avgTimePerQ > 45000) { // More than 45 seconds per question
-                recommendations.push('Practice timing - you averaged ' + formatTime(avgTimePerQ) + ' per question');
+            const totalQuestions = Object.values(sectionResults).reduce((sum, section) => sum + section.total, 0);
+            const avgTimePerQ = totalTime / totalQuestions;
+            if (avgTimePerQ > 60000) { // More than 60 seconds per question
+                recommendations.push('Practice timing - you averaged ' + formatTime(avgTimePerQ) + ' per question. Aim for faster completion.');
             }
 
-            // Overall performance
-            if (accuracy < 60) {
-                recommendations.push('Review fundamental grammar concepts before moving to advanced topics');
-            } else if (accuracy >= 80) {
-                recommendations.push('Great job! Focus on consistency and speed to maximize your score');
-            }
+            // Section-specific recommendations
+            Object.entries(sectionResults).forEach(([sectionName, results]) => {
+                if (results.accuracy < 70) {
+                    const timePerQ = results.avgTime;
+                    if (timePerQ > 60000) {
+                        recommendations.push(`${sectionName}: Work on speed and accuracy - you're taking too long per question.`);
+                    } else {
+                        recommendations.push(`${sectionName}: Focus on accuracy - review fundamental concepts for this section.`);
+                    }
+                }
+            });
 
-            document.getElementById('recommendationsList').innerHTML = 
+            document.getElementById('recommendationsList').innerHTML =
                 recommendations.map(rec => `<div class="recommendation-item">${rec}</div>`).join('');
         }
 
@@ -871,24 +1184,27 @@
 
         function showQuestionDetail(questionNum) {
             const result = questionResults[questionNum];
+            if (!result) return;
+
             const modal = document.getElementById('questionModal');
             const modalTitle = document.getElementById('modalTitle');
             const modalBody = document.getElementById('modalBody');
-            
-            modalTitle.textContent = `Question ${questionNum}`;
-            
+
+            modalTitle.textContent = `Question ${questionNum} (${result.section})`;
+
             const isCorrect = result.isCorrect;
             const statusClass = isCorrect ? 'correct' : 'incorrect';
             const statusText = isCorrect ? 'Correct' : 'Incorrect';
-            
+
             modalBody.innerHTML = `
                 <div style="text-align: center; margin-bottom: 1.5rem;">
                     <div class="question-bubble ${statusClass}" style="display: inline-flex; width: 60px; height: 60px; font-size: 1.2rem;">
                         ${questionNum}
                     </div>
                     <h4 style="margin-top: 0.5rem; color: ${isCorrect ? '#166534' : '#dc2626'};">${statusText}</h4>
+                    <p style="color: #666; font-size: 0.9rem; margin-top: 0.25rem;">${result.section} Section</p>
                 </div>
-                
+
                 <div class="answer-comparison">
                     <div class="correct-answer">
                         <h5>Correct Answer</h5>
@@ -899,16 +1215,18 @@
                         <div style="font-size: 1.2rem; font-weight: 600; margin-top: 0.5rem;">${result.userAnswer}</div>
                     </div>
                 </div>
-                
-                <div style="margin-top: 1rem;">
-                    <strong>Topic:</strong> ${chapterNames[result.chapter] || result.chapter}
-                </div>
-                
+
+                ${result.chapter ? `
+                    <div style="margin-top: 1rem;">
+                        <strong>Topic:</strong> ${chapterNames[result.chapter] || result.chapter}
+                    </div>
+                ` : ''}
+
                 <div class="time-spent">
                     Time spent: ${formatTime(result.timeSpent)}
                 </div>
             `;
-            
+
             modal.classList.add('active');
         }
 
