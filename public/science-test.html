@@ -319,7 +319,7 @@
             border: none;
             border-radius: 4px;
             padding: 0.3rem;
-            font-size: 1rem;
+            font-size: 0.8rem;
             cursor: pointer;
             transition: all 0.2s;
             opacity: 0.6;
@@ -514,7 +514,7 @@
                 <!-- Flag Bar (spans columns 1-2, stops before index bar) -->
                 <div class="flag-bar">
                     <span class="item-number" id="itemNumber">Item 1</span>
-                    <button class="flag-button" id="flagBtn" onclick="toggleFlag()">🏳️</button>
+                    <button class="flag-button" id="flagBtn" onclick="toggleFlag()">🏳️ Flag</button>
                 </div>
             <!-- Passages Section -->
             <div class="passage-section">
@@ -1770,10 +1770,10 @@
         function updateFlagButton() {
             const flagBtn = document.getElementById('flagBtn');
             if (flaggedQuestions.has(currentQuestion)) {
-                flagBtn.textContent = '✅';
+                flagBtn.textContent = '🏳️ Unflag';
                 flagBtn.classList.add('flagged');
             } else {
-                flagBtn.textContent = '🏳️';
+                flagBtn.textContent = '🏳️ Flag';
                 flagBtn.classList.remove('flagged');
             }
         }
