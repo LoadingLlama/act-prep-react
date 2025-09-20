@@ -1,5 +1,40 @@
 /* Shared ACT Test Styles - Common elements across all test sections */
 
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f8f9fa;
+    color: #1a1a1a;
+    line-height: 1.6;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Standard 3-column grid layout (all sections except math override) */
+.test-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 60px !important;
+    gap: 0;
+    padding: 0;
+    min-height: 0;
+}
+
+/* Math section override - questions take both sides */
+.math-test .test-content {
+    grid-template-columns: 1fr 60px !important;
+}
+
+.math-test .passage-section {
+    display: none;
+}
+
 /* Flag Bar Styles */
 .flag-bar {
     background: #f8f9fa;
@@ -10,7 +45,13 @@
     align-items: center;
     min-height: 2rem;
     font-size: 0.85rem;
+    grid-column: 1 / 3;
     z-index: 5;
+}
+
+/* Math section flag bar spans only questions column */
+.math-test .flag-bar {
+    grid-column: 1 / 2;
 }
 
 .item-number {
@@ -106,7 +147,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    grid-column: 3 !important;
     border-left: 1px solid #e5e7eb;
+}
+
+/* Math section sidebar positioning */
+.math-test .question-sidebar {
+    grid-column: 2 !important;
 }
 
 .sidebar-icon {
@@ -348,6 +395,138 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+}
+
+/* Passage Section Styles */
+.passage-section {
+    background: white;
+    border-right: 1px solid #e0e0e0;
+    padding: 1rem;
+    max-height: 85vh;
+    overflow-y: auto;
+    grid-column: 1 !important;
+}
+
+.passage-content {
+    display: none;
+}
+
+.passage-content.active {
+    display: block;
+}
+
+.passage-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.passage-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #374151;
+}
+
+.passage-text p {
+    margin-bottom: 1rem;
+}
+
+.underlined {
+    text-decoration: underline;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    padding: 1px 2px;
+    border-radius: 2px;
+}
+
+.underlined:hover {
+    background-color: #f0f9ff;
+}
+
+.underlined.highlighted {
+    background-color: #fff3cd;
+    font-weight: 500;
+}
+
+/* Questions Section Styles */
+.questions-section {
+    background: white;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    grid-column: 2 !important;
+}
+
+/* Math section questions take full width */
+.math-test .questions-section {
+    grid-column: 1 !important;
+}
+
+.questions-content {
+    padding: 1rem;
+    flex: 1;
+    overflow: hidden;
+}
+
+.question {
+    display: none;
+    padding: 1rem 0;
+}
+
+.question.active {
+    display: block;
+}
+
+.question-number {
+    display: none;
+}
+
+.question-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    line-height: 1.5;
+}
+
+.answer-choices {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.answer-choice {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+}
+
+.answer-choice:hover {
+    background: #f9fafb;
+}
+
+.answer-choice.selected {
+    background: #f0f9ff;
+}
+
+.answer-choice input {
+    margin-right: 0.75rem;
+    margin-top: 0.1rem;
+}
+
+.answer-text {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 /* Responsive Design */
