@@ -271,10 +271,11 @@
 
         .question-sidebar {
             background: #f8f9fa;
-            padding: 0.5rem;
+            padding: 0.75rem 0.5rem 0.5rem 0.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: flex-start;
             grid-column: 3 !important;
             border-left: 1px solid #e5e7eb;
         }
@@ -607,7 +608,7 @@
                 <!-- Flag Bar (spans columns 1-2, stops before index bar) -->
                 <div class="flag-bar">
                     <span class="item-number" id="itemNumber">Item 1</span>
-                    <button class="flag-button" id="flagBtn" onclick="toggleFlag()">🏳️</button>
+                    <button class="flag-button" id="flagBtn" onclick="toggleFlag()">🏳️ Flag</button>
                 </div>
             <!-- Passages Section -->
             <div class="passage-section">
@@ -2154,9 +2155,8 @@
 
         // End Section function
         function endSection() {
-            if (confirm('Are you sure you want to end this section? You will not be able to return.')) {
-                localStorage.setItem('currentSection', '0'); // English is section index 0
-                window.location.href = 'diagnostic-test.html';
+            if (confirm('Are you sure you want to end this section? You will not be able to return to it.')) {
+                window.location.href = 'math-test.html';
             }
         }
 

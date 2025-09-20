@@ -16,13 +16,14 @@
             background-color: #f8f9fa;
             color: #1a1a1a;
             line-height: 1.6;
-            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
         }
 
         .test-container {
             max-width: 1400px;
             margin: 0 auto;
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             background: #fafbfc;
@@ -48,10 +49,11 @@
 
         .logo {
             font-size: 1.1rem;
-            font-weight: 600;
-            color: #1a1a1a;
+            font-weight: 400;
+            color: #9ca3af;
             text-decoration: none;
             letter-spacing: -0.02em;
+            opacity: 0.7;
         }
 
         .test-title {
@@ -67,30 +69,44 @@
             gap: 1rem;
         }
 
+        .header-center {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .question-counter {
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
         .flag-button {
-            background: #1a1a1a;
-            color: white;
+            background: transparent;
+            color: #9ca3af;
             border: none;
             border-radius: 4px;
-            padding: 0.3rem 0.6rem;
-            font-size: 0.8rem;
-            font-weight: 500;
+            padding: 0.3rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.2s;
+            opacity: 0.6;
         }
 
         .flag-button:hover {
-            background: #333;
+            opacity: 1;
+            color: #6b7280;
         }
 
         .flag-button.flagged {
-            background: #dc3545;
+            color: #dc3545;
+            opacity: 1;
         }
 
         .question-nav-button {
-            background: #6c757d;
-            color: white;
-            border: none;
+            background: #c0c0c0;
+            color: #333;
+            border: 1px solid #999;
             border-radius: 4px;
             padding: 0.3rem 0.6rem;
             font-size: 0.8rem;
@@ -100,82 +116,189 @@
         }
 
         .question-nav-button:hover {
-            background: #5a6268;
+            background: #b0b0b0;
+            border-color: #777;
+        }
+
+        .end-section-link {
+            background: none;
+            border: none;
+            color: #6b7280;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .end-section-link:hover {
+            background: #f3f4f6;
+            color: #1a1a1a;
         }
 
         .timer {
-            background: #1a1a1a;
-            color: white;
+            background: transparent;
+            color: #9ca3af;
             padding: 0.3rem 0.6rem;
             border-radius: 4px;
-            font-weight: 500;
+            font-weight: 400;
             font-size: 0.8rem;
+            opacity: 0.7;
         }
 
         .test-content {
             flex: 1;
             display: grid;
-            grid-template-columns: 1fr 1fr !important;
+            grid-template-columns: 1fr 1fr 60px !important;
             gap: 0;
             padding: 0;
             min-height: 0;
         }
 
-        .reference-section {
+        .passage-section {
             background: white;
             border-right: 1px solid #e0e0e0;
             padding: 1rem;
-            height: 100%;
+            max-height: 85vh;
             overflow-y: auto;
             grid-column: 1 !important;
         }
 
-        .reference-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+        .passage-content {
+            display: none;
+        }
+
+        .passage-content.active {
+            display: block;
+        }
+
+        .passage-title {
+            font-size: 1.2rem;
+            font-weight: bold;
             color: #1a1a1a;
-            line-height: 1.3;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e5e7eb;
         }
 
-        .formula-section {
-            margin-bottom: 1.5rem;
-        }
-
-        .formula-section h3 {
-            font-size: 1rem;
-            font-weight: 600;
+        .passage-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
             color: #374151;
-            margin-bottom: 0.75rem;
-            padding: 0.5rem;
-            background: #f8f9fa;
-            border-radius: 4px;
         }
 
-        .formula-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+        .passage-text p {
+            margin-bottom: 1rem;
         }
 
-        .formula-item {
-            background: #f9fafb;
-            padding: 0.75rem;
-            border-radius: 4px;
-            border-left: 3px solid #1a1a1a;
-            font-family: 'Monaco', 'Menlo', monospace;
-            font-size: 0.85rem;
+        .underlined {
+            text-decoration: underline;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            padding: 1px 2px;
+            border-radius: 2px;
+        }
+
+        .underlined:hover {
+            background-color: #f0f9ff;
+        }
+
+        .underlined.highlighted {
+            background-color: #fff3cd;
+            font-weight: 500;
         }
 
         .questions-section {
             background: white;
-            padding: 1rem;
-            height: 100%;
+            height: 70vh;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             position: relative;
             grid-column: 2 !important;
+        }
+
+        .questions-content {
+            padding: 1rem;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .flag-bar {
+            background: #f8f9fa;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            grid-column: 1 / 3;
+            z-index: 5;
+        }
+
+        .item-number {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            font-weight: 500;
+        }
+
+        .flag-button {
+            background: transparent;
+            color: #9ca3af;
+            border: none;
+            border-radius: 4px;
+            padding: 0.3rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            opacity: 0.6;
+        }
+
+        .flag-button:hover {
+            opacity: 1;
+            color: #6b7280;
+        }
+
+        .flag-button.flagged {
+            color: #dc3545;
+            opacity: 1;
+        }
+
+        .question-sidebar {
+            background: #f8f9fa;
+            padding: 0.75rem 0.5rem 0.5rem 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            grid-column: 3 !important;
+            border-left: 1px solid #e5e7eb;
+        }
+
+        .sidebar-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .sidebar-icon:hover {
+            background: #e5e7eb;
+        }
+
+        .sidebar-text {
+            font-size: 0.7rem;
+            color: #6b7280;
+            text-align: center;
+            font-weight: 500;
+            cursor: pointer;
         }
 
         .question {
@@ -188,10 +311,7 @@
         }
 
         .question-number {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #6b7280;
-            margin-bottom: 0.5rem;
+            display: none;
         }
 
         .question-text {
@@ -210,21 +330,19 @@
         .answer-choice {
             display: flex;
             align-items: flex-start;
-            padding: 0.75rem;
-            border: 1px solid #e5e7eb;
-            border-radius: 6px;
+            padding: 0.5rem 0;
             cursor: pointer;
             transition: all 0.2s;
+            border: none;
+            background: none;
         }
 
         .answer-choice:hover {
             background: #f9fafb;
-            border-color: #1a1a1a;
         }
 
         .answer-choice.selected {
             background: #f0f9ff;
-            border-color: #0ea5e9;
         }
 
         .answer-choice input {
@@ -238,49 +356,63 @@
             line-height: 1.4;
         }
 
+        .test-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-divider {
+            border-top: 1px solid #f0f0f0;
+            margin: 0;
+        }
+
         .navigation {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
             background: white;
-            border-top: 1px solid #e5e7eb;
             padding: 1rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            gap: 0.5rem;
+            border-top: 1px solid #f0f0f0;
+            position: sticky;
+            bottom: 0;
+            z-index: 10;
         }
 
         .nav-button {
             padding: 0.75rem 1.5rem;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #d1d5db;
             border-radius: 6px;
-            background: white;
-            color: #374151;
+            background: #f9fafb;
+            color: #6b7280;
             cursor: pointer;
             transition: all 0.2s;
-            font-weight: 500;
+            font-weight: 400;
+            opacity: 0.8;
         }
 
         .nav-button:hover:not(:disabled) {
-            background: #f9fafb;
-            border-color: #1a1a1a;
+            background: #f3f4f6;
+            border-color: #9ca3af;
+            opacity: 1;
         }
 
         .nav-button:disabled {
-            opacity: 0.5;
+            opacity: 0.4;
             cursor: not-allowed;
         }
 
         .nav-button.primary {
-            background: #1a1a1a;
+            background: #6b7280;
             color: white;
-            border-color: #1a1a1a;
+            border-color: #6b7280;
+            opacity: 0.9;
         }
 
         .nav-button.primary:hover:not(:disabled) {
-            background: #374151;
+            background: #4b5563;
+            opacity: 1;
         }
 
         .question-info {
@@ -411,7 +543,7 @@
                 gap: 1rem;
             }
 
-            .reference-section {
+            .passage-section {
                 order: 2;
                 max-height: 400px;
                 border-right: none;
@@ -423,7 +555,7 @@
             }
 
             .question-grid {
-                grid-template-columns: repeat(7, 1fr);
+                grid-template-columns: repeat(8, 1fr);
             }
         }
 
@@ -460,223 +592,70 @@
         <div class="test-header">
             <div class="header-content">
                 <a href="/" class="logo">actcourse.org</a>
-                <h1 class="test-title">ACT Math Test</h1>
+                <div class="header-center">
+                </div>
                 <div class="header-right">
-                    <button class="flag-button" id="flagBtn" onclick="toggleFlag()">🏳️ Flag</button>
-                    <button class="question-nav-button" onclick="showQuestionModal()">📋 Questions</button>
+                    <span class="question-counter" id="questionCounter">Question 1 of 45</span>
+                    <button class="end-section-link" onclick="endSection()">⏹️ End Section</button>
                     <div class="timer" id="timer">60:00</div>
                 </div>
             </div>
         </div>
 
-        <!-- Main Content -->
-        <div class="test-content">
-            <!-- Reference Section -->
-            <div class="reference-section">
-                <h2 class="reference-title">📐 Math Reference Formulas</h2>
+        <div class="test-main">
+            <!-- Main Content -->
+            <div class="test-content">
+                <!-- Flag Bar (spans columns 1-2, stops before index bar) -->
+                <div class="flag-bar">
+                    <span class="item-number" id="itemNumber">Item 1</span>
+                    <button class="flag-button" id="flagBtn" onclick="toggleFlag()">🏳️ Flag</button>
+                </div>
 
-                <div class="formula-section">
-                    <h3>Geometry</h3>
-                    <div class="formula-list">
-                        <div class="formula-item">Area of circle: A = πr²</div>
-                        <div class="formula-item">Circumference: C = 2πr</div>
-                        <div class="formula-item">Area of triangle: A = ½bh</div>
-                        <div class="formula-item">Area of rectangle: A = lw</div>
-                        <div class="formula-item">Volume of cylinder: V = πr²h</div>
-                        <div class="formula-item">Volume of sphere: V = ⁴⁄₃πr³</div>
-                        <div class="formula-item">Pythagorean theorem: a² + b² = c²</div>
+            <!-- Passages Section -->
+            <div class="passage-section">
+                <!-- Passage I -->
+                <div class="passage-content active" id="passage1">
+                    <div class="passage-text">
+                        <div class="passage-title">ACT Math Test</div>
+                        <p>This section contains 45 questions. You have 60 minutes to complete this section.</p>
+                        <p><strong>Instructions:</strong> Solve each problem, choose the correct answer, and then fill in the corresponding oval on your answer document.</p>
+                        <p>Do not linger over problems that take too much time. Solve as many as you can; then return to the others in the time you have left for this test.</p>
+                        <p>You are permitted to use a calculator on this test. You may use your calculator for any problems you choose, but some of the problems may best be done without using a calculator.</p>
+                        <p><strong>Note:</strong> Unless otherwise stated, all of the following should be assumed:</p>
+                        <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                            <li>Illustrative figures are NOT necessarily drawn to scale.</li>
+                            <li>Geometric figures lie in a plane.</li>
+                            <li>The word line indicates a straight line.</li>
+                            <li>The word average indicates arithmetic mean.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="formula-section">
-                    <h3>Algebra</h3>
-                    <div class="formula-list">
-                        <div class="formula-item">Quadratic formula: x = (-b ± √(b² - 4ac)) / 2a</div>
-                        <div class="formula-item">Slope: m = (y₂ - y₁) / (x₂ - x₁)</div>
-                        <div class="formula-item">Distance: d = √[(x₂ - x₁)² + (y₂ - y₁)²]</div>
-                        <div class="formula-item">Midpoint: ((x₁ + x₂)/2, (y₁ + y₂)/2)</div>
-                    </div>
-                </div>
-
-                <div class="formula-section">
-                    <h3>Trigonometry</h3>
-                    <div class="formula-list">
-                        <div class="formula-item">sin²θ + cos²θ = 1</div>
-                        <div class="formula-item">sin(30°) = ½, cos(30°) = √3/2</div>
-                        <div class="formula-item">sin(45°) = cos(45°) = √2/2</div>
-                        <div class="formula-item">sin(60°) = √3/2, cos(60°) = ½</div>
-                        <div class="formula-item">Law of sines: a/sin(A) = b/sin(B) = c/sin(C)</div>
-                        <div class="formula-item">Law of cosines: c² = a² + b² - 2ab·cos(C)</div>
-                    </div>
-                </div>
-
-                <div class="formula-section">
-                    <h3>Statistics & Probability</h3>
-                    <div class="formula-list">
-                        <div class="formula-item">Mean: x̄ = Σx / n</div>
-                        <div class="formula-item">Standard deviation: σ = √[Σ(x - x̄)² / n]</div>
-                        <div class="formula-item">Combination: C(n,r) = n! / (r!(n-r)!)</div>
-                        <div class="formula-item">Permutation: P(n,r) = n! / (n-r)!</div>
-                    </div>
-                </div>
             </div>
 
             <!-- Questions Section -->
             <div class="questions-section">
-                <!-- Question 1 -->
-                <div class="question active" id="question1">
-                    <div class="question-number">1.</div>
-                    <div class="question-text">What is the value of 3x + 7 when x = 4?</div>
-                    <div class="answer-choices">
-                        <label class="answer-choice">
-                            <input type="radio" name="q1" value="A">
-                            <span class="answer-text">A. 15</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q1" value="B">
-                            <span class="answer-text">B. 19</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q1" value="C">
-                            <span class="answer-text">C. 23</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q1" value="D">
-                            <span class="answer-text">D. 28</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q1" value="E">
-                            <span class="answer-text">E. 31</span>
-                        </label>
+                <div class="questions-content">
+                    <!-- Questions will be loaded dynamically from JSON database -->
+                    <div style="padding: 2rem; text-align: center; color: #6b7280;">
+                        <p>Loading questions...</p>
                     </div>
                 </div>
-
-                <!-- Question 2 -->
-                <div class="question" id="question2">
-                    <div class="question-number">2.</div>
-                    <div class="question-text">If a triangle has sides of length 5, 12, and 13, what type of triangle is it?</div>
-                    <div class="answer-choices">
-                        <label class="answer-choice">
-                            <input type="radio" name="q2" value="F">
-                            <span class="answer-text">F. Acute</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q2" value="G">
-                            <span class="answer-text">G. Right</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q2" value="H">
-                            <span class="answer-text">H. Obtuse</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q2" value="J">
-                            <span class="answer-text">J. Scalene</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q2" value="K">
-                            <span class="answer-text">K. Isosceles</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Question 3 -->
-                <div class="question" id="question3">
-                    <div class="question-number">3.</div>
-                    <div class="question-text">What is the slope of the line that passes through the points (2, 3) and (6, 11)?</div>
-                    <div class="answer-choices">
-                        <label class="answer-choice">
-                            <input type="radio" name="q3" value="A">
-                            <span class="answer-text">A. 1/2</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q3" value="B">
-                            <span class="answer-text">B. 2</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q3" value="C">
-                            <span class="answer-text">C. 4</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q3" value="D">
-                            <span class="answer-text">D. 8</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q3" value="E">
-                            <span class="answer-text">E. 14</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Continue with more questions... For brevity, I'll add just a few more -->
-
-                <!-- Question 4 -->
-                <div class="question" id="question4">
-                    <div class="question-number">4.</div>
-                    <div class="question-text">If 2x - 5 = 13, what is the value of x?</div>
-                    <div class="answer-choices">
-                        <label class="answer-choice">
-                            <input type="radio" name="q4" value="F">
-                            <span class="answer-text">F. 4</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q4" value="G">
-                            <span class="answer-text">G. 6</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q4" value="H">
-                            <span class="answer-text">H. 8</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q4" value="J">
-                            <span class="answer-text">J. 9</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q4" value="K">
-                            <span class="answer-text">K. 18</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Question 5 -->
-                <div class="question" id="question5">
-                    <div class="question-number">5.</div>
-                    <div class="question-text">What is the area of a circle with radius 6?</div>
-                    <div class="answer-choices">
-                        <label class="answer-choice">
-                            <input type="radio" name="q5" value="A">
-                            <span class="answer-text">A. 12π</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q5" value="B">
-                            <span class="answer-text">B. 36π</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q5" value="C">
-                            <span class="answer-text">C. 72π</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q5" value="D">
-                            <span class="answer-text">D. 144π</span>
-                        </label>
-                        <label class="answer-choice">
-                            <input type="radio" name="q5" value="E">
-                            <span class="answer-text">E. 216π</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Additional questions would continue here with the same pattern -->
-
             </div>
-        </div>
 
-        <!-- Navigation -->
-        <div class="navigation">
-            <button class="nav-button" id="prevBtn" onclick="previousQuestion()" disabled>← Previous</button>
-            <div class="question-info">
-                <span id="questionIndicator">Question 1 of 45</span>
+            <!-- Question Sidebar -->
+            <div class="question-sidebar">
+                <div class="sidebar-icon" onclick="showQuestionModal()">📋</div>
+                <div class="sidebar-text">Index</div>
             </div>
-            <button class="nav-button primary" id="nextBtn" onclick="nextQuestion()">Next →</button>
+            </div>
+
+            <hr class="content-divider">
+            <!-- Navigation -->
+            <div class="navigation">
+                <button class="nav-button" id="prevBtn" onclick="previousQuestion()" disabled>← Previous</button>
+                <button class="nav-button primary" id="nextBtn" onclick="nextQuestion()">Next →</button>
+            </div>
         </div>
 
         <!-- Question Navigator Modal -->
@@ -712,11 +691,99 @@
     </div>
 
     <script>
+        // Global variables
         let currentQuestion = 1;
-        const totalQuestions = 45;
+        let totalQuestions = 45;
         let answers = {};
         let flaggedQuestions = new Set();
         let timeLeft = 60 * 60; // 60 minutes in seconds
+        let questionsData = null;
+        let testInfo = null;
+
+        // Load questions from JSON database
+        async function loadQuestions() {
+            try {
+                const response = await fetch('./questions/math-questions.json');
+                const data = await response.json();
+                questionsData = data.questions;
+                testInfo = data.testInfo;
+
+                // Update global variables from test info
+                totalQuestions = testInfo.totalQuestions;
+                timeLeft = testInfo.timeLimit * 60; // Convert minutes to seconds
+
+                // Generate questions HTML
+                generateQuestionsHTML();
+
+                // Initialize the test
+                updateDisplay();
+                startTimer();
+
+                console.log(`Loaded ${questionsData.length} questions for ${testInfo.subject} test`);
+            } catch (error) {
+                console.error('Error loading questions:', error);
+                alert('Error loading test questions. Please refresh the page.');
+            }
+        }
+
+        // Generate HTML for all questions dynamically
+        function generateQuestionsHTML() {
+            const questionsContainer = document.querySelector('.questions-content');
+            questionsContainer.innerHTML = ''; // Clear existing questions
+
+            questionsData.forEach((questionData, index) => {
+                const questionHTML = createQuestionHTML(questionData, index === 0);
+                questionsContainer.appendChild(questionHTML);
+            });
+        }
+
+        // Create HTML element for a single question
+        function createQuestionHTML(questionData, isActive = false) {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = `question${isActive ? ' active' : ''}`;
+            questionDiv.id = `question${questionData.id}`;
+
+            // Create question number (hidden but kept for compatibility)
+            const questionNumber = document.createElement('div');
+            questionNumber.className = 'question-number';
+            questionNumber.textContent = `${questionData.id}.`;
+
+            // Create question text
+            const questionText = document.createElement('div');
+            questionText.className = 'question-text';
+            questionText.textContent = questionData.text;
+
+            // Create answer choices container
+            const answerChoices = document.createElement('div');
+            answerChoices.className = 'answer-choices';
+
+            // Generate answer choices
+            questionData.choices.forEach((choice, index) => {
+                const choiceLetter = testInfo.answerChoices[index];
+                const label = document.createElement('label');
+                label.className = 'answer-choice';
+
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.name = `q${questionData.id}`;
+                input.value = choiceLetter;
+
+                const span = document.createElement('span');
+                span.className = 'answer-text';
+                span.textContent = `${choiceLetter}. ${choice}`;
+
+                label.appendChild(input);
+                label.appendChild(span);
+                answerChoices.appendChild(label);
+            });
+
+            // Assemble question
+            questionDiv.appendChild(questionNumber);
+            questionDiv.appendChild(questionText);
+            questionDiv.appendChild(answerChoices);
+
+            return questionDiv;
+        }
 
         function updateDisplay() {
             // Hide all questions
@@ -739,7 +806,8 @@
                 document.getElementById('nextBtn').onclick = nextQuestion;
             }
 
-            document.getElementById('questionIndicator').textContent = `Question ${currentQuestion} of ${totalQuestions}`;
+            document.getElementById('questionCounter').textContent = `Question ${currentQuestion} of ${totalQuestions}`;
+            document.getElementById('itemNumber').textContent = `Item ${currentQuestion}`;
 
             // Update flag button
             updateFlagButton();
@@ -785,6 +853,12 @@
             } else {
                 flagBtn.textContent = '🏳️ Flag';
                 flagBtn.classList.remove('flagged');
+            }
+        }
+
+        function endSection() {
+            if (confirm('Are you sure you want to end this section? You will not be able to return to it.')) {
+                window.location.href = 'reading-test.html';
             }
         }
 
@@ -891,9 +965,10 @@
             }
         });
 
-        // Initialize
-        updateDisplay();
-        startTimer();
+        // Initialize - Load questions from database and start test
+        document.addEventListener('DOMContentLoaded', function() {
+            loadQuestions();
+        });
     </script>
 </body>
 </html>
