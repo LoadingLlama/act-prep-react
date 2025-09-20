@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACT Math Test</title>
+    <link rel="stylesheet" href="shared-test-styles.css">
     <style>
+        /* Section-specific grid positioning for 2-column layout */
+        .flag-bar {
+            grid-column: 1 / 2;
+        }
+
+        .question-sidebar {
+            grid-column: 2 !important;
+        }
         * {
             margin: 0;
             padding: 0;
