@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { spacing, borderRadius } from '../utils/sharedStyles';
 
 const useStyles = createUseStyles({
   navigation: {
@@ -24,8 +25,8 @@ const useStyles = createUseStyles({
     background: '#f8f9fa',
     color: '#374151',
     border: '1px solid #d1d5db',
-    padding: '0.5rem 1rem',
-    borderRadius: '6px',
+    padding: `${spacing.sm} ${spacing.lg}`,
+    borderRadius: borderRadius.md,
     cursor: 'pointer',
     fontSize: '0.9rem',
     fontWeight: 500,

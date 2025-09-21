@@ -1,6 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import Timer from './Timer';
+import { spacing, borderRadius } from '../utils/sharedStyles';
 
 const useStyles = createUseStyles({
   header: {
@@ -42,9 +43,9 @@ const useStyles = createUseStyles({
   },
   submitButton: {
     margin: 0,
-    padding: '0.5rem 1rem',
+    padding: `${spacing.sm} ${spacing.lg}`,
     fontSize: '0.85rem',
-    borderRadius: '6px',
+    borderRadius: borderRadius.md,
     minWidth: '80px',
     background: '#dc3545',
     color: 'white',

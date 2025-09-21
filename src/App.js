@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
+import Button from './components/Button';
+import StatusIcon from './components/StatusIcon';
+import { gradients, spacing, borderRadius, buttonStyles } from './utils/sharedStyles';
+import { storage, scriptLoader, statusUtils, lessonUtils, domUtils } from './utils/helpers';
 
 const useStyles = createUseStyles({
   '@global': {
@@ -123,16 +127,16 @@ const useStyles = createUseStyles({
     marginTop: '0'
   },
   card: {
-    background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+    background: gradients.card,
     border: '1px solid #dee2e6',
-    borderRadius: '12px',
-    padding: '2rem',
-    marginBottom: '1.5rem',
+    borderRadius: borderRadius.xl,
+    padding: spacing.xxl,
+    marginBottom: spacing.xl,
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
     cursor: 'pointer',
     '&:hover': {
-      background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+      background: gradients.cardHover,
       borderColor: '#adb5bd',
       transform: 'translateY(-4px)',
       boxShadow: '0 12px 30px rgba(0,0,0,0.15)'
@@ -150,20 +154,12 @@ const useStyles = createUseStyles({
     }
   },
   btn: {
-    background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+    ...buttonStyles.base,
+    ...buttonStyles.sizes.md,
+    background: gradients.neutral,
     color: '#666',
-    border: '1px solid #dee2e6',
-    padding: '0.75rem 1.5rem',
-    borderRadius: '6px',
-    cursor: 'pointer',
-    fontSize: '0.95rem',
-    fontWeight: 500,
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-    textDecoration: 'none',
-    display: 'inline-block',
-    boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
     '&:hover': {
-      background: 'linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%)',
+      background: gradients.neutralHover,
       borderColor: '#adb5bd',
       transform: 'translateY(-1px)',
       boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
@@ -178,18 +174,18 @@ const useStyles = createUseStyles({
     flexWrap: 'wrap'
   },
   sectionFilter: {
-    background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+    background: gradients.neutral,
     border: '1px solid #dee2e6',
     color: '#666',
-    padding: '0.5rem 1rem',
-    borderRadius: '20px',
+    padding: `${spacing.sm} ${spacing.lg}`,
+    borderRadius: borderRadius.pill,
     cursor: 'pointer',
     fontSize: '0.9rem',
     fontWeight: 500,
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
     '&:hover': {
-      background: 'linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%)',
+      background: gradients.neutralHover,
       borderColor: '#adb5bd',
       transform: 'translateY(-1px)',
       boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
@@ -641,41 +637,38 @@ function App() {
   const [currentLesson, setCurrentLesson] = useState(null);
   const [lessonModalOpen, setLessonModalOpen] = useState(false);
   const [lessonProgress, setLessonProgress] = useState(() => {
-    // Load progress from localStorage
-    const saved = localStorage.getItem('actPrepProgress');
-    return saved ? JSON.parse(saved) : {};
+    return storage.get('actPrepProgress', {});
   });
 
   useEffect(() => {
-    // Load lesson content from script files
-    const loadScript = (src) => {
-      return new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = src;
-        script.onload = resolve;
-        script.onerror = reject;
-        document.head.appendChild(script);
-      });
-    };
+    const sources = [
+      '/english-lessons.js',
+      '/math-lessons.js',
+      '/reading-lessons.js',
+      '/science-lessons.js'
+    ];
 
-    // Load all lesson scripts
-    Promise.all([
-      loadScript('/english-lessons.js'),
-      loadScript('/math-lessons.js'),
-      loadScript('/reading-lessons.js'),
-      loadScript('/science-lessons.js')
-    ]).then(() => {
-      // Combine all lesson content from different files
-      const combinedContent = {
-        ...window.englishLessons,
-        ...window.mathLessons,
-        ...window.readingLessons,
-        ...window.scienceLessons
-      };
-      setLessonContent(combinedContent);
-    }).catch(err => {
-      console.error('Error loading lesson scripts:', err);
-    });
+    // Load all lesson scripts using utility
+    Promise.all(sources.map(src => scriptLoader.load(src)))
+      .then(() => {
+        // Combine all lesson content from different files
+        const combinedContent = {
+          ...window.englishLessons,
+          ...window.mathLessons,
+          ...window.readingLessons,
+          ...window.scienceLessons
+        };
+        setLessonContent(combinedContent);
+      })
+      .catch(err => {
+        console.error('Error loading lesson scripts:', err);
+        setLessonContent({});
+      });
+
+    // Cleanup function
+    return () => {
+      scriptLoader.cleanup(sources);
+    };
   }, []);
 
   const handleTabClick = (tab) => {
@@ -689,20 +682,15 @@ function App() {
   const openLesson = (lessonId) => {
     setCurrentLesson(lessonId);
     setLessonModalOpen(true);
-    document.body.style.overflow = 'hidden';
-    // No automatic status change - user controls status manually
+    domUtils.preventBodyScroll();
   };
 
   const updateLessonProgress = (lessonId, status) => {
     const newProgress = { ...lessonProgress, [lessonId]: status };
     setLessonProgress(newProgress);
-    localStorage.setItem('actPrepProgress', JSON.stringify(newProgress));
+    storage.set('actPrepProgress', newProgress);
   };
 
-  const markLessonComplete = (lessonId) => {
-    updateLessonProgress(lessonId, 'completed');
-    closeLessonModal();
-  };
 
   const getLessonStatus = (lessonId) => {
     return lessonProgress[lessonId] || 'not-started';
@@ -711,7 +699,7 @@ function App() {
   const closeLessonModal = () => {
     setLessonModalOpen(false);
     setCurrentLesson(null);
-    document.body.style.overflow = '';
+    domUtils.restoreBodyScroll();
   };
 
   const TestsContent = () => (
@@ -722,47 +710,47 @@ function App() {
           <div className={classes.card}>
             <h3>Diagnostic Test</h3>
             <p>Take this first to understand your current level and identify areas for improvement.</p>
-            <a href="/diagnostic-test.html" className={classes.btn}>Start Diagnostic</a>
+            <Button href="/diagnostic-test.html">Start Diagnostic</Button>
           </div>
           <div className={classes.card}>
             <h3>Full Practice Test 1</h3>
             <p>Complete 4-section ACT practice test with detailed explanations and scoring.</p>
-            <button className={classes.btn}>Start Test</button>
+            <Button>Start Test</Button>
           </div>
           <div className={classes.card}>
             <h3>English Section Practice</h3>
             <p>Focus on grammar, punctuation, and rhetorical skills with targeted questions.</p>
-            <button className={classes.btn}>Start Practice</button>
+            <Button>Start Practice</Button>
           </div>
           <div className={classes.card}>
             <h3>Math Section Practice</h3>
             <p>Algebra, geometry, and trigonometry problems with step-by-step solutions.</p>
-            <button className={classes.btn}>Start Practice</button>
+            <Button>Start Practice</Button>
           </div>
           <div className={classes.card}>
             <h3>Reading Section Practice</h3>
             <p>Improve comprehension and analysis skills with timed reading passages.</p>
-            <button className={classes.btn}>Start Practice</button>
+            <Button>Start Practice</Button>
           </div>
           <div className={classes.card}>
             <h3>Science Section Practice</h3>
             <p>Data interpretation and scientific reasoning practice questions.</p>
-            <button className={classes.btn}>Start Practice</button>
+            <Button>Start Practice</Button>
           </div>
           <div className={classes.card}>
             <h3>Full Practice Test 2</h3>
             <p>Additional complete practice test to track your improvement over time.</p>
-            <button className={classes.btn}>Start Test</button>
+            <Button>Start Test</Button>
           </div>
           <div className={classes.card}>
             <h3>Full Practice Test 3</h3>
             <p>Continue building test-taking stamina and refining your strategies.</p>
-            <button className={classes.btn}>Start Test</button>
+            <Button>Start Test</Button>
           </div>
           <div className={classes.card}>
             <h3>Full Practice Test 4</h3>
             <p>Final practice test to ensure you're ready for test day.</p>
-            <button className={classes.btn}>Start Test</button>
+            <Button>Start Test</Button>
           </div>
         </div>
       </div>
@@ -849,56 +837,9 @@ function App() {
                       <p>{item.desc}</p>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', zIndex: 3, position: 'relative' }}>
-                      {getLessonStatus(item.id) === 'completed' && (
-                        <div style={{
-                          width: '24px',
-                          height: '24px',
-                          background: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)',
-                          color: '#065f46',
-                          border: '1px solid #059669',
-                          borderRadius: '50%',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          fontSize: '14px',
-                          fontWeight: 'bold',
-                          boxShadow: '0 2px 8px rgba(5, 150, 105, 0.15)'
-                        }}>✓</div>
-                      )}
-                      {getLessonStatus(item.id) === 'in-progress' && (
-                        <div style={{
-                          width: '24px',
-                          height: '24px',
-                          background: 'linear-gradient(135deg, #fefce8 0%, #fef3c7 100%)',
-                          color: '#92400e',
-                          border: '1px solid #d97706',
-                          borderRadius: '50%',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          fontSize: '14px',
-                          fontWeight: 'bold',
-                          boxShadow: '0 2px 8px rgba(217, 119, 6, 0.15)'
-                        }}>⏱</div>
-                      )}
-                      {getLessonStatus(item.id) === 'not-started' && (
-                        <div style={{
-                          width: '24px',
-                          height: '24px',
-                          background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
-                          color: '#64748b',
-                          borderRadius: '50%',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          fontSize: '14px',
-                          fontWeight: 'bold',
-                          border: '1px solid #cbd5e1',
-                          boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
-                        }}>○</div>
-                      )}
+                      <StatusIcon status={getLessonStatus(item.id)} />
                       <span className={`${classes.lessonStatus} ${getLessonStatus(item.id) === 'completed' ? 'completed' : getLessonStatus(item.id) === 'in-progress' ? 'in-progress' : ''}`}>
-                        {getLessonStatus(item.id) === 'completed' ? 'Completed' : getLessonStatus(item.id) === 'in-progress' ? 'In Progress' : 'Not Started'}
+                        {statusUtils.getDisplayText(getLessonStatus(item.id))}
                       </span>
                     </div>
                   </div>
@@ -915,29 +856,8 @@ function App() {
     const lesson = lessonContent[currentLesson];
     const currentLessonData = lessonStructure.find(item => item.id === currentLesson);
 
-    // Extract key terms from lesson content (simplified)
-    const extractKeyTerms = (content) => {
-      if (!content) return [];
-      const terms = [];
-      // Simple extraction of terms in bold or emphasized text
-      const boldMatches = content.match(/<b[^>]*>(.*?)<\/b>/gi) || [];
-      const strongMatches = content.match(/<strong[^>]*>(.*?)<\/strong>/gi) || [];
-      const emMatches = content.match(/<em[^>]*>(.*?)<\/em>/gi) || [];
-
-      [...boldMatches, ...strongMatches, ...emMatches].forEach(match => {
-        const term = match.replace(/<[^>]*>/g, '').trim();
-        if (term.length > 3 && term.length < 30 && !terms.includes(term)) {
-          terms.push(term);
-        }
-      });
-
-      return terms.slice(0, 8); // Limit to 8 terms
-    };
-
-    const keyTerms = extractKeyTerms(lesson?.content);
-    const completedLessons = lessonStructure.filter(l => getLessonStatus(l.id) === 'completed').length;
-    const totalLessons = lessonStructure.length;
-    const progressPercent = (completedLessons / totalLessons) * 100;
+    const keyTerms = lessonUtils.extractKeyTerms(lesson?.content);
+    const progress = lessonUtils.calculateProgress(lessonStructure, lessonProgress);
 
     return (
       <div className={`${classes.lessonModal} ${lessonModalOpen ? 'active' : ''}`}>
@@ -947,10 +867,10 @@ function App() {
             <div className={classes.sidebarSection}>
               <h4>Progress</h4>
               <div style={{ fontSize: '0.85rem', color: '#718096', marginBottom: '0.5rem' }}>
-                {completedLessons} of {totalLessons} lessons completed
+                {progress.completed} of {progress.total} lessons completed
               </div>
               <div className={classes.progressBar}>
-                <div className="fill" style={{ width: `${progressPercent}%` }}></div>
+                <div className="fill" style={{ width: `${progress.percentage}%` }}></div>
               </div>
             </div>
 

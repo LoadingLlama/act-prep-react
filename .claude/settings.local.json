@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm start)",
+      "Bash(lsof:*)",
+      "Bash(kill:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(awk:*)",
+      "Bash(while read file)",
+      "Bash(done)",
+      "Bash(echo:*)",
+      "Bash(for:*)",
+      "Bash(do echo \"=== $file ===\")",
+      "Bash(do echo \"=== Checking $file ===\")",
+      "Bash(if grep -A20 \"<style>\" \"$file\")",
+      "Bash(then echo \"Found spacing overrides:\")",
+      "Bash(else echo \"No spacing overrides found\")",
+      "Bash(fi)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1140,18 +1140,18 @@
             </div>
             </div>
 
+            <!-- Question Sidebar -->
+            <div class="question-sidebar">
+                <div class="sidebar-icon" onclick="showQuestionModal()">📋</div>
+                <div class="sidebar-text">Index</div>
+            </div>
+            </div>
+
             <hr class="content-divider">
             <!-- Navigation -->
             <div class="navigation">
                 <button class="nav-button" id="prevBtn" onclick="previousQuestion()" disabled>← Previous</button>
                 <button class="nav-button primary" id="nextBtn" onclick="nextQuestion()">Next →</button>
-            </div>
-        </div>
-
-            <!-- Question Sidebar -->
-            <div class="question-sidebar">
-                <div class="sidebar-icon" onclick="showQuestionModal()">📋</div>
-                <div class="sidebar-text">Index</div>
             </div>
         </div>
         </div>
@@ -1263,11 +1263,18 @@
             }
 
             console.log('Science Test Answers:', answers);
-            alert('Science test completed! Your answers have been recorded.');
 
-            // Mark Science section as completed and trigger diagnostic flow
-            localStorage.setItem('currentSection', '3'); // Science is section index 3
-            window.location.href = 'diagnostic-test.html';
+            // Save science answers to localStorage
+            localStorage.setItem('scienceAnswers', JSON.stringify(answers));
+
+            // Mark all sections as completed
+            localStorage.setItem('testCompleted', 'true');
+            localStorage.setItem('currentSection', 'completed');
+
+            alert('Science test completed! Proceeding to test analysis...');
+
+            // Redirect to score breakdown/analytics page
+            window.location.href = 'analytics.html';
         }
 
         let answers = {};
@@ -1296,7 +1303,20 @@
 
         function endSection() {
             if (confirm('Are you sure you want to end this section? Your test is now complete.')) {
-                window.location.href = 'diagnostic-test.html';
+                // Save any current answers
+                const answers = {};
+                for (let i = 1; i <= totalQuestions; i++) {
+                    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                    if (selected) {
+                        answers[`q${i}`] = selected.value;
+                    }
+                }
+                localStorage.setItem('scienceAnswers', JSON.stringify(answers));
+                localStorage.setItem('testCompleted', 'true');
+                localStorage.setItem('currentSection', 'completed');
+
+                // Redirect to score breakdown/analytics page
+                window.location.href = 'analytics.html';
             }
         }
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { spacing, borderRadius } from '../utils/sharedStyles';
 
 const useStyles = createUseStyles({
   timer: {
     background: '#1a1a1a',
     color: 'white',
-    padding: '0.5rem 1rem',
-    borderRadius: '6px',
+    padding: `${spacing.sm} ${spacing.lg}`,
+    borderRadius: borderRadius.md,
     fontWeight: 500,
     fontSize: '1rem',
     minWidth: '80px',
