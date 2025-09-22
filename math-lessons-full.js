@@ -31,6 +31,25 @@ const mathLessons = {
                 <p><strong>Solution:</strong> Start with C. If x = 5: 3(5) + 7 = 22 ✓</p>
             </div>
             
+            <h3>More Examples</h3>
+            <div class="example-box">
+                <p><strong>Problem:</strong> If √x + 10 - 2√x - 2 = 0, what is the value of x?</p>
+                <p>A. 2 &nbsp;&nbsp; B. 6 &nbsp;&nbsp; C. 14 &nbsp;&nbsp; D. 18</p>
+                <p><strong>Solution using backsolving:</strong> Start with B (x = 6):</p>
+                <p>√6 + 10 - 2√6 - 2 = √16 - 2√4 = 4 - 2(2) = 4 - 4 = 0 ✓</p>
+                <p>Answer: B</p>
+            </div>
+
+            <div class="example-box">
+                <p><strong>Problem:</strong> Which of the following is a solution to the equation x³ + 5x² + 6x = 0?</p>
+                <p>A. -3 &nbsp;&nbsp; B. -1 &nbsp;&nbsp; C. 1 &nbsp;&nbsp; D. 2</p>
+                <p><strong>Solution using backsolving:</strong> Start with A (x = -3):</p>
+                <p>(-3)³ + 5(-3)² + 6(-3) = -27 + 45 - 18 = 0 ✓</p>
+                <p>Answer: A</p>
+            </div>
+
+            <!-- INTERACTIVE_PRACTICE_0 -->
+
             <div class="key-takeaway">
                 <h4>Key Takeaway</h4>
                 <p>Backsolving can save time and help you solve complex problems by working backwards from answer choices. Start with the middle choice and work systematically!</p>

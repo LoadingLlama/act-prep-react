@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 import Button from './components/Button';
 import StatusIcon from './components/StatusIcon';
+import ProgressiveLessonRenderer from './components/ProgressiveLessonRenderer';
 import { gradients, spacing, borderRadius, buttonStyles } from './utils/sharedStyles';
 import { storage, scriptLoader, statusUtils, lessonUtils, domUtils } from './utils/helpers';
+import { interactiveLessons } from './data/interactiveLessons';
 
 const useStyles = createUseStyles({
   '@global': {
@@ -549,6 +551,7 @@ const lessonStructure = [
   { id: 'logical-placement', section: 'english', title: 'Chapter 15: Logical Placement', desc: 'Placing sentences in the most logical order within paragraphs', status: 'not-started' },
 
   // Math Section - Most Common Topics
+  { id: 'introduction-to-act-math', section: 'math', title: 'Introduction to ACT Math', desc: 'Test format, timing, strategies, and essential tips for success', status: 'not-started' },
   { id: 'backsolving', section: 'math', title: 'Chapter 1: Backsolving', desc: 'Powerful test-taking trick for working backwards from answer choices', status: 'not-started' },
   { id: 'substitution', section: 'math', title: 'Chapter 2: Substitution', desc: 'Test-taking strategy for plugging in values', status: 'not-started' },
   { id: 'geometry-angles', section: 'math', title: 'Chapter 3: Geometry Part 1 - Angles', desc: 'Intersecting lines, parallel lines, interior angles', status: 'not-started' },
@@ -960,7 +963,10 @@ function App() {
             </div>
             <div className={classes.lessonBody}>
               {lesson ? (
-                <div dangerouslySetInnerHTML={{ __html: lesson.content }} />
+                <ProgressiveLessonRenderer
+                  content={lesson.content}
+                  interactiveData={interactiveLessons[currentLesson]}
+                />
               ) : (
                 <div style={{
                   textAlign: 'center',
