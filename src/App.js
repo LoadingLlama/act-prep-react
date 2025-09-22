@@ -723,7 +723,7 @@ function App() {
         setLessonContent(combinedContent);
       })
       .catch(err => {
-        console.error('Error loading lesson scripts:', err);
+        // Error loading lesson scripts - fail silently in production
         setLessonContent({});
       });
 
