@@ -13,50 +13,71 @@ const useStyles = createUseStyles({
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
   },
   inputContainer: {
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
-    backdropFilter: 'blur(10px)',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    backdropFilter: 'blur(16px)',
     border: '1px solid rgba(0, 0, 0, 0.1)',
-    borderRadius: '24px',
-    padding: '8px 16px',
+    borderRadius: '12px',
+    padding: '0',
     margin: '0 auto',
-    width: '320px',
-    maxWidth: '90%',
-    boxShadow: '0 2px 12px rgba(0, 0, 0, 0.06)',
+    width: '120px',
+    height: '24px',
+    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
     display: 'flex',
     alignItems: 'center',
-    cursor: 'text',
-    transition: 'all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1)',
-    transform: 'scale(0.95)',
+    justifyContent: 'center',
+    cursor: 'pointer',
+    transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+    transform: 'scale(1)',
     '&:hover': {
-      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
-      backgroundColor: 'rgba(255, 255, 255, 0.98)',
-      transform: 'scale(0.98)'
+      backgroundColor: 'rgba(255, 255, 255, 0.95)',
+      transform: 'scale(1.05)',
+      boxShadow: '0 6px 24px rgba(0, 0, 0, 0.2)',
+      width: '140px',
+      height: '28px',
+      border: '1px solid rgba(0, 0, 0, 0.15)'
     },
     '&.focused': {
-      boxShadow: '0 8px 30px rgba(0, 0, 0, 0.15)',
-      backgroundColor: 'rgba(255, 255, 255, 1)',
+      backgroundColor: 'rgba(255, 255, 255, 0.98)',
       transform: 'scale(1)',
-      width: '600px',
-      padding: '12px 20px'
+      width: '480px',
+      height: '44px',
+      borderRadius: '22px',
+      padding: '12px 20px',
+      border: '1px solid rgba(0, 0, 0, 0.2)',
+      cursor: 'text',
+      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.25)'
     }
   },
   input: {
     flex: 1,
     border: 'none',
     outline: 'none',
-    fontSize: '15px',
+    fontSize: '16px',
     color: '#2d3748',
     backgroundColor: 'transparent',
     fontWeight: '400',
     transition: 'all 0.3s ease',
+    textAlign: 'left',
+    minWidth: 0,
+    opacity: 0,
+    width: 0,
+    padding: 0,
     '&::placeholder': {
-      color: '#9ca3af',
+      color: 'rgba(107, 114, 128, 0.8)',
       fontWeight: '400',
       transition: 'all 0.3s ease'
     }
   },
   inputExpanded: {
-    fontSize: '16px'
+    fontSize: '16px',
+    textAlign: 'left',
+    opacity: 1,
+    width: 'auto',
+    flex: 1,
+    padding: 0,
+    '&::placeholder': {
+      textAlign: 'left'
+    }
   },
   chatDropdown: {
     position: 'absolute',
@@ -234,6 +255,24 @@ const AIChat = ({ currentLesson, lessonContent }) => {
     }
   };
 
+  const handleInputClick = (e) => {
+    e.stopPropagation(); // Prevent event from bubbling up
+    setIsFocused(true);
+    if (messages.length > 0) {
+      setIsOpen(true);
+    }
+    inputRef.current?.focus();
+  };
+
+  const handleContainerClick = (e) => {
+    e.stopPropagation(); // Prevent event from bubbling up
+    setIsFocused(true);
+    if (messages.length > 0) {
+      setIsOpen(true);
+    }
+    inputRef.current?.focus();
+  };
+
   const handleInputBlur = () => {
     // Click outside handler will manage closing
     // Just update focus state
@@ -311,8 +350,11 @@ const AIChat = ({ currentLesson, lessonContent }) => {
   const handleKeyPress = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
+      e.stopPropagation(); // Prevent the event from bubbling up to lesson handlers
       handleSendMessage();
     } else if (e.key === 'Escape') {
+      e.preventDefault();
+      e.stopPropagation();
       setIsOpen(false);
       setIsFocused(false);
       inputRef.current?.blur();
@@ -326,8 +368,12 @@ const AIChat = ({ currentLesson, lessonContent }) => {
   };
 
   return (
-    <div className={classes.chatContainer} ref={chatContainerRef}>
-      <div className={`${classes.inputContainer} ${isFocused ? 'focused' : ''}`}>
+    <div className={classes.chatContainer} ref={chatContainerRef} data-ai-chat>
+      <div
+        className={`${classes.inputContainer} ${isFocused ? 'focused' : ''}`}
+        onClick={handleContainerClick}
+        data-ai-chat
+      >
         <input
           ref={inputRef}
           className={`${classes.input} ${isFocused ? classes.inputExpanded : ''}`}
@@ -335,14 +381,18 @@ const AIChat = ({ currentLesson, lessonContent }) => {
           onChange={(e) => setInputValue(e.target.value)}
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
+          onClick={handleInputClick}
           onKeyPress={handleKeyPress}
-          placeholder={isFocused ? "Ask me anything about ACT prep..." : "Ask AI..."}
+          placeholder={isFocused ? "Ask me anything about ACT prep..." : ""}
           disabled={isTyping}
         />
         {inputValue.trim() && (
           <button
             className={classes.sendButton}
-            onClick={handleSendMessage}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleSendMessage();
+            }}
             disabled={isTyping}
           >
             ↵
@@ -351,7 +401,10 @@ const AIChat = ({ currentLesson, lessonContent }) => {
         {(isOpen || isFocused) && (
           <button
             className={classes.closeButton}
-            onClick={handleClose}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleClose();
+            }}
             title="Close chat (Esc)"
           >
             ×

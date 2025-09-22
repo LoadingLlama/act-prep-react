@@ -7,6 +7,7 @@ import AIChat from './components/AIChat';
 import { gradients, spacing, borderRadius, buttonStyles } from './utils/sharedStyles';
 import { storage, scriptLoader, statusUtils, lessonUtils, domUtils } from './utils/helpers';
 import { interactiveLessons } from './data/interactiveLessons';
+import { allLessons } from './data/allLessons';
 
 const useStyles = createUseStyles({
   '@global': {
@@ -44,14 +45,15 @@ const useStyles = createUseStyles({
     justifyContent: 'space-between',
     alignItems: 'center',
     maxWidth: '1200px',
-    margin: '0 auto'
+    margin: '0 auto',
+    gap: '1rem'
   },
   logo: {
     fontSize: '1.5rem',
     fontWeight: 500,
     color: '#1a1a1a',
     textDecoration: 'none',
-    marginBottom: '0.25rem',
+    margin: 0,
     '&:hover': {
       color: '#333'
     }
@@ -60,7 +62,9 @@ const useStyles = createUseStyles({
     color: '#666',
     fontSize: '0.85rem',
     fontWeight: 400,
-    margin: 0
+    margin: 0,
+    flex: 1,
+    textAlign: 'center'
   },
   navContainer: {
     padding: '0',
@@ -849,8 +853,21 @@ function App() {
                 return (
                   <div key={item.id} className={`${classes.lessonItem} ${getLessonStatus(item.id)}`} onClick={() => openLesson(item.id)}>
                     <div className={classes.lessonInfo}>
-                      <h4>{item.title}</h4>
-                      <p>{item.desc}</p>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
+                        <h4 style={{ margin: 0 }}>{item.title}</h4>
+                        {allLessons[item.id] && allLessons[item.id].duration && (
+                          <span style={{
+                            color: '#9ca3af',
+                            fontSize: '0.75rem',
+                            fontWeight: '400',
+                            whiteSpace: 'nowrap',
+                            opacity: '0.7'
+                          }}>
+                            {allLessons[item.id].duration}m
+                          </span>
+                        )}
+                      </div>
+                      <p style={{ margin: 0 }}>{item.desc}</p>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', zIndex: 3, position: 'relative' }}>
                       <StatusIcon status={getLessonStatus(item.id)} />
@@ -937,9 +954,22 @@ function App() {
             <div className={classes.lessonHeader}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div>
-                  <h1 className={classes.lessonTitle} style={{ fontSize: '1.75rem', margin: '0 0 0.5rem 0' }}>
-                    {lesson ? lesson.title : 'Lesson Coming Soon'}
-                  </h1>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+                    <h1 className={classes.lessonTitle} style={{ fontSize: '1.75rem', margin: 0 }}>
+                      {lesson ? lesson.title : 'Lesson Coming Soon'}
+                    </h1>
+                    {lesson && lesson.duration && (
+                      <span style={{
+                        color: '#9ca3af',
+                        fontSize: '0.8rem',
+                        fontWeight: '400',
+                        whiteSpace: 'nowrap',
+                        opacity: '0.7'
+                      }}>
+                        • {lesson.duration} min
+                      </span>
+                    )}
+                  </div>
                   {currentLessonData && (
                     <p style={{
                       color: '#718096',
@@ -1069,10 +1099,7 @@ function App() {
     <div className={classes.container}>
       <header className={classes.header}>
         <div className={classes.headerContent}>
-          <div>
-            <h1 className={classes.logo}>actclass.org</h1>
-            <p className={classes.subtitle}>ACT Prep - Master the ACT with focused practice and lessons</p>
-          </div>
+          <h1 className={classes.logo}>actclass.org</h1>
           <div style={{ color: '#666', fontSize: '0.8rem', fontWeight: '400' }}>
             Diagnostic Test & Lessons
           </div>

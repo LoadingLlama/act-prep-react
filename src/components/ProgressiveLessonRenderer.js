@@ -151,6 +151,18 @@ const ProgressiveLessonRenderer = ({ content, interactiveData }) => {
   // Handle keyboard navigation
   const handleKeyPress = useCallback((event) => {
     if (event.key === 'Enter') {
+      // Check if AI input is focused - if so, ignore lesson Enter key handling
+      const activeElement = document.activeElement;
+      const isAIInputFocused = activeElement && (
+        activeElement.placeholder === "Ask AI" ||
+        activeElement.placeholder === "Ask me anything about ACT prep..." ||
+        activeElement.closest('[data-ai-chat]')
+      );
+
+      if (isAIInputFocused) {
+        return; // Let AI chat handle the Enter key
+      }
+
       event.preventDefault();
 
       // Check if current section is still typing
@@ -229,6 +241,7 @@ const ProgressiveLessonRenderer = ({ content, interactiveData }) => {
                   description={section.data.description}
                   questions={section.data.questions}
                   isTest={section.data.isTest || false}
+                  duration={section.data.duration}
                 />
               ) : (
                 <div dangerouslySetInnerHTML={{ __html: section.content }} />
