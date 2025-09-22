@@ -3,10 +3,12 @@ export const interactiveLessons = {
   'backsolving': {
     practiceSections: [
       {
-        title: "Practice Questions",
-        description: "Try these problems using backsolving. Remember to start with answer choice B or C and work systematically!",
+        title: "Backsolving Practice Test",
+        description: "Complete this practice test using backsolving techniques. Answer all 8 questions, then review your results. Remember to start with answer choice B or C and work systematically!",
+        isTest: true,
         questions: [
           {
+            id: 1,
             text: "If 3x² + 4x = 91, what is the value of x?",
             answers: {
               A: "1.5",
@@ -19,6 +21,7 @@ export const interactiveLessons = {
             hint: "Start with the middle values and substitute into 3x² + 4x = 91."
           },
           {
+            id: 2,
             text: "For what value of x is the equation 3.25x + 6 = 5x - 8 true?",
             answers: {
               A: "4",
@@ -31,6 +34,7 @@ export const interactiveLessons = {
             hint: "Substitute each answer choice into both sides of the equation to see which makes them equal."
           },
           {
+            id: 3,
             text: "The length of a rectangle is 8 inches longer than its width. If the perimeter of the rectangle is 52 inches, what is the width of the rectangle?",
             answers: {
               A: "4",
@@ -43,6 +47,7 @@ export const interactiveLessons = {
             hint: "Remember that perimeter of a rectangle = 2(length + width)."
           },
           {
+            id: 4,
             text: "If √3x = 9, what is the value of x?",
             answers: {
               A: "3",
@@ -55,6 +60,7 @@ export const interactiveLessons = {
             hint: "Think about what number, when multiplied by 3, gives you a perfect square that equals 81."
           },
           {
+            id: 5,
             text: "If 3ˣ = 2187, what is the value of x?",
             answers: {
               A: "5",
@@ -67,6 +73,7 @@ export const interactiveLessons = {
             hint: "Think about what power of 3 equals 2187. You can work backwards: 2187 ÷ 3 = 729, 729 ÷ 3 = 243, etc."
           },
           {
+            id: 6,
             text: "(12x/5) + 2 = (4/10)x. What is the value of x in the equation above?",
             answers: {
               A: "-2",
@@ -79,6 +86,7 @@ export const interactiveLessons = {
             hint: "Substitute each answer choice into both sides of the equation to see which makes them equal."
           },
           {
+            id: 7,
             text: "If the area of a rectangle is 16 and one side has a length of 20, what is the width of the rectangle?",
             answers: {
               A: "2/5",
@@ -91,6 +99,7 @@ export const interactiveLessons = {
             hint: "Use the formula Area = length × width. You know Area = 16 and length = 20."
           },
           {
+            id: 8,
             text: "150 tickets were sold to a concert. VIP tickets were sold for $10 and normal tickets were sold for $5. If total sales were $1,100. How many of the VIP tickets were sold?",
             answers: {
               A: "65",

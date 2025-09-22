@@ -37,6 +37,7 @@ const LessonRenderer = ({ content, interactiveData }) => {
             title={section.title}
             description={section.description}
             questions={section.questions}
+            isTest={section.isTest || false}
           />
         );
 

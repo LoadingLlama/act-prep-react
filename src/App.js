@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 import Button from './components/Button';
 import StatusIcon from './components/StatusIcon';
 import ProgressiveLessonRenderer from './components/ProgressiveLessonRenderer';
+import AIChat from './components/AIChat';
 import { gradients, spacing, borderRadius, buttonStyles } from './utils/sharedStyles';
 import { storage, scriptLoader, statusUtils, lessonUtils, domUtils } from './utils/helpers';
 import { interactiveLessons } from './data/interactiveLessons';
@@ -31,23 +32,35 @@ const useStyles = createUseStyles({
     background: '#fafbfc'
   },
   header: {
-    padding: '1rem 2rem',
-    textAlign: 'center',
-    marginBottom: '1rem',
-    background: 'transparent'
+    background: '#f8f9fa',
+    borderBottom: '2px solid #e9ecef',
+    padding: '0.75rem 2rem',
+    position: 'sticky',
+    top: 0,
+    zIndex: 100
+  },
+  headerContent: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    maxWidth: '1200px',
+    margin: '0 auto'
   },
   logo: {
-    fontSize: '1.75rem',
-    fontWeight: 400,
-    letterSpacing: '-0.01em',
+    fontSize: '1.5rem',
+    fontWeight: 500,
     color: '#1a1a1a',
-    marginBottom: '0.25rem'
+    textDecoration: 'none',
+    marginBottom: '0.25rem',
+    '&:hover': {
+      color: '#333'
+    }
   },
   subtitle: {
     color: '#666',
-    fontSize: '0.95rem',
+    fontSize: '0.85rem',
     fontWeight: 400,
-    opacity: 0.8
+    margin: 0
   },
   navContainer: {
     padding: '0',
@@ -1055,8 +1068,15 @@ function App() {
   return (
     <div className={classes.container}>
       <header className={classes.header}>
-        <h1 className={classes.logo}>ACT Prep</h1>
-        <p className={classes.subtitle}>Master the ACT with focused practice and lessons</p>
+        <div className={classes.headerContent}>
+          <div>
+            <h1 className={classes.logo}>actclass.org</h1>
+            <p className={classes.subtitle}>ACT Prep - Master the ACT with focused practice and lessons</p>
+          </div>
+          <div style={{ color: '#666', fontSize: '0.8rem', fontWeight: '400' }}>
+            Diagnostic Test & Lessons
+          </div>
+        </div>
       </header>
 
       <div className={classes.navContainer}>
@@ -1089,6 +1109,12 @@ function App() {
       </div>
 
       <LessonModal />
+
+      {/* AI Chat Component */}
+      <AIChat
+        currentLesson={currentLesson}
+        lessonContent={lessonContent[currentLesson]}
+      />
     </div>
   );
 }

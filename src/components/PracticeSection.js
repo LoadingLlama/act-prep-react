@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import InteractiveQuestion from './InteractiveQuestion';
+import SequentialTest from './SequentialTest';
 
 const useStyles = createUseStyles({
   practiceContainer: {
@@ -66,7 +67,8 @@ const useStyles = createUseStyles({
 const PracticeSection = ({
   title = "Practice Questions",
   description = "Try these problems using the techniques you've learned:",
-  questions = []
+  questions = [],
+  isTest = false
 }) => {
   const classes = useStyles();
   const [questionStates, setQuestionStates] = useState({});
@@ -81,6 +83,17 @@ const PracticeSection = ({
   const resetAllQuestions = () => {
     setQuestionStates({});
   };
+
+  // If this is a test format, use the SequentialTest component
+  if (isTest) {
+    return (
+      <SequentialTest
+        title={title}
+        description={description}
+        questions={questions}
+      />
+    );
+  }
 
   // Calculate progress
   const totalQuestions = questions.length;

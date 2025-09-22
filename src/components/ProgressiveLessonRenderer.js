@@ -228,6 +228,7 @@ const ProgressiveLessonRenderer = ({ content, interactiveData }) => {
                   title={section.data.title}
                   description={section.data.description}
                   questions={section.data.questions}
+                  isTest={section.data.isTest || false}
                 />
               ) : (
                 <div dangerouslySetInnerHTML={{ __html: section.content }} />

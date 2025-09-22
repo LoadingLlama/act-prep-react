@@ -220,6 +220,8 @@ export const allLessons = {
         <h4>Key Takeaway</h4>
         <p>Backsolving is often the fastest and easiest way to solve ACT questions, especially if you get stuck and cannot solve a question algebraically, so use it to your advantage.</p>
       </div>
+
+      <!-- INTERACTIVE_PRACTICE_0 -->
     `
   },
 
