@@ -14,7 +14,6 @@ const useStyles = createUseStyles({
     opacity: 0,
     transform: 'translateY(20px)',
     transition: 'all 0.5s ease',
-    position: 'relative',
     '&.visible': {
       opacity: 1,
       transform: 'translateY(0)'
@@ -39,21 +38,20 @@ const useStyles = createUseStyles({
   },
   promptText: {
     color: '#9ca3af',
-    fontSize: '0.7rem',
-    fontWeight: '300',
+    fontSize: '0.8rem',
+    fontWeight: '400',
     display: 'flex',
     alignItems: 'center',
-    gap: '0.4rem',
-    whiteSpace: 'nowrap'
+    gap: '0.5rem'
   },
   enterKey: {
-    background: 'rgba(243, 244, 246, 0.7)',
-    border: '1px solid rgba(209, 213, 219, 0.5)',
-    borderRadius: '3px',
-    padding: '0.15rem 0.5rem',
-    fontSize: '0.65rem',
-    fontWeight: '400',
-    color: '#9ca3af',
+    background: '#f3f4f6',
+    border: '1px solid #d1d5db',
+    borderRadius: '4px',
+    padding: '0.2rem 0.6rem',
+    fontSize: '0.75rem',
+    fontWeight: '500',
+    color: '#6b7280',
     fontFamily: 'Monaco, Consolas, monospace'
   },
   progressBar: {
@@ -106,7 +104,7 @@ const ProgressiveLessonRenderer = ({ content, interactiveData }) => {
   const currentSectionRef = React.useRef(null);
 
   // Scroll to current section
-  const scrollToCurrentSection = () => {
+  const scrollToCurrentSection = useCallback(() => {
     if (currentSectionRef.current) {
       const element = currentSectionRef.current;
       const elementRect = element.getBoundingClientRect();
@@ -125,7 +123,7 @@ const ProgressiveLessonRenderer = ({ content, interactiveData }) => {
         behavior: 'auto'
       });
     }
-  };
+  }, []);
 
   // Parse content into sections
   useEffect(() => {
@@ -148,7 +146,7 @@ const ProgressiveLessonRenderer = ({ content, interactiveData }) => {
     if (sections.length > 0) {
       setTimeout(scrollToCurrentSection, 100);
     }
-  }, [currentSection, sections]);
+  }, [currentSection, sections, scrollToCurrentSection]);
 
   // Handle keyboard navigation
   const handleKeyPress = useCallback((event) => {
@@ -175,7 +173,7 @@ const ProgressiveLessonRenderer = ({ content, interactiveData }) => {
         }
       }
     }
-  }, [currentSection, sections.length, currentSectionComplete, sections]);
+  }, [currentSection, sections, currentSectionComplete]);
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyPress);
@@ -252,13 +250,15 @@ const ProgressiveLessonRenderer = ({ content, interactiveData }) => {
                   <div className={classes.promptText}>
                     <span>Press</span>
                     <kbd className={classes.enterKey}>Enter</kbd>
-                    <span>to complete</span>
+                    <span>to complete lesson</span>
+                    <span style={{ marginLeft: '1rem', opacity: 0.6 }}>
+                      🎉 Almost done!
+                    </span>
                   </div>
                 </div>
               )}
             </div>
           )}
-
         </div>
       ))}
 

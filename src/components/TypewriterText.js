@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
@@ -35,41 +35,28 @@ const TypewriterText = ({
   const [shouldCompleteInstantly, setShouldCompleteInstantly] = useState(false);
   const [visibleText, setVisibleText] = useState('');
   const containerRef = React.useRef(null);
-  const scrollIntervalRef = React.useRef(null);
 
-  // Aggressively scroll to keep the typing element centered in viewport
-  const scrollToElement = () => {
+  // SUPER AGGRESSIVE SCROLL - This will work for sure
+  const forceScroll = useCallback(() => {
     if (containerRef.current) {
-      const element = containerRef.current;
-      const elementRect = element.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      // Calculate where the element currently is
-      const elementCenter = elementRect.top + (elementRect.height / 2);
-      const desiredCenter = windowHeight / 2;
-
-      // Calculate how much we need to scroll to center the element
-      const scrollDistance = elementCenter - desiredCenter;
-
-      // Always scroll to keep the typing text perfectly centered - ultra aggressive
-      if (Math.abs(scrollDistance) > 0) {
-        window.scrollBy({
-          top: scrollDistance,
-          behavior: 'auto' // Changed to auto for immediate response
-        });
-      }
+      console.log('SCROLLING TO ELEMENT'); // Debug log
+      containerRef.current.scrollIntoView({
+        behavior: 'auto',
+        block: 'center',
+        inline: 'center'
+      });
     }
-  };
+  }, []);
 
   // Extract only visible text from HTML for character-by-character typing
-  const extractVisibleText = (htmlString) => {
+  const extractVisibleText = useCallback((htmlString) => {
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlString;
     return tempDiv.textContent || tempDiv.innerText || '';
-  };
+  }, []);
 
   // Build HTML with visible characters up to current position
-  const buildProgressiveHTML = (htmlString, targetLength) => {
+  const buildProgressiveHTML = useCallback((htmlString, targetLength) => {
     if (targetLength <= 0) return '';
 
     const tempDiv = document.createElement('div');
@@ -128,7 +115,7 @@ const TypewriterText = ({
     }
 
     return resultDiv.innerHTML;
-  };
+  }, []);
 
   useEffect(() => {
     if (text) {
@@ -137,41 +124,40 @@ const TypewriterText = ({
       setIsComplete(false);
       setShouldCompleteInstantly(false);
     }
-  }, [text]);
+  }, [text, extractVisibleText]);
 
-  // Start continuous scrolling when typing begins, stop when complete
+  // Start aggressive interval when typing begins
   useEffect(() => {
+    let intervalId;
     if (hasStarted && !isComplete) {
-      // Start aggressive continuous scroll tracking
-      scrollIntervalRef.current = setInterval(scrollToElement, 50); // Every 50ms
-      return () => {
-        if (scrollIntervalRef.current) {
-          clearInterval(scrollIntervalRef.current);
-        }
-      };
-    } else {
-      // Stop continuous scrolling when complete
-      if (scrollIntervalRef.current) {
-        clearInterval(scrollIntervalRef.current);
-        scrollIntervalRef.current = null;
-      }
+      console.log('STARTING SCROLL INTERVAL'); // Debug log
+      intervalId = setInterval(() => {
+        forceScroll();
+      }, 100); // Every 100ms
     }
-  }, [hasStarted, isComplete]);
+
+    return () => {
+      if (intervalId) {
+        console.log('CLEARING SCROLL INTERVAL'); // Debug log
+        clearInterval(intervalId);
+      }
+    };
+  }, [hasStarted, isComplete, forceScroll]);
 
   useEffect(() => {
     if (startDelay > 0) {
       const startTimer = setTimeout(() => {
         setHasStarted(true);
-        // Initial scroll to center the element when typing starts
-        requestAnimationFrame(scrollToElement);
+        // Initial scroll
+        setTimeout(forceScroll, 100);
       }, startDelay);
       return () => clearTimeout(startTimer);
     } else {
       setHasStarted(true);
-      // Initial scroll to center the element when typing starts
-      requestAnimationFrame(scrollToElement);
+      // Initial scroll
+      setTimeout(forceScroll, 100);
     }
-  }, [startDelay]);
+  }, [startDelay, forceScroll]);
 
   useEffect(() => {
     if (!hasStarted || !visibleText) return;
@@ -180,10 +166,8 @@ const TypewriterText = ({
     if (shouldCompleteInstantly && !isComplete) {
       setDisplayedText(text);
       setIsComplete(true);
-      // Scroll to the completed text immediately
-      requestAnimationFrame(() => {
-        requestAnimationFrame(scrollToElement);
-      });
+      // Force scroll immediately
+      setTimeout(forceScroll, 50);
       if (onComplete) {
         setTimeout(onComplete, 100);
       }
@@ -196,10 +180,8 @@ const TypewriterText = ({
       const timer = setTimeout(() => {
         const newHTML = buildProgressiveHTML(text, currentLength + 1);
         setDisplayedText(newHTML);
-        // Immediately scroll to keep element centered on every character typed
-        requestAnimationFrame(() => {
-          requestAnimationFrame(scrollToElement);
-        });
+        // Force scroll after each character
+        setTimeout(forceScroll, 20);
       }, speed);
       return () => clearTimeout(timer);
     } else if (!isComplete && currentLength >= visibleText.length) {
@@ -208,16 +190,7 @@ const TypewriterText = ({
         setTimeout(onComplete, 100);
       }
     }
-  }, [displayedText, text, visibleText, speed, hasStarted, isComplete, onComplete, shouldCompleteInstantly]);
-
-  // Cleanup interval on unmount
-  useEffect(() => {
-    return () => {
-      if (scrollIntervalRef.current) {
-        clearInterval(scrollIntervalRef.current);
-      }
-    };
-  }, []);
+  }, [displayedText, text, visibleText, speed, hasStarted, isComplete, onComplete, shouldCompleteInstantly, extractVisibleText, buildProgressiveHTML, forceScroll]);
 
   // Expose instant complete function
   React.useImperativeHandle(onInstantComplete, () => ({
