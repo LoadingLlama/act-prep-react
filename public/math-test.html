@@ -280,6 +280,18 @@
 
         function endSection() {
             if (confirm('Are you sure you want to end this section? You will not be able to return to it.')) {
+                // Collect and save answers before leaving
+                const finalAnswers = {};
+                for (let i = 1; i <= 45; i++) { // Math has 45 questions
+                    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                    if (selected) {
+                        finalAnswers[`q${i}`] = selected.value;
+                    }
+                }
+
+                console.log('Math Test Answers:', finalAnswers);
+                localStorage.setItem('mathAnswers', JSON.stringify(finalAnswers));
+
                 window.location.href = 'reading-test.html';
             }
         }

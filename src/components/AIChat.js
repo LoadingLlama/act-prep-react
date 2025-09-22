@@ -7,10 +7,13 @@ const useStyles = createUseStyles({
     top: '20px',
     left: '50%',
     transform: 'translateX(-50%)',
-    width: '100%',
-    maxWidth: '700px',
+    width: 'auto',
     zIndex: 1000,
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    pointerEvents: 'none',
+    '& > *': {
+      pointerEvents: 'auto'
+    }
   },
   inputContainer: {
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
@@ -80,25 +83,25 @@ const useStyles = createUseStyles({
     }
   },
   chatDropdown: {
-    position: 'absolute',
-    top: '100%',
-    left: '50%',
-    transform: 'translateX(-50%) translateY(-10px) scale(0.95)',
-    width: '600px',
+    position: 'fixed',
+    top: '60px',
+    right: '20px',
+    transform: 'translateY(-10px) scale(0.95)',
+    width: '400px',
     maxWidth: '90vw',
-    marginTop: '8px',
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
-    backdropFilter: 'blur(20px)',
-    border: '1px solid rgba(0, 0, 0, 0.1)',
-    borderRadius: '16px',
-    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.12)',
+    backgroundColor: 'rgba(255, 255, 255, 0.96)',
+    backdropFilter: 'blur(24px)',
+    border: '1px solid rgba(0, 0, 0, 0.08)',
+    borderRadius: '20px',
+    boxShadow: '0 24px 50px rgba(0, 0, 0, 0.15)',
     maxHeight: '500px',
     overflowY: 'auto',
     opacity: 0,
     visibility: 'hidden',
-    transition: 'all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1)',
+    transition: 'all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)',
+    zIndex: 1001,
     '&.open': {
-      transform: 'translateX(-50%) translateY(0) scale(1)',
+      transform: 'translateY(0) scale(1)',
       opacity: 1,
       visibility: 'visible'
     }
@@ -220,6 +223,7 @@ const AIChat = ({ currentLesson, lessonContent }) => {
   const inputRef = useRef(null);
   const messagesEndRef = useRef(null);
   const chatContainerRef = useRef(null);
+  const dropdownRef = useRef(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -232,7 +236,10 @@ const AIChat = ({ currentLesson, lessonContent }) => {
   // Handle click outside to close chat
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (chatContainerRef.current && !chatContainerRef.current.contains(event.target)) {
+      const isClickInInput = chatContainerRef.current && chatContainerRef.current.contains(event.target);
+      const isClickInDropdown = dropdownRef.current && dropdownRef.current.contains(event.target);
+
+      if (!isClickInInput && !isClickInDropdown) {
         setIsOpen(false);
         setIsFocused(false);
         inputRef.current?.blur();
@@ -368,51 +375,54 @@ const AIChat = ({ currentLesson, lessonContent }) => {
   };
 
   return (
-    <div className={classes.chatContainer} ref={chatContainerRef} data-ai-chat>
-      <div
-        className={`${classes.inputContainer} ${isFocused ? 'focused' : ''}`}
-        onClick={handleContainerClick}
-        data-ai-chat
-      >
-        <input
-          ref={inputRef}
-          className={`${classes.input} ${isFocused ? classes.inputExpanded : ''}`}
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          onFocus={handleInputFocus}
-          onBlur={handleInputBlur}
-          onClick={handleInputClick}
-          onKeyPress={handleKeyPress}
-          placeholder={isFocused ? "Ask me anything about ACT prep..." : ""}
-          disabled={isTyping}
-        />
-        {inputValue.trim() && (
-          <button
-            className={classes.sendButton}
-            onClick={(e) => {
-              e.stopPropagation();
-              handleSendMessage();
-            }}
+    <>
+      <div className={classes.chatContainer} ref={chatContainerRef} data-ai-chat>
+        <div
+          className={`${classes.inputContainer} ${isFocused ? 'focused' : ''}`}
+          onClick={handleContainerClick}
+          data-ai-chat
+        >
+          <input
+            ref={inputRef}
+            className={`${classes.input} ${isFocused ? classes.inputExpanded : ''}`}
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            onFocus={handleInputFocus}
+            onBlur={handleInputBlur}
+            onClick={handleInputClick}
+            onKeyPress={handleKeyPress}
+            placeholder={isFocused ? "Ask me anything about ACT prep..." : ""}
             disabled={isTyping}
-          >
-            ↵
-          </button>
-        )}
-        {(isOpen || isFocused) && (
-          <button
-            className={classes.closeButton}
-            onClick={(e) => {
-              e.stopPropagation();
-              handleClose();
-            }}
-            title="Close chat (Esc)"
-          >
-            ×
-          </button>
-        )}
+          />
+          {inputValue.trim() && (
+            <button
+              className={classes.sendButton}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleSendMessage();
+              }}
+              disabled={isTyping}
+            >
+              ↵
+            </button>
+          )}
+          {(isOpen || isFocused) && (
+            <button
+              className={classes.closeButton}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleClose();
+              }}
+              title="Close chat (Esc)"
+            >
+              ×
+            </button>
+          )}
+        </div>
       </div>
 
-      <div className={`${classes.chatDropdown} ${isOpen ? 'open' : ''}`} data-dropdown>
+      {/* Dropdown positioned independently in right corner */}
+      <div ref={dropdownRef} className={`${classes.chatDropdown} ${isOpen ? 'open' : ''}`} data-dropdown>
         <div className={classes.messagesContainer}>
           {messages.map((message, index) => (
             <div
@@ -436,7 +446,7 @@ const AIChat = ({ currentLesson, lessonContent }) => {
           <div ref={messagesEndRef} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

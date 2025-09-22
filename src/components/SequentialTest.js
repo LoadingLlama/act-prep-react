@@ -134,7 +134,8 @@ const useStyles = createUseStyles({
 const SequentialTest = ({
   title = "Practice Test",
   description = "Complete all questions to see your results:",
-  questions = []
+  questions = [],
+  duration = null
 }) => {
   const classes = useStyles();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -226,7 +227,22 @@ const SequentialTest = ({
 
   return (
     <div className={classes.testContainer}>
-      <h2 className={classes.testHeader}>{title}</h2>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+        <h2 className={classes.testHeader} style={{ margin: 0 }}>{title}</h2>
+        {duration && (
+          <span style={{
+            backgroundColor: '#38a169',
+            color: 'white',
+            padding: '0.25rem 0.5rem',
+            borderRadius: '12px',
+            fontSize: '0.75rem',
+            fontWeight: '600',
+            whiteSpace: 'nowrap'
+          }}>
+            {duration} min
+          </span>
+        )}
+      </div>
       <p className={classes.testDescription}>{description}</p>
 
       <div className={classes.progressContainer}>

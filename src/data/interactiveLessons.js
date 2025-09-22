@@ -5,6 +5,7 @@ export const interactiveLessons = {
       {
         title: "Backsolving Practice Test",
         description: "Complete this practice test using backsolving techniques. Answer all 8 questions, then review your results. Remember to start with answer choice B or C and work systematically!",
+        duration: 12, // minutes for 8 questions
         isTest: true,
         questions: [
           {

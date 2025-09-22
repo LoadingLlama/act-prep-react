@@ -16,12 +16,17 @@ const useStyles = createUseStyles({
       padding: 0,
       boxSizing: 'border-box'
     },
+    'html': {
+      scrollBehavior: 'smooth'
+    },
     body: {
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif',
-      backgroundColor: '#ffffff',
+      backgroundColor: '#fafbfc',
       color: '#1a1a1a',
       lineHeight: 1.6,
-      overflowX: 'hidden'
+      overflowX: 'hidden',
+      backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 70%)',
+      backgroundAttachment: 'fixed'
     }
   },
   container: {
@@ -33,12 +38,14 @@ const useStyles = createUseStyles({
     background: '#fafbfc'
   },
   header: {
-    background: '#f8f9fa',
-    borderBottom: '2px solid #e9ecef',
+    background: 'rgba(248, 249, 250, 0.7)',
+    backdropFilter: 'blur(12px)',
+    borderBottom: '1px solid rgba(233, 236, 239, 0.3)',
     padding: '0.75rem 2rem',
     position: 'sticky',
     top: 0,
-    zIndex: 100
+    zIndex: 30,
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   headerContent: {
     display: 'flex',
@@ -46,10 +53,11 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     maxWidth: '1200px',
     margin: '0 auto',
-    gap: '1rem'
+    gap: '1rem',
+    position: 'relative'
   },
   logo: {
-    fontSize: '1.5rem',
+    fontSize: '1.3rem',
     fontWeight: 500,
     color: '#1a1a1a',
     textDecoration: 'none',
@@ -73,7 +81,7 @@ const useStyles = createUseStyles({
   },
   navTabs: {
     display: 'flex',
-    borderBottom: '1px solid #e5e5e5',
+    borderBottom: '1px solid rgba(229, 229, 229, 0.5)',
     justifyContent: 'center',
     position: 'relative',
     maxWidth: '1200px',
@@ -81,10 +89,10 @@ const useStyles = createUseStyles({
     width: '100%'
   },
   tab: {
-    background: 'none',
+    background: 'transparent',
     border: 'none',
     padding: '1rem 2rem',
-    fontSize: '1.1rem',
+    fontSize: '1rem',
     color: '#666',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
@@ -101,17 +109,20 @@ const useStyles = createUseStyles({
   tabIndicator: {
     position: 'absolute',
     bottom: '-1px',
-    height: '2px',
-    backgroundColor: '#1a1a1a',
-    transition: 'all 0.3s ease',
-    borderRadius: '1px'
+    height: '3px',
+    background: 'linear-gradient(90deg, #1a1a1a, #4a5568, #1a1a1a)',
+    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+    borderRadius: '2px',
+    boxShadow: '0 2px 8px rgba(26, 26, 26, 0.3)'
   },
   content: {
     flex: 1,
     padding: '0 2rem 2rem',
     maxWidth: '1200px',
     margin: '0 auto',
-    width: '100%'
+    width: '100%',
+    position: 'relative',
+    zIndex: 10
   },
   tabContent: {
     display: 'none',
@@ -133,29 +144,44 @@ const useStyles = createUseStyles({
     margin: '0'
   },
   sectionTitle: {
-    fontSize: '1.5rem',
+    fontSize: '1.8rem',
     fontWeight: 500,
     color: '#1a1a1a',
-    marginBottom: '1rem',
-    textAlign: 'left'
+    marginBottom: '1.5rem',
+    textAlign: 'center',
+    letterSpacing: '-0.01em',
+    position: 'relative',
+    paddingTop: '1rem',
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      bottom: '-0.5rem',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: '60px',
+      height: '2px',
+      background: 'linear-gradient(90deg, transparent, #1a1a1a, transparent)',
+      borderRadius: '1px'
+    }
   },
   testGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-    gap: '1.5rem',
-    marginTop: '0'
+    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+    gap: '2rem',
+    marginTop: '1rem',
+    padding: '1rem 0'
   },
   card: {
-    background: gradients.card,
+    background: '#ffffff',
     border: '1px solid #dee2e6',
     borderRadius: borderRadius.xl,
     padding: spacing.xxl,
-    marginBottom: spacing.xl,
+    marginBottom: 0,
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
     cursor: 'pointer',
     '&:hover': {
-      background: gradients.cardHover,
+      background: '#f8f9fa',
       borderColor: '#adb5bd',
       transform: 'translateY(-4px)',
       boxShadow: '0 12px 30px rgba(0,0,0,0.15)'
@@ -175,10 +201,10 @@ const useStyles = createUseStyles({
   btn: {
     ...buttonStyles.base,
     ...buttonStyles.sizes.md,
-    background: gradients.neutral,
+    background: '#f8f9fa',
     color: '#666',
     '&:hover': {
-      background: gradients.neutralHover,
+      background: '#e9ecef',
       borderColor: '#adb5bd',
       transform: 'translateY(-1px)',
       boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
@@ -188,12 +214,13 @@ const useStyles = createUseStyles({
   sectionFilters: {
     display: 'flex',
     justifyContent: 'center',
-    gap: '1rem',
-    marginBottom: '1rem',
-    flexWrap: 'wrap'
+    gap: '1.25rem',
+    marginBottom: '2rem',
+    flexWrap: 'wrap',
+    padding: '1rem 0'
   },
   sectionFilter: {
-    background: gradients.neutral,
+    background: '#f8f9fa',
     border: '1px solid #dee2e6',
     color: '#666',
     padding: `${spacing.sm} ${spacing.lg}`,
@@ -204,7 +231,7 @@ const useStyles = createUseStyles({
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
     '&:hover': {
-      background: gradients.neutralHover,
+      background: '#e9ecef',
       borderColor: '#adb5bd',
       transform: 'translateY(-1px)',
       boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
@@ -219,8 +246,9 @@ const useStyles = createUseStyles({
   },
   lessonsGrid: {
     display: 'grid',
-    gap: '0.75rem',
-    marginTop: '0'
+    gap: '1rem',
+    marginTop: '1rem',
+    padding: '0.5rem 0'
   },
   lessonItem: {
     display: 'flex',
@@ -232,7 +260,7 @@ const useStyles = createUseStyles({
     transition: 'all 0.3s ease',
     background: '#ffffff',
     cursor: 'pointer',
-    marginBottom: '0.5rem',
+    marginBottom: 0,
     position: 'relative',
     borderLeft: '4px solid #e5e7eb',
     '&:hover': {
@@ -291,17 +319,30 @@ const useStyles = createUseStyles({
   },
   sectionHeader: {
     gridColumn: '1 / -1',
-    margin: '1rem 0 0.75rem',
-    paddingBottom: '0.5rem',
-    borderBottom: '1px solid #e5e5e5',
+    margin: '2rem 0 1rem',
+    paddingBottom: '0.75rem',
+    borderBottom: '1px solid rgba(229, 229, 229, 0.5)',
+    position: 'relative',
     '&.hidden': {
       display: 'none'
     },
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      top: '-1rem',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: '100px',
+      height: '1px',
+      background: 'linear-gradient(90deg, transparent, rgba(229, 229, 229, 0.8), transparent)'
+    },
     '& h3': {
-      fontSize: '1.2rem',
+      fontSize: '1.3rem',
       fontWeight: 500,
       color: '#1a1a1a',
-      margin: 0
+      margin: 0,
+      textAlign: 'center',
+      letterSpacing: '-0.01em'
     }
   },
   // Lesson Modal Styles
@@ -490,17 +531,18 @@ const useStyles = createUseStyles({
     top: '50%',
     right: '20px',
     transform: 'translateY(-50%)',
-    background: 'rgba(255, 255, 255, 0.95)',
-    borderRadius: '12px',
-    padding: '1rem',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-    backdropFilter: 'blur(10px)',
-    border: '1px solid rgba(226, 232, 240, 0.8)',
+    background: 'rgba(255, 255, 255, 0.9)',
+    borderRadius: '16px',
+    padding: '1.25rem',
+    boxShadow: '0 12px 40px rgba(0, 0, 0, 0.12)',
+    backdropFilter: 'blur(16px)',
+    border: '1px solid rgba(226, 232, 240, 0.6)',
     zIndex: 1001,
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.75rem',
-    minWidth: '160px'
+    gap: '1rem',
+    minWidth: '180px',
+    marginTop: '40px'
   },
   sidebarSection: {
     '& h4': {
@@ -1100,7 +1142,13 @@ function App() {
       <header className={classes.header}>
         <div className={classes.headerContent}>
           <h1 className={classes.logo}>actclass.org</h1>
-          <div style={{ color: '#666', fontSize: '0.8rem', fontWeight: '400' }}>
+          <div style={{
+            color: 'rgba(102, 102, 102, 0.7)',
+            fontSize: '0.75rem',
+            fontWeight: '400',
+            letterSpacing: '0.5px',
+            textTransform: 'uppercase'
+          }}>
             Diagnostic Test & Lessons
           </div>
         </div>

@@ -38,6 +38,7 @@ const LessonRenderer = ({ content, interactiveData }) => {
             description={section.description}
             questions={section.questions}
             isTest={section.isTest || false}
+            duration={section.duration}
           />
         );
 

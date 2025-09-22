@@ -68,7 +68,8 @@ const PracticeSection = ({
   title = "Practice Questions",
   description = "Try these problems using the techniques you've learned:",
   questions = [],
-  isTest = false
+  isTest = false,
+  duration = null
 }) => {
   const classes = useStyles();
   const [questionStates, setQuestionStates] = useState({});
@@ -91,6 +92,7 @@ const PracticeSection = ({
         title={title}
         description={description}
         questions={questions}
+        duration={duration}
       />
     );
   }
@@ -103,7 +105,22 @@ const PracticeSection = ({
 
   return (
     <div className={classes.practiceContainer}>
-      <h3 className={classes.sectionHeader}>{title}</h3>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', paddingBottom: '0.5rem', borderBottom: '2px solid #e2e8f0' }}>
+        <h3 className={classes.sectionHeader} style={{ margin: 0, border: 'none', paddingBottom: 0 }}>{title}</h3>
+        {duration && (
+          <span style={{
+            backgroundColor: '#48bb78',
+            color: 'white',
+            padding: '0.25rem 0.5rem',
+            borderRadius: '12px',
+            fontSize: '0.75rem',
+            fontWeight: '600',
+            whiteSpace: 'nowrap'
+          }}>
+            {duration} min
+          </span>
+        )}
+      </div>
 
       <p className={classes.sectionDescription}>{description}</p>
 

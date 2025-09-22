@@ -5,6 +5,7 @@ export const allLessons = {
   // English lessons
   'getting-started': {
     title: 'Getting Started with the ACT',
+    duration: 12, // minutes
     content: `
       <h3>Welcome to ACT Prep!</h3>
       <p>The ACT is a standardized test that measures your knowledge and skills in English, Mathematics, Reading, and Science. Understanding the test format and developing effective strategies are crucial for success.</p>
@@ -37,6 +38,7 @@ export const allLessons = {
 
   'sentence-structure': {
     title: 'Chapter 1: Sentence Structure',
+    duration: 18, // minutes
     content: `
       <p class="lesson-intro">To conquer the ACT English Test, we first need to identify the different parts of a sentence and know the rules for how they can and cannot be combined.</p>
 
@@ -72,6 +74,7 @@ export const allLessons = {
 
   'commas': {
     title: 'Chapter 2: Commas - 4 Types',
+    duration: 15, // minutes
     content: `
       <p class="lesson-intro">Commas are the most common type of punctuation on the English Test. In order to successfully handle comma questions, we need to become familiar with the 4 types of commas that appear on the ACT.</p>
 
@@ -123,12 +126,14 @@ export const allLessons = {
   // Placeholder for remaining lessons
   'punctuation': {
     title: 'Chapter 3: Other Punctuation',
+    duration: 8, // minutes
     content: `<p>This lesson will cover semicolons, colons, dashes, apostrophes, and quotation marks.</p>`
   },
 
   // Math lessons - comprehensive content
   'introduction-to-act-math': {
     title: 'Introduction to ACT Math',
+    duration: 10, // minutes
     content: `
       <p class="lesson-intro">Before we start this book, let's begin by understanding the basic format of the ACT Math Test and general strategies you will need for success.</p>
 
@@ -173,6 +178,7 @@ export const allLessons = {
 
   'backsolving': {
     title: 'Chapter 1: Backsolving',
+    duration: 25, // minutes (includes practice test)
     content: `
       <p class="lesson-intro">In the first two chapters, you will learn two important test-taking techniques: backsolving and substitution. As you work through the rest of the book, use these techniques whenever you can to solve questions.</p>
 
@@ -227,6 +233,7 @@ export const allLessons = {
 
   'substitution': {
     title: 'Chapter 2: Substitution',
+    duration: 20, // minutes
     content: `
       <p class="lesson-intro">Do you prefer working with numbers or variables? We would guess your answer is numbers! On the ACT, some questions have many unknown variables and few or no numbers at all. Students often find these questions more difficult. If you prefer to work with numbers, let's work with numbers! With substitution, we substitute simple numbers in for variables and solve the question using numbers instead of relying on more complex algebra with variables.</p>
 
@@ -289,6 +296,7 @@ export const allLessons = {
 
   'geometry-angles': {
     title: 'Chapter 3: Geometry Part 1 - Angles',
+    duration: 22, // minutes
     content: `
       <p class="lesson-intro">In this chapter, we will cover all the rules you need to know for angles questions on the ACT. For angles questions, put your pencil to work by finding and labeling unknown angles. The more angles you label, the easier it will be to find the angle you need to know to answer the question.</p>
 
@@ -372,6 +380,7 @@ export const allLessons = {
 
   'geometry-shapes': {
     title: 'Chapter 4: Geometry Part 2 - Shapes',
+    duration: 30, // minutes
     content: `
       <p class="lesson-intro">The ACT loves to ask geometry questions, and you will see them throughout the math test. Most commonly, you will need to know how to find the area and volume of various shapes or apply the rules for various types of triangles. However, you will not be given any equations, so you need to memorize all of the equations and rules that are bolded in this chapter.</p>
 
@@ -488,12 +497,14 @@ export const allLessons = {
   // Reading lessons placeholders
   'reading-intro': {
     title: 'Introduction to the Reading Test',
+    duration: 12, // minutes
     content: `<p>What is on the ACT Reading Test and what you'll learn in this course.</p>`
   },
 
   // Science lessons placeholders
   'science-introduction': {
     title: 'Introduction to Science Test',
+    duration: 10, // minutes
     content: `<p>Test format, timing, and question types overview.</p>`
   }
 };
