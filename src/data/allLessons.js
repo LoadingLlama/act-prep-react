@@ -38,73 +38,123 @@ export const allLessons = {
 
   'sentence-structure': {
     title: 'Chapter 1: Sentence Structure',
-    duration: 18, // minutes
+    duration: 20, // minutes
     content: `
 <div class="lesson-header">
     <h2>Chapter 1: Sentence Structure</h2>
-    <p class="lesson-intro">Master the foundation of ACT English success by learning to identify sentence parts and the rules for combining them correctly.</p>
+    <p class="lesson-intro">Master the foundation of ACT English success by learning to identify sentence parts and the rules for combining them correctly. This chapter covers <strong>20% of all English questions</strong>—making it one of the most important topics to master!</p>
+</div>
+
+<div class="section why-important">
+    <h3>Why This Matters for Your ACT Score</h3>
+    <p>Sentence structure questions test your ability to:</p>
+    <ul>
+        <li><strong>Identify complete vs. incomplete sentences</strong> (avoiding fragments)</li>
+        <li><strong>Properly join multiple ideas</strong> using correct punctuation</li>
+        <li><strong>Recognize and fix run-on sentences</strong> and comma splices</li>
+    </ul>
+    <p class="score-impact">Getting these right can boost your English score by 3-5 points!</p>
 </div>
 
 <div class="section">
-    <h3>Building Blocks: Clauses and Phrases</h3>
-    <p>Understanding these three components is essential for tackling sentence structure questions:</p>
+    <h3>Building Blocks: Understanding Clauses and Phrases</h3>
+    <p>Every sentence structure question comes down to understanding these three basic components. Think of them as sentence "ingredients"—you need to know what each one does before you can combine them correctly:</p>
+
     <div class="concept-grid">
         <div class="concept-box independent">
-            <h4>Independent Clauses</h4>
-            <p class="definition">Can stand alone as a complete sentence. Contains both a subject and verb.</p>
-            <p class="test-tip"><strong>Quick Test:</strong> Read it aloud—can you stop talking at the end? If yes, it's independent!</p>
+            <h4>1. Independent Clauses</h4>
+            <p class="definition">A <strong>complete thought</strong> that can stand alone as its own sentence. Must contain both a subject (who/what) and a predicate (what they do).</p>
+            <p class="test-tip"><strong>Quick Test:</strong> Read it aloud—does it sound complete? Could you end the conversation here? If yes, it's independent!</p>
             <div class="examples">
                 <h5>Examples:</h5>
                 <ul>
-                    <li>The dog chased its tail.</li>
-                    <li>Monique made homemade peach scones.</li>
-                    <li>He picked it up.</li>
-                    <li>The excited child opened his present.</li>
+                    <li>The dog chased its tail. <em>(subject: dog, predicate: chased its tail)</em></li>
+                    <li>Monique made homemade peach scones. <em>(subject: Monique, predicate: made scones)</em></li>
+                    <li>She laughed loudly. <em>(subject: she, predicate: laughed loudly)</em></li>
+                    <li>The excited child opened his present eagerly. <em>(subject: child, predicate: opened present)</em></li>
                 </ul>
             </div>
+            <div class="key-insight">
+                <p><strong>Key Insight:</strong> These could each be their own sentence with a period at the end!</p>
+            </div>
         </div>
+
         <div class="concept-box dependent">
-            <h4>Dependent Clauses</h4>
-            <p class="definition">Cannot stand alone. Usually begins with a subordinating conjunction.</p>
+            <h4>2. Dependent Clauses</h4>
+            <p class="definition">Contains a subject and verb but <strong>cannot stand alone</strong> because it begins with a subordinating conjunction that makes it incomplete.</p>
             <div class="subordinating-conjunctions">
-                <p><strong>Common subordinating conjunctions:</strong></p>
-                <span class="conjunction-list">after, although, as, because, before, even though, if, once, since, though, unless, until, when, whenever, where, while</span>
+                <p><strong>Most common subordinating conjunctions (memorize these!):</strong></p>
+                <div class="conjunction-categories">
+                    <div class="category">
+                        <strong>Time:</strong> <span class="conjunction-list">when, while, before, after, since, until, once</span>
+                    </div>
+                    <div class="category">
+                        <strong>Condition:</strong> <span class="conjunction-list">if, unless, whether</span>
+                    </div>
+                    <div class="category">
+                        <strong>Contrast:</strong> <span class="conjunction-list">although, though, even though, whereas</span>
+                    </div>
+                    <div class="category">
+                        <strong>Cause:</strong> <span class="conjunction-list">because, since, as</span>
+                    </div>
+                </div>
             </div>
             <div class="examples">
                 <h5>Examples:</h5>
                 <ul>
-                    <li><em>While</em> the dog chased its tail...</li>
-                    <li><em>Although</em> Monique made homemade peach scones...</li>
-                    <li><em>Since</em> he picked it up...</li>
-                    <li><em>When</em> the excited child opened his present...</li>
+                    <li><em>While</em> the dog chased its tail... <em>(sounds incomplete, right?)</em></li>
+                    <li><em>Although</em> Monique made homemade peach scones... <em>(we're waiting for more!)</em></li>
+                    <li><em>Because</em> she laughed loudly... <em>(what happened because of this?)</em></li>
+                    <li><em>When</em> the excited child opened his present... <em>(then what?)</em></li>
                 </ul>
+            </div>
+            <div class="key-insight">
+                <p><strong>Key Insight:</strong> Your brain is waiting for more information—that's the clue it's dependent!</p>
             </div>
         </div>
+
         <div class="concept-box phrase">
-            <h4>Phrases</h4>
-            <p class="definition">Missing a subject, verb, or both. Provides descriptive information only.</p>
+            <h4>3. Phrases</h4>
+            <p class="definition">Missing either a subject, a complete verb, or both. Provides descriptive information but never forms a complete thought on its own.</p>
             <div class="examples">
                 <h5>Examples:</h5>
                 <ul>
-                    <li>Chasing its tail... <em>(missing subject)</em></li>
-                    <li>Making homemade peach scones... <em>(missing subject)</em></li>
-                    <li>Picking it up... <em>(missing subject)</em></li>
-                    <li>Excited to open his present... <em>(missing subject)</em></li>
+                    <li>Chasing its tail... <em>(missing subject—who is chasing?)</em></li>
+                    <li>Made from scratch... <em>(missing subject—who/what was made?)</em></li>
+                    <li>The talented musician... <em>(missing predicate—what did the musician do?)</em></li>
+                    <li>In the morning... <em>(missing both subject and verb—this is just a prepositional phrase)</em></li>
                 </ul>
+            </div>
+            <div class="key-insight">
+                <p><strong>Key Insight:</strong> Phrases are like puzzle pieces—they need to attach to a complete sentence to make sense!</p>
             </div>
         </div>
     </div>
+
     <div class="pro-tip">
-        <h4>PRO TIP: The Cover Test</h4>
-        <p>Can't tell if it's dependent or a phrase? <strong>Cover the subordinating word</strong> and read what remains:</p>
-        <ul>
-            <li>Complete sentence after covering = <strong>Dependent clause</strong></li>
-            <li>Still incomplete after covering = <strong>Phrase</strong></li>
-        </ul>
+        <h4>🎯 PRO TIP: The Cover Test (Your Secret Weapon!)</h4>
+        <p>When you can't decide between dependent clause vs. phrase, use this foolproof method:</p>
+        <div class="cover-test-steps">
+            <ol>
+                <li><strong>Find the first word</strong> that might be a subordinating conjunction</li>
+                <li><strong>Cover it completely</strong> with your finger</li>
+                <li><strong>Read what's left</strong>—is it a complete sentence?</li>
+            </ol>
+        </div>
         <div class="comparison-examples">
-            <p><strong>Independent:</strong> My brother Adam eats cookies daily.</p>
-            <p><strong>Dependent:</strong> <span class="highlight">When</span> my brother Adam eats cookies daily → Cover "When" → "my brother Adam eats cookies daily" = complete sentence = <strong>dependent clause</strong></p>
-            <p><strong>Phrase:</strong> Eating cookies daily → No subordinating word to cover → incomplete on its own = <strong>phrase</strong></p>
+            <div class="test-example">
+                <p><strong>Test #1:</strong> "<em>When</em> my brother Adam eats cookies daily"</p>
+                <p>Cover "When" → "my brother Adam eats cookies daily" = Complete sentence!</p>
+                <p class="result">✅ <strong>Dependent clause</strong> (complete sentence hiding behind the subordinating word)</p>
+            </div>
+            <div class="test-example">
+                <p><strong>Test #2:</strong> "Eating cookies daily"</p>
+                <p>No subordinating word to cover → "Eating cookies daily" = Still incomplete</p>
+                <p class="result">✅ <strong>Phrase</strong> (no complete sentence hiding anywhere)</p>
+            </div>
+        </div>
+        <div class="why-this-works">
+            <p><strong>Why this works:</strong> Dependent clauses are just independent clauses with a subordinating word stuck in front. Remove that word, and you reveal the complete sentence underneath!</p>
         </div>
     </div>
 </div>
@@ -113,91 +163,176 @@ export const allLessons = {
 
 
 <div class="section">
-    <h3>Avoiding Sentence Fragments</h3>
-    <p class="key-rule">A complete sentence MUST contain both a subject and a verb.</p>
+    <h3>Avoiding Sentence Fragments (The #1 Mistake!)</h3>
+    <div class="fragment-intro">
+        <p class="key-rule">Every complete sentence needs two essential ingredients: a <strong>subject</strong> (who/what) and a <strong>complete verb</strong> (what they do/are).</p>
+        <p>Fragments happen when one of these ingredients is missing. They're incomplete thoughts that leave the reader hanging!</p>
+    </div>
 
     <div class="fragment-examples">
-        <div class="incorrect-example">
-            <h5>Incorrect Examples:</h5>
-            <p><strong>Fragment:</strong> The student running to get to class on time.</p>
-            <p class="explanation"><em>Missing a verb—what did the student do?</em></p>
-            <p><strong>Fixed:</strong> The student running to get to class on time <span class="highlight">dropped her water bottle</span>.</p>
+        <div class="fragment-breakdown">
+            <h5>Fragment Type 1: Missing the Action (Verb)</h5>
+            <div class="incorrect-example">
+                <p><strong>❌ Fragment:</strong> The student running to get to class on time.</p>
+                <p class="explanation"><em>We have a subject (student) but no complete action. "Running" is just a description—what did the student actually <strong>do</strong>?</em></p>
+                <div class="fix-options">
+                    <p><strong>✅ Fix Option 1:</strong> The student running to get to class on time <span class="highlight">dropped her water bottle</span>.</p>
+                    <p><strong>✅ Fix Option 2:</strong> The student <span class="highlight">was</span> running to get to class on time.</p>
+                    <p><strong>✅ Fix Option 3:</strong> <span class="highlight">While</span> running to get to class on time, the student <span class="highlight">slipped on the wet floor</span>.</p>
+                </div>
+            </div>
         </div>
-        <div class="incorrect-example">
-            <p><strong>Fragment:</strong> Excited to go to the beach and surf.</p>
-            <p class="explanation"><em>Missing a subject—who is excited?</em></p>
-            <p><strong>Fixed:</strong> <span class="highlight">My little brother Shaun is</span> excited to go to the beach and surf.</p>
+
+        <div class="fragment-breakdown">
+            <h5>Fragment Type 2: Missing the Who/What (Subject)</h5>
+            <div class="incorrect-example">
+                <p><strong>❌ Fragment:</strong> Excited to go to the beach and surf.</p>
+                <p class="explanation"><em>We have emotions and actions, but <strong>who</strong> is excited? The subject is missing!</em></p>
+                <div class="fix-options">
+                    <p><strong>✅ Fix Option 1:</strong> <span class="highlight">My little brother Shaun is</span> excited to go to the beach and surf.</p>
+                    <p><strong>✅ Fix Option 2:</strong> <span class="highlight">The family</span> excited to go to the beach and surf <span class="highlight">packed early</span>.</p>
+                </div>
+            </div>
         </div>
+
+        <div class="fragment-breakdown">
+            <h5>Fragment Type 3: The Sneaky Dependent Clause</h5>
+            <div class="incorrect-example">
+                <p><strong>❌ Fragment:</strong> Because the weather was perfect for hiking.</p>
+                <p class="explanation"><em>This has a subject (weather) and verb (was), but that "because" makes it incomplete. So what happened because the weather was perfect?</em></p>
+                <div class="fix-options">
+                    <p><strong>✅ Fix Option 1:</strong> Because the weather was perfect for hiking<span class="highlight">, we decided to climb the mountain</span>.</p>
+                    <p><strong>✅ Fix Option 2:</strong> <span class="highlight">We chose that trail because</span> the weather was perfect for hiking.</p>
+                    <p><strong>✅ Fix Option 3:</strong> The weather was perfect for hiking. <em>(remove "because")</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fragment-test">
+        <h4>🔍 Quick Fragment Detection Test</h4>
+        <p>Read the sentence aloud and ask yourself: "Is this a complete thought? Could I stop speaking here and walk away?" If the answer is no, it's a fragment!</p>
     </div>
 </div>
 
 <div class="section">
-    <h3>The 5 Golden Rules for Compound Sentences</h3>
-    <p class="rules-intro">These are the ONLY correct ways to combine multiple clauses. <strong>Memorize these!</strong></p>
+    <h3>The 5 Golden Rules for Combining Clauses</h3>
+    <div class="rules-intro">
+        <p><strong>These are the ONLY 5 ways to correctly combine clauses on the ACT.</strong> Every sentence structure question boils down to applying one of these rules. Master them, and you'll never miss another sentence structure question!</p>
+        <p class="memorization-tip">💡 <em>Think of these as "legal" ways to connect ideas—everything else is "illegal" on the ACT!</em></p>
+    </div>
 
     <div class="fanboys-callout">
-        <h4>Remember: FANBOYS</h4>
+        <h4>🔑 First, Meet the FANBOYS!</h4>
+        <p>These 7 words are <strong>coordinating conjunctions</strong>—they join equal ideas (two independent clauses).</p>
         <div class="fanboys-grid">
-            <span><strong>F</strong>or</span>
-            <span><strong>A</strong>nd</span>
-            <span><strong>N</strong>or</span>
-            <span><strong>B</strong>ut</span>
-            <span><strong>O</strong>r</span>
-            <span><strong>Y</strong>et</span>
-            <span><strong>S</strong>o</span>
+            <div class="fanboy-item"><strong>F</strong>or <em>(because)</em></div>
+            <div class="fanboy-item"><strong>A</strong>nd <em>(addition)</em></div>
+            <div class="fanboy-item"><strong>N</strong>or <em>(negative and)</em></div>
+            <div class="fanboy-item"><strong>B</strong>ut <em>(contrast)</em></div>
+            <div class="fanboy-item"><strong>O</strong>r <em>(choice)</em></div>
+            <div class="fanboy-item"><strong>Y</strong>et <em>(but)</em></div>
+            <div class="fanboy-item"><strong>S</strong>o <em>(therefore)</em></div>
         </div>
+        <p class="fanboys-note"><strong>Memory Trick:</strong> "Fan Boys" love connecting things equally—they never pick favorites between clauses!</p>
     </div>
 
     <div class="rules-container">
-        <div class="rule-card">
+        <div class="rule-card rule-1">
             <div class="rule-number">1</div>
             <div class="rule-content">
-                <h5>Period Separation</h5>
-                <p class="rule-description">Two separate independent clauses with periods</p>
-                <p class="example"><em>Mary loves dogs. Andrew loves cats.</em></p>
-                <p class="pattern">Independent → Independent</p>
+                <h5>Period Separation (The Safe Choice)</h5>
+                <p class="rule-description">Split two independent clauses into completely separate sentences</p>
+                <div class="rule-examples">
+                    <p class="example"><em>Mary loves dogs<span class="highlight">.</span> Andrew loves cats.</em></p>
+                    <p class="example"><em>The storm was approaching<span class="highlight">.</span> We decided to head home.</em></p>
+                </div>
+                <p class="pattern">Independent<span class="highlight"> . </span>Independent</p>
+                <div class="rule-insight">
+                    <p><strong>When to use:</strong> Always works! When in doubt, choose the period—it's never wrong.</p>
+                </div>
             </div>
         </div>
 
-        <div class="rule-card">
+        <div class="rule-card rule-2">
             <div class="rule-number">2</div>
             <div class="rule-content">
-                <h5>Comma + FANBOYS</h5>
-                <p class="rule-description">Comma + coordinating conjunction joining 2 independent clauses</p>
-                <p class="example"><em>Mary loves dogs<span class="highlight">, and</span> Andrew loves cats.</em></p>
-                <p class="pattern">Independent → Independent</p>
+                <h5>Comma + FANBOYS (The Connector)</h5>
+                <p class="rule-description">Use comma + coordinating conjunction to show relationship between ideas</p>
+                <div class="rule-examples">
+                    <p class="example"><em>Mary loves dogs<span class="highlight">, and</span> Andrew loves cats.</em> <em>(addition)</em></p>
+                    <p class="example"><em>The storm was approaching<span class="highlight">, so</span> we decided to head home.</em> <em>(cause/effect)</em></p>
+                </div>
+                <p class="pattern">Independent<span class="highlight"> , FANBOY </span>Independent</p>
+                <div class="rule-insight">
+                    <p><strong>When to use:</strong> When you want to show how two ideas relate to each other.</p>
+                    <p><strong>⚠️ Warning:</strong> Both parts MUST be independent clauses, or this rule doesn't work!</p>
+                </div>
             </div>
         </div>
 
-        <div class="rule-card">
+        <div class="rule-card rule-3">
             <div class="rule-number">3</div>
             <div class="rule-content">
-                <h5>Semicolon Connection</h5>
-                <p class="rule-description">Semicolon between 2 independent clauses</p>
-                <p class="example"><em>Mary loves dogs<span class="highlight">;</span> Andrew loves cats.</em></p>
-                <p class="pattern">Independent → Independent</p>
-                <p class="note">*Semicolon = period on the ACT</p>
+                <h5>Semicolon Connection (The Strong Link)</h5>
+                <p class="rule-description">Join two closely related independent clauses with a semicolon</p>
+                <div class="rule-examples">
+                    <p class="example"><em>Mary loves dogs<span class="highlight">;</span> Andrew loves cats.</em></p>
+                    <p class="example"><em>The storm was approaching<span class="highlight">;</span> we needed to find shelter quickly.</em></p>
+                </div>
+                <p class="pattern">Independent<span class="highlight"> ; </span>Independent</p>
+                <div class="rule-insight">
+                    <p><strong>When to use:</strong> When two ideas are very closely connected and you want to emphasize their relationship.</p>
+                    <p><strong>🔍 ACT Tip:</strong> Think of semicolons as "super periods"—they're stronger than commas but softer than periods.</p>
+                </div>
             </div>
         </div>
 
-        <div class="rule-card">
+        <div class="rule-card rule-4">
             <div class="rule-number">4</div>
             <div class="rule-content">
-                <h5>Dependent → Independent</h5>
-                <p class="rule-description">Dependent clause followed by independent clause (with comma)</p>
-                <p class="example"><em><span class="highlight">While</span> Mary loves dogs<span class="highlight">,</span> Andrew loves cats.</em></p>
-                <p class="pattern">Dependent → Independent</p>
+                <h5>Dependent → Independent (With Comma)</h5>
+                <p class="rule-description">Start with incomplete thought, add comma, then complete the idea</p>
+                <div class="rule-examples">
+                    <p class="example"><em><span class="highlight">While</span> Mary loves dogs<span class="highlight">,</span> Andrew loves cats.</em></p>
+                    <p class="example"><em><span class="highlight">Because</span> the storm was approaching<span class="highlight">,</span> we decided to head home.</em></p>
+                </div>
+                <p class="pattern"><span class="highlight">Subordinator </span>Dependent<span class="highlight"> , </span>Independent</p>
+                <div class="rule-insight">
+                    <p><strong>When to use:</strong> When you want to emphasize the second part of your sentence.</p>
+                    <p><strong>🎯 Key:</strong> That comma is REQUIRED—it signals the switch from incomplete to complete thought!</p>
+                </div>
             </div>
         </div>
 
-        <div class="rule-card">
+        <div class="rule-card rule-5">
             <div class="rule-number">5</div>
             <div class="rule-content">
-                <h5>Independent → Dependent</h5>
-                <p class="rule-description">Independent clause followed by dependent clause (no comma)</p>
-                <p class="example"><em>Mary loves dogs <span class="highlight">while</span> Andrew loves cats.</em></p>
-                <p class="pattern">Independent → Dependent</p>
+                <h5>Independent → Dependent (No Comma)</h5>
+                <p class="rule-description">Start with complete thought, then add dependent clause for extra info</p>
+                <div class="rule-examples">
+                    <p class="example"><em>Mary loves dogs <span class="highlight">while</span> Andrew loves cats.</em></p>
+                    <p class="example"><em>We decided to head home <span class="highlight">because</span> the storm was approaching.</em></p>
+                </div>
+                <p class="pattern">Independent<span class="highlight"> subordinator </span>Dependent</p>
+                <div class="rule-insight">
+                    <p><strong>When to use:</strong> When the first part is your main point and the second part explains why/when/how.</p>
+                    <p><strong>🚫 Key:</strong> NO comma needed—the flow goes naturally from complete to incomplete.</p>
+                </div>
             </div>
+        </div>
+    </div>
+
+    <div class="rules-summary">
+        <h4>🎯 Quick Decision Guide</h4>
+        <div class="decision-flowchart">
+            <p><strong>Step 1:</strong> Identify what's on the left and right of the "split"</p>
+            <p><strong>Step 2:</strong> Apply the matching rule:</p>
+            <ul>
+                <li><strong>Independent + Independent?</strong> → Use Rule 1, 2, or 3</li>
+                <li><strong>Dependent + Independent?</strong> → Use Rule 4 (with comma)</li>
+                <li><strong>Independent + Dependent?</strong> → Use Rule 5 (no comma)</li>
+            </ul>
         </div>
     </div>
 </div>
