@@ -7,7 +7,7 @@ import AIChat from './components/AIChat';
 import { gradients, spacing, borderRadius, buttonStyles } from './utils/sharedStyles';
 import { storage, scriptLoader, statusUtils, lessonUtils, domUtils } from './utils/helpers';
 import { interactiveLessons } from './data/interactiveLessons';
-import { allLessons } from './data/allLessons';
+import { allLessons, lessonStructure } from './data/allLessons';
 
 const useStyles = createUseStyles({
   '@global': {
@@ -384,7 +384,7 @@ const useStyles = createUseStyles({
   },
   lessonMain: {
     flex: 1,
-    maxWidth: '800px',
+    maxWidth: '900px',
     margin: '0 auto',
     padding: '0'
   },
@@ -399,8 +399,8 @@ const useStyles = createUseStyles({
   },
   lessonTitle: {
     fontSize: '2.2rem',
-    fontWeight: 300,
-    color: '#1a1a1a',
+    fontWeight: 700,
+    color: '#1a202c',
     margin: '0 0 0.5rem 0',
     letterSpacing: '-0.01em'
   },
@@ -419,10 +419,10 @@ const useStyles = createUseStyles({
     }
   },
   lessonBody: {
-    padding: '0 3rem 6rem',
+    padding: '0 1rem 4rem',
     lineHeight: 1.65,
     fontSize: '15px',
-    maxWidth: '700px',
+    maxWidth: '2000px',
     '& h1, & h2, & h3, & h4': {
       color: '#1a202c',
       fontWeight: '600',
@@ -486,11 +486,11 @@ const useStyles = createUseStyles({
       background: '#f8f9fa',
       border: '1px solid #e0e0e0',
       borderRadius: '8px',
-      padding: '1.5rem',
-      margin: '1.5rem 0',
+      padding: '1rem',
+      margin: '1rem 0',
       '& h4': {
         color: '#1a1a1a',
-        marginBottom: '1rem',
+        marginBottom: '0.8rem',
         fontSize: '1.1rem'
       }
     },
@@ -498,11 +498,11 @@ const useStyles = createUseStyles({
       background: '#fff3cd',
       border: '1px solid #ffc107',
       borderRadius: '8px',
-      padding: '1.5rem',
-      margin: '1.5rem 0',
+      padding: '1rem',
+      margin: '1rem 0',
       '& h4': {
         color: '#856404',
-        marginBottom: '1rem',
+        marginBottom: '0.8rem',
         fontSize: '1.1rem'
       }
     },
@@ -510,33 +510,39 @@ const useStyles = createUseStyles({
       background: '#e8f5e8',
       border: '1px solid #28a745',
       borderRadius: '8px',
-      padding: '1.5rem',
-      margin: '1.5rem 0'
+      padding: '1rem',
+      margin: '1rem 0'
     },
     '& .rules-box': {
       background: '#fff',
       border: '2px solid #1a1a1a',
       borderRadius: '8px',
-      padding: '1.5rem',
-      margin: '1.5rem 0',
+      padding: '1rem',
+      margin: '1rem 0',
       '& h4': {
         color: '#1a1a1a',
-        marginBottom: '1rem',
+        marginBottom: '0.8rem',
         fontSize: '1.2rem'
       }
     }
   },
   floatingControls: {
     position: 'fixed',
-    top: '50%',
+    bottom: '35vh',
     right: '20px',
-    transform: 'translateY(-50%)',
-    background: 'rgba(255, 255, 255, 0.9)',
-    borderRadius: '16px',
-    padding: '1.25rem',
-    boxShadow: '0 12px 40px rgba(0, 0, 0, 0.12)',
-    backdropFilter: 'blur(16px)',
-    border: '1px solid rgba(226, 232, 240, 0.6)',
+    background: 'rgba(255, 255, 255, 0.7)',
+    borderRadius: '10px',
+    padding: '0.75rem',
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
+    backdropFilter: 'blur(8px)',
+    border: '1px solid rgba(200, 200, 200, 0.3)',
+    opacity: 0.6,
+    transition: 'all 0.3s ease',
+    '&:hover': {
+      opacity: 0.9,
+      transform: 'translateY(-1px)',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)'
+    },
     zIndex: 1001,
     display: 'flex',
     flexDirection: 'column',
@@ -588,108 +594,7 @@ const useStyles = createUseStyles({
   }
 });
 
-// Complete lesson structure from original HTML
-const lessonStructure = [
-  { id: 'getting-started', section: 'all', title: 'Getting Started with the ACT', desc: 'Test format, timing, and scoring overview', status: 'completed' },
-
-  // English Section
-  { id: 'sentence-structure', section: 'english', title: 'Chapter 1: Sentence Structure', desc: 'Independent clauses, dependent clauses, compound sentences, and comma splices', status: 'completed' },
-  { id: 'commas', section: 'english', title: 'Chapter 2: Commas - 4 Types', desc: 'Unnecessary information, names rule, listing commas, and adjective lists', status: 'completed' },
-  { id: 'punctuation', section: 'english', title: 'Chapter 3: Other Punctuation', desc: 'Semicolons, colons, dashes, apostrophes, and quotation marks', status: 'in-progress' },
-  { id: 'verbs', section: 'english', title: 'Chapter 4: Verbs', desc: 'Subject-verb agreement, verb tense, and irregular verbs', status: 'not-started' },
-  { id: 'pronouns', section: 'english', title: 'Chapter 5: Pronouns', desc: 'Pronoun case, who vs. whom, pronoun agreement, and ambiguous pronouns', status: 'not-started' },
-  { id: 'modifiers', section: 'english', title: 'Chapter 6: Misplaced Modifiers', desc: 'Identifying and correcting misplaced modifiers in sentences', status: 'not-started' },
-  { id: 'parallel-structure', section: 'english', title: 'Chapter 7: Parallel Structure', desc: 'Parallel structure in lists and comparisons', status: 'not-started' },
-  { id: 'misc-topics', section: 'english', title: 'Chapter 8: Miscellaneous Topics', desc: 'Commonly confused words, active vs. passive voice, and prepositional idioms', status: 'not-started' },
-  { id: 'grammar-review', section: 'english', title: 'Chapter 9: Grammar Review', desc: 'Comprehensive review of all grammar concepts', status: 'not-started' },
-  { id: 'redundancy', section: 'english', title: 'Chapter 10: Redundancy & Wordiness', desc: 'Identifying and eliminating redundant and wordy expressions', status: 'not-started' },
-  { id: 'word-choice', section: 'english', title: 'Chapter 11: Word Choice', desc: 'Selecting the clearest and most precise words in context', status: 'not-started' },
-  { id: 'transitions', section: 'english', title: 'Chapter 12: Transitions', desc: 'Choosing logical transitions between sentences and paragraphs', status: 'not-started' },
-  { id: 'which-choice', section: 'english', title: 'Chapter 13: Which Choice Questions', desc: 'Answering specific "which choice" questions about content', status: 'not-started' },
-  { id: 'adding-deleting', section: 'english', title: 'Chapter 14: Adding or Deleting Information', desc: 'Determining when to add or delete information from passages', status: 'not-started' },
-  { id: 'logical-placement', section: 'english', title: 'Chapter 15: Logical Placement', desc: 'Placing sentences in the most logical order within paragraphs', status: 'not-started' },
-
-  // Math Section - Most Common Topics
-  { id: 'introduction-to-act-math', section: 'math', title: 'Introduction to ACT Math', desc: 'Test format, timing, strategies, and essential tips for success', status: 'not-started' },
-  { id: 'backsolving', section: 'math', title: 'Chapter 1: Backsolving', desc: 'Powerful test-taking trick for working backwards from answer choices', status: 'not-started' },
-  { id: 'substitution', section: 'math', title: 'Chapter 2: Substitution', desc: 'Test-taking strategy for plugging in values', status: 'not-started' },
-  { id: 'geometry-angles', section: 'math', title: 'Chapter 3: Geometry Part 1 - Angles', desc: 'Intersecting lines, parallel lines, interior angles', status: 'not-started' },
-  { id: 'geometry-shapes', section: 'math', title: 'Chapter 4: Geometry Part 2 - Shapes', desc: 'Area, volume, right triangles, special triangles', status: 'not-started' },
-  { id: 'lines', section: 'math', title: 'Chapter 5: Lines', desc: 'Slope, equations of lines, midpoint, distance formulas', status: 'not-started' },
-  { id: 'fractions', section: 'math', title: 'Chapter 6: Fractions', desc: 'Operations with fractions and calculator techniques', status: 'not-started' },
-  { id: 'algebra-skills', section: 'math', title: 'Chapter 7: Algebra Skills', desc: 'PEMDAS, negative numbers, combining terms', status: 'not-started' },
-  { id: 'number-theory', section: 'math', title: 'Chapter 8: Number Theory', desc: 'Types of numbers, GCD, LCM, solution types', status: 'not-started' },
-  { id: 'percentages', section: 'math', title: 'Chapter 9: Percentages', desc: 'Percentage calculations, increase/decrease', status: 'not-started' },
-  { id: 'ratios-proportions', section: 'math', title: 'Chapter 10: Ratios and Proportions', desc: 'Ratio problems, proportions, direct/indirect variation', status: 'not-started' },
-  { id: 'functions', section: 'math', title: 'Chapter 11: Functions', desc: 'Function notation, composition, domain, range', status: 'not-started' },
-  { id: 'statistics-basics', section: 'math', title: 'Chapter 12: Mean, Median, Mode, and Range', desc: 'Basic statistics and weighted averages', status: 'not-started' },
-  { id: 'exponents-roots', section: 'math', title: 'Chapter 13: Exponents and Roots', desc: 'Exponent rules and simplifying radicals', status: 'not-started' },
-
-  // Math Section - Common Topics
-  { id: 'logarithms', section: 'math', title: 'Chapter 14: Logarithms', desc: 'Logarithm basics and change of base rule', status: 'not-started' },
-  { id: 'systems-equations', section: 'math', title: 'Chapter 15: Systems of Equations', desc: 'Elimination, substitution, word problems', status: 'not-started' },
-  { id: 'quadratics', section: 'math', title: 'Chapter 16: Quadratics', desc: 'Factoring, quadratic formula, vertex form', status: 'not-started' },
-  { id: 'trigonometry', section: 'math', title: 'Chapter 17: Trigonometry', desc: 'SOH-CAH-TOA, unit circle, trig functions', status: 'not-started' },
-
-  // Math Section - Sometimes Tested
-  { id: 'absolute-value', section: 'math', title: 'Chapter 18: Absolute Value', desc: 'Absolute value equations and inequalities', status: 'not-started' },
-  { id: 'matrices', section: 'math', title: 'Chapter 19: Matrices', desc: 'Matrix operations and determinants', status: 'not-started' },
-  { id: 'repeating-patterns', section: 'math', title: 'Chapter 20: Repeating Patterns', desc: 'Patterns in decimals and powers', status: 'not-started' },
-  { id: 'circles-ellipses', section: 'math', title: 'Chapter 21: Circles, Ellipses, and Hyperbolas', desc: 'Conic sections and their equations', status: 'not-started' },
-  { id: 'probability', section: 'math', title: 'Chapter 22: Probability', desc: 'Basic probability rules and calculations', status: 'not-started' },
-  { id: 'permutations-combinations', section: 'math', title: 'Chapter 23: Permutations, Combinations, and Organized Counting', desc: 'Counting principles and arrangements', status: 'not-started' },
-  { id: 'sequences', section: 'math', title: 'Chapter 24: Sequences', desc: 'Arithmetic and geometric sequences', status: 'not-started' },
-  { id: 'complex-numbers', section: 'math', title: 'Chapter 25: Complex Numbers', desc: 'Operations with imaginary numbers', status: 'not-started' },
-  { id: 'word-problems', section: 'math', title: 'Chapter 26: Word Problems', desc: 'Strategies for solving word problems', status: 'not-started' },
-  { id: 'inequalities', section: 'math', title: 'Chapter 27: Inequalities', desc: 'Solving and graphing inequalities', status: 'not-started' },
-  { id: 'exponential-growth', section: 'math', title: 'Chapter 28: Exponential Growth and Decay', desc: 'Exponential functions and applications', status: 'not-started' },
-
-  // Math Section - Rarely Tested
-  { id: 'unit-conversion', section: 'math', title: 'Chapter 29: Unit Conversion', desc: 'Converting units and dimensional analysis', status: 'not-started' },
-  { id: 'scientific-notation', section: 'math', title: 'Chapter 30: Scientific Notation', desc: 'Working with very large and small numbers', status: 'not-started' },
-  { id: 'arcs-sectors', section: 'math', title: 'Chapter 31: Arcs and Sectors', desc: 'Circle arc lengths and sector areas', status: 'not-started' },
-  { id: 'vectors', section: 'math', title: 'Chapter 32: Vectors', desc: 'Vector operations and components', status: 'not-started' },
-  { id: 'transforming-functions', section: 'math', title: 'Chapter 33: Shifting and Transforming Functions', desc: 'Function transformations and translations', status: 'not-started' },
-  { id: 'statistics-advanced', section: 'math', title: 'Chapter 34: Statistics', desc: 'Standard deviation, distributions, data analysis', status: 'not-started' },
-  { id: 'miscellaneous-topics', section: 'math', title: 'Chapter 35: Miscellaneous Topics', desc: 'Venn diagrams, logic, patterns, advanced topics', status: 'not-started' },
-
-  // Reading Section
-  { id: 'reading-intro', section: 'reading', title: 'Introduction to the Reading Test', desc: 'What is on the ACT Reading Test and what you\'ll learn in this course', status: 'not-started' },
-  { id: 'core-principles', section: 'reading', title: 'Chapter 1: 7 Core Principles for ACT Reading', desc: 'Essential principles to understand the difference between correct and incorrect answers', status: 'not-started' },
-  { id: 'finding-correct-answer', section: 'reading', title: 'Chapter 2: 3 Strategies for Finding the Correct Answer', desc: 'Put your finger on evidence, read like a lawyer, and eliminate incorrect choices', status: 'not-started' },
-  { id: 'reading-approaches', section: 'reading', title: 'Chapter 3: How to Approach the Reading Test', desc: 'Finding the right approach for you: 6 different methods to tackle ACT Reading', status: 'not-started' },
-  { id: 'pacing-time-management', section: 'reading', title: 'Chapter 4: Pacing and 10 Time Management Skills', desc: 'Master timing and learn essential skills to finish all 4 passages', status: 'not-started' },
-  { id: 'question-types', section: 'reading', title: 'Chapter 5: How to Spot and Approach the 7 Most Common Types of Questions', desc: 'Broad passage, clear evidence, inference, purpose, main idea, words in context, and comparing passages', status: 'not-started' },
-  { id: 'breaking-down-questions', section: 'reading', title: 'Chapter 6: Breaking Down Questions', desc: 'How to identify exactly what the ACT is asking you', status: 'not-started' },
-  { id: 'answer-choices', section: 'reading', title: 'Chapter 7: How to Approach the Answer Choices', desc: 'When to read answer choices and how to use them effectively', status: 'not-started' },
-  { id: 'correct-vs-incorrect', section: 'reading', title: 'Chapter 8: Correct vs. Incorrect Answer Choices', desc: '5 common types of incorrect answers and how to effectively find the correct answer', status: 'not-started' },
-  { id: 'words-in-context', section: 'reading', title: 'Chapter 9: Words in Context Questions', desc: 'How to approach vocabulary questions and determine meaning from context', status: 'not-started' },
-  { id: 'comparing-passages', section: 'reading', title: 'Chapter 10: Tips for Comparing Passages Questions', desc: 'Strategies for dual text passages and comparing passage questions', status: 'not-started' },
-  { id: 'working-backwards', section: 'reading', title: 'Chapter 11: Working Backwards', desc: 'Advanced strategy for going straight to questions without reading the passage first', status: 'not-started' },
-  { id: 'maximizing-score', section: 'reading', title: 'Chapter 12: 7 Tips to Maximize Your Reading Score', desc: 'Essential tips including time management, answer patterns, and practice strategies', status: 'not-started' },
-  { id: 'practice-passages', section: 'reading', title: 'Chapter 13: Practice Passages', desc: '8 full practice passages with detailed explanations to apply your skills', status: 'not-started' },
-
-  // Science Section
-  { id: 'science-introduction', section: 'science', title: 'Introduction to Science Test', desc: 'Test format, timing, and question types overview', status: 'not-started' },
-  { id: 'passage-approach', section: 'science', title: 'Chapter 1: How to Approach the Passages', desc: 'Charts & graphs strategies, conflicting viewpoints approach, and general tips', status: 'not-started' },
-  { id: 'question-diagnosis', section: 'science', title: 'Question Diagnosis', desc: 'Where to look for information in science passages', status: 'not-started' },
-  { id: 'specific-data-point', section: 'science', title: 'Specific Data Point Questions', desc: 'Finding exact values from charts, graphs, and tables', status: 'not-started' },
-  { id: 'trends', section: 'science', title: 'Trends Questions', desc: 'Identifying patterns and trends in charts, graphs, and tables', status: 'not-started' },
-  { id: 'approximation', section: 'science', title: 'Approximation Questions', desc: 'Estimating values between or outside given data points', status: 'not-started' },
-  { id: 'multiple-figures', section: 'science', title: 'Multiple Figures Questions', desc: 'Using information from multiple charts, graphs, or tables', status: 'not-started' },
-  { id: 'figures-text', section: 'science', title: 'Figures + Text Questions', desc: 'Combining information from figures and experimental descriptions', status: 'not-started' },
-  { id: 'two-part-answers', section: 'science', title: '2-Part Answers', desc: 'Questions with claims and supporting evidence in answer choices', status: 'not-started' },
-  { id: 'cannot-be-determined', section: 'science', title: 'Cannot Be Determined', desc: 'Recognizing when information is not provided in the passage', status: 'not-started' },
-  { id: 'equations-as-answers', section: 'science', title: 'Equations as Answers', desc: 'Identifying which equation correctly models experimental data', status: 'not-started' },
-  { id: 'mixing', section: 'science', title: 'Mixing', desc: 'Predicting results when combining solutions or substances', status: 'not-started' },
-  { id: 'scatter-plots', section: 'science', title: 'Scatter Plots', desc: 'Reading scatter plot graphs and frequency of data collection', status: 'not-started' },
-  { id: 'inverse-trends-multiple-axes', section: 'science', title: 'Inverse Trends and Graphs with Multiple Axes', desc: 'Complex graphs with multiple y-axes and reverse trend analysis', status: 'not-started' },
-  { id: 'math-on-science', section: 'science', title: 'Math on the Science Test', desc: 'Basic calculations and estimation without a calculator', status: 'not-started' },
-  { id: 'water-knowledge', section: 'science', title: 'Water Knowledge', desc: 'Boiling point, freezing point, evaporation, and condensation', status: 'not-started' },
-  { id: 'experimental-setup', section: 'science', title: 'Experimental Setup', desc: 'Understanding why certain experimental procedures are used', status: 'not-started' },
-  { id: 'other-outside-knowledge', section: 'science', title: 'Other Outside Knowledge', desc: 'Genetics, biology, chemistry, and physics concepts for the ACT', status: 'not-started' },
-  { id: 'conflicting-viewpoints-practice', section: 'science', title: 'Conflicting Viewpoints Practice Passage', desc: 'Practice with the unique conflicting viewpoints passage type', status: 'not-started' }
-];
+// lessonStructure is now imported from allLessons.js
 
 function App() {
   const classes = useStyles();
@@ -928,7 +833,8 @@ function App() {
   };
 
   const LessonModal = () => {
-    const lesson = lessonContent[currentLesson];
+    // Use allLessons instead of lessonContent for the lesson data
+    const lesson = allLessons[currentLesson];
     const currentLessonData = lessonStructure.find(item => item.id === currentLesson);
 
     const keyTerms = lessonUtils.extractKeyTerms(lesson?.content);
@@ -937,120 +843,91 @@ function App() {
     return (
       <div className={`${classes.lessonModal} ${lessonModalOpen ? 'active' : ''}`}>
         <div className={classes.lessonContent}>
-          {/* Sidebar */}
-          <div className={classes.lessonSidebar}>
-            <div className={classes.sidebarSection}>
-              <h4>Progress</h4>
-              <div style={{ fontSize: '0.85rem', color: '#718096', marginBottom: '0.5rem' }}>
-                {progress.completed} of {progress.total} lessons completed
-              </div>
-              <div className={classes.progressBar}>
-                <div className="fill" style={{ width: `${progress.percentage}%` }}></div>
-              </div>
-            </div>
-
-            {keyTerms.length > 0 && (
-              <div className={classes.sidebarSection}>
-                <h4>Key Terms</h4>
-                <div className={classes.keyTerms}>
-                  {keyTerms.map((term, index) => (
-                    <div key={index} className="term">{term}</div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <div className={classes.sidebarSection}>
-              <h4>Lesson Info</h4>
-              <div style={{ fontSize: '0.85rem', color: '#718096', lineHeight: '1.5' }}>
-                <div style={{ marginBottom: '0.5rem' }}>
-                  <strong>Section:</strong> {currentLessonData?.section || 'General'}
-                </div>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  padding: '0.5rem',
-                  background: 'white',
-                  borderRadius: '6px',
-                  border: '1px solid #e2e8f0'
-                }}>
-                  <span style={{
-                    width: '8px',
-                    height: '8px',
-                    borderRadius: '50%',
-                    background: getLessonStatus(currentLesson) === 'completed' ? '#48bb78' :
-                               getLessonStatus(currentLesson) === 'in-progress' ? '#ed8936' : '#cbd5e0'
-                  }}></span>
-                  <span style={{ fontSize: '0.8rem', fontWeight: '500' }}>
-                    {getLessonStatus(currentLesson) === 'completed' ? 'Completed' :
-                     getLessonStatus(currentLesson) === 'in-progress' ? 'In Progress' : 'Not Started'}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Exit Button - Top Left (Moderately Prominent) */}
+          <button
+            onClick={() => {
+              if (window.confirm('Are you sure you want to leave this lesson? Your progress will be saved, but you\'ll lose your current position in the content.')) {
+                closeLessonModal();
+              }
+            }}
+            style={{
+              position: 'fixed',
+              top: '1rem',
+              left: '1rem',
+              background: 'rgba(255, 255, 255, 0.6)',
+              backdropFilter: 'blur(8px)',
+              border: '1px solid rgba(226, 232, 240, 0.6)',
+              borderRadius: '8px',
+              width: '36px',
+              height: '36px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              fontSize: '1rem',
+              color: '#718096',
+              transition: 'all 0.3s ease',
+              zIndex: 1000,
+              opacity: 0.7,
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)'
+            }}
+            onMouseOver={(e) => {
+              e.target.style.background = 'rgba(254, 202, 202, 0.9)';
+              e.target.style.color = '#c53030';
+              e.target.style.opacity = '1';
+              e.target.style.transform = 'scale(1.08)';
+              e.target.style.borderColor = '#feb2b2';
+              e.target.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            }}
+            onMouseOut={(e) => {
+              e.target.style.background = 'rgba(255, 255, 255, 0.6)';
+              e.target.style.color = '#718096';
+              e.target.style.opacity = '0.7';
+              e.target.style.transform = 'scale(1)';
+              e.target.style.borderColor = 'rgba(226, 232, 240, 0.6)';
+              e.target.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.08)';
+            }}
+          >
+            ✕
+          </button>
 
           {/* Main Content */}
           <div className={classes.lessonMain}>
             <div className={classes.lessonHeader}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-                    <h1 className={classes.lessonTitle} style={{ fontSize: '1.75rem', margin: 0 }}>
-                      {lesson ? lesson.title : 'Lesson Coming Soon'}
-                    </h1>
-                    {lesson && lesson.duration && (
-                      <span style={{
-                        color: '#9ca3af',
-                        fontSize: '0.8rem',
-                        fontWeight: '400',
-                        whiteSpace: 'nowrap',
-                        opacity: '0.7'
-                      }}>
-                        • {lesson.duration} min
-                      </span>
-                    )}
-                  </div>
-                  {currentLessonData && (
-                    <p style={{
-                      color: '#718096',
-                      fontSize: '0.95rem',
-                      margin: 0,
-                      fontWeight: '400'
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+                  <h1 className={classes.lessonTitle} style={{ fontSize: '1.75rem', margin: 0 }}>
+                    {lesson ? lesson.title : 'Lesson Coming Soon'}
+                  </h1>
+                  {lesson && lesson.duration && (
+                    <span style={{
+                      color: '#9ca3af',
+                      fontSize: '0.8rem',
+                      fontWeight: '400',
+                      whiteSpace: 'nowrap',
+                      opacity: '0.7'
                     }}>
-                      {currentLessonData.desc}
-                    </p>
+                      • {lesson.duration} min
+                    </span>
                   )}
                 </div>
-                <button
-                  onClick={closeLessonModal}
-                  style={{
-                    background: 'transparent',
-                    border: 'none',
-                    fontSize: '1.5rem',
-                    color: '#a0aec0',
-                    cursor: 'pointer',
-                    width: '32px',
-                    height: '32px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    borderRadius: '6px',
-                    transition: 'all 0.2s'
-                  }}
-                  onMouseOver={(e) => e.target.style.background = '#f7fafc'}
-                  onMouseOut={(e) => e.target.style.background = 'transparent'}
-                >
-                  ✕
-                </button>
+                {currentLessonData && (
+                  <p style={{
+                    color: '#718096',
+                    fontSize: '0.95rem',
+                    margin: 0,
+                    fontWeight: '400'
+                  }}>
+                    {currentLessonData.desc}
+                  </p>
+                )}
               </div>
             </div>
             <div className={classes.lessonBody}>
               {lesson ? (
                 <ProgressiveLessonRenderer
-                  content={lesson.content}
-                  interactiveData={interactiveLessons[currentLesson]}
+                  lesson={lesson}
+                  onComplete={() => updateLessonProgress(currentLesson, 'completed')}
                 />
               ) : (
                 <div style={{
@@ -1069,35 +946,26 @@ function App() {
         {/* Floating Controls */}
         <div className={classes.floatingControls}>
           <button
-            onClick={closeLessonModal}
-            style={{
-              background: 'linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%)',
-              border: '1px solid #e2e8f0',
-              borderRadius: '6px',
-              padding: '0.5rem',
-              color: '#4a5568',
-              fontWeight: '500',
-              cursor: 'pointer',
-              fontSize: '0.8rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '0.5rem'
-            }}
-          >
-            ← Back
-          </button>
-          <button
             onClick={() => updateLessonProgress(currentLesson, 'not-started')}
             style={{
-              background: 'linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%)',
-              border: '1px solid #e2e8f0',
+              background: 'rgba(248, 250, 252, 0.8)',
+              border: '1px solid rgba(203, 213, 224, 0.4)',
               borderRadius: '6px',
-              padding: '0.5rem',
-              color: '#718096',
-              fontWeight: '500',
+              padding: '0.4rem 0.7rem',
+              color: '#64748b',
+              fontWeight: '400',
               cursor: 'pointer',
-              fontSize: '0.8rem'
+              fontSize: '0.7rem',
+              transition: 'all 0.2s ease',
+              boxShadow: 'none'
+            }}
+            onMouseOver={(e) => {
+              e.target.style.background = 'rgba(248, 250, 252, 1)';
+              e.target.style.color = '#475569';
+            }}
+            onMouseOut={(e) => {
+              e.target.style.background = 'rgba(248, 250, 252, 0.8)';
+              e.target.style.color = '#64748b';
             }}
           >
             Reset
@@ -1105,14 +973,24 @@ function App() {
           <button
             onClick={() => updateLessonProgress(currentLesson, 'in-progress')}
             style={{
-              background: 'linear-gradient(135deg, #fffaf0 0%, #fef5e7 100%)',
-              border: '1px solid #ed8936',
+              background: 'rgba(254, 243, 199, 0.8)',
+              border: '1px solid rgba(251, 191, 36, 0.4)',
               borderRadius: '6px',
-              padding: '0.5rem',
-              color: '#c05621',
-              fontWeight: '500',
+              padding: '0.4rem 0.7rem',
+              color: '#92400e',
+              fontWeight: '400',
               cursor: 'pointer',
-              fontSize: '0.8rem'
+              fontSize: '0.7rem',
+              transition: 'all 0.2s ease',
+              boxShadow: 'none'
+            }}
+            onMouseOver={(e) => {
+              e.target.style.background = 'rgba(254, 243, 199, 1)';
+              e.target.style.color = '#78350f';
+            }}
+            onMouseOut={(e) => {
+              e.target.style.background = 'rgba(254, 243, 199, 0.8)';
+              e.target.style.color = '#92400e';
             }}
           >
             In Progress
@@ -1120,14 +998,24 @@ function App() {
           <button
             onClick={() => updateLessonProgress(currentLesson, 'completed')}
             style={{
-              background: 'linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%)',
-              border: '1px solid #48bb78',
+              background: 'rgba(240, 253, 244, 0.8)',
+              border: '1px solid rgba(34, 197, 94, 0.4)',
               borderRadius: '6px',
-              padding: '0.5rem',
-              color: '#276749',
-              fontWeight: '500',
+              padding: '0.4rem 0.7rem',
+              color: '#15803d',
+              fontWeight: '400',
               cursor: 'pointer',
-              fontSize: '0.8rem'
+              fontSize: '0.7rem',
+              transition: 'all 0.2s ease',
+              boxShadow: 'none'
+            }}
+            onMouseOver={(e) => {
+              e.target.style.background = 'rgba(240, 253, 244, 1)';
+              e.target.style.color = '#166534';
+            }}
+            onMouseOut={(e) => {
+              e.target.style.background = 'rgba(240, 253, 244, 0.8)';
+              e.target.style.color = '#15803d';
             }}
           >
             Complete ✓
@@ -1188,7 +1076,7 @@ function App() {
       {/* AI Chat Component */}
       <AIChat
         currentLesson={currentLesson}
-        lessonContent={lessonContent[currentLesson]}
+        lessonContent={allLessons[currentLesson]}
       />
     </div>
   );

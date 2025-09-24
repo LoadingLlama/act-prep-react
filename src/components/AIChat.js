@@ -5,11 +5,11 @@ const useStyles = createUseStyles({
   chatContainer: {
     position: 'fixed',
     top: '12px',
-    left: '50%',
-    transform: 'translateX(-50%)',
+    right: '12px',
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     zIndex: 1001,
-    userSelect: 'none'
+    userSelect: 'none',
+    transformOrigin: 'top right' // Ensure expansions happen towards the left and down
   },
   chatBox: {
     backgroundColor: 'rgba(255, 255, 255, 0.1)',
@@ -23,46 +23,47 @@ const useStyles = createUseStyles({
     transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
     position: 'relative'
   },
-  // State: Collapsed (initial state) - Silver grey with ethereal outline
+  // State: Collapsed (initial state) - Right side optimized shape
   collapsed: {
-    width: '80px',
-    height: '28px',
+    width: '48px',
+    height: '48px',
     cursor: 'pointer',
-    backgroundColor: 'rgba(192, 192, 192, 0.8)', // Silver grey
-    border: '1px solid rgba(255, 255, 255, 0.6)', // Bright ethereal outline
-    borderRadius: '14px', // Perfectly curved ends like Dynamic Island
+    backgroundColor: 'rgba(192, 192, 192, 0.7)', // Silver grey
+    border: '1px solid rgba(255, 255, 255, 0.5)', // Bright ethereal outline
+    borderRadius: '12px 0 0 12px', // Right side friendly: sharp right edge, rounded left
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    boxShadow: '0 4px 16px rgba(192, 192, 192, 0.3), 0 0 20px rgba(255, 255, 255, 0.2)', // Ethereal glow
+    boxShadow: '0 4px 12px rgba(192, 192, 192, 0.2), 0 0 15px rgba(255, 255, 255, 0.1)', // Subtle ethereal glow
+    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
     '&:hover': {
       backgroundColor: 'rgba(192, 192, 192, 0.9)',
       transform: 'scale(1.05)',
-      boxShadow: '0 6px 24px rgba(192, 192, 192, 0.4), 0 0 30px rgba(255, 255, 255, 0.3)', // Enhanced ethereal glow
+      boxShadow: '0 6px 20px rgba(192, 192, 192, 0.3), 0 0 25px rgba(255, 255, 255, 0.2)', // Enhanced ethereal glow
       border: '1px solid rgba(255, 255, 255, 0.8)'
     }
   },
-  // State: Input focused (expanded input) - glassy translucent
+  // State: Input focused (expanded input) - right side optimized glassy translucent
   inputFocused: {
-    width: '400px',
+    width: '320px',
     height: '48px',
     backgroundColor: 'rgba(255, 255, 255, 0.15)',
     backdropFilter: 'blur(25px)',
     border: '1px solid rgba(255, 255, 255, 0.3)',
-    borderRadius: '24px', // Perfectly curved ends
+    borderRadius: '16px 0 0 16px', // Right side friendly: sharp right edge
     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
     cursor: 'text'
   },
-  // State: Chat open (with messages) - glassy translucent with smooth transition
+  // State: Chat open (with messages) - right side optimized glassy translucent
   chatOpen: {
-    width: '420px',
+    width: '360px',
     minHeight: '160px',
     height: 'auto',
-    maxHeight: '500px',
+    maxHeight: '480px',
     backgroundColor: 'rgba(255, 255, 255, 0.12)',
     backdropFilter: 'blur(30px)',
     border: '1px solid rgba(255, 255, 255, 0.25)',
-    borderRadius: '28px', // More curved for larger size
+    borderRadius: '20px 0 0 20px', // Right side friendly: sharp right edge
     boxShadow: '0 12px 48px rgba(0, 0, 0, 0.15)',
     cursor: 'default',
     transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
@@ -835,10 +836,11 @@ const AIChat = ({ currentLesson, lessonContent }) => {
       baseStyle.left = '0';
       baseStyle.top = '0';
     } else {
-      // Always return to center when collapsed and remove any custom sizing
-      baseStyle.transform = 'translateX(-50%)';
-      baseStyle.left = '50%';
+      // Always return to top right corner when collapsed and remove any custom sizing
+      baseStyle.transform = 'none';
+      baseStyle.right = '12px';
       baseStyle.top = '12px';
+      baseStyle.left = 'auto';
       baseStyle.width = '';  // Empty string to remove inline width completely
       baseStyle.height = ''; // Empty string to remove inline height completely
       baseStyle.resize = 'none';

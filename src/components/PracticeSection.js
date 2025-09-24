@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 import InteractiveQuestion from './InteractiveQuestion';
 import SequentialTest from './SequentialTest';
@@ -69,10 +69,24 @@ const PracticeSection = ({
   description = "Try these problems using the techniques you've learned:",
   questions = [],
   isTest = false,
-  duration = null
+  duration = null,
+  onComplete = null
 }) => {
   const classes = useStyles();
   const [questionStates, setQuestionStates] = useState({});
+
+  // Calculate progress
+  const totalQuestions = questions.length;
+  const answeredQuestions = Object.keys(questionStates).length;
+  const correctAnswers = Object.values(questionStates).filter(state => state.isCorrect).length;
+  const progressPercentage = totalQuestions > 0 ? (answeredQuestions / totalQuestions) * 100 : 0;
+
+  // Check if all questions are answered and call onComplete if provided
+  useEffect(() => {
+    if (onComplete && totalQuestions > 0 && answeredQuestions === totalQuestions && !isTest) {
+      onComplete();
+    }
+  }, [onComplete, totalQuestions, answeredQuestions, isTest]);
 
   const updateQuestionState = (questionIndex, state) => {
     setQuestionStates(prev => ({
@@ -96,12 +110,6 @@ const PracticeSection = ({
       />
     );
   }
-
-  // Calculate progress
-  const totalQuestions = questions.length;
-  const answeredQuestions = Object.keys(questionStates).length;
-  const correctAnswers = Object.values(questionStates).filter(state => state.isCorrect).length;
-  const progressPercentage = totalQuestions > 0 ? (answeredQuestions / totalQuestions) * 100 : 0;
 
   return (
     <div className={classes.practiceContainer}>

@@ -40,246 +40,256 @@ export const allLessons = {
     title: 'Chapter 1: Sentence Structure',
     duration: 18, // minutes
     content: `
-            <p class="lesson-intro">Want to ace the ACT English section? It all starts with understanding how sentences work. Think of sentences like LEGO blocks - they have to fit together the right way, or everything falls apart!</p>
+<div class="lesson-header">
+    <h2>Chapter 1: Sentence Structure</h2>
+    <p class="lesson-intro">Master the foundation of ACT English success by learning to identify sentence parts and the rules for combining them correctly.</p>
+</div>
 
-            <h3>Understanding the Building Blocks</h3>
-            <p>Every sentence is built from <strong>clauses</strong> - groups of words that have both a subject (who or what) and a verb (what's happening). There are two main types you need to know:</p>
-
-            <div class="concept-box">
-                <h4>Independent Clauses (The Complete Thoughts)</h4>
-                <p>An <strong>independent clause</strong> is like a complete text message - it makes total sense by itself. It has everything it needs: someone doing something. Here's the easy test: read it out loud and see if you naturally want to stop at the end. If yes, it's independent!</p>
-                <p><strong>Perfect examples:</strong></p>
+<div class="section">
+    <h3>Building Blocks: Clauses and Phrases</h3>
+    <p>Understanding these three components is essential for tackling sentence structure questions:</p>
+    <div class="concept-grid">
+        <div class="concept-box independent">
+            <h4>Independent Clauses</h4>
+            <p class="definition">Can stand alone as a complete sentence. Contains both a subject and verb.</p>
+            <p class="test-tip"><strong>Quick Test:</strong> Read it aloud—can you stop talking at the end? If yes, it's independent!</p>
+            <div class="examples">
+                <h5>Examples:</h5>
                 <ul>
                     <li>The dog chased its tail.</li>
-                    <li>Monique made some homemade peach scones for breakfast.</li>
+                    <li>Monique made homemade peach scones.</li>
                     <li>He picked it up.</li>
-                    <li>The excited child opened up his present.</li>
+                    <li>The excited child opened his present.</li>
                 </ul>
             </div>
-
-            <div class="concept-box">
-                <h4>Dependent Clauses (The Incomplete Thoughts)</h4>
-                <p>A <strong>dependent clause</strong> is like leaving someone hanging mid-conversation. It starts with words that make you go "...and then what?" These starter words (we call them subordinating conjunctions) create a cliffhanger that needs more information.</p>
-                <p><strong>Common cliffhanger starters:</strong> after, although, as, because, before, even though, if, in order to, once, since, though, that, unless, until, whatever, when, whenever, whether, where, while</p>
-                <p><strong>Examples that leave you hanging:</strong></p>
+        </div>
+        <div class="concept-box dependent">
+            <h4>Dependent Clauses</h4>
+            <p class="definition">Cannot stand alone. Usually begins with a subordinating conjunction.</p>
+            <div class="subordinating-conjunctions">
+                <p><strong>Common subordinating conjunctions:</strong></p>
+                <span class="conjunction-list">after, although, as, because, before, even though, if, once, since, though, unless, until, when, whenever, where, while</span>
+            </div>
+            <div class="examples">
+                <h5>Examples:</h5>
                 <ul>
-                    <li>While the dog chased its tail...</li>
-                    <li>Although Monique made some homemade peach scones for breakfast...</li>
-                    <li>Since he picked it up...</li>
-                    <li>When the excited child opened up his present...</li>
+                    <li><em>While</em> the dog chased its tail...</li>
+                    <li><em>Although</em> Monique made homemade peach scones...</li>
+                    <li><em>Since</em> he picked it up...</li>
+                    <li><em>When</em> the excited child opened his present...</li>
                 </ul>
             </div>
-
-            <div class="concept-box">
-                <h4>Phrases (The Missing Pieces)</h4>
-                <p>A <strong>phrase</strong> is missing either the "who" or the "what's happening" (or both). Think of it like a half-finished thought that gives you extra details but can't stand alone. These are the supporting actors, not the main characters.</p>
-                <p><strong>Examples of incomplete thoughts:</strong></p>
+        </div>
+        <div class="concept-box phrase">
+            <h4>Phrases</h4>
+            <p class="definition">Missing a subject, verb, or both. Provides descriptive information only.</p>
+            <div class="examples">
+                <h5>Examples:</h5>
                 <ul>
-                    <li>Chasing its tail... (who is chasing?)</li>
-                    <li>Making some homemade peach scones for breakfast... (who is making them?)</li>
-                    <li>Picking it up... (who picked what up?)</li>
-                    <li>Excited to open up his present... (who is excited?)</li>
+                    <li>Chasing its tail... <em>(missing subject)</em></li>
+                    <li>Making homemade peach scones... <em>(missing subject)</em></li>
+                    <li>Picking it up... <em>(missing subject)</em></li>
+                    <li>Excited to open his present... <em>(missing subject)</em></li>
                 </ul>
             </div>
+        </div>
+    </div>
+    <div class="pro-tip">
+        <h4>PRO TIP: The Cover Test</h4>
+        <p>Can't tell if it's dependent or a phrase? <strong>Cover the subordinating word</strong> and read what remains:</p>
+        <ul>
+            <li>Complete sentence after covering = <strong>Dependent clause</strong></li>
+            <li>Still incomplete after covering = <strong>Phrase</strong></li>
+        </ul>
+        <div class="comparison-examples">
+            <p><strong>Independent:</strong> My brother Adam eats cookies daily.</p>
+            <p><strong>Dependent:</strong> <span class="highlight">When</span> my brother Adam eats cookies daily → Cover "When" → "my brother Adam eats cookies daily" = complete sentence = <strong>dependent clause</strong></p>
+            <p><strong>Phrase:</strong> Eating cookies daily → No subordinating word to cover → incomplete on its own = <strong>phrase</strong></p>
+        </div>
+    </div>
+</div>
 
-            <div class="tip-box">
-                <h4>Quick Test: Can You Stop Talking?</h4>
-                <p>Here's the simplest way to tell these apart: Read each part out loud in your head. If it feels natural to stop talking, you've got an independent clause. If you feel like you HAVE to keep going, it's either dependent or just a phrase.</p>
-                <p>For dependent vs. phrase: Cover up the first word and read what's left. If it becomes a complete thought, you had a dependent clause. If it's still incomplete, it was just a phrase.</p>
-                <p><strong>Try it yourself:</strong></p>
-                <ul>
-                    <li><strong>Complete thought:</strong> My brother Adam eats cookies every day.</li>
-                    <li><strong>Needs more info:</strong> When my brother Adam eats cookies every day...</li>
-                    <li><strong>Missing pieces:</strong> Eating cookies every day...</li>
-                </ul>
+<!-- QUIZ_1 -->
+
+
+<div class="section">
+    <h3>Avoiding Sentence Fragments</h3>
+    <p class="key-rule">A complete sentence MUST contain both a subject and a verb.</p>
+
+    <div class="fragment-examples">
+        <div class="incorrect-example">
+            <h5>Incorrect Examples:</h5>
+            <p><strong>Fragment:</strong> The student running to get to class on time.</p>
+            <p class="explanation"><em>Missing a verb—what did the student do?</em></p>
+            <p><strong>Fixed:</strong> The student running to get to class on time <span class="highlight">dropped her water bottle</span>.</p>
+        </div>
+        <div class="incorrect-example">
+            <p><strong>Fragment:</strong> Excited to go to the beach and surf.</p>
+            <p class="explanation"><em>Missing a subject—who is excited?</em></p>
+            <p><strong>Fixed:</strong> <span class="highlight">My little brother Shaun is</span> excited to go to the beach and surf.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h3>The 5 Golden Rules for Compound Sentences</h3>
+    <p class="rules-intro">These are the ONLY correct ways to combine multiple clauses. <strong>Memorize these!</strong></p>
+
+    <div class="fanboys-callout">
+        <h4>Remember: FANBOYS</h4>
+        <div class="fanboys-grid">
+            <span><strong>F</strong>or</span>
+            <span><strong>A</strong>nd</span>
+            <span><strong>N</strong>or</span>
+            <span><strong>B</strong>ut</span>
+            <span><strong>O</strong>r</span>
+            <span><strong>Y</strong>et</span>
+            <span><strong>S</strong>o</span>
+        </div>
+    </div>
+
+    <div class="rules-container">
+        <div class="rule-card">
+            <div class="rule-number">1</div>
+            <div class="rule-content">
+                <h5>Period Separation</h5>
+                <p class="rule-description">Two separate independent clauses with periods</p>
+                <p class="example"><em>Mary loves dogs. Andrew loves cats.</em></p>
+                <p class="pattern">Independent → Independent</p>
             </div>
+        </div>
 
-            <h3>Fixing Broken Sentences</h3>
-            <p>Sometimes sentences break because they're missing important parts. <strong>Sentence fragments</strong> are like broken toys - they're missing the pieces they need to work properly.</p>
-            <p>Your brain will usually catch these because they just sound wrong. Trust your instincts!</p>
-
-            <div class="example-box">
-                <p><strong>Broken:</strong> The student running to get to class on time. <em>(What did the student DO?)</em></p>
-                <p><strong>Fixed:</strong> The student running to get to class on time dropped her water bottle.</p>
-                <p><strong>Broken:</strong> Excited to go to the beach and surf. <em>(WHO is excited?)</em></p>
-                <p><strong>Fixed:</strong> My little brother Shaun is excited to go to the beach and surf.</p>
+        <div class="rule-card">
+            <div class="rule-number">2</div>
+            <div class="rule-content">
+                <h5>Comma + FANBOYS</h5>
+                <p class="rule-description">Comma + coordinating conjunction joining 2 independent clauses</p>
+                <p class="example"><em>Mary loves dogs<span class="highlight">, and</span> Andrew loves cats.</em></p>
+                <p class="pattern">Independent → Independent</p>
             </div>
+        </div>
 
-            <h3>The 5 Golden Rules for Connecting Ideas</h3>
-            <p>Now for the fun part! When you have multiple complete thoughts, you need to connect them properly. Think of it like connecting train cars - there are only 5 safe ways to do it, and the ACT loves to test whether you know them.</p>
-
-            <div class="fanboys-tip">
-                <h4>Remember FANBOYS - Your New Best Friends!</h4>
-                <p><strong>These 7 connecting words are VIP pass holders:</strong></p>
-                <ul>
-                    <li><strong>F</strong>or (because)</li>
-                    <li><strong>A</strong>nd (plus)</li>
-                    <li><strong>N</strong>or (and not)</li>
-                    <li><strong>B</strong>ut (however)</li>
-                    <li><strong>O</strong>r (choice)</li>
-                    <li><strong>Y</strong>et (but)</li>
-                    <li><strong>S</strong>o (therefore)</li>
-                </ul>
+        <div class="rule-card">
+            <div class="rule-number">3</div>
+            <div class="rule-content">
+                <h5>Semicolon Connection</h5>
+                <p class="rule-description">Semicolon between 2 independent clauses</p>
+                <p class="example"><em>Mary loves dogs<span class="highlight">;</span> Andrew loves cats.</em></p>
+                <p class="pattern">Independent → Independent</p>
+                <p class="note">*Semicolon = period on the ACT</p>
             </div>
+        </div>
 
-            <div class="rules-box">
-                <h4>The 5 Ways to Connect Complete Thoughts:</h4>
-                <ol>
-                    <li><strong>Keep them totally separate with periods.</strong><br>
-                        <em>Sarah loves hiking. Her brother prefers video games.</em><br>
-                        <span class="clause-label">Complete thought → Complete thought</span></li>
-
-                    <li><strong>Use comma + FANBOYS to join them.</strong><br>
-                        <em>Sarah loves hiking, but her brother prefers video games.</em><br>
-                        <span class="clause-label">Complete thought → Complete thought</span></li>
-
-                    <li><strong>Connect with a semicolon (fancy period).</strong><br>
-                        <em>Sarah loves hiking; her brother prefers video games.</em><br>
-                        <span class="clause-label">Complete thought → Complete thought</span><br>
-                        <em>*Semicolons work exactly like periods on the ACT!</em></li>
-
-                    <li><strong>Start with incomplete, then complete (needs comma).</strong><br>
-                        <em>Although Sarah loves hiking, her brother prefers video games.</em><br>
-                        <span class="clause-label">Incomplete thought → Complete thought</span></li>
-
-                    <li><strong>Complete thought flows into incomplete (no comma).</strong><br>
-                        <em>Sarah loves hiking while her brother prefers video games.</em><br>
-                        <span class="clause-label">Complete thought → Incomplete thought</span></li>
-                </ol>
+        <div class="rule-card">
+            <div class="rule-number">4</div>
+            <div class="rule-content">
+                <h5>Dependent → Independent</h5>
+                <p class="rule-description">Dependent clause followed by independent clause (with comma)</p>
+                <p class="example"><em><span class="highlight">While</span> Mary loves dogs<span class="highlight">,</span> Andrew loves cats.</em></p>
+                <p class="pattern">Dependent → Independent</p>
             </div>
+        </div>
 
-            <p><strong>These 5 rules are your lifeline!</strong> The ACT will try to trick you with answers that sound okay but break these rules. Don't fall for it!</p>
-
-            <h3>The Dreaded Comma Splice</h3>
-            <p>Here's the #1 mistake that trips up students: thinking a comma can do everything. <strong>A comma by itself CANNOT connect two complete thoughts.</strong> It's like trying to hold a heavy door with just tape - it won't work!</p>
-
-            <div class="example-box">
-                <p><strong>Broken:</strong> My phone died during the movie, I missed all the important texts.</p>
-                <p><strong>Broken:</strong> The pizza arrived late, we ate it anyway because we were starving.</p>
+        <div class="rule-card">
+            <div class="rule-number">5</div>
+            <div class="rule-content">
+                <h5>Independent → Dependent</h5>
+                <p class="rule-description">Independent clause followed by dependent clause (no comma)</p>
+                <p class="example"><em>Mary loves dogs <span class="highlight">while</span> Andrew loves cats.</em></p>
+                <p class="pattern">Independent → Dependent</p>
             </div>
+        </div>
+    </div>
+</div>
 
-            <p>Both examples have comma splices. Here's how to fix the first one using all 5 rules:</p>
+<!-- QUIZ_2 -->
 
-            <div class="correction-box">
-                <p><strong>Rule #1:</strong> My phone died during the movie. I missed all the important texts.</p>
-                <p><strong>Rule #2:</strong> My phone died during the movie, so I missed all the important texts.</p>
-                <p><strong>Rule #3:</strong> My phone died during the movie; I missed all the important texts.</p>
-                <p><strong>Rule #4:</strong> When my phone died during the movie, I missed all the important texts.</p>
-                <p><strong>Rule #5:</strong> My phone died during the movie because I missed all the important texts.</p>
-            </div>
+<div class="section error-section">
+    <h3>The Dreaded Comma Splice</h3>
+    <div class="error-explanation">
+        <p class="key-rule">A comma by itself <strong>CANNOT</strong> join two independent clauses!</p>
+        <p>This error is called a <strong>comma splice</strong> and is always wrong on the ACT.</p>
+    </div>
 
-            <div class="tip-box">
-                <h4>Spotting These Questions on Test Day</h4>
-                <p>Look for these red flags that scream "sentence structure question!":</p>
-                <ol>
-                    <li><strong>Punctuation party in the answer choices.</strong> See periods, commas, semicolons, or FANBOYS words? You're dealing with sentence structure!</li>
-                    <li><strong>Verb confusion.</strong> Some answers have different verb forms (like "swimming" vs. "swims" vs. "swam"). This usually means they're testing sentence completeness.</li>
-                </ol>
-            </div>
+    <div class="comma-splice-examples">
+        <h5>Comma Splice Errors:</h5>
+        <div class="error-example">
+            <p>It is believed that bulls are enraged by the color red<span class="error-highlight">,</span> they are actually colorblind.</p>
+        </div>
+        <div class="error-example">
+            <p>I cannot believe you did not get the flowers<span class="error-highlight">,</span> I left them at your front door.</p>
+        </div>
+    </div>
 
-            <h3>Your Three-Step Game Plan</h3>
-            <p>When you spot a sentence structure question, follow this simple process:</p>
+    <div class="correction-showcase">
+        <h5>How to Fix Comma Splices (Using All 5 Rules):</h5>
+        <div class="corrections">
+            <p><strong>Rule 1:</strong> It is believed that bulls are enraged by the color red<span class="correction">.</span> They are actually colorblind.</p>
+            <p><strong>Rule 2:</strong> It is believed that bulls are enraged by the color red<span class="correction">, but</span> they are actually colorblind.</p>
+            <p><strong>Rule 3:</strong> It is believed that bulls are enraged by the color red<span class="correction">;</span> they are actually colorblind.</p>
+            <p><strong>Rule 4:</strong> <span class="correction">While</span> it is believed that bulls are enraged by the color red<span class="correction">,</span> they are actually colorblind.</p>
+            <p><strong>Rule 5:</strong> It is believed that bulls are enraged by the color red <span class="correction">though</span> they are actually colorblind.</p>
+        </div>
+    </div>
+</div>
+
+<!-- QUIZ_3 -->
+
+<div class="section strategy-section">
+    <h3>Your ACT Strategy</h3>
+
+    <div class="strategy-grid">
+        <div class="strategy-box">
+            <h4>How to Spot These Questions</h4>
+            <p>Look for these clues in answer choices:</p>
+            <ul>
+                <li><strong>Punctuation marks:</strong> periods, semicolons, commas, FANBOYS</li>
+                <li><strong>Verb variations:</strong> "drove" vs. "driving"</li>
+                <li><strong>Missing subjects/verbs:</strong> Some choices have them, others don't</li>
+            </ul>
+        </div>
+
+        <div class="strategy-box">
+            <h4>3-Step Approach</h4>
             <ol>
-                <li><strong>Find the connection point</strong> - Where are they trying to join ideas?</li>
-                <li><strong>Check both sides</strong> - Is each side a complete thought or incomplete?</li>
-                <li><strong>Pick the right rule</strong> - Match it to one of your 5 connection methods.</li>
+                <li><strong>Find the "split"</strong> - where is the sentence being divided?</li>
+                <li><strong>Identify left and right</strong> - what type of clause/phrase is on each side?</li>
+                <li><strong>Apply the rules</strong> - use the 5 golden rules to choose correctly</li>
             </ol>
+        </div>
+    </div>
 
-            <div class="practice-box">
-                <h4>Practice Time!</h4>
-                <p><em>The concert tickets sold out in minutes, thousands of fans were disappointed.</em></p>
-                <p><strong>Question:</strong> Which version fixes this sentence best?</p>
-                <ul>
-                    <li>A. NO CHANGE</li>
-                    <li>B. minutes, and thousands</li>
-                    <li>C. minutes; leaving thousands</li>
-                    <li>D. minutes. Thousands</li>
-                </ul>
-                <p><strong>Answer:</strong> B – We need comma + FANBOYS to connect two complete thoughts. Option A is a comma splice, C changes meaning, and D works but B flows better.</p>
+    <div class="practice-showcase">
+        <h4>Practice Example</h4>
+        <div class="practice-question">
+            <p class="question-text"><em>The roller coaster is opening next week, the wait time is expected to be over 4 hours long.</em></p>
+            <p><strong>Which choice makes the sentence most grammatically acceptable?</strong></p>
+            <div class="answer-choices">
+                <div class="choice">A. NO CHANGE</div>
+                <div class="choice">B. week; with the</div>
+                <div class="choice">C. week and the</div>
+                <div class="choice correct">D. week. The</div>
             </div>
-
-            <div class="key-takeaway">
-                <h4>Bottom Line</h4>
-                <p>Nail these 5 connection rules and you'll crush sentence structure questions! The trick is recognizing when you're looking at complete vs. incomplete thoughts. When you see punctuation in the answers, think "connection rules" and you'll be golden.</p>
+            <div class="explanation">
+                <p><strong>Answer: D</strong></p>
+                <p><strong>Why:</strong> We have two independent clauses that need proper separation. Option A is a comma splice. Option D correctly uses a period (Rule #1).</p>
             </div>
+        </div>
+    </div>
+</div>
 
-            <!-- INTERACTIVE_PRACTICE_0 -->
-    `,
-    interactiveData: {
-        practiceSections: [
-            {
-                title: "Practice: Sentence Structure",
-                description: "Test your understanding with these ACT-style questions.",
-                questions: [
-                    {
-                        id: 1,
-                        passage: "The new coffee shop opened last week, it already has a long line of customers every morning.",
-                        question: "Which choice makes the sentence grammatically correct?",
-                        choices: [
-                            "NO CHANGE",
-                            "week, and it",
-                            "week; it",
-                            "week. It"
-                        ],
-                        correct: 1,
-                        explanation: "We need comma + FANBOYS to connect two complete thoughts. Option A is a comma splice."
-                    },
-                    {
-                        id: 2,
-                        passage: "Although the weather was perfect for hiking. We decided to stay home and watch movies instead.",
-                        question: "Which choice fixes the sentence fragment?",
-                        choices: [
-                            "NO CHANGE",
-                            "hiking, we",
-                            "hiking we",
-                            "hiking; we"
-                        ],
-                        correct: 1,
-                        explanation: "A dependent clause followed by an independent clause needs a comma, not a period."
-                    },
-                    {
-                        id: 3,
-                        passage: "The students studied hard for the exam they all received excellent grades.",
-                        question: "How should this sentence be punctuated?",
-                        choices: [
-                            "NO CHANGE",
-                            "exam, they",
-                            "exam; they",
-                            "exam. They"
-                        ],
-                        correct: 2,
-                        explanation: "Two independent clauses can be connected with a semicolon (acts like a period)."
-                    },
-                    {
-                        id: 4,
-                        passage: "Running through the park in the early morning.",
-                        question: "Which choice creates a complete sentence?",
-                        choices: [
-                            "NO CHANGE",
-                            "Running through the park in the early morning, Sarah felt energized.",
-                            "Running through the park in the early morning and feeling great.",
-                            "Running through the park in the early morning was."
-                        ],
-                        correct: 1,
-                        explanation: "The original is a phrase missing a subject. Option B adds a subject (Sarah) and predicate (felt energized)."
-                    },
-                    {
-                        id: 5,
-                        passage: "The concert was amazing, but the parking was terrible, so we almost missed the opening act.",
-                        question: "Is this sentence correctly punctuated?",
-                        choices: [
-                            "YES - correctly punctuated",
-                            "NO - remove comma before 'but'",
-                            "NO - remove comma before 'so'",
-                            "NO - needs semicolons instead"
-                        ],
-                        correct: 0,
-                        explanation: "This sentence correctly uses comma + FANBOYS ('but' and 'so') to connect three independent clauses."
-                    }
-                ]
-            }
-        ]
-    }
+<!-- QUIZ_4 -->
+
+<div class="final-takeaway">
+    <h3>🏆 Master This Chapter</h3>
+    <p class="key-message">Perfect these five rules for combining clauses, and you'll dominate even the trickiest sentence structure questions. Remember: punctuation in answer choices = sentence structure question!</p>
+    <div class="quick-reference">
+        <p><strong>Quick Reference:</strong> Independent + Independent = Period, Comma+FANBOYS, or Semicolon</p>
+        <p><strong>Quick Reference:</strong> Dependent + Independent = Comma between them</p>
+        <p><strong>Quick Reference:</strong> Independent + Dependent = No comma between them</p>
+    </div>
+</div>
+    `
   },
 
   'commas': {
