@@ -212,8 +212,8 @@ const ControlsSidebar = ({
             type="range"
             min={15}
             max={75}
-            value={typingSpeed}
-            onChange={(e) => onSpeedChange && onSpeedChange(parseInt(e.target.value))}
+            value={90 - typingSpeed}
+            onChange={(e) => onSpeedChange && onSpeedChange(90 - parseInt(e.target.value))}
             className={classes.speedSlider}
           />
           <div className={classes.sliderLabels}>

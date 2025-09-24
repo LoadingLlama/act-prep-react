@@ -927,7 +927,10 @@ function App() {
               {lesson ? (
                 <ProgressiveLessonRenderer
                   lesson={lesson}
-                  onComplete={() => updateLessonProgress(currentLesson, 'completed')}
+                  onComplete={() => {
+                    updateLessonProgress(currentLesson, 'completed');
+                    closeLessonModal();
+                  }}
                 />
               ) : (
                 <div style={{

@@ -198,7 +198,91 @@ const useStyles = createUseStyles({
       margin: 0,
       lineHeight: '1.4'
     }
-  }
+  },
+  aiIndicator: {
+    position: 'fixed',
+    bottom: '20px',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(237, 248, 255, 0.9) 100%)',
+    backdropFilter: 'blur(12px)',
+    border: '2px solid rgba(26, 115, 232, 0.15)',
+    borderRadius: '25px',
+    padding: '0.5rem 1rem',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    fontSize: '0.75rem',
+    color: '#4a5568',
+    fontWeight: '500',
+    zIndex: 100,
+    opacity: 0.8,
+    transition: 'all 0.3s ease',
+    boxShadow: '0 4px 15px rgba(26, 115, 232, 0.1)',
+    '&:hover': {
+      opacity: 1,
+      transform: 'translateX(-50%) translateY(-2px)',
+      boxShadow: '0 6px 20px rgba(26, 115, 232, 0.15)'
+    }
+  },
+  aiLogo: {
+    width: '16px',
+    height: '16px',
+    borderRadius: '3px',
+    background: 'linear-gradient(135deg, #10a37f 0%, #1a73e8 100%)',
+    color: 'white',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '10px',
+    fontWeight: 'bold',
+    fontFamily: 'Monaco, Consolas, monospace'
+  },
+  completeButton: {
+    background: 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)',
+    border: 'none',
+    borderRadius: '12px',
+    padding: '1rem 2rem',
+    fontSize: '1.1rem',
+    fontWeight: '600',
+    color: 'white',
+    cursor: 'pointer',
+    margin: '2rem 0',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.5rem',
+    transition: 'all 0.3s ease',
+    boxShadow: '0 4px 15px rgba(72, 187, 120, 0.3)',
+    '&:hover': {
+      background: 'linear-gradient(135deg, #38a169 0%, #2f855a 100%)',
+      transform: 'translateY(-2px)',
+      boxShadow: '0 6px 20px rgba(72, 187, 120, 0.4)'
+    },
+    '&:active': {
+      transform: 'translateY(0)',
+      boxShadow: '0 4px 15px rgba(72, 187, 120, 0.3)'
+    },
+    '&.completing': {
+      animation: '$buttonComplete 0.6s ease forwards',
+      pointerEvents: 'none'
+    }
+  },
+  '@keyframes buttonComplete': {
+    '0%': {
+      transform: 'scale(1)'
+    },
+    '50%': {
+      transform: 'scale(1.1)',
+      background: 'linear-gradient(135deg, #4caf50 0%, #45a049 100%)',
+      boxShadow: '0 8px 25px rgba(76, 175, 80, 0.5)'
+    },
+    '100%': {
+      transform: 'scale(1)',
+      background: 'linear-gradient(135deg, #4caf50 0%, #45a049 100%)',
+      boxShadow: '0 4px 15px rgba(76, 175, 80, 0.3)'
+    }
+  },
 });
 
 const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
@@ -212,6 +296,7 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
   const [textCompletionStatus, setTextCompletionStatus] = useState({});
   const [sectionStatusOverride, setSectionStatusOverride] = useState({});
   const [typingSpeed, setTypingSpeed] = useState(25);
+  const [isCompleting, setIsCompleting] = useState(false);
   const typewriterRef = React.useRef(null);
   const sectionRefs = React.useRef([]);
 
@@ -728,13 +813,10 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
             return;
           }
 
-          // If at last section, complete the lesson
+          // If at last section, mark as complete but don't auto-finish
           if (currentSection === sections.length - 1) {
-            console.log('Completing lesson');
+            console.log('Reached final section');
             setIsComplete(true);
-            if (onComplete) {
-              onComplete();
-            }
           }
         }
       }
@@ -745,49 +827,28 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
   }, [currentSection, currentSectionComplete, isComplete, sections, quizCompletionStatus, visibleSections, onComplete]);
 
   const handleSectionClick = (index) => {
-    // Only allow clicking on visible sections
-    if (index < visibleSections) {
-      // Check if we can jump to this section (validate quiz completions)
-      for (let i = 0; i < index; i++) {
-        const sectionData = sections[i];
-        if (sectionData?.type === 'quiz' && !quizCompletionStatus[i]) {
-          // Cannot jump past an incomplete quiz
-          return;
-        }
+    // Allow clicking on any section that has been made visible (rendered on screen)
+    if (index <= visibleSections - 1) {
+      console.log(`Scrolling to section ${index} (no state changes)`);
+
+      // Pure scroll function with proper positioning
+      if (sectionRefs.current[index]) {
+        const element = sectionRefs.current[index];
+        const rect = element.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Calculate target position with offset for fixed elements
+        const targetY = rect.top + scrollTop - 120; // 120px offset for progress bar and margin
+
+        window.scrollTo({
+          top: Math.max(0, targetY), // Prevent negative scroll
+          behavior: 'smooth'
+        });
+
+        console.log(`Scrolling to section ${index} at position ${targetY}`);
       }
-
-      console.log(`Clicking section ${index}`);
-      setCurrentSection(index);
-
-      // Preserve completion state for sections
-      const sectionData = sections[index];
-
-      if (sectionData?.type === 'quiz') {
-        // For quizzes, use the quiz completion status
-        setCurrentSectionComplete(!!quizCompletionStatus[index]);
-      } else {
-        // For text sections, preserve completion state when navigating
-        if (textCompletionStatus[index] || index < visibleSections - 1) {
-          setCurrentSectionComplete(true);
-        } else {
-          // This section hasn't been completed yet
-          setCurrentSectionComplete(false);
-        }
-      }
-
-      // Scroll to the section with better positioning
-      setTimeout(() => {
-        if (sectionRefs.current[index]) {
-          const element = sectionRefs.current[index];
-          const rect = element.getBoundingClientRect();
-          const offsetTop = window.pageYOffset + rect.top - 100; // 100px margin from top
-
-          window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-          });
-        }
-      }, 100);
+    } else {
+      console.log(`Section ${index} not yet visible (visibleSections: ${visibleSections})`);
     }
   };
 
@@ -798,14 +859,26 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
       return sectionStatusOverride[currentSection];
     }
 
-    // Default logic for determining status
-    if (currentSectionComplete) {
+    // Only show completed when entire lesson is finished
+    if (isComplete) {
       return 'completed';
-    } else if (currentSection < visibleSections) {
+    } else if (currentSection < visibleSections || currentSectionComplete) {
       return 'in_progress';
     } else {
       return 'pending';
     }
+  };
+
+  // Handle lesson completion with button animation
+  const handleLessonComplete = () => {
+    setIsCompleting(true);
+
+    // After button animation completes, exit to lesson tab
+    setTimeout(() => {
+      if (onComplete) {
+        onComplete();
+      }
+    }, 600); // Match the button animation duration
   };
 
   if (sections.length === 0) {
@@ -949,14 +1022,17 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
               </div>
             </div>
           )}
-          {/* Completion prompt - only show for last section when complete */}
-          {index === currentSection && index === sections.length - 1 && currentSectionComplete && !isComplete && (
-            <div className={classes.continuePrompt}>
-              <div className={classes.promptText}>
-                <span>Press</span>
-                <kbd className={classes.enterKey}>Enter</kbd>
-                <span>to complete lesson</span>
-              </div>
+          {/* Complete button - only show for last section when complete */}
+          {index === currentSection && index === sections.length - 1 && currentSectionComplete && (
+            <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+              <button
+                className={`${classes.completeButton} ${isCompleting ? 'completing' : ''}`}
+                onClick={handleLessonComplete}
+                disabled={isCompleting}
+              >
+                <span>✓</span>
+                <span>{isCompleting ? 'Completing...' : 'Complete Lesson'}</span>
+              </button>
             </div>
           )}
         </div>
