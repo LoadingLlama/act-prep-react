@@ -4,6 +4,7 @@ import TypewriterText from './TypewriterText';
 import PracticeSection from './PracticeSection';
 import InteractiveQuiz from './InteractiveQuiz';
 import TableOfContentsSidebar from './TableOfContentsSidebar';
+import ControlsSidebar from './ControlsSidebar';
 
 const useStyles = createUseStyles({
   progressiveContainer: {
@@ -208,8 +209,22 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
   const [currentSectionComplete, setCurrentSectionComplete] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const [quizCompletionStatus, setQuizCompletionStatus] = useState({});
+  const [textCompletionStatus, setTextCompletionStatus] = useState({});
+  const [sectionStatusOverride, setSectionStatusOverride] = useState({});
+  const [typingSpeed, setTypingSpeed] = useState(25);
   const typewriterRef = React.useRef(null);
   const sectionRefs = React.useRef([]);
+
+  // Track current section changes
+  React.useEffect(() => {
+    if (sections.length > 0 && sections[currentSection]) {
+      const currentSectionData = sections[currentSection];
+      console.log(`*** CURRENT SECTION CHANGED TO ${currentSection} ***`);
+      console.log(`Section type: ${currentSectionData.type}`);
+      console.log(`Content preview: ${currentSectionData.content?.substring(0, 100)}`);
+
+    }
+  }, [currentSection, sections]);
 
   const splitIntoTextSections = (content) => {
     if (!content || !content.trim()) return [];
@@ -349,7 +364,18 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
       }
     }
 
-    return sections.filter(section => section.content && section.content.trim().length > 50);
+    const filteredSections = sections.filter(section => section.content && section.content.trim().length > 30); // Reduced minimum
+    console.log('SECTIONS BEFORE FILTER:', sections.length, 'AFTER FILTER:', filteredSections.length);
+    sections.forEach((section, i) => {
+      if (!section.content || section.content.trim().length <= 30) {
+        console.log(`FILTERED OUT Section ${i}: length ${section.content?.length}, content: "${section.content?.substring(0, 50)}"`);
+      } else {
+        // Check if any kept sections contain PRO TIP
+        if (section.content.includes('PRO TIP')) {
+        }
+      }
+    });
+    return filteredSections;
   };
 
 
@@ -366,6 +392,7 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
     setCurrentSectionComplete(false);
     setIsComplete(false);
     setQuizCompletionStatus({});
+    setSectionStatusOverride({}); // Clear status overrides on lesson change
 
     // COMPLETELY REWRITE the quiz processing - much simpler approach
     const processedSections = [];
@@ -374,6 +401,7 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
     const contentWithQuizzes = lesson.content;
     console.log('FULL LESSON CONTENT LENGTH:', contentWithQuizzes.length);
     console.log('CONTENT CONTAINS QUIZ_1:', contentWithQuizzes.includes('<!-- QUIZ_1 -->'));
+
 
     // Split by ALL quiz markers at once
     const allParts = contentWithQuizzes.split(/(<!-- QUIZ_[1-4] -->)/);
@@ -400,7 +428,21 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
       } else {
         // This is text content - split it into manageable sections
         const textSections = splitIntoTextSections(part);
+        console.log('TEXT SECTIONS CREATED:', textSections.length);
+        textSections.forEach((section, i) => {
+          console.log(`Section ${i}: ${section.content.substring(0, 100)}...`);
+        });
         processedSections.push(...textSections);
+      }
+    });
+
+    console.log('FINAL PROCESSED SECTIONS:', processedSections.length);
+    processedSections.forEach((section, i) => {
+      const preview = section.content?.substring(0, 100) || 'No content';
+      console.log(`Final Section ${i} (${section.type}): ${preview}...`);
+
+      // Check specifically for PRO TIP
+      if (section.content?.includes('PRO TIP')) {
       }
     });
 
@@ -635,6 +677,18 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
             typewriterRef.current.completeInstantly();
           }
           setCurrentSectionComplete(true);
+          setTextCompletionStatus(prev => ({ ...prev, [currentSection]: true }));
+
+          // Scroll to keep current section visible
+          setTimeout(() => {
+            if (sectionRefs.current[currentSection]) {
+              sectionRefs.current[currentSection].scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+                inline: 'nearest'
+              });
+            }
+          }, 100);
           return;
         }
 
@@ -648,11 +702,29 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
 
           // If not at the last section, advance
           if (currentSection < sections.length - 1) {
-            console.log('Advancing to next section');
             const nextSection = currentSection + 1;
+            const nextSectionData = sections[nextSection];
+            console.log(`Advancing from section ${currentSection} to section ${nextSection}`);
+            console.log(`Next section type: ${nextSectionData?.type}, content preview: ${nextSectionData?.content?.substring(0, 100)}`);
+
+            // Check if next section contains PRO TIP
+            if (nextSectionData?.content?.includes('PRO TIP')) {
+            }
+
             setCurrentSection(nextSection);
             setVisibleSections(prev => Math.max(prev, nextSection + 1));
             setCurrentSectionComplete(false);
+
+            // Scroll to the new section
+            setTimeout(() => {
+              if (sectionRefs.current[nextSection]) {
+                sectionRefs.current[nextSection].scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start',
+                  inline: 'nearest'
+                });
+              }
+            }, 200);
             return;
           }
 
@@ -687,12 +759,20 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
       console.log(`Clicking section ${index}`);
       setCurrentSection(index);
 
-      // Mark section as complete if it's a previously seen text section or a completed quiz
+      // Preserve completion state for sections
       const sectionData = sections[index];
-      if ((index < visibleSections - 1) || (sectionData?.type === 'quiz' && quizCompletionStatus[index])) {
-        setCurrentSectionComplete(true);
+
+      if (sectionData?.type === 'quiz') {
+        // For quizzes, use the quiz completion status
+        setCurrentSectionComplete(!!quizCompletionStatus[index]);
       } else {
-        setCurrentSectionComplete(false);
+        // For text sections, preserve completion state when navigating
+        if (textCompletionStatus[index] || index < visibleSections - 1) {
+          setCurrentSectionComplete(true);
+        } else {
+          // This section hasn't been completed yet
+          setCurrentSectionComplete(false);
+        }
       }
 
       // Scroll to the section with better positioning
@@ -708,6 +788,23 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
           });
         }
       }, 100);
+    }
+  };
+
+  // Function to get the display status for ControlsSidebar without affecting lesson flow
+  const getSectionDisplayStatus = () => {
+    // Check if there's a manual override first
+    if (sectionStatusOverride[currentSection]) {
+      return sectionStatusOverride[currentSection];
+    }
+
+    // Default logic for determining status
+    if (currentSectionComplete) {
+      return 'completed';
+    } else if (currentSection < visibleSections) {
+      return 'in_progress';
+    } else {
+      return 'pending';
     }
   };
 
@@ -736,6 +833,19 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
         onSectionClick={handleSectionClick}
       />
 
+      {/* Controls Sidebar */}
+      <ControlsSidebar
+        currentSection={currentSection}
+        maxLoadedSection={visibleSections - 1}
+        sectionStatus={getSectionDisplayStatus()}
+        onStatusChange={(status) => {
+          // Only update the display override, don't affect lesson flow
+          setSectionStatusOverride(prev => ({ ...prev, [currentSection]: status }));
+        }}
+        typingSpeed={typingSpeed}
+        onSpeedChange={setTypingSpeed}
+      />
+
       {/* Lesson content */}
       {sections.map((section, index) => (
         <div
@@ -749,26 +859,30 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
         >
           {section.type === 'text' ? (
             <>
-              <TypewriterText
-                text={section.content || ''}
-                speed={40}
-                onComplete={() => {
-                  // Don't auto-complete - user must press Enter to continue
-                  console.log(`Section ${index} typewriter completed but not auto-advancing`);
-                }}
-                showCursor={index === currentSection}
-                ref={index === currentSection ? typewriterRef : null}
-              />
-              {/* Auto-complete hint while typing - only show at current section */}
-              {index === currentSection && !currentSectionComplete && (
-                <div className={classes.autoCompleteHint}>
-                  <div className={classes.hintText}>
-                    <span>Press</span>
-                    <kbd className={classes.enterKey}>Enter</kbd>
-                    <span>to skip ahead</span>
-                  </div>
+              {console.log(`Rendering text section ${index}, isCurrent: ${index === currentSection}, isVisible: ${index < visibleSections}, content preview: ${(section.content || '').substring(0, 50)}`)}
+              {index === currentSection ? (
+                // Current section: Use TypewriterText for animation
+                <div>
+                  <TypewriterText
+                    text={section.content || ''}
+                    startDelay={200}
+                    typingSpeed={typingSpeed}
+                    skipAnimation={textCompletionStatus[index] === true}
+                    onComplete={() => {
+                      // Mark section as complete when typing finishes
+                      console.log(`Section ${index} typewriter completed - marking as complete`);
+                      if (index === currentSection) {
+                        setCurrentSectionComplete(true);
+                        setTextCompletionStatus(prev => ({ ...prev, [index]: true }));
+                      }
+                    }}
+                    ref={typewriterRef}
+                  />
                 </div>
-              )}
+              ) : index < currentSection ? (
+                // Previous sections: Show instantly (already typed)
+                <div dangerouslySetInnerHTML={{ __html: section.content }} />
+              ) : null}
             </>
           ) : section.type === 'quiz' ? (
             section.data ? (
@@ -800,9 +914,32 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
               <div>Quiz data not found</div>
             )
           ) : (
-            <div dangerouslySetInnerHTML={{ __html: section.content }} />
+            <>
+              {console.log(`Rendering fallback section ${index}, isCurrent: ${index === currentSection}`)}
+              {index === currentSection ? (
+                // Current section: Use TypewriterText for animation
+                <TypewriterText
+                  text={section.content || ''}
+                  startDelay={200}
+                  typingSpeed={typingSpeed}
+                  skipAnimation={textCompletionStatus[index] === true}
+                  onComplete={() => {
+                    // Mark section as complete when typing finishes
+                    console.log(`Section ${index} (fallback) typewriter completed - marking as complete`);
+                    if (index === currentSection) {
+                      setCurrentSectionComplete(true);
+                      setTextCompletionStatus(prev => ({ ...prev, [index]: true }));
+                    }
+                  }}
+                  ref={typewriterRef}
+                />
+              ) : index < currentSection ? (
+                // Previous sections: Show instantly (already typed)
+                <div dangerouslySetInnerHTML={{ __html: section.content }} />
+              ) : null}
+            </>
           )}
-          {/* Continue prompt - only show for current section when complete */}
+          {/* Continue prompt - only show when section is complete */}
           {index === currentSection && index < sections.length - 1 && currentSectionComplete && (
             <div className={classes.continuePrompt}>
               <div className={classes.promptText}>

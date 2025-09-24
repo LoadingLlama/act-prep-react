@@ -5,17 +5,21 @@ const useStyles = createUseStyles({
   interactiveQuiz: {
     backgroundColor: '#ffffff',
     border: '2px solid #e2e8f0',
-    borderRadius: '12px',
-    padding: '1.5rem',
-    margin: '2rem 0',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    borderRadius: '16px',
+    padding: '1.25rem 2rem',
+    margin: '1.5rem auto',
+    maxWidth: '1200px',
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 255, 0.95) 100%)',
+    backdropFilter: 'blur(10px)',
     '&.final-quiz': {
       border: '2px solid #1a73e8',
-      backgroundColor: '#f8faff'
+      background: 'linear-gradient(135deg, rgba(248, 250, 255, 0.98) 0%, rgba(240, 248, 255, 0.95) 100%)',
+      boxShadow: '0 12px 40px rgba(26, 115, 232, 0.15)'
     }
   },
   quizProgress: {
-    marginBottom: '1.5rem'
+    marginBottom: '1rem'
   },
   progressBar: {
     width: '100%',
@@ -38,34 +42,48 @@ const useStyles = createUseStyles({
     fontWeight: '500'
   },
   quizContainer: {
-    marginBottom: '2rem'
-  },
-  quizQuestion: {
     marginBottom: '1.5rem'
   },
+  quizQuestion: {
+    marginBottom: '1rem'
+  },
   questionText: {
-    fontSize: '1.1rem',
+    fontSize: '1.2rem',
     color: '#2d3748',
     marginBottom: '1rem',
-    lineHeight: '1.6',
-    fontWeight: '500'
+    lineHeight: '1.5',
+    fontWeight: '600',
+    textAlign: 'center',
+    background: 'linear-gradient(135deg, rgba(26, 115, 232, 0.05) 0%, rgba(237, 248, 255, 0.8) 100%)',
+    padding: '1rem',
+    borderRadius: '12px',
+    border: '1px solid rgba(26, 115, 232, 0.1)'
   },
   quizOptions: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '0.8rem',
-    marginBottom: '1rem'
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+    gap: '0.75rem',
+    marginBottom: '1rem',
+    '@media (max-width: 768px)': {
+      gridTemplateColumns: '1fr'
+    }
   },
   quizOption: {
     padding: '1rem',
     border: '2px solid #e2e8f0',
-    borderRadius: '8px',
+    borderRadius: '12px',
     backgroundColor: '#ffffff',
     color: '#2d3748',
     cursor: 'pointer',
     fontSize: '1rem',
     textAlign: 'left',
-    transition: 'all 0.2s ease',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    position: 'relative',
+    overflow: 'hidden',
+    minHeight: '60px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
     '&:hover': {
       borderColor: '#1a73e8',
       backgroundColor: '#f8faff'
@@ -77,12 +95,33 @@ const useStyles = createUseStyles({
     '&.correct': {
       borderColor: '#48bb78',
       backgroundColor: '#f0fff4',
-      color: '#2f855a'
+      color: '#2f855a',
+      '&::before': {
+        content: '"✓ "',
+        color: '#48bb78',
+        fontWeight: 'bold'
+      }
     },
     '&.incorrect': {
       borderColor: '#f56565',
       backgroundColor: '#fffafa',
-      color: '#c53030'
+      color: '#c53030',
+      '&::before': {
+        content: '"✗ "',
+        color: '#f56565',
+        fontWeight: 'bold'
+      }
+    },
+    '&.not-selected-correct': {
+      borderColor: '#48bb78',
+      backgroundColor: '#f0fff4',
+      color: '#2f855a',
+      opacity: 0.8,
+      '&::before': {
+        content: '"✓ "',
+        color: '#48bb78',
+        fontWeight: 'bold'
+      }
     },
     '&:disabled': {
       cursor: 'not-allowed'
@@ -92,8 +131,8 @@ const useStyles = createUseStyles({
     backgroundColor: '#f7fafc',
     border: '1px solid #e2e8f0',
     borderRadius: '8px',
-    padding: '1rem',
-    marginTop: '1rem'
+    padding: '0.75rem',
+    marginTop: '0.75rem'
   },
   feedbackText: {
     color: '#4a5568',
@@ -106,7 +145,7 @@ const useStyles = createUseStyles({
     justifyContent: 'space-between',
     alignItems: 'center',
     borderTop: '1px solid #e2e8f0',
-    paddingTop: '1rem'
+    paddingTop: '0.75rem'
   },
   navButton: {
     padding: '0.75rem 1.5rem',
@@ -148,8 +187,8 @@ const useStyles = createUseStyles({
     backgroundColor: '#f8faff',
     border: '2px solid #1a73e8',
     borderRadius: '12px',
-    padding: '2rem',
-    marginBottom: '1.5rem',
+    padding: '1.5rem',
+    marginBottom: '1rem',
     '&.final-score': {
       backgroundColor: '#f0f8ff'
     }
@@ -167,7 +206,7 @@ const useStyles = createUseStyles({
   scoreMessage: {
     padding: '1rem',
     borderRadius: '8px',
-    margin: '1rem 0',
+    margin: '0.75rem 0',
     fontWeight: '600',
     '&.master': {
       backgroundColor: '#f0fff4',
@@ -191,7 +230,7 @@ const useStyles = createUseStyles({
     }
   },
   quizActions: {
-    marginTop: '1.5rem'
+    marginTop: '1rem'
   },
   resetQuiz: {
     backgroundColor: '#1a73e8',
@@ -211,7 +250,7 @@ const useStyles = createUseStyles({
     backgroundColor: '#f7fafc',
     border: '1px solid #e2e8f0',
     borderRadius: '8px',
-    padding: '1.5rem',
+    padding: '1.25rem',
     textAlign: 'left',
     '& h4': {
       color: '#2d3748',
@@ -236,9 +275,9 @@ const useStyles = createUseStyles({
   },
   quizIntro: {
     color: '#4a5568',
-    fontSize: '1rem',
-    marginBottom: '1.5rem',
-    lineHeight: '1.6'
+    fontSize: '0.95rem',
+    marginBottom: '1rem',
+    lineHeight: '1.5'
   }
 });
 
@@ -251,10 +290,12 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete }) => {
   const [showResults, setShowResults] = useState(false);
   const [showMastery, setShowMastery] = useState(false);
   const [hasAnswered, setHasAnswered] = useState(false);
+  const [expandedExplanations, setExpandedExplanations] = useState({});
 
   // Reset hasAnswered when question changes
   useEffect(() => {
     setHasAnswered(!!answers[currentQuestion]);
+    setExpandedExplanations({}); // Reset expanded explanations for new question
   }, [currentQuestion, answers]);
 
   const handleAnswer = (selectedAnswer, isCorrect, explanation) => {
@@ -308,6 +349,14 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete }) => {
     setShowResults(false);
     setShowMastery(false);
     setHasAnswered(false);
+    setExpandedExplanations({});
+  };
+
+  const toggleExplanation = (optionIndex) => {
+    setExpandedExplanations(prev => ({
+      ...prev,
+      [optionIndex]: !prev[optionIndex]
+    }));
   };
 
   const getMasteryMessage = () => {
@@ -392,25 +441,73 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete }) => {
           <p className={classes.questionText} dangerouslySetInnerHTML={{ __html: question.text }} />
 
           <div className={classes.quizOptions}>
-            {question.options.map((option, optionIndex) => (
-              <button
-                key={optionIndex}
-                className={`${classes.quizOption} ${currentAnswer === option.text ? 'selected' : ''} ${
-                  currentAnswer === option.text ? (option.isCorrect ? 'correct' : 'incorrect') : ''
-                }`}
-                disabled={hasAnswered}
-                onClick={() => handleAnswer(option.text, option.isCorrect, option.explanation)}
-              >
-                {option.text}
-              </button>
-            ))}
-          </div>
+            {question.options.map((option, optionIndex) => {
+              let optionClass = classes.quizOption;
 
-          {currentFeedback && (
-            <div className={classes.quizFeedback}>
-              <p className={classes.feedbackText}>{currentFeedback}</p>
-            </div>
-          )}
+              if (hasAnswered) {
+                if (currentAnswer === option.text) {
+                  // This is the user's selected answer
+                  optionClass += option.isCorrect ? ' correct' : ' incorrect';
+                } else if (option.isCorrect) {
+                  // This is the correct answer (not selected by user)
+                  optionClass += ' not-selected-correct';
+                }
+              } else if (currentAnswer === option.text) {
+                // User selected but hasn't submitted yet
+                optionClass += ' selected';
+              }
+
+              return (
+                <div key={optionIndex} style={{ marginBottom: '0.5rem' }}>
+                  <button
+                    className={optionClass}
+                    disabled={hasAnswered && currentAnswer === option.text}
+                    onClick={() => {
+                      if (!hasAnswered) {
+                        handleAnswer(option.text, option.isCorrect, option.explanation);
+                      } else if (currentAnswer !== option.text) {
+                        toggleExplanation(optionIndex);
+                      }
+                    }}
+                    style={{
+                      width: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'flex-start',
+                      gap: '0.5rem'
+                    }}
+                  >
+                    <span style={{ fontWeight: '500' }}>{option.text}</span>
+                    {hasAnswered && (
+                      <span style={{
+                        fontSize: '0.8rem',
+                        opacity: 0.8,
+                        lineHeight: '1.3'
+                      }}>
+                        {currentAnswer === option.text || expandedExplanations[optionIndex]
+                          ? option.explanation
+                          : `${option.explanation.substring(0, 80)}${option.explanation.length > 80 ? '...' : ''}`
+                        }
+                      </span>
+                    )}
+                  </button>
+                  {hasAnswered && currentAnswer !== option.text && !expandedExplanations[optionIndex] && (
+                    <div style={{
+                      fontSize: '0.75rem',
+                      color: '#1a73e8',
+                      textAlign: 'center',
+                      marginTop: '0.2rem',
+                      cursor: 'pointer'
+                    }}
+                    onClick={() => toggleExplanation(optionIndex)}
+                    >
+                      Click to see full explanation
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
 

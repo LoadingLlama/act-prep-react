@@ -7,7 +7,7 @@ const useStyles = createUseStyles({
     left: '0.5rem',
     top: '50%',
     transform: 'translateY(-50%)',
-    width: '160px',
+    width: '180px',
     maxHeight: '70vh',
     overflowY: 'auto',
     background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(237, 248, 255, 0.9) 100%)',
@@ -22,9 +22,6 @@ const useStyles = createUseStyles({
     '&:hover': {
       opacity: 1,
       transform: 'translateY(-50%) scale(1.02)'
-    },
-    '@media (max-width: 1200px)': {
-      display: 'none' // Hide on smaller screens
     }
   },
 
@@ -167,7 +164,9 @@ const TableOfContentsSidebar = ({
   sections = [],
   currentSection = 0,
   maxLoadedSection = 0,
-  onSectionClick = null
+  onSectionClick = null,
+  typingSpeed = 35,
+  onSpeedChange = null
 }) => {
   const classes = useStyles();
 
@@ -320,12 +319,6 @@ const TableOfContentsSidebar = ({
       </div>
 
       <div className={classes.progressSection}>
-        <div className={classes.progressIndicator}>
-          <div
-            className={classes.progressFill}
-            style={{ width: `${progressPercentage}%` }}
-          />
-        </div>
 
         <div className={classes.progressText}>
           {currentSection + 1} of {sections.length} sections

@@ -21,58 +21,48 @@ const TypewriterText = React.forwardRef(({
   text,
   onComplete,
   startDelay = 0,
-  className = ""
+  className = "",
+  typingSpeed = 25,
+  skipAnimation = false
 }, ref) => {
   const classes = useStyles();
-  const [displayedLines, setDisplayedLines] = useState(0);
+  const [displayedChars, setDisplayedChars] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   const [shouldCompleteInstantly, setShouldCompleteInstantly] = useState(false);
-  const [lines, setLines] = useState([]);
+  const [plainText, setPlainText] = useState('');
+  const [isTypingActive, setIsTypingActive] = useState(false);
   const containerRef = React.useRef(null);
-
-  // Split content into lines for progressive reveal
-  const splitIntoLines = useCallback((htmlString) => {
-    if (!htmlString) return [];
-
-    // Create a temporary div to parse HTML
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = htmlString;
-
-    const lines = [];
-    const elements = Array.from(tempDiv.children);
-
-    // If no block elements, split by line breaks
-    if (elements.length === 0) {
-      const text = tempDiv.textContent || '';
-      return text.split('\n').filter(line => line.trim().length > 0);
-    }
-
-    // Otherwise, treat each block element as a line
-    elements.forEach(element => {
-      if (element.tagName && ['P', 'DIV', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'LI'].includes(element.tagName)) {
-        lines.push(element.outerHTML);
-      } else {
-        // For inline elements, treat as text
-        const text = element.textContent || '';
-        if (text.trim()) {
-          lines.push(text);
-        }
-      }
-    });
-
-    return lines;
-  }, []);
 
   useEffect(() => {
     if (text) {
-      const lineArray = splitIntoLines(text);
-      setLines(lineArray);
-      setDisplayedLines(0);
-      setIsComplete(false);
-      setShouldCompleteInstantly(false);
+      // Keep original HTML but extract text length for character counting
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = text;
+      const extractedText = tempDiv.textContent || tempDiv.innerText || '';
+
+
+      setPlainText(extractedText);
+
+      if (skipAnimation) {
+        // If skipping animation, immediately show all text
+        setDisplayedChars(extractedText.length);
+        setIsComplete(true);
+        setIsTypingActive(false);
+        setHasStarted(true);
+        setShouldCompleteInstantly(false);
+        if (onComplete) {
+          setTimeout(onComplete, 50);
+        }
+      } else {
+        setDisplayedChars(0);
+        setIsComplete(false);
+        setShouldCompleteInstantly(false);
+        setIsTypingActive(true);
+        setHasStarted(false); // Reset hasStarted so startDelay timer triggers again
+      }
     }
-  }, [text, splitIntoLines]);
+  }, [text, skipAnimation, onComplete]);
 
   // Removed aggressive scroll interval
 
@@ -88,31 +78,49 @@ const TypewriterText = React.forwardRef(({
   }, [startDelay]);
 
   useEffect(() => {
-    if (!hasStarted || lines.length === 0) return;
+    if (!hasStarted || !plainText) {
+      return;
+    }
 
     // Instant completion triggered
     if (shouldCompleteInstantly && !isComplete) {
-      setDisplayedLines(lines.length);
+      setDisplayedChars(plainText.length);
       setIsComplete(true);
+      setIsTypingActive(false);
       if (onComplete) {
         setTimeout(onComplete, 100);
       }
       return;
     }
 
-    if (displayedLines < lines.length && !shouldCompleteInstantly) {
-      // Reveal lines one by one with timing
-      const timer = setTimeout(() => {
-        setDisplayedLines(prev => prev + 1);
-      }, 800); // Slower line-by-line reveal
-      return () => clearTimeout(timer);
-    } else if (!isComplete && displayedLines >= lines.length) {
-      setIsComplete(true);
-      if (onComplete) {
-        setTimeout(onComplete, 100);
+    // If we're done with all characters, mark complete
+    if (displayedChars >= plainText.length) {
+      if (!isComplete) {
+        setIsComplete(true);
+        setIsTypingActive(false);
+        if (onComplete) {
+          setTimeout(onComplete, 100);
+        }
       }
+      return;
     }
-  }, [displayedLines, lines, hasStarted, isComplete, onComplete, shouldCompleteInstantly]);
+
+    // Type character by character
+    if (displayedChars < plainText.length) {
+      const timer = setTimeout(() => {
+        setDisplayedChars(prev => prev + 1);
+        // Auto-scroll to keep typing in view
+        if (containerRef.current) {
+          containerRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'nearest'
+          });
+        }
+      }, typingSpeed); // Configurable typing speed
+      return () => clearTimeout(timer);
+    }
+  }, [displayedChars, plainText, hasStarted, isComplete, onComplete, shouldCompleteInstantly, typingSpeed]);
 
   // Expose instant complete function
   React.useImperativeHandle(ref, () => ({
@@ -121,21 +129,87 @@ const TypewriterText = React.forwardRef(({
         setShouldCompleteInstantly(true);
       }
     },
-    isComplete: () => isComplete
-  }), [isComplete]);
+    isComplete: () => isComplete,
+    isTypingActive: () => isTypingActive
+  }), [isComplete, isTypingActive]);
 
   const buildDisplayHTML = () => {
-    return lines.slice(0, displayedLines).map((line, index) => {
-      const isNewLine = index === displayedLines - 1;
-      if (line.startsWith('<')) {
-        // HTML element - wrap with revealing class
-        return `<div class="${isNewLine ? 'revealing-line' : ''}">${line}</div>`;
-      } else {
-        // Plain text - wrap in paragraph with revealing class
-        return `<p class="${isNewLine ? 'revealing-line' : ''}">${line}</p>`;
+    if (!text || !plainText) {
+      return '';
+    }
+
+    if (displayedChars === 0) {
+      return '';
+    }
+
+    // Fallback to simple text truncation if HTML parsing fails
+    try {
+      // Simple approach: truncate the plain text and insert it into a basic HTML structure
+      const visibleText = plainText.substring(0, displayedChars);
+
+      // For basic HTML preservation, we'll use a simple regex approach
+      // This handles the most common cases without complex DOM parsing
+      let htmlOutput = text;
+
+      // Find where to truncate by counting actual text characters
+      let textCount = 0;
+      let htmlIndex = 0;
+
+      while (textCount < displayedChars && htmlIndex < text.length) {
+        const char = text[htmlIndex];
+
+        if (char === '<') {
+          // Skip over HTML tags
+          const tagEnd = text.indexOf('>', htmlIndex);
+          if (tagEnd !== -1) {
+            htmlIndex = tagEnd + 1;
+          } else {
+            htmlIndex++;
+          }
+        } else {
+          // Regular character
+          textCount++;
+          htmlIndex++;
+        }
       }
-    }).join('');
+
+      // Truncate at the HTML index and try to close any open tags
+      htmlOutput = text.substring(0, htmlIndex);
+
+      // Simple tag balancing for common tags
+      const openTags = [];
+      const tagPattern = /<\/?([a-zA-Z]+)[^>]*>/g;
+      let match;
+
+      while ((match = tagPattern.exec(htmlOutput)) !== null) {
+        const tagName = match[1].toLowerCase();
+        if (match[0].startsWith('</')) {
+          // Closing tag
+          const index = openTags.lastIndexOf(tagName);
+          if (index !== -1) {
+            openTags.splice(index, 1);
+          }
+        } else if (!match[0].endsWith('/>')) {
+          // Opening tag (not self-closing)
+          openTags.push(tagName);
+        }
+      }
+
+      // Close any remaining open tags
+      for (let i = openTags.length - 1; i >= 0; i--) {
+        htmlOutput += `</${openTags[i]}>`;
+      }
+
+      return htmlOutput;
+
+    } catch (error) {
+      // If anything goes wrong, fall back to plain text
+      console.warn('TypewriterText HTML processing failed, using plain text:', error);
+      return plainText.substring(0, displayedChars);
+    }
   };
+
+  const displayHTML = buildDisplayHTML();
 
   return (
     <div
@@ -143,7 +217,7 @@ const TypewriterText = React.forwardRef(({
       ref={containerRef}
       className={`${classes.typewriterContainer} ${classes.lineReveal} ${className}`}
     >
-      <div dangerouslySetInnerHTML={{ __html: buildDisplayHTML() }} />
+      <div dangerouslySetInnerHTML={{ __html: displayHTML }} />
     </div>
   );
 });

@@ -526,7 +526,7 @@ const useStyles = createUseStyles({
       }
     }
   },
-  floatingControls: {
+  floatingControlsRemoved: {
     position: 'fixed',
     bottom: '35vh',
     right: '20px',
@@ -943,84 +943,6 @@ function App() {
           </div>
         </div>
 
-        {/* Floating Controls */}
-        <div className={classes.floatingControls}>
-          <button
-            onClick={() => updateLessonProgress(currentLesson, 'not-started')}
-            style={{
-              background: 'rgba(248, 250, 252, 0.8)',
-              border: '1px solid rgba(203, 213, 224, 0.4)',
-              borderRadius: '6px',
-              padding: '0.4rem 0.7rem',
-              color: '#64748b',
-              fontWeight: '400',
-              cursor: 'pointer',
-              fontSize: '0.7rem',
-              transition: 'all 0.2s ease',
-              boxShadow: 'none'
-            }}
-            onMouseOver={(e) => {
-              e.target.style.background = 'rgba(248, 250, 252, 1)';
-              e.target.style.color = '#475569';
-            }}
-            onMouseOut={(e) => {
-              e.target.style.background = 'rgba(248, 250, 252, 0.8)';
-              e.target.style.color = '#64748b';
-            }}
-          >
-            Reset
-          </button>
-          <button
-            onClick={() => updateLessonProgress(currentLesson, 'in-progress')}
-            style={{
-              background: 'rgba(254, 243, 199, 0.8)',
-              border: '1px solid rgba(251, 191, 36, 0.4)',
-              borderRadius: '6px',
-              padding: '0.4rem 0.7rem',
-              color: '#92400e',
-              fontWeight: '400',
-              cursor: 'pointer',
-              fontSize: '0.7rem',
-              transition: 'all 0.2s ease',
-              boxShadow: 'none'
-            }}
-            onMouseOver={(e) => {
-              e.target.style.background = 'rgba(254, 243, 199, 1)';
-              e.target.style.color = '#78350f';
-            }}
-            onMouseOut={(e) => {
-              e.target.style.background = 'rgba(254, 243, 199, 0.8)';
-              e.target.style.color = '#92400e';
-            }}
-          >
-            In Progress
-          </button>
-          <button
-            onClick={() => updateLessonProgress(currentLesson, 'completed')}
-            style={{
-              background: 'rgba(240, 253, 244, 0.8)',
-              border: '1px solid rgba(34, 197, 94, 0.4)',
-              borderRadius: '6px',
-              padding: '0.4rem 0.7rem',
-              color: '#15803d',
-              fontWeight: '400',
-              cursor: 'pointer',
-              fontSize: '0.7rem',
-              transition: 'all 0.2s ease',
-              boxShadow: 'none'
-            }}
-            onMouseOver={(e) => {
-              e.target.style.background = 'rgba(240, 253, 244, 1)';
-              e.target.style.color = '#166534';
-            }}
-            onMouseOut={(e) => {
-              e.target.style.background = 'rgba(240, 253, 244, 0.8)';
-              e.target.style.color = '#15803d';
-            }}
-          >
-            Complete ✓
-          </button>
-        </div>
       </div>
     );
   };
