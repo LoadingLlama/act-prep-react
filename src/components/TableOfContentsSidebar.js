@@ -172,7 +172,6 @@ const TableOfContentsSidebar = ({
 
   if (sections.length === 0) return null;
 
-  const progressPercentage = ((currentSection + 1) / sections.length) * 100;
 
   const getSectionTitle = (section, index) => {
     if (section.type === 'interactive') {

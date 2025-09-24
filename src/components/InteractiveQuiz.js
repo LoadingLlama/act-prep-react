@@ -53,7 +53,7 @@ const useStyles = createUseStyles({
     marginBottom: '1rem',
     lineHeight: '1.5',
     fontWeight: '600',
-    textAlign: 'center',
+    textAlign: 'left',
     background: 'linear-gradient(135deg, rgba(26, 115, 232, 0.05) 0%, rgba(237, 248, 255, 0.8) 100%)',
     padding: '1rem',
     borderRadius: '12px',
@@ -290,12 +290,10 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete }) => {
   const [showResults, setShowResults] = useState(false);
   const [showMastery, setShowMastery] = useState(false);
   const [hasAnswered, setHasAnswered] = useState(false);
-  const [expandedExplanations, setExpandedExplanations] = useState({});
 
   // Reset hasAnswered when question changes
   useEffect(() => {
     setHasAnswered(!!answers[currentQuestion]);
-    setExpandedExplanations({}); // Reset expanded explanations for new question
   }, [currentQuestion, answers]);
 
   const handleAnswer = (selectedAnswer, isCorrect, explanation) => {
@@ -349,15 +347,8 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete }) => {
     setShowResults(false);
     setShowMastery(false);
     setHasAnswered(false);
-    setExpandedExplanations({});
   };
 
-  const toggleExplanation = (optionIndex) => {
-    setExpandedExplanations(prev => ({
-      ...prev,
-      [optionIndex]: !prev[optionIndex]
-    }));
-  };
 
   const getMasteryMessage = () => {
     const total = quizData.questions.length;
@@ -416,7 +407,6 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete }) => {
 
   const question = quizData.questions[currentQuestion];
   const currentAnswer = answers[currentQuestion];
-  const currentFeedback = feedback[currentQuestion];
 
   return (
     <div className={`${classes.interactiveQuiz} ${isFinal ? 'final-quiz' : ''}`}>
@@ -465,8 +455,6 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete }) => {
                     onClick={() => {
                       if (!hasAnswered) {
                         handleAnswer(option.text, option.isCorrect, option.explanation);
-                      } else if (currentAnswer !== option.text) {
-                        toggleExplanation(optionIndex);
                       }
                     }}
                     style={{
@@ -484,26 +472,10 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete }) => {
                         opacity: 0.8,
                         lineHeight: '1.3'
                       }}>
-                        {currentAnswer === option.text || expandedExplanations[optionIndex]
-                          ? option.explanation
-                          : `${option.explanation.substring(0, 80)}${option.explanation.length > 80 ? '...' : ''}`
-                        }
+                        {option.explanation}
                       </span>
                     )}
                   </button>
-                  {hasAnswered && currentAnswer !== option.text && !expandedExplanations[optionIndex] && (
-                    <div style={{
-                      fontSize: '0.75rem',
-                      color: '#1a73e8',
-                      textAlign: 'center',
-                      marginTop: '0.2rem',
-                      cursor: 'pointer'
-                    }}
-                    onClick={() => toggleExplanation(optionIndex)}
-                    >
-                      Click to see full explanation
-                    </div>
-                  )}
                 </div>
               );
             })}

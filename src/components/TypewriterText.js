@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
@@ -145,7 +145,6 @@ const TypewriterText = React.forwardRef(({
     // Fallback to simple text truncation if HTML parsing fails
     try {
       // Simple approach: truncate the plain text and insert it into a basic HTML structure
-      const visibleText = plainText.substring(0, displayedChars);
 
       // For basic HTML preservation, we'll use a simple regex approach
       // This handles the most common cases without complex DOM parsing

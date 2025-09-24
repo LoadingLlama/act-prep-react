@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 import TypewriterText from './TypewriterText';
-import PracticeSection from './PracticeSection';
 import InteractiveQuiz from './InteractiveQuiz';
 import TableOfContentsSidebar from './TableOfContentsSidebar';
 import ControlsSidebar from './ControlsSidebar';
+import { splitIntoTextSections } from '../utils/splitIntoTextSections';
 
 const useStyles = createUseStyles({
   progressiveContainer: {
@@ -300,168 +300,7 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
   const typewriterRef = React.useRef(null);
   const sectionRefs = React.useRef([]);
 
-  // Track current section changes
-  React.useEffect(() => {
-    if (sections.length > 0 && sections[currentSection]) {
-      const currentSectionData = sections[currentSection];
-      console.log(`*** CURRENT SECTION CHANGED TO ${currentSection} ***`);
-      console.log(`Section type: ${currentSectionData.type}`);
-      console.log(`Content preview: ${currentSectionData.content?.substring(0, 100)}`);
 
-    }
-  }, [currentSection, sections]);
-
-  const splitIntoTextSections = (content) => {
-    if (!content || !content.trim()) return [];
-
-    const cleanContent = content.trim();
-    const sections = [];
-
-    // Strategy: Create readable chunks by splitting on logical boundaries
-    if (cleanContent.includes('<h3')) {
-      // Split by H3 headers first
-      const h3Parts = cleanContent.split(/(?=<h3[^>]*>)/);
-
-      for (let part of h3Parts) {
-        part = part.trim();
-        if (!part || part.length < 50) continue;
-
-        // Check if this H3 section is very long and needs further splitting
-        const wordCount = (part.match(/\b\w+\b/g) || []).length;
-
-        if (wordCount > 200) {
-          // Long section - split by major elements
-          const subSections = splitByElements(part);
-          sections.push(...subSections);
-        } else {
-          // Normal sized H3 section - keep as one
-          sections.push({
-            type: 'text',
-            content: part
-          });
-        }
-      }
-    } else {
-      // No H3 headers - split by other elements
-      const subSections = splitByElements(cleanContent);
-      sections.push(...subSections);
-    }
-
-    return sections.length > 0 ? sections : [{
-      type: 'text',
-      content: cleanContent
-    }];
-  };
-
-  const splitByElements = (content) => {
-    const sections = [];
-
-    // Split by concept boxes and major divs
-    if (content.includes('<div class="concept-box') || content.includes('<div class="section')) {
-      const parts = content.split(/(<div class="(?:concept-box|section)[^"]*"[^>]*>[\s\S]*?<\/div>)/);
-      let currentSection = '';
-
-      for (let part of parts) {
-        part = part.trim();
-        if (!part) continue;
-
-        if (part.startsWith('<div class="concept-box') || part.startsWith('<div class="section')) {
-          // Concept box or section div - save any accumulated content first
-          if (currentSection.trim() && currentSection.trim().length > 50) {
-            sections.push({
-              type: 'text',
-              content: currentSection.trim()
-            });
-          }
-
-          // Add concept box as its own section
-          sections.push({
-            type: 'text',
-            content: part
-          });
-
-          currentSection = '';
-        } else {
-          // Regular content - accumulate
-          currentSection += part;
-
-          // If getting long, create a section
-          const wordCount = (currentSection.match(/\b\w+\b/g) || []).length;
-          if (wordCount > 150) {
-            sections.push({
-              type: 'text',
-              content: currentSection.trim()
-            });
-            currentSection = '';
-          }
-        }
-      }
-
-      // Add any remaining content
-      if (currentSection.trim() && currentSection.trim().length > 50) {
-        sections.push({
-          type: 'text',
-          content: currentSection.trim()
-        });
-      }
-    } else {
-      // No special divs - split by paragraphs if content is long
-      const wordCount = (content.match(/\b\w+\b/g) || []).length;
-
-      if (wordCount > 150) {
-        const paragraphs = content.split(/(<\/p>\s*)/);
-        let currentSection = '';
-        let sectionWords = 0;
-
-        for (let i = 0; i < paragraphs.length; i++) {
-          const para = paragraphs[i];
-          const paraWords = (para.match(/\b\w+\b/g) || []).length;
-
-          currentSection += para;
-          sectionWords += paraWords;
-
-          // Create section when we have enough content
-          if (sectionWords >= 100 && para.includes('</p>')) {
-            if (currentSection.trim()) {
-              sections.push({
-                type: 'text',
-                content: currentSection.trim()
-              });
-            }
-            currentSection = '';
-            sectionWords = 0;
-          }
-        }
-
-        // Add remaining content
-        if (currentSection.trim()) {
-          sections.push({
-            type: 'text',
-            content: currentSection.trim()
-          });
-        }
-      } else {
-        // Short content - keep as one section
-        sections.push({
-          type: 'text',
-          content: content
-        });
-      }
-    }
-
-    const filteredSections = sections.filter(section => section.content && section.content.trim().length > 30); // Reduced minimum
-    console.log('SECTIONS BEFORE FILTER:', sections.length, 'AFTER FILTER:', filteredSections.length);
-    sections.forEach((section, i) => {
-      if (!section.content || section.content.trim().length <= 30) {
-        console.log(`FILTERED OUT Section ${i}: length ${section.content?.length}, content: "${section.content?.substring(0, 50)}"`);
-      } else {
-        // Check if any kept sections contain PRO TIP
-        if (section.content.includes('PRO TIP')) {
-        }
-      }
-    });
-    return filteredSections;
-  };
 
 
 
@@ -484,13 +323,9 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
 
     // Split the entire lesson content by quiz markers first
     const contentWithQuizzes = lesson.content;
-    console.log('FULL LESSON CONTENT LENGTH:', contentWithQuizzes.length);
-    console.log('CONTENT CONTAINS QUIZ_1:', contentWithQuizzes.includes('<!-- QUIZ_1 -->'));
-
 
     // Split by ALL quiz markers at once
     const allParts = contentWithQuizzes.split(/(<!-- QUIZ_[1-4] -->)/);
-    console.log('SPLIT INTO PARTS:', allParts.length);
 
     allParts.forEach((part, index) => {
       if (!part.trim()) return;
@@ -499,7 +334,6 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
       const quizMatch = part.match(/<!-- QUIZ_(\d+) -->/);
       if (quizMatch) {
         const quizId = parseInt(quizMatch[1]);
-        console.log('FOUND QUIZ MARKER:', quizId);
         const quizData = getQuizData(quizId);
 
         if (quizData) {
@@ -508,35 +342,16 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
             data: quizData,
             isFinal: quizId === 4
           });
-          console.log('ADDED QUIZ:', quizId);
         }
       } else {
         // This is text content - split it into manageable sections
         const textSections = splitIntoTextSections(part);
-        console.log('TEXT SECTIONS CREATED:', textSections.length);
-        textSections.forEach((section, i) => {
-          console.log(`Section ${i}: ${section.content.substring(0, 100)}...`);
-        });
         processedSections.push(...textSections);
-      }
-    });
-
-    console.log('FINAL PROCESSED SECTIONS:', processedSections.length);
-    processedSections.forEach((section, i) => {
-      const preview = section.content?.substring(0, 100) || 'No content';
-      console.log(`Final Section ${i} (${section.type}): ${preview}...`);
-
-      // Check specifically for PRO TIP
-      if (section.content?.includes('PRO TIP')) {
       }
     });
 
     setSections(processedSections);
     sectionRefs.current = processedSections.map((_, i) => sectionRefs.current[i] || React.createRef());
-
-    console.log(`Lesson loaded with ${processedSections.length} sections`);
-    console.log('SECTION TYPES:', processedSections.map((s, i) => `${i}: ${s.type}`));
-    console.log('QUIZ SECTIONS:', processedSections.filter(s => s.type === 'quiz').length);
   }, [lesson]);
 
   const getQuizData = (quizId) => {
@@ -584,7 +399,7 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
         intro: "Apply your knowledge of FANBOYS and compound sentence construction. This is your final test!",
         questions: [
           {
-            text: "Which FANBOYS conjunction best connects these ideas: 'I want to go swimming' + 'it's raining outside'?",
+            text: "Which FANBOYS conjunction best connects these ideas:<br/><br/><div style='text-align: center; font-style: italic; background: rgba(26, 115, 232, 0.05); padding: 0.75rem; border-radius: 8px; margin: 0.5rem 0;'>'I want to go swimming' + 'it's raining outside'</div>",
             options: [
               { text: "and", isCorrect: false, explanation: "'And' shows addition, but these ideas contrast with each other." },
               { text: "but", isCorrect: true, explanation: "Perfect! 'But' shows the contrast between wanting to swim and the rain preventing it." },
@@ -593,7 +408,7 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
             ]
           },
           {
-            text: "Identify the error: 'I studied hard for the test, I still failed.'",
+            text: "Identify the error:<br/><br/><div style='text-align: center; font-style: italic; background: rgba(26, 115, 232, 0.05); padding: 0.75rem; border-radius: 8px; margin: 0.5rem 0;'>'I studied hard for the test, I still failed.'</div>",
             options: [
               { text: "Missing conjunction", isCorrect: true, explanation: "Correct! This is a comma splice. You need a FANBOYS conjunction: 'I studied hard for the test, but I still failed.'" },
               { text: "Wrong punctuation", isCorrect: false, explanation: "The comma placement is correct for a compound sentence, but you need a conjunction." },
@@ -609,7 +424,7 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
             ]
           },
           {
-            text: "What's the best way to fix this comma splice: 'The movie was long, it was boring.'?",
+            text: "What's the best way to fix this comma splice:<br/><br/><div style='text-align: center; font-style: italic; background: rgba(26, 115, 232, 0.05); padding: 0.75rem; border-radius: 8px; margin: 0.5rem 0;'>'The movie was long, it was boring.'</div>",
             options: [
               { text: "The movie was long it was boring.", isCorrect: false, explanation: "This creates a run-on sentence - you still need proper punctuation." },
               { text: "The movie was long, and it was boring.", isCorrect: true, explanation: "Perfect! Adding 'and' creates a proper compound sentence showing both qualities." },
@@ -631,7 +446,7 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
         intro: "Test your ability to identify and fix common sentence errors.",
         questions: [
           {
-            text: "Which sentence correctly fixes this comma splice: 'The storm was approaching, we decided to head home.'",
+            text: "Which sentence correctly fixes this comma splice:<br/><br/><div style='text-align: center; font-style: italic; background: rgba(26, 115, 232, 0.05); padding: 0.75rem; border-radius: 8px; margin: 0.5rem 0;'>'The storm was approaching, we decided to head home.'</div>",
             options: [
               { text: "The storm was approaching we decided to head home.", isCorrect: false, explanation: "This creates a run-on sentence. You need proper punctuation or conjunction." },
               { text: "The storm was approaching, so we decided to head home.", isCorrect: true, explanation: "Perfect! 'So' shows cause and effect with proper comma + FANBOYS structure." },
@@ -693,7 +508,7 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
             ]
           },
           {
-            text: "Final Challenge: Fix this complex error: 'Because the weather was perfect, we decided to have a picnic, it was the best day ever.'",
+            text: "Final Challenge: Fix this complex error:<br/><br/><div style='text-align: center; font-style: italic; background: rgba(26, 115, 232, 0.05); padding: 0.75rem; border-radius: 8px; margin: 0.5rem 0;'>'Because the weather was perfect, we decided to have a picnic, it was the best day ever.'</div>",
             options: [
               { text: "Because the weather was perfect, we decided to have a picnic. It was the best day ever.", isCorrect: true, explanation: "Masterful! Fixed the comma splice by separating the last independent clause with a period." },
               { text: "Because the weather was perfect we decided to have a picnic, it was the best day ever.", isCorrect: false, explanation: "Still has comma splice and missing comma after dependent clause." },
@@ -716,7 +531,6 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
         const lastVisibleSection = sectionRefs.current[visibleSections - 1];
         if (lastVisibleSection) {
           const rect = lastVisibleSection.getBoundingClientRect();
-          const windowHeight = window.innerHeight;
 
           // If user has scrolled past the last visible section, scroll back
           if (rect.bottom < 0) {
@@ -748,16 +562,8 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
           return;
         }
 
-        console.log('Enter pressed:', {
-          currentSection,
-          currentSectionComplete,
-          sectionType: currentSectionData.type,
-          totalSections: sections.length
-        });
-
         // CASE 1: Complete current text section (only if it's a text section and not complete)
         if (!currentSectionComplete && currentSectionData.type === 'text') {
-          console.log('Completing current text section');
           if (typewriterRef.current) {
             typewriterRef.current.completeInstantly();
           }
@@ -781,20 +587,12 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
         if (currentSectionComplete) {
           // Block advancement if current section is an incomplete quiz
           if (currentSectionData.type === 'quiz' && !quizCompletionStatus[currentSection]) {
-            console.log('Blocked by incomplete quiz');
             return;
           }
 
           // If not at the last section, advance
           if (currentSection < sections.length - 1) {
             const nextSection = currentSection + 1;
-            const nextSectionData = sections[nextSection];
-            console.log(`Advancing from section ${currentSection} to section ${nextSection}`);
-            console.log(`Next section type: ${nextSectionData?.type}, content preview: ${nextSectionData?.content?.substring(0, 100)}`);
-
-            // Check if next section contains PRO TIP
-            if (nextSectionData?.content?.includes('PRO TIP')) {
-            }
 
             setCurrentSection(nextSection);
             setVisibleSections(prev => Math.max(prev, nextSection + 1));
@@ -815,7 +613,6 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
 
           // If at last section, mark as complete but don't auto-finish
           if (currentSection === sections.length - 1) {
-            console.log('Reached final section');
             setIsComplete(true);
           }
         }
@@ -829,8 +626,6 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
   const handleSectionClick = (index) => {
     // Allow clicking on any section that has been made visible (rendered on screen)
     if (index <= visibleSections - 1) {
-      console.log(`Scrolling to section ${index} (no state changes)`);
-
       // Pure scroll function with proper positioning
       if (sectionRefs.current[index]) {
         const element = sectionRefs.current[index];
@@ -844,11 +639,7 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
           top: Math.max(0, targetY), // Prevent negative scroll
           behavior: 'smooth'
         });
-
-        console.log(`Scrolling to section ${index} at position ${targetY}`);
       }
-    } else {
-      console.log(`Section ${index} not yet visible (visibleSections: ${visibleSections})`);
     }
   };
 
@@ -932,7 +723,6 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
         >
           {section.type === 'text' ? (
             <>
-              {console.log(`Rendering text section ${index}, isCurrent: ${index === currentSection}, isVisible: ${index < visibleSections}, content preview: ${(section.content || '').substring(0, 50)}`)}
               {index === currentSection ? (
                 // Current section: Use TypewriterText for animation
                 <div>
@@ -943,7 +733,6 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
                     skipAnimation={textCompletionStatus[index] === true}
                     onComplete={() => {
                       // Mark section as complete when typing finishes
-                      console.log(`Section ${index} typewriter completed - marking as complete`);
                       if (index === currentSection) {
                         setCurrentSectionComplete(true);
                         setTextCompletionStatus(prev => ({ ...prev, [index]: true }));
@@ -965,7 +754,6 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
                   quizId={`quiz-${index}`}
                   isFinal={section.isFinal || false}
                   onComplete={() => {
-                    console.log(`Quiz ${index} completed`);
                     if (index === currentSection) {
                       setCurrentSectionComplete(true);
                       setQuizCompletionStatus(prev => ({ ...prev, [index]: true }));
@@ -988,7 +776,6 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
             )
           ) : (
             <>
-              {console.log(`Rendering fallback section ${index}, isCurrent: ${index === currentSection}`)}
               {index === currentSection ? (
                 // Current section: Use TypewriterText for animation
                 <TypewriterText
@@ -998,7 +785,6 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
                   skipAnimation={textCompletionStatus[index] === true}
                   onComplete={() => {
                     // Mark section as complete when typing finishes
-                    console.log(`Section ${index} (fallback) typewriter completed - marking as complete`);
                     if (index === currentSection) {
                       setCurrentSectionComplete(true);
                       setTextCompletionStatus(prev => ({ ...prev, [index]: true }));
