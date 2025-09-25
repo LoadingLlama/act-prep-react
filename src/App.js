@@ -137,6 +137,19 @@ function App() {
         <div className={classes.contentSection}>
           <h2 className={classes.sectionTitle}>Study Lessons</h2>
 
+          <div style={{
+            backgroundColor: '#f8faff',
+            border: '1px solid #e2e8f0',
+            borderRadius: '8px',
+            padding: '0.75rem 1rem',
+            marginBottom: '1rem',
+            fontSize: '0.85rem',
+            color: '#4a5568'
+          }}>
+            <strong>📋 Key Terms Guide:</strong> Each lesson shows the specific concepts and terms you'll master.
+            These tags help you identify which diagnostic test questions connect to each lesson chapter.
+          </div>
+
           <div className={classes.sectionFilters}>
             <button
               className={`${classes.sectionFilter} ${activeSection === 'all' ? 'active' : ''}`}
@@ -196,7 +209,122 @@ function App() {
                           </span>
                         )}
                       </div>
-                      <p style={{ margin: 0 }}>{item.desc}</p>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <p style={{ margin: 0, flex: 1 }}>{item.desc}</p>
+                        {item.tags && (
+                          <div
+                            style={{ position: 'relative', display: 'inline-block' }}
+                            onMouseEnter={(e) => {
+                              const tooltip = e.currentTarget.querySelector('.tags-tooltip');
+                              const button = e.currentTarget.querySelector('.tags-button');
+                              const rect = button.getBoundingClientRect();
+                              const viewportHeight = window.innerHeight;
+
+                              if (tooltip) {
+                                // Check if tooltip would go below viewport
+                                const tooltipHeight = 120; // approximate height
+                                const spaceBelow = viewportHeight - rect.bottom;
+
+                                if (spaceBelow < tooltipHeight + 20) {
+                                  // Position above the button
+                                  tooltip.style.top = 'auto';
+                                  tooltip.style.bottom = '100%';
+                                  tooltip.style.marginTop = '0';
+                                  tooltip.style.marginBottom = '0.5rem';
+                                } else {
+                                  // Position below the button (default)
+                                  tooltip.style.top = '100%';
+                                  tooltip.style.bottom = 'auto';
+                                  tooltip.style.marginTop = '0.5rem';
+                                  tooltip.style.marginBottom = '0';
+                                }
+                                tooltip.style.display = 'block';
+                              }
+                            }}
+                            onMouseLeave={(e) => {
+                              const tooltip = e.currentTarget.querySelector('.tags-tooltip');
+                              if (tooltip) tooltip.style.display = 'none';
+                            }}
+                          >
+                            <button
+                              className="tags-button"
+                              style={{
+                                backgroundColor: 'rgba(26, 115, 232, 0.08)',
+                                color: '#666',
+                                fontSize: '0.65rem',
+                                fontWeight: '500',
+                                padding: '0.25rem 0.5rem',
+                                borderRadius: '6px',
+                                border: '1px solid rgba(26, 115, 232, 0.15)',
+                                cursor: 'pointer',
+                                transition: 'all 0.2s ease',
+                                whiteSpace: 'nowrap',
+                                opacity: '0.7'
+                              }}
+                              onMouseOver={(e) => {
+                                e.target.style.backgroundColor = 'rgba(26, 115, 232, 0.12)';
+                                e.target.style.color = '#1a73e8';
+                                e.target.style.opacity = '1';
+                              }}
+                              onMouseOut={(e) => {
+                                e.target.style.backgroundColor = 'rgba(26, 115, 232, 0.08)';
+                                e.target.style.color = '#666';
+                                e.target.style.opacity = '0.7';
+                              }}
+                            >
+                              {item.tags.length} topics
+                            </button>
+                            <div
+                              className="tags-tooltip"
+                              style={{
+                                display: 'none',
+                                position: 'absolute',
+                                right: '0',
+                                backgroundColor: 'white',
+                                border: '1px solid rgba(26, 115, 232, 0.15)',
+                                borderRadius: '6px',
+                                padding: '0.6rem',
+                                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+                                zIndex: 9999,
+                                minWidth: '240px',
+                                maxWidth: '280px',
+                                backdropFilter: 'blur(8px)'
+                              }}
+                            >
+                              <div style={{
+                                fontSize: '0.7rem',
+                                fontWeight: '600',
+                                color: '#4a5568',
+                                marginBottom: '0.4rem'
+                              }}>
+                                Key Topics:
+                              </div>
+                              <div style={{
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                gap: '0.2rem'
+                              }}>
+                                {item.tags.map((tag, tagIndex) => (
+                                  <span
+                                    key={tagIndex}
+                                    style={{
+                                      backgroundColor: 'rgba(26, 115, 232, 0.1)',
+                                      color: '#4a5568',
+                                      fontSize: '0.6rem',
+                                      fontWeight: '500',
+                                      padding: '0.15rem 0.35rem',
+                                      borderRadius: '3px',
+                                      whiteSpace: 'nowrap'
+                                    }}
+                                  >
+                                    {tag}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', zIndex: 3, position: 'relative' }}>
                       <StatusIcon status={getLessonStatus(item.id)} />

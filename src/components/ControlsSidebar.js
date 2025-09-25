@@ -210,8 +210,8 @@ const ControlsSidebar = ({
         <div className={classes.sliderContainer}>
           <input
             type="range"
-            min={15}
-            max={75}
+            min={10}
+            max={80}
             value={90 - typingSpeed}
             onChange={(e) => onSpeedChange && onSpeedChange(90 - parseInt(e.target.value))}
             className={classes.speedSlider}

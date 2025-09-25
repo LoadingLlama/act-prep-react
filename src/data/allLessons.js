@@ -38,7 +38,7 @@ export const allLessons = {
 
   'sentence-structure': {
     title: 'Chapter 1: Independent vs Dependent',
-    duration: 20, // minutes
+    duration: 28, // minutes
     content: `
 <div class="lesson-header">
     <h2>Chapter 1: Independent vs Dependent Clauses</h2>
@@ -386,7 +386,7 @@ export const allLessons = {
 
   'commas': {
     title: 'Chapter 2: Four Comma Types',
-    duration: 18, // minutes
+    duration: 22, // minutes
     content: `
 <div class="lesson-header">
     <h2>Chapter 2: Four Comma Types</h2>
@@ -534,7 +534,7 @@ export const allLessons = {
   // Placeholder for remaining lessons
   'punctuation': {
     title: 'Chapter 3: Advanced Punctuation',
-    duration: 22, // minutes
+    duration: 20, // minutes
     content: `
 <div class="lesson-header">
     <h2>Chapter 3: Advanced Punctuation</h2>
@@ -3263,30 +3263,30 @@ export const lessonStructure = [
   { id: 'getting-started', section: 'all', title: 'Getting Started with the ACT', desc: 'Test format, timing, and scoring overview', status: 'completed' },
 
   // English Section
-  { id: 'sentence-structure', section: 'english', title: 'Chapter 1: Independent vs Dependent', desc: 'Independent clauses, dependent clauses, compound sentences, and comma splices', status: 'in-progress' },
-  { id: 'commas', section: 'english', title: 'Chapter 2: Four Comma Types', desc: 'Unnecessary information, names rule, listing commas, and adjective lists', status: 'completed' },
-  { id: 'punctuation', section: 'english', title: 'Chapter 3: Advanced Punctuation', desc: 'Semicolons, colons, dashes, apostrophes, and quotation marks', status: 'completed' },
-  { id: 'verbs', section: 'english', title: 'Chapter 4: Subject-Verb Agreement', desc: 'Subject-verb agreement, verb tense, and irregular verbs', status: 'completed' },
-  { id: 'pronouns', section: 'english', title: 'Chapter 5: Who vs Whom', desc: 'Pronoun case, who vs. whom, pronoun agreement, and ambiguous pronouns', status: 'in-progress' },
-  { id: 'modifiers', section: 'english', title: 'Chapter 6: Dangling Modifiers', desc: 'Identifying and correcting misplaced modifiers in sentences', status: 'not-started' },
-  { id: 'parallel-structure', section: 'english', title: 'Chapter 7: Lists and Comparisons', desc: 'Parallel structure in lists and comparisons', status: 'in-progress' },
-  { id: 'misc-topics', section: 'english', title: 'Chapter 8: Confused Words', desc: 'Commonly confused words, active vs. passive voice, and prepositional idioms', status: 'in-progress' },
-  { id: 'grammar-review', section: 'english', title: 'Grammar Review', desc: 'Comprehensive review of all grammar concepts', status: 'not-started' },
-  { id: 'redundancy', section: 'english', title: 'Chapter 9: Eliminating Wordiness', desc: 'Identifying and eliminating redundant and wordy expressions', status: 'in-progress' },
-  { id: 'word-choice', section: 'english', title: 'Chapter 10: Precise Language', desc: 'Selecting the clearest and most precise words in context', status: 'in-progress' },
-  { id: 'transitions', section: 'english', title: 'Chapter 11: Logical Connections', desc: 'Choosing logical transitions between sentences and paragraphs', status: 'not-started' },
-  { id: 'which-choice', section: 'english', title: 'Chapter 12: Best Choice', desc: 'Answering specific "which choice" questions about content', status: 'in-progress' },
-  { id: 'adding-deleting', section: 'english', title: 'Chapter 13: Adding or Deleting', desc: 'Determining when to add or delete information from passages', status: 'not-started' },
-  { id: 'logical-placement', section: 'english', title: 'Chapter 14: Sentence Order', desc: 'Placing sentences in the most logical order within paragraphs', status: 'in-progress' },
+  { id: 'sentence-structure', section: 'english', title: 'Chapter 1: Independent vs Dependent', desc: 'Master clause recognition and sentence structure fundamentals', tags: ['independent clauses', 'dependent clauses', 'sentence fragments', 'comma splices', 'FANBOYS', 'compound sentences'], status: 'in-progress' },
+  { id: 'commas', section: 'english', title: 'Chapter 2: Four Comma Types', desc: 'Master all comma rules and avoid common comma errors', tags: ['introductory commas', 'unnecessary information commas', 'list commas', 'Oxford comma', 'restrictive vs nonrestrictive'], status: 'completed' },
+  { id: 'punctuation', section: 'english', title: 'Chapter 3: Advanced Punctuation', desc: 'Master semicolons, colons, dashes, apostrophes, and quotation marks', tags: ['semicolons', 'colons', 'dashes', 'apostrophes', 'contractions'], status: 'completed' },
+  { id: 'verbs', section: 'english', title: 'Chapter 4: Subject-Verb Agreement', desc: 'Master subject-verb agreement and verb tense consistency', tags: ['subject-verb agreement', 'verb tenses', 'collective nouns', 'indefinite pronouns'], status: 'completed' },
+  { id: 'pronouns', section: 'english', title: 'Chapter 5: Who vs Whom', desc: 'Master pronoun case, agreement, and clarity', tags: ['who vs whom', 'pronoun agreement', 'ambiguous pronouns'], status: 'in-progress' },
+  { id: 'modifiers', section: 'english', title: 'Chapter 6: Dangling Modifiers', desc: 'Identify and fix misplaced and dangling modifiers', tags: ['dangling modifiers', 'misplaced modifiers'], status: 'not-started' },
+  { id: 'parallel-structure', section: 'english', title: 'Chapter 7: Parallel Structure', desc: 'Master parallel structure in lists, series, and comparisons', tags: ['parallel structure', 'correlative conjunctions'], status: 'in-progress' },
+  { id: 'misc-topics', section: 'english', title: 'Chapter 8: Word Choice & Usage', desc: 'Master commonly confused words and usage rules', tags: ['its vs it\'s', 'there their they\'re', 'affect vs effect', 'than vs then'], status: 'in-progress' },
+  { id: 'grammar-review', section: 'english', title: 'Grammar Review', desc: 'Comprehensive review of all English grammar concepts', tags: ['comprehensive review'], status: 'not-started' },
+  { id: 'redundancy', section: 'english', title: 'Chapter 9: Eliminating Wordiness', desc: 'Identify and eliminate redundant and wordy expressions', tags: ['wordiness', 'redundancy'], status: 'in-progress' },
+  { id: 'word-choice', section: 'english', title: 'Chapter 10: Precise Language', desc: 'Select the most precise and effective words in context', tags: ['word choice', 'tone and style'], status: 'in-progress' },
+  { id: 'transitions', section: 'english', title: 'Chapter 11: Logical Connections', desc: 'Master transitions and logical flow between ideas', tags: ['transitions', 'logical connections'], status: 'not-started' },
+  { id: 'which-choice', section: 'english', title: 'Chapter 12: Best Choice', desc: 'Answer rhetorical strategy and content questions', tags: ['author\'s purpose', 'supporting details', 'main idea'], status: 'in-progress' },
+  { id: 'adding-deleting', section: 'english', title: 'Chapter 13: Adding or Deleting', desc: 'Determine when to add or delete information for clarity', tags: ['adding information', 'deleting information', 'relevance'], status: 'not-started' },
+  { id: 'logical-placement', section: 'english', title: 'Chapter 14: Sentence Order', desc: 'Organize sentences for optimal logical flow', tags: ['sentence order', 'logical sequence'], status: 'in-progress' },
 
   // Math Section - Most Common Topics
-  { id: 'backsolving', section: 'math', title: 'Chapter 1: Backsolving', desc: 'Powerful test-taking trick for working backwards from answer choices', status: 'not-started' },
-  { id: 'substitution', section: 'math', title: 'Chapter 2: Substitution', desc: 'Test-taking strategy for plugging in values', status: 'not-started' },
-  { id: 'geometry-angles', section: 'math', title: 'Chapter 3: Geometry Part 1 - Angles', desc: 'Intersecting lines, parallel lines, interior angles', status: 'not-started' },
-  { id: 'geometry-shapes', section: 'math', title: 'Chapter 4: Geometry Part 2 - Shapes', desc: 'Area, volume, right triangles, special triangles', status: 'not-started' },
+  { id: 'backsolving', section: 'math', title: 'Chapter 1: Backsolving', desc: 'Master the backsolving strategy for multiple-choice questions', tags: ['backsolving', 'working backwards', 'answer choices', 'test-taking strategies', 'elimination method', 'reverse solving'], status: 'not-started' },
+  { id: 'substitution', section: 'math', title: 'Chapter 2: Substitution', desc: 'Master the substitution strategy for complex problems', tags: ['substitution', 'plugging in values', 'test values', 'variable substitution', 'number picking', 'strategic guessing'], status: 'not-started' },
+  { id: 'geometry-angles', section: 'math', title: 'Chapter 3: Geometry Part 1 - Angles', desc: 'Master angle relationships and properties', tags: ['angles', 'intersecting lines', 'parallel lines', 'interior angles', 'exterior angles', 'vertical angles', 'supplementary angles', 'complementary angles', 'angle bisectors'], status: 'not-started' },
+  { id: 'geometry-shapes', section: 'math', title: 'Chapter 4: Geometry Part 2 - Shapes', desc: 'Master area, volume, and triangle properties', tags: ['area formulas', 'volume formulas', 'right triangles', 'special triangles', 'Pythagorean theorem', '45-45-90 triangles', '30-60-90 triangles', 'circles', 'polygons'], status: 'not-started' },
   { id: 'lines', section: 'math', title: 'Chapter 5: Lines', desc: 'Slope, equations of lines, midpoint, distance formulas', status: 'not-started' },
   { id: 'fractions', section: 'math', title: 'Chapter 6: Fractions', desc: 'Operations with fractions and calculator techniques', status: 'not-started' },
-  { id: 'algebra-skills', section: 'math', title: 'Chapter 7: Algebra Skills', desc: 'PEMDAS, negative numbers, combining terms', status: 'not-started' },
+  { id: 'algebra-skills', section: 'math', title: 'Chapter 7: Algebra Skills', desc: 'Master fundamental algebra operations and order of operations', tags: ['PEMDAS', 'order of operations', 'negative numbers', 'combining like terms', 'distributive property', 'factoring', 'algebraic expressions', 'simplifying expressions'], status: 'not-started' },
   { id: 'number-theory', section: 'math', title: 'Chapter 8: Number Theory', desc: 'Types of numbers, GCD, LCM, solution types', status: 'not-started' },
   { id: 'percentages', section: 'math', title: 'Chapter 9: Percentages', desc: 'Percentage calculations, increase/decrease', status: 'not-started' },
   { id: 'ratios-proportions', section: 'math', title: 'Chapter 10: Ratios and Proportions', desc: 'Ratio problems, proportions, direct/indirect variation', status: 'not-started' },
