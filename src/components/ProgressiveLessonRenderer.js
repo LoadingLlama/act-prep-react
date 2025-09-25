@@ -285,7 +285,7 @@ const useStyles = createUseStyles({
   },
 });
 
-const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
+const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatusChange }) => {
   const classes = useStyles();
   const [sections, setSections] = useState([]);
   const [currentSection, setCurrentSection] = useState(0);
@@ -316,7 +316,8 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
     setCurrentSectionComplete(false);
     setIsComplete(false);
     setQuizCompletionStatus({});
-    setSectionStatusOverride({}); // Clear status overrides on lesson change
+    setTextCompletionStatus({});
+    setSectionStatusOverride({});
 
     // COMPLETELY REWRITE the quiz processing - much simpler approach
     const processedSections = [];
@@ -354,6 +355,7 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
     sectionRefs.current = processedSections.map((_, i) => sectionRefs.current[i] || React.createRef());
   }, [lesson]);
 
+
   const getQuizData = (quizId) => {
     const quizzes = {
       1: {
@@ -390,6 +392,14 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
               { text: "Independent clause", isCorrect: false, explanation: "'Because' creates a dependent relationship - this cannot stand alone." },
               { text: "Dependent clause", isCorrect: true, explanation: "Exactly! 'Because' is a subordinating conjunction that makes this clause dependent." },
               { text: "Phrase", isCorrect: false, explanation: "This has a subject (she) and verb (studied), so it's a clause." }
+            ]
+          },
+          {
+            text: "Identify the type: <strong>In the garden</strong>",
+            options: [
+              { text: "Independent clause", isCorrect: false, explanation: "This has no subject or verb - it cannot be a clause." },
+              { text: "Dependent clause", isCorrect: false, explanation: "This is not a clause at all since it lacks both a subject and a finite verb." },
+              { text: "Phrase", isCorrect: true, explanation: "Perfect! This is a prepositional phrase with no subject or verb." }
             ]
           }
         ]
@@ -468,6 +478,22 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
               { text: "I love reading books; my sister prefers movies.", isCorrect: true, explanation: "Excellent! Semicolon correctly separates two independent clauses." },
               { text: "I love reading books my sister prefers movies.", isCorrect: false, explanation: "This is a run-on sentence. Independent clauses need separation." }
             ]
+          },
+          {
+            text: "What's the difference between these two sentences?<br/><br/><div style='text-align: center; font-style: italic; background: rgba(26, 115, 232, 0.05); padding: 0.75rem; border-radius: 8px; margin: 0.5rem 0;'>Sentence A: 'While studying for the test.'<br/>Sentence B: 'While I was studying for the test.'</div>",
+            options: [
+              { text: "Both are complete sentences", isCorrect: false, explanation: "Sentence A is missing a subject - 'while studying' has no clear subject performing the action." },
+              { text: "A is a phrase, B is a dependent clause", isCorrect: true, explanation: "Excellent! A lacks a clear subject (phrase), while B has 'I' as subject + 'was studying' as verb (dependent clause)." },
+              { text: "Both are dependent clauses", isCorrect: false, explanation: "Sentence A is actually a phrase because it doesn't have a clear subject and finite verb." }
+            ]
+          },
+          {
+            text: "Advanced Challenge: Identify the error pattern in this sentence:<br/><br/><div style='text-align: center; font-style: italic; background: rgba(26, 115, 232, 0.05); padding: 0.75rem; border-radius: 8px; margin: 0.5rem 0;'>'The students working on the project, they finished early.'</div>",
+            options: [
+              { text: "Run-on sentence", isCorrect: false, explanation: "This isn't a run-on - there's actually a comma separating the parts." },
+              { text: "Comma splice with unclear structure", isCorrect: true, explanation: "Perfect analysis! 'The students working on the project' is unclear (phrase?), and 'they finished early' creates a comma splice pattern." },
+              { text: "Missing conjunction only", isCorrect: false, explanation: "The bigger issue is the unclear structure of the first part - it's not a clear independent clause." }
+            ]
           }
         ]
       },
@@ -513,6 +539,14 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
               { text: "Because the weather was perfect, we decided to have a picnic. It was the best day ever.", isCorrect: true, explanation: "Masterful! Fixed the comma splice by separating the last independent clause with a period." },
               { text: "Because the weather was perfect we decided to have a picnic, it was the best day ever.", isCorrect: false, explanation: "Still has comma splice and missing comma after dependent clause." },
               { text: "Because the weather was perfect, we decided to have a picnic; it was the best day ever.", isCorrect: false, explanation: "While semicolon fixes comma splice, this creates an awkward break in thought flow." }
+            ]
+          },
+          {
+            text: "Ultimate Mastery: Which sentence demonstrates perfect understanding of ALL the rules?<br/><br/><div style='text-align: center; font-style: italic; background: rgba(26, 115, 232, 0.05); padding: 0.75rem; border-radius: 8px; margin: 0.5rem 0;'>Choose the sentence that uses dependent clauses, independent clauses, proper punctuation, and FANBOYS correctly.</div>",
+            options: [
+              { text: "Although the test was difficult, Sarah studied hard, and she earned an A.", isCorrect: true, explanation: "Perfect mastery! Dependent clause (Although...) + comma + independent clause + comma + FANBOYS + independent clause. This shows complete understanding of all sentence structure rules." },
+              { text: "Although the test was difficult Sarah studied hard, and she earned an A.", isCorrect: false, explanation: "Missing comma after the dependent clause 'Although the test was difficult.'" },
+              { text: "Although the test was difficult, Sarah studied hard and she earned an A.", isCorrect: false, explanation: "Missing comma before 'and' when joining two independent clauses with FANBOYS." }
             ]
           }
         ]
@@ -611,9 +645,13 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
             return;
           }
 
-          // If at last section, mark as complete but don't auto-finish
+          // If at last section and truly complete, mark lesson as complete
           if (currentSection === sections.length - 1) {
-            setIsComplete(true);
+            const lastSection = sections[currentSection];
+            // Only mark complete if it's not a quiz, or if it's a completed quiz
+            if (lastSection.type !== 'quiz' || quizCompletionStatus[currentSection]) {
+              setIsComplete(true);
+            }
           }
         }
       }
@@ -626,18 +664,12 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
   const handleSectionClick = (index) => {
     // Allow clicking on any section that has been made visible (rendered on screen)
     if (index <= visibleSections - 1) {
-      // Pure scroll function with proper positioning
       if (sectionRefs.current[index]) {
-        const element = sectionRefs.current[index];
-        const rect = element.getBoundingClientRect();
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        // Calculate target position with offset for fixed elements
-        const targetY = rect.top + scrollTop - 120; // 120px offset for progress bar and margin
-
-        window.scrollTo({
-          top: Math.max(0, targetY), // Prevent negative scroll
-          behavior: 'smooth'
+        // Use 'center' to properly center the content in the viewport
+        sectionRefs.current[index].scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+          inline: 'nearest'
         });
       }
     }
@@ -663,6 +695,11 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
   // Handle lesson completion with button animation
   const handleLessonComplete = () => {
     setIsCompleting(true);
+
+    // Update status to completed immediately
+    if (onStatusChange) {
+      onStatusChange('completed');
+    }
 
     // After button animation completes, exit to lesson tab
     setTimeout(() => {
@@ -703,8 +740,20 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
         maxLoadedSection={visibleSections - 1}
         sectionStatus={getSectionDisplayStatus()}
         onStatusChange={(status) => {
-          // Only update the display override, don't affect lesson flow
+          // Update both local display and global lesson status
           setSectionStatusOverride(prev => ({ ...prev, [currentSection]: status }));
+
+          // Update the global lesson status via callback
+          if (onStatusChange) {
+            onStatusChange(status);
+          }
+
+          // Handle status-specific state changes
+          if (status === 'completed') {
+            setIsComplete(true);
+          } else if (status === 'in_progress') {
+            setIsComplete(false);
+          }
         }}
         typingSpeed={typingSpeed}
         onSpeedChange={setTypingSpeed}
@@ -808,8 +857,9 @@ const ProgressiveLessonRenderer = ({ lesson, onComplete }) => {
               </div>
             </div>
           )}
-          {/* Complete button - only show for last section when complete */}
-          {index === currentSection && index === sections.length - 1 && currentSectionComplete && (
+          {/* Complete button - only show for last section when truly complete */}
+          {index === currentSection && index === sections.length - 1 && currentSectionComplete &&
+           (section.type !== 'quiz' || quizCompletionStatus[index]) && (
             <div style={{ textAlign: 'center', marginTop: '2rem' }}>
               <button
                 className={`${classes.completeButton} ${isCompleting ? 'completing' : ''}`}

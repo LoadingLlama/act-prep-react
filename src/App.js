@@ -41,7 +41,6 @@ function App() {
     storage.set('actPrepProgress', newProgress);
   };
 
-
   const getLessonStatus = (lessonId) => {
     return lessonProgress[lessonId] || 'not-started';
   };
@@ -308,9 +307,13 @@ function App() {
               {lesson ? (
                 <ProgressiveLessonRenderer
                   lesson={lesson}
+                  initialStatus={getLessonStatus(currentLesson)}
                   onComplete={() => {
                     updateLessonProgress(currentLesson, 'completed');
                     closeLessonModal();
+                  }}
+                  onStatusChange={(status) => {
+                    updateLessonProgress(currentLesson, status);
                   }}
                 />
               ) : (
