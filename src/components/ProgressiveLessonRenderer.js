@@ -326,7 +326,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
     const contentWithQuizzes = lesson.content;
 
     // Split by ALL quiz markers at once
-    const allParts = contentWithQuizzes.split(/(<!-- QUIZ_[1-4] -->)/);
+    const allParts = contentWithQuizzes.split(/(<!-- QUIZ_[1-6] -->)/);
 
     allParts.forEach((part, index) => {
       if (!part.trim()) return;

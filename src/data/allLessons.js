@@ -57,7 +57,7 @@ export const allLessons = {
 </div>
 
 <div class="section">
-    <h3>Step 1: Independent Clauses (The Complete Thoughts)</h3>
+    <h3>Step 1: <span style="color: #22c55e; font-weight: 600;">Independent Clauses</span> (The Complete Thoughts)</h3>
 
     <div class="concept-box">
         <h4>💡 Core Definition</h4>
@@ -84,7 +84,7 @@ export const allLessons = {
 </div>
 
 <div class="section">
-    <h3>Step 2: Dependent Clauses (The Incomplete Thoughts)</h3>
+    <h3>Step 2: <span style="color: #ef4444; font-weight: 600;">Dependent Clauses</span> (The Incomplete Thoughts)</h3>
 
     <div class="concept-box">
         <h4>💡 Core Definition</h4>
@@ -127,7 +127,7 @@ export const allLessons = {
 <!-- QUIZ_5 -->
 
 <div class="section">
-    <h3>Step 3: Clauses vs Phrases - The Foundation Concept</h3>
+    <h3>Step 3: <span style="color: #3b82f6; font-weight: 600;">Clauses vs Phrases</span> - The Foundation Concept</h3>
 
     <div class="concept-box">
         <h4>💡 The Critical Distinction</h4>
