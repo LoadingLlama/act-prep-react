@@ -37,12 +37,12 @@ export const allLessons = {
   },
 
   'sentence-structure': {
-    title: 'Chapter 1: Sentence Structure',
+    title: 'Chapter 1: Independent vs Dependent',
     duration: 20, // minutes
     content: `
 <div class="lesson-header">
-    <h2>Chapter 1: Sentence Structure</h2>
-    <p class="lesson-intro">Master the foundation of ACT English success by learning to identify sentence parts and the rules for combining them correctly. This chapter covers <strong>20% of all English questions</strong>—making it one of the most important topics to master!</p>
+    <h2>Chapter 1: Independent vs Dependent</h2>
+    <p class="lesson-intro">Master the foundation of ACT English success by learning to identify independent clauses, dependent clauses, compound sentences, and comma splices. This chapter covers <strong>20% of all English questions</strong>—making it one of the most important topics to master!</p>
 </div>
 
 <div class="section why-important">
@@ -480,9 +480,701 @@ export const allLessons = {
 
   // Placeholder for remaining lessons
   'punctuation': {
-    title: 'Chapter 3: Other Punctuation',
-    duration: 8, // minutes
-    content: `<p>This lesson will cover semicolons, colons, dashes, apostrophes, and quotation marks.</p>`
+    title: 'Chapter 3: Advanced Punctuation',
+    duration: 15, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 3: Advanced Punctuation</h2>
+    <p class="lesson-intro">Master semicolons, colons, dashes, apostrophes, and quotation marks to handle the trickiest punctuation questions on the ACT English test.</p>
+</div>
+
+<div class="section">
+    <h3>Semicolons: The Super Comma</h3>
+    <p>Semicolons have two main uses on the ACT:</p>
+
+    <div class="concept-box">
+        <h4>Rule 1: Joining Independent Clauses</h4>
+        <p>Use a semicolon to connect two independent clauses without a conjunction.</p>
+        <div class="examples">
+            <p><strong>Correct:</strong> I love reading books; my sister prefers movies.</p>
+            <p><strong>Incorrect:</strong> I love reading books, my sister prefers movies. <em>(comma splice)</em></p>
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h4>Rule 2: Super Lists</h4>
+        <p>Use semicolons to separate items in a list when the items already contain commas.</p>
+        <div class="examples">
+            <p><strong>Example:</strong> The conference included speakers from Portland, Oregon; Austin, Texas; and Miami, Florida.</p>
+        </div>
+    </div>
+</div>
+
+<!-- QUIZ_1 -->
+
+<div class="section">
+    <h3>Colons: The Introducer</h3>
+    <p>Colons introduce what comes after them. The part before the colon must be an independent clause.</p>
+
+    <div class="concept-box">
+        <h4>What Colons Can Introduce:</h4>
+        <ul>
+            <li><strong>Lists:</strong> I need three things: milk, eggs, and bread.</li>
+            <li><strong>Explanations:</strong> The reason is simple: hard work pays off.</li>
+            <li><strong>Quotes:</strong> Shakespeare wrote: "To be or not to be."</li>
+        </ul>
+    </div>
+
+    <div class="pro-tip">
+        <p><strong>PRO TIP:</strong> Before the colon must be a complete sentence. Test by reading only the part before the colon—does it make sense alone?</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Dashes: The Dramatic Pause</h3>
+    <p>Dashes can replace commas, colons, or parentheses for emphasis.</p>
+
+    <div class="concept-box">
+        <h4>Common Uses:</h4>
+        <ul>
+            <li><strong>Sudden break:</strong> The weather was perfect—until it started raining.</li>
+            <li><strong>Emphasis:</strong> She had one goal—to win the championship.</li>
+            <li><strong>Interruption:</strong> The movie—despite poor reviews—was entertaining.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- QUIZ_2 -->
+    `
+  },
+
+  'verbs': {
+    title: 'Chapter 4: Subject-Verb Agreement',
+    duration: 20, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 4: Subject-Verb Agreement</h2>
+    <p class="lesson-intro">Master subject-verb agreement, verb tense, and irregular verbs to tackle one of the most tested grammar concepts on the ACT English section.</p>
+</div>
+
+<div class="section">
+    <h3>The Basic Rule</h3>
+    <p>Subjects and verbs must agree in number: <strong>singular subjects take singular verbs, plural subjects take plural verbs.</strong></p>
+
+    <div class="concept-box">
+        <h4>Simple Examples:</h4>
+        <ul>
+            <li><strong>Correct:</strong> The cat <em>runs</em> quickly. (singular)</li>
+            <li><strong>Correct:</strong> The cats <em>run</em> quickly. (plural)</li>
+            <li><strong>Incorrect:</strong> The cat <em>run</em> quickly.</li>
+            <li><strong>Incorrect:</strong> The cats <em>runs</em> quickly.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Tricky Situations on the ACT</h3>
+    <p>The ACT makes subject-verb agreement harder by separating subjects and verbs with distracting phrases.</p>
+
+    <div class="concept-box">
+        <h4>Rule: Ignore Prepositional Phrases</h4>
+        <p>The verb agrees with the subject, not with nouns in prepositional phrases.</p>
+        <div class="examples">
+            <p><strong>Example:</strong> The box <em>of chocolates</em> <strong>is</strong> on the table.</p>
+            <p><em>Subject: box (singular) → verb: is (singular)</em></p>
+            <p><em>"of chocolates" is a prepositional phrase and doesn't affect the verb</em></p>
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h4>Compound Subjects</h4>
+        <p>When subjects are joined by "and," they're plural. When joined by "or/nor," the verb agrees with the closest subject.</p>
+        <div class="examples">
+            <p><strong>And = Plural:</strong> Sarah and Mike <em>are</em> coming.</p>
+            <p><strong>Or = Closest:</strong> Either the teacher or the students <em>are</em> responsible.</p>
+            <p><strong>Or = Closest:</strong> Either the students or the teacher <em>is</em> responsible.</p>
+        </div>
+    </div>
+</div>
+
+<!-- QUIZ_1 -->
+
+<div class="section">
+    <h3>Irregular Verb Forms</h3>
+    <p>Some verbs have irregular past tenses and past participles that you must memorize.</p>
+
+    <div class="concept-box">
+        <h4>Most Common Irregular Verbs on the ACT:</h4>
+        <div class="verb-table">
+            <table>
+                <tr><th>Present</th><th>Past</th><th>Past Participle</th></tr>
+                <tr><td>begin</td><td>began</td><td>begun</td></tr>
+                <tr><td>break</td><td>broke</td><td>broken</td></tr>
+                <tr><td>choose</td><td>chose</td><td>chosen</td></tr>
+                <tr><td>eat</td><td>ate</td><td>eaten</td></tr>
+                <tr><td>go</td><td>went</td><td>gone</td></tr>
+                <tr><td>see</td><td>saw</td><td>seen</td></tr>
+                <tr><td>take</td><td>took</td><td>taken</td></tr>
+                <tr><td>write</td><td>wrote</td><td>written</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- QUIZ_2 -->
+    `
+  },
+
+  'pronouns': {
+    title: 'Chapter 5: Who vs Whom',
+    duration: 22, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 5: Who vs Whom</h2>
+    <p class="lesson-intro">Master pronoun case, who vs. whom, pronoun agreement, and ambiguous pronouns to handle the trickiest pronoun questions on the ACT.</p>
+</div>
+
+<div class="section">
+    <h3>Who vs. Whom: The Simple Trick</h3>
+    <p>This is one of the most feared grammar topics, but it's actually simple with the right approach.</p>
+
+    <div class="concept-box">
+        <h4>The "He/Him" Test</h4>
+        <p>Replace the who/whom with "he" or "him." If "he" sounds right, use "who." If "him" sounds right, use "whom."</p>
+        <div class="examples">
+            <p><strong>Question:</strong> <em>Who/Whom</em> did you see?</p>
+            <p><strong>Test:</strong> You saw <em>him</em>. (not "he")</p>
+            <p><strong>Answer:</strong> <em>Whom</em> did you see?</p>
+        </div>
+        <div class="examples">
+            <p><strong>Question:</strong> <em>Who/Whom</em> is coming to dinner?</p>
+            <p><strong>Test:</strong> <em>He</em> is coming. (not "him")</p>
+            <p><strong>Answer:</strong> <em>Who</em> is coming to dinner?</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Pronoun Case</h3>
+    <p>Pronouns change form based on whether they're subjects or objects.</p>
+
+    <div class="concept-box">
+        <h4>Subject vs. Object Pronouns</h4>
+        <table>
+            <tr><th>Subject</th><th>Object</th></tr>
+            <tr><td>I</td><td>me</td></tr>
+            <tr><td>you</td><td>you</td></tr>
+            <tr><td>he</td><td>him</td></tr>
+            <tr><td>she</td><td>her</td></tr>
+            <tr><td>we</td><td>us</td></tr>
+            <tr><td>they</td><td>them</td></tr>
+        </table>
+    </div>
+
+    <div class="pro-tip">
+        <p><strong>PRO TIP:</strong> With compound subjects/objects, remove the other person: "Jim and I" → "I went" (not "me went")</p>
+    </div>
+</div>
+
+<!-- QUIZ_1 -->
+
+<div class="section">
+    <h3>Pronoun Agreement</h3>
+    <p>Pronouns must agree with their antecedents in number and gender.</p>
+
+    <div class="concept-box">
+        <h4>Common Agreement Errors:</h4>
+        <div class="examples">
+            <p><strong>Wrong:</strong> Each student must bring <em>their</em> book.</p>
+            <p><strong>Right:</strong> Each student must bring <em>his or her</em> book.</p>
+            <p><em>("Each" is singular, so the pronoun must be singular)</em></p>
+        </div>
+    </div>
+</div>
+
+<!-- QUIZ_2 -->
+    `
+  },
+
+  'modifiers': {
+    title: 'Chapter 6: Dangling Modifiers',
+    duration: 18, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 6: Dangling Modifiers</h2>
+    <p class="lesson-intro">Learn to identify and correct misplaced modifiers that create confusing or unintentionally funny sentences.</p>
+</div>
+
+<div class="section">
+    <h3>What Are Modifiers?</h3>
+    <p>Modifiers are words or phrases that describe other words. They must be placed next to what they modify.</p>
+
+    <div class="concept-box">
+        <h4>The Golden Rule</h4>
+        <p><strong>Modifiers must be placed as close as possible to what they modify.</strong></p>
+        <div class="examples">
+            <p><strong>Wrong:</strong> Walking down the street, the trees looked beautiful.</p>
+            <p><em>(This suggests the trees were walking!)</em></p>
+            <p><strong>Right:</strong> Walking down the street, I noticed the trees looked beautiful.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Types of Modifier Errors</h3>
+
+    <div class="concept-box">
+        <h4>1. Dangling Modifiers</h4>
+        <p>The modifier doesn't clearly refer to any word in the sentence.</p>
+        <div class="examples">
+            <p><strong>Wrong:</strong> Having finished homework, the TV was turned on.</p>
+            <p><strong>Right:</strong> Having finished homework, Sarah turned on the TV.</p>
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h4>2. Misplaced Modifiers</h4>
+        <p>The modifier is in the wrong position, creating confusion.</p>
+        <div class="examples">
+            <p><strong>Wrong:</strong> She almost drove her kids to school every day.</p>
+            <p><em>(She "almost drove" or drove "almost every day"?)</em></p>
+            <p><strong>Right:</strong> She drove her kids to school almost every day.</p>
+        </div>
+    </div>
+</div>
+
+<!-- QUIZ_1 -->
+    `
+  },
+
+  'parallel-structure': {
+    title: 'Chapter 7: Lists and Comparisons',
+    duration: 16, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 7: Lists and Comparisons</h2>
+    <p class="lesson-intro">Master parallel structure in lists and comparisons to create clear, balanced sentences that flow naturally.</p>
+</div>
+
+<div class="section">
+    <h3>The Parallel Structure Rule</h3>
+    <p>Items in a list or comparison must have the same grammatical structure.</p>
+
+    <div class="concept-box">
+        <h4>Basic Parallel Structure</h4>
+        <div class="examples">
+            <p><strong>Wrong:</strong> I like swimming, running, and to bike.</p>
+            <p><strong>Right:</strong> I like swimming, running, and biking.</p>
+            <p><em>(All -ing words)</em></p>
+        </div>
+        <div class="examples">
+            <p><strong>Wrong:</strong> She is smart, funny, and has talent.</p>
+            <p><strong>Right:</strong> She is smart, funny, and talented.</p>
+            <p><em>(All adjectives)</em></p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Comparisons</h3>
+    <p>When comparing two things, both sides of the comparison must be parallel.</p>
+
+    <div class="concept-box">
+        <h4>Comparison Structures</h4>
+        <div class="examples">
+            <p><strong>Wrong:</strong> Reading books is better than to watch TV.</p>
+            <p><strong>Right:</strong> Reading books is better than watching TV.</p>
+        </div>
+        <div class="examples">
+            <p><strong>Wrong:</strong> I prefer coffee to drinking tea.</p>
+            <p><strong>Right:</strong> I prefer coffee to tea.</p>
+            <p><strong>Also Right:</strong> I prefer drinking coffee to drinking tea.</p>
+        </div>
+    </div>
+</div>
+
+<!-- QUIZ_1 -->
+    `
+  },
+
+  'misc-topics': {
+    title: 'Chapter 8: Confused Words',
+    duration: 20, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 8: Confused Words</h2>
+    <p class="lesson-intro">Learn commonly confused words, active vs. passive voice, and prepositional idioms that frequently appear on the ACT.</p>
+</div>
+
+<div class="section">
+    <h3>Most Common Word Pairs</h3>
+
+    <div class="concept-box">
+        <h4>Their vs. There vs. They're</h4>
+        <ul>
+            <li><strong>Their</strong> = possession (Their car is red)</li>
+            <li><strong>There</strong> = place (The book is there)</li>
+            <li><strong>They're</strong> = they are (They're coming tonight)</li>
+        </ul>
+    </div>
+
+    <div class="concept-box">
+        <h4>Its vs. It's</h4>
+        <ul>
+            <li><strong>Its</strong> = possession (The dog wagged its tail)</li>
+            <li><strong>It's</strong> = it is (It's raining outside)</li>
+        </ul>
+    </div>
+
+    <div class="concept-box">
+        <h4>Effect vs. Affect</h4>
+        <ul>
+            <li><strong>Effect</strong> = noun (The effect was dramatic)</li>
+            <li><strong>Affect</strong> = verb (Rain will affect our plans)</li>
+        </ul>
+    </div>
+</div>
+
+<!-- QUIZ_1 -->
+
+<div class="section">
+    <h3>Active vs. Passive Voice</h3>
+    <p>The ACT prefers active voice because it's more direct and clear.</p>
+
+    <div class="concept-box">
+        <h4>Voice Comparison</h4>
+        <div class="examples">
+            <p><strong>Passive:</strong> The ball was thrown by Sarah.</p>
+            <p><strong>Active:</strong> Sarah threw the ball.</p>
+            <p><em>(Active is better - more direct and concise)</em></p>
+        </div>
+    </div>
+</div>
+
+<!-- QUIZ_2 -->
+    `
+  },
+
+  'grammar-review': {
+    title: 'Grammar Review',
+    duration: 25, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Grammar Review</h2>
+    <p class="lesson-intro">Comprehensive review of all grammar concepts covered in previous chapters to solidify your understanding.</p>
+</div>
+
+<div class="section">
+    <h3>Quick Review: The Big 5 Grammar Rules</h3>
+
+    <div class="concept-box">
+        <h4>1. Independent vs. Dependent Clauses</h4>
+        <p>Independent clauses can stand alone; dependent clauses cannot.</p>
+    </div>
+
+    <div class="concept-box">
+        <h4>2. Comma Rules</h4>
+        <p>Four types: FANBOYS, unnecessary info, names, and lists.</p>
+    </div>
+
+    <div class="concept-box">
+        <h4>3. Subject-Verb Agreement</h4>
+        <p>Singular subjects get singular verbs; plural subjects get plural verbs.</p>
+    </div>
+
+    <div class="concept-box">
+        <h4>4. Pronoun Case</h4>
+        <p>Use subject pronouns for subjects, object pronouns for objects.</p>
+    </div>
+
+    <div class="concept-box">
+        <h4>5. Parallel Structure</h4>
+        <p>Items in lists must have the same grammatical form.</p>
+    </div>
+</div>
+
+<!-- QUIZ_1 -->
+    `
+  },
+
+  'redundancy': {
+    title: 'Chapter 9: Eliminating Wordiness',
+    duration: 15, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 9: Eliminating Wordiness</h2>
+    <p class="lesson-intro">Learn to identify and eliminate redundant and wordy expressions to make your writing more concise and effective.</p>
+</div>
+
+<div class="section">
+    <h3>The Conciseness Rule</h3>
+    <p>When two answer choices say the same thing, choose the shorter one.</p>
+
+    <div class="concept-box">
+        <h4>Common Redundant Phrases</h4>
+        <ul>
+            <li><strong>Wrong:</strong> completely eliminate → <strong>Right:</strong> eliminate</li>
+            <li><strong>Wrong:</strong> end result → <strong>Right:</strong> result</li>
+            <li><strong>Wrong:</strong> past history → <strong>Right:</strong> history</li>
+            <li><strong>Wrong:</strong> future plans → <strong>Right:</strong> plans</li>
+            <li><strong>Wrong:</strong> join together → <strong>Right:</strong> join</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Wordy Constructions</h3>
+    <p>Replace wordy phrases with concise alternatives.</p>
+
+    <div class="concept-box">
+        <h4>Common Wordy Phrases</h4>
+        <ul>
+            <li><strong>Wordy:</strong> in order to → <strong>Concise:</strong> to</li>
+            <li><strong>Wordy:</strong> due to the fact that → <strong>Concise:</strong> because</li>
+            <li><strong>Wordy:</strong> at this point in time → <strong>Concise:</strong> now</li>
+            <li><strong>Wordy:</strong> in the event that → <strong>Concise:</strong> if</li>
+        </ul>
+    </div>
+</div>
+
+<!-- QUIZ_1 -->
+    `
+  },
+
+  'word-choice': {
+    title: 'Chapter 10: Precise Language',
+    duration: 18, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 10: Precise Language</h2>
+    <p class="lesson-intro">Learn to select the clearest and most precise words in context for maximum clarity and impact.</p>
+</div>
+
+<div class="section">
+    <h3>Choosing the Right Word</h3>
+    <p>Context determines which word fits best in a sentence.</p>
+
+    <div class="concept-box">
+        <h4>Precision vs. Vagueness</h4>
+        <div class="examples">
+            <p><strong>Vague:</strong> The weather was bad.</p>
+            <p><strong>Precise:</strong> The weather was stormy.</p>
+        </div>
+        <div class="examples">
+            <p><strong>Vague:</strong> She walked quickly.</p>
+            <p><strong>Precise:</strong> She hurried.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Tone and Style</h3>
+    <p>Choose words that match the tone and style of the passage.</p>
+
+    <div class="concept-box">
+        <h4>Formal vs. Informal</h4>
+        <div class="examples">
+            <p><strong>Informal:</strong> The scientist guy discovered something cool.</p>
+            <p><strong>Formal:</strong> The researcher made a significant discovery.</p>
+        </div>
+    </div>
+</div>
+
+<!-- QUIZ_1 -->
+    `
+  },
+
+  'transitions': {
+    title: 'Chapter 11: Logical Connections',
+    duration: 16, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 11: Logical Connections</h2>
+    <p class="lesson-intro">Learn to choose logical transitions between sentences and paragraphs to create smooth, coherent flow.</p>
+</div>
+
+<div class="section">
+    <h3>Types of Transitions</h3>
+
+    <div class="concept-box">
+        <h4>Addition/Continuation</h4>
+        <p><strong>Words:</strong> furthermore, additionally, moreover, also</p>
+        <p><strong>Use:</strong> When adding similar ideas</p>
+        <div class="examples">
+            <p>The weather was perfect. <strong>Furthermore</strong>, the forecast looked good for the entire week.</p>
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h4>Contrast</h4>
+        <p><strong>Words:</strong> however, nevertheless, on the other hand, in contrast</p>
+        <p><strong>Use:</strong> When showing opposite ideas</p>
+        <div class="examples">
+            <p>The plan seemed good. <strong>However</strong>, it had several major flaws.</p>
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h4>Cause and Effect</h4>
+        <p><strong>Words:</strong> therefore, consequently, as a result, thus</p>
+        <p><strong>Use:</strong> When showing results</p>
+        <div class="examples">
+            <p>It rained heavily all night. <strong>Consequently</strong>, the game was canceled.</p>
+        </div>
+    </div>
+</div>
+
+<!-- QUIZ_1 -->
+    `
+  },
+
+  'which-choice': {
+    title: 'Chapter 12: Best Choice',
+    duration: 14, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 12: Best Choice</h2>
+    <p class="lesson-intro">Learn to answer specific "which choice" questions about content, focusing on relevance and supporting details.</p>
+</div>
+
+<div class="section">
+    <h3>Types of "Which Choice" Questions</h3>
+
+    <div class="concept-box">
+        <h4>Supporting Detail Questions</h4>
+        <p>These ask which choice best supports the paragraph's main idea.</p>
+        <div class="strategy">
+            <p><strong>Strategy:</strong> Look for the choice that directly relates to and strengthens the main point.</p>
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h4>Specific Information Questions</h4>
+        <p>These ask for particular details like dates, names, or specific facts.</p>
+        <div class="strategy">
+            <p><strong>Strategy:</strong> Choose the most specific and relevant detail that fits the context.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Key Strategies</h3>
+
+    <div class="concept-box">
+        <h4>The RELEVANT Test</h4>
+        <ul>
+            <li><strong>R</strong>elated to the main idea?</li>
+            <li><strong>E</strong>ssential to the paragraph?</li>
+            <li><strong>L</strong>ogical in this context?</li>
+            <li><strong>E</strong>xact and specific?</li>
+            <li><strong>V</strong>aluable addition?</li>
+        </ul>
+    </div>
+</div>
+
+<!-- QUIZ_1 -->
+    `
+  },
+
+  'adding-deleting': {
+    title: 'Chapter 13: Adding or Deleting',
+    duration: 16, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 13: Adding or Deleting</h2>
+    <p class="lesson-intro">Learn when to add or delete information from passages to improve clarity and focus.</p>
+</div>
+
+<div class="section">
+    <h3>When to ADD Information</h3>
+
+    <div class="concept-box">
+        <h4>Add When:</h4>
+        <ul>
+            <li>The information directly supports the main idea</li>
+            <li>It provides necessary context or explanation</li>
+            <li>It helps connect ideas smoothly</li>
+            <li>It adds relevant, interesting details</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h3>When to DELETE Information</h3>
+
+    <div class="concept-box">
+        <h4>Delete When:</h4>
+        <ul>
+            <li>The information is repetitive or redundant</li>
+            <li>It's off-topic or irrelevant to the main idea</li>
+            <li>It interrupts the flow of ideas</li>
+            <li>It's too obvious or unnecessary</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h3>The Decision Process</h3>
+
+    <div class="concept-box">
+        <h4>Ask Yourself:</h4>
+        <ol>
+            <li>What is the paragraph's main idea?</li>
+            <li>Does this information support that idea?</li>
+            <li>Is it already stated elsewhere?</li>
+            <li>Does it help or hurt the flow?</li>
+        </ol>
+    </div>
+</div>
+
+<!-- QUIZ_1 -->
+    `
+  },
+
+  'logical-placement': {
+    title: 'Chapter 14: Sentence Order',
+    duration: 14, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 14: Sentence Order</h2>
+    <p class="lesson-intro">Master placing sentences in the most logical order within paragraphs to create smooth, coherent flow.</p>
+</div>
+
+<div class="section">
+    <h3>Logical Order Principles</h3>
+
+    <div class="concept-box">
+        <h4>Common Organizational Patterns</h4>
+        <ul>
+            <li><strong>Chronological:</strong> Events in time order</li>
+            <li><strong>Spatial:</strong> Geographic or physical arrangement</li>
+            <li><strong>Order of Importance:</strong> Most to least important (or vice versa)</li>
+            <li><strong>General to Specific:</strong> Broad concepts to specific details</li>
+            <li><strong>Cause and Effect:</strong> Causes first, then effects</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Transition Clues</h3>
+
+    <div class="concept-box">
+        <h4>Look for Signal Words</h4>
+        <ul>
+            <li><strong>Time:</strong> first, then, next, finally, meanwhile</li>
+            <li><strong>Addition:</strong> also, furthermore, in addition</li>
+            <li><strong>Contrast:</strong> however, but, on the other hand</li>
+            <li><strong>Example:</strong> for instance, such as, namely</li>
+        </ul>
+    </div>
+
+    <div class="pro-tip">
+        <p><strong>PRO TIP:</strong> The sentence with the most general statement usually comes first, followed by more specific supporting details.</p>
+    </div>
+</div>
+
+<!-- QUIZ_1 -->
+    `
   },
 
   // Math lessons - comprehensive content
@@ -870,21 +1562,21 @@ export const lessonStructure = [
   { id: 'getting-started', section: 'all', title: 'Getting Started with the ACT', desc: 'Test format, timing, and scoring overview', status: 'completed' },
 
   // English Section
-  { id: 'sentence-structure', section: 'english', title: 'Chapter 1: Sentence Structure', desc: 'Independent clauses, dependent clauses, compound sentences, and comma splices', status: 'completed' },
-  { id: 'commas', section: 'english', title: 'Chapter 2: Commas - 4 Types', desc: 'Unnecessary information, names rule, listing commas, and adjective lists', status: 'completed' },
-  { id: 'punctuation', section: 'english', title: 'Chapter 3: Other Punctuation', desc: 'Semicolons, colons, dashes, apostrophes, and quotation marks', status: 'in-progress' },
-  { id: 'verbs', section: 'english', title: 'Chapter 4: Verbs', desc: 'Subject-verb agreement, verb tense, and irregular verbs', status: 'not-started' },
-  { id: 'pronouns', section: 'english', title: 'Chapter 5: Pronouns', desc: 'Pronoun case, who vs. whom, pronoun agreement, and ambiguous pronouns', status: 'not-started' },
-  { id: 'modifiers', section: 'english', title: 'Chapter 6: Misplaced Modifiers', desc: 'Identifying and correcting misplaced modifiers in sentences', status: 'not-started' },
-  { id: 'parallel-structure', section: 'english', title: 'Chapter 7: Parallel Structure', desc: 'Parallel structure in lists and comparisons', status: 'not-started' },
-  { id: 'misc-topics', section: 'english', title: 'Chapter 8: Miscellaneous Topics', desc: 'Commonly confused words, active vs. passive voice, and prepositional idioms', status: 'not-started' },
-  { id: 'grammar-review', section: 'english', title: 'Chapter 9: Grammar Review', desc: 'Comprehensive review of all grammar concepts', status: 'not-started' },
-  { id: 'redundancy', section: 'english', title: 'Chapter 10: Redundancy & Wordiness', desc: 'Identifying and eliminating redundant and wordy expressions', status: 'not-started' },
-  { id: 'word-choice', section: 'english', title: 'Chapter 11: Word Choice', desc: 'Selecting the clearest and most precise words in context', status: 'not-started' },
-  { id: 'transitions', section: 'english', title: 'Chapter 12: Transitions', desc: 'Choosing logical transitions between sentences and paragraphs', status: 'not-started' },
-  { id: 'which-choice', section: 'english', title: 'Chapter 13: Which Choice Questions', desc: 'Answering specific "which choice" questions about content', status: 'not-started' },
-  { id: 'adding-deleting', section: 'english', title: 'Chapter 14: Adding or Deleting Information', desc: 'Determining when to add or delete information from passages', status: 'not-started' },
-  { id: 'logical-placement', section: 'english', title: 'Chapter 15: Logical Placement', desc: 'Placing sentences in the most logical order within paragraphs', status: 'not-started' },
+  { id: 'sentence-structure', section: 'english', title: 'Chapter 1: Independent vs Dependent', desc: 'Independent clauses, dependent clauses, compound sentences, and comma splices', status: 'in-progress' },
+  { id: 'commas', section: 'english', title: 'Chapter 2: Four Comma Types', desc: 'Unnecessary information, names rule, listing commas, and adjective lists', status: 'completed' },
+  { id: 'punctuation', section: 'english', title: 'Chapter 3: Advanced Punctuation', desc: 'Semicolons, colons, dashes, apostrophes, and quotation marks', status: 'completed' },
+  { id: 'verbs', section: 'english', title: 'Chapter 4: Subject-Verb Agreement', desc: 'Subject-verb agreement, verb tense, and irregular verbs', status: 'completed' },
+  { id: 'pronouns', section: 'english', title: 'Chapter 5: Who vs Whom', desc: 'Pronoun case, who vs. whom, pronoun agreement, and ambiguous pronouns', status: 'in-progress' },
+  { id: 'modifiers', section: 'english', title: 'Chapter 6: Dangling Modifiers', desc: 'Identifying and correcting misplaced modifiers in sentences', status: 'not-started' },
+  { id: 'parallel-structure', section: 'english', title: 'Chapter 7: Lists and Comparisons', desc: 'Parallel structure in lists and comparisons', status: 'in-progress' },
+  { id: 'misc-topics', section: 'english', title: 'Chapter 8: Confused Words', desc: 'Commonly confused words, active vs. passive voice, and prepositional idioms', status: 'in-progress' },
+  { id: 'grammar-review', section: 'english', title: 'Grammar Review', desc: 'Comprehensive review of all grammar concepts', status: 'not-started' },
+  { id: 'redundancy', section: 'english', title: 'Chapter 9: Eliminating Wordiness', desc: 'Identifying and eliminating redundant and wordy expressions', status: 'in-progress' },
+  { id: 'word-choice', section: 'english', title: 'Chapter 10: Precise Language', desc: 'Selecting the clearest and most precise words in context', status: 'in-progress' },
+  { id: 'transitions', section: 'english', title: 'Chapter 11: Logical Connections', desc: 'Choosing logical transitions between sentences and paragraphs', status: 'not-started' },
+  { id: 'which-choice', section: 'english', title: 'Chapter 12: Best Choice', desc: 'Answering specific "which choice" questions about content', status: 'in-progress' },
+  { id: 'adding-deleting', section: 'english', title: 'Chapter 13: Adding or Deleting', desc: 'Determining when to add or delete information from passages', status: 'not-started' },
+  { id: 'logical-placement', section: 'english', title: 'Chapter 14: Sentence Order', desc: 'Placing sentences in the most logical order within paragraphs', status: 'in-progress' },
 
   // Math Section - Most Common Topics
   { id: 'backsolving', section: 'math', title: 'Chapter 1: Backsolving', desc: 'Powerful test-taking trick for working backwards from answer choices', status: 'not-started' },
