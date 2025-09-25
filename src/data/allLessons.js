@@ -48,62 +48,16 @@ export const allLessons = {
 <div class="section why-important">
     <h3>Your Learning Path: Four Essential Steps</h3>
     <div class="concept-box">
-        <p><strong>Step 1:</strong> Understand the difference between <span class="clause-highlight">clauses</span> and <span class="phrase-highlight">phrases</span></p>
-        <p><strong>Step 2:</strong> Learn what makes a clause <span class="independent-highlight">independent</span> (complete)</p>
-        <p><strong>Step 3:</strong> Understand what makes a clause <span class="dependent-highlight">dependent</span> (incomplete)</p>
+        <p><strong>Step 1:</strong> Learn what makes a clause <span class="independent-highlight">independent</span> (complete)</p>
+        <p><strong>Step 2:</strong> Understand what makes a clause <span class="dependent-highlight">dependent</span> (incomplete)</p>
+        <p><strong>Step 3:</strong> Understand the difference between <span class="clause-highlight">clauses</span> and <span class="phrase-highlight">phrases</span></p>
         <p><strong>Step 4:</strong> Master the instant recognition technique</p>
         <p><strong>Result:</strong> You'll identify any clause or phrase type in under 3 seconds!</p>
     </div>
 </div>
 
 <div class="section">
-    <h3>Step 1: Clauses vs Phrases - The Foundation Concept</h3>
-
-    <div class="concept-box">
-        <h4>💡 The Critical Distinction</h4>
-        <p><strong><span class="clause-highlight">CLAUSE</span></strong> = Has both a SUBJECT and a VERB</p>
-        <p><strong><span class="phrase-highlight">PHRASE</span></strong> = Missing either a SUBJECT or a VERB (or both)</p>
-        <p><em>This is the #1 concept tested on the ACT - master this and you unlock everything!</em></p>
-    </div>
-
-    <div class="concept-box">
-        <h4>📋 <span class="clause-highlight">Clauses</span> - The Complete Units</h4>
-        <p>Every clause MUST have both a subject and a verb. Think of them as complete "action units."</p>
-
-        <div class="examples">
-            <p><strong>✅ <span class="clause-highlight">Clause</span> Examples (Subject + Verb):</strong></p>
-            <p>• <span style="text-decoration: underline;">The storm</span> <strong>arrived</strong> → Subject + Verb = <span class="clause-highlight">Clause</span> ✓</p>
-            <p>• <span style="text-decoration: underline;">She</span> <strong>studied</strong> → Subject + Verb = <span class="clause-highlight">Clause</span> ✓</p>
-            <p>• <span style="text-decoration: underline;">The cat</span> <strong>sat</strong> on the mat → Subject + Verb = <span class="clause-highlight">Clause</span> ✓</p>
-            <p><em>Notice: Each has someone/something DOING an action or being in a state.</em></p>
-        </div>
-    </div>
-
-    <div class="concept-box">
-        <h4>📋 <span class="phrase-highlight">Phrases</span> - The Incomplete Units</h4>
-        <p>Phrases are missing either a subject, a verb, or both. They're sentence fragments that can't stand alone.</p>
-
-        <div class="examples">
-            <p><strong>✅ <span class="phrase-highlight">Phrase</span> Examples (Missing Subject or Verb):</strong></p>
-            <p>• <strong>Running through the park</strong> → No subject! (Who is running?) = <span class="phrase-highlight">Phrase</span> ✓</p>
-            <p>• <strong>After the game</strong> → No verb! (What happened after?) = <span class="phrase-highlight">Phrase</span> ✓</p>
-            <p>• <strong>In the morning</strong> → No subject or verb! = <span class="phrase-highlight">Phrase</span> ✓</p>
-            <p>• <strong>To study harder</strong> → No subject! (Who should study?) = <span class="phrase-highlight">Phrase</span> ✓</p>
-            <p><em>Notice: These feel incomplete - your brain waits for more information!</em></p>
-        </div>
-    </div>
-
-    <div class="pro-tip">
-        <h4>🎯 The Subject-Verb Test (Works Every Time!)</h4>
-        <p><strong>Step 1:</strong> Look for the subject → "Who or what is this about?"</p>
-        <p><strong>Step 2:</strong> Look for the verb → "What action or state of being?"</p>
-        <p><strong>Step 3:</strong> If you find BOTH → It's a <span class="clause-highlight">CLAUSE</span></p>
-        <p><strong>Step 4:</strong> If you're missing either one → It's a <span class="phrase-highlight">PHRASE</span></p>
-    </div>
-</div>
-
-<div class="section">
-    <h3>Step 2: Independent Clauses (The Complete Thoughts)</h3>
+    <h3>Step 1: Independent Clauses (The Complete Thoughts)</h3>
 
     <div class="concept-box">
         <h4>💡 Core Definition</h4>
@@ -119,9 +73,9 @@ export const allLessons = {
     <div class="concept-box">
         <h4>✅ Perfect Examples (Study These Patterns)</h4>
         <div class="examples">
-            <p><span style="text-decoration: underline;">The dog</span> <strong>chased</strong> <strong>its tail.</strong> ← Perfect! <span class="independent-highlight">Independent clause</span>.</p>
-            <p><span style="text-decoration: underline;">Sarah</span> <strong>baked</strong> <strong>chocolate chip cookies yesterday.</strong> ← Perfect! <span class="independent-highlight">Independent clause</span>.</p>
-            <p><span style="text-decoration: underline;">The rain</span> <strong>stopped.</strong> ← Perfect! <span class="independent-highlight">Independent clause</span> (even with just 2 words!).</p>
+            <p><span class="independent-highlight">The dog chased its tail.</span> ← Perfect! <span class="independent-highlight">Independent clause</span>.</p>
+            <p><span class="independent-highlight">Sarah baked chocolate chip cookies yesterday.</span> ← Perfect! <span class="independent-highlight">Independent clause</span>.</p>
+            <p><span class="independent-highlight">The rain stopped.</span> ← Perfect! <span class="independent-highlight">Independent clause</span> (even with just 2 words!).</p>
         </div>
         <div class="key-insight">
             <p><strong>🎯 Key Insight:</strong> Independent clauses feel complete and satisfying. Your brain doesn't wait for more information!</p>
@@ -130,7 +84,7 @@ export const allLessons = {
 </div>
 
 <div class="section">
-    <h3>Step 3: Dependent Clauses (The Incomplete Thoughts)</h3>
+    <h3>Step 2: Dependent Clauses (The Incomplete Thoughts)</h3>
 
     <div class="concept-box">
         <h4>💡 Core Definition</h4>
@@ -163,13 +117,60 @@ export const allLessons = {
             <p><strong>STEP 1 - <span class="independent-highlight">Independent</span> (Complete):</strong></p>
             <p><strong class="independent-highlight">Sarah baked chocolate chip cookies.</strong> ✅</p>
             <p><em>Perfect! Complete thought. Your brain is satisfied.</em></p>
-
             <p><strong>STEP 2 - Add Subordinating Word (Now <span class="dependent-highlight">Dependent</span>):</strong></p>
             <p><strong class="dependent-highlight">Because Sarah baked chocolate chip cookies...</strong> ❌</p>
             <p><em>Now incomplete! Your brain is waiting: "What happened because she baked cookies?"</em></p>
         </div>
     </div>
 </div>
+
+<!-- QUIZ_5 -->
+
+<div class="section">
+    <h3>Step 3: Clauses vs Phrases - The Foundation Concept</h3>
+
+    <div class="concept-box">
+        <h4>💡 The Critical Distinction</h4>
+        <p><strong><span class="clause-highlight">CLAUSE</span></strong> = Has both a SUBJECT and a VERB</p>
+        <p><strong><span class="phrase-highlight">PHRASE</span></strong> = Missing either a SUBJECT or a VERB (or both)</p>
+        <p><em>This is the #1 concept tested on the ACT - master this and you unlock everything!</em></p>
+    </div>
+
+    <div class="concept-box">
+        <h4>📋 <span class="clause-highlight">Clauses</span> - The Complete Units</h4>
+        <p>Every clause MUST have both a subject and a verb. Think of them as complete "action units."</p>
+        <div class="examples">
+            <p><strong>✅ <span class="clause-highlight">Clause</span> Examples (Subject + Verb):</strong></p>
+            <p>• <span class="clause-highlight">The storm arrived</span> → Subject + Verb = <span class="clause-highlight">Clause</span> ✓</p>
+            <p>• <span class="clause-highlight">She studied</span> → Subject + Verb = <span class="clause-highlight">Clause</span> ✓</p>
+            <p>• <span class="clause-highlight">The cat sat</span> on the mat → Subject + Verb = <span class="clause-highlight">Clause</span> ✓</p>
+            <p><em>Notice: Each has someone/something DOING an action or being in a state.</em></p>
+        </div>
+    </div>
+
+    <div class="concept-box">
+        <h4>📋 <span class="phrase-highlight">Phrases</span> - The Incomplete Units</h4>
+        <p>Phrases are missing either a subject, a verb, or both. They're sentence fragments that can't stand alone.</p>
+        <div class="examples">
+            <p><strong>✅ <span class="phrase-highlight">Phrase</span> Examples (Missing Subject or Verb):</strong></p>
+            <p>• <strong>Running through the park</strong> → No subject! (Who is running?) = <span class="phrase-highlight">Phrase</span> ✓</p>
+            <p>• <strong>After the game</strong> → No verb! (What happened after?) = <span class="phrase-highlight">Phrase</span> ✓</p>
+            <p>• <strong>In the morning</strong> → No subject or verb! = <span class="phrase-highlight">Phrase</span> ✓</p>
+            <p>• <strong>To study harder</strong> → No subject! (Who should study?) = <span class="phrase-highlight">Phrase</span> ✓</p>
+            <p><em>Notice: These feel incomplete - your brain waits for more information!</em></p>
+        </div>
+    </div>
+
+    <div class="pro-tip">
+        <h4>🎯 The Subject-Verb Test (Works Every Time!)</h4>
+        <p><strong>Step 1:</strong> Look for the subject → "Who or what is this about?"</p>
+        <p><strong>Step 2:</strong> Look for the verb → "What action or state of being?"</p>
+        <p><strong>Step 3:</strong> If you find BOTH → It's a <span class="clause-highlight">CLAUSE</span></p>
+        <p><strong>Step 4:</strong> If you're missing either one → It's a <span class="phrase-highlight">PHRASE</span></p>
+    </div>
+</div>
+
+<!-- QUIZ_6 -->
 
 <div class="section">
     <h3>Step 4: The Instant Recognition Technique</h3>

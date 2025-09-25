@@ -550,6 +550,88 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
             ]
           }
         ]
+      },
+      5: {
+        title: "Interactive Quiz: Independent vs Dependent Clauses",
+        intro: "Now test your understanding of independent vs dependent clauses. Identify whether each clause can stand alone or needs more information.",
+        questions: [
+          {
+            text: "Identify the clause type: <strong>The students finished their homework</strong>",
+            options: [
+              { text: "Independent clause", isCorrect: true, explanation: "Perfect! This has a subject (students), verb (finished), and expresses a complete thought that can stand alone." },
+              { text: "Dependent clause", isCorrect: false, explanation: "This clause can stand alone as a complete sentence - there's no subordinating word making it dependent." }
+            ]
+          },
+          {
+            text: "Identify the clause type: <strong>When the bell rings</strong>",
+            options: [
+              { text: "Independent clause", isCorrect: false, explanation: "This cannot stand alone as a complete thought. 'When' makes it dependent - we need to know what happens when the bell rings." },
+              { text: "Dependent clause", isCorrect: true, explanation: "Correct! 'When' is a subordinating conjunction that makes this clause dependent on another clause to complete the meaning." }
+            ]
+          },
+          {
+            text: "Identify the clause type: <strong>Although she studied hard</strong>",
+            options: [
+              { text: "Independent clause", isCorrect: false, explanation: "'Although' creates dependency - this clause leaves us hanging, waiting to learn what happened despite her studying hard." },
+              { text: "Dependent clause", isCorrect: true, explanation: "Exactly! 'Although' is a subordinating conjunction that makes this clause incomplete and dependent on additional information." }
+            ]
+          },
+          {
+            text: "Identify the clause type: <strong>The movie was excellent</strong>",
+            options: [
+              { text: "Independent clause", isCorrect: true, explanation: "Perfect! This expresses a complete thought with subject (movie) and verb (was) - it can stand alone as a sentence." },
+              { text: "Dependent clause", isCorrect: false, explanation: "This clause is complete and can stand alone - there's no subordinating word making it dependent." }
+            ]
+          },
+          {
+            text: "Identify the clause type: <strong>Because the weather was perfect</strong>",
+            options: [
+              { text: "Independent clause", isCorrect: false, explanation: "'Because' signals cause and effect - this clause makes us wait to learn what happened because the weather was perfect." },
+              { text: "Dependent clause", isCorrect: true, explanation: "Correct! 'Because' is a subordinating conjunction that creates dependency - this clause needs an independent clause to complete the thought." }
+            ]
+          }
+        ]
+      },
+      6: {
+        title: "Interactive Quiz: Clauses vs Phrases",
+        intro: "Test your ability to distinguish between clauses (have both subject + verb) and phrases (missing subject or verb or both).",
+        questions: [
+          {
+            text: "Identify the type: <strong>Running through the forest</strong>",
+            options: [
+              { text: "Clause", isCorrect: false, explanation: "This is missing a subject - we don't know who or what is running. No subject means it's not a clause." },
+              { text: "Phrase", isCorrect: true, explanation: "Correct! This is a participial phrase - it has an action (running) but no clear subject performing the action." }
+            ]
+          },
+          {
+            text: "Identify the type: <strong>The dog barked loudly</strong>",
+            options: [
+              { text: "Clause", isCorrect: true, explanation: "Perfect! This has both a subject (dog) and a verb (barked), making it a clause." },
+              { text: "Phrase", isCorrect: false, explanation: "This has both a subject (dog) and a verb (barked), so it must be a clause, not a phrase." }
+            ]
+          },
+          {
+            text: "Identify the type: <strong>In the middle of the night</strong>",
+            options: [
+              { text: "Clause", isCorrect: false, explanation: "This has no subject or verb - just prepositions and nouns. Without both subject and verb, it cannot be a clause." },
+              { text: "Phrase", isCorrect: true, explanation: "Exactly! This is a prepositional phrase - it has no subject or verb, just describes location/time." }
+            ]
+          },
+          {
+            text: "Identify the type: <strong>While she was sleeping</strong>",
+            options: [
+              { text: "Clause", isCorrect: true, explanation: "Correct! This has a subject (she) and a verb (was sleeping), making it a clause (specifically a dependent clause)." },
+              { text: "Phrase", isCorrect: false, explanation: "This has both a subject (she) and a verb (was sleeping), so it's definitely a clause." }
+            ]
+          },
+          {
+            text: "Identify the type: <strong>To finish the project on time</strong>",
+            options: [
+              { text: "Clause", isCorrect: false, explanation: "This infinitive phrase has no clear subject - we don't know who needs to finish the project." },
+              { text: "Phrase", isCorrect: true, explanation: "Perfect! This is an infinitive phrase - it expresses purpose but lacks a subject, making it a phrase." }
+            ]
+          }
+        ]
       }
     };
 
@@ -596,13 +678,16 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
           return;
         }
 
-        // CASE 1: Complete current text section (only if it's a text section and not complete)
-        if (!currentSectionComplete && currentSectionData.type === 'text') {
-          if (typewriterRef.current) {
-            typewriterRef.current.completeInstantly();
-          }
-          setCurrentSectionComplete(true);
-          setTextCompletionStatus(prev => ({ ...prev, [currentSection]: true }));
+        // Check if current text section is still typing
+        const isCurrentlyTyping = typewriterRef.current &&
+                                  typewriterRef.current.isTypingActive &&
+                                  typewriterRef.current.isTypingActive();
+
+        // CASE 1: Complete current text section if typing
+        if (isCurrentlyTyping && typewriterRef.current) {
+          typewriterRef.current.completeInstantly();
+          // Don't set currentSectionComplete here - let the TypewriterText onComplete handle it
+          // This prevents immediate advancement
 
           // Scroll to keep current section visible
           setTimeout(() => {
@@ -617,8 +702,8 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
           return;
         }
 
-        // CASE 2: Advance to next section (only if current section is complete)
-        if (currentSectionComplete) {
+        // CASE 2: Advance to next section (only if current section is complete and NOT currently typing)
+        if (currentSectionComplete && !isCurrentlyTyping) {
           // Block advancement if current section is an incomplete quiz
           if (currentSectionData.type === 'quiz' && !quizCompletionStatus[currentSection]) {
             return;
@@ -847,8 +932,10 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
               ) : null}
             </>
           )}
-          {/* Continue prompt - only show when section is complete */}
-          {index === currentSection && index < sections.length - 1 && currentSectionComplete && (
+          {/* Continue prompt - only show when section is complete and not typing and not an incomplete quiz */}
+          {index === currentSection && index < sections.length - 1 && currentSectionComplete &&
+           !(typewriterRef.current && typewriterRef.current.isTypingActive && typewriterRef.current.isTypingActive()) &&
+           !(section.type === 'quiz' && !quizCompletionStatus[index]) && (
             <div className={classes.continuePrompt}>
               <div className={classes.promptText}>
                 <span>Press</span>
