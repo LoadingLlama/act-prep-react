@@ -416,7 +416,7 @@ export const useAppStyles = createUseStyles({
     fontSize: '15px',
     maxWidth: '2000px',
     '& h1, & h2, & h3, & h4': {
-      color: '#1a202c',
+      color: '#1a1a1a',
       fontWeight: '600',
       marginTop: '2rem',
       marginBottom: '0.75rem',
@@ -428,16 +428,24 @@ export const useAppStyles = createUseStyles({
       paddingBottom: '0.5rem'
     },
     '& h2': {
-      fontSize: '1.5rem',
-      color: '#2d3748'
+      fontSize: '1.5rem'
     },
     '& h3': {
-      fontSize: '1.25rem',
-      color: '#4a5568'
+      fontSize: '1.25rem'
     },
     '& p': {
       marginBottom: '1rem',
-      lineHeight: '1.65'
+      lineHeight: '1.65',
+      '& .emphasis': {
+        background: 'rgba(255, 235, 59, 0.3)',
+        padding: '1px 2px',
+        borderRadius: '2px'
+      },
+      '& .highlight': {
+        background: 'rgba(34, 197, 94, 0.25)',
+        padding: '1px 2px',
+        borderRadius: '2px'
+      }
     },
     '& ul, & ol': {
       margin: '1rem 0',
@@ -445,7 +453,11 @@ export const useAppStyles = createUseStyles({
     },
     '& li': {
       marginBottom: '0.5rem',
-      lineHeight: '1.6'
+      lineHeight: '1.6',
+      '& .definition, & .key-term': {
+        fontStyle: 'italic',
+        fontWeight: '500'
+      }
     },
     '& blockquote': {
       borderLeft: '3px solid #cbd5e0',
@@ -464,19 +476,50 @@ export const useAppStyles = createUseStyles({
       fontSize: '0.9em',
       fontFamily: 'Monaco, Consolas, monospace'
     },
+    '& .definition, & .key-term': {
+      fontStyle: 'italic',
+      fontWeight: '500',
+      background: 'rgba(59, 130, 246, 0.2)',
+      padding: '1px 3px',
+      borderRadius: '2px'
+    },
+    '& .clause-highlight': {
+      background: 'rgba(59, 130, 246, 0.25)',
+      padding: '1px 3px',
+      borderRadius: '2px',
+      fontWeight: '500'
+    },
+    '& .phrase-highlight': {
+      background: 'rgba(251, 191, 36, 0.3)',
+      padding: '1px 3px',
+      borderRadius: '2px',
+      fontWeight: '500'
+    },
+    '& .independent-highlight': {
+      background: 'rgba(34, 197, 94, 0.25)',
+      padding: '1px 3px',
+      borderRadius: '2px',
+      fontWeight: '500'
+    },
+    '& .dependent-highlight': {
+      background: 'rgba(239, 68, 68, 0.25)',
+      padding: '1px 3px',
+      borderRadius: '2px',
+      fontWeight: '500'
+    },
     '& .lesson-intro': {
       fontSize: '1rem',
-      color: '#718096',
+      color: '#d73502',
       fontStyle: 'italic',
       marginBottom: '2rem',
       padding: '1rem',
       background: '#f8f9fa',
-      borderLeft: '4px solid #1a1a1a',
+      borderLeft: '4px solid #d73502',
       borderRadius: '0 4px 4px 0'
     },
     '& .concept-box': {
-      background: '#f8f9fa',
-      border: '1px solid #e0e0e0',
+      background: '#fafbfc',
+      border: '1px solid #e2e8f0',
       borderRadius: '8px',
       padding: '1rem',
       margin: '1rem 0',
@@ -487,23 +530,38 @@ export const useAppStyles = createUseStyles({
       }
     },
     '& .tip-box': {
-      background: '#fff3cd',
-      border: '1px solid #ffc107',
+      background: '#f7fafc',
+      border: '1px solid #e2e8f0',
       borderRadius: '8px',
       padding: '1rem',
       margin: '1rem 0',
       '& h4': {
-        color: '#856404',
+        color: '#1a1a1a',
         marginBottom: '0.8rem',
-        fontSize: '1.1rem'
+        fontSize: '1.1rem',
+        fontWeight: '600'
+      },
+      '& strong, & .highlight': {
+        background: 'rgba(255, 235, 59, 0.4)',
+        padding: '1px 3px',
+        borderRadius: '2px'
       }
     },
     '& .example-box': {
-      background: '#e8f5e8',
-      border: '1px solid #28a745',
+      background: '#f8f9fa',
+      border: '1px solid #e2e8f0',
       borderRadius: '8px',
       padding: '1rem',
-      margin: '1rem 0'
+      margin: '1rem 0',
+      '& em, & .definition': {
+        fontStyle: 'italic',
+        fontWeight: '500'
+      },
+      '& .highlight': {
+        background: 'rgba(16, 185, 129, 0.3)',
+        padding: '1px 3px',
+        borderRadius: '2px'
+      }
     },
     '& .rules-box': {
       background: '#fff',

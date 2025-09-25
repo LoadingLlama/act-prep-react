@@ -48,9 +48,9 @@ export const allLessons = {
 <div class="section why-important">
     <h3>Your Learning Path: Four Essential Steps</h3>
     <div class="concept-box">
-        <p><strong>Step 1:</strong> Understand the difference between <span style="color: #1a73e8;">clauses</span> and <span style="color: #d97706;">phrases</span></p>
-        <p><strong>Step 2:</strong> Learn what makes a clause <span style="color: #10a37f;">independent</span> (complete)</p>
-        <p><strong>Step 3:</strong> Understand what makes a clause <span style="color: #c53030;">dependent</span> (incomplete)</p>
+        <p><strong>Step 1:</strong> Understand the difference between <span class="clause-highlight">clauses</span> and <span class="phrase-highlight">phrases</span></p>
+        <p><strong>Step 2:</strong> Learn what makes a clause <span class="independent-highlight">independent</span> (complete)</p>
+        <p><strong>Step 3:</strong> Understand what makes a clause <span class="dependent-highlight">dependent</span> (incomplete)</p>
         <p><strong>Step 4:</strong> Master the instant recognition technique</p>
         <p><strong>Result:</strong> You'll identify any clause or phrase type in under 3 seconds!</p>
     </div>
@@ -61,34 +61,34 @@ export const allLessons = {
 
     <div class="concept-box">
         <h4>💡 The Critical Distinction</h4>
-        <p><strong><span style="color: #1a73e8;">CLAUSE</span></strong> = Has both a SUBJECT and a VERB</p>
-        <p><strong><span style="color: #d97706;">PHRASE</span></strong> = Missing either a SUBJECT or a VERB (or both)</p>
+        <p><strong><span class="clause-highlight">CLAUSE</span></strong> = Has both a SUBJECT and a VERB</p>
+        <p><strong><span class="phrase-highlight">PHRASE</span></strong> = Missing either a SUBJECT or a VERB (or both)</p>
         <p><em>This is the #1 concept tested on the ACT - master this and you unlock everything!</em></p>
     </div>
 
     <div class="concept-box">
-        <h4>📋 <span style="color: #1a73e8;">Clauses</span> - The Complete Units</h4>
+        <h4>📋 <span class="clause-highlight">Clauses</span> - The Complete Units</h4>
         <p>Every clause MUST have both a subject and a verb. Think of them as complete "action units."</p>
 
         <div class="examples">
-            <h5>✅ <span style="color: #1a73e8;">Clause Examples</span> (Subject + Verb):</h5>
-            <p>• <span style="text-decoration: underline; color: #2d3748; font-weight: bold;">The storm</span> <strong style="color: #c53030;">arrived</strong> → Subject + Verb = <span style="color: #1a73e8; font-weight: bold;">Clause</span> ✓</p>
-            <p>• <span style="text-decoration: underline; color: #2d3748; font-weight: bold;">She</span> <strong style="color: #c53030;">studied</strong> → Subject + Verb = <span style="color: #1a73e8; font-weight: bold;">Clause</span> ✓</p>
-            <p>• <span style="text-decoration: underline; color: #2d3748; font-weight: bold;">The cat</span> <strong style="color: #c53030;">sat</strong> on the mat → Subject + Verb = <span style="color: #1a73e8; font-weight: bold;">Clause</span> ✓</p>
+            <p><strong>✅ <span class="clause-highlight">Clause</span> Examples (Subject + Verb):</strong></p>
+            <p>• <span style="text-decoration: underline;">The storm</span> <strong>arrived</strong> → Subject + Verb = <span class="clause-highlight">Clause</span> ✓</p>
+            <p>• <span style="text-decoration: underline;">She</span> <strong>studied</strong> → Subject + Verb = <span class="clause-highlight">Clause</span> ✓</p>
+            <p>• <span style="text-decoration: underline;">The cat</span> <strong>sat</strong> on the mat → Subject + Verb = <span class="clause-highlight">Clause</span> ✓</p>
             <p><em>Notice: Each has someone/something DOING an action or being in a state.</em></p>
         </div>
     </div>
 
     <div class="concept-box">
-        <h4>📋 <span style="color: #d97706;">Phrases</span> - The Incomplete Units</h4>
+        <h4>📋 <span class="phrase-highlight">Phrases</span> - The Incomplete Units</h4>
         <p>Phrases are missing either a subject, a verb, or both. They're sentence fragments that can't stand alone.</p>
 
         <div class="examples">
-            <h5>✅ <span style="color: #d97706;">Phrase Examples</span> (Missing Subject or Verb):</h5>
-            <p>• <strong style="color: #d97706;">Running through the park</strong> → No subject! (Who is running?) = <span style="color: #d97706; font-weight: bold;">Phrase</span> ✓</p>
-            <p>• <strong style="color: #d97706;">After the game</strong> → No verb! (What happened after?) = <span style="color: #d97706; font-weight: bold;">Phrase</span> ✓</p>
-            <p>• <strong style="color: #d97706;">In the morning</strong> → No subject or verb! = <span style="color: #d97706; font-weight: bold;">Phrase</span> ✓</p>
-            <p>• <strong style="color: #d97706;">To study harder</strong> → No subject! (Who should study?) = <span style="color: #d97706; font-weight: bold;">Phrase</span> ✓</p>
+            <p><strong>✅ <span class="phrase-highlight">Phrase</span> Examples (Missing Subject or Verb):</strong></p>
+            <p>• <strong>Running through the park</strong> → No subject! (Who is running?) = <span class="phrase-highlight">Phrase</span> ✓</p>
+            <p>• <strong>After the game</strong> → No verb! (What happened after?) = <span class="phrase-highlight">Phrase</span> ✓</p>
+            <p>• <strong>In the morning</strong> → No subject or verb! = <span class="phrase-highlight">Phrase</span> ✓</p>
+            <p>• <strong>To study harder</strong> → No subject! (Who should study?) = <span class="phrase-highlight">Phrase</span> ✓</p>
             <p><em>Notice: These feel incomplete - your brain waits for more information!</em></p>
         </div>
     </div>
@@ -97,8 +97,8 @@ export const allLessons = {
         <h4>🎯 The Subject-Verb Test (Works Every Time!)</h4>
         <p><strong>Step 1:</strong> Look for the subject → "Who or what is this about?"</p>
         <p><strong>Step 2:</strong> Look for the verb → "What action or state of being?"</p>
-        <p><strong>Step 3:</strong> If you find BOTH → It's a <span style="color: #1a73e8;">CLAUSE</span></p>
-        <p><strong>Step 4:</strong> If you're missing either one → It's a <span style="color: #d97706;">PHRASE</span></p>
+        <p><strong>Step 3:</strong> If you find BOTH → It's a <span class="clause-highlight">CLAUSE</span></p>
+        <p><strong>Step 4:</strong> If you're missing either one → It's a <span class="phrase-highlight">PHRASE</span></p>
     </div>
 </div>
 
@@ -107,7 +107,7 @@ export const allLessons = {
 
     <div class="concept-box">
         <h4>💡 Core Definition</h4>
-        <p>An <span style="color: #10a37f; font-weight: bold;">independent clause</span> = <strong>SUBJECT + VERB + COMPLETE THOUGHT</strong></p>
+        <p>An <span class="independent-highlight">independent clause</span> = <strong>SUBJECT + VERB + COMPLETE THOUGHT</strong></p>
         <p><strong>The Test:</strong> Can you put a period after it and walk away? If yes, it's independent!</p>
     </div>
 
@@ -119,9 +119,9 @@ export const allLessons = {
     <div class="concept-box">
         <h4>✅ Perfect Examples (Study These Patterns)</h4>
         <div class="examples">
-            <p><span style="color: #2d3748; font-weight: bold; text-decoration: underline;">The dog</span> <strong style="color: #c53030;">chased</strong> <strong style="color: #10a37f;">its tail.</strong> ← Perfect! <span style="color: #10a37f; font-weight: bold;">Independent clause</span>.</p>
-            <p><span style="color: #2d3748; font-weight: bold; text-decoration: underline;">Sarah</span> <strong style="color: #c53030;">baked</strong> <strong style="color: #10a37f;">chocolate chip cookies yesterday.</strong> ← Perfect! <span style="color: #10a37f; font-weight: bold;">Independent clause</span>.</p>
-            <p><span style="color: #2d3748; font-weight: bold; text-decoration: underline;">The rain</span> <strong style="color: #c53030;">stopped.</strong> ← Perfect! <span style="color: #10a37f; font-weight: bold;">Independent clause</span> (even with just 2 words!).</p>
+            <p><span style="text-decoration: underline;">The dog</span> <strong>chased</strong> <strong>its tail.</strong> ← Perfect! <span class="independent-highlight">Independent clause</span>.</p>
+            <p><span style="text-decoration: underline;">Sarah</span> <strong>baked</strong> <strong>chocolate chip cookies yesterday.</strong> ← Perfect! <span class="independent-highlight">Independent clause</span>.</p>
+            <p><span style="text-decoration: underline;">The rain</span> <strong>stopped.</strong> ← Perfect! <span class="independent-highlight">Independent clause</span> (even with just 2 words!).</p>
         </div>
         <div class="key-insight">
             <p><strong>🎯 Key Insight:</strong> Independent clauses feel complete and satisfying. Your brain doesn't wait for more information!</p>
@@ -134,7 +134,7 @@ export const allLessons = {
 
     <div class="concept-box">
         <h4>💡 Core Definition</h4>
-        <p>A <span style="color: #c53030; font-weight: bold;">dependent clause</span> = <strong>SUBORDINATING WORD + SUBJECT + VERB</strong></p>
+        <p>A <span class="dependent-highlight">dependent clause</span> = <strong>SUBORDINATING WORD + SUBJECT + VERB</strong></p>
         <p><strong>The Test:</strong> Does it start with a subordinating word? If yes, it CANNOT stand alone!</p>
     </div>
 
@@ -160,12 +160,12 @@ export const allLessons = {
         <h4>❌ How Independent Clauses Become Dependent</h4>
         <p>Watch this transformation happen:</p>
         <div class="examples">
-            <p><strong>STEP 1 - <span style="color: #10a37f;">Independent</span> (Complete):</strong></p>
-            <p><strong style="color: #10a37f;">Sarah baked chocolate chip cookies.</strong> ✅</p>
+            <p><strong>STEP 1 - <span class="independent-highlight">Independent</span> (Complete):</strong></p>
+            <p><strong class="independent-highlight">Sarah baked chocolate chip cookies.</strong> ✅</p>
             <p><em>Perfect! Complete thought. Your brain is satisfied.</em></p>
 
-            <p><strong>STEP 2 - Add Subordinating Word (Now <span style="color: #c53030;">Dependent</span>):</strong></p>
-            <p><strong style="color: #c53030;">Because Sarah baked chocolate chip cookies...</strong> ❌</p>
+            <p><strong>STEP 2 - Add Subordinating Word (Now <span class="dependent-highlight">Dependent</span>):</strong></p>
+            <p><strong class="dependent-highlight">Because Sarah baked chocolate chip cookies...</strong> ❌</p>
             <p><em>Now incomplete! Your brain is waiting: "What happened because she baked cookies?"</em></p>
         </div>
     </div>
@@ -186,14 +186,14 @@ export const allLessons = {
     <div class="concept-box">
         <h4>🎯 Practice Examples (Apply the 3-Second Method)</h4>
         <div class="examples">
-            <p><strong>Example 1:</strong> "<strong style="color: #c53030; background-color: rgba(197, 48, 48, 0.1); padding: 0.2rem 0.4rem; border-radius: 4px;">Although</strong> the weather was perfect..."</p>
-            <p>→ First word = "Although" (subordinating word) → <strong style="color: #c53030;">DEPENDENT</strong> ✅</p>
+            <p><strong>Example 1:</strong> "<strong >Although</strong> the weather was perfect..."</p>
+            <p>→ First word = "Although" (subordinating word) → <strong class="dependent-highlight">DEPENDENT</strong> ✅</p>
 
-            <p><strong>Example 2:</strong> "<strong style="color: #10a37f;">The weather</strong> was perfect."</p>
-            <p>→ First word = "The" (not subordinating) → <strong style="color: #10a37f;">INDEPENDENT</strong> ✅</p>
+            <p><strong>Example 2:</strong> "<strong>The weather</strong> was perfect."</p>
+            <p>→ First word = "The" (not subordinating) → <strong class="independent-highlight">INDEPENDENT</strong> ✅</p>
 
-            <p><strong>Example 3:</strong> "<strong style="color: #c53030; background-color: rgba(197, 48, 48, 0.1); padding: 0.2rem 0.4rem; border-radius: 4px;">When</strong> I finish this lesson..."</p>
-            <p>→ First word = "When" (subordinating word) → <strong style="color: #c53030;">DEPENDENT</strong> ✅</p>
+            <p><strong>Example 3:</strong> "<strong>When</strong> I finish this lesson..."</p>
+            <p>→ First word = "When" (subordinating word) → <strong class="dependent-highlight">DEPENDENT</strong> ✅</p>
         </div>
     </div>
 
@@ -222,7 +222,7 @@ export const allLessons = {
 
         <div class="fragment-examples">
             <div class="fragment-breakdown">
-                <h5>Type 1: Missing the Action (No Complete Verb)</h5>
+                <p><strong>Type 1: Missing the Action (No Complete Verb)</strong></p>
                 <div class="incorrect-example">
                     <p><strong>❌ Fragment:</strong> The student running to class</p>
                     <p><strong>Problem:</strong> "Running" is just a description, not a complete action. What did the student DO?</p>
@@ -236,7 +236,7 @@ export const allLessons = {
             </div>
 
             <div class="fragment-breakdown">
-                <h5>Type 2: Missing the Subject (No Who/What)</h5>
+                <p><strong>Type 2: Missing the Subject (No Who/What)</strong></p>
                 <div class="incorrect-example">
                     <p><strong>❌ Fragment:</strong> Excited about the beach trip</p>
                     <p><strong>Problem:</strong> WHO is excited? The subject is completely missing.</p>
@@ -249,7 +249,7 @@ export const allLessons = {
             </div>
 
             <div class="fragment-breakdown">
-                <h5>Type 3: The Sneaky Dependent Clause</h5>
+                <p><strong>Type 3: The Sneaky Dependent Clause</strong></p>
                 <div class="incorrect-example">
                     <p><strong>❌ Fragment:</strong> Because the weather was perfect</p>
                     <p><strong>Problem:</strong> That "because" makes it incomplete! What happened BECAUSE of the perfect weather?</p>
@@ -301,7 +301,7 @@ export const allLessons = {
         <div class="rule-card rule-1">
             <div class="rule-number">1</div>
             <div class="rule-content">
-                <h5>Period Separation (The Safe Choice)</h5>
+                <p><strong>Period Separation (The Safe Choice)</strong></p>
                 <p class="rule-description"><strong>Pattern:</strong> Independent <strong>.</strong> Independent</p>
                 <div class="rule-examples">
                     <p><strong>Example:</strong> Sarah loves dogs<strong>.</strong> Andrew loves cats.</p>
@@ -313,7 +313,7 @@ export const allLessons = {
         <div class="rule-card rule-2">
             <div class="rule-number">2</div>
             <div class="rule-content">
-                <h5>Comma + FANBOYS (The Connector)</h5>
+                <p><strong>Comma + FANBOYS (The Connector)</strong></p>
                 <p class="rule-description"><strong>Pattern:</strong> Independent<strong>, FANBOYS</strong> Independent</p>
                 <div class="rule-examples">
                     <p><strong>Example:</strong> Sarah loves dogs<strong>, but</strong> Andrew loves cats.</p>
@@ -325,7 +325,7 @@ export const allLessons = {
         <div class="rule-card rule-3">
             <div class="rule-number">3</div>
             <div class="rule-content">
-                <h5>Semicolon Connection (The Strong Link)</h5>
+                <p><strong>Semicolon Connection (The Strong Link)</strong></p>
                 <p class="rule-description"><strong>Pattern:</strong> Independent<strong>;</strong> Independent</p>
                 <div class="rule-examples">
                     <p><strong>Example:</strong> Sarah loves dogs<strong>;</strong> Andrew loves cats.</p>
@@ -337,7 +337,7 @@ export const allLessons = {
         <div class="rule-card rule-4">
             <div class="rule-number">4</div>
             <div class="rule-content">
-                <h5>Dependent → Independent (With Comma)</h5>
+                <p><strong>Dependent → Independent (With Comma)</strong></p>
                 <p class="rule-description"><strong>Pattern:</strong> Dependent<strong>,</strong> Independent</p>
                 <div class="rule-examples">
                     <p><strong>Example:</strong> <strong>Because</strong> Sarah loves dogs<strong>,</strong> she volunteers at the shelter.</p>
@@ -349,7 +349,7 @@ export const allLessons = {
         <div class="rule-card rule-5">
             <div class="rule-number">5</div>
             <div class="rule-content">
-                <h5>Independent → Dependent (No Comma)</h5>
+                <p><strong>Independent → Dependent (No Comma)</strong></p>
                 <p class="rule-description"><strong>Pattern:</strong> Independent Dependent</p>
                 <div class="rule-examples">
                     <p><strong>Example:</strong> Sarah volunteers at the shelter <strong>because</strong> she loves dogs.</p>
@@ -363,7 +363,7 @@ export const allLessons = {
         <h4>🏆 Your Sentence Structure Mastery is Complete!</h4>
         <div class="mastery-summary">
             <div class="what-you-know">
-                <h5>✅ You Now Know:</h5>
+                <p><strong>✅ You Now Know:</strong></p>
                 <ul>
                     <li><strong>Independent clauses</strong> = complete thoughts</li>
                     <li><strong>Dependent clauses</strong> = incomplete thoughts</li>
@@ -373,7 +373,7 @@ export const allLessons = {
                 </ul>
             </div>
             <div class="next-step">
-                <h5>🚀 Your Next Step:</h5>
+                <p><strong>🚀 Your Next Step:</strong></p>
                 <p>Practice with the quiz below, then move to Chapter 2 where you'll learn the <strong>4 types of commas</strong> that complete your punctuation mastery!</p>
             </div>
         </div>
@@ -408,19 +408,19 @@ export const allLessons = {
 
     <div class="concept-box">
         <h4>Type 1: FANBOYS Comma (From Golden Rule #2)</h4>
-        <p><strong>Pattern:</strong> <span style="color: #10a37f;">Independent clause</span> <em><strong style="color: #c53030;">, FANBOYS</strong></em> <span style="color: #10a37f;">independent clause</span></p>
+        <p><strong>Pattern:</strong> <span class="independent-highlight">Independent clause</span> <em><strong>, FANBOYS</strong></em> <span class="independent-highlight">independent clause</span></p>
         <div class="examples">
-            <p><strong>Perfect Example:</strong> <span style="color: #10a37f;">Sarah loves chocolate</span><strong style="color: #c53030;">,</strong> <strong style="color: #c53030; background-color: rgba(197, 48, 48, 0.1); padding: 0.2rem 0.4rem; border-radius: 4px;">but</strong> <span style="color: #10a37f;">Andrew prefers vanilla.</span></p>
-            <p><em>Why this works: Two <span style="color: #10a37f;">complete thoughts</span> joined with <span style="color: #c53030;">comma + connecting word</span></em></p>
+            <p><strong>Perfect Example:</strong> <span class="independent-highlight">Sarah loves chocolate</span><strong>,</strong> <strong>but</strong> <span class="independent-highlight">Andrew prefers vanilla.</span></p>
+            <p><em>Why this works: Two <span class="independent-highlight">complete thoughts</span> joined with comma + connecting word</em></p>
         </div>
     </div>
 
     <div class="concept-box">
         <h4>Type 2: Introductory Comma (From Golden Rule #4)</h4>
-        <p><strong>Pattern:</strong> <span style="color: #c53030;">Dependent clause</span><strong style="color: #1a73e8;">,</strong> <span style="color: #10a37f;">independent clause</span></p>
+        <p><strong>Pattern:</strong> <span class="dependent-highlight">Dependent clause</span><strong>,</strong> <span class="independent-highlight">independent clause</span></p>
         <div class="examples">
-            <p><strong>Perfect Example:</strong> <span style="color: #c53030;">When the bell rang</span><strong style="color: #1a73e8;">,</strong> <span style="color: #10a37f;">students rushed to lunch.</span></p>
-            <p><em>Why this works: <span style="color: #c53030;">Incomplete thought</span> needs comma before <span style="color: #10a37f;">complete thought</span></em></p>
+            <p><strong>Perfect Example:</strong> <span class="dependent-highlight">When the bell rang</span><strong>,</strong> <span class="independent-highlight">students rushed to lunch.</span></p>
+            <p><em>Why this works: <span class="dependent-highlight">Incomplete thought</span> needs comma before <span class="independent-highlight">complete thought</span></em></p>
         </div>
     </div>
 </div>
@@ -435,7 +435,7 @@ export const allLessons = {
         <p><strong>The Test:</strong> Can you remove the information and still have a complete sentence? If yes, it needs commas!</p>
 
         <div class="examples">
-            <h5>Perfect Examples:</h5>
+            <p><strong>Perfect Examples:</strong></p>
             <p>Mrs. Johnson<strong>,</strong> who teaches chemistry<strong>,</strong> assigns homework daily.</p>
             <p><em>Remove "who teaches chemistry" → "Mrs. Johnson assigns homework daily" ✓ Still complete!</em></p>
 
@@ -458,7 +458,7 @@ export const allLessons = {
         <p><strong>Key Insight:</strong> The comma before "and" is <em>always required</em> on the ACT!</p>
 
         <div class="examples">
-            <h5>Perfect Examples:</h5>
+            <p><strong>Perfect Examples:</strong></p>
             <p><strong>Things:</strong> I need pencils<strong>,</strong> paper<strong>,</strong> and erasers.</p>
             <p><strong>Actions:</strong> She ran<strong>,</strong> jumped<strong>,</strong> and landed safely.</p>
             <p><strong>Describing words:</strong> The tall<strong>,</strong> dark<strong>,</strong> mysterious stranger arrived.</p>
@@ -508,9 +508,9 @@ export const allLessons = {
     <div class="concept-box">
         <h4>❌ Trap #2: Comma Splicing</h4>
         <div class="examples">
-            <p><strong style="color: #c53030;">Wrong:</strong> <span style="color: #10a37f;">Sarah loves chocolate</span><strong style="color: #c53030;">,</strong> <span style="color: #10a37f;">Andrew prefers vanilla.</span> ❌</p>
-            <p><strong style="color: #10a37f;">Right:</strong> <span style="color: #10a37f;">Sarah loves chocolate</span><strong style="color: #1a73e8;">, but</strong> <span style="color: #10a37f;">Andrew prefers vanilla.</span> ✅</p>
-            <p><em>Remember: A comma alone cannot join two <span style="color: #10a37f;">independent clauses</span>!</em></p>
+            <p><strong >Wrong:</strong> <span >Sarah loves chocolate</span><strong >,</strong> <span >Andrew prefers vanilla.</span> ❌</p>
+            <p><strong >Right:</strong> <span >Sarah loves chocolate</span><strong >, but</strong> <span >Andrew prefers vanilla.</span> ✅</p>
+            <p><em>Remember: A comma alone cannot join two <span >independent clauses</span>!</em></p>
         </div>
     </div>
 
@@ -559,7 +559,7 @@ export const allLessons = {
     <div class="concept-box">
         <h4>💡 Core Truth About Semicolons</h4>
         <p>A semicolon is <strong>stronger than a comma but weaker than a period</strong>. It connects ideas that are <em>very closely related</em>.</p>
-        <p><strong>Key Rule:</strong> Both sides of a semicolon must be <span style="color: #1a73e8;">independent clauses</span> (remember Chapter 1!)</p>
+        <p><strong>Key Rule:</strong> Both sides of a semicolon must be <span >independent clauses</span> (remember Chapter 1!)</p>
     </div>
 
     <div class="concept-box">
@@ -567,7 +567,7 @@ export const allLessons = {
         <p><strong>Pattern:</strong> Independent clause<strong>;</strong> independent clause</p>
 
         <div class="examples">
-            <h5>Perfect Examples:</h5>
+            <p><strong>Perfect Examples:</strong></p>
             <p><strong>✅ Correct:</strong> Sarah studied for hours<strong>;</strong> she was ready for the test.</p>
             <p><em>Why it works: Both sides are complete thoughts, and the second explains the result of the first.</em></p>
 
@@ -576,7 +576,7 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>Common Mistakes:</h5>
+            <p><strong>Common Mistakes:</strong></p>
             <p><strong>❌ Wrong:</strong> Sarah studied for hours<strong>,</strong> she was ready for the test.</p>
             <p><em>Problem: Comma splice! You can't join two independent clauses with just a comma.</em></p>
 
@@ -590,7 +590,7 @@ export const allLessons = {
         <p><strong>When to use:</strong> When list items already contain commas, use semicolons to separate the major items.</p>
 
         <div class="examples">
-            <h5>Perfect Example:</h5>
+            <p><strong>Perfect Example:</strong></p>
             <p><strong>✅ Clear with semicolons:</strong> The debate included experts from Portland, Oregon<strong>;</strong> Austin, Texas<strong>;</strong> and Miami, Florida.</p>
             <p><strong>❌ Confusing with commas:</strong> The debate included experts from Portland, Oregon, Austin, Texas, and Miami, Florida.</p>
             <p><em>Without semicolons, it's unclear how many cities there are!</em></p>
@@ -619,20 +619,20 @@ export const allLessons = {
         <h4>📋 The 3 Things Colons Can Introduce</h4>
 
         <div class="examples">
-            <h5>Type 1: Lists</h5>
+            <p><strong>Type 1: Lists</strong></p>
             <p><strong>✅ Correct:</strong> I need three things for the recipe<strong>:</strong> flour, eggs, and milk.</p>
             <p><strong>❌ Wrong:</strong> I need<strong>:</strong> flour, eggs, and milk.</p>
             <p><em>Why wrong: "I need" isn't complete—need what?</em></p>
         </div>
 
         <div class="examples">
-            <h5>Type 2: Explanations</h5>
+            <p><strong>Type 2: Explanations</strong></p>
             <p><strong>✅ Correct:</strong> The reason for her success was simple<strong>:</strong> hard work and dedication.</p>
             <p><strong>✅ Also correct:</strong> She had one goal in mind<strong>:</strong> to become a doctor.</p>
         </div>
 
         <div class="examples">
-            <h5>Type 3: Direct Quotations</h5>
+            <p><strong>Type 3: Direct Quotations</strong></p>
             <p><strong>✅ Correct:</strong> Shakespeare's most famous line remains timeless<strong>:</strong> "To be or not to be, that is the question."</p>
         </div>
     </div>
@@ -660,20 +660,20 @@ export const allLessons = {
         <h4>📋 The 3 Main Uses of Dashes</h4>
 
         <div class="examples">
-            <h5>Use 1: Sudden Interruption or Change</h5>
+            <p><strong>Use 1: Sudden Interruption or Change</strong></p>
             <p><strong>✅ Example:</strong> The weather was perfect for hiking<strong>—</strong>until the thunderstorm hit.</p>
             <p><em>The dash shows a sudden, dramatic change in the situation.</em></p>
         </div>
 
         <div class="examples">
-            <h5>Use 2: Extra Emphasis (Instead of a Colon)</h5>
+            <p><strong>Use 2: Extra Emphasis (Instead of a Colon)</strong></p>
             <p><strong>✅ Example:</strong> She had only one thing on her mind<strong>—</strong>winning the championship.</p>
             <p><strong>Compare to colon:</strong> She had only one thing on her mind<strong>:</strong> winning the championship.</p>
             <p><em>The dash version feels more dramatic and immediate.</em></p>
         </div>
 
         <div class="examples">
-            <h5>Use 3: Setting Off Information (Pair of Dashes)</h5>
+            <p><strong>Use 3: Setting Off Information (Pair of Dashes)</strong></p>
             <p><strong>✅ Example:</strong> The movie<strong>—</strong>despite terrible reviews<strong>—</strong>was surprisingly entertaining.</p>
             <p><strong>Compare to commas:</strong> The movie, despite terrible reviews, was surprisingly entertaining.</p>
             <p><em>The dashes create more emphasis on the contrast.</em></p>
@@ -694,14 +694,14 @@ export const allLessons = {
 
     <div class="concept-box">
         <h4>💡 Core Truth About Apostrophes</h4>
-        <p>Apostrophes have <strong>exactly 2 jobs</strong> on the ACT: showing <span style="color: #10a37f;">possession</span> (ownership) and creating <span style="color: #d97706;">contractions</span> (shortened words).</p>
+        <p>Apostrophes have <strong>exactly 2 jobs</strong> on the ACT: showing <span >possession</span> (ownership) and creating <span >contractions</span> (shortened words).</p>
     </div>
 
     <div class="concept-box">
         <h4>📋 Job 1: Showing Possession (Ownership)</h4>
 
         <div class="examples">
-            <h5>Singular Nouns: Add 's</h5>
+            <p><strong>Singular Nouns: Add 's</strong></p>
             <p><strong>✅ Examples:</strong></p>
             <p>• The <strong>cat's</strong> toy (the toy belongs to the cat)</p>
             <p>• <strong>Sarah's</strong> book (the book belongs to Sarah)</p>
@@ -709,14 +709,14 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>Plural Nouns Ending in 's': Add Only '</h5>
+            <p><strong>Plural Nouns Ending in 's': Add Only '</strong></p>
             <p><strong>✅ Examples:</strong></p>
             <p>• The <strong>cats'</strong> toys (toys belonging to multiple cats)</p>
             <p>• The <strong>students'</strong> complaints (complaints from multiple students)</p>
         </div>
 
         <div class="examples">
-            <h5>Irregular Plural Nouns: Add 's</h5>
+            <p><strong>Irregular Plural Nouns: Add 's</strong></p>
             <p><strong>✅ Examples:</strong></p>
             <p>• The <strong>children's</strong> playground</p>
             <p>• The <strong>men's</strong> locker room</p>
@@ -728,7 +728,7 @@ export const allLessons = {
         <h4>📋 Job 2: Contractions (Combining Words)</h4>
 
         <div class="examples">
-            <h5>Common Contractions:</h5>
+            <p><strong>Common Contractions:</strong></p>
             <p>• <strong>it's</strong> = it is OR it has</p>
             <p>• <strong>they're</strong> = they are</p>
             <p>• <strong>you're</strong> = you are</p>
@@ -738,7 +738,7 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>⚠️ Danger Zone: Its vs. It's</h5>
+            <p><strong>⚠️ Danger Zone: Its vs. It's</strong></p>
             <p><strong>it's</strong> = it is OR it has (contraction)</p>
             <p>→ <em>"It's raining outside"</em> = "It is raining outside"</p>
 
@@ -767,21 +767,21 @@ export const allLessons = {
         <h4>📋 The 3 Essential Quotation Rules</h4>
 
         <div class="examples">
-            <h5>Rule 1: Comma Placement</h5>
+            <p><strong>Rule 1: Comma Placement</strong></p>
             <p><strong>✅ Correct:</strong> "I love this book<strong>,</strong>" Sarah said.</p>
             <p><strong>❌ Wrong:</strong> "I love this book"<strong>,</strong> Sarah said.</p>
             <p><em>Commas and periods always go INSIDE the quotation marks!</em></p>
         </div>
 
         <div class="examples">
-            <h5>Rule 2: Question Marks and Exclamation Points</h5>
+            <p><strong>Rule 2: Question Marks and Exclamation Points</strong></p>
             <p><strong>If part of the quote:</strong> Sarah asked, "Are you coming<strong>?</strong>"</p>
             <p><strong>If not part of quote:</strong> Did Sarah say, "I'm leaving"<strong>?</strong></p>
             <p><em>These marks go inside if they belong to the quoted words, outside if they belong to the whole sentence.</em></p>
         </div>
 
         <div class="examples">
-            <h5>Rule 3: Capitalizing the First Word</h5>
+            <p><strong>Rule 3: Capitalizing the First Word</strong></p>
             <p><strong>✅ Complete sentence quote:</strong> The teacher announced, "<strong>T</strong>he test is tomorrow."</p>
             <p><strong>✅ Partial quote:</strong> The teacher said the test would be "<strong>c</strong>hallenging but fair."</p>
             <p><em>Capitalize only if the quote is a complete sentence.</em></p>
@@ -854,7 +854,7 @@ export const allLessons = {
         <p><strong>Step 2:</strong> The Distractor Game → How ACT hides the real subject</p>
         <p><strong>Step 3:</strong> Special Subject Types → Compound, indefinite, and collective subjects</p>
         <p><strong>Step 4:</strong> Verb Forms & Tenses → When to use specific verb forms</p>
-        <p><strong>Your advantage:</strong> You already know how to find <span style="color: #1a73e8;">independent clauses</span> from Chapter 1!</p>
+        <p><strong>Your advantage:</strong> You already know how to find <span >independent clauses</span> from Chapter 1!</p>
     </div>
 </div>
 
@@ -863,8 +863,8 @@ export const allLessons = {
 
     <div class="concept-box">
         <h4>💡 The Only Rule You Need to Know</h4>
-        <p><strong>Singular subjects</strong> take <span style="color: #10a37f;">singular verbs</span></p>
-        <p><strong>Plural subjects</strong> take <span style="color: #d97706;">plural verbs</span></p>
+        <p><strong>Singular subjects</strong> take <span >singular verbs</span></p>
+        <p><strong>Plural subjects</strong> take <span >plural verbs</span></p>
         <p><em>That's it! Every ACT question comes down to this simple rule.</em></p>
     </div>
 
@@ -872,18 +872,18 @@ export const allLessons = {
         <h4>📋 The Basic Pattern Recognition</h4>
 
         <div class="examples">
-            <h5>Singular = Add 's' to Verb</h5>
-            <p><strong>✅ Correct:</strong> The <span style="color: #10a37f;">cat</span> <strong>runs</strong> quickly.</p>
-            <p><strong>✅ Correct:</strong> <span style="color: #10a37f;">Sarah</span> <strong>studies</strong> every night.</p>
-            <p><strong>✅ Correct:</strong> The <span style="color: #10a37f;">book</span> <strong>contains</strong> many chapters.</p>
+            <p><strong>Singular = Add 's' to Verb</strong></p>
+            <p><strong>✅ Correct:</strong> The <span >cat</span> <strong>runs</strong> quickly.</p>
+            <p><strong>✅ Correct:</strong> <span >Sarah</span> <strong>studies</strong> every night.</p>
+            <p><strong>✅ Correct:</strong> The <span >book</span> <strong>contains</strong> many chapters.</p>
             <p><em>Rule: One thing = verb ends in 's'</em></p>
         </div>
 
         <div class="examples">
-            <h5>Plural = No 's' on Verb</h5>
-            <p><strong>✅ Correct:</strong> The <span style="color: #d97706;">cats</span> <strong>run</strong> quickly.</p>
-            <p><strong>✅ Correct:</strong> <span style="color: #d97706;">Sarah and Mike</span> <strong>study</strong> together.</p>
-            <p><strong>✅ Correct:</strong> The <span style="color: #d97706;">books</span> <strong>contain</strong> different information.</p>
+            <p><strong>Plural = No 's' on Verb</strong></p>
+            <p><strong>✅ Correct:</strong> The <span >cats</span> <strong>run</strong> quickly.</p>
+            <p><strong>✅ Correct:</strong> <span >Sarah and Mike</span> <strong>study</strong> together.</p>
+            <p><strong>✅ Correct:</strong> The <span >books</span> <strong>contain</strong> different information.</p>
             <p><em>Rule: Multiple things = verb has no 's'</em></p>
         </div>
     </div>
@@ -909,24 +909,24 @@ export const allLessons = {
         <p><strong>Rule:</strong> Subjects are <em>never</em> found inside prepositional phrases. Cross them out!</p>
 
         <div class="examples">
-            <h5>How to Handle Prepositional Phrases:</h5>
+            <p><strong>How to Handle Prepositional Phrases:</strong></p>
             <p><strong>✅ Step-by-step process:</strong></p>
             <p>Original: "The box <em>of chocolates</em> <strong>[is/are]</strong> on the table."</p>
             <p><strong>Step 1:</strong> Cross out prepositional phrase: The box ~~of chocolates~~ <strong>[is/are]</strong> on the table.</p>
-            <p><strong>Step 2:</strong> Find the subject: <span style="color: #10a37f;">box</span> (singular)</p>
+            <p><strong>Step 2:</strong> Find the subject: <span >box</span> (singular)</p>
             <p><strong>Step 3:</strong> Choose matching verb: The box <strong>is</strong> on the table. ✅</p>
         </div>
 
         <div class="examples">
-            <h5>Common Prepositional Distractors:</h5>
+            <p><strong>Common Prepositional Distractors:</strong></p>
             <p><strong>Example 1:</strong> The students <em>in the hallway</em> <strong>are</strong> waiting.</p>
-            <p>→ Subject: <span style="color: #d97706;">students</span> (plural) → verb: <strong>are</strong></p>
+            <p>→ Subject: <span >students</span> (plural) → verb: <strong>are</strong></p>
 
             <p><strong>Example 2:</strong> The leader <em>of these groups</em> <strong>has</strong> arrived.</p>
-            <p>→ Subject: <span style="color: #10a37f;">leader</span> (singular) → verb: <strong>has</strong></p>
+            <p>→ Subject: <span >leader</span> (singular) → verb: <strong>has</strong></p>
 
             <p><strong>Example 3:</strong> Each <em>of the players</em> <strong>wants</strong> to win.</p>
-            <p>→ Subject: <span style="color: #10a37f;">Each</span> (singular!) → verb: <strong>wants</strong></p>
+            <p>→ Subject: <span >Each</span> (singular!) → verb: <strong>wants</strong></p>
         </div>
     </div>
 
@@ -935,17 +935,17 @@ export const allLessons = {
         <p><strong>Pattern:</strong> Subject + <em>, interrupting information,</em> + verb</p>
 
         <div class="examples">
-            <h5>Perfect Examples:</h5>
+            <p><strong>Perfect Examples:</strong></p>
             <p><strong>✅ Correct:</strong> Sarah<strong>,</strong> <em>along with her friends</em><strong>,</strong> <strong>is</strong> coming to dinner.</p>
-            <p>→ Real subject: <span style="color: #10a37f;">Sarah</span> (singular) → verb: <strong>is</strong></p>
+            <p>→ Real subject: <span >Sarah</span> (singular) → verb: <strong>is</strong></p>
             <p><em>"along with her friends" is just extra information!</em></p>
 
             <p><strong>✅ Correct:</strong> The books<strong>,</strong> <em>as well as the pen</em><strong>,</strong> <strong>are</strong> on the desk.</p>
-            <p>→ Real subject: <span style="color: #d97706;">books</span> (plural) → verb: <strong>are</strong></p>
+            <p>→ Real subject: <span >books</span> (plural) → verb: <strong>are</strong></p>
         </div>
 
         <div class="examples">
-            <h5>Interrupting Phrase Warning Signs:</h5>
+            <p><strong>Interrupting Phrase Warning Signs:</strong></p>
             <p>• along with • as well as • together with • in addition to</p>
             <p>• including • except • besides • rather than</p>
             <p><strong>All of these create interrupting phrases—ignore them for subject-verb agreement!</strong></p>
@@ -969,7 +969,7 @@ export const allLessons = {
         <p>When you have multiple subjects, the connector word determines if it's singular or plural.</p>
 
         <div class="examples">
-            <h5>AND = Always Plural</h5>
+            <p><strong>AND = Always Plural</strong></p>
             <p><strong>✅ Examples:</strong></p>
             <p>• Sarah <strong>and</strong> Mike <strong>are</strong> studying.</p>
             <p>• The cat <strong>and</strong> the dog <strong>are</strong> friends.</p>
@@ -978,16 +978,16 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>OR/NOR = Closest Subject Wins</h5>
+            <p><strong>OR/NOR = Closest Subject Wins</strong></p>
             <p><strong>✅ Examples:</strong></p>
             <p>• Either the teacher <strong>or</strong> the students <strong>are</strong> wrong.</p>
-            <p>→ Closest to verb: <span style="color: #d97706;">students</span> (plural) → <strong>are</strong></p>
+            <p>→ Closest to verb: <span >students</span> (plural) → <strong>are</strong></p>
 
             <p>• Either the students <strong>or</strong> the teacher <strong>is</strong> wrong.</p>
-            <p>→ Closest to verb: <span style="color: #10a37f;">teacher</span> (singular) → <strong>is</strong></p>
+            <p>→ Closest to verb: <span >teacher</span> (singular) → <strong>is</strong></p>
 
             <p>• Neither Sarah <strong>nor</strong> her friends <strong>are</strong> coming.</p>
-            <p>→ Closest to verb: <span style="color: #d97706;">friends</span> (plural) → <strong>are</strong></p>
+            <p>→ Closest to verb: <span >friends</span> (plural) → <strong>are</strong></p>
         </div>
     </div>
 
@@ -995,7 +995,7 @@ export const allLessons = {
         <h4>📋 Type 2: Indefinite Pronouns (The Memorization List)</h4>
 
         <div class="examples">
-            <h5>Always Singular (Memorize These!):</h5>
+            <p><strong>Always Singular (Memorize These!):</strong></p>
             <div style="background: #f0f8ff; padding: 1rem; border-radius: 8px; margin: 0.5rem 0;">
                 <p><strong>Each, Every, Either, Neither</strong></p>
                 <p><strong>Someone, Anyone, No one, Everyone</strong></p>
@@ -1009,7 +1009,7 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>Always Plural:</h5>
+            <p><strong>Always Plural:</strong></p>
             <p><strong>Both, Few, Many, Several</strong></p>
             <p><strong>Examples:</strong></p>
             <p>• <strong>Both</strong> of the cats <strong>are</strong> sleeping.</p>
@@ -1017,7 +1017,7 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>Depends on Context:</h5>
+            <p><strong>Depends on Context:</strong></p>
             <p><strong>All, Any, Most, None, Some</strong></p>
             <p>→ Look at the noun they refer to!</p>
             <p>• <strong>Most</strong> of the cake <strong>is</strong> gone. (cake = singular)</p>
@@ -1029,7 +1029,7 @@ export const allLessons = {
         <h4>📋 Type 3: Collective Nouns & Special Cases</h4>
 
         <div class="examples">
-            <h5>Collective Nouns = Usually Singular</h5>
+            <p><strong>Collective Nouns = Usually Singular</strong></p>
             <p><strong>Common collective nouns:</strong> team, family, group, class, committee, audience</p>
             <p>• The <strong>team</strong> <strong>is</strong> practicing.</p>
             <p>• The <strong>family</strong> <strong>has</strong> moved.</p>
@@ -1037,7 +1037,7 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>Special "Plural-Looking" Singular Nouns</h5>
+            <p><strong>Special "Plural-Looking" Singular Nouns</strong></p>
             <p><strong>Mathematics</strong> <strong>is</strong> difficult.</p>
             <p><strong>Physics</strong> <strong>requires</strong> concentration.</p>
             <p><strong>News</strong> <strong>travels</strong> quickly.</p>
@@ -1060,7 +1060,7 @@ export const allLessons = {
         <h4>📋 The Most Tested Verb Forms</h4>
 
         <div class="examples">
-            <h5>Present Perfect: "Have/Has" + Past Participle</h5>
+            <p><strong>Present Perfect: "Have/Has" + Past Participle</strong></p>
             <p><strong>Use when:</strong> Action started in past, continues to present</p>
             <p>• I <strong>have lived</strong> here for five years. ✅</p>
             <p>• She <strong>has completed</strong> her homework. ✅</p>
@@ -1068,14 +1068,14 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>Past Perfect: "Had" + Past Participle</h5>
+            <p><strong>Past Perfect: "Had" + Past Participle</strong></p>
             <p><strong>Use when:</strong> Action happened before another past action</p>
             <p>• By the time I arrived, they <strong>had left</strong>. ✅</p>
             <p>• She realized she <strong>had forgotten</strong> her keys. ✅</p>
         </div>
 
         <div class="examples">
-            <h5>Conditional: "Would Have" + Past Participle</h5>
+            <p><strong>Conditional: "Would Have" + Past Participle</strong></p>
             <p><strong>Use when:</strong> Talking about hypothetical past situations</p>
             <p>• If I had studied, I <strong>would have passed</strong>. ✅</p>
             <p>• She <strong>would have called</strong> if she could. ✅</p>
@@ -1203,7 +1203,7 @@ export const allLessons = {
         <p><strong>Part 2:</strong> Pronoun Case → When to use I vs. me, he vs. him, we vs. us</p>
         <p><strong>Part 3:</strong> Pronoun Agreement → Making pronouns match their antecedents perfectly</p>
         <p><strong>Part 4:</strong> Pronoun Clarity → Avoiding ambiguous and unclear pronoun references</p>
-        <p><strong>Your advantage:</strong> You can already identify <span style="color: #1a73e8;">subjects</span> from Chapter 4!</p>
+        <p><strong>Your advantage:</strong> You can already identify <span >subjects</span> from Chapter 4!</p>
     </div>
 </div>
 
@@ -1213,34 +1213,34 @@ export const allLessons = {
     <div class="concept-box">
         <h4>💡 Why This Topic Terrifies Students (But Shouldn't Terrify You!)</h4>
         <p><strong>The truth:</strong> Who vs. Whom looks scary, but it follows the <em>exact same pattern</em> as subject vs. object pronouns you already know!</p>
-        <p><span style="color: #10a37f;">WHO</span> = subject (like <strong>he, she, they</strong>)</p>
-        <p><span style="color: #d97706;">WHOM</span> = object (like <strong>him, her, them</strong>)</p>
+        <p><span >WHO</span> = subject (like <strong>he, she, they</strong>)</p>
+        <p><span >WHOM</span> = object (like <strong>him, her, them</strong>)</p>
     </div>
 
     <div class="concept-box">
         <h4>🎯 The "He/Him" Test (Works Every Time!)</h4>
         <p><strong>Step 1:</strong> Find the who/whom in the sentence</p>
         <p><strong>Step 2:</strong> Replace it with "he" or "him"</p>
-        <p><strong>Step 3:</strong> If "he" sounds right → use <span style="color: #10a37f;">WHO</span></p>
-        <p><strong>Step 4:</strong> If "him" sounds right → use <span style="color: #d97706;">WHOM</span></p>
+        <p><strong>Step 3:</strong> If "he" sounds right → use <span >WHO</span></p>
+        <p><strong>Step 4:</strong> If "him" sounds right → use <span >WHOM</span></p>
 
         <div class="examples">
-            <h5>Perfect Examples:</h5>
+            <p><strong>Perfect Examples:</strong></p>
             <p><strong>Question:</strong> <em>Who/Whom</em> did you see at the party?</p>
             <p><strong>Test:</strong> "You saw <strong>him</strong> at the party" (not "You saw he")</p>
-            <p><strong>Answer:</strong> <span style="color: #d97706;">Whom</span> did you see at the party? ✅</p>
+            <p><strong>Answer:</strong> <span >Whom</span> did you see at the party? ✅</p>
         </div>
 
         <div class="examples">
             <p><strong>Question:</strong> <em>Who/Whom</em> is bringing the snacks?</p>
             <p><strong>Test:</strong> "<strong>He</strong> is bringing the snacks" (not "Him is bringing")</p>
-            <p><strong>Answer:</strong> <span style="color: #10a37f;">Who</span> is bringing the snacks? ✅</p>
+            <p><strong>Answer:</strong> <span >Who</span> is bringing the snacks? ✅</p>
         </div>
 
         <div class="examples">
             <p><strong>Question:</strong> The person <em>who/whom</em> I met was friendly.</p>
             <p><strong>Test:</strong> "I met <strong>him</strong>" (not "I met he")</p>
-            <p><strong>Answer:</strong> The person <span style="color: #d97706;">whom</span> I met was friendly. ✅</p>
+            <p><strong>Answer:</strong> The person <span >whom</span> I met was friendly. ✅</p>
         </div>
     </div>
 
@@ -1248,26 +1248,26 @@ export const allLessons = {
         <h4>📋 Advanced Who vs. Whom (The Tricky Cases)</h4>
 
         <div class="examples">
-            <h5>With Prepositions (Always WHOM!)</h5>
+            <p><strong>With Prepositions (Always WHOM!)</strong></p>
             <p><strong>Pattern:</strong> Preposition + whom</p>
-            <p>• To <span style="color: #d97706;">whom</span> should I address this letter?</p>
-            <p>• For <span style="color: #d97706;">whom</span> are you buying the gift?</p>
-            <p>• With <span style="color: #d97706;">whom</span> did you go to the movie?</p>
+            <p>• To <span >whom</span> should I address this letter?</p>
+            <p>• For <span >whom</span> are you buying the gift?</p>
+            <p>• With <span >whom</span> did you go to the movie?</p>
             <p><em>Rule: After prepositions (to, for, with, by, etc.), always use "whom"!</em></p>
         </div>
 
         <div class="examples">
-            <h5>In Questions (Use the Flip Test)</h5>
+            <p><strong>In Questions (Use the Flip Test)</strong></p>
             <p><strong>Tricky:</strong> <em>Who/Whom</em> do you think will win?</p>
             <p><strong>Flip it:</strong> "You think <strong>he</strong> will win" (not "him will win")</p>
-            <p><strong>Answer:</strong> <span style="color: #10a37f;">Who</span> do you think will win? ✅</p>
+            <p><strong>Answer:</strong> <span >Who</span> do you think will win? ✅</p>
         </div>
 
         <div class="examples">
-            <h5>In Relative Clauses</h5>
+            <p><strong>In Relative Clauses</strong></p>
             <p><strong>Example:</strong> She's the teacher <em>who/whom</em> everyone respects.</p>
             <p><strong>Test:</strong> "Everyone respects <strong>her</strong>" (object position)</p>
-            <p><strong>Answer:</strong> She's the teacher <span style="color: #d97706;">whom</span> everyone respects. ✅</p>
+            <p><strong>Answer:</strong> She's the teacher <span >whom</span> everyone respects. ✅</p>
         </div>
     </div>
 
@@ -1285,8 +1285,8 @@ export const allLessons = {
     <div class="concept-box">
         <h4>💡 The Core Concept</h4>
         <p>Pronouns change their form based on their job in the sentence:</p>
-        <p><span style="color: #10a37f;">Subject pronouns</span> do the action</p>
-        <p><span style="color: #d97706;">Object pronouns</span> receive the action</p>
+        <p><span >Subject pronouns</span> do the action</p>
+        <p><span >Object pronouns</span> receive the action</p>
     </div>
 
     <div class="concept-box">
@@ -1310,21 +1310,21 @@ export const allLessons = {
         <h4>📋 When to Use Subject vs. Object Pronouns</h4>
 
         <div class="examples">
-            <h5>Subject Pronouns (Before the Verb)</h5>
+            <p><strong>Subject Pronouns (Before the Verb)</strong></p>
             <p><strong>✅ Correct examples:</strong></p>
-            <p>• <span style="color: #10a37f;">I</span> went to the store.</p>
-            <p>• <span style="color: #10a37f;">She</span> and <span style="color: #10a37f;">I</span> are friends.</p>
-            <p>• <span style="color: #10a37f;">We</span> studied together.</p>
-            <p>• <span style="color: #10a37f;">They</span> arrived early.</p>
+            <p>• <span >I</span> went to the store.</p>
+            <p>• <span >She</span> and <span >I</span> are friends.</p>
+            <p>• <span >We</span> studied together.</p>
+            <p>• <span >They</span> arrived early.</p>
         </div>
 
         <div class="examples">
-            <h5>Object Pronouns (After the Verb or Preposition)</h5>
+            <p><strong>Object Pronouns (After the Verb or Preposition)</strong></p>
             <p><strong>✅ Correct examples:</strong></p>
-            <p>• The teacher called <span style="color: #d97706;">me</span>.</p>
-            <p>• Give the book to <span style="color: #d97706;">her</span>.</p>
-            <p>• Between you and <span style="color: #d97706;">me</span>, this is difficult.</p>
-            <p>• The message was for <span style="color: #d97706;">us</span>.</p>
+            <p>• The teacher called <span >me</span>.</p>
+            <p>• Give the book to <span >her</span>.</p>
+            <p>• Between you and <span >me</span>, this is difficult.</p>
+            <p>• The message was for <span >us</span>.</p>
         </div>
     </div>
 
@@ -1333,7 +1333,7 @@ export const allLessons = {
         <p><strong>The problem:</strong> When there are two people, students often choose the wrong pronoun.</p>
 
         <div class="examples">
-            <h5>Common Mistakes:</h5>
+            <p><strong>Common Mistakes:</strong></p>
             <p><strong>❌ Wrong:</strong> Sarah and <strong>me</strong> went to the movies.</p>
             <p><strong>✅ Right:</strong> Sarah and <strong>I</strong> went to the movies.</p>
             <p><em>Test: Remove "Sarah and" → "I went" (not "me went")</em></p>
@@ -1369,7 +1369,7 @@ export const allLessons = {
         <h4>📋 Singular Pronoun Agreement (The Tricky Ones)</h4>
 
         <div class="examples">
-            <h5>Indefinite Pronouns = Always Singular</h5>
+            <p><strong>Indefinite Pronouns = Always Singular</strong></p>
             <p><em>Remember these from Chapter 4? They're always singular for pronouns too!</em></p>
             <div style="background: #f0f8ff; padding: 1rem; border-radius: 8px; margin: 0.5rem 0;">
                 <p><strong>Each, Every, Either, Neither, Someone, Anyone, Everyone, No one</strong></p>
@@ -1386,7 +1386,7 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>Collective Nouns = Usually Singular</h5>
+            <p><strong>Collective Nouns = Usually Singular</strong></p>
             <p><strong>Common collective nouns:</strong> team, family, group, class, committee, audience</p>
 
             <p><strong>✅ Correct examples:</strong></p>
@@ -1400,14 +1400,14 @@ export const allLessons = {
         <h4>📋 Plural Pronoun Agreement</h4>
 
         <div class="examples">
-            <h5>Compound Subjects with "AND" = Plural</h5>
+            <p><strong>Compound Subjects with "AND" = Plural</strong></p>
             <p><strong>✅ Correct examples:</strong></p>
             <p>• Sarah and Mike finished <strong>their</strong> homework.</p>
             <p>• The cats and dogs found <strong>their</strong> way home.</p>
         </div>
 
         <div class="examples">
-            <h5>Plural Nouns = Plural Pronouns</h5>
+            <p><strong>Plural Nouns = Plural Pronouns</strong></p>
             <p><strong>✅ Correct examples:</strong></p>
             <p>• The students completed <strong>their</strong> assignments.</p>
             <p>• The books are in <strong>their</strong> proper places.</p>
@@ -1418,14 +1418,14 @@ export const allLessons = {
         <h4>❌ Pronoun Agreement Danger Zone</h4>
 
         <div class="examples">
-            <h5>Trap #1: Don't Be Fooled by Nearby Plural Nouns</h5>
+            <p><strong>Trap #1: Don't Be Fooled by Nearby Plural Nouns</strong></p>
             <p><strong>❌ Wrong:</strong> Each of the students completed <strong>their</strong> test.</p>
             <p><strong>✅ Right:</strong> Each of the students completed <strong>his or her</strong> test.</p>
             <p><em>The antecedent is "Each" (singular), not "students"!</em></p>
         </div>
 
         <div class="examples">
-            <h5>Trap #2: Gender-Neutral Language</h5>
+            <p><strong>Trap #2: Gender-Neutral Language</strong></p>
             <p><strong>Formal/ACT Style:</strong> A student should bring <strong>his or her</strong> book.</p>
             <p><strong>Modern Style:</strong> A student should bring <strong>their</strong> book.</p>
             <p><em>On the ACT, "his or her" is usually preferred for singular antecedents.</em></p>
@@ -1445,7 +1445,7 @@ export const allLessons = {
         <h4>📋 Common Clarity Problems</h4>
 
         <div class="examples">
-            <h5>Problem 1: Ambiguous Reference</h5>
+            <p><strong>Problem 1: Ambiguous Reference</strong></p>
             <p><strong>❌ Unclear:</strong> Sarah told her mother that <strong>she</strong> needed to leave.</p>
             <p><em>Who needs to leave? Sarah or her mother?</em></p>
 
@@ -1454,7 +1454,7 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>Problem 2: Vague "This," "That," "Which"</h5>
+            <p><strong>Problem 2: Vague "This," "That," "Which"</strong></p>
             <p><strong>❌ Unclear:</strong> The team practiced every day and studied film. <strong>This</strong> helped them win.</p>
             <p><em>What helped? The practicing? The studying? Both?</em></p>
 
@@ -1463,7 +1463,7 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>Problem 3: Missing Antecedent</h5>
+            <p><strong>Problem 3: Missing Antecedent</strong></p>
             <p><strong>❌ Unclear:</strong> In the restaurant, <strong>they</strong> served us quickly.</p>
             <p><em>Who is "they"? There's no plural antecedent!</em></p>
 
@@ -1572,7 +1572,7 @@ export const allLessons = {
         <p><strong>Part 1:</strong> The Golden Rule → Why modifiers must sit next to what they describe</p>
         <p><strong>Part 2:</strong> Dangling Modifiers → When descriptions have nothing to attach to</p>
         <p><strong>Part 3:</strong> Misplaced Modifiers → When descriptions attach to the wrong thing</p>
-        <p><strong>Your advantage:</strong> You can identify <span style="color: #1a73e8;">subjects and independent clauses</span> from previous chapters!</p>
+        <p><strong>Your advantage:</strong> You can identify <span >subjects and independent clauses</span> from previous chapters!</p>
     </div>
 </div>
 
@@ -1590,11 +1590,11 @@ export const allLessons = {
         <p>Modifiers are words or phrases that give extra information about other words in the sentence.</p>
 
         <div class="examples">
-            <h5>Common Modifier Types:</h5>
-            <p><strong>Adjectives:</strong> The <span style="color: #10a37f;">red</span> car drove quickly.</p>
-            <p><strong>Adverbs:</strong> She sang <span style="color: #10a37f;">beautifully</span>.</p>
-            <p><strong>Phrases:</strong> <span style="color: #10a37f;">Running late for work</span>, Tom forgot his lunch.</p>
-            <p><strong>Clauses:</strong> The book <span style="color: #10a37f;">that I borrowed</span> was excellent.</p>
+            <p><strong>Common Modifier Types:</strong></p>
+            <p><strong>Adjectives:</strong> The <span >red</span> car drove quickly.</p>
+            <p><strong>Adverbs:</strong> She sang <span >beautifully</span>.</p>
+            <p><strong>Phrases:</strong> <span >Running late for work</span>, Tom forgot his lunch.</p>
+            <p><strong>Clauses:</strong> The book <span >that I borrowed</span> was excellent.</p>
         </div>
     </div>
 
@@ -1602,17 +1602,17 @@ export const allLessons = {
         <h4>📋 The Proximity Rule in Action</h4>
 
         <div class="examples">
-            <h5>✅ Correct Placement:</h5>
-            <p><strong>Modifier first:</strong> <span style="color: #10a37f;">Walking down the street</span>, <span style="color: #d97706;">I</span> noticed the trees looked beautiful.</p>
+            <p><strong>✅ Correct Placement:</strong></p>
+            <p><strong>Modifier first:</strong> <span >Walking down the street</span>, <span >I</span> noticed the trees looked beautiful.</p>
             <p><em>The modifier "Walking down the street" sits right next to "I" (who was walking).</em></p>
 
-            <p><strong>Modifier last:</strong> <span style="color: #d97706;">I</span> noticed the trees looked beautiful <span style="color: #10a37f;">while walking down the street</span>.</p>
+            <p><strong>Modifier last:</strong> <span >I</span> noticed the trees looked beautiful <span >while walking down the street</span>.</p>
             <p><em>The modifier is still close to "I" and clearly describes who was walking.</em></p>
         </div>
 
         <div class="examples">
-            <h5>❌ Wrong Placement:</h5>
-            <p><strong>Confusing:</strong> <span style="color: #10a37f;">Walking down the street</span>, <span style="color: #f56565;">the trees</span> looked beautiful.</p>
+            <p><strong>❌ Wrong Placement:</strong></p>
+            <p><strong>Confusing:</strong> <span >Walking down the street</span>, <span >the trees</span> looked beautiful.</p>
             <p><em>This literally says the trees were walking down the street! The modifier is next to "trees" instead of the person who was actually walking.</em></p>
         </div>
     </div>
@@ -1636,41 +1636,41 @@ export const allLessons = {
         <h4>📋 Classic Dangling Modifier Patterns</h4>
 
         <div class="examples">
-            <h5>Pattern 1: Action Phrases with No Actor</h5>
-            <p><strong>❌ Dangling:</strong> <span style="color: #f56565;">Having finished homework</span>, the TV was turned on.</p>
+            <p><strong>Pattern 1: Action Phrases with No Actor</strong></p>
+            <p><strong>❌ Dangling:</strong> <span >Having finished homework</span>, the TV was turned on.</p>
             <p><em>Problem: Who finished homework? The TV didn't finish homework!</em></p>
 
-            <p><strong>✅ Fixed:</strong> <span style="color: #10a37f;">Having finished homework</span>, <span style="color: #d97706;">Sarah</span> turned on the TV.</p>
+            <p><strong>✅ Fixed:</strong> <span >Having finished homework</span>, <span >Sarah</span> turned on the TV.</p>
             <p><em>Now "Sarah" is right next to the modifier, so we know she finished the homework.</em></p>
 
-            <p><strong>✅ Also fixed:</strong> <span style="color: #10a37f;">After Sarah finished homework</span>, she turned on the TV.</p>
+            <p><strong>✅ Also fixed:</strong> <span >After Sarah finished homework</span>, she turned on the TV.</p>
             <p><em>Alternative: Make the modifier a complete clause with its own subject.</em></p>
         </div>
 
         <div class="examples">
-            <h5>Pattern 2: "-ing" Phrases Without Clear Subjects</h5>
-            <p><strong>❌ Dangling:</strong> <span style="color: #f56565;">Running to catch the bus</span>, my backpack fell off.</p>
+            <p><strong>Pattern 2: "-ing" Phrases Without Clear Subjects</strong></p>
+            <p><strong>❌ Dangling:</strong> <span >Running to catch the bus</span>, my backpack fell off.</p>
             <p><em>Problem: The backpack wasn't running—I was running!</em></p>
 
-            <p><strong>✅ Fixed:</strong> <span style="color: #10a37f;">Running to catch the bus</span>, <span style="color: #d97706;">I</span> dropped my backpack.</p>
+            <p><strong>✅ Fixed:</strong> <span >Running to catch the bus</span>, <span >I</span> dropped my backpack.</p>
             <p><em>Now "I" is the subject doing the running.</em></p>
         </div>
 
         <div class="examples">
-            <h5>Pattern 3: "To" Phrases (Infinitives) with Missing Subjects</h5>
-            <p><strong>❌ Dangling:</strong> <span style="color: #f56565;">To get better grades</span>, more studying is necessary.</p>
+            <p><strong>Pattern 3: "To" Phrases (Infinitives) with Missing Subjects</strong></p>
+            <p><strong>❌ Dangling:</strong> <span >To get better grades</span>, more studying is necessary.</p>
             <p><em>Problem: Who wants better grades? "More studying" doesn't want grades!</em></p>
 
-            <p><strong>✅ Fixed:</strong> <span style="color: #10a37f;">To get better grades</span>, <span style="color: #d97706;">students</span> must study more.</p>
+            <p><strong>✅ Fixed:</strong> <span >To get better grades</span>, <span >students</span> must study more.</p>
             <p><em>Now "students" are the ones who want better grades.</em></p>
         </div>
 
         <div class="examples">
-            <h5>Pattern 4: Past Participle Phrases (-ed phrases)</h5>
-            <p><strong>❌ Dangling:</strong> <span style="color: #f56565;">Born in 1990</span>, the new millennium was exciting for me.</p>
+            <p><strong>Pattern 4: Past Participle Phrases (-ed phrases)</strong></p>
+            <p><strong>❌ Dangling:</strong> <span >Born in 1990</span>, the new millennium was exciting for me.</p>
             <p><em>Problem: The millennium wasn't born in 1990—I was!</em></p>
 
-            <p><strong>✅ Fixed:</strong> <span style="color: #10a37f;">Born in 1990</span>, <span style="color: #d97706;">I</span> found the new millennium exciting.</p>
+            <p><strong>✅ Fixed:</strong> <span >Born in 1990</span>, <span >I</span> found the new millennium exciting.</p>
             <p><em>Now "I" is the one who was born in 1990.</em></p>
         </div>
     </div>
@@ -1695,40 +1695,40 @@ export const allLessons = {
         <h4>📋 Common Misplaced Modifier Patterns</h4>
 
         <div class="examples">
-            <h5>Pattern 1: "Almost," "Only," "Just" in Wrong Positions</h5>
-            <p><strong>❌ Confusing:</strong> She <span style="color: #f56565;">almost</span> drove her kids to school every day.</p>
+            <p><strong>Pattern 1: "Almost," "Only," "Just" in Wrong Positions</strong></p>
+            <p><strong>❌ Confusing:</strong> She <span >almost</span> drove her kids to school every day.</p>
             <p><em>Problem: Did she "almost drive" (but didn't) or drive "almost every day"?</em></p>
 
-            <p><strong>✅ Clear:</strong> She drove her kids to school <span style="color: #10a37f;">almost</span> every day.</p>
+            <p><strong>✅ Clear:</strong> She drove her kids to school <span >almost</span> every day.</p>
             <p><em>Now it's clear she drove them on most days, but not quite every day.</em></p>
         </div>
 
         <div class="examples">
-            <h5>Pattern 2: Descriptive Phrases in Wrong Locations</h5>
-            <p><strong>❌ Confusing:</strong> The car belongs to a woman <span style="color: #f56565;">with a dented fender</span>.</p>
+            <p><strong>Pattern 2: Descriptive Phrases in Wrong Locations</strong></p>
+            <p><strong>❌ Confusing:</strong> The car belongs to a woman <span >with a dented fender</span>.</p>
             <p><em>Problem: Does the woman have a dented fender, or does the car?</em></p>
 
-            <p><strong>✅ Clear:</strong> The car <span style="color: #10a37f;">with a dented fender</span> belongs to a woman.</p>
+            <p><strong>✅ Clear:</strong> The car <span >with a dented fender</span> belongs to a woman.</p>
             <p><em>Now it's clear the car has the dented fender.</em></p>
         </div>
 
         <div class="examples">
-            <h5>Pattern 3: Relative Clauses (who, which, that) Far from Antecedents</h5>
-            <p><strong>❌ Confusing:</strong> I saw a dog in the park <span style="color: #f56565;">that was barking loudly</span>.</p>
+            <p><strong>Pattern 3: Relative Clauses (who, which, that) Far from Antecedents</strong></p>
+            <p><strong>❌ Confusing:</strong> I saw a dog in the park <span >that was barking loudly</span>.</p>
             <p><em>Problem: Was the park barking loudly, or the dog?</em></p>
 
-            <p><strong>✅ Clear:</strong> I saw a dog <span style="color: #10a37f;">that was barking loudly</span> in the park.</p>
+            <p><strong>✅ Clear:</strong> I saw a dog <span >that was barking loudly</span> in the park.</p>
             <p><em>Now it's clear the dog was barking loudly.</em></p>
 
-            <p><strong>✅ Also clear:</strong> In the park, I saw a dog <span style="color: #10a37f;">that was barking loudly</span>.</p>
+            <p><strong>✅ Also clear:</strong> In the park, I saw a dog <span >that was barking loudly</span>.</p>
         </div>
 
         <div class="examples">
-            <h5>Pattern 4: Prepositional Phrases Creating Ambiguity</h5>
-            <p><strong>❌ Confusing:</strong> The teacher spoke to the student <span style="color: #f56565;">with concern</span>.</p>
+            <p><strong>Pattern 4: Prepositional Phrases Creating Ambiguity</strong></p>
+            <p><strong>❌ Confusing:</strong> The teacher spoke to the student <span >with concern</span>.</p>
             <p><em>Problem: Is the teacher concerned, or is the student concerned?</em></p>
 
-            <p><strong>✅ Clear:</strong> <span style="color: #10a37f;">With concern</span>, the teacher spoke to the student.</p>
+            <p><strong>✅ Clear:</strong> <span >With concern</span>, the teacher spoke to the student.</p>
             <p><em>Now it's clear the teacher was concerned.</em></p>
 
             <p><strong>✅ Also clear:</strong> The teacher spoke to the student who seemed concerned.</p>
@@ -1754,10 +1754,10 @@ export const allLessons = {
         <p>Some modifying phrases are "absolute"—they modify the entire sentence rather than one specific word.</p>
 
         <div class="examples">
-            <h5>Acceptable Absolute Constructions:</h5>
-            <p><strong>✅ Correct:</strong> <span style="color: #10a37f;">Weather permitting</span>, we'll have the picnic tomorrow.</p>
-            <p><strong>✅ Correct:</strong> <span style="color: #10a37f;">Generally speaking</span>, students enjoy summer break.</p>
-            <p><strong>✅ Correct:</strong> <span style="color: #10a37f;">All things considered</span>, the project was a success.</p>
+            <p><strong>Acceptable Absolute Constructions:</strong></p>
+            <p><strong>✅ Correct:</strong> <span >Weather permitting</span>, we'll have the picnic tomorrow.</p>
+            <p><strong>✅ Correct:</strong> <span >Generally speaking</span>, students enjoy summer break.</p>
+            <p><strong>✅ Correct:</strong> <span >All things considered</span>, the project was a success.</p>
             <p><em>These phrases modify the entire situation, not a specific noun.</em></p>
         </div>
     </div>
@@ -1767,12 +1767,12 @@ export const allLessons = {
         <p>Sometimes a modifier sits between two words and could logically modify either one.</p>
 
         <div class="examples">
-            <h5>Squinting Modifier Problems:</h5>
-            <p><strong>❌ Ambiguous:</strong> Students who study <span style="color: #f56565;">frequently</span> get better grades.</p>
+            <p><strong>Squinting Modifier Problems:</strong></p>
+            <p><strong>❌ Ambiguous:</strong> Students who study <span >frequently</span> get better grades.</p>
             <p><em>Problem: Do students "study frequently" or "frequently get better grades"?</em></p>
 
-            <p><strong>✅ Clear Option 1:</strong> Students who <span style="color: #10a37f;">frequently</span> study get better grades.</p>
-            <p><strong>✅ Clear Option 2:</strong> Students who study get better grades <span style="color: #10a37f;">frequently</span>.</p>
+            <p><strong>✅ Clear Option 1:</strong> Students who <span >frequently</span> study get better grades.</p>
+            <p><strong>✅ Clear Option 2:</strong> Students who study get better grades <span >frequently</span>.</p>
         </div>
     </div>
 </div>
@@ -1869,7 +1869,7 @@ export const allLessons = {
         <p><strong>Part 1:</strong> The Universal Rule → Why parallel items must match in form</p>
         <p><strong>Part 2:</strong> List Parallelism → Making series of 3+ items flow perfectly</p>
         <p><strong>Part 3:</strong> Comparison Parallelism → Balancing "better than," "rather than," etc.</p>
-        <p><strong>Your advantage:</strong> You understand <span style="color: #1a73e8;">sentence structure</span> from all previous chapters!</p>
+        <p><strong>Your advantage:</strong> You understand <span >sentence structure</span> from all previous chapters!</p>
     </div>
 </div>
 
@@ -1887,14 +1887,14 @@ export const allLessons = {
         <p>Our brains expect patterns. When items don't match, it creates mental friction and makes writing sound unprofessional.</p>
 
         <div class="examples">
-            <h5>❌ Non-parallel (Sounds Off):</h5>
-            <p>I like <span style="color: #f56565;">swimming</span>, <span style="color: #f56565;">to run</span>, and <span style="color: #f56565;">biking</span>.</p>
+            <p><strong>❌ Non-parallel (Sounds Off):</strong></p>
+            <p>I like <span >swimming</span>, <span >to run</span>, and <span >biking</span>.</p>
             <p><em>Problem: swimming (-ing), to run (infinitive), biking (-ing) - the pattern is broken!</em></p>
         </div>
 
         <div class="examples">
-            <h5>✅ Parallel (Sounds Right):</h5>
-            <p>I like <span style="color: #10a37f;">swimming</span>, <span style="color: #10a37f;">running</span>, and <span style="color: #10a37f;">biking</span>.</p>
+            <p><strong>✅ Parallel (Sounds Right):</strong></p>
+            <p>I like <span >swimming</span>, <span >running</span>, and <span >biking</span>.</p>
             <p><em>Perfect: All three are -ing words (gerunds) - smooth, balanced, professional!</em></p>
         </div>
     </div>
@@ -1903,30 +1903,30 @@ export const allLessons = {
         <h4>📋 The Most Common Parallel Forms</h4>
 
         <div class="examples">
-            <h5>Option 1: All Gerunds (-ing words)</h5>
-            <p>✅ <strong>Sarah enjoys</strong> <span style="color: #10a37f;">reading</span>, <span style="color: #10a37f;">writing</span>, and <span style="color: #10a37f;">studying</span>.</p>
+            <p><strong>Option 1: All Gerunds (-ing words)</strong></p>
+            <p>✅ <strong>Sarah enjoys</strong> <span >reading</span>, <span >writing</span>, and <span >studying</span>.</p>
         </div>
 
         <div class="examples">
-            <h5>Option 2: All Infinitives (to + verb)</h5>
-            <p>✅ <strong>Sarah wants</strong> <span style="color: #d97706;">to read</span>, <span style="color: #d97706;">to write</span>, and <span style="color: #d97706;">to study</span>.</p>
-            <p>✅ <strong>Sarah wants</strong> <span style="color: #d97706;">to read</span>, <span style="color: #d97706;">write</span>, and <span style="color: #d97706;">study</span>.</p>
+            <p><strong>Option 2: All Infinitives (to + verb)</strong></p>
+            <p>✅ <strong>Sarah wants</strong> <span >to read</span>, <span >to write</span>, and <span >to study</span>.</p>
+            <p>✅ <strong>Sarah wants</strong> <span >to read</span>, <span >write</span>, and <span >study</span>.</p>
             <p><em>Note: You can drop extra "to"s after the first one!</em></p>
         </div>
 
         <div class="examples">
-            <h5>Option 3: All Simple Verbs</h5>
-            <p>✅ <strong>Sarah will</strong> <span style="color: #1a73e8;">read</span>, <span style="color: #1a73e8;">write</span>, and <span style="color: #1a73e8;">study</span> tonight.</p>
+            <p><strong>Option 3: All Simple Verbs</strong></p>
+            <p>✅ <strong>Sarah will</strong> <span >read</span>, <span >write</span>, and <span >study</span> tonight.</p>
         </div>
 
         <div class="examples">
-            <h5>Option 4: All Adjectives</h5>
-            <p>✅ <strong>The movie was</strong> <span style="color: #c53030;">funny</span>, <span style="color: #c53030;">exciting</span>, and <span style="color: #c53030;">memorable</span>.</p>
+            <p><strong>Option 4: All Adjectives</strong></p>
+            <p>✅ <strong>The movie was</strong> <span >funny</span>, <span >exciting</span>, and <span >memorable</span>.</p>
         </div>
 
         <div class="examples">
-            <h5>Option 5: All Nouns</h5>
-            <p>✅ <strong>I packed</strong> <span style="color: #9f7aea;">books</span>, <span style="color: #9f7aea;">clothes</span>, and <span style="color: #9f7aea;">snacks</span>.</p>
+            <p><strong>Option 5: All Nouns</strong></p>
+            <p>✅ <strong>I packed</strong> <span >books</span>, <span >clothes</span>, and <span >snacks</span>.</p>
         </div>
     </div>
 
@@ -1949,37 +1949,37 @@ export const allLessons = {
         <h4>📋 The 5 Most Common List Parallel Patterns</h4>
 
         <div class="examples">
-            <h5>Pattern 1: Verb + -ing Lists</h5>
-            <p><strong>❌ Wrong:</strong> She enjoys <span style="color: #f56565;">swimming</span>, <span style="color: #f56565;">to dance</span>, and <span style="color: #f56565;">reading books</span>.</p>
-            <p><strong>✅ Right:</strong> She enjoys <span style="color: #10a37f;">swimming</span>, <span style="color: #10a37f;">dancing</span>, and <span style="color: #10a37f;">reading</span>.</p>
+            <p><strong>Pattern 1: Verb + -ing Lists</strong></p>
+            <p><strong>❌ Wrong:</strong> She enjoys <span >swimming</span>, <span >to dance</span>, and <span >reading books</span>.</p>
+            <p><strong>✅ Right:</strong> She enjoys <span >swimming</span>, <span >dancing</span>, and <span >reading</span>.</p>
             <p><em>All gerunds (-ing words) that work as nouns after "enjoys."</em></p>
         </div>
 
         <div class="examples">
-            <h5>Pattern 2: Descriptive Adjective Lists</h5>
-            <p><strong>❌ Wrong:</strong> The house was <span style="color: #f56565;">large</span>, <span style="color: #f56565;">having beauty</span>, and <span style="color: #f56565;">expensive</span>.</p>
-            <p><strong>✅ Right:</strong> The house was <span style="color: #c53030;">large</span>, <span style="color: #c53030;">beautiful</span>, and <span style="color: #c53030;">expensive</span>.</p>
+            <p><strong>Pattern 2: Descriptive Adjective Lists</strong></p>
+            <p><strong>❌ Wrong:</strong> The house was <span >large</span>, <span >having beauty</span>, and <span >expensive</span>.</p>
+            <p><strong>✅ Right:</strong> The house was <span >large</span>, <span >beautiful</span>, and <span >expensive</span>.</p>
             <p><em>All single adjectives that describe "house."</em></p>
         </div>
 
         <div class="examples">
-            <h5>Pattern 3: Action Verb Lists</h5>
-            <p><strong>❌ Wrong:</strong> Every morning, I <span style="color: #f56565;">wake up</span>, <span style="color: #f56565;">brushing my teeth</span>, and <span style="color: #f56565;">eat breakfast</span>.</p>
-            <p><strong>✅ Right:</strong> Every morning, I <span style="color: #1a73e8;">wake up</span>, <span style="color: #1a73e8;">brush my teeth</span>, and <span style="color: #1a73e8;">eat breakfast</span>.</p>
+            <p><strong>Pattern 3: Action Verb Lists</strong></p>
+            <p><strong>❌ Wrong:</strong> Every morning, I <span >wake up</span>, <span >brushing my teeth</span>, and <span >eat breakfast</span>.</p>
+            <p><strong>✅ Right:</strong> Every morning, I <span >wake up</span>, <span >brush my teeth</span>, and <span >eat breakfast</span>.</p>
             <p><em>All simple present tense verbs in a sequence.</em></p>
         </div>
 
         <div class="examples">
-            <h5>Pattern 4: Noun Lists</h5>
-            <p><strong>❌ Wrong:</strong> For the trip, bring <span style="color: #f56565;">clothes</span>, <span style="color: #f56565;">something to eat</span>, and <span style="color: #f56565;">money</span>.</p>
-            <p><strong>✅ Right:</strong> For the trip, bring <span style="color: #9f7aea;">clothes</span>, <span style="color: #9f7aea;">food</span>, and <span style="color: #9f7aea;">money</span>.</p>
+            <p><strong>Pattern 4: Noun Lists</strong></p>
+            <p><strong>❌ Wrong:</strong> For the trip, bring <span >clothes</span>, <span >something to eat</span>, and <span >money</span>.</p>
+            <p><strong>✅ Right:</strong> For the trip, bring <span >clothes</span>, <span >food</span>, and <span >money</span>.</p>
             <p><em>All simple nouns (things you can bring).</em></p>
         </div>
 
         <div class="examples">
-            <h5>Pattern 5: Prepositional Phrase Lists</h5>
-            <p><strong>❌ Wrong:</strong> I looked <span style="color: #f56565;">under the bed</span>, <span style="color: #f56565;">in the closet</span>, and <span style="color: #f56565;">checked the garage</span>.</p>
-            <p><strong>✅ Right:</strong> I looked <span style="color: #e53e3e;">under the bed</span>, <span style="color: #e53e3e;">in the closet</span>, and <span style="color: #e53e3e;">in the garage</span>.</p>
+            <p><strong>Pattern 5: Prepositional Phrase Lists</strong></p>
+            <p><strong>❌ Wrong:</strong> I looked <span >under the bed</span>, <span >in the closet</span>, and <span >checked the garage</span>.</p>
+            <p><strong>✅ Right:</strong> I looked <span >under the bed</span>, <span >in the closet</span>, and <span >in the garage</span>.</p>
             <p><em>All prepositional phrases (places where I looked).</em></p>
         </div>
     </div>
@@ -2005,44 +2005,44 @@ export const allLessons = {
         <h4>📋 The 6 Major Comparison Patterns</h4>
 
         <div class="examples">
-            <h5>Pattern 1: "Better than" Comparisons</h5>
-            <p><strong>❌ Wrong:</strong> <span style="color: #f56565;">Reading books</span> is better than <span style="color: #f56565;">to watch TV</span>.</p>
-            <p><strong>✅ Right:</strong> <span style="color: #10a37f;">Reading books</span> is better than <span style="color: #10a37f;">watching TV</span>.</p>
+            <p><strong>Pattern 1: "Better than" Comparisons</strong></p>
+            <p><strong>❌ Wrong:</strong> <span >Reading books</span> is better than <span >to watch TV</span>.</p>
+            <p><strong>✅ Right:</strong> <span >Reading books</span> is better than <span >watching TV</span>.</p>
             <p><em>Both sides are gerunds (-ing words used as nouns).</em></p>
         </div>
 
         <div class="examples">
-            <h5>Pattern 2: "Rather than" Comparisons</h5>
-            <p><strong>❌ Wrong:</strong> I prefer <span style="color: #f56565;">to study</span> rather than <span style="color: #f56565;">going out</span>.</p>
-            <p><strong>✅ Right:</strong> I prefer <span style="color: #d97706;">to study</span> rather than <span style="color: #d97706;">to go out</span>.</p>
-            <p><strong>✅ Also right:</strong> I prefer <span style="color: #10a37f;">studying</span> rather than <span style="color: #10a37f;">going out</span>.</p>
+            <p><strong>Pattern 2: "Rather than" Comparisons</strong></p>
+            <p><strong>❌ Wrong:</strong> I prefer <span >to study</span> rather than <span >going out</span>.</p>
+            <p><strong>✅ Right:</strong> I prefer <span >to study</span> rather than <span >to go out</span>.</p>
+            <p><strong>✅ Also right:</strong> I prefer <span >studying</span> rather than <span >going out</span>.</p>
         </div>
 
         <div class="examples">
-            <h5>Pattern 3: "As...as" Comparisons</h5>
-            <p><strong>❌ Wrong:</strong> She is as <span style="color: #f56565;">smart</span> as <span style="color: #f56565;">having beauty</span>.</p>
-            <p><strong>✅ Right:</strong> She is as <span style="color: #c53030;">smart</span> as <span style="color: #c53030;">beautiful</span>.</p>
+            <p><strong>Pattern 3: "As...as" Comparisons</strong></p>
+            <p><strong>❌ Wrong:</strong> She is as <span >smart</span> as <span >having beauty</span>.</p>
+            <p><strong>✅ Right:</strong> She is as <span >smart</span> as <span >beautiful</span>.</p>
             <p><em>Both sides are adjectives.</em></p>
         </div>
 
         <div class="examples">
-            <h5>Pattern 4: "Prefer...to" Comparisons</h5>
-            <p><strong>❌ Wrong:</strong> I prefer <span style="color: #f56565;">coffee</span> to <span style="color: #f56565;">drinking tea</span>.</p>
-            <p><strong>✅ Right:</strong> I prefer <span style="color: #9f7aea;">coffee</span> to <span style="color: #9f7aea;">tea</span>.</p>
-            <p><strong>✅ Also right:</strong> I prefer <span style="color: #10a37f;">drinking coffee</span> to <span style="color: #10a37f;">drinking tea</span>.</p>
+            <p><strong>Pattern 4: "Prefer...to" Comparisons</strong></p>
+            <p><strong>❌ Wrong:</strong> I prefer <span >coffee</span> to <span >drinking tea</span>.</p>
+            <p><strong>✅ Right:</strong> I prefer <span >coffee</span> to <span >tea</span>.</p>
+            <p><strong>✅ Also right:</strong> I prefer <span >drinking coffee</span> to <span >drinking tea</span>.</p>
         </div>
 
         <div class="examples">
-            <h5>Pattern 5: "Not only...but also" Comparisons</h5>
-            <p><strong>❌ Wrong:</strong> She is not only <span style="color: #f56565;">intelligent</span> but also <span style="color: #f56565;">has kindness</span>.</p>
-            <p><strong>✅ Right:</strong> She is not only <span style="color: #c53030;">intelligent</span> but also <span style="color: #c53030;">kind</span>.</p>
+            <p><strong>Pattern 5: "Not only...but also" Comparisons</strong></p>
+            <p><strong>❌ Wrong:</strong> She is not only <span >intelligent</span> but also <span >has kindness</span>.</p>
+            <p><strong>✅ Right:</strong> She is not only <span >intelligent</span> but also <span >kind</span>.</p>
             <p><em>Both sides are adjectives that follow "is."</em></p>
         </div>
 
         <div class="examples">
-            <h5>Pattern 6: "Either...or" / "Neither...nor"</h5>
-            <p><strong>❌ Wrong:</strong> You can either <span style="color: #f56565;">walk</span> or <span style="color: #f56565;">taking the bus</span>.</p>
-            <p><strong>✅ Right:</strong> You can either <span style="color: #1a73e8;">walk</span> or <span style="color: #1a73e8;">take the bus</span>.</p>
+            <p><strong>Pattern 6: "Either...or" / "Neither...nor"</strong></p>
+            <p><strong>❌ Wrong:</strong> You can either <span >walk</span> or <span >taking the bus</span>.</p>
+            <p><strong>✅ Right:</strong> You can either <span >walk</span> or <span >take the bus</span>.</p>
             <p><em>Both sides are simple verb forms after "can."</em></p>
         </div>
     </div>
@@ -2066,11 +2066,11 @@ export const allLessons = {
         <p>Sometimes list items are longer phrases, but they still need parallel structure.</p>
 
         <div class="examples">
-            <h5>Parallel Phrase Examples:</h5>
-            <p><strong>✅ Correct:</strong> The job requires <span style="color: #10a37f;">analyzing data</span>, <span style="color: #10a37f;">writing reports</span>, and <span style="color: #10a37f;">presenting findings</span>.</p>
+            <p><strong>Parallel Phrase Examples:</strong></p>
+            <p><strong>✅ Correct:</strong> The job requires <span >analyzing data</span>, <span >writing reports</span>, and <span >presenting findings</span>.</p>
             <p><em>All are gerund phrases (action + object).</em></p>
 
-            <p><strong>✅ Correct:</strong> To succeed, you must <span style="color: #1a73e8;">study hard</span>, <span style="color: #1a73e8;">attend class</span>, and <span style="color: #1a73e8;">ask questions</span>.</p>
+            <p><strong>✅ Correct:</strong> To succeed, you must <span >study hard</span>, <span >attend class</span>, and <span >ask questions</span>.</p>
             <p><em>All are verb + adverb/object phrases.</em></p>
         </div>
     </div>
@@ -2080,12 +2080,12 @@ export const allLessons = {
         <p>Even when list items are complete clauses, they need parallel structure.</p>
 
         <div class="examples">
-            <h5>Parallel Clause Examples:</h5>
-            <p><strong>❌ Wrong:</strong> I know <span style="color: #f56565;">that she is smart</span>, <span style="color: #f56565;">she works hard</span>, and <span style="color: #f56565;">that she will succeed</span>.</p>
-            <p><strong>✅ Right:</strong> I know <span style="color: #10a37f;">that she is smart</span>, <span style="color: #10a37f;">that she works hard</span>, and <span style="color: #10a37f;">that she will succeed</span>.</p>
+            <p><strong>Parallel Clause Examples:</strong></p>
+            <p><strong>❌ Wrong:</strong> I know <span >that she is smart</span>, <span >she works hard</span>, and <span >that she will succeed</span>.</p>
+            <p><strong>✅ Right:</strong> I know <span >that she is smart</span>, <span >that she works hard</span>, and <span >that she will succeed</span>.</p>
             <p><em>All clauses start with "that."</em></p>
 
-            <p><strong>✅ Also right:</strong> I know <span style="color: #d97706;">she is smart</span>, <span style="color: #d97706;">she works hard</span>, and <span style="color: #d97706;">she will succeed</span>.</p>
+            <p><strong>✅ Also right:</strong> I know <span >she is smart</span>, <span >she works hard</span>, and <span >she will succeed</span>.</p>
             <p><em>No "that" in any clause—also parallel!</em></p>
         </div>
     </div>
@@ -2098,10 +2098,10 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>Perfect Correlative Parallelism:</h5>
-            <p><strong>✅ Correct:</strong> She is <strong>both</strong> <span style="color: #c53030;">intelligent</span> <strong>and</strong> <span style="color: #c53030;">hardworking</span>.</p>
-            <p><strong>✅ Correct:</strong> You can <strong>either</strong> <span style="color: #1a73e8;">email me</span> <strong>or</strong> <span style="color: #1a73e8;">call me</span>.</p>
-            <p><strong>✅ Correct:</strong> He is <strong>not only</strong> <span style="color: #c53030;">smart</span> <strong>but also</strong> <span style="color: #c53030;">funny</span>.</p>
+            <p><strong>Perfect Correlative Parallelism:</strong></p>
+            <p><strong>✅ Correct:</strong> She is <strong>both</strong> <span >intelligent</span> <strong>and</strong> <span >hardworking</span>.</p>
+            <p><strong>✅ Correct:</strong> You can <strong>either</strong> <span >email me</span> <strong>or</strong> <span >call me</span>.</p>
+            <p><strong>✅ Correct:</strong> He is <strong>not only</strong> <span >smart</span> <strong>but also</strong> <span >funny</span>.</p>
         </div>
     </div>
 </div>
@@ -2200,7 +2200,7 @@ export const allLessons = {
         <p><strong>Part 2:</strong> Active vs. Passive Voice → When to choose which voice for clarity</p>
         <p><strong>Part 3:</strong> Prepositional Idioms → Fixed phrases that sound right to native speakers</p>
         <p><strong>Part 4:</strong> Precision in Word Choice → Selecting the exact right word</p>
-        <p><strong>Your advantage:</strong> You have <span style="color: #1a73e8;">perfect grammar fundamentals</span> from all previous chapters!</p>
+        <p><strong>Your advantage:</strong> You have <span >perfect grammar fundamentals</span> from all previous chapters!</p>
     </div>
 </div>
 
@@ -2216,111 +2216,111 @@ export const allLessons = {
         <h4>📋 The Top 12 Most Tested Word Pairs</h4>
 
         <div class="examples">
-            <h5>Tier 1: The Absolute Must-Knows</h5>
+            <p><strong>Tier 1: The Absolute Must-Knows</strong></p>
 
             <p><strong>Their vs. There vs. They're</strong></p>
-            <p>• <span style="color: #10a37f;">Their</span> = possession (belonging to them)</p>
+            <p>• <span >Their</span> = possession (belonging to them)</p>
             <p>→ <em>Their car is parked outside.</em></p>
-            <p>• <span style="color: #d97706;">There</span> = place or existence</p>
+            <p>• <span >There</span> = place or existence</p>
             <p>→ <em>The book is over there.</em> / <em>There are five people waiting.</em></p>
-            <p>• <span style="color: #1a73e8;">They're</span> = they are (contraction)</p>
+            <p>• <span >They're</span> = they are (contraction)</p>
             <p>→ <em>They're coming to the party tonight.</em></p>
         </div>
 
         <div class="examples">
             <p><strong>Its vs. It's</strong></p>
-            <p>• <span style="color: #10a37f;">Its</span> = possession (belonging to it, NO apostrophe!)</p>
+            <p>• <span >Its</span> = possession (belonging to it, NO apostrophe!)</p>
             <p>→ <em>The dog wagged its tail.</em></p>
-            <p>• <span style="color: #1a73e8;">It's</span> = it is OR it has (contraction)</p>
+            <p>• <span >It's</span> = it is OR it has (contraction)</p>
             <p>→ <em>It's raining outside.</em> / <em>It's been a long day.</em></p>
             <p><strong>Memory trick:</strong> If you can replace it with "it is," use "it's"!</p>
         </div>
 
         <div class="examples">
             <p><strong>Your vs. You're</strong></p>
-            <p>• <span style="color: #10a37f;">Your</span> = possession (belonging to you)</p>
+            <p>• <span >Your</span> = possession (belonging to you)</p>
             <p>→ <em>Your homework is excellent.</em></p>
-            <p>• <span style="color: #1a73e8;">You're</span> = you are (contraction)</p>
+            <p>• <span >You're</span> = you are (contraction)</p>
             <p>→ <em>You're going to do well on the ACT.</em></p>
         </div>
 
         <div class="examples">
-            <h5>Tier 2: The Tricky Ones</h5>
+            <p><strong>Tier 2: The Tricky Ones</strong></p>
 
             <p><strong>Effect vs. Affect</strong></p>
-            <p>• <span style="color: #9f7aea;">Effect</span> = noun (a result, a thing)</p>
+            <p>• <span >Effect</span> = noun (a result, a thing)</p>
             <p>→ <em>The effect of the rain was flooding.</em></p>
-            <p>• <span style="color: #1a73e8;">Affect</span> = verb (to influence, to change)</p>
+            <p>• <span >Affect</span> = verb (to influence, to change)</p>
             <p>→ <em>The rain will affect our picnic plans.</em></p>
             <p><strong>Memory trick:</strong> <em>A</em>ffect = <em>A</em>ction (verb), <em>E</em>ffect = <em>E</em>nd result (noun)</p>
         </div>
 
         <div class="examples">
             <p><strong>Accept vs. Except</strong></p>
-            <p>• <span style="color: #1a73e8;">Accept</span> = verb (to receive, to agree to)</p>
+            <p>• <span >Accept</span> = verb (to receive, to agree to)</p>
             <p>→ <em>I accept your apology.</em></p>
-            <p>• <span style="color: #c53030;">Except</span> = preposition (excluding, but not)</p>
+            <p>• <span >Except</span> = preposition (excluding, but not)</p>
             <p>→ <em>Everyone came except Sarah.</em></p>
         </div>
 
         <div class="examples">
             <p><strong>Than vs. Then</strong></p>
-            <p>• <span style="color: #d97706;">Than</span> = comparison word</p>
+            <p>• <span >Than</span> = comparison word</p>
             <p>→ <em>Math is harder than English.</em></p>
-            <p>• <span style="color: #1a73e8;">Then</span> = time word (next, at that time)</p>
+            <p>• <span >Then</span> = time word (next, at that time)</p>
             <p>→ <em>First we studied, then we took the test.</em></p>
         </div>
 
         <div class="examples">
-            <h5>Tier 3: The Advanced Traps</h5>
+            <p><strong>Tier 3: The Advanced Traps</strong></p>
 
             <p><strong>Who vs. Which vs. That</strong></p>
-            <p>• <span style="color: #10a37f;">Who</span> = for people only</p>
+            <p>• <span >Who</span> = for people only</p>
             <p>→ <em>The student who studied hard passed.</em></p>
-            <p>• <span style="color: #d97706;">Which</span> = for things, usually with commas (non-essential info)</p>
+            <p>• <span >Which</span> = for things, usually with commas (non-essential info)</p>
             <p>→ <em>The book, which is on the table, belongs to me.</em></p>
-            <p>• <span style="color: #1a73e8;">That</span> = for things, no commas (essential info)</p>
+            <p>• <span >That</span> = for things, no commas (essential info)</p>
             <p>→ <em>The book that you borrowed is overdue.</em></p>
         </div>
 
         <div class="examples">
             <p><strong>Less vs. Fewer</strong></p>
-            <p>• <span style="color: #c53030;">Less</span> = for uncountable things (amount)</p>
+            <p>• <span >Less</span> = for uncountable things (amount)</p>
             <p>→ <em>I have less time than you.</em> (You can't count individual "times")</p>
-            <p>• <span style="color: #1a73e8;">Fewer</span> = for countable things (number)</p>
+            <p>• <span >Fewer</span> = for countable things (number)</p>
             <p>→ <em>I have fewer books than you.</em> (You can count individual books)</p>
         </div>
 
         <div class="examples">
             <p><strong>Between vs. Among</strong></p>
-            <p>• <span style="color: #d97706;">Between</span> = for 2 things or clear individual relationships</p>
+            <p>• <span >Between</span> = for 2 things or clear individual relationships</p>
             <p>→ <em>The secret is between you and me.</em></p>
-            <p>• <span style="color: #10a37f;">Among</span> = for 3+ things or groups</p>
+            <p>• <span >Among</span> = for 3+ things or groups</p>
             <p>→ <em>The rumor spread among the students.</em></p>
         </div>
 
         <div class="examples">
             <p><strong>Lay vs. Lie</strong></p>
-            <p>• <span style="color: #d97706;">Lay</span> = to put something down (needs an object)</p>
+            <p>• <span >Lay</span> = to put something down (needs an object)</p>
             <p>→ <em>I will lay the book on the table.</em></p>
-            <p>• <span style="color: #10a37f;">Lie</span> = to recline (no object needed)</p>
+            <p>• <span >Lie</span> = to recline (no object needed)</p>
             <p>→ <em>I need to lie down and rest.</em></p>
             <p><strong>Memory trick:</strong> You <em>lay</em> something down, you <em>lie</em> yourself down</p>
         </div>
 
         <div class="examples">
             <p><strong>Farther vs. Further</strong></p>
-            <p>• <span style="color: #1a73e8;">Farther</span> = physical distance</p>
+            <p>• <span >Farther</span> = physical distance</p>
             <p>→ <em>The store is farther than I thought.</em></p>
-            <p>• <span style="color: #9f7aea;">Further</span> = metaphorical distance, degree, or additional</p>
+            <p>• <span >Further</span> = metaphorical distance, degree, or additional</p>
             <p>→ <em>We need to discuss this further.</em></p>
         </div>
 
         <div class="examples">
             <p><strong>Good vs. Well</strong></p>
-            <p>• <span style="color: #c53030;">Good</span> = adjective (describes nouns)</p>
+            <p>• <span >Good</span> = adjective (describes nouns)</p>
             <p>→ <em>That's a good book.</em> / <em>I feel good.</em> (describing yourself)</p>
-            <p>• <span style="color: #1a73e8;">Well</span> = adverb (describes verbs) or health adjective</p>
+            <p>• <span >Well</span> = adverb (describes verbs) or health adjective</p>
             <p>→ <em>She sings well.</em> / <em>I feel well.</em> (describing your health)</p>
         </div>
     </div>
@@ -2339,29 +2339,29 @@ export const allLessons = {
 
     <div class="concept-box">
         <h4>💡 Why Voice Matters on the ACT</h4>
-        <p>The ACT strongly prefers <span style="color: #10a37f;">active voice</span> because it's more <strong>direct, clear, and concise</strong>. Passive voice often sounds wordy and unclear about who's doing what.</p>
+        <p>The ACT strongly prefers <span >active voice</span> because it's more <strong>direct, clear, and concise</strong>. Passive voice often sounds wordy and unclear about who's doing what.</p>
     </div>
 
     <div class="concept-box">
         <h4>📋 Understanding the Two Voices</h4>
 
         <div class="examples">
-            <h5>Active Voice: Subject Does the Action</h5>
+            <p><strong>Active Voice: Subject Does the Action</strong></p>
             <p><strong>Pattern:</strong> [Subject] [Action Verb] [Object]</p>
             <p><strong>✅ Examples:</strong></p>
-            <p>• <span style="color: #1a73e8;">Sarah</span> <strong>threw</strong> <span style="color: #9f7aea;">the ball</span>.</p>
-            <p>• <span style="color: #1a73e8;">The students</span> <strong>completed</strong> <span style="color: #9f7aea;">their homework</span>.</p>
-            <p>• <span style="color: #1a73e8;">The teacher</span> <strong>explained</strong> <span style="color: #9f7aea;">the concept</span> clearly.</p>
+            <p>• <span >Sarah</span> <strong>threw</strong> <span >the ball</span>.</p>
+            <p>• <span >The students</span> <strong>completed</strong> <span >their homework</span>.</p>
+            <p>• <span >The teacher</span> <strong>explained</strong> <span >the concept</span> clearly.</p>
             <p><em>Clear, direct, and we know exactly who did what!</em></p>
         </div>
 
         <div class="examples">
-            <h5>Passive Voice: Subject Receives the Action</h5>
+            <p><strong>Passive Voice: Subject Receives the Action</strong></p>
             <p><strong>Pattern:</strong> [Subject] [form of "be"] [past participle] [by someone]</p>
             <p><strong>❌ Examples (wordier, less clear):</strong></p>
-            <p>• <span style="color: #9f7aea;">The ball</span> <strong>was thrown</strong> by Sarah.</p>
-            <p>• <span style="color: #9f7aea;">The homework</span> <strong>was completed</strong> by the students.</p>
-            <p>• <span style="color: #9f7aea;">The concept</span> <strong>was explained</strong> clearly by the teacher.</p>
+            <p>• <span >The ball</span> <strong>was thrown</strong> by Sarah.</p>
+            <p>• <span >The homework</span> <strong>was completed</strong> by the students.</p>
+            <p>• <span >The concept</span> <strong>was explained</strong> clearly by the teacher.</p>
             <p><em>Wordy, indirect, and sometimes unclear about who's responsible!</em></p>
         </div>
     </div>
@@ -2370,14 +2370,14 @@ export const allLessons = {
         <h4>📋 How to Convert Passive to Active</h4>
 
         <div class="examples">
-            <h5>The 3-Step Conversion Process:</h5>
+            <p><strong>The 3-Step Conversion Process:</strong></p>
             <p><strong>Step 1:</strong> Find who's doing the action (often after "by")</p>
             <p><strong>Step 2:</strong> Make that person/thing the subject</p>
             <p><strong>Step 3:</strong> Change the verb to active form</p>
 
             <p><strong>Example conversion:</strong></p>
-            <p><span style="color: #f56565;">❌ Passive:</span> "Mistakes were made by the committee during the planning process."</p>
-            <p><span style="color: #10a37f;">✅ Active:</span> "The committee made mistakes during the planning process."</p>
+            <p><span >❌ Passive:</span> "Mistakes were made by the committee during the planning process."</p>
+            <p><span >✅ Active:</span> "The committee made mistakes during the planning process."</p>
             <p><em>Much clearer and more direct!</em></p>
         </div>
     </div>
@@ -2387,7 +2387,7 @@ export const allLessons = {
         <p>Sometimes passive voice is actually the better choice:</p>
 
         <div class="examples">
-            <h5>Acceptable Passive Situations:</h5>
+            <p><strong>Acceptable Passive Situations:</strong></p>
             <p><strong>1. Unknown actor:</strong> "The window was broken during the storm."</p>
             <p><em>We don't know who/what broke it, so passive works.</em></p>
 
@@ -2421,7 +2421,7 @@ export const allLessons = {
         <h4>📋 High-Frequency ACT Prepositional Idioms</h4>
 
         <div class="examples">
-            <h5>Verb + Preposition Combinations:</h5>
+            <p><strong>Verb + Preposition Combinations:</strong></p>
             <p>• <strong>agree with</strong> (a person) / <strong>agree to</strong> (a plan)</p>
             <p>→ <em>I agree with Sarah.</em> / <em>I agree to the proposal.</em></p>
 
@@ -2439,7 +2439,7 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>Adjective + Preposition Combinations:</h5>
+            <p><strong>Adjective + Preposition Combinations:</strong></p>
             <p>• <strong>different from</strong> (not "different than")</p>
             <p>→ <em>This test is different from the practice test.</em></p>
 
@@ -2454,7 +2454,7 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>Comparison Idioms:</h5>
+            <p><strong>Comparison Idioms:</strong></p>
             <p>• <strong>as...as</strong> (for equal comparisons)</p>
             <p>→ <em>She is as smart as her brother.</em></p>
 
@@ -2485,7 +2485,7 @@ export const allLessons = {
         <h4>📋 Common Precision Traps</h4>
 
         <div class="examples">
-            <h5>Register: Formal vs. Informal</h5>
+            <p><strong>Register: Formal vs. Informal</strong></p>
             <p><strong>Academic writing needs formal word choice:</strong></p>
             <p>• <strong>Less formal:</strong> "The experiment was pretty cool."</p>
             <p>• <strong>More formal:</strong> "The experiment yielded fascinating results."</p>
@@ -2495,7 +2495,7 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>Connotation: Positive, Negative, Neutral</h5>
+            <p><strong>Connotation: Positive, Negative, Neutral</strong></p>
             <p><strong>Same meaning, different feelings:</strong></p>
             <p>• <strong>Positive:</strong> determined, persistent, dedicated</p>
             <p>• <strong>Negative:</strong> stubborn, obsessive, fanatical</p>
@@ -2503,7 +2503,7 @@ export const allLessons = {
         </div>
 
         <div class="examples">
-            <h5>Specificity: Vague vs. Precise</h5>
+            <p><strong>Specificity: Vague vs. Precise</strong></p>
             <p><strong>More specific is usually better:</strong></p>
             <p>• <strong>Vague:</strong> "The weather was bad."</p>
             <p>• <strong>Precise:</strong> "The thunderstorm was severe."</p>
@@ -3155,14 +3155,14 @@ export const allLessons = {
 
       <div class="rules-box">
         <h4>Unit Conversions to Memorize:</h4>
-        <h5>Yards and Feet</h5>
+        <p><strong>Yards and Feet</strong></p>
         <ul>
           <li><strong>1 yard = 3 feet</strong></li>
           <li><strong>1 square yard = 9 square feet</strong></li>
           <li><strong>1 cubic yard = 27 cubic feet</strong></li>
         </ul>
 
-        <h5>Feet and Inches</h5>
+        <p><strong>Feet and Inches</strong></p>
         <ul>
           <li><strong>1 foot = 12 inches</strong></li>
           <li><strong>1 square foot = 144 square inches</strong></li>
