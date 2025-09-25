@@ -13,21 +13,23 @@ export const useAppStyles = createUseStyles({
     },
     body: {
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif',
-      backgroundColor: '#fafbfc',
+      backgroundColor: '#f0f4f8',
       color: '#1a1a1a',
       lineHeight: 1.6,
-      overflowX: 'hidden',
-      backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 70%)',
-      backgroundAttachment: 'fixed'
+      overflow: 'hidden',
+      backgroundImage: 'linear-gradient(180deg, #f0f4f8 0%, #e2e8f0 100%)',
+      backgroundAttachment: 'local',
+      height: '100vh'
     }
   },
   container: {
     maxWidth: '1200px',
     margin: '0 auto',
-    minHeight: '100vh',
+    height: '100vh',
     display: 'flex',
     flexDirection: 'column',
-    background: '#fafbfc'
+    background: '#fafbfc',
+    overflow: 'auto'
   },
   header: {
     background: 'rgba(248, 249, 250, 0.7)',
@@ -355,11 +357,12 @@ export const useAppStyles = createUseStyles({
   lessonContent: {
     background: 'white',
     width: '100%',
-    minHeight: '100vh',
+    height: '100vh',
     display: 'flex',
     lineHeight: '1.6',
     fontSize: '15px',
-    color: '#2d3748'
+    color: '#2d3748',
+    overflow: 'hidden'
   },
   lessonSidebar: {
     width: '280px',
