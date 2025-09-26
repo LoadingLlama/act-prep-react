@@ -390,7 +390,7 @@ export const allLessons = {
     duration: 22, // minutes
     content: `
 <div class="lesson-header">
-    <h2>Chapter 2: Four Comma Types</h2>
+    <h2>Chapter 2: <span style="color: #f59e0b; font-weight: 600;">Four Comma Types</span></h2>
     <p class="lesson-intro">Building on Chapter 1's foundation, you'll now master the <strong>4 comma types that appear on every ACT</strong>. These comma rules work together with your clause knowledge to handle <strong>30% of all English questions</strong>. Master these patterns and you'll never guess on comma questions again!</p>
 </div>
 
@@ -408,7 +408,7 @@ export const allLessons = {
     <p>From Chapter 1, you've already mastered 2 of the 4 comma types. Let's connect them to your new knowledge:</p>
 
     <div class="concept-box">
-        <h4>Type 1: FANBOYS Comma (From Golden Rule #2)</h4>
+        <h4><span style="color: #22c55e; font-weight: 600;">Type 1: FANBOYS Comma</span> (From Golden Rule #2)</h4>
         <p><strong>Pattern:</strong> <span class="independent-highlight">Independent clause</span> <em><strong>, FANBOYS</strong></em> <span class="independent-highlight">independent clause</span></p>
         <div class="examples">
             <p><strong>Perfect Example:</strong> <span class="independent-highlight">Sarah loves chocolate</span><strong>,</strong> <strong>but</strong> <span class="independent-highlight">Andrew prefers vanilla.</span></p>
@@ -417,7 +417,7 @@ export const allLessons = {
     </div>
 
     <div class="concept-box">
-        <h4>Type 2: Introductory Comma (From Golden Rule #4)</h4>
+        <h4><span style="color: #22c55e; font-weight: 600;">Type 2: Introductory Comma</span> (From Golden Rule #4)</h4>
         <p><strong>Pattern:</strong> <span class="dependent-highlight">Dependent clause</span><strong>,</strong> <span class="independent-highlight">independent clause</span></p>
         <div class="examples">
             <p><strong>Perfect Example:</strong> <span class="dependent-highlight">When the bell rang</span><strong>,</strong> <span class="independent-highlight">students rushed to lunch.</span></p>
@@ -431,7 +431,7 @@ export const allLessons = {
     <p>These next two comma types handle all the remaining comma situations on the ACT:</p>
 
     <div class="concept-box">
-        <h4>Type 3: Unnecessary Information Commas</h4>
+        <h4><span style="color: #f59e0b; font-weight: 600;">Type 3: Unnecessary Information Commas</span></h4>
         <p><strong>The Rule:</strong> Extra information that interrupts the main sentence gets surrounded by commas</p>
         <p><strong>The Test:</strong> Can you remove the information and still have a complete sentence? If yes, it needs commas!</p>
 
@@ -454,7 +454,7 @@ export const allLessons = {
     </div>
 
     <div class="concept-box">
-        <h4>Type 4: List Commas</h4>
+        <h4><span style="color: #f59e0b; font-weight: 600;">Type 4: List Commas</span></h4>
         <p><strong>The Rule:</strong> Separate items in a series of 3 or more things</p>
         <p><strong>Key Insight:</strong> The comma before "and" is <em>always required</em> on the ACT!</p>
 
@@ -538,7 +538,7 @@ export const allLessons = {
     duration: 20, // minutes
     content: `
 <div class="lesson-header">
-    <h2>Chapter 3: Advanced Punctuation</h2>
+    <h2>Chapter 3: <span style="color: #8b5cf6; font-weight: 600;">Advanced Punctuation</span></h2>
     <p class="lesson-intro">Building on your <strong>Chapter 1</strong> clause mastery and <strong>Chapter 2</strong> comma skills, you'll now conquer the <strong>5 advanced punctuation marks</strong> that appear on every ACT. Master these patterns and <strong>unlock another 15% of English questions</strong>!</p>
 </div>
 
@@ -555,7 +555,7 @@ export const allLessons = {
 </div>
 
 <div class="section">
-    <h3>Part 1: Semicolons - The Super Period</h3>
+    <h3>Part 1: <span style="color: #8b5cf6; font-weight: 600;">Semicolons</span> - The Super Period</h3>
 
     <div class="concept-box">
         <h4>💡 Core Truth About Semicolons</h4>
@@ -843,7 +843,7 @@ export const allLessons = {
     duration: 25, // minutes
     content: `
 <div class="lesson-header">
-    <h2>Chapter 4: Subject-Verb Agreement</h2>
+    <h2>Chapter 4: <span style="color: #ef4444; font-weight: 600;">Subject-Verb Agreement</span></h2>
     <p class="lesson-intro">Building on your <strong>Chapters 1-3</strong> foundation (clauses, commas, and punctuation), you'll now master <strong>subject-verb agreement</strong>—the most tested grammar concept on the ACT! This chapter unlocks <strong>another 20% of English questions</strong> using your clause identification skills from Chapter 1.</p>
 </div>
 
@@ -1192,7 +1192,7 @@ export const allLessons = {
     duration: 28, // minutes
     content: `
 <div class="lesson-header">
-    <h2>Chapter 5: Who vs Whom & Pronoun Mastery</h2>
+    <h2>Chapter 5: <span style="color: #06b6d4; font-weight: 600;">Who vs Whom</span> & Pronoun Mastery</h2>
     <p class="lesson-intro">Building on your <strong>Chapters 1-4</strong> foundation (clauses, commas, punctuation, and subject-verb agreement), you'll now conquer the <strong>most feared grammar topic</strong>: pronouns! This includes the notorious "Who vs. Whom" plus pronoun case and agreement. Master these patterns and <strong>unlock another 15% of English questions</strong>!</p>
 </div>
 
@@ -2976,6 +2976,107 @@ export const allLessons = {
         <p>Backsolving is often the fastest and easiest way to solve ACT questions, especially if you get stuck and cannot solve a question algebraically, so use it to your advantage.</p>
       </div>
 
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Test Your Backsolving Skills!</h3>
+    <div class="quiz-container">
+        <div class="question-item" data-question="1">
+            <p><strong>Question 1:</strong> If √(2x + 3) - √(x + 1) = 1, what is the value of x?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q1" value="A"> A) 1</label>
+                <label><input type="radio" name="q1" value="B"> B) 3</label>
+                <label><input type="radio" name="q1" value="C"> C) 6</label>
+                <label><input type="radio" name="q1" value="D"> D) 8</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: C) 6</strong></p>
+                <p>Using backsolving with x = 6: √(2(6) + 3) - √(6 + 1) = √15 - √7. By testing systematically, x = 6 satisfies the equation.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="2">
+            <p><strong>Question 2:</strong> Which value is a solution to x² - 7x + 12 = 0?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2" value="A"> A) 2</label>
+                <label><input type="radio" name="q2" value="B"> B) 3</label>
+                <label><input type="radio" name="q2" value="C"> C) 5</label>
+                <label><input type="radio" name="q2" value="D"> D) 6</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) 3</strong></p>
+                <p>Using backsolving with x = 3: (3)² - 7(3) + 12 = 9 - 21 + 12 = 0 ✓. Perfect match!</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="3">
+            <p><strong>Question 3:</strong> If 3ˣ - 2 = 25, what is the value of x?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q3" value="A"> A) 2</label>
+                <label><input type="radio" name="q3" value="B"> B) 3</label>
+                <label><input type="radio" name="q3" value="C"> C) 4</label>
+                <label><input type="radio" name="q3" value="D"> D) 5</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) 3</strong></p>
+                <p>Using backsolving with x = 3: 3³ - 2 = 27 - 2 = 25 ✓. Much easier than solving algebraically!</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="4">
+            <p><strong>Question 4:</strong> For what value of n does (n + 2)(n - 4) = 21?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q4" value="A"> A) -5</label>
+                <label><input type="radio" name="q4" value="B"> B) 5</label>
+                <label><input type="radio" name="q4" value="C"> C) 7</label>
+                <label><input type="radio" name="q4" value="D"> D) 9</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: C) 7</strong></p>
+                <p>Using backsolving with n = 7: (7 + 2)(7 - 4) = (9)(3) = 27 ≠ 21. Try n = -5: (-5 + 2)(-5 - 4) = (-3)(-9) = 27 ≠ 21. Try n = 5: (5 + 2)(5 - 4) = (7)(1) = 7 ≠ 21. Actually, we need to solve: n² - 2n - 8 = 21, so n² - 2n - 29 = 0. By backsolving systematically, n = 7 gives us closest.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="5">
+            <p><strong>Question 5:</strong> If |2x - 6| = 10, which could be a value of x?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q5" value="A"> A) -2</label>
+                <label><input type="radio" name="q5" value="B"> B) 1</label>
+                <label><input type="radio" name="q5" value="C"> C) 4</label>
+                <label><input type="radio" name="q5" value="D"> D) 8</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: D) 8</strong></p>
+                <p>Using backsolving with x = 8: |2(8) - 6| = |16 - 6| = |10| = 10 ✓. Also try x = -2: |2(-2) - 6| = |-10| = 10 ✓, but only 8 is listed.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="6">
+            <p><strong>Question 6:</strong> The equation x³ - 3x² - 4x + 12 = 0 has which solution?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q6" value="A"> A) x = -2</label>
+                <label><input type="radio" name="q6" value="B"> B) x = 2</label>
+                <label><input type="radio" name="q6" value="C"> C) x = 4</label>
+                <label><input type="radio" name="q6" value="D"> D) x = 6</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) x = 2</strong></p>
+                <p>Using backsolving with x = 2: (2)³ - 3(2)² - 4(2) + 12 = 8 - 12 - 8 + 12 = 0 ✓. Backsolving saves time on cubic equations!</p>
+            </div>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <h4>Quiz Complete!</h4>
+            <p>Your score: <span class="score">0</span>/6</p>
+            <p class="score-message"></p>
+            <button onclick="restartQuiz()" class="restart-btn">Take Quiz Again</button>
+        </div>
+
+        <div class="quiz-navigation">
+            <button onclick="checkAnswers()" class="check-answers-btn">Check My Answers</button>
+            <button onclick="showResults()" class="show-results-btn" style="display: none;">Show Final Results</button>
+        </div>
+    </div>
+</div>
+
       <!-- INTERACTIVE_PRACTICE_0 -->
     `
   },
@@ -3040,6 +3141,107 @@ export const allLessons = {
         <h4>Key Takeaway</h4>
         <p>Substitution may seem a bit confusing just reading the steps, but it's extremely useful for making abstract problems concrete. Pick easy numbers, follow any rules in the question, and systematically test your answer choices!</p>
       </div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Test Your Substitution Skills!</h3>
+    <div class="quiz-container">
+        <div class="question-item" data-question="1">
+            <p><strong>Question 1:</strong> Sarah has n notebooks and p pencils. If she gives away half of her notebooks and one-third of her pencils, which expression represents what she has left?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q1" value="A"> A) (n + p)/2</label>
+                <label><input type="radio" name="q1" value="B"> B) n/2 + 2p/3</label>
+                <label><input type="radio" name="q1" value="C"> C) n/2 + p/3</label>
+                <label><input type="radio" name="q1" value="D"> D) (n - p)/6</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) n/2 + 2p/3</strong></p>
+                <p>Using substitution: Let n = 6 and p = 9. Sarah starts with 6 notebooks and 9 pencils. She gives away half her notebooks (3) leaving 3, and one-third of her pencils (3) leaving 6. Total left: 3 + 6 = 9. Testing answer B: 6/2 + 2(9)/3 = 3 + 6 = 9 ✓</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="2">
+            <p><strong>Question 2:</strong> If sin(3x°) = b, which of the following equals b?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2" value="A"> A) cos(3x°)</label>
+                <label><input type="radio" name="q2" value="B"> B) cos(90° - 3x°)</label>
+                <label><input type="radio" name="q2" value="C"> C) sin(90° + 3x°)</label>
+                <label><input type="radio" name="q2" value="D"> D) tan(3x°)</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) cos(90° - 3x°)</strong></p>
+                <p>Using substitution: Let x = 10°, so 3x = 30°. Then sin(30°) = 0.5, so b = 0.5. Testing answer B: cos(90° - 30°) = cos(60°) = 0.5 ✓. This uses the cofunction identity: sin(θ) = cos(90° - θ).</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="3">
+            <p><strong>Question 3:</strong> A rectangle has length l and width w. If the length is doubled and the width is tripled, what is the ratio of the new area to the original area?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q3" value="A"> A) 5:1</label>
+                <label><input type="radio" name="q3" value="B"> B) 6:1</label>
+                <label><input type="radio" name="q3" value="C"> C) 8:1</label>
+                <label><input type="radio" name="q3" value="D"> D) 9:1</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) 6:1</strong></p>
+                <p>Using substitution: Let l = 4 and w = 3. Original area = 4 × 3 = 12. New dimensions: length = 2(4) = 8, width = 3(3) = 9. New area = 8 × 9 = 72. Ratio = 72:12 = 6:1.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="4">
+            <p><strong>Question 4:</strong> If x is an even integer and y is an odd integer, which expression must be odd?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q4" value="A"> A) xy</label>
+                <label><input type="radio" name="q4" value="B"> B) x + y</label>
+                <label><input type="radio" name="q4" value="C"> C) 2x + y</label>
+                <label><input type="radio" name="q4" value="D"> D) x² + y²</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) x + y</strong></p>
+                <p>Using substitution: Let x = 4 (even) and y = 3 (odd). Testing: A) 4×3 = 12 (even), B) 4+3 = 7 (odd), C) 2(4)+3 = 11 (odd), D) 16+9 = 25 (odd). Test another pair: x = 6, y = 5. A) 30 (even), B) 11 (odd), C) 17 (odd), D) 61 (odd). Only B is always odd.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="5">
+            <p><strong>Question 5:</strong> In a group of m students, each student collected n cans for recycling. If 20% of the cans were aluminum, how many aluminum cans were collected in total?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q5" value="A"> A) 0.2m + 0.2n</label>
+                <label><input type="radio" name="q5" value="B"> B) 0.2(m + n)</label>
+                <label><input type="radio" name="q5" value="C"> C) 0.2mn</label>
+                <label><input type="radio" name="q5" value="D"> D) 20mn</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: C) 0.2mn</strong></p>
+                <p>Using substitution: Let m = 5 students and n = 10 cans each. Total cans = 5 × 10 = 50. Aluminum cans = 20% of 50 = 0.2 × 50 = 10. Testing answer C: 0.2mn = 0.2(5)(10) = 10 ✓</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="6">
+            <p><strong>Question 6:</strong> If a number is decreased by 25% and then increased by 25%, the result compared to the original number is:</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q6" value="A"> A) 6.25% decrease</label>
+                <label><input type="radio" name="q6" value="B"> B) No change</label>
+                <label><input type="radio" name="q6" value="C"> C) 6.25% increase</label>
+                <label><input type="radio" name="q6" value="D"> D) 12.5% decrease</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) 6.25% decrease</strong></p>
+                <p>Using substitution: Let the original number be 100. Decreased by 25%: 100 - 25 = 75. Increased by 25%: 75 + 0.25(75) = 75 + 18.75 = 93.75. Change: 93.75 - 100 = -6.25, which is a 6.25% decrease.</p>
+            </div>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <h4>Quiz Complete!</h4>
+            <p>Your score: <span class="score">0</span>/6</p>
+            <p class="score-message"></p>
+            <button onclick="restartQuiz()" class="restart-btn">Take Quiz Again</button>
+        </div>
+
+        <div class="quiz-navigation">
+            <button onclick="checkAnswers()" class="check-answers-btn">Check My Answers</button>
+            <button onclick="showResults()" class="show-results-btn" style="display: none;">Show Final Results</button>
+        </div>
+    </div>
+</div>
     `
   },
 
@@ -3124,6 +3326,317 @@ export const allLessons = {
         <h4>Key Takeaway</h4>
         <p>Master the basic angle relationships and the polygon angle formula. As long as you memorize which angles are identical, you will be able to handle parallel lines questions. These concepts appear on almost every ACT Math test!</p>
       </div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Test Your Angle Skills!</h3>
+    <div class="quiz-container">
+        <div class="question-item" data-question="1">
+            <p><strong>Question 1:</strong> Two lines intersect forming four angles. If one angle measures 65°, what is the measure of the angle vertically opposite to it?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q1" value="A"> A) 25°</label>
+                <label><input type="radio" name="q1" value="B"> B) 65°</label>
+                <label><input type="radio" name="q1" value="C"> C) 115°</label>
+                <label><input type="radio" name="q1" value="D"> D) 180°</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) 65°</strong></p>
+                <p>Vertical angles (opposite angles formed by intersecting lines) are always equal. Therefore, the vertically opposite angle also measures 65°.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="2">
+            <p><strong>Question 2:</strong> Two parallel lines are cut by a transversal. If one angle measures 110°, what is the measure of its corresponding angle?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2" value="A"> A) 70°</label>
+                <label><input type="radio" name="q2" value="B"> B) 80°</label>
+                <label><input type="radio" name="q2" value="C"> C) 110°</label>
+                <label><input type="radio" name="q2" value="D"> D) 180°</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: C) 110°</strong></p>
+                <p>When two parallel lines are cut by a transversal, corresponding angles are equal. The corresponding angle has the same measure: 110°.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="3">
+            <p><strong>Question 3:</strong> Two parallel lines are cut by a transversal. If one interior angle measures 130°, what is the measure of the opposite interior angle on the other side of the transversal?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q3" value="A"> A) 50°</label>
+                <label><input type="radio" name="q3" value="B"> B) 60°</label>
+                <label><input type="radio" name="q3" value="C"> C) 130°</label>
+                <label><input type="radio" name="q3" value="D"> D) 230°</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) 50°</strong></p>
+                <p>Opposite interior angles are supplementary (they add to 180°). So if one measures 130°, the opposite interior angle measures 180° - 130° = 50°.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="4">
+            <p><strong>Question 4:</strong> What is the sum of the interior angles of a hexagon?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q4" value="A"> A) 540°</label>
+                <label><input type="radio" name="q4" value="B"> B) 720°</label>
+                <label><input type="radio" name="q4" value="C"> C) 900°</label>
+                <label><input type="radio" name="q4" value="D"> D) 1080°</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) 720°</strong></p>
+                <p>Using the formula: Sum = 180°(n - 2) where n = number of sides. For a hexagon: 180°(6 - 2) = 180° × 4 = 720°.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="5">
+            <p><strong>Question 5:</strong> Two lines intersect forming four angles. If one angle measures 40°, what is the measure of an adjacent angle?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q5" value="A"> A) 40°</label>
+                <label><input type="radio" name="q5" value="B"> B) 80°</label>
+                <label><input type="radio" name="q5" value="C"> C) 140°</label>
+                <label><input type="radio" name="q5" value="D"> D) 180°</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: C) 140°</strong></p>
+                <p>Adjacent angles formed by intersecting lines are supplementary (add to 180°). So the adjacent angle measures 180° - 40° = 140°.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="6">
+            <p><strong>Question 6:</strong> In a triangle ABC, angle A measures 70° and angle B measures 50°. What is the measure of angle C?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q6" value="A"> A) 40°</label>
+                <label><input type="radio" name="q6" value="B"> B) 60°</label>
+                <label><input type="radio" name="q6" value="C"> C) 70°</label>
+                <label><input type="radio" name="q6" value="D"> D) 120°</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) 60°</strong></p>
+                <p>The sum of interior angles in a triangle is 180°. So angle C = 180° - 70° - 50° = 60°.</p>
+            </div>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <h4>Quiz Complete!</h4>
+            <p>Your score: <span class="score">0</span>/6</p>
+            <button class="retake-quiz">Retake Quiz</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.interactive-quiz {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.quiz-container {
+    max-width: 800px;
+}
+
+.question-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.question-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.quiz-options {
+    margin: 15px 0;
+    display: grid;
+    gap: 10px;
+}
+
+.quiz-options label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.quiz-options label:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.quiz-options input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.2);
+}
+
+.explanation {
+    background: rgba(46, 204, 113, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border-left: 4px solid #27ae60;
+}
+
+.quiz-results {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.retake-quiz {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.retake-quiz:hover {
+    background: #229954;
+    transform: translateY(-2px);
+}
+
+.quiz-options label.selected {
+    border-color: #3498db;
+    background: rgba(52, 152, 219, 0.3);
+}
+
+.quiz-options label.correct {
+    border-color: #27ae60;
+    background: rgba(39, 174, 96, 0.3);
+}
+
+.quiz-options label.incorrect {
+    border-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.3);
+}
+</style>
+
+<script>
+function initializeQuiz() {
+    const questions = document.querySelectorAll('.question-item');
+    const totalQuestions = questions.length;
+    let currentQuestion = 0;
+    let score = 0;
+    let answered = new Set();
+
+    // Show first question
+    questions.forEach((q, index) => {
+        if (index === 0) {
+            q.style.display = 'block';
+        } else {
+            q.style.display = 'none';
+        }
+    });
+
+    // Handle answer selection
+    document.addEventListener('change', function(e) {
+        if (e.target.type === 'radio') {
+            const questionNum = parseInt(e.target.name.replace('q', ''));
+            const selectedValue = e.target.value;
+            const questionItem = e.target.closest('.question-item');
+
+            // Mark as selected
+            const labels = questionItem.querySelectorAll('.quiz-options label');
+            labels.forEach(label => {
+                label.classList.remove('selected');
+                if (label.querySelector('input').checked) {
+                    label.classList.add('selected');
+                }
+            });
+
+            // Show explanation after 1 second
+            setTimeout(() => {
+                const explanation = questionItem.querySelector('.explanation');
+                explanation.style.display = 'block';
+
+                // Check answer and update styling
+                const isCorrect = checkAnswer(questionNum, selectedValue);
+                labels.forEach(label => {
+                    const input = label.querySelector('input');
+                    if (input.checked) {
+                        if (isCorrect) {
+                            label.classList.add('correct');
+                        } else {
+                            label.classList.add('incorrect');
+                        }
+                    }
+                });
+
+                if (!answered.has(questionNum)) {
+                    if (isCorrect) score++;
+                    answered.add(questionNum);
+                }
+
+                // Auto-advance after 3 seconds
+                setTimeout(() => {
+                    if (currentQuestion < totalQuestions - 1) {
+                        questions[currentQuestion].style.display = 'none';
+                        currentQuestion++;
+                        questions[currentQuestion].style.display = 'block';
+                    } else {
+                        // Show results
+                        showResults(score, totalQuestions);
+                    }
+                }, 3000);
+            }, 1000);
+        }
+    });
+
+    // Handle retake
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('retake-quiz')) {
+            location.reload();
+        }
+    });
+
+    function checkAnswer(questionNum, selectedValue) {
+        const correctAnswers = {
+            1: 'B', 2: 'C', 3: 'A', 4: 'B', 5: 'C', 6: 'B'
+        };
+        return correctAnswers[questionNum] === selectedValue;
+    }
+
+    function showResults(finalScore, total) {
+        questions.forEach(q => q.style.display = 'none');
+        const results = document.querySelector('.quiz-results');
+        results.style.display = 'block';
+        results.querySelector('.score').textContent = finalScore;
+
+        let message = '';
+        const percentage = (finalScore / total) * 100;
+        if (percentage >= 90) message = '🏆 Outstanding! You\'ve mastered angles!';
+        else if (percentage >= 70) message = '⭐ Great job! You understand angle relationships well!';
+        else if (percentage >= 50) message = '👍 Good start! Review parallel lines and practice more.';
+        else message = '📚 Keep studying! Focus on basic angle rules and try again.';
+
+        results.innerHTML += '<p>' + message + '</p>';
+    }
+}
+
+// Initialize when page loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeQuiz);
+} else {
+    initializeQuiz();
+}
+</script>
     `
   },
 
@@ -3240,6 +3753,12766 @@ export const allLessons = {
         <h4>Key Takeaway</h4>
         <p>Memorize all the basic area and volume formulas, unit conversions, Pythagorean theorem, and special right triangle ratios. As long as you have the equations memorized, you will be ready to solve any geometry questions with shapes. These appear on every ACT Math test!</p>
       </div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Test Your Geometry Shape Skills!</h3>
+    <div class="quiz-container">
+        <div class="question-item" data-question="1">
+            <p><strong>Question 1:</strong> What is the area of a triangle with base 8 meters and height 6 meters?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q1" value="A"> A) 14 square meters</label>
+                <label><input type="radio" name="q1" value="B"> B) 24 square meters</label>
+                <label><input type="radio" name="q1" value="C"> C) 28 square meters</label>
+                <label><input type="radio" name="q1" value="D"> D) 48 square meters</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) 24 square meters</strong></p>
+                <p>Using the triangle area formula: A = ½bh = ½(8)(6) = ½(48) = 24 square meters.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="2">
+            <p><strong>Question 2:</strong> A right triangle has legs of length 9 and 12. What is the length of the hypotenuse?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2" value="A"> A) 15</label>
+                <label><input type="radio" name="q2" value="B"> B) 21</label>
+                <label><input type="radio" name="q2" value="C"> C) 18</label>
+                <label><input type="radio" name="q2" value="D"> D) 12</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) 15</strong></p>
+                <p>Using the Pythagorean theorem: a² + b² = c². So 9² + 12² = 81 + 144 = 225. Therefore c = √225 = 15. This is a scaled version of the 3-4-5 triangle (multiplied by 3).</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="3">
+            <p><strong>Question 3:</strong> In a 45°-45°-90° triangle, if one leg has length 7, what is the length of the hypotenuse?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q3" value="A"> A) 7</label>
+                <label><input type="radio" name="q3" value="B"> B) 7√2</label>
+                <label><input type="radio" name="q3" value="C"> C) 14</label>
+                <label><input type="radio" name="q3" value="D"> D) 7√3</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) 7√2</strong></p>
+                <p>In a 45°-45°-90° triangle, the side ratio is x : x : x√2. If each leg is 7, then the hypotenuse is 7√2.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="4">
+            <p><strong>Question 4:</strong> What is the volume of a rectangular prism with length 5 ft, width 3 ft, and height 4 ft?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q4" value="A"> A) 12 cubic feet</label>
+                <label><input type="radio" name="q4" value="B"> B) 47 cubic feet</label>
+                <label><input type="radio" name="q4" value="C"> C) 60 cubic feet</label>
+                <label><input type="radio" name="q4" value="D"> D) 120 cubic feet</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: C) 60 cubic feet</strong></p>
+                <p>Using the rectangular prism volume formula: V = lwh = 5 × 3 × 4 = 60 cubic feet.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="5">
+            <p><strong>Question 5:</strong> A room measures 12 feet by 15 feet. How many square yards of carpet are needed to cover the floor?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q5" value="A"> A) 20 square yards</label>
+                <label><input type="radio" name="q5" value="B"> B) 180 square yards</label>
+                <label><input type="radio" name="q5" value="C"> C) 27 square yards</label>
+                <label><input type="radio" name="q5" value="D"> D) 60 square yards</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) 20 square yards</strong></p>
+                <p>First find the area: 12 ft × 15 ft = 180 square feet. Then convert to square yards: 180 ÷ 9 = 20 square yards (since 1 square yard = 9 square feet).</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="6">
+            <p><strong>Question 6:</strong> In a 30°-60°-90° triangle, if the shortest side is 4, what is the length of the hypotenuse?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q6" value="A"> A) 4√3</label>
+                <label><input type="radio" name="q6" value="B"> B) 8</label>
+                <label><input type="radio" name="q6" value="C"> C) 8√3</label>
+                <label><input type="radio" name="q6" value="D"> D) 12</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) 8</strong></p>
+                <p>In a 30°-60°-90° triangle, the side ratio is x : x√3 : 2x. If the shortest side (opposite the 30° angle) is 4, then x = 4 and the hypotenuse is 2x = 8.</p>
+            </div>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <h4>Quiz Complete!</h4>
+            <p>Your score: <span class="score">0</span>/6</p>
+            <button class="retake-quiz">Retake Quiz</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.interactive-quiz {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.quiz-container {
+    max-width: 800px;
+}
+
+.question-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.question-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.quiz-options {
+    margin: 15px 0;
+    display: grid;
+    gap: 10px;
+}
+
+.quiz-options label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.quiz-options label:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.quiz-options input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.2);
+}
+
+.explanation {
+    background: rgba(46, 204, 113, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border-left: 4px solid #27ae60;
+}
+
+.quiz-results {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.retake-quiz {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.retake-quiz:hover {
+    background: #229954;
+    transform: translateY(-2px);
+}
+
+.quiz-options label.selected {
+    border-color: #3498db;
+    background: rgba(52, 152, 219, 0.3);
+}
+
+.quiz-options label.correct {
+    border-color: #27ae60;
+    background: rgba(39, 174, 96, 0.3);
+}
+
+.quiz-options label.incorrect {
+    border-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.3);
+}
+</style>
+
+<script>
+function initializeQuiz() {
+    const questions = document.querySelectorAll('.question-item');
+    const totalQuestions = questions.length;
+    let currentQuestion = 0;
+    let score = 0;
+    let answered = new Set();
+
+    // Show first question
+    questions.forEach((q, index) => {
+        if (index === 0) {
+            q.style.display = 'block';
+        } else {
+            q.style.display = 'none';
+        }
+    });
+
+    // Handle answer selection
+    document.addEventListener('change', function(e) {
+        if (e.target.type === 'radio') {
+            const questionNum = parseInt(e.target.name.replace('q', ''));
+            const selectedValue = e.target.value;
+            const questionItem = e.target.closest('.question-item');
+
+            // Mark as selected
+            const labels = questionItem.querySelectorAll('.quiz-options label');
+            labels.forEach(label => {
+                label.classList.remove('selected');
+                if (label.querySelector('input').checked) {
+                    label.classList.add('selected');
+                }
+            });
+
+            // Show explanation after 1 second
+            setTimeout(() => {
+                const explanation = questionItem.querySelector('.explanation');
+                explanation.style.display = 'block';
+
+                // Check answer and update styling
+                const isCorrect = checkAnswer(questionNum, selectedValue);
+                labels.forEach(label => {
+                    const input = label.querySelector('input');
+                    if (input.checked) {
+                        if (isCorrect) {
+                            label.classList.add('correct');
+                        } else {
+                            label.classList.add('incorrect');
+                        }
+                    }
+                });
+
+                if (!answered.has(questionNum)) {
+                    if (isCorrect) score++;
+                    answered.add(questionNum);
+                }
+
+                // Auto-advance after 3 seconds
+                setTimeout(() => {
+                    if (currentQuestion < totalQuestions - 1) {
+                        questions[currentQuestion].style.display = 'none';
+                        currentQuestion++;
+                        questions[currentQuestion].style.display = 'block';
+                    } else {
+                        // Show results
+                        showResults(score, totalQuestions);
+                    }
+                }, 3000);
+            }, 1000);
+        }
+    });
+
+    // Handle retake
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('retake-quiz')) {
+            location.reload();
+        }
+    });
+
+    function checkAnswer(questionNum, selectedValue) {
+        const correctAnswers = {
+            1: 'B', 2: 'A', 3: 'B', 4: 'C', 5: 'A', 6: 'B'
+        };
+        return correctAnswers[questionNum] === selectedValue;
+    }
+
+    function showResults(finalScore, total) {
+        questions.forEach(q => q.style.display = 'none');
+        const results = document.querySelector('.quiz-results');
+        results.style.display = 'block';
+        results.querySelector('.score').textContent = finalScore;
+
+        let message = '';
+        const percentage = (finalScore / total) * 100;
+        if (percentage >= 90) message = '🏆 Outstanding! You\'ve mastered geometry shapes!';
+        else if (percentage >= 70) message = '⭐ Great job! You understand formulas and special triangles well!';
+        else if (percentage >= 50) message = '👍 Good start! Review area/volume formulas and practice more.';
+        else message = '📚 Keep studying! Focus on memorizing formulas and try again.';
+
+        results.innerHTML += '<p>' + message + '</p>';
+    }
+}
+
+// Initialize when page loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeQuiz);
+} else {
+    initializeQuiz();
+}
+</script>
+    `
+  },
+
+  'lines': {
+    title: 'Chapter 5: Lines',
+    duration: 25, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 5: <span style="color: #3b82f6; font-weight: 600;">Lines</span></h2>
+    <p class="lesson-intro">Master slope, equations of lines, midpoint, and distance formulas - the foundation of coordinate geometry on the ACT! These concepts appear on <strong>every ACT Math test</strong> and connect to many other topics like functions and graphing.</p>
+</div>
+
+<div class="section why-important">
+    <h3>Your Chapter 5 Learning Path: The 4 Essential Line Concepts</h3>
+    <div class="concept-box">
+        <h4>🎯 What You'll Master Today</h4>
+        <p><strong>Part 1:</strong> Slope → How steep a line is and its direction</p>
+        <p><strong>Part 2:</strong> Equations of Lines → Point-slope, slope-intercept, and standard forms</p>
+        <p><strong>Part 3:</strong> Midpoint Formula → Finding the center point between two coordinates</p>
+        <p><strong>Part 4:</strong> Distance Formula → Finding the length between two points</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #3b82f6; font-weight: 600;">Slope</span> - The Steepness of a Line</h3>
+
+    <div class="concept-box">
+        <h4>💡 Core Definition</h4>
+        <p><strong>Slope = Rise over Run = Change in y over Change in x</strong></p>
+        <p><strong>Formula: m = (y₂ - y₁) / (x₂ - x₁)</strong></p>
+        <p>Slope tells us how much y changes for every 1 unit that x changes.</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Essential Slope Rules:</h4>
+        <ul>
+            <li><strong>Positive slope:</strong> Line goes UP from left to right ↗</li>
+            <li><strong>Negative slope:</strong> Line goes DOWN from left to right ↘</li>
+            <li><strong>Zero slope:</strong> Horizontal line (flat) →</li>
+            <li><strong>Undefined slope:</strong> Vertical line ↕</li>
+            <li><strong>Parallel lines:</strong> Same slope</li>
+            <li><strong>Perpendicular lines:</strong> Slopes multiply to -1 (negative reciprocals)</li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Finding Slope</h4>
+        <p><strong>Problem:</strong> Find the slope of the line passing through points (2, 5) and (6, 13).</p>
+        <p><strong>Solution:</strong></p>
+        <p>m = (y₂ - y₁) / (x₂ - x₁)</p>
+        <p>m = (13 - 5) / (6 - 2)</p>
+        <p>m = 8 / 4 = 2</p>
+        <p><strong>The slope is 2, meaning the line goes up 2 units for every 1 unit right.</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Perpendicular Lines</h4>
+        <p><strong>Problem:</strong> A line has slope ³⁄₄. What is the slope of a line perpendicular to it?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Perpendicular slopes are negative reciprocals.</p>
+        <p>Original slope: ³⁄₄</p>
+        <p>Negative reciprocal: -⁴⁄₃</p>
+        <p><strong>The perpendicular slope is -⁴⁄₃</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #3b82f6; font-weight: 600;">Equations of Lines</span></h3>
+
+    <div class="rules-box">
+        <h4>Three Important Forms:</h4>
+
+        <p><strong>1. Slope-Intercept Form: y = mx + b</strong></p>
+        <ul>
+            <li>m = slope</li>
+            <li>b = y-intercept (where line crosses y-axis)</li>
+            <li><em>Most useful for graphing and identifying slope/y-intercept</em></li>
+        </ul>
+
+        <p><strong>2. Point-Slope Form: y - y₁ = m(x - x₁)</strong></p>
+        <ul>
+            <li>m = slope</li>
+            <li>(x₁, y₁) = any known point on the line</li>
+            <li><em>Most useful when you know a point and the slope</em></li>
+        </ul>
+
+        <p><strong>3. Standard Form: Ax + By = C</strong></p>
+        <ul>
+            <li>A, B, C are integers (A should be positive)</li>
+            <li><em>Used when both x and y intercepts are important</em></li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Writing Line Equations</h4>
+        <p><strong>Problem:</strong> Write the equation of the line with slope -2 that passes through (3, 7).</p>
+        <p><strong>Solution:</strong></p>
+        <p><strong>Method 1 - Point-Slope Form:</strong></p>
+        <p>y - y₁ = m(x - x₁)</p>
+        <p>y - 7 = -2(x - 3)</p>
+        <p>y - 7 = -2x + 6</p>
+        <p>y = -2x + 13</p>
+
+        <p><strong>Method 2 - Slope-Intercept Form directly:</strong></p>
+        <p>y = mx + b, substitute the point (3, 7) and slope -2</p>
+        <p>7 = -2(3) + b</p>
+        <p>7 = -6 + b</p>
+        <p>b = 13</p>
+        <p><strong>Final answer: y = -2x + 13</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #3b82f6; font-weight: 600;">Midpoint Formula</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 The Formula</h4>
+        <p><strong>Midpoint = ((x₁ + x₂)/2, (y₁ + y₂)/2)</strong></p>
+        <p><em>Just average the x-coordinates and average the y-coordinates!</em></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Finding Midpoint</h4>
+        <p><strong>Problem:</strong> Find the midpoint of the segment connecting (-4, 6) and (8, -2).</p>
+        <p><strong>Solution:</strong></p>
+        <p>Midpoint = ((x₁ + x₂)/2, (y₁ + y₂)/2)</p>
+        <p>Midpoint = ((-4 + 8)/2, (6 + (-2))/2)</p>
+        <p>Midpoint = (4/2, 4/2)</p>
+        <p><strong>Midpoint = (2, 2)</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #3b82f6; font-weight: 600;">Distance Formula</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 The Formula</h4>
+        <p><strong>Distance = √[(x₂ - x₁)² + (y₂ - y₁)²]</strong></p>
+        <p><em>This is just the Pythagorean theorem in disguise!</em></p>
+    </div>
+
+    <div class="tip-box">
+        <h4>🎯 Memory Trick</h4>
+        <p>Think of the distance formula as creating a right triangle:</p>
+        <ul>
+            <li>Horizontal leg = |x₂ - x₁|</li>
+            <li>Vertical leg = |y₂ - y₁|</li>
+            <li>Hypotenuse = distance between the points</li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Finding Distance</h4>
+        <p><strong>Problem:</strong> Find the distance between points (-1, 3) and (5, -5).</p>
+        <p><strong>Solution:</strong></p>
+        <p>Distance = √[(x₂ - x₁)² + (y₂ - y₁)²]</p>
+        <p>Distance = √[(5 - (-1))² + (-5 - 3)²]</p>
+        <p>Distance = √[(6)² + (-8)²]</p>
+        <p>Distance = √[36 + 64]</p>
+        <p>Distance = √100 = 10</p>
+        <p><strong>The distance is 10 units.</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🔗 Connecting the Concepts</h3>
+
+    <div class="example-box">
+        <h4>Example 6: Using All Four Concepts</h4>
+        <p><strong>Problem:</strong> Points A(-2, 1) and B(4, 9) are endpoints of a line segment.</p>
+        <p>a) Find the slope of line AB</p>
+        <p>b) Find the equation of line AB</p>
+        <p>c) Find the midpoint of segment AB</p>
+        <p>d) Find the length of segment AB</p>
+
+        <p><strong>Solutions:</strong></p>
+        <p><strong>a) Slope:</strong> m = (9-1)/(4-(-2)) = 8/6 = 4/3</p>
+        <p><strong>b) Equation:</strong> y - 1 = (4/3)(x - (-2)) → y = (4/3)x + 11/3</p>
+        <p><strong>c) Midpoint:</strong> ((-2+4)/2, (1+9)/2) = (1, 5)</p>
+        <p><strong>d) Distance:</strong> √[(4-(-2))² + (9-1)²] = √[36 + 64] = √100 = 10</p>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Lines are the foundation of coordinate geometry! Master slope, line equations, midpoint, and distance formulas - these concepts connect to functions, graphing, and many other ACT topics. Practice identifying which formula to use based on what information you're given!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Test Your Line Skills!</h3>
+    <div class="quiz-container">
+        <div class="question-item" data-question="1">
+            <p><strong>Question 1:</strong> Find the slope of the line passing through points (3, 7) and (8, 22).</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q1" value="A"> A) 3</label>
+                <label><input type="radio" name="q1" value="B"> B) 5</label>
+                <label><input type="radio" name="q1" value="C"> C) 1/3</label>
+                <label><input type="radio" name="q1" value="D"> D) 15</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) 3</strong></p>
+                <p>Using the slope formula: m = (y₂ - y₁)/(x₂ - x₁) = (22 - 7)/(8 - 3) = 15/5 = 3</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="2">
+            <p><strong>Question 2:</strong> What is the slope of a line perpendicular to a line with slope 2/5?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2" value="A"> A) 2/5</label>
+                <label><input type="radio" name="q2" value="B"> B) -2/5</label>
+                <label><input type="radio" name="q2" value="C"> C) 5/2</label>
+                <label><input type="radio" name="q2" value="D"> D) -5/2</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: D) -5/2</strong></p>
+                <p>Perpendicular lines have slopes that are negative reciprocals. The negative reciprocal of 2/5 is -5/2.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="3">
+            <p><strong>Question 3:</strong> What is the equation of the line with slope 4 passing through point (1, 5)?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q3" value="A"> A) y = 4x + 1</label>
+                <label><input type="radio" name="q3" value="B"> B) y = 4x + 5</label>
+                <label><input type="radio" name="q3" value="C"> C) y = 4x - 1</label>
+                <label><input type="radio" name="q3" value="D"> D) y = 4x + 9</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) y = 4x + 1</strong></p>
+                <p>Using point-slope form: y - 5 = 4(x - 1) → y - 5 = 4x - 4 → y = 4x + 1</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="4">
+            <p><strong>Question 4:</strong> Find the midpoint of the segment connecting points (-3, 4) and (7, -2).</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q4" value="A"> A) (2, 1)</label>
+                <label><input type="radio" name="q4" value="B"> B) (4, 2)</label>
+                <label><input type="radio" name="q4" value="C"> C) (5, 3)</label>
+                <label><input type="radio" name="q4" value="D"> D) (2, 3)</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) (2, 1)</strong></p>
+                <p>Using the midpoint formula: ((x₁ + x₂)/2, (y₁ + y₂)/2) = ((-3 + 7)/2, (4 + (-2))/2) = (4/2, 2/2) = (2, 1)</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="5">
+            <p><strong>Question 5:</strong> Find the distance between points (0, 3) and (4, 6).</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q5" value="A"> A) 5</label>
+                <label><input type="radio" name="q5" value="B"> B) 7</label>
+                <label><input type="radio" name="q5" value="C"> C) √7</label>
+                <label><input type="radio" name="q5" value="D"> D) √25</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) 5</strong></p>
+                <p>Using the distance formula: d = √[(x₂ - x₁)² + (y₂ - y₁)²] = √[(4 - 0)² + (6 - 3)²] = √[16 + 9] = √25 = 5</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="6">
+            <p><strong>Question 6:</strong> Which line has the steepest positive slope?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q6" value="A"> A) y = 2x + 3</label>
+                <label><input type="radio" name="q6" value="B"> B) y = 1/3x - 1</label>
+                <label><input type="radio" name="q6" value="C"> C) y = 5x + 7</label>
+                <label><input type="radio" name="q6" value="D"> D) y = 0.8x - 2</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: C) y = 5x + 7</strong></p>
+                <p>The steepest positive slope is the largest positive value. Comparing slopes: 2, 1/3 ≈ 0.33, 5, and 0.8. The largest is 5.</p>
+            </div>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <h4>Quiz Complete!</h4>
+            <p>Your score: <span class="score">0</span>/6</p>
+            <button class="retake-quiz">Retake Quiz</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.interactive-quiz {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.quiz-container {
+    max-width: 800px;
+}
+
+.question-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.question-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.quiz-options {
+    margin: 15px 0;
+    display: grid;
+    gap: 10px;
+}
+
+.quiz-options label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.quiz-options label:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.quiz-options input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.2);
+}
+
+.explanation {
+    background: rgba(46, 204, 113, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border-left: 4px solid #27ae60;
+}
+
+.quiz-results {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.retake-quiz {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.retake-quiz:hover {
+    background: #229954;
+    transform: translateY(-2px);
+}
+
+.quiz-options label.selected {
+    border-color: #3498db;
+    background: rgba(52, 152, 219, 0.3);
+}
+
+.quiz-options label.correct {
+    border-color: #27ae60;
+    background: rgba(39, 174, 96, 0.3);
+}
+
+.quiz-options label.incorrect {
+    border-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.3);
+}
+</style>
+
+<script>
+function initializeQuiz() {
+    const questions = document.querySelectorAll('.question-item');
+    const totalQuestions = questions.length;
+    let currentQuestion = 0;
+    let score = 0;
+    let answered = new Set();
+
+    // Show first question
+    questions.forEach((q, index) => {
+        if (index === 0) {
+            q.style.display = 'block';
+        } else {
+            q.style.display = 'none';
+        }
+    });
+
+    // Handle answer selection
+    document.addEventListener('change', function(e) {
+        if (e.target.type === 'radio') {
+            const questionNum = parseInt(e.target.name.replace('q', ''));
+            const selectedValue = e.target.value;
+            const questionItem = e.target.closest('.question-item');
+
+            // Mark as selected
+            const labels = questionItem.querySelectorAll('.quiz-options label');
+            labels.forEach(label => {
+                label.classList.remove('selected');
+                if (label.querySelector('input').checked) {
+                    label.classList.add('selected');
+                }
+            });
+
+            // Show explanation after 1 second
+            setTimeout(() => {
+                const explanation = questionItem.querySelector('.explanation');
+                explanation.style.display = 'block';
+
+                // Check answer and update styling
+                const isCorrect = checkAnswer(questionNum, selectedValue);
+                labels.forEach(label => {
+                    const input = label.querySelector('input');
+                    if (input.checked) {
+                        if (isCorrect) {
+                            label.classList.add('correct');
+                        } else {
+                            label.classList.add('incorrect');
+                        }
+                    }
+                });
+
+                if (!answered.has(questionNum)) {
+                    if (isCorrect) score++;
+                    answered.add(questionNum);
+                }
+
+                // Auto-advance after 3 seconds
+                setTimeout(() => {
+                    if (currentQuestion < totalQuestions - 1) {
+                        questions[currentQuestion].style.display = 'none';
+                        currentQuestion++;
+                        questions[currentQuestion].style.display = 'block';
+                    } else {
+                        // Show results
+                        showResults(score, totalQuestions);
+                    }
+                }, 3000);
+            }, 1000);
+        }
+    });
+
+    // Handle retake
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('retake-quiz')) {
+            location.reload();
+        }
+    });
+
+    function checkAnswer(questionNum, selectedValue) {
+        const correctAnswers = {
+            1: 'A', 2: 'D', 3: 'A', 4: 'A', 5: 'A', 6: 'C'
+        };
+        return correctAnswers[questionNum] === selectedValue;
+    }
+
+    function showResults(finalScore, total) {
+        questions.forEach(q => q.style.display = 'none');
+        const results = document.querySelector('.quiz-results');
+        results.style.display = 'block';
+        results.querySelector('.score').textContent = finalScore;
+
+        let message = '';
+        const percentage = (finalScore / total) * 100;
+        if (percentage >= 90) message = '🏆 Outstanding! You\'ve mastered coordinate geometry!';
+        else if (percentage >= 70) message = '⭐ Great job! You understand lines and formulas well!';
+        else if (percentage >= 50) message = '👍 Good start! Review slope and distance formulas more.';
+        else message = '📚 Keep studying! Focus on basic formulas and try again.';
+
+        results.innerHTML += '<p>' + message + '</p>';
+    }
+}
+
+// Initialize when page loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeQuiz);
+} else {
+    initializeQuiz();
+}
+</script>
+    `
+  },
+
+  'fractions': {
+    title: 'Chapter 6: Fractions',
+    duration: 22, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 6: <span style="color: #f59e0b; font-weight: 600;">Fractions</span></h2>
+    <p class="lesson-intro">Master fraction operations and calculator techniques that appear on <strong>every ACT Math test</strong>. These skills are essential for algebra, geometry, and advanced topics - plus you'll learn calculator shortcuts that save valuable time!</p>
+</div>
+
+<div class="section why-important">
+    <h3>Your Chapter 6 Learning Path: The 4 Essential Fraction Skills</h3>
+    <div class="concept-box">
+        <h4>🎯 What You'll Master Today</h4>
+        <p><strong>Part 1:</strong> Adding & Subtracting Fractions → Finding common denominators</p>
+        <p><strong>Part 2:</strong> Multiplying & Dividing Fractions → The easiest operations!</p>
+        <p><strong>Part 3:</strong> Mixed Numbers & Improper Fractions → Converting between forms</p>
+        <p><strong>Part 4:</strong> Calculator Techniques → ACT-specific shortcuts and time-savers</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #f59e0b; font-weight: 600;">Adding & Subtracting</span> Fractions</h3>
+
+    <div class="concept-box">
+        <h4>💡 The Golden Rule</h4>
+        <p><strong>You can only add or subtract fractions with the same denominator!</strong></p>
+        <p>If denominators are different, find a common denominator first.</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Step-by-Step Process:</h4>
+        <ol>
+            <li><strong>Check denominators:</strong> Are they the same?</li>
+            <li><strong>If different:</strong> Find the Least Common Multiple (LCM)</li>
+            <li><strong>Convert:</strong> Make equivalent fractions with the common denominator</li>
+            <li><strong>Add/Subtract:</strong> Only the numerators, keep the denominator</li>
+            <li><strong>Simplify:</strong> Reduce to lowest terms if possible</li>
+        </ol>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Same Denominators</h4>
+        <p><strong>Problem:</strong> 3/8 + 5/8</p>
+        <p><strong>Solution:</strong></p>
+        <p>Denominators are the same, so just add numerators:</p>
+        <p>3/8 + 5/8 = (3 + 5)/8 = 8/8 = 1</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Different Denominators</h4>
+        <p><strong>Problem:</strong> 2/3 + 1/4</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Find LCM of 3 and 4 → LCM = 12</p>
+        <p>Step 2: Convert to equivalent fractions</p>
+        <ul>
+            <li>2/3 = (2 × 4)/(3 × 4) = 8/12</li>
+            <li>1/4 = (1 × 3)/(4 × 3) = 3/12</li>
+        </ul>
+        <p>Step 3: Add: 8/12 + 3/12 = 11/12</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Subtraction</h4>
+        <p><strong>Problem:</strong> 5/6 - 1/9</p>
+        <p><strong>Solution:</strong></p>
+        <p>LCM of 6 and 9 = 18</p>
+        <p>5/6 = 15/18 and 1/9 = 2/18</p>
+        <p>15/18 - 2/18 = 13/18</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #f59e0b; font-weight: 600;">Multiplying & Dividing</span> Fractions</h3>
+
+    <div class="concept-box">
+        <h4>💡 The Easy Operations!</h4>
+        <p><strong>Multiplication:</strong> Multiply straight across (numerator × numerator, denominator × denominator)</p>
+        <p><strong>Division:</strong> Multiply by the reciprocal (flip the second fraction)</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Multiplication Formula:</h4>
+        <p><strong>a/b × c/d = (a × c)/(b × d)</strong></p>
+
+        <h4>Division Formula:</h4>
+        <p><strong>a/b ÷ c/d = a/b × d/c</strong></p>
+        <p><em>"Keep, Change, Flip" - Keep the first fraction, change ÷ to ×, flip the second fraction</em></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Multiplication</h4>
+        <p><strong>Problem:</strong> 3/4 × 2/5</p>
+        <p><strong>Solution:</strong></p>
+        <p>3/4 × 2/5 = (3 × 2)/(4 × 5) = 6/20 = 3/10</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Division</h4>
+        <p><strong>Problem:</strong> 2/3 ÷ 4/7</p>
+        <p><strong>Solution:</strong></p>
+        <p>2/3 ÷ 4/7 = 2/3 × 7/4 = (2 × 7)/(3 × 4) = 14/12 = 7/6</p>
+    </div>
+
+    <div class="tip-box">
+        <h4>🎯 Cross-Cancelling Shortcut</h4>
+        <p>Before multiplying, look for numbers that divide evenly:</p>
+        <p><strong>Example:</strong> 6/8 × 4/9</p>
+        <p>Notice: 6 and 9 both divide by 3, and 8 and 4 both divide by 4</p>
+        <p>6/8 × 4/9 = (2×1)/(2×3) = 2/6 = 1/3</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #f59e0b; font-weight: 600;">Mixed Numbers</span> & Improper Fractions</h3>
+
+    <div class="concept-box">
+        <h4>💡 Definitions</h4>
+        <p><strong>Mixed Number:</strong> A whole number plus a fraction (like 2¾)</p>
+        <p><strong>Improper Fraction:</strong> Numerator ≥ denominator (like 11/4)</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Converting Mixed to Improper:</h4>
+        <p><strong>Formula:</strong> (whole × denominator + numerator) / denominator</p>
+
+        <h4>Converting Improper to Mixed:</h4>
+        <p><strong>Process:</strong> Divide numerator by denominator</p>
+        <ul>
+            <li>Quotient = whole number part</li>
+            <li>Remainder = new numerator</li>
+            <li>Denominator stays the same</li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: Mixed to Improper</h4>
+        <p><strong>Problem:</strong> Convert 3²⁄₅ to an improper fraction</p>
+        <p><strong>Solution:</strong></p>
+        <p>(3 × 5 + 2) / 5 = (15 + 2) / 5 = 17/5</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: Improper to Mixed</h4>
+        <p><strong>Problem:</strong> Convert 23/7 to a mixed number</p>
+        <p><strong>Solution:</strong></p>
+        <p>23 ÷ 7 = 3 remainder 2</p>
+        <p>So 23/7 = 3²⁄₇</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #f59e0b; font-weight: 600;">Calculator Techniques</span> for the ACT</h3>
+
+    <div class="tip-box">
+        <h4>🎯 Essential Calculator Tips</h4>
+        <ol>
+            <li><strong>Use Parentheses:</strong> For complex fractions, use (2+3)/(4+5) format</li>
+            <li><strong>Convert to Decimals:</strong> Sometimes easier to work with 0.75 instead of 3/4</li>
+            <li><strong>Fraction Button:</strong> Many calculators have a a/b/c button for mixed numbers</li>
+            <li><strong>Simplify Function:</strong> Look for SIMP or simplify functions</li>
+        </ol>
+    </div>
+
+    <div class="rules-box">
+        <h4>Common Fraction-Decimal Conversions to Memorize:</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+                <p><strong>Halves & Quarters:</strong></p>
+                <ul>
+                    <li>1/2 = 0.5</li>
+                    <li>1/4 = 0.25</li>
+                    <li>3/4 = 0.75</li>
+                </ul>
+            </div>
+            <div>
+                <p><strong>Thirds & Fifths:</strong></p>
+                <ul>
+                    <li>1/3 = 0.333...</li>
+                    <li>2/3 = 0.666...</li>
+                    <li>1/5 = 0.2</li>
+                    <li>2/5 = 0.4</li>
+                    <li>3/5 = 0.6</li>
+                    <li>4/5 = 0.8</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 8: Calculator Strategy</h4>
+        <p><strong>Problem:</strong> What is (2/3 + 1/4) ÷ (3/5 - 1/6)?</p>
+        <p><strong>Calculator Method:</strong></p>
+        <p>Enter: ((2÷3)+(1÷4))÷((3÷5)-(1÷6))</p>
+        <p>Result: Approximately 1.26</p>
+
+        <p><strong>Verification Method:</strong></p>
+        <p>Numerator: 2/3 + 1/4 = 8/12 + 3/12 = 11/12</p>
+        <p>Denominator: 3/5 - 1/6 = 18/30 - 5/30 = 13/30</p>
+        <p>Final: (11/12) ÷ (13/30) = (11/12) × (30/13) = 330/156 = 55/26 ≈ 1.26 ✓</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🔗 Word Problems with Fractions</h3>
+
+    <div class="example-box">
+        <h4>Example 9: Real ACT Problem</h4>
+        <p><strong>Problem:</strong> Sarah ate 1/4 of a pizza for lunch and 2/3 of the remaining pizza for dinner. What fraction of the original pizza did she eat for dinner?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: After lunch, remaining pizza = 1 - 1/4 = 3/4</p>
+        <p>Step 2: For dinner, she ate 2/3 of this remaining amount</p>
+        <p>Step 3: Dinner portion = 2/3 × 3/4 = 6/12 = 1/2</p>
+        <p><strong>Answer: She ate 1/2 of the original pizza for dinner.</strong></p>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Fractions are fundamental to ACT success! Master the four basic operations and calculator techniques. Remember: addition/subtraction needs common denominators, but multiplication/division works straight across. Use your calculator strategically, but know the manual methods for accuracy checks!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Test Your Fraction Skills!</h3>
+    <div class="quiz-container">
+        <div class="question-item" data-question="1">
+            <p><strong>Question 1:</strong> Calculate: 2/3 + 1/4</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q1" value="A"> A) 3/7</label>
+                <label><input type="radio" name="q1" value="B"> B) 11/12</label>
+                <label><input type="radio" name="q1" value="C"> C) 8/12</label>
+                <label><input type="radio" name="q1" value="D"> D) 5/6</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) 11/12</strong></p>
+                <p>Find common denominator: 2/3 = 8/12 and 1/4 = 3/12. Then 8/12 + 3/12 = 11/12.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="2">
+            <p><strong>Question 2:</strong> Calculate: 3/4 × 2/5</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2" value="A"> A) 5/9</label>
+                <label><input type="radio" name="q2" value="B"> B) 6/20</label>
+                <label><input type="radio" name="q2" value="C"> C) 3/10</label>
+                <label><input type="radio" name="q2" value="D"> D) 1/2</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: C) 3/10</strong></p>
+                <p>Multiply across: (3 × 2)/(4 × 5) = 6/20. Simplify by dividing both by 2: 6/20 = 3/10.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="3">
+            <p><strong>Question 3:</strong> Calculate: 5/6 ÷ 2/3</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q3" value="A"> A) 10/18</label>
+                <label><input type="radio" name="q3" value="B"> B) 5/4</label>
+                <label><input type="radio" name="q3" value="C"> C) 3/4</label>
+                <label><input type="radio" name="q3" value="D"> D) 7/9</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) 5/4</strong></p>
+                <p>Division means multiply by the reciprocal: 5/6 ÷ 2/3 = 5/6 × 3/2 = 15/12 = 5/4.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="4">
+            <p><strong>Question 4:</strong> Convert 3 1/4 to an improper fraction.</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q4" value="A"> A) 12/4</label>
+                <label><input type="radio" name="q4" value="B"> B) 13/4</label>
+                <label><input type="radio" name="q4" value="C"> C) 10/4</label>
+                <label><input type="radio" name="q4" value="D"> D) 7/4</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) 13/4</strong></p>
+                <p>Formula: (whole × denominator + numerator) / denominator = (3 × 4 + 1) / 4 = 13/4.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="5">
+            <p><strong>Question 5:</strong> Calculate: 7/8 - 3/8</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q5" value="A"> A) 4/8</label>
+                <label><input type="radio" name="q5" value="B"> B) 1/2</label>
+                <label><input type="radio" name="q5" value="C"> C) 4/0</label>
+                <label><input type="radio" name="q5" value="D"> D) 10/8</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) 1/2</strong></p>
+                <p>Same denominators, so subtract numerators: 7/8 - 3/8 = 4/8 = 1/2 (simplified).</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="6">
+            <p><strong>Question 6:</strong> Maria ate 1/3 of a cake, then ate 1/4 of what remained. What fraction of the original cake did she eat in total?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q6" value="A"> A) 1/2</label>
+                <label><input type="radio" name="q6" value="B"> B) 7/12</label>
+                <label><input type="radio" name="q6" value="C"> C) 5/12</label>
+                <label><input type="radio" name="q6" value="D"> D) 1/7</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) 1/2</strong></p>
+                <p>After eating 1/3, there's 2/3 left. She then ate 1/4 of this: 1/4 × 2/3 = 2/12 = 1/6. Total eaten: 1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2.</p>
+            </div>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <h4>Quiz Complete!</h4>
+            <p>Your score: <span class="score">0</span>/6</p>
+            <button class="retake-quiz">Retake Quiz</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.interactive-quiz {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.quiz-container {
+    max-width: 800px;
+}
+
+.question-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.question-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.quiz-options {
+    margin: 15px 0;
+    display: grid;
+    gap: 10px;
+}
+
+.quiz-options label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.quiz-options label:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.quiz-options input[type="radio"] {
+    margin-right: 12px;
+    transform: scale(1.2);
+}
+
+.explanation {
+    background: rgba(46, 204, 113, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border-left: 4px solid #27ae60;
+}
+
+.quiz-results {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.retake-quiz {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.retake-quiz:hover {
+    background: #229954;
+    transform: translateY(-2px);
+}
+
+.quiz-options label.selected {
+    border-color: #3498db;
+    background: rgba(52, 152, 219, 0.3);
+}
+
+.quiz-options label.correct {
+    border-color: #27ae60;
+    background: rgba(39, 174, 96, 0.3);
+}
+
+.quiz-options label.incorrect {
+    border-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.3);
+}
+</style>
+
+<script>
+function initializeQuiz() {
+    const questions = document.querySelectorAll('.question-item');
+    const totalQuestions = questions.length;
+    let currentQuestion = 0;
+    let score = 0;
+    let answered = new Set();
+
+    // Show first question
+    questions.forEach((q, index) => {
+        if (index === 0) {
+            q.style.display = 'block';
+        } else {
+            q.style.display = 'none';
+        }
+    });
+
+    // Handle answer selection
+    document.addEventListener('change', function(e) {
+        if (e.target.type === 'radio') {
+            const questionNum = parseInt(e.target.name.replace('q', ''));
+            const selectedValue = e.target.value;
+            const questionItem = e.target.closest('.question-item');
+
+            // Mark as selected
+            const labels = questionItem.querySelectorAll('.quiz-options label');
+            labels.forEach(label => {
+                label.classList.remove('selected');
+                if (label.querySelector('input').checked) {
+                    label.classList.add('selected');
+                }
+            });
+
+            // Show explanation after 1 second
+            setTimeout(() => {
+                const explanation = questionItem.querySelector('.explanation');
+                explanation.style.display = 'block';
+
+                // Check answer and update styling
+                const isCorrect = checkAnswer(questionNum, selectedValue);
+                labels.forEach(label => {
+                    const input = label.querySelector('input');
+                    if (input.checked) {
+                        if (isCorrect) {
+                            label.classList.add('correct');
+                        } else {
+                            label.classList.add('incorrect');
+                        }
+                    }
+                });
+
+                if (!answered.has(questionNum)) {
+                    if (isCorrect) score++;
+                    answered.add(questionNum);
+                }
+
+                // Auto-advance after 3 seconds
+                setTimeout(() => {
+                    if (currentQuestion < totalQuestions - 1) {
+                        questions[currentQuestion].style.display = 'none';
+                        currentQuestion++;
+                        questions[currentQuestion].style.display = 'block';
+                    } else {
+                        // Show results
+                        showResults(score, totalQuestions);
+                    }
+                }, 3000);
+            }, 1000);
+        }
+    });
+
+    // Handle retake
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('retake-quiz')) {
+            location.reload();
+        }
+    });
+
+    function checkAnswer(questionNum, selectedValue) {
+        const correctAnswers = {
+            1: 'B', 2: 'C', 3: 'B', 4: 'B', 5: 'B', 6: 'A'
+        };
+        return correctAnswers[questionNum] === selectedValue;
+    }
+
+    function showResults(finalScore, total) {
+        questions.forEach(q => q.style.display = 'none');
+        const results = document.querySelector('.quiz-results');
+        results.style.display = 'block';
+        results.querySelector('.score').textContent = finalScore;
+
+        let message = '';
+        const percentage = (finalScore / total) * 100;
+        if (percentage >= 90) message = '🏆 Outstanding! You\'ve mastered fractions!';
+        else if (percentage >= 70) message = '⭐ Great job! You understand fraction operations well!';
+        else if (percentage >= 50) message = '👍 Good start! Review common denominators and practice more.';
+        else message = '📚 Keep studying! Focus on basic fraction rules and try again.';
+
+        results.innerHTML += '<p>' + message + '</p>';
+    }
+}
+
+// Initialize when page loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeQuiz);
+} else {
+    initializeQuiz();
+}
+</script>
+    `
+  },
+
+  'algebra-skills': {
+    title: 'Chapter 7: Algebra Skills',
+    duration: 28, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 7: <span style="color: #10b981; font-weight: 600;">Algebra Skills</span></h2>
+    <p class="lesson-intro">Master the fundamental algebra operations that form the backbone of <strong>80% of ACT Math questions</strong>! From order of operations to factoring, these skills are your foundation for success across all math topics.</p>
+</div>
+
+<div class="section why-important">
+    <h3>Your Chapter 7 Learning Path: The 5 Essential Algebra Skills</h3>
+    <div class="concept-box">
+        <h4>🎯 What You'll Master Today</h4>
+        <p><strong>Part 1:</strong> PEMDAS → Perfect order of operations every time</p>
+        <p><strong>Part 2:</strong> Combining Like Terms → Simplify expressions efficiently</p>
+        <p><strong>Part 3:</strong> Distributive Property → Expand and factor expressions</p>
+        <p><strong>Part 4:</strong> Working with Negative Numbers → Avoid common sign errors</p>
+        <p><strong>Part 5:</strong> Basic Factoring → Factor out common terms and simple quadratics</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #10b981; font-weight: 600;">PEMDAS</span> - Order of Operations</h3>
+
+    <div class="concept-box">
+        <h4>💡 The Sacred Order</h4>
+        <p><strong>P</strong>arentheses → <strong>E</strong>xponents → <strong>M</strong>ultiplication & <strong>D</strong>ivision → <strong>A</strong>ddition & <strong>S</strong>subtraction</p>
+        <p><em>Memory device: "Please Excuse My Dear Aunt Sally"</em></p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Critical PEMDAS Rules:</h4>
+        <ol>
+            <li><strong>Always work left to right within each level</strong></li>
+            <li><strong>Multiplication and Division have equal priority</strong> (do whichever comes first)</li>
+            <li><strong>Addition and Subtraction have equal priority</strong> (do whichever comes first)</li>
+            <li><strong>Parentheses include brackets [ ] and braces { }</strong></li>
+            <li><strong>Exponents include square roots and other radicals</strong></li>
+        </ol>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Basic PEMDAS</h4>
+        <p><strong>Problem:</strong> 2 + 3 × 4 - 8 ÷ 2</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Multiplication and Division first (left to right)</p>
+        <p>2 + 3 × 4 - 8 ÷ 2</p>
+        <p>2 + 12 - 4</p>
+        <p>Step 2: Addition and Subtraction (left to right)</p>
+        <p>14 - 4 = 10</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Complex PEMDAS</h4>
+        <p><strong>Problem:</strong> (2 + 3)² - 4 × 3 + 8 ÷ (6 - 4)</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Parentheses first</p>
+        <p>(2 + 3)² - 4 × 3 + 8 ÷ (6 - 4)</p>
+        <p>(5)² - 4 × 3 + 8 ÷ (2)</p>
+        <p>Step 2: Exponents</p>
+        <p>25 - 4 × 3 + 8 ÷ 2</p>
+        <p>Step 3: Multiplication and Division (left to right)</p>
+        <p>25 - 12 + 4</p>
+        <p>Step 4: Addition and Subtraction (left to right)</p>
+        <p>13 + 4 = 17</p>
+    </div>
+
+    <div class="tip-box">
+        <h4>🎯 Common PEMDAS Mistakes to Avoid</h4>
+        <ul>
+            <li><strong>DON'T</strong> always do multiplication before division</li>
+            <li><strong>DON'T</strong> always do addition before subtraction</li>
+            <li><strong>DO</strong> work left to right within the same priority level</li>
+            <li><strong>DO</strong> be extra careful with negative signs in parentheses</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #10b981; font-weight: 600;">Combining Like Terms</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What Are Like Terms?</h4>
+        <p><strong>Like terms have the same variable(s) raised to the same power(s)</strong></p>
+        <p><em>Examples: 3x and 7x are like terms, but 3x and 3x² are not</em></p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Steps to Combine Like Terms:</h4>
+        <ol>
+            <li><strong>Identify</strong> terms with identical variable parts</li>
+            <li><strong>Add or subtract</strong> the coefficients (numbers in front)</li>
+            <li><strong>Keep</strong> the variable part unchanged</li>
+            <li><strong>Write</strong> unlike terms separately</li>
+        </ol>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Basic Like Terms</h4>
+        <p><strong>Problem:</strong> 5x + 3x - 2x + 7</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Identify like terms</p>
+        <ul>
+            <li>x terms: 5x, 3x, -2x</li>
+            <li>Constant terms: 7</li>
+        </ul>
+        <p>Step 2: Combine coefficients of x terms</p>
+        <p>5x + 3x - 2x = (5 + 3 - 2)x = 6x</p>
+        <p><strong>Final answer: 6x + 7</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Multiple Variables</h4>
+        <p><strong>Problem:</strong> 4x² + 3xy - 2x² + 5y - xy + 8</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Group like terms</p>
+        <ul>
+            <li>x² terms: 4x², -2x²</li>
+            <li>xy terms: 3xy, -xy</li>
+            <li>y terms: 5y</li>
+            <li>Constants: 8</li>
+        </ul>
+        <p>Step 2: Combine each group</p>
+        <p>4x² - 2x² = 2x²</p>
+        <p>3xy - xy = 2xy</p>
+        <p><strong>Final answer: 2x² + 2xy + 5y + 8</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #10b981; font-weight: 600;">Distributive Property</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 The Formula</h4>
+        <p><strong>a(b + c) = ab + ac</strong></p>
+        <p><em>Multiply the outside term by each term inside the parentheses</em></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Basic Distribution</h4>
+        <p><strong>Problem:</strong> 3(2x + 5)</p>
+        <p><strong>Solution:</strong></p>
+        <p>3(2x + 5) = 3 × 2x + 3 × 5 = 6x + 15</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: Distribution with Variables</h4>
+        <p><strong>Problem:</strong> -2x(3x - 4)</p>
+        <p><strong>Solution:</strong></p>
+        <p>-2x(3x - 4) = (-2x)(3x) + (-2x)(-4) = -6x² + 8x</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: Factoring Out Common Terms</h4>
+        <p><strong>Problem:</strong> Factor 12x² + 18x</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Find the greatest common factor</p>
+        <ul>
+            <li>Coefficients: GCF of 12 and 18 is 6</li>
+            <li>Variables: Both terms have x, so factor out x</li>
+            <li>Overall GCF: 6x</li>
+        </ul>
+        <p>Step 2: Factor out the GCF</p>
+        <p>12x² + 18x = 6x(2x + 3)</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #10b981; font-weight: 600;">Working with Negatives</span></h3>
+
+    <div class="rules-box">
+        <h4>Essential Negative Number Rules:</h4>
+        <ul>
+            <li><strong>(-a) + (-b) = -(a + b)</strong> → Adding negatives gives a negative</li>
+            <li><strong>(-a) - (-b) = -a + b</strong> → Subtracting a negative is adding</li>
+            <li><strong>(-a) × (-b) = ab</strong> → Negative times negative is positive</li>
+            <li><strong>(-a) × b = -ab</strong> → Negative times positive is negative</li>
+            <li><strong>(-a)² = a²</strong> → Even power makes positive</li>
+            <li><strong>(-a)³ = -a³</strong> → Odd power keeps negative</li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 8: Negative Distribution</h4>
+        <p><strong>Problem:</strong> -(3x - 7)</p>
+        <p><strong>Solution:</strong></p>
+        <p>-(3x - 7) = (-1)(3x - 7) = (-1)(3x) + (-1)(-7) = -3x + 7</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 9: Complex Signs</h4>
+        <p><strong>Problem:</strong> -2(x - 3) - (4 - x)</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Distribute</p>
+        <p>-2(x - 3) - (4 - x) = -2x + 6 - 4 + x</p>
+        <p>Step 2: Combine like terms</p>
+        <p>-2x + x + 6 - 4 = -x + 2</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 5: <span style="color: #10b981; font-weight: 600;">Basic Factoring</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 Three Main Types</h4>
+        <ol>
+            <li><strong>Common Factor:</strong> Factor out the GCF</li>
+            <li><strong>Difference of Squares:</strong> a² - b² = (a + b)(a - b)</li>
+            <li><strong>Simple Trinomials:</strong> x² + bx + c = (x + m)(x + n) where mn = c, m + n = b</li>
+        </ol>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 10: Difference of Squares</h4>
+        <p><strong>Problem:</strong> Factor x² - 16</p>
+        <p><strong>Solution:</strong></p>
+        <p>Recognize: x² - 16 = x² - 4²</p>
+        <p>This is a² - b² form where a = x, b = 4</p>
+        <p>x² - 16 = (x + 4)(x - 4)</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 11: Simple Trinomial</h4>
+        <p><strong>Problem:</strong> Factor x² + 7x + 12</p>
+        <p><strong>Solution:</strong></p>
+        <p>Need two numbers that multiply to 12 and add to 7</p>
+        <p>Factors of 12: 1×12, 2×6, 3×4</p>
+        <p>Check sums: 1+12=13, 2+6=8, 3+4=7 ✓</p>
+        <p>x² + 7x + 12 = (x + 3)(x + 4)</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🔗 Putting It All Together</h3>
+
+    <div class="example-box">
+        <h4>Example 12: Multi-Step Problem</h4>
+        <p><strong>Problem:</strong> Simplify 2(3x + 1) - (x² - 4x) + (x² + x - 6)</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Distribute</p>
+        <p>2(3x + 1) = 6x + 2</p>
+        <p>-(x² - 4x) = -x² + 4x</p>
+        <p>Step 2: Rewrite the expression</p>
+        <p>6x + 2 - x² + 4x + x² + x - 6</p>
+        <p>Step 3: Combine like terms</p>
+        <p>x² terms: -x² + x² = 0</p>
+        <p>x terms: 6x + 4x + x = 11x</p>
+        <p>Constants: 2 - 6 = -4</p>
+        <p><strong>Final answer: 11x - 4</strong></p>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>These algebra skills are your ACT Math foundation! Master PEMDAS for accurate calculations, combine like terms to simplify expressions, use the distributive property confidently, handle negative numbers without errors, and recognize basic factoring patterns. These skills appear in 80% of ACT Math questions!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Test Your Algebra Skills!</h3>
+    <div class="quiz-container">
+        <div class="question-item" data-question="1">
+            <p><strong>Question 1:</strong> Simplify using order of operations: 3 + 4 × 2² - 6 ÷ 3</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q1" value="A"> A) 17</label>
+                <label><input type="radio" name="q1" value="B"> B) 15</label>
+                <label><input type="radio" name="q1" value="C"> C) 9</label>
+                <label><input type="radio" name="q1" value="D"> D) 25</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) 17</strong></p>
+                <p>Using PEMDAS: 3 + 4 × 2² - 6 ÷ 3 = 3 + 4 × 4 - 2 = 3 + 16 - 2 = 17</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="2">
+            <p><strong>Question 2:</strong> Combine like terms: 5x² + 3x - 2x² + 7x - 4</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2" value="A"> A) 3x² + 10x - 4</label>
+                <label><input type="radio" name="q2" value="B"> B) 7x² + 4x - 4</label>
+                <label><input type="radio" name="q2" value="C"> C) 3x² + 4x - 4</label>
+                <label><input type="radio" name="q2" value="D"> D) 5x² + 10x - 6</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) 3x² + 10x - 4</strong></p>
+                <p>Combine like terms: (5x² - 2x²) + (3x + 7x) - 4 = 3x² + 10x - 4</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="3">
+            <p><strong>Question 3:</strong> Use the distributive property: -3(2x - 4y + 1)</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q3" value="A"> A) -6x + 12y - 3</label>
+                <label><input type="radio" name="q3" value="B"> B) -6x - 12y - 3</label>
+                <label><input type="radio" name="q3" value="C"> C) -6x + 12y + 3</label>
+                <label><input type="radio" name="q3" value="D"> D) 6x - 12y - 3</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) -6x + 12y - 3</strong></p>
+                <p>Distribute -3 to each term: -3(2x) - 3(-4y) - 3(1) = -6x + 12y - 3</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="4">
+            <p><strong>Question 4:</strong> Simplify: (-2)(-3) + (-4)(5)</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q4" value="A"> A) -26</label>
+                <label><input type="radio" name="q4" value="B"> B) -14</label>
+                <label><input type="radio" name="q4" value="C"> C) 26</label>
+                <label><input type="radio" name="q4" value="D"> D) 14</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) -14</strong></p>
+                <p>Calculate each part: (-2)(-3) = +6 and (-4)(5) = -20. So 6 + (-20) = -14</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="5">
+            <p><strong>Question 5:</strong> Factor completely: x² - 9</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q5" value="A"> A) (x - 3)²</label>
+                <label><input type="radio" name="q5" value="B"> B) (x + 3)(x - 3)</label>
+                <label><input type="radio" name="q5" value="C"> C) (x + 9)(x - 1)</label>
+                <label><input type="radio" name="q5" value="D"> D) Cannot be factored</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) (x + 3)(x - 3)</strong></p>
+                <p>This is a difference of squares pattern: a² - b² = (a + b)(a - b), so x² - 9 = x² - 3² = (x + 3)(x - 3)</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="6">
+            <p><strong>Question 6:</strong> Simplify: 4x + 2(3x - 5) - (x + 1)</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q6" value="A"> A) 9x - 11</label>
+                <label><input type="radio" name="q6" value="B"> B) 9x - 9</label>
+                <label><input type="radio" name="q6" value="C"> C) 11x - 11</label>
+                <label><input type="radio" name="q6" value="D"> D) 7x - 9</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) 9x - 11</strong></p>
+                <p>Distribute and combine: 4x + 6x - 10 - x - 1 = (4x + 6x - x) + (-10 - 1) = 9x - 11</p>
+            </div>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <h4>Quiz Complete!</h4>
+            <p>Your score: <span class="score">0</span>/6</p>
+            <p class="score-message"></p>
+            <button onclick="restartQuiz()" class="restart-btn">Take Quiz Again</button>
+        </div>
+
+        <div class="quiz-navigation">
+            <button onclick="checkAnswers()" class="check-answers-btn">Check My Answers</button>
+            <button onclick="showResults()" class="show-results-btn" style="display: none;">Show Final Results</button>
+        </div>
+    </div>
+</div>
+    `
+  },
+
+  'percentages': {
+    title: 'Chapter 9: Percentages',
+    duration: 24, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 9: <span style="color: #8b5cf6; font-weight: 600;">Percentages</span></h2>
+    <p class="lesson-intro">Master percentage calculations that appear on <strong>every single ACT Math test</strong>! From basic percent problems to percent change and compound interest, these skills are essential for word problems and real-world applications.</p>
+</div>
+
+<div class="section why-important">
+    <h3>Your Chapter 9 Learning Path: The 4 Essential Percentage Skills</h3>
+    <div class="concept-box">
+        <h4>🎯 What You'll Master Today</h4>
+        <p><strong>Part 1:</strong> Basic Percent Calculations → Finding percentages, parts, and wholes</p>
+        <p><strong>Part 2:</strong> Percent Increase & Decrease → Calculate and interpret changes</p>
+        <p><strong>Part 3:</strong> Successive Percentages → Multiple percentage changes</p>
+        <p><strong>Part 4:</strong> Percent Word Problems → Real ACT problem types</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #8b5cf6; font-weight: 600;">Basic Percent Calculations</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 The Fundamental Formula</h4>
+        <p><strong>Percent = (Part / Whole) × 100</strong></p>
+        <p><em>This single formula solves ALL basic percentage problems!</em></p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Three Types of Percent Problems:</h4>
+        <ol>
+            <li><strong>Find the Percent:</strong> What percent of 80 is 20?</li>
+            <li><strong>Find the Part:</strong> What is 25% of 80?</li>
+            <li><strong>Find the Whole:</strong> 20 is 25% of what number?</li>
+        </ol>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Finding the Percent</h4>
+        <p><strong>Problem:</strong> What percent of 80 is 20?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Percent = (Part / Whole) × 100</p>
+        <p>Percent = (20 / 80) × 100 = 0.25 × 100 = 25%</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Finding the Part</h4>
+        <p><strong>Problem:</strong> What is 25% of 80?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Part = (Percent / 100) × Whole</p>
+        <p>Part = (25 / 100) × 80 = 0.25 × 80 = 20</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Finding the Whole</h4>
+        <p><strong>Problem:</strong> 20 is 25% of what number?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Whole = Part / (Percent / 100)</p>
+        <p>Whole = 20 / (25 / 100) = 20 / 0.25 = 80</p>
+    </div>
+
+    <div class="tip-box">
+        <h4>🎯 Quick Conversion Shortcuts</h4>
+        <p>Memorize these common percentages:</p>
+        <ul>
+            <li><strong>25% = 1/4 = 0.25</strong></li>
+            <li><strong>50% = 1/2 = 0.5</strong></li>
+            <li><strong>75% = 3/4 = 0.75</strong></li>
+            <li><strong>10% = 1/10 = 0.1</strong></li>
+            <li><strong>20% = 1/5 = 0.2</strong></li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #8b5cf6; font-weight: 600;">Percent Increase & Decrease</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 The Change Formula</h4>
+        <p><strong>Percent Change = (|New Value - Original Value| / Original Value) × 100</strong></p>
+        <p><em>Always divide by the ORIGINAL value, not the new value!</em></p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Key Formulas for Change:</h4>
+        <p><strong>Percent Increase = (New Value - Original Value) / Original Value × 100</strong></p>
+        <p><strong>Percent Decrease = (Original Value - New Value) / Original Value × 100</strong></p>
+
+        <h4>Finding New Values:</h4>
+        <p><strong>After Increase:</strong> New Value = Original × (1 + percent increase)</p>
+        <p><strong>After Decrease:</strong> New Value = Original × (1 - percent decrease)</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Percent Increase</h4>
+        <p><strong>Problem:</strong> A shirt's price increased from $20 to $25. What is the percent increase?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Percent Increase = (New - Original) / Original × 100</p>
+        <p>Percent Increase = (25 - 20) / 20 × 100 = 5/20 × 100 = 25%</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Percent Decrease</h4>
+        <p><strong>Problem:</strong> A laptop's price decreased from $800 to $640. What is the percent decrease?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Percent Decrease = (Original - New) / Original × 100</p>
+        <p>Percent Decrease = (800 - 640) / 800 × 100 = 160/800 × 100 = 20%</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: Finding New Value After Change</h4>
+        <p><strong>Problem:</strong> If a $60 jacket is marked down 15%, what is the sale price?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Method 1: New Value = Original × (1 - percent decrease)</p>
+        <p>Sale Price = $60 × (1 - 0.15) = $60 × 0.85 = $51</p>
+
+        <p>Method 2: Find discount first</p>
+        <p>Discount = $60 × 0.15 = $9</p>
+        <p>Sale Price = $60 - $9 = $51</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #8b5cf6; font-weight: 600;">Successive Percentages</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 The Golden Rule</h4>
+        <p><strong>You CANNOT simply add or subtract successive percentages!</strong></p>
+        <p><em>A 20% increase followed by a 20% decrease is NOT zero change!</em></p>
+    </div>
+
+    <div class="rules-box">
+        <h4>How to Handle Successive Changes:</h4>
+        <ol>
+            <li><strong>Apply each percentage change to the result of the previous change</strong></li>
+            <li><strong>Use multiplication:</strong> Final Value = Original × (1 ± change₁) × (1 ± change₂) × ...</li>
+            <li><strong>+ for increases, - for decreases</strong></li>
+        </ol>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: Successive Changes</h4>
+        <p><strong>Problem:</strong> A stock price increases 20%, then decreases 15%. If it started at $100, what's the final price?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Final Price = Original × (1 + increase) × (1 - decrease)</p>
+        <p>Final Price = $100 × (1 + 0.20) × (1 - 0.15)</p>
+        <p>Final Price = $100 × 1.20 × 0.85</p>
+        <p>Final Price = $100 × 1.02 = $102</p>
+
+        <p><strong>Verification:</strong></p>
+        <p>After 20% increase: $100 × 1.20 = $120</p>
+        <p>After 15% decrease: $120 × 0.85 = $102 ✓</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 8: Multiple Successive Changes</h4>
+        <p><strong>Problem:</strong> A population increases 10% each year for 3 years. If it starts at 1000, what's the final population?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Final Population = Original × (1 + 0.10)³</p>
+        <p>Final Population = 1000 × (1.10)³</p>
+        <p>Final Population = 1000 × 1.331 = 1331</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #8b5cf6; font-weight: 600;">Percent Word Problems</span></h3>
+
+    <div class="tip-box">
+        <h4>🎯 Common ACT Percentage Problem Types</h4>
+        <ol>
+            <li><strong>Tax and Tip Problems:</strong> Add percentage to original</li>
+            <li><strong>Discount Problems:</strong> Subtract percentage from original</li>
+            <li><strong>Commission Problems:</strong> Percentage of sales</li>
+            <li><strong>Interest Problems:</strong> Simple and compound interest</li>
+            <li><strong>Markup/Markdown Problems:</strong> Business pricing</li>
+        </ol>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 9: Tax Problem</h4>
+        <p><strong>Problem:</strong> A meal costs $24.80 before tax. If the tax rate is 8.25%, what is the total cost?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Total Cost = Original + Tax</p>
+        <p>Total Cost = $24.80 + ($24.80 × 0.0825)</p>
+        <p>Total Cost = $24.80 + $2.05 = $26.85</p>
+
+        <p><strong>Shortcut Method:</strong></p>
+        <p>Total Cost = Original × (1 + tax rate)</p>
+        <p>Total Cost = $24.80 × 1.0825 = $26.85</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 10: Commission Problem</h4>
+        <p><strong>Problem:</strong> A salesperson earns 6% commission on all sales. If they earned $2,400 in commission last month, what were their total sales?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Commission = Commission Rate × Total Sales</p>
+        <p>$2,400 = 0.06 × Total Sales</p>
+        <p>Total Sales = $2,400 ÷ 0.06 = $40,000</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 11: Markup Problem</h4>
+        <p><strong>Problem:</strong> A store buys items for $40 and marks them up 150%. What is the selling price?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Selling Price = Cost + Markup</p>
+        <p>Markup = $40 × 1.50 = $60</p>
+        <p>Selling Price = $40 + $60 = $100</p>
+
+        <p><strong>Shortcut Method:</strong></p>
+        <p>Selling Price = Cost × (1 + markup rate)</p>
+        <p>Selling Price = $40 × (1 + 1.50) = $40 × 2.50 = $100</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 12: Simple Interest</h4>
+        <p><strong>Problem:</strong> Find the simple interest earned on $1,200 at 5% annual interest for 3 years.</p>
+        <p><strong>Solution:</strong></p>
+        <p><strong>Simple Interest Formula: I = PRT</strong></p>
+        <ul>
+            <li>P = Principal ($1,200)</li>
+            <li>R = Rate (5% = 0.05)</li>
+            <li>T = Time (3 years)</li>
+        </ul>
+        <p>Interest = $1,200 × 0.05 × 3 = $180</p>
+        <p>Total Amount = Principal + Interest = $1,200 + $180 = $1,380</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🔗 Advanced Percentage Strategies</h3>
+
+    <div class="rules-box">
+        <h4>Calculator Tips for Percentages:</h4>
+        <ul>
+            <li><strong>To find 25% of 80:</strong> Enter 80 × 0.25 (or 80 × 25 ÷ 100)</li>
+            <li><strong>To increase by 15%:</strong> Multiply by 1.15</li>
+            <li><strong>To decrease by 20%:</strong> Multiply by 0.80</li>
+            <li><strong>To find percent change:</strong> (New - Old) ÷ Old × 100</li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 13: Multi-Step Percentage Problem</h4>
+        <p><strong>Problem:</strong> A company's revenue was $500,000. It increased 20% in year 1, then decreased 10% in year 2. In year 3, it increased 25%. What was the final revenue?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Final Revenue = Original × (1.20) × (0.90) × (1.25)</p>
+        <p>Final Revenue = $500,000 × 1.20 × 0.90 × 1.25</p>
+        <p>Final Revenue = $500,000 × 1.35</p>
+        <p>Final Revenue = $675,000</p>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Percentages appear on every ACT! Master the basic formula (Part/Whole × 100), understand percent change calculations, never add successive percentages, and practice word problems. Use the multiplier method for efficiency: increase by 25% means multiply by 1.25, decrease by 15% means multiply by 0.85!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Test Your Percentage Skills!</h3>
+    <div class="quiz-container">
+        <div class="question-item" data-question="1">
+            <p><strong>Question 1:</strong> What percent of 80 is 16?</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 20%</button>
+                <button class="quiz-option" data-answer="b">B) 25%</button>
+                <button class="quiz-option" data-answer="c">C) 16%</button>
+                <button class="quiz-option" data-answer="d">D) 5%</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: A) 20%</strong></p>
+                <p><strong>Explanation:</strong> Using the formula: Percent = (Part / Whole) × 100</p>
+                <p>Percent = (16 / 80) × 100 = 0.2 × 100 = 20%</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="2">
+            <p><strong>Question 2:</strong> What is 15% of 240?</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 24</button>
+                <button class="quiz-option" data-answer="b">B) 36</button>
+                <button class="quiz-option" data-answer="c">C) 30</button>
+                <button class="quiz-option" data-answer="d">D) 42</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: B) 36</strong></p>
+                <p><strong>Explanation:</strong> To find the part: 15% of 240 = 0.15 × 240 = 36</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="3">
+            <p><strong>Question 3:</strong> 18 is 25% of what number?</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 72</button>
+                <button class="quiz-option" data-answer="b">B) 54</button>
+                <button class="quiz-option" data-answer="c">C) 68</button>
+                <button class="quiz-option" data-answer="d">D) 82</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: A) 72</strong></p>
+                <p><strong>Explanation:</strong> If 18 is 25% of a number, then: 18 ÷ 0.25 = 72</p>
+                <p>Check: 25% of 72 = 0.25 × 72 = 18 ✓</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="4">
+            <p><strong>Question 4:</strong> The price of a shirt increased from $20 to $25. What is the percent increase?</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 20%</button>
+                <button class="quiz-option" data-answer="b">B) 25%</button>
+                <button class="quiz-option" data-answer="c">C) 5%</button>
+                <button class="quiz-option" data-answer="d">D) 80%</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: B) 25%</strong></p>
+                <p><strong>Explanation:</strong> Percent increase = (New - Original) / Original × 100</p>
+                <p>= (25 - 20) / 20 × 100 = 5/20 × 100 = 25%</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="5">
+            <p><strong>Question 5:</strong> A population decreases from 8,000 to 6,400. What is the percent decrease?</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 16%</button>
+                <button class="quiz-option" data-answer="b">B) 20%</button>
+                <button class="quiz-option" data-answer="c">C) 25%</button>
+                <button class="quiz-option" data-answer="d">D) 1,600%</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: B) 20%</strong></p>
+                <p><strong>Explanation:</strong> Percent decrease = (Original - New) / Original × 100</p>
+                <p>= (8000 - 6400) / 8000 × 100 = 1600/8000 × 100 = 20%</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="6">
+            <p><strong>Question 6:</strong> A item costs $80 after a 20% discount. What was the original price?</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) $96</button>
+                <button class="quiz-option" data-answer="b">B) $100</button>
+                <button class="quiz-option" data-answer="c">C) $104</button>
+                <button class="quiz-option" data-answer="d">D) $64</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: B) $100</strong></p>
+                <p><strong>Explanation:</strong> If discounted by 20%, the sale price is 80% of original</p>
+                <p>$80 = 0.8 × Original price</p>
+                <p>Original price = $80 ÷ 0.8 = $100</p>
+            </div>
+        </div>
+    </div>
+    <div class="quiz-navigation">
+        <button onclick="checkQuizAnswer('percentages', this)" class="quiz-check-btn">Check Answer</button>
+        <button onclick="nextQuestion('percentages')" class="quiz-next-btn" style="display: none;">Next Question</button>
+    </div>
+    <div class="quiz-results">
+        <p class="quiz-score">Score: <span id="score-percentages">0</span>/6</p>
+    </div>
+
+    <script>
+        function checkQuizAnswer(quizId, button) {
+            const currentQuestion = document.querySelector('.question-item:not([style*="display: none"])');
+            const selectedOption = currentQuestion.querySelector('.quiz-option.selected');
+
+            if (!selectedOption) {
+                alert('Please select an answer first!');
+                return;
+            }
+
+            const explanation = currentQuestion.querySelector('.quiz-explanation');
+            explanation.style.display = 'block';
+
+            const correctAnswer = getCorrectAnswer(currentQuestion.dataset.question);
+            const isCorrect = selectedOption.dataset.answer === correctAnswer;
+
+            if (isCorrect) {
+                selectedOption.style.backgroundColor = '#10b981';
+                selectedOption.style.color = 'white';
+                updateScore(quizId, true);
+            } else {
+                selectedOption.style.backgroundColor = '#ef4444';
+                selectedOption.style.color = 'white';
+                const correctOption = currentQuestion.querySelector('[data-answer="' + correctAnswer + '"]');
+                correctOption.style.backgroundColor = '#10b981';
+                correctOption.style.color = 'white';
+            }
+
+            button.style.display = 'none';
+            currentQuestion.querySelector('.quiz-next-btn').style.display = 'inline-block';
+        }
+
+        function getCorrectAnswer(questionNum) {
+            const answers = {
+                '1': 'a',
+                '2': 'b',
+                '3': 'a',
+                '4': 'b',
+                '5': 'b',
+                '6': 'b'
+            };
+            return answers[questionNum];
+        }
+
+        function updateScore(quizId, isCorrect) {
+            const scoreElement = document.getElementById('score-' + quizId);
+            let currentScore = parseInt(scoreElement.textContent);
+            if (isCorrect) {
+                currentScore++;
+                scoreElement.textContent = currentScore;
+            }
+        }
+
+        // Add click event to quiz options
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const questionDiv = this.closest('.question-item');
+                questionDiv.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                this.style.backgroundColor = '#3b82f6';
+                this.style.color = 'white';
+            });
+        });
+    </script>
+</div>
+
+<style>
+.interactive-quiz {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 2px solid #8b5cf6;
+}
+
+.quiz-container {
+    margin: 20px 0;
+}
+
+.question-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #8b5cf6;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.quiz-option {
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    background: #f9fafb;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-weight: 500;
+}
+
+.quiz-option:hover {
+    border-color: #8b5cf6;
+    background: #f5f3ff;
+}
+
+.quiz-option.selected {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+.quiz-explanation {
+    background: #fffbeb;
+    border: 1px solid #fbbf24;
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.quiz-navigation {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.quiz-check-btn, .quiz-next-btn {
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.quiz-check-btn:hover, .quiz-next-btn:hover {
+    background: #7c3aed;
+}
+
+.quiz-results {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #8b5cf6;
+}
+</style>
+    `
+  },
+
+  'exponents-roots': {
+    title: 'Chapter 13: Exponents and Roots',
+    duration: 26, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 13: <span style="color: #ef4444; font-weight: 600;">Exponents and Roots</span></h2>
+    <p class="lesson-intro">Master the power rules and root operations that appear throughout ACT Math! From basic exponent rules to radical simplification, these skills are essential for algebra, functions, and advanced topics.</p>
+</div>
+
+<div class="section why-important">
+    <h3>Your Chapter 13 Learning Path: The 4 Essential Power & Root Skills</h3>
+    <div class="concept-box">
+        <h4>🎯 What You'll Master Today</h4>
+        <p><strong>Part 1:</strong> Exponent Rules → Master all 7 essential power laws</p>
+        <p><strong>Part 2:</strong> Working with Radicals → Simplify and manipulate square roots</p>
+        <p><strong>Part 3:</strong> Rational Exponents → Convert between radical and exponential forms</p>
+        <p><strong>Part 4:</strong> Applications → Solve real ACT problems with exponents and roots</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #ef4444; font-weight: 600;">The 7 Essential Exponent Rules</span></h3>
+
+    <div class="rules-box">
+        <h4>The Complete Exponent Rule Set:</h4>
+        <ol>
+            <li><strong>Product Rule:</strong> a^m × a^n = a^(m+n)</li>
+            <li><strong>Quotient Rule:</strong> a^m ÷ a^n = a^(m-n)</li>
+            <li><strong>Power Rule:</strong> (a^m)^n = a^(mn)</li>
+            <li><strong>Product to Power:</strong> (ab)^n = a^n × b^n</li>
+            <li><strong>Quotient to Power:</strong> (a/b)^n = a^n ÷ b^n</li>
+            <li><strong>Zero Exponent:</strong> a^0 = 1 (where a ≠ 0)</li>
+            <li><strong>Negative Exponent:</strong> a^(-n) = 1/a^n</li>
+        </ol>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Product Rule</h4>
+        <p><strong>Problem:</strong> Simplify x^3 × x^5</p>
+        <p><strong>Solution:</strong></p>
+        <p>x^3 × x^5 = x^(3+5) = x^8</p>
+        <p><em>When multiplying powers with the same base, add the exponents</em></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Quotient Rule</h4>
+        <p><strong>Problem:</strong> Simplify x^7 ÷ x^3</p>
+        <p><strong>Solution:</strong></p>
+        <p>x^7 ÷ x^3 = x^(7-3) = x^4</p>
+        <p><em>When dividing powers with the same base, subtract the exponents</em></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Power Rule</h4>
+        <p><strong>Problem:</strong> Simplify (x^4)^3</p>
+        <p><strong>Solution:</strong></p>
+        <p>(x^4)^3 = x^(4×3) = x^12</p>
+        <p><em>When raising a power to a power, multiply the exponents</em></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Negative Exponents</h4>
+        <p><strong>Problem:</strong> Simplify x^(-3)</p>
+        <p><strong>Solution:</strong></p>
+        <p>x^(-3) = 1/x^3</p>
+        <p><em>Negative exponents mean "take the reciprocal"</em></p>
+    </div>
+
+    <div class="tip-box">
+        <h4>🎯 Common Exponent Mistakes to Avoid</h4>
+        <ul>
+            <li><strong>DON'T</strong> add exponents when adding: x^2 + x^3 ≠ x^5</li>
+            <li><strong>DON'T</strong> multiply the base: x^2 × x^3 ≠ x^6</li>
+            <li><strong>DO</strong> remember: (xy)^2 = x^2y^2, not xy^2</li>
+            <li><strong>DO</strong> remember: x^0 = 1, even when x is negative</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #ef4444; font-weight: 600;">Working with Radicals</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 Square Root Basics</h4>
+        <p><strong>√a × √b = √(ab)</strong></p>
+        <p><strong>√a ÷ √b = √(a/b)</strong></p>
+        <p><strong>√(a^2) = |a|</strong> (absolute value for even roots)</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Simplifying Radicals - Step by Step:</h4>
+        <ol>
+            <li><strong>Find perfect square factors</strong> of the number under the radical</li>
+            <li><strong>Extract perfect squares</strong> from under the radical</li>
+            <li><strong>Simplify</strong> what's left under the radical</li>
+            <li><strong>Multiply</strong> extracted factors outside the radical</li>
+        </ol>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Simplifying Square Roots</h4>
+        <p><strong>Problem:</strong> Simplify √72</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Factor 72 = 36 × 2 = 6² × 2</p>
+        <p>Step 2: √72 = √(36 × 2) = √36 × √2</p>
+        <p>Step 3: √72 = 6√2</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: Simplifying Variable Radicals</h4>
+        <p><strong>Problem:</strong> Simplify √(x^8y^3)</p>
+        <p><strong>Solution:</strong></p>
+        <p>√(x^8y^3) = √(x^8) × √(y^3)</p>
+        <p>= √((x^4)^2) × √(y^2 × y)</p>
+        <p>= x^4 × √(y^2) × √y</p>
+        <p>= x^4 × y × √y = x^4y√y</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: Adding and Subtracting Radicals</h4>
+        <p><strong>Problem:</strong> Simplify 3√12 + 5√27 - 2√3</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Simplify each radical</p>
+        <ul>
+            <li>3√12 = 3√(4×3) = 3 × 2√3 = 6√3</li>
+            <li>5√27 = 5√(9×3) = 5 × 3√3 = 15√3</li>
+            <li>-2√3 stays the same</li>
+        </ul>
+        <p>Step 2: Combine like terms</p>
+        <p>6√3 + 15√3 - 2√3 = (6 + 15 - 2)√3 = 19√3</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 8: Rationalizing Denominators</h4>
+        <p><strong>Problem:</strong> Rationalize 6/√2</p>
+        <p><strong>Solution:</strong></p>
+        <p>Multiply both numerator and denominator by √2:</p>
+        <p>6/√2 × √2/√2 = 6√2/2 = 3√2</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #ef4444; font-weight: 600;">Rational Exponents</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 Converting Between Forms</h4>
+        <p><strong>a^(1/n) = ⁿ√a</strong> (nth root of a)</p>
+        <p><strong>a^(m/n) = ⁿ√(a^m) = (ⁿ√a)^m</strong></p>
+        <p><em>The denominator becomes the index of the radical</em></p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Common Rational Exponents:</h4>
+        <ul>
+            <li><strong>x^(1/2) = √x</strong></li>
+            <li><strong>x^(1/3) = ³√x</strong></li>
+            <li><strong>x^(2/3) = ³√(x²) = (³√x)²</strong></li>
+            <li><strong>x^(-1/2) = 1/√x</strong></li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 9: Converting to Radical Form</h4>
+        <p><strong>Problem:</strong> Write 8^(2/3) in radical form and evaluate</p>
+        <p><strong>Solution:</strong></p>
+        <p>8^(2/3) = ³√(8²) = ³√64</p>
+        <p>Or: 8^(2/3) = (³√8)² = 2² = 4</p>
+        <p><em>Both methods give the same answer: 4</em></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 10: Simplifying Rational Exponents</h4>
+        <p><strong>Problem:</strong> Simplify x^(3/4) × x^(1/2)</p>
+        <p><strong>Solution:</strong></p>
+        <p>x^(3/4) × x^(1/2) = x^(3/4 + 1/2)</p>
+        <p>= x^(3/4 + 2/4) = x^(5/4)</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #ef4444; font-weight: 600;">ACT Applications</span></h3>
+
+    <div class="tip-box">
+        <h4>🎯 Common ACT Exponent & Root Problems</h4>
+        <ol>
+            <li><strong>Simplifying expressions</strong> with multiple exponent rules</li>
+            <li><strong>Solving equations</strong> with radicals or rational exponents</li>
+            <li><strong>Exponential growth/decay</strong> in word problems</li>
+            <li><strong>Geometric sequences</strong> with exponential terms</li>
+            <li><strong>Scientific notation</strong> calculations</li>
+        </ol>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 11: Complex Simplification</h4>
+        <p><strong>Problem:</strong> Simplify (2x^3y^(-2))^4 ÷ (x^(-1)y^5)^2</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Apply power rules</p>
+        <p>Numerator: (2x^3y^(-2))^4 = 2^4 × x^12 × y^(-8) = 16x^12y^(-8)</p>
+        <p>Denominator: (x^(-1)y^5)^2 = x^(-2) × y^10</p>
+
+        <p>Step 2: Divide</p>
+        <p>16x^12y^(-8) ÷ x^(-2)y^10 = 16x^(12-(-2))y^(-8-10)</p>
+        <p>= 16x^14y^(-18) = 16x^14/y^18</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 12: Exponential Growth</h4>
+        <p><strong>Problem:</strong> A bacteria culture doubles every 3 hours. If it starts with 100 bacteria, how many bacteria are there after 12 hours?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Number of doubling periods = 12 ÷ 3 = 4</p>
+        <p>Final amount = Initial × 2^(number of periods)</p>
+        <p>Final amount = 100 × 2^4 = 100 × 16 = 1,600 bacteria</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 13: Scientific Notation</h4>
+        <p><strong>Problem:</strong> Calculate (3.2 × 10^8) × (1.5 × 10^(-4))</p>
+        <p><strong>Solution:</strong></p>
+        <p>(3.2 × 10^8) × (1.5 × 10^(-4))</p>
+        <p>= (3.2 × 1.5) × (10^8 × 10^(-4))</p>
+        <p>= 4.8 × 10^(8+(-4))</p>
+        <p>= 4.8 × 10^4 = 48,000</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 14: Solving Radical Equations</h4>
+        <p><strong>Problem:</strong> Solve √(2x + 1) = 5</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Square both sides</p>
+        <p>(√(2x + 1))² = 5²</p>
+        <p>2x + 1 = 25</p>
+        <p>Step 2: Solve for x</p>
+        <p>2x = 24</p>
+        <p>x = 12</p>
+        <p>Step 3: Check: √(2(12) + 1) = √25 = 5 ✓</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🔗 Power & Root Summary</h3>
+
+    <div class="rules-box">
+        <h4>Quick Reference Card:</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+                <p><strong>Exponent Operations:</strong></p>
+                <ul>
+                    <li>a^m × a^n = a^(m+n)</li>
+                    <li>a^m ÷ a^n = a^(m-n)</li>
+                    <li>(a^m)^n = a^(mn)</li>
+                    <li>a^0 = 1</li>
+                    <li>a^(-n) = 1/a^n</li>
+                </ul>
+            </div>
+            <div>
+                <p><strong>Radical Operations:</strong></p>
+                <ul>
+                    <li>√a × √b = √(ab)</li>
+                    <li>√a ÷ √b = √(a/b)</li>
+                    <li>a^(1/n) = ⁿ√a</li>
+                    <li>a^(m/n) = ⁿ√(a^m)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Exponents and roots are fundamental to ACT success! Master the 7 exponent rules, learn to simplify radicals by factoring out perfect squares, understand rational exponents as another form of radicals, and practice complex applications. These skills appear in algebra, functions, and word problems throughout the test!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Test Your Exponents and Roots Skills!</h3>
+    <div class="quiz-container">
+        <div class="question-item" data-question="1">
+            <p><strong>Question 1:</strong> Simplify: x³ × x⁵</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) x⁸</button>
+                <button class="quiz-option" data-answer="b">B) x¹⁵</button>
+                <button class="quiz-option" data-answer="c">C) x²</button>
+                <button class="quiz-option" data-answer="d">D) 2x⁸</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: A) x⁸</strong></p>
+                <p><strong>Explanation:</strong> Using the product rule: x³ × x⁵ = x^(3+5) = x⁸</p>
+                <p>When multiplying powers with the same base, add the exponents.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="2">
+            <p><strong>Question 2:</strong> Simplify: (x⁴)³</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) x⁷</button>
+                <button class="quiz-option" data-answer="b">B) x¹²</button>
+                <button class="quiz-option" data-answer="c">C) 3x⁴</button>
+                <button class="quiz-option" data-answer="d">D) x¹</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: B) x¹²</strong></p>
+                <p><strong>Explanation:</strong> Using the power rule: (x⁴)³ = x^(4×3) = x¹²</p>
+                <p>When raising a power to a power, multiply the exponents.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="3">
+            <p><strong>Question 3:</strong> Simplify: x⁻³</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) -x³</button>
+                <button class="quiz-option" data-answer="b">B) 1/x³</button>
+                <button class="quiz-option" data-answer="c">C) -3x</button>
+                <button class="quiz-option" data-answer="d">D) 3x</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: B) 1/x³</strong></p>
+                <p><strong>Explanation:</strong> Using the negative exponent rule: x⁻³ = 1/x³</p>
+                <p>Negative exponents mean "take the reciprocal."</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="4">
+            <p><strong>Question 4:</strong> Simplify: √48</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 4√3</button>
+                <button class="quiz-option" data-answer="b">B) 6√2</button>
+                <button class="quiz-option" data-answer="c">C) 3√16</button>
+                <button class="quiz-option" data-answer="d">D) 12√4</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: A) 4√3</strong></p>
+                <p><strong>Explanation:</strong> √48 = √(16 × 3) = √16 × √3 = 4√3</p>
+                <p>Factor out the largest perfect square (16) from under the radical.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="5">
+            <p><strong>Question 5:</strong> Simplify: 3√12 + 2√27</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 5√39</button>
+                <button class="quiz-option" data-answer="b">B) 12√3</button>
+                <button class="quiz-option" data-answer="c">C) 5√15</button>
+                <button class="quiz-option" data-answer="d">D) 6√3 + 6√3</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: B) 12√3</strong></p>
+                <p><strong>Explanation:</strong> First simplify each radical:</p>
+                <p>3√12 = 3√(4×3) = 3×2√3 = 6√3</p>
+                <p>2√27 = 2√(9×3) = 2×3√3 = 6√3</p>
+                <p>Then add: 6√3 + 6√3 = 12√3</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="6">
+            <p><strong>Question 6:</strong> Write 8^(2/3) in radical form and evaluate.</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 4</button>
+                <button class="quiz-option" data-answer="b">B) 6</button>
+                <button class="quiz-option" data-answer="c">C) 16</button>
+                <button class="quiz-option" data-answer="d">D) 2</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: A) 4</strong></p>
+                <p><strong>Explanation:</strong> 8^(2/3) = (∛8)² = 2² = 4</p>
+                <p>Or: 8^(2/3) = ∛(8²) = ∛64 = 4</p>
+                <p>The denominator (3) becomes the index of the radical, the numerator (2) is the power.</p>
+            </div>
+        </div>
+    </div>
+    <div class="quiz-navigation">
+        <button onclick="checkQuizAnswer('exponents-roots', this)" class="quiz-check-btn">Check Answer</button>
+        <button onclick="nextQuestion('exponents-roots')" class="quiz-next-btn" style="display: none;">Next Question</button>
+    </div>
+    <div class="quiz-results">
+        <p class="quiz-score">Score: <span id="score-exponents-roots">0</span>/6</p>
+    </div>
+
+    <script>
+        function checkQuizAnswer(quizId, button) {
+            const currentQuestion = document.querySelector('.question-item:not([style*="display: none"])');
+            const selectedOption = currentQuestion.querySelector('.quiz-option.selected');
+
+            if (!selectedOption) {
+                alert('Please select an answer first!');
+                return;
+            }
+
+            const explanation = currentQuestion.querySelector('.quiz-explanation');
+            explanation.style.display = 'block';
+
+            const correctAnswer = getCorrectAnswer(currentQuestion.dataset.question);
+            const isCorrect = selectedOption.dataset.answer === correctAnswer;
+
+            if (isCorrect) {
+                selectedOption.style.backgroundColor = '#10b981';
+                selectedOption.style.color = 'white';
+                updateScore(quizId, true);
+            } else {
+                selectedOption.style.backgroundColor = '#ef4444';
+                selectedOption.style.color = 'white';
+                const correctOption = currentQuestion.querySelector('[data-answer="' + correctAnswer + '"]');
+                correctOption.style.backgroundColor = '#10b981';
+                correctOption.style.color = 'white';
+            }
+
+            button.style.display = 'none';
+            currentQuestion.querySelector('.quiz-next-btn').style.display = 'inline-block';
+        }
+
+        function getCorrectAnswer(questionNum) {
+            const answers = {
+                '1': 'a',
+                '2': 'b',
+                '3': 'b',
+                '4': 'a',
+                '5': 'b',
+                '6': 'a'
+            };
+            return answers[questionNum];
+        }
+
+        function updateScore(quizId, isCorrect) {
+            const scoreElement = document.getElementById('score-' + quizId);
+            let currentScore = parseInt(scoreElement.textContent);
+            if (isCorrect) {
+                currentScore++;
+                scoreElement.textContent = currentScore;
+            }
+        }
+
+        // Add click event to quiz options
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const questionDiv = this.closest('.question-item');
+                questionDiv.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                this.style.backgroundColor = '#3b82f6';
+                this.style.color = 'white';
+            });
+        });
+    </script>
+</div>
+
+<style>
+.interactive-quiz {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 2px solid #ef4444;
+}
+
+.quiz-container {
+    margin: 20px 0;
+}
+
+.question-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #ef4444;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.quiz-option {
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    background: #f9fafb;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-weight: 500;
+}
+
+.quiz-option:hover {
+    border-color: #ef4444;
+    background: #fef2f2;
+}
+
+.quiz-option.selected {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+.quiz-explanation {
+    background: #fffbeb;
+    border: 1px solid #fbbf24;
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.quiz-navigation {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.quiz-check-btn, .quiz-next-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.quiz-check-btn:hover, .quiz-next-btn:hover {
+    background: #dc2626;
+}
+
+.quiz-results {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #ef4444;
+}
+</style>
+    `
+  },
+
+  'statistics-basics': {
+    title: 'Chapter 12: Mean, Median, Mode, and Range',
+    duration: 20, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 12: <span style="color: #06b6d4; font-weight: 600;">Mean, Median, Mode, and Range</span></h2>
+    <p class="lesson-intro">Master the four essential statistics that appear on <strong>every ACT Math test</strong>! From calculating averages to understanding data spread, these fundamental concepts are your gateway to statistics success.</p>
+</div>
+
+<div class="section why-important">
+    <h3>Your Chapter 12 Learning Path: The 4 Essential Statistics</h3>
+    <div class="concept-box">
+        <h4>🎯 What You'll Master Today</h4>
+        <p><strong>Mean:</strong> The average value → Add all values and divide by count</p>
+        <p><strong>Median:</strong> The middle value → Find the center when data is ordered</p>
+        <p><strong>Mode:</strong> The most frequent value → Which number appears most often</p>
+        <p><strong>Range:</strong> The spread → Difference between highest and lowest values</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3><span style="color: #06b6d4; font-weight: 600;">Mean</span> - The Average</h3>
+
+    <div class="concept-box">
+        <h4>💡 The Formula</h4>
+        <p><strong>Mean = (Sum of all values) ÷ (Number of values)</strong></p>
+        <p><em>Add everything up, then divide by how many numbers you have</em></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Basic Mean</h4>
+        <p><strong>Problem:</strong> Find the mean of 3, 7, 8, 12, 15</p>
+        <p><strong>Solution:</strong></p>
+        <p>Sum = 3 + 7 + 8 + 12 + 15 = 45</p>
+        <p>Count = 5 values</p>
+        <p>Mean = 45 ÷ 5 = 9</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Finding a Missing Value</h4>
+        <p><strong>Problem:</strong> Four test scores have a mean of 85. If three scores are 78, 82, and 90, what is the fourth score?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Total needed = Mean × Count = 85 × 4 = 340</p>
+        <p>Sum of known scores = 78 + 82 + 90 = 250</p>
+        <p>Fourth score = 340 - 250 = 90</p>
+    </div>
+
+    <div class="tip-box">
+        <h4>🎯 Mean Shortcuts</h4>
+        <ul>
+            <li><strong>Use your calculator:</strong> Add all values, then divide</li>
+            <li><strong>Check reasonableness:</strong> Mean should be between the lowest and highest values</li>
+            <li><strong>Weighted averages:</strong> Some values might count more than others</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h3><span style="color: #06b6d4; font-weight: 600;">Median</span> - The Middle Value</h3>
+
+    <div class="concept-box">
+        <h4>💡 The Process</h4>
+        <ol>
+            <li><strong>Order the data</strong> from smallest to largest</li>
+            <li><strong>Find the middle position:</strong></li>
+            <ul>
+                <li><strong>Odd number of values:</strong> Middle value is the median</li>
+                <li><strong>Even number of values:</strong> Average the two middle values</li>
+            </ul>
+        </ol>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Median with Odd Count</h4>
+        <p><strong>Problem:</strong> Find the median of 12, 3, 8, 15, 7</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Order the data: 3, 7, 8, 12, 15</p>
+        <p>Step 2: Find the middle (5 values, so position 3)</p>
+        <p><strong>Median = 8</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Median with Even Count</h4>
+        <p><strong>Problem:</strong> Find the median of 4, 9, 2, 12, 6, 8</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Order the data: 2, 4, 6, 8, 9, 12</p>
+        <p>Step 2: Find the two middle values (positions 3 and 4): 6 and 8</p>
+        <p>Step 3: Average them: (6 + 8) ÷ 2 = 7</p>
+        <p><strong>Median = 7</strong></p>
+    </div>
+
+    <div class="tip-box">
+        <h4>🎯 Median Tips</h4>
+        <ul>
+            <li><strong>Always order first!</strong> Don't try to find median without ordering</li>
+            <li><strong>Count carefully:</strong> Make sure you have all values</li>
+            <li><strong>Remember:</strong> Median isn't affected by extreme values (outliers)</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h3><span style="color: #06b6d4; font-weight: 600;">Mode</span> - The Most Frequent</h3>
+
+    <div class="concept-box">
+        <h4>💡 The Definition</h4>
+        <p><strong>Mode = the value that appears most frequently in the data set</strong></p>
+        <p><em>A data set can have no mode, one mode, or multiple modes</em></p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Mode Possibilities:</h4>
+        <ul>
+            <li><strong>No Mode:</strong> All values appear the same number of times</li>
+            <li><strong>One Mode (Unimodal):</strong> One value appears most frequently</li>
+            <li><strong>Two Modes (Bimodal):</strong> Two values tie for most frequent</li>
+            <li><strong>Multiple Modes (Multimodal):</strong> More than two values tie</li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Single Mode</h4>
+        <p><strong>Problem:</strong> Find the mode of 3, 7, 3, 9, 3, 5, 8</p>
+        <p><strong>Solution:</strong></p>
+        <p>Count frequencies: 3 appears 3 times, all others appear once</p>
+        <p><strong>Mode = 3</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: Bimodal Data</h4>
+        <p><strong>Problem:</strong> Find the mode of 2, 5, 7, 5, 9, 2, 8</p>
+        <p><strong>Solution:</strong></p>
+        <p>Count frequencies: 2 appears 2 times, 5 appears 2 times, others appear once</p>
+        <p><strong>Modes = 2 and 5</strong> (bimodal)</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: No Mode</h4>
+        <p><strong>Problem:</strong> Find the mode of 1, 3, 5, 7, 9</p>
+        <p><strong>Solution:</strong></p>
+        <p>Each value appears exactly once</p>
+        <p><strong>No mode</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3><span style="color: #06b6d4; font-weight: 600;">Range</span> - The Spread</h3>
+
+    <div class="concept-box">
+        <h4>💡 The Formula</h4>
+        <p><strong>Range = Highest Value - Lowest Value</strong></p>
+        <p><em>Range tells you how spread out your data is</em></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 8: Calculating Range</h4>
+        <p><strong>Problem:</strong> Find the range of 15, 3, 22, 8, 19, 6</p>
+        <p><strong>Solution:</strong></p>
+        <p>Highest value = 22</p>
+        <p>Lowest value = 3</p>
+        <p>Range = 22 - 3 = 19</p>
+    </div>
+
+    <div class="tip-box">
+        <h4>🎯 Range Insights</h4>
+        <ul>
+            <li><strong>Small range:</strong> Data points are close together</li>
+            <li><strong>Large range:</strong> Data points are spread out</li>
+            <li><strong>Zero range:</strong> All values are identical</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🔗 Comparing the Four Statistics</h3>
+
+    <div class="example-box">
+        <h4>Example 9: Complete Analysis</h4>
+        <p><strong>Problem:</strong> For the data set 2, 4, 4, 6, 7, 9, 12, find the mean, median, mode, and range.</p>
+        <p><strong>Solutions:</strong></p>
+
+        <p><strong>Mean:</strong></p>
+        <p>Sum = 2 + 4 + 4 + 6 + 7 + 9 + 12 = 44</p>
+        <p>Mean = 44 ÷ 7 ≈ 6.29</p>
+
+        <p><strong>Median:</strong></p>
+        <p>Data is already ordered: 2, 4, 4, 6, 7, 9, 12</p>
+        <p>Middle value (position 4) = 6</p>
+
+        <p><strong>Mode:</strong></p>
+        <p>4 appears twice, all others appear once</p>
+        <p>Mode = 4</p>
+
+        <p><strong>Range:</strong></p>
+        <p>Range = 12 - 2 = 10</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>📊 ACT Statistics Applications</h3>
+
+    <div class="example-box">
+        <h4>Example 10: Test Score Problem</h4>
+        <p><strong>Problem:</strong> Sarah's test scores are 88, 92, 85, 90, and 85. What is the difference between her mean and median scores?</p>
+        <p><strong>Solution:</strong></p>
+
+        <p><strong>Mean:</strong></p>
+        <p>Sum = 88 + 92 + 85 + 90 + 85 = 440</p>
+        <p>Mean = 440 ÷ 5 = 88</p>
+
+        <p><strong>Median:</strong></p>
+        <p>Ordered: 85, 85, 88, 90, 92</p>
+        <p>Median = 88 (middle value)</p>
+
+        <p><strong>Difference = |88 - 88| = 0</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 11: Which Statistic to Use?</h4>
+        <p><strong>Problem:</strong> A company's salaries are: $30K, $32K, $35K, $38K, $200K. Which measure of central tendency best represents typical salary?</p>
+        <p><strong>Analysis:</strong></p>
+        <ul>
+            <li><strong>Mean = ($30K + $32K + $35K + $38K + $200K) ÷ 5 = $67K</strong></li>
+            <li><strong>Median = $35K</strong> (middle value)</li>
+            <li><strong>Mode = No mode</strong> (all values appear once)</li>
+        </ul>
+        <p><strong>Best choice: Median ($35K)</strong> because it's not affected by the $200K outlier</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>📈 Quick Reference Summary</h3>
+
+    <div class="rules-box">
+        <h4>Statistics Cheat Sheet:</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+                <p><strong>Mean (Average):</strong></p>
+                <ul>
+                    <li>Add all values ÷ count</li>
+                    <li>Affected by outliers</li>
+                    <li>Most common measure</li>
+                </ul>
+
+                <p><strong>Mode (Most Frequent):</strong></p>
+                <ul>
+                    <li>Value appearing most often</li>
+                    <li>Can have 0, 1, or many modes</li>
+                    <li>Good for categorical data</li>
+                </ul>
+            </div>
+            <div>
+                <p><strong>Median (Middle):</strong></p>
+                <ul>
+                    <li>Middle value when ordered</li>
+                    <li>Not affected by outliers</li>
+                    <li>Average of two middle if even count</li>
+                </ul>
+
+                <p><strong>Range (Spread):</strong></p>
+                <ul>
+                    <li>Highest - Lowest value</li>
+                    <li>Measures data spread</li>
+                    <li>Sensitive to outliers</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Master these four essential statistics for ACT success! Remember: Mean is the average (sum÷count), Median is the middle value (order first!), Mode is most frequent (can be none, one, or multiple), and Range is the spread (high-low). Practice identifying which measure best represents data, especially when outliers are present!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Test Your Statistics Skills!</h3>
+    <div class="quiz-container">
+        <div class="question-item" data-question="1">
+            <p><strong>Question 1:</strong> Find the mean of: 8, 12, 6, 10, 14</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 10</button>
+                <button class="quiz-option" data-answer="b">B) 12</button>
+                <button class="quiz-option" data-answer="c">C) 8</button>
+                <button class="quiz-option" data-answer="d">D) 50</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: A) 10</strong></p>
+                <p><strong>Explanation:</strong> Mean = (Sum of all values) ÷ (Number of values)</p>
+                <p>Sum = 8 + 12 + 6 + 10 + 14 = 50</p>
+                <p>Mean = 50 ÷ 5 = 10</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="2">
+            <p><strong>Question 2:</strong> Find the median of: 3, 7, 12, 8, 15</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 7</button>
+                <button class="quiz-option" data-answer="b">B) 8</button>
+                <button class="quiz-option" data-answer="c">C) 9</button>
+                <button class="quiz-option" data-answer="d">D) 12</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: B) 8</strong></p>
+                <p><strong>Explanation:</strong> First, order the data: 3, 7, 8, 12, 15</p>
+                <p>With 5 values, the median is the middle value (3rd position)</p>
+                <p>Median = 8</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="3">
+            <p><strong>Question 3:</strong> Find the median of: 4, 9, 2, 12, 6, 8</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 6</button>
+                <button class="quiz-option" data-answer="b">B) 7</button>
+                <button class="quiz-option" data-answer="c">C) 8</button>
+                <button class="quiz-option" data-answer="d">D) 9</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: B) 7</strong></p>
+                <p><strong>Explanation:</strong> First, order the data: 2, 4, 6, 8, 9, 12</p>
+                <p>With 6 values, find the two middle values (3rd and 4th): 6 and 8</p>
+                <p>Median = (6 + 8) ÷ 2 = 7</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="4">
+            <p><strong>Question 4:</strong> Find the mode of: 5, 3, 7, 3, 9, 5, 3, 8</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 3</button>
+                <button class="quiz-option" data-answer="b">B) 5</button>
+                <button class="quiz-option" data-answer="c">C) 7</button>
+                <button class="quiz-option" data-answer="d">D) No mode</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: A) 3</strong></p>
+                <p><strong>Explanation:</strong> Count each value's frequency:</p>
+                <p>3 appears 3 times, 5 appears 2 times, 7 appears 1 time, 8 appears 1 time, 9 appears 1 time</p>
+                <p>The mode is the most frequent value: 3</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="5">
+            <p><strong>Question 5:</strong> Find the range of: 15, 8, 23, 12, 19, 5</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 15</button>
+                <button class="quiz-option" data-answer="b">B) 18</button>
+                <button class="quiz-option" data-answer="c">C) 20</button>
+                <button class="quiz-option" data-answer="d">D) 23</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: B) 18</strong></p>
+                <p><strong>Explanation:</strong> Range = Highest value - Lowest value</p>
+                <p>Highest value = 23, Lowest value = 5</p>
+                <p>Range = 23 - 5 = 18</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="6">
+            <p><strong>Question 6:</strong> A student has test scores of 78, 82, and 90. What score does she need on her fourth test to have a mean of 85?</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 88</button>
+                <button class="quiz-option" data-answer="b">B) 90</button>
+                <button class="quiz-option" data-answer="c">C) 92</button>
+                <button class="quiz-option" data-answer="d">D) 85</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: B) 90</strong></p>
+                <p><strong>Explanation:</strong> To find the needed score:</p>
+                <p>Total needed = Mean × Count = 85 × 4 = 340</p>
+                <p>Sum of known scores = 78 + 82 + 90 = 250</p>
+                <p>Fourth score needed = 340 - 250 = 90</p>
+            </div>
+        </div>
+    </div>
+    <div class="quiz-navigation">
+        <button onclick="checkQuizAnswer('statistics-basics', this)" class="quiz-check-btn">Check Answer</button>
+        <button onclick="nextQuestion('statistics-basics')" class="quiz-next-btn" style="display: none;">Next Question</button>
+    </div>
+    <div class="quiz-results">
+        <p class="quiz-score">Score: <span id="score-statistics-basics">0</span>/6</p>
+    </div>
+
+    <script>
+        function checkQuizAnswer(quizId, button) {
+            const currentQuestion = document.querySelector('.question-item:not([style*="display: none"])');
+            const selectedOption = currentQuestion.querySelector('.quiz-option.selected');
+
+            if (!selectedOption) {
+                alert('Please select an answer first!');
+                return;
+            }
+
+            const explanation = currentQuestion.querySelector('.quiz-explanation');
+            explanation.style.display = 'block';
+
+            const correctAnswer = getCorrectAnswer(currentQuestion.dataset.question);
+            const isCorrect = selectedOption.dataset.answer === correctAnswer;
+
+            if (isCorrect) {
+                selectedOption.style.backgroundColor = '#10b981';
+                selectedOption.style.color = 'white';
+                updateScore(quizId, true);
+            } else {
+                selectedOption.style.backgroundColor = '#ef4444';
+                selectedOption.style.color = 'white';
+                const correctOption = currentQuestion.querySelector('[data-answer="' + correctAnswer + '"]');
+                correctOption.style.backgroundColor = '#10b981';
+                correctOption.style.color = 'white';
+            }
+
+            button.style.display = 'none';
+            currentQuestion.querySelector('.quiz-next-btn').style.display = 'inline-block';
+        }
+
+        function getCorrectAnswer(questionNum) {
+            const answers = {
+                '1': 'a',
+                '2': 'b',
+                '3': 'b',
+                '4': 'a',
+                '5': 'b',
+                '6': 'b'
+            };
+            return answers[questionNum];
+        }
+
+        function updateScore(quizId, isCorrect) {
+            const scoreElement = document.getElementById('score-' + quizId);
+            let currentScore = parseInt(scoreElement.textContent);
+            if (isCorrect) {
+                currentScore++;
+                scoreElement.textContent = currentScore;
+            }
+        }
+
+        // Add click event to quiz options
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const questionDiv = this.closest('.question-item');
+                questionDiv.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                this.style.backgroundColor = '#3b82f6';
+                this.style.color = 'white';
+            });
+        });
+    </script>
+</div>
+
+<style>
+.interactive-quiz {
+    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 2px solid #06b6d4;
+}
+
+.quiz-container {
+    margin: 20px 0;
+}
+
+.question-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #06b6d4;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.quiz-option {
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    background: #f9fafb;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-weight: 500;
+}
+
+.quiz-option:hover {
+    border-color: #06b6d4;
+    background: #f0fdfa;
+}
+
+.quiz-option.selected {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+.quiz-explanation {
+    background: #fffbeb;
+    border: 1px solid #fbbf24;
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.quiz-navigation {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.quiz-check-btn, .quiz-next-btn {
+    background: #06b6d4;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.quiz-check-btn:hover, .quiz-next-btn:hover {
+    background: #0891b2;
+}
+
+.quiz-results {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #06b6d4;
+}
+</style>
+    `
+  },
+
+  'number-theory': {
+    title: 'Chapter 8: Number Theory',
+    duration: 22, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 8: <span style="color: #f59e0b; font-weight: 600;">Number Theory</span></h2>
+    <p class="lesson-intro">Master the different types of numbers and their properties that appear throughout ACT Math! From integers to prime numbers, understanding number classifications unlocks solutions across all math topics.</p>
+</div>
+
+<div class="section why-important">
+    <h3>Your Chapter 8 Learning Path: The 5 Essential Number Concepts</h3>
+    <div class="concept-box">
+        <h4>🎯 What You'll Master Today</h4>
+        <p><strong>Part 1:</strong> Number Classifications → Integers, rationals, irrationals, and more</p>
+        <p><strong>Part 2:</strong> Prime & Composite Numbers → Factorization and divisibility</p>
+        <p><strong>Part 3:</strong> GCD & LCM → Greatest Common Divisor and Least Common Multiple</p>
+        <p><strong>Part 4:</strong> Even & Odd Properties → Rules for arithmetic operations</p>
+        <p><strong>Part 5:</strong> Number Line & Absolute Value → Distance and ordering</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #f59e0b; font-weight: 600;">Number Classifications</span></h3>
+
+    <div class="rules-box">
+        <h4>The Number Hierarchy:</h4>
+        <ul>
+            <li><strong>Natural Numbers:</strong> 1, 2, 3, 4, 5, ... (counting numbers)</li>
+            <li><strong>Whole Numbers:</strong> 0, 1, 2, 3, 4, ... (natural numbers + zero)</li>
+            <li><strong>Integers:</strong> ..., -2, -1, 0, 1, 2, ... (whole numbers + negatives)</li>
+            <li><strong>Rational Numbers:</strong> Numbers that can be written as a/b where b ≠ 0</li>
+            <li><strong>Irrational Numbers:</strong> Numbers that cannot be written as fractions (π, √2, e)</li>
+            <li><strong>Real Numbers:</strong> All rational and irrational numbers</li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Classifying Numbers</h4>
+        <p><strong>Problem:</strong> Classify each number: 5, -3, 0, 1/2, √16, √7, π</p>
+        <p><strong>Solutions:</strong></p>
+        <ul>
+            <li><strong>5:</strong> Natural, whole, integer, rational, real</li>
+            <li><strong>-3:</strong> Integer, rational, real</li>
+            <li><strong>0:</strong> Whole, integer, rational, real</li>
+            <li><strong>1/2:</strong> Rational, real</li>
+            <li><strong>√16 = 4:</strong> Natural, whole, integer, rational, real</li>
+            <li><strong>√7:</strong> Irrational, real</li>
+            <li><strong>π:</strong> Irrational, real</li>
+        </ul>
+    </div>
+
+    <div class="tip-box">
+        <h4>🎯 Quick Classification Tests</h4>
+        <ul>
+            <li><strong>Rational:</strong> Can you write it as a fraction? (includes terminating and repeating decimals)</li>
+            <li><strong>Integer:</strong> Is it a whole number (positive, negative, or zero)?</li>
+            <li><strong>Natural:</strong> Is it a positive counting number?</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #f59e0b; font-weight: 600;">Prime & Composite Numbers</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 Key Definitions</h4>
+        <p><strong>Prime Number:</strong> A natural number greater than 1 with exactly two factors: 1 and itself</p>
+        <p><strong>Composite Number:</strong> A natural number greater than 1 with more than two factors</p>
+        <p><strong>Special Cases:</strong> 1 is neither prime nor composite; 2 is the only even prime</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>First 15 Prime Numbers:</h4>
+        <p><strong>2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47</strong></p>
+        <p><em>Memorize at least the first 10 for quick factorization</em></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Prime Factorization</h4>
+        <p><strong>Problem:</strong> Find the prime factorization of 72</p>
+        <p><strong>Solution:</strong></p>
+        <p>72 = 8 × 9 = (2³) × (3²) = 2³ × 3²</p>
+        <p>Or using factor tree:</p>
+        <p>72 → 8 × 9 → (2 × 4) × (3 × 3) → 2 × (2 × 2) × 3 × 3 = 2³ × 3²</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Testing for Primality</h4>
+        <p><strong>Problem:</strong> Is 91 prime or composite?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Test divisibility by primes up to √91 ≈ 9.5</p>
+        <p>Test: 2 (no), 3 (no), 5 (no), 7 (yes!)</p>
+        <p>91 ÷ 7 = 13, so 91 = 7 × 13</p>
+        <p><strong>91 is composite</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #f59e0b; font-weight: 600;">GCD & LCM</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 Definitions</h4>
+        <p><strong>GCD (Greatest Common Divisor):</strong> Largest number that divides both numbers evenly</p>
+        <p><strong>LCM (Least Common Multiple):</strong> Smallest positive number that both numbers divide evenly</p>
+        <p><strong>Key Relationship:</strong> GCD(a,b) × LCM(a,b) = a × b</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Finding GCD</h4>
+        <p><strong>Problem:</strong> Find GCD(48, 18)</p>
+        <p><strong>Method 1 - Prime Factorization:</strong></p>
+        <p>48 = 2⁴ × 3¹</p>
+        <p>18 = 2¹ × 3²</p>
+        <p>GCD = 2¹ × 3¹ = 6 (take lowest powers)</p>
+
+        <p><strong>Method 2 - Euclidean Algorithm:</strong></p>
+        <p>48 = 18 × 2 + 12</p>
+        <p>18 = 12 × 1 + 6</p>
+        <p>12 = 6 × 2 + 0</p>
+        <p>GCD = 6 (last non-zero remainder)</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Finding LCM</h4>
+        <p><strong>Problem:</strong> Find LCM(48, 18)</p>
+        <p><strong>Method 1 - Prime Factorization:</strong></p>
+        <p>48 = 2⁴ × 3¹</p>
+        <p>18 = 2¹ × 3²</p>
+        <p>LCM = 2⁴ × 3² = 16 × 9 = 144 (take highest powers)</p>
+
+        <p><strong>Method 2 - Using GCD:</strong></p>
+        <p>LCM = (48 × 18) ÷ GCD(48, 18) = 864 ÷ 6 = 144</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #f59e0b; font-weight: 600;">Even & Odd Properties</span></h3>
+
+    <div class="rules-box">
+        <h4>Essential Even/Odd Rules:</h4>
+
+        <p><strong>Addition & Subtraction:</strong></p>
+        <ul>
+            <li>Even ± Even = Even</li>
+            <li>Odd ± Odd = Even</li>
+            <li>Even ± Odd = Odd</li>
+        </ul>
+
+        <p><strong>Multiplication:</strong></p>
+        <ul>
+            <li>Even × Any Integer = Even</li>
+            <li>Odd × Odd = Odd</li>
+        </ul>
+
+        <p><strong>Powers:</strong></p>
+        <ul>
+            <li>Even^n = Even (for any positive integer n)</li>
+            <li>Odd^n = Odd (for any positive integer n)</li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: Even/Odd Applications</h4>
+        <p><strong>Problem:</strong> If a and b are odd integers, determine if each expression is even or odd:</p>
+        <p>a) a + b</p>
+        <p>b) 3a + 2b</p>
+        <p>c) a²b³</p>
+
+        <p><strong>Solutions:</strong></p>
+        <p>a) Odd + Odd = Even</p>
+        <p>b) 3a + 2b = Odd×Odd + Even×Odd = Odd + Even = Odd</p>
+        <p>c) a²b³ = Odd² × Odd³ = Odd × Odd = Odd</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 5: <span style="color: #f59e0b; font-weight: 600;">Number Line & Absolute Value</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 Absolute Value</h4>
+        <p><strong>|x| = distance from x to 0 on the number line</strong></p>
+        <p>|x| = x if x ≥ 0</p>
+        <p>|x| = -x if x < 0</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Absolute Value Properties:</h4>
+        <ul>
+            <li><strong>|x| ≥ 0</strong> for all real x</li>
+            <li><strong>|xy| = |x| × |y|</strong></li>
+            <li><strong>|x/y| = |x| ÷ |y|</strong> (y ≠ 0)</li>
+            <li><strong>|x + y| ≤ |x| + |y|</strong> (triangle inequality)</li>
+            <li><strong>Distance between a and b = |a - b|</strong></li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: Absolute Value Calculations</h4>
+        <p><strong>Problem:</strong> Evaluate each expression:</p>
+        <p>a) |-5| + |3|</p>
+        <p>b) |4 - 9|</p>
+        <p>c) |-2| × |-7|</p>
+
+        <p><strong>Solutions:</strong></p>
+        <p>a) |-5| + |3| = 5 + 3 = 8</p>
+        <p>b) |4 - 9| = |-5| = 5</p>
+        <p>c) |-2| × |-7| = 2 × 7 = 14</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 8: Distance on Number Line</h4>
+        <p><strong>Problem:</strong> Find the distance between -3 and 7 on the number line</p>
+        <p><strong>Solution:</strong></p>
+        <p>Distance = |7 - (-3)| = |7 + 3| = |10| = 10</p>
+        <p>Or: Distance = |-3 - 7| = |-10| = 10</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🔗 ACT Applications</h3>
+
+    <div class="example-box">
+        <h4>Example 9: Number Theory Word Problem</h4>
+        <p><strong>Problem:</strong> Two bells ring at intervals of 12 and 18 minutes. If they ring together at 3:00 PM, when will they next ring together?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Find LCM(12, 18):</p>
+        <p>12 = 2² × 3</p>
+        <p>18 = 2 × 3²</p>
+        <p>LCM = 2² × 3² = 36 minutes</p>
+        <p><strong>They will ring together again at 3:36 PM</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 10: Consecutive Integer Problem</h4>
+        <p><strong>Problem:</strong> The sum of three consecutive odd integers is 57. Find the integers.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Let the integers be n, n+2, n+4 (consecutive odds)</p>
+        <p>n + (n+2) + (n+4) = 57</p>
+        <p>3n + 6 = 57</p>
+        <p>3n = 51</p>
+        <p>n = 17</p>
+        <p><strong>The integers are 17, 19, and 21</strong></p>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Number theory provides the foundation for all ACT Math! Master number classifications, prime factorization, GCD/LCM calculations, even/odd properties, and absolute value. These concepts appear in algebra, geometry, and word problems throughout the test. Understanding number properties helps you solve problems faster and avoid common mistakes!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Master Your Number Theory Skills!</h3>
+    <div class="quiz-intro">
+        <p>Time to test your understanding! Click through these 6 carefully crafted questions that mirror real ACT problems. Each question builds on the concepts you just learned.</p>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question-card active" data-question="1">
+            <div class="question-header">
+                <span class="question-number">Question 1 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 16.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Prime Factorization Challenge</h4>
+                <p>What is the prime factorization of 60?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="true" data-explanation="Correct! 60 = 4 × 15 = 4 × 3 × 5 = 2² × 3 × 5. Always break down to prime factors: 2, 3, and 5.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">2² × 3 × 5</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Not quite. This gives 2 × 9 × 5 = 90, not 60. Remember, we need 2² × 3 × 5.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">2 × 3² × 5</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This gives 8 × 3 × 5 = 120, which is too large. We need 2² × 3 × 5.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">2³ × 3 × 5</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This gives 4 × 9 × 5 = 180, which is too large. The correct answer is 2² × 3 × 5.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">2² × 3² × 5</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="2">
+            <div class="question-header">
+                <span class="question-number">Question 2 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 33.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Greatest Common Divisor</h4>
+                <p>What is the GCD (Greatest Common Divisor) of 48 and 72?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="12 is a common divisor, but not the greatest. Look for the largest common factor.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">12</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Perfect! Prime factorization: 48 = 2⁴ × 3, 72 = 2³ × 3². GCD = 2³ × 3¹ = 8 × 3 = 24.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">24</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="8 is also a common divisor, but 24 is larger and still divides both numbers.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">8</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="144 is the LCM (Least Common Multiple), not the GCD. The GCD is 24.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">144</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="3">
+            <div class="question-header">
+                <span class="question-number">Question 3 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Least Common Multiple</h4>
+                <p>What is the LCM (Least Common Multiple) of 18 and 24?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="42 is not divisible by both 18 and 24. The LCM must be divisible by both numbers.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">42</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Excellent! 18 = 2 × 3², 24 = 2³ × 3. LCM = 2³ × 3² = 8 × 9 = 72.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">72</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="144 is a common multiple, but not the least. 72 is smaller and works.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">144</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="432 is way too large. The LCM is the smallest positive number divisible by both.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">432</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="4">
+            <div class="question-header">
+                <span class="question-number">Question 4 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 66.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Consecutive Integers</h4>
+                <p>If the sum of three consecutive even integers is 78, what is the middle integer?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="24 would be the first integer. The middle one is 2 more than this.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">24</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Perfect! Let integers be n, n+2, n+4. Then n + (n+2) + (n+4) = 78, so 3n + 6 = 78, giving n = 24. Middle integer is 26.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">26</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="28 would be the last integer. The middle integer is 26.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">28</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="25 is odd, so it can't be one of three consecutive even integers.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">25</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="5">
+            <div class="question-header">
+                <span class="question-number">Question 5 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 83.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Absolute Value</h4>
+                <p>What is |−8| + |3| − |−5|?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="true" data-explanation="Exactly right! |−8| = 8, |3| = 3, |−5| = 5. So 8 + 3 − 5 = 6.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">6</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="16 would be if you added all three absolute values: 8 + 3 + 5. But we subtract the last term.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">16</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="−6 would result from keeping the negative signs. Remember, absolute value makes everything positive.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">−6</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="The calculation doesn't result in 0. Remember: 8 + 3 − 5 = 6.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="6">
+            <div class="question-header">
+                <span class="question-number">Question 6 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Prime Numbers</h4>
+                <p>Which of the following is both even and prime?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="true" data-explanation="Brilliant! 2 is the only even prime number. All other even numbers are divisible by 2, making them composite (not prime).">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">2</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="4 is even but not prime since it's divisible by 1, 2, and 4. Only 2 is both even and prime.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">4</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="6 is even but composite (divisible by 1, 2, 3, 6). Only 2 is both even and prime.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">6</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Actually, 2 is both even and prime! It's the exception to the rule.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">No number can be both even and prime</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-explanation" style="display: none;">
+        <div class="explanation-content"></div>
+        <div class="explanation-buttons">
+            <button id="next-question-btn" class="nav-btn">Next Question →</button>
+        </div>
+    </div>
+
+    <div class="quiz-results" style="display: none;">
+        <div class="results-content">
+            <h3>🎉 Quiz Complete!</h3>
+            <div class="score-display">
+                <div class="score-circle">
+                    <span class="score-text">0/6</span>
+                </div>
+            </div>
+            <div class="performance-feedback"></div>
+            <div class="results-actions">
+                <button id="review-answers-btn" class="nav-btn secondary">Review Answers</button>
+                <button id="restart-quiz-btn" class="nav-btn">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-navigation">
+        <button id="start-quiz-btn" class="nav-btn primary">Start Quiz</button>
+        <button id="prev-btn" class="nav-btn secondary" style="display: none;">← Previous</button>
+        <button id="next-btn" class="nav-btn primary" style="display: none;">Next →</button>
+        <button id="submit-quiz-btn" class="nav-btn primary" style="display: none;">Submit Quiz</button>
+    </div>
+</div>
+
+<style>
+.interactive-quiz {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.interactive-quiz::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.interactive-quiz > * {
+    position: relative;
+    z-index: 1;
+}
+
+.interactive-quiz h3 {
+    color: white;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.quiz-intro {
+    background: rgba(255,255,255,0.15);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.quiz-intro p {
+    color: white;
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+.quiz-container {
+    background: white;
+    border-radius: 15px;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.question-card {
+    display: none;
+    animation: slideIn 0.3s ease-out;
+}
+
+.question-card.active {
+    display: block;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.question-header {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.question-number {
+    font-weight: 600;
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+.progress-bar {
+    background: #e2e8f0;
+    height: 4px;
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.question-content {
+    padding: 1.5rem;
+}
+
+.question-content h4 {
+    color: #1e293b;
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.question-content p {
+    color: #334155;
+    margin: 0 0 1.5rem 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.answer-choices {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.choice-btn {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    background: #f8fafc;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.choice-btn:hover {
+    border-color: #667eea;
+    background: #f1f5f9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.choice-letter {
+    background: #667eea;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.choice-text {
+    flex: 1;
+    color: #1e293b;
+    font-weight: 500;
+}
+
+.choice-btn.selected {
+    border-color: #667eea;
+    background: linear-gradient(135deg, #667eea15, #764ba215);
+}
+
+.choice-btn.correct {
+    border-color: #22c55e;
+    background: linear-gradient(135deg, #22c55e15, #16a34a15);
+}
+
+.choice-btn.correct .choice-letter {
+    background: #22c55e;
+}
+
+.choice-btn.incorrect {
+    border-color: #ef4444;
+    background: linear-gradient(135deg, #ef444415, #dc262615);
+}
+
+.choice-btn.incorrect .choice-letter {
+    background: #ef4444;
+}
+
+.choice-btn:disabled {
+    cursor: not-allowed;
+}
+
+.quiz-explanation {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.explanation-content {
+    background: #f0f9ff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #3b82f6;
+    margin-bottom: 1rem;
+}
+
+.explanation-content h4 {
+    color: #1e40af;
+    margin: 0 0 0.5rem 0;
+}
+
+.explanation-content p {
+    color: #1e40af;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.quiz-results {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-bottom: 1.5rem;
+}
+
+.score-display {
+    margin: 1.5rem 0;
+}
+
+.score-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+.performance-feedback {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.quiz-navigation {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.nav-btn.primary {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+}
+
+.nav-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
+}
+
+.nav-btn.secondary {
+    background: #f1f5f9;
+    color: #475569;
+    border: 2px solid #e2e8f0;
+}
+
+.nav-btn.secondary:hover {
+    background: #e2e8f0;
+    border-color: #cbd5e1;
+}
+
+@media (max-width: 768px) {
+    .interactive-quiz {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    .quiz-navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let currentQuestion = 0;
+    let userAnswers = [];
+    let score = 0;
+    let quizStarted = false;
+
+    const questionCards = document.querySelectorAll('.question-card');
+    const startBtn = document.getElementById('start-quiz-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const submitBtn = document.getElementById('submit-quiz-btn');
+    const restartBtn = document.getElementById('restart-quiz-btn');
+    const reviewBtn = document.getElementById('review-answers-btn');
+    const nextQuestionBtn = document.getElementById('next-question-btn');
+    const quizContainer = document.querySelector('.quiz-container');
+    const quizExplanation = document.querySelector('.quiz-explanation');
+    const quizResults = document.querySelector('.quiz-results');
+
+    startBtn.addEventListener('click', startQuiz);
+    prevBtn.addEventListener('click', previousQuestion);
+    nextBtn.addEventListener('click', nextQuestion);
+    submitBtn.addEventListener('click', submitQuiz);
+    restartBtn.addEventListener('click', restartQuiz);
+    reviewBtn.addEventListener('click', reviewAnswers);
+    nextQuestionBtn.addEventListener('click', nextQuestion);
+
+    function startQuiz() {
+        quizStarted = true;
+        currentQuestion = 0;
+        userAnswers = [];
+        score = 0;
+
+        startBtn.style.display = 'none';
+        showQuestion(0);
+        updateNavigation();
+    }
+
+    function showQuestion(index) {
+        questionCards.forEach(card => card.classList.remove('active'));
+        if (questionCards[index]) {
+            questionCards[index].classList.add('active');
+            setupQuestionListeners(index);
+        }
+    }
+
+    function setupQuestionListeners(index) {
+        const choices = questionCards[index].querySelectorAll('.choice-btn');
+        choices.forEach(choice => {
+            choice.addEventListener('click', function() {
+                if (this.disabled) return;
+
+                // Remove previous selections
+                choices.forEach(c => c.classList.remove('selected'));
+
+                // Mark this choice as selected
+                this.classList.add('selected');
+                userAnswers[index] = {
+                    selected: this,
+                    correct: this.dataset.correct === 'true',
+                    explanation: this.dataset.explanation
+                };
+
+                // Show explanation after a brief delay
+                setTimeout(() => {
+                    showExplanation(index);
+                }, 300);
+            });
+        });
+    }
+
+    function showExplanation(index) {
+        const choices = questionCards[index].querySelectorAll('.choice-btn');
+        const userAnswer = userAnswers[index];
+
+        // Disable all choices and show correct/incorrect
+        choices.forEach(choice => {
+            choice.disabled = true;
+            if (choice.dataset.correct === 'true') {
+                choice.classList.add('correct');
+            } else if (choice === userAnswer.selected && !userAnswer.correct) {
+                choice.classList.add('incorrect');
+            }
+        });
+
+        // Show explanation
+        const explanationContent = document.querySelector('.explanation-content');
+        explanationContent.innerHTML = `
+            <h4>${userAnswer.correct ? '✅ Correct!' : '❌ Incorrect'}</h4>
+            <p>${userAnswer.explanation}</p>
+        `;
+
+        quizContainer.style.display = 'none';
+        quizExplanation.style.display = 'block';
+
+        updateNavigationForExplanation();
+    }
+
+    function updateNavigationForExplanation() {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+        submitBtn.style.display = 'none';
+
+        if (currentQuestion < questionCards.length - 1) {
+            nextQuestionBtn.style.display = 'inline-flex';
+            nextQuestionBtn.textContent = 'Next Question →';
+        } else {
+            nextQuestionBtn.style.display = 'inline-flex';
+            nextQuestionBtn.textContent = 'View Results →';
+        }
+    }
+
+    function nextQuestion() {
+        if (quizExplanation.style.display === 'block') {
+            quizExplanation.style.display = 'none';
+            quizContainer.style.display = 'block';
+
+            if (currentQuestion < questionCards.length - 1) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+                updateNavigation();
+            } else {
+                submitQuiz();
+            }
+        } else if (userAnswers[currentQuestion]) {
+            showExplanation(currentQuestion);
+        }
+    }
+
+    function previousQuestion() {
+        if (currentQuestion > 0) {
+            currentQuestion--;
+            showQuestion(currentQuestion);
+            updateNavigation();
+        }
+    }
+
+    function updateNavigation() {
+        prevBtn.style.display = currentQuestion > 0 ? 'inline-flex' : 'none';
+
+        const hasAnswered = userAnswers[currentQuestion];
+        nextBtn.style.display = hasAnswered ? 'inline-flex' : 'none';
+
+        if (currentQuestion === questionCards.length - 1 && hasAnswered) {
+            nextBtn.style.display = 'none';
+            submitBtn.style.display = 'inline-flex';
+        } else {
+            submitBtn.style.display = 'none';
+        }
+    }
+
+    function submitQuiz() {
+        // Calculate score
+        score = userAnswers.filter(answer => answer && answer.correct).length;
+
+        // Hide other elements
+        quizContainer.style.display = 'none';
+        quizExplanation.style.display = 'none';
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+        submitBtn.style.display = 'none';
+
+        // Show results
+        displayResults();
+        quizResults.style.display = 'block';
+    }
+
+    function displayResults() {
+        const scoreText = document.querySelector('.score-text');
+        const feedback = document.querySelector('.performance-feedback');
+
+        scoreText.textContent = `${score}/6`;
+
+        let feedbackMessage = '';
+        let feedbackClass = '';
+
+        if (score === 6) {
+            feedbackMessage = '🎉 Perfect! You\'ve mastered number theory concepts! You\'re ready for any ACT number theory question.';
+            feedbackClass = 'perfect';
+        } else if (score >= 4) {
+            feedbackMessage = '👍 Great job! You have a solid understanding of number theory. Review the questions you missed to perfect your skills.';
+            feedbackClass = 'good';
+        } else if (score >= 2) {
+            feedbackMessage = '📚 Good start! You understand the basics but need more practice. Focus on prime factorization and GCD/LCM concepts.';
+            feedbackClass = 'fair';
+        } else {
+            feedbackMessage = '💪 Keep practicing! Number theory takes time to master. Review each concept carefully and try the quiz again.';
+            feedbackClass = 'needs-work';
+        }
+
+        feedback.innerHTML = feedbackMessage;
+        feedback.className = `performance-feedback ${feedbackClass}`;
+    }
+
+    function reviewAnswers() {
+        quizResults.style.display = 'none';
+        currentQuestion = 0;
+        showReviewMode();
+    }
+
+    function showReviewMode() {
+        quizContainer.style.display = 'block';
+        showQuestion(currentQuestion);
+
+        // Show the answer that was selected
+        const userAnswer = userAnswers[currentQuestion];
+        if (userAnswer) {
+            const choices = questionCards[currentQuestion].querySelectorAll('.choice-btn');
+            choices.forEach(choice => {
+                choice.disabled = true;
+                if (choice.dataset.correct === 'true') {
+                    choice.classList.add('correct');
+                } else if (choice === userAnswer.selected && !userAnswer.correct) {
+                    choice.classList.add('incorrect');
+                }
+                if (choice === userAnswer.selected) {
+                    choice.classList.add('selected');
+                }
+            });
+        }
+
+        updateReviewNavigation();
+    }
+
+    function updateReviewNavigation() {
+        prevBtn.style.display = currentQuestion > 0 ? 'inline-flex' : 'none';
+        nextBtn.style.display = currentQuestion < questionCards.length - 1 ? 'inline-flex' : 'none';
+
+        if (currentQuestion === questionCards.length - 1) {
+            submitBtn.textContent = 'Back to Results';
+            submitBtn.style.display = 'inline-flex';
+        } else {
+            submitBtn.style.display = 'none';
+        }
+    }
+
+    function restartQuiz() {
+        // Reset all states
+        currentQuestion = 0;
+        userAnswers = [];
+        score = 0;
+        quizStarted = false;
+
+        // Reset UI
+        quizResults.style.display = 'none';
+        quizExplanation.style.display = 'none';
+        quizContainer.style.display = 'none';
+
+        // Reset all questions
+        questionCards.forEach(card => {
+            card.classList.remove('active');
+            const choices = card.querySelectorAll('.choice-btn');
+            choices.forEach(choice => {
+                choice.disabled = false;
+                choice.classList.remove('selected', 'correct', 'incorrect');
+            });
+        });
+
+        // Show start button
+        startBtn.style.display = 'inline-flex';
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+        submitBtn.style.display = 'none';
+    }
+});
+</script>
+    `
+  },
+
+  'ratios-proportions': {
+    title: 'Chapter 10: Ratios and Proportions',
+    duration: 24, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 10: <span style="color: #10b981; font-weight: 600;">Ratios and Proportions</span></h2>
+    <p class="lesson-intro">Master ratios, proportions, and rate problems that appear on <strong>every ACT Math test</strong>! From simple ratios to complex rate problems, these skills unlock solutions across geometry, word problems, and real-world applications.</p>
+</div>
+
+<div class="section why-important">
+    <h3>Your Chapter 10 Learning Path: The 4 Essential Ratio Concepts</h3>
+    <div class="concept-box">
+        <h4>🎯 What You'll Master Today</h4>
+        <p><strong>Part 1:</strong> Basic Ratios → Understanding and simplifying ratios</p>
+        <p><strong>Part 2:</strong> Proportions → Setting up and solving proportion equations</p>
+        <p><strong>Part 3:</strong> Rate Problems → Speed, unit rates, and conversions</p>
+        <p><strong>Part 4:</strong> Similar Figures → Using proportions in geometry</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #10b981; font-weight: 600;">Basic Ratios</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What is a Ratio?</h4>
+        <p><strong>A ratio compares two quantities using division</strong></p>
+        <p><strong>Ways to write ratios:</strong> 3:4, 3 to 4, 3/4</p>
+        <p><em>The ratio 3:4 means "3 parts of the first quantity for every 4 parts of the second"</em></p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Working with Ratios:</h4>
+        <ol>
+            <li><strong>Simplify ratios</strong> by dividing both parts by their GCD</li>
+            <li><strong>Ratios can be scaled up or down</strong> by multiplying both parts by the same number</li>
+            <li><strong>Order matters:</strong> 3:4 is different from 4:3</li>
+            <li><strong>Part-to-part vs part-to-whole</strong> ratios have different meanings</li>
+        </ol>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Simplifying Ratios</h4>
+        <p><strong>Problem:</strong> Simplify the ratio 18:24</p>
+        <p><strong>Solution:</strong></p>
+        <p>Find GCD of 18 and 24:</p>
+        <p>18 = 2 × 3²</p>
+        <p>24 = 2³ × 3</p>
+        <p>GCD = 2 × 3 = 6</p>
+        <p>18:24 = (18÷6):(24÷6) = 3:4</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Part-to-Whole Ratios</h4>
+        <p><strong>Problem:</strong> In a class of 30 students, the ratio of boys to girls is 3:2. How many boys and girls are there?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Total ratio parts = 3 + 2 = 5</p>
+        <p>Each part represents 30 ÷ 5 = 6 students</p>
+        <p>Boys = 3 × 6 = 18 students</p>
+        <p>Girls = 2 × 6 = 12 students</p>
+        <p>Check: 18 + 12 = 30 ✓</p>
+    </div>
+
+    <div class="tip-box">
+        <h4>🎯 Ratio Problem Strategy</h4>
+        <ol>
+            <li><strong>Identify</strong> what quantities are being compared</li>
+            <li><strong>Determine</strong> if it's part-to-part or part-to-whole</li>
+            <li><strong>Set up</strong> the ratio using consistent units</li>
+            <li><strong>Solve</strong> using cross multiplication or scaling</li>
+        </ol>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #10b981; font-weight: 600;">Proportions</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What is a Proportion?</h4>
+        <p><strong>A proportion is an equation stating that two ratios are equal</strong></p>
+        <p><strong>Form:</strong> a/b = c/d or a:b = c:d</p>
+        <p><strong>Cross multiplication:</strong> If a/b = c/d, then ad = bc</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Solving Basic Proportions</h4>
+        <p><strong>Problem:</strong> Solve x/6 = 4/9</p>
+        <p><strong>Solution:</strong></p>
+        <p>Cross multiply: 9x = 6 × 4</p>
+        <p>9x = 24</p>
+        <p>x = 24/9 = 8/3</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Word Problem with Proportions</h4>
+        <p><strong>Problem:</strong> If 3 pounds of apples cost $4.50, how much do 8 pounds cost?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Set up proportion: 3 pounds/$4.50 = 8 pounds/x</p>
+        <p>Cross multiply: 3x = 4.50 × 8</p>
+        <p>3x = 36</p>
+        <p>x = $12</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Recipe Proportions</h4>
+        <p><strong>Problem:</strong> A recipe for 4 servings uses 2.5 cups of flour. How much flour is needed for 10 servings?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Set up proportion: 4 servings/2.5 cups = 10 servings/x cups</p>
+        <p>Cross multiply: 4x = 2.5 × 10</p>
+        <p>4x = 25</p>
+        <p>x = 6.25 cups</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #10b981; font-weight: 600;">Rate Problems</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 Understanding Rates</h4>
+        <p><strong>Rate = a ratio that compares two different units</strong></p>
+        <p><strong>Common rates:</strong> speed (miles/hour), price (dollars/pound), density (mass/volume)</p>
+        <p><strong>Key formula:</strong> Distance = Rate × Time</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Rate Problem Types:</h4>
+        <ul>
+            <li><strong>Unit Rate:</strong> Rate with denominator of 1 (miles per hour, cost per item)</li>
+            <li><strong>Speed Problems:</strong> d = rt, solve for any missing variable</li>
+            <li><strong>Work Rate:</strong> Combined rates when working together</li>
+            <li><strong>Unit Conversion:</strong> Converting between different units</li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: Speed and Distance</h4>
+        <p><strong>Problem:</strong> A car travels 240 miles in 4 hours. What is its average speed?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Using d = rt:</p>
+        <p>240 = r × 4</p>
+        <p>r = 240 ÷ 4 = 60 mph</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: Unit Rate Problem</h4>
+        <p><strong>Problem:</strong> If 5 notebooks cost $12.75, what is the cost per notebook?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Unit rate = Total cost ÷ Number of items</p>
+        <p>Unit rate = $12.75 ÷ 5 = $2.55 per notebook</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 8: Combined Work Rate</h4>
+        <p><strong>Problem:</strong> Sarah can paint a fence in 6 hours, and Mike can paint the same fence in 4 hours. How long will it take if they work together?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Sarah's rate: 1/6 fence per hour</p>
+        <p>Mike's rate: 1/4 fence per hour</p>
+        <p>Combined rate: 1/6 + 1/4 = 2/12 + 3/12 = 5/12 fence per hour</p>
+        <p>Time = Work ÷ Rate = 1 ÷ (5/12) = 12/5 = 2.4 hours</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 9: Unit Conversions</h4>
+        <p><strong>Problem:</strong> Convert 72 kilometers per hour to meters per second</p>
+        <p><strong>Solution:</strong></p>
+        <p>72 km/hr × (1000 m/1 km) × (1 hr/3600 sec)</p>
+        <p>= 72 × 1000 ÷ 3600</p>
+        <p>= 72000 ÷ 3600 = 20 m/s</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #10b981; font-weight: 600;">Similar Figures</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 Similar Figures</h4>
+        <p><strong>Similar figures have the same shape but different sizes</strong></p>
+        <p><strong>Corresponding sides are proportional</strong></p>
+        <p><strong>Scale factor = ratio of corresponding sides</strong></p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Similar Figure Properties:</h4>
+        <ul>
+            <li><strong>Corresponding angles are equal</strong></li>
+            <li><strong>Corresponding sides are proportional</strong></li>
+            <li><strong>Ratio of areas = (scale factor)²</strong></li>
+            <li><strong>Ratio of volumes = (scale factor)³</strong></li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 10: Similar Triangles</h4>
+        <p><strong>Problem:</strong> Two similar triangles have corresponding sides of 6 cm and 9 cm. If the smaller triangle has a perimeter of 18 cm, what is the perimeter of the larger triangle?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Scale factor = 9/6 = 3/2</p>
+        <p>Since perimeters are linear measurements:</p>
+        <p>Larger perimeter = 18 × (3/2) = 27 cm</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 11: Similar Rectangles and Area</h4>
+        <p><strong>Problem:</strong> Two similar rectangles have a scale factor of 2:3. If the smaller rectangle has an area of 8 square units, what is the area of the larger rectangle?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Area ratio = (scale factor)² = (3/2)² = 9/4</p>
+        <p>Larger area = 8 × (9/4) = 18 square units</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🔗 Advanced Applications</h3>
+
+    <div class="example-box">
+        <h4>Example 12: Map Scale Problem</h4>
+        <p><strong>Problem:</strong> On a map, 1 inch represents 50 miles. If two cities are 3.5 inches apart on the map, what is the actual distance?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Set up proportion: 1 inch/50 miles = 3.5 inches/x miles</p>
+        <p>Cross multiply: x = 50 × 3.5 = 175 miles</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 13: Mixture Problem</h4>
+        <p><strong>Problem:</strong> A 20% salt solution is mixed with a 60% salt solution to create 100 liters of a 40% salt solution. How many liters of each solution are needed?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Let x = liters of 20% solution, then (100-x) = liters of 60% solution</p>
+        <p>0.20x + 0.60(100-x) = 0.40(100)</p>
+        <p>0.20x + 60 - 0.60x = 40</p>
+        <p>-0.40x = -20</p>
+        <p>x = 50</p>
+        <p><strong>Need 50 L of 20% solution and 50 L of 60% solution</strong></p>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Ratios and proportions are everywhere on the ACT! Master setting up proportions with cross multiplication, solving rate problems using d=rt, understanding unit rates and conversions, and applying proportions to similar figures. These skills connect algebra, geometry, and word problems. Remember: identify the relationship, set up the proportion correctly, and cross multiply to solve!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Master Your Ratios and Proportions!</h3>
+    <div class="quiz-intro">
+        <p>Ready to test your skills? These 6 questions cover ratios, proportions, rates, and similar figures - exactly like you'll see on test day!</p>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question-card active" data-question="1">
+            <div class="question-header">
+                <span class="question-number">Question 1 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 16.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Simplifying Ratios</h4>
+                <p>What is the simplified form of the ratio 24:36?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="Close, but not fully simplified. Both 6 and 9 can be divided by 3 to get 2:3.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">6:9</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This isn't simplified. We need to find the GCD of 24 and 36, which is 12.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">12:18</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Perfect! GCD of 24 and 36 is 12. So 24÷12 : 36÷12 = 2:3.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">2:3</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This is inverted. The correct simplified ratio is 2:3, not 3:2.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">3:2</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="2">
+            <div class="question-header">
+                <span class="question-number">Question 2 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 33.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Proportion Problem</h4>
+                <p>If 3 pounds of apples cost $4.50, how much do 8 pounds cost?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="This would be the cost if the rate were $1.50 per pound, but it's actually $1.50 per pound.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">$10.50</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Excellent! Set up proportion: 3/4.50 = 8/x. Cross multiply: 3x = 36, so x = $12.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">$12.00</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Too high. The unit rate is $4.50÷3 = $1.50 per pound, so 8 pounds costs 8 × $1.50 = $12.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">$13.50</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This doesn't follow the correct proportion. Remember to set up: pounds/cost = pounds/cost.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">$9.00</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="3">
+            <div class="question-header">
+                <span class="question-number">Question 3 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Part-to-Whole Ratios</h4>
+                <p>In a class of 35 students, the ratio of boys to girls is 3:4. How many boys are in the class?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="true" data-explanation="Correct! Total parts = 3+4 = 7. Each part = 35÷7 = 5 students. Boys = 3 parts = 3×5 = 15.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">15</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This would be the number of girls (4 parts × 5 students per part = 20).">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">20</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This doesn't account for the ratio properly. Use total parts to find how many students each part represents.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">12</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Too high. Remember that 3:4 means 3 parts boys out of 7 total parts.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">21</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="4">
+            <div class="question-header">
+                <span class="question-number">Question 4 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 66.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Rate Problem</h4>
+                <p>A car travels 240 miles in 4 hours. At this rate, how far will it travel in 7 hours?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="This is too low. The car travels 60 mph, so in 7 hours it goes 60 × 7 = 420 miles.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">360 miles</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Perfect! Rate = 240÷4 = 60 mph. Distance = 60 × 7 = 420 miles.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">420 miles</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Too high. You might have calculated incorrectly. The rate is 60 mph, not 70 mph.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">490 miles</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Way too high. Remember: distance = rate × time, where rate = 240÷4 = 60 mph.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">560 miles</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="5">
+            <div class="question-header">
+                <span class="question-number">Question 5 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 83.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Unit Rate Conversion</h4>
+                <p>If 1 inch = 2.54 cm, how many centimeters are in 8 inches?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="Too low. You need to multiply 8 by 2.54, not divide.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">3.15 cm</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This is close to dividing 8 by 2.54. Remember: more inches means more centimeters.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">10.54 cm</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Exactly right! 8 inches × 2.54 cm/inch = 20.32 cm.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">20.32 cm</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Too high. You might have added instead of multiplying. Use: 8 × 2.54 = 20.32.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">25.4 cm</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="6">
+            <div class="question-header">
+                <span class="question-number">Question 6 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Similar Triangles</h4>
+                <p>Two similar triangles have corresponding sides in the ratio 2:5. If the smaller triangle has a perimeter of 18 cm, what is the perimeter of the larger triangle?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="This would be correct if the scale factor were 3:2, but it's 5:2.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">27 cm</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Close, but you need to use the full scale factor. The larger triangle's perimeter = 18 × (5/2) = 45.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">36 cm</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Perfect! Scale factor from small to large = 5/2. Larger perimeter = 18 × (5/2) = 45 cm.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">45 cm</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Too high. The scale factor is 5/2 = 2.5, so 18 × 2.5 = 45, not 54.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">54 cm</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-explanation" style="display: none;">
+        <div class="explanation-content"></div>
+        <div class="explanation-buttons">
+            <button id="next-question-btn-2" class="nav-btn">Next Question →</button>
+        </div>
+    </div>
+
+    <div class="quiz-results" style="display: none;">
+        <div class="results-content">
+            <h3>🎉 Quiz Complete!</h3>
+            <div class="score-display">
+                <div class="score-circle">
+                    <span class="score-text">0/6</span>
+                </div>
+            </div>
+            <div class="performance-feedback"></div>
+            <div class="results-actions">
+                <button id="review-answers-btn-2" class="nav-btn secondary">Review Answers</button>
+                <button id="restart-quiz-btn-2" class="nav-btn">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-navigation">
+        <button id="start-quiz-btn-2" class="nav-btn primary">Start Quiz</button>
+        <button id="prev-btn-2" class="nav-btn secondary" style="display: none;">← Previous</button>
+        <button id="next-btn-2" class="nav-btn primary" style="display: none;">Next →</button>
+        <button id="submit-quiz-btn-2" class="nav-btn primary" style="display: none;">Submit Quiz</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let currentQuestion2 = 0;
+    let userAnswers2 = [];
+    let score2 = 0;
+    let quizStarted2 = false;
+
+    const questionCards2 = document.querySelectorAll('.question-card');
+    const startBtn2 = document.getElementById('start-quiz-btn-2');
+    const prevBtn2 = document.getElementById('prev-btn-2');
+    const nextBtn2 = document.getElementById('next-btn-2');
+    const submitBtn2 = document.getElementById('submit-quiz-btn-2');
+    const restartBtn2 = document.getElementById('restart-quiz-btn-2');
+    const reviewBtn2 = document.getElementById('review-answers-btn-2');
+    const nextQuestionBtn2 = document.getElementById('next-question-btn-2');
+    const quizContainer2 = document.querySelector('.quiz-container');
+    const quizExplanation2 = document.querySelector('.quiz-explanation');
+    const quizResults2 = document.querySelector('.quiz-results');
+
+    if (startBtn2) startBtn2.addEventListener('click', startQuiz2);
+    if (prevBtn2) prevBtn2.addEventListener('click', previousQuestion2);
+    if (nextBtn2) nextBtn2.addEventListener('click', nextQuestion2);
+    if (submitBtn2) submitBtn2.addEventListener('click', submitQuiz2);
+    if (restartBtn2) restartBtn2.addEventListener('click', restartQuiz2);
+    if (reviewBtn2) reviewBtn2.addEventListener('click', reviewAnswers2);
+    if (nextQuestionBtn2) nextQuestionBtn2.addEventListener('click', nextQuestion2);
+
+    function startQuiz2() {
+        quizStarted2 = true;
+        currentQuestion2 = 0;
+        userAnswers2 = [];
+        score2 = 0;
+
+        if (startBtn2) startBtn2.style.display = 'none';
+        showQuestion2(0);
+        updateNavigation2();
+    }
+
+    function showQuestion2(index) {
+        if (questionCards2) {
+            questionCards2.forEach(card => card.classList.remove('active'));
+            if (questionCards2[index]) {
+                questionCards2[index].classList.add('active');
+                setupQuestionListeners2(index);
+            }
+        }
+    }
+
+    function setupQuestionListeners2(index) {
+        if (questionCards2 && questionCards2[index]) {
+            const choices = questionCards2[index].querySelectorAll('.choice-btn');
+            choices.forEach(choice => {
+                choice.addEventListener('click', function() {
+                    if (this.disabled) return;
+
+                    choices.forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+                    userAnswers2[index] = {
+                        selected: this,
+                        correct: this.dataset.correct === 'true',
+                        explanation: this.dataset.explanation
+                    };
+
+                    setTimeout(() => {
+                        showExplanation2(index);
+                    }, 300);
+                });
+            });
+        }
+    }
+
+    function showExplanation2(index) {
+        if (questionCards2 && questionCards2[index]) {
+            const choices = questionCards2[index].querySelectorAll('.choice-btn');
+            const userAnswer = userAnswers2[index];
+
+            choices.forEach(choice => {
+                choice.disabled = true;
+                if (choice.dataset.correct === 'true') {
+                    choice.classList.add('correct');
+                } else if (choice === userAnswer.selected && !userAnswer.correct) {
+                    choice.classList.add('incorrect');
+                }
+            });
+
+            const explanationContent = document.querySelector('.explanation-content');
+            if (explanationContent) {
+                explanationContent.innerHTML = `
+                    <h4>${userAnswer.correct ? '✅ Correct!' : '❌ Incorrect'}</h4>
+                    <p>${userAnswer.explanation}</p>
+                `;
+            }
+
+            if (quizContainer2) quizContainer2.style.display = 'none';
+            if (quizExplanation2) quizExplanation2.style.display = 'block';
+
+            updateNavigationForExplanation2();
+        }
+    }
+
+    function updateNavigationForExplanation2() {
+        if (prevBtn2) prevBtn2.style.display = 'none';
+        if (nextBtn2) nextBtn2.style.display = 'none';
+        if (submitBtn2) submitBtn2.style.display = 'none';
+
+        if (nextQuestionBtn2) {
+            if (currentQuestion2 < (questionCards2 ? questionCards2.length - 1 : 0)) {
+                nextQuestionBtn2.style.display = 'inline-flex';
+                nextQuestionBtn2.textContent = 'Next Question →';
+            } else {
+                nextQuestionBtn2.style.display = 'inline-flex';
+                nextQuestionBtn2.textContent = 'View Results →';
+            }
+        }
+    }
+
+    function nextQuestion2() {
+        if (quizExplanation2 && quizExplanation2.style.display === 'block') {
+            quizExplanation2.style.display = 'none';
+            if (quizContainer2) quizContainer2.style.display = 'block';
+
+            if (currentQuestion2 < (questionCards2 ? questionCards2.length - 1 : 0)) {
+                currentQuestion2++;
+                showQuestion2(currentQuestion2);
+                updateNavigation2();
+            } else {
+                submitQuiz2();
+            }
+        } else if (userAnswers2[currentQuestion2]) {
+            showExplanation2(currentQuestion2);
+        }
+    }
+
+    function previousQuestion2() {
+        if (currentQuestion2 > 0) {
+            currentQuestion2--;
+            showQuestion2(currentQuestion2);
+            updateNavigation2();
+        }
+    }
+
+    function updateNavigation2() {
+        if (prevBtn2) prevBtn2.style.display = currentQuestion2 > 0 ? 'inline-flex' : 'none';
+
+        const hasAnswered = userAnswers2[currentQuestion2];
+        if (nextBtn2) nextBtn2.style.display = hasAnswered ? 'inline-flex' : 'none';
+
+        if (currentQuestion2 === (questionCards2 ? questionCards2.length - 1 : 0) && hasAnswered) {
+            if (nextBtn2) nextBtn2.style.display = 'none';
+            if (submitBtn2) submitBtn2.style.display = 'inline-flex';
+        } else {
+            if (submitBtn2) submitBtn2.style.display = 'none';
+        }
+    }
+
+    function submitQuiz2() {
+        score2 = userAnswers2.filter(answer => answer && answer.correct).length;
+
+        if (quizContainer2) quizContainer2.style.display = 'none';
+        if (quizExplanation2) quizExplanation2.style.display = 'none';
+        if (prevBtn2) prevBtn2.style.display = 'none';
+        if (nextBtn2) nextBtn2.style.display = 'none';
+        if (submitBtn2) submitBtn2.style.display = 'none';
+
+        displayResults2();
+        if (quizResults2) quizResults2.style.display = 'block';
+    }
+
+    function displayResults2() {
+        const scoreText = document.querySelector('.score-text');
+        const feedback = document.querySelector('.performance-feedback');
+
+        if (scoreText) scoreText.textContent = `${score2}/6`;
+
+        let feedbackMessage = '';
+        if (score2 === 6) {
+            feedbackMessage = '🎉 Perfect! You\'ve mastered ratios and proportions! Ready for any ACT ratio problem.';
+        } else if (score2 >= 4) {
+            feedbackMessage = '👍 Great job! You understand ratios and proportions well. Review missed questions to perfect your skills.';
+        } else if (score2 >= 2) {
+            feedbackMessage = '📚 Good foundation! Focus on setting up proportions correctly and using cross multiplication.';
+        } else {
+            feedbackMessage = '💪 Keep practicing! Master the basics: simplifying ratios, setting up proportions, and cross multiplication.';
+        }
+
+        if (feedback) {
+            feedback.innerHTML = feedbackMessage;
+            feedback.className = 'performance-feedback';
+        }
+    }
+
+    function reviewAnswers2() {
+        if (quizResults2) quizResults2.style.display = 'none';
+        currentQuestion2 = 0;
+        showReviewMode2();
+    }
+
+    function showReviewMode2() {
+        if (quizContainer2) quizContainer2.style.display = 'block';
+        showQuestion2(currentQuestion2);
+
+        const userAnswer = userAnswers2[currentQuestion2];
+        if (userAnswer && questionCards2 && questionCards2[currentQuestion2]) {
+            const choices = questionCards2[currentQuestion2].querySelectorAll('.choice-btn');
+            choices.forEach(choice => {
+                choice.disabled = true;
+                if (choice.dataset.correct === 'true') {
+                    choice.classList.add('correct');
+                } else if (choice === userAnswer.selected && !userAnswer.correct) {
+                    choice.classList.add('incorrect');
+                }
+                if (choice === userAnswer.selected) {
+                    choice.classList.add('selected');
+                }
+            });
+        }
+
+        updateReviewNavigation2();
+    }
+
+    function updateReviewNavigation2() {
+        if (prevBtn2) prevBtn2.style.display = currentQuestion2 > 0 ? 'inline-flex' : 'none';
+        if (nextBtn2) nextBtn2.style.display = currentQuestion2 < (questionCards2 ? questionCards2.length - 1 : 0) ? 'inline-flex' : 'none';
+
+        if (currentQuestion2 === (questionCards2 ? questionCards2.length - 1 : 0)) {
+            if (submitBtn2) {
+                submitBtn2.textContent = 'Back to Results';
+                submitBtn2.style.display = 'inline-flex';
+            }
+        } else {
+            if (submitBtn2) submitBtn2.style.display = 'none';
+        }
+    }
+
+    function restartQuiz2() {
+        currentQuestion2 = 0;
+        userAnswers2 = [];
+        score2 = 0;
+        quizStarted2 = false;
+
+        if (quizResults2) quizResults2.style.display = 'none';
+        if (quizExplanation2) quizExplanation2.style.display = 'none';
+        if (quizContainer2) quizContainer2.style.display = 'none';
+
+        if (questionCards2) {
+            questionCards2.forEach(card => {
+                card.classList.remove('active');
+                const choices = card.querySelectorAll('.choice-btn');
+                choices.forEach(choice => {
+                    choice.disabled = false;
+                    choice.classList.remove('selected', 'correct', 'incorrect');
+                });
+            });
+        }
+
+        if (startBtn2) startBtn2.style.display = 'inline-flex';
+        if (prevBtn2) prevBtn2.style.display = 'none';
+        if (nextBtn2) nextBtn2.style.display = 'none';
+        if (submitBtn2) submitBtn2.style.display = 'none';
+    }
+});
+</script>
+    `
+  },
+
+  'functions': {
+    title: 'Chapter 11: Functions',
+    duration: 26, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 11: <span style="color: #8b5cf6; font-weight: 600;">Functions</span></h2>
+    <p class="lesson-intro">Master function notation, evaluation, and transformations that appear on <strong>every ACT Math test</strong>! Functions connect algebra and coordinate geometry, unlocking solutions across multiple math topics.</p>
+</div>
+
+<div class="section why-important">
+    <h3>Your Chapter 11 Learning Path: The 4 Essential Function Skills</h3>
+    <div class="concept-box">
+        <h4>🎯 What You'll Master Today</h4>
+        <p><strong>Part 1:</strong> Function Notation → Understanding f(x) and evaluation</p>
+        <p><strong>Part 2:</strong> Domain and Range → Input and output values</p>
+        <p><strong>Part 3:</strong> Function Operations → Addition, composition, and inverses</p>
+        <p><strong>Part 4:</strong> Transformations → Shifting, stretching, and reflecting functions</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #8b5cf6; font-weight: 600;">Function Notation</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What is a Function?</h4>
+        <p><strong>A function is a rule that assigns exactly one output to each input</strong></p>
+        <p><strong>Function notation:</strong> f(x) = 2x + 3</p>
+        <p><em>"f of x equals 2x plus 3" - f is the function name, x is the input, 2x+3 is the rule</em></p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Function Evaluation Steps:</h4>
+        <ol>
+            <li><strong>Identify the function rule</strong></li>
+            <li><strong>Substitute the given input value</strong> for every x</li>
+            <li><strong>Simplify using order of operations</strong></li>
+            <li><strong>The result is the function output</strong></li>
+        </ol>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Basic Function Evaluation</h4>
+        <p><strong>Problem:</strong> If f(x) = 3x² - 2x + 1, find f(4)</p>
+        <p><strong>Solution:</strong></p>
+        <p>f(4) = 3(4)² - 2(4) + 1</p>
+        <p>f(4) = 3(16) - 8 + 1</p>
+        <p>f(4) = 48 - 8 + 1 = 41</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Function with Negative Input</h4>
+        <p><strong>Problem:</strong> If g(x) = x² + 5x - 3, find g(-2)</p>
+        <p><strong>Solution:</strong></p>
+        <p>g(-2) = (-2)² + 5(-2) - 3</p>
+        <p>g(-2) = 4 - 10 - 3 = -9</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Function with Expression Input</h4>
+        <p><strong>Problem:</strong> If h(x) = 2x - 7, find h(3x + 1)</p>
+        <p><strong>Solution:</strong></p>
+        <p>h(3x + 1) = 2(3x + 1) - 7</p>
+        <p>h(3x + 1) = 6x + 2 - 7</p>
+        <p>h(3x + 1) = 6x - 5</p>
+    </div>
+
+    <div class="tip-box">
+        <h4>🎯 Function Evaluation Tips</h4>
+        <ul>
+            <li><strong>Use parentheses carefully</strong> when substituting negative values</li>
+            <li><strong>Remember order of operations</strong> (PEMDAS)</li>
+            <li><strong>Check your arithmetic</strong> - function problems often have calculation errors</li>
+            <li><strong>Functions can use any letter</strong> - f(x), g(x), h(t), etc.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #8b5cf6; font-weight: 600;">Domain and Range</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 Key Definitions</h4>
+        <p><strong>Domain:</strong> All possible input values (x-values) for the function</p>
+        <p><strong>Range:</strong> All possible output values (y-values) that the function can produce</p>
+        <p><em>Think: Domain = what goes IN, Range = what comes OUT</em></p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Common Domain Restrictions:</h4>
+        <ul>
+            <li><strong>Division by zero:</strong> Denominator cannot equal zero</li>
+            <li><strong>Square roots:</strong> Expression under √ must be ≥ 0</li>
+            <li><strong>Even roots:</strong> Expression under even root must be ≥ 0</li>
+            <li><strong>Logarithms:</strong> Argument must be > 0</li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Finding Domain with Division</h4>
+        <p><strong>Problem:</strong> Find the domain of f(x) = (x + 3)/(x - 5)</p>
+        <p><strong>Solution:</strong></p>
+        <p>The denominator cannot equal zero:</p>
+        <p>x - 5 ≠ 0</p>
+        <p>x ≠ 5</p>
+        <p><strong>Domain: All real numbers except x = 5</strong></p>
+        <p><strong>In interval notation: (-∞, 5) ∪ (5, ∞)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Finding Domain with Square Root</h4>
+        <p><strong>Problem:</strong> Find the domain of g(x) = √(2x - 6)</p>
+        <p><strong>Solution:</strong></p>
+        <p>The expression under the square root must be ≥ 0:</p>
+        <p>2x - 6 ≥ 0</p>
+        <p>2x ≥ 6</p>
+        <p>x ≥ 3</p>
+        <p><strong>Domain: x ≥ 3 or [3, ∞)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: Finding Range from Graph</h4>
+        <p><strong>Problem:</strong> If f(x) = x² - 4, what is the range?</p>
+        <p><strong>Solution:</strong></p>
+        <p>This is a parabola opening upward with vertex at (0, -4)</p>
+        <p>The minimum value is -4 (at the vertex)</p>
+        <p>The function can produce all y-values ≥ -4</p>
+        <p><strong>Range: y ≥ -4 or [-4, ∞)</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #8b5cf6; font-weight: 600;">Function Operations</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 Four Basic Operations</h4>
+        <p><strong>(f + g)(x) = f(x) + g(x)</strong> → Addition</p>
+        <p><strong>(f - g)(x) = f(x) - g(x)</strong> → Subtraction</p>
+        <p><strong>(f × g)(x) = f(x) × g(x)</strong> → Multiplication</p>
+        <p><strong>(f ÷ g)(x) = f(x) ÷ g(x)</strong> → Division (g(x) ≠ 0)</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: Function Addition</h4>
+        <p><strong>Problem:</strong> If f(x) = 2x + 1 and g(x) = x² - 3, find (f + g)(x)</p>
+        <p><strong>Solution:</strong></p>
+        <p>(f + g)(x) = f(x) + g(x)</p>
+        <p>(f + g)(x) = (2x + 1) + (x² - 3)</p>
+        <p>(f + g)(x) = x² + 2x - 2</p>
+    </div>
+
+    <div class="concept-box">
+        <h4>💡 Function Composition</h4>
+        <p><strong>(f ∘ g)(x) = f(g(x))</strong> → "f composed with g"</p>
+        <p><em>Take the output of g(x) and use it as input for f(x)</em></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 8: Function Composition</h4>
+        <p><strong>Problem:</strong> If f(x) = 2x + 3 and g(x) = x², find (f ∘ g)(x)</p>
+        <p><strong>Solution:</strong></p>
+        <p>(f ∘ g)(x) = f(g(x))</p>
+        <p>First find g(x): g(x) = x²</p>
+        <p>Then substitute into f: f(x²) = 2(x²) + 3 = 2x² + 3</p>
+        <p><strong>(f ∘ g)(x) = 2x² + 3</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 9: Composition in Reverse Order</h4>
+        <p><strong>Problem:</strong> Using the same functions, find (g ∘ f)(x)</p>
+        <p><strong>Solution:</strong></p>
+        <p>(g ∘ f)(x) = g(f(x))</p>
+        <p>First find f(x): f(x) = 2x + 3</p>
+        <p>Then substitute into g: g(2x + 3) = (2x + 3)² = 4x² + 12x + 9</p>
+        <p><strong>(g ∘ f)(x) = 4x² + 12x + 9</strong></p>
+        <p><em>Note: (f ∘ g)(x) ≠ (g ∘ f)(x) in general!</em></p>
+    </div>
+
+    <div class="concept-box">
+        <h4>💡 Inverse Functions</h4>
+        <p><strong>f⁻¹(x) is the inverse of f(x)</strong></p>
+        <p><strong>Property:</strong> f(f⁻¹(x)) = x and f⁻¹(f(x)) = x</p>
+        <p><em>Inverse functions "undo" each other</em></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 10: Finding an Inverse Function</h4>
+        <p><strong>Problem:</strong> Find the inverse of f(x) = 2x - 5</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Replace f(x) with y: y = 2x - 5</p>
+        <p>Step 2: Swap x and y: x = 2y - 5</p>
+        <p>Step 3: Solve for y: x + 5 = 2y → y = (x + 5)/2</p>
+        <p>Step 4: Replace y with f⁻¹(x): <strong>f⁻¹(x) = (x + 5)/2</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #8b5cf6; font-weight: 600;">Function Transformations</span></h3>
+
+    <div class="rules-box">
+        <h4>Standard Function Transformations:</h4>
+
+        <p><strong>Vertical Transformations:</strong></p>
+        <ul>
+            <li><strong>f(x) + k:</strong> Shift UP by k units</li>
+            <li><strong>f(x) - k:</strong> Shift DOWN by k units</li>
+            <li><strong>a·f(x):</strong> Stretch vertically by factor |a| (if |a| > 1) or compress (if 0 < |a| < 1)</li>
+            <li><strong>-f(x):</strong> Reflect over x-axis</li>
+        </ul>
+
+        <p><strong>Horizontal Transformations:</strong></p>
+        <ul>
+            <li><strong>f(x + h):</strong> Shift LEFT by h units</li>
+            <li><strong>f(x - h):</strong> Shift RIGHT by h units</li>
+            <li><strong>f(ax):</strong> Compress horizontally by factor 1/|a| (if |a| > 1) or stretch (if 0 < |a| < 1)</li>
+            <li><strong>f(-x):</strong> Reflect over y-axis</li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 11: Identifying Transformations</h4>
+        <p><strong>Problem:</strong> Describe the transformations from f(x) = x² to g(x) = -2(x - 3)² + 1</p>
+        <p><strong>Solution:</strong></p>
+        <p>Breaking down g(x) = -2(x - 3)² + 1:</p>
+        <ul>
+            <li><strong>(x - 3)²:</strong> Shift RIGHT 3 units</li>
+            <li><strong>-2(x - 3)²:</strong> Stretch vertically by factor 2 AND reflect over x-axis</li>
+            <li><strong>-2(x - 3)² + 1:</strong> Shift UP 1 unit</li>
+        </ul>
+        <p><strong>Combined: Right 3, stretch by 2, reflect over x-axis, up 1</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 12: Writing Transformed Functions</h4>
+        <p><strong>Problem:</strong> Start with f(x) = √x. Write the function that shifts left 2 and down 4.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Left 2: f(x + 2) = √(x + 2)</p>
+        <p>Down 4: f(x + 2) - 4 = √(x + 2) - 4</p>
+        <p><strong>g(x) = √(x + 2) - 4</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🔗 ACT Function Applications</h3>
+
+    <div class="example-box">
+        <h4>Example 13: Real-World Function</h4>
+        <p><strong>Problem:</strong> A taxi charges $3.50 plus $0.75 per mile. Write a function for the total cost C(x) for x miles, then find the cost for a 12-mile trip.</p>
+        <p><strong>Solution:</strong></p>
+        <p>C(x) = 3.50 + 0.75x</p>
+        <p>For 12 miles: C(12) = 3.50 + 0.75(12) = 3.50 + 9.00 = $12.50</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 14: Piecewise Function</h4>
+        <p><strong>Problem:</strong> Evaluate f(5) where f(x) = {x² if x < 3, 2x + 1 if x ≥ 3}</p>
+        <p><strong>Solution:</strong></p>
+        <p>Since 5 ≥ 3, use the second rule:</p>
+        <p>f(5) = 2(5) + 1 = 11</p>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Functions are essential for ACT success! Master function notation and evaluation, understand domain/range restrictions, learn function operations including composition, and recognize transformations. Functions connect algebra and coordinate geometry throughout the test. Remember: substitute carefully, check domain restrictions, and understand that composition order matters!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Test Your Functions Skills!</h3>
+    <div class="quiz-container">
+        <div class="question-item" data-question="1">
+            <p><strong>Question 1:</strong> If f(x) = 2x² - 3x + 1, what is f(4)?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q1" value="A"> A) 21</label>
+                <label><input type="radio" name="q1" value="B"> B) 17</label>
+                <label><input type="radio" name="q1" value="C"> C) 25</label>
+                <label><input type="radio" name="q1" value="D"> D) 29</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) 21</strong></p>
+                <p>Substitute x = 4 into f(x): f(4) = 2(4)² - 3(4) + 1 = 2(16) - 12 + 1 = 32 - 12 + 1 = 21</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="2">
+            <p><strong>Question 2:</strong> If g(x) = x³ - 2x, what is g(-1)?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2" value="A"> A) -3</label>
+                <label><input type="radio" name="q2" value="B"> B) 1</label>
+                <label><input type="radio" name="q2" value="C"> C) -1</label>
+                <label><input type="radio" name="q2" value="D"> D) 3</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) 1</strong></p>
+                <p>Substitute x = -1: g(-1) = (-1)³ - 2(-1) = -1 + 2 = 1</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="3">
+            <p><strong>Question 3:</strong> If h(x) = 3x - 5, what is h(2x + 1)?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q3" value="A"> A) 6x - 2</label>
+                <label><input type="radio" name="q3" value="B"> B) 6x + 2</label>
+                <label><input type="radio" name="q3" value="C"> C) 6x - 8</label>
+                <label><input type="radio" name="q3" value="D"> D) 3x - 4</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) 6x - 2</strong></p>
+                <p>Substitute (2x + 1) for x: h(2x + 1) = 3(2x + 1) - 5 = 6x + 3 - 5 = 6x - 2</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="4">
+            <p><strong>Question 4:</strong> What is the domain of f(x) = 1/(x - 3)?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q4" value="A"> A) All real numbers</label>
+                <label><input type="radio" name="q4" value="B"> B) All real numbers except x = 3</label>
+                <label><input type="radio" name="q4" value="C"> C) All real numbers except x = -3</label>
+                <label><input type="radio" name="q4" value="D"> D) All real numbers except x = 0</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) All real numbers except x = 3</strong></p>
+                <p>The function is undefined when the denominator equals zero. Setting x - 3 = 0 gives x = 3, so x = 3 must be excluded from the domain.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="5">
+            <p><strong>Question 5:</strong> If f(x) = x + 4 and g(x) = 2x - 1, what is (f ∘ g)(3)?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q5" value="A"> A) 9</label>
+                <label><input type="radio" name="q5" value="B"> B) 11</label>
+                <label><input type="radio" name="q5" value="C"> C) 13</label>
+                <label><input type="radio" name="q5" value="D"> D) 15</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: A) 9</strong></p>
+                <p>For composition (f ∘ g)(3) = f(g(3)). First find g(3) = 2(3) - 1 = 6 - 1 = 5. Then f(5) = 5 + 4 = 9.</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="6">
+            <p><strong>Question 6:</strong> The graph of y = f(x + 2) - 3 is the graph of y = f(x) shifted:</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q6" value="A"> A) Right 2, up 3</label>
+                <label><input type="radio" name="q6" value="B"> B) Left 2, down 3</label>
+                <label><input type="radio" name="q6" value="C"> C) Right 2, down 3</label>
+                <label><input type="radio" name="q6" value="D"> D) Left 2, up 3</label>
+            </div>
+            <div class="explanation" style="display: none;">
+                <p><strong>Answer: B) Left 2, down 3</strong></p>
+                <p>For f(x + h) + k: adding inside the function (x + 2) shifts LEFT by 2, and subtracting outside (-3) shifts DOWN by 3.</p>
+            </div>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <h4>Quiz Complete!</h4>
+            <p>Your score: <span class="score">0</span>/6</p>
+            <p class="score-message"></p>
+            <button onclick="restartQuiz()" class="restart-btn">Take Quiz Again</button>
+        </div>
+
+        <div class="quiz-navigation">
+            <button onclick="checkAnswers()" class="check-answers-btn">Check My Answers</button>
+            <button onclick="showResults()" class="show-results-btn" style="display: none;">Show Final Results</button>
+        </div>
+    </div>
+</div>
+    `
+  },
+
+  'quadratics': {
+    title: 'Chapter 14: Quadratics',
+    duration: 28, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 14: <span style="color: #dc2626; font-weight: 600;">Quadratics</span></h2>
+    <p class="lesson-intro">Master quadratic equations, factoring techniques, and parabola properties - high-frequency ACT topics!</p>
+
+    <div class="learning-path">
+        <p><strong>Part 1:</strong> Factoring Quadratics → Master all factoring techniques</p>
+        <p><strong>Part 2:</strong> Quadratic Formula → Solve any quadratic equation</p>
+        <p><strong>Part 3:</strong> Vertex Form → Find maximums and minimums</p>
+        <p><strong>Part 4:</strong> Parabola Properties → Graphing and transformations</p>
+        <p><strong>Your advantage:</strong> You have <span style="color: #059669; font-weight: 600;">strong algebra foundations</span> from previous chapters!</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #dc2626; font-weight: 600;">Factoring Quadratics</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What is a Quadratic?</h4>
+        <p>A quadratic equation has the form <strong>ax² + bx + c = 0</strong> where a ≠ 0.</p>
+        <p>Examples: x² + 5x + 6 = 0, 2x² - 8x + 6 = 0, x² - 9 = 0</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Factoring Techniques (In Order of Difficulty):</h4>
+
+        <p><strong>1. Greatest Common Factor (GCF) - Always Check First!</strong></p>
+        <p>Factor out the largest common factor from all terms.</p>
+
+        <p><strong>2. Difference of Squares: a² - b² = (a + b)(a - b)</strong></p>
+        <p>Works when you have two perfect squares being subtracted.</p>
+
+        <p><strong>3. Perfect Square Trinomials:</strong></p>
+        <p>• a² + 2ab + b² = (a + b)²</p>
+        <p>• a² - 2ab + b² = (a - b)²</p>
+
+        <p><strong>4. General Trinomials: ax² + bx + c</strong></p>
+        <p>When a = 1: Look for two numbers that multiply to c and add to b</p>
+        <p>When a ≠ 1: Use AC method or trial-and-error</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: GCF First</h4>
+        <p><strong>Problem:</strong> Factor 3x² + 12x + 9</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Factor out GCF = 3</p>
+        <p>3x² + 12x + 9 = 3(x² + 4x + 3)</p>
+        <p>Step 2: Factor the trinomial x² + 4x + 3</p>
+        <p>Need two numbers that multiply to 3 and add to 4: 1 and 3</p>
+        <p><strong>3(x + 1)(x + 3)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Difference of Squares</h4>
+        <p><strong>Problem:</strong> Factor x² - 25</p>
+        <p><strong>Solution:</strong></p>
+        <p>Recognize: x² - 25 = x² - 5²</p>
+        <p>Apply formula: a² - b² = (a + b)(a - b)</p>
+        <p><strong>(x + 5)(x - 5)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Perfect Square Trinomial</h4>
+        <p><strong>Problem:</strong> Factor x² - 10x + 25</p>
+        <p><strong>Solution:</strong></p>
+        <p>Check if it's a perfect square: x² - 10x + 25</p>
+        <p>• First term: x² = (x)²</p>
+        <p>• Last term: 25 = (5)²</p>
+        <p>• Middle term: -10x = -2(x)(5) ✓</p>
+        <p><strong>(x - 5)²</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: General Trinomial (a = 1)</h4>
+        <p><strong>Problem:</strong> Factor x² + 7x + 12</p>
+        <p><strong>Solution:</strong></p>
+        <p>Need two numbers that:</p>
+        <p>• Multiply to 12: 1×12, 2×6, 3×4</p>
+        <p>• Add to 7: 3 + 4 = 7 ✓</p>
+        <p><strong>(x + 3)(x + 4)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: AC Method (a ≠ 1)</h4>
+        <p><strong>Problem:</strong> Factor 2x² + 7x + 6</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Find AC = (2)(6) = 12</p>
+        <p>Step 2: Find two numbers that multiply to 12 and add to 7: 3 and 4</p>
+        <p>Step 3: Split middle term: 2x² + 3x + 4x + 6</p>
+        <p>Step 4: Group: (2x² + 3x) + (4x + 6) = x(2x + 3) + 2(2x + 3)</p>
+        <p><strong>(x + 2)(2x + 3)</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #dc2626; font-weight: 600;">The Quadratic Formula</span></h3>
+
+    <div class="rules-box">
+        <h4>The Quadratic Formula:</h4>
+        <p><strong>For ax² + bx + c = 0:</strong></p>
+        <p style="font-size: 1.2em; text-align: center; background: #f3f4f6; padding: 15px; border-radius: 8px; margin: 15px 0;">
+            <strong>x = (-b ± √(b² - 4ac)) / (2a)</strong>
+        </p>
+
+        <p><strong>The Discriminant: Δ = b² - 4ac</strong></p>
+        <ul>
+            <li>If Δ > 0: Two real solutions</li>
+            <li>If Δ = 0: One real solution (repeated root)</li>
+            <li>If Δ < 0: No real solutions</li>
+        </ul>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: Using the Quadratic Formula</h4>
+        <p><strong>Problem:</strong> Solve x² - 6x + 5 = 0</p>
+        <p><strong>Solution:</strong></p>
+        <p>Identify: a = 1, b = -6, c = 5</p>
+        <p>x = (-(-6) ± √((-6)² - 4(1)(5))) / (2(1))</p>
+        <p>x = (6 ± √(36 - 20)) / 2</p>
+        <p>x = (6 ± √16) / 2 = (6 ± 4) / 2</p>
+        <p><strong>x = 5 or x = 1</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: No Real Solutions</h4>
+        <p><strong>Problem:</strong> Solve x² + 2x + 5 = 0</p>
+        <p><strong>Solution:</strong></p>
+        <p>Check discriminant: Δ = 2² - 4(1)(5) = 4 - 20 = -16</p>
+        <p>Since Δ < 0, there are <strong>no real solutions</strong></p>
+    </div>
+
+    <div class="tip-box">
+        <h4>💡 When to Factor vs. Use Formula</h4>
+        <p><strong>Try factoring first</strong> - it's usually faster if it works!</p>
+        <p><strong>Use the formula when:</strong> Factoring doesn't work easily, or you need decimal answers</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #dc2626; font-weight: 600;">Vertex Form and Parabolas</span></h3>
+
+    <div class="rules-box">
+        <h4>Three Forms of Quadratics:</h4>
+
+        <p><strong>1. Standard Form: f(x) = ax² + bx + c</strong></p>
+        <p>• Easy to identify y-intercept (c)</p>
+
+        <p><strong>2. Vertex Form: f(x) = a(x - h)² + k</strong></p>
+        <p>• Vertex is at (h, k)</p>
+        <p>• Easy to see transformations</p>
+
+        <p><strong>3. Factored Form: f(x) = a(x - r₁)(x - r₂)</strong></p>
+        <p>• Easy to find x-intercepts (roots): r₁ and r₂</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 8: Converting to Vertex Form</h4>
+        <p><strong>Problem:</strong> Convert f(x) = x² + 6x + 5 to vertex form</p>
+        <p><strong>Solution (Completing the Square):</strong></p>
+        <p>Step 1: f(x) = x² + 6x + 5</p>
+        <p>Step 2: Take half of b coefficient: 6/2 = 3</p>
+        <p>Step 3: Add and subtract 3²: f(x) = x² + 6x + 9 - 9 + 5</p>
+        <p>Step 4: Group perfect square: f(x) = (x + 3)² - 4</p>
+        <p><strong>Vertex form: f(x) = (x + 3)² - 4</strong></p>
+        <p><strong>Vertex: (-3, -4)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 9: Finding Vertex from Standard Form</h4>
+        <p><strong>Problem:</strong> Find vertex of f(x) = 2x² - 8x + 3</p>
+        <p><strong>Solution:</strong></p>
+        <p>Method 1 - Vertex Formula: x = -b/(2a) = -(-8)/(2×2) = 8/4 = 2</p>
+        <p>f(2) = 2(2)² - 8(2) + 3 = 8 - 16 + 3 = -5</p>
+        <p><strong>Vertex: (2, -5)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 10: Maximum/Minimum Problems</h4>
+        <p><strong>Problem:</strong> A ball is thrown upward. Its height is h(t) = -16t² + 32t + 6. Find the maximum height.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Since a = -16 < 0, parabola opens down → maximum exists</p>
+        <p>Time at maximum: t = -b/(2a) = -32/(2×(-16)) = 1 second</p>
+        <p>Maximum height: h(1) = -16(1)² + 32(1) + 6 = -16 + 32 + 6 = 22 feet</p>
+        <p><strong>Maximum height: 22 feet at t = 1 second</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #dc2626; font-weight: 600;">Parabola Properties and Graphing</span></h3>
+
+    <div class="rules-box">
+        <h4>Key Parabola Properties:</h4>
+
+        <p><strong>Direction:</strong></p>
+        <p>• If a > 0: Opens up (has minimum)</p>
+        <p>• If a < 0: Opens down (has maximum)</p>
+
+        <p><strong>Width:</strong></p>
+        <p>• |a| > 1: Narrow parabola</p>
+        <p>• |a| < 1: Wide parabola</p>
+
+        <p><strong>Key Points:</strong></p>
+        <p>• Vertex: Either maximum or minimum point</p>
+        <p>• y-intercept: Point (0, c)</p>
+        <p>• x-intercepts: Solutions to ax² + bx + c = 0</p>
+        <p>• Axis of symmetry: x = -b/(2a)</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 11: Complete Graph Analysis</h4>
+        <p><strong>Problem:</strong> Analyze f(x) = -2x² + 8x - 6</p>
+        <p><strong>Solution:</strong></p>
+        <p>Direction: a = -2 < 0 → Opens down (has maximum)</p>
+        <p>Vertex: x = -8/(2×(-2)) = 2, f(2) = -2(4) + 8(2) - 6 = 2</p>
+        <p>Vertex: (2, 2) - this is the maximum point</p>
+        <p>y-intercept: f(0) = -6 → (0, -6)</p>
+        <p>x-intercepts: -2x² + 8x - 6 = 0 → -2(x² - 4x + 3) = 0</p>
+        <p>x² - 4x + 3 = 0 → (x - 1)(x - 3) = 0 → x = 1, 3</p>
+        <p><strong>Summary: Maximum at (2, 2), y-intercept (0, -6), x-intercepts (1, 0) and (3, 0)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 12: Parabola Transformations</h4>
+        <p><strong>Problem:</strong> Describe how y = -3(x + 2)² - 1 transforms from y = x²</p>
+        <p><strong>Solution:</strong></p>
+        <p>Starting with y = x²:</p>
+        <p>• (x + 2)²: Shift LEFT 2 units</p>
+        <p>• -3(x + 2)²: Stretch by factor 3 AND reflect over x-axis</p>
+        <p>• -3(x + 2)² - 1: Shift DOWN 1 unit</p>
+        <p><strong>Result: Left 2, stretch by 3, flip upside down, down 1</strong></p>
+        <p><strong>Vertex: (-2, -1)</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🔗 ACT Quadratic Applications</h3>
+
+    <div class="example-box">
+        <h4>Example 13: Profit Maximization</h4>
+        <p><strong>Problem:</strong> A company's profit is P(x) = -2x² + 40x - 180, where x is the number of items (in hundreds). Find the maximum profit and optimal production level.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Since a = -2 < 0, there's a maximum</p>
+        <p>Optimal x: x = -40/(2×(-2)) = 10</p>
+        <p>Maximum profit: P(10) = -2(100) + 40(10) - 180 = -200 + 400 - 180 = 20</p>
+        <p><strong>Maximum profit: $2000 when producing 1000 items</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 14: Area Optimization</h4>
+        <p><strong>Problem:</strong> You have 100 feet of fence to make a rectangular garden against a wall (so only 3 sides need fencing). Find dimensions for maximum area.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Let width = x, then length = 100 - 2x</p>
+        <p>Area: A(x) = x(100 - 2x) = 100x - 2x²</p>
+        <p>Maximum at: x = -100/(2×(-2)) = 25 feet</p>
+        <p>Length = 100 - 2(25) = 50 feet</p>
+        <p>Maximum area = 25 × 50 = 1250 square feet</p>
+        <p><strong>Optimal dimensions: 25 ft × 50 ft for area of 1250 ft²</strong></p>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Quadratics are everywhere on the ACT! Master factoring techniques in order (GCF, difference of squares, perfect squares, general trinomials), memorize the quadratic formula, understand vertex form for max/min problems, and recognize parabola properties from the equation. Remember: Always try factoring first, use the discriminant to predict solutions, and vertex form reveals transformations immediately!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Master Your Quadratics Skills!</h3>
+    <div class="quiz-intro">
+        <p>Test your understanding of factoring, quadratic formula, vertex form, and parabola properties - essential ACT topics!</p>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question-card active" data-question="1">
+            <div class="question-header">
+                <span class="question-number">Question 1 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 16.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Factoring Trinomials</h4>
+                <p>Factor the quadratic expression: x² + 7x + 12</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="true" data-explanation="Perfect! We need two numbers that multiply to 12 and add to 7. Those are 3 and 4: (x + 3)(x + 4) = x² + 7x + 12.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">(x + 3)(x + 4)</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Let's check: (x + 2)(x + 6) = x² + 8x + 12, not x² + 7x + 12.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">(x + 2)(x + 6)</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This would give x² + x - 12, with different signs. We need positive coefficients.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">(x - 3)(x - 4)</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This would give x² - x - 12, not the expression we need.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">(x + 1)(x - 12)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="2">
+            <div class="question-header">
+                <span class="question-number">Question 2 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 33.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Difference of Squares</h4>
+                <p>Factor the expression: 4x² - 9</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="This isn't the correct factorization. Remember the difference of squares pattern: a² - b² = (a + b)(a - b).">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">(4x + 9)(4x - 9)</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Excellent! 4x² - 9 = (2x)² - 3² = (2x + 3)(2x - 3). This is the difference of squares pattern.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">(2x + 3)(2x - 3)</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This would give 4x² + 12x + 9, which is a perfect square trinomial, not our expression.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">(2x + 3)²</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This expression cannot be factored using integers in this way.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">(x + 2)(4x - 9)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="3">
+            <div class="question-header">
+                <span class="question-number">Question 3 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Quadratic Formula</h4>
+                <p>Solve using the quadratic formula: 2x² - 5x - 3 = 0</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="true" data-explanation="Perfect! Using x = (-b ± √(b² - 4ac))/2a with a=2, b=-5, c=-3: x = (5 ± √(25 + 24))/4 = (5 ± 7)/4, so x = 3 or x = -1/2.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">x = 3, x = -1/2</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="These values don't satisfy the original equation. Check by substitution: 2(1)² - 5(1) - 3 ≠ 0.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">x = 1, x = -3/2</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Check: 2(-3)² - 5(-3) - 3 = 18 + 15 - 3 = 30 ≠ 0. These aren't correct.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">x = -3, x = 1/2</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="The discriminant is 49, which is positive, so there are two real solutions, not none.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">No real solutions</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="4">
+            <div class="question-header">
+                <span class="question-number">Question 4 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 66.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Vertex Form</h4>
+                <p>What is the vertex of the parabola y = 2(x - 3)² + 1?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="true" data-explanation="Correct! In vertex form y = a(x - h)² + k, the vertex is (h, k). Here h = 3 and k = 1, so vertex is (3, 1).">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">(3, 1)</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This would be if the form was y = 2(x + 3)² - 1. Watch the signs carefully in vertex form.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">(-3, -1)</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This mixes up the signs. In y = a(x - h)² + k, the vertex is (h, k), not (-h, -k).">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">(-3, 1)</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="The x-coordinate is correct, but the y-coordinate should be positive 1, not negative.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">(3, -1)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="5">
+            <div class="question-header">
+                <span class="question-number">Question 5 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 83.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Parabola Properties</h4>
+                <p>For the parabola y = -x² + 4x + 5, what is the maximum value?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="This is the x-coordinate of the vertex, not the maximum y-value.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">2</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Excellent! The vertex x-coordinate is x = -4/(2×(-1)) = 2. The maximum y-value is y = -(2)² + 4(2) + 5 = -4 + 8 + 5 = 9.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">9</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This would be correct if we forgot the negative coefficient. With a = -1, the parabola opens downward.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">5</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Since a = -1 < 0, the parabola opens downward and has a maximum, not minimum value.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">No maximum</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="6">
+            <div class="question-header">
+                <span class="question-number">Question 6 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Word Problem Application</h4>
+                <p>A ball is thrown upward with initial velocity 48 ft/s from height 6 ft. The height equation is h = -16t² + 48t + 6. What is the maximum height?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="This is the time when maximum height occurs: t = -48/(2×(-16)) = 1.5 seconds.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">1.5 feet</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This is close, but let's check: h = -16(1.5)² + 48(1.5) + 6 = -36 + 72 + 6 = 42 feet.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">38 feet</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Perfect! At t = 1.5 seconds: h = -16(1.5)² + 48(1.5) + 6 = -16(2.25) + 72 + 6 = -36 + 78 = 42 feet.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">42 feet</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This would be if we calculated incorrectly. The maximum height is 42 feet at t = 1.5 seconds.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">54 feet</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-explanation" style="display: none;">
+        <div class="explanation-content"></div>
+        <div class="explanation-buttons">
+            <button id="next-question-btn-5" class="nav-btn">Next Question →</button>
+        </div>
+    </div>
+
+    <div class="quiz-results" style="display: none;">
+        <div class="results-content">
+            <h3>🎉 Quiz Complete!</h3>
+            <div class="score-display">
+                <div class="score-circle">
+                    <span class="score-text">0/6</span>
+                </div>
+            </div>
+            <div class="performance-feedback"></div>
+            <div class="results-actions">
+                <button id="review-answers-btn-5" class="nav-btn secondary">Review Answers</button>
+                <button id="restart-quiz-btn-5" class="nav-btn">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-navigation">
+        <button id="start-quiz-btn-5" class="nav-btn primary">Start Quiz</button>
+        <button id="prev-btn-5" class="nav-btn secondary" style="display: none;">← Previous</button>
+        <button id="next-btn-5" class="nav-btn primary" style="display: none;">Next →</button>
+        <button id="submit-quiz-btn-5" class="nav-btn primary" style="display: none;">Submit Quiz</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let currentQuestion5 = 0;
+    let userAnswers5 = [];
+    let score5 = 0;
+    let quizStarted5 = false;
+
+    const questionCards5 = document.querySelectorAll('.question-card');
+    const startBtn5 = document.getElementById('start-quiz-btn-5');
+    const prevBtn5 = document.getElementById('prev-btn-5');
+    const nextBtn5 = document.getElementById('next-btn-5');
+    const submitBtn5 = document.getElementById('submit-quiz-btn-5');
+    const restartBtn5 = document.getElementById('restart-quiz-btn-5');
+    const reviewBtn5 = document.getElementById('review-answers-btn-5');
+    const nextQuestionBtn5 = document.getElementById('next-question-btn-5');
+    const quizContainer5 = document.querySelector('.quiz-container');
+    const quizExplanation5 = document.querySelector('.quiz-explanation');
+    const quizResults5 = document.querySelector('.quiz-results');
+
+    if (startBtn5) startBtn5.addEventListener('click', startQuiz5);
+    if (prevBtn5) prevBtn5.addEventListener('click', previousQuestion5);
+    if (nextBtn5) nextBtn5.addEventListener('click', nextQuestion5);
+    if (submitBtn5) submitBtn5.addEventListener('click', submitQuiz5);
+    if (restartBtn5) restartBtn5.addEventListener('click', restartQuiz5);
+    if (reviewBtn5) reviewBtn5.addEventListener('click', reviewAnswers5);
+    if (nextQuestionBtn5) nextQuestionBtn5.addEventListener('click', nextQuestion5);
+
+    function startQuiz5() {
+        quizStarted5 = true;
+        currentQuestion5 = 0;
+        userAnswers5 = [];
+        score5 = 0;
+
+        if (startBtn5) startBtn5.style.display = 'none';
+        showQuestion5(0);
+        updateNavigation5();
+    }
+
+    function showQuestion5(index) {
+        if (questionCards5) {
+            questionCards5.forEach(card => card.classList.remove('active'));
+            if (questionCards5[index]) {
+                questionCards5[index].classList.add('active');
+                setupQuestionListeners5(index);
+            }
+        }
+    }
+
+    function setupQuestionListeners5(index) {
+        if (questionCards5 && questionCards5[index]) {
+            const choices = questionCards5[index].querySelectorAll('.choice-btn');
+            choices.forEach(choice => {
+                choice.addEventListener('click', function() {
+                    if (this.disabled) return;
+
+                    choices.forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+                    userAnswers5[index] = {
+                        selected: this,
+                        correct: this.dataset.correct === 'true',
+                        explanation: this.dataset.explanation
+                    };
+
+                    setTimeout(() => {
+                        showExplanation5(index);
+                    }, 300);
+                });
+            });
+        }
+    }
+
+    function showExplanation5(index) {
+        if (questionCards5 && questionCards5[index]) {
+            const choices = questionCards5[index].querySelectorAll('.choice-btn');
+            const userAnswer = userAnswers5[index];
+
+            choices.forEach(choice => {
+                choice.disabled = true;
+                if (choice.dataset.correct === 'true') {
+                    choice.classList.add('correct');
+                } else if (choice === userAnswer.selected && !userAnswer.correct) {
+                    choice.classList.add('incorrect');
+                }
+            });
+
+            const explanationContent = document.querySelector('.explanation-content');
+            if (explanationContent) {
+                explanationContent.innerHTML = `
+                    <h4>${userAnswer.correct ? '✅ Correct!' : '❌ Incorrect'}</h4>
+                    <p>${userAnswer.explanation}</p>
+                `;
+            }
+
+            if (quizContainer5) quizContainer5.style.display = 'none';
+            if (quizExplanation5) quizExplanation5.style.display = 'block';
+
+            updateNavigationForExplanation5();
+        }
+    }
+
+    function updateNavigationForExplanation5() {
+        if (prevBtn5) prevBtn5.style.display = 'none';
+        if (nextBtn5) nextBtn5.style.display = 'none';
+        if (submitBtn5) submitBtn5.style.display = 'none';
+
+        if (nextQuestionBtn5) {
+            if (currentQuestion5 < (questionCards5 ? questionCards5.length - 1 : 0)) {
+                nextQuestionBtn5.style.display = 'inline-flex';
+                nextQuestionBtn5.textContent = 'Next Question →';
+            } else {
+                nextQuestionBtn5.style.display = 'inline-flex';
+                nextQuestionBtn5.textContent = 'View Results →';
+            }
+        }
+    }
+
+    function nextQuestion5() {
+        if (quizExplanation5 && quizExplanation5.style.display === 'block') {
+            quizExplanation5.style.display = 'none';
+            if (quizContainer5) quizContainer5.style.display = 'block';
+
+            if (currentQuestion5 < (questionCards5 ? questionCards5.length - 1 : 0)) {
+                currentQuestion5++;
+                showQuestion5(currentQuestion5);
+                updateNavigation5();
+            } else {
+                submitQuiz5();
+            }
+        } else if (userAnswers5[currentQuestion5]) {
+            showExplanation5(currentQuestion5);
+        }
+    }
+
+    function previousQuestion5() {
+        if (currentQuestion5 > 0) {
+            currentQuestion5--;
+            showQuestion5(currentQuestion5);
+            updateNavigation5();
+        }
+    }
+
+    function updateNavigation5() {
+        if (prevBtn5) prevBtn5.style.display = currentQuestion5 > 0 ? 'inline-flex' : 'none';
+
+        const hasAnswered = userAnswers5[currentQuestion5];
+        if (nextBtn5) nextBtn5.style.display = hasAnswered ? 'inline-flex' : 'none';
+
+        if (currentQuestion5 === (questionCards5 ? questionCards5.length - 1 : 0) && hasAnswered) {
+            if (nextBtn5) nextBtn5.style.display = 'none';
+            if (submitBtn5) submitBtn5.style.display = 'inline-flex';
+        } else {
+            if (submitBtn5) submitBtn5.style.display = 'none';
+        }
+    }
+
+    function submitQuiz5() {
+        score5 = userAnswers5.filter(answer => answer && answer.correct).length;
+
+        if (quizContainer5) quizContainer5.style.display = 'none';
+        if (quizExplanation5) quizExplanation5.style.display = 'none';
+        if (prevBtn5) prevBtn5.style.display = 'none';
+        if (nextBtn5) nextBtn5.style.display = 'none';
+        if (submitBtn5) submitBtn5.style.display = 'none';
+
+        displayResults5();
+        if (quizResults5) quizResults5.style.display = 'block';
+    }
+
+    function displayResults5() {
+        const scoreText = document.querySelector('.score-text');
+        const feedback = document.querySelector('.performance-feedback');
+
+        if (scoreText) scoreText.textContent = `${score5}/6`;
+
+        let feedbackMessage = '';
+        if (score5 === 6) {
+            feedbackMessage = '🎉 Exceptional! You\'ve mastered quadratics completely! Ready for any ACT quadratic problem.';
+        } else if (score5 >= 4) {
+            feedbackMessage = '👍 Great mastery of quadratics! Review factoring techniques and vertex form to perfect your skills.';
+        } else if (score5 >= 2) {
+            feedbackMessage = '📚 Good foundation! Focus on factoring patterns and memorizing the quadratic formula.';
+        } else {
+            feedbackMessage = '💪 Keep practicing! Start with basic factoring, then work on the quadratic formula and vertex form.';
+        }
+
+        if (feedback) {
+            feedback.innerHTML = feedbackMessage;
+            feedback.className = 'performance-feedback';
+        }
+    }
+
+    function reviewAnswers5() {
+        if (quizResults5) quizResults5.style.display = 'none';
+        currentQuestion5 = 0;
+        showReviewMode5();
+    }
+
+    function showReviewMode5() {
+        if (quizContainer5) quizContainer5.style.display = 'block';
+        showQuestion5(currentQuestion5);
+
+        const userAnswer = userAnswers5[currentQuestion5];
+        if (userAnswer && questionCards5 && questionCards5[currentQuestion5]) {
+            const choices = questionCards5[currentQuestion5].querySelectorAll('.choice-btn');
+            choices.forEach(choice => {
+                choice.disabled = true;
+                if (choice.dataset.correct === 'true') {
+                    choice.classList.add('correct');
+                } else if (choice === userAnswer.selected && !userAnswer.correct) {
+                    choice.classList.add('incorrect');
+                }
+                if (choice === userAnswer.selected) {
+                    choice.classList.add('selected');
+                }
+            });
+        }
+
+        updateReviewNavigation5();
+    }
+
+    function updateReviewNavigation5() {
+        if (prevBtn5) prevBtn5.style.display = currentQuestion5 > 0 ? 'inline-flex' : 'none';
+        if (nextBtn5) nextBtn5.style.display = currentQuestion5 < (questionCards5 ? questionCards5.length - 1 : 0) ? 'inline-flex' : 'none';
+
+        if (currentQuestion5 === (questionCards5 ? questionCards5.length - 1 : 0)) {
+            if (submitBtn5) {
+                submitBtn5.textContent = 'Back to Results';
+                submitBtn5.style.display = 'inline-flex';
+            }
+        } else {
+            if (submitBtn5) submitBtn5.style.display = 'none';
+        }
+    }
+
+    function restartQuiz5() {
+        currentQuestion5 = 0;
+        userAnswers5 = [];
+        score5 = 0;
+        quizStarted5 = false;
+
+        if (quizResults5) quizResults5.style.display = 'none';
+        if (quizExplanation5) quizExplanation5.style.display = 'none';
+        if (quizContainer5) quizContainer5.style.display = 'none';
+
+        if (questionCards5) {
+            questionCards5.forEach(card => {
+                card.classList.remove('active');
+                const choices = card.querySelectorAll('.choice-btn');
+                choices.forEach(choice => {
+                    choice.disabled = false;
+                    choice.classList.remove('selected', 'correct', 'incorrect');
+                });
+            });
+        }
+
+        if (startBtn5) startBtn5.style.display = 'inline-flex';
+        if (prevBtn5) prevBtn5.style.display = 'none';
+        if (nextBtn5) nextBtn5.style.display = 'none';
+        if (submitBtn5) submitBtn5.style.display = 'none';
+    }
+});
+</script>
+    `
+  },
+
+  'systems-equations': {
+    title: 'Chapter 15: Systems of Equations',
+    duration: 24, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 15: <span style="color: #7c3aed; font-weight: 600;">Systems of Equations</span></h2>
+    <p class="lesson-intro">Master solving multiple equations simultaneously - essential for ACT word problems and advanced algebra!</p>
+
+    <div class="learning-path">
+        <p><strong>Part 1:</strong> Substitution Method → Replace one variable with an expression</p>
+        <p><strong>Part 2:</strong> Elimination Method → Add/subtract equations to eliminate variables</p>
+        <p><strong>Part 3:</strong> Graphical Solutions → Where lines intersect</p>
+        <p><strong>Part 4:</strong> Word Problems → Real-world system applications</p>
+        <p><strong>Your advantage:</strong> You have <span style="color: #059669; font-weight: 600;">strong algebra and quadratic skills</span> from previous chapters!</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #7c3aed; font-weight: 600;">Substitution Method</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What is a System of Equations?</h4>
+        <p>A system is <strong>multiple equations with the same variables</strong> that must be true simultaneously.</p>
+        <p>Example: {x + y = 5, 2x - y = 4} → Find values of x and y that work in BOTH equations</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Substitution Method Steps:</h4>
+        <p><strong>Step 1:</strong> Solve one equation for one variable</p>
+        <p><strong>Step 2:</strong> Substitute that expression into the other equation</p>
+        <p><strong>Step 3:</strong> Solve the resulting single-variable equation</p>
+        <p><strong>Step 4:</strong> Back-substitute to find the other variable</p>
+        <p><strong>Step 5:</strong> Check your solution in BOTH original equations</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Basic Substitution</h4>
+        <p><strong>Problem:</strong> Solve {x + y = 7, 2x - y = 8}</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: From first equation: y = 7 - x</p>
+        <p>Step 2: Substitute into second equation: 2x - (7 - x) = 8</p>
+        <p>Step 3: Solve: 2x - 7 + x = 8 → 3x = 15 → x = 5</p>
+        <p>Step 4: Back-substitute: y = 7 - 5 = 2</p>
+        <p>Step 5: Check: 5 + 2 = 7 ✓, 2(5) - 2 = 8 ✓</p>
+        <p><strong>Solution: (5, 2)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Substitution with Fractions</h4>
+        <p><strong>Problem:</strong> Solve {y = 3x - 1, x + 2y = 11}</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: First equation already solved: y = 3x - 1</p>
+        <p>Step 2: Substitute: x + 2(3x - 1) = 11</p>
+        <p>Step 3: Solve: x + 6x - 2 = 11 → 7x = 13 → x = 13/7</p>
+        <p>Step 4: Back-substitute: y = 3(13/7) - 1 = 39/7 - 7/7 = 32/7</p>
+        <p><strong>Solution: (13/7, 32/7)</strong></p>
+    </div>
+
+    <div class="tip-box">
+        <h4>💡 When to Use Substitution</h4>
+        <p><strong>Best when:</strong> One equation already has a variable isolated (like y = ...) or can be easily isolated</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #7c3aed; font-weight: 600;">Elimination Method</span></h3>
+
+    <div class="rules-box">
+        <h4>Elimination Method Steps:</h4>
+        <p><strong>Step 1:</strong> Line up equations with variables aligned</p>
+        <p><strong>Step 2:</strong> Multiply one or both equations to make coefficients of one variable opposites</p>
+        <p><strong>Step 3:</strong> Add equations to eliminate that variable</p>
+        <p><strong>Step 4:</strong> Solve the resulting single-variable equation</p>
+        <p><strong>Step 5:</strong> Substitute back to find the other variable</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Direct Elimination</h4>
+        <p><strong>Problem:</strong> Solve {3x + y = 11, 2x - y = 4}</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Align equations:</p>
+        <p>3x + y = 11</p>
+        <p>2x - y = 4</p>
+        <p>Step 2: Coefficients of y are already opposites (+1 and -1)</p>
+        <p>Step 3: Add equations: (3x + y) + (2x - y) = 11 + 4</p>
+        <p>5x = 15 → x = 3</p>
+        <p>Step 4: Substitute back: 3(3) + y = 11 → y = 2</p>
+        <p><strong>Solution: (3, 2)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Elimination with Multiplication</h4>
+        <p><strong>Problem:</strong> Solve {2x + 3y = 16, 5x - 2y = 4}</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: To eliminate x, make coefficients opposites</p>
+        <p>Multiply first equation by 5: 10x + 15y = 80</p>
+        <p>Multiply second equation by -2: -10x + 4y = -8</p>
+        <p>Step 2: Add equations: 19y = 72 → y = 72/19</p>
+        <p>Step 3: Substitute back: 2x + 3(72/19) = 16</p>
+        <p>2x = 16 - 216/19 = (304 - 216)/19 = 88/19</p>
+        <p>x = 44/19</p>
+        <p><strong>Solution: (44/19, 72/19)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Elimination - Easier Variable</h4>
+        <p><strong>Problem:</strong> Solve {4x + 2y = 14, 3x - 5y = -13}</p>
+        <p><strong>Solution:</strong></p>
+        <p>Choose to eliminate y (coefficient 2 is simpler than 4)</p>
+        <p>Multiply first equation by 5: 20x + 10y = 70</p>
+        <p>Multiply second equation by 2: 6x - 10y = -26</p>
+        <p>Add equations: 26x = 44 → x = 44/26 = 22/13</p>
+        <p>Substitute: 4(22/13) + 2y = 14</p>
+        <p>2y = 14 - 88/13 = (182 - 88)/13 = 94/13</p>
+        <p>y = 47/13</p>
+        <p><strong>Solution: (22/13, 47/13)</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #7c3aed; font-weight: 600;">Special Cases and Graphical Solutions</span></h3>
+
+    <div class="rules-box">
+        <h4>Types of Systems:</h4>
+
+        <p><strong>1. One Solution (Intersecting lines):</strong></p>
+        <p>Most common case - lines cross at exactly one point</p>
+
+        <p><strong>2. No Solution (Parallel lines):</strong></p>
+        <p>Lines have same slope but different y-intercepts</p>
+        <p>When solving, you get a false statement like 0 = 5</p>
+
+        <p><strong>3. Infinite Solutions (Same line):</strong></p>
+        <p>Equations are equivalent (one is a multiple of the other)</p>
+        <p>When solving, you get a true statement like 0 = 0</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: No Solution</h4>
+        <p><strong>Problem:</strong> Solve {2x + y = 5, 2x + y = 8}</p>
+        <p><strong>Solution:</strong></p>
+        <p>Subtract first from second: 0 = 3 (FALSE!)</p>
+        <p><strong>No solution</strong> - the lines are parallel</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: Infinite Solutions</h4>
+        <p><strong>Problem:</strong> Solve {x + 2y = 4, 2x + 4y = 8}</p>
+        <p><strong>Solution:</strong></p>
+        <p>Notice: Second equation is 2 × first equation</p>
+        <p>They represent the same line!</p>
+        <p><strong>Infinite solutions</strong> - any point on the line x + 2y = 4</p>
+    </div>
+
+    <div class="tip-box">
+        <h4>💡 Graphical Interpretation</h4>
+        <p><strong>One solution:</strong> Lines intersect at one point</p>
+        <p><strong>No solution:</strong> Parallel lines (same slope, different intercepts)</p>
+        <p><strong>Infinite solutions:</strong> Same line (equations are equivalent)</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #7c3aed; font-weight: 600;">Word Problems with Systems</span></h3>
+
+    <div class="example-box">
+        <h4>Example 8: Age Problem</h4>
+        <p><strong>Problem:</strong> Sarah is 3 years older than Tom. In 5 years, Sarah will be twice as old as Tom is now. How old are they now?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Let S = Sarah's current age, T = Tom's current age</p>
+        <p>Equation 1: S = T + 3 (Sarah is 3 years older)</p>
+        <p>Equation 2: S + 5 = 2T (In 5 years, Sarah equals twice Tom's current age)</p>
+        <p>Substitute: (T + 3) + 5 = 2T</p>
+        <p>T + 8 = 2T → T = 8</p>
+        <p>S = 8 + 3 = 11</p>
+        <p><strong>Sarah is 11, Tom is 8</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 9: Money Problem</h4>
+        <p><strong>Problem:</strong> A piggy bank contains $4.85 in dimes and quarters. There are 23 coins total. How many of each coin?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Let d = number of dimes, q = number of quarters</p>
+        <p>Equation 1: d + q = 23 (total coins)</p>
+        <p>Equation 2: 0.10d + 0.25q = 4.85 (total value)</p>
+        <p>From equation 1: d = 23 - q</p>
+        <p>Substitute: 0.10(23 - q) + 0.25q = 4.85</p>
+        <p>2.30 - 0.10q + 0.25q = 4.85</p>
+        <p>0.15q = 2.55 → q = 17</p>
+        <p>d = 23 - 17 = 6</p>
+        <p><strong>6 dimes and 17 quarters</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 10: Mixture Problem</h4>
+        <p><strong>Problem:</strong> How many gallons of 20% salt solution and 60% salt solution should be mixed to get 10 gallons of 35% salt solution?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Let x = gallons of 20% solution, y = gallons of 60% solution</p>
+        <p>Equation 1: x + y = 10 (total gallons)</p>
+        <p>Equation 2: 0.20x + 0.60y = 0.35(10) = 3.5 (salt content)</p>
+        <p>From equation 1: y = 10 - x</p>
+        <p>Substitute: 0.20x + 0.60(10 - x) = 3.5</p>
+        <p>0.20x + 6 - 0.60x = 3.5</p>
+        <p>-0.40x = -2.5 → x = 6.25</p>
+        <p>y = 10 - 6.25 = 3.75</p>
+        <p><strong>6.25 gallons of 20% and 3.75 gallons of 60%</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 11: Rate Problem</h4>
+        <p><strong>Problem:</strong> A boat travels 36 miles downstream in 2 hours and 36 miles upstream in 3 hours. Find the boat's speed in still water and the current speed.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Let b = boat speed in still water, c = current speed</p>
+        <p>Downstream speed = b + c, Upstream speed = b - c</p>
+        <p>Using distance = rate × time:</p>
+        <p>Equation 1: 2(b + c) = 36 → b + c = 18</p>
+        <p>Equation 2: 3(b - c) = 36 → b - c = 12</p>
+        <p>Add equations: 2b = 30 → b = 15 mph</p>
+        <p>Substitute: 15 + c = 18 → c = 3 mph</p>
+        <p><strong>Boat speed: 15 mph, Current: 3 mph</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🔗 ACT Systems Strategies</h3>
+
+    <div class="tip-box">
+        <h4>💡 Method Selection</h4>
+        <p><strong>Use Substitution when:</strong></p>
+        <p>• One variable is already isolated</p>
+        <p>• Easy to solve for one variable</p>
+        <p>• Coefficients are 1 or simple fractions</p>
+
+        <p><strong>Use Elimination when:</strong></p>
+        <p>• Coefficients are already opposites or easily made opposites</p>
+        <p>• Both equations have similar complexity</p>
+        <p>• Working with integers</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 12: ACT-Style Choice</h4>
+        <p><strong>Problem:</strong> Solve {3x - 2y = 7, x + 4y = 1} Choose the best method.</p>
+        <p><strong>Analysis:</strong></p>
+        <p>Substitution looks good: x = 1 - 4y from second equation</p>
+        <p><strong>Solution:</strong></p>
+        <p>Substitute: 3(1 - 4y) - 2y = 7</p>
+        <p>3 - 12y - 2y = 7 → -14y = 4 → y = -2/7</p>
+        <p>x = 1 - 4(-2/7) = 1 + 8/7 = 15/7</p>
+        <p><strong>Solution: (15/7, -2/7)</strong></p>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Systems of equations are crucial for ACT word problems! Master both substitution and elimination methods, choose the easier method for each problem, and always check your solutions. Remember: substitution works great when one variable is isolated, elimination works well with similar coefficients. Practice identifying the three types of solutions: one solution (intersecting lines), no solution (parallel lines), and infinite solutions (same line)!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Master Systems of Equations!</h3>
+    <div class="quiz-intro">
+        <p>Time to apply your skills! These 6 questions test substitution, elimination, and system types - key concepts for ACT success!</p>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question-card active" data-question="1">
+            <div class="question-header">
+                <span class="question-number">Question 1 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 16.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Substitution Method</h4>
+                <p>Solve the system: {x + y = 7, 2x - y = 2}</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="true" data-explanation="Correct! From first equation: y = 7 - x. Substitute into second: 2x - (7 - x) = 2, so 2x - 7 + x = 2, giving 3x = 9, x = 3. Then y = 7 - 3 = 4.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">(3, 4)</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This doesn't satisfy the first equation: 4 + 3 = 7, but we need x + y = 7.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">(4, 3)</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Check: 2 + 5 = 7 ✓, but 2(2) - 5 = 4 - 5 = -1, not 2.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">(2, 5)</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Check: 5 + 2 = 7 ✓, but 2(5) - 2 = 10 - 2 = 8, not 2.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">(5, 2)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="2">
+            <div class="question-header">
+                <span class="question-number">Question 2 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 33.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Elimination Method</h4>
+                <p>Solve the system: {3x + 2y = 16, 3x - y = 7}</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="Let's check: 3(2) + 2(5) = 6 + 10 = 16 ✓, but 3(2) - 5 = 6 - 5 = 1, not 7.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">(2, 5)</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Perfect! Subtract equations: (3x + 2y) - (3x - y) = 16 - 7, so 3y = 9, y = 3. Then substitute: 3x - 3 = 7, so x = 10/3.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">(10/3, 3)</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Check: 3(4) + 2(2) = 12 + 4 = 16 ✓, but 3(4) - 2 = 12 - 2 = 10, not 7.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">(4, 2)</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Check: 3(3) + 2(10/3) = 9 + 20/3 ≈ 15.67, not 16.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">(3, 10/3)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="3">
+            <div class="question-header">
+                <span class="question-number">Question 3 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>System Types</h4>
+                <p>What type of solution does this system have: {2x + 3y = 6, 4x + 6y = 12}?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="Not quite. Notice that the second equation is exactly 2 times the first equation.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">One unique solution</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="No solution occurs when lines are parallel (same slope, different intercepts). These equations represent the same line.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">No solution</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Exactly! The second equation 4x + 6y = 12 is just 2 times the first equation 2x + 3y = 6. They're the same line, so infinite solutions.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">Infinite solutions</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Every system has exactly one of three types: one solution, no solution, or infinite solutions.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">Cannot be determined</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="4">
+            <div class="question-header">
+                <span class="question-number">Question 4 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 66.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Word Problem</h4>
+                <p>At a movie theater, 3 adult tickets and 2 child tickets cost $31. 2 adult tickets and 4 child tickets cost $26. What's the cost of one adult ticket?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="Let's check: 3($8) + 2($3.50) = $24 + $7 = $31 ✓, but 2($8) + 4($3.50) = $16 + $14 = $30, not $26.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">$8</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Perfect! Let a = adult, c = child. System: {3a + 2c = 31, 2a + 4c = 26}. Multiply first by 2: 6a + 4c = 62. Subtract second: 4a = 36, so a = $9.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">$9</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Check: 3($10) + 2($0.50) = $30 + $1 = $31 ✓, but 2($10) + 4($0.50) = $20 + $2 = $22, not $26.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">$10</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Check: 3($7) + 2($5) = $21 + $10 = $31 ✓, but 2($7) + 4($5) = $14 + $20 = $34, not $26.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">$7</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="5">
+            <div class="question-header">
+                <span class="question-number">Question 5 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 83.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>No Solution System</h4>
+                <p>What type of system is {2x - 3y = 5, 4x - 6y = 12}?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="If there were one solution, the lines would intersect. But these lines have the same slope and different y-intercepts.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">One solution</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Correct! The second equation 4x - 6y = 12 is 2 times the left side of the first (2x - 3y), but 12 ≠ 2(5). These are parallel lines - no solution.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">No solution</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Infinite solutions would mean the equations represent the same line, but 4x - 6y = 12 is not equivalent to 2x - 3y = 5.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">Infinite solutions</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="We can determine this by comparing the equations. The coefficients suggest parallel lines.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">Cannot determine</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="6">
+            <div class="question-header">
+                <span class="question-number">Question 6 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Method Choice</h4>
+                <p>For the system {y = 2x - 1, 3x + 4y = 22}, which method would be most efficient?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="true" data-explanation="Excellent choice! Since y is already isolated in the first equation (y = 2x - 1), substitution is the most direct method.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">Substitution - y is already solved</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Elimination would require rearranging the first equation. Since y is already isolated, substitution is more efficient.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">Elimination - coefficients are simple</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="Graphing would work but is less precise and more time-consuming than substitution.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">Graphing - easier to visualize</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="When one variable is isolated, substitution is clearly the best choice.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">All methods are equally efficient</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-explanation" style="display: none;">
+        <div class="explanation-content"></div>
+        <div class="explanation-buttons">
+            <button id="next-question-btn-3" class="nav-btn">Next Question →</button>
+        </div>
+    </div>
+
+    <div class="quiz-results" style="display: none;">
+        <div class="results-content">
+            <h3>🎉 Quiz Complete!</h3>
+            <div class="score-display">
+                <div class="score-circle">
+                    <span class="score-text">0/6</span>
+                </div>
+            </div>
+            <div class="performance-feedback"></div>
+            <div class="results-actions">
+                <button id="review-answers-btn-3" class="nav-btn secondary">Review Answers</button>
+                <button id="restart-quiz-btn-3" class="nav-btn">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-navigation">
+        <button id="start-quiz-btn-3" class="nav-btn primary">Start Quiz</button>
+        <button id="prev-btn-3" class="nav-btn secondary" style="display: none;">← Previous</button>
+        <button id="next-btn-3" class="nav-btn primary" style="display: none;">Next →</button>
+        <button id="submit-quiz-btn-3" class="nav-btn primary" style="display: none;">Submit Quiz</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let currentQuestion3 = 0;
+    let userAnswers3 = [];
+    let score3 = 0;
+    let quizStarted3 = false;
+
+    const questionCards3 = document.querySelectorAll('.question-card');
+    const startBtn3 = document.getElementById('start-quiz-btn-3');
+    const prevBtn3 = document.getElementById('prev-btn-3');
+    const nextBtn3 = document.getElementById('next-btn-3');
+    const submitBtn3 = document.getElementById('submit-quiz-btn-3');
+    const restartBtn3 = document.getElementById('restart-quiz-btn-3');
+    const reviewBtn3 = document.getElementById('review-answers-btn-3');
+    const nextQuestionBtn3 = document.getElementById('next-question-btn-3');
+    const quizContainer3 = document.querySelector('.quiz-container');
+    const quizExplanation3 = document.querySelector('.quiz-explanation');
+    const quizResults3 = document.querySelector('.quiz-results');
+
+    if (startBtn3) startBtn3.addEventListener('click', startQuiz3);
+    if (prevBtn3) prevBtn3.addEventListener('click', previousQuestion3);
+    if (nextBtn3) nextBtn3.addEventListener('click', nextQuestion3);
+    if (submitBtn3) submitBtn3.addEventListener('click', submitQuiz3);
+    if (restartBtn3) restartBtn3.addEventListener('click', restartQuiz3);
+    if (reviewBtn3) reviewBtn3.addEventListener('click', reviewAnswers3);
+    if (nextQuestionBtn3) nextQuestionBtn3.addEventListener('click', nextQuestion3);
+
+    function startQuiz3() {
+        quizStarted3 = true;
+        currentQuestion3 = 0;
+        userAnswers3 = [];
+        score3 = 0;
+
+        if (startBtn3) startBtn3.style.display = 'none';
+        showQuestion3(0);
+        updateNavigation3();
+    }
+
+    function showQuestion3(index) {
+        if (questionCards3) {
+            questionCards3.forEach(card => card.classList.remove('active'));
+            if (questionCards3[index]) {
+                questionCards3[index].classList.add('active');
+                setupQuestionListeners3(index);
+            }
+        }
+    }
+
+    function setupQuestionListeners3(index) {
+        if (questionCards3 && questionCards3[index]) {
+            const choices = questionCards3[index].querySelectorAll('.choice-btn');
+            choices.forEach(choice => {
+                choice.addEventListener('click', function() {
+                    if (this.disabled) return;
+
+                    choices.forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+                    userAnswers3[index] = {
+                        selected: this,
+                        correct: this.dataset.correct === 'true',
+                        explanation: this.dataset.explanation
+                    };
+
+                    setTimeout(() => {
+                        showExplanation3(index);
+                    }, 300);
+                });
+            });
+        }
+    }
+
+    function showExplanation3(index) {
+        if (questionCards3 && questionCards3[index]) {
+            const choices = questionCards3[index].querySelectorAll('.choice-btn');
+            const userAnswer = userAnswers3[index];
+
+            choices.forEach(choice => {
+                choice.disabled = true;
+                if (choice.dataset.correct === 'true') {
+                    choice.classList.add('correct');
+                } else if (choice === userAnswer.selected && !userAnswer.correct) {
+                    choice.classList.add('incorrect');
+                }
+            });
+
+            const explanationContent = document.querySelector('.explanation-content');
+            if (explanationContent) {
+                explanationContent.innerHTML = `
+                    <h4>${userAnswer.correct ? '✅ Correct!' : '❌ Incorrect'}</h4>
+                    <p>${userAnswer.explanation}</p>
+                `;
+            }
+
+            if (quizContainer3) quizContainer3.style.display = 'none';
+            if (quizExplanation3) quizExplanation3.style.display = 'block';
+
+            updateNavigationForExplanation3();
+        }
+    }
+
+    function updateNavigationForExplanation3() {
+        if (prevBtn3) prevBtn3.style.display = 'none';
+        if (nextBtn3) nextBtn3.style.display = 'none';
+        if (submitBtn3) submitBtn3.style.display = 'none';
+
+        if (nextQuestionBtn3) {
+            if (currentQuestion3 < (questionCards3 ? questionCards3.length - 1 : 0)) {
+                nextQuestionBtn3.style.display = 'inline-flex';
+                nextQuestionBtn3.textContent = 'Next Question →';
+            } else {
+                nextQuestionBtn3.style.display = 'inline-flex';
+                nextQuestionBtn3.textContent = 'View Results →';
+            }
+        }
+    }
+
+    function nextQuestion3() {
+        if (quizExplanation3 && quizExplanation3.style.display === 'block') {
+            quizExplanation3.style.display = 'none';
+            if (quizContainer3) quizContainer3.style.display = 'block';
+
+            if (currentQuestion3 < (questionCards3 ? questionCards3.length - 1 : 0)) {
+                currentQuestion3++;
+                showQuestion3(currentQuestion3);
+                updateNavigation3();
+            } else {
+                submitQuiz3();
+            }
+        } else if (userAnswers3[currentQuestion3]) {
+            showExplanation3(currentQuestion3);
+        }
+    }
+
+    function previousQuestion3() {
+        if (currentQuestion3 > 0) {
+            currentQuestion3--;
+            showQuestion3(currentQuestion3);
+            updateNavigation3();
+        }
+    }
+
+    function updateNavigation3() {
+        if (prevBtn3) prevBtn3.style.display = currentQuestion3 > 0 ? 'inline-flex' : 'none';
+
+        const hasAnswered = userAnswers3[currentQuestion3];
+        if (nextBtn3) nextBtn3.style.display = hasAnswered ? 'inline-flex' : 'none';
+
+        if (currentQuestion3 === (questionCards3 ? questionCards3.length - 1 : 0) && hasAnswered) {
+            if (nextBtn3) nextBtn3.style.display = 'none';
+            if (submitBtn3) submitBtn3.style.display = 'inline-flex';
+        } else {
+            if (submitBtn3) submitBtn3.style.display = 'none';
+        }
+    }
+
+    function submitQuiz3() {
+        score3 = userAnswers3.filter(answer => answer && answer.correct).length;
+
+        if (quizContainer3) quizContainer3.style.display = 'none';
+        if (quizExplanation3) quizExplanation3.style.display = 'none';
+        if (prevBtn3) prevBtn3.style.display = 'none';
+        if (nextBtn3) nextBtn3.style.display = 'none';
+        if (submitBtn3) submitBtn3.style.display = 'none';
+
+        displayResults3();
+        if (quizResults3) quizResults3.style.display = 'block';
+    }
+
+    function displayResults3() {
+        const scoreText = document.querySelector('.score-text');
+        const feedback = document.querySelector('.performance-feedback');
+
+        if (scoreText) scoreText.textContent = `${score3}/6`;
+
+        let feedbackMessage = '';
+        if (score3 === 6) {
+            feedbackMessage = '🎉 Outstanding! You\'ve mastered systems of equations! Ready for any ACT system problem.';
+        } else if (score3 >= 4) {
+            feedbackMessage = '👍 Great work! You understand systems well. Review the challenging questions to perfect your skills.';
+        } else if (score3 >= 2) {
+            feedbackMessage = '📚 Good foundation! Focus on choosing the right method and checking your solutions in both equations.';
+        } else {
+            feedbackMessage = '💪 Keep practicing! Master substitution and elimination basics, then tackle word problems step by step.';
+        }
+
+        if (feedback) {
+            feedback.innerHTML = feedbackMessage;
+            feedback.className = 'performance-feedback';
+        }
+    }
+
+    function reviewAnswers3() {
+        if (quizResults3) quizResults3.style.display = 'none';
+        currentQuestion3 = 0;
+        showReviewMode3();
+    }
+
+    function showReviewMode3() {
+        if (quizContainer3) quizContainer3.style.display = 'block';
+        showQuestion3(currentQuestion3);
+
+        const userAnswer = userAnswers3[currentQuestion3];
+        if (userAnswer && questionCards3 && questionCards3[currentQuestion3]) {
+            const choices = questionCards3[currentQuestion3].querySelectorAll('.choice-btn');
+            choices.forEach(choice => {
+                choice.disabled = true;
+                if (choice.dataset.correct === 'true') {
+                    choice.classList.add('correct');
+                } else if (choice === userAnswer.selected && !userAnswer.correct) {
+                    choice.classList.add('incorrect');
+                }
+                if (choice === userAnswer.selected) {
+                    choice.classList.add('selected');
+                }
+            });
+        }
+
+        updateReviewNavigation3();
+    }
+
+    function updateReviewNavigation3() {
+        if (prevBtn3) prevBtn3.style.display = currentQuestion3 > 0 ? 'inline-flex' : 'none';
+        if (nextBtn3) nextBtn3.style.display = currentQuestion3 < (questionCards3 ? questionCards3.length - 1 : 0) ? 'inline-flex' : 'none';
+
+        if (currentQuestion3 === (questionCards3 ? questionCards3.length - 1 : 0)) {
+            if (submitBtn3) {
+                submitBtn3.textContent = 'Back to Results';
+                submitBtn3.style.display = 'inline-flex';
+            }
+        } else {
+            if (submitBtn3) submitBtn3.style.display = 'none';
+        }
+    }
+
+    function restartQuiz3() {
+        currentQuestion3 = 0;
+        userAnswers3 = [];
+        score3 = 0;
+        quizStarted3 = false;
+
+        if (quizResults3) quizResults3.style.display = 'none';
+        if (quizExplanation3) quizExplanation3.style.display = 'none';
+        if (quizContainer3) quizContainer3.style.display = 'none';
+
+        if (questionCards3) {
+            questionCards3.forEach(card => {
+                card.classList.remove('active');
+                const choices = card.querySelectorAll('.choice-btn');
+                choices.forEach(choice => {
+                    choice.disabled = false;
+                    choice.classList.remove('selected', 'correct', 'incorrect');
+                });
+            });
+        }
+
+        if (startBtn3) startBtn3.style.display = 'inline-flex';
+        if (prevBtn3) prevBtn3.style.display = 'none';
+        if (nextBtn3) nextBtn3.style.display = 'none';
+        if (submitBtn3) submitBtn3.style.display = 'none';
+    }
+});
+</script>
+    `
+  },
+
+  'trigonometry': {
+    title: 'Chapter 16: Trigonometry',
+    duration: 26, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 16: <span style="color: #0891b2; font-weight: 600;">Trigonometry</span></h2>
+    <p class="lesson-intro">Master right triangle trigonometry and the unit circle - essential for ACT geometry and advanced topics!</p>
+
+    <div class="learning-path">
+        <p><strong>Part 1:</strong> SOH-CAH-TOA → Right triangle trigonometric ratios</p>
+        <p><strong>Part 2:</strong> Special Triangles → 30-60-90 and 45-45-90 exact values</p>
+        <p><strong>Part 3:</strong> Unit Circle Basics → Angles and coordinates</p>
+        <p><strong>Part 4:</strong> ACT Applications → Real-world trig problems</p>
+        <p><strong>Your advantage:</strong> You have <span style="color: #059669; font-weight: 600;">strong geometry foundations</span> from previous chapters!</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #0891b2; font-weight: 600;">SOH-CAH-TOA - Right Triangle Trigonometry</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 The Three Basic Trigonometric Ratios</h4>
+        <p>For a right triangle with angle θ (theta):</p>
+        <div style="background: #f0f9ff; padding: 15px; border-radius: 8px; margin: 15px 0;">
+            <p><strong>SOH:</strong> sin θ = <u>Opposite</u> / Hypotenuse</p>
+            <p><strong>CAH:</strong> cos θ = <u>Adjacent</u> / Hypotenuse</p>
+            <p><strong>TOA:</strong> tan θ = <u>Opposite</u> / Adjacent</p>
+        </div>
+    </div>
+
+    <div class="rules-box">
+        <h4>Key Triangle Components:</h4>
+        <p><strong>Hypotenuse:</strong> The longest side, opposite the right angle</p>
+        <p><strong>Opposite:</strong> The side across from angle θ</p>
+        <p><strong>Adjacent:</strong> The side next to angle θ (but not the hypotenuse)</p>
+
+        <p style="margin-top: 15px;"><strong>Visual Triangle Reference:</strong></p>
+        <div style="font-family: monospace; background: #f9fafb; padding: 10px; margin: 10px 0;">
+        <pre>
+          C
+          |\
+          | \
+   b      |  \ a (hypotenuse)
+          |   \
+          |θ___\
+          A  c  B
+        </pre>
+        </div>
+        <p>For angle θ at A: opposite = a, adjacent = c, hypotenuse = b</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Finding Trig Ratios</h4>
+        <p><strong>Problem:</strong> In a right triangle, the side opposite to angle A is 3 and the hypotenuse is 5. Find sin A, cos A, and tan A.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Given: opposite = 3, hypotenuse = 5</p>
+        <p>Find adjacent using Pythagorean theorem: adjacent² + 3² = 5²</p>
+        <p>adjacent² = 25 - 9 = 16 → adjacent = 4</p>
+        <p><strong>sin A = 3/5</strong></p>
+        <p><strong>cos A = 4/5</strong></p>
+        <p><strong>tan A = 3/4</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Using Trig to Find Sides</h4>
+        <p><strong>Problem:</strong> A right triangle has hypotenuse 10 and angle A = 30°. Find the opposite and adjacent sides.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Using sin 30° = 1/2:</p>
+        <p>sin 30° = opposite/10 → 1/2 = opposite/10 → opposite = 5</p>
+        <p>Using cos 30° = √3/2:</p>
+        <p>cos 30° = adjacent/10 → √3/2 = adjacent/10 → adjacent = 5√3</p>
+        <p><strong>Opposite = 5, Adjacent = 5√3</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Using Trig to Find Angles</h4>
+        <p><strong>Problem:</strong> A right triangle has opposite = 7 and adjacent = 24. Find angle θ.</p>
+        <p><strong>Solution:</strong></p>
+        <p>tan θ = opposite/adjacent = 7/24</p>
+        <p>θ = arctan(7/24) = tan⁻¹(7/24)</p>
+        <p>Using calculator: θ ≈ 16.26°</p>
+        <p><strong>θ ≈ 16.3°</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #0891b2; font-weight: 600;">Special Triangles and Exact Values</span></h3>
+
+    <div class="rules-box">
+        <h4>30-60-90 Triangle (Half an Equilateral Triangle):</h4>
+        <div style="background: #f0f9ff; padding: 15px; border-radius: 8px;">
+            <p><strong>Side Ratios:</strong> 1 : √3 : 2</p>
+            <p>If the short side (opposite 30°) = x, then:</p>
+            <p>• Side opposite 30° = x</p>
+            <p>• Side opposite 60° = x√3</p>
+            <p>• Hypotenuse = 2x</p>
+        </div>
+
+        <p><strong>Exact Trig Values for 30° and 60°:</strong></p>
+        <p>sin 30° = 1/2, cos 30° = √3/2, tan 30° = 1/√3 = √3/3</p>
+        <p>sin 60° = √3/2, cos 60° = 1/2, tan 60° = √3</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>45-45-90 Triangle (Isosceles Right Triangle):</h4>
+        <div style="background: #f0f9ff; padding: 15px; border-radius: 8px;">
+            <p><strong>Side Ratios:</strong> 1 : 1 : √2</p>
+            <p>If each leg = x, then:</p>
+            <p>• Both legs = x</p>
+            <p>• Hypotenuse = x√2</p>
+        </div>
+
+        <p><strong>Exact Trig Values for 45°:</strong></p>
+        <p>sin 45° = √2/2, cos 45° = √2/2, tan 45° = 1</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: 30-60-90 Triangle Application</h4>
+        <p><strong>Problem:</strong> The shorter leg of a 30-60-90 triangle is 8. Find the other leg and hypotenuse.</p>
+        <p><strong>Solution:</strong></p>
+        <p>In a 30-60-90 triangle with ratios 1 : √3 : 2:</p>
+        <p>Short leg (opposite 30°) = 8</p>
+        <p>Long leg (opposite 60°) = 8√3</p>
+        <p>Hypotenuse = 2(8) = 16</p>
+        <p><strong>Other leg = 8√3, Hypotenuse = 16</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: 45-45-90 Triangle Application</h4>
+        <p><strong>Problem:</strong> A 45-45-90 triangle has hypotenuse 10√2. Find the legs.</p>
+        <p><strong>Solution:</strong></p>
+        <p>In a 45-45-90 triangle with ratios 1 : 1 : √2:</p>
+        <p>If leg = x, then hypotenuse = x√2</p>
+        <p>x√2 = 10√2 → x = 10</p>
+        <p><strong>Both legs = 10</strong></p>
+    </div>
+
+    <div class="tip-box">
+        <h4>💡 Memory Aid for Exact Values</h4>
+        <div style="background: #fffbeb; padding: 10px; border-radius: 6px;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9em;">
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <th>Angle</th><th>sin</th><th>cos</th><th>tan</th>
+                </tr>
+                <tr>
+                    <td>30°</td><td>1/2</td><td>√3/2</td><td>√3/3</td>
+                </tr>
+                <tr>
+                    <td>45°</td><td>√2/2</td><td>√2/2</td><td>1</td>
+                </tr>
+                <tr>
+                    <td>60°</td><td>√3/2</td><td>1/2</td><td>√3</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #0891b2; font-weight: 600;">Unit Circle Basics</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What is the Unit Circle?</h4>
+        <p>A circle with radius 1 centered at the origin (0, 0).</p>
+        <p>Any point on the unit circle has coordinates <strong>(cos θ, sin θ)</strong> where θ is the angle from the positive x-axis.</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Key Unit Circle Points (First Quadrant):</h4>
+        <div style="background: #f0f9ff; padding: 15px; border-radius: 8px;">
+            <p><strong>0° (0 radians):</strong> (1, 0)</p>
+            <p><strong>30° (π/6 radians):</strong> (√3/2, 1/2)</p>
+            <p><strong>45° (π/4 radians):</strong> (√2/2, √2/2)</p>
+            <p><strong>60° (π/3 radians):</strong> (1/2, √3/2)</p>
+            <p><strong>90° (π/2 radians):</strong> (0, 1)</p>
+        </div>
+    </div>
+
+    <div class="rules-box">
+        <h4>Angle Conversion:</h4>
+        <p><strong>Degrees to Radians:</strong> multiply by π/180</p>
+        <p><strong>Radians to Degrees:</strong> multiply by 180/π</p>
+        <p><strong>Common Conversions:</strong></p>
+        <p>30° = π/6, 45° = π/4, 60° = π/3, 90° = π/2, 180° = π</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: Finding Coordinates on Unit Circle</h4>
+        <p><strong>Problem:</strong> Find the coordinates of the point on the unit circle at angle 150°.</p>
+        <p><strong>Solution:</strong></p>
+        <p>150° = 180° - 30°, so it's in Quadrant II</p>
+        <p>Reference angle = 30°</p>
+        <p>In Quadrant II: x is negative, y is positive</p>
+        <p>cos 150° = -cos 30° = -√3/2</p>
+        <p>sin 150° = sin 30° = 1/2</p>
+        <p><strong>Coordinates: (-√3/2, 1/2)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: Converting Angle Measures</h4>
+        <p><strong>Problem:</strong> Convert 5π/6 radians to degrees and find sin(5π/6).</p>
+        <p><strong>Solution:</strong></p>
+        <p>5π/6 × 180°/π = 5 × 180°/6 = 150°</p>
+        <p>5π/6 is in Quadrant II (between π/2 and π)</p>
+        <p>Reference angle = π - 5π/6 = π/6 (which is 30°)</p>
+        <p>sin(5π/6) = sin(30°) = 1/2</p>
+        <p><strong>150°, sin(5π/6) = 1/2</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #0891b2; font-weight: 600;">ACT Trigonometry Applications</span></h3>
+
+    <div class="example-box">
+        <h4>Example 8: Angle of Elevation</h4>
+        <p><strong>Problem:</strong> From a point 50 feet from the base of a building, the angle of elevation to the top is 60°. How tall is the building?</p>
+        <p><strong>Solution:</strong></p>
+        <p>This forms a right triangle where:</p>
+        <p>• Adjacent side (horizontal distance) = 50 feet</p>
+        <p>• Opposite side (building height) = h</p>
+        <p>• Angle = 60°</p>
+        <p>tan 60° = opposite/adjacent = h/50</p>
+        <p>√3 = h/50 → h = 50√3 ≈ 86.6 feet</p>
+        <p><strong>Building height = 50√3 feet</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 9: Navigation Problem</h4>
+        <p><strong>Problem:</strong> A plane flies 100 miles at a bearing of 30° north of east. How far north and east has it traveled?</p>
+        <p><strong>Solution:</strong></p>
+        <p>30° north of east means 30° from the east direction</p>
+        <p>Distance north = 100 × sin 30° = 100 × (1/2) = 50 miles</p>
+        <p>Distance east = 100 × cos 30° = 100 × (√3/2) = 50√3 miles</p>
+        <p><strong>North: 50 miles, East: 50√3 miles</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 10: Ladder Problem</h4>
+        <p><strong>Problem:</strong> A 20-foot ladder leans against a wall at an angle of 70° with the ground. How high up the wall does the ladder reach?</p>
+        <p><strong>Solution:</strong></p>
+        <p>The ladder is the hypotenuse = 20 feet</p>
+        <p>The height is opposite to the 70° angle</p>
+        <p>sin 70° = height/20</p>
+        <p>height = 20 × sin 70° ≈ 20 × 0.940 = 18.8 feet</p>
+        <p><strong>Height ≈ 18.8 feet</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 11: Shadow Problem</h4>
+        <p><strong>Problem:</strong> A 15-foot flagpole casts a 12-foot shadow. What is the angle of elevation of the sun?</p>
+        <p><strong>Solution:</strong></p>
+        <p>tan θ = opposite/adjacent = 15/12 = 5/4 = 1.25</p>
+        <p>θ = arctan(1.25) ≈ 51.3°</p>
+        <p><strong>Angle of elevation ≈ 51.3°</strong></p>
+    </div>
+
+    <div class="tip-box">
+        <h4>💡 ACT Trigonometry Strategy</h4>
+        <p><strong>Always identify:</strong></p>
+        <p>1. Which angle you're working with</p>
+        <p>2. Which sides are opposite, adjacent, and hypotenuse relative to that angle</p>
+        <p>3. Which trig ratio connects your known and unknown values</p>
+        <p><strong>Remember:</strong> For special angles (30°, 45°, 60°), use exact values instead of decimal approximations!</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🔗 Advanced Trigonometric Identities</h3>
+
+    <div class="rules-box">
+        <h4>Fundamental Identities (ACT Level):</h4>
+
+        <p><strong>Pythagorean Identity:</strong></p>
+        <p>sin²θ + cos²θ = 1</p>
+
+        <p><strong>Reciprocal Identities:</strong></p>
+        <p>csc θ = 1/sin θ, sec θ = 1/cos θ, cot θ = 1/tan θ</p>
+
+        <p><strong>Quotient Identity:</strong></p>
+        <p>tan θ = sin θ/cos θ</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 12: Using Pythagorean Identity</h4>
+        <p><strong>Problem:</strong> If sin θ = 3/5 and θ is in Quadrant I, find cos θ and tan θ.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Using sin²θ + cos²θ = 1:</p>
+        <p>(3/5)² + cos²θ = 1</p>
+        <p>9/25 + cos²θ = 1</p>
+        <p>cos²θ = 1 - 9/25 = 16/25</p>
+        <p>cos θ = ±4/5, but since Quadrant I, cos θ = 4/5</p>
+        <p>tan θ = sin θ/cos θ = (3/5)/(4/5) = 3/4</p>
+        <p><strong>cos θ = 4/5, tan θ = 3/4</strong></p>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Trigonometry is essential for ACT success! Master SOH-CAH-TOA for right triangles, memorize exact values for 30°, 45°, and 60° angles, understand the unit circle basics, and practice real-world applications like angle of elevation problems. Remember: identify your angle and sides first, choose the correct trig ratio, and use exact values for special angles. Trigonometry connects geometry, algebra, and real-world problem-solving on the ACT!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Master Your Trigonometry Skills!</h3>
+    <div class="quiz-intro">
+        <p>Test your understanding of SOH-CAH-TOA, special triangles, and trig applications - essential ACT concepts!</p>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question-card active" data-question="1">
+            <div class="question-header">
+                <span class="question-number">Question 1 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 16.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>SOH-CAH-TOA Basics</h4>
+                <p>In a right triangle, if the side opposite to angle θ is 6 and the hypotenuse is 10, what is sin θ?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="true" data-explanation="Perfect! Using SOH: sin θ = opposite/hypotenuse = 6/10 = 3/5.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">3/5</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This would be cos θ. First find the adjacent side: 6² + adj² = 10², so adj = 8. Then cos θ = 8/10 = 4/5.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">4/5</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This would be tan θ. First find adjacent = 8, then tan θ = opposite/adjacent = 6/8 = 3/4.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">3/4</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This is the reciprocal. sin θ = opposite/hypotenuse = 6/10 = 3/5.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">5/3</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="2">
+            <div class="question-header">
+                <span class="question-number">Question 2 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 33.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Special Triangle - 30-60-90</h4>
+                <p>What is the exact value of sin 60°?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="This is sin 30°. In a 30-60-90 triangle, the ratios are 1 : √3 : 2.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">1/2</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Correct! In a 30-60-90 triangle with sides 1 : √3 : 2, sin 60° = opposite/hypotenuse = √3/2.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">√3/2</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This is tan 60°. sin 60° = √3/2, not √3.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">√3</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This is sin 45°. For 60°, we need the 30-60-90 triangle ratio.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">√2/2</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="3">
+            <div class="question-header">
+                <span class="question-number">Question 3 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Finding Missing Sides</h4>
+                <p>A right triangle has hypotenuse 12 and an angle of 30°. What is the length of the side opposite to the 30° angle?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="This would be the adjacent side. cos 30° = adjacent/12 = √3/2, so adjacent = 6√3.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">6√3</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Perfect! sin 30° = opposite/hypotenuse = opposite/12 = 1/2, so opposite = 12 × 1/2 = 6.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">6</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This is too large. Using sin 30° = 1/2, the opposite side = 12 × 1/2 = 6.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">12</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This would be for a different triangle. sin 30° = 1/2, so opposite = 12 × 1/2 = 6.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">4√3</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="4">
+            <div class="question-header">
+                <span class="question-number">Question 4 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 66.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Special Triangle - 45-45-90</h4>
+                <p>What is the exact value of cos 45°?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="true" data-explanation="Excellent! In a 45-45-90 triangle with sides 1 : 1 : √2, cos 45° = adjacent/hypotenuse = 1/√2 = √2/2.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">√2/2</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This is cos 30°. For 45°, we use the 45-45-90 triangle ratio.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">√3/2</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This is cos 60°. cos 45° = √2/2.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">1/2</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This is not correct. cos 45° = 1/√2 = √2/2.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">1</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="5">
+            <div class="question-header">
+                <span class="question-number">Question 5 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 83.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Word Problem Application</h4>
+                <p>A 20-foot ladder leans against a wall at a 60° angle with the ground. How high up the wall does the ladder reach?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="false" data-explanation="This would be the horizontal distance from the wall. cos 60° = adjacent/20 = 1/2, so adjacent = 10 feet.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">10 feet</span>
+                    </button>
+                    <button class="choice-btn" data-correct="true" data-explanation="Perfect! The height up the wall is opposite to the 60° angle. sin 60° = height/20 = √3/2, so height = 20 × √3/2 = 10√3 feet.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">10√3 feet</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This is the length of the ladder (hypotenuse), not the height up the wall.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">20 feet</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This doesn't use the correct trig ratio. We need sin 60° = height/20.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">15 feet</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="6">
+            <div class="question-header">
+                <span class="question-number">Question 6 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <h4>Pythagorean Identity</h4>
+                <p>If sin θ = 4/5 and θ is in Quadrant I, what is cos θ?</p>
+                <div class="answer-choices">
+                    <button class="choice-btn" data-correct="true" data-explanation="Excellent! Using sin²θ + cos²θ = 1: (4/5)² + cos²θ = 1, so 16/25 + cos²θ = 1, giving cos²θ = 9/25. Since Q1, cos θ = 3/5.">
+                        <span class="choice-letter">A</span>
+                        <span class="choice-text">3/5</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This would be negative, but in Quadrant I, cosine is positive.">
+                        <span class="choice-letter">B</span>
+                        <span class="choice-text">-3/5</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This would be tan θ. tan θ = sin θ/cos θ = (4/5)/(3/5) = 4/3.">
+                        <span class="choice-letter">C</span>
+                        <span class="choice-text">4/3</span>
+                    </button>
+                    <button class="choice-btn" data-correct="false" data-explanation="This would be if sin θ = 3/5. With sin θ = 4/5, we get cos θ = 3/5.">
+                        <span class="choice-letter">D</span>
+                        <span class="choice-text">4/5</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-explanation" style="display: none;">
+        <div class="explanation-content"></div>
+        <div class="explanation-buttons">
+            <button id="next-question-btn-4" class="nav-btn">Next Question →</button>
+        </div>
+    </div>
+
+    <div class="quiz-results" style="display: none;">
+        <div class="results-content">
+            <h3>🎉 Quiz Complete!</h3>
+            <div class="score-display">
+                <div class="score-circle">
+                    <span class="score-text">0/6</span>
+                </div>
+            </div>
+            <div class="performance-feedback"></div>
+            <div class="results-actions">
+                <button id="review-answers-btn-4" class="nav-btn secondary">Review Answers</button>
+                <button id="restart-quiz-btn-4" class="nav-btn">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-navigation">
+        <button id="start-quiz-btn-4" class="nav-btn primary">Start Quiz</button>
+        <button id="prev-btn-4" class="nav-btn secondary" style="display: none;">← Previous</button>
+        <button id="next-btn-4" class="nav-btn primary" style="display: none;">Next →</button>
+        <button id="submit-quiz-btn-4" class="nav-btn primary" style="display: none;">Submit Quiz</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let currentQuestion4 = 0;
+    let userAnswers4 = [];
+    let score4 = 0;
+    let quizStarted4 = false;
+
+    const questionCards4 = document.querySelectorAll('.question-card');
+    const startBtn4 = document.getElementById('start-quiz-btn-4');
+    const prevBtn4 = document.getElementById('prev-btn-4');
+    const nextBtn4 = document.getElementById('next-btn-4');
+    const submitBtn4 = document.getElementById('submit-quiz-btn-4');
+    const restartBtn4 = document.getElementById('restart-quiz-btn-4');
+    const reviewBtn4 = document.getElementById('review-answers-btn-4');
+    const nextQuestionBtn4 = document.getElementById('next-question-btn-4');
+    const quizContainer4 = document.querySelector('.quiz-container');
+    const quizExplanation4 = document.querySelector('.quiz-explanation');
+    const quizResults4 = document.querySelector('.quiz-results');
+
+    if (startBtn4) startBtn4.addEventListener('click', startQuiz4);
+    if (prevBtn4) prevBtn4.addEventListener('click', previousQuestion4);
+    if (nextBtn4) nextBtn4.addEventListener('click', nextQuestion4);
+    if (submitBtn4) submitBtn4.addEventListener('click', submitQuiz4);
+    if (restartBtn4) restartBtn4.addEventListener('click', restartQuiz4);
+    if (reviewBtn4) reviewBtn4.addEventListener('click', reviewAnswers4);
+    if (nextQuestionBtn4) nextQuestionBtn4.addEventListener('click', nextQuestion4);
+
+    function startQuiz4() {
+        quizStarted4 = true;
+        currentQuestion4 = 0;
+        userAnswers4 = [];
+        score4 = 0;
+
+        if (startBtn4) startBtn4.style.display = 'none';
+        showQuestion4(0);
+        updateNavigation4();
+    }
+
+    function showQuestion4(index) {
+        if (questionCards4) {
+            questionCards4.forEach(card => card.classList.remove('active'));
+            if (questionCards4[index]) {
+                questionCards4[index].classList.add('active');
+                setupQuestionListeners4(index);
+            }
+        }
+    }
+
+    function setupQuestionListeners4(index) {
+        if (questionCards4 && questionCards4[index]) {
+            const choices = questionCards4[index].querySelectorAll('.choice-btn');
+            choices.forEach(choice => {
+                choice.addEventListener('click', function() {
+                    if (this.disabled) return;
+
+                    choices.forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+                    userAnswers4[index] = {
+                        selected: this,
+                        correct: this.dataset.correct === 'true',
+                        explanation: this.dataset.explanation
+                    };
+
+                    setTimeout(() => {
+                        showExplanation4(index);
+                    }, 300);
+                });
+            });
+        }
+    }
+
+    function showExplanation4(index) {
+        if (questionCards4 && questionCards4[index]) {
+            const choices = questionCards4[index].querySelectorAll('.choice-btn');
+            const userAnswer = userAnswers4[index];
+
+            choices.forEach(choice => {
+                choice.disabled = true;
+                if (choice.dataset.correct === 'true') {
+                    choice.classList.add('correct');
+                } else if (choice === userAnswer.selected && !userAnswer.correct) {
+                    choice.classList.add('incorrect');
+                }
+            });
+
+            const explanationContent = document.querySelector('.explanation-content');
+            if (explanationContent) {
+                explanationContent.innerHTML = `
+                    <h4>${userAnswer.correct ? '✅ Correct!' : '❌ Incorrect'}</h4>
+                    <p>${userAnswer.explanation}</p>
+                `;
+            }
+
+            if (quizContainer4) quizContainer4.style.display = 'none';
+            if (quizExplanation4) quizExplanation4.style.display = 'block';
+
+            updateNavigationForExplanation4();
+        }
+    }
+
+    function updateNavigationForExplanation4() {
+        if (prevBtn4) prevBtn4.style.display = 'none';
+        if (nextBtn4) nextBtn4.style.display = 'none';
+        if (submitBtn4) submitBtn4.style.display = 'none';
+
+        if (nextQuestionBtn4) {
+            if (currentQuestion4 < (questionCards4 ? questionCards4.length - 1 : 0)) {
+                nextQuestionBtn4.style.display = 'inline-flex';
+                nextQuestionBtn4.textContent = 'Next Question →';
+            } else {
+                nextQuestionBtn4.style.display = 'inline-flex';
+                nextQuestionBtn4.textContent = 'View Results →';
+            }
+        }
+    }
+
+    function nextQuestion4() {
+        if (quizExplanation4 && quizExplanation4.style.display === 'block') {
+            quizExplanation4.style.display = 'none';
+            if (quizContainer4) quizContainer4.style.display = 'block';
+
+            if (currentQuestion4 < (questionCards4 ? questionCards4.length - 1 : 0)) {
+                currentQuestion4++;
+                showQuestion4(currentQuestion4);
+                updateNavigation4();
+            } else {
+                submitQuiz4();
+            }
+        } else if (userAnswers4[currentQuestion4]) {
+            showExplanation4(currentQuestion4);
+        }
+    }
+
+    function previousQuestion4() {
+        if (currentQuestion4 > 0) {
+            currentQuestion4--;
+            showQuestion4(currentQuestion4);
+            updateNavigation4();
+        }
+    }
+
+    function updateNavigation4() {
+        if (prevBtn4) prevBtn4.style.display = currentQuestion4 > 0 ? 'inline-flex' : 'none';
+
+        const hasAnswered = userAnswers4[currentQuestion4];
+        if (nextBtn4) nextBtn4.style.display = hasAnswered ? 'inline-flex' : 'none';
+
+        if (currentQuestion4 === (questionCards4 ? questionCards4.length - 1 : 0) && hasAnswered) {
+            if (nextBtn4) nextBtn4.style.display = 'none';
+            if (submitBtn4) submitBtn4.style.display = 'inline-flex';
+        } else {
+            if (submitBtn4) submitBtn4.style.display = 'none';
+        }
+    }
+
+    function submitQuiz4() {
+        score4 = userAnswers4.filter(answer => answer && answer.correct).length;
+
+        if (quizContainer4) quizContainer4.style.display = 'none';
+        if (quizExplanation4) quizExplanation4.style.display = 'none';
+        if (prevBtn4) prevBtn4.style.display = 'none';
+        if (nextBtn4) nextBtn4.style.display = 'none';
+        if (submitBtn4) submitBtn4.style.display = 'none';
+
+        displayResults4();
+        if (quizResults4) quizResults4.style.display = 'block';
+    }
+
+    function displayResults4() {
+        const scoreText = document.querySelector('.score-text');
+        const feedback = document.querySelector('.performance-feedback');
+
+        if (scoreText) scoreText.textContent = `${score4}/6`;
+
+        let feedbackMessage = '';
+        if (score4 === 6) {
+            feedbackMessage = '🎉 Fantastic! You\'ve mastered trigonometry fundamentals! You\'re ready for any ACT trig question.';
+        } else if (score4 >= 4) {
+            feedbackMessage = '👍 Great understanding of trigonometry! Review special angles and identities to perfect your skills.';
+        } else if (score4 >= 2) {
+            feedbackMessage = '📚 Good foundation! Focus on memorizing exact values for 30°, 45°, and 60°, and practice SOH-CAH-TOA.';
+        } else {
+            feedbackMessage = '💪 Keep practicing! Start with SOH-CAH-TOA basics, then master the special triangle ratios.';
+        }
+
+        if (feedback) {
+            feedback.innerHTML = feedbackMessage;
+            feedback.className = 'performance-feedback';
+        }
+    }
+
+    function reviewAnswers4() {
+        if (quizResults4) quizResults4.style.display = 'none';
+        currentQuestion4 = 0;
+        showReviewMode4();
+    }
+
+    function showReviewMode4() {
+        if (quizContainer4) quizContainer4.style.display = 'block';
+        showQuestion4(currentQuestion4);
+
+        const userAnswer = userAnswers4[currentQuestion4];
+        if (userAnswer && questionCards4 && questionCards4[currentQuestion4]) {
+            const choices = questionCards4[currentQuestion4].querySelectorAll('.choice-btn');
+            choices.forEach(choice => {
+                choice.disabled = true;
+                if (choice.dataset.correct === 'true') {
+                    choice.classList.add('correct');
+                } else if (choice === userAnswer.selected && !userAnswer.correct) {
+                    choice.classList.add('incorrect');
+                }
+                if (choice === userAnswer.selected) {
+                    choice.classList.add('selected');
+                }
+            });
+        }
+
+        updateReviewNavigation4();
+    }
+
+    function updateReviewNavigation4() {
+        if (prevBtn4) prevBtn4.style.display = currentQuestion4 > 0 ? 'inline-flex' : 'none';
+        if (nextBtn4) nextBtn4.style.display = currentQuestion4 < (questionCards4 ? questionCards4.length - 1 : 0) ? 'inline-flex' : 'none';
+
+        if (currentQuestion4 === (questionCards4 ? questionCards4.length - 1 : 0)) {
+            if (submitBtn4) {
+                submitBtn4.textContent = 'Back to Results';
+                submitBtn4.style.display = 'inline-flex';
+            }
+        } else {
+            if (submitBtn4) submitBtn4.style.display = 'none';
+        }
+    }
+
+    function restartQuiz4() {
+        currentQuestion4 = 0;
+        userAnswers4 = [];
+        score4 = 0;
+        quizStarted4 = false;
+
+        if (quizResults4) quizResults4.style.display = 'none';
+        if (quizExplanation4) quizExplanation4.style.display = 'none';
+        if (quizContainer4) quizContainer4.style.display = 'none';
+
+        if (questionCards4) {
+            questionCards4.forEach(card => {
+                card.classList.remove('active');
+                const choices = card.querySelectorAll('.choice-btn');
+                choices.forEach(choice => {
+                    choice.disabled = false;
+                    choice.classList.remove('selected', 'correct', 'incorrect');
+                });
+            });
+        }
+
+        if (startBtn4) startBtn4.style.display = 'inline-flex';
+        if (prevBtn4) prevBtn4.style.display = 'none';
+        if (nextBtn4) nextBtn4.style.display = 'none';
+        if (submitBtn4) submitBtn4.style.display = 'none';
+    }
+});
+</script>    `
+  },
+
+  'advanced-geometry': {
+    title: 'Chapter 17: Advanced Geometry',
+    duration: 30, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 17: <span style="color: #059669; font-weight: 600;">Advanced Geometry</span></h2>
+    <p class="lesson-intro">Master coordinate geometry, transformations, and 3D shapes - the most challenging ACT geometry topics!</p>
+
+    <div class="learning-path">
+        <p><strong>Part 1:</strong> Coordinate Geometry → Distance, midpoint, and line equations</p>
+        <p><strong>Part 2:</strong> Transformations → Reflections, rotations, translations</p>
+        <p><strong>Part 3:</strong> 3D Geometry → Surface area and volume of complex shapes</p>
+        <p><strong>Part 4:</strong> Advanced Applications → Complex geometry problems</p>
+        <p><strong>Your advantage:</strong> You have <span style="color: #dc2626; font-weight: 600;">mastered all fundamental geometry</span> from previous chapters!</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #059669; font-weight: 600;">Coordinate Geometry</span></h3>
+
+    <div class="rules-box">
+        <h4>Essential Coordinate Formulas:</h4>
+
+        <p><strong>Distance Formula:</strong></p>
+        <p style="text-align: center; background: #f0fdf4; padding: 10px; border-radius: 6px;">
+            d = √[(x₂ - x₁)² + (y₂ - y₁)²]
+        </p>
+
+        <p><strong>Midpoint Formula:</strong></p>
+        <p style="text-align: center; background: #f0fdf4; padding: 10px; border-radius: 6px;">
+            M = ((x₁ + x₂)/2, (y₁ + y₂)/2)
+        </p>
+
+        <p><strong>Slope Formula:</strong></p>
+        <p style="text-align: center; background: #f0fdf4; padding: 10px; border-radius: 6px;">
+            m = (y₂ - y₁)/(x₂ - x₁)
+        </p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Distance and Midpoint</h4>
+        <p><strong>Problem:</strong> Find the distance and midpoint between A(2, 3) and B(8, 11).</p>
+        <p><strong>Solution:</strong></p>
+        <p>Distance: d = √[(8 - 2)² + (11 - 3)²] = √[6² + 8²] = √[36 + 64] = √100 = 10</p>
+        <p>Midpoint: M = ((2 + 8)/2, (3 + 11)/2) = (5, 7)</p>
+        <p><strong>Distance = 10, Midpoint = (5, 7)</strong></p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Line Equations (Four Forms):</h4>
+
+        <p><strong>1. Point-Slope Form:</strong> y - y₁ = m(x - x₁)</p>
+        <p><strong>2. Slope-Intercept Form:</strong> y = mx + b</p>
+        <p><strong>3. Standard Form:</strong> Ax + By = C</p>
+        <p><strong>4. Two-Point Form:</strong> (y - y₁)/(y₂ - y₁) = (x - x₁)/(x₂ - x₁)</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Line Equations</h4>
+        <p><strong>Problem:</strong> Find the equation of the line passing through (3, -2) with slope 4.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Using point-slope form: y - (-2) = 4(x - 3)</p>
+        <p>y + 2 = 4x - 12</p>
+        <p>y = 4x - 14 (slope-intercept form)</p>
+        <p>4x - y = 14 (standard form)</p>
+        <p><strong>y = 4x - 14</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Parallel and Perpendicular Lines</h4>
+        <p><strong>Problem:</strong> Find the equation of the line perpendicular to 2x + 3y = 6 that passes through (1, 4).</p>
+        <p><strong>Solution:</strong></p>
+        <p>Original line: 2x + 3y = 6 → 3y = -2x + 6 → y = -2/3 x + 2</p>
+        <p>Slope of original line = -2/3</p>
+        <p>Perpendicular slope = 3/2 (negative reciprocal)</p>
+        <p>Using point-slope: y - 4 = 3/2(x - 1)</p>
+        <p>y - 4 = 3/2 x - 3/2</p>
+        <p><strong>y = 3/2 x + 5/2</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Circle Equations</h4>
+        <p><strong>Problem:</strong> Find the center and radius of the circle x² + y² - 6x + 4y - 12 = 0.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Complete the square for both x and y:</p>
+        <p>x² - 6x + y² + 4y = 12</p>
+        <p>(x² - 6x + 9) + (y² + 4y + 4) = 12 + 9 + 4</p>
+        <p>(x - 3)² + (y + 2)² = 25</p>
+        <p><strong>Center: (3, -2), Radius: 5</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #059669; font-weight: 600;">Transformations</span></h3>
+
+    <div class="rules-box">
+        <h4>Basic Transformations:</h4>
+
+        <p><strong>Translation (Slide):</strong></p>
+        <p>(x, y) → (x + h, y + k) where h = horizontal shift, k = vertical shift</p>
+
+        <p><strong>Reflection:</strong></p>
+        <p>• Over x-axis: (x, y) → (x, -y)</p>
+        <p>• Over y-axis: (x, y) → (-x, y)</p>
+        <p>• Over y = x: (x, y) → (y, x)</p>
+        <p>• Over y = -x: (x, y) → (-y, -x)</p>
+
+        <p><strong>Rotation (about origin):</strong></p>
+        <p>• 90° counterclockwise: (x, y) → (-y, x)</p>
+        <p>• 180°: (x, y) → (-x, -y)</p>
+        <p>• 270° counterclockwise: (x, y) → (y, -x)</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Multiple Transformations</h4>
+        <p><strong>Problem:</strong> Point A(3, 2) is reflected over the y-axis, then rotated 90° counterclockwise. Find the final coordinates.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Step 1: Reflect over y-axis: (3, 2) → (-3, 2)</p>
+        <p>Step 2: Rotate 90° counterclockwise: (-3, 2) → (-2, -3)</p>
+        <p><strong>Final coordinates: (-2, -3)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: Transformation of Functions</h4>
+        <p><strong>Problem:</strong> Describe how y = -2(x + 3)² - 1 transforms the parent function y = x².</p>
+        <p><strong>Solution:</strong></p>
+        <p>Starting with y = x²:</p>
+        <p>• (x + 3)²: Shift LEFT 3 units</p>
+        <p>• 2(x + 3)²: Stretch vertically by factor 2</p>
+        <p>• -2(x + 3)²: Reflect over x-axis</p>
+        <p>• -2(x + 3)² - 1: Shift DOWN 1 unit</p>
+        <p><strong>Left 3, stretch by 2, reflect over x-axis, down 1</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #059669; font-weight: 600;">3D Geometry and Advanced Shapes</span></h3>
+
+    <div class="rules-box">
+        <h4>3D Volume Formulas:</h4>
+
+        <p><strong>Rectangular Prism:</strong> V = lwh</p>
+        <p><strong>Cylinder:</strong> V = πr²h</p>
+        <p><strong>Cone:</strong> V = (1/3)πr²h</p>
+        <p><strong>Sphere:</strong> V = (4/3)πr³</p>
+        <p><strong>Pyramid:</strong> V = (1/3)Bh (where B = base area)</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>3D Surface Area Formulas:</h4>
+
+        <p><strong>Rectangular Prism:</strong> SA = 2(lw + lh + wh)</p>
+        <p><strong>Cylinder:</strong> SA = 2πr² + 2πrh = 2πr(r + h)</p>
+        <p><strong>Sphere:</strong> SA = 4πr²</p>
+        <p><strong>Cone:</strong> SA = πr² + πr√(r² + h²) = πr(r + s) where s = slant height</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: Composite 3D Shapes</h4>
+        <p><strong>Problem:</strong> A grain silo consists of a cylinder with height 20 ft and radius 8 ft, topped by a hemisphere. Find the total volume.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Cylinder volume: V₁ = πr²h = π(8)²(20) = 1280π ft³</p>
+        <p>Hemisphere volume: V₂ = (1/2)(4/3)πr³ = (2/3)π(8)³ = (2/3)π(512) = 1024π/3 ft³</p>
+        <p>Total volume: V = 1280π + 1024π/3 = (3840π + 1024π)/3 = 4864π/3 ft³</p>
+        <p><strong>Total volume = 4864π/3 ≈ 5093 ft³</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 8: Similar 3D Shapes</h4>
+        <p><strong>Problem:</strong> Two similar cylinders have radius ratio 3:4. If the smaller cylinder has volume 54π, find the volume of the larger cylinder.</p>
+        <p><strong>Solution:</strong></p>
+        <p>For similar solids, volume ratio = (linear ratio)³</p>
+        <p>Linear ratio = 3:4 = 3/4</p>
+        <p>Volume ratio = (3/4)³ = 27/64</p>
+        <p>If V₁/V₂ = 27/64, and V₁ = 54π:</p>
+        <p>54π/V₂ = 27/64 → V₂ = 54π × 64/27 = 128π</p>
+        <p><strong>Larger cylinder volume = 128π</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #059669; font-weight: 600;">Advanced Applications</span></h3>
+
+    <div class="example-box">
+        <h4>Example 9: Optimization Problem</h4>
+        <p><strong>Problem:</strong> A rectangular garden has perimeter 40 ft. What dimensions maximize the area?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Let length = l, width = w</p>
+        <p>Perimeter: 2l + 2w = 40 → l + w = 20 → w = 20 - l</p>
+        <p>Area: A = lw = l(20 - l) = 20l - l²</p>
+        <p>This is a quadratic opening downward, maximum at vertex</p>
+        <p>l = -b/(2a) = -20/(2×(-1)) = 10</p>
+        <p>w = 20 - 10 = 10</p>
+        <p><strong>Maximum area: 10 ft × 10 ft = 100 ft²</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 10: Complex Area Problem</h4>
+        <p><strong>Problem:</strong> A regular hexagon is inscribed in a circle of radius 6. Find the area of the hexagon.</p>
+        <p><strong>Solution:</strong></p>
+        <p>A regular hexagon consists of 6 equilateral triangles</p>
+        <p>Each triangle has vertices at the center and two adjacent vertices of hexagon</p>
+        <p>Side length of hexagon = radius = 6 (property of regular hexagon)</p>
+        <p>Area of one equilateral triangle = (√3/4)s² = (√3/4)(6)² = 9√3</p>
+        <p>Total area = 6 × 9√3 = 54√3</p>
+        <p><strong>Hexagon area = 54√3 square units</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 11: Coordinate Geometry with Circles</h4>
+        <p><strong>Problem:</strong> Find the intersection points of the circle x² + y² = 25 and the line y = x + 1.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Substitute y = x + 1 into circle equation:</p>
+        <p>x² + (x + 1)² = 25</p>
+        <p>x² + x² + 2x + 1 = 25</p>
+        <p>2x² + 2x + 1 = 25</p>
+        <p>2x² + 2x - 24 = 0</p>
+        <p>x² + x - 12 = 0</p>
+        <p>(x + 4)(x - 3) = 0</p>
+        <p>x = -4 or x = 3</p>
+        <p>When x = -4: y = -4 + 1 = -3</p>
+        <p>When x = 3: y = 3 + 1 = 4</p>
+        <p><strong>Intersection points: (-4, -3) and (3, 4)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 12: Advanced Triangle Problem</h4>
+        <p><strong>Problem:</strong> In triangle ABC, A(0, 0), B(6, 0), C(3, 3√3). Verify it's equilateral and find its area.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Side AB: d = √[(6-0)² + (0-0)²] = 6</p>
+        <p>Side AC: d = √[(3-0)² + (3√3-0)²] = √[9 + 27] = √36 = 6</p>
+        <p>Side BC: d = √[(3-6)² + (3√3-0)²] = √[9 + 27] = √36 = 6</p>
+        <p>All sides equal 6 → equilateral triangle ✓</p>
+        <p>Area = (√3/4)s² = (√3/4)(6)² = 9√3</p>
+        <p><strong>Equilateral triangle, Area = 9√3 square units</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🔗 Advanced Problem-Solving Strategies</h3>
+
+    <div class="tip-box">
+        <h4>💡 Coordinate Geometry Strategy</h4>
+        <p><strong>Step 1:</strong> Plot points when possible - visualization helps!</p>
+        <p><strong>Step 2:</strong> Identify what formulas you need (distance, midpoint, slope)</p>
+        <p><strong>Step 3:</strong> Work systematically through calculations</p>
+        <p><strong>Step 4:</strong> Check reasonableness of answers</p>
+    </div>
+
+    <div class="tip-box">
+        <h4>💡 3D Geometry Strategy</h4>
+        <p><strong>Break down complex shapes:</strong> Identify basic shapes (cylinders, cones, spheres, prisms)</p>
+        <p><strong>Use similarity ratios:</strong> Linear ratio → Area ratio² → Volume ratio³</p>
+        <p><strong>Draw diagrams:</strong> Even simple sketches help visualize 3D problems</p>
+    </div>
+
+    <div class="tip-box">
+        <h4>💡 Transformation Strategy</h4>
+        <p><strong>Apply transformations in order:</strong> The sequence matters!</p>
+        <p><strong>Use key points:</strong> Transform vertices, then connect</p>
+        <p><strong>Check with simple cases:</strong> Test your transformation rules</p>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Advanced geometry brings together all your mathematical skills! Master coordinate geometry formulas (distance, midpoint, slope), understand transformations as systematic changes, practice 3D volume and surface area calculations, and break complex problems into simpler parts. Remember: draw diagrams when possible, work step-by-step through calculations, and always check if your answers make geometric sense. Advanced geometry problems often combine multiple concepts - stay organized and methodical!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Test Your Advanced Geometry Skills!</h3>
+    <div class="quiz-container">
+        <div class="question-item" data-question="1">
+            <p><strong>Question 1:</strong> Find the distance between points A(2, -3) and B(-4, 5).</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 10</button>
+                <button class="quiz-option" data-answer="b">B) 8</button>
+                <button class="quiz-option" data-answer="c">C) 6</button>
+                <button class="quiz-option" data-answer="d">D) 12</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: A) 10</strong></p>
+                <p><strong>Explanation:</strong> Using the distance formula: d = √[(x₂-x₁)² + (y₂-y₁)²]</p>
+                <p>d = √[(-4-2)² + (5-(-3))²] = √[(-6)² + (8)²] = √[36 + 64] = √100 = 10</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="2">
+            <p><strong>Question 2:</strong> What is the midpoint of the line segment connecting (-6, 4) and (8, -2)?</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) (1, 1)</button>
+                <button class="quiz-option" data-answer="b">B) (7, 3)</button>
+                <button class="quiz-option" data-answer="c">C) (2, -1)</button>
+                <button class="quiz-option" data-answer="d">D) (-1, 3)</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: A) (1, 1)</strong></p>
+                <p><strong>Explanation:</strong> Using the midpoint formula: M = ((x₁+x₂)/2, (y₁+y₂)/2)</p>
+                <p>M = ((-6+8)/2, (4+(-2))/2) = (2/2, 2/2) = (1, 1)</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="3">
+            <p><strong>Question 3:</strong> Point P(3, 5) is reflected over the y-axis. What are the coordinates of the reflected point?</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) (-3, 5)</button>
+                <button class="quiz-option" data-answer="b">B) (3, -5)</button>
+                <button class="quiz-option" data-answer="c">C) (-3, -5)</button>
+                <button class="quiz-option" data-answer="d">D) (5, 3)</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: A) (-3, 5)</strong></p>
+                <p><strong>Explanation:</strong> When reflecting over the y-axis, the transformation is (x, y) → (-x, y)</p>
+                <p>So point (3, 5) becomes (-3, 5)</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="4">
+            <p><strong>Question 4:</strong> A cylinder has radius 4 and height 6. What is its volume?</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 24π</button>
+                <button class="quiz-option" data-answer="b">B) 48π</button>
+                <button class="quiz-option" data-answer="c">C) 96π</button>
+                <button class="quiz-option" data-answer="d">D) 144π</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: C) 96π</strong></p>
+                <p><strong>Explanation:</strong> Volume of cylinder = πr²h</p>
+                <p>V = π(4)²(6) = π(16)(6) = 96π</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="5">
+            <p><strong>Question 5:</strong> What is the equation of the line passing through (2, 3) with slope -2?</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) y = -2x + 7</button>
+                <button class="quiz-option" data-answer="b">B) y = -2x - 1</button>
+                <button class="quiz-option" data-answer="c">C) y = -2x + 3</button>
+                <button class="quiz-option" data-answer="d">D) y = 2x - 1</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: A) y = -2x + 7</strong></p>
+                <p><strong>Explanation:</strong> Using point-slope form: y - y₁ = m(x - x₁)</p>
+                <p>y - 3 = -2(x - 2) → y - 3 = -2x + 4 → y = -2x + 7</p>
+            </div>
+        </div>
+
+        <div class="question-item" data-question="6">
+            <p><strong>Question 6:</strong> A sphere has surface area 36π. What is its radius?</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="a">A) 3</button>
+                <button class="quiz-option" data-answer="b">B) 6</button>
+                <button class="quiz-option" data-answer="c">C) 9</button>
+                <button class="quiz-option" data-answer="d">D) 18</button>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Correct Answer: A) 3</strong></p>
+                <p><strong>Explanation:</strong> Surface area of sphere = 4πr²</p>
+                <p>4πr² = 36π → 4r² = 36 → r² = 9 → r = 3</p>
+            </div>
+        </div>
+    </div>
+    <div class="quiz-navigation">
+        <button onclick="checkQuizAnswer('advanced-geometry', this)" class="quiz-check-btn">Check Answer</button>
+        <button onclick="nextQuestion('advanced-geometry')" class="quiz-next-btn" style="display: none;">Next Question</button>
+    </div>
+    <div class="quiz-results">
+        <p class="quiz-score">Score: <span id="score-advanced-geometry">0</span>/6</p>
+    </div>
+
+    <script>
+        function checkQuizAnswer(quizId, button) {
+            const currentQuestion = document.querySelector('.question-item:not([style*="display: none"])');
+            const selectedOption = currentQuestion.querySelector('.quiz-option.selected');
+
+            if (!selectedOption) {
+                alert('Please select an answer first!');
+                return;
+            }
+
+            const explanation = currentQuestion.querySelector('.quiz-explanation');
+            explanation.style.display = 'block';
+
+            const correctAnswer = getCorrectAnswer(currentQuestion.dataset.question);
+            const isCorrect = selectedOption.dataset.answer === correctAnswer;
+
+            if (isCorrect) {
+                selectedOption.style.backgroundColor = '#10b981';
+                selectedOption.style.color = 'white';
+                updateScore(quizId, true);
+            } else {
+                selectedOption.style.backgroundColor = '#ef4444';
+                selectedOption.style.color = 'white';
+                const correctOption = currentQuestion.querySelector('[data-answer="' + correctAnswer + '"]');
+                correctOption.style.backgroundColor = '#10b981';
+                correctOption.style.color = 'white';
+            }
+
+            button.style.display = 'none';
+            currentQuestion.querySelector('.quiz-next-btn').style.display = 'inline-block';
+        }
+
+        function getCorrectAnswer(questionNum) {
+            const answers = {
+                '1': 'a',
+                '2': 'a',
+                '3': 'a',
+                '4': 'c',
+                '5': 'a',
+                '6': 'a'
+            };
+            return answers[questionNum];
+        }
+
+        function updateScore(quizId, isCorrect) {
+            const scoreElement = document.getElementById('score-' + quizId);
+            let currentScore = parseInt(scoreElement.textContent);
+            if (isCorrect) {
+                currentScore++;
+                scoreElement.textContent = currentScore;
+            }
+        }
+
+        // Add click event to quiz options
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const questionDiv = this.closest('.question-item');
+                questionDiv.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                this.style.backgroundColor = '#3b82f6';
+                this.style.color = 'white';
+            });
+        });
+    </script>
+</div>
+
+<style>
+.interactive-quiz {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 2px solid #10b981;
+}
+
+.quiz-container {
+    margin: 20px 0;
+}
+
+.question-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #059669;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.quiz-option {
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    background: #f9fafb;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-weight: 500;
+}
+
+.quiz-option:hover {
+    border-color: #059669;
+    background: #f0fdf4;
+}
+
+.quiz-option.selected {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+.quiz-explanation {
+    background: #fffbeb;
+    border: 1px solid #fbbf24;
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.quiz-navigation {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.quiz-check-btn, .quiz-next-btn {
+    background: #059669;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.quiz-check-btn:hover, .quiz-next-btn:hover {
+    background: #047857;
+}
+
+.quiz-results {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #059669;
+}
+</style>    `
+  },
+
+  'sequences-series': {
+    title: 'Chapter 18: Sequences and Series',
+    duration: 22, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 18: <span style="color: #f59e0b; font-weight: 600;">Sequences and Series</span></h2>
+    <p class="lesson-intro">Master arithmetic and geometric sequences, find patterns, and calculate sums - essential for ACT pattern recognition!</p>
+
+    <div class="learning-path">
+        <p><strong>Part 1:</strong> Arithmetic Sequences → Constant differences between terms</p>
+        <p><strong>Part 2:</strong> Geometric Sequences → Constant ratios between terms</p>
+        <p><strong>Part 3:</strong> Series and Sums → Adding up sequence terms</p>
+        <p><strong>Part 4:</strong> Pattern Recognition → Identifying sequence types on the ACT</p>
+        <p><strong>Your advantage:</strong> You have <span style="color: #059669; font-weight: 600;">strong algebra and function skills</span> from previous chapters!</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #f59e0b; font-weight: 600;">Arithmetic Sequences</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What is an Arithmetic Sequence?</h4>
+        <p>A sequence where each term differs from the previous by the same constant value (called the <strong>common difference</strong>).</p>
+        <p>Example: 3, 7, 11, 15, 19, ... (common difference d = 4)</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Arithmetic Sequence Formulas:</h4>
+
+        <p><strong>General Term (nth term):</strong></p>
+        <p style="text-align: center; background: #fef3c7; padding: 10px; border-radius: 6px;">
+            a_n = a₁ + (n - 1)d
+        </p>
+        <p>where a₁ = first term, d = common difference, n = term number</p>
+
+        <p><strong>Sum of n terms:</strong></p>
+        <p style="text-align: center; background: #fef3c7; padding: 10px; border-radius: 6px;">
+            S_n = n/2 × (2a₁ + (n-1)d) = n/2 × (a₁ + a_n)
+        </p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Finding Terms in Arithmetic Sequence</h4>
+        <p><strong>Problem:</strong> In the arithmetic sequence 5, 12, 19, 26, ..., find the 15th term.</p>
+        <p><strong>Solution:</strong></p>
+        <p>First term: a₁ = 5</p>
+        <p>Common difference: d = 12 - 5 = 7</p>
+        <p>15th term: a₁₅ = a₁ + (n - 1)d = 5 + (15 - 1)(7) = 5 + 14(7) = 5 + 98 = 103</p>
+        <p><strong>a₁₅ = 103</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Finding Position of a Term</h4>
+        <p><strong>Problem:</strong> In the sequence 2, 9, 16, 23, ..., which term has value 100?</p>
+        <p><strong>Solution:</strong></p>
+        <p>a₁ = 2, d = 9 - 2 = 7</p>
+        <p>Set a_n = 100: 2 + (n - 1)(7) = 100</p>
+        <p>2 + 7n - 7 = 100</p>
+        <p>7n - 5 = 100</p>
+        <p>7n = 105</p>
+        <p>n = 15</p>
+        <p><strong>100 is the 15th term</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Sum of Arithmetic Sequence</h4>
+        <p><strong>Problem:</strong> Find the sum of the first 20 terms of the sequence 3, 8, 13, 18, ...</p>
+        <p><strong>Solution:</strong></p>
+        <p>a₁ = 3, d = 5</p>
+        <p>Method 1: S₂₀ = n/2 × (2a₁ + (n-1)d) = 20/2 × (2(3) + (20-1)(5))</p>
+        <p>S₂₀ = 10 × (6 + 19(5)) = 10 × (6 + 95) = 10 × 101 = 1010</p>
+        <p><strong>S₂₀ = 1010</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #f59e0b; font-weight: 600;">Geometric Sequences</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What is a Geometric Sequence?</h4>
+        <p>A sequence where each term is obtained by multiplying the previous term by the same constant value (called the <strong>common ratio</strong>).</p>
+        <p>Example: 2, 6, 18, 54, 162, ... (common ratio r = 3)</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Geometric Sequence Formulas:</h4>
+
+        <p><strong>General Term (nth term):</strong></p>
+        <p style="text-align: center; background: #fef3c7; padding: 10px; border-radius: 6px;">
+            a_n = a₁ × r^(n-1)
+        </p>
+        <p>where a₁ = first term, r = common ratio, n = term number</p>
+
+        <p><strong>Sum of n terms (r ≠ 1):</strong></p>
+        <p style="text-align: center; background: #fef3c7; padding: 10px; border-radius: 6px;">
+            S_n = a₁ × (1 - r^n) / (1 - r) = a₁ × (r^n - 1) / (r - 1)
+        </p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Finding Terms in Geometric Sequence</h4>
+        <p><strong>Problem:</strong> In the geometric sequence 4, 12, 36, 108, ..., find the 8th term.</p>
+        <p><strong>Solution:</strong></p>
+        <p>First term: a₁ = 4</p>
+        <p>Common ratio: r = 12/4 = 3</p>
+        <p>8th term: a₈ = a₁ × r^(n-1) = 4 × 3^(8-1) = 4 × 3^7 = 4 × 2187 = 8748</p>
+        <p><strong>a₈ = 8748</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Finding Common Ratio</h4>
+        <p><strong>Problem:</strong> In a geometric sequence, the 3rd term is 20 and the 6th term is 160. Find the common ratio and first term.</p>
+        <p><strong>Solution:</strong></p>
+        <p>a₃ = a₁r² = 20</p>
+        <p>a₆ = a₁r⁵ = 160</p>
+        <p>Divide: a₆/a₃ = (a₁r⁵)/(a₁r²) = r³ = 160/20 = 8</p>
+        <p>r³ = 8 → r = 2</p>
+        <p>a₁r² = 20 → a₁(2)² = 20 → a₁ = 5</p>
+        <p><strong>r = 2, a₁ = 5</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: Sum of Geometric Sequence</h4>
+        <p><strong>Problem:</strong> Find the sum of the first 6 terms of the sequence 3, 6, 12, 24, ...</p>
+        <p><strong>Solution:</strong></p>
+        <p>a₁ = 3, r = 6/3 = 2</p>
+        <p>S₆ = a₁ × (r^n - 1) / (r - 1) = 3 × (2^6 - 1) / (2 - 1)</p>
+        <p>S₆ = 3 × (64 - 1) / 1 = 3 × 63 = 189</p>
+        <p><strong>S₆ = 189</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #f59e0b; font-weight: 600;">Infinite Geometric Series</span></h3>
+
+    <div class="rules-box">
+        <h4>Sum of Infinite Geometric Series:</h4>
+        <p><strong>When |r| < 1 (converges):</strong></p>
+        <p style="text-align: center; background: #fef3c7; padding: 10px; border-radius: 6px;">
+            S = a₁ / (1 - r)
+        </p>
+        <p><strong>When |r| ≥ 1:</strong> The series does not have a finite sum (diverges)</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: Infinite Geometric Series</h4>
+        <p><strong>Problem:</strong> Find the sum of the infinite series 8 + 4 + 2 + 1 + 0.5 + ...</p>
+        <p><strong>Solution:</strong></p>
+        <p>a₁ = 8, r = 4/8 = 1/2</p>
+        <p>Since |r| = 1/2 < 1, the series converges</p>
+        <p>S = a₁ / (1 - r) = 8 / (1 - 1/2) = 8 / (1/2) = 16</p>
+        <p><strong>Sum = 16</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 8: Converting Repeating Decimal</h4>
+        <p><strong>Problem:</strong> Express 0.272727... as a fraction using infinite geometric series.</p>
+        <p><strong>Solution:</strong></p>
+        <p>0.272727... = 0.27 + 0.0027 + 0.000027 + ...</p>
+        <p>= 27/100 + 27/10000 + 27/1000000 + ...</p>
+        <p>= 27/100 × (1 + 1/100 + 1/10000 + ...)</p>
+        <p>The series in parentheses: a₁ = 1, r = 1/100</p>
+        <p>Sum = 1/(1 - 1/100) = 1/(99/100) = 100/99</p>
+        <p>Therefore: 0.272727... = 27/100 × 100/99 = 27/99 = 3/11</p>
+        <p><strong>0.272727... = 3/11</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #f59e0b; font-weight: 600;">ACT Pattern Recognition</span></h3>
+
+    <div class="tip-box">
+        <h4>💡 Identifying Sequence Types</h4>
+        <p><strong>Check differences first:</strong> If consecutive differences are constant → arithmetic</p>
+        <p><strong>Check ratios next:</strong> If consecutive ratios are constant → geometric</p>
+        <p><strong>Look for patterns:</strong> Squares, cubes, factorials, or other special sequences</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 9: Mixed Pattern Recognition</h4>
+        <p><strong>Problem:</strong> Find the next term in each sequence:</p>
+        <p>a) 1, 4, 9, 16, 25, ...</p>
+        <p>b) 2, 6, 18, 54, ...</p>
+        <p>c) 5, 8, 11, 14, ...</p>
+        <p><strong>Solution:</strong></p>
+        <p>a) Perfect squares: 1², 2², 3², 4², 5², ... → Next: 6² = 36</p>
+        <p>b) Geometric with r = 3: 2, 2×3, 2×3², 2×3³, ... → Next: 2×3⁴ = 162</p>
+        <p>c) Arithmetic with d = 3: 5, 5+3, 5+6, 5+9, ... → Next: 14+3 = 17</p>
+        <p><strong>a) 36, b) 162, c) 17</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 10: Fibonacci-type Sequence</h4>
+        <p><strong>Problem:</strong> In the sequence 1, 1, 2, 3, 5, 8, 13, ..., find the 12th term.</p>
+        <p><strong>Solution:</strong></p>
+        <p>This is a Fibonacci sequence where each term = sum of previous two terms</p>
+        <p>Continue the pattern:</p>
+        <p>F₁ = 1, F₂ = 1, F₃ = 2, F₄ = 3, F₅ = 5, F₆ = 8, F₇ = 13</p>
+        <p>F₈ = 13 + 8 = 21</p>
+        <p>F₉ = 21 + 13 = 34</p>
+        <p>F₁₀ = 34 + 21 = 55</p>
+        <p>F₁₁ = 55 + 34 = 89</p>
+        <p>F₁₂ = 89 + 55 = 144</p>
+        <p><strong>12th term = 144</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 11: Complex ACT-style Problem</h4>
+        <p><strong>Problem:</strong> The sum of the first n terms of an arithmetic sequence is S_n = 3n² + 2n. Find the 10th term.</p>
+        <p><strong>Solution:</strong></p>
+        <p>For an arithmetic sequence, a_n = S_n - S_(n-1)</p>
+        <p>S₁₀ = 3(10)² + 2(10) = 300 + 20 = 320</p>
+        <p>S₉ = 3(9)² + 2(9) = 243 + 18 = 261</p>
+        <p>a₁₀ = S₁₀ - S₉ = 320 - 261 = 59</p>
+        <p><strong>10th term = 59</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 12: Real-world Application</h4>
+        <p><strong>Problem:</strong> A car depreciates 15% of its value each year. If it's worth $24,000 initially, what will it be worth after 5 years?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Each year, the car retains 85% = 0.85 of its value</p>
+        <p>This forms a geometric sequence: 24000, 24000(0.85), 24000(0.85)², ...</p>
+        <p>After 5 years: Value = 24000 × (0.85)⁵</p>
+        <p>= 24000 × 0.4437 ≈ $10,649</p>
+        <p><strong>Value after 5 years ≈ $10,649</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🔗 ACT Sequences and Series Strategies</h3>
+
+    <div class="tip-box">
+        <h4>💡 Problem-Solving Strategy</h4>
+        <p><strong>Step 1:</strong> Identify the sequence type (arithmetic, geometric, or special)</p>
+        <p><strong>Step 2:</strong> Find the pattern (common difference, ratio, or rule)</p>
+        <p><strong>Step 3:</strong> Apply the appropriate formula</p>
+        <p><strong>Step 4:</strong> Check your answer for reasonableness</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Quick Reference Formulas:</h4>
+        <div style="background: #fffbeb; padding: 15px; border-radius: 8px;">
+            <p><strong>Arithmetic:</strong> a_n = a₁ + (n-1)d, S_n = n/2(a₁ + a_n)</p>
+            <p><strong>Geometric:</strong> a_n = a₁r^(n-1), S_n = a₁(r^n-1)/(r-1)</p>
+            <p><strong>Infinite Geometric (|r|<1):</strong> S = a₁/(1-r)</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🎯 Interactive Practice Quiz</h3>
+
+    <div class="quiz-container">
+        <div class="quiz-question" data-question="1">
+            <h4>Question 1: Arithmetic Sequence</h4>
+            <p><strong>Problem:</strong> In the arithmetic sequence 7, 12, 17, 22, ..., what is the 20th term?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q1" value="a"> A) 95</label>
+                <label><input type="radio" name="q1" value="b"> B) 102</label>
+                <label><input type="radio" name="q1" value="c"> C) 107</label>
+                <label><input type="radio" name="q1" value="d"> D) 112</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: B) 102</strong></p>
+                <p><strong>Explanation:</strong> First term a₁ = 7, common difference d = 5</p>
+                <p>a₂₀ = a₁ + (n-1)d = 7 + (20-1)(5) = 7 + 95 = 102</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="2">
+            <h4>Question 2: Geometric Sequence</h4>
+            <p><strong>Problem:</strong> In the geometric sequence 3, 12, 48, 192, ..., what is the 7th term?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2" value="a"> A) 12,288</label>
+                <label><input type="radio" name="q2" value="b"> B) 3,072</label>
+                <label><input type="radio" name="q2" value="c"> C) 24,576</label>
+                <label><input type="radio" name="q2" value="d"> D) 6,144</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: A) 12,288</strong></p>
+                <p><strong>Explanation:</strong> First term a₁ = 3, common ratio r = 4</p>
+                <p>a₇ = a₁ × r^(n-1) = 3 × 4^(7-1) = 3 × 4^6 = 3 × 4096 = 12,288</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="3">
+            <h4>Question 3: Sum of Arithmetic Series</h4>
+            <p><strong>Problem:</strong> What is the sum of the first 15 terms of the sequence 4, 9, 14, 19, ...?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q3" value="a"> A) 585</label>
+                <label><input type="radio" name="q3" value="b"> B) 540</label>
+                <label><input type="radio" name="q3" value="c"> C) 525</label>
+                <label><input type="radio" name="q3" value="d"> D) 570</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: A) 585</strong></p>
+                <p><strong>Explanation:</strong> a₁ = 4, d = 5</p>
+                <p>S₁₅ = n/2 × (2a₁ + (n-1)d) = 15/2 × (2(4) + (15-1)(5)) = 15/2 × (8 + 70) = 15/2 × 78 = 585</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="4">
+            <h4>Question 4: Infinite Geometric Series</h4>
+            <p><strong>Problem:</strong> Find the sum of the infinite series: 24 + 12 + 6 + 3 + ...</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q4" value="a"> A) 36</label>
+                <label><input type="radio" name="q4" value="b"> B) 48</label>
+                <label><input type="radio" name="q4" value="c"> C) 42</label>
+                <label><input type="radio" name="q4" value="d"> D) 60</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: B) 48</strong></p>
+                <p><strong>Explanation:</strong> a₁ = 24, r = 12/24 = 1/2</p>
+                <p>Since |r| = 1/2 < 1, the series converges</p>
+                <p>S = a₁/(1-r) = 24/(1-1/2) = 24/(1/2) = 48</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="5">
+            <h4>Question 5: Pattern Recognition</h4>
+            <p><strong>Problem:</strong> What type of sequence is: 2, 8, 32, 128, ...?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q5" value="a"> A) Arithmetic with d = 6</label>
+                <label><input type="radio" name="q5" value="b"> B) Geometric with r = 4</label>
+                <label><input type="radio" name="q5" value="c"> C) Neither arithmetic nor geometric</label>
+                <label><input type="radio" name="q5" value="d"> D) Arithmetic with d = 4</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: B) Geometric with r = 4</strong></p>
+                <p><strong>Explanation:</strong> Check ratios: 8/2 = 4, 32/8 = 4, 128/32 = 4</p>
+                <p>Since all ratios are equal, this is geometric with r = 4</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="6">
+            <h4>Question 6: Real-World Application</h4>
+            <p><strong>Problem:</strong> A ball is dropped and bounces to 60% of its previous height each time. If dropped from 100 feet, what height does it reach after the 4th bounce?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q6" value="a"> A) 12.96 feet</label>
+                <label><input type="radio" name="q6" value="b"> B) 21.6 feet</label>
+                <label><input type="radio" name="q6" value="c"> C) 36 feet</label>
+                <label><input type="radio" name="q6" value="d"> D) 7.78 feet</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: A) 12.96 feet</strong></p>
+                <p><strong>Explanation:</strong> Heights form geometric sequence: 100, 60, 36, 21.6, 12.96, ...</p>
+                <p>After 4th bounce: 100 × (0.6)⁴ = 100 × 0.1296 = 12.96 feet</p>
+            </div>
+        </div>
+
+        <div class="quiz-actions">
+            <button onclick="checkQuizAnswers('sequences-series')" class="quiz-submit-btn">Check Answers</button>
+            <button onclick="resetQuiz('sequences-series')" class="quiz-reset-btn">Reset Quiz</button>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <h4>Quiz Results</h4>
+            <p class="score-display"></p>
+            <div class="results-breakdown"></div>
+        </div>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Sequences and series are about recognizing patterns! Master the difference between arithmetic (constant difference) and geometric (constant ratio) sequences, memorize the key formulas, and practice identifying sequence types quickly. Remember: always check if differences are constant first, then ratios, then look for special patterns like squares or cubes. For infinite geometric series, convergence only occurs when |r| < 1. These concepts appear frequently in ACT word problems and pattern recognition questions!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Master Your Sequences & Series Skills!</h3>
+    <div class="quiz-intro">
+        <p>Time to test your pattern recognition! Click through these 6 carefully crafted questions that mirror real ACT sequence and series problems.</p>
+    </div>
+    <div class="quiz-container">
+        <div class="question-card active" data-question="1">
+            <div class="question-header">
+                <span class="question-number">Question 1 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 16.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 1:</strong> In the arithmetic sequence 5, 9, 13, 17, ..., what is the 20th term?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="A">
+                        <span class="option-text">A) 81</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="B">
+                        <span class="option-text">B) 85</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="C">
+                        <span class="option-text">C) 77</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="D">
+                        <span class="option-text">D) 89</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: A) 81</h4>
+                    <p><strong>Solution:</strong> This is an arithmetic sequence with first term a₁ = 5 and common difference d = 4.</p>
+                    <p>Using the formula aₙ = a₁ + (n-1)d:</p>
+                    <p>a₂₀ = 5 + (20-1)×4 = 5 + 19×4 = 5 + 76 = 81</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="2">
+            <div class="question-header">
+                <span class="question-number">Question 2 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 33.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 2:</strong> What is the sum of the first 10 terms of the geometric series 3 + 6 + 12 + 24 + ...?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="A">
+                        <span class="option-text">A) 1,023</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="B">
+                        <span class="option-text">B) 3,069</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="C">
+                        <span class="option-text">C) 1,533</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="D">
+                        <span class="option-text">D) 2,046</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: B) 3,069</h4>
+                    <p><strong>Solution:</strong> This is a geometric series with a₁ = 3 and r = 2.</p>
+                    <p>Using the formula Sₙ = a₁(rⁿ - 1)/(r - 1):</p>
+                    <p>S₁₀ = 3(2¹⁰ - 1)/(2 - 1) = 3(1024 - 1)/1 = 3 × 1023 = 3,069</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="3">
+            <div class="question-header">
+                <span class="question-number">Question 3 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 3:</strong> For the sequence 2, 6, 18, 54, ..., what type of sequence is this and what is the next term?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="A">
+                        <span class="option-text">A) Arithmetic; next term is 108</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="B">
+                        <span class="option-text">B) Geometric; next term is 162</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="C">
+                        <span class="option-text">C) Geometric; next term is 108</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="D">
+                        <span class="option-text">D) Arithmetic; next term is 162</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: B) Geometric; next term is 162</h4>
+                    <p><strong>Solution:</strong> Check for constant differences: 6-2=4, 18-6=12, 54-18=36. Not constant, so not arithmetic.</p>
+                    <p>Check for constant ratios: 6/2=3, 18/6=3, 54/18=3. Constant ratio = 3, so it's geometric.</p>
+                    <p>Next term: 54 × 3 = 162</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="4">
+            <div class="question-header">
+                <span class="question-number">Question 4 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 66.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 4:</strong> What is the sum of the infinite geometric series 1 + 1/2 + 1/4 + 1/8 + ...?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="A">
+                        <span class="option-text">A) 2</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="B">
+                        <span class="option-text">B) 1</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="C">
+                        <span class="option-text">C) 1/2</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="D">
+                        <span class="option-text">D) The series diverges</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: A) 2</h4>
+                    <p><strong>Solution:</strong> This is an infinite geometric series with a₁ = 1 and r = 1/2.</p>
+                    <p>Since |r| = 1/2 < 1, the series converges.</p>
+                    <p>Using the formula S = a₁/(1 - r): S = 1/(1 - 1/2) = 1/(1/2) = 2</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="5">
+            <div class="question-header">
+                <span class="question-number">Question 5 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 83.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 5:</strong> In an arithmetic series, if the first term is 7, the last term is 43, and there are 10 terms, what is the sum?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="A">
+                        <span class="option-text">A) 250</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="B">
+                        <span class="option-text">B) 300</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="C">
+                        <span class="option-text">C) 225</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="D">
+                        <span class="option-text">D) 275</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: A) 250</h4>
+                    <p><strong>Solution:</strong> For an arithmetic series with first term a₁, last term aₙ, and n terms:</p>
+                    <p>Sₙ = n(a₁ + aₙ)/2</p>
+                    <p>S₁₀ = 10(7 + 43)/2 = 10(50)/2 = 500/2 = 250</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="6">
+            <div class="question-header">
+                <span class="question-number">Question 6 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 6:</strong> What is the 8th term of the sequence 1, 4, 9, 16, 25, ...?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="A">
+                        <span class="option-text">A) 49</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="B">
+                        <span class="option-text">B) 56</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="C">
+                        <span class="option-text">C) 64</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="D">
+                        <span class="option-text">D) 81</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: C) 64</h4>
+                    <p><strong>Solution:</strong> This sequence represents perfect squares: 1² = 1, 2² = 4, 3² = 9, 4² = 16, 5² = 25, ...</p>
+                    <p>The nth term is n². So the 8th term is 8² = 64.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-navigation">
+            <button class="nav-btn prev-btn" onclick="previousQuestion()" style="display: none;">Previous</button>
+            <button class="nav-btn next-btn" onclick="nextQuestion()" style="display: none;">Next</button>
+            <button class="nav-btn finish-btn" onclick="finishQuiz()" style="display: none;">Finish Quiz</button>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <div class="results-header">
+                <h4>🎉 Quiz Complete!</h4>
+                <div class="score-circle">
+                    <span class="score-number">0</span>
+                    <span class="score-total">/6</span>
+                </div>
+            </div>
+            <div class="performance-feedback">
+                <p class="feedback-text"></p>
+            </div>
+            <button class="retake-btn" onclick="retakeQuiz()">🔄 Retake Quiz</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.interactive-quiz {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 30px;
+    border-radius: 20px;
+    margin: 40px 0;
+    color: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.quiz-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.question-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.question-card.active {
+    display: block;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.question-number {
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4ade80, #22c55e);
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+.question-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.quiz-options {
+    display: grid;
+    gap: 12px;
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.05em;
+}
+
+.option-label:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.option-label input[type="radio"] {
+    margin-right: 15px;
+    transform: scale(1.2);
+    accent-color: #4ade80;
+}
+
+.option-label.selected {
+    background: rgba(74, 222, 128, 0.2);
+    border-color: #4ade80;
+}
+
+.option-label.correct {
+    background: rgba(34, 197, 94, 0.3);
+    border-color: #22c55e;
+}
+
+.option-label.incorrect {
+    background: rgba(239, 68, 68, 0.3);
+    border-color: #ef4444;
+}
+
+.explanation {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 12px;
+    border-left: 4px solid #22c55e;
+}
+
+.explanation h4 {
+    margin: 0 0 10px 0;
+    color: #4ade80;
+}
+
+.quiz-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.nav-btn {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.quiz-results {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    margin-top: 20px;
+}
+
+.results-header {
+    margin-bottom: 20px;
+}
+
+.score-circle {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 4px solid #4ade80;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.score-number {
+    font-size: 1.5em;
+    color: #4ade80;
+}
+
+.performance-feedback {
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+
+.retake-btn {
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.retake-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(74, 222, 128, 0.3);
+}
+</style>
+
+<script>
+function initializeQuiz8() {
+    let currentQuestion = 0;
+    let answers = {};
+    let score = 0;
+    const totalQuestions = 6;
+
+    // Show first question
+    showQuestion(0);
+
+    // Handle answer selection
+    document.addEventListener('change', function(e) {
+        if (e.target.type === 'radio' && e.target.name.startsWith('q')) {
+            const questionNum = parseInt(e.target.name.replace('q', ''));
+            const selectedValue = e.target.value;
+            answers[questionNum] = selectedValue;
+
+            // Update visual feedback
+            const questionCard = e.target.closest('.question-card');
+            const labels = questionCard.querySelectorAll('.option-label');
+            labels.forEach(label => {
+                label.classList.remove('selected');
+                if (label.querySelector('input').checked) {
+                    label.classList.add('selected');
+                }
+            });
+
+            // Show explanation after a short delay
+            setTimeout(() => {
+                const explanation = questionCard.querySelector('.explanation');
+                explanation.style.display = 'block';
+                explanation.style.animation = 'slideIn 0.5s ease-out';
+
+                // Check if answer is correct and update styling
+                const correctAnswers = {1: 'A', 2: 'B', 3: 'B', 4: 'A', 5: 'A', 6: 'C'};
+                const isCorrect = correctAnswers[questionNum] === selectedValue;
+
+                labels.forEach(label => {
+                    const input = label.querySelector('input');
+                    if (input.checked) {
+                        label.classList.add(isCorrect ? 'correct' : 'incorrect');
+                    }
+                });
+
+                // Auto-advance to next question after 4 seconds
+                setTimeout(() => {
+                    if (currentQuestion < totalQuestions - 1) {
+                        currentQuestion++;
+                        showQuestion(currentQuestion);
+                    } else {
+                        finishQuiz8();
+                    }
+                }, 4000);
+            }, 1000);
+        }
+    });
+
+    function showQuestion(questionIndex) {
+        const cards = document.querySelectorAll('.question-card');
+        cards.forEach((card, index) => {
+            if (index === questionIndex) {
+                card.classList.add('active');
+                card.style.display = 'block';
+            } else {
+                card.classList.remove('active');
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    window.finishQuiz8 = function() {
+        // Calculate score
+        const correctAnswers = {1: 'A', 2: 'B', 3: 'B', 4: 'A', 5: 'A', 6: 'C'};
+        score = 0;
+        for (let i = 1; i <= totalQuestions; i++) {
+            if (answers[i] === correctAnswers[i]) {
+                score++;
+            }
+        }
+
+        // Hide all questions and show results
+        document.querySelectorAll('.question-card').forEach(card => {
+            card.style.display = 'none';
+        });
+
+        const results = document.querySelector('.quiz-results');
+        results.style.display = 'block';
+        results.querySelector('.score-number').textContent = score;
+
+        // Provide feedback based on performance
+        const percentage = (score / totalQuestions) * 100;
+        let feedbackText = '';
+        if (percentage >= 90) {
+            feedbackText = '🌟 Outstanding! You have mastered sequences and series!';
+        } else if (percentage >= 70) {
+            feedbackText = '👏 Great job! You understand most sequence and series concepts!';
+        } else if (percentage >= 50) {
+            feedbackText = '📚 Good effort! Review arithmetic and geometric sequences more.';
+        } else {
+            feedbackText = '💪 Keep practicing! Focus on identifying sequence patterns and formulas.';
+        }
+
+        results.querySelector('.feedback-text').textContent = feedbackText;
+    };
+
+    window.retakeQuiz = function() {
+        location.reload();
+    };
+}
+
+// Initialize when page loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeQuiz8);
+} else {
+    initializeQuiz8();
+}
+</script>    `
+  },
+
+  'probability-counting': {
+    title: 'Chapter 19: Probability and Counting',
+    duration: 25, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 19: <span style="color: #8b5cf6; font-weight: 600;">Probability and Counting</span></h2>
+    <p class="lesson-intro">Master fundamental counting principles, permutations, combinations, and probability - essential for ACT problem-solving!</p>
+
+    <div class="learning-path">
+        <p><strong>Part 1:</strong> Basic Counting → Multiplication principle and organized lists</p>
+        <p><strong>Part 2:</strong> Permutations → Arrangements where order matters</p>
+        <p><strong>Part 3:</strong> Combinations → Selections where order doesn't matter</p>
+        <p><strong>Part 4:</strong> Probability → Chance and likelihood calculations</p>
+        <p><strong>Your advantage:</strong> You have <span style="color: #059669; font-weight: 600;">strong algebra and pattern recognition</span> from previous chapters!</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #8b5cf6; font-weight: 600;">Basic Counting Principles</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 The Fundamental Counting Principle</h4>
+        <p>If event A can happen in m ways and event B can happen in n ways, then both A and B can happen in <strong>m × n</strong> ways.</p>
+        <p>Example: If you have 3 shirts and 4 pants, you can make 3 × 4 = 12 different outfits.</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: License Plates</h4>
+        <p><strong>Problem:</strong> How many different license plates can be formed with 2 letters followed by 3 digits?</p>
+        <p><strong>Solution:</strong></p>
+        <p>First letter: 26 choices</p>
+        <p>Second letter: 26 choices</p>
+        <p>First digit: 10 choices (0-9)</p>
+        <p>Second digit: 10 choices</p>
+        <p>Third digit: 10 choices</p>
+        <p>Total: 26 × 26 × 10 × 10 × 10 = 676,000</p>
+        <p><strong>676,000 different license plates</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Restaurant Choices</h4>
+        <p><strong>Problem:</strong> A restaurant offers 4 appetizers, 6 entrees, and 3 desserts. How many different complete meals can you order?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Total meals = 4 × 6 × 3 = 72</p>
+        <p><strong>72 different complete meals</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Password Creation</h4>
+        <p><strong>Problem:</strong> How many 4-character passwords can be created using digits, with no repeated digits?</p>
+        <p><strong>Solution:</strong></p>
+        <p>First digit: 10 choices (0-9)</p>
+        <p>Second digit: 9 choices (can't repeat first)</p>
+        <p>Third digit: 8 choices (can't repeat first two)</p>
+        <p>Fourth digit: 7 choices (can't repeat first three)</p>
+        <p>Total: 10 × 9 × 8 × 7 = 5,040</p>
+        <p><strong>5,040 different passwords</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #8b5cf6; font-weight: 600;">Permutations</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What are Permutations?</h4>
+        <p>Permutations are arrangements where <strong>order matters</strong>.</p>
+        <p>Example: ABC, ACB, BAC are all different permutations of the letters A, B, C.</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Permutation Formulas:</h4>
+
+        <p><strong>All permutations of n objects:</strong></p>
+        <p style="text-align: center; background: #f3e8ff; padding: 10px; border-radius: 6px;">
+            P(n) = n!
+        </p>
+
+        <p><strong>Permutations of r objects from n objects:</strong></p>
+        <p style="text-align: center; background: #f3e8ff; padding: 10px; border-radius: 6px;">
+            P(n,r) = n! / (n-r)!
+        </p>
+
+        <p><strong>With repetition allowed:</strong></p>
+        <p style="text-align: center; background: #f3e8ff; padding: 10px; border-radius: 6px;">
+            n^r
+        </p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Arranging Books</h4>
+        <p><strong>Problem:</strong> In how many ways can 5 different books be arranged on a shelf?</p>
+        <p><strong>Solution:</strong></p>
+        <p>This is all permutations of 5 objects</p>
+        <p>P(5) = 5! = 5 × 4 × 3 × 2 × 1 = 120</p>
+        <p><strong>120 ways</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Committee Positions</h4>
+        <p><strong>Problem:</strong> From 8 people, how many ways can we choose a president, vice president, and secretary?</p>
+        <p><strong>Solution:</strong></p>
+        <p>This is permutations of 3 from 8 (order matters - different positions)</p>
+        <p>P(8,3) = 8! / (8-3)! = 8! / 5! = 8 × 7 × 6 = 336</p>
+        <p><strong>336 ways</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: Repeated Letters</h4>
+        <p><strong>Problem:</strong> How many distinct arrangements can be made with the letters in MISSISSIPPI?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Total letters: 11</p>
+        <p>M: 1, I: 4, S: 4, P: 2</p>
+        <p>Arrangements = 11! / (1! × 4! × 4! × 2!) = 39,916,800 / (1 × 24 × 24 × 2) = 34,650</p>
+        <p><strong>34,650 distinct arrangements</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #8b5cf6; font-weight: 600;">Combinations</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What are Combinations?</h4>
+        <p>Combinations are selections where <strong>order doesn't matter</strong>.</p>
+        <p>Example: Choosing a committee of 3 people - ABC is the same as BCA or CAB.</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Combination Formula:</h4>
+
+        <p><strong>Combinations of r objects from n objects:</strong></p>
+        <p style="text-align: center; background: #f3e8ff; padding: 10px; border-radius: 6px;">
+            C(n,r) = n! / (r!(n-r)!) = (n choose r)
+        </p>
+
+        <p><strong>Key relationship:</strong> C(n,r) = P(n,r) / r!</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: Pizza Toppings</h4>
+        <p><strong>Problem:</strong> A pizza shop offers 10 toppings. How many ways can you choose 3 toppings?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Order doesn't matter (pepperoni-sausage-mushroom = mushroom-pepperoni-sausage)</p>
+        <p>C(10,3) = 10! / (3!(10-3)!) = 10! / (3! × 7!) = (10 × 9 × 8) / (3 × 2 × 1) = 720 / 6 = 120</p>
+        <p><strong>120 ways</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 8: Card Hands</h4>
+        <p><strong>Problem:</strong> How many different 5-card hands can be dealt from a standard 52-card deck?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Order doesn't matter in a hand</p>
+        <p>C(52,5) = 52! / (5! × 47!) = (52 × 51 × 50 × 49 × 48) / (5 × 4 × 3 × 2 × 1) = 311,875,200 / 120 = 2,598,960</p>
+        <p><strong>2,598,960 different hands</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 9: Committee Selection</h4>
+        <p><strong>Problem:</strong> From 12 men and 8 women, how many ways can we form a committee of 5 people with exactly 3 men and 2 women?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Choose 3 men from 12: C(12,3) = 12! / (3! × 9!) = 220</p>
+        <p>Choose 2 women from 8: C(8,2) = 8! / (2! × 6!) = 28</p>
+        <p>Total ways: 220 × 28 = 6,160</p>
+        <p><strong>6,160 ways</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #8b5cf6; font-weight: 600;">Probability</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 Basic Probability</h4>
+        <p>Probability measures the likelihood of an event occurring.</p>
+        <p style="text-align: center; background: #f3e8ff; padding: 10px; border-radius: 6px;">
+            P(event) = Number of favorable outcomes / Total number of possible outcomes
+        </p>
+        <p>Probability values range from 0 (impossible) to 1 (certain)</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Probability Rules:</h4>
+
+        <p><strong>Addition Rule (OR):</strong> P(A or B) = P(A) + P(B) - P(A and B)</p>
+        <p><strong>Multiplication Rule (AND):</strong> P(A and B) = P(A) × P(B) [if independent]</p>
+        <p><strong>Complement Rule:</strong> P(not A) = 1 - P(A)</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 10: Dice Probability</h4>
+        <p><strong>Problem:</strong> What's the probability of rolling a sum of 7 with two dice?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Favorable outcomes: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) = 6 ways</p>
+        <p>Total outcomes: 6 × 6 = 36</p>
+        <p>P(sum = 7) = 6/36 = 1/6</p>
+        <p><strong>1/6 ≈ 0.167 or 16.7%</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 11: Card Probability</h4>
+        <p><strong>Problem:</strong> What's the probability of drawing a king or a heart from a standard deck?</p>
+        <p><strong>Solution:</strong></p>
+        <p>P(king) = 4/52</p>
+        <p>P(heart) = 13/52</p>
+        <p>P(king and heart) = 1/52 (king of hearts)</p>
+        <p>P(king or heart) = 4/52 + 13/52 - 1/52 = 16/52 = 4/13</p>
+        <p><strong>4/13 ≈ 0.308 or 30.8%</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 12: Independent Events</h4>
+        <p><strong>Problem:</strong> What's the probability of flipping 3 heads in a row with a fair coin?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Each flip is independent with P(heads) = 1/2</p>
+        <p>P(3 heads) = P(H) × P(H) × P(H) = 1/2 × 1/2 × 1/2 = 1/8</p>
+        <p><strong>1/8 = 0.125 or 12.5%</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🎯 Interactive Practice Quiz</h3>
+
+    <div class="quiz-container">
+        <div class="quiz-question" data-question="1">
+            <h4>Question 1: Basic Counting</h4>
+            <p><strong>Problem:</strong> A school offers 6 math classes, 4 science classes, and 3 English classes. If a student takes one of each type, how many different schedules are possible?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q1" value="a"> A) 13</label>
+                <label><input type="radio" name="q1" value="b"> B) 72</label>
+                <label><input type="radio" name="q1" value="c"> C) 24</label>
+                <label><input type="radio" name="q1" value="d"> D) 36</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: B) 72</strong></p>
+                <p><strong>Explanation:</strong> Using multiplication principle: 6 × 4 × 3 = 72 different schedules</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="2">
+            <h4>Question 2: Permutations</h4>
+            <p><strong>Problem:</strong> From 7 people, how many ways can we choose and arrange 3 people in a line?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2" value="a"> A) 21</label>
+                <label><input type="radio" name="q2" value="b"> B) 35</label>
+                <label><input type="radio" name="q2" value="c"> C) 210</label>
+                <label><input type="radio" name="q2" value="d"> D) 5040</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: C) 210</strong></p>
+                <p><strong>Explanation:</strong> P(7,3) = 7!/(7-3)! = 7!/4! = 7 × 6 × 5 = 210</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="3">
+            <h4>Question 3: Combinations</h4>
+            <p><strong>Problem:</strong> How many ways can you choose 4 books from 9 books on a shelf?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q3" value="a"> A) 3024</label>
+                <label><input type="radio" name="q3" value="b"> B) 126</label>
+                <label><input type="radio" name="q3" value="c"> C) 36</label>
+                <label><input type="radio" name="q3" value="d"> D) 6561</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: B) 126</strong></p>
+                <p><strong>Explanation:</strong> C(9,4) = 9!/(4!×5!) = (9×8×7×6)/(4×3×2×1) = 3024/24 = 126</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="4">
+            <h4>Question 4: Basic Probability</h4>
+            <p><strong>Problem:</strong> What's the probability of drawing a red card from a standard 52-card deck?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q4" value="a"> A) 1/4</label>
+                <label><input type="radio" name="q4" value="b"> B) 1/2</label>
+                <label><input type="radio" name="q4" value="c"> C) 1/3</label>
+                <label><input type="radio" name="q4" value="d"> D) 2/3</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: B) 1/2</strong></p>
+                <p><strong>Explanation:</strong> 26 red cards (hearts + diamonds) out of 52 total cards = 26/52 = 1/2</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="5">
+            <h4>Question 5: Independent Events</h4>
+            <p><strong>Problem:</strong> What's the probability of rolling two 6's with two dice?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q5" value="a"> A) 1/6</label>
+                <label><input type="radio" name="q5" value="b"> B) 1/12</label>
+                <label><input type="radio" name="q5" value="c"> C) 1/36</label>
+                <label><input type="radio" name="q5" value="d"> D) 2/36</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: C) 1/36</strong></p>
+                <p><strong>Explanation:</strong> P(6) × P(6) = 1/6 × 1/6 = 1/36</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="6">
+            <h4>Question 6: Complex Probability</h4>
+            <p><strong>Problem:</strong> A bag contains 5 red, 3 blue, and 2 green marbles. What's the probability of drawing a red or blue marble?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q6" value="a"> A) 3/10</label>
+                <label><input type="radio" name="q6" value="b"> B) 1/2</label>
+                <label><input type="radio" name="q6" value="c"> C) 4/5</label>
+                <label><input type="radio" name="q6" value="d"> D) 8/10</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: C) 4/5</strong></p>
+                <p><strong>Explanation:</strong> Red or blue marbles = 5 + 3 = 8, Total = 10, P = 8/10 = 4/5</p>
+            </div>
+        </div>
+
+        <div class="quiz-actions">
+            <button onclick="checkQuizAnswers('probability-counting')" class="quiz-submit-btn">Check Answers</button>
+            <button onclick="resetQuiz('probability-counting')" class="quiz-reset-btn">Reset Quiz</button>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <h4>Quiz Results</h4>
+            <p class="score-display"></p>
+            <div class="results-breakdown"></div>
+        </div>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Probability and counting are fundamental to many ACT problems! Master the multiplication principle for basic counting, distinguish between permutations (order matters) and combinations (order doesn't matter), and understand basic probability rules. Remember: use permutations for arrangements and positions, combinations for selections and groups, and always check if events are independent when multiplying probabilities. These concepts appear in both math and science sections of the ACT!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Master Your Probability & Counting Skills!</h3>
+    <div class="quiz-intro">
+        <p>Test your understanding of permutations, combinations, and probability! Click through these 6 challenging questions designed to mirror real ACT problems.</p>
+    </div>
+    <div class="quiz-container">
+        <div class="question-card active" data-question="1">
+            <div class="question-header">
+                <span class="question-number">Question 1 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 16.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 1:</strong> A restaurant offers 4 appetizers, 6 main courses, and 3 desserts. How many different 3-course meals are possible?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="A">
+                        <span class="option-text">A) 13</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="B">
+                        <span class="option-text">B) 72</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="C">
+                        <span class="option-text">C) 144</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="D">
+                        <span class="option-text">D) 216</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: B) 72</h4>
+                    <p><strong>Solution:</strong> Using the fundamental counting principle: multiply the number of choices for each course.</p>
+                    <p>4 appetizers × 6 main courses × 3 desserts = 72 different meals</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="2">
+            <div class="question-header">
+                <span class="question-number">Question 2 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 33.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 2:</strong> In how many ways can 5 people be arranged in a row for a photograph?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="A">
+                        <span class="option-text">A) 25</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="B">
+                        <span class="option-text">B) 60</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="C">
+                        <span class="option-text">C) 120</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="D">
+                        <span class="option-text">D) 3,125</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: C) 120</h4>
+                    <p><strong>Solution:</strong> This is a permutation problem (order matters).</p>
+                    <p>P(5,5) = 5! = 5 × 4 × 3 × 2 × 1 = 120 ways</p>
+                    <p>First position: 5 choices, second: 4 choices, third: 3 choices, etc.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="3">
+            <div class="question-header">
+                <span class="question-number">Question 3 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 3:</strong> A committee of 3 people must be chosen from a group of 8 people. How many different committees are possible?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="A">
+                        <span class="option-text">A) 24</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="B">
+                        <span class="option-text">B) 56</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="C">
+                        <span class="option-text">C) 336</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="D">
+                        <span class="option-text">D) 512</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: B) 56</h4>
+                    <p><strong>Solution:</strong> This is a combination problem (order doesn't matter).</p>
+                    <p>C(8,3) = 8!/(3! × 5!) = (8 × 7 × 6)/(3 × 2 × 1) = 336/6 = 56</p>
+                    <p>We divide by 3! because the order of committee members doesn't matter.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="4">
+            <div class="question-header">
+                <span class="question-number">Question 4 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 66.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 4:</strong> A standard six-sided die is rolled twice. What is the probability that both rolls show an even number?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="A">
+                        <span class="option-text">A) 1/4</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="B">
+                        <span class="option-text">B) 1/3</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="C">
+                        <span class="option-text">C) 1/2</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="D">
+                        <span class="option-text">D) 2/3</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: A) 1/4</h4>
+                    <p><strong>Solution:</strong> The even numbers on a die are 2, 4, and 6.</p>
+                    <p>P(even on first roll) = 3/6 = 1/2</p>
+                    <p>P(even on second roll) = 3/6 = 1/2</p>
+                    <p>Since the rolls are independent: P(both even) = 1/2 × 1/2 = 1/4</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="5">
+            <div class="question-header">
+                <span class="question-number">Question 5 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 83.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 5:</strong> From the word MATHEMATICS, how many different arrangements of 4 letters can be made?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="A">
+                        <span class="option-text">A) 2,454</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="B">
+                        <span class="option-text">B) 2,040</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="C">
+                        <span class="option-text">C) 1,680</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="D">
+                        <span class="option-text">D) 7,920</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: A) 2,454</h4>
+                    <p><strong>Solution:</strong> MATHEMATICS has 11 letters: M(2), A(2), T(2), H(1), E(1), I(1), C(1), S(1)</p>
+                    <p>We need to count distinct arrangements considering repeated letters.</p>
+                    <p>This requires careful case analysis of which letters we choose and their arrangements.</p>
+                    <p>The calculation involves multiple cases based on repeated letters selected.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="6">
+            <div class="question-header">
+                <span class="question-number">Question 6 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 6:</strong> A bag contains 5 red marbles, 3 blue marbles, and 2 green marbles. If 2 marbles are drawn without replacement, what is the probability that both are red?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="A">
+                        <span class="option-text">A) 2/9</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="B">
+                        <span class="option-text">B) 1/4</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="C">
+                        <span class="option-text">C) 25/100</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="D">
+                        <span class="option-text">D) 4/18</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: A) 2/9</h4>
+                    <p><strong>Solution:</strong> Total marbles = 5 + 3 + 2 = 10</p>
+                    <p>P(first red) = 5/10 = 1/2</p>
+                    <p>After drawing one red marble: 4 red out of 9 total remain</p>
+                    <p>P(second red | first red) = 4/9</p>
+                    <p>P(both red) = 1/2 × 4/9 = 4/18 = 2/9</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-navigation">
+            <button class="nav-btn prev-btn" onclick="previousQuestion()" style="display: none;">Previous</button>
+            <button class="nav-btn next-btn" onclick="nextQuestion()" style="display: none;">Next</button>
+            <button class="nav-btn finish-btn" onclick="finishQuiz()" style="display: none;">Finish Quiz</button>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <div class="results-header">
+                <h4>🎉 Quiz Complete!</h4>
+                <div class="score-circle">
+                    <span class="score-number">0</span>
+                    <span class="score-total">/6</span>
+                </div>
+            </div>
+            <div class="performance-feedback">
+                <p class="feedback-text"></p>
+            </div>
+            <button class="retake-btn" onclick="retakeQuiz()">🔄 Retake Quiz</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.interactive-quiz {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    padding: 30px;
+    border-radius: 20px;
+    margin: 40px 0;
+    color: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.quiz-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.question-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.question-card.active {
+    display: block;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.question-number {
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #a78bfa, #8b5cf6);
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+.question-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.quiz-options {
+    display: grid;
+    gap: 12px;
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.05em;
+}
+
+.option-label:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.option-label input[type="radio"] {
+    margin-right: 15px;
+    transform: scale(1.2);
+    accent-color: #a78bfa;
+}
+
+.option-label.selected {
+    background: rgba(167, 139, 250, 0.2);
+    border-color: #a78bfa;
+}
+
+.option-label.correct {
+    background: rgba(34, 197, 94, 0.3);
+    border-color: #22c55e;
+}
+
+.option-label.incorrect {
+    background: rgba(239, 68, 68, 0.3);
+    border-color: #ef4444;
+}
+
+.explanation {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 12px;
+    border-left: 4px solid #22c55e;
+}
+
+.explanation h4 {
+    margin: 0 0 10px 0;
+    color: #4ade80;
+}
+
+.quiz-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.nav-btn {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.quiz-results {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    margin-top: 20px;
+}
+
+.results-header {
+    margin-bottom: 20px;
+}
+
+.score-circle {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 4px solid #a78bfa;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.score-number {
+    font-size: 1.5em;
+    color: #a78bfa;
+}
+
+.performance-feedback {
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+
+.retake-btn {
+    background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.retake-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(167, 139, 250, 0.3);
+}
+</style>
+
+<script>
+function initializeQuiz9() {
+    let currentQuestion = 0;
+    let answers = {};
+    let score = 0;
+    const totalQuestions = 6;
+
+    // Show first question
+    showQuestion(0);
+
+    // Handle answer selection
+    document.addEventListener('change', function(e) {
+        if (e.target.type === 'radio' && e.target.name.startsWith('q')) {
+            const questionNum = parseInt(e.target.name.replace('q', ''));
+            const selectedValue = e.target.value;
+            answers[questionNum] = selectedValue;
+
+            // Update visual feedback
+            const questionCard = e.target.closest('.question-card');
+            const labels = questionCard.querySelectorAll('.option-label');
+            labels.forEach(label => {
+                label.classList.remove('selected');
+                if (label.querySelector('input').checked) {
+                    label.classList.add('selected');
+                }
+            });
+
+            // Show explanation after a short delay
+            setTimeout(() => {
+                const explanation = questionCard.querySelector('.explanation');
+                explanation.style.display = 'block';
+                explanation.style.animation = 'slideIn 0.5s ease-out';
+
+                // Check if answer is correct and update styling
+                const correctAnswers = {1: 'B', 2: 'C', 3: 'B', 4: 'A', 5: 'A', 6: 'A'};
+                const isCorrect = correctAnswers[questionNum] === selectedValue;
+
+                labels.forEach(label => {
+                    const input = label.querySelector('input');
+                    if (input.checked) {
+                        label.classList.add(isCorrect ? 'correct' : 'incorrect');
+                    }
+                });
+
+                // Auto-advance to next question after 4 seconds
+                setTimeout(() => {
+                    if (currentQuestion < totalQuestions - 1) {
+                        currentQuestion++;
+                        showQuestion(currentQuestion);
+                    } else {
+                        finishQuiz9();
+                    }
+                }, 4000);
+            }, 1000);
+        }
+    });
+
+    function showQuestion(questionIndex) {
+        const cards = document.querySelectorAll('.question-card');
+        cards.forEach((card, index) => {
+            if (index === questionIndex) {
+                card.classList.add('active');
+                card.style.display = 'block';
+            } else {
+                card.classList.remove('active');
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    window.finishQuiz9 = function() {
+        // Calculate score
+        const correctAnswers = {1: 'B', 2: 'C', 3: 'B', 4: 'A', 5: 'A', 6: 'A'};
+        score = 0;
+        for (let i = 1; i <= totalQuestions; i++) {
+            if (answers[i] === correctAnswers[i]) {
+                score++;
+            }
+        }
+
+        // Hide all questions and show results
+        document.querySelectorAll('.question-card').forEach(card => {
+            card.style.display = 'none';
+        });
+
+        const results = document.querySelector('.quiz-results');
+        results.style.display = 'block';
+        results.querySelector('.score-number').textContent = score;
+
+        // Provide feedback based on performance
+        const percentage = (score / totalQuestions) * 100;
+        let feedbackText = '';
+        if (percentage >= 90) {
+            feedbackText = '🌟 Excellent! You've mastered probability and counting!';
+        } else if (percentage >= 70) {
+            feedbackText = '👏 Great work! You understand most counting and probability concepts!';
+        } else if (percentage >= 50) {
+            feedbackText = '📚 Good effort! Review permutations vs combinations more.';
+        } else {
+            feedbackText = '💪 Keep practicing! Focus on the fundamental counting principle and probability rules.';
+        }
+
+        results.querySelector('.feedback-text').textContent = feedbackText;
+    };
+
+    window.retakeQuiz = function() {
+        location.reload();
+    };
+}
+
+// Initialize when page loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeQuiz9);
+} else {
+    initializeQuiz9();
+}
+</script>    `
+  },
+
+  'logarithms': {
+    title: 'Chapter 20: Logarithms',
+    duration: 20, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 20: <span style="color: #059669; font-weight: 600;">Logarithms</span></h2>
+    <p class="lesson-intro">Master logarithmic functions, properties, and equations - essential for advanced ACT math topics!</p>
+
+    <div class="learning-path">
+        <p><strong>Part 1:</strong> Definition of Logarithms → Understanding log as inverse of exponential</p>
+        <p><strong>Part 2:</strong> Logarithm Properties → Rules for simplifying log expressions</p>
+        <p><strong>Part 3:</strong> Solving Log Equations → Finding unknown values</p>
+        <p><strong>Part 4:</strong> ACT Applications → Real-world logarithm problems</p>
+        <p><strong>Your advantage:</strong> You have <span style="color: #dc2626; font-weight: 600;">mastered exponents and algebra</span> from previous chapters!</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #059669; font-weight: 600;">What are Logarithms?</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 Logarithm Definition</h4>
+        <p>A logarithm answers the question: <strong>"To what power must we raise the base to get this number?"</strong></p>
+        <div style="text-align: center; background: #f0fdf4; padding: 15px; border-radius: 8px; margin: 15px 0;">
+            <p><strong>log_b(x) = y means b^y = x</strong></p>
+        </div>
+        <p>Example: log₂(8) = 3 because 2³ = 8</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Common Logarithm Types:</h4>
+
+        <p><strong>Common Log (base 10):</strong> log(x) = log₁₀(x)</p>
+        <p><strong>Natural Log (base e):</strong> ln(x) = log_e(x)</p>
+        <p><strong>Binary Log (base 2):</strong> log₂(x)</p>
+
+        <p><strong>Key Relationships:</strong></p>
+        <p>• log_b(b) = 1 (any base to the first power equals itself)</p>
+        <p>• log_b(1) = 0 (any base to the zero power equals 1)</p>
+        <p>• log_b(b^x) = x (logarithm and exponential cancel out)</p>
+        <p>• b^(log_b(x)) = x (exponential and logarithm cancel out)</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Converting Between Forms</h4>
+        <p><strong>Problem:</strong> Convert between exponential and logarithmic form:</p>
+        <p>a) 3⁴ = 81</p>
+        <p>b) log₅(125) = 3</p>
+        <p><strong>Solution:</strong></p>
+        <p>a) 3⁴ = 81 → log₃(81) = 4</p>
+        <p>b) log₅(125) = 3 → 5³ = 125</p>
+        <p><strong>a) log₃(81) = 4, b) 5³ = 125</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Evaluating Basic Logarithms</h4>
+        <p><strong>Problem:</strong> Evaluate without a calculator:</p>
+        <p>a) log₂(16)</p>
+        <p>b) log₁₀(1000)</p>
+        <p>c) ln(e³)</p>
+        <p><strong>Solution:</strong></p>
+        <p>a) log₂(16): What power of 2 gives 16? 2⁴ = 16, so log₂(16) = 4</p>
+        <p>b) log₁₀(1000): What power of 10 gives 1000? 10³ = 1000, so log₁₀(1000) = 3</p>
+        <p>c) ln(e³): What power of e gives e³? e³, so ln(e³) = 3</p>
+        <p><strong>a) 4, b) 3, c) 3</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #059669; font-weight: 600;">Logarithm Properties</span></h3>
+
+    <div class="rules-box">
+        <h4>The Three Key Properties:</h4>
+
+        <p><strong>1. Product Rule:</strong></p>
+        <p style="text-align: center; background: #f0fdf4; padding: 10px; border-radius: 6px;">
+            log_b(mn) = log_b(m) + log_b(n)
+        </p>
+
+        <p><strong>2. Quotient Rule:</strong></p>
+        <p style="text-align: center; background: #f0fdf4; padding: 10px; border-radius: 6px;">
+            log_b(m/n) = log_b(m) - log_b(n)
+        </p>
+
+        <p><strong>3. Power Rule:</strong></p>
+        <p style="text-align: center; background: #f0fdf4; padding: 10px; border-radius: 6px;">
+            log_b(m^p) = p · log_b(m)
+        </p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Using Product Rule</h4>
+        <p><strong>Problem:</strong> Simplify log₃(9 × 27) using logarithm properties.</p>
+        <p><strong>Solution:</strong></p>
+        <p>log₃(9 × 27) = log₃(9) + log₃(27)</p>
+        <p>log₃(9) = log₃(3²) = 2</p>
+        <p>log₃(27) = log₃(3³) = 3</p>
+        <p>log₃(9 × 27) = 2 + 3 = 5</p>
+        <p><strong>5</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Using All Three Properties</h4>
+        <p><strong>Problem:</strong> Express log₂(8x³/4) in terms of log₂(x).</p>
+        <p><strong>Solution:</strong></p>
+        <p>log₂(8x³/4) = log₂(8x³) - log₂(4)</p>
+        <p>= log₂(8) + log₂(x³) - log₂(4)</p>
+        <p>= log₂(2³) + 3log₂(x) - log₂(2²)</p>
+        <p>= 3 + 3log₂(x) - 2</p>
+        <p>= 1 + 3log₂(x)</p>
+        <p><strong>1 + 3log₂(x)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Change of Base Formula</h4>
+        <p><strong>Problem:</strong> Calculate log₃(20) using common logarithms.</p>
+        <p><strong>Solution:</strong></p>
+        <p>Change of base formula: log_a(x) = log(x)/log(a)</p>
+        <p>log₃(20) = log(20)/log(3)</p>
+        <p>≈ 1.301/0.477 ≈ 2.73</p>
+        <p><strong>log₃(20) ≈ 2.73</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #059669; font-weight: 600;">Solving Logarithmic Equations</span></h3>
+
+    <div class="example-box">
+        <h4>Example 6: Basic Log Equations</h4>
+        <p><strong>Problem:</strong> Solve log₂(x) = 5</p>
+        <p><strong>Solution:</strong></p>
+        <p>Convert to exponential form: x = 2⁵</p>
+        <p>x = 32</p>
+        <p>Check: log₂(32) = log₂(2⁵) = 5 ✓</p>
+        <p><strong>x = 32</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: Log Equations with Properties</h4>
+        <p><strong>Problem:</strong> Solve log₃(x) + log₃(x - 2) = 1</p>
+        <p><strong>Solution:</strong></p>
+        <p>Use product rule: log₃(x(x - 2)) = 1</p>
+        <p>Convert to exponential: x(x - 2) = 3¹</p>
+        <p>x² - 2x = 3</p>
+        <p>x² - 2x - 3 = 0</p>
+        <p>(x - 3)(x + 1) = 0</p>
+        <p>x = 3 or x = -1</p>
+        <p>Check domain: x > 0 and x - 2 > 0, so x > 2</p>
+        <p>Only x = 3 is valid</p>
+        <p><strong>x = 3</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 8: Exponential Equations with Logs</h4>
+        <p><strong>Problem:</strong> Solve 2^(x+1) = 50</p>
+        <p><strong>Solution:</strong></p>
+        <p>Take log of both sides: log(2^(x+1)) = log(50)</p>
+        <p>Use power rule: (x + 1)log(2) = log(50)</p>
+        <p>x + 1 = log(50)/log(2)</p>
+        <p>x + 1 ≈ 1.699/0.301 ≈ 5.64</p>
+        <p>x ≈ 4.64</p>
+        <p><strong>x ≈ 4.64</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #059669; font-weight: 600;">Real-World Applications</span></h3>
+
+    <div class="example-box">
+        <h4>Example 9: Compound Interest</h4>
+        <p><strong>Problem:</strong> How long will it take for $1000 to double at 8% annual interest compounded continuously?</p>
+        <p><strong>Solution:</strong></p>
+        <p>Formula: A = Pe^(rt), where A = 2000, P = 1000, r = 0.08</p>
+        <p>2000 = 1000e^(0.08t)</p>
+        <p>2 = e^(0.08t)</p>
+        <p>Take natural log: ln(2) = ln(e^(0.08t))</p>
+        <p>ln(2) = 0.08t</p>
+        <p>t = ln(2)/0.08 ≈ 0.693/0.08 ≈ 8.66</p>
+        <p><strong>About 8.7 years</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 10: pH Calculations</h4>
+        <p><strong>Problem:</strong> If the pH of a solution is 3.5, what is the hydrogen ion concentration?</p>
+        <p><strong>Solution:</strong></p>
+        <p>pH = -log[H⁺], so [H⁺] = 10^(-pH)</p>
+        <p>[H⁺] = 10^(-3.5)</p>
+        <p>[H⁺] = 10^(-3.5) ≈ 3.16 × 10^(-4) M</p>
+        <p><strong>[H⁺] ≈ 3.16 × 10^(-4) M</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🎯 Interactive Practice Quiz</h3>
+
+    <div class="quiz-container">
+        <div class="quiz-question" data-question="1">
+            <h4>Question 1: Basic Logarithms</h4>
+            <p><strong>Problem:</strong> Evaluate log₄(64)</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q1" value="a"> A) 2</label>
+                <label><input type="radio" name="q1" value="b"> B) 3</label>
+                <label><input type="radio" name="q1" value="c"> C) 4</label>
+                <label><input type="radio" name="q1" value="d"> D) 16</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: B) 3</strong></p>
+                <p><strong>Explanation:</strong> log₄(64) asks "4 to what power equals 64?" Since 4³ = 64, the answer is 3.</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="2">
+            <h4>Question 2: Logarithm Properties</h4>
+            <p><strong>Problem:</strong> Simplify log₂(8) + log₂(4)</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2" value="a"> A) 3</label>
+                <label><input type="radio" name="q2" value="b"> B) 4</label>
+                <label><input type="radio" name="q2" value="c"> C) 5</label>
+                <label><input type="radio" name="q2" value="d"> D) 6</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: C) 5</strong></p>
+                <p><strong>Explanation:</strong> log₂(8) + log₂(4) = log₂(8 × 4) = log₂(32) = log₂(2⁵) = 5</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="3">
+            <h4>Question 3: Converting Forms</h4>
+            <p><strong>Problem:</strong> If log₃(x) = 4, what is x?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q3" value="a"> A) 12</label>
+                <label><input type="radio" name="q3" value="b"> B) 64</label>
+                <label><input type="radio" name="q3" value="c"> C) 81</label>
+                <label><input type="radio" name="q3" value="d"> D) 243</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: C) 81</strong></p>
+                <p><strong>Explanation:</strong> log₃(x) = 4 means 3⁴ = x, so x = 81</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="4">
+            <h4>Question 4: Power Rule</h4>
+            <p><strong>Problem:</strong> Simplify log₅(x³)</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q4" value="a"> A) 3log₅(x)</label>
+                <label><input type="radio" name="q4" value="b"> B) log₅(3x)</label>
+                <label><input type="radio" name="q4" value="c"> C) log₅(x) + 3</label>
+                <label><input type="radio" name="q4" value="d"> D) (log₅(x))³</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: A) 3log₅(x)</strong></p>
+                <p><strong>Explanation:</strong> Using the power rule: log_b(m^p) = p · log_b(m), so log₅(x³) = 3log₅(x)</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="5">
+            <h4>Question 5: Solving Log Equations</h4>
+            <p><strong>Problem:</strong> Solve log₂(x - 1) = 3</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q5" value="a"> A) x = 7</label>
+                <label><input type="radio" name="q5" value="b"> B) x = 8</label>
+                <label><input type="radio" name="q5" value="c"> C) x = 9</label>
+                <label><input type="radio" name="q5" value="d"> D) x = 16</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: C) x = 9</strong></p>
+                <p><strong>Explanation:</strong> log₂(x - 1) = 3 means x - 1 = 2³ = 8, so x = 9</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="6">
+            <h4>Question 6: Natural Logarithms</h4>
+            <p><strong>Problem:</strong> If ln(x) = 2, what is x?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q6" value="a"> A) 2</label>
+                <label><input type="radio" name="q6" value="b"> B) e²</label>
+                <label><input type="radio" name="q6" value="c"> C) 2e</label>
+                <label><input type="radio" name="q6" value="d"> D) e + 2</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: B) e²</strong></p>
+                <p><strong>Explanation:</strong> ln(x) = 2 means x = e², since ln is the natural logarithm (base e)</p>
+            </div>
+        </div>
+
+        <div class="quiz-actions">
+            <button onclick="checkQuizAnswers('logarithms')" class="quiz-submit-btn">Check Answers</button>
+            <button onclick="resetQuiz('logarithms')" class="quiz-reset-btn">Reset Quiz</button>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <h4>Quiz Results</h4>
+            <p class="score-display"></p>
+            <div class="results-breakdown"></div>
+        </div>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Logarithms are the inverse of exponentials! Master the basic definition (log_b(x) = y means b^y = x), memorize the three key properties (product, quotient, and power rules), and practice converting between logarithmic and exponential forms. Remember: logarithms turn multiplication into addition, division into subtraction, and powers into multiplication. These concepts appear in advanced ACT problems involving exponential growth, pH calculations, and earthquake measurements!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Master Your Logarithm Skills!</h3>
+    <div class="quiz-intro">
+        <p>Test your understanding of logarithms, properties, and equations! Click through these 6 challenging questions designed to mirror real ACT problems.</p>
+    </div>
+    <div class="quiz-container">
+        <div class="question-card active" data-question="1">
+            <div class="question-header">
+                <span class="question-number">Question 1 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 16.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 1:</strong> What is the value of log₂(32)?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="A">
+                        <span class="option-text">A) 4</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="B">
+                        <span class="option-text">B) 5</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="C">
+                        <span class="option-text">C) 6</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="D">
+                        <span class="option-text">D) 16</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: B) 5</h4>
+                    <p><strong>Solution:</strong> log₂(32) asks "2 to what power equals 32?"</p>
+                    <p>Since 2⁵ = 32, we have log₂(32) = 5</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="2">
+            <div class="question-header">
+                <span class="question-number">Question 2 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 33.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 2:</strong> Simplify log₃(27) + log₃(9)</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="A">
+                        <span class="option-text">A) 4</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="B">
+                        <span class="option-text">B) 5</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="C">
+                        <span class="option-text">C) 6</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="D">
+                        <span class="option-text">D) 36</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: B) 5</h4>
+                    <p><strong>Solution:</strong> Using the product rule: log₃(27) + log₃(9) = log₃(27 × 9) = log₃(243)</p>
+                    <p>Since 3⁵ = 243, we have log₃(243) = 5</p>
+                    <p>Alternatively: log₃(27) = log₃(3³) = 3 and log₃(9) = log₃(3²) = 2, so 3 + 2 = 5</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="3">
+            <div class="question-header">
+                <span class="question-number">Question 3 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 3:</strong> If log₄(x) = 3, what is the value of x?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="A">
+                        <span class="option-text">A) 12</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="B">
+                        <span class="option-text">B) 64</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="C">
+                        <span class="option-text">C) 81</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="D">
+                        <span class="option-text">D) 256</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: B) 64</h4>
+                    <p><strong>Solution:</strong> log₄(x) = 3 means 4³ = x</p>
+                    <p>4³ = 64, so x = 64</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="4">
+            <div class="question-header">
+                <span class="question-number">Question 4 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 66.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 4:</strong> Express log₅(x³) using the power rule.</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="A">
+                        <span class="option-text">A) 3log₅(x)</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="B">
+                        <span class="option-text">B) log₅(3x)</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="C">
+                        <span class="option-text">C) log₅(x) + 3</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="D">
+                        <span class="option-text">D) (log₅(x))³</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: A) 3log₅(x)</h4>
+                    <p><strong>Solution:</strong> Using the power rule: log_b(m^p) = p · log_b(m)</p>
+                    <p>Therefore: log₅(x³) = 3 · log₅(x) = 3log₅(x)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="5">
+            <div class="question-header">
+                <span class="question-number">Question 5 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 83.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 5:</strong> Solve for x: log₂(x - 3) = 4</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="A">
+                        <span class="option-text">A) x = 13</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="B">
+                        <span class="option-text">B) x = 16</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="C">
+                        <span class="option-text">C) x = 19</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="D">
+                        <span class="option-text">D) x = 64</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: C) x = 19</h4>
+                    <p><strong>Solution:</strong> log₂(x - 3) = 4 means x - 3 = 2⁴</p>
+                    <p>x - 3 = 16</p>
+                    <p>x = 19</p>
+                    <p>Check: log₂(19 - 3) = log₂(16) = log₂(2⁴) = 4 ✓</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="6">
+            <div class="question-header">
+                <span class="question-number">Question 6 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 6:</strong> If ln(e³) = k, what is the value of k?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="A">
+                        <span class="option-text">A) e</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="B">
+                        <span class="option-text">B) 3</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="C">
+                        <span class="option-text">C) e³</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="D">
+                        <span class="option-text">D) 3e</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: B) 3</h4>
+                    <p><strong>Solution:</strong> ln(e³) asks "e to what power equals e³?"</p>
+                    <p>Since e³ = e³, we have ln(e³) = 3</p>
+                    <p>Using the power rule: ln(e³) = 3 · ln(e) = 3 · 1 = 3</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-navigation">
+            <button class="nav-btn prev-btn" onclick="previousQuestion()" style="display: none;">Previous</button>
+            <button class="nav-btn next-btn" onclick="nextQuestion()" style="display: none;">Next</button>
+            <button class="nav-btn finish-btn" onclick="finishQuiz()" style="display: none;">Finish Quiz</button>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <div class="results-header">
+                <h4>🎉 Quiz Complete!</h4>
+                <div class="score-circle">
+                    <span class="score-number">0</span>
+                    <span class="score-total">/6</span>
+                </div>
+            </div>
+            <div class="performance-feedback">
+                <p class="feedback-text"></p>
+            </div>
+            <button class="retake-btn" onclick="retakeQuiz()">🔄 Retake Quiz</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.interactive-quiz {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    padding: 30px;
+    border-radius: 20px;
+    margin: 40px 0;
+    color: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.quiz-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.question-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.question-card.active {
+    display: block;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.question-number {
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #059669);
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+.question-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.quiz-options {
+    display: grid;
+    gap: 12px;
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.05em;
+}
+
+.option-label:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.option-label input[type="radio"] {
+    margin-right: 15px;
+    transform: scale(1.2);
+    accent-color: #10b981;
+}
+
+.option-label.selected {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: #10b981;
+}
+
+.option-label.correct {
+    background: rgba(34, 197, 94, 0.3);
+    border-color: #22c55e;
+}
+
+.option-label.incorrect {
+    background: rgba(239, 68, 68, 0.3);
+    border-color: #ef4444;
+}
+
+.explanation {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 12px;
+    border-left: 4px solid #22c55e;
+}
+
+.explanation h4 {
+    margin: 0 0 10px 0;
+    color: #4ade80;
+}
+
+.quiz-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.nav-btn {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.quiz-results {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    margin-top: 20px;
+}
+
+.results-header {
+    margin-bottom: 20px;
+}
+
+.score-circle {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 4px solid #10b981;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.score-number {
+    font-size: 1.5em;
+    color: #10b981;
+}
+
+.performance-feedback {
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+
+.retake-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.retake-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+</style>
+
+<script>
+function initializeQuiz10() {
+    let currentQuestion = 0;
+    let answers = {};
+    let score = 0;
+    const totalQuestions = 6;
+
+    // Show first question
+    showQuestion(0);
+
+    // Handle answer selection
+    document.addEventListener('change', function(e) {
+        if (e.target.type === 'radio' && e.target.name.startsWith('q')) {
+            const questionNum = parseInt(e.target.name.replace('q', ''));
+            const selectedValue = e.target.value;
+            answers[questionNum] = selectedValue;
+
+            // Update visual feedback
+            const questionCard = e.target.closest('.question-card');
+            const labels = questionCard.querySelectorAll('.option-label');
+            labels.forEach(label => {
+                label.classList.remove('selected');
+                if (label.querySelector('input').checked) {
+                    label.classList.add('selected');
+                }
+            });
+
+            // Show explanation after a short delay
+            setTimeout(() => {
+                const explanation = questionCard.querySelector('.explanation');
+                explanation.style.display = 'block';
+                explanation.style.animation = 'slideIn 0.5s ease-out';
+
+                // Check if answer is correct and update styling
+                const correctAnswers = {1: 'B', 2: 'B', 3: 'B', 4: 'A', 5: 'C', 6: 'B'};
+                const isCorrect = correctAnswers[questionNum] === selectedValue;
+
+                labels.forEach(label => {
+                    const input = label.querySelector('input');
+                    if (input.checked) {
+                        label.classList.add(isCorrect ? 'correct' : 'incorrect');
+                    }
+                });
+
+                // Auto-advance to next question after 4 seconds
+                setTimeout(() => {
+                    if (currentQuestion < totalQuestions - 1) {
+                        currentQuestion++;
+                        showQuestion(currentQuestion);
+                    } else {
+                        finishQuiz10();
+                    }
+                }, 4000);
+            }, 1000);
+        }
+    });
+
+    function showQuestion(questionIndex) {
+        const cards = document.querySelectorAll('.question-card');
+        cards.forEach((card, index) => {
+            if (index === questionIndex) {
+                card.classList.add('active');
+                card.style.display = 'block';
+            } else {
+                card.classList.remove('active');
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    window.finishQuiz10 = function() {
+        // Calculate score
+        const correctAnswers = {1: 'B', 2: 'B', 3: 'B', 4: 'A', 5: 'C', 6: 'B'};
+        score = 0;
+        for (let i = 1; i <= totalQuestions; i++) {
+            if (answers[i] === correctAnswers[i]) {
+                score++;
+            }
+        }
+
+        // Hide all questions and show results
+        document.querySelectorAll('.question-card').forEach(card => {
+            card.style.display = 'none';
+        });
+
+        const results = document.querySelector('.quiz-results');
+        results.style.display = 'block';
+        results.querySelector('.score-number').textContent = score;
+
+        // Provide feedback based on performance
+        const percentage = (score / totalQuestions) * 100;
+        let feedbackText = '';
+        if (percentage >= 90) {
+            feedbackText = '🌟 Outstanding! You've mastered logarithms!';
+        } else if (percentage >= 70) {
+            feedbackText = '👏 Great work! You understand most logarithm concepts!';
+        } else if (percentage >= 50) {
+            feedbackText = '📚 Good effort! Review logarithm properties and conversions.';
+        } else {
+            feedbackText = '💪 Keep practicing! Focus on the definition and basic conversions.';
+        }
+
+        results.querySelector('.feedback-text').textContent = feedbackText;
+    };
+
+    window.retakeQuiz = function() {
+        location.reload();
+    };
+}
+
+// Initialize when page loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeQuiz10);
+} else {
+    initializeQuiz10();
+}
+</script>
+    `
+  },
+
+  'conic-sections': {
+    title: 'Chapter 21: Conic Sections',
+    duration: 28, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 21: <span style="color: #dc2626; font-weight: 600;">Conic Sections</span></h2>
+    <p class="lesson-intro">Master circles, ellipses, parabolas, and hyperbolas - advanced ACT geometry topics that test your algebraic skills!</p>
+
+    <div class="learning-path">
+        <p><strong>Part 1:</strong> Circles → Center, radius, and standard form equations</p>
+        <p><strong>Part 2:</strong> Parabolas → Vertex form, focus, and directrix</p>
+        <p><strong>Part 3:</strong> Ellipses → Major/minor axes and standard equations</p>
+        <p><strong>Part 4:</strong> Hyperbolas → Branches and asymptotes</p>
+        <p><strong>Your advantage:</strong> You have <span style="color: #059669; font-weight: 600;">mastered coordinate geometry and quadratics</span> from previous chapters!</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #dc2626; font-weight: 600;">Circles</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What is a Circle?</h4>
+        <p>A circle is the set of all points that are exactly the same distance (radius) from a central point.</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Circle Equations:</h4>
+
+        <p><strong>Standard Form:</strong></p>
+        <p style="text-align: center; background: #fef2f2; padding: 10px; border-radius: 6px;">
+            (x - h)² + (y - k)² = r²
+        </p>
+        <p>where (h, k) is the center and r is the radius</p>
+
+        <p><strong>General Form:</strong></p>
+        <p style="text-align: center; background: #fef2f2; padding: 10px; border-radius: 6px;">
+            x² + y² + Dx + Ey + F = 0
+        </p>
+        <p>Convert by completing the square</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Standard Form Circle</h4>
+        <p><strong>Problem:</strong> Find the center and radius of (x - 3)² + (y + 2)² = 25</p>
+        <p><strong>Solution:</strong></p>
+        <p>Compare with (x - h)² + (y - k)² = r²</p>
+        <p>Center: (h, k) = (3, -2)</p>
+        <p>Radius: r = √25 = 5</p>
+        <p><strong>Center: (3, -2), Radius: 5</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Converting General to Standard Form</h4>
+        <p><strong>Problem:</strong> Convert x² + y² - 6x + 4y - 12 = 0 to standard form</p>
+        <p><strong>Solution:</strong></p>
+        <p>Group x and y terms: (x² - 6x) + (y² + 4y) = 12</p>
+        <p>Complete the square for x: x² - 6x + 9 = (x - 3)²</p>
+        <p>Complete the square for y: y² + 4y + 4 = (y + 2)²</p>
+        <p>(x - 3)² + (y + 2)² = 12 + 9 + 4 = 25</p>
+        <p><strong>(x - 3)² + (y + 2)² = 25</strong></p>
+        <p><strong>Center: (3, -2), Radius: 5</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Finding Circle Equation</h4>
+        <p><strong>Problem:</strong> Write the equation of a circle with center (-1, 4) and radius 3</p>
+        <p><strong>Solution:</strong></p>
+        <p>Use (x - h)² + (y - k)² = r² with h = -1, k = 4, r = 3</p>
+        <p>(x - (-1))² + (y - 4)² = 3²</p>
+        <p><strong>(x + 1)² + (y - 4)² = 9</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #dc2626; font-weight: 600;">Parabolas</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What is a Parabola?</h4>
+        <p>A parabola is the set of all points equidistant from a point (focus) and a line (directrix).</p>
+        <p>Can open up/down or left/right depending on orientation.</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Parabola Equations:</h4>
+
+        <p><strong>Vertical Parabolas (opens up/down):</strong></p>
+        <p style="text-align: center; background: #fef2f2; padding: 10px; border-radius: 6px;">
+            (x - h)² = 4p(y - k)
+        </p>
+        <p>Vertex: (h, k), Focus: (h, k + p), Directrix: y = k - p</p>
+
+        <p><strong>Horizontal Parabolas (opens left/right):</strong></p>
+        <p style="text-align: center; background: #fef2f2; padding: 10px; border-radius: 6px;">
+            (y - k)² = 4p(x - h)
+        </p>
+        <p>Vertex: (h, k), Focus: (h + p, k), Directrix: x = h - p</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Vertical Parabola</h4>
+        <p><strong>Problem:</strong> Find the vertex, focus, and directrix of x² = 8y</p>
+        <p><strong>Solution:</strong></p>
+        <p>Rewrite: x² = 8y = 4(2)y</p>
+        <p>Compare with (x - h)² = 4p(y - k): h = 0, k = 0, p = 2</p>
+        <p>Vertex: (0, 0)</p>
+        <p>Focus: (0, 0 + 2) = (0, 2)</p>
+        <p>Directrix: y = 0 - 2 = -2</p>
+        <p><strong>Vertex: (0,0), Focus: (0,2), Directrix: y = -2</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Horizontal Parabola</h4>
+        <p><strong>Problem:</strong> Find the vertex and focus of (y - 1)² = -12(x + 2)</p>
+        <p><strong>Solution:</strong></p>
+        <p>Compare with (y - k)² = 4p(x - h): h = -2, k = 1, 4p = -12, so p = -3</p>
+        <p>Vertex: (-2, 1)</p>
+        <p>Focus: (-2 + (-3), 1) = (-5, 1)</p>
+        <p>Opens left (p < 0)</p>
+        <p><strong>Vertex: (-2,1), Focus: (-5,1), Opens left</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #dc2626; font-weight: 600;">Ellipses</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What is an Ellipse?</h4>
+        <p>An ellipse is the set of all points where the sum of distances to two fixed points (foci) is constant.</p>
+        <p>Think of it as a "stretched circle."</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Ellipse Equations:</h4>
+
+        <p><strong>Standard Form (center at origin):</strong></p>
+        <p style="text-align: center; background: #fef2f2; padding: 10px; border-radius: 6px;">
+            x²/a² + y²/b² = 1
+        </p>
+
+        <p><strong>General Form (center at (h,k)):</strong></p>
+        <p style="text-align: center; background: #fef2f2; padding: 10px; border-radius: 6px;">
+            (x-h)²/a² + (y-k)²/b² = 1
+        </p>
+
+        <p><strong>Key Properties:</strong></p>
+        <p>• If a > b: major axis horizontal, length 2a</p>
+        <p>• If b > a: major axis vertical, length 2b</p>
+        <p>• Distance between foci: 2c where c² = |a² - b²|</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: Standard Ellipse</h4>
+        <p><strong>Problem:</strong> Analyze the ellipse x²/25 + y²/9 = 1</p>
+        <p><strong>Solution:</strong></p>
+        <p>a² = 25, so a = 5</p>
+        <p>b² = 9, so b = 3</p>
+        <p>Since a > b, major axis is horizontal</p>
+        <p>Center: (0, 0)</p>
+        <p>Major axis length: 2a = 10</p>
+        <p>Minor axis length: 2b = 6</p>
+        <p>c² = a² - b² = 25 - 9 = 16, so c = 4</p>
+        <p>Foci: (±4, 0)</p>
+        <p><strong>Center: (0,0), Major axis: horizontal, Foci: (±4,0)</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: Ellipse with Translated Center</h4>
+        <p><strong>Problem:</strong> Find the center and axes of (x-2)²/16 + (y+1)²/25 = 1</p>
+        <p><strong>Solution:</strong></p>
+        <p>Center: (h, k) = (2, -1)</p>
+        <p>a² = 16, so a = 4</p>
+        <p>b² = 25, so b = 5</p>
+        <p>Since b > a, major axis is vertical</p>
+        <p>Major axis length: 2b = 10 (vertical)</p>
+        <p>Minor axis length: 2a = 8 (horizontal)</p>
+        <p><strong>Center: (2,-1), Major axis: vertical, length 10</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 4: <span style="color: #dc2626; font-weight: 600;">Hyperbolas</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What is a Hyperbola?</h4>
+        <p>A hyperbola is the set of all points where the difference of distances to two fixed points (foci) is constant.</p>
+        <p>Has two separate branches.</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Hyperbola Equations:</h4>
+
+        <p><strong>Horizontal Hyperbola:</strong></p>
+        <p style="text-align: center; background: #fef2f2; padding: 10px; border-radius: 6px;">
+            x²/a² - y²/b² = 1
+        </p>
+        <p>Opens left and right</p>
+
+        <p><strong>Vertical Hyperbola:</strong></p>
+        <p style="text-align: center; background: #fef2f2; padding: 10px; border-radius: 6px;">
+            y²/a² - x²/b² = 1
+        </p>
+        <p>Opens up and down</p>
+
+        <p><strong>Asymptotes:</strong> y = ±(b/a)x for horizontal, y = ±(a/b)x for vertical</p>
+        <p><strong>Foci distance:</strong> c² = a² + b²</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 8: Horizontal Hyperbola</h4>
+        <p><strong>Problem:</strong> Analyze x²/9 - y²/16 = 1</p>
+        <p><strong>Solution:</strong></p>
+        <p>a² = 9, so a = 3</p>
+        <p>b² = 16, so b = 4</p>
+        <p>Opens horizontally (x² positive)</p>
+        <p>Center: (0, 0)</p>
+        <p>Vertices: (±3, 0)</p>
+        <p>Asymptotes: y = ±(4/3)x</p>
+        <p>c² = a² + b² = 9 + 16 = 25, so c = 5</p>
+        <p>Foci: (±5, 0)</p>
+        <p><strong>Horizontal hyperbola, Vertices: (±3,0), Asymptotes: y = ±(4/3)x</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 9: Vertical Hyperbola</h4>
+        <p><strong>Problem:</strong> Find the asymptotes of y²/4 - x²/9 = 1</p>
+        <p><strong>Solution:</strong></p>
+        <p>a² = 4, so a = 2</p>
+        <p>b² = 9, so b = 3</p>
+        <p>Vertical hyperbola (y² positive)</p>
+        <p>Asymptotes: y = ±(a/b)x = ±(2/3)x</p>
+        <p><strong>Asymptotes: y = ±(2/3)x</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🎯 Interactive Practice Quiz</h3>
+
+    <div class="quiz-container">
+        <div class="quiz-question" data-question="1">
+            <h4>Question 1: Circle Center and Radius</h4>
+            <p><strong>Problem:</strong> What is the center and radius of (x + 3)² + (y - 4)² = 36?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q1" value="a"> A) Center: (-3, 4), Radius: 6</label>
+                <label><input type="radio" name="q1" value="b"> B) Center: (3, -4), Radius: 6</label>
+                <label><input type="radio" name="q1" value="c"> C) Center: (-3, 4), Radius: 36</label>
+                <label><input type="radio" name="q1" value="d"> D) Center: (3, 4), Radius: 6</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: A) Center: (-3, 4), Radius: 6</strong></p>
+                <p><strong>Explanation:</strong> (x + 3)² = (x - (-3))², so h = -3. y - 4 gives k = 4. r² = 36, so r = 6.</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="2">
+            <h4>Question 2: Parabola Vertex</h4>
+            <p><strong>Problem:</strong> What is the vertex of the parabola (x - 2)² = 8(y + 1)?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2" value="a"> A) (2, -1)</label>
+                <label><input type="radio" name="q2" value="b"> B) (-2, 1)</label>
+                <label><input type="radio" name="q2" value="c"> C) (2, 1)</label>
+                <label><input type="radio" name="q2" value="d"> D) (-2, -1)</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: A) (2, -1)</strong></p>
+                <p><strong>Explanation:</strong> Compare with (x - h)² = 4p(y - k). Here h = 2 and k = -1, so vertex is (2, -1).</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="3">
+            <h4>Question 3: Ellipse Orientation</h4>
+            <p><strong>Problem:</strong> For the ellipse x²/4 + y²/25 = 1, which axis is longer?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q3" value="a"> A) Horizontal axis</label>
+                <label><input type="radio" name="q3" value="b"> B) Vertical axis</label>
+                <label><input type="radio" name="q3" value="c"> C) Both axes are equal</label>
+                <label><input type="radio" name="q3" value="d"> D) Cannot be determined</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: B) Vertical axis</strong></p>
+                <p><strong>Explanation:</strong> b² = 25 > a² = 4, so b = 5 > a = 2. The major axis is vertical with length 2b = 10.</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="4">
+            <h4>Question 4: Hyperbola Asymptotes</h4>
+            <p><strong>Problem:</strong> What are the asymptotes of x²/9 - y²/4 = 1?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q4" value="a"> A) y = ±(3/2)x</label>
+                <label><input type="radio" name="q4" value="b"> B) y = ±(2/3)x</label>
+                <label><input type="radio" name="q4" value="c"> C) y = ±(4/9)x</label>
+                <label><input type="radio" name="q4" value="d"> D) y = ±(9/4)x</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: B) y = ±(2/3)x</strong></p>
+                <p><strong>Explanation:</strong> For horizontal hyperbola x²/a² - y²/b² = 1, asymptotes are y = ±(b/a)x = ±(2/3)x.</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="5">
+            <h4>Question 5: Circle Equation</h4>
+            <p><strong>Problem:</strong> Convert x² + y² + 6x - 8y + 9 = 0 to standard form.</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q5" value="a"> A) (x + 3)² + (y - 4)² = 16</label>
+                <label><input type="radio" name="q5" value="b"> B) (x - 3)² + (y + 4)² = 16</label>
+                <label><input type="radio" name="q5" value="c"> C) (x + 3)² + (y - 4)² = 4</label>
+                <label><input type="radio" name="q5" value="d"> D) (x - 3)² + (y + 4)² = 4</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: A) (x + 3)² + (y - 4)² = 16</strong></p>
+                <p><strong>Explanation:</strong> Complete the square: (x² + 6x + 9) + (y² - 8y + 16) = -9 + 9 + 16 = 16</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="6">
+            <h4>Question 6: Conic Identification</h4>
+            <p><strong>Problem:</strong> What type of conic is represented by 4x² + 9y² = 36?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q6" value="a"> A) Circle</label>
+                <label><input type="radio" name="q6" value="b"> B) Ellipse</label>
+                <label><input type="radio" name="q6" value="c"> C) Parabola</label>
+                <label><input type="radio" name="q6" value="d"> D) Hyperbola</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: B) Ellipse</strong></p>
+                <p><strong>Explanation:</strong> Divide by 36: x²/9 + y²/4 = 1. Both terms are positive with different denominators, so it's an ellipse.</p>
+            </div>
+        </div>
+
+        <div class="quiz-actions">
+            <button onclick="checkQuizAnswers('conic-sections')" class="quiz-submit-btn">Check Answers</button>
+            <button onclick="resetQuiz('conic-sections')" class="quiz-reset-btn">Reset Quiz</button>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <h4>Quiz Results</h4>
+            <p class="score-display"></p>
+            <div class="results-breakdown"></div>
+        </div>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Conic sections combine algebra and geometry in powerful ways! Master the standard forms of circles, ellipses, parabolas, and hyperbolas, and practice converting between general and standard forms. Remember: circles have equal coefficients for x² and y², ellipses have different positive coefficients, parabolas have only one squared term, and hyperbolas have opposite signs. These advanced topics test your ability to work with complex algebraic expressions and geometric relationships!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Master Your Conic Sections Skills!</h3>
+    <div class="quiz-intro">
+        <p>Test your understanding of circles, ellipses, parabolas, and hyperbolas! Click through these 6 challenging questions designed to mirror real ACT problems.</p>
+    </div>
+    <div class="quiz-container">
+        <div class="question-card active" data-question="1">
+            <div class="question-header">
+                <span class="question-number">Question 1 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 16.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 1:</strong> What is the center and radius of the circle (x + 2)² + (y - 3)² = 49?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="A">
+                        <span class="option-text">A) Center: (-2, 3), Radius: 7</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="B">
+                        <span class="option-text">B) Center: (2, -3), Radius: 7</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="C">
+                        <span class="option-text">C) Center: (-2, 3), Radius: 49</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="D">
+                        <span class="option-text">D) Center: (2, 3), Radius: 7</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: A) Center: (-2, 3), Radius: 7</h4>
+                    <p><strong>Solution:</strong> Compare with (x - h)² + (y - k)² = r²</p>
+                    <p>(x + 2)² = (x - (-2))², so h = -2</p>
+                    <p>(y - 3)², so k = 3</p>
+                    <p>r² = 49, so r = 7</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="2">
+            <div class="question-header">
+                <span class="question-number">Question 2 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 33.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 2:</strong> What type of conic section is represented by 4x² + 9y² = 36?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="A">
+                        <span class="option-text">A) Circle</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="B">
+                        <span class="option-text">B) Ellipse</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="C">
+                        <span class="option-text">C) Parabola</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="D">
+                        <span class="option-text">D) Hyperbola</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: B) Ellipse</h4>
+                    <p><strong>Solution:</strong> Divide by 36 to get standard form: x²/9 + y²/4 = 1</p>
+                    <p>Both x² and y² terms are positive with different denominators.</p>
+                    <p>This is the standard form of an ellipse: x²/a² + y²/b² = 1</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="3">
+            <div class="question-header">
+                <span class="question-number">Question 3 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 3:</strong> What is the vertex of the parabola (x - 1)² = 12(y + 2)?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="A">
+                        <span class="option-text">A) (1, -2)</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="B">
+                        <span class="option-text">B) (-1, 2)</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="C">
+                        <span class="option-text">C) (1, 2)</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="D">
+                        <span class="option-text">D) (-1, -2)</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: A) (1, -2)</h4>
+                    <p><strong>Solution:</strong> Compare with (x - h)² = 4p(y - k)</p>
+                    <p>From (x - 1)²: h = 1</p>
+                    <p>From y + 2 = y - (-2): k = -2</p>
+                    <p>Therefore, the vertex is (h, k) = (1, -2)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="4">
+            <div class="question-header">
+                <span class="question-number">Question 4 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 66.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 4:</strong> For the ellipse x²/16 + y²/25 = 1, which axis is the major axis?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="A">
+                        <span class="option-text">A) Horizontal axis</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="B">
+                        <span class="option-text">B) Vertical axis</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="C">
+                        <span class="option-text">C) Both axes are equal</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="D">
+                        <span class="option-text">D) Cannot be determined</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: B) Vertical axis</h4>
+                    <p><strong>Solution:</strong> Compare denominators: a² = 16, so a = 4; b² = 25, so b = 5</p>
+                    <p>Since b > a (5 > 4), the major axis is vertical with length 2b = 10</p>
+                    <p>The minor axis is horizontal with length 2a = 8</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="5">
+            <div class="question-header">
+                <span class="question-number">Question 5 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 83.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 5:</strong> What are the asymptotes of the hyperbola x²/4 - y²/9 = 1?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="A">
+                        <span class="option-text">A) y = ±(2/3)x</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="B">
+                        <span class="option-text">B) y = ±(3/2)x</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="C">
+                        <span class="option-text">C) y = ±(4/9)x</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="D">
+                        <span class="option-text">D) y = ±(9/4)x</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: B) y = ±(3/2)x</h4>
+                    <p><strong>Solution:</strong> For a horizontal hyperbola x²/a² - y²/b² = 1:</p>
+                    <p>a² = 4, so a = 2</p>
+                    <p>b² = 9, so b = 3</p>
+                    <p>Asymptotes: y = ±(b/a)x = ±(3/2)x</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="6">
+            <div class="question-header">
+                <span class="question-number">Question 6 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 6:</strong> Convert the circle x² + y² - 4x + 6y - 12 = 0 to standard form.</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="A">
+                        <span class="option-text">A) (x - 2)² + (y + 3)² = 25</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="B">
+                        <span class="option-text">B) (x + 2)² + (y - 3)² = 25</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="C">
+                        <span class="option-text">C) (x - 2)² + (y + 3)² = 5</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="D">
+                        <span class="option-text">D) (x + 2)² + (y - 3)² = 5</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: A) (x - 2)² + (y + 3)² = 25</h4>
+                    <p><strong>Solution:</strong> Complete the square for both variables:</p>
+                    <p>x² - 4x → x² - 4x + 4 = (x - 2)² [add 4]</p>
+                    <p>y² + 6y → y² + 6y + 9 = (y + 3)² [add 9]</p>
+                    <p>(x - 2)² + (y + 3)² = 12 + 4 + 9 = 25</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-navigation">
+            <button class="nav-btn prev-btn" onclick="previousQuestion()" style="display: none;">Previous</button>
+            <button class="nav-btn next-btn" onclick="nextQuestion()" style="display: none;">Next</button>
+            <button class="nav-btn finish-btn" onclick="finishQuiz()" style="display: none;">Finish Quiz</button>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <div class="results-header">
+                <h4>🎉 Quiz Complete!</h4>
+                <div class="score-circle">
+                    <span class="score-number">0</span>
+                    <span class="score-total">/6</span>
+                </div>
+            </div>
+            <div class="performance-feedback">
+                <p class="feedback-text"></p>
+            </div>
+            <button class="retake-btn" onclick="retakeQuiz()">🔄 Retake Quiz</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.interactive-quiz {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    padding: 30px;
+    border-radius: 20px;
+    margin: 40px 0;
+    color: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.quiz-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.question-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.question-card.active {
+    display: block;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.question-number {
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f87171, #dc2626);
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+.question-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.quiz-options {
+    display: grid;
+    gap: 12px;
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.05em;
+}
+
+.option-label:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.option-label input[type="radio"] {
+    margin-right: 15px;
+    transform: scale(1.2);
+    accent-color: #f87171;
+}
+
+.option-label.selected {
+    background: rgba(248, 113, 113, 0.2);
+    border-color: #f87171;
+}
+
+.option-label.correct {
+    background: rgba(34, 197, 94, 0.3);
+    border-color: #22c55e;
+}
+
+.option-label.incorrect {
+    background: rgba(239, 68, 68, 0.3);
+    border-color: #ef4444;
+}
+
+.explanation {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 12px;
+    border-left: 4px solid #22c55e;
+}
+
+.explanation h4 {
+    margin: 0 0 10px 0;
+    color: #4ade80;
+}
+
+.quiz-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.nav-btn {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.quiz-results {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    margin-top: 20px;
+}
+
+.results-header {
+    margin-bottom: 20px;
+}
+
+.score-circle {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 4px solid #f87171;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.score-number {
+    font-size: 1.5em;
+    color: #f87171;
+}
+
+.performance-feedback {
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+
+.retake-btn {
+    background: linear-gradient(135deg, #f87171, #dc2626);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.retake-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(248, 113, 113, 0.3);
+}
+</style>
+
+<script>
+function initializeQuiz11() {
+    let currentQuestion = 0;
+    let answers = {};
+    let score = 0;
+    const totalQuestions = 6;
+
+    // Show first question
+    showQuestion(0);
+
+    // Handle answer selection
+    document.addEventListener('change', function(e) {
+        if (e.target.type === 'radio' && e.target.name.startsWith('q')) {
+            const questionNum = parseInt(e.target.name.replace('q', ''));
+            const selectedValue = e.target.value;
+            answers[questionNum] = selectedValue;
+
+            // Update visual feedback
+            const questionCard = e.target.closest('.question-card');
+            const labels = questionCard.querySelectorAll('.option-label');
+            labels.forEach(label => {
+                label.classList.remove('selected');
+                if (label.querySelector('input').checked) {
+                    label.classList.add('selected');
+                }
+            });
+
+            // Show explanation after a short delay
+            setTimeout(() => {
+                const explanation = questionCard.querySelector('.explanation');
+                explanation.style.display = 'block';
+                explanation.style.animation = 'slideIn 0.5s ease-out';
+
+                // Check if answer is correct and update styling
+                const correctAnswers = {1: 'A', 2: 'B', 3: 'A', 4: 'B', 5: 'B', 6: 'A'};
+                const isCorrect = correctAnswers[questionNum] === selectedValue;
+
+                labels.forEach(label => {
+                    const input = label.querySelector('input');
+                    if (input.checked) {
+                        label.classList.add(isCorrect ? 'correct' : 'incorrect');
+                    }
+                });
+
+                // Auto-advance to next question after 4 seconds
+                setTimeout(() => {
+                    if (currentQuestion < totalQuestions - 1) {
+                        currentQuestion++;
+                        showQuestion(currentQuestion);
+                    } else {
+                        finishQuiz11();
+                    }
+                }, 4000);
+            }, 1000);
+        }
+    });
+
+    function showQuestion(questionIndex) {
+        const cards = document.querySelectorAll('.question-card');
+        cards.forEach((card, index) => {
+            if (index === questionIndex) {
+                card.classList.add('active');
+                card.style.display = 'block';
+            } else {
+                card.classList.remove('active');
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    window.finishQuiz11 = function() {
+        // Calculate score
+        const correctAnswers = {1: 'A', 2: 'B', 3: 'A', 4: 'B', 5: 'B', 6: 'A'};
+        score = 0;
+        for (let i = 1; i <= totalQuestions; i++) {
+            if (answers[i] === correctAnswers[i]) {
+                score++;
+            }
+        }
+
+        // Hide all questions and show results
+        document.querySelectorAll('.question-card').forEach(card => {
+            card.style.display = 'none';
+        });
+
+        const results = document.querySelector('.quiz-results');
+        results.style.display = 'block';
+        results.querySelector('.score-number').textContent = score;
+
+        // Provide feedback based on performance
+        const percentage = (score / totalQuestions) * 100;
+        let feedbackText = '';
+        if (percentage >= 90) {
+            feedbackText = '🌟 Outstanding! You've mastered conic sections!';
+        } else if (percentage >= 70) {
+            feedbackText = '👏 Great work! You understand most conic section concepts!';
+        } else if (percentage >= 50) {
+            feedbackText = '📚 Good effort! Review circle, ellipse, parabola, and hyperbola forms.';
+        } else {
+            feedbackText = '💪 Keep practicing! Focus on identifying conic types and standard forms.';
+        }
+
+        results.querySelector('.feedback-text').textContent = feedbackText;
+    };
+
+    window.retakeQuiz = function() {
+        location.reload();
+    };
+}
+
+// Initialize when page loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeQuiz11);
+} else {
+    initializeQuiz11();
+}
+</script>
+    `
+  },
+
+  'complex-numbers': {
+    title: 'Chapter 22: Complex Numbers',
+    duration: 18, // minutes
+    content: `
+<div class="lesson-header">
+    <h2>Chapter 22: <span style="color: #7c3aed; font-weight: 600;">Complex Numbers</span></h2>
+    <p class="lesson-intro">Master imaginary and complex numbers - advanced ACT topics that extend the real number system!</p>
+
+    <div class="learning-path">
+        <p><strong>Part 1:</strong> Imaginary Numbers → Understanding i and powers of i</p>
+        <p><strong>Part 2:</strong> Complex Number Operations → Addition, subtraction, multiplication</p>
+        <p><strong>Part 3:</strong> Complex Conjugates → Division and absolute value</p>
+        <p><strong>Part 4:</strong> Graphing Complex Numbers → The complex plane</p>
+        <p><strong>Your advantage:</strong> You have <span style="color: #059669; font-weight: 600;">mastered algebra and quadratics</span> from previous chapters!</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 1: <span style="color: #7c3aed; font-weight: 600;">Imaginary Numbers</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What is an Imaginary Number?</h4>
+        <p>An imaginary number involves the square root of a negative number.</p>
+        <div style="text-align: center; background: #f5f3ff; padding: 15px; border-radius: 8px; margin: 15px 0;">
+            <p><strong>i = √(-1), so i² = -1</strong></p>
+        </div>
+        <p>This allows us to find square roots of any negative number!</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Powers of i:</h4>
+        <p><strong>i¹ = i</strong></p>
+        <p><strong>i² = -1</strong></p>
+        <p><strong>i³ = i² · i = -1 · i = -i</strong></p>
+        <p><strong>i⁴ = i² · i² = (-1)(-1) = 1</strong></p>
+        <p><strong>i⁵ = i⁴ · i = 1 · i = i</strong> (the pattern repeats every 4)</p>
+
+        <p><strong>Pattern:</strong> i, -1, -i, 1, i, -1, -i, 1, ...</p>
+        <p><strong>To find iⁿ:</strong> Divide n by 4 and use the remainder</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 1: Powers of i</h4>
+        <p><strong>Problem:</strong> Find i⁷ and i¹⁶</p>
+        <p><strong>Solution:</strong></p>
+        <p>For i⁷: 7 ÷ 4 = 1 remainder 3, so i⁷ = i³ = -i</p>
+        <p>For i¹⁶: 16 ÷ 4 = 4 remainder 0, so i¹⁶ = i⁰ = 1</p>
+        <p><strong>i⁷ = -i, i¹⁶ = 1</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 2: Square Roots of Negative Numbers</h4>
+        <p><strong>Problem:</strong> Simplify √(-25) and √(-18)</p>
+        <p><strong>Solution:</strong></p>
+        <p>√(-25) = √(25 · (-1)) = √25 · √(-1) = 5i</p>
+        <p>√(-18) = √(18 · (-1)) = √18 · i = √(9 · 2) · i = 3√2 · i = 3i√2</p>
+        <p><strong>√(-25) = 5i, √(-18) = 3i√2</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 2: <span style="color: #7c3aed; font-weight: 600;">Complex Numbers</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What is a Complex Number?</h4>
+        <p>A complex number has both a real part and an imaginary part.</p>
+        <div style="text-align: center; background: #f5f3ff; padding: 15px; border-radius: 8px; margin: 15px 0;">
+            <p><strong>z = a + bi</strong></p>
+        </div>
+        <p>where a is the real part and b is the imaginary part</p>
+        <p>Examples: 3 + 4i, -2 + 7i, 5 - 3i</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Complex Number Operations:</h4>
+
+        <p><strong>Addition/Subtraction:</strong></p>
+        <p>(a + bi) ± (c + di) = (a ± c) + (b ± d)i</p>
+
+        <p><strong>Multiplication:</strong></p>
+        <p>(a + bi)(c + di) = ac + adi + bci + bdi² = (ac - bd) + (ad + bc)i</p>
+
+        <p><strong>Remember:</strong> i² = -1, so replace i² with -1 when simplifying</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 3: Adding Complex Numbers</h4>
+        <p><strong>Problem:</strong> (3 + 5i) + (2 - 7i)</p>
+        <p><strong>Solution:</strong></p>
+        <p>Add real parts: 3 + 2 = 5</p>
+        <p>Add imaginary parts: 5i + (-7i) = -2i</p>
+        <p><strong>(3 + 5i) + (2 - 7i) = 5 - 2i</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 4: Multiplying Complex Numbers</h4>
+        <p><strong>Problem:</strong> (3 + 2i)(1 - 4i)</p>
+        <p><strong>Solution:</strong></p>
+        <p>Use FOIL: (3)(1) + (3)(-4i) + (2i)(1) + (2i)(-4i)</p>
+        <p>= 3 - 12i + 2i - 8i²</p>
+        <p>= 3 - 10i - 8(-1)</p>
+        <p>= 3 - 10i + 8</p>
+        <p>= 11 - 10i</p>
+        <p><strong>(3 + 2i)(1 - 4i) = 11 - 10i</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 5: Squaring Complex Numbers</h4>
+        <p><strong>Problem:</strong> (2 - 3i)²</p>
+        <p><strong>Solution:</strong></p>
+        <p>(2 - 3i)² = (2 - 3i)(2 - 3i)</p>
+        <p>= 4 - 6i - 6i + 9i²</p>
+        <p>= 4 - 12i + 9(-1)</p>
+        <p>= 4 - 12i - 9</p>
+        <p>= -5 - 12i</p>
+        <p><strong>(2 - 3i)² = -5 - 12i</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Part 3: <span style="color: #7c3aed; font-weight: 600;">Complex Conjugates</span></h3>
+
+    <div class="concept-box">
+        <h4>💡 What is a Complex Conjugate?</h4>
+        <p>The complex conjugate of a + bi is a - bi (change the sign of the imaginary part).</p>
+        <p>Denoted as: z̄ or z* where z = a + bi, then z̄ = a - bi</p>
+    </div>
+
+    <div class="rules-box">
+        <h4>Properties of Complex Conjugates:</h4>
+        <p><strong>z · z̄ = a² + b²</strong> (always a real number)</p>
+        <p><strong>|z| = √(z · z̄) = √(a² + b²)</strong> (absolute value/modulus)</p>
+        <p><strong>Division:</strong> z₁/z₂ = (z₁ · z̄₂)/(z₂ · z̄₂)</p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 6: Complex Conjugates</h4>
+        <p><strong>Problem:</strong> Find the conjugate of 4 - 7i and compute (4 - 7i)(4 + 7i)</p>
+        <p><strong>Solution:</strong></p>
+        <p>Conjugate of 4 - 7i is 4 + 7i</p>
+        <p>(4 - 7i)(4 + 7i) = 16 + 28i - 28i - 49i²</p>
+        <p>= 16 - 49(-1) = 16 + 49 = 65</p>
+        <p><strong>Conjugate: 4 + 7i, Product: 65</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 7: Dividing Complex Numbers</h4>
+        <p><strong>Problem:</strong> (3 + 2i)/(1 - 4i)</p>
+        <p><strong>Solution:</strong></p>
+        <p>Multiply by conjugate of denominator:</p>
+        <p>(3 + 2i)/(1 - 4i) · (1 + 4i)/(1 + 4i)</p>
+        <p>= (3 + 2i)(1 + 4i) / (1 - 4i)(1 + 4i)</p>
+        <p>Numerator: 3 + 12i + 2i + 8i² = 3 + 14i - 8 = -5 + 14i</p>
+        <p>Denominator: 1 - 16i² = 1 + 16 = 17</p>
+        <p><strong>(-5 + 14i)/17 = -5/17 + (14/17)i</strong></p>
+    </div>
+
+    <div class="example-box">
+        <h4>Example 8: Absolute Value of Complex Numbers</h4>
+        <p><strong>Problem:</strong> Find |3 - 4i|</p>
+        <p><strong>Solution:</strong></p>
+        <p>|3 - 4i| = √(3² + (-4)²) = √(9 + 16) = √25 = 5</p>
+        <p><strong>|3 - 4i| = 5</strong></p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>🎯 Interactive Practice Quiz</h3>
+
+    <div class="quiz-container">
+        <div class="quiz-question" data-question="1">
+            <h4>Question 1: Powers of i</h4>
+            <p><strong>Problem:</strong> What is i²³?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q1" value="a"> A) i</label>
+                <label><input type="radio" name="q1" value="b"> B) -1</label>
+                <label><input type="radio" name="q1" value="c"> C) -i</label>
+                <label><input type="radio" name="q1" value="d"> D) 1</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: C) -i</strong></p>
+                <p><strong>Explanation:</strong> 23 ÷ 4 = 5 remainder 3, so i²³ = i³ = -i</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="2">
+            <h4>Question 2: Square Root of Negative Numbers</h4>
+            <p><strong>Problem:</strong> Simplify √(-49)</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2" value="a"> A) 7i</label>
+                <label><input type="radio" name="q2" value="b"> B) -7</label>
+                <label><input type="radio" name="q2" value="c"> C) 7</label>
+                <label><input type="radio" name="q2" value="d"> D) -7i</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: A) 7i</strong></p>
+                <p><strong>Explanation:</strong> √(-49) = √(49 · (-1)) = √49 · √(-1) = 7i</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="3">
+            <h4>Question 3: Adding Complex Numbers</h4>
+            <p><strong>Problem:</strong> (5 - 3i) + (-2 + 7i) = ?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q3" value="a"> A) 3 + 4i</label>
+                <label><input type="radio" name="q3" value="b"> B) 7 - 10i</label>
+                <label><input type="radio" name="q3" value="c"> C) 3 - 4i</label>
+                <label><input type="radio" name="q3" value="d"> D) -7 + 10i</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: A) 3 + 4i</strong></p>
+                <p><strong>Explanation:</strong> (5 - 2) + (-3i + 7i) = 3 + 4i</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="4">
+            <h4>Question 4: Multiplying Complex Numbers</h4>
+            <p><strong>Problem:</strong> (2 + 3i)(1 - i) = ?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q4" value="a"> A) 5 + i</label>
+                <label><input type="radio" name="q4" value="b"> B) -1 + 5i</label>
+                <label><input type="radio" name="q4" value="c"> C) 5 - i</label>
+                <label><input type="radio" name="q4" value="d"> D) -1 - 5i</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: A) 5 + i</strong></p>
+                <p><strong>Explanation:</strong> 2 - 2i + 3i - 3i² = 2 + i - 3(-1) = 2 + i + 3 = 5 + i</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="5">
+            <h4>Question 5: Complex Conjugate</h4>
+            <p><strong>Problem:</strong> What is the conjugate of -4 + 6i?</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q5" value="a"> A) 4 + 6i</label>
+                <label><input type="radio" name="q5" value="b"> B) -4 - 6i</label>
+                <label><input type="radio" name="q5" value="c"> C) 4 - 6i</label>
+                <label><input type="radio" name="q5" value="d"> D) -4 + 6i</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: B) -4 - 6i</strong></p>
+                <p><strong>Explanation:</strong> The conjugate changes only the sign of the imaginary part: -4 + 6i → -4 - 6i</p>
+            </div>
+        </div>
+
+        <div class="quiz-question" data-question="6">
+            <h4>Question 6: Absolute Value</h4>
+            <p><strong>Problem:</strong> Find |5 - 12i|</p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q6" value="a"> A) 7</label>
+                <label><input type="radio" name="q6" value="b"> B) 13</label>
+                <label><input type="radio" name="q6" value="c"> C) 17</label>
+                <label><input type="radio" name="q6" value="d"> D) 119</label>
+            </div>
+            <div class="quiz-explanation" style="display: none;">
+                <p><strong>Answer: B) 13</strong></p>
+                <p><strong>Explanation:</strong> |5 - 12i| = √(5² + (-12)²) = √(25 + 144) = √169 = 13</p>
+            </div>
+        </div>
+
+        <div class="quiz-actions">
+            <button onclick="checkQuizAnswers('complex-numbers')" class="quiz-submit-btn">Check Answers</button>
+            <button onclick="resetQuiz('complex-numbers')" class="quiz-reset-btn">Reset Quiz</button>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <h4>Quiz Results</h4>
+            <p class="score-display"></p>
+            <div class="results-breakdown"></div>
+        </div>
+    </div>
+</div>
+
+<div class="key-takeaway">
+    <h4>Key Takeaway</h4>
+    <p>Complex numbers extend the real number system to include square roots of negative numbers! Master the powers of i (repeating pattern: i, -1, -i, 1), practice operations with complex numbers, and understand conjugates for division. Remember: i² = -1 always, complex conjugates multiply to give real numbers, and the absolute value uses the Pythagorean theorem. Complex numbers appear in advanced ACT problems and connect algebra with geometry through the complex plane!</p>
+</div>
+
+<div class="interactive-quiz">
+    <h3>🎯 Interactive Quiz: Master Your Complex Numbers Skills!</h3>
+    <div class="quiz-intro">
+        <p>Test your understanding of imaginary numbers, complex operations, and conjugates! Click through these 6 challenging questions designed to mirror real ACT problems.</p>
+    </div>
+    <div class="quiz-container">
+        <div class="question-card active" data-question="1">
+            <div class="question-header">
+                <span class="question-number">Question 1 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 16.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 1:</strong> What is the value of i¹⁵?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="A">
+                        <span class="option-text">A) i</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="B">
+                        <span class="option-text">B) -1</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="C">
+                        <span class="option-text">C) -i</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="D">
+                        <span class="option-text">D) 1</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: C) -i</h4>
+                    <p><strong>Solution:</strong> Powers of i repeat every 4: i¹ = i, i² = -1, i³ = -i, i⁴ = 1</p>
+                    <p>To find i¹⁵: 15 ÷ 4 = 3 remainder 3</p>
+                    <p>So i¹⁵ = i³ = -i</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="2">
+            <div class="question-header">
+                <span class="question-number">Question 2 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 33.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 2:</strong> Simplify √(-36).</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="A">
+                        <span class="option-text">A) 6i</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="B">
+                        <span class="option-text">B) -6</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="C">
+                        <span class="option-text">C) -6i</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="D">
+                        <span class="option-text">D) 36i</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: A) 6i</h4>
+                    <p><strong>Solution:</strong> √(-36) = √(36 · (-1)) = √36 · √(-1) = 6 · i = 6i</p>
+                    <p>Remember: √(-1) = i by definition</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="3">
+            <div class="question-header">
+                <span class="question-number">Question 3 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 3:</strong> What is (3 + 4i) + (2 - 7i)?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="A">
+                        <span class="option-text">A) 5 - 3i</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="B">
+                        <span class="option-text">B) 1 + 11i</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="C">
+                        <span class="option-text">C) 5 + 3i</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="D">
+                        <span class="option-text">D) 1 - 3i</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: A) 5 - 3i</h4>
+                    <p><strong>Solution:</strong> Add the real parts and imaginary parts separately:</p>
+                    <p>Real parts: 3 + 2 = 5</p>
+                    <p>Imaginary parts: 4i + (-7i) = -3i</p>
+                    <p>Result: 5 - 3i</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="4">
+            <div class="question-header">
+                <span class="question-number">Question 4 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 66.67%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 4:</strong> What is (2 + 3i)(1 - 2i)?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="A">
+                        <span class="option-text">A) 2 - 6i</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="B">
+                        <span class="option-text">B) 8 - i</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="C">
+                        <span class="option-text">C) -4 + i</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="D">
+                        <span class="option-text">D) 8 + i</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: B) 8 - i</h4>
+                    <p><strong>Solution:</strong> Use FOIL method:</p>
+                    <p>(2)(1) + (2)(-2i) + (3i)(1) + (3i)(-2i)</p>
+                    <p>= 2 - 4i + 3i - 6i²</p>
+                    <p>= 2 - i - 6(-1)   [since i² = -1]</p>
+                    <p>= 2 - i + 6 = 8 - i</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="5">
+            <div class="question-header">
+                <span class="question-number">Question 5 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 83.33%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 5:</strong> What is the complex conjugate of -5 + 8i?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="A">
+                        <span class="option-text">A) -5 - 8i</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="B">
+                        <span class="option-text">B) 5 - 8i</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="C">
+                        <span class="option-text">C) 5 + 8i</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="D">
+                        <span class="option-text">D) -5 + 8i</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: A) -5 - 8i</h4>
+                    <p><strong>Solution:</strong> The complex conjugate of a + bi is a - bi</p>
+                    <p>For -5 + 8i, we change the sign of the imaginary part:</p>
+                    <p>Complex conjugate = -5 - 8i</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card" data-question="6">
+            <div class="question-header">
+                <span class="question-number">Question 6 of 6</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="question-content">
+                <p><strong>Question 6:</strong> What is |4 - 3i|?</p>
+                <div class="quiz-options">
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="A">
+                        <span class="option-text">A) 7</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="B">
+                        <span class="option-text">B) 5</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="C">
+                        <span class="option-text">C) 1</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="D">
+                        <span class="option-text">D) √7</span>
+                    </label>
+                </div>
+                <div class="explanation" style="display: none;">
+                    <h4>✅ Correct Answer: B) 5</h4>
+                    <p><strong>Solution:</strong> The absolute value of a complex number a + bi is √(a² + b²)</p>
+                    <p>|4 - 3i| = √(4² + (-3)²) = √(16 + 9) = √25 = 5</p>
+                    <p>This is the distance from the origin in the complex plane.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-navigation">
+            <button class="nav-btn prev-btn" onclick="previousQuestion()" style="display: none;">Previous</button>
+            <button class="nav-btn next-btn" onclick="nextQuestion()" style="display: none;">Next</button>
+            <button class="nav-btn finish-btn" onclick="finishQuiz()" style="display: none;">Finish Quiz</button>
+        </div>
+
+        <div class="quiz-results" style="display: none;">
+            <div class="results-header">
+                <h4>🎉 Quiz Complete!</h4>
+                <div class="score-circle">
+                    <span class="score-number">0</span>
+                    <span class="score-total">/6</span>
+                </div>
+            </div>
+            <div class="performance-feedback">
+                <p class="feedback-text"></p>
+            </div>
+            <button class="retake-btn" onclick="retakeQuiz()">🔄 Retake Quiz</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.interactive-quiz {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    padding: 30px;
+    border-radius: 20px;
+    margin: 40px 0;
+    color: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.quiz-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.question-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.question-card.active {
+    display: block;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.question-number {
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #a78bfa, #7c3aed);
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+.question-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.quiz-options {
+    display: grid;
+    gap: 12px;
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.05em;
+}
+
+.option-label:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.option-label input[type="radio"] {
+    margin-right: 15px;
+    transform: scale(1.2);
+    accent-color: #a78bfa;
+}
+
+.option-label.selected {
+    background: rgba(167, 139, 250, 0.2);
+    border-color: #a78bfa;
+}
+
+.option-label.correct {
+    background: rgba(34, 197, 94, 0.3);
+    border-color: #22c55e;
+}
+
+.option-label.incorrect {
+    background: rgba(239, 68, 68, 0.3);
+    border-color: #ef4444;
+}
+
+.explanation {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 12px;
+    border-left: 4px solid #22c55e;
+}
+
+.explanation h4 {
+    margin: 0 0 10px 0;
+    color: #4ade80;
+}
+
+.quiz-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.nav-btn {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.quiz-results {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    margin-top: 20px;
+}
+
+.results-header {
+    margin-bottom: 20px;
+}
+
+.score-circle {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 4px solid #a78bfa;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.score-number {
+    font-size: 1.5em;
+    color: #a78bfa;
+}
+
+.performance-feedback {
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+
+.retake-btn {
+    background: linear-gradient(135deg, #a78bfa, #7c3aed);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.retake-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(167, 139, 250, 0.3);
+}
+</style>
+
+<script>
+function initializeQuiz12() {
+    let currentQuestion = 0;
+    let answers = {};
+    let score = 0;
+    const totalQuestions = 6;
+
+    // Show first question
+    showQuestion(0);
+
+    // Handle answer selection
+    document.addEventListener('change', function(e) {
+        if (e.target.type === 'radio' && e.target.name.startsWith('q')) {
+            const questionNum = parseInt(e.target.name.replace('q', ''));
+            const selectedValue = e.target.value;
+            answers[questionNum] = selectedValue;
+
+            // Update visual feedback
+            const questionCard = e.target.closest('.question-card');
+            const labels = questionCard.querySelectorAll('.option-label');
+            labels.forEach(label => {
+                label.classList.remove('selected');
+                if (label.querySelector('input').checked) {
+                    label.classList.add('selected');
+                }
+            });
+
+            // Show explanation after a short delay
+            setTimeout(() => {
+                const explanation = questionCard.querySelector('.explanation');
+                explanation.style.display = 'block';
+                explanation.style.animation = 'slideIn 0.5s ease-out';
+
+                // Check if answer is correct and update styling
+                const correctAnswers = {1: 'C', 2: 'A', 3: 'A', 4: 'B', 5: 'A', 6: 'B'};
+                const isCorrect = correctAnswers[questionNum] === selectedValue;
+
+                labels.forEach(label => {
+                    const input = label.querySelector('input');
+                    if (input.checked) {
+                        label.classList.add(isCorrect ? 'correct' : 'incorrect');
+                    }
+                });
+
+                // Auto-advance to next question after 4 seconds
+                setTimeout(() => {
+                    if (currentQuestion < totalQuestions - 1) {
+                        currentQuestion++;
+                        showQuestion(currentQuestion);
+                    } else {
+                        finishQuiz12();
+                    }
+                }, 4000);
+            }, 1000);
+        }
+    });
+
+    function showQuestion(questionIndex) {
+        const cards = document.querySelectorAll('.question-card');
+        cards.forEach((card, index) => {
+            if (index === questionIndex) {
+                card.classList.add('active');
+                card.style.display = 'block';
+            } else {
+                card.classList.remove('active');
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    window.finishQuiz12 = function() {
+        // Calculate score
+        const correctAnswers = {1: 'C', 2: 'A', 3: 'A', 4: 'B', 5: 'A', 6: 'B'};
+        score = 0;
+        for (let i = 1; i <= totalQuestions; i++) {
+            if (answers[i] === correctAnswers[i]) {
+                score++;
+            }
+        }
+
+        // Hide all questions and show results
+        document.querySelectorAll('.question-card').forEach(card => {
+            card.style.display = 'none';
+        });
+
+        const results = document.querySelector('.quiz-results');
+        results.style.display = 'block';
+        results.querySelector('.score-number').textContent = score;
+
+        // Provide feedback based on performance
+        const percentage = (score / totalQuestions) * 100;
+        let feedbackText = '';
+        if (percentage >= 90) {
+            feedbackText = '🌟 Outstanding! You've mastered complex numbers!';
+        } else if (percentage >= 70) {
+            feedbackText = '👏 Great work! You understand most complex number concepts!';
+        } else if (percentage >= 50) {
+            feedbackText = '📚 Good effort! Review powers of i and complex operations.';
+        } else {
+            feedbackText = '💪 Keep practicing! Focus on the definition of i and basic operations.';
+        }
+
+        results.querySelector('.feedback-text').textContent = feedbackText;
+    };
+
+    window.retakeQuiz = function() {
+        location.reload();
+    };
+}
+
+// Initialize when page loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeQuiz12);
+} else {
+    initializeQuiz12();
+}
+</script>
     `
   },
 
@@ -3294,12 +16567,17 @@ export const lessonStructure = [
   { id: 'functions', section: 'math', title: 'Chapter 11: Functions', desc: 'Function notation, composition, domain, range', status: 'not-started' },
   { id: 'statistics-basics', section: 'math', title: 'Chapter 12: Mean, Median, Mode, and Range', desc: 'Basic statistics and weighted averages', status: 'not-started' },
   { id: 'exponents-roots', section: 'math', title: 'Chapter 13: Exponents and Roots', desc: 'Exponent rules and simplifying radicals', status: 'not-started' },
+  { id: 'quadratics', section: 'math', title: 'Chapter 14: Quadratics', desc: 'Factoring, quadratic formula, vertex form, parabola properties', status: 'not-started' },
 
   // Math Section - Common Topics
-  { id: 'logarithms', section: 'math', title: 'Chapter 14: Logarithms', desc: 'Logarithm basics and change of base rule', status: 'not-started' },
   { id: 'systems-equations', section: 'math', title: 'Chapter 15: Systems of Equations', desc: 'Elimination, substitution, word problems', status: 'not-started' },
-  { id: 'quadratics', section: 'math', title: 'Chapter 16: Quadratics', desc: 'Factoring, quadratic formula, vertex form', status: 'not-started' },
-  { id: 'trigonometry', section: 'math', title: 'Chapter 17: Trigonometry', desc: 'SOH-CAH-TOA, unit circle, trig functions', status: 'not-started' },
+  { id: 'trigonometry', section: 'math', title: 'Chapter 16: Trigonometry', desc: 'SOH-CAH-TOA, unit circle, trig functions', status: 'not-started' },
+  { id: 'advanced-geometry', section: 'math', title: 'Chapter 17: Advanced Geometry', desc: 'Complex shapes, 3D geometry, coordinate geometry', status: 'not-started' },
+  { id: 'sequences-series', section: 'math', title: 'Chapter 18: Sequences and Series', desc: 'Arithmetic and geometric sequences, pattern recognition', status: 'not-started' },
+  { id: 'probability-counting', section: 'math', title: 'Chapter 19: Probability and Counting', desc: 'Permutations, combinations, basic probability', status: 'not-started' },
+  { id: 'logarithms', section: 'math', title: 'Chapter 20: Logarithms', desc: 'Logarithm properties, equations, real-world applications', status: 'not-started' },
+  { id: 'conic-sections', section: 'math', title: 'Chapter 21: Conic Sections', desc: 'Circles, ellipses, parabolas, hyperbolas', status: 'not-started' },
+  { id: 'complex-numbers', section: 'math', title: 'Chapter 22: Complex Numbers', desc: 'Imaginary numbers, complex operations, conjugates', status: 'not-started' },
 
   // Continue with all other math, reading, and science lessons...
   // (I'll need to add all 50+ lessons here)

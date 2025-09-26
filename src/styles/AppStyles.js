@@ -16,20 +16,20 @@ export const useAppStyles = createUseStyles({
       backgroundColor: '#f0f4f8',
       color: '#1a1a1a',
       lineHeight: 1.6,
-      overflow: 'hidden',
+      overflowX: 'hidden',
       backgroundImage: 'linear-gradient(180deg, #f0f4f8 0%, #e2e8f0 100%)',
-      backgroundAttachment: 'local',
-      height: '100vh'
+      backgroundAttachment: 'fixed',
+      backgroundSize: '100% 100vh',
+      backgroundRepeat: 'no-repeat'
     }
   },
   container: {
     maxWidth: '1200px',
     margin: '0 auto',
-    height: '100vh',
+    minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
-    background: '#fafbfc',
-    overflow: 'auto'
+    background: '#fafbfc'
   },
   header: {
     background: 'rgba(248, 249, 250, 0.7)',
@@ -357,12 +357,11 @@ export const useAppStyles = createUseStyles({
   lessonContent: {
     background: 'white',
     width: '100%',
-    height: '100vh',
+    minHeight: '100vh',
     display: 'flex',
     lineHeight: '1.6',
     fontSize: '15px',
-    color: '#2d3748',
-    overflow: 'hidden'
+    color: '#2d3748'
   },
   lessonSidebar: {
     width: '280px',
