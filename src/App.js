@@ -30,6 +30,7 @@ function App() {
   };
 
   const openLesson = (lessonId) => {
+    console.log('Opening lesson:', lessonId);
     setCurrentLesson(lessonId);
     setLessonModalOpen(true);
     domUtils.preventBodyScroll();
@@ -108,6 +109,11 @@ function App() {
 
   const LessonsContent = () => {
     const filteredLessons = activeSection === 'all' ? lessonStructure : lessonStructure.filter(lesson => lesson.section === activeSection);
+
+    console.log('Active section:', activeSection);
+    console.log('Filtered lessons count:', filteredLessons.length);
+    console.log('First few lessons:', filteredLessons.slice(0, 3).map(l => l.id));
+    console.log('Has backsolving?', filteredLessons.find(l => l.id === 'backsolving') ? 'YES' : 'NO');
 
     // Keep original lesson order - no sorting by status
     const sortedLessons = filteredLessons;
@@ -326,6 +332,10 @@ function App() {
     const lesson = allLessons[currentLesson];
     const currentLessonData = lessonStructure.find(item => item.id === currentLesson);
 
+    // Debug logging
+    console.log('Current lesson ID:', currentLesson);
+    console.log('Lesson object:', lesson);
+    console.log('Lesson content length:', lesson?.content?.length);
 
     return (
       <div className={`${classes.lessonModal} ${lessonModalOpen ? 'active' : ''}`}>
