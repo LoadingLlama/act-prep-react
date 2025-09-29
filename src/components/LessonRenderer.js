@@ -1,11 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PracticeSection from './PracticeSection';
+import QuickPractice from './QuickPractice';
+import { enhanceLessonInteractivity } from '../utils/lessonEnhancer';
 
 // Parse lesson content and render interactive elements
 const LessonRenderer = ({ content, interactiveData }) => {
-  // If there's no interactive data, render as regular HTML
+  // Enhanced content parser that handles practice questions
+  const parseContent = (htmlContent) => {
+    // Split content into sections and render with React components
+    const contentSections = [];
+
+    // For now, render as HTML but with enhanced parsing for future practice questions
+    const enhancedContent = htmlContent.replace(
+      /<div class="practice-moment">([\s\S]*?)<\/div>/g,
+      (match, content) => {
+        // Extract practice question data from HTML
+        const questionMatch = content.match(/<p>(.*?)<\/p>/);
+        const optionsMatch = content.match(/<div class="quick-options">([\s\S]*?)<\/div>/);
+
+        if (questionMatch && optionsMatch) {
+          // This would be where we'd inject React components
+          return match; // For now, keep original HTML
+        }
+        return match;
+      }
+    );
+
+    return enhancedContent;
+  };
+
+  // If there's no interactive data, render enhanced HTML
   if (!interactiveData) {
-    return <div dangerouslySetInnerHTML={{ __html: content }} />;
+    return <div dangerouslySetInnerHTML={{ __html: parseContent(content) }} />;
   }
 
   // Split content by interactive sections
@@ -58,6 +84,15 @@ const LessonRenderer = ({ content, interactiveData }) => {
 
     return parts;
   };
+
+  // Enhance interactivity after content renders
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      enhanceLessonInteractivity();
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [content]);
 
   return (
     <div>

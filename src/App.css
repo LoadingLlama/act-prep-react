@@ -2,6 +2,377 @@
   text-align: center;
 }
 
+/* Visual lesson elements */
+.visual-intro {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  color: white;
+}
+
+.sentence-diagram {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.complete-sentence {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
+
+.subject { color: #FFE066; }
+.verb { color: #FF6B6B; }
+.object { color: #4ECDC4; }
+
+.diagram-labels {
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+/* Concept boxes with visual indicators */
+.concept-box {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.independent-clause {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  border-left: 5px solid #22c55e;
+}
+
+.dependent-clause {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  border-left: 5px solid #ef4444;
+}
+
+.concept-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.visual-check {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Sentence part highlighting */
+.subject-highlight {
+  background: #FFE066;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.verb-highlight {
+  background: #FF6B6B;
+  color: white;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.trigger-word {
+  background: #ef4444;
+  color: white;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.complement {
+  color: #666;
+}
+
+.completeness-indicator {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Practice questions */
+.practice-moment {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.practice-moment h5 {
+  margin: 0 0 0.5rem 0;
+  color: #495057;
+}
+
+.quick-options {
+  margin-top: 1rem;
+}
+
+.option {
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.option.correct {
+  background: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.option.incorrect {
+  background: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.option:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Word cloud for trigger words */
+.trigger-words-visual {
+  margin: 1.5rem 0;
+}
+
+.word-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.trigger {
+  background: #ef4444;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* FANBOYS visual grid */
+.fanboys-visual {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.fanboys-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.fanboy-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.fanboy-card:hover {
+  transform: scale(1.05);
+}
+
+.letter {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFE066;
+}
+
+.word {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.meaning {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Examples grid */
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.example-item {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #22c55e;
+}
+
+.sentence {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.breakdown {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Before/after completion examples */
+.completion-examples {
+  margin-top: 1.5rem;
+}
+
+.before-after {
+  margin-top: 1rem;
+}
+
+.incomplete,
+.complete {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.incomplete {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.complete {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.completion {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.status {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* Lesson completion styling */
+.lesson-complete {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-complete h3 {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.lesson-complete p {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Key takeaway styling */
+.key-takeaway {
+  background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.key-takeaway h4 {
+  color: white;
+  font-size: 1.3rem;
+  margin: 0 0 1rem 0;
+}
+
+.key-takeaway p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Practice box styling */
+.practice-box {
+  background: #f8f9fa;
+  border-left: 4px solid #17a2b8;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 4px;
+}
+
+.practice-box h4 {
+  color: #17a2b8;
+  margin: 0 0 1rem 0;
+}
+
+.practice-box ul {
+  margin: 1rem 0;
+}
+
+.practice-box li {
+  margin: 0.5rem 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .fanboys-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .examples-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .concept-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .complete-sentence {
+    font-size: 1.2rem;
+  }
+
+  .lesson-complete h3 {
+    font-size: 1.5rem;
+  }
+
+  .lesson-complete p {
+    font-size: 1rem;
+  }
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
