@@ -1,212 +1,224 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
   typewriterContainer: {
     position: 'relative'
   },
-  cursor: {
-    display: 'inline-block',
-    backgroundColor: '#4299e1',
-    width: '2px',
-    height: '1.2em',
-    marginLeft: '2px',
-    animation: '$blink 1s infinite'
+  lineReveal: {
+    '& .revealing-line': {
+      opacity: 0,
+      animation: '$fadeInLine 0.5s ease-out forwards'
+    }
   },
-  '@keyframes blink': {
-    '0%, 50%': { opacity: 1 },
-    '51%, 100%': { opacity: 0 }
+  '@keyframes fadeInLine': {
+    'from': { opacity: 0, transform: 'translateY(10px)' },
+    'to': { opacity: 1, transform: 'translateY(0)' }
   }
 });
 
-const TypewriterText = ({
+const TypewriterText = React.forwardRef(({
   text,
-  speed = 20,
   onComplete,
-  showCursor = true,
   startDelay = 0,
   className = "",
-  onInstantComplete
-}) => {
+  typingSpeed = 25,
+  skipAnimation = false
+}, ref) => {
   const classes = useStyles();
-  const [displayedText, setDisplayedText] = useState('');
+  const [displayedChars, setDisplayedChars] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   const [shouldCompleteInstantly, setShouldCompleteInstantly] = useState(false);
-  const [visibleText, setVisibleText] = useState('');
+  const [plainText, setPlainText] = useState('');
+  const [isTypingActive, setIsTypingActive] = useState(false);
   const containerRef = React.useRef(null);
-
-  // SUPER AGGRESSIVE SCROLL - This will work for sure
-  const forceScroll = useCallback(() => {
-    if (containerRef.current) {
-      console.log('SCROLLING TO ELEMENT'); // Debug log
-      containerRef.current.scrollIntoView({
-        behavior: 'auto',
-        block: 'center',
-        inline: 'center'
-      });
-    }
-  }, []);
-
-  // Extract only visible text from HTML for character-by-character typing
-  const extractVisibleText = useCallback((htmlString) => {
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = htmlString;
-    return tempDiv.textContent || tempDiv.innerText || '';
-  }, []);
-
-  // Build HTML with visible characters up to current position
-  const buildProgressiveHTML = useCallback((htmlString, targetLength) => {
-    if (targetLength <= 0) return '';
-
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = htmlString;
-
-    let charCount = 0;
-
-    const processNode = (node) => {
-      if (charCount >= targetLength) return null;
-
-      if (node.nodeType === Node.TEXT_NODE) {
-        const text = node.textContent;
-        const remainingChars = targetLength - charCount;
-
-        if (remainingChars >= text.length) {
-          charCount += text.length;
-          return document.createTextNode(text);
-        } else {
-          charCount += remainingChars;
-          return document.createTextNode(text.substring(0, remainingChars));
-        }
-      } else if (node.nodeType === Node.ELEMENT_NODE) {
-        const newElement = document.createElement(node.tagName);
-
-        // Copy attributes
-        for (let i = 0; i < node.attributes.length; i++) {
-          const attr = node.attributes[i];
-          newElement.setAttribute(attr.name, attr.value);
-        }
-
-        // Process child nodes
-        for (let i = 0; i < node.childNodes.length; i++) {
-          if (charCount >= targetLength) break;
-          const processedChild = processNode(node.childNodes[i]);
-          if (processedChild) {
-            newElement.appendChild(processedChild);
-          }
-        }
-
-        // Only return element if it has content or if we're still within target length
-        if (newElement.hasChildNodes() || charCount < targetLength) {
-          return newElement;
-        }
-      }
-
-      return null;
-    };
-
-    const resultDiv = document.createElement('div');
-    for (let i = 0; i < tempDiv.childNodes.length; i++) {
-      if (charCount >= targetLength) break;
-      const processedNode = processNode(tempDiv.childNodes[i]);
-      if (processedNode) {
-        resultDiv.appendChild(processedNode);
-      }
-    }
-
-    return resultDiv.innerHTML;
-  }, []);
 
   useEffect(() => {
     if (text) {
-      setVisibleText(extractVisibleText(text));
-      setDisplayedText('');
-      setIsComplete(false);
-      setShouldCompleteInstantly(false);
-    }
-  }, [text, extractVisibleText]);
+      // Keep original HTML but extract text length for character counting
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = text;
+      const extractedText = tempDiv.textContent || tempDiv.innerText || '';
 
-  // Start aggressive interval when typing begins
-  useEffect(() => {
-    let intervalId;
-    if (hasStarted && !isComplete) {
-      console.log('STARTING SCROLL INTERVAL'); // Debug log
-      intervalId = setInterval(() => {
-        forceScroll();
-      }, 100); // Every 100ms
-    }
 
-    return () => {
-      if (intervalId) {
-        console.log('CLEARING SCROLL INTERVAL'); // Debug log
-        clearInterval(intervalId);
+      setPlainText(extractedText);
+
+      if (skipAnimation) {
+        // If skipping animation, immediately show all text
+        setDisplayedChars(extractedText.length);
+        setIsComplete(true);
+        setIsTypingActive(false);
+        setHasStarted(true);
+        setShouldCompleteInstantly(false);
+        if (onComplete) {
+          setTimeout(onComplete, 50);
+        }
+      } else {
+        setDisplayedChars(0);
+        setIsComplete(false);
+        setShouldCompleteInstantly(false);
+        setIsTypingActive(true);
+        setHasStarted(false); // Reset hasStarted so startDelay timer triggers again
       }
-    };
-  }, [hasStarted, isComplete, forceScroll]);
+    }
+  }, [text, skipAnimation, onComplete]);
+
+  // Removed aggressive scroll interval
 
   useEffect(() => {
     if (startDelay > 0) {
       const startTimer = setTimeout(() => {
         setHasStarted(true);
-        // Initial scroll
-        setTimeout(forceScroll, 100);
       }, startDelay);
       return () => clearTimeout(startTimer);
     } else {
       setHasStarted(true);
-      // Initial scroll
-      setTimeout(forceScroll, 100);
     }
-  }, [startDelay, forceScroll]);
+  }, [startDelay]);
 
   useEffect(() => {
-    if (!hasStarted || !visibleText) return;
+    if (!hasStarted || !plainText) {
+      return;
+    }
 
     // Instant completion triggered
     if (shouldCompleteInstantly && !isComplete) {
-      setDisplayedText(text);
+      setDisplayedChars(plainText.length);
       setIsComplete(true);
-      // Force scroll immediately
-      setTimeout(forceScroll, 50);
+      setIsTypingActive(false);
       if (onComplete) {
         setTimeout(onComplete, 100);
       }
       return;
     }
 
-    const currentLength = extractVisibleText(displayedText).length;
-
-    if (currentLength < visibleText.length && !shouldCompleteInstantly) {
-      const timer = setTimeout(() => {
-        const newHTML = buildProgressiveHTML(text, currentLength + 1);
-        setDisplayedText(newHTML);
-        // Force scroll after each character
-        setTimeout(forceScroll, 20);
-      }, speed);
-      return () => clearTimeout(timer);
-    } else if (!isComplete && currentLength >= visibleText.length) {
-      setIsComplete(true);
-      if (onComplete) {
-        setTimeout(onComplete, 100);
+    // If we're done with all characters, mark complete
+    if (displayedChars >= plainText.length) {
+      if (!isComplete) {
+        setIsComplete(true);
+        setIsTypingActive(false);
+        if (onComplete) {
+          setTimeout(onComplete, 100);
+        }
       }
+      return;
     }
-  }, [displayedText, text, visibleText, speed, hasStarted, isComplete, onComplete, shouldCompleteInstantly, extractVisibleText, buildProgressiveHTML, forceScroll]);
+
+    // Type character by character
+    if (displayedChars < plainText.length) {
+      const timer = setTimeout(() => {
+        setDisplayedChars(prev => prev + 1);
+        // Auto-scroll to keep typing in view
+        if (containerRef.current) {
+          containerRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'nearest'
+          });
+        }
+      }, typingSpeed); // Configurable typing speed
+      return () => clearTimeout(timer);
+    }
+  }, [displayedChars, plainText, hasStarted, isComplete, onComplete, shouldCompleteInstantly, typingSpeed]);
 
   // Expose instant complete function
-  React.useImperativeHandle(onInstantComplete, () => ({
+  React.useImperativeHandle(ref, () => ({
     completeInstantly: () => {
       if (!isComplete) {
         setShouldCompleteInstantly(true);
       }
     },
-    isComplete: () => isComplete
-  }), [isComplete]);
+    isComplete: () => isComplete,
+    isTypingActive: () => isTypingActive
+  }), [isComplete, isTypingActive]);
+
+  const buildDisplayHTML = () => {
+    if (!text || !plainText) {
+      return '';
+    }
+
+    if (displayedChars === 0) {
+      return '';
+    }
+
+    // Fallback to simple text truncation if HTML parsing fails
+    try {
+      // Simple approach: truncate the plain text and insert it into a basic HTML structure
+
+      // For basic HTML preservation, we'll use a simple regex approach
+      // This handles the most common cases without complex DOM parsing
+      let htmlOutput = text;
+
+      // Find where to truncate by counting actual text characters
+      let textCount = 0;
+      let htmlIndex = 0;
+
+      while (textCount < displayedChars && htmlIndex < text.length) {
+        const char = text[htmlIndex];
+
+        if (char === '<') {
+          // Skip over HTML tags
+          const tagEnd = text.indexOf('>', htmlIndex);
+          if (tagEnd !== -1) {
+            htmlIndex = tagEnd + 1;
+          } else {
+            htmlIndex++;
+          }
+        } else {
+          // Regular character
+          textCount++;
+          htmlIndex++;
+        }
+      }
+
+      // Truncate at the HTML index and try to close any open tags
+      htmlOutput = text.substring(0, htmlIndex);
+
+      // Simple tag balancing for common tags
+      const openTags = [];
+      const tagPattern = /<\/?([a-zA-Z]+)[^>]*>/g;
+      let match;
+
+      while ((match = tagPattern.exec(htmlOutput)) !== null) {
+        const tagName = match[1].toLowerCase();
+        if (match[0].startsWith('</')) {
+          // Closing tag
+          const index = openTags.lastIndexOf(tagName);
+          if (index !== -1) {
+            openTags.splice(index, 1);
+          }
+        } else if (!match[0].endsWith('/>')) {
+          // Opening tag (not self-closing)
+          openTags.push(tagName);
+        }
+      }
+
+      // Close any remaining open tags
+      for (let i = openTags.length - 1; i >= 0; i--) {
+        htmlOutput += `</${openTags[i]}>`;
+      }
+
+      return htmlOutput;
+
+    } catch (error) {
+      // If anything goes wrong, fall back to plain text
+      console.warn('TypewriterText HTML processing failed, using plain text:', error);
+      return plainText.substring(0, displayedChars);
+    }
+  };
+
+  const displayHTML = buildDisplayHTML();
 
   return (
-    <span ref={containerRef} className={`${classes.typewriterContainer} ${className}`}>
-      <span dangerouslySetInnerHTML={{ __html: displayedText }} />
-    </span>
+    <div
+      key={text?.substring(0, 50)} // Unique key to re-trigger animation for each section
+      ref={containerRef}
+      className={`${classes.typewriterContainer} ${classes.lineReveal} ${className}`}
+    >
+      <div dangerouslySetInnerHTML={{ __html: displayHTML }} />
+    </div>
   );
-};
+});
 
 export default TypewriterText;

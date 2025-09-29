@@ -4,16 +4,9 @@
 export const gradients = {
   neutral: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
   neutralHover: 'linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%)',
-  card: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
-  cardHover: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
-  success: 'linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)',
   successFull: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)',
-  warning: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)',
   warningFull: 'linear-gradient(135deg, #fefce8 0%, #fef3c7 100%)',
-  warningLight: 'linear-gradient(135deg, #fffaf0 0%, #fef5e7 100%)',
-  successLight: 'linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%)',
-  light: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
-  lightAlt: 'linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%)'
+  light: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)'
 };
 
 // Common spacing values

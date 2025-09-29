@@ -33,61 +33,6 @@ export const storage = {
   }
 };
 
-// Script loading utility with caching and cleanup
-export const scriptLoader = {
-  loadedScripts: new Set(),
-  scriptElements: new Map(),
-
-  load: (src) => {
-    return new Promise((resolve, reject) => {
-      // Check if script already loaded
-      if (scriptLoader.loadedScripts.has(src)) {
-        resolve();
-        return;
-      }
-
-      // Check if script element already exists
-      const existingScript = document.querySelector(`script[src="${src}"]`);
-      if (existingScript) {
-        scriptLoader.loadedScripts.add(src);
-        resolve();
-        return;
-      }
-
-      const script = document.createElement('script');
-      script.src = src;
-      script.onload = () => {
-        scriptLoader.loadedScripts.add(src);
-        resolve();
-      };
-      script.onerror = reject;
-
-      document.head.appendChild(script);
-      scriptLoader.scriptElements.set(src, script);
-    });
-  },
-
-  cleanup: (sources = []) => {
-    sources.forEach(src => {
-      const script = scriptLoader.scriptElements.get(src);
-      if (script && script.parentNode) {
-        script.parentNode.removeChild(script);
-        scriptLoader.scriptElements.delete(src);
-        scriptLoader.loadedScripts.delete(src);
-      }
-    });
-  },
-
-  cleanupAll: () => {
-    scriptLoader.scriptElements.forEach((script, src) => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-    });
-    scriptLoader.scriptElements.clear();
-    scriptLoader.loadedScripts.clear();
-  }
-};
 
 // Status utilities
 export const statusUtils = {
@@ -117,38 +62,6 @@ export const statusUtils = {
   }
 };
 
-// Lesson content utilities
-export const lessonUtils = {
-  extractKeyTerms: (content) => {
-    if (!content) return [];
-
-    const terms = [];
-    const boldMatches = content.match(/<b[^>]*>(.*?)<\/b>/gi) || [];
-    const strongMatches = content.match(/<strong[^>]*>(.*?)<\/strong>/gi) || [];
-    const emMatches = content.match(/<em[^>]*>(.*?)<\/em>/gi) || [];
-
-    [...boldMatches, ...strongMatches, ...emMatches].forEach(match => {
-      const term = match.replace(/<[^>]*>/g, '').trim();
-      if (term.length > 3 && term.length < 30 && !terms.includes(term)) {
-        terms.push(term);
-      }
-    });
-
-    return terms.slice(0, 8);
-  },
-
-  calculateProgress: (lessonStructure, progressData) => {
-    const completed = lessonStructure.filter(lesson =>
-      progressData[lesson.id] === 'completed'
-    ).length;
-
-    return {
-      completed,
-      total: lessonStructure.length,
-      percentage: Math.round((completed / lessonStructure.length) * 100)
-    };
-  }
-};
 
 // DOM utilities
 export const domUtils = {
