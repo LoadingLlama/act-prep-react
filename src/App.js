@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from './components/Button';
 import StatusIcon from './components/StatusIcon';
 import ProgressiveLessonRenderer from './components/ProgressiveLessonRenderer';
 import AIChat from './components/AIChat';
 import { storage, statusUtils, domUtils } from './utils/helpers';
-import { allLessons, lessonStructure } from './data/allLessons';
+import { fetchAllLessons } from './utils/lessonService';
 import { useAppStyles } from './styles/AppStyles';
 
 
-// lessonStructure is now imported from allLessons.js
+// Loads lessons from Supabase only
 
 function App() {
   const classes = useAppStyles();
@@ -19,6 +19,53 @@ function App() {
   const [lessonProgress, setLessonProgress] = useState(() => {
     return storage.get('actPrepProgress', {});
   });
+  const [allLessons, setAllLessons] = useState({});
+  const [lessonStructure, setLessonStructure] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Load lessons from Supabase on mount
+  useEffect(() => {
+    async function loadLessons() {
+      try {
+        const supabaseLessons = await fetchAllLessons();
+
+        // Combine all lessons into one object
+        const combinedLessons = {
+          ...supabaseLessons.math,
+          ...supabaseLessons.english,
+          ...supabaseLessons.reading,
+          ...supabaseLessons.science
+        };
+
+        // Create lesson structure from Supabase data
+        const structure = [];
+
+        // Add lessons in order by subject
+        ['english', 'math', 'reading', 'science'].forEach(section => {
+          Object.entries(supabaseLessons[section]).forEach(([key, lesson]) => {
+            structure.push({
+              id: key,
+              title: lesson.title,
+              section: section,
+              duration: lesson.duration || 15 // use duration from DB or default
+            });
+          });
+        });
+
+        setAllLessons(combinedLessons);
+        setLessonStructure(structure);
+        console.log('✅ Loaded', Object.keys(combinedLessons).length, 'lessons from Supabase');
+      } catch (error) {
+        console.error('❌ Failed to load lessons from Supabase:', error);
+        setError('Unable to load lessons. Please check your internet connection and try again.');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadLessons();
+  }, []);
 
 
   const handleTabClick = (tab) => {
@@ -108,6 +155,29 @@ function App() {
   );
 
   const LessonsContent = () => {
+    if (loading) {
+      return (
+        <div className={`${classes.tabContent} ${activeTab === 'lessons' ? 'active' : ''}`}>
+          <div className={classes.contentSection} style={{ textAlign: 'center', padding: '4rem 2rem' }}>
+            <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>📚</div>
+            <p style={{ color: '#4a5568', fontSize: '1.1rem' }}>Loading lessons from database...</p>
+          </div>
+        </div>
+      );
+    }
+
+    if (error) {
+      return (
+        <div className={`${classes.tabContent} ${activeTab === 'lessons' ? 'active' : ''}`}>
+          <div className={classes.contentSection} style={{ textAlign: 'center', padding: '4rem 2rem' }}>
+            <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>⚠️</div>
+            <p style={{ color: '#e53e3e', fontSize: '1.1rem', marginBottom: '1rem' }}>{error}</p>
+            <Button onClick={() => window.location.reload()}>Retry</Button>
+          </div>
+        </div>
+      );
+    }
+
     const filteredLessons = activeSection === 'all' ? lessonStructure : lessonStructure.filter(lesson => lesson.section === activeSection);
 
     console.log('Active section:', activeSection);
