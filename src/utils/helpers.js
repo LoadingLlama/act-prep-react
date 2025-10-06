@@ -77,3 +77,43 @@ export const domUtils = {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 };
+
+// Lesson utilities
+export const lessonUtils = {
+  extractKeyTerms: (content) => {
+    if (!content) return [];
+    // Extract bold terms from content
+    const boldMatches = content.match(/<strong>(.*?)<\/strong>/g) || [];
+    return boldMatches.map(match => match.replace(/<\/?strong>/g, '')).slice(0, 5);
+  },
+
+  calculateProgress: (lessonStructure, lessonProgress) => {
+    const total = lessonStructure.length;
+    const completed = Object.values(lessonProgress).filter(status => status === 'completed').length;
+    return {
+      total,
+      completed,
+      percentage: total > 0 ? Math.round((completed / total) * 100) : 0
+    };
+  }
+};
+
+// Script loader utilities
+export const scriptLoader = {
+  load: (src) => {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.body.appendChild(script);
+    });
+  },
+
+  cleanup: (sources) => {
+    sources.forEach(src => {
+      const scripts = document.querySelectorAll(`script[src="${src}"]`);
+      scripts.forEach(script => script.remove());
+    });
+  }
+};
