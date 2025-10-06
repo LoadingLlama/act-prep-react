@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACT English Test</title>
+    <link rel="stylesheet" href="shared-test-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="test-container">
+        <!-- Header -->
+        <div class="test-header">
+            <div class="header-content">
+                <a href="/" class="logo">actcourse.org</a>
+                <div class="header-center"></div>
+                <div class="header-right">
+                    <span class="question-counter" id="questionCounter">Question 1 of 50</span>
+                    <button class="end-section-link" onclick="endSection()">⏹️ End Section</button>
+                    <div class="timer" id="timer">35:00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-main">
+            <!-- Main Content -->
+            <div class="test-content">
+                <!-- Flag Bar -->
+                <div class="flag-bar">
+                    <span class="item-number" id="itemNumber">Item 1</span>
+                    <button class="flag-button" id="flagBtn" onclick="toggleFlag()">🏳️ Flag</button>
+                </div>
+
+                <!-- Passages Section -->
+                <div class="passage-section" id="passageSection">
+                    <div id="loadingPassage" style="padding: 2rem; text-align: center;">Loading passages...</div>
+                </div>
+
+                <!-- Questions Section -->
+                <div class="question-section" id="questionSection">
+                    <div id="loadingQuestions" style="padding: 2rem; text-align: center;">Loading questions...</div>
+                </div>
+
+                <!-- Question Sidebar -->
+                <div class="question-sidebar">
+                    <div class="sidebar-icon" onclick="showQuestionModal()">📋</div>
+                    <div class="sidebar-text">Questions</div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="navigation">
+                <button class="nav-button" id="prevBtn" onclick="previousQuestion()">← Previous</button>
+                <button class="nav-button primary" id="nextBtn" onclick="nextQuestion()">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question Navigation Modal -->
+    <div id="questionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Question Navigator</h2>
+                <button class="modal-close" onclick="closeQuestionModal()">✕</button>
+            </div>
+            <div class="question-grid" id="questionGrid"></div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Supabase
+        const SUPABASE_URL = 'https://rabavobdklnwvwsldbix.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJhYmF2b2Jka2xud3Z3c2xkYml4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk3NjU0NzgsImV4cCI6MjA3NTM0MTQ3OH0.z_1N3TG-cS9Bc1s7UAif91PkIjhBKvicrUqupiNP80Y';
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        let currentQuestion = 1;
+        let totalQuestions = 50;
+        let answers = {};
+        let flaggedQuestions = new Set();
+        let timeLeft = 35 * 60; // 35 minutes in seconds
+        let questionsData = [];
+        let passagesData = {};
+
+        // Question to passage mapping
+        let questionToPassage = {};
+
+        async function loadQuestionsFromSupabase() {
+            try {
+                const { data, error } = await supabase
+                    .from('diagnostic_test_questions')
+                    .select('*')
+                    .eq('section', 'english')
+                    .order('question_id');
+
+                if (error) throw error;
+
+                questionsData = data;
+                totalQuestions = data.length;
+
+                // Group passages and build question to passage mapping
+                const passageMap = {};
+                data.forEach((q, index) => {
+                    if (q.passage && q.passage.trim()) {
+                        if (!passageMap[q.passage]) {
+                            passageMap[q.passage] = Object.keys(passageMap).length + 1;
+                        }
+                        questionToPassage[q.question_id] = passageMap[q.passage];
+
+                        if (!passagesData[passageMap[q.passage]]) {
+                            passagesData[passageMap[q.passage]] = {
+                                text: q.passage,
+                                title: q.lesson_title || 'Passage'
+                            };
+                        }
+                    }
+                });
+
+                renderPassages();
+                renderQuestions();
+                updateDisplay();
+                startTimer();
+            } catch (error) {
+                console.error('Error loading questions:', error);
+                document.getElementById('loadingQuestions').innerHTML =
+                    '<p style="color: red;">Error loading questions. Please refresh the page.</p>';
+            }
+        }
+
+        function renderPassages() {
+            const passageSection = document.getElementById('passageSection');
+            passageSection.innerHTML = '';
+
+            Object.keys(passagesData).forEach(passageNum => {
+                const passage = passagesData[passageNum];
+                const passageDiv = document.createElement('div');
+                passageDiv.className = 'passage-content';
+                passageDiv.id = `passage${passageNum}`;
+
+                passageDiv.innerHTML = `
+                    <div class="passage-text">
+                        <div class="passage-title">${passage.title}</div>
+                        <p>${passage.text}</p>
+                    </div>
+                `;
+
+                passageSection.appendChild(passageDiv);
+            });
+        }
+
+        function renderQuestions() {
+            const questionSection = document.getElementById('questionSection');
+            questionSection.innerHTML = '';
+
+            questionsData.forEach(q => {
+                const choices = JSON.parse(q.choices);
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.id = `question${q.question_id}`;
+
+                const choicesHTML = choices.map((choice, index) => {
+                    const isOdd = q.question_id % 2 === 1;
+                    const letters = isOdd ? ['A', 'B', 'C', 'D'] : ['F', 'G', 'H', 'J'];
+                    const letter = letters[index];
+
+                    return `
+                        <label class="answer-choice">
+                            <input type="radio" name="q${q.question_id}" value="${letter}">
+                            <span class="answer-text">${choice}</span>
+                        </label>
+                    `;
+                }).join('');
+
+                questionDiv.innerHTML = `
+                    <div class="question-number">${q.question_id}.</div>
+                    <div class="question-text">${q.question || 'Select the correct answer:'}</div>
+                    <div class="answer-choices">
+                        ${choicesHTML}
+                    </div>
+                `;
+
+                questionSection.appendChild(questionDiv);
+            });
+        }
+
+        function updateDisplay() {
+            // Hide all questions and passages
+            document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+            document.querySelectorAll('.passage-content').forEach(p => p.classList.remove('active'));
+
+            // Show current question
+            const questionElement = document.getElementById(`question${currentQuestion}`);
+            if (questionElement) {
+                questionElement.classList.add('active');
+            }
+
+            // Show corresponding passage
+            const passageNum = questionToPassage[currentQuestion];
+            if (passageNum) {
+                const passageElement = document.getElementById(`passage${passageNum}`);
+                if (passageElement) {
+                    passageElement.classList.add('active');
+                }
+            }
+
+            // Update navigation
+            document.getElementById('prevBtn').disabled = currentQuestion === 1;
+
+            if (currentQuestion === totalQuestions) {
+                document.getElementById('nextBtn').textContent = 'End English → Math';
+                document.getElementById('nextBtn').onclick = () => window.location.href = 'math-test.html';
+            } else {
+                document.getElementById('nextBtn').textContent = 'Next →';
+                document.getElementById('nextBtn').onclick = nextQuestion;
+            }
+
+            document.getElementById('questionCounter').textContent = `Question ${currentQuestion} of ${totalQuestions}`;
+            document.getElementById('itemNumber').textContent = `Item ${currentQuestion}`;
+
+            updateFlagButton();
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions) {
+                currentQuestion++;
+                updateDisplay();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 1) {
+                currentQuestion--;
+                updateDisplay();
+            }
+        }
+
+        function goToQuestion(questionNum) {
+            if (questionNum >= 1 && questionNum <= totalQuestions) {
+                currentQuestion = questionNum;
+                updateDisplay();
+                closeQuestionModal();
+            }
+        }
+
+        function toggleFlag() {
+            if (flaggedQuestions.has(currentQuestion)) {
+                flaggedQuestions.delete(currentQuestion);
+            } else {
+                flaggedQuestions.add(currentQuestion);
+            }
+            updateFlagButton();
+            updateQuestionGrid();
+        }
+
+        function updateFlagButton() {
+            const flagBtn = document.getElementById('flagBtn');
+            if (flaggedQuestions.has(currentQuestion)) {
+                flagBtn.textContent = '🏳️ Unflag';
+                flagBtn.classList.add('flagged');
+            } else {
+                flagBtn.textContent = '🏳️ Flag';
+                flagBtn.classList.remove('flagged');
+            }
+        }
+
+        function showQuestionModal() {
+            document.getElementById('questionModal').style.display = 'block';
+            generateQuestionGrid();
+        }
+
+        function closeQuestionModal() {
+            document.getElementById('questionModal').style.display = 'none';
+        }
+
+        function generateQuestionGrid() {
+            const grid = document.getElementById('questionGrid');
+            grid.innerHTML = '';
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const item = document.createElement('div');
+                item.className = 'question-nav-item';
+                item.textContent = i;
+                item.onclick = () => goToQuestion(i);
+
+                if (i === currentQuestion) {
+                    item.classList.add('current');
+                } else if (answers[`q${i}`]) {
+                    item.classList.add('answered');
+                } else if (flaggedQuestions.has(i)) {
+                    item.classList.add('flagged');
+                }
+
+                grid.appendChild(item);
+            }
+        }
+
+        function updateQuestionGrid() {
+            if (document.getElementById('questionModal').style.display === 'block') {
+                generateQuestionGrid();
+            }
+        }
+
+        function startTimer() {
+            const timer = document.getElementById('timer');
+
+            const updateTimer = () => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+
+                timer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+                if (timeLeft <= 0) {
+                    alert('Time is up! The test will now end.');
+                    window.location.href = 'math-test.html';
+                    return;
+                }
+
+                timeLeft--;
+            };
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        // Handle answer selection
+        document.addEventListener('change', function(e) {
+            if (e.target.type === 'radio') {
+                const questionDiv = e.target.closest('.question');
+                const questionName = e.target.name;
+
+                answers[questionName] = e.target.value;
+
+                questionDiv.querySelectorAll('.answer-choice').forEach(choice => {
+                    choice.classList.remove('selected');
+                });
+                e.target.closest('.answer-choice').classList.add('selected');
+
+                updateQuestionGrid();
+            }
+        });
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('questionModal');
+            if (event.target === modal) {
+                closeQuestionModal();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft' && currentQuestion > 1) {
+                previousQuestion();
+            } else if (e.key === 'ArrowRight' && currentQuestion < totalQuestions) {
+                nextQuestion();
+            } else if (e.key === 'f' || e.key === 'F') {
+                toggleFlag();
+            } else if (e.key === 'q' || e.key === 'Q') {
+                showQuestionModal();
+            } else if (e.key === 'Escape') {
+                closeQuestionModal();
+            }
+        });
+
+        // End Section function
+        function endSection() {
+            if (confirm('Are you sure you want to end this section? You will not be able to return to it.')) {
+                const finalAnswers = {};
+                for (let i = 1; i <= totalQuestions; i++) {
+                    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                    if (selected) {
+                        finalAnswers[`q${i}`] = selected.value;
+                    }
+                }
+
+                console.log('English Test Answers:', finalAnswers);
+                localStorage.setItem('englishAnswers', JSON.stringify(finalAnswers));
+
+                window.location.href = 'math-test.html';
+            }
+        }
+
+        // Initialize - Load questions from Supabase
+        loadQuestionsFromSupabase();
+    </script>
+</body>
+</html>

@@ -4,6 +4,7 @@ import Button from './components/Button';
 import StatusIcon from './components/StatusIcon';
 import ProgressiveLessonRenderer from './components/ProgressiveLessonRenderer';
 import AIChat from './components/AIChat';
+import DiagnosticTest from './components/DiagnosticTest';
 import { spacing, borderRadius, buttonStyles } from './utils/sharedStyles';
 import { storage, scriptLoader, statusUtils, lessonUtils, domUtils } from './utils/helpers';
 import { getAllLessons } from './utils/lessonsDb';
@@ -708,6 +709,7 @@ function App() {
   const [allLessons, setAllLessons] = useState({});
   const [currentLesson, setCurrentLesson] = useState(null);
   const [lessonModalOpen, setLessonModalOpen] = useState(false);
+  const [diagnosticTestOpen, setDiagnosticTestOpen] = useState(false);
   const [lessonProgress, setLessonProgress] = useState(() => {
     return storage.get('actPrepProgress', {});
   });
@@ -771,10 +773,10 @@ function App() {
       <div className={classes.contentSection}>
         <h2 className={classes.sectionTitle}>Practice Tests</h2>
         <div className={classes.testGrid}>
-          <div className={classes.card}>
+          <div className={classes.card} onClick={() => setDiagnosticTestOpen(true)}>
             <h3>Diagnostic Test</h3>
             <p>Take this first to understand your current level and identify areas for improvement.</p>
-            <Button href="/diagnostic-test.html">Start Diagnostic</Button>
+            <Button>Start Diagnostic</Button>
           </div>
           <div className={classes.card}>
             <h3>Full Practice Test 1</h3>
@@ -1063,6 +1065,11 @@ function App() {
       </div>
 
       <LessonModal />
+
+      {/* Diagnostic Test Modal */}
+      {diagnosticTestOpen && (
+        <DiagnosticTest onClose={() => setDiagnosticTestOpen(false)} />
+      )}
 
       {/* AI Chat Component */}
       <AIChat
