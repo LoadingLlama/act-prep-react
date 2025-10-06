@@ -1,70 +1,175 @@
-# Getting Started with Create React App
+# ACT Prep React Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive React-based ACT test preparation platform with interactive lessons, quizzes, and progress tracking. **All lesson content is stored in and fetched from Supabase** - no hardcoded data.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+```
+.
+├── src/                          # Main application source code
+│   ├── components/              # React components
+│   │   ├── AIChat.js           # AI chat interface
+│   │   ├── InteractiveQuiz.js  # Quiz component
+│   │   ├── LessonQuizSection.js
+│   │   ├── ProgressiveLessonRenderer.js
+│   │   └── ...
+│   ├── utils/                   # Utility functions
+│   │   ├── helpers.js
+│   │   ├── lessonService.js    # Supabase API calls for lessons
+│   │   └── sharedStyles.js
+│   ├── styles/                  # Style configurations
+│   │   └── AppStyles.js
+│   ├── supabaseClient.js       # Supabase database connection
+│   ├── App.js                  # Main application component
+│   └── index.js                # Application entry point
+│
+├── scripts/                     # Utility scripts
+│   └── utils/                  # Development utilities
+│       ├── check-supabase-lessons.js
+│       └── [debug scripts...]
+│
+├── docs/                        # Documentation
+│   ├── database-schema.sql     # Database schema
+│   ├── SUPABASE_SETUP.md      # Supabase setup guide
+│   ├── OPTIMIZATION_GUIDE.md   # Performance optimization
+│   └── supabase-migration.sql  # Migration scripts
+│
+├── public/                      # Static assets
+│   └── questions/              # Question data
+│
+├── archive/                     # Archived installers
+│
+├── .env                        # Environment variables (Supabase config)
+├── package.json                # NPM dependencies and scripts
+└── README.md                   # This file
+```
 
-### `npm start`
+## Architecture
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Data Flow
+1. **App loads** → Fetches all lessons from Supabase via `lessonService.js`
+2. **No fallback data** → All content comes from database
+3. **Progress tracking** → Stored locally in browser localStorage
+4. **Error handling** → Shows error UI if Supabase connection fails
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Key Design Decisions
+- ✅ **Single source of truth**: All lesson content in Supabase
+- ✅ **No hardcoded lessons**: Removed all static lesson files
+- ✅ **API-first**: Clean separation between data and presentation
+- ✅ **Organized structure**: Scripts and docs in dedicated folders
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+- Supabase account with configured project
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+# Install dependencies
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Create .env file with your Supabase credentials
+REACT_APP_SUPABASE_URL=your_supabase_url
+REACT_APP_SUPABASE_ANON_KEY=your_supabase_key
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Start development server
+npm start
+```
 
-### `npm run eject`
+The application will open at `http://localhost:3000`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Available Scripts
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Environment Variables
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Create a `.env` file in the root directory:
 
-## Learn More
+```env
+REACT_APP_SUPABASE_URL=your_supabase_url
+REACT_APP_SUPABASE_ANON_KEY=your_supabase_key
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Features
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Dynamic Lesson Loading**: All lessons fetched from Supabase database
+- **Interactive Quizzes**: React-based quiz system with instant feedback
+- **Progress Tracking**: Track completion and scores
+- **AI Chat Assistant**: Get help with lessons
+- **Responsive Design**: Works on desktop and mobile
+- **Loading States**: Graceful loading and error handling
 
-### Code Splitting
+## Database
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The application uses Supabase PostgreSQL database with the following schema:
 
-### Analyzing the Bundle Size
+### `lessons` table
+- `id` (uuid, primary key)
+- `subject` (text) - 'math', 'english', 'reading', or 'science'
+- `lesson_key` (text) - Unique identifier for the lesson
+- `title` (text) - Lesson title
+- `content` (text) - Full lesson content in HTML
+- `order_index` (integer) - Display order
+- `chapter_number` (integer, optional) - Chapter number
+- `duration` (integer, optional) - Estimated duration in minutes
+- `created_at` (timestamp)
+- `updated_at` (timestamp)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+See `docs/database-schema.sql` for full schema.
 
-### Making a Progressive Web App
+### Lesson Service API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Located in `src/utils/lessonService.js`:
 
-### Advanced Configuration
+```javascript
+// Fetch all lessons organized by subject
+await fetchAllLessons()
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+// Fetch lessons for specific subject
+await fetchLessonsBySubject('math')
 
-### Deployment
+// Fetch single lesson
+await fetchLesson('math', 'backsolving')
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+// Get lesson list (for navigation)
+await fetchLessonList('math')
+```
 
-### `npm run build` fails to minify
+## Development Tools
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Check Supabase Data
+```bash
+node scripts/utils/check-supabase-lessons.js
+```
+
+### Debug Scripts
+Located in `scripts/utils/`:
+- Various debugging and testing utilities
+
+## Deployment
+
+1. Build the production app:
+```bash
+npm run build
+```
+
+2. Deploy the `build/` folder to your hosting service
+
+3. Ensure environment variables are set in your hosting platform
+
+## Contributing
+
+1. Keep the organized structure
+2. All new lesson content goes in Supabase
+3. Update documentation when adding features
+4. Follow existing code style
+
+## License
+
+Private - For Caden Chiang (DO NOT SHARE)
