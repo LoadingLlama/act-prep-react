@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACT Diagnostic Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .start-container {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+        }
+
+        .title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .test-info {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .test-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .test-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .test-info li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .test-info li:last-child {
+            border-bottom: none;
+        }
+
+        .section-name {
+            font-weight: 500;
+        }
+
+        .section-details {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .start-button {
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .start-button:hover {
+            background: #374151;
+            transform: translateY(-1px);
+        }
+
+        .timer-note {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-top: 1rem;
+        }
+
+        .progress-container {
+            display: none;
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #1a1a1a;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        .current-section {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-timer {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="start-container" id="startContainer">
+        <div class="logo">actcourse.org</div>
+
+        <h1 class="title">ACT Diagnostic Test</h1>
+
+        <p class="description">
+            Take this comprehensive diagnostic test to identify your strengths and areas for improvement across all four ACT sections.
+        </p>
+
+        <div class="test-info">
+            <h3>Test Structure</h3>
+            <ul>
+                <li>
+                    <span class="section-name">English</span>
+                    <span class="section-details">50 questions • 35 minutes</span>
+                </li>
+                <li>
+                    <span class="section-name">Math</span>
+                    <span class="section-details">45 questions • 60 minutes</span>
+                </li>
+                <li>
+                    <span class="section-name">Reading</span>
+                    <span class="section-details">36 questions • 40 minutes</span>
+                </li>
+                <li>
+                    <span class="section-name">Science</span>
+                    <span class="section-details">40 questions • 40 minutes</span>
+                </li>
+            </ul>
+        </div>
+
+        <button class="start-button" onclick="startTest()">Begin Test</button>
+
+        <p class="timer-note">
+            Each section is timed individually. You can take breaks between sections.
+        </p>
+    </div>
+
+    <div class="progress-container" id="progressContainer">
+        <div class="logo">actcourse.org</div>
+
+        <div class="current-section" id="currentSection">Loading...</div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="section-timer" id="sectionTimer">Redirecting...</div>
+
+        <p>Please wait while we prepare your test...</p>
+    </div>
+
+    <script>
+        const sections = [
+            { name: 'English', file: 'english-test.html', duration: 35, questions: 50 },
+            { name: 'Math', file: 'math-test.html', duration: 60, questions: 45 },
+            { name: 'Reading', file: 'reading-test.html', duration: 40, questions: 36 },
+            { name: 'Science', file: 'science-test.html', duration: 40, questions: 40 }
+        ];
+
+        function startTest() {
+            // Hide start screen and show progress
+            document.getElementById('startContainer').style.display = 'none';
+            document.getElementById('progressContainer').style.display = 'block';
+
+            // Start with English section
+            startSection(0);
+        }
+
+        function startSection(sectionIndex) {
+            if (sectionIndex >= sections.length) {
+                // Test complete - redirect to results
+                window.location.href = 'test-results.html';
+                return;
+            }
+
+            const section = sections[sectionIndex];
+
+            // Update progress display
+            document.getElementById('currentSection').textContent = `${section.name} Section`;
+            document.getElementById('sectionTimer').textContent = `${section.questions} questions • ${section.duration} minutes`;
+
+            // Update progress bar
+            const progress = (sectionIndex / sections.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+
+            // Store current section for the test
+            localStorage.setItem('currentSection', sectionIndex);
+            localStorage.setItem('totalSections', sections.length);
+
+            // Redirect to section after 2 seconds
+            setTimeout(() => {
+                window.location.href = section.file;
+            }, 2000);
+        }
+
+        // Clear any previous test session data to ensure fresh start
+        localStorage.removeItem('currentSection');
+        localStorage.removeItem('totalSections');
+
+        // Handle page visibility to prevent back button issues
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'visible') {
+                const currentSection = localStorage.getItem('currentSection');
+                if (currentSection !== null) {
+                    const nextSection = parseInt(currentSection) + 1;
+                    localStorage.removeItem('currentSection');
+
+                    // Hide start screen and show progress
+                    document.getElementById('startContainer').style.display = 'none';
+                    document.getElementById('progressContainer').style.display = 'block';
+
+                    startSection(nextSection);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
