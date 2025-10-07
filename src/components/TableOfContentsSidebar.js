@@ -169,8 +169,30 @@ const TableOfContentsSidebar = ({
   onSpeedChange = null
 }) => {
   const classes = useStyles();
+  const [collapsed, setCollapsed] = React.useState(false);
+  const [expandedChapters, setExpandedChapters] = React.useState({});
 
   if (sections.length === 0) return null;
+
+  // Group sections by chapter (based on first digit of chapterNum)
+  const groupedSections = sections.reduce((acc, section, index) => {
+    const chapterKey = section.chapterNum ? section.chapterNum.split('.')[0] : 'intro';
+    if (!acc[chapterKey]) {
+      acc[chapterKey] = {
+        title: chapterKey === 'intro' ? 'Introduction' : `Chapter ${chapterKey}`,
+        sections: []
+      };
+    }
+    acc[chapterKey].sections.push({ ...section, originalIndex: index });
+    return acc;
+  }, {});
+
+  const toggleChapter = (chapterKey) => {
+    setExpandedChapters(prev => ({
+      ...prev,
+      [chapterKey]: !prev[chapterKey]
+    }));
+  };
 
 
   const getSectionTitle = (section, index) => {
@@ -282,47 +304,117 @@ const TableOfContentsSidebar = ({
   };
 
   return (
-    <div className={classes.tocSidebar}>
-      <div className={classes.tocHeader}>
-        Contents
+    <div className={classes.tocSidebar} style={{ width: collapsed ? '60px' : '220px', transition: 'width 0.3s ease' }}>
+      <div className={classes.tocHeader} style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        cursor: 'pointer'
+      }} onClick={() => setCollapsed(!collapsed)}>
+        {!collapsed && 'Contents'}
+        <span style={{
+          fontSize: '0.9rem',
+          transform: collapsed ? 'rotate(0deg)' : 'rotate(180deg)',
+          transition: 'transform 0.3s ease'
+        }}>
+          {collapsed ? '▶' : '◀'}
+        </span>
       </div>
 
-      <div className={classes.contentsList}>
-        {sections.map((section, index) => {
-          const title = getSectionTitle(section, index);
-          const isQuiz = section.type === 'interactive' || section.type === 'quiz';
+      {!collapsed && (
+        <>
+          <div className={classes.contentsList}>
+            {Object.entries(groupedSections).map(([chapterKey, chapterData]) => {
+              const isExpanded = expandedChapters[chapterKey] !== false; // Default to expanded
 
-          return (
-            <div
-              key={index}
-              className={getItemClass(index)}
-              onClick={() => handleSectionClick(index)}
-            >
-              <div className={getTitleClass(index)}>
-                {title}
-                {isQuiz && (
-                  <span className={classes.quizIndicator}>
-                    QUIZ
-                  </span>
-                )}
-              </div>
-              <div className={classes.itemSubtext}>
-                {isQuiz
-                  ? `${section.data?.questions?.length || 0} questions`
-                  : 'Reading'
-                }
-              </div>
+              return (
+                <div key={chapterKey}>
+                  <div
+                    style={{
+                      fontSize: '0.75rem',
+                      fontWeight: '700',
+                      color: '#1a73e8',
+                      padding: '0.5rem',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      borderRadius: '6px',
+                      background: 'rgba(26, 115, 232, 0.05)',
+                      marginBottom: '0.3rem'
+                    }}
+                    onClick={() => toggleChapter(chapterKey)}
+                  >
+                    <span>{chapterData.title}</span>
+                    <span style={{
+                      transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)',
+                      transition: 'transform 0.2s ease',
+                      fontSize: '0.7rem'
+                    }}>
+                      ▶
+                    </span>
+                  </div>
+
+                  {isExpanded && chapterData.sections.map((section) => {
+                    const title = getSectionTitle(section, section.originalIndex);
+                    const isQuiz = section.type === 'interactive' || section.type === 'quiz';
+
+                    return (
+                      <div
+                        key={section.originalIndex}
+                        className={getItemClass(section.originalIndex)}
+                        onClick={() => handleSectionClick(section.originalIndex)}
+                        style={{ marginLeft: '0.5rem' }}
+                      >
+                        <div className={getTitleClass(section.originalIndex)}>
+                          {title}
+                          {isQuiz && (
+                            <span className={classes.quizIndicator}>
+                              QUIZ
+                            </span>
+                          )}
+                        </div>
+                        <div className={classes.itemSubtext}>
+                          {isQuiz
+                            ? `${section.data?.questions?.length || 0} questions`
+                            : 'Reading'
+                          }
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className={classes.progressSection}>
+            <div className={classes.progressText}>
+              {currentSection + 1} of {sections.length} sections
             </div>
-          );
-        })}
-      </div>
+          </div>
+        </>
+      )}
 
-      <div className={classes.progressSection}>
-
-        <div className={classes.progressText}>
-          {currentSection + 1} of {sections.length} sections
+      {collapsed && (
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '0.5rem',
+          marginTop: '1rem'
+        }}>
+          <div style={{
+            fontSize: '0.7rem',
+            color: '#1a73e8',
+            fontWeight: '600',
+            writingMode: 'vertical-rl',
+            transform: 'rotate(180deg)'
+          }}>
+            {currentSection + 1}/{sections.length}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
