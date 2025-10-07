@@ -161,70 +161,115 @@ export const useLessonStyles = createUseStyles({
     },
     '& .lesson-intro': {
       fontSize: '1rem',
-      color: '#d73502',
-      fontStyle: 'italic',
-      marginBottom: '2rem',
-      padding: '1rem',
-      background: '#f8f9fa',
-      borderLeft: '4px solid #d73502',
-      borderRadius: '0 4px 4px 0'
+      color: '#1f2937',
+      fontStyle: 'normal',
+      marginBottom: '1.5rem',
+      marginTop: '1.5rem',
+      padding: '0',
+      background: 'transparent',
+      borderLeft: 'none',
+      borderRadius: '0',
+      lineHeight: '1.6'
     },
     '& .concept-box': {
-      background: '#fafbfc',
-      border: '1px solid #e2e8f0',
-      borderRadius: '8px',
-      padding: '1rem',
-      margin: '1rem 0',
+      background: '#ffffff',
+      border: 'none',
+      borderLeft: 'none',
+      borderRadius: '0',
+      padding: '0',
+      margin: '1.5rem 0',
       '& h4': {
-        color: '#1a1a1a',
-        marginBottom: '0.8rem',
-        fontSize: '1.1rem'
+        color: '#111827',
+        marginBottom: '0.875rem',
+        fontSize: '1rem',
+        fontWeight: '600',
+        textTransform: 'none',
+        letterSpacing: '0'
+      },
+      '& p:last-child': {
+        marginBottom: '0'
       }
     },
     '& .tip-box': {
-      background: '#f7fafc',
-      border: '1px solid #e2e8f0',
-      borderRadius: '8px',
-      padding: '1rem',
-      margin: '1rem 0',
+      background: '#ffffff',
+      border: 'none',
+      borderLeft: 'none',
+      borderRadius: '0',
+      padding: '0',
+      margin: '1.5rem 0',
       '& h4': {
-        color: '#1a1a1a',
-        marginBottom: '0.8rem',
-        fontSize: '1.1rem',
+        color: '#111827',
+        marginBottom: '0.875rem',
+        fontSize: '1rem',
+        fontWeight: '600',
+        textTransform: 'none',
+        letterSpacing: '0'
+      },
+      '& strong': {
+        background: 'transparent',
+        padding: '0',
+        borderRadius: '0',
+        color: '#111827',
         fontWeight: '600'
       },
-      '& strong, & .highlight': {
-        background: 'rgba(255, 235, 59, 0.4)',
-        padding: '1px 3px',
-        borderRadius: '2px'
+      '& .highlight': {
+        background: 'transparent',
+        padding: '0',
+        borderRadius: '0',
+        color: '#111827',
+        fontWeight: '600'
+      },
+      '& p:last-child': {
+        marginBottom: '0'
       }
     },
     '& .example-box': {
-      background: '#f8f9fa',
-      border: '1px solid #e2e8f0',
-      borderRadius: '8px',
-      padding: '1rem',
-      margin: '1rem 0',
+      background: '#ffffff',
+      border: 'none',
+      borderLeft: 'none',
+      borderRadius: '0',
+      padding: '0',
+      margin: '1.5rem 0',
+      '& h4': {
+        color: '#111827',
+        marginBottom: '0.875rem',
+        fontSize: '1rem',
+        fontWeight: '600',
+        textTransform: 'none',
+        letterSpacing: '0'
+      },
       '& em, & .definition': {
         fontStyle: 'italic',
-        fontWeight: '500'
+        fontWeight: 'normal',
+        color: 'inherit'
       },
       '& .highlight': {
-        background: 'rgba(16, 185, 129, 0.3)',
-        padding: '1px 3px',
-        borderRadius: '2px'
+        background: 'transparent',
+        padding: '0',
+        borderRadius: '0',
+        color: '#111827',
+        fontWeight: '600'
+      },
+      '& p:last-child': {
+        marginBottom: '0'
       }
     },
     '& .rules-box': {
-      background: '#fff',
-      border: '2px solid #1a1a1a',
-      borderRadius: '8px',
-      padding: '1rem',
-      margin: '1rem 0',
+      background: '#ffffff',
+      border: 'none',
+      borderRadius: '0',
+      padding: '0',
+      margin: '2rem 0',
       '& h4': {
-        color: '#1a1a1a',
-        marginBottom: '0.8rem',
-        fontSize: '1.2rem'
+        color: '#111827',
+        marginBottom: '0.875rem',
+        fontSize: '1.25rem',
+        fontWeight: '600',
+        textTransform: 'none',
+        letterSpacing: '0'
+      },
+      '& p:last-child': {
+        marginBottom: '0'
       }
     }
   },

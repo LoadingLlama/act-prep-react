@@ -484,49 +484,16 @@ const useStyles = createUseStyles({
       borderLeft: '4px solid #1a1a1a',
       borderRadius: '0 4px 4px 0'
     },
-    '& .concept-box': {
-      background: '#f8f9fa',
-      border: '1px solid #e0e0e0',
-      borderRadius: '6px',
-      padding: '1.5rem',
+    '& .concept-box, & .tip-box, & .example-box, & .rules-box, & .key-takeaway': {
+      background: 'transparent',
+      border: 'none',
+      borderRadius: '0',
+      padding: '0',
       margin: '1.5rem 0',
       '& h4': {
-        color: '#1a1a1a',
-        marginBottom: '1rem',
-        fontSize: '1.1rem',
-        fontWeight: '600'
-      }
-    },
-    '& .tip-box': {
-      background: '#fff3cd',
-      border: '1px solid #ffc107',
-      borderRadius: '6px',
-      padding: '1.5rem',
-      margin: '1.5rem 0',
-      '& h4': {
-        color: '#856404',
-        marginBottom: '1rem',
-        fontSize: '1.1rem',
-        fontWeight: '600'
-      }
-    },
-    '& .example-box': {
-      background: '#e8f5e8',
-      border: '1px solid #28a745',
-      borderRadius: '6px',
-      padding: '1.5rem',
-      margin: '1.5rem 0'
-    },
-    '& .rules-box': {
-      background: '#fff',
-      border: '2px solid #1a1a1a',
-      borderRadius: '6px',
-      padding: '1.5rem',
-      margin: '1.5rem 0',
-      '& h4': {
-        color: '#1a1a1a',
-        marginBottom: '1rem',
-        fontSize: '1.2rem',
+        color: '#111827',
+        marginBottom: '0.875rem',
+        fontSize: '1rem',
         fontWeight: '600'
       }
     }
@@ -1136,15 +1103,15 @@ function App() {
                 <div style={{
                   maxWidth: '900px',
                   margin: '0 auto',
-                  padding: '2.5rem 4rem 0'
+                  padding: '1rem 4rem 0'
                 }}>
                   {/* Metadata bar - Lumisource style */}
                   <div style={{
                     display: 'flex',
                     gap: '2rem',
                     alignItems: 'center',
-                    marginBottom: '2rem',
-                    paddingBottom: '1rem',
+                    marginBottom: '1.25rem',
+                    paddingBottom: '0.75rem',
                     borderBottom: '1px solid #e5e7eb',
                     flexWrap: 'wrap'
                   }}>
@@ -1180,7 +1147,7 @@ function App() {
                     fontSize: '1.875rem',
                     fontWeight: 700,
                     color: '#111827',
-                    marginBottom: '1.5rem',
+                    marginBottom: '1rem',
                     lineHeight: '1.3'
                   }}>
                     {lesson.title}

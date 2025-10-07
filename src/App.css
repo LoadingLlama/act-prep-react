@@ -37,22 +37,24 @@
   margin-top: 1rem;
 }
 
-/* Concept boxes with visual indicators */
+/* Concept boxes - clean Lumisource style with NO backgrounds or borders */
 .concept-box {
-  margin: 2rem 0;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem 0;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  border: none;
 }
 
 .independent-clause {
-  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-  border-left: 5px solid #22c55e;
+  background: transparent;
+  border-left: none;
 }
 
 .dependent-clause {
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-  border-left: 5px solid #ef4444;
+  background: transparent;
+  border-left: none;
 }
 
 .concept-header {
@@ -302,25 +304,28 @@
   opacity: 0.9;
 }
 
-/* Key takeaway styling */
+/* Key takeaway styling - clean Lumisource style */
 .key-takeaway {
-  background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
-  color: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin: 2rem 0;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  margin: 1.5rem 0;
+  border: none;
 }
 
 .key-takeaway h4 {
-  color: white;
-  font-size: 1.3rem;
-  margin: 0 0 1rem 0;
+  color: #111827;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.875rem 0;
 }
 
 .key-takeaway p {
   margin: 0;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  color: #1f2937;
 }
 
 /* Practice box styling */
