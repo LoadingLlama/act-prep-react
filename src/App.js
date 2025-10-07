@@ -898,14 +898,44 @@ function App() {
             </div>
 
             <div className={classes.lessonsGrid}>
-              {filteredLessons.map((lesson) => (
-                <div key={lesson.id} className={`${classes.lessonItem} ${getLessonStatus(lesson.id)}`} onClick={() => openLesson(lesson.id)}>
-                  <div className={classes.lessonInfo}>
-                    <h4>{lesson.title}</h4>
-                  </div>
-                  <StatusIcon status={getLessonStatus(lesson.id)} />
-                </div>
-              ))}
+              {(() => {
+                // Group lessons by category
+                const groupedLessons = filteredLessons.reduce((acc, lesson) => {
+                  const category = lesson.category || 'Other';
+                  if (!acc[category]) acc[category] = [];
+                  acc[category].push(lesson);
+                  return acc;
+                }, {});
+
+                return Object.entries(groupedLessons).map(([category, lessons]) => (
+                  <React.Fragment key={category}>
+                    {category !== 'Introduction' && category !== 'Practice Test' && (
+                      <div style={{
+                        fontSize: '1rem',
+                        fontWeight: '600',
+                        color: '#1a1a1a',
+                        marginTop: category === Object.keys(groupedLessons)[0] ? '0' : '1.5rem',
+                        marginBottom: '0.75rem',
+                        paddingBottom: '0.5rem',
+                        borderBottom: '2px solid #e5e7eb'
+                      }}>
+                        {category}
+                      </div>
+                    )}
+                    {lessons.map((lesson) => (
+                      <div key={lesson.id} className={`${classes.lessonItem} ${getLessonStatus(lesson.id)}`} onClick={() => openLesson(lesson.id)}>
+                        <div className={classes.lessonInfo}>
+                          <h4>
+                            {lesson.chapterNum && <span style={{ color: '#1a73e8', fontWeight: '600', marginRight: '0.5rem' }}>{lesson.chapterNum}</span>}
+                            {lesson.title}
+                          </h4>
+                        </div>
+                        <StatusIcon status={getLessonStatus(lesson.id)} />
+                      </div>
+                    ))}
+                  </React.Fragment>
+                ));
+              })()}
             </div>
           </div>
         </div>
@@ -959,24 +989,55 @@ function App() {
           </div>
 
           <div className={classes.lessonsGrid}>
-            {sections.map(section => (
-              <React.Fragment key={section.key}>
-                <div className={classes.sectionHeader} onClick={() => toggleSection(section.key)}>
-                  <h3>{section.title} ({section.lessons.length} lessons)</h3>
-                  <span className={`${classes.sectionHeaderIcon} ${expandedSections[section.key] ? 'expanded' : ''}`}>
-                    ▶
-                  </span>
-                </div>
-                {expandedSections[section.key] && section.lessons.map((lesson) => (
-                  <div key={lesson.id} className={`${classes.lessonItem} ${getLessonStatus(lesson.id)}`} onClick={() => openLesson(lesson.id)}>
-                    <div className={classes.lessonInfo}>
-                      <h4>{lesson.title}</h4>
-                    </div>
-                    <StatusIcon status={getLessonStatus(lesson.id)} />
+            {sections.map(section => {
+              // Group lessons by category within each section
+              const groupedLessons = section.lessons.reduce((acc, lesson) => {
+                const category = lesson.category || 'Other';
+                if (!acc[category]) acc[category] = [];
+                acc[category].push(lesson);
+                return acc;
+              }, {});
+
+              return (
+                <React.Fragment key={section.key}>
+                  <div className={classes.sectionHeader} onClick={() => toggleSection(section.key)}>
+                    <h3>{section.title} ({section.lessons.length} lessons)</h3>
+                    <span className={`${classes.sectionHeaderIcon} ${expandedSections[section.key] ? 'expanded' : ''}`}>
+                      ▶
+                    </span>
                   </div>
-                ))}
-              </React.Fragment>
-            ))}
+                  {expandedSections[section.key] && Object.entries(groupedLessons).map(([category, lessons]) => (
+                    <React.Fragment key={`${section.key}-${category}`}>
+                      {category !== 'Introduction' && category !== 'Practice Test' && (
+                        <div style={{
+                          fontSize: '0.95rem',
+                          fontWeight: '600',
+                          color: '#4a5568',
+                          marginTop: '1rem',
+                          marginBottom: '0.5rem',
+                          marginLeft: '1rem',
+                          paddingBottom: '0.4rem',
+                          borderBottom: '1px solid #e5e7eb'
+                        }}>
+                          {category}
+                        </div>
+                      )}
+                      {lessons.map((lesson) => (
+                        <div key={lesson.id} className={`${classes.lessonItem} ${getLessonStatus(lesson.id)}`} onClick={() => openLesson(lesson.id)}>
+                          <div className={classes.lessonInfo}>
+                            <h4>
+                              {lesson.chapterNum && <span style={{ color: '#1a73e8', fontWeight: '600', marginRight: '0.5rem' }}>{lesson.chapterNum}</span>}
+                              {lesson.title}
+                            </h4>
+                          </div>
+                          <StatusIcon status={getLessonStatus(lesson.id)} />
+                        </div>
+                      ))}
+                    </React.Fragment>
+                  ))}
+                </React.Fragment>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -1022,36 +1083,110 @@ function App() {
 
           {/* Main Content */}
           <div className={classes.lessonMain}>
-            <div className={classes.lessonHeader}>
-              <h1 className={classes.lessonTitle}>
-                {lesson ? lesson.title : 'Lesson Coming Soon'}
+            <div className={classes.lessonHeader} style={{ padding: '0.75rem 2rem', minHeight: 'auto' }}>
+              <h1 className={classes.lessonTitle} style={{ fontSize: '1.1rem', fontWeight: 500 }}>
+                {currentSection ? `${currentSection.charAt(0).toUpperCase() + currentSection.slice(1)} Lessons` : 'Lessons'}
               </h1>
 
-              <div className={classes.lessonModeToggle}>
+              <div style={{
+                display: 'inline-flex',
+                background: '#f3f4f6',
+                borderRadius: '6px',
+                padding: '3px',
+                gap: '2px'
+              }}>
                 <button
-                  className={`${classes.modeButton} ${lessonMode === 'review' ? 'active' : ''}`}
+                  style={{
+                    padding: '0.4rem 1rem',
+                    fontSize: '0.85rem',
+                    fontWeight: 500,
+                    border: 'none',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    background: lessonMode === 'review' ? 'white' : 'transparent',
+                    color: lessonMode === 'review' ? '#1a1a1a' : '#6b7280',
+                    boxShadow: lessonMode === 'review' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none'
+                  }}
                   onClick={() => setLessonMode('review')}
                 >
-                  <span>📚</span>
                   Review
                 </button>
                 <button
-                  className={`${classes.modeButton} ${lessonMode === 'practice' ? 'active' : ''}`}
+                  style={{
+                    padding: '0.4rem 1rem',
+                    fontSize: '0.85rem',
+                    fontWeight: 500,
+                    border: 'none',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    background: lessonMode === 'practice' ? 'white' : 'transparent',
+                    color: lessonMode === 'practice' ? '#1a1a1a' : '#6b7280',
+                    boxShadow: lessonMode === 'practice' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none'
+                  }}
                   onClick={() => setLessonMode('practice')}
                 >
-                  <span>✏️</span>
                   Practice
                 </button>
               </div>
-
-              <button
-                onClick={closeLessonModal}
-                className={classes.lessonClose}
-              >
-                ✕
-              </button>
             </div>
             <div className={classes.lessonBody}>
+              {lesson && lesson.title && (
+                <div style={{
+                  maxWidth: '900px',
+                  margin: '0 auto',
+                  padding: '2.5rem 4rem 0'
+                }}>
+                  {/* Metadata bar - Lumisource style */}
+                  <div style={{
+                    display: 'flex',
+                    gap: '2rem',
+                    alignItems: 'center',
+                    marginBottom: '2rem',
+                    paddingBottom: '1rem',
+                    borderBottom: '1px solid #e5e7eb',
+                    flexWrap: 'wrap'
+                  }}>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      color: '#2563eb',
+                      fontSize: '0.875rem'
+                    }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                      </svg>
+                      <span style={{ fontWeight: '500' }}>Reading Time: 5 min</span>
+                    </div>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      color: '#059669',
+                      fontSize: '0.875rem'
+                    }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M9 11l3 3L22 4"/>
+                        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                      </svg>
+                      <span style={{ fontWeight: '500' }}>Verified for 2025 ACT® Exam</span>
+                    </div>
+                  </div>
+
+                  <h2 style={{
+                    fontSize: '1.875rem',
+                    fontWeight: 700,
+                    color: '#111827',
+                    marginBottom: '1.5rem',
+                    lineHeight: '1.3'
+                  }}>
+                    {lesson.title}
+                  </h2>
+                </div>
+              )}
               {lessonMode === 'review' ? (
                 lesson ? (
                   <ProgressiveLessonRenderer
