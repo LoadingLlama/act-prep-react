@@ -1,6 +1,8 @@
-import { createClient } from '@supabase/supabase-js'
+/**
+ * @deprecated This file is deprecated. Import from services/api/supabase.service.js instead
+ * Kept for backward compatibility - re-exports from SupabaseService
+ */
 
-const supabaseUrl = process.env.REACT_APP_SUPABASE_URL
-const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY
+import { supabase as supabaseClient } from './services/api/supabase.service';
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+export const supabase = supabaseClient;

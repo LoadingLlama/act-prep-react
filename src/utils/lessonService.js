@@ -1,4 +1,10 @@
-import { supabase } from '../supabaseClient';
+/**
+ * @deprecated This file is deprecated. Import from services/api/lessons.service.js instead
+ * Kept for backward compatibility - re-exports from LessonsService
+ */
+
+import LessonsService from '../services/api/lessons.service';
+import logger from '../services/logging/logger';
 
 /**
  * Fetch all lessons for a specific subject
@@ -6,29 +12,19 @@ import { supabase } from '../supabaseClient';
  * @returns {Promise<Object>} - Lessons object with lesson_key as keys
  */
 export async function fetchLessonsBySubject(subject) {
-    try {
-        const { data, error } = await supabase
-            .from('lessons')
-            .select('*')
-            .eq('subject', subject)
-            .order('order_index', { ascending: true });
+  const lessons = await LessonsService.getLessonsBySubject(subject);
+  if (!lessons) return {};
 
-        if (error) throw error;
+  // Convert array to object format matching the original structure
+  const lessonsObject = {};
+  lessons.forEach((lesson) => {
+    lessonsObject[lesson.lesson_key] = {
+      title: lesson.title,
+      content: lesson.content,
+    };
+  });
 
-        // Convert array to object format matching the original structure
-        const lessonsObject = {};
-        data.forEach(lesson => {
-            lessonsObject[lesson.lesson_key] = {
-                title: lesson.title,
-                content: lesson.content
-            };
-        });
-
-        return lessonsObject;
-    } catch (error) {
-        console.error(`Error fetching ${subject} lessons:`, error);
-        throw error;
-    }
+  return lessonsObject;
 }
 
 /**
@@ -38,24 +34,15 @@ export async function fetchLessonsBySubject(subject) {
  * @returns {Promise<Object>} - Lesson object with title and content
  */
 export async function fetchLesson(subject, lessonKey) {
-    try {
-        const { data, error } = await supabase
-            .from('lessons')
-            .select('*')
-            .eq('subject', subject)
-            .eq('lesson_key', lessonKey)
-            .single();
+  logger.debug('LessonServiceWrapper', 'fetchLesson', { subject, lessonKey });
 
-        if (error) throw error;
+  const lesson = await LessonsService.getLessonByKey(lessonKey);
+  if (!lesson) return null;
 
-        return {
-            title: data.title,
-            content: data.content
-        };
-    } catch (error) {
-        console.error(`Error fetching lesson ${subject}/${lessonKey}:`, error);
-        throw error;
-    }
+  return {
+    title: lesson.title,
+    content: lesson.content,
+  };
 }
 
 /**
@@ -63,37 +50,27 @@ export async function fetchLesson(subject, lessonKey) {
  * @returns {Promise<Object>} - All lessons organized by subject
  */
 export async function fetchAllLessons() {
-    try {
-        const { data, error } = await supabase
-            .from('lessons')
-            .select('*')
-            .order('subject', { ascending: true })
-            .order('order_index', { ascending: true });
+  const lessons = await LessonsService.getAllLessons();
+  if (!lessons) return null;
 
-        if (error) throw error;
+  // Organize by subject
+  const lessonsBySubject = {
+    math: {},
+    english: {},
+    reading: {},
+    science: {},
+  };
 
-        // Organize by subject
-        const lessonsBySubject = {
-            math: {},
-            english: {},
-            reading: {},
-            science: {}
-        };
-
-        data.forEach(lesson => {
-            if (lessonsBySubject[lesson.subject]) {
-                lessonsBySubject[lesson.subject][lesson.lesson_key] = {
-                    title: lesson.title,
-                    content: lesson.content
-                };
-            }
-        });
-
-        return lessonsBySubject;
-    } catch (error) {
-        console.error('Error fetching all lessons:', error);
-        throw error;
+  lessons.forEach((lesson) => {
+    if (lessonsBySubject[lesson.subject]) {
+      lessonsBySubject[lesson.subject][lesson.lesson_key] = {
+        title: lesson.title,
+        content: lesson.content,
+      };
     }
+  });
+
+  return lessonsBySubject;
 }
 
 /**
@@ -102,18 +79,12 @@ export async function fetchAllLessons() {
  * @returns {Promise<Array>} - Array of lesson metadata
  */
 export async function fetchLessonList(subject) {
-    try {
-        const { data, error } = await supabase
-            .from('lessons')
-            .select('lesson_key, title, order_index')
-            .eq('subject', subject)
-            .order('order_index', { ascending: true });
+  const lessons = await LessonsService.getLessonsBySubject(subject);
+  if (!lessons) return [];
 
-        if (error) throw error;
-
-        return data;
-    } catch (error) {
-        console.error(`Error fetching ${subject} lesson list:`, error);
-        throw error;
-    }
+  return lessons.map((lesson) => ({
+    lesson_key: lesson.lesson_key,
+    title: lesson.title,
+    order_index: lesson.order_index,
+  }));
 }

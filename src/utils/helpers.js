@@ -1,13 +1,21 @@
-// Common utility functions used throughout the application
+/**
+ * Common utility functions used throughout the application
+ */
+
+import logger from '../services/logging/logger';
+import errorTracker from '../services/logging/errorTracker';
 
 // Local storage utilities
 export const storage = {
   get: (key, defaultValue = null) => {
     try {
       const item = localStorage.getItem(key);
-      return item ? JSON.parse(item) : defaultValue;
+      const value = item ? JSON.parse(item) : defaultValue;
+
+      logger.debug('StorageUtils', 'get', { key, found: !!item });
+      return value;
     } catch (error) {
-      console.error(`Error reading from localStorage key "${key}":`, error);
+      errorTracker.trackError('StorageUtils', 'get', { key }, error);
       return defaultValue;
     }
   },
@@ -15,9 +23,10 @@ export const storage = {
   set: (key, value) => {
     try {
       localStorage.setItem(key, JSON.stringify(value));
+      logger.debug('StorageUtils', 'set', { key });
       return true;
     } catch (error) {
-      console.error(`Error writing to localStorage key "${key}":`, error);
+      errorTracker.trackError('StorageUtils', 'set', { key }, error);
       return false;
     }
   },
@@ -25,14 +34,14 @@ export const storage = {
   remove: (key) => {
     try {
       localStorage.removeItem(key);
+      logger.debug('StorageUtils', 'remove', { key });
       return true;
     } catch (error) {
-      console.error(`Error removing localStorage key "${key}":`, error);
+      errorTracker.trackError('StorageUtils', 'remove', { key }, error);
       return false;
     }
-  }
+  },
 };
-
 
 // Status utilities
 export const statusUtils = {
@@ -59,61 +68,102 @@ export const statusUtils = {
       default:
         return 'not-started';
     }
-  }
+  },
 };
-
 
 // DOM utilities
 export const domUtils = {
   preventBodyScroll: () => {
     document.body.style.overflow = 'hidden';
+    logger.debug('DOMUtils', 'preventBodyScroll', {});
   },
 
   restoreBodyScroll: () => {
     document.body.style.overflow = '';
+    logger.debug('DOMUtils', 'restoreBodyScroll', {});
   },
 
   scrollToTop: () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+    logger.debug('DOMUtils', 'scrollToTop', {});
+  },
 };
 
 // Lesson utilities
 export const lessonUtils = {
   extractKeyTerms: (content) => {
-    if (!content) return [];
-    // Extract bold terms from content
-    const boldMatches = content.match(/<strong>(.*?)<\/strong>/g) || [];
-    return boldMatches.map(match => match.replace(/<\/?strong>/g, '')).slice(0, 5);
+    try {
+      if (!content) return [];
+
+      // Extract bold terms from content
+      const boldMatches = content.match(/<strong>(.*?)<\/strong>/g) || [];
+      const terms = boldMatches.map((match) => match.replace(/<\/?strong>/g, '')).slice(0, 5);
+
+      logger.debug('LessonUtils', 'extractKeyTerms', { termCount: terms.length });
+      return terms;
+    } catch (error) {
+      errorTracker.trackError('LessonUtils', 'extractKeyTerms', {}, error);
+      return [];
+    }
   },
 
   calculateProgress: (lessonStructure, lessonProgress) => {
-    const total = lessonStructure.length;
-    const completed = Object.values(lessonProgress).filter(status => status === 'completed').length;
-    return {
-      total,
-      completed,
-      percentage: total > 0 ? Math.round((completed / total) * 100) : 0
-    };
-  }
+    try {
+      const total = lessonStructure.length;
+      const completed = Object.values(lessonProgress).filter(
+        (status) => status === 'completed'
+      ).length;
+      const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+      logger.debug('LessonUtils', 'calculateProgress', {
+        total,
+        completed,
+        percentage,
+      });
+
+      return { total, completed, percentage };
+    } catch (error) {
+      errorTracker.trackError('LessonUtils', 'calculateProgress', {}, error);
+      return { total: 0, completed: 0, percentage: 0 };
+    }
+  },
 };
 
 // Script loader utilities
 export const scriptLoader = {
   load: (src) => {
+    logger.debug('ScriptLoader', 'load', { src });
+
     return new Promise((resolve, reject) => {
-      const script = document.createElement('script');
-      script.src = src;
-      script.onload = resolve;
-      script.onerror = reject;
-      document.body.appendChild(script);
+      try {
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = () => {
+          logger.info('ScriptLoader', 'loaded', { src });
+          resolve();
+        };
+        script.onerror = (error) => {
+          errorTracker.trackError('ScriptLoader', 'load', { src }, error);
+          reject(error);
+        };
+        document.body.appendChild(script);
+      } catch (error) {
+        errorTracker.trackError('ScriptLoader', 'load', { src }, error);
+        reject(error);
+      }
     });
   },
 
   cleanup: (sources) => {
-    sources.forEach(src => {
-      const scripts = document.querySelectorAll(`script[src="${src}"]`);
-      scripts.forEach(script => script.remove());
-    });
-  }
+    try {
+      sources.forEach((src) => {
+        const scripts = document.querySelectorAll(`script[src="${src}"]`);
+        scripts.forEach((script) => script.remove());
+      });
+
+      logger.debug('ScriptLoader', 'cleanup', { count: sources.length });
+    } catch (error) {
+      errorTracker.trackError('ScriptLoader', 'cleanup', { sources }, error);
+    }
+  },
 };
