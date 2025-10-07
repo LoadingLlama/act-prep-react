@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACT Science Test</title>
+    <title>ACT Diagnostic Test</title>
     <link rel="stylesheet" href="shared-test-styles.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -84,13 +84,24 @@
 
         async function loadQuestionsFromSupabase() {
             try {
+                console.log('Loading Science questions from Supabase...');
+
                 const { data, error } = await supabase
                     .from('diagnostic_test_questions')
                     .select('*')
                     .eq('section', 'science')
                     .order('question_id');
 
-                if (error) throw error;
+                if (error) {
+                    console.error('Supabase error:', error);
+                    throw error;
+                }
+
+                console.log('Loaded data:', data);
+
+                if (!data || data.length === 0) {
+                    throw new Error('No questions found in database');
+                }
 
                 questionsData = data;
                 totalQuestions = data.length;
@@ -113,14 +124,21 @@
                     }
                 });
 
+                console.log('Rendering passages and questions...');
                 renderPassages();
                 renderQuestions();
                 updateDisplay();
                 startTimer();
+                console.log('Successfully loaded all content');
             } catch (error) {
                 console.error('Error loading questions:', error);
                 document.getElementById('loadingQuestions').innerHTML =
-                    '<p style="color: red;">Error loading questions. Please refresh the page.</p>';
+                    `<div style="color: red; padding: 2rem; text-align: center;">
+                        <p style="font-size: 1.2rem; margin-bottom: 1rem;">Error Loading Questions</p>
+                        <p>${error.message || 'Please check console for details'}</p>
+                        <p style="margin-top: 1rem;">Try refreshing the page or contact support.</p>
+                    </div>`;
+                document.getElementById('loadingPassage').innerHTML = '';
             }
         }
 
@@ -134,10 +152,16 @@
                 passageDiv.className = 'passage-content';
                 passageDiv.id = `passage${passageNum}`;
 
+                // Format passage text with proper paragraphs
+                const formattedText = passage.text
+                    .split('\n\n')
+                    .map(para => `<p>${para.replace(/\n/g, '<br>')}</p>`)
+                    .join('');
+
                 passageDiv.innerHTML = `
                     <div class="passage-text">
                         <div class="passage-title">${passage.title}</div>
-                        <p>${passage.text}</p>
+                        ${formattedText}
                     </div>
                 `;
 
@@ -150,33 +174,47 @@
             questionSection.innerHTML = '';
 
             questionsData.forEach(q => {
-                const choices = JSON.parse(q.choices);
-                const questionDiv = document.createElement('div');
-                questionDiv.className = 'question';
-                questionDiv.id = `question${q.question_id}`;
+                try {
+                    // Handle both JSON string and object for choices
+                    let choices;
+                    if (typeof q.choices === 'string') {
+                        choices = JSON.parse(q.choices);
+                    } else if (Array.isArray(q.choices)) {
+                        choices = q.choices;
+                    } else {
+                        console.error('Invalid choices format for question', q.question_id, q.choices);
+                        choices = ['Error loading choices'];
+                    }
 
-                const choicesHTML = choices.map((choice, index) => {
-                    const isOdd = q.question_id % 2 === 1;
-                    const letters = isOdd ? ['A', 'B', 'C', 'D'] : ['F', 'G', 'H', 'J'];
-                    const letter = letters[index];
+                    const questionDiv = document.createElement('div');
+                    questionDiv.className = 'question';
+                    questionDiv.id = `question${q.question_id}`;
 
-                    return `
-                        <label class="answer-choice">
-                            <input type="radio" name="q${q.question_id}" value="${letter}">
-                            <span class="answer-text">${choice}</span>
-                        </label>
+                    const choicesHTML = choices.map((choice, index) => {
+                        const isOdd = q.question_id % 2 === 1;
+                        const letters = isOdd ? ['A', 'B', 'C', 'D'] : ['F', 'G', 'H', 'J'];
+                        const letter = letters[index];
+
+                        return `
+                            <label class="answer-choice">
+                                <input type="radio" name="q${q.question_id}" value="${letter}">
+                                <span class="answer-text">${choice}</span>
+                            </label>
+                        `;
+                    }).join('');
+
+                    questionDiv.innerHTML = `
+                        <div class="question-number">${q.question_id}.</div>
+                        <div class="question-text">${q.question || 'Select the correct answer:'}</div>
+                        <div class="answer-choices">
+                            ${choicesHTML}
+                        </div>
                     `;
-                }).join('');
 
-                questionDiv.innerHTML = `
-                    <div class="question-number">${q.question_id}.</div>
-                    <div class="question-text">${q.question || 'Select the correct answer:'}</div>
-                    <div class="answer-choices">
-                        ${choicesHTML}
-                    </div>
-                `;
-
-                questionSection.appendChild(questionDiv);
+                    questionSection.appendChild(questionDiv);
+                } catch (error) {
+                    console.error('Error rendering question', q.question_id, error);
+                }
             });
         }
 
