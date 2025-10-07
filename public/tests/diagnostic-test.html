@@ -200,15 +200,11 @@
     <div class="progress-container" id="progressContainer">
         <div class="logo">actcourse.org</div>
 
-        <div class="current-section" id="currentSection">Loading...</div>
+        <div class="current-section" id="currentSection">Starting test...</div>
 
         <div class="progress-bar">
             <div class="progress-fill" id="progressFill"></div>
         </div>
-
-        <div class="section-timer" id="sectionTimer">Redirecting...</div>
-
-        <p>Please wait while we prepare your test...</p>
     </div>
 
     <script>
@@ -220,39 +216,8 @@
         ];
 
         function startTest() {
-            // Hide start screen and show progress
-            document.getElementById('startContainer').style.display = 'none';
-            document.getElementById('progressContainer').style.display = 'block';
-
-            // Start with English section
-            startSection(0);
-        }
-
-        function startSection(sectionIndex) {
-            if (sectionIndex >= sections.length) {
-                // Test complete - redirect to results
-                window.location.href = 'test-results.html';
-                return;
-            }
-
-            const section = sections[sectionIndex];
-
-            // Update progress display
-            document.getElementById('currentSection').textContent = `${section.name} Section`;
-            document.getElementById('sectionTimer').textContent = `${section.questions} questions • ${section.duration} minutes`;
-
-            // Update progress bar
-            const progress = (sectionIndex / sections.length) * 100;
-            document.getElementById('progressFill').style.width = progress + '%';
-
-            // Store current section for the test
-            localStorage.setItem('currentSection', sectionIndex);
-            localStorage.setItem('totalSections', sections.length);
-
-            // Redirect to section after 2 seconds
-            setTimeout(() => {
-                window.location.href = section.file;
-            }, 2000);
+            // Go directly to English test
+            window.location.href = 'english-test.html';
         }
 
         // Clear any previous test session data to ensure fresh start

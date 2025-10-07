@@ -38,91 +38,79 @@ const useStyles = createUseStyles({
     background: '#fafbfc'
   },
   header: {
-    background: 'rgba(248, 249, 250, 0.7)',
-    backdropFilter: 'blur(12px)',
-    borderBottom: '1px solid rgba(233, 236, 239, 0.3)',
-    padding: '0.75rem 2rem',
+    background: '#ffffff',
+    borderBottom: '1px solid #e5e7eb',
+    padding: '0.5rem 1.5rem',
     position: 'sticky',
     top: 0,
-    zIndex: 30,
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+    zIndex: 30
   },
   headerContent: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    maxWidth: '1200px',
+    maxWidth: '1400px',
     margin: '0 auto',
-    gap: '1rem',
-    position: 'relative'
+    gap: '1rem'
   },
   logo: {
-    fontSize: '1.3rem',
-    fontWeight: 500,
+    fontSize: '1.1rem',
+    fontWeight: 600,
     color: '#1a1a1a',
     textDecoration: 'none',
-    margin: 0,
-    '&:hover': {
-      color: '#333'
-    }
+    margin: 0
   },
   subtitle: {
-    color: '#666',
-    fontSize: '0.85rem',
+    color: '#9ca3af',
+    fontSize: '0.7rem',
     fontWeight: 400,
     margin: 0,
-    flex: 1,
-    textAlign: 'center'
+    textTransform: 'uppercase',
+    letterSpacing: '0.5px'
   },
   navContainer: {
     padding: '0',
-    marginBottom: '1.5rem',
-    background: 'transparent'
+    marginBottom: '0',
+    background: '#ffffff',
+    borderBottom: '1px solid #e5e7eb'
   },
   navTabs: {
     display: 'flex',
-    borderBottom: '1px solid rgba(229, 229, 229, 0.5)',
-    justifyContent: 'center',
-    position: 'relative',
-    maxWidth: '1200px',
+    borderBottom: 'none',
+    justifyContent: 'flex-start',
+    maxWidth: '1400px',
     margin: '0 auto',
-    width: '100%'
+    padding: '0 1.5rem'
   },
   tab: {
     background: 'transparent',
     border: 'none',
-    padding: '1rem 2rem',
-    fontSize: '1rem',
-    color: '#666',
+    padding: '0.6rem 1.25rem',
+    fontSize: '0.9rem',
+    color: '#6b7280',
     cursor: 'pointer',
-    transition: 'all 0.3s ease',
+    transition: 'all 0.2s ease',
     position: 'relative',
-    fontWeight: 400,
+    fontWeight: 500,
+    borderBottom: '2px solid transparent',
     '&:hover': {
-      color: '#1a1a1a'
+      color: '#1a1a1a',
+      background: '#f9fafb'
     },
     '&.active': {
       color: '#1a1a1a',
-      fontWeight: 500
+      borderBottom: '2px solid #1a1a1a'
     }
   },
   tabIndicator: {
-    position: 'absolute',
-    bottom: '-1px',
-    height: '3px',
-    background: 'linear-gradient(90deg, #1a1a1a, #4a5568, #1a1a1a)',
-    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-    borderRadius: '2px',
-    boxShadow: '0 2px 8px rgba(26, 26, 26, 0.3)'
+    display: 'none'
   },
   content: {
     flex: 1,
-    padding: '0 2rem 2rem',
-    maxWidth: '1200px',
+    padding: '1rem 1.5rem',
+    maxWidth: '1400px',
     margin: '0 auto',
-    width: '100%',
-    position: 'relative',
-    zIndex: 10
+    width: '100%'
   },
   tabContent: {
     display: 'none',
@@ -144,58 +132,42 @@ const useStyles = createUseStyles({
     margin: '0'
   },
   sectionTitle: {
-    fontSize: '1.8rem',
-    fontWeight: 500,
-    color: '#1a1a1a',
-    marginBottom: '1.5rem',
-    textAlign: 'center',
-    letterSpacing: '-0.01em',
-    position: 'relative',
-    paddingTop: '1rem',
-    '&::after': {
-      content: '""',
-      position: 'absolute',
-      bottom: '-0.5rem',
-      left: '50%',
-      transform: 'translateX(-50%)',
-      width: '60px',
-      height: '2px',
-      background: 'linear-gradient(90deg, transparent, #1a1a1a, transparent)',
-      borderRadius: '1px'
-    }
+    fontSize: '1.1rem',
+    fontWeight: 600,
+    color: '#111827',
+    marginBottom: '0.75rem',
+    marginTop: '0',
+    textAlign: 'left'
   },
   testGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-    gap: '2rem',
-    marginTop: '1rem',
-    padding: '1rem 0'
+    gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+    gap: '0.75rem',
+    marginTop: '0'
   },
   card: {
     background: '#ffffff',
-    border: '1px solid #dee2e6',
-    borderRadius: borderRadius.xl,
-    padding: spacing.xxl,
-    marginBottom: 0,
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+    border: '1px solid #e5e7eb',
+    borderRadius: '6px',
+    padding: '0.85rem 1rem',
+    transition: 'all 0.15s ease',
     cursor: 'pointer',
     '&:hover': {
-      background: '#f8f9fa',
-      borderColor: '#adb5bd',
-      transform: 'translateY(-4px)',
-      boxShadow: '0 12px 30px rgba(0,0,0,0.15)'
+      background: '#f9fafb',
+      borderColor: '#d1d5db'
     },
     '& h3': {
-      fontSize: '1.3rem',
-      fontWeight: 500,
-      marginBottom: '0.75rem',
-      color: '#1a1a1a'
+      fontSize: '0.9rem',
+      fontWeight: 600,
+      marginBottom: '0.25rem',
+      color: '#111827'
     },
     '& p': {
-      color: '#666',
-      marginBottom: '1rem',
-      fontSize: '1rem'
+      color: '#6b7280',
+      marginBottom: '0',
+      fontSize: '0.8rem',
+      lineHeight: '1.3',
+      display: 'none'
     }
   },
   btn: {
@@ -213,136 +185,122 @@ const useStyles = createUseStyles({
   },
   sectionFilters: {
     display: 'flex',
-    justifyContent: 'center',
-    gap: '1.25rem',
-    marginBottom: '2rem',
-    flexWrap: 'wrap',
-    padding: '1rem 0'
+    justifyContent: 'flex-start',
+    gap: '0.5rem',
+    marginBottom: '0.75rem',
+    flexWrap: 'wrap'
   },
   sectionFilter: {
-    background: '#f8f9fa',
-    border: '1px solid #dee2e6',
-    color: '#666',
-    padding: `${spacing.sm} ${spacing.lg}`,
-    borderRadius: borderRadius.pill,
+    background: 'transparent',
+    border: '1px solid #e5e7eb',
+    color: '#6b7280',
+    padding: '0.35rem 0.75rem',
+    borderRadius: '4px',
     cursor: 'pointer',
-    fontSize: '0.9rem',
+    fontSize: '0.8rem',
     fontWeight: 500,
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-    boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+    transition: 'all 0.15s ease',
     '&:hover': {
-      background: '#e9ecef',
-      borderColor: '#adb5bd',
-      transform: 'translateY(-1px)',
-      boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-      color: '#333'
+      background: '#f9fafb',
+      borderColor: '#d1d5db',
+      color: '#1a1a1a'
     },
     '&.active': {
       background: '#1a1a1a',
       color: 'white',
-      borderColor: '#1a1a1a',
-      boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
+      borderColor: '#1a1a1a'
     }
   },
   lessonsGrid: {
     display: 'grid',
-    gap: '1rem',
-    marginTop: '1rem',
-    padding: '0.5rem 0'
+    gap: '0.4rem',
+    marginTop: '0'
   },
   lessonItem: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '1.25rem',
+    padding: '0.5rem 0.75rem',
     border: '1px solid #e5e7eb',
-    borderRadius: '8px',
-    transition: 'all 0.3s ease',
+    borderRadius: '4px',
+    transition: 'all 0.1s ease',
     background: '#ffffff',
     cursor: 'pointer',
-    marginBottom: 0,
-    position: 'relative',
-    borderLeft: '4px solid #e5e7eb',
+    borderLeft: '2px solid #e5e7eb',
     '&:hover': {
-      background: '#f8f9fa',
-      borderColor: '#d1d5db',
-      transform: 'translateX(4px)'
+      background: '#f9fafb',
+      borderColor: '#d1d5db'
     },
     '&.completed': {
       background: '#f0fdf4',
-      borderLeftColor: '#16a34a',
-      opacity: 0.8,
+      borderLeftColor: '#22c55e',
+      opacity: 0.85,
       '& h4': {
         textDecoration: 'line-through',
-        color: '#666'
+        color: '#6b7280'
       },
       '& p': {
-        color: '#999'
+        display: 'none'
       }
     },
     '&.in-progress': {
-      borderLeftColor: '#ffc107',
-      background: '#fffbf0'
+      borderLeftColor: '#f59e0b',
+      background: '#fffbeb'
     },
     '&.hidden': {
       display: 'none'
     }
   },
   lessonInfo: {
+    flex: 1,
     '& h4': {
-      fontSize: '1.1rem',
+      fontSize: '0.85rem',
       fontWeight: 500,
-      marginBottom: '0.25rem',
-      color: '#1a1a1a'
+      marginBottom: '0',
+      color: '#111827'
     },
     '& p': {
-      color: '#666',
-      fontSize: '0.9rem'
+      display: 'none'
     }
   },
   lessonStatus: {
-    fontSize: '0.85rem',
-    color: '#666',
-    padding: '0.25rem 0.75rem',
-    borderRadius: '12px',
-    background: '#f5f5f5',
-    '&.completed': {
-      background: 'linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)',
-      color: '#065f46',
-      border: '1px solid #10b981'
-    },
-    '&.in-progress': {
-      background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)',
-      color: '#92400e',
-      border: '1px solid #f59e0b'
-    }
+    display: 'none'
   },
   sectionHeader: {
     gridColumn: '1 / -1',
-    margin: '2rem 0 1rem',
-    paddingBottom: '0.75rem',
-    borderBottom: '1px solid rgba(229, 229, 229, 0.5)',
-    position: 'relative',
-    '&.hidden': {
-      display: 'none'
+    margin: '0.5rem 0 0.25rem',
+    padding: '0.5rem 0.75rem',
+    background: '#f9fafb',
+    border: '1px solid #e5e7eb',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    transition: 'all 0.15s ease',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    '&:hover': {
+      background: '#f3f4f6',
+      borderColor: '#d1d5db'
     },
-    '&::before': {
-      content: '""',
-      position: 'absolute',
-      top: '-1rem',
-      left: '50%',
-      transform: 'translateX(-50%)',
-      width: '100px',
-      height: '1px',
-      background: 'linear-gradient(90deg, transparent, rgba(229, 229, 229, 0.8), transparent)'
+    '&:first-child': {
+      marginTop: '0'
     },
     '& h3': {
-      fontSize: '1.3rem',
-      fontWeight: 500,
-      color: '#1a1a1a',
+      fontSize: '0.85rem',
+      fontWeight: 600,
+      color: '#111827',
       margin: 0,
-      textAlign: 'center',
-      letterSpacing: '-0.01em'
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.5rem'
+    }
+  },
+  sectionHeaderIcon: {
+    fontSize: '0.7rem',
+    color: '#9ca3af',
+    transition: 'transform 0.15s ease',
+    '&.expanded': {
+      transform: 'rotate(90deg)'
     }
   },
   // Lesson Modal Styles
@@ -355,7 +313,7 @@ const useStyles = createUseStyles({
     height: '100%',
     backgroundColor: '#ffffff',
     zIndex: 1000,
-    overflow: 'auto',
+    overflow: 'hidden',
     '&.active': {
       display: 'flex'
     }
@@ -363,8 +321,8 @@ const useStyles = createUseStyles({
   lessonContent: {
     background: '#ffffff',
     width: '100%',
-    minHeight: '100vh',
-    display: 'block',
+    height: '100vh',
+    display: 'flex',
     lineHeight: '1.6',
     fontSize: '15px',
     color: '#6d6e75',
@@ -373,54 +331,93 @@ const useStyles = createUseStyles({
   lessonSidebar: {
     width: '280px',
     background: '#fafbfc',
-    borderRight: '1px solid #e2e8f0',
-    padding: '2rem 1.5rem',
-    position: 'sticky',
-    top: 0,
-    height: '100vh',
-    overflow: 'auto',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '2rem'
+    borderRight: '1px solid #e9ecef',
+    padding: '1.5rem',
+    overflowY: 'auto',
+    flexShrink: 0
   },
   lessonMain: {
-    maxWidth: '1000px',
-    margin: '0 auto',
-    padding: '2rem 3rem',
-    width: '100%'
+    flex: 1,
+    overflowY: 'auto',
+    display: 'flex',
+    flexDirection: 'column'
   },
   lessonHeader: {
-    padding: '2rem 3rem 1.5rem',
+    padding: '1.5rem 2.5rem 1rem',
     background: 'white',
-    borderBottom: '1px solid #e2e8f0',
+    borderBottom: '1px solid #e9ecef',
     position: 'sticky',
     top: 0,
     zIndex: 100,
-    textAlign: 'left'
+    textAlign: 'left',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between'
   },
   lessonTitle: {
-    fontSize: '2.2rem',
-    fontWeight: 300,
+    fontSize: '1.75rem',
+    fontWeight: 600,
     color: '#1a1a1a',
-    margin: '0 0 0.5rem 0',
-    letterSpacing: '-0.01em'
+    margin: '0',
+    letterSpacing: '-0.01em',
+    lineHeight: '1.3',
+    flex: 1
+  },
+  lessonModeToggle: {
+    display: 'flex',
+    gap: '0.5rem',
+    alignItems: 'center',
+    marginRight: '3rem'
+  },
+  modeButton: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    padding: '0.5rem 1rem',
+    border: '1px solid #e5e7eb',
+    borderRadius: '6px',
+    background: 'white',
+    color: '#6b7280',
+    fontSize: '0.9rem',
+    fontWeight: 500,
+    cursor: 'pointer',
+    transition: 'all 0.15s',
+    '&:hover': {
+      background: '#f9fafb',
+      borderColor: '#d1d5db',
+      color: '#1a1a1a'
+    },
+    '&.active': {
+      background: '#1a1a1a',
+      color: 'white',
+      borderColor: '#1a1a1a'
+    }
   },
   lessonClose: {
     position: 'absolute',
-    top: '1rem',
-    right: '1rem',
+    top: '1.25rem',
+    right: '1.5rem',
     background: 'none',
     border: 'none',
     fontSize: '1.5rem',
     cursor: 'pointer',
-    color: '#666',
-    padding: '0.5rem',
+    color: '#999',
+    padding: '0.25rem',
     '&:hover': {
-      color: '#1a1a1a'
+      color: '#333'
     }
   },
+  lessonRightSidebar: {
+    width: '280px',
+    background: '#fafbfc',
+    borderLeft: '1px solid #e9ecef',
+    padding: '1.5rem',
+    overflowY: 'auto',
+    flexShrink: 0
+  },
   lessonBody: {
-    padding: '2rem 0',
+    padding: '2rem 2.5rem 4rem',
+    maxWidth: '900px',
     lineHeight: 1.6,
     fontSize: '15px',
     color: '#6d6e75',
@@ -432,21 +429,24 @@ const useStyles = createUseStyles({
       lineHeight: '1.3'
     },
     '& h1': {
-      fontSize: '1.75rem',
-      borderBottom: '2px solid #e2e8f0',
-      paddingBottom: '0.5rem'
+      fontSize: '1.875rem',
+      borderBottom: '2px solid #e9ecef',
+      paddingBottom: '0.5rem',
+      fontWeight: '300'
     },
     '& h2': {
       fontSize: '1.5rem',
-      color: '#2d3748'
+      color: '#2d3748',
+      fontWeight: '500'
     },
     '& h3': {
       fontSize: '1.25rem',
-      color: '#4a5568'
+      color: '#4a5568',
+      fontWeight: '500'
     },
     '& p': {
       marginBottom: '1rem',
-      lineHeight: '1.65'
+      lineHeight: '1.6'
     },
     '& ul, & ol': {
       margin: '1rem 0',
@@ -459,26 +459,27 @@ const useStyles = createUseStyles({
     '& blockquote': {
       borderLeft: '3px solid #cbd5e0',
       paddingLeft: '1rem',
-      margin: '1.25rem 0',
+      margin: '1.5rem 0',
       fontStyle: 'italic',
       color: '#4a5568',
       background: '#f7fafc',
-      padding: '0.75rem 1rem',
-      borderRadius: '0 6px 6px 0'
+      padding: '1rem 1rem',
+      borderRadius: '0 4px 4px 0'
     },
     '& code': {
-      backgroundColor: '#edf2f7',
-      padding: '2px 4px',
+      backgroundColor: '#f0f0f0',
+      padding: '2px 6px',
       borderRadius: '3px',
       fontSize: '0.9em',
-      fontFamily: 'Monaco, Consolas, monospace'
+      fontFamily: 'Monaco, Consolas, monospace',
+      color: '#1a1a1a'
     },
     '& .lesson-intro': {
       fontSize: '1rem',
       color: '#718096',
       fontStyle: 'italic',
       marginBottom: '2rem',
-      padding: '1rem',
+      padding: '1rem 1.25rem',
       background: '#f8f9fa',
       borderLeft: '4px solid #1a1a1a',
       borderRadius: '0 4px 4px 0'
@@ -486,104 +487,141 @@ const useStyles = createUseStyles({
     '& .concept-box': {
       background: '#f8f9fa',
       border: '1px solid #e0e0e0',
-      borderRadius: '8px',
+      borderRadius: '6px',
       padding: '1.5rem',
       margin: '1.5rem 0',
       '& h4': {
         color: '#1a1a1a',
         marginBottom: '1rem',
-        fontSize: '1.1rem'
+        fontSize: '1.1rem',
+        fontWeight: '600'
       }
     },
     '& .tip-box': {
       background: '#fff3cd',
       border: '1px solid #ffc107',
-      borderRadius: '8px',
+      borderRadius: '6px',
       padding: '1.5rem',
       margin: '1.5rem 0',
       '& h4': {
         color: '#856404',
         marginBottom: '1rem',
-        fontSize: '1.1rem'
+        fontSize: '1.1rem',
+        fontWeight: '600'
       }
     },
     '& .example-box': {
       background: '#e8f5e8',
       border: '1px solid #28a745',
-      borderRadius: '8px',
+      borderRadius: '6px',
       padding: '1.5rem',
       margin: '1.5rem 0'
     },
     '& .rules-box': {
       background: '#fff',
       border: '2px solid #1a1a1a',
-      borderRadius: '8px',
+      borderRadius: '6px',
       padding: '1.5rem',
       margin: '1.5rem 0',
       '& h4': {
         color: '#1a1a1a',
         marginBottom: '1rem',
-        fontSize: '1.2rem'
+        fontSize: '1.2rem',
+        fontWeight: '600'
       }
     }
   },
   floatingControls: {
-    position: 'fixed',
-    top: '50%',
-    right: '20px',
-    transform: 'translateY(-50%)',
-    background: 'rgba(255, 255, 255, 0.9)',
-    borderRadius: '16px',
-    padding: '1.25rem',
-    boxShadow: '0 12px 40px rgba(0, 0, 0, 0.12)',
-    backdropFilter: 'blur(16px)',
-    border: '1px solid rgba(226, 232, 240, 0.6)',
-    zIndex: 1001,
+    display: 'none'
+  },
+  sidebarBackButton: {
     display: 'flex',
-    flexDirection: 'column',
-    gap: '1rem',
-    minWidth: '180px',
-    marginTop: '40px'
+    alignItems: 'center',
+    gap: '0.5rem',
+    padding: '0.5rem 0',
+    marginBottom: '1.5rem',
+    color: '#6b7280',
+    fontSize: '0.9rem',
+    cursor: 'pointer',
+    border: 'none',
+    background: 'transparent',
+    '&:hover': {
+      color: '#1a1a1a'
+    }
+  },
+  sidebarNav: {
+    '& h3': {
+      fontSize: '0.9rem',
+      fontWeight: 600,
+      color: '#1a1a1a',
+      marginBottom: '1rem'
+    }
+  },
+  sidebarNavItem: {
+    padding: '0.5rem 0.75rem',
+    marginBottom: '0.25rem',
+    borderRadius: '4px',
+    fontSize: '0.85rem',
+    color: '#4b5563',
+    cursor: 'pointer',
+    transition: 'all 0.15s',
+    '&:hover': {
+      background: '#f3f4f6',
+      color: '#1a1a1a'
+    },
+    '&.active': {
+      background: '#e0e7ff',
+      color: '#4f46e5',
+      fontWeight: 500
+    }
   },
   sidebarSection: {
+    marginBottom: '2rem',
     '& h4': {
-      fontSize: '0.9rem',
+      fontSize: '0.75rem',
       fontWeight: '600',
-      color: '#4a5568',
+      color: '#9ca3af',
       marginBottom: '0.75rem',
       textTransform: 'uppercase',
       letterSpacing: '0.05em'
     }
   },
+  sidebarProgressBox: {
+    background: 'white',
+    border: '1px solid #e5e7eb',
+    borderRadius: '6px',
+    padding: '1rem',
+    marginBottom: '1rem'
+  },
   keyTerms: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.5rem',
+    gap: '0.35rem',
     '& .term': {
-      padding: '0.5rem 0.75rem',
+      padding: '0.35rem 0.5rem',
       background: 'white',
-      borderRadius: '6px',
-      fontSize: '0.85rem',
-      color: '#2d3748',
-      border: '1px solid #e2e8f0',
+      borderRadius: '4px',
+      fontSize: '0.8rem',
+      color: '#374151',
+      border: '1px solid #e5e7eb',
       cursor: 'pointer',
-      transition: 'all 0.2s',
+      transition: 'all 0.15s',
       '&:hover': {
-        background: '#f7fafc',
-        borderColor: '#cbd5e0'
+        background: '#f9fafb',
+        borderColor: '#d1d5db'
       }
     }
   },
   progressBar: {
     width: '100%',
-    height: '6px',
-    background: '#e2e8f0',
-    borderRadius: '3px',
+    height: '4px',
+    background: '#e5e7eb',
+    borderRadius: '2px',
     overflow: 'hidden',
     '& .fill': {
       height: '100%',
-      background: 'linear-gradient(90deg, #48bb78, #38a169)',
-      borderRadius: '3px',
+      background: 'linear-gradient(90deg, #22c55e, #16a34a)',
+      borderRadius: '2px',
       transition: 'width 0.3s ease'
     }
   }
@@ -713,6 +751,10 @@ function App() {
   const [lessonProgress, setLessonProgress] = useState(() => {
     return storage.get('actPrepProgress', {});
   });
+  const [expandedSections, setExpandedSections] = useState(() => {
+    return storage.get('expandedSections', { english: true, math: false, reading: false, science: false });
+  });
+  const [lessonMode, setLessonMode] = useState('review'); // 'review' or 'practice'
 
   useEffect(() => {
     // Load lessons from Supabase
@@ -745,9 +787,16 @@ function App() {
     setActiveSection(section);
   };
 
+  const toggleSection = (section) => {
+    const newExpandedSections = { ...expandedSections, [section]: !expandedSections[section] };
+    setExpandedSections(newExpandedSections);
+    storage.set('expandedSections', newExpandedSections);
+  };
+
   const openLesson = (lessonId) => {
     setCurrentLesson(lessonId);
     setLessonModalOpen(true);
+    setLessonMode('review'); // Reset to review mode when opening a lesson
     domUtils.preventBodyScroll();
   };
 
@@ -775,48 +824,30 @@ function App() {
         <div className={classes.testGrid}>
           <div className={classes.card} onClick={() => setDiagnosticTestOpen(true)}>
             <h3>Diagnostic Test</h3>
-            <p>Take this first to understand your current level and identify areas for improvement.</p>
-            <Button>Start Diagnostic</Button>
           </div>
           <div className={classes.card}>
             <h3>Full Practice Test 1</h3>
-            <p>Complete 4-section ACT practice test with detailed explanations and scoring.</p>
-            <Button>Start Test</Button>
-          </div>
-          <div className={classes.card}>
-            <h3>English Section Practice</h3>
-            <p>Focus on grammar, punctuation, and rhetorical skills with targeted questions.</p>
-            <Button>Start Practice</Button>
-          </div>
-          <div className={classes.card}>
-            <h3>Math Section Practice</h3>
-            <p>Algebra, geometry, and trigonometry problems with step-by-step solutions.</p>
-            <Button>Start Practice</Button>
-          </div>
-          <div className={classes.card}>
-            <h3>Reading Section Practice</h3>
-            <p>Improve comprehension and analysis skills with timed reading passages.</p>
-            <Button>Start Practice</Button>
-          </div>
-          <div className={classes.card}>
-            <h3>Science Section Practice</h3>
-            <p>Data interpretation and scientific reasoning practice questions.</p>
-            <Button>Start Practice</Button>
           </div>
           <div className={classes.card}>
             <h3>Full Practice Test 2</h3>
-            <p>Additional complete practice test to track your improvement over time.</p>
-            <Button>Start Test</Button>
           </div>
           <div className={classes.card}>
             <h3>Full Practice Test 3</h3>
-            <p>Continue building test-taking stamina and refining your strategies.</p>
-            <Button>Start Test</Button>
           </div>
           <div className={classes.card}>
             <h3>Full Practice Test 4</h3>
-            <p>Final practice test to ensure you're ready for test day.</p>
-            <Button>Start Test</Button>
+          </div>
+          <div className={classes.card}>
+            <h3>English Practice</h3>
+          </div>
+          <div className={classes.card}>
+            <h3>Math Practice</h3>
+          </div>
+          <div className={classes.card}>
+            <h3>Reading Practice</h3>
+          </div>
+          <div className={classes.card}>
+            <h3>Science Practice</h3>
           </div>
         </div>
       </div>
@@ -824,30 +855,70 @@ function App() {
   );
 
   const LessonsContent = () => {
-    const filteredLessons = activeSection === 'all' ? lessonStructure : lessonStructure.filter(lesson => lesson.section === activeSection);
+    // When a specific section is selected, show all lessons from that section
+    if (activeSection !== 'all') {
+      const filteredLessons = lessonStructure.filter(lesson => lesson.section === activeSection);
 
-    // Keep original lesson order - no sorting by status
-    const sortedLessons = filteredLessons;
+      return (
+        <div className={`${classes.tabContent} ${activeTab === 'lessons' ? 'active' : ''}`}>
+          <div className={classes.contentSection}>
+            <h2 className={classes.sectionTitle}>Study Lessons</h2>
 
-    // Group lessons by section for headers
-    const groupedLessons = [];
-    let currentSection = '';
+            <div className={classes.sectionFilters}>
+              <button
+                className={`${classes.sectionFilter} ${activeSection === 'all' ? 'active' : ''}`}
+                onClick={() => handleSectionFilter('all')}
+              >
+                All Sections
+              </button>
+              <button
+                className={`${classes.sectionFilter} ${activeSection === 'english' ? 'active' : ''}`}
+                onClick={() => handleSectionFilter('english')}
+              >
+                English
+              </button>
+              <button
+                className={`${classes.sectionFilter} ${activeSection === 'math' ? 'active' : ''}`}
+                onClick={() => handleSectionFilter('math')}
+              >
+                Math
+              </button>
+              <button
+                className={`${classes.sectionFilter} ${activeSection === 'reading' ? 'active' : ''}`}
+                onClick={() => handleSectionFilter('reading')}
+              >
+                Reading
+              </button>
+              <button
+                className={`${classes.sectionFilter} ${activeSection === 'science' ? 'active' : ''}`}
+                onClick={() => handleSectionFilter('science')}
+              >
+                Science
+              </button>
+            </div>
 
-    sortedLessons.forEach(lesson => {
-      if (lesson.section !== 'all' && lesson.section !== currentSection) {
-        currentSection = lesson.section;
-        const sectionTitle =
-          lesson.section === 'english' ? 'English Section' :
-          lesson.section === 'math' ? 'Math Section' :
-          lesson.section === 'reading' ? 'Reading Section' :
-          lesson.section === 'science' ? 'Science Section' : '';
+            <div className={classes.lessonsGrid}>
+              {filteredLessons.map((lesson) => (
+                <div key={lesson.id} className={`${classes.lessonItem} ${getLessonStatus(lesson.id)}`} onClick={() => openLesson(lesson.id)}>
+                  <div className={classes.lessonInfo}>
+                    <h4>{lesson.title}</h4>
+                  </div>
+                  <StatusIcon status={getLessonStatus(lesson.id)} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    }
 
-        if (sectionTitle && activeSection === 'all') {
-          groupedLessons.push({ type: 'header', title: sectionTitle, section: lesson.section });
-        }
-      }
-      groupedLessons.push({ type: 'lesson', ...lesson });
-    });
+    // When "All Sections" is selected, show collapsible sections
+    const sections = [
+      { key: 'english', title: 'English Section', lessons: lessonStructure.filter(l => l.section === 'english') },
+      { key: 'math', title: 'Math Section', lessons: lessonStructure.filter(l => l.section === 'math') },
+      { key: 'reading', title: 'Reading Section', lessons: lessonStructure.filter(l => l.section === 'reading') },
+      { key: 'science', title: 'Science Section', lessons: lessonStructure.filter(l => l.section === 'science') }
+    ];
 
     return (
       <div className={`${classes.tabContent} ${activeTab === 'lessons' ? 'active' : ''}`}>
@@ -888,43 +959,24 @@ function App() {
           </div>
 
           <div className={classes.lessonsGrid}>
-            {groupedLessons.map((item, index) => {
-              if (item.type === 'header') {
-                return (
-                  <div key={`header-${index}`} className={classes.sectionHeader}>
-                    <h3>{item.title}</h3>
-                  </div>
-                );
-              } else {
-                return (
-                  <div key={item.id} className={`${classes.lessonItem} ${getLessonStatus(item.id)}`} onClick={() => openLesson(item.id)}>
+            {sections.map(section => (
+              <React.Fragment key={section.key}>
+                <div className={classes.sectionHeader} onClick={() => toggleSection(section.key)}>
+                  <h3>{section.title} ({section.lessons.length} lessons)</h3>
+                  <span className={`${classes.sectionHeaderIcon} ${expandedSections[section.key] ? 'expanded' : ''}`}>
+                    ▶
+                  </span>
+                </div>
+                {expandedSections[section.key] && section.lessons.map((lesson) => (
+                  <div key={lesson.id} className={`${classes.lessonItem} ${getLessonStatus(lesson.id)}`} onClick={() => openLesson(lesson.id)}>
                     <div className={classes.lessonInfo}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
-                        <h4 style={{ margin: 0 }}>{item.title}</h4>
-                        {allLessons[item.id] && allLessons[item.id].duration && (
-                          <span style={{
-                            color: '#9ca3af',
-                            fontSize: '0.75rem',
-                            fontWeight: '400',
-                            whiteSpace: 'nowrap',
-                            opacity: '0.7'
-                          }}>
-                            {allLessons[item.id].duration}m
-                          </span>
-                        )}
-                      </div>
-                      <p style={{ margin: 0 }}>{item.desc}</p>
+                      <h4>{lesson.title}</h4>
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', zIndex: 3, position: 'relative' }}>
-                      <StatusIcon status={getLessonStatus(item.id)} />
-                      <span className={`${classes.lessonStatus} ${getLessonStatus(item.id) === 'completed' ? 'completed' : getLessonStatus(item.id) === 'in-progress' ? 'in-progress' : ''}`}>
-                        {statusUtils.getDisplayText(getLessonStatus(item.id))}
-                      </span>
-                    </div>
+                    <StatusIcon status={getLessonStatus(lesson.id)} />
                   </div>
-                );
-              }
-            })}
+                ))}
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </div>
@@ -938,80 +990,138 @@ function App() {
     const keyTerms = lessonUtils.extractKeyTerms(lesson?.content);
     const progress = lessonUtils.calculateProgress(lessonStructure, lessonProgress);
 
+    // Get lessons from the same section for left sidebar navigation
+    const currentSection = currentLessonData?.section;
+    const sectionLessons = lessonStructure.filter(l => l.section === currentSection);
+
     return (
       <div className={`${classes.lessonModal} ${lessonModalOpen ? 'active' : ''}`}>
         <div className={classes.lessonContent}>
+          {/* Left Sidebar - Navigation */}
+          <div className={classes.lessonSidebar}>
+            <button className={classes.sidebarBackButton} onClick={closeLessonModal}>
+              ← Back to Lessons
+            </button>
+
+            <div className={classes.sidebarNav}>
+              <h3>{currentSection ? `${currentSection.charAt(0).toUpperCase() + currentSection.slice(1)} Section` : 'Lessons'}</h3>
+              {sectionLessons.map(l => (
+                <div
+                  key={l.id}
+                  className={`${classes.sidebarNavItem} ${l.id === currentLesson ? 'active' : ''}`}
+                  onClick={() => {
+                    setCurrentLesson(l.id);
+                    setLessonMode('review');
+                  }}
+                >
+                  {l.title}
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Main Content */}
           <div className={classes.lessonMain}>
             <div className={classes.lessonHeader}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-                    <h1 className={classes.lessonTitle} style={{ fontSize: '1.75rem', margin: 0 }}>
-                      {lesson ? lesson.title : 'Lesson Coming Soon'}
-                    </h1>
-                    {lesson && lesson.duration && (
-                      <span style={{
-                        color: '#9ca3af',
-                        fontSize: '0.8rem',
-                        fontWeight: '400',
-                        whiteSpace: 'nowrap',
-                        opacity: '0.7'
-                      }}>
-                        • {lesson.duration} min
-                      </span>
-                    )}
-                  </div>
-                  {currentLessonData && (
-                    <p style={{
-                      color: '#718096',
-                      fontSize: '0.95rem',
-                      margin: 0,
-                      fontWeight: '400'
-                    }}>
-                      {currentLessonData.desc}
-                    </p>
-                  )}
-                </div>
+              <h1 className={classes.lessonTitle}>
+                {lesson ? lesson.title : 'Lesson Coming Soon'}
+              </h1>
+
+              <div className={classes.lessonModeToggle}>
                 <button
-                  onClick={closeLessonModal}
-                  style={{
-                    background: 'transparent',
-                    border: 'none',
-                    fontSize: '1.5rem',
-                    color: '#a0aec0',
-                    cursor: 'pointer',
-                    width: '32px',
-                    height: '32px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    borderRadius: '6px',
-                    transition: 'all 0.2s'
-                  }}
-                  onMouseOver={(e) => e.target.style.background = '#f7fafc'}
-                  onMouseOut={(e) => e.target.style.background = 'transparent'}
+                  className={`${classes.modeButton} ${lessonMode === 'review' ? 'active' : ''}`}
+                  onClick={() => setLessonMode('review')}
                 >
-                  ✕
+                  <span>📚</span>
+                  Review
+                </button>
+                <button
+                  className={`${classes.modeButton} ${lessonMode === 'practice' ? 'active' : ''}`}
+                  onClick={() => setLessonMode('practice')}
+                >
+                  <span>✏️</span>
+                  Practice
                 </button>
               </div>
+
+              <button
+                onClick={closeLessonModal}
+                className={classes.lessonClose}
+              >
+                ✕
+              </button>
             </div>
             <div className={classes.lessonBody}>
-              {lesson ? (
-                <ProgressiveLessonRenderer
-                  lesson={lesson}
-                />
+              {lessonMode === 'review' ? (
+                lesson ? (
+                  <ProgressiveLessonRenderer
+                    lesson={lesson}
+                  />
+                ) : (
+                  <div style={{
+                    textAlign: 'center',
+                    padding: '4rem 2rem',
+                    color: '#999',
+                    fontSize: '1rem'
+                  }}>
+                    <p>This lesson content is being prepared. Check back soon!</p>
+                  </div>
+                )
               ) : (
                 <div style={{
                   textAlign: 'center',
                   padding: '4rem 2rem',
-                  color: '#a0aec0',
+                  color: '#999',
                   fontSize: '1rem'
                 }}>
-                  <p>This lesson content is being prepared. Check back soon!</p>
+                  <p>Practice exercises coming soon!</p>
                 </div>
               )}
             </div>
+          </div>
+
+          {/* Right Sidebar - Progress & Info */}
+          <div className={classes.lessonRightSidebar}>
+            <div className={classes.sidebarSection}>
+              <h4>Your Progress</h4>
+              <div className={classes.sidebarProgressBox}>
+                <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#6b7280' }}>
+                  Lesson Progress
+                </div>
+                <div className={classes.progressBar}>
+                  <div className="fill" style={{ width: `${progress.percentage}%` }}></div>
+                </div>
+                <div style={{ marginTop: '0.5rem', fontSize: '0.75rem', color: '#9ca3af' }}>
+                  {progress.completed} of {progress.total} lessons completed
+                </div>
+              </div>
+
+              <button
+                onClick={() => updateLessonProgress(currentLesson, 'completed')}
+                style={{
+                  width: '100%',
+                  padding: '0.5rem',
+                  background: getLessonStatus(currentLesson) === 'completed' ? '#22c55e' : '#1a1a1a',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  fontSize: '0.85rem',
+                  fontWeight: 500
+                }}
+              >
+                {getLessonStatus(currentLesson) === 'completed' ? '✓ Completed' : 'Mark as Complete'}
+              </button>
+            </div>
+
+            {lesson && lesson.duration && (
+              <div className={classes.sidebarSection}>
+                <h4>Reading Time</h4>
+                <div style={{ fontSize: '0.9rem', color: '#4b5563' }}>
+                  {lesson.duration} minutes
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -1023,14 +1133,8 @@ function App() {
       <header className={classes.header}>
         <div className={classes.headerContent}>
           <h1 className={classes.logo}>actclass.org</h1>
-          <div style={{
-            color: 'rgba(102, 102, 102, 0.7)',
-            fontSize: '0.75rem',
-            fontWeight: '400',
-            letterSpacing: '0.5px',
-            textTransform: 'uppercase'
-          }}>
-            Diagnostic Test & Lessons
+          <div className={classes.subtitle}>
+            ACT Prep Platform
           </div>
         </div>
       </header>
@@ -1049,13 +1153,6 @@ function App() {
           >
             Lessons
           </button>
-          <div
-            className={classes.tabIndicator}
-            style={{
-              left: activeTab === 'tests' ? '0%' : '50%',
-              width: '50%'
-            }}
-          />
         </div>
       </div>
 
