@@ -1051,8 +1051,23 @@ function App() {
           {/* Main Content */}
           <div className={classes.lessonMain}>
             <div className={classes.lessonHeader} style={{ padding: '0.75rem 2rem', minHeight: 'auto' }}>
-              <h1 className={classes.lessonTitle} style={{ fontSize: '1.1rem', fontWeight: 500 }}>
-                {currentSection ? `${currentSection.charAt(0).toUpperCase() + currentSection.slice(1)} Lessons` : 'Lessons'}
+              <h1 className={classes.lessonTitle} style={{ fontSize: '1.1rem', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <span>{currentSection ? `ACT® ${currentSection.charAt(0).toUpperCase() + currentSection.slice(1)}` : 'Lessons'}</span>
+                {lesson && lesson.topic_number && (
+                  <>
+                    <span style={{ color: '#d1d5db', fontWeight: 400 }}>|</span>
+                    <span style={{
+                      background: '#3b82f6',
+                      color: 'white',
+                      padding: '0.25rem 0.75rem',
+                      borderRadius: '6px',
+                      fontSize: '0.9rem',
+                      fontWeight: 600
+                    }}>
+                      Topic {lesson.topic_number}
+                    </span>
+                  </>
+                )}
               </h1>
 
               <div style={{
@@ -1147,10 +1162,13 @@ function App() {
                     fontSize: '1.875rem',
                     fontWeight: 700,
                     color: '#111827',
-                    marginBottom: '1rem',
+                    marginBottom: '0.5rem',
                     lineHeight: '1.3'
                   }}>
-                    {lesson.title}
+                    {lesson.full_topic_code
+                      ? `Topic ${lesson.full_topic_code} - ${lesson.title}`
+                      : lesson.title
+                    }
                   </h2>
                 </div>
               )}

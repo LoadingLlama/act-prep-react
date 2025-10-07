@@ -3,58 +3,60 @@ import { createUseStyles } from 'react-jss';
 export const useProgressiveLessonStyles = createUseStyles({
   progressiveContainer: {
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    lineHeight: 1.65,
-    color: '#2d3748',
+    lineHeight: 1.7,
+    color: '#1a202c',
     background: '#ffffff',
-    padding: '2rem 3rem',
-    maxWidth: '850px',
+    padding: '0 4rem 2.5rem 4rem',
+    maxWidth: '900px',
     margin: '0 auto',
     textAlign: 'left',
     borderRadius: '0',
-    fontSize: '15px',
+    fontSize: '16px',
 
     '& h1': {
-      fontSize: '1.75rem',
-      fontWeight: '600',
-      color: '#1a202c',
-      margin: '0 0 1rem 0',
+      fontSize: '2.25rem',
+      fontWeight: '800',
+      color: '#000000',
+      margin: '0 0 1.5rem 0',
       lineHeight: '1.3',
-      letterSpacing: '-0.02em',
+      letterSpacing: '-0.03em',
       borderBottom: 'none',
       paddingBottom: '0'
     },
     '& h2': {
-      fontSize: '1.35rem',
-      fontWeight: '600',
-      color: '#1a202c',
-      margin: '2.5rem 0 0.75rem 0',
+      fontSize: '1.75rem',
+      fontWeight: '800',
+      color: '#000000',
+      margin: '3rem 0 1.5rem 0',
       lineHeight: '1.35',
-      letterSpacing: '-0.015em',
-      borderBottom: '1px solid #e2e8f0',
-      paddingBottom: '0.5rem'
+      letterSpacing: '-0.025em',
+      borderBottom: '2px solid #d1d5db',
+      paddingBottom: '0.875rem'
     },
     '& h3': {
-      fontSize: '1.15rem',
-      fontWeight: '600',
-      color: '#2d3748',
-      margin: '1.5rem 0 0.65rem 0',
+      fontSize: '1.4rem',
+      fontWeight: '700',
+      color: '#000000',
+      margin: '2.5rem 0 1rem 0',
       lineHeight: '1.4',
-      letterSpacing: '0'
+      letterSpacing: '-0.02em',
+      borderBottom: '1px solid #e5e7eb',
+      paddingBottom: '0.5rem'
     },
     '& h4': {
-      fontSize: '1rem',
-      fontWeight: '600',
-      color: '#4a5568',
-      margin: '1.25rem 0 0.5rem 0',
+      fontSize: '1.2rem',
+      fontWeight: '700',
+      color: '#000000',
+      margin: '1.5rem 0 0.75rem 0',
       lineHeight: '1.5',
       textTransform: 'none',
-      letterSpacing: '0'
+      letterSpacing: '-0.01em'
     },
     '& p': {
-      fontSize: '15px',
-      marginBottom: '1rem',
-      lineHeight: 1.65,
-      color: '#2d3748'
+      fontSize: '16px',
+      marginBottom: '1.25rem',
+      lineHeight: 1.7,
+      color: '#1a202c'
     },
     '& strong': {
       color: '#111827',
@@ -74,43 +76,50 @@ export const useProgressiveLessonStyles = createUseStyles({
     },
     '& ul': {
       listStyle: 'disc',
-      paddingLeft: '2.5rem',
-      marginBottom: '1rem',
+      paddingLeft: '3rem',
+      marginBottom: '1.5rem',
       marginLeft: '0',
+      marginTop: '0.75rem',
       '& li': {
-        marginBottom: '0.5rem',
-        paddingLeft: '0.25rem',
-        color: '#2d3748'
+        marginBottom: '0.75rem',
+        paddingLeft: '0.5rem',
+        color: '#1a202c',
+        lineHeight: 1.7
       },
       '& ul': {
-        marginTop: '0.5rem',
-        marginBottom: '0.5rem',
-        paddingLeft: '2rem',
-        listStyle: 'circle'
+        marginTop: '0.75rem',
+        marginBottom: '0.75rem',
+        paddingLeft: '2.5rem',
+        listStyle: 'circle',
+        '& li': {
+          marginBottom: '0.5rem'
+        }
       }
     },
     '& ol': {
       listStyle: 'decimal',
-      paddingLeft: '2.5rem',
-      marginBottom: '1rem',
+      paddingLeft: '3rem',
+      marginBottom: '1.5rem',
       marginLeft: '0',
+      marginTop: '0.75rem',
       '& li': {
-        marginBottom: '0.5rem',
-        paddingLeft: '0.25rem',
-        color: '#2d3748'
+        marginBottom: '0.75rem',
+        paddingLeft: '0.5rem',
+        color: '#1a202c',
+        lineHeight: 1.7
       }
     },
     '& li': {
-      fontSize: '15px',
-      marginBottom: '0.5rem',
-      color: '#2d3748',
-      lineHeight: 1.65
+      fontSize: '16px',
+      marginBottom: '0.75rem',
+      color: '#1a202c',
+      lineHeight: 1.7
     },
 
     '& hr': {
       border: 'none',
-      borderTop: '1px solid #e2e8f0',
-      margin: '2rem 0',
+      borderTop: '1px solid #e5e7eb',
+      margin: '2.5rem 0',
       height: '0'
     },
 
@@ -120,15 +129,15 @@ export const useProgressiveLessonStyles = createUseStyles({
       border: 'none',
       borderRadius: '0',
       padding: '0',
-      margin: '1.25rem 0',
+      margin: '2rem 0',
       boxShadow: 'none',
       '& h4': {
-        color: '#1a202c',
-        marginBottom: '0.5rem',
-        fontSize: '1rem',
-        fontWeight: '600',
+        color: '#000000',
+        marginBottom: '1rem',
+        fontSize: '1.1rem',
+        fontWeight: '700',
         textTransform: 'none',
-        letterSpacing: '0'
+        letterSpacing: '-0.01em'
       },
       '& p:last-child': {
         marginBottom: '0'
@@ -136,16 +145,16 @@ export const useProgressiveLessonStyles = createUseStyles({
     },
 
     '& .lesson-intro': {
-      fontSize: '15px',
-      color: '#2d3748',
+      fontSize: '16px',
+      color: '#1a202c',
       fontStyle: 'italic',
-      marginBottom: '1.25rem',
-      marginTop: '1.25rem',
+      marginBottom: '1.5rem',
+      marginTop: '1.5rem',
       padding: '0',
       background: 'transparent',
-      borderLeft: '2px solid #cbd5e0',
-      paddingLeft: '0.875rem',
-      lineHeight: '1.65'
+      borderLeft: '3px solid #d1d5db',
+      paddingLeft: '1rem',
+      lineHeight: '1.7'
     }
   },
   section: {

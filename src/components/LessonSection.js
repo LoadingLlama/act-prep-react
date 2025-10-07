@@ -31,7 +31,7 @@ const LessonSection = ({
             <div>
               <TypewriterText
                 text={section.content || ''}
-                startDelay={200}
+                startDelay={0}
                 typingSpeed={typingSpeed}
                 skipAnimation={textCompletionStatus[index] === true}
                 onComplete={() => onTextComplete(index)}
