@@ -183,16 +183,23 @@ export const useProgressiveLessonStyles = createUseStyles({
     }
   },
   continuePrompt: {
+    position: 'fixed',
+    bottom: '2rem',
+    right: '2rem',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'flex-end',
-    margin: '1rem 0 0 0',
-    padding: '0.5rem',
-    backgroundColor: 'transparent',
-    opacity: 0.3,
+    justifyContent: 'center',
+    padding: '0.75rem 1.25rem',
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    border: '1px solid rgba(156, 163, 175, 0.2)',
+    borderRadius: '8px',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+    backdropFilter: 'blur(10px)',
+    opacity: 0.9,
     transition: 'opacity 0.3s ease',
+    zIndex: 100,
     '&:hover': {
-      opacity: 0.6
+      opacity: 1
     }
   },
   promptText: {

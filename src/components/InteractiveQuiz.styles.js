@@ -11,6 +11,9 @@ export const useInteractiveQuizStyles = createUseStyles({
     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
     background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 255, 0.95) 100%)',
     backdropFilter: 'blur(10px)',
+    '& > h3': {
+      marginTop: '0 !important'
+    },
     '&.final-quiz': {
       border: '2px solid #1a73e8',
       background: 'linear-gradient(135deg, rgba(248, 250, 255, 0.98) 0%, rgba(240, 248, 255, 0.95) 100%)',
