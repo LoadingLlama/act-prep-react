@@ -3,15 +3,16 @@ import { createUseStyles } from 'react-jss';
 
 import { useInteractiveQuizStyles } from './InteractiveQuiz.styles';
 
-const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete }) => {
+const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initialCompleted = false }) => {
   const classes = useInteractiveQuizStyles();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
   const [feedback, setFeedback] = useState({});
   const [score, setScore] = useState(0);
-  const [showResults, setShowResults] = useState(false);
+  const [showResults, setShowResults] = useState(initialCompleted);
   const [showMastery, setShowMastery] = useState(false);
   const [hasAnswered, setHasAnswered] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(initialCompleted);
 
   // Reset hasAnswered when question changes
   useEffect(() => {
@@ -46,11 +47,12 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete }) => {
     } else {
       // Quiz completed
       setShowResults(true);
+      setIsCompleted(true);
       if (isFinal) {
         setShowMastery(true);
       }
       if (onComplete) {
-        setTimeout(() => onComplete(), 500);
+        onComplete();
       }
     }
   };

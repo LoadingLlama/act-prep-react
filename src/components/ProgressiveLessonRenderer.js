@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import TypewriterText from './TypewriterText';
-import InteractiveQuiz from './InteractiveQuiz';
 import LessonSection from './LessonSection';
 import { splitIntoTextSections } from '../utils/splitIntoTextSections';
 import { useProgressiveLessonStyles } from './ProgressiveLessonRenderer.styles';
-import { getQuizData } from '../utils/lessonQuizData';
+import QuizzesService from '../services/api/quizzes.service';
+import LessonsService from '../services/api/lessons.service';
 
-const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatusChange }) => {
+const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatusChange, onNavigate }) => {
   const classes = useProgressiveLessonStyles();
   const [sections, setSections] = useState([]);
   const [currentSection, setCurrentSection] = useState(0);
@@ -27,41 +26,87 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
       return;
     }
 
-    setCurrentSection(0);
-    setVisibleSections(1);
-    setCurrentSectionComplete(false);
-    setIsComplete(false);
-    setQuizCompletionStatus({});
-    setTextCompletionStatus({});
-    setSectionStatusOverride({});
+    const loadLessonContent = async () => {
+      setCurrentSection(0);
+      setVisibleSections(1);
+      setCurrentSectionComplete(false);
+      setIsComplete(false);
+      setQuizCompletionStatus({});
+      setTextCompletionStatus({});
+      setSectionStatusOverride({});
 
-    const processedSections = [];
-    const contentWithQuizzes = lesson.content;
-    const allParts = contentWithQuizzes.split(/(<!-- QUIZ_\d+ -->)/);
+      const processedSections = [];
 
-    allParts.forEach((part, index) => {
-      if (!part.trim()) return;
+      // Get the actual lesson UUID from Supabase using lesson_key or id
+      let lessonUUID = lesson.id;
 
-      const quizMatch = part.match(/<!-- QUIZ_(\d+) -->/);
-      if (quizMatch) {
-        const quizId = parseInt(quizMatch[1]);
-        const quizData = getQuizData(quizId);
+      // If lesson.id looks like a key (not a UUID), fetch the real UUID
+      if (!lesson.id || !lesson.id.includes('-') || lesson.id.length < 30) {
+        const lessonData = await LessonsService.getLessonByKey(lesson.id);
+        lessonUUID = lessonData?.id;
+      }
 
-        if (quizData) {
-          processedSections.push({
-            type: 'quiz',
-            data: quizData,
-            isFinal: quizId === 4
+      // Fetch quizzes from Supabase
+      const quizzes = lessonUUID ? await QuizzesService.getQuizzesByLessonId(lessonUUID) : [];
+
+      // Split content into text sections
+      const textSections = splitIntoTextSections(lesson.content);
+
+      // Build quizzes by position map
+      const quizzesByPosition = {};
+      quizzes?.forEach(quiz => {
+        if (!quizzesByPosition[quiz.position]) {
+          quizzesByPosition[quiz.position] = [];
+        }
+        quizzesByPosition[quiz.position].push(quiz);
+      });
+
+      // Interleave text sections and quizzes based on position
+      let textIndex = 0;
+
+      while (textIndex < textSections.length) {
+        // Add text section
+        processedSections.push(textSections[textIndex]);
+        textIndex++;
+
+        // After adding this text section, check if any quizzes should appear
+        if (quizzesByPosition[textIndex]) {
+          quizzesByPosition[textIndex].forEach(quiz => {
+            processedSections.push({
+              type: 'quiz',
+              data: quiz,
+              isFinal: quiz.isFinal,
+              isRequired: quiz.isRequired,
+              quizId: quiz.id
+            });
           });
         }
-      } else {
-        const textSections = splitIntoTextSections(part);
-        processedSections.push(...textSections);
       }
-    });
 
-    setSections(processedSections);
-    sectionRefs.current = processedSections.map((_, i) => sectionRefs.current[i] || React.createRef());
+      // Add any quizzes positioned beyond the last text section (at the very end)
+      const maxPosition = Math.max(...Object.keys(quizzesByPosition).map(Number), textSections.length);
+      for (let pos = textSections.length; pos <= maxPosition; pos++) {
+        if (quizzesByPosition[pos]) {
+          quizzesByPosition[pos].forEach(quiz => {
+            processedSections.push({
+              type: 'quiz',
+              data: quiz,
+              isFinal: quiz.isFinal,
+              isRequired: quiz.isRequired,
+              quizId: quiz.id
+            });
+          });
+        }
+      }
+
+      console.log('Total text sections:', textSections.length);
+      console.log('Total sections (text + quizzes):', processedSections.length);
+
+      setSections(processedSections);
+      sectionRefs.current = processedSections.map((_, i) => sectionRefs.current[i] || React.createRef());
+    };
+
+    loadLessonContent();
   }, [lesson]);
 
   useEffect(() => {
@@ -98,20 +143,28 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         // If typing, complete the animation instantly
         if (isCurrentlyTyping && typewriterRef.current) {
           typewriterRef.current.completeInstantly();
-          return; // Don't advance section yet, let the animation complete
+
+          // Give it a moment for the completion callback to fire, then advance
+          setTimeout(() => {
+            if (currentSection < sections.length - 1) {
+              setCurrentSection(prev => prev + 1);
+              setVisibleSections(prev => prev + 1);
+              setCurrentSectionComplete(false);
+            }
+          }, 150);
+          return;
         }
 
-        // If not typing and section is complete, advance to next section
-        if (currentSection < sections.length - 1) {
-          const currentIsQuiz = sections[currentSection]?.type === 'quiz';
-          const quizIsComplete = currentIsQuiz && quizCompletionStatus[currentSection];
-          const textIsComplete = !currentIsQuiz && textCompletionStatus[currentSection];
+        // Check if current section is complete
+        const currentIsQuiz = sections[currentSection]?.type === 'quiz';
+        const quizIsComplete = currentIsQuiz && quizCompletionStatus[currentSection];
+        const textIsComplete = !currentIsQuiz && textCompletionStatus[currentSection];
 
-          if (quizIsComplete || textIsComplete) {
-            setCurrentSection(prev => prev + 1);
-            setVisibleSections(prev => prev + 1);
-            setCurrentSectionComplete(false);
-          }
+        // Advance to next section if current is complete
+        if ((quizIsComplete || textIsComplete) && currentSection < sections.length - 1) {
+          setCurrentSection(prev => prev + 1);
+          setVisibleSections(prev => prev + 1);
+          setCurrentSectionComplete(false);
         }
       }
 
@@ -167,7 +220,12 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
   };
 
   const handleQuizComplete = (index, isFinal) => {
-    setQuizCompletionStatus(prev => ({ ...prev, [index]: true }));
+    console.log('Quiz completed:', index, 'isFinal:', isFinal);
+    setQuizCompletionStatus(prev => {
+      const newStatus = { ...prev, [index]: true };
+      console.log('New quiz completion status:', newStatus);
+      return newStatus;
+    });
     setSectionStatusOverride(prev => ({ ...prev, [index]: { completed: true } }));
     setCurrentSectionComplete(true);
 
@@ -213,6 +271,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
             textCompletionStatus={textCompletionStatus}
             quizCompletionStatus={quizCompletionStatus}
             sectionStatusOverride={sectionStatusOverride}
+            sections={sections}
             classes={classes}
             typewriterRef={index === currentSection ? typewriterRef : null}
             onTextComplete={handleTextComplete}
@@ -222,16 +281,39 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         </div>
       ))}
 
-      {isComplete && !isCompleting && (
-        <button onClick={handleLessonComplete} className={classes.completeButton}>
-          ✓ Complete Lesson
-        </button>
-      )}
+      {isComplete && (
+        <>
+          <div className={classes.keyTakeawaysBox}>
+            <h3>
+              <span>🎯</span> Key Takeaways
+            </h3>
+            <ul>
+              <li>Master the fundamental building blocks of sentences: subjects, predicates, and objects</li>
+              <li>Recognize complete vs. incomplete sentences and avoid common fragment errors</li>
+              <li>Understand how independent and dependent clauses work together to create complex sentences</li>
+              <li>Apply proper coordination and subordination techniques for clear, effective writing</li>
+            </ul>
+          </div>
 
-      {isCompleting && (
-        <button className={`${classes.completeButton} completing`} disabled>
-          ✓ Lesson Completed!
-        </button>
+          <div className={classes.navigationButtons}>
+            <button
+              className={classes.navButton}
+              onClick={() => onNavigate && onNavigate('previous')}
+              disabled={!onNavigate}
+            >
+              ← Previous Lesson
+            </button>
+            <button
+              className={`${classes.navButton} ${classes.nextButton}`}
+              onClick={() => {
+                if (onStatusChange) onStatusChange('completed');
+                if (onNavigate) onNavigate('next');
+              }}
+            >
+              Next Lesson →
+            </button>
+          </div>
+        </>
       )}
 
       {currentSectionComplete && currentSection < sections.length - 1 && (

@@ -422,8 +422,8 @@ const useStyles = createUseStyles({
     fontSize: '15px',
     color: '#6d6e75',
     '& h1, & h2, & h3, & h4': {
-      color: '#1a202c',
-      fontWeight: '600',
+      color: '#000000 !important',
+      fontWeight: '800 !important',
       marginTop: '2rem',
       marginBottom: '0.75rem',
       lineHeight: '1.3'
@@ -432,17 +432,17 @@ const useStyles = createUseStyles({
       fontSize: '1.875rem',
       borderBottom: '2px solid #e9ecef',
       paddingBottom: '0.5rem',
-      fontWeight: '300'
+      fontWeight: '900 !important'
     },
     '& h2': {
       fontSize: '1.5rem',
-      color: '#2d3748',
-      fontWeight: '500'
+      color: '#000000 !important',
+      fontWeight: '900 !important'
     },
     '& h3': {
       fontSize: '1.25rem',
-      color: '#4a5568',
-      fontWeight: '500'
+      color: '#000000 !important',
+      fontWeight: '800 !important'
     },
     '& p': {
       marginBottom: '1rem',
@@ -491,10 +491,12 @@ const useStyles = createUseStyles({
       padding: '0',
       margin: '1.5rem 0',
       '& h4': {
-        color: '#111827',
-        marginBottom: '0.875rem',
-        fontSize: '1rem',
-        fontWeight: '600'
+        color: '#000000 !important',
+        marginBottom: '1rem',
+        fontSize: '1.3rem !important',
+        fontWeight: '800 !important',
+        borderBottom: '1px solid #d1d5db',
+        paddingBottom: '0.5rem'
       }
     }
   },
@@ -1051,23 +1053,8 @@ function App() {
           {/* Main Content */}
           <div className={classes.lessonMain}>
             <div className={classes.lessonHeader} style={{ padding: '0.75rem 2rem', minHeight: 'auto' }}>
-              <h1 className={classes.lessonTitle} style={{ fontSize: '1.1rem', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                <span>{currentSection ? `ACT® ${currentSection.charAt(0).toUpperCase() + currentSection.slice(1)}` : 'Lessons'}</span>
-                {lesson && lesson.topic_number && (
-                  <>
-                    <span style={{ color: '#d1d5db', fontWeight: 400 }}>|</span>
-                    <span style={{
-                      background: '#3b82f6',
-                      color: 'white',
-                      padding: '0.25rem 0.75rem',
-                      borderRadius: '6px',
-                      fontSize: '0.9rem',
-                      fontWeight: 600
-                    }}>
-                      Topic {lesson.topic_number}
-                    </span>
-                  </>
-                )}
+              <h1 className={classes.lessonTitle} style={{ fontSize: '1.1rem', fontWeight: 500 }}>
+                {currentSection ? `${currentSection.charAt(0).toUpperCase() + currentSection.slice(1)} Lessons` : 'Lessons'}
               </h1>
 
               <div style={{
@@ -1165,17 +1152,14 @@ function App() {
                     marginBottom: '0.5rem',
                     lineHeight: '1.3'
                   }}>
-                    {lesson.full_topic_code
-                      ? `Topic ${lesson.full_topic_code} - ${lesson.title}`
-                      : lesson.title
-                    }
+                    {lesson.title}
                   </h2>
                 </div>
               )}
               {lessonMode === 'review' ? (
-                lesson ? (
+                lesson && currentLessonData ? (
                   <ProgressiveLessonRenderer
-                    lesson={lesson}
+                    lesson={{...lesson, id: currentLessonData.id}}
                   />
                 ) : (
                   <div style={{
