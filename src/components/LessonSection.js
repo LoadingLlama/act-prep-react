@@ -30,17 +30,27 @@ const LessonSection = ({
                                    !quizCompletionStatus[index] &&
                                    !sectionStatusOverride[index]?.completed;
 
+  // Handle section click - only navigate if user isn't selecting text
+  const handleSectionClick = (e) => {
+    const selection = window.getSelection();
+    if (selection && selection.toString().length > 0) {
+      // User is selecting text, don't navigate
+      return;
+    }
+    onSectionClick(index);
+  };
+
   return (
-    <div className={sectionClasses} onClick={() => onSectionClick(index)}>
+    <div className={sectionClasses} onClick={handleSectionClick}>
       {section.type === 'text' ? (
         <>
           {index === currentSection ? (
             <div>
               <TypewriterText
                 text={section.content || ''}
-                startDelay={50}
+                startDelay={0}
                 typingSpeed={typingSpeed}
-                skipAnimation={textCompletionStatus[index] === true}
+                skipAnimation={false}
                 onComplete={() => onTextComplete(index)}
                 ref={typewriterRef}
               />

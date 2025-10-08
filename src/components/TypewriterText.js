@@ -33,6 +33,12 @@ const TypewriterText = React.forwardRef(({
   const [plainText, setPlainText] = useState('');
   const [isTypingActive, setIsTypingActive] = useState(false);
   const containerRef = React.useRef(null);
+  const onCompleteRef = React.useRef(onComplete);
+
+  // Keep onComplete ref up to date
+  React.useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
 
   useEffect(() => {
     if (text) {
@@ -51,31 +57,18 @@ const TypewriterText = React.forwardRef(({
         setIsTypingActive(false);
         setHasStarted(true);
         setShouldCompleteInstantly(false);
-        if (onComplete) {
-          setTimeout(onComplete, 50);
+        if (onCompleteRef.current) {
+          setTimeout(() => onCompleteRef.current(), 50);
         }
       } else {
         setDisplayedChars(0);
         setIsComplete(false);
         setShouldCompleteInstantly(false);
         setIsTypingActive(true);
-        setHasStarted(false); // Reset hasStarted so startDelay timer triggers again
+        setHasStarted(true); // Always start immediately
       }
     }
-  }, [text, skipAnimation, onComplete]);
-
-  // Removed aggressive scroll interval
-
-  useEffect(() => {
-    if (startDelay > 0) {
-      const startTimer = setTimeout(() => {
-        setHasStarted(true);
-      }, startDelay);
-      return () => clearTimeout(startTimer);
-    } else {
-      setHasStarted(true);
-    }
-  }, [startDelay]);
+  }, [text, skipAnimation]); // Removed onComplete from dependencies to prevent resets
 
   useEffect(() => {
     if (!hasStarted || !plainText) {
@@ -87,8 +80,8 @@ const TypewriterText = React.forwardRef(({
       setDisplayedChars(plainText.length);
       setIsComplete(true);
       setIsTypingActive(false);
-      if (onComplete) {
-        setTimeout(onComplete, 100);
+      if (onCompleteRef.current) {
+        setTimeout(() => onCompleteRef.current(), 100);
       }
       return;
     }
@@ -98,8 +91,8 @@ const TypewriterText = React.forwardRef(({
       if (!isComplete) {
         setIsComplete(true);
         setIsTypingActive(false);
-        if (onComplete) {
-          setTimeout(onComplete, 100);
+        if (onCompleteRef.current) {
+          setTimeout(() => onCompleteRef.current(), 100);
         }
       }
       return;
@@ -139,7 +132,7 @@ const TypewriterText = React.forwardRef(({
     }
 
     if (displayedChars === 0) {
-      return '';
+      return '<span style="opacity: 0;">.</span>'; // Invisible placeholder to prevent blank screen
     }
 
     // Fallback to simple text truncation if HTML parsing fails

@@ -135,30 +135,23 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
       if (e.key === 'Enter') {
         e.preventDefault();
 
+        // Check if current section is complete
+        const currentIsQuiz = sections[currentSection]?.type === 'quiz';
+        const quizIsComplete = currentIsQuiz && quizCompletionStatus[currentSection];
+        const textIsComplete = !currentIsQuiz && textCompletionStatus[currentSection];
+
         // Check if current text section is still typing
-        const isCurrentlyTyping = typewriterRef.current &&
+        const isCurrentlyTyping = !currentIsQuiz &&
+                                  typewriterRef.current &&
                                   typewriterRef.current.isTypingActive &&
                                   typewriterRef.current.isTypingActive();
 
         // If typing, complete the animation instantly
         if (isCurrentlyTyping && typewriterRef.current) {
           typewriterRef.current.completeInstantly();
-
-          // Give it a moment for the completion callback to fire, then advance
-          setTimeout(() => {
-            if (currentSection < sections.length - 1) {
-              setCurrentSection(prev => prev + 1);
-              setVisibleSections(prev => prev + 1);
-              setCurrentSectionComplete(false);
-            }
-          }, 150);
+          // After completing, wait for the onComplete callback to set textCompletionStatus
           return;
         }
-
-        // Check if current section is complete
-        const currentIsQuiz = sections[currentSection]?.type === 'quiz';
-        const quizIsComplete = currentIsQuiz && quizCompletionStatus[currentSection];
-        const textIsComplete = !currentIsQuiz && textCompletionStatus[currentSection];
 
         // Advance to next section if current is complete
         if ((quizIsComplete || textIsComplete) && currentSection < sections.length - 1) {
