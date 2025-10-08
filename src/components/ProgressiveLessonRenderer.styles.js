@@ -14,43 +14,45 @@ export const useProgressiveLessonStyles = createUseStyles({
     fontSize: '16px',
 
     '& h1': {
-      fontSize: '2.25rem',
-      fontWeight: '800',
+      fontSize: '2.5rem',
+      fontWeight: '900',
       color: '#000000',
       margin: '0 0 1.5rem 0',
-      lineHeight: '1.3',
-      letterSpacing: '-0.03em',
-      borderBottom: 'none',
-      paddingBottom: '0'
+      lineHeight: '1.2',
+      letterSpacing: '-0.04em',
+      borderBottom: '3px solid #000000',
+      paddingBottom: '1rem'
     },
     '& h2': {
-      fontSize: '1.75rem',
-      fontWeight: '800',
+      fontSize: '2rem',
+      fontWeight: '900',
       color: '#000000',
-      margin: '3rem 0 1.5rem 0',
-      lineHeight: '1.35',
-      letterSpacing: '-0.025em',
-      borderBottom: '2px solid #d1d5db',
-      paddingBottom: '0.875rem'
+      margin: '6rem 0 1.75rem 0',
+      lineHeight: '1.3',
+      letterSpacing: '-0.035em',
+      borderBottom: '3px solid #000000',
+      paddingBottom: '1rem'
     },
     '& h3': {
-      fontSize: '1.4rem',
-      fontWeight: '700',
+      fontSize: '1.5rem',
+      fontWeight: '800',
       color: '#000000',
-      margin: '2.5rem 0 1rem 0',
-      lineHeight: '1.4',
-      letterSpacing: '-0.02em',
-      borderBottom: '1px solid #e5e7eb',
-      paddingBottom: '0.5rem'
+      margin: '5rem 0 1.25rem 0',
+      lineHeight: '1.35',
+      letterSpacing: '-0.025em',
+      borderBottom: '2px solid #4a5568',
+      paddingBottom: '0.75rem'
     },
     '& h4': {
-      fontSize: '1.2rem',
-      fontWeight: '700',
-      color: '#000000',
-      margin: '1.5rem 0 0.75rem 0',
-      lineHeight: '1.5',
+      fontSize: '1.3rem !important',
+      fontWeight: '800 !important',
+      color: '#000000 !important',
+      margin: '4rem 0 1rem 0',
+      lineHeight: '1.4',
       textTransform: 'none',
-      letterSpacing: '-0.01em'
+      letterSpacing: '-0.02em',
+      borderBottom: '1px solid #d1d5db',
+      paddingBottom: '0.5rem'
     },
     '& p': {
       fontSize: '16px',
@@ -132,12 +134,14 @@ export const useProgressiveLessonStyles = createUseStyles({
       margin: '2rem 0',
       boxShadow: 'none',
       '& h4': {
-        color: '#000000',
+        color: '#000000 !important',
         marginBottom: '1rem',
-        fontSize: '1.1rem',
-        fontWeight: '700',
+        fontSize: '1.3rem !important',
+        fontWeight: '800 !important',
         textTransform: 'none',
-        letterSpacing: '-0.01em'
+        letterSpacing: '-0.02em',
+        borderBottom: '1px solid #d1d5db',
+        paddingBottom: '0.5rem'
       },
       '& p:last-child': {
         marginBottom: '0'
@@ -335,49 +339,105 @@ export const useProgressiveLessonStyles = createUseStyles({
     fontWeight: 'bold',
     fontFamily: 'Monaco, Consolas, monospace'
   },
-  completeButton: {
-    background: 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)',
-    border: 'none',
+  keyTakeawaysBox: {
+    background: 'linear-gradient(135deg, #e8f5e9 0%, #f1f8f1 100%)',
+    border: '2px solid #4caf50',
     borderRadius: '12px',
-    padding: '1rem 2rem',
-    fontSize: '1.1rem',
+    padding: '2rem',
+    margin: '3rem 0',
+    '& h3': {
+      color: '#2e7d32',
+      fontSize: '1.6rem',
+      fontWeight: '800',
+      margin: '0 0 1.5rem 0',
+      borderBottom: '2px solid #4caf50',
+      paddingBottom: '0.75rem',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.5rem'
+    },
+    '& ul': {
+      listStyle: 'none',
+      paddingLeft: '0',
+      margin: '0',
+      '& li': {
+        paddingLeft: '2rem',
+        marginBottom: '1rem',
+        position: 'relative',
+        color: '#1b5e20',
+        fontSize: '16px',
+        lineHeight: '1.7',
+        '&:before': {
+          content: '"✓"',
+          position: 'absolute',
+          left: '0',
+          color: '#4caf50',
+          fontWeight: 'bold',
+          fontSize: '1.2rem'
+        }
+      }
+    }
+  },
+  navigationButtons: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    gap: '1rem',
+    margin: '3rem 0 2rem 0'
+  },
+  navButton: {
+    background: '#ffffff',
+    border: '2px solid #e5e7eb',
+    borderRadius: '10px',
+    padding: '0.875rem 1.75rem',
+    fontSize: '1rem',
     fontWeight: '600',
-    color: 'white',
+    color: '#374151',
     cursor: 'pointer',
-    margin: '2rem 0',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
     gap: '0.5rem',
     transition: 'all 0.3s ease',
-    boxShadow: '0 4px 15px rgba(72, 187, 120, 0.3)',
     '&:hover': {
-      background: 'linear-gradient(135deg, #38a169 0%, #2f855a 100%)',
-      transform: 'translateY(-2px)',
-      boxShadow: '0 6px 20px rgba(72, 187, 120, 0.4)'
+      background: '#f9fafb',
+      borderColor: '#d1d5db',
+      transform: 'translateY(-1px)',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)'
     },
     '&:active': {
       transform: 'translateY(0)',
-      boxShadow: '0 4px 15px rgba(72, 187, 120, 0.3)'
+      boxShadow: '0 2px 6px rgba(0, 0, 0, 0.06)'
     },
-    '&.completing': {
-      animation: '$buttonComplete 0.6s ease forwards',
-      pointerEvents: 'none'
+    '&:disabled': {
+      opacity: 0.4,
+      cursor: 'not-allowed',
+      '&:hover': {
+        background: '#ffffff',
+        borderColor: '#e5e7eb',
+        transform: 'none',
+        boxShadow: 'none'
+      }
     }
   },
-  '@keyframes buttonComplete': {
-    '0%': {
-      transform: 'scale(1)'
+  nextButton: {
+    marginLeft: 'auto',
+    background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+    borderColor: '#2563eb',
+    color: 'white',
+    '&:hover': {
+      background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
+      borderColor: '#1d4ed8',
+      transform: 'translateY(-1px)',
+      boxShadow: '0 4px 12px rgba(37, 99, 235, 0.3)'
     },
-    '50%': {
-      transform: 'scale(1.1)',
-      background: 'linear-gradient(135deg, #4caf50 0%, #45a049 100%)',
-      boxShadow: '0 8px 25px rgba(76, 175, 80, 0.5)'
-    },
-    '100%': {
-      transform: 'scale(1)',
-      background: 'linear-gradient(135deg, #4caf50 0%, #45a049 100%)',
-      boxShadow: '0 4px 15px rgba(76, 175, 80, 0.3)'
+    '&:disabled': {
+      opacity: 0.4,
+      cursor: 'not-allowed',
+      '&:hover': {
+        background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+        borderColor: '#2563eb',
+        transform: 'none',
+        boxShadow: 'none'
+      }
     }
-  },
+  }
 });
