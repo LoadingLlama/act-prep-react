@@ -50,42 +50,38 @@ export const useInteractiveQuizStyles = createUseStyles({
     marginBottom: '1rem'
   },
   questionText: {
-    fontSize: '1.2rem',
-    color: '#2d3748',
-    marginBottom: '1rem',
-    lineHeight: '1.5',
-    fontWeight: '600',
+    fontSize: '1.25rem',
+    color: '#1a202c',
+    marginBottom: '1.5rem',
+    lineHeight: '1.8',
+    fontWeight: '400',
     textAlign: 'left',
-    background: 'linear-gradient(135deg, rgba(26, 115, 232, 0.05) 0%, rgba(237, 248, 255, 0.8) 100%)',
-    padding: '1rem',
-    borderRadius: '12px',
-    border: '1px solid rgba(26, 115, 232, 0.1)'
+    padding: '1.25rem 0',
+    letterSpacing: '0.01em'
   },
   quizOptions: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-    gap: '0.75rem',
-    marginBottom: '1rem',
-    '@media (max-width: 768px)': {
-      gridTemplateColumns: '1fr'
-    }
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem',
+    marginBottom: '1.5rem'
   },
   quizOption: {
-    padding: '1rem',
-    border: '2px solid #e2e8f0',
-    borderRadius: '12px',
+    padding: '1.1rem 1.25rem',
+    border: '1.5px solid #e2e8f0',
+    borderRadius: '8px',
     backgroundColor: '#ffffff',
     color: '#2d3748',
     cursor: 'pointer',
-    fontSize: '1rem',
+    fontSize: '1.05rem',
     textAlign: 'left',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    transition: 'all 0.2s ease',
     position: 'relative',
     overflow: 'hidden',
-    minHeight: '60px',
+    minHeight: '50px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
+    lineHeight: '1.6',
     '&:hover': {
       borderColor: '#1a73e8',
       backgroundColor: '#f8faff'
