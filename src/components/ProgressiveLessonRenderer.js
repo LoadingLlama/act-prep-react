@@ -276,18 +276,6 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
 
       {isComplete && (
         <>
-          <div className={classes.keyTakeawaysBox}>
-            <h3>
-              <span>🎯</span> Key Takeaways
-            </h3>
-            <ul>
-              <li>Master the fundamental building blocks of sentences: subjects, predicates, and objects</li>
-              <li>Recognize complete vs. incomplete sentences and avoid common fragment errors</li>
-              <li>Understand how independent and dependent clauses work together to create complex sentences</li>
-              <li>Apply proper coordination and subordination techniques for clear, effective writing</li>
-            </ul>
-          </div>
-
           <div className={classes.navigationButtons}>
             <button
               className={classes.navButton}
