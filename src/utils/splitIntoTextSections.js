@@ -5,6 +5,31 @@
 import logger from '../services/logging/logger';
 import errorTracker from '../services/logging/errorTracker';
 
+const isExampleSection = (content) => {
+  // Check if content contains h4 with "Example" and has Problem/Solution structure
+  return content.includes('<h4') &&
+         /Example \d+/i.test(content) &&
+         /Problem:/i.test(content) &&
+         /Solution:/i.test(content);
+};
+
+const extractExamples = (content) => {
+  // Split by h4 headers that contain "Example"
+  const exampleParts = content.split(/(?=<h4[^>]*>Example)/i);
+  const examples = [];
+
+  for (const part of exampleParts) {
+    if (part.trim() && /Example \d+/i.test(part)) {
+      examples.push({
+        type: 'example',
+        content: part.trim()
+      });
+    }
+  }
+
+  return examples;
+};
+
 export const splitIntoTextSections = (content) => {
   try {
     if (!content || !content.trim()) {
@@ -26,19 +51,39 @@ export const splitIntoTextSections = (content) => {
         part = part.trim();
         if (!part || part.length < 50) continue;
 
-        // Check if this H3 section is very long and needs further splitting
-        const wordCount = (part.match(/\b\w+\b/g) || []).length;
+        // Check if this section contains examples
+        if (isExampleSection(part)) {
+          // Extract examples as separate interactive sections
+          const examples = extractExamples(part);
 
-        if (wordCount > 200) {
-          // Long section - split by major elements
-          const subSections = splitByElements(part);
-          sections.push(...subSections);
+          // Get the intro text before first example
+          const firstExampleIndex = part.search(/<h4[^>]*>Example/i);
+          if (firstExampleIndex > 0) {
+            const introText = part.substring(0, firstExampleIndex).trim();
+            if (introText.length > 50) {
+              sections.push({
+                type: 'text',
+                content: introText
+              });
+            }
+          }
+
+          sections.push(...examples);
         } else {
-          // Normal sized H3 section - keep as one
-          sections.push({
-            type: 'text',
-            content: part,
-          });
+          // Check if this H3 section is very long and needs further splitting
+          const wordCount = (part.match(/\b\w+\b/g) || []).length;
+
+          if (wordCount > 200) {
+            // Long section - split by major elements
+            const subSections = splitByElements(part);
+            sections.push(...subSections);
+          } else {
+            // Normal sized H3 section - keep as one
+            sections.push({
+              type: 'text',
+              content: part,
+            });
+          }
         }
       }
     } else {

@@ -3,7 +3,11 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
   typewriterContainer: {
-    position: 'relative'
+    position: 'relative',
+    '& .preview-char': {
+      opacity: 0.25,
+      transition: 'opacity 0.1s ease'
+    }
   },
   lineReveal: {
     '& .revealing-line': {
@@ -137,17 +141,14 @@ const TypewriterText = React.forwardRef(({
 
     // Fallback to simple text truncation if HTML parsing fails
     try {
-      // Simple approach: truncate the plain text and insert it into a basic HTML structure
+      const PREVIEW_CHARS = 10; // Number of preview characters to show ahead
 
-      // For basic HTML preservation, we'll use a simple regex approach
-      // This handles the most common cases without complex DOM parsing
-      let htmlOutput = text;
-
-      // Find where to truncate by counting actual text characters
+      // Find positions of all characters in the HTML
       let textCount = 0;
       let htmlIndex = 0;
+      const charPositions = []; // Track positions of actual characters
 
-      while (textCount < displayedChars && htmlIndex < text.length) {
+      while (htmlIndex < text.length) {
         const char = text[htmlIndex];
 
         if (char === '<') {
@@ -160,20 +161,48 @@ const TypewriterText = React.forwardRef(({
           }
         } else {
           // Regular character
+          charPositions.push({ index: htmlIndex, count: textCount });
           textCount++;
           htmlIndex++;
         }
       }
 
-      // Truncate at the HTML index and try to close any open tags
-      htmlOutput = text.substring(0, htmlIndex);
+      // Calculate preview end (displayed chars + preview chars)
+      const previewEndCount = Math.min(displayedChars + PREVIEW_CHARS, charPositions.length);
+      const displayEndIndex = charPositions[displayedChars - 1]?.index + 1 || 0;
+      const previewEndIndex = charPositions[previewEndCount - 1]?.index + 1 || displayEndIndex;
+
+      // Build the HTML with preview effect
+      let result = '';
+      let lastIndex = 0;
+
+      // Add fully typed characters (solid black)
+      result += text.substring(0, displayEndIndex);
+      lastIndex = displayEndIndex;
+
+      // Add preview characters with smooth gradient fade effect
+      if (displayedChars < plainText.length && previewEndIndex > displayEndIndex) {
+        const previewChars = charPositions.slice(displayedChars, previewEndCount);
+
+        previewChars.forEach(({ index }, i) => {
+          result += text.substring(lastIndex, index);
+
+          // Exponential decay for smoother gradient: starts at 0.85 and fades to 0.05
+          const progress = i / (PREVIEW_CHARS - 1);
+          const opacity = 0.85 * Math.pow(1 - progress, 1.5) + 0.05;
+
+          result += `<span style="opacity: ${opacity.toFixed(2)}; transition: opacity 0.08s ease;">${text[index]}</span>`;
+          lastIndex = index + 1;
+        });
+        result += text.substring(lastIndex, previewEndIndex);
+      }
 
       // Simple tag balancing for common tags
       const openTags = [];
       const tagPattern = /<\/?([a-zA-Z]+)[^>]*>/g;
       let match;
 
-      while ((match = tagPattern.exec(htmlOutput)) !== null) {
+      while ((match = tagPattern.exec(result)) !== null) {
         const tagName = match[1].toLowerCase();
         if (match[0].startsWith('</')) {
           // Closing tag
@@ -189,10 +218,10 @@ const TypewriterText = React.forwardRef(({
 
       // Close any remaining open tags
       for (let i = openTags.length - 1; i >= 0; i--) {
-        htmlOutput += `</${openTags[i]}>`;
+        result += `</${openTags[i]}>`;
       }
 
-      return htmlOutput;
+      return result;
 
     } catch (error) {
       // If anything goes wrong, fall back to plain text

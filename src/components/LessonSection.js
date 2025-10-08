@@ -1,6 +1,7 @@
 import React from 'react';
 import TypewriterText from './TypewriterText';
 import InteractiveQuiz from './InteractiveQuiz';
+import InteractiveExample from './InteractiveExample';
 
 const LessonSection = ({
   section,
@@ -10,11 +11,13 @@ const LessonSection = ({
   typingSpeed,
   textCompletionStatus,
   quizCompletionStatus,
+  exampleCompletionStatus,
   sectionStatusOverride,
   classes,
   typewriterRef,
   onTextComplete,
   onQuizComplete,
+  onExampleComplete,
   onSectionClick,
   sections
 }) => {
@@ -59,6 +62,19 @@ const LessonSection = ({
             <div dangerouslySetInnerHTML={{ __html: section.content }} />
           ) : null}
         </>
+      ) : section.type === 'example' ? (
+        <>
+          {index === currentSection || index < currentSection ? (
+            <InteractiveExample
+              content={section.content}
+              onComplete={() => onExampleComplete(index)}
+              currentSection={currentSection}
+              index={index}
+              typingSpeed={typingSpeed}
+              typewriterRef={index === currentSection ? typewriterRef : null}
+            />
+          ) : null}
+        </>
       ) : section.type === 'quiz' ? (
         section.data ? (
           <>
@@ -75,16 +91,17 @@ const LessonSection = ({
                   <div style={{
                     textAlign: 'center',
                     margin: '2rem 0',
-                    padding: '1.5rem',
-                    background: '#fef3c7',
-                    borderRadius: '12px',
-                    border: '2px solid #f59e0b'
+                    padding: '1rem 0',
+                    background: 'transparent',
+                    borderRadius: '0',
+                    border: 'none'
                   }}>
-                    <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>🔒</div>
+                    <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem', opacity: 0.4 }}>🔒</div>
                     <div style={{
-                      fontSize: '1rem',
-                      color: '#92400e',
-                      fontWeight: '600'
+                      fontSize: '0.9rem',
+                      color: '#9ca3af',
+                      fontWeight: '400',
+                      opacity: 0.6
                     }}>
                       Complete this quiz to continue
                     </div>
