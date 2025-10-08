@@ -134,72 +134,122 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
 
   return (
     <div className={`${classes.interactiveQuiz} ${isFinal ? 'final-quiz' : ''}`}>
-      <h3>{quizData.title}</h3>
-      <p className={classes.quizIntro}>{quizData.intro}</p>
-
-      {/* Progress indicator */}
-      <div className={classes.quizProgress}>
-        <div className={classes.progressBar}>
-          <div
-            className={classes.progressFill}
-            style={{ width: `${((currentQuestion + 1) / quizData.questions.length) * 100}%` }}
-          />
-        </div>
-        <p className={classes.progressText}>
-          Question {currentQuestion + 1} of {quizData.questions.length}
-        </p>
+      {/* Clean compact title */}
+      <div style={{
+        fontSize: '0.95rem',
+        fontWeight: '600',
+        color: '#1a73e8',
+        marginBottom: '1rem',
+        paddingBottom: '0.75rem',
+        borderBottom: '1px solid #e2e8f0'
+      }}>
+        {quizData.title}
       </div>
 
       <div className={classes.quizContainer}>
         <div className={classes.quizQuestion}>
+          {/* Compact question number */}
+          <div style={{
+            fontSize: '0.85rem',
+            fontWeight: '500',
+            color: '#666',
+            marginBottom: '0.75rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center'
+          }}>
+            <span>{currentQuestion + 1}.</span>
+            <span style={{ fontSize: '0.75rem' }}>Score: {score}/{quizData.questions.length}</span>
+          </div>
+
           <p className={classes.questionText} dangerouslySetInnerHTML={{ __html: question.text }} />
 
           <div className={classes.quizOptions}>
             {question.options.map((option, optionIndex) => {
-              let optionClass = classes.quizOption;
+              const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+              const letter = letters[optionIndex];
 
-              if (hasAnswered) {
-                if (currentAnswer === option.text) {
-                  // This is the user's selected answer
-                  optionClass += option.isCorrect ? ' correct' : ' incorrect';
-                } else if (option.isCorrect) {
-                  // This is the correct answer (not selected by user)
-                  optionClass += ' not-selected-correct';
-                }
-              } else if (currentAnswer === option.text) {
-                // User selected but hasn't submitted yet
-                optionClass += ' selected';
-              }
+              const isSelected = currentAnswer === option.text;
+              const isCorrectAnswer = option.isCorrect;
+              const showFeedback = hasAnswered;
 
               return (
-                <div key={optionIndex} style={{ marginBottom: '0.5rem' }}>
-                  <button
-                    className={optionClass}
-                    disabled={hasAnswered && currentAnswer === option.text}
-                    onClick={() => {
-                      if (!hasAnswered) {
-                        handleAnswer(option.text, option.isCorrect, option.explanation);
-                      }
-                    }}
-                    style={{
-                      width: '100%',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'flex-start',
-                      gap: '0.5rem'
-                    }}
-                  >
-                    <span style={{ fontWeight: '500' }}>{option.text}</span>
-                    {hasAnswered && (
-                      <span style={{
-                        fontSize: '0.8rem',
-                        opacity: 0.8,
-                        lineHeight: '1.3'
+                <div
+                  key={optionIndex}
+                  onClick={() => {
+                    if (!hasAnswered) {
+                      handleAnswer(option.text, option.isCorrect, option.explanation);
+                    }
+                  }}
+                  style={{
+                    display: 'flex',
+                    gap: '1rem',
+                    padding: '0.75rem 0',
+                    cursor: hasAnswered ? 'default' : 'pointer',
+                    alignItems: 'flex-start',
+                    borderLeft: showFeedback && isSelected && isCorrectAnswer ? '3px solid #48bb78' :
+                                showFeedback && isSelected && !isCorrectAnswer ? '3px solid #f56565' :
+                                showFeedback && !isSelected && isCorrectAnswer ? '3px solid #48bb78' : 'none',
+                    paddingLeft: showFeedback ? '0.75rem' : '0',
+                    backgroundColor: showFeedback && isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.05)' :
+                                     showFeedback && isSelected && !isCorrectAnswer ? 'rgba(245, 101, 101, 0.05)' :
+                                     showFeedback && !isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.05)' : 'transparent',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  {/* Radio button / letter circle */}
+                  <div style={{
+                    width: '32px',
+                    height: '32px',
+                    minWidth: '32px',
+                    borderRadius: '50%',
+                    border: isSelected && !showFeedback ? '2px solid #1a73e8' :
+                            showFeedback && isSelected && isCorrectAnswer ? '2px solid #48bb78' :
+                            showFeedback && isSelected && !isCorrectAnswer ? '2px solid #f56565' :
+                            showFeedback && !isSelected && isCorrectAnswer ? '2px solid #48bb78' : '2px solid #cbd5e0',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontWeight: '600',
+                    fontSize: '0.9rem',
+                    color: isSelected && !showFeedback ? '#1a73e8' :
+                            showFeedback && isSelected && isCorrectAnswer ? '#48bb78' :
+                            showFeedback && isSelected && !isCorrectAnswer ? '#f56565' :
+                            showFeedback && !isSelected && isCorrectAnswer ? '#48bb78' : '#718096',
+                    backgroundColor: isSelected && !showFeedback ? 'rgba(26, 115, 232, 0.1)' :
+                                     showFeedback && isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.1)' :
+                                     showFeedback && isSelected && !isCorrectAnswer ? 'rgba(245, 101, 101, 0.1)' :
+                                     showFeedback && !isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.1)' : 'transparent',
+                    transition: 'all 0.2s ease'
+                  }}>
+                    {showFeedback && isSelected && isCorrectAnswer ? '✓' :
+                     showFeedback && isSelected && !isCorrectAnswer ? '✗' :
+                     showFeedback && !isSelected && isCorrectAnswer ? '✓' : letter}
+                  </div>
+
+                  {/* Option text and explanation */}
+                  <div style={{ flex: 1 }}>
+                    <div style={{
+                      fontSize: '1.05rem',
+                      color: '#2d3748',
+                      lineHeight: '1.6',
+                      marginBottom: showFeedback ? '0.5rem' : '0'
+                    }}>
+                      {option.text}
+                    </div>
+                    {showFeedback && (
+                      <div style={{
+                        fontSize: '0.85rem',
+                        color: isSelected && isCorrectAnswer ? '#2f855a' :
+                               isSelected && !isCorrectAnswer ? '#c53030' :
+                               !isSelected && isCorrectAnswer ? '#2f855a' : '#666',
+                        lineHeight: '1.4',
+                        fontStyle: 'italic'
                       }}>
                         {option.explanation}
-                      </span>
+                      </div>
                     )}
-                  </button>
+                  </div>
                 </div>
               );
             })}
@@ -213,20 +263,21 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
           className={`${classes.navButton} prev`}
           onClick={previousQuestion}
           disabled={currentQuestion === 0}
+          style={{ opacity: currentQuestion === 0 ? 0.3 : 1 }}
         >
           ← Previous
         </button>
-
-        <div className={classes.quizScoreInline}>
-          Score: {score}/{quizData.questions.length}
-        </div>
 
         <button
           className={`${classes.navButton} next`}
           onClick={nextQuestion}
           disabled={!hasAnswered}
+          style={{
+            opacity: !hasAnswered ? 0.5 : 1,
+            fontWeight: '600'
+          }}
         >
-          {currentQuestion === quizData.questions.length - 1 ? 'Finish Quiz →' : 'Next →'}
+          {currentQuestion === quizData.questions.length - 1 ? 'Finish →' : 'Next →'}
         </button>
       </div>
     </div>
