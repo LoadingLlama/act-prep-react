@@ -2,22 +2,22 @@ import { createUseStyles } from 'react-jss';
 
 export const useInteractiveQuizStyles = createUseStyles({
   interactiveQuiz: {
-    backgroundColor: '#ffffff',
-    border: '2px solid #e2e8f0',
-    borderRadius: '16px',
-    padding: '1.25rem 2rem',
-    margin: '1.5rem auto',
+    backgroundColor: 'transparent',
+    border: 'none',
+    borderRadius: '0',
+    padding: '1.25rem 0',
+    margin: '2rem auto',
     maxWidth: '1200px',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 255, 0.95) 100%)',
-    backdropFilter: 'blur(10px)',
+    boxShadow: 'none',
+    background: 'transparent',
+    backdropFilter: 'none',
     '& > h3': {
       marginTop: '0 !important'
     },
     '&.final-quiz': {
-      border: '2px solid #1a73e8',
-      background: 'linear-gradient(135deg, rgba(248, 250, 255, 0.98) 0%, rgba(240, 248, 255, 0.95) 100%)',
-      boxShadow: '0 12px 40px rgba(26, 115, 232, 0.15)'
+      border: 'none',
+      background: 'transparent',
+      boxShadow: 'none'
     }
   },
   quizProgress: {
@@ -50,7 +50,7 @@ export const useInteractiveQuizStyles = createUseStyles({
     marginBottom: '1rem'
   },
   questionText: {
-    fontSize: '1.25rem',
+    fontSize: '1.65rem',
     color: '#1a202c',
     marginBottom: '1.5rem',
     lineHeight: '1.8',
@@ -67,13 +67,13 @@ export const useInteractiveQuizStyles = createUseStyles({
     marginBottom: '1.5rem'
   },
   quizOption: {
-    padding: '1.1rem 1.25rem',
-    border: '1.5px solid #e2e8f0',
+    padding: '1rem 1.25rem',
+    border: '2px solid #e5e7eb',
     borderRadius: '8px',
     backgroundColor: '#ffffff',
     color: '#2d3748',
     cursor: 'pointer',
-    fontSize: '1.05rem',
+    fontSize: '1rem',
     textAlign: 'left',
     transition: 'all 0.2s ease',
     position: 'relative',
@@ -85,12 +85,14 @@ export const useInteractiveQuizStyles = createUseStyles({
     lineHeight: '1.6',
     fontFamily: '"Times New Roman", Times, Georgia, serif',
     '&:hover': {
-      borderColor: '#1a73e8',
-      backgroundColor: '#f8faff'
+      background: '#f9fafb',
+      borderColor: '#d1d5db',
+      transform: 'translateX(4px)'
     },
     '&.selected': {
-      borderColor: '#1a73e8',
-      backgroundColor: '#f0f8ff'
+      background: '#eff6ff',
+      borderColor: '#3b82f6',
+      color: '#1e40af'
     },
     '&.correct': {
       borderColor: '#48bb78',
@@ -128,10 +130,10 @@ export const useInteractiveQuizStyles = createUseStyles({
     }
   },
   quizFeedback: {
-    backgroundColor: '#f7fafc',
-    border: '1px solid #e2e8f0',
-    borderRadius: '8px',
-    padding: '0.75rem',
+    backgroundColor: 'transparent',
+    border: 'none',
+    borderRadius: '0',
+    padding: '0.75rem 0',
     marginTop: '0.75rem'
   },
   feedbackText: {
@@ -144,7 +146,7 @@ export const useInteractiveQuizStyles = createUseStyles({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderTop: '1px solid #e2e8f0',
+    borderTop: 'none',
     paddingTop: '0.75rem'
   },
   navButton: {
@@ -184,13 +186,13 @@ export const useInteractiveQuizStyles = createUseStyles({
     textAlign: 'center'
   },
   quizScore: {
-    backgroundColor: '#f8faff',
-    border: '2px solid #1a73e8',
-    borderRadius: '12px',
-    padding: '1.5rem',
+    backgroundColor: 'transparent',
+    border: 'none',
+    borderRadius: '0',
+    padding: '1.5rem 0',
     marginBottom: '1rem',
     '&.final-score': {
-      backgroundColor: '#f0f8ff'
+      backgroundColor: 'transparent'
     }
   },
   finalScoreText: {
@@ -204,29 +206,29 @@ export const useInteractiveQuizStyles = createUseStyles({
     }
   },
   scoreMessage: {
-    padding: '1rem',
-    borderRadius: '8px',
+    padding: '1rem 0',
+    borderRadius: '0',
     margin: '0.75rem 0',
     fontWeight: '600',
     '&.master': {
-      backgroundColor: '#f0fff4',
+      backgroundColor: 'transparent',
       color: '#2f855a',
-      border: '2px solid #48bb78'
+      border: 'none'
     },
     '&.proficient': {
-      backgroundColor: '#f0f8ff',
+      backgroundColor: 'transparent',
       color: '#1a73e8',
-      border: '2px solid #1a73e8'
+      border: 'none'
     },
     '&.developing': {
-      backgroundColor: '#fffbf0',
+      backgroundColor: 'transparent',
       color: '#d69e2e',
-      border: '2px solid #ed8936'
+      border: 'none'
     },
     '&.needs-work': {
-      backgroundColor: '#fffafa',
+      backgroundColor: 'transparent',
       color: '#c53030',
-      border: '2px solid #f56565'
+      border: 'none'
     }
   },
   quizActions: {
@@ -247,10 +249,10 @@ export const useInteractiveQuizStyles = createUseStyles({
     }
   },
   masteryLevels: {
-    backgroundColor: '#f7fafc',
-    border: '1px solid #e2e8f0',
-    borderRadius: '8px',
-    padding: '1.25rem',
+    backgroundColor: 'transparent',
+    border: 'none',
+    borderRadius: '0',
+    padding: '1.25rem 0',
     textAlign: 'left',
     '& h4': {
       color: '#2d3748',

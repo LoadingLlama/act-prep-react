@@ -14,6 +14,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
   const [isComplete, setIsComplete] = useState(false);
   const [quizCompletionStatus, setQuizCompletionStatus] = useState({});
   const [textCompletionStatus, setTextCompletionStatus] = useState({});
+  const [exampleCompletionStatus, setExampleCompletionStatus] = useState({});
   const [sectionStatusOverride, setSectionStatusOverride] = useState({});
   const [typingSpeed, setTypingSpeed] = useState(25);
   const [isCompleting, setIsCompleting] = useState(false);
@@ -33,6 +34,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
       setIsComplete(false);
       setQuizCompletionStatus({});
       setTextCompletionStatus({});
+      setExampleCompletionStatus({});
       setSectionStatusOverride({});
 
       const processedSections = [];
@@ -137,11 +139,15 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
 
         // Check if current section is complete
         const currentIsQuiz = sections[currentSection]?.type === 'quiz';
+        const currentIsExample = sections[currentSection]?.type === 'example';
+        const currentIsText = sections[currentSection]?.type === 'text';
+
         const quizIsComplete = currentIsQuiz && quizCompletionStatus[currentSection];
-        const textIsComplete = !currentIsQuiz && textCompletionStatus[currentSection];
+        const exampleIsComplete = currentIsExample && exampleCompletionStatus[currentSection];
+        const textIsComplete = currentIsText && textCompletionStatus[currentSection];
 
         // Check if current text section is still typing
-        const isCurrentlyTyping = !currentIsQuiz &&
+        const isCurrentlyTyping = currentIsText &&
                                   typewriterRef.current &&
                                   typewriterRef.current.isTypingActive &&
                                   typewriterRef.current.isTypingActive();
@@ -154,7 +160,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         }
 
         // Advance to next section if current is complete
-        if ((quizIsComplete || textIsComplete) && currentSection < sections.length - 1) {
+        if ((quizIsComplete || exampleIsComplete || textIsComplete) && currentSection < sections.length - 1) {
           setCurrentSection(prev => prev + 1);
           setVisibleSections(prev => prev + 1);
           setCurrentSectionComplete(false);
@@ -173,12 +179,13 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [currentSection, sections, quizCompletionStatus, textCompletionStatus]);
+  }, [currentSection, sections, quizCompletionStatus, textCompletionStatus, exampleCompletionStatus]);
 
   useEffect(() => {
     const currentIsText = sections[currentSection]?.type === 'text';
     const currentIsQuiz = sections[currentSection]?.type === 'quiz';
-    
+    const currentIsExample = sections[currentSection]?.type === 'example';
+
     if (currentIsText) {
       const textComplete = textCompletionStatus[currentSection];
       if (textComplete && !currentSectionComplete) {
@@ -189,8 +196,13 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
       if (quizComplete && !currentSectionComplete) {
         setCurrentSectionComplete(true);
       }
+    } else if (currentIsExample) {
+      const exampleComplete = exampleCompletionStatus[currentSection];
+      if (exampleComplete && !currentSectionComplete) {
+        setCurrentSectionComplete(true);
+      }
     }
-  }, [sections, currentSection, textCompletionStatus, quizCompletionStatus, currentSectionComplete]);
+  }, [sections, currentSection, textCompletionStatus, quizCompletionStatus, exampleCompletionStatus, currentSectionComplete]);
 
   useEffect(() => {
     if (currentSection === sections.length - 1 && currentSectionComplete) {
@@ -199,9 +211,12 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
   }, [currentSection, sections.length, currentSectionComplete]);
 
   const handleSectionClick = (index) => {
-    if (index < currentSection) {
-      setCurrentSection(index);
-      setVisibleSections(index + 1);
+    // Just scroll to the section without resetting anything
+    if (index <= currentSection && sectionRefs.current[index]) {
+      sectionRefs.current[index].scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   };
 
@@ -209,6 +224,13 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
     if (index === currentSection) {
       setCurrentSectionComplete(true);
       setTextCompletionStatus(prev => ({ ...prev, [index]: true }));
+    }
+  };
+
+  const handleExampleComplete = (index) => {
+    if (index === currentSection) {
+      setCurrentSectionComplete(true);
+      setExampleCompletionStatus(prev => ({ ...prev, [index]: true }));
     }
   };
 
@@ -263,11 +285,13 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
             typingSpeed={typingSpeed}
             textCompletionStatus={textCompletionStatus}
             quizCompletionStatus={quizCompletionStatus}
+            exampleCompletionStatus={exampleCompletionStatus}
             sectionStatusOverride={sectionStatusOverride}
             sections={sections}
             classes={classes}
             typewriterRef={index === currentSection ? typewriterRef : null}
             onTextComplete={handleTextComplete}
+            onExampleComplete={handleExampleComplete}
             onQuizComplete={handleQuizComplete}
             onSectionClick={handleSectionClick}
           />

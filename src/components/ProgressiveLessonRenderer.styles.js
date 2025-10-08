@@ -20,38 +20,39 @@ export const useProgressiveLessonStyles = createUseStyles({
       margin: '0 0 1.5rem 0',
       lineHeight: '1.2',
       letterSpacing: '-0.04em',
-      borderBottom: '3px solid #000000',
+      borderBottom: '1px solid #e5e7eb',
       paddingBottom: '1rem'
     },
     '& h2': {
       fontSize: '2rem',
       fontWeight: '900',
       color: '#000000',
-      margin: '6rem 0 1.75rem 0',
+      margin: '0 0 2rem 0',
       lineHeight: '1.3',
       letterSpacing: '-0.035em',
-      borderBottom: '3px solid #000000',
-      paddingBottom: '1rem'
+      borderBottom: 'none',
+      paddingBottom: '0'
     },
     '& h3': {
       fontSize: '1.5rem',
       fontWeight: '800',
       color: '#000000',
-      margin: '5rem 0 1.25rem 0',
+      margin: '7rem 0 1rem 0',
       lineHeight: '1.35',
       letterSpacing: '-0.025em',
-      borderBottom: '2px solid #4a5568',
-      paddingBottom: '0.75rem'
+      borderBottom: '1px solid #e5e7eb',
+      paddingBottom: '0.75rem',
+      marginBottom: '2rem'
     },
     '& h4': {
       fontSize: '1.3rem !important',
       fontWeight: '800 !important',
       color: '#000000 !important',
-      margin: '4rem 0 1rem 0',
+      margin: '5rem 0 1.5rem 0',
       lineHeight: '1.4',
       textTransform: 'none',
       letterSpacing: '-0.02em',
-      borderBottom: '1px solid #d1d5db',
+      borderBottom: '1px solid #e5e7eb',
       paddingBottom: '0.5rem'
     },
     '& p': {
@@ -59,6 +60,9 @@ export const useProgressiveLessonStyles = createUseStyles({
       marginBottom: '1.25rem',
       lineHeight: 1.7,
       color: '#1a202c'
+    },
+    '& h3 + p, & h3 + div, & h2 + p': {
+      marginTop: '1.5rem'
     },
     '& strong': {
       color: '#111827',
@@ -140,7 +144,7 @@ export const useProgressiveLessonStyles = createUseStyles({
         fontWeight: '800 !important',
         textTransform: 'none',
         letterSpacing: '-0.02em',
-        borderBottom: '1px solid #d1d5db',
+        borderBottom: '1px solid #e5e7eb',
         paddingBottom: '0.5rem'
       },
       '& p:last-child': {
@@ -154,10 +158,10 @@ export const useProgressiveLessonStyles = createUseStyles({
       fontStyle: 'italic',
       marginBottom: '1.5rem',
       marginTop: '1.5rem',
-      padding: '0',
-      background: 'transparent',
-      borderLeft: '3px solid #d1d5db',
-      paddingLeft: '1rem',
+      padding: '0 !important',
+      background: 'transparent !important',
+      borderLeft: 'none',
+      paddingLeft: '0',
       lineHeight: '1.7'
     }
   },
@@ -397,7 +401,7 @@ export const useProgressiveLessonStyles = createUseStyles({
     borderRadius: '10px',
     padding: '0.875rem 1.75rem',
     fontSize: '1rem',
-    fontWeight: '600',
+    fontWeight: '500',
     color: '#374151',
     cursor: 'pointer',
     display: 'flex',

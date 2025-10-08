@@ -230,10 +230,11 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
                   {/* Option text and explanation */}
                   <div style={{ flex: 1 }}>
                     <div style={{
-                      fontSize: '1.05rem',
+                      fontSize: '1rem',
                       color: '#2d3748',
                       lineHeight: '1.6',
-                      marginBottom: showFeedback ? '0.5rem' : '0'
+                      marginBottom: showFeedback ? '0.5rem' : '0',
+                      fontFamily: '"Times New Roman", Times, Georgia, serif'
                     }}>
                       {option.text}
                     </div>
