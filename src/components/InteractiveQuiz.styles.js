@@ -57,7 +57,8 @@ export const useInteractiveQuizStyles = createUseStyles({
     fontWeight: '400',
     textAlign: 'left',
     padding: '1.25rem 0',
-    letterSpacing: '0.01em'
+    letterSpacing: '0.01em',
+    fontFamily: '"Times New Roman", Times, Georgia, serif'
   },
   quizOptions: {
     display: 'flex',
@@ -82,6 +83,7 @@ export const useInteractiveQuizStyles = createUseStyles({
     flexDirection: 'column',
     justifyContent: 'center',
     lineHeight: '1.6',
+    fontFamily: '"Times New Roman", Times, Georgia, serif',
     '&:hover': {
       borderColor: '#1a73e8',
       backgroundColor: '#f8faff'
