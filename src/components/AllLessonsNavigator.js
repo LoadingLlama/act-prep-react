@@ -5,13 +5,13 @@ const useStyles = createUseStyles({
   navigator: {
     position: 'fixed',
     left: '0',
-    top: '60px',
+    top: '0',
     width: '320px',
-    height: 'calc(100vh - 60px)',
+    height: '100vh',
     overflowY: 'auto',
     background: '#f5f5f5',
-    padding: '1rem 0.75rem',
-    zIndex: 100,
+    padding: '0.5rem 0.75rem',
+    zIndex: 50,
     borderRight: '1px solid #e0e0e0',
     '&::-webkit-scrollbar': {
       width: '6px'
@@ -238,6 +238,21 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
 
   return (
     <div className={classes.navigator}>
+      <div style={{
+        padding: '0.5rem 0.5rem',
+        marginBottom: '0.75rem',
+        borderBottom: '1px solid #e0e0e0'
+      }}>
+        <div style={{
+          fontSize: '1.15rem',
+          fontWeight: '600',
+          color: '#1a73e8',
+          letterSpacing: '-0.02em'
+        }}>
+          Launch Prep
+        </div>
+      </div>
+
       <button className={classes.backButton} onClick={onBackClick}>
         ← Back to Subjects
       </button>

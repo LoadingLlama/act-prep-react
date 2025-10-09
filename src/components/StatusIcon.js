@@ -1,13 +1,26 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { statusStyles, iconStyles } from '../utils/sharedStyles';
 
 const useStyles = createUseStyles({
   icon: {
-    ...iconStyles.base,
-    '&.completed': statusStyles.completed,
-    '&.in-progress': statusStyles.inProgress,
-    '&.not-started': statusStyles.notStarted
+    width: '16px',
+    height: '16px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '11px',
+    background: 'transparent',
+    border: 'none',
+    boxShadow: 'none',
+    '&.completed': {
+      color: '#10b981'
+    },
+    '&.in-progress': {
+      color: '#f59e0b'
+    },
+    '&.not-started': {
+      color: '#d1d5db'
+    }
   }
 });
 
@@ -19,7 +32,7 @@ const StatusIcon = ({ status }) => {
       case 'completed':
         return '✓';
       case 'in-progress':
-        return '⏱';
+        return '●';
       case 'not-started':
       default:
         return '○';

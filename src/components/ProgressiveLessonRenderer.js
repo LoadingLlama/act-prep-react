@@ -21,6 +21,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
   const [sectionStatusOverride, setSectionStatusOverride] = useState({});
   const [typingSpeed, setTypingSpeed] = useState(25);
   const [isCompleting, setIsCompleting] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
   const typewriterRef = React.useRef(null);
   const sectionRefs = React.useRef([]);
 
@@ -31,6 +32,9 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
     }
 
     const loadLessonContent = async () => {
+      // Check if this lesson is already completed
+      const isLessonCompleted = lessonProgress[lesson.id] === 'completed';
+
       setCurrentSection(0);
       setVisibleSections(1);
       setCurrentSectionComplete(false);
@@ -39,6 +43,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
       setTextCompletionStatus({});
       setExampleCompletionStatus({});
       setSectionStatusOverride({});
+      setHasStarted(isLessonCompleted); // Auto-start if completed
 
       const processedSections = [];
 
@@ -109,10 +114,34 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
 
       setSections(processedSections);
       sectionRefs.current = processedSections.map((_, i) => sectionRefs.current[i] || React.createRef());
+
+      // If lesson is completed, unlock all sections
+      if (isLessonCompleted && processedSections.length > 0) {
+        setVisibleSections(processedSections.length);
+        setCurrentSection(processedSections.length - 1);
+        setIsComplete(true);
+
+        // Mark all sections as complete
+        const allTextComplete = {};
+        const allQuizComplete = {};
+        const allExampleComplete = {};
+        processedSections.forEach((section, index) => {
+          if (section.type === 'text') {
+            allTextComplete[index] = true;
+          } else if (section.type === 'quiz') {
+            allQuizComplete[index] = true;
+          } else if (section.type === 'example') {
+            allExampleComplete[index] = true;
+          }
+        });
+        setTextCompletionStatus(allTextComplete);
+        setQuizCompletionStatus(allQuizComplete);
+        setExampleCompletionStatus(allExampleComplete);
+      }
     };
 
     loadLessonContent();
-  }, [lesson]);
+  }, [lesson, lessonProgress]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -139,6 +168,12 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
     const handleKeyPress = (e) => {
       if (e.key === 'Enter') {
         e.preventDefault();
+
+        // If lesson hasn't started, start it
+        if (!hasStarted) {
+          setHasStarted(true);
+          return;
+        }
 
         // Check if current section is complete
         const currentIsQuiz = sections[currentSection]?.type === 'quiz';
@@ -182,7 +217,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [currentSection, sections, quizCompletionStatus, textCompletionStatus, exampleCompletionStatus]);
+  }, [currentSection, sections, quizCompletionStatus, textCompletionStatus, exampleCompletionStatus, hasStarted]);
 
   useEffect(() => {
     const currentIsText = sections[currentSection]?.type === 'text';
@@ -358,7 +393,41 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         </h2>
       </div>
 
-      {sections.map((section, index) => (
+      {!hasStarted ? (
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '50vh',
+          padding: '4rem 2rem'
+        }}>
+          <div style={{
+            textAlign: 'center',
+            maxWidth: '600px'
+          }}>
+            <div style={{
+              fontSize: '0.95rem',
+              color: '#9ca3af',
+              marginBottom: '1.5rem',
+              lineHeight: '1.6'
+            }}>
+              Press <kbd style={{
+                background: '#f3f4f6',
+                padding: '0.35rem 0.75rem',
+                borderRadius: '4px',
+                border: '1px solid #e5e7eb',
+                fontWeight: '500',
+                fontSize: '0.9rem',
+                color: '#1a1a1a',
+                fontFamily: 'monospace',
+                boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
+              }}>Enter</kbd> to begin
+            </div>
+          </div>
+        </div>
+      ) : (
+        <>
+          {sections.map((section, index) => (
         <div key={index} ref={el => sectionRefs.current[index] = el} data-section-index={index}>
           <LessonSection
             section={section}
@@ -380,31 +449,26 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
           />
         </div>
       ))}
+        </>
+      )}
 
-      {isComplete && (
+      {hasStarted && isComplete && (
         <>
-          <div className={classes.navigationButtons}>
-            <button
-              className={classes.navButton}
-              onClick={() => onNavigate && onNavigate('previous')}
-              disabled={!onNavigate}
-            >
-              ← Previous Lesson
-            </button>
+          <div className={classes.navigationButtons} style={{ justifyContent: 'center' }}>
             <button
               className={`${classes.navButton} ${classes.nextButton}`}
               onClick={() => {
                 if (onStatusChange) onStatusChange('completed');
-                if (onNavigate) onNavigate('next');
+                if (onNavigate) onNavigate('home');
               }}
             >
-              Next Lesson →
+              Complete Lesson
             </button>
           </div>
         </>
       )}
 
-      {currentSectionComplete && currentSection < sections.length - 1 && (
+      {hasStarted && currentSectionComplete && currentSection < sections.length - 1 && (
         <div className={classes.continuePrompt + ' continue-prompt continuePrompt'}>
           <span className={classes.promptText}>
             Press <span className={classes.enterKey}>Enter</span> to continue
