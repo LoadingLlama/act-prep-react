@@ -47,10 +47,7 @@ const useStyles = createUseStyles({
   tocItemActive: {
     color: '#000000',
     borderLeft: 'none',
-    fontWeight: '800',
-    fontSize: '0.85rem',
-    paddingLeft: '0.75rem',
-    letterSpacing: '-0.01em'
+    paddingLeft: '0.75rem'
   },
   tocItemLocked: {
     color: '#d1d5db',
@@ -85,14 +82,14 @@ const LessonTableOfContents = ({ sections, currentSection }) => {
 
     sections.forEach((section, index) => {
       if (section.type !== 'quiz' && section.content) {
-        // Extract h3 tags
-        const h3Matches = section.content.match(/<h3[^>]*>(.*?)<\/h3>/g);
+        // Extract h4 tags (subsections)
+        const h4Matches = section.content.match(/<h4[^>]*>(.*?)<\/h4>/g);
 
-        if (h3Matches) {
-          h3Matches.forEach(match => {
+        if (h4Matches) {
+          h4Matches.forEach(match => {
             const title = match
-              .replace(/<h3[^>]*>/, '')
-              .replace('</h3>', '')
+              .replace(/<h4[^>]*>/, '')
+              .replace('</h4>', '')
               .replace(/<[^>]*>/g, '')
               .replace(/^\d+\.\s*/, '') // Remove leading numbers
               .trim();
@@ -114,7 +111,7 @@ const LessonTableOfContents = ({ sections, currentSection }) => {
   const handleHeadingClick = (sectionIndex) => {
     const sectionElement = document.querySelector(`[data-section-index="${sectionIndex}"]`);
     if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      sectionElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   };
 
@@ -127,7 +124,11 @@ const LessonTableOfContents = ({ sections, currentSection }) => {
       <div className={classes.tocHeader}>On this page</div>
       {headings.map((heading, index) => {
         const isLocked = heading.sectionIndex > currentSection;
-        const isActive = heading.sectionIndex === currentSection;
+
+        // Check if current section is within this heading's range
+        const nextHeading = headings[index + 1];
+        const isActive = currentSection >= heading.sectionIndex &&
+                        (!nextHeading || currentSection < nextHeading.sectionIndex);
 
         return (
           <div

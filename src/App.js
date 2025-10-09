@@ -4,6 +4,8 @@ import StatusIcon from './components/StatusIcon';
 import ProgressiveLessonRenderer from './components/ProgressiveLessonRenderer';
 import AIChat from './components/AIChat';
 import DiagnosticTest from './components/DiagnosticTest';
+import Sidebar from './components/Sidebar';
+import Home from './components/Home';
 import { buttonStyles } from './utils/sharedStyles';
 import { storage, lessonUtils, domUtils } from './utils/helpers';
 import { getAllLessons } from './utils/lessonsDb';
@@ -30,11 +32,14 @@ const useStyles = createUseStyles({
     }
   },
   container: {
-    maxWidth: '1200px',
-    margin: '0 auto',
     minHeight: '100vh',
     display: 'flex',
-    flexDirection: 'column',
+    background: '#fafbfc'
+  },
+  mainContent: {
+    marginLeft: '260px',
+    flex: 1,
+    minHeight: '100vh',
     background: '#fafbfc'
   },
   header: {
@@ -107,10 +112,14 @@ const useStyles = createUseStyles({
   },
   content: {
     flex: 1,
-    padding: '1rem 1.5rem',
+    padding: '2rem 4rem',
     maxWidth: '1400px',
     margin: '0 auto',
-    width: '100%'
+    width: '100%',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    lineHeight: 1.7,
+    color: '#1a202c',
+    fontSize: '16px'
   },
   tabContent: {
     display: 'none',
@@ -128,45 +137,60 @@ const useStyles = createUseStyles({
       transform: 'translateY(0)'
     }
   },
+  '@keyframes fadeSlideDown': {
+    from: {
+      opacity: 0,
+      transform: 'translateY(-8px)'
+    },
+    to: {
+      opacity: 1,
+      transform: 'translateY(0)'
+    }
+  },
   contentSection: {
     margin: '0'
   },
   sectionTitle: {
-    fontSize: '1.1rem',
-    fontWeight: 600,
-    color: '#111827',
-    marginBottom: '0.75rem',
+    fontSize: '2.5rem',
+    fontWeight: 900,
+    color: '#000000',
+    marginBottom: '2rem',
     marginTop: '0',
-    textAlign: 'left'
+    textAlign: 'left',
+    lineHeight: '1.2',
+    letterSpacing: '-0.04em'
   },
   testGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
-    gap: '0.75rem',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+    gap: '1.5rem',
     marginTop: '0'
   },
   card: {
     background: '#ffffff',
     border: '1px solid #e5e7eb',
     borderRadius: '6px',
-    padding: '0.85rem 1rem',
-    transition: 'all 0.15s ease',
+    padding: '1.75rem 1.5rem',
+    transition: 'all 0.2s ease',
     cursor: 'pointer',
     '&:hover': {
       background: '#f9fafb',
-      borderColor: '#d1d5db'
+      borderColor: '#d1d5db',
+      transform: 'translateY(-2px)',
+      boxShadow: '0 4px 6px rgba(0,0,0,0.05)'
     },
     '& h3': {
-      fontSize: '0.9rem',
-      fontWeight: 600,
-      marginBottom: '0.25rem',
-      color: '#111827'
+      fontSize: '1.125rem',
+      fontWeight: 700,
+      marginBottom: '0.5rem',
+      color: '#000000',
+      letterSpacing: '-0.01em'
     },
     '& p': {
       color: '#6b7280',
       marginBottom: '0',
-      fontSize: '0.8rem',
-      lineHeight: '1.3',
+      fontSize: '0.95rem',
+      lineHeight: '1.5',
       display: 'none'
     }
   },
@@ -185,123 +209,368 @@ const useStyles = createUseStyles({
   },
   sectionFilters: {
     display: 'flex',
-    justifyContent: 'flex-start',
-    gap: '0.5rem',
-    marginBottom: '0.75rem',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    gap: '0.75rem',
+    marginBottom: '2rem',
+    flexWrap: 'wrap'
+  },
+  filterButtons: {
+    display: 'flex',
+    gap: '0.75rem',
     flexWrap: 'wrap'
   },
   sectionFilter: {
     background: 'transparent',
     border: '1px solid #e5e7eb',
     color: '#6b7280',
-    padding: '0.35rem 0.75rem',
-    borderRadius: '4px',
+    padding: '0.5rem 1rem',
+    borderRadius: '6px',
     cursor: 'pointer',
-    fontSize: '0.8rem',
+    fontSize: '0.95rem',
     fontWeight: 500,
-    transition: 'all 0.15s ease',
+    transition: 'all 0.2s ease',
     '&:hover': {
       background: '#f9fafb',
       borderColor: '#d1d5db',
-      color: '#1a1a1a'
+      color: '#000000'
     },
     '&.active': {
-      background: '#1a1a1a',
+      background: '#000000',
       color: 'white',
-      borderColor: '#1a1a1a'
+      borderColor: '#000000',
+      fontWeight: 600
+    }
+  },
+  viewToggle: {
+    display: 'flex',
+    gap: '0.25rem',
+    background: '#f9fafb',
+    border: '1px solid #e5e7eb',
+    borderRadius: '6px',
+    padding: '0.25rem'
+  },
+  viewToggleButton: {
+    background: 'transparent',
+    border: 'none',
+    padding: '0.4rem 0.6rem',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    color: '#6b7280',
+    transition: 'all 0.2s ease',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    '&:hover': {
+      color: '#000000',
+      background: '#e5e7eb'
+    },
+    '&.active': {
+      background: '#ffffff',
+      color: '#000000',
+      boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
     }
   },
   lessonsGrid: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0',
+    marginTop: '0',
+    maxWidth: '1400px'
+  },
+  unitCard: {
+    background: '#ffffff',
+    border: '1px solid #e5e7eb',
+    borderRadius: '8px',
+    padding: '1.5rem',
+    transition: 'all 0.2s ease',
+    marginTop: '0.75rem',
+    '&:first-of-type': {
+      marginTop: '0.75rem'
+    }
+  },
+  unitHeader: {
+    marginBottom: '0.75rem'
+  },
+  unitLabel: {
+    fontSize: '0.75rem',
+    fontWeight: '600',
+    color: '#6b7280',
+    textTransform: 'uppercase',
+    letterSpacing: '0.05em',
+    marginBottom: '0.5rem'
+  },
+  unitTitle: {
+    fontSize: '1.25rem',
+    fontWeight: '700',
+    color: '#000000',
+    marginBottom: '0.75rem',
+    letterSpacing: '-0.01em'
+  },
+  unitProgress: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '1rem',
+    marginTop: '0.75rem'
+  },
+  unitProgressText: {
+    fontSize: '0.9rem',
+    color: '#6b7280',
+    fontWeight: '500'
+  },
+  unitProgressBar: {
+    flex: 1,
+    height: '8px',
+    background: '#e5e7eb',
+    borderRadius: '4px',
+    overflow: 'hidden'
+  },
+  unitProgressFill: {
+    height: '100%',
+    background: '#3b82f6',
+    borderRadius: '4px',
+    transition: 'width 0.3s ease'
+  },
+  lessonsList: {
     display: 'grid',
-    gap: '0.4rem',
-    marginTop: '0'
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gap: '0.75rem'
+  },
+  lessonsListView: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem'
   },
   lessonItem: {
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '0.5rem 0.75rem',
+    padding: '1rem',
     border: '1px solid #e5e7eb',
-    borderRadius: '4px',
-    transition: 'all 0.1s ease',
+    borderRadius: '8px',
+    transition: 'all 0.2s ease',
     background: '#ffffff',
+    minHeight: '130px',
     cursor: 'pointer',
-    borderLeft: '2px solid #e5e7eb',
+    position: 'relative',
+    overflow: 'hidden',
     '&:hover': {
-      background: '#f9fafb',
-      borderColor: '#d1d5db'
+      borderColor: '#3b82f6',
+      boxShadow: '0 4px 12px rgba(59, 130, 246, 0.15)',
+      transform: 'translateY(-2px)',
+      background: '#fafbff',
+      '& $lessonInfo h4': {
+        color: '#000000'
+      }
     },
     '&.completed': {
-      background: '#f0fdf4',
-      borderLeftColor: '#22c55e',
-      opacity: 0.85,
+      borderLeft: '3px solid #10b981',
       '& h4': {
-        textDecoration: 'line-through',
-        color: '#6b7280'
-      },
-      '& p': {
-        display: 'none'
+        color: '#000000'
       }
     },
     '&.in-progress': {
-      borderLeftColor: '#f59e0b',
-      background: '#fffbeb'
+      borderLeft: '3px solid #fbbf24',
+      '&:hover': {
+        background: '#fafbff'
+      }
     },
     '&.hidden': {
       display: 'none'
     }
   },
+  lessonItemListView: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: '0.75rem 1rem',
+    border: '1px solid #e5e7eb',
+    borderRadius: '6px',
+    transition: 'all 0.2s ease',
+    background: '#ffffff',
+    minHeight: 'auto',
+    cursor: 'pointer',
+    position: 'relative',
+    gap: '1rem',
+    '&:hover': {
+      borderColor: '#3b82f6',
+      boxShadow: '0 2px 8px rgba(59, 130, 246, 0.1)',
+      background: '#fafbff'
+    },
+    '&.completed': {
+      borderLeft: '3px solid #10b981'
+    },
+    '&.in-progress': {
+      borderLeft: '3px solid #fbbf24'
+    }
+  },
   lessonInfo: {
     flex: 1,
+    marginBottom: '0.5rem',
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
     '& h4': {
-      fontSize: '0.85rem',
-      fontWeight: 500,
+      fontSize: '0.95rem',
+      fontWeight: 600,
       marginBottom: '0',
-      color: '#111827'
+      color: '#000000',
+      letterSpacing: '-0.01em',
+      lineHeight: '1.4',
+      width: '100%',
+      textAlign: 'left'
     },
     '& p': {
       display: 'none'
     }
   },
+  lessonInfoListView: {
+    flex: 1,
+    marginBottom: '0',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: '1rem',
+    '& h4': {
+      fontSize: '0.9rem',
+      fontWeight: 600,
+      marginBottom: '0',
+      color: '#000000',
+      letterSpacing: '-0.01em',
+      lineHeight: '1.3'
+    }
+  },
+  lessonActionsListView: {
+    display: 'flex',
+    gap: '0.5rem',
+    marginTop: '0',
+    paddingTop: '0',
+    flexShrink: 0
+  },
+  keyTermsTags: {
+    display: 'flex',
+    flexWrap: 'nowrap',
+    gap: '0.35rem',
+    marginTop: '0.5rem',
+    width: '100%',
+    overflow: 'hidden'
+  },
+  keyTermTag: {
+    fontSize: '0.55rem',
+    padding: '0.08rem 0.35rem',
+    background: '#f9fafb',
+    color: '#9ca3af',
+    borderRadius: '8px',
+    border: '1px solid #e5e7eb',
+    fontWeight: '400',
+    cursor: 'pointer',
+    transition: 'all 0.2s',
+    whiteSpace: 'nowrap',
+    position: 'relative',
+    '&:hover': {
+      background: '#eff6ff',
+      color: '#6b7280',
+      borderColor: '#dbeafe'
+    }
+  },
+  learnIndicator: {
+    fontSize: '1.1rem',
+    color: '#2563eb',
+    fontWeight: 700,
+    marginTop: '0.75rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.6rem',
+    opacity: 0,
+    transition: 'opacity 0.2s ease',
+    '$lessonItem:hover &': {
+      opacity: 1
+    }
+  },
   lessonStatus: {
-    display: 'none'
+    position: 'absolute',
+    top: '0.75rem',
+    right: '0.75rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    zIndex: 10
+  },
+  lessonActions: {
+    display: 'flex',
+    gap: '0.5rem',
+    marginTop: 'auto',
+    paddingTop: '0.75rem',
+    transition: 'opacity 0.2s ease'
+  },
+  lessonPracticeButton: {
+    width: '100%',
+    padding: '0.5rem 0.75rem',
+    border: '1px solid #e5e7eb',
+    borderRadius: '6px',
+    fontSize: '0.8rem',
+    fontWeight: 500,
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    background: 'white',
+    color: '#6b7280',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.4rem',
+    '&:hover': {
+      background: '#f9fafb',
+      borderColor: '#d1d5db',
+      color: '#374151',
+      transform: 'scale(1.01)'
+    }
   },
   sectionHeader: {
     gridColumn: '1 / -1',
-    margin: '0.5rem 0 0.25rem',
-    padding: '0.5rem 0.75rem',
-    background: '#f9fafb',
+    margin: '1.5rem 0 0',
+    padding: '0.85rem 1.25rem',
+    background: '#fafbfc',
     border: '1px solid #e5e7eb',
-    borderRadius: '4px',
+    borderRadius: '8px',
     cursor: 'pointer',
-    transition: 'all 0.15s ease',
+    transition: 'all 0.25s ease',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     '&:hover': {
       background: '#f3f4f6',
-      borderColor: '#d1d5db'
+      borderColor: '#d1d5db',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.04)'
     },
     '&:first-child': {
       marginTop: '0'
     },
     '& h3': {
-      fontSize: '0.85rem',
-      fontWeight: 600,
-      color: '#111827',
+      fontSize: '1.125rem',
+      fontWeight: 700,
+      color: '#000000',
       margin: 0,
       display: 'flex',
       alignItems: 'center',
-      gap: '0.5rem'
+      gap: '0.5rem',
+      letterSpacing: '-0.01em'
     }
   },
   sectionHeaderIcon: {
     fontSize: '0.7rem',
     color: '#9ca3af',
-    transition: 'transform 0.15s ease',
+    transition: 'transform 0.25s ease',
     '&.expanded': {
       transform: 'rotate(90deg)'
     }
+  },
+  expandedSectionContent: {
+    animation: 'fadeSlideDown 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
+    gridColumn: '1 / -1',
+    display: 'contents'
   },
   // Lesson Modal Styles
   lessonModal: {
@@ -594,18 +863,66 @@ const useStyles = createUseStyles({
       borderRadius: '2px',
       transition: 'width 0.3s ease'
     }
+  },
+  keyTermsPopup: {
+    position: 'fixed',
+    background: 'white',
+    borderRadius: '6px',
+    padding: '0.5rem 0.65rem',
+    zIndex: 2000,
+    pointerEvents: 'none',
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.04)',
+    minWidth: '160px',
+    maxWidth: '220px',
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      top: '100%',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: 0,
+      height: 0,
+      borderLeft: '5px solid transparent',
+      borderRight: '5px solid transparent',
+      borderTop: '5px solid white'
+    }
+  },
+  keyTermsPopupTitle: {
+    fontSize: '0.6rem',
+    fontWeight: '600',
+    color: '#9ca3af',
+    marginBottom: '0.4rem',
+    textTransform: 'uppercase',
+    letterSpacing: '0.05em'
+  },
+  keyTermsPopupList: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.25rem'
+  },
+  keyTermsPopupItem: {
+    fontSize: '0.7rem',
+    color: '#374151',
+    padding: '0.2rem 0',
+    lineHeight: '1.3',
+    borderBottom: '1px solid #f3f4f6',
+    '&:last-child': {
+      borderBottom: 'none'
+    }
   }
 });
 
 
 function App() {
   const classes = useStyles();
-  const [activeTab, setActiveTab] = useState('tests');
+  const [activeTab, setActiveTab] = useState('home');
   const [activeSection, setActiveSection] = useState('all');
   const [lessonContent, setLessonContent] = useState({});
   const [currentLesson, setCurrentLesson] = useState(null);
   const [lessonModalOpen, setLessonModalOpen] = useState(false);
   const [diagnosticTestOpen, setDiagnosticTestOpen] = useState(false);
+  const [hoveredMoreTag, setHoveredMoreTag] = useState(null);
+  const [moreTagPosition, setMoreTagPosition] = useState({ top: 0, left: 0 });
   const [lessonProgress, setLessonProgress] = useState(() => {
     return storage.get('actPrepProgress', {});
   });
@@ -613,6 +930,14 @@ function App() {
     return storage.get('expandedSections', { english: true, math: false, reading: false, science: false });
   });
   const [lessonMode, setLessonMode] = useState('review'); // 'review' or 'practice'
+  const [viewMode, setViewMode] = useState(() => {
+    return storage.get('lessonsViewMode', 'grid'); // 'grid' or 'list'
+  });
+
+  // Save view mode to localStorage when it changes
+  useEffect(() => {
+    storage.set('lessonsViewMode', viewMode);
+  }, [viewMode]);
 
   useEffect(() => {
     // Load lessons from Supabase
@@ -650,10 +975,11 @@ function App() {
     storage.set('expandedSections', newExpandedSections);
   };
 
-  const openLesson = (lessonId) => {
+  const openLesson = (lessonId, mode = 'review') => {
     setCurrentLesson(lessonId);
     setLessonModalOpen(true);
-    setLessonMode('review'); // Reset to review mode when opening a lesson
+    setLessonMode(mode);
+    setHoveredMoreTag(null); // Clear hover popup
     domUtils.preventBodyScroll();
   };
 
@@ -722,6 +1048,202 @@ function App() {
             <h2 className={classes.sectionTitle}>Study Lessons</h2>
 
             <div className={classes.sectionFilters}>
+              <div className={classes.filterButtons}>
+                <button
+                  className={`${classes.sectionFilter} ${activeSection === 'all' ? 'active' : ''}`}
+                  onClick={() => handleSectionFilter('all')}
+                >
+                  All Sections
+                </button>
+                <button
+                  className={`${classes.sectionFilter} ${activeSection === 'english' ? 'active' : ''}`}
+                  onClick={() => handleSectionFilter('english')}
+                >
+                  English
+                </button>
+                <button
+                  className={`${classes.sectionFilter} ${activeSection === 'math' ? 'active' : ''}`}
+                  onClick={() => handleSectionFilter('math')}
+                >
+                  Math
+                </button>
+                <button
+                  className={`${classes.sectionFilter} ${activeSection === 'reading' ? 'active' : ''}`}
+                  onClick={() => handleSectionFilter('reading')}
+                >
+                  Reading
+                </button>
+                <button
+                  className={`${classes.sectionFilter} ${activeSection === 'science' ? 'active' : ''}`}
+                  onClick={() => handleSectionFilter('science')}
+                >
+                  Science
+                </button>
+              </div>
+
+              <div className={classes.viewToggle}>
+                <button
+                  className={`${classes.viewToggleButton} ${viewMode === 'grid' ? 'active' : ''}`}
+                  onClick={() => setViewMode('grid')}
+                  title="Grid view"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                </button>
+                <button
+                  className={`${classes.viewToggleButton} ${viewMode === 'list' ? 'active' : ''}`}
+                  onClick={() => setViewMode('list')}
+                  title="List view"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div className={classes.lessonsGrid}>
+              {(() => {
+                // Group lessons by category
+                const groupedLessons = filteredLessons.reduce((acc, lesson) => {
+                  const category = lesson.category || 'Other';
+                  if (!acc[category]) acc[category] = [];
+                  acc[category].push(lesson);
+                  return acc;
+                }, {});
+
+                let unitNumber = 0;
+                return Object.entries(groupedLessons).map(([category, lessons]) => {
+                  if (category === 'Introduction' || category === 'Practice Test') return null;
+
+                  unitNumber++;
+
+                  // Calculate progress for this unit
+                  const completedLessons = lessons.filter(l => getLessonStatus(l.id) === 'completed').length;
+                  const totalLessons = lessons.length;
+                  const progressPercent = totalLessons > 0 ? (completedLessons / totalLessons) * 100 : 0;
+
+                  return (
+                    <div key={category} className={classes.unitCard}>
+                      <div className={classes.unitHeader}>
+                        <div className={classes.unitLabel}>UNIT {unitNumber}</div>
+                        <div className={classes.unitTitle}>{category}</div>
+                        <div className={classes.unitProgress}>
+                          <span className={classes.unitProgressText}>
+                            {completedLessons} / {totalLessons} lessons
+                          </span>
+                          <div className={classes.unitProgressBar}>
+                            <div className={classes.unitProgressFill} style={{ width: `${progressPercent}%` }} />
+                          </div>
+                        </div>
+                      </div>
+                      <div className={viewMode === 'grid' ? classes.lessonsList : classes.lessonsListView}>
+                        {lessons.map((lesson) => (
+                          <div
+                            key={lesson.id}
+                            className={`${viewMode === 'grid' ? classes.lessonItem : classes.lessonItemListView} ${getLessonStatus(lesson.id)}`}
+                            onClick={() => openLesson(lesson.id, 'review')}
+                            onMouseLeave={() => setHoveredMoreTag(null)}
+                          >
+                            <div className={classes.lessonStatus}>
+                              <StatusIcon status={getLessonStatus(lesson.id)} />
+                            </div>
+                            <div className={viewMode === 'grid' ? classes.lessonInfo : classes.lessonInfoListView}>
+                              <h4>
+                                {lesson.chapterNum && (
+                                  <div style={{ color: '#3b82f6', fontWeight: '600', fontSize: '0.85rem', marginBottom: '0.35rem' }}>
+                                    Topic {lesson.chapterNum}
+                                  </div>
+                                )}
+                                <div style={{ color: '#000000', fontWeight: '500', fontSize: '0.9rem', lineHeight: '1.3' }}>
+                                  {lesson.title}
+                                </div>
+                              </h4>
+                              {lesson.keyTerms && lesson.keyTerms.length > 0 && (
+                                <div className={classes.keyTermsTags}>
+                                  {lesson.keyTerms.slice(0, 2).map((term, index) => (
+                                    <div
+                                      key={index}
+                                      className={classes.keyTermTag}
+                                    >
+                                      {term}
+                                    </div>
+                                  ))}
+                                  {lesson.keyTerms.length > 2 && (
+                                    <div
+                                      className={classes.keyTermTag}
+                                      onMouseEnter={(e) => {
+                                        e.stopPropagation();
+                                        const rect = e.currentTarget.getBoundingClientRect();
+                                        setMoreTagPosition({
+                                          top: rect.top - 8,
+                                          left: rect.left + rect.width / 2
+                                        });
+                                        setHoveredMoreTag(lesson);
+                                      }}
+                                      onMouseLeave={(e) => {
+                                        e.stopPropagation();
+                                        setHoveredMoreTag(null);
+                                      }}
+                                    >
+                                      +{lesson.keyTerms.length - 2} more
+                                    </div>
+                                  )}
+                                </div>
+                              )}
+                            </div>
+                            <div className={viewMode === 'grid' ? classes.lessonActions : classes.lessonActionsListView}>
+                              <button
+                                className={classes.lessonPracticeButton}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  openLesson(lesson.id, 'practice');
+                                }}
+                              >
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                  <path d="M12 20h9"></path>
+                                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                </svg>
+                                Practice
+                              </button>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                });
+              })()}
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // When "All Sections" is selected, show collapsible sections
+    const sections = [
+      { key: 'english', title: 'English Section', lessons: lessonStructure.filter(l => l.section === 'english') },
+      { key: 'math', title: 'Math Section', lessons: lessonStructure.filter(l => l.section === 'math') },
+      { key: 'reading', title: 'Reading Section', lessons: lessonStructure.filter(l => l.section === 'reading') },
+      { key: 'science', title: 'Science Section', lessons: lessonStructure.filter(l => l.section === 'science') }
+    ];
+
+    return (
+      <div className={`${classes.tabContent} ${activeTab === 'lessons' ? 'active' : ''}`}>
+        <div className={classes.contentSection}>
+          <h2 className={classes.sectionTitle}>Study Lessons</h2>
+
+          <div className={classes.sectionFilters}>
+            <div className={classes.filterButtons}>
               <button
                 className={`${classes.sectionFilter} ${activeSection === 'all' ? 'active' : ''}`}
                 onClick={() => handleSectionFilter('all')}
@@ -754,95 +1276,34 @@ function App() {
               </button>
             </div>
 
-            <div className={classes.lessonsGrid}>
-              {(() => {
-                // Group lessons by category
-                const groupedLessons = filteredLessons.reduce((acc, lesson) => {
-                  const category = lesson.category || 'Other';
-                  if (!acc[category]) acc[category] = [];
-                  acc[category].push(lesson);
-                  return acc;
-                }, {});
-
-                return Object.entries(groupedLessons).map(([category, lessons]) => (
-                  <React.Fragment key={category}>
-                    {category !== 'Introduction' && category !== 'Practice Test' && (
-                      <div style={{
-                        fontSize: '1rem',
-                        fontWeight: '600',
-                        color: category.startsWith('Practice') ? '#9ca3af' : '#1a1a1a',
-                        marginTop: category === Object.keys(groupedLessons)[0] ? '0' : '1.5rem',
-                        marginBottom: '0.75rem',
-                        paddingBottom: '0.5rem',
-                        borderBottom: '2px solid #e5e7eb'
-                      }}>
-                        {category}
-                      </div>
-                    )}
-                    {lessons.map((lesson) => (
-                      <div key={lesson.id} className={`${classes.lessonItem} ${getLessonStatus(lesson.id)}`} onClick={() => openLesson(lesson.id)}>
-                        <div className={classes.lessonInfo}>
-                          <h4>
-                            {lesson.chapterNum && <span style={{ color: '#1a73e8', fontWeight: '600', marginRight: '0.5rem' }}>{lesson.chapterNum}</span>}
-                            {lesson.title}
-                          </h4>
-                        </div>
-                        <StatusIcon status={getLessonStatus(lesson.id)} />
-                      </div>
-                    ))}
-                  </React.Fragment>
-                ));
-              })()}
+            <div className={classes.viewToggle}>
+              <button
+                className={`${classes.viewToggleButton} ${viewMode === 'grid' ? 'active' : ''}`}
+                onClick={() => setViewMode('grid')}
+                title="Grid view"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              </button>
+              <button
+                className={`${classes.viewToggleButton} ${viewMode === 'list' ? 'active' : ''}`}
+                onClick={() => setViewMode('list')}
+                title="List view"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+              </button>
             </div>
-          </div>
-        </div>
-      );
-    }
-
-    // When "All Sections" is selected, show collapsible sections
-    const sections = [
-      { key: 'english', title: 'English Section', lessons: lessonStructure.filter(l => l.section === 'english') },
-      { key: 'math', title: 'Math Section', lessons: lessonStructure.filter(l => l.section === 'math') },
-      { key: 'reading', title: 'Reading Section', lessons: lessonStructure.filter(l => l.section === 'reading') },
-      { key: 'science', title: 'Science Section', lessons: lessonStructure.filter(l => l.section === 'science') }
-    ];
-
-    return (
-      <div className={`${classes.tabContent} ${activeTab === 'lessons' ? 'active' : ''}`}>
-        <div className={classes.contentSection}>
-          <h2 className={classes.sectionTitle}>Study Lessons</h2>
-
-          <div className={classes.sectionFilters}>
-            <button
-              className={`${classes.sectionFilter} ${activeSection === 'all' ? 'active' : ''}`}
-              onClick={() => handleSectionFilter('all')}
-            >
-              All Sections
-            </button>
-            <button
-              className={`${classes.sectionFilter} ${activeSection === 'english' ? 'active' : ''}`}
-              onClick={() => handleSectionFilter('english')}
-            >
-              English
-            </button>
-            <button
-              className={`${classes.sectionFilter} ${activeSection === 'math' ? 'active' : ''}`}
-              onClick={() => handleSectionFilter('math')}
-            >
-              Math
-            </button>
-            <button
-              className={`${classes.sectionFilter} ${activeSection === 'reading' ? 'active' : ''}`}
-              onClick={() => handleSectionFilter('reading')}
-            >
-              Reading
-            </button>
-            <button
-              className={`${classes.sectionFilter} ${activeSection === 'science' ? 'active' : ''}`}
-              onClick={() => handleSectionFilter('science')}
-            >
-              Science
-            </button>
           </div>
 
           <div className={classes.lessonsGrid}>
@@ -863,35 +1324,113 @@ function App() {
                       ▶
                     </span>
                   </div>
-                  {expandedSections[section.key] && Object.entries(groupedLessons).map(([category, lessons]) => (
-                    <React.Fragment key={`${section.key}-${category}`}>
-                      {category !== 'Introduction' && category !== 'Practice Test' && (
-                        <div style={{
-                          fontSize: '0.95rem',
-                          fontWeight: '600',
-                          color: category.startsWith('Practice') ? '#9ca3af' : '#4a5568',
-                          marginTop: '1rem',
-                          marginBottom: '0.5rem',
-                          marginLeft: '1rem',
-                          paddingBottom: '0.4rem',
-                          borderBottom: '1px solid #e5e7eb'
-                        }}>
-                          {category}
-                        </div>
-                      )}
-                      {lessons.map((lesson) => (
-                        <div key={lesson.id} className={`${classes.lessonItem} ${getLessonStatus(lesson.id)}`} onClick={() => openLesson(lesson.id)}>
-                          <div className={classes.lessonInfo}>
-                            <h4>
-                              {lesson.chapterNum && <span style={{ color: '#1a73e8', fontWeight: '600', marginRight: '0.5rem' }}>{lesson.chapterNum}</span>}
-                              {lesson.title}
-                            </h4>
+                  {expandedSections[section.key] && (
+                    <div className={classes.expandedSectionContent}>
+                      {(() => {
+                        let unitNumber = 0;
+                        return Object.entries(groupedLessons).map(([category, lessons]) => {
+                      if (category === 'Introduction' || category === 'Practice Test') return null;
+
+                      unitNumber++;
+
+                      // Calculate progress for this unit
+                      const completedLessons = lessons.filter(l => getLessonStatus(l.id) === 'completed').length;
+                      const totalLessons = lessons.length;
+                      const progressPercent = totalLessons > 0 ? (completedLessons / totalLessons) * 100 : 0;
+
+                      return (
+                        <div key={`${section.key}-${category}`} className={classes.unitCard} style={{ gridColumn: '1 / -1' }}>
+                          <div className={classes.unitHeader}>
+                            <div className={classes.unitLabel}>UNIT {unitNumber}</div>
+                            <div className={classes.unitTitle}>{category}</div>
+                            <div className={classes.unitProgress}>
+                              <span className={classes.unitProgressText}>
+                                {completedLessons} / {totalLessons} lessons
+                              </span>
+                              <div className={classes.unitProgressBar}>
+                                <div className={classes.unitProgressFill} style={{ width: `${progressPercent}%` }} />
+                              </div>
+                            </div>
                           </div>
-                          <StatusIcon status={getLessonStatus(lesson.id)} />
+                          <div className={viewMode === 'grid' ? classes.lessonsList : classes.lessonsListView}>
+                            {lessons.map((lesson) => (
+                              <div
+                                key={lesson.id}
+                                className={`${viewMode === 'grid' ? classes.lessonItem : classes.lessonItemListView} ${getLessonStatus(lesson.id)}`}
+                                onClick={() => openLesson(lesson.id, 'review')}
+                                onMouseLeave={() => setHoveredMoreTag(null)}
+                              >
+                                <div className={classes.lessonStatus}>
+                                  <StatusIcon status={getLessonStatus(lesson.id)} />
+                                </div>
+                                <div className={viewMode === 'grid' ? classes.lessonInfo : classes.lessonInfoListView}>
+                                  <h4>
+                                    {lesson.chapterNum && (
+                                      <div style={{ color: '#3b82f6', fontWeight: '600', fontSize: '0.85rem', marginBottom: '0.35rem' }}>
+                                        Topic {lesson.chapterNum}
+                                      </div>
+                                    )}
+                                    <div style={{ color: '#000000', fontWeight: '500', fontSize: '0.9rem', lineHeight: '1.3' }}>
+                                      {lesson.title}
+                                    </div>
+                                  </h4>
+                                  {lesson.keyTerms && lesson.keyTerms.length > 0 && (
+                                    <div className={classes.keyTermsTags}>
+                                      {lesson.keyTerms.slice(0, 2).map((term, index) => (
+                                        <div
+                                          key={index}
+                                          className={classes.keyTermTag}
+                                        >
+                                          {term}
+                                        </div>
+                                      ))}
+                                      {lesson.keyTerms.length > 2 && (
+                                        <div
+                                          className={classes.keyTermTag}
+                                          onMouseEnter={(e) => {
+                                            e.stopPropagation();
+                                            const rect = e.currentTarget.getBoundingClientRect();
+                                            setMoreTagPosition({
+                                              top: rect.top - 8,
+                                              left: rect.left + rect.width / 2
+                                            });
+                                            setHoveredMoreTag(lesson);
+                                          }}
+                                          onMouseLeave={(e) => {
+                                            e.stopPropagation();
+                                            setHoveredMoreTag(null);
+                                          }}
+                                        >
+                                          +{lesson.keyTerms.length - 2} more
+                                        </div>
+                                      )}
+                                    </div>
+                                  )}
+                                </div>
+                                <div className={viewMode === 'grid' ? classes.lessonActions : classes.lessonActionsListView}>
+                                  <button
+                                    className={classes.lessonPracticeButton}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      openLesson(lesson.id, 'practice');
+                                    }}
+                                  >
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                      <path d="M12 20h9"></path>
+                                      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                    </svg>
+                                    Practice
+                                  </button>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
                         </div>
-                      ))}
-                    </React.Fragment>
-                  ))}
+                      );
+                    });
+                      })()}
+                    </div>
+                  )}
                 </React.Fragment>
               );
             })}
@@ -1035,35 +1574,19 @@ function App() {
 
   return (
     <div className={classes.container}>
-      <header className={classes.header}>
-        <div className={classes.headerContent}>
-          <h1 className={classes.logo}>actclass.org</h1>
-          <div className={classes.subtitle}>
-            ACT Prep Platform
-          </div>
-        </div>
-      </header>
+      <Sidebar activeView={activeTab} onNavigate={handleTabClick} />
 
-      <div className={classes.navContainer}>
-        <div className={classes.navTabs}>
-          <button
-            className={`${classes.tab} ${activeTab === 'tests' ? 'active' : ''}`}
-            onClick={() => handleTabClick('tests')}
-          >
-            Tests
-          </button>
-          <button
-            className={`${classes.tab} ${activeTab === 'lessons' ? 'active' : ''}`}
-            onClick={() => handleTabClick('lessons')}
-          >
-            Lessons
-          </button>
+      <div className={classes.mainContent}>
+        <div className={classes.content}>
+          {activeTab === 'home' && (
+            <Home
+              lessonProgress={lessonProgress}
+              lessonStructure={lessonStructure}
+            />
+          )}
+          <TestsContent />
+          <LessonsContent />
         </div>
-      </div>
-
-      <div className={classes.content}>
-        <TestsContent />
-        <LessonsContent />
       </div>
 
       <LessonModal />
@@ -1071,6 +1594,27 @@ function App() {
       {/* Diagnostic Test Modal */}
       {diagnosticTestOpen && (
         <DiagnosticTest onClose={() => setDiagnosticTestOpen(false)} />
+      )}
+
+      {/* Key Terms Popup */}
+      {hoveredMoreTag && (
+        <div
+          className={classes.keyTermsPopup}
+          style={{
+            top: `${moreTagPosition.top}px`,
+            left: `${moreTagPosition.left}px`,
+            transform: 'translate(-50%, -100%)'
+          }}
+        >
+          <div className={classes.keyTermsPopupTitle}>Key Terms</div>
+          <div className={classes.keyTermsPopupList}>
+            {hoveredMoreTag.keyTerms?.map((term, index) => (
+              <div key={index} className={classes.keyTermsPopupItem}>
+                {term}
+              </div>
+            ))}
+          </div>
+        </div>
       )}
 
       {/* AI Chat Component */}
