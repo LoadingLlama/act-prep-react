@@ -6,7 +6,7 @@ export const useInteractiveQuizStyles = createUseStyles({
     border: 'none',
     borderRadius: '0',
     padding: '1.25rem 0',
-    margin: '2rem auto',
+    margin: '4rem auto 2rem auto',
     maxWidth: '1200px',
     boxShadow: 'none',
     background: 'transparent',
@@ -50,20 +50,27 @@ export const useInteractiveQuizStyles = createUseStyles({
     marginBottom: '1rem'
   },
   questionText: {
-    fontSize: '1.65rem',
+    fontSize: '1.3rem',
     color: '#1a202c',
     marginBottom: '1.5rem',
-    lineHeight: '1.8',
+    lineHeight: '1.6',
     fontWeight: '400',
     textAlign: 'left',
-    padding: '1.25rem 0',
-    letterSpacing: '0.01em',
-    fontFamily: '"Times New Roman", Times, Georgia, serif'
+    padding: '0',
+    letterSpacing: 'normal',
+    fontFamily: '"Times New Roman", Times, Georgia, serif',
+    '& u': {
+      fontSize: '1.3rem !important',
+      fontFamily: '"Times New Roman", Times, Georgia, serif !important',
+      lineHeight: '1.6 !important',
+      fontWeight: '400 !important',
+      textDecoration: 'underline'
+    }
   },
   quizOptions: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.5rem',
+    gap: '0',
     marginBottom: '1.5rem'
   },
   quizOption: {
@@ -144,8 +151,9 @@ export const useInteractiveQuizStyles = createUseStyles({
   },
   quizNavigation: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
     alignItems: 'center',
+    gap: '0.75rem',
     borderTop: 'none',
     paddingTop: '0.75rem'
   },
@@ -154,7 +162,7 @@ export const useInteractiveQuizStyles = createUseStyles({
     border: 'none',
     borderRadius: '8px',
     fontSize: '0.95rem',
-    fontWeight: '600',
+    fontWeight: '400',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
     '&.prev': {

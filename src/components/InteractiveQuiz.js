@@ -93,7 +93,7 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
   if (showResults) {
     return (
       <div className={`${classes.interactiveQuiz} ${isFinal ? 'final-quiz' : ''}`}>
-        <h3>{quizData.title} - Results</h3>
+        <h3 style={{ color: '#9ca3af', textAlign: 'center' }}>{quizData.title} - Results</h3>
 
         <div className={classes.quizResults}>
           <div className={`${classes.quizScore} ${isFinal ? 'final-score' : ''}`}>
@@ -138,12 +138,33 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
       <div style={{
         fontSize: '0.95rem',
         fontWeight: '600',
-        color: '#1a73e8',
+        color: '#9ca3af',
         marginBottom: '1rem',
         paddingBottom: '0.75rem',
-        borderBottom: '1px solid #e2e8f0'
+        borderBottom: '1px solid #e2e8f0',
+        textAlign: 'center',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '0.5rem'
       }}>
-        {quizData.title}
+        {quizData.title.replace('Practice:', 'Checkpoint:')}
+        {quizData.title.startsWith('Practice') && (
+          <span style={{
+            fontSize: '0.65rem',
+            fontWeight: '400',
+            color: '#6b7280',
+            backgroundColor: 'transparent',
+            padding: '0.15rem 0.5rem',
+            borderRadius: '4px',
+            border: '1px solid #d1d5db',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.25rem'
+          }}>
+            <span style={{ color: '#10b981' }}>✓</span> ACT VERIFIED
+          </span>
+        )}
       </div>
 
       <div className={classes.quizContainer}>
@@ -162,7 +183,31 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
             <span style={{ fontSize: '0.75rem' }}>Score: {score}/{quizData.questions.length}</span>
           </div>
 
-          <p className={classes.questionText} dangerouslySetInnerHTML={{ __html: question.text }} />
+          <p
+            className={classes.questionText}
+            style={{
+              fontSize: '1.3rem',
+              fontFamily: '"Times New Roman", Times, Georgia, serif',
+              lineHeight: '2',
+              marginBottom: '2.5rem',
+              letterSpacing: '0.015em'
+            }}
+            dangerouslySetInnerHTML={{ __html: question.text }}
+          />
+
+          <div style={{
+            fontSize: '1.3rem',
+            fontWeight: '400',
+            color: '#2d3748',
+            marginTop: '0',
+            marginBottom: '0.25rem',
+            textAlign: 'left',
+            fontFamily: '"Times New Roman", Times, Georgia, serif',
+            letterSpacing: '0.015em',
+            lineHeight: '2'
+          }}>
+            {question.prompt || 'Which of the following is correct?'}
+          </div>
 
           <div className={classes.quizOptions}>
             {question.options.map((option, optionIndex) => {
@@ -183,10 +228,10 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
                   }}
                   style={{
                     display: 'flex',
-                    gap: '1rem',
-                    padding: '0.75rem 0',
+                    gap: '1.25rem',
+                    padding: '0.5rem 0',
                     cursor: hasAnswered ? 'default' : 'pointer',
-                    alignItems: 'flex-start',
+                    alignItems: 'center',
                     borderLeft: showFeedback && isSelected && isCorrectAnswer ? '3px solid #48bb78' :
                                 showFeedback && isSelected && !isCorrectAnswer ? '3px solid #f56565' :
                                 showFeedback && !isSelected && isCorrectAnswer ? '3px solid #48bb78' : 'none',
@@ -199,9 +244,9 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
                 >
                   {/* Radio button / letter circle */}
                   <div style={{
-                    width: '32px',
-                    height: '32px',
-                    minWidth: '32px',
+                    width: '24px',
+                    height: '24px',
+                    minWidth: '24px',
                     borderRadius: '50%',
                     border: isSelected && !showFeedback ? '2px solid #1a73e8' :
                             showFeedback && isSelected && isCorrectAnswer ? '2px solid #48bb78' :
@@ -211,7 +256,7 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontWeight: '600',
-                    fontSize: '0.9rem',
+                    fontSize: '0.7rem',
                     color: isSelected && !showFeedback ? '#1a73e8' :
                             showFeedback && isSelected && isCorrectAnswer ? '#48bb78' :
                             showFeedback && isSelected && !isCorrectAnswer ? '#f56565' :
@@ -230,11 +275,12 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
                   {/* Option text and explanation */}
                   <div style={{ flex: 1 }}>
                     <div style={{
-                      fontSize: '1rem',
+                      fontSize: '1.3rem',
                       color: '#2d3748',
-                      lineHeight: '1.6',
+                      lineHeight: '1.8',
                       marginBottom: showFeedback ? '0.5rem' : '0',
-                      fontFamily: '"Times New Roman", Times, Georgia, serif'
+                      fontFamily: '"Times New Roman", Times, Georgia, serif',
+                      letterSpacing: '0.015em'
                     }}>
                       {option.text}
                     </div>
@@ -274,8 +320,7 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
           onClick={nextQuestion}
           disabled={!hasAnswered}
           style={{
-            opacity: !hasAnswered ? 0.5 : 1,
-            fontWeight: '600'
+            opacity: !hasAnswered ? 0.5 : 1
           }}
         >
           {currentQuestion === quizData.questions.length - 1 ? 'Finish →' : 'Next →'}

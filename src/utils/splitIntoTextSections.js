@@ -39,7 +39,10 @@ export const splitIntoTextSections = (content) => {
       return [];
     }
 
-    const cleanContent = content.trim();
+    // Remove h2 tags from content since they're displayed separately
+    let cleanContent = content.trim();
+    cleanContent = cleanContent.replace(/<h2[^>]*>.*?<\/h2>/gi, '');
+
     const sections = [];
 
     // Strategy: Create readable chunks by splitting on logical boundaries

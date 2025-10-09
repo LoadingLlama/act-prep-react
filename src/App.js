@@ -8,6 +8,7 @@ import DiagnosticTest from './components/DiagnosticTest';
 import { spacing, borderRadius, buttonStyles } from './utils/sharedStyles';
 import { storage, scriptLoader, statusUtils, lessonUtils, domUtils } from './utils/helpers';
 import { getAllLessons } from './utils/lessonsDb';
+import { lessonStructure } from './data/lessonStructure';
 
 const useStyles = createUseStyles({
   '@global': {
@@ -479,7 +480,8 @@ const useStyles = createUseStyles({
       color: '#718096',
       fontStyle: 'italic',
       marginBottom: '2rem',
-      padding: '1rem 1.25rem',
+      marginTop: '0rem',
+      padding: '1rem 1.25rem 1rem 2rem',
       background: '#f8f9fa',
       borderLeft: '4px solid #1a1a1a',
       borderRadius: '0 4px 4px 0'
@@ -596,117 +598,6 @@ const useStyles = createUseStyles({
   }
 });
 
-// Complete lesson structure from original HTML
-const lessonStructure = [
-  { id: 'getting-started', section: 'all', title: 'ACT Test Basics & Overview', desc: 'Test format, timing, and scoring overview', status: 'completed' },
-
-  // English Section
-  { id: 'sentence-structure', section: 'english', title: 'Chapter 1: Building Complete Sentences', desc: 'Independent clauses, dependent clauses, compound sentences, and comma splices', status: 'completed' },
-  { id: 'commas', section: 'english', title: 'Chapter 2: Essential Comma Rules', desc: 'Unnecessary information, names rule, listing commas, and adjective lists', status: 'completed' },
-  { id: 'punctuation', section: 'english', title: 'Chapter 3: Advanced Punctuation', desc: 'Semicolons, colons, dashes, apostrophes, and quotation marks', status: 'in-progress' },
-  { id: 'verbs', section: 'english', title: 'Chapter 4: Verbs', desc: 'Subject-verb agreement, verb tense, and irregular verbs', status: 'not-started' },
-  { id: 'pronouns', section: 'english', title: 'Chapter 5: Pronouns', desc: 'Pronoun case, who vs. whom, pronoun agreement, and ambiguous pronouns', status: 'not-started' },
-  { id: 'modifiers', section: 'english', title: 'Chapter 6: Misplaced Modifiers', desc: 'Identifying and correcting misplaced modifiers in sentences', status: 'not-started' },
-  { id: 'parallel-structure', section: 'english', title: 'Chapter 7: Parallel Structure', desc: 'Parallel structure in lists and comparisons', status: 'not-started' },
-  { id: 'misc-topics', section: 'english', title: 'Chapter 8: Miscellaneous Topics', desc: 'Commonly confused words, active vs. passive voice, and prepositional idioms', status: 'not-started' },
-  { id: 'grammar-review', section: 'english', title: 'Chapter 9: Grammar Review', desc: 'Comprehensive review of all grammar concepts', status: 'not-started' },
-  { id: 'redundancy', section: 'english', title: 'Chapter 10: Redundancy & Wordiness', desc: 'Identifying and eliminating redundant and wordy expressions', status: 'not-started' },
-  { id: 'word-choice', section: 'english', title: 'Chapter 11: Word Choice', desc: 'Selecting the clearest and most precise words in context', status: 'not-started' },
-  { id: 'transitions', section: 'english', title: 'Chapter 12: Transitions', desc: 'Choosing logical transitions between sentences and paragraphs', status: 'not-started' },
-  { id: 'which-choice', section: 'english', title: 'Chapter 13: Which Choice Questions', desc: 'Answering specific "which choice" questions about content', status: 'not-started' },
-  { id: 'adding-deleting', section: 'english', title: 'Chapter 14: Adding or Deleting Information', desc: 'Determining when to add or delete information from passages', status: 'not-started' },
-  { id: 'logical-placement', section: 'english', title: 'Chapter 15: Logical Placement', desc: 'Placing sentences in the most logical order within paragraphs', status: 'not-started' },
-
-  // Math Section - Most Common Topics
-  { id: 'introduction-to-act-math', section: 'math', title: 'Math Section Overview & Strategy', desc: 'Test format, timing, strategies, and essential tips for success', status: 'not-started' },
-  { id: 'backsolving', section: 'math', title: 'Chapter 1: Working Backwards Strategy', desc: 'Powerful test-taking trick for working backwards from answer choices', status: 'not-started' },
-  { id: 'substitution', section: 'math', title: 'Chapter 2: Number Substitution Technique', desc: 'Test-taking strategy for plugging in values', status: 'not-started' },
-  { id: 'geometry-angles', section: 'math', title: 'Chapter 3: Understanding Angles & Lines', desc: 'Intersecting lines, parallel lines, interior angles', status: 'not-started' },
-  { id: 'geometry-shapes', section: 'math', title: 'Chapter 4: Areas, Volumes & Triangles', desc: 'Area, volume, right triangles, special triangles', status: 'not-started' },
-  { id: 'lines', section: 'math', title: 'Chapter 5: Lines', desc: 'Slope, equations of lines, midpoint, distance formulas', status: 'not-started' },
-  { id: 'fractions', section: 'math', title: 'Chapter 6: Fractions', desc: 'Operations with fractions and calculator techniques', status: 'not-started' },
-  { id: 'algebra-skills', section: 'math', title: 'Chapter 7: Algebra Skills', desc: 'PEMDAS, negative numbers, combining terms', status: 'not-started' },
-  { id: 'number-theory', section: 'math', title: 'Chapter 8: Number Theory', desc: 'Types of numbers, GCD, LCM, solution types', status: 'not-started' },
-  { id: 'percentages', section: 'math', title: 'Chapter 9: Percentages', desc: 'Percentage calculations, increase/decrease', status: 'not-started' },
-  { id: 'ratios-proportions', section: 'math', title: 'Chapter 10: Ratios and Proportions', desc: 'Ratio problems, proportions, direct/indirect variation', status: 'not-started' },
-  { id: 'functions', section: 'math', title: 'Chapter 11: Functions', desc: 'Function notation, composition, domain, range', status: 'not-started' },
-  { id: 'statistics-basics', section: 'math', title: 'Chapter 12: Mean, Median, Mode, and Range', desc: 'Basic statistics and weighted averages', status: 'not-started' },
-  { id: 'exponents-roots', section: 'math', title: 'Chapter 13: Exponents and Roots', desc: 'Exponent rules and simplifying radicals', status: 'not-started' },
-
-  // Math Section - Common Topics
-  { id: 'logarithms', section: 'math', title: 'Chapter 14: Logarithms', desc: 'Logarithm basics and change of base rule', status: 'not-started' },
-  { id: 'systems-equations', section: 'math', title: 'Chapter 15: Systems of Equations', desc: 'Elimination, substitution, word problems', status: 'not-started' },
-  { id: 'quadratics', section: 'math', title: 'Chapter 16: Quadratics', desc: 'Factoring, quadratic formula, vertex form', status: 'not-started' },
-  { id: 'trigonometry', section: 'math', title: 'Chapter 17: Trigonometry', desc: 'SOH-CAH-TOA, unit circle, trig functions', status: 'not-started' },
-
-  // Math Section - Sometimes Tested
-  { id: 'absolute-value', section: 'math', title: 'Chapter 18: Absolute Value', desc: 'Absolute value equations and inequalities', status: 'not-started' },
-  { id: 'matrices', section: 'math', title: 'Chapter 19: Matrices', desc: 'Matrix operations and determinants', status: 'not-started' },
-  { id: 'repeating-patterns', section: 'math', title: 'Chapter 20: Repeating Patterns', desc: 'Patterns in decimals and powers', status: 'not-started' },
-  { id: 'circles-ellipses', section: 'math', title: 'Chapter 21: Circles, Ellipses, and Hyperbolas', desc: 'Conic sections and their equations', status: 'not-started' },
-  { id: 'probability', section: 'math', title: 'Chapter 22: Probability', desc: 'Basic probability rules and calculations', status: 'not-started' },
-  { id: 'permutations-combinations', section: 'math', title: 'Chapter 23: Permutations, Combinations, and Organized Counting', desc: 'Counting principles and arrangements', status: 'not-started' },
-  { id: 'sequences', section: 'math', title: 'Chapter 24: Sequences', desc: 'Arithmetic and geometric sequences', status: 'not-started' },
-  { id: 'complex-numbers', section: 'math', title: 'Chapter 25: Complex Numbers', desc: 'Operations with imaginary numbers', status: 'not-started' },
-  { id: 'word-problems', section: 'math', title: 'Chapter 26: Word Problems', desc: 'Strategies for solving word problems', status: 'not-started' },
-  { id: 'inequalities', section: 'math', title: 'Chapter 27: Inequalities', desc: 'Solving and graphing inequalities', status: 'not-started' },
-  { id: 'exponential-growth', section: 'math', title: 'Chapter 28: Exponential Growth and Decay', desc: 'Exponential functions and applications', status: 'not-started' },
-
-  // Math Section - Rarely Tested
-  { id: 'unit-conversion', section: 'math', title: 'Chapter 29: Unit Conversion', desc: 'Converting units and dimensional analysis', status: 'not-started' },
-  { id: 'scientific-notation', section: 'math', title: 'Chapter 30: Scientific Notation', desc: 'Working with very large and small numbers', status: 'not-started' },
-  { id: 'arcs-sectors', section: 'math', title: 'Chapter 31: Arcs and Sectors', desc: 'Circle arc lengths and sector areas', status: 'not-started' },
-  { id: 'vectors', section: 'math', title: 'Chapter 32: Vectors', desc: 'Vector operations and components', status: 'not-started' },
-  { id: 'transforming-functions', section: 'math', title: 'Chapter 33: Shifting and Transforming Functions', desc: 'Function transformations and translations', status: 'not-started' },
-  { id: 'statistics-advanced', section: 'math', title: 'Chapter 34: Statistics', desc: 'Standard deviation, distributions, data analysis', status: 'not-started' },
-  { id: 'miscellaneous-topics', section: 'math', title: 'Chapter 35: Miscellaneous Topics', desc: 'Venn diagrams, logic, patterns, advanced topics', status: 'not-started' },
-
-  // Reading Section
-  { id: 'reading-intro', section: 'reading', title: 'Reading Section Fundamentals', desc: 'What is on the ACT Reading Test and what you\'ll learn in this course', status: 'not-started' },
-  { id: 'core-principles', section: 'reading', title: 'Chapter 1: 7 Core Principles for ACT Reading', desc: 'Essential principles to understand the difference between correct and incorrect answers', status: 'not-started' },
-  { id: 'finding-correct-answer', section: 'reading', title: 'Chapter 2: 3 Strategies for Finding the Correct Answer', desc: 'Put your finger on evidence, read like a lawyer, and eliminate incorrect choices', status: 'not-started' },
-  { id: 'reading-approaches', section: 'reading', title: 'Chapter 3: How to Approach the Reading Test', desc: 'Finding the right approach for you: 6 different methods to tackle ACT Reading', status: 'not-started' },
-  { id: 'pacing-time-management', section: 'reading', title: 'Chapter 4: Pacing and 10 Time Management Skills', desc: 'Master timing and learn essential skills to finish all 4 passages', status: 'not-started' },
-  { id: 'question-types', section: 'reading', title: 'Chapter 5: How to Spot and Approach the 7 Most Common Types of Questions', desc: 'Broad passage, clear evidence, inference, purpose, main idea, words in context, and comparing passages', status: 'not-started' },
-  { id: 'breaking-down-questions', section: 'reading', title: 'Chapter 6: Breaking Down Questions', desc: 'How to identify exactly what the ACT is asking you', status: 'not-started' },
-  { id: 'answer-choices', section: 'reading', title: 'Chapter 7: How to Approach the Answer Choices', desc: 'When to read answer choices and how to use them effectively', status: 'not-started' },
-  { id: 'correct-vs-incorrect', section: 'reading', title: 'Chapter 8: Correct vs. Incorrect Answer Choices', desc: '5 common types of incorrect answers and how to effectively find the correct answer', status: 'not-started' },
-  { id: 'words-in-context', section: 'reading', title: 'Chapter 9: Words in Context Questions', desc: 'How to approach vocabulary questions and determine meaning from context', status: 'not-started' },
-  { id: 'comparing-passages', section: 'reading', title: 'Chapter 10: Tips for Comparing Passages Questions', desc: 'Strategies for dual text passages and comparing passage questions', status: 'not-started' },
-  { id: 'working-backwards', section: 'reading', title: 'Chapter 11: Working Backwards', desc: 'Advanced strategy for going straight to questions without reading the passage first', status: 'not-started' },
-  { id: 'maximizing-score', section: 'reading', title: 'Chapter 12: 7 Tips to Maximize Your Reading Score', desc: 'Essential tips including time management, answer patterns, and practice strategies', status: 'not-started' },
-  { id: 'practice-passages', section: 'reading', title: 'Chapter 13: Practice Passages', desc: '8 full practice passages with detailed explanations to apply your skills', status: 'not-started' },
-
-  // Science Section
-  { id: 'science-introduction', section: 'science', title: 'Science Section Basics', desc: 'Test format, timing, and question types overview', status: 'not-started' },
-
-  // Practice lessons for each chapter
-  { id: 'sentence-structure-practice', section: 'english', title: 'Practice: Building Complete Sentences', desc: 'Authentic ACT questions testing sentence structure concepts', status: 'not-started' },
-  { id: 'commas-practice', section: 'english', title: 'Practice: Essential Comma Rules', desc: 'ACT-style questions on comma usage and punctuation', status: 'not-started' },
-  { id: 'punctuation-practice', section: 'english', title: 'Practice: Advanced Punctuation', desc: 'Semicolons, colons, dashes and apostrophes on the ACT', status: 'not-started' },
-  { id: 'backsolving-practice', section: 'math', title: 'Practice: Working Backwards Strategy', desc: 'ACT math problems perfect for backsolving technique', status: 'not-started' },
-  { id: 'substitution-practice', section: 'math', title: 'Practice: Number Substitution Technique', desc: 'Variable problems using substitution method', status: 'not-started' },
-  { id: 'geometry-angles-practice', section: 'math', title: 'Practice: Understanding Angles & Lines', desc: 'Parallel lines, intersecting lines, and polygon angles', status: 'not-started' },
-  { id: 'geometry-shapes-practice', section: 'math', title: 'Practice: Areas, Volumes & Triangles', desc: 'Area, volume, and triangle problems from real ACTs', status: 'not-started' },
-  { id: 'passage-approach', section: 'science', title: 'Chapter 1: How to Approach the Passages', desc: 'Charts & graphs strategies, conflicting viewpoints approach, and general tips', status: 'not-started' },
-  { id: 'question-diagnosis', section: 'science', title: 'Question Diagnosis', desc: 'Where to look for information in science passages', status: 'not-started' },
-  { id: 'specific-data-point', section: 'science', title: 'Specific Data Point Questions', desc: 'Finding exact values from charts, graphs, and tables', status: 'not-started' },
-  { id: 'trends', section: 'science', title: 'Trends Questions', desc: 'Identifying patterns and trends in charts, graphs, and tables', status: 'not-started' },
-  { id: 'approximation', section: 'science', title: 'Approximation Questions', desc: 'Estimating values between or outside given data points', status: 'not-started' },
-  { id: 'multiple-figures', section: 'science', title: 'Multiple Figures Questions', desc: 'Using information from multiple charts, graphs, or tables', status: 'not-started' },
-  { id: 'figures-text', section: 'science', title: 'Figures + Text Questions', desc: 'Combining information from figures and experimental descriptions', status: 'not-started' },
-  { id: 'two-part-answers', section: 'science', title: '2-Part Answers', desc: 'Questions with claims and supporting evidence in answer choices', status: 'not-started' },
-  { id: 'cannot-be-determined', section: 'science', title: 'Cannot Be Determined', desc: 'Recognizing when information is not provided in the passage', status: 'not-started' },
-  { id: 'equations-as-answers', section: 'science', title: 'Equations as Answers', desc: 'Identifying which equation correctly models experimental data', status: 'not-started' },
-  { id: 'mixing', section: 'science', title: 'Mixing', desc: 'Predicting results when combining solutions or substances', status: 'not-started' },
-  { id: 'scatter-plots', section: 'science', title: 'Scatter Plots', desc: 'Reading scatter plot graphs and frequency of data collection', status: 'not-started' },
-  { id: 'inverse-trends-multiple-axes', section: 'science', title: 'Inverse Trends and Graphs with Multiple Axes', desc: 'Complex graphs with multiple y-axes and reverse trend analysis', status: 'not-started' },
-  { id: 'math-on-science', section: 'science', title: 'Math on the Science Test', desc: 'Basic calculations and estimation without a calculator', status: 'not-started' },
-  { id: 'water-knowledge', section: 'science', title: 'Water Knowledge', desc: 'Boiling point, freezing point, evaporation, and condensation', status: 'not-started' },
-  { id: 'experimental-setup', section: 'science', title: 'Experimental Setup', desc: 'Understanding why certain experimental procedures are used', status: 'not-started' },
-  { id: 'other-outside-knowledge', section: 'science', title: 'Other Outside Knowledge', desc: 'Genetics, biology, chemistry, and physics concepts for the ACT', status: 'not-started' },
-  { id: 'conflicting-viewpoints-practice', section: 'science', title: 'Conflicting Viewpoints Practice Passage', desc: 'Practice with the unique conflicting viewpoints passage type', status: 'not-started' }
-];
 
 function App() {
   const classes = useStyles();
@@ -882,7 +773,7 @@ function App() {
                       <div style={{
                         fontSize: '1rem',
                         fontWeight: '600',
-                        color: '#1a1a1a',
+                        color: category.startsWith('Practice') ? '#9ca3af' : '#1a1a1a',
                         marginTop: category === Object.keys(groupedLessons)[0] ? '0' : '1.5rem',
                         marginBottom: '0.75rem',
                         paddingBottom: '0.5rem',
@@ -981,7 +872,7 @@ function App() {
                         <div style={{
                           fontSize: '0.95rem',
                           fontWeight: '600',
-                          color: '#4a5568',
+                          color: category.startsWith('Practice') ? '#9ca3af' : '#4a5568',
                           marginTop: '1rem',
                           marginBottom: '0.5rem',
                           marginLeft: '1rem',
