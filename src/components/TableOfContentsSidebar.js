@@ -174,16 +174,27 @@ const TableOfContentsSidebar = ({
 
   if (sections.length === 0) return null;
 
-  // Group sections by chapter (based on first digit of chapterNum)
+  // Group sections by unit (based on category or first digit of chapterNum)
   const groupedSections = sections.reduce((acc, section, index) => {
-    const chapterKey = section.chapterNum ? section.chapterNum.split('.')[0] : 'intro';
-    if (!acc[chapterKey]) {
-      acc[chapterKey] = {
-        title: chapterKey === 'intro' ? 'Introduction' : `Chapter ${chapterKey}`,
+    const unitNum = section.chapterNum ? section.chapterNum.split('.')[0] : 'intro';
+    const unitKey = section.category || 'intro';
+
+    if (!acc[unitKey]) {
+      // Determine unit title
+      let unitTitle;
+      if (unitKey === 'intro' || unitKey === 'Introduction') {
+        unitTitle = 'Introduction';
+      } else {
+        unitTitle = `Unit ${unitNum}: ${section.category}`;
+      }
+
+      acc[unitKey] = {
+        title: unitTitle,
+        unitNum: unitNum,
         sections: []
       };
     }
-    acc[chapterKey].sections.push({ ...section, originalIndex: index });
+    acc[unitKey].sections.push({ ...section, originalIndex: index });
     return acc;
   }, {});
 
@@ -358,6 +369,8 @@ const TableOfContentsSidebar = ({
                   {isExpanded && chapterData.sections.map((section) => {
                     const title = getSectionTitle(section, section.originalIndex);
                     const isQuiz = section.type === 'interactive' || section.type === 'quiz';
+                    const topicNum = section.chapterNum || '';
+                    const displayTitle = topicNum ? `${topicNum} - ${title}` : title;
 
                     return (
                       <div
@@ -367,7 +380,7 @@ const TableOfContentsSidebar = ({
                         style={{ marginLeft: '0.5rem' }}
                       >
                         <div className={getTitleClass(section.originalIndex)}>
-                          {title}
+                          {displayTitle}
                           {isQuiz && (
                             <span className={classes.quizIndicator}>
                               QUIZ

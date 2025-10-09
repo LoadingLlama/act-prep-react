@@ -12,6 +12,7 @@ export const useProgressiveLessonStyles = createUseStyles({
     textAlign: 'left',
     borderRadius: '0',
     fontSize: '16px',
+    counterReset: 'h3-counter h4-counter',
 
     '& h1': {
       fontSize: '2.5rem',
@@ -42,18 +43,34 @@ export const useProgressiveLessonStyles = createUseStyles({
       letterSpacing: '-0.025em',
       borderBottom: '1px solid #e5e7eb',
       paddingBottom: '0.75rem',
-      marginBottom: '2rem'
+      marginBottom: '1rem',
+      counterIncrement: 'h3-counter',
+      '&:before': {
+        content: 'counter(h3-counter) ". "',
+        color: '#000000',
+        fontWeight: '800'
+      },
+      '&:first-child': {
+        marginTop: '2rem'
+      }
     },
     '& h4': {
       fontSize: '1.3rem !important',
       fontWeight: '800 !important',
       color: '#000000 !important',
-      margin: '5rem 0 1.5rem 0',
+      margin: '5rem 0 1rem 0',
       lineHeight: '1.4',
       textTransform: 'none',
       letterSpacing: '-0.02em',
       borderBottom: '1px solid #e5e7eb',
-      paddingBottom: '0.5rem'
+      paddingBottom: '0.5rem',
+      counterIncrement: 'h4-counter',
+      '&:before': {
+        content: 'counter(h4-counter, lower-alpha) ". "',
+        color: '#000000',
+        fontWeight: '800',
+        fontSize: '1.1rem'
+      }
     },
     '& p': {
       fontSize: '16px',
@@ -61,8 +78,12 @@ export const useProgressiveLessonStyles = createUseStyles({
       lineHeight: 1.7,
       color: '#1a202c'
     },
-    '& h3 + p, & h3 + div, & h2 + p': {
-      marginTop: '1.5rem'
+    '& h3 + p, & h3 + div, & h2 + p, & h3 + ul, & h3 + ol, & h4 + p, & h4 + div, & h4 + ul, & h4 + ol': {
+      marginTop: '0.5rem',
+      marginLeft: '0.75rem'
+    },
+    '& h3 ~ p, & h3 ~ div:not(.section), & h3 ~ ul, & h3 ~ ol, & h4 ~ p, & h4 ~ div:not(.section), & h4 ~ ul, & h4 ~ ol': {
+      marginLeft: '0.75rem'
     },
     '& strong': {
       color: '#111827',
@@ -155,8 +176,8 @@ export const useProgressiveLessonStyles = createUseStyles({
     '& .lesson-intro': {
       fontSize: '16px',
       color: '#1a202c',
-      fontStyle: 'italic',
-      marginBottom: '1.5rem',
+      fontStyle: 'normal',
+      marginBottom: '2.5rem',
       marginTop: '1.5rem',
       padding: '0 !important',
       background: 'transparent !important',
