@@ -4,8 +4,11 @@ import { splitIntoTextSections } from '../utils/splitIntoTextSections';
 import { useProgressiveLessonStyles } from './ProgressiveLessonRenderer.styles';
 import QuizzesService from '../services/api/quizzes.service';
 import LessonsService from '../services/api/lessons.service';
+import AllLessonsNavigator from './AllLessonsNavigator';
+import LessonTableOfContents from './LessonTableOfContents';
+import { lessonStructure } from '../data/lessonStructure';
 
-const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatusChange, onNavigate }) => {
+const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatusChange, onNavigate, lessonProgress = {} }) => {
   const classes = useProgressiveLessonStyles();
   const [sections, setSections] = useState([]);
   const [currentSection, setCurrentSection] = useState(0);
@@ -271,12 +274,92 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
 
   return (
     <div className={classes.progressiveContainer}>
+      <AllLessonsNavigator
+        lessonStructure={lessonStructure}
+        currentLessonId={lesson?.id}
+        lessonProgress={lessonProgress}
+        onLessonChange={(lessonId) => {
+          // Find lesson in structure and navigate to it
+          const targetLesson = lessonStructure.find(l => l.id === lessonId);
+          if (targetLesson && onNavigate) {
+            onNavigate('lesson', lessonId);
+          }
+        }}
+        onBackClick={() => {
+          // Navigate back to home
+          if (onNavigate) {
+            onNavigate('home');
+          }
+        }}
+      />
+
+      <LessonTableOfContents
+        sections={sections}
+        currentSection={currentSection}
+      />
+
       <div className={classes.progressBar}>
         <div className={classes.progressFill} style={{ width: `${progressPercentage}%` }} />
       </div>
 
+      {/* Lesson Title Section */}
+      <div style={{
+        padding: '0',
+        marginBottom: '2rem'
+      }}>
+        {/* Metadata bar */}
+        <div style={{
+          display: 'flex',
+          gap: '2rem',
+          alignItems: 'center',
+          marginBottom: '1.25rem',
+          paddingBottom: '0.75rem',
+          borderBottom: '1px solid #e5e7eb',
+          flexWrap: 'wrap',
+          justifyContent: 'flex-start'
+        }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            color: '#2563eb',
+            fontSize: '0.875rem'
+          }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span style={{ fontWeight: '500' }}>Reading Time: 5 min</span>
+          </div>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            color: '#059669',
+            fontSize: '0.875rem'
+          }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+            <span style={{ fontWeight: '500' }}>Verified for 2025 ACT® Exam</span>
+          </div>
+        </div>
+
+        {/* Lesson Title */}
+        <h2 style={{
+          fontSize: '1.875rem',
+          fontWeight: 700,
+          color: '#111827',
+          marginBottom: '0.5rem',
+          lineHeight: '1.3'
+        }}>
+          {lesson?.title || 'Lesson'}
+        </h2>
+      </div>
+
       {sections.map((section, index) => (
-        <div key={index} ref={el => sectionRefs.current[index] = el}>
+        <div key={index} ref={el => sectionRefs.current[index] = el} data-section-index={index}>
           <LessonSection
             section={section}
             index={index}

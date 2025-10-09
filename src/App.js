@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
-import Button from './components/Button';
 import StatusIcon from './components/StatusIcon';
 import ProgressiveLessonRenderer from './components/ProgressiveLessonRenderer';
 import AIChat from './components/AIChat';
 import DiagnosticTest from './components/DiagnosticTest';
-import { spacing, borderRadius, buttonStyles } from './utils/sharedStyles';
-import { storage, scriptLoader, statusUtils, lessonUtils, domUtils } from './utils/helpers';
+import { buttonStyles } from './utils/sharedStyles';
+import { storage, lessonUtils, domUtils } from './utils/helpers';
 import { getAllLessons } from './utils/lessonsDb';
 import { lessonStructure } from './data/lessonStructure';
 
@@ -604,7 +603,6 @@ function App() {
   const [activeTab, setActiveTab] = useState('tests');
   const [activeSection, setActiveSection] = useState('all');
   const [lessonContent, setLessonContent] = useState({});
-  const [allLessons, setAllLessons] = useState({});
   const [currentLesson, setCurrentLesson] = useState(null);
   const [lessonModalOpen, setLessonModalOpen] = useState(false);
   const [diagnosticTestOpen, setDiagnosticTestOpen] = useState(false);
@@ -632,7 +630,6 @@ function App() {
           };
         });
         setLessonContent(lessonsObj);
-        setAllLessons(lessonsObj);
       }
     };
 
@@ -907,217 +904,130 @@ function App() {
   const LessonModal = () => {
     const lesson = lessonContent[currentLesson];
     const currentLessonData = lessonStructure.find(item => item.id === currentLesson);
-
-    const keyTerms = lessonUtils.extractKeyTerms(lesson?.content);
-    const progress = lessonUtils.calculateProgress(lessonStructure, lessonProgress);
-
-    // Get lessons from the same section for left sidebar navigation
     const currentSection = currentLessonData?.section;
-    const sectionLessons = lessonStructure.filter(l => l.section === currentSection);
 
     return (
       <div className={`${classes.lessonModal} ${lessonModalOpen ? 'active' : ''}`}>
-        <div className={classes.lessonContent}>
-          {/* Left Sidebar - Navigation */}
-          <div className={classes.lessonSidebar}>
-            <button className={classes.sidebarBackButton} onClick={closeLessonModal}>
-              ← Back to Lessons
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: '320px',
+          right: 0,
+          height: '60px',
+          background: '#ffffff',
+          borderBottom: '1px solid #e5e7eb',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '0 2rem',
+          zIndex: 200
+        }}>
+          <h1 style={{
+            fontSize: '1.1rem',
+            fontWeight: 500,
+            color: '#1a1a1a',
+            margin: 0
+          }}>
+            {currentSection ? `${currentSection.charAt(0).toUpperCase() + currentSection.slice(1)} Lessons` : 'Lessons'}
+          </h1>
+
+          <div style={{
+            display: 'inline-flex',
+            background: '#f3f4f6',
+            borderRadius: '6px',
+            padding: '3px',
+            gap: '2px'
+          }}>
+            <button
+              style={{
+                padding: '0.4rem 1rem',
+                fontSize: '0.85rem',
+                fontWeight: 500,
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                background: lessonMode === 'review' ? 'white' : 'transparent',
+                color: lessonMode === 'review' ? '#1a1a1a' : '#6b7280',
+                boxShadow: lessonMode === 'review' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none'
+              }}
+              onClick={() => setLessonMode('review')}
+            >
+              Review
             </button>
-
-            <div className={classes.sidebarNav}>
-              <h3>{currentSection ? `${currentSection.charAt(0).toUpperCase() + currentSection.slice(1)} Section` : 'Lessons'}</h3>
-              {sectionLessons.map(l => (
-                <div
-                  key={l.id}
-                  className={`${classes.sidebarNavItem} ${l.id === currentLesson ? 'active' : ''}`}
-                  onClick={() => {
-                    setCurrentLesson(l.id);
-                    setLessonMode('review');
-                  }}
-                >
-                  {l.title}
-                </div>
-              ))}
-            </div>
+            <button
+              style={{
+                padding: '0.4rem 1rem',
+                fontSize: '0.85rem',
+                fontWeight: 500,
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                background: lessonMode === 'practice' ? 'white' : 'transparent',
+                color: lessonMode === 'practice' ? '#1a1a1a' : '#6b7280',
+                boxShadow: lessonMode === 'practice' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none'
+              }}
+              onClick={() => setLessonMode('practice')}
+            >
+              Practice
+            </button>
           </div>
+        </div>
 
-          {/* Main Content */}
-          <div className={classes.lessonMain}>
-            <div className={classes.lessonHeader} style={{ padding: '0.75rem 2rem', minHeight: 'auto' }}>
-              <h1 className={classes.lessonTitle} style={{ fontSize: '1.1rem', fontWeight: 500 }}>
-                {currentSection ? `${currentSection.charAt(0).toUpperCase() + currentSection.slice(1)} Lessons` : 'Lessons'}
-              </h1>
-
-              <div style={{
-                display: 'inline-flex',
-                background: '#f3f4f6',
-                borderRadius: '6px',
-                padding: '3px',
-                gap: '2px'
-              }}>
-                <button
-                  style={{
-                    padding: '0.4rem 1rem',
-                    fontSize: '0.85rem',
-                    fontWeight: 500,
-                    border: 'none',
-                    borderRadius: '4px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    background: lessonMode === 'review' ? 'white' : 'transparent',
-                    color: lessonMode === 'review' ? '#1a1a1a' : '#6b7280',
-                    boxShadow: lessonMode === 'review' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none'
-                  }}
-                  onClick={() => setLessonMode('review')}
-                >
-                  Review
-                </button>
-                <button
-                  style={{
-                    padding: '0.4rem 1rem',
-                    fontSize: '0.85rem',
-                    fontWeight: 500,
-                    border: 'none',
-                    borderRadius: '4px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    background: lessonMode === 'practice' ? 'white' : 'transparent',
-                    color: lessonMode === 'practice' ? '#1a1a1a' : '#6b7280',
-                    boxShadow: lessonMode === 'practice' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none'
-                  }}
-                  onClick={() => setLessonMode('practice')}
-                >
-                  Practice
-                </button>
-              </div>
-            </div>
-            <div className={classes.lessonBody}>
-              {lesson && lesson.title && (
-                <div style={{
-                  maxWidth: '900px',
-                  margin: '0 auto',
-                  padding: '1rem 4rem 0'
-                }}>
-                  {/* Metadata bar - Lumisource style */}
-                  <div style={{
-                    display: 'flex',
-                    gap: '2rem',
-                    alignItems: 'center',
-                    marginBottom: '1.25rem',
-                    paddingBottom: '0.75rem',
-                    borderBottom: '1px solid #e5e7eb',
-                    flexWrap: 'wrap'
-                  }}>
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.5rem',
-                      color: '#2563eb',
-                      fontSize: '0.875rem'
-                    }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <polyline points="12 6 12 12 16 14"/>
-                      </svg>
-                      <span style={{ fontWeight: '500' }}>Reading Time: 5 min</span>
-                    </div>
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.5rem',
-                      color: '#059669',
-                      fontSize: '0.875rem'
-                    }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M9 11l3 3L22 4"/>
-                        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-                      </svg>
-                      <span style={{ fontWeight: '500' }}>Verified for 2025 ACT® Exam</span>
-                    </div>
-                  </div>
-
-                  <h2 style={{
-                    fontSize: '1.875rem',
-                    fontWeight: 700,
-                    color: '#111827',
-                    marginBottom: '0.5rem',
-                    lineHeight: '1.3'
-                  }}>
-                    {lesson.title}
-                  </h2>
-                </div>
-              )}
-              {lessonMode === 'review' ? (
-                lesson && currentLessonData ? (
-                  <ProgressiveLessonRenderer
-                    lesson={{...lesson, id: currentLessonData.id}}
-                  />
-                ) : (
-                  <div style={{
-                    textAlign: 'center',
-                    padding: '4rem 2rem',
-                    color: '#999',
-                    fontSize: '1rem'
-                  }}>
-                    <p>This lesson content is being prepared. Check back soon!</p>
-                  </div>
-                )
-              ) : (
-                <div style={{
-                  textAlign: 'center',
-                  padding: '4rem 2rem',
-                  color: '#999',
-                  fontSize: '1rem'
-                }}>
-                  <p>Practice exercises coming soon!</p>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Right Sidebar - Progress & Info */}
-          <div className={classes.lessonRightSidebar}>
-            <div className={classes.sidebarSection}>
-              <h4>Your Progress</h4>
-              <div className={classes.sidebarProgressBox}>
-                <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#6b7280' }}>
-                  Lesson Progress
-                </div>
-                <div className={classes.progressBar}>
-                  <div className="fill" style={{ width: `${progress.percentage}%` }}></div>
-                </div>
-                <div style={{ marginTop: '0.5rem', fontSize: '0.75rem', color: '#9ca3af' }}>
-                  {progress.completed} of {progress.total} lessons completed
-                </div>
-              </div>
-
-              <button
-                onClick={() => updateLessonProgress(currentLesson, 'completed')}
-                style={{
-                  width: '100%',
-                  padding: '0.5rem',
-                  background: getLessonStatus(currentLesson) === 'completed' ? '#22c55e' : '#1a1a1a',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                  fontSize: '0.85rem',
-                  fontWeight: 500
+        <div style={{
+          position: 'fixed',
+          top: '60px',
+          left: '0',
+          right: '0',
+          bottom: '0',
+          overflowY: 'auto',
+          background: '#ffffff'
+        }}>
+          {lessonMode === 'review' ? (
+            lesson && currentLessonData ? (
+              <ProgressiveLessonRenderer
+                lesson={{...lesson, id: currentLessonData.id}}
+                lessonProgress={lessonProgress}
+                onNavigate={(type, lessonId) => {
+                  if (type === 'home') {
+                    closeLessonModal();
+                  } else if (type === 'lesson' && lessonId) {
+                    openLesson(lessonId);
+                  } else if (type === 'next') {
+                    const currentIndex = lessonStructure.findIndex(l => l.id === currentLessonData.id);
+                    if (currentIndex >= 0 && currentIndex < lessonStructure.length - 1) {
+                      openLesson(lessonStructure[currentIndex + 1].id);
+                    }
+                  } else if (type === 'previous') {
+                    const currentIndex = lessonStructure.findIndex(l => l.id === currentLessonData.id);
+                    if (currentIndex > 0) {
+                      openLesson(lessonStructure[currentIndex - 1].id);
+                    }
+                  }
                 }}
-              >
-                {getLessonStatus(currentLesson) === 'completed' ? '✓ Completed' : 'Mark as Complete'}
-              </button>
-            </div>
-
-            {lesson && lesson.duration && (
-              <div className={classes.sidebarSection}>
-                <h4>Reading Time</h4>
-                <div style={{ fontSize: '0.9rem', color: '#4b5563' }}>
-                  {lesson.duration} minutes
-                </div>
+                onStatusChange={(status) => updateLessonProgress(currentLesson, status)}
+              />
+            ) : (
+              <div style={{
+                textAlign: 'center',
+                padding: '4rem 2rem',
+                color: '#999',
+                fontSize: '1rem'
+              }}>
+                <p>This lesson content is being prepared. Check back soon!</p>
               </div>
-            )}
-          </div>
+            )
+          ) : (
+            <div style={{
+              textAlign: 'center',
+              padding: '4rem 2rem',
+              color: '#999',
+              fontSize: '1rem'
+            }}>
+              <p>Practice exercises coming soon!</p>
+            </div>
+          )}
         </div>
       </div>
     );

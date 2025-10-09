@@ -9,10 +9,13 @@ export const useProgressiveLessonStyles = createUseStyles({
     padding: '0 4rem 2.5rem 4rem',
     maxWidth: '900px',
     margin: '0 auto',
+    marginLeft: '320px',
     textAlign: 'left',
     borderRadius: '0',
     fontSize: '16px',
     counterReset: 'h3-counter h4-counter',
+    minHeight: '100vh',
+    paddingTop: '2rem',
 
     '& h1': {
       fontSize: '2.5rem',
@@ -264,8 +267,8 @@ export const useProgressiveLessonStyles = createUseStyles({
   },
   progressBar: {
     position: 'fixed',
-    top: 0,
-    left: 0,
+    top: '60px',
+    left: '320px',
     right: 0,
     height: '4px',
     backgroundColor: '#e2f8ff',

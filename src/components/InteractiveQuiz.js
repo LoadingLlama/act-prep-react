@@ -93,7 +93,38 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
   if (showResults) {
     return (
       <div className={`${classes.interactiveQuiz} ${isFinal ? 'final-quiz' : ''}`}>
-        <h3 style={{ color: '#9ca3af', textAlign: 'center' }}>{quizData.title} - Results</h3>
+        {/* Clean compact title - same format as quiz */}
+        <div style={{
+          fontSize: '0.95rem',
+          fontWeight: '600',
+          color: '#9ca3af',
+          marginBottom: '1rem',
+          paddingBottom: '0.75rem',
+          borderBottom: '1px solid #e2e8f0',
+          textAlign: 'center',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '0.5rem'
+        }}>
+          {quizData.title.replace('Practice:', 'Checkpoint:')} - Results
+          {quizData.title.startsWith('Practice') && (
+            <span style={{
+              fontSize: '0.65rem',
+              fontWeight: '400',
+              color: '#6b7280',
+              backgroundColor: 'transparent',
+              padding: '0.15rem 0.5rem',
+              borderRadius: '4px',
+              border: '1px solid #d1d5db',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.25rem'
+            }}>
+              <span style={{ color: '#10b981' }}>✓</span> ACT VERIFIED
+            </span>
+          )}
+        </div>
 
         <div className={classes.quizResults}>
           <div className={`${classes.quizScore} ${isFinal ? 'final-score' : ''}`}>
