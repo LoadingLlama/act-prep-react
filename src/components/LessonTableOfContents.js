@@ -11,7 +11,7 @@ const useStyles = createUseStyles({
     overflowY: 'auto',
     padding: '0.75rem 0',
     zIndex: 50,
-    opacity: 0.4,
+    opacity: 0.75,
     transition: 'opacity 0.3s ease',
     '&:hover': {
       opacity: 1
