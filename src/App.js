@@ -366,7 +366,8 @@ const useStyles = createUseStyles({
     '&.completed': {
       borderLeft: '3px solid #10b981',
       '& h4': {
-        color: '#000000'
+        color: '#000000',
+        textDecoration: 'line-through'
       }
     },
     '&.in-progress': {
@@ -399,7 +400,10 @@ const useStyles = createUseStyles({
       background: '#fafbff'
     },
     '&.completed': {
-      borderLeft: '3px solid #10b981'
+      borderLeft: '3px solid #10b981',
+      '& h4': {
+        textDecoration: 'line-through'
+      }
     },
     '&.in-progress': {
       borderLeft: '3px solid #fbbf24'
@@ -407,11 +411,12 @@ const useStyles = createUseStyles({
   },
   lessonInfo: {
     flex: 1,
-    marginBottom: '0.5rem',
+    marginBottom: '0.75rem',
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    transition: 'opacity 0.2s ease',
     '& h4': {
       fontSize: '0.95rem',
       fontWeight: 600,
@@ -424,6 +429,12 @@ const useStyles = createUseStyles({
     },
     '& p': {
       display: 'none'
+    },
+    '$lessonItem.completed &': {
+      opacity: 0.5
+    },
+    '$lessonItem.completed:hover &': {
+      opacity: 0.7
     }
   },
   lessonInfoListView: {
@@ -433,6 +444,7 @@ const useStyles = createUseStyles({
     flexDirection: 'row',
     alignItems: 'center',
     gap: '1rem',
+    transition: 'opacity 0.2s ease',
     '& h4': {
       fontSize: '0.9rem',
       fontWeight: 600,
@@ -440,14 +452,27 @@ const useStyles = createUseStyles({
       color: '#000000',
       letterSpacing: '-0.01em',
       lineHeight: '1.3'
+    },
+    '$lessonItemListView.completed &': {
+      opacity: 0.5
+    },
+    '$lessonItemListView.completed:hover &': {
+      opacity: 0.7
     }
   },
   lessonActionsListView: {
     display: 'flex',
     gap: '0.5rem',
-    marginTop: '0',
-    paddingTop: '0',
-    flexShrink: 0
+    flexShrink: 0,
+    borderLeft: '1px solid #f0f0f0',
+    marginLeft: '1rem',
+    paddingLeft: '1rem',
+    marginRight: '-1rem',
+    paddingRight: '1rem',
+    marginTop: '-0.75rem',
+    marginBottom: '-0.75rem',
+    paddingTop: '0.75rem',
+    paddingBottom: '0.75rem'
   },
   keyTermsTags: {
     display: 'flex',
@@ -503,29 +528,31 @@ const useStyles = createUseStyles({
     display: 'flex',
     gap: '0.5rem',
     marginTop: 'auto',
-    paddingTop: '0.75rem',
-    transition: 'opacity 0.2s ease'
+    paddingTop: '0.5rem',
+    borderTop: '1px solid #f0f0f0',
+    marginLeft: '-1rem',
+    marginRight: '-1rem',
+    marginBottom: '-1rem',
+    padding: '0.5rem 1rem'
   },
   lessonPracticeButton: {
     width: '100%',
-    padding: '0.5rem 0.75rem',
-    border: '1px solid #e5e7eb',
-    borderRadius: '6px',
-    fontSize: '0.8rem',
+    padding: '0.4rem 0.6rem',
+    border: 'none',
+    borderRadius: '0',
+    fontSize: '0.75rem',
     fontWeight: 500,
     cursor: 'pointer',
     transition: 'all 0.2s ease',
-    background: 'white',
+    background: 'transparent',
     color: '#6b7280',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '0.4rem',
+    gap: '0.35rem',
     '&:hover': {
       background: '#f9fafb',
-      borderColor: '#d1d5db',
-      color: '#374151',
-      transform: 'scale(1.01)'
+      color: '#374151'
     }
   },
   sectionHeader: {

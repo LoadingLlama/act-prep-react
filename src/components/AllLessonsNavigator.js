@@ -13,6 +13,11 @@ const useStyles = createUseStyles({
     padding: '0.5rem 0.75rem',
     zIndex: 50,
     borderRight: '1px solid #e0e0e0',
+    transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    '&.collapsed': {
+      width: '60px',
+      padding: '0.5rem 0.5rem'
+    },
     '&::-webkit-scrollbar': {
       width: '6px'
     },
@@ -166,11 +171,89 @@ const useStyles = createUseStyles({
     background: '#34a853',
     borderRadius: '2px',
     transition: 'width 0.3s ease'
+  },
+  toggleButton: {
+    position: 'fixed',
+    top: '1rem',
+    left: '290px',
+    width: '30px',
+    height: '30px',
+    borderRadius: '50%',
+    background: '#ffffff',
+    border: '1px solid #e0e0e0',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
+    zIndex: 100,
+    transition: 'left 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+    '$navigator.collapsed &': {
+      left: '30px'
+    },
+    '&:hover': {
+      background: '#f9fafb',
+      borderColor: '#d1d5db',
+      transform: 'scale(1.1)'
+    }
+  },
+  toggleIcon: {
+    fontSize: '0.8rem',
+    color: '#5f6368',
+    transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    '&.collapsed': {
+      transform: 'rotate(180deg)'
+    }
+  },
+  contentWrapper: {
+    opacity: 1,
+    transition: 'opacity 0.2s ease',
+    '$navigator.collapsed &': {
+      opacity: 0,
+      pointerEvents: 'none'
+    }
+  },
+  collapsedView: {
+    display: 'none',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem',
+    paddingTop: '4rem',
+    '$navigator.collapsed &': {
+      display: 'flex'
+    }
+  },
+  collapsedIcon: {
+    width: '40px',
+    height: '40px',
+    borderRadius: '8px',
+    background: '#ffffff',
+    border: '1px solid #e0e0e0',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    '&:hover': {
+      background: '#f9fafb',
+      borderColor: '#1a73e8',
+      transform: 'translateY(-2px)'
+    }
+  },
+  collapsedIconActive: {
+    background: '#e8f0fe',
+    borderColor: '#1a73e8'
   }
 });
 
 const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange, onBackClick, lessonProgress = {} }) => {
   const classes = useStyles();
+
+  // Collapse state with localStorage persistence
+  const [isCollapsed, setIsCollapsed] = useState(() => {
+    const saved = localStorage.getItem('sidebarCollapsed');
+    return saved === 'true';
+  });
 
   // Find current lesson's unit to auto-expand it
   const currentLesson = lessonStructure.find(l => l.id === currentLessonId);
@@ -181,6 +264,15 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
   const [expandedUnits, setExpandedUnits] = useState({
     [currentUnitKey]: true
   });
+
+  // Save collapse state to localStorage
+  useEffect(() => {
+    localStorage.setItem('sidebarCollapsed', isCollapsed.toString());
+  }, [isCollapsed]);
+
+  const toggleCollapse = () => {
+    setIsCollapsed(!isCollapsed);
+  };
 
   // Update expanded units when current lesson changes
   useEffect(() => {
@@ -237,27 +329,49 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
   const progressPercentage = totalLessons > 0 ? (completedLessons / totalLessons) * 100 : 0;
 
   return (
-    <div className={classes.navigator}>
-      <div style={{
-        padding: '0.5rem 0.5rem',
-        marginBottom: '0.75rem',
-        borderBottom: '1px solid #e0e0e0'
-      }}>
-        <div style={{
-          fontSize: '1.15rem',
-          fontWeight: '600',
-          color: '#1a73e8',
-          letterSpacing: '-0.02em'
-        }}>
-          Launch Prep
+    <div className={`${classes.navigator} ${isCollapsed ? 'collapsed' : ''}`}>
+      {/* Toggle Button */}
+      <button className={classes.toggleButton} onClick={toggleCollapse}>
+        <span className={`${classes.toggleIcon} ${isCollapsed ? 'collapsed' : ''}`}>
+          ◀
+        </span>
+      </button>
+
+      {/* Collapsed View */}
+      <div className={classes.collapsedView}>
+        <div
+          className={classes.collapsedIcon}
+          onClick={onBackClick}
+          title="Back to Subjects"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
         </div>
       </div>
 
-      <button className={classes.backButton} onClick={onBackClick}>
-        ← Back to Subjects
-      </button>
+      {/* Full Content View */}
+      <div className={classes.contentWrapper}>
+        <div style={{
+          padding: '0.5rem 0.5rem',
+          marginBottom: '0.75rem',
+          borderBottom: '1px solid #e0e0e0'
+        }}>
+          <div style={{
+            fontSize: '1.15rem',
+            fontWeight: '600',
+            color: '#1a73e8',
+            letterSpacing: '-0.02em'
+          }}>
+            Launch Prep
+          </div>
+        </div>
 
-      <div className={classes.courseTitle}>{courseTitle}</div>
+        <button className={classes.backButton} onClick={onBackClick}>
+          ← Back to Subjects
+        </button>
+
+        <div className={classes.courseTitle}>{courseTitle}</div>
 
       {/* Progress Bar */}
       <div className={classes.progressSection}>
@@ -308,7 +422,7 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
                         className={`${classes.lessonItem} ${isActive ? classes.lessonItemActive : ''}`}
                         onClick={() => onLessonChange && onLessonChange(lesson.id)}
                       >
-                        <div className={`${classes.statusDot} ${getStatusDotClass(lesson.status)}`} />
+                        <div className={`${classes.statusDot} ${getStatusDotClass(lessonProgress[lesson.id] || 'not-started')}`} />
                         <div className={classes.lessonText}>
                           {lesson.chapterNum && (
                             <span className={classes.lessonNumber}>Topic {lesson.chapterNum}:</span>
@@ -324,6 +438,7 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
           );
         });
       })}
+      </div>
     </div>
   );
 };
