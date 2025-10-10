@@ -16,7 +16,8 @@ const useStyles = createUseStyles({
     transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     '&.collapsed': {
       width: '60px',
-      padding: '0.5rem 0.5rem'
+      padding: '0.5rem 0.5rem',
+      overflowY: 'hidden'
     },
     '&::-webkit-scrollbar': {
       width: '6px'
@@ -220,7 +221,8 @@ const useStyles = createUseStyles({
     flexDirection: 'column',
     alignItems: 'center',
     gap: '1rem',
-    paddingTop: '4rem',
+    paddingTop: '1rem',
+    width: '100%',
     '$navigator.collapsed &': {
       display: 'flex'
     }

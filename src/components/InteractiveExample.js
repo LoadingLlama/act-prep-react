@@ -10,12 +10,12 @@ const useStyles = createUseStyles({
     marginBottom: '2rem'
   },
   encouragement: {
-    fontSize: '0.9rem',
-    color: '#10b981',
+    fontSize: '0.85rem',
+    color: '#9ca3af',
     fontStyle: 'italic',
     marginBottom: '1.5rem',
-    opacity: 0.9,
-    fontWeight: '500'
+    opacity: 0.7,
+    fontWeight: '400'
   },
   choicesContainer: {
     display: 'flex',
