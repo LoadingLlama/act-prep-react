@@ -174,32 +174,34 @@ const useStyles = createUseStyles({
   },
   toggleButton: {
     position: 'fixed',
-    top: '1rem',
-    left: '290px',
-    width: '30px',
-    height: '30px',
-    borderRadius: '50%',
-    background: '#ffffff',
-    border: '1px solid #e0e0e0',
+    top: '50%',
+    left: '300px',
+    width: '24px',
+    height: '48px',
+    borderRadius: '0 8px 8px 0',
+    background: 'rgba(255, 255, 255, 0.9)',
+    border: '1px solid #e5e7eb',
+    borderLeft: 'none',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
     zIndex: 100,
-    transition: 'left 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+    transition: 'left 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s ease',
+    backdropFilter: 'blur(10px)',
+    boxShadow: '2px 0 8px rgba(0,0,0,0.05)',
+    transform: 'translateY(-50%)',
     '$navigator.collapsed &': {
-      left: '30px'
+      left: '40px'
     },
     '&:hover': {
-      background: '#f9fafb',
-      borderColor: '#d1d5db',
-      transform: 'scale(1.1)'
+      background: 'rgba(249, 250, 251, 0.95)',
+      boxShadow: '2px 0 12px rgba(0,0,0,0.08)'
     }
   },
   toggleIcon: {
-    fontSize: '0.8rem',
-    color: '#5f6368',
+    fontSize: '0.7rem',
+    color: '#9ca3af',
     transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     '&.collapsed': {
       transform: 'rotate(180deg)'
@@ -265,9 +267,17 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
     [currentUnitKey]: true
   });
 
-  // Save collapse state to localStorage
+  // Save collapse state to localStorage and add body class
   useEffect(() => {
     localStorage.setItem('sidebarCollapsed', isCollapsed.toString());
+    if (isCollapsed) {
+      document.body.classList.add('sidebar-collapsed');
+    } else {
+      document.body.classList.remove('sidebar-collapsed');
+    }
+    return () => {
+      document.body.classList.remove('sidebar-collapsed');
+    };
   }, [isCollapsed]);
 
   const toggleCollapse = () => {
