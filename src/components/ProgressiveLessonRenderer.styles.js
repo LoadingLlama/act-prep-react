@@ -10,12 +10,18 @@ export const useProgressiveLessonStyles = createUseStyles({
     maxWidth: '900px',
     margin: '0 auto',
     marginLeft: '320px',
+    marginRight: 'auto',
     textAlign: 'left',
     borderRadius: '0',
     fontSize: '16px',
     counterReset: 'h3-counter h4-counter',
     minHeight: '100vh',
     paddingTop: '2rem',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    'body.sidebar-collapsed &': {
+      marginLeft: '270px',
+      maxWidth: '1000px'
+    },
 
     '& h1': {
       fontSize: '2.5rem',
@@ -272,7 +278,11 @@ export const useProgressiveLessonStyles = createUseStyles({
     right: 0,
     height: '4px',
     backgroundColor: '#e2f8ff',
-    zIndex: 1000
+    zIndex: 1000,
+    transition: 'left 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    'body.sidebar-collapsed &': {
+      left: '60px'
+    }
   },
   progressFill: {
     height: '100%',
