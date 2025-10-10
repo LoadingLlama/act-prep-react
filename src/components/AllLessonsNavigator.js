@@ -176,34 +176,38 @@ const useStyles = createUseStyles({
   toggleButton: {
     position: 'fixed',
     top: '50%',
-    left: '300px',
-    width: '24px',
-    height: '48px',
-    borderRadius: '0 8px 8px 0',
-    background: 'rgba(255, 255, 255, 0.9)',
-    border: '1px solid #e5e7eb',
-    borderLeft: 'none',
+    left: '318px',
+    width: '4px',
+    height: '50px',
+    borderRadius: '0 3px 3px 0',
+    background: '#d1d5db',
+    border: 'none',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
     zIndex: 100,
-    transition: 'left 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s ease',
-    backdropFilter: 'blur(10px)',
-    boxShadow: '2px 0 8px rgba(0,0,0,0.05)',
+    opacity: 0.4,
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     transform: 'translateY(-50%)',
     '$navigator.collapsed &': {
-      left: '40px'
+      left: '58px'
     },
     '&:hover': {
-      background: 'rgba(249, 250, 251, 0.95)',
-      boxShadow: '2px 0 12px rgba(0,0,0,0.08)'
+      width: '16px',
+      background: '#9ca3af',
+      opacity: 0.8,
+      boxShadow: '1px 0 4px rgba(0,0,0,0.1)'
+    },
+    '&:hover $toggleIcon': {
+      opacity: 1
     }
   },
   toggleIcon: {
-    fontSize: '0.7rem',
-    color: '#9ca3af',
-    transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    fontSize: '0.5rem',
+    color: '#ffffff',
+    opacity: 0,
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     '&.collapsed': {
       transform: 'rotate(180deg)'
     }
