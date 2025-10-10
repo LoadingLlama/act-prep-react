@@ -4,44 +4,24 @@ import TypewriterText from './TypewriterText';
 
 const useStyles = createUseStyles({
   exampleContainer: {
-    margin: '2rem 0'
+    margin: '2rem 0 5rem 0'
   },
   problemSection: {
     marginBottom: '2rem'
   },
   encouragement: {
     fontSize: '0.9rem',
-    color: '#6b7280',
+    color: '#10b981',
     fontStyle: 'italic',
     marginBottom: '1.5rem',
-    opacity: 0.8
+    opacity: 0.9,
+    fontWeight: '500'
   },
   choicesContainer: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.75rem',
+    gap: '0',
     margin: '1.5rem 0'
-  },
-  choiceButton: {
-    background: '#ffffff',
-    border: '2px solid #e5e7eb',
-    borderRadius: '8px',
-    padding: '1rem 1.25rem',
-    fontSize: '1rem',
-    textAlign: 'left',
-    cursor: 'pointer',
-    transition: 'all 0.2s ease',
-    color: '#1f2937',
-    '&:hover': {
-      background: '#f9fafb',
-      borderColor: '#d1d5db',
-      transform: 'translateX(4px)'
-    },
-    '&.selected': {
-      background: '#eff6ff',
-      borderColor: '#3b82f6',
-      color: '#1e40af'
-    }
   },
   solutionSection: {
     marginTop: '2rem',
@@ -91,11 +71,16 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
     const solutionMatch = allText.match(/<strong>Solution:<\/strong><\/p>([\s\S]*?)(?=<h[34]|$)/i);
     const solutionContent = solutionMatch ? solutionMatch[1].trim() : '';
 
+    // Extract correct answer (look for "Answer: X" pattern)
+    const correctAnswerMatch = solutionContent.match(/<strong>Answer:\s*([A-D])<\/strong>/i);
+    const correctAnswer = correctAnswerMatch ? correctAnswerMatch[1] : null;
+
     setParsedContent({
       title,
       problemText,
       choices,
-      solutionContent
+      solutionContent,
+      correctAnswer
     });
   }, [content]);
 
@@ -118,7 +103,7 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
     return <div>Loading example...</div>;
   }
 
-  const { title, problemText, choices, solutionContent } = parsedContent;
+  const { title, problemText, choices, solutionContent, correctAnswer } = parsedContent;
 
   return (
     <div className={classes.exampleContainer}>
@@ -137,10 +122,10 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
       {/* Problem */}
       <div className={classes.problemSection}>
         <div dangerouslySetInnerHTML={{ __html: `
-          <p style="margin: 1.5rem 0 0.5rem 0; padding-left: 1rem; border-left: 3px solid #4CAF50;">
+          <p style="margin: 1.5rem 0 0.5rem 0; padding-left: 1rem; border-left: 3px solid #10b981;">
             <strong>Problem:</strong>
           </p>
-          <p style="margin: 0 0 0.5rem 0; padding-left: 1rem; font-size: 1.05rem;">
+          <p style="margin: 0 0 1.5rem 0; font-size: 1.3rem; font-family: 'Times New Roman', Times, Georgia, serif; line-height: 1.8; letter-spacing: 0.015em; color: #2d3748;">
             ${problemText}
           </p>
         `}} />
@@ -153,16 +138,82 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
 
         {/* Answer Choices */}
         <div className={classes.choicesContainer}>
-          {choices.map(choice => (
-            <button
-              key={choice.letter}
-              className={`${classes.choiceButton} ${selectedChoice?.letter === choice.letter ? 'selected' : ''}`}
-              onClick={() => handleChoiceSelect(choice)}
-              disabled={selectedChoice !== null}
-            >
-              <strong>{choice.letter}.</strong> {choice.text}
-            </button>
-          ))}
+          {choices.map(choice => {
+            const isSelected = selectedChoice?.letter === choice.letter;
+            const showFeedback = selectedChoice !== null;
+            const isCorrectAnswer = choice.letter === correctAnswer;
+            const isCorrectChoice = isSelected && isCorrectAnswer;
+            const isIncorrectChoice = isSelected && !isCorrectAnswer;
+
+            return (
+              <div
+                key={choice.letter}
+                onClick={() => {
+                  if (!showFeedback) {
+                    handleChoiceSelect(choice);
+                  }
+                }}
+                style={{
+                  display: 'flex',
+                  gap: '1.25rem',
+                  padding: '0.5rem 0',
+                  cursor: showFeedback ? 'default' : 'pointer',
+                  alignItems: 'center',
+                  borderLeft: showFeedback && isCorrectChoice ? '3px solid #48bb78' :
+                              showFeedback && isIncorrectChoice ? '3px solid #f56565' :
+                              showFeedback && !isSelected && isCorrectAnswer ? '3px solid #48bb78' : 'none',
+                  paddingLeft: showFeedback && (isSelected || isCorrectAnswer) ? '0.75rem' : '0',
+                  backgroundColor: showFeedback && isCorrectChoice ? 'rgba(72, 187, 120, 0.05)' :
+                                   showFeedback && isIncorrectChoice ? 'rgba(245, 101, 101, 0.05)' :
+                                   showFeedback && !isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.05)' : 'transparent',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                {/* Circular letter indicator */}
+                <div style={{
+                  width: '24px',
+                  height: '24px',
+                  minWidth: '24px',
+                  borderRadius: '50%',
+                  border: isSelected && !showFeedback ? '2px solid #10b981' :
+                          showFeedback && isCorrectChoice ? '2px solid #48bb78' :
+                          showFeedback && isIncorrectChoice ? '2px solid #f56565' :
+                          showFeedback && !isSelected && isCorrectAnswer ? '2px solid #48bb78' : '2px solid #cbd5e0',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontWeight: '600',
+                  fontSize: '0.7rem',
+                  color: isSelected && !showFeedback ? '#10b981' :
+                          showFeedback && isCorrectChoice ? '#48bb78' :
+                          showFeedback && isIncorrectChoice ? '#f56565' :
+                          showFeedback && !isSelected && isCorrectAnswer ? '#48bb78' : '#718096',
+                  backgroundColor: isSelected && !showFeedback ? 'rgba(16, 185, 129, 0.1)' :
+                                   showFeedback && isCorrectChoice ? 'rgba(72, 187, 120, 0.1)' :
+                                   showFeedback && isIncorrectChoice ? 'rgba(245, 101, 101, 0.1)' :
+                                   showFeedback && !isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.1)' : 'transparent',
+                  transition: 'all 0.2s ease'
+                }}>
+                  {showFeedback && isCorrectChoice ? '✓' :
+                   showFeedback && isIncorrectChoice ? '✗' :
+                   showFeedback && !isSelected && isCorrectAnswer ? '✓' : choice.letter}
+                </div>
+
+                {/* Option text */}
+                <div style={{ flex: 1 }}>
+                  <div style={{
+                    fontSize: '1.3rem',
+                    color: '#2d3748',
+                    lineHeight: '1.8',
+                    fontFamily: '"Times New Roman", Times, Georgia, serif',
+                    letterSpacing: '0.015em'
+                  }}>
+                    {choice.text}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
