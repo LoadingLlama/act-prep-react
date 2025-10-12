@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 import TypewriterText from './TypewriterText';
+import PhotomathSolution from './PhotomathSolution';
 
 const useStyles = createUseStyles({
   exampleContainer: {
@@ -178,7 +179,7 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
         {/* Problem */}
         <div className={classes.problemSection}>
         <div dangerouslySetInnerHTML={{ __html: `
-          <p style="margin: 1rem 0 1rem 0; font-size: 16px; font-family: 'Times New Roman', Times, Georgia, serif; line-height: 1.7; letter-spacing: 0.01em; color: #2d3748;">
+          <p style="margin: 1rem 0 1rem 0; font-size: 19px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; font-weight: 500; color: #111827;">
             ${problemText}
           </p>
         `}} />
@@ -255,11 +256,11 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
                 {/* Option text */}
                 <div style={{ flex: 1 }}>
                   <div style={{
-                    fontSize: '16px',
-                    color: '#2d3748',
-                    lineHeight: '1.7',
-                    fontFamily: '"Times New Roman", Times, Georgia, serif',
-                    letterSpacing: '0.01em'
+                    fontSize: '17px',
+                    color: '#1f2937',
+                    lineHeight: '1.6',
+                    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                    fontWeight: '400'
                   }}>
                     {choice.text}
                   </div>
@@ -274,14 +275,7 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
       {/* Solution - only show after selection (or immediately for worked examples) */}
       {showSolution && (
         <div className={classes.solutionSection}>
-          <div dangerouslySetInnerHTML={{ __html: `
-            <p style="margin: 1.5rem 0 0.8rem 0; font-size: 0.85rem; color: #6b7280; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">
-              Solution
-            </p>
-            <div style="background: #f9fafb; border-radius: 8px; padding: 1.25rem; border-left: 3px solid #3b82f6;">
-              ${solutionContent}
-            </div>
-          `}} />
+          <PhotomathSolution solutionHTML={solutionContent} answer={correctAnswer} />
         </div>
       )}
       </div>

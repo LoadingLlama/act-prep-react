@@ -4,12 +4,13 @@ export const useInteractiveQuizStyles = createUseStyles({
   interactiveQuiz: {
     border: '2px solid #dc2626',
     borderRadius: '12px',
-    padding: '1.5rem 2rem',
+    padding: '0',
     margin: '3rem auto 3rem auto',
     maxWidth: '1200px',
     backgroundColor: '#ffffff',
     boxShadow: '0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04)',
     transition: 'box-shadow 0.2s ease',
+    overflow: 'hidden',
     '&:hover': {
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05)'
     },
@@ -43,32 +44,34 @@ export const useInteractiveQuizStyles = createUseStyles({
     transition: 'width 0.3s ease'
   },
   progressText: {
-    fontSize: '0.9rem',
-    color: '#4a5568',
+    fontSize: '14px',
+    color: '#6b7280',
     textAlign: 'center',
-    fontWeight: '500'
+    fontWeight: '500',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
   },
   quizContainer: {
-    marginBottom: '1.5rem'
+    marginBottom: '1.5rem',
+    padding: '1.5rem 2rem'
   },
   quizQuestion: {
     marginBottom: '1rem'
   },
   questionText: {
-    fontSize: '1.3rem',
-    color: '#1a202c',
+    fontSize: '19px',
+    color: '#111827',
     marginBottom: '1.5rem',
     lineHeight: '1.6',
-    fontWeight: '400',
+    fontWeight: '500',
     textAlign: 'left',
     padding: '0',
     letterSpacing: 'normal',
-    fontFamily: '"Times New Roman", Times, Georgia, serif',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
     '& u': {
-      fontSize: '1.3rem !important',
-      fontFamily: '"Times New Roman", Times, Georgia, serif !important',
+      fontSize: '19px !important',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important',
       lineHeight: '1.6 !important',
-      fontWeight: '400 !important',
+      fontWeight: '500 !important',
       textDecoration: 'underline'
     }
   },
@@ -83,9 +86,9 @@ export const useInteractiveQuizStyles = createUseStyles({
     border: '2px solid #e5e7eb',
     borderRadius: '8px',
     backgroundColor: '#ffffff',
-    color: '#2d3748',
+    color: '#1f2937',
     cursor: 'pointer',
-    fontSize: '1rem',
+    fontSize: '17px',
     textAlign: 'left',
     transition: 'all 0.2s ease',
     position: 'relative',
@@ -95,7 +98,8 @@ export const useInteractiveQuizStyles = createUseStyles({
     flexDirection: 'column',
     justifyContent: 'center',
     lineHeight: '1.6',
-    fontFamily: '"Times New Roman", Times, Georgia, serif',
+    fontWeight: '400',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
     '&:hover': {
       background: '#f9fafb',
       borderColor: '#d1d5db',
@@ -149,10 +153,11 @@ export const useInteractiveQuizStyles = createUseStyles({
     marginTop: '0.75rem'
   },
   feedbackText: {
-    color: '#4a5568',
-    fontSize: '0.95rem',
-    lineHeight: '1.5',
-    margin: 0
+    color: '#6b7280',
+    fontSize: '15px',
+    lineHeight: '1.6',
+    margin: 0,
+    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
   },
   quizNavigation: {
     display: 'flex',
@@ -160,16 +165,18 @@ export const useInteractiveQuizStyles = createUseStyles({
     alignItems: 'center',
     gap: '0.75rem',
     borderTop: 'none',
-    paddingTop: '0.75rem'
+    paddingTop: '0.75rem',
+    padding: '0.75rem 2rem 1.5rem 2rem'
   },
   navButton: {
     padding: '0.75rem 1.5rem',
     border: 'none',
     borderRadius: '8px',
-    fontSize: '0.95rem',
-    fontWeight: '400',
+    fontSize: '15px',
+    fontWeight: '500',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
     '&.prev': {
       backgroundColor: '#f7fafc',
       color: '#4a5568',
@@ -196,7 +203,8 @@ export const useInteractiveQuizStyles = createUseStyles({
     color: '#dc2626'
   },
   quizResults: {
-    textAlign: 'center'
+    textAlign: 'center',
+    padding: '1.5rem 2rem'
   },
   quizScore: {
     backgroundColor: 'transparent',
@@ -210,8 +218,10 @@ export const useInteractiveQuizStyles = createUseStyles({
   },
   finalScoreText: {
     fontSize: '1.5rem',
-    color: '#2d3748',
+    color: '#1f2937',
     marginBottom: '1rem',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+    fontWeight: '500',
     '& span': {
       color: '#dc2626',
       fontWeight: '700',
@@ -223,6 +233,8 @@ export const useInteractiveQuizStyles = createUseStyles({
     borderRadius: '0',
     margin: '0.75rem 0',
     fontWeight: '600',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+    fontSize: '16px',
     '&.master': {
       backgroundColor: 'transparent',
       color: '#2f855a',
@@ -253,10 +265,11 @@ export const useInteractiveQuizStyles = createUseStyles({
     border: 'none',
     borderRadius: '8px',
     padding: '0.75rem 2rem',
-    fontSize: '1rem',
+    fontSize: '15px',
     fontWeight: '600',
     cursor: 'pointer',
     transition: 'background-color 0.2s ease',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
     '&:hover': {
       backgroundColor: '#b91c1c'
     }
@@ -267,9 +280,12 @@ export const useInteractiveQuizStyles = createUseStyles({
     borderRadius: '0',
     padding: '1.25rem 0',
     textAlign: 'left',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
     '& h4': {
-      color: '#2d3748',
-      marginBottom: '1rem'
+      color: '#1f2937',
+      marginBottom: '1rem',
+      fontWeight: '600',
+      fontSize: '17px'
     },
     '& ul': {
       listStyle: 'none',
@@ -278,20 +294,23 @@ export const useInteractiveQuizStyles = createUseStyles({
     },
     '& li': {
       padding: '0.5rem 0',
-      color: '#4a5568',
+      color: '#6b7280',
+      fontSize: '15px',
+      lineHeight: '1.6',
       '& strong': {
         color: '#dc2626'
       },
       '& em': {
-        color: '#2d3748',
+        color: '#1f2937',
         fontWeight: '600'
       }
     }
   },
   quizIntro: {
-    color: '#4a5568',
-    fontSize: '0.95rem',
+    color: '#6b7280',
+    fontSize: '15px',
     marginBottom: '1rem',
-    lineHeight: '1.5'
+    lineHeight: '1.6',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
   }
 });
