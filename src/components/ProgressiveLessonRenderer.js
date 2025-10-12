@@ -19,7 +19,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
   const [textCompletionStatus, setTextCompletionStatus] = useState({});
   const [exampleCompletionStatus, setExampleCompletionStatus] = useState({});
   const [sectionStatusOverride, setSectionStatusOverride] = useState({});
-  const [typingSpeed, setTypingSpeed] = useState(25);
+  const [typingSpeed, setTypingSpeed] = useState(1); // Fast typing speed
   const [isCompleting, setIsCompleting] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   const typewriterRef = React.useRef(null);
@@ -35,15 +35,31 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
       // Check if this lesson is already completed
       const isLessonCompleted = lessonProgress[lesson.id] === 'completed';
 
-      setCurrentSection(0);
-      setVisibleSections(1);
+      // Only restore progress if lesson is not completed
+      let restoredState = null;
+      if (!isLessonCompleted) {
+        const savedProgressKey = `lesson_progress_${lesson.id}`;
+        const savedProgress = localStorage.getItem(savedProgressKey);
+
+        if (savedProgress) {
+          try {
+            restoredState = JSON.parse(savedProgress);
+          } catch (e) {
+            console.error('Failed to parse saved progress:', e);
+          }
+        }
+      }
+
+      // Use restored state if available, otherwise start fresh
+      setCurrentSection(restoredState?.currentSection || 0);
+      setVisibleSections(restoredState?.visibleSections || 1);
       setCurrentSectionComplete(false);
       setIsComplete(false);
-      setQuizCompletionStatus({});
-      setTextCompletionStatus({});
-      setExampleCompletionStatus({});
+      setQuizCompletionStatus(restoredState?.quizCompletionStatus || {});
+      setTextCompletionStatus(restoredState?.textCompletionStatus || {});
+      setExampleCompletionStatus(restoredState?.exampleCompletionStatus || {});
       setSectionStatusOverride({});
-      setHasStarted(isLessonCompleted); // Auto-start if completed
+      setHasStarted(restoredState?.hasStarted || isLessonCompleted); // Auto-start if completed or was started before
 
       const processedSections = [];
 
@@ -58,6 +74,19 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
 
       // Fetch quizzes from Supabase
       const quizzes = lessonUUID ? await QuizzesService.getQuizzesByLessonId(lessonUUID) : [];
+      console.log('📚 Loaded quizzes for lesson:', lessonUUID);
+      console.log('📝 Number of quizzes:', quizzes?.length || 0);
+      if (quizzes && quizzes.length > 0) {
+        quizzes.forEach((quiz, idx) => {
+          console.log(`   Quiz ${idx + 1}:`, quiz.title);
+          console.log(`   - Questions: ${quiz.questions?.length || 0}`);
+          console.log(`   - Position: ${quiz.position}`);
+          if (quiz.questions && quiz.questions.length > 0) {
+            console.log(`   - Sample question: ${quiz.questions[0].text?.substring(0, 50)}...`);
+            console.log(`   - Options for Q1: ${quiz.questions[0].options?.length || 0}`);
+          }
+        });
+      }
 
       // Split content into text sections
       const textSections = splitIntoTextSections(lesson.content);
@@ -82,6 +111,8 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         // After adding this text section, check if any quizzes should appear
         if (quizzesByPosition[textIndex]) {
           quizzesByPosition[textIndex].forEach(quiz => {
+            console.log(`🎯 Adding quiz section at position ${textIndex}:`, quiz.title);
+            console.log(`   - Has ${quiz.questions?.length || 0} questions`);
             processedSections.push({
               type: 'quiz',
               data: quiz,
@@ -111,6 +142,19 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
 
       console.log('Total text sections:', textSections.length);
       console.log('Total sections (text + quizzes):', processedSections.length);
+
+      // Log each section for debugging
+      console.log('\n=== ALL SECTIONS ===');
+      processedSections.forEach((section, idx) => {
+        if (section.type === 'text') {
+          const preview = section.content.substring(0, 100).replace(/<[^>]*>/g, '');
+          console.log(`Section ${idx}: TEXT - ${preview}`);
+        } else if (section.type === 'quiz') {
+          console.log(`Section ${idx}: QUIZ - ${section.data?.title}`);
+        } else if (section.type === 'example') {
+          console.log(`Section ${idx}: EXAMPLE`);
+        }
+      });
 
       setSections(processedSections);
       sectionRefs.current = processedSections.map((_, i) => sectionRefs.current[i] || React.createRef());
@@ -248,6 +292,24 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
     }
   }, [currentSection, sections.length, currentSectionComplete]);
 
+  // Save progress to localStorage whenever state changes
+  useEffect(() => {
+    if (!lesson?.id || sections.length === 0) return;
+
+    const progressState = {
+      currentSection,
+      visibleSections,
+      quizCompletionStatus,
+      textCompletionStatus,
+      exampleCompletionStatus,
+      hasStarted,
+      timestamp: Date.now()
+    };
+
+    const savedProgressKey = `lesson_progress_${lesson.id}`;
+    localStorage.setItem(savedProgressKey, JSON.stringify(progressState));
+  }, [currentSection, visibleSections, quizCompletionStatus, textCompletionStatus, exampleCompletionStatus, hasStarted, lesson?.id, sections.length]);
+
   const handleSectionClick = (index) => {
     // Just scroll to the section without resetting anything
     if (index <= currentSection && sectionRefs.current[index]) {
@@ -338,7 +400,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
       </div>
 
       {/* Lesson Title Section */}
-      <div style={{
+      <div className={classes.lessonTitleSection} style={{
         padding: '0',
         marginBottom: '2rem'
       }}>
@@ -441,6 +503,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
             sectionStatusOverride={sectionStatusOverride}
             sections={sections}
             classes={classes}
+            lessonKey={lesson?.id}
             typewriterRef={index === currentSection ? typewriterRef : null}
             onTextComplete={handleTextComplete}
             onExampleComplete={handleExampleComplete}

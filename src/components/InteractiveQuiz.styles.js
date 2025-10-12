@@ -2,22 +2,27 @@ import { createUseStyles } from 'react-jss';
 
 export const useInteractiveQuizStyles = createUseStyles({
   interactiveQuiz: {
-    backgroundColor: 'transparent',
-    border: 'none',
-    borderRadius: '0',
-    padding: '1.25rem 0',
-    margin: '4rem auto 2rem auto',
+    border: '2px solid #dc2626',
+    borderRadius: '12px',
+    padding: '1.5rem 2rem',
+    margin: '3rem auto 3rem auto',
     maxWidth: '1200px',
-    boxShadow: 'none',
-    background: 'transparent',
-    backdropFilter: 'none',
+    backgroundColor: '#ffffff',
+    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04)',
+    transition: 'box-shadow 0.2s ease',
+    '&:hover': {
+      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05)'
+    },
     '& > h3': {
       marginTop: '0 !important'
     },
     '&.final-quiz': {
-      border: 'none',
-      background: 'transparent',
-      boxShadow: 'none'
+      border: '2px solid #dc2626',
+      backgroundColor: '#ffffff',
+      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04)',
+      '&:hover': {
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05)'
+      }
     }
   },
   quizProgress: {
@@ -174,10 +179,10 @@ export const useInteractiveQuizStyles = createUseStyles({
       }
     },
     '&.next': {
-      backgroundColor: '#1a73e8',
+      backgroundColor: '#dc2626',
       color: 'white',
       '&:hover': {
-        backgroundColor: '#2c5aa0'
+        backgroundColor: '#b91c1c'
       }
     },
     '&:disabled': {
@@ -188,7 +193,7 @@ export const useInteractiveQuizStyles = createUseStyles({
   quizScoreInline: {
     fontSize: '1rem',
     fontWeight: '600',
-    color: '#1a73e8'
+    color: '#dc2626'
   },
   quizResults: {
     textAlign: 'center'
@@ -208,7 +213,7 @@ export const useInteractiveQuizStyles = createUseStyles({
     color: '#2d3748',
     marginBottom: '1rem',
     '& span': {
-      color: '#1a73e8',
+      color: '#dc2626',
       fontWeight: '700',
       fontSize: '1.8rem'
     }
@@ -225,7 +230,7 @@ export const useInteractiveQuizStyles = createUseStyles({
     },
     '&.proficient': {
       backgroundColor: 'transparent',
-      color: '#1a73e8',
+      color: '#dc2626',
       border: 'none'
     },
     '&.developing': {
@@ -243,7 +248,7 @@ export const useInteractiveQuizStyles = createUseStyles({
     marginTop: '1rem'
   },
   resetQuiz: {
-    backgroundColor: '#1a73e8',
+    backgroundColor: '#dc2626',
     color: 'white',
     border: 'none',
     borderRadius: '8px',
@@ -253,7 +258,7 @@ export const useInteractiveQuizStyles = createUseStyles({
     cursor: 'pointer',
     transition: 'background-color 0.2s ease',
     '&:hover': {
-      backgroundColor: '#2c5aa0'
+      backgroundColor: '#b91c1c'
     }
   },
   masteryLevels: {
@@ -275,7 +280,7 @@ export const useInteractiveQuizStyles = createUseStyles({
       padding: '0.5rem 0',
       color: '#4a5568',
       '& strong': {
-        color: '#1a73e8'
+        color: '#dc2626'
       },
       '& em': {
         color: '#2d3748',

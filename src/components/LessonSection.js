@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import TypewriterText from './TypewriterText';
 import InteractiveQuiz from './InteractiveQuiz';
 import InteractiveExample from './InteractiveExample';
+import { useTermTooltips } from '../hooks/useTermTooltips';
 
 const LessonSection = ({
   section,
@@ -19,8 +20,16 @@ const LessonSection = ({
   onQuizComplete,
   onExampleComplete,
   onSectionClick,
-  sections
+  sections,
+  lessonKey
 }) => {
+  const contentRef = useRef(null);
+  useTermTooltips(contentRef, lessonKey);
+
+  // Check if this is a past section or already completed
+  const isPastSection = index < currentSection;
+  const isAlreadyComplete = textCompletionStatus[index] || quizCompletionStatus[index] || exampleCompletionStatus[index];
+
   const sectionClasses = [
     classes.section,
     index < visibleSections ? 'visible' : '',
@@ -44,7 +53,7 @@ const LessonSection = ({
   };
 
   return (
-    <div className={sectionClasses} onClick={handleSectionClick}>
+    <div className={sectionClasses} onClick={handleSectionClick} ref={contentRef}>
       {section.type === 'text' ? (
         <>
           {index === currentSection ? (
@@ -53,7 +62,7 @@ const LessonSection = ({
                 text={section.content || ''}
                 startDelay={0}
                 typingSpeed={typingSpeed}
-                skipAnimation={false}
+                skipAnimation={isPastSection || isAlreadyComplete}
                 onComplete={() => onTextComplete(index)}
                 ref={typewriterRef}
               />
