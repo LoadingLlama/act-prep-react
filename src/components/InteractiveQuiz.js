@@ -93,11 +93,12 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
   if (showResults) {
     return (
       <div className={`${classes.interactiveQuiz} ${isFinal ? 'final-quiz' : ''}`}>
-        {/* Header - same format as quiz */}
+        {/* Header - solid red background for final quiz look */}
         <div style={{
-          paddingBottom: '0.75rem',
-          borderBottom: '1px solid #e2e8f0',
-          marginBottom: '1rem',
+          padding: '1.25rem 2rem',
+          backgroundColor: '#dc2626',
+          borderRadius: '0',
+          marginBottom: '0',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -106,26 +107,26 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
           <div style={{
             fontSize: '0.95rem',
             fontWeight: '600',
-            color: '#9ca3af',
+            color: '#ffffff',
             display: 'flex',
             alignItems: 'center',
             gap: '0.5rem'
           }}>
-            {quizData.title.replace('Practice:', 'Checkpoint:')} - Results
+            Mastery Quiz - Results
             {quizData.title.startsWith('Practice') && (
               <span style={{
                 fontSize: '0.65rem',
                 fontWeight: '400',
-                color: '#6b7280',
-                backgroundColor: 'transparent',
+                color: '#ffffff',
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
                 padding: '0.15rem 0.5rem',
                 borderRadius: '4px',
-                border: '1px solid #d1d5db',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.25rem'
               }}>
-                <span style={{ color: '#10b981' }}>✓</span> ACT VERIFIED
+                <span style={{ color: '#ffffff' }}>✓</span> ACT VERIFIED
               </span>
             )}
           </div>
@@ -170,11 +171,12 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
 
   return (
     <div className={`${classes.interactiveQuiz} ${isFinal ? 'final-quiz' : ''}`}>
-      {/* Header with title, badge, question number, and score all on one line */}
+      {/* Header with title, badge, question number, and score - solid red background */}
       <div style={{
-        paddingBottom: '0.75rem',
-        borderBottom: '1px solid #e2e8f0',
-        marginBottom: '1rem',
+        padding: '1.25rem 2rem',
+        backgroundColor: '#dc2626',
+        borderRadius: '0',
+        marginBottom: '0',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -184,7 +186,7 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
         <div style={{
           fontSize: '0.85rem',
           fontWeight: '500',
-          color: '#666'
+          color: '#ffffff'
         }}>
           {currentQuestion + 1}.
         </div>
@@ -193,28 +195,28 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
         <div style={{
           fontSize: '0.95rem',
           fontWeight: '600',
-          color: '#9ca3af',
+          color: '#ffffff',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           gap: '0.5rem',
           flex: 1
         }}>
-          {quizData.title.replace('Practice:', 'Checkpoint:')}
+          Mastery Quiz
           {quizData.title.startsWith('Practice') && (
             <span style={{
               fontSize: '0.65rem',
               fontWeight: '400',
-              color: '#6b7280',
-              backgroundColor: 'transparent',
+              color: '#ffffff',
+              backgroundColor: 'rgba(255, 255, 255, 0.2)',
               padding: '0.15rem 0.5rem',
               borderRadius: '4px',
-              border: '1px solid #d1d5db',
+              border: '1px solid rgba(255, 255, 255, 0.3)',
               display: 'flex',
               alignItems: 'center',
               gap: '0.25rem'
             }}>
-              <span style={{ color: '#10b981' }}>✓</span> ACT VERIFIED
+              <span style={{ color: '#ffffff' }}>✓</span> ACT VERIFIED
             </span>
           )}
         </div>
@@ -223,7 +225,7 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
         <div style={{
           fontSize: '0.75rem',
           fontWeight: '500',
-          color: '#666'
+          color: '#ffffff'
         }}>
           Score: {score}/{quizData.questions.length}
         </div>
@@ -235,11 +237,12 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
           <p
             className={classes.questionText}
             style={{
-              fontSize: '16px',
-              fontFamily: '"Times New Roman", Times, Georgia, serif',
-              lineHeight: '1.7',
+              fontSize: '19px',
+              fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+              lineHeight: '1.6',
               marginBottom: '2.5rem',
-              letterSpacing: '0.01em'
+              fontWeight: '500',
+              color: '#111827'
             }}
             dangerouslySetInnerHTML={{ __html: question.text }}
           />
@@ -311,11 +314,11 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
                   {/* Option text */}
                   <div style={{ flex: 1 }}>
                     <div style={{
-                      fontSize: '0.95rem',
-                      color: '#2d3748',
-                      lineHeight: '1.5',
-                      fontFamily: '"Times New Roman", Times, Georgia, serif',
-                      letterSpacing: '0.01em'
+                      fontSize: '17px',
+                      color: '#1f2937',
+                      lineHeight: '1.6',
+                      fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                      fontWeight: '400'
                     }}>
                       {option.text}
                     </div>
@@ -328,27 +331,39 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
           {/* Show explanation after answering - Photomath style */}
           {hasAnswered && feedback[currentQuestion] && (
             <div style={{
-              marginTop: '2rem',
+              marginTop: '1.5rem',
               animation: 'fadeIn 0.5s ease-out'
             }}>
-              <p style={{
-                margin: '0 0 0.8rem 0',
-                fontSize: '0.85rem',
-                color: '#6b7280',
-                fontWeight: '500',
-                letterSpacing: '0.05em',
-                textTransform: 'uppercase'
-              }}>
-                Explanation
-              </p>
+              {/* Show correct answer in bold red */}
               <div style={{
-                background: '#f9fafb',
-                borderRadius: '8px',
-                padding: '1.25rem',
-                borderLeft: '3px solid #3b82f6',
-                fontSize: '0.95rem',
-                lineHeight: '1.7',
-                color: '#374151'
+                fontSize: '1.1rem',
+                fontWeight: '700',
+                color: '#dc2626',
+                marginBottom: '1rem',
+                letterSpacing: '0.02em'
+              }}>
+                Answer: {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'][question.options.findIndex(opt => opt.isCorrect)]}
+              </div>
+
+              {/* Solution header */}
+              <div style={{
+                fontSize: '0.8rem',
+                fontWeight: '600',
+                color: '#6b7280',
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
+                marginBottom: '1rem'
+              }}>
+                Solution
+              </div>
+
+              {/* Explanation content */}
+              <div style={{
+                fontSize: '17px',
+                lineHeight: '1.4',
+                color: '#1f2937',
+                fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                fontWeight: '400'
               }}
               dangerouslySetInnerHTML={{ __html: feedback[currentQuestion] }}
               />
@@ -363,9 +378,13 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
           className={`${classes.navButton} prev`}
           onClick={previousQuestion}
           disabled={currentQuestion === 0}
-          style={{ opacity: currentQuestion === 0 ? 0.3 : 1 }}
+          style={{
+            opacity: currentQuestion === 0 ? 0.3 : 1,
+            fontSize: '1.2rem',
+            padding: '0.5rem 1rem'
+          }}
         >
-          ← Previous
+          ←
         </button>
 
         <button
@@ -376,7 +395,7 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
             opacity: !hasAnswered ? 0.5 : 1
           }}
         >
-          {currentQuestion === quizData.questions.length - 1 ? 'Finish →' : 'Next →'}
+          {currentQuestion === quizData.questions.length - 1 ? 'Finish' : 'Next'}
         </button>
       </div>
     </div>
