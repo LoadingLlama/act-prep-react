@@ -17,15 +17,10 @@ const useStyles = createUseStyles({
       opacity: 1
     },
     '&::-webkit-scrollbar': {
-      width: '3px'
+      display: 'none' // Hide scrollbar completely
     },
-    '&::-webkit-scrollbar-track': {
-      background: 'transparent'
-    },
-    '&::-webkit-scrollbar-thumb': {
-      background: '#d1d5db',
-      borderRadius: '2px'
-    }
+    scrollbarWidth: 'none', // Firefox
+    '-ms-overflow-style': 'none' // IE/Edge
   },
   tocItem: {
     fontSize: '0.75rem',

@@ -4,16 +4,34 @@ import TypewriterText from './TypewriterText';
 
 const useStyles = createUseStyles({
   exampleContainer: {
-    margin: '2rem 0 5rem 0'
+    margin: '1.5rem 0 3rem 0'
+  },
+  elevatedBox: {
+    border: '1px solid #e5e7eb',
+    borderRadius: '12px',
+    padding: '1.5rem 2rem',
+    backgroundColor: '#ffffff',
+    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04)',
+    transition: 'box-shadow 0.2s ease',
+    '&:hover': {
+      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05)'
+    },
+    '& > *:first-child': {
+      marginTop: '0 !important'
+    },
+    '& h4': {
+      marginTop: '0 !important',
+      marginBottom: '1rem !important'
+    }
   },
   problemSection: {
-    marginBottom: '2rem'
+    marginBottom: '1.5rem'
   },
   encouragement: {
-    fontSize: '0.85rem',
+    fontSize: '0.8rem',
     color: '#9ca3af',
     fontStyle: 'italic',
-    marginBottom: '1.5rem',
+    marginBottom: '1rem',
     opacity: 0.7,
     fontWeight: '400'
   },
@@ -21,10 +39,10 @@ const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     gap: '0',
-    margin: '1.5rem 0'
+    margin: '1rem 0'
   },
   solutionSection: {
-    marginTop: '2rem',
+    marginTop: '1.5rem',
     opacity: 0,
     animation: '$fadeIn 0.5s ease-out forwards'
   },
@@ -52,37 +70,71 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
     // Find Problem and Solution sections
     const allText = content;
 
-    // Extract problem (everything between "PROBLEM:" and "SOLUTION:")
-    const problemMatch = allText.match(/<strong>Problem:<\/strong><\/p>([\s\S]*?)(?=<p[^>]*><strong>Solution:)/i);
-    const problemContent = problemMatch ? problemMatch[1].trim() : '';
+    // Extract problem text - text between title and choices (or Solution if no choices)
+    let problemText = '';
 
-    // Extract choices (A. B. C. D.)
-    const choiceMatches = problemContent.match(/([A-D])\.\s*([^<\n]+)/g) || [];
-    const choices = choiceMatches.map(match => {
-      const [, letter, text] = match.match(/([A-D])\.\s*(.+)/) || [];
-      return { letter, text: text?.trim() };
-    }).filter(c => c.letter && c.text);
+    // First, try to find text after the title (h4) and before the choices/solution
+    // Remove the title first
+    let textAfterTitle = allText.replace(/<h4[^>]*>.*?<\/h4>/is, '');
 
-    // Extract problem text (before choices)
-    const problemTextMatch = problemContent.match(/<p[^>]*>(.*?)(?=<p[^>]*>[A-D]\.|\[A-D]\.|<br>A\.)/is);
-    const problemText = problemTextMatch ? problemTextMatch[1].trim() : problemContent.split(/<br>|<p/)[0].trim();
+    // Extract text before the first choice (<span>A.) or Solution
+    const textBeforeChoicesMatch = textAfterTitle.match(/(.*?)(?:<p[^>]*>\s*<span[^>]*>[A-E]\.|<p[^>]*>\s*<strong>Solution:<\/strong>)/is);
+    if (textBeforeChoicesMatch) {
+      problemText = textBeforeChoicesMatch[1]
+        .trim()
+        .replace(/<\/?p[^>]*>/g, ' ') // Remove p tags
+        .replace(/\s+/g, ' ') // Normalize whitespace
+        .trim();
+    }
 
-    // Extract solution (everything after "SOLUTION:" until the end or next section)
-    const solutionMatch = allText.match(/<strong>Solution:<\/strong><\/p>([\s\S]*?)(?=<h[34]|$)/i);
-    const solutionContent = solutionMatch ? solutionMatch[1].trim() : '';
+    // Extract diagram (SVG inside a div) - none for geometry lessons
+    const diagramHTML = '';
 
-    // Extract correct answer (look for "Answer: X" pattern)
-    const correctAnswerMatch = solutionContent.match(/<strong>Answer:\s*([A-D])<\/strong>/i);
+    // Extract choices (A. B. C. D. E.) from <span> tags with <br> separators
+    let choices = [];
+
+    // Look for the paragraph with answer choices (between Problem and Solution)
+    const choicesParagraphMatch = allText.match(/<p[^>]*>\s*<span[^>]*>([A-E])\.\s*(.*?)<\/span>[\s\S]*?<\/p>\s*<p[^>]*>\s*<strong>Solution:<\/strong>/is);
+    if (choicesParagraphMatch) {
+      const choicesParagraph = choicesParagraphMatch[0];
+      // Extract all <span> tags with answer choices
+      const spanMatches = choicesParagraph.match(/<span[^>]*>([A-E])\.\s*(.*?)<\/span>/g);
+      if (spanMatches && spanMatches.length > 0) {
+        choices = spanMatches.map(match => {
+          const [, letter, text] = match.match(/<span[^>]*>([A-E])\.\s*(.*?)<\/span>/) || [];
+          return { letter, text: text?.trim() };
+        }).filter(c => c.letter && c.text);
+      }
+    }
+
+    // Extract solution - everything after the Solution paragraph until the end or next section
+    let solutionContent = '';
+    const solutionMatch = allText.match(/<p[^>]*>\s*<strong>Solution:<\/strong>\s*<\/p>([\s\S]*?)(?=<h[34]|$)/i);
+    if (solutionMatch) {
+      solutionContent = solutionMatch[1].trim();
+    }
+
+    // Extract correct answer (look for "Answer: X" pattern) - only for quiz-style examples
+    // Note: The answer is plain text, not wrapped in <strong> tags
+    const correctAnswerMatch = solutionContent.match(/Answer:\s*([A-E])/i);
     const correctAnswer = correctAnswerMatch ? correctAnswerMatch[1] : null;
 
     setParsedContent({
       title,
       problemText,
+      diagramHTML,
       choices,
       solutionContent,
       correctAnswer
     });
   }, [content]);
+
+  // For worked examples (no choices), automatically show the solution
+  useEffect(() => {
+    if (parsedContent && parsedContent.choices.length === 0 && !showSolution) {
+      setShowSolution(true);
+    }
+  }, [parsedContent, showSolution]);
 
   useEffect(() => {
     if (showSolution && onComplete) {
@@ -103,41 +155,42 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
     return <div>Loading example...</div>;
   }
 
-  const { title, problemText, choices, solutionContent, correctAnswer } = parsedContent;
+  const { title, problemText, diagramHTML, choices, solutionContent, correctAnswer } = parsedContent;
+
+  // Check if this is a worked example (no multiple choice) or a quiz-style example
+  const isWorkedExample = choices.length === 0;
 
   return (
     <div className={classes.exampleContainer}>
-      {/* Title */}
-      {index === currentSection ? (
-        <TypewriterText
-          text={title}
-          typingSpeed={typingSpeed}
-          skipAnimation={false}
-          onComplete={() => {}}
-        />
-      ) : (
-        <div dangerouslySetInnerHTML={{ __html: title }} />
-      )}
+      <div className={classes.elevatedBox}>
+        {/* Title */}
+        {index === currentSection ? (
+          <TypewriterText
+            text={title}
+            typingSpeed={typingSpeed}
+            skipAnimation={false}
+            onComplete={() => {}}
+          />
+        ) : (
+          <div dangerouslySetInnerHTML={{ __html: title }} />
+        )}
 
-      {/* Problem */}
-      <div className={classes.problemSection}>
+        {/* Problem */}
+        <div className={classes.problemSection}>
         <div dangerouslySetInnerHTML={{ __html: `
-          <p style="margin: 1.5rem 0 0.5rem 0; padding-left: 1rem; border-left: 3px solid #10b981;">
-            <strong>Problem:</strong>
-          </p>
-          <p style="margin: 0 0 1.5rem 0; font-size: 1.3rem; font-family: 'Times New Roman', Times, Georgia, serif; line-height: 1.8; letter-spacing: 0.015em; color: #2d3748;">
+          <p style="margin: 1rem 0 1rem 0; font-size: 16px; font-family: 'Times New Roman', Times, Georgia, serif; line-height: 1.7; letter-spacing: 0.01em; color: #2d3748;">
             ${problemText}
           </p>
         `}} />
 
-        {!selectedChoice && (
-          <div className={classes.encouragement}>
-            💭 Try to solve this! No pressure if you get it wrong—this is just for learning.
-          </div>
+        {/* Render diagram if present */}
+        {diagramHTML && (
+          <div dangerouslySetInnerHTML={{ __html: diagramHTML }} />
         )}
 
-        {/* Answer Choices */}
-        <div className={classes.choicesContainer}>
+        {/* Answer Choices - only for quiz-style examples */}
+        {!isWorkedExample && (
+          <div className={classes.choicesContainer}>
           {choices.map(choice => {
             const isSelected = selectedChoice?.letter === choice.letter;
             const showFeedback = selectedChoice !== null;
@@ -155,14 +208,14 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
                 }}
                 style={{
                   display: 'flex',
-                  gap: '1.25rem',
-                  padding: '0.5rem 0',
+                  gap: '0.8rem',
+                  padding: '0.35rem 0',
                   cursor: showFeedback ? 'default' : 'pointer',
                   alignItems: 'center',
                   borderLeft: showFeedback && isCorrectChoice ? '3px solid #48bb78' :
                               showFeedback && isIncorrectChoice ? '3px solid #f56565' :
                               showFeedback && !isSelected && isCorrectAnswer ? '3px solid #48bb78' : 'none',
-                  paddingLeft: showFeedback && (isSelected || isCorrectAnswer) ? '0.75rem' : '0',
+                  paddingLeft: showFeedback && (isSelected || isCorrectAnswer) ? '0.6rem' : '0',
                   backgroundColor: showFeedback && isCorrectChoice ? 'rgba(72, 187, 120, 0.05)' :
                                    showFeedback && isIncorrectChoice ? 'rgba(245, 101, 101, 0.05)' :
                                    showFeedback && !isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.05)' : 'transparent',
@@ -171,9 +224,9 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
               >
                 {/* Circular letter indicator */}
                 <div style={{
-                  width: '24px',
-                  height: '24px',
-                  minWidth: '24px',
+                  width: '22px',
+                  height: '22px',
+                  minWidth: '22px',
                   borderRadius: '50%',
                   border: isSelected && !showFeedback ? '2px solid #10b981' :
                           showFeedback && isCorrectChoice ? '2px solid #48bb78' :
@@ -183,7 +236,7 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontWeight: '600',
-                  fontSize: '0.7rem',
+                  fontSize: '0.65rem',
                   color: isSelected && !showFeedback ? '#10b981' :
                           showFeedback && isCorrectChoice ? '#48bb78' :
                           showFeedback && isIncorrectChoice ? '#f56565' :
@@ -202,11 +255,11 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
                 {/* Option text */}
                 <div style={{ flex: 1 }}>
                   <div style={{
-                    fontSize: '1.3rem',
+                    fontSize: '16px',
                     color: '#2d3748',
-                    lineHeight: '1.8',
+                    lineHeight: '1.7',
                     fontFamily: '"Times New Roman", Times, Georgia, serif',
-                    letterSpacing: '0.015em'
+                    letterSpacing: '0.01em'
                   }}>
                     {choice.text}
                   </div>
@@ -214,20 +267,24 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
               </div>
             );
           })}
-        </div>
+          </div>
+        )}
       </div>
 
-      {/* Solution - only show after selection */}
+      {/* Solution - only show after selection (or immediately for worked examples) */}
       {showSolution && (
         <div className={classes.solutionSection}>
           <div dangerouslySetInnerHTML={{ __html: `
-            <p style="margin: 1.5rem 0 0.5rem 0; padding-left: 1rem; border-left: 3px solid #FF9800;">
-              <strong>Solution:</strong>
+            <p style="margin: 1.5rem 0 0.8rem 0; font-size: 0.85rem; color: #6b7280; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">
+              Solution
             </p>
-            ${solutionContent}
+            <div style="background: #f9fafb; border-radius: 8px; padding: 1.25rem; border-left: 3px solid #3b82f6;">
+              ${solutionContent}
+            </div>
           `}} />
         </div>
       )}
+      </div>
     </div>
   );
 };

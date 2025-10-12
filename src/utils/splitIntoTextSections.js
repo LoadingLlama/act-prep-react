@@ -6,10 +6,10 @@ import logger from '../services/logging/logger';
 import errorTracker from '../services/logging/errorTracker';
 
 const isExampleSection = (content) => {
-  // Check if content contains h4 with "Example" and has Problem/Solution structure
+  // Check if content contains h4 with "Example" and has Solution structure
+  // Note: Problem: text was removed, but solution structure remains
   return content.includes('<h4') &&
          /Example \d+/i.test(content) &&
-         /Problem:/i.test(content) &&
          /Solution:/i.test(content);
 };
 

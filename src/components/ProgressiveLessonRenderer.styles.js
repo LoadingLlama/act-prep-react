@@ -14,7 +14,7 @@ export const useProgressiveLessonStyles = createUseStyles({
     textAlign: 'left',
     borderRadius: '0',
     fontSize: '16px',
-    counterReset: 'h3-counter h4-counter',
+    // counterReset: 'h3-counter h4-counter', // REMOVED: No automatic numbering
     minHeight: '100vh',
     paddingTop: '2rem',
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -45,7 +45,7 @@ export const useProgressiveLessonStyles = createUseStyles({
     },
     '& h3': {
       fontSize: '1.5rem',
-      fontWeight: '800',
+      fontWeight: '700', // Bold like H4
       color: '#000000',
       margin: '7rem 0 1rem 0',
       lineHeight: '1.35',
@@ -53,33 +53,33 @@ export const useProgressiveLessonStyles = createUseStyles({
       borderBottom: '1px solid #e5e7eb',
       paddingBottom: '0.75rem',
       marginBottom: '1rem',
-      counterIncrement: 'h3-counter',
-      '&:before': {
-        content: 'counter(h3-counter) ". "',
-        color: '#000000',
-        fontWeight: '800'
-      },
+      // counterIncrement: 'h3-counter', // REMOVED: No automatic numbering
+      // '&:before': { // REMOVED: No automatic numbering
+      //   content: 'counter(h3-counter) ". "',
+      //   color: '#000000',
+      //   fontWeight: '800'
+      // },
       '&:first-child': {
         marginTop: '2rem'
       }
     },
     '& h4': {
-      fontSize: '1.3rem !important',
-      fontWeight: '800 !important',
-      color: '#000000 !important',
-      margin: '5rem 0 1rem 0',
+      fontSize: '1.15rem !important', // Slightly bigger
+      fontWeight: '700 !important', // Bolder (was 600)
+      color: '#000000', // Removed !important to allow inline styles
+      margin: '5rem 0 0rem 0',
       lineHeight: '1.4',
       textTransform: 'none',
       letterSpacing: '-0.02em',
-      borderBottom: '1px solid #e5e7eb',
-      paddingBottom: '0.5rem',
-      counterIncrement: 'h4-counter',
-      '&:before': {
-        content: 'counter(h4-counter, lower-alpha) ". "',
-        color: '#000000',
-        fontWeight: '800',
-        fontSize: '1.1rem'
-      }
+      borderBottom: 'none', // No underline on H4s
+      paddingBottom: '0rem',
+      // counterIncrement: 'h4-counter', // REMOVED: No automatic numbering
+      // '&:before': { // REMOVED: No automatic numbering
+      //   content: 'counter(h4-counter, lower-alpha) ". "',
+      //   color: '#000000',
+      //   fontWeight: '800',
+      //   fontSize: '1.1rem'
+      // }
     },
     '& p': {
       fontSize: '16px',
@@ -87,8 +87,12 @@ export const useProgressiveLessonStyles = createUseStyles({
       lineHeight: 1.7,
       color: '#1a202c'
     },
-    '& h3 + p, & h3 + div, & h2 + p, & h3 + ul, & h3 + ol, & h4 + p, & h4 + div, & h4 + ul, & h4 + ol': {
+    '& h3 + p, & h3 + div, & h2 + p, & h3 + ul, & h3 + ol': {
       marginTop: '0.5rem',
+      marginLeft: '0.75rem'
+    },
+    '& h4 + p, & h4 + div, & h4 + ul, & h4 + ol': {
+      marginTop: '0.1rem',
       marginLeft: '0.75rem'
     },
     '& h3 ~ p, & h3 ~ div:not(.section), & h3 ~ ul, & h3 ~ ol, & h4 ~ p, & h4 ~ div:not(.section), & h4 ~ ul, & h4 ~ ol': {
@@ -97,6 +101,18 @@ export const useProgressiveLessonStyles = createUseStyles({
     '& strong': {
       color: '#111827',
       fontWeight: '600'
+    },
+    // Blue underlined terms (key terms) - bold text with faded underline
+    '& strong[style*="2563eb"][style*="underline"]': {
+      cursor: 'help',
+      fontWeight: '700 !important',
+      color: '#2563eb !important',
+      textDecorationColor: 'rgba(37, 99, 235, 0.35) !important',
+      transition: 'all 0.25s ease',
+      '&:hover': {
+        color: '#1d4ed8 !important',
+        textDecorationColor: '#1d4ed8 !important'
+      }
     },
     '& em': {
       fontStyle: 'italic',
@@ -123,12 +139,13 @@ export const useProgressiveLessonStyles = createUseStyles({
         lineHeight: 1.7
       },
       '& ul': {
-        marginTop: '0.75rem',
-        marginBottom: '0.75rem',
+        marginTop: '0.25rem',
+        marginBottom: '0.25rem',
         paddingLeft: '2.5rem',
         listStyle: 'circle',
         '& li': {
-          marginBottom: '0.5rem'
+          marginBottom: '0.25rem',
+          lineHeight: 1.5
         }
       }
     },
@@ -169,13 +186,13 @@ export const useProgressiveLessonStyles = createUseStyles({
       boxShadow: 'none',
       '& h4': {
         color: '#000000 !important',
-        marginBottom: '1rem',
-        fontSize: '1.3rem !important',
-        fontWeight: '800 !important',
+        marginBottom: '0rem',
+        fontSize: '1.15rem !important', // Slightly bigger
+        fontWeight: '700 !important', // Bolder (was 600)
         textTransform: 'none',
         letterSpacing: '-0.02em',
-        borderBottom: '1px solid #e5e7eb',
-        paddingBottom: '0.5rem'
+        borderBottom: 'none', // No underline
+        paddingBottom: '0rem'
       },
       '& p:last-child': {
         marginBottom: '0'
@@ -276,8 +293,8 @@ export const useProgressiveLessonStyles = createUseStyles({
     top: '60px',
     left: '320px',
     right: 0,
-    height: '4px',
-    backgroundColor: '#e2f8ff',
+    height: '2px', // Thinner - was 4px
+    backgroundColor: '#f3f4f6', // Much lighter gray
     zIndex: 1000,
     transition: 'left 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     'body.sidebar-collapsed &': {
@@ -286,9 +303,9 @@ export const useProgressiveLessonStyles = createUseStyles({
   },
   progressFill: {
     height: '100%',
-    background: 'linear-gradient(90deg, #3182ce 0%, #2b77c9 50%, #1a73e8 100%)',
+    background: '#93c5fd', // Light blue, no gradient
     transition: 'width 0.3s ease',
-    boxShadow: '0 0 15px rgba(26, 115, 232, 0.4)'
+    boxShadow: 'none' // No glow
   },
   completed: {
     '& .continue-prompt': {
@@ -483,6 +500,12 @@ export const useProgressiveLessonStyles = createUseStyles({
         transform: 'none',
         boxShadow: 'none'
       }
+    }
+  },
+  lessonTitleSection: {
+    transition: 'margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    'body.sidebar-collapsed &': {
+      marginLeft: '-50px'
     }
   }
 });
