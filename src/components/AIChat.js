@@ -1,32 +1,35 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { createUseStyles } from 'react-jss';
+/**
+ * AI Chat Component
+ * Interactive AI assistant for ACT prep
+ * Refactored to use hooks and sub-components for better maintainability
+ */
 
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useAIChatStyles } from './AIChat.styles';
+import { useDraggable } from '../hooks/useDraggable';
+import { useAIMessages } from '../hooks/useAIMessages';
+import ChatHeader from './chat/ChatHeader';
+import ChatInput from './chat/ChatInput';
+import MessageList from './chat/MessageList';
 
 const AIChat = ({ currentLesson, lessonContent }) => {
   const classes = useAIChatStyles();
 
   // Core states
   const [chatState, setChatState] = useState('collapsed'); // 'collapsed', 'inputFocused', 'chatOpen'
-  const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
   const [showTypingIndicator, setShowTypingIndicator] = useState(false);
   const [showContent, setShowContent] = useState(false);
-
-  // Dragging states
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragStartPos, setDragStartPos] = useState({ x: 0, y: 0 });
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [hasBeenDragged, setHasBeenDragged] = useState(false);
-  const [savedPosition, setSavedPosition] = useState({ x: 0, y: 0 });
-  const [savedHasBeenDragged, setSavedHasBeenDragged] = useState(false);
 
   // Refs
   const containerRef = useRef(null);
   const inputRef = useRef(null);
   const messagesEndRef = useRef(null);
   const chatBoxRef = useRef(null);
+
+  // Custom hooks
+  const draggable = useDraggable({ enabled: true, initialPosition: { x: 0, y: 0 } });
+  const { messages, isTyping, sendMessage } = useAIMessages(currentLesson, lessonContent);
 
   // Scroll to bottom when messages change
   useEffect(() => {
@@ -47,27 +50,16 @@ const AIChat = ({ currentLesson, lessonContent }) => {
           setInputValue('');
           setShowTypingIndicator(false);
           setShowContent(false);
-          // Save position if dragged
-          if (hasBeenDragged) {
-            setSavedPosition(position);
-            setSavedHasBeenDragged(true);
-          }
-          setHasBeenDragged(false);
-          setPosition({ x: 0, y: 0 });
-        } else if (chatState === 'chatOpen' && !isDragging) {
+          draggable.savePosition();
+          draggable.resetPosition();
+        } else if (chatState === 'chatOpen' && !draggable.isDragging) {
           // Only close chat if not currently dragging - preserve messages and position
           setChatState('collapsed');
           setInputValue('');
-          setIsTyping(false);
           setShowTypingIndicator(false);
           setShowContent(false);
-          // Save position if dragged
-          if (hasBeenDragged) {
-            setSavedPosition(position);
-            setSavedHasBeenDragged(true);
-          }
-          setHasBeenDragged(false);
-          setPosition({ x: 0, y: 0 });
+          draggable.savePosition();
+          draggable.resetPosition();
           // Note: We keep messages to preserve chat history
         }
       }
@@ -85,18 +77,17 @@ const AIChat = ({ currentLesson, lessonContent }) => {
         document.removeEventListener('mousedown', handleClickOutside);
       };
     }
-  }, [chatState, messages.length, isDragging, hasBeenDragged, position]);
+  }, [chatState, messages.length, draggable]);
 
   // Container click handler - restore previous state or start fresh
   const handleContainerClick = useCallback((e) => {
-    if (chatState === 'collapsed' && !hasBeenDragged) {
+    if (chatState === 'collapsed' && !draggable.hasBeenDragged) {
       e.stopPropagation();
 
       // Set all states simultaneously for smooth restoration
-      if (savedHasBeenDragged) {
+      if (draggable.savedHasBeenDragged) {
         // Restore position and dragged state immediately, then change chat state
-        setPosition(savedPosition);
-        setHasBeenDragged(true);
+        draggable.restorePosition();
 
         // Use requestAnimationFrame to ensure position is set before state change
         requestAnimationFrame(() => {
@@ -107,7 +98,6 @@ const AIChat = ({ currentLesson, lessonContent }) => {
             setChatState('inputFocused');
             setShowContent(true);
             setShowTypingIndicator(true);
-            // Use requestAnimationFrame for reliable focus after DOM update
             requestAnimationFrame(() => {
               requestAnimationFrame(() => {
                 inputRef.current?.focus();
@@ -124,7 +114,6 @@ const AIChat = ({ currentLesson, lessonContent }) => {
           setChatState('inputFocused');
           setShowContent(true);
           setShowTypingIndicator(true);
-          // Use requestAnimationFrame for reliable focus after DOM update
           requestAnimationFrame(() => {
             requestAnimationFrame(() => {
               inputRef.current?.focus();
@@ -133,7 +122,7 @@ const AIChat = ({ currentLesson, lessonContent }) => {
         }
       }
     }
-  }, [chatState, hasBeenDragged, messages.length, savedPosition, savedHasBeenDragged]);
+  }, [chatState, draggable, messages.length]);
 
   // Input handlers
   const handleInputFocus = useCallback(() => {
@@ -162,44 +151,12 @@ const AIChat = ({ currentLesson, lessonContent }) => {
 
   // Send message
   const handleSendMessage = useCallback(async () => {
-    const trimmedInput = inputValue.trim();
-
-    // Enhanced input validation
-    if (!trimmedInput ||
-        isTyping ||
-        typeof trimmedInput !== 'string' ||
-        trimmedInput.length > 1000) {
-      return;
+    const success = await sendMessage(inputValue);
+    if (success) {
+      setInputValue('');
+      setChatState('chatOpen');
     }
-
-    const userMessage = {
-      type: 'user',
-      content: trimmedInput,
-      timestamp: Date.now()
-    };
-
-    setMessages(prev => [...prev, userMessage]);
-    setInputValue('');
-    setIsTyping(true);
-    setChatState('chatOpen');
-
-    try {
-      const aiResponse = await callAIAPI(userMessage.content, currentLesson, lessonContent);
-      setMessages(prev => [...prev, {
-        type: 'ai',
-        content: aiResponse,
-        timestamp: Date.now()
-      }]);
-    } catch (error) {
-      setMessages(prev => [...prev, {
-        type: 'ai',
-        content: "I'm having trouble connecting right now. Please try again.",
-        timestamp: Date.now()
-      }]);
-    } finally {
-      setIsTyping(false);
-    }
-  }, [inputValue, isTyping, currentLesson, lessonContent]);
+  }, [inputValue, sendMessage]);
 
   const handleInputKeyPress = useCallback((e) => {
     if (e.key === 'Enter' && !e.shiftKey && inputValue.trim() && !isTyping) {
@@ -220,217 +177,21 @@ const AIChat = ({ currentLesson, lessonContent }) => {
     }
   }, [inputValue, isTyping, messages.length, handleSendMessage]);
 
-  // AI API simulation
-  const callAIAPI = async (question, lesson, content) => {
-    // Input validation for security
-    if (typeof question !== 'string' || question.length > 1000) {
-      throw new Error('Invalid question input');
-    }
-
-    await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 1200));
-
-    const responses = {
-      'backsolving': [
-        "Backsolving is perfect when you see complex equations. Start with answer choice B or C (middle values) and plug them back into the original equation. Whichever makes the equation true is your answer.",
-        "Use backsolving when traditional algebra would take too long. Just test each answer choice by substituting it into the equation until you find the one that works."
-      ],
-      'substitution': [
-        "With substitution, pick simple numbers for variables (like 2, 3, or 5) and avoid 0 and 1. Solve the problem with your chosen numbers, then test which answer choice gives the same result.",
-        "Substitution turns abstract algebra into concrete arithmetic. Pick easy numbers that follow any rules given in the problem, solve with those numbers, then match your result to the answer choices."
-      ]
-    };
-
-    // Prevent prototype pollution by using hasOwnProperty
-    if (lesson && typeof lesson === 'string' && responses.hasOwnProperty(lesson)) {
-      return responses[lesson][Math.floor(Math.random() * responses[lesson].length)];
-    }
-
-    const fallbacks = [
-      "I'd be happy to help! Can you be more specific about what you're struggling with?",
-      "That's a great question. Let me think about the best way to explain this concept.",
-      "I can help you understand this better. What specific part would you like me to clarify?"
-    ];
-
-    return fallbacks[Math.floor(Math.random() * fallbacks.length)];
-  };
-
   // Close chat - save progress and position, minimize to Dynamic Island
   const handleClose = useCallback((e) => {
     e?.stopPropagation();
     e?.preventDefault();
 
-    // Save current position if dragged
-    if (hasBeenDragged) {
-      setSavedPosition(position);
-      setSavedHasBeenDragged(true);
-    }
+    draggable.savePosition();
 
     setChatState('collapsed');
     setInputValue('');
-    setIsTyping(false);
     setShowTypingIndicator(false);
     setShowContent(false);
-    setHasBeenDragged(false);
-    setPosition({ x: 0, y: 0 });
-    setIsDragging(false);
+    draggable.resetPosition();
     inputRef.current?.blur();
     // Note: We keep messages to preserve chat history
-  }, [hasBeenDragged, position]);
-
-  // Drag handlers
-  const handleDragStart = useCallback((e) => {
-    if (e.button !== 0 || chatState === 'collapsed') return;
-
-    e.preventDefault();
-    e.stopPropagation();
-
-    const rect = containerRef.current.getBoundingClientRect();
-
-    // Calculate the offset from the mouse click to the element's current position
-    if (hasBeenDragged) {
-      // If already dragged, use current position
-      setDragStartPos({
-        x: e.clientX - position.x,
-        y: e.clientY - position.y
-      });
-    } else {
-      // If not dragged yet, calculate offset from center position
-      setDragStartPos({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top
-      });
-    }
-
-    setIsDragging(true);
-  }, [chatState, hasBeenDragged, position]);
-
-  // Snap zones configuration
-  const getSnapZones = useCallback(() => {
-    const margin = 50;
-    const chatWidth = 420;
-    const chatHeight = 160;
-
-    return [
-      // Center
-      {
-        x: (window.innerWidth - chatWidth) / 2,
-        y: (window.innerHeight - chatHeight) / 2,
-        width: chatWidth,
-        height: chatHeight,
-        type: 'center'
-      },
-      // Top left
-      {
-        x: margin,
-        y: margin,
-        width: chatWidth,
-        height: chatHeight,
-        type: 'corner'
-      },
-      // Top right
-      {
-        x: window.innerWidth - chatWidth - margin,
-        y: margin,
-        width: chatWidth,
-        height: chatHeight,
-        type: 'corner'
-      },
-      // Bottom left
-      {
-        x: margin,
-        y: window.innerHeight - chatHeight - margin,
-        width: chatWidth,
-        height: chatHeight,
-        type: 'corner'
-      },
-      // Bottom right
-      {
-        x: window.innerWidth - chatWidth - margin,
-        y: window.innerHeight - chatHeight - margin,
-        width: chatWidth,
-        height: chatHeight,
-        type: 'corner'
-      }
-    ];
-  }, []);
-
-  const findNearestSnapZone = useCallback((x, y) => {
-    const snapZones = getSnapZones();
-    const snapDistance = 80;
-
-    for (const zone of snapZones) {
-      const zoneCenterX = zone.x + zone.width / 2;
-      const zoneCenterY = zone.y + zone.height / 2;
-      const distance = Math.sqrt(
-        Math.pow(x + 210 - zoneCenterX, 2) + // 210 is half of chat width
-        Math.pow(y + 80 - zoneCenterY, 2)    // 80 is roughly half of chat height
-      );
-
-      if (distance < snapDistance) {
-        return zone;
-      }
-    }
-    return null;
-  }, [getSnapZones]);
-
-  const handleDragMove = useCallback((e) => {
-    if (!isDragging) return;
-
-    e.preventDefault();
-
-    const newX = e.clientX - dragStartPos.x;
-    const newY = e.clientY - dragStartPos.y;
-
-    // Constrain to viewport with proper bounds
-    const maxX = window.innerWidth - 300; // Min width constraint
-    const maxY = window.innerHeight - 120; // Min height constraint
-
-    let constrainedPosition = {
-      x: Math.max(0, Math.min(newX, maxX)),
-      y: Math.max(0, Math.min(newY, maxY))
-    };
-
-    // Check for snap zones
-    const nearestSnap = findNearestSnapZone(constrainedPosition.x, constrainedPosition.y);
-    if (nearestSnap) {
-      // Show visual feedback but don't snap yet (snap on release)
-      constrainedPosition.snapZone = nearestSnap;
-    }
-
-    setPosition(constrainedPosition);
-
-    if (!hasBeenDragged) {
-      setHasBeenDragged(true);
-    }
-  }, [isDragging, dragStartPos, hasBeenDragged, findNearestSnapZone]);
-
-  const handleDragEnd = useCallback((e) => {
-    if (isDragging) {
-      e?.preventDefault();
-      e?.stopPropagation();
-
-      // Snap to nearest zone if close enough
-      const nearestSnap = findNearestSnapZone(position.x, position.y);
-      if (nearestSnap) {
-        setPosition({ x: nearestSnap.x, y: nearestSnap.y });
-      }
-
-      setIsDragging(false);
-    }
-  }, [isDragging, position, findNearestSnapZone]);
-
-
-  // Drag event listeners
-  useEffect(() => {
-    if (isDragging) {
-      document.addEventListener('mousemove', handleDragMove);
-      document.addEventListener('mouseup', handleDragEnd);
-      return () => {
-        document.removeEventListener('mousemove', handleDragMove);
-        document.removeEventListener('mouseup', handleDragEnd);
-      };
-    }
-  }, [isDragging, handleDragMove, handleDragEnd]);
+  }, [draggable]);
 
   // Prevent Enter key from reaching lesson when AI chat is active
   useEffect(() => {
@@ -479,10 +240,11 @@ const AIChat = ({ currentLesson, lessonContent }) => {
     if (chatState === 'inputFocused') classes_list.push(classes.inputFocused);
     if (chatState === 'chatOpen') classes_list.push(classes.chatOpen);
     // Apply dragged class if currently dragged OR if we have saved position and are restoring
-    if ((hasBeenDragged && chatState !== 'collapsed') || (savedHasBeenDragged && chatState !== 'collapsed')) {
+    if ((draggable.hasBeenDragged && chatState !== 'collapsed') ||
+        (draggable.savedHasBeenDragged && chatState !== 'collapsed')) {
       classes_list.push(classes.dragged);
     }
-    if (isDragging) classes_list.push(classes.dragging);
+    if (draggable.isDragging) classes_list.push(classes.dragging);
 
     return classes_list.join(' ');
   };
@@ -491,8 +253,9 @@ const AIChat = ({ currentLesson, lessonContent }) => {
     const baseStyle = {};
 
     // If has been dragged OR we have a saved position and are restoring
-    if ((hasBeenDragged && chatState !== 'collapsed') || (savedHasBeenDragged && chatState !== 'collapsed')) {
-      baseStyle.transform = `translate(${position.x}px, ${position.y}px)`;
+    if ((draggable.hasBeenDragged && chatState !== 'collapsed') ||
+        (draggable.savedHasBeenDragged && chatState !== 'collapsed')) {
+      baseStyle.transform = `translate(${draggable.position.x}px, ${draggable.position.y}px)`;
       baseStyle.left = '0';
       baseStyle.top = '0';
     } else {
@@ -513,7 +276,7 @@ const AIChat = ({ currentLesson, lessonContent }) => {
   const showSendButton = inputValue.trim() && (chatState === 'inputFocused' || chatState === 'chatOpen');
   const showCloseButton = chatState === 'inputFocused' || chatState === 'chatOpen';
   const showMessages = chatState === 'chatOpen' && showContent;
-  const showResizeHandle = hasBeenDragged && chatState === 'chatOpen';
+  const showResizeHandle = draggable.hasBeenDragged && chatState === 'chatOpen';
 
   return (
     <div
@@ -527,100 +290,43 @@ const AIChat = ({ currentLesson, lessonContent }) => {
         className={getStyleClasses()}
         onClick={handleContainerClick}
       >
-        {/* Header with input */}
-        <div className={classes.header}>
-          {/* Drag handle - only show when chat is open */}
-          {showDragHandle && (
-            <div
-              className={classes.dragHandle}
-              onMouseDown={handleDragStart}
-              title="Drag to move"
-            >
-              ⋮⋮
-            </div>
-          )}
-
+        <ChatHeader
+          classes={classes}
+          showDragHandle={showDragHandle}
+          showCloseButton={showCloseButton}
+          onDragStart={(e) => draggable.handleDragStart(e, containerRef)}
+          onClose={handleClose}
+        >
           {/* Input container - only show when not collapsed and content is ready */}
           {chatState !== 'collapsed' && showContent && (
-            <div
-              className={classes.inputContainer}
-              onClick={() => {
-                // Ensure input gets focus when container is clicked
+            <ChatInput
+              inputRef={inputRef}
+              classes={classes}
+              inputValue={inputValue}
+              onChange={handleInputChange}
+              onFocus={handleInputFocus}
+              onKeyDown={handleInputKeyPress}
+              isTyping={isTyping}
+              showTypingIndicator={showTypingIndicator}
+              showSendButton={showSendButton}
+              onSend={handleSendMessage}
+              onContainerClick={() => {
                 requestAnimationFrame(() => {
                   inputRef.current?.focus();
                 });
               }}
-            >
-              <input
-                ref={inputRef}
-                className={`${classes.input} ${classes.inputFocusedStyle}`}
-                value={inputValue}
-                onChange={handleInputChange}
-                onFocus={handleInputFocus}
-                onKeyDown={handleInputKeyPress}
-                placeholder={showTypingIndicator ? "" : "Ask me anything about ACT prep..."}
-                disabled={isTyping}
-              />
-              {showTypingIndicator && inputValue === '' && (
-                <div
-                  style={{
-                    position: 'absolute',
-                    left: '20px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    pointerEvents: 'none',
-                    color: 'rgba(74, 144, 226, 0.7)',
-                    fontSize: '15px',
-                    zIndex: 1
-                  }}
-                >
-                  Ask me anything about ACT prep...
-                  <span className={classes.typingIndicator}></span>
-                </div>
-              )}
-
-              {/* Send button */}
-              <button
-                className={`${classes.sendButton} ${showSendButton ? 'visible' : ''}`}
-                onClick={handleSendMessage}
-                disabled={isTyping}
-              >
-                ↵
-              </button>
-            </div>
+            />
           )}
-
-          {/* Close button - only show when expanded */}
-          {showCloseButton && (
-            <button
-              className={`${classes.closeButton} visible`}
-              onClick={handleClose}
-            >
-              ×
-            </button>
-          )}
-        </div>
+        </ChatHeader>
 
         {/* Messages */}
         {showMessages && (
-          <div className={classes.messagesContainer}>
-            {messages.map((message, index) => (
-              <div key={index} className={`${classes.message} ${message.type}`}>
-                <div className={`${classes.messageBubble} ${message.type}`}>
-                  {/* Sanitize message content to prevent XSS */}
-                  {typeof message.content === 'string' ? message.content : ''}
-                </div>
-              </div>
-            ))}
-            {isTyping && (
-              <div className={classes.typing}>
-                <div className={classes.typingBubble}>
-                  Thinking...
-                </div>
-              </div>
-            )}
-            <div ref={messagesEndRef} />
-          </div>
+          <MessageList
+            classes={classes}
+            messages={messages}
+            isTyping={isTyping}
+            messagesEndRef={messagesEndRef}
+          />
         )}
 
         {/* Resize handle */}
