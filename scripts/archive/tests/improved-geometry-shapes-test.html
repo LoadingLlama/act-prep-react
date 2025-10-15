@@ -1,0 +1,266 @@
+<div class="lesson-content">
+<p class="lesson-intro">Every geometry problem on the ACT comes down to knowing the right formula. In this lesson, we'll learn the area and perimeter formulas for all common shapes—with clear visuals to help you remember them. By the end, you'll know exactly which formula to use for any shape!</p>
+
+<h3>Area vs. Perimeter: The Fundamental Difference</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+<tr style="background: #f5f5f5;">
+<th style="padding: 0.5rem; border: 1px solid #ddd; width: 25%;"></th>
+<th style="padding: 0.5rem; border: 1px solid #ddd;">Perimeter</th>
+<th style="padding: 0.5rem; border: 1px solid #ddd;">Area</th>
+</tr>
+<tr>
+<td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Definition</strong></td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">Distance <strong>around</strong> the shape</td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">Space <strong>inside</strong> the shape</td>
+</tr>
+<tr style="background: #f9f9f9;">
+<td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Units</strong></td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">Linear (cm, m, ft)</td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">Square (cm², m², ft²)</td>
+</tr>
+<tr>
+<td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Think of it as...</strong></td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">Fence around a yard</td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">Grass inside the yard</td>
+</tr>
+</table>
+
+<svg width="350" height="180" style="display: block; margin: 1rem auto;">
+  <!-- Rectangle showing perimeter vs area -->
+  <rect x="50" y="40" width="120" height="80" fill="#E8F4F8" stroke="#4A90E2" stroke-width="3"/>
+
+  <!-- Perimeter arrows -->
+  <path d="M 50 30 L 170 30" stroke="#E74C3C" stroke-width="2" marker-end="url(#arrow-right-red)"/>
+  <text x="110" y="25" text-anchor="middle" font-size="12" fill="#E74C3C">Perimeter</text>
+
+  <!-- Area label -->
+  <text x="110" y="85" text-anchor="middle" font-size="16" fill="#4A90E2">Area</text>
+
+  <!-- Dimensions -->
+  <text x="110" y="145" text-anchor="middle" font-size="12">length (l)</text>
+  <text x="25" y="80" text-anchor="middle" font-size="12">width (w)</text>
+
+  <defs>
+    <marker id="arrow-right-red" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#E74C3C"/>
+    </marker>
+  </defs>
+
+  <text x="175" y="60" font-size="12">P = 2l + 2w</text>
+  <text x="175" y="100" font-size="12">A = l × w</text>
+</svg>
+
+<h3>Rectangles and Squares</h3>
+
+<h4>Rectangle</h4>
+
+<svg width="400" height="160" style="display: block; margin: 1rem auto;">
+  <rect x="50" y="30" width="140" height="90" fill="#E8F4F8" stroke="#4A90E2" stroke-width="2"/>
+
+  <!-- Dimensions -->
+  <text x="120" y="150" text-anchor="middle" font-size="14">l = 8</text>
+  <line x1="50" y1="140" x2="190" y2="140" stroke="#333" stroke-width="1"/>
+  <line x1="50" y1="135" x2="50" y2="145" stroke="#333" stroke-width="1"/>
+  <line x1="190" y1="135" x2="190" y2="145" stroke="#333" stroke-width="1"/>
+
+  <text x="30" y="80" text-anchor="middle" font-size="14">w = 5</text>
+  <line x1="35" y1="30" x2="35" y2="120" stroke="#333" stroke-width="1"/>
+  <line x1="30" y1="30" x2="40" y2="30" stroke="#333" stroke-width="1"/>
+  <line x1="30" y1="120" x2="40" y2="120" stroke="#333" stroke-width="1"/>
+
+  <!-- Formulas -->
+  <text x="250" y="70" font-size="15"><strong>Perimeter:</strong> P = 2l + 2w</text>
+  <text x="250" y="95" font-size="15"><strong>Area:</strong> A = l × w</text>
+</svg>
+
+<p><strong>Example:</strong> Rectangle with length 8 and width 5</p>
+<ul>
+<li>Perimeter: P = 2(8) + 2(5) = 16 + 10 = <strong>26</strong></li>
+<li>Area: A = 8 × 5 = <strong>40</strong></li>
+</ul>
+
+<h4>Square (Special Rectangle)</h4>
+
+<svg width="400" height="160" style="display: block; margin: 1rem auto;">
+  <rect x="50" y="30" width="100" height="100" fill="#E8F4F8" stroke="#4A90E2" stroke-width="2"/>
+
+  <!-- Dimensions -->
+  <text x="100" y="150" text-anchor="middle" font-size="14">s = 6</text>
+  <line x1="50" y1="140" x2="150" y2="140" stroke="#333" stroke-width="1"/>
+
+  <!-- Formulas -->
+  <text x="200" y="70" font-size="15"><strong>Perimeter:</strong> P = 4s</text>
+  <text x="200" y="95" font-size="15"><strong>Area:</strong> A = s²</text>
+</svg>
+
+<p><strong>Example:</strong> Square with side 6</p>
+<ul>
+<li>Perimeter: P = 4(6) = <strong>24</strong></li>
+<li>Area: A = 6² = <strong>36</strong></li>
+</ul>
+
+<h3>Triangles</h3>
+
+<p>For <strong>any</strong> triangle, the area formula is the same:</p>
+
+<p style="text-align: center; margin: 1.5rem 0;">
+<strong>A = ½ × base × height</strong>
+</p>
+
+<svg width="400" height="180" style="display: block; margin: 1rem auto;">
+  <!-- Triangle -->
+  <polygon points="50,150 200,150 125,50" fill="#E8F4F8" stroke="#4A90E2" stroke-width="2"/>
+
+  <!-- Base -->
+  <line x1="50" y1="165" x2="200" y2="165" stroke="#333" stroke-width="1"/>
+  <text x="125" y="180" text-anchor="middle" font-size="14">base (b)</text>
+
+  <!-- Height (perpendicular) -->
+  <line x1="125" y1="50" x2="125" y2="150" stroke="#E74C3C" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="140" y="100" font-size="14" fill="#E74C3C">h</text>
+
+  <!-- Right angle symbol -->
+  <rect x="120" y="145" width="10" height="10" fill="none" stroke="#E74C3C" stroke-width="1"/>
+
+  <!-- Formula -->
+  <text x="250" y="100" font-size="15"><strong>A = ½bh</strong></text>
+</svg>
+
+<p style="background: #FFF3CD; padding: 1rem; border-left: 4px solid #FFA500; margin: 1rem 0;">
+<strong>⚠️ Critical:</strong> The height must be <strong>perpendicular</strong> (90°) to the base!
+</p>
+
+<p><strong>Example:</strong> Triangle with base 10 and height 6</p>
+<ul>
+<li>Area: A = ½ × 10 × 6 = ½ × 60 = <strong>30</strong></li>
+</ul>
+
+<h3>Circles</h3>
+
+<p><strong>Key term:</strong> The <strong>radius (r)</strong> is the distance from the center to the edge.</p>
+
+<svg width="350" height="200" style="display: block; margin: 1rem auto;">
+  <!-- Circle -->
+  <circle cx="100" cy="100" r="60" fill="#E8F4F8" stroke="#4A90E2" stroke-width="2"/>
+
+  <!-- Center point -->
+  <circle cx="100" cy="100" r="3" fill="#333"/>
+
+  <!-- Radius line -->
+  <line x1="100" y1="100" x2="160" y2="100" stroke="#E74C3C" stroke-width="2"/>
+  <text x="130" y="90" font-size="14" fill="#E74C3C">r</text>
+
+  <!-- Formulas -->
+  <text x="200" y="80" font-size="14"><strong>Circumference:</strong></text>
+  <text x="200" y="100" font-size="14">C = 2πr</text>
+  <text x="200" y="130" font-size="14"><strong>Area:</strong></text>
+  <text x="200" y="150" font-size="14">A = πr²</text>
+</svg>
+
+<p><strong>Remember:</strong> π ≈ 3.14 (or use the π button on your calculator)</p>
+
+<p><strong>Example:</strong> Circle with radius 5</p>
+<ul>
+<li>Circumference: C = 2π(5) = 10π ≈ <strong>31.4</strong></li>
+<li>Area: A = π(5)² = 25π ≈ <strong>78.5</strong></li>
+</ul>
+
+<h3>Trapezoids</h3>
+
+<p>A trapezoid has two parallel sides (bases) of different lengths:</p>
+
+<svg width="400" height="200" style="display: block; margin: 1rem auto;">
+  <!-- Trapezoid -->
+  <polygon points="70,150 230,150 200,60 100,60" fill="#E8F4F8" stroke="#4A90E2" stroke-width="2"/>
+
+  <!-- Base 1 (top) -->
+  <line x1="100" y1="45" x2="200" y2="45" stroke="#333" stroke-width="1"/>
+  <text x="150" y="35" text-anchor="middle" font-size="14">b₁</text>
+
+  <!-- Base 2 (bottom) -->
+  <line x1="70" y1="165" x2="230" y2="165" stroke="#333" stroke-width="1"/>
+  <text x="150" y="180" text-anchor="middle" font-size="14">b₂</text>
+
+  <!-- Height -->
+  <line x1="150" y1="60" x2="150" y2="150" stroke="#E74C3C" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="165" y="105" font-size="14" fill="#E74C3C">h</text>
+
+  <!-- Formula -->
+  <text x="270" y="100" font-size="15"><strong>A = ½h(b₁ + b₂)</strong></text>
+</svg>
+
+<p><strong>Think of it as:</strong> Average the two bases, then multiply by height!</p>
+
+<p><strong>Example:</strong> Trapezoid with b₁ = 6, b₂ = 10, h = 4</p>
+<ul>
+<li>Area: A = ½(4)(6 + 10) = ½(4)(16) = 2(16) = <strong>32</strong></li>
+</ul>
+
+<h3>Formula Summary</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+<tr style="background: #f5f5f5;">
+<th style="padding: 0.5rem; border: 1px solid #ddd;">Shape</th>
+<th style="padding: 0.5rem; border: 1px solid #ddd;">Perimeter/Circumference</th>
+<th style="padding: 0.5rem; border: 1px solid #ddd;">Area</th>
+</tr>
+<tr>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">Rectangle</td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">P = 2l + 2w</td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">A = lw</td>
+</tr>
+<tr style="background: #f9f9f9;">
+<td style="padding: 0.5rem; border: 1px solid #ddd;">Square</td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">P = 4s</td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">A = s²</td>
+</tr>
+<tr>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">Triangle</td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">P = a + b + c</td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">A = ½bh</td>
+</tr>
+<tr style="background: #f9f9f9;">
+<td style="padding: 0.5rem; border: 1px solid #ddd;">Circle</td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">C = 2πr</td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">A = πr²</td>
+</tr>
+<tr>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">Trapezoid</td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">P = a + b + c + d</td>
+<td style="padding: 0.5rem; border: 1px solid #ddd;">A = ½h(b₁ + b₂)</td>
+</tr>
+</table>
+
+<h3>Example Problem</h3>
+
+<h4>ACT-Style Question</h4>
+
+<p><strong>Problem:</strong> A rectangle has length 12 cm and width 5 cm. What is its area?</p>
+
+<p>A. 17 cm²<br>
+B. 34 cm²<br>
+C. 60 cm²<br>
+D. 120 cm²</p>
+
+<p><strong>Solution:</strong> Use the rectangle area formula.</p>
+
+<p><strong>Step 1:</strong> Identify the formula: A = l × w</p>
+<p><strong>Step 2:</strong> Plug in values: A = 12 × 5</p>
+<p><strong>Step 3:</strong> Calculate: A = 60 cm²</p>
+
+<p><strong>Answer: C</strong></p>
+
+<h3>Key Takeaway</h3>
+
+<p><strong>Problem-Solving Strategy:</strong></p>
+<ol>
+<li><strong>Identify the shape</strong> (rectangle, circle, triangle, etc.)</li>
+<li><strong>Choose the right formula</strong> (perimeter or area?)</li>
+<li><strong>Plug in the values</strong> carefully</li>
+<li><strong>Calculate and check units</strong> (linear for perimeter, square for area)</li>
+</ol>
+
+<p>Pro tip: Write down the formula first before plugging in numbers. This helps catch mistakes and shows your work clearly. For area, you're always <strong>multiplying</strong> dimensions. For perimeter, you're <strong>adding</strong> them!</p>
+
+</div>

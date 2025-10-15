@@ -1,0 +1,144 @@
+<div class="lesson-content">
+  <p class="lesson-intro">Every shape has specific formulas for area and perimeter. In this lesson, we'll learn the formulas for all the common shapes you'll see on the ACT. Don't worry about memorizing them all at once—we'll break them down one by one with clear visuals!</p>
+
+  <h3>Understanding Area vs. Perimeter</h3>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+    <div style="background: #f0f9ff; border: 1px solid #bfdbfe; padding: 1.5rem; border-radius: 8px; border: 1px solid #3b82f6;">
+      <h4 style="margin: 0 0 1rem 0; color: #1e40af; font-size: 1.2rem;">📏 Perimeter</h4>
+      <p style="margin: 0; font-size: 1.05rem; line-height: 1.7;">The <strong>distance around</strong> the outside of a shape. Add up all the side lengths!</p>
+      <p style="margin: 1rem 0 0 0; padding: 1rem; background: white; border-radius: 8px; font-style: italic;">Think: walking around the edge of a fence</p>
+    </div>
+    <div style="background: #fef3c7; border: 1px solid #fde68a; padding: 1.5rem; border-radius: 8px; border: 1px solid #f59e0b;">
+      <h4 style="margin: 0 0 1rem 0; color: #92400e; font-size: 1.2rem;">📐 Area</h4>
+      <p style="margin: 0; font-size: 1.05rem; line-height: 1.7;">The <strong>space inside</strong> a shape. How much surface it covers.</p>
+      <p style="margin: 1rem 0 0 0; padding: 1rem; background: white; border-radius: 8px; font-style: italic;">Think: painting inside the fence</p>
+    </div>
+  </div>
+
+  <h3>Rectangles and Squares</h3>
+
+  <div style="background: #f8f9fa; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+      <div>
+        <h4 style="margin: 0 0 1.5rem 0; color: #1e40af;">Rectangle</h4>
+        <svg width="100%" height="180" viewBox="0 0 300 180" style="display: block; margin-bottom: 1.5rem;">
+          <rect x="40" y="40" width="220" height="100" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+          <line x="40" y="20" x2="260" y2="20" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowred)"/>
+          <line x="260" y="20" x2="40" y2="20" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowred)"/>
+          <text x="150" y="15" fill="#dc2626" font-size="18" font-weight="bold" text-anchor="middle">length (l)</text>
+          <line x="280" y="40" x2="280" y2="140" stroke="#10b981" stroke-width="2" marker-end="url(#arrowgreen)"/>
+          <line x="280" y="140" x2="280" y2="40" stroke="#10b981" stroke-width="2" marker-end="url(#arrowgreen)"/>
+          <text x="285" y="95" fill="#10b981" font-size="18" font-weight="bold">w</text>
+          <defs>
+            <marker id="arrowred" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
+              <polygon points="0 0, 10 3, 0 6" fill="#dc2626"/>
+            </marker>
+            <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
+              <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
+            </marker>
+          </defs>
+        </svg>
+        <div style="background: white; padding: 1.25rem; border-radius: 8px; border-left: 4px solid #3b82f6;">
+          <p style="margin: 0 0 0.75rem 0; font-size: 1.1rem;"><strong>Perimeter:</strong> P = 2l + 2w</p>
+          <p style="margin: 0; font-size: 1.1rem;"><strong>Area:</strong> A = l × w</p>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="margin: 0 0 1.5rem 0; color: #7c3aed;">Square (special rectangle)</h4>
+        <svg width="100%" height="180" viewBox="0 0 300 180" style="display: block; margin-bottom: 1.5rem;">
+          <rect x="75" y="40" width="150" height="150" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+          <line x="75" y="20" x2="225" y2="20" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowred2)"/>
+          <line x="225" y="20" x2="75" y2="20" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowred2)"/>
+          <text x="150" y="15" fill="#dc2626" font-size="18" font-weight="bold" text-anchor="middle">side (s)</text>
+          <defs>
+            <marker id="arrowred2" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
+              <polygon points="0 0, 10 3, 0 6" fill="#dc2626"/>
+            </marker>
+          </defs>
+        </svg>
+        <div style="background: white; padding: 1.25rem; border-radius: 8px; border-left: 4px solid #7c3aed;">
+          <p style="margin: 0 0 0.75rem 0; font-size: 1.1rem;"><strong>Perimeter:</strong> P = 4s</p>
+          <p style="margin: 0; font-size: 1.1rem;"><strong>Area:</strong> A = s²</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Triangles</h3>
+
+  <div style="background: #fef3c7; border: 1px solid #fde68a; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+    <svg width="100%" height="220" viewBox="0 0 400 220" style="display: block; margin: 0 auto 1.5rem auto; max-width: 400px;">
+      <polygon points="200,30 350,190 50,190" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+      <line x="50" y="190" x2="350" y2="190" stroke="#dc2626" stroke-width="2"/>
+      <line x="200" y="30" x2="200" y2="190" stroke="#10b981" stroke-width="2" stroke-dasharray="5,5"/>
+      <text x="200" y="215" fill="#dc2626" font-size="20" font-weight="bold" text-anchor="middle">base (b)</text>
+      <text x="175" y="110" fill="#10b981" font-size="20" font-weight="bold">h</text>
+      <circle cx="200" cy="190" r="4" fill="#10b981"/>
+    </svg>
+    <div style="background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #f59e0b; text-align: center;">
+      <p style="margin: 0 0 1rem 0; font-size: 1.2rem;"><strong>Area:</strong> A = ½ × base × height</p>
+      <p style="margin: 0; font-size: 1.05rem; color: #92400e;">The height must be perpendicular (90°) to the base!</p>
+    </div>
+  </div>
+
+  <h3>Circles</h3>
+
+  <div style="background: #f0fdf4; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+    <svg width="100%" height="240" viewBox="0 0 400 240" style="display: block; margin: 0 auto 1.5rem auto; max-width: 400px;">
+      <circle cx="200" cy="120" r="90" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+      <circle cx="200" cy="120" r="4" fill="#dc2626"/>
+      <line x="200" y="120" x2="290" y2="120" stroke="#dc2626" stroke-width="2"/>
+      <text x="245" y="115" fill="#dc2626" font-size="20" font-weight="bold">r</text>
+      <text x="200" y="100" fill="#dc2626" font-size="16" font-weight="bold" text-anchor="middle">center</text>
+    </svg>
+    <div style="background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #10b981;">
+      <p style="margin: 0 0 0.75rem 0; font-size: 1.1rem;"><strong>Circumference (perimeter):</strong> C = 2πr</p>
+      <p style="margin: 0; font-size: 1.1rem;"><strong>Area:</strong> A = πr²</p>
+      <p style="margin: 1rem 0 0 0; padding: 1rem; background: #f0fdf4; border-radius: 6px; font-size: 0.95rem;">💡 <strong>Remember:</strong> r is the radius (center to edge), and π ≈ 3.14</p>
+    </div>
+  </div>
+
+  <h3>Trapezoids</h3>
+
+  <div style="background: #fce7f3; border: 1px solid #fbcfe8; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+    <svg width="100%" height="200" viewBox="0 0 400 200" style="display: block; margin: 0 auto 1.5rem auto; max-width: 400px;">
+      <polygon points="100,150 80,50 320,50 300,150" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+      <line x="80" y="50" x2="320" y2="50" stroke="#dc2626" stroke-width="2"/>
+      <line x="100" y="150" x2="300" y2="150" stroke="#3b82f6" stroke-width="2"/>
+      <line x="350" y="50" x2="350" y2="150" stroke="#10b981" stroke-width="2" stroke-dasharray="5,5"/>
+      <text x="200" y="25" fill="#dc2626" font-size="18" font-weight="bold" text-anchor="middle">b₁</text>
+      <text x="200" y="175" fill="#3b82f6" font-size="18" font-weight="bold" text-anchor="middle">b₂</text>
+      <text x="365" y="100" fill="#10b981" font-size="18" font-weight="bold">h</text>
+    </svg>
+    <div style="background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ec4899; text-align: center;">
+      <p style="margin: 0 0 1rem 0; font-size: 1.2rem;"><strong>Area:</strong> A = ½ × h × (b₁ + b₂)</p>
+      <p style="margin: 0; font-size: 1.05rem; color: #831843;">Average the two bases, then multiply by height!</p>
+    </div>
+  </div>
+
+  <h3>Example Problem</h3>
+
+  <h4>Example 1</h4>
+
+  <p style="margin: 1.5rem 0 0.5rem 0; padding-left: 1rem; border-left: 3px solid #4CAF50;"><strong>Problem:</strong></p>
+  <p style="margin: 0 0 0.5rem 0; padding-left: 1rem; font-size: 1.05rem;">A rectangle has length 12 cm and width 5 cm. What is its area?</p>
+  <p style="margin: 0 0 2rem 0; padding-left: 1rem; line-height: 1.8; font-size: 1.05rem;">A. 17 cm²<br>B. 34 cm²<br>C. 60 cm²<br>D. 120 cm²</p>
+
+  <p style="margin: 1.5rem 0 0.5rem 0; padding-left: 1rem; border-left: 3px solid #FF9800;"><strong>Solution:</strong></p>
+  <p style="margin: 0 0 1rem 0; padding-left: 1rem; font-size: 1.05rem; line-height: 1.75;">Use the rectangle area formula: A = l × w</p>
+
+  <div style="text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; font-size: 1.15rem; line-height: 2.5; margin: 1.5rem 0; padding: 1.5rem 0;">
+    <div>A = l × w</div>
+    <div>A = 12 × 5</div>
+    <div>A = 60 cm²</div>
+  </div>
+
+  <p style="margin: 1.5rem 0 0 0; padding-left: 1rem; font-weight: 600; font-size: 1.05rem;">Answer: C</p>
+
+  <div style="margin: 4rem 0 2rem 0; padding: 1.5rem; padding-left: 1.5rem; background: #f0f9ff !important; border-left: 4px solid #2196F3; border-radius: 4px;">
+    <p style="margin: 0 0 0.5rem 0; font-weight: 600; color: #1565c0; font-size: 1.05rem;">💡 Key Takeaway</p>
+    <p style="margin: 0; line-height: 1.7; font-size: 1.05rem;">Write down the formula first, then plug in the values. For area, you're always multiplying dimensions. For perimeter, you're adding them up!</p>
+  </div>
+</div>

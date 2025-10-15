@@ -1,0 +1,243 @@
+{
+  "analysis_date": "2025-10-08",
+  "lessons_analyzed": 6,
+  "overall_quality_score": 6.0,
+  "critical_findings": [
+    "ALL 6 lessons have NO quiz questions (0/6)",
+    "ALL 3 geometry lessons lack visual diagrams",
+    "Some lessons reference non-existent diagrams/graphs",
+    "Content is too short (270-340 words, needs 600-800)",
+    "Insufficient worked examples (0-2 per lesson, need 4-5)",
+    "No practice problems in any lesson"
+  ],
+  "lessons": [
+    {
+      "key": "geometry-angles",
+      "title": "Chapter 3: Geometry Part 1 - Angles",
+      "category": "Geometry",
+      "act_weight": "12-15%",
+      "lesson_id": "32cbf6f8-bf7e-4dd8-955e-449814417fff",
+      "quality_score": 5,
+      "metrics": {
+        "word_count": 270,
+        "examples": 0,
+        "quiz_questions": 0,
+        "visual_references": ["diagram", "figure"],
+        "has_diagrams": false
+      },
+      "critical_issues": [
+        "NO diagrams (mentions diagrams but none exist)",
+        "NO worked examples",
+        "NO quiz questions",
+        "Content too short"
+      ],
+      "diagrams_needed": [
+        "Vertical and adjacent angles",
+        "Parallel lines with transversal",
+        "Polygon interior angles examples"
+      ],
+      "priority": "URGENT"
+    },
+    {
+      "key": "geometry-shapes",
+      "title": "Chapter 4: Geometry Part 2 - Shapes",
+      "category": "Geometry",
+      "act_weight": "12-15%",
+      "lesson_id": "13406013-6a46-48a6-992b-20489198a17b",
+      "quality_score": 6,
+      "metrics": {
+        "word_count": 320,
+        "examples": 1,
+        "quiz_questions": 0,
+        "visual_references": [],
+        "has_diagrams": false
+      },
+      "critical_issues": [
+        "NO diagrams for any shapes",
+        "Only 1 simple example",
+        "NO quiz questions",
+        "Missing 3D shape visualizations"
+      ],
+      "diagrams_needed": [
+        "Rectangle, triangle, circle, trapezoid",
+        "Rectangular prism, cylinder, cube",
+        "Right triangle with Pythagorean labels",
+        "45-45-90 triangle with ratios",
+        "30-60-90 triangle with ratios",
+        "Similar triangles example"
+      ],
+      "priority": "URGENT"
+    },
+    {
+      "key": "circles-ellipses",
+      "title": "Chapter 21: Circles, Ellipses, and Hyperbolas",
+      "category": "Geometry",
+      "act_weight": "12-15%",
+      "lesson_id": "112d6c81-1fc6-4fbb-99f1-dfe5146164e4",
+      "quality_score": 6,
+      "metrics": {
+        "word_count": 300,
+        "examples": 1,
+        "quiz_questions": 0,
+        "visual_references": [],
+        "has_diagrams": false
+      },
+      "critical_issues": [
+        "NO coordinate plane graphs",
+        "Conic sections require visual representation",
+        "NO quiz questions",
+        "Only 1 example"
+      ],
+      "diagrams_needed": [
+        "Circle on coordinate plane with center and radius",
+        "Ellipse with major/minor axes",
+        "Hyperbola with both branches",
+        "Circle properties (tangent, inscribed angle)"
+      ],
+      "priority": "HIGH"
+    },
+    {
+      "key": "quadratics",
+      "title": "Chapter 16: Quadratics",
+      "category": "Algebra",
+      "act_weight": "12-15%",
+      "lesson_id": "5bee94ff-0e95-4b35-b0a7-7e59c320d14b",
+      "quality_score": 6,
+      "metrics": {
+        "word_count": 305,
+        "examples": 1,
+        "quiz_questions": 0,
+        "visual_references": [],
+        "has_diagrams": false
+      },
+      "critical_issues": [
+        "Discusses graphing but shows NO parabola graphs",
+        "Only 1 factoring example",
+        "NO quiz questions",
+        "Missing quadratic formula example"
+      ],
+      "diagrams_needed": [
+        "Parabola showing vertex, axis of symmetry, roots",
+        "Vertex form visualization",
+        "Discriminant cases visualization"
+      ],
+      "priority": "URGENT"
+    },
+    {
+      "key": "systems-equations",
+      "title": "Chapter 15: Systems of Equations",
+      "category": "Algebra",
+      "act_weight": "12-15%",
+      "lesson_id": "e7a03a10-c9c1-4801-a828-68160ea27df3",
+      "quality_score": 6,
+      "metrics": {
+        "word_count": 280,
+        "examples": 1,
+        "quiz_questions": 0,
+        "visual_references": [],
+        "has_diagrams": false
+      },
+      "critical_issues": [
+        "Discusses line intersections but shows NO graphs",
+        "Only substitution example (missing elimination)",
+        "NO quiz questions",
+        "No word problems"
+      ],
+      "diagrams_needed": [
+        "Two lines intersecting (one solution)",
+        "Parallel lines (no solution)",
+        "Same line (infinite solutions)"
+      ],
+      "priority": "HIGH"
+    },
+    {
+      "key": "functions",
+      "title": "Chapter 11: Functions",
+      "category": "Functions",
+      "act_weight": "12-15%",
+      "lesson_id": "b5488563-73f7-4b10-b40a-556fac4eb26c",
+      "quality_score": 7,
+      "metrics": {
+        "word_count": 340,
+        "examples": 2,
+        "quiz_questions": 0,
+        "visual_references": ["graph"],
+        "has_diagrams": false
+      },
+      "critical_issues": [
+        "Has 'Functions on Graphs' section but NO graphs",
+        "Mentions reading graphs but shows none",
+        "NO quiz questions"
+      ],
+      "diagrams_needed": [
+        "Function graph showing f(a) evaluation",
+        "Domain and range visualization",
+        "Composite function visualization"
+      ],
+      "priority": "HIGH"
+    }
+  ],
+  "lessons_with_no_quizzes": [
+    "geometry-angles",
+    "geometry-shapes",
+    "circles-ellipses",
+    "quadratics",
+    "systems-equations",
+    "functions"
+  ],
+  "lessons_mentioning_nonexistent_visuals": [
+    {
+      "key": "geometry-angles",
+      "mentions": ["measuring the diagram", "figures are NOT drawn to scale"]
+    },
+    {
+      "key": "functions",
+      "mentions": ["Functions on Graphs section", "reading values from graphs"]
+    },
+    {
+      "key": "quadratics",
+      "mentions": ["graphing and vertex form"]
+    },
+    {
+      "key": "systems-equations",
+      "mentions": ["lines intersecting"]
+    }
+  ],
+  "total_diagrams_needed": {
+    "geometry_angles": 6,
+    "geometry_shapes": 10,
+    "circles_ellipses": 7,
+    "quadratics": 4,
+    "systems_equations": 3,
+    "functions": 4,
+    "total": 34
+  },
+  "estimated_development_hours": {
+    "quizzes": "40-60 hours",
+    "diagrams": "60-80 hours",
+    "content_expansion": "30-40 hours",
+    "examples": "20-30 hours",
+    "practice_problems": "20-30 hours",
+    "total": "170-240 hours"
+  },
+  "action_plan": {
+    "phase_1_critical": [
+      "Create quizzes for all 6 lessons (5-8 questions each)",
+      "Add diagrams to 3 geometry lessons (24 diagrams total)"
+    ],
+    "phase_2_high_priority": [
+      "Add worked examples to all lessons (4-5 per lesson)",
+      "Add graphs to algebra/function lessons (10 graphs total)"
+    ],
+    "phase_3_medium_priority": [
+      "Expand content to 600-800 words per lesson",
+      "Add practice problems (5-8 per lesson)"
+    ],
+    "phase_4_enhancement": [
+      "Add word problems and real-world applications",
+      "Add ACT strategy tips",
+      "Add common mistake warnings"
+    ]
+  },
+  "recommendation": "START IMMEDIATELY with Phase 1: Create quizzes and add geometry diagrams. These are critical deficiencies that fundamentally limit learning effectiveness."
+}

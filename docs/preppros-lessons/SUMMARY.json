@@ -1,0 +1,120 @@
+{
+  "totalLessons": 16,
+  "readyToUpdate": 16,
+  "needsCreation": 0,
+  "results": [
+    {
+      "lessonKey": "getting-started",
+      "title": "Introduction to the English Test",
+      "htmlLength": 14067,
+      "status": "ready_to_update",
+      "lessonId": "e9416157-f146-4cac-bcf2-0b0b6543a7e0"
+    },
+    {
+      "lessonKey": "sentence-structure",
+      "title": "Chapter 1: Sentence Structure",
+      "htmlLength": 23143,
+      "status": "ready_to_update",
+      "lessonId": "4998d0fa-2f94-44ef-82c7-089a1a9b6419"
+    },
+    {
+      "lessonKey": "commas",
+      "title": "Chapter 2: Commas - 4 Types of Commas",
+      "htmlLength": 46699,
+      "status": "ready_to_update",
+      "lessonId": "33292648-8367-4957-9ccf-6f2dfc182141"
+    },
+    {
+      "lessonKey": "punctuation",
+      "title": "Chapter 3: Semicolons, Colons, Dashes, Apostrophes, and Quotation Marks",
+      "htmlLength": 34368,
+      "status": "ready_to_update",
+      "lessonId": "d64c1392-8d2f-4ae5-b63a-b3df35b475ff"
+    },
+    {
+      "lessonKey": "verbs",
+      "title": "Chapter 4: Verbs",
+      "htmlLength": 25192,
+      "status": "ready_to_update",
+      "lessonId": "d1281768-ce7e-47f7-aa84-f4533d41c416"
+    },
+    {
+      "lessonKey": "pronouns",
+      "title": "Chapter 5: Pronouns",
+      "htmlLength": 23295,
+      "status": "ready_to_update",
+      "lessonId": "f7aadb91-0ce8-4e09-b7bb-5909d4481e6b"
+    },
+    {
+      "lessonKey": "modifiers",
+      "title": "Chapter 6: Misplaced Modifiers",
+      "htmlLength": 15878,
+      "status": "ready_to_update",
+      "lessonId": "e57a463a-2257-4a89-966f-ad34b9a4b102"
+    },
+    {
+      "lessonKey": "parallel-structure",
+      "title": "Chapter 7: Parallel Structure",
+      "htmlLength": 18864,
+      "status": "ready_to_update",
+      "lessonId": "09a41283-2118-41cb-8d51-bd161b67c16d"
+    },
+    {
+      "lessonKey": "misc-topics",
+      "title": "Chapter 8: Other Miscellaneous Topics",
+      "htmlLength": 35786,
+      "status": "ready_to_update",
+      "lessonId": "1ab3ef29-b3fb-43b2-a5f5-964a7c8422ce"
+    },
+    {
+      "lessonKey": "grammar-review",
+      "title": "Chapter 9: Grammar Review",
+      "htmlLength": 930,
+      "status": "ready_to_update",
+      "lessonId": "1b265e10-62cb-4361-be0d-52de6b0d63f8"
+    },
+    {
+      "lessonKey": "redundancy",
+      "title": "Chapter 10: Redundancy, Wordiness, and Irrelevance",
+      "htmlLength": 12149,
+      "status": "ready_to_update",
+      "lessonId": "180cc54f-7ac9-46a1-8e6b-ec8bb9f8341d"
+    },
+    {
+      "lessonKey": "word-choice",
+      "title": "Chapter 11: Word Choice",
+      "htmlLength": 4157,
+      "status": "ready_to_update",
+      "lessonId": "a3029ba0-38fe-4ae9-ae80-3550c93b157b"
+    },
+    {
+      "lessonKey": "transitions",
+      "title": "Chapter 12: Transitions",
+      "htmlLength": 21625,
+      "status": "ready_to_update",
+      "lessonId": "b8d75097-0dfe-4281-865a-02e0f97af8f4"
+    },
+    {
+      "lessonKey": "which-choice",
+      "title": "Chapter 13: Which Choice",
+      "htmlLength": 10751,
+      "status": "ready_to_update",
+      "lessonId": "367b813b-fc32-4ddc-9523-2fff7f812679"
+    },
+    {
+      "lessonKey": "adding-deleting",
+      "title": "Chapter 14: Adding or Deleting Information",
+      "htmlLength": 24862,
+      "status": "ready_to_update",
+      "lessonId": "6fba31a5-1fd0-4e59-998d-3d253190b0ad"
+    },
+    {
+      "lessonKey": "logical-placement",
+      "title": "Chapter 15: Logical Placement",
+      "htmlLength": 3208,
+      "status": "ready_to_update",
+      "lessonId": "6a4e92d2-a681-42ea-9f0d-d5970c57e9af"
+    }
+  ],
+  "timestamp": "2025-10-13T18:41:52.157Z"
+}

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" width="600" height="350">
+  <!-- Clean white background -->
+  <rect width="600" height="350" fill="#ffffff"/>
+
+  <!-- Parallel line 1 (top) - Bold blue -->
+  <line x1="80" y1="120" x2="520" y2="120" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Parallel line 2 (bottom) - Bold blue -->
+  <line x1="80" y1="230" x2="520" y2="230" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Transversal line - Bold green -->
+  <line x1="200" y1="50" x2="400" y2="300" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Intersection point markers (subtle dots) -->
+  <circle cx="260" cy="120" r="5" fill="#1e40af"/>
+  <circle cx="340" cy="230" r="5" fill="#1e40af"/>
+
+  <!-- Parallel markers on Line 1 -->
+  <line x1="140" y1="113" x2="145" y2="127" stroke="#2563eb" stroke-width="3"/>
+  <line x1="152" y1="113" x2="157" y2="127" stroke="#2563eb" stroke-width="3"/>
+
+  <!-- Parallel markers on Line 2 -->
+  <line x1="140" y1="223" x2="145" y2="237" stroke="#2563eb" stroke-width="3"/>
+  <line x1="152" y1="223" x2="157" y2="237" stroke="#2563eb" stroke-width="3"/>
+
+  <!-- Title text -->
+  <text x="300" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#1f2937" text-anchor="middle">Two parallel lines crossed by a transversal</text>
+
+  <!-- Legend -->
+  <rect x="200" y="315" width="200" height="28" fill="#f3f4f6" rx="6"/>
+  <text x="300" y="335" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#6b7280" text-anchor="middle">This creates 8 angles</text>
+</svg>

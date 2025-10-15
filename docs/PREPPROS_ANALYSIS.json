@@ -1,0 +1,655 @@
+{
+  "totalChapters": 74,
+  "totalDBLessons": 16,
+  "chapters": [
+    {
+      "title": "Chapter 1:",
+      "startLine": 28,
+      "chapterNumber": "1",
+      "endLine": 36,
+      "lineCount": 8
+    },
+    {
+      "title": "Chapter 2:",
+      "startLine": 37,
+      "chapterNumber": "2",
+      "endLine": 50,
+      "lineCount": 13
+    },
+    {
+      "title": "Chapter 3:",
+      "startLine": 51,
+      "chapterNumber": "3",
+      "endLine": 61,
+      "lineCount": 10
+    },
+    {
+      "title": "Chapter 4:",
+      "startLine": 62,
+      "chapterNumber": "4",
+      "endLine": 70,
+      "lineCount": 8
+    },
+    {
+      "title": "Chapter 5:",
+      "startLine": 71,
+      "chapterNumber": "5",
+      "endLine": 86,
+      "lineCount": 15
+    },
+    {
+      "title": "Chapter 6:",
+      "startLine": 87,
+      "chapterNumber": "6",
+      "endLine": 95,
+      "lineCount": 8
+    },
+    {
+      "title": "Chapter 7:",
+      "startLine": 96,
+      "chapterNumber": "7",
+      "endLine": 102,
+      "lineCount": 6
+    },
+    {
+      "title": "Chapter 8:",
+      "startLine": 103,
+      "chapterNumber": "8",
+      "endLine": 114,
+      "lineCount": 11
+    },
+    {
+      "title": "Chapter 9:",
+      "startLine": 115,
+      "chapterNumber": "9",
+      "endLine": 119,
+      "lineCount": 4
+    },
+    {
+      "title": "Chapter 10:",
+      "startLine": 120,
+      "chapterNumber": "10",
+      "endLine": 124,
+      "lineCount": 4
+    },
+    {
+      "title": "Chapter 11:",
+      "startLine": 125,
+      "chapterNumber": "11",
+      "endLine": 128,
+      "lineCount": 3
+    },
+    {
+      "title": "Chapter 12:",
+      "startLine": 129,
+      "chapterNumber": "12",
+      "endLine": 136,
+      "lineCount": 7
+    },
+    {
+      "title": "Chapter 13:",
+      "startLine": 137,
+      "chapterNumber": "13",
+      "endLine": 140,
+      "lineCount": 3
+    },
+    {
+      "title": "Chapter 14:",
+      "startLine": 141,
+      "chapterNumber": "14",
+      "endLine": 144,
+      "lineCount": 3
+    },
+    {
+      "title": "Chapter 15:",
+      "startLine": 145,
+      "chapterNumber": "15",
+      "endLine": 156,
+      "lineCount": 11
+    },
+    {
+      "title": "Introduction to the English Test",
+      "startLine": 157,
+      "chapterNumber": "intro",
+      "endLine": 301,
+      "lineCount": 144
+    },
+    {
+      "title": "Chapter 1: Sentence Structure",
+      "startLine": 302,
+      "chapterNumber": "1",
+      "endLine": 866,
+      "lineCount": 564
+    },
+    {
+      "title": "Chapter 1 Practice:",
+      "startLine": 867,
+      "chapterNumber": "1",
+      "endLine": 1126,
+      "lineCount": 259
+    },
+    {
+      "title": "Chapter 2: Commas - 4 Types of Commas",
+      "startLine": 1127,
+      "chapterNumber": "2",
+      "endLine": 1936,
+      "lineCount": 809
+    },
+    {
+      "title": "Chapter 2 Practice:",
+      "startLine": 1937,
+      "chapterNumber": "2",
+      "endLine": 2474,
+      "lineCount": 537
+    },
+    {
+      "title": "Chapter 3: Semicolons, Colons, Dashes, Apostrophes, and",
+      "startLine": 2475,
+      "chapterNumber": "3",
+      "endLine": 3033,
+      "lineCount": 558
+    },
+    {
+      "title": "Chapter 3 Practice:",
+      "startLine": 3034,
+      "chapterNumber": "3",
+      "endLine": 4025,
+      "lineCount": 991
+    },
+    {
+      "title": "Chapter 4: Verbs",
+      "startLine": 4026,
+      "chapterNumber": "4",
+      "endLine": 4449,
+      "lineCount": 423
+    },
+    {
+      "title": "Chapter 4 Practice:",
+      "startLine": 4450,
+      "chapterNumber": "4",
+      "endLine": 4847,
+      "lineCount": 397
+    },
+    {
+      "title": "Chapter 5: Pronouns",
+      "startLine": 4848,
+      "chapterNumber": "5",
+      "endLine": 5362,
+      "lineCount": 514
+    },
+    {
+      "title": "Chapter 5 Practice:",
+      "startLine": 5363,
+      "chapterNumber": "5",
+      "endLine": 5733,
+      "lineCount": 370
+    },
+    {
+      "title": "Chapter 6: Misplaced Modifiers",
+      "startLine": 5734,
+      "chapterNumber": "6",
+      "endLine": 6105,
+      "lineCount": 371
+    },
+    {
+      "title": "Chapter 6 Practice:",
+      "startLine": 6106,
+      "chapterNumber": "6",
+      "endLine": 6551,
+      "lineCount": 445
+    },
+    {
+      "title": "Chapter 7: Parallel Structure",
+      "startLine": 6552,
+      "chapterNumber": "7",
+      "endLine": 6799,
+      "lineCount": 247
+    },
+    {
+      "title": "Chapter 7 Practice:",
+      "startLine": 6800,
+      "chapterNumber": "7",
+      "endLine": 7148,
+      "lineCount": 348
+    },
+    {
+      "title": "Chapter 8: Other Miscellaneous Topics",
+      "startLine": 7149,
+      "chapterNumber": "8",
+      "endLine": 7688,
+      "lineCount": 539
+    },
+    {
+      "title": "Chapter 8 Practice:",
+      "startLine": 7689,
+      "chapterNumber": "8",
+      "endLine": 7910,
+      "lineCount": 221
+    },
+    {
+      "title": "Chapter 9: Grammar Review",
+      "startLine": 7911,
+      "chapterNumber": "9",
+      "endLine": 7912,
+      "lineCount": 1
+    },
+    {
+      "title": "Chapter 9 Practice:",
+      "startLine": 7913,
+      "chapterNumber": "9",
+      "endLine": 8737,
+      "lineCount": 824
+    },
+    {
+      "title": "Chapter 10: Redundancy, Wordiness, and Irrelevance",
+      "startLine": 8738,
+      "chapterNumber": "10",
+      "endLine": 8882,
+      "lineCount": 144
+    },
+    {
+      "title": "Chapter 10 Practice:",
+      "startLine": 8883,
+      "chapterNumber": "10",
+      "endLine": 9131,
+      "lineCount": 248
+    },
+    {
+      "title": "Chapter 11: Word Choice",
+      "startLine": 9132,
+      "chapterNumber": "11",
+      "endLine": 9167,
+      "lineCount": 35
+    },
+    {
+      "title": "Chapter 11 Practice:",
+      "startLine": 9168,
+      "chapterNumber": "11",
+      "endLine": 9355,
+      "lineCount": 187
+    },
+    {
+      "title": "Chapter 12: Transitions",
+      "startLine": 9356,
+      "chapterNumber": "12",
+      "endLine": 9693,
+      "lineCount": 337
+    },
+    {
+      "title": "Chapter 12 Practice:",
+      "startLine": 9694,
+      "chapterNumber": "12",
+      "endLine": 9925,
+      "lineCount": 231
+    },
+    {
+      "title": "Chapter 13: Which Choice",
+      "startLine": 9926,
+      "chapterNumber": "13",
+      "endLine": 10144,
+      "lineCount": 218
+    },
+    {
+      "title": "Chapter 13 Practice:",
+      "startLine": 10145,
+      "chapterNumber": "13",
+      "endLine": 10836,
+      "lineCount": 691
+    },
+    {
+      "title": "Chapter 14: Adding or Deleting Information",
+      "startLine": 10837,
+      "chapterNumber": "14",
+      "endLine": 11226,
+      "lineCount": 389
+    },
+    {
+      "title": "Chapter 14 Practice:",
+      "startLine": 11227,
+      "chapterNumber": "14",
+      "endLine": 11654,
+      "lineCount": 427
+    },
+    {
+      "title": "Chapter 15: Logical Placement",
+      "startLine": 11655,
+      "chapterNumber": "15",
+      "endLine": 11675,
+      "lineCount": 20
+    },
+    {
+      "title": "Chapter 15 Practice:",
+      "startLine": 11676,
+      "chapterNumber": "15",
+      "endLine": 11972,
+      "lineCount": 296
+    },
+    {
+      "title": "Chapter 1: Sentence Structure",
+      "startLine": 11973,
+      "chapterNumber": "1",
+      "endLine": 12108,
+      "lineCount": 135
+    },
+    {
+      "title": "Chapter 2: Commas - 4 Types of Comas",
+      "startLine": 12109,
+      "chapterNumber": "2",
+      "endLine": 12267,
+      "lineCount": 158
+    },
+    {
+      "title": "Chapter 3: Semicolons, Colons, Dashes, Apostrophes, and Quotation Marks",
+      "startLine": 12268,
+      "chapterNumber": "3",
+      "endLine": 12356,
+      "lineCount": 88
+    },
+    {
+      "title": "Chapter 3 Practice: (Pages 37-39):",
+      "startLine": 12357,
+      "chapterNumber": "3",
+      "endLine": 12402,
+      "lineCount": 45
+    },
+    {
+      "title": "Chapter 4: Verbs",
+      "startLine": 12403,
+      "chapterNumber": "4",
+      "endLine": 12486,
+      "lineCount": 83
+    },
+    {
+      "title": "Chapter 4 Practice (Pages 50-52):",
+      "startLine": 12487,
+      "chapterNumber": "4",
+      "endLine": 12494,
+      "lineCount": 7
+    },
+    {
+      "title": "Chapter 5: Pronouns",
+      "startLine": 12495,
+      "chapterNumber": "5",
+      "endLine": 12517,
+      "lineCount": 22
+    },
+    {
+      "title": "Chapter 5 Practice (Pages 59-61):",
+      "startLine": 12518,
+      "chapterNumber": "5",
+      "endLine": 12561,
+      "lineCount": 43
+    },
+    {
+      "title": "Chapter 6 Misplaced Modifiers:",
+      "startLine": 12562,
+      "chapterNumber": "6",
+      "endLine": 12562,
+      "lineCount": 0
+    },
+    {
+      "title": "Chapter 6 Practice (Pages 67-70):",
+      "startLine": 12563,
+      "chapterNumber": "6",
+      "endLine": 12581,
+      "lineCount": 18
+    },
+    {
+      "title": "Chapter 7: Parallel Structure",
+      "startLine": 12582,
+      "chapterNumber": "7",
+      "endLine": 12649,
+      "lineCount": 67
+    },
+    {
+      "title": "Chapter 7 Practice (Pages 74-76):",
+      "startLine": 12650,
+      "chapterNumber": "7",
+      "endLine": 12704,
+      "lineCount": 54
+    },
+    {
+      "title": "Chapter 8: Other Miscellaneous Topics",
+      "startLine": 12705,
+      "chapterNumber": "8",
+      "endLine": 12708,
+      "lineCount": 3
+    },
+    {
+      "title": "Chapter 8 Practice (Pages 81-82):",
+      "startLine": 12709,
+      "chapterNumber": "8",
+      "endLine": 12714,
+      "lineCount": 5
+    },
+    {
+      "title": "Chapter 9: Grammar Review",
+      "startLine": 12715,
+      "chapterNumber": "9",
+      "endLine": 12715,
+      "lineCount": 0
+    },
+    {
+      "title": "Chapter 9 Practice (Pages 84-88):",
+      "startLine": 12716,
+      "chapterNumber": "9",
+      "endLine": 12753,
+      "lineCount": 37
+    },
+    {
+      "title": "Chapter 10: Redundancy, Wordiness, and Irrelevance",
+      "startLine": 12754,
+      "chapterNumber": "10",
+      "endLine": 12754,
+      "lineCount": 0
+    },
+    {
+      "title": "Chapter 10 Practice (Pages 92-93):",
+      "startLine": 12755,
+      "chapterNumber": "10",
+      "endLine": 12763,
+      "lineCount": 8
+    },
+    {
+      "title": "Chapter 11: Word Choice",
+      "startLine": 12764,
+      "chapterNumber": "11",
+      "endLine": 12764,
+      "lineCount": 0
+    },
+    {
+      "title": "Chapter 11 Practice (Pages 94-95):",
+      "startLine": 12765,
+      "chapterNumber": "11",
+      "endLine": 12776,
+      "lineCount": 11
+    },
+    {
+      "title": "Chapter 12: Transitions",
+      "startLine": 12777,
+      "chapterNumber": "12",
+      "endLine": 12777,
+      "lineCount": 0
+    },
+    {
+      "title": "Chapter 12 Practice (Pages 99-100):",
+      "startLine": 12778,
+      "chapterNumber": "12",
+      "endLine": 12785,
+      "lineCount": 7
+    },
+    {
+      "title": "Chapter 13: Which Choice",
+      "startLine": 12786,
+      "chapterNumber": "13",
+      "endLine": 12786,
+      "lineCount": 0
+    },
+    {
+      "title": "Chapter 13 Practice (Pages 104-108):",
+      "startLine": 12787,
+      "chapterNumber": "13",
+      "endLine": 12853,
+      "lineCount": 66
+    },
+    {
+      "title": "Chapter 14: Adding or Deleting Information",
+      "startLine": 12854,
+      "chapterNumber": "14",
+      "endLine": 12854,
+      "lineCount": 0
+    },
+    {
+      "title": "Chapter 14 Practice (Pages 113-115):",
+      "startLine": 12855,
+      "chapterNumber": "14",
+      "endLine": 12893,
+      "lineCount": 38
+    },
+    {
+      "title": "Chapter 15: Logical Placement",
+      "startLine": 12894,
+      "chapterNumber": "15",
+      "endLine": 12894,
+      "lineCount": 0
+    },
+    {
+      "title": "Chapter 15 Practice (Pages 116-119):",
+      "startLine": 12895,
+      "chapterNumber": "15",
+      "endLine": 12903,
+      "lineCount": 8
+    }
+  ],
+  "mappingReport": [
+    {
+      "prepprosChapter": "Introduction to the English Test",
+      "lessonKey": "getting-started",
+      "hasInDB": true,
+      "dbTitle": "ACT Test Basics & Overview",
+      "hasInTextbook": true,
+      "textbookLines": 144
+    },
+    {
+      "prepprosChapter": "Chapter 1: Sentence Structure",
+      "lessonKey": "sentence-structure",
+      "hasInDB": true,
+      "dbTitle": "Topic 1.1 - Building Complete Sentences",
+      "hasInTextbook": true,
+      "textbookLines": 8
+    },
+    {
+      "prepprosChapter": "Chapter 2: Commas — 4 Types of Commas",
+      "lessonKey": "commas",
+      "hasInDB": true,
+      "dbTitle": "Topic 1.2 - Essential Comma Rules",
+      "hasInTextbook": true,
+      "textbookLines": 13
+    },
+    {
+      "prepprosChapter": "Chapter 3: Semicolons, Colons, Dashes, Apostrophes, and Quotation",
+      "lessonKey": "punctuation",
+      "hasInDB": true,
+      "dbTitle": "Topic 1.3 - Advanced Punctuation",
+      "hasInTextbook": true,
+      "textbookLines": 10
+    },
+    {
+      "prepprosChapter": "Chapter 4: Verbs",
+      "lessonKey": "verbs",
+      "hasInDB": true,
+      "dbTitle": "Topic 1.4 - Verbs",
+      "hasInTextbook": true,
+      "textbookLines": 8
+    },
+    {
+      "prepprosChapter": "Chapter 5: Pronouns",
+      "lessonKey": "pronouns",
+      "hasInDB": true,
+      "dbTitle": "Topic 1.5 - Pronouns",
+      "hasInTextbook": true,
+      "textbookLines": 15
+    },
+    {
+      "prepprosChapter": "Chapter 6: Misplaced Modifiers",
+      "lessonKey": "modifiers",
+      "hasInDB": true,
+      "dbTitle": "Topic 1.6 - Misplaced Modifiers",
+      "hasInTextbook": true,
+      "textbookLines": 8
+    },
+    {
+      "prepprosChapter": "Chapter 7: Parallel Structure",
+      "lessonKey": "parallel-structure",
+      "hasInDB": true,
+      "dbTitle": "Topic 1.7 - Parallel Structure",
+      "hasInTextbook": true,
+      "textbookLines": 6
+    },
+    {
+      "prepprosChapter": "Chapter 8: Other Miscellaneous Topics",
+      "lessonKey": "misc-topics",
+      "hasInDB": true,
+      "dbTitle": "Topic 1.8 - Miscellaneous Topics",
+      "hasInTextbook": true,
+      "textbookLines": 11
+    },
+    {
+      "prepprosChapter": "Chapter 9: Grammar Review",
+      "lessonKey": "grammar-review",
+      "hasInDB": true,
+      "dbTitle": "Topic 1.9 - Grammar Review",
+      "hasInTextbook": true,
+      "textbookLines": 4
+    },
+    {
+      "prepprosChapter": "Chapter 10: Redundancy, Wordiness, and Irrelevance",
+      "lessonKey": "redundancy",
+      "hasInDB": true,
+      "dbTitle": "Topic 2.1 - Redundancy & Wordiness",
+      "hasInTextbook": true,
+      "textbookLines": 4
+    },
+    {
+      "prepprosChapter": "Chapter 11: Word Choice",
+      "lessonKey": "word-choice",
+      "hasInDB": true,
+      "dbTitle": "Topic 2.2 - Word Choice",
+      "hasInTextbook": true,
+      "textbookLines": 3
+    },
+    {
+      "prepprosChapter": "Chapter 12: Transitions",
+      "lessonKey": "transitions",
+      "hasInDB": true,
+      "dbTitle": "Topic 2.3 - Transitions",
+      "hasInTextbook": true,
+      "textbookLines": 7
+    },
+    {
+      "prepprosChapter": "Chapter 13: Which Choice",
+      "lessonKey": "which-choice",
+      "hasInDB": true,
+      "dbTitle": "Topic 2.4 - Which Choice Questions",
+      "hasInTextbook": true,
+      "textbookLines": 3
+    },
+    {
+      "prepprosChapter": "Chapter 14: Adding or Deleting Information",
+      "lessonKey": "adding-deleting",
+      "hasInDB": true,
+      "dbTitle": "Topic 2.5 - Adding or Deleting Information",
+      "hasInTextbook": true,
+      "textbookLines": 3
+    },
+    {
+      "prepprosChapter": "Chapter 15: Logical Placement",
+      "lessonKey": "logical-placement",
+      "hasInDB": true,
+      "dbTitle": "Topic 2.6 - Logical Placement",
+      "hasInTextbook": true,
+      "textbookLines": 11
+    }
+  ],
+  "timestamp": "2025-10-13T18:38:25.825Z"
+}

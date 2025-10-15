@@ -1,0 +1,14 @@
+{
+  "id": "24ff38b9-4711-49b6-9011-58569b0b3256",
+  "subject": "math",
+  "lesson_key": "absolute-value",
+  "title": "Absolute Value",
+  "content": "\n            <html><head></head><body><p>Absolute value measures distance from zero—it's always positive (or zero)! Once you understand this concept, absolute value equations and inequalities become much easier. Let's break it down step by step!</p>\n            \n            <h3>What is Absolute Value?</h3>\n            <p>|x| = distance from 0: |−5| = 5 and |5| = 5</p>\n            \n<p>Both are 5 units from zero!</p>\n            \n            <h3>Key Properties</h3>\n            \n            <h4>Always Non-Negative</h4>\n            <p>|x| ≥ 0 for all x: | − 100| = 100<br>|0| = 0<br>|42| = 42</p>\n            \n            <h4>Removes the Sign</h4>\n            <p>If x is positive, |x| = x<br>If x is negative, |x| = − x</p>\n            \n<p>|7| = 7<br>| − 7| = 7</p>\n            \n            <h3>Solving Absolute Value Equations</h3>\n            <p>When you solve |x| = a, you're asking: \"What numbers are distance a from zero?\" The answer is BOTH x = a and x = −a!</p>\n            \n            <h4>Solving |x| = a</h4>\n            <p>Two solutions: x = a OR x = −a: Example: |x| = 5</p>\n            \n<p>x = 5 or x = −5</p>\n            \n            <h3>Step-by-Step Example</h3>\n            \n            <h4>Solve</h4>\n            <p>|2x − 3| = 7</p>\n            \n<p><strong>Step 1: Set up two equations:</strong></p>\n            \n<p><strong>Step 2: Solve Case 1</strong><br>Case 1: 2x − 3 = 7\nCase 2: 2x − 3 = − 7\n2x − 3 = 7\n2x = 10\nx = 5</p>\n            \n<p><strong>Step 3: Solve Case 2: Solutions: x = 5 or x = − 2</strong><br>2x − 3 = − 7\n2x = − 4\nx = − 2</p>\n            \n            <h3>Example Problem</h3>\n            \n            <h4>Example 1</h4>\n            <p><strong>Problem:</strong>Solve: |x + 2| = 6: A. x = 4 only<br>B. x = 4 or x = − 8<br>C. x = 4 or x = − 4<br>D. x = 8 or x = − 8</p>\n            \n<p><strong>Solution:</strong>Set up two equations and solve each one.</p>\n            \n<p><strong>Answer: B</strong></p>\n            \n<p>Case 1: x + 2 = 6 → x = 4\nCase 2: x + 2 = −6 → x = −8\nx = 4 or x = −8</p>\n            \n            <h4>Key Takeaway</h4>\n            <p>Absolute value equations almost always have TWO solutions (one positive, one negative). Split into two cases and solve both! The only exception is when |x| = 0, which gives only x = 0.</p>\n            </body></html>\n        ",
+  "order_index": 17,
+  "created_at": "2025-10-06T17:40:38.26479+00:00",
+  "updated_at": "2025-10-12T07:08:36.888+00:00",
+  "topic_number": 3,
+  "topic_lesson_number": null,
+  "topic_title": "Algebra Fundamentals",
+  "full_topic_code": "Topic 3.6"
+}

@@ -1,0 +1,204 @@
+<div class="lesson-content">
+<p class="lesson-intro">Angles are fundamental to geometry! Understanding angle types and relationships will help you solve many ACT problems. Let's master angles step-by-step, starting with the basics and building to more complex scenarios.</p>
+
+<h3>Types of Angles</h3>
+
+<p>An angle is formed when two lines or rays meet at a point. We measure angles in degrees (°).</p>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+<tr style="background: #f5f5f5;">
+<th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd; width: 25%;">Type</th>
+<th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd; width: 35%;">Measurement</th>
+<th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Example</th>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Acute</strong></td>
+<td style="padding: 0.75rem; border: 1px solid #ddd;">Less than 90°</td>
+<td style="padding: 0.75rem; border: 1px solid #ddd;">45°, 60°, 30°</td>
+</tr>
+<tr style="background: #f9f9f9;">
+<td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Right</strong></td>
+<td style="padding: 0.75rem; border: 1px solid #ddd;">Exactly 90°</td>
+<td style="padding: 0.75rem; border: 1px solid #ddd;">90°</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Obtuse</strong></td>
+<td style="padding: 0.75rem; border: 1px solid #ddd;">Greater than 90°</td>
+<td style="padding: 0.75rem; border: 1px solid #ddd;">120°, 135°, 150°</td>
+</tr>
+<tr style="background: #f9f9f9;">
+<td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Straight</strong></td>
+<td style="padding: 0.75rem; border: 1px solid #ddd;">Exactly 180°</td>
+<td style="padding: 0.75rem; border: 1px solid #ddd;">180°</td>
+</tr>
+</table>
+
+<svg width="600" height="180" style="display: block; margin: 1.5rem auto;">
+  <!-- Acute Angle (45 degrees) -->
+  <line x1="50" y1="100" x2="150" y2="100" stroke="#333" stroke-width="2"/>
+  <line x1="50" y1="100" x2="120" y2="30" stroke="#333" stroke-width="2"/>
+  <path d="M 80 100 A 30 30 0 0 1 73 80" fill="none" stroke="#4A90E2" stroke-width="2"/>
+  <text x="85" y="85" font-size="12" fill="#4A90E2">45°</text>
+  <text x="100" y="130" text-anchor="middle" font-size="14"><strong>Acute</strong></text>
+  <text x="100" y="150" text-anchor="middle" font-size="12">&lt; 90°</text>
+
+  <!-- Right Angle (90 degrees) -->
+  <line x1="200" y1="100" x2="300" y2="100" stroke="#333" stroke-width="2"/>
+  <line x1="200" y1="100" x2="200" y2="30" stroke="#333" stroke-width="2"/>
+  <rect x="200" y="90" width="10" height="10" fill="none" stroke="#4A90E2" stroke-width="2"/>
+  <text x="210" y="70" font-size="12" fill="#4A90E2">90°</text>
+  <text x="250" y="130" text-anchor="middle" font-size="14"><strong>Right</strong></text>
+  <text x="250" y="150" text-anchor="middle" font-size="12">= 90°</text>
+
+  <!-- Obtuse Angle (135 degrees) -->
+  <line x1="350" y1="100" x2="450" y2="100" stroke="#333" stroke-width="2"/>
+  <line x1="350" y1="100" x2="380" y2="25" stroke="#333" stroke-width="2"/>
+  <path d="M 380 100 A 30 30 0 0 1 365 75" fill="none" stroke="#E27D60" stroke-width="2"/>
+  <text x="390" y="80" font-size="12" fill="#E27D60">135°</text>
+  <text x="400" y="130" text-anchor="middle" font-size="14"><strong>Obtuse</strong></text>
+  <text x="400" y="150" text-anchor="middle" font-size="12">&gt; 90°</text>
+
+  <!-- Straight Angle (180 degrees) -->
+  <line x1="520" y1="100" x2="620" y2="100" stroke="#333" stroke-width="2"/>
+  <path d="M 550 95 A 30 30 0 0 1 590 95" fill="none" stroke="#4A90E2" stroke-width="2"/>
+  <text x="570" y="85" text-anchor="middle" font-size="12" fill="#4A90E2">180°</text>
+  <text x="570" y="130" text-anchor="middle" font-size="14"><strong>Straight</strong></text>
+  <text x="570" y="150" text-anchor="middle" font-size="12">= 180°</text>
+</svg>
+
+<h3>When Two Lines Intersect</h3>
+
+<p>When two straight lines cross, they create 4 angles. Two important relationships emerge:</p>
+
+<svg width="400" height="300" style="display: block; margin: 1.5rem auto;">
+  <!-- Two intersecting lines -->
+  <line x1="50" y1="200" x2="350" y2="80" stroke="#333" stroke-width="3"/>
+  <line x1="100" y1="50" x2="300" y2="230" stroke="#333" stroke-width="3"/>
+
+  <!-- Angle labels -->
+  <text x="240" y="110" font-size="20" fill="#4A90E2" font-weight="bold">a°</text>
+  <text x="160" y="115" font-size="20" fill="#E27D60" font-weight="bold">b°</text>
+  <text x="160" y="175" font-size="20" fill="#4A90E2" font-weight="bold">a°</text>
+  <text x="240" y="180" font-size="20" fill="#E27D60" font-weight="bold">b°</text>
+
+  <!-- Labels -->
+  <text x="200" y="270" text-anchor="middle" font-size="14">Vertical angles (blue) are equal: a° = a°</text>
+  <text x="200" y="290" text-anchor="middle" font-size="14">Adjacent angles add to 180°: a° + b° = 180°</text>
+</svg>
+
+<p><strong>Rule 1: Vertical Angles Are Equal</strong></p>
+
+<p>Angles across from each other (vertical angles) are always equal.</p>
+
+<p><strong>Rule 2: Adjacent Angles Sum to 180°</strong></p>
+
+<p>Angles next to each other (adjacent angles) add up to 180°.</p>
+
+<h4>Example: Finding All Angles</h4>
+
+<p><strong>Problem:</strong> If one angle is 70°, what are the other three angles?</p>
+
+<p><strong>Step 1:</strong> The vertical angle is also 70° (vertical angles are equal)</p>
+
+<p><strong>Step 2:</strong> The adjacent angle is 180° - 70° = 110° (adjacent angles sum to 180°)</p>
+
+<p><strong>Step 3:</strong> The last angle is also 110° (vertical to the second one)</p>
+
+<p><strong>Answer: 70°, 110°, 70°, 110°</strong></p>
+
+<h3>Parallel Lines Cut by a Transversal</h3>
+
+<p style="background: #FFF3CD; padding: 1rem; border-left: 4px solid #FFA500; margin: 1rem 0;">
+<strong>This is THE most important angle concept on the ACT!</strong> When two parallel lines are crossed by another line (transversal), only TWO different angle measurements exist.
+</p>
+
+<svg width="500" height="400" style="display: block; margin: 1.5rem auto;">
+  <!-- Parallel lines -->
+  <line x1="50" y1="100" x2="450" y2="100" stroke="#333" stroke-width="3"/>
+  <line x1="50" y1="280" x2="450" y2="280" stroke="#333" stroke-width="3"/>
+
+  <!-- Parallel symbol -->
+  <text x="250" y="350" text-anchor="middle" font-size="14">L₁ ∥ L₂</text>
+
+  <!-- Transversal -->
+  <line x1="150" y1="40" x2="350" y2="320" stroke="#666" stroke-width="3"/>
+
+  <!-- Top intersection - angles 1,2,3,4 -->
+  <text x="215" y="85" font-size="16" fill="#4A90E2" font-weight="bold">1</text>
+  <text x="250" y="90" font-size="16" fill="#E27D60" font-weight="bold">2</text>
+  <text x="180" y="115" font-size="16" fill="#E27D60" font-weight="bold">3</text>
+  <text x="220" y="110" font-size="16" fill="#4A90E2" font-weight="bold">4</text>
+
+  <!-- Bottom intersection - angles 5,6,7,8 -->
+  <text x="265" y="265" font-size="16" fill="#4A90E2" font-weight="bold">5</text>
+  <text x="300" y="270" font-size="16" fill="#E27D60" font-weight="bold">6</text>
+  <text x="230" y="295" font-size="16" fill="#E27D60" font-weight="bold">7</text>
+  <text x="270" y="290" font-size="16" fill="#4A90E2" font-weight="bold">8</text>
+
+  <text x="250" y="370" text-anchor="middle" font-size="14">Blue angles: 1, 4, 5, 8 (all equal)</text>
+  <text x="250" y="390" text-anchor="middle" font-size="14">Red angles: 2, 3, 6, 7 (all equal)</text>
+</svg>
+
+<p><strong>The Key Pattern:</strong></p>
+
+<ul>
+<li><strong>Set 1 (e.g., 65°):</strong> Four angles are equal - angles 1, 4, 5, and 8</li>
+<li><strong>Set 2 (e.g., 115°):</strong> Four angles are equal - angles 2, 3, 6, and 7</li>
+<li><strong>Relationship:</strong> Any angle from Set 1 + any angle from Set 2 = 180°</li>
+</ul>
+
+<h3>Example Problem</h3>
+
+<h4>ACT-Style Question</h4>
+
+<p><strong>Problem:</strong> Lines L₁ and L₂ are parallel. If angle 1 measures 65°, what is angle 6?</p>
+
+<svg width="500" height="300" style="display: block; margin: 1rem auto;">
+  <!-- Parallel lines -->
+  <line x1="50" y1="80" x2="450" y2="80" stroke="#333" stroke-width="3"/>
+  <line x1="50" y1="220" x2="450" y2="220" stroke="#333" stroke-width="3"/>
+
+  <!-- Transversal -->
+  <line x1="150" y1="30" x2="330" y2="270" stroke="#666" stroke-width="3"/>
+
+  <!-- Top intersection -->
+  <text x="205" y="65" font-size="16" font-weight="bold">1</text>
+  <text x="235" y="70" font-size="16" font-weight="bold">2</text>
+  <text x="175" y="95" font-size="16" font-weight="bold">3</text>
+  <text x="210" y="90" font-size="16" font-weight="bold">4</text>
+
+  <!-- Bottom intersection -->
+  <text x="255" y="205" font-size="16" font-weight="bold">5</text>
+  <text x="285" y="210" font-size="16" font-weight="bold">6</text>
+  <text x="225" y="235" font-size="16" font-weight="bold">7</text>
+  <text x="260" y="230" font-size="16" font-weight="bold">8</text>
+
+  <text x="250" y="270" text-anchor="middle" font-size="14">L₁ ∥ L₂</text>
+</svg>
+
+<p><strong>Solution:</strong></p>
+
+<p><strong>Step 1:</strong> Angle 1 is 65° (acute), so it's in Set 1</p>
+
+<p><strong>Step 2:</strong> All Set 1 angles equal 65°: angles 1, 4, 5, and 8</p>
+
+<p><strong>Step 3:</strong> Angle 6 is in Set 2 (obtuse angles)</p>
+
+<p><strong>Step 4:</strong> Set 2 = 180° - 65° = 115°</p>
+
+<p><strong>Answer: 115°</strong></p>
+
+<h3>Key Takeaway</h3>
+
+<p><strong>Master Strategy for Parallel Lines:</strong></p>
+
+<ol>
+<li>Find ONE angle (usually given in the problem)</li>
+<li>Identify if it's acute or obtuse</li>
+<li>All angles in that group are EQUAL to it</li>
+<li>All angles in the other group = 180° - that angle</li>
+</ol>
+
+<p>That's it! No memorizing complex terminology—just recognize the two sets of equal angles and you'll solve any parallel lines problem on the ACT.</p>
+
+</div>

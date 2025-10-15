@@ -1,0 +1,26 @@
+{
+  "lesson": {
+    "id": "6a4e92d2-a681-42ea-9f0d-d5970c57e9af",
+    "lesson_key": "logical-placement",
+    "title": "Topic 2.6 - Logical Placement",
+    "subject": "english",
+    "category": "Rhetorical Skills",
+    "difficulty_level": 1,
+    "duration_minutes": 30,
+    "order_index": 15,
+    "is_published": true,
+    "created_at": "2025-10-13T18:09:19.214163+00:00",
+    "updated_at": "2025-10-13T18:43:37.077+00:00"
+  },
+  "sections": [
+    {
+      "id": "bea21e83-3495-4287-aeb9-c1ba70e0c182",
+      "lesson_id": "6a4e92d2-a681-42ea-9f0d-d5970c57e9af",
+      "section_key": "logical-placement-main",
+      "title": "Main Content",
+      "section_type": "content",
+      "order_index": 0,
+      "created_at": "2025-10-13T18:43:37.022045+00:00"
+    }
+  ]
+}

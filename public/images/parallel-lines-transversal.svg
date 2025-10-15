@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#f8faff"/>
+
+  <!-- Parallel line 1 (top horizontal) -->
+  <line x1="100" y1="130" x2="550" y2="130" stroke="#2563eb" stroke-width="2.5"/>
+
+  <!-- Parallel line 2 (bottom horizontal) -->
+  <line x1="100" y1="270" x2="550" y2="270" stroke="#2563eb" stroke-width="2.5"/>
+
+  <!-- Transversal line (diagonal) -->
+  <line x1="200" y1="60" x2="450" y2="340" stroke="#059669" stroke-width="2.5"/>
+
+  <!-- Parallel markers on Line 1 -->
+  <line x1="140" y1="125" x2="145" y2="135" stroke="#2563eb" stroke-width="2"/>
+  <line x1="150" y1="125" x2="155" y2="135" stroke="#2563eb" stroke-width="2"/>
+
+  <!-- Parallel markers on Line 2 -->
+  <line x1="140" y1="265" x2="145" y2="275" stroke="#2563eb" stroke-width="2"/>
+  <line x1="150" y1="265" x2="155" y2="275" stroke="#2563eb" stroke-width="2"/>
+
+  <!-- Top intersection point is approximately at (250, 130) -->
+  <!-- Bottom intersection point is approximately at (360, 270) -->
+
+  <!-- Angle labels at TOP intersection -->
+  <!-- ∠1 (top-left, acute - RED) -->
+  <text x="210" y="115" font-size="22" font-weight="bold" fill="#dc2626">∠1</text>
+
+  <!-- ∠2 (top-right, obtuse - PURPLE) -->
+  <text x="270" y="115" font-size="22" font-weight="bold" fill="#7c3aed">∠2</text>
+
+  <!-- ∠3 (bottom-left, obtuse - PURPLE) -->
+  <text x="210" y="160" font-size="22" font-weight="bold" fill="#7c3aed">∠3</text>
+
+  <!-- ∠4 (bottom-right, acute - RED) -->
+  <text x="270" y="160" font-size="22" font-weight="bold" fill="#dc2626">∠4</text>
+
+  <!-- Angle labels at BOTTOM intersection -->
+  <!-- ∠5 (top-left, acute - RED) -->
+  <text x="320" y="255" font-size="22" font-weight="bold" fill="#dc2626">∠5</text>
+
+  <!-- ∠6 (top-right, obtuse - PURPLE) -->
+  <text x="380" y="255" font-size="22" font-weight="bold" fill="#7c3aed">∠6</text>
+
+  <!-- ∠7 (bottom-left, obtuse - PURPLE) -->
+  <text x="320" y="300" font-size="22" font-weight="bold" fill="#7c3aed">∠7</text>
+
+  <!-- ∠8 (bottom-right, acute - RED) -->
+  <text x="380" y="300" font-size="22" font-weight="bold" fill="#dc2626">∠8</text>
+
+  <!-- Line labels -->
+  <text x="560" y="135" font-size="18" font-weight="600" fill="#2563eb">Line 1</text>
+  <text x="560" y="275" font-size="18" font-weight="600" fill="#2563eb">Line 2</text>
+  <text x="460" y="355" font-size="18" font-weight="600" fill="#059669">Transversal</text>
+
+  <!-- Legend box -->
+  <rect x="15" y="15" width="270" height="75" fill="white" stroke="#d1d5db" stroke-width="1.5" rx="6"/>
+  <text x="30" y="40" font-size="16" font-weight="700" fill="#1f2937">Angle Sets:</text>
+
+  <!-- Set 1 legend -->
+  <circle cx="30" cy="57" r="6" fill="#dc2626"/>
+  <text x="45" y="62" font-size="15" fill="#1f2937">Set 1: ∠1 = ∠4 = ∠5 = ∠8</text>
+
+  <!-- Set 2 legend -->
+  <circle cx="30" cy="77" r="6" fill="#7c3aed"/>
+  <text x="45" y="82" font-size="15" fill="#1f2937">Set 2: ∠2 = ∠3 = ∠6 = ∠7</text>
+</svg>

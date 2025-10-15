@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ACT Geometry Question Generator - Test Suite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; text-align: center; }
+        .intro {
+            background: #f0f9ff;
+            border: 2px solid #3b82f6;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .problem-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            background: white;
+        }
+        .problem-card h3 {
+            margin-top: 0;
+            color: #1f2937;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .badge {
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: normal;
+        }
+        .badge-type { background: #dbeafe; color: #1e40af; }
+        .badge-flip { background: #fef3c7; color: #92400e; }
+        .question {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .diagram { text-align: center; margin: 15px 0; }
+        .answer {
+            background: #d1fae5;
+            border: 2px solid #10b981;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            color: #065f46;
+        }
+        .explanation {
+            background: #f3f4f6;
+            padding: 10px;
+            border-left: 3px solid #6b7280;
+            margin: 10px 0;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📐 ACT Geometry Question Generator</h1>
+
+        <div class="intro">
+            <h2 style="margin-top: 0;">🎯 Comprehensive Test Suite</h2>
+            <p><strong>This generator creates realistic ACT-style parallel lines problems with:</strong></p>
+            <ul>
+                <li>✅ <strong>Multiple question types:</strong> Supplementary, Corresponding, Alternate Interior, Vertical, Combined</li>
+                <li>✅ <strong>Variable orientations:</strong> Normal and flipped transversal</li>
+                <li>✅ <strong>Different label positions:</strong> Any of the 8 angle positions</li>
+                <li>✅ <strong>Any acute angle:</strong> 1° to 89°</li>
+                <li>✅ <strong>Clean ACT-style presentation</strong></li>
+            </ul>
+        </div>
+
+        <div class="problem-grid">
+            
+            <div class="problem-card">
+                <h3>
+                    <span>Problem 1</span>
+                    <span>
+                        <span class="badge badge-type">supplementary</span>
+                        
+                    </span>
+                </h3>
+
+                <div class="question">In the diagram below, two parallel lines are cut by a transversal. If one angle measures 30°, what is the measure of the angle marked with ?</div>
+
+                <div class="diagram">
+<svg width="550" height="400" viewBox="0 0 550 400" xmlns="http://www.w3.org/2000/svg" style="border: 1px solid #ddd; background: white;">
+    <!-- Parallel lines -->
+    <line x1="70" y1="120" x2="480" y2="120" stroke="#1f2937" stroke-width="1.5"/>
+    <line x1="70" y1="260" x2="480" y2="260" stroke="#1f2937" stroke-width="1.5"/>
+
+    <!-- Parallel symbols -->
+    <line x1="450" y1="112" x2="468" y2="112" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="128" x2="468" y2="128" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="252" x2="468" y2="252" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="268" x2="468" y2="268" stroke="#6b7280" stroke-width="1"/>
+
+    <!-- Transversal -->
+    <line x1="180.0" y1="60" x2="630.3" y2="320" stroke="#4b5563" stroke-width="1.5"/>
+
+    <!-- Intersection points -->
+    <circle cx="283.9" cy="120.0" r="2.5" fill="#1f2937"/>
+    <circle cx="526.4" cy="260.0" r="2.5" fill="#1f2937"/>
+
+    <!-- Angle arcs -->
+    
+    <path d="M 328.9,120.0 A 45,45 0 0,1 322.9,142.5"
+          fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="346.7" y="136.8"
+          font-family="Arial, sans-serif" font-size="22" font-weight="bold"
+          fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">30°</text>
+    <path d="M 322.9,142.5 A 45,45 0 0,1 238.9,120.0"
+          fill="none" stroke="#ef4444" stroke-width="2"/>
+    <text x="267.1" y="182.8"
+          font-family="Arial, sans-serif" font-size="24" font-weight="bold"
+          fill="#ef4444" text-anchor="middle" dominant-baseline="middle">?</text>
+</svg></div>
+
+                <div class="answer">Answer: 150°</div>
+
+                <div class="explanation">
+                    <strong>Explanation:</strong> Supplementary angles on a line sum to 180°. 30° + ? = 180°, so ? = 150°
+                </div>
+            </div>
+            
+            <div class="problem-card">
+                <h3>
+                    <span>Problem 2</span>
+                    <span>
+                        <span class="badge badge-type">supplementary</span>
+                        
+                    </span>
+                </h3>
+
+                <div class="question">In the diagram below, two parallel lines are cut by a transversal. If one angle measures 45°, what is the measure of the angle marked with ?</div>
+
+                <div class="diagram">
+<svg width="550" height="400" viewBox="0 0 550 400" xmlns="http://www.w3.org/2000/svg" style="border: 1px solid #ddd; background: white;">
+    <!-- Parallel lines -->
+    <line x1="70" y1="120" x2="480" y2="120" stroke="#1f2937" stroke-width="1.5"/>
+    <line x1="70" y1="260" x2="480" y2="260" stroke="#1f2937" stroke-width="1.5"/>
+
+    <!-- Parallel symbols -->
+    <line x1="450" y1="112" x2="468" y2="112" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="128" x2="468" y2="128" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="252" x2="468" y2="252" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="268" x2="468" y2="268" stroke="#6b7280" stroke-width="1"/>
+
+    <!-- Transversal -->
+    <line x1="180.0" y1="60" x2="440.0" y2="320" stroke="#4b5563" stroke-width="1.5"/>
+
+    <!-- Intersection points -->
+    <circle cx="240.0" cy="120.0" r="2.5" fill="#1f2937"/>
+    <circle cx="380.0" cy="260.0" r="2.5" fill="#1f2937"/>
+
+    <!-- Angle arcs -->
+    
+    <path d="M 285.0,120.0 A 45,45 0 0,1 271.8,151.8"
+          fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="300.1" y="144.9"
+          font-family="Arial, sans-serif" font-size="22" font-weight="bold"
+          fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">45°</text>
+    <path d="M 271.8,151.8 A 45,45 0 0,1 195.0,120.0"
+          fill="none" stroke="#ef4444" stroke-width="2"/>
+    <text x="215.1" y="180.1"
+          font-family="Arial, sans-serif" font-size="24" font-weight="bold"
+          fill="#ef4444" text-anchor="middle" dominant-baseline="middle">?</text>
+</svg></div>
+
+                <div class="answer">Answer: 135°</div>
+
+                <div class="explanation">
+                    <strong>Explanation:</strong> Supplementary angles on a line sum to 180°. 45° + ? = 180°, so ? = 135°
+                </div>
+            </div>
+            
+            <div class="problem-card">
+                <h3>
+                    <span>Problem 3</span>
+                    <span>
+                        <span class="badge badge-type">supplementary</span>
+                        
+                    </span>
+                </h3>
+
+                <div class="question">In the diagram below, two parallel lines are cut by a transversal. If one angle measures 60°, what is the measure of the angle marked with ?</div>
+
+                <div class="diagram">
+<svg width="550" height="400" viewBox="0 0 550 400" xmlns="http://www.w3.org/2000/svg" style="border: 1px solid #ddd; background: white;">
+    <!-- Parallel lines -->
+    <line x1="70" y1="120" x2="480" y2="120" stroke="#1f2937" stroke-width="1.5"/>
+    <line x1="70" y1="260" x2="480" y2="260" stroke="#1f2937" stroke-width="1.5"/>
+
+    <!-- Parallel symbols -->
+    <line x1="450" y1="112" x2="468" y2="112" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="128" x2="468" y2="128" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="252" x2="468" y2="252" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="268" x2="468" y2="268" stroke="#6b7280" stroke-width="1"/>
+
+    <!-- Transversal -->
+    <line x1="180.0" y1="60" x2="330.1" y2="320" stroke="#4b5563" stroke-width="1.5"/>
+
+    <!-- Intersection points -->
+    <circle cx="214.6" cy="120.0" r="2.5" fill="#1f2937"/>
+    <circle cx="295.5" cy="260.0" r="2.5" fill="#1f2937"/>
+
+    <!-- Angle arcs -->
+    
+    <path d="M 259.6,120.0 A 45,45 0 0,1 237.1,159.0"
+          fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="270.9" y="152.5"
+          font-family="Arial, sans-serif" font-size="22" font-weight="bold"
+          fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">60°</text>
+    <path d="M 237.1,159.0 A 45,45 0 0,1 169.6,120.0"
+          fill="none" stroke="#ef4444" stroke-width="2"/>
+    <text x="182.1" y="176.3"
+          font-family="Arial, sans-serif" font-size="24" font-weight="bold"
+          fill="#ef4444" text-anchor="middle" dominant-baseline="middle">?</text>
+</svg></div>
+
+                <div class="answer">Answer: 120°</div>
+
+                <div class="explanation">
+                    <strong>Explanation:</strong> Supplementary angles on a line sum to 180°. 60° + ? = 180°, so ? = 120°
+                </div>
+            </div>
+            
+            <div class="problem-card">
+                <h3>
+                    <span>Problem 4</span>
+                    <span>
+                        <span class="badge badge-type">supplementary</span>
+                        <span class="badge badge-flip">FLIPPED</span>
+                    </span>
+                </h3>
+
+                <div class="question">In the diagram below, two parallel lines are cut by a transversal. If one angle measures 50°, what is the measure of the angle marked with ?</div>
+
+                <div class="diagram">
+<svg width="550" height="400" viewBox="0 0 550 400" xmlns="http://www.w3.org/2000/svg" style="border: 1px solid #ddd; background: white;">
+    <!-- Parallel lines -->
+    <line x1="70" y1="120" x2="480" y2="120" stroke="#1f2937" stroke-width="1.5"/>
+    <line x1="70" y1="260" x2="480" y2="260" stroke="#1f2937" stroke-width="1.5"/>
+
+    <!-- Parallel symbols -->
+    <line x1="450" y1="112" x2="468" y2="112" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="128" x2="468" y2="128" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="252" x2="468" y2="252" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="268" x2="468" y2="268" stroke="#6b7280" stroke-width="1"/>
+
+    <!-- Transversal -->
+    <line x1="398.2" y1="60" x2="180.0" y2="320" stroke="#4b5563" stroke-width="1.5"/>
+
+    <!-- Intersection points -->
+    <circle cx="347.8" cy="120.0" r="2.5" fill="#1f2937"/>
+    <circle cx="230.3" cy="260.0" r="2.5" fill="#1f2937"/>
+
+    <!-- Angle arcs -->
+    
+    <path d="M 392.8,120.0 A 45,45 0 0,1 318.9,154.5"
+          fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="375.3" y="178.9"
+          font-family="Arial, sans-serif" font-size="22" font-weight="bold"
+          fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">50°</text>
+    <path d="M 318.9,154.5 A 45,45 0 0,1 302.8,120.0"
+          fill="none" stroke="#ef4444" stroke-width="2"/>
+    <text x="288.9" y="147.5"
+          font-family="Arial, sans-serif" font-size="24" font-weight="bold"
+          fill="#ef4444" text-anchor="middle" dominant-baseline="middle">?</text>
+</svg></div>
+
+                <div class="answer">Answer: 130°</div>
+
+                <div class="explanation">
+                    <strong>Explanation:</strong> Supplementary angles on a line sum to 180°. 50° + ? = 180°, so ? = 130°
+                </div>
+            </div>
+            
+            <div class="problem-card">
+                <h3>
+                    <span>Problem 5</span>
+                    <span>
+                        <span class="badge badge-type">supplementary</span>
+                        <span class="badge badge-flip">FLIPPED</span>
+                    </span>
+                </h3>
+
+                <div class="question">In the diagram below, two parallel lines are cut by a transversal. If one angle measures 65°, what is the measure of the angle marked with ?</div>
+
+                <div class="diagram">
+<svg width="550" height="400" viewBox="0 0 550 400" xmlns="http://www.w3.org/2000/svg" style="border: 1px solid #ddd; background: white;">
+    <!-- Parallel lines -->
+    <line x1="70" y1="120" x2="480" y2="120" stroke="#1f2937" stroke-width="1.5"/>
+    <line x1="70" y1="260" x2="480" y2="260" stroke="#1f2937" stroke-width="1.5"/>
+
+    <!-- Parallel symbols -->
+    <line x1="450" y1="112" x2="468" y2="112" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="128" x2="468" y2="128" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="252" x2="468" y2="252" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="268" x2="468" y2="268" stroke="#6b7280" stroke-width="1"/>
+
+    <!-- Transversal -->
+    <line x1="301.2" y1="60" x2="180.0" y2="320" stroke="#4b5563" stroke-width="1.5"/>
+
+    <!-- Intersection points -->
+    <circle cx="273.3" cy="120.0" r="2.5" fill="#1f2937"/>
+    <circle cx="208.0" cy="260.0" r="2.5" fill="#1f2937"/>
+
+    <!-- Angle arcs -->
+    
+    <path d="M 318.3,120.0 A 45,45 0 0,1 254.2,160.8"
+          fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="308.2" y="174.8"
+          font-family="Arial, sans-serif" font-size="22" font-weight="bold"
+          fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">65°</text>
+    <path d="M 254.2,160.8 A 45,45 0 0,1 228.3,120.0"
+          fill="none" stroke="#ef4444" stroke-width="2"/>
+    <text x="218.4" y="154.9"
+          font-family="Arial, sans-serif" font-size="24" font-weight="bold"
+          fill="#ef4444" text-anchor="middle" dominant-baseline="middle">?</text>
+</svg></div>
+
+                <div class="answer">Answer: 115°</div>
+
+                <div class="explanation">
+                    <strong>Explanation:</strong> Supplementary angles on a line sum to 180°. 65° + ? = 180°, so ? = 115°
+                </div>
+            </div>
+            
+            <div class="problem-card">
+                <h3>
+                    <span>Problem 6</span>
+                    <span>
+                        <span class="badge badge-type">corresponding</span>
+                        
+                    </span>
+                </h3>
+
+                <div class="question">In the diagram below, two parallel lines are cut by a transversal. What is the measure of the angle marked with ?</div>
+
+                <div class="diagram">
+<svg width="550" height="400" viewBox="0 0 550 400" xmlns="http://www.w3.org/2000/svg" style="border: 1px solid #ddd; background: white;">
+    <!-- Parallel lines -->
+    <line x1="70" y1="120" x2="480" y2="120" stroke="#1f2937" stroke-width="1.5"/>
+    <line x1="70" y1="260" x2="480" y2="260" stroke="#1f2937" stroke-width="1.5"/>
+
+    <!-- Parallel symbols -->
+    <line x1="450" y1="112" x2="468" y2="112" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="128" x2="468" y2="128" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="252" x2="468" y2="252" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="268" x2="468" y2="268" stroke="#6b7280" stroke-width="1"/>
+
+    <!-- Transversal -->
+    <line x1="180.0" y1="60" x2="362.1" y2="320" stroke="#4b5563" stroke-width="1.5"/>
+
+    <!-- Intersection points -->
+    <circle cx="222.0" cy="120.0" r="2.5" fill="#1f2937"/>
+    <circle cx="320.0" cy="260.0" r="2.5" fill="#1f2937"/>
+
+    <!-- Angle arcs -->
+    
+    <path d="M 267.0,120.0 A 45,45 0 0,1 247.8,156.9"
+          fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="279.7" y="150.0"
+          font-family="Arial, sans-serif" font-size="22" font-weight="bold"
+          fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">55°</text>
+    <path d="M 365.0,260.0 A 45,45 0 0,1 345.9,296.9"
+          fill="none" stroke="#ef4444" stroke-width="2"/>
+    <text x="377.7" y="290.0"
+          font-family="Arial, sans-serif" font-size="24" font-weight="bold"
+          fill="#ef4444" text-anchor="middle" dominant-baseline="middle">?</text>
+</svg></div>
+
+                <div class="answer">Answer: 55°</div>
+
+                <div class="explanation">
+                    <strong>Explanation:</strong> Corresponding angles formed by parallel lines and a transversal are equal. Both angles = 55°
+                </div>
+            </div>
+            
+            <div class="problem-card">
+                <h3>
+                    <span>Problem 7</span>
+                    <span>
+                        <span class="badge badge-type">alternate_interior</span>
+                        
+                    </span>
+                </h3>
+
+                <div class="question">In the diagram below, two parallel lines are cut by a transversal. What is the measure of the angle marked with ?</div>
+
+                <div class="diagram">
+<svg width="550" height="400" viewBox="0 0 550 400" xmlns="http://www.w3.org/2000/svg" style="border: 1px solid #ddd; background: white;">
+    <!-- Parallel lines -->
+    <line x1="70" y1="120" x2="480" y2="120" stroke="#1f2937" stroke-width="1.5"/>
+    <line x1="70" y1="260" x2="480" y2="260" stroke="#1f2937" stroke-width="1.5"/>
+
+    <!-- Parallel symbols -->
+    <line x1="450" y1="112" x2="468" y2="112" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="128" x2="468" y2="128" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="252" x2="468" y2="252" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="268" x2="468" y2="268" stroke="#6b7280" stroke-width="1"/>
+
+    <!-- Transversal -->
+    <line x1="180.0" y1="60" x2="489.9" y2="320" stroke="#4b5563" stroke-width="1.5"/>
+
+    <!-- Intersection points -->
+    <circle cx="251.5" cy="120.0" r="2.5" fill="#1f2937"/>
+    <circle cx="418.4" cy="260.0" r="2.5" fill="#1f2937"/>
+
+    <!-- Angle arcs -->
+    
+    <path d="M 296.5,120.0 A 45,45 0 0,1 286.0,148.9"
+          fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="312.6" y="142.2"
+          font-family="Arial, sans-serif" font-size="22" font-weight="bold"
+          fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">40°</text>
+    <path d="M 373.4,260.0 A 45,45 0 0,1 383.9,231.1"
+          fill="none" stroke="#ef4444" stroke-width="2"/>
+    <text x="357.3" y="237.8"
+          font-family="Arial, sans-serif" font-size="24" font-weight="bold"
+          fill="#ef4444" text-anchor="middle" dominant-baseline="middle">?</text>
+</svg></div>
+
+                <div class="answer">Answer: 40°</div>
+
+                <div class="explanation">
+                    <strong>Explanation:</strong> Alternate interior angles formed by parallel lines and a transversal are equal. Both = 40°
+                </div>
+            </div>
+            
+            <div class="problem-card">
+                <h3>
+                    <span>Problem 8</span>
+                    <span>
+                        <span class="badge badge-type">vertical</span>
+                        
+                    </span>
+                </h3>
+
+                <div class="question">In the diagram below, what is the measure of the angle marked with ?</div>
+
+                <div class="diagram">
+<svg width="550" height="400" viewBox="0 0 550 400" xmlns="http://www.w3.org/2000/svg" style="border: 1px solid #ddd; background: white;">
+    <!-- Parallel lines -->
+    <line x1="70" y1="120" x2="480" y2="120" stroke="#1f2937" stroke-width="1.5"/>
+    <line x1="70" y1="260" x2="480" y2="260" stroke="#1f2937" stroke-width="1.5"/>
+
+    <!-- Parallel symbols -->
+    <line x1="450" y1="112" x2="468" y2="112" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="128" x2="468" y2="128" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="252" x2="468" y2="252" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="268" x2="468" y2="268" stroke="#6b7280" stroke-width="1"/>
+
+    <!-- Transversal -->
+    <line x1="180.0" y1="60" x2="274.6" y2="320" stroke="#4b5563" stroke-width="1.5"/>
+
+    <!-- Intersection points -->
+    <circle cx="201.8" cy="120.0" r="2.5" fill="#1f2937"/>
+    <circle cx="252.8" cy="260.0" r="2.5" fill="#1f2937"/>
+
+    <!-- Angle arcs -->
+    
+    <path d="M 246.8,120.0 A 45,45 0 0,1 217.2,162.3"
+          fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="255.1" y="157.3"
+          font-family="Arial, sans-serif" font-size="22" font-weight="bold"
+          fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">70°</text>
+    <path d="M 156.8,120.0 A 45,45 0 0,1 186.4,77.7"
+          fill="none" stroke="#ef4444" stroke-width="2"/>
+    <text x="148.6" y="82.7"
+          font-family="Arial, sans-serif" font-size="24" font-weight="bold"
+          fill="#ef4444" text-anchor="middle" dominant-baseline="middle">?</text>
+</svg></div>
+
+                <div class="answer">Answer: 70°</div>
+
+                <div class="explanation">
+                    <strong>Explanation:</strong> Vertical angles are equal. Both = 70°
+                </div>
+            </div>
+            
+            <div class="problem-card">
+                <h3>
+                    <span>Problem 9</span>
+                    <span>
+                        <span class="badge badge-type">combined</span>
+                        
+                    </span>
+                </h3>
+
+                <div class="question">In the diagram below, two parallel lines are cut by a transversal. What is the measure of the angle marked with ?</div>
+
+                <div class="diagram">
+<svg width="550" height="400" viewBox="0 0 550 400" xmlns="http://www.w3.org/2000/svg" style="border: 1px solid #ddd; background: white;">
+    <!-- Parallel lines -->
+    <line x1="70" y1="120" x2="480" y2="120" stroke="#1f2937" stroke-width="1.5"/>
+    <line x1="70" y1="260" x2="480" y2="260" stroke="#1f2937" stroke-width="1.5"/>
+
+    <!-- Parallel symbols -->
+    <line x1="450" y1="112" x2="468" y2="112" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="128" x2="468" y2="128" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="252" x2="468" y2="252" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="268" x2="468" y2="268" stroke="#6b7280" stroke-width="1"/>
+
+    <!-- Transversal -->
+    <line x1="180.0" y1="60" x2="551.3" y2="320" stroke="#4b5563" stroke-width="1.5"/>
+
+    <!-- Intersection points -->
+    <circle cx="265.7" cy="120.0" r="2.5" fill="#1f2937"/>
+    <circle cx="465.6" cy="260.0" r="2.5" fill="#1f2937"/>
+
+    <!-- Angle arcs -->
+    
+    <path d="M 310.7,120.0 A 45,45 0 0,1 302.6,145.8"
+          fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="327.7" y="139.5"
+          font-family="Arial, sans-serif" font-size="22" font-weight="bold"
+          fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">35°</text>
+    <path d="M 428.8,234.2 A 45,45 0 0,1 510.6,260.0"
+          fill="none" stroke="#ef4444" stroke-width="2"/>
+    <text x="485.2" y="198.0"
+          font-family="Arial, sans-serif" font-size="24" font-weight="bold"
+          fill="#ef4444" text-anchor="middle" dominant-baseline="middle">?</text>
+</svg></div>
+
+                <div class="answer">Answer: 145°</div>
+
+                <div class="explanation">
+                    <strong>Explanation:</strong> The labeled angle is 35°. Its corresponding angle at the bottom is also 35°. The angle marked ? is supplementary to this, so ? = 180° - 35° = 145°
+                </div>
+            </div>
+            
+            <div class="problem-card">
+                <h3>
+                    <span>Problem 10</span>
+                    <span>
+                        <span class="badge badge-type">supplementary</span>
+                        
+                    </span>
+                </h3>
+
+                <div class="question">In the diagram below, two parallel lines are cut by a transversal. If one angle measures 60°, what is the measure of the angle marked with ?</div>
+
+                <div class="diagram">
+<svg width="550" height="400" viewBox="0 0 550 400" xmlns="http://www.w3.org/2000/svg" style="border: 1px solid #ddd; background: white;">
+    <!-- Parallel lines -->
+    <line x1="70" y1="120" x2="480" y2="120" stroke="#1f2937" stroke-width="1.5"/>
+    <line x1="70" y1="260" x2="480" y2="260" stroke="#1f2937" stroke-width="1.5"/>
+
+    <!-- Parallel symbols -->
+    <line x1="450" y1="112" x2="468" y2="112" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="128" x2="468" y2="128" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="252" x2="468" y2="252" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="268" x2="468" y2="268" stroke="#6b7280" stroke-width="1"/>
+
+    <!-- Transversal -->
+    <line x1="180.0" y1="60" x2="330.1" y2="320" stroke="#4b5563" stroke-width="1.5"/>
+
+    <!-- Intersection points -->
+    <circle cx="214.6" cy="120.0" r="2.5" fill="#1f2937"/>
+    <circle cx="295.5" cy="260.0" r="2.5" fill="#1f2937"/>
+
+    <!-- Angle arcs -->
+    
+    <path d="M 169.6,120.0 A 45,45 0 0,1 192.1,81.0"
+          fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="158.3" y="87.5"
+          font-family="Arial, sans-serif" font-size="22" font-weight="bold"
+          fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">60°</text>
+    <path d="M 192.1,81.0 A 45,45 0 0,1 259.6,120.0"
+          fill="none" stroke="#ef4444" stroke-width="2"/>
+    <text x="247.1" y="63.7"
+          font-family="Arial, sans-serif" font-size="24" font-weight="bold"
+          fill="#ef4444" text-anchor="middle" dominant-baseline="middle">?</text>
+</svg></div>
+
+                <div class="answer">Answer: 120°</div>
+
+                <div class="explanation">
+                    <strong>Explanation:</strong> Supplementary angles on a line sum to 180°. 60° + ? = 180°, so ? = 120°
+                </div>
+            </div>
+            
+        </div>
+
+        <div style="background: #f0fdf4; border: 2px solid #10b981; padding: 20px; border-radius: 6px; margin: 30px 0;">
+            <h3 style="margin-top: 0; color: #065f46;">✓ Generator Capabilities</h3>
+            <p><strong>This system can generate:</strong></p>
+            <ul>
+                <li>✓ Unlimited unique problems with any acute angle</li>
+                <li>✓ 5 different question types testing different concepts</li>
+                <li>✓ Normal and flipped transversal orientations</li>
+                <li>✓ Labels at any of the 8 angle positions</li>
+                <li>✓ All answers mathematically verified</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Usage:</strong> <code>generateACTParallelLinesProblem({ acuteAngle: 45, questionType: 'corresponding', flipTransversal: true })</code></p>
+        </div>
+    </div>
+</body>
+</html>

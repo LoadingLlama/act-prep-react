@@ -1,0 +1,27 @@
+{
+  "lesson": {
+    "id": "27a6d67b-48d3-412e-91b7-eafdf9472693",
+    "lesson_key": "backsolving",
+    "title": "Topic 1.1 - Working Backwards Strategy",
+    "subject": "math",
+    "category": "Test-Taking Strategies",
+    "difficulty_level": 1,
+    "duration_minutes": 30,
+    "order_index": 0,
+    "is_published": true,
+    "created_at": "2025-10-13T18:09:19.214163+00:00",
+    "updated_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  "sections": [
+    {
+      "id": "ef8262e4-47f9-4d64-89b3-f2475a1eb6ab",
+      "lesson_id": "27a6d67b-48d3-412e-91b7-eafdf9472693",
+      "section_key": "backsolving-main",
+      "title": "Main Content",
+      "section_type": "content",
+      "order_index": 0,
+      "created_at": "2025-10-13T18:09:19.214163+00:00"
+    }
+  ],
+  "contentLength": 8517
+}

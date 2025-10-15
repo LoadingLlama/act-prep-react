@@ -1,0 +1,26 @@
+{
+  "lesson": {
+    "id": "367b813b-fc32-4ddc-9523-2fff7f812679",
+    "lesson_key": "which-choice",
+    "title": "Topic 2.4 - Which Choice Questions",
+    "subject": "english",
+    "category": "Rhetorical Skills",
+    "difficulty_level": 1,
+    "duration_minutes": 30,
+    "order_index": 13,
+    "is_published": true,
+    "created_at": "2025-10-13T18:09:19.214163+00:00",
+    "updated_at": "2025-10-13T18:43:35.263+00:00"
+  },
+  "sections": [
+    {
+      "id": "d43fe7dd-497d-4cb7-9e21-fc00d1fbbddf",
+      "lesson_id": "367b813b-fc32-4ddc-9523-2fff7f812679",
+      "section_key": "which-choice-main",
+      "title": "Main Content",
+      "section_type": "content",
+      "order_index": 0,
+      "created_at": "2025-10-13T18:43:35.130495+00:00"
+    }
+  ]
+}

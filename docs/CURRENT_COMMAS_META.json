@@ -1,0 +1,26 @@
+{
+  "lesson": {
+    "id": "33292648-8367-4957-9ccf-6f2dfc182141",
+    "lesson_key": "commas",
+    "title": "Topic 1.2 - Essential Comma Rules",
+    "subject": "english",
+    "category": "Grammar Fundamentals",
+    "difficulty_level": 1,
+    "duration_minutes": 30,
+    "order_index": 2,
+    "is_published": true,
+    "created_at": "2025-10-13T18:09:19.214163+00:00",
+    "updated_at": "2025-10-13T18:43:24.411+00:00"
+  },
+  "sections": [
+    {
+      "id": "e2dd9186-ca95-46db-9a67-77515327ee15",
+      "lesson_id": "33292648-8367-4957-9ccf-6f2dfc182141",
+      "section_key": "commas-main",
+      "title": "Main Content",
+      "section_type": "content",
+      "order_index": 0,
+      "created_at": "2025-10-13T18:43:24.310858+00:00"
+    }
+  ]
+}

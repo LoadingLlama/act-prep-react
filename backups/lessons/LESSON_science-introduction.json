@@ -1,0 +1,14 @@
+{
+  "id": "074d35c2-8a20-4a1c-8c5a-ef90074ed3ab",
+  "subject": "science",
+  "lesson_key": "science-introduction",
+  "title": "Science Section Basics",
+  "content": "\n            <div class=\"lesson-intro\">\n                The Science Test consists of 40 questions that you will have 35 minutes to answer. While it is called the Science Test, this section requires very little actual science knowledge.\n            </div>\n            \n            <h3>What is on each ACT Science Test?</h3>\n            <p>The ACT Science Test always consists of:</p>\n            \n            <div class=\"concept-box\">\n                <h4>5 Charts and Graphs Passages</h4>\n                <p>Test your ability to read charts and graphs and interpret information given in tables, diagrams, and figures. For certain passages, you will also be asked questions about the experimental design. This is the most common type of passage on the ACT.</p>\n            </div>\n            \n            <div class=\"concept-box\">\n                <h4>1 Conflicting Viewpoints Passage</h4>\n                <p>Asks you to understand, analyze, and compare different hypotheses, opinions, or conclusions. This passage has much more text and sometimes has no charts or graphs at all. The headings say \"Student 1, Student 2\" or \"Scientist 1, Scientist 2,\" so these passages are easy to spot.</p>\n            </div>\n            \n            <h3>Six Types of Questions</h3>\n            <ul>\n                <li><strong>Detail:</strong> Ask you to locate a specific piece of data from graphs, charts, tables, or diagrams</li>\n                <li><strong>Pattern:</strong> Ask you to spot a trend on a graph, table, or chart (increase, decreasing, etc.)</li>\n                <li><strong>Inference:</strong> Ask you to make a conclusion based on the data provided</li>\n                <li><strong>Method:</strong> Test your understanding of experimental setup and scientific methods</li>\n                <li><strong>Scientific Knowledge:</strong> Require you to use some outside scientific knowledge (least common)</li>\n                <li><strong>Compare/Contrast:</strong> Only in conflicting viewpoints passages, ask you to consider various aspects of opposing arguments</li>\n            </ul>\n            \n            <div class=\"tip-box\">\n                <h4>Important Note</h4>\n                <p>A more accurate name for this test would be \"The Analyzing Charts and Graphs on Random Topics Quickly Test.\" You can get a great score even if you don't love science class!</p>\n            </div>\n        ",
+  "order_index": 0,
+  "created_at": "2025-10-06T17:40:38.814547+00:00",
+  "updated_at": "2025-10-06T17:40:38.814547+00:00",
+  "topic_number": null,
+  "topic_lesson_number": null,
+  "topic_title": "Introduction",
+  "full_topic_code": null
+}

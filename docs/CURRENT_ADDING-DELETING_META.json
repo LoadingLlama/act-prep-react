@@ -1,0 +1,26 @@
+{
+  "lesson": {
+    "id": "6fba31a5-1fd0-4e59-998d-3d253190b0ad",
+    "lesson_key": "adding-deleting",
+    "title": "Topic 2.5 - Adding or Deleting Information",
+    "subject": "english",
+    "category": "Rhetorical Skills",
+    "difficulty_level": 1,
+    "duration_minutes": 30,
+    "order_index": 14,
+    "is_published": true,
+    "created_at": "2025-10-13T18:09:19.214163+00:00",
+    "updated_at": "2025-10-13T18:43:36.16+00:00"
+  },
+  "sections": [
+    {
+      "id": "8222e20a-eea6-48ab-9d61-242b070a69e7",
+      "lesson_id": "6fba31a5-1fd0-4e59-998d-3d253190b0ad",
+      "section_key": "adding-deleting-main",
+      "title": "Main Content",
+      "section_type": "content",
+      "order_index": 0,
+      "created_at": "2025-10-13T18:43:36.068971+00:00"
+    }
+  ]
+}

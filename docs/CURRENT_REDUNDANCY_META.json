@@ -1,0 +1,26 @@
+{
+  "lesson": {
+    "id": "180cc54f-7ac9-46a1-8e6b-ec8bb9f8341d",
+    "lesson_key": "redundancy",
+    "title": "Topic 2.1 - Redundancy & Wordiness",
+    "subject": "english",
+    "category": "Rhetorical Skills",
+    "difficulty_level": 1,
+    "duration_minutes": 30,
+    "order_index": 10,
+    "is_published": true,
+    "created_at": "2025-10-13T18:09:19.214163+00:00",
+    "updated_at": "2025-10-13T18:43:32.382+00:00"
+  },
+  "sections": [
+    {
+      "id": "ec30d60e-0ca4-473f-9eed-f63da07818b0",
+      "lesson_id": "180cc54f-7ac9-46a1-8e6b-ec8bb9f8341d",
+      "section_key": "redundancy-main",
+      "title": "Main Content",
+      "section_type": "content",
+      "order_index": 0,
+      "created_at": "2025-10-13T18:43:32.321951+00:00"
+    }
+  ]
+}

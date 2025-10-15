@@ -1,0 +1,37 @@
+[
+  {
+    "id": "bffee623-7b3c-4255-8376-a68a2e93dd7c",
+    "quiz_id": "6b7dd8e5-98d3-4c01-acac-2734303d7324",
+    "question_text": "Two lines intersect. If one angle measures 40°, what is the measure of the vertical angle (the angle across from it)?",
+    "question_order": 1,
+    "created_at": "2025-10-10T18:10:08.988468+00:00"
+  },
+  {
+    "id": "8c020b66-6f4e-474f-b4fd-5bce87fc0a49",
+    "quiz_id": "6b7dd8e5-98d3-4c01-acac-2734303d7324",
+    "question_text": "Two lines intersect. If one angle measures 75°, what is the measure of an angle adjacent to it?",
+    "question_order": 2,
+    "created_at": "2025-10-10T18:10:09.338151+00:00"
+  },
+  {
+    "id": "2d3575b4-4d2f-4c9b-ad75-734a124340ab",
+    "quiz_id": "6b7dd8e5-98d3-4c01-acac-2734303d7324",
+    "question_text": "Parallel lines L₁ and L₂ are cut by a transversal. If one angle measures 50°, what is the measure of its vertical angle?",
+    "question_order": 3,
+    "created_at": "2025-10-10T18:10:09.600221+00:00"
+  },
+  {
+    "id": "ebbb94da-7a19-4ba0-b3ba-920141448074",
+    "quiz_id": "6b7dd8e5-98d3-4c01-acac-2734303d7324",
+    "question_text": "Parallel lines are cut by a transversal. One of the acute angles measures 65°. What is the measure of one of the obtuse angles?",
+    "question_order": 4,
+    "created_at": "2025-10-10T18:10:09.882425+00:00"
+  },
+  {
+    "id": "cd52cbd8-5124-45de-a2ed-61991f97a2d9",
+    "quiz_id": "6b7dd8e5-98d3-4c01-acac-2734303d7324",
+    "question_text": "Two lines intersect creating four angles. If one angle is 3x and an adjacent angle is x + 80, what is the value of x?",
+    "question_order": 5,
+    "created_at": "2025-10-10T18:10:10.152632+00:00"
+  }
+]

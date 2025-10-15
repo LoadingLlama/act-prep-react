@@ -1,0 +1,14 @@
+{
+  "id": "722175e8-eba4-48d4-ab01-20b3bb64e89a",
+  "subject": "english",
+  "lesson_key": "getting-started",
+  "title": "ACT Test Basics & Overview",
+  "content": "\n            <h3>Welcome to ACT Prep!</h3>\n            <p>The ACT is a standardized test that measures your knowledge and skills in English, Mathematics, Reading, and Science. Understanding the test format and developing effective strategies are crucial for success.</p>\n            \n            <h3>Test Structure</h3>\n            <p>The ACT consists of four main sections:</p>\n            <ul>\n                <li><strong>English (45 minutes, 75 questions):</strong> Tests grammar, usage, punctuation, and rhetorical skills</li>\n                <li><strong>Mathematics (60 minutes, 60 questions):</strong> Covers algebra, geometry, and trigonometry</li>\n                <li><strong>Reading (35 minutes, 40 questions):</strong> Tests reading comprehension across various subjects</li>\n                <li><strong>Science (35 minutes, 40 questions):</strong> Evaluates interpretation and analysis of scientific data</li>\n            </ul>\n            \n            <h3>Scoring</h3>\n            <p>Each section is scored from 1-36, and your composite score is the average of all four sections. Most colleges consider a score of 20+ competitive, while top universities typically look for scores of 30+.</p>\n            \n            <h3>Study Strategy</h3>\n            <p>Effective ACT preparation involves:</p>\n            <ul>\n                <li>Taking a diagnostic test to identify strengths and weaknesses</li>\n                <li>Focusing study time on areas that need the most improvement</li>\n                <li>Learning test-specific strategies and time management techniques</li>\n                <li>Taking multiple practice tests to build stamina and familiarity</li>\n                <li>Reviewing mistakes and understanding why correct answers are right</li>\n            </ul>\n            \n            <p>Remember: consistent, focused practice is more effective than cramming. Start with your weakest areas and gradually build confidence across all sections.</p>\n        ",
+  "order_index": 0,
+  "created_at": "2025-10-06T17:40:38.26479+00:00",
+  "updated_at": "2025-10-06T17:40:38.26479+00:00",
+  "topic_number": null,
+  "topic_lesson_number": null,
+  "topic_title": "Introduction",
+  "full_topic_code": null
+}

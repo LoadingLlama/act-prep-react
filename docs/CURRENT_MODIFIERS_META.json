@@ -1,0 +1,26 @@
+{
+  "lesson": {
+    "id": "e57a463a-2257-4a89-966f-ad34b9a4b102",
+    "lesson_key": "modifiers",
+    "title": "Topic 1.6 - Misplaced Modifiers",
+    "subject": "english",
+    "category": "Grammar Fundamentals",
+    "difficulty_level": 1,
+    "duration_minutes": 30,
+    "order_index": 6,
+    "is_published": true,
+    "created_at": "2025-10-13T18:09:19.214163+00:00",
+    "updated_at": "2025-10-13T18:43:28.699+00:00"
+  },
+  "sections": [
+    {
+      "id": "fcdcada8-a521-40d2-9c3d-a4d1a737bbb5",
+      "lesson_id": "e57a463a-2257-4a89-966f-ad34b9a4b102",
+      "section_key": "modifiers-main",
+      "title": "Main Content",
+      "section_type": "content",
+      "order_index": 0,
+      "created_at": "2025-10-13T18:43:28.637362+00:00"
+    }
+  ]
+}

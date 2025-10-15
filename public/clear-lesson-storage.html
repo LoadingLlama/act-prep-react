@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Lesson Storage</title>
+</head>
+<body>
+    <h1>Clear Lesson Storage</h1>
+    <button onclick="clearStorage()">Clear All Lesson Progress</button>
+    <div id="result"></div>
+
+    <script>
+        function clearStorage() {
+            let cleared = [];
+            for (let key in localStorage) {
+                if (key.includes('lesson_progress') || key.includes('geometry')) {
+                    localStorage.removeItem(key);
+                    cleared.push(key);
+                }
+            }
+            document.getElementById('result').innerHTML =
+                '<p>Cleared ' + cleared.length + ' items:</p>' +
+                '<ul>' + cleared.map(k => '<li>' + k + '</li>').join('') + '</ul>' +
+                '<p><a href="/">Go to home</a></p>';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "lesson": {
+    "id": "b8d75097-0dfe-4281-865a-02e0f97af8f4",
+    "lesson_key": "transitions",
+    "title": "Topic 2.3 - Transitions",
+    "subject": "english",
+    "category": "Rhetorical Skills",
+    "difficulty_level": 1,
+    "duration_minutes": 30,
+    "order_index": 12,
+    "is_published": true,
+    "created_at": "2025-10-13T18:09:19.214163+00:00",
+    "updated_at": "2025-10-13T18:43:34.262+00:00"
+  },
+  "sections": [
+    {
+      "id": "00b49273-4c6e-4c1c-8294-d9728ecce44b",
+      "lesson_id": "b8d75097-0dfe-4281-865a-02e0f97af8f4",
+      "section_key": "transitions-main",
+      "title": "Main Content",
+      "section_type": "content",
+      "order_index": 0,
+      "created_at": "2025-10-13T18:43:34.161615+00:00"
+    }
+  ]
+}
