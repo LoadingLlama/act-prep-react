@@ -1,0 +1,10 @@
+Original lesson length: 17365
+Types section extracted: 8337 chars
+
+Missing sections being added:
+- Rule 2: Adjacent Angles Sum to 180°
+- Example 1 (Vertical Angles)  
+- Example 2 (Adjacent Angles)
+- Key Idea boxes (3 total)
+- Summary box
+- Proper section structure

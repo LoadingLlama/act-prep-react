@@ -1,0 +1,251 @@
+
+            <h3>Understanding Angles & Lines</h3>
+
+            <p style="font-size: 0.9rem; margin: 0.3rem 0; line-height: 1.5;">Angles are fundamental to geometry! Understanding angle types and relationships will help you solve many ACT problems. Let's master angles step-by-step, starting with the basics.</p>
+
+            <br>
+
+            <h3>Types of Angles</h3>
+
+            <p style="font-size: 0.9rem; margin: 0.3rem 0; line-height: 1.5;">An angle is formed when two lines or rays meet at a point. We measure angles in degrees (°).</p>
+
+            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="background: #e9ecef;">
+                        <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #dee2e6;">Type</th>
+                        <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #dee2e6;">Measurement</th>
+                        <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #dee2e6;">Example</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem;"><strong>Acute</strong></td>
+                        <td style="padding: 0.75rem;">Less than 90°</td>
+                        <td style="padding: 0.75rem;">45°, 60°, 30°</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 0.75rem;"><strong>Right</strong></td>
+                        <td style="padding: 0.75rem;">Exactly 90°</td>
+                        <td style="padding: 0.75rem;">90°</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem;"><strong>Obtuse</strong></td>
+                        <td style="padding: 0.75rem;">Greater than 90° but less than 180°</td>
+                        <td style="padding: 0.75rem;">120°, 135°, 150°</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 0.75rem;"><strong>Straight</strong></td>
+                        <td style="padding: 0.75rem;">Exactly 180°</td>
+                        <td style="padding: 0.75rem;">180° (a straight line)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <svg width="1000" height="200" viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto;">
+                    <defs>
+                        <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                            <polygon points="0 0, 6 3, 0 6" fill="#1f2937"/>
+                        </marker>
+                    </defs>
+
+                    <!-- ACUTE ANGLE (45°) -->
+                    <g transform="translate(120, 100)">
+                        <!-- Ray 1: horizontal (0°) -->
+                        <line x1="0" y1="0" x2="80" y2="0" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+                        <!-- Ray 2: 45° up from horizontal (in SVG: negative Y) -->
+                        <line x1="0" y1="0" x2="56.57" y2="-56.57" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+
+                        <!-- Arc from 0° to 45°, radius 35 -->
+                        <!-- Start: (35, 0) at 0° -->
+                        <!-- End: (35*cos(45°), -35*sin(45°)) = (24.75, -24.75) at 45° -->
+                        <path d="M 35,0 A 35,35 0 0,0 24.75,-24.75" fill="none" stroke="#3b82f6" stroke-width="3"/>
+
+                        <!-- Label at 22.5° (angle bisector), radius 48 -->
+                        <!-- Position: (48*cos(22.5°), -48*sin(22.5°)) = (44.36, -18.47) -->
+                        <text x="44" y="-18" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">45°</text>
+
+                        <text x="0" y="35" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#1f2937" text-anchor="middle">Acute</text>
+                        <text x="0" y="52" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">&lt; 90°</text>
+                    </g>
+
+                    <!-- RIGHT ANGLE (90°) -->
+                    <g transform="translate(320, 100)">
+                        <!-- Ray 1: horizontal (0°) -->
+                        <line x1="0" y1="0" x2="80" y2="0" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+                        <!-- Ray 2: vertical up (90°) -->
+                        <line x1="0" y1="0" x2="0" y2="-80" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+
+                        <!-- Square indicator for right angle -->
+                        <rect x="0" y="-15" width="15" height="15" fill="none" stroke="#3b82f6" stroke-width="2.5"/>
+
+                        <!-- Label at 45° (bisector of 90°), radius 28 from corner of square -->
+                        <text x="24" y="-24" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">90°</text>
+
+                        <text x="0" y="35" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#1f2937" text-anchor="middle">Right</text>
+                        <text x="0" y="52" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">= 90°</text>
+                    </g>
+
+                    <!-- OBTUSE ANGLE (120°) -->
+                    <g transform="translate(520, 100)">
+                        <!-- Ray 1: horizontal (0°) -->
+                        <line x1="0" y1="0" x2="80" y2="0" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+                        <!-- Ray 2: 120° from horizontal -->
+                        <!-- 120° in math = -120° in SVG Y-coords -->
+                        <!-- End point: (80*cos(120°), -80*sin(120°)) = (-40, -69.28) -->
+                        <line x1="0" y1="0" x2="-40" y2="-69.28" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+
+                        <!-- Arc from 0° to 120°, radius 40 -->
+                        <!-- Start: (40, 0) -->
+                        <!-- End: (40*cos(120°), -40*sin(120°)) = (-20, -34.64) -->
+                        <!-- Large arc flag = 0 (less than 180°), sweep = 0 (counterclockwise in SVG) -->
+                        <path d="M 40,0 A 40,40 0 0,0 -20,-34.64" fill="none" stroke="#ef4444" stroke-width="3"/>
+
+                        <!-- Label at 60° (bisector), radius 55 -->
+                        <!-- Position: (55*cos(60°), -55*sin(60°)) = (27.5, -47.63) -->
+                        <text x="27" y="-48" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">120°</text>
+
+                        <text x="0" y="35" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#1f2937" text-anchor="middle">Obtuse</text>
+                        <text x="0" y="52" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">&gt; 90°</text>
+                    </g>
+
+                    <!-- STRAIGHT ANGLE (180°) -->
+                    <g transform="translate(780, 100)">
+                        <!-- Straight line -->
+                        <line x1="-60" y1="0" x2="60" y2="0" stroke="#1f2937" stroke-width="2.5"/>
+                        <circle cx="-60" cy="0" r="3" fill="#1f2937"/>
+                        <circle cx="60" cy="0" r="3" fill="#1f2937"/>
+
+                        <!-- Perfect semicircular arc above the line -->
+                        <!-- Arc from (-40, 0) to (40, 0), radius 40, sweeping upward -->
+                        <path d="M -40,0 A 40,40 0 0,1 40,0" fill="none" stroke="#3b82f6" stroke-width="3"/>
+
+                        <!-- Label at top of semicircle -->
+                        <text x="0" y="-48" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">180°</text>
+
+                        <text x="0" y="35" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#1f2937" text-anchor="middle">Straight</text>
+                        <text x="0" y="52" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">= 180°</text>
+                    </g>
+                </svg>
+            </div>
+
+            <br>
+
+            
+            <h3>When Two Lines Intersect</h3>
+
+            <p style="font-size: 0.9rem; margin: 0.3rem 0; line-height: 1.5;">When two straight lines cross, they create 4 angles. Let's learn about them <strong>one rule at a time</strong>.</p>
+
+            <br>
+
+            <h4>Rule 1: Vertical Angles Are Equal</h4>
+
+            <p style="font-size: 0.9rem; margin: 0.3rem 0; line-height: 1.5;"><strong>Vertical angles</strong> are the angles opposite each other when two lines intersect. Vertical angles are always equal.</p>
+
+            <p style="font-size: 0.9rem; margin: 0.3rem 0; line-height: 1.5;">In the diagram, the 70° angles are vertical angles (equal to each other). The 110° angles are also vertical angles (equal to each other).</p>
+
+            <div style="text-align: center; margin: 1.5rem 0;">
+    <svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" style="background: white; max-width: 100%; height: auto;">
+    <line x1="277.4" y1="74.8" x2="222.6" y2="225.2" stroke="#000" stroke-width="2"/>
+    <line x1="330.0" y1="150.0" x2="170.0" y2="150.0" stroke="#000" stroke-width="2"/>
+    <circle cx="250" cy="150" r="3" fill="#000"/>
+
+    <!-- Arcs -->
+    <path d="M 272.0,150.0 A 22,22 0 0,0 257.5,129.3" stroke="#3b82f6" fill="none" stroke-width="2.5"/>
+    <path d="M 257.5,129.3 A 22,22 0 0,0 228.0,150.0" stroke="#ef4444" fill="none" stroke-width="2.5"/>
+    <path d="M 228.0,150.0 A 22,22 0 0,0 242.5,170.7" stroke="#3b82f6" fill="none" stroke-width="2.5"/>
+    <path d="M 242.5,170.7 A 22,22 0 0,0 272.0,150.0" stroke="#ef4444" fill="none" stroke-width="2.5"/>
+
+    <!-- Labels with DEGREE NUMBERS -->
+    <text x="286.9" y="124.2" font-family="Times New Roman, serif" font-size="18" font-style="italic" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle" font-weight="bold">70°</text>
+    <text x="275.8" y="186.9" font-family="Times New Roman, serif" font-size="18" font-style="italic" fill="#ef4444" text-anchor="middle" dominant-baseline="middle" font-weight="bold">110°</text>
+    <text x="213.1" y="175.8" font-family="Times New Roman, serif" font-size="18" font-style="italic" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle" font-weight="bold">70°</text>
+    <text x="224.2" y="113.1" font-family="Times New Roman, serif" font-size="18" font-style="italic" fill="#ef4444" text-anchor="middle" dominant-baseline="middle" font-weight="bold">110°</text>
+</svg>
+</div>
+            <div style="background: #eff6ff; padding: 0.8rem 1rem; margin: 1rem 0; border-left: 3px solid #3b82f6;">
+                <p style="margin: 0 0 0.4rem 0; font-weight: 600; font-size: 0.9rem; color: #1e40af;">🔑 The Key Pattern:</p>
+                <ul style="margin: 0; padding-left: 1.5rem; color: #1e3a8a; font-size: 0.9rem; line-height: 1.6;">
+                    <li><strong>Set 1 (angles 1, 3, 5, 7):</strong> Four angles are equal - all acute, forming vertical pairs</li>
+                    <li><strong>Set 2 (angles 2, 4, 6, 8):</strong> Four angles are equal - all obtuse, forming vertical pairs</li>
+                    <li><strong>Relationship:</strong> Any angle from Set 1 + any angle from Set 2 = 180°</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin: 2.5rem 0;">
+    <svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" style="background: white; max-width: 100%; height: auto;">
+    <!-- Parallel lines -->
+    <line x1="50" y1="100" x2="450" y2="100" stroke="#555" stroke-width="2"/>
+    <line x1="50" y1="200" x2="450" y2="200" stroke="#555" stroke-width="2"/>
+
+    <!-- Transversal -->
+    <line x1="150.0" y1="40" x2="252.6" y2="260" stroke="#000" stroke-width="2"/>
+
+    <!-- Intersection points -->
+    <circle cx="178.0" cy="100.0" r="3" fill="#000"/>
+    <circle cx="224.6" cy="200.0" r="3" fill="#000"/>
+
+    <!-- Arcs -->
+    <path d="M 203.0,100.0 A 25,25 0 0,1 188.5,122.7" stroke="#3b82f6" fill="none" stroke-width="2.5"/>
+    <path d="M 249.6,200.0 A 25,25 0 0,1 235.2,222.7" stroke="#3b82f6" fill="none" stroke-width="2.5"/>
+
+    <!-- Clean Labels - just italic text, no circles -->
+    <text x="215.9" y="124.2" font-family="Times New Roman, serif" font-size="20" font-style="italic" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle" font-weight="bold">a</text>
+    <text x="262.6" y="224.2" font-family="Times New Roman, serif" font-size="20" font-style="italic" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle" font-weight="bold">a</text>
+</svg>
+</div>
+
+            <div style="background: #f8f9fa; padding: 1rem 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #3b82f6;">
+                <p style="margin: 0; font-style: italic; color: #1f2937; font-size: 14px;">
+                    <strong>Example:</strong> If angle 1 = 65°, then angles 3, 5, and 7 also equal 65° (all vertical pairs). And angles 2, 4, 6, and 8 all equal 115° (since 180° − 65° = 115°).
+                </p>
+            </div>
+
+            <br>
+
+            <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; font-size: 1.15rem;">Example 3</h4>
+
+            <p style="margin: 0.25rem 0;"><strong>Problem:</strong></p>
+            <p style="font-size: 0.9rem; margin: 0.3rem 0; line-height: 1.5;">In the figure below, two parallel lines are cut by a transversal. What is the value of <em>x</em>?</p>
+
+            <div style="text-align: center; margin: 1.5rem 0;">
+                <svg width="380" height="255" viewBox="0 0 380 255" xmlns="http://www.w3.org/2000/svg" style="background: white; max-width: 100%; height: auto;">
+    <line x1="40" y1="90" x2="340" y2="90" stroke="#000" stroke-width="1.5"/>
+    <line x1="40" y1="180" x2="340" y2="180" stroke="#000" stroke-width="1.5"/>
+    <line x1="100.0" y1="45" x2="195.3" y2="210" stroke="#000" stroke-width="1.5"/>
+    <path d="M 142.0,90.0 A 16,16 0 0,1 134.0,103.9" stroke="#000" fill="none" stroke-width="1.2"/>
+    <path d="M 169.9,166.1 A 16,16 0 0,1 193.9,180.0" stroke="#000" fill="none" stroke-width="1.2"/>
+    <text x="158.9" y="109.0" font-family="Times New Roman, serif" font-size="14" fill="#000" text-anchor="middle" dominant-baseline="middle">60°</text>
+    <text x="196.9" y="147.1" font-family="Times New Roman, serif" font-size="15" font-style="italic" fill="#000" text-anchor="middle" dominant-baseline="middle">x°</text>
+</svg>
+            </div>
+
+            <span style="display: inline-block; margin-right: 1rem; font-size: 0.9rem;">A. 30°</span>
+            <span style="display: inline-block; margin-right: 1rem; font-size: 0.9rem;">B. 60°</span>
+            <span style="display: inline-block; margin-right: 1rem; font-size: 0.9rem;">C. 90°</span>
+            <span style="display: inline-block; margin-right: 1rem; font-size: 0.9rem;">D. 120°</span>
+            <span style="display: inline-block; margin-right: 1rem; font-size: 0.9rem;">E. 240°</span>
+
+            <p style="margin: 0.4rem 0 0.2rem 0; font-size: 0.9rem; font-weight: 600;"><strong>Solution:</strong></p>
+            <p style="font-size: 0.9rem; margin: 0.3rem 0; line-height: 1.5;">With parallel lines and a transversal, all acute angles are equal and all obtuse angles are equal. Any acute angle + any obtuse angle = 180°.</p>
+
+            <div style="background: #f8f9fa; padding: 0.9rem; border-radius: 6px; margin: 0.25rem 0; text-align: center; font-size: 0.9rem; line-height: 1.5;">
+                <div style="margin-bottom: 0.2rem;">Acute angle (given): 60°</div>
+                <div style="margin-bottom: 0.2rem;">Acute + Obtuse = 180°</div>
+                <div style="margin-bottom: 0.2rem;">Obtuse = 180° - 60°</div>
+                <div style="color: #10b981; font-weight: bold;">Obtuse angle = 120° ✓</div>
+            </div>
+
+            <p style="text-align: center; font-size: 0.9rem; margin-top: 0.3rem;"><strong>Answer: D</strong></p>
+
+            <br>
+
+            <h4>Key Takeaway</h4>
+
+            <p style="font-size: 0.9rem; margin: 0.3rem 0; line-height: 1.5;"><strong>Master Strategy for Angles:</strong></p>
+            <ol>
+                <li><strong>Vertical angles are equal</strong> - Angles across from each other when lines intersect</li>
+                <li><strong>Adjacent angles sum to 180°</strong> - Angles next to each other on a straight line</li>
+                <li><strong>Parallel lines create two sets</strong> - All acute angles equal, all obtuse angles equal, and they sum to 180°</li>
+            </ol>
+
+            <p style="font-size: 0.9rem; margin: 0.3rem 0; line-height: 1.5;">Master these three rules and you'll solve any angle problem on the ACT!</p>
+        

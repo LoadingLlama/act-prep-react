@@ -1,0 +1,173 @@
+{
+  "timestamp": "2025-10-13T18:44:08.078Z",
+  "summary": {
+    "totalLessons": 16,
+    "totalContent": 314974,
+    "avgContent": 19686,
+    "withTips": 11,
+    "withTakeaways": 16,
+    "withTerms": 13
+  },
+  "lessons": [
+    {
+      "lessonKey": "getting-started",
+      "title": "ACT Test Basics & Overview",
+      "sections": 1,
+      "contentLength": 14067,
+      "hasTipBoxes": false,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": true,
+      "updatedAt": "2025-10-13T18:43:22.368+00:00"
+    },
+    {
+      "lessonKey": "sentence-structure",
+      "title": "Topic 1.1 - Building Complete Sentences",
+      "sections": 1,
+      "contentLength": 23143,
+      "hasTipBoxes": true,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": true,
+      "updatedAt": "2025-10-13T18:43:23.397+00:00"
+    },
+    {
+      "lessonKey": "commas",
+      "title": "Topic 1.2 - Essential Comma Rules",
+      "sections": 1,
+      "contentLength": 46699,
+      "hasTipBoxes": true,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": true,
+      "updatedAt": "2025-10-13T18:43:24.411+00:00"
+    },
+    {
+      "lessonKey": "punctuation",
+      "title": "Topic 1.3 - Advanced Punctuation",
+      "sections": 1,
+      "contentLength": 34368,
+      "hasTipBoxes": true,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": true,
+      "updatedAt": "2025-10-13T18:43:25.516+00:00"
+    },
+    {
+      "lessonKey": "verbs",
+      "title": "Topic 1.4 - Verbs",
+      "sections": 1,
+      "contentLength": 25192,
+      "hasTipBoxes": true,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": true,
+      "updatedAt": "2025-10-13T18:43:26.603+00:00"
+    },
+    {
+      "lessonKey": "pronouns",
+      "title": "Topic 1.5 - Pronouns",
+      "sections": 1,
+      "contentLength": 23295,
+      "hasTipBoxes": true,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": true,
+      "updatedAt": "2025-10-13T18:43:27.706+00:00"
+    },
+    {
+      "lessonKey": "modifiers",
+      "title": "Topic 1.6 - Misplaced Modifiers",
+      "sections": 1,
+      "contentLength": 15878,
+      "hasTipBoxes": true,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": true,
+      "updatedAt": "2025-10-13T18:43:28.699+00:00"
+    },
+    {
+      "lessonKey": "parallel-structure",
+      "title": "Topic 1.7 - Parallel Structure",
+      "sections": 1,
+      "contentLength": 18864,
+      "hasTipBoxes": true,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": true,
+      "updatedAt": "2025-10-13T18:43:29.655+00:00"
+    },
+    {
+      "lessonKey": "misc-topics",
+      "title": "Topic 1.8 - Miscellaneous Topics",
+      "sections": 1,
+      "contentLength": 35786,
+      "hasTipBoxes": false,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": true,
+      "updatedAt": "2025-10-13T18:43:30.628+00:00"
+    },
+    {
+      "lessonKey": "grammar-review",
+      "title": "Topic 1.9 - Grammar Review",
+      "sections": 1,
+      "contentLength": 930,
+      "hasTipBoxes": false,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": false,
+      "updatedAt": "2025-10-13T18:43:31.483+00:00"
+    },
+    {
+      "lessonKey": "redundancy",
+      "title": "Topic 2.1 - Redundancy & Wordiness",
+      "sections": 1,
+      "contentLength": 12149,
+      "hasTipBoxes": true,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": true,
+      "updatedAt": "2025-10-13T18:43:32.382+00:00"
+    },
+    {
+      "lessonKey": "word-choice",
+      "title": "Topic 2.2 - Word Choice",
+      "sections": 1,
+      "contentLength": 4157,
+      "hasTipBoxes": false,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": false,
+      "updatedAt": "2025-10-13T18:43:33.326+00:00"
+    },
+    {
+      "lessonKey": "transitions",
+      "title": "Topic 2.3 - Transitions",
+      "sections": 1,
+      "contentLength": 21625,
+      "hasTipBoxes": false,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": true,
+      "updatedAt": "2025-10-13T18:43:34.262+00:00"
+    },
+    {
+      "lessonKey": "which-choice",
+      "title": "Topic 2.4 - Which Choice Questions",
+      "sections": 1,
+      "contentLength": 10751,
+      "hasTipBoxes": true,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": true,
+      "updatedAt": "2025-10-13T18:43:35.263+00:00"
+    },
+    {
+      "lessonKey": "adding-deleting",
+      "title": "Topic 2.5 - Adding or Deleting Information",
+      "sections": 1,
+      "contentLength": 24862,
+      "hasTipBoxes": true,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": true,
+      "updatedAt": "2025-10-13T18:43:36.16+00:00"
+    },
+    {
+      "lessonKey": "logical-placement",
+      "title": "Topic 2.6 - Logical Placement",
+      "sections": 1,
+      "contentLength": 3208,
+      "hasTipBoxes": true,
+      "hasKeyTakeaways": true,
+      "hasHighlightedTerms": false,
+      "updatedAt": "2025-10-13T18:43:37.077+00:00"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <!-- Clean white background -->
+  <rect width="600" height="380" fill="#ffffff"/>
+
+  <!-- Parallel line 1 (top) - Light gray background -->
+  <line x1="80" y1="130" x2="520" y2="130" stroke="#d1d5db" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Parallel line 2 (bottom) - Light gray background -->
+  <line x1="80" y1="250" x2="520" y2="250" stroke="#d1d5db" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Transversal line - Light gray background -->
+  <line x1="200" y1="50" x2="400" y2="330" stroke="#d1d5db" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Title -->
+  <text x="300" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#7c3aed" text-anchor="middle">Set 2: The Obtuse Angles</text>
+
+  <!-- Angle labels - PURPLE with background circles for emphasis -->
+  <!-- Angle 2 (top-right obtuse) -->
+  <circle cx="300" cy="150" r="22" fill="#ede9fe" opacity="0.8"/>
+  <text x="300" y="157" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="700" fill="#7c3aed" text-anchor="middle">∠2</text>
+
+  <!-- Angle 3 (bottom-left obtuse) -->
+  <circle cx="220" cy="150" r="22" fill="#ede9fe" opacity="0.8"/>
+  <text x="220" y="157" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="700" fill="#7c3aed" text-anchor="middle">∠3</text>
+
+  <!-- Angle 6 (top-right obtuse at bottom intersection) -->
+  <circle cx="380" cy="230" r="22" fill="#ede9fe" opacity="0.8"/>
+  <text x="380" y="237" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="700" fill="#7c3aed" text-anchor="middle">∠6</text>
+
+  <!-- Angle 7 (bottom-left obtuse at bottom intersection) -->
+  <circle cx="300" cy="230" r="22" fill="#ede9fe" opacity="0.8"/>
+  <text x="300" y="237" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="700" fill="#7c3aed" text-anchor="middle">∠7</text>
+
+  <!-- Equation box at bottom -->
+  <rect x="150" y="340" width="300" height="32" fill="#faf5ff" stroke="#c4b5fd" stroke-width="2" rx="8"/>
+  <text x="300" y="363" font-family="system-ui, -apple-system, sans-serif" font-size="19" font-weight="700" fill="#7c3aed" text-anchor="middle">∠2 = ∠3 = ∠6 = ∠7</text>
+</svg>

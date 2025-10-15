@@ -1,0 +1,26 @@
+{
+  "lesson": {
+    "id": "09a41283-2118-41cb-8d51-bd161b67c16d",
+    "lesson_key": "parallel-structure",
+    "title": "Topic 1.7 - Parallel Structure",
+    "subject": "english",
+    "category": "Grammar Fundamentals",
+    "difficulty_level": 1,
+    "duration_minutes": 30,
+    "order_index": 7,
+    "is_published": true,
+    "created_at": "2025-10-13T18:09:19.214163+00:00",
+    "updated_at": "2025-10-13T18:43:29.655+00:00"
+  },
+  "sections": [
+    {
+      "id": "743c4bb5-a65b-4cb0-ba88-f9888b0ac9b4",
+      "lesson_id": "09a41283-2118-41cb-8d51-bd161b67c16d",
+      "section_key": "parallel-structure-main",
+      "title": "Main Content",
+      "section_type": "content",
+      "order_index": 0,
+      "created_at": "2025-10-13T18:43:29.559173+00:00"
+    }
+  ]
+}

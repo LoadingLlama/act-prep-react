@@ -1,0 +1,50 @@
+[
+  {
+    "timestamp": "2025-10-12T18:26:54.766Z",
+    "level": "INFO",
+    "lessonKey": "SYSTEM",
+    "message": "Starting to process math lessons"
+  },
+  {
+    "timestamp": "2025-10-12T18:26:54.949Z",
+    "level": "INFO",
+    "lessonKey": "SYSTEM",
+    "message": "Found 35 math lessons to process"
+  },
+  {
+    "timestamp": "2025-10-12T18:26:54.950Z",
+    "level": "INFO",
+    "lessonKey": "SYSTEM",
+    "message": "Starting to process english lessons"
+  },
+  {
+    "timestamp": "2025-10-12T18:26:54.995Z",
+    "level": "INFO",
+    "lessonKey": "SYSTEM",
+    "message": "Found 16 english lessons to process"
+  },
+  {
+    "timestamp": "2025-10-12T18:26:54.995Z",
+    "level": "INFO",
+    "lessonKey": "SYSTEM",
+    "message": "Starting to process reading lessons"
+  },
+  {
+    "timestamp": "2025-10-12T18:26:55.032Z",
+    "level": "INFO",
+    "lessonKey": "SYSTEM",
+    "message": "Found 14 reading lessons to process"
+  },
+  {
+    "timestamp": "2025-10-12T18:26:55.032Z",
+    "level": "INFO",
+    "lessonKey": "SYSTEM",
+    "message": "Starting to process science lessons"
+  },
+  {
+    "timestamp": "2025-10-12T18:26:55.072Z",
+    "level": "INFO",
+    "lessonKey": "SYSTEM",
+    "message": "Found 17 science lessons to process"
+  }
+]

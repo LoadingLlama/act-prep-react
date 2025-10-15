@@ -1,0 +1,26 @@
+{
+  "lesson": {
+    "id": "f7aadb91-0ce8-4e09-b7bb-5909d4481e6b",
+    "lesson_key": "pronouns",
+    "title": "Topic 1.5 - Pronouns",
+    "subject": "english",
+    "category": "Grammar Fundamentals",
+    "difficulty_level": 1,
+    "duration_minutes": 30,
+    "order_index": 5,
+    "is_published": true,
+    "created_at": "2025-10-13T18:09:19.214163+00:00",
+    "updated_at": "2025-10-13T18:43:27.706+00:00"
+  },
+  "sections": [
+    {
+      "id": "54e7927f-11d5-439c-883d-56779b3a9076",
+      "lesson_id": "f7aadb91-0ce8-4e09-b7bb-5909d4481e6b",
+      "section_key": "pronouns-main",
+      "title": "Main Content",
+      "section_type": "content",
+      "order_index": 0,
+      "created_at": "2025-10-13T18:43:27.605825+00:00"
+    }
+  ]
+}

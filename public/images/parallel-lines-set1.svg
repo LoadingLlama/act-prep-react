@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <!-- Clean white background -->
+  <rect width="600" height="380" fill="#ffffff"/>
+
+  <!-- Parallel line 1 (top) - Light gray background -->
+  <line x1="80" y1="130" x2="520" y2="130" stroke="#d1d5db" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Parallel line 2 (bottom) - Light gray background -->
+  <line x1="80" y1="250" x2="520" y2="250" stroke="#d1d5db" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Transversal line - Light gray background -->
+  <line x1="200" y1="50" x2="400" y2="330" stroke="#d1d5db" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Title -->
+  <text x="300" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#dc2626" text-anchor="middle">Set 1: The Acute Angles</text>
+
+  <!-- Angle labels - RED with background circles for emphasis -->
+  <!-- Angle 1 (top-left) -->
+  <circle cx="220" cy="110" r="22" fill="#fee2e2" opacity="0.8"/>
+  <text x="220" y="117" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="700" fill="#dc2626" text-anchor="middle">∠1</text>
+
+  <!-- Angle 4 (top-right) -->
+  <circle cx="300" cy="110" r="22" fill="#fee2e2" opacity="0.8"/>
+  <text x="300" y="117" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="700" fill="#dc2626" text-anchor="middle">∠4</text>
+
+  <!-- Angle 5 (bottom-left) -->
+  <circle cx="300" cy="270" r="22" fill="#fee2e2" opacity="0.8"/>
+  <text x="300" y="277" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="700" fill="#dc2626" text-anchor="middle">∠5</text>
+
+  <!-- Angle 8 (bottom-right) -->
+  <circle cx="380" cy="270" r="22" fill="#fee2e2" opacity="0.8"/>
+  <text x="380" y="277" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="700" fill="#dc2626" text-anchor="middle">∠8</text>
+
+  <!-- Equation box at bottom -->
+  <rect x="150" y="340" width="300" height="32" fill="#fef2f2" stroke="#fca5a5" stroke-width="2" rx="8"/>
+  <text x="300" y="363" font-family="system-ui, -apple-system, sans-serif" font-size="19" font-weight="700" fill="#dc2626" text-anchor="middle">∠1 = ∠4 = ∠5 = ∠8</text>
+</svg>

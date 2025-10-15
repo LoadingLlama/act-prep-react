@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ACT-Style Diagram Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; margin-bottom: 10px; }
+        .problem {
+            background: #f9fafb;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .checklist {
+            background: #f0f9ff;
+            border: 2px solid #3b82f6;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .checklist h3 {
+            margin-top: 0;
+            color: #1e40af;
+            font-size: 18px;
+        }
+        .checklist ul {
+            margin: 10px 0;
+        }
+        .checklist li {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        .approve {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+        .approve:hover {
+            background: #059669;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📐 ACT-Style Diagram (Clean & Minimal)</h1>
+        <p style="color: #666; margin-bottom: 30px;">This is what students will see - only essential info!</p>
+
+        <div class="problem">
+            <strong>Problem:</strong> Lines L₁ and L₂ are parallel. A transversal intersects both lines, creating 8 angles. If one of the acute angles measures 60°, what is the measure of one of the obtuse angles?
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            
+<svg width="550" height="400" viewBox="0 0 550 400" xmlns="http://www.w3.org/2000/svg" style="border: 1px solid #ddd; background: white;">
+    <!-- Parallel horizontal lines - THINNER -->
+    <line x1="70" y1="120" x2="480" y2="120" stroke="#1f2937" stroke-width="1.5"/>
+    <line x1="70" y1="260" x2="480" y2="260" stroke="#1f2937" stroke-width="1.5"/>
+
+    <!-- Parallel symbols -->
+    <line x1="450" y1="112" x2="468" y2="112" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="128" x2="468" y2="128" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="252" x2="468" y2="252" stroke="#6b7280" stroke-width="1"/>
+    <line x1="450" y1="268" x2="468" y2="268" stroke="#6b7280" stroke-width="1"/>
+
+    <!-- Transversal - THINNER -->
+    <line x1="180" y1="60" x2="330" y2="320" stroke="#4b5563" stroke-width="1.5"/>
+
+    <!-- Intersection points - SMALLER -->
+    <circle cx="214.6" cy="120.0" r="3" fill="#1f2937"/>
+    <circle cx="295.4" cy="260.0" r="3" fill="#1f2937"/>
+
+    <!-- TOP INTERSECTION: Show 60° and its vertical pair -->
+    <path d="M 259.6,120.0 A 45,45 0 0,1 237.1,159.0" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="270.9" y="152.5" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">60°</text>
+
+    <path d="M 169.6,120.0 A 45,45 0 0,1 192.1,81.0" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="158.3" y="87.5" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">60°</text>
+
+    <!-- BOTTOM INTERSECTION: Show 60° and the question mark -->
+    <path d="M 340.4,260.0 A 45,45 0 0,1 317.9,299.0" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="351.7" y="292.5" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">60°</text>
+
+    <path d="M 272.9,221.0 A 45,45 0 0,1 340.4,260.0" fill="none" stroke="#ef4444" stroke-width="2"/>
+    <text x="327.9" y="203.7" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">?</text>
+
+    <!-- Line labels -->
+    <text x="500" y="120" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1f2937" dominant-baseline="middle">L₁</text>
+    <text x="500" y="260" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1f2937" dominant-baseline="middle">L₂</text>
+</svg>
+
+        </div>
+
+        <div class="checklist">
+            <h3>✓ ACT-Style Checklist:</h3>
+            <ul>
+                <li>✅ Clean, minimal design (not cluttered)</li>
+                <li>✅ Only 4 angles shown (not all 8)</li>
+                <li>✅ Thinner lines (1.5px instead of 4px)</li>
+                <li>✅ Shows what's GIVEN (60° blue angles)</li>
+                <li>✅ Shows what to FIND (? red angle)</li>
+                <li>✅ Demonstrates concept (vertical angle pair at top)</li>
+            </ul>
+
+            <h4 style="margin-top: 20px; color: #1e40af;">Visual Validation:</h4>
+            <ul>
+                <li>✓ Are the 60° labels INSIDE the acute angles?</li>
+                <li>✓ Is the ? label INSIDE the obtuse angle?</li>
+                <li>✓ Are the arcs properly positioned?</li>
+                <li>✓ Does it look clean and professional?</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <p><strong>If this looks good, I'll apply it to the database!</strong></p>
+            <button class="approve" onclick="alert('Tell me: APPROVED or tell me what to fix!')">
+                This looks good ✓
+            </button>
+        </div>
+
+        <div style="background: #fef2f2; border: 2px solid #ef4444; padding: 15px; border-radius: 6px; margin: 20px 0;">
+            <h4 style="margin-top: 0; color: #991b1b;">Still see issues?</h4>
+            <p style="margin: 0;">Tell me specifically what's wrong:</p>
+            <ul style="margin: 10px 0;">
+                <li>Text position incorrect?</li>
+                <li>Arc in wrong place?</li>
+                <li>Lines too thick/thin?</li>
+                <li>Colors wrong?</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

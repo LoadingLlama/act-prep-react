@@ -221,13 +221,13 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
           )}
         </div>
 
-        {/* Right: Score */}
+        {/* Right: Question count */}
         <div style={{
           fontSize: '0.75rem',
           fontWeight: '500',
           color: '#ffffff'
         }}>
-          Score: {score}/{quizData.questions.length}
+          Question {currentQuestion + 1}/{quizData.questions.length}
         </div>
       </div>
 
@@ -240,7 +240,7 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
               fontSize: '19px',
               fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
               lineHeight: '1.6',
-              marginBottom: '2.5rem',
+              marginBottom: '1.25rem',
               fontWeight: '500',
               color: '#111827'
             }}
