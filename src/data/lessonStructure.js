@@ -27,18 +27,18 @@ export const lessonStructure = [
 
   // Math Section - Geometry (Chapter 2)
   { id: 'geometry-angles', section: 'math', chapterNum: '2.1', title: 'Understanding Angles & Lines', desc: 'Intersecting lines, parallel lines, interior angles', status: 'not-started', category: 'Geometry' },
-  { id: 'geometry-shapes', section: 'math', chapterNum: '2.2', title: 'Areas, Volumes & Triangles', desc: 'Area, volume, right triangles, special triangles', status: 'not-started', category: 'Geometry' },
-  { id: 'lines', section: 'math', chapterNum: '2.3', title: 'Lines', desc: 'Slope, equations of lines, midpoint, distance formulas', status: 'not-started', category: 'Geometry' },
-  { id: 'arcs-sectors', section: 'math', chapterNum: '2.4', title: 'Arcs and Sectors', desc: 'Circle arc lengths and sector areas', status: 'not-started', category: 'Geometry' },
-  { id: 'circles-ellipses', section: 'math', chapterNum: '2.5', title: 'Circles, Ellipses, and Hyperbolas', desc: 'Conic sections and their equations', status: 'not-started', category: 'Geometry' },
+  { id: '2.2', section: 'math', chapterNum: '2.2', title: 'Areas, Volumes & Triangles', desc: 'Area, volume, right triangles, special triangles', status: 'not-started', category: 'Geometry' },
+  { id: '2.3', section: 'math', chapterNum: '2.3', title: 'Lines', desc: 'Slope, equations of lines, midpoint, distance formulas', status: 'not-started', category: 'Geometry' },
+  { id: '2.4', section: 'math', chapterNum: '2.4', title: 'Arcs and Sectors', desc: 'Circle arc lengths and sector areas', status: 'not-started', category: 'Geometry' },
+  { id: '2.5', section: 'math', chapterNum: '2.5', title: 'Circles, Ellipses, and Hyperbolas', desc: 'Conic sections and their equations', status: 'not-started', category: 'Geometry' },
 
   // Math Section - Algebra Fundamentals (Chapter 3)
-  { id: 'algebra-skills', section: 'math', chapterNum: '3.1', title: 'Algebra Skills', desc: 'PEMDAS, negative numbers, combining terms', status: 'not-started', category: 'Algebra Fundamentals' },
-  { id: 'fractions', section: 'math', chapterNum: '3.2', title: 'Fractions', desc: 'Operations with fractions and calculator techniques', status: 'not-started', category: 'Algebra Fundamentals' },
-  { id: 'exponents-roots', section: 'math', chapterNum: '3.3', title: 'Exponents and Roots', desc: 'Exponent rules and simplifying radicals', status: 'not-started', category: 'Algebra Fundamentals' },
-  { id: 'logarithms', section: 'math', chapterNum: '3.4', title: 'Logarithms', desc: 'Logarithm basics and change of base rule', status: 'not-started', category: 'Algebra Fundamentals' },
-  { id: 'inequalities', section: 'math', chapterNum: '3.5', title: 'Inequalities', desc: 'Solving and graphing inequalities', status: 'not-started', category: 'Algebra Fundamentals' },
-  { id: 'absolute-value', section: 'math', chapterNum: '3.6', title: 'Absolute Value', desc: 'Absolute value equations and inequalities', status: 'not-started', category: 'Algebra Fundamentals' },
+  { id: '3.1', section: 'math', chapterNum: '3.1', title: 'Algebra Skills', desc: 'PEMDAS, negative numbers, combining terms', status: 'not-started', category: 'Algebra Fundamentals' },
+  { id: '3.2', section: 'math', chapterNum: '3.2', title: 'Fractions', desc: 'Operations with fractions and calculator techniques', status: 'not-started', category: 'Algebra Fundamentals' },
+  { id: '3.3', section: 'math', chapterNum: '3.3', title: 'Exponents and Roots', desc: 'Exponent rules and simplifying radicals', status: 'not-started', category: 'Algebra Fundamentals' },
+  { id: '3.4', section: 'math', chapterNum: '3.4', title: 'Logarithms', desc: 'Logarithm basics and change of base rule', status: 'not-started', category: 'Algebra Fundamentals' },
+  { id: '3.5', section: 'math', chapterNum: '3.5', title: 'Inequalities', desc: 'Solving and graphing inequalities', status: 'not-started', category: 'Algebra Fundamentals' },
+  { id: '3.6', section: 'math', chapterNum: '3.6', title: 'Absolute Value', desc: 'Absolute value equations and inequalities', status: 'not-started', category: 'Algebra Fundamentals' },
 
   // Math Section - Advanced Algebra (Chapter 4)
   { id: 'systems-equations', section: 'math', chapterNum: '4.1', title: 'Systems of Equations', desc: 'Elimination, substitution, word problems', status: 'not-started', category: 'Advanced Algebra' },
@@ -49,18 +49,18 @@ export const lessonStructure = [
   { id: 'sequences', section: 'math', chapterNum: '4.6', title: 'Sequences', desc: 'Arithmetic and geometric sequences', status: 'not-started', category: 'Advanced Algebra' },
 
   // Math Section - Numbers & Operations (Chapter 5)
-  { id: 'number-theory', section: 'math', chapterNum: '5.1', title: 'Number Theory', desc: 'Types of numbers, GCD, LCM, solution types', status: 'not-started', category: 'Numbers & Operations' },
-  { id: 'percentages', section: 'math', chapterNum: '5.2', title: 'Percentages', desc: 'Percentage calculations, increase/decrease', status: 'not-started', category: 'Numbers & Operations' },
-  { id: 'ratios-proportions', section: 'math', chapterNum: '5.3', title: 'Ratios and Proportions', desc: 'Ratio problems, proportions, direct/indirect variation', status: 'not-started', category: 'Numbers & Operations' },
-  { id: 'unit-conversion', section: 'math', chapterNum: '5.4', title: 'Unit Conversion', desc: 'Converting units and dimensional analysis', status: 'not-started', category: 'Numbers & Operations' },
-  { id: 'scientific-notation', section: 'math', chapterNum: '5.5', title: 'Scientific Notation', desc: 'Working with very large and small numbers', status: 'not-started', category: 'Numbers & Operations' },
-  { id: 'repeating-patterns', section: 'math', chapterNum: '5.6', title: 'Repeating Patterns', desc: 'Patterns in decimals and powers', status: 'not-started', category: 'Numbers & Operations' },
+  { id: '5.1', section: 'math', chapterNum: '5.1', title: 'Number Theory', desc: 'Types of numbers, GCD, LCM, solution types', status: 'not-started', category: 'Numbers & Operations' },
+  { id: '5.2', section: 'math', chapterNum: '5.2', title: 'Percentages', desc: 'Percentage calculations, increase/decrease', status: 'not-started', category: 'Numbers & Operations' },
+  { id: '5.3', section: 'math', chapterNum: '5.3', title: 'Ratios and Proportions', desc: 'Ratio problems, proportions, direct/indirect variation', status: 'not-started', category: 'Numbers & Operations' },
+  { id: '5.4', section: 'math', chapterNum: '5.4', title: 'Unit Conversion', desc: 'Converting units and dimensional analysis', status: 'not-started', category: 'Numbers & Operations' },
+  { id: '5.5', section: 'math', chapterNum: '5.5', title: 'Scientific Notation', desc: 'Working with very large and small numbers', status: 'not-started', category: 'Numbers & Operations' },
+  { id: '5.6', section: 'math', chapterNum: '5.6', title: 'Repeating Patterns', desc: 'Patterns in decimals and powers', status: 'not-started', category: 'Numbers & Operations' },
 
   // Math Section - Statistics, Probability & Counting (Chapter 6)
-  { id: 'statistics-basics', section: 'math', chapterNum: '6.1', title: 'Mean, Median, Mode, and Range', desc: 'Basic statistics and weighted averages', status: 'not-started', category: 'Statistics & Probability' },
-  { id: 'statistics-advanced', section: 'math', chapterNum: '6.2', title: 'Statistics', desc: 'Standard deviation, distributions, data analysis', status: 'not-started', category: 'Statistics & Probability' },
-  { id: 'probability', section: 'math', chapterNum: '6.3', title: 'Probability', desc: 'Basic probability rules and calculations', status: 'not-started', category: 'Statistics & Probability' },
-  { id: 'permutations-combinations', section: 'math', chapterNum: '6.4', title: 'Permutations, Combinations, and Organized Counting', desc: 'Counting principles and arrangements', status: 'not-started', category: 'Statistics & Probability' },
+  { id: '6.1', section: 'math', chapterNum: '6.1', title: 'Mean, Median, Mode, and Range', desc: 'Basic statistics and weighted averages', status: 'not-started', category: 'Statistics & Probability' },
+  { id: '6.2', section: 'math', chapterNum: '6.2', title: 'Statistics', desc: 'Standard deviation, distributions, data analysis', status: 'not-started', category: 'Statistics & Probability' },
+  { id: '6.3', section: 'math', chapterNum: '6.3', title: 'Probability', desc: 'Basic probability rules and calculations', status: 'not-started', category: 'Statistics & Probability' },
+  { id: '6.4', section: 'math', chapterNum: '6.4', title: 'Permutations, Combinations, and Organized Counting', desc: 'Counting principles and arrangements', status: 'not-started', category: 'Statistics & Probability' },
 
   // Math Section - Advanced Topics (Chapter 7)
   { id: 'trigonometry', section: 'math', chapterNum: '7.1', title: 'Trigonometry', desc: 'SOH-CAH-TOA, unit circle, trig functions', status: 'not-started', category: 'Advanced Topics' },

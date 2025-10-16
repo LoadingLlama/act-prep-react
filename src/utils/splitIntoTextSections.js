@@ -5,31 +5,6 @@
 import logger from '../services/logging/logger';
 import errorTracker from '../services/logging/errorTracker';
 
-const isExampleSection = (content) => {
-  // Check if content contains h4 with "Example" and has Solution structure
-  // Note: Problem: text was removed, but solution structure remains
-  return content.includes('<h4') &&
-         /Example \d+/i.test(content) &&
-         /Solution:/i.test(content);
-};
-
-const extractExamples = (content) => {
-  // Split by h4 headers that contain "Example"
-  const exampleParts = content.split(/(?=<h4[^>]*>Example)/i);
-  const examples = [];
-
-  for (const part of exampleParts) {
-    if (part.trim() && /Example \d+/i.test(part)) {
-      examples.push({
-        type: 'example',
-        content: part.trim()
-      });
-    }
-  }
-
-  return examples;
-};
-
 export const splitIntoTextSections = (content) => {
   try {
     if (!content || !content.trim()) {
@@ -54,25 +29,12 @@ export const splitIntoTextSections = (content) => {
         part = part.trim();
         if (!part || part.length < 50) continue;
 
-        // Check if this section contains examples
-        if (isExampleSection(part)) {
-          // Extract examples as separate interactive sections
-          const examples = extractExamples(part);
+        // Note: English lessons have HTML examples that should render
+        // Math lessons have database examples that render separately via ExampleCard
+        // Both systems work together - don't strip HTML examples here
 
-          // Get the intro text before first example
-          const firstExampleIndex = part.search(/<h4[^>]*>Example/i);
-          if (firstExampleIndex > 0) {
-            const introText = part.substring(0, firstExampleIndex).trim();
-            if (introText.length > 50) {
-              sections.push({
-                type: 'text',
-                content: introText
-              });
-            }
-          }
-
-          sections.push(...examples);
-        } else {
+        // Continue with normal text processing
+        if (part.trim().length > 50) {
           // Check if this H3 section is very long and needs further splitting
           const wordCount = (part.match(/\b\w+\b/g) || []).length;
 

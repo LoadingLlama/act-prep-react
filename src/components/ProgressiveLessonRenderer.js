@@ -4,6 +4,7 @@ import { splitIntoTextSections } from '../utils/splitIntoTextSections';
 import { useProgressiveLessonStyles } from './ProgressiveLessonRenderer.styles';
 import QuizzesService from '../services/api/quizzes.service';
 import LessonsService from '../services/api/lessons.service';
+import ExamplesService from '../services/api/examples.service';
 import AllLessonsNavigator from './AllLessonsNavigator';
 import LessonTableOfContents from './LessonTableOfContents';
 import { lessonStructure } from '../data/lessonStructure';
@@ -72,10 +73,13 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         lessonUUID = lessonData?.id;
       }
 
-      // Fetch quizzes from Supabase
+      // Fetch quizzes and examples from Supabase
       const quizzes = lessonUUID ? await QuizzesService.getQuizzesByLessonId(lessonUUID) : [];
+      const examples = lessonUUID ? await ExamplesService.getExamplesByLessonId(lessonUUID) : [];
+
       console.log('📚 Loaded quizzes for lesson:', lessonUUID);
       console.log('📝 Number of quizzes:', quizzes?.length || 0);
+      console.log('🎯 Number of examples:', examples?.length || 0);
       if (quizzes && quizzes.length > 0) {
         quizzes.forEach((quiz, idx) => {
           console.log(`   Quiz ${idx + 1}:`, quiz.title);
@@ -100,19 +104,48 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         quizzesByPosition[quiz.position].push(quiz);
       });
 
-      // Interleave text sections and quizzes based on position
-      let textIndex = 0;
+      // Interleave text sections, examples, and quizzes
+      // Strategy: Examples are positioned by their `position` field
+      // position 1 = after first H3 section, position 2 = after second H3, etc.
 
-      while (textIndex < textSections.length) {
-        // Add text section
-        processedSections.push(textSections[textIndex]);
-        textIndex++;
+      let h3Count = 0; // Track which H3 section we're on
+      let examplesByH3Position = {};
 
-        // After adding this text section, check if any quizzes should appear
-        if (quizzesByPosition[textIndex]) {
-          quizzesByPosition[textIndex].forEach(quiz => {
-            console.log(`🎯 Adding quiz section at position ${textIndex}:`, quiz.title);
-            console.log(`   - Has ${quiz.questions?.length || 0} questions`);
+      // Group examples by their position (which H3 they belong after)
+      examples.forEach(example => {
+        if (!examplesByH3Position[example.position]) {
+          examplesByH3Position[example.position] = [];
+        }
+        examplesByH3Position[example.position].push(example);
+      });
+
+      for (let textIndex = 0; textIndex < textSections.length; textIndex++) {
+        const section = textSections[textIndex];
+        processedSections.push(section);
+
+        // Check if this text section contains an H3 header
+        if (section.content && section.content.includes('<h3')) {
+          h3Count++;
+          console.log(`📍 H3 section ${h3Count} detected`);
+
+          // Add examples that belong after this H3
+          if (examplesByH3Position[h3Count]) {
+            examplesByH3Position[h3Count].forEach(example => {
+              console.log(`📊 Adding example ${example.position}: ${example.title} after H3 #${h3Count}`);
+              processedSections.push({
+                type: 'example',
+                data: example,
+                exampleId: example.id
+              });
+            });
+          }
+        }
+
+        // Check if any quizzes should appear at this position
+        const nextPosition = textIndex + 1;
+        if (quizzesByPosition[nextPosition]) {
+          quizzesByPosition[nextPosition].forEach(quiz => {
+            console.log(`🎯 Adding quiz section at position ${nextPosition}:`, quiz.title);
             processedSections.push({
               type: 'quiz',
               data: quiz,

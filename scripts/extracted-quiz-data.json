@@ -1,0 +1,2221 @@
+{
+  "2.2": {
+    "lessonKey": "2.2",
+    "title": "Mastery Quiz: Areas, Volumes & Triangles",
+    "intro": "Test your understanding with these ACT-style questions. Try them without looking back first!",
+    "questions": [
+      {
+        "questionNumber": 1,
+        "text": "A rectangle has a length of 8 inches and a width of 5 inches. What is its area in square inches?",
+        "options": [
+          {
+            "text": "13",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "26",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "32",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "40",
+            "isCorrect": true,
+            "explanation": "Area of rectangle = length × width = 8 × 5 = 40 square inches"
+          },
+          {
+            "text": "80",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "text": "A circle has a radius of 7 cm. What is its area in square centimeters?",
+        "options": [
+          {
+            "text": "7π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "14π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "49π",
+            "isCorrect": true,
+            "explanation": "Area = πr² = π(7)² = 49π square centimeters"
+          },
+          {
+            "text": "98π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "196π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "text": "A right triangle has legs measuring 6 and 8. What is the length of the hypotenuse?",
+        "options": [
+          {
+            "text": "10",
+            "isCorrect": true,
+            "explanation": "This is a 3-4-5 triple scaled by 2! 6 = 2×3, 8 = 2×4, so hypotenuse = 2×5 = 10"
+          },
+          {
+            "text": "12",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "14",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "16",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "18",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "text": "A cylinder has radius 3 and height 5. What is its volume?",
+        "options": [
+          {
+            "text": "15π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "30π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "45π",
+            "isCorrect": true,
+            "explanation": "V = πr²h = π(3)²(5) = π(9)(5) = 45π"
+          },
+          {
+            "text": "75π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "90π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "text": "In a 45-45-90 triangle, each leg has length 6. What is the length of the hypotenuse?",
+        "options": [
+          {
+            "text": "6",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "6√2",
+            "isCorrect": true,
+            "explanation": "In a 45-45-90 triangle, hypotenuse = leg × √2 = 6√2"
+          },
+          {
+            "text": "12",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "12√2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "36",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "text": "A circle has a diameter of 14 meters. What is its area in square meters?",
+        "options": [
+          {
+            "text": "7π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "14π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "49π",
+            "isCorrect": true,
+            "explanation": "Diameter = 14, so radius = 7. Area = πr² = π(7)² = 49π square meters"
+          },
+          {
+            "text": "98π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "196π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "text": "A right triangle has legs of 5 and 12. What is the hypotenuse?",
+        "options": [
+          {
+            "text": "7",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "13",
+            "isCorrect": true,
+            "explanation": "This is the 5-12-13 Pythagorean triple! Hypotenuse = 13"
+          },
+          {
+            "text": "15",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "17",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "25",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 8,
+        "text": "A rectangular box has length 5, width 3, and height 4. What is its volume?",
+        "options": [
+          {
+            "text": "12",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "15",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "20",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "60",
+            "isCorrect": true,
+            "explanation": "Volume = length × width × height = 5 × 3 × 4 = 60"
+          },
+          {
+            "text": "120",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          }
+        ]
+      },
+      {
+        "questionNumber": 9,
+        "text": "In a 30-60-90 triangle, if the short leg is 4, what is the hypotenuse?",
+        "options": [
+          {
+            "text": "4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "4√2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "4√3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "8",
+            "isCorrect": true,
+            "explanation": "In 30-60-90, hypotenuse = 2 × short leg = 2 × 4 = 8"
+          },
+          {
+            "text": "12",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          }
+        ]
+      },
+      {
+        "questionNumber": 10,
+        "text": "A triangle has a base of 10 inches and a height of 6 inches. What is its area?",
+        "options": [
+          {
+            "text": "16",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "30",
+            "isCorrect": true,
+            "explanation": "Area = ½ × base × height = ½ × 10 × 6 = 30 square inches"
+          },
+          {
+            "text": "32",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "60",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "120",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      }
+    ]
+  },
+  "2.3": {
+    "lessonKey": "2.3",
+    "title": "Mastery Quiz: Lines & Slopes",
+    "intro": "Test your understanding with these ACT-style questions. Try them without looking back first!",
+    "questions": [
+      {
+        "questionNumber": 1,
+        "text": "What is the slope of the line passing through (3, 7) and (5, 11)?",
+        "options": [
+          {
+            "text": "1",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "2",
+            "isCorrect": true,
+            "explanation": "m = (11 - 7)/(5 - 3) = 4/2 = 2"
+          },
+          {
+            "text": "3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "text": "What is the y-intercept of the line y = -2x + 9?",
+        "options": [
+          {
+            "text": "-2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "7",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "9",
+            "isCorrect": true,
+            "explanation": "In slope-intercept form y = mx + b, b is the y-intercept. Here b = 9"
+          },
+          {
+            "text": "11",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "text": "Which line is parallel to y = 4x - 3?",
+        "options": [
+          {
+            "text": "y = -4x + 2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "y = -1/4x + 5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "y = 1/4x + 1",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "y = 4x + 7",
+            "isCorrect": true,
+            "explanation": "Parallel lines have the same slope. Original has slope 4, so y = 4x + 7 is parallel"
+          },
+          {
+            "text": "y = 3x - 3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "text": "What is the slope of a line perpendicular to y = 2x + 1?",
+        "options": [
+          {
+            "text": "-2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "-1/2",
+            "isCorrect": true,
+            "explanation": "Original slope is 2. Perpendicular slope: flip to get 1/2, then negate to get -1/2"
+          },
+          {
+            "text": "1/2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "text": "What is the midpoint between (2, 8) and (6, 12)?",
+        "options": [
+          {
+            "text": "(3, 9)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "(4, 10)",
+            "isCorrect": true,
+            "explanation": "M = ((2+6)/2, (8+12)/2) = (8/2, 20/2) = (4, 10)"
+          },
+          {
+            "text": "(4, 20)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "(8, 10)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "(8, 20)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "text": "A line passes through (1, 4) with slope 3. What is its equation?",
+        "options": [
+          {
+            "text": "y = 3x",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "y = 3x + 1",
+            "isCorrect": true,
+            "explanation": "y = 3x + b. Use (1,4): 4 = 3(1) + b → 4 = 3 + b → b = 1. So y = 3x + 1"
+          },
+          {
+            "text": "y = 3x + 4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "y = 3x + 7",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "y = x + 3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "text": "What is the distance between (0, 0) and (3, 4)?",
+        "options": [
+          {
+            "text": "3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "5",
+            "isCorrect": true,
+            "explanation": "d = √[(3-0)² + (4-0)²] = √[9 + 16] = √25 = 5. This is the 3-4-5 triple!"
+          },
+          {
+            "text": "7",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "12",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      },
+      {
+        "questionNumber": 8,
+        "text": "What is the slope of a horizontal line?",
+        "options": [
+          {
+            "text": "-1",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "0",
+            "isCorrect": true,
+            "explanation": "Horizontal lines have zero slope (no rise, all run). Vertical lines have undefined slope."
+          },
+          {
+            "text": "1",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "Undefined",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "Infinite",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 9,
+        "text": "Which point lies on the line y = 2x - 3?",
+        "options": [
+          {
+            "text": "(0, -3)",
+            "isCorrect": true,
+            "explanation": "Test (0, -3): y = 2(0) - 3 = -3 ✓. This is the y-intercept!"
+          },
+          {
+            "text": "(1, 1)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "(2, 2)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "(3, 0)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "(4, 6)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          }
+        ]
+      },
+      {
+        "questionNumber": 10,
+        "text": "If line A has slope -3/4, what is the slope of a line perpendicular to line A?",
+        "options": [
+          {
+            "text": "-4/3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "-3/4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "3/4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "4/3",
+            "isCorrect": true,
+            "explanation": "Flip -3/4 to get -4/3, then negate to get 4/3"
+          },
+          {
+            "text": "7/12",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          }
+        ]
+      }
+    ]
+  },
+  "2.4": {
+    "lessonKey": "2.4",
+    "title": "Mastery Quiz: Arcs & Sectors",
+    "intro": "Test your understanding with these ACT-style questions. Try them without looking back first!",
+    "questions": [
+      {
+        "questionNumber": 1,
+        "text": "A central angle in a circle measures 120°. What is the measure of its arc?",
+        "options": [
+          {
+            "text": "60°",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "90°",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "120°",
+            "isCorrect": true,
+            "explanation": "Arc measure = central angle measure = 120°"
+          },
+          {
+            "text": "180°",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "240°",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "text": "A circle has radius 9. What is the length of an arc with central angle 40°?",
+        "options": [
+          {
+            "text": "π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "2π",
+            "isCorrect": true,
+            "explanation": "Arc length = (40/360) × 2π(9) = (1/9) × 18π = 2π"
+          },
+          {
+            "text": "3π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "4π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "9π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "text": "A sector has radius 6 and central angle 90°. What is its area?",
+        "options": [
+          {
+            "text": "3π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "6π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "9π",
+            "isCorrect": true,
+            "explanation": "Sector area = (90/360) × π(6)² = (1/4) × 36π = 9π"
+          },
+          {
+            "text": "12π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "18π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "text": "What fraction of a circle's circumference is an arc with central angle 72°?",
+        "options": [
+          {
+            "text": "1/3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "1/4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "1/5",
+            "isCorrect": true,
+            "explanation": "72/360 = 1/5 of the circle"
+          },
+          {
+            "text": "1/6",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "1/10",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "text": "A circle has radius 12. What is the arc length for a 30° central angle?",
+        "options": [
+          {
+            "text": "π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "2π",
+            "isCorrect": true,
+            "explanation": "Arc length = (30/360) × 2π(12) = (1/12) × 24π = 2π"
+          },
+          {
+            "text": "3π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "4π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "6π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "text": "A sector with radius 10 has area 25π. What is the central angle?",
+        "options": [
+          {
+            "text": "30°",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is E."
+          },
+          {
+            "text": "45°",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is E."
+          },
+          {
+            "text": "60°",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is E."
+          },
+          {
+            "text": "72°",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is E."
+          },
+          {
+            "text": "90°",
+            "isCorrect": true,
+            "explanation": "25π = (θ/360) × π(10)² → 25π = (θ/360) × 100π → 25 = (θ/360) × 100 → θ/360 = 1/4 → θ = 90°"
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "text": "A semicircle has diameter 16. What is its arc length?",
+        "options": [
+          {
+            "text": "4π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "8π",
+            "isCorrect": true,
+            "explanation": "Diameter = 16, so radius = 8. Semicircle = 180°. Arc = (180/360) × 2π(8) = (1/2) × 16π = 8π"
+          },
+          {
+            "text": "16π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "32π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "64π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 8,
+        "text": "A quarter circle (90° sector) has radius 4. What is its area?",
+        "options": [
+          {
+            "text": "2π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "4π",
+            "isCorrect": true,
+            "explanation": "Sector area = (90/360) × π(4)² = (1/4) × 16π = 4π"
+          },
+          {
+            "text": "8π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "12π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "16π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 9,
+        "text": "A circle has radius 5. An arc has length 10π. What is the central angle?",
+        "options": [
+          {
+            "text": "90°",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is E."
+          },
+          {
+            "text": "180°",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is E."
+          },
+          {
+            "text": "270°",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is E."
+          },
+          {
+            "text": "300°",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is E."
+          },
+          {
+            "text": "360°",
+            "isCorrect": true,
+            "explanation": "10π = (θ/360) × 2π(5) → 10π = (θ/360) × 10π → θ/360 = 1 → θ = 360°. This is the entire circle!"
+          }
+        ]
+      },
+      {
+        "questionNumber": 10,
+        "text": "A sector has central angle 135° and radius 8. What is its area?",
+        "options": [
+          {
+            "text": "12π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "18π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "24π",
+            "isCorrect": true,
+            "explanation": "Sector area = (135/360) × π(8)² = (3/8) × 64π = 24π"
+          },
+          {
+            "text": "32π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "48π",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      }
+    ]
+  },
+  "2.5": {
+    "lessonKey": "2.5",
+    "title": "Mastery Quiz: Circles, Ellipses & Hyperbolas",
+    "intro": "Test your understanding with these ACT-style questions. Try them without looking back first!",
+    "questions": [
+      {
+        "questionNumber": 1,
+        "text": "What is the radius of the circle (x - 7)² + (y + 2)² = 64?",
+        "options": [
+          {
+            "text": "4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "8",
+            "isCorrect": true,
+            "explanation": "r² = 64, so r = √64 = 8"
+          },
+          {
+            "text": "16",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "32",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "64",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "text": "What is the center of the circle (x + 3)² + (y - 5)² = 36?",
+        "options": [
+          {
+            "text": "(3, 5)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "(-3, 5)",
+            "isCorrect": true,
+            "explanation": "(x + 3) = (x - (-3)) gives h = -3; (y - 5) gives k = 5. Center: (-3, 5)"
+          },
+          {
+            "text": "(3, -5)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "(-3, -5)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "(6, 6)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "text": "The equation x² + y² + 10x - 4y + 4 = 0 represents a circle. What is the x-coordinate of the center?",
+        "options": [
+          {
+            "text": "-10",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "-5",
+            "isCorrect": true,
+            "explanation": "Complete the square: x² + 10x → (x + 5)² - 25. So (x + 5) = (x - (-5)), giving h = -5"
+          },
+          {
+            "text": "0",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "10",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "text": "Which of the following represents an ellipse?",
+        "options": [
+          {
+            "text": "x² + y² = 100",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "x²/25 + y²/16 = 1",
+            "isCorrect": true,
+            "explanation": "Both squared, same signs, different denominators (25 ≠ 16) = ellipse"
+          },
+          {
+            "text": "x²/9 - y²/4 = 1",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "y = 2x² - 5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "x² - y² = 1",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "text": "The equation (x + 1)²/9 - (y - 4)²/16 = 1 represents which conic section?",
+        "options": [
+          {
+            "text": "Circle",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "Ellipse",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "Hyperbola",
+            "isCorrect": true,
+            "explanation": "Opposite signs (+ and -) = hyperbola"
+          },
+          {
+            "text": "Parabola",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "Line",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "text": "A circle has center (-2, 6) and radius 5. Which equation represents this circle?",
+        "options": [
+          {
+            "text": "(x - 2)² + (y + 6)² = 5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "(x + 2)² + (y - 6)² = 25",
+            "isCorrect": true,
+            "explanation": "Center (-2, 6): (x - (-2))² + (y - 6)² = (x + 2)² + (y - 6)². Radius 5 means r² = 25"
+          },
+          {
+            "text": "(x - 2)² + (y + 6)² = 25",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "(x + 2)² + (y - 6)² = 5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "(x - 2)² + (y - 6)² = 25",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "text": "What is the distance from the center of (x - 3)² + (y - 4)² = 25 to the origin (0, 0)?",
+        "options": [
+          {
+            "text": "3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "5",
+            "isCorrect": true,
+            "explanation": "Center: (3, 4). Distance = √[(3-0)² + (4-0)²] = √(9 + 16) = √25 = 5. This is a 3-4-5 triple!"
+          },
+          {
+            "text": "7",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "25",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      },
+      {
+        "questionNumber": 8,
+        "text": "The equation x² + y² - 8x + 6y = 0 represents a circle. What is the radius?",
+        "options": [
+          {
+            "text": "3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "5",
+            "isCorrect": true,
+            "explanation": "Complete the square: (x² - 8x + 16) + (y² + 6y + 9) = 25 → (x - 4)² + (y + 3)² = 25, so r = 5"
+          },
+          {
+            "text": "7",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "10",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      },
+      {
+        "questionNumber": 9,
+        "text": "Which equation does NOT represent a circle?",
+        "options": [
+          {
+            "text": "x² + y² = 16",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "(x - 1)² + (y + 3)² = 9",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "x²/4 + y²/4 = 1",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "x²/9 + y²/16 = 1",
+            "isCorrect": true,
+            "explanation": "D has different denominators (9 ≠ 16), making it an ellipse. All others have equal coefficients."
+          },
+          {
+            "text": "x² + y² - 2x + 4y = 20",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          }
+        ]
+      },
+      {
+        "questionNumber": 10,
+        "text": "An ellipse has equation (x - 5)²/36 + (y + 2)²/20 = 1. What is the center?",
+        "options": [
+          {
+            "text": "(-5, 2)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "(5, -2)",
+            "isCorrect": true,
+            "explanation": "(x - 5) gives h = 5; (y + 2) = (y - (-2)) gives k = -2. Center: (5, -2)"
+          },
+          {
+            "text": "(5, 2)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "(-5, -2)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "(36, 20)",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      }
+    ]
+  },
+  "3.1": {
+    "lessonKey": "3.1",
+    "title": "Mastery Quiz: Algebra Skills",
+    "intro": "Test your understanding with these ACT-style questions. Try them without looking back first!",
+    "questions": [
+      {
+        "questionNumber": 1,
+        "text": "What is the value of 20 - 4 × 2 + 5?",
+        "options": [
+          {
+            "text": "13",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "17",
+            "isCorrect": true,
+            "explanation": "Multiply first: 4 × 2 = 8 → 20 - 8 + 5. Then left to right: 20 - 8 = 12, 12 + 5 = 17"
+          },
+          {
+            "text": "27",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "35",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "37",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "text": "What is the value of (8 - 3)² ÷ 5 + 2?",
+        "options": [
+          {
+            "text": "3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "7",
+            "isCorrect": true,
+            "explanation": "Parentheses: 8 - 3 = 5 → 5² ÷ 5 + 2. Exponent: 25 ÷ 5 + 2. Divide: 5 + 2 = 7"
+          },
+          {
+            "text": "9",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "27",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "text": "What is the value of -5 + (-3) × 2?",
+        "options": [
+          {
+            "text": "-16",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "-11",
+            "isCorrect": true,
+            "explanation": "Multiply first: (-3) × 2 = -6 → -5 + (-6) = -5 - 6 = -11"
+          },
+          {
+            "text": "-4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "1",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "text": "What is the value of 12 ÷ (-4) - (-2)?",
+        "options": [
+          {
+            "text": "-5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "-1",
+            "isCorrect": true,
+            "explanation": "Divide: 12 ÷ (-4) = -3 → -3 - (-2) = -3 + 2 = -1"
+          },
+          {
+            "text": "1",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "7",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "text": "Simplify: 5(2x - 3) + 4x",
+        "options": [
+          {
+            "text": "10x - 3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "14x - 15",
+            "isCorrect": true,
+            "explanation": "Distribute: 10x - 15 + 4x. Combine like terms: 14x - 15"
+          },
+          {
+            "text": "14x - 3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "10x - 15",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "6x - 15",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "text": "Simplify: -3(x - 4) + 2(x + 1)",
+        "options": [
+          {
+            "text": "-x + 14",
+            "isCorrect": true,
+            "explanation": "Distribute: -3x + 12 + 2x + 2. Combine: (-3x + 2x) + (12 + 2) = -x + 14"
+          },
+          {
+            "text": "-x + 10",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "-5x + 14",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "x + 14",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "-5x - 10",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "text": "Solve for x: 2x + 7 = 19",
+        "options": [
+          {
+            "text": "3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "6",
+            "isCorrect": true,
+            "explanation": "Subtract 7 from both sides: 2x = 12. Divide by 2: x = 6"
+          },
+          {
+            "text": "12",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "13",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "26",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 8,
+        "text": "Solve for x: 4(x + 3) = 28",
+        "options": [
+          {
+            "text": "1",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "4",
+            "isCorrect": true,
+            "explanation": "Divide both sides by 4: x + 3 = 7. Subtract 3: x = 4"
+          },
+          {
+            "text": "7",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "10",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "16",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 9,
+        "text": "Solve for x: 5x - 3 = 3x + 11",
+        "options": [
+          {
+            "text": "2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "7",
+            "isCorrect": true,
+            "explanation": "Subtract 3x from both sides: 2x - 3 = 11. Add 3: 2x = 14. Divide by 2: x = 7"
+          },
+          {
+            "text": "8",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "14",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      },
+      {
+        "questionNumber": 10,
+        "text": "Solve for x: -2(x - 5) + 3x = 18",
+        "options": [
+          {
+            "text": "2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "6",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "8",
+            "isCorrect": true,
+            "explanation": "Distribute: -2x + 10 + 3x = 18. Combine: x + 10 = 18. Subtract 10: x = 8"
+          },
+          {
+            "text": "10",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          }
+        ]
+      }
+    ]
+  },
+  "3.2": {
+    "lessonKey": "3.2",
+    "title": "Mastery Quiz: Fractions",
+    "intro": "Test your understanding with these ACT-style questions. Try them without looking back first!",
+    "questions": [
+      {
+        "questionNumber": 1,
+        "text": "What is 1/3 + 1/6?",
+        "options": [
+          {
+            "text": "1/9",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "2/9",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "1/3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "1/2",
+            "isCorrect": true,
+            "explanation": "LCD = 6. Convert: 1/3 = 2/6. Add: 2/6 + 1/6 = 3/6 = 1/2"
+          },
+          {
+            "text": "2/3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "text": "What is 5/6 - 1/4?",
+        "options": [
+          {
+            "text": "1/3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "7/12",
+            "isCorrect": true,
+            "explanation": "LCD = 12. Convert: 5/6 = 10/12, 1/4 = 3/12. Subtract: 10/12 - 3/12 = 7/12"
+          },
+          {
+            "text": "2/3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "4/2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "1",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "text": "What is 2/5 × 3/4?",
+        "options": [
+          {
+            "text": "3/10",
+            "isCorrect": true,
+            "explanation": "2/5 × 3/4 = 6/20 = 3/10 (simplified by dividing by 2)"
+          },
+          {
+            "text": "6/20",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "3/10",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "5/9",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "6/9",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "text": "What is 5/6 × 2/5?",
+        "options": [
+          {
+            "text": "1/3",
+            "isCorrect": true,
+            "explanation": "Cross-cancel: 5 and 5 cancel, 2 and 6 both ÷2 = 1 and 3. Result: 1/3"
+          },
+          {
+            "text": "2/5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "1/2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "7/11",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "10/30",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "text": "What is 3/4 ÷ 1/2?",
+        "options": [
+          {
+            "text": "3/8",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "3/2",
+            "isCorrect": true,
+            "explanation": "Keep, Change, Flip: 3/4 × 2/1 = 6/4 = 3/2"
+          },
+          {
+            "text": "1",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "3/4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "text": "What is 2/3 ÷ 4/9?",
+        "options": [
+          {
+            "text": "1/2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "3/2",
+            "isCorrect": true,
+            "explanation": "2/3 × 9/4 = 18/12 = 3/2 (÷6)"
+          },
+          {
+            "text": "8/27",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "6/4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "18/12",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "text": "Convert 3⅖ to an improper fraction.",
+        "options": [
+          {
+            "text": "13/5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "15/5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "17/5",
+            "isCorrect": true,
+            "explanation": "(3 × 5 + 2)/5 = 17/5"
+          },
+          {
+            "text": "8/5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "11/5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      },
+      {
+        "questionNumber": 8,
+        "text": "Convert 23/4 to a mixed number.",
+        "options": [
+          {
+            "text": "5¼",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "5¾",
+            "isCorrect": true,
+            "explanation": "23 ÷ 4 = 5 remainder 3, so 5¾"
+          },
+          {
+            "text": "6¼",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "6¾",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "7",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 9,
+        "text": "What is 1½ × 2⅔?",
+        "options": [
+          {
+            "text": "3⅙",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "3⅓",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "4",
+            "isCorrect": true,
+            "explanation": "Convert: 3/2 × 8/3 = 24/6 = 4"
+          },
+          {
+            "text": "4⅓",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      },
+      {
+        "questionNumber": 10,
+        "text": "Simplify: (1/2 + 1/3) × 6",
+        "options": [
+          {
+            "text": "2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "4",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "5",
+            "isCorrect": true,
+            "explanation": "1/2 + 1/3 = 3/6 + 2/6 = 5/6. Then 5/6 × 6 = 5"
+          },
+          {
+            "text": "6",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          }
+        ]
+      }
+    ]
+  },
+  "3.3": {
+    "lessonKey": "3.3",
+    "title": "Mastery Quiz: Exponents & Roots",
+    "intro": "Test your understanding with these ACT-style questions. Try them without looking back first!",
+    "questions": [
+      {
+        "questionNumber": 1,
+        "text": "Simplify: x⁵ × x³",
+        "options": [
+          {
+            "text": "x²",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "x⁸",
+            "isCorrect": true,
+            "explanation": "Product rule: add exponents. x⁵ × x³ = x^(5+3) = x⁸"
+          },
+          {
+            "text": "x¹⁵",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "2x⁸",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "2x⁵",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "text": "Simplify: x¹⁰ ÷ x⁴",
+        "options": [
+          {
+            "text": "x⁶",
+            "isCorrect": true,
+            "explanation": "Quotient rule: subtract exponents. x¹⁰ ÷ x⁴ = x^(10-4) = x⁶"
+          },
+          {
+            "text": "x¹⁴",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "x⁴⁰",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "x²·⁵",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          },
+          {
+            "text": "1/x⁶",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is A."
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "text": "Simplify: (x³)⁴",
+        "options": [
+          {
+            "text": "x⁷",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "x¹²",
+            "isCorrect": true,
+            "explanation": "Power rule: multiply exponents. (x³)⁴ = x^(3×4) = x¹²"
+          },
+          {
+            "text": "x⁶⁴",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "4x³",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "3x⁴",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "text": "What is the value of 5⁰?",
+        "options": [
+          {
+            "text": "0",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "1",
+            "isCorrect": true,
+            "explanation": "Any non-zero number to the zero power equals 1. 5⁰ = 1"
+          },
+          {
+            "text": "5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "-1",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "Undefined",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "text": "What is the value of 2⁻⁴?",
+        "options": [
+          {
+            "text": "-16",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "-8",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "1/8",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          },
+          {
+            "text": "1/16",
+            "isCorrect": true,
+            "explanation": "2⁻⁴ = 1/2⁴ = 1/16 (positive result!)"
+          },
+          {
+            "text": "16",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is D."
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "text": "Simplify: x⁻³",
+        "options": [
+          {
+            "text": "-3x",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "-x³",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "1/x³",
+            "isCorrect": true,
+            "explanation": "Negative exponent: x⁻³ = 1/x³"
+          },
+          {
+            "text": "x³",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          },
+          {
+            "text": "3/x",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is C."
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "text": "What is the value of 16^(1/2)?",
+        "options": [
+          {
+            "text": "2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "4",
+            "isCorrect": true,
+            "explanation": "16^(1/2) = √16 = 4"
+          },
+          {
+            "text": "8",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "16",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "32",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 8,
+        "text": "What is the value of 64^(1/3)?",
+        "options": [
+          {
+            "text": "2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "4",
+            "isCorrect": true,
+            "explanation": "64^(1/3) = ³√64 = 4 (since 4³ = 64)"
+          },
+          {
+            "text": "8",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "16",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "21⅓",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 9,
+        "text": "Simplify: √75",
+        "options": [
+          {
+            "text": "3√5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "5√3",
+            "isCorrect": true,
+            "explanation": "√75 = √(25 × 3) = √25 × √3 = 5√3"
+          },
+          {
+            "text": "15√5",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "25√3",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "75",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      },
+      {
+        "questionNumber": 10,
+        "text": "What is the value of √2 × √8?",
+        "options": [
+          {
+            "text": "2",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "4",
+            "isCorrect": true,
+            "explanation": "√2 × √8 = √(2 × 8) = √16 = 4"
+          },
+          {
+            "text": "8",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "10",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          },
+          {
+            "text": "16",
+            "isCorrect": false,
+            "explanation": "This is not the correct answer. The correct answer is B."
+          }
+        ]
+      }
+    ]
+  }
+}

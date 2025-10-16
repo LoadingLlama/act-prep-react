@@ -1,0 +1,231 @@
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Beyond basic <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">mean</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">median</strong>, and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">mode</strong>, the ACT tests advanced statistics in 2-3 questions per test, focusing on <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">range</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">quartiles (Q1, Q2, Q3)</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">interquartile range (IQR)</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">standard deviation</strong>, and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">box plots</strong>. These measures describe spread and variability—how spread out data is from the center. Understanding outliers, the Empirical Rule (68-95-99.7), and how to interpret five-number summaries helps you tackle the more challenging statistics problems that separate high scorers from average performers.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. Range and Interquartile Range
+</h3>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
+Range
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+The range is the difference between the maximum and minimum values in a data set: <strong>Range = Maximum - Minimum</strong>.<br>
+Example: For {3, 7, 9, 15, 20}, range = 20 - 3 = 17. The range is sensitive to outliers.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
+Quartiles and Interquartile Range (IQR)
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+<strong>Quartiles</strong> divide a data set into four equal parts:<br>
+- <strong>Q1 (first quartile):</strong> Median of the lower half of the data (25th percentile).<br>
+- <strong>Q2 (second quartile):</strong> The median of the entire data set (50th percentile).<br>
+- <strong>Q3 (third quartile):</strong> Median of the upper half of the data (75th percentile).<br>
+<strong>Interquartile Range (IQR) = Q3 - Q1</strong>, which measures the spread of the middle 50% of the data and is not affected by outliers.
+</p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">
+Example 1: Finding Quartiles and IQR
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0 0 1rem 0; font-weight: 600; color: #000000;">
+The data set is: 4, 7, 9, 12, 15, 18, 21. What is the interquartile range (IQR)?
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #1f2937;">
+<strong>A.</strong> 9<br>
+<strong>B.</strong> 10<br>
+<strong>C.</strong> 11<br>
+<strong>D.</strong> 12<br>
+<strong>E.</strong> 17
+</p>
+<div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 255, 255, 0.6); border-radius: 8px; border-left: 4px solid #059669;">
+<p style="font-size: 15px; line-height: 1.6; margin: 0 0 0.5rem 0; font-weight: 600; color: #065f46;">
+Solution:
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0; color: #1f2937;">
+Median (Q2) = 12. Lower half: {4, 7, 9}; Q1 = 7. Upper half: {15, 18, 21}; Q3 = 18. IQR = Q3 - Q1 = 18 - 7 = 11. The answer is <strong>C</strong>.
+</p>
+</div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Standard Deviation and Variance
+</h3>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
+Understanding Standard Deviation
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+<strong>Standard deviation (σ or s)</strong> measures how spread out the data is from the mean. A small standard deviation means the data is clustered close to the mean; a large standard deviation means the data is more spread out. The variance is the square of the standard deviation: <strong>Variance = σ²</strong>.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
+Calculating Standard Deviation
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+1. Find the mean of the data set.<br>
+2. For each value, compute the deviation from the mean (value - mean).<br>
+3. Square each deviation.<br>
+4. Find the average of the squared deviations (this is the variance).<br>
+5. Take the square root of the variance to get the standard deviation.<br>
+On the ACT, you usually interpret standard deviation rather than calculate it from scratch.
+</p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">
+Example 2: Interpreting Standard Deviation
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0 0 1rem 0; font-weight: 600; color: #000000;">
+Two classes have the same mean test score of 75. Class A has a standard deviation of 5, and Class B has a standard deviation of 15. Which statement is true?
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #1f2937;">
+<strong>F.</strong> Class A scores are more spread out than Class B.<br>
+<strong>G.</strong> Class B scores are more spread out than Class A.<br>
+<strong>H.</strong> Both classes have the same spread of scores.<br>
+<strong>J.</strong> Class A has more students than Class B.<br>
+<strong>K.</strong> Standard deviation does not measure spread.
+</p>
+<div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 255, 255, 0.6); border-radius: 8px; border-left: 4px solid #059669;">
+<p style="font-size: 15px; line-height: 1.6; margin: 0 0 0.5rem 0; font-weight: 600; color: #065f46;">
+Solution:
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0; color: #1f2937;">
+A larger standard deviation indicates greater spread. Class B (σ = 15) has scores more spread out than Class A (σ = 5). The answer is <strong>G</strong>.
+</p>
+</div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Box Plots and Five-Number Summary
+</h3>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
+Five-Number Summary
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+The five-number summary consists of: <strong>Minimum, Q1, Median (Q2), Q3, Maximum</strong>. These five values fully describe the distribution of the data and are used to create box plots (box-and-whisker plots).
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
+Reading a Box Plot
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+A box plot displays the five-number summary visually:<br>
+- The box extends from Q1 to Q3 (containing the middle 50% of data).<br>
+- A line inside the box marks the median.<br>
+- "Whiskers" extend from the box to the minimum and maximum values (or to 1.5×IQR from the quartiles if there are outliers).<br>
+- Outliers are plotted as individual points beyond the whiskers.
+</p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">
+Example 3: Interpreting a Box Plot
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0 0 1rem 0; font-weight: 600; color: #000000;">
+A box plot shows the following five-number summary for test scores: Minimum = 60, Q1 = 70, Median = 80, Q3 = 90, Maximum = 100. What percent of students scored between 70 and 90?
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #1f2937;">
+<strong>A.</strong> 25%<br>
+<strong>B.</strong> 40%<br>
+<strong>C.</strong> 50%<br>
+<strong>D.</strong> 75%<br>
+<strong>E.</strong> Cannot be determined
+</p>
+<div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 255, 255, 0.6); border-radius: 8px; border-left: 4px solid #059669;">
+<p style="font-size: 15px; line-height: 1.6; margin: 0 0 0.5rem 0; font-weight: 600; color: #065f46;">
+Solution:
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0; color: #1f2937;">
+Q1 = 70 (25th percentile) and Q3 = 90 (75th percentile). The range from Q1 to Q3 contains the middle 50% of the data. The answer is <strong>C</strong>.
+</p>
+</div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Outliers and Data Distributions
+</h3>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
+Identifying Outliers
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+A common rule: A value is an outlier if it is more than <strong>1.5 × IQR</strong> below Q1 or above Q3.<br>
+- <strong>Lower bound:</strong> Q1 - 1.5 × IQR<br>
+- <strong>Upper bound:</strong> Q3 + 1.5 × IQR<br>
+Any values outside these bounds are considered outliers.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
+Normal Distribution and Empirical Rule
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+In a normal (bell-shaped) distribution:<br>
+- About <strong>68%</strong> of data falls within 1 standard deviation of the mean.<br>
+- About <strong>95%</strong> falls within 2 standard deviations.<br>
+- About <strong>99.7%</strong> falls within 3 standard deviations.<br>
+This is known as the Empirical Rule or 68-95-99.7 Rule.
+</p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">
+Example 4: Using the Empirical Rule
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0 0 1rem 0; font-weight: 600; color: #000000;">
+Test scores are normally distributed with a mean of 500 and a standard deviation of 50. Approximately what percent of scores fall between 450 and 550?
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #1f2937;">
+<strong>F.</strong> 34%<br>
+<strong>G.</strong> 50%<br>
+<strong>H.</strong> 68%<br>
+<strong>J.</strong> 95%<br>
+<strong>K.</strong> 99.7%
+</p>
+<div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 255, 255, 0.6); border-radius: 8px; border-left: 4px solid #059669;">
+<p style="font-size: 15px; line-height: 1.6; margin: 0 0 0.5rem 0; font-weight: 600; color: #065f46;">
+Solution:
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0; color: #1f2937;">
+450 = 500 - 50 (1 standard deviation below mean). 550 = 500 + 50 (1 standard deviation above mean). By the Empirical Rule, about 68% of scores fall within 1 standard deviation of the mean. The answer is <strong>H</strong>.
+</p>
+</div>
+</div>
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">Key Takeaways</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Range = maximum − minimum. Simple measure of spread
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Quartiles divide ordered data into four equal parts: Q1 (25th percentile), Q2 (median, 50th), Q3 (75th)
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>IQR = Q3 − Q1. Measures spread of middle 50% of data, resistant to outliers
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Outliers are values more than 1.5 × IQR below Q1 or above Q3
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Standard deviation measures average distance from mean. Larger SD = more spread out
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Box plots show five-number summary: minimum, Q1, median, Q3, maximum
+  </li>
+</ul>

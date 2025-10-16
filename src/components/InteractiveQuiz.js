@@ -112,7 +112,7 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
             alignItems: 'center',
             gap: '0.5rem'
           }}>
-            Mastery Quiz - Results
+            🔒 Mastery Quiz - Results
             {quizData.title.startsWith('Practice') && (
               <span style={{
                 fontSize: '0.65rem',
@@ -202,7 +202,7 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
           gap: '0.5rem',
           flex: 1
         }}>
-          Mastery Quiz
+          🔒 Mastery Quiz
           {quizData.title.startsWith('Practice') && (
             <span style={{
               fontSize: '0.65rem',
