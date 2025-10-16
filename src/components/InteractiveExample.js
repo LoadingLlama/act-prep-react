@@ -79,7 +79,7 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
     let textAfterTitle = allText.replace(/<h4[^>]*>.*?<\/h4>/is, '');
 
     // Extract text before the first choice (<span>A.) or Solution
-    const textBeforeChoicesMatch = textAfterTitle.match(/(.*?)(?:<p[^>]*>\s*<span[^>]*>[A-E]\.|<p[^>]*>\s*<strong>Solution:<\/strong>)/is);
+    const textBeforeChoicesMatch = textAfterTitle.match(/(.*?)(?:<p[^>]*>\s*<span[^>]*>[A-K]\.|<p[^>]*>\s*<strong>Solution:<\/strong>)/is);
     if (textBeforeChoicesMatch) {
       problemText = textBeforeChoicesMatch[1]
         .trim()
@@ -95,14 +95,14 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
     let choices = [];
 
     // Look for the paragraph with answer choices (between Problem and Solution)
-    const choicesParagraphMatch = allText.match(/<p[^>]*>\s*<span[^>]*>([A-E])\.\s*(.*?)<\/span>[\s\S]*?<\/p>\s*<p[^>]*>\s*<strong>Solution:<\/strong>/is);
+    const choicesParagraphMatch = allText.match(/<p[^>]*>\s*<span[^>]*>([A-K])\.\s*(.*?)<\/span>[\s\S]*?<\/p>\s*<p[^>]*>\s*<strong>Solution:<\/strong>/is);
     if (choicesParagraphMatch) {
       const choicesParagraph = choicesParagraphMatch[0];
       // Extract all <span> tags with answer choices
-      const spanMatches = choicesParagraph.match(/<span[^>]*>([A-E])\.\s*(.*?)<\/span>/g);
+      const spanMatches = choicesParagraph.match(/<span[^>]*>([A-K])\.\s*(.*?)<\/span>/g);
       if (spanMatches && spanMatches.length > 0) {
         choices = spanMatches.map(match => {
-          const [, letter, text] = match.match(/<span[^>]*>([A-E])\.\s*(.*?)<\/span>/) || [];
+          const [, letter, text] = match.match(/<span[^>]*>([A-K])\.\s*(.*?)<\/span>/) || [];
           return { letter, text: text?.trim() };
         }).filter(c => c.letter && c.text);
       }
@@ -117,7 +117,7 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
 
     // Extract correct answer (look for "Answer: X" pattern) - only for quiz-style examples
     // Note: The answer is plain text, not wrapped in <strong> tags
-    const correctAnswerMatch = solutionContent.match(/Answer:\s*([A-E])/i);
+    const correctAnswerMatch = solutionContent.match(/Answer:\s*([A-K])/i);
     const correctAnswer = correctAnswerMatch ? correctAnswerMatch[1] : null;
 
     setParsedContent({
@@ -255,15 +255,16 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
 
                 {/* Option text */}
                 <div style={{ flex: 1 }}>
-                  <div style={{
-                    fontSize: '17px',
-                    color: '#1f2937',
-                    lineHeight: '1.6',
-                    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-                    fontWeight: '400'
-                  }}>
-                    {choice.text}
-                  </div>
+                  <div
+                    style={{
+                      fontSize: '17px',
+                      color: '#1f2937',
+                      lineHeight: '1.6',
+                      fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                      fontWeight: '400'
+                    }}
+                    dangerouslySetInnerHTML={{ __html: choice.text }}
+                  />
                 </div>
               </div>
             );

@@ -1,7 +1,8 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import TypewriterText from './TypewriterText';
 import InteractiveQuiz from './InteractiveQuiz';
 import InteractiveExample from './InteractiveExample';
+import ExampleCard from './ExampleCard';
 import { useTermTooltips } from '../hooks/useTermTooltips';
 
 const LessonSection = ({
@@ -74,14 +75,26 @@ const LessonSection = ({
       ) : section.type === 'example' ? (
         <>
           {index === currentSection || index < currentSection ? (
-            <InteractiveExample
-              content={section.content}
-              onComplete={() => onExampleComplete(index)}
-              currentSection={currentSection}
-              index={index}
-              typingSpeed={typingSpeed}
-              typewriterRef={index === currentSection ? typewriterRef : null}
-            />
+            section.data ? (
+              // New database-driven example
+              <ExampleCard
+                example={section.data}
+                position={section.data.position}
+                isCurrentSection={index === currentSection}
+                typingSpeed={typingSpeed}
+                onComplete={() => onExampleComplete(index)}
+              />
+            ) : (
+              // Old HTML-based example (fallback)
+              <InteractiveExample
+                content={section.content}
+                onComplete={() => onExampleComplete(index)}
+                currentSection={currentSection}
+                index={index}
+                typingSpeed={typingSpeed}
+                typewriterRef={index === currentSection ? typewriterRef : null}
+              />
+            )
           ) : null}
         </>
       ) : section.type === 'quiz' ? (

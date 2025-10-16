@@ -1,0 +1,209 @@
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+<strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Permutations</strong> and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">combinations</strong> appear in 1-3 questions on the ACT, testing your ability to count arrangements and selections using the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">fundamental counting principle</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">permutation formula P(n,r)</strong>, and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">combination formula C(n,r)</strong>. The key decision is recognizing when order matters (use permutations) versus when order doesn't matter (use combinations)—choosing president, vice president, and secretary requires permutations (order matters), while choosing a 3-person committee requires combinations (order doesn't matter). Mastering this distinction and the formulas ensures you can tackle any counting problem.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. Fundamental Counting Principle
+</h3>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
+The Principle
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+If one event can occur in <em>m</em> ways and a second event can occur in <em>n</em> ways, then the two events together can occur in <strong>m × n ways</strong>. This extends to any number of stages: multiply the number of choices at each stage.<br>
+Example: If you have 3 shirts and 4 pairs of pants, you can create 3 × 4 = 12 different outfits.
+</p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">
+Example 1: Fundamental Counting Principle
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0 0 1rem 0; font-weight: 600; color: #000000;">
+A restaurant offers 5 appetizers, 8 main courses, and 3 desserts. How many different three-course meals can be ordered?
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #1f2937;">
+<strong>A.</strong> 16<br>
+<strong>B.</strong> 40<br>
+<strong>C.</strong> 64<br>
+<strong>D.</strong> 120<br>
+<strong>E.</strong> 240
+</p>
+<div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 255, 255, 0.6); border-radius: 8px; border-left: 4px solid #059669;">
+<p style="font-size: 15px; line-height: 1.6; margin: 0 0 0.5rem 0; font-weight: 600; color: #065f46;">
+Solution:
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0; color: #1f2937;">
+Number of meals = 5 × 8 × 3 = 120. The answer is <strong>D</strong>.
+</p>
+</div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Permutations (Order Matters)
+</h3>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
+Permutations of n Objects
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+The number of ways to arrange <em>n</em> distinct objects in order is <strong>n! (n factorial)</strong>, where n! = n × (n-1) × (n-2) × ... × 2 × 1.<br>
+Example: 5 books can be arranged on a shelf in 5! = 120 ways.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
+Permutations of r Objects from n
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+The number of ways to arrange <em>r</em> objects selected from <em>n</em> distinct objects is: <strong>P(n, r) = n! ÷ (n - r)!</strong>. This is also written as <sub>n</sub>P<sub>r</sub> or nPr.<br>
+Example: How many ways can you arrange 3 books selected from 5? P(5, 3) = 5! ÷ 2! = 120 ÷ 2 = 60.
+</p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">
+Example 2: Permutations
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0 0 1rem 0; font-weight: 600; color: #000000;">
+In how many ways can a president, vice president, and secretary be chosen from a group of 8 people?
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #1f2937;">
+<strong>F.</strong> 24<br>
+<strong>G.</strong> 56<br>
+<strong>H.</strong> 336<br>
+<strong>J.</strong> 512<br>
+<strong>K.</strong> 40,320
+</p>
+<div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 255, 255, 0.6); border-radius: 8px; border-left: 4px solid #059669;">
+<p style="font-size: 15px; line-height: 1.6; margin: 0 0 0.5rem 0; font-weight: 600; color: #065f46;">
+Solution:
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0; color: #1f2937;">
+Order matters (president ≠ vice president). Use P(8, 3) = 8! ÷ 5! = (8 × 7 × 6 × 5!) ÷ 5! = 8 × 7 × 6 = 336. The answer is <strong>H</strong>.
+</p>
+</div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Combinations (Order Does Not Matter)
+</h3>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
+Combinations of r Objects from n
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+The number of ways to select <em>r</em> objects from <em>n</em> distinct objects (where order does not matter) is: <strong>C(n, r) = n! ÷ (r! × (n - r)!)</strong>. This is also written as <sub>n</sub>C<sub>r</sub> or nCr or "n choose r".<br>
+Example: How many ways can you choose 3 books from 5? C(5, 3) = 5! ÷ (3! × 2!) = 120 ÷ (6 × 2) = 10.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
+When to Use Permutations vs. Combinations
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+<strong>Use permutations</strong> when order matters (arranging, ranking, positions with different roles).<br>
+<strong>Use combinations</strong> when order does not matter (selecting, choosing, forming groups where all members are equivalent).
+</p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">
+Example 3: Combinations
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0 0 1rem 0; font-weight: 600; color: #000000;">
+A committee of 4 people is to be selected from a group of 10 people. How many different committees can be formed?
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #1f2937;">
+<strong>A.</strong> 40<br>
+<strong>B.</strong> 210<br>
+<strong>C.</strong> 5,040<br>
+<strong>D.</strong> 10,000<br>
+<strong>E.</strong> 151,200
+</p>
+<div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 255, 255, 0.6); border-radius: 8px; border-left: 4px solid #059669;">
+<p style="font-size: 15px; line-height: 1.6; margin: 0 0 0.5rem 0; font-weight: 600; color: #065f46;">
+Solution:
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0; color: #1f2937;">
+Order does not matter (all committee members are equal). Use C(10, 4) = 10! ÷ (4! × 6!) = (10 × 9 × 8 × 7) ÷ (4 × 3 × 2 × 1) = 5040 ÷ 24 = 210. The answer is <strong>B</strong>.
+</p>
+</div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Advanced Counting Problems
+</h3>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
+Permutations with Repetition
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+If there are <em>n</em> objects where some are identical, the number of distinct arrangements is: <strong>n! ÷ (n<sub>1</sub>! × n<sub>2</sub>! × ... × n<sub>k</sub>!)</strong>, where n<sub>1</sub>, n<sub>2</sub>, ..., n<sub>k</sub> are the counts of each type of identical object.<br>
+Example: The word "MISSISSIPPI" has 11 letters: 1 M, 4 I's, 4 S's, 2 P's. Arrangements = 11! ÷ (1! × 4! × 4! × 2!).
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
+Circular Permutations
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+The number of ways to arrange <em>n</em> distinct objects in a circle is <strong>(n - 1)!</strong>, since rotations of the same arrangement are considered identical.<br>
+Example: 5 people sitting around a circular table can be arranged in (5 - 1)! = 4! = 24 ways.
+</p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">
+Example 4: Complex Counting Problem
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0 0 1rem 0; font-weight: 600; color: #000000;">
+How many distinct arrangements are there of the letters in the word "BANANA"?
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #1f2937;">
+<strong>F.</strong> 30<br>
+<strong>G.</strong> 60<br>
+<strong>H.</strong> 120<br>
+<strong>J.</strong> 360<br>
+<strong>K.</strong> 720
+</p>
+<div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 255, 255, 0.6); border-radius: 8px; border-left: 4px solid #059669;">
+<p style="font-size: 15px; line-height: 1.6; margin: 0 0 0.5rem 0; font-weight: 600; color: #065f46;">
+Solution:
+</p>
+<p style="font-size: 15px; line-height: 1.6; margin: 0; color: #1f2937;">
+"BANANA" has 6 letters: 3 A's, 2 N's, 1 B. Arrangements = 6! ÷ (3! × 2! × 1!) = 720 ÷ (6 × 2 × 1) = 720 ÷ 12 = 60. The answer is <strong>G</strong>.
+</p>
+</div>
+</div>
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">Key Takeaways</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Fundamental Counting Principle: If task 1 has m ways and task 2 has n ways, total = m × n
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Permutations: Order matters. P(n,r) = n!/(n−r)!. Arranging r items from n items
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Combinations: Order doesn't matter. C(n,r) = n!/[r!(n−r)!]. Selecting r items from n items
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Factorial: n! = n × (n−1) × (n−2) × ... × 1. Note: 0! = 1
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>If problem asks "arrange" or "order", use permutations. If "select" or "choose", use combinations
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>For problems with restrictions, calculate unrestricted then subtract forbidden cases
+  </li>
+</ul>

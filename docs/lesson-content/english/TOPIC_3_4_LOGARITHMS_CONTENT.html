@@ -1,0 +1,483 @@
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Logarithms</strong> are one of the most powerful mathematical tools for working with exponential relationships. While they may seem intimidating at first, logarithms are simply another way to express <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">exponents</strong>. Understanding logarithms opens up elegant solutions to complex exponential equations and is essential for scoring well on the ACT Math section. This lesson will build your understanding from the ground up, explaining not just the rules, but <em>why</em> they work.</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">1. Introduction to Logarithms</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">A <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">logarithm</strong> answers the question: "To what power must I raise a base to get a certain number?" In other words, logarithms are the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">inverse operation</strong> of exponentiation.</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Consider this relationship:</p>
+
+<ul style="margin: 0.3rem 0 0.5rem 0; padding-left: 1.5rem; line-height: 1.5;">
+  <li style="margin: 0.15rem 0;">If 2³ = 8, then log₂(8) = 3</li>
+  <li style="margin: 0.15rem 0;">If 10² = 100, then log₁₀(100) = 2</li>
+  <li style="margin: 0.15rem 0;">If 5⁴ = 625, then log₅(625) = 4</li>
+</ul>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">The general form is:</p>
+
+<p style="font-size: 18px; font-weight: 600; text-align: center; margin: 1.5rem 0; padding: 1rem; background: #f0f9ff; border-left: 4px solid #3b82f6;">
+If b<sup>x</sup> = y, then log<sub>b</sub>(y) = x
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Where:</p>
+
+<ul style="margin: 0.3rem 0 0.5rem 0; padding-left: 1.5rem; line-height: 1.5;">
+  <li style="margin: 0.15rem 0;"><strong>b</strong> is the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">base</strong> (must be positive and ≠ 1)</li>
+  <li style="margin: 0.15rem 0;"><strong>y</strong> is the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">argument</strong> or <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">result</strong> (must be positive)</li>
+  <li style="margin: 0.15rem 0;"><strong>x</strong> is the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">exponent</strong> or <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">logarithm</strong> (can be any real number)</li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">2. Special Logarithms</h3>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Common Logarithm (base 10)</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">When the base is 10, we call it the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">common logarithm</strong> and often omit the base:</p>
+
+<p style="font-size: 18px; font-weight: 600; text-align: center; margin: 1.5rem 0; padding: 1rem; background: #f0f9ff; border-left: 4px solid #3b82f6;">
+log(x) = log₁₀(x)
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">For example:</p>
+
+<ul style="margin: 0.3rem 0 0.5rem 0; padding-left: 1.5rem; line-height: 1.5;">
+  <li style="margin: 0.15rem 0;">log(1000) = log₁₀(1000) = 3 because 10³ = 1000</li>
+  <li style="margin: 0.15rem 0;">log(100) = log₁₀(100) = 2 because 10² = 100</li>
+  <li style="margin: 0.15rem 0;">log(10) = log₁₀(10) = 1 because 10¹ = 10</li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Natural Logarithm (base e)</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">When the base is <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">e</strong> (approximately 2.718), we call it the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">natural logarithm</strong> and use the notation ln:</p>
+
+<p style="font-size: 18px; font-weight: 600; text-align: center; margin: 1.5rem 0; padding: 1rem; background: #f0f9ff; border-left: 4px solid #3b82f6;">
+ln(x) = log<sub>e</sub>(x)
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Natural logarithms are extremely important in calculus and advanced mathematics. On the ACT, you'll occasionally encounter ln, but most problems use base 10 or simple integer bases.</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">3. Basic Logarithm Properties</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">These fundamental properties derive directly from the definition of logarithms and their relationship to exponents:</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Property 1: Logarithm of 1</h4>
+
+<p style="font-size: 18px; font-weight: 600; text-align: center; margin: 1.5rem 0; padding: 1rem; background: #f0f9ff; border-left: 4px solid #3b82f6;">
+log<sub>b</sub>(1) = 0
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Why?</strong> Because any base raised to the power 0 equals 1: b⁰ = 1</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Property 2: Logarithm of the Base</h4>
+
+<p style="font-size: 18px; font-weight: 600; text-align: center; margin: 1.5rem 0; padding: 1rem; background: #f0f9ff; border-left: 4px solid #3b82f6;">
+log<sub>b</sub>(b) = 1
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Why?</strong> Because any base raised to the power 1 equals itself: b¹ = b</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Property 3: Inverse Property</h4>
+
+<p style="font-size: 18px; font-weight: 600; text-align: center; margin: 1.5rem 0; padding: 1rem; background: #f0f9ff; border-left: 4px solid #3b82f6;">
+b<sup>log<sub>b</sub>(x)</sup> = x
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Why?</strong> Because logarithms and exponentiation are inverse operations—they "undo" each other.</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Property 4: Power Rule for Base</h4>
+
+<p style="font-size: 18px; font-weight: 600; text-align: center; margin: 1.5rem 0; padding: 1rem; background: #f0f9ff; border-left: 4px solid #3b82f6;">
+log<sub>b</sub>(b<sup>x</sup>) = x
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Why?</strong> This is asking "to what power must I raise b to get b<sup>x</sup>?" The answer is clearly x.</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">4. Logarithm Rules (The Big Three)</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">These three rules are the workhorses of logarithmic manipulation. They allow us to simplify complex logarithmic expressions and solve logarithmic equations.</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Product Rule</h4>
+
+<p style="font-size: 18px; font-weight: 600; text-align: center; margin: 1.5rem 0; padding: 1rem; background: #f0f9ff; border-left: 4px solid #3b82f6;">
+log<sub>b</sub>(xy) = log<sub>b</sub>(x) + log<sub>b</sub>(y)
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Why?</strong> When you multiply two exponential terms with the same base, you add the exponents. Since logarithms are exponents, the logarithm of a product becomes the sum of the logarithms.</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Example:</strong> log₂(8 × 4) = log₂(8) + log₂(4) = 3 + 2 = 5</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Check: 8 × 4 = 32, and log₂(32) = 5 ✓</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Quotient Rule</h4>
+
+<p style="font-size: 18px; font-weight: 600; text-align: center; margin: 1.5rem 0; padding: 1rem; background: #f0f9ff; border-left: 4px solid #3b82f6;">
+log<sub>b</sub>(x/y) = log<sub>b</sub>(x) − log<sub>b</sub>(y)
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Why?</strong> When you divide two exponential terms with the same base, you subtract the exponents. The logarithm of a quotient becomes the difference of the logarithms.</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Example:</strong> log₂(32/4) = log₂(32) − log₂(4) = 5 − 2 = 3</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Check: 32/4 = 8, and log₂(8) = 3 ✓</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Power Rule</h4>
+
+<p style="font-size: 18px; font-weight: 600; text-align: center; margin: 1.5rem 0; padding: 1rem; background: #f0f9ff; border-left: 4px solid #3b82f6;">
+log<sub>b</sub>(x<sup>n</sup>) = n · log<sub>b</sub>(x)
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Why?</strong> When you raise an exponential term to a power, you multiply the exponents. The logarithm of a power brings the exponent out front as a coefficient.</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Example:</strong> log₂(8³) = 3 · log₂(8) = 3 · 3 = 9</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Check: 8³ = 512, and log₂(512) = 9 ✓</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">5. Change of Base Formula</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Sometimes you need to evaluate a logarithm with an unusual base, but your calculator only has log (base 10) and ln (base e) buttons. The <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">change of base formula</strong> allows you to convert any logarithm to a different base:</p>
+
+<p style="font-size: 18px; font-weight: 600; text-align: center; margin: 1.5rem 0; padding: 1rem; background: #f0f9ff; border-left: 4px solid #3b82f6;">
+log<sub>b</sub>(x) = log<sub>c</sub>(x) / log<sub>c</sub>(b)
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Most commonly, we convert to base 10:</p>
+
+<p style="font-size: 18px; font-weight: 600; text-align: center; margin: 1.5rem 0; padding: 1rem; background: #f0f9ff; border-left: 4px solid #3b82f6;">
+log<sub>b</sub>(x) = log(x) / log(b)
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Example:</strong> Calculate log₂(15)</p>
+
+<ul style="margin: 0.3rem 0 0.5rem 0; padding-left: 1.5rem; line-height: 1.5;">
+  <li style="margin: 0.15rem 0;">log₂(15) = log(15) / log(2)</li>
+  <li style="margin: 0.15rem 0;">log₂(15) ≈ 1.176 / 0.301</li>
+  <li style="margin: 0.15rem 0;">log₂(15) ≈ 3.907</li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">6. Worked Examples</h3>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">Example 1: Evaluating Basic Logarithms</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">What is log₃(81)?</p>
+
+<p style="margin: 0.3rem 0 0.5rem 0;">
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">A. 2</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">B. 3</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">C. 4</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">D. 5</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">E. 27</span>
+</p>
+
+<p style="margin: 1.5rem 0 0.75rem 0;"><strong>Solution:</strong></p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">We're asking: "To what power must I raise 3 to get 81?"</p>
+
+<ul style="margin: 0.3rem 0 0.5rem 0; padding-left: 1.5rem; line-height: 1.5;">
+  <li style="margin: 0.15rem 0;">3¹ = 3</li>
+  <li style="margin: 0.15rem 0;">3² = 9</li>
+  <li style="margin: 0.15rem 0;">3³ = 27</li>
+  <li style="margin: 0.15rem 0;">3⁴ = 81 ✓</li>
+</ul>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Therefore, log₃(81) = 4</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Answer: C</strong></p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">Example 2: Using the Product Rule</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">If log₂(x) = 5 and log₂(y) = 3, what is log₂(xy)?</p>
+
+<p style="margin: 0.3rem 0 0.5rem 0;">
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">A. 2</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">B. 8</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">C. 15</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">D. 32</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">E. 256</span>
+</p>
+
+<p style="margin: 1.5rem 0 0.75rem 0;"><strong>Solution:</strong></p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Use the product rule: log<sub>b</sub>(xy) = log<sub>b</sub>(x) + log<sub>b</sub>(y)</p>
+
+<ul style="margin: 0.3rem 0 0.5rem 0; padding-left: 1.5rem; line-height: 1.5;">
+  <li style="margin: 0.15rem 0;">log₂(xy) = log₂(x) + log₂(y)</li>
+  <li style="margin: 0.15rem 0;">log₂(xy) = 5 + 3</li>
+  <li style="margin: 0.15rem 0;">log₂(xy) = 8</li>
+</ul>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Answer: B</strong></p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">Example 3: Using the Quotient Rule</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Simplify: log₅(125) − log₅(5)</p>
+
+<p style="margin: 0.3rem 0 0.5rem 0;">
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">A. 0</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">B. 1</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">C. 2</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">D. 3</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">E. 5</span>
+</p>
+
+<p style="margin: 1.5rem 0 0.75rem 0;"><strong>Solution:</strong></p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Use the quotient rule: log<sub>b</sub>(x) − log<sub>b</sub>(y) = log<sub>b</sub>(x/y)</p>
+
+<ul style="margin: 0.3rem 0 0.5rem 0; padding-left: 1.5rem; line-height: 1.5;">
+  <li style="margin: 0.15rem 0;">log₅(125) − log₅(5) = log₅(125/5)</li>
+  <li style="margin: 0.15rem 0;">= log₅(25)</li>
+  <li style="margin: 0.15rem 0;">Now ask: 5 to what power equals 25?</li>
+  <li style="margin: 0.15rem 0;">5² = 25</li>
+  <li style="margin: 0.15rem 0;">Therefore, log₅(25) = 2</li>
+</ul>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Answer: C</strong></p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">Example 4: Using the Power Rule</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Simplify: log₄(16³)</p>
+
+<p style="margin: 0.3rem 0 0.5rem 0;">
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">A. 2</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">B. 3</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">C. 4</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">D. 6</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">E. 12</span>
+</p>
+
+<p style="margin: 1.5rem 0 0.75rem 0;"><strong>Solution:</strong></p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Use the power rule: log<sub>b</sub>(x<sup>n</sup>) = n · log<sub>b</sub>(x)</p>
+
+<ul style="margin: 0.3rem 0 0.5rem 0; padding-left: 1.5rem; line-height: 1.5;">
+  <li style="margin: 0.15rem 0;">log₄(16³) = 3 · log₄(16)</li>
+  <li style="margin: 0.15rem 0;">Now find log₄(16): 4 to what power equals 16?</li>
+  <li style="margin: 0.15rem 0;">4² = 16, so log₄(16) = 2</li>
+  <li style="margin: 0.15rem 0;">Therefore: 3 · 2 = 6</li>
+</ul>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Answer: D</strong></p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">Example 5: Solving Logarithmic Equations</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Solve for x: log₂(x) = 6</p>
+
+<p style="margin: 0.3rem 0 0.5rem 0;">
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">A. 12</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">B. 16</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">C. 32</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">D. 64</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">E. 128</span>
+</p>
+
+<p style="margin: 1.5rem 0 0.75rem 0;"><strong>Solution:</strong></p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Convert from logarithmic form to exponential form:</p>
+
+<ul style="margin: 0.3rem 0 0.5rem 0; padding-left: 1.5rem; line-height: 1.5;">
+  <li style="margin: 0.15rem 0;">If log₂(x) = 6, then 2⁶ = x</li>
+  <li style="margin: 0.15rem 0;">2⁶ = 64</li>
+  <li style="margin: 0.15rem 0;">Therefore, x = 64</li>
+</ul>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Answer: D</strong></p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">Example 6: Solving Exponential Equations with Logarithms</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Solve for x: 5<sup>x</sup> = 125</p>
+
+<p style="margin: 0.3rem 0 0.5rem 0;">
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">A. 2</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">B. 3</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">C. 4</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">D. 5</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">E. 25</span>
+</p>
+
+<p style="margin: 1.5rem 0 0.75rem 0;"><strong>Solution:</strong></p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Convert from exponential form to logarithmic form:</p>
+
+<ul style="margin: 0.3rem 0 0.5rem 0; padding-left: 1.5rem; line-height: 1.5;">
+  <li style="margin: 0.15rem 0;">If 5<sup>x</sup> = 125, then x = log₅(125)</li>
+  <li style="margin: 0.15rem 0;">Ask: 5 to what power equals 125?</li>
+  <li style="margin: 0.15rem 0;">5¹ = 5, 5² = 25, 5³ = 125 ✓</li>
+  <li style="margin: 0.15rem 0;">Therefore, x = 3</li>
+</ul>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Answer: B</strong></p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">Example 7: Complex Logarithmic Simplification</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">If log₆(2) = a and log₆(3) = b, express log₆(18) in terms of a and b.</p>
+
+<p style="margin: 0.3rem 0 0.5rem 0;">
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">A. a + b</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">B. 2a + b</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">C. a + 2b</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">D. 2a + 2b</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">E. ab</span>
+</p>
+
+<p style="margin: 1.5rem 0 0.75rem 0;"><strong>Solution:</strong></p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">First, factor 18 to use the logarithm rules:</p>
+
+<ul style="margin: 0.3rem 0 0.5rem 0; padding-left: 1.5rem; line-height: 1.5;">
+  <li style="margin: 0.15rem 0;">18 = 2 × 9 = 2 × 3²</li>
+  <li style="margin: 0.15rem 0;">log₆(18) = log₆(2 × 3²)</li>
+  <li style="margin: 0.15rem 0;">= log₆(2) + log₆(3²) [product rule]</li>
+  <li style="margin: 0.15rem 0;">= log₆(2) + 2·log₆(3) [power rule]</li>
+  <li style="margin: 0.15rem 0;">= a + 2b</li>
+</ul>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Answer: C</strong></p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">Example 8: Using Change of Base</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Express log₈(64) using base 2.</p>
+
+<p style="margin: 0.3rem 0 0.5rem 0;">
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">A. 1</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">B. 2</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">C. 3</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">D. 6</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">E. 8</span>
+</p>
+
+<p style="margin: 1.5rem 0 0.75rem 0;"><strong>Solution:</strong></p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Use the change of base formula:</p>
+
+<ul style="margin: 0.3rem 0 0.5rem 0; padding-left: 1.5rem; line-height: 1.5;">
+  <li style="margin: 0.15rem 0;">log₈(64) = log₂(64) / log₂(8)</li>
+  <li style="margin: 0.15rem 0;">log₂(64) = 6 (because 2⁶ = 64)</li>
+  <li style="margin: 0.15rem 0;">log₂(8) = 3 (because 2³ = 8)</li>
+  <li style="margin: 0.15rem 0;">log₈(64) = 6 / 3 = 2</li>
+</ul>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Check: 8² = 64 ✓</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Answer: B</strong></p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">Example 9: Solving Advanced Logarithmic Equations</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Solve for x: log₃(x + 5) = 2</p>
+
+<p style="margin: 0.3rem 0 0.5rem 0;">
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">A. 1</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">B. 2</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">C. 3</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">D. 4</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">E. 9</span>
+</p>
+
+<p style="margin: 1.5rem 0 0.75rem 0;"><strong>Solution:</strong></p>
+
+<ul style="margin: 0.3rem 0 0.5rem 0; padding-left: 1.5rem; line-height: 1.5;">
+  <li style="margin: 0.15rem 0;">Convert to exponential form: 3² = x + 5</li>
+  <li style="margin: 0.15rem 0;">9 = x + 5</li>
+  <li style="margin: 0.15rem 0;">x = 4</li>
+  <li style="margin: 0.15rem 0;">Check: log₃(4 + 5) = log₃(9) = 2 ✓ (because 3² = 9)</li>
+</ul>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Answer: D</strong></p>
+
+<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">Example 10: Exponential Equations Requiring Logarithms</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Solve for x: 2<sup>x+1</sup> = 32</p>
+
+<p style="margin: 0.3rem 0 0.5rem 0;">
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">A. 2</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">B. 3</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">C. 4</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">D. 5</span><br>
+<span style="font-family: 'Times New Roman', Times, Georgia, serif;">E. 6</span>
+</p>
+
+<p style="margin: 1.5rem 0 0.75rem 0;"><strong>Solution:</strong></p>
+
+<ul style="margin: 0.3rem 0 0.5rem 0; padding-left: 1.5rem; line-height: 1.5;">
+  <li style="margin: 0.15rem 0;">Convert to logarithmic form: x + 1 = log₂(32)</li>
+  <li style="margin: 0.15rem 0;">Find log₂(32): 2 to what power equals 32?</li>
+  <li style="margin: 0.15rem 0;">2⁵ = 32, so log₂(32) = 5</li>
+  <li style="margin: 0.15rem 0;">Therefore: x + 1 = 5</li>
+  <li style="margin: 0.15rem 0;">x = 4</li>
+  <li style="margin: 0.15rem 0;">Check: 2⁴⁺¹ = 2⁵ = 32 ✓</li>
+</ul>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;"><strong>Answer: C</strong></p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">7. Practice Problems</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Try these problems on your own to solidify your understanding:</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Problem 1</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Evaluate: log₇(49)</p>
+
+<p style="font-size: 14px; color: #555; margin: 0.5rem 0;"><strong>Answer:</strong> 2 (because 7² = 49)</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Problem 2</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">If log₃(x) = 4, find x.</p>
+
+<p style="font-size: 14px; color: #555; margin: 0.5rem 0;"><strong>Answer:</strong> 81 (because 3⁴ = 81)</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Problem 3</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Simplify: log₅(x³) using the power rule.</p>
+
+<p style="font-size: 14px; color: #555; margin: 0.5rem 0;"><strong>Answer:</strong> 3·log₅(x)</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Problem 4</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">If log(x) = 2 and log(y) = 3, find log(xy).</p>
+
+<p style="font-size: 14px; color: #555; margin: 0.5rem 0;"><strong>Answer:</strong> 5 (using product rule: log(xy) = log(x) + log(y) = 2 + 3)</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Problem 5</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Solve: 4<sup>x</sup> = 64</p>
+
+<p style="font-size: 14px; color: #555; margin: 0.5rem 0;"><strong>Answer:</strong> x = 3 (because 4³ = 64)</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Problem 6</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Simplify: log₂(32) − log₂(4)</p>
+
+<p style="font-size: 14px; color: #555; margin: 0.5rem 0;"><strong>Answer:</strong> 3 (using quotient rule: log₂(32/4) = log₂(8) = 3)</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">Problem 7</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">Use change of base to evaluate log₄(16) using base 2.</p>
+
+<p style="font-size: 14px; color: #555; margin: 0.5rem 0;"><strong>Answer:</strong> 2 (log₄(16) = log₂(16)/log₂(4) = 4/2 = 2)</p>
+
+<p style="height: 1px; margin: 0; padding: 0;"></p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700; visibility: hidden; height: 0; margin: 0; padding: 0; overflow: hidden;">.</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">Key Takeaways</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Logarithms are the inverse of exponents: if b<sup>x</sup> = y, then log<sub>b</sub>(y) = x
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Product rule: log<sub>b</sub>(xy) = log<sub>b</sub>(x) + log<sub>b</sub>(y)
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Quotient rule: log<sub>b</sub>(x/y) = log<sub>b</sub>(x) − log<sub>b</sub>(y)
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Power rule: log<sub>b</sub>(x<sup>n</sup>) = n · log<sub>b</sub>(x)
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Change of base: log<sub>b</sub>(x) = log(x) / log(b)
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>To solve log<sub>b</sub>(x) = n, convert to exponential form: b<sup>n</sup> = x
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>To solve b<sup>x</sup> = n, convert to logarithmic form: x = log<sub>b</sub>(n)
+  </li>
+</ul>

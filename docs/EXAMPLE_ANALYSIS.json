@@ -1,0 +1,19 @@
+{
+  "lesson_1_1": {
+    "examples": []
+  },
+  "lesson_2_1": {
+    "examples": []
+  },
+  "lesson_1_2": {
+    "examples": [
+      {
+        "section_key": "substitution-main",
+        "title": "Main Content",
+        "section_type": "content",
+        "order_index": 0,
+        "content": "<p style=\"font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;\">The <strong style=\"color: #2563eb; font-weight: 600; text-decoration: underline;\">number substitution technique</strong>, also called <strong style=\"color: #2563eb; font-weight: 600; text-decoration: underline;\">plugging in numbers</strong>, is a powerful ACT strategy that transforms abstract algebra into simple arithmetic. Instead of manipulating variables and expressions, you <strong style=\"color: #2563eb; font-weight: 600;"
+      }
+    ]
+  }
+}
