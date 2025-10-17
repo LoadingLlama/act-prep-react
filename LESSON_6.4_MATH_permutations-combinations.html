@@ -1,0 +1,597 @@
+<!--
+LESSON TEMPLATE v3.0
+Subject: Math
+Topic: Permutations and Combinations
+Lesson Key: 6.4
+-->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Mastering <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">counting techniques</strong> is crucial for solving complex ACT probability and arrangement problems. This lesson covers the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">fundamental counting principle</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">permutations</strong> (ordered arrangements), <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">combinations</strong> (unordered selections), and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">factorial notation</strong>. Understanding when order matters versus when it doesn't is the key to choosing the right counting method. These concepts typically appear in 2-3 questions per ACT test and are essential for students targeting scores above 30.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. Fundamental Counting Principle and Factorials
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+The <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">fundamental counting principle</strong> states that if one event can occur in m ways and another independent event can occur in n ways, then both events together can occur in m × n ways. This principle extends to any number of events and forms the foundation for more complex counting. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Factorial notation</strong> (n!) represents the product of all positive integers from 1 to n and is essential for calculating permutations and combinations.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+The Fundamental Counting Principle
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>If Event 1 can occur in m ways, Event 2 in n ways, Event 3 in p ways, then all events together can occur in m × n × p ways.</strong>
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> A restaurant offers 4 appetizers, 6 main courses, and 3 desserts. How many different three-course meals are possible?
+<br><br>
+<strong>Solution:</strong>
+<br>
+Choices for appetizer: 4
+<br>
+Choices for main course: 6
+<br>
+Choices for dessert: 3
+<br><br>
+Total meals = 4 × 6 × 3 = 72 different meals
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Understanding Factorials
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Factorial notation:</strong> n! = n × (n-1) × (n-2) × ... × 3 × 2 × 1
+<br><br>
+<strong>Special cases:</strong>
+<br>
+0! = 1 (by definition)
+<br>
+1! = 1
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Examples of factorials:</strong>
+<br><br>
+3! = 3 × 2 × 1 = 6
+<br>
+4! = 4 × 3 × 2 × 1 = 24
+<br>
+5! = 5 × 4 × 3 × 2 × 1 = 120
+<br>
+6! = 6 × 5 × 4 × 3 × 2 × 1 = 720
+<br><br>
+<strong>Useful property:</strong> n! = n × (n-1)!
+<br>
+Example: 7! = 7 × 6! = 7 × 720 = 5,040
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Simplifying Factorial Expressions
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> Simplify 8! / 6!
+<br><br>
+<strong>Method 1: Cancel common factors</strong>
+<br>
+8! / 6! = (8 × 7 × 6!) / 6! = 8 × 7 = 56
+<br><br>
+<strong>Method 2: Expand and cancel</strong>
+<br>
+8! = 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1
+<br>
+6! = 6 × 5 × 4 × 3 × 2 × 1
+<br>
+8! / 6! = (8 × 7 × 6!)/ 6! = 8 × 7 = 56
+<br><br>
+<strong>Key insight:</strong> When dividing factorials, cancel the smaller factorial from the larger one.
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Counting with Restrictions
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> How many 3-digit numbers can be formed using the digits 1, 2, 3, 4, 5 if no digit can be repeated?
+<br><br>
+<strong>First digit:</strong> 5 choices (any of 1, 2, 3, 4, 5)
+<br>
+<strong>Second digit:</strong> 4 choices (any except the first digit used)
+<br>
+<strong>Third digit:</strong> 3 choices (any except the two digits already used)
+<br><br>
+Total = 5 × 4 × 3 = 60 different 3-digit numbers
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 1: Fundamental Counting Principle
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    A password must contain 2 letters followed by 3 digits. Letters can be any of the 26 letters (A-Z) and can repeat. Digits can be 0-9 and can repeat. How many different passwords are possible?
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>A)</strong> 260</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>B)</strong> 2,600</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>C)</strong> 67,600</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>D)</strong> 676,000</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>E)</strong> 6,760,000</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>First letter:</strong> 26 choices</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Second letter:</strong> 26 choices (can repeat)</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>First digit:</strong> 10 choices (0-9)</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Second digit:</strong> 10 choices</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Third digit:</strong> 10 choices</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">Total = 26 × 26 × 10 × 10 × 10 = 676,000</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: D</strong> — Multiply choices for each position!</p>
+  </div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Permutations (Order Matters)
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+A <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">permutation</strong> is an arrangement of objects where order matters. The key question is: "In how many ways can we arrange these objects?" Different orders count as different permutations. For example, ABC and BAC are different permutations of the same three letters. The formula <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">nPr</strong> calculates the number of ways to arrange r objects selected from n total objects.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Permutations of All Objects
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Formula:</strong> The number of ways to arrange n distinct objects is n!
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> In how many ways can 5 people stand in a line?
+<br><br>
+<strong>First position:</strong> 5 choices
+<br>
+<strong>Second position:</strong> 4 choices
+<br>
+<strong>Third position:</strong> 3 choices
+<br>
+<strong>Fourth position:</strong> 2 choices
+<br>
+<strong>Fifth position:</strong> 1 choice
+<br><br>
+Total arrangements = 5! = 5 × 4 × 3 × 2 × 1 = 120 ways
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Permutations of Some Objects (nPr)
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Formula:</strong> nPr = n! / (n-r)!
+<br>
+This gives the number of ways to arrange r objects chosen from n total objects.
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> How many ways can a president, vice president, and secretary be chosen from 8 candidates?
+<br><br>
+We're choosing 3 people from 8, and order matters (president ≠ vice president).
+<br><br>
+<strong>Using formula:</strong>
+<br>
+₈P₃ = 8! / (8-3)! = 8! / 5!
+<br>
+= (8 × 7 × 6 × 5!) / 5!
+<br>
+= 8 × 7 × 6
+<br>
+= 336 ways
+<br><br>
+<strong>Using counting principle:</strong>
+<br>
+President: 8 choices
+<br>
+Vice president: 7 choices (one person already chosen)
+<br>
+Secretary: 6 choices (two people already chosen)
+<br>
+Total = 8 × 7 × 6 = 336 ways
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Circular Permutations
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>For arranging n objects in a circle:</strong> (n-1)!
+<br><br>
+We use (n-1)! instead of n! because rotations of the same arrangement are considered identical in a circle.
+<br><br>
+<strong>Example:</strong> In how many ways can 6 people sit around a circular table?
+<br><br>
+<strong>Solution:</strong> (6-1)! = 5! = 120 ways
+<br><br>
+<strong>Why not 6!?</strong> Because rotating everyone one seat clockwise produces the same circular arrangement.
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Permutations with Repetition
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>When objects repeat:</strong> n! / (n₁! × n₂! × ... × nₖ!)
+<br>
+where n₁, n₂, ..., nₖ are the frequencies of each repeated object
+<br><br>
+<strong>Example:</strong> How many distinct arrangements of the letters in MISSISSIPPI?
+<br><br>
+<strong>Count letters:</strong>
+<br>
+M: 1, I: 4, S: 4, P: 2
+<br>
+Total letters: 11
+<br><br>
+<strong>Formula:</strong>
+<br>
+11! / (1! × 4! × 4! × 2!)
+<br>
+= 39,916,800 / (1 × 24 × 24 × 2)
+<br>
+= 39,916,800 / 1,152
+<br>
+= 34,650 distinct arrangements
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 2: Permutations
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    A bookshelf has space for 4 books. If you have 7 different books to choose from, in how many ways can you arrange 4 books on the shelf?
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>F)</strong> 28</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>G)</strong> 35</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>H)</strong> 210</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>J)</strong> 840</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>K)</strong> 5,040</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Order matters</strong> (different arrangements on shelf), so use permutations</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">₇P₄ = 7! / (7-4)! = 7! / 3!</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">= (7 × 6 × 5 × 4 × 3!) / 3!</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">= 7 × 6 × 5 × 4 = 840</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: J</strong> — Order matters, so permutation not combination!</p>
+  </div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Combinations (Order Doesn't Matter)
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+A <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">combination</strong> is a selection of objects where order does NOT matter. The key question is: "In how many ways can we select these objects?" Different selections count as different combinations, but different orders of the same selection do not. For example, selecting {A, B, C} is the same combination as {C, A, B}. The formula <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">nCr</strong> (also written as "n choose r") calculates the number of ways to select r objects from n total objects.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Combinations Formula
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Formula:</strong> nCr = n! / [r! × (n-r)!]
+<br><br>
+This gives the number of ways to choose r objects from n total objects when order doesn't matter.
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> How many ways can you choose 3 students from a class of 10 to form a committee?
+<br><br>
+Order doesn't matter (choosing Alice, Bob, Carlos is the same as Carlos, Alice, Bob).
+<br><br>
+₁₀C₃ = 10! / [3! × (10-3)!]
+<br>
+= 10! / (3! × 7!)
+<br>
+= (10 × 9 × 8 × 7!) / (3! × 7!)
+<br>
+= (10 × 9 × 8) / (3 × 2 × 1)
+<br>
+= 720 / 6
+<br>
+= 120 ways
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Permutations vs. Combinations
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Key difference:</strong> nPr counts ordered arrangements; nCr counts unordered selections
+<br><br>
+<strong>Relationship:</strong> nPr = nCr × r!
+<br>
+(Each combination can be arranged in r! ways)
+<br><br>
+<strong>Example with 3 items from {A, B, C, D, E}:</strong>
+<br><br>
+<strong>Permutations ₅P₃:</strong> ABC, ACB, BAC, BCA, CAB, CBA, ABD, ADB, ... = 60 total
+<br>
+(All different orderings count)
+<br><br>
+<strong>Combinations ₅C₃:</strong> {ABC}, {ABD}, {ABE}, {ACD}, ... = 10 total
+<br>
+(ABC and ACB count as same selection)
+<br><br>
+<strong>Check:</strong> ₅P₃ = 60 = ₅C₃ × 3! = 10 × 6 ✓
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Complementary Counting
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+Sometimes it's easier to count what you DON'T want, then subtract from the total.
+<br><br>
+<strong>Example:</strong> How many ways can you choose at least 2 people from a group of 5?
+<br><br>
+<strong>Direct method:</strong> ₅C₂ + ₅C₃ + ₅C₄ + ₅C₅ = 10 + 10 + 5 + 1 = 26
+<br><br>
+<strong>Complementary method:</strong>
+<br>
+Total ways to choose any number: 2⁵ = 32 (each person in or out)
+<br>
+Subtract choosing 0 people: ₅C₀ = 1
+<br>
+Subtract choosing 1 person: ₅C₁ = 5
+<br>
+Result: 32 - 1 - 5 = 26 ✓
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Combinations with Multiple Groups
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> A committee of 5 people must include 3 women and 2 men. There are 8 women and 6 men available. How many different committees can be formed?
+<br><br>
+<strong>Step 1:</strong> Choose 3 women from 8
+<br>
+₈C₃ = 8! / (3! × 5!) = (8 × 7 × 6) / (3 × 2 × 1) = 336 / 6 = 56
+<br><br>
+<strong>Step 2:</strong> Choose 2 men from 6
+<br>
+₆C₂ = 6! / (2! × 4!) = (6 × 5) / (2 × 1) = 30 / 2 = 15
+<br><br>
+<strong>Step 3:</strong> Multiply (each women selection can pair with each men selection)
+<br>
+Total committees = 56 × 15 = 840
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 3: Combinations
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    A pizza shop offers 8 different toppings. If you want to order a pizza with exactly 3 toppings, how many different pizzas can you order?
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>A)</strong> 24</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>B)</strong> 56</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>C)</strong> 120</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>D)</strong> 336</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>E)</strong> 512</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Order doesn't matter</strong> (pepperoni + mushroom + olive = olive + pepperoni + mushroom)</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">Use combinations: ₈C₃ = 8! / (3! × 5!)</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">= (8 × 7 × 6) / (3 × 2 × 1)</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">= 336 / 6 = 56</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: B</strong> — Order doesn't matter, so combination not permutation!</p>
+  </div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Advanced Counting Problems
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+<strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Advanced counting problems</strong> often combine multiple techniques and require careful analysis to determine which method to use. You'll encounter problems with <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">restrictions</strong> (certain objects must be together or apart), <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">multiple stages</strong> (combining permutations and combinations), and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">casework</strong> (breaking into separate cases). The key is identifying whether order matters, what restrictions apply, and whether to count directly or use complementary counting.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Problems with "Together" Restrictions
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Strategy:</strong> Treat grouped objects as a single unit, then arrange within the group.
+<br><br>
+<strong>Example:</strong> In how many ways can 5 people sit in a row if two specific people must sit next to each other?
+<br><br>
+<strong>Step 1:</strong> Treat the two people as one unit
+<br>
+Now we have 4 "units" to arrange: (AB), C, D, E
+<br>
+These can be arranged in 4! = 24 ways
+<br><br>
+<strong>Step 2:</strong> The two people can be arranged within their unit
+<br>
+AB or BA: 2! = 2 ways
+<br><br>
+<strong>Total:</strong> 24 × 2 = 48 ways
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Problems with "Apart" Restrictions
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Strategy:</strong> Total arrangements - arrangements where they're together
+<br><br>
+<strong>Example:</strong> Using the same 5 people, in how many ways can they sit if two specific people must NOT sit next to each other?
+<br><br>
+<strong>Total arrangements:</strong> 5! = 120
+<br>
+<strong>Arrangements where they ARE together:</strong> 48 (from previous example)
+<br>
+<strong>Arrangements where they're NOT together:</strong> 120 - 48 = 72
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Distributing Objects into Groups
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> How many ways can 9 students be divided into three groups of 3?
+<br><br>
+<strong>Step 1:</strong> Choose 3 from 9 for first group: ₉C₃ = 84
+<br>
+<strong>Step 2:</strong> Choose 3 from remaining 6 for second group: ₆C₃ = 20
+<br>
+<strong>Step 3:</strong> Remaining 3 automatically form third group: ₃C₃ = 1
+<br><br>
+<strong>Product:</strong> 84 × 20 × 1 = 1,680
+<br><br>
+<strong>But wait!</strong> The groups are indistinguishable (no "first," "second," "third")
+<br>
+We've overcounted by a factor of 3! = 6 (number of ways to label 3 groups)
+<br><br>
+<strong>Final answer:</strong> 1,680 / 6 = 280 ways
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Choosing When to Use Each Method
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Use Fundamental Counting Principle when:</strong>
+<br>
+• Making a series of independent choices
+<br>
+• Building something step by step
+<br>
+• Creating passwords, codes, or sequences
+<br><br>
+<strong>Use Permutations when:</strong>
+<br>
+• Order matters
+<br>
+• Arranging objects in positions
+<br>
+• Assigning distinct roles (president, VP, etc.)
+<br><br>
+<strong>Use Combinations when:</strong>
+<br>
+• Order doesn't matter
+<br>
+• Selecting committee members
+<br>
+• Choosing items from a menu
+<br>
+• Forming groups without assigned positions
+<br><br>
+<strong>Key question to ask:</strong> "If I swap two items, does it create a different outcome?"
+<br>
+If YES → permutation
+<br>
+If NO → combination
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 4: Complex Counting
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    How many 4-digit numbers can be formed using the digits 1, 2, 3, 4, 5, 6 without repetition, where the number must be even?
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>F)</strong> 60</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>G)</strong> 120</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>H)</strong> 180</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>J)</strong> 240</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>K)</strong> 360</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Start with the restriction:</strong> last digit must be even (2, 4, or 6)</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Last digit:</strong> 3 choices (2, 4, or 6)</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>First digit:</strong> 5 choices (any of remaining 5 digits)</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Second digit:</strong> 4 choices (any of remaining 4 digits)</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Third digit:</strong> 3 choices (any of remaining 3 digits)</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">Total = 3 × 5 × 4 × 3 = 180</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: H</strong> — Handle restrictions first, then count remaining choices!</p>
+  </div>
+</div>
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Fundamental counting principle: multiply number of choices for each independent event
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>n! = n × (n-1) × (n-2) × ... × 2 × 1; factorial counts all arrangements of n objects
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Permutations (nPr): use when order matters; formula is n!/(n-r)!
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Combinations (nCr): use when order doesn't matter; formula is n!/[r!(n-r)!]
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Key question: "Does swapping two items create a different outcome?" Yes=permutation, No=combination
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Circular arrangements: (n-1)! because rotations are considered identical
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Permutations with repetition: divide by factorials of repeated items
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>For "together" restrictions: treat grouped items as single unit, then arrange within
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>For "apart" restrictions: use complementary counting (total - together cases)
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Handle restrictions first in counting problems, then count remaining free choices
+  </li>
+</ul>

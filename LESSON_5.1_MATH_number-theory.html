@@ -1,0 +1,467 @@
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+<strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Number theory</strong> explores properties of integers, including <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">divisibility rules</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">prime and composite numbers</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">factors and multiples</strong>, and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">greatest common divisor (GCD)</strong> and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">least common multiple (LCM)</strong>. On the ACT, these concepts help solve problems involving patterns, remainders, and number relationships.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. Divisibility Rules
+</h3>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Quick Divisibility Tests
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Divisible by 2:</strong> Last digit is even (0, 2, 4, 6, 8)
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Divisible by 3:</strong> Sum of digits is divisible by 3
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Divisible by 4:</strong> Last two digits form a number divisible by 4
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Divisible by 5:</strong> Last digit is 0 or 5
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Divisible by 6:</strong> Divisible by both 2 and 3
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Divisible by 8:</strong> Last three digits form a number divisible by 8
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Divisible by 9:</strong> Sum of digits is divisible by 9
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Divisible by 10:</strong> Last digit is 0
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Examples:</strong>
+<br><br>
+<strong>Is 2,346 divisible by 3?</strong>
+<br>
+Sum of digits: 2 + 3 + 4 + 6 = 15
+<br>
+15 is divisible by 3, so yes ✓
+<br><br>
+<strong>Is 5,824 divisible by 4?</strong>
+<br>
+Last two digits: 24
+<br>
+24 ÷ 4 = 6, so yes ✓
+<br><br>
+<strong>Is 7,290 divisible by 6?</strong>
+<br>
+Divisible by 2? Yes (ends in 0)
+<br>
+Divisible by 3? 7+2+9+0=18, yes
+<br>
+Therefore divisible by 6 ✓
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Using Divisibility Rules Strategically
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> Find the smallest digit d so that 3,4d2 is divisible by 9.
+<br><br>
+<strong>Sum of known digits:</strong> 3 + 4 + 2 = 9
+<br>
+<strong>Total with d:</strong> 9 + d
+<br><br>
+For divisibility by 9: 9 + d must be divisible by 9
+<br>
+Smallest value: 9 + d = 9, so d = 0
+<br><br>
+<strong>Check:</strong> 3,402 has digit sum 3+4+0+2 = 9 ✓
+</p>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Prime and Composite Numbers
+</h3>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Definitions
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Prime number:</strong> A whole number greater than 1 with exactly two factors: 1 and itself
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Composite number:</strong> A whole number greater than 1 with more than two factors
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Special cases:</strong>
+</p>
+
+<ul style="margin-left: 1.5rem; font-size: 16px; line-height: 1.7;">
+<li>1 is neither prime nor composite</li>
+<li>2 is the only even prime number</li>
+<li>2 is the smallest prime number</li>
+</ul>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>First 15 prime numbers:</strong>
+<br>
+2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47
+<br><br>
+<strong>Examples of composite numbers:</strong>
+<br>
+4 (factors: 1, 2, 4)
+<br>
+6 (factors: 1, 2, 3, 6)
+<br>
+9 (factors: 1, 3, 9)
+<br>
+15 (factors: 1, 3, 5, 15)
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Testing for Primality
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+To check if a number n is prime, test if it's divisible by any prime up to √n.
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> Is 91 prime?
+<br><br>
+√91 ≈ 9.5, so test primes up to 9: 2, 3, 5, 7
+<br><br>
+91 ÷ 2 = 45.5 (not divisible)
+<br>
+91 ÷ 3 = 30.33... (not divisible)
+<br>
+91 ÷ 5 = 18.2 (not divisible)
+<br>
+91 ÷ 7 = 13 (divisible!)
+<br><br>
+<strong>Answer:</strong> No, 91 = 7 × 13, so it's composite
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Prime Factorization
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+Every composite number can be written as a unique product of prime numbers.
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> Find the prime factorization of 360.
+<br><br>
+360 = 2 × 180
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 2 × 2 × 90
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 2 × 2 × 2 × 45
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 2 × 2 × 2 × 9 × 5
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 2 × 2 × 2 × 3 × 3 × 5
+<br><br>
+<strong>Prime factorization:</strong> 360 = 2³ × 3² × 5
+</p>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Factors and Multiples
+</h3>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Understanding Factors
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Factor:</strong> A number that divides evenly into another number
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Finding all factors:</strong> Check all numbers from 1 to √n, and their pairs
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> Find all factors of 48.
+<br><br>
+1 × 48 → factors: 1, 48
+<br>
+2 × 24 → factors: 2, 24
+<br>
+3 × 16 → factors: 3, 16
+<br>
+4 × 12 → factors: 4, 12
+<br>
+6 × 8 → factors: 6, 8
+<br><br>
+<strong>All factors of 48:</strong> 1, 2, 3, 4, 6, 8, 12, 16, 24, 48
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Understanding Multiples
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Multiple:</strong> The product of a number and any integer
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>First 10 multiples of 7:</strong>
+<br>
+7, 14, 21, 28, 35, 42, 49, 56, 63, 70
+<br><br>
+<strong>Common multiples of 4 and 6:</strong>
+<br>
+Multiples of 4: 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48...
+<br>
+Multiples of 6: 6, 12, 18, 24, 30, 36, 42, 48...
+<br>
+Common multiples: 12, 24, 36, 48...
+</p>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. GCD and LCM
+</h3>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Greatest Common Divisor (GCD)
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+The GCD is the largest number that divides both numbers evenly.
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Method 1: List factors</strong>
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> Find GCD(48, 60)
+<br><br>
+Factors of 48: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48
+<br>
+Factors of 60: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60
+<br><br>
+<strong>Common factors:</strong> 1, 2, 3, 4, 6, 12
+<br>
+<strong>GCD(48, 60) = 12</strong>
+</p>
+</div>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Method 2: Prime factorization</strong>
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> Find GCD(72, 90)
+<br><br>
+72 = 2³ × 3²
+<br>
+90 = 2 × 3² × 5
+<br><br>
+<strong>Take minimum power of each common prime:</strong>
+<br>
+Common primes: 2 and 3
+<br>
+GCD = 2¹ × 3² = 2 × 9 = 18
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Least Common Multiple (LCM)
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+The LCM is the smallest positive number that is a multiple of both numbers.
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Method 1: List multiples</strong>
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> Find LCM(6, 8)
+<br><br>
+Multiples of 6: 6, 12, 18, 24, 30, 36, 42, 48...
+<br>
+Multiples of 8: 8, 16, 24, 32, 40, 48...
+<br><br>
+<strong>First common multiple:</strong> 24
+<br>
+<strong>LCM(6, 8) = 24</strong>
+</p>
+</div>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Method 2: Prime factorization</strong>
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> Find LCM(12, 18)
+<br><br>
+12 = 2² × 3
+<br>
+18 = 2 × 3²
+<br><br>
+<strong>Take maximum power of each prime:</strong>
+<br>
+LCM = 2² × 3² = 4 × 9 = 36
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+GCD and LCM Relationship
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Key formula:</strong> GCD(a, b) × LCM(a, b) = a × b
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> If GCD(a, b) = 6 and a × b = 360, find LCM(a, b).
+<br><br>
+6 × LCM = 360
+<br>
+LCM = 60
+</p>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+5. Special Number Properties
+</h3>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Odd and Even Numbers
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Key properties:</strong>
+</p>
+
+<ul style="margin-left: 1.5rem; font-size: 16px; line-height: 1.7;">
+<li>Even + Even = Even</li>
+<li>Odd + Odd = Even</li>
+<li>Even + Odd = Odd</li>
+<li>Even × Even = Even</li>
+<li>Odd × Odd = Odd</li>
+<li>Even × Odd = Even</li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Consecutive Integers
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Consecutive:</strong> n, n+1, n+2, ...
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Consecutive even:</strong> n, n+2, n+4, ... (where n is even)
+</p>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Consecutive odd:</strong> n, n+2, n+4, ... (where n is odd)
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> The sum of three consecutive integers is 54. Find them.
+<br><br>
+<strong>Let:</strong> n, n+1, n+2
+<br>
+n + (n+1) + (n+2) = 54
+<br>
+3n + 3 = 54
+<br>
+3n = 51
+<br>
+n = 17
+<br><br>
+<strong>Answer:</strong> 17, 18, 19
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Remainders
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> When 253 is divided by 17, what is the remainder?
+<br><br>
+253 ÷ 17 = 14 remainder 15
+<br>
+Check: 17 × 14 = 238, and 253 - 238 = 15
+<br><br>
+<strong>Answer:</strong> 15
+</p>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0rem; font-weight: 400; visibility: hidden;">
+Hidden Section Separator
+</h3>
+
+<h3 style="margin-top: 0rem; margin-bottom: 0.75rem; font-weight: 700;">
+Key Takeaways
+</h3>
+
+<ul style="margin-left: 1.5rem; font-size: 16px; line-height: 1.9;">
+<li style="margin-bottom: 0.5rem;">
+<span style="color: #2e7d32; font-weight: 600;">✓</span> Use divisibility rules to quickly test if a number divides evenly without calculating
+</li>
+<li style="margin-bottom: 0.5rem;">
+<span style="color: #4caf50; font-weight: 600;">✓</span> Prime numbers have exactly two factors (1 and itself); 2 is the only even prime
+</li>
+<li style="margin-bottom: 0.5rem;">
+<span style="color: #2e7d32; font-weight: 600;">✓</span> Every composite number has a unique prime factorization
+</li>
+<li style="margin-bottom: 0.5rem;">
+<span style="color: #4caf50; font-weight: 600;">✓</span> Factors come in pairs; check up to √n to find all factors efficiently
+</li>
+<li style="margin-bottom: 0.5rem;">
+<span style="color: #2e7d32; font-weight: 600;">✓</span> GCD is the largest common factor; find it by listing factors or using prime factorization
+</li>
+<li style="margin-bottom: 0.5rem;">
+<span style="color: #4caf50; font-weight: 600;">✓</span> LCM is the smallest common multiple; use GCD × LCM = a × b relationship
+</li>
+<li style="margin-bottom: 0.5rem;">
+<span style="color: #2e7d32; font-weight: 600;">✓</span> For GCD with primes, take minimum powers; for LCM, take maximum powers
+</li>
+<li style="margin-bottom: 0.5rem;">
+<span style="color: #4caf50; font-weight: 600;">✓</span> Even × anything even = even; odd × odd = odd
+</li>
+<li style="margin-bottom: 0.5rem;">
+<span style="color: #2e7d32; font-weight: 600;">✓</span> Consecutive integers: n, n+1, n+2; consecutive even/odd: n, n+2, n+4
+</li>
+<li style="margin-bottom: 0.5rem;">
+<span style="color: #4caf50; font-weight: 600;">✓</span> 1 is neither prime nor composite; it's a special case
+</li>
+</ul>

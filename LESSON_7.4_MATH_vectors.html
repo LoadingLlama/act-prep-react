@@ -1,0 +1,699 @@
+<!--
+LESSON TEMPLATE v3.0
+Subject: Math
+Topic: Vectors
+Lesson Key: 7.4
+-->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Understanding <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">vectors</strong> provides powerful tools for representing quantities with both <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">magnitude</strong> and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">direction</strong>. Unlike <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">scalars</strong> (numbers with only magnitude), vectors are essential for describing displacement, velocity, and force. This lesson covers <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">vector operations</strong> (addition, subtraction, scalar multiplication), <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">component form</strong>, and the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">dot product</strong>. While vectors appear infrequently on the ACT (0-1 questions), mastering them demonstrates advanced mathematical thinking and prepares you for college-level physics and engineering.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. Vector Basics and Notation
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+A <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">vector</strong> is a quantity with both magnitude (size) and direction. Vectors are typically represented by arrows, where the length represents magnitude and the arrow direction represents the direction. In <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">component form</strong>, a 2D vector is written as ⟨a, b⟩ or as ai + bj, where a is the horizontal component and b is the vertical component. The <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">magnitude</strong> (or length) of vector v is denoted |v| or ||v||.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Vector Notation and Representation
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Common notations for vectors:</strong>
+<br><br>
+• Bold lowercase: <strong>v</strong>, <strong>u</strong>, <strong>w</strong>
+<br>
+• Arrow notation: v⃗, u⃗, w⃗
+<br>
+• Component form: ⟨3, 4⟩ or 3i + 4j
+<br>
+• Column matrix: [3]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4]
+<br><br>
+<strong>Position vector:</strong> Vector from origin to point (a, b)
+<br>
+Position vector to (3, 4) is ⟨3, 4⟩
+<br><br>
+<strong>Zero vector:</strong> ⟨0, 0⟩ has magnitude 0 and no specific direction
+<br><br>
+<strong>Unit vector:</strong> Vector with magnitude 1
+<br>
+Standard unit vectors: i = ⟨1, 0⟩ (horizontal), j = ⟨0, 1⟩ (vertical)
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Finding Vector Components
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Given initial point A(x₁, y₁) and terminal point B(x₂, y₂):</strong>
+<br>
+Vector AB⃗ = ⟨x₂ - x₁, y₂ - y₁⟩
+<br><br>
+<strong>Example 1:</strong> Find vector from A(1, 2) to B(5, 7)
+<br>
+AB⃗ = ⟨5 - 1, 7 - 2⟩ = ⟨4, 5⟩
+<br><br>
+<strong>Example 2:</strong> Find vector from C(-3, 4) to D(2, -1)
+<br>
+CD⃗ = ⟨2 - (-3), -1 - 4⟩ = ⟨5, -5⟩
+<br><br>
+<strong>Example 3:</strong> Find vector from origin to P(6, -8)
+<br>
+OP⃗ = ⟨6 - 0, -8 - 0⟩ = ⟨6, -8⟩
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Magnitude (Length) of a Vector
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Formula:</strong> For v = ⟨a, b⟩, magnitude |v| = √(a² + b²)
+<br>
+This is the distance formula/Pythagorean theorem
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example 1:</strong> Find |⟨3, 4⟩|
+<br>
+|v| = √(3² + 4²) = √(9 + 16) = √25 = 5
+<br><br>
+<strong>Example 2:</strong> Find |⟨-5, 12⟩|
+<br>
+|v| = √((-5)² + 12²) = √(25 + 144) = √169 = 13
+<br><br>
+<strong>Example 3:</strong> Find |⟨6, -8⟩|
+<br>
+|v| = √(6² + (-8)²) = √(36 + 64) = √100 = 10
+<br><br>
+<strong>Note:</strong> These are the 3-4-5, 5-12-13, and 6-8-10 Pythagorean triples!
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Direction Angle of a Vector
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Direction angle θ:</strong> Angle measured counterclockwise from positive x-axis
+<br><br>
+<strong>Formula:</strong> tan(θ) = b/a for vector ⟨a, b⟩
+<br>
+So θ = tan⁻¹(b/a)
+<br><br>
+<strong>Example:</strong> Find direction angle of ⟨3, 3⟩
+<br>
+tan(θ) = 3/3 = 1
+<br>
+θ = tan⁻¹(1) = 45°
+<br><br>
+<strong>Important:</strong> Must consider quadrant!
+<br>
+• Quadrant I: θ as calculated
+<br>
+• Quadrant II: θ = 180° - |calculated angle|
+<br>
+• Quadrant III: θ = 180° + |calculated angle|
+<br>
+• Quadrant IV: θ = 360° - |calculated angle|
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 1: Vector Components
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    What is the magnitude of the vector from point (2, -3) to point (8, 5)?
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>A)</strong> 6</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>B)</strong> 8</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>C)</strong> 10</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>D)</strong> 14</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>E)</strong> 100</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Step 1:</strong> Find vector components</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">v = ⟨8 - 2, 5 - (-3)⟩ = ⟨6, 8⟩</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Step 2:</strong> Find magnitude</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">|v| = √(6² + 8²) = √(36 + 64) = √100 = 10</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: C</strong> — Use distance formula for magnitude!</p>
+  </div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Vector Operations
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Vectors can be <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">added</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">subtracted</strong>, and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">multiplied by scalars</strong>. Vector addition follows the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">parallelogram rule</strong> or <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">tip-to-tail method</strong> geometrically, and component-wise algebraically. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Scalar multiplication</strong> changes the magnitude and potentially reverses the direction (if scalar is negative) without changing the orientation. Understanding these operations is essential for physics applications and geometric transformations.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Vector Addition
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Component-wise addition:</strong> ⟨a₁, b₁⟩ + ⟨a₂, b₂⟩ = ⟨a₁ + a₂, b₁ + b₂⟩
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example 1:</strong> ⟨3, 4⟩ + ⟨2, -1⟩
+<br>
+= ⟨3 + 2, 4 + (-1)⟩
+<br>
+= ⟨5, 3⟩
+<br><br>
+<strong>Example 2:</strong> ⟨-2, 5⟩ + ⟨7, -3⟩
+<br>
+= ⟨-2 + 7, 5 + (-3)⟩
+<br>
+= ⟨5, 2⟩
+<br><br>
+<strong>Geometric interpretation (tip-to-tail):</strong>
+<br>
+Place tail of second vector at tip of first vector
+<br>
+The sum vector goes from tail of first to tip of second
+<br><br>
+<strong>Properties:</strong>
+<br>
+• Commutative: u + v = v + u
+<br>
+• Associative: (u + v) + w = u + (v + w)
+<br>
+• Identity: v + 0 = v
+<br>
+• Inverse: v + (-v) = 0
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Vector Subtraction
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Component-wise subtraction:</strong> ⟨a₁, b₁⟩ - ⟨a₂, b₂⟩ = ⟨a₁ - a₂, b₁ - b₂⟩
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example 1:</strong> ⟨7, 8⟩ - ⟨3, 2⟩
+<br>
+= ⟨7 - 3, 8 - 2⟩
+<br>
+= ⟨4, 6⟩
+<br><br>
+<strong>Example 2:</strong> ⟨-1, 4⟩ - ⟨5, -2⟩
+<br>
+= ⟨-1 - 5, 4 - (-2)⟩
+<br>
+= ⟨-6, 6⟩
+<br><br>
+<strong>Alternative:</strong> u - v = u + (-v)
+<br>
+Subtract by adding the opposite vector
+<br><br>
+<strong>Geometric interpretation:</strong>
+<br>
+u - v is the vector from tip of v to tip of u
+<br>
+(When both start at same point)
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Scalar Multiplication
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Multiply each component by scalar:</strong> k⟨a, b⟩ = ⟨ka, kb⟩
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example 1:</strong> 3⟨2, -4⟩
+<br>
+= ⟨3·2, 3·(-4)⟩
+<br>
+= ⟨6, -12⟩
+<br><br>
+<strong>Example 2:</strong> -2⟨5, 3⟩
+<br>
+= ⟨-2·5, -2·3⟩
+<br>
+= ⟨-10, -6⟩
+<br><br>
+<strong>Effect on magnitude:</strong>
+<br>
+|kv| = |k| · |v|
+<br>
+Scalar multiplication scales the magnitude by |k|
+<br><br>
+<strong>Effect on direction:</strong>
+<br>
+• k > 0: Same direction as original
+<br>
+• k < 0: Opposite direction
+<br>
+• k = 0: Zero vector (no direction)
+<br><br>
+<strong>Properties:</strong>
+<br>
+• k(u + v) = ku + kv
+<br>
+• (k + m)v = kv + mv
+<br>
+• k(mv) = (km)v
+<br>
+• 1v = v
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Unit Vectors
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Unit vector:</strong> Vector with magnitude 1
+<br><br>
+<strong>To find unit vector in direction of v:</strong>
+<br>
+u = v / |v| = (1/|v|) · v
+<br><br>
+<strong>Example:</strong> Find unit vector in direction of ⟨3, 4⟩
+<br><br>
+<strong>Step 1:</strong> Find magnitude
+<br>
+|v| = √(3² + 4²) = √25 = 5
+<br><br>
+<strong>Step 2:</strong> Divide by magnitude
+<br>
+u = (1/5)⟨3, 4⟩ = ⟨3/5, 4/5⟩
+<br><br>
+<strong>Verify:</strong> |u| = √((3/5)² + (4/5)²) = √(9/25 + 16/25) = √(25/25) = 1 ✓
+<br><br>
+<strong>Standard unit vectors:</strong>
+<br>
+i = ⟨1, 0⟩ (points right)
+<br>
+j = ⟨0, 1⟩ (points up)
+<br>
+Any vector ⟨a, b⟩ = ai + bj
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 2: Vector Operations
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    If u = ⟨4, -3⟩ and v = ⟨-1, 5⟩, what is 2u - v?
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>F)</strong> ⟨7, -11⟩</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>G)</strong> ⟨9, -11⟩</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>H)</strong> ⟨7, -1⟩</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>J)</strong> ⟨9, -1⟩</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>K)</strong> ⟨3, 2⟩</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Step 1:</strong> Calculate 2u</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">2u = 2⟨4, -3⟩ = ⟨8, -6⟩</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Step 2:</strong> Subtract v</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">2u - v = ⟨8, -6⟩ - ⟨-1, 5⟩ = ⟨8-(-1), -6-5⟩ = ⟨9, -11⟩</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: G</strong> — Scalar multiply first, then subtract components!</p>
+  </div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Dot Product and Angles
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+The <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">dot product</strong> (or scalar product) of two vectors produces a scalar (number) rather than another vector. Written as u · v, it equals the sum of products of corresponding components. The dot product has important geometric interpretations: it equals |u||v|cos(θ) where θ is the angle between vectors. This allows us to find <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">angles between vectors</strong>, test for <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">perpendicularity</strong> (dot product = 0), and find <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">projections</strong>.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Calculating the Dot Product
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Formula:</strong> ⟨a₁, b₁⟩ · ⟨a₂, b₂⟩ = a₁a₂ + b₁b₂
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example 1:</strong> ⟨3, 4⟩ · ⟨2, 5⟩
+<br>
+= (3)(2) + (4)(5)
+<br>
+= 6 + 20
+<br>
+= 26
+<br><br>
+<strong>Example 2:</strong> ⟨-1, 6⟩ · ⟨4, 2⟩
+<br>
+= (-1)(4) + (6)(2)
+<br>
+= -4 + 12
+<br>
+= 8
+<br><br>
+<strong>Example 3:</strong> ⟨5, -3⟩ · ⟨2, -7⟩
+<br>
+= (5)(2) + (-3)(-7)
+<br>
+= 10 + 21
+<br>
+= 31
+<br><br>
+<strong>Note:</strong> The dot product is a scalar, not a vector!
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Properties of the Dot Product
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Key properties:</strong>
+<br><br>
+1. <strong>Commutative:</strong> u · v = v · u
+<br>
+2. <strong>Distributive:</strong> u · (v + w) = u · v + u · w
+<br>
+3. <strong>Scalar multiplication:</strong> (ku) · v = k(u · v) = u · (kv)
+<br>
+4. <strong>With itself:</strong> v · v = |v|²
+<br>
+5. <strong>Zero vector:</strong> 0 · v = 0
+<br>
+6. <strong>Unit vectors:</strong> i · i = 1, j · j = 1, i · j = 0
+<br><br>
+<strong>Example using property 4:</strong>
+<br>
+v = ⟨3, 4⟩
+<br>
+v · v = (3)(3) + (4)(4) = 9 + 16 = 25 = |v|²
+<br>
+So |v| = √25 = 5 ✓
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Geometric Interpretation and Angles
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Angle formula:</strong> u · v = |u||v|cos(θ)
+<br>
+Therefore: cos(θ) = (u · v) / (|u||v|)
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> Find angle between u = ⟨3, 4⟩ and v = ⟨0, 5⟩
+<br><br>
+<strong>Step 1:</strong> Calculate dot product
+<br>
+u · v = (3)(0) + (4)(5) = 0 + 20 = 20
+<br><br>
+<strong>Step 2:</strong> Find magnitudes
+<br>
+|u| = √(9 + 16) = 5
+<br>
+|v| = √(0 + 25) = 5
+<br><br>
+<strong>Step 3:</strong> Apply formula
+<br>
+cos(θ) = 20 / (5 · 5) = 20/25 = 4/5 = 0.8
+<br>
+θ = cos⁻¹(0.8) ≈ 36.87°
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Perpendicular (Orthogonal) Vectors
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Perpendicular vectors have dot product = 0</strong>
+<br>
+(Because cos(90°) = 0)
+<br><br>
+<strong>Test:</strong> u ⊥ v if and only if u · v = 0
+<br><br>
+<strong>Example 1:</strong> Are ⟨2, 3⟩ and ⟨-6, 4⟩ perpendicular?
+<br>
+Dot product: (2)(-6) + (3)(4) = -12 + 12 = 0 ✓
+<br>
+Yes, they are perpendicular!
+<br><br>
+<strong>Example 2:</strong> Are ⟨1, 2⟩ and ⟨3, -1⟩ perpendicular?
+<br>
+Dot product: (1)(3) + (2)(-1) = 3 - 2 = 1 ≠ 0
+<br>
+No, they are not perpendicular
+<br><br>
+<strong>Finding perpendicular vector:</strong>
+<br>
+If v = ⟨a, b⟩, then ⟨-b, a⟩ and ⟨b, -a⟩ are perpendicular to v
+<br>
+Example: ⟨3, 4⟩ ⊥ ⟨-4, 3⟩ (verify: 3(-4) + 4(3) = -12 + 12 = 0 ✓)
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 3: Dot Product
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    Vectors u = ⟨6, 8⟩ and v = ⟨-4, 3⟩. Are these vectors perpendicular?
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>A)</strong> Yes, because their dot product is 0</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>B)</strong> Yes, because their dot product is 1</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>C)</strong> No, because their dot product is 0</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>D)</strong> No, because their dot product is not 0</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>E)</strong> Cannot be determined</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Calculate dot product:</strong></p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">u · v = (6)(-4) + (8)(3) = -24 + 24 = 0</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Since dot product = 0, vectors are perpendicular</strong></p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: A</strong> — Dot product = 0 means perpendicular!</p>
+  </div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Applications of Vectors
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Vectors have numerous practical applications in physics, engineering, and computer graphics. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Force vectors</strong> combine to produce net force, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">velocity vectors</strong> describe motion with both speed and direction, and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">displacement vectors</strong> represent changes in position. Understanding how to resolve vectors into components, combine multiple vectors, and use vectors to model real-world situations demonstrates deep mathematical understanding and prepares you for STEM fields.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Resolving Vectors into Components
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Given magnitude |v| and direction angle θ:</strong>
+<br>
+Horizontal component: vₓ = |v| cos(θ)
+<br>
+Vertical component: vᵧ = |v| sin(θ)
+<br>
+Vector: v = ⟨|v| cos(θ), |v| sin(θ)⟩
+<br><br>
+<strong>Example:</strong> A force of 50 N acts at 30° above horizontal. Find components.
+<br><br>
+<strong>Horizontal component:</strong>
+<br>
+Fₓ = 50 cos(30°) = 50 · (√3/2) ≈ 43.3 N
+<br><br>
+<strong>Vertical component:</strong>
+<br>
+Fᵧ = 50 sin(30°) = 50 · (1/2) = 25 N
+<br><br>
+<strong>Vector form:</strong> F ≈ ⟨43.3, 25⟩ N
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Combining Multiple Vectors
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Problem:</strong> Three forces act on an object:
+<br>
+F₁ = 10 N east
+<br>
+F₂ = 15 N north
+<br>
+F₃ = 5 N west
+<br>
+Find the net (resultant) force.
+<br><br>
+<strong>Solution using components:</strong>
+<br>
+Use east as positive x, north as positive y
+<br><br>
+F₁ = ⟨10, 0⟩
+<br>
+F₂ = ⟨0, 15⟩
+<br>
+F₃ = ⟨-5, 0⟩
+<br><br>
+<strong>Net force:</strong>
+<br>
+F_net = F₁ + F₂ + F₃
+<br>
+= ⟨10, 0⟩ + ⟨0, 15⟩ + ⟨-5, 0⟩
+<br>
+= ⟨5, 15⟩ N
+<br><br>
+<strong>Magnitude:</strong> |F_net| = √(5² + 15²) = √(25 + 225) = √250 ≈ 15.8 N
+<br>
+<strong>Direction:</strong> tan(θ) = 15/5 = 3, so θ = tan⁻¹(3) ≈ 71.6° north of east
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Navigation and Displacement
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Problem:</strong> A ship sails 30 km east, then 40 km north. What is the ship's displacement from its starting point?
+<br><br>
+<strong>First leg:</strong> d₁ = ⟨30, 0⟩ km
+<br>
+<strong>Second leg:</strong> d₂ = ⟨0, 40⟩ km
+<br><br>
+<strong>Total displacement:</strong>
+<br>
+d = d₁ + d₂ = ⟨30, 0⟩ + ⟨0, 40⟩ = ⟨30, 40⟩ km
+<br><br>
+<strong>Distance from start:</strong>
+<br>
+|d| = √(30² + 40²) = √(900 + 1600) = √2500 = 50 km
+<br><br>
+<strong>Direction:</strong>
+<br>
+tan(θ) = 40/30 = 4/3
+<br>
+θ = tan⁻¹(4/3) ≈ 53.1° north of east
+<br><br>
+<strong>Note:</strong> This is a 3-4-5 Pythagorean triple scaled by 10!
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Velocity and Relative Motion
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Problem:</strong> A plane flies at 200 mph heading due north. A wind blows from the west at 50 mph. What is the plane's actual velocity?
+<br><br>
+<strong>Plane velocity (in still air):</strong> v_plane = ⟨0, 200⟩ mph
+<br>
+<strong>Wind velocity:</strong> v_wind = ⟨50, 0⟩ mph (from west means toward east)
+<br><br>
+<strong>Actual velocity:</strong>
+<br>
+v_actual = v_plane + v_wind = ⟨0, 200⟩ + ⟨50, 0⟩ = ⟨50, 200⟩ mph
+<br><br>
+<strong>Ground speed:</strong>
+<br>
+|v_actual| = √(50² + 200²) = √(2500 + 40000) = √42500 ≈ 206.2 mph
+<br><br>
+<strong>Actual heading:</strong>
+<br>
+tan(θ) = 200/50 = 4
+<br>
+θ = tan⁻¹(4) ≈ 76.0° from east (or 14.0° east of north)
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 4: Vector Applications
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    A person walks 12 meters north, then 5 meters east. How far is the person from the starting point?
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>F)</strong> 7 meters</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>G)</strong> 13 meters</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>H)</strong> 17 meters</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>J)</strong> 119 meters</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>K)</strong> 144 meters</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Displacement vector:</strong> d = ⟨5, 12⟩ meters</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Distance from start:</strong></p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">|d| = √(5² + 12²) = √(25 + 144) = √169 = 13 meters</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: G</strong> — Use Pythagorean theorem (5-12-13 triple)!</p>
+  </div>
+</div>
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Vectors have both magnitude and direction; scalars have only magnitude
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Component form: v = ⟨a, b⟩ or ai + bj where a is horizontal, b is vertical
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Magnitude: |⟨a, b⟩| = √(a² + b²) using Pythagorean theorem
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Add/subtract vectors component-wise: ⟨a₁, b₁⟩ ± ⟨a₂, b₂⟩ = ⟨a₁ ± a₂, b₁ ± b₂⟩
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Scalar multiplication: k⟨a, b⟩ = ⟨ka, kb⟩ scales magnitude by |k|
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Unit vector in direction of v: u = v/|v| has magnitude 1
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Dot product: ⟨a₁, b₁⟩ · ⟨a₂, b₂⟩ = a₁a₂ + b₁b₂ (produces a scalar)
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Perpendicular vectors: u ⊥ v if and only if u · v = 0
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Angle between vectors: cos(θ) = (u · v) / (|u||v|)
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Applications: combine forces/velocities by adding vectors; find resultant magnitude using Pythagorean theorem
+  </li>
+</ul>

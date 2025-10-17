@@ -1,0 +1,692 @@
+<!--
+LESSON TEMPLATE v3.0
+Subject: Math
+Topic: Miscellaneous Advanced Topics
+Lesson Key: 7.6
+-->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Understanding <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">advanced mathematical topics</strong> demonstrates mathematical sophistication and prepares you for college-level mathematics. This lesson covers <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">parametric equations</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">polar coordinates</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">conic sections</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">limits</strong>, and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">series and sequences</strong>. While these topics appear very infrequently on the ACT (0-2 questions total), mastering them shows deep mathematical knowledge and can give you confidence tackling the hardest problems. These concepts also provide a strong foundation for calculus and higher mathematics.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. Parametric Equations
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+<strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Parametric equations</strong> express x and y separately as functions of a third variable called a <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">parameter</strong> (usually t). Instead of y = f(x), we write x = f(t) and y = g(t). This allows us to describe curves that fail the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">vertical line test</strong>, model motion where position depends on time, and represent complex geometric shapes. Converting between parametric and rectangular forms requires <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">eliminating the parameter</strong> through substitution or trigonometric identities.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Understanding Parametric Equations
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Parametric form:</strong> x = f(t), y = g(t)
+<br>
+The parameter t (often representing time) determines both x and y coordinates
+<br><br>
+<strong>Example 1:</strong> x = 2t, y = t + 1
+<br><br>
+<strong>Create a table of values:</strong>
+<br>
+t = 0: (x, y) = (0, 1)
+<br>
+t = 1: (x, y) = (2, 2)
+<br>
+t = 2: (x, y) = (4, 3)
+<br>
+t = 3: (x, y) = (6, 4)
+<br><br>
+<strong>Points lie on a line</strong> (we'll verify this by eliminating the parameter)
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Eliminating the Parameter
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example 1:</strong> Convert x = 2t, y = t + 1 to rectangular form
+<br><br>
+<strong>Method: Solve for t, then substitute</strong>
+<br>
+From x = 2t: t = x/2
+<br>
+Substitute into y = t + 1:
+<br>
+y = (x/2) + 1
+<br>
+y = x/2 + 1
+<br><br>
+<strong>This is a line with slope 1/2 and y-intercept 1</strong>
+<br><br>
+<strong>Example 2:</strong> Convert x = 3cos(t), y = 3sin(t) to rectangular form
+<br><br>
+<strong>Use trig identity: cos²(t) + sin²(t) = 1</strong>
+<br>
+From equations: cos(t) = x/3, sin(t) = y/3
+<br>
+Substitute into identity:
+<br>
+(x/3)² + (y/3)² = 1
+<br>
+x²/9 + y²/9 = 1
+<br>
+x² + y² = 9
+<br><br>
+<strong>This is a circle with center (0, 0) and radius 3</strong>
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Common Parametric Curves
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Circle centered at (h, k) with radius r:</strong>
+<br>
+x = h + r cos(t)
+<br>
+y = k + r sin(t)
+<br><br>
+<strong>Line through (x₀, y₀) with direction ⟨a, b⟩:</strong>
+<br>
+x = x₀ + at
+<br>
+y = y₀ + bt
+<br><br>
+<strong>Ellipse:</strong>
+<br>
+x = a cos(t)
+<br>
+y = b sin(t)
+<br>
+Rectangular: x²/a² + y²/b² = 1
+<br><br>
+<strong>Parabola:</strong>
+<br>
+x = t
+<br>
+y = t²
+<br>
+Rectangular: y = x²
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Applications of Parametric Equations
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Projectile motion:</strong>
+<br>
+x = (v₀ cos θ)t (horizontal position)
+<br>
+y = h + (v₀ sin θ)t - 16t² (vertical position)
+<br>
+where v₀ = initial velocity, θ = launch angle, h = initial height
+<br><br>
+<strong>Example:</strong> Ball thrown at 64 ft/s at 45° from ground level
+<br>
+x = 64 cos(45°) t = 64(√2/2)t ≈ 45.25t
+<br>
+y = 64 sin(45°) t - 16t² ≈ 45.25t - 16t²
+<br><br>
+<strong>To find where it lands (y = 0):</strong>
+<br>
+0 = 45.25t - 16t²
+<br>
+0 = t(45.25 - 16t)
+<br>
+t = 0 or t = 45.25/16 ≈ 2.83 seconds
+<br>
+Horizontal distance: x = 45.25(2.83) ≈ 128 feet
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 1: Parametric Equations
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    What is the rectangular equation for the parametric equations x = t - 2, y = 2t + 1?
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>A)</strong> y = x + 3</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>B)</strong> y = x + 5</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>C)</strong> y = 2x + 3</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>D)</strong> y = 2x + 5</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>E)</strong> y = 2x - 3</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>From x = t - 2:</strong> t = x + 2</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Substitute into y = 2t + 1:</strong></p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">y = 2(x + 2) + 1 = 2x + 4 + 1 = 2x + 5</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: D</strong> — Solve for t, then substitute!</p>
+  </div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Polar Coordinates
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+<strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Polar coordinates</strong> represent points using distance from the origin (<strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">r</strong>) and angle from the positive x-axis (<strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">θ</strong>). Written as (r, θ), this system is natural for describing circular and spiral patterns. Converting between <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">rectangular coordinates</strong> (x, y) and polar coordinates uses the relationships x = r cos(θ), y = r sin(θ), r² = x² + y², and tan(θ) = y/x. Polar equations like r = constant describe circles, while θ = constant describes lines through the origin.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Polar Coordinate System
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Polar coordinates (r, θ):</strong>
+<br>
+r = distance from origin (pole)
+<br>
+θ = angle from positive x-axis (polar axis)
+<br><br>
+<strong>Examples of plotting:</strong>
+<br>
+(3, 0°): 3 units right along positive x-axis
+<br>
+(2, 90°): 2 units up along positive y-axis
+<br>
+(4, 45°): 4 units at 45° angle
+<br>
+(5, 180°): 5 units left along negative x-axis
+<br><br>
+<strong>Note:</strong> Negative r means point is in opposite direction
+<br>
+(-3, 0°) = (3, 180°)
+<br><br>
+<strong>Multiple representations:</strong>
+<br>
+Same point can have multiple polar coordinates:
+<br>
+(r, θ) = (r, θ + 360°) = (-r, θ + 180°)
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Converting Polar to Rectangular
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Conversion formulas:</strong>
+<br>
+x = r cos(θ)
+<br>
+y = r sin(θ)
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example 1:</strong> Convert (4, 60°) to rectangular coordinates
+<br><br>
+x = 4 cos(60°) = 4 · (1/2) = 2
+<br>
+y = 4 sin(60°) = 4 · (√3/2) = 2√3
+<br><br>
+<strong>Rectangular coordinates: (2, 2√3)</strong>
+<br><br>
+<strong>Example 2:</strong> Convert (5, π/4) to rectangular coordinates
+<br><br>
+x = 5 cos(π/4) = 5 · (√2/2) = 5√2/2
+<br>
+y = 5 sin(π/4) = 5 · (√2/2) = 5√2/2
+<br><br>
+<strong>Rectangular coordinates: (5√2/2, 5√2/2)</strong>
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Converting Rectangular to Polar
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Conversion formulas:</strong>
+<br>
+r = √(x² + y²)
+<br>
+tan(θ) = y/x (must consider quadrant!)
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example 1:</strong> Convert (3, 3) to polar coordinates
+<br><br>
+r = √(3² + 3²) = √(9 + 9) = √18 = 3√2
+<br>
+tan(θ) = 3/3 = 1
+<br>
+θ = 45° (Quadrant I)
+<br><br>
+<strong>Polar coordinates: (3√2, 45°)</strong>
+<br><br>
+<strong>Example 2:</strong> Convert (-√3, 1) to polar coordinates
+<br><br>
+r = √((-√3)² + 1²) = √(3 + 1) = 2
+<br>
+tan(θ) = 1/(-√3) = -1/√3
+<br>
+Point is in Quadrant II
+<br>
+Reference angle: tan⁻¹(1/√3) = 30°
+<br>
+θ = 180° - 30° = 150°
+<br><br>
+<strong>Polar coordinates: (2, 150°)</strong>
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Polar Equations
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>r = constant:</strong> Circle centered at origin
+<br>
+r = 5 describes circle with radius 5
+<br><br>
+<strong>θ = constant:</strong> Line through origin
+<br>
+θ = π/3 describes line at 60° angle
+<br><br>
+<strong>r = a cos(θ):</strong> Circle passing through origin
+<br>
+Example: r = 4 cos(θ) is circle with diameter 4
+<br><br>
+<strong>r = a + b cos(θ) or r = a + b sin(θ):</strong> Limaçon (special curve)
+<br>
+Creates cardioid when a = b
+<br><br>
+<strong>r = a cos(nθ) or r = a sin(nθ):</strong> Rose curves
+<br>
+n petals if n is odd, 2n petals if n is even
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 2: Polar Coordinates
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    What are the rectangular coordinates of the point with polar coordinates (6, 120°)?
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>F)</strong> (3, 3√3)</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>G)</strong> (-3, 3√3)</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>H)</strong> (3√3, 3)</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>J)</strong> (-3√3, 3)</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>K)</strong> (-3, -3√3)</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">x = r cos(θ) = 6 cos(120°) = 6(-1/2) = -3</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">y = r sin(θ) = 6 sin(120°) = 6(√3/2) = 3√3</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Rectangular: (-3, 3√3)</strong></p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: G</strong> — Use x = r cos θ, y = r sin θ!</p>
+  </div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Advanced Conic Sections
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+<strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Conic sections</strong> are curves formed by intersecting a plane with a double cone. The four types are <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">circles</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">ellipses</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">parabolas</strong>, and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">hyperbolas</strong>. Each has standard form equations and special properties. Understanding <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">foci</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">directrices</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">eccentricity</strong>, and geometric definitions helps identify and graph these curves. While basic circle and parabola questions are common on the ACT, ellipses and hyperbolas appear rarely but demonstrate advanced geometric understanding.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Standard Forms of Conic Sections
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Circle (center (h, k), radius r):</strong>
+<br>
+(x - h)² + (y - k)² = r²
+<br><br>
+<strong>Ellipse (center (h, k), horizontal major axis):</strong>
+<br>
+(x - h)²/a² + (y - k)²/b² = 1 where a > b
+<br>
+Vertices at (h ± a, k)
+<br>
+Foci at (h ± c, k) where c² = a² - b²
+<br><br>
+<strong>Ellipse (vertical major axis):</strong>
+<br>
+(x - h)²/b² + (y - k)²/a² = 1 where a > b
+<br>
+Vertices at (h, k ± a)
+<br>
+Foci at (h, k ± c) where c² = a² - b²
+<br><br>
+<strong>Hyperbola (horizontal transverse axis):</strong>
+<br>
+(x - h)²/a² - (y - k)²/b² = 1
+<br>
+Vertices at (h ± a, k)
+<br>
+Foci at (h ± c, k) where c² = a² + b²
+<br><br>
+<strong>Hyperbola (vertical transverse axis):</strong>
+<br>
+(y - k)²/a² - (x - h)²/b² = 1
+<br>
+Vertices at (h, k ± a)
+<br>
+Foci at (h, k ± c) where c² = a² + b²
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Ellipses
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Definition:</strong> Set of all points where sum of distances to two foci is constant
+<br><br>
+<strong>Example:</strong> Identify the ellipse x²/25 + y²/16 = 1
+<br><br>
+<strong>Standard form with a² = 25, b² = 16</strong>
+<br>
+a = 5 (semi-major axis)
+<br>
+b = 4 (semi-minor axis)
+<br>
+Center: (0, 0)
+<br>
+Major axis: horizontal (since 25 > 16)
+<br>
+Vertices: (±5, 0)
+<br>
+c² = a² - b² = 25 - 16 = 9, so c = 3
+<br>
+Foci: (±3, 0)
+<br><br>
+<strong>Key property:</strong> For any point on ellipse, distance to focus₁ + distance to focus₂ = 2a = 10
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Hyperbolas
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Definition:</strong> Set of all points where absolute difference of distances to two foci is constant
+<br><br>
+<strong>Example:</strong> Identify the hyperbola x²/16 - y²/9 = 1
+<br><br>
+<strong>Standard form with a² = 16, b² = 9</strong>
+<br>
+a = 4, b = 3
+<br>
+Center: (0, 0)
+<br>
+Transverse axis: horizontal (x term positive)
+<br>
+Vertices: (±4, 0)
+<br>
+c² = a² + b² = 16 + 9 = 25, so c = 5
+<br>
+Foci: (±5, 0)
+<br><br>
+<strong>Asymptotes:</strong> y = ±(b/a)x = ±(3/4)x
+<br>
+These are the diagonals of the rectangle with vertices (±a, ±b)
+<br><br>
+<strong>Key property:</strong> Hyperbola approaches but never touches its asymptotes
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Eccentricity
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Eccentricity e measures how "stretched" a conic is:</strong>
+<br><br>
+<strong>Circle:</strong> e = 0 (perfectly round)
+<br>
+<strong>Ellipse:</strong> 0 < e < 1, e = c/a where c² = a² - b²
+<br>
+<strong>Parabola:</strong> e = 1
+<br>
+<strong>Hyperbola:</strong> e > 1, e = c/a where c² = a² + b²
+<br><br>
+<strong>Example:</strong> Find eccentricity of x²/25 + y²/16 = 1
+<br>
+a² = 25 → a = 5
+<br>
+c² = 25 - 16 = 9 → c = 3
+<br>
+e = c/a = 3/5 = 0.6
+<br><br>
+<strong>As e approaches 0, ellipse becomes more circular</strong>
+<br>
+<strong>As e approaches 1, ellipse becomes more elongated</strong>
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 3: Conic Sections
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    What type of conic section is represented by the equation x²/9 - y²/4 = 1?
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>A)</strong> Circle</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>B)</strong> Ellipse</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>C)</strong> Parabola</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>D)</strong> Hyperbola</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>E)</strong> Line</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Key identifier:</strong> One term is subtracted (minus sign)</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">x²/9 - y²/4 = 1 has form x²/a² - y²/b² = 1</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>This is the standard form of a hyperbola</strong></p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">(Ellipse would have +, circle would have equal denominators)</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: D</strong> — Subtraction indicates hyperbola!</p>
+  </div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Limits, Series, and Advanced Concepts
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+<strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Limits</strong> describe the behavior of functions as inputs approach specific values, forming the foundation of calculus. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Series</strong> are sums of sequence terms, with special formulas for <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">arithmetic</strong> and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">geometric series</strong>. Other advanced topics include <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">sigma notation</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">recursive formulas</strong>, and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">function transformations</strong>. While these topics rarely appear on the ACT, understanding them demonstrates mathematical maturity and provides excellent preparation for college mathematics and standardized tests like the SAT Subject Tests.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Introduction to Limits
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Limit notation:</strong> lim(x→a) f(x) = L
+<br>
+Means: as x approaches a, f(x) approaches L
+<br><br>
+<strong>Example 1:</strong> lim(x→2) (3x + 1)
+<br>
+As x approaches 2, 3x + 1 approaches 3(2) + 1 = 7
+<br>
+<strong>Answer:</strong> 7
+<br><br>
+<strong>Example 2:</strong> lim(x→0) (x² + 5)
+<br>
+As x approaches 0, x² + 5 approaches 0 + 5 = 5
+<br>
+<strong>Answer:</strong> 5
+<br><br>
+<strong>Example 3:</strong> lim(x→3) (x² - 9)/(x - 3)
+<br>
+Direct substitution gives 0/0 (indeterminate)
+<br>
+Factor: (x - 3)(x + 3)/(x - 3) = x + 3
+<br>
+Now: lim(x→3) (x + 3) = 6
+<br>
+<strong>Answer:</strong> 6
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Arithmetic Series
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Arithmetic sequence:</strong> Each term differs from previous by constant d
+<br>
+a₁, a₁ + d, a₁ + 2d, a₁ + 3d, ...
+<br><br>
+<strong>nth term:</strong> aₙ = a₁ + (n - 1)d
+<br><br>
+<strong>Sum of first n terms:</strong>
+<br>
+Sₙ = n(a₁ + aₙ)/2 or Sₙ = n[2a₁ + (n-1)d]/2
+<br><br>
+<strong>Example:</strong> Find sum of first 20 terms of 3, 7, 11, 15, ...
+<br>
+a₁ = 3, d = 4
+<br>
+a₂₀ = 3 + (20 - 1)(4) = 3 + 76 = 79
+<br>
+S₂₀ = 20(3 + 79)/2 = 20(82)/2 = 820
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Geometric Series
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Geometric sequence:</strong> Each term is previous term times constant r
+<br>
+a₁, a₁r, a₁r², a₁r³, ...
+<br><br>
+<strong>nth term:</strong> aₙ = a₁r^(n-1)
+<br><br>
+<strong>Sum of first n terms:</strong>
+<br>
+Sₙ = a₁(1 - r^n)/(1 - r) for r ≠ 1
+<br><br>
+<strong>Infinite geometric series (|r| < 1):</strong>
+<br>
+S = a₁/(1 - r)
+<br><br>
+<strong>Example:</strong> Find sum of 2 + 6 + 18 + 54 + 162
+<br>
+a₁ = 2, r = 3, n = 5
+<br>
+S₅ = 2(1 - 3⁵)/(1 - 3) = 2(1 - 243)/(-2) = 2(-242)/(-2) = 242
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Sigma Notation
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Sigma (Σ) represents summation:</strong>
+<br><br>
+Σ(k=1 to n) k = 1 + 2 + 3 + ... + n = n(n+1)/2
+<br><br>
+<strong>Example 1:</strong> Evaluate Σ(k=1 to 4) (2k + 1)
+<br>
+= (2·1 + 1) + (2·2 + 1) + (2·3 + 1) + (2·4 + 1)
+<br>
+= 3 + 5 + 7 + 9
+<br>
+= 24
+<br><br>
+<strong>Example 2:</strong> Evaluate Σ(k=1 to 5) k²
+<br>
+= 1² + 2² + 3² + 4² + 5²
+<br>
+= 1 + 4 + 9 + 16 + 25
+<br>
+= 55
+<br><br>
+<strong>Formula:</strong> Σ(k=1 to n) k² = n(n+1)(2n+1)/6
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 4: Series
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    What is the sum of the first 10 terms of the sequence 5, 10, 15, 20, ...?
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>F)</strong> 50</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>G)</strong> 150</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>H)</strong> 275</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>J)</strong> 500</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>K)</strong> 550</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Arithmetic sequence:</strong> a₁ = 5, d = 5</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">a₁₀ = 5 + (10-1)(5) = 5 + 45 = 50</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">S₁₀ = 10(a₁ + a₁₀)/2 = 10(5 + 50)/2 = 10(55)/2 = 275</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: H</strong> — Use arithmetic series formula!</p>
+  </div>
+</div>
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Parametric equations: x = f(t), y = g(t); eliminate parameter by solving for t and substituting
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Polar to rectangular: x = r cos θ, y = r sin θ; rectangular to polar: r = √(x²+y²), tan θ = y/x
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Polar equations: r = constant (circle), θ = constant (line through origin)
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Ellipse: x²/a² + y²/b² = 1; sum of distances to foci is constant
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Hyperbola: x²/a² - y²/b² = 1; difference of distances to foci is constant
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>For ellipse: c² = a² - b²; for hyperbola: c² = a² + b² (where c is distance to focus)
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Limits: lim(x→a) f(x) = L means f(x) approaches L as x approaches a
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Arithmetic series: Sₙ = n(a₁ + aₙ)/2 where aₙ = a₁ + (n-1)d
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Geometric series: Sₙ = a₁(1 - r^n)/(1 - r); infinite sum a₁/(1 - r) when |r| < 1
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Sigma notation Σ represents summation; Σ(k=1 to n) k = n(n+1)/2
+  </li>
+</ul>

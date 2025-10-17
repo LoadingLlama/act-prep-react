@@ -1,0 +1,722 @@
+<!--
+LESSON TEMPLATE v3.0
+Subject: Math
+Topic: Matrices
+Lesson Key: 7.3
+-->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Understanding <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">matrices</strong> provides powerful tools for organizing data and solving systems of equations. A <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">matrix</strong> is a rectangular array of numbers arranged in rows and columns. This lesson covers <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">matrix operations</strong> (addition, subtraction, multiplication), <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">determinants</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">inverse matrices</strong>, and using matrices to solve <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">systems of equations</strong>. While matrices appear infrequently on the ACT (1-2 questions), understanding them is important for advanced mathematics and demonstrates mathematical sophistication.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. Matrix Basics and Operations
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+A <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">matrix</strong> is denoted by its <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">dimensions</strong>: an m×n matrix has m rows and n columns. The <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">entries</strong> or <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">elements</strong> are the individual numbers in the matrix, typically denoted aᵢⱼ where i is the row and j is the column. Matrix addition and subtraction require matrices of the same dimensions, while multiplication follows special rules based on matching inner dimensions.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Matrix Notation and Terminology
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>A 2×3 matrix (2 rows, 3 columns):</strong>
+<br><br>
+A = [a₁₁  a₁₂  a₁₃]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[a₂₁  a₂₂  a₂₃]
+<br><br>
+<strong>Example:</strong>
+<br>
+A = [1   2   3]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[4   5   6]
+<br><br>
+Element a₁₂ = 2 (row 1, column 2)
+<br>
+Element a₂₃ = 6 (row 2, column 3)
+<br><br>
+<strong>Special matrices:</strong>
+<br>
+• <strong>Square matrix:</strong> Same number of rows and columns (n×n)
+<br>
+• <strong>Row matrix:</strong> 1×n matrix (single row)
+<br>
+• <strong>Column matrix:</strong> m×1 matrix (single column)
+<br>
+• <strong>Zero matrix:</strong> All entries are zero
+<br>
+• <strong>Identity matrix I:</strong> Square matrix with 1s on main diagonal, 0s elsewhere
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Matrix Addition and Subtraction
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Rule:</strong> Add or subtract corresponding elements. Matrices must have the same dimensions.
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example 1: Addition</strong>
+<br><br>
+A = [1   2]    B = [5   6]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[3   4]        [7   8]
+<br><br>
+A + B = [1+5   2+6] = [6    8]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3+7   4+8]   [10  12]
+<br><br>
+<strong>Example 2: Subtraction</strong>
+<br><br>
+A - B = [1-5   2-6] = [-4   -4]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3-7   4-8]   [-4   -4]
+<br><br>
+<strong>Properties:</strong>
+<br>
+• A + B = B + A (commutative)
+<br>
+• (A + B) + C = A + (B + C) (associative)
+<br>
+• A + 0 = A (zero matrix is additive identity)
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Scalar Multiplication
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Rule:</strong> Multiply each element by the scalar (number)
+<br><br>
+<strong>Example:</strong> If A = [2   -1], find 3A
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4    5]
+<br><br>
+3A = [3·2   3·(-1)] = [6    -3]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3·4   3·5]       [12   15]
+<br><br>
+<strong>Properties:</strong>
+<br>
+• k(A + B) = kA + kB
+<br>
+• (k + m)A = kA + mA
+<br>
+• k(mA) = (km)A
+<br>
+• 1·A = A
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Matrix Multiplication
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Rule:</strong> For A(m×n) × B(n×p), result is C(m×p). Element cᵢⱼ = sum of (row i of A) × (column j of B)
+<br>
+<strong>Key:</strong> Number of columns in A must equal number of rows in B
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> Multiply A(2×3) × B(3×2)
+<br><br>
+A = [1   2   3]    B = [7    8]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[4   5   6]        [9   10]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[11  12]
+<br><br>
+<strong>Calculate AB (will be 2×2):</strong>
+<br><br>
+Entry (1,1): (1)(7) + (2)(9) + (3)(11) = 7 + 18 + 33 = 58
+<br>
+Entry (1,2): (1)(8) + (2)(10) + (3)(12) = 8 + 20 + 36 = 64
+<br>
+Entry (2,1): (4)(7) + (5)(9) + (6)(11) = 28 + 45 + 66 = 139
+<br>
+Entry (2,2): (4)(8) + (5)(10) + (6)(12) = 32 + 50 + 72 = 154
+<br><br>
+AB = [58    64]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[139  154]
+<br><br>
+<strong>Important:</strong> Matrix multiplication is NOT commutative!
+<br>
+Generally AB ≠ BA
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 1: Matrix Operations
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    If A = [2  3] and B = [1  -1], what is 2A + B?
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4  5]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2   3]
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>A)</strong> [3   2]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6   8]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>B)</strong> [5   5]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[10 13]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>C)</strong> [5   7]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[10 11]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>D)</strong> [4   5]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[10 13]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>E)</strong> [6   7]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[12 16]</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Step 1:</strong> Calculate 2A = [4  6]</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[8  10]</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Step 2:</strong> Add B: [4+1  6+(-1)] = [5  5]</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[8+2  10+3]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[10 13]</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: B</strong> — Scalar multiply first, then add!</p>
+  </div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Determinants and Special Properties
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+The <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">determinant</strong> is a special number calculated from a square matrix that provides important information about the matrix. Denoted det(A) or |A|, the determinant determines whether a matrix is <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">invertible</strong> (det ≠ 0) or <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">singular</strong> (det = 0). For 2×2 matrices, the determinant formula is straightforward. Determinants are essential for finding inverse matrices and solving systems of equations using <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Cramer's Rule</strong>.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Determinant of 2×2 Matrices
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Formula:</strong> For A = [a  b], det(A) = ad - bc
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[c  d]
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example 1:</strong> Find det([3   2])
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1   4]
+<br><br>
+det = (3)(4) - (2)(1) = 12 - 2 = 10
+<br><br>
+<strong>Example 2:</strong> Find det([5   -2])
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-3   1]
+<br><br>
+det = (5)(1) - (-2)(-3) = 5 - 6 = -1
+<br><br>
+<strong>Example 3:</strong> Find det([6   3])
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4   2]
+<br><br>
+det = (6)(2) - (3)(4) = 12 - 12 = 0
+<br>
+(This matrix is singular—not invertible)
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Determinant of 3×3 Matrices
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Method:</strong> Expand along first row (or any row/column)
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>For A = [a  b  c], use:</strong>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[d  e  f]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[g  h  i]
+<br><br>
+det(A) = a·det([e  f]) - b·det([d  f]) + c·det([d  e])
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[h  i]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[g  i]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[g  h]
+<br><br>
+= a(ei - fh) - b(di - fg) + c(dh - eg)
+<br><br>
+<strong>Example:</strong> Find det([2   1   3])
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0   4   1]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5   2   0]
+<br><br>
+= 2·det([4  1]) - 1·det([0  1]) + 3·det([0  4])
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2  0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5  0]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5  2]
+<br><br>
+= 2(0 - 2) - 1(0 - 5) + 3(0 - 20)
+<br>
+= 2(-2) - 1(-5) + 3(-20)
+<br>
+= -4 + 5 - 60 = -59
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Properties of Determinants
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Key properties:</strong>
+<br><br>
+1. det(I) = 1 (identity matrix)
+<br>
+2. det(AB) = det(A) × det(B)
+<br>
+3. det(A^T) = det(A) (transpose has same determinant)
+<br>
+4. det(kA) = k^n × det(A) for n×n matrix
+<br>
+5. If det(A) = 0, matrix has no inverse (singular)
+<br>
+6. If det(A) ≠ 0, matrix is invertible
+<br>
+7. Swapping two rows multiplies determinant by -1
+<br>
+8. If two rows are identical, determinant = 0
+<br>
+9. Multiplying a row by k multiplies determinant by k
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Identity Matrix and Matrix Powers
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Identity matrix I:</strong> When multiplied by any matrix, leaves it unchanged
+<br><br>
+<strong>2×2 identity:</strong> I = [1  0]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0  1]
+<br><br>
+<strong>3×3 identity:</strong> I = [1  0  0]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0  1  0]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[0  0  1]
+<br><br>
+<strong>Property:</strong> AI = IA = A
+<br><br>
+<strong>Matrix powers:</strong>
+<br>
+A² = A × A
+<br>
+A³ = A × A × A
+<br>
+A⁰ = I (by definition)
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 2: Determinants
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    What is the determinant of [4   3]?
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2   5]
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>F)</strong> 6</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>G)</strong> 9</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>H)</strong> 14</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>J)</strong> 20</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>K)</strong> 26</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Formula:</strong> det = ad - bc</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">det = (4)(5) - (3)(2)</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">= 20 - 6 = 14</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: H</strong> — Multiply main diagonal minus other diagonal!</p>
+  </div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Inverse Matrices
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+The <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">inverse</strong> of a matrix A, denoted A⁻¹, is the matrix that when multiplied by A gives the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">identity matrix</strong>: AA⁻¹ = A⁻¹A = I. Not all matrices have inverses—only <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">square matrices</strong> with non-zero determinants are invertible. The inverse is useful for solving matrix equations and systems of linear equations. For 2×2 matrices, there's a straightforward formula. Inverse matrices satisfy the property (AB)⁻¹ = B⁻¹A⁻¹ (note the reversed order).
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Finding the Inverse of a 2×2 Matrix
+</h4>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
+<strong>Formula:</strong> If A = [a  b], then A⁻¹ = (1/det(A)) × [d   -b]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[c  d]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-c   a]
+<br>
+(Swap a and d, negate b and c, divide by determinant)
+</p>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example 1:</strong> Find the inverse of A = [3   2]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1   4]
+<br><br>
+<strong>Step 1:</strong> Find determinant
+<br>
+det(A) = (3)(4) - (2)(1) = 12 - 2 = 10
+<br><br>
+<strong>Step 2:</strong> Apply formula
+<br>
+A⁻¹ = (1/10) × [4   -2]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-1   3]
+<br><br>
+= [4/10   -2/10] = [0.4   -0.2]
+<br>
+&nbsp;&nbsp;[-1/10   3/10]   [-0.1   0.3]
+<br><br>
+<strong>Verify:</strong> AA⁻¹ should equal I
+<br>
+[3  2] × [0.4   -0.2] = [1  0]  ✓
+<br>
+[1  4]   [-0.1   0.3]   [0  1]
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+When Does an Inverse Exist?
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>A matrix A has an inverse if and only if:</strong>
+<br>
+1. A is square (same number of rows and columns)
+<br>
+2. det(A) ≠ 0
+<br><br>
+<strong>Example of non-invertible matrix:</strong>
+<br>
+A = [2   4]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[3   6]
+<br><br>
+det(A) = (2)(6) - (4)(3) = 12 - 12 = 0
+<br>
+Since det(A) = 0, this matrix has no inverse (singular matrix)
+<br><br>
+<strong>Why?</strong> The rows are proportional (second row = 1.5 × first row)
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Properties of Inverse Matrices
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Key properties:</strong>
+<br><br>
+1. AA⁻¹ = A⁻¹A = I
+<br>
+2. (A⁻¹)⁻¹ = A (inverse of inverse is original)
+<br>
+3. (AB)⁻¹ = B⁻¹A⁻¹ (order reverses!)
+<br>
+4. (A^T)⁻¹ = (A⁻¹)^T
+<br>
+5. det(A⁻¹) = 1/det(A)
+<br>
+6. If A is invertible, then A⁻¹ is unique
+<br>
+7. I⁻¹ = I (identity is its own inverse)
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Using Inverses to Solve Matrix Equations
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>To solve AX = B for X:</strong>
+<br>
+Multiply both sides by A⁻¹ on the left:
+<br>
+A⁻¹(AX) = A⁻¹B
+<br>
+(A⁻¹A)X = A⁻¹B
+<br>
+IX = A⁻¹B
+<br>
+X = A⁻¹B
+<br><br>
+<strong>Example:</strong> Solve [2  1]X = [5]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3  4]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6]
+<br><br>
+First find A⁻¹ where A = [2  1]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3  4]
+<br>
+det(A) = 8 - 3 = 5
+<br>
+A⁻¹ = (1/5)[4   -1]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-3   2]
+<br><br>
+X = A⁻¹B = (1/5)[4   -1] × [5] = (1/5)[14] = [14/5]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-3   2]   [6]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-3]   [-3/5]
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 3: Inverse Matrices
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    Which of the following is the inverse of [5  2]?
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2  1]
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>A)</strong> [1   -2]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-2   5]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>B)</strong> [1/5   2/5]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2/5   1/5]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>C)</strong> [5   2]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2   1]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>D)</strong> [-5  -2]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-2  -1]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>E)</strong> [1/1   -2/1]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-2/1   5/1]</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Step 1:</strong> det = (5)(1) - (2)(2) = 5 - 4 = 1</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Step 2:</strong> A⁻¹ = (1/1) × [1  -2] = [1   -2]</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-2  5]&nbsp;&nbsp;&nbsp;&nbsp;[-2   5]</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: A</strong> — Swap diagonal, negate off-diagonal, divide by det!</p>
+  </div>
+</div>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Matrices and Systems of Equations
+</h3>
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Matrices provide a powerful method for representing and solving <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">systems of linear equations</strong>. A system can be written in <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">matrix form</strong> as AX = B, where A is the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">coefficient matrix</strong>, X is the variable matrix, and B is the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">constant matrix</strong>. When A is invertible, the solution is X = A⁻¹B. This method is particularly efficient for solving multiple systems with the same coefficients but different constants. Understanding matrix representation connects algebra, geometry, and linear transformations.
+</p>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Writing Systems in Matrix Form
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>System of equations:</strong>
+<br>
+2x + 3y = 7
+<br>
+4x + 5y = 11
+<br><br>
+<strong>Matrix form AX = B:</strong>
+<br>
+[2  3] × [x] = [7]
+<br>
+[4  5]   [y]   [11]
+<br><br>
+Where:
+<br>
+A = [2  3] (coefficient matrix)
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[4  5]
+<br><br>
+X = [x] (variable matrix)
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[y]
+<br><br>
+B = [7]  (constant matrix)
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[11]
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Solving Using Matrix Inverses
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Example:</strong> Solve the system above using matrices
+<br><br>
+<strong>Step 1:</strong> Find det(A)
+<br>
+det(A) = (2)(5) - (3)(4) = 10 - 12 = -2
+<br><br>
+<strong>Step 2:</strong> Find A⁻¹
+<br>
+A⁻¹ = (1/-2) × [5   -3]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-4   2]
+<br><br>
+= [-5/2   3/2]
+<br>
+&nbsp;&nbsp;[2      -1]
+<br><br>
+<strong>Step 3:</strong> Calculate X = A⁻¹B
+<br>
+X = [-5/2   3/2] × [7]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[2      -1]    [11]
+<br><br>
+= [(-5/2)(7) + (3/2)(11)]
+<br>
+&nbsp;&nbsp;[(2)(7) + (-1)(11)]
+<br><br>
+= [-35/2 + 33/2] = [-2/2] = [-1]
+<br>
+&nbsp;&nbsp;[14 - 11]        [3]     [3]
+<br><br>
+<strong>Solution:</strong> x = -1, y = 3
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Augmented Matrix and Row Operations
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Augmented matrix [A|B]:</strong> Combine coefficient and constant matrices
+<br><br>
+For system: 2x + 3y = 7
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4x + 5y = 11
+<br><br>
+Augmented matrix: [2  3 | 7]
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4  5 | 11]
+<br><br>
+<strong>Row operations (preserve solutions):</strong>
+<br>
+1. Swap two rows
+<br>
+2. Multiply a row by nonzero constant
+<br>
+3. Add multiple of one row to another
+<br><br>
+<strong>Goal:</strong> Transform to [I|X] where X is the solution
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+Interpreting Solutions
+</h4>
+
+<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
+<p style="font-size: 16px; line-height: 1.7; margin: 0;">
+<strong>Three possibilities for a system:</strong>
+<br><br>
+<strong>1. Unique solution:</strong> det(A) ≠ 0
+<br>
+Lines intersect at exactly one point
+<br>
+Matrix A is invertible
+<br><br>
+<strong>2. No solution:</strong> det(A) = 0 and system is inconsistent
+<br>
+Lines are parallel (never intersect)
+<br>
+No solution exists
+<br><br>
+<strong>3. Infinitely many solutions:</strong> det(A) = 0 and system is dependent
+<br>
+Lines are identical (overlap completely)
+<br>
+Infinitely many points satisfy both equations
+</p>
+</div>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+ACT Example 4: Systems and Matrices
+</h4>
+
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
+  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
+    The system 3x + 2y = 8 and x + y = 3 can be written as AX = B. What is matrix A?
+  </p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;"><strong>F)</strong> [3  1]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2  1]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>G)</strong> [3  2]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1  1]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>H)</strong> [8  3]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3  1]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>J)</strong> [x  y]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[x  y]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;"><strong>K)</strong> [8]</p>
+  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3]</p>
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
+    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">Solution:</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;"><strong>Matrix A contains the coefficients:</strong></p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">First equation 3x + 2y = 8 → coefficients [3  2]</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">Second equation x + y = 3 → coefficients [1  1]</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">A = [3  2]</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1  1]</p>
+    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;"><strong style="color: #15803d;">Answer: G</strong> — Use coefficients of variables in order!</p>
+  </div>
+</div>
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Matrix dimensions m×n mean m rows and n columns; element aᵢⱼ is in row i, column j
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Add/subtract matrices by combining corresponding elements; must have same dimensions
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Multiply A(m×n) × B(n×p) to get C(m×p); inner dimensions must match
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Matrix multiplication is NOT commutative: generally AB ≠ BA
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>For 2×2 matrix [a b; c d], determinant = ad - bc (main diagonal minus other diagonal)
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Matrix is invertible if and only if determinant ≠ 0 (non-singular)
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>For 2×2 inverse: swap diagonal, negate off-diagonal, divide by determinant
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Inverse property: AA⁻¹ = A⁻¹A = I (identity matrix)
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>System AX = B has solution X = A⁻¹B when A is invertible
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Coefficient matrix A contains coefficients of variables from each equation as rows
+  </li>
+</ul>
