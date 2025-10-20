@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import TypewriterText from './TypewriterText';
 import InteractiveQuiz from './InteractiveQuiz';
 import InteractiveExample from './InteractiveExample';
-import ExampleCard from './ExampleCard';
+import ExampleModal from './ExampleModal';
 import { useTermTooltips } from '../hooks/useTermTooltips';
 
 const LessonSection = ({
@@ -26,6 +26,9 @@ const LessonSection = ({
 }) => {
   const contentRef = useRef(null);
   useTermTooltips(contentRef, lessonKey);
+
+  // Modal state for examples
+  const [isExampleModalOpen, setIsExampleModalOpen] = useState(false);
 
   // Check if this is a past section or already completed
   const isPastSection = index < currentSection;
@@ -74,27 +77,75 @@ const LessonSection = ({
         </>
       ) : section.type === 'example' ? (
         <>
-          {index === currentSection || index < currentSection ? (
-            section.data ? (
-              // New database-driven example
-              <ExampleCard
+          {/* Always show button for current or past sections */}
+          {index <= currentSection && section.data ? (
+            <>
+              {/* Compact button that stays even after completion */}
+              <div style={{
+                margin: '1.5rem 0',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem'
+              }}>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsExampleModalOpen(true);
+                  }}
+                  style={{
+                    backgroundColor: 'transparent',
+                    color: exampleCompletionStatus[index] ? '#059669' : '#6b7280',
+                    padding: '0.5rem 1rem',
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                    borderRadius: '4px',
+                    border: exampleCompletionStatus[index] ? '1px solid #d1fae5' : '1px solid #d1d5db',
+                    cursor: 'pointer',
+                    boxShadow: 'none',
+                    transition: 'all 0.2s ease',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = exampleCompletionStatus[index] ? 'rgba(5, 150, 105, 0.05)' : 'rgba(0, 0, 0, 0.02)';
+                    e.target.style.borderColor = exampleCompletionStatus[index] ? '#059669' : '#9ca3af';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = 'transparent';
+                    e.target.style.borderColor = exampleCompletionStatus[index] ? '#d1fae5' : '#d1d5db';
+                  }}
+                >
+                  <span style={{ fontSize: '0.875rem' }}>
+                    {exampleCompletionStatus[index] ? '✓' : '📝'}
+                  </span>
+                  {exampleCompletionStatus[index] ? 'Review Example' : 'Try an Example'}
+                </button>
+
+                {/* Inline hint for incomplete examples */}
+                {!exampleCompletionStatus[index] && index === currentSection && (
+                  <span style={{
+                    fontSize: '0.8rem',
+                    color: '#9ca3af',
+                    fontStyle: 'italic'
+                  }}>
+                    Required to continue
+                  </span>
+                )}
+              </div>
+
+              {/* Example Modal */}
+              <ExampleModal
                 example={section.data}
                 position={section.data.position}
-                isCurrentSection={index === currentSection}
+                isOpen={isExampleModalOpen}
                 typingSpeed={typingSpeed}
-                onComplete={() => onExampleComplete(index)}
+                onComplete={() => {
+                  setIsExampleModalOpen(false);
+                  onExampleComplete(index);
+                }}
               />
-            ) : (
-              // Old HTML-based example (fallback)
-              <InteractiveExample
-                content={section.content}
-                onComplete={() => onExampleComplete(index)}
-                currentSection={currentSection}
-                index={index}
-                typingSpeed={typingSpeed}
-                typewriterRef={index === currentSection ? typewriterRef : null}
-              />
-            )
+            </>
           ) : null}
         </>
       ) : section.type === 'quiz' ? (

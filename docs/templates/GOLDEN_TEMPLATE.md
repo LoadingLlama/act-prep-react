@@ -1,4 +1,4 @@
-# ACT Prep - GOLDEN TEMPLATE & CODE ARTIFACT
+# ACT Prep - GOLDEN TEMPLATE v4.0
 ## The Single Source of Truth for ALL Lesson Formatting
 
 **PURPOSE:** This document is the COMPLETE reference for creating consistent ACT lessons. Every lesson (English and Math) MUST follow these exact standards. No variations allowed.
@@ -11,93 +11,138 @@
 3. [Component Styling Standards](#component-styling-standards)
 4. [Database Architecture](#database-architecture)
 5. [Examples System](#examples-system)
-6. [Quiz System](#quiz-system)
-7. [Workflow & Scripts](#workflow--scripts)
-8. [Quality Checklist](#quality-checklist)
+6. [Glossary Terms System](#glossary-terms-system)
+7. [Quiz System](#quiz-system)
+8. [Workflow & Scripts](#workflow--scripts)
+9. [Quality Checklist](#quality-checklist)
 
 ---
 
 ## CORE PRINCIPLES
 
-### The Three Immutable Rules
+### The Five Immutable Rules
 
-1. **DATABASE FIRST** - All structured data (examples, quizzes, metadata) lives in Supabase, NEVER in HTML
-2. **CONSISTENCY ÜBER ALLES** - Same fonts, same spacing, same structure for EVERY lesson (English AND Math)
-3. **NO SPECIAL BOXES** - No tip boxes, warning boxes, gradient boxes except where explicitly specified
+1. **DATABASE FIRST** - All structured data (examples, quizzes, glossary terms) lives in Supabase, NEVER in HTML
+2. **BULLET POINTS OVER PARAGRAPHS** - Use concise bullet points with multiple indent levels, NOT long paragraphs
+3. **SPARSE BOLD TERMS** - Blue underlined bold terms ONLY for textbook definitions with Supabase glossary entries
+4. **CONSISTENCY ÜBER ALLES** - Same fonts, same spacing, same structure for EVERY lesson
+5. **WORKING EXAMPLES** - Examples stored in Supabase, positioned after new concepts are taught
 
 ### What Goes Where
 
-| Component | Storage Location | Rendered By |
-|-----------|-----------------|-------------|
-| Lesson metadata (title, order) | Supabase `lesson_metadata` table | `lessonStructure.js` |
-| Lesson HTML content | Supabase `section_content` table | `ProgressiveLessonRenderer` |
-| Examples | Supabase `examples` table | `ExampleCard` component |
-| Mastery Quizzes | Supabase `quizzes` table | `InteractiveQuiz` component |
-| Bold term definitions | Supabase `glossary_terms` table | `useTermTooltips` hook |
+| Component | Storage Location | Rendered By | Requirements |
+|-----------|-----------------|-------------|--------------|
+| Lesson metadata (title, topic number) | Supabase `lessons` table | `lessonStructure.js` | Must have topic_number field (e.g., "1.1") |
+| Lesson HTML content | Supabase `lessons.content` field | `ProgressiveLessonRenderer` | Bullet points, not paragraphs |
+| Examples (Working Examples) | Supabase `examples` table | `ExampleCard` component | Correlated to lesson_id, positioned after concepts |
+| Mastery Quizzes | Supabase `quizzes` table | `InteractiveQuiz` component | Position 11, end of lesson |
+| Bold term definitions | Supabase `glossary_terms` table | `useTermTooltips` hook | MUST exist before using bold styling |
 
 ---
 
 ## COMPLETE HTML STRUCTURE
 
+### CRITICAL FORMATTING RULES
+
+**❌ NEVER:**
+- Use long paragraphs (40+ words)
+- Use blue underlined bold for emphasis or random words
+- Use more or less than EXACTLY 4 key takeaways
+- Add custom boxes, gradients, or special formatting
+
+**✅ ALWAYS:**
+- Use bullet points with 2-3 indent levels
+- Use blue underlined bold ONLY for terms in glossary_terms table
+- Use EXACTLY 4 key takeaways (no more, no less)
+- Position examples after teaching new concepts
+
 ### EXACT Template (Copy-Paste This!)
 
 ```html
 <!--
-LESSON TEMPLATE v3.0
-Subject: [Math/English]
+LESSON TEMPLATE v4.0
+Subject: [Math/English/Reading/Science]
+Topic Number: [e.g., 1.1, 2.3, 5.2]
 Topic: [Specific Topic Name]
-Lesson Key: [e.g., 5.2]
+Lesson Key: [e.g., backsolving]
 -->
 
 <!-- ========================================
-     SECTION 1: OPENING PARAGRAPH
-     CRITICAL: This loads FIRST. Must have:
-     - 60-100 words
-     - 3-6 styled bold terms
-     - ACT context (# of questions)
+     SECTION 1: OPENING (2 SENTENCES MAX)
+     CRITICAL: Must have:
+     - MAXIMUM 2 sentences
+     - ACT context (# of questions or %)
+     - NO blue underlined terms here
      ======================================== -->
 
 <p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-Understanding <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">concept one</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">concept two</strong>, and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">concept three</strong> is essential for ACT [Subject] success. These concepts appear in 5-8 questions per test—that's [X]% of all [subject] questions! This lesson will teach you everything you need to know, from basic definitions to advanced strategies, helping you answer these questions quickly and accurately.
+[First sentence introducing the strategy/concept and its importance on the ACT.] [Second sentence stating how many questions this appears on, what students will learn, or why it matters—that's it, stop here!]
 </p>
 
 <!-- ========================================
      SECTION 2: CONTENT (EXACTLY 4 H3 SECTIONS)
      Each H3 = Major Concept
+     Use BULLET POINTS with indents, NOT paragraphs
      ======================================== -->
 
 <h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
 1. First Major Concept
 </h3>
 
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-Opening paragraph introducing this concept. Use <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">styled bold terms</strong> for all key vocabulary. Explain why this matters for the ACT and what students will learn.
-</p>
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Main point about this concept using <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">glossary term</strong> (only if term exists in database)
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Sub-point with more detail</li>
+      <li style="margin: 0.2rem 0;">Another sub-point
+        <ul style="margin: 0.2rem 0; padding-left: 1.5rem;">
+          <li style="margin: 0.15rem 0;">Third-level detail when needed</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Second main point for this concept
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Supporting detail</li>
+      <li style="margin: 0.2rem 0;">Another supporting detail</li>
+    </ul>
+  </li>
+</ul>
 
 <h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
 First Subsection Title
 </h4>
 
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-Detailed explanation paragraph (40+ words). Include examples, formulas, or rules. Use <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">bold terms</strong> for emphasis.
-</p>
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Key point about this subsection
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Detail or example</li>
+      <li style="margin: 0.2rem 0;">Another detail</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Another key point</li>
+</ul>
 
 <h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400;">
 Second Subsection Title
 </h4>
 
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-Another detailed explanation...
-</p>
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Key point
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Supporting detail</li>
+    </ul>
+  </li>
+</ul>
 
 <!-- Example 1 will be inserted here by ExampleCard component -->
-<!-- Database: position=1, lesson_id=[UUID] -->
+<!-- Database: position=1, lesson_id=[UUID], shown AFTER teaching concept -->
 
 <h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
 2. Second Major Concept
 </h3>
 
-<!-- Repeat structure for H3 sections 2, 3, 4 -->
+<!-- Repeat bullet point structure for H3 sections 2, 3, 4 -->
+<!-- Place examples AFTER teaching each concept -->
 
 <!-- Example 2 after H3 #2 -->
 <!-- Example 3 after H3 #3 -->
@@ -114,7 +159,7 @@ Hidden Separator
 
 <!-- ========================================
      SECTION 4: KEY TAKEAWAYS
-     SIMPLE GREEN LIST - NO GRADIENT BOXES
+     EXACTLY 4 BULLET POINTS - NO MORE, NO LESS
      ======================================== -->
 
 <h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
@@ -123,7 +168,7 @@ Key Takeaways
 
 <ul style="list-style: none; padding: 0; margin: 0;">
   <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
-    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>First key takeaway with explanation
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>First key takeaway (concise, actionable)
   </li>
   <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
     <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Second key takeaway
@@ -134,7 +179,7 @@ Key Takeaways
   <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
     <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Fourth key takeaway
   </li>
-  <!-- 4-6 total -->
+  <!-- EXACTLY 4 - NO MORE, NO LESS -->
 </ul>
 
 <!-- MASTERY QUIZ: Stored in database, NOT in HTML -->
@@ -150,9 +195,9 @@ Key Takeaways
 **ALL text in lessons MUST use:**
 ```css
 font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-font-size: 16px; /* Body text */
+font-size: 16px; /* Body text and bullet points */
 font-size: 17px; /* Questions and answer choices */
-line-height: 1.7; /* Body text */
+line-height: 1.7; /* Body text and bullets */
 line-height: 1.6; /* Questions */
 color: #1f2937; /* Primary text */
 ```
@@ -162,16 +207,41 @@ color: #1f2937; /* Primary text */
 <!-- H2: Lesson Title (auto-generated, not in HTML) -->
 <h2 style="font-size: 1.875rem; font-weight: 700; color: #111827;">
 
-<!-- H3: Major Sections -->
+<!-- H3: Major Sections (exactly 4) -->
 <h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
 
-<!-- H4: Subsections -->
+<!-- H4: Subsections (2-4 per H3) -->
 <h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
 ```
 
-**Bold Terms (Key Vocabulary):**
+**Bold Terms (ONLY FOR GLOSSARY TERMS):**
 ```html
-<strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">term</strong>
+<!-- ✅ CORRECT: Term exists in glossary_terms table -->
+<strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">backsolving</strong>
+
+<!-- ❌ WRONG: Using for emphasis without glossary entry -->
+<strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">very important</strong>
+
+<!-- ✅ CORRECT: Use regular text for emphasis -->
+This is <strong>important</strong> (regular bold, no blue/underline)
+```
+
+**Bullet Points:**
+```html
+<!-- Main list -->
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Main point
+    <!-- Nested list (level 2) -->
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Sub-point
+        <!-- Nested list (level 3) -->
+        <ul style="margin: 0.2rem 0; padding-left: 1.5rem;">
+          <li style="margin: 0.15rem 0;">Detail</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 ```
 
 ### Spacing
@@ -180,7 +250,12 @@ color: #1f2937; /* Primary text */
 /* Section margins */
 margin-top: 5rem;      /* Between H3 sections */
 margin-top: 2rem;      /* Between H4 subsections */
-margin: 0.5rem 0 1rem 0; /* Paragraphs */
+margin: 0.5rem 0 1rem 0; /* Bullet lists */
+
+/* List item margins */
+margin: 0.3rem 0;      /* Top-level bullet */
+margin: 0.2rem 0;      /* Second-level bullet */
+margin: 0.15rem 0;     /* Third-level bullet */
 
 /* Example boxes */
 margin: 3rem 0;        /* Around entire ExampleCard */
@@ -191,7 +266,7 @@ border-radius: 8px;    /* Example box corners */
 ### Colors
 
 ```css
-/* Primary Blue (for bold terms) */
+/* Primary Blue (ONLY for glossary terms) */
 #2563eb
 
 /* Text Colors */
@@ -219,68 +294,58 @@ border-radius: 8px;    /* Example box corners */
 ### Table Structure
 
 ```sql
--- 1. LESSON METADATA (Core info)
-CREATE TABLE lesson_metadata (
+-- 1. LESSONS (Main lesson table)
+CREATE TABLE lessons (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  lesson_key TEXT UNIQUE NOT NULL,  -- e.g., '5.2' (MUST match lessonStructure.js)
+  lesson_key TEXT UNIQUE NOT NULL,  -- e.g., 'backsolving'
+  topic_number TEXT,                -- e.g., '1.1', '2.3', '5.2' (REQUIRED for display)
   title TEXT NOT NULL,
   subject TEXT CHECK (subject IN ('math', 'english', 'reading', 'science')),
   category TEXT,
-  difficulty_level INTEGER CHECK (difficulty_level BETWEEN 1 AND 5),
+  content TEXT,                     -- The HTML content
   order_index INTEGER,
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 2. LESSON SECTIONS (Chapter/section divisions)
-CREATE TABLE lesson_sections (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  lesson_id UUID REFERENCES lesson_metadata(id) ON DELETE CASCADE,
-  section_key TEXT NOT NULL,  -- e.g., 'percentages-main'
-  title TEXT,
-  section_type TEXT DEFAULT 'content',
-  order_index INTEGER,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
-
--- 3. SECTION CONTENT (Actual HTML)
-CREATE TABLE section_content (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  section_id UUID REFERENCES lesson_sections(id) ON DELETE CASCADE,
-  content TEXT NOT NULL,  -- The HTML content
-  content_type TEXT DEFAULT 'html',
-  order_index INTEGER,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
-
--- 4. EXAMPLES (Structured example data)
+-- 2. EXAMPLES (Working Examples)
 CREATE TABLE examples (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  lesson_id UUID REFERENCES lesson_metadata(id) ON DELETE CASCADE,
-  position INTEGER NOT NULL,  -- 1, 2, 3, 4
+  lesson_id UUID REFERENCES lessons(id) ON DELETE CASCADE,
+  topic_number TEXT,                -- Links to lesson topic_number (e.g., '1.1')
+  position INTEGER NOT NULL,        -- 1, 2, 3, 4 (position after H3 sections)
   title TEXT NOT NULL,
   problem_text TEXT NOT NULL,
-  choices JSONB,  -- [{"letter": "A", "text": "..."}, ...]
+  choices JSONB,                    -- [{"letter": "A", "text": "..."}, ...]
   correct_answer TEXT,
-  solution_steps JSONB NOT NULL,  -- [{"step": 1, "text": "..."}, ...]
+  solution_steps JSONB NOT NULL,    -- [{"step": 1, "text": "..."}, ...]
   answer_explanation TEXT,
   diagram_svg TEXT,
-  is_worked_example BOOLEAN DEFAULT FALSE,
+  is_worked_example BOOLEAN DEFAULT TRUE,
   created_at TIMESTAMPTZ DEFAULT NOW(),
   UNIQUE(lesson_id, position)
 );
 
--- 5. QUIZZES (Mastery checks)
+-- 3. GLOSSARY TERMS (Hover definitions - REQUIRED for blue underlined bold)
+CREATE TABLE glossary_terms (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  term TEXT UNIQUE NOT NULL,        -- Exact text that appears in lessons
+  definition TEXT NOT NULL,         -- Hover tooltip definition
+  lesson_key TEXT,                  -- Which lesson introduces this term
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 4. QUIZZES (Mastery checks)
 CREATE TABLE quizzes (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  lesson_id UUID REFERENCES lesson_metadata(id) ON DELETE CASCADE,
+  lesson_id UUID REFERENCES lessons(id) ON DELETE CASCADE,
   title TEXT NOT NULL,
-  position INTEGER NOT NULL,  -- Usually 11 (end of lesson)
+  position INTEGER NOT NULL,        -- Usually 11 (end of lesson)
   is_required BOOLEAN DEFAULT TRUE,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 6. QUIZ QUESTIONS & OPTIONS
+-- 5. QUIZ QUESTIONS & OPTIONS
 CREATE TABLE quiz_questions (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   quiz_id UUID REFERENCES quizzes(id) ON DELETE CASCADE,
@@ -298,15 +363,6 @@ CREATE TABLE quiz_options (
   order_index INTEGER,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
-
--- 7. GLOSSARY TERMS (Tooltip definitions)
-CREATE TABLE glossary_terms (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  term TEXT UNIQUE NOT NULL,
-  definition TEXT NOT NULL,
-  lesson_key TEXT,  -- Optional: which lesson introduces this term
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
 ```
 
 ### Service Methods (Use These!)
@@ -315,8 +371,8 @@ CREATE TABLE glossary_terms (
 // LessonsService
 import LessonsService from '../services/api/lessons.service';
 
-await LessonsService.getAllLessons();           // Get all lesson metadata
-await LessonsService.getLessonByKey('5.2');     // Get specific lesson with content
+await LessonsService.getAllLessons();           // Get all lessons
+await LessonsService.getLessonByKey('backsolving'); // Get specific lesson
 
 // ExamplesService
 import ExamplesService from '../services/api/examples.service';
@@ -348,77 +404,178 @@ await QuizzesService.getQuizzesByLessonId(lessonUUID);    // Get all quizzes for
 
 **The component matches InteractiveQuiz styling EXACTLY.**
 
-### Creating Examples
+### Creating Examples in Supabase
 
-**Step 1: Write Example HTML (for preview only)**
+**Step 1: Create Example Script**
 
-```html
-<h4 style="margin: 0 0 1rem 0; padding-left: 0.75rem; border-left: 4px solid #b91c1c; color: #000000; font-weight: 700;">
-Example 1: Descriptive Title
-</h4>
+Create `/scripts/create-examples-[topic-number].mjs`:
 
-<div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin: 1rem 0 2rem 0; border: 2px solid #f59e0b;">
-  <p style="font-size: 16px; margin: 0 0 1rem 0; font-weight: 500;">
-    A circular garden has a diameter of 10 feet. What is the area?
-  </p>
+```javascript
+import { createClient } from '@supabase/supabase-js';
 
-  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.75rem 0 0.5rem 0; color: #000000;">
-    <strong>A)</strong> 10π
-  </p>
-  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;">
-    <strong>B)</strong> 25π
-  </p>
-  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;">
-    <strong>C)</strong> 50π
-  </p>
-  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;">
-    <strong>D)</strong> 100π
-  </p>
-  <p style="font-family: 'Times New Roman', Times, serif; font-size: 15px; margin: 0.5rem 0; color: #000000;">
-    <strong>E)</strong> 200π
-  </p>
+const supabaseUrl = 'https://rabavobdklnwvwsldbix.supabase.co';
+const supabaseKey = 'YOUR_SERVICE_ROLE_KEY';
+const supabase = createClient(supabaseUrl, supabaseKey);
 
-  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px solid #f59e0b;">
-    <p style="font-size: 15px; margin: 0 0 0.75rem 0; font-weight: 600; color: #92400e;">
-      Solution:
-    </p>
-    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">
-      <strong>Step 1:</strong> The problem gives diameter (10 ft), but the formula uses radius!
-    </p>
-    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">
-      <strong>Step 2:</strong> Radius = diameter ÷ 2 = 10 ÷ 2 = 5 feet
-    </p>
-    <p style="font-size: 15px; line-height: 1.6; margin: 0.5rem 0; color: #000000;">
-      <strong>Step 3:</strong> Area = πr² = π(5)² = 25π square feet
-    </p>
-    <p style="font-size: 15px; line-height: 1.6; margin: 0.75rem 0 0 0; color: #000000;">
-      <strong style="color: #15803d;">Answer: B</strong> — Keep π in the answer; ACT often doesn't want decimals.
-    </p>
-  </div>
-</div>
+async function createExamples() {
+  // 1. Get lesson UUID
+  const { data: lesson, error: lessonError } = await supabase
+    .from('lessons')
+    .select('id')
+    .eq('lesson_key', 'backsolving')
+    .single();
+
+  if (lessonError || !lesson) {
+    console.error('Lesson not found');
+    return;
+  }
+
+  // 2. Create examples
+  const examples = [
+    {
+      lesson_id: lesson.id,
+      topic_number: '1.1',
+      position: 1,
+      title: 'Basic Backsolving with Radicals',
+      problem_text: 'If √(x + 10) − 2√(x − 2) = 0, what is the value of x?',
+      choices: [
+        { letter: 'A', text: '2' },
+        { letter: 'B', text: '6' },
+        { letter: 'C', text: '14' },
+        { letter: 'D', text: '18' },
+        { letter: 'E', text: '22' }
+      ],
+      correct_answer: 'B',
+      solution_steps: [
+        { step: 1, text: 'Start with C (14): √(14 + 10) − 2√(14 − 2) = √24 − 2√12 ≈ 4.9 − 6.9 ≠ 0' },
+        { step: 2, text: 'Try B (6): √(6 + 10) − 2√(6 − 2) = √16 − 2√4 = 4 − 2(2) = 0 ✓' },
+        { step: 3, text: 'Since B works, it\'s the answer!' }
+      ],
+      answer_explanation: 'Starting with the middle value (C) lets us eliminate multiple choices quickly. When we test B, all conditions are satisfied.',
+      is_worked_example: true
+    },
+    // Add 3 more examples for positions 2, 3, 4
+  ];
+
+  for (const example of examples) {
+    const { data, error } = await supabase
+      .from('examples')
+      .insert(example)
+      .select();
+
+    if (error) {
+      console.error(`Failed to create example ${example.position}:`, error);
+    } else {
+      console.log(`✅ Created example ${example.position}: ${example.title}`);
+    }
+  }
+}
+
+createExamples();
 ```
 
-**Step 2: Run Migration Script**
+**Step 2: Run Script**
 
 ```bash
-node scripts/migrate-examples-to-db.mjs
+node scripts/create-examples-1.1.mjs
 ```
 
-This extracts all examples from HTML files and uploads to the `examples` table in Supabase.
+**Step 3: Verify**
 
-**Step 3: Verify in Database**
+Check Supabase → `examples` table → confirm 4 examples exist with correct `topic_number` and `position` fields.
 
-Check Supabase dashboard → `examples` table → confirm 4 examples exist for your lesson.
+### Example Positioning Rules
 
-### Example Positioning
+**CRITICAL:** Examples appear AFTER teaching the concept, not before!
 
-Examples use the `position` field (1, 2, 3, 4) to determine placement:
-- `position: 1` → Appears after H3 section #1
-- `position: 2` → Appears after H3 section #2
-- `position: 3` → Appears after H3 section #3
-- `position: 4` → Appears after H3 section #4
+- `position: 1` → After H3 #1 (after teaching first major concept)
+- `position: 2` → After H3 #2 (after teaching second major concept)
+- `position: 3` → After H3 #3 (after teaching third major concept)
+- `position: 4` → After H3 #4 (after teaching fourth major concept)
 
 **The ProgressiveLessonRenderer automatically places examples correctly based on H3 count.**
+
+---
+
+## GLOSSARY TERMS SYSTEM
+
+### ⚠️ CRITICAL: Blue Underlined Bold Terms MUST Have Glossary Entries
+
+**Before using blue underlined bold styling, you MUST create a glossary entry in Supabase!**
+
+### Creating Glossary Terms
+
+**Step 1: Create Glossary Script**
+
+Create `/scripts/create-glossary-[topic-number].mjs`:
+
+```javascript
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = 'https://rabavobdklnwvwsldbix.supabase.co';
+const supabaseKey = 'YOUR_SERVICE_ROLE_KEY';
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+async function createGlossaryTerms() {
+  const terms = [
+    {
+      term: 'backsolving',
+      definition: 'A problem-solving strategy where you test answer choices by plugging them into the problem conditions instead of solving algebraically.',
+      lesson_key: 'backsolving'
+    },
+    {
+      term: 'working backwards',
+      definition: 'Another name for backsolving; starting with the answer choices and testing which one satisfies all problem conditions.',
+      lesson_key: 'backsolving'
+    },
+    {
+      term: 'answer choice testing',
+      definition: 'The process of systematically testing each answer choice to determine which one is correct.',
+      lesson_key: 'backsolving'
+    }
+  ];
+
+  for (const term of terms) {
+    const { data, error } = await supabase
+      .from('glossary_terms')
+      .insert(term)
+      .select();
+
+    if (error) {
+      console.error(`Failed to create term "${term.term}":`, error);
+    } else {
+      console.log(`✅ Created glossary term: ${term.term}`);
+    }
+  }
+}
+
+createGlossaryTerms();
+```
+
+**Step 2: Run Script**
+
+```bash
+node scripts/create-glossary-1.1.mjs
+```
+
+**Step 3: Verify**
+
+Check Supabase → `glossary_terms` table → confirm all terms exist.
+
+### Glossary Term Usage Rules
+
+**✅ DO use blue underlined bold for:**
+- Textbook definition terms (e.g., "backsolving", "subject-verb agreement")
+- Technical vocabulary (e.g., "independent clause", "quadratic formula")
+- Strategy names (e.g., "working backwards", "elimination method")
+
+**❌ DON'T use blue underlined bold for:**
+- Emphasis words (e.g., "very important", "always remember")
+- Common words (e.g., "question", "answer", "test")
+- Phrases without specific definitions (e.g., "key point", "main idea")
+- Random words for styling purposes
+
+**RULE:** If you can't write a clear textbook definition for it, DON'T use blue underlined bold!
 
 ---
 
@@ -437,115 +594,7 @@ Examples use the `position` field (1, 2, 3, 4) to determine placement:
 
 ### Creating Quizzes
 
-**Step 1: Create Quiz Script**
-
-Create `/scripts/create-quiz-[lesson-key].mjs`:
-
-```javascript
-import { createClient } from '@supabase/supabase-js';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const supabaseUrl = 'https://rabavobdklnwvwsldbix.supabase.co';
-const supabaseKey = 'YOUR_SUPABASE_ANON_KEY';
-const supabase = createClient(supabaseUrl, supabaseKey);
-
-async function createQuiz() {
-  // 1. Get lesson UUID
-  const { data: lesson, error: lessonError } = await supabase
-    .from('lesson_metadata')
-    .select('id')
-    .eq('lesson_key', '5.2')  // Change to your lesson key
-    .single();
-
-  if (lessonError || !lesson) {
-    console.error('Lesson not found');
-    return;
-  }
-
-  // 2. Create quiz
-  const { data: quiz, error: quizError } = await supabase
-    .from('quizzes')
-    .insert({
-      lesson_id: lesson.id,
-      title: '🔒 Mastery Quiz: Percentages',
-      position: 11,
-      is_required: true
-    })
-    .select()
-    .single();
-
-  if (quizError) {
-    console.error('Quiz creation failed:', quizError);
-    return;
-  }
-
-  // 3. Create questions
-  const questions = [
-    {
-      text: 'What percent is equivalent to 3/4?',
-      options: [
-        { text: '34%', isCorrect: false },
-        { text: '43%', isCorrect: false },
-        { text: '75%', isCorrect: true, explanation: '3÷4 = 0.75 = 75%' },
-        { text: '80%', isCorrect: false },
-        { text: '85%', isCorrect: false }
-      ]
-    },
-    // ... 4-7 more questions
-  ];
-
-  for (let i = 0; i < questions.length; i++) {
-    const q = questions[i];
-
-    const { data: question, error: qError } = await supabase
-      .from('quiz_questions')
-      .insert({
-        quiz_id: quiz.id,
-        text: q.text,
-        order_index: i
-      })
-      .select()
-      .single();
-
-    if (qError) {
-      console.error(`Question ${i+1} failed:`, qError);
-      continue;
-    }
-
-    for (let j = 0; j < q.options.length; j++) {
-      const opt = q.options[j];
-      await supabase.from('quiz_options').insert({
-        question_id: question.id,
-        text: opt.text,
-        is_correct: opt.isCorrect,
-        explanation: opt.explanation || null,
-        order_index: j
-      });
-    }
-  }
-
-  console.log('✅ Quiz created successfully!');
-}
-
-createQuiz();
-```
-
-**Step 2: Run Script**
-
-```bash
-node scripts/create-quiz-5.2.mjs
-```
-
-**Step 3: Verify**
-
-- Check Supabase → `quizzes` table → verify quiz exists
-- Check `quiz_questions` and `quiz_options` tables
-- Test in UI by navigating to lesson
+**Follow the same pattern as before - create a quiz script with 5-8 questions testing all major concepts from the lesson.**
 
 ---
 
@@ -554,49 +603,40 @@ node scripts/create-quiz-5.2.mjs
 ### Full Lesson Creation Workflow
 
 ```bash
-# 1. Create HTML file in /docs
-touch docs/LESSON_5_2_PERCENTAGES.html
+# 1. Create glossary terms FIRST (before writing lesson)
+touch scripts/create-glossary-1.1.mjs
+# ... define terms with clear definitions ...
+node scripts/create-glossary-1.1.mjs
 
-# 2. Write lesson content following template above
-# ... edit LESSON_5_2_PERCENTAGES.html ...
+# 2. Create lesson HTML file
+touch docs/LESSON_1_1_BACKSOLVING.html
+# ... write lesson content with bullet points ...
+# ... use blue underlined bold ONLY for glossary terms ...
 
 # 3. Create upload script
-touch scripts/upload-lesson-5.2.mjs
+touch scripts/upload-lesson-1.1.mjs
+# ... configure with lesson metadata including topic_number ...
 
-# 4. Configure upload script with lesson metadata
-# ... edit upload-lesson-5.2.mjs ...
+# 4. Upload lesson to Supabase
+node scripts/upload-lesson-1.1.mjs
 
-# 5. Upload to Supabase
-node scripts/upload-lesson-5.2.mjs
+# 5. Create working examples
+touch scripts/create-examples-1.1.mjs
+# ... define 4 examples at positions 1-4 ...
+node scripts/create-examples-1.1.mjs
 
-# 6. Extract and upload examples
-node scripts/migrate-examples-to-db.mjs
+# 6. Create mastery quiz
+touch scripts/create-quiz-1.1.mjs
+# ... define 5-8 questions ...
+node scripts/create-quiz-1.1.mjs
 
-# 7. Create mastery quiz
-node scripts/create-quiz-5.2.mjs
+# 7. Update lessonStructure.js
+# Add entry with chapterNum: '1.1'
 
-# 8. Update lessonStructure.js
-# Add entry: { id: '5.2', ... }
-
-# 9. Test in browser
+# 8. Test in browser
 npm start
 # Navigate to lesson, verify everything displays correctly
 ```
-
-### Critical Script: migrate-examples-to-db.mjs
-
-This script:
-1. Reads all `LESSON_*.html` files from `/docs`
-2. Extracts examples using regex patterns
-3. Parses problem text, choices, solution steps, answers
-4. Uploads to Supabase `examples` table
-5. Links to lessons via `lesson_id`
-
-**Supports TWO HTML formats:**
-- **Old format**: Plain paragraphs with `<span>` choices
-- **New format**: Yellow gradient boxes with `<p>` choices
-
-**Always run after creating/updating lessons with examples!**
 
 ---
 
@@ -605,79 +645,80 @@ This script:
 ### Before Marking a Lesson Complete
 
 **HTML Content:**
-- [ ] Opening paragraph: 60-100 words with 3-6 styled bold terms
-- [ ] ACT context mentioned (e.g., "5-8 questions per test")
+- [ ] Opening: EXACTLY 2 sentences (no more!)
+- [ ] ACT context mentioned (e.g., "appears on 5-8 questions" or "13-20% of test")
 - [ ] Exactly 4 H3 sections with numbered titles
+- [ ] Each H3 uses bullet points with 2-3 indent levels (NO long paragraphs)
 - [ ] Each H3 has 2-4 H4 subsections
-- [ ] All bold terms use full CSS: `<strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">`
+- [ ] ALL blue underlined bold terms exist in `glossary_terms` table (verify in Supabase!)
+- [ ] NO blue underlined bold used for emphasis or random words
 - [ ] Hidden H3 separator before Key Takeaways
-- [ ] Key Takeaways: Simple green list (#2e7d32) with checkmarks (#4caf50)
-- [ ] 4-6 key takeaways total
-- [ ] NO tip boxes, warning boxes, or custom gradient boxes (except examples)
+- [ ] Key Takeaways: EXACTLY 4 bullet points (no more, no less)
+- [ ] NO tip boxes, warning boxes, or custom gradient boxes
+
+**Glossary Terms:**
+- [ ] All glossary terms created in Supabase BEFORE writing lesson
+- [ ] Each term has clear, concise textbook definition
+- [ ] Terms are used sparingly (3-6 per lesson max)
+- [ ] Hover tooltips work in UI (test this!)
+- [ ] No blue underlined bold without glossary entry
 
 **Examples:**
-- [ ] Exactly 4 examples in HTML (for preview)
+- [ ] Exactly 4 examples in Supabase `examples` table
+- [ ] Each example has `topic_number` field matching lesson (e.g., '1.1')
 - [ ] Each example has clear title
 - [ ] Problem text is ACT-realistic
-- [ ] Answer choices alternate A-E / F-K pattern
-- [ ] 3-4 solution steps with `<strong>Step X:</strong>` labels
-- [ ] Green answer explanation at end
-- [ ] Migration script executed: `node scripts/migrate-examples-to-db.mjs`
-- [ ] Examples verified in Supabase `examples` table
+- [ ] Answer choices A-E
+- [ ] 3-4 solution steps
+- [ ] Answer explanation provided
 - [ ] Examples display correctly in UI (with ExampleCard styling)
-
-**Mastery Quiz:**
-- [ ] Quiz script created in `/scripts/create-quiz-[key].mjs`
-- [ ] 5-8 questions covering all major concepts
-- [ ] Mix of easy, medium, hard questions
-- [ ] Each question has 5 answer choices (A-E)
-- [ ] Correct answer has detailed explanation
-- [ ] Quiz uploaded to Supabase: `node scripts/create-quiz-[key].mjs`
-- [ ] Quiz verified in database (position: 11)
-- [ ] Quiz displays at end of lesson in UI
+- [ ] Examples positioned AFTER teaching concepts
 
 **Database & Structure:**
-- [ ] Upload script created and executed
-- [ ] Lesson appears in `lesson_metadata` table
-- [ ] Content appears in `section_content` table
-- [ ] `lesson_key` in database matches `id` in `lessonStructure.js` (e.g., both '5.2')
-- [ ] Updated `lessonStructure.js` with new lesson entry
-- [ ] Lesson loads correctly in UI (no fallback text)
+- [ ] Lesson has `topic_number` field (e.g., '1.1')
+- [ ] Lesson `lesson_key` matches `id` in `lessonStructure.js`
+- [ ] `lessonStructure.js` has `chapterNum: '1.1'` entry
+- [ ] Topic number displays in lessons tab/navigator
+- [ ] Lesson loads correctly in UI
 - [ ] All examples appear after correct H3 sections
+- [ ] All glossary terms show hover tooltips
 - [ ] Mastery quiz appears at end
 
 **Consistency:**
-- [ ] Same font family as all other lessons (SF Pro Display, etc.)
-- [ ] Same font sizes (16px body, 17px questions)
+- [ ] Same font family as all other lessons
+- [ ] Same font sizes (16px bullets, 17px questions)
 - [ ] Same colors for headers, bold terms, takeaways
 - [ ] Same spacing and margins
-- [ ] Examples use ExampleCard component (not hardcoded HTML)
+- [ ] Bullet points, not paragraphs
 - [ ] No unique/custom formatting
 
 ---
 
 ## COMMON MISTAKES & FIXES
 
+### ❌ MISTAKE: Blue underlined bold tooltips not working
+**FIX:** Check `glossary_terms` table - term must exist EXACTLY as written (case-sensitive). Verify `useTermTooltips` hook is active.
+
+### ❌ MISTAKE: Using blue underlined bold for emphasis
+**FIX:** Remove blue underlined styling from non-definition words. Use regular `<strong>` for emphasis.
+
+### ❌ MISTAKE: Long paragraphs instead of bullet points
+**FIX:** Convert ALL paragraphs (except 2-sentence intro) to bullet points with indent levels.
+
+### ❌ MISTAKE: More than 2 sentences in opening
+**FIX:** Reduce to EXACTLY 2 sentences. No exceptions.
+
+### ❌ MISTAKE: Wrong number of key takeaways (3, 5, or 6)
+**FIX:** Must be EXACTLY 4. Add or remove to meet requirement.
+
 ### ❌ MISTAKE: Examples not showing
-**FIX:** Run `node scripts/migrate-examples-to-db.mjs` to extract from HTML
+**FIX:** Check `examples` table in Supabase. Verify `lesson_id` and `position` fields are correct.
 
-### ❌ MISTAKE: Empty example boxes
-**FIX:** Check `problem_text` field in database - likely migration regex didn't match. Update migration script regex patterns.
+### ❌ MISTAKE: Examples appear before teaching concept
+**FIX:** Ensure examples are positioned AFTER their corresponding H3 sections teach the concept.
 
-### ❌ MISTAKE: Lesson shows "Comprehensive ACT-relevant content for..."
-**FIX:** `lesson_key` in database doesn't match `id` in `lessonStructure.js`. Make them identical.
-
-### ❌ MISTAKE: Examples appear in wrong order
-**FIX:** Examples positioned by H3 count. Ensure HTML has exactly 4 H3 sections and examples have positions 1-4.
-
-### ❌ MISTAKE: Quiz not appearing
-**FIX:** Check quiz `position` field - should be 11. Check `is_required: true`.
-
-### ❌ MISTAKE: Different fonts in English vs Math lessons
-**FIX:** Both MUST use `-apple-system, BlinkMacSystemFont, "SF Pro Display"...` - update all HTML.
-
-### ❌ MISTAKE: Tip boxes/warning boxes from old lessons
-**FIX:** Remove ALL custom boxes. Only use: standard paragraphs, Key Takeaways green list, examples (in database).
+### ❌ MISTAKE: Topic number not showing in lessons tab
+**FIX:** Add `topic_number` field to lesson in database (e.g., '1.1'). Update `lessonStructure.js` with `chapterNum: '1.1'`.
 
 ---
 
@@ -685,7 +726,15 @@ This script:
 
 This template represents the COMPLETE and FINAL standard for all ACT lessons. Any deviation from this standard must be explicitly approved and documented.
 
+**Key Changes in v4.0:**
+- Bullet points replace paragraphs throughout content
+- Opening reduced to 2 sentences maximum
+- Blue underlined bold ONLY for glossary terms (verified in database)
+- Key takeaways EXACTLY 4 (no more, no less)
+- Topic numbers required in database and UI
+- Examples positioned after teaching concepts
+
 **When in doubt, refer to this document. This is the source of truth.**
 
-Last Updated: 2025-10-16
-Version: 3.0 (Database-First Architecture)
+Last Updated: 2025-10-19
+Version: 4.0 (Bullet Points, Sparse Terms, Working Examples)

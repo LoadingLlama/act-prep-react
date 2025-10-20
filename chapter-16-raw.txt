@@ -1,0 +1,1291 @@
+Chapter 16: Quadratics
+Quadratics are mathematical expressions containing a term to the second degree with a standard form of
+
+y=ax*+bx+c
+For quadratics on the ACT, you need to be able to multiply binomials (FOIL), factor, interpret quadratics on a
+graph, use the quadratic formula, and find the vertex.
+
+G) Multiplying Binomials
+In order to multiply binomials, you will need to FOIL, which stands for First, Outer, Inner, Last. You are
+likely very familiar with how to multiply binomials by now, but just in case you can use the example below to
+
+review.
+
+To multiply (2x + 3)(x + 6)...
+
+First terms: (2x)(x) = 2x?
+Outer terms: (2x)(6) = 12x
+Inner terms: (3)(x) = 3x
+
+Last terms: (3)(6) = 18
+
+so we get: (2x + 3)(x + 6) = 2x? +12x+ 3x+18 = 2x7+15x+18
+Multiplying Perfect Squares — Don’t Forget to FOIL
+When multiplying perfect squares, make sure to avoid the common mistake of forgetting to FOIL.
+
+(x +5)? #x2425
+To help avoid this mistake, you can write the perfect square as two expressions and then FOIL.
+
+(x +5)? =(x+5)(x +5) = x2 4+5x+5x4
+25
+So
+
+(x +5)? =x?24+10x+25
+
+Example 1: Which of the following is equivalent to (2x + 3)? + 4x ?
+A. 4x*+16x+9
+
+B. 4x*+4x+9
+
+C. 2x*+4x+3
+
+D. 6x? +9
+
+Solution: To solve, multiply out the squared expression and then combine like terms.
+
+(2x + 3)? + 4x
+(2x + 3)(2x + 3) +4x
+
+Ax* +12x+9+4x
+Ax? + 16x +9
+The answer is A.
+
+Shortcut Method — Substitution: In Chapter 2, we discussed using substitution (plug in a number for x) to
+solve a question like this. Solving simpler questions like Example 1 algebraically works but using substitution
+is a good backup method. This trick is particularly useful if you ever get stuck trying to solve algebraically, as
+you will still be able to find which answer choice is correct.
+
+- 134-
+
+Chapter 16: Quadratics
+
+Factoring Quadratics
+On the ACT, you often need to factor quadratics. Factoring can help you simplify expressions or identify the
+solutions of a quadratic equation.
+
+The “Box” Method
+We can use the “box” method to find the factors for a quadratic equation. The factors will appear on the
+outside of the box and the quadratic will appear in the box.
+To see how this works, let’s factor the quadratic below:
+
+f(x) = 3x7-x-2
+
+x
+
+1. Place the x? term in the top left of the box. Place the number in the bottom right.
+
+3x]
+
+3x2
+
+2. Write down the two terms that must multiply to the top left term (3x and x)
+outside the box.
+
+—?
+
+3. Identify which number(s) can multiply to the number in the bottom right of the
+
+x
+
+box (1 and —2, 2 and —1).
+
+—1
+
+3x}
+
+3x? | —3x
+
+2)
+
+2x
+
+4. Place the pairs of number outside the box. You have the correct setup when the
+top right and bottom left boxes (the x-terms) add up to the middle term in our
+
+—2
+
+quadratic, which in this example is —x. The factors appear on the outside of the
+box.
+
+5. Write down the quadratic in factored form.
+
+3x7 -x-2=(3x+2)(x-1)
+
+There are other ways to factor quadratics. If you have a different method that works for you, use that method.
+We will not review factoring any more beyond this example in this book. If you need to review factoring, look
+up some lessons and practice problems online and in your textbooks.
+
+“Easy to Factor” Quadratics
+Keep an eye out for perfect squares and difference of squares on the ACT. These are very common in
+quadratics questions, and they can be factored quickly and easily as long as you spot the pattern. The table
+below shows the three common “easy to factor” quadratics you should know.
+
+Equation
+
+Formula
+
+Example
+
+Perfect Square (Addition)
+
+(x+y)* =x274+2xy+ y*
+
+(x +2)? =x*+4x+4
+
+Perfect Square (Subtraction)
+
+(x—y)* =x* -—2xy+ y?
+
+(x -—3)? =x*-6x4+9
+
+Difference of Squares
+
+(x+ y)(x-y) =x? -y?
+
+(x + 6)(x — 6) = x* — 36
+
+- 135
+-
+
+math
+
+2_
+
+Example 2: For {x|x # 3}, which of the following expressions is equal to — +3x+1?
+
+A, SU
+x-3
+
+OB x243x49
+
+Cx-4 D. 4x-3
+
+Solution: To simplify, we need to factor the numerator of the fraction and see if any expressions cancel.
+x2-7x+4+12
+x-3
+
++3x+1=
+
+(x-3)(x-4)
+x-3
+
++3x+1
+
+Since there is an x — 3 in the numerator and the denominator, we can cancel these and then combine like
+terms.
+
+SPA)
+1 234414 = x-443x41= 4x-3
+x*x—-3
+
+The answer is D.
+
+Shortcut Method — Substitution: Pick a value for x and plug that value into the original equation. Here, we
+pick x = 2, the original equation is equal to 5. Then, plug in x = 2 to the answer choices and look for which
+
+one 1s equal to 5.
+
+Solutions, Roots, x-intercepts, and Zeros for Quadratic Equations
+The ACT may ask you to find the “solutions,”
+
+99
+
+66
+
+“roots,” x-intercepts,” or “zeros” of a quadratic equation. All
+
+these terms refer to the values of x that make f(x) = 0. Remember, all these terms mean the same thing. We
+will refer to these as the “solutions” in the rest of this chapter.
+To find the solution(s), set the quadratic equation equal to zero and factor. Let’s pick up with the example we
+are currently working on.
+
+3x*-x-2=0
+We just showed how we can factor this quadratic to get
+
+(3x
++ 2)(x-1) =0
+To find the solutions, set each factor equal to zero and solve.
+3x+2=0
+
+x-1=0
+
+2
+
+x=--
+
+and
+
+3
+
+x=1
+
+The solutions are x = = and x = 1.
+Remember that the solutions are also the x-intercepts if the quadratic is graphed (more on this on the next
+
+page).
+Example 3: What is the sum of the roots of the polynomial f(x) = x2 — 11x +18?
+A.
+
+—11
+
+B. —7
+
+C. 7
+
+D. 11
+
+Solution: To solve, we need to find the values of x that make f(x) = 0.
+
+x? —11x+18=0
+We factor the quadratic and then set each factor equal to zero.
+
+(x -2)(x-9) =0
+x=2,9
+
+The solutions are 2 and 9. The sum of the roots is 2
+
++9 = 11. The answer is D.
+
+- 136
+-
+
+Chapter 16: Quadratics
+
+Example 4: Given that x = 3 is a solution to x* — bx + 12 = 0, which of the following polynomials is
+a factor of x? — bx +12?
+A.
+
+x—4
+
+B.
+
+x-—2
+
+C.x+3
+
+D.
+
+x+4
+
+Solution: Since x = 3 is a solution, we know that (x — 3) is one polynomial factor of x? — bx + 12. We will
+call the other unknown polynomial (x + a) and solve.
+
+(x —3)(x
++a) = x*—bx+12
+So, how can we figure out what a is? Think about our FOIL and how we get the +12 on the right side: we
+
+must multiply —3 by a. So a = —4. The other factor must be (x — 4).
+
+(x —3)(x
+-—4) = x* -—bx +12
+The answer is A.
+
+How Solutions Appear on a Graph
+Roots or solutions appear as the x-intercepts when graphed. When you have a quadratic or other polynomial
+in factored form, you can see where the x-intercepts will be. We will review the rules for multiplicity (the
+power to whicha factor is raised) and zeros for polynomial functions below:
+
+y = (x+2)(x—- 4)
+
+(—2,0)
+
+y =(x-1)
+
+(4,0)
+
+y = (x +3)?
+
+>
+(1,0)
+
+Multiplicity = 1
+
+Multiplicity = 2
+
+Multiplicity = 3
+
+Zeros: The function has 2
+
+Zeros: The function has 1
+
+Zeros: The function has 1
+
+solutions at x = —2 and
+
+solution at x = 1.
+
+solution at x = —3.
+
+x=A4.
+
+Behavior: The function
+
+Behavior: The function
+
+Behavior: The function
+
+bounces at the solution and
+
+flattens and passes through
+
+passes straight through the
+
+does not cross the x-axis.
+
+the x-axis at the solution.
+
+x-axis at the solutions.
+
+TIP — Functions With No Solution
+
+If a function never crosses the x-axis, that function has no real solutions.
+In other words, the function does not have any x-intercepts.
+
+As an example, the function f(x) to the right has no real solutions. This
+function cannot be factored to solve for any real values of x.
+If you used the quadratic equation, the solutions are complex numbers.
+
+- 137-
+
+f(x) =x? -2x4+2
+
+math
+
+Example 5: Which of the following equations correctly describes the function in the graph below?
+
+B.
+
+y=(x+2)(x
+—-1)@ — 3)
+
+C.
+
+y=(x-2)7(x
++ 1)(x + 3)
+
+Ls
+
+|
+
+- 3)
+)*(
+— 1)?(«
+A. y=(x+2
+
+“ST f\S
+
+D. y= (x +2)(x1) — 3)?
+
+‘
+
+tM,
+
+Solution: To solve this question, we need to look at the behavior of the function at each of the x-intercepts.
+
+There are x-intercepts at x = —2, x = 1, and x = 3, so we need to see the factors (x + 2), (x — 1), and
+(x — 3) in the correct answer. Now, we need to find out what power each term should be raised to. At
+
+x = —2 and x = 1, the function bounces, so the (x + 2) and (x — 1) terms are squared. At x = 3, the
+function goes straight through, so the (x — 3) should be to the first power. The answer is A.
+Shortcut Solution — Use Your Graphing Calculator (if you have one): For those of you with a graphing
+calculator who know how to use it, you can just graph the answer choices and see which one matches the
+graph! Sure, it may take some time, but you will be able to guarantee that you get the correct answer.
+In general, remember you can always use your graphing calculator to find the zeros for any quadratic functions
+or to see what the graph of any equation looks like. Many students forget to use their calculators for questions
+like this.
+
+@) The Quadratic Formula
+If a quadratic is not easily factorable, you will need to use the quadratic formula to solve for the solutions of a
+quadratic function. You will need to have the quadratic formula memorized.
+
+For ax* + bx +c = 0, the solution(s) are given by:
+
+x =
+
+—b +yV b2-4ac
+
+oa
+
+Example 6: Which of the following is a zero for the function f(x) = x? —-8x+4?
+
+A.8+4V2
+
+B.4-2vV3.
+
+©. -44+2vV3)
+
+~~. -8
++ 43
+
+Solution: Since this quadratic cannot be factored, we must use the quadratic formula.
+
+x = Bt TOE @ca
+
+1. Plug in the values for a, b, and c.
+
+x = See
+——
+
+2. Begin to simplify terms.
+
+x= sev
+
+3. Combine terms under the radical.
+
+8+4/3
+x=
+
+.
+.
+.
+.
+.
+4. Simplify radical (if possible).
+
+x=4+2V3
+
+5. Simplify terms further (if possible).
+
+x = 44 2V3 and x = 4—- 2y3
+
+ON . Identify the value(s) of x.
+
+The answer is B.
+
+Using the quadratic formula is not too common on the ACT, but you should still memorize the equation just in
+case. If you do need to use the quadratic formula, it will usually appear on the hardest questions from 30-45.
+
+- 138
+-
+
+Chapter 16: Quadratics
+
+The Discriminant
+In the quadratic formula, the discriminant is the b* — 4ac term under the radical. This term is very important
+because it can quickly tell us how many real or complex solutions there will be for any quadratic function. The
+exact value of the discriminant is not important, but whether it’s positive, negative, or zero is!
+
+Discriminant Value
+
+Types of Solutions
+
+b* —4ac > 0
+
+2 real solutions
+
+b* — 4ac = 0
+
+1 real solution
+
+b* —4ac <0
+
+0 real solutions, 2 complex solutions
+
+You should memorize these rules. If you ever see a question about the number of solutions to a quadratic
+function, use the discriminant to solve.
+
+Example 7: How many rational roots are there to the equation 2x? — 7x +9?
+A. 0
+
+B.
+
+1
+
+C. 2
+
+Solution:
+
+D. 3
+
+Discriminant = b? — 4ac = (—7)* — 4(2)(9)
+Discriminant = —23
+
+The discriminant is negative, so there are no real solutions. The answer is A.
+
+Example 8: In the system of equations below, m is a constant. For which of the following values of m
+does the system of equations have exactly 1 real solution?
+
+y=x*-—8x+10
+y=m-—2x
+A. —2
+
+B. —-1
+
+C. 0
+
+D.
+
+1
+
+Solution: To start, we set the equations equal.
+
+x? —8x+10=m-— 2x
+
+x? —6x+(10—m) =0
+If the system of equations has one real solution, the equation above should have one real solution and the
+discriminant should be equal to 0.
+
+Discriminant = b* — 4ac = (—6)? — 4(1)(10 — m) = 0
+At this point, we can either test each of the answer choices to see which one makes the discriminant equal 0 or
+solve algebraically form. Below shows how to solve algebraically.
+
+(—6)? — 4(1)(10 — m) =0
+36 -40+4m=0
+—-4+4m=0
+4m
+= 4
+m=1
+The answer is D.
+
+- 139
+-
+
+math
+
+Just to be clear, Example 9 is an extremely difficult question and would be one of the “who gets a 36”
+questions on the test. Do not expect to see any questions like this on test day. That being said, this is
+absolutely fair game, and questions of similar difficulty have been on the test before.
+
+The Vertex
+The vertex is the highest or lowest point of a parabola. For the parabola shown below, the vertex is at (1, —4).
+You should memorize the vertex form equation shown below.
+
+y=(x-1)2-4
+
+Vertex Form: y = a(x —h)? +k
+at (h, k)
+oO vertex
+
+\ [ft | TI |
+\ ot }
+
+o
+
+whena > 0, parabola opens up
+
+o
+
+whena
+
+34
+
+< 0, parabola opens down
+
+v
+
+T
+
+}
+
+7s
+
+‘Xx
+
+When a quadratic is written in vertex form, we can tell what the vertex is without graphing. As you can see in
+
+the example above, we can tell the vertex is at (1,—4). We can think of the vertex as the midpoint of a
+parabola because the x-coordinate of the vertex is always the midpoint of the two solutions, or x-intercepts.
+The x-coordinate of the vertex is equal to the average of the solutions. Using the parabola above as an
+example, we can see how this works. Since the solutions to the parabola are located at x = —1 and x = 3, the
+x-coordinate of the vertex is at x =
+
+—14+3
+
+= 1, which matches the graph.
+
+Remember, the vertex is always the maximum or minimum of a quadratic. For the example above, the
+minimum is at y = —4.
+
+Example 9: For the equation f(x) = (x — 6)(x + 2), what is the value of x at the minimum value of
+the function?
+A.
+
+—2
+
+B. 0
+
+C. 2
+
+D. 4
+
+Solution: The minimum value of a parabola is at the vertex, so we need to find the coordinates of the vertex.
+Since the function is already in factored form, we see the solutions are at x = 6 and x = —2. The x-coordinate
+of the vertex is the average of the solutions, so we can find
+_ 64+(-2) _
+==
+
+2
+
+The x-coordinate of the vertex is at x = 2, so the answer is C.
+Shortcut Method — Backsolve: To find which answer choice minimizes the function, plug the answer
+
+choices in for x and see which one gives you the smallest value for f(x).
+
+The average method works perfectly if you are given a quadratic that is already factored. But what if you are
+not given a quadratic in factored form or vertex form? Good news! There is a second way to quickly find the
+vertex.
+
+For any quadratic in the form of ax* + bx + c, you can find the x-coordinate of the vertex using
+b
+Za
+
+Make sure you memorize this equation! It can really help you quickly and easily solve any questions where
+you need to find the vertex of a parabola.
+
+- 140
+-
+
+Chapter 16: Quadratics
+
+Example 10: Andre runs a business that sells used cameras. To get the cameras ready to sell, Andre must
+
+spend x hours repairing and cleaning each camera. The equation P(x) = —0.05x? + 0.4x + 0.9 models
+the percentage of profit, P, that Andre gets from selling a camera. Which of the following shows the
+number of repair hours that maximizes Andre’s percentage of profit for selling a camera?
+A. 3
+
+B. 4
+
+C. 6
+
+D.
+
+8
+
+Solution: Here, we need to find where Andre’s percentage of profit is maximized, so we need to find the
+vertex of the equation. Since the leading value in the parabola is negative, the parabola is downward facing, so
+the vertex will be the maximum of the graph. The number of hours will be on the x-axis, so we just need to
+find the x-coordinate of the vertex to solve.
+
+To find the x-coordinate of the vertex, we can use the equation we just introduced above:
+b
+
+The answer is B.
+
+0.4
+
+"2a ~~ 20.05)
+
++
+
+Shortcut Method #1 — Backsolve: The question asks which value of x maximizes the function. To solve,
+
+plug the answer choices back into the function and see which one gives the biggest value for P(x).
+Shortcut Method #2 — Graph the Function: If you have a graphing calculator, you can also graph the
+equation and find the maximum value. Make sure to use your calculator as much as possible on test day, as it
+can often shortcut many questions that are difficult to solve algebraically.
+Quadratics Practice: Answers on page 329.
+
+1.
+
+What are the solutions to the quadratic
+
+4.
+
+x*-—4x-—21=0?
+
+A.
+
+A.
+
+—1and3
+
+B. -* and =
+
+D. =and—=
+4
+
+2.
+
+2
+
+—10
+
+B. —4
+
+5.
+
+The lengths of 2 adjacent sides of a rectangle
+
+are represented x + 4 and 3x — 1 inches. What
+
+What is the sum of the solutions of the
+
+expression below represents the area of the
+
+polynomial f(x) = x* —7x +12?
+
+rectangle in square inches?
+
+yo
+ca
+5 °
+
+A. 3x24+12x—4
+B. 3x2+11x—4
+C. 3x27+7-3
+
+D. 3x?-12
+
+|
+
+3.
+
+What is the sum of the solutions of the equation
+
+equation (4x + 1)(2x
+— 3) =0?
+
+What are the roots of the quadratic equation
+2
+
+6.
+
+WH
+
+Se oe Te 0"
+x=-—landx =4
+
+D.
+
+= —-4
+x =1andx
+
+C.
+
+m does the quadratic
+For what value of
+
+x* — 13x +m = 0 have solutions of x = 5
+8?
+=x
+and
+
+=4
+A. x =1andx
+B.
+
+;
+
+~ “1
+
+= —4
+x =—landx
+
+-141-
+
+C
+
+3
+
+D.
+
+40
+
+math
+
+7.
+
+The function f(x) is graphed below. Which of
+
+©~" In the equation below, a and b are constants.
+
+the following could define the function f(x)?
+
+Which of the following could be the value of a?
+
+9x? — 16 = (ax — b)(ax + b)
+
+5h
+
+A.
+
+3
+
+B.
+
+4
+
+C.
+
+9
+
+D.
+
+16
+
+©”
+
+A.
+
+f(x) =x(« -3)
+
+B.
+
+f(x) =x(« +3)
+
+i
+|
+|
+|
+
+4 |
+
+C. f(x)
+= x*(x - 3)
+D. f(x) =x(«+3)
+
+|
+
+|
+
+\
+
+|
+tf
+|
+\.|
+|
+\t
+|
+
+0
+
+3
+
+:
+
+3
+
+The function f(x) is graphed above. Which of
+
+What is the solution set for 5x? + 6x =8?
+
+the following could define the function f(x)?
+
+8>G0
+
+A
+
+|
+
+I
+
+fQ) =(«-3)@+4+1)
+
+B.
+
+f(x) = x(« — 3)(x +1)
+
+C.
+
+ft) =(«4+3)@-1)
+
+D.
+
+f(x) = x(« + 3)(x
+-1)
+
+©" In the equation below, j, 1, k, and m are
+constants. If the equation has roots of
+—4,3,and — 5. Which of the following could
+
+For x* # 25, which of the following
+
+be a factor of the equation below?
+
+expressions
+is equal
+to @=5)"
+5
+P 5
+q
+x2-25 —
+
+A.
+
+A.
+
+jrrt+lx*—kx-m=0
+
+x?
+x+5
+
+A.
+
+x-4
+
+1
+
+B.
+
+x-5
+
+C.
+
+x-3
+
+D.
+
+x+3
+
+B.
+
+—
+
+Cc.
+
+—
+
+D.
+
+1
+
+x+5
+1
+
+x-5
+
+©” In the standard (x, y) coordinate plane, the
+
+graph of the equation y = 3(x — 2)? —5
+intersects the x-axis at points (r, 0) and (7,0)
+
+. Which of the following are the factors of
+
+and has its vertex at point (2,—5). What is the
+
+abx? + (ac — bd)x — cd?
+A.
+
+(ax — b)(cx — d)
+
+B.
+
+(ax + b)(cx — d)
+
+C.
+
+(ax +c)(bx — d)
+
+D.
+
+(ax —d)(bx +c)
+
+value of r ?
+
+5
+
+(r, ‘\
+
+(7,0)
+
+(2,—-5)
+- 142
+-
+
+Chapter 16: Quadratics
+
+15. Given that (x + 4) and (x + 3) are factors of
+
+20. Which of the following most precisely
+
+x? + cx +d and x = —3 is the only solution of
+the quadratic x2 + mx + n, what is dm?
+
+Gay
+
+describes the solutions to the equation
+3x7 ++5x+7=0?
+
+Gap
+
+18
+24
+72
+144
+
+1 rational (double) root
+1 irrational (double) root
+2 rational roots
+
+2 complex roots (with nonzero imaginary
+parts)
+
+h(x) = x* + 2x3 — 8x? —18x -—9
+
+16.
+
+21. Which of the following is a solution to the
+
+The polynomial above can be written as
+
+equation below?
+
+(x2 —9)(x + 1)?. What are all the real roots
+of the equation?
+
+GaAW>
+
+x? +6x+3=0
+
+3,3
+
+9,1,and — 1
+3, —3,and — 1
+
+A.
+
+-3+¥6
+
+B.
+
+—3+ +13
+-6—2V6
+
+C.
+D.
+
+3,—3,1,and—1
+
+3-~v6
+
+17. The side lengths of a box are represented by x
+
+22. Which of the following is a solution to the
+
+feet, 2x — 3 feet, and x + 5 feet. In terms of x,
+
+equation below?
+
+what is the volume, in square feet, of the box?
+
+Gap,
+
+x? -—4x+1=0
+
+2x* — 15x
+2x* + 7x —15
+2x? — 15x
+2x? + 7x? — 15x
+
+18. Given that (2x + 3) and (x — 4) are the factors
+
+of the quadratic 2x* + (zg -—1)x
+
+A.
+B.
+
+2-6
+-2+-6
+
+Cc.
+D.
+
+24+¥3
+-2-¥3
+
++2z-4=0,
+
+what is the value of z?
+A.
+
+—2
+
+B.
+
+—4
+
+23. Given that f(x) = (x — 3)(x +12) + 4 and
+
+g(x) = < x? — — x — =, what is the sum of the
+y-intercepts of the functions?
+
+2
+C.
+D4
+
+257
+
+19. What is the solution set to the equation
+
+x*+7x*-144=0?
+Jf 4 , —3, 3, 4}
+Jf 4 , 4, —3i, 3i}
+Jf 3 , 3, —4i, 4i}
+Jf 1 6, —9}
+
+pYGAWD
+
+- 143
+-
+
+math
+
+28, If (4x —2) = 16x? — 44x 4%, then b =?
+
+24. The function f(x) has its vertex at point
+
+(14, 181) and it intersects the x-axis at points
+
+(- =, 0) and (m,0). What is the value of m?
+
+OGW>9
+
+p>GOW
+
+22
+
+5
+46
+
+5
+92
+
+5
+16 2
+
+11
+2
+
+11
+33
+2
+
+33
+
+. For the system of equations below, g,h, and j
+are integers.
+
+y = gx*
+
+. Ben is throwing a ball from the top of his
+
+2y+j=hx
+
+building. The ball’s height is modeled by the
+
+For which of the following will there be exactly
+
+function H(x) = —x? + 10x + 56, where x is
+
+one real (x, y) solution for the system?
+
+the number of seconds after he throws the ball.
+At what time in seconds does the ball hit the
+ground?
+
+A.
+B.
+
+g?—4hj
+=0
+h? —4gj
+=0
+
+A.
+
+5
+
+B.
+
+14
+
+C.
+D.
+
+h* —89j
+=0
+g*+4hj
+=0
+
+C.
+
+28
+
+D.
+
+56
+
+The equation below is graphed in the
+
+. In the quadratic equation zx* + 6x = 3, zisa
+
+xy-plane. If a and b are positive constants and
+
+constant. For what value of z, will the equation
+
+a # b, how many distinct x-intercepts does the
+
+have one real value?
+
+graph have?
+
+A.
+
+—3
+
+B.
+
+-1
+
+C.
+
+1
+
+D.
+
+3
+
+x? +ax+bx+ab=0
+
+GOS ©LNeW
+. In the equation x? + mx? + nx = 0,mandn
+
+. Which of the following is a solution to the
+
+equation 2x* +4x+1=0?
+
+are integers. One possible value of x is 0. The
+
+A
+
+ofn ?
+
+other possible value of x is 5. What is the value
+-24+V2
+2
+
+B.
+
+2v2
+
+C.
+
+-2+¥2
+
+D.
+
+-1-—v2
+
+-144-
+
+A.
+
+—5
+
+B.
+
+5
+
+C.
+
+10
+
+D.
+
+25
+
+Chapter 17: Trigonometry
+
+Chapter 17: Trigonometry

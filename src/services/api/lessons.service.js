@@ -9,90 +9,25 @@ import errorTracker from '../logging/errorTracker';
 
 const LessonsService = {
   /**
-   * Fetch all lessons from modular structure
-   * Reconstructs lessons from lesson_metadata, lesson_sections, and section_content
+   * Fetch all lessons from lessons table
+   * @returns {Promise<Array>} Array of lesson objects
    */
   async getAllLessons() {
     logger.debug('LessonsService', 'getAllLessons', { action: 'start' });
 
     try {
-      // Fetch all lesson metadata
-      const { data: metadata, error: metaError } = await supabase
-        .from('lesson_metadata')
+      const { data, error } = await supabase
+        .from('lessons')
         .select('*')
         .order('order_index', { ascending: true });
 
-      if (metaError) {
-        logger.warn('LessonsService', 'Falling back to old lessons table', { error: metaError.message });
-        // Fallback to old table if modular doesn't work
-        const { data: oldData, error: oldError } = await supabase
-          .from('lessons')
-          .select('*')
-          .order('order_index', { ascending: true });
-
-        if (oldError) {
-          errorTracker.trackError('LessonsService', 'getAllLessons', {}, oldError);
-          return null;
-        }
-        return oldData;
+      if (error) {
+        errorTracker.trackError('LessonsService', 'getAllLessons', {}, error);
+        return null;
       }
 
-      // For each lesson, fetch sections and content
-      const lessons = await Promise.all(
-        metadata.map(async (lesson) => {
-          // Fetch sections for this lesson
-          const { data: sections, error: sectionsError } = await supabase
-            .from('lesson_sections')
-            .select('id, section_key, title, section_type, order_index')
-            .eq('lesson_id', lesson.id)
-            .order('order_index', { ascending: true });
-
-          if (sectionsError || !sections) {
-            return {
-              ...lesson,
-              content: ''
-            };
-          }
-
-          // Fetch content for all sections
-          const sectionContents = await Promise.all(
-            sections.map(async (section) => {
-              const { data: content, error: contentError } = await supabase
-                .from('section_content')
-                .select('content, order_index')
-                .eq('section_id', section.id)
-                .order('order_index', { ascending: true });
-
-              if (contentError || !content) {
-                return '';
-              }
-
-              // Join all content blocks for this section
-              return content.map(c => c.content).join('\n');
-            })
-          );
-
-          // Reconstruct full lesson content
-          const fullContent = sectionContents.join('\n\n');
-
-          return {
-            id: lesson.id,
-            lesson_key: lesson.lesson_key,
-            title: lesson.title,
-            subject: lesson.subject,
-            category: lesson.category,
-            difficulty: lesson.difficulty_level,
-            duration: lesson.duration_minutes,
-            order_index: lesson.order_index,
-            content: fullContent,
-            created_at: lesson.created_at,
-            updated_at: lesson.updated_at
-          };
-        })
-      );
-
-      logger.info('LessonsService', 'getAllLessons from modular', { count: lessons.length });
-      return lessons;
+      logger.info('LessonsService', 'getAllLessons', { count: data?.length });
+      return data;
 
     } catch (err) {
       errorTracker.trackError('LessonsService', 'getAllLessons', {}, err);
@@ -149,90 +84,27 @@ const LessonsService = {
   },
 
   /**
-   * Fetch a single lesson by lesson_key from modular structure
+   * Fetch a single lesson by lesson_key
+   * @param {string} lessonKey - The lesson key to fetch
+   * @returns {Promise<Object|null>} Lesson object or null
    */
   async getLessonByKey(lessonKey) {
     logger.debug('LessonsService', 'getLessonByKey', { lessonKey });
 
     try {
-      // Try lessons table first (where quizzes are linked)
-      const { data: oldData, error: oldError } = await supabase
+      const { data, error } = await supabase
         .from('lessons')
         .select('*')
         .eq('lesson_key', lessonKey)
         .single();
 
-      if (!oldError && oldData) {
-        logger.info('LessonsService', 'getLessonByKey from lessons table', { lessonKey });
-        return oldData;
-      }
-
-      // Fallback to lesson_metadata if lessons table doesn't have it
-      logger.warn('LessonsService', 'Falling back to lesson_metadata table', { lessonKey });
-      const { data: lesson, error: metaError } = await supabase
-        .from('lesson_metadata')
-        .select('*')
-        .eq('lesson_key', lessonKey)
-        .single();
-
-      if (metaError) {
-        errorTracker.trackError('LessonsService', 'getLessonByKey', { lessonKey }, metaError);
+      if (error) {
+        errorTracker.trackError('LessonsService', 'getLessonByKey', { lessonKey }, error);
         return null;
       }
 
-      // Fetch sections for this lesson
-      const { data: sections, error: sectionsError } = await supabase
-        .from('lesson_sections')
-        .select('id, section_key, title, section_type, order_index')
-        .eq('lesson_id', lesson.id)
-        .order('order_index', { ascending: true });
-
-      if (sectionsError || !sections) {
-        return {
-          ...lesson,
-          lesson_key: lesson.lesson_key,
-          difficulty: lesson.difficulty_level,
-          duration: lesson.duration_minutes,
-          content: ''
-        };
-      }
-
-      // Fetch content for all sections
-      const sectionContents = await Promise.all(
-        sections.map(async (section) => {
-          const { data: content, error: contentError } = await supabase
-            .from('section_content')
-            .select('content, order_index')
-            .eq('section_id', section.id)
-            .order('order_index', { ascending: true });
-
-          if (contentError || !content) {
-            return '';
-          }
-
-          return content.map(c => c.content).join('\n');
-        })
-      );
-
-      // Reconstruct full content
-      const fullContent = sectionContents.join('\n\n');
-
-      const reconstructedLesson = {
-        id: lesson.id,
-        lesson_key: lesson.lesson_key,
-        title: lesson.title,
-        subject: lesson.subject,
-        category: lesson.category,
-        difficulty: lesson.difficulty_level,
-        duration: lesson.duration_minutes,
-        order_index: lesson.order_index,
-        content: fullContent,
-        created_at: lesson.created_at,
-        updated_at: lesson.updated_at
-      };
-
-      logger.info('LessonsService', 'getLessonByKey from modular', { lessonKey, found: true });
-      return reconstructedLesson;
+      logger.info('LessonsService', 'getLessonByKey', { lessonKey, found: !!data });
+      return data;
 
     } catch (err) {
       errorTracker.trackError('LessonsService', 'getLessonByKey', { lessonKey }, err);

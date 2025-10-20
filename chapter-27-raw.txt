@@ -1,0 +1,898 @@
+Chapter 27: Inequalities
+In math, two values are not always equal. Sometimes, we just know that one value is bigger or smaller when
+compared to another value. In these situations, we use inequalities.
+
+Algebra with Inequalities
+To solve inequalities on the ACT, treat the inequality signs (<,>,<, =) like an = sign and solve using
+algebra. Inequalities can be solved as normal algebraic expressions with the exception of one very important
+rule:
+When multiplying or dividing by a negative number, switch the direction of the inequality sign.
+
+This rule is the most important thing to remember from this section and where students most commonly make
+
+mistakes on inequalities questions. As a quick example, let’s see how to solve the equation below.
+—2x+5<11
+—2x <6
+
+When dividing by —2, we switch the direction inequality sign, so
+x>-3
+
+Let’s see a second example:
+3x+6>x—4
+
+The first step is combining like terms. We subtract x from both sides to get the x-terms on the left side. We
+
+then subtract 6 from both sides to get the numbers on the right side.
+3x—x>--4-6
+2x >-10
+
+x>-5
+In this example, we never multiply or divide by a negative number, so the inequality sign stays the same. Just
+
+because we are working with a negative number does not mean we need to flip the inequality sign. Some
+students flip the sign whenever they divide and see a negative sign. Don’t make that mistake! Only flip the
+inequality when you multiply or divide both sides by a negative number.
+Example 1: Which of the following inequalities describes the solution set for 6x
+29
+
+A. x2 >
+
+Boxs
+
+29
+
+>
+
+5
+
+C.xs-7
+
++12 < 9x +17?
+
+5
+
+D.x2-7
+
+Solution: To solve, we need to isolate x. Here, let’s move all the x-terms to the left side and all the numbers
+to the right side. To do this, we subtract 9x from both sides and 12 from both sides to get
+6x —9x < 17-12
+
+—3x<5
+
+Now we divide both sides by —3. Since we are dividing by a negative number, we switch the direction of the
+inequality sign.
+5
+
+x2-3
+
+The answer is D.
+
+- 252
+-
+
+Chapter 27: Inequalities
+
+Example 2: Which of the following graphs shows the solution set for the inequality 2x — 4 >—-x+6?
+A.
+co)
+
+vy)
+
+ot
+
+@wl
+
+i
+|al
+
+@wlrn
+
+Vv.
+
+Solution: Now is a good time to review how to draw inequalities on a number line.
+1.
+
+For greater than and less than (> and <), use an open circle.
+
+2.
+
+For greater than or equal to and less than or equal to (= and <), use solid circles.
+
+For this question, we need to solve the inequality. Let’s move all the x-terms to the left side and all the
+numbers to the right side. To do this, we add x to both sides and add 4 to both sides to get
+2x+x>6+4
+3x
+> 10
+
+Now, we divide both sides by 3. Since we are dividing by a positive number, the inequality sign does not
+change. We get
+10
+
+x2
+3
+
+Since the inequality sign is greater than or equal to, we put a solid dot a = and shade to the right of =. The
+answer is C.
+
+Graphing Linear Inequalities
+When graphing linear inequalities in the coordinate plane, you need to remember three simple steps:
+
+1.
+
+Rearrange the equation into y = mx + b form.
+
+2.
+
+Plot the line. For greater than and less than (> and <), draw a dashed line. For greater than or
+equal to and less than or equal to (= and <), drawa solid line.
+
+3.
+
+Shade to show the solution. For greater than and greater than or equal to (> and =), shade
+above the line. For less than and less than or equal to (< and <), shade below the line.
+
+Let’s start by graphing the inequality 2x + 3y = 6.
+First, we need to rearrange this into slope-intercept form to isolate y. If we do this correctly, we will get
+
+y2-sxt2
+
+- 253
+-
+
+math
+
+Since this is greater than or equal to, we drawa solid line and shade above the line, so the graph looks like
+
+The solution set is the shaded area of the graph.
+For a system of inequalities in the coordinate plane, the solution is where the shaded regions overlap. For
+example, let’s consider the system of inequalities 4x — 2y > 8 and x + 3y > —2.
+To graph these inequalities, we need to rearrange them into slope-intercept form to isolate y. If we do this
+correctly, we get
+
+y<2x—-—4
+
+and
+
+y>-sx--
+
+2
+
+For the y < 2x — 4 line, we draw a dashed line and shade below the line. For the y > —=x — = line, we draw
+a dashed line and shade above the line.
+
+The solution set to this system of equations is the dark area in the top right where the shaded regions overlap.
+
+©
+
+254
+-
+
+Chapter 27: Inequalities
+
+flatter line has a slope of - and a y-intercept at 2. The shaded region is below the line and the line is dashed, so
+
+the second equation is y < =x +2. The answer is C.
+Advanced Graphing Inequalities
+On more difficult questions, the ACT will ask you how to graph inequalities with parabolas, circles, and even
+ellipses. All these graphs still follow the same rules we just discussed for the solid lines vs. dashed lines.
+Students most commonly get confused about where to shade for these inequalities.
+
+Parabolas
+Parabolas shade just like lines do. For greater than and greater than or equal to (> and =), shade above
+the line. For less than and less than or equal to (< and <), shade below the line. To see how this works,
+take a look at the examples below.
+
+Circles and Ellipses
+For inequalities with circles and ellipses, remember the following rule: for greater than and greater than or
+
+equal to (> and =), shade outside of the circle or ellipse. For less than and less than or equal to (<
+and <), shade inside the circle or ellipse.
+
+Circles
+
+(x-2)2
+
++
+
+(y-1)?
+
+Ellipses
+<1
+
+(x-2)* | (y-1)?
+
+ic
+
+7
+
+ol
+
+As long as you know how to shade all of these various lines and shapes, you will be ready for the most
+difficult inequalities questions that appear towards the end of the ACT math section. In addition to shading,
+you also need to know how to properly draw circles, and ellipses to answer these questions correctly. If you
+need to learn or review how to graph circles and ellipses, go to chapter 21.
+
+- 255
+-
+
+math
+
+Example 4: The shaded region in the standard (x, y) coordinate plane below is bounded by a parabola
+and a line. The shaded region and its boundary is the solution set to which of the following systems of
+inequalities?
+A.
+
+\
+\
+
+y<—2x4+2
+
+y>x2—-2x-1
+B.
+
+y2-2x+2
+
+y>x2—-2x-1
+
+>
+
+y<sx*-2x-1
+
+za
+
+C. ys-2x+2
+D.
+
+/
+[
+/
+/
+
+6
+
+4
+
+2
+
+/
+
+i
+
+ys —-2x-2
+
+ye2x?-2x-1
+
+-3
+
+Solution: For any questions like these, look at the answer choices right away. In this question, the equation of
+the line must be y = —2x + 2 or y = —2x — 2. The y-intercept is at 2, so we know D
+
+is incorrect. We need
+
+to shade below the line, so the equation for the line must be y < —2x + 2. C is also incorrect.
+Notice that the equation of the parabola is the same in all of the answer choices. On questions like this, you do
+not need to be able to write the equation of the parabola yourself. You just need to know which inequality sign
+to use based on where the solution set is. Here, the solution set is above the parabola, so the inequality sign
+
+must be >. The parabola equation is y > x2 — 2x —1. The answer is A.
+Example 5: The shaded region in the graph below represents the solution set to which of the following
+systems of inequalities?
+A.
+
+;
+
+~/
+
+y23x—-4
+
+x+y? <9
+
+Boy< —=x —1
+x2 +y2>9
+
+C. ye — =x —1
+
+Pty =o |
+
+NY
+
+iA
+
+|
+
+\
+
+.
+
+x+y? <9
+
+D.
+
+yS-sx-1
+
+|
+
+x*+y?<9
+
+/
+
+Solution: As with the last example, we want to look at the answer choices right away. The solution set is
+
+inside of the circle and the circle is drawn with a dotted line, so the circle equation must be x? + y? < 9. The
+
+shaded region is directly below the line y = — =x — 1, which is a solid line, so the second inequality must be
+
+ys —=x — 1. The answer is D.
+The other line y = 3x — 4 does not affect the solution set, so it should not be part of our system of inequalities.
+If you ever see a line that is not directly bordered by the shaded region, ignore it! The ACT just puts it there to
+confuse you.
+
+- 256
+-
+
+Chapter 27: Inequalities
+
+Inequalities Practice: Answers on page 332.
+1.
+
+Which of the following inequalities describes
+
+the solution set for 4x — 2 => 10x — 14?
+A.
+
+x<2
+
+B.
+
+x22
+
+©)
+
+values of x such that:
+
+A. x> —
+7
+
+C. x >=
+D.
+
+6. The solution set to =x < =x + < is all real
+
+B. x< —
+7
+
+x<-1
+
+C.
+
+x>
+
+D.
+
+x>2
+
+7
+
+The solution set to 3x + 4 > —11 is all real
+
+values of x such that:
+Which of the following inequalities is
+
+A.
+
+x>-15
+
+B.
+
+x<-15
+
+C.
+
+x>-5
+
+A.
+
+x 2-3y-2
+
+D.
+
+x<-5
+
+B.
+
+x<-3y-2
+
+C.
+
+x 23y-2
+
+D.
+
+x <3y-2
+
+equivalent to 5x + 9y < 2x - 6?
+
+Which of the following graphs shows the
+
+solution set for 5 — 3x => —-2x+11?
+
+A.
+
+[—_———_>
+
+0
+
+-—
+
+B.
+Cc.
+
+-6
+
+<
+
+0
+
+6
+
+>
+
+Which of the following number line graphs
+
+shows the solution set to the inequality
+x
+
+4<3x-5<13?
+
+x
+
+A.
+
+*—
+
+B.
+
+:
+
+D+
+
+—16
+
+0
+
+o————>
+
+x
+
+What is the greatest integer solution to G)
+
+3
+
+6
+
+>
+
+>
+
+3
+
+6
+
+Cc.
+
+<
+
+©
+
+®
+
+D.
+
+«
+
+Sy
+
+>_>
+
+3
+
+6
+
+—3x+4>19.4?
+
+3
+
+6
+
+x
+x
+
+x
+
+x
+
+A.
+
+—3
+
+Ifx => —14 and y < 19, what is the greatest
+
+B.
+
+—4
+
+possible value of 2y — x ?
+
+C.
+
+-5
+
+D.
+
+—6
+
+GOWp>
+
+Which of the following is the solution set for
+
+=x+6<x+10?
+A.
+
+24
+33
+38
+52
+
+. Which of the following is the solution
+
+x<-=
+
+statement for the inequality shown below?
+
+3
+
+B. x>—2
+
+—3<-2x+1<11
+
+- 257
+-
+
+A.
+
+-5<x<2
+
+B.
+
+-3<x<11
+
+C.
+
+-2<x<5
+
+D.
+
+-2<x
+
+math
+
+15. Trey has $71.50 to spend at the golf store. He
+
+11. One of the following inequalities is graphed
+
+below in the standard (x, y) coordinate plane.
+
+buys a putter for $45 and wants to buy golf
+
+Which one?
+
+balls that are $1.50 each. Which of the
+
+A.
+
+y>-x—-4
+
+the number of golf balls, that Trey can buy?
+
+B.
+
+y<-x—-4
+
+C.
+
+y>-2x-4
+
+D.
+
+y<—-2x—-4
+
+following inequalities, when solved, gives g,
+Coo
+A.
+
+|
+
+1.59 +45 < 71.50
+
+B.
+
+15g —45 < 71.50
+
+C.
+
+g+45 < 71.50
+
+D.
+
+g—45 < 71.50
+
+©" The shaded region is the solution set to one of
+the following systems of inequalities. Which
+
+. Which of the following inequalities is true for
+
+system is it?
+
+all positive integers q?
+
+. The shaded region in the standard (x, y)
+coordinate plane is the solution set to which of
+the following systems of inequalities?
+ye 2x4+3
+
+A. bys 2x44}
+Bfycnty +1] ANG
+|
+C. > 2x41]
+fyext3
+D {yeni +1|
++
+ysxt3
+
+|
+
+y > 5"
+C.
+
+ysxt3
+
+y2x-2
+1
+
+y < 5X
+D.
+
+y<x-2
+1
+
+y > 5"
+17. The shaded region is the solution set to one of
+
+the following systems of inequalities. Which
+system is it?
+
+. The shaded region in the graph below
+represents the solution set to which of the
+following systems of inequalities?
+
+a
+w
+
+ysox-1
+
+ly>(x+2)?-1
+yeox+1
+y<(x+2)?-1
+
+PFGOBY9
+
+ysoxt1
+
+y>(x+2)*-1
+e,
+
+ysoxt1
+
+y<(x+2)?-1
+
+- 258
+-
+
+y<-l
+
+A<x*+y?
+y<-l
+
+4A>x*+y?
+y>-l
+
+4>x?+y?
+y>-l
+
+A<x*+y?
+
+Chapter 27: Inequalities
+
+18. Which of the following inequalities is
+
+22. The inequality x? — 2 < —3 is true for the
+
+equivalent to (x + 2)? <9?
+
+values of x in which of the following sets?
+
+A.
+
+-5<x<1
+
+A.
+
+{-1,1}
+
+B.
+
+-3<x<3
+
+B.
+
+{x|-1<x<1}
+
+C.
+
+-1<x<3
+
+C.
+
+{x]0<x<1}
+
+D.
+
+-1sxs<l
+
+D.
+
+The empty set
+
+19. The shaded region in the graph below
+
+represents the solution set to which of the
+
+following systems of inequalities?
+
+23. The shaded region in the standard (x, y)
+
+|
+
+coordinate plane is the solution set to which of
+
+the following systems of inequalities?
+
+(x +1)? +(y -2)? =9
+
+y >4x41
+
+104
+
+as 1}
+W3y
+1)2 4 @-3)*
+A. (
+
+«
+A
+
+p
+
+y < Ax + i
+
+O- <1}
+B. {a=12 , G7
+yS é+ i
+
+VA
+YS
+
+C. {ey 3
+
+ye2xtl1
+
+etn +o- ye <o}
+fysrtl
+loca 1% +(y-2) < 9
+
+y<4x 41
+
+ey +O
+
+D.
+
+© [eee +o-zF29}
+
+|
+
+yext
+
+ysxt1
+
+A.
+
+x<v6
+
+B.
+
+x>v6
+
+B. x8 >y¥3
+
+D.
+
+C. -2>-2
+O<xy<1
+
+21. If x and y are real numbers such that x > 1
+
+and y < —1, then which of the following
+inequalities must be true?
+A
+
+C
+
+ex+1>zyt1
+
+D.
+
+3x72
+> 3y7?
+
+1
+
+/
+
+/ sf
+
+oe
+
+following inequalities CANNOT be true?
+
+x*-3>y*-3
+
+sy
+
+:
+
+7
+
+solution set for 10 — 3x* > -8?
+
+20. If0 > y > —1 > x, then which ofthe
+
+B.
+
+\
+
+<aAn y7 L NS
+x oe _ eee? Z
+
+24. Which of the following inequalities is the
+
+lot+1)?+(v-2y 2 9 |
+
+D.
+
+<1
+
+\f
+
+7
+
+1
+
+- 259
+-
+
+—V6andx > V6
+
+-
+
+math
+

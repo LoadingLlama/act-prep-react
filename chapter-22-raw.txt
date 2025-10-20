@@ -1,0 +1,1920 @@
+The Basics of Probability
+Probability is the likelihood of a desired outcome occurring compared to the total number of possible
+outcomes. On the ACT, probability is usually listed as a fraction or, less commonly, a decimal or a
+percentage.
+
+Desired Outcome
+
+Probability = All Possible Outcomes
+The ACT often will phrase probability questions by asking you the probability of an event occurring. To
+
+answer these questions, consider the event that you are counting and compare it to the total number of possible
+outcomes.
+
+To learn how probability works, let’s work through a few questions with the following example:
+Example 1: A bag has a total of 38 chocolate candies. 18 of the candies are blue, 10 are red, 5 are
+yellow, 3 are green, and 2 are pink.
+
+Question 1: Andy will reach into the bag and pick one candy. What is the probability that he will grab a
+yellow candy?
+5
+
+A=
+33
+
+B.
+
+5
+
+=
+
+18
+
+C.
+
+5
+
+—
+
+38
+
+10
+
+D.
+=
+38
+
+Solution: There is a total of 38 candies in the bag, and there are 5 yellow candies. Therefore, the probability
+
+of selecting a yellow candy is = The answer is C.
+Question 2: Evelyn is going to pick one piece of chocolate candy from the bag. What is the probability
+that she will NOT pick a blue candy?
+
+A.
+
+9
+
+=
+19
+
+B.
+
+10
+
+—
+
+19
+
+9
+
+Cc. —
+38
+
+10
+
+D.
+—
+38
+
+Solution: There is a total of 18 blue candies in the bag, which means there are 20 candies that are not blue.
+
+The probability of selecting a chocolate candy that is not blue is =, which simplifies to = The answer is B.
+Pretty easy, right? Now, these questions get a bit more difficult when you have probabilities that involve
+multiple events. It is important to remember that with multiple events, we multiply the probabilities of
+each individual event together. Make sure that you remember to multiply fractions and not add them, as the
+most common mistake students make 1s incorrectly adding the fractions when you are supposed to multiply.
+Question 3: Min will select 2 chocolate candies from the bag without replacement. What is the
+probability that Min will select a red candy and then a green candy?
+A.
+
+13
+
+=
+
+75
+
+15
+
+15
+
+722
+
+703
+
+B—-|)—MrmRChs
+
+13
+
+D.
+=
+76
+
+Solution: We have two probabilities. For the first probability, there are a total of 38 candies in the bag and 10
+
+red candies, so the probability of selecting a red candy is = For the second probability, there are only 37
+candies left in the bag since Min does not replace the first candy. There are still 3 green candies in the bag, so
+
+the probability of the second candy being green is =. Since we have multiple events occurring in a row, we
+multiply the probabilities together.
+10
+38
+
+x
+
+3
+37
+
+30
+
+=
+
+1,406
+
+- 207
+-
+
+math
+
+Simplifying the fraction, we get an answer of — The answer is C.
+For questions like #3, make sure to read carefully to see if the selection is with replacement or without
+replacement, as it changes the answer. If Min instead replaced the chocolate candy he selected the first time,
+there would still be a total of 38 candies in the bag for the 2nd piece of candy he draws from the bag, so the
+total probability instead would be
+10
+38
+
+x
+
+3
+
+30
+
+=
+
+38
+
+1,444
+
+Questions like this are one of the most common types of probability questions, so make sure you understand
+the difference between replacement and no replacement and how it affects the probability!
+Example 2: Two fair six-sided dice are repeatedly rolled simultaneously. What is the probability that two
+
+6’s are rolled on the 15th roll?
+
+A=
+3
+
+B=6
+
+c=
+12
+
+pbD-=36
+
+Solution: The probabilities of rolling a 6 on each die is = Since we have multiple events occurring, we must
+multiply the probabilities together to solve.
+
+alr
+
+1
+
+xl=
+6
+
+1
+
+=
+36
+
+The answer is D. The fact that the question says this is the 15th roll has no effect on the probability. It is just
+there to confuse you!
+
+3 Probability Rules to Know
+There are three probability rules that you need to know for test day.
+Rule #1 — The sum of the probabilities of all possible outcomes is equal to 1.
+
+For example, let’s think of a flipping a coin. The probability of flipping a head is =, and the probability of
+flipping a tail is = Of course, = + - = 1. All coin flips must end in a head or a tail, so the sum of the
+probabilities of those events must equal 1.
+Example 3: In aclass of fifth graders, students were asked to pick their favorite lunch, and no student
+
+was allowed to select more than one lunch as their favorite: - picked pizza, - picked chicken nuggets, —
+picked pasta, and = picked tacos. What is the probability that a randomly selected student did not select
+any of these lunches?
+
+A
+
+0
+
+B 1600
+3
+
+c+
+20
+
+pH
+60
+
+Solution: All fifth graders selected a favorite lunch, so the sum of the fractions must add up to 1. We can use
+the given fractions to find the fraction of students, x, who did not select any of the lunches.
+
+-+lt¢l454x=1
+2
+5
+10
+20
+To solve, we need to make the fractions all have a common denominator. Here, the least common
+denominator is 20. If you need to review adding fractions, go back to Chapter 6.
+
+454
+S4S4x51
+5 S4txH=1
+20
+20
+20
+20
+20
+1
+
+x=
+20
+
+- 208
+-
+
+Chapter 22: Probability
+
+The fraction of students who selected none of the lunches is =, so the probability that a randomly selected
+
+student picked none of the lunches is also = The answer is C.
+Rule #2 — The probability of Event
+
+A OR Event B occurring is the sum of the
+
+probabilities of the individual events.
+
+P(A or B) = P(A) + P(B)
+Example 4: Kristina is on a game show where she plays three games for three different prizes. The first
+
+game is for a toaster, the second game is for a couch, and the third game is for a new car. The probability
+that she wins a toaster is 0.5, the probability that she wins a couch is 0.2, and the probability that she wins
+anew car is 0.05. What is the probability that she wins a new car or a toaster?
+A.
+
+0.025
+
+B. 0.25
+
+C. 0.5
+
+D. 0.55
+
+Solution: Since we are finding the probability of winning a new car ORa toaster, we add the probabilities of
+both events. The probability of winning a car or a toaster is the sum of the probability of winning a car, 0.05,
+and the probability of winning a toaster, 0.5.
+
+P(car or toaster) = P(car) + P(toaster) = 0.05 + 0.5 = 0.55
+The answer is D.
+Rule #3 — The probability of Event
+
+A AND Event B occurring is the product of the
+
+probabilities of the individual events.
+
+P(A and B) = P(A) x P(B)
+Example 5: The probability that Event A will occur is 0.3. The probability that Event B will occur is 0.7.
+
+Given that Events A and B are mutually exclusive, what is the probability that Event A and Event B will
+occur?
+A.
+
+0.21
+
+B. 0.3
+
+C. 0.5
+
+D. 0.7
+
+Solution: We are finding the probability that Events
+
+A AND B occur, so we multiply the probabilities of the
+
+individual events.
+
+P(A and B) = P(A) x P(B) = 0.3 x 0.7 = 0.21
+The answer is A.
+
+Make sure that you memorize all 3 of these rules, especially rules #2 and #3, as those have appeared very often
+on recent ACTs. As long as you know the rules, any probability questions with these rules should be easy!
+
+- 209
+-
+
+math
+
+Probability and Data Tables
+The ACT can also give you a data table and ask you to identify the probability of a certain event occurring. It
+is critical to read the question carefully and consider (1) what are the events that you are being asked to
+identify (the numerator) and (2) what are the total events you are choosing from (the denominator). For these
+questions, probability can be defined as
+Number In Target Group
+
+Probability
+
+robabity = Total Number To Select From
+
+Let’s see how to handle this with the example below:
+The table below shows the results of a survey asking high school students in two different classrooms
+about their preferred lunch.
+
+Period 1
+
+24
+
+3
+
+6
+
+33
+
+Period 2
+
+9
+
+5
+
+15
+
+29
+
+Total
+
+33
+
+8
+
+21
+
+62
+
+Example 6: Given that a student is in period 2, what is the probability that he or she picked chicken
+tenders on the survey?
+A.
+
+5
+
+=
+62
+
+5
+
+B. —
+29
+
+8
+
+Cc. —
+29
+
+29
+
+D. =
+62
+
+Solution: We are asked to consider students from period 2, so we only look at the 29 students in period 2 not
+at all students at the school. Of the students in period 2, 5 selected chicken tenders.
+Selected Chicken Tenders in Period 2 _
+
+Total Students in Period 2
+
+5
+
+~ 29
+
+The answer is B.
+
+Example 7: Ifa student’s favorite school lunch is vegetable pasta, what is the probability that student is
+in period 2?
+A.
+
+15
+
+=
+62
+
+21
+
+B. =
+62
+
+15
+
+©. <
+29
+
+15
+
+D. =
+21
+
+Solution: For this question, we only look at the 21 students who selected vegetable pasta as their favorite. Of
+those 21 students, 15 are in period 2.
+In Period 2 and Selected Vegeable Pasta
+
+15
+
+Total Students who Selected Vegetable Pasta _ 21
+The answer is D.
+
+Questions like these are the least common type of probability question on the ACT. That being said, they have
+been on the test before and are 100% fair game to be on the test again. Whenever they do pop up, they are
+usually easy to answer as long as you know how to read the table correctly.
+
+- 210
+-
+
+Chapter 22: Probability
+
+Advanced Probability Questions
+Advanced probability questions require you to find the probability for more complex events. These very
+commonly appear at the end of the math test in questions 30-45. There is a high likelihood you will see one of
+these questions on test day!
+We will cover how to solve the most common types in the following examples.
+Example 8: A fair spinner with 5 equally sized regions and an arrow has regions numbered 1, 2, 3, 4, and
+
+5 respectively. A second fair spinner with 3 equally sized regions and an arrow has regions numbered 1,
+2, and 3 respectively. The arrows are both spun at the same time and the numbers the two arrows land on
+are added together. What is the probability that the sum is odd?
+
+A5
+
+B-+-3
+
+c28
+
+pe
+15
+
+Solution: To find the probability that the sum is odd, we need to find two things: (1) the number of
+outcomes that add to an odd number and (2) the total number of possible outcomes. Let’s start by finding
+the total number of possible outcomes.
+The first spinner has 5 possible outcomes while the second spinner has 3 possible outcomes. To find the
+total number of possible outcomes, we multiply
+
+lst spinner
+
+2nd spinner
+
+Total
+
+Outcomes
+
+Outcomes
+
+Outcomes
+
+That’s the easy part. Now for the hard part. We need to find the total number of outcomes that add to an odd
+number. The most reliable way to do this is to find an organized way to count the outcomes and keepa tally of
+the odd numbers. To make our tally, we will use the following rule:
+Odd + Odd = Even
+Even + Even = Even
+
+Odd + Even = Odd
+
+To start, let’s say the first spinner lands on a 1. The second spinner could land on a 1, 2, or 3. Of these three
+possible outcomes, only 1 + 2 sums up to an odd number, so we have 1 outcome in the tally.
+Next, let’s say the first spinner lands on a 2. The second spinner could land on a 1, 2, or 3. Of these possible
+outcomes, 2 + 1 and 2 + 3 add to an odd number, so we have 2 more outcomes to add to our tally (so 3 total).
+Now, let’s say the first spinner lands on a 3. There is going to be 1 outcome that sums to an odd number. How
+do we know this so quickly? Well, 1 and 3 are both odd, so we know that 3 will follow the same pattern that 1
+did and will only have 1 outcome that sums to an odd number (3 + 2) We add 1 more to our tally (so 4 total).
+What if the first spinner lands on a 4? Since 4 is even, we can use the pattern we found for 2. There are going
+
+to be 2 outcomes (4 + 1 and 4 + 3) that sum to an odd number. We add 2 more to our tally (so 6 total).
+Finally, if the first spinner lands on a 5, there is going to be 1 outcome (5 + 2) that sums to an odd number.
+We add 1 more to our tally and find that there are 7 total outcomes that sum to an odd number.
+So to find the probability, we do
+
+Probability of Odd S
+
+momaeny ©
+
+_ Outcomes with Odd Sum _ 7
+
+am
+
+Total Outcomes
+
+The answer is D.
+
+-211
+-
+
+415
+
+math
+
+For any question like this, it is critical to have an organized way of going through the possible outcomes and
+
+tallying the ones we want to count. Example 8 just shows one type of question and one approach to solve, but
+different questions will require different approaches. A good first step is to always draw a diagram and start
+
+listing outcomes. If there is a pattern, as there was in Example 8, you will be able to spot it. If not, you can
+just brute force your way to the answer by listing all possible outcomes and finding the probability from there.
+Example 9: Kenji and David are members of a dinner club that will be meeting tonight. The 8 members
+
+of the dinner club will be seated randomly around a table. What is the probability that Kenji and David
+will be sitting next to each other at dinner?
+
+A—15
+
+B-7
+
+C+5
+
+»pD47
+
+Solution: At first, this question seems extremely difficult to solve. There are so many places that Kenji and
+David can sit and so many possible outcomes to deal with! You may be thinking about permutations and
+combinations. No need for any of that complicated math. There is a quick and easy way to solve this
+question: draw a diagram and assign one person a seat.
+
+In the diagram below, each dash represents a chair. Let’s put Kenji in a chair.
+
+Kenji
+
+Now that Kenji is in a chair, what is the probability that David is randomly seated next to Kenji? Well, there
+
+are 2 seats next to Kenji and a total of 7 seats left, so the probability that David is sitting next to Kenji is =
+The answer is D.
+
+Notice that the chair we put Kenji in does not matter. No matter what chair Kenji is randomly assigned to,
+there are 2 seats next to him and 7 total seats left. We could have also assigned David to a seat and then done
+the same thing with where Kenji can sit: there would be 2 seats next to David and 7 seats total. No matter how
+
+we Set this up, the probability that Kenji and David are sitting next to each other is always =|
+Example 10: Six volleyball players are going to be randomly split into two teams of 3. If Kim and Mary
+
+are among the 6 players, what is the probability that they will be on the same team?
+
+A. 25
+
+B. ur
+
+c=
+10
+
+p30
+
+Solution: Draw a diagram of the situation and place one of the players on a team. Here, we will place Kim on
+the Ist team.
+Kim
+
+What is the probability that Mary will be on the same team as Kim? There are 2 spots left on Kim’s team and
+
+5 spots left overall, so the probability they will be on the same team is =. The answer is A.
+Just like in our last example, no matter where we put Kim, there will be 2 spots left on that team and 5 spots
+
+overall, so the probability will always be =
+
+- 212
+-
+
+Chapter 22: Probability
+
+Advanced probability questions like examples 8-10 commonly appear at the end of the ACT, usually in
+questions 35-45, and most students find them very difficult. However, using this simple diagram trick makes
+questions like this quick and easy to solve!
+
+Expected Value
+The expected value is the outcome you expect for a probability based event, like how many questions you
+might answer correctly if you guess on a multiply choice test. For example, if you guess randomly on a
+60-question multiple-choice math test which choices A, B, C, and D, you can expect to get 25% correct (15 out
+of 60).
+
+The calculation behind this is simple: take the probability of an event occurring and multiply by the number of
+events.
+
+Expected Value = P(A) x A
+Where P(A) is the probability that event A occurs and A is the number of times event A occurs. For our
+
+multiple-choice test example, the probability of guessing an answer correctly is - and the number of questions
+is 60, so
+
+Expected Value = P(guess correctly) x number of questions = =x 60 = 15
+If you guess randomly on the 60 questions, the expected number of correct answers is 15.
+Example 11: A bag contains 12 identically sized, solid-colored balls. 3 balls are black, 5 are green, 2 are
+
+blue, and 2 are yellow. A ball is drawn at random and returned to the bag, and the results are recorded. If
+this experiment is conducted 600 times, how many times would a green ball be expected to be selected?
+A.
+
+100
+
+B.
+
+150
+
+C. 250
+
+D. 300
+
+Solution: The probability of drawing a green ball is =, and the experiment will be conducted 600 times, so
+Expected Value = = x 600 = 250
+The answer is C.
+
+This is the easy type of expected value question that would appear somewhere in the first 30 questions. More
+advanced expected value questions will include multiple possible outcomes from the same event.
+For example, let’s say that there are four cards on the table facedown. Each card has a number written on it,
+which represents the amount of money the winner gets. If two cards have a 1, one card has a 3, and one card
+has a 11, what is the expected value of playing the game?
+The approach is the same as before, except that now we need to add the sum of all the expected values using
+the equation
+
+Expected Value = P(A) x A + P(B)xB+ P(C)xC...
+P(A) is probability that events A occurs, and A is the payout for event A. P(B) is probability that events B
+occurs, and B is the payout for event B, and so on for however many events there are. For our example, the
+probability is the likelihood of picking a card with a certain number. The payout for each event is the number
+
+on the card.
+
+There are 2 cards with a 1, so the probability of randomly picking a card with a 1 on it is =. There is 1 card
+with a 3, so the probability of randomly picking a card with a 3 on it is = There is 1 card with an 11, so the
+
+- 213
+-
+
+math
+
+probability of randomly picking a card with a 11 on it is = Using the expected value equation above, we can
+solve:
+
+Expected Value = = x 1 + =x 3+ = x 11 = = 4
+
+The expected value of drawing a card is =, or $4.00. Since the card numbers are only 1, 3, and 11, the winner
+will never get exactly $4.00, but that is the average payout expected based on the probability and payouts.
+Example 12: Terry is playing a game involving ten identical cards in a deck. Each card has a single
+
+number written on it: 4 cards have a 2, 3 cards have a 5, 2 cards have a 10, and 1 card has a 25. Terry will
+choose a card at random, and he will be awarded the number of points equal to the number written on the
+card. What is the expected value for the number of points that Terry will be awarded if he draws 1 card?
+A.
+
+4.4
+
+B. 5
+
+C. 6.8
+
+D. 7.5
+
+Solution: To find the expected value, we need to multiply the probability of each event occurring by the
+
+points awarded from each event, which is just the number on the card. The probability of drawing a 2 is =, the
+probability of drawing a 5 is =, probability of drawing a 10 is = and probability of drawing a 25 is =
+Putting this in our expect value equation, we get:
+
+Expected Value =+x24+2x54+2x10+—x25= 68
+10
+
+10
+
+10
+
+10
+
+The answer is C.
+
+Advanced expected value questions like Example 12 will most likely appear at the end of the test in questions
+35-45. Students aiming for top math scores should memorize how to set this up.
+
+-214-
+
+Chapter 22: Probability
+
+Probability Practice: Answers on page 331.
+
+1.
+
+Andy has a big bag of marbles. If the bag has
+
+4.
+
+30 blue marbles, 25 red marbles, and 15 green
+
+The table below shows the grades that 50
+students received on the Chemistry exam.
+
+marbles, what is the probability that he will
+randomly select a red marble?
+
+Exam Grade
+
+Number of Students
+
+A
+
+11
+
+A. 2.
+‘5
+
+B
+
+—
+
+"45
+
+C.
+
+3
+
+B
+
+23
+
+C
+
+12
+
+D
+
+3
+
+F
+
+1
+
+7
+
+D.
+
+7
+
+What is the probability that a randomly selected
+
+student’s exam score is less than a B?
+
+A.
+B.
+C.
+D.
+
+2. Jerry is in arush and needs to grab one of the
+premade sandwiches at the market. Jerry’s
+favorite is the Italian sub, but the sandwiches
+have no labels on them. If there are 15 turkey
+sandwiches, 12 veggie subs, and 10 Italian
+subs, what is the probability that he does NOT
+
+5.
+
+get an Italian sub?
+
+0.24
+0.32
+0.46
+0.52
+
+A box contains 1 red bead, 6 white beads, and 3
+
+blue beads. Jorge will randomly remove one ~
+bead from the box, record its color, and place it
+
+A
+
+22
+
+back in the box. If Jorge repeats this
+
+27
+B
+
+3.
+
+experiment 150 times, what is the expected
+
+2
+
+number of times Jorge will record a bead that is
+
+27
+
+blue?
+
+-
+
+A.
+
+30
+
+D. =
+
+B.
+
+45
+
+C.
+
+75
+
+D.
+
+105
+
+A bag contains 13 flavored pieces of candy: 5
+
+lemon, 2 strawberry, 3 orange and 3 grape.
+What is the probability that one piece of
+randomly selected candy is flavored strawberry
+
+.
+
+6.
+
+or grape?
+
+A.
+
+country. - picked Italy, - picked Spain, -
+
+3
+
+picked France, and = pick Portugal. Ifa
+
+13
+
+random backpacker from the group 1s selected,
+
+20
+
+=
+
+B=
+
+©
+
+c
+
+A group of backpackers were asked to pick
+their favorite country in Europe. No
+backpacker was allowed to pick more than one
+
+what is the probability that he or she did not
+
+13
+
+pick any of these 4 countries?
+
+2
+
+"43
+
+A.
+
+=
+
+B
+
+2
+
+5
+
+D.
+
+20
+
+3
+
+3
+4
+
+C5
+
+pd
+
+2
+2
+
+- 215
+-
+
+G)
+
+math
+
+CG)
+
+7.
+
+A box contains 12 solid-colored marbles: 5
+
+Use the information below for questions 10 and 11.
+
+blue, 4 red, 1 yellow, and 2 pink. Which of the
+following expressions gives the probability of
+
+The table below shows the results of two diets on
+
+drawing, at random and without replacement, a
+
+the weight of dogs.
+
+pink marble on the Ist draw and a red marble
+
+Diet
+
+on the 2nd draw, and a pink marble on the 3rd
+draw?
+
+A (S)(G)G)
+ONAN
+4
+2
+
+4
+
+8.
+
+Lost
+
+Total
+
+A
+
+50
+
+100
+
+150
+
+B
+
+75
+
+75
+
+150
+
+|
+
+°
+
+|
+
+of the dogs who lost weight received diet B?
+
+A 2
+BZ
+
+4
+
+150
+
+A pencil will be randomly selected from a bag.
+
+175
+
+The probability of selecting a white pencil is =
+
+Dd. 300
+
+The probability of selecting a blue pencil is =
+
+©)
+
+What is the probability of selecting a white or
+blue pencil?
+
+>BGFO
+
+Weight of Dogs
+
+©” Based on the results in the table, what fraction
+
+C. (S)(a)G)
+D. (S)(5) )
+1
+
+Gained
+
+2
+
+B. (=) (=) (=)
+2
+
+"¢
+
+11. Based on the results in the table, what fraction
+
+of the dogs received diet A and gained weight?
+
+1
+13
+
+5
+13
+
+5
+26
+6
+
+>WGOB9 Snectloaw
+N
+
+26
+
+9 A pow ae 12 ee iprtee pS.
+
+Cee e eee
+
+12. Three squares with the same center have side
+
+ey eae @) lengths of 1, 2, and 3 respectively. What is the
+
+probability of choosing a blue marble out of the
+.
+
+1
+
+probability that a point randomly chosen in the
+
+:
+
+bowl is 7 How many black marbles are in the
+
+interior of the largest square is also in the
+
+bowl?
+
+interior of the smallest square?
+
+A.
+
+6
+
+B.
+C.
+
+12
+18
+
+A.
+
+D.
+
+24
+
+- 216
+-
+
++
+
+B.
+
+°
+5
+
+C.
+
+1
+3
+
+D.
+
+5
+
+4
+
+Chapter 22: Probability
+
+13. Julia runs out of time on her test and needs to
+
+Use the information below for questions 16-18.
+
+guess on the last 4 questions. Each question
+
+Crust Style
+
+has 5 answers. If Julia answers each one
+
+randomly, what is the probability she answers
+
+Thin
+
+all 4 questions correctly?
+
+Tovpi
+
+A
+
+Cheese
+
+OPPINE
+
+D
+
+Dich
+8
+
+12
+
+Pepperoni
+
+Gl
+
+na
+ret
+
+19
+
+8
+
+7
+
+25
+
+9
+
+"625
+
+B+
+
+©
+
+The table above shows the pizza orders at Pete’s
+
+625
+
+Pizzeria from 1-2pm on a Saturday afternoon.
+
+1
+
+C.
+
+16. What is the probability that a pizza ordered was
+
+1
+
+D
+
+a thin crust pizza?
+
+—_—
+5
+
+A.
+
+14. The probability that each of two independent
+
+B. -
+
+events will occur is given in the table below. G)
+
+C2
+
+Event | Probability
+XxX
+
+0.3
+
+Y
+
+0.5
+
+5
+
+8.
+DZ
+
+What is the probability that EventX or EventY
+
+17. What is th
+
+bability
+
+that a
+
+p1
+
+dered
+
+aris the probabully Mat a pizza ordered was
+
+thin crust or gluten free?
+
+occur?
+
+19
+
+A. 0.15
+
+A. 238
+
+B.
+
+0.4
+
+B. 40
+
+D.
+
+0.8
+
+c
+
+2
+
+dD
+
+2
+
+21
+
+C. 0.7
+
+15. At the regional baseball tournament, two games
+
+40
+
+20
+
+are played simultaneously. In the first game,
+team A has a 35% chance of winning. In the
+second game, team C has a 60% chance of
+
+18. Max and Amelia are picking up 2 pizzas from
+
+winning. What is the probability that both team
+A and C win?
+
+1-2pm at Pete’s Pizzeria, what is the probability
+
+(Note: Neither game can result in a tie.)
+A.
+
+14%
+
+B.
+
+21%
+
+that Max and Amelia get 2 deep dish pepperoni
+pizzas or 2 thin crust cheese pizzas?
+
+c 26%
+.
+
+.
+
+Pete’s Pizzeria for lunch. If 2 pizzas are
+randomly selected from the pizzas ordered from
+
+A. (55) (as) + Gas) (Gs)
+
+0
+
+NeLYSOLN
+
+aNa
+muo|u
+Oo
+EN
+OD
+
+- 217
+-
+
+* (5) Gs)
+
+math
+
+©” Billy, Randal, Mike, and Shaun are at the
+
+19. A box of donated toys has ten toys left. 3 are
+
+blue stuffed animals, 3 are colored balls, of
+
+waterpark. They are randomly assigned into
+
+which 2 are red and 1 is blue, and 4 are
+
+pairs at the top of a two-person waterslide.
+
+frisbees, of which 3 are blue and 1 is red. Ifthe
+
+What is the probability that Billy and Shaun
+
+probability of drawing each object is the same,
+
+will be paired together?
+
+what is the probability that the next toy drawn
+
+pOGD>9 eaVtIR
+
+from the box 1s red or a ball?
+
+N
+
+>WGDO wEGNiIelo
+o>)
+
+© A slot machine has two buttons you press. The
+
+first button will randomly give you a number
+from 1 to 5. The second button will randomly
+
+give you a number from 1 to 3. What is the
+
+. A San Diego high school football team will
+play three games in a tournament to get to the
+
+probability that the product of the two buttons
+
+final. The local newspaper gives them an 80%
+
+is even?
+
+chance of winning the first game, a 60% chance
+of winning the second game, and a 20% chance
+
+pO5WS0
+
+of winning the third game. What is the
+
+probability that the team will win the first two
+games and lose the third game?
+A.
+
+6.4%
+
+B.
+
+9.6%
+
+C.
+
+25.6%
+
+D.
+
+38.4%
+
+mulwtn
+
+©- At casino night,
+
+James will play a game in
+
+which he rolls three six-sided dice numbered 1
+
+through 6. He will be awarded 4 points for
+each die that lands on an odd number. Let the
+
+. There are 52 cards in a deck of cards. There are
+
+random variable x represent the total number of
+
+4 suits, spades, hearts, diamonds, and clubs, and
+
+points awarded on any roll of the dice. What is
+
+each suit has 13 cards numbered 1 through 13.
+
+the expected value of x?
+
+What is the probability that a randomly selected
+card is numbered 7 or a heart?
+A.
+
+=
+52
+
+C.
+
+10
+
+D.
+
+B.
+
+=
+
+C.
+
+=
+
+D.
+
+A.
+B.
+
+4
+
+52
+13
+
+52
+
+NB R
+
+©” There is a 70% chance that it snows more than 4
+
+16
+
+inches today. If it snows more than 4 or more
+
+52
+
+inches, there is a 90% chance that school will be
+
+=
+
+cancelled tomorrow. If it snows less than 4
+inches, there is a 30% school will be cancelled.
+
+What is the probability that school will be
+cancelled tomorrow?
+
+Gap,
+- 218
+-
+
+60%
+63%
+65%
+72%
+
+Chapter 22: Probability
+
+26. Two six-sided dice numbered 1 through 6 are
+
+30. A box contains 12 bagels of 3 types. There are
+
+rolled simultaneously. What is the probability
+
+6 sesame bagels, 4 blueberry bagels, and 2
+
+that the sum of the faces that land up will be
+
+everything bagels. You reach into the box and
+
+greater than 4 and less than 8?
+
+grab a bagel at random and then, without
+replacing the first bagel, reach into the box and
+
+A
+
+choose another bagel at random. What is the
+probability that both of the bagels you choose
+are the same type?
+
+3
+36
+
+B
+
+15
+
+16
+
+12
+
+36
+
+B. 2
+19
+
+27. There are six students in a class. The six
+
+C. ~~
+
+students will be randomly split into two groups
+
+44
+D-
+
+of 3. If Shoba and Shanice are two students in
+
+Tag
+
+the class, what is the probability that they will
+end up in the same group?
+31. There are 12 seats at a large conference table,
+all of which will be filled. Adam and Jane will
+
+1
+
+“. 9
+
+both attend the conference and do not like each
+
+1
+
+what is the probability that Adam and Jane will
+
+B. -
+
+other. If all members are randomly seated,
+
+C. 3
+pd
+
+not be sitting next to each other?
+
+2
+
+a)
+
+A.
+
+41,2
+12
+
+B. a=
+i y
+C. 12 141
+
+28. Given that x will be chosen randomly from G)
+{3, 4, 6, 7,9} and y will be chosen randomly
+from {5, 6, 7,8, 9, 10}, what is the probability
+
+pd
+
+that xy is odd?
+A
+
+i
+
+11
+
+2
+11
+
+32. Pamela rolls 2 fair dices. One has 8 faces, each
+
+5
+
+numbered with a different integer 1 through 8.
+
+B=
+
+The other has 6 faces, each numbered with a
+
+C. 30
+
+probability that when the two dices are rolled
+
+p
+
+the sum of the integers is greater than 11?
+
+Ll
+
+different integer 1 through 6. What is the
+
+2
+2
+
+A
+
+29. Wanda is on a game show. There are 8
+
+=
+
+°
+
+identical envelopes on the table with different
+
+B. 48
+
+amounts of money inside: 3 have $6, 4 have
+
+c
+
+$15, and 1 has $50. Wanda gets to keep the
+
+money in the envelope she selects. What is the
+
+D. =
+
+expected value for the amount of money, in
+dollars, Wanda will get from selecting one
+envelope?
+A.
+
+12
+
+B.
+
+13.5
+
+C.
+
+14.45
+
+D.
+
+16
+
+2
+"48
+
+- 219
+-
+
+math
+
+33. A local market receives 60 cartons of eggs per
+
+Use the information below for questions 36-38.
+
+day. For 25 days, the number of cartons with at
+least one broken egg was tracked, and the
+
+clothing company are listed below. The table
+
+results are displayed in the table below.
+
+Number of cartons
+
+Number
+of
+
+with at least 1
+
+days
+
+indicates the number of customers in 3 age brackets
+(16-25, 26-35, 36-45) and the number of items of
+clothing from the company each customer owns.
+
+broken egg
+0
+
+Data from a random sample of 245 customers of
+
+Age (in years)
+
+16
+
+0.42
+
+C.
+
+0.76
+
+D.
+
+0.85
+
+2
+
+16-25
+
+71
+
+17
+
+2
+
+90
+
+3
+
+1
+
+26-35
+
+43
+
+32
+
+60
+
+135
+
+4
+
+2
+
+36-45
+
+11
+
+6
+
+3
+
+20
+
+Total
+
+125
+
+55
+
+65
+
+245
+
+©” If two customers are chosen at random, what is
+the probability that they are both above the age
+of 25 and own less than 4 items of clothing?
+A.
+
+89O
+
+. To win a carnival game, a contestant must
+remember which of the five differently colored
+balls are hidden under five separate boxes.
+
+John can remember where one of the colored
+
+54(53)
+125(124)
+
+clothing, what is the probability that the next 2
+customers are in the 16-25 age bracket and own
+
+S>OGW9 uaURtlnerlN&e
+
+4-6 items of clothing?
+A.
+B.
+
+C.
+
+. There are two twins ina family. At a family
+
+D.
+
+reunion, Zach is sitting at the head of the table
+
+with 7 seats. The twins are not allowed to sit
+next to Zach, but the seating has already been
+
+3
+
+16(15)
+224(223)
+
+customers chosen will be from the same age
+bracket?
+
+11
+
+5
+
+17(16)
+90(89)
+
+at random. Given that no customer is chosen
+
+=
+4
+
+16(15)
+
+245(244)
+
+twice, what is the probability that both
+
+twins are not sitting next to Zach?
+
+6
+
+17(16)
+
+245(244)
+
+©” Two customers from this sample will be chosen
+
+randomly assigned. What is the probability the
+
+D.
+
+43(42)
+245(244)
+
+customer is 17 years old and owns 6 items of
+
+is the probability that John will win the game?
+
+c,
+
+54(53)
+245(244)
+
+are chosen at random. Given that the first
+
+four are and will need to randomly guess. What
+
+B.
+
+155
+245
+
+@” Three customers that are below the age of 36
+
+balls is but cannot remember where the other
+
+A.
+
+Total
+
+2
+
+given day?
+
+B.
+
+T+
+
+4
+
+of cartons with at least 1 broken egg on any
+
+0.36
+
+4-6
+
+1
+
+Based on this data, what is the expected number
+
+A.
+
+Items of Clothing
+1-3
+
+==
+6
+
+5
+
+4
+
+4
+
+6
+
+5
+
+5
+
+4
+
+6
+
+5
+
+p20
+4 238 4 20
+
+2.4
+
+245
+
+C.
+
+2-5
+
+D
+
+245
+
+135(134)
+
+20(19)
+
+245(244)
+
+245(244)
+
+= 245(244)
+
+55(54)
+
+65(54)
+
+125(124)
+
+"
+
+- 220
+-
+
+245
+
+90(89)
+
+245(244)
+
+= 245(244) ~~ 245(244)
+
+Chapter 23: Factorial, Permutations, Combinations, and Organized Counting
+

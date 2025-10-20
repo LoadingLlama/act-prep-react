@@ -1,0 +1,745 @@
+Chapter 28: Exponential Growth and Decay
+Any quantity that grows or decays at a fixed rate over time is said to experience exponential growth or
+
+decay. Some examples that you may be familiar with include money in a bank account earning 8% interest
+each year or the number of bacteria on a plate doubling every week.
+For most questions on the ACT, we use the simpler form of the exponential growth and decay equations shown
+below:
+
+Growth:
+
+A=P(1+r)!
+
+Decay:
+
+A=P(i-r)é
+
+P = initial value
+
+A = current value
+
+r = rate of the growth or decay
+t = time interval
+
+We use the simple form of the equation above when the time interval is in years, which is most common on the
+ACT. At the end of this chapter, we will introduce you to the more complex form just in case it appears on
+your ACT.
+
+Exponential Growth
+To see how these equations work and appear on a graph, let’s examine the equation for a bank account that has
+
+an initial balance of $100 and an 8% annual interest rate.
+
+A= 100(1 + 0.08)*
+A = 100(1.08)¢
+The $100 is the initial value, and the 8% is the growth rate. 8% is expressed as 0.08 in decimal form, so we
+get a value of 1.08 inside the parentheses. A represents the current value after ¢ time intervals. Since the
+amount of money in the bank account is increasing at a non-linear rate over time, we have exponential
+growth.
+
+Now, let’s see how this exponential growth equation appears on a graph.
+250
+
+200
+
+0
+
+—
+
+1
+
+—
+
+3
+
+‘
+
+aA
+
+4
+
+5
+
+6
+
+7
+
+€&
+
+9
+
+For any exponential growth equation, the graph will have an upward curve like this one. The y-intercept of
+
+the graph shows the initial value, which in this example is $100.
+Note that the graph is NOT linear. Even though the growth rate remains constant at 8%, the annual increase
+
+in the amount of money in the account will not be the same. In the first year, the $100 grows by 8%, which is
+
+$8, so the final amount in the account at the end of year 1 is $108. For the second year, the money is growing
+at 8% but the starting value is now $108, so the amount of money will increase by 8% of $108, which is $8.64.
+This explains why a constant rate of change does NOT lead to a constant amount of change and why
+exponential graphs are not linear.
+
+- 260
+-
+
+Chapter 28: Exponential Growth and Decay
+
+Example 1: Julia estimates that the numbers of bees in a hive increases by 30% every month. If Julia
+buys a hive with 50 bees, which of the following properly models Julia’s estimate for how many bees, 5,
+will live in the hive in m months?
+
+A.
+
+B=50+30m
+
+B. B=50(0.3)"
+
+C.
+
+B=50m2+30
+
+D. B=50(1.3)TM
+
+Solution: The initial number of bees in the colony is 50, and the growth rate is 30%. Since the growth is 30%
+each month and not a fixed numerical value, we have exponential growth and not linear growth. A, which is
+linear, and C, which is quadratic, are incorrect. The value in the parentheses must be 1.3 and not 0.3 since the
+
+growth rate is 30%. The 1.3 comes from the (1 + 0.3) in the growth equation. The answer is D.
+
+Exponential Decay
+Now let’s consider an example of exponential decay. A new car purchased for $20,000 loses 10% of its value
+each year after the purchase date.
+
+A = 20,000(1 — 0.1)°
+A = 20,000(0.9)
+The $20,000 is the initial value, and the 10% is the rate of decay. 10% can be expressed as 0.1 in decimal
+form, so we get a value of 0.9 inside the parentheses. A represents the current value after ¢ time intervals.
+Now, let’s see how this exponential decay equation appears on a graph.
+“\
+
+“ymel
+
+|
+
+RS
+
+are
+
+Again, note that the graph is NOT linear. The car continues to lose 10% of its value each year, but the
+
+numerical decrease in the car’s value is not the same every year. Anytime we have an exponential decay
+equation, the graph will have a downward curve like this one. The y-intercept of the graph shows the initial
+
+value, which in this example is the purchase price of $20,000.
+Example 2: The Santa Barbara Newspaper is losing subscribers at a rate of 12% per year. If the
+newspaper currently has 24,000 subscribers, which of the following is closest to the number of subscribers
+the newspaper will have in 2 years?
+A.
+
+15,360
+
+B. 18,240
+
+C.
+
+18,590
+
+D. 21,120
+
+Solution: The newspaper is losing subscribers at a constant percentage rate, so we can use the exponential
+decay equation. The 12% decrease can be expressed as 0.12 and, since we asked to find the number of
+subscribers in 2 years, t = 2.
+
+Subscribers = 24,000(1 — 0.12)? = 24,000(0.88)* = 18,585.6
+The question says, “closest to,” so we are not going to see the exact value in the answer choices. We need to
+pick the answer closest to the value of 18,585.6. The answer is C.
+
+- 261
+-
+
+math
+
+General Exponential Form
+Exponential equations can also appear in the general form show below.
+y = ab*
+
+where a # 0 and b is a positive number and b # 1. The a and b values are constants. The main points we
+need to understand about this general exponential form as listed below:
+e
+
+ais the y-intercept and shows the initial value of graph when x = 0.
+
+e
+
+bis the rate of change and shows how much the initial value changes per time interval.
+
+e
+
+xis the time interval.
+
+e
+
+Ifb> 1, the equation shows exponential growth.
+
+e
+
+If0< b <1, the equation shows exponential decay.
+
+To better understand general form, let’s consider two examples with some numbers:
+Example 1: A population of 150 endangered Rhinos is doubling every year. Write an equation that
+
+models the size of the population, P(x), in x years.
+P(x) = 150(2)*
+The initial Rhino population is 150, so a = 150. The population is doubling every year, so the rate of change,
+b,is 2. x represents the number of years.
+Example 2: After a lake is polluted, the population of fish in the lake follow exponential decay. A
+
+survey finds that one third of the fish in the lake survived after 1 month. If the estimated initial
+
+population of fish in the lake was 12,000, write an equation that models the number of fish, F(x), in
+m months.
+
+F(x) = 12,000 (=)
+
+m
+
+The initial population of fish in the lake is 12,000, so a = 12,000. The population is one third of its starting
+
+value after 1 month so b = = m represents the number of months.
+Graphing General Exponential Form (Bonus Topic)
+The ACT can include questions where you need to know how to graph exponential equations, but these are
+rare and you are unlikely to see it on test day. If you understand the 2 examples below, you should be able to
+solve any exponential graphing questions that appear on the ACT.
+Exponential Growth (b > 1)
+
+ya2
+
+Exponential Decay (0 < b < 1)
+
+x
+
+1 *
+
+y=2(;)
+
+8
+
+6
+
+5.
+
+8
+
+6
+
+/
+
+\:
+
+&
+
+NS)wo
+>“
+4
+
+-
+
+2
+
+-1
+
+0
+
+-1
+
+1
+
+2
+
+4
+
+4
+
+~
+
+-2
+
+-4
+
+0
+
+1
+
+2
+
+-1
+
+e y y-interecept at (0,a
+
+y-interecept at (0, a)
+
+e Graph increasing from left to right
+
+Graph decreasing from left to
+
+when b > 1.
+
+right when 0 < b < 1.
+
+e Horizontal asymptote at y = 0.
+
+e Horizontal asymptote at y = 0.
+
+- 262
+-
+
+4
+
+Chapter 28: Exponential Growth and Decay
+
+The most important difference to understand is how the general shape of the graph changes when b > 1, where
+we see exponential growth, compared to when 0 < b < 1, where we see exponential decay.
+
+Also, note that the y-intercept always appears at the point (0,a). For the graph on the left, a = 1, so the
+y-intercept is at (0,1). The equation y = 2* is the same as y = (1)2*, so we do not see the 1 in the equation.
+For the graph on the right, a = 2, so the y-intercept is at (0, 2).
+
+Advanced Exponential Growth and Decay Equations (Bonus Topic)
+The exponential growth and decay equations that we learned at the beginning of this chapter are the simplified
+versions. The ACT very rarely includes questions for which you need to know the compound exponential
+growth and decay equations listed below. This topic is rarely tested and advanced, so you should only
+worry about this if you are aiming for top ACT Math scores.
+
+Compound Growth:
+
+P = initial value
+
+A=P(1+ - yn
+
+A = current value
+r = rate of the growth or decay
+
+Compound Decay:
+
+A=P(1--)"
+
+¢ = time interval
+
+n = number of times compounded per time interval
+
+Compounding growth or decay equations are most commonly used for calculations involving money. We only
+need to use these more advanced forms of the equations when the compounding occurs multiple times within
+each time interval. I know that seems a bit confusing, so let’s take a look at an example to make it clearer.
+
+Example 3: Rachel puts $2,000 in a savings account that has an annual interest rate of 4% and
+compounds every 6 months. Which of the following equations correctly calculates the value of her
+investment in 3 years?
+
+A. 2,000(1.04)2
+
+B. 2,000(1.04)®
+
+C. 2,000 (1 +*)
+
+3
+
+D. 2,000 (1 +°)
+
+6
+
+Solution: Anytime an annual growth or decay rate is provided and the compounding occurs at a rate that is
+less than a year, we use the compound growth or decay equations. For Example 3, the compounding occurs
+every 6 months and the interest rate is annual, so we must use the compound growth equation shown above.
+Since the compounding occurs 2 times per year (there are 2 6-month periods each year), n = 2. The initial
+
+value is $2,000, so P = 2,000. The rate of growth is 4%, so r = 0.04. We are finding the investment value in
+3 years, sot = 3. Plugging all of these values into the compound growth equation, we get:
+. “—
+
+Value in 3 Years = 2,000 (1 + >
+
+0.04 6
+
+= 2,000 (1 + —)
+
+The answer is D.
+
+If the question had no compounding and the investment just had an annual interest rate of 4%, we would use
+the simpler equations we learned at the start of this chapters and the correct answer would be A.
+Again, this topic is very rarely tested on the ACT, but it has been on the test before and is fair game. You
+should memorize both forms of the exponential growth and decay equations we learned in this chapter if you
+are aiming for top math scores.
+
+- 263 -
+
+math
+
+Exponential Growth and Decay Practice: Answers on page 333.
+
+©
+
+'
+
+Trayvon 1s buying 5,436 fish to start his fish
+
+©
+
+farm. The number of fish in his pond are
+
+The population of otters in a lake, 1, at the
+beginning of each year can be modeled by the
+
+estimated to increase at a rate of 3% per year.
+
+equation 1(x) = 5(2*), where x represents the
+
+Which equation models the total number of
+
+number of years after the beginning of the year
+
+fish, P, in the pond t years from now?
+
+2010. For example, x = 0 represents the
+beginning of the year 2010, x = 1 represents
+
+GaAW>
+
+P(t) = 5,436(1.03)
+P(t) = 5,436(0.03)
+P(t) = 0.03(5,436)¢
+P(t) = 1.03(5,436)°
+
+the beginning of the year in 2011, and so on.
+
+According to the model, how many otters were
+in the lake at the beginning of the year 2015?
+A.
+
+160
+
+B.
+
+320
+
+The number of ants in a colony grows
+
+C.
+
+640
+
+exponentially, doubling every 5 days. What is
+
+D.
+
+1,280
+
+the population of the colony, in thousands,
+exactly 30 days after the population first
+reaches a population of 3,000 ants?
+
+©*
+
+An invasive species of fish that preys on snails
+was introduced to Lake Michigan in 2008.
+
+Gap
+
+48
+
+Since the introduction of the invasive species,
+
+75
+
+the population of snails has decreased by one
+
+96
+
+third each year. If the population of snails was
+estimated to be 81,000 in January 2018, what
+
+192
+
+was the population estimated to be in January
+2022?
+
+A surfboard depreciates at an annual rate of
+
+Gay
+
+15%. If the initial value of the surfboard is
+
+$995, which of the following functions P
+correctly models the price of the surfboard t
+years from purchase?
+
+GaAWp,>
+
+P(t) = 0.15(995)*
+P(t) = 0.85(995)¢
+P(t) = 995(1.15)¢
+P(t) = 995(0.85)¢
+
+©'
+
+36,000
+27,000
+24,000
+16,000
+
+Cocoa Daily sells dark chocolate almonds in
+bulk online. The price per pound, P(x), fora
+store to purchase x pounds of dark chocolate
+almonds is given by the function below.
+
+P(x) = 6.5 + 0.95*
+
+Priscilla selects a random number on Monday.
+
+Every day, the number decreases by 40%. If
+
+Which of the following dollar values is closest
+
+Priscilla selects 340 on Monday, which of the
+
+to the total price to purchase 90 pounds of dark
+
+following expressions is equal to the number
+
+chocolate almonds from Cocoa Daily?
+
+the following Monday?
+
+A.
+B.
+C.
+
+340(0.6)’
+340(0.4)’
+340(1.4)’
+
+D.
+
+340 —7(0.4)
+
+- 264
+-
+
+A.
+
+$499.50
+
+B.
+
+$586.00
+
+C.
+
+$594.50
+
+D.
+
+$670.50
+
+Chapter 28: Exponential Growth and Decay
+
+8.
+
+The function f(x) = 75,000b* models the
+
+12. From the 2nd month to the 6th month of its
+
+annual value for a stock, in dollars, x years
+
+life, a golden retriever experiences exponential G)
+
+after being placed on the stock market, where
+bis aconstant. If the stock’s value increases
+
+growth. The table below shows the weight of
+a golden retriever every 2 months.
+
+6% per year, what is the value of b?
+
+A. 0.06
+B.
+
+0.6
+
+C.
+
+1.06
+
+(pounds)
+
+2
+
+8
+
+D. 1.6
+9.
+
+Weight
+
+Age (months)
+4
+6
+
+18
+
+40.5
+
+Starting in 1950, the number of people living
+
+Which of the following equations most closely
+
+in Alaska doubled every 20 years. The
+
+models the weight of the golden retriever,
+
+population of Alaska was 150,000 in 1950.
+
+W(m), m months after 2 months from the
+
+Which of the following expressions gives the
+
+ages of 2 months to 6 months?
+
+population of Alaska in 2010?
+
+A 45
+;
+.
+150,000(2)
+B.
+C.
+
+A. W(m)
+= 8(2.25)?
+B. W(m)
+= 8(2.25)2"
+
+150,000(2)2°
+150,000(2)°°
+
+C.
+
+D. 150,000(2)(60)
+
+m
+W(m) = 8(1.25)2
+
+D. W(m)
+= 8(1.25)°TM
+
+10. Each year after a car is purchased, the price is
+
+13, The amount ofnitrogen, in milligrams per
+
+estimated to be 15% less than the value the
+previous year. Ifthe initial purchase price of a
+
+kilogram of soil, in a soll sample is given by
+the formula N = No(3°TM"), where N is the
+
+car was $29,500, which ofthe following is
+closest to the price of the car 3 years after it
+
+total nitrogen in a sample m miles froma site
+where a water treatment plant just opened and
+
+was purchased?
+
+No is the initial amount of nitrogen in the soil
+
+before the treatment plant opened. Which of
+
+A.
+
+$13,000
+
+the following expressions gives the number of
+
+B.
+
+$16,000
+
+miles where an initial nitrogen concentration
+
+C.
+
+$16,225
+
+of 4 milligram per kilogram is now measured
+
+D.
+
+$18,100
+
+to be 108 milligrams per kilogram?
+A.
+
+11. The population of humpback whales in the
+North Pacific have been doubling every 11
+years since 1980. If the population of
+
+0.5
+
+B. 15
+C. 2
+D. 3
+
+humpback whales was estimated to be 5,500 in
+1980, the population of humpback whales in
+
+14. The equation below models the number of
+
+2010 was estimated to be:
+
+bacteria, in thousands, on a petri dish A hours
+
+A.
+
+5,500 to 11,000
+
+to the model, the number of bacteria is
+
+B.
+
+11,000 to 22,000
+
+predicted to increase by 2% every n minutes.
+
+C.
+
+22,000 to 33,000
+
+What is the value of n?
+
+after the dish has been inoculated. According
+
+D. 33,000 to 44,000
+
+F(h) = 62(1.02)#
+
+- 265
+-
+
+A.
+
+5
+
+B.
+
+12
+
+C.
+
+120
+
+D.
+
+300
+
+math
+

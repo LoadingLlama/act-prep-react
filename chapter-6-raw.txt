@@ -1,0 +1,1531 @@
+Chapter 6: Fractions
+For success on the ACT, you will need to be comfortable with fractions. Fractions are one of those topics that
+many students hate. If you are one of those students, fear not! In this chapter, we will cover all the
+fundamental techniques that will allow you to answer any question involving fractions quickly and efficiently.
+
+1. Combining Fractions
+To add or subtract fractions, we must make the denominators the same by finding the least common
+multiple of the numbers or expressions in the denominators. For example, consider adding the fractions
+below:
+1
+
+2
+
+2
+
+5
+
+Here, the least common denominator is 10. An easy trick to find a common denominator is to multiply the
+numbers in the denominator together. For the fractions above, 2 x 5 = 10. Once we find the least common
+denominator, we can convert all fractions to have the same common denominator and then combine.
+15
+
+2,2
+
+2°5
+
+5°
+
+5,4
+
+2 #10
+
+10
+
+9
+
+#410
+
+On the ACT, you will often see questions with expressions in the denominators instead of just numbers. These
+are more difficult, but the concept and approach are the exact same.
+
+Example 1:
+
+=x 4,04
+x—4
+
+Which of the following is equivalent to the equation above for x + 0 and x # 4?
+4x—-4
+
+x(x-4)
+
+B
+
+4
+
+"
+
+4x-12
+
+2x-4
+
+"
+
+x-1
+
+x-4
+
+*
+
+x(x-4)
+
+Solution: To start, we need to find the common denominator. Here, the common denominator is the product
+
+of the two denominators: x(x — 4). We need to multiply the top and bottom of each fraction by the term they
+are missing in the denominator.
+
+1x74
+x
+
+x-4
+
+3
+
+fe
+
+x-4
+
+x
+
+x—-A4
+
+3x
+
+x—-4+4+3x
+
+4x —4
+
+7 x@—4) | x@—4) — x(x-4) x(x -4)
+
+The answer is A.
+
+Shortcut Solution — Substitution: For any “equivalent” questions like this one, we can also use the method
+we discussed in Chapter 2 and plug in a value for x.
+
+2. Dividing Fractions
+Let’s say that you are solving a question and get
+2
+
+1
+
+3°75
+To solve for x, we divide both sides by = How do we divide a fraction by a fraction? Take the fraction on
+the bottom, flip it to get the reciprocal, and then multiply the reciprocal by the top fraction. This of
+often referred to as “keep, flip, change.” It’s as easy as that!
+
+Se
+
+II
+
+rWh|IulR
+
+II
+
+ul Nwh]
+
+- 42
+
+x
+
+-
+
+II
+
+Chapter 6: Fractions
+
+We can use this method any time we are dividing by a fraction even if the right side is a whole number. For
+example, if we have
+=-x =3
+
+To solve, we need to divide both sides by <, so we use the same trick of flipping the fraction and multiplying
+by the reciprocal.
+
+,
+Example 2:
+
+Sp
+beet
+gt tz=3
+
+For the equation above, what is the value of x?
+
+A+
+30
+2
+
+B+
+45
+
+c-3
+
+pd?3
+
+Solution: First, we need to combine like terms by subtracting - from both sides.
+3.
+
+11
+
+4° "3° 5
+Next, we need to combine the numbers on the right side by finding the common denominator. For 3 and 5, the
+least common denominator is 15.
+1
+
+5
+
+1
+
+8
+
+5
+
+3°5 5°3
+
+3
+
+15 15
+
+2
+
+15
+
+Now, substitute this back into the equation.
+3
+
+2
+
+4° ~ 15
+To isolate x, we divide both sides by =, so we flip the fraction and multiply by the reciprocal.
+2
+
+4
+
+8
+
+*=75*3
+
+3° 45
+
+The answer is B.
+
+3. Simplifying Fractions
+When simplifying fractions, you must be able to divide all terms in the numerator and denominator by
+
+the same number. Simplifying fractions with only numbers is easy.
+6
+
+3
+
+2
+
+15°35
+Many students struggle when there are multiple terms in the numerator or denominator. Let’s start with a
+variable in the numerator.
+2x + 10
+4
+
+Can we simplify this fraction? Yes, but only if we can divide all terms by the same number. Here, we can
+divide every term by 2, so we can simplify the fraction.
+2x+10
+4
+
+2 x+5
+2
+
+- 43
+-
+
+2
+
+math
+
+Many students will make a mistake and only divide the first term by 2 and not the 10 like this:
+2x+10
+
+4
+
+*
+
+x+10
+
+2
+
+WRONG! You must divide all terms by the same number to simplify. If you cannot divide all terms by
+the same number, you cannot simplify the fraction. For example, if we instead had
+8x +3
+4
+
+we can no longer simplify this fraction, but we can split this fraction into two:
+
+4
+
+4
+
+4
+
+4
+
+If you cannot simplify a fraction by dividing all terms by the same number, you should look to split and
+simplify the fraction this way.
+
+The same concept applies for simplifying fractions when we have variables in the denominator.
+3
+6x + 30
+
+Can we simplify this fraction? Yes, all terms can be divided by 3, so we can simplify the fraction.
+3
+
+3
+
+6x+30
+
+1
+
+3.2x+10
+
+Again, make sure that you divide all terms by the same number. If you cannot divide all terms by the same
+number, the fraction cannot be simplified. For example, if we had
+3
+6x
++ 10
+
+we cannot simplify the fraction. While we just saw that you can split up the numerators of a fraction, you
+cannot split up the denominators.
+3
+
+3
+
+3
+
+6x + 10 * 6x u 10
+We cannot simplify a fraction like this one at all.
+Example 3:
+
+12x+2
+
+1
+
+6
+
+3
+
+Which of the following is equivalent to the equation above?
+
+A.
+
+2xt=
+
+B 2x+= C 4x+2 D. 4x45
+
+Solution: First, we need to make the denominators the same, so we can combine the fractions. The least
+common denominator of 3 and 6 is 6.
+12x+2
+
+6
+
+1.2
+
+12x+2
+
+'3*2
+
+2.12x+4
+
+6
+
+6
+
+Next, we simplify the fraction. All the terms can be divided by 2.
+l2x+4
+
+2
+
+6x+2
+
+6
+
+2
+
+3
+
+44
+-
+
+6
+
+Chapter 6: Fractions
+
+Finally, we can split the numerator and simplify to solve.
+6xt2
+
+_ Ox
+
+2 _,
+
+3.
+
+12
+
+3.3 *T3
+
+The answer is B.
+
+Shortcut Solution — Substitution: For any “equivalent” questions like this one, we can also use the method
+we discussed in Chapter 2 and just plug in a value for x.
+
+4. Getting Rid of Fractions
+For questions with only numbers in the denominator, it is usually easiest to get rid of the fractions. We can
+get rid of the fractions by multiplying both sides by the least common multiple of the numbers in the
+
+denominator. The least common multiple is the same as the least common denominator we discussed earlier
+in this chapter.
+1
+
+1
+
+3
+
+4% t= 8%
+
+The least common multiple of 4, 2, and 8 is 8, so we can multiply all terms by 8 to eliminate the fractions.
+1
+1
+3
+—-xx8+--x8 = gxx8
+4
+2
+
+The equation becomes
+2x+4= 3x
+
+Now, solving is easy!
+x=4
+
+If you struggle with fractions, always use this method to turn fractions into whole numbers.
+
+Example 4: If = = = = - = aa what is the value of x?
+A.
+
+10
+
+B. 6
+
+C. 5
+
+@)
+
+D. 3
+
+Solution: Since all the terms in denominator are numbers, we can get rid of the fractions. The least common
+multiple of 5, 6, 2, and 10 is 30, so we can multiply all of the terms by 30.
+3x
+
+2x
+
+|= *%30— = x 30
+
+1
+
+x
+
+— 5 Xx 30 = To * 30
+
+18x — 10x —15 = 3x
+8x —15
+= 3x
+8x = 3x +15
+5x
+= 15
+x=3
+The answer is D.
+
+Shortcut Solution — Backsolve: Rather than doing all of the math, plug the answer choices back into the
+original equation to see which one makes the equation true.
+
+~45-
+
+math
+
+5. Turn Fractions into Decimals
+If you really hate fractions, another trick is to turn fractions into decimals. You can always turn fractions into
+decimals using your calculator.
+Example 5:
+
+3
+
+4
+
+1
+
+4
+
+10
+
+2
+
+-xX-—=-x
+
+For the equation above, what is the value of x?
+
+A=
+25
+
+B425
+
+ci2
+
+pé5
+
+Solution: We can change the fractions to decimals.
+0.75x — 0.4 = 0.5x
+
+Now, we solve for x algebraically.
+0.75x = 0.5x + 0.4
+0.25x = 0.4
+_
+
+04
+
+«= 0.25
+Using your calculator, we can find the value for x.
+x=1.6
+
+To tell which answer choice 1s equivalent to 1.6, we can plug the answer choices into the calculator to see
+which one is equal to 1.6. The correct answer is D.
+
+6. Use Your Calculator
+Did you know that your calculator can solve most fractions questions for you? Almost all calculators have
+the capability to turn a decimal into a fraction and vice versa. This can make fractions questions on the
+ACT far easier and faster to solve.
+
+The steps below outline how to use the fractions function in two of the most popular types of calculators.
+TI-83/84 Graphing Calculator
+
+1.
+
+TI30XS Scientific Calculator
+
+Enter the decimal you want to change
+
+1.
+
+Enter the decimal you want to change into
+
+2.
+
+Press 2TM then PRB to select FOD.
+
+into a fraction.
+
+2.
+
+a fraction.
+
+Press the MATH button.
+
+3.
+
+Select Frac.
+
+3.
+
+Press Enter (=).
+
+4.
+
+The calculator will display the decimal
+
+4.
+
+The calculator will display the decimal as
+
+as a fraction.
+
+a fraction.
+
+If you have any other type of calculator than the 2 listed above, go to YouTube and look up a tutorial for how
+to turn fractions into decimals for your calculator.
+If your calculator cannot turn fractions into decimals and you solve for the correct answer in decimal form, you
+can enter fractions in the answer choices into your calculator to convert them to decimals to find which one
+matches the answer you found.
+
+- 46
+-
+
+Chapter 6: Fractions
+
+Fractions Practice: Answers on pages 324-325.
+
+3
+
+2,
+
+3
+
+7
+
+6.
+
+7,
+
+g§
+
+>BGOD9
+
+2
+
+2
+
+8 tL
+
+21
+
+14.
+
+3
+
+~-f=
+3
+2
+3
+
+12
+
+35
+21
+20
+7
+12
+
+9
+30
+9
+10
+33
+30
+43
+30
+
+15. In a class of sixth graders, every student
+
+3
+
+9.
+
+9
+10
+
+Which ofthe following is equal to = ++ +=?
+
+W>GO
+
+3
+
+tz
+
+$=
+
+=, what is the value of a?
+
+13. 1f2%
+3
+
+2-<=
+5
+4
+
+8
+
+5
+
+A
+
+2
+
+participates in no more than one sport. = play
+
+a
+
+lacrosse, - play field hockey, - play soccer, and
+
+3
+
+= play football. What fraction of the class does
+
+z=
+
+not play any of these 4 sports?
+
+2
+
+10.2=
+2
+
+>WGQDO9
+
+4
+
+11.2=
+3
+
+12. If=x +8 = 15, thenx
+=?
+
+16.
+
+1
+240
+11
+30
+38
+60
+73
+80
+
+If “x = = , what is the value of x?
+
+A. -2
+2
+
+A.
+
+=
+
+B. 22
+
+B.
+
+=
+
+c #2
+7
+
+C.
+
+=
+
+D. =
+2
+
+D.
+
+=
+
+-A7-
+
+5
+
+8
+8
+
+9
+
+45
+
+56
+56
+
+45
+
+math
+
+21. Which of the following numbers is halfway
+
+17. What is the least common denominator for the
+.
+
+1
+
+4
+
+3
+
+12°5
+
+8
+
+fractions —,-, and - ?
+
+Gap,
+
+1
+
+3
+
+6
+
+10
+
+between — and — ?
+
+60
+
+>WGOD9
+
+96
+240
+480
+
+. Jiang and Kris are painting the walls in the
+gym. They started with 8 gallons of paint. On
+
+the first day, Jiang used 1 - gallons of paint and
+Kris used 3 gallons of paint. How many
+
+30
+13
+60
+3
+16
+4
+
+15
+
+22. A gas tank has a capacity of 270 gallons and is
+
+- full of gas. Anissa then removes - of the gas
+
+gallons of paint were left after the first day?
+
+A. 228
+
+in the tank. How many gallons of gas are left in
+the tank?
+
+B. 3-8
+
+42
+
+Gap
+
+Cc. 328
+D. 328
+
+84
+168
+210
+
+. San Clarita High School has 150 students, and
+
+- of the students are taking Biology. Of the
+
+Om If x > 0, which of the following is equivalent
+2
+
+Chemistry. No students are taking both
+
+A.
+
+Biology and Chemistry. How many students
+
+are taking Chemistry?
+
+Gap,
+
+20
+30
+40
+
+Cc
+
+—
+
+x+3
+
+6+x
+3x
+
+6+x
+
+—
+
+wear for the homecoming game. For the game,
+students were given a choice of 1 of 3 shirts.
+
+Of the 200 students, - chose a blue shirt, -
+
+How much of the cake did Maria decorate?
+
+C.
+
+—
+
+24. A group of 200 students are selecting shirts to
+
+cake and Monique decorated - of the cake.
+
+pd
+
+3x
+
+B.
+
+Dd.
+
+cake together. Cassandra decorated = of the
+
+B
+
+6x+3
+
+60
+
+. Monique, Cassandra, and Maria decorated a
+
+A.
+
+1
+
+to- +7?
+
+students NOT taking Biology, = are taking
+
+chose a black shirt, and = chose a white shirt.
+
+uwNtleR
+
+The remaining students expressed no choice.
+
+How many of the students expressed no choice?
+
+S2|
+8
+
+21
+
+- 48
+-
+
+A.
+
+10
+
+B.
+
+30
+
+C.
+
+50
+
+D.
+
+80
+
+Chapter 6: Fractions
+
+25. What is the least common denominator of the
+.
+
+6
+
+2
+
+17
+
+33°
+
+22
+
+65
+
+30. Which of the following numbers is halfway
+3
+
+12
+
+4
+
+5
+
+fractions —,—, and — ?
+
+between - and — ?
+
+A.
+
+120
+
+A
+
+&
+
+B.
+
+726
+
+C.
+
+4,290
+
+B.
+
+40
+
+D.
+
+12,870
+
+CG
+
+2
+
+2
+
+20
+
+26. The difference = — = lies in which of the
+
+D. =
+
+following intervals?
+
+A. 0<x<1
+1
+7<xS5
+
+B.
+
+1
+
+31.
+
+3
+
+3
+
+D.
+
+Ifa _—
+= 7
+and
+b—
+= 13
+——,, thena —hb=
+—b =?
+
+a <x<l
+
+B.
+
+14
+
+67
+48
+
+cui
+
+27. What fraction of 7- is 3 ?
+
+_
+48
+D. -=
+14
+
+A. =5
+
+B. =
+c
+
+2
+
+D.
+
+2-
+
+32. A box contains combination of blue, red, pink,
+
+and yellow jellybeans. 7 of the jellybeans are
+1
+
+2
+
+3
+
+;
+
+44 jellybeans are yellow. How many more red
+
+28. Which of the following expressions is equal
+
+jellybeans are there than pink jellybeans?
+
+tor+-+=?
+5
+
+2
+
+7
+
+A.
+
+64
+
+A. 424175410
+
+B. 40
+
+B.
+
+C.
+D.
+
+36
+24
+
+70
+
+34541
+542+7
+
+C.
+
+34541
+
+D
+
+3x5x1
+
+70
+
+"
+
+5x2x7
+
+33. Which of the following is equivalent to
+x
+
+3
+
+wel xa
+29. Given consecutive negative integers a, b,c,
+
+e243
+
+and d, such that a < b < c < d, whichof the
+
+A.
+
+following has the smallest value?
+
+B
+
+C
+
+c
+
+,
+
+x2-1
+
+x2 +4x43
+x2-1
+
+D. =
+
+“ a
+“ad
+
+D
+
+2 42%-3
+
+,
+
+a
+
+A. a
+B
+
+a
+
+blue, 7 are red, 59 are pink, and the remaining
+
+ct+d
+
+=|
+
+~ 49
+-
+
+math
+
+34. Which of the following is equivalent to <e ?
+
+39. Which of the following is equal to — + =, for
+allx # 0 and
+x # 1?
+
+x4+5
+
+A. =
+
+B.
+
+A
+
+x?45
+
+x
+
+B
+
+C.
+
+x+5
+
+D.
+
+x?7+5
+
+8x3
+"
+
+x?2-x
+
+“
+
+x2-x
+
+"
+
+y2_x
+
+C
+
+5x4+3
+
+D
+3.
+
+.
+
+3x-3
+
+a1
+
+1
+
+x-1
+
+35. 24— is what fraction of 65 ?
+
+40. Given consecutive positive integers a, b,c, and
+
+A. ie
+
+d, such that a > b > c > d, which ofthe
+
+5
+Bo
+
+following has the largest value?
+
+c. 384
+
+A. ©c
+
+1
+
+a+b
+
+1
+
+2.
+
+36. For=x
+
++==-x, what does x equal?
+
+°
+
+AL
+
+c
+
+4
+
+a7
+
+2
+
+b
+
+Dp.
+
+6
+
+a+b
+
+41. Which of the following lists those integer
+
+B. ‘
+
+values of a for which the fraction = lies
+
+c
+
+between — and —?
+
+&
+
+(5
+
+7
+
+D. *
+
+A. 7only
+
+a
+349%
+37. Which of the following is equal to = ?
+A
+
+4
+
+B.
+
+7and8
+
+C.
+
+9 only
+
+D.
+
+9,10, 11, 12, and 13
+
+3+3X
+
+7S
+
+42. Which of the following expressions is
+
+14+9%x
+
+xe
+
+B=
+C.
+
+equivalent to 43 ?
+xX+1
+
+14+3x
+
+5
+
+x?2-4
+
+D. 5 + 3x
+1
+
+A. x24+4x43
+x?%-x-2
+
+B. x24+5x+6
+
+4
+
+x24+x-6
+
+1
+
+C. x243x42
+
+38. Forx -~2= 2+ 7%x,x=?
+
+D
+
+x24+5x+6
+
+“
+
+A. =
+21
+B=
+10
+
+c +
+5
+
+pb. 2
+5
+
+-50
+-
+
+x2-x-2
+
+Chapter 6: Fractions
+
+43. Which of the following expressions is
+x
+
+46. Which of the following expressions is
+
+2
+
+2X+12
+
+ats
+
+equivalent to $= ?
+
+equivalent to
+
+3.5
+
+—$—
+
+x+2
+
+2X
+
+A.
+
+—
+
+A.
+
+———_
+
+B.
+
+5x+5
+
+B.
+
+2
+0
+2xX*£4+52xX4+24
+
+C
+:
+
+2
+2x2+240
+2x
+
+"
+
+2x2420x
+
+5
+
+2x2452x+240
+
+7
+
+Cc.
+
+2x
+
+5x+10
+
+7
+
+D.
+
+15x+30
+
+D
+
+7
+
+44. Given consecutive negative integers a, b, c, and
+
+4x+24
+
+47. What value of x satisfies the equation below?
+
+d such that a > b > c > d, which ofthe
+
+following expressions has the greatest value?
+A.
+
+sates = — = —
+xa
+
+a—b
+
+A.
+
+d
+
+ome
+
+d—c
+
+—
+
+D.
+
+45. A container is = full of water. After adding 22
+
+2
+
+2a-7b
+
+cupsP of water° the container is =8 full. What is
+
+wh Nee
+bandofcena)
+ee
+eee
+real values
+c that make
+the inequality
+true?
+
+the volume of the container in cups?
+
+A. c<-
+
+1
+38
+
+B.
+
+c> 3
+
+C. c>0
+
+C. 48
+
+D.
+
+x
+
+3
+
+Ce
+
+B.
+
+x
+
+—2
+
+a
+
+—
+
+D.
+
+?
+
+x+20
+
+582
+
+D.
+
+-5]-
+
+c<0
+
+G)
+
+math
+

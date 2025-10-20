@@ -1,0 +1,204 @@
+{
+  "version": "1.0.0",
+  "lessonId": "06685249-874d-431f-9b7f-1c711d64a9cf",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "The {working backwards} strategy, also known as {backsolving}, is one of the most powerful time-saving techniques on the ACT Math section. Instead of solving a problem algebraically from scratch, you test the answer choices to see which one works. This strategy is especially useful when the algebra looks complicated, but {answer choice testing} makes solving easy.",
+      "keyTerms": [
+        "working backwards",
+        "backsolving",
+        "answer choice testing"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1. What Is Backsolving?"
+    },
+    {
+      "type": "paragraph",
+      "text": "{Backsolving} means plugging in the answer choices to solve the problem. Instead of setting up equations and solving for x, you test each choice until you find the one that satisfies the conditions in the problem.",
+      "keyTerms": [
+        "Backsolving"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Key advantages:",
+          "nested": [
+            "Faster than traditional algebra on many problems",
+            "Less chance of making algebraic mistakes",
+            "Works great when answer choices are concrete numbers"
+          ]
+        },
+        "Faster than traditional algebra on many problems",
+        "Less chance of making algebraic mistakes",
+        "Works great when answer choices are concrete numbers",
+        {
+          "text": "When to Backsolve:",
+          "nested": [
+            "The problem asks for a specific value",
+            "Answer choices are numbers (not expressions)",
+            "The algebra looks messy or time-consuming"
+          ]
+        },
+        "The problem asks for a specific value",
+        "Answer choices are numbers (not expressions)",
+        "The algebra looks messy or time-consuming"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2. The Backsolving Process"
+    },
+    {
+      "type": "paragraph",
+      "text": "Follow these five steps to backsolve efficiently:"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Step 1: Strategic Starting"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "On the ACT, answer choices are always listed in ascending order (smallest to largest) or descending order (largest to smallest)",
+          "nested": [
+            "Start with B or C (the middle value) - you can often eliminate 2-3 choices with one test",
+            "If C is too big, you know D and E are also too big",
+            "If C is too small, you know A and B are also too small"
+          ]
+        },
+        "Start with B or C (the middle value) - you can often eliminate 2-3 choices with one test",
+        "If C is too big, you know D and E are also too big",
+        "If C is too small, you know A and B are also too small"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Step 2: Test the Choice"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Substitute the answer choice into the problem conditions",
+          "nested": [
+            "Does it make the equation true?",
+            "Does it satisfy all the constraints?",
+            "Does it produce the correct result?"
+          ]
+        },
+        "Does it make the equation true?",
+        "Does it satisfy all the constraints?",
+        "Does it produce the correct result?"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Step 3: If It Works, You're Done!"
+    },
+    {
+      "type": "list",
+      "items": [
+        "If this answer choice works correctly, bubble it in and move on to the next question"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Step 4: Elimination and Adjustment"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "If the answer doesn't work, cross it off",
+          "nested": [
+            "Determine if you need a larger or smaller value",
+            "Cross off any other choices you can eliminate"
+          ]
+        },
+        "Determine if you need a larger or smaller value",
+        "Cross off any other choices you can eliminate"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Step 5: Repeat"
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Pick one of the remaining answer choices and plug it back into the question",
+          "nested": [
+            "Continue until you find the correct answer",
+            "Remember: one of the 5 answer choices must work!"
+          ]
+        },
+        "Continue until you find the correct answer",
+        "Remember: one of the 5 answer choices must work!"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "3. Classic Backsolving Problems"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Example 1: Basic Backsolving"
+    },
+    {
+      "type": "paragraph",
+      "text": "If √x + 10 − 2√x − 2 = 0, what is the value of x?"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "4. When NOT to Backsolve"
+    },
+    {
+      "type": "paragraph",
+      "text": "{Backsolving} isn't always the best strategy. Avoid it when:",
+      "keyTerms": [
+        "Backsolving"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "Answer choices are algebraic expressions (not numbers)",
+        "The traditional algebra is very simple",
+        "Testing answer choices would be more work than solving directly",
+        "The problem has multiple variables and complex relationships"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Key Takeaways"
+    },
+    {
+      "type": "list",
+      "items": [
+        "✓Backsolving means using answer choices to solve instead of traditional algebra",
+        "✓Always start with choice B or C since answers are ordered by value",
+        "✓Use backsolving when answer choices are concrete numbers and algebra looks messy",
+        "✓Avoid backsolving when choices are expressions or when algebra is simple",
+        "✓Testing one choice can often eliminate 2-3 other choices simultaneously"
+      ]
+    }
+  ]
+}

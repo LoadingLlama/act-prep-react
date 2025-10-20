@@ -8,6 +8,7 @@ import ExamplesService from '../services/api/examples.service';
 import AllLessonsNavigator from './AllLessonsNavigator';
 import LessonTableOfContents from './LessonTableOfContents';
 import { lessonStructure } from '../data/lessonStructure';
+import { LessonRenderer } from './lesson/LessonRenderer';
 
 const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatusChange, onNavigate, lessonProgress = {} }) => {
   const classes = useProgressiveLessonStyles();
@@ -27,7 +28,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
   const sectionRefs = React.useRef([]);
 
   useEffect(() => {
-    if (!lesson || !lesson.content) {
+    if (!lesson || (!lesson.content && !lesson.content_json)) {
       setSections([]);
       return;
     }
@@ -92,7 +93,14 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         });
       }
 
-      // Split content into text sections
+      // If lesson has JSON format, skip old HTML processing
+      if (lesson.content_json) {
+        console.log('✅ Lesson has content_json - skipping old HTML processing');
+        setSections([]);
+        return;
+      }
+
+      // Split content into text sections (only for old HTML format)
       const textSections = splitIntoTextSections(lesson.content);
 
       // Build quizzes by position map
@@ -396,11 +404,12 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
     }, 600);
   };
 
-  if (sections.length === 0) {
+  // Only show loading if we don't have JSON format
+  if (sections.length === 0 && !lesson?.content_json) {
     return <div>Loading lesson...</div>;
   }
 
-  const progressPercentage = ((currentSection + 1) / sections.length) * 100;
+  const progressPercentage = sections.length > 0 ? ((currentSection + 1) / sections.length) * 100 : 0;
 
   return (
     <div className={classes.progressiveContainer}>
@@ -488,7 +497,23 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         </h2>
       </div>
 
-      {!hasStarted ? (
+      {/* Use new JSON-based renderer if available */}
+      {(() => {
+        console.log('🔍 ProgressiveLessonRenderer: Checking lesson format');
+        console.log('   lesson.content_json exists?', !!lesson.content_json);
+        console.log('   lesson.content exists?', !!lesson.content);
+        if (lesson.content_json) {
+          console.log('   ✅ Using NEW JSON format with', lesson.content_json.content?.length, 'blocks');
+        } else {
+          console.log('   ⚠️  Using OLD HTML format');
+        }
+        return null;
+      })()}
+      {lesson.content_json ? (
+        <div style={{ marginTop: '2rem' }}>
+          <LessonRenderer data={lesson.content_json} />
+        </div>
+      ) : !hasStarted ? (
         <div style={{
           display: 'flex',
           alignItems: 'center',

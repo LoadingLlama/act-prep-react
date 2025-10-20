@@ -1,14 +1,40 @@
 /**
  * Lesson Editor Component
- * Simple admin interface for editing modular lesson content
- * Makes it easy to edit small pieces without dealing with huge data blocks
+ * DEPRECATED: This component used the old modular lesson structure
+ * TODO: Rebuild this to work with the simplified lessons table
  */
 
-import React, { useState, useEffect } from 'react';
-import ModularLessonsService from '../../services/api/modularLessons.service';
-import { editorStyles } from '../../styles/admin/lessonEditor.styles';
+import React from 'react';
+
+// import ModularLessonsService from '../../services/api/modularLessons.service'; // REMOVED - using simplified structure
+// import { editorStyles } from '../../styles/admin/lessonEditor.styles';
 
 const LessonEditor = ({ lessonKey }) => {
+  return (
+    <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
+      <h2>Lesson Editor</h2>
+      <div style={{
+        background: '#fff3cd',
+        border: '1px solid #ffc107',
+        borderRadius: '8px',
+        padding: '1.5rem',
+        marginTop: '1rem'
+      }}>
+        <h3 style={{ marginTop: 0, color: '#856404' }}>⚠️ Component Deprecated</h3>
+        <p style={{ color: '#856404', lineHeight: 1.6 }}>
+          This lesson editor component has been deprecated as part of the database restructuring.
+          The lesson system now uses a simplified single-table structure.
+        </p>
+        <p style={{ color: '#856404', marginBottom: 0 }}>
+          To edit lessons, please use the Supabase dashboard directly or we can rebuild this editor
+          to work with the new simplified structure.
+        </p>
+      </div>
+    </div>
+  );
+
+  // DEPRECATED CODE - kept for reference
+  /*
   const [lesson, setLesson] = useState(null);
   const [activeTab, setActiveTab] = useState('metadata');
   const [editingItem, setEditingItem] = useState(null);
@@ -16,38 +42,16 @@ const LessonEditor = ({ lessonKey }) => {
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState('');
 
-  // Load lesson data
-  useEffect(() => {
-    loadLesson();
-  }, [lessonKey]);
-
   const loadLesson = async () => {
-    setLoading(true);
-    const data = await ModularLessonsService.getCompleteLesson(lessonKey);
-    setLesson(data);
-    setLoading(false);
+    // Load from lessons table instead
   };
 
-  // Save metadata changes
   const saveMetadata = async (updates) => {
-    setSaving(true);
-    const result = await ModularLessonsService.updateLessonMetadata(
-      lesson.metadata.id,
-      updates
-    );
-    if (result) {
-      setMessage('✓ Metadata saved');
-      await loadLesson();
-    }
-    setSaving(false);
+    // Save to lessons table instead
   };
 
-  // Save section content
   const saveSectionContent = async (contentId, newContent) => {
-    setSaving(true);
-    const result = await ModularLessonsService.updateContent(contentId, newContent);
-    if (result) {
-      setMessage('✓ Content saved');
+    // No longer using modular sections
       await loadLesson();
     }
     setSaving(false);

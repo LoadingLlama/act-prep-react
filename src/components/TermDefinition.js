@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
+import TermDefinitionsService from '../services/api/termDefinitions.service';
 
 const useStyles = createUseStyles({
   termWrapper: {
@@ -89,57 +90,26 @@ const useStyles = createUseStyles({
 const TermDefinition = ({ term, children }) => {
   const classes = useStyles();
   const [isVisible, setIsVisible] = useState(false);
+  const [termData, setTermData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Definition data for each term
-  const definitions = {
-    'Acute Angles': {
-      definition: 'An angle that measures less than 90 degrees.',
-      context: 'On the ACT, acute angles often appear in triangle problems and trigonometry questions.',
-      related: ['Right Angles', 'Obtuse Angles']
-    },
-    'Right Angles': {
-      definition: 'An angle that measures exactly 90 degrees, forming a perfect corner.',
-      context: 'Right angles are fundamental to the Pythagorean theorem and perpendicular lines.',
-      related: ['Acute Angles', 'Perpendicular Lines']
-    },
-    'Obtuse Angles': {
-      definition: 'An angle that measures greater than 90 degrees but less than 180 degrees.',
-      context: 'Obtuse angles appear in obtuse triangles and when analyzing polygon interior angles.',
-      related: ['Acute Angles', 'Straight Angles']
-    },
-    'Straight Angles': {
-      definition: 'An angle that measures exactly 180 degrees, forming a straight line.',
-      context: 'Straight angles are key to understanding supplementary angles and angles on a line.',
-      related: ['Supplementary Angles', 'Linear Pairs']
-    },
-    'Complementary Angles': {
-      definition: 'Two angles that add up to 90 degrees.',
-      context: 'The ACT frequently tests complementary angles in right triangles and perpendicular lines.',
-      related: ['Supplementary Angles', 'Right Angles']
-    },
-    'Supplementary Angles': {
-      definition: 'Two angles that add up to 180 degrees.',
-      context: 'Supplementary angles appear when two angles form a straight line or in parallel line problems.',
-      related: ['Complementary Angles', 'Linear Pairs']
-    },
-    'Vertical Angles': {
-      definition: 'Opposite angles formed when two lines intersect. They are always equal.',
-      context: 'Vertical angles are one of the most tested angle relationships on the ACT.',
-      related: ['Adjacent Angles', 'Intersecting Lines']
-    },
-    'Adjacent Angles': {
-      definition: 'Two angles that share a common vertex and side but do not overlap.',
-      context: 'Adjacent angles on a straight line are supplementary, a common ACT pattern.',
-      related: ['Vertical Angles', 'Linear Pairs']
-    },
-    'transversal': {
-      definition: 'A line that crosses two or more parallel lines.',
-      context: 'When a transversal crosses parallel lines, it creates corresponding, alternate interior, and alternate exterior angles.',
-      related: ['Parallel Lines', 'Corresponding Angles']
-    }
-  };
+  // Fetch definition from database
+  useEffect(() => {
+    const fetchDefinition = async () => {
+      try {
+        setIsLoading(true);
+        const data = await TermDefinitionsService.getDefinition(term);
+        setTermData(data);
+      } catch (error) {
+        console.error(`Failed to fetch definition for "${term}":`, error);
+        setTermData(null);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-  const termData = definitions[term];
+    fetchDefinition();
+  }, [term]);
 
   if (!termData) {
     return <>{children}</>;

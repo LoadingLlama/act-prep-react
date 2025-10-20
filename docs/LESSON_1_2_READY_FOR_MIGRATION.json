@@ -1,0 +1,587 @@
+{
+  "version": "1.0.0",
+  "lessonId": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+  "content": [
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Lesson 1.2: Commas — 4 Types of Commas"
+    },
+    {
+      "type": "paragraph",
+      "text": "Commas are the most common type of punctuation on the English Test. In order to successfully handle comma questions, we need to be familiar with the {4 types of commas} that appear on the ACT.",
+      "keyTerms": [
+        "4 types of commas"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "So far, we have already discussed the first two types of commas in Lesson 1.1. The four types are:"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Comma + FANBOYS"
+    },
+    {
+      "type": "paragraph",
+      "text": "Use a comma and a {FANBOYS} (for, and, nor, but, or, yet, so) to join two {independent clauses}.",
+      "keyTerms": [
+        "FANBOYS",
+        "independent clauses"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: My alarm clock did not go off this morning, so I arrived late at school."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Dependent clause followed by independent clause"
+    },
+    {
+      "type": "paragraph",
+      "text": "If a sentence has a {dependent clause} followed by an {independent clause}, you must link these with a comma.",
+      "keyTerms": [
+        "dependent clause",
+        "independent clause"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: While electronic music has become very popular, many people still prefer classic rock."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Unnecessary Information"
+    },
+    {
+      "type": "paragraph",
+      "text": "Commas are used to separate {unnecessary information} from the rest of the sentence. Information is {unnecessary} if we can remove it without fundamentally changing the meaning of the sentence.",
+      "keyTerms": [
+        "unnecessary information",
+        "unnecessary"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: Mrs. Ellison, who is known for giving pop quizzes, is my least favorite teacher."
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: The snowboard in the closet, the one with no stickers on it, needs to be waxed."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Listing"
+    },
+    {
+      "type": "paragraph",
+      "text": "Commas are used when {listing} more than two items and with lists of multiple adjectives modifying the same noun.",
+      "keyTerms": [
+        "listing"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: The group at the picnic table ordered coconut shrimp, hot wings, and onion rings."
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: The old, limping dog still managed to complete the 3-mile hike."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Deep Dive: Unnecessary Information Commas"
+    },
+    {
+      "type": "paragraph",
+      "text": "The most common type of comma on the ACT separates {unnecessary information} from the rest of the sentence. Information is {unnecessary} if we can remove it without fundamentally changing the meaning. This information can be before a comma, after a comma, or between two commas.",
+      "keyTerms": [
+        "unnecessary information",
+        "unnecessary"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: Sitting behind the table, Mark waited to jump out and surprise his mother."
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: Dale grabbed his favorite surfboard, the blue and green one, and paddled out."
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: The real winner, however, had yet to be revealed."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "The \"Crossing-Out\" Trick"
+    },
+    {
+      "type": "paragraph",
+      "text": "For {unnecessary information commas}, you must be able to completely remove the information from the sentence. After removing it, what remains must still be a complete sentence.",
+      "keyTerms": [
+        "unnecessary information commas"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "How to Test: Cross out the information and read the sentence without it."
+    },
+    {
+      "type": "list",
+      "items": [
+        "If it works: The information is {unnecessary} and needs to be set apart by a comma or commas.",
+        "If it doesn't work: The information is {necessary} and should not have commas."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: The wooden beam, set at an angle, created an optical illusion. Test: \"The wooden beam created an optical illusion.\" (This works! The commas are correct.)"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Unnecessary vs. Necessary Information"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sometimes you must determine if information is truly {unnecessary}.",
+      "keyTerms": [
+        "unnecessary"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Necessary (No Commas): The dresses that need to be hemmed are hanging in the closet."
+    },
+    {
+      "type": "paragraph",
+      "text": "Rationale: If we remove the phrase, we don't know which dresses we are talking about."
+    },
+    {
+      "type": "paragraph",
+      "text": "Unnecessary (With Commas): Judith, who went to fashion school, designs dresses for a living."
+    },
+    {
+      "type": "paragraph",
+      "text": "Rationale: We already know who designs the dresses (Judith). The information about fashion school is extra, {unnecessary} detail.",
+      "keyTerms": [
+        "unnecessary"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "The Names Rule"
+    },
+    {
+      "type": "paragraph",
+      "text": "The ACT loves to test how to punctuate names. The rule depends on {specificity}.",
+      "keyTerms": [
+        "specificity"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "No Commas (Name is Necessary): Use no commas if the identifier before the name is not specific (e.g., friend, teacher, Olympic gold medalist)."
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: My friend Kelly recently moved to London. (Without \"Kelly,\" we don't know which friend)."
+    },
+    {
+      "type": "paragraph",
+      "text": "With Commas (Name is Unnecessary): Use commas if the identifier is specific (e.g., best friend, youngest sister, Amazon CEO)."
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: My best friend, Andrew, is a certified scuba diver. (A person can only have one best friend, so the name \"Andrew\" is {unnecessary} info).",
+      "keyTerms": [
+        "unnecessary"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "\"That\" vs. \"Which\" Phrases"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"That\" phrases never get commas. They are always {necessary} information.",
+      "keyTerms": [
+        "necessary"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: The dogs that live down the street are always barking."
+    },
+    {
+      "type": "paragraph",
+      "text": "\"Which\" phrases always get commas. They are always {unnecessary} information.",
+      "keyTerms": [
+        "unnecessary"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: My neighbor's dogs, which are always barking, love to play fetch."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "\"ing\" and \"ed\" Phrases"
+    },
+    {
+      "type": "paragraph",
+      "text": "These phrases (called {participle phrases}) may or may not get commas, depending on if they are {necessary}.",
+      "keyTerms": [
+        "participle phrases",
+        "necessary"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Unnecessary (With Commas): This is the most common use on the ACT."
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: Excited for the car ride, Jane's bulldog started to jump up and down."
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: Marcus applied for the internship, hoping that he would get the position."
+    },
+    {
+      "type": "paragraph",
+      "text": "Necessary (No Commas): This happens when the phrase specifies which noun you're talking about."
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: The politician waving to the crowd is predicted to win the election. (Specifies which politician)."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Prepositional Phrases"
+    },
+    {
+      "type": "paragraph",
+      "text": "These are phrases starting with prepositions like in, of, to, for, with, on, at, from, etc."
+    },
+    {
+      "type": "paragraph",
+      "text": "At the start of a sentence: Always followed by a comma."
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: On my way to work, I listened to my new favorite podcast."
+    },
+    {
+      "type": "paragraph",
+      "text": "In the middle or end of a sentence: Almost never have commas. They usually contain {essential information}.",
+      "keyTerms": [
+        "essential information"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: The clothing on the bed is for vacation."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Punctuation for Transitional Words (e.g., \"However\")"
+    },
+    {
+      "type": "paragraph",
+      "text": "Words like {however}, {therefore}, {moreover}, {consequently}, and {for example} have 3 specific punctuation rules:",
+      "keyTerms": [
+        "however",
+        "therefore",
+        "moreover",
+        "consequently",
+        "for example"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "At the start of a sentence: Followed by a comma."
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: However, the truth would not be revealed until next week."
+    },
+    {
+      "type": "paragraph",
+      "text": "In the middle of one sentence: Separated by two commas (as {unnecessary information}).",
+      "keyTerms": [
+        "unnecessary information"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: The truth, however, would not be revealed until next week."
+    },
+    {
+      "type": "paragraph",
+      "text": "Between two independent clauses: Separated by a {semicolon (;) and a comma (,)}.",
+      "keyTerms": [
+        "semicolon (;) and a comma (,)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: I expected to pay over $100; however, I found a sale."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Deep Dive: Listing Commas"
+    },
+    {
+      "type": "paragraph",
+      "text": "Listing commas are the easiest type and appear in two ways."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Commas and Lists (3 or more items)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Use commas to separate items in a list of {3 or more}.",
+      "keyTerms": [
+        "3 or more"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: I went to the grocery store to pick up chicken, cheese, and bread."
+    },
+    {
+      "type": "paragraph",
+      "text": "The Oxford Comma: The final comma (before the \"and\") is the {Oxford comma}. The ACT is stylistic about this; its presence or absence alone will never be the only difference between a right and wrong answer.",
+      "keyTerms": [
+        "Oxford comma"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Lists of 2 Items: Be sure not to use commas in a list of just two items."
+    },
+    {
+      "type": "paragraph",
+      "text": "Incorrect: Mike cashed out his winnings, and then headed back to his hotel room."
+    },
+    {
+      "type": "paragraph",
+      "text": "Correct: Mike cashed out his winnings and then headed back to his hotel room."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "FANBOYS vs. Lists"
+    },
+    {
+      "type": "paragraph",
+      "text": "Be careful not to confuse a {two-item list} (no comma) with a {Comma + FANBOYS} rule (which needs a comma).",
+      "keyTerms": [
+        "two-item list",
+        "Comma + FANBOYS"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Two-item list (no comma): The debate team took first place in California and then won the grand prize... (The second half is not an independent clause)."
+    },
+    {
+      "type": "paragraph",
+      "text": "Comma + FANBOYS (needs comma): Andrew left to get his suit, but he forgot and just grabbed a cheeseburger... (The second half is an independent clause)."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Adjective Lists with and without Commas"
+    },
+    {
+      "type": "paragraph",
+      "text": "Listing commas are also used to separate multiple adjectives modifying the same noun."
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: The wet, smelly dog was excited for the car ride home."
+    },
+    {
+      "type": "paragraph",
+      "text": "The Rule: You must know when to use commas and when not to."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Use a comma if you can switch the order of the adjectives and the sentence still makes sense.",
+        "No comma if switching the order changes the meaning or makes no sense."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "The \"Switching Trick\""
+    },
+    {
+      "type": "paragraph",
+      "text": "When you see multiple adjectives, switch their order to test for a comma."
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: The sweet cold ice cream..."
+    },
+    {
+      "type": "paragraph",
+      "text": "Test: \"The cold sweet ice cream...\" (This makes sense, so you need a comma)."
+    },
+    {
+      "type": "paragraph",
+      "text": "Correct: The sweet, cold ice cream..."
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: Elliot had to take off his stainless steel necklace..."
+    },
+    {
+      "type": "paragraph",
+      "text": "Test: \"Elliot had to take off his steel stainless necklace...\" (This makes no sense, so you do not use a comma)."
+    },
+    {
+      "type": "paragraph",
+      "text": "Correct: ...his stainless steel necklace."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Summary: Commas and Sentence Structure"
+    },
+    {
+      "type": "paragraph",
+      "text": "Here are the most common ways sentence structure and comma rules appear on the ACT."
+    },
+    {
+      "type": "paragraph",
+      "text": "Comma + FANBOYS (IC, and IC)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: The researchers changed their approach, and they created a new medical procedure."
+    },
+    {
+      "type": "paragraph",
+      "text": "Independent Clause + Unnecessary Phrase (IC, phrase.)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: The researchers changed their approach, creating a new medical procedure."
+    },
+    {
+      "type": "paragraph",
+      "text": "Unnecessary Phrase + Independent Clause (Phrase, IC.)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: Determined to find a cure, the researchers changed their approach."
+    },
+    {
+      "type": "paragraph",
+      "text": "Dependent Clause + Independent Clause (DC, IC.)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: Since they were determined to find a cure, the researchers changed their approach."
+    },
+    {
+      "type": "paragraph",
+      "text": "Phrase, IC, Phrase"
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: Determined to find a cure, the researchers changed their approach, creating a new medical procedure."
+    },
+    {
+      "type": "paragraph",
+      "text": "Independent Clause + Necessary Phrase (No comma)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: The researchers changed their approach by creating a new medical procedure."
+    },
+    {
+      "type": "paragraph",
+      "text": "List with 2 items (No comma)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: The researchers changed their approach and created a new medical procedure."
+    },
+    {
+      "type": "paragraph",
+      "text": "Phrase, Phrase, IC"
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: Despite the company's efforts, which included offering a 75% refund, Claire was still disappointed."
+    },
+    {
+      "type": "paragraph",
+      "text": "DC, IC, Phrase"
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: As the curtains closed, the crowd stood and applauded, many with tears in their eyes."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "The \"1-Comma\" Rule"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is a powerful final rule: When a sentence has {only one comma} in the middle, there must be an {independent clause} on one side of the comma, but not both and not neither.",
+      "keyTerms": [
+        "only one comma",
+        "independent clause"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "If both sides are independent = Comma Splice (Incorrect).",
+        "If neither side is independent = Sentence Fragment (Incorrect).",
+        "Correct Use: Unnecessary information, independent clause.",
+        "Correct Use: Dependent clause, independent clause.",
+        "Correct Use: Independent clause, unnecessary information."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "KEY TAKEAWAYS"
+    },
+    {
+      "type": "key_takeaways",
+      "items": [
+        "✓ Commas have 4 uses: FANBOYS, DC/IC, Unnecessary Info, and Lists.",
+        "✓ Use the \"Crossing-Out\" Trick to test for unnecessary information.",
+        "✓ Use commas for lists of 3+ items, but never for 2.",
+        "✓ \"That\" = Necessary (no comma). \"Which\" = Unnecessary (use comma).",
+        "✓ Use the \"Switching Trick\" for multiple adjectives (if they can be swapped, use a comma).",
+        "✓ The \"1-Comma Rule\": A single comma must have an independent clause on only one side (e.g., Phrase, IC or IC, Phrase)."
+      ]
+    }
+  ]
+}

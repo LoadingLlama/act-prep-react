@@ -69,7 +69,7 @@ async function backupDatabase() {
     // Backup section_content
     console.log('📦 Backing up section_content...');
     const { data: content, error: contentError } = await supabase
-      .from('section_content')
+      .from('lesson_section_content')
       .select('*')
       .order('section_id, order_index');
 

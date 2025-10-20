@@ -1,0 +1,1220 @@
+Chapter 5: Lines
+ACT questions commonly ask you how to use and solve linear functions, which is just a fancy term for lines.
+Linear functions appear in the form y = mx + b. In this chapter, we will cover all the equations and common
+
+types of questions that appear on the ACT involving lines in the xy-plane.
+
+Slope
+Given any two points on a line (x,, y,) and (x3, y2),
+Slope =
+
+The slope measures how steep a line is.
+
+rise
+
+V1 —Y2
+
+run
+
+X4—X2
+
+A line with a higher slope is steeper while a line with a lower slope is
+
+flatter. The rise is the change in the y-coordinates, and the run is the change in the x-coordinates. For
+
+example, if a line has a slope of =, the line will go up 1 unit for every 2 units we move to the right, or it will go
+down 1 unit for every 2 units we move to the left. Lines with a positive slope go up and to the right, and lines
+with a negative slope go down and to the right.
+Example 1: In the standard (x, y) coordinate plane, what is the slope of the line that passes through
+(—7, 6) and (2,3) ?
+
+A —25
+
+B—-—=-
+
+C-—-
+
+Solution:
+
+D-3
+Slope = -
+
+The answer is C.
+
+Example 2: In the standard (x, y) coordinate plane, a line passes through points (9,7) and (—1,3) and
+has a slope of 3. What is the value of r?
+A.
+
+33
+
+B. 27
+
+C. 21
+
+Solution:
+
+D.
+
+15
+
+Slope =
+
+r-3
+
+9-(-1)
+
+r—3
+10
+
+=3
+
+=3
+
+r—3=30
+r = 33
+The answer is A.
+
+Slopes of Parallel and Perpendicular Lines
+If two lines are parallel, the lines have the same slope. For example, if lines A and B are parallel and line A
+has a slope of 3, line B also has a slope of 3.
+If two lines are perpendicular, the slopes of the lines are the negative reciprocals of one another. To find
+the negative reciprocal, take the slope of the initial line, flip the fraction, and make it negative. For example, if
+
+lines A and B are perpendicular and line A has a slope of = , the slope of line B is -= ,
+
+-32-
+
+Chapter 5: Lines
+
+Example 3: Points (4,10) and (1, 31) are located on line g. If line p is perpendicular to line g, which of
+the following equations could be the equation of line p?
+
+A.y=7x+28
+
+Bo y=<x-2
+
+C.y=-7x+10 D. y=-<x+2
+
+Solution: To start, we need to find the slope of line g.
+clove
+
+= 10231
+
+221
+
+ope 4-13
+Slope
+= —7
+
+Line g has a slope of —7. Since line p is perpendicular to line g, line p must have a slope of = The answer is
+B.
+
+Slope-Intercept Form
+Slope-intercept form is the simplest form of a line and the one that you are likely most comfortable with.
+y=mx+b
+
+where m is the slope and b is the y-intercept.
+As an example, consider the graph of y = 2x — 2 below:
+10
+
+a
+
+/
+
+£
+
+We can see both the slope and the y-intercept on the graph. The y-intercept is where the line crosses the
+y-axis, which we can clearly see at y
+
+= —2. We can also see the slope 1s 2 by tracing how the line moves: for
+
+every 2 units we move up, the graph moves one unit to the right. Make sure you are comfortable identifying
+the y-intercept and slope of a line from the graph.
+
+Example 4: The graph in the standard (x, y) coordinate plane below is represented by one of the
+following equations. Which one?
+A.
+
+y=-2x-—3
+
+(0,3)|
+~
+
+B. y=2x+3
+
+a
+
+C. y=ix+3
+1
+
+(—6,0)
+
+D.
+
+y=5x-3
+
+Solution: To solve, we need to find the y-intercept and the slope. The y-intercept is at y = 3. To find the
+
+slope, we need two points on the line. Here, we can use (—6, 0) and (0, 3).
+
+-33-
+
+math
+
+Slope =
+
+0-3
+
+—3
+
+1
+
+“6-0
+-6 2
+
+The slope is - and the y-intercept is y = 3, so the equation of the line is y = =x +3. The answer is C.
+Point-Slope Form
+If we only know the slope of a line and a point on the line, we need to use point-slope form:
+
+Y—¥1 = M(x
+— Xj)
+where (x1, y;) is a point on the line and m
+
+is the slope. Once we plug in the slope and point to point-slope
+
+form, we can turn the equation back into slope-intercept form by solving for y.
+Example 5: Line w passes through points (2, 10) and (5, —2). What is the y-intercept of line w?
+A.
+
+—4
+
+B. 7
+
+C.
+
+12
+
+D.
+
+18
+
+Solution: To start, we need to find the slope of line w.
+Slope =
+
+10—(-2)
+
+12
+
+2-5
+
+3
+
+—4
+
+Now that we know the slope, we can use point-slope form. We can plug in either point and solve for y. For
+
+this example, we will use the point (2, 10).
+y—10=—-4(%
+- 2)
+y—-10=—-4x+8
+y=-4x+18
+
+Once we have the equation in slope-intercept form, we see that the y-intercept is 18. The answer is D.
+
+Alternate Method — Plug a point into y = mx + b form.
+When dealing with lines in y = mx + b form, you can also plug the (x, y) coordinates of a point on the
+line into the equation and then solve for the y-intercept. To see how this works, let’s go back to example 5.
+Once we found the slope was —4, we could have set the equation up like this:
+y=—-4x+b
+
+To find b-value, we can plug in one of the points from the line for x and y and solve for b. Here, we will
+
+use (2, 10).
+
+10 = —4(2) +b
+b=18
+
+Now that we know the b-value, we can write the equation in slope-intercept form:
+y=-4x+18
+
+Note that this “Plug a point into y = mx + b form” approach and the point-slope form method we used in
+the solution to Example 5 both find slope-intercept form. You can use whichever one you feel more
+comfortable with on test day.
+
+~34-
+
+Chapter 5: Lines
+
+Standard Form
+Lines can also appear in standard form:
+Ax+By=C
+
+The coefficients in this form do not show the slope or the y-intercept. They actually show nothing, so standard
+form is not particularly useful. To turn standard form into slope-intercept form, solve for y. Once we have the
+equation in slope-intercept form, we can find the slope and the y-intercept for the line.
+Example 6: In the standard (x, y) coordinate plane, what is the slope of the line —4x + 3y = 15?
+A.
+
+—4
+
+4
+
+B. 3
+
+C.
+
+|w
+
+pwod
+
+D.
+
+Solution: Convert the line from standard form to slope-intercept form. To do this, we need to solve for y.
+—4x+3y =15
+3y =4x+15
+
+4 +5
+
+y= 3%
+
+After putting the line in slope-intercept form, we can see the slope is = The answer is D.
+Midpoint Formula
+Given any two points on a line (x,, y,) and (x3, y2),
+
+X41 X2 m)
+
+midpoin
+
+5
+
+5
+
+Example 7: C is the midpoint of AB. If point A is at (3, 6) and point C is at (5, 2), which of the
+following is point B?
+
+A. (4,4)
+
++B. (1,8)
+
+C (7-2)
+
+—
+
+D. (7,8)
+
+Solution: We are given the midpoint, point C, and one of the endpoints, point A. We can plug the values into
+the midpoint formula to solve for the coordinates of point B.
+To solve for the x-coordinate, plug in the x-coordinates for the midpoint and the endpoint that we are given.
+
+5 ait
+2
+
+10=3+x
+x=7
+
+The x-coordinate is x = 7.
+
+To solve for the y-coordinate, plug in the y-coordinates for the midpoint and the endpoint that we are given.
+
+9 = ory
+2
+
+4=6+y
+
+y=-2
+The y-coordinate is —2. Point B is at (7, —2). The answer is C.
+
+~35-
+
+math
+
+Distance Formula
+Given any two points (x1, y,) and (x2, y2),
+
+Distance = /(x, — x2)? + (y1 — y2)”
+The distance formula can be used to solve for the distance between any two points in the (x, y) coordinate
+plane.
+
+If you do not like the distance formula, you also use the Pythagorean Theorem to find the distance between
+two points. To do so, sketch a coordinate plane and drawa triangle, and solve for the hypotenuse. You can
+see how this works in the example below.
+
+Example 8: What is the distance, in coordinate units, between the points (—2, 1) and (5, 4) in the
+
+standard (x, y) coordinate plane?
+
+A. 3V2
+
+B. ¥34
+
+Cc. ¥58
+
+D. V74
+
+Solution: We can solve for distance between the two points with the distance formula or by sketching a
+triangle.
+
+Method #1 — Distance formula: Solve with the distance formula using (—2, 1) as (x, y,) and (5, 4) as
+
+(x2, 2).
+Distance = /(—2 —5)2+ (1 — 4)2
+Distance = ./(—7)2 + (—3)?
+Distance = V58
+The answer is C.
+
+Method #2 — Sketch a triangle: Draw a coordinate plane and make a triangle.
+6A
+
+-2y
+
+Using the triangle, we see that the base has a length of 7 and the height has a length of 3. To find the distance
+between the 2 points, use the Pythagorean Theorem:
+
+774+
+37 =c?
+58
+= c?
+
+c = V58
+The answer is C.
+
+- 36-
+
+Chapter 5: Lines
+
+Solving for Intercepts
+The x-intercept is the point where a line crosses the x-axis. To solve for the x-intercept, set y = 0 and solve
+for x.
+
+The y-intercept is the point where the line crosses the y-axis. To solve for the y-intercept, set x = 0 and
+solve for y.
+Example 9: For the line 10 — 2y = 5x, what is the sum of the x-intercept and the y-intercept?
+A.
+
+2
+
+B. 3
+
+C. 5
+
+D. 7
+
+Solution: To find the x-intercept, set y = 0 and solve for x.
+
+10 — 2(0)
+= 5x
+10
+= 5x
+x=2
+
+The x-intercept is at x = 2.
+To find the y-intercept, set x = 0 and solve for y.
+
+10 — 2y = 5(0)
+10 —2y =0
+2y = 10
+
+y=5
+The y-intercept is at y = 5.
+
+The sum of the x-intercept and y-intercept is 2 + 5, which equal 7, so the answer is D.
+Lines Practice: Answers on page 324.
+
+1.
+
+Inthe standard (x, y) coordinate plane, a line
+
+3.
+
+A line in the standard (x, y) coordinate plane
+
+intersects the x-axis at (—1, 0) and contains the
+
+passes through the points (—7,5) and (1, —4).
+
+point (7,2). What is the slope of the line?
+
+The slope of the line is:
+
+1
+
+B.
+D.
+2.
+
+9
+
+B —2
+
+=3
+
+6
+
+7
+
+1
+
+4
+
+D. 8
+
+Inthe standard (x, y) coordinate plane, what is
+the midpoint of the line segment with endpoints
+
+4
+
+The point (5, m) lies on the graph of the line
+
+(2, 6) and (6, 10) ?
+
+y=- =x + 11 in the standard (x, y)
+
+A.
+
+(3,6)
+
+coordinate plane. What is the value of m ?
+
+B.
+
+(4,-4)
+
+A
+
+6
+
+C.
+
+(—4,-4)
+
+B
+
+9
+
+D.
+
+(4,8)
+
+C
+
+i.
+
+D.
+
+13
+
+-37-
+
+math
+
+@~
+
+*
+
+Which of the following statements is true about
+
+Questions 8 and 9 refer to the graph below.
+
+the graph of the equation 3y — 4x = —6 in the
+
+Andrew
+
+xy-plane?
+
+Stan
+
+100
+oo
+
+A.
+
+WN
+
+The line has a negative slope and a
+
+Sm
+
+oO
+
+D
+
+negative y-intercept.
+B.
+
+=
+
+The line has a negative slope and a positive
+
+4
+
+©
+
+y-intercept.
+C.
+
+S
+
+oO
+
+The line has a positive slope and a negative
+
+—
+
+2
+
+y-intercept.
+D.
+
+~50
+
+oO
+
+a)
+
+The line has a positive slope and a positive
+
+5
+
+y-intercept.
+
+10
+
+15
+
+Time (seconds)
+
+In the standard xy-plane, what is the slope of a
+
+The graph above shows the positions of Andrew
+
+line perpendicular to 6x = 4y + 10?
+
+and Stan during a 100m rowing race.
+
+>WGQDO9
+
+20
+
+9.
+
+NIW
+
+According to the graph, what is the rate that
+
+Stan rowed at during the race in meters per
+second?
+A.
+
+2
+
+B.
+
+5
+
+C.
+
+10
+
+D.
+
+15
+
+Which of the following is the correct equation
+for the graph below?
+
+A. y=4x4+2
+B
+
+y= —5xt4
+1
+
+C.
+
+y= -2x+4
+
+D.
+
+y=2x+4
+
+10. If Andrew and Stan wanted cross the finish line
+
+(0,4)
+
+at the exact same time, how many meters of a
+
+\ ee
+
+head start would Stan need to be given before
+Andrew and Stan begin rowing?
+A.
+
+10
+
+B.
+
+25
+
+C.
+
+40
+
+D.
+
+50
+
+The equation p = 1.04t + 101.5 models the
+price of a stock, p, in dollars ¢ minutes after
+11. Ifline A has the equation 12x = 11ly + 145,
+
+3pm on a certain day. According to this
+equation, what would the stock price be in
+
+what is the slope of a line perpendicular to line
+
+dollars at 3pm?
+
+A?
+
+A.
+
+1.04
+
+B.
+
+100.46
+
+C.
+
+101.50
+
+D.
+
+102.54
+
+>WGQDO9
+-38-
+
+11
+12
+11
+|
+
+12
+11
+
+145
+145
+12
+
+Chapter 5: Lines
+
+12. When graphed in the standard (x, y) coordinate
+plane, the line with equation ty 3y = + hasa
+
+3
+
+slope of
+
+16. When a roadmap is drawn in the (x, y)
+coordinate plane, one rest stop is drawn at
+
+2
+
+(—2,6) and a second is drawn at (8,14). If]
+
+coordinate unit represents 10 miles, which of
+
+1
+
+the following is the closest to the straight-line
+
+6
+
+A.
+
+55
+
+9
+
+C.
+
+100
+
+D.
+
+130
+
+A. 9
+B. =
+C.
+D.
+
+distance in miles between the two rest stops?
+
+1
+
+B.
+
+13. In the xy-plane below, line a (shown below) is
+
+,
+
+,
+
+parallel to line b (not shown). What is the
+
+80
+
+G) 17. To
+draw a mural, a painter charges a onetime
+fee and $23 per hour of work. The equation
+
+slope ofline b?
+
+23h + 75 = 236 represents this situation,
+where h is the number of hours worked. Which
+
+A.
+
+1
+
+of the following is the best interpretation of the
+
+B.
+
+2
+
+75 in this context?
+
+2
+
+C. 2
+
+D.
+
+(2,1)
+
+-1
+
+A. The onetime fee, in dollars.
+
+/ (0, -3)
+
+estimate the wel tw, of
+
+what is the expected increase in the boy’s
+
+P
+
+(6,5)
+
+boy in terms of the
+
+boy’s age, a, in years. Based on the model,
+
+oe ee ae 2) - What are the
+
+C.
+
+The charge per hour, in dollars.
+
+ENO doctor hoe nemodel ; A 9a + 19.5 ° h
+
+standard (x, : y) coordinate plane, ° the midpoint
+
+(0,3.5)
+
+The number of hours worked.
+
+C.
+
+D. The total charge, in dollars.
+
+14. When the point Y (2, 4) is graphed in the
+
+A.
+
+B.
+
+weight, in pounds, from his 3rd to 7th birthday?
+
+B. (4,0)
+
+~ e
+
+D. (6,2)
+
+D. 36
+
+C
+
+17
+
+15. A moving truck rental company charges a flat
+
+fee of $124.99 for renting a truck and $1.79 for
+every ten miles driven. A customer paid a total
+of $262.82 for a moving truck rental. If x is the
+number of miles that the customer drove the
+truck, which of the following equations
+represents this situation?
+
+19. A 4,864-piece jigsaw puzzle has 276 edge
+pieces, and the rest are pieces inside of the
+puzzle. The equation 74x + 276 = 4,864
+describes this situation, where x represents the
+number of rows that contain inside pieces.
+Which of the following is the best interpretation
+of 74x in this context?
+
+A.
+
+262.82 = 1.79x + 124.99
+
+B.
+
+262.82 = 0.179x + 124.99
+
+A.
+
+There are 74x total pieces.
+
+C.
+D.
+
+262.82 = 1.79 + 124.99x
+262.82 = 1.79x + 12.499
+
+B.
+C.
+
+There are 74x pieces in each row.
+There are 74x edge pieces.
+
+D.
+
+There are 74x inside pieces.
+
+-39-
+
+©)
+
+math
+
+20. The graph below shows the function f(*).
+
+24. A line in the xy-plane has a slope of 3 and
+
+f(x) and g(x) (not shown) are perpendicular
+
+passes through the point (2a, 6a), where a is a
+
+lines. Which of the following could define
+
+nonzero constant. What is the y-intercept of
+
+g(x)?
+
+this line in terms of a?
+
+123
+
+A.
+
+Oa
+
+B.
+
+3a
+
+C. 3
+3
+
+aes
+
+D.
+
+12a
+
+©” Line & passes through the points (—2, 10) and
+(4,28). Which of the following is the equation
+A.
+
+for line k?
+
+g(x) =—-2x-2
+
+B. g)= ~=x +4
+
+C. g(x)= = +2
+D.
+
+g(x) =2x-3
+
+A.
+
+y=3x+16
+
+B.
+
+y=3x+4
+
+C. y= sx 12
+
+. In the standard (x, y) coordinate plane, a line
+
+D. y= sx+15
+
+with a slope of —3 passes through the points
+(—2,—6) and (5,b). What is b equal to?
+
+26. In the standard (x, y) coordinate plane, the
+
+A.
+
+15
+
+B.
+
+—15
+
+point (1,7) is 13 coordinate units away from
+
+C.
+
+—23
+
+which of the following points?
+
+D.
+
+—27
+
+. The line with the equation =x + <y = 31s
+graphed in the (x, y) coordinate plane. What
+is the x-intercept of the line?
+
+PpGAWD
+
+B.
+
+(4-8)
+
+C.
+
+(-7,-2)
+
+D.
+
+(—4,18)
+
+8
+|
+
+27.
+
+y=6x—-4
+
+The equation of line m in the xy-plane is shown
+
+above. A second line, w, has half the slope of
+line m and twice the y-intercept. Where do
+lines m and w intersect?
+
+the xy-plane and k is a constant. If the line
+
+contains the point (a, b) and a # 0 and b + 0,
+what is the slope of the line in terms of a and
+b?
+at+z2
+
+A. =
+b+2
+
+b-2
+
+CT
+D
+
+(6,—-5)
+
+15
+
+. The graph of the line y = kx — 2 is graphed in
+
+B.
+
+A.
+
+a-2
+
+|
+>
+- AQ
+-
+
+Chapter 5: Lines
+
+28.
+
+The points (3, 7), (0,5) and (—6, 1) lie ona
+
+31. In the standard (x, y) coordinate plane, lines m
+
+line in the standard (x, y) coordinate plane.
+
+and n are perpendicular and intersect at point
+
+Which of the following points also lies on that
+
+(3,5). Ifthe slope of line m is — = what is the
+
+line?
+
+y-intercept of line n?
+
+A.
+
+(-3,5)
+
+C.
+
+(5,10)
+
+D.
+
+(9,11)
+
+1
+
+B. (-2,4)
+
+A. (0,5)
+B.
+C
+
+(0 ~)
+.
+
+D.
+
+29.
+
+The cost ofrenting a kayak is $20 for the first
+
+(05
+
+(0,7)
+
+32. Point P, Q, and R
+
+hour, plus an additional $12 for each additional
+
+all lie on line PR. Point P is
+
+at (~18,—14) and point Q is at (~15, —2).
+
+When graphed on the (x, y) coordinate plane,
+
+hour. If h represents the number of hours the
+
+point R is at a point such that PQ: QR = 3:1.
+ut
+D9
+
+kayak is rented, which of the following
+
+functions gives the cost K(h), in dollars, of
+
+What are the coordinates of point R’
+
+renting the kayak for A hours?
+
+A.
+
+A. K(h) = 12h + 20
+B. K(h)=12h+8
+C. K(h) =12h
+D.
+
+(0,3)
+
+(—16,—4)
+
+B. (—14,2)
+C. (-12,—1)
+D. (—6,34)
+
+K(h) = 20h+12
+
+33. In the standard (x, y) coordinate plane, line a
+contains the points (2, 11) and (5, 2), and line
+b contains the points (—5, 0) and (—1,4). At
+what point does line a intersect line b ?
+30. Lines p, q, and r are shown in the standard
+
+(x, y) coordinate plane below. All three lines
+
+A. (9,14)
+
+intersect at (0,5). The slope of line q is equal
+to the average of the slopes of lines p and r.
+
+B.
+
+What is the x-intercept of line q?
+
+A. 3
+
+10
+
+c
+
+,
+
+D.
+
+\
+
+(|=)
+a2
+
+C. (3,8)
+
+Dd. (=.=)
+5
+
+(0,5)
+
+2
+2
+=
+
+4
+
+34. In the standard (x, y) coordinate plane, points
+(6, —22), (a, —6), and (—3, —16) lie on the
+same line. What is a?
+
+(5, 0)
+5
+
+pa
+
+A.
+
+—21
+
+C.
+
+—12
+
+D. -9
+
+4]
+-
+
+G)
+
+math
+

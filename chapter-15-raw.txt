@@ -1,0 +1,817 @@
+Chapter 15: Systems of Equations
+A system of equations is a set of two equations with the same set of unknowns. The ACT most commonly
+hides systems of equations questions in word problems. You will need to turn the word problem into two
+equations and then solve for one or both unknowns.
+Before we tackle the word problems, let’s start with how to solve a system of equations when we are given the
+equations. The easiest methods are elimination and substitution. You will need to be familiar with both of
+these methods to solve systems of equations questions correctly.
+
+Elimination
+We cannot solve an equation with two variables, so elimination is all about trying to eliminate one variable and
+get an equation with only one unknown that can be solved. To do this, we need to make the coefficients for
+one variable have the same value and opposite signs in the two equations. With addition, one of the variables
+will cancel out, leaving us an equation with just one unknown that can be solved.
+Example 1: If 10x — 4y = 16 and 2x + 4y = 8, what is the value of y?
+A.
+
+1
+
+B. 2
+
+C. 4
+
+D. 8
+
+Solution: Whenever we have a system of equation where none of the variables are already isolated,
+“elimination” 1s the fastest way to get to the answer. Since we are asked to solve for y, we want to cancel the
+x-terms. To do so, we multiply the second equation by —5.
+10x —4y = 16
+
+—5 (2x
++ 4y = 8)
+10x —4y = 16
+—10x — 20y = —40
+
+Next, add the equations together and solve for y. Notice that the x-terms cancel out.
+—24y = —24
+y=1
+The answer is A.
+
+Substitution
+In substitution, we want to isolate one variable in the fastest and easiest way possible. Once we have an
+isolated variable, we can substitute that value into the other equation and have an equation with one variable
+that we can solve.
+Example 2: If 12x + 8y = 8 and y = 6x — 14, what does x equal?
+A.
+
+—2
+
+B.
+
+1
+
+C. 2
+
+D. 7
+
+Solution: If we are given a question where one of the variables is already isolated, use the “substitution”
+method. In this question, y is already isolated. We know that y = 6x — 14 from the second equation, so we
+can substitute 6x — 14 for the y in the first equation.
+
+12x
++ 8(6x —14) =8
+12x +48x-—112=8
+60x -112 =8
+
+- 128
+-
+
+Chapter 15: Systems of Equations
+
+60x = 120
+x=
+
+The answer is C.
+
+Word Problems
+Many word problems are systems of equations questions in disguise. For these questions, the biggest
+challenge is turning the words into equations. If you can do that successfully, you then just need to solve the
+system of equations. Systems of equations questions on the ACT most commonly look something like this:
+
+Example 3: For her garden, Mary buys 42 plants for a total of $108. Mary is only going to plant
+
+tomatoes and peppers. If a tomato plant costs $3.00 and pepper plant costs $2.00, how many pepper plants
+did Mary buy?
+A.
+
+10
+
+B.
+
+12
+
+C.
+
+16
+
+D.
+
+18
+
+Solution: Let x be the number of tomato plants and y be the number of pepper plants. We can write two
+equations. The first equation comes from the fact that we know Mary bought a total of 42 plants.
+x+y
+= 42
+
+The second equation includes the prices of each plant to add to the total amount of money Mary spent buying
+the 42 plants.
+3x + 2y = 108
+
+Once we have these two equations, we can use elimination to solve. We are solving for the number of pepper
+plants, y, so we can eliminate the tomato plants, x, by multiplying the first equation by —3.
+
+—3(x+ y = 42)
+3x + 2y = 108
+—3x —3y = —126
+3x + 2y = 108
+
+Next, add the equations together and solve for y. Notice that the x-terms cancel out.
+—y=-18
+y=18
+The answer is D.
+
+On more challenging questions, there can be more than two unknowns, and we will need to write more than 2
+equations.
+
+Example 4: Malik made $738 selling his artwork this month and is counting his cash. Malik only has $1,
+
+$5, and $20 bills. He counts and notices that he has 5 more $5 bills than $20 bills and 6 more $1 bills than
+$5 bills. How many $1 bills does Malik have?
+A.
+
+33
+
+B. 38
+
+C. 48
+
+D. 53
+
+Solution: Method #1 — “Math Teacher Way”: Let x be the number of $1 bills, y be the number of $5 bills,
+and z be the number of $20 bills. We can write three equations. First, we are told that Malik has $738. To
+find the total amount of money Malik has, we multiply the number of bills by the dollar amount of each bill.
+
+Those must add up to a total of $738.
+1x + 5y + 202 = 738
+
+- 129
+-
+
+math
+
+We have one equation with three unknowns. Well, that looks no fun! We cannot solve an equation with three
+unknowns, so we need to write a few more equations with the rest of the information from the question.
+
+We are told Malik has 5 more $5 bills than $20 bills and 6 more $1 bills than $5 bills, so the other equations
+are
+
+zZz+5=y
+yt6o=x
+
+We are asked to solve for $1 bills, which is x, so we want to put y and z in terms of x. First, let’s use the
+equation y + 6 = x above to solve for y in terms of x. Subtracting 6 from both sides we get
+y=x-6
+
+Next, we need to solve for z in terms of x. To do so, we can plug in x — 6 for y in the equation z + 5 = y.
+Z+5=x-6
+Z=x-—11
+
+Now that we have y and z in terms of x, we can plug these values into our first equations and solve for x.
+1x +5(* — 6) + 20(x — 11) = 738
+1x + 5x — 30+ 20x — 220 = 738
+26x = 988
+x = 38
+
+The answer is B. Okay...that was not easy. Good news! There is an easier way to solve questions like this.
+
+Method 2 — Backsolve: The answer choices tell us the possible number of $1 bills. We can use the answer
+choices and play guess-and-check to see which one is correct. Let’s say we are going to check if answer
+choice B works or not.
+
+Answer choice B says there are 38 $1 bills. If there are 6 more $1 bills than $5 bills, there would be 32 $5
+bills. If there are 5 more $5 bills than $20 bills, there would be 27 $20 bills. Now, we just need to see if the
+
+total is equal to $738.
+38(1) + 32(5) + 27(20) = 738
+38 $1 bills worked to get a total of $738, so the answer is B.
+
+None of the other answer choices would give you $738. That’s much easier than doing all that fancy algebra,
+right? For questions with more than 2 unknown values, always backsolve using the answer choices.
+
+System of Equations Practice: Answers on pages 328-329.
+1.
+
+x-3y=3
+
+2.
+
+x-y=3
+
+x+ty=7
+
+y=3-2x
+
+The solution to the system of equations above
+
+For the system of equations above, what is the
+
+is (x,y). What is the value of x?
+
+value of x?
+
+A.
+
+2
+
+A.
+
+6
+
+B.
+
+4
+
+B.
+
+2
+
+C.
+
+5
+
+C.
+
+0
+
+D.
+
+6
+
+D.
+
+—-1
+
+- 130-
+
+Chapter 15: Systems of Equations
+
+0.25x — 2y = —4
+
+Use the following information to answer questions
+7-9.
+
+x+y=2
+
+Max is bringing desserts to the family picnic. He
+
+What is the value of y in the system of
+
+is going to bring only cookies and brownies. The
+
+equation above?
+
+table below gives the number of brownies and
+A.
+
+—2
+
+B.
+
+oOSN
+
+C.
+D.
+
+cookies in each box and the price per box.
+Foot Item
+
+Number per
+
+Price
+
+box
+
+7.
+
+Cookies
+
+18
+
+$6.00
+
+Brownies |
+
+12
+
+$8.00
+
+If Max spends $150.00 on 20 boxes of cookies
+
+The drama club is selling two types of tickets
+
+and brownies, how many boxes of cookies did
+
+for the play: student tickets for $7 each and
+
+he bring to the picnic?
+
+regular tickets for $12 each. If the drama club
+sold a total of 200 tickets and the ticket sales
+
+A.
+
+5
+
+were $2,025, how many student tickets were
+
+B.
+
+8
+
+sold?
+
+C.
+
+10
+
+D.
+
+15
+
+A.
+
+60
+
+B.
+
+75
+
+C.
+
+90
+
+cookies and brownies, how many boxes of
+
+D.
+
+100
+
+brownies did he bring to the picnic?
+
+8.
+
+If Max brings 14 boxes that have a total of 222
+
+A.
+B.
+
+Monique, a manager at a local bakery, is
+
+C.
+
+taking all of the $10 and $20 bills in the cash
+
+D.
+
+register to the bank at the end of her shift. On
+her way back to work, she lost the deposit slip,
+
+9.
+
+but she remembers that there were 19 bills
+
+BWIoDn
+
+If Max brings a total of 210 cookies and
+
+brownies and spends $110.00, how many
+
+totaling $260. How many $10 bills were in
+
+boxes of brownies did he bring?
+
+the cash register at the end of her shift?
+A.
+
+7
+
+A.
+
+6
+
+B.
+
+8
+
+B.
+
+9
+
+C.
+
+9
+
+C.
+
+12
+
+D.
+
+10
+
+D.
+
+14
+
+10.
+
+At Franky’s Surf Shop, the price of a t-shirt is
+
+3x + 5y = 26
+x+y = 34
+
+$20, and the price of a hat is $17. Javaun
+spent $282 on 15 items and only bought
+
+In the system of equations above, what is the
+
+t-shirts and hats. How many hats did he buy?
+
+value of x?
+
+GOW, ONIDA
+
+A.
+
+18
+
+B.
+
+26
+
+- 131
+-
+
+C.
+
+36
+
+D.
+
+72
+
+math
+
+@)
+
+11. Kiki’s teacher wrote the following riddle on
+
+@ 14. If (x, y) is the solution to the system of
+
+the board: “There are two integers I am
+
+equations below, what is the value of y?
+
+thinking of. The difference between the two
+
+integers is 21, and the sum of the larger integer
+and twice the smaller integer is —15. What is
+
+Ax + 3y _ 10
+oy + 2x = —4
+
+the value of the larger integer?” The answer
+
+A.
+
+is:
+
+B.
+
+—4
+—2
+
+A.
+
+—12
+
+C.
+D.
+
+2
+4
+
+B.
+
+—9
+
+C.
+
+6
+
+15. If (x,y) is the solution to the system of
+
+D.
+
+9
+
+equations below, what is the value of x?
+
+7 =3
+
+Use the following information to answer questions
+
+2(y + 12) = 8x
+
+12-13.
+
+Dale’s Donuts sells donut boxes in two sizes: a
+
+A.
+
+2
+
+6-donut box for $5.25 and a 12-donut box for
+$10.75. The table below shows the sales for
+
+B.
+C.
+
+4
+8
+
+Dale’s Donuts on Saturday and Sunday.
+
+D.
+
+12
+
+Number of | Total Sales
+Saturday
+Sunday
+
+Boxes
+120
+95
+
+16. Jimmy’s Deli sells Reuben sandwiches for
+
+$7.35 and Brisket sandwiches for $8.10.
+
+$795.00
+$839.75
+
+Yesterday, the deli made $759.90 from selling
+a total of 99 Reuben and Brisket sandwiches.
+How many Reuben sandwiches were sold
+yesterday?
+
+12. How many 6-donut boxes did Dale’s Donuts
+sell on Saturday?
+
+A.
+
+A. 90
+B. 85
+C. 77
+D.
+
+39
+
+B. 43
+C. 56
+D. 74
+
+63
+
+17. The product of 2 integers is 96. The greater
+
+integer 1s 2 less than triple the lesser integer.
+What is the greater integer?
+
+13. How many total donuts did Dale’s Donuts sell
+on Sunday?
+A.
+
+768
+
+A.
+B.
+
+B.
+
+882
+
+cy
+
+C.
+
+909
+
+D.
+
+D.
+
+942
+
+©)
+
+- 132
+-
+
+6
+8
+
+16
+
+18. Doug has 25 coins that add up to a total of
+
+$2.25. If Doug only has dimes and nickels,
+
+how many nickels does Doug have?
+A.
+
+1
+
+B.
+
+5
+
+C.
+
+10
+
+D.
+
+20
+
+Chapter 15: Systems of Equations
+
+19. A group of 150 people went whitewater
+
+23. Alanna ordered 95 water bottles to give as
+
+rafting. They took 20 total rafts. The rafts
+
+gifts to the nurses at the hospital. She got
+
+could carry either 6 or 8 people. How many
+
+three colors: purple, black, and blue. She
+
+8-person rafts did the group take?
+
+ordered seven fewer black water bottles than
+blue water bottles and 11 fewer purple water
+
+A.
+
+6
+
+bottles than black water bottles. How many
+
+B.
+
+8
+
+purple water bottles did she order?
+
+C.
+
+10
+
+D.
+
+15
+
+A.
+
+22
+
+B.
+
+25
+
+C.
+
+29
+
+D.
+
+33
+
+20. At the Pacific Beach boardwalk, there is a taco
+
+stand that sells carnitas and fish tacos. Carnitas
+tacos have 50 more calories than fish tacos. If
+3 carnitas tacos and 2 fish tacos have a total of
+650 calories, how many calories does each fish
+
+taco have?
+
+24. A kayaking company made $5,100 in 1 day by
+selling three types of tours: Tour A for $50 per
+
+A.
+
+100
+
+person, Tour B for $75 per person, and Tour C
+
+B.
+
+125
+
+for $125 per person. They sold twice as many
+
+C.
+
+150
+
+tour C tickets as tour B. If there were a total
+
+D.
+
+175
+
+of 60 tickets sold, how many tickets were sold
+for tour B?
+A.
+
+7
+
+21. Palm Springs Short Film Festival is planning
+
+B.
+
+10
+
+to show three movies tonight that total 277
+
+C.
+
+12
+
+minutes. The first movie is 5 minutes longer
+
+D.
+
+20
+
+than the second movie, and the second movie
+is 43 minutes longer than the third movie.
+How long, in minutes, is the first movie?
+A.
+
+62
+
+B.
+
+97
+
+C.
+
+105
+
+square of the greater number is 95 more than
+
+D.
+
+110
+
+the square of the lesser number. What is the
+
+25. The difference of 2 positive integers 1s 5. The
+
+value of the sum of the two integers?
+22. James took a trip from Maryland to Boston by
+
+A.
+
+car and train. When travelling by car, he
+
+B.
+
+19
+
+averaged 40 miles per hour. When traveling
+
+C.
+
+23
+
+by train, he averaged 60 miles per hour. The
+
+D.
+
+27
+
+trip took him 7 hours and was 400 miles. How
+
+far did he travel by train?
+
+GaAWpY
+
+200
+240
+310
+360
+
+- 133
+-
+
+13
+
+math
+
+Chapter 16: Quadratics

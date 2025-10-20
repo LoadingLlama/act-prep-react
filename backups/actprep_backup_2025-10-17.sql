@@ -1,5 +1,5 @@
 -- ACT Prep Database Backup
--- Created: 2025-10-17T05:31:00.465Z
+-- Created: 2025-10-17T06:11:49.317Z
 -- Total lessons: 116
 
 -- Clear existing data
@@ -2832,322 +2832,189 @@ INSERT INTO section_content (id, section_id, content, order_index, created_at, u
     <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Apply these strategies on test day
   </li>
 </ul>', 0, '2025-10-16T16:09:01.195586+00:00', NOW());
-INSERT INTO section_content (id, section_id, content, order_index, created_at, updated_at) VALUES (5d65d15d-46c1-47b9-83c1-0cc9d194598e, 1d150143-6d49-4d8c-aada-e396177e2a66, '<!--
-LESSON TEMPLATE v3.0
-Subject: Reading
-Topic: Working Backwards
-Lesson Key: working-backwards
--->
-
-<!-- ========================================
-     SECTION 1: OPENING PARAGRAPH
-     ======================================== -->
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-Working backwards is a powerful <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">strategic approach</strong> to ACT Reading questions that reverses the traditional process of reading the passage first and questions second, instead leveraging the questions themselves to guide your reading, focus your attention on relevant information, and maximize efficiency by directing you to exactly what matters for earning points. This technique involves <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">reading questions before reading the passage</strong>, identifying what information you need to find, and then reading the passage with specific targets in mind rather than attempting to absorb everything equally. While this approach isn''t ideal for every student or every passage type, it provides significant advantages for students who struggle with time management, find their attention wandering during reading, or have difficulty distinguishing important from unimportant details. This lesson explores when and how to effectively implement <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">question-first strategies</strong>, how to extract useful guidance from question stems without getting overwhelmed, techniques for balancing targeted reading with maintaining overall comprehension, and how to adapt this approach to different passage types and question categories. You''ll learn to identify which questions provide the most useful preview information, how to avoid common pitfalls of question-first reading including <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">tunnel vision</strong> and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">fragmented understanding</strong>, and how to integrate backwards strategies with traditional reading methods for optimal results.
+INSERT INTO section_content (id, section_id, content, order_index, created_at, updated_at) VALUES (5d65d15d-46c1-47b9-83c1-0cc9d194598e, 1d150143-6d49-4d8c-aada-e396177e2a66, '<p style="font-size: 16px; line-height: 1.8; margin: 0 0 2rem 0; color: #374151;">
+<strong style="color: #1e40af; font-size: 17px;">Working backwards</strong> means testing answer choices instead of solving algebraically. Plug in each answer to see which one works—it''s often faster than setting up equations.
 </p>
 
-<!-- ========================================
-     SECTION 2: CONTENT (EXACTLY 4 H3 SECTIONS)
-     ======================================== -->
-
-<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
-1. Understanding the Working Backwards Approach
+<h3 style="margin-top: 4rem; margin-bottom: 1.5rem; font-weight: 700; font-size: 22px; color: #111827; border-bottom: 3px solid #3b82f6; padding-bottom: 0.5rem;">
+1. When to Use This Strategy
 </h3>
 
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-Working backwards fundamentally changes how you approach ACT Reading passages by using questions as a roadmap for what to focus on while reading. Understanding the philosophy, benefits, and limitations of this approach helps you decide when to use it.
+<ul style="margin: 0 0 2rem 1.5rem; font-size: 16px; line-height: 2;">
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Problem asks for a specific number</strong> – "What is the value of x?" or "How much money did Sarah start with?"</li>
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Answer choices are concrete numbers</strong> – Not variables or expressions</li>
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Algebraic setup is unclear or complex</strong> – Testing is simpler than solving</li>
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Time pressure</strong> – Plugging in values can be faster</li>
+</ul>
+
+<div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 5px solid #3b82f6; padding: 1.5rem; margin: 2rem 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+<p style="font-size: 14px; font-weight: 700; margin: 0 0 1rem 0; color: #1e40af; text-transform: uppercase; letter-spacing: 0.5px;">
+📘 Example
 </p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-The Philosophy: Questions as Your Reading Guide
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-The traditional approach to ACT Reading assumes you should <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">read the entire passage comprehensively</strong>, understand everything, then answer questions. The working backwards philosophy challenges this: since you''re only tested on certain aspects of the passage (those addressed in questions), why spend equal time on everything? Instead, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">let the questions tell you what matters</strong>. By previewing questions first, you gain intelligence about: <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">What topics the questions care about</strong>—if three questions ask about the author''s childhood, you know to pay special attention to childhood discussion. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">What specific details you''ll need</strong>—questions with line references tell you exactly where to focus. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">What the main idea likely is</strong>—main idea questions preview the passage''s central focus. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">What kind of passage structure to expect</strong>—function questions hint at how the passage is organized. This intelligence transforms reading from aimless absorption to targeted information gathering. You read with purpose, knowing what you''re looking for, which increases focus, improves retention of relevant information, and reduces time wasted on tangential details.
+<p style="font-size: 16px; font-weight: 600; margin: 0 0 1rem 0; color: #111827;">
+When 5 is added to twice a number, the result is 23. What is the number?
 </p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Who Benefits Most from This Strategy
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-Working backwards isn''t universally optimal—it works better for some students than others. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Students who benefit most</strong> include: <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Those who struggle with time</strong>—question-first reading can be faster because you read more efficiently, focusing on what matters. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Those whose attention wanders</strong>—having specific targets keeps you engaged and prevents zoning out. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Those who have trouble identifying main ideas</strong>—previewing the main idea question tells you what to look for. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Those who read too slowly because they try to absorb every detail</strong>—knowing what matters helps you read faster by reducing the cognitive burden of trying to remember everything. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Students who typically score below 26 on Reading</strong>—you need efficiency strategies to improve. Conversely, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">students who may not benefit</strong> include: <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Strong, fast readers</strong> who already finish with time to spare—you don''t need efficiency shortcuts. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Those who find question previewing overwhelming</strong>—if trying to remember multiple questions while reading creates anxiety, stick with passage-first. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Those scoring above 30</strong>—you''ve likely found a system that works; major changes may harm rather than help. The key is self-awareness: try working backwards in practice tests and compare your scores, time management, and stress level to traditional approaches.
-</p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Potential Advantages of Working Backwards
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-When implemented effectively, working backwards provides several <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">tangible advantages</strong>: <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Increased reading efficiency</strong>—knowing what to focus on allows faster reading because you''re not trying to absorb everything equally. You can skim less relevant sections and slow down for sections questions target. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Better detail retention</strong>—paradoxically, focusing on specific details mentioned in questions can improve retention because you''re looking for them actively rather than passively encountering them. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Reduced rereading</strong>—because you marked or mentally noted where key information appears while reading with questions in mind, you need to reread less when answering. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Better main idea identification</strong>—previewing main idea questions gives you a framework for understanding the passage''s purpose. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Improved confidence</strong>—knowing what you''re looking for reduces the anxiety of wondering "What should I focus on?" <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Strategic line reference handling</strong>—questions with line references essentially tell you "this section is important," allowing you to allocate attention efficiently. These advantages accumulate across four passages, potentially saving 3-5 minutes total, which translates to additional questions answered correctly.
-</p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Potential Pitfalls to Avoid
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-Working backwards also carries <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">risks that must be managed</strong>: <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Tunnel vision</strong>—focusing so narrowly on question topics that you miss crucial context or the passage''s overall meaning. This leads to missing main idea questions or failing to understand how details connect. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Cognitive overload</strong>—trying to remember too many questions while reading overwhelms working memory, causing confusion and slower reading. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Fragmented understanding</strong>—treating the passage as a collection of isolated facts rather than a coherent argument, which hurts on synthesis and inference questions. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Misinterpretation from lack of context</strong>—jumping to line references without reading surrounding context can lead to misunderstanding the referenced material. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Time wasted on questions preview</strong>—spending too long reading and trying to memorize questions negates time savings from efficient passage reading. To avoid these pitfalls: Preview questions quickly (30-45 seconds, not 2 minutes), maintain awareness of the passage''s overall flow and argument even while focusing on specific targets, always read context around line references, and stay flexible—if working backwards isn''t helping on a particular passage, abandon it and read traditionally.
-</p>
-
-<div style="background-color: #f8f9fa; border-left: 4px solid #3b82f6; padding: 1rem; margin: 1.5rem 0;">
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Example: Comparing Approaches</strong><br><br>
-<strong>Traditional Approach:</strong><br>
-- Read entire passage carefully (4 minutes)<br>
-- Try to remember everything<br>
-- Answer questions, rereading to find details (4.5 minutes)<br>
-- Total: 8.5 minutes<br>
-- Sometimes miss details, strong on main idea<br><br>
-<strong>Working Backwards Approach:</strong><br>
-- Preview questions quickly, noting topics and line references (30 seconds)<br>
-- Read passage with targets in mind, marking mentioned sections (3 minutes)<br>
-- Answer questions with minimal rereading needed (4 minutes)<br>
-- Total: 7.5 minutes<br>
-- Strong on details, need to ensure main idea understanding<br><br>
-<strong>Hybrid Approach (Often Best):</strong><br>
-- Quick question preview to identify key topics (20 seconds)<br>
-- Read passage normally but with heightened attention to previewed topics (3.5 minutes)<br>
-- Answer questions efficiently (4 minutes)<br>
-- Total: 7.7 minutes<br>
-- Balanced: strong on both details and main ideas
+<p style="font-size: 15px; margin: 0.75rem 0 0 0; color: #374151; line-height: 1.7;">
+<strong style="color: #3b82f6;">Test choice C (middle value):</strong> If the number is 9 → 2(9) + 5 = 23 ✓<br>
+<strong style="color: #059669;">Answer: 9</strong>
 </p>
 </div>
 
-<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
-2. The Question Preview Process
+<h4 style="margin-top: 3rem; margin-bottom: 1rem; font-weight: 600; font-size: 18px; color: #1f2937;">
+Smart Testing Strategy
+</h4>
+
+<ul style="margin: 0 0 2rem 1.5rem; font-size: 16px; line-height: 2;">
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Always start with C</strong> – Choices are ordered; if C is too big/small, eliminate half the answers instantly</li>
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Stop when one works</strong> – No need to test remaining choices</li>
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Test easy numbers first</strong> – If one choice is 0, 1, or 10, try it first for quick elimination</li>
+</ul>
+
+<h3 style="margin-top: 4rem; margin-bottom: 1.5rem; font-weight: 700; font-size: 22px; color: #111827; border-bottom: 3px solid #3b82f6; padding-bottom: 0.5rem;">
+2. The Process
 </h3>
 
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-The foundation of working backwards is an efficient, strategic question preview that extracts useful information without overwhelming you or consuming excessive time. Mastering this preview process is essential for making the approach work.
+<ul style="margin: 0 0 2rem 1.5rem; font-size: 16px; line-height: 2;">
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Step 1: Understand what you''re solving for</strong> – Read carefully, note all conditions</li>
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Step 2: Pick an answer choice</strong> – Usually start with C</li>
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Step 3: Plug it into the problem</strong> – Follow the operations step by step</li>
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Step 4: Check if it works</strong> – Does it satisfy all conditions? If yes → done. If no → eliminate and try another</li>
+</ul>
+
+<div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 5px solid #3b82f6; padding: 1.5rem; margin: 2rem 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+<p style="font-size: 14px; font-weight: 700; margin: 0 0 1rem 0; color: #1e40af; text-transform: uppercase; letter-spacing: 0.5px;">
+📘 Example
 </p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-What to Look for When Previewing Questions
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-During your question preview, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">focus on extracting useful intelligence</strong>, not memorizing every word. Look for: <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Line references</strong>—circle or note any question that mentions specific lines (e.g., "According to lines 23-25..."). These tell you exactly where to pay attention. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Repeated topics or names</strong>—if multiple questions mention "the experiment" or "Darwin''s theory" or "the narrator''s mother," these are clearly important topics. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Main idea questions</strong>—these preview the passage''s central purpose ("The author''s primary purpose is to..." or "The main idea of the passage is..."). <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Question distribution</strong>—if many questions focus on the passage''s beginning or end, you know those sections are especially important. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Function questions</strong>—these hint at passage structure ("The author includes the third paragraph in order to..."). Don''t try to memorize questions or answer them during preview—just gather intelligence about what the test cares about. A good preview takes 20-45 seconds and gives you 3-5 mental "targets" to watch for while reading.
+<p style="font-size: 16px; font-weight: 600; margin: 0 0 1rem 0; color: #111827;">
+Sarah spends $15, then triples what remains. She has $60. How much did she start with?
 </p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-The Speed Preview Technique
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-To preview efficiently without getting bogged down, use <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">speed preview technique</strong>: <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Read only question stems, not answer choices</strong>—answer choices take time to read and often confuse rather than clarify. Focus solely on what each question asks. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Move quickly</strong>—spend 2-4 seconds per question, just long enough to grasp what it''s asking about. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Use physical marking</strong>—as you preview, circle line references or put checkmarks beside questions about topics you notice appearing multiple times. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Categorize mentally</strong>—as you scan, mentally group questions: "These are about main idea, these are detail questions with line references, these ask about specific paragraphs." <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Stop at 10 questions</strong>—ACT passages have exactly 10 questions, so you know when you''re done. The goal is a swift pass through questions that gives you a mental framework, not detailed question memorization. If you find yourself spending more than 45 seconds on preview, you''re going too slowly—simplify your approach or skip preview entirely.
+<p style="font-size: 15px; margin: 0 0 0.5rem 0; color: #374151; line-height: 1.7;">
+<strong style="color: #3b82f6;">Test C ($30):</strong> $30 - $15 = $15, then $15 × 3 = $45 ✗ (need $60)<br>
+Too small → eliminate A, B, C
 </p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Extracting Main Idea Intelligence
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-Main idea questions are particularly valuable during preview because they <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">tell you what the passage is fundamentally about</strong>. Common main idea question stems: "The main idea/primary purpose is to...", "The passage can best be described as...", "The author''s main point is that...", "This passage primarily focuses on..." When you see these during preview, they give you a framework for understanding the passage. For example, if a question asks "The author''s primary purpose is to...", you know while reading to identify what the author is trying to accomplish—are they explaining, arguing, describing, comparing? This framework helps you organize information as you read. However, don''t let main idea preview create tunnel vision—sometimes the question stem gives you a general topic ("The passage discusses the history of photography...") without revealing the specific main idea. Read the passage to discover the specific argument or focus, using the general topic as a starting point. Main idea intelligence is most useful when combined with detail preview—knowing both the overall purpose and specific focuses creates a complete roadmap.
-</p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Using Line References Strategically
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-Questions with line references are <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">gold for working backwards</strong> because they identify exactly where to focus attention. During preview, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">circle all line references</strong>—if a question asks about lines 23-25, circle "23-25" in the question. Then, when you reach lines 23-25 while reading the passage, you know to slow down and pay special attention. Strategy: <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Mark referenced lines in the passage</strong>—some students put a small asterisk or bracket next to referenced lines in the passage margin while reading, making them easy to find later. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Read extra context</strong>—when you reach a referenced section, read at least 2-3 sentences before and after the specific lines to ensure you understand context. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Note what the question asks about</strong>—if a question asks "The phrase in lines 23-25 suggests that the author believes...", you know while reading those lines to think about what they suggest about the author''s beliefs. Line references transform from interruptions into helpful signposts: "This matters. Pay attention here." They''re particularly valuable for detail questions that might otherwise require extensive searching.
-</p>
-
-<div style="background-color: #f8f9fa; border-left: 4px solid #3b82f6; padding: 1rem; margin: 1.5rem 0;">
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Example: Effective Question Preview</strong><br><br>
-<strong>Preview findings (30 seconds scanning 10 questions):</strong><br><br>
-✓ Q21: Main idea question—passage is about "impact of social media on political engagement"<br>
-✓ Q22: Lines 15-18 mentioned—something about "traditional media comparison"<br>
-✓ Q23: Author''s attitude toward social media<br>
-✓ Q24: Lines 34-37 mentioned—something about "young voters"<br>
-✓ Q25: Function of third paragraph<br>
-✓ Q26-27: Both mention "the 2016 election" (repeated topic—important)<br>
-✓ Q28: Lines 52-55—about "misinformation"<br>
-✓ Q29: Author''s argument about future<br>
-✓ Q30: Inference about overall impact<br><br>
-<strong>Intelligence gathered:</strong><br>
-- Main topic: social media''s impact on political engagement<br>
-- Important specific lines: 15-18, 34-37, 52-55 (mark these while reading)<br>
-- Repeated topic: 2016 election (pay attention when this appears)<br>
-- Key themes: comparison to traditional media, young voters, misinformation, future implications<br><br>
-<strong>Reading strategy:</strong> Read passage normally but heighten attention when reaching marked line sections and when 2016 election is discussed. Make sure to understand author''s overall attitude and argument about future.
+<p style="font-size: 15px; margin: 0.75rem 0 0 0; color: #374151; line-height: 1.7;">
+<strong style="color: #3b82f6;">Test D ($35):</strong> $35 - $15 = $20, then $20 × 3 = $60 ✓<br>
+<strong style="color: #059669;">Answer: D ($35)</strong>
 </p>
 </div>
 
-<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
-3. Reading the Passage with Question Awareness
-</h3>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-After previewing questions, you read the passage differently—not randomly absorbing everything, but reading with strategic awareness of what matters. This targeted reading requires balancing focus on question topics with maintaining overall comprehension.
+<div style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 5px solid #dc2626; padding: 1.5rem; margin: 2rem 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+<p style="font-size: 14px; font-weight: 700; margin: 0 0 1rem 0; color: #991b1b; text-transform: uppercase; letter-spacing: 0.5px;">
+🎯 Practice
 </p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-The Multi-Speed Reading Approach
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-With question awareness, you can employ <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">multi-speed reading</strong>—adjusting your pace based on relevance. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Slow down for high-priority sections</strong>—when you reach line references or topics mentioned in multiple questions, reduce speed and read carefully for full comprehension. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Moderate pace for main ideas and structure</strong>—always read topic sentences, transitions, and concluding sentences at full comprehension speed because these reveal structure and main ideas. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Skim low-priority details</strong>—if questions don''t mention certain sections and they contain supporting details rather than main arguments, you can skim them quickly, knowing you can return if needed. For example, if your preview revealed questions about the author''s main argument and specific scientific experiments mentioned in lines 45-48, but no questions about the historical background in paragraph 2, you might: read the main argument carefully, skim the historical background paragraph (noting just its topic), and slow down for the experiment discussion. This variable-speed approach saves time without sacrificing performance because you''re allocating attention efficiently—thoroughly covering what''s tested, lightly covering what isn''t. However, never skip entire paragraphs or sections—you need at least basic understanding of the whole passage for main idea and structure questions.
+<p style="font-size: 16px; font-weight: 600; margin: 0 0 0.5rem 0; color: #111827;">
+When 8 is subtracted from three times a number, the result is 22. What is the number?
 </p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Active Notation While Reading
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-As you read with question awareness, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">actively mark the passage</strong> to facilitate efficient question-answering later: <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Bracket line references</strong>—when you reach lines mentioned in questions, put brackets around them or mark them with an asterisk so you can quickly find them again. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Underline or circle key terms from questions</strong>—if questions mention "the experiment," "young voters," or "misinformation," underline or circle these when they appear in the passage. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Note relationships</strong>—if a question asks how paragraphs relate, note "contrast," "example," or "support" in margins next to relevant paragraphs. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Mark attitude indicators</strong>—if questions ask about the author''s attitude, underline words revealing opinion ("unfortunately," "remarkably," "problematic"). <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Number paragraphs</strong>—put small numbers in margins (1, 2, 3, etc.) to help locate information when questions reference "the third paragraph." These marks create a visual map that dramatically reduces time spent searching for information when answering questions. The key is efficiency—mark quickly and lightly; don''t spend time on elaborate notation systems that consume more time than they save.
-</p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Maintaining Big Picture Understanding
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-The biggest risk of working backwards is losing <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">big picture understanding</strong> by focusing too narrowly on details. Prevent this by: <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Always reading the introduction and conclusion carefully</strong>—these typically contain main ideas and overall arguments, which are essential for synthesis questions. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Tracking the flow of argument</strong>—as you read, maintain awareness of how ideas connect: Is the author building an argument? Presenting chronological events? Comparing alternatives? <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Pausing briefly between paragraphs</strong>—after each paragraph, take 1-2 seconds to process its main point and how it relates to previous paragraphs. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Mentally summarizing after reading</strong>—before jumping to questions, spend 5 seconds formulating a one-sentence summary of the passage''s main idea. This ensures you haven''t fragmented your understanding into isolated facts. Remember: working backwards is about efficient allocation of attention, not abandoning comprehension of the passage as a coherent whole. You still need to understand the forest, not just individual trees—you''re just using questions to guide which trees deserve closer inspection.
-</p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Adapting to Different Passage Types
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-Working backwards is more effective for some passage types than others, so <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">adapt your approach based on passage characteristics</strong>: <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Informational/expository passages</strong> (natural science, social science)—working backwards works very well because these passages often present information in chunks that can be understood somewhat independently. Questions frequently have line references, making targeted reading effective. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Narrative passages</strong> (literary narrative/prose fiction)—working backwards is less effective because narratives require understanding character development, plot progression, and thematic development throughout. You can''t understand a character''s motivation in line 45 without knowing what happened in lines 1-44. Use lighter question preview—just identify main topics—but read more comprehensively. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Argumentative passages</strong> (humanities)—moderate effectiveness. Preview helps identify the main argument and key supporting points, but you need to follow the logical structure carefully. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Paired passages</strong>—question preview is highly valuable because it shows you which questions are about A, B, or both, allowing strategic reading. Be flexible: if you preview questions and realize the passage type doesn''t lend itself to targeted reading, simply read it traditionally but maintain heightened awareness of previewed topics.
-</p>
-
-<div style="background-color: #f8f9fa; border-left: 4px solid #3b82f6; padding: 1rem; margin: 1.5rem 0;">
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Example: Multi-Speed Reading in Practice</strong><br><br>
-<strong>Passage:</strong> Natural science passage about photosynthesis<br>
-<strong>Question preview revealed:</strong> Lines 23-26 mentioned (chemical equation), lines 45-48 mentioned (efficiency), several questions about environmental factors<br><br>
-<strong>Reading approach:</strong><br><br>
-<strong>Paragraph 1 (Introduction to photosynthesis):</strong> Read at full speed—establishes main topic and likely contains main idea (1 min)<br><br>
-<strong>Paragraph 2 (Historical discovery):</strong> Skim—no questions mentioned this, seems like background context. Note just: "History paragraph" (20 seconds)<br><br>
-<strong>Paragraph 3 (Chemical process, lines 20-30):</strong> SLOW DOWN—lines 23-26 are referenced in question. Read carefully, bracket lines 23-26. Underline "chemical equation" (45 seconds)<br><br>
-<strong>Paragraph 4 (Environmental factors—light, water, CO2):</strong> Read carefully—multiple questions ask about environmental factors. Underline each factor mentioned (1 min)<br><br>
-<strong>Paragraph 5 (Efficiency discussion, lines 43-50):</strong> SLOW DOWN—lines 45-48 referenced in question. Read carefully, bracket these lines (40 seconds)<br><br>
-<strong>Paragraph 6 (Conclusion/implications):</strong> Read fully—conclusions often contain main ideas and synthesis points (30 seconds)<br><br>
-<strong>Total reading time:</strong> 3 minutes 15 seconds (vs. 4 minutes reading everything at same pace)<br>
-<strong>Result:</strong> Saved 45 seconds while actually improving retention of tested material
+<p style="font-size: 14px; margin: 0.5rem 0 0 0; color: #6b7280; font-style: italic;">
+A. 8  |  B. 10  |  C. 12  |  D. 14  |  E. 16
 </p>
 </div>
 
-<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
-4. Answering Questions After Strategic Reading
+<h3 style="margin-top: 4rem; margin-bottom: 1.5rem; font-weight: 700; font-size: 22px; color: #111827; border-bottom: 3px solid #3b82f6; padding-bottom: 0.5rem;">
+3. Common Problem Types
 </h3>
 
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-After reading strategically with question awareness, you''re positioned to answer questions efficiently because you''ve already located and understood key information. The final step is leveraging your preparation to answer quickly and accurately.
-</p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-The Question-Answering Sequence
+<h4 style="margin-top: 2.5rem; margin-bottom: 1rem; font-weight: 600; font-size: 18px; color: #1f2937;">
+Age Problems
 </h4>
 
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-When answering questions after working backwards, follow an <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">efficient sequence</strong>: <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Start with questions you marked during preview</strong>—these are questions whose key information you already located and focused on while reading. They should be quick to answer because you already know where to find support. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Answer line reference questions next</strong>—you bracketed or marked these lines while reading, so you can go directly to them without searching. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Then answer main idea questions</strong>—by this point, you''ve engaged deeply with the passage through detail questions, reinforcing your understanding of the main idea. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Finally, tackle inference and synthesis questions</strong>—these require broader understanding that has been built through answering earlier questions. This sequence creates a positive momentum cycle: you answer easier questions quickly and confidently, which reinforces your understanding for harder questions, leading to better overall performance. It''s the opposite of struggling with difficult questions first while details are still fuzzy in your memory.
+<div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 5px solid #3b82f6; padding: 1.5rem; margin: 2rem 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+<p style="font-size: 14px; font-weight: 700; margin: 0 0 1rem 0; color: #1e40af; text-transform: uppercase; letter-spacing: 0.5px;">
+📘 Example
 </p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Minimal Rereading Required
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-One major benefit of working backwards is <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">dramatically reduced rereading</strong>. Because you: identified and marked important sections during preview, paid special attention to these sections while reading, and noted their locations with brackets or margin marks, you can now answer most questions with minimal or no rereading. When you do need to reread: <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Your marks guide you instantly to the right location</strong>—no time wasted scanning the entire passage. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">You reread only small sections</strong>—the 2-3 sentences around your mark, not entire paragraphs. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Rereading is for verification, not discovery</strong>—you''re confirming your memory, not encountering information for the first time. This efficiency is where working backwards pays its biggest dividends. Students using traditional approaches often spend 40-50% of their time rereading to find answers; working backwards students spend perhaps 15-20% of their time on targeted rereading. That time savings translates directly into more questions answered and reduced time pressure. Track this in practice: count how many times you have to reread and how long it takes. If working backwards reduces your rereading significantly, it''s working well.
+<p style="font-size: 16px; font-weight: 600; margin: 0 0 1rem 0; color: #111827;">
+Marcus is 3 years older than twice his sister''s age. If Marcus is 19, how old is his sister?
 </p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Handling Questions You Didn''t Preview Well
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-Sometimes you''ll encounter questions that require information you didn''t specifically target during your strategic reading. Don''t panic—<strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">you still read the entire passage</strong>, just with varying attention levels. For these questions: <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Check if the question has a line reference you missed</strong>—if so, go directly to those lines. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Use the passage structure knowledge you built</strong>—you noted topic sentences and paragraph topics while reading, so you know roughly where to find different information. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Apply process of elimination</strong>—even without perfect recall, you can often eliminate obviously wrong answers based on general passage understanding. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Reread strategically</strong>—scan for key terms from the question, then read surrounding context. The reality is that working backwards won''t perfectly preview every question—and that''s fine. If it helps you efficiently answer 7-8 questions with minimal effort, having to work normally on 2-3 questions is acceptable. The overall time savings and accuracy improvement still favor the approach. Don''t judge working backwards by its performance on the hardest questions; judge it by its overall efficiency across all questions.
+<p style="font-size: 15px; margin: 0 0 0.5rem 0; color: #374151; line-height: 1.7;">
+<strong style="color: #3b82f6;">Test H (9):</strong> 2(9) + 3 = 21 ✗ (too big)<br>
+<strong style="color: #3b82f6;">Test G (8):</strong> 2(8) + 3 = 19 ✓
 </p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Combining Working Backwards with Other Strategies
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-Working backwards is most powerful when <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">combined with other ACT Reading strategies</strong>, not used in isolation: <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Use it with active reading</strong>—still underline topic sentences, note transitions, track the author''s argument; working backwards just tells you where to be especially active. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Combine with elimination strategies</strong>—your strategic reading helps you identify wrong answers quickly because you understand the passage''s actual claims. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Apply verification techniques</strong>—for important questions, still verify your answer choice against the passage even though you''re confident. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Use passage-first for difficult passage types</strong>—if you preview questions on a narrative passage and realize it requires comprehensive reading, switch to passage-first approach. <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Maintain time management</strong>—working backwards should save time, but still target 8-9 minutes per passage; use saved time for review or buffer against difficult questions. Think of working backwards as one tool in your toolkit, not a complete replacement for all other strategies. The best test-takers fluidly combine approaches based on passage characteristics and personal strengths, using working backwards when it provides advantage and abandoning it when it doesn''t.
-</p>
-
-<div style="background-color: #f8f9fa; border-left: 4px solid #3b82f6; padding: 1rem; margin: 1.5rem 0;">
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Example: Complete Working Backwards Process</strong><br><br>
-<strong>Step 1 - Question Preview (30 seconds):</strong><br>
-Identify: Lines 12-15 mentioned, lines 34-36 mentioned, main idea question, three questions about "climate models," function of second paragraph question<br><br>
-<strong>Step 2 - Strategic Reading (3 min 15 sec):</strong><br>
-- Read intro fully (main idea likely here)<br>
-- Slow at lines 12-15 (bracket these, note: "about data collection")<br>
-- Read paragraph 2 carefully (function question asks about it)<br>
-- Whenever "climate models" appears, underline (three questions about this)<br>
-- Slow at lines 34-36 (bracket these, note: "about predictions")<br>
-- Read conclusion fully<br><br>
-<strong>Step 3 - Answer Questions (4 min):</strong><br>
-- Q21 (lines 12-15): Go directly to bracketed section—answer immediately<br>
-- Q22 (main idea): Based on intro/conclusion, answer confidently<br>
-- Q23 (climate models detail): Locate underlined "climate models," reread context—answer<br>
-- Q24 (lines 34-36): Go to bracketed section—answer<br>
-- Q25 (function of paragraph 2): Already focused on this while reading—answer<br>
-- Q26 (climate models purpose): Use previous climate models locations—answer<br>
-- Q27 (inference): Synthesize from overall understanding—answer<br>
-- Q28 (author attitude): Based on tone noted while reading—answer<br>
-- Q29 (detail about accuracy): Quick scan for "accuracy"—find and answer<br>
-- Q30 (climate models conclusion): Use earlier locations—answer<br><br>
-<strong>Total: 7 min 45 sec</strong> (15+ seconds saved vs. traditional, with better accuracy on detail questions)
+<p style="font-size: 15px; margin: 0.75rem 0 0 0; color: #374151; line-height: 1.7;">
+<strong style="color: #059669;">Answer: G (8)</strong>
 </p>
 </div>
 
-<!-- ========================================
-     SECTION 3: HIDDEN SEPARATOR
-     ======================================== -->
+<h4 style="margin-top: 2.5rem; margin-bottom: 1rem; font-weight: 600; font-size: 18px; color: #1f2937;">
+Consecutive Integers
+</h4>
 
-<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
-Hidden Separator
+<div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 5px solid #3b82f6; padding: 1.5rem; margin: 2rem 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+<p style="font-size: 14px; font-weight: 700; margin: 0 0 1rem 0; color: #1e40af; text-transform: uppercase; letter-spacing: 0.5px;">
+📘 Example
+</p>
+<p style="font-size: 16px; font-weight: 600; margin: 0 0 1rem 0; color: #111827;">
+Three consecutive even integers sum to 84. What is the smallest?
+</p>
+<p style="font-size: 15px; margin: 0 0 0.5rem 0; color: #374151; line-height: 1.7;">
+<strong style="color: #3b82f6;">Test C (28):</strong> 28 + 30 + 32 = 90 ✗ (too big)<br>
+<strong style="color: #3b82f6;">Test A (26):</strong> 26 + 28 + 30 = 84 ✓
+</p>
+<p style="font-size: 15px; margin: 0.75rem 0 0 0; color: #374151; line-height: 1.7;">
+<strong style="color: #059669;">Answer: A (26)</strong>
+</p>
+</div>
+
+<div style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 5px solid #dc2626; padding: 1.5rem; margin: 2rem 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+<p style="font-size: 14px; font-weight: 700; margin: 0 0 1rem 0; color: #991b1b; text-transform: uppercase; letter-spacing: 0.5px;">
+🎯 Practice
+</p>
+<p style="font-size: 16px; font-weight: 600; margin: 0 0 0.5rem 0; color: #111827;">
+Four consecutive integers sum to 34. What is the largest?
+</p>
+<p style="font-size: 14px; margin: 0.5rem 0 0 0; color: #6b7280; font-style: italic;">
+A. 7  |  B. 8  |  C. 9  |  D. 10  |  E. 11
+</p>
+</div>
+
+<h4 style="margin-top: 2.5rem; margin-bottom: 1rem; font-weight: 600; font-size: 18px; color: #1f2937;">
+Percent & Money
+</h4>
+
+<div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 5px solid #3b82f6; padding: 1.5rem; margin: 2rem 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+<p style="font-size: 14px; font-weight: 700; margin: 0 0 1rem 0; color: #1e40af; text-transform: uppercase; letter-spacing: 0.5px;">
+📘 Example
+</p>
+<p style="font-size: 16px; font-weight: 600; margin: 0 0 1rem 0; color: #111827;">
+After a 20% discount, a jacket costs $64. What was the original price?
+</p>
+<p style="font-size: 15px; margin: 0.75rem 0 0 0; color: #374151; line-height: 1.7;">
+<strong style="color: #3b82f6;">Test B ($80):</strong> $80 × 0.80 = $64 ✓<br>
+<strong style="color: #059669;">Answer: B ($80)</strong>
+</p>
+</div>
+
+<h3 style="margin-top: 4rem; margin-bottom: 1.5rem; font-weight: 700; font-size: 22px; color: #111827; border-bottom: 3px solid #3b82f6; padding-bottom: 0.5rem;">
+4. Pro Tips
 </h3>
 
-<!-- ========================================
-     SECTION 4: KEY TAKEAWAYS
-     ======================================== -->
+<ul style="margin: 0 0 2rem 1.5rem; font-size: 16px; line-height: 2;">
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Estimate first</strong> – Narrow down choices before testing to save time</li>
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Watch order of operations</strong> – "5 less than twice x" means 2x - 5, not 5 - 2x</li>
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Check what you''re solving for</strong> – If question asks for "age in 5 years," don''t test current age</li>
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Be flexible</strong> – If testing takes too long, switch to algebraic solving</li>
+<li style="margin-bottom: 1rem;"><strong style="color: #1f2937;">Stay organized</strong> – Write down which choice you''re testing and mark eliminated answers</li>
+</ul>
 
-<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+<h3 style="margin-top: 5rem; margin-bottom: 1.5rem; font-weight: 700; font-size: 22px; color: #059669; border-bottom: 3px solid #10b981; padding-bottom: 0.5rem;">
 Key Takeaways
 </h3>
 
-<ul style="list-style: none; padding: 0; margin: 0;">
-  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
-    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Working backwards uses questions as a reading guide to focus attention on what matters for earning points
-  </li>
-  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
-    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Preview questions in 20-45 seconds by reading stems only, circling line references and noting repeated topics
-  </li>
-  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
-    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Use multi-speed reading: slow down for sections mentioned in questions, maintain full speed for main ideas, skim less relevant details
-  </li>
-  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
-    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Bracket or mark line references and key topics while reading to enable quick information retrieval when answering
-  </li>
-  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
-    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Avoid tunnel vision by always reading introductions and conclusions carefully and maintaining big picture understanding
-  </li>
-  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
-    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Working backwards is most effective for expository passages with many line references, less so for narratives requiring comprehensive understanding
-  </li>
-  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
-    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Answer questions you previewed first since you already located their information, building momentum for harder questions
-  </li>
-  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
-    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Strategic reading should dramatically reduce rereading time since you already marked and understood key sections
-  </li>
-  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
-    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Stay flexible—if working backwards isn''t helping on a particular passage, switch to traditional passage-first reading
-  </li>
-  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
-    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Combine working backwards with other strategies like active reading and elimination for optimal results
-  </li>
+<ul style="margin: 0 0 2rem 1.5rem; font-size: 16px; line-height: 2.2;">
+<li style="margin-bottom: 1.25rem; color: #059669; font-weight: 600;">
+Start with choice C (middle value) to eliminate half the answers if it''s too large or too small
+</li>
+<li style="margin-bottom: 1.25rem; color: #059669; font-weight: 600;">
+Working backwards is fastest for word problems where answer choices are simple numbers and algebraic setup is complex
+</li>
+<li style="margin-bottom: 1.25rem; color: #059669; font-weight: 600;">
+Stop testing as soon as you find an answer that satisfies all conditions—no need to check remaining choices
+</li>
+<li style="margin-bottom: 1.25rem; color: #059669; font-weight: 600;">
+Best for: age problems, consecutive integers, percent/money problems, and multi-step word problems
+</li>
+<li style="margin-bottom: 1.25rem; color: #059669; font-weight: 600;">
+Stay organized by writing which choice you''re testing and crossing out eliminated answers to avoid confusion
+</li>
 </ul>
 ', 0, '2025-10-13T18:09:19.214163+00:00', NOW());
 INSERT INTO section_content (id, section_id, content, order_index, created_at, updated_at) VALUES (7de85b67-5ead-4932-93cb-5c608cb14e21, 1f29e2be-d224-4089-940e-42675c4425d2, '<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
@@ -48729,552 +48596,190 @@ Key Takeaways
   </li>
 </ul>
 ', 0, '2025-10-13T18:09:19.214163+00:00', NOW());
-INSERT INTO section_content (id, section_id, content, order_index, created_at, updated_at) VALUES (e57b367a-965c-4f80-a259-62a1c4dca0a7, ef8262e4-47f9-4d64-89b3-f2475a1eb6ab, '<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
-<strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Working backwards</strong> is one of the most powerful problem-solving strategies on the ACT Math test, allowing you to solve complex problems by <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">reverse-engineering</strong> the solution from the answer choices. Instead of setting up algebraic equations and solving forward, you <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">test each answer choice</strong> by substituting it into the problem to see which one works. This strategy is particularly effective for <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">word problems</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">multi-step equations</strong>, and situations where the algebraic setup is unclear or time-consuming.
+INSERT INTO section_content (id, section_id, content, order_index, created_at, updated_at) VALUES (e57b367a-965c-4f80-a259-62a1c4dca0a7, ef8262e4-47f9-4d64-89b3-f2475a1eb6ab, '<p style="font-size: 16px; line-height: 1.8; margin: 0 0 2rem 0;">
+<strong>Working backwards</strong> means testing answer choices instead of solving algebraically. Plug in each answer to see which one works—it''s often faster than setting up equations.
 </p>
 
-<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
-1. When to Work Backwards
+<h3 style="margin-top: 6rem; margin-bottom: 1.5rem; font-weight: 700; font-size: 20px;">
+1. When to Use This Strategy
 </h3>
 
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Identifying Appropriate Problems
-</h4>
+<ul style="margin: 1rem 0 3rem 1.5rem; font-size: 16px; line-height: 2;">
+<li style="margin-bottom: 0.75rem;">Problem asks for a specific number ("What is the value of x?")</li>
+<li style="margin-bottom: 0.75rem;">Answer choices are concrete numbers (not variables)</li>
+<li style="margin-bottom: 0.75rem;">Algebraic setup is unclear or complex</li>
+<li style="margin-bottom: 0.75rem;">Time pressure—plugging in is faster</li>
+</ul>
 
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-Working backwards is most effective when:
+<div style="border: 1px solid #d1d5db; padding: 1.5rem; margin: 2rem 0 3rem 0; background: #fafafa;">
+<p style="font-size: 15px; font-weight: 600; margin: 0 0 1rem 0;">
+Example
 </p>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>The problem asks "which value" or "what number":</strong> Questions that ask you to find a specific numerical value are perfect candidates for testing answer choices.
+<p style="margin: 0 0 0.75rem 0;">
+When 5 is added to twice a number, the result is 23. What is the number?
 </p>
-
-<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
-<p style="font-size: 16px; line-height: 1.7; margin: 0;">
-<strong>Example:</strong> "When 5 is added to twice a number, the result is 23. What is the number?"
-<br><br>
-Instead of solving 2x + 5 = 23 algebraically, you can test each answer choice by substituting it for "the number."
+<p style="margin: 0;">
+<strong>Solution:</strong> Test choice C (9) → 2(9) + 5 = 23 ✓
 </p>
 </div>
 
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Answer choices are simple numbers:</strong> When answer choices are concrete values (not variables or expressions), you can easily test each one.
-</p>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>The algebraic setup is complex or unclear:</strong> Some word problems involve multiple steps or relationships that are easier to check than to set up formally.
-</p>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Testing is faster than solving:</strong> For some problems, plugging in numbers and checking is quicker than working through the algebra, especially under time pressure.
-</p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-When NOT to Work Backwards
+<h4 style="margin-top: 3rem; margin-bottom: 1rem; font-weight: 600; font-size: 18px;">
+Smart Testing Strategy
 </h4>
 
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-This strategy is less effective when:
-</p>
-
-<ul style="margin-left: 1.5rem; font-size: 16px; line-height: 1.7;">
-<li><strong>Answer choices are variables or expressions:</strong> You can''t substitute expressions easily, so algebraic solving is necessary</li>
-<li><strong>The problem is simple and direct:</strong> Basic one-step or two-step problems are faster to solve conventionally</li>
-<li><strong>Testing would be very time-consuming:</strong> If checking each answer involves extensive calculation, direct solving may be more efficient</li>
-<li><strong>The question asks "all of the following EXCEPT":</strong> You''d need to test all five choices rather than stopping when you find one that works</li>
+<ul style="margin: 1rem 0 3rem 1.5rem; font-size: 16px; line-height: 2;">
+<li style="margin-bottom: 0.75rem;"><strong>Always start with C</strong> – If C is too big/small, eliminate half the answers instantly</li>
+<li style="margin-bottom: 0.75rem;"><strong>Stop when one works</strong> – No need to test remaining choices</li>
+<li style="margin-bottom: 0.75rem;"><strong>Test easy numbers first</strong> – If one choice is 0, 1, or 10, try it first</li>
 </ul>
 
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Strategic Answer Choice Selection
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-When working backwards, you don''t always need to test all five answer choices. Use this strategic approach:
-</p>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Start with choice C (the middle value):</strong> Answer choices are typically arranged in numerical order. If you test C and it''s too large or too small, you can eliminate C and either A & B or D & E based on whether you need a bigger or smaller value.
-</p>
-
-<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
-<p style="font-size: 16px; line-height: 1.7; margin: 0;">
-<strong>Example:</strong> Answer choices are A. 3  B. 5  C. 7  D. 9  E. 11
-<br><br>
-Test C (7) first. If 7 is too small, eliminate A, B, and C—the answer must be D or E. Now you only need to test one more choice to find the answer.
-</p>
-</div>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Test easy-to-calculate values first:</strong> If one answer choice is particularly simple (like 0, 1, or 10), it might be worth testing first for quick elimination.
-</p>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Stop when you find one that works:</strong> Once an answer choice satisfies all conditions in the problem, that''s your answer—no need to test the remaining choices.
-</p>
-
-<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
-2. Step-by-Step Process
+<h3 style="margin-top: 6rem; margin-bottom: 1.5rem; font-weight: 700; font-size: 20px;">
+2. The Process
 </h3>
 
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Reading the Problem Carefully
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-Before testing answer choices, ensure you understand what the problem requires:
-</p>
-
-<ul style="margin-left: 1.5rem; font-size: 16px; line-height: 1.7;">
-<li><strong>Identify what you''re solving for:</strong> What does the question ask? A number, a measurement, a price?</li>
-<li><strong>Note all conditions:</strong> List every constraint or relationship the correct answer must satisfy</li>
-<li><strong>Understand the operations:</strong> What happens to the value in the problem? Is it doubled, increased, multiplied?</li>
-<li><strong>Check units:</strong> Are answers in dollars, hours, feet? Ensure you''re testing correctly</li>
+<ul style="margin: 1rem 0 3rem 1.5rem; font-size: 16px; line-height: 2;">
+<li style="margin-bottom: 0.75rem;"><strong>Step 1:</strong> Understand what you''re solving for</li>
+<li style="margin-bottom: 0.75rem;"><strong>Step 2:</strong> Pick an answer choice (usually start with C)</li>
+<li style="margin-bottom: 0.75rem;"><strong>Step 3:</strong> Plug it into the problem</li>
+<li style="margin-bottom: 0.75rem;"><strong>Step 4:</strong> Check if it works—if yes, done; if no, eliminate and try another</li>
 </ul>
 
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Testing an Answer Choice
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-Follow this systematic process when testing each choice:
+<div style="border: 1px solid #d1d5db; padding: 1.5rem; margin: 2rem 0 3rem 0; background: #fafafa;">
+<p style="font-size: 15px; font-weight: 600; margin: 0 0 1rem 0;">
+Example
 </p>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Step 1: Assume the answer choice is correct.</strong> Substitute the value everywhere the unknown appears in the problem.
+<p style="margin: 0 0 0.75rem 0;">
+Sarah spends $15, then triples what remains. She has $60. How much did she start with?
 </p>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Step 2: Work through the problem step-by-step.</strong> Follow the sequence of operations described, calculating what would happen if this value were the answer.
+<p style="margin: 0 0 0.5rem 0;">
+<strong>Test C ($30):</strong> $30 - $15 = $15, then $15 × 3 = $45 ✗ (need $60)
 </p>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Step 3: Check the final result.</strong> Does your calculation match what the problem says should happen? Does it satisfy all conditions?
+<p style="margin: 0 0 0.5rem 0;">
+Too small → eliminate A, B, C
 </p>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Step 4: Accept or eliminate.</strong> If all conditions are satisfied, you''ve found the answer. If not, eliminate this choice and test another.
+<p style="margin: 0 0 0.5rem 0;">
+<strong>Test D ($35):</strong> $35 - $15 = $20, then $20 × 3 = $60 ✓
 </p>
-
-<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
-<p style="font-size: 16px; line-height: 1.7; margin: 0;">
-<strong>Complete example:</strong>
-<br><br>
-<strong>Problem:</strong> Sarah has some money. If she spends $15 and then triples what remains, she''ll have $60. How much money did Sarah start with?
-<br><br>
-A. $20<br>
-B. $25<br>
-C. $30<br>
-D. $35<br>
-E. $40
-<br><br>
-<strong>Testing choice C ($30):</strong>
-<br>
-Step 1: Assume Sarah starts with $30
-<br>
-Step 2: She spends $15: $30 - $15 = $15 remains
-<br>
-Step 3: She triples what remains: $15 × 3 = $45
-<br>
-Step 4: Check: Does she have $60? No, she has $45. ❌ Eliminate C.
-<br><br>
-$45 is less than the required $60, so we need Sarah to start with more money. Eliminate A, B, and C.
-<br><br>
-<strong>Testing choice D ($35):</strong>
-<br>
-Step 1: Assume Sarah starts with $35
-<br>
-Step 2: She spends $15: $35 - $15 = $20 remains
-<br>
-Step 3: She triples what remains: $20 × 3 = $60
-<br>
-Step 4: Check: Does she have $60? Yes! ✓
-<br><br>
+<p style="margin: 0;">
 <strong>Answer: D</strong>
 </p>
 </div>
 
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Organizing Your Work
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-When working backwards, stay organized to avoid errors:
+<div style="border: 1px solid #dc2626; border-left: 4px solid #dc2626; padding: 1.5rem; margin: 2rem 0 3rem 0; background: #fef2f2;">
+<p style="font-size: 15px; font-weight: 600; margin: 0 0 1rem 0; color: #991b1b;">
+Practice Problem
 </p>
-
-<ul style="margin-left: 1.5rem; font-size: 16px; line-height: 1.7;">
-<li><strong>Write down what you''re testing:</strong> Note "Testing C: 7" so you don''t lose track</li>
-<li><strong>Show each calculation step:</strong> Write out the arithmetic for each operation in sequence</li>
-<li><strong>Check all conditions:</strong> Some problems have multiple requirements—verify each one</li>
-<li><strong>Mark eliminated choices:</strong> Cross out choices you''ve ruled out to avoid re-testing them</li>
-</ul>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-This systematic approach prevents calculation errors and helps you work efficiently.
+<p style="margin: 0 0 0.5rem 0;">
+When 8 is subtracted from three times a number, the result is 22. What is the number?
 </p>
+<p style="margin: 0; font-size: 15px;">
+A. 8  |  B. 10  |  C. 12  |  D. 14  |  E. 16
+</p>
+</div>
 
-<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+<h3 style="margin-top: 6rem; margin-bottom: 1.5rem; font-weight: 700; font-size: 20px;">
 3. Common Problem Types
 </h3>
 
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
+<h4 style="margin-top: 3rem; margin-bottom: 1rem; font-weight: 600; font-size: 18px;">
 Age Problems
 </h4>
 
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-Age problems describe relationships between people''s ages and are ideal for working backwards:
+<div style="border: 1px solid #d1d5db; padding: 1.5rem; margin: 2rem 0 3rem 0; background: #fafafa;">
+<p style="font-size: 15px; font-weight: 600; margin: 0 0 1rem 0;">
+Example
 </p>
-
-<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
-<p style="font-size: 16px; line-height: 1.7; margin: 0;">
-<strong>Problem:</strong> Marcus is 3 years older than twice his sister''s age. If Marcus is 19, how old is his sister?
-<br><br>
-F. 7<br>
-G. 8<br>
-H. 9<br>
-J. 10<br>
-K. 11
-<br><br>
-<strong>Testing H (9):</strong>
-<br>
-- Sister''s age: 9
-<br>
-- Twice sister''s age: 9 × 2 = 18
-<br>
-- 3 years older than that: 18 + 3 = 21
-<br>
-- Check: Is Marcus 19? No, we got 21. ❌
-<br><br>
-21 > 19, so the sister must be younger than 9. Eliminate H, J, K.
-<br><br>
-<strong>Testing G (8):</strong>
-<br>
-- Sister''s age: 8
-<br>
-- Twice sister''s age: 8 × 2 = 16
-<br>
-- 3 years older than that: 16 + 3 = 19
-<br>
-- Check: Is Marcus 19? Yes! ✓
-<br><br>
+<p style="margin: 0 0 0.75rem 0;">
+Marcus is 3 years older than twice his sister''s age. If Marcus is 19, how old is his sister?
+</p>
+<p style="margin: 0 0 0.5rem 0;">
+<strong>Test H (9):</strong> 2(9) + 3 = 21 ✗ (too big)
+</p>
+<p style="margin: 0 0 0.5rem 0;">
+<strong>Test G (8):</strong> 2(8) + 3 = 19 ✓
+</p>
+<p style="margin: 0;">
 <strong>Answer: G</strong>
 </p>
 </div>
 
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Consecutive Integer Problems
+<h4 style="margin-top: 3rem; margin-bottom: 1rem; font-weight: 600; font-size: 18px;">
+Consecutive Integers
 </h4>
 
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-Problems about consecutive integers (like n, n+1, n+2) or consecutive even/odd integers work well with this strategy:
+<div style="border: 1px solid #d1d5db; padding: 1.5rem; margin: 2rem 0 3rem 0; background: #fafafa;">
+<p style="font-size: 15px; font-weight: 600; margin: 0 0 1rem 0;">
+Example
 </p>
-
-<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
-<p style="font-size: 16px; line-height: 1.7; margin: 0;">
-<strong>Problem:</strong> The sum of three consecutive even integers is 84. What is the smallest of these integers?
-<br><br>
-A. 26<br>
-B. 27<br>
-C. 28<br>
-D. 29<br>
-E. 30
-<br><br>
-<strong>Testing C (28):</strong>
-<br>
-- First integer: 28
-<br>
-- Consecutive even integers: 28, 30, 32
-<br>
-- Sum: 28 + 30 + 32 = 90
-<br>
-- Check: Is the sum 84? No, we got 90. ❌
-<br><br>
-90 > 84, so we need smaller integers. Eliminate C, D, E.
-<br><br>
-<strong>Testing A (26):</strong>
-<br>
-- First integer: 26
-<br>
-- Consecutive even integers: 26, 28, 30
-<br>
-- Sum: 26 + 28 + 30 = 84
-<br>
-- Check: Is the sum 84? Yes! ✓
-<br><br>
+<p style="margin: 0 0 0.75rem 0;">
+Three consecutive even integers sum to 84. What is the smallest?
+</p>
+<p style="margin: 0 0 0.5rem 0;">
+<strong>Test C (28):</strong> 28 + 30 + 32 = 90 ✗ (too big)
+</p>
+<p style="margin: 0 0 0.5rem 0;">
+<strong>Test A (26):</strong> 26 + 28 + 30 = 84 ✓
+</p>
+<p style="margin: 0;">
 <strong>Answer: A</strong>
 </p>
 </div>
 
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Number Property Problems
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-Problems describing relationships between a number and its operations (doubling, squaring, adding) are perfect for testing:
+<div style="border: 1px solid #dc2626; border-left: 4px solid #dc2626; padding: 1.5rem; margin: 2rem 0 3rem 0; background: #fef2f2;">
+<p style="font-size: 15px; font-weight: 600; margin: 0 0 1rem 0; color: #991b1b;">
+Practice Problem
 </p>
-
-<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
-<p style="font-size: 16px; line-height: 1.7; margin: 0;">
-<strong>Problem:</strong> When a number is decreased by 8 and the result is multiplied by 4, the final answer is 28. What is the original number?
-<br><br>
-F. 9<br>
-G. 11<br>
-H. 13<br>
-J. 15<br>
-K. 17
-<br><br>
-<strong>Testing H (13):</strong>
-<br>
-- Original number: 13
-<br>
-- Decreased by 8: 13 - 8 = 5
-<br>
-- Multiplied by 4: 5 × 4 = 20
-<br>
-- Check: Is the result 28? No, we got 20. ❌
-<br><br>
-20 < 28, so we need a larger original number. Eliminate F, G, H.
-<br><br>
-<strong>Testing J (15):</strong>
-<br>
-- Original number: 15
-<br>
-- Decreased by 8: 15 - 8 = 7
-<br>
-- Multiplied by 4: 7 × 4 = 28
-<br>
-- Check: Is the result 28? Yes! ✓
-<br><br>
-<strong>Answer: J</strong>
+<p style="margin: 0 0 0.5rem 0;">
+Four consecutive integers sum to 34. What is the largest?
+</p>
+<p style="margin: 0; font-size: 15px;">
+A. 7  |  B. 8  |  C. 9  |  D. 10  |  E. 11
 </p>
 </div>
 
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Percent and Money Problems
+<h4 style="margin-top: 3rem; margin-bottom: 1rem; font-weight: 600; font-size: 18px;">
+Percent & Money
 </h4>
 
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-Problems involving discounts, tips, taxes, or percent changes often work well with this approach:
+<div style="border: 1px solid #d1d5db; padding: 1.5rem; margin: 2rem 0 3rem 0; background: #fafafa;">
+<p style="font-size: 15px; font-weight: 600; margin: 0 0 1rem 0;">
+Example
 </p>
-
-<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
-<p style="font-size: 16px; line-height: 1.7; margin: 0;">
-<strong>Problem:</strong> After a 20% discount, a jacket costs $64. What was the original price?
-<br><br>
-A. $76.80<br>
-B. $80.00<br>
-C. $84.00<br>
-D. $88.00<br>
-E. $92.00
-<br><br>
-<strong>Testing B ($80):</strong>
-<br>
-- Original price: $80
-<br>
-- 20% discount: $80 × 0.20 = $16
-<br>
-- Sale price: $80 - $16 = $64
-<br>
-- Check: Is the sale price $64? Yes! ✓
-<br><br>
+<p style="margin: 0 0 0.75rem 0;">
+After a 20% discount, a jacket costs $64. What was the original price?
+</p>
+<p style="margin: 0 0 0.5rem 0;">
+<strong>Test B ($80):</strong> $80 × 0.80 = $64 ✓
+</p>
+<p style="margin: 0;">
 <strong>Answer: B</strong>
 </p>
 </div>
 
-<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
-4. Advanced Strategies and Tips
+<h3 style="margin-top: 6rem; margin-bottom: 1.5rem; font-weight: 700; font-size: 20px;">
+4. Pro Tips
 </h3>
 
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Combining Working Backwards with Estimation
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-You can often narrow down answer choices before testing by estimating:
-</p>
-
-<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
-<p style="font-size: 16px; line-height: 1.7; margin: 0;">
-<strong>Problem:</strong> A number is multiplied by 7, then 5 is added. The result is 103. What is the number?
-<br><br>
-<strong>Estimation:</strong> The result (103) is close to 105. If we subtract 5, we get 98. What times 7 equals 98? Since 7 × 14 = 98, the answer should be around 14.
-<br><br>
-Look for answer choices near 14 and test those first, rather than testing from the middle.
-</p>
-</div>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-When You Have Multiple Conditions
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-Some problems require the answer to satisfy two or more separate conditions:
-</p>
-
-<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
-<p style="font-size: 16px; line-height: 1.7; margin: 0;">
-<strong>Problem:</strong> A number is divisible by both 4 and 6, and it''s between 20 and 40. What could the number be?
-<br><br>
-<strong>Strategy:</strong> Test each answer choice against BOTH conditions:
-<br>
-1. Is it divisible by 4? (Check: does it divide evenly by 4?)
-<br>
-2. Is it divisible by 6? (Check: does it divide evenly by 6?)
-<br>
-3. Is it between 20 and 40?
-<br><br>
-The correct answer must satisfy all three conditions.
-</p>
-</div>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-Check the easiest condition first to eliminate choices quickly, then verify remaining conditions.
-</p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Avoiding Common Mistakes
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-When working backwards, watch out for these errors:
-</p>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Mistake 1: Following the wrong order of operations.</strong> Carefully track the sequence described in the problem. "5 less than twice a number" means 2n - 5, not 5 - 2n.
-</p>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Mistake 2: Stopping too soon.</strong> Ensure you''ve completed all steps before checking the final result. If the problem describes three operations, perform all three.
-</p>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Mistake 3: Misreading what you''re solving for.</strong> Double-check that the question asks for the value you''re testing. If it asks for "Sarah''s age in 5 years," don''t test her current age.
-</p>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-<strong>Mistake 4: Arithmetic errors.</strong> Work carefully through calculations. A small arithmetic mistake can lead you to eliminate the correct answer.
-</p>
-
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-Time Management
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-Working backwards should save time, not cost it:
-</p>
-
-<ul style="margin-left: 1.5rem; font-size: 16px; line-height: 1.7;">
-<li><strong>Set a time limit:</strong> If testing the first two choices takes longer than expected, consider switching to algebraic solving</li>
-<li><strong>Use strategic choice selection:</strong> Starting with the middle value and eliminating half the choices makes this strategy more efficient</li>
-<li><strong>Don''t overthink:</strong> If a choice clearly doesn''t work, move on quickly rather than double-checking</li>
-<li><strong>Practice mental math:</strong> The faster you can calculate in your head, the more efficient this strategy becomes</li>
+<ul style="margin: 1rem 0 3rem 1.5rem; font-size: 16px; line-height: 2;">
+<li style="margin-bottom: 0.75rem;"><strong>Estimate first</strong> – Narrow down choices before testing</li>
+<li style="margin-bottom: 0.75rem;"><strong>Watch order of operations</strong> – "5 less than twice x" means 2x - 5, not 5 - 2x</li>
+<li style="margin-bottom: 0.75rem;"><strong>Check what you''re solving for</strong> – Don''t test current age if question asks for age in 5 years</li>
+<li style="margin-bottom: 0.75rem;"><strong>Be flexible</strong> – Switch to algebra if testing takes too long</li>
+<li style="margin-bottom: 0.75rem;"><strong>Stay organized</strong> – Write which choice you''re testing and mark eliminated answers</li>
 </ul>
 
-<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 400; font-size: 16px;">
-When to Switch Strategies
-</h4>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-Be flexible. If working backwards isn''t efficient for a particular problem, switch to algebraic solving:
-</p>
-
-<ul style="margin-left: 1.5rem; font-size: 16px; line-height: 1.7;">
-<li>If testing two choices takes more than 30 seconds total, the algebra might be faster</li>
-<li>If the calculations when testing are complex or error-prone, set up an equation instead</li>
-<li>If you realize you need to test all five choices (rare), algebraic solving will be faster</li>
-</ul>
-
-<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0;">
-The goal is to solve problems correctly and efficiently—use whichever method best accomplishes that for each specific question.
-</p>
-
-<div style="background-color: #f8f9fa; border-left: 4px solid #2563eb; padding: 1rem; margin: 1rem 0;">
-<p style="font-size: 16px; line-height: 1.7; margin: 0;">
-<strong>Final Example (Multi-step problem):</strong>
-<br><br>
-<strong>Problem:</strong> A store increases a shirt''s price by 25%, then offers a 20% discount on the new price. If the final price is $30, what was the original price?
-<br><br>
-A. $25<br>
-B. $30<br>
-C. $32<br>
-D. $35<br>
-E. $40
-<br><br>
-<strong>Testing C ($32):</strong>
-<br>
-- Original price: $32
-<br>
-- Increase by 25%: $32 × 1.25 = $40
-<br>
-- 20% discount on $40: $40 × 0.80 = $32
-<br>
-- Check: Is the final price $30? No, we got $32. ❌
-<br><br>
-$32 > $30, so we need a smaller original price. Eliminate C, D, E.
-<br><br>
-<strong>Testing A ($25):</strong>
-<br>
-- Original price: $25
-<br>
-- Increase by 25%: $25 × 1.25 = $31.25
-<br>
-- 20% discount on $31.25: $31.25 × 0.80 = $25
-<br>
-- Check: Is the final price $30? No, we got $25. ❌
-<br><br>
-<strong>Testing B ($30):</strong>
-<br>
-- Original price: $30
-<br>
-- Increase by 25%: $30 × 1.25 = $37.50
-<br>
-- 20% discount on $37.50: $37.50 × 0.80 = $30
-<br>
-- Check: Is the final price $30? Yes! ✓
-<br><br>
-<strong>Answer: B</strong>
-</p>
-</div>
-
-<h3 style="margin-top: 5rem; margin-bottom: 0rem; font-weight: 400; visibility: hidden;">
-Hidden Section Separator
-</h3>
-
-<h3 style="margin-top: 0rem; margin-bottom: 0.75rem; font-weight: 700;">
+<h3 style="margin-top: 6rem; margin-bottom: 1.5rem; font-weight: 700; font-size: 20px; color: #059669;">
 Key Takeaways
 </h3>
 
-<ul style="margin-left: 1.5rem; font-size: 16px; line-height: 1.9;">
-<li style="margin-bottom: 0.5rem;">
-<span style="color: #2e7d32; font-weight: 600;">✓</span> Working backwards means testing answer choices by substituting them into the problem to see which one satisfies all conditions
-</li>
-<li style="margin-bottom: 0.5rem;">
-<span style="color: #4caf50; font-weight: 600;">✓</span> This strategy works best when the problem asks for a specific numerical value and answer choices are simple numbers
-</li>
-<li style="margin-bottom: 0.5rem;">
-<span style="color: #2e7d32; font-weight: 600;">✓</span> Start by testing the middle answer choice (C or H) to eliminate half the remaining choices if it''s too large or too small
-</li>
-<li style="margin-bottom: 0.5rem;">
-<span style="color: #4caf50; font-weight: 600;">✓</span> When testing a choice, follow the problem''s sequence of operations step-by-step and check if the result matches what the problem describes
-</li>
-<li style="margin-bottom: 0.5rem;">
-<span style="color: #2e7d32; font-weight: 600;">✓</span> Stop testing as soon as you find an answer that works—no need to verify the remaining choices
-</li>
-<li style="margin-bottom: 0.5rem;">
-<span style="color: #4caf50; font-weight: 600;">✓</span> Common problem types for this strategy include age problems, consecutive integers, number properties, and percent/money problems
-</li>
-<li style="margin-bottom: 0.5rem;">
-<span style="color: #2e7d32; font-weight: 600;">✓</span> Stay organized: write down which choice you''re testing, show each calculation step, and mark eliminated choices
-</li>
-<li style="margin-bottom: 0.5rem;">
-<span style="color: #4caf50; font-weight: 600;">✓</span> Combine estimation with working backwards to narrow down choices before testing, saving time
-</li>
-<li style="margin-bottom: 0.5rem;">
-<span style="color: #2e7d32; font-weight: 600;">✓</span> Watch the order of operations carefully—"5 less than twice a number" means 2n - 5, not 5 - 2n
-</li>
-<li style="margin-bottom: 0.5rem;">
-<span style="color: #4caf50; font-weight: 600;">✓</span> Be flexible: if testing takes too long or calculations are complex, switch to algebraic solving instead
-</li>
-</ul>', 0, '2025-10-13T18:09:19.214163+00:00', NOW());
+<ul style="margin: 1rem 0 3rem 1.5rem; font-size: 16px; line-height: 2.2;">
+<li style="margin-bottom: 1rem; color: #059669; font-weight: 600;">Start with choice C to eliminate half the answers if it''s too large or too small</li>
+<li style="margin-bottom: 1rem; color: #059669; font-weight: 600;">Best for word problems where answer choices are simple numbers and algebraic setup is complex</li>
+<li style="margin-bottom: 1rem; color: #059669; font-weight: 600;">Stop testing as soon as you find an answer that works—no need to check remaining choices</li>
+<li style="margin-bottom: 1rem; color: #059669; font-weight: 600;">Common types: age problems, consecutive integers, percent/money problems</li>
+<li style="margin-bottom: 1rem; color: #059669; font-weight: 600;">Stay organized by marking which choice you''re testing and crossing out eliminated answers</li>
+</ul>
+', 0, '2025-10-13T18:09:19.214163+00:00', NOW());
 INSERT INTO section_content (id, section_id, content, order_index, created_at, updated_at) VALUES (9ec40384-4aa8-4488-9932-5ee29e81a44f, f450efd1-e9b0-4381-842c-7425db770ae2, '<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
 <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Number substitution</strong> is a powerful test-taking strategy that transforms abstract algebraic problems into concrete arithmetic by <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">plugging in your own numbers</strong> for variables. Instead of manipulating variables and expressions symbolically, you choose simple, strategic numbers to substitute, work through the problem with those numbers, and then test which answer choice produces the same result. This technique is particularly effective for problems with <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">variables in answer choices</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">complex expressions</strong>, and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">word problems</strong> where the algebraic setup is unclear.
 </p>

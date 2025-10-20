@@ -142,7 +142,11 @@ export const useTermTooltips = (containerRef, lessonKey = null) => {
 
     blueUnderlinedTerms.forEach((element) => {
       const termText = element.textContent.trim();
-      const termData = definitions[termText];
+
+      // Case-insensitive lookup: find matching term in definitions
+      const termData = Object.entries(definitions).find(
+        ([key]) => key.toLowerCase() === termText.toLowerCase()
+      )?.[1];
 
       console.log('useTermTooltips: Processing term:', termText, 'Has data:', !!termData);
 
@@ -239,7 +243,11 @@ export const useTermTooltips = (containerRef, lessonKey = null) => {
         }
 
         const termText = element.textContent.trim();
-        const termData = definitions[termText];
+
+        // Case-insensitive lookup: find matching term in definitions
+        const termData = Object.entries(definitions).find(
+          ([key]) => key.toLowerCase() === termText.toLowerCase()
+        )?.[1];
 
         if (!termData) return;
 

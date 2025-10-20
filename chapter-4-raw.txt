@@ -1,0 +1,2241 @@
+
+Chapter 4: Geometry Part 2 — Shapes
+The ACT loves to ask geometry questions, and you will see them throughout the math test. Most commonly,
+you will need to know how to find the area and volume of various shapes or apply the rules for various types
+of triangles. However, you will not be given any equations, so you need to memorize all of the equations
+and rules that are bolded in this chapter. As long as you have the equations memorized, you will be ready
+to solve any geometry questions with shapes.
+
+Area and Volume
+Triangle
+
+Rectangle
+
+Square
+
+Parallelogram
+
+|
+
+|
+
+I
+
+h|
+Oo
+
+w
+
+|
+
+KY
+
+h|
+
+b
+
+i
+
+S
+
+b
+
+A==bh
+
+A=lw
+
+A=s?
+
+A=bh
+
+Perimeter = 21+ 2w
+
+Perimeter = 4s
+
+Trapezoid
+
+Kite
+
+-
+
+JIN
+
+|
+
+Rectangular Prism
+
+\/
+
+b>
+
+A==(b,+by)h
+
+area of rectangle ABCD
+9
+
+B.
+
+/
+
+A=-lw
+
+Example 1: One side of rectangle ABCD
+
+A.
+
+Circle
+
+12
+
+{
+
+A=nr
+C= 2nr
+
+Cube
+
+Ss
+
+Right Cylinder
+
+Ss
+
+V=lwh
+
+V=s3
+
+SA =2lw
++ 2lh
++ 2w
+
+SA
+= 6s?
+
+C_
+V=ar-h
+
+has a length of 9 inches. A square whose area is equal to the
+
+has a side length of 12 inches. What is the width, in inches, of rectangle ABCD?
+C.
+
+16
+
+D.
+
+18
+
+Solution: Since the area of rectangle ABCD and the square are equal, we first find the area of the square.
+
+A =127 = 144
+Now, we know the area of rectangle ABCD is 144 square inches and that one side length is 9 inches, so we
+can solve for the width using A = lw.
+144 = (9)(w)
+w = 16
+The answer is C.
+
+Example 2: Amanda is freezing ice cream in a circular cake pan to make an ice cream cake. The cake
+
+pan has a diameter of 25 cm. If Amanda uses 2,000 cm? of ice cream to make the ice cream cake, which
+of the following is closest to the height, in centimeters, of the ice cream cake?
+A.
+
+12
+
+B. 8
+
+C. 6
+
+D. 4
+
+Solution: To solve, we will use the equation for the volume right cylinder. We know the volume is equal to
+
+2,000 cm3. The radius of a circle is equal to half of the diameter, so the radius is equal to 12.5 cm. Now, we
+can solve for the height.
+
+V=nrh
+
+2000 = (12.5)2h
+~15-
+
+math
+
+2000
+
+_
+
+m(12.5)2 —
+
+h
+
+4.07 =h
+The height is equal to 4.07 cm, which is closest to 4. The answer is D.
+Example 3: Morgan is making a poster for her room. Her original poster did not fit on her wall, so she is
+changing the dimensions by tripling the width and halving the length. If the original area of the poster was
+
+4A, what is the area of the new poster in terms of A?
+
+A. =A
+
+B. 2A
+
+C. 4A
+
+D. 6A
+
+Solution: Method #1 — The Math Teacher Way: We know the area of the original poster is 4A, so
+4A =lw
+
+Now, we just need to see how the area changes with the new length and width:
+
+New Area = (0.51)(3w) = 1.5lw
+The new area is 1.5 times as large as the old area. From the first equation, we know that 4A = lw, so plugging
+in the 44, we can find the new area in terms of A.
+
+New Area = 1.5(4A) = 6A
+The answer is D.
+
+Method #2 — Substitution: If solving this question algebraically seems confusing, well that’s because it is!
+To make this question easier, use the substitution we learned in Chapter 2 and pick values for the length and
+width of the original poster. Let’s say the length is 2 and the width is 3, so the original poster has an area of 6.
+Now, use the numbers we picked to solve the rest of the question.
+
+New Width = 3(3) =9
+
+New Length = 2(0.5) = 1
+New Area = lw = (9)(1) =9
+The original area was 6 and the new area is 9. The new area is 1.5 times larger than the original area, so we
+
+can apply that same change to the poster’s original area of 4A.
+
+New Area = 1.5(Original Area) = 1.5(4A) = 6A
+The answer is D.
+
+Areas, Volumes, and Units
+The ACT loves to ask area or volume questions with various units. The most common are yards and feet or
+feet and inches. Students often answer these questions incorrectly because they make mistakes with unit
+conversion, even though the math is very simple. For example, let’s consider the following example:
+Example 4: A professional soccer field is 136 yards long and 93 yards wide. What is the area of a
+
+professional soccer field in square feet?
+A.
+
+113,832
+
+B. 37,944
+
+C.
+
+12,648
+
+OD. 4,216
+
+Solution: The key to solving these questions properly is convert the units BEFORE solving for the area
+
+or volume. For Example 4, we should convert the length and width of the soccer field from yards to feet and
+then solve for the area.
+
+1 yard is 3 feet, so we can use that conversion to find the length and width in feet.
+
+Length: 136 yards x 3 = 408 feet
+
+-16-
+
+Width: 93 yards x 3 = 279 feet
+
+Chapter 4: Geometry Part 2 - Shapes
+
+To find the area of the soccer field, we use the area of a rectangle equation and solve.
+
+A = lw = (408 ft)(279 ft) = 113,832 ft?
+The answer is A.
+
+You should memorize the unit conversions in bold below:
+Yards and Feet
+
+Feet and Inches
+
+1 yard = 3 feet
+
+1 foot = 12 inches
+
+1 square yard = 9 square feet
+
+1 square foot = 144 square inches
+
+1 cubic yard = 27 cubic feet
+
+1 cubic foot = 1,728 cubic inches
+
+The ACT has commonly tested unit conversion questions on recent tests. When solving these questions,
+always convert units BEFORE solving for any area or volume. For more advanced questions, knowing the
+other conversion above can also be useful. The square yard, square feet, and square inches are used when
+finding area while the cubic yard, cubic feet, and cubic inches are for volume.
+
+Volumes of Other Three-Dimensional Solids
+We already know how to find the volume of a rectangular prism (a box), a cube, and a right cylinder, but how
+do we find the volumes of other three-dimensional solids? The volume of any three-dimensional shape can be
+calculating using the equation
+V=Bxh
+
+where B is the area of the base and h is the height. This equation is helpful for calculating the volume of a
+shape that is not one of the ones that we have already covered or is an odd shape that does not have a simple
+volume equation.
+Example 5: Ming is building a sculpture out of wood. The base of the sculpture is shown below. If Ming
+plans to make the sculpture 7 feet tall, what is the volume, in cubic feet, of the entire sculpture?
+
+Gap,
+
+70
+
+2ft
+
+210
+
+15 ft
+
+280
+
+|
+|
+
+Solution: First, we need to find the area of the base, which here is a trapezoid. Using the trapezoid area
+formula, we find the area:
+1
+
+1
+
+The area of the base is 30 ft?. Now, we can use the volume equation and the height, which is 7 feet, to solve.
+V=Bxh= (30)(7) = 210
+The answer is C.
+
+-17-
+
+math
+
+Right Triangles
+
+a
+
+All right triangles follow the Pythagorean Theorem:
+
+a* + b* = ¢c*
+where a and b are the lengths of the legs and c is the hypotenuse. You can only use the Pythagorean Theorem
+equation for right triangles.
+
+Example 6: In the triangle ABC, point D is the midpoint of AB, AC = 12 m, and BC = 15 m. To the
+closest meter, what is the length of CD?
+A.
+
+14
+
+B.
+
+13
+
+D.
+
+9
+
+B
+
+15
+
+D
+
+coi
+
+A
+
+|
+
+C
+
+PD
+
+Solution: To find the length of CD, we need to find the length of AD and use the Pythagorean theorem. To
+find AD, we need to first find AB using the Pythagorean theorem.
+
+127 + b* =15? > 144+
+5? = 225 > b* =81
+b=9
+AB = 9. Point D is the midpoint of AB, so we know that AD is half of AB. AD = 4.5. Now that we know
+
+AD, we can use the Pythagorean theorem again to solve for CD.
+
+127+. 4.5% =c* > 1444+ 20.25 = c* > 164.25 = c?
+c= 12.82
+
+CD = 12.82, which is closest to 13. The answer is B.
+
+TIP — Pythagorean Triples
+Pythagorean triples are sets of whole numbers that work in the Pythagorean theorem. On the ACT, you
+should look out for the two common Pythagorean triples.
+3, 4, 5 Right Triangle
+
+5, 12, 13 Right Triangle
+
+5
+
+5
+
+3
+|
+
+13
+
+12
+4
+
+These triangles can also be scaled up by multiplying all of the side lengths by the same number to create
+more Pythagorean triples. For example, a3, 4, 5 nght triangle can be doubled to become a 6, 8, 10 right
+triangle, tripled to become 9, 12, 15, and so on.
+
+-18-
+
+Chapter 4: Geometry Part 2 - Shapes
+
+Special Right Triangles
+You will need to be familiar with two special right triangles: 45° — 45° — 90° and 30° — 60° — 90°. The side
+lengths of these triangles are always in a particular ratio.
+45° — 45° — 90°
+
+x 45 }
+|
+
+30° — 60° — 90°
+
+x 60°
+
+xV2
+45°
+
+2x
+
+|
+
+30°
+
+x
+
+xv3
+
+Example 7: In the triangle below, y = 10. What is the value of x ?
+
+GOWP> WM©—wn
+
+Se
+
+30°
+
+0
+
+Solution: This is a 30° — 60° — 90° right triangle, so we just need to use the ratio of side lengths to solve.
+
+The shortest side, x, is always half the length of the hypotenuse, y. We know that y = 10, so x = = (10) = 5.
+The answer is B.
+
+Example 8: Triangle ABC below is a right isosceles triangle. What is the area of triangle ABC?
+A.
+
+A
+
+128
+
+B. 128V2
+
+C. 64
+
+(4)
+
+Ny
+
+D. 64v2
+
+gu
+
+C
+
+Solution: A right isosceles triangle is the same as a 45° — 45° — 90° right triangle. To find the area of
+triangle ABC, we need to know side lengths AB and BC. To find these side lengths, we can use the ratio from
+the 45° — 45° — 90° right triangle. We are looking for the legs of the triangle, which are the x ’s, and we are
+
+given that the hypotenuse, which is the x¥2. Since we know the hypotenuse is equal to 16, we can solve for x.
+
+xV2 = 16
+16
+
+16
+
+v2
+
+16V2
+
+"V2 V2 V2
+
+= 8V2
+
+We know that AB = BC = 8V2. Now that we know the base and height, we can solve for the area of triangle
+ABC.
+
+Area of ABC = = (8V2)(8V2) = = (128) = 64
+The answer is C.
+
+~19-
+
+math
+
+©
+
+Similar Triangles
+Similar triangles are triangles with the same shape but different sizes. The angles are identical, and the side
+lengths are proportional.
+
+B
+E
+
+14
+
+8
+
+7
+D
+
+4
+6
+
+F
+
+For similar triangles, the ratio of the side lengths is always the same:
+AB
+
+BC
+
+AC
+
+DE
+
+EF
+
+DF
+
+Example 9: In triangle ABC, DE is parallel to BC, AE = 8, AC = 20, and AB = 18. What is the length
+of AD?
+A.
+
+41
+
+B.
+
+72
+
+C.
+
+88
+
+D. 12.2
+
+B
+
+D
+
+A
+
+E
+
+C
+Solution: Triangles ADE and ABC are similar triangles. Anytime a line drawn parallel toone of the bases
+makes a smaller triangle, the smaller triangle will be similar to the larger triangle. Here, DE creates the
+smaller similar triangle. Since the triangles are similar, we know the side lengths must be proportional.
+AD
+
+AE
+
+AB
+
+AC
+
+AD
+
+8
+
+18
+
+20
+
+20 AD = 144
+_ 144 |
+
+AD => = 7.2
+The answer is B.
+
+Backup Method — Educated Guess: Remember that the figures on the ACT are drawn to scale. Even if we
+have no idea how to solve this question, we can look at the figure and see that AD is almost the same length as
+AE, which is 8. Answer choice A is way too small and answer choices D is way too large. We know the
+
+answer needs to be B or C, so you have a 50:50 chance of guessing this correctly.
+This method works almost all the time on figures questions the ACT, especially on the most difficult shapes
+questions at the end of the test. Be sure to always look at the answer choices before guessing randomly to
+see if you can make an educated guess. On some questions, you can even find the correct answer by just
+using the figure and the answer choices.
+
+20
+-
+
+Chapter 4: Geometry Part 2 - Shapes
+
+More Triangles
+An equilateral triangle is a triangle in which all three sides are equal and all angles are equal to 60°.
+
+x
+
+100°
+
+,
+
+55°
+
+25°
+y
+
+Example 10:
+
+A
+74°
+
+D
+
+Triangle ABC is an isosceles triangle in which BC is the longest side. What is the value of x?
+A.
+
+82
+
+B. 99
+
+C. 109
+
+D.
+
+111
+
+Solution: Since ABC is an isosceles triangle and BC is the longest side, we know AB = AC. That means we
+can find ZB:
+ZB = ZC = 35°
+
+Once we know 2B = 35°, we can find ZADB because we know the other two angles in triangle ADB.
+ZADB = 180° — 35° — 74° = 71°
+The angle x° that we are looking for is adjacent to ZADB, so we can solve:
+x° = 180° — 71° = 109°
+The answer is C.
+
+Backup Method — Educated Guess: Remember that the figures on the ACT are drawn to scale. If we look at
+the figure and the angle, we see it 1s obtuse, so we can eliminate answer choices A, which is too small. From
+there, we can estimate the angle and take your best guess between answer choices B, C, and D.
+
+2]
+-
+
+math
+
+Third Side of a Triangle
+Can you make a triangle with side lengths of 4, 5, and 10? What about with side lengths of 4, 5, and 9? Or
+with side lengths of 4, 5, and 8? While this may at first seem confusing, there is a simple rule:
+
+The sum of the two shorter sides of a triangle, a and b, must be greater than the longest side of a
+triangle, c.
+
+a+b>c
+
+Let’s use this rule to review the three potential triangles introduced above. We will start with a triangle with
+side lengths of 4, 5, and 9.
+44+5%9
+
+9
+
+Since the sum of the shorter side lengths are equal to the longest side, we cannot make a triangle.
+Let’s try side lengths of 4, 5, and 10.
+4+5%10
+
+10
+
+The two shorter sides cannot even reach the end of the longest side, so again we cannot make a triangle.
+What about side lengths of 4, 5, and 8?
+4+5>8
+
+oe
+8
+
+Since the sum of the smaller side lengths are greater than the longest side, we can make a triangle!
+Example 11: Triangle ABC has two sides of lengths 10 and 15. Which of the following could NOT be
+
+the third side of triangle ABC?
+A.
+
+5
+
+B. 8
+
+C.
+
+13
+
+D.
+
+19
+
+Solution: To solve, we just need to test each answer choice to find which one does not work with our third
+side of the triangle rule. For answer choices A, B, and C, the longest side would be 15. For answer choice D,
+the number in the answer choice would be the longest side.
+
+Let’s start with answer choice A.
+5+10%15
+
+The sides of 5 and 10 are equal to 15, so no triangle can be formed.
+If we test the rest of the answer choices, we see that each of them works.
+For
+B:
+
+8+10> 15
+
+ForC: 13+10> 15
+For
+D: 10+15 > 19
+The answer is A.
+
+22
+-
+
+Chapter 4: Geometry Part 2 - Shapes
+
+Other Rules You Might Need to Know
+Since there is so much geometry tested on the ACT, there is still more geometry that we will not fully cover in
+this book! Below are some additional geometry rules that you may need to know for test day. Any students
+aiming for very high math scores should memorize all the rules below.
+
+1.
+
+Side Lengths and Angles in a Triangle
+
+The smallest side in a triangle is opposite from the smallest angle. The largest side in a triangle is
+opposite from the largest angle.
+
+2.
+
+3.
+
+Other Triangle Definitions
+e
+
+An acute triangle has angles that are all less than 90°.
+
+e
+
+An obtuse triangle has 1 angle that is greater than 90°.
+
+e
+
+A right triangle has 1 angle that is equal to 90°.
+
+Area of an Equilateral Triangle
+
+Find the area of an equilateral triangle with side lengths s with the equation. A = ~
+
+2
+
+Memorize this equation. It can be extremely helpful for advanced triangles questions.
+
+4.
+
+Half of an Equilateral Triangle is a 30° — 60° — 90° right triangle.
+
+Cutting an equilateral triangle in half vertically creates two 30° — 60° — 90° right triangles.
+
+5.
+
+Tangent Lines and Circles
+
+A tangent line to a circle is a straight line that just touches the circle at one point. The angle between the
+radius of the circle and the tangent line is always 90°. Two tangent lines to a circle from a single point
+are congruent.
+
+!0
+
+49
+
+6.
+
+Perimeters and Maximizing the Enclosed Area
+
+Given a certain perimeter, a circle always maximizes the enclosed area. If you must make a rectangular
+
+shape (more common in question on the ACT), a square maximizes the enclosed area. For example, if
+you have 40 feet of fence to enclose a yard and are not given an answer choice that is a circle, a square with
+side lengths of 10 feet gives you the largest possible enclosed area (100 square feet).
+
+7.
+
+Pythagorean Theorem and Types of Triangles
+
+If a* + b* = c’, it is a right triangle.
+If a? + b* > c’, it is an acute triangle.
+If a? + b* < c’, it is an obtuse triangle.
+
+~23-
+
+math
+
+Geometry Part 2 — Shapes Practice: Answers on pages 323-324.
+
+q
+
+'
+
+(oe
+
+If the area of rectangle ABCD below is 48,
+what is the area of the shaded region?
+A
+
+and 1 of its side measures 20 inches. What are
+the sides lengths, in inches, of the other 3 sides?
+
+B
+4
+
+D
+
+x
+
+3x
+
+The perimeter of a parallelogram is 60 inches,
+
+C
+
+A.
+
+20, 20, 20
+
+B.
+
+20, 10, 10
+
+C.
+
+20,15, 15
+
+D.
+
+20,14, 14
+
+A.
+
+4
+
+B.
+
+8
+
+C.
+
+12
+
+meters. A certain rectangle whose area is equal
+
+D.
+
+16
+
+to the area of square ABCD has a width of 25
+
+@*
+
+Each side of a square ABCD has a length of 40
+
+meters. What is the length, in meters, of the
+rectangle?
+The circumference of a circle is 16 inches.
+
+What is the area of half of the circle, in square
+inches?
+A.
+
+82
+
+B.
+
+187
+
+C.
+
+321m
+
+D.
+
+367
+
+@’
+
+A.
+
+15
+
+B.
+
+30
+
+C.
+
+40
+
+D.
+
+64
+
+The perimeter of a certain rectangle is 56 yards.
+The longer sides of the rectangle are 4 yards
+longer than each of the shorter sides of the
+
+rectangle. What is the length, in yards, of one
+
+James is going to build a triangular bed for
+
+of the longer sides of the rectangle?
+
+roses on the side of his house. He is going to
+put a fence around the rose bed. Two sides of
+the rose bed will be up against his house. A
+diagram of the rose bed is shown below. To the
+closest foot, how many feet of fencing will
+James need to enclose the roses?
+A.
+
+3
+
+B.
+
+11
+
+Cc.
+
+A.
+
+10
+
+B.
+
+12
+
+C.
+
+13
+
+D.
+
+16
+
+12.5
+
+©*
+
+D. 16
+
+What is the circumference of the circle?
+
+6
+
+>
+
+14
+
+“2Ce
+
+The diameter of a circle is 22 centimeters.
+
+In the shape below, all angles are right angles.
+
+A.
+
+112
+
+B.
+
+221
+
+C.
+
+331
+
+D.
+
+447
+
+What of the following is closest to the area of
+the shape?
+4.7
+
+A.
+
+20.8
+
+B. 40.5
+
+C. 42.5
+
+D.
+
+4.7
+
+©’
+
+The length and width of rectangle ABCD are 16
+
+and 9 respectively. A certain square has an area
+
+2.4
+
+equal to the area of rectangle ABCD. What is
+the perimeter of the square?
+
+53.5
+
+Gay
+
+12.7
+
+24
+-
+
+12
+24
+48
+50
+
+Chapter 4: Geometry Part 2 - Shapes
+
+14. The larger shaded circle has a radius of 10. The
+
+10. What are the maximum number of square
+
+pieces of cloth, each 4 inches ona side, that
+
+smaller circles each have a radius of 2. What is
+
+can be cut from a piece of fabric that is 3 feet
+
+the area of the shaded region below?
+
+G)
+
+long and 5 feet wide?
+A.
+
+11.
+
+367
+
+A.
+
+45
+
+B.
+
+647
+
+B.
+
+60
+
+C.
+
+812
+
+C.
+
+96
+
+D.
+
+921
+
+D.
+
+135
+
+In the figure below, BE is parallel with CD.
+Which of the following statements is true?
+A.
+B.
+
+Cc.
+
+AB
+
+AE
+
+AC
+
+CD
+
+BE
+
+AE
+
+15. Triangle ABC has two sides of length 7 and 12.
+
+A
+
+—-=—
+
+Which of the following could NOT be the
+length of the third side of the triangle?
+
+—-—=—
+
+E
+
+AE
+
+CD
+
+BC
+
+BE
+
+B
+
+A.
+
+5
+
+ED
+
+AB
+
+B.
+
+7
+
+BE
+
+AE
+
+CD
+
+AD
+
+C..
+
+12
+
+D..
+
+15
+
+—=—
+
+D—-=—
+
+C
+
+D
+
+12. Penelope is decorating a picture to hang on her
+
+16. In the graph below, what is the area of
+
+wall and wants to wrap string around the
+
+quadrilateral ABCD?
+
+border. The picture is in the shape of a right
+triangle, as shown below. Penelope only has 42
+inches of string, so she will not be able to wrap
+
+A.
+
+the entire border. To decorate, she will start at
+point A, go to point C, go to point B, and then
+go until the string ends. How far from point B
+will the string end?
+
+A.
+
+4
+
+B.
+
+6
+
+Cc.
+
+8
+
+D.
+
+10
+
+13.5
+
+B.
+
+19
+
+C.
+
+22
+
+D.
+
+24.5
+
+C (6,2)
+
+A (0,0)
+
+A
+
+D (7,0)
+
+17. Leucadia has a park that is 180 feet by 90 feet.
+
+24
+
+pu 10
+
+B (0,4);
+
+What is the area of the park in square yards?
+
+C
+
+A.
+
+1,800
+
+B.
+
+3,600
+
+C.
+
+5,400
+
+D.
+
+16,200
+
+13. Manu runs five laps of a circular track with a
+
+radius of 0.4 miles. Approximately how many
+
+18. Shown below is a regular hexagon inscribed in
+
+miles did Manu run?
+
+A.
+
+0.50
+
+B.
+
+2.51
+
+C.
+
+4.08
+
+D.
+
+12.57
+
+a circle whose radius is 6 inches. What is the
+perimeter, in inches, of the hexagon?
+
+2
+
+Gap ~25-
+
+aX
+\
+
+enneneeTM
+
+FZ
+
+math
+
+19. A rectangular swimming pool has a volume of
+
+@) 24, What is the area of the triangle below?
+
+2,880 cubic feet. Ifthe pool is 15 feet deep and
+16 feet long, how wide, in feet, is the pool?
+
+A.
+
+36V3
+
+B.
+
+36
+
+12
+
+A.
+
+12
+
+C.
+
+24
+
+B.
+
+14
+
+C.
+
+15
+
+D.
+
+18V3
+
+D.
+
+16
+
+30°
+
+. What is the area of the trapezoid below?
+
+A. 288
+
+B.
+
+368
+
+of a rectangle that is y feet by z feet. The area
+of the shaded region is what fraction of the
+
+ft
+116
+
+C. 416
+
+D. 448
+
+25, A right triangle that is w feet by x feet is inside
+
+18
+ft
+
+large rectangle, in terms of w, x, y, and z ?
+
+|__98 ft —_—|
+
+A,
+
+yZ—WxX
+
+~ wx
+1
+
+1y_x)(z=w)
+Bo”
+a
+
+. Mary has a 120-inch piece of wire. She will
+use all the wire to make a rectangle and a circle.
+
+1
+
+on
+
+If the rectangle has a width of 7 inches and a
+length of 15 inches, which of the following is
+
+12
+
+B.
+
+14
+
+C.
+
+16
+
+D.
+
+21
+
+12 y_x)(2-w)
+
+=a
+
+D yZ—Swx
+
+approximately the radius of the circle?
+A.
+
+8
+
+Ww
+
+PN 2
+x
+
+y
+
+A
+
+26.
+
+. The area of a rectangle is 500 square inches,
+and its width is 5 times its length. What is the
+
+Note: The figure is not drawn to scale.
+
+perimeter of the rectangle?
+
+GaAWpY
+
+In the figure above, AB is parallel to DE.
+
+20
+
+Which of the following is equal to the length of
+
+50
+
+DE?
+
+120
+250
+
+BQG>FO9
+
+. Equilateral triangle ABC is shown below.
+
+What is the value of k?
+—2
+
+GOW, ©BN
+
+3x +2
+
+26
+-
+
+Chapter 4: Geometry Part 2 - Shapes
+
+10
+
+A
+
+27.
+
+B
+
+30. Which of the following sets of integers could be
+
+the lengths of the three sides of a triangle?
+4
+
+D
+
+45°
+
+C
+
+E
+
+For the figure above, what is the perimeter of
+
+A.
+
+1,2,3
+
+B.
+
+2,3,
+6
+
+C.
+
+8,9, 15
+
+D.
+
+10, 15, 25
+
+quadrilateral AECB?
+31. A triangle has interior angles with measures in
+
+A. 20+4v2
+B. 28+4y3
+C. 2444/2
+D.
+
+the ratio of 4:8:12. Ifthe shortest side of the
+triangle is 6, what is the length of the second
+longest side?
+
+24
+
+I
+
+28.
+
+GaOwWP
+
+:
+
+6V3
+9
+12
+18
+
+32 . In the figure below, lines AD and EC intersect
+
+at F, which is at the center of rectangle ACDE,
+E
+
+D
+
+and BF 1 AC. What fraction of the area of
+
+C
+
+ACDE does the shaded region represent?
+
+In the figure above, AB and EC are parallel, AD
+and BC are parallel, AD = AE, and the measure
+
+A.
+
+C.
+B.
+
+65
+
+C.
+
+50
+
+D.
+
+40
+
+D
+
+B —
+12
+
+ZEAD
+?
+
+80
+
+E
+
+16
+
+of ZABC is 110°. What is the measure of
+
+A.
+
+1
+
+=
+
+FE
+
+10
+
+D. +
+8
+A
+
+29. Ayesha is making a flowerpot for her mom for
+
+33.
+
+Mother’s Day. Her mom’s current favorite
+
+B
+
+C
+
+C
+
+flowerpot, which is in the shape of a right
+cylinder, holds 6 liters of water. Ayesha is
+
+going to make a new flowerpot in the shape of a
+
+15
+
+D
+
+right cylinder with the twice the width and
+
+twice the height. How many liters of water will
+
+6
+
+the new flowerpot hold?
+
+Gay
+
+B
+
+18
+24
+
+E
+
+8
+
+In the figure above, BC is parallel to DE. What
+
+36
+
+is the length of AC?
+
+48
+
+GaAWpY
+-27-
+
+10
+20
+25
+27.5
+
+A
+
+math
+
+38. In the figure below, the diameter of the circle is
+
+34, Simone is building a box to store all of her
+
+textbooks. She has a spot in the corner of her
+
+10 inches. What is the area of the square inside
+
+room to put the box that is 20 inches wide and
+
+of the circle?
+
+24 inches long. If the box must have a total
+volume of 7,200 cubic inches, what is the
+
+A.
+
+25
+
+height, in inches, of the box?
+
+B.
+
+50
+
+C.
+
+80
+
+D.
+
+100
+
+A.
+
+12
+
+B.
+
+15
+
+C.
+
+18
+
+D.
+
+20
+
+39, What fraction of an 8-inch diameter pie is
+. The length of the rectangular prism shown
+
+equivalent to the area of one slice of a 16-inch
+
+below is 3 times the width. The height and the
+
+diameter pie if the larger pie is cut into 8 equal
+
+width are the same. The volume of the prism is
+
+slices?
+
+81 cubic inches? What is the length, in inches,
+
+PFGOBY9 OABNLIlRP
+
+of the prism?
+
+GOS WRwODW
+
+AQ. A soda can with a diameter of 4 inches and a
+height of 4.5 inches is going to be poured into a
+
+glass with a diameter of 3 inches and a height
+
+. How many cubes with a side length of 5 inches
+
+of 12 inches. How many inches from the top
+
+can fit into a cube with a side length of 15
+
+will the soda fill the glass up to?
+
+inches?
+A.
+
+3
+
+B.
+
+5
+
+C.
+
+10
+
+D.
+
+27
+
+Al. Rodrigo will pour concrete to make a patio with
+
+. Christina’s yard is 120 feet long and 45 feet
+
+the dimensions, in feet, shown in the figure
+
+wide. What is the area, in square yards, of her
+
+below. He will pour the concrete to a depth of
+
+yard?
+A.
+
+165
+
+B.
+
+600
+
+C.
+
+1,000
+
+D.
+
+1,800
+
+6 inches. How many cubic feet of concrete will
+Rodrigo need to make the patio?
+A.
+
+80
+
+B.
+
+114
+
+C.
+
+156
+
+D.
+
+228
+
+14
+
+12
+5
+26
+
+~28
+-
+
+Chapter 4: Geometry Part 2 - Shapes
+
+42. In isosceles trapezoid ABCD below, AB is 10
+inches long, DC is 15 inches long, and triangle
+
+45. Donovan is shipping lunch boxes in a large
+cubic box with side lengths of 3 feet. Ifthe
+
+AED has an area of 10 square inches. What is
+
+lunch boxes have dimensions of 9 inches long,
+
+the area of the trapezoid in square inches?
+
+A. 80
+B.
+C.
+D.
+
+A
+
+90
+100
+120
+D
+
+=
+
+6 inches wide, and 3 inches tall, how many
+lunch boxes can fit in each cubic box?
+
+B
+
+C
+
+A.
+B.
+
+24
+162
+
+C.
+
+288
+
+D.
+
+864
+
+46. The dimensions shown below are in feet. What
+
+43. Diego has 100 feet of fencing that he will use to
+build a rectangular pen for his chickens. What
+
+is the area, in square feet, of the shaded region
+in terms of x?
+
+is the maximum area, in square feet, that he can
+
+3
+
+make using only the 100 feet of fencing for the
+perimeter?
+
+A. 250
+C.
+D.
+
+P]
+
+600
+625
+
+44.
+
+B
+
+A.
+B.
+C.
+
+4x* + 3x
+4x*4+1
+2x*-x-6
+
+D.
+
+2x*+3x-2
+
+45°
+
+C
+47. The formula for the volume, V, of a sphere is
+
+V= =r, where r is the radius. Michelle is
+filling up a ball with water as part of a science
+
+fair project. If the ball can hold a total of 950
+cubic inches of water when it is completely
+filled, approximately what is the radius of the
+
+In the regular hexagon above, AB = 12. What
+
+ball
+
+i the area of AABC*9
+is
+
+A
+
+61
+
+A
+
+B.
+
+8.9
+
+C.
+
+142
+
+1
+
+B. 12
+
+C.
+D.
+
+9
+
+2
+
+D. 20.1
+
+12V3
+
+18V3
+
+~29
+-
+
+math
+
+A8.
+
+51. The vertices of AABC are at (2, —5), (2,12),
+
+Tom stored his leftover tomato soup in a
+container that is 4 inches wide, 6 inches long
+
+and (—6,3). What is the area, in square
+
+and 6 inches high. In the container, the tomato
+
+coordinate units, of AABC ?
+
+soup is 4 inches deep. Tom is going to pour his
+soup into a new container with dimension of 5
+
+A.
+
+inches wide, 8 inches long, and 5 inches high.
+
+B.
+
+56
+
+How many inches will the height of the tomato
+
+C.
+
+68
+
+soup be in the new container?
+
+D.
+
+136
+
+28
+
+A.
+
+2.0
+
+B.
+
+2.4
+
+solid wood. The length is 24 inches, the width
+
+C.
+
+3.8
+
+is 8 inches, and the height is 7 inches. The
+
+D.
+
+5.0
+
+52. The figure below shows a ramp made out of
+
+angle where the width and height meet is 90°.
+Which of the following values is closest to the
+volume, in cubic inches, of the wood used to
+
+construct the ramp?
+
+. As shown below, BE divides rectangle ACDF
+
+A.
+
+576
+
+into 2 trapezoids. The measure of ZABE is
+
+B.
+
+672
+
+60°. The lengths of EF, BE and BC are given
+
+C.
+
+857
+
+in inches. What is the area, in square inches, of
+
+D.
+
+1,344
+
+rectangle ACDF?
+
+A. 100V2
+
+B. 125V3
+C.
+
+160/73
+
+D.
+
+192
+
+A
+
+60)
+
+B
+
+16
+
+C
+
+53. A fish tank that is 30 inches long, 10 inches
+wide, and 20 inches tall is filled with water to a
+
+10
+F
+
+QE
+
+depth of 12 inches. When decorative rocks are
+added to the tank, the new depth of the water is
+
+D
+
+13 - inches. What is the volume, in inches, of
+the decorative rocks?
+
+. A standard Rubik’s cube consists miniature
+
+A.
+
+300
+
+cubes called “cubies.” One Rubik’s cube has 3
+
+B.
+
+525
+
+layers, and each layer has 9 “cubies” arranged
+
+C.
+
+1050
+
+ina3 X 3 square. If the side length ofa
+
+D.
+
+8,250
+
+“cubie” is 0.8 inches, which of the following is
+54. For her modern art project, Cindy paints a
+
+closest to the total volume, in cubic inches, of a
+
+circle in the center of a 20-inch wide by 16-inch
+
+6 Rubik’s cubes?
+
+tall canvas. The purple circle touches to top and
+bottom of the canvas. She then paints the rest
+
+A.
+
+83
+
+B.
+
+103
+
+of the canvas black. Approximately what is the
+
+C.
+
+162
+
+total area, in square inches, of the canvas that 1s
+
+D.
+
+389
+
+painted black?
+
+Gap,
+-30-
+
+119
+201
+256
+270
+
+Chapter 4: Geometry Part 2 - Shapes
+
+55,
+
+A
+
+58. If the circle below has an area of 167, what is
+the area of the equilateral triangle below?
+D
+
+x+4
+
+A. os
+
+x
+
+B
+
+6
+
+B
+E
+
+9
+
+C
+
+b4av3
+
+3
+
+C. a
+
+In the figure above, what is the length of AC ?
+
+D.
+
+128V3
+
+A. 2¥59
+B. 3v34
+C. 5v13
+D. 8v6
+
+56.
+
+Which of the following expressions represents G) 59. A box is going to be constructed from a
+the area, in square coordinate units, of trapezoid
+rectangular piece of plastic 40 inches by 20
+PQRS in the standard (x, y) coordinate plane
+inches by cutting a square piece of equal size
+below?
+
+from each of the corners and bending up the
+sides to make a 90° angle with the base. Ifthe
+
+ad
+CO
+
+base of the finished box is 300 square
+inches ;
+q
+
+Red)
+
+/
+
+what will the volume of the box be?
+
+\
+
+l
+
+A. 800
+
+.
+
+A. corre (d—b)
+
+B. — (c—a)
+C. i(e+d+a+f)(d—b)
+D. <(a-c)(b-d)
+
+57, What is the area of triangle MNP below?
+
+a, Be
+
+P
+
+—
+2
+
+C.
+
+25
+
+D.
+
+25V2
+
+10
+M
+
+135°
+5
+
+B.
+
+900
+
+D.
+
+1,500
+
+C.
+
+S(f,b)
+
+P (a,b)
+
+N
+
+-3]-
+
+1,200
+
+math
+

@@ -40,18 +40,26 @@ function App() {
   useEffect(() => {
     // Load lessons from Supabase
     const loadLessonsFromSupabase = async () => {
+      console.log('📚 App.js: Loading lessons from Supabase...');
       const data = await getAllLessons();
       if (data) {
         // Convert to object keyed by lesson_key
         const lessonsObj = {};
         data.forEach(lesson => {
+          console.log(`  📖 Loading lesson: ${lesson.lesson_key} (${lesson.title})`);
+          console.log(`     - Has content_json: ${!!lesson.content_json}`);
+          if (lesson.content_json) {
+            console.log(`     - JSON blocks: ${lesson.content_json.content?.length}`);
+          }
           lessonsObj[lesson.lesson_key] = {
             title: lesson.title,
             content: lesson.content,
+            content_json: lesson.content_json,  // Include new JSON format
             duration: lesson.duration,
             interactiveData: { practiceSections: [] }
           };
         });
+        console.log('✅ App.js: All lessons loaded. Lesson keys:', Object.keys(lessonsObj));
         setLessonContent(lessonsObj);
       }
     };
