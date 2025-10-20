@@ -1,0 +1,1582 @@
+Chapter 9: Percentages
+On the ACT, you will need to know how to solve questions with simple percentages and with percentage
+increases and decreases. While percentages may seem simple, they can often stump students who do not know
+how to set them up correctly. This chapter will show you all the skills you need to know to handle percentage
+questions quickly and easily on test day.
+
+Simple Percentages
+Simple percentage questions can be solved by properly setting up a proportion:
+new
+
+#£%
+
+original
+
+100
+
+You can think of the “original” as the starting value (the 100%) and the “new” as the percentage of the starting
+value. If you are given a percentage value, always put it where the % 1s.
+Example 1: Isaiah purchased a new watch for 72% of the original price. Isaiah paid no sales tax. Ifthe
+
+original price was $160, which of the following is closest to the price Isaiah paid for the watch?
+A.
+
+45
+
+B. 88
+
+C.
+
+115
+
+D.
+
+138
+
+Solution: Method #1 — Proportion: To solve, we set up a proportion:
+
+_x_ _ 74
+160
+
+100
+
+100x = 11,520
+
+= 2"
+= 115.20
+100
+Isaiah paid $115.20 for the watch. The answer is C.
+Solution: Method #2 — Decimal Shortcut: We can also turn percentages into decimals by dividing the
+percentage value by 100.
+
+120% is the same as 1.2. 85% is the same as 0.85. Here, we can turn the 72% into
+
+0.72. Let the price Isaiah paid for the watch be p. Isaiah paid 72% of the original price of $160 so
+p = 0.72(160)
+p= 115.2
+Isaiah paid $115.20 for the watch.
+
+Example 2: Joey buys a new set of golf clubs for $720 when the clubs are on sale for 80% of the original
+price. What was the original price, in dollars, of the set of golf clubs?
+A.
+
+576
+
+B. 648
+
+C. 864
+
+D. 900
+
+Solution: Method #1 — Proportion: To solve, we can set up a proportion:
+720 _
+
+x
+
+80
+
+100
+
+80x = 72,000
+x=
+
+72,000
+80
+
+= 900
+
+The answer is D.
+
+-72-
+
+Chapter 9: Percentages
+
+Method #2 — Decimal Shortcut: For this question, we can turn 80% in 0.8 and solve:
+0.8x = 720
+
+x
+
+—2°
+= 900
+0.8
+
+The answer is D. We recommend the decimal shortcut, as it is faster for solving percentage questions.
+The ACT can also ask you to deal with multiple percent changes in the same question. To solve these
+questions the fastest, you should do all the percent changes together in one step.
+Example 3: Fred is trying to sell his bicycle, but he is having a hard time finding someone interested in
+
+buying it. To sell the bicycle quickly, Fred decides to sell the bicycle for 95% of the original price to
+Dave. Dave sells the bicycle 6 months later for 80% of the price that he purchased the bicycle for from
+Fred. The price that Dave sells the bicycle for is what percent of the original price of the bicycle?
+A.
+
+90
+
+B. 87.5
+
+C. 80
+
+D. 76
+
+Solution: Method 1 — “Math Teacher Way”: Let the original price of the bicycle be p. When Fred sells the
+bicycle to Dave for 95% of the original price, you multiply by 0.95. When Dave later sells the bicycle for 80%
+of the purchase price, you multiply by 0.8. The final price that Dave sold the bicycle for is then:
+p(0.95)(0.8) = 0.76p
+The final price is 76% of the original price. The answer is D.
+
+Method 2 — Plug In Numbers: The part about this question that confuses most students is that we are never
+given any actual price for the bicycle. To make this question easier, pick an original price for the bicycle and
+
+use that price to solve. Let’s say the original price of Fred’s bicycle $100. 100 is always a good number to
+pick for percentage problems because it is easy to calculate percent changes from 100. Since Dave buys the
+bicycle for 95% of the original price, Dave pays $95 for the bicycle. Dave then sells the bicycle for 80% of the
+
+$95, so you can solve for the final price:
+Final Price = 0.8(95) = 76
+The final price is $76. Since the original price was $100, the final price is 76% of the original price. The
+answer is D.
+
+Simple Percentages Practice: Answers on pages 325-326.
+
+1.
+
+What is 80% of 50?
+
+3.
+
+Jimisa farmer. Last year he planted 280 acres
+of corn and 420 acres of soybeans. What
+
+2.
+
+A.
+
+10
+
+percent of the acres Jim planted was corn?
+
+B.
+
+20
+
+C.
+
+40
+
+A.
+
+28%
+
+D.
+
+42
+
+B.
+
+40%
+
+C.
+
+66%
+
+D.
+
+75%
+
+Onhis English test, Justin missed 8 of the 50
+questions. What percentage did Justin answer
+
+correctly?
+
+4.
+
+48 is 150% of what number?
+
+A.
+
+16%
+
+A.
+
+24
+
+B.
+
+40%
+
+B.
+
+30
+
+C.
+
+75%
+
+C.
+
+32
+
+D.
+
+84%
+
+D.
+
+40
+
+-73-
+
+math
+
+OR
+
+Ify = 200 and x is 40% of y, what is 125%
+
+10. A survey at the local high school of 25
+
+students from the senior class revealed that
+
+of x?
+
+only 20% of the students liked the school’s
+A.
+
+60
+
+lunches. If the other 275 seniors have the
+
+B.
+
+80
+
+same percentage of students who like the
+
+C.
+
+100
+
+school’s lunch as those surveyed, how many
+
+D.
+
+120
+
+students in the entire senior class like the
+school’s lunch?
+
+©
+
+°
+
+When a black bear hibernates, its heart rate
+
+Gap,
+
+drops by 15 beats per minute. This drop is
+25% of its normal heart rate. What is the
+
+black bear’s normal heart rate?
+A.
+
+20
+
+B.
+
+30
+
+C.
+
+45
+
+D.
+
+60
+
+@"
+
+55
+
+60
+80
+220
+
+How Did Attendees First Hear About
+
+Coachella?
+Christina has 10 hours of free time each week.
+
+Source
+
+If she spends 18% of her free time reading,
+
+surveyed
+
+how many minutes a week will she spend
+
+reading?
+A.
+
+18
+
+B.
+
+64
+
+C.
+
+96
+
+D.
+
+108
+
+Percent of those
+
+Social Media
+
+35%
+
+Friend Attended
+
+12%
+
+TV
+
+5%
+
+Internet
+
+38%
+
+Other
+
+10%
+
+The table above shows a summary of 1,500
+responses from attendees at Coachella when
+asked how they first learned about the festival.
+
+Cardiff Market is selling their famous tri-tip
+
+Based on the table, how many people learned
+
+steak sandwiches at a local music and arts
+
+from a friend who attended or from social
+
+festival. As a special promotion, they promise
+
+media?
+
+to donate 27% of the sandwich sales to charity.
+
+If they sold $870 dollars in sandwiches, how
+much will they be donating to charity?
+
+A.
+
+$234.90
+
+B.
+
+$247.00
+
+C.
+D.
+
+$469.80
+$525.50
+
+A.
+
+525
+
+B.
+
+675
+
+C.
+
+705
+
+D.
+
+720
+
+12. At the Palm Coast Country Club,
+
+approximately 12 percent of junior members
+and 26 percent of premium members have a
+
+Last month, Amanda spent a total of $800.
+
+golfing membership. If there are 252 junior
+
+She spent $240 on food, $90 on gas, $400 on
+
+members and 780 premium members, which
+
+rent, and $70 on clothing. The category that
+
+of the following is closest to the total number
+
+Amanda spent the second most on is closest to
+
+of junior and premium members who have a
+
+what percentage of her total spending?
+A.
+
+12%
+
+B.
+
+20%
+
+C.
+
+30%
+
+D.
+
+50%
+
+golfing membership?
+
+Gay
+74
+-
+
+467
+350
+233
+203
+
+Chapter 9: Percentages
+
+13. If 8% of x is the same as 10% of 120, what is
+
+17. Rebecca sells her pickup truck to Jeremy for
+
+the value of x?
+
+76% of the original price. Jeremy does some
+
+A.
+B.
+
+9.6
+15
+
+the price that he purchased the car for. Which
+of the following is closest to percent of the
+
+C.
+
+116
+
+original price that Jeremy sold the car for?
+
+D.
+
+150
+
+work on the car and then sells it for 110% of
+
+A.
+
+70
+
+B.
+
+84
+
+C.
+
+86
+
+D.
+
+93
+
+14. As Max is grading his math homework, he has
+
+answered 4 of the first 35 questions
+
+incorrectly. If the homework has a total of 40
+
+18. 48% of the gifts in a donation basket are balls.
+
+questions, what is the highest possible percent
+
+Of those 48%, 26% are blue. Of the blue
+
+correct that Max can earn on his homework?
+
+balls, 36% are basketballs. Which of the
+following is closest to the percentage of items
+
+A.
+
+83%
+
+B.
+
+89%
+
+in the basket that are not blue basketballs?
+
+C.
+
+90%
+
+A.
+
+0.044%
+
+D.
+
+93%
+
+B.
+
+4.49%
+
+C.
+
+87.52%
+
+D.
+
+95.51%
+
+15. Pamela has $2,000. She decides to invest 30%
+in stocks, (3x — 11)% in bonds, x% in mutual
+funds, and to keep the rest in cash. She invests
+twice as much in mutual funds as she keeps in
+cash. How many dollars does Pamela keep in
+
+19. Big Storage is offering a new storage shed.
+
+cash?
+
+The original storage shed was 6 feet wide, 10
+feet long, and 8 feet tall. The new storage
+
+A.
+
+360
+
+shed’s dimensions will be 80% of the original
+
+B.
+
+270
+
+width, 75% of the original length, and 90% of
+
+C.
+
+180
+
+the original height. To the nearest 1%, what
+
+D.
+
+135
+
+percent will the volume of the new storage
+
+shed be when compared to the volume of the
+original storage shed?
+
+16. The groups of students who are graduating
+
+A.
+
+54
+
+B.
+
+66
+
+of different majors. 40% are science majors,
+
+C.
+
+78
+
+15% are history majors, 25% are humanities
+
+D.
+
+81
+
+with honors from the university have a variety
+
+majors, and the remaining 88 students are all
+business majors. Of the students graduating
+with honors, how many more science majors
+
+were there than history majors?
+
+20. How many liters of a 40% saline solution must
+be added to 8 liters of a 10% saline solution to
+
+A.
+
+66
+
+B.
+
+110
+
+obtain a 30% saline solution?
+
+C.
+
+132
+
+A.
+
+D.
+
+176
+
+B.
+
+16
+
+C.
+
+24
+
+D.
+
+32
+
+-75-
+
+12
+
+G)
+
+math
+
+Percentage Increase and Decrease
+Percentage questions are more difficult when there is an increase or a decrease to the percentage, but you can
+still set them up as a proportion.
+Percentage greater than:
+
+New
+
+—_
+
+Original
+
+=
+
+100+ %
+
+Percentage less than:
+
+100
+
+New
+
+———
+
+Original
+
+=
+
+100 -%
+
+100
+
+The “original” is the starting value (the 100%), and the “new” is the percentage increase or decrease from the
+
+starting value. If you are given a percentage value, you always put it in where the % sign 1s.
+Example 1: Jarvis construction company is building a new exit ramp for the local highway. The
+company initially said that the project would take 250 days, but a forecast for bad winter weather led the
+company to estimate that the project would take 12% longer to finish. How many days does Jarvis now
+estimate that the new exit ramp will take to complete?
+A.
+
+280
+
+B. 276
+
+C. 262
+
+Dz. 260
+
+Solution: The original estimate is 250 days. We are asked to find the new estimate, which is represented by x
+below. Since the estimate 1s that it will take 12% longer to finish, we put 12 in for the % in the percentage
+greater than equation above and then solve for x.
+x
+
+100+12
+
+250
+
++
+
+~=3=6100
+
+100x = (250)(112)
+— (250)(112)
+= 99 = 280
+The answer is A.
+
+It is also important to know the shortcut for solving percentage increase and decrease questions. Let’s
+
+say you want to increase x by 30%. Normally if we want to increase x by 30%, you will find 30% of the value
+and then add it to x:
+x+0.3x
+
+This is the same as
+
+x+0.3x = x(14+ 0.3) = 1.3x
+Instead of finding 30% of x and adding it to the original value, you can simply multiply x by 1.3. This
+trick will work for any percent value. To increase a value by 4%, multiply by 1.04. To decrease a value by
+10%, multiply by 0.9. This technique will help you solve percentage increase and decrease questions more
+
+quickly and effectively on the ACT.
+Both this decimal shortcut technique and the proportion technique work, so you should use the one that you are
+most comfortable with.
+Example 2: Tim grew 15% more tons of tomatoes in 2019 than in 2018. If Tim’s grew 23 tons of
+
+tomatoes in 2019, approximately how many tons of tomatoes did Tim grow in 2018?
+A.
+
+26.5
+
+B. 24.5
+
+C. 21.5
+
+D. 20
+
+Solution: Here, let’s use the decimal shortcut technique. To increase by 15%, we multiply by 1.15.
+
+(1.15)(tons in 2018) = tons 2019
+(1.15)(tons in 2018) = 23
+
+- 76
+-
+
+Chapter 9: Percentages
+
+tons in 2018 =
+
+23
+
+1.15
+
+tons in 2018 = 20
+The answer is D.
+
+Example 3: The price of a painting decreased by 8% in 2017, increased by 25% in 2018, and increased
+
+by 40% in 2019. What percentage greater is the price of the painting in 2019 than the original price at the
+beginning of 2017?
+A.
+
+73
+
+B. 61
+
+C. 57
+
+D.
+
+48
+
+Solution: Method #1 — “Math Teacher Way”: Let the original price of the painting be p. When the price is
+
+decreased by 8% in 2017, we multiply by (1 — 0.08) because it is the original price minus 8%. When the
+price is increased by 25% in 2018, we multiply by (1 + 0.25) because we are adding 25% onto the price from
+2017. When the price is increased by 40% in 2019, we multiply by (1 + 0.40) because we are adding 40%
+onto the price from 2018. The final price is then:
+
+p(1 — 0.08)(1 + 0.25)(1 + 0.40) = p(0.92)(1.25)(1.40) = 1.61p
+The 1.61p shows that the price in 2019 is 61% higher than the price in 2017. The answer is B.
+
+Method #2 — Substitution: To make this question easier, we can pick an original price for the painting. Since
+
+this is a percentage question, let’s say the original price is $100. Now, let’s go through the steps of the
+question. First, the percentage decreased by 8% in 2017, so we multiply $100 by (1 — 0.08) to find the price
+is $92 in 2017. In 2018, the price increases by 25%, so we multiply the $92 by (1 + 0.25) to find the price is
+
+$115 in 2018. Finally, in 2019 the price increases by 40%, so we multiple the $115 by (1 + 0.4) to find the
+price is $161in 2019.
+
+We know that the initial price was $100 and the final price in 2019 was $161. To find the percentage change
+we can use the following equation.
+Percentage Change =
+
+Final Value — Initial Value
+Initial Value
+
+x
+
+100
+
+If the percentage change is a positive number, it is a percentage increase. If the percent change is a negative
+number, it is a percentage decrease. Plugging in our numbers, we get
+161 — 100
+
+Percentage Change = —t00
+
+x 100 = 61%
+
+The price increased by 61%, so the answer is B.
+
+Example 4: In 2017, the average price of an avocado in California was $1.43. In 2018, the average price
+
+of an avocado in California was $1.54. Which of the following is closest to the percentage increase of the
+price of an avocado from 2017 to 2018?
+A. 7.1%
+
+B. 7.7%
+
+C. 8.2%
+
+D. 8.4%
+
+Solution:
+Percentage Change SO
+
+1.54 — 1.43
+0
+143
+x 100 =
+= 7.7%
+
+The answer is B.
+
+-77-
+
+math
+
+Percentage Increase and Decrease Practice: Answers on page 326.
+
+@
+
+'
+
+What number is 60% greater than 50?
+
+6.
+
+Julie drives an average of 50 miles per hour
+during her 30-mile commute to work. Today,
+
+GaAWpY
+
+30
+
+Julie is in a rush, so she drives 20% faster.
+
+60
+
+How many minutes does it take her to drive to
+
+70
+
+work today?
+
+80
+
+GaAWpY
+
+What number is 30% less than 30?
+A.
+
+9
+
+B.
+
+15
+
+C.
+
+21
+
+D.
+
+24
+
+©’
+
+24
+28
+30
+32
+
+James bought three shirts during a 30% off sale
+
+for $168. How much would the three shirts
+cost without the sale?
+
+Bob bought a house at a 20% discount. If the
+
+GAY
+
+house was initially priced at 600,000, what was
+the price, in dollars, Bob paid?
+
+Gay
+
+120,000
+
+$138
+$200
+$218
+$240
+
+480,000
+560,000
+
+@*
+
+The price of two sandwiches was $20 before
+tax. Ifa sales tax of 8% is added, how much
+
+720,000
+
+were the two sandwiches with the sales tax?
+
+A.
+
+$18.40
+
+Last year, 700 students graduated from Eastlake
+
+B.
+
+$20.08
+
+High. This year, 8% fewer students graduated
+
+C.
+D.
+
+$20.80
+$21.60
+
+than last year. How many students graduated
+this year?
+
+©’
+
+GaAWpY
+
+John’s average weekly grocery bill for 2016
+
+620
+
+was $176.45. His average weekly grocery bill
+
+644
+
+for 2017 was $190.56. Which of the following
+
+648
+
+is the closest to the percent increase on John’s
+
+756
+
+average grocery bill from 2016 to 2017?
+
+Gap
+
+In 2017, Jimmy’s Surfboard Shapers made
+1,231 surfboards. In 2018, Jimmy’s Surfboard
+
+Shapers made 1,391 surfboards. Which of the
+following is closest to the percentage increase
+
+7.1%
+74%
+7.7%
+8.0%
+
+in surfboards shaped from 2017 to 2018?
+10. Amy paid $76.00 for dinner after an 8% tax
+A.
+
+11%
+
+was paid. What was the price of her dinner
+
+B.
+
+13%
+
+before tax?
+
+C.
+
+16%
+
+D.
+
+18%
+
+Gap,
+- 78
+-
+
+$69.92
+$70.37
+$71.44
+$73.90
+
+Chapter 9: Percentages
+
+11. Bob’s Woodshop buys 2 tons of wood from
+
+15. Julie’s bakery sold 1,200 cookies in September
+
+The Wood Depot. 1 ton of wood costs $2500.
+
+and 1,403 cookies in October. If the percent
+
+Bob gets a 15% discount for being a frequent
+
+increase from September to October was the
+
+customer. After the discount is applied, Bob
+
+same as the percent increase from August to
+
+has to pay a 10% sales tax. How much does
+
+September, which of the following is closest to
+
+Bob pay for the 2 tons of wood?
+
+the number of cookies Julie’s bakery sold in
+August?
+
+A.
+
+$2,125
+
+B.
+
+$2,750
+
+A.
+
+997
+
+C.
+D.
+
+$4,250
+$4,675
+
+B.
+C.
+
+1,026
+1,061
+
+D.
+
+1,425
+
+12. The price of the new PowerBros external phone
+
+16. When dining out, Dave spends an additional
+
+charger is 30% more than that of the old
+
+32% on top of the listed price of the items he
+
+version. If the old version costs $85.00, which
+
+purchases after tax and tip are included. If
+
+of the following best approximates the cost, in
+dollars, of the new external phone charger?
+
+Dave spends a total of $386 on a dinner for his
+family, what was the total listed price of the
+
+A.
+
+$25.50
+
+were added?
+
+B.
+
+$59.50
+
+C.
+
+$110.50
+
+A.
+
+$117.76
+
+D.
+
+$126.20
+
+B.
+
+$262.48
+
+C.
+D.
+
+$292.42
+$509.52
+
+items purchased at the dinner before tax and tip
+
+13. Andrew and Cole both work on a farm picking
+
+17. Holly started the semester with $600 on her
+
+apples. Andrew picks apples 30% faster than
+
+meal plan. Each meal costs $8. After eating
+
+Cole. If Andrew picked 325 apples yesterday,
+
+three meals, what percent of her total dining
+
+how many apples did Cole pick?
+
+dollars remaining was her fourth meal?
+
+A.
+
+200
+
+A.
+
+1.33%
+
+B.
+
+250
+
+B.
+
+1.38%
+
+C.
+
+290
+
+C.
+
+13.33%
+
+D.
+
+425
+
+D.
+
+13.88%
+
+14. Max bought a new pair of hiking shoes for
+
+$118.00 dollars after an 8% sales tax. What
+
+©)
+
+was the price of the hiking shoes before the
+
+18. John negotiated a 13% decrease from the initial
+
+listed price for the SUV he purchased. If he
+purchased the car for $34,000, which of the
+
+sales tax was added?
+
+following is closest to the initial listed price of
+the SUV?
+
+A.
+
+$108.56
+
+B.
+
+$109.26
+
+A.
+
+$29,600
+
+C.
+D.
+
+$110.92
+$111.20
+
+B.
+C.
+
+$38,500
+$39,080
+
+D.
+
+$47,000
+
+-79
+-
+
+©)
+
+math
+
+19. This month, Stella decided to try to be more
+
+22. Julie spent 2 hours and 20 minutes a day
+
+energy efficient by turning off the lights in her
+
+studying for her ACT over the first three weeks
+
+house when she was not in the rooms and by using
+
+of her test prep. During the last week before
+
+her air conditioning less. If her energy bill last
+
+her first ACT, she studied an extra 30% a day.
+
+month was $85.95 and her energy bill this month is
+
+How much time did Julie spend studying during
+
+$76.24, to the nearest tenth of a percent, what
+
+the last week?
+
+percent did her energy bill decrease?
+A.
+
+12.7%
+
+B.
+
+12.4%
+
+C.
+
+11.8%
+
+D.
+
+11.3%
+
+GaAWpY
+
+9 hours and 2 minutes
+15 hours and 20 minutes
+20 hours and 2 minutes
+21 hours and 14 minutes
+
+. Thomas recently purchased a new computer for ©” Dave is currently producing 250 pies per week.
+college. Thomas had a coupon for a 20%
+
+His boss wants him to increase the number of
+
+discount from the original price. All items sold
+
+pies he is making by 12% each week. In two
+
+from the computer store also include an 8%
+
+weeks, approximately how many pies will Dave
+
+sales tax added at the register. If Thomas paid
+
+be making?
+
+a final price $850.76, which included the
+discount and sales tax, what was the original
+
+Gap,
+
+price of the computer?
+
+A.
+
+$1148.52
+
+B.
+
+$1063.45
+
+C.
+
+$984.68
+
+D.
+
+$898.45
+
+274
+280
+308
+314
+
+24. A bakery sold n muffins on Monday. The
+
+bakery sold 8% more muffins on Tuesday than
+on Monday and sold 25% more on Wednesday
+
+than on Tuesday, how many muffins were sold
+. In 2021, 275 biology majors and cognitive
+
+on Wednesday in terms of n?
+
+science majors make up 2.5% of the
+undergraduate students at Washington
+
+A.
+
+0.35n
+
+University. In 2022, 450 biology majors make
+
+B.
+
+1.33n
+
+up 3.6% of the undergraduate students at
+
+C.
+
+1.35n
+
+Washington University. Which of the
+
+D.
+
+2.33n
+
+following statements about the undergraduate
+students at Washington University 1s correct?
+A.
+
+There are 13.6% more students in 2022
+
+25. The product of three numbers is 2160. One of
+
+than in 2021.
+
+B.
+
+the numbers, z, is 25% greater than the other
+
+There are 12.0% more students in 2022
+
+two numbers, which are the same. What is the
+
+than in 2021.
+
+C.
+
+There are 1.1% more students in 2022 than
+
+D.
+
+There are 1.1% fewer students in 2022 than
+
+value of z?
+
+in 2021.
+in 2021.
+
+- 80
+-
+
+A.
+
+8
+
+B.
+
+9
+
+C.
+
+12
+
+D.
+
+15
+
+Chapter 9: Percentages
+
+26. A pair of vintage sneakers has been owned by
+
+29. A rectangle is changed by decreasing its length
+
+three different people. The first owner sold the
+
+by 20% and increasing its width by g%. If
+
+sneakers and made a 30% profit. The second
+
+these alterations increased the area of the
+
+owner resold the sneakers and made a 25%
+
+rectangle by 8%, what is the value of g?
+
+profit. The third owner resold the sneakers for
+
+a 40% profit. The final resale price is
+
+A.
+
+10
+
+approximately what percentage more than the
+
+B.
+
+20
+
+C.
+
+25
+
+D.
+
+35
+
+original price?
+A.
+
+95%
+
+B.
+
+128%
+
+C.
+
+150%
+
+D.
+
+228%
+
+27. Increasing the sides of a cube by 30% will
+
+30. James has an online newsletter he sends out
+
+increase the volume of the cube by
+
+once a month. In December, James had 3.4
+
+approximately what percent?
+
+times as many subscribers as he had in June.
+
+What was the percent increase in his number of
+A.
+
+90
+
+B.
+
+120
+
+subscribers from June to December?
+
+C.
+
+270
+
+A.
+
+34%
+
+D.
+
+900
+
+B.
+
+34%
+
+C.
+
+240%
+
+D.
+
+340%
+
+28. John’s business made p dollars in profit in
+2015. In 2016, he made 30% more in profit
+
+31. A sculpture was originally purchased for p
+
+than in 2015. In 2017, he made 6% less in
+
+dollars. The first owner sold the sculpture and
+
+profit than in 2016. About what percent was
+the increase in John’s profit over the 2 years?
+
+made a 130% profit. The second owner resold
+the sculpture and made a 65% profit. Which of
+
+A.
+
+22%
+
+the following correctly solves for the final price
+the sculpture was sold for in terms of p?
+
+B.
+
+24%
+
+C.
+
+38%
+
+A.
+
+(1.3)(0.65)p
+
+D.
+
+65%
+
+B.
+
+(1.3)(1.65)p
+
+C.
+D.
+
+(2.3)(0.65)p
+(2.3)(1.65)p
+
+-8]
+-
+
+math
+

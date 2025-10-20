@@ -1,0 +1,563 @@
+Chapter 35: Miscellaneous Topics
+As we said at the very start of this book, the ACT tests a TON of math topics from algebra, geometry,
+precalculus, and more. In this chapter, we will cover all the miscellaneous topics that we have not covered
+yet in this book. All topics in this chapter have appeared on the ACT before and will appear on the
+ACT again in the future. However, none of these miscellaneous topics are commonly tested, so you should
+
+only focus on this chapter after you have mastered the other much more commonly tested chapters in the rest
+of the book. The topics in this chapter progress from the easier and more commonly tested topics to the more
+difficult and less commonly tested topics.
+
+Venn Diagrams
+A Venn diagram is a diagram of overlapping circles that helps visualize the logical relationship between sets
+
+and their elements. You have likely seen a Venn diagram before, but if this concept is new to you, let’s use the
+example below to see how it works.
+Example 1: Among a group of 23 students, 14 play tennis, 10 play soccer, and 4 play both. Of the 23
+
+students, how many play neither tennis nor soccer?
+A. 3
+
+B. 4
+
+C. 5
+
+D.
+7
+
+Solution: To start, we can draw a Venn diagram and start labeling some numbers.
+
+Soccer
+
+Tennis
+
+I
+
+Both tennis
+
+Neither tennis
+
+and soccer
+
+nor soccer
+
+The left circle represents students who play tennis, so we need a total of 14 students inside that circle. The
+right circle represents students who play soccer, so we need a total of 10 students inside that circle. The
+overlapping region in the middle represents the students who play both soccer and tennis. We are told that
+
+total is 4, so we can label the overlapping region with a 4. The area inside the rectangle and outside of the
+circles represents the students who play neither tennis nor soccer.
+We can fill in the other spots in the Venn diagram with the information from the question.
+We are told that there are 14 students total who play tennis and 4 students play both tennis and soccer, so we
+can subtract to find the number of students who play only tennis.
+Students who play only tennis = 14 — 4 = 10
+We can put a 10 in the left circle, which shows that 10 students play only tennis.
+
+- 302
+
+Chapter 35: Miscellaneous Topics
+
+We can repeat this process with the 10 total soccer players, again subtracting the 4 students who play both
+tennis and soccer to find the students who play only soccer.
+Students who play only soccer = 10 -4 =6
+We can put a 6 in the right circle, which shows that 6 students play only soccer.
+We can see the updated Venn diagram below.
+
+Soccer
+
+Tennis
+
+|
+
+3
+
+Both tennis
+
+Neither tennis
+
+and soccer
+
+nor soccer
+
+So far, we have a total of 20 students (10 play only tennis, 4 play both, and 6 play only soccer). The question
+tells that there are 23 students, so we can find the number of students who neither tennis nor soccer.
+Students who play neither tennis nor soccer = 23 — 20 = 3
+The answer is A. Anytime you see a Venn diagram question on the ACT, you should always draw the
+diagram as we did in this question.
+
+Made-Up Math
+The ACT sometimes includes terms or equation that are entirely made-up. While these questions often
+confuse students on test day because the question includes a term or equation they have never used before, they
+are most commonly no different than normal functions questions. Let’s take a look at an example.
+
+Example 2: If a®b = 3a? — 4b, what is the value of 5@9 ?
+A. 39
+
+B. 48
+
+C. 66
+
+D.
+
+189
+
+The ® is not an actual math term. However, in the question, the a®b = 3a? — 4b is defined as a function.
+To solve, 5@9 we plug in 5 for a, 9 for b, and solve.
+
+5 @9 = 3(5)? —4(9)
+5@9=75 —36
+
+39
+=9
+5@
+The answer is A. If you ever see a math term on the ACT that you have never seen before, do not freak out!
+It is probably just made-up math. Stay calm, read the question carefully, and solve.
+
+- 303
+-
+
+math
+
+Logic
+Logic questions ask you to think about a given statement and determine which answer choice must also be
+true.
+
+Example 3: Given the true statement, “if it is Monday, there is bad traffic,” which of the following
+statements must be true?
+A.
+
+Ifitis not Monday, there is bad traffic.
+
+B.
+
+Ifitis not Monday, there is not bad traffic.
+
+C.
+
+Ifthere is bad traffic, it is Monday.
+
+D.
+
+Ifthere is not bad traffic, it is not Monday.
+
+These questions often seem confusing until you learn one quick tip: always look for the contrapositive
+statement. The contrapositive of a statement must always be true.
+Original Statement: If A, then B
+Contrapositive Statement: If not B, then not A.
+
+The contrapositive is created by switching the order of the original statement and negating both. Let’s apply
+this to Example 3:
+Original Statement: If it is Monday, there is bad traffic.
+
+Contrapositive Statement: If there is not be bad traffic, it is not Monday.
+
+The answer is D. This trick always works for any logic question where the original statement is presented in
+the “if A, then B” pattern and asks which statement must be true.
+
+There can be other logic questions as well on the ACT where this trick does not work. If you see a logic
+question that is presented in another way, do your best to think through the question carefully. If you are
+unsure of what the answer is, bubble in your best guess and move on. Do not waste too much time on these
+types of questions.
+
+Pattern Spotting
+Pattern spotting questions present students with a question that seems very overwhelming to solve until you
+spot the pattern. Once you spot the pattern, solving is easy. The challenge is spotting the pattern. Let’s take a
+look at the example below to see how this works.
+Example 4: The first three elements of a pattern are shown below. Each element is composed of small
+
+squares with side lengths of 14 inches. Each element is a square with both dimensions 14 inches less than
+the dimensions of the next element. What is the perimeter, in inches, of the 5th element?
+A.
+
+70
+
+B.
+
+126
+
+D.
+
+280
+
+Solution: Following the pattern, the 4th element has a length and width of 4 squares, and the 5th element has
+a length and width of 5 squares. The length of each side of the squares is 14 inches, so the side total side
+length for each side of the 5th element is 14 x 5 = 70 inches.
+The perimeter of the 5th element is all 4 sides added up. Since the shape here is a square, we can use the
+equation perimeter = 4s, where s is the length of one side of the square.
+
+Perimeter = 4(70) = 280
+The answer is D.
+
+- 304-
+
+Chapter 35: Miscellaneous Topics
+
+Mapping
+Mapping questions ask students to map movements and make a conclusion about the final position of an
+object. For these questions, we always recommend that you draw your own map of the movements.
+Example 5: Jimmy normally drives 15 miles on the highway due east to get home from the gym, but the
+
+highway is closed due to construction. To take a detour around the construction, Jimmy now needs to
+leave the gym and drive 2 miles north, turn right and drive 8 miles east, turn right and drive 5 miles south,
+turn right and drive 2 miles west, turn right and drive 3 miles north, and finally turn right and drive the rest
+
+of the way home on the highway. Compared to when there is no construction, how many additional miles
+does Jimmy now have to drive to get home?
+A.
+
+12
+
+B.
+
+14
+
+C.
+
+18
+
+D. 29
+
+To solve, we need to sketch out Jimmy’s route home. Normally, Jimmy’s normal route on the highway is
+shown by the thicker line in the middle. The thinner lines show the route
+
+Jimmy needs to take to get around
+
+the construction and back on the highway.
+
+Home
+
+Once we draw our own version of the map, solving this question is much easier. We need to find total number
+of miles that Jimmy drives when there is construction. To do this, we need to find out where Jimmy gets back
+on the highway.
+
+We know the entire highway has a length of 15 miles. During his detour, Jimmy travels 8 miles east and then
+2 miles west, so when he gets back on the highway, he has moveda total of 6 miles east. When he 1s getting
+on the highway at the end of the detour, he is 6 miles away from the gym. Therefore, he still has 9 miles left to
+drive on the highway to get home. Adding up all of the driving during the detour and the 9 miles on the
+highway, we can find the total distance Jimmy drives to get home.
+Jimmy’s Drive Home = 2+84+54+34+2+9=29
+Jimmy drives a total of 29 miles to get home.
+Normally, Jimmy drive 15 miles on the highway to get home. To find how many additional miles he drives,
+
+we subtract. 29 — 15 = 14. The answer is B.
+
+- 305
+-
+
+math
+
+Puzzles
+The ACT also includes a variety of puzzle questions. Puzzle questions require more problem-solving skills
+and less traditional math skills. These questions are often some of the most difficult to prepare for on test day
+and most commonly appear in the last 15 questions of the test. Puzzle questions can often be very
+time-consuming to solve, so we advise that you skip any puzzle questions you do not know how to solve
+immediately and save them for last.
+
+Example 6: Office Supply Depot sells binders in two ways: a set of 10 binders in a large box and 1 binder
+inasmall box. The large box and small box have the same width and length but different heights. The
+large box has a height of 12 inches, and the small box has a height of 2.5 inches. Matt has a spot in the
+
+comer of his office to store binders. He is going to stack the boxes of binders to a height of 5.5 feet. What
+is the maximum number binders that he can store?
+A. 66
+
+B. 62
+
+C. 60
+
+D. 52
+
+Solution: First, we need to convert the height of 5.5 feet to inches.
+12 inches
+5.5 feet x ————— = 66 inches
+1 foot
+
+Now, we need to figure out the best way to maximize the binders that Matt can store. The large boxes are the
+more efficient way to store the binders, so we first want to stack as many large boxes as possible. Each large
+box has a height of 12 inches, so we can stack 5 large boxes. The 5 large boxes have a total height of
+5 large boxes X 12 inches per box = 60 inches
+The 5 large boxes are 60 inches tall, so now we only have 6 inches left. We cannot add any more large boxes
+
+because another large box would make the total height over 66 inches.
+Next, we have to find out how many small boxes we can add. We have 6 inches of space left and each small
+box is 2.5 inches, so we can add 2 small boxes.
+2 small boxes xX 2.5 inches per box = 5 inches
+
+We cannot add a third small box because adding another small box would make the total height be over 66
+inches.
+
+With 5 large boxes and 2 small boxes, the total height is
+
+5 large boxes(12 inches per box) + 2 small boxes (2.5 inches per box) = 65 inches
+So, how many binders do we have? Each large box holds 10 binders, and each small box holds 1 binder, so
+
+Total binders = 5(10) + 2(1) = 52
+The answer is D. As you can see with this example, puzzle questions do not rely on traditional math skills
+and can be time-consuming. You will have more practice with puzzle questions in the practice questions.
+
+- 306
+-
+
+Chapter 35: Miscellaneous Topics
+
+Binomial Theorem and Pascal’s Triangle
+To expand binomials with powers higher than 2, such as (2x + 3)*, we need to know how to use the binomial
+theorem and Pascal’s triangle. If you have never done this before, this will be a bit tricky at first. However,
+you do need to know how to do this for some advanced questions that appear in the middle and end of the
+ACT.
+
+Pascal’s triangle (Shown below) gives us the coefficients for an expanded binomial in the form of
+
+(a+ b)", where n is the row of the triangle. To draw Pascal’s triangle, we start with a 1 at the top. The
+outsides of the triangle are always 1, but the inside numbers are the sum of the two numbers above it. Each
+row is built from the row above it. The first 5 rows of Pascal’s triangle are shown below.
+
+Row
+
+Exponent
+
+Pascal’s Triangle
+
+0
+
+(a+b)°
+
+1
+
+1
+2
+3
+4
+
+(a +b)?
+(a+ b)*
+(a+b)?
+(a+b)?
+
+1 1
+12 1
+13 3 1
+146 41
+
+5
+
+(a+b)?
+
+1
+
+5
+
+10
+
+10
+
+5
+
+1
+
+The Binomial Theorem tells us how to use these coefficients to find the entire expanded binomial. To expand
+
+a polynomial in the form of (a + b)”, use the following steps.
+1.
+
+Find the row of Pascal’s triangle to use based on the n-value (the power the binomial is raised
+
+to). For example, for (2x + 3)*, n = 4, so we use 4th row of Pascal’s Triangle with 1, 4, 6, 4, and 1.
+2.
+
+The numbers in Pascal’s triangle are the coefficients for each term. For (2x + 3)‘, the first
+term’s coefficient of 1, the second term’s coefficient of 4, third term’s coefficient is 6, and so on.
+
+3.
+
+The first term is written as a"b°, which simplifies to a”. For (2x + 3)*, the first term is (2x)*,
+which simplifies to 16x*.
+
+4.
+
+Aswe move right, we subtract one from a’s exponent and add | to b’s exponent. So, the second
+
+term is C x a" 1b’, where C is the coefficient from Pascal’s triangle. For (2x + 3)*, the second
+term is 4(2x)?(3)1, which simplifies to 96x*. Notice how the coefficient of 4 comes from the second
+spot in the row in Pascal’s triangle.
+
+5.
+
+6.
+
+Repeat the process for all middle terms. For (2x + 3)*, the third term is 6(2x)*(3)?, which
+simplifies to 216x*. The fourth term is 4(2x)1(3)?, which simplifies to 216x.
+
+The last term is written as a°b", which simplifies to b". For (2x + 3)*, the final term is (3)*,
+which simplifies to 81.
+
+The fully expanded version of (2x + 3)* is written below.
+(2x + 3)* = (2x)* + 4(2x)3(3)1 + 6(2x)7(3)? + 4(2x)'(3)? + (8)*
+Notice how the powers of the first term, 2x, count down and the powers of the second term, 3, count up and
+how the coefficients come from the 4th row of Pascal’s triangle.
+With all terms simplified, we get
+
+(2x + 3)* = 16x* + 96x? + 216x? + 216x + 81
+
+- 307
+-
+
+math
+
+Example 7: When (4x — 3)? is expanded and all like terms are combined, what is the coefficient of the
+x? term?
+A. 64
+
+B. 48
+
+C. 36
+
+D.
+
+16
+
+Solution: The x? term is the first term in the expanded binomial. The first term for a binomial to the third
+power is always a?. In this question, the a-value is 4x, so the first term is equal to
+(4x)? = 64x3
+The answer is A. This is the easy version of these types of questions on the ACT, so a question like this can
+appear in the first 20 questions. Make sure you memorize the shortcut rules (steps 3 and 6 on the previous
+page) for how to find the first and last terms when expanding binomials to solve any question like this quickly
+and easily!
+
+Example 8: What is the coefficient for the x* term in (5x — 2)° when the term is expanded and all like
+terms are combined?
+A. —2,000
+
+B. —800
+
+C. —200
+
+D. 400
+
+Solution: To find the coefficient of the x? term, we first need to find which row we are using from Pascal’s
+triangle. Since the binomial is to the 5th power, we use the 5th row. Now, we need to expand the binomial.
+
+(5x — 2)° = (5x)° + 5(5x)4(—2)! + 10(5x)3 (—2)? + 10(5x)?2(—2)? + 5(5x)1(—2)* + (—2)5
+Notice how the powers for the first term in the binomial, the 5x, decrease as we move to the right and the
+
+powers for the second term in the binomial, the —2, increase. The coefficients come from the 5" row of
+Pascal’s triangle.
+
+Here, we are looking for the x? term, so we only need to simplify the 10(5x)?(—2)?. Recognizing which
+term to simplify can save you a bunch of time on test day! If you get very skilled at the Binomial Theorem,
+
+you can shortcut straight to solving for the x* term, which would mean here you would only have to write
+down and solve 10(5x)?(—2)? and none of the other terms we set up above.
+We have simplified the entire expression below. You should not take the time to do this on the ACT.
+
+(5x — 2)° = 3,125x° — 6,250x* + 5,000x? — 2,000x? + 400x — 32
+The coefficient of the x? term is —2,000. The answer is A.
+
+- 308
+-
+
+Chapter 35: Miscellaneous Topics
+
+Visual Spatial
+Visual spatial questions ask students to manipulate shapes in two-dimensional and three-dimensional space.
+These questions test non-traditional math skills and often challenge students’ problem-solving abilities. We
+will go through two examples to show you how the ACT may present these types of questions on test day.
+Example 9: What is the total number of edges on the 6-sided dice shown below?
+A.
+
+9
+
+B.
+
+10
+
+C.
+
+12
+
+D.
+
+16
+
+Solution: We can first count the edges that we see. For the front side of the dice, we
+have 4 edges. To keep track, we would recommend marking the edges as you go.
+Here, we will mark the edges we have counted so far with a black line.
+
+I
++
+
+Edges so far = 4
+
++
+
+t
+
+Next, we can mark the edges on the top of the dice. We have already marked one edge,
+
+1
+
+so we can mark the 3 others. Be sure not to double count edges on a question like this!
+Edges so far = 7
+Next, we mark the edges on the right side of the dice. We have already marked two
+edges, so we mark the 2 others left.
+Edges so far = 9
+
++
+
++
+
+Now for the hard part. We need to visualize the edges that we cannot see. There are 2
+
+I
+
+more edges that make up the bottom of the dice and 1 more vertical edge on the back
+
+T
+
+left. These edges are shown with the dotted lines.
+
+Total Edges = 12
+
+“|
+
+The answer is C.
+
+Visual spatial questions require you to use your visual spatial skills to manipulate shapes as we did in Example
+9. This is only one example of many ways that the ACT can test this skill, but this example 1s a good
+
+introduction to some of the skills you can use that can help you solve these questions correctly. You will see a
+variety of other common ways the ACT tests your visual spatial skills in the practice questions.
+
+- 309
+-
+
+math
+
+Asymptotes
+ymp
+An asymptote 1s a line that a function constantly approaches but never touches. You need to know how to find
+vertical and horizontal asymptotes for a function.
+
+Vertical Asymptotes
+
+G) Vertical asymptotes occur when the denominator of a rational function is equal to zero. To find where
+the vertical asymptotes of a function are, we set the denominator equal to zero and solve. For example,
+
+let’s consider the function f(x) below.
+
+3
+
+PO) = 6x7
+To find the vertical asymptotes, set the denominator equal to 0 and solve for the value(s) of x.
+
+x*-—6x-7=0
+Here, we have a quadratic, so we can factor.
+
+(x +1)(x
+-—7) =0
+To find the values of x, set each factor equal and solve.
+x+1=0
+
+x-7=0
+
+x=-1

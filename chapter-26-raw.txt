@@ -1,0 +1,905 @@
+Chapter 26: Word Problems
+One of the challenges of the ACT Math Test is dealing with everyone’s least favorite questions: word
+problems. Word problems are often written in a way that makes it confusing to figure out exactly what is
+happening in the question. Word problems include a wide variety of math topics that we have already learned
+
+in this book, so we will not cover any specific type of word problem in this chapter. Instead, we will focus on
+the tips that can help you solve all types of word problems more effectively and efficiently.
+
+Tip #1 — Do Not Be Intimidated
+Word problems look scary. Many students see a big paragraph and say, “no way, I can’t solve that.” They feel
+intimidated before even trying to solve the question. Do not let this be you! Word problems at their core are
+no more difficult than any other ACT Math questions. When you see a big paragraph on test day, take a deep
+
+breath and solve it one step at a time.
+
+Tip #2 — Turn Words into Equations
+When approaching a word problem, take it one sentence at a time. As you read through the question, identify
+each piece of key information and write it down in an equation. If you can convert the question from a word
+problem into an equation or equation(s), the question will be much easier to solve.
+One of the most common types of word problems is a system of equations question, which we covered in
+Chapter 15 on pp. 129-130. For these questions, you will need to turn the word problem into two equations.
+
+Once you have converted the word problem into two equations, you will be able to solve the question with the
+methods we learned in Chapter 15.
+
+Tip #3 — Backsolve with the Answer Choices
+For some word problems, writing your own equation(s) is very difficult and may not be the fastest or easiest
+way to solve. If you cannot write out the equation(s) or are not sure if the equation(s) that you wrote are
+correct, try backsolving. Sometimes it is faster and easier to take the answer choices, go through the steps of
+the word problem, and see if you have the correct answer. Even if you cannot tell which answer is correct,
+backsolving can often help you eliminate some answer choices and make a better guess. If you need to review
+how to backsolve, go back to Chapter 1.
+
+Tip #4 — Guess and Move on (If You Have To)
+If you get to a word problem, try using the tips above, and still have no idea how to solve it, circle the
+question, bubble in your best guess, and move on! It is easy to waste a lot of time reading and rereading long,
+confusing word problems. Students who do this often end up running out of time. Save those precious
+minutes to answer more questions that you know how to solve. We know it sounds backwards but giving up
+quickly on a word problem that you have no idea how to solve may help you actually get a better score.
+If you complete the rest of the questions in the section and have time remaining, you can always come back to
+any questions that you guessed on. Sometimes, when re-reading the question, you will realize how to solve it.
+It is easier to think more clearly when you are no longer worried about finishing the rest of the questions on the
+test.
+
+- 246
+-
+
+Chapter 26: Word Problems
+
+Word Problems Practice: Answers on page 332.
+1.
+
+(oo
+
+The total price of a pie bought by Alex and her
+
+To build a model rocket, Sebastian spent 3
+
+friends was $23.80. The pie was cut into 7
+
+hours on each of 6 workdays. On the 7th day,
+
+equal slices, and Alex ate 2 slices. Alex paid
+
+he spent = of the time he had worked each of
+
+the portion of the price that was equal to the
+
+the previous workdays to complete the project.
+
+portion of the pie she ate. What portion of the
+
+How many total hours did it take Sebastian to
+
+total price did Alex pay?
+
+complete the model rocket?
+
+A.
+
+$2.64
+
+B.
+
+$3.40
+
+A.
+
+C.
+
+$5.95
+$6.80
+
+B. 20:4
+
+D.
+
+Cc.
+
+1
+
+204
+
+21
+
+D. 23-4
+
+Amin bought a new motorcycle. He made an
+
+initial payment of $500 and then made 48 equal
+monthly payments. The total that Amin paid
+
+for the motorcycle was $7,700. What was the
+
+6.
+
+amount of each of his monthly payments?
+
+A.
+
+$10.42
+
+B.
+
+$150.00
+
+C.
+
+$160.42
+
+D.
+
+$172.92
+
+Silvia received $100 as a present on her 15"
+birthday and decided to deposit the money ina
+savings account. To continue to increase her
+savings, Silvia decides on a savings plan: for
+
+each successive birthday, she will deposit $100
+more than the amount deposited for the
+previous birthday. This is the only money
+deposited into the account. What is the total
+amount of money that Silvia has in the account
+on the day after her 19th birthday?
+
+A fish tank has dimensions, in inches, of 50 by
+21 by 33. A hose is filling the tank at a rate of
+200 cubic inches per minute. Which of the
+
+following is closest to the numbers of minutes it
+will take the fill the tank?
+A.
+
+6
+
+B.
+
+56
+
+C.
+
+173
+
+D. 347
+
+7
+
+A.
+
+$800
+
+B.
+
+$1,000
+
+C.
+D.
+
+$1,100
+$1,500
+
+John and Matt each ordered food at their
+favorite restaurant in Italy. The price of John’s
+meal was y dollars and the price of Matt’s meal
+
+was $6 more than John’s meal. Since John is
+
+On the first day of school, Mrs. Rusher gave
+
+nice, they split the cost of the meal evenly.
+
+her fourth-grade students 9 new Spanish words
+
+There was no tip or sales tax. Which of the
+
+to learn. On each day of school after that, she
+gave the students 6 new Spanish words to learn.
+How many new Spanish words has she given
+the students to learn by the 17th day of school?
+A.
+
+117
+
+B.
+
+111
+
+C.
+
+105
+
+D.
+
+99
+
+following expressions represents the amount, in
+
+dollars, each of them paid?
+
+Gap
+- 247
+-
+
+y+6
+y+3
+
+2y
+
+2y+6
+
+math
+
+©
+
+*
+
+On a canvas, Malik painted a triangle whose
+
+@” A cup of hot coffee that is 84 °C is placed into a
+
+width is half the width of the canvas and whose
+
+freezer at the same time as can of soda at —3 °C
+
+height is the same as the height of the canvas.
+
+is taken out of a cooler. If the coffee
+
+What is the ratio of the area of the triangle to
+
+temperature drops by 41 °C and the soda
+
+the area of the entire canvas?
+
+temperature increases by 41 °C, how do the
+temperatures compare?
+
+pGOD>9 AWBTILNRP
+
+GOP
+
+The coffee is 10 °C cooler than the soda.
+The coffee is 1 °C cooler than the soda.
+The temperatures are the same.
+The coffee is 5 °C warmer than the soda.
+
+©" This week Dan’s Donuts sold 6 times as many
+cinnamon crumb donuts as maple glazed
+
+Rectangle X has a length of 48 inches and a
+
+donuts. If this week 168 maple glazed and
+
+width of 30 inches. Rectangle Y has a length
+
+cinnamon crumb donuts were sold, how many
+
+and width that are both = the length and width
+
+cinnamon crumb donuts were sold?
+
+of Rectangle X. Rectangle Z has a length and
+
+width that are both - the length and width of
+
+Gap,
+
+Rectangle Y. What is the perimeter, in inches,
+of Rectangle Z?
+A.
+
+156
+
+B.
+
+78
+
+C.
+
+52
+
+D.
+
+40
+
+24
+42
+120
+144
+
+@" On Monday, the temperature at 7:00 am was
+
+52 °F and rose at a constant rate of - °F per
+hour until 11:00 am. Then the temperature rose
+
+at arate of 2 °F per hour. The temperature first
+. The number of a certain type of bacteria
+
+passed above 65 °F between:
+
+increases exponentially, tripling every 40
+minutes. What is the mass, in grams, of the
+
+GaAWpY
+
+bacterial exactly 2 hours after the mass first
+reaches 5 grams?
+
+GaAWpY
+
+50
+
+12:00pm and 1:00pm
+1:00pm and 2:00pm
+2:00pm and 3:00pm
+4:00pm and 5:00pm
+
+135
+200
+405
+
+©" Two Sundays ago, Daniel purchased 10 bagels
+and three tubs of cream cheese for $24.40. Last
+Sunday, Daniel purchased 16 bagels for $22.72.
+Today, he only has a $20 bill. What is the
+
+. Of 30 students selected, 14 students play
+soccer, 10 play baseball, and 4 play both soccer
+
+maximum number of tubs of cream cheese that
+
+and baseball. How many students play neither
+
+he can purchase?
+
+soccer nor baseball?
+(Note: No sales tax is charged.)
+
+pGan
+
+26
+
+GOWp>
+
+20
+18
+10
+
+- 248
+-
+
+3
+4
+
+5
+
+6
+
+Chapter 26: Word Problems
+
+16. Jasmine and Shandra start running laps from ©)
+
+19. Alice’s construction company is building a new
+
+the same starting line at the same time and in
+
+modern house with a fence on the north side of
+
+the same direction on an outdoor track.
+
+the property with a length of 780 feet. If Alice
+
+Jasmine completes a lap in 60 seconds and
+
+wants to place a total of 13 cameras that are
+
+Shandra completes a lap in 45 seconds. Both
+
+evenly spaced out with two on the ends of the
+
+continue running at their same respective rates
+
+fence, how many feet apart should each camera
+
+and in the same direction for 8 minutes. What
+
+be?
+
+is the fewest number of seconds after starting
+that they will both be back at the starting line at
+
+A.
+
+55
+
+the same time?
+
+B.
+
+60
+
+C.
+
+65
+
+Gay
+
+D.
+
+70
+
+135
+180
+
+20. Dominique creates a snack mix by mixing 3
+
+225
+240
+
+pound of plantain chips with 2 7 pounds of
+pretzels and 1 - pounds of dried fruit. If
+
+17. Jamie makes pies and cookies. It takes her 20
+
+Dominique sells each - pound of the snack mix
+
+minutes to make a pie and 30 minutes to make a
+tray of cookies. This weekend Jamie is going
+
+for $1.75, what is the amount of money in sales
+
+to spend 8 hours making pies and cookies. She
+
+that Dominique will get if he sells as all of his
+
+will make twice as many trays of cookies as
+
+snack mix?
+
+pies. How many trays of cookies will she
+make?
+A.
+
+6
+
+B.
+
+10
+
+C.
+
+12
+
+D.
+
+14
+
+A.
+
+$61.00
+
+B.
+
+$71.50
+
+C.
+
+$87.50
+
+D.
+
+$106.75
+
+21. Bubba’s Ice cream shop sells only chocolate,
+vanilla, and strawberry ice cream bars. On
+
+18. After the majority of students struggled on the
+
+Saturday, they sold a total of 85 ice cream bars.
+
+midterm, a U.S history teacher decided to give
+
+They sold 13 more strawberry bars than
+
+a second test for students to be able to improve.
+
+chocolate bars and 11 fewer strawberry bars
+
+However, the final score would not be the
+
+than vanilla. How many strawberry bars did
+
+better of the two tests; instead, the final score
+
+they sell?
+
+would be based upon how much the student
+improved. The new midterm score would be
+
+calculated as - times the difference of the two
+tests added on to the first test score. If Matthew
+originally scored 63 points on his first test and
+83 points on his second test, what would his
+
+new midterm score be rounded to the nearest
+whole number?
+A.
+
+66
+
+B.
+
+73
+
+C.
+
+79
+
+D.
+
+87
+
+- 249
+-
+
+pGan
+
+16
+18
+29
+40
+
+math
+
+22.
+
+Jake and Chandler are both standing at the
+
+©* Julia and Caroline plan to attend a concert in
+Indio. Julia will drive 225 miles at a constant
+
+starting line on a 400-meter track when they
+begin to run at the same time in the same
+
+speed of 45 miles per hour, stopping one time
+
+direction around the track. Jake runs at a
+
+for a 15-minute break. Caroline will drive 360
+
+constant rate of 40 seconds per lap while
+
+miles and for the first 4 hours at 65 miles per
+
+Chandler runs at a constant rate of 70 seconds
+
+hour and then take a 30-minute break before
+
+per lap. How many seconds after beginning to
+
+driving at a constant speed of 50 miles per hour
+
+run will Jake have run exactly 1.5 more laps
+
+for the rest of her trip. How much earlier, in
+
+than Chandler?
+
+minutes, must Caroline leave before Julia so
+they arrive at the same time?
+
+A.
+
+30
+
+B.
+
+55
+
+A.
+
+60
+
+C.
+
+105
+
+B.
+
+60.25
+
+D.
+
+140
+
+C.
+
+75
+
+D.
+
+125
+
+. Jonathan is working as a delivery driver for a
+
+Oh A t-shirt company sells their signature t-shirt
+
+trucking company. He starts and ends all of his
+
+for $18. At this price, 24 t-shirts are sold each
+
+trips at the same loading dock. Jonathan began
+
+day. For every $1 decrease in price, the
+
+his last trip on Friday at 5:00 am when he left
+
+company will sell 2 extra t-shirts per day. The
+
+the loading dock. During his driving time, he
+
+company will adjust the price to maximize
+
+drove 840 miles at an average speed of 40 miles
+
+revenue. What is the maximum possible
+
+per hour. His driving time was 3 times as long
+
+revenue for 1 day?
+
+as his unloading time, and his resting time was
+
+A.
+
+$432.00
+
+B.
+
+$440.00
+
+Saturday at 1:00 am
+
+C.
+
+$450.00
+
+Sunday at 1:00 am
+
+D.
+
+$880.00
+
+16 hours. When did Jonathan end his last trip?
+
+pGan
+
+Sunday at 9:00 am
+Monday at 1:00 am
+27, Jasmine and Demarcus are going to going to
+
+. Cecil is managing the budget for a taco night
+
+start a cupcake stand at a local farmers market.
+
+fundraiser at his school. Cecil has decided to
+
+They estimate it will cost $5 per batch of
+
+spend $500 on supplies to make tacos, $650 to
+rent tables and chairs for the event, $220 for
+
+cupcakes, $80 for the mixer, and $25 for the
+
+advertisements to promote the event, and $90
+
+cupcakes for $12, which of the following
+
+farmers market stand. If they sell each batch of
+
+for decorations. Cecil estimates that 500 people
+
+equations represents the profit, y dollars, they
+
+will attend the event. If Cecil wants to raise
+
+will make on selling x batches of cupcakes?
+
+$800 after paying for all the expenses, what
+should the price be, per person, for admission to
+
+A.
+
+y=7x—105
+
+the taco night fundraiser?
+
+B.
+
+y=12x—105
+
+C.
+
+y=7x+105
+
+D.
+
+y=12x+105
+
+A.
+
+$1.60
+
+B.
+
+$2.02
+
+C.
+
+$3.04
+$4.52
+
+D.
+
+- 250
+-
+
+Chapter 26: Word Problems
+
+28. There are a total of 1,920 calories in a batch of
+
+31. To accommodate the guests at a concert, the
+
+cookies made by John and 230 of those calories
+
+stage manager, Frank, tried 3 different seating
+
+are from fat. When making a batch of cookies,
+
+configurations. One configuration was to have
+
+John includes 2 sticks of butter. If each stick is
+
+only rows of 9, one was to have only rows of
+
+equal to 8 tablespoons of butter and if 80% of
+
+15, and one was to have only rows of 20. None
+
+the calories from fat in the batch of cookies are
+
+of these configurations work because for each,
+
+from the 2 sticks of butter, which of the
+
+the last row had 2 fewer people than the other
+
+following is closest to the number of calories
+
+rows. What is the lowest possible numbers of
+
+from fat per tablespoon of butter?
+
+guests at the concert?
+
+A.
+
+12
+
+A.
+
+88
+
+B.
+
+23
+
+B.
+
+133
+
+C.
+
+46
+
+C.
+
+178
+
+D.
+
+96
+
+D.
+
+358
+
+29. On the first day of the month, Otto does 5
+
+32. Gary’s watersport shop rents out 1-person,
+
+pushups. On each day after that, Otto does 4
+
+2-person, and 4-person kayaks for a day.
+
+additional pushups than the previous day. How
+
+1-person kayaks cost $75 per day, 2-person
+
+many pushups does Otto do on the 27th day of
+the month?
+
+kayaks cost $125 per day, and 4-person kayaks
+cost $175 per day. Yesterday, Gary made
+
+A.
+
+108
+
+twice as many 1-person kayaks as 2-person
+
+B.
+
+109
+
+kayaks. How many 4-person kayaks were
+
+C.
+
+113
+
+rented out?
+
+D.
+
+114
+
+$12,250 by renting 120 kayaks. He rented out
+
+30. While creating nametags for the 800 people
+
+attending a conference, Luis is told to adda
+blue sticker to every 50th name tag and a red
+sticker to every 15th name tag. How many
+name tags have both a blue sticker and a red
+
+sticker?
+A.
+
+50
+
+B.
+
+16
+
+C.
+
+8
+
+D.
+
+5
+
+- 25]
+-
+
+A.
+
+15
+
+B.
+
+30
+
+C.
+
+35
+
+D.
+
+55
+
+math
+

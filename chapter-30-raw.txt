@@ -1,0 +1,576 @@
+Chapter 30: Scientific Notation
+Scientific notation is used to express numbers that are too big or too small to be easily written in decimal form.
+
+For example, instead of writing 15,000,000, we can write 1.5 x 10”. You have likely learned scientific
+notation before, so in this chapter we will review how to write numbers in scientific notation.
+
+How To Write Numbers in Scientific Notation
+Scientific notation is always written as a product of two numbers: the digit term and the exponential
+
+term. The base of the exponential term is always 10. Using our example from above, we can identify these
+different numbers.
+
+15,000,000 = 1.5 x 10”
+The 1.5 is the digit term and the 107 is the exponential term. The digit term must always be greater than or
+equal to 1 and less than 10.
+
+So how did we turn 15,000,000 into 1.5 x 107? It’s all about counting how many places we move the
+decimal point, as the number of places we move the decimal point tells us the power in the exponential term.
+In the original number 15,000,000, the decimal is located at the end of the number. To turn this into scientific
+
+notation, we need to move the decimal between the | and the 5.
+
+15,000,000.
+UUW
+
+= 1.5 x 107
+
+<q—__
+
+The decimal point moves 7 spots to the left, so the power in the exponential term is 7. When moving the
+decimal to the left, the power in the exponential term is positive. Here are two more examples:
+
+201,000.
+LOL
+
+= 2.01 x 10°
+
+8,320. = 8.32 x 10°
+UU)
+
+Example 1: The MLB estimates that 250,000 baseballs are used during an entire season. Which of the
+following expressions, when written in scientific notation, correctly represents the number of baseballs
+
+used during a season?
+
+A. 2.5 x 104
+
+B. 2.5 x 10°
+
+C. 2.5 x 10°
+
+D. 25 x 104
+
+Solution: To solve, we need to turn 250,000 into scientific notation. To do so, the decimal point moves 5
+spots to the left.
+
+250,000.
+WOU
+
+= 2.5 x 10°
+
+The answer is B. Answer choice D is incorrect because the digit term, the 25 in these answer choices, is too
+large. In scientific notation, the digit term must be greater than or equal to 1 and less than 10.
+Ok, so we know how to write large numbers in scientific notation. What about small numbers less than 1? We
+use the same approach, except now we must move the decimal point to the right.
+
+0.000916
+LULL
+—>
+
+= 9.16 x 1074
+
+The decimal point moves 4 spots to the right, so the power in the exponential term is —4. When moving the
+decimal to the right, the power in the exponential term is negative. Here are two more examples:
+
+0.0000005
+
+Litt 1 I}
+
+= 5x 107’
+
+0.000036 = 3.6x 107°
+LLL}
+
+Notice how we move the decimal point to the right until we get a number for the digit term that is greater than
+or equal to 1 and less than 10. Depending on the exact number, you may have to move the decimal all the way
+to the end, as with 0.0000005 or not, as with 0.000036 and 0.000916.
+
+- 272
+-
+
+Chapter 30: Scientific Notation
+
+Example 2: During an experiment, Ronald found that the average weight of an ant is 0.0000029 kg. The
+
+average weight of an ant in kilograms is equal to 2.9 x 10*. What is the value of k ?
+A. 7
+
+B. 6
+
+C. —6
+
+D. —7
+
+Solution: To solve for k, we need to write the average weight of an ant in scientific notation.
+
+0.0000029
+LLL
+
+= 2.9x 107°
+
+We need to move the decimal 6 spots to the right, so the power in the exponential term is —6. The answer is
+C.
+Scientific Notation Practice: Answers on page 333.
+
+1.
+
+A portion of the Great Wall of China has
+
+approximately 1.7 million stone blocks.
+
+Which of the following expressions, when
+
+G)
+
+5
+
+2
+
+C. 5x10
+
+portion of the Great Wall of China?
+1.7 x 104
+
+C.
+
+1.7 x 10°
+
+D.
+
+6.
+
+B. 1.7x10°
+
+D. 8.56 x 10
+
+$1,450,000, which of the following
+
+expressions represents the increase in the
+value of the condo from 1995 to 2022?
+
+7.
+
+A. 1.56 x 10°
+B. 3.90 x 10%
+C. 9.36 x 10°
+
+D.
+
+Which of the following expressions represents
+
+the sum of 2.6 x 10° and 7.8 x 105 in
+
+8.
+
+scientific notation?
+
+9.36 x 104
+
+What is 8% of 9.02 x 104 ?
+A.
+
+7,216
+
+B. 11,275
+C. 72,160
+
+x 1011
+A. 2.03
+8
+x 10°
+B. 3.3
+
+D. 112,750
+
+C. 8.06x 10°
+
+x 10°
+8.06
+
+Which of the following expressions represents
+
+Jordan’s average heart rate is 65 beats per
+minute. In scientific notation, how many
+
+times would Jordan’s heart beat in 24 hours?
+
+1.24 x 10°
+
+B. 1.24 x 10°
+C. 1.45 x 10°
+D. 1.66 x 10°
+
+4.
+
+8.56 x 107°
+
+C. 2.54 x 10"
+
+$210,000. If the condo was sold in 2022 for
+
+D.
+
+(21.4 x 10*)(4 x 10°) =?
+B.
+
+2. A beachfront condo was purchased in 1995 for
+
+3.
+
+6x 102
+
+A. 2.54 x 107°
+
+D. 17x 105
+
+A.
+
+2
+
+A. 5X oer
+B. 5x 10,
+
+written in scientific notation, is equivalent to
+the number of blocks used to construct the
+A.
+
+2 x1079
+
+15 x1075
+
+9.
+©
+
+the difference of 9.7 x 10’ and 4.3 x 10° in
+
+The area of Connecticut is 1.44 x 10* square
+kilometers. The area of Canada is 9.89 x 10°
+square kilometers. Using these measurements,
+which of the following 1s closest to the ratio of
+
+scientific notation?
+
+the area of Canada to Connecticut?
+
+B. 5.4.x 107
+
+5.4x 10°
+
+A 48 J
+
+9.27 x 10°
+
+D. 927x107
+)
+
+C. 144:989
+D. 687:1
+
+A.
+
+C.
+
+:
+
+- 273 -
+
+math
+
+10. The value of x°(0.2x? + 2.2x + 7) is
+
+15. What value of a makes the equation below
+
+true?
+
+between which of the following numbers
+when x = 10?
+
+A.
+B.
+C.
+D.
+
+(3.75 x 1034*)(7 x 102) = 26,250
+
+4x 10° and 5 x 10°
+4x10’
+and5 x 107
+4x 108 and 5 x 108
+1x 10® and 1 x 10?
+
+A.
+
+—6
+
+B.
+
+—5
+
+C.
+
+—4
+
+D.
+
+-3
+
+. A truck can carry 12,480 oranges. If the
+number of oranges carried by 2,500 trucks can
+
+16. Ifx = 0.00419 x 10° and c is an integer,
+
+be expressed as 3.12 x 10”, what is the value
+
+what is the scientific notation for x?
+
+of n?
+A.
+B.
+
+C.
+D.
+
+IONr~
+
+. About 9.5 x 10* square miles of Alaska is
+water. The rest of Alaska, about 5.7 x 10°
+
+16.7%
+
+C.
+
+27.5%
+
+D.
+
+60.0%
+
+expresses the mass of silver, in grams, in
+scientific notation?
+
+A.
+B.
+Cc.
+D.
+
+. The circumference of the Earth is
+
+equivalent to (70,000)? ?
+
+the following expressions is closest to the
+
+radius of the Earth, in feet, when expressed in
+scientific notation?
+
+6.47 x 10
+2.09 x 107
+
+C.
+D.
+
+4.18 x 107
+2.09 x 108
+
+these estimates, what was last year’s public
+debt per person in this state?
+
+$0.72
+$43.68
+
+C.
+D.
+
+$139.29
+
+(7)? x 104
+
+B.
+
+(7)% x 10-*4
+
+D. (:)° x 10%
+
+estimated to be 5.6 x 107 and the public debt
+was estimated to be 7.8 x 107°. Based on
+
+B.
+
+A.
+
+C (:) x 10%
+
+. Inacertain state, last year’s population was
+
+A.
+
+1.5 x 1073
+1.5 x 1074
+15x107°
+1.5 x 107°
+
+18. If z < 0, which of the following expressions is
+
+approximately 131.4 million feet. Which of
+
+A.
+B.
+
+4.19 x 10°?
+4.19 x 106+
+
+analyzed and is found to be 0.03% silver.
+
+selected point is in water?
+14.3%
+
+C.
+D.
+
+Which of the following expressions correctly
+
+randomly selected, what is the probability the
+
+B.
+
+4.19 x 10°-3
+4.19 x 10°~2
+
+17. A 0.005g sample of an unknown metal is
+
+square miles, is land. Ifa point in Alaska is
+
+A.
+
+A.
+B.
+
+$1,392.86
+
+-274
+-
+
+Chapter 31: Arcs and Sectors
+
+Chapter 31: Arcs and Sectors
+Arcs and sectors questions occasionally appear on the ACT. This topic is not as commonly tested as the rest of
+the geometry concepts we covered in Chapters 3-4, but it is one that you should still be familiar with for test
+day.
+
+Arcs
+The arc of a circle is a portion of the circumference. Arcs can be measured in two ways: the degree measure of
+the arc or the length of the arc itself.
+Degree Measure of Arc AB
+
+Length of Arc AB
+
+A
+
+A
+135°
+
+10
+
+B
+
+B
+
+The degree measure of an arc is equal to the measure of the central angle intersecting the arc. The arc
+length is the actual distance covered moving from point A to point B along the circle.
+
+To solve arc questions, you need to memorize the two equations below. These are different versions of the
+same equation. Being familiar with both the conceptual idea and the actual equation well help you solve
+different types of arc questions on the ACT.
+
+ArcLength
+
+— Angle Measure
+
+Circumference _
+
+Lo 6
+
+360°
+
+2nr
+
+360
+
+6 = central angle
+
+r = radius
+
+Example 1: In the circle to the right, the length of minor arc BC is 67 and the
+radius is 8. What is the measure of ZA in degrees?
+A. 270
+
+B.
+
+180
+
+©.
+
+135.
+
+D.
+
+L
+
+L = are length
+
+100
+
+Solution: Using the arc equation, we can setup and solve for the measure of the central angle.
+
+610
+
+6
+
+2m(8)
+
+360
+
+610
+
+6
+
+16x
+
+360
+
+Next, it is easiest to simplify the fraction on the left-hand side and cancel out the zz.
+3
+
+8
+
+8
+
+360
+
+1080 = 86
+
+135 =8@
+The answer is C.
+
+- 275
+-
+
+C
+
+math
+
+Example 2: Sherry is making a pie chart to represent the favorite ice cream flavor of her classmates. If 5
+
+out of the 25 students in Sherry’s class selected strawberry as their favorite flavor, what should the
+measure of the central angle, in degrees, be for the strawberry sector?
+A.
+
+72
+
+B. 80
+
+C. 95
+
+D.
+
+108

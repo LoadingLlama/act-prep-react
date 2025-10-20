@@ -1,0 +1,306 @@
+Chapter 1: Backsolving
+
+to learn about the 4 levels and how to best use this book.
+
+Chapter 1: Backsolving —
+
+In the first two chapters, you will learn two important test-taking techniques: backsolving and substitution. As
+you work through the rest of the book, use these techniques whenever you can to solve questions.
+
+Backsolving is plugging the answer choices back into the question. On the ACT, you are given 4 answer
+choices for multiple choice questions, and one of those 4 choices must be correct. Rather than solving the
+question algebraically and determining whether your answer matches one of the answer choices, you can
+guess-and-check with the answer choices to find which one is correct. Backsolving is often the fastest and
+easiest way to solve ACT questions, especially if you get stuck and cannot solve a question algebraically, so
+use it to your advantage.
+Backsolving can be done using five steps:
+
+1.
+
+Start with B or C. Plug the value in the answer choice back into the question. The answer choices
+are always in order of smallest to largest or largest to smallest so starting in the middle saves you time.
+
+2.
+
+Solve the question using this value. Find any other unknowns if necessary.
+
+3.
+
+If this answer choice works correctly, you’re done! Bubble it in and move on.
+
+4.
+
+If this answer choice does not work, cross it off. If you know the correct answer needs to be smaller
+or larger than the value you just tried, cross off any other incorrect answers.
+
+5.
+
+Pick one of the remaining answer choices and plug it back into the question. Repeat this until
+
+you find the correct answer. Remember, one of the 5 answer choices must work!
+
+Example 1: If Vx + 10 — 2Vx — 2 = 0, what is the value of x?
+A. 2
+
+B. 6
+
+C.
+
+14
+
+D.
+
+18
+
+Solution: The quickest and easiest way to solve this question is backsolving. Finding the correct answer is
+just a process of guess-and-check. Below, you can see how the correct answer B, when x = 6, makes the
+equation be true.
+V6+10—2V6—-—2=0
+
+V16 —2V4 =0
+4—2(2)
+= 0
+4—-4=0
+0=0
+
+The answer is B. If we plug in any of the other answer choices, we will get an equation that is not equal on
+
+both sides and is incorrect.
+
+Example 2: Which of the following is a solution to the equation of x? + 5x? + 6x =0?
+A)
+
+-3
+
+B)-1
+
+©1
+
+D)j2
+
+Solution: Most students look at this question and think, “Oh no, I need to factor this to solve.” However, the
+easiest way to solve this question is backsolving! We plug the answer choices into the equation to see which
+one makes it equal 0. Below, you can see how the correct answer, when x = —3, makes the equation be true.
+
+(—3)? + 5(—3)? + 6(-3) = 0
+—27+45-18=0
+0=0
+
+The answer is A. If we plug in any other answer choices, the equation will not equal 0.
+
+-|-
+
+math
+
+Backsolving With Points
+For questions with points in the question or answer choices, it is often effective to backsolve with points. For
+this method, we will use the point(s) to test which equation works correctly. Remember, if a point is on a
+graph, it must make the equation of the graph true.
+
+Example 3: A linear function f passes through the points (1,5), (3,9), and (7,17). Which of the
+following equations defines f?
+
+A) f(x) =2x+5
+
+B) f@)=x+5
+
+C)
+
+fx) =4x4+1
+
+D) f(x)
+= 2x+3
+
+Solution: Here, the simplest way to solve is to test the answer choices using the points in the question. Let’s
+
+start with the point (1,5). When we plug in x = 1, we need to get f(1) = 5.
+For answer choice A:
+
+f(1) =2(1)+5
+
+—->
+
+f(1) =7_
+
+(Ais incorrect.)
+
+For answer choice B: f(1) =1+5
+
+>
+
+f(1)=6-
+
+(Bis incorrect.)
+
+For answer choice C: f(1) =4(1) +1
+
+-
+
+f()=5
+
+(C works.)
+
+For answer choice D: f(1) = 2(1)+3
+
+-
+
+fQ)=5
+
+(Dworks.)
+
+Answer choices A and B do not work, so we can eliminate those answer choices. Answer choices C and D
+
+both work, so we need to use a second point to test answer choices C and D. Let’s use the point (3, 9).
+
+For answer choice C: f(3) = 4(3)
+
++1.
+
+—-
+
+f()=13 =
+
+(Cis incorrect.)
+
+For answer choice D: f(3) = 2(3)+3.
+
+-
+
+f()=9 ~~ (Discorrect.)
+
+The answer is D. As you can see, we can solve this question by backsolving with points. This method is
+much easier than solving this question algebraically.
+Backsolving Practice: Answers on page 323.
+1.
+
+If3*% +4* = 91, what is the value ofx?
+
+4.
+
+2.
+
+1.5
+
+B.
+
+2
+
+A.
+
+C.
+
+2.5
+
+B.
+
+D.
+
+3
+
+3
+27
+
+C.
+
+81
+
+D.
+
+243
+
+For what value of x is the equation
+3.25x +6 = 5x — 8 true?
+
+3.
+
+IfV3x = 9, what is the value of x?
+
+A.
+
+5.
+
+If3* = 2187, what is the value of x?
+
+A.
+
+4
+
+A.
+
+5
+
+B.
+
+6
+
+B.
+
+6
+
+C.
+
+8
+
+C.
+
+7
+
+D.
+
+12
+
+D.
+
+9
+
+The length ofa rectangle is 8 inches longer
+
+6.
+
+Pei2= 4x
+
+than its width. Ifthe perimeter of the
+
+5
+
+10
+
+rectangle is 52 inches. What is the width of
+the rectangle?
+
+What is the value of x in the equation above?
+
+A.
+
+4
+
+A.
+
+—2
+
+B.
+
+9
+
+B.
+
+-1
+
+C.
+
+11
+
+Cc.
+
+2
+
+D.
+
+18
+
+D.
+
+5
+
+Want video explanation for how to solve all 1,350+ practice
+

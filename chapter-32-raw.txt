@@ -1,0 +1,714 @@
+Chapter 32: Vectors
+A vector is a quantity that has both a magnitude (length) and direction. Vectors commonly are used to
+show motion, such as velocity and acceleration. Since vectors are not commonly taught in math class, many
+students are stumped when vectors appear on the ACT. In this chapter, we will teach you everything you need
+to know for vectors on the ACT!
+
+G) What is a Vector?
+A vector shows the magnitude and direction of a motion. Vectors are drawn as arrows on the coordinate plane.
+For example, if a car is driving at 30° east of north at 10 miles per hour, the vector would be:
+_10
+
+oh 307
+
+hh
+| -10
+
+The magnitude (length) of the vector is 10, which shows the speed that the car is traveling. If the car was
+driving at 20mph, the magnitude (length) of the vector would be 20. The direction is shown by the direction of
+
+the vector, which is pointing 30° east of north.
+Vectors on the ACT are most commonly written in the following forms:
+Standard form:
+
+v = Ai+ Bj
+
+Component Form:
+
+v = (A,B)
+
+In standard form, Ai shows the x-component of the vector and Bj shows the y-component of the vector. In
+simpler terms, the A shows how far the vector goes left or nght and the B shows how far the vector goes up or
+down. In component form, the A shows the x-component and the B shows the y-component.
+The easiest way to teach this is with some examples. Let’s consider vectors X and Y below:
+
+Standard Form
+
+Vector
+X = 3i+4
+Vector Y = —4i—2j
+
+Ct
+
+RNw>oO
+
+ens
+
+/,
+
+/
+
+Component Form
+
+XxX
+
+if
+
+Vector
+X = (3,4)
+i
+
+Vector Y = (—4,—2)
+
+&NwOo
+
+-5
+
+When starting at the origin, a vector written in Ai + Bj or (A, B) notation ends at point (A, B). For
+vector X, we see the vector goes 3 units to the right and 4 units up and ends at the point (4,3). For vector Y,
+we see the vector goes 4 units to the left and 2 units down and ends at the point (—4, —2).
+
+- 280
+-
+
+Chapter 32: Vectors
+
+Vector Addition and Subtraction
+The most common vectors question on the ACT is vector addition and subtraction. The good news 1s that
+vector addition and subtraction is simple! When given multiple vectors, all we do is combine like terms.
+
+Example 1: What is the sum of vectors (2,5) and (—6, 8) ?
+A. (8,13)
+
+B. (—4,13)
+
+C. (-8, —3)
+
+G)
+
+D. (—4, 3)
+
+Solution: To add vectors in component form, we combine like terms, so we add the A values, the
+x-components, and B values, the y-components, together.
+For the A values, we get: 2 + (—6) = —4
+For the B values, we get.
+
+5+ 8 = 13
+
+Combining our answers, we get (—4, 13). The answer is B.
+It’s simple arithmetic! The only way the ACT can make these questions slightly more difficult 1s by adding a
+coefficient, as shown in Example 2.
+Example 2: The vectors A and B can be written as 5i — j and 12i — 4j respectively. If vector C is equal
+to 2A — B, which of the following represents vector C ?
+A. 22i—6j
+
+B. 10i-—2j
+
+C. -2i+2j
+
+D. 2i-—6j
+
+Solution: When there is a coefficient in front of a vector, such as the 2 in 2A, we distribute the coefficient into
+in the vector.
+
+2A = 2(5i — J) = 10% — 2j
+Now that we know 2A, we can subtract B from 2A to find vector C:
+
+C = 2A—B = (10i — 2f) — (12i — 4)
+To solve, we distribute the negative sign and combine like terms.
+C= 10i —-2j—121+4j= —2i+ 2j
+The answer is C.
+
+Vector Addition and Subtraction On A Graph
+For more advanced vectors questions, you need to know how to draw vector addition and subtraction on
+
+a graph using the tip-to-tail method. When adding or subtracting vectors, we will use the following steps:
+1.
+
+Start at the origin and draw the Ist vector. For example, if we have 3 vectors A, B, and C and are
+solving for A + B + C, we first draw vector A. The point where the first vector ends, where the top of
+the arrow is located, is called the tip. This will be our new starting point for drawing the next vector
+in the equation.
+
+2.
+
+For the 2nd vector, start at the tip of the 1st vector and draw the 2nd vector. The tail of the
+second vector (the straight part of the arrow) starts at the tip of the first arrow, hence the name
+tip-to-tail. For our example, we draw vector B and start from the tip of vector A.
+
+3.
+
+Repeat this process for any additional vectors. For our example, we have so far done A + B. We
+still need to add vector C, so we start at the tail of vector B and draw vector C.
+
+4.
+
+Draw a vector from the origin to the tip of the final vector in the equation. This vector
+
+represents the final vector that you solved for. For our example, we draw a vector from the origin
+to the tip of vector C. The vector that we draw is the vector for A
+
+- 281
+-
+
++B+C.
+
+math
+
+Let’s go through an example to see how this works.
+Example 3: For the vectors shown in the graph below, which of the following represents A + B —C?
+A. D
+
+B. 2E
+Gy
+
+Ds
+
+x
+
+C.A+F
+
+D. -3B
+
+2
+
+A
+~~
+
+5
+
+4
+
+2
+
+-
+
+F
+
+m2
+
+4
+
+A
+
+5
+
+E
+
+5
+
+Solution: To find A + B — C, we will use the tip-to-tail method. The steps are outlined below.
+Step 1: Draw vector A
+
+Step 2: Add vector B
+Start at the tip of vector A and draw vector B. So
+
+Start at the origin and draw vector A.
+
+far, we have
+
+A+ B.
+
+5
+
+5
+
+4
+
+4
+
+3
+
+a
+
+2
+
+2
+
+41
+
+J”
+Sf”
+
+4
+
+Sh B
+J
+
+~
+
+A
+
+A
+
+Ny
+
+Ny
+
+ak
+Step 3: Subtract vector C
+
+Step 4: Draw Vector
+
+A+ B—C
+
+Start at the tip of vector B and draw —C. When
+
+Draw a vector from the origin to the tip of the final
+
+subtracting, a vector goes in the opposite direction.
+
+vector. Here, we draw a vector from the origin to
+
++C goes 3 units to the right and down 1 unit, so —C
+
+the end of vector —C. This vector, shown as a
+
+goes 3 units to the left and up 1 unit. We now have
+
+dashed line below, is equal to vector
+
+A+ B—C.
+
+A+B-C.
+
+7)
+
+xfe
+A
+
+3
+
+8
+
+xh,
+
+ms
+\
+
+\
+cls
+
++5
+
+-4
+
+|
+
+Wit
+
+I
+
+Y/Y
+
+m*
+
+A
+
+-
+
+0
+
+2
+
+4
+
+5
+
+4
+
+We can see that vector A + B — C goes 2 unit left and 4 units up, which is the same as vector D in the original
+figure. The correct answer is A. This tip-to-tail method takes some practice, so be sure to work through the
+practice questions to increase your confidence if you have never used this method before.
+
+- 282
+-
+
+Chapter 32: Vectors
+
+Magnitude of a Vector
+The magnitude of a vector is the length of the vector. Magnitude most commonly comes up on the ACT with
+questions involving velocity. For example, if a ball is traveling at 40 feet per second, the vector showing this
+motion would have a magnitude of 40.
+The magnitude of a vector can be found using the following equation:
+
+For vector Ai + Bj or (A,B), magnitude = , A? + B?
+The magnitude of a vector is rarely tested on the ACT, but you should memorize the equation above just in
+case. The equation above is the same as the Pythagorean theorem. If you forget the equation on test day, you
+can draw the vector on the coordinate plane, make a triangle, and use the Pythagorean theorem to solve.
+Vectors Practice: Answers on page 333.
+
+1.
+
+Given that u and v are vectors such that
+
+5.
+
+Vector z can be expressed as ai + bj, vector w
+
+u = (5,—3) and v = (2, 4), what is the
+
+can be expressed as 6i + 2j, and vector x can
+
+component form of the vector u — v ?
+
+be expressed as 14i—j. Ifz+2w=x,a+b
+
+CG)
+
+is equal to:
+
+2.
+
+A.
+
+(7,—7)
+
+B.
+
+(3,1)
+
+A.
+
+8
+
+C.
+
+(3,-7)
+
+B.
+
+5
+
+D.
+
+(—3,-7)
+
+C.
+
+2
+
+D.
+
+-3
+
+The vector 4i + 5j is added to the vector
+—2i + 6j. What is the sum of the two vectors?
+
+A. 2i-V
+
+3.
+
+6.
+
+Vince is drawing a vector on the standard (x, y)
+
+coordinate plane to showa bus driving 45°
+
+B.
+
+2i+11
+
+north of east at 36 miles per hour. If each
+
+C.
+D.
+
+4i+11j
+
+coordinate unit represents 1 mile per hour, what
+
+61+ 11
+
+is the magnitude of the vector?
+
+Given that w and v are vectors such that
+u = (7,1) and v = (2,8), what is the
+component form of the vector 2u.+ 3v ?
+
+A.
+
+(9,9)
+
+B.
+
+(16,10)
+
+C.
+D.
+
+(18,18)
+(20,26)
+
+A.
+B.
+
+18
+18V¥2
+
+C.
+
+36
+
+D. 36v2
+
+7.
+
+The vector i represents 1 mile per hour east,
+and the vector j represents 1 mile per hour
+north. Sarah is jogging west at 9 miles per
+
+4.
+
+hour. Which of the following vectors
+represents Sarah’s velocity, in miles per hour?
+
+When the vector ai + 4j is subtracted from the
+
+vector 3i + bj, the difference is 7i — 37. What
+
+are the values of a and b ?
+
+A.
+
+—9i
+
+B.
+
+—-9j
+
+A.
+
+a=-—10andb=3
+
+C.
+
+9
+
+B.
+
+a=4andb=-1
+
+D.
+
+9i
+
+C.
+
+a=10andb=8
+
+D.
+
+a=—4andb=1
+
+- 283
+-
+
+G)
+
+math
+
+©°
+
+Two vectors are shown in the standard (x, y)
+
+For questions 10-13, use the diagram below.
+
+coordinate plane below.
+D
+10
+
+5
+
+xX,
+
+9
+
+A
+
+7
+
+B
+5
+
+f
+
+A
+
+5
+
+ee
+
+5
+mars
+
+F
+
+E
+
+3
+Which of the following vectors is the sum of
+
+©" Which is the component form of vector
+
+these two vectors?
+
+A+F?
+
+A.
+
+-i+ 8
+
+A. (=1,0)
+
+B.
+
+-i+4j
+
+B. (0,-1)
+
+(0,0)
+
+8
+C.
+
+C.
+
+D. 5i+8/
+
+D. (6,5)
+
+In the coordinate plane, i represents 1 mile east
+
+©" The vector F — E + A is equal to:
+
+and the vector j represents 1 mile north. Tia
+
+drives 5 miles south and 5V3 miles west.
+
+A, -4j
+
+Which of the following vectors represents Tia’s
+
+B.
+
+final location relative to where she began
+
+C. -6i-5/
+
+driving?
+
+D. 6i+2j
+
+A. —5i+ 5V3j
+B. —5¥3i-5j
+C.
+
+-10i
+
+D.
+
+5V¥3i+5j
+
+2j
+
+12. Vector D + E is equal to which of the
+following vectors?
+
+GOW> GOWw>
+13. Which of the following vectors when written in
+
+the form ai + bj hasa = Oandb>0?
+
+- 284
+-
+
+A.
+
+2B+C
+
+B.
+
+A+C
+
+C.
+
+2E—B
+
+D.
+
+D+A
+
+Chapter 32: Vectors
+
+14. The vectors a, b, and c are represented in the
+
+16. The vector i represents 1 mile per hour east,
+
+standard (x, y) coordinate plane below. In
+
+and the vector j represents 1 mile per hour
+
+what general direction will the vector
+
+north. According to his car’s GPS, at a
+
+b—a-+c
+
+particular instant,
+
+point?
+
+James is driving 30° north of
+
+east at SO miles per hour. Which one of the
+following vectors represents James’ velocity, in
+miles per hour, at that instant?
+
+c
+
+A.
+B.
+C.
+
+a.
+-
+
+A. Up and to the right.
+B.
+
+Up and to the left.
+
+C.
+
+Down and to the right.
+
+D.
+
+Down and to the left.
+
+D. 25v3i + 25j
+
+15. Vector DE starts at point D(—1, 4) and ends at
+point
+
+—25i+ 25V3j
+25i- 25V37
+251+ 25V3j
+
+(5,14). A student is asked to draw
+
+point F on DE such that DE = 3DF. What
+should the student draw point F ?
+
+A. (1,62)
+B. (4,72)
+
+c. (3,105)
+D. (3,115)
+
+- 285
+-
+
+math
+

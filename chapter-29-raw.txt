@@ -1,0 +1,933 @@
+Chapter 29: Unit Conversion
+You need to know how to properly convert units on the ACT. A few common conversion factors you should
+know are listed below.
+1 foot = 12 inches
+
+1 yard = 3 feet
+
+1 hour = 60 minutes
+
+1 minute = 60 seconds
+
+For other conversions, such as pounds to kilograms, the ACT provides the conversion factor as part of the
+
+question.
+Example 1: A string that is 10 feet and 3 inches long is cut into three pieces of equal length. What is the
+length of each piece of string?
+A. 3 feetlinch
+
+B. 3feet3 inches
+
+C. 3 feetS inches
+
+D. 3 feet 8 inches.
+
+Solution: First, we need to convert the original length of the string to inches. For a question like this, you
+need to convert the length to one unit before dividing. To convert 10 feet to inches, we multiply by 12:
+10 feet x
+
+12 inches
+1 foot
+
+= 120 inches
+
+So, 10 feet and 3 inches has a total length of 123 inches. To find the length of each piece, we divide by 3:
+123 inches
+
+5
+
+= 41 inches per piece
+
+Now, we need to convert 41 inches to feet. 36 inches = 3 feet, which leaves 5 inches leftover to get to 41
+inches. The length of each piece of sting is 3 feet 5 inches. The answer is C.
+Example 2: A tennis court is 78 feet long and 36 feet wide. What is the area, in square yards, of a tennis
+court?
+A. 312
+
+B. 936
+
+C. 2,808
+
+D. 8,424
+
+Solution: We covered questions like this in Chapter 4 (pg. 15-16), but let’s revisit them again since they are a
+classic unit conversion question that appears commonly on the ACT. To solve questions involving unit
+conversion and areas or volumes correctly, convert the units BEFORE solving for any area or volume.
+
+For this example, we are asked to solve for square yards, so we need to first convert feet to yards:
+i
+
+lyard _
+
+Length = 78 feet x S fest = 26 yards
+
+Width = 36 feet x 3 S*
+= 12 yards
+feet
+Now that the units are converted to yards, we can find the area of the tennis court in square yards.
+
+A = lw = (36 yards)(12 yards) = 312 square yards
+The answer is A.
+
+*Test-Day Tip: Anytime you see units written in bold, pay close attention and make sure you are
+solving for the correct units. By putting the units in bold, the ACT is telling you to pay close attention to the
+units to help make sure you do not accidentally solve for the incorrect units.
+
+- 266
+-
+
+Chapter 29: Unit Conversion
+
+Dimensional Analysis
+For more advanced unit conversion questions, you need to know dimensional analysis, which uses conversion
+factors to convert from one unit to another. In the previous examples, we did some dimensions analysis to
+convert feet to inches and feet to yards.
+To set dimensional analysis, complete the following steps:
+1.
+
+Start with the value given in the question.
+
+2.
+
+Use the conversion factor(s) to switch the units.
+
+3.
+
+Multiply and divide the numbers to find the answer.
+
+If the conversion factor(s) are setup correctly, the answer will have the correct unit and all other units
+will cancel! An example of how to do this is shown below:
+Example 3: The top speed of Andrew’s toy car is 30 meters per second. What is the top speed of the
+
+toy car in kilometers per hour? (1 kilometer = 1,000 meters)
+A.
+
+1,800
+
+B. 500
+
+C.
+
+108
+
+D. 90
+
+Solution: To solve this question, we need to convert meters to kilometers and seconds to hours.
+Whenever we are given a rate that includes two units, we can set it up as a fraction. In this
+question, we are given the speed in meters per second, so we can set up 30 meters per second as:
+30 meters
+
+“1second:
+From here, we need to convert the units. Notice how that in each step below, we set up the conversion
+factor so the units cancel.
+30m
+
+1km
+
+1s
+
+1,000 m
+
+30km
+
+605
+
+1,000s
+
+“.1min
+
+1800 km
+1,000 min
+
+30km
+
+=
+
+.
+
+1. Convert meters to kilometers.
+
+1,000s
+
+_
+
+1,800 km
+
+2. Convert seconds to minutes.
+
+1,000 min
+
+60min _ 108,000km
+1 hr
+
+~-
+
+108,000 km _ 108 km
+1,000 hr
+
+1hr
+
+3. Convert minutes to hours.
+
+1000 hr
+
+= 108 km/hr
+
+4. Simplify the answer.
+
+You can also solve this question in one big step as shown below.
+30m
+
+1s
+
+1 km
+
+60s
+
+1,000
+m ©. 1 min
+
+60min _
+
+thr
+
+108,000 km
+
+~—s«'41,000hr
+
+= 108 km/hr
+
+The answer is C.
+
+The most difficult part of unit conversion questions is setting up the conversion factors correctly, so pay close
+attention to the units. Ifthe units cancel and you finish with the units the question is asking for, the equation is
+up properly, and you will have the correct answer.
+
+- 267
+-
+
+math
+
+Example 4: Erica bikes at an average speed of 24 miles per hour for 40 minutes. If Rosie bikes at an
+average speed of 18 miles per hour, approximately many minutes does it take Rosie to bike the same
+distance that Erica biked in 40 minutes?
+A. 53
+
+B. 56
+
+C. 60
+
+D. 67
+
+Solution: We first need to find out how far Erica bikes in 40 minutes. To solve this, it is important to
+remember that distance = speed Xx time. We need to multiply the time Erica bikes by her speed to find the
+distance. But first, we need to convert her speed from miles per hour to miles per minute:
+24 miles
+
+1 hour
+
+1 hour
+
+60 minutes
+
+:
+
+= 0.4 miles/minute
+
+Now, we can find the distance using the speed and the time.
+distance =
+
+0.4 miles
+1 minute
+
+x 40 minutes = 16 miles
+
+To find out how long it takes Rosie to bike 16 miles, we need to convert Rosie’s speed from miles per hour to
+miles per minute:
+18 miles
+
+1 hour
+
+1 hour
+
+60 minutes
+
+:
+
+= 0.3 miles/minute
+
+To solve for time, we divide the distance by the speed:
+time =
+
+distance
+speed
+
+=
+
+16 miles
+
+.
+
+0.3 miles/minute
+
+= 53.3 minutes
+
+The answer is A. The question says “approximately,” so we round our answer to 53.
+
+Example 5: A metal pipe that is p feet long will be cut into 7 pieces that are each x inches long. Which
+of the following expressions correctly describes length, in inches, of each of the n pieces of pipe?
+12
+
+A.x=—
+n
+
+p
+
+px
+
+B. x=—
+nx
+
+12n
+
+CAx=—
+12n
+
+D.
+x =—
+px
+
+Solution #1 - “Math Teacher Way”: We first need to convert the length of the metal pipe from feet to inches:
+p feet Xx
+
+12 inches
+1 foot
+
+= 12p inches
+
+Then, we need to cut it into n pieces, so we will divide the metal pipe by n:
+12p inches
+
+n pieces of pipe
+
+= x inches
+
+per
+
+perp
+
+piece of
+
+pipe
+
+Pip
+
+The answer is A.
+
+Method #2 — Substitution: If solving algebraically seems tricky, we use substitution and pick numbers to
+make this question easier. Let’s say that the metal pipe is 2 feet long (p = 2) and that we will cut it into 3
+pieces (n = 3). From here, we can easily solve for x, the length of each piece in inches:
+2 feet x
+24 inches
+
+12 inches
+1 foot
+
+= 24 inches
+
+= 8 inches per piece
+
+With the numbers we picked, we found that x = 8. From here, we plug our values of p = 2, = n = 3, and
+x = 8 into the answer choices to find out which equation is correct. Let’s confirm this works by plugging in
+our values to answer choice A.
+8
+
+__ 12(2)
+
+3
+
+8=8
+
+The equation works with our numbers, so we know that the answer is A.
+
+- 268
+-
+
+Chapter 29: Unit Conversion
+
+Unit Conversion Practice: Answers on page 333.
+1.
+
+If a 6-foot giant sub is cut in half and each half @
+
+°
+
+A 25-foot plank of wood and a 12-foot plank
+
+is cut into quarters, how many inches long are
+
+of wood will be cut into 10-inch pieces. How
+
+the resulting pieces of the sub?
+
+many 10-inch pieces can be cut from the two
+
+G)
+
+planks?
+A.
+
+6
+
+B.
+
+9
+
+(1 foot = 12 inches)
+
+C.
+
+18
+
+A.
+
+D.
+
+36
+
+B.
+
+37
+
+C.
+
+40
+
+D.
+
+44
+
+30
+
+How many minutes would it take a car to
+
+travel 140 miles at a constant speed of 50
+miles per hour?
+
+A category 3 hurricane rains 3 inches per hour
+for 36 hours. Which of the following is
+
+Gap,
+
+168
+
+closest to the total feet of rain over the 36
+
+117
+
+hours?
+
+90
+
+(1 foot = 12 inches)
+
+64
+
+A.
+
+6
+
+B.
+
+9
+
+A piece of string that is 9 feet and 4 inches is
+
+C.
+
+12
+
+cut into 4 equal parts. What is the length, to
+
+D.
+
+36
+
+the nearest inch, of each part?
+
+Gap
+
+2 feet 1 inches
+
+A bakery purchases flour in 50-gallon bags.
+
+2 feet 3 inches
+
+The flour is mixed with water to make loaves
+
+2 feet 4 inches
+
+of bread. Each loaf of bread is made by
+
+2 feet 7 inches
+
+mixing 3 quarts of flour with 2 quarts of water.
+
+What is the maximum number of loaves of
+bread that can be made from two 50-gallon
+
+Julia is wrapping packages for Christmas. If
+
+bags of flour?
+
+each package requires 20 centimeters of
+
+(1 gallon = 4 quarts)
+
+wrapping paper, what is the maximum number
+of packages that can be wrapped with 4 meters
+
+A.
+
+66
+
+of wrapping paper?
+
+B.
+
+100
+
+(Note: 1 meter = 100 centimeters)
+
+pGan
+
+C.
+
+133
+
+D.
+
+150
+
+15
+20
+25
+
+James is walking at a speed of 5 miles per
+
+hour through downtown Manhattan. If James ©
+
+30
+
+walks for two hours, how many city blocks
+does he walked?
+
+A log that is 11 feet 6 inches long is cut into
+
+(1 city block = — ofa mile)
+
+two equal segments. What is the length, to the
+nearest inch, of each part?
+A.
+
+5 feet 6 inches
+
+B.
+
+5 feet 8 inches
+
+C.
+
+5 feet 9 inches
+
+D.
+
+6 feet 9 inches
+
+- 269
+-
+
+A.
+
+50
+
+B.
+
+100
+
+C.
+
+150
+
+D.
+
+200
+
+math
+
+10.
+
+Annabel runs 9 miles in 1- hours. What is
+
+14. Ming’s flight was originally scheduled to
+
+depart at 6:40pm. If his flight was delayed by
+
+the average number of minutes it takes her
+
+436 minutes, what time did Ming’s flight
+
+to run 1 mile?
+A.
+
+6
+
+B.
+
+10
+
+eventually depart?
+A.
+
+Cc. 10-2
+D.
+
+13-2
+
+. The yarn store sells blue yard and red yarn.
+
+1:24am.
+
+B.
+
+1:56a.m.
+
+C.
+
+2:12am.
+
+D.
+
+11:01 p.m.
+
+Om A cattle farm has a field that has a length of
+600 feet and a width of 1,090 feet. Which of
+
+Julie wants to buy 90 feet of red yarn and 45
+
+the following values is closest to the area, in
+
+feet of blue yarn. If red yarn sells for $2 per
+
+acres, of the field?
+
+yard and blue yarn sells for $3 per yard, which
+of the following is how much Julie will pay
+
+(1 acre = 43,560 square feet)
+
+for 90 feet of red yarn and 45 feet of blue
+
+GaAWpY
+
+yarn?
+A.
+
+45
+
+B.
+
+60
+
+C.
+
+105
+
+D.
+
+315
+
+15
+210
+330
+218,000
+
+16. A car traveling at 40 mph has a leaking oil
+
+tank that is losing oil at a rate of 2 ounces per
+minute. How many miles will the car travel
+
+. Prashant drove from Portland to Sacramento.
+
+before the oil tank, which held 360 fluid
+
+At 11:00am, he was 340 miles from
+
+ounces when it began to leak, is empty?
+
+Sacramento. At 3:00pm, he was 95 miles
+from Sacramento. Which of the following
+values is closest to Prashant’s average speed,
+in miles per hour, from 11:00am to 3:00pm?
+A.
+
+61
+
+B.
+
+82
+
+C.
+
+85
+
+D.
+
+97
+
+17.
+
+A.
+
+20.0
+
+B.
+
+72.8
+
+C.
+
+80.0
+
+D.
+
+120.0
+
+A kitchen floor that is 13 = feet wide by 16
+feet long is going to be covered with square
+tiles. If each tile is 16 inches wide by 16
+inches long, how many tiles will be needed to
+
+. The diameter of Pluto is 1,477 miles. Which
+
+cover the entire kitchen floor?
+
+of the following best approximates the
+circumference of Pluto in kilometers?
+(1 kilometer = 0.6214 miles)
+A.
+
+2,880
+
+B.
+
+5,770
+
+C.
+
+7,470
+
+D.
+
+10,830
+
+- 270
+-
+
+A.
+
+12
+
+B.
+
+22
+
+C.
+
+88
+
+D.
+
+120
+
+Chapter 29: Unit Conversion
+
+18. Ally has a smartwatch that tracks the number
+
+22. Melissa drives 11 miles in 15 minutes at a
+
+of steps she takes each day. If on Saturday her
+
+constant speed and did NOT drive above the
+
+smartwatch records 8,421 steps and Ally’s
+
+speed limit. Which of the following speed
+
+average step covers a distance of 2.25 feet,
+
+limits, in miles per hour, is the /owest the
+
+how far, to the nearest 0.1 mile, did Ally walk
+
+speed limit could have been?
+
+on Saturday?
+
+Gap
+
+(Note: 1 mile = 5,280 feet)
+A.
+
+0.8
+
+B.
+
+1.6
+
+C.
+
+3.6
+
+D.
+
+3.9
+
+40
+45
+50
+55
+
+23. If it takes an object 1.5 seconds to travel 101.6
+
+feet, to the nearest 0.01 mile per hour, what is
+the speed of the object?
+
+19. A rectangle and a square have the same area.
+The length of the rectangle is 144 centimeters,
+
+(Note: 1 mile = 5,280 feet)
+
+and the width of the rectangle is 96
+centimeters. What is the approximate length,
+
+A.
+
+15.45
+
+in inches, of a side of the square?
+
+B.
+
+46.18
+
+C.
+
+67.73
+
+D.
+
+69.27
+
+(Note: 1 inch = 2.54 centimeters)
+A.
+
+37.8
+
+B.
+
+46.3
+
+C.
+
+47.2
+
+D.
+
+56.7
+
+24. Ronda will use 2.5 fluid ounces of her secret
+
+GrowthX solution on each 0.6 acres of her
+lettuce fields. At this rate, how much
+GrowthX, to the nearest gallon, will Ronda
+use for her 104,544 square feet of lettuce
+
+20. An Olympic bicyclist broke a record during a
+
+fields?
+
+race in the French hills. He biked 13 miles in
+17 minutes. What was his average speed, to
+
+(Note: 1 acre = 43,560 square feet;
+
+the nearest integer, in miles per hour?
+
+1 gallon = 128 fluid ounces)
+
+A.
+
+4
+
+A.
+
+0.013
+
+B.
+
+33
+
+B.
+
+0.028
+
+C.
+
+46
+
+C.
+
+0.047
+
+D.
+
+52
+
+D.
+
+0.078
+
+21. One day on the foreign exchange market, 1
+U.S. dollar could be exchanged for 20.3
+
+25. A racecar has tires with a radius of 1 foot. The
+
+Mexican pesos, and | Japanese yen could be
+
+racecar completes one lap of a race in 53
+
+exchanged for 0.77 U.S. dollars. On that day,
+
+seconds, and the tires rotate at an average rate
+
+which of the following is closest to how many
+
+of 2,876 times per minute. To the closest
+
+Japanese yen could be exchanged for 50
+
+hundredth of a mile, what is the length of the
+
+pesos?
+
+racetrack?
+
+GOP,
+
+(1 mile = 5,280 feet)
+
+0.77
+2.46
+
+A.
