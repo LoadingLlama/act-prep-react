@@ -1,0 +1,1083 @@
+Chapter 7: Algebra Skills
+Many ACT questions test your core algebra skills. To answer these questions correctly, we need to be able to
+isolate an unknown such as x or y or solve an equation. For any algebra question, be sure to take your time,
+write out each step of the question, and use the calculator to avoid silly mistakes like making a mental math
+error or forgetting a negative sign.
+
+In this section, we will cover the algebra skills that you will need in your toolbox for test day.
+
+1. PEMDAS
+In algebra, order of operations is critical to solving math questions correctly. PEMDAS 1s an acronym to help
+you remember the order of operations in algebra. The rules of PEMDAS are below:
+1.
+
+P-— Parentheses: Complete any calculations inside parentheses first.
+
+2.
+
+E-—Exponents: Next, complete any exponents or square roots.
+
+3.
+
+MD-— Multiplication and Division: Complete any multiplication and division (left-to-right)
+
+4.
+
+AS-— Addition and Subtraction: Complete any addition and subtraction (left-to-right)
+
+Make sure you do the multiplication and division step left-to right! This is where the ACT most often tries
+to trick students. For example, if we are given
+16+4x2-—3
+
+We need to work left-to-right when completing multiplication and division. If solved correctly, we will start
+by dividing 16 by 4 and then multiply by 2. Once we complete the multiplication and division, we will
+subtract 3.
+Correct: 16+4xX2—-3 =4x2-3 =8-3 =5
+Many students make the mistake of doing the multiplication first and then dividing.
+Incorrect:
+
+16+4x2—3 = 16+8-3 = 2-3 =-1
+
+Example 1: What is the value of the expression 22 + (—4)? +2 x (5+ 10)?
+A.
+
+285
+
+B.
+
+142
+
+C.
+
+120
+
+D. 72
+
+Solution: First, complete any calculations in parentheses.
+
+22 + (—4)?+2x15
+Next, complete the exponents.
+22+16+2x15
+
+Complete any multiplication and division from left-to-right.
+22+16+2xX15= 22+8x15=22+4+120
+Finally, complete the addition.
+22 +120 = 142
+
+The answer is B. As long as you follow the PEMDAS steps correctly and work left-to-right correctly, these
+questions should be easy!
+Shortcut Solution — Use Your Calculator: You can also enter these questions directly into your calculator.
+Your calculator is programed to do PEMDAS correctly, so as long as you enter the equation correctly, the
+calculator will just tell you the answer. It’s that easy!
+
+-52-
+
+Chapter 7: Algebra Skills
+
+2. Negative Numbers
+The ACT really really really loves questions with negative numbers. These questions are a prime place where
+
+students make simple mistakes by not knowing how to properly do algebra with negative numbers. Let’s
+review where students most often make mistakes to make sure that you ace these questions on test day.
+
+Subtracting Negative Numbers
+You likely already know that when subtracting a negative number, the negative signs turn into a positive sign
+and you add the numbers together. For example,
+2—(-4)=24+4=6
+That’s easy! The mistake students more often make is forgetting to distribute a negative sign to multiple
+terms. For example, if you are solving
+5x — (2x —5)
+make sure to distribute the negative sign to both the 2x and the —5. Many students forget to distribute the
+negative sign.
+
+Incorrect: 5x — (2x —5) = 5x-—2x-5= 3x—5
+Correct: 5x — (2x —5) = 5x-—2x—(—5) = 3x4+5
+Example 2: Which of the following expressions is equivalent to 2(a + b) — 3(a — 4b) ?
+
+A. —a+14b B. —a + 6b C. —a— 3b D. —a — 9b
+
+G)
+
+Solution: Distribute the —3 to both the a and —4b and combine like terms.
+
+2(a+ b)—3(a—4b) = 2a+ 2b — 3a — 3(-4b) = 2a+ 2b—-—3a+12b = -—a+14b
+The answer is A.
+
+Negative Numbers and Exponents
+The second common mistake occurs when negative numbers are raised to a power. The important thing to
+understand is
+
+—2? is not the same as (—2)?
+For —2?, you first square the 2 and then multiply by the negative sign. For (—2)?, you just square —2. Asa
+result, we see
+
+—2? = -4
+(-2)? = 4
+This principle is very important to understand and can be tested on more difficult ACT questions. Make sure
+you always put negative numbers in parentheses when you enter them into your calculator! If you do not
+use the parentheses, you will get the wrong answer.
+
+Example 3: If x is a real number such that —x? < 0, which of the following must be true?
+A.
+
+x
+
+#0
+
+B.
+
+x >0
+
+C.x <0
+
+D.
+x 20
+
+Solution — “Math Teacher Way”: The negative sign is not in parentheses, so we need to do the exponent
+
+first and then multiply by the negative sign. In order for —x? to be negative, x? must be positive. For x? to be
+
+positive, x must be positive. x cannot equal 0 since —0? = 0. The answer is B.
+
+53
+-
+
+G)
+
+math
+
+Shortcut Solution — Substitution: For conceptual math questions like this, it is easiest to pick test numbers,
+plug them into the equation, and see if they work or not. Here, let’s try x = —2, x = 0, and x = 2.
+
+Forx = —2,-(—2)? = -(-8) = 8
+For x = 0, —(0)? = 0
+Forx = 2,-(2)? = —(8) = -8
+The only value that gave a number less than 0 is x = 2, so the answer is B.
+
+©
+
+3. Combining Like Terms
+Whenever you have the chance, you should combine like terms. Doing so will help you simplify the equation
+and get to the correct answer more quickly.
+
+Example 4: If 2(3x — 6) + 3y = 6x — y + 8, what is the value of y?
+A.
+
+5
+
+B.
+
+3
+
+C.
+
+1
+
+D.
+
+-1
+
+Solution: First, distribute the 2 on the left side of the equation.
+6x —12+3y =6x-—y+8
+
+We have x and y terms on both sides of the equation, so we need to combine like terms. Here, the 6x terms on
+both sides cancel, so we get
+—12+3y=-y+8
+
+Now, combine the y-terms and the numbers and solve. Add y and 12 to both sides to get.
+Ay = 20
+
+y=5
+The answer is A.
+
+©
+
+4. Cross Multiply Fractions
+Whenever you have two fractions equal to one another, we can cross multiply to get rid of the fractions.
+xy
+
+Z
+
+Cross multiplying, we get
+
+Ww
+
+xwW = yz
+
+Example 5: If = = - , what is the value of x?
+
+A=
+14
+
+B448
+
+cf7
+
+Ds3
+
+Solution:
+
+*=5
+4
+7
+21x = 24
+,
+
+24
+
+8
+
+21
+
+7
+
+The answer is C.
+
+-54-
+
+Chapter 7: Algebra Skills
+
+5. Square Both Sides of an Equation Correctly
+In algebra questions with square roots, you often need to square both sides to get rid of the square root. It is
+important to remember that you need to square both sides and not just each individual term. Students will
+often make a mistake on a question like the example below.
+
+Example 6:
+
+Vx =x-2
+
+What value(s) of x solve the equation above?
+A.
+
+1
+
+B.
+
+4
+
+C.
+
+2
+
+D.
+
+1,4
+
+Solution: When we see the x under the square root in this question, we start by squaring both sides of the
+equation. Most students will properly get rid of the square root on the left side of the equation, but they make
+a mistake on the right side by doing this:
+
+x=x?-4
+WRONG! We cannot just square each individual term. We must square the entire equation on each
+side, so it should look like this:
+
+(vx)? = (x — 2)?
+If you prefer, you can also write out the right side of the equation like this to help make sure you remember to
+properly expand the expression.
+
+(Vx)? = (x — 2)(x — 2)
+If we properly square both sides of the equation, we get
+
+x=x*-4Ax+4
+From here, we can combine like terms, set the equation equal to zero, and factor. Moving all of the terms to
+the right side, we get
+
+O0=x*-—5x4+4
+0= (x-4)(x-1)
+x=1,4
+
+It looks like there are two answers to this question, but that is not the case! Anytime you square both sides of
+an equation, you NEED to plug the answers back into the original equation to look for extraneous
+
+solutions. Sometimes when you square both sides of an equation, you get fake answers that look correct but
+do not actually work. Let’s start by checking x = 1.
+
+v1=1-2
+14-1
+
+We see that x = 1 does not work in the original equation, so it is an extraneous solution. Now, we can check
+x=4.
+
+V4=4-2
+2=2
+
+We find that x = 4 works in the original equation, so the answer is B.
+Shortcut solution — Backsolve: We can backsolve this question using the answer choices. By plugging the
+answer choices in of 1, 2, and 4 in for x, we can test each answer choice. Only 4 works, so the answer is B.
+Test-Taking Tip: Whenever you see a question like this, you should just plug the answer choices back
+
+in. It is much faster and easier than solving out algebraically!
+
+-55-
+
+math
+
+6. Algebra with Inequality Signs
+To solve inequalities on the ACT, treat the inequality signs (<,>,<, =) like an = sign and solve using
+algebra. Inequalities can be solved as normal algebraic expressions with the exception of one very important
+rule:
+When multiplying or dividing by a negative number, switch the direction of the inequality sign.
+
+This rule is the most important thing to remember from this section and where students most commonly make
+
+mistakes on inequalities questions. As a quick example, let’s see how to solve the equation below.
+—5x-3>11
+—5x
+> 14
+
+When dividing by —5, we switch the direction inequality sign, so
+14
+
+x<>
+5
+
+Let’s see a second example:
+5x +10 < 2x — 44
+The first step is combining like terms. We subtract 2x from both sides to get the x-terms on the left side. We
+
+then subtract 10 from both sides to get the numbers on the right side.
+5x — 2x < —44—10
+3x
+< —54
+
+x<—2
+3
+x<-18
+
+In this example, we never multiply or divide by a negative number, so the inequality sign stays the same. Just
+
+because we are working with a negative number does not mean we need to flip the inequality sign. Some
+students flip the sign whenever they divide and see a negative sign. Don’t make that mistake! Only flip the
+inequality when you multiply or divide both sides by a negative number.
+Example 7: Which of the following inequalities 1s equivalent to 2x — 6y < 4x — 14?
+
+A.
+
+x > 6y — 14
+
+B.
+
+x >3y—7
+
+C.x<—-3y+7
+
+D.
+
+x > -3y+7
+
+Solution: To solve, we need to isolate x. We need to do this because all the answer choices have x isolated
+on the left side of the equation. To isolate x, we need to move the x-terms to the left side and all other terms to
+the right side. To do this, we need to subtract 4x from both sides and add 6y to both sides.
+2x —6y < 4x — 14
+2x —4x < 6y — 14
+—2x
+< 6y— 14
+
+To get x by itself, we need to divide both sides by —2. Since we are dividing by a negative, we also need to
+switch the direction of the inequality sign.
+x>
+
+6y — 14
+—2
+
+Now, we can simplify the terms on the night side of the equation and solve.
+x>—-3y+7
+The answer is D.
+
+-56-
+
+Chapter 7: Algebra Skills
+
+7. Taking Square Roots in Algebraic Equations
+When solving an algebra question, you may need to find the value of a variable that is squared. For example,
+if we have the equation
+
+x2 =9
+we need to take the square root of both sides to solve. Many students take the square root and get x = 3,
+which is WRONG! To take the square root properly, we need to use the following rule
+
+When taking the square root of a squared variable (x*), add a + in front of the number.
+For the example equation above, we should solve using the following steps to solve properly.
+
+x? =9
+[x2
+
+1. Take square root of both sides.
+
+= +9
+
+2. Adda +
+
+y= 43
+
+sign in front of the number.
+
+3. Simplify
+
+x = —-3,3
+
+Notice that we get 2 answers! This makes sense because both (—3)? and 3? equal 9.
+Now, it is important to clarify that this only applies to taking the square root of algebraic equations with
+
+squared terms, like x*. You do not add a + sign when taking the square root of only a number.
+
+Correct: /9 = 3
+
+Incorrect: /9 = +3
+
+The square root of 9 is only 3, not +3. Square roots are always positive. Understanding this difference is
+important for solving questions involving square roots and variables correctly.
+
+Example 8: What value(s) of x are solutions to the equation x? + 10 = 46?
+
+A. —6 B. 6 C. 0,6 D. —6,6
+
+Solution: When solving an equation with an x* term and numbers, start by getting the x? term on one side by
+itself. To do that, we need to subtract 10 from both sides.
+
+x? +10
+= 46
+x?
+= 36
+
+Now, we can take the square root of both sides. Since we are taking the square root with an x? term, we need
+to add a + sign in front of the number.
+
+Vx?
+
+= +vV36
+
+x = +6
+x =-6,6
+
+The correct answer is D.
+
+-57-
+
+©)
+
+math
+
+Algebra Skills Practice: Answers on page 325.
+
+1.
+
+Which of the following expressions 1s
+
+7.
+
+(x2 +5) — (2x? — 2)?
+
+equivalent to (x* + x) + (x? — x)?
+A.
+B.
+C.
+D.
+
+Which expression is equivalent to
+
+x’
+x*4+x3—x?
+x*+x3
+x’?
+
+GaAWp>
+
+Given
+g = —5,r
+= 3,andm = 2,
+
+8.
+
+(g-m)r-g+m)=?
+
+—x? 43
+—x? +7
+3x2 +3
+3x2 +7
+
+Givenz = ¥254+ 3 —4
+= 2, what does z
+equal?
+
+A.
+
+—70
+
+A.
+
+—4
+
+B.
+
+—56
+
+B.
+
+-3
+
+C.
+
+—20
+
+C.
+
+2
+
+D.
+
+0
+
+D.
+
+6
+
+9.
+If4x —18 = 14,x =?
+A.
+
+-1
+
+B.
+
+4
+
+C.
+
+8
+
+D.
+
+12
+
+,
+
+—16
+
+B.
+
+—4
+
+C.
+
+0
+
+D.
+
+4
+
+expression below?
+
+(x2y? — 4x3 + 2xy?) — (2x2y? + 2x3 — 3xy?)
+
+—43
+—1
+
+A.
+B.
+C.
+D.
+
+47
+
+59
+
+Which expression is equivalent to
+
+3xy? — 6x3 — 5xy?
+3xy? + 6x3 — xy?
+—x?y? + 2x3 — 5xy?
+—x*y? — 6x3 + Sxy?
+
+11. What is the greatest integer solution to
+
+(3x2 — 2x +5) — (—2x*+ 3x — 2)?
+
+—8x+3>-144?
+
+x*—x+7
+x? —5x +7
+5x7 +x4+3
+5x*—5x+7
+
+The solution set of 3 — 5x > —22 is the set of
+
+A.
+
+—2
+
+B.
+
+-1
+
+C.
+
+1
+
+D.
+
+2
+
+12. If 5(3x — 3) — 2(2x — 4) = 5(2x + 2), what
+
+all real values of x such that:
+
+Gaw>
+
+A.
+
+10. Which of the following is equivalent to the
+
+x3 + 2x?y —5Sxy? + 3y?
+
+GaAW>
+
+1
+
+equation x — 72 =2?
+
+If x = —1 and y = 3, what is the value of
+
+GaAWp>
+
+Ifx = —2, what is the value of b in the
+
+is the value of x?
+
+x>-—5
+x<-5
+x>5
+x<5
+
+- 58
+-
+
+A.
+
+—13
+
+B.
+
+3
+
+C.
+
+9
+
+D.
+
+17
+
+Chapter 7: Algebra Skills
+
+13. Which of the following inequalities describes
+
+19. For what value of x is the equation
+
+the solution set for 6x
+— 7 > 2x +4?
+
+x-3=VJx4+17 true?
+
+A. x>-=
+
+A. -1
+B.
+
+11
+
+C. x< =
+
+D. 8
+
+D. x> =
+
+20. If V3x + 10 = x + 2, what is the value of x?
+
+14. What value of x makes the expression
+3(5x — 20) — (5x — 60) = 80 true?
+B.
+
+1
+
+CG)
+
+A. 6
+6 2;
+
+8
+
+C. 10
+dD.
+
+;
+,
+21. For what value of x is the expression
+8x+24
+
+mag
+
+true?
+
+15. For the equation 3x? + 15 = 18, what value(s) ©)
+of x make the equation true?
+
+A.
+
+A.
+
+1
+
+B. VII
+
+3
+
+B.
+
+5
+
+C.
+
+8
+
+D. t2
+
+Cc.
+
+—V11,v11
+
+D.
+
+—1,1
+
+22. What is the value of the expression
+
+12+2-—5+4+(-3)?x2?
+
+16. Which of the following inequalities is
+
+equivalent to —2a — 8b > 30a — 48 ?
+
+A.
+
+—58
+
+A. b>4a+48
+
+6 rs
+
+B.
+
+b>4a—-6
+
+5
+
+C.
+
+b<-—-4a+6
+
+D.
+
+b>—4a+ 6
+
+23. What is the solution set of the equation
+
+Vx -—3=x-—3?
+
+17. Which of the following expressions is
+.
+
+2a
+
+equivalent to 3p
+
+3a+1=15b
+
+B.
+
+2a*+1=15b
+
+C.
+
+5
+
+A.
+
+Gl ?
+
+A.
+
+D.
+
+eo
+
+(Q
+
+{3}
+
+B.
+
+{4
+
+Cc.
+
+D. {3,4}
+o4.
+
+2a74+2a=3b4+5
+
+2a2 + 2a =15b
+
+that
+
+Given
+
+of y?
+
+18. If = = =—* and k = 2, what is the value of
+
+A. =
+
+9
+
+x4
+
+1
+
+RB
+
+2
+
+Cc
+
+2
+
+15
+
+A.
+
+2
+
+B.
+
+4
+
+D.
+
+8
+
+52
+
+C. 6
+
+DF
+
+59
+-
+
+2 = Zand
+
+2
+
+hats
+
+the
+
+val
+
+. Giventhat — = > an yew at is the value
+
+math
+
+25. What is the value of the expression
+12+3x(—2)74+11 9
+
+(4) 30. The inequality 3x? y > 0 is true for real
+numbers x and y, where y < 0. If it can be
+
+(2-5)3x10+5
+
+A.
+
+determined, which of the following statements
+must be true?
+
+-2
+
+B. ->
+
+GaAWp>
+
+D. =
+
+X 1S a positive even integer.
+x 1S a positive odd integer.
+x<0
+x>0
+
+31. What value(s) of x satisfy the equation
+
+26. Let x and y represent real numbers with the
+
+12x? + 4x2 -3x-1=0?
+
+property x? — y = 0. Which of the following
+statements MUST be true?
+
+GUaAWP>
+
+1
+
+A.
+
+-=
+
+x >Oandy<0
+
+B.
+
+=
+
+x=+,/yandy >0
+
+Cc, -+,+
+2 2
+
+x >Oandy>0
+
+x=+,/yandy <0
+
+D.
+
+3
+
+—-~ SAS
+2
+
+3.2
+
+27. Which of the following operations will produce
+the largest result when substituted in for the
+
+30
+
+blank in the expression 101s (— =) ?
+
+GaAWpY
+
+)
+
+A. =4
+
+Divided by
+Minus
+
+B.
+
+Plus
+
+the value of - ?
+
+3
+
+Cc. 28
+
+Multiplied by
+
+D =
+13
+
+28. Given that the equation ~ = - is true, what is
+
+If the positive integers x and y are relatively
+
+On
+
+prime (their greatest common factor is 1) and
+
+>GOW
+
+1
+
+1
+
+A.
+
+4
+
+B.
+
+7
+
+C.
+
+9
+
+D.
+
+11
+
+=
+
+1
+
+4
+
+x
+
+=
+ase lta
+~+5X575
+y then x + y —?:
+
+29. Let a and b represent real numbers with the
+
+property
+
+34
+
+a— b—2> 0. Which of the
+
+,
+
+following statements MUST be true?
+
+GaAWp,>
+
+If
+=5
+what is the value of =?
+2x+y
+5
+x
+
+a-—b=2
+a-b>2
+
+a<Qandb>0
+a>2andb<0
+
+- 60
+-
+
+For every negative value of a, all the following
+statements are true except:
+
+A.
+
+3a<0
+
+B.
+
+a’ <0
+
+C.
+
+la|+2a<0
+
+D.
+
+ja|-a=0
+
+Chapter 8: Number Theory
+

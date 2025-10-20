@@ -1,0 +1,92 @@
+# LESSON TEMPLATE
+# Copy this file and fill in your content
+# Then run: node scripts/upload-lesson.js docs/your-lesson.txt
+
+## 1. Introduction
+
+This is a paragraph. Use {key terms} in curly braces to highlight important concepts.
+
+- First bullet point
+- Second bullet point
+- Third bullet point with details:
+  - Nested bullet 1
+  - Nested bullet 2
+
+## 2. Main Concept
+
+Another paragraph explaining the concept. The {term} will be blue and underlined automatically.
+
+You can have multiple paragraphs. Just separate them with blank lines.
+
+### Step 1: First Step
+
+This is a subsection (###). Use it for steps or sub-topics.
+
+- Key point 1
+- Key point 2
+- Key point 3
+
+### Step 2: Second Step
+
+More content here...
+
+## 3. Examples
+
+EXAMPLE: Basic Problem
+If 2x + 5 = 15, what is the value of x?
+A. 2
+B. 5
+C. 7
+D. 10
+E. 15
+
+SOLUTION:
+Try C (7):
+2(7) + 5
+= 14 + 5
+= 19
+≠ 15
+Doesn't work
+
+Try B (5):
+2(5) + 5
+= 10 + 5
+= 15
+✓ Works!
+
+EXAMPLE: Another Example
+Problem text here...
+A. Choice A
+B. Choice B
+C. Choice C
+D. Choice D
+E. Choice E
+
+SOLUTION:
+Try C:
+Step 1
+Step 2
+Doesn't work
+
+Try A:
+Step 1
+Step 2
+Works!
+
+## 4. When to Use This Strategy
+
+Explain when to apply this concept...
+
+- Situation 1
+- Situation 2
+- Situation 3
+
+KEY TAKEAWAYS:
+- First important takeaway point
+- Second important takeaway point
+- Third important takeaway point
+- Fourth takeaway - be concise and clear
+- Fifth takeaway summarizing the lesson
+
+---
+END OF TEMPLATE

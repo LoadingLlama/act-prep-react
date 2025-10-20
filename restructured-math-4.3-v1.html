@@ -1,0 +1,194 @@
+<!-- Topic 4.3: Functions -->
+<!-- Restructured using Golden Template v5.2 -->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+A function is a mathematical relationship where each input produces exactly one output. Functions appear frequently on the ACT—you need to know how to evaluate them, combine them using <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">composite functions</strong>, and interpret various function notations.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. Function Basics and Evaluation
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">The fundamental definition of a function:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">For every value of x (the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">input</strong>), there is exactly one value of f(x) (the <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">output</strong>)</li>
+      <li style="margin: 0.2rem 0;">The input appears inside the parentheses: f(3), f(x), f(a-11)</li>
+      <li style="margin: 0.2rem 0;">The output is what f(x) equals after you plug in the input</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">How to evaluate a function—plug in the input for x:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If f(x) = 5x - 2, then:</li>
+      <li style="margin: 0.2rem 0;">f(3) = 5(3) - 2 = 13</li>
+      <li style="margin: 0.2rem 0;">f(-2x) = 5(-2x) - 2 = -10x - 2</li>
+      <li style="margin: 0.2rem 0;">f(a - 11) = 5(a - 11) - 2 = 5a - 57</li>
+      <li style="margin: 0.2rem 0;">The input can be a number, variable, or entire expression—always plug it in for x!</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: If f(x) = 3√x + 11, what is f(25)?
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Plug 25 in for x: f(25) = 3√25 + 11</li>
+      <li style="margin: 0.2rem 0;">Evaluate: 3(5) + 11 = 15 + 11 = 26</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Functions with two variables:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If f(x,y) = 4x - y², what is f(5, 2)?</li>
+      <li style="margin: 0.2rem 0;">Plug in 5 for x and 2 for y: f(5,2) = 4(5) - 2² = 20 - 4 = 16</li>
+      <li style="margin: 0.2rem 0;">Same concept—just plug each value into its corresponding variable</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Working backwards—finding x when given f(x):
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If f(x) = 10x/(x+4) and f(x) = 5, what is x?</li>
+      <li style="margin: 0.2rem 0;">Set up equation: 5 = 10x/(x+4)</li>
+      <li style="margin: 0.2rem 0;">Cross multiply: 5(x+4) = 10x</li>
+      <li style="margin: 0.2rem 0;">Solve: 5x + 20 = 10x → 20 = 5x → x = 4</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Composite Functions
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">What is a <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">composite function</strong>?
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">A function written inside another function</li>
+      <li style="margin: 0.2rem 0;">Example: f(g(8)) means "plug g(8) into the function f"</li>
+      <li style="margin: 0.2rem 0;">The ACT frequently tests these—you need TWO methods to solve</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Method #1: Solve for the composite function first
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If f(x) = 3x + 10 and g(x) = x - 5, find f(g(8))</li>
+      <li style="margin: 0.2rem 0;">Step 1: Find f(g(x)) by plugging ALL of g(x) into f</li>
+      <li style="margin: 0.2rem 0;">f(g(x)) = 3(x - 5) + 10 = 3x - 15 + 10 = 3x - 5</li>
+      <li style="margin: 0.2rem 0;">Step 2: Now plug in 8: f(g(8)) = 3(8) - 5 = 19</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Method #2: Work inside out
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Same problem: If f(x) = 3x + 10 and g(x) = x - 5, find f(g(8))</li>
+      <li style="margin: 0.2rem 0;">Step 1: Solve the inside function first: g(8) = 8 - 5 = 3</li>
+      <li style="margin: 0.2rem 0;">Step 2: Now f(g(8)) = f(3)</li>
+      <li style="margin: 0.2rem 0;">Step 3: Evaluate f(3): f(3) = 3(3) + 10 = 19</li>
+      <li style="margin: 0.2rem 0;">Both methods work—use whichever feels more natural!</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">CRITICAL: Remember to FOIL when squaring binomials
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If f(x) = 2x² - 7 and g(x) = x + 3, find f(g(x-1))</li>
+      <li style="margin: 0.2rem 0;">Step 1: Find g(x-1): g(x-1) = (x-1) + 3 = x + 2</li>
+      <li style="margin: 0.2rem 0;">Step 2: Find f(x+2): f(x+2) = 2(x+2)² - 7</li>
+      <li style="margin: 0.2rem 0;">Step 3: FOIL the binomial: 2(x² + 4x + 4) - 7</li>
+      <li style="margin: 0.2rem 0;">Step 4: Distribute and simplify: 2x² + 8x + 8 - 7 = 2x² + 8x + 1</li>
+      <li style="margin: 0.2rem 0;"><strong>Common mistake:</strong> (x+2)² ≠ x² + 4. You MUST multiply it out!</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Other Function Notations
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">The ACT uses different notation styles—memorize these operations:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;"><strong>Composite:</strong> (f ∘ g)(x) = f(g(x))</li>
+      <li style="margin: 0.2rem 0;"><strong>Sum:</strong> (f + g)(x) = f(x) + g(x)</li>
+      <li style="margin: 0.2rem 0;"><strong>Difference:</strong> (f - g)(x) = f(x) - g(x)</li>
+      <li style="margin: 0.2rem 0;"><strong>Product:</strong> (fg)(x) = f(x) × g(x)</li>
+      <li style="margin: 0.2rem 0;"><strong>Quotient:</strong> (f/g)(x) = f(x) ÷ g(x)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example with product notation:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If f(x) = 2x² + 1 and g(x) = x² - 1, find (fg)(x)</li>
+      <li style="margin: 0.2rem 0;">(fg)(x) = f(x) × g(x) = (2x² + 1)(x² - 1)</li>
+      <li style="margin: 0.2rem 0;">FOIL: 2x⁴ - 2x² + x² - 1 = 2x⁴ - x² - 1</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Don't confuse operations:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">(f ∘ g)(x) means COMPOSITE (plug g into f)</li>
+      <li style="margin: 0.2rem 0;">(fg)(x) means MULTIPLY f times g</li>
+      <li style="margin: 0.2rem 0;">The little circle "∘" specifically means composite!</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Functions on Graphs
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Reading function values from a graph:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">To find f(a), look at x = a on the graph and find the y-value</li>
+      <li style="margin: 0.2rem 0;">The point (a, b) means f(a) = b</li>
+      <li style="margin: 0.2rem 0;">Example: If the point (3, 7) is on the graph of f, then f(3) = 7</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">The <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">vertical line test</strong>:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">A graph represents a function ONLY if every vertical line crosses it at most once</li>
+      <li style="margin: 0.2rem 0;">If a vertical line crosses twice, that x-value has two outputs—NOT a function!</li>
+      <li style="margin: 0.2rem 0;">Remember: Each input must have exactly ONE output</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+5. Domain and Range
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Definitions you must know:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Domain:</strong> All possible input values (x-values)</li>
+      <li style="margin: 0.2rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Range:</strong> All possible output values (y-values or f(x)-values)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Finding domain—what x-values are NOT allowed:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Cannot divide by zero: If f(x) = 1/(x-3), then x ≠ 3</li>
+      <li style="margin: 0.2rem 0;">Cannot take square root of negative: If f(x) = √(x+5), then x ≥ -5</li>
+      <li style="margin: 0.2rem 0;">The domain is all real numbers EXCEPT these restrictions</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: Find the domain of f(x) = 1/(x² - 5x + 6)
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">The function is undefined when the denominator equals zero</li>
+      <li style="margin: 0.2rem 0;">Set denominator to zero: x² - 5x + 6 = 0</li>
+      <li style="margin: 0.2rem 0;">Factor: (x - 2)(x - 3) = 0</li>
+      <li style="margin: 0.2rem 0;">Solutions: x = 2 and x = 3</li>
+      <li style="margin: 0.2rem 0;">Domain: All real numbers EXCEPT x = 2 and x = 3</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>For composite functions f(g(x)), you can either solve for the composite function first OR work inside out—both methods work!
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Remember to FOIL when squaring binomials: (x+2)² = x² + 4x + 4, NOT x² + 4
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Know your function notations: (f ∘ g)(x) = composite, (fg)(x) = multiply, (f+g)(x) = add, (f-g)(x) = subtract, (f/g)(x) = divide
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Domain is all x-values that work (watch for division by zero and square roots of negatives); range is all possible y-values
+  </li>
+</ul>

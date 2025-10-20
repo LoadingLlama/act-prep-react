@@ -1,0 +1,755 @@
+Chapter 31: Arcs and Sectors
+Arcs and sectors questions occasionally appear on the ACT. This topic is not as commonly tested as the rest of
+the geometry concepts we covered in Chapters 3-4, but it is one that you should still be familiar with for test
+day.
+
+Arcs
+The arc of a circle is a portion of the circumference. Arcs can be measured in two ways: the degree measure of
+the arc or the length of the arc itself.
+Degree Measure of Arc AB
+
+Length of Arc AB
+
+A
+
+A
+135°
+
+10
+
+B
+
+B
+
+The degree measure of an arc is equal to the measure of the central angle intersecting the arc. The arc
+length is the actual distance covered moving from point A to point B along the circle.
+
+To solve arc questions, you need to memorize the two equations below. These are different versions of the
+same equation. Being familiar with both the conceptual idea and the actual equation well help you solve
+different types of arc questions on the ACT.
+
+ArcLength
+
+— Angle Measure
+
+Circumference _
+
+Lo 6
+
+360°
+
+2nr
+
+360
+
+6 = central angle
+
+r = radius
+
+Example 1: In the circle to the right, the length of minor arc BC is 67 and the
+radius is 8. What is the measure of ZA in degrees?
+A. 270
+
+B.
+
+180
+
+©.
+
+135.
+
+D.
+
+L
+
+L = are length
+
+100
+
+Solution: Using the arc equation, we can setup and solve for the measure of the central angle.
+
+610
+
+6
+
+2m(8)
+
+360
+
+610
+
+6
+
+16x
+
+360
+
+Next, it is easiest to simplify the fraction on the left-hand side and cancel out the zz.
+3
+
+8
+
+8
+
+360
+
+1080 = 86
+
+135 =8@
+The answer is C.
+
+- 275
+-
+
+C
+
+math
+
+Example 2: Sherry is making a pie chart to represent the favorite ice cream flavor of her classmates. If 5
+
+out of the 25 students in Sherry’s class selected strawberry as their favorite flavor, what should the
+measure of the central angle, in degrees, be for the strawberry sector?
+A.
+
+72
+
+B. 80
+
+C. 95
+
+D.
+
+108
+
+Solution: The proportion of the students who selected strawberry, 5, to the total students in class, 25, is
+equal to the proportion of the measure of the central angle to 360°.
+
+> _ 7?
+
+1H.
+
+25.360
+
++45 360
+
+369-56
+~
+
+9=72
+The answer is A.
+
+TIP — Inscribed Angle Theorem
+An inscribed angle is an angle that has its vertex on a circle and whose sides are chords. While that fancy
+definition may seem confusing, all you need to know for the ACT is the following rule:
+
+0-4)
+
+For an inscribed angle and central angle that intersect the
+same portion of the arc, the inscribed angle is half the measure
+of the central angle.
+
+As you can see in the figure, the inscribed angle of 45°1s half of the
+measure of the central angle of 90°. This rule does not come up
+often on the ACT, but you should still memorize it just in case.
+
+©) Sectors
+The sector is the measure of the area of a portion of a circle. To solve sector questions, you need to memorize
+the equations below.
+
+SectorArea — Angle Measure
+
+S _ 8
+
+Area of Circle _
+
+nmr2—- 360
+
+360°
+
+S = sector area
+
+& = central angle
+
+r = radius
+
+Example 3: For the circle to the right, the radius is 6. If 2C = 150°, what is
+
+D
+
+the area of sector BCD?
+A. 82
+
+B. 102
+
+C. 127
+
+B
+
+D. 15z
+
+Solution: Using the sector equation above, we can plug in the values from the question and solve to find the
+area of the sector.
+S
+
+150
+
+S
+
+150
+
+m(6)2
+
+360
+
+36m
+
+360
+
+Simplify the fraction on the right side we get
+S
+
+15
+
+36m 36
+
+- 276
+-
+
+Chapter 31: Arcs and Sectors
+
+Since both sides have 36 in the denominator, we can multiply both sides by 36 and cancel out the 36s to get
+
+The answer is D.
+
+Example 4: Andrew bought a 12-inch diameter pumpkin pie and cut it into 12 equal slices. After eating
+
+2 slices, he calculates that he consumed 480 calories. How many total calories are in the entire pie?
+A.
+
+1,440
+
+B.
+
+1,920
+
+C2400
+
+D. 2,880
+
+Solution: The proportion of calories in two slices to calories in the entire pie is equal to the proportion of the
+area of the 2 slices of pie to area of the entire pie.
+calories in 2 slices
+
+2 slices
+
+calories in whole pie ~ 12 slices
+480 _ 2
+
+x
+
+12
+
+480(12) = 2x
+480(12)
+x = —— = 2,880
+2
+The answer is D.
+
+Arcs and Sectors Practice: Answers on page 333.
+
+1.
+
+The circle below has a circumference of 307. ©)
+
+3.
+
+of the semicircle below?
+
+A.
+
+5%
+
+A.
+
+5%
+
+B.
+
+67
+
+B.
+
+52+ 10
+
+C.
+
+82
+
+D.
+
+102
+
+A
+
+4.
+2.
+
+The length of AB is 10. What is the perimeter
+
+What is the length of minor arc AB?
+
+C.
+
+107+ 10
+
+D.
+
+25
+
+A
+
+B
+
+Christine’s famous chocolate cake contains
+
+Youngstown high school is creating a circle
+
+2,700 calories. If the cake is sliced evenly into
+
+graph to represent the amount of money
+
+9 slices, what is the central angle of each of the
+
+different clubs raised for a school fundraiser.
+
+slices?
+
+The clubs raised a total of $15,000. The speech
+
+club raised $1,500. What will be the central
+
+A.
+
+40°
+
+angle of the sector that displays the money the
+
+B.
+
+45°
+
+speech club raised?
+
+C.
+
+50°
+
+D.
+
+55°
+
+A.
+
+25°
+
+B.
+
+36°
+
+C.
+
+45°
+
+D.
+
+60°
+
+- 277
+-
+
+math
+
+© °*
+
+Dave is making a pie chart to represent the
+
+G) 9.
+
+In the figure below, AC is a diameter of the
+
+different fruits he currently has in the house.
+
+circle and has a length of 12. What is the
+
+If he has 8 bananas, 6 apples, 4 oranges, and 6
+
+length of minor arc AB?
+
+B
+
+plums, what is the central angle of the portion
+of the pie chart that represents the apples?
+A.
+
+45°
+
+B.
+
+60°
+
+C.
+
+90°
+
+D.
+
+100°
+
+A.
+
+31
+
+B.
+
+42
+
+C.
+
+52
+
+D. 6z
+
+A
+
+4x
+
+5x
+
+C
+
+Adriana’s bakery is using a pie chart to display
+their monthly expenses. Rent is 30% of the
+
+monthly expenses. One sector of the chart will
+be used to display rent. What will be the
+
+10. Last month, Larissa had total expenditures of
+
+$1,200. She spent $750 on a new phone, $275
+
+central angle for that sector?
+
+on her car, $125 on groceries, and $50 on
+A.
+
+30°
+
+clothing. She will create a circle graph to
+
+B.
+
+60°
+
+represent her expenditures from last month.
+
+C.
+
+90°
+
+Each sector of the circle graph will represent
+
+D.
+
+108°
+
+the percent of her income spent on that
+category. What will be the measure of the
+central angle for the car sector?
+
+Trey’s construction company is cutting a circle
+
+A.
+
+76°
+
+of concrete into 7 slices. If the original circle
+
+B.
+
+82.5°
+
+of concrete has a diameter of 24 meters, what 1s
+
+C.
+
+99,.25°
+
+the approximate area, in square meters, of one
+
+D.
+
+112°
+
+slice of concrete?
+A.
+
+20
+
+B.
+
+51
+
+C.
+
+65
+
+D.
+
+82
+
+@" Kristine is building a concrete patio in the
+shape shown below. The patio has a depth of 8
+inches and a radius of 8 feet. If each bag of
+
+Jin asked 80 of his classmates to pick their
+
+concrete mix makes 5 cubic feet of concrete,
+
+favorite ice cream flavor from 5 options. Jin
+
+how many bags does Kristine need for the
+
+will represent the results in a circle graph. 20
+
+patio?
+
+students picked rocky road, and 24 selected
+chocolate chip cookie dough. Strawberry, mint
+
+A.
+
+chip, and chocolate were chosen as favorites by
+
+Coo
+
+an equal number of the remaining students.
+
+D. 23
+
+What is the measure of the central angle for
+mint chip in the circle graph?
+A.
+
+42°
+
+B.
+
+47.5°
+
+C.
+
+54°
+
+D.
+
+58.5°
+
+15
+
+- 278
+-
+
+3h
+
+60°
+
+on
+
+Chapter 31: Arcs and Sectors
+
+12. Morgan is sharing a pizza with a diameter of 18
+
+16. The circle below shows the path for a cross
+
+inches with 5 of her classmates. Eric eats one
+
+country race. In the race, runners start at point
+
+quarter of the pizza, and the remaining 5 people
+
+C, run to point A, and then run to the finish line
+
+share the rest of the pizza evenly. To the
+
+at point B. Which of the following is closest to
+
+nearest integer, how many square inches of
+
+the total distance, in kilometers, of the race?
+
+pizza did Morgan eat?
+
+A
+A.
+
+7.3
+
+A.
+
+2
+
+B.
+
+7.7
+
+C.
+
+32
+
+D.
+
+8.9
+
+D.
+
+38
+
+B.
+
+19
+
+C.
+
+85
+
+coo
+
+>
+
+13. In the circle shown below, chords LO and MN G)
+intersect at point P, which is the center of the
+circle. The circle has a radius of 6, what is the
+length of arc
+
+NO?
+
+A. 21
+
+L
+
+17. An object is traveling around a circle with
+
+center O and radius of 6 meters, as shown
+
+6
+
+D
+
+N
+
+below. The object travels at a rate of = m per
+
+second. Ifthe object starts at point B and
+
+or
+
+travels for 18 seconds to reach point A, what is
+
+the value of 8 in radians?
+
+M er O
+
+(Note: Figure is not drawn to scale.)
+A
+9
+
+14. In the semicircle below, DE and DC are radii.
+
+A.
+
+The length of arc EC is 207m andx = 50. What
+
+B
+
+is the length of DE?
+
+A. 144
+B. 72
+C.
+
+36
+
+D.
+
+12
+
+A
+
+Cc
+
+°
+
+3
+
+8
+
+B
+
+2
+
+9
+
+Dg
+
+18. Point O is the center of the circle with the
+
+radius of - If the area of sector BOC is written
+
+15. Tommy is painting a mural. The shape of the
+
+as kre, what is the value ofk ?
+
+mural is shown below. ZBAD = 150°. For
+
+each jar of paint, Tommy can cover 90 square
+
+C
+
+feet. How many jars of paint will Tommy need
+to paint the entire mural?
+
+A. 8
+
+A
+
+B
+
+Da
+
+D
+
+:
+
+A. 0.238
+
+QD
+
+- 279
+-
+
+B.
+
+0317
+
+C.
+
+0.475
+
+D.
+
+0.633
+
+G)
+
+math
+

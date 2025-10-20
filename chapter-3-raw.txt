@@ -1,0 +1,932 @@
+math
+
+Chapter 3: Geometry Part 1 — Angles
+In this chapter, we will cover all the rules you need to know for angles questions on the ACT. For angles
+questions, put your pencil to work by finding and labeling unknown angles. The more angles you label,
+the easier it will be to find the angle you need to know to answer the question.
+
+©
+
+Intersecting Lines
+If two lines intersect, what do we know about the relationships between the angles?
+
+1.
+
+2.
+
+Vertical angles are equal.
+
+Adjacent angles are supplementary (x and y add to 180°).
+
+Parallel Lines
+
+1 /2
+3/4
+
+5/6
+
+/8
+Given two parallel lines, we know the following are true:
+1.
+
+Vertical angles are equal (ex: 21 = 24).
+
+2.
+
+Alternate interior angles are equal (ex: 23 = 26).
+
+3.
+
+Opposite interior angles are supplementary (ex: 23 + 25 = 180° and 24 + 26 = 180°).
+
+4.
+
+Corresponding angles are equal (ex: 22 = 26).
+
+All those rules and fancy terms are nice, but all you really need to know 1s that whenever two parallel lines are
+intersected by another line, there are two sets of identical angles.
+41=244=245=28
+42=243=246=27
+
+Any of the angles from the first list will be supplementary with any of the angles from the second list. For
+
+example, 21 + 26 = 180° and 24 + 27 = 180°. As long as you memorize which angles are identical, you
+will be able to handle parallel lines questions.
+Example 1:
+
+A
+
+B
+
+C
+
+ai
+
+D
+
+In the figure above, AB is parallel with CD. What is the value of x?
+A.
+
+34
+
+B. 40
+
+C. 48
+
+D. 56
+
+Solution: We know that all angles in a triangle add up to 180°, so we can find the unknown third angle in the
+triangle above.
+Third angle = 180° — 34° — 90° = 56°
+
+The third angle we just found and x° are alternate interior angles, so they must be equal. The answer is D.
+
+Chapter 3: Geometry Part 1 - Angles
+
+TIP — Extend Parallel Lines
+Sometimes questions with parallel lines will not always look like the parallel lines in the figure. Ifthe lines
+just hit and stop (ex: the corner of a parallelogram), take your pencil and extend the lines yourself to make
+the question look like the figure above. Then, it will be much easier to tell which angles are identical.
+
+Interior Angles in Polygons
+You need to know the sum of the interior angles of a...
+
+Triangle
+
+Quadrilateral
+
+Pentagon
+
+Hexagon
+
+180°
+
+360°
+
+540°
+
+720°
+
+For any polygon,
+
+Sum of Interior Angles = 180°(n — 2) where n is the number of sides.
+It does not matter what the shape looks like. All that matters for the sum of the interior angles is the number of
+sides. You can see how this works with the examples below:
+
+ZA (IZX ©
+180°
+
+360°
+
+540°
+
+360°
+
+Example 2: In AABC below, the measure of ZABD is 68°, the measure of ZACD
+and AD is a bisector of CAB. What is the measure of ZADC ?
+C
+A.
+
+92
+
+B.
+
+100
+
+C.
+
+104
+
+D. 108
+
+is 40°, D is on BC,
+
+D
+A
+
+68°
+
+B
+
+Solution: We know that all angles in a triangle add to 180°, so we can use AABC to find ZCAB.
+ZCAB + ZABD + ZACD = 180°
+
+Since we are given ZABD = 68° and ZACD = 40°, we can solve for 2CAB.
+ZCAB + 68° + 40° = 180°
+
+ZCAB = 180° — 68° — 40°
+ZCAB = 72°
+
+math
+
+The question tells us that AD is a bisector of ZCAB. A bisector cuts an angle in half, so we know that
+ZCAD = ZBAD
+
+Since the entire angle 2CAB = 72°, we now know that ZCAD and ZBAD are half of 2CAB and
+ZCAD = ZBAD = 36°
+
+Now that we know these angles, we can use AADC to find ZADC. Again, we know all the angles in the
+triangle must add to 180° so
+ZADC + ZACD + ZCAD = 180°
+
+We are given that ZACD = 40° and just found that 2CAD= 36°. Now we can solve for ZADC.
+ZADC + 40° + 36° = 180°
+
+ZADC = 180° — 40° — 36°
+ZADC = 104°
+The answer is D.
+
+Example 3: For the given figure, what is the value of x?
+A.
+
+72
+
+B.
+
+88
+
+C.
+
+90
+
+D.
+
+105
+
+Solution: The figure above has 5 sides, so the total interior angles are equal to 180°(5 — 2) = 540°.
+x° + 1.3x° + L4x° + 1.2x° + 1.1x° = 540°
+6x° = 540°
+x = 90
+The answer is D.
+
+TIP — All figures are drawn to scale
+All figures on the ACT are drawn to scale! You can trust the angles and side lengths in the figure.
+
+If you are given a figure and do not know how to solve the question, look at the answer choices to see if
+you can make an educated guess on which answer looks correct. Quite often, you can rule out certain
+answer choices that clearly do not match the figure.
+The only exception is if you see, “Note: Figure not drawn to scale.” This rarely occurs on the ACT,
+but in case you do see it, do not trust the figure.
+
+115°
+
+65"
+Note: Figure not drawn to scale.
+
+In the figures above, we see that the angle labelled as 65° in the figure on the left is clearly incorrect. On
+the other hand, the figure on the right has no note, so we know the 115° is correct and can trust how the
+figure is drawn to scale.
+
+-10-
+
+Chapter 3: Geometry Part 1 - Angles
+
+Geometry Part 1 — Angles Practice: Answers on page 323.
+
+1.
+
+In the figure below, lines AB and CD are
+parallel, mZAEG = 115°, and mZAFG = 35°.
+
+5.
+
+Inthe figure below, two parallel lines are
+intersected by AB. What is the value of x ?
+
+What is mZEGF ?
+
+Jam>
+
+(Note: The figure is NOT drawn to scale.)
+A
+
+B
+
+\ 7
+
+.
+
+:
+
+G
+
+2.
+
+Gaw>
+
+75°
+
+4
+
+80
+
+Zo
+
+1409
+
+4
+
+eo
+
+a
+
+Iw
+
+g0°
+
+aN
+
+m
+|
+
+100°
+
+In the figure above, lines & and m are parallel.
+
+What is the value of x in the figure below?
+
+A.
+
+25
+
+B.
+C.
+
+30
+35
+
+¥
+
+Ifx = 148 and y = 70, what is the value of
+
+Zz?
+
+A. 102
+B. 78
+
+3
+
+C. 58
+
+(x + 20)"
+
+D. 44
+
+Inthe figure below, AE = DE, BE = CE, and
+
+BC is parallel to AD. If x = 32, what is the ©)
+measure of ZBCE ?
+B
+
+C
+
+Aa
+
+GaAWp>
+
+7.
+
+In the figure below, ify = 54, what is the
+
+value of x?
+
+E
+
+4.
+
+i: e
+
+50
+
+6.
+
+55°
+
+D. 40
+3.
+
+30
+
+40
+
+A.
+
+102
+
+B.
+
+108
+
+C.
+
+112
+
+D.
+
+120
+
+D
+
+26
+28
+48
+
+102°
+fe
+
+—
+
+Inthe figure below, LN intersects KM
+
+P. What is the measure of ZLPM ?
+
+C
+
+at point
+
+B.
+
+12
+
+61
+
+Cc. 129
+
+D. 143
+
+L
+
+(2x + 13)”
+
+K
+
+P
+
+M
+
+(4x — 11)
+
+D
+
+In the figure above, AB is parallel to CD.
+What is the value of x?
+
+A.
+
+63°
+
+A
+
+°
+
+78
+
+B. 108
+
+N
+
+-ll-
+
+Cc.
+
+117
+
+D.
+
+129
+
+math
+
+Want video explanation for how to solve all 1,350+ practice
+questions in this book? Go to page i to learn how to sign up.
+
+©°
+
+In the figure below, AD = AB, CD = BC,
+
+13. In the figure below, lines h and K are parallel.
+
+What is the value of x?
+
+ZABD = 65°, and ZABC = 135°. What is
+
+the measure of 2BCD ?
+
+GOP,
+
+A
+
+35
+40
+
+D
+
+45
+
+L\
+
+A.
+B
+
+B.
+
+102
+
+C.
+
+96
+
+D. 84
+
+54
+
+50
+
+A
+
+14.
+
+h
+
+30°
+
+126
+
+x
+
+4
+k
+
+B
+
+125°
+
+E
+
+270
+340
+
+42°
+
+D
+
+C
+
+In the figure above, AB and EC are parallel,
+AE and BD are parallel. What is the measure
+
+380
+440
+
+of ZABC?
+A.
+
+138
+
+B.
+
+125
+
+C.
+
+105
+
+D.
+
+97
+
+. Triangle LMN and the collinear points L, N,
+
+and P are shown below. What is the measure
+of 2M ?
+
+Note: Figure not drawn to scale.
+
+M
+
+In the figure above, what is the value of x ?
+
+pGan
+
+101
+86
+
+L
+
+79
+
+65
+
+Gap,
+
+64
+
+35°
+
+6x°
+
+\12x°
+
+P
+
+75
+
+85
+95
+
+16. The sum of the interior angle measures of a
+certain polygon is 1620°. How many sides
+
+does this polygon have?
+
+In the figure above, what is the value of x ?
+
+Gap,
+
+A.
+
+9
+
+B
+
+10
+
+C.
+
+58.5
+
+D.
+
+60
+62.25
+67.5
+
+-12-
+
+11
+13
+
+Chapter 3: Geometry Part 1 - Angles
+
+22. If 24 = 126° and 212 = 58°, what is the
+
+Questions #17-25 are based on the figure below:
+
+measure of 27 ?
+In the figure below, parallel lines a and b are
+
+A.
+
+intersected by line x and y.
+
+54°
+
+B.
+
+68°
+
+C.
+
+88°
+
+D.
+
+112°
+
+23. Which of the following pairs of angles are
+
+NOT supplementary?
+
+Note: Figure not drawn to scale.
+17. If 24 = 109° and 25 = 98°, what is the
+
+measure of 29 ?
+A.
+
+27°
+
+B.
+
+41°
+
+C.
+
+82°
+
+D.
+
+98°
+
+22+ 27 = 180°
+
+41+ 25 = 180°
+
+C.
+
+29= 212
+
+D.
+
+46= 27
+
+B.
+
+25= 215
+
+C.
+
+23 = 26
+
+D.
+
+211= 214
+
+25 and 214
+
+A.
+
+84°
+
+B.
+
+96°
+
+C.
+
+132°
+
+D..
+
+150°
+
+and 217 < 212 < 216, which ofthe
+following inequalities must be true?
+
+GaAWp,>
+
+statements must be true?
+27 = 220
+
+211 and 212
+
+D.
+
+25. If angles 12, 16, and 17 are all acute angles
+
+19. Which of the following congruence
+
+A.
+
+27 and 215
+
+C.
+
+is the measure of 215 ?
+
+true?
+
+B.
+
+22 and 23
+
+B.
+
+24. Given that 210 = 150° and 22 = 114°, what
+
+18. Which of the following statements must be
+
+A.
+
+A.
+
+29 < 210 < 215
+46<29< 23
+£2<2411< 213
+
+25 < 210 < 218
+
+26.
+
+n
+
+b°
+
+20. Which of the following statements must be
+
+true?
+
+GOWp>
+
+155°
+
+27 + 220 = 180°
+
+Note: Figure not drawn to scale.
+
+21+ 220 = 180°
+
+In the figure above, lines m and n are parallel.
+
+29 + 24 = 180°
+
+What is the value of b?
+
+212+ 2413 = 180°
+
+pGan
+
+21. Which of the following statements must be
+
+true?
+A.
+
+217+ 219 = 180°
+
+B.
+
+417+ 215 = 180°
+
+C.
+
+25+ 214 = 180°
+
+D.
+
+24+ 29 = 180°
+
+43°
+
+-13-
+
+43
+89
+112
+137
+
+math
+
+27. C
+
+D
+
+©”
+
+The intersection of lines m and n forms the 4
+
+angles 2X, ZW, ZY, and 2Z. The measure of
+ZX is 9 times the measure of ZZ. Which of
+the following is equal to 2Z?
+45°
+
+A
+
+130°
+
+Gay
+
+B
+
+In the figure above, AB is parallel to CD.
+What is the measure, in degrees, of ZAED?
+
+pGan
+
+12
+18
+20
+28
+
+165
+145
+
+31.
+
+140
+
+Ray BD bisects ZABC, ray BE bisects ZABD,
+the measure of ZCBD = (4x — 8)° and
+
+135
+
+ZABE = (x +9)°. What is the measure of
+ZABC in degrees?
+
+Which of the following expressions 1s correct
+for the figure above?
+A.
+
+x+y+z=
+180
+
+B.
+
+x+70=y
+
+C.
+
+x+70+2=180-y
+
+D.
+
+z-—70=x
+
+A.
+
+13
+
+B.
+
+22
+
+C..
+
+60
+
+D.
+
+88
+
+32.
+
+B
+
+D
+
+T5DE
+
+G
+
+A
+
+35
+
+C
+
+In the figure above, AG = CG. What is the
+measure of ZAKB?
+
+pGan
+
+Note: Figure not drawn to scale.
+
+In the figure above, AB is parallel to DE.
+What is the measure of ZACB?
+
+GOP,
+
+51
+55
+
+68
+74
+
+-14-
+
+70
+75
+
+80
+85
+
+Chapter 4: Geometry Part 2 - Shapes
+

@@ -5,6 +5,15 @@ import 'katex/dist/katex.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Clear all caches on load to ensure fresh data
+console.log('🔄 Clearing all caches...');
+if ('caches' in window) {
+  caches.keys().then(names => {
+    names.forEach(name => caches.delete(name));
+  });
+}
+console.log('✅ Caches cleared');
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

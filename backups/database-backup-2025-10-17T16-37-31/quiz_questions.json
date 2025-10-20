@@ -1,0 +1,3964 @@
+[
+  {
+    "id": "e1bdc6a9-7b95-45b3-bedd-5eb1c79d8923",
+    "quiz_id": "942876ce-f814-4cda-a0f1-b2a439ffd9df",
+    "question_text": "Two lines intersect, forming four angles. If one angle measures 125°, what is the measure of the angle adjacent to it?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:49:07.143913+00:00"
+  },
+  {
+    "id": "78e5aa9d-cd04-4008-ad55-b3be0a045a74",
+    "quiz_id": "942876ce-f814-4cda-a0f1-b2a439ffd9df",
+    "question_text": "A regular pentagon has all equal angles. What is the measure of each interior angle?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:49:09.078702+00:00"
+  },
+  {
+    "id": "a6fc3afc-5bfc-4ffd-98b5-59c1ba6f6851",
+    "quiz_id": "621c831e-0401-46ed-ad4b-d391e05f88b8",
+    "question_text": "A rectangle has a length of 8 inches and a width of 5 inches. What is the area in square inches?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:56:47.131501+00:00"
+  },
+  {
+    "id": "6a74a112-adad-45fb-9da6-4ba71a40523e",
+    "quiz_id": "621c831e-0401-46ed-ad4b-d391e05f88b8",
+    "question_text": "In a 45°-45°-90° triangle, the hypotenuse measures 10√2. What is the length of each leg?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:56:49.374501+00:00"
+  },
+  {
+    "id": "a133de5a-88b8-4062-b928-5790754cac54",
+    "quiz_id": "7295f239-8a1e-4b02-ab1b-41cd6141fbcc",
+    "question_text": "What is the slope of the line passing through points (3, 7) and (9, 19)?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:59:53.654823+00:00"
+  },
+  {
+    "id": "13583c16-98ff-4e92-a229-4e5f7e632043",
+    "quiz_id": "7295f239-8a1e-4b02-ab1b-41cd6141fbcc",
+    "question_text": "A line passes through (3, 5) and has a slope of 4. What is the y-intercept?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:59:55.009095+00:00"
+  },
+  {
+    "id": "3ab154a1-de65-4fa4-8628-428bfd9e0ea4",
+    "quiz_id": "a548797e-3772-4101-9ecb-c6e83ea63618",
+    "question_text": "A circle has a circumference of 24π. What is the length of an arc with a central angle of 60°?",
+    "question_order": 0,
+    "created_at": "2025-10-14T00:02:51.641309+00:00"
+  },
+  {
+    "id": "0e15a2f9-1247-405d-913f-97603d386760",
+    "quiz_id": "a548797e-3772-4101-9ecb-c6e83ea63618",
+    "question_text": "In a circle, an arc has length 5π and the radius is 10. What is the central angle in degrees?",
+    "question_order": 5,
+    "created_at": "2025-10-14T00:02:53.663386+00:00"
+  },
+  {
+    "id": "c6de8ae2-5e47-4a56-89c6-612fe3341590",
+    "quiz_id": "e552b1b8-696f-42f0-83d2-b0f02e8cb2db",
+    "question_text": "Which of the following is the equation of a circle with center (−3, 7) and radius 5?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:12:37.217205+00:00"
+  },
+  {
+    "id": "13a8f168-4e3c-465e-ad87-28656e0ff406",
+    "quiz_id": "e552b1b8-696f-42f0-83d2-b0f02e8cb2db",
+    "question_text": "For the ellipse (x + 3)²/9 + (y − 1)²/36 = 1, what are the coordinates of the vertex that is farthest from the center in the y-direction?",
+    "question_order": 6,
+    "created_at": "2025-10-14T00:12:39.525797+00:00"
+  },
+  {
+    "id": "d81cb521-24c3-4041-a693-21599f5a0a4f",
+    "quiz_id": "65882dbb-49e5-4b4d-9dda-6fc731356328",
+    "question_text": "What is the value of 18 ÷ 3 × 2 + 5?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:15:45.967106+00:00"
+  },
+  {
+    "id": "6b82470c-f5e7-421e-bd76-d7427f1a01a6",
+    "quiz_id": "65882dbb-49e5-4b4d-9dda-6fc731356328",
+    "question_text": "If −4x + 7 > 23, which of the following must be true?",
+    "question_order": 6,
+    "created_at": "2025-10-14T00:15:47.669508+00:00"
+  },
+  {
+    "id": "fc89f080-e1cd-4b35-989e-e6e1d7e707e0",
+    "quiz_id": "0e76126a-3989-49c5-91e9-2226e1fe0a1b",
+    "question_text": "What is 1/3 + 1/4?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:18:23.561924+00:00"
+  },
+  {
+    "id": "d96c6c5f-abca-46bd-831e-e1ef2a3de60b",
+    "quiz_id": "0e76126a-3989-49c5-91e9-2226e1fe0a1b",
+    "question_text": "If x/3 + x/4 = 7, what is x?",
+    "question_order": 6,
+    "created_at": "2025-10-14T00:18:25.707357+00:00"
+  },
+  {
+    "id": "21177ed6-f396-45a8-b13d-26b3a7a29a8a",
+    "quiz_id": "a32b3ce5-d565-4ce7-ac2d-895b39fc921f",
+    "question_text": "Simplify: x⁵ · x³",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:21:00.797159+00:00"
+  },
+  {
+    "id": "68c59ab6-489d-424f-82d3-e2d6a4bd76eb",
+    "quiz_id": "a32b3ce5-d565-4ce7-ac2d-895b39fc921f",
+    "question_text": "Simplify: √72",
+    "question_order": 6,
+    "created_at": "2025-10-14T00:21:02.954026+00:00"
+  },
+  {
+    "id": "3ef5d42c-e7e5-4297-a63a-7d8351019fd8",
+    "quiz_id": "913c77d9-51fe-4a96-8423-aad69b8a9366",
+    "question_text": "If log₅(x) = 2, what is x?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:23:17.045727+00:00"
+  },
+  {
+    "id": "05bc1278-710d-409a-9831-b843d09299cf",
+    "quiz_id": "913c77d9-51fe-4a96-8423-aad69b8a9366",
+    "question_text": "What is log₄(1)?",
+    "question_order": 6,
+    "created_at": "2025-10-14T00:23:18.684584+00:00"
+  },
+  {
+    "id": "97ecf03e-7d7f-4fb8-9c77-2abff55b29a7",
+    "quiz_id": "c31e0c84-f314-4b29-919a-eb75a9eaff1b",
+    "question_text": "If −4x + 8 > 20, which is true?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:26:09.289726+00:00"
+  },
+  {
+    "id": "5ce7b7d0-dc2c-447e-b5a7-aa5420279377",
+    "quiz_id": "638ffa9a-c71c-4c33-8b89-7083c7011859",
+    "question_text": "If |x| < 5, which describes x?",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:26:11.631115+00:00"
+  },
+  {
+    "id": "08c75778-7bc4-42ee-b456-59171b3d1082",
+    "quiz_id": "8ab81656-c264-4b15-b752-264fd84eea08",
+    "question_text": "If x + y = 10 and 2x + 3y = 26, what is y?",
+    "question_order": 5,
+    "created_at": "2025-10-14T00:30:12.237199+00:00"
+  },
+  {
+    "id": "df48f85d-4058-4d95-b10f-cd5d99f1f37d",
+    "quiz_id": "8ab81656-c264-4b15-b752-264fd84eea08",
+    "question_text": "Solve using substitution: 2x + 5y = 16 and x = 3 − y. What is x?",
+    "question_order": 10,
+    "created_at": "2025-10-14T00:30:13.788579+00:00"
+  },
+  {
+    "id": "f246466f-a38b-4c08-a467-a1f86d7deb99",
+    "quiz_id": "c03cb9ea-05f7-409e-9466-6a1a6a9d4d20",
+    "question_text": "If x² + 8x + k can be written as (x + 4)², what is k?",
+    "question_order": 5,
+    "created_at": "2025-10-14T00:32:50.638493+00:00"
+  },
+  {
+    "id": "4e895995-690c-4367-9eed-3fcf15172de2",
+    "quiz_id": "c03cb9ea-05f7-409e-9466-6a1a6a9d4d20",
+    "question_text": "What is the vertex of y = (x − 3)² + 7?",
+    "question_order": 10,
+    "created_at": "2025-10-14T00:32:52.428159+00:00"
+  },
+  {
+    "id": "66d6a96a-1d34-46c4-a0d8-324d8f24f59c",
+    "quiz_id": "8ec035c8-5b6b-411e-8d2e-7fbd7323dac2",
+    "question_text": "If x² + 8x + k can be written as (x + 4)², what is k?",
+    "question_order": 5,
+    "created_at": "2025-10-14T00:36:35.893257+00:00"
+  },
+  {
+    "id": "8f6775c9-d919-44e5-974e-a5125be2a3da",
+    "quiz_id": "8ec035c8-5b6b-411e-8d2e-7fbd7323dac2",
+    "question_text": "What is the vertex of y = (x − 3)² + 7?",
+    "question_order": 10,
+    "created_at": "2025-10-14T00:36:37.815107+00:00"
+  },
+  {
+    "id": "4f3d3ba6-5040-40b1-8186-5531b809f193",
+    "quiz_id": "b1fe3c59-9561-43ed-8f14-9f74778b2301",
+    "question_text": "If x² + 8x + k can be written as (x + 4)², what is k?",
+    "question_order": 5,
+    "created_at": "2025-10-14T00:38:18.869477+00:00"
+  },
+  {
+    "id": "80938daf-5820-467c-adc3-a4633c96d8fb",
+    "quiz_id": "b1fe3c59-9561-43ed-8f14-9f74778b2301",
+    "question_text": "What is the vertex of y = (x − 3)² + 7?",
+    "question_order": 10,
+    "created_at": "2025-10-14T00:38:20.389757+00:00"
+  },
+  {
+    "id": "2dd6d1b4-f574-4f3d-b131-9de263b46d86",
+    "quiz_id": "794f167d-f84e-4230-8546-dfda55e86737",
+    "question_text": "The research team completed their <u>study, they</u> published the results in a peer-reviewed journal.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 0,
+    "created_at": "2025-10-13T22:54:52.898897+00:00"
+  },
+  {
+    "id": "46290de1-5b72-45a5-9c44-15242eef6ca9",
+    "quiz_id": "794f167d-f84e-4230-8546-dfda55e86737",
+    "question_text": "<u>Although the weather was terrible,</u> the game continued.<br><br>What type of clause is the underlined portion?",
+    "question_order": 1,
+    "created_at": "2025-10-13T22:54:52.898897+00:00"
+  },
+  {
+    "id": "5e1a16f6-2de9-438b-b7ad-88c5650ad0c0",
+    "quiz_id": "794f167d-f84e-4230-8546-dfda55e86737",
+    "question_text": "The students studied for hours. <u>And passed</u> the exam with high scores.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 2,
+    "created_at": "2025-10-13T22:54:52.898897+00:00"
+  },
+  {
+    "id": "9b7440d9-b00c-400a-ad02-3e573548ca62",
+    "quiz_id": "794f167d-f84e-4230-8546-dfda55e86737",
+    "question_text": "<u>Because she had studied all night.</u><br><br>What is the underlined portion?",
+    "question_order": 3,
+    "created_at": "2025-10-13T22:54:52.898897+00:00"
+  },
+  {
+    "id": "9016b4e4-790b-4206-ac6c-87c61505fc0e",
+    "quiz_id": "794f167d-f84e-4230-8546-dfda55e86737",
+    "question_text": "The committee met <u>yesterday they</u> discussed the new proposal extensively.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 4,
+    "created_at": "2025-10-13T22:54:52.898897+00:00"
+  },
+  {
+    "id": "e3779000-e8d2-45d0-9d7e-f3644afe754e",
+    "quiz_id": "794f167d-f84e-4230-8546-dfda55e86737",
+    "question_text": "The artist, who had worked on the sculpture for months, finally revealed it to the public, and critics praised its originality.<br><br>What type of sentence structure is shown above?",
+    "question_order": 5,
+    "created_at": "2025-10-13T22:54:52.898897+00:00"
+  },
+  {
+    "id": "f00d2f7b-34c3-4e07-a041-ebe794b5b458",
+    "quiz_id": "794f167d-f84e-4230-8546-dfda55e86737",
+    "question_text": "Having finished their homework, the students went to the <u>park, they</u> played basketball until sunset.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 6,
+    "created_at": "2025-10-13T22:54:52.898897+00:00"
+  },
+  {
+    "id": "621e7d27-6c78-472e-904f-c64bdbcceab2",
+    "quiz_id": "794f167d-f84e-4230-8546-dfda55e86737",
+    "question_text": "While walking through the forest, <u>spotted</u> a rare bird.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 7,
+    "created_at": "2025-10-13T22:54:52.898897+00:00"
+  },
+  {
+    "id": "044ec3ab-7d63-41b8-95ca-1a78413d45e3",
+    "quiz_id": "794f167d-f84e-4230-8546-dfda55e86737",
+    "question_text": "The professor explained the <u>theory however</u> many students remained confused about its practical applications.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 8,
+    "created_at": "2025-10-13T22:54:52.898897+00:00"
+  },
+  {
+    "id": "83cb869e-983f-428a-8de8-7b7ee5b5a4c5",
+    "quiz_id": "2e7b1e19-7217-47ee-a6de-e822909d1354",
+    "question_text": "If x² + 8x + k can be written as (x + 4)², what is k?",
+    "question_order": 5,
+    "created_at": "2025-10-14T00:39:34.813305+00:00"
+  },
+  {
+    "id": "54097420-b0af-4b32-a439-f8c117a2abff",
+    "quiz_id": "2e7b1e19-7217-47ee-a6de-e822909d1354",
+    "question_text": "What is the vertex of y = (x − 3)² + 7?",
+    "question_order": 10,
+    "created_at": "2025-10-14T00:39:37.444693+00:00"
+  },
+  {
+    "id": "2baf37f3-6f66-42e0-a9e1-25458db36793",
+    "quiz_id": "5dd6f0cf-5858-48df-a2a6-b52785ea93a4",
+    "question_text": "If x² + 8x + k can be written as (x + 4)², what is k?",
+    "question_order": 5,
+    "created_at": "2025-10-14T00:41:29.67116+00:00"
+  },
+  {
+    "id": "7db6b373-d8c5-4343-81f2-7b976f45edcc",
+    "quiz_id": "5dd6f0cf-5858-48df-a2a6-b52785ea93a4",
+    "question_text": "What is the vertex of y = (x − 3)² + 7?",
+    "question_order": 10,
+    "created_at": "2025-10-14T00:41:31.991811+00:00"
+  },
+  {
+    "id": "e5fe78c5-fb10-4052-b1d2-4add75c4eb4b",
+    "quiz_id": "1f93bd44-ea4e-49f6-b985-70084a0202c8",
+    "question_text": "What is (x + 7)²?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:43:09.31186+00:00"
+  },
+  {
+    "id": "f1770aa1-8c13-43c3-b758-03fbc4de6eec",
+    "quiz_id": "1f93bd44-ea4e-49f6-b985-70084a0202c8",
+    "question_text": "Using the quadratic formula, what are the solutions to 2x² + 3x − 2 = 0?",
+    "question_order": 7,
+    "created_at": "2025-10-14T00:43:11.36573+00:00"
+  },
+  {
+    "id": "4a1fcf50-d6a2-46c2-a997-7bf172267226",
+    "quiz_id": "ed1480bb-ed6b-4c42-9748-fc3131a630e3",
+    "question_text": "What is (x + 7)²?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:43:13.749096+00:00"
+  },
+  {
+    "id": "6c851b4d-1b55-4ff4-a497-86e65a2b16e1",
+    "quiz_id": "ed1480bb-ed6b-4c42-9748-fc3131a630e3",
+    "question_text": "Using the quadratic formula, what are the solutions to 2x² + 3x − 2 = 0?",
+    "question_order": 7,
+    "created_at": "2025-10-14T00:43:15.710758+00:00"
+  },
+  {
+    "id": "07ccc518-2ac0-4f1f-8fee-aad9874a0843",
+    "quiz_id": "218989f9-4fc2-4ce2-8da7-2bba94dd28a8",
+    "question_text": "A circle has a radius of 7 cm. What is its area in square centimeters?",
+    "question_order": 2,
+    "created_at": "2025-10-16T06:58:07.833808+00:00"
+  },
+  {
+    "id": "5e15e755-27d3-4278-ae80-461d8387d1ca",
+    "quiz_id": "218989f9-4fc2-4ce2-8da7-2bba94dd28a8",
+    "question_text": "A right triangle has legs of 5 and 12. What is the hypotenuse?",
+    "question_order": 7,
+    "created_at": "2025-10-16T06:58:09.474871+00:00"
+  },
+  {
+    "id": "df8b81c5-9629-4f6b-925c-1150adc6af89",
+    "quiz_id": "1d1a6281-3dac-4dd3-a251-df9865f9e337",
+    "question_text": "What is the midpoint between (2, 8) and (6, 12)?",
+    "question_order": 5,
+    "created_at": "2025-10-16T06:58:11.504329+00:00"
+  },
+  {
+    "id": "f24b3275-5e55-4cf2-9b2e-798f1f962106",
+    "quiz_id": "1d1a6281-3dac-4dd3-a251-df9865f9e337",
+    "question_text": "If line A has slope -3/4, what is the slope of a line perpendicular to line A?",
+    "question_order": 10,
+    "created_at": "2025-10-16T06:58:12.684927+00:00"
+  },
+  {
+    "id": "2e26aa8b-0783-41dd-a3d3-0a6e03e7e368",
+    "quiz_id": "5009b373-03db-4014-bf91-14e5919746e3",
+    "question_text": "A sector has radius 6 and central angle 90°. What is its area?",
+    "question_order": 3,
+    "created_at": "2025-10-16T06:58:13.439638+00:00"
+  },
+  {
+    "id": "f873b072-b673-4bb5-bc51-07e6fa93ac48",
+    "quiz_id": "5009b373-03db-4014-bf91-14e5919746e3",
+    "question_text": "A quarter circle (90° sector) has radius 4. What is its area?",
+    "question_order": 8,
+    "created_at": "2025-10-16T06:58:14.599712+00:00"
+  },
+  {
+    "id": "df818c09-a366-4df7-8b4c-dbc031d8ad96",
+    "quiz_id": "5e8a3be7-5486-4108-b580-5754618515fa",
+    "question_text": "What is the radius of the circle (x - 7)² + (y + 2)² = 64?",
+    "question_order": 1,
+    "created_at": "2025-10-16T06:58:15.455141+00:00"
+  },
+  {
+    "id": "c7b5711c-e161-4beb-9720-58631541630d",
+    "quiz_id": "5e8a3be7-5486-4108-b580-5754618515fa",
+    "question_text": "A circle has center (-2, 6) and radius 5. Which equation represents this circle?",
+    "question_order": 6,
+    "created_at": "2025-10-16T06:58:16.64569+00:00"
+  },
+  {
+    "id": "2d1b63a3-c5ae-47ac-8578-35c0b28ac344",
+    "quiz_id": "14aa5b8f-6db4-4b56-a18b-8552515f5c3c",
+    "question_text": "What is the value of 12 ÷ (-4) - (-2)?",
+    "question_order": 4,
+    "created_at": "2025-10-16T06:58:18.507145+00:00"
+  },
+  {
+    "id": "cf9be784-9f14-4aeb-ad4c-8be04204b9b0",
+    "quiz_id": "14aa5b8f-6db4-4b56-a18b-8552515f5c3c",
+    "question_text": "Simplify: 5(2x - 3) + 4x",
+    "question_order": 5,
+    "created_at": "2025-10-16T06:58:18.735978+00:00"
+  },
+  {
+    "id": "29e9cc54-a9fa-40c0-a7e4-8532fbc09efb",
+    "quiz_id": "794f167d-f84e-4230-8546-dfda55e86737",
+    "question_text": "After reviewing all the <u>evidence. The</u> jury reached a unanimous verdict.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 9,
+    "created_at": "2025-10-13T22:54:52.898897+00:00"
+  },
+  {
+    "id": "0f1ca3d9-fe59-4974-ab55-8bce731520e1",
+    "quiz_id": "a1af51d9-e4cf-4191-be41-920abc313aac",
+    "question_text": "The restaurant <u>which has been open for 30 years</u> serves authentic Italian cuisine.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:04:51.439651+00:00"
+  },
+  {
+    "id": "97e8528b-b1dd-4eae-9a0c-1723574627ba",
+    "quiz_id": "a1af51d9-e4cf-4191-be41-920abc313aac",
+    "question_text": "After studying for three hours<u>,</u> Maria decided to take a break.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:04:51.439651+00:00"
+  },
+  {
+    "id": "243d410b-0f5c-48e8-9056-2dd81dbce77a",
+    "quiz_id": "a1af51d9-e4cf-4191-be41-920abc313aac",
+    "question_text": "The students who<u> studied regularly,</u> performed better on the exam.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:04:51.439651+00:00"
+  },
+  {
+    "id": "054410b1-48a4-4937-859a-54a586779c53",
+    "quiz_id": "a1af51d9-e4cf-4191-be41-920abc313aac",
+    "question_text": "My best friend<u> Sarah</u> is coming to visit this weekend.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:04:51.439651+00:00"
+  },
+  {
+    "id": "b7a1677a-5517-457d-bcb9-592813442950",
+    "quiz_id": "a1af51d9-e4cf-4191-be41-920abc313aac",
+    "question_text": "She bought apples<u> oranges</u> and bananas at the store.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:04:51.439651+00:00"
+  },
+  {
+    "id": "f880623a-5f41-436e-b8e5-68227425010d",
+    "quiz_id": "a1af51d9-e4cf-4191-be41-920abc313aac",
+    "question_text": "Yes<u>,</u> I will attend the meeting tomorrow.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:04:51.439651+00:00"
+  },
+  {
+    "id": "24997259-b4df-47c6-a99d-ec72c865f9bd",
+    "quiz_id": "a1af51d9-e4cf-4191-be41-920abc313aac",
+    "question_text": "The conference scheduled for June 15<u> 2024</u> will feature keynote speakers.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:04:51.439651+00:00"
+  },
+  {
+    "id": "43ee3490-8f7d-484e-80eb-5e7c57da1002",
+    "quiz_id": "a1af51d9-e4cf-4191-be41-920abc313aac",
+    "question_text": "Although she was tired<u>,</u> she finished her homework before bed.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:04:51.439651+00:00"
+  },
+  {
+    "id": "e3d62d03-2c55-465d-a554-f0a7591d094b",
+    "quiz_id": "a1af51d9-e4cf-4191-be41-920abc313aac",
+    "question_text": "The scientist a Nobel Prize winner<u>,</u> presented her research at the symposium.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:04:51.439651+00:00"
+  },
+  {
+    "id": "ed32d385-9f5b-4b26-acaa-e02c12936d96",
+    "quiz_id": "a1af51d9-e4cf-4191-be41-920abc313aac",
+    "question_text": "Dear Mr. Johnson<u>,</u><br><br>Which choice best corrects the underlined portion?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:04:51.439651+00:00"
+  },
+  {
+    "id": "3b834eb7-da89-4947-9d15-d4c9317f0205",
+    "quiz_id": "21066c0e-fa9e-4f22-acf1-e1ad6e939e09",
+    "question_text": "The museum has three main exhibits<u>:</u> ancient artifacts, modern art, and natural history.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:04:52.060317+00:00"
+  },
+  {
+    "id": "bf922173-f046-4911-a997-b63ee0c2817c",
+    "quiz_id": "21066c0e-fa9e-4f22-acf1-e1ad6e939e09",
+    "question_text": "She couldn<u>t</u> believe her eyes when she saw the surprise.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:04:52.060317+00:00"
+  },
+  {
+    "id": "fdfc6d54-a345-49a7-9af4-dd9c16a43911",
+    "quiz_id": "21066c0e-fa9e-4f22-acf1-e1ad6e939e09",
+    "question_text": "The student<u>s</u> books were left in the classroom.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:04:52.060317+00:00"
+  },
+  {
+    "id": "acc84b72-1b8c-4503-bde1-9404a42b54a0",
+    "quiz_id": "21066c0e-fa9e-4f22-acf1-e1ad6e939e09",
+    "question_text": "My favorite novels are <u>Pride and Prejudice, 1984,</u> and To Kill a Mockingbird.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:04:52.060317+00:00"
+  },
+  {
+    "id": "aea8dabd-ed29-42f1-b90d-f31a2faff615",
+    "quiz_id": "21066c0e-fa9e-4f22-acf1-e1ad6e939e09",
+    "question_text": "The sign read<u>:</u> \"No Parking Between 8 AM and 6 PM.\"<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:04:52.060317+00:00"
+  },
+  {
+    "id": "6adb500c-6821-4662-8021-4c259e0940f5",
+    "quiz_id": "21066c0e-fa9e-4f22-acf1-e1ad6e939e09",
+    "question_text": "According to the article<u>,</u> \"The economy is showing signs of recovery.\"<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:04:52.060317+00:00"
+  },
+  {
+    "id": "4142a27e-a040-46ab-9840-988cc6be56b9",
+    "quiz_id": "21066c0e-fa9e-4f22-acf1-e1ad6e939e09",
+    "question_text": "She asked<u>,</u> \"Are you coming to the party?\"<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:04:52.060317+00:00"
+  },
+  {
+    "id": "440b0928-856d-426f-972f-a2e2869fc26e",
+    "quiz_id": "21066c0e-fa9e-4f22-acf1-e1ad6e939e09",
+    "question_text": "The recipe calls for the following ingredients<u>;</u> flour, sugar, eggs, and butter.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:04:52.060317+00:00"
+  },
+  {
+    "id": "65327f51-6ae6-41a4-87ec-03edfcf2cc16",
+    "quiz_id": "21066c0e-fa9e-4f22-acf1-e1ad6e939e09",
+    "question_text": "The company<u>'s</u> headquarters are located in New York.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:04:52.060317+00:00"
+  },
+  {
+    "id": "27ce6102-57e6-43f8-b9c2-78278ee0a2f6",
+    "quiz_id": "21066c0e-fa9e-4f22-acf1-e1ad6e939e09",
+    "question_text": "She said<u>, \"</u>I'll be there at noon.\"<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:04:52.060317+00:00"
+  },
+  {
+    "id": "839cda3f-2a1f-4423-b9d9-762d39bc4a82",
+    "quiz_id": "a65407db-2331-4460-966d-cc495bd61cf2",
+    "question_text": "By next week, she <u>will complete</u> her thesis.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:04:52.396866+00:00"
+  },
+  {
+    "id": "d32e7d31-6b6b-4380-8961-4bd249a5c32e",
+    "quiz_id": "a65407db-2331-4460-966d-cc495bd61cf2",
+    "question_text": "Every student <u>are</u> required to submit their assignments on time.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:04:52.396866+00:00"
+  },
+  {
+    "id": "39f9ecb6-92d7-48cc-8668-5fbdfd4f59c3",
+    "quiz_id": "a65407db-2331-4460-966d-cc495bd61cf2",
+    "question_text": "If I <u>was</u> you, I would accept the job offer.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:04:52.396866+00:00"
+  },
+  {
+    "id": "d4c933ec-6888-408f-841e-99a218a4bee8",
+    "quiz_id": "a65407db-2331-4460-966d-cc495bd61cf2",
+    "question_text": "The team <u>has practiced</u> every day this month.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:04:52.396866+00:00"
+  },
+  {
+    "id": "55cf5b11-91c0-44ac-8e9c-81901f93e9d2",
+    "quiz_id": "a65407db-2331-4460-966d-cc495bd61cf2",
+    "question_text": "She had already <u>ate</u> lunch when I arrived.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:04:52.396866+00:00"
+  },
+  {
+    "id": "7d31bd5f-12ed-43b4-b000-f418ca958879",
+    "quiz_id": "a65407db-2331-4460-966d-cc495bd61cf2",
+    "question_text": "Neither the teacher nor the students <u>was</u> aware of the schedule change.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:04:52.396866+00:00"
+  },
+  {
+    "id": "fd7b730b-bbc0-4174-bcf2-5d0bf6c75deb",
+    "quiz_id": "a65407db-2331-4460-966d-cc495bd61cf2",
+    "question_text": "The committee <u>have</u> reached a unanimous decision.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:04:52.396866+00:00"
+  },
+  {
+    "id": "de12dceb-829b-4ce3-8407-9a8ac3fcf482",
+    "quiz_id": "a65407db-2331-4460-966d-cc495bd61cf2",
+    "question_text": "I wish I <u>can</u> attend the concert tonight.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:04:52.396866+00:00"
+  },
+  {
+    "id": "51b32a28-9039-48d2-a5cd-3cd1ae8017d3",
+    "quiz_id": "a65407db-2331-4460-966d-cc495bd61cf2",
+    "question_text": "Each of the players <u>have</u> their own unique style.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:04:52.396866+00:00"
+  },
+  {
+    "id": "3fe4d463-22c2-4877-8929-fd4613ef59f5",
+    "quiz_id": "a65407db-2331-4460-966d-cc495bd61cf2",
+    "question_text": "By the time you arrive, I <u>finished</u> the report.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:04:52.396866+00:00"
+  },
+  {
+    "id": "10bcd020-8d67-4880-8701-3a6780f18dc7",
+    "quiz_id": "fba01e9e-de8e-4fdc-9dcf-6c4435f69689",
+    "question_text": "The teacher gave the award to Sarah and <u>I</u>.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:04:52.691104+00:00"
+  },
+  {
+    "id": "4cfcc8d4-8593-4740-a16d-274fd9bb2ae6",
+    "quiz_id": "fba01e9e-de8e-4fdc-9dcf-6c4435f69689",
+    "question_text": "Each student must submit <u>their</u> assignment by Friday.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:04:52.691104+00:00"
+  },
+  {
+    "id": "529c8c62-2f8f-48bf-9d8c-fd76618a98bc",
+    "quiz_id": "fba01e9e-de8e-4fdc-9dcf-6c4435f69689",
+    "question_text": "Between you and <u>I</u>, this seems like a bad idea.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:04:52.691104+00:00"
+  },
+  {
+    "id": "d463ea72-e675-41c5-afb0-387498a4e7d6",
+    "quiz_id": "fba01e9e-de8e-4fdc-9dcf-6c4435f69689",
+    "question_text": "The dog wagged <u>it's</u> tail excitedly.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:04:52.691104+00:00"
+  },
+  {
+    "id": "023bbc1a-dd57-4365-9e78-cc66d094ab21",
+    "quiz_id": "fba01e9e-de8e-4fdc-9dcf-6c4435f69689",
+    "question_text": "The company updated <u>their</u> privacy policy.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:04:52.691104+00:00"
+  },
+  {
+    "id": "6e43ba97-64b0-4854-af9e-5c3a827ccddd",
+    "quiz_id": "fba01e9e-de8e-4fdc-9dcf-6c4435f69689",
+    "question_text": "<u>Who</u> did you give the package to?<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:04:52.691104+00:00"
+  },
+  {
+    "id": "4d736887-f6cc-48fa-ad28-b19a661a37c7",
+    "quiz_id": "fba01e9e-de8e-4fdc-9dcf-6c4435f69689",
+    "question_text": "My sister is taller than <u>me</u>.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:04:52.691104+00:00"
+  },
+  {
+    "id": "ca6912a8-f826-4ec2-a1a5-8ffa17e71304",
+    "quiz_id": "fba01e9e-de8e-4fdc-9dcf-6c4435f69689",
+    "question_text": "Everyone should bring <u>their</u> own lunch.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:04:52.691104+00:00"
+  },
+  {
+    "id": "ee0b68cc-92c9-4349-b18a-bc1589ebb459",
+    "quiz_id": "fba01e9e-de8e-4fdc-9dcf-6c4435f69689",
+    "question_text": "This is a matter between she and <u>I</u>.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:04:52.691104+00:00"
+  },
+  {
+    "id": "10f6e983-0ee1-4314-8ee0-80c976ddf5d6",
+    "quiz_id": "fba01e9e-de8e-4fdc-9dcf-6c4435f69689",
+    "question_text": "The trophy belongs to <u>whoever</u> wins the championship.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:04:52.691104+00:00"
+  },
+  {
+    "id": "71514d17-7a28-4f9a-aad6-01abe61a82a3",
+    "quiz_id": "c84fbdb7-c296-41a3-8081-a2ff8d252b7b",
+    "question_text": "<u>Running down the street,</u> the bus was missed by John.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:04:53.001509+00:00"
+  },
+  {
+    "id": "b2a1ad82-eaa7-4b03-a358-24565708dd9e",
+    "quiz_id": "c84fbdb7-c296-41a3-8081-a2ff8d252b7b",
+    "question_text": "We <u>almost</u> drove 500 miles to reach the destination.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:04:53.001509+00:00"
+  },
+  {
+    "id": "7bb21272-8e0d-4903-a5e2-cff9faff00e0",
+    "quiz_id": "c84fbdb7-c296-41a3-8081-a2ff8d252b7b",
+    "question_text": "<u>Excited about the trip,</u> her suitcase was packed quickly.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:04:53.001509+00:00"
+  },
+  {
+    "id": "96d04665-664a-4284-be95-70ae3d886ff3",
+    "quiz_id": "c84fbdb7-c296-41a3-8081-a2ff8d252b7b",
+    "question_text": "The team <u>only</u> won three games this season.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:04:53.001509+00:00"
+  },
+  {
+    "id": "8665c6af-1401-4cdd-9d6f-6e506f95caaf",
+    "quiz_id": "c84fbdb7-c296-41a3-8081-a2ff8d252b7b",
+    "question_text": "<u>While eating dinner,</u> the phone rang loudly.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:04:53.001509+00:00"
+  },
+  {
+    "id": "8b02fc79-970a-486b-bcde-5bab8d211852",
+    "quiz_id": "c84fbdb7-c296-41a3-8081-a2ff8d252b7b",
+    "question_text": "She <u>just</u> told me yesterday about the meeting.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:04:53.001509+00:00"
+  },
+  {
+    "id": "8be0d592-733c-48cb-a58f-3b03abeafa43",
+    "quiz_id": "c84fbdb7-c296-41a3-8081-a2ff8d252b7b",
+    "question_text": "<u>To succeed in college,</u> good study habits are essential.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:04:53.001509+00:00"
+  },
+  {
+    "id": "87f96a95-3d88-4903-a9b4-ed002aa4ebb1",
+    "quiz_id": "c84fbdb7-c296-41a3-8081-a2ff8d252b7b",
+    "question_text": "Covered in mud, I could barely recognize my <u>car</u>.<br><br>Is there a modifier error?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:04:53.001509+00:00"
+  },
+  {
+    "id": "01c052b5-8ca8-4be1-b42d-1214b301b592",
+    "quiz_id": "c84fbdb7-c296-41a3-8081-a2ff8d252b7b",
+    "question_text": "We <u>nearly</u> watched the entire movie before leaving.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:04:53.001509+00:00"
+  },
+  {
+    "id": "6829edb2-6b8a-4b59-b3ee-7918c5c27046",
+    "quiz_id": "c84fbdb7-c296-41a3-8081-a2ff8d252b7b",
+    "question_text": "<u>Hoping to impress the judges,</u> the performance was flawless.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:04:53.001509+00:00"
+  },
+  {
+    "id": "07ee3653-61b4-410e-9953-d2df61d93b23",
+    "quiz_id": "4b18b57b-ec8a-466c-b157-be809289939d",
+    "question_text": "The <u>final outcome</u> of the election was decided by a narrow margin.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:04:53.573784+00:00"
+  },
+  {
+    "id": "fbba09ba-242b-4689-9ec9-a09865e25b18",
+    "quiz_id": "4b18b57b-ec8a-466c-b157-be809289939d",
+    "question_text": "She will <u>continue to remain</u> in her current position for another year.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:04:53.573784+00:00"
+  },
+  {
+    "id": "66c0296c-7f3f-4a0f-a5e9-a33296d16bd2",
+    "quiz_id": "4b18b57b-ec8a-466c-b157-be809289939d",
+    "question_text": "The report was <u>absolutely essential and necessary</u> for the project.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:04:53.573784+00:00"
+  },
+  {
+    "id": "185f0db5-3946-4d87-83b1-5868d7efba06",
+    "quiz_id": "4b18b57b-ec8a-466c-b157-be809289939d",
+    "question_text": "The students <u>gathered together</u> in the auditorium.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:04:53.573784+00:00"
+  },
+  {
+    "id": "3c1410d3-01b9-42d4-bfc2-2cce595ac900",
+    "quiz_id": "4b18b57b-ec8a-466c-b157-be809289939d",
+    "question_text": "Please <u>refer back</u> to page 15 for more information.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:04:53.573784+00:00"
+  },
+  {
+    "id": "984071f3-1e6d-49ac-8fb6-2168f484e15c",
+    "quiz_id": "4b18b57b-ec8a-466c-b157-be809289939d",
+    "question_text": "In <u>my personal opinion</u>, this is the best solution.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:04:53.573784+00:00"
+  },
+  {
+    "id": "d4930ca0-2d5d-4582-9c2a-dbf724bb4f23",
+    "quiz_id": "4b18b57b-ec8a-466c-b157-be809289939d",
+    "question_text": "The <u>past history</u> of the company reveals several challenges.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:04:53.573784+00:00"
+  },
+  {
+    "id": "b957fde2-194a-4c9a-af2a-68d45ce4973c",
+    "quiz_id": "4b18b57b-ec8a-466c-b157-be809289939d",
+    "question_text": "They will <u>advance forward</u> with the proposal next week.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:04:53.573784+00:00"
+  },
+  {
+    "id": "2a0d6835-d4eb-49be-9b2f-e5e9597c99bc",
+    "quiz_id": "4b18b57b-ec8a-466c-b157-be809289939d",
+    "question_text": "Each <u>individual person</u> must sign the form.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:04:53.573784+00:00"
+  },
+  {
+    "id": "983e9198-0488-4b1c-b1c7-ce19f80f9365",
+    "quiz_id": "4b18b57b-ec8a-466c-b157-be809289939d",
+    "question_text": "The two candidates are <u>both alike</u> in their policy positions.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:04:53.573784+00:00"
+  },
+  {
+    "id": "9484d2a3-0205-4143-ac3a-7b58866190ec",
+    "quiz_id": "0a389d44-2085-475d-b85c-662a7c08657c",
+    "question_text": "The experiment was carefully planned. <u>Therefore,</u> the results were inconclusive.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:04:54.074019+00:00"
+  },
+  {
+    "id": "0f63117e-bc58-4240-806d-6d51bd05ff06",
+    "quiz_id": "0a389d44-2085-475d-b85c-662a7c08657c",
+    "question_text": "The company increased marketing efforts. <u>In contrast,</u> sales reached record highs.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:04:54.074019+00:00"
+  },
+  {
+    "id": "04b4e1e1-32fe-4129-bca5-63d4f42eb18d",
+    "quiz_id": "0a389d44-2085-475d-b85c-662a7c08657c",
+    "question_text": "She studied for months. <u>Moreover,</u> she failed the exam.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:04:54.074019+00:00"
+  },
+  {
+    "id": "a46c99a5-3174-44cf-8de3-dd79655f9e4b",
+    "quiz_id": "0a389d44-2085-475d-b85c-662a7c08657c",
+    "question_text": "The first experiment succeeded. <u>However,</u> the second experiment also succeeded.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:04:54.074019+00:00"
+  },
+  {
+    "id": "4aca7b90-3c91-4067-a67c-d5bb3794995d",
+    "quiz_id": "0a389d44-2085-475d-b85c-662a7c08657c",
+    "question_text": "Regular exercise improves physical health. <u>For instance,</u> it also enhances mental wellbeing.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:04:54.074019+00:00"
+  },
+  {
+    "id": "d5a39886-bddb-410b-ae8d-428391223524",
+    "quiz_id": "0a389d44-2085-475d-b85c-662a7c08657c",
+    "question_text": "The project was over budget. <u>Consequently,</u> the team decided to continue anyway.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:04:54.074019+00:00"
+  },
+  {
+    "id": "9d5fc572-d2b6-4107-92af-985b8a092363",
+    "quiz_id": "0a389d44-2085-475d-b85c-662a7c08657c",
+    "question_text": "Cats are independent animals. <u>In other words,</u> dogs tend to be more social.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:04:54.074019+00:00"
+  },
+  {
+    "id": "d709f884-db9c-410e-a3a2-7d5b7eb81bfa",
+    "quiz_id": "0a389d44-2085-475d-b85c-662a7c08657c",
+    "question_text": "The restaurant received poor reviews. <u>Thus,</u> it attracted large crowds nightly.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:04:54.074019+00:00"
+  },
+  {
+    "id": "02194d78-3b4c-4728-8e60-233bc9db7703",
+    "quiz_id": "0a389d44-2085-475d-b85c-662a7c08657c",
+    "question_text": "The first method proved effective. <u>Subsequently,</u> we tried the same approach with different variables.<br><br>Is this transition correct?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:04:54.074019+00:00"
+  },
+  {
+    "id": "dcdb2927-a7a1-43fd-b77a-cae1265b390a",
+    "quiz_id": "0a389d44-2085-475d-b85c-662a7c08657c",
+    "question_text": "The medication has several benefits. <u>Nevertheless,</u> it can reduce inflammation and relieve pain.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:04:54.074019+00:00"
+  },
+  {
+    "id": "2293d152-4793-464d-91bd-1a640370889a",
+    "quiz_id": "a552ec8a-c1be-4d22-8504-667c00e8532f",
+    "question_text": "The scientist discovered a new species of butterfly in the rainforest. <u>[Should we add: \"The rainforest is home to thousands of species.\"]</u><br><br>Should this sentence be added?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:04:54.557553+00:00"
+  },
+  {
+    "id": "bea595e4-2a26-49fd-99bc-1e31dec7d93c",
+    "quiz_id": "a552ec8a-c1be-4d22-8504-667c00e8532f",
+    "question_text": "The new policy will reduce costs significantly. <u>[Currently includes: \"The old policy was implemented in 2015.\"]</u><br><br>Should this sentence be kept?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:04:54.557553+00:00"
+  },
+  {
+    "id": "dbefc4f2-c6a5-4c41-b844-698ce74877ea",
+    "quiz_id": "a552ec8a-c1be-4d22-8504-667c00e8532f",
+    "question_text": "Electric vehicles produce zero emissions while driving. <u>[Should we add: \"This helps reduce air pollution in cities.\"]</u><br><br>Should this sentence be added?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:04:54.557553+00:00"
+  },
+  {
+    "id": "4eaa5aa3-c1d0-472b-9e4a-bd1ad3b5c4b9",
+    "quiz_id": "a552ec8a-c1be-4d22-8504-667c00e8532f",
+    "question_text": "The museum's collection includes rare manuscripts. <u>[Currently includes: \"Museums are important cultural institutions.\"]</u><br><br>Should this sentence be kept?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:04:54.557553+00:00"
+  },
+  {
+    "id": "29b49a49-6033-4043-9c4c-b1810cc36d8f",
+    "quiz_id": "a552ec8a-c1be-4d22-8504-667c00e8532f",
+    "question_text": "The recipe requires fresh basil for the best flavor. <u>[Should we add: \"Basil is a member of the mint family.\"]</u><br><br>Should this sentence be added?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:04:54.557553+00:00"
+  },
+  {
+    "id": "319bad4d-e779-48c3-99f5-e8360ccfbd9d",
+    "quiz_id": "a552ec8a-c1be-4d22-8504-667c00e8532f",
+    "question_text": "The program helps students develop leadership skills. <u>[Should we add: \"Leadership skills include communication and decision-making.\"]</u><br><br>Should this sentence be added?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:04:54.557553+00:00"
+  },
+  {
+    "id": "944b7654-4b9c-49a8-8a96-dfa69620fe1e",
+    "quiz_id": "a552ec8a-c1be-4d22-8504-667c00e8532f",
+    "question_text": "The company launched its app in 2020. <u>[Currently includes: \"2020 was a challenging year globally.\"]</u><br><br>Should this sentence be kept?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:04:54.557553+00:00"
+  },
+  {
+    "id": "47ad66f5-fce6-4cc0-a183-4ded516d06b3",
+    "quiz_id": "a552ec8a-c1be-4d22-8504-667c00e8532f",
+    "question_text": "Proper sleep improves cognitive function. <u>[Should we add: \"Most adults need 7-9 hours of sleep per night.\"]</u><br><br>Should this sentence be added?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:04:54.557553+00:00"
+  },
+  {
+    "id": "b432776c-84e6-4972-aad6-85628ff0ed43",
+    "quiz_id": "a552ec8a-c1be-4d22-8504-667c00e8532f",
+    "question_text": "The author won the Pulitzer Prize for this novel. <u>[Currently includes: \"The Pulitzer Prize was established in 1917.\"]</u><br><br>Should this sentence be kept?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:04:54.557553+00:00"
+  },
+  {
+    "id": "b0df52c0-6c10-4ab4-91ad-aa9dea370507",
+    "quiz_id": "009109d9-99d0-48e2-90f4-b75166976cac",
+    "question_text": "She enjoys hiking, swimming, and <u>to bike</u>.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:04:53.330966+00:00"
+  },
+  {
+    "id": "396a45b7-b327-40ee-ad8c-7a947806ec8b",
+    "quiz_id": "009109d9-99d0-48e2-90f4-b75166976cac",
+    "question_text": "The professor is respected for his knowledge, dedication, and <u>being innovative</u>.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:04:53.330966+00:00"
+  },
+  {
+    "id": "866d1c2f-35ad-4f58-8c22-e77dc340ffba",
+    "quiz_id": "009109d9-99d0-48e2-90f4-b75166976cac",
+    "question_text": "The company values employees who are hardworking, creative, and <u>demonstrate reliability</u>.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:04:53.330966+00:00"
+  },
+  {
+    "id": "04adb698-f092-4f6d-9906-625b45461242",
+    "quiz_id": "009109d9-99d0-48e2-90f4-b75166976cac",
+    "question_text": "To succeed in this course, you must attend class, <u>completing assignments</u>, and participate in discussions.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:04:53.330966+00:00"
+  },
+  {
+    "id": "32059a54-14df-4fac-86dc-6120cbeee0ac",
+    "quiz_id": "009109d9-99d0-48e2-90f4-b75166976cac",
+    "question_text": "The new policy will reduce costs, <u>improves</u> efficiency, and increase customer satisfaction.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:04:53.330966+00:00"
+  },
+  {
+    "id": "f356f9dc-14eb-446e-847c-75e3b14f4f50",
+    "quiz_id": "009109d9-99d0-48e2-90f4-b75166976cac",
+    "question_text": "She spends her weekends reading novels, <u>to watch movies</u>, and visiting friends.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:04:53.330966+00:00"
+  },
+  {
+    "id": "ca21ff26-6b4e-4d31-9d36-1c5e85e69d07",
+    "quiz_id": "009109d9-99d0-48e2-90f4-b75166976cac",
+    "question_text": "The requirements include submitting an application, <u>three letters of recommendation</u>, and to schedule an interview.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:04:53.330966+00:00"
+  },
+  {
+    "id": "28264bb5-56a5-45e7-b980-2162b3d96817",
+    "quiz_id": "009109d9-99d0-48e2-90f4-b75166976cac",
+    "question_text": "His goals are to graduate with honors, <u>finding</u> a good job, and traveling abroad.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:04:53.330966+00:00"
+  },
+  {
+    "id": "21de116b-59bc-4962-90e0-8fbbbdaa9b36",
+    "quiz_id": "009109d9-99d0-48e2-90f4-b75166976cac",
+    "question_text": "The workshop teaches participants how to manage time, <u>setting priorities</u>, and achieving goals.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:04:53.330966+00:00"
+  },
+  {
+    "id": "50c5af91-4c3e-4ea4-95b8-b25fdcc3db09",
+    "quiz_id": "009109d9-99d0-48e2-90f4-b75166976cac",
+    "question_text": "The committee will review applications, <u>interviews will be conducted with</u> finalists, and select the winner.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:04:53.330966+00:00"
+  },
+  {
+    "id": "4d394930-39ab-4695-9c60-ba1030d2f4d8",
+    "quiz_id": "f3a431f7-b638-4107-b392-4f009b325f2a",
+    "question_text": "The museum <u>effected</u> a new policy regarding photography.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:04:53.831932+00:00"
+  },
+  {
+    "id": "184697f2-6231-45fb-aa83-52801718f6c5",
+    "quiz_id": "f3a431f7-b638-4107-b392-4f009b325f2a",
+    "question_text": "The new regulations will <u>effect</u> all employees starting next month.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:04:53.831932+00:00"
+  },
+  {
+    "id": "a6d6b895-f4d7-490c-96eb-9397f10909d2",
+    "quiz_id": "f3a431f7-b638-4107-b392-4f009b325f2a",
+    "question_text": "The data <u>suggests</u> that sales have increased significantly.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:04:53.831932+00:00"
+  },
+  {
+    "id": "d0a45962-ad58-4773-b1ab-10b2aca7f66e",
+    "quiz_id": "f3a431f7-b638-4107-b392-4f009b325f2a",
+    "question_text": "The principal <u>principle</u> of the school addressed the students.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:04:53.831932+00:00"
+  },
+  {
+    "id": "d18222f8-4fbd-426e-ab60-2d0ce99d25e1",
+    "quiz_id": "f3a431f7-b638-4107-b392-4f009b325f2a",
+    "question_text": "The novel's <u>climactic</u> scene takes place during a thunderstorm.<br><br>Is this the correct word choice?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:04:53.831932+00:00"
+  },
+  {
+    "id": "b15f7392-e0e8-437d-a718-34b0e544db7d",
+    "quiz_id": "f3a431f7-b638-4107-b392-4f009b325f2a",
+    "question_text": "She <u>complemented</u> her outfit with a silk scarf.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:04:53.831932+00:00"
+  },
+  {
+    "id": "ecde25f6-799e-4487-8ae0-ad4efb8d3279",
+    "quiz_id": "f3a431f7-b638-4107-b392-4f009b325f2a",
+    "question_text": "The chef <u>complimented</u> the server on excellent customer service.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:04:53.831932+00:00"
+  },
+  {
+    "id": "80bc64ed-3ae5-4539-b875-9469ef561378",
+    "quiz_id": "f3a431f7-b638-4107-b392-4f009b325f2a",
+    "question_text": "The company's <u>moral</u> was high after the successful product launch.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:04:53.831932+00:00"
+  },
+  {
+    "id": "e7a46fa4-bf95-489a-a2de-cacc5643c87f",
+    "quiz_id": "f3a431f7-b638-4107-b392-4f009b325f2a",
+    "question_text": "The protesters remained <u>stationary</u> in front of the building.<br><br>Is this the correct word choice?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:04:53.831932+00:00"
+  },
+  {
+    "id": "be1366d5-edbb-46ae-bcb0-874d5a7a72e4",
+    "quiz_id": "f3a431f7-b638-4107-b392-4f009b325f2a",
+    "question_text": "The committee will <u>advice</u> the board on financial matters.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:04:53.831932+00:00"
+  },
+  {
+    "id": "72df6caf-4543-410d-b5bf-e332add7c862",
+    "quiz_id": "9b81a613-c84e-4fe9-9329-aeedef68c023",
+    "question_text": "[1] The ancient Romans developed sophisticated aqueducts. [2] These structures transported water across great distances. [3] Modern cities still use similar engineering principles. [4] <u>Engineers today face different challenges.</u><br><br>Which sentence should be deleted?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:04:54.316467+00:00"
+  },
+  {
+    "id": "7861d2c9-ca5d-4750-8977-facea58573ed",
+    "quiz_id": "9b81a613-c84e-4fe9-9329-aeedef68c023",
+    "question_text": "[1] Solar panels convert sunlight into electricity. [2] This technology has become increasingly affordable. [3] <u>Wind turbines are another renewable energy source.</u> [4] Many homeowners now install solar systems.<br><br>Which sentence should be deleted?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:04:54.316467+00:00"
+  },
+  {
+    "id": "2b53b873-9b19-4043-a21d-b25c32c54a5a",
+    "quiz_id": "9b81a613-c84e-4fe9-9329-aeedef68c023",
+    "question_text": "The scientist studied climate patterns for decades. <u>He documented significant changes in temperature.</u><br><br>Which provides the best transition?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:04:54.316467+00:00"
+  },
+  {
+    "id": "e1ddd962-1479-4275-adfa-9a38df2b0b0f",
+    "quiz_id": "9b81a613-c84e-4fe9-9329-aeedef68c023",
+    "question_text": "[1] Libraries provide free access to information. [2] They offer computers and internet access. [3] Many libraries host community events. [4] <u>The author discusses the history of libraries in chapter 5.</u><br><br>Which sentence least belongs?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:04:54.316467+00:00"
+  },
+  {
+    "id": "b7452aae-1b0e-4f6c-ac20-5c196edc9d65",
+    "quiz_id": "9b81a613-c84e-4fe9-9329-aeedef68c023",
+    "question_text": "Studies show exercise improves mental health.<br><br>Which sentence most effectively emphasizes the importance of this finding?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:04:54.316467+00:00"
+  },
+  {
+    "id": "687bd6c0-ce29-4db1-95a2-befe941db29a",
+    "quiz_id": "9b81a613-c84e-4fe9-9329-aeedef68c023",
+    "question_text": "[1] Bees play a crucial role in pollinating crops. [2] Without bees, many plants cannot reproduce. [3] <u>Bees make honey by collecting nectar.</u> [4] Agricultural systems depend on bee populations.<br><br>Which sentence digresses from the main focus?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:04:54.316467+00:00"
+  },
+  {
+    "id": "0c1d1c1e-dc09-4fb0-a91c-c45a8e76eaed",
+    "quiz_id": "9b81a613-c84e-4fe9-9329-aeedef68c023",
+    "question_text": "The museum exhibit opens next month.<br><br>Which sentence best adds specific detail about what visitors will see?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:04:54.316467+00:00"
+  },
+  {
+    "id": "db92b2c5-86fc-4c97-a0b1-720d3945f7c9",
+    "quiz_id": "9b81a613-c84e-4fe9-9329-aeedef68c023",
+    "question_text": "[1] The chef uses local ingredients. [2] She sources vegetables from nearby farms. [3] Her restaurant has won several awards. [4] <u>Many chefs train in culinary schools.</u><br><br>Which sentence least supports the paragraph?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:04:54.316467+00:00"
+  },
+  {
+    "id": "cf02c9ec-2a70-4a2f-9d63-9d5cd1d29958",
+    "quiz_id": "9b81a613-c84e-4fe9-9329-aeedef68c023",
+    "question_text": "The company announced record profits.<br><br>Which sentence best explains the cause of this success?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:04:54.316467+00:00"
+  },
+  {
+    "id": "e941179e-cce1-45e1-ba36-dfd031284eeb",
+    "quiz_id": "9b81a613-c84e-4fe9-9329-aeedef68c023",
+    "question_text": "[1] Regular dental checkups prevent serious problems. [2] Dentists can detect cavities early. [3] Early detection saves money on treatments. [4] <u>Toothpaste comes in many flavors.</u><br><br>Which sentence should be removed?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:04:54.316467+00:00"
+  },
+  {
+    "id": "995a9ce9-f825-4f42-8fb4-207152ef4cbf",
+    "quiz_id": "4555c19e-06cd-428d-9ac1-164696d14f12",
+    "question_text": "[1] The experiment required careful preparation. [2] Scientists gathered the necessary equipment. [3] <u>The results exceeded expectations.</u> [4] They sterilized all instruments.<br><br>Where should sentence 3 be placed?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:04:54.845552+00:00"
+  },
+  {
+    "id": "6b6c1053-469d-4be5-9735-a8985dcdd7ef",
+    "quiz_id": "4555c19e-06cd-428d-9ac1-164696d14f12",
+    "question_text": "[1] <u>The company announced record profits.</u> [2] Sales increased throughout the year. [3] The new product line proved successful. [4] Marketing efforts targeted younger consumers.<br><br>Where should sentence 1 be placed?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:04:54.845552+00:00"
+  },
+  {
+    "id": "3216d5f3-6b87-41c7-a57e-9efd70a37d73",
+    "quiz_id": "4555c19e-06cd-428d-9ac1-164696d14f12",
+    "question_text": "[1] The chef prepared the ingredients. [2] <u>The dinner was served at 8 PM.</u> [3] She preheated the oven. [4] Each dish was carefully plated.<br><br>Where should sentence 2 be placed?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:04:54.845552+00:00"
+  },
+  {
+    "id": "7f7a8833-0bc2-4634-9c64-488939dd84a0",
+    "quiz_id": "942876ce-f814-4cda-a0f1-b2a439ffd9df",
+    "question_text": "Two parallel lines are cut by a transversal. If one of the acute angles measures 65°, what is the measure of one of the obtuse angles?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:49:07.548237+00:00"
+  },
+  {
+    "id": "1ad1867a-f371-4dac-b000-6f6701e59b2c",
+    "quiz_id": "a552ec8a-c1be-4d22-8504-667c00e8532f",
+    "question_text": "The documentary explores climate change impacts. <u>[Should we add: \"The film features interviews with leading scientists.\"]</u><br><br>Should this sentence be added?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:04:54.557553+00:00"
+  },
+  {
+    "id": "b2219535-2494-441a-bfa8-92f325d0aaf0",
+    "quiz_id": "847bf8ee-2097-4b85-876e-b061a9ff07f0",
+    "question_text": "The results of the study <u>was</u> surprising to researchers.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:04:55.134865+00:00"
+  },
+  {
+    "id": "383fc424-53c0-46a0-8c79-150598c209c6",
+    "quiz_id": "847bf8ee-2097-4b85-876e-b061a9ff07f0",
+    "question_text": "There are <u>less</u> students in the advanced class.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:04:55.134865+00:00"
+  },
+  {
+    "id": "b4d8b8da-4e10-4d52-a102-70513193df7b",
+    "quiz_id": "847bf8ee-2097-4b85-876e-b061a9ff07f0",
+    "question_text": "The team <u>which</u> won the championship celebrated all night.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:04:55.134865+00:00"
+  },
+  {
+    "id": "4d785ae7-4da4-4e4c-a26c-8e5cc00a70cc",
+    "quiz_id": "847bf8ee-2097-4b85-876e-b061a9ff07f0",
+    "question_text": "The book was laying on the table.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:04:55.134865+00:00"
+  },
+  {
+    "id": "abdf9eb1-4da5-478c-849e-8f45ce3446b0",
+    "quiz_id": "847bf8ee-2097-4b85-876e-b061a9ff07f0",
+    "question_text": "She felt <u>badly</u> about missing the meeting.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:04:55.134865+00:00"
+  },
+  {
+    "id": "4c0e443c-e8f2-4958-867d-3bf4f4829320",
+    "quiz_id": "847bf8ee-2097-4b85-876e-b061a9ff07f0",
+    "question_text": "The number of applicants <u>have</u> increased significantly.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:04:55.134865+00:00"
+  },
+  {
+    "id": "3679d1a6-6e02-4946-8b76-b898e60abdfc",
+    "quiz_id": "847bf8ee-2097-4b85-876e-b061a9ff07f0",
+    "question_text": "Please lay the book down and <u>set</u> quietly for a moment.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:04:55.134865+00:00"
+  },
+  {
+    "id": "60ce3f22-68bf-4fb5-9896-cf933d28c429",
+    "quiz_id": "847bf8ee-2097-4b85-876e-b061a9ff07f0",
+    "question_text": "The documentary <u>rises</u> important questions about privacy.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:04:55.134865+00:00"
+  },
+  {
+    "id": "518cdba3-a22b-4d47-8d81-db2dbbadbb40",
+    "quiz_id": "847bf8ee-2097-4b85-876e-b061a9ff07f0",
+    "question_text": "There are <u>alot</u> of reasons to support this policy.<br><br>Which choice best corrects the underlined portion?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:04:55.134865+00:00"
+  },
+  {
+    "id": "2e13e4f5-3f74-4db5-8b94-5e100c8de7ff",
+    "quiz_id": "847bf8ee-2097-4b85-876e-b061a9ff07f0",
+    "question_text": "The company is looking for someone <u>who</u> can manage the team well.<br><br>Is this correct?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:04:55.134865+00:00"
+  },
+  {
+    "id": "b15be25c-bdeb-47b0-8b83-bd9272fa8b11",
+    "quiz_id": "942876ce-f814-4cda-a0f1-b2a439ffd9df",
+    "question_text": "In a triangle, two angles measure 48° and 67°. What is the measure of the third angle?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:49:07.904707+00:00"
+  },
+  {
+    "id": "80351519-a921-4288-8e06-8ccd32a8c33f",
+    "quiz_id": "942876ce-f814-4cda-a0f1-b2a439ffd9df",
+    "question_text": "In a quadrilateral, three angles measure 85°, 95°, and 110°. What is the measure of the fourth angle?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:49:09.79689+00:00"
+  },
+  {
+    "id": "216bf41a-4380-47ad-9093-913b6e936074",
+    "quiz_id": "621c831e-0401-46ed-ad4b-d391e05f88b8",
+    "question_text": "A square has an area of 81 square feet. What is the perimeter in feet?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:56:47.715289+00:00"
+  },
+  {
+    "id": "7aa6c22f-2d8f-4440-90a2-fd1da893e3c2",
+    "quiz_id": "621c831e-0401-46ed-ad4b-d391e05f88b8",
+    "question_text": "In a 30°-60°-90° triangle, the hypotenuse is 24. What is the length of the shortest side?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:56:49.721554+00:00"
+  },
+  {
+    "id": "8671bd70-60f2-4f7d-b8fa-ed3d75391d4c",
+    "quiz_id": "7295f239-8a1e-4b02-ab1b-41cd6141fbcc",
+    "question_text": "If line A has a slope of -2/5, what is the slope of a line perpendicular to line A?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:59:54.003837+00:00"
+  },
+  {
+    "id": "7e220f4b-9429-4ded-bfba-210aefc522f0",
+    "quiz_id": "7295f239-8a1e-4b02-ab1b-41cd6141fbcc",
+    "question_text": "What is the distance between points (1, 2) and (5, 5)?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:59:55.252844+00:00"
+  },
+  {
+    "id": "ddc1864b-8b04-48d7-ab92-f1819879e924",
+    "quiz_id": "a548797e-3772-4101-9ecb-c6e83ea63618",
+    "question_text": "In a circle with radius 9, what is the length of an arc with central angle 40°?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:02:52.129648+00:00"
+  },
+  {
+    "id": "c928958a-403b-4cc1-8f38-5b2ba90d8417",
+    "quiz_id": "a548797e-3772-4101-9ecb-c6e83ea63618",
+    "question_text": "A sector has area 12π and radius 6. What is the central angle?",
+    "question_order": 6,
+    "created_at": "2025-10-14T00:02:54.061838+00:00"
+  },
+  {
+    "id": "328982bc-0f7b-4b80-ad1e-f9394b0bf0d0",
+    "quiz_id": "e552b1b8-696f-42f0-83d2-b0f02e8cb2db",
+    "question_text": "A circle has the equation x² + y² = 49. What is the diameter of this circle?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:12:37.808804+00:00"
+  },
+  {
+    "id": "cc3503af-d950-45d6-8fb2-3faba072ead2",
+    "quiz_id": "e552b1b8-696f-42f0-83d2-b0f02e8cb2db",
+    "question_text": "Which of the following equations represents a horizontal hyperbola?",
+    "question_order": 7,
+    "created_at": "2025-10-14T00:12:39.931623+00:00"
+  },
+  {
+    "id": "9c2dc56a-5d2f-4a43-b59d-de31aae316ef",
+    "quiz_id": "65882dbb-49e5-4b4d-9dda-6fc731356328",
+    "question_text": "Which of the following is equivalent to 3(x − 2) − 2(x − 5)?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:15:46.400884+00:00"
+  },
+  {
+    "id": "ad5fa905-6c19-473a-b687-dff4fed9a773",
+    "quiz_id": "65882dbb-49e5-4b4d-9dda-6fc731356328",
+    "question_text": "If √x = x − 6, what value(s) of x solve the equation?",
+    "question_order": 7,
+    "created_at": "2025-10-14T00:15:48.0389+00:00"
+  },
+  {
+    "id": "a93da8be-5fd0-444f-a966-73b5c67147c1",
+    "quiz_id": "0e76126a-3989-49c5-91e9-2226e1fe0a1b",
+    "question_text": "What is (2/3) ÷ (4/5)?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:18:24.191655+00:00"
+  },
+  {
+    "id": "c23ab0dc-da65-423f-b599-1145b526a47c",
+    "quiz_id": "0e76126a-3989-49c5-91e9-2226e1fe0a1b",
+    "question_text": "Simplify: (4x+8)/12",
+    "question_order": 7,
+    "created_at": "2025-10-14T00:18:26.092544+00:00"
+  },
+  {
+    "id": "d91f9569-0df6-47ca-a81b-6e32f1ef086d",
+    "quiz_id": "a32b3ce5-d565-4ce7-ac2d-895b39fc921f",
+    "question_text": "What is x⁸ ÷ x² equal to?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:21:01.368223+00:00"
+  },
+  {
+    "id": "f4249e60-63bc-457e-bfb7-8b5c6d168093",
+    "quiz_id": "a32b3ce5-d565-4ce7-ac2d-895b39fc921f",
+    "question_text": "What is √18 + √8 equal to?",
+    "question_order": 7,
+    "created_at": "2025-10-14T00:21:03.296263+00:00"
+  },
+  {
+    "id": "317b8e71-84fc-4638-a819-caa3169d4b4f",
+    "quiz_id": "913c77d9-51fe-4a96-8423-aad69b8a9366",
+    "question_text": "What is log₂(16)?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:23:17.426076+00:00"
+  },
+  {
+    "id": "dbda4a45-e540-4097-b85a-3b9a8ff9b1a2",
+    "quiz_id": "913c77d9-51fe-4a96-8423-aad69b8a9366",
+    "question_text": "If ln(x) = 2, then x = ?",
+    "question_order": 7,
+    "created_at": "2025-10-14T00:23:18.984827+00:00"
+  },
+  {
+    "id": "6f2c059e-c284-4833-ac05-65e019000c5d",
+    "quiz_id": "c31e0c84-f314-4b29-919a-eb75a9eaff1b",
+    "question_text": "Solve: 5x − 7 ≤ 3x + 9",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:26:09.890062+00:00"
+  },
+  {
+    "id": "423d98e6-cdc2-45f8-909a-a77c9833bdb0",
+    "quiz_id": "8ab81656-c264-4b15-b752-264fd84eea08",
+    "question_text": "Solve the system: 2x + 3y = 13 and x − y = 1. What is the value of x?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:30:10.851408+00:00"
+  },
+  {
+    "id": "cc5e741c-91c3-497a-9da7-8445a6636a43",
+    "quiz_id": "8ab81656-c264-4b15-b752-264fd84eea08",
+    "question_text": "A theater sold 200 tickets. Adult tickets cost $12 and child tickets cost $8. Total revenue was $2,080. How many adult tickets were sold?",
+    "question_order": 6,
+    "created_at": "2025-10-14T00:30:12.567387+00:00"
+  },
+  {
+    "id": "3e755f36-b7b9-4006-8d63-fed50fede8c4",
+    "quiz_id": "c03cb9ea-05f7-409e-9466-6a1a6a9d4d20",
+    "question_text": "Expand (3x + 2)(x + 4). What is the result?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:32:48.251538+00:00"
+  },
+  {
+    "id": "8f2fa0ba-18ac-4bda-bf60-fa04ac5a5277",
+    "quiz_id": "c03cb9ea-05f7-409e-9466-6a1a6a9d4d20",
+    "question_text": "What is the sum of the roots of f(x) = x² − 9x + 20?",
+    "question_order": 6,
+    "created_at": "2025-10-14T00:32:50.996566+00:00"
+  },
+  {
+    "id": "edc49742-7bc8-4c9e-8d06-2c7264dbebff",
+    "quiz_id": "8ec035c8-5b6b-411e-8d2e-7fbd7323dac2",
+    "question_text": "Expand (3x + 2)(x + 4). What is the result?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:36:34.190198+00:00"
+  },
+  {
+    "id": "3fbf006b-583e-4545-b873-30da01aa94a4",
+    "quiz_id": "8ec035c8-5b6b-411e-8d2e-7fbd7323dac2",
+    "question_text": "What is the sum of the roots of f(x) = x² − 9x + 20?",
+    "question_order": 6,
+    "created_at": "2025-10-14T00:36:36.276659+00:00"
+  },
+  {
+    "id": "f36fcfa2-f0d0-4750-bc2b-2b094768d6d5",
+    "quiz_id": "b1fe3c59-9561-43ed-8f14-9f74778b2301",
+    "question_text": "Expand (3x + 2)(x + 4). What is the result?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:38:17.540969+00:00"
+  },
+  {
+    "id": "275156d3-14bd-423f-9a96-b8374cc7300a",
+    "quiz_id": "b1fe3c59-9561-43ed-8f14-9f74778b2301",
+    "question_text": "What is the sum of the roots of f(x) = x² − 9x + 20?",
+    "question_order": 6,
+    "created_at": "2025-10-14T00:38:19.150998+00:00"
+  },
+  {
+    "id": "72222da0-c39e-481b-b2a5-2260cd557480",
+    "quiz_id": "2e7b1e19-7217-47ee-a6de-e822909d1354",
+    "question_text": "Expand (3x + 2)(x + 4). What is the result?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:39:32.959353+00:00"
+  },
+  {
+    "id": "3b6e2bcb-5b5f-409c-9ec8-7be79dc77dcc",
+    "quiz_id": "2e7b1e19-7217-47ee-a6de-e822909d1354",
+    "question_text": "What is the sum of the roots of f(x) = x² − 9x + 20?",
+    "question_order": 6,
+    "created_at": "2025-10-14T00:39:35.194957+00:00"
+  },
+  {
+    "id": "951a45bb-6392-42d4-9ea7-cf875fc93d67",
+    "quiz_id": "5dd6f0cf-5858-48df-a2a6-b52785ea93a4",
+    "question_text": "Expand (3x + 2)(x + 4). What is the result?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:41:27.93036+00:00"
+  },
+  {
+    "id": "3f2ff19c-34f2-40b2-956a-c976c4cd50d8",
+    "quiz_id": "5dd6f0cf-5858-48df-a2a6-b52785ea93a4",
+    "question_text": "What is the sum of the roots of f(x) = x² − 9x + 20?",
+    "question_order": 6,
+    "created_at": "2025-10-14T00:41:30.107533+00:00"
+  },
+  {
+    "id": "50188c37-3016-4769-911c-69e68b5f9d99",
+    "quiz_id": "04aa8aab-634c-421a-a2d2-8bd84231b9d0",
+    "question_text": "Expand (3x + 2)(x + 4). What is the result?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:42:33.58656+00:00"
+  },
+  {
+    "id": "745b20cb-3f16-498a-8bf9-d992c6893856",
+    "quiz_id": "04aa8aab-634c-421a-a2d2-8bd84231b9d0",
+    "question_text": "What is the sum of the roots of f(x) = x² − 9x + 20?",
+    "question_order": 6,
+    "created_at": "2025-10-14T00:42:35.222423+00:00"
+  },
+  {
+    "id": "ef81d90a-4a78-4c4d-9bef-5dd6745f82fa",
+    "quiz_id": "1f93bd44-ea4e-49f6-b985-70084a0202c8",
+    "question_text": "Factor x² − 64.",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:43:09.708985+00:00"
+  },
+  {
+    "id": "eba8ccca-47f1-49f9-b461-1c20299f42df",
+    "quiz_id": "1f93bd44-ea4e-49f6-b985-70084a0202c8",
+    "question_text": "How many real solutions does x² + 2x + 5 = 0 have?",
+    "question_order": 8,
+    "created_at": "2025-10-14T00:43:11.723553+00:00"
+  },
+  {
+    "id": "37863ca0-d4fa-4dd6-926b-d16a931c0e26",
+    "quiz_id": "ed1480bb-ed6b-4c42-9748-fc3131a630e3",
+    "question_text": "Factor x² − 64.",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:43:14.086984+00:00"
+  },
+  {
+    "id": "dd7d4b76-71eb-411f-8bbb-b67e5efbc779",
+    "quiz_id": "ed1480bb-ed6b-4c42-9748-fc3131a630e3",
+    "question_text": "How many real solutions does x² + 2x + 5 = 0 have?",
+    "question_order": 8,
+    "created_at": "2025-10-14T00:43:16.032624+00:00"
+  },
+  {
+    "id": "64994d72-9c2c-4f60-b90c-3fcfddb2c619",
+    "quiz_id": "218989f9-4fc2-4ce2-8da7-2bba94dd28a8",
+    "question_text": "A right triangle has legs measuring 6 and 8. What is the length of the hypotenuse?",
+    "question_order": 3,
+    "created_at": "2025-10-16T06:58:08.387786+00:00"
+  },
+  {
+    "id": "502ca339-a924-4009-892c-d720274a7682",
+    "quiz_id": "218989f9-4fc2-4ce2-8da7-2bba94dd28a8",
+    "question_text": "A rectangular box has length 5, width 3, and height 4. What is its volume?",
+    "question_order": 8,
+    "created_at": "2025-10-16T06:58:09.699579+00:00"
+  },
+  {
+    "id": "6347d915-c63b-4c6b-a024-655067c0f0ad",
+    "quiz_id": "1d1a6281-3dac-4dd3-a251-df9865f9e337",
+    "question_text": "What is the slope of the line passing through (3, 7) and (5, 11)?",
+    "question_order": 1,
+    "created_at": "2025-10-16T06:58:10.556999+00:00"
+  },
+  {
+    "id": "eacabb65-72e9-4062-9b3d-92d6e8e599fb",
+    "quiz_id": "1d1a6281-3dac-4dd3-a251-df9865f9e337",
+    "question_text": "A line passes through (1, 4) with slope 3. What is its equation?",
+    "question_order": 6,
+    "created_at": "2025-10-16T06:58:11.758321+00:00"
+  },
+  {
+    "id": "b3fe567f-59e7-4f44-b72c-ceb1e6a435dd",
+    "quiz_id": "5009b373-03db-4014-bf91-14e5919746e3",
+    "question_text": "What fraction of a circle's circumference is an arc with central angle 72°?",
+    "question_order": 4,
+    "created_at": "2025-10-16T06:58:13.661606+00:00"
+  },
+  {
+    "id": "fad4a190-c4bf-46eb-a35a-defd61e9ecb1",
+    "quiz_id": "5009b373-03db-4014-bf91-14e5919746e3",
+    "question_text": "A circle has radius 5. An arc has length 10π. What is the central angle?",
+    "question_order": 9,
+    "created_at": "2025-10-16T06:58:14.845747+00:00"
+  },
+  {
+    "id": "58380c0b-c10d-4d72-b824-9b66471eeb29",
+    "quiz_id": "5e8a3be7-5486-4108-b580-5754618515fa",
+    "question_text": "What is the center of the circle (x + 3)² + (y - 5)² = 36?",
+    "question_order": 2,
+    "created_at": "2025-10-16T06:58:15.701888+00:00"
+  },
+  {
+    "id": "fd968846-6acc-44b4-be1d-1ce0869d74c3",
+    "quiz_id": "5e8a3be7-5486-4108-b580-5754618515fa",
+    "question_text": "What is the distance from the center of (x - 3)² + (y - 4)² = 25 to the origin (0, 0)?",
+    "question_order": 7,
+    "created_at": "2025-10-16T06:58:16.889699+00:00"
+  },
+  {
+    "id": "da801b22-c701-4cfc-9222-c5e998b6f4e9",
+    "quiz_id": "4555c19e-06cd-428d-9ac1-164696d14f12",
+    "question_text": "[1] Students submitted their applications. [2] The committee reviewed each one carefully. [3] <u>Accepted students received welcome packets.</u> [4] Interviews were conducted with finalists.<br><br>Where should sentence 3 be placed?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:04:54.845552+00:00"
+  },
+  {
+    "id": "ab0c43dc-9c48-4b3c-bee4-77c034d06093",
+    "quiz_id": "4555c19e-06cd-428d-9ac1-164696d14f12",
+    "question_text": "[1] The seeds began to sprout. [2] <u>Farmers harvested the mature wheat.</u> [3] Regular watering ensured healthy growth. [4] The plants developed strong roots.<br><br>Where should sentence 2 be placed?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:04:54.845552+00:00"
+  },
+  {
+    "id": "9bffebee-7ea2-465b-a3d0-ee1291fa534f",
+    "quiz_id": "4555c19e-06cd-428d-9ac1-164696d14f12",
+    "question_text": "[1] <u>The book became a bestseller.</u> [2] The author spent years researching. [3] She drafted multiple revisions. [4] Publishers initially rejected the manuscript.<br><br>Where should sentence 1 be placed?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:04:54.845552+00:00"
+  },
+  {
+    "id": "a4ed0d64-3ae7-4796-93a9-cd250d22e185",
+    "quiz_id": "4555c19e-06cd-428d-9ac1-164696d14f12",
+    "question_text": "[1] The patient recovered fully. [2] Doctors diagnosed the condition. [3] <u>Physical therapy aided rehabilitation.</u> [4] Treatment began immediately.<br><br>Where should sentence 3 be placed?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:04:54.845552+00:00"
+  },
+  {
+    "id": "ad091f03-f87e-438d-9c30-6b86bbf90e28",
+    "quiz_id": "4555c19e-06cd-428d-9ac1-164696d14f12",
+    "question_text": "[1] The architect designed the building. [2] Construction began in May. [3] The site was cleared and prepared. [4] <u>The building opened to the public.</u><br><br>Where should sentence 4 be placed?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:04:54.845552+00:00"
+  },
+  {
+    "id": "9e32cc58-59ae-4f8c-aaa7-25690d645d20",
+    "quiz_id": "4555c19e-06cd-428d-9ac1-164696d14f12",
+    "question_text": "[1] <u>The concert received rave reviews.</u> [2] Musicians rehearsed for weeks. [3] The venue was carefully selected. [4] Tickets sold out within hours.<br><br>Where should sentence 1 be placed?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:04:54.845552+00:00"
+  },
+  {
+    "id": "87413511-daf8-4392-987f-35efbfc7a789",
+    "quiz_id": "4555c19e-06cd-428d-9ac1-164696d14f12",
+    "question_text": "[1] The legislation was signed into law. [2] <u>Citizens noticed improvements in services.</u> [3] The bill passed both houses of Congress. [4] Implementation began immediately.<br><br>Where should sentence 2 be placed?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:04:54.845552+00:00"
+  },
+  {
+    "id": "e66c807b-dd86-4ebe-9232-7084903f0750",
+    "quiz_id": "942876ce-f814-4cda-a0f1-b2a439ffd9df",
+    "question_text": "What is the sum of the interior angles of a hexagon?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:49:08.309732+00:00"
+  },
+  {
+    "id": "959f05d3-63d6-4a9d-8458-0743348d5610",
+    "quiz_id": "942876ce-f814-4cda-a0f1-b2a439ffd9df",
+    "question_text": "An isosceles triangle has two equal angles of 72° each. What is the measure of the third angle?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:49:10.148238+00:00"
+  },
+  {
+    "id": "0f70c8b8-8fae-4597-9d01-7dc2b9f432e9",
+    "quiz_id": "621c831e-0401-46ed-ad4b-d391e05f88b8",
+    "question_text": "A circle has a radius of 7 cm. What is the area in square centimeters?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:56:48.195812+00:00"
+  },
+  {
+    "id": "46cbcde4-acf0-47c4-85cc-ce300b2e15b3",
+    "quiz_id": "621c831e-0401-46ed-ad4b-d391e05f88b8",
+    "question_text": "Two similar triangles have corresponding sides of 6 and 9. If the smaller triangle has a side of length 8, what is the length of the corresponding side in the larger triangle?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:56:50.102432+00:00"
+  },
+  {
+    "id": "e8200468-4e7c-42c1-9dae-dc523ba2c1cb",
+    "quiz_id": "7295f239-8a1e-4b02-ab1b-41cd6141fbcc",
+    "question_text": "What is the y-intercept of the line y = -3x + 7?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:59:54.283973+00:00"
+  },
+  {
+    "id": "1622da54-3f5b-4500-84b5-cd18ac80f479",
+    "quiz_id": "7295f239-8a1e-4b02-ab1b-41cd6141fbcc",
+    "question_text": "Lines m and n are parallel. If line m has equation y = 2x - 3, which could be the equation of line n?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:59:55.507666+00:00"
+  },
+  {
+    "id": "8bd45ef1-1069-4c58-be02-9eac1424cc7b",
+    "quiz_id": "a548797e-3772-4101-9ecb-c6e83ea63618",
+    "question_text": "A sector has a central angle of 90° in a circle with radius 8. What is the area of the sector?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:02:52.528518+00:00"
+  },
+  {
+    "id": "01ecb069-1549-4e53-95e9-4a9ec124e44a",
+    "quiz_id": "a548797e-3772-4101-9ecb-c6e83ea63618",
+    "question_text": "A pizza with diameter 16 inches is cut into 12 equal slices. What is the area of one slice?",
+    "question_order": 7,
+    "created_at": "2025-10-14T00:02:54.480397+00:00"
+  },
+  {
+    "id": "f5579016-f1c8-4719-9763-225ceff6d71c",
+    "quiz_id": "e552b1b8-696f-42f0-83d2-b0f02e8cb2db",
+    "question_text": "In the xy-plane, points (−2, 3) and (4, 11) are the endpoints of a diameter on a circle. What is the center of the circle?",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:12:38.292704+00:00"
+  },
+  {
+    "id": "9e234d68-0b13-4077-81e5-e56eb231329a",
+    "quiz_id": "e552b1b8-696f-42f0-83d2-b0f02e8cb2db",
+    "question_text": "A hyperbola has vertices at (5, 2) and (5, 8). What is the center of the hyperbola?",
+    "question_order": 8,
+    "created_at": "2025-10-14T00:12:40.393162+00:00"
+  },
+  {
+    "id": "2f958130-8a61-4619-981f-bde9b6f04b2c",
+    "quiz_id": "65882dbb-49e5-4b4d-9dda-6fc731356328",
+    "question_text": "What is the value of −3²?",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:15:46.685903+00:00"
+  },
+  {
+    "id": "981a6107-84ab-4d4a-962d-c38a07a6aa13",
+    "quiz_id": "65882dbb-49e5-4b4d-9dda-6fc731356328",
+    "question_text": "If x² = 64, what are all possible values of x?",
+    "question_order": 8,
+    "created_at": "2025-10-14T00:15:48.482863+00:00"
+  },
+  {
+    "id": "c4fcf19f-020a-43e7-9f16-98c617f60600",
+    "quiz_id": "0e76126a-3989-49c5-91e9-2226e1fe0a1b",
+    "question_text": "Which expression is equivalent to (6x+9)/3?",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:18:24.648505+00:00"
+  },
+  {
+    "id": "e6fed1b5-50a3-425d-9c33-b5de9a07ff1c",
+    "quiz_id": "0e76126a-3989-49c5-91e9-2226e1fe0a1b",
+    "question_text": "What is (3/5) ÷ 3?",
+    "question_order": 8,
+    "created_at": "2025-10-14T00:18:26.43161+00:00"
+  },
+  {
+    "id": "40abb20a-7467-413b-ba26-92f7ed02e33f",
+    "quiz_id": "a32b3ce5-d565-4ce7-ac2d-895b39fc921f",
+    "question_text": "Simplify: (x³)⁴",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:21:01.766049+00:00"
+  },
+  {
+    "id": "45e07909-1c5f-40c2-88ad-7012a9087523",
+    "quiz_id": "a32b3ce5-d565-4ce7-ac2d-895b39fc921f",
+    "question_text": "If √(3x) = 6√2, what is x?",
+    "question_order": 8,
+    "created_at": "2025-10-14T00:21:03.754243+00:00"
+  },
+  {
+    "id": "bacc023e-5d16-4c4b-8e14-64fa9525eebf",
+    "quiz_id": "913c77d9-51fe-4a96-8423-aad69b8a9366",
+    "question_text": "If log₁₀(1000) = x, what is x?",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:23:17.796948+00:00"
+  },
+  {
+    "id": "25de47d2-e226-452c-8808-6a78eb943c1b",
+    "quiz_id": "913c77d9-51fe-4a96-8423-aad69b8a9366",
+    "question_text": "If log(x²) = 4, what is x?",
+    "question_order": 8,
+    "created_at": "2025-10-14T00:23:19.42549+00:00"
+  },
+  {
+    "id": "351313db-542d-4cdd-9b7a-18db640ab47b",
+    "quiz_id": "c31e0c84-f314-4b29-919a-eb75a9eaff1b",
+    "question_text": "Which represents x ≥ 3 on a number line?",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:26:10.248786+00:00"
+  },
+  {
+    "id": "95e35271-268b-4781-8205-fcf721fcd9bb",
+    "quiz_id": "8ab81656-c264-4b15-b752-264fd84eea08",
+    "question_text": "If 3x + 2y = 7 and y = 2x − 5, what is the value of y?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:30:11.229786+00:00"
+  },
+  {
+    "id": "04324edb-f6eb-4719-9efb-4ba93330340e",
+    "quiz_id": "8ab81656-c264-4b15-b752-264fd84eea08",
+    "question_text": "Solve the system: 4x − y = 11 and 2x + y = 7. What is x?",
+    "question_order": 7,
+    "created_at": "2025-10-14T00:30:12.866287+00:00"
+  },
+  {
+    "id": "719d6198-a2c9-4961-a6e1-6ee8b062f27c",
+    "quiz_id": "c03cb9ea-05f7-409e-9466-6a1a6a9d4d20",
+    "question_text": "What is (x + 7)²?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:32:49.068369+00:00"
+  },
+  {
+    "id": "7ccf11b9-d967-4628-8d24-bf2700484205",
+    "quiz_id": "c03cb9ea-05f7-409e-9466-6a1a6a9d4d20",
+    "question_text": "Using the quadratic formula, what are the solutions to 2x² + 3x − 2 = 0?",
+    "question_order": 7,
+    "created_at": "2025-10-14T00:32:51.392611+00:00"
+  },
+  {
+    "id": "3a669b50-a969-46c0-ac05-fcd79c5663b0",
+    "quiz_id": "8ec035c8-5b6b-411e-8d2e-7fbd7323dac2",
+    "question_text": "What is (x + 7)²?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:36:34.880239+00:00"
+  },
+  {
+    "id": "615bb207-6026-49ab-957a-b97c36f92f03",
+    "quiz_id": "8ec035c8-5b6b-411e-8d2e-7fbd7323dac2",
+    "question_text": "Using the quadratic formula, what are the solutions to 2x² + 3x − 2 = 0?",
+    "question_order": 7,
+    "created_at": "2025-10-14T00:36:36.642832+00:00"
+  },
+  {
+    "id": "5f5ba0d6-fb5d-480b-8f87-6697c112d46a",
+    "quiz_id": "b1fe3c59-9561-43ed-8f14-9f74778b2301",
+    "question_text": "What is (x + 7)²?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:38:17.950146+00:00"
+  },
+  {
+    "id": "fa9bfa8b-a7c0-4c04-ba72-31d0f1b42198",
+    "quiz_id": "b1fe3c59-9561-43ed-8f14-9f74778b2301",
+    "question_text": "Using the quadratic formula, what are the solutions to 2x² + 3x − 2 = 0?",
+    "question_order": 7,
+    "created_at": "2025-10-14T00:38:19.452423+00:00"
+  },
+  {
+    "id": "7fdb9154-f2e3-43f8-ac28-408f7870a640",
+    "quiz_id": "2e7b1e19-7217-47ee-a6de-e822909d1354",
+    "question_text": "What is (x + 7)²?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:39:33.541033+00:00"
+  },
+  {
+    "id": "791f6968-c4d1-4d80-ac31-c10ed37f8f83",
+    "quiz_id": "2e7b1e19-7217-47ee-a6de-e822909d1354",
+    "question_text": "Using the quadratic formula, what are the solutions to 2x² + 3x − 2 = 0?",
+    "question_order": 7,
+    "created_at": "2025-10-14T00:39:35.569761+00:00"
+  },
+  {
+    "id": "82bdb289-34e9-4cc3-9175-508430b4df1f",
+    "quiz_id": "5dd6f0cf-5858-48df-a2a6-b52785ea93a4",
+    "question_text": "What is (x + 7)²?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:41:28.366065+00:00"
+  },
+  {
+    "id": "9bf6ff10-9a7b-494d-9401-095f352052a9",
+    "quiz_id": "5dd6f0cf-5858-48df-a2a6-b52785ea93a4",
+    "question_text": "Using the quadratic formula, what are the solutions to 2x² + 3x − 2 = 0?",
+    "question_order": 7,
+    "created_at": "2025-10-14T00:41:30.640758+00:00"
+  },
+  {
+    "id": "aa1f3614-9207-46a6-aafc-04a6c0d75bcc",
+    "quiz_id": "04aa8aab-634c-421a-a2d2-8bd84231b9d0",
+    "question_text": "Factor x² − 64.",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:42:34.370624+00:00"
+  },
+  {
+    "id": "32d71e3a-a98e-4212-a012-48bcb7cd7e87",
+    "quiz_id": "04aa8aab-634c-421a-a2d2-8bd84231b9d0",
+    "question_text": "If x² + 8x + k can be written as (x + 4)², what is k?",
+    "question_order": 5,
+    "created_at": "2025-10-14T00:42:34.929854+00:00"
+  },
+  {
+    "id": "83e49ae8-34ea-4cbd-9e42-6a4406f3e57c",
+    "quiz_id": "04aa8aab-634c-421a-a2d2-8bd84231b9d0",
+    "question_text": "How many real solutions does x² + 2x + 5 = 0 have?",
+    "question_order": 8,
+    "created_at": "2025-10-14T00:42:35.815788+00:00"
+  },
+  {
+    "id": "828012c8-fd2c-4413-9abb-9f55357d9101",
+    "quiz_id": "04aa8aab-634c-421a-a2d2-8bd84231b9d0",
+    "question_text": "What is the vertex of y = (x − 3)² + 7?",
+    "question_order": 10,
+    "created_at": "2025-10-14T00:42:36.398099+00:00"
+  },
+  {
+    "id": "82d9ea8a-7d1f-4d14-b009-87c6f85d859c",
+    "quiz_id": "1f93bd44-ea4e-49f6-b985-70084a0202c8",
+    "question_text": "What are the solutions to x² − 5x + 6 = 0?",
+    "question_order": 4,
+    "created_at": "2025-10-14T00:43:10.039317+00:00"
+  },
+  {
+    "id": "da4c49df-5bdd-4864-a57a-0f7476c1d2d7",
+    "quiz_id": "1f93bd44-ea4e-49f6-b985-70084a0202c8",
+    "question_text": "For what value of k does x² − 6x + k = 0 have exactly one solution?",
+    "question_order": 9,
+    "created_at": "2025-10-14T00:43:12.145451+00:00"
+  },
+  {
+    "id": "ed7c8f00-acb8-4279-9d6c-ff80ec80130a",
+    "quiz_id": "ed1480bb-ed6b-4c42-9748-fc3131a630e3",
+    "question_text": "What are the solutions to x² − 5x + 6 = 0?",
+    "question_order": 4,
+    "created_at": "2025-10-14T00:43:14.436821+00:00"
+  },
+  {
+    "id": "b611155e-caf4-46d0-8da7-a414abe8c047",
+    "quiz_id": "ed1480bb-ed6b-4c42-9748-fc3131a630e3",
+    "question_text": "For what value of k does x² − 6x + k = 0 have exactly one solution?",
+    "question_order": 9,
+    "created_at": "2025-10-14T00:43:16.407362+00:00"
+  },
+  {
+    "id": "06b11740-df29-487b-b01c-c605f18c329e",
+    "quiz_id": "218989f9-4fc2-4ce2-8da7-2bba94dd28a8",
+    "question_text": "A cylinder has radius 3 and height 5. What is its volume?",
+    "question_order": 4,
+    "created_at": "2025-10-16T06:58:08.638026+00:00"
+  },
+  {
+    "id": "babf5ca2-3d4a-457b-8ed4-051428ad836a",
+    "quiz_id": "218989f9-4fc2-4ce2-8da7-2bba94dd28a8",
+    "question_text": "In a 30-60-90 triangle, if the short leg is 4, what is the hypotenuse?",
+    "question_order": 9,
+    "created_at": "2025-10-16T06:58:09.981075+00:00"
+  },
+  {
+    "id": "62b670ce-e063-430c-824e-aaa72145354c",
+    "quiz_id": "1d1a6281-3dac-4dd3-a251-df9865f9e337",
+    "question_text": "What is the y-intercept of the line y = -2x + 9?",
+    "question_order": 2,
+    "created_at": "2025-10-16T06:58:10.796589+00:00"
+  },
+  {
+    "id": "06d18c05-683c-4700-b631-ac27be5a6f52",
+    "quiz_id": "1d1a6281-3dac-4dd3-a251-df9865f9e337",
+    "question_text": "What is the distance between (0, 0) and (3, 4)?",
+    "question_order": 7,
+    "created_at": "2025-10-16T06:58:11.98791+00:00"
+  },
+  {
+    "id": "063c0420-e0af-4027-90f2-2924a2a23748",
+    "quiz_id": "5009b373-03db-4014-bf91-14e5919746e3",
+    "question_text": "A circle has radius 12. What is the arc length for a 30° central angle?",
+    "question_order": 5,
+    "created_at": "2025-10-16T06:58:13.871928+00:00"
+  },
+  {
+    "id": "f1a7b6b9-ba16-4159-aeb0-d9b9974d343f",
+    "quiz_id": "5009b373-03db-4014-bf91-14e5919746e3",
+    "question_text": "A sector has central angle 135° and radius 8. What is its area?",
+    "question_order": 10,
+    "created_at": "2025-10-16T06:58:15.12158+00:00"
+  },
+  {
+    "id": "ba3e8ec9-b9d2-41cc-9d61-9828a9c1e11c",
+    "quiz_id": "14aa5b8f-6db4-4b56-a18b-8552515f5c3c",
+    "question_text": "Solve for x: 5x - 3 = 3x + 11",
+    "question_order": 9,
+    "created_at": "2025-10-16T06:58:19.612154+00:00"
+  },
+  {
+    "id": "c16c8128-a796-40c0-81d9-6b068e07eed6",
+    "quiz_id": "942876ce-f814-4cda-a0f1-b2a439ffd9df",
+    "question_text": "Two vertical angles are formed by intersecting lines. If one vertical angle measures 3x + 15 and the other measures 5x − 25, what is the value of x?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:49:08.713554+00:00"
+  },
+  {
+    "id": "e64a3a09-e2ce-4415-8da0-37d8026ef23e",
+    "quiz_id": "942876ce-f814-4cda-a0f1-b2a439ffd9df",
+    "question_text": "Two parallel lines are cut by a transversal. One interior angle on the same side of the transversal measures 115°. What is the measure of the other interior angle on the same side?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:49:10.482686+00:00"
+  },
+  {
+    "id": "908c2257-6b91-4e11-84e8-75acf0ec31c0",
+    "quiz_id": "621c831e-0401-46ed-ad4b-d391e05f88b8",
+    "question_text": "A rectangular room is 15 feet long and 12 feet wide. How many square yards of carpet are needed to cover the floor? (1 yard = 3 feet)",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:56:48.609976+00:00"
+  },
+  {
+    "id": "33d39125-dad2-4120-8694-17b99d40c4fb",
+    "quiz_id": "621c831e-0401-46ed-ad4b-d391e05f88b8",
+    "question_text": "A triangle has sides of lengths 7 and 10. Which of the following could NOT be the length of the third side?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:56:50.467074+00:00"
+  },
+  {
+    "id": "03e000f7-09a5-45e9-96ed-0a479dbc2212",
+    "quiz_id": "7295f239-8a1e-4b02-ab1b-41cd6141fbcc",
+    "question_text": "What is the slope of the line 6x + 2y = 10?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:59:54.524935+00:00"
+  },
+  {
+    "id": "da9fddde-a9fa-45b1-9ccc-491906518aff",
+    "quiz_id": "7295f239-8a1e-4b02-ab1b-41cd6141fbcc",
+    "question_text": "For the line 4x - 3y = 12, what is the x-intercept?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:59:55.767576+00:00"
+  },
+  {
+    "id": "e06bbbb6-9b52-4e64-b21b-a9672c1347e1",
+    "quiz_id": "a548797e-3772-4101-9ecb-c6e83ea63618",
+    "question_text": "If a pie is cut into 8 equal slices, what is the central angle of each slice?",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:02:52.931326+00:00"
+  },
+  {
+    "id": "a9620b3f-570b-43a1-a870-b92fb6665661",
+    "quiz_id": "a548797e-3772-4101-9ecb-c6e83ea63618",
+    "question_text": "An inscribed angle measures 35°. What is the measure of the corresponding central angle?",
+    "question_order": 8,
+    "created_at": "2025-10-14T00:02:54.776521+00:00"
+  },
+  {
+    "id": "a599ea08-9cb8-40ca-aa2f-4bc5f89ae5e5",
+    "quiz_id": "e552b1b8-696f-42f0-83d2-b0f02e8cb2db",
+    "question_text": "Which of the following equations represents an ellipse with center at the origin, x-radius of 5, and y-radius of 3?",
+    "question_order": 4,
+    "created_at": "2025-10-14T00:12:38.71574+00:00"
+  },
+  {
+    "id": "95cd5b9b-618f-47cd-825e-dcf83f472c62",
+    "quiz_id": "e552b1b8-696f-42f0-83d2-b0f02e8cb2db",
+    "question_text": "Which type of conic section has the equation (x − 1)²/4 + (y + 2)²/4 = 1?",
+    "question_order": 9,
+    "created_at": "2025-10-14T00:12:40.799833+00:00"
+  },
+  {
+    "id": "872a4428-0187-4322-8b91-268006f09456",
+    "quiz_id": "65882dbb-49e5-4b4d-9dda-6fc731356328",
+    "question_text": "If 2(4x + 3) = 5x − 7 + 3x, what is the value of x?",
+    "question_order": 4,
+    "created_at": "2025-10-14T00:15:47.039657+00:00"
+  },
+  {
+    "id": "52e8cb31-2b9f-40b3-85f8-bdd6c1299a20",
+    "quiz_id": "65882dbb-49e5-4b4d-9dda-6fc731356328",
+    "question_text": "What is the value of 20 + (−5)² − 3 × 4?",
+    "question_order": 9,
+    "created_at": "2025-10-14T00:15:48.796107+00:00"
+  },
+  {
+    "id": "c82899f5-69de-4f4b-afbe-4f3334b29bd8",
+    "quiz_id": "0e76126a-3989-49c5-91e9-2226e1fe0a1b",
+    "question_text": "If (1/2)x + (1/4) = (3/4), what is x?",
+    "question_order": 4,
+    "created_at": "2025-10-14T00:18:25.040305+00:00"
+  },
+  {
+    "id": "cb481aed-f6d8-4be5-8221-ae6085e2c31e",
+    "quiz_id": "0e76126a-3989-49c5-91e9-2226e1fe0a1b",
+    "question_text": "Which of the following equals 0.625 as a fraction?",
+    "question_order": 9,
+    "created_at": "2025-10-14T00:18:26.845703+00:00"
+  },
+  {
+    "id": "7e12cc88-f6f6-4cdc-ba1e-403c4b6d9805",
+    "quiz_id": "a32b3ce5-d565-4ce7-ac2d-895b39fc921f",
+    "question_text": "What is 2⁻³ equal to?",
+    "question_order": 4,
+    "created_at": "2025-10-14T00:21:02.235441+00:00"
+  },
+  {
+    "id": "af009546-c5f3-4f1b-a09e-7ab6ea257e47",
+    "quiz_id": "a32b3ce5-d565-4ce7-ac2d-895b39fc921f",
+    "question_text": "Simplify: ³√54",
+    "question_order": 9,
+    "created_at": "2025-10-14T00:21:04.099871+00:00"
+  },
+  {
+    "id": "59a6996f-47b9-4b80-89b0-1cc82fa2df9f",
+    "quiz_id": "913c77d9-51fe-4a96-8423-aad69b8a9366",
+    "question_text": "Using change of base, log₃(27) equals which of the following?",
+    "question_order": 4,
+    "created_at": "2025-10-14T00:23:18.087577+00:00"
+  },
+  {
+    "id": "b8b37663-5de3-4335-8b94-82757d9db807",
+    "quiz_id": "913c77d9-51fe-4a96-8423-aad69b8a9366",
+    "question_text": "What is log₃(81)?",
+    "question_order": 9,
+    "created_at": "2025-10-14T00:23:19.731955+00:00"
+  },
+  {
+    "id": "46369f1c-a901-49c7-888b-8b08f5473bfe",
+    "quiz_id": "638ffa9a-c71c-4c33-8b89-7083c7011859",
+    "question_text": "What is |−7|?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:26:10.870751+00:00"
+  },
+  {
+    "id": "852dbfe6-283e-48ce-9d63-80cb76e769b5",
+    "quiz_id": "8ab81656-c264-4b15-b752-264fd84eea08",
+    "question_text": "At a bakery, muffins cost $2 and cookies cost $1. Sarah bought 15 items for $22. How many muffins did she buy?",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:30:11.553093+00:00"
+  },
+  {
+    "id": "c26981b6-33a9-42aa-bdd0-4284f7615378",
+    "quiz_id": "8ab81656-c264-4b15-b752-264fd84eea08",
+    "question_text": "If 3x + 4y = 32 and x = 2y, what is y?",
+    "question_order": 8,
+    "created_at": "2025-10-14T00:30:13.186065+00:00"
+  },
+  {
+    "id": "87c1e398-19e7-43c9-8522-eafd670679b1",
+    "quiz_id": "c03cb9ea-05f7-409e-9466-6a1a6a9d4d20",
+    "question_text": "Factor x² − 64.",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:32:49.637701+00:00"
+  },
+  {
+    "id": "7c54df86-7c4f-4868-882d-de2d5b96b47d",
+    "quiz_id": "c03cb9ea-05f7-409e-9466-6a1a6a9d4d20",
+    "question_text": "How many real solutions does x² + 2x + 5 = 0 have?",
+    "question_order": 8,
+    "created_at": "2025-10-14T00:32:51.765165+00:00"
+  },
+  {
+    "id": "5e98d3e7-9b58-4f53-9509-19623ed30166",
+    "quiz_id": "8ec035c8-5b6b-411e-8d2e-7fbd7323dac2",
+    "question_text": "Factor x² − 64.",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:36:35.217634+00:00"
+  },
+  {
+    "id": "fed7809b-71c6-4b58-8a62-6f91f2a861c4",
+    "quiz_id": "8ec035c8-5b6b-411e-8d2e-7fbd7323dac2",
+    "question_text": "How many real solutions does x² + 2x + 5 = 0 have?",
+    "question_order": 8,
+    "created_at": "2025-10-14T00:36:37.035875+00:00"
+  },
+  {
+    "id": "c7b9ef9d-9eff-4d76-a82e-3db7c7feda62",
+    "quiz_id": "b1fe3c59-9561-43ed-8f14-9f74778b2301",
+    "question_text": "Factor x² − 64.",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:38:18.27277+00:00"
+  },
+  {
+    "id": "57476e94-86b0-4a3f-ba4e-a67cfcbe6df9",
+    "quiz_id": "b1fe3c59-9561-43ed-8f14-9f74778b2301",
+    "question_text": "How many real solutions does x² + 2x + 5 = 0 have?",
+    "question_order": 8,
+    "created_at": "2025-10-14T00:38:19.72488+00:00"
+  },
+  {
+    "id": "7aee9541-8ef3-4295-97b6-11852ff2d144",
+    "quiz_id": "2e7b1e19-7217-47ee-a6de-e822909d1354",
+    "question_text": "Factor x² − 64.",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:39:33.962886+00:00"
+  },
+  {
+    "id": "b71daa07-ff6e-405c-8b91-6b305b98a2b1",
+    "quiz_id": "2e7b1e19-7217-47ee-a6de-e822909d1354",
+    "question_text": "How many real solutions does x² + 2x + 5 = 0 have?",
+    "question_order": 8,
+    "created_at": "2025-10-14T00:39:35.928059+00:00"
+  },
+  {
+    "id": "93d9fb47-7b14-4cf4-9db2-b7ecfc292860",
+    "quiz_id": "5dd6f0cf-5858-48df-a2a6-b52785ea93a4",
+    "question_text": "Factor x² − 64.",
+    "question_order": 3,
+    "created_at": "2025-10-14T00:41:28.777417+00:00"
+  },
+  {
+    "id": "61df0733-bd86-4697-8ec6-b5b19e5ffe8b",
+    "quiz_id": "5dd6f0cf-5858-48df-a2a6-b52785ea93a4",
+    "question_text": "How many real solutions does x² + 2x + 5 = 0 have?",
+    "question_order": 8,
+    "created_at": "2025-10-14T00:41:31.045533+00:00"
+  },
+  {
+    "id": "d4094382-85bb-4a12-a1ec-115e32cc54c0",
+    "quiz_id": "04aa8aab-634c-421a-a2d2-8bd84231b9d0",
+    "question_text": "What are the solutions to x² − 5x + 6 = 0?",
+    "question_order": 4,
+    "created_at": "2025-10-14T00:42:34.679918+00:00"
+  },
+  {
+    "id": "fbb900e0-ba50-4469-a4ba-51802ebf3822",
+    "quiz_id": "04aa8aab-634c-421a-a2d2-8bd84231b9d0",
+    "question_text": "For what value of k does x² − 6x + k = 0 have exactly one solution?",
+    "question_order": 9,
+    "created_at": "2025-10-14T00:42:36.114618+00:00"
+  },
+  {
+    "id": "54dd63c1-6686-48c4-a247-6207f912a389",
+    "quiz_id": "1f93bd44-ea4e-49f6-b985-70084a0202c8",
+    "question_text": "If x² + 8x + k can be written as (x + 4)², what is k?",
+    "question_order": 5,
+    "created_at": "2025-10-14T00:43:10.452829+00:00"
+  },
+  {
+    "id": "4c541b5b-8864-4a88-acb4-535306432f99",
+    "quiz_id": "1f93bd44-ea4e-49f6-b985-70084a0202c8",
+    "question_text": "What is the vertex of y = (x − 3)² + 7?",
+    "question_order": 10,
+    "created_at": "2025-10-14T00:43:12.477315+00:00"
+  },
+  {
+    "id": "938bcd8c-b297-4073-aded-0161680940b9",
+    "quiz_id": "ed1480bb-ed6b-4c42-9748-fc3131a630e3",
+    "question_text": "If x² + 8x + k can be written as (x + 4)², what is k?",
+    "question_order": 5,
+    "created_at": "2025-10-14T00:43:14.928813+00:00"
+  },
+  {
+    "id": "465bc313-8d8e-495e-a222-d8659c127381",
+    "quiz_id": "ed1480bb-ed6b-4c42-9748-fc3131a630e3",
+    "question_text": "What is the vertex of y = (x − 3)² + 7?",
+    "question_order": 10,
+    "created_at": "2025-10-14T00:43:16.977365+00:00"
+  },
+  {
+    "id": "25570f85-04f3-4f4e-b76c-c7f57a498373",
+    "quiz_id": "309ce4b2-ff1b-4853-bf5c-c84c96fa02dd",
+    "question_text": "If √(x + 10) − 2√(x − 2) = 0, what is the value of x?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:33:31.455782+00:00"
+  },
+  {
+    "id": "a6ba87f4-ab74-49ff-abf2-19e7ebd8cc17",
+    "quiz_id": "309ce4b2-ff1b-4853-bf5c-c84c96fa02dd",
+    "question_text": "Which of the following is a solution to x³ + 5x² + 6x = 0?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:33:31.455782+00:00"
+  },
+  {
+    "id": "031f9fa3-d32b-43f9-9c1d-6d676fa3ee20",
+    "quiz_id": "309ce4b2-ff1b-4853-bf5c-c84c96fa02dd",
+    "question_text": "A linear function f passes through (1,5), (3,9), and (7,17). Which equation defines f?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:33:31.455782+00:00"
+  },
+  {
+    "id": "971ba8da-3758-4118-84f9-535c583b9093",
+    "quiz_id": "309ce4b2-ff1b-4853-bf5c-c84c96fa02dd",
+    "question_text": "If 3^x + 4^x = 91, what is the value of x?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:33:31.455782+00:00"
+  },
+  {
+    "id": "0963a484-0747-4529-ad9b-e17787639060",
+    "quiz_id": "309ce4b2-ff1b-4853-bf5c-c84c96fa02dd",
+    "question_text": "If 2x − 3y = 7 and x + y = 5, what is the value of x?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:33:31.455782+00:00"
+  },
+  {
+    "id": "51cd4a78-e6e1-40f2-b08a-d1e6899500dc",
+    "quiz_id": "309ce4b2-ff1b-4853-bf5c-c84c96fa02dd",
+    "question_text": "The sum of three consecutive integers is 48. What is the smallest of these integers?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:33:31.455782+00:00"
+  },
+  {
+    "id": "dc6da0be-c935-4cb6-8af7-95db1354f875",
+    "quiz_id": "309ce4b2-ff1b-4853-bf5c-c84c96fa02dd",
+    "question_text": "A rectangle has a perimeter of 36 inches. If the length is 4 inches more than the width, what is the width?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:33:31.455782+00:00"
+  },
+  {
+    "id": "d32a7272-4960-422d-a1fa-4093e92dceaf",
+    "quiz_id": "309ce4b2-ff1b-4853-bf5c-c84c96fa02dd",
+    "question_text": "If 2^n = 64, what is the value of 2^(n−2)?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:33:31.455782+00:00"
+  },
+  {
+    "id": "ec0b951d-abb8-4c10-92c5-e2c4d5f23300",
+    "quiz_id": "309ce4b2-ff1b-4853-bf5c-c84c96fa02dd",
+    "question_text": "The average of 4, 8, and x is 10. What is x?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:33:31.455782+00:00"
+  },
+  {
+    "id": "c22e8b61-3418-4eaa-b05f-db4e28152170",
+    "quiz_id": "309ce4b2-ff1b-4853-bf5c-c84c96fa02dd",
+    "question_text": "If y = 2x + 5 and x = 3, what is the value of y²?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:33:31.455782+00:00"
+  },
+  {
+    "id": "23c07658-b396-4ea4-b253-cd908ab5474e",
+    "quiz_id": "410beb2c-ab34-4a19-910b-0e406a72b8d6",
+    "question_text": "If f(x) = 3x² − 2x + 1, what is f(2)?",
+    "question_order": 0,
+    "created_at": "2025-10-13T23:33:32.597962+00:00"
+  },
+  {
+    "id": "4b40ff1a-8d5f-4e0e-af3a-7dccf0e0743a",
+    "quiz_id": "410beb2c-ab34-4a19-910b-0e406a72b8d6",
+    "question_text": "If g(x) = 2x + 5 and g(a) = 17, what is a?",
+    "question_order": 1,
+    "created_at": "2025-10-13T23:33:32.597962+00:00"
+  },
+  {
+    "id": "27b6b5b7-c6fa-45d3-a168-fcaf047e511f",
+    "quiz_id": "218989f9-4fc2-4ce2-8da7-2bba94dd28a8",
+    "question_text": "In a 45-45-90 triangle, each leg has length 6. What is the length of the hypotenuse?",
+    "question_order": 5,
+    "created_at": "2025-10-16T06:58:08.937988+00:00"
+  },
+  {
+    "id": "0e834117-27cc-408e-b65f-c6bb2d6059f8",
+    "quiz_id": "218989f9-4fc2-4ce2-8da7-2bba94dd28a8",
+    "question_text": "A triangle has a base of 10 inches and a height of 6 inches. What is its area?",
+    "question_order": 10,
+    "created_at": "2025-10-16T06:58:10.246638+00:00"
+  },
+  {
+    "id": "79fdf6d8-43b1-499e-8008-61193604a61a",
+    "quiz_id": "1d1a6281-3dac-4dd3-a251-df9865f9e337",
+    "question_text": "Which line is parallel to y = 4x - 3?",
+    "question_order": 3,
+    "created_at": "2025-10-16T06:58:11.046093+00:00"
+  },
+  {
+    "id": "d5de75fa-ab1c-49ed-9fd9-115e9d38af82",
+    "quiz_id": "1d1a6281-3dac-4dd3-a251-df9865f9e337",
+    "question_text": "What is the slope of a horizontal line?",
+    "question_order": 8,
+    "created_at": "2025-10-16T06:58:12.202301+00:00"
+  },
+  {
+    "id": "fbf21fa5-80dd-4aea-a109-7b2cd3bd07f5",
+    "quiz_id": "5009b373-03db-4014-bf91-14e5919746e3",
+    "question_text": "A central angle in a circle measures 120°. What is the measure of its arc?",
+    "question_order": 1,
+    "created_at": "2025-10-16T06:58:12.981105+00:00"
+  },
+  {
+    "id": "833d9318-590b-4847-a820-0e0bb15a94e3",
+    "quiz_id": "5009b373-03db-4014-bf91-14e5919746e3",
+    "question_text": "A sector with radius 10 has area 25π. What is the central angle?",
+    "question_order": 6,
+    "created_at": "2025-10-16T06:58:14.100906+00:00"
+  },
+  {
+    "id": "9934389c-dda7-41ae-bc4a-f519ba1898da",
+    "quiz_id": "5e8a3be7-5486-4108-b580-5754618515fa",
+    "question_text": "Which of the following represents an ellipse?",
+    "question_order": 4,
+    "created_at": "2025-10-16T06:58:16.130001+00:00"
+  },
+  {
+    "id": "2197fcfc-cecb-4fe3-9874-d4050e84905f",
+    "quiz_id": "5e8a3be7-5486-4108-b580-5754618515fa",
+    "question_text": "Which equation does NOT represent a circle?",
+    "question_order": 9,
+    "created_at": "2025-10-16T06:58:17.32784+00:00"
+  },
+  {
+    "id": "1eec2148-d62e-4004-8200-60750b93582a",
+    "quiz_id": "14aa5b8f-6db4-4b56-a18b-8552515f5c3c",
+    "question_text": "What is the value of (8 - 3)² ÷ 5 + 2?",
+    "question_order": 2,
+    "created_at": "2025-10-16T06:58:18.085274+00:00"
+  },
+  {
+    "id": "9549d198-fecf-4d1f-b3c6-35f484af9d6c",
+    "quiz_id": "14aa5b8f-6db4-4b56-a18b-8552515f5c3c",
+    "question_text": "Solve for x: 2x + 7 = 19",
+    "question_order": 7,
+    "created_at": "2025-10-16T06:58:19.192661+00:00"
+  },
+  {
+    "id": "8acecace-24e2-4029-9036-069837c70625",
+    "quiz_id": "14aa5b8f-6db4-4b56-a18b-8552515f5c3c",
+    "question_text": "Solve for x: -2(x - 5) + 3x = 18",
+    "question_order": 10,
+    "created_at": "2025-10-16T06:58:19.821068+00:00"
+  },
+  {
+    "id": "e0a5dd92-f6d0-4541-83a1-dca39191bb38",
+    "quiz_id": "3fba078e-8d99-44fc-a1eb-dfae65476714",
+    "question_text": "What is 1/3 + 1/6?",
+    "question_order": 1,
+    "created_at": "2025-10-16T06:58:20.118898+00:00"
+  },
+  {
+    "id": "ce9c1e2a-5db5-48ee-a9ac-b6fe4282bf36",
+    "quiz_id": "410beb2c-ab34-4a19-910b-0e406a72b8d6",
+    "question_text": "For all x, if h(x) = x² + 3x, what is h(x + 2)?",
+    "question_order": 2,
+    "created_at": "2025-10-13T23:33:32.597962+00:00"
+  },
+  {
+    "id": "b6c695a2-01f5-4d38-ba57-c47005f239e0",
+    "quiz_id": "410beb2c-ab34-4a19-910b-0e406a72b8d6",
+    "question_text": "If k(n) = 2^n + n, what is k(4)?",
+    "question_order": 3,
+    "created_at": "2025-10-13T23:33:32.597962+00:00"
+  },
+  {
+    "id": "d0b83d20-acbd-4dbb-867e-5851af1ea014",
+    "quiz_id": "410beb2c-ab34-4a19-910b-0e406a72b8d6",
+    "question_text": "Let f(x) = √(x + 5). What is f(11)?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:33:32.597962+00:00"
+  },
+  {
+    "id": "a29a542e-ce83-41a1-b2c6-4f9bc835026f",
+    "quiz_id": "410beb2c-ab34-4a19-910b-0e406a72b8d6",
+    "question_text": "If p(t) = 3t − 7 and p(t) = 14, what is t?",
+    "question_order": 5,
+    "created_at": "2025-10-13T23:33:32.597962+00:00"
+  },
+  {
+    "id": "ebe172fc-16f5-4bc5-8d45-39c8e2546297",
+    "quiz_id": "410beb2c-ab34-4a19-910b-0e406a72b8d6",
+    "question_text": "For all real numbers x, let g(x) = |x − 3|. What is g(−2)?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:33:32.597962+00:00"
+  },
+  {
+    "id": "64ea0178-4759-4679-aff7-b0a59fdd614d",
+    "quiz_id": "410beb2c-ab34-4a19-910b-0e406a72b8d6",
+    "question_text": "If f(x) = 2x and g(x) = x + 3, what is f(g(4))?",
+    "question_order": 7,
+    "created_at": "2025-10-13T23:33:32.597962+00:00"
+  },
+  {
+    "id": "5dd67198-a3eb-429a-a370-06df696f557b",
+    "quiz_id": "410beb2c-ab34-4a19-910b-0e406a72b8d6",
+    "question_text": "If m(x) = x³ − 1, what is m(−2)?",
+    "question_order": 8,
+    "created_at": "2025-10-13T23:33:32.597962+00:00"
+  },
+  {
+    "id": "b50e6a11-69af-4fb9-902b-49f9ab9bd435",
+    "quiz_id": "410beb2c-ab34-4a19-910b-0e406a72b8d6",
+    "question_text": "For all x, h(x) = 4x² − 2. What is the value of h(1/2)?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:33:32.597962+00:00"
+  },
+  {
+    "id": "d8a91c42-05fd-4332-86bf-0388fc67818c",
+    "quiz_id": "942876ce-f814-4cda-a0f1-b2a439ffd9df",
+    "question_text": "Lines m and n are parallel. A transversal intersects both lines, creating an angle of 42° with line m. What is the measure of the corresponding angle on line n?",
+    "question_order": 6,
+    "created_at": "2025-10-13T23:49:09.425861+00:00"
+  },
+  {
+    "id": "1bd1027a-6c72-4d4a-aec1-3a60be208d64",
+    "quiz_id": "621c831e-0401-46ed-ad4b-d391e05f88b8",
+    "question_text": "In a right triangle, the two legs measure 5 and 12. What is the length of the hypotenuse?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:56:49.008319+00:00"
+  },
+  {
+    "id": "fe6086b7-37f5-4a75-863c-24e3a6741204",
+    "quiz_id": "621c831e-0401-46ed-ad4b-d391e05f88b8",
+    "question_text": "A cube has a volume of 64 cubic inches. What is the total surface area of the cube in square inches?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:56:50.825885+00:00"
+  },
+  {
+    "id": "0a2fe848-c256-4079-861d-f9774247c27f",
+    "quiz_id": "7295f239-8a1e-4b02-ab1b-41cd6141fbcc",
+    "question_text": "What is the midpoint of the segment connecting (2, 8) and (10, 14)?",
+    "question_order": 4,
+    "created_at": "2025-10-13T23:59:54.754834+00:00"
+  },
+  {
+    "id": "e5319bbb-8c4c-4384-9bbe-58ecac85e0eb",
+    "quiz_id": "7295f239-8a1e-4b02-ab1b-41cd6141fbcc",
+    "question_text": "A line has slope 1/2 and passes through (4, 7). Which point also lies on this line?",
+    "question_order": 9,
+    "created_at": "2025-10-13T23:59:56.015584+00:00"
+  },
+  {
+    "id": "dbd8b699-a27a-47a5-9b37-87b2b58a056b",
+    "quiz_id": "a548797e-3772-4101-9ecb-c6e83ea63618",
+    "question_text": "A circle graph shows 25 students. If 10 chose basketball, what is the central angle for basketball?",
+    "question_order": 4,
+    "created_at": "2025-10-14T00:02:53.325783+00:00"
+  },
+  {
+    "id": "d51fbf42-521e-4218-be97-d34723dc593f",
+    "quiz_id": "a548797e-3772-4101-9ecb-c6e83ea63618",
+    "question_text": "A semicircle has radius 10. What is the perimeter of the semicircle (including the diameter)?",
+    "question_order": 9,
+    "created_at": "2025-10-14T00:02:55.110916+00:00"
+  },
+  {
+    "id": "42993dd8-63a2-484a-90ae-4b900fa5a35a",
+    "quiz_id": "e552b1b8-696f-42f0-83d2-b0f02e8cb2db",
+    "question_text": "An ellipse has the equation (x − 2)²/16 + (y + 5)²/25 = 1. What is the center of the ellipse?",
+    "question_order": 5,
+    "created_at": "2025-10-14T00:12:39.150581+00:00"
+  },
+  {
+    "id": "40e021c9-438c-44f8-b646-0fc3180fd7a9",
+    "quiz_id": "e552b1b8-696f-42f0-83d2-b0f02e8cb2db",
+    "question_text": "A circle has center (4, −3) and passes through point (7, 1). What is the equation of the circle?",
+    "question_order": 10,
+    "created_at": "2025-10-14T00:12:41.119166+00:00"
+  },
+  {
+    "id": "7724760c-6b35-4f2b-8764-e880416b3088",
+    "quiz_id": "65882dbb-49e5-4b4d-9dda-6fc731356328",
+    "question_text": "If x/5 = 12/15, what is the value of x?",
+    "question_order": 5,
+    "created_at": "2025-10-14T00:15:47.379423+00:00"
+  },
+  {
+    "id": "92fd50af-0444-461e-bcb8-a4e3dc58449a",
+    "quiz_id": "65882dbb-49e5-4b4d-9dda-6fc731356328",
+    "question_text": "If 3x − 2y = 12 and 3x + 4y = 18, what is the value of y?",
+    "question_order": 10,
+    "created_at": "2025-10-14T00:15:49.146157+00:00"
+  },
+  {
+    "id": "e3a7e6fe-b0e6-4b2d-a5ff-bf9e61d209a2",
+    "quiz_id": "0e76126a-3989-49c5-91e9-2226e1fe0a1b",
+    "question_text": "What is the LCD of 1/6, 1/8, and 1/12?",
+    "question_order": 5,
+    "created_at": "2025-10-14T00:18:25.350753+00:00"
+  },
+  {
+    "id": "6d06a09b-e4f5-4ebe-86f8-d889393c00d8",
+    "quiz_id": "0e76126a-3989-49c5-91e9-2226e1fe0a1b",
+    "question_text": "If 1/x + 1/y = 1/2, and x = 3, what is y?",
+    "question_order": 10,
+    "created_at": "2025-10-14T00:18:27.31785+00:00"
+  },
+  {
+    "id": "7fcb5348-f96c-4856-838a-154a85354e5b",
+    "quiz_id": "a32b3ce5-d565-4ce7-ac2d-895b39fc921f",
+    "question_text": "If 3ˣ · 3⁴ = 3⁹, what is x?",
+    "question_order": 5,
+    "created_at": "2025-10-14T00:21:02.573271+00:00"
+  },
+  {
+    "id": "53c88dd4-df11-4013-97c8-dd92f7939f7a",
+    "quiz_id": "a32b3ce5-d565-4ce7-ac2d-895b39fc921f",
+    "question_text": "Which is equivalent to ⁴√(16x⁸y¹²)?",
+    "question_order": 10,
+    "created_at": "2025-10-14T00:21:04.503075+00:00"
+  },
+  {
+    "id": "984a0a3f-c367-4375-b865-fa864db83afb",
+    "quiz_id": "913c77d9-51fe-4a96-8423-aad69b8a9366",
+    "question_text": "If log(x) + log(y) = log(20), then xy = ?",
+    "question_order": 5,
+    "created_at": "2025-10-14T00:23:18.405588+00:00"
+  },
+  {
+    "id": "3cd83e16-17c4-4830-8848-4bd91ed85e7a",
+    "quiz_id": "913c77d9-51fe-4a96-8423-aad69b8a9366",
+    "question_text": "If log₂(8) + log₂(4) = x, what is x?",
+    "question_order": 10,
+    "created_at": "2025-10-14T00:23:20.039848+00:00"
+  },
+  {
+    "id": "0ef09b80-985d-4651-9099-799a32b4bf65",
+    "quiz_id": "638ffa9a-c71c-4c33-8b89-7083c7011859",
+    "question_text": "If |x − 4| = 9, what are the solutions?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:26:11.272467+00:00"
+  },
+  {
+    "id": "07ab63ea-296c-4a22-b5aa-c92636e9c09c",
+    "quiz_id": "8ab81656-c264-4b15-b752-264fd84eea08",
+    "question_text": "Solve using elimination: 5x + 2y = 19 and 3x − 2y = 5. What is the value of x?",
+    "question_order": 4,
+    "created_at": "2025-10-14T00:30:11.86227+00:00"
+  },
+  {
+    "id": "af0fa525-7211-482d-a4a6-a5dc32883d2c",
+    "quiz_id": "8ab81656-c264-4b15-b752-264fd84eea08",
+    "question_text": "A parking lot has cars and motorcycles, totaling 50 vehicles. Cars have 4 wheels and motorcycles have 2 wheels. If there are 160 wheels total, how many cars are there?",
+    "question_order": 9,
+    "created_at": "2025-10-14T00:30:13.45965+00:00"
+  },
+  {
+    "id": "1ef1974b-39ba-41ce-bea4-1473a100cdfc",
+    "quiz_id": "c03cb9ea-05f7-409e-9466-6a1a6a9d4d20",
+    "question_text": "What are the solutions to x² − 5x + 6 = 0?",
+    "question_order": 4,
+    "created_at": "2025-10-14T00:32:50.264158+00:00"
+  },
+  {
+    "id": "ef3d1730-cc4f-4ee5-84c4-feb31559580d",
+    "quiz_id": "c03cb9ea-05f7-409e-9466-6a1a6a9d4d20",
+    "question_text": "For what value of k does x² − 6x + k = 0 have exactly one solution?",
+    "question_order": 9,
+    "created_at": "2025-10-14T00:32:52.089627+00:00"
+  },
+  {
+    "id": "7c9a1a45-d413-4a81-82d9-11519d9e0423",
+    "quiz_id": "8ec035c8-5b6b-411e-8d2e-7fbd7323dac2",
+    "question_text": "What are the solutions to x² − 5x + 6 = 0?",
+    "question_order": 4,
+    "created_at": "2025-10-14T00:36:35.562444+00:00"
+  },
+  {
+    "id": "fafa85f7-cb5c-485b-8102-7924e53ee040",
+    "quiz_id": "8ec035c8-5b6b-411e-8d2e-7fbd7323dac2",
+    "question_text": "For what value of k does x² − 6x + k = 0 have exactly one solution?",
+    "question_order": 9,
+    "created_at": "2025-10-14T00:36:37.41186+00:00"
+  },
+  {
+    "id": "378d5c26-7e30-44e6-8a6d-56c12c549418",
+    "quiz_id": "b1fe3c59-9561-43ed-8f14-9f74778b2301",
+    "question_text": "What are the solutions to x² − 5x + 6 = 0?",
+    "question_order": 4,
+    "created_at": "2025-10-14T00:38:18.562888+00:00"
+  },
+  {
+    "id": "edd4f152-3c11-452e-89a9-65e7747348c1",
+    "quiz_id": "b1fe3c59-9561-43ed-8f14-9f74778b2301",
+    "question_text": "For what value of k does x² − 6x + k = 0 have exactly one solution?",
+    "question_order": 9,
+    "created_at": "2025-10-14T00:38:20.05409+00:00"
+  },
+  {
+    "id": "6f4fe6ef-1b72-4c85-ad47-d8885d1483db",
+    "quiz_id": "2e7b1e19-7217-47ee-a6de-e822909d1354",
+    "question_text": "What are the solutions to x² − 5x + 6 = 0?",
+    "question_order": 4,
+    "created_at": "2025-10-14T00:39:34.362887+00:00"
+  },
+  {
+    "id": "08526c73-1f92-45bd-b243-53781c5e0cfc",
+    "quiz_id": "2e7b1e19-7217-47ee-a6de-e822909d1354",
+    "question_text": "For what value of k does x² − 6x + k = 0 have exactly one solution?",
+    "question_order": 9,
+    "created_at": "2025-10-14T00:39:36.316016+00:00"
+  },
+  {
+    "id": "ee419c22-9831-47cc-b4a9-b7c38533becf",
+    "quiz_id": "5dd6f0cf-5858-48df-a2a6-b52785ea93a4",
+    "question_text": "What are the solutions to x² − 5x + 6 = 0?",
+    "question_order": 4,
+    "created_at": "2025-10-14T00:41:29.228284+00:00"
+  },
+  {
+    "id": "5a7bc006-c621-4a22-b7ea-4eaaeb064ca4",
+    "quiz_id": "5dd6f0cf-5858-48df-a2a6-b52785ea93a4",
+    "question_text": "For what value of k does x² − 6x + k = 0 have exactly one solution?",
+    "question_order": 9,
+    "created_at": "2025-10-14T00:41:31.589088+00:00"
+  },
+  {
+    "id": "e531f1de-7681-49b3-bb2d-bc7fbdf2ad72",
+    "quiz_id": "04aa8aab-634c-421a-a2d2-8bd84231b9d0",
+    "question_text": "What is (x + 7)²?",
+    "question_order": 2,
+    "created_at": "2025-10-14T00:42:33.915969+00:00"
+  },
+  {
+    "id": "1bc5c8d4-df70-4a13-854c-576e986629f1",
+    "quiz_id": "04aa8aab-634c-421a-a2d2-8bd84231b9d0",
+    "question_text": "Using the quadratic formula, what are the solutions to 2x² + 3x − 2 = 0?",
+    "question_order": 7,
+    "created_at": "2025-10-14T00:42:35.525884+00:00"
+  },
+  {
+    "id": "764c11fe-fdb1-41ee-8fea-b24c83a73dba",
+    "quiz_id": "1f93bd44-ea4e-49f6-b985-70084a0202c8",
+    "question_text": "Expand (3x + 2)(x + 4). What is the result?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:43:08.882484+00:00"
+  },
+  {
+    "id": "d83df7be-3fd2-4fa4-9937-91529b5bb251",
+    "quiz_id": "1f93bd44-ea4e-49f6-b985-70084a0202c8",
+    "question_text": "What is the sum of the roots of f(x) = x² − 9x + 20?",
+    "question_order": 6,
+    "created_at": "2025-10-14T00:43:10.976992+00:00"
+  },
+  {
+    "id": "af74b4f9-d8f8-4cd8-966f-65a14bf19df2",
+    "quiz_id": "ed1480bb-ed6b-4c42-9748-fc3131a630e3",
+    "question_text": "Expand (3x + 2)(x + 4). What is the result?",
+    "question_order": 1,
+    "created_at": "2025-10-14T00:43:13.385912+00:00"
+  },
+  {
+    "id": "c2009521-a59b-4e9d-ac07-cb8581768644",
+    "quiz_id": "ed1480bb-ed6b-4c42-9748-fc3131a630e3",
+    "question_text": "What is the sum of the roots of f(x) = x² − 9x + 20?",
+    "question_order": 6,
+    "created_at": "2025-10-14T00:43:15.314593+00:00"
+  },
+  {
+    "id": "d48c4df3-4c00-4ba1-a004-504328c77310",
+    "quiz_id": "218989f9-4fc2-4ce2-8da7-2bba94dd28a8",
+    "question_text": "A rectangle has a length of 8 inches and a width of 5 inches. What is its area in square inches?",
+    "question_order": 1,
+    "created_at": "2025-10-16T06:58:07.463936+00:00"
+  },
+  {
+    "id": "85b70e5e-4460-4319-9799-09d7765aa2de",
+    "quiz_id": "218989f9-4fc2-4ce2-8da7-2bba94dd28a8",
+    "question_text": "A circle has a diameter of 14 meters. What is its area in square meters?",
+    "question_order": 6,
+    "created_at": "2025-10-16T06:58:09.187075+00:00"
+  },
+  {
+    "id": "0546be63-c0f5-4d92-a725-1f9d68992540",
+    "quiz_id": "1d1a6281-3dac-4dd3-a251-df9865f9e337",
+    "question_text": "What is the slope of a line perpendicular to y = 2x + 1?",
+    "question_order": 4,
+    "created_at": "2025-10-16T06:58:11.261586+00:00"
+  },
+  {
+    "id": "833079b5-99bc-4fa0-819a-fc206c44c7dc",
+    "quiz_id": "1d1a6281-3dac-4dd3-a251-df9865f9e337",
+    "question_text": "Which point lies on the line y = 2x - 3?",
+    "question_order": 9,
+    "created_at": "2025-10-16T06:58:12.450913+00:00"
+  },
+  {
+    "id": "3d23b133-4a4a-47f2-a5a4-e78031c8ff7d",
+    "quiz_id": "5009b373-03db-4014-bf91-14e5919746e3",
+    "question_text": "A circle has radius 9. What is the length of an arc with central angle 40°?",
+    "question_order": 2,
+    "created_at": "2025-10-16T06:58:13.179541+00:00"
+  },
+  {
+    "id": "fad1b403-379c-4762-a2d9-384f642ae18b",
+    "quiz_id": "5009b373-03db-4014-bf91-14e5919746e3",
+    "question_text": "A semicircle has diameter 16. What is its arc length?",
+    "question_order": 7,
+    "created_at": "2025-10-16T06:58:14.33833+00:00"
+  },
+  {
+    "id": "57d4ee7e-914e-4609-872e-1a505cad882b",
+    "quiz_id": "5e8a3be7-5486-4108-b580-5754618515fa",
+    "question_text": "The equation x² + y² + 10x - 4y + 4 = 0 represents a circle. What is the x-coordinate of the center?",
+    "question_order": 3,
+    "created_at": "2025-10-16T06:58:15.902857+00:00"
+  },
+  {
+    "id": "6eb9845c-7f5d-4a2b-896d-d168b9c1f876",
+    "quiz_id": "5e8a3be7-5486-4108-b580-5754618515fa",
+    "question_text": "The equation (x + 1)²/9 - (y - 4)²/16 = 1 represents which conic section?",
+    "question_order": 5,
+    "created_at": "2025-10-16T06:58:16.349046+00:00"
+  },
+  {
+    "id": "0af517c1-a979-432d-9a3f-1b464797df71",
+    "quiz_id": "5e8a3be7-5486-4108-b580-5754618515fa",
+    "question_text": "The equation x² + y² - 8x + 6y = 0 represents a circle. What is the radius?",
+    "question_order": 8,
+    "created_at": "2025-10-16T06:58:17.10353+00:00"
+  },
+  {
+    "id": "e85e5f43-013d-451b-ad2d-6f7310291925",
+    "quiz_id": "5e8a3be7-5486-4108-b580-5754618515fa",
+    "question_text": "An ellipse has equation (x - 5)²/36 + (y + 2)²/20 = 1. What is the center?",
+    "question_order": 10,
+    "created_at": "2025-10-16T06:58:17.546438+00:00"
+  },
+  {
+    "id": "3c793c09-a0ab-4d7c-9a7f-4299562a5635",
+    "quiz_id": "14aa5b8f-6db4-4b56-a18b-8552515f5c3c",
+    "question_text": "What is the value of 20 - 4 × 2 + 5?",
+    "question_order": 1,
+    "created_at": "2025-10-16T06:58:17.889391+00:00"
+  },
+  {
+    "id": "d1dd17f2-f687-436e-bf72-83072baeedc9",
+    "quiz_id": "14aa5b8f-6db4-4b56-a18b-8552515f5c3c",
+    "question_text": "What is the value of -5 + (-3) × 2?",
+    "question_order": 3,
+    "created_at": "2025-10-16T06:58:18.31145+00:00"
+  },
+  {
+    "id": "008f8ba3-841f-49ee-b0b7-74ed98f678a9",
+    "quiz_id": "14aa5b8f-6db4-4b56-a18b-8552515f5c3c",
+    "question_text": "Simplify: -3(x - 4) + 2(x + 1)",
+    "question_order": 6,
+    "created_at": "2025-10-16T06:58:18.98555+00:00"
+  },
+  {
+    "id": "f1661d28-f5f6-4d82-815c-3d649eee1159",
+    "quiz_id": "14aa5b8f-6db4-4b56-a18b-8552515f5c3c",
+    "question_text": "Solve for x: 4(x + 3) = 28",
+    "question_order": 8,
+    "created_at": "2025-10-16T06:58:19.391328+00:00"
+  },
+  {
+    "id": "7c9805d2-e5cb-47e1-953f-eb4bbbfe22cc",
+    "quiz_id": "3fba078e-8d99-44fc-a1eb-dfae65476714",
+    "question_text": "What is 5/6 - 1/4?",
+    "question_order": 2,
+    "created_at": "2025-10-16T06:58:20.316737+00:00"
+  },
+  {
+    "id": "b6fa2a0e-9ccc-4756-952d-f6b222d53c55",
+    "quiz_id": "3fba078e-8d99-44fc-a1eb-dfae65476714",
+    "question_text": "Convert 3⅖ to an improper fraction.",
+    "question_order": 7,
+    "created_at": "2025-10-16T06:58:21.461709+00:00"
+  },
+  {
+    "id": "794a6d56-1e1b-4952-9375-3127da9c53b8",
+    "quiz_id": "9784a6f4-5ebc-41bf-a157-b7b9877c616b",
+    "question_text": "What is the value of 2⁻⁴?",
+    "question_order": 5,
+    "created_at": "2025-10-16T06:58:23.269627+00:00"
+  },
+  {
+    "id": "4b3b03fd-5b94-411a-b77d-9d47fe405c14",
+    "quiz_id": "9784a6f4-5ebc-41bf-a157-b7b9877c616b",
+    "question_text": "What is the value of √2 × √8?",
+    "question_order": 10,
+    "created_at": "2025-10-16T06:58:24.34659+00:00"
+  },
+  {
+    "id": "f09e7ba4-abcc-421f-a854-bf065e1680e0",
+    "quiz_id": "3fba078e-8d99-44fc-a1eb-dfae65476714",
+    "question_text": "What is 2/5 × 3/4?",
+    "question_order": 3,
+    "created_at": "2025-10-16T06:58:20.540827+00:00"
+  },
+  {
+    "id": "143aff9c-1137-42b4-b350-f5ad09ffd8e4",
+    "quiz_id": "3fba078e-8d99-44fc-a1eb-dfae65476714",
+    "question_text": "Convert 23/4 to a mixed number.",
+    "question_order": 8,
+    "created_at": "2025-10-16T06:58:21.66663+00:00"
+  },
+  {
+    "id": "ed0c82ef-b786-4d89-9f71-9dd1c78df546",
+    "quiz_id": "9784a6f4-5ebc-41bf-a157-b7b9877c616b",
+    "question_text": "Simplify: x⁵ × x³",
+    "question_order": 1,
+    "created_at": "2025-10-16T06:58:22.409918+00:00"
+  },
+  {
+    "id": "91883ac8-e696-44ff-a095-acca1c50dacd",
+    "quiz_id": "9784a6f4-5ebc-41bf-a157-b7b9877c616b",
+    "question_text": "Simplify: x⁻³",
+    "question_order": 6,
+    "created_at": "2025-10-16T06:58:23.506161+00:00"
+  },
+  {
+    "id": "9b2cb903-2c9a-46a1-b665-d1cf59ed980b",
+    "quiz_id": "3fba078e-8d99-44fc-a1eb-dfae65476714",
+    "question_text": "What is 5/6 × 2/5?",
+    "question_order": 4,
+    "created_at": "2025-10-16T06:58:20.74033+00:00"
+  },
+  {
+    "id": "b1fd7fda-fd63-4bdf-9696-31d6364c0e94",
+    "quiz_id": "3fba078e-8d99-44fc-a1eb-dfae65476714",
+    "question_text": "What is 1½ × 2⅔?",
+    "question_order": 9,
+    "created_at": "2025-10-16T06:58:21.860995+00:00"
+  },
+  {
+    "id": "82099d84-ff45-42c2-8141-79eb42606325",
+    "quiz_id": "9784a6f4-5ebc-41bf-a157-b7b9877c616b",
+    "question_text": "Simplify: x¹⁰ ÷ x⁴",
+    "question_order": 2,
+    "created_at": "2025-10-16T06:58:22.585564+00:00"
+  },
+  {
+    "id": "0772108d-f8d7-46e5-9d9a-b1a72f1756ee",
+    "quiz_id": "9784a6f4-5ebc-41bf-a157-b7b9877c616b",
+    "question_text": "What is the value of 16^(1/2)?",
+    "question_order": 7,
+    "created_at": "2025-10-16T06:58:23.714076+00:00"
+  },
+  {
+    "id": "642fdb75-6f4b-40b0-b3e7-1906906d60b4",
+    "quiz_id": "3fba078e-8d99-44fc-a1eb-dfae65476714",
+    "question_text": "What is 3/4 ÷ 1/2?",
+    "question_order": 5,
+    "created_at": "2025-10-16T06:58:20.963298+00:00"
+  },
+  {
+    "id": "c3726e58-965a-4ee4-b5fb-fa84e2fcaf33",
+    "quiz_id": "3fba078e-8d99-44fc-a1eb-dfae65476714",
+    "question_text": "Simplify: (1/2 + 1/3) × 6",
+    "question_order": 10,
+    "created_at": "2025-10-16T06:58:22.096438+00:00"
+  },
+  {
+    "id": "18e50a6c-d705-4e88-8ecd-ab6e24a5f9b9",
+    "quiz_id": "9784a6f4-5ebc-41bf-a157-b7b9877c616b",
+    "question_text": "Simplify: (x³)⁴",
+    "question_order": 3,
+    "created_at": "2025-10-16T06:58:22.810085+00:00"
+  },
+  {
+    "id": "358d6827-f777-49b9-b8de-dfa9ba9b06b1",
+    "quiz_id": "9784a6f4-5ebc-41bf-a157-b7b9877c616b",
+    "question_text": "What is the value of 64^(1/3)?",
+    "question_order": 8,
+    "created_at": "2025-10-16T06:58:23.928793+00:00"
+  },
+  {
+    "id": "1120c969-1759-4564-a535-88305bee0665",
+    "quiz_id": "3fba078e-8d99-44fc-a1eb-dfae65476714",
+    "question_text": "What is 2/3 ÷ 4/9?",
+    "question_order": 6,
+    "created_at": "2025-10-16T06:58:21.208008+00:00"
+  },
+  {
+    "id": "e935a330-d907-4068-831f-93254eb1256e",
+    "quiz_id": "9784a6f4-5ebc-41bf-a157-b7b9877c616b",
+    "question_text": "What is the value of 5⁰?",
+    "question_order": 4,
+    "created_at": "2025-10-16T06:58:23.03352+00:00"
+  },
+  {
+    "id": "9e2e893c-8553-4361-98cd-c7cc73ce9de9",
+    "quiz_id": "9784a6f4-5ebc-41bf-a157-b7b9877c616b",
+    "question_text": "Simplify: √75",
+    "question_order": 9,
+    "created_at": "2025-10-16T06:58:24.133147+00:00"
+  },
+  {
+    "id": "0a72ad21-55b9-4ff4-9d12-f2048c877f61",
+    "quiz_id": "8191fbcb-60c6-48c8-bada-78008fb1c595",
+    "question_text": "If log₅(x) = 3, what is the value of x?",
+    "question_order": 0,
+    "created_at": "2025-10-16T07:55:53.831364+00:00"
+  },
+  {
+    "id": "3828717e-6a44-4658-8823-c8f93479de32",
+    "quiz_id": "8191fbcb-60c6-48c8-bada-78008fb1c595",
+    "question_text": "Which expression is equivalent to log₂(8x⁴)?",
+    "question_order": 1,
+    "created_at": "2025-10-16T07:55:54.157497+00:00"
+  },
+  {
+    "id": "480bf039-d215-4542-b627-41c25d72ccc7",
+    "quiz_id": "8191fbcb-60c6-48c8-bada-78008fb1c595",
+    "question_text": "If ln(x) = 4, which of the following is closest to the value of x?",
+    "question_order": 2,
+    "created_at": "2025-10-16T07:55:54.453852+00:00"
+  },
+  {
+    "id": "2a1b6aa9-51e7-434f-b1ab-8be7e97bc318",
+    "quiz_id": "8191fbcb-60c6-48c8-bada-78008fb1c595",
+    "question_text": "If log₃(x + 2) + log₃(x − 2) = 2, what is the value of x?",
+    "question_order": 3,
+    "created_at": "2025-10-16T07:55:54.728454+00:00"
+  },
+  {
+    "id": "0e360780-b9f4-4a45-9b8c-36b1f3278b3f",
+    "quiz_id": "8191fbcb-60c6-48c8-bada-78008fb1c595",
+    "question_text": "Using the change of base formula, log₇(50) is equivalent to which of the following?",
+    "question_order": 4,
+    "created_at": "2025-10-16T07:55:55.038903+00:00"
+  },
+  {
+    "id": "5daab89f-8cb4-472d-be8c-151bdb46e3f7",
+    "quiz_id": "b029b8d5-daf1-46d5-a1e6-b69de219dd2c",
+    "question_text": "If −4x + 9 > 25, what is the solution for x?",
+    "question_order": 0,
+    "created_at": "2025-10-16T07:55:55.489657+00:00"
+  },
+  {
+    "id": "25d3e595-66c8-4258-96f9-90ad9da0b00a",
+    "quiz_id": "b029b8d5-daf1-46d5-a1e6-b69de219dd2c",
+    "question_text": "Solve for x: −1 < 2x − 5 ≤ 7",
+    "question_order": 1,
+    "created_at": "2025-10-16T07:55:55.804809+00:00"
+  },
+  {
+    "id": "33f3f989-a618-468c-b341-e25b458f4a12",
+    "quiz_id": "b029b8d5-daf1-46d5-a1e6-b69de219dd2c",
+    "question_text": "Which of the following best describes the graph of y < 3x − 2?",
+    "question_order": 2,
+    "created_at": "2025-10-16T07:55:56.071502+00:00"
+  },
+  {
+    "id": "19b2fbb1-4c0b-487b-8894-8cca8c27aaef",
+    "quiz_id": "b029b8d5-daf1-46d5-a1e6-b69de219dd2c",
+    "question_text": "Which point satisfies both inequalities: y ≥ x − 1 AND y < −x + 5?",
+    "question_order": 3,
+    "created_at": "2025-10-16T07:55:56.361583+00:00"
+  },
+  {
+    "id": "891ecec2-0c8e-4489-943b-078fe284162f",
+    "quiz_id": "b029b8d5-daf1-46d5-a1e6-b69de219dd2c",
+    "question_text": "Which inequality represents all points inside the circle with center (0, 0) and radius 5?",
+    "question_order": 4,
+    "created_at": "2025-10-16T07:55:56.667992+00:00"
+  },
+  {
+    "id": "d6941dd6-d125-4c45-af2f-85a3ad98008a",
+    "quiz_id": "84bddca2-f26f-489c-940f-4bf8c2889891",
+    "question_text": "What is the value of 3|−8| − 2|5| + |−3|?",
+    "question_order": 0,
+    "created_at": "2025-10-16T07:55:57.040699+00:00"
+  },
+  {
+    "id": "b8195446-8c50-492d-a0f9-6a09194ab193",
+    "quiz_id": "84bddca2-f26f-489c-940f-4bf8c2889891",
+    "question_text": "If |2x − 7| = 11, what are all possible values of x?",
+    "question_order": 1,
+    "created_at": "2025-10-16T07:55:57.352959+00:00"
+  },
+  {
+    "id": "0e9af8aa-f0eb-49a2-9d11-728fb957fbd3",
+    "quiz_id": "84bddca2-f26f-489c-940f-4bf8c2889891",
+    "question_text": "Which of the following represents all solutions to |x − 4| < 3?",
+    "question_order": 2,
+    "created_at": "2025-10-16T07:55:57.624713+00:00"
+  },
+  {
+    "id": "ac3eec3b-9fed-41a0-b243-9b3dfad87174",
+    "quiz_id": "84bddca2-f26f-489c-940f-4bf8c2889891",
+    "question_text": "What is the vertex of the function y = −3|x + 2| + 5?",
+    "question_order": 3,
+    "created_at": "2025-10-16T07:55:57.927439+00:00"
+  },
+  {
+    "id": "0a4859fb-bb9c-4519-8722-f4cc91235efd",
+    "quiz_id": "84bddca2-f26f-489c-940f-4bf8c2889891",
+    "question_text": "Which of the following represents all solutions to |3x + 1| ≥ 8?",
+    "question_order": 4,
+    "created_at": "2025-10-16T07:55:58.216498+00:00"
+  },
+  {
+    "id": "f42a4164-4ec0-49dc-a4c5-5cf812c01595",
+    "quiz_id": "8191fbcb-60c6-48c8-bada-78008fb1c595",
+    "question_text": "Simplify: log₄(64)",
+    "question_order": 5,
+    "created_at": "2025-10-16T08:07:54.999475+00:00"
+  },
+  {
+    "id": "838d20c9-3d00-4cc4-980a-819cde618164",
+    "quiz_id": "8191fbcb-60c6-48c8-bada-78008fb1c595",
+    "question_text": "Which of the following is equivalent to log(x) − log(y) + 2log(z)?",
+    "question_order": 6,
+    "created_at": "2025-10-16T08:07:55.373271+00:00"
+  },
+  {
+    "id": "7269dc7a-a88a-48e0-bcc3-963aeb9a16bf",
+    "quiz_id": "8191fbcb-60c6-48c8-bada-78008fb1c595",
+    "question_text": "If log₂(x) = 5, what is the value of log₂(4x)?",
+    "question_order": 7,
+    "created_at": "2025-10-16T08:07:55.613372+00:00"
+  },
+  {
+    "id": "79d45ae5-885f-47ae-aa89-2b991cdfce15",
+    "quiz_id": "8191fbcb-60c6-48c8-bada-78008fb1c595",
+    "question_text": "Solve for x: log₅(x − 3) = 2",
+    "question_order": 8,
+    "created_at": "2025-10-16T08:07:55.908433+00:00"
+  },
+  {
+    "id": "b8735b70-9f79-4584-8118-aef208d65256",
+    "quiz_id": "8191fbcb-60c6-48c8-bada-78008fb1c595",
+    "question_text": "If log(x) = 3, what is the value of log(100x)?",
+    "question_order": 9,
+    "created_at": "2025-10-16T08:07:56.128827+00:00"
+  },
+  {
+    "id": "b800e9ee-fc3e-4ae6-9960-0d8583ec6624",
+    "quiz_id": "b029b8d5-daf1-46d5-a1e6-b69de219dd2c",
+    "question_text": "Solve: 5 − 3x ≥ 17",
+    "question_order": 5,
+    "created_at": "2025-10-16T08:07:56.518063+00:00"
+  },
+  {
+    "id": "7161078c-4bb1-498b-9378-7fcd10ff70ae",
+    "quiz_id": "b029b8d5-daf1-46d5-a1e6-b69de219dd2c",
+    "question_text": "Which graph represents x ≥ 2 on a number line?",
+    "question_order": 6,
+    "created_at": "2025-10-16T08:07:56.735322+00:00"
+  },
+  {
+    "id": "2c6825e5-69c0-4678-b0de-8cbbfb40ac0b",
+    "quiz_id": "b029b8d5-daf1-46d5-a1e6-b69de219dd2c",
+    "question_text": "Solve: −3 ≤ 5x + 2 < 12",
+    "question_order": 7,
+    "created_at": "2025-10-16T08:07:56.945337+00:00"
+  },
+  {
+    "id": "ded65aae-eeba-4f9a-8447-1514cd4b17f1",
+    "quiz_id": "b029b8d5-daf1-46d5-a1e6-b69de219dd2c",
+    "question_text": "Which of the following describes the graph of y ≥ −x + 1?",
+    "question_order": 8,
+    "created_at": "2025-10-16T08:07:57.150579+00:00"
+  },
+  {
+    "id": "e5984bd0-d98b-4e37-a32d-e6f3248119cf",
+    "quiz_id": "b029b8d5-daf1-46d5-a1e6-b69de219dd2c",
+    "question_text": "Which values of x satisfy |x| > 3?",
+    "question_order": 9,
+    "created_at": "2025-10-16T08:07:57.388928+00:00"
+  },
+  {
+    "id": "908c827a-4a15-432b-b381-0e110c5cdbde",
+    "quiz_id": "84bddca2-f26f-489c-940f-4bf8c2889891",
+    "question_text": "Solve: |x + 5| = 8",
+    "question_order": 5,
+    "created_at": "2025-10-16T08:07:57.739267+00:00"
+  },
+  {
+    "id": "aa542134-1318-4d7e-9f6d-1871ad8d47af",
+    "quiz_id": "84bddca2-f26f-489c-940f-4bf8c2889891",
+    "question_text": "Simplify: |−12| − |5| + |−7|",
+    "question_order": 6,
+    "created_at": "2025-10-16T08:07:57.956423+00:00"
+  },
+  {
+    "id": "3b757647-2a75-4590-aea9-170c691f7b56",
+    "quiz_id": "84bddca2-f26f-489c-940f-4bf8c2889891",
+    "question_text": "Solve: |2x + 3| ≤ 9",
+    "question_order": 7,
+    "created_at": "2025-10-16T08:07:58.191469+00:00"
+  },
+  {
+    "id": "7c54ba39-4489-4f04-b6f0-6057845d10ee",
+    "quiz_id": "84bddca2-f26f-489c-940f-4bf8c2889891",
+    "question_text": "The function y = 2|x − 3| − 1 has a vertex at which point?",
+    "question_order": 8,
+    "created_at": "2025-10-16T08:07:58.411718+00:00"
+  },
+  {
+    "id": "c07e3d94-bc88-43b5-8a8b-102dcec59441",
+    "quiz_id": "84bddca2-f26f-489c-940f-4bf8c2889891",
+    "question_text": "Solve: |4x − 1| > 7",
+    "question_order": 9,
+    "created_at": "2025-10-16T08:07:58.641048+00:00"
+  },
+  {
+    "id": "b72cedb2-674c-446d-8314-8b2e49d47d03",
+    "quiz_id": "b7307664-bf5f-4971-8aff-a72a8d084407",
+    "question_text": "Solve the system using substitution: y = 2x + 1 and 3x + y = 11",
+    "question_order": 0,
+    "created_at": "2025-10-16T08:17:45.637744+00:00"
+  },
+  {
+    "id": "6af55469-d1a2-44fc-abbf-38bd5628f6f1",
+    "quiz_id": "b7307664-bf5f-4971-8aff-a72a8d084407",
+    "question_text": "Solve using elimination: 2x + 3y = 13 and 4x − 3y = 5",
+    "question_order": 1,
+    "created_at": "2025-10-16T08:17:46.622788+00:00"
+  },
+  {
+    "id": "3a56d04f-ca8b-4de9-8226-a4bf2c65184c",
+    "quiz_id": "b7307664-bf5f-4971-8aff-a72a8d084407",
+    "question_text": "Two numbers have a sum of 50 and a difference of 10. What is the larger number?",
+    "question_order": 2,
+    "created_at": "2025-10-16T08:17:47.000622+00:00"
+  },
+  {
+    "id": "cefc13cd-48c8-4ca3-87cf-add12a2dfb52",
+    "quiz_id": "b7307664-bf5f-4971-8aff-a72a8d084407",
+    "question_text": "Which system has NO solution?",
+    "question_order": 3,
+    "created_at": "2025-10-16T08:17:47.264423+00:00"
+  },
+  {
+    "id": "88b7aeca-99cc-4f04-908c-4620d7175ef8",
+    "quiz_id": "b7307664-bf5f-4971-8aff-a72a8d084407",
+    "question_text": "Solve using elimination: 3x + 2y = 16 and x + y = 6",
+    "question_order": 4,
+    "created_at": "2025-10-16T08:17:47.594697+00:00"
+  },
+  {
+    "id": "0fd5b590-03a9-4b47-9be8-18db2cf31086",
+    "quiz_id": "b7307664-bf5f-4971-8aff-a72a8d084407",
+    "question_text": "A theater sells adult tickets for $12 and child tickets for $8. If 40 tickets were sold for a total of $400, how many adult tickets were sold?",
+    "question_order": 5,
+    "created_at": "2025-10-16T08:17:48.108404+00:00"
+  },
+  {
+    "id": "60ee4f0f-20f8-4664-9524-569f0825f8b6",
+    "quiz_id": "b7307664-bf5f-4971-8aff-a72a8d084407",
+    "question_text": "Which system has INFINITELY MANY solutions?",
+    "question_order": 6,
+    "created_at": "2025-10-16T08:17:48.39304+00:00"
+  },
+  {
+    "id": "331f0f06-e1f2-4ca2-959b-6ad7c1ff82e7",
+    "quiz_id": "b7307664-bf5f-4971-8aff-a72a8d084407",
+    "question_text": "Solve using substitution: x = y + 3 and 2x + 3y = 19",
+    "question_order": 7,
+    "created_at": "2025-10-16T08:17:48.646891+00:00"
+  },
+  {
+    "id": "a674ddaf-a2ef-4dd7-a480-894fae3d49eb",
+    "quiz_id": "b7307664-bf5f-4971-8aff-a72a8d084407",
+    "question_text": "The sum of two numbers is 15. Three times the first number minus the second number equals 9. What is the first number?",
+    "question_order": 8,
+    "created_at": "2025-10-16T08:17:48.92021+00:00"
+  },
+  {
+    "id": "96d7fc46-8568-454f-9254-fa8365a3aca7",
+    "quiz_id": "b7307664-bf5f-4971-8aff-a72a8d084407",
+    "question_text": "Solve using elimination: 5x − 2y = 11 and 3x + 4y = 7",
+    "question_order": 9,
+    "created_at": "2025-10-16T08:17:49.316437+00:00"
+  },
+  {
+    "id": "f2ca7705-d210-45f4-84de-ce24f2d485f3",
+    "quiz_id": "5408a205-d49d-4ad3-b073-7b81b8e0a75e",
+    "question_text": "Which of the following is the vertex form of f(x) = x² − 6x + 5?",
+    "question_order": 0,
+    "created_at": "2025-10-16T08:25:17.031432+00:00"
+  },
+  {
+    "id": "9e39614f-1175-4dc2-9449-2fc90d0ce1c0",
+    "quiz_id": "5408a205-d49d-4ad3-b073-7b81b8e0a75e",
+    "question_text": "Solve for x: x² − 7x + 12 = 0",
+    "question_order": 1,
+    "created_at": "2025-10-16T08:25:17.533887+00:00"
+  },
+  {
+    "id": "2c55e24b-2311-44c8-ae6c-15827d8c885a",
+    "quiz_id": "5408a205-d49d-4ad3-b073-7b81b8e0a75e",
+    "question_text": "How many real solutions does the equation 2x² + 3x + 5 = 0 have?",
+    "question_order": 2,
+    "created_at": "2025-10-16T08:25:17.844576+00:00"
+  },
+  {
+    "id": "ba5d80a5-dda8-4488-9776-a5ea8496be39",
+    "quiz_id": "5408a205-d49d-4ad3-b073-7b81b8e0a75e",
+    "question_text": "What is the axis of symmetry for f(x) = 3x² + 12x − 7?",
+    "question_order": 3,
+    "created_at": "2025-10-16T08:25:18.089934+00:00"
+  },
+  {
+    "id": "c34f3577-3dae-4d04-93d3-daecf1cab4fc",
+    "quiz_id": "5408a205-d49d-4ad3-b073-7b81b8e0a75e",
+    "question_text": "Solve using the quadratic formula: 2x² − 5x − 3 = 0",
+    "question_order": 4,
+    "created_at": "2025-10-16T08:25:18.357013+00:00"
+  },
+  {
+    "id": "69d933ec-b1f1-4306-ad06-15ea15c20409",
+    "quiz_id": "5408a205-d49d-4ad3-b073-7b81b8e0a75e",
+    "question_text": "If the parabola y = ax² + 4x + 3 has exactly one x-intercept, what is the value of a?",
+    "question_order": 5,
+    "created_at": "2025-10-16T08:25:18.595007+00:00"
+  },
+  {
+    "id": "ddb73bdb-abc8-440f-815d-225a149ee389",
+    "quiz_id": "5408a205-d49d-4ad3-b073-7b81b8e0a75e",
+    "question_text": "The function f(x) = −x² + 8x − 12 has a maximum value of:",
+    "question_order": 6,
+    "created_at": "2025-10-16T08:25:18.821734+00:00"
+  },
+  {
+    "id": "204ec1a3-c36a-4be9-b7bd-3e74b8e99312",
+    "quiz_id": "5408a205-d49d-4ad3-b073-7b81b8e0a75e",
+    "question_text": "Which function has x-intercepts at x = 2 and x = −5?",
+    "question_order": 7,
+    "created_at": "2025-10-16T08:25:19.054849+00:00"
+  },
+  {
+    "id": "2a05990b-b9b1-4efb-b521-a4064b44cd3e",
+    "quiz_id": "5408a205-d49d-4ad3-b073-7b81b8e0a75e",
+    "question_text": "Complete the square: x² + 10x + 7 = 0",
+    "question_order": 8,
+    "created_at": "2025-10-16T08:25:19.282936+00:00"
+  },
+  {
+    "id": "8414cb5b-a47d-4a2f-992b-f8e1d1982c8d",
+    "quiz_id": "5408a205-d49d-4ad3-b073-7b81b8e0a75e",
+    "question_text": "Which parabola is narrower than y = x²?",
+    "question_order": 9,
+    "created_at": "2025-10-16T08:25:19.495814+00:00"
+  },
+  {
+    "id": "66d400e8-7761-4c03-b8b9-752c20f23334",
+    "quiz_id": "b9a5db31-4060-4c08-84ec-dadf5d47115a",
+    "question_text": "If f(x) = 2x² + 3x − 1, what is f(−2)?",
+    "question_order": 0,
+    "created_at": "2025-10-16T08:25:19.959473+00:00"
+  },
+  {
+    "id": "6db77f15-e777-4118-bf9c-8501aa202bd5",
+    "quiz_id": "b9a5db31-4060-4c08-84ec-dadf5d47115a",
+    "question_text": "The function g(x) = f(x − 4) + 2 shifts f(x) in which way?",
+    "question_order": 1,
+    "created_at": "2025-10-16T08:25:20.214547+00:00"
+  },
+  {
+    "id": "812f30a4-0e50-4166-ba4f-25607b4752e2",
+    "quiz_id": "b9a5db31-4060-4c08-84ec-dadf5d47115a",
+    "question_text": "If f(x) = x + 5 and g(x) = x², what is f(g(3))?",
+    "question_order": 2,
+    "created_at": "2025-10-16T08:25:20.56206+00:00"
+  },
+  {
+    "id": "e4ef0bec-e0f4-45ed-ae60-252b621d538b",
+    "quiz_id": "b9a5db31-4060-4c08-84ec-dadf5d47115a",
+    "question_text": "If f(x) = (4x + 7)/3, what is f⁻¹(x)?",
+    "question_order": 3,
+    "created_at": "2025-10-16T08:25:20.841577+00:00"
+  },
+  {
+    "id": "0f7a6284-12ee-4a50-bae2-d368c13daca6",
+    "quiz_id": "b9a5db31-4060-4c08-84ec-dadf5d47115a",
+    "question_text": "Which transformation reflects f(x) = x³ across the x-axis?",
+    "question_order": 4,
+    "created_at": "2025-10-16T08:25:21.100406+00:00"
+  },
+  {
+    "id": "17e3ace6-0cd6-41a3-b5e2-ff04f7f351dd",
+    "quiz_id": "b9a5db31-4060-4c08-84ec-dadf5d47115a",
+    "question_text": "If f(x) = x − 3 and g(x) = 2x + 1, what is g(f(x))?",
+    "question_order": 5,
+    "created_at": "2025-10-16T08:25:21.352788+00:00"
+  },
+  {
+    "id": "dcb590ae-3996-4252-82c9-39b6ee3cf0cd",
+    "quiz_id": "b9a5db31-4060-4c08-84ec-dadf5d47115a",
+    "question_text": "What is the domain of f(x) = √(x − 5)?",
+    "question_order": 6,
+    "created_at": "2025-10-16T08:25:21.62817+00:00"
+  },
+  {
+    "id": "7458a784-923c-4e7d-81fa-d39d64262ea9",
+    "quiz_id": "b9a5db31-4060-4c08-84ec-dadf5d47115a",
+    "question_text": "If f(x) = x² + 1, what is f(a + 2)?",
+    "question_order": 7,
+    "created_at": "2025-10-16T08:25:21.873476+00:00"
+  },
+  {
+    "id": "08b7ee37-2e91-49fc-a3ec-d87827a7b3ef",
+    "quiz_id": "b9a5db31-4060-4c08-84ec-dadf5d47115a",
+    "question_text": "The graph of y = 3f(x) compared to y = f(x) is:",
+    "question_order": 8,
+    "created_at": "2025-10-16T08:25:22.169817+00:00"
+  },
+  {
+    "id": "947c6788-c6d2-4b32-8942-33d7a0b4007e",
+    "quiz_id": "b9a5db31-4060-4c08-84ec-dadf5d47115a",
+    "question_text": "If h(x) = f(g(x)), where f(x) = 2x and g(x) = x + 3, what is h(5)?",
+    "question_order": 9,
+    "created_at": "2025-10-16T08:25:22.421026+00:00"
+  },
+  {
+    "id": "9c25a41c-afd1-4e2b-b4bb-177a86494079",
+    "quiz_id": "c72e43d4-2f05-4291-99db-1a3a206d6390",
+    "question_text": "The graph of g(x) = f(x − 5) + 2 shifts f(x) in which way?",
+    "question_order": 0,
+    "created_at": "2025-10-16T16:10:35.588589+00:00"
+  },
+  {
+    "id": "7c10b720-a112-4399-a442-bd894b90b240",
+    "quiz_id": "c72e43d4-2f05-4291-99db-1a3a206d6390",
+    "question_text": "If the point (3, 8) is on y = f(x), what point is on y = 2f(x)?",
+    "question_order": 1,
+    "created_at": "2025-10-16T16:10:35.996038+00:00"
+  },
+  {
+    "id": "b2b54d60-9117-4d58-8f33-1378ae024786",
+    "quiz_id": "c72e43d4-2f05-4291-99db-1a3a206d6390",
+    "question_text": "Which transformation reflects f(x) = x² across the x-axis?",
+    "question_order": 2,
+    "created_at": "2025-10-16T16:10:36.28461+00:00"
+  },
+  {
+    "id": "119c9086-3e53-4e29-9a3b-fbb641524916",
+    "quiz_id": "c72e43d4-2f05-4291-99db-1a3a206d6390",
+    "question_text": "The function h(x) = −3f(x + 2) − 1 includes which transformations?",
+    "question_order": 3,
+    "created_at": "2025-10-16T16:10:36.536548+00:00"
+  },
+  {
+    "id": "6bf84286-a895-4a23-bff8-c03fd9d9ed13",
+    "quiz_id": "c72e43d4-2f05-4291-99db-1a3a206d6390",
+    "question_text": "If f(x) = √x has its starting point at (0, 0), where is the starting point of g(x) = √(x + 4) − 3?",
+    "question_order": 4,
+    "created_at": "2025-10-16T16:10:36.848062+00:00"
+  },
+  {
+    "id": "0e0e413b-f01b-423f-993c-333ab7bcd24b",
+    "quiz_id": "c72e43d4-2f05-4291-99db-1a3a206d6390",
+    "question_text": "Which is wider: y = x² or y = 0.5x²?",
+    "question_order": 5,
+    "created_at": "2025-10-16T16:10:37.126017+00:00"
+  },
+  {
+    "id": "454eef09-2756-4035-8229-91d103bb5af3",
+    "quiz_id": "c72e43d4-2f05-4291-99db-1a3a206d6390",
+    "question_text": "What transformation takes y = |x| to y = |−x|?",
+    "question_order": 6,
+    "created_at": "2025-10-16T16:10:37.364082+00:00"
+  },
+  {
+    "id": "8bfcce3f-becd-4bb0-8726-ecb3fdf06e52",
+    "quiz_id": "c72e43d4-2f05-4291-99db-1a3a206d6390",
+    "question_text": "If (2, 5) is on f(x), what point is on y = f(2x)?",
+    "question_order": 7,
+    "created_at": "2025-10-16T16:10:37.62188+00:00"
+  },
+  {
+    "id": "b0c13935-6ac9-4b63-8d8a-ab913372c70b",
+    "quiz_id": "c72e43d4-2f05-4291-99db-1a3a206d6390",
+    "question_text": "The vertex of f(x) = x² is at (0, 0). What is the vertex of g(x) = (x − 3)² + 7?",
+    "question_order": 8,
+    "created_at": "2025-10-16T16:10:37.856987+00:00"
+  },
+  {
+    "id": "b3960b8b-332b-4fad-9e68-a8c7f7f2f067",
+    "quiz_id": "c72e43d4-2f05-4291-99db-1a3a206d6390",
+    "question_text": "Which transformation makes a graph narrower?",
+    "question_order": 9,
+    "created_at": "2025-10-16T16:10:38.111581+00:00"
+  },
+  {
+    "id": "88017e27-7538-4dcb-980d-436cacd45075",
+    "quiz_id": "c289aaf4-7924-4439-a9c1-38b5ec9d2e76",
+    "question_text": "A population of 500 bacteria triples every hour. How many bacteria are there after 4 hours?",
+    "question_order": 0,
+    "created_at": "2025-10-16T16:10:38.481646+00:00"
+  },
+  {
+    "id": "b182046e-5f26-4e7b-b124-3ef964fe37a9",
+    "quiz_id": "c289aaf4-7924-4439-a9c1-38b5ec9d2e76",
+    "question_text": "If $5,000 is invested at 8% annual interest compounded annually, what is the value after 3 years?",
+    "question_order": 1,
+    "created_at": "2025-10-16T16:10:38.770392+00:00"
+  },
+  {
+    "id": "6c7ce378-f68d-43f0-936c-d347f6d88266",
+    "quiz_id": "c289aaf4-7924-4439-a9c1-38b5ec9d2e76",
+    "question_text": "A substance has a half-life of 10 years. If you start with 200 grams, how much remains after 30 years?",
+    "question_order": 2,
+    "created_at": "2025-10-16T16:10:39.029935+00:00"
+  },
+  {
+    "id": "040aeea1-4594-4bfc-afe5-5a71e365c162",
+    "quiz_id": "c289aaf4-7924-4439-a9c1-38b5ec9d2e76",
+    "question_text": "Solve for x: 3^(x+2) = 81",
+    "question_order": 3,
+    "created_at": "2025-10-16T16:10:39.325062+00:00"
+  },
+  {
+    "id": "a95d4db8-abf5-4f2a-8cb3-423b8574b479",
+    "quiz_id": "c289aaf4-7924-4439-a9c1-38b5ec9d2e76",
+    "question_text": "Which represents 12% decay per year?",
+    "question_order": 4,
+    "created_at": "2025-10-16T16:10:39.566925+00:00"
+  },
+  {
+    "id": "be5c8b07-221e-417e-9f03-0214ed49ef44",
+    "quiz_id": "c289aaf4-7924-4439-a9c1-38b5ec9d2e76",
+    "question_text": "An exponential growth function has what domain and range (for a > 0)?",
+    "question_order": 5,
+    "created_at": "2025-10-16T16:10:39.840545+00:00"
+  },
+  {
+    "id": "c47df83c-4a88-4b5f-b272-9a961e46281f",
+    "quiz_id": "c289aaf4-7924-4439-a9c1-38b5ec9d2e76",
+    "question_text": "Which grows faster: f(x) = 200(1.03)^x or g(x) = 100(1.06)^x?",
+    "question_order": 6,
+    "created_at": "2025-10-16T16:10:40.075152+00:00"
+  },
+  {
+    "id": "50926e49-9fd4-4632-9230-a970853bf3f2",
+    "quiz_id": "c289aaf4-7924-4439-a9c1-38b5ec9d2e76",
+    "question_text": "Solve: 2^(3x) = 32",
+    "question_order": 7,
+    "created_at": "2025-10-16T16:10:40.352001+00:00"
+  },
+  {
+    "id": "4ca94a36-4063-48b0-b465-2fc33b673cbc",
+    "quiz_id": "c289aaf4-7924-4439-a9c1-38b5ec9d2e76",
+    "question_text": "A car depreciates 20% per year. If it costs $30,000 new, what is its value after 2 years?",
+    "question_order": 8,
+    "created_at": "2025-10-16T16:10:40.586555+00:00"
+  },
+  {
+    "id": "8a138ad8-37b7-43da-a123-713927fa029b",
+    "quiz_id": "c289aaf4-7924-4439-a9c1-38b5ec9d2e76",
+    "question_text": "All exponential functions f(x) = a·b^x (with a ≠ 0) pass through which point?",
+    "question_order": 9,
+    "created_at": "2025-10-16T16:10:40.86666+00:00"
+  },
+  {
+    "id": "d20a9589-23ef-4e45-9e8f-81b6daeea150",
+    "quiz_id": "a9bdfe31-ae17-4985-adca-8306a1ca9a2e",
+    "question_text": "Find the 15th term of the arithmetic sequence: 7, 12, 17, 22, ...",
+    "question_order": 0,
+    "created_at": "2025-10-16T16:10:41.224983+00:00"
+  },
+  {
+    "id": "7169d568-c2a6-4ad0-bf2e-66ebadc3e1d2",
+    "quiz_id": "a9bdfe31-ae17-4985-adca-8306a1ca9a2e",
+    "question_text": "What is the 6th term of the geometric sequence: 3, 6, 12, 24, ...?",
+    "question_order": 1,
+    "created_at": "2025-10-16T16:10:41.522183+00:00"
+  },
+  {
+    "id": "3e0f7be5-5056-4fda-8dd2-3f2ae0466c17",
+    "quiz_id": "a9bdfe31-ae17-4985-adca-8306a1ca9a2e",
+    "question_text": "What is the sum of the first 10 terms of the sequence 5, 8, 11, 14, ...?",
+    "question_order": 2,
+    "created_at": "2025-10-16T16:10:41.772509+00:00"
+  },
+  {
+    "id": "e0bac4e3-20eb-4893-b5fd-dac853f6ac71",
+    "quiz_id": "a9bdfe31-ae17-4985-adca-8306a1ca9a2e",
+    "question_text": "Is the sequence 64, 32, 16, 8, ... arithmetic or geometric?",
+    "question_order": 3,
+    "created_at": "2025-10-16T16:10:42.041541+00:00"
+  },
+  {
+    "id": "02e0212c-42a2-48b9-9688-aa7dbcb84608",
+    "quiz_id": "a9bdfe31-ae17-4985-adca-8306a1ca9a2e",
+    "question_text": "An auditorium has 20 rows. The first row has 30 seats, and each row has 3 more than the previous. How many total seats?",
+    "question_order": 4,
+    "created_at": "2025-10-16T16:10:42.300228+00:00"
+  },
+  {
+    "id": "86dfc110-6e97-400d-9720-a5bb8d26d76f",
+    "quiz_id": "a9bdfe31-ae17-4985-adca-8306a1ca9a2e",
+    "question_text": "What is the common ratio of 5, 15, 45, 135, ...?",
+    "question_order": 5,
+    "created_at": "2025-10-16T16:10:42.573074+00:00"
+  },
+  {
+    "id": "d70c0737-d74f-465b-9268-ddd787cba7ce",
+    "quiz_id": "a9bdfe31-ae17-4985-adca-8306a1ca9a2e",
+    "question_text": "Find the 8th term: 100, 90, 80, 70, ...",
+    "question_order": 6,
+    "created_at": "2025-10-16T16:10:42.828865+00:00"
+  },
+  {
+    "id": "1edb7c87-3180-4ba6-969d-b36679bd6bc0",
+    "quiz_id": "a9bdfe31-ae17-4985-adca-8306a1ca9a2e",
+    "question_text": "What is the 5th term of the geometric sequence with a₁ = 2 and r = 3?",
+    "question_order": 7,
+    "created_at": "2025-10-16T16:10:43.199679+00:00"
+  },
+  {
+    "id": "eb37231f-7bab-4d8f-ba43-fa5f3daa861a",
+    "quiz_id": "a9bdfe31-ae17-4985-adca-8306a1ca9a2e",
+    "question_text": "In an arithmetic sequence, if a₃ = 14 and a₇ = 30, what is the common difference?",
+    "question_order": 8,
+    "created_at": "2025-10-16T16:10:43.428688+00:00"
+  },
+  {
+    "id": "1c031620-bad4-456d-8c2a-19b5a78c16e2",
+    "quiz_id": "a9bdfe31-ae17-4985-adca-8306a1ca9a2e",
+    "question_text": "Sum of first 5 terms of geometric sequence 2, 6, 18, 54, ...?",
+    "question_order": 9,
+    "created_at": "2025-10-16T16:10:43.62306+00:00"
+  },
+  {
+    "id": "c7cf2e96-c4ba-4520-beb3-5e9443c19118",
+    "quiz_id": "f8150cc8-5564-491e-894b-d82779219a62",
+    "question_text": "Which of the following is a prime number?",
+    "question_order": 0,
+    "created_at": "2025-10-16T16:58:00.222264+00:00"
+  },
+  {
+    "id": "761a227c-a893-4841-bc5a-905296aace31",
+    "quiz_id": "f8150cc8-5564-491e-894b-d82779219a62",
+    "question_text": "What is the prime factorization of 72?",
+    "question_order": 1,
+    "created_at": "2025-10-16T16:58:00.517909+00:00"
+  },
+  {
+    "id": "363c3fab-2bcc-465a-aa78-e24218ebe8c6",
+    "quiz_id": "f8150cc8-5564-491e-894b-d82779219a62",
+    "question_text": "What is the GCD (Greatest Common Divisor) of 48 and 60?",
+    "question_order": 2,
+    "created_at": "2025-10-16T16:58:00.784852+00:00"
+  },
+  {
+    "id": "d75068db-8f79-4a5c-a7e7-341abd3f548a",
+    "quiz_id": "f8150cc8-5564-491e-894b-d82779219a62",
+    "question_text": "What is the LCM (Least Common Multiple) of 12 and 18?",
+    "question_order": 3,
+    "created_at": "2025-10-16T16:58:01.035101+00:00"
+  },
+  {
+    "id": "05cf4cdf-f5f4-4fec-819e-ef8a0396e63b",
+    "quiz_id": "f8150cc8-5564-491e-894b-d82779219a62",
+    "question_text": "Which of the following numbers is divisible by 9?",
+    "question_order": 4,
+    "created_at": "2025-10-16T16:58:01.278272+00:00"
+  },
+  {
+    "id": "019d8177-e6a9-4774-be02-e85704ee4952",
+    "quiz_id": "f8150cc8-5564-491e-894b-d82779219a62",
+    "question_text": "If GCD(a, b) = 8 and LCM(a, b) = 240, and a = 48, what is b?",
+    "question_order": 5,
+    "created_at": "2025-10-16T16:58:01.771413+00:00"
+  },
+  {
+    "id": "cdb95eba-5ecf-42a4-9f9f-82ca00385873",
+    "quiz_id": "8b53b3e6-b3d3-4ab9-a5f9-3b50043627c4",
+    "question_text": "What is 15% of 80?",
+    "question_order": 0,
+    "created_at": "2025-10-16T16:58:02.195325+00:00"
+  },
+  {
+    "id": "ee5fc610-b687-4404-aa51-25701eb7870c",
+    "quiz_id": "8b53b3e6-b3d3-4ab9-a5f9-3b50043627c4",
+    "question_text": "A shirt originally costs $40. After a 25% discount, what is the new price?",
+    "question_order": 1,
+    "created_at": "2025-10-16T16:58:02.469645+00:00"
+  },
+  {
+    "id": "f5ac9967-c438-4738-acc3-14275dde4117",
+    "quiz_id": "8b53b3e6-b3d3-4ab9-a5f9-3b50043627c4",
+    "question_text": "A population increases from 500 to 625. What is the percent increase?",
+    "question_order": 2,
+    "created_at": "2025-10-16T16:58:02.741346+00:00"
+  },
+  {
+    "id": "65a35fcb-627e-4145-b67f-0ccc6589e2d7",
+    "quiz_id": "8b53b3e6-b3d3-4ab9-a5f9-3b50043627c4",
+    "question_text": "If a price increases by 20% and then decreases by 20%, what is the net change?",
+    "question_order": 3,
+    "created_at": "2025-10-16T16:58:03.040095+00:00"
+  },
+  {
+    "id": "611eca00-6371-4b6f-b450-714df7370c97",
+    "quiz_id": "8b53b3e6-b3d3-4ab9-a5f9-3b50043627c4",
+    "question_text": "30 is what percent of 120?",
+    "question_order": 4,
+    "created_at": "2025-10-16T16:58:03.295023+00:00"
+  },
+  {
+    "id": "9573a9a7-42bb-40a1-b522-d53dc705ced0",
+    "quiz_id": "8b53b3e6-b3d3-4ab9-a5f9-3b50043627c4",
+    "question_text": "A store increases prices by 50%, then offers a 50% discount. If an item originally cost $100, what is the final price?",
+    "question_order": 5,
+    "created_at": "2025-10-16T16:58:03.567842+00:00"
+  },
+  {
+    "id": "b4fc6396-1f2f-4ae2-80b5-4539860198ab",
+    "quiz_id": "15508197-9f95-4cce-9abd-9bbe3463173e",
+    "question_text": "If the ratio of boys to girls in a class is 3:5 and there are 15 boys, how many girls are there?",
+    "question_order": 0,
+    "created_at": "2025-10-16T16:58:03.965464+00:00"
+  },
+  {
+    "id": "a7172877-bb7e-4e41-bdd0-126fc94b1ca3",
+    "quiz_id": "15508197-9f95-4cce-9abd-9bbe3463173e",
+    "question_text": "If y varies directly with x, and y = 12 when x = 4, what is y when x = 7?",
+    "question_order": 1,
+    "created_at": "2025-10-16T16:58:04.288606+00:00"
+  },
+  {
+    "id": "b3906ee0-d645-4e10-8155-a9a537e8fb1f",
+    "quiz_id": "15508197-9f95-4cce-9abd-9bbe3463173e",
+    "question_text": "If y varies inversely with x, and y = 6 when x = 5, what is y when x = 10?",
+    "question_order": 2,
+    "created_at": "2025-10-16T16:58:04.634007+00:00"
+  },
+  {
+    "id": "834eabc7-b5fa-49b5-b650-ce207d2214cb",
+    "quiz_id": "15508197-9f95-4cce-9abd-9bbe3463173e",
+    "question_text": "A recipe calls for ingredients in the ratio 2:3:5 (flour:sugar:milk). If 6 cups of flour are used, how many cups of milk are needed?",
+    "question_order": 3,
+    "created_at": "2025-10-16T16:58:05.030937+00:00"
+  },
+  {
+    "id": "7a1d98a6-8bdd-4759-be13-a06c1605ea37",
+    "quiz_id": "15508197-9f95-4cce-9abd-9bbe3463173e",
+    "question_text": "A car travels 240 miles in 4 hours. At this rate, how long will it take to travel 360 miles?",
+    "question_order": 4,
+    "created_at": "2025-10-16T16:58:05.265937+00:00"
+  },
+  {
+    "id": "b9633983-7db0-4198-a480-aae07b4913b4",
+    "quiz_id": "15508197-9f95-4cce-9abd-9bbe3463173e",
+    "question_text": "Two similar triangles have corresponding sides of 6 and 9. If the smaller triangle has an area of 24 square units, what is the area of the larger triangle?",
+    "question_order": 5,
+    "created_at": "2025-10-16T16:58:05.553934+00:00"
+  },
+  {
+    "id": "e690bd25-5456-400b-a004-158f3e0d7ea8",
+    "quiz_id": "784077d6-2347-4e9c-8397-70fa092a3228",
+    "question_text": "How many inches are in 3.5 feet?",
+    "question_order": 0,
+    "created_at": "2025-10-16T16:58:06.027747+00:00"
+  },
+  {
+    "id": "9da33b60-ef5c-42b6-a7cc-95a1e1d6c7c8",
+    "quiz_id": "784077d6-2347-4e9c-8397-70fa092a3228",
+    "question_text": "Convert 5 kilometers to meters.",
+    "question_order": 1,
+    "created_at": "2025-10-16T16:58:06.306867+00:00"
+  },
+  {
+    "id": "eb38d825-b773-47fb-92db-931f76589ef8",
+    "quiz_id": "784077d6-2347-4e9c-8397-70fa092a3228",
+    "question_text": "A rectangle measures 2 feet by 3 feet. What is its area in square inches?",
+    "question_order": 2,
+    "created_at": "2025-10-16T16:58:06.606097+00:00"
+  },
+  {
+    "id": "0a567094-db1f-4a49-953b-19ae6b797cc0",
+    "quiz_id": "784077d6-2347-4e9c-8397-70fa092a3228",
+    "question_text": "Convert 2.5 hours to minutes.",
+    "question_order": 3,
+    "created_at": "2025-10-16T16:58:06.904623+00:00"
+  },
+  {
+    "id": "5b0579b8-d702-46c3-b0db-050ec25a7a12",
+    "quiz_id": "784077d6-2347-4e9c-8397-70fa092a3228",
+    "question_text": "How many yards are in 1 mile?",
+    "question_order": 4,
+    "created_at": "2025-10-16T16:58:07.203991+00:00"
+  },
+  {
+    "id": "0e5ef750-d981-465c-86c6-f2031ab163d8",
+    "quiz_id": "784077d6-2347-4e9c-8397-70fa092a3228",
+    "question_text": "Convert 3000 grams to kilograms.",
+    "question_order": 5,
+    "created_at": "2025-10-16T16:58:07.514922+00:00"
+  },
+  {
+    "id": "81577c2e-d73b-4987-b254-891393a5aa08",
+    "quiz_id": "0c54a1a5-2484-41dd-baed-250276b0ef8a",
+    "question_text": "Write 0.0045 in scientific notation.",
+    "question_order": 0,
+    "created_at": "2025-10-16T16:58:07.91208+00:00"
+  },
+  {
+    "id": "45647c4e-f6a8-41ed-8797-2d753e27d7d6",
+    "quiz_id": "0c54a1a5-2484-41dd-baed-250276b0ef8a",
+    "question_text": "Simplify: (3 × 10⁴)(2 × 10⁵)",
+    "question_order": 1,
+    "created_at": "2025-10-16T16:58:08.156123+00:00"
+  },
+  {
+    "id": "9d7c14b3-666b-487e-ab8e-1d7d3f2564ae",
+    "quiz_id": "0c54a1a5-2484-41dd-baed-250276b0ef8a",
+    "question_text": "Simplify: (8 × 10⁷) ÷ (2 × 10³)",
+    "question_order": 2,
+    "created_at": "2025-10-16T16:58:08.383462+00:00"
+  },
+  {
+    "id": "4a999ba9-e98b-4f50-aa22-7ed1a7a45795",
+    "quiz_id": "0c54a1a5-2484-41dd-baed-250276b0ef8a",
+    "question_text": "Convert 5.2 × 10⁻⁴ to standard form.",
+    "question_order": 3,
+    "created_at": "2025-10-16T16:58:08.608468+00:00"
+  },
+  {
+    "id": "e99e758f-d16d-4a6f-9076-982b77b7b79b",
+    "quiz_id": "0c54a1a5-2484-41dd-baed-250276b0ef8a",
+    "question_text": "Which is largest: 3 × 10⁶, 5 × 10⁵, or 2 × 10⁷?",
+    "question_order": 4,
+    "created_at": "2025-10-16T16:58:08.874167+00:00"
+  },
+  {
+    "id": "067b1065-f47d-4e5f-873f-d7ee491817e4",
+    "quiz_id": "668eb1fa-6810-419f-bc20-cdb464759ca4",
+    "question_text": "Find the median of: 3, 8, 5, 12, 7",
+    "question_order": 1,
+    "created_at": "2025-10-16T16:58:11.847177+00:00"
+  },
+  {
+    "id": "9f1953d9-79e7-4242-aadc-939a2704dec0",
+    "quiz_id": "d77c89bb-0164-460e-ba53-c30492ad59cf",
+    "question_text": "A die is rolled. What is the probability of rolling a 3 OR a 5?",
+    "question_order": 3,
+    "created_at": "2025-10-16T16:58:16.545146+00:00"
+  },
+  {
+    "id": "53c660a5-2943-42be-a310-a95cd83914e6",
+    "quiz_id": "0c54a1a5-2484-41dd-baed-250276b0ef8a",
+    "question_text": "Simplify: (1.5 × 10³) + (2.5 × 10³)",
+    "question_order": 5,
+    "created_at": "2025-10-16T16:58:09.110742+00:00"
+  },
+  {
+    "id": "cc92189b-e34b-4438-95b9-1bf25cbba13d",
+    "quiz_id": "7ef2d5c6-13a1-4d0f-8d25-37b2d0591ba5",
+    "question_text": "The sequence 2, 5, 8, 2, 5, 8, ... repeats. What is the 25th term?",
+    "question_order": 0,
+    "created_at": "2025-10-16T16:58:09.515109+00:00"
+  },
+  {
+    "id": "402a98be-642f-4a2c-84ac-0113df3a500f",
+    "quiz_id": "7ef2d5c6-13a1-4d0f-8d25-37b2d0591ba5",
+    "question_text": "What is the units digit of 3⁵⁰?",
+    "question_order": 5,
+    "created_at": "2025-10-16T16:58:11.046014+00:00"
+  },
+  {
+    "id": "61907115-864f-4554-988b-d9eb0ca57f4a",
+    "quiz_id": "668eb1fa-6810-419f-bc20-cdb464759ca4",
+    "question_text": "Find the mode of: 2, 5, 5, 7, 9, 5, 12",
+    "question_order": 2,
+    "created_at": "2025-10-16T16:58:12.168273+00:00"
+  },
+  {
+    "id": "e07a1ee4-d92a-454f-abdd-d479d5ef9d2d",
+    "quiz_id": "26937f82-c0de-4b10-902c-e0f11510f7be",
+    "question_text": "For the data: 5, 10, 15, 20, 25, 30, 35, what is Q3 (third quartile)?",
+    "question_order": 2,
+    "created_at": "2025-10-16T16:58:14.275042+00:00"
+  },
+  {
+    "id": "0934fde5-98c4-472a-8a60-40c87e6d13c5",
+    "quiz_id": "d77c89bb-0164-460e-ba53-c30492ad59cf",
+    "question_text": "In a class, 60% are girls. 40% of girls play sports. What is P(girl AND plays sports)?",
+    "question_order": 4,
+    "created_at": "2025-10-16T16:58:16.832415+00:00"
+  },
+  {
+    "id": "e363eb48-1060-4732-a45e-bf14563acac6",
+    "quiz_id": "62d5de44-f9ee-43f7-b518-820793a9e851",
+    "question_text": "Calculate C(7,3) - the number of combinations of 3 items from 7.",
+    "question_order": 4,
+    "created_at": "2025-10-16T16:58:18.892323+00:00"
+  },
+  {
+    "id": "feefba96-9218-4b64-927c-4b759ff20c3b",
+    "quiz_id": "7ef2d5c6-13a1-4d0f-8d25-37b2d0591ba5",
+    "question_text": "What is the units digit of 7²⁵?",
+    "question_order": 1,
+    "created_at": "2025-10-16T16:58:09.802444+00:00"
+  },
+  {
+    "id": "83202472-8fab-41bd-bb46-83d82a7f659f",
+    "quiz_id": "26937f82-c0de-4b10-902c-e0f11510f7be",
+    "question_text": "If Q1 = 10 and Q3 = 30, what is the IQR (interquartile range)?",
+    "question_order": 3,
+    "created_at": "2025-10-16T16:58:14.576518+00:00"
+  },
+  {
+    "id": "06609408-f82d-466d-845c-1326818f9a17",
+    "quiz_id": "62d5de44-f9ee-43f7-b518-820793a9e851",
+    "question_text": "How many ways can 5 people be arranged in a line?",
+    "question_order": 0,
+    "created_at": "2025-10-16T16:58:17.707701+00:00"
+  },
+  {
+    "id": "472bc42e-83ba-4beb-b2f6-476c565b72b5",
+    "quiz_id": "62d5de44-f9ee-43f7-b518-820793a9e851",
+    "question_text": "A password requires 4 different digits. How many passwords are possible?",
+    "question_order": 5,
+    "created_at": "2025-10-16T16:58:19.381165+00:00"
+  },
+  {
+    "id": "75891c40-c82c-498a-a972-8f9b4831d2c9",
+    "quiz_id": "7ef2d5c6-13a1-4d0f-8d25-37b2d0591ba5",
+    "question_text": "Today is Monday. What day will it be 100 days from now?",
+    "question_order": 2,
+    "created_at": "2025-10-16T16:58:10.121926+00:00"
+  },
+  {
+    "id": "3f69c8b9-01ff-4faa-9240-078e8215fc45",
+    "quiz_id": "7ef2d5c6-13a1-4d0f-8d25-37b2d0591ba5",
+    "question_text": "The pattern A, B, C, D, A, B, C, D, ... repeats. What is the 50th letter?",
+    "question_order": 3,
+    "created_at": "2025-10-16T16:58:10.411856+00:00"
+  },
+  {
+    "id": "54eae4cf-0f37-44f8-be87-02e5913b1ff6",
+    "quiz_id": "7ef2d5c6-13a1-4d0f-8d25-37b2d0591ba5",
+    "question_text": "What is the remainder when 100 is divided by 7?",
+    "question_order": 4,
+    "created_at": "2025-10-16T16:58:10.738011+00:00"
+  },
+  {
+    "id": "40f0bb13-1878-4bc2-9758-d67dc3a5963e",
+    "quiz_id": "26937f82-c0de-4b10-902c-e0f11510f7be",
+    "question_text": "Find the range of: 3, 7, 12, 15, 20",
+    "question_order": 0,
+    "created_at": "2025-10-16T16:58:13.486052+00:00"
+  },
+  {
+    "id": "3a9ce5c7-2a7e-4f7a-9253-41588121f7ad",
+    "quiz_id": "26937f82-c0de-4b10-902c-e0f11510f7be",
+    "question_text": "For the data: 2, 4, 6, 8, 10, 12, 14, what is Q1 (first quartile)?",
+    "question_order": 1,
+    "created_at": "2025-10-16T16:58:13.779337+00:00"
+  },
+  {
+    "id": "7760883d-226f-4ec6-85c4-ff466fb4205f",
+    "quiz_id": "26937f82-c0de-4b10-902c-e0f11510f7be",
+    "question_text": "Which measure of center is most resistant to outliers?",
+    "question_order": 4,
+    "created_at": "2025-10-16T16:58:14.849397+00:00"
+  },
+  {
+    "id": "516ce1f3-724d-4a4b-9cd8-b05ba7a0b116",
+    "quiz_id": "26937f82-c0de-4b10-902c-e0f11510f7be",
+    "question_text": "For Q1 = 12, Q3 = 28, IQR = 16, a value is an outlier if it is above which value?",
+    "question_order": 5,
+    "created_at": "2025-10-16T16:58:15.171333+00:00"
+  },
+  {
+    "id": "17317865-ac9b-4ad1-bc53-75266d7a61f7",
+    "quiz_id": "62d5de44-f9ee-43f7-b518-820793a9e851",
+    "question_text": "How many ways can you choose 3 books from a shelf of 8 books?",
+    "question_order": 1,
+    "created_at": "2025-10-16T16:58:18.050745+00:00"
+  },
+  {
+    "id": "a9fde42b-74fc-4257-a93f-e018393215df",
+    "quiz_id": "62d5de44-f9ee-43f7-b518-820793a9e851",
+    "question_text": "A restaurant has 3 appetizers, 5 entrees, and 2 desserts. How many different meal combinations are possible?",
+    "question_order": 2,
+    "created_at": "2025-10-16T16:58:18.336047+00:00"
+  },
+  {
+    "id": "4bf5069b-8a3c-41ca-82de-71fa24bcba61",
+    "quiz_id": "62d5de44-f9ee-43f7-b518-820793a9e851",
+    "question_text": "Calculate P(6,2) - the number of permutations of 2 items from 6.",
+    "question_order": 3,
+    "created_at": "2025-10-16T16:58:18.611154+00:00"
+  },
+  {
+    "id": "e87da172-978e-4590-b9b3-d1301f811ab3",
+    "quiz_id": "668eb1fa-6810-419f-bc20-cdb464759ca4",
+    "question_text": "Find the mean of: 4, 7, 10, 13, 16",
+    "question_order": 0,
+    "created_at": "2025-10-16T16:58:11.531277+00:00"
+  },
+  {
+    "id": "8b4609f0-74fe-4434-bd5c-55b55f64b37e",
+    "quiz_id": "668eb1fa-6810-419f-bc20-cdb464759ca4",
+    "question_text": "A student scores 85, 90, and 78 on three tests. What score is needed on a fourth test to have a mean of 85?",
+    "question_order": 5,
+    "created_at": "2025-10-16T16:58:13.043972+00:00"
+  },
+  {
+    "id": "5e2274dc-df86-4d88-9d9b-8a0d13bb5f3a",
+    "quiz_id": "d77c89bb-0164-460e-ba53-c30492ad59cf",
+    "question_text": "A bag has 5 red and 3 blue marbles. Two marbles are drawn without replacement. What is P(both red)?",
+    "question_order": 2,
+    "created_at": "2025-10-16T16:58:16.262524+00:00"
+  },
+  {
+    "id": "6091ba50-579b-45b2-939b-a79cded9ff0e",
+    "quiz_id": "668eb1fa-6810-419f-bc20-cdb464759ca4",
+    "question_text": "The mean of 5 numbers is 12. If four of the numbers are 10, 11, 13, 14, what is the fifth number?",
+    "question_order": 3,
+    "created_at": "2025-10-16T16:58:12.493745+00:00"
+  },
+  {
+    "id": "2744f727-eaf7-45d5-97df-7c5003e4c631",
+    "quiz_id": "d77c89bb-0164-460e-ba53-c30492ad59cf",
+    "question_text": "A bag contains 3 red, 4 blue, and 5 green marbles. What is the probability of drawing a blue marble?",
+    "question_order": 0,
+    "created_at": "2025-10-16T16:58:15.665273+00:00"
+  },
+  {
+    "id": "ae0703d6-eda4-4ebf-bdf3-2cdad64c5ad4",
+    "quiz_id": "d77c89bb-0164-460e-ba53-c30492ad59cf",
+    "question_text": "P(A) = 0.5, P(B) = 0.3, P(A and B) = 0.1. What is P(A or B)?",
+    "question_order": 5,
+    "created_at": "2025-10-16T16:58:17.178666+00:00"
+  },
+  {
+    "id": "5bec11db-a379-40a4-b7a0-f80bbeb7e4f5",
+    "quiz_id": "668eb1fa-6810-419f-bc20-cdb464759ca4",
+    "question_text": "Find the median of: 2, 4, 6, 8, 10, 12",
+    "question_order": 4,
+    "created_at": "2025-10-16T16:58:12.751274+00:00"
+  },
+  {
+    "id": "cbfa1033-ee74-4117-8c2a-06d56b4235a1",
+    "quiz_id": "d77c89bb-0164-460e-ba53-c30492ad59cf",
+    "question_text": "A fair coin is flipped twice. What is the probability of getting two heads?",
+    "question_order": 1,
+    "created_at": "2025-10-16T16:58:15.98815+00:00"
+  }
+]

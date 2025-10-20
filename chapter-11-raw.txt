@@ -1,0 +1,1430 @@
+Chapter 11: Functions
+A function is defined as a mathematical relationship between a variable x and the function f(x). For every
+value of x, there is exactly one value of f(x). For any function, there will be an input, which appears as the
+term in the parentheses of a function, and an output, which will be the value that f(x) equals.
+
+Function Basics
+In order to solve functions questions on the ACT, we first need to know where to properly plug in the input to
+a function. For the function
+
+fx) =5x-2
+we plug in the input for x. You are likely used to the input being a number, but the input can include variables
+as well. No matter what the input is, we plug it in for the x in the equation:
+
+f(3) =5(3)-2=13
+
+f(—2x) = 5(—2x) — 2
+
+=-10x —2
+
+f(a-—11)
+= 5(a-—11) —2=5a—57
+
+Example 1: If f(x) = 3Vx + 11, what is the value for f(25) ?
+A.
+
+15
+
+B. 26
+
+C. 34
+
+D. 64
+
+Solution: To solve, plug in the input to the function.
+
+f(25) = 3V25 4-11 = 3(5) +11 =154+11 = 26
+The answer is B.
+
+Example 2: A function, f, is defined by f(x,y) = 4x — y?. What is the value of f (5, 2) ?
+A.
+
+—17
+
+B. 9
+
+C.
+
+16
+
+D. 24
+
+Solution: This function sure looks weird, but we solve it in the exact same way as we just did except that now
+we are given a value for x and y. To solve, plug in 5 for x and 2 for y.
+
+f (5,2) =4(5) —22 =20-4=16
+The answer is C.
+
+Example 3: If f(x) = — for what value of x does f(x) =5?
+A.
+
+1
+
+B. 2
+
+C. 4
+
+D.
+5
+
+Solution: If we are given the output, which is 5 in this question, and are asked to find the input, we plug in the
+
+output for f(x) and solve for the input x.
+10x
+
+x+4
+
+5(x + 4) = 10x
+5x + 20 = 10x
+20
+= 5x
+4=x
+The answer is C.
+
+-
+
+89 -
+
+math
+
+Composite Functions
+Quite often, the ACT will ask you to solve composite functions. A composite function is a function that is
+written inside of another function. We will use the examples below to learn how to solve composite functions
+questions correctly.
+
+Example 4: If f(x) = 3x + 10 and g(x) = x — 5, what is the value of f(g(8)) ?
+A.
+
+3
+
+B. 9
+
+C.
+
+19
+
+D. 29
+
+Solution: If you are asked to solve a composite function, there are two methods to solve: (1) solve for the
+composite function or (2) work inside out. Both methods are shown below.
+
+Method #1 - Solve for the composite function: In this question, we want to solve for the function f(g(x)).
+To do so, we plug the entire g(x) function in for the x in the f(x) function.
+
+f(g(x)) = 3( -—5) +10 = 3x-15+4+10 = 3x-5
+
+Now that we know the composite function f ( g (x)) = 3x — 5, we can plug in 8 for x and solve.
+f(g(8)) = 3(8)
+
+-5 =24-5=19
+
+The answer is C.
+
+Method #2 - Work inside out: Rather than solve for the composite function, we can also work from the
+
+inside out to solve for
+
+f(g(8)). To start, we can solve for g(8).
+g(8) = 8-5=3
+
+We now know that g(8) = 3, so we can simplify the function we are solving for.
+
+f(g(8)) =f)
+Now, we just solve for f(3).
+
+f(3) = 38) +10=19
+The answer is C.
+
+Both of these methods work for any composite function questions on the ACT, so you should use the one that
+you are more comfortable with.
+
+Example 5: If f(x) = 2x? — 7 and g(x) = x + 3, what is f(g(x —1))?
+A. 2x? +2
+
+B.
+
+2x7+8x+1
+
+C.
+
+2x*+12x+4+11
+
+D. 2x2 -3
+
+Solution: This question looks more difficult since we now have x — 1 as the input, but we should still treat
+this as a composite function. Both of the methods outlined in Example 4 will work to solve. Below, we will
+
+use the inside out method. First, we can solve for g(x — 1):
+
+g(x—-1) =(*-1)+3=x+2
+
+We now know that g(x — 1) = x + 2, so we can simplify what we are solving for.
+
+f(g@-1)) =f +2)
+Now, we solve for f(x + 2).
+
+f(«+2) =2(« +2)? -—7 = 2007 4+4x44)-7 = 2x7 4+8x4+8-7 = 2x74+8x41
+
+- 90
+-
+
+Chapter 11: Functions
+
+f(g(x —1)) = 2x?+8x+1
+The answer is B.
+
+**Common Mistake to Avoid: Remember that (x + 2)? # x* + 4. You need to multiply out the term
+because (x + 2)? is the same as (x + 2)(x + 2).
+
+Other Function Notations
+Do you know what (f ° g)(x) or (fg)(x) means? If not, you are not alone. Most students we work with see
+these other function notations and are confused about what to do. No need to worry though! All of the other
+function notations that can come up on test day are in the table below. If you memorize what these notations
+mean, you will be prepared to solve any questions with them on test day.
+
+Operation
+
+Function Notation
+
+Composite
+
+Fe g)(x) = f(g)
+
+Sum
+
+Ff + 9)(x) = f@) + g(x)
+
+Difference
+
+Ff -— g9)(x%) = f@) -— 9g)
+
+Product
+
+(Fax) = Fe g9)(x) = FX) x g(x)
+
+Quotient
+
+@ (x) = ~
+
+Example 6: If f(x) = 2x? + 1 and g(x) = x? — 1, which of the following expressions represents
+
+(fa)(x)?
+A.
+
+3x?
+
+B. 2x?2-1
+
+C. 2x*-1
+
+D. 2x*-x?-1
+
+Solution: (fg)(x) is the same as f(x) x g(x), so we need to multiply the functions together.
+
+(fg) (x) = (2x? + 1I)(x* — 1)
+To solve, we need to multiply these quadratics together by FOIL (First, Outer, Inner, Last). If you need to
+review how this works, you can go to Chapter 16.
+
+(fg)(x) = (2x? +1)(x* -1) = 2x*- 2x72? +x%-1= 2x4*-x%-1
+The answer is D.
+
+Example 7: Let (f ° g)(x) = (2x + 1)? — 3 and g(x) = 2x + 1. Which of the following expressions
+defines (g ° f)(x) ?
+
+A.
+
+2x?-—2
+
+B. 2x2-—5
+
+C. v2x+1+3
+
+D.
+
+v2x+1-1
+
+Solution: On more difficult questions, the ACT will give you a puzzle question with functions. These are
+challenging to solve and normally appear in the last 10 questions of the test.
+
+To solve this question, we first need to remember that (f ° g)(x) = f(g(x)). We also know that
+g(x) = 2x + 1, so we can plug in 2x + 1 for g(x) and get
+
+(fog) (x) = f(g@)) = f(x +1)
+
+9]
+-
+
+math
+
+The input of 2x + 1 is plugged in for x in the function f(x) we are trying to find. Since we know that
+
+Cf
+
+°g)(x) = (2x + 1)? — 3, we can replace 2x + 1 with x to work backwards and find f(x). We get
+
+f(x) =x? -3.
+
+Now that we know f (x), we can find (g ° f)(x). Again, remember that (g ° f)(x) is the same as g( f (x)).
+To solve, we need to plug f (x), which is x* — 3, into g(x)
+
+— 3) = 2(x? —3)+1=2x?-5
+(g°f)() = g(f(x)) = g(x?
+
+The answer is B.
+
+Functions on Graphs
+When a function is graphed, the input, x, is on the x-axis and the output, f(x), is on the y-axis. Another
+way to better understand how functions appear on a graph is to remember that for any linear function
+
+f(x)=mx+b
+
+isthesameas
+
+y=mx+b
+
+When graphing a function f(x), you can think of f(x) as the y-coordinate and x as the x-coordinate. Using
+
+the input as x and the output as y, we can find points in the standard (x, y) plane and graph any function.
+Example 8:
+
+7
+
+i
+
+\
+\
+\
+
+La
+
+(NAS
+
+an,
+
+[| \
+fl
+
+a
+
+2o0n
+
+[
+fo
+
+|\
+
+—— |
+~aJ
+
+<<
+nN
+
+The function f(x) is shown in the standard (x, y) coordinate plane above. What is the minimum value of
+this function?
+A.
+
+—2
+
+B. -1
+
+C. 6
+
+D. 1
+
+Solution: The minimum value of the function is the point(s) on the graph where y-coordinate is smallest. In
+
+the function above, the minimum value is where y = —2, so the answer is A.
+What if this question instead asked for the maximum value of the function? Well, now we just look for the
+highest point on the graph, which is at y = 6.
+Easy right? For any questions asking for the minimum or maximum value of a function, you just need to look
+
+at the graph and find the smallest or largest y-value.
+
+-92
+-
+
+Chapter 11: Functions
+
+Example 9:
+
+ariamieie
+WEA
+
+The function f(x) = 4 cos(7x) + 1 is graphed in the standard (x, y) coordinate plane above. How many
+x-intercepts does the graph of the function have on the interval 0 << x <4?
+A.
+
+1
+
+B. 2
+
+C. 3
+
+D.
+4
+
+Solution: To find the number of x-intercepts on the graph of the function, we count the number of times the
+function crosses the x-axis. We see the function crossing the x-axis 4 times, so the answer is D.
+
+Domain and Range
+Another common type of common functions question will ask you about the domain or range of a function.
+e
+
+Domain: The set of all possible input, x, values to a function.
+
+e
+
+Range: The set of all output, y, values to a function.
+
+If you are looking at the graph of a function, the domain is all the x-values that appear on the graph and
+the range is all the y-values that appear on the graph.
+
+To see how this works, let’s find the domain and range of the graph below.
+
+We see x-values on the graph from x = —1 to x = 3, so for the graph above the domain is {-1 < x < 3}.
+Since the dots on the graph are solid, we include —1 and 3 in the domain and use the less than or equal to and
+greater than or equal to signs. If the dots were open, the domain would instead use the greater than and less
+
+than signs and would be {—1 < x < 3}. .
+We see y-values on the graph from y = —2 to y = 4, so for the graph above the range is {—2 < y < 4}.
+
+- 93
+-
+
+math
+
+Example 10:
+
+The graph of f(x) = 3sin(27x) — 3 is shown above. What is the range of f(x) ?
+A.
+
+-6<y<0
+
+B.-3<y<0
+
+C-3<y<3
+
+DO0<ys<3
+
+Solution: To solve, look for the y-values on the graph. We see y-values from y = —6 to y = 0, so the range
+of f(x) is -—6 < y <0. The answer is A.
+Example 11:
+
+The graph f(x) =
+
+A. fyly #1}
+
+(x—4)(x-2)
+(x—-1)(x-2)
+
+is shown above. What is the range of f(x) ?
+
+B. fyly #4}
+
+OC. fyly#-—2andy #1}
+
+D. {y| #0andy #1}
+
+Solution: Looking at this graph, you might notice there is a horizontal invisible line at y = 1 the graph
+approaches but never crosses. We call this a horizontal asymptote at y = 1. Because there are no points
+on the graph where y = 1, the range of the function will not include y = 1. All points above the horizontal
+asymptotes y = 1 appear on the graph, but what about below?
+
+Do you see that open dot at the point (2,—2)? We call this point a hole in the graph. Holes occur when the
+
+numerator and denominator of a function both equal 0. If we plug in x = 2 to f(x), we will get f(2) = =.
+We can also spot that there is going to be a hole at x = 2 because we see (x — 2) in the numerator and
+denominator. When the same term appears in the numerator and denominator, it always creates a
+hole. Holes in the graph are undefined and are never included in the domain.
+But a hole does not automatically mean the value is not included in the range, as there could be another point
+with the y-value elsewhere on the graph. In the graph above, however, there is no point where y = 2, so it
+is also not included in the range.
+As a result, we see that the function includes all y-values except at y = 1 (the horizontal asymptote) and
+
+y = —2 (the hole). In fancy math terms, this would appear as {y|y # —2 and y ¥ 1}, which means all
+values of y except y = —2 and y = 1. The answer is C.
+Horizontal asymptotes are rarely tested on the ACT, but you should still know how to solve for them just in
+case. If you need to review asymptotes, the rules for solving them are covered in Chapter 35.
+
+~ 94
+-
+
+Chapter 11: Functions
+
+Continuing to look at the graph in Example 11, you can see there is a vertical invisible line at x = 1 that the
+graph approaches but never crosses. There is no point on the graph when x = 1. We call this a vertical
+asymptote at x = 1. Because there is no point on the graph where x = 1, the domain of the function will
+not include x = 1. We will also cover the rules for vertical asymptotes in Chapter 35.
+There is also an open dot at x = 2. We call this point a hole in the graph. Holes are not included in the
+domain since there 1s no point where x = 2 on the graph. All other values for x appear on the graph, so the
+
+domain is all values of x except x # 1 and x # 2. Mathematically, the domain could be written as
+
+{x|x # 1 and
+x # 2}.
+Vertical asymptotes occur when the denominator of a function is equal to 0. If we plug in x = 1 to
+
+f(x), we get f(1) = =, which is undefined. Again, since vertical asymptotes are points where the function
+is undefined, they are never included in the domain.
+What if you are not given a picture graph in the question? To solve for vertical asymptotes, you set the
+denominator equal to zero and solve. If there is a hole in the graph, such as the one at x = 2 in example
+11, we cancel those terms. So for the graph in example 11, the only term left in the denominator is x — 1.
+To find the vertical asymptote, we set x — 1 equal to 0 and solve.
+x—-1=0
+x=1
+
+We see there is a vertical asymptote at x = 1. Even if we were not given the graph, we could easily solve
+for any vertical asymptotes. Remember vertical asymptotes are points where the graph is undefined and are
+not included in the domain.
+
+Example 12: The domain of f(x) = —— is the set of all real numbers EXCEPT:
+A.
+
+2
+
+B. —3
+
+C. 2 and
+3
+
+D. —2 and
+3
+
+Solution: Whenever you are asked about the domain and see a fraction in a function, look for where the
+function is undefined. To make the function undefined, set the denominator equal to 0 and solve for x.
+
+x*—5x+6=0
+(x —2)(x-—3)=0
+x=2,3
+
+f(x) is undefined when x = 2 and x = 3, so these points are not included in the domain of the function. If
+we graphed f(x), we would see vertical asymptotes at x = 2 and x = 3. The answer is C.
+
+Example 13: Two real-valued functions are defined as f(x) = Vx + 1 and g(x) = x — 3. What is the
+domain of f(g(x)) ?
+A.
+
+[0,0)
+
+B. [3, 0)
+
+C. [5, 0)
+
+D. [—©, co)
+
+Solution: First, we need to solve for f (g(x)) by plugging g(x) into f(x).
+
+f(g(x))
+
+=vx-3+4+1
+
+Now, we need to learn how the domain is restricted with a square root. Values underneath a square root
+must be greater than or equal to 0. Any value of x that makes the term underneath the square root negative
+cannot be included in the domain. To find the domain with a square root, set the term underneath the
+square root greater than or equal to zero and solve for x.
+x—-32>0
+
+95
+-
+
+math
+
+x>3
+
+The domain of f(g(x)) is x = 3. Written in interval notation, this is [ 3,00). The answer is B.
+
+To illustrate why the domain is restricted, let’s plug in x = 1, which is not part of the domain, to f(g(x))
+and see what happens.
+
+f(gQ)) =v1-34+1= V-24+1
+You cannot have a negative term underneath the square root, so x = 1 has no real number output and
+therefore cannot be included in the domain.
+If you need to review vertical and horizontal asymptotes or just want more practice, go to Chapter 35.
+
+Inverse Functions
+Inverse functions, written as
+
+f~1(x), are rarely tested on the ACT, but they are pretty easy to solve, so let’s go
+
+over them just in case you see an inverse functions question on test day. To find the inverse of any function,
+
+switch the input x and the output f(x) and solve for f(x). Let’s see how this works in the example below.
+Example 14: Given the function f(x) = —<—. what is the value for f~1(6.5) ?
+
+A.
+7
+
+B-=
+
+C. =
+
+D.
+2
+
+Solution: To find the inverse, we switch the input x and the output f(x). Most students find it easiest to start
+by replacing f(x) with y, so our function becomes
+_ 10x —7
+
+a)
+To find the inverse, switch the x and y and then solve for y.
+10y —7
+x
+
+2
+
+2x = 10y—7
+2x +7=10y
+2x +7
+
+10.”
+Once we have solved for y, we have found the inverse function. So, we can replace y with f~*(x).
+
+f4G) =
+
+2Xx+7
+10
+
+Now that we know the inverse, we can find f~1(6.5) by plugging in 6.5
+“apex
+
+2065) +7
+
+20_
+
+f-*(6.5) = 790 = 10> 2
+f-4(6.5) = 2
+The answer is D.
+
+- 96
+-
+
+Chapter 11: Functions
+
+Functions Practice: Answers on pages 326-327.
+23. For what value of x does g(h(x)) = 18?
+
+For questions 1-24, use the functions below.
+
+f(x) = 2x?-7
+g(x) = —3x + 10
+h(x) =x-3
+24. What is the value of (g ° f)(3x) ?
+
+What is the value of f(4) ?
+What is the value of g(—31) ?
+What is the value of
+
+f(—10) ?
+
+25. Given f(x) = x* — 4(2x — 1), what is the
+
+value of
+
+What is the value of h(—19) ?
+
+SGOW
+
+What is the value of f(3x) ?
+
+What is the value of g(x — 3) ?
+What is the value of f(8) — g(2) ?
+
+26.
+
+What is the value of (f + g —h)(5)?
+10. What it the value of (g — f)(—3x) ?
+11. For what value of x does h(x) = —5 ?
+
+11
+16
+24
+
+A function, f, is defined by f(x, y) = 5x? — 2y.
+
+A.
+
+3
+
+B.
+
+21
+
+C.
+
+31
+
+D.
+
+39
+
+27. What is the value of
+
+f(—3) given the function
+
+f(x) = 3x2+3x4+10?
+
+12. For what value of x does g(x) = 31?
+13. For what value of x does f(x) = 43?
+14. For what value of x does g(x) = —11?
+15. What is the value of g(h(—11)) ?
+
+A.
+
+—46
+
+B.
+
+—26
+
+C.
+
+—4
+
+D.
+
+28
+
+28. Given f(x, y,Z) = 2y? — 4xz + z?, what is
+
+the value of f(5, —2,—3) ?
+
+16. What is the value of f(h(2x)) ?
+17. What is the value of (f ° h)(—4) ?
+18. What is the value of (fg) (x)?
+19. What is the value of (hg)(11) ?
+
+A.
+
+41
+
+B.
+
+29
+
+C.
+
+—37
+
+D.
+
+—83
+
+. Given the functions f(x) = 2x? + x and
+g(x) = 2x — 1, what is the value of g(f(2))?
+
+20. What is the value of (gh)(x + 1) ?
+
+22.
+
+—20
+
+What is the value of f (3,7) ?
+
+What is the value of (g — h)(—4) ?
+
+21.
+
+f(—2) ?
+
+What is the value ofthe value of ()(3) ?
+g
+
+What is the value of ©) (3 — 2x)?
+
+-97-
+
+A.
+
+3
+
+B.
+
+10
+
+C.
+
+15
+
+D.
+
+19
+
+math
+
+34, For the functions f(x) = 3x + 7 and
+
+30. The fluctuation of the water depth at a wetland
+
+g(x) = 2x — 3, Gf ° g)(5) is equal to:
+
+is shown in the figure below. One of the
+
+values gives the positive difference, in inches,
+between the greatest water depth and least
+
+A.
+
+water depth shown in the graph. Which value
+
+B.
+
+11
+
+is it?
+
+C.
+
+22
+
+D.
+
+28
+
+ay
+=
+a.
+
+\ PV
+YN
+
+35.
+
+GOS
+
+Number of hours after 1pm
+
+2
+
+B.
+
+3
+
+C.
+
+4
+
+D.
+
+6
+
+=x+ — and g(x) = : what is the
+
+—6
+—4
+4
+
+43
+8
+
+36. Functions f and g are defined as
+
+. For the function f(x) = = what is the value
+xt+
+
+f(x) = —5x + 2 and g(x) = 10 — f(x).
+The value of g(3) is:
+
+of f-1(x)?
+
+>G9OF
+
+If f(x)
+
+value of f(g(-))?
+
+A
+
+A.
+
+7
+
+GOWp,>
+
+3x-1
+3
+
+3x -1
+x+1
+
+—x-1
+
+—13
+—3
+7
+
+23
+
+37. The graph of f(x) = 4 cos(3x) + 3 is shown
+
+below. What is the range for this function?
+
+. Given f(x) = —6x? + 2x2, what is f (—3)
+equal to?
+
+-1<y<7
+
+GaAWp>
+
+—180
+
+—5<y<5
+
+—144
+
+—-1<y<7
+
+144
+
+-lsy<4
+
+180
+
+_ If f(x) = —3x* — x and g(x) = —7x +1,
+(f + g)(2) is equal to:
+A.
+
+1
+
+B.
+
+-3
+
+C.
+
+—10
+
+D.
+
+—27
+
+38. The domain of f(x) =
+
+numbers EXCEPT:
+
+GOWp>
+- 98
+
+-
+
+27 only
+9 only
+3 only
+—3 and 3 only
+
+27-X
+
+,
+
+x*-6xX49
+
+.
+
+is all real
+
+Chapter 11: Functions
+
+expressions is equal to h(—2x + 1) for all x in
+its domain?
+A.
+
+8x41
+
+C.
+
+-—8x+8
+
+D.
+
+—8x-3
+
+below. What is the domain of f(x)?
+)
+°
+
+40. A function g satisfies g(5) = 11 and
+
+20
+
+g(6) = 8. A function A satisfies h(8) = —3
+
+A.
+
+{xlx#-4
+
+and h(6) = 5. What is the value of g(h(6)) ?
+
+B.
+
+{xlx#—-}
+
+A. —3
+
+D. {x|x # 4}
+
+C.
+
+{x]x #0}
+
+B.
+
+5
+
+C.
+
+8
+
+D.
+
+11
+
+°
+
+44. The domain of f(x) =
+
+x?
+
+—_-16x ig the set of all
+
+real numbers EXCEPT:
+Al,
+
+:
+
+a
+
+-
+
+=
+
+3
+
+5
+
+TICS
+
+ad
+
+7
+
+C.
+
+;
+
+B. 4
+
+The table above shows some values for the
+
+0 and —4
+
+;
+
+functions t and p. For what value of x does
+
+45. Two functions are defined as f (x) =x —2
+
+t(x) + p(x) =2?
+
+and g(x) = 2x — 3. Whichof the following
+expressions represents (f ° g)(x) ?
+
+A.
+
+B
+
+1
+
+2
+
+A.
+
+2x2-—5
+
+B. 2x*-11
+
+C. 3
+
+C. 4x2-12x+7
+
+D. 4
+
+D.
+
+4x2-—12x-11
+
+42. Given the function below, what is f(2) ?
+
+f@)=)1_.,.
+
+;
+
+3° 2*;x 22
+
+A
+
+2
+
+constant and p(2) = 5. What is the value of
+
+B. =
+C.
+
+;
+
+For the function p defined above, b is a
+
+9%)
+
+p(-3)?
+
+1
+
+A.
+
+—18
+
+3
+
+B.
+
+0
+
+=
+
+D. =
+
+C. 3
+
+D.
+
+- 99
+-
+
+5
+
+math
+
+47.
+
+For the function g defined by
+
+51. A function is defined as f(z) = 3z — 13, and
+
+g(x) =12—- 3 x with domain —-16 < x < 8,
+4
+
+its domain is the set of integers from 1 — 20
+including 1 and 20. For how many values of z
+
+what if the range of fg?
+g
+
+; f(z) negative?
+;
+is
+
+A.
+
+-24<y<24
+
+C.
+
+6<y< 24
+
+C
+
+D.
+
+O<y<6
+
+DD
+
+B. -16<y<8
+
+~ ’
+
+—x*-x412
+
+5
+
+.
+
+48. The graph of f(x) = rer is shown
+below. The domain of f(x) is all value of x
+
+EXCEPT:
+
+52. Consider the functions f(x) = Vx and
+g(x) = 4x +5. What is the domain of
+
+|
+
+4+
+
+/
+
+f(g(x))?
+
+A. x2 =
+4
+
+Panic
+
+B. x> =
+
+|
+
+Cxs< .5
+D. x=
+
+A.
+
+2
+
+B.
+
+3
+
+C.
+
+Oand2
+
+D. 2and3
+49.
+
+4
+
+53. If f(x) = 3x? — 5x + 2 and g(x) = x? +3,
+which of the following expressions represents
+
+f(x) = x? + 10x — 24
+
+(fg)(x) ?
+
+g(x) = x*-4
+
+A.
+
+Which of the following expressions is
+
+B.
+
+equivalent to (£) (x) forx > 2?
+
+3x*+ 6x? -—15
+
+3x4+11x? —6x —9
+
+C. 3x*—5x?+4+11x* -15x +6
+
+9
+
+D. 9x4
+— 30x3 + 37x? — 20x +4
+
+x+12
+
+A. x+2
+1
+
+C
+
+D.
+
+x+12
+
+x2
+x2
+
+54. The domain of the function f(x) = > __ ig
+15—|3x|
+all real values of x EXCEPT:
+
+x (x+2)
+
+;
+
+-
+
+50. The domain of f(x) = —
+
+is the set of
+
+0
+
+B.
+
+—2and9
+
+C.
+
+Oand —2
+
+D.
+
+—2,0, and 9
+
+Oand3
+
+C
+
+—S5and5
+
+BO vad ;
+
+all real numbers EXCEPT:
+
+A.
+
+A.
+
+D. —=and5
+5
+
+- 100
+-
+
+Chapter 11: Functions
+
+55. The function f is defined by
+f(x) = 3x? —5x+4+10. Ifthe function
+
+59. Given functions f(x) = x? + 6x — 7 and
+g(x) = 3%, for what values of x does
+
+f (x — 2) is written in the form ax* + bx +c,
+
+g(f(x)) = 1?
+
+what is the value ofa +b+c?
+
+A. 30
+B. 18
+
+C.
+
+D.
+
+10
+
+only
+
+B.
+C.
+
+—1 and 7 only
+Oand —1 only
+
+D. —7 and 1 only
+
+8
+
+56.
+
+A.
+
+f(x) =
+
+1:
+
+60. The 2 functions f and g are defined as
+
+en?) 3
+
+f(x) = 6x — aand g(x) = 4x + 4, where a
+
+OS)" 4G 2)48
+
+is areal number. If f(g(x)) = g(f(x)), then
+
+For what value x is the function above
+
+what 1s the value of a?
+
+undefined?
+
+A.
+
+A. 2
+B. 3
+C. 4
+
+Bp
+
+D.
+
+p.
+
+0
+
+-22
+a
+C. 5
+
+5
+
+28
+5
+
+61. For all values of x there is a function g such
+
+57. If g(f (x)) = Vx +3 — 4 and f(x) = x +3,
+
+that 3g(x) = g(5x). If g(20) = 18, what is
+
+what is the domain of f (g(x)) ?
+
+the value of g(4) ?
+A. 72
+B. 60
+
+A. [-3,0)
+B. [0,00)
+
+C. 18
+D. 6
+
+C. [3,00)
+D. [-3,3]
+
+58. Given the function f(x) = x* + 5 is defined
+
+62. For the f(x) = — what is the domain of
+
+for all real numbers x, which of the following
+
+f(x) when graphed in the standard (x,y)
+
+expressions represents f~1(x) ?
+
+coordinate plane?
+
+A.
+B.
+
+A.
+
+[12,00)
+
+B.
+
+[2, 00)
+
+D.
+
+(—©, 2]
+
+Vx+5
+Vx —5
+5
+
+i
+D.
+
+--x
+
+- 101
+-
+
+math
+
+Chapter 12: Mean, Median, Mode, and Range

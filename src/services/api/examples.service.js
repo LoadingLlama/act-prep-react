@@ -18,7 +18,7 @@ class ExamplesService {
       logger.debug('ExamplesService', 'getExamplesByLessonId', { lessonId });
 
       const { data, error } = await supabase
-        .from('examples')
+        .from('lesson_examples')
         .select('*')
         .eq('lesson_id', lessonId)
         .order('position', { ascending: true });
@@ -63,7 +63,7 @@ class ExamplesService {
       logger.debug('ExamplesService', 'getExampleById', { exampleId });
 
       const { data, error } = await supabase
-        .from('examples')
+        .from('lesson_examples')
         .select('*')
         .eq('id', exampleId)
         .single();

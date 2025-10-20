@@ -1,0 +1,182 @@
+<!-- Topic 6.2: Probability -->
+<!-- Restructured using Golden Template v5.2 -->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Probability measures the likelihood of an event occurring. The ACT tests basic probability calculations, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">independent events</strong>, and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">dependent events</strong> (with and without replacement).
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. Basic Probability Formula
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">The fundamental probability formula:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;"><strong>Probability = Desired Outcomes ÷ Total Possible Outcomes</strong></li>
+      <li style="margin: 0.2rem 0;">Always expressed as a fraction, decimal, or percentage</li>
+      <li style="margin: 0.2rem 0;">Probability values range from 0 (impossible) to 1 (certain)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: A bag contains 38 candies: 18 blue, 10 red, 5 yellow, 3 green, 2 pink
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">What is the probability of selecting a yellow candy?</li>
+      <li style="margin: 0.2rem 0;">Desired outcomes = 5 (yellow candies)</li>
+      <li style="margin: 0.2rem 0;">Total outcomes = 38 (total candies)</li>
+      <li style="margin: 0.2rem 0;">Probability = 5/38</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Finding probability of NOT selecting something:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Count everything that ISN'T the unwanted outcome</li>
+      <li style="margin: 0.2rem 0;">Example: Probability of NOT selecting blue candy</li>
+      <li style="margin: 0.2rem 0;">Blue candies = 18, so NOT blue = 38 - 18 = 20</li>
+      <li style="margin: 0.2rem 0;">Probability = 20/38 = 10/19</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Multiple Events (AND Rule)
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">CRITICAL: When events happen in sequence, MULTIPLY their probabilities
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">The word "and" means multiply</li>
+      <li style="margin: 0.2rem 0;">P(A and B) = P(A) × P(B)</li>
+      <li style="margin: 0.2rem 0;"><strong>Common mistake:</strong> Adding probabilities instead of multiplying</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: Select a red candy AND THEN a green candy
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">First selection: P(red) = 10/38</li>
+      <li style="margin: 0.2rem 0;">Second selection: P(green) = 3/37 (only 37 left after first pick)</li>
+      <li style="margin: 0.2rem 0;">P(red AND green) = (10/38) × (3/37) = 30/1406 = 15/703</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Without replacement vs. with replacement:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Without replacement:</strong> Total decreases after each selection</li>
+      <li style="margin: 0.2rem 0;">After picking first candy, only 37 remain (as shown above)</li>
+      <li style="margin: 0.2rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">With replacement:</strong> Total stays the same (item returned)</li>
+      <li style="margin: 0.2rem 0;">If candy is replaced: P(red AND green) = (10/38) × (3/38)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Multiple Possibilities (OR Rule)
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">When you want probability of one event OR another event:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">The word "or" means add</li>
+      <li style="margin: 0.2rem 0;">P(A or B) = P(A) + P(B)</li>
+      <li style="margin: 0.2rem 0;">This applies when events are mutually exclusive (can't both happen)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: Probability of selecting red OR yellow candy
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">P(red) = 10/38</li>
+      <li style="margin: 0.2rem 0;">P(yellow) = 5/38</li>
+      <li style="margin: 0.2rem 0;">P(red OR yellow) = 10/38 + 5/38 = 15/38</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Quick method when events don't overlap:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Count total desired outcomes directly</li>
+      <li style="margin: 0.2rem 0;">Red or yellow = 10 + 5 = 15 candies total</li>
+      <li style="margin: 0.2rem 0;">Probability = 15/38 (same result, faster!)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Probability with Geometric Scenarios
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Some ACT probability questions use area or length:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Probability = Desired Area ÷ Total Area</li>
+      <li style="margin: 0.2rem 0;">Or: Probability = Desired Length ÷ Total Length</li>
+      <li style="margin: 0.2rem 0;">Same concept as basic probability, just with geometric measurements</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: Dartboard with target circle inside square board
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Square board: 10 inches × 10 inches = 100 square inches</li>
+      <li style="margin: 0.2rem 0;">Target circle: radius 3 inches, area = π(3)² = 9π square inches</li>
+      <li style="margin: 0.2rem 0;">Probability of hitting target = 9π/100</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: Random point on a line segment
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Line segment from 0 to 20</li>
+      <li style="margin: 0.2rem 0;">What's probability the point is between 5 and 12?</li>
+      <li style="margin: 0.2rem 0;">Desired length = 12 - 5 = 7</li>
+      <li style="margin: 0.2rem 0;">Total length = 20</li>
+      <li style="margin: 0.2rem 0;">Probability = 7/20</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+5. Common Probability Scenarios on the ACT
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Selecting from a group:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Marbles in a bag</li>
+      <li style="margin: 0.2rem 0;">Cards from a deck</li>
+      <li style="margin: 0.2rem 0;">Students in a class</li>
+      <li style="margin: 0.2rem 0;">Count favorable outcomes and divide by total</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Multiple selections:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">ALWAYS check: with or without replacement?</li>
+      <li style="margin: 0.2rem 0;">Without replacement is more common on ACT</li>
+      <li style="margin: 0.2rem 0;">Remember to decrease the total for each subsequent pick</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">At least one success:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Often easier to find probability of NO successes first</li>
+      <li style="margin: 0.2rem 0;">Then: P(at least one) = 1 - P(none)</li>
+      <li style="margin: 0.2rem 0;">Example: P(at least one red) = 1 - P(no reds selected)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Complementary events:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">P(event) + P(NOT event) = 1</li>
+      <li style="margin: 0.2rem 0;">If P(rain) = 0.3, then P(no rain) = 0.7</li>
+      <li style="margin: 0.2rem 0;">Use this when "NOT" probability is easier to calculate</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Basic probability = Desired Outcomes ÷ Total Outcomes; probability of NOT occurring = count everything that isn't the unwanted outcome
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Multiple events use AND rule (multiply probabilities); remember to adjust totals for "without replacement" scenarios
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Multiple possibilities use OR rule (add probabilities); for mutually exclusive events, you can count desired outcomes directly
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Geometric probability uses area or length ratios; complementary events: P(event) + P(NOT event) = 1
+  </li>
+</ul>

@@ -1,0 +1,813 @@
+Chapter 14: Logarithms
+On the ACT, you need to be familiar with how logarithms and natural logarithms work, the basic rules for
+logarithms, and how to convert a logarithm to exponential form.
+
+Basics of Logarithms
+Let’s begin with the basics of how logarithms work:
+log,b= c
+
+is the same as
+
+ac =b
+
+Logarithms are just a different form of exponents. Both equations describe the same relationship between the
+values a, b, and c, where a is the base and c is the exponent. To make this a bit easier, let’s use some numbers.
+
+log33 =1
+
+isthesameas
+
+31=3
+
+log,9 =2
+
+isthesameas
+
+37=9
+
+log3;27 =3
+
+isthesameas
+
+3% = 27
+
+The majority of logarithms questions on the ACT ask you to understand how the basics of logarithms work.
+To solve, you will almost always switch from logarithmic form to exponential form.
+Example 1: When log, x = 3, what is x?
+A.
+
+12
+
+B. 48
+
+C. 64
+
+D. 81
+
+Solution: To solve, we need to turn the logarithm into exponential form. The base is 4 and the exponent is 3,
+so the exponential form is
+
+x= 4° = 64
+The answer is C.
+
+Example 2: What integer does 5(log3 9 + log, 8) equal?
+A.
+
+10
+
+B.
+
+15
+
+C. 20
+
+D. 25
+
+Solution: First, let’s find the value of log; 9 by converting the logarithm to exponential form.
+log,9=x
+
+isthesameas
+
+3% =9
+
+We know that 3? = 9, so x = 2, which means that log, 9 = 2. We can repeat this for log, 8.
+log,8=x
+
+isthesameas
+
+2% =8
+
+We know that 2? = 8, so x = 3, which means that log, 8 = 3.
+Now, we can plug in our values for logs 9 and log, 8 to the equation and solve.
+
+5(log; 9 + log, 8) = 5(2 + 3) = 25
+The answer is D.
+
+Shortcut solution — Use Your Calculator: We can solve this entire question using your calculator! To do so,
+we will use the logarithm change of base rule.
+log,a =
+
+log(a)
+
+~ log(b)
+
+Now that we know the change of base rule, we can use the calculator to solve for log; 9 and log, 8:
+_ log(9) _
+
+_ log(8) _
+
+logs 9 = Cea)
+
+log2 8 = Cea)
+- 122
+-
+
+Chapter 14: Logarithms
+
+To solve, plug in the values to the original equation.
+
+5(log; 9 + log, 8)
+
+= 5(2+ 3) = 25
+
+The answer is D.
+
+Some of you may have the change of base formula in your calculators. For those of you with a TI-83 or TI-84
+calculator, you click MATH and then scroll down until you see LOGBASE. Ifyou click on that, your
+calculator will show you
+log,0
+
+and you can just type in the exact values for any question like example 2. Many other calculators have this
+programmed in as well, so you should check if yours does! If not, you can just use the change of base rule we
+used above.
+
+Logarithm Rules
+You should also know the following basic rules for logarithms. You very rarely need to use these rules to
+solve questions on the ACT, but they have appeared on the test before and are fair game to appear again.
+
+Rules
+
+Formulas
+
+Product
+
+log, (xy) = log, x + log, y
+
+Quotient
+
+loga (5) = log, x — logay
+
+Log of a Power
+
+log, x” = ylog,x
+
+Log of 1
+
+log, 1 =0
+
+You will only need to use these rules for questions where the change of base rule is not enough to solve. Most
+likely, these will be difficult questions towards the end of the ACT Math Test.
+
+Example 3: If log, 3% = =, what is the value of x?
+A=
+
+B3
+
+©. NIN
+
+D. 4
+
+Solution: We can use the log of a power rule to simplify the left side of the equation to get
+3
+xlogg3 = 5
+
+Next, we can use our change of base equation to solve for log, 3.
+log.
+
+3 = log(3) _ 1
+
+O59? = log(9)
+
+2
+
+Now, we can plug in= for log, 3 and solve for x.
+
+The answer is B.
+
+Shortcut Solution — Backsolve: The easiest way to solve this question 1s to backsolve. Plug in the answer
+
+choices for x and use the change of base rule to see which one equals = Try it with your calculator and the
+correct answer of x = 3.
+
+- 123
+-
+
+math
+
+Example 4: If log, x = p and log, y = q, then log, = =?
+A. p*-@q
+
+B. 2p+q
+
+C. 2p-q
+
+pb.
+2
+q
+
+Solution: For a question like this, we need to use the logarithm rules. First, we need to use the quotient rule.
+
+log, - = log, x* —log,y
+Next, we use the power rule.
+
+log, x* — log, y = 2log, x — log, y
+Since log, x = p and log, y = q, we can plug in p and q to solve.
+
+2log,x — log,y = 2p — q
+The answer is C.
+
+Questions like example 4 are very rare on the ACT, so this is definitely not a need-to-know topic for all
+students. With that being said, any students aiming for a math score of 30 and above should still make sure
+that you memorize all of the logarithm rules just in case!
+
+Natural Logarithms
+On rare occasions, the ACT may also ask you questions with natural logarithms. Natural logarithm
+questions are very uncommon, so this is a topic that anyone rushing through this book can skip. Any
+
+natural logarithms questions are almost guaranteed to appear in the difficult questions at the end of the math
+test.
+
+The same rules that we have covered so far in this chapter all apply for natural logarithms, except than
+
+the base is always “e,” which is an irrational number approximately equal to 2.71828. The base is not
+actually written in natural logarithms, so the “e” is invisible.
+Inb=c
+
+iS same as
+
+e©=b
+
+Whenever there is a natural logarithm question on the ACT, it most commonly asks you to solve for a variable.
+To do so, you will need to go from logarithmic form to exponential form and then solve for the variable using
+basic algebra.
+
+Example 5: If In(x — 1) = 3, thenx =?
+
+A.
+
+e? +1
+
+B. 1-e?
+
+C. n2
+
+D. n3+1
+
+Solution: First, we need to go from logarithmic form to exponential form. The base 1s e and the exponent is
+3, SO we get
+
+ee=x-1
+To solve, we add 1 to both sides to isolate x.
+
+ee+1=x
+The answer is A.
+
+- 124
+-
+
+Chapter 14: Logarithms
+
+Logarithms Practice: Answers on page 328.
+1.
+
+When log. x = 2, what is x ?
+
+A.
+
+2.
+
+7.
+
+What is the value of the positive real number x
+
+such that log, (=) =-2?
+
+2.5
+
+B.
+>
+C. 15
+
+A.
+3
+BO
+
+D.
+
+4
+C.F
+
+25
+
+When log, x = —4, what is x ?
+
+pi
+a)
+
+A.
+
+—16
+
+B.
+
+—8
+
+C. =
+
+8.
+
+For positive real numbers A and B, log= =?
+
+D. =
+16
+
+3.
+
+‘
+
+loge
+loga
+
+What is 4 (log, 16) equal to?
+
+B.
+
+log(B — A)
+
+A. 1
+
+D. logA—logB
+
+C.
+
+logB —logA
+
+B.
+
+2
+
+C.
+
+4
+
+D.
+
+8
+
+9.
+
+When log,, 1213* = 2, what is x?
+
+4. When log, (—) = —3, what is x?
+
+>B9OWQ RwmlNip
+
+5. What is the value of log, V27 ?
+
+10. log; V9 ="
+
+Gao g7ense
+
+>WGUwO tmen eu
+6.
+
+What is the value of 5log,8 — 2log39 ?
+
+Ww
+
+11. IfIn(x + 4) = 2, thenx =?
+
+A.
+3
+BS
+
+Cc.
+D.
+
+A.
+
+B.
+
+ll
+19
+
+- 125
+-
+
+Ve-—4
+
+vx2-—4
+
+C.
+
+2e-—4
+
+D.
+
+e*-—4
+
+©
+
+math
+
+G:)
+
+12. What real value of x satisfies the equation
+log, 27* = 6x?
+
+G) 17. If In(2x — 3) = 2, thenx =?
+A.
+
+In(2)-1
+
+A.
+
+2
+
+B.
+
+In(5)
+
+B.
+
+3
+
+C.
+
+2e7-3
+
+C.
+
+6
+
+D.
+
+e243
+
+D.
+
+27
+
+2
+
+18. Iflogg42)(x* + 8) = 2, then
+x =?
+10
+
+13. The value of logg 83 is between which of
+
+A.
+
+-1
+
+the following pairs of integers?
+
+B.
+
+0
+
+A.
+
+Oand 1
+
+C.
+D.
+
+1
+2
+
+B.
+
+2 and 3
+
+C.
+
+3and4
+
+D.
+
+5 and6
+
+19. If In(x? + 10) = 4, what is x?
+
+GOS AWNO
+
+Av!
+
+B
+
+1
+
+--
+
+4
+
+<
+
+"
+
+3
+
+3
+
+C5
+
+12
+
+pb.
+
+e? — /10
+In (e* — 10)
+
+log, 9 = b. What is the value of ?
+
+A. -4
+
+c 4
+
+vet —10
+
+20. For positive integers a and b where a < 9,
+
+15. Ifloggx = —<, then x =?
+
+B.
+
+e*—10
+
+>GA
+
+14. When logs 1 = x? — 6x
++ 9, what is x ?
+
+1
+
+D.
+
+2
+
+2
+
+4
+
+21. Let x be an even integer greater than 3 and let
+a=x-—2. The equation log, b = x is true.
+Which of the following describes every value
+
+16.
+
+hee 7 In@.sx —2)+3
+
+of b?
+A.
+
+Positive and odd
+
+If the graphs of the two functions above
+intersect at the point (a, b), what is the value of
+
+B.
+C.
+
+Negative and odd
+
+a?
+
+D.
+
+Negative and even
+
+A.
+B.
+C.
+D.
+
+2e7 +4
+e?-2
+In(3)+2
+In(1) -3
+
+- 126
+-
+
+Positive and even
+
+Chapter 14: Logarithms
+
+22. The value of log (x), to the nearest 0.1, is
+
+27. The total amount of money in a saving account
+
+at Bing’s Bank is given by the formula
+
+given in the table below for 4 different values
+
+t
+
+of x. To the nearest 0.1, what is the value of
+
+A = Ao(23), where A is the total amount of
+
+log(5 x 104°°) ?
+
+A.
+
+0.7
+
+B.
+
+280
+
+C.
+
+400.7
+
+D.
+
+403.7
+
+money t years after an initial amount of Ay was
+
+x
+
+log(x)
+
+5
+
+0.7
+
+50
+
+1.7
+
+500
+
+2.7
+
+5,000
+
+3.7
+
+invested. Which of the following expressions
+gives the total number of years it will take for
+
+an initial investment of $50 to increase to $200?
+
+GaAWp,>
+
+log; 50
+log, 25
+3 logs, 200
+3 log, 4
+
+28. If x is a positive integer, y is a negative integer,
+
+and logs,z = y, what are the range of possible
+23. If x is a positive even integer, a = x + 3, and
+
+values of z?
+
+log, b = x, which of the following describes
+
+every value of b?
+
+GaAWpY
+
+Positive and even.
+Positive and odd.
+
+Negative and even.
+Negative and odd.
+
+A.
+
+z>1andz<-1
+
+B.
+
+O0<z<l
+
+C.
+
+0<2z<0.2
+
+D.
+
+0<z<5
+
+29. Iflog, x? = p and log, (2y)* = m, then
+
+log,(2xy) =?
+
+©
+
+24. The noise rating, r of a water pump is modeled
+
+by the equation r = 20log (=). where P is the
+
+OGWUS
+
+water pressure and K is a constant. What is the
+noise rating of a water pump whose pressure is
+100 times the value of K?
+A.
+
+2
+
+B.
+
+20
+
+C.
+
+40
+
+D.
+
+400
+
+log,168
+
+C.
+
+log,1440
+
+D.
+
+log78424
+
+3(v+w)
+
+B.
+
+v+3w
+
+C.
+
+v+w
+
+D.
+
+3vw
+
+6
+
+—31
+
+B. =4
+C.
+
+2
+
+D.
+
+5
+x+1
+
+31. For the function f(x) = 82
+, f(x) is defined
+
+for all x > 0. Which of the following
+
+26. Iflog, x = v and log,
+y = w, then log, xy? =?
+
+A.
+
+3
+
+V¥x4+31
+
+expression log,90 + log796 — 3log76 ?
+
+B.
+
+2°
+pm
+
+log, vwer=1?
+To
+1°
+
+A.
+
+log740
+
+5pm
+Pym
+
+30. What is the solution of the equation
+
+25. Which of the following are equivalent to the
+
+A.
+
+2p+3m
+
+- 127-
+
+expressions defines f~1(x) ?
+A.
+
+3loggx —1
+
+B
+
+= logex —1
+
+C.
+
+3logg(x — 1)
+
+math
+

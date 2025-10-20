@@ -1,0 +1,1526 @@
+Chapter 23: Factorial, Permutations, Combinations, and
+Organized Counting
+On the ACT, you will have to answer a variety of “how many” questions, such as “how many outfits can a
+person create with 3 shirts, 4 shoes, and 5 pairs of pants?” or “if a lock code consists of 3 numbers and 2
+letters, how many different lock codes are possible?” To successfully answer these questions, you must
+understand the differences in how to setup and solve using permutations, combinations, and organized
+counting and know how factorials work.
+
+Factorial
+The factorial, symbolized by the “!”’, is a function that multiplies an integer by every integer below it. For
+
+example,
+5§!}=5xX4xX3x2x1
+3!=3x2x1
+
+For easy factorial questions on the ACT, that is all you need to know!
+Example 1: The expression 2! + 4! is equal to:
+A. 6
+
+B. 24
+
+C. 26
+
+D. 720
+
+Solution: Rewriting the factorial expression in terms of multiplication, we get
+2!+41=(2x1)+(4x3x2x1)
+2!+4!=2+
+24
+2!+
+4! = 26
+
+The answer is C. Many calculators also have a “!” button and can solve factorial questions for you. If you
+set 2°
+
+are unsure if your calculator has a “!” button, go look it up online.
+Questions like Example 1 are the most common way factorials are tested on the ACT. However, more
+advanced questions do appear at the end of the ACT, so if you are a stronger math student, make sure you
+understand the equation below.
+
+The factorial n! for a positive integer n is defined as n! = n(n — 1)(n — 2)... (2)(1)
+This equation is the exact same rule that we learned above, but now it is written in fancy math terms. For any
+integer n, you multiply n by every integer below it until you get to 1. Understanding this equation is important
+for solving advanced factorial questions.
+3!n!
+
+—?
+Example 2:0 map!
+
+A >
+~
+
+nti
+
+—
+~
+
+n4+1
+
+C.
+
+:
+
+3n
+
+p 2
+~
+
+nti
+
+Solution: We can solve this question algebraically or can substitute in number.
+Method #1 — Math Teacher Way: We can use the definition of factorial to write out the equation.
+(3!))(n)(n — 1)(n — 2)... (2)C1)
+
+(n+ 1)(n)(n — 1)(n — 2)...(2)(1)
+
+- 221
+-
+
+math
+
+Do you notice what cancels out once we have written it out in this form? The entire n! in the numerator
+
+cancels out because we have an (n) on top and bottom, (n — 1) on top and bottom, and so on. The only terms
+that do not cancel out are 3! and (n + 1).
+BOD
+
+2-24
+
+_3x2x1_
+
+(n+ 1)4)4-—DG-—-2.-2HH7
+
+ntl
+
+6
+
+ntl
+
+The answer is B. Okay, so that was confusing. What is an easier way to solve this question?
+Method #2 — Substitution (Cheat Method): We can pick a value to plug in for n and solve. To make the
+numbers easy, let’s pick n = 2. Plugging in 2 for n we get:
+312!
+
+(3x2x1)(2x1)=
+
+12
+
+3... 2°~*«“‘< K2xtCOCO!
+Our answer is 2. To tell which answer choice is correct, we plug inn = 2 to the answer choices and see which
+one is equal to 2. The only one that give us 2 is B, so we can tell that the answer is B. Much easier, right?
+Always look to use substitution when you see variables in the answer choices.
+That is a difficult question that would appear late on the ACT Math Test, so if you find that confusing and are
+not a strong math student, do not worry too much. You are not likely going to see a question like this on test
+day.
+
+Permutations
+In permutations, the order matters. Ifthe order in which the objects are selected makes the outcome
+
+different, we use a permutation to solve.
+Example 3: A class with 15 students is selecting 3 different students for the positions of president, vice
+
+president, and party planner. How many possible different selections can be made?
+A.
+
+135
+
+B. 225
+
+C. 455
+
+D. 2,730
+
+Solution: The order matters here because a different order of students being selected first, second, and third
+leads to a different outcome of who is president, vice president, and party planner. We need to count every
+possible selection, so we must use a permutation.
+To solve a permutation, we use:
+n!
+
+nPy 7 (n-r)!
+where n is the number of items we are choosing from and r is number of items we actually choose. Most
+
+calculators have nPr programmed into them, so you likely do not need to memorize the equation. If your
+calculator does not have it, you will need to memorize the equation.
+For Example 3, n = 15 since we are selecting from 15 students, and r = 3 since we are choosing 3 students
+for the positions.
+
+15P3 =
+
+15!
+
+(15-3)!
+
+= 2,730
+
+The answer is D.
+
+- 222
+-
+
+Chapter 23: Factorial, Permutations, Combinations, and Organized Counting
+
+Combinations
+In combinations, the order does not matter. In other words, if the order that you select the objects does not
+
+affect the final outcome, we use a combination to solve.
+Example 4: Andrew has 5 tickets to a baseball game and 1s going to invite 4 of his friends to go with him.
+If Andrew has 12 friends, how many different combinations of 4 people can he invite?
+A.
+
+495
+
+B. 792
+
+C.
+
+1,320
+
+D.
+
+11,880
+
+Solution: The order does not matter here. Let’s say Andrew texts 4 friends to invite them to the game. As
+long as Andrew asks the same 4 friends to go to the game with him, it does not matter who he texts first,
+second, third, or fourth. The outcome (who attends the baseball game) is the same, so we use a combination.
+To solve a combination, we use:
+n!
+
+nCy = ri (n-r)!
+where 7 is the number of items we are choosing from and r is number of items we actually choose. As with
+
+permutations, most calculators have nCr programmed into them, so you do not need to memorize the equation.
+For example 4, n = 12 since we are selecting from 12 friends, and r = 4 since we are choosing 4 students to
+give tickets to.
+12!
+
+Gasp = 495
+12C4 = -——
+The answer is A.
+
+Permutations and combinations do appear on the ACT, but these are not as commonly tested as the organized
+counting questions we are about to cover.
+
+Organized Counting
+Most “how many” questions on the ACT are not permutations or combinations, so we need to use a different
+method to solve. For these questions, we can answer the question “how many choices do I have” for each
+position where we need to select an item. To see how this works, let’s work through the examples below:
+Example 5: For his graduation dinner, Eric needs to select his outfit. If Eric has 6 dress shirts, 5
+
+pairs of dress pants, 7 ties, and 3 pairs of shoes, how many different outfits could Eric put on?
+A.
+
+30
+
+B. 210
+
+C. 630
+
+D.
+
+1,260
+
+Solution: This example is the simplest type of organized counting question. We recommend drawing
+out a sketch with positions for each item as shown below:
+
+Shirts
+
+Pants
+
+=
+
+x
+
+x
+
+x
+
+Ties
+
+Shoes
+
+Total Outfits
+
+All we need to do now is put the number of choices in each position. Since Eric has 6 shirts, we put a 6 in the
+position for shirts. Since Eric has 5 pairs of pants, we put a 5 in the position from pants, and so on.
+
+6
+Shirts
+
+x
+
+5
+Pants
+
+x
+
+7
+Ties
+
+x
+
+3
+Shoes
+
+=
+
+630
+Total Outfits
+
+To solve, multiply all the numbers together to find the total number of possibilities.
+Eric has 630 possible outfits. The answer is C.
+
+- 223 -
+
+©
+
+math
+
+More advanced organized counting questions may at first seem far more difficult, but we can solve them in the
+exact same way as example 5.
+Example 6: Bertha’s Beans labels a 7-character code on each can of beans it produces? Each code
+
+contains 2 letters followed by 5 numbers. The letters and numbers may repeat. How many 7-character
+codes are possible?
+
+A.
+
+26(25)(10)(9)(8)(7)(6)
+
+B. 262(105)
+
+C. 265(102)
+
+OD. 2(26)(10)
+
+Solution: To start, sketch a diagram of the 7-character code.
+x
+
+x
+
+letter
+
+letter
+
+x
+
+number
+
+x
+
+number
+
+x
+
+number
+
+x
+
+number
+
+=
+
+number
+
+Now, label how many choices we have at each spot. For the first spot in the code, we have 26 letters in the
+alphabet, so there are 26 possible letters for that position. Since the letters can repeat, we can also have 26
+possible letters for the second spot in the code. For the numbers, we have 10 numbers to pick from (0 through
+9). Since the numbers can repeat, there are 10 possible options for all 5 number spots in the code.
+Filling in the number of choices for each position, we get:
+26
+
+x
+
+letter
+
+26
+
+»~
+
+letter
+
+10
+
+»~
+
+number
+
+10
+
+»~
+
+number
+
+10
+
+»~
+
+number
+
+10
+
+yx
+
+number
+
+10
+
+=
+
+number
+
+To solve, multiply all the numbers together. There are 262(10°) or 67,600,000 possible 7-character codes.
+The answer is B.
+
+Example 7: The LockTight Safe Company just released its brand new safe. To access the safe, the
+
+correct 6-character code must be entered. The first and last characters must be different letters. The
+middle characters are all numbers, the numbers can be repeated, and the second character must be either a
+0 ora 1. How many combinations are possible for the safe?
+A.
+
+655,200
+
+B. 936,000
+
+C.
+
+1,300,000
+
+D.
+
+1,352,000
+
+Solution: To start, sketch a diagram of the 6-character code:
+x
+
+letter
+
+x
+
+Oor 1
+
+x
+
+number
+
+x
+
+number
+
+x
+
+number
+
+=
+
+letter
+
+Let’s start with the letters. For the first character in the code, there are 26 possible options. The first and last
+characters must be different letters. Once a letter is selected for the first character, there are only 25 other
+letters left to choose from, so there are 25 possible options for the last character in the code.
+
+26
+
+Oorl
+
+number
+
+x
+
+x
+
+x
+
+x
+
+x
+
+letter
+
+number
+
+number
+
+25
+
+=
+
+letter
+
+Next, let’s deal with the numbers. The second character in the code must be a 0 or a 1, so there are only 2
+possible options for this spot. The numbers can be repeated, so the other characters have 10 possible options.
+Filling in the numbers, we get
+26
+
+letter
+
+~x
+
+2
+
+Oor 1
+
+x
+
+10
+
+~~
+
+number
+
+10
+
+number
+
+~x
+
+10
+
+number
+
+~.
+
+25
+
+=
+
+letter
+
+Multiply the numbers together to solve. There are 1,300,000 possible combinations for the safe. The answer
+is C.
+
+224
+-
+
+Chapter 23: Factorial, Permutations, Combinations, and Organized Counting
+
+Questions like examples 6 and 7 are very common on the ACT. Easier versions of these questions appear in
+the middle of the test anywhere from questions 15-30 while more advanced ones appear in the last 15
+questions. Use the “draw a diagram and label the spots” method that we used for these examples and solving
+these questions should be quick and easy!
+
+Advanced Combinations, Permutations, and Organized Counting
+Advanced combinations, permutations, and organized counting questions are some of the most difficult
+on the ACT Math Test, so this section is only for strong math students aiming for top ACT Math Scores.
+
+If you are not a strong math student, do not worry about mastering this section.
+There are a variety of ways the ACT can test you on these topics, so in the rest of this chapter we will cover the
+most common ways the ACT has tested these in the past. Understanding the following examples will give you
+the skills you need to handle these challenging questions 1n case you see them on test day.
+
+Question Type #1 — Advanced Organized Counting
+Example 8: At the end of a men’s basketball game, all 5 players on the court high five each other player
+and the coach. What was the total number of high fives given?
+A. 36
+
+B. 25
+
+C. 21
+
+D.
+
+15
+
+Solution: We can solve this questions using combinations or organized counting. Both methods are shown,
+so you can find out which seems easier to you.
+Method #1 — Combinations: A high five takes a pair of people, so this question is actually just asking us to
+
+find out how many pairs of 2 people can be selected from the 5 players and the coach. The order does not
+matter, so we use a combination. We have 6 total people, son = 6, and need to select 2, so r = 2.
+
+The answer is D. If that seems confusing or you do not feel confident with combinations, you may prefer
+using method #2.
+Method #2 — Organized Counting: The key to solving this question is to have an organized approach and to
+recognize the pattern to save time. To make this simpler, let’s call the players A, B, C, D, E. Now, let’s
+consider the first player A.
+To high five the 4 other players and the coach, player A must make 5 high fives. We can show the high fives
+as © to give a visual as well.
+ASPB
+
+ASC
+
+A&D
+
+A&E
+
+A#& Coach
+
+Total High Fives
+= 5
+
+Now, let’s consider player B. Player B has already high fived player A, so he only needs to high five players
+C, D, and E and the coach.
+Bec
+
+BeD
+
+BeE_
+
+Be Coach
+
+Total High Fives = 5 + 4
+
+What about player C? Well, player C has already high fived players A and B, so he only needs to high five
+placed D and E and the coach.
+CeD
+
+CeE
+
+Ce# Coach
+
+Total High Fives=5+4+3
+
+Player D has already high fived players A, B, and C, so he only needs to high five player E and the coach.
+DeE
+
+C#
+
+Coach
+
+Total High Fives=5+4+3+2
+
+- 225
+-
+
+math
+
+Player E has already high fived players A, B, C, and D, so he only needs to high five the coach.
+E © Coach
+
+Total High Fives
+
+=5+44+3+4+2+4+1
+
+Everyone has already high fived the coach, so we are done.
+Total High Fives
+
+=5+4+34+2+4+1=15
+
+The answer is D. You likely recognized the pattern pretty quickly, so these questions can be solved pretty
+
+quickly with this method. The organized counting method and pattern can appear in any similar questions
+where we are being asked about the various ways to count events that involve making pairs.
+
+Question Type #2 — Advanced Combinations and Counting Multiple Outcomes
+Example 9: There are 12 donuts in a box in the break room. 7 of the donuts are glazed, 3 are chocolate,
+
+and 2 are cinnamon sugar. If Trace randomly selects two donuts, what is the probability that he gets 1
+chocolate donut and 1 cinnamon sugar donut?
+1
+
+A. =
+11
+
+1
+
+B. =
+12
+
+1
+
+Cc. =
+22
+
+1
+
+D. —
+24
+
+Solution: The key to solving this question is understanding that we need to count two separate outcomes that
+both end up with Trace getting 1 chocolate donut and 1 cinnamon sugar donut:
+1st Donut Selected
+
+2nd Donut Selected
+
+Outcome #1
+
+Chocolate
+
+Cinnamon Sugar
+
+Outcome #2
+
+Cinnamon Sugar
+
+Chocolate
+
+We now need to find the probabilities for outcome #1 and outcome #2. The big mistake most students make is
+only counting one of these outcomes. For the outcome #1, we need to find the probability of first getting a
+chocolate donut and then getting a cinnamon sugar donut:
+3
+
+Probability (Outcome #1) = P(Chocolate) x P(Cinnamon Sugar) = — x
+
+2
+
+12°11
+
+6
+
+132
+
+For outcome #2, we need to find the probability of first getting a cinnamon sugar donut and then getting a
+chocolate donut:
+3
+
+Probability (Outcome #2) = P(Cinnamon Sugar) x P(Chocolate) = D x Ti
+
+6
+
+132
+
+To get our final answer, we add the probabilities of both outcomes and simplify:
+6
+
+6
+
+12
+
+1
+
+732132132,
+11
+The correct answer is A. Anytime you see a question like this asking you to find the probability of a specific
+event, make sure that you remember that various orders can lead to the desired outcome and, to solve correctly,
+you may need to solve for the probabilities of multiple outcomes.
+
+- 226
+-
+
+Chapter 23: Factorial, Permutations, Combinations, and Organized Counting
+
+Factorial, Permutations, Combinations, and Organized Counting Practice: Answers on page 331.
+
+1.
+
+To decorate his room, Eric has decided to buy
+
+5.
+
+Andrea is planting some new types of flowers
+
+one lamp, one landscape photograph, and one
+
+in her new flowerbed. In her flowerbed, she
+
+sports poster. At the bookstore, there are ten
+
+has room for only four new plants. The plants
+
+types of lamps, four landscape photographs,
+
+must be planted side-by-side in one row. Her
+
+and six sports posters. How many different
+
+husband Mark accidentally purchased eight
+
+ways can Eric decorate his room?
+
+different types of flowers. How many different
+ways can Andrea plant her new flowerbed?
+
+2.
+
+A.
+
+20
+
+B.
+
+40
+
+A.
+
+C.
+
+200
+
+B.
+
+70
+
+D.
+
+240
+
+C.
+
+256
+
+D.
+
+1,680
+
+Veronica is setting the table for dinner and
+
+6.
+
+needs to choose a tablecloth, a placemat, and a
+
+32
+
+Trey is selecting a 6-digit passcode for his new
+phone. The first number will be 8 but all of the
+
+type of plate. She has 5 tablecloths, 4 types of
+
+other numbers can be any digit. How many
+
+placemats, and 2 sets of plates. How many
+
+passcodes could he select?
+
+possible ways can Veronica set the table?
+
+3.
+
+A.
+
+10°
+
+A.
+
+10
+
+B.
+
+10°
+
+B.
+
+11
+
+C.
+
+10(9)(8)(7)(6)
+
+C.
+
+20
+
+D.
+
+96
+
+D.
+
+40
+
+What is the value of 740) 9
+
+7.
+
+>!
+
+There are 9 candidates in the running for the
+
+town hall elections. The candidate with the
+
+most votes will become President; the candidate
+
+A
+
+5
+
+with the second-most votes will be Vice
+
+B.
+C
+
+2!(10)
+42
+
+President, and the candidate with the third most
+votes will be the Chairman. Assuming there
+
+D.
+
+420
+
+are no ties, how many outcomes are possible
+from the election?
+A.
+
+4. Tessa has five tickets to the Padres game. She
+
+oP3
+
+B. 9s
+
+is going to invite four of her ten friends to go to
+
+D.
+
+93
+
+the game with her. Which of the following
+describes how many different groups of five
+people can go to the game?
+4!
+
+A.
+
+10Ps
+
+B.
+
+10P4
+
+C.
+
+10Cs
+
+- 227
+-
+
+A.
+
+2
+
+D.
+
+210
+
+4
+
+©)
+
+math
+
+©
+
+°
+
+There are thirty-five members who signed up
+
+12. If you place the letters in NUMBER into a
+
+for the Carlsbad Bowling League. 20 of the
+
+machine that organizes them into a random
+
+members are men and the remaining 15 are
+
+order, what is the probability that it will spell
+
+women. The members will be split into 16
+
+the word “number” correctly?
+
+teams and each team will have a team captain.
+9 of the team captains will be men and 7 of the
+
+PWAGpDO9
+
+team captains will be women. Which of the
+following describes how many different sets of
+
+team captains could be selected?
+
+GaAWpY
+
+35C
+16
+20C9 15C7
+35P
+16
+20P9 15P7
+
+©”
+
+1
+
+6(5)(4)(3)(2)@)
+1
+
+66
+6
+
+6(5)(4)(3)(2)
+6°
+
+6(5)(4)(3)
+
+A group of 11 teams are being divided into two
+
+divisions: one division with 5 teams and one
+division with 6 teams. Which of the following
+expressions gives the number of different
+. Tamika lives in Carlsbad. The area code for
+
+divisions that could be selected with these 11
+
+her phone will start with (858). For the
+
+teams?
+
+remaining seven digits, she will randomly be
+
+assigned numbers from 0 — 9. Which of the
+
+A.
+B.
+C.
+D.
+
+following expressions gives the number of
+different possible combinations for the last
+
+seven digits of her phone number?
+
+A.
+
+B.
+
+Cc.
+D.
+
+11Ps5
+11P611Ps
+11Ce
+1C6 11Cs
+
+10(7)
+
+10(9)(8)(7)(6)(5)(4)
+
+14. The ID code at Cyrus Technologies must be
+
+710
+107
+
+seven characters long and consist of the
+following sequence: 1 letter, 4 digits, 2 letters.
+For any 1 code, the letters may be the repeated
+
+but the digits (0 — 9) must be different. Which
+of the following expressions give the number of
+. The code for each item in Warsham’s Grocery
+
+passwords possible?
+
+store is 4 characters long. Each code has two
+letters followed by two numbers. No codes
+
+A.
+
+104(263)
+
+contain the letters O, W, or Z or the numbers 0
+
+B.
+
+26(10)(9)(8)(7)
+
+or 2. Any of the other letters and digits may be
+
+C.
+D.
+
+263(10)(9)(8)(7)
+104(26)(25)(24)
+
+used up to 2 times. Which of the following
+expressions represents how many different item
+codes are possible?
+
+©” Pinewood camp prints ID cards for its campers.
+
+A.
+
+23(23)(10)(10)
+
+B.
+
+23(22)(10)(9)
+
+OAC followed by 4 digits from 0 to 9. The
+
+C.
+
+23(23)(8)(8)
+
+digits may not repeat. Which of the following
+
+D.
+
+23(22)(8)(7)
+
+expressions gives the total number of different
+
+Each 7-character code consists of the letters
+
+7-character codes?
+
+A. 1(1)(1)(10)(9)(8)(7)
+B.
+
+1(1)(1)(10)(10)(10)(10)
+
+C.
+
+3(1)(10)(9)(8)(7)
+
+D.
+
+- 228
+-
+
+3(1)(10)(10)(10)(10)
+
+Chapter 23: Factorial, Permutations, Combinations, and Organized Counting
+
+16. 150 students are up for election for their class
+
+president, vice president, and chairman. If the G)
+
+20. Six boys are randomly assigned into two groups
+
+of 3 for a group project. One group will present
+
+same student cannot hold two positions, which
+
+on Monday and the other will present on
+
+of the following expressions gives the
+
+Tuesday. If Marcus, Jay, and Allen are part of
+
+maximum number of distinct election outcomes
+
+the group of boys, what is the probability that
+
+that can occur?
+
+Marcus, Jay, and Allen will be paired together
+and will present on Tuesday?
+
+A.
+
+3(150)
+
+B.
+
+150°
+
+C.
+D.
+
+A
+
+150(149)(148)(3)(2)(1)
+150(149)(148)
+
+B.
+
++
+
+a
+>
+1
+
+17. At Tom’s Sub Shop, each sandwich comes with
+
+C 40
+
+one types of meat, one type of spread, one type
+
+D
+
+=
+
+of cheese, and one type of bread. Tom is very
+particular about his sandwiches, so you cannot
+pick specific vegetables. Customers can get a
+sandwich Tom’s way, which has lettuce
+
+21. There are 7 points in a plane, and no 3 of the
+
+tomato. onions. and pickles or with no
+
+points are collinear. These 7 points, taken 2
+
+vegetables. If
+
+points at a time, determine how many distinct
+
+Tom’s Sub Shop has 4 types of
+
+meat, 7 spreads, 5 types of cheese, and 3 types
+
+lines?
+
+customer order at Tom’s Sub Shop?
+
+_ y
+
+A. 38
+B. 140
+
+C. 28
+D. 42
+
+of bread, how many different sandwiches can a
+
+C.
+
+420
+
+D.
+
+840
+
+22. Which of the following is equivalent to —— ?
+
+18. How many seating arrangements are possible
+
+for 5 people to sit at a rectangular table with 2
+
+20
+
+people on each side and one person at the head
+
+A x
+
+only 2 people are allowed to sit at the head of
+the table?
+
+(3%)!
+C. 20
+
+of the table if one person sits in each seat and
+
+A.
+
+12
+
+B.
+
+24
+
+C.
+D.
+
+48
+120
+
+B. (5x75)!
+D.
+
+20(x — 1)
+
+23. The 3 following true statements are about
+
+positive integers g,h,and k.
+19. Ata certain business, employee identification
+
+1. g isan even number such that
+
+badges are made up of the first letter of their
+
+31<g < 39.
+
+first, middle, and last names followed by 7
+
+2. his a prime number such that 10 < h < 16
+
+digits from 0 to 9. For example, a badge could
+
+3. k isa multiple of 4 such that k < 10
+
+be MDS1496853. If the letter and numbers can
+
+repeat, how many possible combinations are
+
+How many ordered triples (g, h, k) satisfy the 3
+
+A.
+B.
+
+A. 8
+B. 10
+
+there for the company’s identification badges?
+
+statements?
+
+263(97)
+263(107)
+
+C. 26(25)(24)(97)
+D. 26(25)(24)(107)
+
+C. 12
+D. 16
+
+- 229
+-
+
+math
+
+24. 22 students are playing doubles beach
+
+27. How many seating arrangements are possible
+
+volleyball. What is the maximum number
+
+for 8 people to sit in the 8 seats of
+
+of different 2-player teams possible?
+
+person sits in each seat and only 3 of the 8
+
+aSUV if 1
+
+people can sit in the driver’s seat?
+A.
+
+ll
+
+B.
+
+44
+
+A.
+
+16
+
+C.
+
+231
+
+B.
+
+7!
+
+D.
+
+462
+
+C.
+
+8!
+
+D.
+
+3(7!)
+
+25. At a coworking space, the entrance code
+
+28. Three sisters are going shopping with their
+
+consists of the following sequence: 1 digit, 5
+
+mom, and they walk into a dessert shop.
+
+letters, 2 digits. For any 1 code, the digits (0-9)
+
+There are 6 kinds of cookies, 5 kinds of
+
+may be the same, but the letters, each from the
+
+croissants, and 5 kinds of brownies. Their mom
+
+English alphabet must all be different. Which
+
+will choose three different desserts at random
+
+of the following expressions correctly gives the
+
+for her daughters. What is the probability that
+
+probability that a randomly generated entrance
+
+the mom will choose 1 of each of the 3 kinds of
+
+code contains the word GRAIN?
+
+desserts?
+
+A.
+
+Tae
+
+51(103)
+
+(Note: The same dessert cannot be selected
+
+asnanenaa
+
+multiple times.)
+
+103
+
+B. 103 (26)(25)(24)(23)(22)
+
+A. -
+
+(4)(3)(2)(4)10°
+
+1
+
+C. 103(26)(25)(24)(23)(22)
+
+B. 16
+
+D.
+
+C.
+
+3
+
+p
+
+2
+
+55(103)
+10(26)(25)(24)(23)(22)
+
+©)
+
+©)
+
+16
+
+26. Samantha is creating a series of pictures with
+
+increasing numbers of colored circles and
+
+G) 29. A new housing complex will have 10 condos.
+
+The condos will all be connected by a path so
+
+pieces of string. Her design has a piece of
+
+guests can walk directly from one condo to any
+
+string connecting each circle to every other
+circle in the picture with a colored piece of
+string. Her design for the picture with 4 circles
+
+of the other condos. If each of the paths
+connecting two condos are separate from any
+other path, how many total paths will there be
+
+is shown below.
+
+ss
+
+in the housing complex?
+
+;
+
+eee
+
+®
+
+How many pieces of string will Samantha need
+
+45
+
+D.
+
+64
+
+10
+
+20
+45
+
+30, 12 — 42, then (n+ 1)! =?
+TM
+
+A.
+
+21
+
+24
+
+A. i.
+C.
+
+A.
+
+B.
+C.
+
+D. 55
+
+to use for the picture with 9 circles?
+
+B.
+
+56
+
+C 120
+
+D. 720
+
+- 230
+-
+
+Chapter 23: Factorial, Permutations, Combinations, and Organized Counting
+
+31. Of the 18 kayaks to rent in La Jolla, 4 are 1
+
+32. After a business meeting, all attendees shook
+
+person kayaks, 6 are 2 person kayaks, 2 are 3
+
+hands with every other person at the meeting.
+
+person kayaks, and 6 are 4 person kayaks. A
+
+If there were a total of 66 handshakes, how
+
+travel agent randomly chooses 4 kayaks for a
+
+many people were at the meeting?
+
+business trip without realizing there are
+different types of kayaks. What is the
+
+A.
+
+probability the travel agent will randomly pick
+
+B.
+
+12
+
+1 of each of the 4 types of kayaks?
+
+C.
+
+22
+
+D.
+
+33
+
+A.
+
+1
+
+7
+1
+
+Bo
+8
+
+Co
+D.
+
+16
+
+=
+
+- 23]
+-
+
+ll
+
+math
+

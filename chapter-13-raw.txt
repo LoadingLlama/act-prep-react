@@ -1,0 +1,1450 @@
+Chapter 13: Exponents and Roots
+Exponents
+Let’s start by reviewing the common exponent rules that you need to know on the ACT.
+
+Rule Name
+
+Rule
+
+Example
+
+Product Rule
+
+a* x aY =a*ty
+
+33 x 34 = 37
+
+a*
+i a*-Y
+
+Quotient Rule
+.
+
+5?
+sf
+
+ax
+
+_
+
+5
+
+5
+
+Power Rule
+
+(a*)” = a*”
+
+Fraction Power Rule
+
+ay = Va®
+
+63 = 2/62
+
+a*
+
+1
+
+11-4 = 1
+
+One Power Rule
+
+a'=a
+
+(-4)1 = -4
+
+Zero Power Rule
+
+a=1
+
+139° =1
+
+x
+
+Negative Exponent Rule
+S
+
+(2*)3 = 22
+
+P
+
+2
+
+~ a
+
+~
+
+Make sure that you memorize all of these rules for test day. The product, quotient, and power rules will be
+tested most often, but you also need to know the fraction power rule and negative exponent rule for more
+difficult questions. To successfully solve exponent questions, you will need to use multiple of these rules
+together.
+.
+
+x6y7
+
+.
+
+Example 1: For all nonzero x and y, the expression Textys |S equivalent to:
+
+:
+
+8
+
+By7
+
+8
+
+”
+
+14x4
+
+Solution: To solve, we use the quotient rule for the exponents. For the numbers, we follow normal algebra
+
+rules to simplify, so = simplifies to =
+
+Using the negative exponent rule, we get
+
+By?
+
+The answer is B. A good trick with negative exponents is that if we switch the term from a numerator to the
+denominator or vice versa, the negative power turns into a positive power. In the last step of the solution to
+
+Example 1, the y~” term in the denominator switches to y”? when we move the term from the numerator to the
+denominator.
+
+-112-
+
+Chapter 13: Exponents and Roots
+
+-2
+
+32
+
+Example 2: For all nonzero x and y, which of the following is equal to — ?
+A.
+
+—2xy®
+
+— B. —2x?y>
+
+C. 4xy®
+
+D. 4x2y°
+
+Solution: Here, it is easiest to start with the power rule and simplify the numerator. Make sure that you
+remember to distribute the power to all the terms including the —2 at the front.
+
+Ax*y 6
+x
+
+Now, we use the quotient rule to simplify the x-terms.
+Axy
+
+6
+
+The answer is C.
+
+Example 3: If 4°*+1 = 4-**7, what is the value of x?
+
+A=
+
+BI
+
+C |wN
+
+D. 2
+
+Solution: In this question, the bases are the same, so the exponents must be equal.
+3x4+1=-x+7
+4x =6
+3
+
+x=2
+
+The answer is C.
+
+Example 4: For what value of x is 92% = 27*** true?
+
+A 122 B8 C4 D3
+
+Solution: Method #1 — “Math Teacher Way”: To use any of our exponent rules, we need the bases of our
+
+exponents to be equal. The trick to this question is to recognize that 9 is the same as 32 and 27 is the same as
+33, so we can make the bases of both terms 3. Plugging in 3 for 9 and 3° for 27, we get
+(37)2* _— (33)*t4
+34x — 33x+12
+
+Since the terms are equal, we can set the exponents equal and solve.
+4x =3x+12
+x=12
+The answer is A.
+
+Method #2 — Backsolve with your Calculator: Since we are given an equation and possible values of x, we
+can plug the answer choices in for x and use a calculator to see which one makes the equation true. Only one
+answer will work, so we can find which answer choice is correct without doing any actual math!
+
+For this question, if we plug in x = 12 to the original equation, 92* and 277° will give us the same answer on
+your calculator. The numbers are very large, but you should still be able to tell that they are equal. The
+answer is A.
+
+- 113
+-
+
+G)
+
+math
+
+Exponents Exercise: For questions 1-12, simplify the expressions until you only have positive exponents. For
+
+questions 13-20, solve for x. Answers on page 327.
+
+1.
+
+(x*y)@*y*) =
+
+2.
+
+(3x°)(2x ) (Ex )=
+3
+
+4)
+
+—3,4,4
+
+{1
+
+12.
+,-2)\
+
+64,3)
+
+—
+
+(Sxty7*)?
+(ax=3y)?
+
+13. 1273 x 12° = 144%
+
+—
+
+72x
+7%
+
+4.
+
+(2xy3)* =
+
+5. 3x7@y3 =
+
+15. 4 = 25
+
+6
+
+188
+
+16. 772*+3 = 72-*
+
+.
+
+-
+
+4
+
+—
+
+7.
+
+9x3yz77 =
+
+17. (2)3 = 24 x 22
+
+8.
+
+(x-*y?)(xy~7) =
+
+18. 92 = 32
+
+3
+
+x
+
+9 SL
+
+19. 162 = 2%
+
+10. 8x°y~2z)? =
+
+20. == 2ex~4
+
+XYZ
+
+8
+
+_
+
+(4xy?)?
+11. ye
+
+©
+
+Roots
+On the ACT, you will need to often simplify and solve equations with roots. Let’s begin by reviewing the
+common root rules:
+
+Jxy = vx xy
+
+V18 = V9 x V2 = 3v2
+
+75
+x
+
+wnfern?
+
+Vx
+
+24
+
+To simplify a square root, factor the number underneath the radical and take out any pairs.
+
+V50=vV5x5x2=5vV2
+In the example above, there is a pair of 5’s underneath the radical, so we can take the 5 out. The 2 is not part
+of a pair, so it stays underneath the radical. Here’s one more example:
+
+V108 = V2x2x3x3xX3 = (2x3)
+v3 = 6v3
+Here, we have a pair of 2’s and a pair of 3’s, so we take both out and move them to the front. The third 3 is not
+part of a pair, so it says underneath the radical.
+For some questions, you might need to go backwards and put a number outside back underneath the radical.
+To do this, take the number outside and put it back under the radical as a pair.
+
+6V3 = V6x6x3=V108
+Example 5: If V45 + V/20 = xvV5, then x =?
+A.
+
+5
+
+B. 6
+
+C. 9
+
+D.
+
+13
+
+Solution: We need to simplify the radicals on the left side of the equation.
+
+V45 = V3 X3x5=3v5
+-114-
+
+Chapter 13: Exponents and Roots
+
+V¥20 = V2x2x5=2v5
+Plugging those values in to the left side of the equation, we get
+
+3V5 + 2V5 =xv5
+
+5V5 =xv5
+x=5
+The answer is A.
+
+“Cheat Method” — Use Your Calculator and Backsolve: You can also plug inv45 + ¥20 to find out what
+
+it equals. We can then backsolve with the answer choices to find which answer choice, when multiplied by V5
+gives us the same value in the calculator. You can also use this method for Example 6.
+
+Example 6: If /2x = 5¥6, then x =?
+A.
+
+450
+
+B.
+
+150
+
+C. 75
+
+©)
+D. 30
+
+Solution: Method #1: To solve for x, move the 5 back underneath the radical.
+
+Vv2x =V6x5x5
+vV2x = ¥150
+For these to be equal, the terms under the radical must be equal, so
+2x = 150
+x=75
+The answer is C.
+
+Method #2: We can also solve this question by squaring both sides.
+
+(V2x)? = (Sv6)?
+2x =25x6
+2x
+= 150
+x=75
+The answer is C.
+
+Remember, these same rules still apply to roots other than just square roots.
+
+Vxy = Vx x4/y
+
+V16 = V8 x V2 =2V2
+
+sfx _ Vx
+
+5f5 _ M5 _ 5
+
+y
+
+&
+
+32.
+
+-32.—~C:«S
+
+To simplify a cube root, factor underneath the radical and take out triples of the same number.
+
+V24 = V2x2x2x3
+= 23
+To simplify a 4th root, factor underneath the radical and take out four of the same number.
+
+V80 = V2x2x2x2x5=2V5
+You are unlikely to see any higher roots on the ACT, but if you do just follow this same pattern to simplify any
+root.
+
+- 115
+-
+
+math
+
+Example 7: Ifa = ¥162 and b = V40, thena + b =?
+
+A.
+
+3V18+2V10
+
+B. 2V20+2V5
+
+= C. 6V2+5V2
+
+sD. 33V6 +25
+
+Solution: Method #1 — “Math Teacher Way”: To start, let’s simplify to find the value of a.
+
+a= 162 = V3x3x3x6=3V6
+Now, simplify D.
+
+b= V40 = V2x2x2x5=2V5
+We can solve
+
+atb=3V6+2V5
+The answer is D.
+
+Method #2 — Use Your Calculator: We can also cheat this question by using the calculator. You can enter
+
+162 +
+
+40 in your calculator. If your calculator does not have a cube root button, you can convert the cube
+1
+
+1
+
+roots to the one third power and enter it as (162)3 + (40)3. Either way, your calculator will tell you that
+
+¥162 + V40 = 8.8713. Next, you can enter the answer choices to see which answer choice also equals
+8.8713. If you enter 36 + 2¥5, you will get 8.8713, so the answer is D. None of the answer choices equal
+8.8713.
+
+Roots and Variables with Powers
+When you have exponent questions with roots and variables with powers underneath the root, it is easiest to
+turn the root into a power and then use the exponent rules to solve. For example,
+
+3 i
+
+4
+
+u
+
+3
+
+Vx8y = (x5y)3 = (x°)3y3 = x3y3
+
+The example above can also be solved using our fraction power rule, but this same trick will help make more
+complicated questions much easier.
+
+Example 8: Which of the following is equivalent to (/5x®y18 ?
+
+A.
+
+V5x?y6
+
+B. V5x8y
+
+OC. 4/5
+
+x3 yl5
+
+D. 5x7y®
+
+Solution: To start, turn the root into an exponent.
+1
+
+(Sx°y"*)3
+Next, distribute the exponent to all terms.
+1
+
+1
+
+1
+
+(Sx°y!®)3 = 53 (x°)3 (y**)3
+Use the exponent rules to solve.
+1
+
+1
+
+13
+
+53 (x°)3 (yi)3 = V5 x?y®
+The answer is A.
+
+- 116
+-
+
+Chapter 13: Exponents and Roots
+
+Roots Exercise: For questions 1-12, simplify the radical. For questions 13-20, solve for x. Answers on pages
+327-328.
+
+1.
+
+V60=
+
+SYAFNe
+
+V¥150
++ 24 =
+
+6.
+
+©-O—
+
+6V
+— V80
+5
+=
+
+V¥32 —V18
++ V72 =
+V48
++ ¥162 =
+V45
+
+Vis
+5V12 _
+
+10V¥3
+
+8.
+
+vV8ab* =
+
+9.
+
+J16x2y
+=
+
+10. Vat2b2 =
+
+*/24x6
+d
+
+11.
+
+16x19 =
+:
+
+12
+
+13.
+
+16.
+
+©a4lm
+
+17.
+
+V¥3x
++ V8
+
+18.
+
+(3V5)?
+= 2x
+
+19.
+
+= 2V6
+Vox
+
+20.
+
+V544+ V16=xvV2
+
+|II
+
+14.
+
++ 4&2
+
+15.
+
+JED
+
+Exponents and Roots Practice: Answers on page 328.
+
+1.
+
+A.
+B.
+C.
+D.
+
+2.
+
+©
+
+(2x*)(9x?) is equivalent to:
+11x?
+11x?
+18x?
+18x36
+
+5.
+
+Which of the following is equal to x4, for all
+
+values of x?
+
+6.49
+7
+
+26.4
+
+For all nonzero values of x and y, which of the
+.
+
+A.
+B.
+C.
+D.
+
+@
+
+°
+
+.
+
+.
+
+.
+
+24x3y®
+
+—18xy°
+—4x°y’
+—4x3y®
+—4xy®
+
+Which of the following expressions is
+
+equivalent to (a?b*c?)(a°b3c°) for all real
+values of a, b, and c?
+
+>GOW
+
+A.
+B.
+
+-117-
+
+©
+
+4.62
+
+following expressions 1s equivalent to — Ex2y
+
+7.51077
+2.5 x 102°
+4.0 x 107
+7.5 x 107
+
+3
+
+3.
+
+which of the following is a possible value of a?
+
+Gap,
+
+Joe’s spaceship can travel 2.5 x 10° feet per
+second. How many seconds would it take his
+spaceship to travel 10 x 107° feet?
+A.
+B.
+C.
+D.
+
+Let a be any real number such that 25 < a* < 49,
+
++O©- —
+
+ai>h12¢8
+
+ai? b’7 c12
+
+C
+
+a®p12¢12
+
+D.
+
+a®b7c®
+
+?
+
+©
+
+math
+
+7.
+
+What is the smallest integer greater than V52 ?
+
+12. For all nonzero numbers a, b,and c, the
+727-5
+
+expression
+
+GO, 0OND
+8.
+
+wG>OD9
+
+What value of x makes the equation below
+true?
+
+16%
+
+9.
+
+A.
+
+3
+
+B.
+
+5
+
+Cc.
+
+10
+
+D.
+
+16
+
+yomand
+
+a
+
+to:
+6a2b2c is equivalent
+q
+
+5,5
+Cc
+
+2b3
+
+a°c*
+2b3
+
+a®’bc®
+2b3c2
+
+(3abc)+4
+(6abc)®
+
+1
+
+1
+
+Oe What is the value of (252 — 83)? ?
+
+GaAwp NO
+
+Given that 5x — V2 = 10, what is the value
+
+©"
+
+of x?
+
+For all positive real numbers x, which of the
+x17
+
+following expressions is equivalent to
+
+A. 2-2
+
++ ?
+yt
+
+GaAW> RB
+
+B. 2-v2
+
+c. 242
+D. 2++V2
+
+11
+
+15
+19
+
+(Oh Which of the following expressions is
+
+equivalent to Vx? ?
+
+10. If x is a positive number, which of the
+
+following is equivalent to
+
+Gap
+
+¥16x?2 ?
+
+>GOW
+
+4x
+
+Ax?
+16x
+64x
+
+(2x)?
+
+16. For all nonzero values of x, (ax is equal to:
+A.
+
+11. Let a be any real number such that
+
+3 < Va < 7. which of the following is a
+
+B
+
+possible value of a?
+
+C.
+
+A.
+
+1.80
+
+B.
+
+5.30
+
+C.
+
+8.50
+
+D.
+
+46.2
+
+D
+
+- 118
+-
+
+alerut
+
+|oawle
+
+Chapter 13: Exponents and Roots
+
+1
+
+4
+
+17. The expression (x3)° (x3)° is equivalent to:
+
+A.
+
+x*
+
+B.
+
+x3
+
+23. If x and y are positive rational numbers such
+
+that x°” = 10, then x19” =?
+A.
+
+20
+
+B.
+
+50
+
+x3
+
+C.
+
+80
+
+55
+
+D.
+
+100
+
+16
+
+26
+
+C.
+D.
+
+18.
+
+x9
+
+For 3xV7 + 3 = 15, what is the value of x?
+
+9A. For how many integers x is the equation
+(4x4)?
+
+A, 2
+
+= 1 true?
+
+(2x?)4
+
+7
+
+Bp,
+
+A.
+7
+
+C. 12-37
+D. 6y7
+19. For what value is 4*** = 23* true?
+
+0
+
+B.
+
+1
+
+C.
+
+2
+
+D.
+
+An infinite number
+
+25. If a and b are positive real numbers, which of
+~*~.
+
+A.
+
+2
+
+B.
+
+4
+
+A.
+
+Cc.
+
+8
+
+D.
+
+12
+
+(4a~3b?)3
+
+b
+4qi0
+b?
+
+B
+
+1
+
+1
+
+35
+
+a
+4p10
+
+D
+
+equivalent to (x? — 3)7> ?
+710
+
+4q1i0
+
+co
+
+20. Which of the following expressions is
+
+A.
+
+;
+
+the following is equivalent to Teabpet
+
+qio
+
+26. Which of the following expressions is equal to
+5
+
+3-V5 :
+
+1
+
+B.
+
+710 +15
+
+C.
+
+—x> +35
+
+»wAG-DO9
+
+1
+
+D (x2-3)5
+21. If a is a positive even integer and b is a
+
+positive odd integer, (5x)* x (—5x)? > 0
+is true for all values of x such that:
+A.
+
+x>0
+
+B.
+
+x <0
+
+C.
+
+x20
+
+D.
+
+x<0
+
+I
+
+15-575
+4
+
+154575
+4
+
+27. If x and y are positive real numbers, which of
+1
+
+the following is equivalent to x2y-2
+
+A
+22. Given m and n such that x27"~19 = x® and
+
+(x")3 = x15, what is the value of xx” ?
+
+B
+
+7
+
+GOD RBOR
+
+11
+13
+21
+
+- 119
+-
+
+&
+
+math
+
+28. The expression +/ g?m2 is equivalent to:
+
+33. = + = =?
+
+A 3/2+10
+
+A. Jgm?
+B. g2vm
+4
+C.
+
+D
+
+2
+5V2+3
+
+B.
+
+2
+
+g2m2
+
+g
+
+gtim
+
+29. (=)
+
+C. 4V2
+
+2m
+
+D. 54+3V2
+
+=?
+
+34. For all positive values of x, (Vx5)(Vx-3)
+is equal to:
+
+A.
+
+8
+
+7V7
+—
+2V2
+av7
+
+"2
+
+C. a
+
+2
+=
+
+A.
+
+x7
+
+B.
+
+x2
+
+C. Yea
+
+De x?
+
+D. -
+
+30. Which of the following is an equivalent form of
+
+2
+?
+V16a*b2h6ce
+°c
+%
+
+35.
+
+If x is a positive even integer and y is a
+
+, negati
+oe
+ve odd integer
+, then (y)* (—y*) is:
+
+A. l6ab*vc
+
+A. Positive and even
+
+C.
+D.
+
+C. Zero
+D. Negative and even
+
+4
+
+B. 4abvb?c
+
+B. Positive and odd
+
+4ab*Vc
+4ab?Vc
+
+31. For a positive real number y, where y2° = 16,
+what is the value of y° ?
+
+36. If 277-1 = 3 and 47+ = 64, then b =?
+A.
+
+A. 2
+
+B. 2v4
+C.
+
+1
+
+-
+
+‘
+
+BG
+
+4
+
+D. 4V2
+
+32. Which of the following expressions is
+
+C.
+
+8
+-
+
+D.
+
+3
+
+3
+
+37. Which of the following is an equivalent
+form of °/16x5y ?
+
+1
+
+equivalent to (27x?)3 ?
+
+A.
+
+16x? S/y
+
+A. 3x
+
+B. 16x 3/xy
+
+D.
+
+D.
+
+3/27x
+
+- 120
+-
+
+2x \/2x2y
+
+Chapter 13: Exponents and Roots
+
+_
+38. 3243
++252
+
+43. For ,all x < 0,TM
+which of the following g is NOT
+
+equivalent to vV Vx2 ?
+A
+
+5V24+3V6
+
+A. Vx®
+
+3
+
+p. Bue
+
+B. VV
+
+C
+
+C. Vx
+D. Vx
+
+D.
+
+15V3+3V6
+8
+
+3V6
+
+39. Which of the following is an equivalent form
+
+44. For all positive values of x and y f = EE is
+
+of 4/24x4y2z3 ?
+
+”
+
+equivalent to which of the following?
+
+A.
+
+2xzJ3xy?
+
+A
+
+4
+
+B.
+
+8xz \/3xy?
+
+Bo
+
+he
+
+C.
+
+2xz \/3xy2
+
+Shey
+
+D. 8xzJxy?
+
+C.
+
+yx
+
+D
+
+2x-Yy
+
+40. Which of the following expressions is equal
+
+yxy
+
+to (26) (4V6)°?
+A.
+
+212 x 62
+
+45. Let a and b be nonzero numbers such that
+
+B.
+C
+
+212 x 63
+918 y 65
+
+3%-*
+= 5b. Which of the following is an
+expression for 3° in terms of b ?
+
+D.
+
+218 x 6°
+
+j
+A. oD
+
+41. The equation —x* = V/x° is true for all values
+
+B.
+
+of x such that:
+A.
+
+x20
+
+B.
+
+x <0
+
+C.
+
+15b?
+
+D.
+
+45b
+
+46. If p and q are positive integers such that
+
+C. All real numbers
+
+D.
+
+5b?
+
+(V4)? = 1634, what is the value of 4?
+
+No real numbers
+
+P
+
+Ne
+42. For all positive values of a and b, asb2 can be
+
+written in which of the following radical forms?
+
+A.
+B.
+
+18
+6
+
+c
+
+i
+"
+
+A. ‘Vab3
+
+6
+
+D. =
+
+B.
+Cc.
+
+‘Va2b3
+‘Va3b6
+
+47. For all positive values of x, which of the
+
+D.
+
+b Va2zb5
+
+following expressions is equivalent to
+
+AV 3x2» V5x ?
+
+Gap,
+- 121
+-
+
+V60x
+
+V480x2
+V960x2
+V3840x3
+
+*
+
+math
+

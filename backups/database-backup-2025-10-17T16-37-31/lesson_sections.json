@@ -1,0 +1,1145 @@
+[
+  {
+    "id": "838fd23f-1536-4600-a4a6-2634648eed32",
+    "lesson_id": "a60ae7aa-7629-47bb-9284-586cb67cbc38",
+    "section_key": "absolute-value-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "67437f5e-f4f2-45b1-a841-a2e0c43c0362",
+    "lesson_id": "979312be-f657-4fcc-9f87-d182f974a8a8",
+    "section_key": "quadratics-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T08:23:49.231977+00:00"
+  },
+  {
+    "id": "221f3644-9b26-477c-83ce-9d518c3f99d4",
+    "lesson_id": "ed6d11ef-0bf7-4dc7-bf9f-6095a23650e0",
+    "section_key": "algebra-skills-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "41ed5a6a-2e8d-4150-a2bf-61f66e6e37a9",
+    "lesson_id": "c0cec396-68cb-4971-b72e-ed0d9f63810e",
+    "section_key": "answer-choices-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "01dd8da5-a6d6-49ea-9d1e-db3f54dd84f0",
+    "lesson_id": "753da37d-37b6-4590-ba52-13d173170c14",
+    "section_key": "approximation-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "4b9d3114-68fb-40a7-aaec-9549ec8efebf",
+    "lesson_id": "e4ebf793-b407-4f5e-a1e8-727ed0bbefc7",
+    "section_key": "arcs-sectors-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "ef8262e4-47f9-4d64-89b3-f2475a1eb6ab",
+    "lesson_id": "27a6d67b-48d3-412e-91b7-eafdf9472693",
+    "section_key": "backsolving-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "40b9f0c8-b7ec-4567-b8ce-e345371a973a",
+    "lesson_id": "c879b92b-6647-484b-908c-17723c60e735",
+    "section_key": "breaking-down-questions-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "d01719a5-ef05-41c3-aac8-0766044fe327",
+    "lesson_id": "891dc3d9-7888-44b0-ac1d-10f4b6e817ff",
+    "section_key": "cannot-be-determined-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "66bdda34-bd6a-423d-9d75-8375248a2f2c",
+    "lesson_id": "3d5fb0e1-1db9-4139-88c6-4ba25ec09941",
+    "section_key": "circles-ellipses-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "a377d270-257a-43ae-9a31-d2938c726bec",
+    "lesson_id": "576f7cbf-66e7-4a2f-bdf5-ca16e3804260",
+    "section_key": "unit-conversion-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T16:35:21.051396+00:00"
+  },
+  {
+    "id": "99ee6bff-32bd-49ba-b7d6-96ab5c4210e9",
+    "lesson_id": "e3821f5f-0ef6-4af5-831f-e465442f47af",
+    "section_key": "comparing-passages-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "e7f9b092-1cee-4dd7-9137-8502301a3a9b",
+    "lesson_id": "35f72544-4879-4953-8f1a-93d0bccc3881",
+    "section_key": "complex-numbers-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "53109869-9ed2-4831-a00c-4dcadf57c7ed",
+    "lesson_id": "d7bfd0d9-e595-4732-a221-61f765cd95a4",
+    "section_key": "core-principles-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "d5280beb-d1b5-41cf-bd7c-27e7aec24a21",
+    "lesson_id": "e8cbc4a5-73f1-4011-972d-93d45a6b4261",
+    "section_key": "correct-vs-incorrect-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "d05b44a9-77a8-4b3e-8b42-9276c8aff115",
+    "lesson_id": "83733ec8-968f-4ba3-8b91-f7e7e12540f1",
+    "section_key": "equations-as-answers-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "83888cdf-cf0e-4149-9008-72fb28d95c75",
+    "lesson_id": "2c0a1aae-3715-4eae-9995-6ce49813c31a",
+    "section_key": "experimental-setup-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "d45031b7-5a7a-4c30-a649-a7e7cd3e05bf",
+    "lesson_id": "e42f00eb-537b-4b52-8a59-a8c7a2ce9d2d",
+    "section_key": "exponential-growth-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "9602407b-aa4b-4040-bd9b-bcd62d834be1",
+    "lesson_id": "aa8297ea-c045-41af-88a4-ad54bced35ac",
+    "section_key": "exponents-roots-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "b7e9b337-8dd0-4ec5-8e57-badb58a43bca",
+    "lesson_id": "d9d47255-408d-4d9c-be03-21f5fc7b04a9",
+    "section_key": "figures-text-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "545dfcfe-a3f2-41ec-aa58-80d77960f3a5",
+    "lesson_id": "888338a2-169e-4dff-948f-c7b186edd0fd",
+    "section_key": "finding-correct-answer-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "caedee73-b99d-46fc-9202-9cfc40a2caf6",
+    "lesson_id": "03c925f7-6ddd-4931-95cf-721c80f3fda6",
+    "section_key": "fractions-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "990aa66e-2d6d-41e3-a88f-59c5edb4854b",
+    "lesson_id": "774b812a-0d5a-4864-ba21-a75b038aa482",
+    "section_key": "functions-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "939b2488-de14-4cfe-8bdf-ae9da7c3e870",
+    "lesson_id": "dc81f5d7-5b53-43ad-8f51-9d4b6b087adb",
+    "section_key": "geometry-angles-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "401249f9-a4d8-40bd-8543-f6147d8bab7c",
+    "lesson_id": "d9c82a49-a6a5-4532-8506-67ec041ffe61",
+    "section_key": "geometry-shapes-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "5263946b-e1dd-4b44-84d8-8d2ac333ccae",
+    "lesson_id": "ad181b19-2e06-4fde-9e67-ccce7463e718",
+    "section_key": "inequalities-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "3fd018c8-0edf-46c0-8ed0-e7e02c4d705e",
+    "lesson_id": "ae2aadb4-8e26-41b2-9b5c-28f772bef856",
+    "section_key": "inverse-trends-multiple-axes-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "cd6bed23-9114-4579-8a4e-1c134eb00a71",
+    "lesson_id": "36e4b523-8bd5-4d10-b33e-ce57a7879d76",
+    "section_key": "lines-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "1f29e2be-d224-4089-940e-42675c4425d2",
+    "lesson_id": "aa440040-5bad-4441-94b4-d4ed491ce233",
+    "section_key": "logarithms-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "3253f16d-3263-4ecf-8988-03869160d4d7",
+    "lesson_id": "d67c9343-7ec2-471e-aff6-c2f7dc9aa8cb",
+    "section_key": "math-on-science-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "4db36af5-13a6-4525-ac28-6db037a23682",
+    "lesson_id": "db730c8f-86bd-4332-a418-08ceeab9ef2e",
+    "section_key": "matrices-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "35852d31-cb33-4944-8905-c3ea38db4e55",
+    "lesson_id": "cd6d42c2-7bef-4c05-9437-6b233ddcc382",
+    "section_key": "maximizing-score-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "e392eda1-644c-42d2-a9b2-bff3a8f525a0",
+    "lesson_id": "57c4e282-fe08-48f9-9ac9-0fe52622b1d7",
+    "section_key": "miscellaneous-topics-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "5ccb314f-cc6a-4a0c-a780-cfd140f025e6",
+    "lesson_id": "d69f1305-3696-41da-9cbb-0bd686510f26",
+    "section_key": "mixing-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "632bb4f7-5118-49ec-819b-b3cf20a91a4b",
+    "lesson_id": "0c2ed2d8-25ee-42aa-8e86-4f0cf63cd574",
+    "section_key": "multiple-figures-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "9a472555-b8e4-4c2e-8ec2-a329d69a4ca4",
+    "lesson_id": "061bd7e5-c534-4363-8776-223fc2ac6a1f",
+    "section_key": "number-theory-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "21f6e259-8483-47a7-8642-9e00c1ee44b2",
+    "lesson_id": "2907c34f-5163-43b2-aa7b-c20036331a80",
+    "section_key": "pacing-time-management-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "ef31a321-1bdf-440a-aa15-f43ba8ac31d5",
+    "lesson_id": "e40c7087-b1e5-45bd-b985-8cacea9f1dc8",
+    "section_key": "passage-approach-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "706d4525-be0a-4406-9331-df61217a3774",
+    "lesson_id": "7a62a17e-7049-49fb-a52d-52f70ed984ca",
+    "section_key": "percentages-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "afea0497-db6f-4b9a-9396-0f605ea53e8a",
+    "lesson_id": "abe6cd62-15ed-4ac8-a76e-729917002c82",
+    "section_key": "permutations-combinations-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "eb951ae9-a7c0-43b6-967f-66fb2f2e19db",
+    "lesson_id": "9f52026c-45b1-47af-94ef-c0f3b7767131",
+    "section_key": "practice-passages-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "c7b14c88-6559-4caa-87d1-311d271b9a78",
+    "lesson_id": "2384a08e-98b0-41c0-bb18-1228e3b72c6b",
+    "section_key": "probability-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "8907dfc4-e415-406a-b94c-743baf15db1e",
+    "lesson_id": "80ef4f0c-9624-4197-8a44-38c39b233f05",
+    "section_key": "quadratics-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "6b26adb1-009a-453d-8a57-2c9a2aea2ca9",
+    "lesson_id": "1c9d0b31-c6bd-4eb7-85e5-564883010651",
+    "section_key": "question-diagnosis-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "ce1a39a3-0f96-434f-ab56-97743f9e77b9",
+    "lesson_id": "a0c25645-cb8f-4ff8-a128-d0015997cd2d",
+    "section_key": "question-types-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "c3f9756e-dc45-42db-a6cf-658eea077f4d",
+    "lesson_id": "f82f1ed0-f570-4e25-8c6e-b9e3edf271dc",
+    "section_key": "ratios-proportions-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "8c14f258-04f7-4f34-85ab-55e6b2433159",
+    "lesson_id": "3f98a5df-a538-4f67-8a85-418dbc9ee657",
+    "section_key": "reading-approaches-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "3221a6b8-3fff-4bc3-a404-f5382d4f9c1f",
+    "lesson_id": "8152c285-9f20-4a04-8703-a3b118b05681",
+    "section_key": "reading-intro-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "5828744d-63e0-4ce8-80b3-f34e128dfb51",
+    "lesson_id": "62baa901-b43b-4615-a2ab-4decfb004a95",
+    "section_key": "repeating-patterns-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "a59a0571-5554-4ee3-806d-a02a8c3900c2",
+    "lesson_id": "a8f28944-5f6a-4be5-af38-1165f3f36e2e",
+    "section_key": "scatter-plots-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "83da31e2-e04e-40d2-bc07-a739b86eaaea",
+    "lesson_id": "51ebd0e3-730b-4306-be9f-fa34d26caf00",
+    "section_key": "science-introduction-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "816f10e1-7af1-45f6-a347-71e1d1b6137f",
+    "lesson_id": "fe25d18b-18fa-4a05-bc77-9be9268c3300",
+    "section_key": "scientific-notation-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "743034e5-03d2-4d56-b488-b67ae9939d4f",
+    "lesson_id": "2a75b87d-363b-4e98-be40-3595d02fc5bc",
+    "section_key": "sequences-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "3e5ddea7-6fef-4c84-872c-bcaef15fc8c0",
+    "lesson_id": "434fee00-3ab1-4859-93a3-1c9f832c7cd1",
+    "section_key": "specific-data-point-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "d20383e2-b421-4377-9712-700dc3d30d1e",
+    "lesson_id": "7e4440bb-3184-4d30-94ae-5f722fe265a1",
+    "section_key": "statistics-advanced-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "e00c39c4-731f-491a-a7ee-efb69106b707",
+    "lesson_id": "f753dc39-0b63-4d9b-948b-39fed306f22d",
+    "section_key": "statistics-basics-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "f450efd1-e9b0-4381-842c-7425db770ae2",
+    "lesson_id": "ed3be60b-32d3-449a-9e05-5aa55d206f01",
+    "section_key": "substitution-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "9e76863b-c064-4560-b07f-c47b715aa1f2",
+    "lesson_id": "ef9de680-3ee8-4edb-a275-7e4a5cc06957",
+    "section_key": "systems-equations-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "3975a3a9-16a4-4715-a966-4c6b365e4ce9",
+    "lesson_id": "b6585462-227e-4ed4-82c9-8b35cf51b4b1",
+    "section_key": "transforming-functions-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "8f4315a8-0e8e-45af-970c-9afa1cc64ad6",
+    "lesson_id": "8d28d8f2-ab6a-419d-964a-2c685e02ed4a",
+    "section_key": "functions-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T08:23:49.81418+00:00"
+  },
+  {
+    "id": "7e9002ca-e4ec-4d97-a7a1-df13bd3b0d7f",
+    "lesson_id": "d260fe02-d1be-4e06-9399-d5dc451ff648",
+    "section_key": "trends-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "c3f697b7-4856-4a80-a42d-c20431f1eb26",
+    "lesson_id": "8ea0f3ec-4aa0-463c-8754-aced48caa47d",
+    "section_key": "trigonometry-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "e09592b3-a8be-4027-919d-eb16755495f3",
+    "lesson_id": "b53e21d6-fd47-49d6-8eca-5e968696d9e9",
+    "section_key": "two-part-answers-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "dfe73806-2120-4db7-8ff9-16632bb64908",
+    "lesson_id": "628f4184-d2cb-4733-8d54-c3256a68ec3e",
+    "section_key": "unit-conversion-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "fc066500-ce4b-4270-8580-0a2533e4cb32",
+    "lesson_id": "b4c6b4d5-44e4-400d-800f-b5aa57ebf73f",
+    "section_key": "vectors-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "db02d010-061a-498d-81ca-fdeb7819495c",
+    "lesson_id": "08e5d75d-42d5-47b8-b056-660317a3b3b6",
+    "section_key": "scientific-notation-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T16:35:21.41736+00:00"
+  },
+  {
+    "id": "e7889c2d-e4b0-4dce-ab35-d134fea297ac",
+    "lesson_id": "492939b0-c63f-4a19-ae0c-dd775a78011f",
+    "section_key": "water-knowledge-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "0bc22d70-a8b3-4603-9036-d9179f273545",
+    "lesson_id": "55198c60-b5be-4944-932d-dd4be7043571",
+    "section_key": "word-problems-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "e865a126-17ce-476e-8ae9-103ed0844962",
+    "lesson_id": "b5902feb-786f-48bb-b58b-f4e47ca9a311",
+    "section_key": "words-in-context-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "1d150143-6d49-4d8c-aada-e396177e2a66",
+    "lesson_id": "915240f6-791a-45b0-8101-4dd839d33299",
+    "section_key": "working-backwards-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:09:19.214163+00:00"
+  },
+  {
+    "id": "746ac408-eb8f-48b3-9f7b-4aa58ad091cd",
+    "lesson_id": "e9416157-f146-4cac-bcf2-0b0b6543a7e0",
+    "section_key": "getting-started-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:22.219541+00:00"
+  },
+  {
+    "id": "f7071006-05ab-4162-9b7f-627535004bea",
+    "lesson_id": "4998d0fa-2f94-44ef-82c7-089a1a9b6419",
+    "section_key": "sentence-structure-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:23.269142+00:00"
+  },
+  {
+    "id": "e2dd9186-ca95-46db-9a67-77515327ee15",
+    "lesson_id": "33292648-8367-4957-9ccf-6f2dfc182141",
+    "section_key": "commas-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:24.310858+00:00"
+  },
+  {
+    "id": "34a295bf-279a-42e4-ab0f-6e3a79f00f56",
+    "lesson_id": "d64c1392-8d2f-4ae5-b63a-b3df35b475ff",
+    "section_key": "punctuation-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:25.384762+00:00"
+  },
+  {
+    "id": "99e273f2-1670-435f-9efc-089b1a7895dd",
+    "lesson_id": "d1281768-ce7e-47f7-aa84-f4533d41c416",
+    "section_key": "verbs-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:26.495505+00:00"
+  },
+  {
+    "id": "54e7927f-11d5-439c-883d-56779b3a9076",
+    "lesson_id": "f7aadb91-0ce8-4e09-b7bb-5909d4481e6b",
+    "section_key": "pronouns-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:27.605825+00:00"
+  },
+  {
+    "id": "fcdcada8-a521-40d2-9c3d-a4d1a737bbb5",
+    "lesson_id": "e57a463a-2257-4a89-966f-ad34b9a4b102",
+    "section_key": "modifiers-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:28.637362+00:00"
+  },
+  {
+    "id": "743c4bb5-a65b-4cb0-ba88-f9888b0ac9b4",
+    "lesson_id": "09a41283-2118-41cb-8d51-bd161b67c16d",
+    "section_key": "parallel-structure-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:29.559173+00:00"
+  },
+  {
+    "id": "e810da93-4a5f-46a7-9f96-4a091971d302",
+    "lesson_id": "1ab3ef29-b3fb-43b2-a5f5-964a7c8422ce",
+    "section_key": "misc-topics-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:30.493116+00:00"
+  },
+  {
+    "id": "e1e38dd0-57a6-44df-89d6-0cc63802fc89",
+    "lesson_id": "1b265e10-62cb-4361-be0d-52de6b0d63f8",
+    "section_key": "grammar-review-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:31.437363+00:00"
+  },
+  {
+    "id": "ec30d60e-0ca4-473f-9eed-f63da07818b0",
+    "lesson_id": "180cc54f-7ac9-46a1-8e6b-ec8bb9f8341d",
+    "section_key": "redundancy-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:32.321951+00:00"
+  },
+  {
+    "id": "f7167bcc-2b4d-497a-9f9a-7e83750e7dc6",
+    "lesson_id": "a3029ba0-38fe-4ae9-ae80-3550c93b157b",
+    "section_key": "word-choice-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:33.269808+00:00"
+  },
+  {
+    "id": "00b49273-4c6e-4c1c-8294-d9728ecce44b",
+    "lesson_id": "b8d75097-0dfe-4281-865a-02e0f97af8f4",
+    "section_key": "transitions-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:34.161615+00:00"
+  },
+  {
+    "id": "d43fe7dd-497d-4cb7-9e21-fc00d1fbbddf",
+    "lesson_id": "367b813b-fc32-4ddc-9523-2fff7f812679",
+    "section_key": "which-choice-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:35.130495+00:00"
+  },
+  {
+    "id": "8222e20a-eea6-48ab-9d61-242b070a69e7",
+    "lesson_id": "6fba31a5-1fd0-4e59-998d-3d253190b0ad",
+    "section_key": "adding-deleting-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:36.068971+00:00"
+  },
+  {
+    "id": "bea21e83-3495-4287-aeb9-c1ba70e0c182",
+    "lesson_id": "6a4e92d2-a681-42ea-9f0d-d5970c57e9af",
+    "section_key": "logical-placement-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-13T18:43:37.022045+00:00"
+  },
+  {
+    "id": "f4c01a56-ea69-468c-83e7-274e499ad1f1",
+    "lesson_id": "3d5fb0e1-1db9-4139-88c6-4ba25ec09941",
+    "section_key": "main_content",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 1,
+    "created_at": "2025-10-14T00:11:24.913168+00:00"
+  },
+  {
+    "id": "9e5158d2-37ca-45be-ade2-95ee7bea32c8",
+    "lesson_id": "ed6d11ef-0bf7-4dc7-bf9f-6095a23650e0",
+    "section_key": "main_content",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 1,
+    "created_at": "2025-10-14T00:15:45.584283+00:00"
+  },
+  {
+    "id": "10918f3b-c598-457d-b666-a298136a270f",
+    "lesson_id": "ef9de680-3ee8-4edb-a275-7e4a5cc06957",
+    "section_key": "main_content",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 1,
+    "created_at": "2025-10-14T00:30:10.516199+00:00"
+  },
+  {
+    "id": "08abd0e9-0ee3-481e-b258-aa469e6c4cdb",
+    "lesson_id": "80ef4f0c-9624-4197-8a44-38c39b233f05",
+    "section_key": "main_content",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 1,
+    "created_at": "2025-10-14T00:32:47.495185+00:00"
+  },
+  {
+    "id": "0cee4088-a115-4d55-a9fb-4d9686b3eb52",
+    "lesson_id": "774b812a-0d5a-4864-ba21-a75b038aa482",
+    "section_key": "main_content",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 1,
+    "created_at": "2025-10-14T00:35:29.405595+00:00"
+  },
+  {
+    "id": "b71b1a4f-4c89-4c91-9b00-f0e845fa0c91",
+    "lesson_id": "b6585462-227e-4ed4-82c9-8b35cf51b4b1",
+    "section_key": "main_content",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 1,
+    "created_at": "2025-10-14T00:38:17.188031+00:00"
+  },
+  {
+    "id": "80e6e7ce-337e-4992-a8ae-65c748d387e2",
+    "lesson_id": "e42f00eb-537b-4b52-8a59-a8c7a2ce9d2d",
+    "section_key": "main_content",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 1,
+    "created_at": "2025-10-14T00:39:32.603878+00:00"
+  },
+  {
+    "id": "e6ff147c-d920-4572-a224-717dbf7fc134",
+    "lesson_id": "2a75b87d-363b-4e98-be40-3595d02fc5bc",
+    "section_key": "main_content",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 1,
+    "created_at": "2025-10-14T00:41:27.489763+00:00"
+  },
+  {
+    "id": "ee2c4c21-3b49-497b-b99b-c6eb269991a2",
+    "lesson_id": "7a62a17e-7049-49fb-a52d-52f70ed984ca",
+    "section_key": "main_content",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 1,
+    "created_at": "2025-10-14T00:42:33.239575+00:00"
+  },
+  {
+    "id": "d2efc918-7148-422e-99b5-935c5dbf7bd2",
+    "lesson_id": "f82f1ed0-f570-4e25-8c6e-b9e3edf271dc",
+    "section_key": "main_content",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 1,
+    "created_at": "2025-10-14T00:43:08.477493+00:00"
+  },
+  {
+    "id": "b304f042-84bf-4939-b666-b872b1703f41",
+    "lesson_id": "fe25d18b-18fa-4a05-bc77-9be9268c3300",
+    "section_key": "main_content",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 1,
+    "created_at": "2025-10-14T00:43:13.12804+00:00"
+  },
+  {
+    "id": "d7250189-7578-4657-8b69-a99bf4296e2e",
+    "lesson_id": "c0350f58-1cb3-429d-902a-e61d68eaed31",
+    "section_key": "areas-volumes-triangles-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T01:06:23.298639+00:00"
+  },
+  {
+    "id": "5d8200a8-51f5-4c9e-9def-89ae511e3544",
+    "lesson_id": "1e96cf3d-ccf5-451d-83e7-dbfd3e7cad7e",
+    "section_key": "lines-coordinate-geometry-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T01:07:57.659578+00:00"
+  },
+  {
+    "id": "28509350-e86f-4ec4-94bb-8ebe43e01547",
+    "lesson_id": "8eca5fde-d25f-4cd8-b992-ed124d3bc1a5",
+    "section_key": "circles-ellipses-hyperbolas-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T01:07:58.365345+00:00"
+  },
+  {
+    "id": "b9ac3f8b-b0e1-4eb6-9e66-04a0a7c208e9",
+    "lesson_id": "3f6f2549-6b76-4a2a-9ec3-a2ddfb162d87",
+    "section_key": "systems-of-equations-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T01:07:59.456835+00:00"
+  },
+  {
+    "id": "0ef61988-55e5-4f6d-97fb-03320285f6a6",
+    "lesson_id": "6a4e007c-0b54-45c4-b866-c02755cd7dbc",
+    "section_key": "function-transformations-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T01:07:59.731205+00:00"
+  },
+  {
+    "id": "0adfbc41-b6cc-44d9-a6ff-11e2cbaa3b91",
+    "lesson_id": "2e9eed7f-7c72-446c-8ac7-66d3a4ab5936",
+    "section_key": "exponential-growth-decay-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T01:07:59.901304+00:00"
+  },
+  {
+    "id": "b67d7cbd-29c3-4dd1-b764-9d54541691f3",
+    "lesson_id": "abfb97d1-884d-49b8-b663-d024f19495d4",
+    "section_key": "mean-median-mode-range-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T01:08:00.437668+00:00"
+  },
+  {
+    "id": "809f132f-259f-4cb0-9379-68e9dba25de9",
+    "lesson_id": "ac1b0ced-b917-4cf4-adee-bd4ac04c0ac2",
+    "section_key": "counting-permutations-combinations-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T01:08:00.736585+00:00"
+  },
+  {
+    "id": "bc360ff1-6a1b-4982-8bb0-6d1da31934f8",
+    "lesson_id": "267ea47f-75c3-4f95-8b59-04187829a588",
+    "section_key": "transforming-functions-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T16:09:00.491315+00:00"
+  },
+  {
+    "id": "20c0d78c-e6af-4e2d-980f-f11714ae9be0",
+    "lesson_id": "2bf9fd19-b824-4ea0-9a31-789b8075f7ce",
+    "section_key": "mean-median-mode-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T16:35:52.558344+00:00"
+  },
+  {
+    "id": "9cc12113-8b02-434b-8898-e9bd22a87789",
+    "lesson_id": "eacf0576-a033-44ee-8597-17794cb72dc3",
+    "section_key": "exponential-growth-decay-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T16:09:00.90491+00:00"
+  },
+  {
+    "id": "d1326f87-0df4-4eb2-a1c7-2ee98ad2aca2",
+    "lesson_id": "846683db-f2db-4529-a33b-b76bec57a2bc",
+    "section_key": "advanced-statistics-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T16:35:52.992248+00:00"
+  },
+  {
+    "id": "1c08c74b-c229-4d1a-8ec5-7be8a0b6d994",
+    "lesson_id": "b18df5ec-009e-4eb7-aa09-5ed66d113979",
+    "section_key": "sequences-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T16:09:01.120323+00:00"
+  },
+  {
+    "id": "d4d609df-5a4f-479a-b680-2a7697f4e519",
+    "lesson_id": "7c8e0a76-4c04-4e93-b01a-855774fc05ec",
+    "section_key": "probability-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T16:35:53.266615+00:00"
+  },
+  {
+    "id": "ac44ac38-7c74-4ec4-8828-0163bf587f04",
+    "lesson_id": "783c223f-61cc-40b7-af42-642aae93d1bb",
+    "section_key": "number-theory-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T16:35:19.522023+00:00"
+  },
+  {
+    "id": "3b48932c-7399-4a6b-9fbe-6702b1debe50",
+    "lesson_id": "d27e1501-3a93-4a41-a345-be698445189f",
+    "section_key": "repeating-patterns-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T16:35:21.744663+00:00"
+  },
+  {
+    "id": "c03d9bbc-0d0e-47f1-ac58-cfb6f3e56776",
+    "lesson_id": "c3782773-57ff-4933-b56f-daa6367ad4c5",
+    "section_key": "permutations-combinations-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T16:35:53.591103+00:00"
+  },
+  {
+    "id": "63bd0e37-1e9c-43c0-a53b-5221b5b2e012",
+    "lesson_id": "d84d42b7-3eae-4ffb-a100-20dd7f7e4ddf",
+    "section_key": "percentages-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T16:35:20.296389+00:00"
+  },
+  {
+    "id": "c03272c5-ebaf-4ebd-8cfb-daed7061cce0",
+    "lesson_id": "af71b8f5-5828-4f94-889a-b4421e866538",
+    "section_key": "ratios-proportions-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T16:35:20.653768+00:00"
+  },
+  {
+    "id": "ccf1327b-50dc-4add-aa6a-c9c93fc7b39c",
+    "lesson_id": "ea05b2e7-a62c-43e0-a231-3259930ce1df",
+    "section_key": "2.2-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T06:12:18.484642+00:00"
+  },
+  {
+    "id": "f6fc4e26-6e8b-4e77-95ab-14bb3ea14787",
+    "lesson_id": "6ba82f91-5aff-44de-b4f0-5864d186410c",
+    "section_key": "2.3-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T06:15:29.600188+00:00"
+  },
+  {
+    "id": "98714fd3-0011-41d6-a324-50e52dcd373d",
+    "lesson_id": "6f78adaf-6ae4-4faa-bb53-c63dc4788262",
+    "section_key": "2.4-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T06:18:50.566254+00:00"
+  },
+  {
+    "id": "eaffad3a-e54a-4a74-a140-5367ae5c1e6b",
+    "lesson_id": "161abec9-9c0a-461f-8093-bbdb6ed57a06",
+    "section_key": "2.5-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T06:25:51.724837+00:00"
+  },
+  {
+    "id": "26f4eb31-301d-4fea-9120-b8695d3ed866",
+    "lesson_id": "c4dbe098-1aba-4eca-b910-59d6ca286425",
+    "section_key": "3.1-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T06:28:40.055548+00:00"
+  },
+  {
+    "id": "471bf517-8448-47e8-a44f-f3b159ccfb66",
+    "lesson_id": "f3943fb8-a002-4b74-b1b8-4626c7f94110",
+    "section_key": "3.2-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T06:31:12.521946+00:00"
+  },
+  {
+    "id": "b3567108-62ab-4112-b38d-4a4c7e6611af",
+    "lesson_id": "237cb56a-2c5a-4025-a9bd-208bf5521a06",
+    "section_key": "3.3-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T06:35:19.129+00:00"
+  },
+  {
+    "id": "6e078993-aabf-4358-a16e-4d2722852714",
+    "lesson_id": "9d4d580c-0f7c-4357-8bb8-2ff196c22b78",
+    "section_key": "3.4-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T07:27:32.95617+00:00"
+  },
+  {
+    "id": "ecf41c34-12b3-48b3-96f5-73bcf317c7c5",
+    "lesson_id": "9743b6ea-e0bd-4432-a7b2-efc5c10aef94",
+    "section_key": "3.5-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T07:27:33.378976+00:00"
+  },
+  {
+    "id": "3f1f7219-d7b0-405f-8627-32821235a6f2",
+    "lesson_id": "ff17e031-69fb-4085-828f-303a49038c13",
+    "section_key": "3.6-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T07:27:33.685704+00:00"
+  },
+  {
+    "id": "d5bf00fa-94db-44f6-b9d2-555d303a61dc",
+    "lesson_id": "96089a7c-12ce-42ef-b1b7-97c70c75e5d0",
+    "section_key": "systems-equations-main",
+    "title": "Main Content",
+    "section_type": "content",
+    "order_index": 0,
+    "created_at": "2025-10-16T08:19:18.926006+00:00"
+  }
+]

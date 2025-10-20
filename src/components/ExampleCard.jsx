@@ -6,6 +6,59 @@
 
 import React, { useState, useEffect } from 'react';
 
+/**
+ * Format solution text with better readability:
+ * - Bold numbers and formulas
+ * - Add spacing between paragraphs
+ * - Highlight important terms
+ */
+const formatSolutionText = (text) => {
+  if (!text) return null;
+
+  // Split by double line breaks to identify paragraphs
+  const paragraphs = text.split('\n\n');
+
+  return paragraphs.map((paragraph, idx) => {
+    // Split by single line breaks for individual lines
+    const lines = paragraph.split('\n');
+
+    return (
+      <div key={idx} style={{ marginBottom: '1.5rem' }}>
+        {lines.map((line, lineIdx) => {
+          // Check if this line is a calculation or formula (contains =, ×, ÷, etc.)
+          const isCalculation = /[=×÷+\-]/.test(line) && /\d/.test(line);
+
+          // Check if line has checkmarks/crosses (feedback line)
+          const isFeedback = /[✓✗]/.test(line);
+
+          return (
+            <div
+              key={lineIdx}
+              style={{
+                marginBottom: lineIdx < lines.length - 1 ? '0.75rem' : '0',
+                paddingLeft: isCalculation ? '1rem' : '0',
+                fontWeight: isCalculation ? '500' : '400',
+                color: isFeedback ? '#6b7280' : '#1f2937',
+                fontSize: isCalculation ? '1.05rem' : '1rem',
+                lineHeight: '1.8'
+              }}
+              dangerouslySetInnerHTML={{
+                __html: line
+                  // Bold numbers
+                  .replace(/\b(\d+(?:\.\d+)?)\b/g, '<strong>$1</strong>')
+                  // Bold answer choices (A, B, C, D, E followed by period)
+                  .replace(/\b([A-E])\./g, '<strong>$1.</strong>')
+                  // Bold key terms like "Total", "He needs to sell", etc.
+                  .replace(/\b(Total|Step \d+|Answer|Result|Therefore|So|Note):/gi, '<strong>$1:</strong>')
+              }}
+            />
+          );
+        })}
+      </div>
+    );
+  });
+};
+
 const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onComplete }) => {
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [showSolution, setShowSolution] = useState(false);
@@ -16,13 +69,6 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
       setShowSolution(true);
     }
   }, [example?.is_worked_example, showSolution]);
-
-  // Auto-complete when solution is shown
-  useEffect(() => {
-    if (showSolution && onComplete) {
-      setTimeout(() => onComplete(), 100);
-    }
-  }, [showSolution, onComplete]);
 
   // If example data is missing, don't render anything
   if (!example || !example.title || !example.problem_text) {
@@ -39,10 +85,7 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
   return (
     <div style={{
       margin: '3rem 0',
-      padding: '1.5rem',
-      border: '1px solid #e5e7eb',
-      borderRadius: '8px',
-      backgroundColor: '#fafafa'
+      padding: '0'
     }}>
       {/* Example Header with red left border marker */}
       <h4 style={{
@@ -188,23 +231,48 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
             Solution
           </div>
 
-          {/* Solution Steps */}
+          {/* Solution Steps or Answer Explanation */}
           <div style={{
-            fontSize: '16px',
-            lineHeight: '1.7',
-            color: '#1f2937',
             fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-            fontWeight: '400'
           }}>
-            <ul style={{ margin: '0', paddingLeft: '1.5rem' }}>
-              {example.solution_steps && example.solution_steps.map((step) => (
-                <li key={step.step} style={{
-                  margin: '0.5rem 0',
-                }}>
-                  <span dangerouslySetInnerHTML={{ __html: step.text }} />
-                </li>
-              ))}
-            </ul>
+            {/* If solution_steps exists and has items, display them */}
+            {example.solution_steps && example.solution_steps.length > 0 ? (
+              <ul style={{
+                margin: '0',
+                paddingLeft: '1.5rem',
+                listStyle: 'none'
+              }}>
+                {example.solution_steps.map((step, idx) => (
+                  <li key={step.step} style={{
+                    marginBottom: '1.25rem',
+                    paddingLeft: '1.5rem',
+                    position: 'relative',
+                    fontSize: '1rem',
+                    lineHeight: '1.8',
+                    color: '#1f2937'
+                  }}>
+                    {/* Step number bullet */}
+                    <span style={{
+                      position: 'absolute',
+                      left: '0',
+                      fontWeight: '600',
+                      color: '#2563eb'
+                    }}>
+                      {idx + 1}.
+                    </span>
+                    <span dangerouslySetInnerHTML={{ __html: step.text }} />
+                  </li>
+                ))}
+              </ul>
+            ) : example.answer_explanation ? (
+              /* Format answer_explanation with better spacing and bold text */
+              <div style={{
+                fontSize: '1rem',
+                lineHeight: '1.8'
+              }}>
+                {formatSolutionText(example.answer_explanation)}
+              </div>
+            ) : null}
           </div>
         </div>
       )}

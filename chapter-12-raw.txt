@@ -1,0 +1,1402 @@
+Chapter 12: Mean, Median, Mode, and Range
+To start, let’s review the basic definitions of mean, median, mode, and range:
+Mean (average): The sum divided by the number of items.
+Median: The middle number in a list of numbers when ordered from smallest to largest.
+
+Mode: The number that appears most often.
+Range: The difference between the smallest and the largest numbers.
+
+The ACT most commonly tests you on the mean, so you need know how to solve various types of mean
+(average) questions. For these questions, remember that:
+A
+
+verage
+
+—
+
+Sum
+
+Number of Items
+
+Example 1: The five students who sit in the front row of Ms. Rashard’s class averaged 24 points on last
+
+Friday’s quiz. If the first four students received scores of 22, 28, 17, and 25, what was the score of the
+fifth student?
+A.
+
+24
+
+B. 26
+
+C. 28
+
+D. 29
+
+Solution: Let’s call the fifth student’s score x and set up the question using the average equation.
+24 - eee
+
+24. _ 92+%x
+
+120 = 92 +x
+x= 28
+The answer is C.
+
+Example 2: The AP Biology final is out of 100 points. The first period class of 6 students gets an average
+
+score of 85. The second period class of 9 students gets an average score of 90. What is the average score
+for all the students combined?
+A.
+
+86
+
+B. 87
+
+C. 88
+
+D. 89
+
+Solution: To solve this question, we need to find out the total number of points scored by all students
+from both classes and then divide by the total number of students (15).
+In the equations below, x represents the sum of the test scores for all 6 students in the 1st period class
+and y represents the sum of the test scores for all 9 students in the 2nd period class. To start, we can
+find the total number of points the 6 students in the Ist period class received.
+
+85 =~
+6
+
+x=510
+
+The first period students received a total of
+
+510 points. Even though we do not know the individual scores of
+
+each student’s tests, we know the total. We can repeat this same calculation for the 2nd period class.
+
+90 =2
+9
+
+y = 810
+
+- 102
+-
+
+Chapter 12: Mean, Median, Mode, and Range
+
+Notice that to find the total points for each class, we multiplied the class average by the number of students. In
+general terms, we multiply the average by the number of items to find the sum. This is commonly the
+first step in many average questions, so make sure that you remember this simple step to find the sum
+whenever you are given an average.
+
+Now, we can solve for the average score for all students combined.
+Total Points
+
+Average Score =
+
+Total Students
+
+=
+
+510+810
+
+1320
+
+= — = 88
+
+15
+
+15
+
+The answer is C.
+
+Example 3: Erica’s golden retriever gave birth twice in the last two years. Her first litter had 7 puppies
+
+with an average weight of p lbs. Her second litter had 5 puppies with an average weight of m pounds.
+Which of the following expressions correctly calculates the average weight w, in pounds, of all of the
+puppies that Erica’s golden retriever gave birth to over the last two years?
+
+A.
+
+_ ptm
+
+w=—
+12
+
+7p+5m
+
+Bow=l+
+
+C. w= ——
+12
+
+D. w
+
+__ 7m+5p
+12
+
+Solution: Method 1 — “Math Teacher Way”: To find the average puppy weight, we need to find the total
+weight of all the puppies and divide it by the total number of puppies. First, we can find the total weight of her
+first litter:
+sum
+
+7
+
+7p = total weight of puppies in 1st litter
+
+We can repeat this to find the total weight of the second litter:
+sum
+
+5
+
+5m = total weight of puppies in 2nd litter
+
+We know that there are 12 puppies total, so now we can calculate the average weight.
+_ 7p+5m
+
+42
+
+The answer is C.
+
+Method 2 — Pick Numbers. For many students, this question is difficult because we are not given any values
+for the average weights of the litters. To make this question easier, we can use substitution and pick numbers.
+Let’s say the first litter has an average weight of 1 pound (p = 1) and the second litter has an average weight
+
+of 3 pounds (m = 3). We can use our numbers to solve for the average weight of the puppies in both litters.
+Total Weight of 1st Litter = 7 x 1=7
+
+The first litter had 7 puppies with an average weight of 1 pound, so the total weight of the litter is 7 pounds.
+Total Weight of 2nd Litter
+
+=5 x 3 = 15
+
+The second litter had 5 puppies with an average weight of 3 pounds, so the total weight is 15 pounds. Now,
+we can find the average weight of each puppy from these two litters.
+_ 7#15 22
+
+12
+
+«11
+
+12
+«6
+
+With our values of p = 1 and m = 3, we found that w = = To find the correct answer choice, plug in our
+.
+
+.
+
+.
+
+11
+
+values of p = 1 and m = 3 to the answer choices and see which one gives you w = =: Below, you can see
+how the correct answer choice C gives us the correct value for w.
+w= 7(4)+5(3) _ 22 _ 11
+12
+
+The answer is C.
+
+- 103
+-
+
+12
+
+6
+
+math
+
+Example 4: During the first 30 minutes of work at Birkee’s Bakery, Vaivani decorated 23 cookies per
+minute for the first 10 minutes and then at 14 cookies per minute for the next 20 minutes. Which of the
+
+following gives the average number of cookies that Vaivani decorated per minute for her first 30 minutes
+
+at work?
+A.
+
+15
+
+B.
+
+16
+
+C.
+
+16.5
+
+D.
+
+17
+
+Solution: In this question, we are given two averages that do not equally affect the final result. Since the first
+average of 23 cookies per minute is for 10 minutes and the second average of 14 cookies per minute is for 20
+minutes, these averages cannot be treated equally. In math, this is called a weighted average. To solve
+weighted average questions with two items, we can use the equation below:
+Weighted Average =
+
+(average #1)(weight #1) + (average #2)(weight #2)
+weight #1 + weight #2
+
+In this equation, the two averages are the given averages, so we plug in 23 for average #1 and 14 for average
+#2. The weight refers to the significance of the data point. Exactly what the weight is will depend on the
+question. For Example 4, the weight is the number of minutes, with 10 being weight #1 and 20 being weight
+#2. If there was a question where we were trying to calculate your final grade and 70% of your grade was
+from homework and 30% was from tests, the percentages of 70 and 30 would be the weights. The weights are
+
+used to reflect that certain averages have more “weight,” or more significance, than others.
+Now, let’s get back to Example 4 and use the weighted average formula to solve:
+Average Number of Cookies =
+
+(23)(10)+(14)(20) __
+
+10+20
+
+7
+
+17
+
+The answer is D.
+
+The weighted average formula is a very important one and can be used to solve many ACT average questions.
+Looking back to Example 2, we can use a weighted average to solve. In that question, the averages are given
+as 85 for the first class and 90 for the second class. The weight is the number of students in each class, which
+is 6 and 9.
+Average Score =
+
+(85)(6)+(90)(9) _ 38
+6+9
+
+We even could use the weighted average formula for Example 3. The averages are given to be p and m. The
+weight is the number of puppies in each litter, which is 7 and 5.
+(p)(7)+(m) (5) _ 7p+5m
+
+Average Puppy Weight =
+
+74+5
+
+12
+
+Make sure that you understand how the weighted average formula works. As you can see, knowing how to
+properly find a weighted average can allow you to solve many difficult-looking average questions in one quick
+Step.
+
+Example 5: Patricia’s average score on her first 4 chemistry tests is 88. How many points higher than
+her current average score must Patricia score on her 5th test for her new average on all 5 tests to increase
+by 2 points?
+A.
+
+10
+
+B. 8
+
+C. 6
+
+D. 5
+
+Solution: Patricia’s new average score will be 90. Since we know Patricia’s current average is 88, we can
+find the total number of points Patricia must have scored on her first 4 tests.
+__ total points on 4 tests
+
+88
+=
+
+4
+
+total points on 4 tests = 352
+
+Since we know the final average must be 90, we can now solve for the 5" test score, x.
+
+- 104
+-
+
+Chapter 12: Mean, Median, Mode, and Range
+
+90
+
+_ 3524+x
+
+an:
+
+x = 98
+
+Patricia’s 5" test score is 98, which is 10 points higher than the original average of 88. The answer is A.
+Mathematically, this works because the additional 10 points above the average are equally divided over 5 tests,
+
+so the overall score will increase by =, or 2 points. If that shortcut method is confusing to you, just stick with
+the normal method we used to solve questions like this.
+
+Example 6: The mean household income in a neighborhood with 80 residents is $90,250 per year. Ifa
+new family moves in with a household income of $1,859,000, which of the following values for the
+
+neighborhood will most likely change the least?
+A. Mean
+
+B. Median
+
+C. Maximum
+
+D. Range
+
+Solution: The new family has a much higher household income than the mean household income for the rest
+of the neighborhood. In statistics, we call values that are far higher or lower than any other numbers in the
+data set outliers. Any outlier will greatly increase the range and maximum value. The new family’s
+income is also so large that it will increase the mean household income for the neighborhood.
+The median will change the least. Since the median is the middle value in a data set, any outliers always
+have a minimal effect on the median. The answer is B.
+
+Example 7: For her science fair experiment, Monica wanted to find out if her tree frog or bullfrog has the
+
+bigger jump. She placed each frog on a starting spot and then measured how far the frogs jumped, in
+inches. The results for each frog, in inches, are below:
+Tree Frog: 41, 18, 30, 8, 14, 33
+
+Bullfrog: 38, 19, 66, 48, 45, 33, 10
+Iffis the median jump length for the tree frog and / is the median jump length for the bullfrog, what is the
+
+value of h — f?
+A.
+
+14
+
+B. 20
+
+C. 24
+
+D. 29
+
+Solution: To start, we need to reorder the numbers in each data from smallest to largest.
+Tree Frog: 8, 14, 18, 30, 33, 41
+
+Bullfrog:
+
+10, 19, 33, 38, 45, 48, 66
+
+Next, we cross out numbers from both sides to find the median. For data sets with an odd number of numbers,
+such as the bullfrog data in this question, the median is just the middle value. For data sets with an even
+number of numbers, such as the tree frog data in this question, you need to take the average of the two middle
+numbers to find the median.
+Tree Frog: 8, +4, 18, 30, 33, 44
+
+Bullfrog: +0, 49, 33, 38, 45, 48, 66
+
+Tree Frog median = f = — = 24
+
+Bullfrog median = h = 38
+
+h—f =38-24=14
+The answer is A.
+
+- 105
+-
+
+@)
+
+math
+
+Finding the Median in a Table
+The ACT also sometimes asks you to find the median value in a frequency table. For these questions, we will
+need to use a more efficient method than listing all the values and crossing off to find the median value.
+Example 8: The school newspaper recently surveyed 51 students about their monthly consumption of
+cheeseburgers. The results of the survey are summarized in the table below. What was the median
+number of cheeseburgers eaten each month by the students in the survey?
+
+A. 0
+
+B.
+
+1
+
+Number of Burgers Eaten
+
+Number of Students
+
+0
+
+7
+
+1
+
+19
+
+2-3
+
+8
+
+4-5
+
+13
+
+6+
+
+4
+
+C. 2-3
+
+D. 4-5
+
+Solution: The trick to solving these questions is to identify what term the median in the data set is. To
+find the median term, there are three quick steps:
+1.
+
+Add 1 to the total number of items in the data set.
+
+2.
+
+Divide that number by 2.
+
+e
+
+If we have a data set with an odd number of items, the number we get is the term that is
+the median.
+
+e
+
+If we have a data set with an even number of items, we will get an answer that ends in 0.5.
+In this case, the median is the average of the two middle terms. The two middle terms are
+the integers right above and below the value that we get from our first two steps. For
+example, if we have a group of 20, we would get 10.5 in step 2. This tell us that two
+middle terms will be the 10th and 11th terms. We find the median by finding the average
+of the 10th and 11th terms.
+
+3.
+
+Find where the term is in the table.
+
+In this question, we have 51 students who were surveyed, so following Step 1 above
+51+1
+2
+
+= 26
+
+we find the 26th student will be the median data point in the set. To find where the 26th student is in the
+table, start at the top of the table and simply add up the students until you find the 26th student. Here,
+there are 7 students who ate 0 burgers and 19 who ate 1 burger. If we add 7 and 19 together, we get 26,
+so we can tell that the 26th student ate 1 burger. As a result, the median is 1 and the answer is B.
+
+- 106
+-
+
+Chapter 12: Mean, Median, Mode, and Range
+
+Mean, Median, Mode and Range Practice: Answers on page 327.
+1.
+
+A certain group consists of 7 girls, 5 of whom
+
+G)
+
+°
+
+What is the sum of three consecutive even
+integers whose mean is 44 ?
+
+are 15 and 2 of whom are 8. What is the mean
+
+age of the girls in the group?
+A.
+
+88
+
+A.
+
+8
+
+B.
+
+120
+
+B.
+
+10
+
+C.
+
+126
+
+C.
+
+11.5
+
+D.
+
+132
+
+D.
+
+13
+
+John and Karen work at the bakery. John
+The tips that a barista earned for 1 week were
+
+works 7 hours per day, and Karen works 6
+
+$25 on Monday, $45 on Tuesday, and $30 on
+
+hours per day. John produces x brownies per
+
+Wednesday, Thursday, and Friday. What was
+
+hour and Karen produced y brownies per hour.
+
+the barista’s average daily tips for these 5
+
+Which of the following expressions gives the
+
+days?
+
+average number of brownies John and Karen
+produce per hour?
+
+A.
+
+$31
+
+B.
+
+$32
+
+C.
+D.
+
+$33
+$35
+
+x+y
+
+A.
+
+=
+
+BR
+
+7Xx+6
+oy
+
+13
+
+13
+
+xy
+
+C=
+13
+
+The average of 6 numbers is 93. What is the
+
+D.
+
+6 number if the first 5 are 99, 86, 93, 89, 92 ?
+A.
+
+88
+
+B.
+
+93
+
+C.
+
+95
+
+D.
+
+99
+
+What is the difference between the mean and
+
+the median of the data set {4, 8, 9, 7,12} ?
+
+6x+7y
+
+—
+13
+
+The mean age of 6 people at a graduation
+dinner is 40. When the oldest person, who is
+
+95 years old, leaves the table, what is the mean
+age of the 5 people remaining at the table?
+
+©
+
+GOP OSWNR
+
+A.
+
+29
+
+B.
+
+32
+
+C.
+
+33
+
+D.
+
+35
+
+John and Aaron tracked their 400-meter race
+times, which are listed below in seconds. The
+median for John’s race times is x and median
+for Aaron’s race times 1s y. What is the value
+
+of x — y?
+
+If James scored 10 touchdowns in the first 7
+games of the year, how many touchdowns
+
+John: 76, 68, 62, 68, 79, 70
+
+does he need to score in the 8th game to
+
+Aaron: 63, 58, 68, 61, 67, 66
+
+average 2 touchdowns per game after 8
+
+Gap,
+- 107
+-
+
+2.5
+4.5
+
+math
+
+Questions 10-11 refer to the table below.
+
+©" The scores for the 43 students in AP Biology
+were reported, and the mean, median, range,
+
+Points
+
+Frequency
+
+and standard deviation were found. The
+
+0
+
+3
+
+teacher made an error in grading, and the
+
+10
+
+0
+
+student with the highest score actually scored
+
+20
+
+1
+
+8 points higher. Which of the following will
+
+30
+
+2
+
+not change after the student’s score is
+
+50
+
+3
+
+100
+
+1
+
+corrected?
+
+Gap,
+
+A student playing Skee-Ball tracked the points
+he received from each of his 10 throws.
+10. Which of the following is the mean score of
+
+the student’s 10 throws?
+
+Gay
+
+20
+
+14.
+
+Range
+Mean
+
+Standard Deviation
+
+Median
+
+Number of iPhones per Household
+
+28
+33
+35
+
+iPhones
+
+Frequency
+
+0
+
+6
+
+|[ChGonB]
+
+G|QNOo}f]
+
+. What was the median value of the points
+scored from the 10 throws?
+
+GaAWpY
+
+20
+25
+
+A recent survey asked 21 households how
+
+30
+
+many iPhones they owned. Based on the table
+
+40
+
+above, what was the median number of
+iPhones?
+
+GAWD} eNRWSO
+
+. If x represents the larger of 2 numbers that
+
+have a difference of 39, which of the following
+expressions represents the average of the 2
+numbers?
+
+GUOWS
+
+x+19.5
+
+15. If x is equal to k + 8 and y is equal to
+
+x—- 19.5
+
+3k + 12, which of the following expresses the
+
+x+39
+
+average of x and y in terms of k ?
+
+x-39
+
+A.
+
+2
+
+- 108
+-
+
+k+10
+
+B.
+
+2k+10
+
+C.
+
+4k
+
+D.
+
+4k +10
+
+Chapter 12: Mean, Median, Mode, and Range
+
+16. Production Run A of axles results in 35 axles
+
+19. The mean score of 10 students on a 36-point
+
+with an average weight of a pounds.
+
+test is 23.8 points. If the student with the
+
+Production run B of axles results in 15 axles
+
+highest score is removed, the mean score for
+
+with an average weight of b pounds. Which of
+
+the other 9 students is 23 points. How many
+
+the following expressions gives the average
+
+points did the student with the highest score
+
+weight w of all the axles that are be produced
+
+have?
+
+during two runs of Production run A and one
+run of Production Run B?
+A.
+
+=
+
+B.
+
+w=
+
+A.
+
+28
+
+B.
+
+31
+
+35b4+15a
+
+C.
+
+33
+
+50
+
+D.
+
+36
+
+2Zat+b
+3
+
+20. As part of a social studies project, Tommy
+
+__ 70a+15b
+
+surveyed 50 of his friends about their daily use
+
+85
+
+of a social media app. The results are shown
+
+_ 35at15b
+
+in the table below.
+
+85
+
+Number of Videos
+
+| Number of Students
+
+Viewed
+
+17. There is a list of 29 numbers, all of which are
+
+unique. Which of the following would
+
+0-5
+
+4
+
+definitely NOT affect the median?
+
+6— 20
+
+11
+
+21-40
+
+8
+
+A.
+
+Increasing the largest number in the data
+
+41-60
+
+9
+
+> 60
+
+18
+
+B.
+
+Increasing all numbers in the data set by
+
+C.
+
+Making the smallest value in the data set
+
+following could be the median number of
+
+the largest value in the data set.
+
+pictures viewed?
+
+set.
+
+10.
+
+D.
+
+Based on the survey above, which of the
+
+Increasing the smallest value in the data
+
+set by 5.
+
+pGan
+
+18. Ashley wanted to save an average of $20 per
+
+week over the past 15 weeks. For the first 5
+
+weeks, she saved an average of $15 per week.
+
+19
+24
+35
+49
+
+For the next 5 weeks, she saved an average of
+
+21. Set A and Set B each consist of 6 numbers.
+
+$19 per week. For the last 5 weeks, she saved
+an average of $23 per week. How much more
+
+The 2 sets contain identical numbers except
+
+should she have saved each week to hit her
+
+value in Set A is greater than the largest value
+
+for the largest value in each set. The largest
+
+goal?
+
+in Set B. The value of which of the following
+must be less for Set B than for Set A?
+
+A.
+
+$0.50
+
+B.
+
+$0.75
+
+C.
+
+$0.80
+
+D.
+
+$1.00
+
+pGan
+- 109
+-
+
+Mean only
+Median only
+
+Mode only
+Mean and median only
+
+math
+
+22. John drove 40 miles per hour for 15 minutes
+
+©* The average score of a team of 4 golfers is 86.
+
+and then drove 20 miles per hour for 10
+
+A second team has the same first three scores
+
+minutes. Which of the following gives the
+
+but the fourth score is 16 points higher than
+
+average rate, in miles per hour, that he drove
+
+the fourth score of the first team. What is the
+
+during the 25 minutes?
+
+average score of the second team?
+
+A.
+
+28
+
+A.
+
+68.5
+
+B.
+
+30
+
+B.
+
+90
+
+C.
+
+32
+
+C.
+
+92
+
+D.
+
+34
+
+D.
+
+94
+
+. James 1s running in a 50-mile ultramarathon.
+For the first 15 miles,
+
+James runs at an average
+
+pace of 8 minutes per mile. For the next 25
+
+©”
+
+Ben has an average score of 72 points on 7
+
+miles, James runs at an average pace of 6.5
+
+equally weighted tests. How many points
+
+minutes per mile. For the last 10 miles, James
+
+higher than his average must Ben score on his
+
+runs at an average pace of 5 minutes per mile.
+
+8th equally weighted test be to raise his
+
+What was James’ average pace over the entire
+
+average on all 8 tests by 3 points?
+
+race?
+A.
+
+6
+
+A.
+
+6
+
+B.
+
+18
+
+B.
+
+6.50
+
+C.
+
+21
+
+C.
+
+6.65
+
+D.
+
+24
+
+D.
+
+7
+
+. Which of the following is equivalent to the
+
+@©*
+
+To increase the mean of 6 numbers by 5, by
+
+average of 5 consecutive even integers
+
+how much would the sum of the 6 numbers
+
+a,b,c,d, ande such that
+
+have to increase?
+
+A.
+
+ax
+
+b<c<d<e?
+
+at+d
+
+A. 25
+
+B. 2
+2
+
+c, 7
+2
+D.
+
+5
+
+C.
+
+25
+
+D.
+
+30
+
+c
+
+11, 18, 20, X, Y, Z, 35, 36, 44
+
+©”
+
+The median of a set of 4 numbers
+
+{29, 4,101, x} is 51, and the mean of a
+
+The list of numbers above is ordered from
+
+set of 6
+
+numbers {14, 61,17, y, 28, z} is 35. Which of
+
+least to greatest. If the mode is 35, the median
+
+the following values is equal to
+
+is 30, and the mean is 28, what is the value of
+Xx?
+
+Gap
+
+B.
+
+22
+23
+25
+26
+
+- 110
+-
+
+A.
+
+17
+
+B.
+
+39
+
+C.
+
+73
+
+D.
+
+90
+
+y+z—x?
+
+Chapter 12: Mean, Median, Mode, and Range
+
+30. There are 2 basketball teams playing in the
+
+G)
+
+34. The mean of 7 integers is 18. The median of
+
+championship game. The first team has 15
+
+these 7 integers is 11. Five of the integers are
+
+players with an average height of 76 inches.
+
+2,5, 9, 11, and 70. Which of the following
+
+The second team has 11 players with an
+
+could be one of the other integers?
+
+average height of 69 inches. Which of the
+following is the closest to the average height,
+
+A.
+
+in inches, of the players on both teams?
+
+B.
+
+18
+
+C.
+
+20
+
+D.
+
+23
+
+A.
+
+70
+
+B.
+
+71
+
+C.
+
+72
+
+D.
+
+73
+
+10
+
+35. Sven collects baseball cards. The average
+price of Sven’s 12 most expensive baseball
+31. Shandra’s math class has 12 tests in total.
+
+cards is x. After Sven sells the two most
+
+Shandra has an average of 82 on her first 8
+
+expensive baseball cards, the average price of
+
+tests. What does she need to average on the
+
+the remaining cards is y. Which of the
+
+last 4 tests to increase her average to 87?
+
+following expressions represents the total price
+of Sven’s two most expensive baseball cards?
+
+A.
+
+93
+
+B.
+
+95
+
+A.
+
+12x —10y
+
+C. .
+
+B.
+
+12(x—y)
+
+D
+
+12x-10y
+
+D9
+
+C. 12y—10x
+2
+
+32. Melissa’s grade in history class is determined
+
+by 4 100-point tests and a 200-point final. Her
+average score on the tests is x and her score in
+the final is y. Which of the following is an
+
+expression for Melissa’s final grade?
+
+36. In order for Mr. Walsh’s class to get a pizza
+party, the class average on the final must be at
+
+A. —
+Bo
+
+least 85%. The first fifteen students received
+
+oxty
+
+an average of 82%. What is the lowest
+
+"3
+
+cq
+
+possible score that the 16th student can receive
+
+ty
+
+and still allow the class of 20 students to get a
+
+2
+
+D. 2x+y
+
+P
+
+izza party?
+
+party
+
+A.
+
+55
+
+B.
+
+60
+
+33. The average weight of 2 groups of seals at the 6)
+
+C.
+
+70
+
+zoo is 136 pounds. The first group of 18 seals
+
+D.
+
+80
+
+has an average weight of 126 pounds. The
+second group has 10 seals. What is the
+average weight of the second group of seals?
+A.
+
+136
+
+B.
+
+144
+
+C.
+
+150
+
+D.
+
+154
+
+-1l1-
+
+math
+

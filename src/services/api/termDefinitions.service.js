@@ -9,7 +9,7 @@ class TermDefinitionsService {
   static async getDefinitionsByLesson(lessonKey) {
     try {
       const { data, error } = await supabase
-        .from('term_definitions')
+        .from('lesson_term_definitions')
         .select('*')
         .eq('lesson_key', lessonKey);
 
@@ -42,7 +42,7 @@ class TermDefinitionsService {
   static async getAllDefinitions() {
     try {
       const { data, error } = await supabase
-        .from('term_definitions')
+        .from('lesson_term_definitions')
         .select('*');
 
       if (error) {
@@ -75,7 +75,7 @@ class TermDefinitionsService {
   static async getDefinition(term) {
     try {
       const { data, error } = await supabase
-        .from('term_definitions')
+        .from('lesson_term_definitions')
         .select('*')
         .eq('term', term)
         .single();
