@@ -1,0 +1,932 @@
+Chapter 10: Ratios and Proportions
+Ratios
+We use ratios to make comparisons between two things. Ratios do not give the exact number of items but
+instead allow us to concisely compare the relationship between two things at the same time.
+As an example, if we have oranges and apples in a basket in the ratio of 2:3, it does not necessarily mean that
+we have 2 oranges and 3 apples. Instead, the ratio tells us that for every 2 oranges, there are 3 apples. Asa
+result, you can think of this ratio as 2x: 3x because we must multiply 2 and 3 by the same value to keep the
+2:3 ratio. Using this “x” trick will help you on many ratio questions where you are given a ratio but not any
+
+exact numbers.
+On the ACT, you will need to solve ratio questions in four different ways. We will review the four types of
+ratio questions below along with the methods you should use to solve them:
+
+#1 - Ratio and a Total
+Example 1: The ratio of red marbles to green marbles in a bag 1s 4:6. If there are a total of 80 marbles in
+the bag and all of the marbles in the bag are red or green, how many of the marbles are red?
+A.
+
+8
+
+B. 20
+
+C. 32
+
+D. 48
+
+Solution: Method #1: The “x” trick. We can think of the ratio 4:6 as 4x: 6x, where the 4x represents the
+red marbles and the 6x represents the green marbles.
+Red Marbles + Green Marbles = 80
+4x + 6x = 80
+10x
+= 80
+x=8
+
+To solve for the red marbles, we plug x = 8 back into the 4x.
+
+Red Marbles = 4x = 4(8) = 32
+The answer is C.
+
+Method #2: Set up a Proportion. We can set up a proportion from the ratio. Since the ratio or red marbles
+to green marbles is 4: 6, we know that
+Red Marbles _ 4
+
+Total Marbles
+
+10
+
+We know there are 80 total marbles, so we can set up an equation to solve for the unknown number of red
+marbles.
+x
+
+4
+
+80. 10
+10x
+= 320
+x = 32
+The answer is C.
+
+- 82
+-
+
+Chapter 10: Ratios and Proportions
+
+#2 — Ratios as Proportions
+Example 2: Beth is baking her famous chocolate cupcakes for her mother’s birthday party. For every 3
+
+cupcakes, Beth uses 10 pieces of chocolate. If Beth needs to make 42 cupcakes for the party, how many
+pieces of chocolate will she need to buy?
+A.
+
+42
+
+B. 70
+
+C.
+
+126
+
+D.
+
+140
+
+Solution: Set up the values from the ratio as a proportion. Here, we set up the proportion as
+cupcakes
+
+cupcakes
+
+pieces of choclate __ pieces of choclate
+Now, we can plug in the values from the question and solve.
+3 cupcakes
+
+_
+
+10 pieces of chocolate
+
+42 cupcakes
+
+x pieces of chocolate
+
+3x = 420
+_ 420
+
+x =—
+= 140
+3
+
+The answer is D.
+
+#3 — Comparing Across Ratios
+Example 3: The ratio of
+x to y is 3:4. The ratio of y to Zz is 2:10. What is the ratio of
+x: z ?
+A.
+
+3:10
+
+B. 3:20
+
+C.
+
+15:4
+
+D. 4:15
+
+Solution: We need to make the variable that appears in both ratios, y, have the same numerical value. To do
+that, we multiply the second ratio by 2, so
+XY
+
+yiz
+
+3:4
+
+2:10
+
+becomes
+XIV
+
+yiz
+
+3:4
+
+4:20
+
+Now that the y-values are the same (both are equal to 4), we can compare across the ratios to find x: z.
+x:zZ = 3:20
+The answer is B.
+
+- 83
+-
+
+math
+
+#4 — Ratios and Geometry
+Example 4: In rectangle ABCD, the ratio of the lengths of side AB to side BC is 8:5. If the total
+perimeter of the rectangle is 156 feet, what is the length of the longer side of the rectangle?
+A.
+
+6
+
+B.
+
+12
+
+C. 30
+
+D. 48
+
+Solution: To start, sketch out rectangle ABCD. We can think of the ratio as 8x: 5x instead of 8:5. We can
+label the sides of our rectangles using 8x and 5~x as the side lengths.
+
+8x
+
+A
+5x
+
+B
+5x
+
+D
+
+By
+
+C
+
+The perimeter of the rectangle is
+8x + 8x +5x+
+5x = 156
+26x = 156
+—_ 156 ©
+x
+
+26
+
+Now that we have solved for x, we can solve for the longer sides of the rectangle.
+
+Longer Sides = 8x = 8(6) = 48
+The answer is D.
+
+Proportions
+On the ACT, you need to know the equations for two types of proportions: direct proportions and indirect
+proportions.
+
+Direct Proportion
+In a direct proportion, y varies directly with x. In simpler terms, x and y will move together. As x increases,
+y increases, and as x decreases, y decreases. The equation for direct proportions is
+
+y =kx
+
+(where k is a constant)
+
+Example 5: If y varies directly with x and y = 27 when x = 3, what is the value of x when y = 90?
+A.
+
+10
+
+B.
+
+13
+
+C. 20
+
+D. 30
+
+Solution: When solving proportions, we always start by solving for the constant k. We can solve for k using
+the pair of x and y-values the question gives us.
+
+27 = k(3)
+k=9
+
+Now, we know the equation for the proportion is y = 9x. To solve, plug y = 90 and solve for x.
+
+90 = 9(x)
+x=10
+The answer is A.
+
+~ 84
+-
+
+Chapter 10: Ratios and Proportions
+
+Indirect Proportion
+In an indirect proportion, y varies inversely with x. In simpler terms, x and y will move opposite to one
+
+another. As x increases, y decreases, and as x decreases, y increases. The equation for indirect proportions is:
+_k
+
+a
+Example 6: If y varies inversely with the square of x and y = 45 when x = 2, what is the value of y
+when x = 6?
+A.
+
+5
+
+B.
+
+15
+
+C. 78
+
+D.
+
+112
+
+Solution: Since y varies directly with the square of x, the indirect proportion equation looks like
+k
+y= y2
+
+Be careful of changes like this, as 1t is a common way the ACT can make proportions questions more difficult.
+We start by solving for k using the x and y-values the question gives us.
+k
+
+k = 180
+
+We now know the indirect proportion equation for this question is y = =. To solve, we plug in x = 6 and
+solve for y.
+
+¥~
+
+=
+
+180.
+
+180
+
+— = —_ = 5
+
+G2 ~ 36
+
+The answer is A.
+
+Ratios and Proportions Practice: Answers on page 326.
+
+1.
+
+2.
+
+Ifadodgeball team has 6 girls and 11 total
+
+CG)
+
+3.
+
+The ratio of Joey’s age to his brother’s age is
+
+team members, what is the ratio of boys to
+
+4:3. The sum of their ages is 49. How old is
+
+girls?
+
+Joey?
+
+A.
+
+5:6
+
+A.
+
+21
+
+B.
+
+6:5
+
+B.
+
+24
+
+C.
+
+6:11
+
+C.
+
+28
+
+D.
+
+12:10
+
+D.
+
+30
+
+Onamap, 1 inch represents 15 miles. How
+
+CG)
+
+2
+
+4.
+
+The combined length of 3 pieces of fabric is
+
+105 inches. The lengths of the pieces are ina
+
+many miles apart are two gas stations that are
+
+4:5:6 ratio. What is the length, in inches, of
+
+3 inches apart on the map?
+
+the longest piece of fabric?
+
+A.
+
+15
+
+A.
+
+24
+
+B.
+
+25
+
+B.
+
+28
+
+C.
+
+55
+
+C.
+
+35
+
+D.
+
+105
+
+D.
+
+42
+
+-85-
+
+math
+
+©
+
+*
+
+A state lottery has 2 out of every 9 tickets as a
+
+©’
+
+winner. Yesterday, 120 people bought a
+
+In a parking lot, 3 out of every 8 spaces are for
+
+compact cars. If there are 675 spaces for
+
+winning ticket. How many total tickets were
+
+compact cars, how many spaces in the parking
+
+purchased yesterday?
+
+lot are NOT for compact cars?
+
+A.
+
+150
+
+A.
+
+1,575
+
+B.
+
+240
+
+B.
+
+1,350
+
+C.
+
+540
+
+C.
+
+1,265
+
+D.
+
+780
+
+D.
+
+1,125
+
+10. In a drawer full of buttons, the ratio of tan to
+
+silver to gold buttons is 2:3:4. If all buttons in
+A factory that produces fidget spinners can
+
+the draw are tan, silver, or gold, how many total
+
+make 2,000 fidget spinners each hour. Of those
+
+buttons could be in the drawer?
+
+2,000 fidget spinners, 17 are randomly selected
+
+and inspected. Ifthe factory produces 30,000
+
+A.
+
+14
+
+fidget spinner this week, how many will be
+
+B.
+
+24
+
+C.
+
+27
+
+D._
+
+30
+
+selected for inspection?
+
+Gap
+
+170
+
+11. Samantha rows 30 meters in 6.8 seconds. If she
+
+205
+225
+
+rows at the same rate for 2 minutes, which of
+
+255
+
+the following is the closest to the number of
+meters she will row?
+
+In a triangle, the lengths of the three sides are in
+
+Gap,
+
+the ratio of 3:6: 7. Ifthe perimeter is 64, what
+is the length of the shortest side?
+A.
+
+4
+
+B.
+
+12
+
+C.
+
+16
+
+D.
+
+24
+
+200
+410
+530
+720
+
+E” If x varies directly with y and x = 15 when
+y = 3, what is the value ofx wheny = 15?
+A.
+
+3
+
+B.
+
+5
+
+Atrazine, a weed killer commonly used by
+
+C.
+
+15
+
+farmers, is such a concentrated substance that
+
+D.
+
+75
+
+only 1L can be used to spray up to 4 hectares of
+farm fields. If one hectare is equal to
+
+approximately 2- acres, how many acres of
+
+©” Four friends buy a winning lottery ticket worth
+
+$25,000. They agree to give four times as
+
+farm fields could 25 L of atrazine be used to
+
+much to charity as they will spend for fun.
+
+spray?
+A.
+
+100
+
+B.
+
+150
+
+C.
+
+250
+
+D.
+
+625
+
+How much do they give to charity?
+
+- 86
+-
+
+A.
+
+$5,000
+
+B.
+
+$12,500
+
+C.
+
+$18,000
+
+D.
+
+$20,000
+
+Chapter 10: Ratios and Proportions
+
+14. At Mount Laguna High School, 6 out of every
+
+10 students take biology, and 3 out of every 8
+students who take biology are juniors. If there
+
+e
+
+are 5,000 students at Mount Laguna, how many
+
+1,125
+
+B.
+
+1,214
+
+C.
+
+1,270
+
+D.
+
+1,596
+
+by three different clubs is 6: 8:9. If the total
+amount of money raised by all three clubs is
+
+$322, what is the difference in money raised
+
+of the students are juniors who take biology?
+A.
+
+18. The ratio of the total amount of money raised
+
+between the club that raised the most and the
+least money?
+
+GOWp>
+
+15. Bailey is baking bread, and the recipe calls for
+
+7 of a teaspoon of yeast and 3- cups of flour.
+
+23
+42
+69
+138
+
+19. The weight of an object on Mars is
+
+She decides to use an entire 3 teaspoon pack of
+
+approximately = of its weight on Earth. The
+
+yeast and will keep the same ratio. How many
+
+weight of an object on the Saturn is
+
+cups of flour will she need?
+
+approximately — of its weight on Earth. If an
+
+A. 3+2
+
+object weights 150kg on Earth, approximately
+
+B.
+
+8
+
+Cc.
+
+10-
+
+D.
+
+14
+
+how many more kilograms does it weight on
+
+1
+
+Saturn than on Mars?
+
+2
+
+Gap,
+
+16. Julie knows that 30 miles per hour is 44 feet
+
+per second. Ifa cheetah is running 70 miles
+per hour, approximately how fast 1s it running
+
+150
+210
+225
+250
+
+in feet per second?
+20. Ifx:y = 7:2 and y:z = 3:2, what is the ratio
+A.
+
+36
+
+B.
+
+48
+
+C.
+
+86
+
+D.
+
+103
+
+17. The number of snails in the Sanders family
+
+21. The ratio of four sides of a quadrilateral is
+
+pond varies inversely with the number of fish.
+
+2:3:5:7. Ifthe perimeter of the quadrilateral is
+
+Last summer, there were 150 fish and 1200
+
+68, what is the length of the second longest
+
+snails. If this summer there are 250 fish, how
+
+side?
+
+many snails are in the pond?
+A.
+
+4
+
+A.
+
+100
+
+B.
+
+12
+
+B.
+
+150
+
+C.
+
+13.6
+
+C.
+
+720
+
+D.
+
+20
+
+D.
+
+1200
+
+87
+-
+
+math
+
+26. The ratio of
+
+22. A recent study examined how the amount of
+
+(M) affected the height of corn plants (H). It
+was discovered that sunlight and organic matter
+
+A.
+
+varied directly with plant height while
+following formulas is correct?
+H=kSMP
+
+B
+
+H=
+
+bis 4to 1. The ratio of b toc
+
+—2
+
+B. -<3
+
+pesticides varied inversely. Which of the
+
+A.
+
+ato
+
+is 3 to 10. What is the value of — ?
+
+sunlight (S), pesticides (P), and organic matter
+
+c. 29
+a
+9
+
+P
+
+CH=
+2
+SM
+D Ha
+SMP
+
+. Ina certain rectangle, the ratio of the lengths of
+the 2 sides is 7:4. If the area of the rectangle is
+
+27. Javon is constructing a box. The ratio of the
+
+252 square inches, what is the length of the
+
+length to the width to the height of the box
+
+shorter side?
+A.
+
+12
+
+B.
+
+14
+
+C.
+
+18
+
+D.
+
+21
+
+must be 5 to 4 to 2. If the volume of the box is
+
+2,560 in, what is the height, in inches, of the
+box?
+A.
+
+4
+
+B.
+
+8
+
+C.
+
+20
+
+D.
+
+32
+
+. If m is directly proportional with the square
+root ofn and m = 40 when n = 25, what is the
+
+value of
+m when n = 13?
+
+GOP
+
+20.8
+
+28. The high school football team is raising money
+
+2V13
+813
+821
+
+to upgrade the turf on the field. The team has
+only sophomore, junior, and senior members.
+The ratio of sophomores to juniors to seniors on
+the football team is 2:4:5. Sophomores on
+
+average raised $40 per person, juniors on
+average raised $55 per person, and seniors on
+average raised $72 per person. What is the
+
+. The degree measures of the interior angles in a
+
+average amount raised per team member?
+
+hexagon are in the ratio of 1:2: 2:3:5:7. What
+
+is the measure of the largest interior angle of
+the hexagon?
+
+Gap,
+
+A.
+
+55
+
+B.
+
+57
+
+48
+
+C.
+
+59
+
+96
+
+D.
+
+60
+
+144
+252
+
+- 88
+-
+
+Chapter 11: Functions
+

@@ -1524,3 +1524,407 @@ ll
 
 math
 
+Chapter 24: Sequences
+For test day, you need to know how to handle arithmetic, geometric, and recursive sequences. In this chapter,
+we will review the basics of these three types of sequences, the equations that you need to memorize, and how
+to solve any sequence questions.
+
+Arithmetic Sequences
+Arithmetic sequences are sequences using addition and subtraction between terms. The common
+difference, which is the number that is added or subtracted between consecutive terms, is constant. For
+example, let’s consider the arithmetic sequence below:
+4,8,12, 16, 20, 24...
+
+For this sequence, the common difference is +4 because we see 4 is the difference between consecutive
+terms. For easier arithmetic sequence questions, which commonly appear in the first 30 questions of the ACT,
+you need to be able to find the common difference in a sequence and use that to find a later term in the
+sequence.
+
+Example 1: In a certain arithmetic sequence, the Ist and 4th terms are 3 and 24 respectively. What is the
+Sth term of the arithmetic sequence?
+A.
+
+27
+
+B. 30
+
+C. 31
+
+D. 37
+
+Solution: For any arithmetic sequence questions, we recommend drawing out the sequence and filling in any
+numbers in the sequence you are given. A simple visual can make it much easier to solve these questions
+correctly.
+
+24
+
+3
+lstterm
+
+2ndterm
+
+3rdterm
+
+4thterm
+
+5th term
+
+Now that we have a diagram, we can more easily see how to solve for the common difference. To go from the
+lst to 4th term, we must add the common difference 3 times. The total difference between the Ist and 4th
+terms is 21, so the common difference is 7.
+The find the 5th term, we add 7 to the 24 to get 31. The answer is C.
+
+More difficult arithmetic sequence questions will ask you to solve for a term much later in the sequence. What
+if you were asked to find the 88th term in the sequence above? You do not want to add the common difference
+over and over and over again... we need a faster way! To solve this quickly, we use the equation
+t, =t,+d(n-1)
+where ¢, is the first term in the sequence, d is the common difference, t,, is the nth term, and n is the term
+number. You need to memorize this equation for test day.
+Let’s use the equation to find the 88th term in the sequence for example 1. The first term is 3, the common
+difference is 7, and we are looking for the 88th term, so we get
+
+tgs
+
+=
+
+3+7(88-—1) = 612
+
+The 88th term in the sequence is 612.
+Example 2: The 3rd and 5th terms in an arithmetic sequence are —4 and 11 respectively. What is the
+45th term of this sequence?
+A.
+
+311
+
+B. 318.5
+
+C. 326
+
+D. 329
+
+Solution: First, we need to find the common difference. It is always best to draw out a diagram to help
+visualize the sequence.
+
+- 232
+-
+
+Chapter 24: Sequences
+
+—4
+lIstterm
+
+2ndterm
+
+11
+
+3rdterm
+
+4thterm
+
+45thterm
+
+To go from the 3rd to 5th term, we must add the common difference 2 times. The difference between the 3rd
+
+and 5th terms is 15, so the common difference 1s = or 7.5. Now that we know the common difference, we can
+fill in the rest of the terms in our diagram.
+
+—19
+
+—11.5
+
+—4
+
+3.5
+
+11
+
+Istterm
+
+2ndterm
+
+3rdterm
+
+4thterm
+
+5thterm
+
+Now that we know the Ist term, we can use our equation to solve for the 45th term.
+
+ty,
+
+= —194+7.5(45—-1) = 311
+
+The answer is A.
+
+Geometric Sequences
+Geometric sequences are sequences using multiplication and division between terms. The common ratio,
+which is the number that each consecutive term is multiplied or divided by, is constant. For example, let’s
+consider the geometric sequence below:
+3,6,12,24,48,96...
+
+For this sequence, the common ratio is X 2 because we multiply by 2 between consecutive terms. For
+geometric sequence questions on the ACT, you need to find the common ratio and use that to find other terms
+in the sequence.
+Example 3: The Ist term in a geometric sequence is 560 and the second term is —280. What is the 5th
+
+term of the geometric sequence?
+A.
+
+70
+
+B. 35
+
+C. 17.5
+
+D. —35
+
+Solution: To start, let’s make a diagram of the sequence.
+560
+
+—280
+
+lIstterm
+
+2ndterm
+
+3rdterm
+
+4thterm
+
+45thterm
+
+Now, we need to find the common ratio. To find a common ratio, you can take any term in a geometric
+sequence, here we will use —280, and divide it by the previous term, which here is 560. So, the common ratio
+-
+
+—280
+
+is ——
+
+560
+
+=
+
+1
+
+—=
+
+2°
+
+Once we know the common ratio, we can use it to find the other terms in the sequence. To find the 3rd term,
+
+we multiply the second term by — = The 3rd term is — . (—280) = 140. We then repeat this process to find
+the 4th and the 5th terms.
+
+560
+
+—280
+
+140
+
+—70
+
+35
+
+Istterm
+
+2ndterm
+
+3rdterm
+
+4thterm
+
+5thterm
+
+The 5th term is 35. The answer is B.
+
+Geometric sequences questions are generally not too difficult. For geometric sequences, the ACT has never
+asked you to find a term way later in a sequence. Just in case they do, you can memorize the formula below.
+
+t,=t,xr1
+where ¢, is the first term in the sequence, r is the common ratio, t, is the nth term, and n is the term number.
+
+- 233
+-
+
+math
+
+Recursive Sequences
+A recursive sequence is a sequence in which terms are defined using previous terms and a given
+
+formula. In recursive sequences, we cannot find the current term until we know the previous term. We
+cannot find the 3rd term until we know the 2nd term, we cannot find the 4th term until we know the 3rd term,
+and so on. That means that we need to solve for the terms in a recursive sequence one term at a time.
+If you have never done recursive sequences before, that may all seem very confusing, so let’s use the example
+formula below to make it clearer.
+An =2An-1+2
+nth term
+
+and
+
+rk
+
+(n — 1)th term
+
+a, =3
+
+k
+
+lst term
+
+A, 1s the nth term in the sequence, and a,_, is the previous term right before a,. In a recursive sequence, you
+
+are always given the Ist term, which in this example is a, = 3. To solve for the 2nd term, we use the formula
+and plug inn = 2 and get
+a, = 2a,+2
+
+In words, the formula says the 2nd term, az, is equal to 2 times the Ist term, a,, plus 2. Since we know that
+a, = 3, we can solve az.
+
+a, = 2(3)+2=8
+Now that we know the 2nd term, we can solve for the 3rd term, a3. Since we are solving for the 3rd term, we
+use the formula and n = 3 and get
+
+a, = 2a,+2 > az =2(8)+2=18
+Below, we use the same steps to solve for the 4th term, a,, the 5th term, a;, and the 6th term, ag.
+
+a, = 2a,+2 > a, =2(18)
++ 2 = 38
+a, = 2a,+2 > ay = 2(38)
++2 =78
+Ag = 2ae
++2 > ag = 2(78)
++2 = 158
+We can continue this pattern as long as necessary to find the answer. Most recursive sequence questions on
+the ACT will ask you to solve for the 4th, 5th, or 6th term.
+Example 4: A sequence is defined for all integers by s, = 3s,_;
+A.
+
+10
+
+B. 38
+
+C..114
+
+D.
+
++n+5 ands, =1. What is s,?
+
+123
+
+Solution: In order to find the 4th term, s,, we need to start by finding the 2nd term, then the 3rd, and then
+finally the 4th term. To solve for the 2nd term, we set n = 2 and use the formula and the 1st term, which the
+question tells us is equal to 1.
+
+So =35s,+24+5 > s,=301)+2+5
+S, = 10
+
+Now that we know the 2nd term, we can find the 3rd term.
+
+S3 = 3s,+34+5 > s, =3(10)+3+4+5
+Sz = 38
+
+Once we know the 3rd term, we can find the 4th term.
+
+S4 = 353+44+5 > s, = 3(388) +445
+S4 = 123
+
+The 4th term is 123. The answer is D.
+
+- 234
+-
+
+Chapter 24: Sequences
+
+Explicit Formula for Recursive Sequences
+An explicit formula is an equation that gives the value of a term based on the position in the sequence.
+
+With the explicit formula, you do not need to know the previous terms and can just input the value in the
+equation to find the value. For example, if we had the explicit formula:
+Aa, =2n+5
+
+We can find any nth term using the equation. To find the 4" term, a,, we plug in n = 4 and solve.
+a4 = 2(4)+5=13
+Some recursive sequences follow a distinct pattern can be expressed as an explicit formula. The most common
+way the ACT tests explicit formulas for sequences is to provide a recursive sequence and ask you to find the
+explicit formula.
+
+Example 5: Given the recursive formula below, which of the following equations is a correct explicit
+formula for the sequence?
+A.
+
+a, =10+4n
+
+B.
+
+a, =6+4n
+
+C.
+
+an = —4+14n
+
+D.
+
+a, =14+4n
+
+a, = 10
+An = An-1 +4
+
+Solution: To solve, let’s start finding the values in the recursive formula. We already know the first term is
+10, so when n = 1,a, = 10. We can find the following terms in the sequence.
+a, =a,+4
+> a,=104+4= 14
+a3
+
+=a,+4
+
+> az =144+4=18
+
+a4=a3,;+4
+> az =184+4=22
+
+At this point, we can notice the pattern: the value increases by 4 as you go from one term to the next. This
+means that the slope of the equation must be 4, so we must see 4n in the explicit formula. We can eliminate
+answer choice C.
+To find the constant (the number) in the explicit formula, we can test using the point(s) that we found. An
+easy value to start with is a, = 10. If we plug inn = 1, the correct explicit formula must give a, = 10.
+
+For A: a, = 10+ 4(1) = 14
+For B: a,
+
+=6+4(1) = 10
+
+For D: a,
+
+= 144+ 4(1) = 18
+
+Only B gives us the correct value of 10, so we can tell that the answer is B. Notice that if we plug other
+values of n directly into the explicit equation, we get the values of az, a3, and a, that we solved for above.
+Shortcut Method: If you ever see a question like this on the ACT, start by using the Ist term in the
+
+sequence as a test point. In Example 5, we are given a, = 10, so immediate plug inn = 1 to the explicit
+answer choices and eliminate any that do not give you 10. Often on the ACT, only 1 answer works with this
+shortcut method, and you can tell the correct answer without finding any other terms in the sequence.
+For the example above, we could eliminate A and D immediately. To then tell which answer choice is correct,
+find 2nd term and use that as a test point. Once we find a, = 14, only B works, so we can tell that the correct
+answer is B.
+
+- 235
+-
+
+math
+
+Sequences Practice: Answers on pages 331-332.
+
+@
+
+@
+
+'
+
+”
+
+@°
+
+The 1st term is 5 in the arithmetic sequence 5,
+

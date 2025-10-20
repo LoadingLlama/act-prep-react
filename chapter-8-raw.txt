@@ -1,0 +1,1265 @@
+Chapter 8: Number Theory
+Number theory is the study of the properties of numbers. In this chapter, we will review a variety of concepts
+related to numbers and other related topics that appear on the ACT.
+
+Types of Numbers
+
+To start, let’s review the types of numbers that you need to know for test day. You need to memorize all the G)
+definitions below.
+
+e
+
+Integers are whole numbers (Ex: —4, 3, 102).
+
+e
+
+Positive numbers are numbers that are greater than 0 (Ex: 1,2,3,4...).
+
+e
+
+Negative numbers are numbers that are less than 0 (Ex: —1, —-2, —3,—-4...).
+
+e
+
+Even numbers are numbers that are divisible by 2 (Ex: 2,4, 6,8...).
+
+e
+
+Odd numbers are numbers that are not divisible by 2 (Ex: 1,3,5, 7 ...).
+
+e
+
+Prime Numbers are integers that are only divisible by 1 and itself (Ex: 2, 3,5, 7,11...). Note
+that 1 is not a prime number and 2 is the only prime even number.
+
+e
+
+Rational numbers are any number that can be expressed as a fraction (Ex: - — =). Any integer
+or terminating decimal is also a rational number (Ex: —22, 36.5, 0.02).
+
+e
+
+Irrational numbers are any numbers that cannot be expressed as a fraction (Ex: 7, V5).
+
+e
+
+Undefined numbers are numbers with a zero in the denominator (Ex: a7 ro
+
+e
+
+Imaginary numbers are real numbers multiplied by the imaginary unit i (Ex: —3i, 87).
+
+.
+
+.
+
+.
+
+6
+
+10
+
+Example 1: The solution to the equation 124 + 9x = —3x + 328 is a number that is
+
+A.
+
+Irrational
+
+B. Negative and odd
+
+C. Positive and prime
+
+D. Positive and even
+
+Solution: To solve for x, we need to combine like terms. We can move all the x-terms to the left side by
+adding 3x to both sides, and we can move the numbers to the right side by subtracting 124 from both
+sides.
+124 + 9x = —3x + 328
+9x + 3x = 328 — 124
+12x
+= 204
+_ 204,
+
+~~ 12 ~
+The solution to the equation is 17. 17 is a positive, odd integer and a prime number. The answer is C.
+
+Example 2: Let a be a positive integer and let x = Va. Which of the following expressions represents
+a rational number for all values of a?
+
+A>
+
+Bx-1
+
+C3x
+
+Dx
+
+Solution: A rational number must be able to be expressed as a fraction or be an integer. To tell which of
+
+the answer choices is a rational number, we can plug in Va for x in each answer choice.
+e
+
+Ja
+
+oo,
+
+,
+
+For A, we get ~~ Expressions with square roots are irrational numbers, so A is incorrect.
+
+-61-
+
+math
+
+e
+
+For B, we get Va — 1. Expressions with square roots are irrational, so B is incorrect.
+
+e
+
+ForC, we get 3Va. Again, square roots are irrational, so C is incorrect.
+
+e
+
+For D, we get (Va)? = a. When you square a square root, the square root disappears. a is an
+integer, which is a rational number, so D is correct.
+
+D is correct. All other answer choices have roots in the expression and are irrational.
+
+Properties of Even and Odd Numbers
+You should know the properties of even and odd numbers in the table below.
+
+Number Types
+
+Addition/Subtraction
+
+Multiplication
+
+Even and Even
+
+Even
+
+Even
+
+Even and Odd
+
+Odd
+
+Even
+
+Odd and Odd
+
+Even
+
+Odd
+
+While these may seem simple, knowing these properties can help with questions that ask about even and odd
+
+numbers.
+
+Example 3: For the equation mn? + 3m = p, if m is a positive, even number and n is a negative, odd
+number, p must be
+
+A.
+
+Negative andeven
+
+B. Negative and odd
+
+C. Positive andeven
+
+D. Positive and odd
+
+Solution: Method #1 — Substitution. The easiest way to solve this question is to use substitution and pick
+numbers form and n. As long as we follow the rules in the question (m is positive and even, n is negative and
+odd), we can pick any numbers. It is best to pick small numbers to make the algebra easier. Let’s pick m = 2
+and n = —3. Now, we can plug our values for m and n into the equation and solve for p.
+
+mn?
++ 3m =p
+
+2(—3)? + 3(2) =p
+2(9)+6=p
+18+6=p
+24=p
+
+With our values, we got p = 24, which is a positive, even number, so we can see that C is correct. No matter
+what numbers we select, as long as we follow the rules outlined in the question, p will always be positive and
+even.
+
+Method #2 — Rules of Even and Odd Numbers. We can also solve this question conceptually by using our
+rules for odd and even numbers in the table above.
+
+Let’s start by figuring out if p will be positive or negative. For the mn? term, m > 0 and n? > 0 (since
+squared terms are always positive). A positive number multiplied by a positive number is always positive, so
+
+mn? > 0. Sincem > 0,3m > 0. Since both mn? and 3m are positive, the sum of those terms will be
+positive. p is positive.
+
+Next, let’s find out if p is odd or even. Let’s start with the mn? term. We know that m is even, but what about
+n7? n is odd, so n? is odd x odd, which is odd. So, mn? is even x odd, which is even. 3m is also going to
+
+- 62
+-
+
+Chapter 8: Number Theory
+
+be even, since 3m is odd x even, which is even. As a result, we see that mn? + 3m is even + even, which is
+even. p is even.
+Using our rules for even and odd numbers, we find that p is positive and even. C is the correct answer.
+*Note: Solving questions like Example 3 conceptually is often much more difficult and time-consuming,
+so we always recommend using substitution for questions like this if you can.
+
+Greatest Common Factor
+The greatest common factor of a set of numbers is the largest positive integer that divides evenly into all
+numbers in the set with no remainder. For example, for the set of numbers 12, 18, and 30, the greatest
+
+common factor is 6. 6 is the largest number that divides evenly into 12, 18, and 30.
+Example 4: What is the greatest common factor for the set of numbers 56, 112, 182?
+A. 2
+
+B. 8
+
+C.
+
+14
+
+D. 28
+
+Solution: The easiest way to solve any greatest common factor question with numbers is to backsolve
+
+using the answer choices. We are looking for the largest number that divides evenly into 56, 112, and 182.
+To solve, all we need to do is grab a calculator and start with the largest value in the answer choices, which is
+28. 28 divides evenly into 56 and 112 but does not divide evenly into 182, so 28 is incorrect. 14 divides
+evenly into 56, 112, and 182, as we can see below:
+56+14=4
+112+14=8
+182+14=13
+
+The correct answer is C. 8 does not divide evenly into 182. 2 divides evenly into all 3 numbers but 2 is
+smaller than 14, so 2 is not the greatest common factor.
+
+For more advanced greatest common factor questions, the ACT can ask you to find the greatest common factor
+for an expression with variables. For these questions, we are looking for the largest term that we can factor out
+from all other terms. For a simple example to start, let’s consider the expression
+
+3x2 + 6x
+
+The greatest factor is 3x, because we can factor our 3x from both the 3x? term and the 6x term. If we factor
+3x from 3x7, we have x left over. If we factor 3x from 6x, we have 2 left over. We can rewrite the
+expression above as
+
+3x(x + 2)
+to show the greatest common factor, 3x, factored out from the original expression.
+
+Example 5: What is the greatest monomial factor for the expression 3x?y — 12x? ?
+A. 3x3
+
+B. 3x?
+
+C. 12x?y
+
+D. x
+
+Solution: To find the greatest monomial factor (monomial factor is just a fancy algebra word for an algebraic
+expression with only one term), we need to find the largest number and variable(s) that we can factor out from
+both terms.
+Let’s start with the number. What is the largest number that we can factor out from both terms? The answer is
+3 because both 3 and 12 are divisible by 3.
+
+- 63
+-
+
+math
+
+What about the variables? To factor out a variable, the variable must appear in all terms in the expression.
+
+Since y only appears in the 3x?y term and not in the —12x term, we cannot factor y out from both terms.
+Okay, so what about x? Ifa variable appears in all terms in the expression, we can factor out the lowest
+
+power. The first term, 3x*y, has x? while the second term, —12x?, has x2. The lowest power is x2, so we
+can factor out an x”.
+
+Combining the number, 3, and variable, x’, that we factored out, we find the greatest monomial factor is 3x?.
+We can rewrite the original expression as
+
+3x2 (xy — 4)
+to show the greatest monomial factor factored out from the original expression. The correct answer is B.
+
+Least Common Multiple
+The least common multiple is the smallest positive integer that is divisible by all numbers in the set. For
+
+example, the least common multiple of 2 and 3 is 6 because 6 is the smallest number that is divisible by both 2
+and 3.
+A multiple of a number is when we multiply that number by another number. For example, the multiples of 4
+are 4, 8, 12, 16, 20, 24, and so on. Any positive number that is divisible by 41s a multiple of 4.
+
+Example 6: What is the least common multiple for 5, 6, and 20?
+A. 20
+
+B. 30
+
+C. 60
+
+D.
+
+120
+
+Solution: To find the least common multiple, we can list the multiples of 5, 6, and 20 and look for the
+smallest number that appears on all 3 lists.
+Multiples of 5:
+
+5,10, 15,20, 25, 30, 35, 40, 45, 50,55, 60, 65, 70...
+
+Multiples of 6:
+
+6,12, 18,24, 30, 36,42, 48, 54, 60, 66...
+
+Multiples of 20:
+
+20,40, 60,80...
+
+We see the least common multiple is 60. While 120 and 3,000 are divisible by 5, 6, and 20, they are not the
+smallest number that is a multiple of all 3 and therefore not the least common multiple. The answer is C.
+Shortcut Solution: The fastest and easiest way to solve is to backsolve using the answer choices. We do
+not recommend using the method above. However, it is important to understand the method above, as you
+may need to use that method for other types of least common multiple questions.
+To solve, grab your calculator, start with answer choice A, and see if the number is divisible by 5, 6, and 8.
+Here, 20 is not divisible by 6, so we would next try 30. 30 is not divisible by 20, so we would move on to 60.
+60 is divisible by all 5,6, and 20, so we know we found the answer. We are looking for the least common
+
+multiple, so there is no need to even check any larger numbers once you find an answer choice that works.
+
+- 64
+-
+
+Chapter 8: Number Theory
+
+Prime Factorization
+Prime factorization is a method of expressing a number as a product of its prime factors. The most
+
+common approach to prime factorization is making a factor tree. In the factor tree, we keep dividing numbers
+and creating more branches until we are left with only prime numbers. Let’s start by finding the prime
+factorization of 20.
+20
+
+A
+
+\
+
+Prime Factorization of 20
+
+,0
+
+2
+
+2
+
+20=2x2x5
+
+aa
+
+5
+
+The prime factors (2, 2, and 5) are shown in bold. To show the prime factorization of 20, we multiply all the
+prime factors together, so the prime factorization of 20 is 2 x 2 x 5.
+Example 7: Which of the following is the correct prime factorization of 6,006?
+A. 2:3:+7:11:13
+
+B.6:7-:11:13
+
+C. 6:7:143
+
+D. 7-11-13
+
+Solution: To solve, we can set up a factor tree for 6,006.
+6,006
+
+2
+
+3,003
+
+Prime Factorization of 6,006
+
+a \
+
+3
+
+6,006 =2x3x7x11x13
+
+1,001
+
+7
+
+143
+
+xs
+The dots in the answer choices are another way in math to show multiplication. From our factor tree, we see
+the prime factors (shown in bold on the factor tree) are 2, 3, 7, 11, and 13. The answer is A.
+All the other answer choices are incompletely factored or do not multiply to 6,006. In B and C, 6 is nota
+prime number. In D, 7+ 11-13 does not multiply to 6,006.
+
+The prime factorization shown above is only one example of a correct factor tree. Depending on the numbers
+you divide by to start, you factor tree may look a bit different than the one above. For example, the first
+branches from 6,006 could be 6 and 1,001. No matter how you start the tree, you will get the same prime
+factorization as long as you do the math correctly and continue to divide the branches of the tree until you get
+only prime numbers.
+
+-65-
+
+math
+
+One Solution vs. Infinite Solutions vs. No Solution
+We need to know how to tell when an algebraic expression will have one solution, infinite solutions, and
+no solution. To start, let’s see how a question testing you on this topic might appear on the ACT.
+Example 8: For the equation 3x — 8 = ax — 12, under which condition will there be no solution?
+
+A.
+
+a=0
+
+B.a=3
+
+C.ax#3
+
+D.
+
+a>0O
+
+Before we come back to solve Example 8, let’s learn the rules for one solution, infinite solutions, and no
+solution.
+
+One Solution
+Any algebraic expression that can be solved for a single value of x will have one solution. For example, if
+we have the expression.
+9x —2=5x+10
+
+we can solve for x. Subtract 5x from both sides and add 2 to both sides to get:
+4x =12
+x=3
+
+We get 1 solution for x. Memorize the rules below to know how to spot this quickly.
+Rule for 1 Solution
+
+The coefficients of the x-terms are different. The constants (numbers) can be the same or different.
+
+Anytime the expression has x-terms with different coefficients and no higher powers of x, such as x?,
+there is always 1 solution.
+
+In the example we just solved, the x-terms, 9x and 5x have different coefficients, so, using the rule for 1
+solution, we know there will be 1 solution without having to solve the equation.
+
+Infinite Solutions
+An algebraic expression with infinite solutions must be true for any value of x. For an equation to have
+
+infinite solutions, both sides of the equation must be identical. Some examples of equations with infinite
+solutions are below:
+
+6x —12 = 6x-12
+
+7x? = 7x?
+
+x9—4*%4+5=x°-4x4+5
+
+For the expressions above, we can plug any value for x and the expression will be true.
+Rule for Infinite Solutions
+
+Both sides of the equation must be identical. The coefficients of the x-terms and the constants
+
+(numbers) must be the same. Anytime both sides of the expression are identical, any value of x makes
+the expression true, so there are infinite solutions.
+
+- 66
+-
+
+Chapter 8: Number Theory
+
+No Solution
+An algebraic expression with no solution cannot be solved for any value of x. For this to occur, the
+expression must have the same coefficients for the variable(s) on both sides and the constants (numbers)
+
+must be different. Some examples of equations with no solution are below:
+
+x-2=x4+5
+
+6x —12=6x+4+1
+
+7x? = 7x* +10
+
+No matter what value we plug in for x, we can never make any of the equations above true. Notice that the
+
+terms with variables (the terms with x or x? in the above examples) are equal but the numbers are not.
+Anytime an equation looks like this, there is no solution.
+Rule for No Solution
+
+The coefficients of the x-terms are the same. The constants (numbers) are different. Anytime we
+see these characteristics in an algebraic expression, there is no solution.
+Now that we know the rules, let’s go back to Example 8.
+
+Example 8: For the expression 3x — 8 = ax — 12, under which condition will there be no solution?
+A.
+
+a=0
+
+B.
+
+a=3
+
+C.a#3
+
+D.
+
+a>0
+
+Solution: For there to be no solution, we need the coefficients of the x-terms to be the same and the constants
+(numbers) to be different. In the equation above, the number are already different, so we just need to make the
+coefficients of x-terms the same. For this to occur, we need a = 3 so the expression becomes
+3x —8=3x-12
+
+which has no solution. The answer is B.
+
+Two Solutions for Algebraic Expressions
+For a challenge question, the ACT can also include an algebraic expression that has two solutions. For an
+
+algebraic expression to have 2 solutions, the equation must either (1) have an x*-term or (2) have an
+x-term inside absolute value bars.
+
+Two Solutions with an x2-term
+Let’s say we are given the algebraic expression x* — 6 = —2. To solve, we could add 6 to both sides and
+get
+
+x? =4
+Taking the square root of both sides we get.
+x=+2
+
+So, we get 2 solutions! Remember that in Chapter 7 (pg. 56) we learned that when we take the square root
+
+of both sides with x2, we must put a + in front of the number.
+Two Solutions with Absolute Value
+Let’s say we are given the expression |x| + 3 = 10. To solve, we subtract 3 from both sides and get
+Ix} =7
+
+>-
+
+x=7
+and x=-7
+
+When we have a variable inside the absolute value bars, there will be 2 solutions. If you are not
+familiar with this topic, we will learn more about algebra with absolute values bars in Chapter 18.
+
+-67-
+
+©)
+
+math
+
+Number Theory Practice: Answers on page 325.
+
+1.
+
+The least common multiple of 6, 9, and 12 is:
+
+GaAWpY
+
+6.
+
+Which of the following arranges the numbers -,
+1.75, 1.17, and 1.17 into ascending order?
+
+18
+
+A. 2<1.75<117<1.17
+
+24
+36
+
+B.
+
+72
+
+7<117< LI7< 1.75
+
+C. 117< 1.17< 1.75<-
+
+D.
+
+If 7 < Va < 8, which of the following could be
+
+117< 1.17 <2<1.75
+
+a?
+
+pGan
+
+©"
+
+7.3
+15.5
+
+If x is an integer less than —1, which of the
+
+51.8
+
+following correctly orders x”, =, and |x| from
+
+66.8
+
+greatest to smallest?
+
+A. x? > |x| >=
+
+The solution to the equation 4a + 12 = 36 is
+
+B
+
+which of the following types of numbers listed
+
+C. |x| > x? >=
+
+below?
+I.
+
+Integer
+
+Il.
+
+Rational
+
+= > |x| > x?
+
+D x2
+
+>t>
+|x|
+x
+
+IZ. Irrational
+
+IV. Negative
+V.
+
+Gap
+
+Positive
+
+©:
+
+Let x be a positive odd integer and y be a
+
+negative even integer. The expression x7y? is
+a
+
+II and V only
+I and HI only
+
+GaAWpY
+
+I and II only
+I, II, and V only
+
+What is the greatest common factor of 48, 84,
+
+©”
+
+Positive odd integer.
+Positive even integer.
+Negative odd integer.
+Negative even integer.
+
+The statement 5x — (2x —1) +4 = 3x+2is
+true for:
+
+Gaw>
+What is the greatest integer solution to the
+
+x = 1only
+x = 2 only
+
+all values of x.
+no values of x.
+
+10. The prime factorization of 558
+
+equation 7x + 3 < 36.4?
+
+GaAW>
+
+GO, WwDun
+- 68 -
+
+2X 279
+3xX3x31
+2x3x31
+2X3xX3xX31
+
+is:
+
+Chapter 8: Number Theory
+
+11. wn or the following values is a rational ©)
+number‘?
+
+16. The expression — is undefined whenever b
+is equal to:
+
+A. ¥16-3
+
+D.
+
+;
+
+¥25 —V24
+
+7 4
+
+12. The graph of the function shown below will be
+1
+
+?
+
+undefined at what value(s) of
+x"
+fx)
+
+4
+
+C.
+
+-a
+
+D.
+
+3a
+
+3
+
+17. The expression 10 — 4z = —6.5z + 10 has how
+
+-—_
+vr
+
+many solutions
+lutions?
+
+A.
+
+—4 only
+
+A.
+
+0
+
+B.
+
+0 only
+
+B.
+
+C.
+
+4 only
+
+C.
+
+1
+2
+
+D.
+
+0 and 4 only
+
+D.
+
+3
+
+13. Two lights are turned on at the same time and
+
+©) 18. When6<x < 10 and 13 < y<
+
+begin flashing. The first light flashes every 28
+seconds. The second light flashes every 12
+
+yx
+
+seconds. How many seconds after the lights are
+
+A. -
+
+turned on will both lights flash at the same
+
+B.
+
+2
+
+c
+
+2
+
+D.
+
+3
+
+time?
+
+A.
+
+56
+
+B.
+
+84
+
+C.
+
+112
+
+D.
+
+168
+
+18, the
+
+smallest possible value for —— is:
+
+4
+
+;
+
+19. Which of the following expressions, when
+
+evaluated, equals an irrational number?
+
+14. What is the greatest monomial factor for the
+
+expression 16ab? — 24b° ?
+
+A. =
+
+A. 4ab?
+
+B. (V5)
+
+C. 8ab?
+
+D. v5+¥20
+
+B. 4b?
+D.
+
+2
+
+C. v5 x ¥20
+
+8b?
+
+15. The statement x — 2(3x — 2)
+
++11 =—5x+15
+
+is true for:
+
+20. Ifa and b are real numbers such that
+
+b—a>b +a, which of the following MUST
+be true?
+
+A.
+
+x =—4 only
+
+B.
+C.
+
+x =—2 only
+all values of x.
+
+D.
+
+no values ofx.
+
+- 69
+-
+
+A.
+B.
+
+b>a
+b>0
+
+C.
+
+a<0
+
+D.
+
+b>Oanda<0O
+
+math
+
+21. Which of the following must be true for each
+
+set of 5 consecutive positive integers greater G)
+
+25. Ifa < banda > 12, what is the least possible
+
+integer value of a + b?
+
+than 10?
+
+,
+
+,
+
+;
+
+A.
+
+I. At least 1 of the integers is a multiple of
+
+24
+
+B25
+
+3.
+
+II. At least 2 of the integers have a common
+
+C. 26
+
+D.
+
+prime factor.
+
+27
+
+Il. At least 1 of the integers is prime.
+
+A. Tonly
+B. Ionly
+C.
+
+Iand II only
+
+D.
+
+land II only
+
+G) 26. For some real number a, Va2 # a. Therefore a
+must be:
+
+22. The equation below has no solution, and a is a
+
+A.
+
+Zero
+
+B.
+
+Positive
+
+C.
+D.
+
+Odd
+Negative
+
+constant. What is the value of a?
+
+8x +6 =a(—3x4+2)-—x
+
+27. Given the equation 4x = V3 — x, which of the
+
+A. —3
+B. -=
+
+following expressions is rational number?
+
+C. °
+
+D.
+
+A.
+
+x+2
+
+C.
+D.
+
+x*+3
+
+B. 2x
+
+3
+
+23. Which of the following inequalities is true for
+
+28.
+
+all positive integers m ?
+
+x2 - x?
+
+2
+
+2
+
+In the equation above, a and b are constants. If
+value of a?
+
+B.
+
+m>—+4+2
+;
+
+A.
+
+2
+
+Cc.
+
+m < m
+
+B.
+
+3
+
+2
+m<xvm‘+1
+
+C. 5
+DL
+
+24. The least common multiple of2 numbers is
+
+_
+
+the equation has no real solution, what is the
+
+A. ¥m+32>m?
+
+D.
+
+2
+
+ax® + 4(3x° + 2b) = 15x* + 24
+
+G) 29. Which of the following expressions is the
+
+is the maximum value of the other number?
+
+105 x3y + 45x2 y? 9
+
+A. 6
+B. 16
+
+A. 15x?y
+B. 15x3y?
+
+C. 415x2y
+D. 415x3y?
+
+C. 48
+D. 64
+
+-70
+-
+
+Chapter 8: Number Theory
+
+30. The greatest common factor of 2 whole
+
+35. Let a and b represent real numbers. If the
+
+numbers is 5. The least common multiple of
+
+solution to the equation ./7 — (a+b) is
+
+these same 2 numbers is 60. What are the 2
+
+imaginary. Which of the following statements
+
+numbers?
+
+GOP,
+
+about a and b must be true?
+
+4 and 15
+5 and 15
+15 and 20
+20 and 60
+
+31. Which of the following numbers has exactly 5
+
+A.
+
+a>b
+
+B.
+
+b+a<7
+
+C.
+
+b+a=7
+
+D.
+
+b+a>7
+
+36. How many prime factors appear in any prime
+
+distinct positive integer factors?
+
+factorization of (12)?(627)* ?
+(Note: You should count repeating prime
+
+A.
+
+12
+
+B.
+
+14
+
+factors. For example, 4 prime factors appear in
+
+C.
+
+16
+
+the prime factorization of 90 as 2:3:+3°5.)
+
+D.
+
+25
+
+7
+
+B.
+
+18
+
+C..22
+
+32. For c, d, and e such that c < d < e < 21.74,
+
+what is the largest possible value of c
+
+A.
+
+D.
+
++d +e
+
+256
+
+that has a factor of 4?
+what value(s) of x is the function below
+37 For
+undefined?
+
+A. 68
+B.
+
+64
+
+C.
+
+60
+
+D.
+
+56
+
+x+2
+
+f(x) = x2421x4+(x+3)(x-9)
+
+which of the following expressions has the
+
+Gap,
+
+smallest value?
+2-x
+
+B.
+
+x?
+
+C.
+
+-Vx
+
+-3
+
+Il.
+
+—9
+
+ur. 22
+
+33. For all real values of x such that 0 < x < 1,
+
+A.
+
+L
+
+I only
+I and II only
+II and III only
+I, II, and HI
+
+D. -x
+
+38. For all real numbers, a, b, and c such that
+
+c
+
+>b>aanda
+
+< 0, which of the following
+
+inequalities must be true?
+
+34, The product of 2 numbers is an integer. Which
+
+of the following statements CANNOT be true?
+
+A.
+
+Both numbers are fractions greater than 1.
+
+B.
+
+Both numbers are irrational and greater
+
+C.
+
+Both numbers are imaginary.
+Both numbers are positive decimals less
+
+ca<ba
+
+B.
+
+ca>ba
+a
+
+than 0.
+D.
+
+A.
+
+D.
+
+than 1.
+
+-71-
+
+a
+
+a-c>c-—b
+
+math
+

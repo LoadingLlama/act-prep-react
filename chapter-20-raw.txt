@@ -1,0 +1,434 @@
+Chapter 20: Repeating Patterns
+Any idea what number is the 307th decimal place after the decimal point of 0.34562 or what the units digit of
+
+7193 is? Questions like this appear quite often on the ACT, and they seem almost impossible to solve at first
+glance. However, once you learn the trick to solving repeating patterns questions, they are actually easy!
+
+Repeating Decimals
+The first and easiest type of repeating patterns question is one with a repeating decimal. Remember, a line
+above a decimal shows the decimal repeats over and over again without ending. For example,
+0.1234 = 0.1234123412341234 ...
+
+As you will see in the following example, we can use the repeating pattern to find values that occur way later
+
+in the decimal without actually writing it out.
+Example 1: What is the 307th place after the decimal point in the repeating decimal 0.34562 ?
+A.
+
+2
+
+B. 3
+
+C. 4
+
+D.
+5
+
+Solution: The trick to solving repeating decimals questions is using the repeating pattern to our advantage.
+To show you how this works, let’s write out the decimal in repeating form.
+0.34562 = 0.345623456234562 ...
+
+We want to go to the end of the repeating unit, which here is the 2. Since the pattern repeats every 5 places,
+every 5th place after the decimal point will be a 2.
+0.34562 = 0.345623456234562 ...
+
+a
+
+Sth
+
+ee
+= 10th_=—
+
+15th
+
+The 5th place, the 10th place, the 15th place are all 2. As the repeating decimal continues, every digit that is a
+multiple of 5 will be a2. 25 places, 50 places, 500 places...all of these will be 2.
+
+We are looking for the 307" place after the decimal point. To find that value, we need to find a multiple of 5
+near 307. The closest multiple of 5 is 305, which will be a2. Once we know that the 305th place is a 2, we
+
+can count forward in our sequence.
+The 306th digit is a 3, and the 307th digit is a4. The answer is C.
+
+Example 2: What is the 703rd place after the decimal point in the repeating decimal 0.596127 ?
+A.
+
+1
+
+B. 5
+
+C. 6
+
+D. 9
+
+Solution: Let’s use the same trick we just learned in Example 1. Here, we have 6 digits repeating. We go to
+the end of the repeating unit, which here is a 7.
+0.596127 = 0.596127596127 ...
+
+'
+
+4
+
+6th
+
+12th
+
+Every number that is a multiple of 6 after the decimal point will be a 7. We are looking for the 703rd place
+after the decimal point. To find that value, we need to find a multiple of 6 near 703. The closest multiple is
+702, which is
+
+a7. Once we know the 702nd place is a 7, we can count forward in the sequence. The 703rd
+
+term is 5. The answer is B.
+
+- 189
+-
+
+math
+
+Repeating Patters with Powers and the Units Digit
+What is the units digit of 7123? This is an example of second and more difficult type of repeating patterns
+question. Before we learn how to solve these questions, let’s make sure that you know what the units digit
+refers to.
+
+The units digit of a number is the digit in the one’s place. For example, the units digit in 945 is 5, and the
+units digit of 10,381 is 1.
+Now that we know what the units digit (or one’s place) is, let’s get back to learning how to solve repeating
+powers questions that ask about the units digit.
+
+Example 3: What is the units digit of 7/22 ?
+A.
+
+1
+
+B. 3
+
+C. 7
+
+D. 9
+
+Solution: If we try to enter this into the calculator, most calculators will either give us an error or will show us
+a number in scientific notation. Either way, we cannot see the number in the units digit, so we need to take
+
+another approach.
+To solve, we need to identify the repeating pattern as the exponent increases. Take a look at the powers of 7
+written below and see if you can spot the pattern.
+
+71 =7
+
+7° = 16,807
+
+77 = 49
+
+7° = 117,649
+
+7? = 243
+
+77 = 823,543
+
+7* = 2,401
+
+7® = 5,764,801
+
+As the powers increase, we see a repeating pattern with the units digit. The units digits above are in the pattern
+7,9, 3,1, 7,9, 3, 1...
+
+The units digits repeat in the pattern of 7, 9,3, 1 over and over again as the powers increase. Now that we see
+
+the pattern, we can use the same technique we did with repeating decimals: go to the end of the repeating unit.
+7,9, 3,1,7,9,3, 1...
+
+tof
+
+Ath
+
+Sth
+
+The 4th power and the 8th power have a units digit of 1. As the repeating pattern continues, all powers that are
+
+a multiple of 4 will have a units digit of 1. 71%, 74°, 749° will all have a units digit of 1.
+
+We are looking for 7127, so we need to find out what number is the 122nd term in the pattern. To do this, we
+want to see if 122 1s a multiple of 4 and, if it is not, find the closest multiple of 4 near 122.
+
+122 is nota
+
+multiple of 4, and the closest multiple of 4 is 120. This tells us that 72° has a 1 in the units digit.
+Counting forward in the pattern, 712+ has a7
+
+in the units digit and 7122 has a 9 in the units digit. The answer
+
+is D.
+
+- 190
+-
+
+Chapter 20: Repeating Patterns
+
+Example 4: 3% has a9 in the ones place. What digit does 3*+? have in the ones place?
+A.
+
+1
+
+B. 3
+
+C. 7
+
+D. 9
+
+Solution: To solve this question, we need to know the repeating pattern in the units digit for the powers of 3.
+The pattern with the powers of 3 is shown below:
+
+31 =3
+
+3° = 243
+
+37 =9
+
+3° = 729
+
+33 = 27
+
+3” = 2,187
+
+34*=81
+
+3° = 6,561
+
+As the powers increase, we see a repeating pattern in the units digit. The units above follow the pattern
+3,9, 7, 1,3, 9, 7, 1...
+
+The pattern of 3, 9, 7, 1 repeats over and over again as the powers increase.
+In this question, 3* has a 9 in the ones place. The easiest method to find out what digit is in the ones place of
+
+3*+3 is to pick a value for x and use the pattern above. Since 3* = 9, we can use x = 2. This works because
+the 9 is in the ones place.
+
+Now, we need to find out what 3**? has in the ones place. Since we picked x = 2, 3**? becomes 3°.
+3° = 243, so there is a 3 in the ones place. The answer is B.
+We could have picked any value of x that made 3% have a 9 in the ones place. Since 3° = 729, we could have
+used x = 6 and solved from there. 3%*? becomes 3?. 3? = 19,683, which has a 3 in the ones place. The term
+3**3 is telling us to go 3 terms forward in the repeating pattern. If we start at any term that has a 9 in the units
+digit and count 3 terms forward, we will always get to a term with a 3 in the units digit.
+
+Commonly Tested Repeating Patterns with Powers and the Units Digit
+There are a variety of numbers that have a repeating pattern in the units digit as the power increases. The
+most commonly tested repeating patterns with powers repeat every 4 terms. You should memorize the
+patterns for the numbers below.
+
+2'=2
+
+2° = 32
+
+31 =3
+
+3° = 243
+
+27=4
+
+2° = 64
+
+37 =
+
+3°
+= 729
+
+27=8
+
+27 = 128
+
+33 = 27
+
+3” = 2,187
+
+2* = 16
+
+2° = 256
+
+34*=81
+
+3° = 6,561
+
+71 =7
+
+7° = 16,807
+
+81=8
+
+8° = 32,768
+
+77 =49
+
+7° = 117,649
+
+87 = 64
+
+8° = 262,144
+
+7? = 243
+
+77 = 823,543
+
+8? = 512
+
+8’ = 2,097,152
+
+7* = 2,401
+
+7° = 5,764,801
+
+8* = 4,096
+
+8° = 16,777,216
+
+If you ever see other numbers on the ACT in questions like examples 3 and 4, write out the powers until you
+see a repeating pattern. Once you spot the pattern, you can use the same methods we used in these examples to
+solve.
+
+- 19]
+-
+
+math
+
+Repeating Patterns with Powers of t
+The final repeating pattern we need to know is with the powers of i. For those of you who have not learned
+
+about complex numbers yet, this will be covered in Chapter 25. All you need to know for now is that
+i =~v-—1. The pattern for the powers of i is shown below.
+
+i=i
+
+Pb =i
+
+=-1
+
+if =-1
+
+i =-i
+
+i? =-i
+
+i*=1
+
+i&=1
+
+As the powers increase, this pattern of i, —1, —i, 1 repeats over and over again every 4 terms. You should
+memorize this pattern. Since the pattern is every 4 terms, we will use the same method we just used with
+
+repeating powers.
+
+Example 5: 10i*” — 7 is equal to:
+A.
+
+—10i-—7
+
+B.
+
+10i + 7
+
+C. 3i
+
+D. 3
+
+Solution: To solve, we need to find out what i*° is equal to. From the pattern above, we know power of i
+follow a repeating pattern. We can go to the end of the repeating unit.
+i,—1,—i,1,i,-1,-i,1...
+
+ts
+
+4th
+
+8th
+
+i* and i® are equal to 1. As the repeating pattern continues, all powers that are a multiple of 4 will be equal to
+1. it7,i2°, i4° are all equal to 1.
+We are looking for i*”, so we need to find out what number is the 47th term in the pattern. To do this, we want
+to find the closest multiple of 4 near 47. The closest multiples of 4 near 47 are 44 and 48. This tells us that
+
+i*4 = 1 and i*® = 1.
+
+If we use i** and count forward in the pattern, i*° = i, i*© = —1, and i*” = —i. If we use i*® and count
+backwards, we see i*” = —i. Now that we know i*” = —i, we can plug in —i for i*” and solve.
+10i47 —7 =10(-i) —7 = —10i —7
+The answer is A.
+
+Example 6: If k is a multiple of 4, i***+ equals:
+A.
+
+1
+
+B. t
+
+C. -i
+
+D. -1
+
+Solution: The easiest way to solve this question is to pick a value for k. We can pick any multiple of 4. To
+make this as simple as possible, let’s pick k = 4.
+Next, plug in k = 4 and solve.
+jAk+1 —
+
+j44+1 =
+
+jl’
+
+Now, we use the repeating pattern that we used in Example 5 to solve for i+”. All powers that are multiples of
+4 are equal to 1, so we want to find a multiple of 4 close to 17. The closest multiple of 4 is 16, so i7® = 1.
+Counting forward in the sequence, we find that it? = i. The answer is B.
+
+- 192
+-
+
+Chapter 20: Repeating Patterns
+
+How to Solve Repeating Patterns Questions
+For any repeating patterns question, use the following steps:
+1.
+
+Identify the repeating unit. For repeating decimals, this should be easy. For repeating powers, you will
+need to have the pattern memorized or write out the powers until you see the pattern repeat.
+Find the number of items in the repeating unit. For example, 0.235638 has 6 items. All of the powers
+and i examples had 4 items.
+
+Go to the end of the repeating unit. In 0.235638, the end of the repeating unit is the 8. In the powers
+patterns, the end of the repeating unit is the 4th term. This is the value of the term we will find in step 4.
+Find a multiple of the number of items in the repeating unit (step 2) closest to the target number.
+
+For example, if you want to find the 103rd number after the decimal point in 0.235638, find a multiple of
+6 near 103. The closest one is 102. The 102nd term is an 8.
+
+Count forwards or backwards in the repeating pattern to find target term. In 0.235638, the 102nd
+term is 8 and the 103rd term is 2.
+Repeating Patterns Practice: Answers on page 330.
+1.
+
+What is the 81st digit after the decimal point
+
+©
+
+*
+
+in 0.46981 ?
+
+What is the 297th digit after the decimal point
+in the repeating decimal 0.39765 ?
+
+GaAwp oOnhe
+
+A.
+B.
+
+C.
+D.
+
+6.
+
+What is the 33 1st digit after the decimal point
+
+OrnITAN
+
+Given that today is Thursday, what day of the
+week was 205 days ago?
+
+in the repeating decimal 0.1679 ?
+

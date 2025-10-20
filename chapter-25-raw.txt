@@ -1,0 +1,1065 @@
+Chapter 25: Complex Numbers
+Complex numbers are a combination of real and imaginary components expressed in the form a + bi, where a
+and b are real numbers and i is the imaginary unit. The imaginary unit is defined as
+
+i=vV-1
+Since part of complex numbers are “imaginary,” it is difficult to grasp how they work. But do not worry, you
+only need to learn a few methods for how to handle complex numbers when they appear on the ACT.
+
+Adding and Subtracting Complex Numbers
+For addition and subtraction with complex numbers, we combine like terms. For example,
+
+(84+ 5i) + (5 —2i) = 134+ 3i
+Simple right? For subtraction questions, always make sure that you distribute the negative sign to both terms.
+
+(2-31) -(5-7) =2-3i1-5+7i=-3+4i
+Many students make the mistake of forgetting to distribute the negative sign and get an answer of —3 — 10i.
+Be careful because the ACT will have this common mistake as an incorrect answer choice.
+Example 1: What is the difference of complex numbers 22 — 14i and 7 — 3i ?
+A. 15-17i
+
+B.15-11i
+
+CC. -15+11i
+
+D. 29-17i
+
+Solution: Set up the equation and combine like terms.
+
+(22 —14i) — (7 — 3i) = 22 -141-—-7 + 3i=15-11i
+The answer is B.
+
+Multiplying Complex Numbers
+Before we go into the details of how to multiply complex numbers, you need to know that
+
+i=-1
+Multiplying complex numbers is just like multiplying binomials: use FOIL, which stands for First, Outer,
+Inner, Last. For example,
+
+(3 — 5i)(2
+— 21) = 6 — 6i — 10i + 1072 = 6 — 161 + 107?
+
+We are not done yet. Since there is an i? term when we multiply complex numbers and i? = —1, we must
+plug in —1 for i?.
+6 — 16i + 10(—1)
+Combining the numbers, we get the answer of
+—4—-16i
+
+Example 2: What is the product of complex numbers 1 — 3i and 11 + 2i ?
+A.
+
+11-6i
+
+B.
+
+12 -i
+
+C.
+
+11
+— 38i
+
+D.
+
+17 —31i
+
+Solution: Multiply the two imaginary numbers together and combine like terms.
+
+(1 — 3i)(11 + 2i) = 11 + 2i — 333i — 6i7 = 11 — 31i — 6i?
+Now, plug in —1 for i? and combine the numbers.
+
+- 238
+-
+
+Chapter 25: Complex Numbers
+
+11 — 31i-—6(-1) = 17 -31i
+The answer is D.
+
+The Complex Conjugate
+All complex numbers have a complex conjugate. The complex conjugate is a complex number with an
+identical real part and an imaginary part with the opposite sign. In algebra terms,
+a+ bi and a — bi are complex conjugates.
+If you prefer numbers,
+2 + 3i and 2 — 3i are complex conjugates.
+
+To find the complex conjugate of any complex number, switch the sign of the imaginary part.
+So why does this matter? The complex conjugate is important because the product of any complex number
+and its complex conjugate is a real number.
+
+(a + bi)(a — bi) = a* + b*
+With numbers, we can see how the imaginary terms cancel out and we just get numbers.
+
+(2+ 3i)(2-—3i) = 4-6i1+
+6i- 917 = 4-917 = 4-—9(-1) = 13
+
+Notice that 27 + 3% = 13, so we can skip all that math if we memorize the shortcut for the product of complex
+conjugates.
+Complex conjugates are most often used when complex numbers are fractions with the imaginary part in the
+denominator. Fractions are not allowed to have the i in the denominator. To fix this problem, we can multiply
+the top and bottom of the fraction by the complex conjugate. For example, if we are given
+10
+1—-2i
+
+we need to multiply the top and bottom of the fraction by the complex conjugate, which here is 1 + 2i.
+10
+
+142i
+
+- xX
+
+;
+
+1-2i
+
+142i
+
+We get
+10 + 20i
+
+5
+
+We can now simplify and get
+2+ 4i
+
+Example 3: Which of the following is equivalent to the equation below?
+5
+
+3
+
+4,
+
+5
+
+5
+
+A. =+=i
+
+B.
+
+5
+
+5,
+
+3
+
+4
+
+=—-i
+
+15
+
+20.
+
+7
+
+7
+
+4
+
+C.=—-=i
+
+4
+
+D.=-=i
+
+Solution: To simplify, multiply the top and bottom of the fraction by the complex conjugate of 3 + 41.
+5
+
+x
+
+3-4it
+
+ott
+344i
+
+We get
+
+15 + 20i
+25
+
+- 239
+-
+
+math
+
+We can now split the fraction and simplify to get
+
+re,
+
+cl
+
+The answer is A.
+
+TIP — Use Your Calculator
+If you calculator has an i button, you can type most complex numbers questions into your calculator,
+and it will tell you the answer. You do not need to do any math! For those of you with a TI-83, TI-84
+TI-Nspire (non CAS), and many Casio calculators, you can enter complex numbers in your calculator! If
+you have a different type of calculator, it is worth looking up if you have an i button.
+To see how this trick works, go back to Examples 1—3 that we just solved and plug them into your
+calculator. When you press ENTER, the calculator will show you the correct answer!
+
+The Powers of i
+You should memorize the following pattern of i powers.
+
+ji=i
+i
+
+2— —1
+
+3 = —t
+
+i*=1
+Knowing this pattern will be essential to solving certain imaginary numbers questions that ask you to solve for
+
+a higher power of i, such as i1°?. The method for solving these questions is covered in Chapter 20 on p. 192,
+so you can go to that chapter to learn how to solve questions with higher powers of i.
+
+For most students, that is all that you need to know about complex numbers!
+The ACT will also rarely include questions that involve the complex plane, which we will discuss next. Since
+
+it is very rarely tested, the complex plane can be skipped for students on a time crunch to get ready for the
+ACT. In general, it is only important for students aiming for top math scores who want to know everything
+
+that can be on the ACT.
+
+- 240
+-
+
+Chapter 25: Complex Numbers
+
+Advanced Complex Number Topics
+The following advanced complex number topics are rarely tested on the ACT. If these topics do appear on the
+test, they are usually later in questions 35-45. The good news is these questions are usually pretty easy to
+solve as long as you know the rules that you will learn in the rest of this chapter.
+
+The Complex Plane
+The complex plane is a way to represent complex numbers on a coordinate plane. The complex plane works
+
+just like the standard (x, y) coordinate plane, except that now the x-axis is “real” and the y-axis is
+“imaginary.” For graphing complex numbers, you need to know the following rule:
+
+Any complex number a + bi is graphed on the complex plane at point (a, b).
+Let’s graph 3 + 4i, 1 — 3i, and —1 + 2i in the complex plane.
+imaginary
+5
+
+QO + a
+
+4
+
+- + ~)
+
+5-4 3 2 1+ 0
+
+45 real
+
+2
+
+a
+
+|
+
+U~
+
+For 3 + 4i, the point is at (3,4). This makes sense because the complex number has a value of 3 for the real
+number, which is on the x-axis, and a value of 4 for the imaginary number, which is on the y-axis. For the
+
+same reasoning, 1 — 3i is at (1, —-3) and —1 + 2i is at (—1, 2).
+Example 4: When graphed in the complex plane, the sum of complex numbers —2 + 4i and —3 — 2i
+
+appears in which quadrant?
+A.
+
+I
+
+B. U
+
+Cc.
+
+Ul
+
+D. IV
+
+Solution: First, we need to add the complex numbers together.
+
+(—2+ 4i) + (-3 -— 21)
+
+= -5+2i
+
+The complex number —5 + 2i will be at point (—5, 2) in the complex plane, which is in quadrant II. The
+answer is B.
+
+Absolute Value of a Complex Number
+The absolute value of a complex number is equal to its distance from the origin in the complex plane.
+
+la
++ bi| = Va? + b?
+As an example, for the complex number 3 + 41, we get
+
+13+ 4i] =/32 +42 =V94+
+16 =V25=5
+This equation is just the Pythagorean theorem in disguise. 3 + 4i is at (3, 4) in the complex plane. To find the
+distance from the origin to the point (3, 4), we can draw a triangle. The triangle will have a base of 3 anda
+
+height of 4 and 32 + 4? = 52, which tells the distance from the origin is 5.
+
+- 24]
+-
+
+math
+
+Example 5: |7 — 4i| =?
+
+A.3
+
+B. vV33. OC. 3V5_—Osé@D’~z”“St6)
+53
+
+Solution:
+
+|7 —4i| = v72 +42 =v65
+
+The answer is D.
+
+Distance Between Complex Numbers
+To solve for the distance between two complex numbers, we find the distance between the numbers on the
+complex plane. In other words, we just use the distance formula!
+
+For any two complex number a + biand c + di, distance = (a — c)? + (b— d)?
+Let’s try this with complex numbers 2 + 4i and —3 + i.
+
+Distance = J(2 — (-3))2 + (4-1)? = v52+4+3% = ¥25+9
+
+= 34
+
+We can also solve for the distance between complex number by graphing them in the complex plane. Once we
+have the points graphed, we can drawa triangle and solve for the distance.
+imaginary
+
+;
+
+a
+
+|
+
+AL
+|
+
+24 4i
+
+Aaa
+
+rd
+
+~~
+
+oS&aOf/w»bUImB
+
+WwW
+
+z=
+|
+
+Feal
+
+|
+
+From the diagram above, we know the base of the triangle is 5 and the height is 3, so we can use the
+Pythagorean theorem to find the hypotenuse, which is the distance between the two complex numbers.
+
+Distance = V52 +32 = ¥254+9
+
+= 34
+
+Example 6: What is the distance, in coordinate units, between 6 — 3i and 2 + 7i on the complex plane?
+
+A. 4
+
+B. 4V5
+
+Cc. 2/29
+
+D. 2V41
+
+Solution: Distance = (6 — 2)? + ((—3) — 7)? = /42+(—10)? = V¥16+100 = V116= 2V29
+The answer is C.
+
+- 242
+-
+
+Chapter 25: Complex Numbers
+
+Complex Numbers Practice: Answers on page 332.
+
+4(3 + 2i) — 0.5(-8 + 6i) =?
+
+Which of the following gives the correct
+
+answer when you subtract x from z?
+
+A.
+
+A.
+
+848i
+
+x=-34+2i
+
+B.
+
+8+5i
+
+z=5+4i
+
+C.
+
+16+ 5i
+
+D.
+
+12+ 8i
+
+—2+4+6i
+
+B.
+
+2+ 6i
+
+Which of the following complex numbers is
+
+C.
+
+8+2i
+
+equal to (5 + 4i) — (8i? — 8i)?
+
+D.
+
+8+6i
+
+What is the sum of the complex numbers
+8+ 2i and 3 + 3i?
+A.
+
+16
+
+B.
+
+16i
+
+C.
+
+11+5i
+
+D.
+
+134+ 3i
+
+—13—4t
+
+B.
+
+-—3-4i
+
+C.
+
+13-4
+
+D.
+
+13+12i
+
+What is the product of the complex numbers
+(3 + 4i) and (3 — 41) ?
+
+What is the sum of the complex numbers
+2+ 7iand6+
+5i?
+A.
+
+A.
+
+A.
+
+25
+
+B.
+
+7
+
+C.
+
+1
+
+D.
+
+9-16i
+
+8+ 12i
+
+B.
+
+20i
+
+C.
+
+9+11i
+
+D.
+
+124 35i
+
+10. What is the product of the complex numbers
+
+(4 + 5i) and (—3 + 3i) ?
+
+Which of the following complex numbers is
+
+equal to (3 + 6i) — (—5 + 3i) ?
+
+A.
+
+27+ 3i
+
+B.
+
+—27—3i
+
+C.
+
+2+11i
+
+D.
+
+-—27+4+11i
+
+A.
+
+—8+3i
+
+B.
+
+—2+3i
+
+C.
+
+-2+9i
+
+4
+—_ =?
+
+D.
+
+8+ 3i
+
+1-31
+
+11. In the complex numbers, where i? = —1,
+
+QGB>DO9 uaAIlN uPlUaIn
+|
+
+(-4 + 6i)
+
+— (1+ 31) =?
+
+I
+
+w&|N ~
+
+|
+
++
+
+A.
+
+-—5+9i
+
+B.
+
+5+3i
+
+C.
+
+—5+3i
+
+D.
+
+-—34+91
+
+w|
+
+12. |—6i
++ 2] =?
+
+What is the difference between complex
+
+numbers (6 + 5i) and (2i + 3) ?
+
+GaAWp>
+
+~~.
+
+GOWD>
+
+8+ 2i
+34+ 3i
+34+7i
+9+ 3i
+
+- 243 -
+
+oh
+
+4/2
+2V10
+
+math
+
+13. What is the product of the complex numbers
+
+For the questions 19-21, use the complex plane
+
+(6 + 3i) and (2 + i)?
+
+14.
+
+A.
+
+8+ 4i
+
+B.
+
+154+ 12i
+
+C.
+
+9+ 12i
+
+D.
+
+124+ 9i
+
+below.
+°B
+°M
+
+Oe?
+
+Fori = V—1, (5 —5i)(-5 + 5i) =?
+A.
+
+—25— 25i
+
+B.
+
+—25—50i
+
+C.
+
+25i
+
+D.
+
+50i
+
+De
+
+19. In the complex plane above, points A and C
+
+represent two complex numbers. Which point
+represents the sum of A and C?
+
+15. Which of the following is the complex
+
+conjugate of —4 + 9i ?
+
+GaAWP>
+
+—4— 9}
+
+B
+
+C.
+
+M
+
+D.
+
+D
+
+20. In the complex plane above, point M is at the
+
+V97
+
+point p + gi. If —2(p + qi) was graphed on
+the complex plane, it would be at which of the
+
+Si
+
+following points?
+
+V/—48 and V—75 ?
+iV123
+
+9iV3
+
+A.
+
+A
+
+B.
+
+B
+
+C.
+
+C
+
+D.
+
+D
+
+21. The product of two complex numbers is
+
+20iV3
+
+represented by point E in the complex plane
+
+60i
+
+above. If one complex number is —3 + 6i,
+which of the following could be the other
+
+complex number?
+
+. Ifi = V—1, what 1s the value of the expression
+
+12i* + 8i7 +12?
+A.
+
+32
+
+B.
+
+24
+
+C.
+
+16
+
+D.
+
+8
+
+A.
+
+6+ 21
+
+B.
+
+34+ 4i
+
+C.
+
+2i
+
+D.
+
+—4—A4i
+
+22. The product of a + bi and which of the
+
+. For all real numbers x and imaginary number
+
+following complex numbers results in a real
+
+i, which of the following expressions is
+
+number?
+
+equivalent to (x + 4i)(2x — 5i) ?
+
+GaAW>
+
+A
+
+4+ 9i
+
+16. What is the sum of complex numbers
+
+GaAW>
+
+A.
+B.
+
+GaAWp,>
+
+2x” — 13xi + 20
+2x? + 3xi — 20
+2x* + 13xi — 20
+2x* + 3xi + 20
+
+- 244
+-
+
+b+ai
+abi
+a— bi
+b—-ai
+
+Chapter 25: Complex Numbers
+
+27. In the complex numbers, where i? = —1,
+
+23. Given that a is a positive integer and that
+i* = —i, which of the following must be true
+
+about a?
+
+2-41
+
+(Note: i? = —1)
+
+A.
+
+Whena is divided by four the remainder
+
+B.
+
+Whena is divided by four the remainder
+
+A. =+i
+2
+
+is 0
+
+B. -2+i
+6
+6
+
+Cc, 2-2;
+2
+4
+
+is
+l
+
+Whena is divided by four the remainder
+
+D. 242i
+9
+9
+
+is
+2
+
+Whena is divided by four the remainder
+is
+3
+
+28. In the complex numbers, where i? = —1, what
+
+24. What is the distance, in coordinate units,
+
+complex number x is the solution to the
+
+between —4 + i and 1 + 2i in the complex
+
+equation x(3 — 31)
+
+plane?
+
+A. S45i
+6
+2
+
+GaAW>
+25. Given that i =
+
+B.
+
+-+3i
+4
+4
+
+C.
+
+445i
+2
+2
+
+D.
+
+1+
+
+¥—1, which of the following
+,
+
+445i
+
+29. Which of the following complex numbers
+
+complex numbers is equal to sa ?
+
+pGOW
+
++5=8?
+
+equals (4 + 3i)(a — 2i) ?
+
+hilo i
+
+A.
+
+4m — 61
+
+B.
+
+(4+7)-5i
+
+40+41i
+
+C.
+D.
+
+(47+ 6)+(-8+4+ 3m)i
+(47 -6)+ (-8+ 3m)i
+
+4
+
+5
+i
+
+1
+41
+
+26. The product of 2 complex numbers is 53. If
+
+30. In the complex numbers, where
+
+one of the complex numbers is 7 + 2i, what is
+
+i? = —-1,(2x+ 5i)? —5i+12x =?
+
+the other number?
+A.
+
+46
+— 2i
+
+B
+
+371 106 |
+9
+7
+
+A.
+B.
+C.
+D.
+
+9
+2
+
+C.
+
+53)
+53
+
+D
+
+7—2i
+
+- 245
+-
+
+(8x3 —150x) + (60x? — 125)i
+(8x3 —138x) + (60x? — 130)i
+(4x3 + 162x) + (—60x? + 130)
+(4x3 — 25x) + 20xi
+
+math
+
+Chapter 26: Word Problems
+One of the challenges of the ACT Math Test is dealing with everyone’s least favorite questions: word
+problems. Word problems are often written in a way that makes it confusing to figure out exactly what is
+happening in the question. Word problems include a wide variety of math topics that we have already learned
+
+in this book, so we will not cover any specific type of word problem in this chapter. Instead, we will focus on
+the tips that can help you solve all types of word problems more effectively and efficiently.
+
+Tip #1 — Do Not Be Intimidated
+Word problems look scary. Many students see a big paragraph and say, “no way, I can’t solve that.” They feel
+intimidated before even trying to solve the question. Do not let this be you! Word problems at their core are
+no more difficult than any other ACT Math questions. When you see a big paragraph on test day, take a deep
+
+breath and solve it one step at a time.
+
+Tip #2 — Turn Words into Equations
+When approaching a word problem, take it one sentence at a time. As you read through the question, identify
+each piece of key information and write it down in an equation. If you can convert the question from a word
+problem into an equation or equation(s), the question will be much easier to solve.
+One of the most common types of word problems is a system of equations question, which we covered in
+Chapter 15 on pp. 129-130. For these questions, you will need to turn the word problem into two equations.
+
+Once you have converted the word problem into two equations, you will be able to solve the question with the
+methods we learned in Chapter 15.
+
+Tip #3 — Backsolve with the Answer Choices
+For some word problems, writing your own equation(s) is very difficult and may not be the fastest or easiest
+way to solve. If you cannot write out the equation(s) or are not sure if the equation(s) that you wrote are
+correct, try backsolving. Sometimes it is faster and easier to take the answer choices, go through the steps of
+the word problem, and see if you have the correct answer. Even if you cannot tell which answer is correct,
+backsolving can often help you eliminate some answer choices and make a better guess. If you need to review
+how to backsolve, go back to Chapter 1.
+
+Tip #4 — Guess and Move on (If You Have To)
+If you get to a word problem, try using the tips above, and still have no idea how to solve it, circle the
+question, bubble in your best guess, and move on! It is easy to waste a lot of time reading and rereading long,
+confusing word problems. Students who do this often end up running out of time. Save those precious
+minutes to answer more questions that you know how to solve. We know it sounds backwards but giving up
+quickly on a word problem that you have no idea how to solve may help you actually get a better score.
+If you complete the rest of the questions in the section and have time remaining, you can always come back to
+any questions that you guessed on. Sometimes, when re-reading the question, you will realize how to solve it.
+It is easier to think more clearly when you are no longer worried about finishing the rest of the questions on the
+test.
+
+- 246
+-
+
+Chapter 26: Word Problems
+
+Word Problems Practice: Answers on page 332.
+1.
+
+(oo
+
+The total price of a pie bought by Alex and her
+
+To build a model rocket, Sebastian spent 3
+
+friends was $23.80. The pie was cut into 7
+
+hours on each of 6 workdays. On the 7th day,
+
+equal slices, and Alex ate 2 slices. Alex paid
+
+he spent = of the time he had worked each of
+
+the portion of the price that was equal to the
+
+the previous workdays to complete the project.
+
+portion of the pie she ate. What portion of the
+
+How many total hours did it take Sebastian to
+
+total price did Alex pay?
+
+complete the model rocket?
+
+A.
+
+$2.64

@@ -1,0 +1,1602 @@
+Chapter 17: Trigonometry
+Basic Trigonometry
+For the easier trigonometry questions on the ACT, just remember SOH-CAH-TOA! The majority of
+trigonometry questions that appear in the first half of the ACT Math test you on the basic trigonometry
+functions.
+
+If you have not heard of SOH-CAH-TOA, it is an acronym to memorize the sine, cosine, and tangent
+functions. SOH stands for Sine equals Opposite over Hypotenuse, CAH stands for Cosine equals Adjacent
+over Hypotenuse, and TOA stands for Tangent equals Opposite over Adjacent.
+.
+
+opposite
+
+9
+
+hypotenuse
+
+15
+
+adjacent
+
+12
+
+hypotenuse
+
+15
+
+opposite
+
+tan(x) = “PPP
+adjacent
+
+15
+
+9
+
+cos(x) = ————__ = =
+9
+
+x?
+
+=
+12
+
+12
+
+For easy trigonometry questions (usually ones that appear in the first 15 questions), you need to set up the
+basic trigonometry functions correctly.
+Example 1: What is the value of cos B in the triangle below?
+1
+
+A>
+
+1
+
+Bz
+
+v5
+
+C>
+
+2
+
+Dz
+
+B
+
+:
+
+5V5
+
+Solution: To find cos B, we need to find the side length adjacent to angle B and the hypotenuse. The side
+
+length adjacent to angle B is 5 and the hypotenuse is 5V5, so we set up the cosine equation and simplify.
+cosB=
+
+5
+
+2 =
+
+1
+
+=
+
+The answer is B. The ACT sometimes leaves answer choices with the square root in the denominator.
+For other similar questions, we may need to use the Pythagorean theorem to find the third side of a triangle and
+then find the sine, cosine, or tangent.
+Example 2: What is the value of tan A in the triangle below?
+
+A 4
+_
+
+B
+
+a
+
+C V33
+ao
+
+pd?
+5
+
+A
+
+/
+
+B
+
+4
+
+C
+
+Solution: To find tan A, we need to know the side lengths opposite angle A and adjacent to angle A. The side
+length opposite angle A is 4. The side length adjacent to angle A, side AC, is currently unknown. To solve for
+AC, we use the Pythagorean theorem.
+
+4? + AC? = 7?
+16 + AC? = 49
+AC? = 33
+
+- 145
+-
+
+math
+
+AC
+= V33
+Now, we can label all sides of triangle ABC and find tan A. The opposite side length is 4, and the adjacent
+
+side length is ¥33 so
+
+opposite
+
+4
+
+adjactent
+
+V¥33
+
+tan
+A = ———— = —
+The answer is B.
+
+Both examples we have done so far gave us a triangle. What if we see a basic trigonometry question and a
+no triangle given? We can draw our own right triangle! Remember that SOH-CAH-TOA only applies to
+right triangles.
+
+Example 3: For an angle with a measure of g in a right triangle, sing = = and tang = =, what is the
+value of cos q?
+6
+
+6
+
+12
+
+15
+
+Solution: We can drawa right triangle, label one of the acute angles as q, and then use the trigonometry
+functions to label the sides.
+
+Pa
+
+Since sing = =, we can first label the opposite side as 9 and the hypotenuse as 15. Since tang = = and the
+opposite side is already labelled as 9, we now also label the adjacent sides as 12. As a result, the triangle now
+looks like this:
+15
+‘Oo
+
+Now, we can see that cos g = =. The answer is C.
+
+12
+
+Other Trigonometry Functions To Know
+In addition to the sine, cosine, and tangent, you need to know cosecant, secant, and cotangent. These
+trigonometry functions are the reciprocals (1.¢e. flip the fraction) of the sine, cosine, and tangent functions,
+respectively. Cosecant is the reciprocal of sine, secant is the reciprocal of cosine, and cotangent is the
+reciprocal of tangent.
+opposite
+
+9
+
+adjacent
+
+12
+
+hypotenuse
+
+15
+
+( ) = ——_
+hypotenuse = —
+15
+
+sin(x)
+
+( )
+
+cos(x) = ————_ = =
+opposite
+
+9
+
+adjacent
+
+12
+
+hypotenuse
+
+15
+
+hypotenuse
+
+15
+
+adjacent
+
+12
+
+opposite
+
+9
+
+csc(
+Xx) = ————_
+=
+
+sec(x) = ee = =
+
+tan(x) = —"' - —
+
+adjacent
+
+12
+
+opposite
+
+9
+
+cot(x) = “= =
+
+15
+
+9
+
+12
+
+x
+
+©
+
+Example 4: Ina right triangle, if tang = =, what is the value of sec q ?
+15
+
+—
+394
+
+13
+
+B. =
+394
+
+394
+
+C. —
+15
+
+394
+
+D. —
+13
+
+Solution: To start, let’s sketch a night triangle and label angle g. Since tang = =, we can label the opposite
+side as 15 and the adjacent side as 13.
+
+- 146
+-
+
+Chapter 17: Trigonometry
+
+13
+5
+
+15
+
+For the secant, we need to know the hypotenuse and adjacent side lengths. So, we need to use the Pythagorean
+theorem to solve for the hypotenuse.
+
+137 + 15% = c?
+394 = c?
+
+V394 =c
+Now that we know that they hypotenuse 1s equal to
+
+secq =
+
+¥394, we can solve for sec q.
+
+hypotenuse
+
+394
+
+adjacent
+
+13
+
+The answer is D. If you find it easier, you can also just find cos q, which is — and then flip the fraction to
+=r
+
+find sec q.
+
+Using Trigonometry to Find Side Lengths in Right Triangles
+The second very common type of easy trigonometry question asks us to use trigonometry to solve for an
+unknown side of a right triangle. To solve these questions correctly, we need to use SOH-CAH-TOA and then
+solve for the unknown side.
+Example 5: In the triangle below, which of the following expressions is equal to x?
+A.
+
+9sin 67°
+
+B.
+
+9cos 67°
+
+B
+
+x
+
+9
+
+S 9 on 67°
+2 9 = 67°
+
+C
+
+67°
+A
+
+Solution: The first step is to identify which trigonometric function involves the values we are given and x.
+We know angle A, the hypotenuse, and are solving for the opposite, so we use the sine function. We can set up
+the sine function and plug in the values we are given.
+
+sind = —2Ppeste_
+=, sin67° =~9
+hypotenuse
+Next, we solve for x by multiplying both sides by 9 and get
+x = 9sin67°
+
+The answer is A. If the question asks for the numerical value of x, we can plug 9 sin 67° into the calculator to
+find the actual length, which here is 8.28.
+When solving trigonometry functions in your calculator, make sure that you have your calculator in the
+correct mode. Calculators have 2 modes (degree mode and radian mode). If you are entering an angle
+measured in degrees, such as 9 sin 67°, you must use degree mode. If you are entering an angle measured in
+radians, you must use radian mode. If you are not familiar with radians, we will learn about them later in this
+chapter.
+
+- 147-
+
+math
+
+Another version of a question testing this concept gives us no angle but tells us the value of the sine, cosine, or
+tangent. With no angle, using trigonometry seems confusing at first, but, if we know how to set up
+trigonometric functions, we solve with the same SOH-CAH-TOA knowledge we used in Example 4.
+
+Example 6: In triangle ABC shown below, cos B = - and the length of AB is 6. What is the length of
+AC?
+
+B
+A.
+
+2
+
+B.
+
+4
+
+C
+
+6
+
+C.
+
+3v5
+
+D.
+
+9
+
+A
+
+Solution: In this question, we are not given any angles, but we are told what the cos B = = We also know that
+cosB = = so we can set these equal and solve for BC:
+6
+
+2
+
+BC
+3
+2BC = 18
+BC=9
+
+Now that we know BC = 9, we can use the Pythagorean theorem to solve for AC.
+
+AC? +67 = 97
+
+AC? = 45
+
+AC = V45 = 3V5
+The answer is C.
+
+Inverse Trigonometric Functions
+Inverse trigonometric functions are used to find an unknown angle in a right triangle when the side
+
+lengths are known. Inverse trigonometric functions are just like SOH-CAH-TOA except that the angle is
+switched with the side lengths.
+opposite
+sin“?
+(ee
+) =x
+hypotenuse
+
+39
+
+a
+9
+sin71
+(=)
+= x°
+15
+
+cos _ 1
+
+3
+
+{12
+cos _1 (2)
+= x°
+15
+
+>
+
+tan“? (=)
+= x°
+12
+
+_
+
+adjacent
+
+eon) = x
+
+hypotenuse
+
+opposite
+
+tan“ (ee
+) = x°
+adjacent
+
+_
+
+15
+
+9
+
+9
+
+12
+
+*
+
+°
+
+In the example triangle, we can use inverse trigonometry to solve for the unknown angle x°. Using a
+calculator and any of the inverse trigonometric functions, we can find that angle x = 36.9°. Most questions on
+the ACT do not ask you to solve for the actual angle and instead give you answer choices with the inverse
+trigonometric functions, so these questions are usually easy to spot on test day.
+
+- 148
+-
+
+Chapter 17: Trigonometry
+
+Example 7: Which of the following expressions gives the degree measure of ZA in the triangle below?
+
+30 7 C
+
+B
+
+A. tan7+ (=)
+55
+B. tan? (=)
+
+55
+
+_4
+(=)
+sin7?
+C. sin
+(35
+
+30
+
+D. sin (2)
+55
+4
+
+30
+
+A
+
+Solution: To start, let’s figure out which function (sine, cosine, or tangent) we should use. 30 is the opposite
+side and 55 is the hypotenuse, so we need to use the inverse sine functions. Sine is opposite over hypotenuse,
+
+so the correct expression is sinTM+ (=). The answer is D.
+.
+
+.
+
+_
+
+oe
+
+30
+
+°
+
+Trigonometric Identity To Know
+You may not so fondly remember trigonometric identities from math class. Or, if you have never heard of that
+term, you will likely dislike them when you learn them in class. The good news is that for the ACT you only
+
+need to know this simple trigonometric identity:
+
+sin*0 + cos*@ = 1
+This identity is a rule for all values of 6, which is a term that just represents an angle. You need to memorize
+
+this equation for test day. If you ever see a sin*6 or cos7@ term in a question, you are going to need to use this
+identity.
+
+Example 8: If 3sin?6 + 3cos*6 = a, what is the value of a?
+A.
+
+WIR
+
+B1
+
+C3
+
+D6
+
+Solution: To solve, we need to use the trigonometric identity sin?6 + cos*6 = 1. If we factor 3 out from the
+left side, we get
+
+3(sin?6 + cos?0) =a
+
+Since sin?6 + cos*6 = 1, we can plug in 1 for sin*®@ + cos?6 and solve for a.
+3(1) =a
+3=a
+The answer is C.
+
+As you can see in this example, we only need to use the identity to solve. When you see a sin?6 or cos*6 term
+in a question, do not think of SOH-CAH-TOA. Instead, find how you can use the identity to solve as we did in
+Example 7.
+
+Cheat Method — Substitution: We can also solve this question by picking a value and using a calculator. We
+
+can pick any value for 6, plug it into equation 3sin*6 + 3cos?6, and see what you get for a. As long as you
+enter the equation into your calculator correctly, you will always get 3. Go ahead and try it! If you need to
+review Substitution, go to Chapter 2.
+
+- 149
+-
+
+math
+
+Graphing Cosine and Sine Functions
+Cosine and sine are periodic functions, meaning that the functions repeat over and over again. To start, you
+need to know the basics of what a sine and cosine function look like when graphed. If you have never learned
+sine and cosine functions, memorize the basics about each function listed below. This will help you solve
+most questions on this topic on test day.
+To start, let’s learn what the simplest form of cosine and sine functions look like and learn some general
+characteristics.
+
+f(x) = cosx
+Basics To Know
+
+e
+
+Cosine functions start at its maximum when x = 0.
+
+Here, the function starts at the point (0, 1).
+e
+
+As the function moves to the right, the function
+decreases to its minimum value and then returns to
+
+On
+
+-31W2
+
+nr
+
+a2
+
+0
+
+TT
+
+a
+
+3h/2.
+
+ou
+
+its maximum value. Here, the minimum is at (7, —1)
+and the maximum value is at (27, 1).
+e
+
+Cosine functions repeat infinitely in both directions.
+
+The cosine function continues to go between its
+minimum and maximum in both directions over and over
+
+again.
+
+f(x) =sinx
+4
+
+Basics To Know
+
+e
+
+Sine functions start at the midline. Here, the function
+
+starts at the point (0, 0).
+e
+-27 8 -371/2
+
+T
+
+-71/2
+
+T/2
+
+T
+
+37/2
+
+As the function moves to the right, the function
+increases to its maximum value, returns to 0,
+
+2
+
+decreases to its minimum value, and then returns to
+
+0. Here, the maximum is at GC, 1) and the maximum
+
+value is at CS, —1).
+1
+
+e
+
+Sine functions repeat infinitely in both directions.
+
+Notice that the x-axis labels are not numbers — instead, the labels are in radians. If you have never learned
+radians, do not focus too much on this, as you only need to understand the basics for the ACT. Radians are
+just another way to measure an angle. The conversion is 7 radians = 180 degrees. Trigonometric functions
+are most commonly graphed with radians on the x-axis.
+*Note that the “basics to know” listed above only apply are for sine and cosine functions where only the
+amplitude and period (more on those shortly) are changed. Horizontal shifts can change the start and end
+points of the functions. The good news for anyone just learning how to graph sine and cosine for the first time
+in this book is that horizonal shifts are not commonly tested on the ACT.
+
+Now that we know the basics, let’s learn two more important characteristics of these functions: amplitude and
+period.
+
+- 150
+-
+
+Chapter 17: Trigonometry
+
+Amplitude
+The amplitude of function is the amount by which the function travels above or below the midline. You
+
+can think of the amplitude as the height of the function.
+
+The amplitude of a function is defined by |A|, where A is the leading coefficient in front of the sine
+or cosine func tion.
+
+f(x) = Acos x
+
+f(x) = Asinx
+
+To make this clearer, let’s look the graphs of 2 cosine and 2 sine functions.
+
+f(x) = cosx
+
+f(x) = 4cos x
+
+\\
+
+4
+
+-271
+
+-3TN2
+
+-T
+
+-271
+
+-3TN2
+
+-1T
+
+r/2
+
+|
+
+|
+
+|
+
+>
+Amplitude = 1
+
+Amplitude = 4
+
+f(x) = cos x is the same as f(x) = 1cos x, so for the graph on the left, A = 1. The graph goes up 1 unit from
+the midpoint to a maximum value of y = 1 and down 1 unit to the minimum value of y = —1. In the graph on
+the right, A = 4, so the graph goes up 4 units to a maximum value at y = 4 and down 4 units to a minimum
+value of y = —4.
+
+f(x) = sinx
+
+f(x) = 2sinx
+2
+
+4
+
+1
+
+-2m
+
+=-371/2
+
+T
+
+T
+
+31/2
+
+2
+
+-2m7 = -3T1/2
+
+-71/2
+
+T/2
+
+31/2
+
+-2
+
+Amplitude = 1
+
+Amplitude = 2
+
+f(x) = sin x is the same as f (x) = 1sin x, so for the graph on the left,
+
+A = 1. We see the graph going up 1
+
+unit from the midline to a maximum value of y = 1 and down 1 unit to a minimum value of y = —1. For the
+graph on the right,
+
+A = 2, so the graph goes up 2 units to a maximum value at y = 2 and down 2 units to a
+
+minimum value at y = —2.
+
+Now that you know the rules for amplitude and the basic shapes of sine and cosine functions, any amplitude
+question on the ACT should be easy!
+
+- 151
+-
+
+217
+
+math
+
+Example 9: For the graph shown below, what is the amplitude of the function?
+
+2wRenc |wn
+
+LkhI&bNo
+
+ou
+iS)
+
+Solution: The graph goes up and down 5 units from the midline, so the amplitude is 5. The answer is D. It is
+also important to note that amplitude can never be a negative number, so we know answer choices A and B are
+incorrect immediately.
+
+Period
+The period of a function is equal to the length of one complete cycle of the function. For the sine and
+cosine functions, the period is equal to the length of one full wave, which can be found by finding the distance
+between the peaks of the function.
+
+f(x) = cosx
+;
+
+-271
+
+-3TN2
+
+-T
+
+-W/2
+
+0
+
+f(x) = sinx
+Period
+
+Tr
+
+TT
+
+Period—
+
+3mr/2
+
+211
+
+-27
+
+-311/2
+
+T
+
+-11/2
+
+T/2
+
+T
+
+31/2
+
+4
+
+1
+
+Period = 27
+
+Period = 27
+
+As shown above, the period of a basic cosine and sine function 1s 277. So, what causes the period of a function
+to change?
+
+The period of a function is defined by =|, where B is the constant that x is multiplied by in the
+function.
+
+f(x) = Acos(Bx)
+
+f(x) = Asin(Bx)
+
+Let’s see how this works.
+
+For the cosine function f(x) = cos x, B = 1, so the period is equal to ea = 2m. For the sine function
+f(x) = sin x, B = 1, so the period is equal to =| = 2m These match the periods we see in the graphs above.
+
+- 152
+-
+
+Chapter 17: Trigonometry
+
+Now, what happens if we have f(x) = cos 2x. Well here B = 2, so the period is equal to ea =. Let’s look
+at the graph of this function.
+
+f(x) = cos 2x
+4@—Period
+—>
+
+-311/2
+
+-1T
+
+|
+
+-1/2
+
+0
+
+\J
+
+T
+
+\/
+
+-4
+
+~
+
+Period = 7
+
+Notice how the repeating units of the function now repeat faster. Changing the B-value in cosine and sine
+functions changes the period, which can either squeeze together the function or stretch it out.
+Example 10: Which of the following equations properly describes the function f(x) shown below?
+
+A. f(x) =3sin (=)
+B.
+
+|
+|
+
+f(x) = 6cos(4x)
+
+C. f(x) = 3cos (=)
+D.
+
+/0
+
+ro
+
+f(x) = 3cos(4x)
+
+Solution: To start, we can see that this is a cosine function because the function is at a maximum value when
+x = 0 (and there is no horizontal shift... more on this in the next section), so we know that A is incorrect. We
+
+can also see that the amplitude is 3, so we can eliminate B.
+To determine if the correct answer is C or D, we need to find the period. Looking at the graph, we see that the
+period is 477. Remember, the easiest way to find the period from a graph is to look for the distance between
+the peaks of the function. In the graph, we see peaks of the function at x = 0 and x = 47, so the period is 47.
+To find which answer choice is correct, we can use the B-values from the answer choices to see which one
+gives us the correct period of 47:
+
+For f@) =3 cos(4x), B=4 , 90
+
+For fx) = 3cos (=). B= - , SO
+on
+
+Period
+
+Period = |
+= 47
+(1/2)
+
+eriod
+
+=
+
+21
+
+To
+
+|—~|
+
+= =
+
+| 4)4 | 2
+
+Answer choice C gives a period of 47. Answer choice D gives a period of > The answer is C.
+
+- 153
+-
+
+math
+
+Vertical and Horizontal Shifts
+Trigonometric functions follow the same vertical and horizontal shifting rules that we use for all other types of
+
+functions (you can learn more about these in Chapter 33). We will cover the basics for cosine and sine
+functions in this chapter. Advanced sine and cosine graphing questions can include vertical or horizonal shifts.
+
+Vertical Shifts
+A constant added or subtracted to a sine or cosine function causes a vertical shift. Using the equations
+below, the D-value shows the vertical shift of a function.
+The vertical shift of a function occurs when a constant, D, is added to or subtracted from the function.
+
+f(x) = Asin(Bx) + D
+
+f(x) = Acos(Bx) + D
+To see how this works, consider the two functions below.
+
+f(x) =cosx
+
+57
+
+f(x) =cosx+3
+
+57 1/2
+
+41
+
+r
+
+12
+
+41
+
+Vertical Shift Up 3 Units
+
+Notice how the cosine function is shifted 3 units up on the graph on the night. A positive value of D, such as
+3 in the example above, shifts the function up. A negative value of D shifts the function down.
+
+Example 11: When f(x) = 2 sin(x) + C is graphed, the function has no x-intercepts. If C is a positive
+constant, which of the following statements about C must be true?
+A.
+
+C=2
+
+B.
+
+C<2
+
+C.
+
+C>2
+
+D.
+
+C22
+
+Solution: The best way to solve this question is to draw it out. If you need help drawing it out, you can
+reference the graph of f(x) = 2sin(x) on page 151. The amplitude of f(x) is 2, so the minimum value of the
+function isa y = —2.
+
+To have no x-intercepts, we must shift the function up by more than 2 units, so the answer is C. If we shift
+
+f(x) up exactly 2 units, the minimum points will be on the x-axis, so there will still be x-intercepts. If we
+shift f(x) up by less than 2 units, there will be even more multiple x-intercepts.
+This is a more advanced question that would appear at the end of the ACT, so do not worry too much if this
+seems challenging...it is supposed to!
+
+-154-
+
+Chapter 17: Trigonometry
+
+Horizontal Shifts
+A constant added to or subtracted from the x-value inside the parentheses causes a horizonal shift to the
+
+sine and cosine functions. Using the equations below, the C-value shows the horizontal shift of a function.
+The horizontal shift of a function occurs when a constant, C, is added or subtracted to the function.
+
+f(x) = Acos(Bx + C)
+
+f(x) = Asin(Bx + C)
+
+For horizontal shifting, you need to memorize the following rules:
+
+1. The horizontal shift is equal to , When B = 1 (most common on the ACT), the horizonal shift
+is equal to C.
+2.
+
+A positive value of C shifts the function to the left.
+
+3.
+
+A negative value of C shifts the function to the right.
+
+Now, we know that seems confusing, so let’s see how this works with the functions below.
+
+Solid Line: f(x) = sinx
+=
+
+/ \
+
+/
+
+What To Notice
+
+/ \
+
+\
+
+\
+
+>)
+
+Dashed Line: f(x) = sin (x — =)
+
+/
+\
+
+|
+
+/
+
+\
+\
+
+/
+
+\
+
+/
+
+\
+
+e Horizonal Shift of ; units to the right.
+
+\
+
+e
+
+Negative value of C, so the function
+
+e
+
+Horizontal shifts change the where the
+
+shifts to the right.
+
+function is at x = 0. Normally, the sine
+
+‘
+
+function passes through the origin.
+However, if the function shifts
+
+/
+
+\ /
+
+/
+
+\
+
+\
+
+/
+
+horizontally, it may no longer pass
+
+/
+
+through the origin (as seen with the
+
+\
+
+dashed line here)
+
+Horizontal shifts are the least common type of transformation with sine and cosine functions on the ACT.
+
+Summary of Transformation Rules for Sine and Cosine Functions
+All the transformation rules we have covered in this chapter are summarized below:
+
+y = Acos(Bx+C)+D
+e
+
+y = Asin(Bx+C)+D
+
+|A| is the amplitude of the function (half of the total height of the graph).
+
+e The period of the function for sine, cosine, secant, and cosecant is equal to |. For tangent
+
+and cotangent graphs, the period is equal to El.
+e
+
+C shifts the graph horizontally. A positive value of C shifts the graph left, and a negative value of
+
+C shifts the graph to the right. The magnitude of the shift is equal to <,
+e
+
+D shifts the graph vertically. A positive value of D shifts the graph up, and a negative value of D
+
+shifts the graph down. The magnitude of the shift is equal to D.
+
+- 155
+-
+
+math
+
+Graphing Tangent Functions
+Tangent functions are very rarely tested on the ACT, but they have appeared on the test before and will appear
+again. You should only study this if you feel confident on the other trigonometry topics or are aiming for
+a top ACT Math score.
+Tangent functions look quite different from the sine and cosine functions we just learned, but if you know
+
+what a tangent function generally looks like, you should be able to answer any tangent graphing questions
+correctly on test day.
+y =tanx
+
+4
+(os)
+
+No
+
+mle
+
+|
+
+|
+
+a,
+
+a,
+nif2
+
+¥
+
+Basics To Know
+
+|
+
+sl
+
+r
+
+/
+
+/
+
+/
+
+|
+
+|
+
+|
+
+[a4
+
+|
+
+e Tangent functions cross the origin.
+e
+
+Tangent functions do not have an amplitude.
+
+e
+
+Tangent functions have vertical asymptotes (shown
+
+ome
+
+as dotted lines in the graph) that occur regularly z
+units apart.
+e
+
+Tangent functions repeat infinitely in both directions.
+
+*Note that the “basics to know” listed above are for y = tan x. Horizontal and vertical shifts can change
+the characteristics of a tangent function.
+
+Period of Tangent Functions
+
+The period of a tangent function is defined by EI, where B is the constant that x is multiplied by in the
+function.
+
+f(x) = tan(Bx)
+Using the graph above, notice that the period is equal to 7. The easiest way to find the period of a tangent
+function is to find the distance between the vertical asymptotes.
+
+Transformations of Tangent Functions
+Tangent functions follow the same rules as sine and cosine functions for vertical and horizontal shifting
+
+that we summarized on the previous page.
+That covers pretty much everything you need to know for tangent graphs on the ACT! If you know the basics
+of what a tangent graph looks like, how to find the period of a tangent function, and the rules for vertical and
+horizontal shifting, you should be able to solve a tangent graphing question if it appears on your ACT.
+
+- 156
+-
+
+Chapter 17: Trigonometry
+
+Example 12: Which of the following equations properly describes the function shown below?
+A.
+
+y=tan2x—-1
+
+GUO
+
+y=tan4x—-1
+
+y=tanx—-2
+
+y=tan>-1
+
+ins
+
+(
+
+I
+
+if"
+
+Tf
+
+7
+
+I
+
+Solution: To solve, we need to find (1) the vertical shift and (2) the period.
+The vertical shift is the easier part, so we will start with that. A tangent function normally intersects the origin,
+
+but we see the tangent function passing through the point (0,—1). Therefore, we know the function is shifted
+down 1 unit, so we must see —1 as the D-value. We can eliminate C because the vertical shift is incorrect.
+To find the period of a tangent function, we find the distance between two vertical asymptotes. We see two
+
+vertical asymptotes at x = —7 and x = 7 so we know the period of the function is >
+Now that we know the period, we need to use the B-values in the answer choices to find which one has a
+
+period of > Remember, we use Hl to find the period for tangent functions, not |
+For y = tan2x —1,B =2 so
+
+Period
+
+= um
+
+For y = tan4x —1,B =4s0
+
+= tT)
+
+Period
+
+7
+
+For y = tan=x —1,B ==so
+
+7 1
+
+2
+
+The answer is A.
+
+Questions like this have only appeared at the end of ACTs as part of the hard questions from 45-60 and are not
+common. If you are preparing for test day in a more of a rush, graphing tangents is not an important topic to
+
+prioritize.
+
+For students who are aiming for top scores, make sure you understand how to solve a question like this, as it is
+not too technically hard if you understand the basics.
+
+- 157
+-
+
+math
+
+Advanced Trigonometry
+The ACT LOVES to test you on two advanced trigonometry rules: Law of Sines and Law of Cosines. Many
+of you will have never learned these before, so we will teach you everything you need to know in this chapter.
+These two topics are very common on the ACT, so you need to memorize both the law of sines and law
+of cosines equations for test day.
+
+Law of Sines
+The Law of Sines rules written below is true for any type of triangle. It is important to note that Law of
+Sines can be used for non-right triangles.
+
+sin(A) sin(B) _ sin (C)
+
+a
+
+ob
+
+¢
+a
+
+The Law of Sines is a property for any triangle. For Law of Sines (and Law of Cosines), we no longer use
+
+SOH-CAH-TOA. So, for the sines in the equation above, do not think opposite over hypotenuse. Instead,
+remember that an expression such as sin(20°) has a numerical value, so we treat it as a number.
+Law of Sines can also be written as:
+
+a
+
+b
+
+c
+
+sin(A) sin(B) sin(C)
+This equation is the same as the one above — everything is just flipped. You can memorize and use either
+equation. Both are equally effective. You need to memorize the equation because the ACT does not always
+give it to you on the test.
+We use the Law of Sines to solve for an unknown side or angle in a triangle.
+Example 13: Which of the following correctly solve for the value of x in the triangle below?
+
+A.
+B
+
+C.
+D
+
+850sin(28°)
+sin (110°)
+
+7.90
+
+110°
+
+850sin (28°)
+
+x
+
+850
+
+tan (110°)
+
+850
+
+850sin (28°)
+sin (110°)
+
+Solution: When solving Law of Sines questions, we want to look for pairs of angles and opposite side lengths.
+Here, we have two pairs: 110° and 850 and 28° and x. To solve, we set up the Law of Sines equation.
+sin(110°)
+
+—sin(28°)
+
+850.
+
+x
+
+Now, we solve for x. To do so, we first cross-multiply and then divide by sin(110°).
+
+x sin(110°) = 850 sin(28°)
+_ 850 sin(28°)
+
+~~
+
+sin(110°)
+
+The answer is D.
+
+- 158
+-
+
+Chapter 17: Trigonometry
+
+*Note: For Law of Sines questions on the ACT, the answer choices usually give away that you need to
+use Law of Sines. If you ever see answer choices like the ones in Example 12, you are looking at a Law of
+Sines question. Most questions do not ask you to solve for a numerical value. Usually, you are asked to find
+which expression in the answer choices correctly solves for the unknown as we did in the example above.
+That first example was a simpler example, as we were asked to solve for a side length. What if we were asked
+to solve for an angle instead?
+Example 14: In the triangle shown below, which of the following expressions correctly solves for k ?
+A.
+
+sin72 ( 125 sin(86°) )
+
+101
+
+92
+
+92 sin(86°)
+B. sinTM+ aa )
+C.
+
+ke
+
+86
+
+sin-1(92 sin(86°) — 125)
+
+°
+
+99
+
+D. sin“? (=)
+
+125
+
+92
+
+Solution: We have two pairs of sides and angles to use in the Law of Sines equation: k° and 92 and 86° and
+125. To solve, we start by setting up the Law of Sines equation.
+sin(k°) _ sin(86°)
+92
+
+125
+
+We want to solve for k, so first we need to multiply both sides by 92.
+oa(k°) = 92sin(86°)
+sin(k°) =
+125
+Ok, now for the fun (hard) part! We know what sin(k°) is equal to, so to solve for k we need to use the
+inverse sine function. If you need to review inverse functions, we covered them on page 148.
+
+92 sin(86°)
+k = sin (a
+onl
+
+The answer is B. Now if you are thinking, woah, that was hard! Yes, it absolutely was. Questions like this
+are often some that students find most difficult on the ACT. A question like Example 13 would be one that is
+meant to challenge the best math students. If you have never done any of this advanced trigonometry before
+and find this extremely difficult, you can always skip these questions on test day and save them for last.
+
+- 159
+-
+
+math
+
+Law of Cosines
+As with the Law of Sines rules we just learned, the Law of Cosines is a property of any triangle. Law of
+Cosines is used to find a missing side or angle in a non-right triangle. The Law of Cosines equation is
+show below:
+
+a* = b* + c* — 2be cos(A)
+
+a
+
+c
+A
+
+b
+
+We use Law of Cosines when we do not have two pairs of angles and opposite side lengths. It is important to
+notice that the a-value in the equation is the side length opposite the angle A. The other two side lengths, b
+and c, are interchangeable since they do the same thing in the equation.
+On the ACT, you are not always given the Law of Cosines, so you need to memorize the equation. The
+ACT sometimes includes the equation in a note below the question, but it is not always provided.
+You need to know how to set up the Law of Cosines correctly. Depending on the difficult of the question, you
+may need to perform additional algebra to solve for the unknown value, as we did in the Law of Sines
+examples.
+Example 15: Three dancers, Alex, Bialy, and Charlie, are standing on stage at the points shown by the
+
+comers of the triangle below. Alex is standing 35 feet from Bialy, 31 feet from Charlie, and the angle
+formed where Alex is standing has a measure of 28°. Which of the following equations solves for the
+distance, in feet, between Bialy and Charlie?
+A.
+
+B.
+
+Bialy
+
+31tan28°
+35
+
+——+35
+
+cos 28°
+
+C. 352 + 312 — 2(35)(31) cos 28°
+
+D |—
+
+Alex
+
+ssh
+
+2(35)(31)cos (28°)
+
+in
+
+31
+
+Charlie
+
+Solution: For this question, we must use Law of Cosines. The triangle is not a right triangle, so we cannot
+use normal SOH-CAH-TOA. We are not provided two pairs of angles and opposite side lengths, so we cannot
+use Law of Sines.
+The side length we are solving for is opposite the angle that we are given, so the length between Bialy and
+Charlie is the a-value. 35 and 31 are b and c. Plugging these values into the Law of Cosines equation, we get:
+
+a* = 357 + 31? — 2(35)(31) cos 28°
+To solve for a, we take the square root of both sides.
+
+a = 352 + 312 — 2(35)(31) cos 28°
+The answer is C.
+
+*Note: For Law of Cosines questions on the ACT, the answer choices usually give away that you need to
+use Law of Cosines. If you see any complicated looking answer choices with cosines, like C and D in
+Example 14, you are looking at a Law of Cosines question.
+
+- 160
+-
+
+Chapter 17: Trigonometry
+
+Unit Circle
+Remember the unit circle? The one your math teacher made you memorize all of those points for? Well, it’s
+back. However, the unit circle is NOT a commonly tested topic on the ACT (and the least commonly
+tested trigonometry topic). You should only study this if you feel confident on the other trigonometry
+topics or are aiming for a top ACT Math score.
+
+You do not need to memorize all the points but should know the basics of the unit circle for the ACT. For
+students aiming for top math scores, we recommend memorizing the entire unit circle.
+A complete unit circle is shown below.
+
+(0, 1)
+
+7
+
+Angles on the unit circle can be expressed in degrees or radians. Just as we can describe the temperature in
+Fahrenheit or Celsius, we can describe an angle in degree or radians. If you have not worked with radians
+before, all you need to know is that 7 radians = 180 degrees. It is important to memorize this conversion for
+test day. We will cover radians vs. degrees at the end of this chapter in more depth.
+There are a few important principles to know with the unit circle.
+1.
+
+The cosine of any angle on the unit circle is equal to the x-coordinate of the corresponding point.
+
+For example, cos(60°) = 2.
+
+The sine of any angle on the unit circle is equal to the y-coordinate of the corresponding point.
+
+For example, sin(60°) = 4
+3.
+
+The tangent of any angle on the unit circle is equal to
+
+y—coordinate
+x—coordinate

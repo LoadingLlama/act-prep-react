@@ -1,0 +1,277 @@
+<!-- Topic 7.3: Matrices -->
+<!-- Restructured using Golden Template v5.2 -->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Matrices are rectangular arrays of numbers used to organize data. The ACT tests <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">matrix dimensions</strong>, basic operations (addition, subtraction, scalar multiplication), determinants, and matrix multiplication. Understanding dimensions is critical for success.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. Matrix Basics and Dimensions
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">What is a matrix:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Rectangular array of numbers arranged in rows and columns</li>
+      <li style="margin: 0.2rem 0;">Numbers inside are called elements or entries</li>
+      <li style="margin: 0.2rem 0;">Written with brackets: [elements]</li>
+      <li style="margin: 0.2rem 0;">Used to organize data compactly</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Matrix dimensions</strong> (rows × columns):
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Always written as (rows × columns)</li>
+      <li style="margin: 0.2rem 0;">Read horizontally = rows (left to right)</li>
+      <li style="margin: 0.2rem 0;">Read vertically = columns (top to bottom)</li>
+      <li style="margin: 0.2rem 0;">Example: [2  3  4] is a (1 × 3) matrix (1 row, 3 columns)</li>
+      <li style="margin: 0.2rem 0;">Example: [[2], [5], [7]] is a (3 × 1) matrix (3 rows, 1 column)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Common matrix sizes:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">(2 × 2) matrix: 2 rows, 2 columns (4 total elements)</li>
+      <li style="margin: 0.2rem 0;">(3 × 2) matrix: 3 rows, 2 columns (6 total elements)</li>
+      <li style="margin: 0.2rem 0;">(1 × 4) matrix: 1 row, 4 columns (row matrix)</li>
+      <li style="margin: 0.2rem 0;">(4 × 1) matrix: 4 rows, 1 column (column matrix)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Square matrices:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Number of rows = number of columns</li>
+      <li style="margin: 0.2rem 0;">Examples: (2 × 2), (3 × 3), (4 × 4)</li>
+      <li style="margin: 0.2rem 0;">Only square matrices have determinants</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Matrix Addition and Subtraction
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Requirements for addition/subtraction:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Matrices MUST have the SAME dimensions</li>
+      <li style="margin: 0.2rem 0;">Cannot add (2 × 3) matrix to (3 × 2) matrix</li>
+      <li style="margin: 0.2rem 0;">If dimensions don't match, operation is undefined</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Process: Add or subtract corresponding elements
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Add/subtract element in position (1,1) with element in position (1,1)</li>
+      <li style="margin: 0.2rem 0;">Add/subtract element in position (1,2) with element in position (1,2)</li>
+      <li style="margin: 0.2rem 0;">Continue for all positions</li>
+      <li style="margin: 0.2rem 0;">Result has same dimensions as originals</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: Addition
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">[[1, 2], [3, 4]] + [[5, 6], [7, 8]]</li>
+      <li style="margin: 0.2rem 0;">= [[1+5, 2+6], [3+7, 4+8]]</li>
+      <li style="margin: 0.2rem 0;">= [[6, 8], [10, 12]]</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: Subtraction
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">[[10, 8], [6, 4]] - [[2, 3], [1, 2]]</li>
+      <li style="margin: 0.2rem 0;">= [[10-2, 8-3], [6-1, 4-2]]</li>
+      <li style="margin: 0.2rem 0;">= [[8, 5], [5, 2]]</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Scalar Multiplication
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">What is <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">scalar multiplication</strong>:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Multiplying entire matrix by a single number (the scalar)</li>
+      <li style="margin: 0.2rem 0;">Multiply EVERY element in the matrix by that number</li>
+      <li style="margin: 0.2rem 0;">Result has same dimensions as original</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: 3 × [[2, 4], [6, 8]]
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Multiply each element by 3:</li>
+      <li style="margin: 0.2rem 0;">= [[3×2, 3×4], [3×6, 3×8]]</li>
+      <li style="margin: 0.2rem 0;">= [[6, 12], [18, 24]]</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: -2 × [[1, -3], [5, 0]]
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">= [[-2×1, -2×(-3)], [-2×5, -2×0]]</li>
+      <li style="margin: 0.2rem 0;">= [[-2, 6], [-10, 0]]</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Common on ACT:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Often combined with addition/subtraction</li>
+      <li style="margin: 0.2rem 0;">Example: 2A + 3B (multiply A by 2, B by 3, then add)</li>
+      <li style="margin: 0.2rem 0;">Do scalar multiplication first, then add/subtract</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Determinants of 2×2 Matrices
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">What is a <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">determinant</strong>:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Single number calculated from a square matrix</li>
+      <li style="margin: 0.2rem 0;">Only exists for square matrices (2×2, 3×3, etc.)</li>
+      <li style="margin: 0.2rem 0;">Written as det(A) or |A|</li>
+      <li style="margin: 0.2rem 0;">ACT mostly tests 2×2 determinants</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Formula for 2×2 determinant:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Matrix: [[a, b], [c, d]]</li>
+      <li style="margin: 0.2rem 0;">Determinant = ad - bc</li>
+      <li style="margin: 0.2rem 0;">Multiply diagonally (↘), then subtract other diagonal (↙)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: Find det([[3, 5], [2, 4]])
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">a = 3, b = 5, c = 2, d = 4</li>
+      <li style="margin: 0.2rem 0;">det = ad - bc</li>
+      <li style="margin: 0.2rem 0;">= (3)(4) - (5)(2)</li>
+      <li style="margin: 0.2rem 0;">= 12 - 10</li>
+      <li style="margin: 0.2rem 0;">= 2</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example with variables: det([[-4, 6], [1, x]]) = 10, find x
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Use formula: ad - bc = 10</li>
+      <li style="margin: 0.2rem 0;">(-4)(x) - (6)(1) = 10</li>
+      <li style="margin: 0.2rem 0;">-4x - 6 = 10</li>
+      <li style="margin: 0.2rem 0;">-4x = 16</li>
+      <li style="margin: 0.2rem 0;">x = -4</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+5. Matrix Multiplication - Determining if Defined
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">CRITICAL concept: Matrix multiplication is different from addition!
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Matrices do NOT need same dimensions to multiply</li>
+      <li style="margin: 0.2rem 0;">Instead, follow the "middle numbers must match" rule</li>
+      <li style="margin: 0.2rem 0;">Order matters: AB ≠ BA (usually)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Step 1: Write dimensions of both matrices
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: Multiply (1 × 2) matrix by (2 × 3) matrix</li>
+      <li style="margin: 0.2rem 0;">Write: (1 × 2) × (2 × 3)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Step 2: Box the middle two numbers
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">(1 × [2) × (2] × 3)</li>
+      <li style="margin: 0.2rem 0;">Check if middle numbers match</li>
+      <li style="margin: 0.2rem 0;">If they match → multiplication is DEFINED</li>
+      <li style="margin: 0.2rem 0;">If they don't match → multiplication is UNDEFINED</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Step 3: If defined, find result dimensions
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Bring down first and last numbers (outside the box)</li>
+      <li style="margin: 0.2rem 0;">(1 × [2) × (2] × 3) → result is (1 × 3)</li>
+      <li style="margin: 0.2rem 0;">The result matrix will be (1 × 3)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Key rule to remember:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Number of COLUMNS in first matrix</li>
+      <li style="margin: 0.2rem 0;">must equal</li>
+      <li style="margin: 0.2rem 0;">Number of ROWS in second matrix</li>
+      <li style="margin: 0.2rem 0;">For multiplication to be defined</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Examples:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">(2 × [3) × (3] × 1) → DEFINED, result is (2 × 1)</li>
+      <li style="margin: 0.2rem 0;">(2 × [1) × (2] × 2) → UNDEFINED (1 ≠ 2)</li>
+      <li style="margin: 0.2rem 0;">(2 × [2) × (2] × 2) → DEFINED, result is (2 × 2)</li>
+      <li style="margin: 0.2rem 0;">(2 × [3) × (2] × 2) → UNDEFINED (3 ≠ 2)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+6. Matrix Multiplication - Finding Values
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Process: Work ACROSS rows in first matrix, DOWN columns in second
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Multiply corresponding elements</li>
+      <li style="margin: 0.2rem 0;">Add all products together</li>
+      <li style="margin: 0.2rem 0;">Result goes in corresponding position</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: [[2, -4], [-6, 1]] × [[3, 1], [-2, 9]]
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Step 1: Check if defined</li>
+      <li style="margin: 0.2rem 0;">(2 × 2) × (2 × 2) → defined, result is (2 × 2)</li>
+      <li style="margin: 0.2rem 0;">Step 2: Find top-left element</li>
+      <li style="margin: 0.2rem 0;">Use top row of first [2, -4] and left column of second [3, -2]</li>
+      <li style="margin: 0.2rem 0;">= (2)(3) + (-4)(-2) = 6 + 8 = 14</li>
+      <li style="margin: 0.2rem 0;">Step 3: Find top-right element</li>
+      <li style="margin: 0.2rem 0;">Use top row of first [2, -4] and right column of second [1, 9]</li>
+      <li style="margin: 0.2rem 0;">= (2)(1) + (-4)(9) = 2 - 36 = -34</li>
+      <li style="margin: 0.2rem 0;">Step 4: Find bottom-left element</li>
+      <li style="margin: 0.2rem 0;">Use bottom row of first [-6, 1] and left column of second [3, -2]</li>
+      <li style="margin: 0.2rem 0;">= (-6)(3) + (1)(-2) = -18 - 2 = -20</li>
+      <li style="margin: 0.2rem 0;">Step 5: Find bottom-right element</li>
+      <li style="margin: 0.2rem 0;">Use bottom row of first [-6, 1] and right column of second [1, 9]</li>
+      <li style="margin: 0.2rem 0;">= (-6)(1) + (1)(9) = -6 + 9 = 3</li>
+      <li style="margin: 0.2rem 0;">Result: [[14, -34], [-20, 3]]</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Test-taking tip:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Check answer choices after finding just ONE element!</li>
+      <li style="margin: 0.2rem 0;">Often only one answer choice has that value</li>
+      <li style="margin: 0.2rem 0;">Can save time by not calculating all elements</li>
+      <li style="margin: 0.2rem 0;">If multiple answers have same value, calculate another element</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example with different dimensions: (3 × 2) × (2 × 3)
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Result will be (3 × 3) - bigger than either original!</li>
+      <li style="margin: 0.2rem 0;">Process is exactly the same</li>
+      <li style="margin: 0.2rem 0;">Just more elements to calculate</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Dimensions are (rows × columns); for add/subtract, dimensions must match exactly; result has same dimensions
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Determinant (2×2): ad - bc; only for square matrices; often involves solving for variable
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Matrix multiplication: middle numbers must match for defined; result dimensions = outer numbers
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>To multiply: work across rows in first, down columns in second; multiply pairs, sum products; check answers early!
+  </li>
+</ul>
