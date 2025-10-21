@@ -1,0 +1,261 @@
+import { createClient } from '@supabase/supabase-js';
+import fs from 'fs';
+
+const supabase = createClient(
+  'https://rabavobdklnwvwsldbix.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJhYmF2b2Jka2xud3Z3c2xkYml4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1OTc2NTQ3OCwiZXhwIjoyMDc1MzQxNDc4fQ.81SeH703keXgF3IevQlRS7OYmn1J2GUVIkn3OJiviM4'
+);
+
+async function uploadAll() {
+  // Upload lesson content
+  const lessonContent = fs.readFileSync('science-2.7-inverse-trends.html', 'utf8');
+  const { error: lessonError } = await supabase
+    .from('lessons')
+    .update({
+      content: lessonContent,
+      content_json: null,
+      migrated_to_json: false
+    })
+    .eq('lesson_key', 'inverse-trends-multiple-axes');
+
+  if (lessonError) {
+    console.error('Lesson upload error:', lessonError);
+    process.exit(1);
+  }
+  console.log('✓ Science 2.7 Inverse Trends lesson uploaded');
+
+  // Get lesson ID
+  const { data: lesson } = await supabase
+    .from('lessons')
+    .select('id')
+    .eq('lesson_key', 'inverse-trends-multiple-axes')
+    .single();
+
+  // Delete old examples
+  await supabase
+    .from('lesson_examples')
+    .delete()
+    .eq('lesson_id', lesson.id);
+  console.log('✓ Deleted old examples');
+
+  // Upload examples with ULTRA-WIDE format (no background, full width)
+  const examples = [
+    {
+      lesson_id: lesson.id,
+      position: 1,
+      title: "Identifying Inverse Relationships",
+      problem_text: `<p style="margin-bottom: 1rem; font-size: 16px; line-height: 1.6;">Students investigated how altitude affects air pressure and temperature. They collected data at various elevations.</p>
+
+
+  <p style="font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;">Figure 1</p>
+  <p style="margin-bottom: 1rem; font-size: 15px;"><strong>Graph Description:</strong> The graph below shows air pressure (kPa) and temperature (°C) on the y-axes versus altitude (meters) on the x-axis.</p>
+  <table style="width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;">
+    <thead>
+      <tr style="background-color: #374151;">
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Altitude (m)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Air Pressure (kPa)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Temperature (°C)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">0</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">101.3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">25</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">500</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">95.5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">22</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">1000</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">89.9</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">18</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">1500</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">84.6</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">15</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">2000</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">79.5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">12</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">2500</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">74.7</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">9</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">3000</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">70.1</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">6</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+<p style="margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;">Based on Figure 1, as altitude increases, air pressure:</p>`,
+      choices: [
+        { letter: "A", text: "increases only" },
+        { letter: "B", text: "decreases only" },
+        { letter: "C", text: "increases then decreases" },
+        { letter: "D", text: "remains constant" }
+      ],
+      correct_answer: "B",
+      solution_steps: [],
+      answer_explanation: `This question tests your ability to identify an inverse (negative) relationship from data.
+
+**Step 1: Identify the two variables**
+- Independent variable (x-axis): Altitude (meters)
+- Dependent variable we're analyzing: Air Pressure (kPa)
+
+**Step 2: Look at the trend in the data**
+Examining the Air Pressure column as altitude increases:
+- At 0 m: 101.3 kPa
+- At 500 m: 95.5 kPa (decreased)
+- At 1000 m: 89.9 kPa (decreased)
+- At 1500 m: 84.6 kPa (decreased)
+- At 2000 m: 79.5 kPa (decreased)
+- At 2500 m: 74.7 kPa (decreased)
+- At 3000 m: 70.1 kPa (decreased)
+
+**Step 3: Identify the relationship**
+As altitude increases from 0 to 3000 m, air pressure consistently decreases from 101.3 to 70.1 kPa.
+
+**Step 4: Determine the pattern type**
+This is an inverse (negative) relationship: as one variable increases, the other decreases.
+
+**Step 5: Match to answer choices**
+Air pressure "decreases only" → Answer B
+
+**Why this is an inverse relationship:**
+- The two variables move in opposite directions
+- On a graph, this would appear as a downward-sloping line
+- This makes physical sense: higher altitude means less atmosphere above, thus lower pressure
+
+**The answer is B.**`,
+      diagram_svg: null,
+      is_worked_example: false
+    },
+    {
+      lesson_id: lesson.id,
+      position: 2,
+      title: "Reading Figures with Multiple Y-Axes",
+      problem_text: `<p style="margin-bottom: 1rem; font-size: 16px; line-height: 1.6;">Researchers studied how exercise duration affects both heart rate and oxygen consumption. They measured both variables during a 30-minute workout.</p>
+
+
+  <p style="font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;">Figure 1</p>
+  <p style="margin-bottom: 1rem; font-size: 15px;"><strong>Graph Description:</strong> The graph below shows heart rate (beats per minute, bpm) on the LEFT y-axis and oxygen consumption (liters per minute, L/min) on the RIGHT y-axis, both plotted against exercise time (minutes) on the x-axis.</p>
+  <table style="width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;">
+    <thead>
+      <tr style="background-color: #374151;">
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Exercise Time (min)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Heart Rate (bpm)<br/>[LEFT axis]</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Oxygen Consumption (L/min)<br/>[RIGHT axis]</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">0</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">70</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">0.3</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">95</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">0.8</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">120</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">1.5</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">15</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">145</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">2.4</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">20</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">160</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">3.2</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">25</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">165</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">3.5</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">30</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">168</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">3.6</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+<p style="margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;">According to Figure 1, at 15 minutes of exercise, what was the oxygen consumption?</p>`,
+      choices: [
+        { letter: "A", text: "1.5 L/min" },
+        { letter: "B", text: "2.4 L/min" },
+        { letter: "C", text: "145 L/min" },
+        { letter: "D", text: "160 L/min" }
+      ],
+      correct_answer: "B",
+      solution_steps: [],
+      answer_explanation: `This question tests your ability to read the correct y-axis on a figure with multiple axes.
+
+**Step 1: Identify what the question is asking**
+The question asks for "oxygen consumption" at 15 minutes.
+
+**Step 2: Determine which y-axis to use**
+Looking at the axis labels:
+- LEFT y-axis: Heart Rate (bpm)
+- RIGHT y-axis: Oxygen Consumption (L/min)
+
+Since we need oxygen consumption, we must use the RIGHT y-axis.
+
+**Step 3: Find the x-value**
+Locate 15 minutes on the x-axis (Exercise Time).
+
+**Step 4: Read the correct y-value**
+At x = 15 minutes, looking at the Oxygen Consumption column (RIGHT axis):
+- Oxygen Consumption = 2.4 L/min
+
+**Step 5: Match to answer choices**
+2.4 L/min → Answer B
+
+**Common mistake to avoid:**
+If you mistakenly read from the LEFT axis instead of the RIGHT axis, you would see 145 bpm at 15 minutes. This is the heart rate, NOT the oxygen consumption. Answer C (145 L/min) is a trap answer that catches students who use the wrong axis.
+
+**How to avoid this error:**
+1. Always match the variable name to the axis label
+2. Check the units: oxygen consumption is in L/min, not bpm
+3. The question asks for oxygen consumption → use the axis labeled "Oxygen Consumption (L/min)"
+
+**The answer is B.**`,
+      diagram_svg: null,
+      is_worked_example: false
+    }
+  ];
+
+  for (const example of examples) {
+    const { error } = await supabase
+      .from('lesson_examples')
+      .insert(example);
+
+    if (error) {
+      console.error(`Error:`, error);
+    } else {
+      console.log(`✓ Inserted: ${example.title}`);
+    }
+  }
+
+  console.log('\n✓ Science 2.7 Inverse Trends complete!');
+  console.log('\n🎉 UNIT 2 COMPLETE! All 7 lessons uploaded.');
+}
+
+uploadAll();

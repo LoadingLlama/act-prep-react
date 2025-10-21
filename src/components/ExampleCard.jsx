@@ -70,6 +70,33 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
     }
   }, [example?.is_worked_example, showSolution]);
 
+  // Extract question from problem_text (look for last <p> tag with question mark or colon)
+  const extractQuestionAndContent = (htmlText) => {
+    if (!htmlText) return { content: '', question: '' };
+
+    // Split by <p> tags and find the last one that looks like a question
+    const pTagRegex = /<p[^>]*>(.*?)<\/p>/gs;
+    const matches = [...htmlText.matchAll(pTagRegex)];
+
+    if (matches.length === 0) return { content: htmlText, question: '' };
+
+    // Find the last <p> tag that contains a question mark or ends with colon
+    for (let i = matches.length - 1; i >= 0; i--) {
+      const match = matches[i];
+      const text = match[1];
+      if (text.includes('?') || text.includes(':') && text.length < 200) {
+        // This is likely the question
+        const questionHtml = match[0];
+        const content = htmlText.replace(questionHtml, '').trim();
+        return { content, question: text };
+      }
+    }
+
+    return { content: htmlText, question: '' };
+  };
+
+  const { content: problemContent, question: questionText } = extractQuestionAndContent(example?.problem_text);
+
   // If example data is missing, don't render anything
   if (!example || !example.title || !example.problem_text) {
     console.warn('⚠️ ExampleCard: Missing required example data, not rendering');
@@ -99,28 +126,61 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
         Example {position}: {example.title}
       </h4>
 
-      {/* Problem Statement - same font as answer choices for consistency */}
-      <p style={{
-        fontSize: '17px',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-        lineHeight: '1.6',
-        marginBottom: '1.25rem',
-        fontWeight: '400',
-        color: '#1f2937'
-      }}
-      dangerouslySetInnerHTML={{ __html: example.problem_text }}
-      >
-      </p>
+      {/* Two-column layout: Problem/Table on left, Answer Choices on right */}
+      <div style={{
+        display: 'flex',
+        gap: '3rem',
+        alignItems: 'flex-start',
+        marginBottom: '1.25rem'
+      }}>
+        {/* LEFT SIDE: Problem Statement and Table */}
+        <div style={{
+          flex: '1 1 60%',
+          minWidth: '0'
+        }}>
+          <div style={{
+            fontSize: '17px',
+            fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+            lineHeight: '1.6',
+            fontWeight: '400',
+            color: '#1f2937'
+          }}
+          dangerouslySetInnerHTML={{ __html: problemContent }}
+          >
+          </div>
 
-      {/* Diagram (if present) */}
-      {example.diagram_svg && (
-        <div dangerouslySetInnerHTML={{ __html: example.diagram_svg }} />
-      )}
+          {/* Diagram (if present) */}
+          {example.diagram_svg && (
+            <div dangerouslySetInnerHTML={{ __html: example.diagram_svg }} />
+          )}
+        </div>
 
-      {/* Answer Choices - matches quiz options style exactly */}
-      {!example.is_worked_example && example.choices && example.choices.length > 0 && (
-        <div style={{ marginBottom: '1rem' }}>
-          {example.choices.map((choice) => {
+        {/* RIGHT SIDE: Question + Answer Choices - sticky positioned with subtle separator */}
+        {!example.is_worked_example && example.choices && example.choices.length > 0 && (
+          <div style={{
+            flex: '0 0 35%',
+            position: 'sticky',
+            top: '2rem',
+            alignSelf: 'flex-start',
+            paddingLeft: '2rem',
+            borderLeft: '1px solid #e5e7eb'
+          }}>
+            {/* Question text */}
+            {questionText && (
+              <div style={{
+                fontSize: '15px',
+                fontWeight: '600',
+                color: '#1f2937',
+                marginBottom: '1.2rem',
+                lineHeight: '1.5',
+                fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
+              }}>
+                {questionText}
+              </div>
+            )}
+
+            {/* Answer choices */}
+            {example.choices.map((choice) => {
             const isSelected = selectedChoice === choice.letter;
             const isCorrectAnswer = choice.letter === example.correct_answer;
             const showFeedback = showSolution;
@@ -187,9 +247,9 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
                 {/* Option text */}
                 <div style={{ flex: 1 }}>
                   <div style={{
-                    fontSize: '17px',
+                    fontSize: '15px',
                     color: '#1f2937',
-                    lineHeight: '1.6',
+                    lineHeight: '1.5',
                     fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
                     fontWeight: '400'
                   }}>
@@ -199,8 +259,9 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
               </div>
             );
           })}
-        </div>
-      )}
+          </div>
+        )}
+      </div>
 
       {/* Solution - matches quiz explanation style */}
       {showSolution && (
