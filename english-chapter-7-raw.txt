@@ -1,0 +1,788 @@
+Chapter 7: Parallel Structure
+Parallel structure is the repetition of a chosen grammatical form within a sentence as items are
+listed or compared. The items in a list can be words, phrases, or clauses. Whenever we see items ina
+list or a comparison between items, we must make sure the items have parallel structure.
+
+Parallel Structure and Lists
+The items in any list must be written with the same grammatical form. [tems must be all nouns, all
+verbs, and so on. When lists are written with proper parallel structure, the sentence flows more
+
+smoothly and sounds better. As a result, many students can “hear” which answer choice is the correct
+without even realizing they are being tested on parallel structure.
+Incorrect: To protect her fragile hands, Julia will not rake the leaves, wash the dishes, and has
+decided she will not take out the trash.
+Correct: To protect her fragile hands, Julia will not rake the leaves, wash the dishes, or take out
+the trash.
+
+Incorrect: Elon Musk is known for self-driving cars and pioneering the SpaceX program.
+Correct: Elon Musk is known for self-driving cars and the SpaceX program.
+Correct: Elon Musk is known for manufacturing self-driving cars and pioneering the SpaceX
+program.
+
+Incorrect:
+
+After calling in sick to school, Charlie hoped to get excused from class, receiving an
+extension on his homework assignment, and spend the afternoon watching movies at
+home.
+
+Correct: After calling in sick to school, Charlie hoped to get excused from class, receive an
+extension on his homework assignment, and spend the afternoon watching movies at
+home.
+
+No matter how simple or complex the items in the list are, they must be parallel. Lists of 3 or more
+
+items are easier to spot, and you will be able to more obviously “hear” which answer choice is correct or
+incorrect. Lists of 2, however, are more difficult to spot and can often sound good to us even if they are
+not parallel. Be aware of parallel structure anytime you seea list of 2 on the ACT, as this is a topic
+that tricks many students when it appears on test day.
+Parallel Structure and Lists Practice: Correct the parallel structure errors in the sentences below:
+1.
+
+Theresa was expecting a visit from her mother, so she made her bed, cleaning the shelves of the
+refrigerator, and swept the kitchen floor.
+
+2.
+
+Attempting to sneak out of the house, Janice grabbed her phone, her purse, and wallet and then
+was climbing out the back window.
+
+3.
+
+Chevy, our golden retriever, chews on the furniture, he barks at the neighbors, and thinks his
+shadow is real.
+
+4.
+
+It’s harder to lift the couch by myself than lifting it with some friends.
+I would rather get free music with commercials than paying for music with no commercials.
+
+© PrepPros 2025
+
+-71-
+
+PrepPros ACT English Course
+
+Special Cases for Parallel Structure
+In addition to lists, there are also certain other special cases for parallel structure. These special cases,
+which are officially called correlative conjunctions, must have the same grammatical structure for both
+parts of the conjunctions.
+Keep an eye out for these ones on the ACT:
+Neither
+
+nor __
+
+Either or __
+
+Notonly___ butalso___
+
+Both ___ and
+
+In all of these special cases, the “blanks” must be parallel. For example:
+Incorrect: My mother not only took away my keys but also she locked them in the safe.
+Correct: My mother not only took away my keys but also locked them in the safe.
+
+In the incorrect example, “took away my Keys” is not parallel with “she locked them in the safe.” Since
+the “she” is not in the first part, it cannot be in the second part. In the correct version, “took away my
+keys” is parallel with “locked them in the safe.”
+Special Cases for Parallel Structure Practice: Correct the parallel structure errors.
+1.
+
+Bothascholar and quite athletic, Sylvia got a scholarship to row crew in college.
+
+2.
+
+The news report is neither accurate nor written fairly.
+
+3.
+
+Neither scolding the child nor attempts to bribe him helped to calm him down.
+
+4.
+
+The haunted house not only required participants to sign a waiver before entering but also
+asking them to turn their phones off for the entire experience.
+
+5.
+
+Forms of payment accepted are either cash or sending payment with Venmo.
+
+TIP - How to Spot Parallel Structure and Lists Questions
+Parallel structure and lists questions always have the following defining characteristic:
+1.
+
+The sentence includes a list of two or more items.
+
+Anytime there is a list, we will need to
+
+consider parallel structure. Keep an eye out for list of two, as these can be difficult to notice
+errors with parallel structure.
+On the ACT, parallel structure and lists questions look like this:
+The responsibilities of the coffee packer
+
+1.
+
+Which choice makes the sentence most
+
+position included packing the coffee beans,
+
+grammatically acceptable?
+
+which have been roasted, and keeping the
+
+A.
+
+work area around the machine clean and
+
+a Kept.
+
+orderly.
+
+D. having kept
+
+NO CHANGE
+
+In the example above, the answer is A. The list of two responsibilities, “packing the beans” and
+“keeping the work area around the machine clean and orderly” must be parallel. “Packing” and
+“keeping” match and have correct parallel structure.
+
+© PrepPros 2025
+
+-72-
+
+PrepPros ACT English Course
+
+Parallel Structure and Comparisons
+For any comparisons, the items being compared must be parallel. Comparing without proper
+parallel structure can lead to unintended or incorrect comparisons. In other words, make sure you are
+comparing apples to apples and not apples to oranges. A common fix to parallel structure mistakes is to
+
+add “those of” or “that of” or other similar variations before the second item in the comparison.
+If you ever see “those of’ or “that of’ or a similar variation in a question, the question is likely
+testing parallel structure.
+
+If you see any commonly used comparison words such as “more,” “less,” “better,” “worse,” and
+“than,” there is a comparison, and you will need to consider parallel structure.
+Incorrect: The fried chicken at Chick-fil-A is much better than Popeyes.
+Correct: The fried chicken at Chick-fil-A is better than the fried chicken at Popeyes.
+Correct: The fried chicken at Chick-fil-A is better than Popeyes’ fried chicken.
+Correct: The fried chicken at Chick-fil-A is better than that at Popeyes.
+Parallel Structure and Comparisons Practice: Correct the parallel structure errors.
+1.
+
+Unlike Mr. Rodriguez, Mr. Allen’s math exams are curved, so everyone gets a better grade.
+
+2.
+
+There was no mystery greater than the left shoe thief at my high school.
+
+3.
+
+Walter stands by his bold claim that Michael Jordan’s shoes are better than all current NBA
+players.
+
+4.
+
+Unlike the 2014 World Cup in Brazil, the teams at the 2010 World Cup in South Africa had to deal
+with the constant noise from the vuvuzela horns.
+
+TIP - How to Spot Parallel Structure and Comparisons Questions
+Parallel structure and comparison questions always have at least one of the following defining
+characteristics:
+
+1.
+
+A commonly used comparison word such as “more,” “less,” “better,” “worse,” and “than’
+is in the answer choices or in the sentence. Anytime there is a comparison, we need to
+keep an eye out for parallel structure.
+
+2.
+
+The phrase “that of’ or “those of’ or a similar variation (“that in,
+
+nt
+
+those at,” etc.) is in
+
+any of the answer choices.
+On the ACT, parallel structure and comparisons questions look like this:
+
+Victoria concluded that the juiciness of
+fuji apples is a better indicator for the
+flavor than for a bosc pear.
+
+1.
+
+Which choice makes the sentence most
+grammatically acceptable?
+
+A.
+
+NO CHANGE
+
+B.
+
+than of bosc pears.
+
+C.
+
+than for that of bosc pears.
+
+D.
+
+then bosc pears.
+
+Whenever you see a comparison, make sure you know exactly what is being compared. I[n this
+
+example, the comparison is between “the juiciness of fuji apples” and “the juiciness of bosc pears.” We
+must compare the juiciness of the fuji apple to the juiciness of the bosc pears and not to the pear itself.
+
+The only answer that does this is C, where “that of bosc pears” is short for “the juiciness of bosc pears.”
+
+© PrepPros 2025
+
+-73-
+
+i
+
+PrepPros ACT English Course
+
+Chapter 7 Practice:
+Studies have shown that the secrets to achieving
+
+GOD
+
+true happiness are strengthening your closest
+
+if you take
+taking
+
+. to take
+
+relationships and take care of yourself mentally
+1
+
+and physically.
+
+At birth, baby birds get all of their nutrients by
+
+>GOW
+
+staying in the nest and they eat directly from
+2
+
+NO CHANGE
+
+which they eat
+and eating
+
+. that eat
+
+their parents’ mouths.
+
+GOD
+
+Manny not only overcame his fear of standing in
+front of large crowds but_also became the best
+3
+
+NO CHANGE
+
+he also became
+he also had become
+
+. also becoming
+
+public speaker in his entire school.
+
+During the field trip to the beach, my classmates
+
+GOD
+
+ignore the warning signs, climbing over the
+
+NO CHANGE
+
+the exposure to
+were exposing themselves
+
+. expose themselves
+
+dunes and exposing themselves to the dangerous
+4
+
+polluted water.
+
+The orchestra conductor can raise the volume by
+lifting his arms up higher and lowering the
+5
+
+COM>
+
+NO CHANGE
+
+>
+
+NO CHANGE
+
+lower
+lowered
+
+. has lowered
+
+volume by moving his hands closer together.
+
+Ancient artifacts such as the Rosetta Stone should
+
+Om
+
+be in the hands of people who know how to
+
+properly repair, while caring for and
+permanently protecting them.
+properly repairing, care for, and
+
+properly repair, care for, and permanently
+
+permanently protect them.
+
+6
+
+protect them.
+
+. to properly repair care for, permanently
+protecting them.
+
+6
+
+The doctor was a specialist in cardiovascular
+
+GOD
+
+surgery and had invented the cardiac stint.
+7
+
+© PrepPros 2025
+
+NO CHANGE
+
+NO CHANGE
+
+the cardiac stint inventor.
+the inventor of the cardiac stint.
+
+. invented the cardiac stint.
+
+- 74
+-
+
+PrepPros ACT English Course
+
+COM>
+COM>
+
+According to most doctors, exercising the body is
+8
+
+just as important as exercise for the mind.
+
+NO CHANGE
+
+giving the body exercise
+exercise for the body
+
+. body exercise
+
+I often still find myself struggling to properly
+season beverages, as their flavor profile is much
+
+NO CHANGE
+
+than these.
+then cooked dishes.
+
+. than that of cooked dishes.
+
+more nuanced than cooked dishes.
+9
+
+After traveling halfway around the world to Bali,
+
+10.
+
+Svetlana was disappointed that the swing at the
+
+an exciting place to visit
+a place to visit that was exciting
+
+. excited to visit the place
+
+rice fields was not as exciting a place to visit as
+10
+
+the pictures made it seem.
+
+Lucky visitors to the arctic circle might see the
+
+COM>
+
+NO CHANGE
+
+11.
+
+aurora borealis in the sky, an arctic fox in the
+
+COM>
+
+NO CHANGE
+
+beluga whales.
+a beluga whale in the sea.
+
+. aswimming beluga whale.
+
+snow, or a beluga whale.
+11
+
+In his most recent public appearance, Dr.
+
+12.
+
+Rodriguez gave a speech about his
+
+GOD
+
+NO CHANGE
+
+GOD
+
+NO CHANGE
+
+immunotherapy, and describes
+immunotherapy and described
+
+. immunotherapy, after which he described
+
+autobiography, detailing his research in the field
+of cancer immunotherapy and describing his
+12
+
+career achievements.
+
+David relied on his own experience rather than
+
+13.
+
+13
+
+on the meat thermometer to tell when the turkey
+13
+
+other than
+
+. rather then on
+
+was done.
+
+The hunting habits of killer whales, which hunt
+
+14.
+
+together in pods of up to ten whales, are even
+
+GOD
+
+NO CHANGE
+
+than the hunting habit’s of great
+then great
+
+. than those of great
+
+more advanced than great white sharks
+14
+
+© PrepPros 2025
+
+rather than
+
+-75-
+
+PrepPros ACT English Course
+
+COM>
+
+The goal of observing the dietary habits of the
+Galapagos tortoises was not only to identify the
+
+NO CHANGE
+
+eat but also to examine
+eat, and to examine
+
+. eat but also examining
+
+primary items the tortoises preferred to eat but it
+15
+
+was also to examine if there is any correlation
+15
+
+between food intake and behavior.
+
+Many of the skills required for hockey - hand-eye
+
+16.
+
+coordination, strength, and agility - are similar to
+
+COM>
+
+NO CHANGE
+
+basketball and lacrosse players
+the games of basketball and lacrosse
+
+. those for basketball and lacrosse
+
+basketball and lacrosse.
+16
+
+By the end of the week, the team had purchased
+
+17.
+
+17
+
+ten new computers that came with two-year
+
+GOD
+
+NO CHANGE
+
+purchasing
+will purchase
+
+. purchased
+
+protection plans to cover any accidental damage
+and had ordered a new industrial printer capable
+of printing 10,000 pages per day.
+
+The table, which was built entirely out of
+
+18.
+
+redwood, provides a space for my father to
+complete his puzzle and my hobby of building
+
+me building model airplanes.
+for me to build model airplanes.
+
+. to allow me to build model airplanes.
+
+18
+
+model airplanes.
+18
+
+© PrepPros 2025
+
+GOD
+
+NO CHANGE
+
+-76-
+
+PrepPros ACT English Course
+
+Chapter 8: Other Miscellaneous Topics
+There are a variety of other miscellaneous topics that appear on the English Test. We will cover all of
+these topics in this chapter.
+
+Commonly Confused Words
+The ACT will test you on many commonly confused words. The most common one of these on the
+
+English Test is “affect” vs. “effect.”
+
+Affect vs. Effect
+“Affect” is a verb, meaning to act on or produce a change in. “Effect” is a noun, meaning the result
+of a change. As long as you remember this rule, “affect” vs. “effect” questions should be easy!
+Correct: Sunshine and palm trees affect my mood positively.
+Correct: Sunshine and palms trees have a positive effect on my mood.
+Many of the other most commonly confused words that appear on the ACT are below. There are many
+more beyond the ones listed. If you ever see a word choice question and are unsure, just go with your
+gut...most of the time you will be correct!
+Advice - an opinion or
+recommendation (noun)
+
+Conscience - sense of right or wrong
+
+Lie - to lie down
+
+Conscious - awake
+
+Lay - to place
+
+Council - a group that advises
+
+Lose - to misplace or not win
+
+Counsel - to advice
+
+Loose - to not be tight
+
+Complement - something that
+
+Indifferent - not caring
+
+Advise - to recommend or give
+information (verb)
+Accept - to receive
+
+Except - to take or leave out
+
+completes
+Allusion - an indirect reference
+Illusion - a false perception of reality
+
+Passed - to have moved beyond
+Desert - dry, sandy region
+
+Allowed - permitted to happen
+Aloud - out loud
+
+Not different - the same
+
+Compliment - to praise
+Past - gone by in time
+
+Dessert - a sweet course at the end
+of a meal
+
+Precede - to come before
+Proceed - to go forward
+
+Ascent - climb
+
+Dual - having two parts
+
+Assent - agreement
+
+Duel - a fight between 2 people
+
+Assure - to remove doubt
+
+Elicit - to draw or bring out
+
+Ensure - to make certain a thing will
+
+Illicit - illegal
+
+Principle - arule
+Principal - head of a school
+Their - possessive pronoun
+
+or won't happen
+Insure - to get insurance
+
+There - indicates location
+Emit - to send out, to throw off
+
+They’re - they are
+
+Omit - to leave out
+Beside — next to
+Besides — in addition
+Breath — inhalation/exhalation of air
+
+Through - into or out of, continuing
+Eminent - famous, respected
+
+Threw - past tense of throw
+
+Imminent - ready to take place
+
+Thorough - careful or complete
+
+Breathe - to inhale or exhale
+
+Though - however
+Farther - refers to physical distance
+
+Cite - to quote or document
+
+© PrepPros 2025
+
+Thru - abbreviated form of through
+
+Further - moreover
+
+Sight - vision
+Site - position or place
+
+in time
+
+Immanent - inherent or intrinsic
+
+To - toward
+Lead - a type of metal
+
+Too — also
+
+Led - past tense oflead
+
+Two - 2
+
+-77-
+
+PrepPros ACT English Course
+
+Than vs. Then
+“Than” is only used for comparisons. “Then” has multiple meanings: it can be used when dealing with
+time, to mean “in addition to,” or with “if/then” statements. When you see “then” and “than” on the test,
+just remember use this quick rule: for a comparison, use “than.” Otherwise, use “then.”
+Incorrect: I think that chocolate with almonds is much better then ice cream.
+Correct: I think that chocolate with almonds is much better than ice cream.
+Incorrect: I need to call my mother, and than we can leave.
+Correct: I need to call my mother, and then we can leave.
+
+Have vs. Of
+Many people often mistakenly use “could of” or “would of.” This is always incorrect! To be correct, we
+need to use “could have” or “would have.” The words “could,” “should,” “would,” and “might” should
+always be followed by “have” not “of’. The reason we often make this mistake is the contraction
+“could’ve,” which is short for “could have,” is often pronounced like “could of.”
+Incorrect: If we left the show earlier, we could of avoided the traffic in the parking lot.
+Correct: If we left the could earlier, we could have avoided the traffic in the parking lot.
+
+Countable vs. Non-countable Adjectives
+A countable noun is something that you can count, such as bottles of milk or hours. A noncountable
+noun is something that cannot be expressed in a plural form, such as time or air. Certain adjectives,
+shown in the table below, can only be used to modify countable or non-countable nouns.
+
+Countable
+
+Non-Countable
+
+number
+
+amount
+
+many
+
+much
+
+fewer
+
+less
+
+few
+
+little
+
+Correct: The amount of time to make lunch depends on the number of ingredients in the dish.
+Correct: I do not place much significance on how many trophies and athlete has won.
+Correct: Skim milk has fewer calories than whole milk, so I drink less whole milk than skim milk.
+Correct: I can spare only a little time for this. I need to leave in a few minutes.
+
+© PrepPros 2025
+
