@@ -1,0 +1,1135 @@
+Chapter 7: How to Approach the Answer Choices
+After identifying the question type, finding the primary and secondary keywords, and rephrasing the question
+
+(if necessary), we are ready to go back to the passage, find the Waldo, and answer the question. Part of that
+process involves reading the answer choices, so in this chapter we will teach you how to approach the answer
+choices most effectively.
+After we break down the question like we just learned in Chapter 6, we will use the following steps to answer a
+
+question:
+e
+
+Go to the passage and skim for the primary keyword(s).
+
+e
+
+Find the keyword(s) in the passage and use the 2-sentence rule. Look for secondary keyword(s)
+
+e
+
+Find your Waldo.
+
+e
+
+Read the answer choices.
+
+e
+
+Eliminate incorrect answer choices.
+
+e
+
+Find the correct answer choice that is supported by evidence from the passage.
+
+Note that the steps above are not numbered! There is no exact order to go through the steps. The order
+that you will go through these steps will depend on the question type, how easily you can find the correct
+
+part of the passage, and your own personal preference. Remember, there is no single right or wrong way to
+approach the reading test. Find what works for you! We will discuss how and when to change the order of
+those steps in this chapter and later in this course.
+
+When to Read the Answer Choices
+After reading the question, should I read the answer choices right away or go back to the passage first?
+The answer is it depends on the question type, your reading comprehension skills, and your recall of the
+
+passage. Just like with most of the ACT Reading Test, there is not a 100% right or wrong time to read the
+answer choices. That being said, there are some general recommendations we have about when to read the
+answer choices right away versus when to go to the passage first.
+
+1.
+
+For “which of the following” questions, read the answer choices right away.
+
+“Which of the following” questions can look like this:
+
+1.
+
+Which of the following statements best describes the author’s view of Grier’s theory on internet
+marketing?
+
+Gap,
+
+He believes that Grier’s theory oversimplifies a more complicated topic.
+He is unsure if Grier’s theory can ever be proven scientifically.
+He is excited by Grier’s findings and finds his theory compelling.
+He believes Grier’s theory is problematic but cannot disprove his theory.
+
+Without reading the answer choices, it is impossible to what you are looking for to answer the question. In this
+example, we know we are looking for something about “Grier’s theory on internet marketing,” but that is a
+very broad topic that could be discussed throughout the passage.
+For any “which of the following” questions, read the answer choices before going back to the passage.
+Knowing the 4 options before you read the passage makes it easier to find the correct answer or
+eliminate incorrect answer choices and usually allows you to answer the question more quickly.
+
+© PrepPros 2025
+
+- 49 -
+
+PrepPros ACT Reading Course
+
+2.
+
+For purpose questions, read the passage first and come up with YOUR answer.
+
+For purpose questions, we recommend going back to the passage, reading for context, and coming up with
+your own answer. Once you have your answer, look at the answer choices to see which one best matches
+
+your reasoning. If none of your answer choices match your answer, you may have misunderstood the
+passage. Now that you have read the answer choices, go back and reread the portion of the passage to see
+which answer choice best matches.
+
+3.
+
+For broad passage questions, try to come up with YOUR own answer first.
+
+After reading the entire passage and answering all other questions, you will likely understand the passage
+pretty well, so you can come up with your own answer when asked about the passage as a whole. Once you
+have your answer, look at the answer choices to see which one best matches yours.
+If you found the passage difficult to understand and cannot come up with your own answer, read the
+
+answer choices right away. Knowing the 4 options can make it easier to go back to the passage and find the
+answer choice that matches or to eliminate answer choices that are incorrect.
+
+4.
+
+For clear evidence and inference questions, try both methods below and find what is
+better for you.
+
+After you read the question, you can either (1) read the answer choices right away or (2) go back to the passage
+first. Let’s go over both methods that you can try for clear evidence and inference questions.
+
+Method #1 — Reading the answer choices right away.
+1.
+
+The author indicates that becoming skilled at
+
+2.
+
+using Google can:
+
+It can be inferred whether classical guitarists
+approve of playing while standing during a
+
+A. make people uncertain about their health.
+
+concert depends on the:
+
+B.
+
+increase a person’s social network.
+
+A.
+
+skill and popularity of the artist.
+
+C.
+
+undermine a person’s self-confidence.
+
+B.
+
+acoustics and size of the concert venue.
+
+D.
+
+reduce a person’s independent thinking.
+
+C.
+
+number of guitarists playing at the same
+time.
+
+D.
+
+age and experience of the guitarist.
+
+This can be helpful because you know the 4 options that you are looking for in the passage before going back
+to the passage. As you read, you may come across the Waldo and recognize that it matches an answer choice
+you just read. Likewise, you may read evidence and realize it does not quite match what you just read and can
+eliminate it as incorrect. Knowing the 4 options before you read can help save time since you can often
+
+recognize the correct answer choice more quickly than if you read for evidence and then read the answer
+choices.
+
+In addition, this method can help you save time if you remember the answer right away. Answering
+questions based on memory is always somewhat of a risk, but if you are confident that you know the answer, it
+can be a great way to improve your speed!
+Note that this method does not work if reading the answer choices distracts you from knowing
+EXACTLY what the question is asking. This is often why students get lost in the answer choices. Imagine
+
+that you read the question, read all 4 answer choices, and then go back to the passage. Right as you go back to
+the passage, I take your test away and ask you “what exactly are you looking for?” If you cannot tell me what
+you are looking for, reading the answer choices did not help you; instead, it is hurting your score. Because of
+this, some students find it helpful to reread the question again after reading all 4 answer choices to make
+sure you know exactly what the question is asking you before you go back to the passage.
+
+© PrepPros 2025
+
+-50-
+
+PrepPros ACT Reading Course
+
+Method #2 — Go back to the passage first.
+1.
+
+The author indicates that becoming skilled at
+
+2.
+
+using Google can:
+A.
+
+approve of playing while standing during a
+concert depends on the:
+
+make people uncertain about their health.
+
+B.
+
+increase a person’s social network.
+
+C.
+
+undermine a person’s self-confidence.
+
+D.
+
+reduce a person’s independent thinking.
+
+It can be inferred whether classical guitarists
+
+GaAWpY
+
+skill and popularity of the artist.
+
+acoustics and size of the concert venue.
+number of guitarists playing at the same time.
+
+age and experience of the guitarist.
+
+If reading the answer choices distracts you from what the question is asking, go back to the passage first,
+
+look for evidence, and then read the answer choices. Clear evidence and inference questions are usually
+quite specific, so you will likely know where in the passage you need to read. By reading before looking at
+the answer choices, you are 100% focused on answering the question.
+
+Once you have found what you think may be the Waldo, read the answer choices. Eliminate any incorrect
+answer choices and see if you have found the correct evidence. If you have, bubble it in. If not, go back to the
+passage and search for evidence that is related to the keywords from the question or the answer choices that
+remain.
+If you use method #2 and cannot find the evidence for a clear evidence or inference question in the first
+
+20-30 seconds, read the answer choices. The answer choices may trigger your memory of something you
+read. If you still cannot find the evidence in the passage, eliminate any answer choices you can, take your best
+guess, and move on.
+
+5.
+
+Read the answer choices right away when you do not have primary keywords.
+
+For any vague questions that do not have any primary keywords, read the answer choices right away.
+
+The answer choices may help you identify where in the passage to go or may trigger your memory from
+something that you have already read. As an example, if a question asks:
+1.
+
+Based on the passage, how did narrator’s personality affect her research?
+A.
+
+His talkative, approachable personality was misunderstood as snobbish, so he struggled to
+
+B.
+
+His shy, introspective personality was endearing, but his career suffered because other more
+
+C.
+
+His bold, outspoken personality was off-putting to other scientists, so he did not get the
+
+D.
+
+His easygoing and modest personality made him admired by his peers, who would hesitate
+
+collaborate with other scientists.
+outspoken scientists got more attention that he did.
+recognition he deserved.
+
+to give him honest feedback.
+If this passage discusses the narrator’s personality and research throughout the passage, we have no
+primary keywords to skim for. Here, reading the answer choices right away and knowing the 4 options
+
+makes it much easier to (1) eliminate incorrect answer choices and (2) know what to look for as we go
+back to the passage.
+
+© PrepPros 2025
+
+-51-
+
+PrepPros ACT Reading Course
+
+6.
+
+Let the answer choices help on passages you have trouble understanding.
+
+For any passage that you have trouble understanding, read the answer choices more quickly. If you read a
+passage and feel like you just do not know what is going on, let the answer choices help you. For any
+questions in a passage you do not understand, read the answer choices right away.
+
+Let’s say you are asked a question about the main idea of a paragraph. After reading the paragraph, you have
+no idea what the paragraph is saying. Read the 4 answer choices and then reread the paragraph. Now that you
+know the 4 options, you may be able to recognize what the main idea of the paragraph is. The more you
+can use the answer choices to help, the more you will understand the passage, and the more questions you will
+answer correctly.
+
+**Remember, these are all just suggestions and not rules to follow. There is no right or
+wrong way to use the answer choices. Try different methods on practice passages and
+practice tests and find what works best for you!
+
+© PrepPros 2025
+
+-52-
+
+PrepPros ACT Reading Course
+
+How to Read the Answer Choices Most Effectively
+Now that we have discussed when to read the answer choices, let’s go over how to read the answer choices
+most effectively to find the correct answer choice as quickly and consistently as possible.
+
+Our Recommended Approach — Work Both Forwards and Backwards
+We recommend working forwards (look for evidence in the passage) and backwards (eliminate incorrect
+answer choices) at the same time.
+
+Work Forwards — Look for the Evidence in the Passage
+Working forwards is looking for the evidence in the passage that matches the correct answer choice. When
+working forwards, put your finger on the evidence (the Waldo!) and match it to the correct answer
+
+choice. In an ideal world, you could work forwards and find Waldo all the time but finding the evidence in the
+passage that supports the correct answer for every single question is difficult. We do not want to only look for
+the correct answer choice.
+
+Work Backwards — Eliminate Incorrect Answer Choices
+Working backwards is eliminating incorrect answer choices. Anytime you see an answer choice that is
+
+incorrect for any reason, cross if off. We will cover the 5 types of incorrect answer choices and learn more
+about how to effectively spot and eliminate incorrect answer choices in Chapter 8.
+For some questions, it is easier to eliminate three answer choices as incorrect than it is to find the
+evidence that supports the correct answer. Even if you cannot find evidence in the passage, if you can
+eliminate 3 answer choices as incorrect, you have found the correct answer.
+
+How to Work Forwards and Backwards
+As you read each answer choice, you should be simultaneously working forward and backwards. Ask yourself
+the following questions:
+1)
+
+Is there evidence in the passage the matches what this answer choice says?
+
+2)
+
+Is there any specific detail or strong statement in this answer choice that could make it
+incorrect?
+
+The first question is working forwards. You will need to go back to the passage to answer this question
+properly. If you find Waldo, you will know the correct answer. If there is no evidence from the passage to
+
+support the answer choice, it is incorrect; cross it off.
+The second question is working backwards. As you read each answer choice, look for any word(s) that could
+make the answer choice incorrect. Be cautious about specific details or strong statements in the answer
+choices. In general, stronger and more specific answer choices are usually incorrect because they cannot
+be supported by the passage. Oppositely, more boring answer choices are more commonly correct. The
+problem is that we like to pick specific answer choices when we are struggling on a question because it is
+easier to justify why the specific answer choice could be correct. Boring answer choices are, well, just boring.
+Nobody wants to pick the boring answer choices. The writers of the ACT know this and take advantage of it
+to make questions more difficult.
+
+* TIP — If you are stuck between two answer choices and cannot find any
+evidence to support either one, always pick the less detailed answer choice.
+Boring is usually better on the ACT Reading Test!
+
+© PrepPros 2025
+
+-53-
+
+PrepPros ACT Reading Course
+
+Chapter 8: Correct vs. Incorrect Answer Choices — How to
+Effectively Find the Correct Answer
+One of the most important skills in the Reading Test is understanding what makes an answer choice correct or
+incorrect. Many students struggle with this when first taking the Reading Test and feel like they are being
+asked to somehow find what the ACT says is the “best” answer. This is not the case! There is always 1
+correct and 3 incorrect answer choices. The challenge is knowing what makes the correct answer right and
+the incorrect answer wrong. You should NOT approach the Reading Test by looking for the best answer.
+Instead, we are looking for the 1 correct answer choice or why 3 answer choices are incorrect.
+In this chapter, we will teach you how to breakdown each answer choice to identify the difference
+between correct and incorrect answer choices.
+
+The 5 Common Types of Incorrect Answer Choices
+For success on the Reading Test, you must be able to explain what makes an answer choice incorrect.
+Remember, for an answer choice to be correct, it must be supported by evidence in passage and answer
+
+the question being asked. If you can understand not only what makes an answer choice correct but also what
+makes the others incorrect, finding the correct answer choice becomes much easier.
+The 5 most common types of incorrect answers on the ACT Reading Test are
+
+1)
+
+Not in the Passage
+
+2)
+
+Too Specific
+
+3)
+
+Too Broad
+
+4)
+
+Opposite or Slant of the Passage
+
+5)
+
+In the Passage but Not Answering the Question
+
+In the rest of this chapter, we will go through these 5 types of incorrect answers and some example passages to
+teach you how to properly think about the answer choices and more effectively find the correct answer.
+
+© PrepPros 2025
+
+-54-
+
+PrepPros ACT Reading Course
+
+1) Not in the Passage
+Many incorrect answer choices include information that is not in the passage. If the answer choice includes
+details that are not in the passage, the answer is incorrect.
+
+For example, let’s say there is a question about Adam’s clothing from the following passage:
+Adam rolled up the tattered sleeves of his sweater, exposing the winding snake tattoos on both of
+his forearms. He had gotten them after he returned from his first tour in Iraq — an homage to his fallen
+comrades. Despite now living in upstate New York, he still wore his Army boots every day, the tops
+of which were hidden below his faded black jeans, the only pair that he owns because, as he says,
+
+“they’re the only ones that fit me just right.”
+1.
+
+Based on the passage, which of the following can be assumed about Adam’s clothing?
+
+Gap,
+
+He only wears the most comfortable clothing that he can buy.
+The army provided him with free clothes after he returned home from Iraq.
+His clothes are old and worn out.
+
+He only owns one sweater.
+
+Here, the only answer that has evidence we can point to in the passage is C. The “tattered sleeves” and “faded
+black jeans” both demonstrate that his clothing is old and worn out. All other answer choices are not
+supported by evidence from the passage. Could you picture Mr. Johnson’s jeans as the most comfortable that
+he could afford? Could he have received free clothing from the Army? Could he own just one sweater? Sure,
+all of these are possible, but we do not know any of this for sure from the passage. We cannot point to any
+evidence in the passage that supports A, B, or D. We can only tell a story of why we think it could be true. As
+we said in Chapter 1, there is no storytelling! If an answer choice is not clearly supported by evidence in the
+passage, then it is always wrong! The answer is C.
+
+© PrepPros 2025
+
+-55-
+
+PrepPros ACT Reading Course
+
+Passage 1
+
+The best way to describe Ms. Upton is like a
+
+1)
+
+collared shirt that is buttoned all the way up. Sure,
+
+Based on the passage, which of the following can
+we infer about Ms. Upton?
+
+that top button might bring about malaise, but it was
+well worth it to upkeep her stellar reputation within
+
+A.
+
+Her coworkers hold her in the highest regard.
+
+C.
+
+The community regards her as the best
+
+B.
+
+the community and especially amongst her peers.
+How else would everybody know that she is the
+
+She is extremely well dressed.
+
+businesswoman in the town.
+
+best? The only problem was it was all a facade — a
+
+D.
+
+coy attempt to prove her superiority when in reality
+
+She used to attend a book club.
+
+she was just like the rest of us with our top buttons
+10
+
+undone. If only she would stop feigning
+superiority, maybe we would invite her back to the
+book club...maybe.
+
+Passage 2
+
+The term purebred was coined in 1890, but
+2)
+
+pure breeding got its start well before that when
+
+Which of the following statements would the
+
+author of the passage most likely support?
+
+people decided to selectively breed dogs of a
+certain pedigree to amplify specific traits.
+
+A.
+
+Breeders would selectively mate dogs of certain
+
+produce dogs that are superior in certain ways
+
+health, attributes, and sagacity to produce a new
+
+but inferior in others.
+
+“purer” breed. However, the centuries of closed
+breeding have led purebred dogs to have many
+of excellence and deleterious genes; this has
+
+The origins of pure breeding began back in the
+
+C.
+
+Modern purebred dogs are far healthier and
+have better attributes than their ancestors.
+
+resulted in significant health problems for modern
+
+D.
+
+purebred dogs. As a result, many breeders are now
+
+Cross breeding will successfully fix all of the
+problems associated with purebred dogs.
+
+beginning to create new “pure breeds” through
+cross breeding (first generation crosses of two
+purebred dogs).
+
+© PrepPros 2025
+
+B.
+
+1800s.
+
+problems, as selective breeding favors both genes
+10
+
+Pure breeding over a long period of time can
+
+-56-
+
+PrepPros ACT Reading Course
+
+2) Too Specific
+Incorrect answer choices are very commonly too specific. Often, a single word or a short phrase in an answer
+choice makes the entire answer choice incorrect. If the answer choice is too specific and goes beyond what
+the passage says, it is always incorrect.
+As you read each answer choice, look for specific details and strong statements that could make the
+
+answer choice incorrect. Ask yourself, “Does the passage really say that?” Remember, the more specific and
+stronger an answer choice is, the more likely it will be incorrect.
+For example, let’s say you are reading a passage about pelicans’ fishing habits:
+Pelicans fish by using their long beaks and large throat pouches to scoop up prey from the water’s
+surface. Pelicans’ diets include fish, amphibians, small turtles, crabs, and even other small birds.
+Most pelicans use a technique called “dive-bombing,” where the birds will tuck their wings and dive
+directly into the water at unsuspecting fish. However, pelicans have also been known to hunt
+cooperatively, especially when hunting near the shores. The groups of birds will form a line to drive
+schools of smaller fish into the shallower waters, beating their wings near the surface, and then
+scooping up their favorite prey.
+1.
+
+Which of the following statements can be inferred from the passage?
+
+Gap,
+
+Pelicans prey predominantly on fish during the summer months.
+
+Great White pelicans are the only species of pelicans that hunt for turtles.
+Small ocean fish are the main prey for pelicans.
+Pelicans do the majority of their hunting in shallow waters near the coast.
+
+Here A, B, and D are incorrect because they are too specific. For A, the passage does say that fish are the
+predominant prey, but it did not at any point specify anything about summer months. For B, the passage never
+discussed Great White pelicans. For D, the passage never details where the pelicans do the majority of their
+hunting; it just mentions that pelicans hunt along the shallow waters near the shores. At the end of the passage,
+
+“scooping up their favorite prey” refers to smaller fish as the favorite prey; therefore, the small ocean fish are
+the main pray. The answer is C.
+
+© PrepPros 2025
+
+-57-
+
+PrepPros ACT Reading Course
+
+On August 25, 1916, President Woodrow
+
+The passage states that the National Park Service
+
+Wilson signed the act creating the National Park
+
+took what role from the Department of the
+
+Service, a new federal bureau in the Department of
+
+Interior in 1916?
+
+the Interior responsible for protecting the 35
+national parks and monuments then managed by
+
+A.
+
+and monuments and those yet to be
+
+the department and those yet to be established.
+This “Organic Act” states that “the Service thus
+
+established shall promote and regulate the use of
+the Federal areas known as national parks,
+10
+
+monuments, and reservations... by such means and
+
+established.
+B.
+
+which purpose is to conserve the scenery and the
+
+C.
+
+established.
+D.
+
+such manner and by such means as will leave them
+generations.”
+An Executive Order in 1933 transferred 56
+20
+
+reservations.
+According to the passage, what is one purpose of
+the National Park Service?
+A.
+
+To conserve national parks and encourage an
+
+national monuments and military sites from the
+
+increase in the number of visitors to the
+
+Forest Service and the War Department to the
+
+parks.
+
+National Park Service. This action was a major
+
+B.
+
+system of parks—a system that includes areas of
+
+C.
+
+historical as well as scenic and scientific
+importance. Congress declared in the General
+
+To create a safe haven for wildlife from
+hunters and human development.
+
+step in the development of today’s truly national
+25
+
+Identify and propose new lands to be
+
+protected as national parks, monuments, or
+
+and to provide for the enjoyment of the same in
+unimpaired for the enjoyment of future
+
+Management of 56 national monuments and
+military sites and future sites yet to be
+
+natural and historic objects and the wildlife therein
+15
+
+Overseeing only the 35 national parks and
+monuments established by 1916.
+
+measures as conform to the fundamental purpose
+of the said parks, monuments, and reservations,
+
+Protection of the current 35 national parks
+
+To preserve lands in their natural form and
+protect lands for future generations.
+
+D.
+
+Authorities Act of 1970 “that the National Park
+
+To protect lands from the damaging practices
+of logging and gold mining.
+
+System, which began with the establishment of
+30
+
+Yellowstone National Park in 1872, has since
+
+The list of locations in the National Park System
+
+grown to include superlative natural, historic, and
+
+in lines 35-37 serves to:
+
+recreation areas in every region...and that it is the
+purpose of this Act to include all such areas in the
+System....”
+The National Park System of the United States
+
+A.
+
+highlight that one goal of the National Park
+
+B.
+
+point out the locations Congress and the
+
+System is to protect international lands.
+President have decided are the most
+
+now comprises more than 400 areas covering more
+35
+
+than 84 million acres in 50 states, the District of
+
+Columbia, American Samoa, Guam, Puerto Rico,
+Saipan, and the Virgin Islands. These areas are of
+
+such national significance as to justify special
+
+important to protect.
+
+C.
+
+similar systems in other countries.
+
+D.
+
+various acts of Congress.
+Additions to the National Park System are
+now generally made through acts of Congress, and
+national parks can be created only through such
+
+According to the passage, today’s system of
+parks:
+
+A.
+
+protects areas that are historically, scenically,
+
+B.
+
+provides an example of a successful national
+
+and scientifically important.
+
+acts. But the President has authority, under
+45
+
+the Antiquities Act of 1906, to proclaim national
+monuments on lands already under federal
+jurisdiction.
+
+show how widespread the lands preserved by
+National Park System are today.
+
+recognition and protection in accordance with
+40
+
+contrast the US National Park System with
+
+parks system for other countries.
+C.
+
+is composed of lands across the country that
+Presidents Wilson chose to conserve.
+
+D.
+
+fulfills Woodrow Wilson’s dream of
+
+preserving nature in its original state for
+future generations.
+
+© PrepPros 2025
+
+PrepPros ACT Reading Course
+
+3) Too Broad
+Sometimes, an answer choice is incorrect because it is too broad. This occurs when the answer choice does not
+specifically answer the question being asked (more common) or does not match a more specific statement
+made in the passage (less common). While broad answer choices are better in general, make sure that the
+answer choice you pick is always specific enough to answer the exact question you are being asked.
+
+For example, let’s consider this excerpt from a passage about Darwin’s finches and evolution.
+Dr. Anders Robert became fascinated with evolution after reading Charles Darwin’s Theory of
+Evolution in graduate school. But he was never fully satisfied with Darwin’s explanation of evolution
+
+and his survival of the fittest model. Dr. Robert always felt there was another missing piece — a
+something that he termed “micro-evolution,” evolution on a tiny scale that can occur over much
+shorter time periods. While Darwin’s evolution occurs over many generations due to the pressures of
+natural selection, Dr. Robert postulates that every 2 to 3 generations small changes occur to key
+characteristics of a population and that over time enough of these small changes lead to new subSpecies and species forming in a shortened time frame. To test his theory, Dr, Robert will travel to the
+Galapagos Islands to study changes in the beaks of some of the same species of finches that Darwin
+studied over one hundred years ago.
+1.
+
+The main idea of the passage is to:
+
+GaAWpY
+
+research the theory of evolution using Darwin’s finches.
+test a new idea about evolution by studying finches’ beaks.
+highlight Dr. Robert’s lifelong fascination with evolution.
+
+recreate Darwin’s research on the Galapagos Islands.
+
+Here, A is incorrect because it is too broad. For A, does the passage discuss the theory of evolution? Yes, but
+researching the theory of evolution is not the main idea of the passage, so A does not answer the question. C is
+incorrect because it is too broad and includes a detail that is not supported by the passage. While the first
+sentence directly states that Dr. Anders Robert is fascinated with evolution, his fascination is not the main idea
+of the passage. Additionally, the passage never states he has a “lifelong fascination,” so C is incorrect. D is
+incorrect because the word “recreate” does not match the passage, as there is nothing about Dr. Robert
+recreating Darwin’s research. The main idea of the passage is about Dr. Robert’s research to test his new
+theory, so B is the correct answer.
+
+© PrepPros 2025
+
+-59-
+
+PrepPros ACT Reading Course
+
+The following passage is about honeybees in the United
+States.
+
+Honeybees are dying. Decimated by Colony
+Collapse Disorder in the mid-2000s, bees remain
+under assault from pesticides, climate change,
+mites, and habitat destruction. Between 2014 and
+2017, about a quarter of bees in the nation’s
+commercial colonies died each winter, significantly
+higher than the 15% previously considered normal.
+This troubling trend, along with the importance of
+
+honeybees to successful crop growth and overall
+10
+
+product yield, has led many farmers to rethink how
+they will pollinate their crops.
+
+Most people know that honeybees are important
+for the pollination of flowers, and therefore
+
+home for the next 10 days, until they are loaded
+
+back onto the trucks in the middle of the night.
+Since there is no other way to pollinate so many
+flowers, farmers like Terrence will pay beekeepers
+
+55 like Ellis over $5,000 each week for bees. In
+addition to helping solve the pollination problem
+farmers face due to the recent decline in bee
+populations and ongoing issues with mass bee death
+events in farmers’ hives, professional beekeepers
+60 are also able to help maintain the food yield for
+
+orchards of flowering trees and ensure a bountiful
+harvest each year, all while making a good living
+for themselves.
+1.
+
+essential in the farming of fruits and nuts that grow
+15
+
+A.
+
+on flowering trees, but few know that honeybees
+decrease in the honeybee population around the
+world has created a huge demand for honeybees
+
+B.
+
+explain a largely unknown business.
+
+C.
+
+describe the difficulties that peach farmers
+face today.
+
+from farmers, who need the bees to pollinate their
+
+D.
+
+acres and acres of flowering trees. Without bees,
+
+Terrence Jones, an organic Peach farmer in
+
+2.
+
+each of which can produce up to 1,000 flowers that
+
+A.
+
+The reason that honeybee populations have
+
+B.
+
+Professional beekeeping is a large and
+
+C.
+
+Honeybees can travel to multiple farms
+
+been decreasing is still largely unknown.
+
+need to be pollinated. To pollinate the 5 million
+flowers on his farm, Terrence needs some serious
+
+growing industry in the United States.
+
+help. He has five hives of his own, but last winter
+three of his five hives had mass bee deaths due to
+30
+
+Which of the following statements about
+
+honeybees is best supported by the passage?
+
+rural Georgia, has over five thousand Peach trees,
+25
+
+Varroa mites — one of the most common parasites
+
+each year to pollinate the flowers of fruit
+
+and a big problem for all beekeepers. The
+
+trees.
+
+D.
+
+remaining bees are not nearly enough to get the
+calls up his friend Ellis out in California.
+Ellis is a professional beekeeper who keeps 500
+
+beehives. Every year in the spring, Ellis packs up
+his hives in specialty bee transport trucks and ships
+
+them all over the country. Based on the size of
+Terrence’s farm and the number of flowers that
+40
+
+need to be pollinated, Ellis is bringing ten hives to
+Terrence’s farm. This will be these bees’ second
+
+stop — they, along with 55 other hives, already
+helped another farmer in Pennsylvania pollinate his
+700 acres of early-blooming apple trees. After
+45
+
+arriving, the bees are carefully transported to the
+
+peach fields in the middle of the night, when the
+bees are all asleep in the hives. Shortly after
+sunrise, there is an audible buzzing in the orchard,
+where the bees are visiting thousands of blossoms
+50
+
+on the peach trees to harvest the nectar, pollinating
+the flowers as they go. This will be the bees’ new
+
+© PrepPros 2025
+
+Honeybees are essential to produce all
+types of fruits and nuts.
+
+massive job done. So, what does Terrence do? He
+35
+
+explore the historical relationship between
+
+bees and farming in the United States.
+
+crops like apples, peaches, cranberries, and
+almonds, just to mention a few, would fail.
+
+describe one man’s quest to become a
+professional beekeeper.
+
+can be big business. The recent and alarming
+
+20
+
+The primary purpose of the passage is to:
+
+3.
+
+The first paragraph serves to:
+
+A.
+
+propose a solution to a challenge that is
+introduced later in the passage.
+
+B.
+
+identify an issue that motivates the solution
+
+C.
+
+provide an example of a phenomena that is
+
+discussed later in the passage.
+explained later in the passage.
+D.
+
+explain the factors that led to a damaging
+
+trend discussed in the rest of the passage.
+
+PrepPros ACT Reading Course
+
+4.
+
+According to the passage, honeybees are
+
+7.
+
+essential for:
+A.
+
+about the location of Ellis’s beehives that are
+not at Terrence’s farm?
+
+vegetable farms that do not have any
+beehives of their own.
+
+B.
+
+C.
+D.
+
+Based on the passage, what can be inferred
+
+A.
+
+any type of farm that does not have enough
+
+The beehives are at other farms at
+unspecified locations across the United
+
+local bees to pollinate the flowers.
+
+States.
+
+farms that have decreased food yield due to
+
+The beehives are at other peach farms in
+
+pests and parasites.
+
+Georgia.
+
+fruits and nuts that grow on flowering trees.
+
+The beehives are at the apple orchards in
+Pennsylvania since apple trees take longer
+
+5.
+
+to pollinate.
+
+The passage indicates that Ellis is bringing how
+
+The location of the beehives is a secret that
+
+many hives to Terrence’s farm?
+
+Gap,
+6.
+
+Ellis refuses to share.
+
+10
+
+8.
+
+55
+
+500
+
+The passages states that the pollination problem
+farmers face is a result of:
+
+The passage does not specify.
+
+A.
+
+declining bee populations and mass bee
+
+death events in farmers’ hives.
+
+It can most reasonably be inferred that the size
+
+B.
+
+Varroa mites and bacterial infections in the
+
+of Terrence’s farm compared to the apple famer
+
+farmers’ hives.
+
+in Pennsylvania is:
+
+bee’s having lowered pollination activity
+
+A.
+
+slightly larger.
+
+B.
+

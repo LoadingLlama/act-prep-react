@@ -1,0 +1,341 @@
+import { createClient } from '@supabase/supabase-js';
+import fs from 'fs';
+
+const supabase = createClient(
+  'https://rabavobdklnwvwsldbix.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJhYmF2b2Jka2xud3Z3c2xkYml4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1OTc2NTQ3OCwiZXhwIjoyMDc1MzQxNDc4fQ.81SeH703keXgF3IevQlRS7OYmn1J2GUVIkn3OJiviM4'
+);
+
+async function uploadAll() {
+  // Upload lesson content
+  const lessonContent = fs.readFileSync('science-2.4-multiple-figures.html', 'utf8');
+  const { error: lessonError } = await supabase
+    .from('lessons')
+    .update({
+      content: lessonContent,
+      content_json: null,
+      migrated_to_json: false
+    })
+    .eq('lesson_key', 'multiple-figures');
+
+  if (lessonError) {
+    console.error('Lesson upload error:', lessonError);
+    process.exit(1);
+  }
+  console.log('✓ Science 2.4 Multiple Figures lesson uploaded');
+
+  // Get lesson ID
+  const { data: lesson } = await supabase
+    .from('lessons')
+    .select('id')
+    .eq('lesson_key', 'multiple-figures')
+    .single();
+
+  // Delete old examples
+  await supabase
+    .from('lesson_examples')
+    .delete()
+    .eq('lesson_id', lesson.id);
+  console.log('✓ Deleted old examples');
+
+  // Upload examples
+  const examples = [
+    {
+      lesson_id: lesson.id,
+      position: 1,
+      title: "Chaining Data Across Two Figures",
+      problem_text: `<p style="margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;">Three samples were tested to measure their properties under different conditions. Figure 1 shows the relationship between L (kg) and H for each sample. Figure 2 shows the relationship between H and B (%) for the same samples.</p>
+
+<div style="background-color: #f3f4f6; padding: 3.5rem 3rem; max-width: 900px; border: 2px solid #d1d5db; border-radius: 8px; margin: 2rem 0;">
+  <p style="font-weight: 700; font-size: 20px; margin-bottom: 1.5rem; color: #1f2937;">Figure 1</p>
+  <p style="margin-bottom: 1rem; font-size: 13px;"><strong>Graph Description:</strong> Relationship between L (kg) and H for three samples</p>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 13px;">
+    <thead>
+      <tr style="background-color: #374151;">
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: left; color: white; font-weight: 600;">L (kg)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Sample 1: H</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Sample 2: H</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Sample 3: H</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">1</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">8</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">3</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">2</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">12</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">6</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px; background-color: #fef3c7;">3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">16</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #fef3c7; font-weight: 600;">14</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">9</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">18</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">16</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">12</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">20</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">18</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">15</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem; font-size: 14px; color: #6b7280; font-style: italic;">Yellow highlighting shows L = 3 kg and the corresponding H = 14 for Sample 2.</p>
+</div>
+
+<div style="background-color: #f3f4f6; padding: 3.5rem 3rem; max-width: 900px; border: 2px solid #d1d5db; border-radius: 8px; margin: 2rem 0;">
+  <p style="font-weight: 700; font-size: 20px; margin-bottom: 1.5rem; color: #1f2937;">Figure 2</p>
+  <p style="margin-bottom: 1rem; font-size: 13px;"><strong>Graph Description:</strong> Relationship between H and B (%) for three samples</p>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 13px;">
+    <thead>
+      <tr style="background-color: #374151;">
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: left; color: white; font-weight: 600;">H</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Sample 1: B (%)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Sample 2: B (%)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Sample 3: B (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">15</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">18</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">22</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">8</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">20</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">24</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">28</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">12</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">28</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">32</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">35</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px; background-color: #dbeafe;">14</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">32</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #dbeafe; font-weight: 600;">36</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">38</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">16</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">35</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">40</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">42</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem; font-size: 14px; color: #6b7280; font-style: italic;">Blue highlighting shows H = 14 (from Figure 1) and the corresponding B = 36% for Sample 2.</p>
+</div>
+
+<p style="margin-top: 2rem; font-weight: 600; font-size: 16px; color: #1f2937;">Based on Figures 1 and 2, when L = 3 kg for Sample 2, B is closest to:</p>`,
+      choices: [
+        { letter: "A", text: "18%" },
+        { letter: "B", text: "32%" },
+        { letter: "C", text: "36%" },
+        { letter: "D", text: "40%" }
+      ],
+      correct_answer: "C",
+      solution_steps: [],
+      answer_explanation: `This is a classic multiple figures question requiring you to chain information from Figure 1 to Figure 2.
+
+**Step 1: Identify this is a multiple figures question**
+The question explicitly states "Based on Figures 1 and 2," confirming you need to use both figures.
+
+**Step 2: Understand what's being asked**
+- Given: L = 3 kg for Sample 2
+- Find: B (%)
+- Sample to track: Sample 2 (critical—don't mix up samples!)
+
+**Step 3: Start with Figure 1**
+The question gives us L = 3 kg, which appears in Figure 1. We need to find the corresponding H value for Sample 2.
+
+Looking at Figure 1 (highlighted in yellow):
+- At L = 3 kg, Sample 2 has H = 14
+
+**Step 4: Chain to Figure 2**
+Now we take H = 14 (the value we just found) and use it to search Figure 2. We're still tracking Sample 2.
+
+Looking at Figure 2 (highlighted in blue):
+- At H = 14 for Sample 2, B = 36%
+
+**Step 5: Match to answer choices**
+B = 36%, which is answer choice C.
+
+**Visualization of the chain:**
+L = 3 kg (given) → [Figure 1] → H = 14 (intermediate value) → [Figure 2] → B = 36% (answer)
+
+**Common mistakes:**
+- **Stopping at Figure 1**: Some students might see H = 14 and think that's the answer, forgetting the question asks for B
+- **Mixing up samples**: Using Sample 1 or Sample 3 data instead of consistently tracking Sample 2
+- **Reading the wrong row**: At L = 3 kg, accidentally reading Sample 1 (H = 16) or Sample 3 (H = 9) instead of Sample 2 (H = 14)
+
+**Pro tip:** Write down "H = 14" in the margin after finding it in Figure 1, then circle it when you find it in Figure 2. This prevents losing track of your intermediate value.
+
+**The answer is C.**`,
+      diagram_svg: null,
+      is_worked_example: false
+    },
+    {
+      lesson_id: lesson.id,
+      position: 2,
+      title: "Combining Experimental Text with Multiple Figures",
+      problem_text: `<p style="margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;">Scientists conducted two experiments to study plant growth under different light conditions. In Experiment 1, plants were grown under red light only. In Experiment 2, plants were grown under blue light only. In both experiments, temperature was held constant at 25°C. Figure 1 shows growth rate vs. light intensity for Experiment 1. Figure 2 shows chlorophyll production vs. growth rate for both experiments.</p>
+
+<div style="background-color: #f3f4f6; padding: 3.5rem 3rem; max-width: 900px; border: 2px solid #d1d5db; border-radius: 8px; margin: 2rem 0;">
+  <p style="font-weight: 700; font-size: 20px; margin-bottom: 1.5rem; color: #1f2937;">Figure 1 - Experiment 1 (Red Light)</p>
+  <p style="margin-bottom: 1rem; font-size: 13px;"><strong>Graph Description:</strong> Growth Rate (cm/day) vs. Light Intensity (lux)</p>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 13px;">
+    <thead>
+      <tr style="background-color: #374151;">
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: left; color: white; font-weight: 600;">Light Intensity (lux)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Growth Rate (cm/day)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">100</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">1.2</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px; background-color: #fef3c7;">200</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #fef3c7; font-weight: 600;">2.5</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">300</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">3.8</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">400</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">4.5</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem; font-size: 14px; color: #6b7280; font-style: italic;">Yellow highlighting shows 200 lux → Growth Rate = 2.5 cm/day.</p>
+</div>
+
+<div style="background-color: #f3f4f6; padding: 3.5rem 3rem; max-width: 900px; border: 2px solid #d1d5db; border-radius: 8px; margin: 2rem 0;">
+  <p style="font-weight: 700; font-size: 20px; margin-bottom: 1.5rem; color: #1f2937;">Figure 2 - Chlorophyll Production</p>
+  <p style="margin-bottom: 1rem; font-size: 13px;"><strong>Graph Description:</strong> Chlorophyll (mg/g) vs. Growth Rate (cm/day) for both experiments</p>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 13px;">
+    <thead>
+      <tr style="background-color: #374151;">
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: left; color: white; font-weight: 600;">Growth Rate (cm/day)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Exp. 1 Chlorophyll (mg/g)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Exp. 2 Chlorophyll (mg/g)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">1.2</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">3.5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">4.2</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px; background-color: #dbeafe;">2.5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #dbeafe; font-weight: 600;">5.8</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">6.5</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">3.8</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">7.2</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">8.1</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">4.5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">8.5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">9.3</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem; font-size: 14px; color: #6b7280; font-style: italic;">Blue highlighting shows Growth Rate = 2.5 cm/day → Exp. 1 Chlorophyll = 5.8 mg/g.</p>
+</div>
+
+<p style="margin-top: 2rem; font-weight: 600; font-size: 16px; color: #1f2937;">Based on the experiments, at a light intensity of 200 lux under red light with a constant temperature of 25°C, chlorophyll production would most likely be:</p>`,
+      choices: [
+        { letter: "A", text: "3.5 mg/g" },
+        { letter: "B", text: "5.8 mg/g" },
+        { letter: "C", text: "6.5 mg/g" },
+        { letter: "D", text: "7.2 mg/g" }
+      ],
+      correct_answer: "B",
+      solution_steps: [],
+      answer_explanation: `This question requires combining information from experimental text with data from two figures.
+
+**Step 1: Extract key information from the question**
+- Light intensity: 200 lux
+- Light type: red light
+- Temperature: 25°C (constant)
+- Find: chlorophyll production
+
+**Step 2: Identify which experiment to use**
+The experimental text tells us:
+- Experiment 1 = red light only
+- Experiment 2 = blue light only
+
+Since the question asks about "red light," we must use **Experiment 1** data.
+
+**Step 3: Find growth rate in Figure 1**
+Figure 1 shows Experiment 1 (red light) data. At 200 lux (highlighted in yellow):
+- Growth Rate = 2.5 cm/day
+
+**Step 4: Chain to Figure 2**
+Now we take Growth Rate = 2.5 cm/day and look it up in Figure 2. We need the Experiment 1 column (because we're still in Experiment 1 with red light).
+
+Looking at Figure 2 (highlighted in blue):
+- At Growth Rate = 2.5 cm/day, Experiment 1 chlorophyll = 5.8 mg/g
+
+**Step 5: Verify with experimental conditions**
+The question mentions "constant temperature of 25°C." Checking the experimental text: "In both experiments, temperature was held constant at 25°C." ✓ This confirms our conditions match Experiment 1.
+
+**Step 6: Match to answer choices**
+Chlorophyll = 5.8 mg/g → Answer B
+
+**Complete chain:**
+200 lux (red light) → [Figure 1] → Growth Rate = 2.5 cm/day → [Figure 2, Exp. 1 column] → Chlorophyll = 5.8 mg/g
+
+**Common mistakes:**
+- **Using Experiment 2 data**: Since the question mentions "red light," some students might accidentally use the Experiment 2 column in Figure 2 (which would give 6.5 mg/g, answer C)
+- **Ignoring the experimental text**: Not realizing that Experiment 1 = red light and Experiment 2 = blue light
+- **Stopping at Figure 1**: Thinking Growth Rate (2.5 cm/day) is the answer
+- **Confusing temperature**: The temperature information is provided to help you understand the experimental conditions, but it doesn't change which data to use
+
+**Why this question needs experimental text:**
+The figures alone don't tell you which experiment used red vs. blue light. You MUST read the experimental setup to know that Experiment 1 = red light.
+
+**The answer is B.**`,
+      diagram_svg: null,
+      is_worked_example: false
+    }
+  ];
+
+  for (const example of examples) {
+    const { error } = await supabase
+      .from('lesson_examples')
+      .insert(example);
+
+    if (error) {
+      console.error(`Error:`, error);
+    } else {
+      console.log(`✓ Inserted: ${example.title}`);
+    }
+  }
+
+  console.log('\n✓ Science 2.4 Multiple Figures complete!');
+}
+
+uploadAll();

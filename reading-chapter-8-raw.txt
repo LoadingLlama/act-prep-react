@@ -1,0 +1,1376 @@
+Chapter 8: Correct vs. Incorrect Answer Choices — How to
+Effectively Find the Correct Answer
+One of the most important skills in the Reading Test is understanding what makes an answer choice correct or
+incorrect. Many students struggle with this when first taking the Reading Test and feel like they are being
+asked to somehow find what the ACT says is the “best” answer. This is not the case! There is always 1
+correct and 3 incorrect answer choices. The challenge is knowing what makes the correct answer right and
+the incorrect answer wrong. You should NOT approach the Reading Test by looking for the best answer.
+Instead, we are looking for the 1 correct answer choice or why 3 answer choices are incorrect.
+In this chapter, we will teach you how to breakdown each answer choice to identify the difference
+between correct and incorrect answer choices.
+
+The 5 Common Types of Incorrect Answer Choices
+For success on the Reading Test, you must be able to explain what makes an answer choice incorrect.
+Remember, for an answer choice to be correct, it must be supported by evidence in passage and answer
+
+the question being asked. If you can understand not only what makes an answer choice correct but also what
+makes the others incorrect, finding the correct answer choice becomes much easier.
+The 5 most common types of incorrect answers on the ACT Reading Test are
+
+1)
+
+Not in the Passage
+
+2)
+
+Too Specific
+
+3)
+
+Too Broad
+
+4)
+
+Opposite or Slant of the Passage
+
+5)
+
+In the Passage but Not Answering the Question
+
+In the rest of this chapter, we will go through these 5 types of incorrect answers and some example passages to
+teach you how to properly think about the answer choices and more effectively find the correct answer.
+
+© PrepPros 2025
+
+-54-
+
+PrepPros ACT Reading Course
+
+1) Not in the Passage
+Many incorrect answer choices include information that is not in the passage. If the answer choice includes
+details that are not in the passage, the answer is incorrect.
+
+For example, let’s say there is a question about Adam’s clothing from the following passage:
+Adam rolled up the tattered sleeves of his sweater, exposing the winding snake tattoos on both of
+his forearms. He had gotten them after he returned from his first tour in Iraq — an homage to his fallen
+comrades. Despite now living in upstate New York, he still wore his Army boots every day, the tops
+of which were hidden below his faded black jeans, the only pair that he owns because, as he says,
+
+“they’re the only ones that fit me just right.”
+1.
+
+Based on the passage, which of the following can be assumed about Adam’s clothing?
+
+Gap,
+
+He only wears the most comfortable clothing that he can buy.
+The army provided him with free clothes after he returned home from Iraq.
+His clothes are old and worn out.
+
+He only owns one sweater.
+
+Here, the only answer that has evidence we can point to in the passage is C. The “tattered sleeves” and “faded
+black jeans” both demonstrate that his clothing is old and worn out. All other answer choices are not
+supported by evidence from the passage. Could you picture Mr. Johnson’s jeans as the most comfortable that
+he could afford? Could he have received free clothing from the Army? Could he own just one sweater? Sure,
+all of these are possible, but we do not know any of this for sure from the passage. We cannot point to any
+evidence in the passage that supports A, B, or D. We can only tell a story of why we think it could be true. As
+we said in Chapter 1, there is no storytelling! If an answer choice is not clearly supported by evidence in the
+passage, then it is always wrong! The answer is C.
+
+© PrepPros 2025
+
+-55-
+
+PrepPros ACT Reading Course
+
+Passage 1
+
+The best way to describe Ms. Upton is like a
+
+1)
+
+collared shirt that is buttoned all the way up. Sure,
+
+Based on the passage, which of the following can
+we infer about Ms. Upton?
+
+that top button might bring about malaise, but it was
+well worth it to upkeep her stellar reputation within
+
+A.
+
+Her coworkers hold her in the highest regard.
+
+C.
+
+The community regards her as the best
+
+B.
+
+the community and especially amongst her peers.
+How else would everybody know that she is the
+
+She is extremely well dressed.
+
+businesswoman in the town.
+
+best? The only problem was it was all a facade — a
+
+D.
+
+coy attempt to prove her superiority when in reality
+
+She used to attend a book club.
+
+she was just like the rest of us with our top buttons
+10
+
+undone. If only she would stop feigning
+superiority, maybe we would invite her back to the
+book club...maybe.
+
+Passage 2
+
+The term purebred was coined in 1890, but
+2)
+
+pure breeding got its start well before that when
+
+Which of the following statements would the
+
+author of the passage most likely support?
+
+people decided to selectively breed dogs of a
+certain pedigree to amplify specific traits.
+
+A.
+
+Breeders would selectively mate dogs of certain
+
+produce dogs that are superior in certain ways
+
+health, attributes, and sagacity to produce a new
+
+but inferior in others.
+
+“purer” breed. However, the centuries of closed
+breeding have led purebred dogs to have many
+of excellence and deleterious genes; this has
+
+The origins of pure breeding began back in the
+
+C.
+
+Modern purebred dogs are far healthier and
+have better attributes than their ancestors.
+
+resulted in significant health problems for modern
+
+D.
+
+purebred dogs. As a result, many breeders are now
+
+Cross breeding will successfully fix all of the
+problems associated with purebred dogs.
+
+beginning to create new “pure breeds” through
+cross breeding (first generation crosses of two
+purebred dogs).
+
+© PrepPros 2025
+
+B.
+
+1800s.
+
+problems, as selective breeding favors both genes
+10
+
+Pure breeding over a long period of time can
+
+-56-
+
+PrepPros ACT Reading Course
+
+2) Too Specific
+Incorrect answer choices are very commonly too specific. Often, a single word or a short phrase in an answer
+choice makes the entire answer choice incorrect. If the answer choice is too specific and goes beyond what
+the passage says, it is always incorrect.
+As you read each answer choice, look for specific details and strong statements that could make the
+
+answer choice incorrect. Ask yourself, “Does the passage really say that?” Remember, the more specific and
+stronger an answer choice is, the more likely it will be incorrect.
+For example, let’s say you are reading a passage about pelicans’ fishing habits:
+Pelicans fish by using their long beaks and large throat pouches to scoop up prey from the water’s
+surface. Pelicans’ diets include fish, amphibians, small turtles, crabs, and even other small birds.
+Most pelicans use a technique called “dive-bombing,” where the birds will tuck their wings and dive
+directly into the water at unsuspecting fish. However, pelicans have also been known to hunt
+cooperatively, especially when hunting near the shores. The groups of birds will form a line to drive
+schools of smaller fish into the shallower waters, beating their wings near the surface, and then
+scooping up their favorite prey.
+1.
+
+Which of the following statements can be inferred from the passage?
+
+Gap,
+
+Pelicans prey predominantly on fish during the summer months.
+
+Great White pelicans are the only species of pelicans that hunt for turtles.
+Small ocean fish are the main prey for pelicans.
+Pelicans do the majority of their hunting in shallow waters near the coast.
+
+Here A, B, and D are incorrect because they are too specific. For A, the passage does say that fish are the
+predominant prey, but it did not at any point specify anything about summer months. For B, the passage never
+discussed Great White pelicans. For D, the passage never details where the pelicans do the majority of their
+hunting; it just mentions that pelicans hunt along the shallow waters near the shores. At the end of the passage,
+
+“scooping up their favorite prey” refers to smaller fish as the favorite prey; therefore, the small ocean fish are
+the main pray. The answer is C.
+
+© PrepPros 2025
+
+-57-
+
+PrepPros ACT Reading Course
+
+On August 25, 1916, President Woodrow
+
+The passage states that the National Park Service
+
+Wilson signed the act creating the National Park
+
+took what role from the Department of the
+
+Service, a new federal bureau in the Department of
+
+Interior in 1916?
+
+the Interior responsible for protecting the 35
+national parks and monuments then managed by
+
+A.
+
+and monuments and those yet to be
+
+the department and those yet to be established.
+This “Organic Act” states that “the Service thus
+
+established shall promote and regulate the use of
+the Federal areas known as national parks,
+10
+
+monuments, and reservations... by such means and
+
+established.
+B.
+
+which purpose is to conserve the scenery and the
+
+C.
+
+established.
+D.
+
+such manner and by such means as will leave them
+generations.”
+An Executive Order in 1933 transferred 56
+20
+
+reservations.
+According to the passage, what is one purpose of
+the National Park Service?
+A.
+
+To conserve national parks and encourage an
+
+national monuments and military sites from the
+
+increase in the number of visitors to the
+
+Forest Service and the War Department to the
+
+parks.
+
+National Park Service. This action was a major
+
+B.
+
+system of parks—a system that includes areas of
+
+C.
+
+historical as well as scenic and scientific
+importance. Congress declared in the General
+
+To create a safe haven for wildlife from
+hunters and human development.
+
+step in the development of today’s truly national
+25
+
+Identify and propose new lands to be
+
+protected as national parks, monuments, or
+
+and to provide for the enjoyment of the same in
+unimpaired for the enjoyment of future
+
+Management of 56 national monuments and
+military sites and future sites yet to be
+
+natural and historic objects and the wildlife therein
+15
+
+Overseeing only the 35 national parks and
+monuments established by 1916.
+
+measures as conform to the fundamental purpose
+of the said parks, monuments, and reservations,
+
+Protection of the current 35 national parks
+
+To preserve lands in their natural form and
+protect lands for future generations.
+
+D.
+
+Authorities Act of 1970 “that the National Park
+
+To protect lands from the damaging practices
+of logging and gold mining.
+
+System, which began with the establishment of
+30
+
+Yellowstone National Park in 1872, has since
+
+The list of locations in the National Park System
+
+grown to include superlative natural, historic, and
+
+in lines 35-37 serves to:
+
+recreation areas in every region...and that it is the
+purpose of this Act to include all such areas in the
+System....”
+The National Park System of the United States
+
+A.
+
+highlight that one goal of the National Park
+
+B.
+
+point out the locations Congress and the
+
+System is to protect international lands.
+President have decided are the most
+
+now comprises more than 400 areas covering more
+35
+
+than 84 million acres in 50 states, the District of
+
+Columbia, American Samoa, Guam, Puerto Rico,
+Saipan, and the Virgin Islands. These areas are of
+
+such national significance as to justify special
+
+important to protect.
+
+C.
+
+similar systems in other countries.
+
+D.
+
+various acts of Congress.
+Additions to the National Park System are
+now generally made through acts of Congress, and
+national parks can be created only through such
+
+According to the passage, today’s system of
+parks:
+
+A.
+
+protects areas that are historically, scenically,
+
+B.
+
+provides an example of a successful national
+
+and scientifically important.
+
+acts. But the President has authority, under
+45
+
+the Antiquities Act of 1906, to proclaim national
+monuments on lands already under federal
+jurisdiction.
+
+show how widespread the lands preserved by
+National Park System are today.
+
+recognition and protection in accordance with
+40
+
+contrast the US National Park System with
+
+parks system for other countries.
+C.
+
+is composed of lands across the country that
+Presidents Wilson chose to conserve.
+
+D.
+
+fulfills Woodrow Wilson’s dream of
+
+preserving nature in its original state for
+future generations.
+
+© PrepPros 2025
+
+PrepPros ACT Reading Course
+
+3) Too Broad
+Sometimes, an answer choice is incorrect because it is too broad. This occurs when the answer choice does not
+specifically answer the question being asked (more common) or does not match a more specific statement
+made in the passage (less common). While broad answer choices are better in general, make sure that the
+answer choice you pick is always specific enough to answer the exact question you are being asked.
+
+For example, let’s consider this excerpt from a passage about Darwin’s finches and evolution.
+Dr. Anders Robert became fascinated with evolution after reading Charles Darwin’s Theory of
+Evolution in graduate school. But he was never fully satisfied with Darwin’s explanation of evolution
+
+and his survival of the fittest model. Dr. Robert always felt there was another missing piece — a
+something that he termed “micro-evolution,” evolution on a tiny scale that can occur over much
+shorter time periods. While Darwin’s evolution occurs over many generations due to the pressures of
+natural selection, Dr. Robert postulates that every 2 to 3 generations small changes occur to key
+characteristics of a population and that over time enough of these small changes lead to new subSpecies and species forming in a shortened time frame. To test his theory, Dr, Robert will travel to the
+Galapagos Islands to study changes in the beaks of some of the same species of finches that Darwin
+studied over one hundred years ago.
+1.
+
+The main idea of the passage is to:
+
+GaAWpY
+
+research the theory of evolution using Darwin’s finches.
+test a new idea about evolution by studying finches’ beaks.
+highlight Dr. Robert’s lifelong fascination with evolution.
+
+recreate Darwin’s research on the Galapagos Islands.
+
+Here, A is incorrect because it is too broad. For A, does the passage discuss the theory of evolution? Yes, but
+researching the theory of evolution is not the main idea of the passage, so A does not answer the question. C is
+incorrect because it is too broad and includes a detail that is not supported by the passage. While the first
+sentence directly states that Dr. Anders Robert is fascinated with evolution, his fascination is not the main idea
+of the passage. Additionally, the passage never states he has a “lifelong fascination,” so C is incorrect. D is
+incorrect because the word “recreate” does not match the passage, as there is nothing about Dr. Robert
+recreating Darwin’s research. The main idea of the passage is about Dr. Robert’s research to test his new
+theory, so B is the correct answer.
+
+© PrepPros 2025
+
+-59-
+
+PrepPros ACT Reading Course
+
+The following passage is about honeybees in the United
+States.
+
+Honeybees are dying. Decimated by Colony
+Collapse Disorder in the mid-2000s, bees remain
+under assault from pesticides, climate change,
+mites, and habitat destruction. Between 2014 and
+2017, about a quarter of bees in the nation’s
+commercial colonies died each winter, significantly
+higher than the 15% previously considered normal.
+This troubling trend, along with the importance of
+
+honeybees to successful crop growth and overall
+10
+
+product yield, has led many farmers to rethink how
+they will pollinate their crops.
+
+Most people know that honeybees are important
+for the pollination of flowers, and therefore
+
+home for the next 10 days, until they are loaded
+
+back onto the trucks in the middle of the night.
+Since there is no other way to pollinate so many
+flowers, farmers like Terrence will pay beekeepers
+
+55 like Ellis over $5,000 each week for bees. In
+addition to helping solve the pollination problem
+farmers face due to the recent decline in bee
+populations and ongoing issues with mass bee death
+events in farmers’ hives, professional beekeepers
+60 are also able to help maintain the food yield for
+
+orchards of flowering trees and ensure a bountiful
+harvest each year, all while making a good living
+for themselves.
+1.
+
+essential in the farming of fruits and nuts that grow
+15
+
+A.
+
+on flowering trees, but few know that honeybees
+decrease in the honeybee population around the
+world has created a huge demand for honeybees
+
+B.
+
+explain a largely unknown business.
+
+C.
+
+describe the difficulties that peach farmers
+face today.
+
+from farmers, who need the bees to pollinate their
+
+D.
+
+acres and acres of flowering trees. Without bees,
+
+Terrence Jones, an organic Peach farmer in
+
+2.
+
+each of which can produce up to 1,000 flowers that
+
+A.
+
+The reason that honeybee populations have
+
+B.
+
+Professional beekeeping is a large and
+
+C.
+
+Honeybees can travel to multiple farms
+
+been decreasing is still largely unknown.
+
+need to be pollinated. To pollinate the 5 million
+flowers on his farm, Terrence needs some serious
+
+growing industry in the United States.
+
+help. He has five hives of his own, but last winter
+three of his five hives had mass bee deaths due to
+30
+
+Which of the following statements about
+
+honeybees is best supported by the passage?
+
+rural Georgia, has over five thousand Peach trees,
+25
+
+Varroa mites — one of the most common parasites
+
+each year to pollinate the flowers of fruit
+
+and a big problem for all beekeepers. The
+
+trees.
+
+D.
+
+remaining bees are not nearly enough to get the
+calls up his friend Ellis out in California.
+Ellis is a professional beekeeper who keeps 500
+
+beehives. Every year in the spring, Ellis packs up
+his hives in specialty bee transport trucks and ships
+
+them all over the country. Based on the size of
+Terrence’s farm and the number of flowers that
+40
+
+need to be pollinated, Ellis is bringing ten hives to
+Terrence’s farm. This will be these bees’ second
+
+stop — they, along with 55 other hives, already
+helped another farmer in Pennsylvania pollinate his
+700 acres of early-blooming apple trees. After
+45
+
+arriving, the bees are carefully transported to the
+
+peach fields in the middle of the night, when the
+bees are all asleep in the hives. Shortly after
+sunrise, there is an audible buzzing in the orchard,
+where the bees are visiting thousands of blossoms
+50
+
+on the peach trees to harvest the nectar, pollinating
+the flowers as they go. This will be the bees’ new
+
+© PrepPros 2025
+
+Honeybees are essential to produce all
+types of fruits and nuts.
+
+massive job done. So, what does Terrence do? He
+35
+
+explore the historical relationship between
+
+bees and farming in the United States.
+
+crops like apples, peaches, cranberries, and
+almonds, just to mention a few, would fail.
+
+describe one man’s quest to become a
+professional beekeeper.
+
+can be big business. The recent and alarming
+
+20
+
+The primary purpose of the passage is to:
+
+3.
+
+The first paragraph serves to:
+
+A.
+
+propose a solution to a challenge that is
+introduced later in the passage.
+
+B.
+
+identify an issue that motivates the solution
+
+C.
+
+provide an example of a phenomena that is
+
+discussed later in the passage.
+explained later in the passage.
+D.
+
+explain the factors that led to a damaging
+
+trend discussed in the rest of the passage.
+
+PrepPros ACT Reading Course
+
+4.
+
+According to the passage, honeybees are
+
+7.
+
+essential for:
+A.
+
+about the location of Ellis’s beehives that are
+not at Terrence’s farm?
+
+vegetable farms that do not have any
+beehives of their own.
+
+B.
+
+C.
+D.
+
+Based on the passage, what can be inferred
+
+A.
+
+any type of farm that does not have enough
+
+The beehives are at other farms at
+unspecified locations across the United
+
+local bees to pollinate the flowers.
+
+States.
+
+farms that have decreased food yield due to
+
+The beehives are at other peach farms in
+
+pests and parasites.
+
+Georgia.
+
+fruits and nuts that grow on flowering trees.
+
+The beehives are at the apple orchards in
+Pennsylvania since apple trees take longer
+
+5.
+
+to pollinate.
+
+The passage indicates that Ellis is bringing how
+
+The location of the beehives is a secret that
+
+many hives to Terrence’s farm?
+
+Gap,
+6.
+
+Ellis refuses to share.
+
+10
+
+8.
+
+55
+
+500
+
+The passages states that the pollination problem
+farmers face is a result of:
+
+The passage does not specify.
+
+A.
+
+declining bee populations and mass bee
+
+death events in farmers’ hives.
+
+It can most reasonably be inferred that the size
+
+B.
+
+Varroa mites and bacterial infections in the
+
+of Terrence’s farm compared to the apple famer
+
+farmers’ hives.
+
+in Pennsylvania is:
+
+bee’s having lowered pollination activity
+
+A.
+
+slightly larger.
+
+B.
+
+about the same size.
+
+C.
+
+slightly smaller.
+
+D.
+
+much smaller.
+
+© PrepPros 2025
+
+after being placed in a shipping container.
+increased average daily temperatures due to
+climate change.
+
+-61-
+
+PrepPros ACT Reading Course
+
+4) Opposite or Slant of the Passage
+Many incorrect answers on the ACT are the opposite or a slant of what the passage states. These answer
+choices often look correct because they include exact words or phrases from the passage; however, they
+
+are incorrect because the answer choice is the opposite or a slant of what is in the passage. Remember,
+you should not pick an answer choice just because you find a word or phrase that is directly in the passage, as
+these are often incorrect answer choices. Always make sure the answer choice is 100% correct.
+Let’s look at the passage about ocean currents below as an example:
+Ice triggers the movement of ocean currents. As water freezes in the North and South Poles, the
+water surrounding the ice becomes saltier and colder since the salt leaves the water upon freezing.
+The newly formed ice then cools the surrounding water. The cold, salty water sinks due to its
+
+increased density. Once it gets to the bottom of the ocean floor, the water must move somewhere — so
+it travels southward to spread across the submerged surface of the earth. This is a cold current. Warm
+water replaces it on the surface and moves to the north. This motion is known by scientists as the
+global conveyor belt, a globe-wide current that circulates cold and warm water around the earth.
+1.
+
+Which of the following statements about the global conveyor belt is best supported by the
+passage?
+
+A.
+
+Cold, salty water at the North and South Poles comes to the surface and replaces the water
+that turned into ice.
+
+B.
+
+The ocean currents that make up the global conveyor belt change with the seasons.
+
+C.
+
+Melting ice at the North and South Poles is the first step in the chain reaction that causes
+the ocean currents.
+
+D.
+
+Cold, salty water travels south on the ocean floor and warm water moves north on the
+surface.
+
+A is incorrect because the answer choice is opposite of the passage. A says that the cold, salty water comes to
+the surface, but the passage says the cold, salty water sinks. B is incorrect because it is not in the passage;
+there is nothing about the currents changing with the seasons. C is incorrect because the answer choice is
+opposite of the passage. The first two sentences of the passage say that freezing water, not melting ice, is the
+first step in the process that causes the oceans currents.
+The correct answer here is D, as it is the only one that is supported by the passage. The passage states the
+cold, salty water travels southward across the ocean floor and that warm water moves north on the surface.
+
+© PrepPros 2025
+
+-62-
+
+PrepPros ACT Reading Course
+
+This passage is adapted from Ashley Yeager, “Slingshot
+
+bundling it up in two front appendages called
+
+Spiders Pull More Gs than Cheetahs Do.” © 2020 by The
+
+pedipalps as it goes. On sensing the sounds of
+
+Scientist.
+
+prey nearby — most likely via its web, which
+appears to act like a small antenna — the spider
+
+Leg over leg, a furry brownish-black spider
+tugs on a single silk thread, tightening the frame of
+
+55
+
+previously assumed it let go of the silk thread
+
+its web. It pulls and pulls, as if removing slack
+from a slingshot, and then it waits. Minutes pass,
+
+altogether, Alexander and Bhamla’s videos show
+
+sometimes hours. Then, when an unsuspecting
+
+that the spider in fact only releases some of the line
+while keeping hold of a part of it with its
+
+insect flies by, the spider releases the thread,
+springing itself and its satellite dish-shaped web
+
+10
+
+60
+
+trap its next victim. Again and again, the spider
+
+an eye, with the spider and its web hurtling
+
+captures an insect, wraps it in silk for later, then
+
+through the air at more than 4 meters per second (9
+
+“comes right back to that tension line and bundles
+
+g. That’s 130 times the acceleration experienced
+
+it up again. That allows it to reset and reload
+65
+
+slingshot itself several times before the web is
+
+that of a sprinting cheetah.
+
+destroyed.
+The speeds and accelerations of this spider are
+
+Those eye-watering numbers led Georgia Tech
+
+impressive, but so is the fact that, unlike most
+
+chemical engineer Saad Bhamla to wonder: how
+70
+
+fast motions in biology,” he says, so when he
+
+says. “Instead of waiting for something to collide
+
+spotted one of these spiders flying past his face a
+
+with it, the spider is going after things... actually
+catching flying insects in midair.”
+
+few years ago while he was hiking through the
+Peruvian rainforest, he knew he had to investigate.
+
+75
+
+He checked the literature and found only a few
+papers on Theridiosomatidae, the arachnid family
+
+through the air to trap it is humbling,” says Sheila
+
+comprising spider species that use their webs as
+
+Patek, a biologist at Duke University who
+studies tiny spring mechanisms across the natural
+
+slingshots. The papers were decades old and only
+80
+
+enlisted the help of his postdoc, Symone
+
+faster than their nervous systems can monitor, so
+
+Alexander, and together they went out hunting for
+
+they have to plan ahead and essentially let their
+spring and latch system control what happens after
+
+spiders in the Amazon rainforest.
+
+After locating one of the spiders, which
+
+85
+
+“What’s fascinating is the amount of energy
+
+researchers would set up portable high-speed
+
+the spiders can store in their web and then unleash
+
+cameras with magnifying lenses to zoom in on and
+
+to catch their prey,” says Bhamla. Next, he wants
+
+record their motions. Then, either Alexander or
+Bhamla would snap their fingers to get the spider
+
+90
+
+thought to disperse energy, can, in fact, store
+
+pair learn that a human finger-snap closely
+
+energy, a characteristic that might inform the
+
+matches the frequency of a buzzing mosquito —
+
+design of synthetic silk. Now that high-speed
+
+the spiders’ spring off. “It’s just amazing that we
+
+camera footage can offer scientists a frame-by95
+
+frame view of what the arachnids are doing, Patek
+
+can snap our fingers and get this magical thing,”
+
+says, “it just opens up a myriad of areas of
+
+Bhamla says.
+
+research in evolution, neuroscience, materials
+science, and human engineering.”
+
+Analyzing the footage, Alexander and Bhamla
+
+could watch exactly how the spiders oriented
+themselves on the tension line at the front of their
+webs. Facing away from the web, the spider grips
+its silk net with its four back legs and pulls itself
+50
+
+to investigate how the webbing material, typically
+
+to catapult itself through the air. Only later did the
+
+and that seemed to be the only frequency that set
+
+45
+
+they let go of the tension thread. “It’s superpowertype stuff,” Patek says.
+
+measure roughly 2 millimeters in length, the
+
+40
+
+world. Spiders are using an external tool, a web,
+to snare their prey, and they’re working at speeds
+
+g-forces the spiders experienced. So Bhamla
+
+35
+
+“To see the video of this little spider pull on its
+line, load its web, sense its prey, and then fly
+
+described the slingshot motion, not the speeds or
+
+30
+
+web-building spiders, it’s actively hunting, Bhamla
+says. “It’s changed the function of its web,” he
+
+movements? Bhamla’s lab is “obsessed with ultra-
+
+25
+
+quickly,” Alexander says. The spider can usually
+
+in freefall, and an order of magnitude greater than
+
+the heck are these tiny spiders achieving such fast
+
+20
+
+pedipalps, making it easier to reset its slingshot to
+
+toward its prey. All of this happens in the blink of
+
+miles per hour) with accelerations exceeding 130
+
+15
+
+releases the tension line. Although researchers had
+
+up the tension line with its four front legs,
+
+© PrepPros 2025
+
+- 63
+-
+
+PrepPros ACT Reading Course
+
+The passage can be best described as:
+A.
+
+5.
+
+sense their prey by:
+
+aseries of scientific experiments focusing
+on a newly discovered species.
+
+B.
+
+A.
+
+adescription of an observational study on
+B.
+
+touch, the spiders sense the prey as it
+
+C.
+
+vibration, the spiders can discern different
+
+asummary of how a certain species of
+
+contacts the web.
+
+spider evolved to hunt in an unusual way.
+D.
+
+sight, the spiders see the prey with their
+excellent eyesight.
+
+a Species with a unique characteristic.
+C.
+
+The author suggests that spiders most likely
+
+an overview of the differences between
+
+types of prey based on frequency.
+D.
+
+slingshot spiders and web-building
+spiders.
+
+feel, the spiders use their web as a tool to
+
+perceive the sound of prey nearby.
+
+According to the passage, what led Bhamla to
+
+The passage most strongly suggests that
+
+first decide to study the Theridtosomatidae
+
+Bhamla and Alexander were the first scientists
+
+spiders?
+
+to study the Theridiosomatidae spider’s:
+
+A.
+
+Bhamla wanted to discover a new species
+
+A.
+
+of spiders.
+
+B.
+
+slingshot motion.
+
+B.
+
+Bhamla sawa spider flying past him while
+
+C.
+
+webs.
+
+in the rainforest in Peru.
+
+D.
+
+diet.
+
+C.
+
+Bhamla runs a lab that studies ultra-fast
+
+D.
+
+Bhamla wanted to understand how
+
+motions in biology.
+
+speeds.
+
+The passage makes clear that snapping a finger
+made the spiders jump because:
+
+slingshot spiders store energy in their
+webs.
+
+A.
+
+the visible movement of the finger triggers
+their hunting instincts.
+
+Based on the passage, what previously held
+
+the spiders hear the snapping noise in the
+
+C.
+
+the pressure wave created by the snapping
+
+same way they hear a flying insect.
+
+assumption about Theridiosomatidae spiders
+did Bhamla’s study disprove?
+
+A.
+
+B.
+
+fingers releases the tension line.
+
+The spiders completely release the tension
+
+D.
+
+fine after launching into the air.
+B.
+
+The spiders can use the web as a slingshot
+
+C.
+
+The spiders only hunt mosquitos.
+
+D.
+
+The spiders are unable to store any energy
+
+frequency a mosquito.
+
+several times in a row.
+
+The description of the spiders having
+“superpower-type stuff’ (lines 85-86) most
+nearly refers to:
+
+in their web.
+
+A.
+B.
+
+cheetah in lines 12-14?
+
+C.
+
+Highlight the unconventional hunting
+
+C.
+
+spiders controlling their flight in the air
+after letting go of the tension thread.
+
+Emphasize the high speeds that spiders
+
+D.
+
+the slingshot spider’s nervous system
+
+reach by comparing them to a more
+
+operating faster than those of web-
+
+commonly known animal.
+
+building spiders.
+
+Highlight the impressive accelerations the
+
+spiders achieve by providing a reference
+that readers are likely familiar with.
+D.
+
+spider webs both storing and dispersing
+energy.
+
+technique used by the spiders.
+B.
+
+spiders hunting at speeds faster than they
+can perceive.
+
+What is the purpose of the reference to the
+
+A.
+
+ahuman-finger snap closely matches the
+
+Point out that spiders are more effective
+hunters than other well-known predators.
+
+© PrepPros 2025
+
+- 64
+-
+
+PrepPros ACT Reading Course
+
+9.
+
+Which of the following statements best
+
+10. What is the main idea of the last paragraph
+(lines 87-98)?
+
+describes the process by which the
+Theridiosomatidae spiders build tension in the
+
+A.
+
+line?
+
+A.
+
+B.
+
+C.
+
+spiders hunt require more analysis to fully
+
+The spider faces the web, grabs the line
+
+comprehended.
+
+with its pedipalps, and pulls itself down
+
+The slingshot spiders possess a unique
+
+the line.
+
+ability to use stored energy to hunt insects.
+
+The spider wraps the line in its pedipalps,
+
+A spider web’s ability to transfer energy
+
+turns to face the web, and pulls itself up
+
+may have applications to other areas of
+
+the line.
+
+science.
+
+The spider faces away from the web, pulls
+
+The slingshot spiders should be researched
+
+itself up the line, and wraps the line up in
+
+by scientists in a variety of fields.
+
+its pedipalps.
+D.
+
+The methods with which the slingshot
+
+The spider grabs the web with its four
+back legs, pulls itself down the line, and
+faces away from the web.
+
+© PrepPros 2025
+
+- 65
+-
+
+PrepPros ACT Reading Course
+
+5) In the Passage but Not Answering the Question
+This final type of incorrect answer choice is often the most difficult to avoid. These are answer choices that
+
+are directly stated in the passage but do not answer the question being asked. You will be able to go to the
+passage, find the information, and match it with the answer choice. However, it will still be incorrect!
+This is a good spot to reiterate two important tips we have learned already:
+1.
+
+Do not select an answer choice because it has a word or phrase that matches the passage. Make
+
+sure the answer choice is 100% correct. The ACT will often put exact words or phrases from the
+passage in incorrect answer choices to try to trick you.
+2.
+
+Finding evidence for an answer choice in the passage does not mean you found the correct
+
+answer. You Still need to make sure you are answering the question the ACT is asking.
+
+We will see some examples of these questions as we work through some full practice passages in chapter 13.
+
+© PrepPros 2025
+
+- 66 -
+
+PrepPros ACT Reading Course
+

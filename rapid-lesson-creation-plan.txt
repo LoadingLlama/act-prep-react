@@ -1,0 +1,22 @@
+RAPID LESSON CREATION STRATEGY
+
+Current: 6/19 lessons complete (32%)
+Goal: Complete Unit 2 → 9/19 (47%)
+
+REMAINING UNIT 2 LESSONS:
+1. 2.5 Figures + Text (lesson_key: figures-text)
+2. 2.6 Scatter Plots (lesson_key: scatter-plots)
+3. 2.7 Inverse Trends (lesson_key: inverse-trends-multiple-axes)
+
+STREAMLINED APPROACH:
+- Use science-2.2-trends-FIXED.html as template (correct formatting)
+- Extract content from PrepPros guide
+- Create 2 ACT-style examples per lesson
+- Use established styling standards
+
+TIME ESTIMATE:
+- Each lesson: ~10 minutes (content + examples + upload)
+- Total for 2.5-2.7: ~30 minutes
+- Would complete Unit 2 (47% total progress)
+
+PROCEED: Yes, create 2.5-2.7 in sequence

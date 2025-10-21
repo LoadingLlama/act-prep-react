@@ -1,0 +1,281 @@
+import { createClient } from '@supabase/supabase-js';
+import fs from 'fs';
+
+const supabase = createClient(
+  'https://rabavobdklnwvwsldbix.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJhYmF2b2Jka2xud3Z3c2xkYml4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1OTc2NTQ3OCwiZXhwIjoyMDc1MzQxNDc4fQ.81SeH703keXgF3IevQlRS7OYmn1J2GUVIkn3OJiviM4'
+);
+
+async function uploadAll() {
+  // Upload lesson content
+  const lessonContent = fs.readFileSync('science-2.6-scatter-plots.html', 'utf8');
+  const { error: lessonError } = await supabase
+    .from('lessons')
+    .update({
+      content: lessonContent,
+      content_json: null,
+      migrated_to_json: false
+    })
+    .eq('lesson_key', 'scatter-plots');
+
+  if (lessonError) {
+    console.error('Lesson upload error:', lessonError);
+    process.exit(1);
+  }
+  console.log('✓ Science 2.6 Scatter Plots lesson uploaded');
+
+  // Get lesson ID
+  const { data: lesson } = await supabase
+    .from('lessons')
+    .select('id')
+    .eq('lesson_key', 'scatter-plots')
+    .single();
+
+  // Delete old examples
+  await supabase
+    .from('lesson_examples')
+    .delete()
+    .eq('lesson_id', lesson.id);
+  console.log('✓ Deleted old examples');
+
+  // Upload examples with ULTRA-WIDE format (no background, full width)
+  const examples = [
+    {
+      lesson_id: lesson.id,
+      position: 1,
+      title: "Reading Individual Points on a Scatter Plot",
+      problem_text: `<p style="margin-bottom: 2.5rem; font-size: 16px; line-height: 1.6;">Students investigated the relationship between study time and quiz scores. They recorded data from 12 different students.</p>
+
+<div style="padding: 0; margin: 4rem auto; max-width: 1400px; width: 95%; background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <p style="font-weight: 700; font-size: 18px; margin-bottom: 2rem; color: #1f2937;">Figure 1</p>
+  <p style="margin-bottom: 1.5rem; font-size: 15px;"><strong>Graph Description:</strong> The scatter plot below shows quiz scores (%) on the y-axis versus study time (hours) on the x-axis for 12 students. Each point represents one student's data.</p>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 2rem; font-size: 14px;">
+    <thead>
+      <tr style="background-color: #374151;">
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Study Time (hours)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Quiz Score (%)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Point Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">1.0</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">55</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">Lower left</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">1.5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">60</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">Lower left region</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">2.0</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">65</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">Lower middle</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">2.5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">70</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">Middle</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">3.0</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">72</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">Middle</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">3.0</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">78</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">Middle (second point at 3.0 hrs)</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">3.5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">80</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">Upper middle</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">4.0</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">82</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">Upper middle</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">4.5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">88</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">Upper region</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">5.0</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">90</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">Upper right</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">5.5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">92</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">Upper right</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">6.0</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">95</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">Upper right corner</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p style="margin-top: 3.5rem; font-weight: 600; font-size: 17px; color: #1f2937;">According to Figure 1, what quiz score did the student who studied for 3.5 hours achieve?</p>`,
+      choices: [
+        { letter: "A", text: "72%" },
+        { letter: "B", text: "75%" },
+        { letter: "C", text: "78%" },
+        { letter: "D", text: "80%" }
+      ],
+      correct_answer: "D",
+      solution_steps: [],
+      answer_explanation: `This question tests your ability to read a specific point on a scatter plot.
+
+**Step 1: Locate the x-value**
+Find 3.5 hours on the x-axis (Study Time).
+
+**Step 2: Draw an imaginary vertical line**
+From x = 3.5, draw a vertical line upward until it hits a data point.
+
+**Step 3: Read the y-value**
+From that data point, draw a horizontal line to the y-axis to read the quiz score.
+
+**Step 4: Check the table**
+Looking at the table, at 3.5 hours of study time, the quiz score is 80%.
+
+**Step 5: Match to answer choices**
+80% → Answer D
+
+**Why this works:**
+- Each point represents one student's complete data (both x and y values)
+- To find a y-value given an x-value, locate the x-position and read upward
+- The table confirms: Study Time = 3.5 hours corresponds to Quiz Score = 80%
+
+**The answer is D.**`,
+      diagram_svg: null,
+      is_worked_example: false
+    },
+    {
+      lesson_id: lesson.id,
+      position: 2,
+      title: "Counting Data Points at a Specific Value",
+      problem_text: `<p style="margin-bottom: 2.5rem; font-size: 16px; line-height: 1.6;">Researchers measured the heart rate of athletes at different running speeds. Multiple athletes were tested at each speed.</p>
+
+<div style="padding: 0; margin: 4rem auto; max-width: 1400px; width: 95%; background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <p style="font-weight: 700; font-size: 18px; margin-bottom: 2rem; color: #1f2937;">Figure 1</p>
+  <p style="margin-bottom: 1.5rem; font-size: 15px;"><strong>Graph Description:</strong> The scatter plot below shows heart rate (beats per minute) on the y-axis versus running speed (km/h) on the x-axis. Each point represents one athlete's measurement at a specific speed.</p>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 2rem; font-size: 14px;">
+    <thead>
+      <tr style="background-color: #374151;">
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Running Speed (km/h)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Heart Rate (bpm)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">95</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">98</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">8</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">110</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">125</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">128</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">132</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">135</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">12</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">145</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">12</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">148</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">15</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">165</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p style="margin-top: 3.5rem; font-weight: 600; font-size: 17px; color: #1f2937;">How many athletes were tested at a running speed of 10 km/h?</p>`,
+      choices: [
+        { letter: "A", text: "1" },
+        { letter: "B", text: "2" },
+        { letter: "C", text: "3" },
+        { letter: "D", text: "4" }
+      ],
+      correct_answer: "D",
+      solution_steps: [],
+      answer_explanation: `This question tests your ability to count data points at a specific x-value on a scatter plot.
+
+**Step 1: Identify the x-value to examine**
+We need to count athletes tested at 10 km/h running speed.
+
+**Step 2: Draw an imaginary vertical line**
+At x = 10 km/h, draw a vertical line from the x-axis upward through all the data points.
+
+**Step 3: Count every point that touches this vertical line**
+Looking at the table systematically:
+- At 10 km/h: 125 bpm (Point 1)
+- At 10 km/h: 128 bpm (Point 2)
+- At 10 km/h: 132 bpm (Point 3)
+- At 10 km/h: 135 bpm (Point 4)
+
+**Step 4: Verify the count**
+There are 4 different data points at running speed = 10 km/h.
+
+**Step 5: Match to answer choices**
+4 athletes → Answer D
+
+**Why this question is important:**
+- Scatter plots often show multiple trials at the same x-value
+- Each point represents one athlete/trial
+- You must count ALL points at the specified x-value, not just notice that there are "some" points there
+- The different y-values (125, 128, 132, 135) show natural variation between different athletes
+
+**Common mistake:**
+Students might count only 1 or 2 points if they don't carefully examine the vertical line at x = 10. Always count systematically from bottom to top.
+
+**The answer is D.**`,
+      diagram_svg: null,
+      is_worked_example: false
+    }
+  ];
+
+  for (const example of examples) {
+    const { error } = await supabase
+      .from('lesson_examples')
+      .insert(example);
+
+    if (error) {
+      console.error(`Error:`, error);
+    } else {
+      console.log(`✓ Inserted: ${example.title}`);
+    }
+  }
+
+  console.log('\n✓ Science 2.6 Scatter Plots complete!');
+}
+
+uploadAll();

@@ -1,0 +1,284 @@
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  'https://rabavobdklnwvwsldbix.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJhYmF2b2Jka2xud3Z3c2xkYml4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1OTc2NTQ3OCwiZXhwIjoyMDc1MzQxNDc4fQ.81SeH703keXgF3IevQlRS7OYmn1J2GUVIkn3OJiviM4'
+);
+
+async function uploadExamples() {
+  const { data: lesson } = await supabase
+    .from('lessons')
+    .select('id')
+    .eq('lesson_key', 'approximation')
+    .single();
+
+  await supabase
+    .from('lesson_examples')
+    .delete()
+    .eq('lesson_id', lesson.id);
+
+  console.log('✓ Deleted old examples');
+
+  const examples = [
+    {
+      lesson_id: lesson.id,
+      position: 1,
+      title: "Bracketing: Interpolating Between Data Points",
+      problem_text: `<p style="margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;">Seedlings of pine, fir, and palm trees were grown in a laboratory where the temperature could be controlled. Five seedlings of each tree were grown at six different temperatures for 1 week. The scientists measured the height of the seedlings at the beginning and end of the week. The weekly growth shown in Figure 1 was calculated by averaging the growth of all five seedlings.</p>
+
+<div style="padding: 0; margin: 2.5rem 0; max-width: 100%;">
+  <p style="font-weight: 700; font-size: 18px; margin-bottom: 1rem; color: #1f2937;">Figure 1</p>
+  <p style="margin-bottom: 0.75rem; font-size: 14px;"><strong>Graph Description:</strong> Line graph showing Weekly Growth (cm) vs. Temperature (°F) for three tree types</p>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 13px;">
+    <thead>
+      <tr style="background-color: #374151;">
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: left; color: white; font-weight: 600;">Temperature (°F)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Pine Growth (cm)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Fir Growth (cm)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Palm Growth (cm)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">20</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">8</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">2</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">30</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">12</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">5</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px; background-color: #fef3c7;">40</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #fef3c7;">15</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">15</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">10</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px; background-color: #dbeafe;">45</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #dbeafe; font-style: italic;">~17-18</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">—</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">—</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px; background-color: #fef3c7;">50</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #fef3c7;">20</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">18</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">18</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">60</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">22</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">20</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">28</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem; font-size: 14px; color: #6b7280; font-style: italic;">Yellow rows show bracketing data points at 40°F and 50°F. Blue row at 45°F shows the interpolated value (not actually measured).</p>
+</div>
+
+<p style="margin-top: 2rem; font-weight: 600; font-size: 17px; color: #1f2937;">According to Figure 1, at 45°F, the weekly growth rate of Pine would most likely have been:</p>`,
+      choices: [
+        { letter: "A", text: "Less than 5 cm" },
+        { letter: "B", text: "Between 5 cm and 10 cm" },
+        { letter: "C", text: "Between 10 cm and 20 cm" },
+        { letter: "D", text: "Greater than 20 cm" }
+      ],
+      correct_answer: "C",
+      solution_steps: [],
+      answer_explanation: `This is a classic bracketing (interpolation) approximation question where you must estimate a value between two given data points.
+
+**Step 1: Recognize this is an approximation question**
+The answer choices are ranges ("Less than 5 cm," "Between 5 cm and 10 cm," etc.), which immediately signals an approximation question.
+
+**Step 2: Identify what's being asked**
+- Tree type: Pine
+- Temperature: 45°F (NOT shown in the data)
+- What to find: Weekly growth rate
+
+**Step 3: Check if 45°F is in the data**
+Looking at the table, we have temperature measurements at 20°F, 30°F, 40°F, 50°F, and 60°F. There is NO measurement at 45°F—confirming we need to approximate.
+
+**Step 4: Find the bracketing data points**
+45°F falls BETWEEN 40°F and 50°F. These are our bracketing points (highlighted in yellow):
+- At 40°F: Pine growth = 15 cm
+- At 50°F: Pine growth = 20 cm
+
+**Step 5: Estimate the value at 45°F**
+Since 45°F is exactly halfway between 40°F and 50°F, the growth should be approximately halfway between 15 cm and 20 cm.
+
+Halfway calculation: (15 + 20) / 2 = 17.5 cm
+
+So at 45°F, Pine growth would be approximately 17-18 cm.
+
+**Step 6: Match to answer ranges**
+Our estimate of ~17-18 cm falls in the range "Between 10 cm and 20 cm," which is answer choice C.
+
+**Why other answers are wrong:**
+- A (Less than 5 cm): Way too low; Pine growth at 40°F is already 15 cm
+- B (Between 5 cm and 10 cm): Still too low; we're interpolating between 15 and 20
+- D (Greater than 20 cm): Too high; 20 cm is the upper bracket at 50°F
+
+**Key insight:** On bracketing questions, the answer will ALWAYS fall between the two bracketing values. Since we're between 15 cm and 20 cm, only answer choice C makes sense.
+
+**The answer is C.**`,
+      diagram_svg: null,
+      is_worked_example: false
+    },
+    {
+      lesson_id: lesson.id,
+      position: 2,
+      title: "Approximating Values in Complex Tables",
+      problem_text: `<p style="margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;">A scientist conducted multiple trials measuring various properties of a chemical system under different conditions. The data collected is shown in the table below.</p>
+
+<div style="padding: 0; margin: 2.5rem 0; max-width: 100%;">
+  <p style="font-weight: 700; font-size: 18px; margin-bottom: 1rem; color: #1f2937;">Table 1</p>
+  <p style="margin-bottom: 0.75rem; font-size: 14px;"><strong>Experimental Data:</strong> Multiple trials with varying conditions</p>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 13px;">
+    <thead>
+      <tr style="background-color: #374151;">
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Trial</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">M (m)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">A (m/s²)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">X (w/a)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">T (°C)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">F (N)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 13px; background-color: #fef3c7;">1</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #fef3c7;">3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #dbeafe;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">6</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #dbeafe;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; font-weight: 600; background-color: #fef3c7;">12</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 13px;">2</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">8</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">12</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 13px;">3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">7</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">12</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 13px; background-color: #fef3c7;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #fef3c7;">3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #dbeafe;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #dbeafe;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; font-weight: 600; background-color: #fef3c7;">18</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 13px;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">6</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">15</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">24</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 13px;">6</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">6</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">20</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">30</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem; font-size: 14px; color: #6b7280; font-style: italic;">Yellow rows (Trials 1 and 4) show the bracketing trials. Blue highlighting shows constant control variables A and T.</p>
+</div>
+
+<p style="margin-top: 2rem; font-weight: 600; font-size: 17px; color: #1f2937;">If X = 5.5 w/a, while M, A, and T remained constant at the values in Trial 1, F would most likely be:</p>`,
+      choices: [
+        { letter: "A", text: "less than 12 N" },
+        { letter: "B", text: "between 12 N and 15 N" },
+        { letter: "C", text: "between 15 N and 18 N" },
+        { letter: "D", text: "greater than 18 N" }
+      ],
+      correct_answer: "B",
+      solution_steps: [],
+      answer_explanation: `This is a challenging table approximation question that requires you to identify the correct trials to compare using the one-variable rule.
+
+**Step 1: Recognize this is an approximation question**
+The answer choices provide ranges ("less than 12 N," "between 12 N and 15 N," etc.), confirming this is an approximation question.
+
+**Step 2: Understand what's being asked**
+- We need to find F (force) when X = 5.5 w/a
+- Control variables that must stay constant: M, A, and T (at the values from Trial 1)
+- Trial 1 values: M = 3, A = 4, T = 10
+
+**Step 3: Apply the one-variable rule**
+We need trials where:
+- M = 3 (constant)
+- A = 4 (constant)
+- T = 10 (constant)
+- Only X changes
+
+Scanning the table (highlighted):
+- **Trial 1:** M = 3, A = 4, X = 6, T = 10, F = 12 ✓
+- **Trial 4:** M = 3, A = 4, X = 5, T = 10, F = 18 ✓
+
+These are the ONLY two trials where M, A, and T match Trial 1's conditions!
+
+**Step 4: Identify bracketing values**
+We're looking for X = 5.5, which falls BETWEEN:
+- Trial 4: X = 5 → F = 18
+- Trial 1: X = 6 → F = 12
+
+Wait—this shows an inverse relationship! As X increases from 5 to 6, F DECREASES from 18 to 12.
+
+**Step 5: Estimate F at X = 5.5**
+X = 5.5 is exactly halfway between 5 and 6.
+F should be approximately halfway between 18 and 12.
+
+Halfway calculation: (18 + 12) / 2 = 15 N
+
+**Step 6: Match to answer ranges**
+Our estimate of 15 N falls exactly on the boundary, but looking at the ranges:
+- B: between 12 N and 15 N
+- C: between 15 N and 18 N
+
+Since we're halfway between the trials, and 15 N is technically included in "between 12 N and 15 N," answer B is correct.
+
+**Common mistakes:**
+- Using Trials 2 or 3 where M ≠ 3 (violates the constant M requirement)
+- Using Trials 5 or 6 where T ≠ 10 (violates the constant T requirement)
+- Not recognizing the inverse relationship between X and F
+- Forgetting to apply the one-variable rule
+
+**The answer is B.**`,
+      diagram_svg: null,
+      is_worked_example: false
+    }
+  ];
+
+  for (const example of examples) {
+    const { error } = await supabase
+      .from('lesson_examples')
+      .insert(example);
+
+    if (error) {
+      console.error(`Error:`, error);
+    } else {
+      console.log(`✓ Inserted: ${example.title}`);
+    }
+  }
+
+  console.log('\n✓ Science 2.3 Approximation examples uploaded with enhanced styling!');
+}
+
+uploadExamples();
