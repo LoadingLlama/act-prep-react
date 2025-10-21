@@ -1,0 +1,462 @@
+Chapter 10: Redundancy, Wordiness, and Irrelevance
+On the English Test, wordiness, redundancy, and irrelevance are common errors. Anytime we see
+redundancy, wordiness, or irrelevant information in an answer choice, it is always incorrect; the
+shortest and simplest answer choice is almost always correct. The goal is for the sentence to
+express the same information in the shortest grammatically correct way. If anything is wordy,
+redundant, or irrelevant, get rid of it.
+
+Redundancy
+The most common mistake on these types of questions is redundancy. To check for redundancy, read
+the sentence itself and the sentence(s) before to check for any repeated information.
+Incorrect: After two years of traveling, Jerome finally returned back home.
+Correct: After two years of traveling, Jerome finally returned home.
+
+By definition, if Jerome is returning, he is coming back. Therefore, we do not need the word “back” in
+the sentence.
+Incorrect: In Sweden, there are about 300,000 to 400,000 moose, many of which stand over seven
+feet tall, roaming freely in the Swedish forests.
+Correct: In Sweden, there are about 300,000 to 400,000 moose, many of which stand over 7 feet
+tall, roaming freely in the forests.
+
+The sentence already specifies the moose are in Sweden, so saying “Swedish” is redundant.
+
+Wordiness
+Sentences can also be unnecessarily wordy without redundancy. For these questions, pick the answer
+choice that uses the fewest words to express the same idea.
+Incorrect: The ancient Italian sculptures were donated to a cultural institution supporting
+intellectual endeavors related to renaissance art.
+Correct: The ancient Italian sculptures were donated to a museum devoted to renaissance art.
+
+Irrelevance
+Incorrect answer choices may include information that is irrelevant to what is being discussed in the
+passage. Irrelevant information most often appears as a long and wordy answer choice and is
+always incorrect.
+Incorrect: To win the game, Ricky needed to make both free throws. Players are not allowed to step
+in the lane during a free throw attempt. He made the first one. The entire gym was quiet
+as he stepped to the line for the second.
+Correct: To win the game, Ricky needed to make both free throws. He made the first one. The
+entire gym was quiet as he stepped to the line for the second.
+
+© PrepPros 2025
+
+-90 -
+
+PrepPros ACT English Course
+
+TIP - How to Spot Redundancy, Wordiness, and Irrelevance Questions
+The ACT now directly tell you if a question is testing you on redundancy, wordiness, or
+irrelevance. Redundancy, wordiness, and irrelevance questions will ask you one of the following
+questions:
+
+1.
+
+Which choice is the least redundant in context?
+
+2.
+
+Which choice best avoids wordiness and redundancy in context?
+
+On the ACT, redundancy, wordiness, and irrelevance questions look like this:
+1.
+
+The July 4th “Walk for Wags” event, a
+
+Which choice is the least redundant
+in context?
+
+fundraising event for local dog shelters,
+
+raised over $10,000 this year.
+
+A.
+
+NO CHANGE
+
+B.
+
+this year for local dog shelters.
+
+C.
+
+in July of this year.
+
+D.
+
+for local dog shelters.
+
+In the example above, the answer is A. The sentence already said the event is for local dog shelters, so B
+and D are incorrect. The sentence also already states the event is in July, so Cis incorrect. As we said at
+the beginning of this chapter, always pick the shortest and simplest answers choice, as the shortest
+answer choice is always correct for these types of questions.
+
+TIP - Never Use The “Short Answer Is Correct” Trick on Grammar Questions
+When you are working on grammar questions, do not always pick the shortest answer! On grammar
+questions, there are times when the shortest answer is incorrect. Make sure that you are applying the
+grammar rules. Remember,
+
+you are only being tested on redundancy when the ACT directly asks you to
+
+pick the least redundant answer choice.
+One example of when the shortest answer is not correct is below:
+1.
+
+The answer choice is an ambiguous pronoun. If the answer is so short that we do not know
+exactly who or what it is referring to, it is incorrect! Keep an eye out for these words: they,
+them, it, this, that, these, those, some, none.
+1.
+
+Which choice makes the sentence most
+
+Freddie became so fascinated with coral
+
+grammatically acceptable?
+
+after watching the documentary about
+
+A,
+
+NO CHANGE
+
+B.
+
+some of them to after finished the
+
+growing coral colonies in home aquariums
+that he ordered some.
+
+documentary.
+C.
+
+afew to his home.
+
+D.
+
+some coral colonies.
+
+In this example, “some” is an ambiguous pronoun and is incorrect. “Some” could be referring to the coral
+colonies or the aquariums. The only answer that specifies what Freddie is ordering is D. The question
+asks which choice is grammatically acceptable, so this is not a redundancy/conciseness questions.
+
+© PrepPros 2025
+
+-91 -
+
+PrepPros ACT English Course
+
+Chapter 10 Practice:
+With steep hills and a rocky terrain, the hike up
+
+>UAW
+
+the mountain was a slow and laborious one.
+
+NO CHANGE
+
+the climb
+the slow and steep climb
+
+. the steep climb up rocky terrain
+
+However, the reward at the end of the slow climb
+1
+
+was a fantastic view!
+
+The recording of the robbery suspect’s phone call
+
+SUAW
+OS
+
+made him seem guilty to the crime of robbery.
+2
+
+NO CHANGE
+
+to be the guilty of robbery.
+to appear to be guilty.
+
+. guilty.
+
+To decorate the wall of the classroom, the entire
+fifth grade class had completed an artistic
+3
+
+NO CHANGE
+one
+
+a mural
+
+. a painting on the wall
+
+rendering of paints across the wall that depicts a
+3
+
+sunrise.
+
+SGUA
+
+The puppies, after having been born just two
+4
+
+weeks ago, were now up for adoption.
+
+NO CHANGE
+
+born
+which were born
+
+. after their mother gave birth to them
+
+The city of Atlantis lives in legend. Over the
+years, Professor Lusk and his team have
+repeatedly tried to locate it but still have not
+
+SUAW
+
+NO CHANGE
+
+>UAW
+
+NO CHANGE
+
+in an effort to find the location of
+attempts to locate
+
+. over and over again to locate
+
+been able to find any true evidence of its
+existence.
+
+Today, there over one thousand professional
+Roman sculptors that live in the city of Rome and
+6
+
+currently
+today in Rome
+
+. DELETE the underlined portion.
+
+make a living selling original work or
+refurbishing antique sculptures.
+
+SGUO
+
+The can of paint, using the fire’s heat to heat the
+7
+
+can, exploded and shot into the yard.
+
+NO CHANGE
+
+heated by the fire
+heated by the fire and that warmth
+
+. heated by the fire that was burning
+
+© PrepPros 2025
+
+-92
+-
+
+PrepPros ACT English Course
+
+voOW>
+
+in June the bonsai trees
+
+D>VOW
+
+granite
+
+D>VOW
+
+the recently completed
+
+. NO CHANGE
+
+If you want to see James’s incredible bonsai trees
+and many other miniature plants, you can see
+
+some
+
+. each year they
+
+them at the annual bonsai competition at the
+Chicago Botanical Garden, where some of his
+8
+
+bonsai trees are on display for all of June.
+
+. NO CHANGE
+
+The hidden entrance was belowa black granite
+
+. black granite
+
+archway and hidden by a bunch of thick ivy. The
+
+. DELETE the underlined portion
+
+best way to spot the entrance is to look for a
+three missing blocks above the black archway.
+9
+
+Shortly after its completion in 1999, around that
+
+10.
+
+10
+
+. NO CHANGE
+
+. and already a famous landmark,
+
+time, the Staples Center was one of the most
+10
+
+. DELETE the underlined portion.
+
+famous landmarks in Los Angeles.
+
+11.
+
+. NO CHANGE
+
+. atrace element that is easily identified
+
+The analysis is possible because the mixture
+
+since it is magnetic.
+
+contains magnetic cobalt, a trace element that is
+
+an easily identifiable, trace element that
+
+11
+
+makes the analysis possible.
+
+easily identified.
+
+. atrace element that is easily identified
+
+11
+
+without difficulty.
+
+12.
+
+On the bottom shelf is a bin filled with dog food.
+Each month, Alicia goes to Alfred’s Pet Shop, buys
+
+bin.
+bin with special weight loss food.
+
+. bin monthly.
+
+a bag of special weight loss food for her husky,
+and refills the bin on the bottom shelf.
+
+The rubber band actually has many more creative
+
+13.
+
+. NO CHANGE
+
+>VOW
+
+. there are over fifty
+
+uses than simply holding together papers. Of the
+
+many of which are very creative
+
+. DELETE the underlined portion
+
+numerous rubber band uses, of which there are
+13
+
+many, some include a hair tie, a pencil grip, and
+13
+
+an eraser.
+
+© PrepPros 2025
+
+>VOW
+
+. NO CHANGE
+
+-93
+-
+
+PrepPros ACT English Course
+
+Chapter 11: Word Choice
+Word choice questions on the ACT ask you to select which word is correct. For these questions, read
+the sentence and sentence(s) before and after for context to tell which word is correct.
+Some word choice questions may test your knowledge of the definitions of words as well. Ifa question
+is testing your vocabulary, do not assume the hardest vocabulary word is correct. Sometimes, the
+ACT puts challenging words on the test that you need to know and other times the challenging words
+are incorrect answers. On test day, do the best you can with the words that you know. If you know
+that a word works, pick that word no matter how easy or hard the word seems. If you do not know a
+word and have to guess, take your best guess and move on.
+Word choice questions will always have 4 words with no punctuation or the same punctuation and will
+
+ask you, “which choice is clearest and most precise in context?” An example is below:
+
+Adding solar panels to your house can
+
+1.
+
+;
+;
+;
+emit huge savings on energy bills each
+
+Which choice is the clearest and most
+precise in context?
+A. NO CHANGE
+
+month.
+
+B. claim
+C. gift
+
+D. result in
+The best way to answer these questions is to read for context, plug each word into the sentence, and
+
+pick the one that makes the most sense in the context. Here, the correct answer is “D” since “result in” is
+the only answer choice that works in the context of the sentence.
+Chapter 11 Practice:
+
+After reading my paper, my teacher was
+
+1.
+
+A. NO CHANGE
+B. ecstatic
+
+adamant that I needed to learn how to properly
+
+C. eminent
+
+cite my sources.
+
+D. trivial
+
+WhenI first moved in, the passing train woke me
+
+2. A. NO CHANGE
+
+up every night. However, I can now just tune it
+
+C. snub it
+
+out and sleep through the entire night.
+
+B. scorn it
+
+2
+
+With the new air travel restriction, the TSA is
