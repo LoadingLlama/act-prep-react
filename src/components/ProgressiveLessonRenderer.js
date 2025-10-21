@@ -372,6 +372,11 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
     if (index === currentSection) {
       setCurrentSectionComplete(true);
       setExampleCompletionStatus(prev => ({ ...prev, [index]: true }));
+
+      // Auto-mark lesson as "in-progress" after completing first example
+      if (onStatusChange && initialStatus === 'not-started') {
+        onStatusChange('in-progress');
+      }
     }
   };
 
@@ -575,16 +580,128 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
 
       {hasStarted && isComplete && (
         <>
-          <div className={classes.navigationButtons} style={{ justifyContent: 'center' }}>
-            <button
-              className={`${classes.navButton} ${classes.nextButton}`}
-              onClick={() => {
-                if (onStatusChange) onStatusChange('completed');
-                if (onNavigate) onNavigate('home');
-              }}
-            >
-              Complete Lesson
-            </button>
+          {/* End of Lesson Marker */}
+          <div style={{
+            marginTop: '4rem',
+            marginBottom: '2rem',
+            padding: '2rem 0',
+            borderTop: '2px solid #e5e7eb',
+            borderBottom: '1px solid #f3f4f6'
+          }}>
+            <div style={{
+              textAlign: 'center',
+              color: '#9ca3af',
+              fontSize: '0.875rem',
+              fontWeight: '600',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              marginBottom: '2rem'
+            }}>
+              End of Lesson
+            </div>
+
+            {/* Three-button navigation */}
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '1rem',
+              flexWrap: 'wrap'
+            }}>
+              {/* Back to Lessons */}
+              <button
+                onClick={() => {
+                  if (onNavigate) onNavigate('home');
+                }}
+                style={{
+                  backgroundColor: 'transparent',
+                  color: '#6b7280',
+                  padding: '0.75rem 1.5rem',
+                  fontSize: '0.95rem',
+                  fontWeight: '500',
+                  borderRadius: '8px',
+                  border: '1px solid #d1d5db',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  minWidth: '140px'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#f9fafb';
+                  e.target.style.borderColor = '#9ca3af';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.borderColor = '#d1d5db';
+                }}
+              >
+                ← Back to Lessons
+              </button>
+
+              {/* Practice Quiz */}
+              <button
+                onClick={() => {
+                  // TODO: Navigate to practice quiz for this lesson
+                  console.log('Practice quiz clicked for lesson:', lesson?.lesson_key);
+                }}
+                style={{
+                  backgroundColor: '#3b82f6',
+                  color: 'white',
+                  padding: '0.75rem 1.5rem',
+                  fontSize: '0.95rem',
+                  fontWeight: '600',
+                  borderRadius: '8px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  minWidth: '140px',
+                  boxShadow: '0 2px 6px rgba(59, 130, 246, 0.25)'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#2563eb';
+                  e.target.style.transform = 'translateY(-1px)';
+                  e.target.style.boxShadow = '0 4px 10px rgba(59, 130, 246, 0.35)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = '#3b82f6';
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = '0 2px 6px rgba(59, 130, 246, 0.25)';
+                }}
+              >
+                📝 Practice
+              </button>
+
+              {/* Complete Lesson */}
+              <button
+                onClick={() => {
+                  if (onStatusChange) onStatusChange('completed');
+                  if (onNavigate) onNavigate('home');
+                }}
+                style={{
+                  backgroundColor: '#10b981',
+                  color: 'white',
+                  padding: '0.75rem 1.5rem',
+                  fontSize: '0.95rem',
+                  fontWeight: '600',
+                  borderRadius: '8px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  minWidth: '140px',
+                  boxShadow: '0 2px 6px rgba(16, 185, 129, 0.25)'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#059669';
+                  e.target.style.transform = 'translateY(-1px)';
+                  e.target.style.boxShadow = '0 4px 10px rgba(16, 185, 129, 0.35)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = '#10b981';
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = '0 2px 6px rgba(16, 185, 129, 0.25)';
+                }}
+              >
+                ✓ Complete
+              </button>
+            </div>
           </div>
         </>
       )}

@@ -1,0 +1,27 @@
+COMPREHENSIVE FIX PLAN
+
+PHASE 1: Fix Lesson Content (Key Takeaways + Bullet Formatting)
+✓ 2.2 Trends - DONE (science-2.2-trends-FIXED.html created)
+- 2.3 Approximation - Need to create fixed version
+- 2.4 Multiple Figures - Need to create fixed version
+
+PHASE 2: Regenerate ALL Examples (Bigger Containers + Smaller ACT Tables)
+- 2.1 Specific Data Point (2 examples)
+- 2.2 Trends (2 examples)  
+- 2.3 Approximation (2 examples)
+- 2.4 Multiple Figures (2 examples)
+Total: 8 examples to regenerate
+
+NEW STYLING:
+- Container: padding 3.5rem 3rem (bigger), max-width 900px
+- Tables: font-size 13px (smaller, more ACT-like)
+- Headers: padding 0.6rem, border 1px
+- Cells: padding 0.5rem
+- Figure title: font-size 20px
+
+PHASE 3: Upload Everything
+- Upload 3 fixed lessons (2.2, 2.3, 2.4)
+- Upload 8 regenerated examples
+- Update golden template
+
+ESTIMATED SCOPE: ~11 file updates

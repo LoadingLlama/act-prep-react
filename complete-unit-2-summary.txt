@@ -1,0 +1,15 @@
+UNIT 2 PROGRESS SUMMARY (Data Representation)
+
+Completed (4/7 lessons):
+✓ 2.1 Specific Data Point (specific-data-point)
+✓ 2.2 Trends (trends)  
+✓ 2.3 Approximation (approximation)
+✓ 2.4 Multiple Figures (multiple-figures)
+
+Remaining (3/7 lessons):
+- 2.5 Figures + Text (figures-text) - Line 2132
+- 2.6 Scatter Plots (scatter-plots) - Line 3256  
+- 2.7 Inverse Trends & Multiple Axes (inverse-trends-multiple-axes) - Line 3354
+
+STATUS: 6/19 total Science lessons complete (Units 1.1, 1.2, 2.1-2.4)
+NEXT: Complete 2.5-2.7 to finish Unit 2 (would be 9/19 total)

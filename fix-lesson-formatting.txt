@@ -1,0 +1,19 @@
+SYSTEMATIC LESSON FIXES NEEDED:
+
+For lessons 2.3 and 2.4:
+
+1. BULLET FORMATTING FIXES:
+   - Replace standalone <p style="margin-left: 1.5rem; ..."> with nested <ul>/<li>
+   - Replace <ul style="margin-left: 3rem; ..."> with proper padding-left structure
+   - Use correct margin/padding values from 1.1 template
+
+2. KEY TAKEAWAYS FIX:
+   - Replace gradient background div (lines ~118-126) with green checkmark format
+   - Use format from science-1.1-v2.html (lines 173-190)
+
+APPROACH: Manual recreation is fastest given complexity
+- Read current 2.3 and 2.4
+- Apply same fixes as 2.2-FIXED
+- Upload
+
+STATUS: Ready to proceed with manual fixes

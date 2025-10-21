@@ -59,7 +59,7 @@ const formatSolutionText = (text) => {
   });
 };
 
-const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onComplete }) => {
+const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onComplete, onSolutionViewed }) => {
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [showSolution, setShowSolution] = useState(false);
 
@@ -69,6 +69,13 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
       setShowSolution(true);
     }
   }, [example?.is_worked_example, showSolution]);
+
+  // Notify parent when solution is shown
+  useEffect(() => {
+    if (showSolution && onSolutionViewed) {
+      onSolutionViewed();
+    }
+  }, [showSolution, onSolutionViewed]);
 
   // Extract question from problem_text (look for last <p> tag with question mark or colon)
   const extractQuestionAndContent = (htmlText) => {

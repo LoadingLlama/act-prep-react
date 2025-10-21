@@ -1,0 +1,219 @@
+Chapter 10: Tips for Comparing Passages Questions
+In this chapter, we are focusing on how to best answer the 3 comparing passages questions at the end of the
+dual text passages. Before we get to the tips, let’s review what dual text passages are and how to best approach
+them.
+Each ACT has 1 dual text passage that includes two short passages labelled as Passage A and Passage B.
+The two passages discuss similar topics and are somehow related. For example, an Informational Passage
+could have two scientists offering differing opinions on a recent discovery.
+In Dual Text Passages, the questions go in the following order:
+e
+
+Passage A Questions
+
+e
+
+Passage B Questions
+
+e
+
+Comparing Passages Questions (3 questions)
+
+How to Approach Dual Text Passages
+When working on dual text passages, we recommend that you read each passage separately. Do not read
+both passages before starting the questions. Instead, you should use the following approach:
+1)
+
+Read Passage A and answer questions for Passage A.
+
+2)
+
+Read Passage B and answer questions for Passage B.
+
+3)
+
+Answer Comparing Passages Questions.
+
+Since the passages are shorter, most students find it easier to read the entire passage. You should still apply
+whatever method you prefer from the ones we discussed in Chapter 2 when reading each passage.
+
+If you work backwards, use the following approach:
+1)
+
+Answer questions for Passage A.
+
+2)
+
+Answer questions for Passage B.
+
+3)
+
+Answer Comparing Passages Questions.
+
+Comparing Passages Questions
+At the end of each dual text passage, there are 3 questions that ask about both passages — we call these
+comparing passages questions. These questions are always the last 3 questions in the dual text passage.
+Comparing passages questions can look like this:
+Which of the following statements best
+
+Which of the following statements about
+
+captures the main difference in the purposes
+
+instruments is most strongly supported by
+
+of the two passages?
+
+details provided in Passage A and Passage
+B?
+
+The ACT will have a box telling you that the question asks about both passages, so it 1s clear when you are
+looking at comparing passages questions.
+
+© PrepPros 2025
+
+- 70 -
+
+PrepPros ACT Reading Course
+
+4 Tips for Comparing Passages Questions
+To answer comparing passages questions correctly, you must use information from both passages. There are a
+variety of question types that can appear in comparing passages questions, so we will just focus on the best tips
+for how to approach these questions and find the correct answer.
+Please note, these tips are in addition to all the other methods we have covered so far. You should still be
+using the skills that you learned in Chapters 1-8 when answering comparing passages questions. The 4
+tips below are additional tips that can help you better answer comparing passages questions.
+
+Tip #1 — Read the Answer Choices Right Away
+Comparing passages questions are generally quite broad, so you should always read the answer choices
+right away. Once you have read the answer choices and know what the 4 options are, it is much easier to (1)
+eliminate any answer choices that are clearly incorrect and (2) know what to look for in Passage A and Passage
+B.
+
+Tip #2 — Work Backwards More Actively with the Answer Choices
+Comparing passages questions generally have longer answer choices because the answer choice must refer to
+information in both passages. When you see longer answer choices, work backwards more actively and
+look for specific details that do not match the passage. Often, multiple answer choices are partly correct, so
+it is easier to look for what is incorrect about each answer choice rather than to focus on which answer choice
+seems to be the most correct.
+For example, if you see a question like this
+1.
+
+The primary purpose of both passages is to
+
+A.
+
+resolve a long-standing debate on the evolution of vampire bats.
+
+B.
+
+celebrate the findings of recent research by Brazilian scientists.
+
+C.
+
+present two competing theories on the development of echolocation in vampire bats.
+
+D.
+
+catalog evidence from multiple studies that supports a finding about vampire bats.
+
+we need to pick an answer choice that matches both passages. Rather than looking for the correct answer, it is
+often easier to eliminate answer choices that do not match one passage. For example, if Passage A only
+presents one theory about the development of echolocation in bats, C is incorrect. Or if Passage B discusses a
+long-standing debate but does not resolve the debate, A is incorrect. Working backwards with this type of
+thinking makes finding the correct answer easier for questions like the example above.
+
+Tip #3 — Beware of Half-Right Answer Choices
+For comparing passages questions, the ACT loves writing answer choices that are halfway correct. Part of the
+answer choice perfectly answers the question; however, there is something wrong with the remaining
+
+portion of the answer choice. Students often pick these incorrect answer choices because they get excited
+over the part that is correct and do not read the rest of the answer choice carefully enough. As always, we need
+to be very picky when assessing each answer choice. This is especially true for comparing passages questions.
+
+© PrepPros 2025
+
+-7l1-
+
+PrepPros ACT Reading Course
+
+The most common half-right answer choices appear in questions like this:
+
+1.
+
+Which choice best states the relationship between the two passages?
+A.
+
+Passage A provides an overview of a scientific discovery, while Passage B summarizes
+the experiments that led to that discovery.
+
+B.
+
+Passage A summarizes a scientific finding, while Passage B focuses on the potential
+
+C.
+
+Passage A presents conflicting points of view on an issue, while Passage B presents
+
+D.
+
+Passage A considers how to best test two hypotheses, while Passage B argues that only
+
+applications of that finding.
+evidence supporting a single view on that issue.
+one of the hypotheses 1s valid.
+Notice how the first half of answer choices A and B are both very similar. These could both accurately
+describe passage A, but only one can be correct — meaning that one of these answer choices must be half-right.
+In this situation, it is important to focus on the second half of the answer choices to determine which one is
+correct. As always, the correct answer must be 100% correct!
+
+Tip #4 — Do Not Focus on the Identical Parts of the Answer Choices
+Many comparing passages questions have portions of multiple answer choices that are identical, as we just saw
+in the example on the previous page. When you see identical parts in the answer choices, do not focus on
+the similarities; instead, focus on the differences. Students make the mistake of trying to figure out which
+identical part is more correct, which is often impossible. Instead, you should focus on the differences in the
+rest of the answer choice, as this is what actually determines which answer choice is the correct one.
+To better illustrate how this can occur, let’s look at the example question below:
+1.
+
+How do the two passages differ in the attitudes of each author towards women serving in the
+army?
+A.
+
+Smith implies that women should be prevented from serving in the army, whereas Jones
+
+supports women serving in the army in non-combat roles.
+B.
+
+Smith believes that women with certain physical abilities can be considered for service in
+the army, whereas Jones assumes that physical ability is unrelated to any person’s ability
+to serve.
+
+C.
+
+Smith argues that service should be a personal choice regardless of gender, whereas Jones
+contends that women are unsuitable to serve due to emotional instability.
+
+D.
+
+Smith asserts that anyone who can serve in the army should be able to do so, whereas
+Jones argues that men and women should serve in gender-specific roles.
+
+Here, the first half of answer choices C and D are both saying the same thing: anyone should be able to serve
+
+in the army. Let’s assume Smith argues that in Passage A. If that is the case, there is no way to tell if C or D
+is correct by focusing on the first half alone. Instead, we need to look at the rest of the answer choices and
+focus on the differences.
+Similarly, the second half of answer choices A and D are also making almost identical statements: men and
+
+women should have separate roles in the army. These statements are not quite as identical as our first example,
+but they are still very similar and could both be supported by Jones in Passage B. Again, if Jones did argue
+that in Passage B, we should not focus on trying to determine which of those answer choices is more correct.
+Instead, we should look at the first half of those answer choices and focus on the differences to find which one
+is correct.
+
+© PrepPros 2025
+
+-72-
+
+PrepPros ACT Reading Course
+

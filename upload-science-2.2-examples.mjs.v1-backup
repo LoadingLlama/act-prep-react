@@ -1,0 +1,266 @@
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  'https://rabavobdklnwvwsldbix.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJhYmF2b2Jka2xud3Z3c2xkYml4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1OTc2NTQ3OCwiZXhwIjoyMDc1MzQxNDc4fQ.81SeH703keXgF3IevQlRS7OYmn1J2GUVIkn3OJiviM4'
+);
+
+async function uploadExamples() {
+  const { data: lesson } = await supabase
+    .from('lessons')
+    .select('id')
+    .eq('lesson_key', 'trends')
+    .single();
+
+  await supabase
+    .from('lesson_examples')
+    .delete()
+    .eq('lesson_id', lesson.id);
+
+  console.log('✓ Deleted old examples');
+
+  const examples = [
+    {
+      lesson_id: lesson.id,
+      position: 1,
+      title: "Identifying Trends in a Bar Graph",
+      problem_text: `<p style="margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;">Four different forests were treated successively with 3 different fertilizers. Each fertilizer treatment lasted four months. Fertilizer 1 was used first, followed by Fertilizer 2, then Fertilizer 3. Tree growth was measured in meters after each treatment was completed.</p>
+
+<div style="background-color: #f3f4f6; padding: 3.5rem 3rem; max-width: 900px; border: 2px solid #d1d5db; border-radius: 8px; margin: 2rem 0;">
+  <p style="font-weight: 700; font-size: 20px; margin-bottom: 1.5rem; color: #1f2937;">Figure 1</p>
+  <p style="margin-bottom: 1rem; font-size: 13px;"><strong>Graph Description:</strong> Bar graph showing Tree Growth (meters) for each forest across three fertilizer treatments</p>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 13px;">
+    <thead>
+      <tr style="background-color: #374151;">
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: left; color: white; font-weight: 600;">Forest</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Fertilizer 1 (m)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Fertilizer 2 (m)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Fertilizer 3 (m)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">Forest 1</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #fef3c7; font-weight: 600;">2</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #fef3c7; font-weight: 600;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #fef3c7; font-weight: 600;">6</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">Forest 2</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">4</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">Forest 3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">6</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">8</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 13px;">Forest 4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">7</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">6</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem; font-size: 14px; color: #6b7280; font-style: italic;">The graph shows grouped bars for each forest, with three bars representing the three fertilizer treatments.</p>
+</div>
+
+<p style="margin-top: 2rem; font-weight: 600; font-size: 16px; color: #1f2937;">Based on Figure 1, after each successive fertilizer treatment, the growth in meters of the trees in Forest 1:</p>`,
+      choices: [
+        { letter: "A", text: "Decreased only" },
+        { letter: "B", text: "Increased only" },
+        { letter: "C", text: "Increased then decreased" },
+        { letter: "D", text: "Varied with no general trend" }
+      ],
+      correct_answer: "B",
+      solution_steps: [],
+      answer_explanation: `This is a classic trend identification question testing your ability to track a pattern across multiple data points in a bar graph.
+
+**Step 1: Recognize this is a trend question**
+The answer choices ("Decreased only," "Increased only," etc.) immediately signal that this is a trend question. You don't need exact values—just the pattern.
+
+**Step 2: Identify which data to track**
+The question asks about "the growth in meters of the trees in Forest 1" across "each successive fertilizer treatment." This means:
+- Focus only on Forest 1 (ignore Forests 2, 3, and 4)
+- Track across all three fertilizers in order (Fertilizer 1 → 2 → 3)
+
+**Step 3: Trace the pattern**
+Looking at the highlighted Forest 1 row:
+- Fertilizer 1: 2 meters
+- Fertilizer 2: 4 meters (increased from 2 to 4)
+- Fertilizer 3: 6 meters (increased from 4 to 6)
+
+The values go: 2 → 4 → 6
+
+**Step 4: Describe the pattern**
+The growth continuously increases with each successive treatment. There are no decreases or plateaus.
+
+**Step 5: Match to answer choices**
+The pattern "continuously increasing" matches answer choice B: "Increased only"
+
+**Common mistakes:**
+- Tracking the wrong forest (e.g., Forest 4 shows 7 → 5 → 6, which would be "Varied with no general trend")
+- Misreading the order of treatments
+- Confusing "increased only" with "increased then decreased"
+
+**The answer is B.**`,
+      diagram_svg: null,
+      is_worked_example: false
+    },
+    {
+      lesson_id: lesson.id,
+      position: 2,
+      title: "Finding Trends in Complex Tables",
+      problem_text: `<p style="margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;">A scientist conducted multiple trials measuring various properties of a chemical system. The data collected is shown in the table below.</p>
+
+<div style="background-color: #f3f4f6; padding: 3.5rem 3rem; max-width: 900px; border: 2px solid #d1d5db; border-radius: 8px; margin: 2rem 0;">
+  <p style="font-weight: 700; font-size: 20px; margin-bottom: 1.5rem; color: #1f2937;">Table 1</p>
+  <p style="margin-bottom: 1rem; font-size: 13px;"><strong>Experimental Data:</strong> Multiple trials with varying conditions</p>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 13px;">
+    <thead>
+      <tr style="background-color: #374151;">
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Trial</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">M (m)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">A (m/s²)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">X (w/a)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">T (°C)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">F (N)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 13px;">1</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #fef3c7;">3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #dbeafe;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #fef3c7;">6</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #dbeafe;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; font-weight: 600;">12</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 13px;">2</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #fef3c7;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #dbeafe;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #fef3c7;">8</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #dbeafe;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; font-weight: 600;">12</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 13px;">3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #fef3c7;">7</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #dbeafe;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #fef3c7;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; background-color: #dbeafe;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px; font-weight: 600;">12</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 13px;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">18</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 13px;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">6</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">15</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">24</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 13px;">6</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">6</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">20</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 13px;">30</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem; font-size: 14px; color: #6b7280; font-style: italic;">Yellow highlighting shows M values; blue highlighting shows constant A and T values in Trials 1-3.</p>
+</div>
+
+<p style="margin-top: 2rem; font-weight: 600; font-size: 16px; color: #1f2937;">As M increased from 3 m to 7 m, while A and T remained constant, X:</p>`,
+      choices: [
+        { letter: "A", text: "decreased only" },
+        { letter: "B", text: "increased only" },
+        { letter: "C", text: "increased then decreased" },
+        { letter: "D", text: "remained constant" }
+      ],
+      correct_answer: "B",
+      solution_steps: [],
+      answer_explanation: `This question tests the critical skill of identifying which trials to compare in a complex data table by applying the one-variable rule.
+
+**Step 1: Identify the trend question**
+The answer choices ("decreased only," "increased only," etc.) confirm this is a trend question.
+
+**Step 2: Understand what the question is asking**
+The question states: "As M increased from 3 m to 7 m, while A and T remained constant, X:"
+
+This tells us:
+- **Independent variable changing:** M (from 3 to 7)
+- **Variables that must stay constant:** A and T
+- **Dependent variable to track:** X
+
+**Step 3: Find the correct trials (THE ONE-VARIABLE RULE)**
+We need to find trials where:
+- M changes (goes from 3 → 5 → 7)
+- A stays the same
+- T stays the same
+
+Scanning the table (highlighted in yellow and blue):
+- **Trial 1:** M = 3, A = 4, X = 6, T = 10, F = 12
+- **Trial 2:** M = 5, A = 4, X = 8, T = 10, F = 12
+- **Trial 3:** M = 7, A = 4, X = 10, T = 10, F = 12
+
+Notice that in Trials 1-3:
+- M changes: 3 → 5 → 7 ✓
+- A remains constant at 4 ✓
+- T remains constant at 10 ✓
+- These are the ONLY trials we should compare!
+
+**Step 4: Track the pattern in X**
+Looking at X values in Trials 1-3:
+- Trial 1: X = 6
+- Trial 2: X = 8
+- Trial 3: X = 10
+
+Pattern: 6 → 8 → 10 (continuously increasing)
+
+**Step 5: Match to answer choices**
+X continuously increases, so the answer is B: "increased only"
+
+**Why other trials don't work:**
+- Trials 4-6 have different values for A, T, and other variables, so comparing them to Trials 1-3 would violate the one-variable rule
+
+**Common mistakes:**
+- Including trials where multiple variables change
+- Not checking that A and T remain constant
+- Tracking the wrong column (e.g., tracking F instead of X)
+
+**The answer is B.**`,
+      diagram_svg: null,
+      is_worked_example: false
+    }
+  ];
+
+  for (const example of examples) {
+    const { error } = await supabase
+      .from('lesson_examples')
+      .insert(example);
+
+    if (error) {
+      console.error(`Error:`, error);
+    } else {
+      console.log(`✓ Inserted: ${example.title}`);
+    }
+  }
+
+  console.log('\n✓ Science 2.2 Trends examples uploaded with enhanced styling!');
+}
+
+uploadExamples();

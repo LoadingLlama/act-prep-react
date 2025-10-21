@@ -1,0 +1,220 @@
+import { createClient } from '@supabase/supabase-js';
+import fs from 'fs';
+
+const supabase = createClient(
+  'https://rabavobdklnwvwsldbix.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJhYmF2b2Jka2xud3Z3c2xkYml4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1OTc2NTQ3OCwiZXhwIjoyMDc1MzQxNDc4fQ.81SeH703keXgF3IevQlRS7OYmn1J2GUVIkn3OJiviM4'
+);
+
+async function uploadAll() {
+  // Upload lesson content
+  const lessonContent = fs.readFileSync('science-2.5-figures-text.html', 'utf8');
+  const { error: lessonError } = await supabase
+    .from('lessons')
+    .update({
+      content: lessonContent,
+      content_json: null,
+      migrated_to_json: false
+    })
+    .eq('lesson_key', 'figures-text');
+
+  if (lessonError) {
+    console.error('Lesson upload error:', lessonError);
+    process.exit(1);
+  }
+  console.log('✓ Science 2.5 Figures + Text lesson uploaded');
+
+  // Get lesson ID
+  const { data: lesson } = await supabase
+    .from('lessons')
+    .select('id')
+    .eq('lesson_key', 'figures-text')
+    .single();
+
+  // Delete old examples
+  await supabase
+    .from('lesson_examples')
+    .delete()
+    .eq('lesson_id', lesson.id);
+  console.log('✓ Deleted old examples');
+
+  // Upload examples with ULTRA-WIDE format (no background, full width)
+  const examples = [
+    {
+      lesson_id: lesson.id,
+      position: 1,
+      title: "Finding Missing Information in Experimental Text",
+      problem_text: `<p style="margin-bottom: 2.5rem; font-size: 16px; line-height: 1.6;">A group of students investigated how different types of soil affect plant growth. They planted identical seeds in three different soil types and measured growth over 4 weeks.</p>
+
+<div style="padding: 0; margin: 4rem auto; max-width: 1400px; width: 95%; background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <p style="font-weight: 700; font-size: 18px; margin-bottom: 2rem; color: #1f2937;">Figure 1</p>
+  <p style="margin-bottom: 1.5rem; font-size: 15px;"><strong>Study Description:</strong> Seeds were planted in clay soil, sandy soil, and loam soil. All plants received equal amounts of water (250 mL per day) and were exposed to 8 hours of sunlight daily. The initial soil pH was adjusted to 6.5 for all soil types before planting. Temperature was maintained at 22°C throughout the experiment.</p>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 2rem; font-size: 14px;">
+    <thead>
+      <tr style="background-color: #374151;">
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: left; color: white; font-weight: 600;">Week</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Clay Soil (cm)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Sandy Soil (cm)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Loam Soil (cm)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;">1</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">2</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">4</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;">2</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">5</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">7</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">10</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;">3</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">8</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">12</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">18</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;">4</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">10</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">15</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">25</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p style="margin-top: 3.5rem; font-weight: 600; font-size: 17px; color: #1f2937;">How many hours of sunlight did the plants receive each day?</p>`,
+      choices: [
+        { letter: "A", text: "6 hours" },
+        { letter: "B", text: "8 hours" },
+        { letter: "C", text: "10 hours" },
+        { letter: "D", text: "12 hours" }
+      ],
+      correct_answer: "B",
+      solution_steps: [],
+      answer_explanation: `This question tests whether you can extract information from the experimental text that isn't shown in the figure.
+
+**Step 1: Check the figure first**
+Looking at Figure 1, we see a table showing plant height (in cm) for different soil types across 4 weeks. The figure contains no information about sunlight hours.
+
+**Step 2: Recognize you need the experimental text**
+Since sunlight hours aren't in the figure, we must consult the Study Description text above the table.
+
+**Step 3: Scan for the keyword**
+Look for the word "sunlight" in the text. The description states: "were exposed to 8 hours of sunlight daily."
+
+**Step 4: Extract the answer**
+The text explicitly says 8 hours of sunlight daily.
+
+**Step 5: Match to answer choices**
+8 hours → Answer B
+
+**Why this question requires text:**
+- The figure only shows growth measurements (height in cm)
+- Sunlight is a control variable mentioned only in the setup description
+- You can't find this information anywhere in the table
+
+**The answer is B.**`,
+      diagram_svg: null,
+      is_worked_example: false
+    },
+    {
+      lesson_id: lesson.id,
+      position: 2,
+      title: "Combining Text and Figures to Answer Questions",
+      problem_text: `<p style="margin-bottom: 2.5rem; font-size: 16px; line-height: 1.6;">Scientists studied the effect of temperature on enzyme activity. They measured reaction rates at different temperatures for two enzymes: Enzyme A and Enzyme B.</p>
+
+<div style="padding: 0; margin: 4rem auto; max-width: 1400px; width: 95%; background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <p style="font-weight: 700; font-size: 18px; margin-bottom: 2rem; color: #1f2937;">Experiment 1</p>
+  <p style="margin-bottom: 1.5rem; font-size: 15px;"><strong>Procedure:</strong> Enzyme A was tested at temperatures ranging from 20°C to 50°C. The pH was held constant at 7.0. Substrate concentration was 5 mM for all trials. Reaction rate was measured in µmol/min.</p>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 2rem; font-size: 14px;">
+    <thead>
+      <tr style="background-color: #374151;">
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: left; color: white; font-weight: 600;">Temperature (°C)</th>
+        <th style="padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;">Reaction Rate (µmol/min)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;">20</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">12</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;">30</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">28</td>
+      </tr>
+      <tr style="background-color: white;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;">40</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">45</td>
+      </tr>
+      <tr style="background-color: #f9fafb;">
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;">50</td>
+        <td style="padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;">18</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p style="margin-top: 3.5rem; font-weight: 600; font-size: 17px; color: #1f2937;">In Experiment 1, at what pH was Enzyme A tested?</p>`,
+      choices: [
+        { letter: "A", text: "5.0" },
+        { letter: "B", text: "6.0" },
+        { letter: "C", text: "7.0" },
+        { letter: "D", text: "8.0" }
+      ],
+      correct_answer: "C",
+      solution_steps: [],
+      answer_explanation: `This question requires combining information from both the experimental text and the figure.
+
+**Step 1: Identify what's being asked**
+The question asks for the pH value used in Experiment 1 for Enzyme A.
+
+**Step 2: Check the figure**
+Looking at the Experiment 1 table, we see:
+- Temperature values (20°C, 30°C, 40°C, 50°C)
+- Reaction rate values
+- NO pH information in the table
+
+**Step 3: Check the experimental text**
+Since pH isn't in the table, we must look at the Procedure description above the table. It states: "The pH was held constant at 7.0."
+
+**Step 4: Extract the answer**
+pH = 7.0
+
+**Step 5: Match to answer choices**
+7.0 → Answer C
+
+**Why text is necessary:**
+- pH was a control variable, not a measured variable
+- Control variables are typically described in the experimental procedure text, not shown in data tables
+- The figure only shows the independent variable (temperature) and dependent variable (reaction rate)
+
+**Key insight:**
+When a question asks about experimental conditions (pH, pressure, time duration, etc.) that you can't find in the figure, ALWAYS check the experimental text. Setup details are described there, not in the data tables.
+
+**The answer is C.**`,
+      diagram_svg: null,
+      is_worked_example: false
+    }
+  ];
+
+  for (const example of examples) {
+    const { error } = await supabase
+      .from('lesson_examples')
+      .insert(example);
+
+    if (error) {
+      console.error(`Error:`, error);
+    } else {
+      console.log(`✓ Inserted: ${example.title}`);
+    }
+  }
+
+  console.log('\n✓ Science 2.5 Figures + Text complete!');
+}
+
+uploadAll();
