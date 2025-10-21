@@ -107,8 +107,9 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
         marginBottom: '1.25rem',
         fontWeight: '400',
         color: '#1f2937'
-      }}>
-        {example.problem_text}
+      }}
+      dangerouslySetInnerHTML={{ __html: example.problem_text }}
+      >
       </p>
 
       {/* Diagram (if present) */}
