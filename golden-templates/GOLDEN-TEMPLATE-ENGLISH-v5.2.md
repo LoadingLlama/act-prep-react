@@ -266,6 +266,7 @@ The answer is **D**.`,
 9. Two examples in a row (put one per H3)
 10. Wrong green colors (#16a34a instead of #2e7d32)
 11. **CRITICAL:** Forgetting to set `content_json: null` and `migrated_to_json: false` when uploading
+12. **CRITICAL:** Using ANON_KEY instead of SERVICE_ROLE_KEY (updates will silently fail!)
 
 ✅ **CORRECT:**
 1. Exactly 2 sentences in opening
@@ -279,6 +280,7 @@ The answer is **D**.`,
 9. One example after each H3 section
 10. Correct green: `#2e7d32` (text) and `#4caf50` (checkmark)
 11. **ALWAYS** set `content_json: null` and `migrated_to_json: false` in upload script
+12. **ALWAYS** use SERVICE_ROLE_KEY for Supabase client (not anon key)
 
 ---
 
@@ -288,9 +290,11 @@ The answer is **D**.`,
 import { createClient } from '@supabase/supabase-js';
 import fs from 'fs';
 
+// CRITICAL: Must use SERVICE_ROLE_KEY not ANON_KEY for updates to work!
+// The anon key has permission restrictions that prevent content updates
 const supabase = createClient(
   'https://rabavobdklnwvwsldbix.supabase.co',
-  'SERVICE_ROLE_KEY_HERE'
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJhYmF2b2Jka2xud3Z3c2xkYml4Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1OTc2NTQ3OCwiZXhwIjoyMDc1MzQxNDc4fQ.81SeH703keXgF3IevQlRS7OYmn1J2GUVIkn3OJiviM4'
 );
 
 // 1. Upload lesson HTML content
