@@ -1,0 +1,1348 @@
+Chapter 2: Commas - 4 Types of Commas
+Commas are the most common type of punctuation on the English Test. In order to successfully handle
+comma questions, we need to become familiar with the 4 types of commas that appear on the ACT.
+So far, we have already discussed the first two types of commas.
+
+1. Comma + FANBOYS
+Correct: My alarm clock did not go off this morning, so I arrived late at school.
+Use a comma and a FANBOYS (for, and, nor, but, or, yet, so) to join two independent clauses.
+
+2. Dependent clause followed by independent clause
+Correct: While electronic music has become very popular, many people still prefer classic rock.
+If a sentence has a dependent clause followed by an independent clause, you must link these with a
+comma.
+
+Next, we will learn the other 2 types of commas in English and on the ACT:
+
+3. Unnecessary Information
+Commas are used to separate unnecessary information from the rest of the sentence. Information is
+unnecessary if we can remove it without fundamentally changing the meaning of the sentence.
+Unnecessary information can be as short as a single word or as long as a lengthy phrase.
+Example: Mrs. Ellison, who is known for giving pop quizzes, is my least favorite teacher.
+Example: The snowboard in the closet, the one with no stickers on it, needs to be waxed.
+Example: The basketball team, though, did not mount a comeback this week.
+
+4. Listing
+Commas are used when listing more than two items and with lists of multiple adjectives modifying the
+same noun.
+
+Example: The group at the picnic table ordered coconut shrimp, hot wings, and onion rings.
+Example: The old, limping dog still managed to complete the 3-mile hike.
+
+© PrepPros 2025
+
+-12-
+
+PrepPros ACT English Course
+
+Unnecessary Information Commas
+The most common type of comma in English and on the ACT separates unnecessary information from
+the rest of the sentence. Information is unnecessary if we can remove the information from the sentence
+without fundamentally changing the meaning of the sentence. Unnecessary information can be
+before a comma, after a comma, or between two commas.
+Sitting behind the table, Mark waited to jump out and surprise his mother.
+Dale grabbed his favorite surfboard, the blue and green one, and paddled out.
+Buddy the Elf handed his father a bag of spaghetti, his face covered in syrup.
+The real winner, however, had yet to be revealed.
+In the sentences above, the unnecessary information is underlined. Each of these sentences still works if
+we ignore unnecessary information. That’s how we know it is unnecessary and the commas are correct!
+
+TIP - The “Crossing-Out” Trick
+For unnecessary information commas, you must be able to completely remove the unnecessary
+information from the sentence. After removing the unnecessary information, what remains must still
+be a complete sentence that can stand by itself.
+To test if information is unnecessary, cross out the information and read the sentence without
+it. If you can cross out the information and the sentence still reads as a complete sentence, the
+information is unnecessary and needs to be set apart by
+
+acomma or commas. If you cannot cross out
+
+the information, it should not be set apart by any commas.
+Let’s test with the sentence below. All three versions are the same sentence, but the commas are in
+different locations.
+The wooden beam set at an angle, created an optical illusion.
+The wooden beam, set at an angle created an optical illusion.
+The wooden beam, set at an angle, created an optical illusion.
+For the first two sentences, a single comma must set apart the information either before or after it as
+unnecessary. Let’s check if these work.
+The weeden beam setatananele, created an optical illusion.
+The wooden beam set at an angle, ereated-an-opticaltusion.
+The wooden beam, setatanangle
+created anopticaltusion.
+The
+weedenbeam, set at an angle created an optical illusion.
+Well...none of those work for the first two sentences. Let’s try the third. A pair of commas can either
+separate the information between them or the information before and after.
+The weeden beam, set at an angle, ereated
+an opticaltusion.
+The wooden beam, setatanangle, created an optical illusion. (Yes, it works!)
+Using this trick can be very helpful on unnecessary information commas questions.
+
+© PrepPros 2025
+
+-13-
+
+PrepPros ACT English Course
+
+Unnecessary vs. Necessary Information
+At times, we will also need to determine if information is indeed unnecessary or not. These sentences
+are more challenging, but the trick is to delete the portion that may be unnecessary and see if the
+sentence loses any critical information. Consider the two sentences below:
+Correct: The dresses that need to be hemmed are hanging in the closet.
+Correct: Judith, who went to fashion school, designs dresses for a living.
+Why do we have no commas in the first sentence and commas for the second? In the first sentence, the
+
+information is necessary. If we just say, “the dresses are hanging in the closet,” then we do not know
+which specific dresses we are talking about. In the second sentence, we already know who designs the
+dresses, so the information about Judith going to fashion school is unnecessary.
+
+The Names Rule
+The ACT loves to ask you how to properly punctuate names. You are almost guaranteed to see at least
+one commas and names question on test day. You have probably seen names written both with and
+without commas...so what’s the difference? Both versions below are correct: see if you can figure out
+why.
+Correct: My friend Kelly recently moved to London.
+Correct: My best friend, Andrew, is a certified scuba diver.
+The names rule has to do with specificity. If the identifier before the name is not specific to one
+person (friend, American physicist, Olympic gold medalist, high school principal), the name is
+necessary, and there is no comma between the identifier and the name.
+If the identifier is specific to one person (best friend, youngest sister, Amazon CEO), the name is
+unnecessary information, and there are commas around the name.
+In the first sentence, Kelly is necessary because without her name we do not know which friend recently
+moved to London.
+
+In the second sentence, Andrew is unnecessary because a person can only have one
+
+best friend. We do not need the name Andrew to know who we are talking about.
+Names Rule Practice: Determine if the names below need commas or not.
+
+bDFYONPW
+
+Award-winning teacher Mrs. Saunders helped me become a much better writer.
+Broadway producer Jeffrey Seller is best known for the huge hit Hamilton.
+Eric’s mother Louisa cheered from the bleachers.
+Italian cyclist Marco Pantani won the Tour de France in 1998.
+Famous American entrepreneur Elon Musk is a proponent of bitcoin.
+The CEO of Tesla Elon Musk has revolutionized the car industry.
+Grammy winner Arianna Grande is releasing a new album next month.
+The oldest Hemswroth brother Luke Hemsworth starred in HBO’s Westworld.
+
+© PrepPros 2025
+
+-14-
+
+PrepPros ACT English Course
+
+“That” vs. “Which” Phrases
+Phrases that start with “that” never get commas. Phrases that start with “which” always get
+commas. “That” phrases are always necessary information to the sentence while “which” phrases are
+always unnecessary information.
+Correct: The dogs that live down the street are always barking.
+Correct: My neighbor’s dogs, which are always barking, love to play fetch.
+
+Anytime you see “which,” there must be a comma right in front of it. The exception to this rule is
+when “which” is part of a prepositional phrase like “on which,” “in which” or “of which.” For any of these
+or other similar cases, you do not use a comma. Some examples are below:
+Correct: The table on which the food was resting tipped over.
+Correct: The table, which the food was resting on, tipped over.
+
+“ing” and “ed” Phrases
+Phrases that start with “ing” and “ed” may or may not be separated with commas. To determine if these
+phrases, which are called participle phrases, get commas or not, determine if the information in the
+
+phrase is necessary to the sentence or not. On the ACT, “ing” and “ed” phrases most commonly
+appear with commas and are unnecessary information.
+Correct: Excited for the car ride, Jane’s bulldog started to jump up and down.
+Correct: Jane’s bulldog, excited for the car ride, started to jump up and down.
+Correct: Marcus applied for the internship, hoping that he would get the position.
+Correct: Judy laid down, exhausted from the long workout.
+
+“ing” and “ed” phrases can also be necessary information when the phrase is helping to specify who or
+what the noun is. If the phrase is necessary, there are no commas.
+Correct: The politician waving to the crowd is predicted to win the election.
+Correct: The yoga pants advertised on the front page of the website were sold out.
+
+In the first example, “waving to the crowd” is helping to specify which politician is predicted to win the
+election. In the second example, “advertised on the front page of the website” is specifying which yoga
+pants are sold out. Without these phrases, we would not know which specific politician or yoga pants
+are being referred to.
+
+Phrases with “Who” or “Whom”
+When talking about a person, you must always use “who” or “whom’ to start the phrase. You can
+never use “that” to describe a person. “Who” or “whom” can act like a “that” or a “which” phrase, so
+these ones are a bit trickier with commas. We will cover “who vs. whom” later in the pronouns chapter.
+Incorrect:
+
+The children that were playing soccer did not notice the ice cream truck.
+
+Correct: The children who were playing soccer did not notice the ice cream truck.
+Correct: Dr. Roberts, who was my childhood doctor, waved to me at the supermarket.
+
+© PrepPros 2025
+
+-15-
+
+PrepPros ACT English Course
+
+Prepositional Phrases
+Prepositional phrases are phrases consisting ofa preposition and its object. Some of the most common
+prepositions on the ACT are listed below:
+
+in
+
+of
+
+to
+
+for
+
+with
+
+on
+
+at
+
+from
+
+by
+
+about
+
+as
+
+into
+
+like
+
+through
+
+after
+
+over
+
+between
+
+during
+
+before
+
+among
+
+around
+
+Prepositional phrases at the front of the sentence are always followed by a comma. We can think
+of these phrases as unnecessary information that we can cross out.
+Correct: On my way to work, | listened to my new favorite podcast.
+Correct: After cleaning the garage, Ralph started weeding the garden.
+Prepositional phrases in the middle or end of a sentence almost never have commas around
+them. Most prepositional phrases contain essential information that helps specify the noun that the
+prepositional phrase is modifying and therefore is necessary.
+Correct: The clothing on the bed is for vacation. The clothing on the floor is being donated.
+Without the prepositional phrases, we would not know which clothing is for vacation and which is being
+donated. Here are some more examples:
+Correct: The display of affection by Lewis to his prom date made her blush.
+Correct: The bouquet of lilies in the vase is going to be displayed on the table.
+On the ACT, 99% of prepositional phrases do not have commas like the examples above, so in
+general you should never put commas around a prepositional phrase.
+Prepositional phrases in the middle or end of a sentence only get comma(s) if they contain
+unnecessary information.
+Correct: My mother, with her love of Easter, organized a massive Easter egg hunt.
+Incorrect: The magician had a rabbit, in his hat.
+Here, the first prepositional phrase is unnecessary because we already know which mother we are
+talking about. The second prepositional phrase is necessary since it specifies which rabbit we are
+talking about, so there should be no comma. Prepositional phrases that are unnecessary almost
+never come up on the ACT.
+Prepositional Phrases Practice: Underline all prepositional phrases. Add commas if necessary.
+1.
+
+Before the race began the team did a final check on the sparkplugs in the engine.
+
+2.
+
+Donations for the campaign in Georgia broke records during the 2020 election.
+
+3.
+
+The luxury dog bed with the ornate frame and supportive memory foam seemsa bit excessive to
+me.
+
+4.
+
+During the movie Davonta’s mother went to the concession stand for some popcorn.
+At the corner the host stood with a microphone in her hand.
+
+© PrepPros 2025
+
+-16-
+
+PrepPros ACT English Course
+
+Punctuation for Transitional Words and Phrases Like “However”
+On the ACT, there are certain words and short phrases that often give students trouble on grammar
+questions. These words are technically called conjunctive adverbs (you do NOT need to know that).
+
+We prefer to just think of these as transitional words and phrases like “however.” Below is a list of
+the most commonly tested ones:
+
+However
+
+Though
+
+Therefore
+
+Instead
+
+Likewise
+
+Nevertheless
+
+Regardless
+
+Moreover
+
+Subsequently
+
+Furthermore
+
+In addition
+
+As a result
+
+Of course
+
+Otherwise
+
+For example
+
+There are three ways that these transitional words and phrases can appear in a correctly punctuated
+sentence.
+
+1. At the front of the sentence followed by a comma.
+Correct: However, the truth would not be revealed until next week.
+Correct: As a result, the student was sent to the principal’s office.
+This is another example of unnecessary information. For both of these sentences, we can cross out
+the transitional word or phrase and are left with a complete sentence.
+2. Separated by commas in the middle of a sentence.
+Correct: The truth, however, would not be revealed until next week.
+Correct: The student, as a result, was sent to the principal’s office.
+Again, this is unnecessary information. We can cross out the transitional word or phrase and read
+the rest of the sentence as one complete sentence.
+3. Separated by a semicolon and a comma when between two independent clauses.
+
+Correct: I expected to pay over $100 for my new hiking boots; however, I found a sale and got
+them for half of the original price.
+Correct: The player demanded his coach for more playing time; in addition, he threatened to
+quit if he did not get his way.
+If there is an independent clause before and after the transitional word or phrase, we need to use a
+semicolon and a comma for punctuation.
+
+© PrepPros 2025
+
+-17-
+
+PrepPros ACT English Course
+
+TIP - How to Spot Unnecessary Information Commas Questions
+Unnecessary information commas questions always have two defining characteristics:
+1.
+
+The words in all 4 answer choices are the exact same.
+
+2.
+
+The only difference in the answer choices is where commas are located.
+
+On the ACT, unnecessary information commas questions look like this:
+
+Electric vehicles, thousands of them,
+
+1.
+
+Which choice makes the sentence
+most grammatically acceptable?
+
+already on the road in America, are one
+
+of the fastest growing industries in the
+world.
+
+A.
+
+NO CHANGE
+
+B.
+
+thousands, of them
+
+C.
+
+thousands of them
+
+D.
+
+thousands of, them
+
+Anytime we see a question like this, we are dealing with an unnecessary information commas
+
+question and should use the “crossing-out” trick. Be sure to read the entire sentence and pay
+attention to any other commas that are not in the underlined portion! Any commas that we
+cannot change are often important clues that we must use to find the correct answer. It is possible
+the other comma rules are part of a question like this as well, so make sure to read the entire
+sentence and look out for the sentence structure rules from Chapter 1.
+
+In the example above, the answer is C because the phrase “thousands of them already on the road in
+America” is unnecessary information and is separated by two commas.
+
+Backup Trick - Pauses and Commas
+Read the sentence out loud (or “out loud” in your head on test day) to help identify where commas are
+necessary. If you need to take a short pause for a breath, then you likely need a comma.
+
+Read the
+
+example below out loud and put commas where you take a short pause:
+Originally from Maine Mr. Johnson who has taught 8 grade biology for five years is not
+accustomed to winters in San Diego.
+Pausing is not one of our 4 commas rules! Many students mistakenly put commas anywhere they
+pause in sentence. At times, this is a great trick. However, this can also lead to mistakes. You should
+only using pausing as a backup trick when you have already used our other commas rules and
+still cannot tell which answer choice is correct.
+For the example above, the correct version is below:
+Correct: Originally from Maine, Mr. Johnson, who has taught 8" grade biology for five years, is
+not accustomed to winters in San Diego.
+
+© PrepPros 2025
+
+-18-
+
+PrepPros ACT English Course
+
+Commas Practice: Add commas where necessary. The commas in the sentences below can be any of
+the first 3 types of commas we have learned so far.
+1.
+
+Although James demanded pizza for dinner his mother decided to make grilled chicken and
+broccoli instead.
+Mr. Alvin a very popular teacher among the students cancelled the final exam.
+I could not believe that Deadpool was such a popular movie.
+While my friend Mary thought that dolphins were the fastest animals in water she was surprised
+to learn it was actually a sailfish.
+Owls notorious for their amazing night vision have fantastic hearing at night so they can actually
+hear their prey from hundreds of feet away even if they cannot see it.
+On second thought the real reason that I did not like Scott was his lack of honesty.
+Some cultures though enjoy bizarre foods like bugs or snakes.
+After graduating Darren played for the San Diego Padres where he had a long career as a relief
+pitcher.
+Because he was the best in Dallas award-winning head chef Phillip Small owned multiple very
+successful restaurants.
+
+10.
+
+My favorite author is J.K. Rowling who is famous for writing the Harry Potter series.
+
+11.
+
+The fisherman carrying their catch walked into the Seattle fish market a place famous for how
+the vendors throw fish to entertain customers.
+
+12.
+
+At first glance the cuttlefish which can change colors to blend into its surroundings looked just
+like the brain coral behind it and I did not see it in the tank.
+
+13.
+
+Last summer the local flooding caused by a breach in the Reynolds Dam caused over ten
+thousand dollars in damage to the children’s park.
+
+14.
+
+The basil plant for example needs full sunlight but cilantro grows best in partial sunlight.
+
+© PrepPros 2025
+
+-19-
+
+PrepPros ACT English Course
+
+Listing Commas
+The easiest types of commas on the English Test are listing commas. Listing commas can appear in a
+multiple item list and between list of multiply adjectives describing the same noun.
+
+Commas and Lists
+Listing commas are used to separate the items in a list of 3 or more items.
+Correct: I went to the grocery store to pick up chicken, cheese, and bread.
+Correct: I went to the grocery store to pick up chicken, cheese and bread.
+The final comma in a list of items is called the Oxford comma. Use of the Oxford comma is stylistic, so
+technically both lists with and without the Oxford comma are correct. As a result, the Oxford comma
+alone will never make an answer choice correct or incorrect on the ACT. Most commonly, the ACT
+includes the Oxford comma like the top example above.
+Lists must have 3 or more items to include commas. Be sure that you do not use commas ina list of
+just two items.
+
+Incorrect: The food was both incredibly savory, and overwhelmingly satisfying.
+Correct: The food was both incredibly savory and overwhelmingly satisfying.
+
+Incorrect: Mike cashed out his winnings, and then headed back to his hotel room for a nap.
+Correct: Mike cashed out his winnings and then headed back to his hotel room for a nap.
+
+TIP —- FANBOYS vs. Lists
+Be careful of the FANBOYS (and, but, nor, or) that can be used in a list. It is easy to confuse a two-item
+list (which does not need a comma) with a comma + FANBOYS between two independent clauses
+(which does need a comma). For acomma and a FANBOYS, make sure the second half of the sentence
+is an independent clause.
+Incorrect: The debate team took first place in California, and then won the grand prize for the
+entire nation.
+
+Correct: The debate team took first place in California and then won the grand prize for the
+entire nation.
+
+Incorrect: Andrew left to get his suit from the tailor but he forgot and just grabbed a
+cheeseburger at In-n-Out.
+Correct: Andrew left to get his suit from the tailor, but he forgot and just grabbed a
+cheeseburger at In-n-Out
+
+© PrepPros 2025
+
+-20-
+
+PrepPros ACT English Course
+
+Adjective Lists with and without Commas
+Listing commas are also used to separate a list of multiple adjectives modifying the same noun.
+Correct: The wet, smelly dog was excited for the car ride home.
+Correct: The narrow, winding, treacherous roads through the mountains are difficult to drive.
+On more difficult questions, we will need to know when to use commas in lists of adjectives and when
+commas are not necessary. Take a look at the two correct examples below to learn the difference.
+Correct: A cup of delicious, strong coffee is my favorite thing in the morning.
+Correct: My mother has lots of bright floral furniture in her living room.
+The rule is a simple one: if you can switch the order of the adjectives without changing the meaning
+of the sentence, put a comma between the adjectives. If switching the order of the adjectives
+changes the meaning of the sentence or just makes no sense, there is no comma between the
+adjectives. In short, if you can switch the adjectives, puta comma. No switch, no comma.
+
+In the first sentence, the two adjectives “delicious” and “strong” are separated by
+
+acomma. Both of
+
+these adjectives describe the coffee on their own. We could switch the adjectives around to “strong,
+delicious coffee” without changing the meaning. Since we can switch the adjectives, we need a comma.
+
+In the second sentence, the two adjectives “bright” and “floral” are not separated by a comma because
+they build on one another and together modify the noun. If we switch the adjectives to “floral bright
+furniture,” the meaning of the sentence is changed. Saying “bright floral furniture” makes senses but
+saying “floral bright furniture” does not. Since we cannot switch the adjectives, we do not add a comma.
+
+TIP - “The Switching Trick”
+When you see multiple adjectives modifying a noun, switch the order of the adjectives to test whether
+or not you need a comma between the adjectives. Let’s use these two sentences as examples:
+The sweet cold ice cream was refreshing after a day at the beach.
+Elliot had to take off his stainless steel necklace before the swim meet.
+To test whether these adjectives need a comma between them, switch the order and see if the
+sentences still make sense.
+The cold sweet ice cream was refreshing after a day at the beach.
+Elliot had to take off his steel stainless chain before the swim meet.
+
+In the first sentence, switching “cold” and “sweet” does not change the meaning, so we need a comma.
+In the second sentence, “steel stainless chain” does not work, so we do not need
+
+acomma. The correct
+
+versions of both sentences are below:
+Correct: The sweet, cold ice cream was refreshing after a day at the beach.
+Correct: Elliot had to take off his stainless steel chain before the swim meet.
+
+© PrepPros 2025
+
+-2?1-
+
+PrepPros ACT English Course
+
+Adjectives Lists With and Without Commas Practice: Add commas where necessary. Commas may
+or may not be necessary.
+1.
+
+Scientists are trying to determine what animal the newly discovered fossilized bones are from.
+
+2.
+
+The white fluffy clouds floated quickly by in the crisp evening wind.
+The big sun bear is known for climbing the fence and swimming in the heated community pool
+in the spring.
+
+HONWD
+
+The cunning sneaky red foxes got into the chicken coop again last night.
+The powerful liquid detergent makes my dirty sweaty clothes smell so much better.
+My car engine made an annoying rattling sound right before breaking down.
+The local hot air balloon company specializes in making colorful creative designs.
+Laura placed an order for Italian coffee beans and three expensive ceramic coffee mugs.
+
+© PrepPros 2025
+
+-22-
+
+PrepPros ACT English Course
+
+Commas Practice: Which answer choices are correct? Select all that apply.
+1.
+
+The diners
+
+sat down.
+
+a.
+
+ordered food and
+
+b.
+
+ordered food, and
+
+c.
+
+ordered food, and they
+
+2.
+
+will pre-order the tickets to Coachella.
+a.
+
+Claire, Elizabeth or Bella
+
+b.
+
+Claire, Elizabeth, or Bella
+Claire, Elizabeth, or Bella,
+
+3.
+
+The
+
+forced the commander to declare war.
+a.
+
+invasion by the rebel forces
+
+b.
+
+invasion, by the rebel forces
+invasion, by the rebel forces,
+
+4.
+
+The
+
+was given first prize by the judges.
+a.
+
+bright pink hot air balloon
+
+b.
+
+bright, pink hot air balloon
+bright, pink, hot air balloon
+
+5.
+
+6.
+
+7.
+
+Nancy laid down in the
+a.
+
+hammock and immediately fell asleep.
+
+b.
+
+hammock, and she immediately fell asleep.
+
+c.
+
+hammock, and immediately fell asleep.
+
+Iwillneeda
+a.
+
+sweet cold lemonade
+
+b.
+
+sweet, and cold lemonade
+
+c.
+
+sweet, cold lemonade
+
+Itis important to
+
+to drink after the race.
+
+shelter.
+
+a.
+
+keep calm during an earthquake, and seek
+
+b.
+
+keep calm, during an earthquake, and seek
+
+c.
+
+keep calm during an earthquake and seek
+
+© PrepPros 2025
+
+-23-
+
+PrepPros ACT English Course
+
+Commas, Sentence Structure, and Unnecessary Information
+Now that we have learned about sentence structure and commas, let’s see the most common ways that a
+sentence can be structured using commas or when no commas are necessary. We will add on to the 5
+rules we already learned in Chapter 1 (page 7).
+1.
+
+Comma + FANBOYS joining 2 Independent Clauses
+
+The researchers changed their approach, and they created a new medical procedure in the process.
+Independent clause
+2.
+
+Independent clause
+
+Independent Clause followed by Unnecessary Information Phrase (comma)
+
+The researchers changed their approach, creating a new medical procedure in the process.
+Independent clause
+3.
+
+Unnecessary information
+
+Unnecessary Information Phrase before Independent Clause (comma)
+
+Determined to find a cure, the researchers changed their approach.
+Unnecessary information
+4.
+
+Independent clause
+
+Dependent Clause followed by Independent Clause (comma)
+
+Since they were determined to find a cure, the researchers changed their approach.
+Dependent clause
+5.
+
+Independent clause
+
+Unnecessary Information Phrase, Independent Clause, Unnecessary Information Phrase
+(2 commas)
+
+Determined to find a cure, the researchers changed their approach, creating a new medical
+Unnecessary information
+
+Independent clause
+
+Unnecessary
+
+procedure in the process.
+information
+6.
+
+Independent Clause with Necessary Information (no comma)
+
+The researchers changed their approach by creating a new medical procedure.
+Independent clause
+7.
+
+Necessary information
+
+List with 2 items (no comma)
+
+The researchers changed their approach and created a new medical procedure in the process.
+*this sentence functions as one big independent clause.
+8.
+
+Unnecessary Information Phrase, Unnecessary Information Phrase, Independent Clause
+(2 commas)
+
+Despite the company’s efforts, which included offering a 75% refund and a replacement purse,
+Unnecessary information
+
+Unnecessary information
+
+Claire was still disappointed with her Chanel purse.
+Independent clause
+9.
+
+Dependent Clause, Independent Clause, Unnecessary Information (2 commas)
+
+As the curtains closed, the crowd stood and applauded, many with tears in their eyes.
+Dependent clause
+
+© PrepPros 2025
+
+Independent clause
+
+-24-
+
+Unnecessary information
+
+PrepPros ACT English Course
+
+These 9 sentence structures cover the most common ways that sentences appear on the ACT, but this is
+not a complete list. Unnecessary information can appear in the middle of clauses or other unnecessary
+information, so there can be many more possible sentence structures than the 9 listed on the
+previous page. However, if you understand the 9 most common sentence structures, you will be very
+well prepared to deal with even the most difficult sentences on the ACT.
+
+TIP - The “1-Comma’” Rule
+This brings us to our final sentence structure and commas rule: when a sentence has only one comma
+in the middle, there must be an independent clause before or after the comma but not both and
+not neither. The only exception to this rule is a comma + FANBOYS linking two independent
+sentences. If before and after are both independent, we have a comma splice. If neither is independent,
+we have a sentence fragment.
+If the first half of the sentence before the comma is independent, the information after the comma must
+be unnecessary information (rule 2 on the previous page). If the second half of the sentence after the
+comma is independent, the first half must be unnecessary information (rule 3) or a dependent clause
+(rule 4). This rule helps you answer some of the most difficult sentence structure/commas questions
+correctly!
+Chapter 2 Practice:
+Before graduating from college William, a
+
+;
+
+1.
+
+1
+
+A. NO CHANGE
+
+B. college, William, a computer science major
+
+computer science major, dropped out to start his
+
+dropped
+
+own company. :
+
+C. college William a computer science major,
+dropped
+D. college, William, a computer science major,
+
+Alth
+
+;
+
+-
+
+dropped
+
+ough his research was not finished, Dr. Bates
+2
+
+hoped to prove that his bone cancer treatment
+
+2.
+
+2
+
+A. NO CHANGE
+
+B. finished, Dr. Bates hoped to prove, that
+
+was the next big breakthrough.
+
+C. finished Dr. Bates hoped to prove that
+
+D. finished, Dr. Bates, hoped to prove that
+Sandra has big plans for her career in politics,
+
+3.
+
+A. NO CHANGE
+
+including running for Mayor serving as state
+
+B. running for Mayor, serving as state
+
+Governor and getting elected to Congress.
+
+C. running for Mayor and also serving as
+
+3
+
+state Governor and getting elected to
+
+3
+
+Governor, and getting elected to Congress.
+
+Congress.
+
+D. running for Mayor, to serve as state
+Governor, and getting elected to Congress.
+Claude Monet is known for his incredible
+4
+
+. NO CHANGE
+
+vVOWD>
+>VOW
+
+detailed oil paintings of natural landscapes.
+
+. incredibly and detailed oil
+
+4
+
+incredible, detailed, oil
+
+. incredible, detailed oil
+
+. NO CHANGE
+
+A group of lions is called a pride, however, my
+
+. pride; however,
+
+5
+
+grandpa insists on calling it a herd instead.
+
+pride however
+
+. pride however,
+
+© PrepPros 2025
+
+-25-
+
+PrepPros ACT English Course
+
+. NO CHANGE
+
+The biology teacher assigned the chapter in the
+4
+
+. chapter, in the textbook, on photosynthesis
+
+textbook, on photosynthesis, for homework and
+
+for homework,
+
+4
+
+chapter, in the textbook on photosynthesis
+
+asked the students to review the basics of
+
+for homework,
+
+genetics.
+
+. chapter in the textbook on photosynthesis
+for homework
+
+. NO CHANGE
+
+vVOoW>D
+
+. scientist, William Dubrovsky, and the
+
+The cover page noted the impressive
+achievements of scientist William Dubrovsky
+7
+
+and the breakthrough in the new radiology
+7
+
+techniques that a team from Korea discovered.
+
+scientist William Dubrovsky, and the
+. scientist (William Dubrovsky), and the
+
+. NO CHANGE
+
+. car, so she; consequently, was
+
+My youngest sister, Kate, was so determined to
+win the pinewood derby race that she hid
+weights inside of her car, so she, consequently,
+8
+
+was disqualified.
+
+car; so she, consequently was
+. car, so she consequently, was
+
+. NO CHANGE
+
+8
+
+vVOoUmWrDF
+
+. astronaut, Neil Armstrong
+
+9
+
+known as the first man to walk on the moon,
+10
+
+astronaut, Neil Armstrong,
+
+. astronaut Neil Armstrong,
+
+United States astronaut Neil Armstrong is best
+10.
+
+. NO CHANGE
+
+. moon, but
+
+although some people believe that the moon
+10
+
+moon, although,
+
+. moon but
+
+landing was a hoax.
+11.
+
+. NO CHANGE
+
+LSVOW
+
+. University, with a unique curriculum,
+
+Claire chose to attend Cedar Brook University,
+
+. University which has a unique, curriculum
+
+11
+
+. University which has a unique curriculum,
+
+which has a unique curriculum that does not
+11
+
+assign letter grades but instead emphasizes the
+academic growth of its students.
+
+12.
+
+. NO CHANGE
+
+. English architect, Andrew Rollins, and
+Swiss engineer, Melissa Voss, worked
+. English architect Andrew Rollins and Swiss
+
+English architect Andrew Rollins, and Swiss
+
+Engineer Melissa Voss worked
+
+12
+
+. English architect Andrew Rollins and
+
+engineer Melissa Voss worked together to design
+
+Swiss engineer Melissa Voss, worked
+
+12
+
+the new ten-story luxury apartment building
+13
+
+that will be completed by the end of next
+
+13.
+
+. NO CHANGE
+
+D>VOW
+
+. new, ten-story luxury apartment,
+
+summer.
+
+new, ten-story, luxury, apartment
+
+. hew ten-story, luxury apartment,
+
+© PrepPros 2025
+
+-26-
+
+PrepPros ACT English Course
+
+After making the diving touchdown catch,
+
+14.
+
+14
+
+. NO CHANGE
+
+L}UASW
+
+. catch, Keenan Allan, jumped
+
+Keenan Allan jumped into the stands to celebrate
+14
+
+catch, Keenan Allan jumping
+
+. catch, Keenan Allan, jumping
+
+with the fans, injured his ankle.
+
+For the kite surfing competition, twenty identical
+
+15.
+
+. beach, testing them
+
+kites were brought to the beach tested to ensure
+15
+
+each competitor.
+
+16.
+
+16
+
+16
+
+onto a slice of bread, had a brilliant idea.
+17.
+17
+
+17
+
+than recognition.
+
+When the Gravitron, which debuted in 1983,
+18
+
+fairgoers across the country were offered a thrill
+ride that they had never experienced before.
+
+There are thousands of new bacteria identified
+
+Danish immigrant, dropping
+
+. Danish immigrant was dropping
+
+immigrant dropped a meat patty accidentally
+
+psychologists believe is, to study for recall rather
+
+. NO CHANGE
+
+. Danish immigrant, dropped
+
+was invented 100 years ago when a Danish
+
+The key to retaining information properly,
+
+beach, tested
+
+. beach to test them
+
+that they all worked properly, and given out to
+
+It was a long-held belief that the first hamburger
+
+. NO CHANGE
+
+. NO CHANGE
+
+. properly psychologists believe is
+properly, psychologists believe is
+
+. properly, psychologists believe, is
+
+. NO CHANGE
+
+>vow
+
+19. A. NO CHANGE
+
+Scientists say there are thousands of
+
+each year, the vast majority are found in
+
+new bacteria
+
+OM
+
+agricultural fields.
+
+suckerfish, starts a symbiotic relationship with
+the shark, latching onto the shark for free rides
+20
+
+across the ocean.
+
+© PrepPros 2025
+
+Gravitron that debuted
+
+. Gravitron, debuting
+
+19
+
+In order to survive, the Remora, also called a
+
+Gravitron debuted
+
+20.
+
+Of the thousands of new bacteria
+. Bacteria in the thousands are
+
+. NO CHANGE
+
+voOWD>
+
+. shark; latching
+shark. Latching
+
+. shark and latching
+
+PrepPros ACT English Course
+
+The personal trainer, organizing the 5K run
+
+21. A. NO CHANGE
+
+B. trainer organizing the 5K run
+
+2
+
+}
+
+decided to put an advertisement for his business
+
+C. trainer, organizing the 5K run
+
+at the finish line.
+
+D. trainer, organizing the 5K run,
+
+Creole cuisine has many distinctive qualities;
+22. A. NO CHANGE
+B. quality, that is the
+
+however, professional chefs say the cuisine’s real
+
+identifying quality, the blend of West African,
+
+. ivality, which s the
+
+French, and Southern foods.
+
+The infamous graffiti_artist, Josh Bridgewater,
+
+23. A. NO CHANGE
+
+230
+
+B. artist (Josh Bridgewater),
+
+who in 2017 completed a full mural with his
+
+C.
+
+signature caricatures of the city’s most
+
+artist Josh Bridgewater
+
+D. artist Josh Bridgewater,
+
+prominent individuals, is always finding new
+ways to attract attention to issues that he cares
+about.
+
+Sun exposure plays an important role in snakes’
+
+24, A. NO CHANGE
+
+abilities to regulate their body temperatures; in
+
+B. temperatures, this helps
+C. temperatures; therefore, helping
+
+effect, helping snakes survive in both warmer
+
+D. temperatures, helping
+
+24
+
+.
+
+24
+
+,
+
+;
+
+J
+
+and cooler climates.
+
+In rare instances, however the 16 seed can
+
+25. A. NO CHANGE
+
+25
+advance during March Madness.
+
+B. instances; however,
+C. instances, however,
+D. instances however
+
+For example, one species of falcon, the peregrine
+
+26. A. NO CHANGE
+
+26
+which is among the best hunters in the world.
+
+B. falcon, the peregrine, which
+C. falcon, the peregrine
+.
+
+26
+
+,
+
+,
+
+D. falcon the peregrine that
+
+The construction crew finished the bridge
+
+27. A. NO CHANGE
+
+enamiins
+
+enabling runners to P pass over the river and use
+
+B.C. bridge;
+enabling
+bridge and this enabled
+
+the path on the other side as well.
+
+D. bridge; this enabled
+
+© PrepPros 2025
+
+-28-
+
+PrepPros ACT English Course
+

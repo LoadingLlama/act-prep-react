@@ -1,0 +1,565 @@
+Chapter 1: Sentence Structure
+To conquer the ACT English Test, we first need to be able to identify the different parts of a sentence and
+know the rules for how they can and cannot be combined.
+
+Clauses and Phrases
+A clause is a group of words that contains both a subject and a verb. There are two types of clauses:
+independent clauses and dependent clauses.
+An independent clause can stand as a sentence by itself. It always has a subject and a verb. The best
+way to identify an independent clause is to read the sentence and see if you can stop talking at the end.
+If you can stop, it is a complete sentence and an independent clause. Here are some examples of
+independent clauses:
+The dog chased its tail.
+Monique made some homemade peach scones for breakfast.
+He picked it up.
+The excited child opened up his present.
+A dependent clause cannot stand alone as a complete sentence. Most often, clauses become dependent
+by adding a subordinating conjunction to the front of the clause. The most common subordinating
+conjunctions are listed below
+after
+
+in order to
+
+whatever
+
+although
+
+once
+
+when
+
+as
+
+since
+
+whenever
+
+because
+
+though
+
+whether
+
+before
+
+that
+
+where
+
+even though
+
+unless
+
+while
+
+if
+
+until
+
+Notice how in the examples below these words turn independent clauses into dependent clauses:
+While the dog chased its tail...
+Although Monique made some homemade peach scones for breakfast...
+Since he picked it up...
+When the excited child opened up his present...
+A phrase lacks a subject or verb or both. A phrase does not express a complete thought and can never
+stand alone as asentence. As aresult, phrases provide additional descriptory information in a sentence.
+Chasing its tail...
+Making some homemade peach scones for breakfast...
+Picking it up...
+Excited to open up his present...
+All of these example are missing the subject. From the phrase alone, we do not know who is doing any of
+these actions.
+
+© PrepPros 2025
+
+-4-
+
+PrepPros ACT English Course
+
+TIP - Independent Clauses vs. Dependent Clauses vs. Phrases
+To tell the difference between an independent clause, a dependent clause, and a phrase, read the
+
+sentence out loud (or “out loud” in your head). If you can stop talking at the end of the sentence,
+it is an independent clause. If you feel like you need to Keep talking, the sentence is a dependent
+clause or a phrase and cannot stand alone.
+To tell the difference between a dependent clause and a phrase, cover the first word and read
+the rest of the sentence. If you then have a complete sentence, it is a dependent clause. If you do
+not have a complete sentence, it is a phrase.
+Independent Clause:
+
+My brother Adam eats cookies every day.
+
+Dependent Clause:
+
+When my brother Adam eats cookies every day...
+
+Phrase:
+
+Eating cookies everyday...
+
+Exercise: For each of the clauses or phrases below, identify if it is an independent clause (I), dependent
+clause (D), or phrase (P). Write I, D, or P next to each question.
+1) Areference to Canadian politics in the 1980s
+2) The new clothing brand that makes clothing entirely from recycled plastic bottles is popular
+3) He created the new pair of shoes specifically for a special client with size 17 feet
+4) Because the water bottle was manufactured with two layers of stainless steel
+5) Iluminating the crime scene with a flashlight
+6) Forgetting his calculator at home was a big mistake
+7) Even though potted succulents grow far better in summer than winter
+8) Running out of time to complete his sculpture for the spring art show
+9) With no regard for his own health and safety
+10) Rain is in the forecast for the next three days
+11) Expertly kneaded bread will have air pockets
+12) Hiking fifteen miles in a single day with only three liters of water and a small bag of trail mix
+13) While Manu was accused of cheating by both the teachers and all of the students
+14) Where Stephanie’s campaign for class president relied on donations from classmates
+
+Sentence Fragments
+A complete sentence must contain a subject and a verb. Sentence fragments are missing a subject or a
+verb or both and do not express a complete thought. In other words, a sentence fragment cannot
+stand by itself. To spot sentence fragments, read the entire sentence. The sentence will usually just
+sound plain wrong, and you will realize it is missing a subject or a verb.
+Incorrect: The student running to get to class on time. (missing a verb - what did the student do?)
+Correct: The student running to get to class on time dropped her water bottle.
+Incorrect: Excited to go to the beach and surf. (missing a subject - who is excited to go to the beach?)
+Correct: My little brother Shaun is excited to go to the beach and surf.
+
+© PrepPros 2025
+
+-5-
+
+PrepPros ACT English Course
+
+Clauses, Phrases, and Fragments Practice:
+
+In the late 1960s, the “must-have” toy at the
+Cincinnati Toy Fair a new type of diecast toy car
+1
+
+that would later become the popular brand Hot
+Wheels.
+
+Spencer, who famously noticed that a microwave
+2
+
+can melt a chocolate bar.
+
+GOD
+
+NO CHANGE
+
+>GOW
+
+NO CHANGE
+
+Fair,
+Fair;
+
+. Fair was
+
+Spencer famously
+Spencer surprised famously
+
+. Spencer, who was famous for when
+
+After hummingbirds evolved long, thin beaks to
+reach pollen in flowers, however this
+3
+
+evolutionary advantage allowed them to survive
+
+COM>
+
+he
+
+NO CHANGE
+
+therefore
+and
+
+. DELETE the underlined portion
+
+entirely on flower nectar, tree sap, and pollen.
+
+To clean all the windows on the tallest buildings,
+window cleaners work several twelve-hour
+4
+
+shifts over the course of a week.
+
+Her landmark doctoral thesis, published in 2019,
+asserting that, unlike the other autoimmune
+5
+
+disorders, Crohn’s disease has an underlying
+bacterial component.
+
+While the bakery varies its types of bread with
+6
+
+the seasons, ranging from tomato basil loafs in
+the summer to olive rosemary focaccia in the fall,
+and always has a line around the block.
+
+© PrepPros 2025
+
+GOD
+
+NO CHANGE
+
+>GOW
+
+NO CHANGE
+
+>OW
+
+NO CHANGE
+
+cleaners, who work
+cleaners, working
+
+. cleaners who work
+
+asserted that
+asserted,
+
+. an assertion
+
+Having various types of bread
+With the bakery having varied bread
+types
+
+. The bakery varies its types of bread
+
+PrepPros ACT English Course
+
+5 Types of Compound Sentences
+Often on the ACT, we often face more complex sentences that have multiple clauses (more than one
+subject and verb). These are called compound sentences. On the ACT (and in English in general),
+multiple clauses must always appear as one of the 5 types below.
+1.
+
+Two separate independent clauses with periods.
+Mary loves dogs.
+
+Andrew loves cats.
+
+Independent
+
+Independent
+
+TIP - FANBOYS
+Memorize these 7
+
+2. Comma + FANBOYS joining 2 independent clauses. a For
+Mary loves dogs , and Andrew loves cats.
+Independent
+Independent
+
+3. Semicolon between 2 independent clauses.
+Mary loves dogs ; Andrew loves cats.
+Independent
+
+special words!
+
+And
+Nor
+But
+
+Or
+a
+
+Independent
+
+fe)
+
+* A semicolon is the same a period on the ACT.
+4.
+
+Dependent clause followed by independent clause (comma).
+While Mary loves dogs , Andrew loves cats.
+Dependent
+
+5.
+
+Independent
+
+Independent clause straight into dependent clause (no comma).
+Mary loves dogs while Andrew loves cats.
+
+Independent
+
+Dependent
+
+You need to memorize these 5 rules! The ACT will challenge you by putting answer choices that
+
+“look” or “sound” good on the exam but actually break one of our rules above. Next, we will cover the
+most common comma mistake students make with sentence structure.
+
+Comma Splice
+A comma by itself CANNOT be used to join two independent clauses. Joining two independent
+sentences with only a comma is called a comma splice and is always incorrect.
+Incorrect: It is believed that bulls are enraged by the color red, they are actually colorblind.
+Incorrect: I cannot believe you did not get the flowers, I left them at your front door.
+Both of these sentences are comma splices. We can correct these comma splices using any of our 5
+comma rules above. The first incorrect sentence is corrected below using all 5 rules.
+Rule #1: Itis believed that bulls are enraged by the color red. They are actually colorblind.
+Rule #2: It is believed that bulls are enraged by the color red, but they are actually colorblind.
+Rule #3: Itis believed that bulls are enraged by the color red; they are actually colorblind.
+Rule #4: While it is believed that bulls are enraged by the color red, they are actually colorblind.
+Rule #5: Itis believed that bulls are enraged by the color red though they are actually colorblind.
+
+© PrepPros 2025
+
+-7-
+
+PrepPros ACT English Course
+
+Compound Sentences Practice: Which answer choices are correct? For this exercise, multiple answer
+choices can be correct. Select all answer choices that make the sentence correct.
+1)
+
+2)
+
+3)
+
+4)
+
+Hockey is my favorite
+
+I cannot skate very well.
+
+a.
+
+sport, although
+
+b.
+
+sport, but
+
+c.
+
+sport even though
+
+While penguins are clumsy
+a.
+
+on land, they are
+
+b.
+
+on land they are
+
+c.
+
+on land; they are
+
+amazingly graceful in water.
+
+Swimming is a great
+
+works all the muscle groups in the body.
+
+a.
+
+workout; it
+
+b.
+
+workout because it
+
+c.
+
+workout, for it
+
+Tomato plants need full sunlight to grow to full
+
+lettuce grows better in partial sunlight.
+
+a.
+
+size, but
+
+b.
+
+size; and
+
+Cc.
+
+size;
+
+a.
+
+My friends say the extra hot salsa is too spicy,
+
+5)
+
+I still prefer it.
+Although my friends say the extra hot salsa is too spicy,
+c.
+
+6)
+
+7)
+
+8)
+
+My friends say the extra hot salsa is too spicy, but
+
+On my day off, I will go
+a.
+
+surfing, or I will
+
+b.
+
+surfing or I will
+
+c.
+
+surfing, or will
+
+go spearfishing.
+
+The entire school loves chef
+
+makes the best pulled pork.
+
+a.
+
+Victoria because she
+
+b.
+
+Victoria; because she
+
+c.
+
+Victoria, she
+
+Liz could not
+a.
+
+resist, so
+
+b.
+
+resist and
+
+c.
+
+resist,
+
+© PrepPros 2025
+
+she adopted the adorable golden doodle puppy.
+
+-8-
+
+PrepPros ACT English Course
+
+TIP - How to Spot Sentence Structure Questions
+Sentence structure questions usually have at least one of the following characteristics:
+1.
+
+Period, semicolons, commas, and FANBOYS are in the answer choices. If you see
+answer choices with any of these, you are most likely looking at a sentence structure
+question.
+
+2.
+
+Some answer choices have a subject or verb and others do not. For more advanced
+sentence structure questions, some answer choices have subjects or verbs while others do
+not. The verbs may also vary in their forms; for example, one answer choice may say
+
+“drove” while another says “driving”. For these questions, be on the lookout for comma
+splices.
+On the ACT, sentence structure questions commonly look like this:
+The roller coaster is opening next
+
+1.
+
+Which choice makes the sentence most
+
+week, the wait time is expected to be
+
+grammatically acceptable:
+
+over 4 hours long.
+
+A.
+
+NO CHANGE
+
+B.
+
+week; with the
+
+C.
+
+week and the
+
+D.
+
+week. The
+
+?
+
+In August 2005, Hurricane Katrina hit
+
+2.
+
+Which choice makes the sentence
+
+New Orleans; resulting in over 1,800
+
+most grammatically acceptable?
+
+deaths and $125 billion in damage.
+
+A.
+
+NO CHANGE
+
+B.
+
+New Orleans, the result was
+
+C.
+
+New Orleans, and the result was
+
+D.
+
+New Orleans. The result being
+
+Anytime you spot a sentence structure question, use the following approach:
+
+1.
+
+Find where the sentence is being “split.”
+
+2.
+
+Look left and right of the “split” point and identify the clauses or phrases.
+
+3.
+
+Apply the sentence structure rules.
+
+In the first example above, the answer is D because we have two independent clauses. A is a comma
+splice. In B, the second half is not an independent clause. C is missing the comma with the
+FANBOYS.
+
+In the second example, the answer is C because we have two independent clauses linked by a comma
++ FANBOYS. A and D are incorrect because the second half
+is not an independent clause. Bisa
+
+comma splice.
+
+© PrepPros 2025
+
+-9-
+
+PrepPros ACT English Course
+

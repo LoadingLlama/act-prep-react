@@ -1,0 +1,818 @@
+Chapter 6: Misplaced Modifiers
+A misplaced modifier is a word, phrase, or clause that is improperly separated from the noun
+that it modifies. A misplaced modifier leads to a sentence that has an incorrect or unintended meaning.
+Misplaced modifiers are hard to spot because we usually know what the sentence is really supposed to
+be saying.
+Incorrect: Consistently erupting, Jack loves taking pictures of the Old Faithful geyser at
+Yellowstone National Park.
+
+So what's wrong here? The modifier “consistently erupting” is supposed to be modifying the Old
+Faithful geyser, but instead it is modifying Jack! Let’s hope Jack is not consistently erupting. When a
+sentence begins with a modifying phrase, the phrase must modify the very first noun that follows the
+comma. There are two ways to fix this error:
+Correct: Consistently erupting, the Old Faithful geyser at Yellowstone National Park is one of
+Jack’s favorite things to take pictures of.
+Correct: Since it is consistently erupting, Jack loves taking pictures of the Old Faithful geyser at
+Yellowstone National Park.
+
+In the first correct version, the modifier “consistently erupting” is right next to and correctly modifying
+the Old Faithful geyser. In the second correct version, we added a pronoun “it” to change the modifier
+from a phrase to a dependent clause, so we now know that the geyser is erupting. When we get to
+
+“Jack,” there is no longer any confusion about who or what is erupting.
+
+TIP - “Next-door Neighbor Rule”
+For a modifier to be properly placed, it must be right “next-door” to the noun it is describing. Modifiers
+can be at the beginning, middle, or end of a sentence.
+If the modifier is at the beginning of the sentence, the first noun after must be the word being
+
+modified.
+
+cn
+
+Running from the police, Eric hopped the fence and hid underneatha car.
+If the modifier is in the middle or end of the sentence, it must be modifying the noun directly
+before it.
+Dr. Anderson, a world-renown surgeon, fixed my broken leg.
+
+ar,
+
+© PrepPros 2025
+
+- 62 -
+
+PrepPros ACT English Course
+
+Front of the Sentence Modifiers with a Comma
+On the ACT, most misplaced modifiers questions have a modifier at the front of the sentence
+separated by a comma. For this type of question, consider who or what the modifier is describing and
+then make sure that person, place, or thing is the first noun in the rest of the sentence.
+Incorrect: Not popular since the early 1980s, the documentary about mullets explored the origins of
+the wildly popular hairstyle.
+Correct:
+
+Not popular since the early 1980s, mullets were the topic of a recently released
+documentary.
+
+The modifier is “not popular since the early 1980s,” so the next noun must be whoever or whatever the
+modifier is describing. In the incorrect version, the next noun “documentaries” is not what we are
+supposed to be describing. The correct version puts the described word “mullets” right next-door to the
+modifier at the beginning of the sentence.
+Practice:
+1.
+
+Addressing the group of reporters gathered
+
+A. NO CHANGE
+
+B. the police chief said he did not know if the
+
+outside of the police station, there was no
+
+suspect was in custody or not.
+
+1
+indication that the police chief knew if the suspect
+
+C. no indication of whether or not the suspect
+was in custody was given by the police
+
+was in custody or not.
+
+chief.
+
+1
+
+D. the police chief's report gave no indication
+of whether the suspect was in custody or
+not.
+
+|
+
+2.
+
+A brand new approach to automobile
+
+A.
+
+Ford, installed the first moving assembly
+
+manufacturing, Henry Ford and Ford Motor
+
+line in 1913.
+
+2
+
+Company installed the first moving assembly line
+
+C. the first moving assembly line was
+;
+
+2
+
+mn 1913.
+
+NO CHANGE
+
+B. the Ford Motor Company, owned by Henry
+
+installed by Henry Ford and Ford Motor
+
+3
+
+Company in 1913.
+
+D. 1913 was the first year that Henry Ford
+and the Ford Motor Company installed the
+moving assembly line.
+
+. NO CHANGE
+
+Designed for beauty and symmetry, Laura
+3
+
+Saunders created a modern art museum that is an
+
+By designing it for beauty and symmetry
+
+. A design with beauty and symmetry
+
+architectural marvel.
+
+© PrepPros 2025
+
+>gow
+
+Both beautiful and symmetric
+
+- 63 -
+
+PrepPros ACT English Course
+
+Middle or the End of the Sentence Modifier with Commas
+A modifier in the middle or at the end of the sentence must be directly after whoever or whatever
+it is modifying.
+Incorrect: The research team, which arrived at their nesting grounds early this year, tracked the
+movements of the blue storks.
+Correct: The research team tracked the movements of the blue storks, which arrived at their nesting
+grounds early this year.
+Correct: The research team, which tracked the movement of the blue storks, noted that the birds
+arrived at their nesting grounds early.
+
+In the incorrect example, the modifier “which arrived at their nesting grounds early this year” was
+incorrectly modifying the research team. However, this modifier should be modifying the blue storks, so
+
+the first correct example moves the modifier to the end of the sentence right “next-door” to the blue
+storks. We could also fix the incorrect sentence by changing the modifier in the middle as is displayed in
+
+the second correct example. The new modifier “which tracked the movement of the blue storks” now
+properly modifies the research team.
+Practice:
+
+There was little doubt that the new technique for
+
+1.
+
+A. NO CHANGE
+
+B. which had been caught earlier this
+
+deep frying the cod, which uses less oil and a new
+
+morning
+
+1
+
+type of batter, results in a more crispy and less
+
+C. one that is popular among locals
+
+D. using hotter oil and smaller pieces of fish
+
+1
+
+oily breading.
+
+Modifiers without Commas
+In some questions, the modifier will not be separated by any commas. These are the harder to spot, but
+
+the “next-door neighbor’ rule still applies. Keep an eye out for phrases starting with “that” or words
+ending in “-ing” and “-ed.”
+Incorrect: A tarantula bit one of my coworkers that had a huge, hairy body.
+Correct:
+
+A tarantula that had a huge, hairy body bit one of my coworkers.
+
+The incorrect sentence has the modifier “that had a huge, hairy body” describing the coworker and not
+the tarantula. By moving the modifier right next to the tarantula in the correct sentence, we are
+describing the tarantula as having a huge, hairy body.
+Practice:
+1.
+
+Three businessmen talked on the balcony
+
+A. NO CHANGE
+
+B. celebrating the deal talked on the balcony
+
+1
+
+smoking cigars.
+
+smoking cigars to celebrate the deal,
+:
+
+C. smoking cigars talked to celebrate the deal
+on the balcony.
+D. smoking cigars to celebrate the deal talked
+on the balcony.
+
+© PrepPros 2025
+
+- 64 -
+
+PrepPros ACT English Course
+
+Prepositional Phrases as Modifiers
+Prepositional phrases can also act as modifiers and must be placed in the correct position to
+have the intended meaning. These occur less commonly on the ACT and are often difficult to spot.
+Incorrect: Paul and his father talked about the baseball game in the stands.
+Correct: In the stands, Paul and his father talked about the baseball game.
+In the first sentence, the baseball game is in the stands. We know that’s not the case, so we need to move
+
+the prepositional phrase “in the stands” to the beginning of the sentence. Now, the phrase is describing
+Paul and his father as being in the stands.
+Practice:
+
+1.
+
+The Subaru dealership sold the new car to the
+
+The best placement for the underlined
+
+portion would be:
+
+buyer with automatic parallel parking.
+
+A. where it is now.
+
+1
+
+B. after the word Subaru.
+C . after the word sold.
+D . after the word car.
+
+Modifiers in Parentheses
+Modifiers that are set apart in parentheses must be placed directly “next-door” to whoever or
+whatever they are modifying. Phrases in parentheses will always be in the middle or end of the
+sentence, so the word being described must be right before the parentheses. This type of misplaced
+modifier is very rarely test on the ACT.
+Incorrect:
+
+The scientists tried to develop a new method to make their self-pollination study (where
+pollen from the same plant arrives at the stigma of the flower) completely free of pollen
+contamination from other plants.
+
+Correct:
+
+The scientists tried to develop a new method to study self-pollination (where pollen from
+the same plant arrives at the stigma of the flower) completely free of pollen
+contamination from other plants.
+
+The modifier in the parentheses is defining what self-pollination is, so self-pollination must be directly
+before the parentheses, as it is in the correct sentence. In the incorrect sentence, the word study is
+directly before the parentheses, so the modifier in parentheses is incorrectly describing the selfpollination study.
+Practice:
+
+Plant the roses in a sunny spot in the backyard
+
+1.
+
+A. NO CHANGE
+
+and be sure to water them every day just after
+
+B. recommended the expert gardener
+
+sunrise, the expert gardener recommended (who
+
+C. was the expert gardener’s
+recommendation
+
+had been growing and selling his own roses for
+
+D. the gardener, who was an expert,
+recommended
+
+the past two decades).
+
+© PrepPros 2025
+
+-65 -
+
+PrepPros ACT English Course
+
+TIP - How to Spot Misplaced Modifiers Questions
+The hardest part about misplaced modifiers questions is spotting them! Most students think these
+questions are about phrasing or flow and never realize what they are actually being tested on.
+Misplaced modifiers questions always have at least one and, very often, both of the following
+defining characteristics:
+1.
+
+All 4 answer choices are similar in length, and the answer choices have the same words
+scrambled in different orders. Anytime you see 4 long answer choices that are all saying the
+same general thing in different orders, you are very likely looking at a misplaced modifiers
+question.
+
+2.
+
+The first word varies in the answer choices. If the first word or group of words is different in
+3 or 4 of the answer choices, the question is most likely testing you on misplaced modifiers.
+
+On the ACT, misplaced modifiers questions will look like this:
+Analyzing the ultraviolet camera footage,
+scientists discovered that fish
+
+communicate using UV coloration and
+
+1.
+
+Which choice makes the sentence most
+grammatically acceptable?
+
+.
+
+signaling.
+
+NO CHANGE
+
+fish were found to communicate using UV
+coloration and signaling.
+
+C.
+
+it was discovered by scientists that fish
+communicate using UV coloration and signaling.
+
+D.
+
+UV coloration and signaling were discovered as
+a way fish communicate.
+
+Whenever you spot a misplaced modifiers question, identify the modifier and ask yourself, “who
+or what is the modifier describing?” In this example, the modifier is “analyzing the ultraviolet camera
+footage.” Who or what is analyzing the camera footage? The scientists! Since “the scientists” must be
+right next-door, the answer is A.
+
+© PrepPros 2025
+
+- 66 -
+
+PrepPros ACT English Course
+
+Chapter 6 Practice:
+Eric’s foot indicated his nervousness during the
+
+NO CHANGE
+
+1
+
+Eric’s foot indicated his nervousness
+
+interview, which jiggled wildly.
+
+during the interview, jiggling wildly.
+
+1
+
+Eric’s foot, which jiggled wildly, indicated
+his nervousness during the interview.
+. Jiggling wildly during the interview, Eric
+showed his nervousness.
+NO CHANGE
+
+Oozing slowly across the ground, Claire watched
+2
+
+Claire’s smoothie flowed towards the
+
+her smoothie flow towards the kitchen.
+
+kitchen.
+
+2
+
+there was Claire’s smoothie flowing
+towards the kitchen.
+. the kitchen was where Claire’s smoothie
+flowed.
+
+Mrs. James will make evening gowns for special
+customers with sequins if the request is made at
+
+The best placement for the underlined
+portion would be:
+. Where it isnow
+
+>VOW
+
+3
+
+least three weeks ahead of time.
+
+. after the word gowns.
+after the word request.
+
+. after the word weeks.
+
+Since they betrayed the country and sold secrets
+4
+
+to the Soviet Union, many American historians
+4
+
+regard Christopher John Boye as one of the
+biggest traitors in history.
+
+. NO CHANGE
+
+. Since he betrayed his country and sold
+secrets to the Soviet Union,
+Betraying his country and selling secrets
+to the Soviet Union,
+. Known for his famous betrayal,
+
+In hot pursuit on a bicycle, the escaped lemurs
+5
+
+were chased by animal control.
+
+. NO CHANGE
+
+. the escaped lemurs were running away
+from animal control.
+
+5
+
+animal control chased the escaped
+lemurs.
+. chasing the lemurs was animal control.
+. NO CHANGE
+
+A team of ecologists recently discovered the
+Strawberry Posion Dart Frog during a taxological
+study in the Amazon (a type of frog first
+6
+
+discovered by scientists in 2013).
+6
+
+© PrepPros 2025
+
+. (astudy meant to classify new species of
+animals).
+(one of the last true wild and unknown
+places on the earth).
+. (and during the study they also
+discovered five other new species).
+
+PrepPros ACT English Course
+
+All of my teachers and teammates loved the two
+
+>OW
+
+Siberian Huskies. Highly energetic and
+intelligent, they are friendly to everyone.
+
+NO CHANGE
+
+Siberian Huskies are friendly to everyone.
+many owners know that Siberian Huskies
+are friendly to everyone.
+
+Oo . everyone is treated as a friend by Siberian
+
+7
+
+Huskies.
+NO CHANGE
+
+Designating it as a state landmark in
+
+The Minnesota Governor honored Charles
+
+1976, Charles Lindberg’s house was
+
+8
+
+honored by the Governor of Minnesota.
+
+Lindberg’s house by designating it as a state
+
+By designating it as a state landmark,
+
+8
+
+landmark in 1976.
+
+1976 was the year Charles Lindberg’s
+
+8
+
+house was honored by the Minnesota
+Governor.
+
+. Designated as a state landmark in 1976,
+the Minnesota Governor honored Charles
+Lindberg’s house.
+NO CHANGE
+
+revolutionary, new ideas were combined
+
+In designing a new water filtration system,
+
+with common elements.
+common elements were combined with
+
+engineers’ borrowing of common
+
+9
+
+elements were combined with
+
+revolutionary, new ideas.
+
+revolutionary, new ideas.
+
+9
+
+. engineers combined common elements
+with new, revolutionary ideas.
+
+Covered with license plates from around the
+
+10. A. NO CHANGE
+
+tourists love to take pictures of the walls
+at Bub’s Burgers.
+
+world, the walls at Bub’s Burgers are always a
+10
+
+photos in front of the walls at Bub’s
+
+popular photo op for tourists.
+
+Burgers are very popular for tourists.
+
+10
+
+. Bub’s Burgers is a popular photo op for
+tourists.
+
+Flying south for their winter migration, the
+
+11.
+
+11
+
+researchers determined that the butterflies had
+
+12
+
+steak must be carefully laid away from the cook
+12
+
+to prevent getting burned.
+12
+
+When they flew
+
+. By flying
+
+an innate sense of direction.
+
+Using a piping hot pan with oil glistening, the
+
+GOD
+
+NO CHANGE
+
+When the butterflies flew
+
+12.
+
+>
+
+NO CHANGE
+
+. the cook must carefully lay the steak
+away from himself to prevent getting
+burned.
+the cook’s steak must carefully be laid
+away from the cook to prevent getting
+burned.
+. prevent getting burned by carefully laying
+the steak away.
+
+© PrepPros 2025
+
+PrepPros ACT English Course
+
+Spending her entire life laying eggs, the worker
+
+13. A. NO CHANGE
+
+13
+
+Carrying up to fifty times their body
+
+ants are responsible for building and
+
+weights,
+Since it can carry up to fifty times its body
+
+maintaining the nest while the bigger queen ant
+
+weight,
+
+is responsible for the future generations of the
+
+. Studying how the nest functions on a dayto-day basis,
+
+colony.
+
+In the 1920s, while swimming hundreds of feet
+
+14.
+
+NO CHANGE
+
+Old Tom, the orca whale, successfully
+
+below the fishing boat in the freezing cold
+
+hunted large schools of fish with sailors.
+it was large schools of fish that were
+
+waters off Australia, sailors successfully hunted
+
+successfully hunted by Old Tom, the orca
+
+14
+
+large schools of fish with Old Tom, the orca
+
+whale, and sailors.
+
+14
+
+. sailors with the help of Old Tom, the orca
+
+whale.
+
+whale, successfully hunted large schools
+
+14
+
+of fish.
+
+England’s transition from a monarchy to a
+
+15. Which of the following placement of the
+underlined portion makes it clear that the
+
+Democratic Republic vastly shifted the power
+
+King or Queen had decreased power?
+
+structure of the government. The greatly
+
+GOD
+
+15
+
+decreased Queen or King had an amount of
+15
+
+power in making decisions for the nation.
+
+In his shop in Encinitas, surfboards are carefully
+
+where it is now.
+before the word power.
+before the word nation.
+
+. before the word amount (and change “an”
+
+16.
+
+to
+
+“a’) .
+
+NO CHANGE
+
+shaper Enzo Rivas carefully handcrafts
+
+16
+
+surfboards.
+
+handcrafted by shaper Enzo Rivas.
+
+there are surfboards being carefully
+
+16
+
+handcrafted by shaper Enzo Rivas.
+. Enzo Riva’s surfboards are carefully
+handcrafted.
+
+The soccer analyst decided that the best player
+17
+
+of all time was Pele (who was chosen as the
+17
+
+athlete of the century by the International
+Olympic Committee in 1999).
+
+© PrepPros 2025
+
+17.
+
+NO CHANGE
+
+Pele was chosen by the soccer analyst as
+the best player of all time
+Pele was named the best player of all time
+by the soccer analyst
+. The best player of all time was Pele, the
+soccer analyst decided
+
+PrepPros ACT English Course
+
+18. Which placement of the underlined portion
+
+In 2014, Peyton Manning won his last game in
+18
+
+makes clear that the game was Payton
+
+Denver 47-14 over the Oakland Raiders.
+
+Manning’s last game in 2014 and not his last
+game ever?
+
+wo>N
+Now in widespread use across many homes, a 60
+
+19.
+
+19
+
+minutes segment featured the Roomba.
+19
+
+>OW
+
+where it is now
+after the word Manning.
+after the word game.
+after the word Raiders (and before the
+period).
+
+NO CHANGE
+the Roomba was featured on 60 minutes.
+the Roomba’s segment was featured on
+60 minutes.
+
+. 60 minutes featured the Roomba.
+
+By combining information about the positions of
+
+20. The best placement for the underlined
+portion would be:
+
+the galaxies and the refraction of light, Dr.
+
+A. where it isnow
+
+Klitzhoff was able to discover a new grouping of
+
+B. before the word positions.
+C. before the word planets.
+
+planets thousands of light years away.
+20
+
+© PrepPros 2025
+
+D. DELETE the underlined portion.
+
+-70-
+
+PrepPros ACT English Course
+

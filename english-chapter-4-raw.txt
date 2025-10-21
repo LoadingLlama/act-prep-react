@@ -1,0 +1,822 @@
+Chapter 4: Verbs
+Verbs questions test you on two major topics - subject-verb agreement and verb tense. The subject-
+
+verb agreement questions are trickier, as at times it can be difficult to find the subject and “hear” which
+verb is correct. You will learn a few methods in this chapter to correctly answer these questions. For
+the verb tense questions, the approach is much more straightforward: read for context and go with the
+answer that sounds correct.
+
+Subject-Verb Agreement
+Whenever you see a verbs question on the ACT, your first job is to find the subject. The subject, which
+is the person, place, or thing doing the action, is usually at the beginning of the sentence.
+The subject of the sentence must agree with the verb. If the subject is singular, the verb must be
+singular, and if the subject is plural, the verb must be plural. In simple sentences when the subject and
+verbs are right next to each other, it will be easy to select the right verb:
+Cats (loves/love) to sit in empty boxes.
+My dog (barks/bark) at the mailman every day.
+Easy right? Unfortunately, verbs questions will not be this easy on test day. The ACT increases the
+difficulty by putting distance between the subject and the verb. The farther away the subject is from the
+verb, the more likely we are to say the verb incorrectly. Remember, what sounds right is not always
+right. You cannot trust your ear on subject-verb agreement questions.
+There are 3 ways the ACT will try to trick you on subject-verb agreement:
+1.
+
+Unnecessary information phrases between the subject and verb.
+
+Unnecessary information phrases never contain the subject. Cross out any unnecessary
+information phrases to find the subject.
+Tortoises, known to live to over 150 years old, (is/are) sold at the local pet shop.
+The committee, composed of two former CEOs, one politician, three lawyers, and two doctors,
+(vote/votes) to delay the release of the new product until next quarter.
+2.
+
+Prepositional phrases between the subject and verb (most common).
+
+Prepositional phrases never contain the subject or the verb. Cross out prepositional phrases to
+find the subject.
+The entire group of students (is/are) organizing a bake sale to raise money.
+The pod of dolphins (hunts/hunt) as a team.
+3.
+
+Group nouns that sound plural but are singular.
+
+Group nouns (class, committee, team) are singular even though the group consists of more than one
+person/thing.
+The sheep herd (waits/wait) to be sheared.
+The jury (agrees/agree) that the defendant deserves to be put in jail.
+
+© PrepPros 2025
+
+- 44 -
+
+PrepPros ACT English Course
+
+TIP - Read the Subject and Verbs Side-by-side
+Once you find the subject and verb, read them next to each other and ignore the information in between.
+This will help you more easily identify which one is correct.
+A large percentage of the voters, many of whom are under the age of 30, (prefer/prefers) the new
+housing proposal.
+Cross out any unnecessary information and prepositional phrases.
+A large percentage efthe voters, manyehyhem
+are under the age of 30, (prefer/prefers) the new
+housing proposal.
+
+The subject is “percentage.” Put the subject and verb next to each other and ignore the rest of the
+sentence.
+
+Correct: A percentage prefers the new housing proposal.
+Practice:
+
+1. The entire class of first graders (cheer/cheers) when the ice cream truck arrives.
+2. The proposal for planting a new grove of orange trees (requires/require) an approval of 80% to
+pass.
+
+3. With the budget finally approved, the new system for payroll, scheduling, and human resources that
+took three years to build (is/are) finally going live next month.
+
+TIP - Plug in “he/she/it” for singular subject and “they” for plural subjects
+Sometimes it is difficult to “hear” which verb correctly matches with the subject. For singular words,
+plug in “he,” “she,” or “it” for the subject. For plural words, plug in “they” for the subject. With this trick,
+we will be able to easily hear which verb properly agrees with the subject.
+The exact time for the meeting with the softball coach and location for the showcase
+(has/have) not been finalized.
+If we read the sentence as is, it is difficult to tell which verb fits. After crossing out the prepositional
+phrases, the sentence looks like this:
+The exact time forthe meeting seftball
+with the
+eeach and location fertheshewease
+(has/have) not been finalized.
+
+The subjects are “time” and “location,” so the subject is plural. Replace the subjects with “they.”
+They (has/have) not been finalized.
+
+Now it’s easy...we can tell that “have” is correct.
+
+Try this tip with the examples below:
+1.
+2.
+
+Each of the runners who complete the marathon (wins/win) a medal.
+The complex designs and intricate needlework (makes/make) Julia’s carpets the most popular in
+the entire art market.
+
+© PrepPros 2025
+
+- 45 -
+
+PrepPros ACT English Course
+
+Subject-Verb Agreement Practice:
+1.
+
+The stable hand hired by the farm owners (groom/grooms) the horses every morning.
+
+2.
+
+Both of the apartments (is/are) never vacant during the summer.
+
+3.
+
+Ned, the winner of the gold medal in the 200-meter breaststroke, and Claire, the bronze medal
+winner in the 1000-meter freestyle, (was/were) featured on the cover of the swimming
+magazine.
+
+4.
+
+Gold coins and silver bars, all once thought to be lost forever, (was/were) found in the sunken
+pirate ship.
+
+5.
+
+Each of the girl scouts (sells/sell) delicious Thin Mint cookies.
+
+6.
+
+The cast of the award-winning show (takes/take) a bow after the show ends.
+
+7.
+
+Killer whales, which are the top predators in the ocean, (have/has) been documented hunting
+great white sharks.
+
+8.
+
+The overall rating from the reviewers of the new restaurant, which is scored on categories
+including the food quality and the ambiance, (is/are) worse than before the renovation and
+reopening.
+
+9.
+
+To help raise money to save the farm, Janet donates her old clothes, Mike organizes a bake sale,
+and Chloe and Bill (has/have) a yard sale.
+
+10. One of the recipes for chocolate chip cookies in the cookbooks (call/calls) for brown sugar.
+11. Flamingos, famous for their bright pink feathers, actually (get/gets) their color from a diet of
+shrimp and algae.
+12. The entire group of seagulls (is/are) following the child who keeps dropping french fries.
+13. One of the symptoms (make/makes) Dr. Smith think that Andy just has the common cold.
+14. Freediving, a very unique and uncommon sport, (require/requires) divers to hold their breath
+for long periods of time.
+
+© PrepPros 2025
+
+- 46 -
+
+PrepPros ACT English Course
+
+Verb Tense
+For questions on verb tense, trust your ear. As a native English speaker, you will know what sounds
+right or wrong in the sentence as long as you read for context. To find which tense is correct, read
+the previous sentence(s) and look for other verbs. Make sure to match the tense in the rest of the
+paragraph.
+On the ACT, do not pick a complicated tense (has run, had ran, had been running, would have run, etc.)
+when a simple tense works.
+Last year, Margot (designs/designed/will design) a new line of summer dresses.
+Before he votes tomorrow, Dale (researches/research/will research) each candidate’s positions
+on the major issues.
+The referee stopped the fight after the boxers (refuses/refused /will refuse) to follow the rules.
+In English, we use the perfect tense when there are multiple timelines in a sentence. The perfect tense is
+
+when we say “has” or “have” or “had” with the verb. If you read for context and read the entire sentence,
+we should be able to “hear” when we need to use the perfect tense.
+Many surfers enjoy paddling out, but few (rode/have ridden) waves over ten feet tall.
+While the group of entrepreneurs claimed to all be successful, only a few (will start/have
+started) their own businesses.
+The bison (ate/had been eating) when the lions began their attack.
+By the beginning of next year, the doctors (finish/finished/will have finished) their preliminary
+research on lung cancer.
+The conditional tense describes what would or could happen in the future. The kind of verb conjugation
+that we need depends on how likely the outcome is to actually happen (probable, improbable,
+impossible). Again, the Key here is to trust your ear and go with what sounds right to you.
+If|make the free throw, we (will win/would win/would have won) the game.
+IfImade the free throw, we (will win/would win/would have won) the game.
+If|had made the free throw, we (will win/would win/would have won) the game.
+The ACT also tests you on irregular verbs. For these verbs, just trust your ear and go with what sounds
+correct to you.
+
+Before the show (began/begun), the lights were dimmed.
+The deliveryman had (rang/rung) the doorbell before dropping off the package.
+By the time the meal was over, the boy had (ate/eaten) an entire bag of popcorn and had
+(drank/drunk) a liter of cola.
+
+© PrepPros 2025
+
+-47-
+
+PrepPros ACT English Course
+
+TIP - Irregular Verbs
+- “a” vs. “u” versions
+aw
+
+ai
+
+ely
+
+For many of the most difficult irregular verbs, there is an “a” version (ex: swam) and a “u” version (ex:
+swum). We use these verbs incorrectly all of the time, so using your ear and trying to hear which one
+sounds correct is difficult. All you need to do is remember the simple rules below:
+
+With “has,” “have,” or “had” ===> Use the “u” version
+
+(perfect tense)
+
+Correct: Before you arrived, I had swum some laps.
+
+With no “has,” “have,” or “had”
+
+c="
+
+Use the“a” version
+
+(past tense)
+
+Correct: I swam some laps this morning.
+The most commonly tested irregular verbs following this pattern are below.
+
+Verb
+
+Past Tense
+
+Perfect Tense
+
+begin
+
+began
+
+has/have/had begun
+
+drink
+
+drank
+
+has/have/had drunk
+
+sink
+
+sank
+
+has/have/had sunk
+
+swim
+
+swam
+
+has/have/had swum
+
+run
+
+ran
+
+has/have/had run
+
+sing
+
+sang
+
+has/have/had sung
+
+Verb Tense Practice:
+1.
+
+The car accident on the freeway delayed my commute and (causes/caused) me to be late for the
+job interview.
+
+2.
+
+After playing basketball for two hours, Jimmy (devours/devoured) a carnitas burrito and two
+fish tacos.
+
+3.
+
+Itis impossible to believe that Andrew (tells/told) his parents what really happened.
+
+4.
+
+Before! woke up, Chris had already (swam/swum) twenty laps.
+
+5.
+
+Ifyou had ordered the tickets last week, they (would arrive/would have arrived) by now.
+
+6.
+
+The sign asked that you (be/are) polite to the waiters and tip well.
+
+7.
+
+The dance competition (began/begins) at 10am, and the awards ceremony then starts at 4pm.
+
+8.
+
+If] finish all of my homework, I (will get/get/would get) to go to the new Star Wars movie.
+
+9.
+
+The local pizza parlor (closes/closed) its doors for good last year.
+
+10. Mary went to the mall and (buys/bought/buyed) a new outfit for her graduation party.
+11. The ship had already been (sank/sunk) before the battle was finished.
+12. If the rebels had won the war, the world would (of/have) been a very different place.
+
+© PrepPros 2025
+
+- 48 -
+
+PrepPros ACT English Course
+
+TIP - How to Spot Subject-Verb Agreement vs. Verb Tense Questions
+Spotting verbs questions in general is pretty easy: the answer choices will have different forms of the
+same verb. Knowing we are dealing with a verbs question is a good start, but to answer the question
+correctly we need to know if we are being tested on subject-verb agreement or verb tense.
+Subject-verb agreement questions always have one defining characteristic:
+
+1.
+
+Verbs in the answer choices have singular and plural versions. Look for “is” vs. “are,”
+“has” vs. “have,” “was” vs. “were,” and any other verbs with a singular, like “runs,” vs. a
+plural, like “run.” Anytime you see verbs that have a singular and plural version in the
+answer choices, the question is testing you on subject-verb agreement.
+
+The addition of solar panels to the roof
+
+of a house in Nevada make the house
+
+1.
+
+Which choice makes the sentence
+
+most grammatically acceptable:
+
+?
+
+A. NO CHANGE
+
+on average 20% more energy efficient.
+
+B.
+
+makes
+
+C.
+
+have made
+
+D.
+
+were making
+
+In this example, B is correct because the subject “addition” is singular. The only verb that matches
+with “addition” is “makes.” Even though there are different tenses in the answer choices, we only need
+to use subject-verb agreement to find the correct answer.
+Verb tense questions always have two defining characteristics:
+
+1.
+
+Verbs in the answer choices are in different tenses. For example, if “requires,” “required,”
+and “will require” are in the answer choices, the question is testing you on tense.
+
+2.
+
+Verbs in the answer choices do NOT have singular and plural versions. If there are not
+options for singular and plural versions, subject-verb agreement is not being tested.
+
+The girl scouts are hosting a bake sale
+
+2.
+
+Which choice makes the sentence
+
+tomorrow to raise money. To get ready,
+
+most grammatically acceptable:?
+
+Adya would need to bake two trays of
+
+A.
+
+NO CHANGE
+
+C.
+
+needed
+
+D.
+
+needs
+
+;
+
+blondies and a box of donut holes.
+
+B. was needing
+
+In this example, D is correct because the verb must be present tense. In the previous sentence, the
+
+verb “are” is present tense, so we know this sentence should also be in present tense. Answer choices
+A, B, and C are in the wrong tense.
+
+© PrepPros 2025
+
+- 49 -
+
+PrepPros ACT English Course
+
+Chapter 4 Practice:
+In-n-Out, known for its animal style burgers, and
+Five Guys always tops the annual list of best
+1
+
+voODVUwmWM>rF
+
+. NO CHANGE
+
+. Five Guys, always topping
+Five Guys always top
+
+. Five Guys, always top
+
+burgers.
+
+The first row of the townhouses for sale in my
+neighborhood has the best view of the beach.
+
+. NO CHANGE
+
+. neighborhood, having
+neighborhood have
+
+. neighborhood would have
+
+2
+
+In last night’s magic show, there was one rabbit,
+3
+
+two magician’s assistants, and ten doves.
+
+. NO CHANGE
+
+. there are
+there were
+
+. there is
+
+The treehouse construction is almost complete.
+
+. NO CHANGE
+
+. Just needed
+
+Anna would just need two more pieces of
+4
+
+just needs
+
+. is in needing ofjust
+
+plywood and a few more screws.
+
+The list of upgrades that the school board
+
+. NO CHANGE
+
+promised, new chalkboards, a new swimming
+pool, and a renovated teacher’s lounge, were
+5
+
+completed over the summer.
+5
+
+If|had a nickel for every time that I saw a dog
+ride a bike, I would of been broke long ago.
+
+. lounge, was completed
+lounge were completed
+
+. lounge was completed
+
+. NO CHANGE
+
+. bike, I have been
+bike, I would have been
+
+. bike, I was
+
+6
+
+Packing up the entire house and moving across
+
+. NO CHANGE
+
+. country, are
+
+the country are such a hassle.
+7
+
+country is
+
+. country, is
+
+The innovative team at Apple, the company that
+revolutionized the way that we listen to_music,
+8
+
+are planning to release their newest device next
+8
+
+month.
+
+© PrepPros 2025
+
+. NO CHANGE
+
+>VOW
+
+. music, is planning
+music, planned
+
+. music are planning
+
+PrepPros ACT English Course
+
+NO CHANGE
+
+If Thomas would have finished his part by now,
+9
+
+finishes his part by now, we would be
+
+we would of been done with the project already.
+
+done
+
+9
+
+had finished his part by now, we would
+have been done
+Oo . finished his part by now, would be done
+
+The pictures on the mantelpiece contain only the
+
+10.
+
+photo from the holidays that show the entire
+10
+
+family together.
+
+GOD
+GOD
+
+NO CHANGE
+
+>
+
+NO CHANGE
+
+showed
+had shown
+
+. shows
+
+11.
+
+The entire flock of geese stop at the pond in my
+11
+
+backyard during their migration south.
+
+Before starting the 100-mile bike ride, the
+
+NO CHANGE
+
+flock of geese, stopping
+flock of geese stops
+
+. flock of geese, have stopped
+
+12.
+
+12
+
+triathlon participants already running over
+12
+
+ride, the triathlon participants had
+already ran
+ride, the triathlon participants had
+
+twenty miles.
+
+already run
+. ride, the triathlon participants already
+run
+
+Onion bagels and chive cream cheese is part of
+
+13.
+
+13
+
+the daily specials at the Beachside Diner.
+13
+
+>GOW
+
+NO CHANGE
+
+cheese being part of the daily specials
+cheese is part of the daily specials,
+
+. cheese are part of the daily specials
+
+When my grandfather played poker with us,
+
+14.
+
+14
+
+nobody can tell when he is bluffing or when he is
+
+>
+
+NO CHANGE
+
+When my grandfather plays poker with
+us,
+
+Playing poker with us,
+
+telling the truth.
+
+. When my grandfather was playing poker
+with us
+
+Photosynthesis, the process by which plants turn
+
+15.
+
+sunlight into energy, and cellular respiration, the
+process by which humans turn sugars into
+
+COM>
+
+NO CHANGE
+
+was confusing
+would of been confusing
+
+. were confusing
+
+usable energy, has continued to be confusing to
+15
+
+the 8 grade class.
+16.
+
+In order to cook a perfect steak, harmony of
+temperature and time are necessary to master.
+16
+
+© PrepPros 2025
+
+wo>N
+
+NO CHANGE
+
+have been
+were
+
+is
+
+PrepPros ACT English Course
+
+onw>
+
+While there are many crucial elements to
+running a successful business - proper
+management, effective marketing, and a
+well-crafted product - the passion and drive of
+
+NO CHANGE
+was
+
+has been
+are
+
+the CEO isthe most important.
+17
+
+Incredibly, as one of my food scientist colleagues
+
+18.
+
+mention, kombucha has been brewed for
+18
+
+thousands of years
+
+COM>
+
+NO CHANGE
+mentions,
+
+have mentioned,
+
+. are mentioning
+
+One hot summer day when I! was ten years old, I
+
+19.
+
+had did some kitesurfing for the first time.
+19
+
+COM>
+
+NO CHANGE
+
+tried
+gone
+
+. had tried
+
+The encapsulation of the radioactive materials
+
+20.
+
+make the surrounding area safe.
+
+GOD
+
+NO CHANGE
+
+have made
+are making
+
+. makes
+
+20
+
+Of the estimated 7,000 spoken languages in the
+world, linguists say nearly half are likely to
+
+21.
+
+disappear in this century. In fact, they fell out of
+
+D>Ccomw
+
+are falling
+
+. had fallen
+
+21
+
+use at a rate of about one every two weeks.
+
+Government officials in Nepal have maintained
+that the expertise of the Sherpas has protected
+
+NO CHANGE
+
+would of fallen
+
+22.
+
+22
+
+many hikers from serious injuries or worse on
+
+NO CHANGE
+
+have protected
+are protecting
+
+. were protecting
+
+Mount Everest.
+
+Though many features of the film (such as the
+color grading) enhances the viewer’s experience,
+23
+
+the audio is a bit choppy, which makes the film
+painful to watch from beginning to end.
+
+© PrepPros 2025
+
+23.
+
+COM>
+
+NO CHANGE
+
+has enhanced
+was enhancing
+
+. enhance
+
+PrepPros ACT English Course
+
