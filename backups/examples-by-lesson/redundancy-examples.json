@@ -1,0 +1,134 @@
+{
+  "lesson_key": "redundancy",
+  "lesson_title": "Topic 2.1 - Redundancy & Wordiness",
+  "examples": [
+    {
+      "id": "a9c41b1b-3533-4fcf-92b7-e4ed885c56eb",
+      "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+      "position": 1,
+      "title": "Redundancy in Context",
+      "problem_text": "After two years of traveling abroad, Jerome finally <u>returned back home</u> to his family in California.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "returned home",
+          "letter": "B"
+        },
+        {
+          "text": "came back home",
+          "letter": "C"
+        },
+        {
+          "text": "returned back",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "The word \"returned\" already means to come back, so adding \"back\" is redundant. Choice B eliminates the redundancy while preserving the meaning. Choice C is also redundant because \"came back\" means the same as \"returned.\" Choice D keeps the redundancy. The answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:27:07.692901+00:00",
+      "updated_at": "2025-10-21T00:27:07.692901+00:00"
+    },
+    {
+      "id": "dd8c9bff-8865-4d9e-b6a2-3fdd84567419",
+      "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+      "position": 2,
+      "title": "Eliminating Wordiness",
+      "problem_text": "The committee met <u>at this point in time</u> to discuss the upcoming budget proposals.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "currently at the present moment",
+          "letter": "B"
+        },
+        {
+          "text": "now",
+          "letter": "C"
+        },
+        {
+          "text": "in the current time period",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "\"At this point in time\" is unnecessarily wordy. It can be replaced with the single word \"now\" without losing any meaning. Choices A, B, and D all use multiple words when one word suffices. The shortest, clearest option is C. The answer is **C**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:27:07.770956+00:00",
+      "updated_at": "2025-10-21T00:27:07.770956+00:00"
+    },
+    {
+      "id": "a899710b-c79c-4a6c-bcef-dd833add45bf",
+      "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+      "position": 3,
+      "title": "Removing Irrelevant Information",
+      "problem_text": "The marathon runner crossed the finish line in first place. <u>Marathon running became an Olympic sport in 1896.</u> The crowd erupted in cheers as she raised her arms in victory.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "Marathons are 26.2 miles long.",
+          "letter": "B"
+        },
+        {
+          "text": "She had trained for months for this moment.",
+          "letter": "C"
+        },
+        {
+          "text": "DELETE the underlined sentence.",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "The passage is about this specific runner crossing the finish line and the crowd's reaction. Historical facts about the Olympic marathon or the race distance are irrelevant to this moment. Choice C adds relevant information about her training, but the flow from crossing the finish line to the crowd cheering works better without interruption. The answer is **D**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:27:07.867539+00:00",
+      "updated_at": "2025-10-21T00:27:07.867539+00:00"
+    },
+    {
+      "id": "4482b574-6a31-4a38-b931-afca6e13c733",
+      "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+      "position": 4,
+      "title": "Identifying Question Type",
+      "problem_text": "The July 4th \"Walk for Wags\" event raised over $10,000 <u>this year for local dog shelters</u>.\n\nWhich choice is the least redundant in context?",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "this year",
+          "letter": "B"
+        },
+        {
+          "text": "for local dog shelters",
+          "letter": "C"
+        },
+        {
+          "text": "in July",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "The question specifically asks for the least redundant choice, so we pick the shortest answer. The event name already mentions it's for \"Wags\" (dogs) and \"July 4th\" tells us when it occurred. The passage already establishes this is a fundraising event for dog shelters, making \"for local dog shelters\" redundant. \"July\" is also redundant since \"July 4th\" appears in the event name. The shortest, least redundant option is simply \"this year.\" The answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:27:07.934437+00:00",
+      "updated_at": "2025-10-21T00:27:07.934437+00:00"
+    }
+  ]
+}

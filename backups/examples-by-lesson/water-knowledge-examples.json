@@ -1,0 +1,70 @@
+{
+  "lesson_key": "water-knowledge",
+  "lesson_title": "Topic 4.1 - Water Knowledge",
+  "examples": [
+    {
+      "id": "cd11a8da-9f1a-47d1-95a2-e134a57d1f86",
+      "lesson_id": "3dd67429-a421-4449-86be-4f622d21e7ce",
+      "position": 1,
+      "title": "Identifying States of Water at Different Temperatures",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">A scientist placed water samples in four different temperature-controlled chambers and observed their physical state after 1 hour.</p>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Table 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Description:</strong> Temperature and observed state of water samples.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Chamber</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Temperature (°C)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Physical State</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">1</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">-10</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">Solid</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">2</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">25</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">Liquid</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">3</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">110</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">Gas</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">4</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">?</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">Liquid</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">Based on the pattern in Table 1, the temperature in Chamber 4 was most likely:</p>",
+      "choices": [
+        {
+          "text": "below 0°C",
+          "letter": "A"
+        },
+        {
+          "text": "between 0°C and 100°C",
+          "letter": "B"
+        },
+        {
+          "text": "above 100°C",
+          "letter": "C"
+        },
+        {
+          "text": "exactly 0°C",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Recall water's phase transition temperatures**\nWater freezes at 0°C and boils at 100°C.\n- Below 0°C → Solid (ice)\n- Between 0°C and 100°C → Liquid\n- Above 100°C → Gas (steam)\n\n**Step 2: Verify the pattern with known chambers**\nChamber 1: -10°C → Solid ✓ (below 0°C)\nChamber 2: 25°C → Liquid ✓ (between 0°C and 100°C)\nChamber 3: 110°C → Gas ✓ (above 100°C)\n\nThe data confirms the expected pattern.\n\n**Step 3: Apply knowledge to Chamber 4**\nChamber 4 shows: Physical State = Liquid\n\nFor water to be liquid, temperature must be between 0°C and 100°C.\n\n**Step 4: Eliminate wrong answers**\nA. Below 0°C → Would be solid, not liquid ✗\nB. Between 0°C and 100°C → Would be liquid ✓\nC. Above 100°C → Would be gas, not liquid ✗\nD. Exactly 0°C → Transition point, could be solid or liquid (ambiguous) ✗\n\n**The answer is B.**\n\nThe liquid state indicates the temperature was between water's freezing point (0°C) and boiling point (100°C).",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T17:09:23.509198+00:00",
+      "updated_at": "2025-10-21T17:09:23.509198+00:00"
+    },
+    {
+      "id": "e83c9008-dc65-468d-80c5-64ef8996694e",
+      "lesson_id": "3dd67429-a421-4449-86be-4f622d21e7ce",
+      "position": 2,
+      "title": "Understanding Density and Floating",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">A student placed four different objects in a container of liquid water at 20°C and observed whether they floated or sank.</p>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Table 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Description:</strong> Density and floating behavior of different objects in water.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Object</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Density (g/cm³)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Behavior</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">Ice cube</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">0.92</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">Floated</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">Wood block</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">0.65</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">Floated</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">Iron nail</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">7.87</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">Sank</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">Glass marble</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">2.50</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">Sank</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">Based on Table 1, which statement best explains why ice floats in liquid water?</p>",
+      "choices": [
+        {
+          "text": "Ice has a higher density than liquid water",
+          "letter": "A"
+        },
+        {
+          "text": "Ice has a lower density than liquid water",
+          "letter": "B"
+        },
+        {
+          "text": "Ice has the same density as liquid water",
+          "letter": "C"
+        },
+        {
+          "text": "Ice has a density greater than 2.00 g/cm³",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Recall the density of liquid water**\nWater has a density of approximately 1.0 g/cm³ at room temperature (20°C).\n\n**Step 2: Identify the pattern from the data**\nLooking at Table 1:\n- Ice cube: density = 0.92 g/cm³ → Floated\n- Wood block: density = 0.65 g/cm³ → Floated\n- Iron nail: density = 7.87 g/cm³ → Sank\n- Glass marble: density = 2.50 g/cm³ → Sank\n\nPattern: Objects with density < 1.0 g/cm³ float, objects with density > 1.0 g/cm³ sink.\n\n**Step 3: Compare ice density to water density**\nIce: 0.92 g/cm³\nLiquid water: ~1.0 g/cm³\n\nIce has a LOWER density than liquid water (0.92 < 1.0)\n\n**Step 4: Apply the floating principle**\nObjects float when they are less dense than the liquid.\nObjects sink when they are more dense than the liquid.\n\nSince ice (0.92 g/cm³) is less dense than water (1.0 g/cm³), ice floats.\n\n**Step 5: Evaluate answer choices**\nA. Higher density → Would sink, not float ✗\nB. Lower density → Would float ✓\nC. Same density → Would neither float nor sink (neutral buoyancy) ✗\nD. Density > 2.00 → Would definitely sink ✗\n\n**The answer is B.**\n\nIce floats because it is less dense (0.92 g/cm³) than liquid water (1.0 g/cm³). This is an unusual property - most substances are denser in solid form than liquid form.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T17:09:23.605889+00:00",
+      "updated_at": "2025-10-21T17:09:23.605889+00:00"
+    }
+  ]
+}

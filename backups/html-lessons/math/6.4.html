@@ -1,0 +1,243 @@
+<!-- Topic 6.4: Permutations and Combinations -->
+<!-- Restructured using Golden Template v5.2 -->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+On the ACT, you will encounter "how many" questions such as "how many outfits can a person create with 3 shirts, 4 shoes, and 5 pairs of pants?" or "if a lock code consists of 3 numbers and 2 letters, how many different lock codes are possible?" To successfully answer these questions, you must understand <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">factorials</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">permutations</strong>, <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">combinations</strong>, and <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">organized counting</strong>. The most common type of counting question on the ACT uses organized counting, which is simpler than permutations and combinations.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. Factorials
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">The <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">factorial</strong>, symbolized by "!", multiplies an integer by every integer below it
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">5! = 5 × 4 × 3 × 2 × 1 = 120</li>
+      <li style="margin: 0.2rem 0;">3! = 3 × 2 × 1 = 6</li>
+      <li style="margin: 0.2rem 0;">4! = 4 × 3 × 2 × 1 = 24</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Basic factorial questions:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: Find 2! + 4!</li>
+      <li style="margin: 0.2rem 0;">2! = 2 × 1 = 2</li>
+      <li style="margin: 0.2rem 0;">4! = 4 × 3 × 2 × 1 = 24</li>
+      <li style="margin: 0.2rem 0;">2! + 4! = 2 + 24 = 26</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Calculator tip:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Many calculators have a "!" button that can solve factorials for you</li>
+      <li style="margin: 0.2rem 0;">Look it up online to see if your calculator has this feature</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Advanced factorial definition:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">For a positive integer n: n! = n(n - 1)(n - 2)...(2)(1)</li>
+      <li style="margin: 0.2rem 0;">This is the same rule written in mathematical notation</li>
+      <li style="margin: 0.2rem 0;">Understanding this is important for advanced factorial questions</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Advanced factorial simplification:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">When factorials are in fractions, you can cancel common terms</li>
+      <li style="margin: 0.2rem 0;">Example: (3!)(n!) / (n+1)!</li>
+      <li style="margin: 0.2rem 0;">Expand: (3!)(n)(n-1)...(1) / [(n+1)(n)(n-1)...(1)]</li>
+      <li style="margin: 0.2rem 0;">Cancel the n! parts, leaving: 3! / (n+1) = 6 / (n+1)</li>
+      <li style="margin: 0.2rem 0;">Tip: Use substitution! Pick n = 2, calculate the numerical answer, then test answer choices</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Permutations (Order Matters)
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">In <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">permutations</strong>, the order matters
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If the order in which objects are selected makes the outcome different, use a permutation</li>
+      <li style="margin: 0.2rem 0;">Example: Selecting president, vice president, and party planner from 15 students</li>
+      <li style="margin: 0.2rem 0;">Alice as president ≠ Bob as president (different outcomes!)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Permutation formula:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">nPr = n! / (n - r)!</li>
+      <li style="margin: 0.2rem 0;">n = number of items to choose from</li>
+      <li style="margin: 0.2rem 0;">r = number of items we actually choose</li>
+      <li style="margin: 0.2rem 0;">Most calculators have nPr programmed in, so you likely don't need to memorize this formula</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: 15 students selecting 3 for president, VP, and party planner
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Order matters (president ≠ VP ≠ party planner)</li>
+      <li style="margin: 0.2rem 0;">n = 15 (choosing from 15 students)</li>
+      <li style="margin: 0.2rem 0;">r = 3 (choosing 3 students)</li>
+      <li style="margin: 0.2rem 0;">15P3 = 15! / (15 - 3)! = 15! / 12! = 2,730</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">When to use permutations:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Assigning people to different roles or positions</li>
+      <li style="margin: 0.2rem 0;">Arranging objects in a specific order</li>
+      <li style="margin: 0.2rem 0;">Any situation where changing the order changes the outcome</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Combinations (Order Doesn't Matter)
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">In <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">combinations</strong>, the order does NOT matter
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If the order you select objects does not affect the final outcome, use a combination</li>
+      <li style="margin: 0.2rem 0;">Example: Andrew inviting 4 friends to a baseball game from 12 friends</li>
+      <li style="margin: 0.2rem 0;">Inviting {Alice, Bob, Carol, Dan} = same as inviting {Dan, Alice, Carol, Bob}</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Combination formula:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">nCr = n! / [r!(n - r)!]</li>
+      <li style="margin: 0.2rem 0;">n = number of items to choose from</li>
+      <li style="margin: 0.2rem 0;">r = number of items we actually choose</li>
+      <li style="margin: 0.2rem 0;">Most calculators have nCr programmed in</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: Andrew has 12 friends, invites 4 to baseball game
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Order doesn't matter (same group, different invite order = same outcome)</li>
+      <li style="margin: 0.2rem 0;">n = 12 (choosing from 12 friends)</li>
+      <li style="margin: 0.2rem 0;">r = 4 (choosing 4 friends)</li>
+      <li style="margin: 0.2rem 0;">12C4 = 12! / [4!(12 - 4)!] = 12! / (4! × 8!) = 495</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">When to use combinations:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Selecting a group of people (no specific roles)</li>
+      <li style="margin: 0.2rem 0;">Choosing items where order doesn't matter</li>
+      <li style="margin: 0.2rem 0;">Counting pairs or groups</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Key difference from permutations:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Permutations have MORE outcomes (order matters)</li>
+      <li style="margin: 0.2rem 0;">Combinations have FEWER outcomes (order doesn't matter)</li>
+      <li style="margin: 0.2rem 0;">Notice: nCr formula has an extra r! in denominator</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Organized Counting (Most Common!)
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Most "how many" questions on the ACT use <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">organized counting</strong>
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">This is simpler than permutations and combinations!</li>
+      <li style="margin: 0.2rem 0;">Answer "how many choices do I have?" for each position</li>
+      <li style="margin: 0.2rem 0;">Then multiply all the choices together</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">The organized counting method:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;"><strong>Step 1:</strong> Draw a diagram with positions for each item</li>
+      <li style="margin: 0.2rem 0;"><strong>Step 2:</strong> Fill in the number of choices for each position</li>
+      <li style="margin: 0.2rem 0;"><strong>Step 3:</strong> Multiply all the numbers together</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: Eric's outfit with 6 shirts, 5 pants, 7 ties, 3 shoes
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Draw: Shirt × Pants × Tie × Shoes = Total</li>
+      <li style="margin: 0.2rem 0;">Fill in: 6 × 5 × 7 × 3 = Total</li>
+      <li style="margin: 0.2rem 0;">Calculate: 6 × 5 × 7 × 3 = 630 different outfits</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: 7-character code with 2 letters then 5 numbers (can repeat)
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Draw: Letter × Letter × Number × Number × Number × Number × Number = Total</li>
+      <li style="margin: 0.2rem 0;">First letter: 26 choices (A-Z)</li>
+      <li style="margin: 0.2rem 0;">Second letter: 26 choices (letters can repeat!)</li>
+      <li style="margin: 0.2rem 0;">Each number: 10 choices (0-9, numbers can repeat!)</li>
+      <li style="margin: 0.2rem 0;">Fill in: 26 × 26 × 10 × 10 × 10 × 10 × 10</li>
+      <li style="margin: 0.2rem 0;">Simplify: 26² × 10⁵ = 67,600,000 codes</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example: 6-character safe code with restrictions
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Rules: First and last are DIFFERENT letters, 2nd must be 0 or 1, middle spots are any numbers (can repeat)</li>
+      <li style="margin: 0.2rem 0;">Draw: Letter × (0 or 1) × Number × Number × Number × Letter = Total</li>
+      <li style="margin: 0.2rem 0;">First letter: 26 choices</li>
+      <li style="margin: 0.2rem 0;">Second position: 2 choices (0 or 1)</li>
+      <li style="margin: 0.2rem 0;">Middle numbers: 10 choices each (can repeat)</li>
+      <li style="margin: 0.2rem 0;">Last letter: 25 choices (must be different from first!)</li>
+      <li style="margin: 0.2rem 0;">Fill in: 26 × 2 × 10 × 10 × 10 × 25</li>
+      <li style="margin: 0.2rem 0;">Calculate: 1,300,000 combinations</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Key tips for organized counting:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">ALWAYS draw the diagram—don't try to do it mentally</li>
+      <li style="margin: 0.2rem 0;">Pay attention to "can repeat" vs "must be different"</li>
+      <li style="margin: 0.2rem 0;">If items can repeat, use the same number for each position</li>
+      <li style="margin: 0.2rem 0;">If items must be different, reduce the count for each subsequent position</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+5. Advanced Counting Problems
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">High five problem (advanced combinations or organized counting)
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Problem: 5 players and 1 coach all high five each other once. How many total high fives?</li>
+      <li style="margin: 0.2rem 0;"><strong>Method 1 - Combinations:</strong> How many pairs from 6 people?
+        <ul style="margin: 0.2rem 0; padding-left: 1.5rem;">
+          <li style="margin: 0.15rem 0;">6C2 = 6! / (2! × 4!) = 15 high fives</li>
+          <li style="margin: 0.15rem 0;">Order doesn't matter (A high-fiving B = B high-fiving A)</li>
+        </ul>
+      </li>
+      <li style="margin: 0.2rem 0;"><strong>Method 2 - Organized Counting:</strong> Count systematically
+        <ul style="margin: 0.2rem 0; padding-left: 1.5rem;">
+          <li style="margin: 0.15rem 0;">Player A high fives 5 others = 5</li>
+          <li style="margin: 0.15rem 0;">Player B high fives 4 remaining (already did A) = 4</li>
+          <li style="margin: 0.15rem 0;">Player C high fives 3 remaining = 3</li>
+          <li style="margin: 0.15rem 0;">Player D high fives 2 remaining = 2</li>
+          <li style="margin: 0.15rem 0;">Player E high fives 1 remaining (coach) = 1</li>
+          <li style="margin: 0.15rem 0;">Total: 5 + 4 + 3 + 2 + 1 = 15</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Choosing which method to use:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If you're comfortable with combinations: use nCr</li>
+      <li style="margin: 0.2rem 0;">If you prefer step-by-step logic: use organized counting</li>
+      <li style="margin: 0.2rem 0;">Both methods work—use whichever makes more sense to you!</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Advanced counting appears in last 15 questions
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">These problems combine multiple concepts</li>
+      <li style="margin: 0.2rem 0;">May involve restrictions, special conditions, or multiple cases</li>
+      <li style="margin: 0.2rem 0;">Draw diagrams and work through them step by step</li>
+      <li style="margin: 0.2rem 0;">If stuck, try both methods (combinations and organized counting) to see which works</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+6. Key Takeaways
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0; color: #16a34a; font-weight: 600;">Factorials multiply an integer by every integer below it (5! = 5 × 4 × 3 × 2 × 1); most calculators have a "!" button to calculate these automatically</li>
+  <li style="margin: 0.3rem 0; color: #16a34a; font-weight: 600;">Use permutations (nPr = n!/(n-r)!) when order matters; use combinations (nCr = n!/[r!(n-r)!]) when order doesn't matter</li>
+  <li style="margin: 0.3rem 0; color: #16a34a; font-weight: 600;">For most ACT counting questions, use organized counting: draw a diagram with positions, fill in the number of choices for each position, then multiply all the numbers together</li>
+  <li style="margin: 0.3rem 0; color: #16a34a; font-weight: 600;">Pay close attention to whether items can repeat ("letters can repeat" means same number of choices each time) or must be different (reduce choices for each subsequent position)</li>
+</ul>

@@ -1,0 +1,150 @@
+{
+  "lesson_key": "systems-equations",
+  "lesson_title": "Topic 4.1 - Systems of Equations",
+  "examples": [
+    {
+      "id": "911b5057-876e-4e56-8a7d-73538b61e581",
+      "lesson_id": "9fec6937-fba1-40f2-9a28-5ff838420384",
+      "position": 2,
+      "title": "Using Elimination Method",
+      "problem_text": "If 10x - 4y = 16 and 2x + 4y = 8, what is the value of y?",
+      "choices": [
+        {
+          "text": "1",
+          "letter": "A"
+        },
+        {
+          "text": "2",
+          "letter": "B"
+        },
+        {
+          "text": "4",
+          "letter": "C"
+        },
+        {
+          "text": "8",
+          "letter": "D"
+        },
+        {
+          "text": "12",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "Use elimination to cancel out x.\\n\\nStep 1: Multiply the second equation by -5:\\n10x - 4y = 16\\n-10x - 20y = -40\\n\\nStep 2: Add the equations together (x cancels):\\n-24y = -24\\n\\nStep 3: Solve for y:\\ny = 1\\n\\nElimination is fastest when coefficients are already opposite or easy to make opposite.\\n\\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:10:56.923687+00:00",
+      "updated_at": "2025-10-20T21:10:56.923687+00:00"
+    },
+    {
+      "id": "dc6d2f79-ff97-4a61-bcad-53b39b452d30",
+      "lesson_id": "9fec6937-fba1-40f2-9a28-5ff838420384",
+      "position": 3,
+      "title": "Using Substitution Method",
+      "problem_text": "If 12x + 8y = 8 and y = 6x - 14, what does x equal?",
+      "choices": [
+        {
+          "text": "-2",
+          "letter": "A"
+        },
+        {
+          "text": "1",
+          "letter": "B"
+        },
+        {
+          "text": "2",
+          "letter": "C"
+        },
+        {
+          "text": "7",
+          "letter": "D"
+        },
+        {
+          "text": "10",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Use substitution since y is already isolated.\\n\\nStep 1: Substitute (6x - 14) for y in first equation:\\n12x + 8(6x - 14) = 8\\n\\nStep 2: Distribute the 8:\\n12x + 48x - 112 = 8\\n\\nStep 3: Combine like terms:\\n60x - 112 = 8\\n\\nStep 4: Solve for x:\\n60x = 120\\nx = 2\\n\\nRemember: When one variable is already isolated (y = ...), always use substitution!\\n\\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:10:57.038748+00:00",
+      "updated_at": "2025-10-20T21:10:57.038748+00:00"
+    },
+    {
+      "id": "0fa65031-cf10-4e40-8223-ce3b96450938",
+      "lesson_id": "9fec6937-fba1-40f2-9a28-5ff838420384",
+      "position": 4,
+      "title": "Word Problem with Two Unknowns",
+      "problem_text": "Mary buys 42 plants for a total of $108. She buys only tomato plants ($3 each) and pepper plants ($2 each). How many pepper plants did Mary buy?",
+      "choices": [
+        {
+          "text": "10",
+          "letter": "A"
+        },
+        {
+          "text": "12",
+          "letter": "B"
+        },
+        {
+          "text": "16",
+          "letter": "C"
+        },
+        {
+          "text": "18",
+          "letter": "D"
+        },
+        {
+          "text": "24",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Set up two equations and use elimination.\\n\\nStep 1: Define variables\\nLet x = tomato plants, y = pepper plants\\n\\nStep 2: Write equation for total plants:\\nx + y = 42\\n\\nStep 3: Write equation for total cost:\\n3x + 2y = 108\\n\\nStep 4: Use elimination (multiply first equation by -3):\\n-3x - 3y = -126\\n3x + 2y = 108\\n\\nStep 5: Add equations (x cancels):\\n-y = -18\\ny = 18\\n\\nWord problem tip: Look for \"total\" (gives you one equation) and \"cost\" (gives you another).\\n\\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:10:57.168898+00:00",
+      "updated_at": "2025-10-20T21:10:57.168898+00:00"
+    },
+    {
+      "id": "236d32fc-ecd0-475a-8d40-b9c147d31dd6",
+      "lesson_id": "9fec6937-fba1-40f2-9a28-5ff838420384",
+      "position": 5,
+      "title": "Backsolving with 3 Unknowns",
+      "problem_text": "The drama club sold 200 tickets for $2,025. Student tickets cost $7 and regular tickets cost $12. How many student tickets were sold?",
+      "choices": [
+        {
+          "text": "60",
+          "letter": "A"
+        },
+        {
+          "text": "75",
+          "letter": "B"
+        },
+        {
+          "text": "90",
+          "letter": "C"
+        },
+        {
+          "text": "100",
+          "letter": "D"
+        },
+        {
+          "text": "125",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Use elimination OR backsolve. Let us show both.\\n\\nMethod 1 - Algebra:\\nLet s = student tickets, r = regular tickets\\ns + r = 200\\n7s + 12r = 2025\\n\\nMultiply first by -7: -7s - 7r = -1400\\nAdd to second: 5r = 625 → r = 125\\nSo s = 200 - 125 = 75\\n\\nMethod 2 - Backsolve (faster!):\\nTry B) 75 student tickets\\nThen regular tickets = 200 - 75 = 125\\nCheck: 75(7) + 125(12) = 525 + 1500 = 2025 ✓\\n\\nFor problems with numerical answer choices asking \"how many\", backsolve is often fastest!\\n\\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:10:57.231277+00:00",
+      "updated_at": "2025-10-20T21:10:57.231277+00:00"
+    }
+  ]
+}

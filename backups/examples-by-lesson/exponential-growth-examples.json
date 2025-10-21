@@ -1,0 +1,150 @@
+{
+  "lesson_key": "exponential-growth",
+  "lesson_title": "Topic 4.5 - Exponential Growth and Decay",
+  "examples": [
+    {
+      "id": "7b5149e1-f000-419c-a608-fe25f4c58091",
+      "lesson_id": "da718634-9257-4c01-845e-a948650dd68c",
+      "position": 2,
+      "title": "Identifying Exponential Growth Equation",
+      "problem_text": "Julia estimates that the number of bees in a hive increases by 30% every month. If Julia buys a hive with 50 bees, which of the following properly models the number of bees, B, that will live in the hive in m months?",
+      "choices": [
+        {
+          "text": "B = 50 + 30m",
+          "letter": "A"
+        },
+        {
+          "text": "B = 50(0.3)ᵐ",
+          "letter": "B"
+        },
+        {
+          "text": "B = 50m² + 30",
+          "letter": "C"
+        },
+        {
+          "text": "B = 50(1.3)ᵐ",
+          "letter": "D"
+        },
+        {
+          "text": "B = 50(30)ᵐ",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Identify the initial value and growth rate.\\n\\nStep 1: Identify initial value\\nThe hive starts with 50 bees, so P = 50.\\n\\nStep 2: Identify growth rate\\nThe population increases by 30% every month, so r = 0.30.\\n\\nStep 3: Write exponential growth formula\\nA = P(1 + r)ᵗ\\nB = 50(1 + 0.30)ᵐ\\nB = 50(1.3)ᵐ\\n\\nStep 4: Eliminate wrong answers\\nA is linear (50 + 30m), not exponential—WRONG\\nB uses 0.3 instead of 1.3—WRONG (missing the \"1\")\\nC is quadratic—WRONG\\nE uses 30 instead of 1.3—WRONG\\n\\nRemember: For a 30% growth rate, use (1 + 0.30) = 1.30!\\n\\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:30:15.185995+00:00",
+      "updated_at": "2025-10-20T21:30:15.185995+00:00"
+    },
+    {
+      "id": "7a2134ab-c418-415a-b946-2fe5e0df4244",
+      "lesson_id": "da718634-9257-4c01-845e-a948650dd68c",
+      "position": 3,
+      "title": "Calculating Exponential Decay",
+      "problem_text": "The Santa Barbara Newspaper is losing subscribers at a rate of 12% per year. If the newspaper currently has 24,000 subscribers, which of the following is closest to the number of subscribers the newspaper will have in 2 years?",
+      "choices": [
+        {
+          "text": "15,360",
+          "letter": "A"
+        },
+        {
+          "text": "18,240",
+          "letter": "B"
+        },
+        {
+          "text": "18,590",
+          "letter": "C"
+        },
+        {
+          "text": "21,120",
+          "letter": "D"
+        },
+        {
+          "text": "22,320",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Use the exponential decay formula.\\n\\nStep 1: Identify values\\nP = 24,000 (initial subscribers)\\nr = 0.12 (12% loss rate)\\nt = 2 (years)\\n\\nStep 2: Write decay formula\\nA = P(1 - r)ᵗ\\nA = 24,000(1 - 0.12)²\\n\\nStep 3: Calculate\\nA = 24,000(0.88)²\\nA = 24,000(0.7744)\\nA = 18,585.6\\n\\nStep 4: Find closest answer\\nThe question says \"closest to,\" so round to 18,590.\\n\\nRemember: Decay uses (1 - r), which gives 0.88—this represents keeping 88% of subscribers each year.\\n\\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:30:15.246107+00:00",
+      "updated_at": "2025-10-20T21:30:15.246107+00:00"
+    },
+    {
+      "id": "a5ef2d28-f5af-4ce6-a4d8-2dec77bf8bd7",
+      "lesson_id": "da718634-9257-4c01-845e-a948650dd68c",
+      "position": 4,
+      "title": "General Form - Identifying Growth vs. Decay",
+      "problem_text": "Which of the following equations represents exponential decay?",
+      "choices": [
+        {
+          "text": "y = 150(2)ˣ",
+          "letter": "A"
+        },
+        {
+          "text": "y = 100(1.5)ˣ",
+          "letter": "B"
+        },
+        {
+          "text": "y = 12,000(1/3)ˣ",
+          "letter": "C"
+        },
+        {
+          "text": "y = 50(3)ˣ",
+          "letter": "D"
+        },
+        {
+          "text": "y = 200(1.08)ˣ",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Check the base (b value) in general form y = abˣ.\\n\\nStep 1: Recall the rule\\nIf b > 1 → exponential GROWTH\\nIf 0 < b < 1 → exponential DECAY\\n\\nStep 2: Check each base\\nA: b = 2 (greater than 1) → GROWTH\\nB: b = 1.5 (greater than 1) → GROWTH\\nC: b = 1/3 ≈ 0.333 (between 0 and 1) → DECAY ✓\\nD: b = 3 (greater than 1) → GROWTH\\nE: b = 1.08 (greater than 1) → GROWTH\\n\\nStep 3: Verify understanding\\nIn choice C, the value is multiplied by 1/3 each time period.\\nThis means it keeps only one-third of its value, so it is decreasing (decaying).\\n\\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:30:15.289807+00:00",
+      "updated_at": "2025-10-20T21:30:15.289807+00:00"
+    },
+    {
+      "id": "14d14120-e151-478a-a622-c62e38e4a801",
+      "lesson_id": "da718634-9257-4c01-845e-a948650dd68c",
+      "position": 5,
+      "title": "Compound Interest Calculation",
+      "problem_text": "A bank account starts with $100 and earns 8% annual interest compounded yearly. What is the account balance after 3 years?",
+      "choices": [
+        {
+          "text": "$108.00",
+          "letter": "A"
+        },
+        {
+          "text": "$116.64",
+          "letter": "B"
+        },
+        {
+          "text": "$124.00",
+          "letter": "C"
+        },
+        {
+          "text": "$125.97",
+          "letter": "D"
+        },
+        {
+          "text": "$133.10",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Apply the exponential growth formula for compound interest.\\n\\nStep 1: Identify values\\nP = $100 (initial balance)\\nr = 0.08 (8% interest rate)\\nt = 3 (years)\\n\\nStep 2: Write growth formula\\nA = P(1 + r)ᵗ\\nA = 100(1 + 0.08)³\\nA = 100(1.08)³\\n\\nStep 3: Calculate\\nA = 100(1.08)³\\nA = 100(1.259712)\\nA = $125.97\\n\\nStep 4: Verify it is NOT linear\\nIf it were linear ($8 per year), we would get $100 + $24 = $124.\\nBut compound interest is exponential, so we get more: $125.97.\\n\\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:30:15.372345+00:00",
+      "updated_at": "2025-10-20T21:30:15.372345+00:00"
+    }
+  ]
+}

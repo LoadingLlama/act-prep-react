@@ -1,0 +1,78 @@
+{
+  "lesson_key": "2.4",
+  "lesson_title": "Arcs and Sectors",
+  "examples": [
+    {
+      "id": "d16f23db-1ffe-4d2f-af5f-14eade1bd9be",
+      "lesson_id": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+      "position": 2,
+      "title": "Finding Arc Length",
+      "problem_text": "A circle has radius 12. An arc on this circle is intercepted by a central angle of 60°. What is the length of this arc?",
+      "choices": [
+        {
+          "text": "2π",
+          "letter": "A"
+        },
+        {
+          "text": "4π",
+          "letter": "B"
+        },
+        {
+          "text": "6π",
+          "letter": "C"
+        },
+        {
+          "text": "12π",
+          "letter": "D"
+        },
+        {
+          "text": "24π",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Use arc length formula: Arc = (θ/360°) × 2πr\n\nArc = (60/360) × 2π(12)\nArc = (1/6) × 24π\nArc = 4π\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T18:59:16.9339+00:00",
+      "updated_at": "2025-10-20T18:59:16.9339+00:00"
+    },
+    {
+      "id": "1a36914d-3746-4270-9081-a618ecfa6e42",
+      "lesson_id": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+      "position": 3,
+      "title": "Finding Sector Area",
+      "problem_text": "A sector of a circle has a central angle of 120° and a radius of 9. What is the area of the sector?",
+      "choices": [
+        {
+          "text": "9π",
+          "letter": "A"
+        },
+        {
+          "text": "18π",
+          "letter": "B"
+        },
+        {
+          "text": "27π",
+          "letter": "C"
+        },
+        {
+          "text": "36π",
+          "letter": "D"
+        },
+        {
+          "text": "81π",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Use sector area formula: Area = (θ/360°) × πr²\n\nArea = (120/360) × π(9²)\nArea = (1/3) × π(81)\nArea = (1/3) × 81π\nArea = 27π\n\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T18:59:16.992173+00:00",
+      "updated_at": "2025-10-20T18:59:16.992173+00:00"
+    }
+  ]
+}

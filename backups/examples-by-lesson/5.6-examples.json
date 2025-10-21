@@ -1,0 +1,186 @@
+{
+  "lesson_key": "5.6",
+  "lesson_title": "Repeating Patterns",
+  "examples": [
+    {
+      "id": "4ece1a43-041b-44e1-ab58-be6aa65abd0d",
+      "lesson_id": "d946c7ef-0543-46fd-a938-79592c05c044",
+      "position": 1,
+      "title": "Repeating Decimal Pattern",
+      "problem_text": "What is the 307th place after the decimal point in the repeating decimal 0.34562̄?",
+      "choices": [
+        {
+          "text": "2",
+          "letter": "A"
+        },
+        {
+          "text": "3",
+          "letter": "B"
+        },
+        {
+          "text": "4",
+          "letter": "C"
+        },
+        {
+          "text": "5",
+          "letter": "D"
+        },
+        {
+          "text": "6",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Use the repeating pattern to find the 307th digit.\n\nStep 1: Identify repeating unit\n0.34562̄ = 0.345623456234562...\nRepeating unit: 34562 (5 digits)\n\nStep 2: Go to end of repeating unit\nEvery 5th digit is \"2\" (5th, 10th, 15th, 20th...)\n\nStep 3: Find multiple of 5 near 307\nClosest multiple: 305\n305th digit = 2\n\nStep 4: Count forward\n305th = 2\n306th = 3\n307th = 4 ✓\n\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:20:38.411108+00:00",
+      "updated_at": "2025-10-20T22:20:38.411108+00:00"
+    },
+    {
+      "id": "5667d8d2-fa99-400f-a8c6-1a75def89dfe",
+      "lesson_id": "d946c7ef-0543-46fd-a938-79592c05c044",
+      "position": 2,
+      "title": "Longer Repeating Pattern",
+      "problem_text": "What is the 703rd place after the decimal point in the repeating decimal 0.596127̄?",
+      "choices": [
+        {
+          "text": "1",
+          "letter": "A"
+        },
+        {
+          "text": "5",
+          "letter": "B"
+        },
+        {
+          "text": "6",
+          "letter": "C"
+        },
+        {
+          "text": "9",
+          "letter": "D"
+        },
+        {
+          "text": "7",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Find the 703rd digit using the pattern.\n\nStep 1: Identify repeating unit\n0.596127̄ = 0.596127596127...\nRepeating unit: 596127 (6 digits)\n\nStep 2: Go to end of repeating unit\nEvery 6th digit is \"7\" (6th, 12th, 18th...)\n\nStep 3: Find multiple of 6 near 703\nClosest multiple: 702\n702 ÷ 6 = 117 ✓\n702nd digit = 7\n\nStep 4: Count forward\n702nd = 7\n703rd = 5 (first in pattern) ✓\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:20:38.476071+00:00",
+      "updated_at": "2025-10-20T22:20:38.476071+00:00"
+    },
+    {
+      "id": "9186529f-b21c-448e-abd6-91e5114cd1e1",
+      "lesson_id": "d946c7ef-0543-46fd-a938-79592c05c044",
+      "position": 3,
+      "title": "Units Digit of Large Power",
+      "problem_text": "What is the units digit of 7^122?",
+      "choices": [
+        {
+          "text": "1",
+          "letter": "A"
+        },
+        {
+          "text": "3",
+          "letter": "B"
+        },
+        {
+          "text": "7",
+          "letter": "C"
+        },
+        {
+          "text": "9",
+          "letter": "D"
+        },
+        {
+          "text": "6",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Use the repeating pattern of units digits for powers of 7.\n\nStep 1: Identify the pattern\n7^1 = 7, 7^2 = 49, 7^3 = 343, 7^4 = 2,401\n7^5 = 16,807, 7^6 = 117,649...\nUnits digits: 7, 9, 3, 1, 7, 9, 3, 1...\n\nStep 2: Pattern repeats every 4 terms\nEvery 4th power has units digit 1\n\nStep 3: Find multiple of 4 near 122\n122 ÷ 4 = 30 remainder 2\nClosest multiple: 120\n7^120 has units digit 1\n\nStep 4: Count forward\n7^121 has units digit 7\n7^122 has units digit 9 ✓\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:20:38.556534+00:00",
+      "updated_at": "2025-10-20T22:20:38.556534+00:00"
+    },
+    {
+      "id": "1354b609-facd-4b25-ba96-949f5e709ac9",
+      "lesson_id": "d946c7ef-0543-46fd-a938-79592c05c044",
+      "position": 4,
+      "title": "Algebraic Pattern Problem",
+      "problem_text": "3^x has a 9 in the ones place. What digit does 3^(x+3) have in the ones place?",
+      "choices": [
+        {
+          "text": "1",
+          "letter": "A"
+        },
+        {
+          "text": "3",
+          "letter": "B"
+        },
+        {
+          "text": "7",
+          "letter": "C"
+        },
+        {
+          "text": "9",
+          "letter": "D"
+        },
+        {
+          "text": "27",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Use the pattern for powers of 3.\n\nStep 1: Pattern for powers of 3\n3^1 = 3, 3^2 = 9, 3^3 = 27, 3^4 = 81\nUnits digits: 3, 9, 7, 1, 3, 9, 7, 1...\n\nStep 2: Find when units digit is 9\n3^2 = 9, 3^6 = 729, etc.\nPick x = 2\n\nStep 3: Calculate 3^(x+3)\n3^(2+3) = 3^5 = 243\nUnits digit = 3\n\nAlternative: Count in pattern\nStarting from 9, count 3 forward:\n9 → 7 → 1 → 3 ✓\n\nEither method works!\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:20:38.606517+00:00",
+      "updated_at": "2025-10-20T22:20:38.606517+00:00"
+    },
+    {
+      "id": "3425116d-8aec-4c58-baad-825b6c022cd7",
+      "lesson_id": "d946c7ef-0543-46fd-a938-79592c05c044",
+      "position": 5,
+      "title": "Powers of i",
+      "problem_text": "10i^47 - 7 is equal to:",
+      "choices": [
+        {
+          "text": "-10i - 7",
+          "letter": "A"
+        },
+        {
+          "text": "10i + 7",
+          "letter": "B"
+        },
+        {
+          "text": "3i",
+          "letter": "C"
+        },
+        {
+          "text": "3",
+          "letter": "D"
+        },
+        {
+          "text": "10i - 7",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "Use the repeating pattern for powers of i.\n\nStep 1: Pattern for powers of i\ni^1 = i, i^2 = -1, i^3 = -i, i^4 = 1\ni^5 = i, i^6 = -1, i^7 = -i, i^8 = 1...\nPattern: i, -1, -i, 1 (repeats every 4)\n\nStep 2: Every 4th power equals 1\ni^4 = 1, i^8 = 1, i^12 = 1...\n\nStep 3: Find multiple of 4 near 47\n47 ÷ 4 = 11 remainder 3\nClosest: 48 or 44\nUsing 48: i^48 = 1\n\nStep 4: Count backward\ni^48 = 1\ni^47 = -i\n\nStep 5: Substitute\n10i^47 - 7 = 10(-i) - 7 = -10i - 7\n\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:20:38.659545+00:00",
+      "updated_at": "2025-10-20T22:20:38.659545+00:00"
+    }
+  ]
+}

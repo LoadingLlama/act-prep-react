@@ -1,0 +1,150 @@
+{
+  "lesson_key": "functions",
+  "lesson_title": "Topic 4.3 - Functions",
+  "examples": [
+    {
+      "id": "e5d519fa-7041-43eb-81c4-759dd1ea14d1",
+      "lesson_id": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+      "position": 2,
+      "title": "Evaluating Functions with Variables",
+      "problem_text": "If f(x) = 3√x + 11, what is the value for f(25)?",
+      "choices": [
+        {
+          "text": "15",
+          "letter": "A"
+        },
+        {
+          "text": "26",
+          "letter": "B"
+        },
+        {
+          "text": "34",
+          "letter": "C"
+        },
+        {
+          "text": "64",
+          "letter": "D"
+        },
+        {
+          "text": "86",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Plug the input into the function.\\n\\nStep 1: Replace x with 25\\nf(25) = 3√25 + 11\\n\\nStep 2: Evaluate the square root\\n√25 = 5\\n\\nStep 3: Complete the calculation\\nf(25) = 3(5) + 11 = 15 + 11 = 26\\n\\nRemember: The input goes in parentheses, the output is what f(x) equals.\\n\\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:25:00.785797+00:00",
+      "updated_at": "2025-10-20T21:25:00.785797+00:00"
+    },
+    {
+      "id": "934b1b83-6072-4cd2-90a0-5ccd96b505d6",
+      "lesson_id": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+      "position": 3,
+      "title": "Composite Functions (Inside Out Method)",
+      "problem_text": "If f(x) = 3x + 10 and g(x) = x - 5, what is the value of f(g(8))?",
+      "choices": [
+        {
+          "text": "3",
+          "letter": "A"
+        },
+        {
+          "text": "9",
+          "letter": "B"
+        },
+        {
+          "text": "19",
+          "letter": "C"
+        },
+        {
+          "text": "29",
+          "letter": "D"
+        },
+        {
+          "text": "34",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Work inside out: solve the inner function first.\\n\\nMethod: Inside Out\\n\\nStep 1: Evaluate the inside function g(8)\\ng(8) = 8 - 5 = 3\\n\\nStep 2: Now we have f(g(8)) = f(3)\\n\\nStep 3: Evaluate f(3)\\nf(3) = 3(3) + 10 = 9 + 10 = 19\\n\\nAlternate Method: You could also solve for f(g(x)) = 3(x - 5) + 10 = 3x - 5, then plug in 8.\\n\\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:25:00.90294+00:00",
+      "updated_at": "2025-10-20T21:25:00.90294+00:00"
+    },
+    {
+      "id": "069520a1-b249-473d-a23d-3901268ddd6a",
+      "lesson_id": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+      "position": 4,
+      "title": "Function Notation (Product)",
+      "problem_text": "If f(x) = 2x² + 1 and g(x) = x² - 1, which of the following expressions represents (fg)(x)?",
+      "choices": [
+        {
+          "text": "3x²",
+          "letter": "A"
+        },
+        {
+          "text": "2x² - 1",
+          "letter": "B"
+        },
+        {
+          "text": "2x⁴ - 1",
+          "letter": "C"
+        },
+        {
+          "text": "2x⁴ - x² - 1",
+          "letter": "D"
+        },
+        {
+          "text": "2x⁴ + x² - 1",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Product notation means multiply the functions.\\n\\n(fg)(x) = f(x) × g(x)\\n\\nStep 1: Set up multiplication\\n(fg)(x) = (2x² + 1)(x² - 1)\\n\\nStep 2: FOIL (multiply everything)\\nF: 2x² · x² = 2x⁴\\nO: 2x² · (-1) = -2x²\\nI: 1 · x² = x²\\nL: 1 · (-1) = -1\\n\\nStep 3: Combine like terms\\n2x⁴ - 2x² + x² - 1 = 2x⁴ - x² - 1\\n\\nRemember: (fg)(x) means multiply, NOT compose!\\n\\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:25:01.065709+00:00",
+      "updated_at": "2025-10-20T21:25:01.065709+00:00"
+    },
+    {
+      "id": "a2adf0b5-86f0-49d9-8fbf-a0a9e583a6ed",
+      "lesson_id": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+      "position": 5,
+      "title": "Finding Domain from Fractions",
+      "problem_text": "The domain of f(x) = 1/(x² - 5x + 6) is the set of all real numbers EXCEPT:",
+      "choices": [
+        {
+          "text": "2",
+          "letter": "A"
+        },
+        {
+          "text": "-3",
+          "letter": "B"
+        },
+        {
+          "text": "2 and 3",
+          "letter": "C"
+        },
+        {
+          "text": "-2 and 3",
+          "letter": "D"
+        },
+        {
+          "text": "-2 and -3",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Find where the function is undefined (denominator = 0).\\n\\nStep 1: Set denominator equal to 0\\nx² - 5x + 6 = 0\\n\\nStep 2: Factor\\nNeed two numbers that multiply to 6 and add to -5\\nThose are -2 and -3\\n(x - 2)(x - 3) = 0\\n\\nStep 3: Solve each factor\\nx - 2 = 0 → x = 2\\nx - 3 = 0 → x = 3\\n\\nThe function is undefined at x = 2 and x = 3, so these values are NOT in the domain.\\n\\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:25:01.125942+00:00",
+      "updated_at": "2025-10-20T21:25:01.125942+00:00"
+    }
+  ]
+}

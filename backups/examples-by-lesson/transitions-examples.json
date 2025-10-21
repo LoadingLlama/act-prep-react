@@ -1,0 +1,134 @@
+{
+  "lesson_key": "transitions",
+  "lesson_title": "Topic 2.3 - Transitions",
+  "examples": [
+    {
+      "id": "de630024-8c23-4de5-8b16-f99811792636",
+      "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+      "position": 1,
+      "title": "Reading for Context",
+      "problem_text": "The new restaurant received excellent reviews. <u>However,</u> the chef had trained at the finest culinary schools in France.\n\nWhich transition word is the most logical in context?",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "In fact,",
+          "letter": "B"
+        },
+        {
+          "text": "For example,",
+          "letter": "C"
+        },
+        {
+          "text": "Therefore,",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "The second sentence provides additional information that supports why the restaurant received excellent reviews. \"However\" creates incorrect contrast. \"In fact\" emphasizes and adds to the previous statement, which fits perfectly. \"For example\" would need a specific instance, and \"Therefore\" shows cause/effect in the wrong direction. The answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:34:31.973538+00:00",
+      "updated_at": "2025-10-21T00:34:31.973538+00:00"
+    },
+    {
+      "id": "e3b6794c-27d8-4882-9bc2-94a74f3785f6",
+      "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+      "position": 2,
+      "title": "All Transitions Type",
+      "problem_text": "From a distance, the ocean looked pretty calm today even though a storm had arrived last night. <u>Under the circumstances,</u> the scene was much more chaotic with big waves and strong riptides.\n\nWhich transition word is the most logical in context?",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "For instance,",
+          "letter": "B"
+        },
+        {
+          "text": "Up close,",
+          "letter": "C"
+        },
+        {
+          "text": "For example,",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "The first sentence describes how the ocean looked \"from a distance.\" The second sentence contrasts this with how it actually was. \"Up close\" creates the perfect contrast with \"from a distance.\" The other transitions don't establish this spatial relationship. The answer is **C**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:34:32.07002+00:00",
+      "updated_at": "2025-10-21T00:34:32.07002+00:00"
+    },
+    {
+      "id": "4eae9bc2-b7ca-41a0-a6c5-6eea79ecef41",
+      "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+      "position": 3,
+      "title": "No Transition Option",
+      "problem_text": "Stepping out on the island's port on Monday, the new couple debuted their own classic take on beach attire. <u>As a result,</u> the actor opted for a classic white tee and board shorts while his model counterpart wore a floral print coverup and strappy sandals.\n\nWhich transition word, if any, is the most logical in context?",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "In other words, the",
+          "letter": "B"
+        },
+        {
+          "text": "Consequently, the",
+          "letter": "C"
+        },
+        {
+          "text": "The",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "The second sentence simply describes what the couple wore—it's not a result, rephrasing, or consequence of the first sentence. The sentences flow naturally without a transition. \"As a result,\" \"In other words,\" and \"Consequently\" all incorrectly imply a cause/effect or explanatory relationship. The answer is **D**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:34:32.153953+00:00",
+      "updated_at": "2025-10-21T00:34:32.153953+00:00"
+    },
+    {
+      "id": "36374a93-542d-4499-b916-6865a8c1d337",
+      "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+      "position": 4,
+      "title": "Transition Categories",
+      "problem_text": "The study showed that exercise improves cardiovascular health. <u>For instance,</u> regular exercise can reduce the risk of heart disease by up to 35%.\n\nWhich transition word is the most logical in context?",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "Nevertheless,",
+          "letter": "B"
+        },
+        {
+          "text": "In contrast,",
+          "letter": "C"
+        },
+        {
+          "text": "Otherwise,",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "The second sentence provides a specific example that supports the general claim in the first sentence. \"For instance\" is perfect for introducing an example. \"Nevertheless\" and \"In contrast\" create incorrect opposition, and \"Otherwise\" suggests an alternative, which doesn't fit. The answer is **A**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:34:32.268394+00:00",
+      "updated_at": "2025-10-21T00:34:32.268394+00:00"
+    }
+  ]
+}

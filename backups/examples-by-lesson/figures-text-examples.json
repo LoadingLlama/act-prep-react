@@ -1,0 +1,70 @@
+{
+  "lesson_key": "figures-text",
+  "lesson_title": "Topic 2.5 - Figures + Text Questions",
+  "examples": [
+    {
+      "id": "843eefe4-dfab-42c4-a4fe-561b4474de99",
+      "lesson_id": "8d819556-9a8d-4cf0-9d8e-a42c4d6442cf",
+      "position": 1,
+      "title": "Finding Missing Information in Experimental Text",
+      "problem_text": "<p style=\"margin-bottom: 1rem; font-size: 16px; line-height: 1.6;\">A group of students investigated how different types of soil affect plant growth. They planted identical seeds in three different soil types and measured growth over 4 weeks.</p>\n\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Figure 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Study Description:</strong> Seeds were planted in clay soil, sandy soil, and loam soil. All plants received equal amounts of water (250 mL per day) and were exposed to 8 hours of sunlight daily. The initial soil pH was adjusted to 6.5 for all soil types before planting. Temperature was maintained at 22°C throughout the experiment.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: left; color: white; font-weight: 600;\">Week</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Clay Soil (cm)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Sandy Soil (cm)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Loam Soil (cm)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;\">1</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">2</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">3</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">4</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;\">2</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">5</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">7</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">10</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;\">3</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">8</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">12</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">18</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;\">4</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">10</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">15</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">25</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">How many hours of sunlight did the plants receive each day?</p>",
+      "choices": [
+        {
+          "text": "6 hours",
+          "letter": "A"
+        },
+        {
+          "text": "8 hours",
+          "letter": "B"
+        },
+        {
+          "text": "10 hours",
+          "letter": "C"
+        },
+        {
+          "text": "12 hours",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "This question tests whether you can extract information from the experimental text that isn't shown in the figure.\n\n**Step 1: Check the figure first**\nLooking at Figure 1, we see a table showing plant height (in cm) for different soil types across 4 weeks. The figure contains no information about sunlight hours.\n\n**Step 2: Recognize you need the experimental text**\nSince sunlight hours aren't in the figure, we must consult the Study Description text above the table.\n\n**Step 3: Scan for the keyword**\nLook for the word \"sunlight\" in the text. The description states: \"were exposed to 8 hours of sunlight daily.\"\n\n**Step 4: Extract the answer**\nThe text explicitly says 8 hours of sunlight daily.\n\n**Step 5: Match to answer choices**\n8 hours → Answer B\n\n**Why this question requires text:**\n- The figure only shows growth measurements (height in cm)\n- Sunlight is a control variable mentioned only in the setup description\n- You can't find this information anywhere in the table\n\n**The answer is B.**",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T06:27:54.164361+00:00",
+      "updated_at": "2025-10-21T06:27:54.164361+00:00"
+    },
+    {
+      "id": "70875266-45ed-4c51-a235-689f83b73490",
+      "lesson_id": "8d819556-9a8d-4cf0-9d8e-a42c4d6442cf",
+      "position": 2,
+      "title": "Combining Text and Figures to Answer Questions",
+      "problem_text": "<p style=\"margin-bottom: 1rem; font-size: 16px; line-height: 1.6;\">Scientists studied the effect of temperature on enzyme activity. They measured reaction rates at different temperatures for two enzymes: Enzyme A and Enzyme B.</p>\n\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Experiment 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Procedure:</strong> Enzyme A was tested at temperatures ranging from 20°C to 50°C. The pH was held constant at 7.0. Substrate concentration was 5 mM for all trials. Reaction rate was measured in µmol/min.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: left; color: white; font-weight: 600;\">Temperature (°C)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Reaction Rate (µmol/min)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;\">20</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">12</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;\">30</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">28</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;\">40</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">45</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; font-weight: 600; font-size: 14px;\">50</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">18</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">In Experiment 1, at what pH was Enzyme A tested?</p>",
+      "choices": [
+        {
+          "text": "5.0",
+          "letter": "A"
+        },
+        {
+          "text": "6.0",
+          "letter": "B"
+        },
+        {
+          "text": "7.0",
+          "letter": "C"
+        },
+        {
+          "text": "8.0",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "This question requires combining information from both the experimental text and the figure.\n\n**Step 1: Identify what's being asked**\nThe question asks for the pH value used in Experiment 1 for Enzyme A.\n\n**Step 2: Check the figure**\nLooking at the Experiment 1 table, we see:\n- Temperature values (20°C, 30°C, 40°C, 50°C)\n- Reaction rate values\n- NO pH information in the table\n\n**Step 3: Check the experimental text**\nSince pH isn't in the table, we must look at the Procedure description above the table. It states: \"The pH was held constant at 7.0.\"\n\n**Step 4: Extract the answer**\npH = 7.0\n\n**Step 5: Match to answer choices**\n7.0 → Answer C\n\n**Why text is necessary:**\n- pH was a control variable, not a measured variable\n- Control variables are typically described in the experimental procedure text, not shown in data tables\n- The figure only shows the independent variable (temperature) and dependent variable (reaction rate)\n\n**Key insight:**\nWhen a question asks about experimental conditions (pH, pressure, time duration, etc.) that you can't find in the figure, ALWAYS check the experimental text. Setup details are described there, not in the data tables.\n\n**The answer is C.**",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T06:27:54.21831+00:00",
+      "updated_at": "2025-10-21T06:27:54.21831+00:00"
+    }
+  ]
+}

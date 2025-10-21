@@ -1,0 +1,134 @@
+{
+  "lesson_key": "pronouns",
+  "lesson_title": "Topic 1.5 - Pronouns",
+  "examples": [
+    {
+      "id": "4e109097-8c62-4b1d-b64f-150e911693c0",
+      "lesson_id": "3c3585a1-f137-4331-8390-29ef1f5e889f",
+      "position": 1,
+      "title": "Who vs. Whom in Descriptive Phrases",
+      "problem_text": "I could not believe how much the florists <u>who</u> opened up a shop down the street charge for their roses.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "whom",
+          "letter": "B"
+        },
+        {
+          "text": "which",
+          "letter": "C"
+        },
+        {
+          "text": "that",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "This tests \"who\" vs. \"whom\" in a descriptive phrase.\n\n**Step 1: Identify the phrase**\n\"who opened up a shop down the street\" is a descriptive phrase telling us more about the florists.\n\n**Step 2: Use the he/him replacement trick for just the phrase**\nLook only at the phrase: \"who opened up a shop down the street\"\n\nCan we say \"he opened up a shop down the street\"? ✓ Yes!\nCan we say \"him opened up a shop down the street\"? ✗ No!\n\nSince \"he\" works, we use \"who\" (not \"whom\").\n\n**Step 3: Use the quick trick**\nLook at the word right after \"who/whom\": \"opened\"\n\n\"Opened\" is a verb → Use \"who\"\n\n**Step 4: Test each choice**\n- **A (NO CHANGE - \"who\"):** The florists did the action (they opened up a shop), so we need the subject pronoun \"who.\" Using the he/him trick on the phrase confirms \"he opened\" works. Correct!\n\n- **B (\"whom\"):** This is the object pronoun. Test with the phrase: \"whom opened up a shop\" → \"him opened up a shop\" doesn't work. Incorrect!\n\n- **C (\"which\"):** \"Which\" is used for things, not people. The florists are people, so we can't use \"which.\" Incorrect!\n\n- **D (\"that\"):** While \"that\" can sometimes be used for people, \"who\" is more grammatically precise when referring to people performing an action. \"Who\" is the better choice. Incorrect!\n\n**Why A is correct:**\nThe word after \"who\" is a verb (\"opened\"), and using the he/him test on the phrase shows \"he opened\" works, so \"who\" is correct.\n\nThe answer is **A**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:40:33.967672+00:00",
+      "updated_at": "2025-10-20T23:40:33.967672+00:00"
+    },
+    {
+      "id": "b85b3394-4dc7-48b4-8d49-4c6afdc69ad2",
+      "lesson_id": "3c3585a1-f137-4331-8390-29ef1f5e889f",
+      "position": 2,
+      "title": "Possessive Pronouns with Group Nouns",
+      "problem_text": "The entire team went on stage to pick up <u>their</u> trophy.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "its",
+          "letter": "B"
+        },
+        {
+          "text": "it's",
+          "letter": "C"
+        },
+        {
+          "text": "there",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "This tests possessive pronoun agreement with group nouns.\n\n**Step 1: Identify the antecedent**\nWhat is the pronoun referring back to? \"The entire team\"\n\n**Step 2: Determine if the antecedent is singular or plural**\n\"Team\" is a group noun. Even though a team consists of many people, the word \"team\" itself is SINGULAR.\n\nGroup nouns (team, committee, class, herd, jury, etc.) are always treated as singular.\n\n**Step 3: Match the pronoun to the antecedent**\nSingular antecedent (\"team\") → Singular possessive pronoun needed\n\nSingular possessive pronouns: my, your, his, her, its\nPlural possessive pronouns: our, your, their\n\nWe need \"its\" (singular), not \"their\" (plural).\n\n**Step 4: Test each choice**\n- **A (NO CHANGE - \"their\"):** This is a plural possessive pronoun. \"Team\" is singular, so we can't use \"their.\" Incorrect!\n\n- **B (\"its\"):** This is a singular possessive pronoun matching the singular antecedent \"team.\" \"The team...its trophy\" is correct! Correct!\n\n- **C (\"it's\"):** This is a contraction for \"it is.\" Test: \"The entire team went on stage to pick up it is trophy.\" That doesn't make sense! Incorrect!\n\n- **D (\"there\"):** \"There\" is not a possessive pronoun—it indicates location. \"Pick up there trophy\" doesn't work. Incorrect!\n\n**Why B is correct:**\nGroup nouns like \"team\" are singular and require singular possessive pronouns like \"its.\"\n\nThe answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:40:34.035796+00:00",
+      "updated_at": "2025-10-20T23:40:34.035796+00:00"
+    },
+    {
+      "id": "aeeab69d-9f09-46d3-936a-f9ae99d82062",
+      "lesson_id": "3c3585a1-f137-4331-8390-29ef1f5e889f",
+      "position": 3,
+      "title": "Pronoun Agreement with Singular Antecedents",
+      "problem_text": "Each member of the women's track team improved <u>their</u> time.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "her",
+          "letter": "B"
+        },
+        {
+          "text": "his or her",
+          "letter": "C"
+        },
+        {
+          "text": "its",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "This tests pronoun agreement with the tricky word \"each.\"\n\n**Step 1: Identify the antecedent**\nWhat is the pronoun referring to? \"Each member\"\n\nDon't be fooled by \"women's track team\"—that's in a prepositional phrase (\"of the women's track team\"). The actual antecedent is \"each member.\"\n\n**Step 2: Determine if the antecedent is singular or plural**\n\"Each\" is a singular word. Even though we're talking about multiple members of the team, \"each member\" refers to one member at a time.\n\n\"Each member\" = singular\n\n**Step 3: Determine the gender**\nWe're talking about the \"women's track team,\" so the members are female.\n\nGender: female → Use \"her\" (not \"his\")\n\n**Step 4: Match the pronoun**\nSingular + female → \"her\"\n\n**Step 5: Test each choice**\n- **A (NO CHANGE - \"their\"):** \"Their\" is plural. \"Each member\" is singular, so \"their\" doesn't match. Incorrect!\n\n- **B (\"her\"):** \"Her\" is singular and female, matching \"each member\" of the women's track team. Correct!\n\n- **C (\"his or her\"):** While \"his or her\" is singular, we already know from context that the track team is a women's team, so \"his or her\" is unnecessarily vague. \"Her\" is more precise. Incorrect!\n\n- **D (\"its\"):** \"Its\" is used for things, not people. Members of the track team are people, not things. Incorrect!\n\n**Why B is correct:**\n\"Each member\" is singular and female (women's track team), so the pronoun must be \"her.\"\n\nThe answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:40:34.111735+00:00",
+      "updated_at": "2025-10-20T23:40:34.111735+00:00"
+    },
+    {
+      "id": "909a2c6e-014a-47a0-a68d-fa64119da870",
+      "lesson_id": "3c3585a1-f137-4331-8390-29ef1f5e889f",
+      "position": 4,
+      "title": "Ambiguous Pronouns",
+      "problem_text": "When the owner of Pizza Port greets a customer, <u>he</u> always smiles.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "the owner",
+          "letter": "B"
+        },
+        {
+          "text": "they",
+          "letter": "C"
+        },
+        {
+          "text": "the customer",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "This tests ambiguous pronouns.\n\n**Step 1: Identify the pronoun**\nThe underlined portion is \"he.\"\n\n**Step 2: Find what \"he\" could be referring to**\nWho are the people in this sentence?\n- The owner of Pizza Port\n- A customer\n\n\"He\" could be referring to EITHER the owner OR the customer. We can't tell which one!\n\n**Step 3: Determine if the pronoun is ambiguous**\nSince we don't know exactly who \"he\" refers to, the pronoun is AMBIGUOUS.\n\nAmbiguous pronouns are always incorrect on the ACT.\n\n**Step 4: Look for the answer that eliminates ambiguity**\nWe need an answer choice that specifies exactly who is smiling.\n\n**Step 5: Test each choice**\n- **A (NO CHANGE - \"he\"):** Ambiguous—could be the owner or the customer. Incorrect!\n\n- **B (\"the owner\"):** This specifies that it's the owner who always smiles. \"When the owner of Pizza Port greets a customer, the owner always smiles.\" This is clear and unambiguous! Correct!\n\n- **C (\"they\"):** This is plural and doesn't match either singular person (owner or customer). Also still somewhat ambiguous—does it mean the owner and customer together? Incorrect!\n\n- **D (\"the customer\"):** This would mean the customer always smiles. While this eliminates ambiguity, it changes the meaning. Typically, it's the business owner (Pizza Port owner) who would be described as always smiling when greeting customers, not the customer. The context suggests the owner is the one being friendly. Incorrect!\n\n**Why B is correct:**\nThe pronoun \"he\" is ambiguous because it could refer to either the owner or the customer. Replacing \"he\" with \"the owner\" eliminates the ambiguity and makes logical sense in context.\n\nThe answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:40:34.175297+00:00",
+      "updated_at": "2025-10-20T23:40:34.175297+00:00"
+    }
+  ]
+}

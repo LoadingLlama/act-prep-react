@@ -1,0 +1,150 @@
+{
+  "lesson_key": "3.3",
+  "lesson_title": "Exponents and Roots",
+  "examples": [
+    {
+      "id": "2cbb7981-163e-40f1-9ade-1d61d68ec9d1",
+      "lesson_id": "b8c03bf0-99df-460d-be21-0015eebe7920",
+      "position": 2,
+      "title": "Applying Multiple Exponent Rules",
+      "problem_text": "For all nonzero x and y, what is (x⁶y⁷)/(x²y⁵) equivalent to?",
+      "choices": [
+        {
+          "text": "x⁴y²",
+          "letter": "A"
+        },
+        {
+          "text": "x³y²",
+          "letter": "B"
+        },
+        {
+          "text": "x⁸y¹²",
+          "letter": "C"
+        },
+        {
+          "text": "xy²",
+          "letter": "D"
+        },
+        {
+          "text": "1/(x⁴y²)",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "Use the quotient rule to simplify.\n\nStep 1: Apply quotient rule to x terms: x⁶/x² = x⁶⁻² = x⁴\n\nStep 2: Apply quotient rule to y terms: y⁷/y⁵ = y⁷⁻⁵ = y²\n\nStep 3: Combine: x⁴y²\n\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T20:31:41.346166+00:00",
+      "updated_at": "2025-10-20T20:31:41.346166+00:00"
+    },
+    {
+      "id": "e5859b84-920c-4761-a06a-11ad8a6ad6c6",
+      "lesson_id": "b8c03bf0-99df-460d-be21-0015eebe7920",
+      "position": 3,
+      "title": "Solving Exponential Equations with Same Base",
+      "problem_text": "If 4^(3x+1) = 4^(-x+7), what is the value of x?",
+      "choices": [
+        {
+          "text": "-2",
+          "letter": "A"
+        },
+        {
+          "text": "1",
+          "letter": "B"
+        },
+        {
+          "text": "3/2",
+          "letter": "C"
+        },
+        {
+          "text": "2",
+          "letter": "D"
+        },
+        {
+          "text": "8",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "When bases are the same, set exponents equal.\n\nStep 1: Since the bases (both 4) are equal, the exponents must be equal:\n3x+1 = -x+7\n\nStep 2: Solve for x:\n3x + x = 7 - 1\n4x = 6\nx = 6/4 = 3/2\n\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T20:31:41.395383+00:00",
+      "updated_at": "2025-10-20T20:31:41.395383+00:00"
+    },
+    {
+      "id": "bbeba8d3-46d4-4445-814e-55b625288b55",
+      "lesson_id": "b8c03bf0-99df-460d-be21-0015eebe7920",
+      "position": 4,
+      "title": "Making Bases the Same",
+      "problem_text": "For what value of x is 9^(2x) = 27^(x+4) true?",
+      "choices": [
+        {
+          "text": "12",
+          "letter": "A"
+        },
+        {
+          "text": "8",
+          "letter": "B"
+        },
+        {
+          "text": "4",
+          "letter": "C"
+        },
+        {
+          "text": "3",
+          "letter": "D"
+        },
+        {
+          "text": "2",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "Convert to the same base, then set exponents equal.\n\nStep 1: Recognize that 9 = 3² and 27 = 3³\n\nStep 2: Rewrite equation using base 3:\n(3²)^(2x) = (3³)^(x+4)\n\nStep 3: Use power rule:\n3^(4x) = 3^(3x+12)\n\nStep 4: Since bases are equal, set exponents equal:\n4x = 3x + 12\n\nStep 5: Solve:\nx = 12\n\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T20:31:41.509658+00:00",
+      "updated_at": "2025-10-20T20:31:41.509658+00:00"
+    },
+    {
+      "id": "7c3ca47b-c76f-42ae-9e15-7e23a507c528",
+      "lesson_id": "b8c03bf0-99df-460d-be21-0015eebe7920",
+      "position": 5,
+      "title": "Simplifying and Combining Radicals",
+      "problem_text": "If √45 + √20 = x√5, then x = ?",
+      "choices": [
+        {
+          "text": "5",
+          "letter": "A"
+        },
+        {
+          "text": "6",
+          "letter": "B"
+        },
+        {
+          "text": "9",
+          "letter": "C"
+        },
+        {
+          "text": "13",
+          "letter": "D"
+        },
+        {
+          "text": "65",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "Simplify each radical, then combine like radicals.\n\nStep 1: Simplify √45:\n√45 = √(3×3×5) = 3√5\n\nStep 2: Simplify √20:\n√20 = √(2×2×5) = 2√5\n\nStep 3: Add the like radicals:\n3√5 + 2√5 = 5√5\n\nStep 4: Compare to x√5:\nx√5 = 5√5, so x = 5\n\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T20:31:41.650948+00:00",
+      "updated_at": "2025-10-20T20:31:41.650948+00:00"
+    }
+  ]
+}

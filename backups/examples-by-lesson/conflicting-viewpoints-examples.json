@@ -1,0 +1,70 @@
+{
+  "lesson_key": "conflicting-viewpoints",
+  "lesson_title": "Topic 4.4 - Conflicting Viewpoints",
+  "examples": [
+    {
+      "id": "bb0148a3-e5ad-4432-bcae-8198952ebd08",
+      "lesson_id": "6f9652ad-13d6-447f-bc9f-df706d1e45aa",
+      "position": 1,
+      "title": "Comparing Two Viewpoints on Climate Change",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">Two scientists disagree about the primary cause of recent global temperature increases.</p>\n\n  <p style=\"font-weight: 700; font-size: 16px; margin: 1.2rem 0 0.75rem 0; color: #1f2937;\">Scientist 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px; line-height: 1.6;\">The primary cause of recent temperature increases is human activity, specifically the burning of fossil fuels. Carbon dioxide (CO₂) levels have increased by 40% since pre-industrial times, and CO₂ is a greenhouse gas that traps heat in the atmosphere. The timing of temperature increases matches perfectly with industrialization. Natural factors like solar activity and volcanic eruptions cannot account for the rapid warming we observe.</p>\n\n  <p style=\"font-weight: 700; font-size: 16px; margin: 1.2rem 0 0.75rem 0; color: #1f2937;\">Scientist 2</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px; line-height: 1.6;\">While CO₂ levels have increased, natural cycles are the primary driver of temperature changes. Earth has experienced many warming and cooling periods long before human industrialization. Solar radiation varies over time, and these variations can explain temperature fluctuations. The current warming trend is consistent with natural climate variability, not unprecedented.</p>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">On which of the following points do the scientists agree?</p>",
+      "choices": [
+        {
+          "text": "CO₂ levels have increased since pre-industrial times",
+          "letter": "A"
+        },
+        {
+          "text": "Human activity is the primary cause of warming",
+          "letter": "B"
+        },
+        {
+          "text": "Natural cycles cannot explain temperature changes",
+          "letter": "C"
+        },
+        {
+          "text": "The current warming is unprecedented",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Identify what each scientist explicitly states**\n\nScientist 1 says:\n- CO₂ levels increased by 40% ✓\n- Human activity (fossil fuels) is the cause\n- Natural factors cannot account for warming\n- Timing matches industrialization\n\nScientist 2 says:\n- CO₂ levels have increased ✓\n- Natural cycles are the primary driver\n- Solar radiation varies over time\n- Current warming is NOT unprecedented\n\n**Step 2: Find common ground**\nBoth scientists acknowledge that CO₂ levels have increased. This is a factual observation they both accept.\n\n**Step 3: Evaluate each answer choice**\n\nA. CO₂ levels have increased → Both scientists state this ✓\n   - Scientist 1: \"CO₂ levels have increased by 40%\"\n   - Scientist 2: \"CO₂ levels have increased\"\n\nB. Human activity is primary cause → Only Scientist 1 believes this ✗\n   - Scientist 1: Yes\n   - Scientist 2: Disagrees (says natural cycles)\n\nC. Natural cycles cannot explain changes → Only Scientist 1 believes this ✗\n   - Scientist 1: \"Natural factors cannot account for warming\"\n   - Scientist 2: Disagrees (says natural cycles ARE the cause)\n\nD. Current warming is unprecedented → Only Scientist 1 implies this ✗\n   - Scientist 1: Implies it's unusual (\"rapid warming\")\n   - Scientist 2: \"NOT unprecedented\"\n\n**The answer is A.**\n\nBoth scientists agree on the factual observation that CO₂ levels have increased since pre-industrial times. They disagree on whether this increase (or natural cycles) is the primary cause of warming.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T17:10:04.617815+00:00",
+      "updated_at": "2025-10-21T17:10:04.617815+00:00"
+    },
+    {
+      "id": "87e8162c-fed6-4400-b136-6804738f3e38",
+      "lesson_id": "6f9652ad-13d6-447f-bc9f-df706d1e45aa",
+      "position": 2,
+      "title": "Evaluating New Evidence Against Viewpoints",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">Two students disagree about why dinosaurs went extinct 66 million years ago.</p>\n\n  <p style=\"font-weight: 700; font-size: 16px; margin: 1.2rem 0 0.75rem 0; color: #1f2937;\">Student 1 (Asteroid Impact)</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px; line-height: 1.6;\">A massive asteroid struck Earth, creating a huge dust cloud that blocked sunlight for months. Without sunlight, plants died, causing herbivores to starve, followed by carnivores. The impact would have caused global fires and released toxic gases. Evidence includes a worldwide layer of iridium (rare on Earth but common in asteroids) dating to exactly 66 million years ago.</p>\n\n  <p style=\"font-weight: 700; font-size: 16px; margin: 1.2rem 0 0.75rem 0; color: #1f2937;\">Student 2 (Volcanic Activity)</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px; line-height: 1.6;\">Massive volcanic eruptions in India released enormous amounts of lava and toxic gases over thousands of years. These gases would have poisoned the atmosphere and caused acid rain. The gradual climate change from volcanic activity explains why some species survived while dinosaurs did not. Asteroid impacts occur frequently but don't always cause mass extinctions.</p>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">A scientist discovered a fossil site where dinosaur bones are found below the iridium layer, but no dinosaur bones are found above it. This finding most strongly supports:</p>",
+      "choices": [
+        {
+          "text": "Student 1's viewpoint only",
+          "letter": "A"
+        },
+        {
+          "text": "Student 2's viewpoint only",
+          "letter": "B"
+        },
+        {
+          "text": "Both students' viewpoints equally",
+          "letter": "C"
+        },
+        {
+          "text": "Neither viewpoint",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Understand what the new evidence shows**\nNew finding: Dinosaur bones are found BELOW the iridium layer, but NOT above it.\n\nThis means:\n- Dinosaurs existed before the iridium layer formed\n- Dinosaurs disappeared after the iridium layer formed\n- The iridium layer marks the extinction boundary\n\n**Step 2: Test against Student 1's viewpoint (Asteroid)**\nStudent 1 claims:\n- Asteroid impact deposited the iridium layer (66 million years ago)\n- This impact caused dinosaur extinction\n\nPrediction: If Student 1 is correct, we'd expect:\n- Dinosaur bones BEFORE the iridium layer (when dinosaurs alive) ✓\n- NO dinosaur bones AFTER the iridium layer (after extinction) ✓\n\nThe evidence MATCHES Student 1's prediction perfectly!\n\n**Step 3: Test against Student 2's viewpoint (Volcanic)**\nStudent 2 claims:\n- Volcanic activity occurred over thousands of years\n- This gradual process caused extinction\n- Asteroid impacts don't always cause mass extinctions\n\nPrediction: If Student 2 is correct, we'd expect:\n- Gradual disappearance of dinosaurs over time\n- The iridium layer (if from an asteroid) wouldn't necessarily mark the extinction boundary\n\nThe evidence does NOT align as well with Student 2. The sharp boundary at the iridium layer suggests a sudden event, not a gradual volcanic process.\n\n**Step 4: Evaluate answer choices**\nA. Student 1 only → The iridium layer marking the exact extinction boundary strongly supports the asteroid impact theory ✓\n\nB. Student 2 only → The evidence doesn't support a gradual volcanic extinction ✗\n\nC. Both equally → No, the sharp boundary at the iridium layer favors Student 1's sudden impact over Student 2's gradual volcanism ✗\n\nD. Neither → No, the evidence clearly supports Student 1 ✗\n\n**The answer is A.**\n\nThe fossil evidence showing dinosaurs below but not above the iridium layer supports Student 1's asteroid impact theory. The iridium layer marks a sharp extinction boundary, which aligns with a sudden catastrophic event (asteroid) rather than gradual volcanic activity.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T17:10:04.67599+00:00",
+      "updated_at": "2025-10-21T17:10:04.67599+00:00"
+    }
+  ]
+}

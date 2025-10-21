@@ -1,0 +1,114 @@
+{
+  "lesson_key": "3.5",
+  "lesson_title": "Inequalities",
+  "examples": [
+    {
+      "id": "dece500d-2d94-482d-91aa-fd8479b31d19",
+      "lesson_id": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+      "position": 2,
+      "title": "Solving Inequality with Negative Division",
+      "problem_text": "Which of the following inequalities describes the solution set for 6x + 12 < 9x + 17?",
+      "choices": [
+        {
+          "text": "x > -29/5",
+          "letter": "A"
+        },
+        {
+          "text": "x ≤ -29/5",
+          "letter": "B"
+        },
+        {
+          "text": "x ≤ -5/3",
+          "letter": "C"
+        },
+        {
+          "text": "x ≥ -5/3",
+          "letter": "D"
+        },
+        {
+          "text": "x > -5/3",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Move all x-terms to left, all numbers to right.\n\nStep 1: Subtract 9x from both sides:\n6x - 9x + 12 < 17\n-3x + 12 < 17\n\nStep 2: Subtract 12 from both sides:\n-3x < 5\n\nStep 3: Divide by -3 (FLIP THE SIGN!):\nx ≥ -5/3\n\nRemember: When dividing by a negative, flip the inequality sign.\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T20:43:03.562528+00:00",
+      "updated_at": "2025-10-20T20:43:03.562528+00:00"
+    },
+    {
+      "id": "965c4722-293c-4dbf-8e92-df5acb930415",
+      "lesson_id": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+      "position": 3,
+      "title": "Graphing Inequality on Number Line",
+      "problem_text": "Which graph shows the solution set for 2x - 4 ≥ -x + 6?",
+      "choices": [
+        {
+          "text": "Open circle at 10/3, shading left",
+          "letter": "A"
+        },
+        {
+          "text": "Solid circle at 10/3, shading left",
+          "letter": "B"
+        },
+        {
+          "text": "Solid circle at 10/3, shading right",
+          "letter": "C"
+        },
+        {
+          "text": "Open circle at 10/3, shading right",
+          "letter": "D"
+        },
+        {
+          "text": "Solid circle at 2, shading right",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Solve the inequality, then graph.\n\nStep 1: Add x to both sides:\n2x + x - 4 ≥ 6\n3x - 4 ≥ 6\n\nStep 2: Add 4 to both sides:\n3x ≥ 10\n\nStep 3: Divide by 3 (positive, so sign stays same):\nx ≥ 10/3\n\nStep 4: Graph on number line:\n- Use SOLID circle (because of ≥)\n- Shade to the RIGHT (because x is greater than 10/3)\n\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T20:43:03.611084+00:00",
+      "updated_at": "2025-10-20T20:43:03.611084+00:00"
+    },
+    {
+      "id": "8af77aba-c544-403a-85d0-cd712c741c60",
+      "lesson_id": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+      "position": 4,
+      "title": "Graphing Linear Inequality",
+      "problem_text": "Which of the following describes how to graph y < 2x - 4?",
+      "choices": [
+        {
+          "text": "Solid line, shade above",
+          "letter": "A"
+        },
+        {
+          "text": "Solid line, shade below",
+          "letter": "B"
+        },
+        {
+          "text": "Dashed line, shade above",
+          "letter": "C"
+        },
+        {
+          "text": "Dashed line, shade below",
+          "letter": "D"
+        },
+        {
+          "text": "Solid line through origin",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Determine line type and shading direction.\n\nStep 1: Line type\nSince the inequality is < (less than, NOT less than or equal to), use a DASHED line.\nStrict inequalities (< and >) always use dashed lines.\n\nStep 2: Shading\nSince the inequality is y < (something), shade BELOW the line.\n\"Less than\" means the y-values are smaller, which is below the line.\n\nThe answer is D: dashed line, shade below.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T20:43:03.665757+00:00",
+      "updated_at": "2025-10-20T20:43:03.665757+00:00"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "lesson_key": "experimental-setup",
+  "lesson_title": "Topic 4.2 - Experimental Setup",
+  "examples": [
+    {
+      "id": "5b795e90-83c0-4284-9d57-7bd035ae4f4e",
+      "lesson_id": "1513e653-31c1-418d-9e7f-f91253d9438b",
+      "position": 1,
+      "title": "Identifying Independent and Dependent Variables",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">A student investigated how the amount of fertilizer affected plant growth. Four identical plants were each given different amounts of fertilizer (0g, 5g, 10g, and 15g) while keeping all other conditions the same. After 4 weeks, the student measured the height of each plant.</p>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Table 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Description:</strong> Fertilizer amount and final plant height.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Plant</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Fertilizer (g)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Final Height (cm)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">1</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">0</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">12</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">2</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">5</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">18</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">3</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">10</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">24</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">4</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">15</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">26</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">In this experiment, which variable was the independent variable?</p>",
+      "choices": [
+        {
+          "text": "The type of plant used",
+          "letter": "A"
+        },
+        {
+          "text": "The amount of fertilizer",
+          "letter": "B"
+        },
+        {
+          "text": "The final height of the plant",
+          "letter": "C"
+        },
+        {
+          "text": "The time period (4 weeks)",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Define independent variable**\nThe independent variable is what the experimenter intentionally changes/controls.\n- It's the variable that is manipulated to see its effect\n- Often called the \"cause\" in cause-and-effect\n\n**Step 2: Identify what was intentionally changed**\nLooking at the experiment description and Table 1:\n- The experimenter gave different amounts of fertilizer to different plants\n- Plant 1 got 0g, Plant 2 got 5g, Plant 3 got 10g, Plant 4 got 15g\n- This was done ON PURPOSE to test the effect\n\n**Step 3: Identify what was measured**\nThe student measured the final height after 4 weeks.\n- This is the DEPENDENT variable (what you measure)\n- It depends on/responds to the amount of fertilizer\n\n**Step 4: Evaluate answer choices**\nA. Type of plant → The problem states \"identical plants\" - this was kept CONSTANT, not changed ✗\nB. Amount of fertilizer → This was intentionally changed (0g, 5g, 10g, 15g) ✓\nC. Final height → This was MEASURED, not changed. This is the dependent variable ✗\nD. Time period → All plants were measured after 4 weeks - this was kept CONSTANT ✗\n\n**The answer is B.**\n\nThe amount of fertilizer is the independent variable because it's what the experimenter deliberately changed to observe its effect on plant growth. The height is the dependent variable (what responds), and everything else (plant type, time) was kept constant.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T06:49:47.621642+00:00",
+      "updated_at": "2025-10-21T06:49:47.621642+00:00"
+    },
+    {
+      "id": "669490cb-cdef-4667-8ee0-5f098bf74796",
+      "lesson_id": "1513e653-31c1-418d-9e7f-f91253d9438b",
+      "position": 2,
+      "title": "Identifying the Control Group",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">A scientist tested whether a new drug reduced headache pain. Five groups of patients with headaches received different treatments, and pain levels were measured after 2 hours.</p>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Table 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Description:</strong> Treatment received and average pain level after 2 hours.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Group</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Treatment</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Avg Pain Level (1-10)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">1</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">50 mg new drug</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">3.2</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">2</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">100 mg new drug</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">2.1</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">3</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">200 mg new drug</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">1.5</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">4</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">Existing headache medicine</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">2.8</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">5</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">No treatment</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">7.5</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">Which group served as the control group in this experiment?</p>",
+      "choices": [
+        {
+          "text": "Group 1",
+          "letter": "A"
+        },
+        {
+          "text": "Group 3",
+          "letter": "B"
+        },
+        {
+          "text": "Group 4",
+          "letter": "C"
+        },
+        {
+          "text": "Group 5",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Define control group**\nA control group:\n- Does NOT receive the experimental treatment being tested\n- Provides a baseline for comparison\n- Shows what happens naturally without intervention\n- Helps determine if the treatment actually had an effect\n\n**Step 2: Identify what is being tested**\nThe experiment is testing a NEW DRUG for headaches.\nWe want to know: Does the new drug reduce pain?\n\n**Step 3: Examine each group**\nGroup 1: 50 mg new drug → Receives the treatment being tested ✗\nGroup 2: 100 mg new drug → Receives the treatment being tested ✗\nGroup 3: 200 mg new drug → Receives the treatment being tested ✗\nGroup 4: Existing headache medicine → Receives a different treatment (comparison group, but not control) ✗\nGroup 5: No treatment → Receives NO treatment at all ✓\n\n**Step 4: Determine which is the control**\nGroup 5 (No treatment) is the control group because:\n- These patients did NOT receive the new drug being tested\n- They show what happens to headache pain naturally (without any intervention)\n- Pain level = 7.5 without treatment\n\nBy comparing Groups 1-3 to Group 5, we can see that the new drug actually reduced pain (from 7.5 down to 3.2, 2.1, and 1.5).\n\n**Note about Group 4:**\nGroup 4 is a comparison group (not a control). It helps show how the new drug compares to existing medicine, but it's not the control because it still receives treatment.\n\n**The answer is D.**\n\nGroup 5 is the control because it received no treatment, providing a baseline to determine if the new drug actually works.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T06:49:47.672043+00:00",
+      "updated_at": "2025-10-21T06:49:47.672043+00:00"
+    }
+  ]
+}

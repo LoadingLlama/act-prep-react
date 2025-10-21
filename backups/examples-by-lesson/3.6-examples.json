@@ -1,0 +1,150 @@
+{
+  "lesson_key": "3.6",
+  "lesson_title": "Absolute Value",
+  "examples": [
+    {
+      "id": "e326b4cf-e13b-453a-9a17-1c71507e2507",
+      "lesson_id": "34e50480-0a09-4f9f-add4-c1121f66776b",
+      "position": 2,
+      "title": "Basic Absolute Value Operations",
+      "problem_text": "What is the value of |2 + 11| - 2|3 - 5|?",
+      "choices": [
+        {
+          "text": "9",
+          "letter": "A"
+        },
+        {
+          "text": "13",
+          "letter": "B"
+        },
+        {
+          "text": "17",
+          "letter": "C"
+        },
+        {
+          "text": "22",
+          "letter": "D"
+        },
+        {
+          "text": "26",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "Work inside the absolute value bars first.\\n\\nStep 1: Evaluate inside each absolute value\\n|2 + 11| = |13| = 13\\n|3 - 5| = |-2| = 2\\n\\nStep 2: Complete the rest of the expression\\n13 - 2(2) = 13 - 4 = 9\\n\\nRemember: Always complete operations INSIDE the absolute value bars before taking the absolute value.\\n\\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T20:48:21.022399+00:00",
+      "updated_at": "2025-10-20T20:48:21.022399+00:00"
+    },
+    {
+      "id": "df62193e-7632-43d5-96b9-d99f2692b06d",
+      "lesson_id": "34e50480-0a09-4f9f-add4-c1121f66776b",
+      "position": 3,
+      "title": "Solving Absolute Value Equation",
+      "problem_text": "What is the solution set to 3|2x + 1| - 6 = 45?",
+      "choices": [
+        {
+          "text": "{-9}",
+          "letter": "A"
+        },
+        {
+          "text": "{8}",
+          "letter": "B"
+        },
+        {
+          "text": "{2, 8}",
+          "letter": "C"
+        },
+        {
+          "text": "{-9, 8}",
+          "letter": "D"
+        },
+        {
+          "text": "{-8, 9}",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Isolate the absolute value, then solve for both cases.\\n\\nStep 1: Add 6 to both sides\\n3|2x + 1| = 51\\n\\nStep 2: Divide by 3\\n|2x + 1| = 17\\n\\nStep 3: Set up two equations\\nCase 1: 2x + 1 = 17\\n2x = 16\\nx = 8\\n\\nCase 2: 2x + 1 = -17\\n2x = -18\\nx = -9\\n\\nStep 4: Solution set is {-9, 8}\\n\\nRemember: Absolute value equations with variables ALWAYS have two solutions!\\n\\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T20:48:21.22386+00:00",
+      "updated_at": "2025-10-20T20:48:21.22386+00:00"
+    },
+    {
+      "id": "f12cdc87-258d-4266-915a-c30f6fd9a3c3",
+      "lesson_id": "34e50480-0a09-4f9f-add4-c1121f66776b",
+      "position": 4,
+      "title": "Absolute Value Inequality (Less Than Type)",
+      "problem_text": "The set of all values of x that satisfies |x + 3| - 4 < 1 is the same as the set of all values of x that satisfies:",
+      "choices": [
+        {
+          "text": "0 < x < 2",
+          "letter": "A"
+        },
+        {
+          "text": "0 < x < 5",
+          "letter": "B"
+        },
+        {
+          "text": "-8 < x < 2",
+          "letter": "C"
+        },
+        {
+          "text": "-8 < x < 5",
+          "letter": "D"
+        },
+        {
+          "text": "x < -8 and x > 2",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Isolate absolute value, then set up compound inequality.\\n\\nStep 1: Add 4 to both sides\\n|x + 3| < 5\\n\\nStep 2: Since this is \"less than\", the solution is BETWEEN -5 and 5\\nSet up: -5 < x + 3 < 5\\n\\nStep 3: Subtract 3 from all parts\\n-5 - 3 < x < 5 - 3\\n-8 < x < 2\\n\\nRemember: |x| < a means -a < x < a (between two values, one compound inequality)\\n\\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T20:48:21.375045+00:00",
+      "updated_at": "2025-10-20T20:48:21.375045+00:00"
+    },
+    {
+      "id": "fd6e3a34-86a0-43e8-b1c8-33612db52ffe",
+      "lesson_id": "34e50480-0a09-4f9f-add4-c1121f66776b",
+      "position": 5,
+      "title": "Absolute Value Inequality (Greater Than Type)",
+      "problem_text": "The set of all values of x that satisfies |½x + 2| > 3 is the same as the set of all values of x that satisfies:",
+      "choices": [
+        {
+          "text": "x < -10 and x > 2",
+          "letter": "A"
+        },
+        {
+          "text": "x < -5 and x > 5",
+          "letter": "B"
+        },
+        {
+          "text": "x < -10 and x > 0",
+          "letter": "C"
+        },
+        {
+          "text": "x > 2",
+          "letter": "D"
+        },
+        {
+          "text": "-10 < x < 2",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "Since this is \"greater than\", set up TWO separate inequalities.\\n\\nStep 1: The absolute value is already isolated\\n|½x + 2| > 3\\n\\nStep 2: Since this is \"greater than\", the solution is OUTSIDE -3 and 3\\nSet up two inequalities:\\n½x + 2 < -3  AND  ½x + 2 > 3\\n\\nStep 3: Solve each inequality\\nCase 1: ½x + 2 < -3\\n½x < -5\\nx < -10\\n\\nCase 2: ½x + 2 > 3\\n½x > 1\\nx > 2\\n\\nFinal answer: x < -10 AND x > 2\\n\\nRemember: |x| > a means x < -a AND x > a (outside, two separate inequalities)\\n\\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T20:48:21.520651+00:00",
+      "updated_at": "2025-10-20T20:48:21.520651+00:00"
+    }
+  ]
+}

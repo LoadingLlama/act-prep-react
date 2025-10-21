@@ -1,0 +1,134 @@
+{
+  "lesson_key": "verbs",
+  "lesson_title": "Topic 1.4 - Verbs",
+  "examples": [
+    {
+      "id": "1e83b0a0-2020-4f25-b209-634cdc118b1d",
+      "lesson_id": "10fff941-59e1-4d3a-84b7-d0fe8f9985ef",
+      "position": 1,
+      "title": "Subject-Verb Agreement with Prepositional Phrases",
+      "problem_text": "The stable hand hired by the farm owners <u>groom</u> the horses every morning.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "grooms",
+          "letter": "B"
+        },
+        {
+          "text": "have groomed",
+          "letter": "C"
+        },
+        {
+          "text": "are grooming",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "This tests subject-verb agreement with prepositional phrases between the subject and verb.\n\n**Step 1: Identify the verb and find the subject**\nThe underlined portion is \"groom,\" which is a verb. We need to find the subject to determine if the verb should be singular or plural.\n\n**Step 2: Cross out prepositional phrases**\nThe sentence has the prepositional phrase \"by the farm owners\" between the subject and verb.\n\nRemember: Prepositional phrases NEVER contain the subject. Cross it out:\n\n\"The stable hand hired by-the-farm-owners groom the horses every morning.\"\n\n**Step 3: Identify the subject**\nAfter crossing out the prepositional phrase, the subject is \"stable hand\" (singular).\n\nThe phrase \"hired by the farm owners\" is unnecessary information describing the stable hand, but the main subject is still \"stable hand.\"\n\n**Step 4: Match the verb to the subject**\nSubject: \"stable hand\" (singular) → Verb must be singular\n\nPlug in \"he/she/it\" to test: \"He grooms the horses every morning.\" ✓ This sounds correct!\n\n**Step 5: Test each choice**\n- **A (NO CHANGE - \"groom\"):** This is plural. \"The stable hand groom\" doesn't match. Incorrect!\n\n- **B (\"grooms\"):** This is singular. \"The stable hand grooms the horses\" matches perfectly! Correct!\n\n- **C (\"have groomed\"):** This is plural (have = plural). Also introduces an unnecessary perfect tense. Incorrect!\n\n- **D (\"are grooming\"):** This is plural (are = plural). \"The stable hand are grooming\" doesn't work. Incorrect!\n\n**Why B is correct:**\nThe singular subject \"stable hand\" requires the singular verb \"grooms.\"\n\nThe answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:37:06.872851+00:00",
+      "updated_at": "2025-10-20T23:37:06.872851+00:00"
+    },
+    {
+      "id": "7bc8aa77-89d3-4906-b6cb-518da8bc54b0",
+      "lesson_id": "10fff941-59e1-4d3a-84b7-d0fe8f9985ef",
+      "position": 2,
+      "title": "Verb Tense Matching Context",
+      "problem_text": "The car accident on the freeway delayed my commute and <u>causes</u> me to be late for the job interview.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "caused",
+          "letter": "B"
+        },
+        {
+          "text": "will cause",
+          "letter": "C"
+        },
+        {
+          "text": "has caused",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "This tests whether you can match verb tense to the context of the sentence.\n\n**Step 1: Look for context clues in the sentence**\nThe sentence has two verbs connected by \"and\":\n- \"delayed my commute\"\n- \"causes me to be late\"\n\nThese two actions are happening at the same time (both caused by the car accident).\n\n**Step 2: Identify the tense of the first verb**\n\"delayed\" is past tense\n\nSince the two verbs are connected by \"and\" and describe two results of the same event (the car accident), they should be in the same tense.\n\n**Step 3: Determine what tense is needed**\nWe need past tense to match \"delayed.\"\n\n**Step 4: Test each choice**\n- **A (NO CHANGE - \"causes\"):** This is present tense. \"delayed...and causes\" mixes past and present tense. Incorrect!\n\n- **B (\"caused\"):** This is past tense. \"delayed my commute and caused me to be late\" keeps both verbs in past tense. Correct!\n\n- **C (\"will cause\"):** This is future tense. \"delayed...and will cause\" mixes past and future tense, which doesn't make sense. Incorrect!\n\n- **D (\"has caused\"):** This is present perfect tense. While this could work in some contexts, it's unnecessarily complicated when simple past tense \"caused\" works perfectly. Remember: don't pick a complicated tense when a simple tense works! Incorrect!\n\n**Why B is correct:**\nThe verb must match the past tense of \"delayed\" since both actions are connected by \"and\" and happened at the same time.\n\nThe answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:37:06.975962+00:00",
+      "updated_at": "2025-10-20T23:37:06.975962+00:00"
+    },
+    {
+      "id": "7cb0838e-8047-44f5-9073-c90cc739c01d",
+      "lesson_id": "10fff941-59e1-4d3a-84b7-d0fe8f9985ef",
+      "position": 3,
+      "title": "Irregular Verbs - \"a\" vs. \"u\" Rule",
+      "problem_text": "Before I woke up, Chris had already <u>swam</u> twenty laps.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "swum",
+          "letter": "B"
+        },
+        {
+          "text": "swimming",
+          "letter": "C"
+        },
+        {
+          "text": "swims",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "This tests the \"a\" vs. \"u\" rule for irregular verbs.\n\n**Step 1: Identify the verb structure**\nThe sentence uses \"had already\" before the verb. This is perfect tense (had + verb).\n\n**Step 2: Recall the \"a\" vs. \"u\" rule**\nMany irregular verbs have an \"a\" version (swam, began, drank) and a \"u\" version (swum, begun, drunk).\n\nThe rule is simple:\n- With \"has,\" \"have,\" or \"had\" (perfect tense) → Use the \"u\" version\n- With no \"has,\" \"have,\" or \"had\" (past tense) → Use the \"a\" version\n\n**Step 3: Apply the rule**\nSince the sentence uses \"had\" (perfect tense), we need the \"u\" version: \"swum\"\n\n**Step 4: Test each choice**\n- **A (NO CHANGE - \"swam\"):** This is the \"a\" version, which is used for simple past tense without helping verbs. Example: \"I swam twenty laps this morning.\" But here we have \"had,\" so we need the \"u\" version. Incorrect!\n\n- **B (\"swum\"):** This is the \"u\" version for perfect tense. \"Chris had already swum twenty laps\" follows the rule perfectly! Correct!\n\n- **C (\"swimming\"):** This is the present participle form. \"had already swimming\" doesn't work grammatically. Incorrect!\n\n- **D (\"swims\"):** This is present tense, third person singular. \"had already swims\" doesn't work. Incorrect!\n\n**Why B is correct:**\nWith \"had\" (perfect tense), we must use the \"u\" version of the irregular verb: \"swum.\"\n\nThe answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:37:07.052389+00:00",
+      "updated_at": "2025-10-20T23:37:07.052389+00:00"
+    },
+    {
+      "id": "60bc14d2-a169-4705-a697-01da657af929",
+      "lesson_id": "10fff941-59e1-4d3a-84b7-d0fe8f9985ef",
+      "position": 4,
+      "title": "Identifying Subject-Verb Agreement vs. Tense Questions",
+      "problem_text": "The first row of the townhouses for sale in my neighborhood <u>has</u> the best view of the beach.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "having",
+          "letter": "B"
+        },
+        {
+          "text": "have",
+          "letter": "C"
+        },
+        {
+          "text": "would have",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "This tests whether you can identify a subject-verb agreement question and apply the correct strategy.\n\n**Step 1: Identify the question type by looking at answer choices**\nLooking at the choices: has (singular), having, have (plural), would have (plural)\n\nWe see both singular (\"has\") and plural (\"have\") versions of the verb. This tells us the question is testing SUBJECT-VERB AGREEMENT, not verb tense.\n\n**Step 2: Find the subject by crossing out prepositional phrases**\nThe sentence has two prepositional phrases:\n- \"of the townhouses\"\n- \"for sale\"\n- \"in my neighborhood\"\n\nCross them all out: \"The first row of-the-townhouses for-sale in-my-neighborhood has the best view of-the-beach.\"\n\n**Step 3: Identify the subject**\nAfter crossing out prepositional phrases, the subject is \"row\" (singular).\n\nDon't be tricked by \"townhouses\"—that's inside a prepositional phrase and can't be the subject!\n\n**Step 4: Match the verb to the subject**\nSubject: \"row\" (singular) → Verb must be singular\n\nPlug in \"it\" to test: \"It has the best view of the beach.\" ✓ Sounds correct!\n\n**Step 5: Test each choice**\n- **A (NO CHANGE - \"has\"):** Singular verb matching singular subject \"row.\" \"The row has the best view\" is correct! Correct!\n\n- **B (\"having\"):** This is a participle, not a complete verb. \"The row having the best view\" is a fragment. Incorrect!\n\n- **C (\"have\"):** This is plural. \"The row have\" doesn't match—row is singular. Incorrect!\n\n- **D (\"would have\"):** This is plural conditional and changes the meaning unnecessarily. \"The row would have\" doesn't match and introduces a hypothetical that isn't needed. Incorrect!\n\n**Why A is correct:**\nThe singular subject \"row\" requires the singular verb \"has.\"\n\nThe answer is **A**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:37:07.118587+00:00",
+      "updated_at": "2025-10-20T23:37:07.118587+00:00"
+    }
+  ]
+}

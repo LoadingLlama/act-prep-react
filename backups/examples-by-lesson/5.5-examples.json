@@ -1,0 +1,186 @@
+{
+  "lesson_key": "5.5",
+  "lesson_title": "Scientific Notation",
+  "examples": [
+    {
+      "id": "4df021f3-a0a2-4676-a85e-dfdfaf11adf7",
+      "lesson_id": "4d711b65-dcda-4fb5-9740-7bfaae194ff2",
+      "position": 1,
+      "title": "Converting Large Numbers",
+      "problem_text": "The MLB estimates that 250,000 baseballs are used during an entire season. Which of the following expressions, when written in scientific notation, correctly represents the number of baseballs used during a season?",
+      "choices": [
+        {
+          "text": "2.5 × 10⁴",
+          "letter": "A"
+        },
+        {
+          "text": "2.5 × 10⁵",
+          "letter": "B"
+        },
+        {
+          "text": "2.5 × 10⁶",
+          "letter": "C"
+        },
+        {
+          "text": "25 × 10⁴",
+          "letter": "D"
+        },
+        {
+          "text": "0.25 × 10⁶",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Convert 250,000 to scientific notation.\n\nStep 1: Identify where decimal is\n250,000. (decimal at end)\n\nStep 2: Move decimal after first digit\nPlace between 2 and 5: 2.5\n\nStep 3: Count moves to the LEFT\n250,000. → 2.5\nMoved 5 places left\n\nStep 4: Write in scientific notation\n2.5 × 10⁵\n\nWHY D IS WRONG:\nDigit term must be 1 ≤ digit < 10\n25 is too large (≥ 10)\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:17:46.917816+00:00",
+      "updated_at": "2025-10-20T22:17:46.917816+00:00"
+    },
+    {
+      "id": "ad0634e8-7b07-4cbd-aeac-71e716dc3afd",
+      "lesson_id": "4d711b65-dcda-4fb5-9740-7bfaae194ff2",
+      "position": 2,
+      "title": "Converting Small Numbers",
+      "problem_text": "During an experiment, Ronald found that the average weight of an ant is 0.0000029 kg. The average weight of an ant in kilograms is equal to 2.9 × 10ᵏ. What is the value of k?",
+      "choices": [
+        {
+          "text": "7",
+          "letter": "A"
+        },
+        {
+          "text": "6",
+          "letter": "B"
+        },
+        {
+          "text": "-6",
+          "letter": "C"
+        },
+        {
+          "text": "-7",
+          "letter": "D"
+        },
+        {
+          "text": "-5",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Convert 0.0000029 to scientific notation.\n\nStep 1: Move decimal to RIGHT\nPlace after the 2: 2.9\n\nStep 2: Count moves to the RIGHT\n0.0000029 → 2.9\nMoved 6 places right\n\nStep 3: Right movement = negative exponent\nk = -6\n\nResult: 2.9 × 10⁻⁶\n\nRULE TO REMEMBER:\n• Decimal moves LEFT → positive exponent\n• Decimal moves RIGHT → negative exponent\n\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:17:46.989205+00:00",
+      "updated_at": "2025-10-20T22:17:46.989205+00:00"
+    },
+    {
+      "id": "08babec9-d958-4fbf-bfab-e8f2a6da1fb4",
+      "lesson_id": "4d711b65-dcda-4fb5-9740-7bfaae194ff2",
+      "position": 3,
+      "title": "Multiplication with Scientific Notation",
+      "problem_text": "What is (2.1 × 10⁴) × (4 × 10⁶)?",
+      "choices": [
+        {
+          "text": "8.4 × 10⁹",
+          "letter": "A"
+        },
+        {
+          "text": "8.4 × 10¹⁰",
+          "letter": "B"
+        },
+        {
+          "text": "8.4 × 10²⁴",
+          "letter": "C"
+        },
+        {
+          "text": "6.1 × 10¹⁰",
+          "letter": "D"
+        },
+        {
+          "text": "2.14 × 10¹⁰",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Multiply digits, add exponents.\n\nStep 1: Multiply digit terms\n2.1 × 4 = 8.4\n\nStep 2: Add exponents\n10⁴ × 10⁶ = 10⁽⁴⁺⁶⁾ = 10¹⁰\n\nStep 3: Combine\n8.4 × 10¹⁰\n\nCheck digit term:\n1 ≤ 8.4 < 10 ✓\nCorrect scientific notation!\n\nMULTIPLICATION RULE:\n(a × 10ᵐ) × (b × 10ⁿ) = (a × b) × 10⁽ᵐ⁺ⁿ⁾\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:17:47.026772+00:00",
+      "updated_at": "2025-10-20T22:17:47.026772+00:00"
+    },
+    {
+      "id": "b8f46c0d-f2e8-4a97-a3a7-f6b053fbe168",
+      "lesson_id": "4d711b65-dcda-4fb5-9740-7bfaae194ff2",
+      "position": 4,
+      "title": "Addition with Scientific Notation",
+      "problem_text": "Which of the following expressions represents the sum of 2.6 × 10⁶ and 7.8 × 10⁵ in scientific notation?",
+      "choices": [
+        {
+          "text": "10.4 × 10⁵",
+          "letter": "A"
+        },
+        {
+          "text": "1.04 × 10⁶",
+          "letter": "B"
+        },
+        {
+          "text": "3.38 × 10⁶",
+          "letter": "C"
+        },
+        {
+          "text": "10.4 × 10¹¹",
+          "letter": "D"
+        },
+        {
+          "text": "8.06 × 10⁶",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Exponents must match before adding.\n\nMethod 1: Convert to same exponent\nStep 1: Convert 2.6 × 10⁶ to 10⁵\n2.6 × 10⁶ = 26 × 10⁵\n\nStep 2: Add digit terms\n26 × 10⁵ + 7.8 × 10⁵ = 33.8 × 10⁵\n\nStep 3: Adjust to proper scientific notation\n33.8 × 10⁵ = 3.38 × 10⁶\n\nMethod 2: Convert to standard form\n2,600,000 + 780,000 = 3,380,000\n= 3.38 × 10⁶\n\nBoth methods work!\n\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:17:47.084868+00:00",
+      "updated_at": "2025-10-20T22:17:47.084868+00:00"
+    },
+    {
+      "id": "8c775a25-f518-407d-b8cf-a9f1341971a4",
+      "lesson_id": "4d711b65-dcda-4fb5-9740-7bfaae194ff2",
+      "position": 5,
+      "title": "Percentage Problems",
+      "problem_text": "What is 8% of 9.02 × 10⁴?",
+      "choices": [
+        {
+          "text": "7,216",
+          "letter": "A"
+        },
+        {
+          "text": "11,275",
+          "letter": "B"
+        },
+        {
+          "text": "72,160",
+          "letter": "C"
+        },
+        {
+          "text": "112,750",
+          "letter": "D"
+        },
+        {
+          "text": "721,600",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "Calculate percentage of scientific notation.\n\nStep 1: Convert percentage to decimal\n8% = 0.08\n\nStep 2: Multiply\n0.08 × (9.02 × 10⁴)\n= (0.08 × 9.02) × 10⁴\n\nStep 3: Calculate digit product\n0.08 × 9.02 = 0.7216\n\nStep 4: Combine\n0.7216 × 10⁴\n\nStep 5: Convert to standard form\n0.7216 × 10,000 = 7,216\n\nAlternatively:\n9.02 × 10⁴ = 90,200\n8% of 90,200 = 0.08 × 90,200 = 7,216\n\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:17:47.145903+00:00",
+      "updated_at": "2025-10-20T22:17:47.145903+00:00"
+    }
+  ]
+}

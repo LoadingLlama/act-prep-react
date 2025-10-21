@@ -1,0 +1,78 @@
+{
+  "lesson_key": "2.5",
+  "lesson_title": "Circles, Ellipses, and Hyperbolas",
+  "examples": [
+    {
+      "id": "bb90866c-6f73-49d8-9118-b9da4ba5edb1",
+      "lesson_id": "0b4b783a-9945-47b9-b3fc-e194374d6818",
+      "position": 2,
+      "title": "Finding Center and Radius",
+      "problem_text": "What are the center and radius of the circle with equation (x-3)²+(y+8)²=25?",
+      "choices": [
+        {
+          "text": "Center (3, -8), radius 5",
+          "letter": "A"
+        },
+        {
+          "text": "Center (-3, 8), radius 5",
+          "letter": "B"
+        },
+        {
+          "text": "Center (3, -8), radius 25",
+          "letter": "C"
+        },
+        {
+          "text": "Center (-3, 8), radius 25",
+          "letter": "D"
+        },
+        {
+          "text": "Center (3, 8), radius 5",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "From (x-h)²+(y-k)²=r²:\n\nCenter: (h,k)=(3,-8)\nNote: (x-3) means h=3, (y+8) means k=-8 (opposite sign!)\n\nRadius: r²=25, so r=5\n\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T19:01:49.758635+00:00",
+      "updated_at": "2025-10-20T19:01:49.758635+00:00"
+    },
+    {
+      "id": "0d107457-8007-4ed4-83d9-eeae081fedf9",
+      "lesson_id": "0b4b783a-9945-47b9-b3fc-e194374d6818",
+      "position": 3,
+      "title": "Completing the Square",
+      "problem_text": "The equation x²+4x+y²-8y+5=0 represents a circle. What is the center of this circle?",
+      "choices": [
+        {
+          "text": "(2, 4)",
+          "letter": "A"
+        },
+        {
+          "text": "(-2, 4)",
+          "letter": "B"
+        },
+        {
+          "text": "(4, -8)",
+          "letter": "C"
+        },
+        {
+          "text": "(-4, 8)",
+          "letter": "D"
+        },
+        {
+          "text": "(2, -4)",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Complete the square:\n\nGroup: (x²+4x)+(y²-8y)=-5\n\nFor x: (4/2)²=4, add 4\nFor y: (-8/2)²=16, add 16\n\n(x²+4x+4)+(y²-8y+16)=-5+4+16\n(x+2)²+(y-4)²=15\n\nCenter: (-2, 4)\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T19:01:49.907518+00:00",
+      "updated_at": "2025-10-20T19:01:49.907518+00:00"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "lesson_key": "6.2",
+  "lesson_title": "Advanced Statistics",
+  "examples": [
+    {
+      "id": "02ded7cd-d395-401b-bbf0-cbeb012a8b4d",
+      "lesson_id": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+      "position": 1,
+      "title": "Basic Probability with Single Selection",
+      "problem_text": "A bag contains 38 candies: 18 blue, 10 red, 5 yellow, 3 green, and 2 pink. If Andy reaches into the bag and picks one candy at random, what is the probability that he will select a yellow candy?",
+      "choices": [
+        {
+          "text": "5/33",
+          "letter": "A"
+        },
+        {
+          "text": "5/18",
+          "letter": "B"
+        },
+        {
+          "text": "5/38",
+          "letter": "C"
+        },
+        {
+          "text": "10/38",
+          "letter": "D"
+        },
+        {
+          "text": "1/5",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Use the basic probability formula: Probability = Desired Outcomes ÷ Total Outcomes\n\nStep 1: Identify desired outcomes\nThere are 5 yellow candies in the bag.\n\nStep 2: Identify total outcomes\nThere are 38 total candies in the bag.\n\nStep 3: Calculate probability\nProbability = 5/38\n\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:54:39.197681+00:00",
+      "updated_at": "2025-10-20T21:54:39.197681+00:00"
+    },
+    {
+      "id": "ba1aee05-e1bc-4024-8edf-0bf59e912b8d",
+      "lesson_id": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+      "position": 2,
+      "title": "Probability of NOT Selecting",
+      "problem_text": "Using the same bag from Example 1 (38 candies: 18 blue, 10 red, 5 yellow, 3 green, 2 pink), what is the probability that Evelyn will NOT pick a blue candy?",
+      "choices": [
+        {
+          "text": "9/19",
+          "letter": "A"
+        },
+        {
+          "text": "10/19",
+          "letter": "B"
+        },
+        {
+          "text": "9/38",
+          "letter": "C"
+        },
+        {
+          "text": "10/38",
+          "letter": "D"
+        },
+        {
+          "text": "18/38",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "To find probability of NOT selecting something, count everything that isn't the unwanted outcome.\n\nStep 1: Count non-blue candies\nBlue candies = 18\nNOT blue = 38 - 18 = 20 candies\n\nStep 2: Calculate probability\nProbability = 20/38\n\nStep 3: Simplify\n20/38 = 10/19\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:54:39.253387+00:00",
+      "updated_at": "2025-10-20T21:54:39.253387+00:00"
+    },
+    {
+      "id": "349438e0-eeba-4e21-ae4b-648ab91a3cdd",
+      "lesson_id": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+      "position": 3,
+      "title": "Multiple Events Without Replacement",
+      "problem_text": "Min will select 2 candies from the bag (38 candies: 18 blue, 10 red, 5 yellow, 3 green, 2 pink) without replacement. What is the probability that she will select a red candy and then a green candy?",
+      "choices": [
+        {
+          "text": "30/1444",
+          "letter": "A"
+        },
+        {
+          "text": "13/76",
+          "letter": "B"
+        },
+        {
+          "text": "15/703",
+          "letter": "C"
+        },
+        {
+          "text": "30/1406",
+          "letter": "D"
+        },
+        {
+          "text": "13/38",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "For multiple events, multiply the probabilities. Without replacement means the total decreases.\n\nStep 1: First selection probability\nP(red first) = 10/38\n\nStep 2: Second selection probability\nAfter removing one candy, 37 remain\nP(green second) = 3/37\n\nStep 3: Multiply probabilities\nP(red AND green) = (10/38) × (3/37)\nP(red AND green) = 30/1406\n\nStep 4: Simplify\n30/1406 = 15/703\n\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:54:39.376873+00:00",
+      "updated_at": "2025-10-20T21:54:39.376873+00:00"
+    },
+    {
+      "id": "ec131968-8669-4453-a382-53dc5433537f",
+      "lesson_id": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+      "position": 4,
+      "title": "Geometric Probability with Area",
+      "problem_text": "A square dartboard has sides of length 10 inches. A circular target with radius 3 inches is painted in the center. If a dart lands randomly on the board, what is the probability it hits the circular target?",
+      "choices": [
+        {
+          "text": "9π/100",
+          "letter": "A"
+        },
+        {
+          "text": "3π/100",
+          "letter": "B"
+        },
+        {
+          "text": "9/100",
+          "letter": "C"
+        },
+        {
+          "text": "3π/10",
+          "letter": "D"
+        },
+        {
+          "text": "9π/10",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "For geometric probability, use areas: Probability = Desired Area ÷ Total Area\n\nStep 1: Find area of square board\nArea = 10 × 10 = 100 square inches\n\nStep 2: Find area of circular target\nArea = πr² = π(3)² = 9π square inches\n\nStep 3: Calculate probability\nProbability = 9π/100\n\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:54:39.425931+00:00",
+      "updated_at": "2025-10-20T21:54:39.425931+00:00"
+    },
+    {
+      "id": "a0b06652-a29e-4dfc-ae6b-d5986b0cce52",
+      "lesson_id": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+      "position": 5,
+      "title": "OR Rule for Multiple Possibilities",
+      "problem_text": "From the bag of 38 candies (18 blue, 10 red, 5 yellow, 3 green, 2 pink), what is the probability of selecting either a red candy OR a yellow candy?",
+      "choices": [
+        {
+          "text": "5/38",
+          "letter": "A"
+        },
+        {
+          "text": "10/38",
+          "letter": "B"
+        },
+        {
+          "text": "13/38",
+          "letter": "C"
+        },
+        {
+          "text": "15/38",
+          "letter": "D"
+        },
+        {
+          "text": "18/38",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "For \"or\" scenarios with mutually exclusive events, add the probabilities OR count total desired outcomes.\n\nMethod 1: Add probabilities\nP(red) = 10/38\nP(yellow) = 5/38\nP(red OR yellow) = 10/38 + 5/38 = 15/38\n\nMethod 2: Count directly (faster!)\nRed candies = 10\nYellow candies = 5\nTotal red or yellow = 15\nProbability = 15/38\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:54:39.56471+00:00",
+      "updated_at": "2025-10-20T21:54:39.56471+00:00"
+    }
+  ]
+}
