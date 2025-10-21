@@ -1,0 +1,134 @@
+{
+  "lesson_key": "sentence-structure",
+  "lesson_title": "Topic 1.1 - Building Complete Sentences",
+  "examples": [
+    {
+      "id": "2dd97a59-68c1-4ffd-9f9a-859c66ad3d46",
+      "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+      "position": 1,
+      "title": "Identifying Sentence Fragments",
+      "problem_text": "In the late 1960s, the \"must-have\" toy at the Cincinnati Toy <u>Fair a</u> new type of diecast toy car that would later become the popular brand Hot Wheels.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "Fair,",
+          "letter": "B"
+        },
+        {
+          "text": "Fair;",
+          "letter": "C"
+        },
+        {
+          "text": "Fair was",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "The original sentence is a fragment because it lacks a main verb.\n\n**Step 1: Read the sentence and identify the problem**\nThe sentence reads: \"In the late 1960s, the \\\"must-have\\\" toy at the Cincinnati Toy Fair a new type of diecast toy car...\"\n\nWhen you read this aloud, you should feel like something is missing. Where is the verb? What happened at the Toy Fair?\n\n**Step 2: Find the split point**\nThe underlined portion is \"Fair a\"—we need to determine what should come after \"Fair\"\n\n**Step 3: Test each choice**\n- **A (NO CHANGE - \"Fair a\"):** Still no verb connecting the subject to what it is. Fragment!\n- **B (\"Fair,\"):** Adds a comma but still no verb. Fragment!\n- **C (\"Fair;\"):** Semicolons connect independent clauses, but neither side is independent without a verb. Fragment!\n- **D (\"Fair was\"):** Perfect! \"Was\" is the linking verb. Now we have: \"The toy...Fair was a new type of diecast toy car.\" Complete sentence!\n\nThe answer is **D**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:09:54.551907+00:00",
+      "updated_at": "2025-10-20T23:09:54.551907+00:00"
+    },
+    {
+      "id": "24649a9d-6d29-405c-903a-1cd0caf6f459",
+      "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+      "position": 2,
+      "title": "Comma + FANBOYS vs. Comma Splices",
+      "problem_text": "After hummingbirds evolved long, thin beaks to reach pollen in flowers<u>, however this</u> evolutionary advantage allowed them to survive entirely on flower nectar, tree sap, and pollen.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": ", therefore this",
+          "letter": "B"
+        },
+        {
+          "text": " and this",
+          "letter": "C"
+        },
+        {
+          "text": "DELETE the underlined portion",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "This tests proper connection between a dependent and independent clause.\n\n**Step 1: Identify the clauses**\n- Left: \"After hummingbirds evolved long, thin beaks to reach pollen in flowers\" → DEPENDENT (starts with \"After\")\n- Right: \"this evolutionary advantage allowed them to survive...\" → INDEPENDENT\n\n**Step 2: Apply the 5 compound sentence rules**\nWe have: Dependent + ? + Independent\n\n**Step 3: Test each choice**\n- **A (\"however\"):** \"However\" is a transition word, not a FANBOYS conjunction. With just a comma, this creates an error.\n- **B (\"therefore\"):** Same problem—\"therefore\" isn't a FANBOYS word.\n- **C (\"and\"):** \"After hummingbirds evolved...flowers and this advantage allowed...\" The FANBOYS word \"and\" properly connects these clauses. Correct!\n- **D (DELETE):** This would create: \"...flowers, this evolutionary advantage...\" While this follows Rule #4 (Dependent + comma + Independent), the connection is unclear.\n\n**Why C is best:**\nThe FANBOYS word \"and\" creates the clearest connection between the evolution and its result.\n\nThe answer is **C**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:09:54.62434+00:00",
+      "updated_at": "2025-10-20T23:09:54.62434+00:00"
+    },
+    {
+      "id": "933a6481-70d3-4091-98b1-fa6f887389a8",
+      "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+      "position": 3,
+      "title": "Fixing Comma Splices",
+      "problem_text": "Hockey is my favorite <u>sport, although</u> I cannot skate very well.\\n\\nWhich of the following alternatives to the underlined portion would be acceptable?",
+      "choices": [
+        {
+          "text": "sport, but",
+          "letter": "A"
+        },
+        {
+          "text": "sport even though",
+          "letter": "B"
+        },
+        {
+          "text": "sport, so",
+          "letter": "C"
+        },
+        {
+          "text": "sport; although",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "This asks which alternative is ACCEPTABLE (grammatically correct).\n\n**Step 1: Analyze the structure**\n- Left: \"Hockey is my favorite sport\" (independent)\n- Right: \"I cannot skate very well\" (independent when we remove \"although\")\n\n**Step 2: Test each choice**\n- **A (\"sport, but\"):** Independent + comma + FANBOYS + Independent. Follows Rule #2 perfectly! Correct!\n\n- **B (\"sport even though\"):** Independent + no comma + Dependent. This follows Rule #5! Also correct grammatically!\n\n- **C (\"sport, so\"):** Grammatically this follows Rule #2, BUT logically it doesn't make sense. Being bad at skating isn't CAUSED by loving hockey. Incorrect due to illogical meaning.\n\n- **D (\"sport; although\"):** Semicolons must connect TWO independent clauses, but \"although I cannot skate very well\" is dependent. Incorrect!\n\n**Why A is the best answer:**\nChoice A properly uses comma + FANBOYS and maintains logical meaning (contrast between loving hockey BUT being unable to skate).\n\nThe answer is **A**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:09:54.720371+00:00",
+      "updated_at": "2025-10-20T23:09:54.720371+00:00"
+    },
+    {
+      "id": "9d0d69c7-b3bd-4aba-b5c5-a58a36e29cdd",
+      "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+      "position": 4,
+      "title": "Dependent Clauses Creating Fragments",
+      "problem_text": "<u>While the bakery varies its types of bread</u> with the seasons, ranging from tomato basil loafs in the summer to olive rosemary focaccia in the fall, and always has a line around the block.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "Having various types of bread",
+          "letter": "B"
+        },
+        {
+          "text": "With the bakery having varied bread types",
+          "letter": "C"
+        },
+        {
+          "text": "The bakery varies its types of bread",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "This sentence is a fragment disguised as a complex sentence.\n\n**Step 1: Read the sentence aloud**\nDo you feel like you can stop at the end? No! You're left waiting for more.\n\n**Step 2: Identify the problem**\nThe sentence starts with \"While,\" making the entire thing a dependent clause with no independent clause to complete it. This is a FRAGMENT.\n\n**Step 3: Test each choice**\n- **A (\"While the bakery varies\"):** The whole sentence is dependent with no independent clause. Fragment!\n\n- **B (\"Having various types of bread\"):** \"Having\" creates a participial phrase, not an independent clause. Still a fragment!\n\n- **C (\"With the bakery having varied\"):** \"With\" creates a prepositional phrase. Still no independent clause. Fragment!\n\n- **D (\"The bakery varies its types of bread\"):** Now we have:\n  - Subject: \"The bakery\"\n  - Verbs: \"varies\" and \"has\"\n  - Complete sentence: \"The bakery varies its types of bread...and always has a line around the block.\"\n\n  This is a complete independent clause! Correct!\n\n**Why D is correct:**\nRemoving \"While\" transforms the dependent clause into an independent clause with a clear subject and verbs.\n\nThe answer is **D**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:09:54.777964+00:00",
+      "updated_at": "2025-10-20T23:09:54.777964+00:00"
+    }
+  ]
+}

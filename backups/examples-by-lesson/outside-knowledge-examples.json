@@ -1,0 +1,70 @@
+{
+  "lesson_key": "outside-knowledge",
+  "lesson_title": "Topic 4.3 - Other Outside Knowledge",
+  "examples": [
+    {
+      "id": "599f8651-8e2d-4793-bb97-382a4a429f8a",
+      "lesson_id": "e735446e-a5c1-4ba3-b952-e6a5bc05c2ca",
+      "position": 1,
+      "title": "Using pH Knowledge to Classify Substances",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">A chemistry student measured the pH of five common household substances using pH paper.</p>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Table 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Description:</strong> Measured pH values for household substances.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Substance</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">pH</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">Lemon juice</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">2.3</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">Pure water</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">7.0</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">Baking soda solution</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">8.5</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">Vinegar</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">3.1</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">Bleach</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">12.5</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">Based on Table 1, which substances are classified as bases?</p>",
+      "choices": [
+        {
+          "text": "Lemon juice and vinegar only",
+          "letter": "A"
+        },
+        {
+          "text": "Pure water only",
+          "letter": "B"
+        },
+        {
+          "text": "Baking soda solution and bleach only",
+          "letter": "C"
+        },
+        {
+          "text": "All five substances",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Recall pH scale basics**\nThe pH scale measures acidity and basicity:\n- pH < 7 → Acidic\n- pH = 7 → Neutral\n- pH > 7 → Basic (also called alkaline)\n\n**Step 2: Classify each substance**\nLemon juice: pH = 2.3 → Less than 7 → Acidic\nPure water: pH = 7.0 → Equal to 7 → Neutral\nBaking soda solution: pH = 8.5 → Greater than 7 → Basic ✓\nVinegar: pH = 3.1 → Less than 7 → Acidic\nBleach: pH = 12.5 → Greater than 7 → Basic ✓\n\n**Step 3: Identify which are bases**\nOnly substances with pH > 7 are bases:\n- Baking soda solution (pH 8.5)\n- Bleach (pH 12.5)\n\n**Step 4: Evaluate answer choices**\nA. Lemon juice and vinegar → Both are acidic (pH < 7), not basic ✗\nB. Pure water → pH = 7 is neutral, not basic ✗\nC. Baking soda and bleach → Both have pH > 7, so both are basic ✓\nD. All five → No, lemon juice, water, and vinegar are not basic ✗\n\n**The answer is C.**\n\nBases are substances with pH greater than 7. Only baking soda solution (8.5) and bleach (12.5) meet this criterion.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T17:10:00.318512+00:00",
+      "updated_at": "2025-10-21T17:10:00.318512+00:00"
+    },
+    {
+      "id": "afb520c8-4c11-4896-b05b-7aa7560901ff",
+      "lesson_id": "e735446e-a5c1-4ba3-b952-e6a5bc05c2ca",
+      "position": 2,
+      "title": "Applying Photosynthesis Knowledge",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">A scientist placed identical plants in four different environments and measured their growth after 2 weeks. All plants received the same amount of water.</p>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Table 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Description:</strong> Environmental conditions and plant growth.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Environment</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Light Exposure</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">CO₂ Level</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Growth (cm)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">A</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">High</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">High</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">18</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">B</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">High</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">Low</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">12</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">C</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">Low</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">High</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">8</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">D</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">None</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">High</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">1</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">Based on Table 1 and knowledge of photosynthesis, which statement best explains the results?</p>",
+      "choices": [
+        {
+          "text": "CO₂ level is the only factor affecting plant growth",
+          "letter": "A"
+        },
+        {
+          "text": "Light is essential for photosynthesis and plant growth",
+          "letter": "B"
+        },
+        {
+          "text": "Plants can grow equally well with or without light",
+          "letter": "C"
+        },
+        {
+          "text": "High CO₂ can compensate for lack of light",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Recall photosynthesis basics**\nPhotosynthesis is the process plants use to make food:\n- Requires: Light + CO₂ + H₂O\n- Produces: Glucose (food) + O₂\n\nLight is absolutely essential - without it, photosynthesis cannot occur.\n\n**Step 2: Analyze the data for light's effect**\nCompare environments with and without light:\n- Environment A (High light, High CO₂): 18 cm growth\n- Environment B (High light, Low CO₂): 12 cm growth\n- Environment C (Low light, High CO₂): 8 cm growth\n- Environment D (NO light, High CO₂): 1 cm growth\n\nPattern: As light decreases, growth decreases dramatically.\n\n**Step 3: Focus on Environment D**\nEnvironment D had:\n- NO light\n- High CO₂ (same as Environment A)\n- Growth = only 1 cm (much less than Environment A's 18 cm)\n\nEven though D had high CO₂, the lack of light resulted in almost no growth. This shows light cannot be replaced by CO₂.\n\n**Step 4: Evaluate answer choices**\nA. CO₂ is the only factor → False. Environment A and D both had high CO₂ but very different growth (18 vs 1 cm) ✗\n\nB. Light is essential → True. Without light (Environment D), there was minimal growth even with high CO₂ ✓\n\nC. Grow equally without light → False. Environment D (no light) had only 1 cm vs 18 cm in Environment A ✗\n\nD. High CO₂ compensates for lack of light → False. Environment D had high CO₂ but no light, and grew only 1 cm ✗\n\n**The answer is B.**\n\nThe data clearly shows that light is essential. Environment D with no light grew only 1 cm despite having high CO₂, while Environment A with high light grew 18 cm. This aligns with photosynthesis requiring light energy to function.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T17:10:00.40087+00:00",
+      "updated_at": "2025-10-21T17:10:00.40087+00:00"
+    }
+  ]
+}

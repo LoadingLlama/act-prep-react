@@ -1,0 +1,186 @@
+{
+  "lesson_key": "matrices",
+  "lesson_title": "Topic 7.3 - Matrices",
+  "examples": [
+    {
+      "id": "afea10b2-a584-4924-b322-2cdb56b360c9",
+      "lesson_id": "6e95c291-2e8a-4ae9-8f7e-10caad8588b9",
+      "position": 1,
+      "title": "Matrix Addition",
+      "problem_text": "What is the sum of [[1, 2], [3, 4]] and [[5, 6], [7, 8]]?",
+      "choices": [
+        {
+          "text": "[[6, 8], [10, 12]]",
+          "letter": "A"
+        },
+        {
+          "text": "[[5, 12], [21, 32]]",
+          "letter": "B"
+        },
+        {
+          "text": "[[6, 8]]",
+          "letter": "C"
+        },
+        {
+          "text": "[[10, 12]]",
+          "letter": "D"
+        },
+        {
+          "text": "Undefined",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "Add corresponding elements in each position.\n\nStep 1: Check dimensions\nBoth are (2 × 2) matrices\nDimensions match → addition is defined ✓\n\nStep 2: Add element by element\nPosition (1,1): 1 + 5 = 6\nPosition (1,2): 2 + 6 = 8\nPosition (2,1): 3 + 7 = 10\nPosition (2,2): 4 + 8 = 12\n\nStep 3: Write result\n[[6, 8], [10, 12]]\n\nResult has same dimensions (2 × 2)\n\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:33:33.524789+00:00",
+      "updated_at": "2025-10-20T22:33:33.524789+00:00"
+    },
+    {
+      "id": "92d71651-6300-4d34-b11e-d7a83de48c0f",
+      "lesson_id": "6e95c291-2e8a-4ae9-8f7e-10caad8588b9",
+      "position": 2,
+      "title": "Scalar Multiplication",
+      "problem_text": "What is 3 × [[2, 4], [6, 8]]?",
+      "choices": [
+        {
+          "text": "[[5, 7], [9, 11]]",
+          "letter": "A"
+        },
+        {
+          "text": "[[6, 12], [18, 24]]",
+          "letter": "B"
+        },
+        {
+          "text": "[[6, 12]]",
+          "letter": "C"
+        },
+        {
+          "text": "[[2, 4], [6, 8]]",
+          "letter": "D"
+        },
+        {
+          "text": "[[24]]",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Multiply every element by the scalar.\n\nStep 1: Identify scalar\nScalar = 3\n\nStep 2: Multiply each element by 3\nPosition (1,1): 3 × 2 = 6\nPosition (1,2): 3 × 4 = 12\nPosition (2,1): 3 × 6 = 18\nPosition (2,2): 3 × 8 = 24\n\nStep 3: Write result\n[[6, 12], [18, 24]]\n\nDimensions stay the same (2 × 2)\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:33:33.727006+00:00",
+      "updated_at": "2025-10-20T22:33:33.727006+00:00"
+    },
+    {
+      "id": "341a5936-87fa-4c1b-b027-92f2e54d3381",
+      "lesson_id": "6e95c291-2e8a-4ae9-8f7e-10caad8588b9",
+      "position": 3,
+      "title": "Determinant of 2×2 Matrix",
+      "problem_text": "What is the determinant of [[3, 5], [2, 4]]?",
+      "choices": [
+        {
+          "text": "22",
+          "letter": "A"
+        },
+        {
+          "text": "12",
+          "letter": "B"
+        },
+        {
+          "text": "10",
+          "letter": "C"
+        },
+        {
+          "text": "2",
+          "letter": "D"
+        },
+        {
+          "text": "-2",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Use determinant formula: ad - bc.\n\nStep 1: Identify elements\nMatrix: [[a, b], [c, d]]\n= [[3, 5], [2, 4]]\na = 3, b = 5, c = 2, d = 4\n\nStep 2: Apply formula\ndet = ad - bc\n= (3)(4) - (5)(2)\n= 12 - 10\n= 2\n\nRemember the pattern:\nMultiply main diagonal (↘): 3 × 4\nSubtract other diagonal (↙): 5 × 2\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:33:33.80902+00:00",
+      "updated_at": "2025-10-20T22:33:33.80902+00:00"
+    },
+    {
+      "id": "dca7b39d-3ff3-4e27-bb0a-eaea41fb201d",
+      "lesson_id": "6e95c291-2e8a-4ae9-8f7e-10caad8588b9",
+      "position": 4,
+      "title": "Matrix Multiplication - Defined or Undefined",
+      "problem_text": "If matrix A is (2 × 3) and matrix B is (2 × 2), is AB defined?",
+      "choices": [
+        {
+          "text": "Yes, result is (2 × 2)",
+          "letter": "A"
+        },
+        {
+          "text": "Yes, result is (2 × 3)",
+          "letter": "B"
+        },
+        {
+          "text": "Yes, result is (3 × 2)",
+          "letter": "C"
+        },
+        {
+          "text": "No, undefined",
+          "letter": "D"
+        },
+        {
+          "text": "Yes, result is (4 × 6)",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Check if middle numbers match.\n\nStep 1: Write dimensions\nAB = (2 × 3) × (2 × 2)\n\nStep 2: Box middle numbers\n(2 × [3) × (2] × 2)\n\nStep 3: Check if they match\nMiddle numbers: 3 and 2\n3 ≠ 2 → They do NOT match!\n\nStep 4: Conclusion\nAB is UNDEFINED\n\nRule: Number of columns in first matrix\nmust equal number of rows in second matrix\nColumns in A = 3\nRows in B = 2\n3 ≠ 2, so undefined\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:33:33.879718+00:00",
+      "updated_at": "2025-10-20T22:33:33.879718+00:00"
+    },
+    {
+      "id": "b1ee40de-3650-46d4-983d-94c7b9ecba4c",
+      "lesson_id": "6e95c291-2e8a-4ae9-8f7e-10caad8588b9",
+      "position": 5,
+      "title": "Matrix Multiplication - Finding Values",
+      "problem_text": "What is [[2, 1], [3, 4]] × [[1, 0], [2, 3]]?",
+      "choices": [
+        {
+          "text": "[[4, 3], [11, 12]]",
+          "letter": "A"
+        },
+        {
+          "text": "[[2, 0], [6, 12]]",
+          "letter": "B"
+        },
+        {
+          "text": "[[4, 3]]",
+          "letter": "C"
+        },
+        {
+          "text": "[[3, 4], [14, 15]]",
+          "letter": "D"
+        },
+        {
+          "text": "[[3, 2], [10, 11]]",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "Multiply: work across rows, down columns.\n\nStep 1: Check if defined\n(2 × 2) × (2 × 2) → defined, result is (2 × 2)\n\nStep 2: Top-left element\nRow 1 [2, 1] × Column 1 [1, 2]\n= (2)(1) + (1)(2) = 2 + 2 = 4\n\nStep 3: Top-right element\nRow 1 [2, 1] × Column 2 [0, 3]\n= (2)(0) + (1)(3) = 0 + 3 = 3\n\nStep 4: Bottom-left element\nRow 2 [3, 4] × Column 1 [1, 2]\n= (3)(1) + (4)(2) = 3 + 8 = 11\n\nStep 5: Bottom-right element\nRow 2 [3, 4] × Column 2 [0, 3]\n= (3)(0) + (4)(3) = 0 + 12 = 12\n\nResult: [[4, 3], [11, 12]]\n\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:33:33.941884+00:00",
+      "updated_at": "2025-10-20T22:33:33.941884+00:00"
+    }
+  ]
+}

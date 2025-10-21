@@ -1,0 +1,186 @@
+{
+  "lesson_key": "trigonometry",
+  "lesson_title": "Topic 7.1 - Trigonometry",
+  "examples": [
+    {
+      "id": "950202aa-9b91-4d8f-8e3a-f70db578e587",
+      "lesson_id": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+      "position": 1,
+      "title": "Finding Cosine Using SOH-CAH-TOA",
+      "problem_text": "In a right triangle, the side adjacent to angle B is 5 and the hypotenuse is 5√5. What is the value of cos(B)?",
+      "choices": [
+        {
+          "text": "1",
+          "letter": "A"
+        },
+        {
+          "text": "1/√5",
+          "letter": "B"
+        },
+        {
+          "text": "√5",
+          "letter": "C"
+        },
+        {
+          "text": "5",
+          "letter": "D"
+        },
+        {
+          "text": "1/5",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Use CAH from SOH-CAH-TOA.\n\nStep 1: Identify what cosine needs\ncos = Adjacent / Hypotenuse\n\nStep 2: Plug in values\nAdjacent to B = 5\nHypotenuse = 5√5\n\nStep 3: Set up fraction\ncos(B) = 5 / (5√5)\n\nStep 4: Simplify\n= 5 / (5√5)\n= 1 / √5\n\nNote: ACT sometimes leaves √ in denominator\n(doesn't require rationalization)\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:26:36.830441+00:00",
+      "updated_at": "2025-10-20T22:26:36.830441+00:00"
+    },
+    {
+      "id": "1c352f17-1313-4ab2-a2bc-e0cc5af19534",
+      "lesson_id": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+      "position": 2,
+      "title": "Finding Tangent with Pythagorean Theorem",
+      "problem_text": "In a right triangle, the side opposite angle A is 4 and the hypotenuse is 7. What is the value of tan(A)?",
+      "choices": [
+        {
+          "text": "4/7",
+          "letter": "A"
+        },
+        {
+          "text": "4/√33",
+          "letter": "B"
+        },
+        {
+          "text": "√33/4",
+          "letter": "C"
+        },
+        {
+          "text": "7/4",
+          "letter": "D"
+        },
+        {
+          "text": "4/3",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Find adjacent side first using Pythagorean theorem.\n\nStep 1: Identify what tangent needs\ntan = Opposite / Adjacent\nOpposite = 4 (given)\nAdjacent = ? (unknown)\n\nStep 2: Use Pythagorean theorem\na² + b² = c²\n4² + (adjacent)² = 7²\n16 + (adjacent)² = 49\n(adjacent)² = 33\nadjacent = √33\n\nStep 3: Calculate tangent\ntan(A) = Opposite / Adjacent\n= 4 / √33\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:26:37.005553+00:00",
+      "updated_at": "2025-10-20T22:26:37.005553+00:00"
+    },
+    {
+      "id": "b3eb8dde-beb6-4fd6-8f19-333d576b9a95",
+      "lesson_id": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+      "position": 3,
+      "title": "Finding Secant (Reciprocal Function)",
+      "problem_text": "In a right triangle, if tan(q) = 15/13, what is the value of sec(q)?",
+      "choices": [
+        {
+          "text": "13/√394",
+          "letter": "A"
+        },
+        {
+          "text": "15/√394",
+          "letter": "B"
+        },
+        {
+          "text": "√394/15",
+          "letter": "C"
+        },
+        {
+          "text": "√394/13",
+          "letter": "D"
+        },
+        {
+          "text": "13/15",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Use tangent to find sides, then calculate secant.\n\nStep 1: Draw triangle from tangent\ntan(q) = Opposite / Adjacent = 15/13\nOpposite = 15\nAdjacent = 13\n\nStep 2: Find hypotenuse (Pythagorean theorem)\n13² + 15² = c²\n169 + 225 = c²\n394 = c²\nc = √394\n\nStep 3: Calculate secant\nsec = Hypotenuse / Adjacent\n= √394 / 13\n\nAlternative method:\ncos(q) = 13/√394\nsec(q) = flip it = √394/13\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:26:37.114609+00:00",
+      "updated_at": "2025-10-20T22:26:37.114609+00:00"
+    },
+    {
+      "id": "0f488275-5466-4252-9d6a-ee84f469141c",
+      "lesson_id": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+      "position": 4,
+      "title": "Inverse Trig to Find Angle",
+      "problem_text": "In a right triangle, the side opposite angle A is 30 and the hypotenuse is 55. Which expression gives the degree measure of angle A?",
+      "choices": [
+        {
+          "text": "tan⁻¹(30/55)",
+          "letter": "A"
+        },
+        {
+          "text": "tan⁻¹(55/30)",
+          "letter": "B"
+        },
+        {
+          "text": "sin⁻¹(55/30)",
+          "letter": "C"
+        },
+        {
+          "text": "sin⁻¹(30/55)",
+          "letter": "D"
+        },
+        {
+          "text": "cos⁻¹(30/55)",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Use inverse sine for opposite and hypotenuse.\n\nStep 1: Identify what we have\nOpposite = 30\nHypotenuse = 55\nNeed angle A\n\nStep 2: Choose trig function\nSine uses Opposite and Hypotenuse\nsin(A) = Opposite / Hypotenuse = 30/55\n\nStep 3: Use inverse to find angle\nA = sin⁻¹(30/55)\n\nWHY NOT TANGENT:\nTangent needs Opposite/Adjacent\nWe have Opposite/Hypotenuse\nSo must use sine!\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:26:37.20341+00:00",
+      "updated_at": "2025-10-20T22:26:37.20341+00:00"
+    },
+    {
+      "id": "41a4553e-c28f-473a-8c7d-69b07a92033b",
+      "lesson_id": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+      "position": 5,
+      "title": "Pythagorean Identity",
+      "problem_text": "If 3sin²(θ) + 3cos²(θ) = a, what is the value of a?",
+      "choices": [
+        {
+          "text": "0",
+          "letter": "A"
+        },
+        {
+          "text": "1",
+          "letter": "B"
+        },
+        {
+          "text": "3",
+          "letter": "C"
+        },
+        {
+          "text": "6",
+          "letter": "D"
+        },
+        {
+          "text": "9",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Use the Pythagorean identity.\n\nStep 1: Recall the identity\nsin²(θ) + cos²(θ) = 1\n(True for ALL angles)\n\nStep 2: Factor out 3\n3sin²(θ) + 3cos²(θ) = a\n3(sin²(θ) + cos²(θ)) = a\n\nStep 3: Apply identity\n3(1) = a\n\nStep 4: Solve\na = 3\n\nVerification (Substitution):\nPick any angle, say θ = 30°\n3sin²(30°) + 3cos²(30°)\n= 3(0.5)² + 3(0.866)²\n= 3(0.25) + 3(0.75)\n= 0.75 + 2.25 = 3 ✓\n\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:26:37.295505+00:00",
+      "updated_at": "2025-10-20T22:26:37.295505+00:00"
+    }
+  ]
+}

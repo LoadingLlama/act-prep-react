@@ -1,0 +1,134 @@
+{
+  "lesson_key": "word-choice",
+  "lesson_title": "Topic 2.2 - Word Choice",
+  "examples": [
+    {
+      "id": "bc9a4158-faac-4996-9053-18c620ac98f6",
+      "lesson_id": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+      "position": 1,
+      "title": "Identifying Context",
+      "problem_text": "The documentary <u>exhibited</u> rare footage of the endangered species in its natural habitat.\n\nWhich choice is clearest and most precise in context?",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "displayed",
+          "letter": "B"
+        },
+        {
+          "text": "revealed",
+          "letter": "C"
+        },
+        {
+          "text": "outlined",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "The context suggests the footage was previously unseen or hidden. \"Revealed\" means to uncover or make known something that was hidden, which fits perfectly with \"rare footage.\" \"Exhibited\" and \"displayed\" mean to show something on purpose, but don't capture the sense of discovery. \"Outlined\" means to give a summary, which doesn't fit visual footage. The answer is **C**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:29:42.40626+00:00",
+      "updated_at": "2025-10-21T00:29:42.40626+00:00"
+    },
+    {
+      "id": "7faec793-cbd2-4e65-81a9-940c4a1ee2d5",
+      "lesson_id": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+      "position": 2,
+      "title": "Testing Each Word",
+      "problem_text": "After reading my paper, my teacher was <u>adamant</u> that I needed to learn how to properly cite my sources.\n\nWhich choice is clearest and most precise in context?",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "ecstatic",
+          "letter": "B"
+        },
+        {
+          "text": "eminent",
+          "letter": "C"
+        },
+        {
+          "text": "trivial",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "\"Adamant\" means firmly insistent, which fits the context of the teacher strongly emphasizing the need to cite sources. \"Ecstatic\" means extremely happy, which doesn't fit. \"Eminent\" means famous or distinguished, which describes a person's status, not their attitude. \"Trivial\" means unimportant, which is the opposite of what the teacher is conveying. The answer is **A**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:29:42.467256+00:00",
+      "updated_at": "2025-10-21T00:29:42.467256+00:00"
+    },
+    {
+      "id": "3893c3d2-6523-4805-8413-09c4b15631cb",
+      "lesson_id": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+      "position": 3,
+      "title": "Using Known Words",
+      "problem_text": "When I first moved in, the passing train woke me up every night. However, I can now just <u>tune it out</u> and sleep through the entire night.\n\nWhich choice is clearest and most precise in context?",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "scorn it",
+          "letter": "B"
+        },
+        {
+          "text": "snub it",
+          "letter": "C"
+        },
+        {
+          "text": "overlook it",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "\"Tune it out\" is a common phrase meaning to ignore or block out a sound, which perfectly fits the context of ignoring train noise. \"Scorn\" means to treat with contempt, which doesn't fit ignoring a sound. \"Snub\" means to deliberately ignore someone in a rude way. \"Overlook\" means to fail to notice, but the speaker is aware of the train—they're choosing to ignore it. The simple, familiar phrase \"tune it out\" is correct. The answer is **A**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:29:42.535525+00:00",
+      "updated_at": "2025-10-21T00:29:42.535525+00:00"
+    },
+    {
+      "id": "d02089c7-880d-4c79-b2fb-608ca6514113",
+      "lesson_id": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+      "position": 4,
+      "title": "Similar Meanings, Different Uses",
+      "problem_text": "The officials must be <u>dispassionate about</u> the outcome of the game in order to do their jobs properly.\n\nWhich choice is clearest and most precise in context?",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "unbiased with",
+          "letter": "B"
+        },
+        {
+          "text": "disinterested in",
+          "letter": "C"
+        },
+        {
+          "text": "without care in regarding",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Officials need to be neutral and not favor one side. \"Disinterested\" means impartial or unbiased, which is exactly what officials should be. \"Dispassionate\" means without emotion, which is related but doesn't emphasize the lack of favoritism. \"Unbiased with\" has the wrong preposition (should be \"about\" or nothing). \"Without care in regarding\" is wordy and awkward. The answer is **C**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:29:42.62846+00:00",
+      "updated_at": "2025-10-21T00:29:42.62846+00:00"
+    }
+  ]
+}

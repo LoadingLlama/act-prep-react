@@ -1,0 +1,134 @@
+{
+  "lesson_key": "which-choice",
+  "lesson_title": "Topic 2.4 - Which Choice Questions",
+  "examples": [
+    {
+      "id": "2babbcec-aa65-446d-92e3-d57c6fe843bf",
+      "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+      "position": 1,
+      "title": "Specific Description",
+      "problem_text": "Before refrigerators, Americans kept food cold in <u>iceboxes, which required ice to be bought and placed into the box each week</u>.\n\nWhich choice most specifically describes what was used to build iceboxes?",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "iceboxes, which were only cold enough to keep food cool but not freeze anything.",
+          "letter": "B"
+        },
+        {
+          "text": "wooden boxes with tin and insulated with cork and sawdust.",
+          "letter": "C"
+        },
+        {
+          "text": "the very first invention that allowed people to keep food cold in their houses.",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "The question asks what was used to BUILD iceboxes—materials and construction. Only choice C mentions materials (wooden boxes, tin, cork, sawdust). Choice A talks about using the icebox, not building it. Choice B describes what it could do, not what it was made of. Choice D is vague history. The answer is **C**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:43:56.616223+00:00",
+      "updated_at": "2025-10-21T00:43:56.616223+00:00"
+    },
+    {
+      "id": "ca93e028-348d-449b-8355-da659eb75061",
+      "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+      "position": 2,
+      "title": "Emphasis Question",
+      "problem_text": "Harold always begged for grow-in-water dinosaurs that <u>sprawl</u> when placed into water.\n\nWhich choice most clearly emphasizes how the dinosaurs increase in size?",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "change in size",
+          "letter": "B"
+        },
+        {
+          "text": "expand",
+          "letter": "C"
+        },
+        {
+          "text": "soak",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "The question asks which word emphasizes the SIZE INCREASE. \"Expand\" directly means to increase in size. \"Sprawl\" means to spread out carelessly. \"Change in size\" is vague. \"Soak\" describes absorbing water, not growing. The answer is **C**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:43:56.783346+00:00",
+      "updated_at": "2025-10-21T00:43:56.783346+00:00"
+    },
+    {
+      "id": "b5a67adc-d18b-4d3d-8c55-6e5077f2042c",
+      "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+      "position": 3,
+      "title": "Don't Overthink It",
+      "problem_text": "The scientist discovered <u>a new species of butterfly in the rainforest</u>.\n\nWhich choice provides the most relevant detail about where in the rainforest the discovery was made?",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "a new species of butterfly near the river in the lower canopy of the rainforest",
+          "letter": "B"
+        },
+        {
+          "text": "a new species of butterfly, which was very colorful",
+          "letter": "C"
+        },
+        {
+          "text": "a beautiful new species of butterfly in the rainforest",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "The question asks for detail about WHERE IN THE RAINFOREST. Choice B is the only one that specifies location within the rainforest (near the river, lower canopy). Choice A just says \"in the rainforest\" without specifics. Choice C describes the butterfly, not location. Choice D adds \"beautiful\" but no location detail. The answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:43:56.91649+00:00",
+      "updated_at": "2025-10-21T00:43:56.91649+00:00"
+    },
+    {
+      "id": "6882854e-be3d-4b3e-a77a-b3d0fe3a8a59",
+      "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+      "position": 4,
+      "title": "Just Answer What's Asked",
+      "problem_text": "The concert was <u>loud and energetic</u>.\n\nWhich choice best conveys the overwhelming intensity of the concert experience?",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "fun",
+          "letter": "B"
+        },
+        {
+          "text": "an assault on the senses",
+          "letter": "C"
+        },
+        {
+          "text": "attended by many people",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "The question asks for OVERWHELMING INTENSITY. \"An assault on the senses\" conveys intense, almost overwhelming sensation. \"Loud and energetic\" is accurate but not overwhelming. \"Fun\" is too casual. \"Attended by many people\" doesn't describe intensity at all. The answer is **C**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:43:57.094549+00:00",
+      "updated_at": "2025-10-21T00:43:57.094549+00:00"
+    }
+  ]
+}

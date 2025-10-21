@@ -1,0 +1,114 @@
+{
+  "lesson_key": "substitution",
+  "lesson_title": "Topic 1.2 - Number Substitution Technique",
+  "examples": [
+    {
+      "id": "ef7c906b-3e78-4775-b964-366a27f61a55",
+      "lesson_id": "56a20188-c413-48c6-b1ba-6cbddf9ba247",
+      "position": 1,
+      "title": "Variable Expression with Percents",
+      "problem_text": "Jeremy has n boxes of candy bars. Each box contains m bars of candy. Jeremy has to sell 70% of his candy bars to make enough money for rent. Which of the following expresses the number of candy bars Jeremy must sell in terms of m and n?",
+      "choices": [
+        {
+          "text": "0.7(m + n)",
+          "letter": "A"
+        },
+        {
+          "text": "70nm",
+          "letter": "B"
+        },
+        {
+          "text": "nm + m",
+          "letter": "C"
+        },
+        {
+          "text": "0.7nm",
+          "letter": "D"
+        },
+        {
+          "text": "0.7(n + m)",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Use number substitution to make this easier. Let's say Jeremy has 2 boxes (n = 2) and each box contains 5 bars (m = 5). Total candy bars: 2 × 5 = 10 bars. He needs to sell 70% of them: 0.7 × 10 = 7 bars. Now test the answer choices with n = 2 and m = 5:\n\nA. 0.7(m + n) = 0.7(5 + 2) = 0.7(7) = 4.9 ✗\nB. 70nm = 70(2)(5) = 700 ✗\nC. nm + m = (2)(5) + 5 = 15 ✗\nD. 0.7nm = 0.7(2)(5) = 7 ✓\nE. 0.7(n + m) = 0.7(2 + 5) = 4.9 ✗\n\nOnly D gives us 7, which matches our target answer.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T17:53:43.55195+00:00",
+      "updated_at": "2025-10-20T17:53:43.55195+00:00"
+    },
+    {
+      "id": "4efda740-34f5-4134-899a-b02756b7e9fc",
+      "lesson_id": "56a20188-c413-48c6-b1ba-6cbddf9ba247",
+      "position": 2,
+      "title": "Trigonometry with Unknown Angle",
+      "problem_text": "If cos(2x°) = a, which of the following must be true for all values of x, in degrees?",
+      "choices": [
+        {
+          "text": "sin(2x°) = a",
+          "letter": "A"
+        },
+        {
+          "text": "sin(x° + 90°) = a",
+          "letter": "B"
+        },
+        {
+          "text": "cos(90° - 2x°) = a",
+          "letter": "C"
+        },
+        {
+          "text": "sin(90° - 2x°) = a",
+          "letter": "D"
+        },
+        {
+          "text": "cos(x° + 90°) = a",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "The easiest way to solve this is to pick a value for x and use your calculator. Let's pick x = 10°.\n\nFirst, find what a equals when x = 10°:\ncos(2 × 10°) = cos(20°) = 0.9397\n\nSo a = 0.9397. Now plug x = 10° into each answer choice and see which equals 0.9397:\n\nA. sin(2 × 10°) = sin(20°) = 0.3420 ✗\nB. sin(10° + 90°) = sin(100°) = 0.9848 ✗\nC. cos(90° - 20°) = cos(70°) = 0.3420 ✗\nD. sin(90° - 20°) = sin(70°) = 0.9397 ✓\nE. cos(10° + 90°) = cos(100°) = -0.1736 ✗\n\nOnly D matches! Note: Make sure your calculator is in degree mode, not radian mode.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T17:53:43.627577+00:00",
+      "updated_at": "2025-10-20T17:53:43.627577+00:00"
+    },
+    {
+      "id": "1734e1eb-5885-47c6-a21e-d49905e1ca40",
+      "lesson_id": "56a20188-c413-48c6-b1ba-6cbddf9ba247",
+      "position": 3,
+      "title": "Geometry Transformation",
+      "problem_text": "If the length of a rectangle is tripled and the width is halved, how many times larger is the area of the new rectangle than the area of the original rectangle?",
+      "choices": [
+        {
+          "text": "1.5",
+          "letter": "A"
+        },
+        {
+          "text": "2",
+          "letter": "B"
+        },
+        {
+          "text": "3",
+          "letter": "C"
+        },
+        {
+          "text": "4",
+          "letter": "D"
+        },
+        {
+          "text": "6",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "To make this question easier, pick simple values for the length and width. Let's say:\n- Original length = 3\n- Original width = 2\n- Original area = 3 × 2 = 6\n\nNow apply the transformations:\n- New length = 3 × 3 = 9 (tripled)\n- New width = 2 ÷ 2 = 1 (halved)\n- New area = 9 × 1 = 9\n\nCompare the areas:\nNew area ÷ Original area = 9 ÷ 6 = 1.5\n\nThe new rectangle is 1.5 times as large as the original. The answer is A.\n\nNote: This works with any numbers you choose for length and width!",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T17:53:43.676219+00:00",
+      "updated_at": "2025-10-20T17:53:43.676219+00:00"
+    }
+  ]
+}

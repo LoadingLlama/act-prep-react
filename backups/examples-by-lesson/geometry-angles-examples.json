@@ -1,0 +1,114 @@
+{
+  "lesson_key": "geometry-angles",
+  "lesson_title": "Topic 2.1 - Understanding Angles & Lines",
+  "examples": [
+    {
+      "id": "04876f81-90f6-46e8-b0e5-0e2eb9c0f015",
+      "lesson_id": "3e2c98a9-98e3-40e3-8301-11f38aa0c15b",
+      "position": 2,
+      "title": "Parallel Lines with Alternate Interior Angles",
+      "problem_text": "In the figure, AB is parallel with CD. A triangle is formed with angles 34° and 90°. What is the value of x?",
+      "choices": [
+        {
+          "text": "34",
+          "letter": "A"
+        },
+        {
+          "text": "40",
+          "letter": "B"
+        },
+        {
+          "text": "48",
+          "letter": "C"
+        },
+        {
+          "text": "56",
+          "letter": "D"
+        },
+        {
+          "text": "90",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "We know that all angles in a triangle add up to 180°, so we can find the unknown third angle in the triangle.\\n\\nThird angle = 180° − 34° − 90° = 56°\\n\\nThe third angle we just found and x° are alternate interior angles (angles on opposite sides of the transversal, between the parallel lines), so they must be equal.\\n\\nTherefore, x = 56°. The answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T18:32:39.610091+00:00",
+      "updated_at": "2025-10-20T18:32:39.610091+00:00"
+    },
+    {
+      "id": "f4e436d4-5dc4-4732-8aec-348d7001a6db",
+      "lesson_id": "3e2c98a9-98e3-40e3-8301-11f38aa0c15b",
+      "position": 3,
+      "title": "Triangle with Angle Bisector",
+      "problem_text": "In triangle ABC, the measure of angle ABD is 68°, the measure of angle ACD is 40°, D is on BC, and AD is a bisector of angle CAB. What is the measure of angle ADC?",
+      "choices": [
+        {
+          "text": "92",
+          "letter": "A"
+        },
+        {
+          "text": "100",
+          "letter": "B"
+        },
+        {
+          "text": "104",
+          "letter": "C"
+        },
+        {
+          "text": "108",
+          "letter": "D"
+        },
+        {
+          "text": "112",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Step 1: Find angle CAB using triangle ABC.\\nAll angles in a triangle add to 180°:\\n∠CAB + ∠ABD + ∠ACD = 180°\\n∠CAB + 68° + 40° = 180°\\n∠CAB = 180° − 68° − 40° = 72°\\n\\nStep 2: Use the angle bisector.\\nAD is a bisector of ∠CAB, which means it cuts the angle in half:\\n∠CAD = ∠BAD = 72° ÷ 2 = 36°\\n\\nStep 3: Find angle ADC using triangle ADC.\\n∠ADC + ∠ACD + ∠CAD = 180°\\n∠ADC + 40° + 36° = 180°\\n∠ADC = 180° − 40° − 36° = 104°\\n\\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T18:32:39.716938+00:00",
+      "updated_at": "2025-10-20T18:32:39.716938+00:00"
+    },
+    {
+      "id": "1cec28b3-ead6-4ac4-bbff-1bb2ff09fad0",
+      "lesson_id": "3e2c98a9-98e3-40e3-8301-11f38aa0c15b",
+      "position": 4,
+      "title": "Pentagon Interior Angles",
+      "problem_text": "A pentagon has interior angles of x°, 1.3x°, 1.4x°, 1.2x°, and 1.1x°. What is the value of x?",
+      "choices": [
+        {
+          "text": "72",
+          "letter": "A"
+        },
+        {
+          "text": "88",
+          "letter": "B"
+        },
+        {
+          "text": "90",
+          "letter": "C"
+        },
+        {
+          "text": "105",
+          "letter": "D"
+        },
+        {
+          "text": "108",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "The figure has 5 sides, so it is a pentagon.\n\nUsing the interior angles formula:\nSum of Interior Angles = 180°(n − 2)\nSum = 180°(5 − 2) = 180°(3) = 540°\n\nNow set the sum of all angles equal to 540°:\nx° + 1.3x° + 1.4x° + 1.2x° + 1.1x° = 540°\n6x° = 540°\nx = 90\n\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T18:33:31.899483+00:00",
+      "updated_at": "2025-10-20T18:33:31.899483+00:00"
+    }
+  ]
+}

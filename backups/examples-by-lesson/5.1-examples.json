@@ -1,0 +1,186 @@
+{
+  "lesson_key": "5.1",
+  "lesson_title": "Number Theory",
+  "examples": [
+    {
+      "id": "13081fd8-8071-4f58-965d-33b63b53a70c",
+      "lesson_id": "74013e77-3111-4dc6-beca-ff15948e4351",
+      "position": 1,
+      "title": "Identifying Prime Numbers",
+      "problem_text": "Which of the following is a prime number?",
+      "choices": [
+        {
+          "text": "1",
+          "letter": "A"
+        },
+        {
+          "text": "21",
+          "letter": "B"
+        },
+        {
+          "text": "27",
+          "letter": "C"
+        },
+        {
+          "text": "29",
+          "letter": "D"
+        },
+        {
+          "text": "35",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "A prime number is divisible only by 1 and itself.\n\nCheck each option:\nA. 1 is NOT prime (by definition)\nB. 21 = 3 × 7 (divisible by 3 and 7)\nC. 27 = 3 × 9 (divisible by 3)\nD. 29 is only divisible by 1 and 29 ✓\nE. 35 = 5 × 7 (divisible by 5 and 7)\n\nCRITICAL FACTS:\n• 1 is NOT a prime number\n• 2 is the ONLY even prime number\n• To test: check divisibility by 2, 3, 5, 7, 11...\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:06:46.141773+00:00",
+      "updated_at": "2025-10-20T22:06:46.141773+00:00"
+    },
+    {
+      "id": "a254aef0-c397-4d3c-84dd-a089b2d4db7a",
+      "lesson_id": "74013e77-3111-4dc6-beca-ff15948e4351",
+      "position": 2,
+      "title": "Divisibility by 3",
+      "problem_text": "Which of the following numbers is divisible by 3?",
+      "choices": [
+        {
+          "text": "1,234",
+          "letter": "A"
+        },
+        {
+          "text": "2,467",
+          "letter": "B"
+        },
+        {
+          "text": "3,571",
+          "letter": "C"
+        },
+        {
+          "text": "4,725",
+          "letter": "D"
+        },
+        {
+          "text": "5,892",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "A number is divisible by 3 if the sum of its digits is divisible by 3.\n\nCheck each option:\n\nA. 1,234 → 1+2+3+4 = 10 → 10÷3 = 3.33... ✗\nB. 2,467 → 2+4+6+7 = 19 → 19÷3 = 6.33... ✗\nC. 3,571 → 3+5+7+1 = 16 → 16÷3 = 5.33... ✗\nD. 4,725 → 4+7+2+5 = 18 → 18÷3 = 6 ✓\nE. 5,892 → 5+8+9+2 = 24 → 24÷3 = 8 ✓ (also works!)\n\nBoth D and E are divisible by 3, but D appears first.\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:06:46.203357+00:00",
+      "updated_at": "2025-10-20T22:06:46.203357+00:00"
+    },
+    {
+      "id": "129fa2fd-0e71-4fca-bc31-80b772fabdfc",
+      "lesson_id": "74013e77-3111-4dc6-beca-ff15948e4351",
+      "position": 3,
+      "title": "Greatest Common Factor",
+      "problem_text": "What is the greatest common factor (GCF) of 48 and 72?",
+      "choices": [
+        {
+          "text": "4",
+          "letter": "A"
+        },
+        {
+          "text": "8",
+          "letter": "B"
+        },
+        {
+          "text": "12",
+          "letter": "C"
+        },
+        {
+          "text": "24",
+          "letter": "D"
+        },
+        {
+          "text": "144",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Find the largest number that divides evenly into both 48 and 72.\n\nMethod 1: List factors\nFactors of 48: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48\nFactors of 72: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72\n\nCommon factors: 1, 2, 3, 4, 6, 8, 12, 24\nGreatest = 24\n\nMethod 2: Prime factorization\n48 = 2⁴ × 3\n72 = 2³ × 3²\nGCF = 2³ × 3 = 8 × 3 = 24\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:06:46.282437+00:00",
+      "updated_at": "2025-10-20T22:06:46.282437+00:00"
+    },
+    {
+      "id": "719f23f6-5ae5-484d-b43a-24471abbe6f6",
+      "lesson_id": "74013e77-3111-4dc6-beca-ff15948e4351",
+      "position": 4,
+      "title": "Even and Odd Properties",
+      "problem_text": "If x is an odd integer and y is an even integer, which of the following must be odd?",
+      "choices": [
+        {
+          "text": "x + y",
+          "letter": "A"
+        },
+        {
+          "text": "x × y",
+          "letter": "B"
+        },
+        {
+          "text": "y × y",
+          "letter": "C"
+        },
+        {
+          "text": "x + x",
+          "letter": "D"
+        },
+        {
+          "text": "y + y",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "Use the rules for even and odd operations.\n\nA. x + y = Odd + Even = Odd ✓\n\nB. x × y = Odd × Even = Even ✗\n   (Any number times even = even)\n\nC. y × y = Even × Even = Even ✗\n\nD. x + x = Odd + Odd = Even ✗\n\nE. y + y = Even + Even = Even ✗\n\nCRITICAL RULES:\n• Even + Even = Even\n• Odd + Odd = Even\n• Even + Odd = Odd ✓\n• Even × Anything = Even\n• Odd × Odd = Odd\n\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:06:46.338014+00:00",
+      "updated_at": "2025-10-20T22:06:46.338014+00:00"
+    },
+    {
+      "id": "a047ed27-adec-4b46-a813-42853fd5b841",
+      "lesson_id": "74013e77-3111-4dc6-beca-ff15948e4351",
+      "position": 5,
+      "title": "Consecutive Integers",
+      "problem_text": "The sum of three consecutive integers is 72. What is the largest of these integers?",
+      "choices": [
+        {
+          "text": "22",
+          "letter": "A"
+        },
+        {
+          "text": "23",
+          "letter": "B"
+        },
+        {
+          "text": "24",
+          "letter": "C"
+        },
+        {
+          "text": "25",
+          "letter": "D"
+        },
+        {
+          "text": "26",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Set up consecutive integers as n, n+1, n+2.\n\nStep 1: Write equation\nn + (n+1) + (n+2) = 72\n\nStep 2: Simplify\n3n + 3 = 72\n\nStep 3: Solve for n\n3n = 69\nn = 23\n\nStep 4: Find the largest\nThe three integers are 23, 24, 25\nLargest = 25\n\nCheck: 23 + 24 + 25 = 72 ✓\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:06:46.413355+00:00",
+      "updated_at": "2025-10-20T22:06:46.413355+00:00"
+    }
+  ]
+}

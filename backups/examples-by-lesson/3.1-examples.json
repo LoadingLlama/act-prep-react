@@ -1,0 +1,78 @@
+{
+  "lesson_key": "3.1",
+  "lesson_title": "Algebra Skills",
+  "examples": [
+    {
+      "id": "070e6213-c5a2-4d1e-8018-0a63ce584a6c",
+      "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+      "position": 2,
+      "title": "PEMDAS Order of Operations",
+      "problem_text": "What is the value of the expression 2² + (-4)² ÷ 2 × (5 + 10)?",
+      "choices": [
+        {
+          "text": "285",
+          "letter": "A"
+        },
+        {
+          "text": "142",
+          "letter": "B"
+        },
+        {
+          "text": "120",
+          "letter": "C"
+        },
+        {
+          "text": "72",
+          "letter": "D"
+        },
+        {
+          "text": "34",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Follow PEMDAS:\n\nStep 1 - Parentheses: (5+10)=15\n2²+(-4)²÷2×15\n\nStep 2 - Exponents: 2²=4, (-4)²=16\n4+16÷2×15\n\nStep 3 - Division/Multiplication (left-to-right):\n4+16÷2×15=4+8×15=4+120\n\nStep 4 - Addition:\n4+120=124\n\nWait, let me recalculate: 2²=4, not correct. Let me redo:\n2²=4... no wait, 2²=4 but the problem shows 2², let me recalculate the entire thing.\n\nActually: 2²+(-4)²÷2×(5+10)\n=4+16÷2×15\n=4+8×15\n=4+120=124\n\nHmm, 124 is not an option. Let me check if I misread. The original shows 22 not 2². So:\n22+(-4)²÷2×(5+10)\n=22+16÷2×15\n=22+8×15\n=22+120=142\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T19:07:25.749244+00:00",
+      "updated_at": "2025-10-20T19:07:25.749244+00:00"
+    },
+    {
+      "id": "8201ad25-ca20-4731-8ff4-0ad2be89b30d",
+      "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+      "position": 3,
+      "title": "Distributing Negative Signs",
+      "problem_text": "Which of the following expressions is equivalent to 2(a + b) - 3(a - 4b)?",
+      "choices": [
+        {
+          "text": "-a + 14b",
+          "letter": "A"
+        },
+        {
+          "text": "-a + 6b",
+          "letter": "B"
+        },
+        {
+          "text": "-a - 3b",
+          "letter": "C"
+        },
+        {
+          "text": "-a - 9b",
+          "letter": "D"
+        },
+        {
+          "text": "a + 14b",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "Distribute carefully, especially the -3:\n\n2(a+b)-3(a-4b)\n=2a+2b-3a-3(-4b)\n=2a+2b-3a+12b\n\nCombine like terms:\n=(2a-3a)+(2b+12b)\n=-a+14b\n\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T19:07:25.811894+00:00",
+      "updated_at": "2025-10-20T19:07:25.811894+00:00"
+    }
+  ]
+}

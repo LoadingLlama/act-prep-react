@@ -1,0 +1,150 @@
+{
+  "lesson_key": "2.2",
+  "lesson_title": "Areas, Volumes & Triangles",
+  "examples": [
+    {
+      "id": "1f5aa9e3-9934-41f2-aac0-087f9fdf71d0",
+      "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+      "position": 2,
+      "title": "Rectangle and Square Area",
+      "problem_text": "One side of rectangle ABCD has a length of 9 inches. A square whose area is equal to the area of rectangle ABCD has a side length of 12 inches. What is the width, in inches, of rectangle ABCD?",
+      "choices": [
+        {
+          "text": "12",
+          "letter": "A"
+        },
+        {
+          "text": "14",
+          "letter": "B"
+        },
+        {
+          "text": "16",
+          "letter": "C"
+        },
+        {
+          "text": "18",
+          "letter": "D"
+        },
+        {
+          "text": "20",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Since the area of rectangle ABCD and the square are equal, we first find the area of the square.\n\nA = s² = 12² = 144 square inches\n\nNow, we know the area of rectangle ABCD is 144 square inches and that one side length is 9 inches, so we can solve for the width using A = lw.\n\n144 = (9)(w)\nw = 144 ÷ 9\nw = 16\n\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T18:45:36.469448+00:00",
+      "updated_at": "2025-10-20T18:45:36.469448+00:00"
+    },
+    {
+      "id": "6ca58d90-64ea-4d43-9c32-21ad0ad53a98",
+      "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+      "position": 3,
+      "title": "Unit Conversion - Yards to Square Feet",
+      "problem_text": "A professional soccer field is 136 yards long and 93 yards wide. What is the area of the professional soccer field in square feet?",
+      "choices": [
+        {
+          "text": "113,832",
+          "letter": "A"
+        },
+        {
+          "text": "37,944",
+          "letter": "B"
+        },
+        {
+          "text": "12,648",
+          "letter": "C"
+        },
+        {
+          "text": "4,216",
+          "letter": "D"
+        },
+        {
+          "text": "1,405",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "The key to solving these questions is to convert the units BEFORE solving for the area.\n\n1 yard = 3 feet, so we convert the length and width from yards to feet:\n\nLength: 136 yards × 3 = 408 feet\nWidth: 93 yards × 3 = 279 feet\n\nNow we can find the area using A = lw:\n\nA = (408 ft)(279 ft) = 113,832 ft²\n\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T18:45:36.61042+00:00",
+      "updated_at": "2025-10-20T18:45:36.61042+00:00"
+    },
+    {
+      "id": "a5ae96d1-f0c8-4cfd-a095-732ae5e1f750",
+      "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+      "position": 4,
+      "title": "Pythagorean Theorem with Midpoint",
+      "problem_text": "In triangle ABC, point D is the midpoint of AB, AC = 12 m, and BC = 15 m. To the closest meter, what is the length of CD?",
+      "choices": [
+        {
+          "text": "14",
+          "letter": "A"
+        },
+        {
+          "text": "13",
+          "letter": "B"
+        },
+        {
+          "text": "11",
+          "letter": "C"
+        },
+        {
+          "text": "9",
+          "letter": "D"
+        },
+        {
+          "text": "7",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "To find CD, we need to find AD first. To find AD, we need to first find AB using the Pythagorean theorem.\n\nStep 1: Find AB using right triangle ABC:\na² + b² = c²\n12² + b² = 15²\n144 + b² = 225\nb² = 81\nb = 9\n\nSo AB = 9 meters.\n\nStep 2: Find AD (the midpoint):\nPoint D is the midpoint of AB, so AD = AB ÷ 2 = 9 ÷ 2 = 4.5 meters\n\nStep 3: Find CD using the Pythagorean theorem:\n12² + 4.5² = c²\n144 + 20.25 = c²\n164.25 = c²\nc = 12.82 meters\n\nCD = 12.82 meters, which is closest to 13.\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T18:45:36.718062+00:00",
+      "updated_at": "2025-10-20T18:45:36.718062+00:00"
+    },
+    {
+      "id": "081896a5-163e-44ac-891b-5b23bc6d02ff",
+      "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+      "position": 5,
+      "title": "30-60-90 Special Right Triangle",
+      "problem_text": "In the right triangle below, one angle measures 30°, another measures 60°, and y = 10. What is the value of x?",
+      "choices": [
+        {
+          "text": "4",
+          "letter": "A"
+        },
+        {
+          "text": "5",
+          "letter": "B"
+        },
+        {
+          "text": "6",
+          "letter": "C"
+        },
+        {
+          "text": "8",
+          "letter": "D"
+        },
+        {
+          "text": "10",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "This is a 30-60-90 special right triangle with side ratio x : x√3 : 2x.\n\nIn a 30-60-90 triangle:\n- The short leg (opposite 30°) = x\n- The long leg (opposite 60°) = x√3\n- The hypotenuse (opposite 90°) = 2x\n\nKey rule: The short leg is always half the hypotenuse.\n\nSince y = 10 is the hypotenuse:\nx = y ÷ 2 = 10 ÷ 2 = 5\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T18:45:36.843803+00:00",
+      "updated_at": "2025-10-20T18:45:36.843803+00:00"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "lesson_key": "5.2",
+  "lesson_title": "Percentages",
+  "examples": [
+    {
+      "id": "606f7a35-bbaa-4502-992e-f0b80629cb74",
+      "lesson_id": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+      "position": 1,
+      "title": "Simple Percentage Calculation",
+      "problem_text": "Isaiah purchased a watch for 72% of the original price of $160. He paid no sales tax. Which of the following is closest to the price Isaiah paid?",
+      "choices": [
+        {
+          "text": "$45",
+          "letter": "A"
+        },
+        {
+          "text": "$88",
+          "letter": "B"
+        },
+        {
+          "text": "$115",
+          "letter": "C"
+        },
+        {
+          "text": "$138",
+          "letter": "D"
+        },
+        {
+          "text": "$160",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Use the decimal method (faster than proportions).\n\nStep 1: Convert percentage to decimal\n72% = 0.72\n\nStep 2: Multiply by original price\nPrice paid = 0.72 × $160\nPrice paid = $115.20\n\nThe closest answer is $115.\n\nAlternative method (proportion):\nx/160 = 72/100\n100x = 11,520\nx = $115.20\n\nBoth methods work, but decimal is faster!\n\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:03:49.51418+00:00",
+      "updated_at": "2025-10-20T22:03:49.51418+00:00"
+    },
+    {
+      "id": "4b3b68e9-6a35-42c2-980c-1f50ca281565",
+      "lesson_id": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+      "position": 2,
+      "title": "Finding the Original Price",
+      "problem_text": "Joey buys golf clubs for $720 when they are on sale for 80% of the original price. What was the original price, in dollars?",
+      "choices": [
+        {
+          "text": "$576",
+          "letter": "A"
+        },
+        {
+          "text": "$800",
+          "letter": "B"
+        },
+        {
+          "text": "$864",
+          "letter": "C"
+        },
+        {
+          "text": "$900",
+          "letter": "D"
+        },
+        {
+          "text": "$936",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "When finding the original from a percentage, divide by the decimal.\n\nStep 1: Set up equation\n$720 = 80% of original\n$720 = 0.80 × original\n\nStep 2: Solve for original\noriginal = $720 ÷ 0.80\noriginal = $900\n\nCheck: 0.80 × $900 = $720 ✓\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:03:49.665926+00:00",
+      "updated_at": "2025-10-20T22:03:49.665926+00:00"
+    },
+    {
+      "id": "088515f7-09ab-459c-847a-cd619dec4732",
+      "lesson_id": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+      "position": 3,
+      "title": "Percent Increase",
+      "problem_text": "A town's population increased from 500,000 to 620,000. What was the percent increase?",
+      "choices": [
+        {
+          "text": "12%",
+          "letter": "A"
+        },
+        {
+          "text": "19.4%",
+          "letter": "B"
+        },
+        {
+          "text": "20%",
+          "letter": "C"
+        },
+        {
+          "text": "24%",
+          "letter": "D"
+        },
+        {
+          "text": "120%",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Use the percent change formula: (change ÷ original) × 100\n\nStep 1: Find the change\nChange = New - Original\nChange = 620,000 - 500,000 = 120,000\n\nStep 2: Divide by ORIGINAL (not new!)\n120,000 ÷ 500,000 = 0.24\n\nStep 3: Convert to percentage\n0.24 × 100 = 24%\n\nCRITICAL: Always divide by the original value!\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:03:49.837795+00:00",
+      "updated_at": "2025-10-20T22:03:49.837795+00:00"
+    },
+    {
+      "id": "1646c680-bef4-4b4d-9081-ac7740fa5e84",
+      "lesson_id": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+      "position": 4,
+      "title": "Percent Decrease",
+      "problem_text": "A jacket originally priced at $80 is now on sale for $68. What is the percent decrease?",
+      "choices": [
+        {
+          "text": "12%",
+          "letter": "A"
+        },
+        {
+          "text": "15%",
+          "letter": "B"
+        },
+        {
+          "text": "17.6%",
+          "letter": "C"
+        },
+        {
+          "text": "20%",
+          "letter": "D"
+        },
+        {
+          "text": "85%",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Use percent change formula with original price.\n\nStep 1: Find the decrease\nDecrease = Original - New\nDecrease = $80 - $68 = $12\n\nStep 2: Divide by original\n$12 ÷ $80 = 0.15\n\nStep 3: Convert to percentage\n0.15 × 100 = 15%\n\nQuick check: $80 × 0.85 = $68 ✓\n(85% means 15% off)\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:03:49.923326+00:00",
+      "updated_at": "2025-10-20T22:03:49.923326+00:00"
+    },
+    {
+      "id": "a7f9aecc-a603-42b0-b31e-ee4a5e0fff0d",
+      "lesson_id": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+      "position": 5,
+      "title": "Multiple Percentage Changes",
+      "problem_text": "A stock price starts at $100, increases by 20%, then decreases by 20%. What is the final price?",
+      "choices": [
+        {
+          "text": "$96",
+          "letter": "A"
+        },
+        {
+          "text": "$98",
+          "letter": "B"
+        },
+        {
+          "text": "$100",
+          "letter": "C"
+        },
+        {
+          "text": "$102",
+          "letter": "D"
+        },
+        {
+          "text": "$104",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "Multiple percentage changes multiply, not add! Apply each change to the NEW value.\n\nStep 1: Apply 20% increase\n$100 × 1.20 = $120\n(Increase means multiply by 1.20, not add 20)\n\nStep 2: Apply 20% decrease to NEW value\n$120 × 0.80 = $96\n(Decrease means multiply by 0.80)\n\nShortcut: Multiply the multipliers\n$100 × 1.20 × 0.80 = $100 × 0.96 = $96\n\nCRITICAL: 20% up then 20% down does NOT return to original!\n\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:03:50.023077+00:00",
+      "updated_at": "2025-10-20T22:03:50.023077+00:00"
+    }
+  ]
+}

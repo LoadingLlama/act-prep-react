@@ -1,0 +1,70 @@
+{
+  "lesson_key": "two-part-answers",
+  "lesson_title": "Topic 3.1 - 2-Part Answers",
+  "examples": [
+    {
+      "id": "58b5bd46-f561-44d7-ae1c-73f2f012f357",
+      "lesson_id": "eb0ae215-47e8-4b48-8251-250067974600",
+      "position": 1,
+      "title": "Evaluating Claims About Combustibility",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">A science journal claimed that Acetone was the most likely to combust at 40°C.</p>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Figure 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Graph Description:</strong> Percent combustibility versus temperature for three solvents.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Temperature (°C)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Pentane (%)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Acetone (%)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Xylene (%)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">0</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">20</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">25</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">15</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">20</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">40</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">50</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">30</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">40</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">60</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">75</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">45</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">60</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">80</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">90</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">40</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">Does Figure 1 support this claim?</p>",
+      "choices": [
+        {
+          "text": "Yes, acetone has the highest percent combustibility at 40°C",
+          "letter": "A"
+        },
+        {
+          "text": "Yes, acetone has the lowest percent combustibility at 40°C",
+          "letter": "B"
+        },
+        {
+          "text": "No, acetone has the highest percent combustibility at 40°C",
+          "letter": "C"
+        },
+        {
+          "text": "No, acetone has the lowest percent combustibility at 40°C",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Identify the pattern**\nA/B both say \"Yes\", C/D both say \"No\"\nA/C both say \"highest\", B/D both say \"lowest\"\n\n**Step 2: Start with the explanation (easiest to check)**\nCheck if acetone has the highest or lowest percent combustibility at 40°C.\nAt 40°C: Pentane = 60%, Acetone = 75%, Xylene = 45%\nAcetone has the HIGHEST (75%). So the correct explanation contains \"highest\".\nEliminate B and D (they say \"lowest\").\n\n**Step 3: Now evaluate the claim between A and C**\nThe claim asks: Does the figure support that \"acetone was the most likely to combust at 40°C\"?\nSince acetone has the highest combustibility (75%), YES, the figure supports this.\n\n**Step 4: Match to remaining answers**\nBetween A and C (both have correct explanation \"highest\"):\n- A says \"Yes\" ✓\n- C says \"No\" ✗\n\n**The answer is A.**",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T06:35:30.433813+00:00",
+      "updated_at": "2025-10-21T06:35:30.433813+00:00"
+    },
+    {
+      "id": "6b0bb9e6-2c5c-470b-a8eb-4cfd812fadf4",
+      "lesson_id": "eb0ae215-47e8-4b48-8251-250067974600",
+      "position": 2,
+      "title": "Using Two-Part Strategy on Trend Questions",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">A science journal claimed that for all compounds, percent combustibility increases as temperature increases.</p>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Figure 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Graph Description:</strong> Percent combustibility versus temperature for three solvents.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Temperature (°C)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Pentane (%)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Acetone (%)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Xylene (%)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">0</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">20</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">25</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">15</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">20</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">40</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">50</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">30</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">40</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">60</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">75</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">45</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">60</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">80</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">90</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">40</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">Does Figure 1 support this claim?</p>",
+      "choices": [
+        {
+          "text": "Yes, for all three compounds percent combustibility increases as temperature increases",
+          "letter": "A"
+        },
+        {
+          "text": "Yes, xylene's percent combustibility decreases as temperature increases",
+          "letter": "B"
+        },
+        {
+          "text": "No, for all three compounds percent combustibility increases as temperature increases",
+          "letter": "C"
+        },
+        {
+          "text": "No, xylene's percent combustibility decreases as temperature increases",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Identify the pattern**\nA/B both say \"Yes\", C/D both say \"No\"\nA/C both say \"for all three compounds...increases\", B/D both say \"xylene...decreases\"\n\n**Step 2: Start with the explanation**\nCheck if \"for all three increases\" OR \"xylene decreases\" is correct.\n\nPentane: 20→40→60→80 (increases) ✓\nAcetone: 25→50→75→90 (increases) ✓\nXylene: 15→30→45→40 (increases then DECREASES at 60°C) ✓\n\nXylene does NOT always increase - it decreases from 45% to 40%. So \"xylene decreases\" is the correct explanation.\nEliminate A and C.\n\n**Step 3: Evaluate the claim between B and D**\nThe claim asks: Does the figure support \"for ALL compounds, percent combustibility increases\"?\nSince Xylene decreases at higher temperature, NO, not ALL compounds increase.\n\nBetween B and D (both have correct explanation about xylene):\n- B says \"Yes\" ✗\n- D says \"No\" ✓\n\n**The answer is D.**",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T06:35:30.509426+00:00",
+      "updated_at": "2025-10-21T06:35:30.509426+00:00"
+    }
+  ]
+}

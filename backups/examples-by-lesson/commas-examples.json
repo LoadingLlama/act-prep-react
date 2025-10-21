@@ -1,0 +1,134 @@
+{
+  "lesson_key": "commas",
+  "lesson_title": "Topic 1.2 - Essential Comma Rules",
+  "examples": [
+    {
+      "id": "b5130bfe-7cb5-4e6c-baaf-6f61db735ee4",
+      "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+      "position": 1,
+      "title": "Identifying Comma + FANBOYS",
+      "problem_text": "The debate team took first place in California<u>, and then</u> won the grand prize for the entire nation.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": ", and then it",
+          "letter": "B"
+        },
+        {
+          "text": " and then",
+          "letter": "C"
+        },
+        {
+          "text": ", yet then it",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "This tests whether a comma + FANBOYS is needed.\n\n**Step 1: Identify the structure**\nWe have: \"The debate team took first place in California\" + [underlined portion] + \"won the grand prize for the entire nation\"\n\n**Step 2: Check if both sides are independent clauses**\n- Left: \"The debate team took first place in California\" (independent - has subject and verb)\n- Right: \"won the grand prize for the entire nation\" (NOT independent - missing subject!)\n\nThe right side is not a complete sentence by itself. It shares the subject \"The debate team\" from the left side.\n\n**Step 3: Apply the comma rules**\nSince the right side is NOT an independent clause, we DON'T need comma + FANBOYS. This is just a list of two actions done by the same subject.\n\n**Step 4: Test each choice**\n- **A (NO CHANGE - \", and then\"):** Comma + FANBOYS is only for joining two independent clauses. The right side isn't independent. Incorrect!\n\n- **B (\", and then it\"):** Adding \"it\" makes the right side independent, but this creates a new error—\"it\" is vague and unclear. Incorrect!\n\n- **C (\" and then\"):** No comma, just \"and\" connecting two verb phrases. This is a two-item list (took first place AND won grand prize), which doesn't need a comma. Correct!\n\n- **D (\", yet then it\"):** \"Yet\" doesn't make logical sense here (no contrast), and \"it\" is vague. Incorrect!\n\n**Why C is correct:**\nThis is a two-item list of actions by the same subject, not two independent clauses. Two-item lists don't need commas.\n\nThe answer is **C**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:16:47.170518+00:00",
+      "updated_at": "2025-10-20T23:16:47.170518+00:00"
+    },
+    {
+      "id": "7a292371-2130-450b-aa0b-33ec3502b2ba",
+      "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+      "position": 2,
+      "title": "Unnecessary Information with Names",
+      "problem_text": "Mr. Alvin<u> a very popular</u> teacher among the students cancelled the final exam.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": ", a very popular,",
+          "letter": "B"
+        },
+        {
+          "text": " a very popular,",
+          "letter": "C"
+        },
+        {
+          "text": ", a very popular",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "This tests commas with unnecessary information (appositives).\n\n**Step 1: Identify the structure**\n\"Mr. Alvin\" is followed by descriptive information \"a very popular teacher among the students\"\n\n**Step 2: Is the information necessary or unnecessary?**\nRemove \"a very popular teacher among the students\" → \"Mr. Alvin cancelled the final exam\"\n\nThis is still a complete sentence! The phrase is unnecessary information (an appositive) that adds extra detail about Mr. Alvin.\n\n**Step 3: Apply the crossing-out trick**\nUnnecessary information in the MIDDLE of a sentence needs commas on BOTH sides to set it apart.\n\n**Step 4: Test each choice**\n- **A (NO CHANGE):** No commas at all. This runs the appositive into the sentence without separating it. Incorrect!\n\n- **B (\", a very popular,\"):** Two commas surround \"a very popular,\" but this cuts off \"teacher among the students\" which is part of the appositive phrase. The full phrase is \"a very popular teacher among the students.\" Incorrect!\n\n- **C (\" a very popular,\"):** Comma after but not before. Unnecessary information in the middle needs commas on BOTH sides. Incorrect!\n\n- **D (\", a very popular\"):** Wait, let's look at the full sentence with this choice:\n  \"Mr. Alvin, a very popular teacher among the students, cancelled the final exam.\"\n\n  Actually, there must be a comma after \"students\" (not shown in the underlined portion). The underlined portion only shows where the FIRST comma goes. This correctly starts the appositive with a comma. Correct!\n\n**Why D is correct:**\nThe appositive \"a very popular teacher among the students\" is unnecessary information that needs commas on both sides. D provides the opening comma.\n\nThe answer is **D**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:16:47.326171+00:00",
+      "updated_at": "2025-10-20T23:16:47.326171+00:00"
+    },
+    {
+      "id": "ef765798-1b03-44b8-a754-4c4644a67043",
+      "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+      "position": 3,
+      "title": "Transitional Words (However)",
+      "problem_text": "I expected to pay over $100 for my new hiking boots<u>; however,</u> I found a sale and got them for half of the original price.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": ", however,",
+          "letter": "B"
+        },
+        {
+          "text": ", however",
+          "letter": "C"
+        },
+        {
+          "text": "; however",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "This tests punctuation of transitional words between independent clauses.\n\n**Step 1: Identify the clauses**\n- Left: \"I expected to pay over $100 for my new hiking boots\" (independent)\n- Right: \"I found a sale and got them for half of the original price\" (independent)\n\nWe have two independent clauses with the transitional word \"however\" between them.\n\n**Step 2: Recall the transitional word punctuation rules**\nWhen a transitional word appears between two independent clauses:\n- Use semicolon BEFORE the transitional word\n- Use comma AFTER the transitional word\n\nStructure: Independent clause + semicolon + transitional word + comma + Independent clause\n\n**Step 3: Test each choice**\n- **A (NO CHANGE - \"; however,\"):** Semicolon before, comma after. This matches the rule perfectly! Correct!\n\n- **B (\", however,\"):** Comma before and after. This creates a comma splice—you can't join two independent clauses with just a comma. Incorrect!\n\n- **C (\", however\"):** Comma before, no comma after. Still a comma splice, and missing the comma after \"however.\" Incorrect!\n\n- **D (\"; however\"):** Semicolon before, but missing the comma after. Transitional words between independent clauses need BOTH punctuation marks. Incorrect!\n\n**Why A is correct:**\nThe semicolon before \"however\" properly separates the two independent clauses, and the comma after \"however\" is required for transitional words in this position.\n\nThe answer is **A**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:16:47.456653+00:00",
+      "updated_at": "2025-10-20T23:16:47.456653+00:00"
+    },
+    {
+      "id": "995b8159-aaa0-473c-b16b-74b54a6f72d1",
+      "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+      "position": 4,
+      "title": "Unnecessary Information (Crossing-Out Trick)",
+      "problem_text": "Electric vehicles<u>, thousands of them,</u> already on the road in America, are one of the fastest growing industries in the world.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": ", thousands, of them",
+          "letter": "B"
+        },
+        {
+          "text": " thousands of them",
+          "letter": "C"
+        },
+        {
+          "text": " thousands of, them",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "This is a classic unnecessary information comma question where all choices have the same words but different comma placement.\n\n**Step 1: Read the complete sentence**\nNotice there's ANOTHER comma after \"America\" that's NOT in the underlined portion. This is a major clue!\n\nFull sentence: \"Electric vehicles, thousands of them, already on the road in America, are one of the fastest growing industries in the world.\"\n\n**Step 2: Use the crossing-out trick**\nWe need to figure out what phrase is unnecessary. Let's test different options:\n\nOption 1: Cross out just \"thousands of them\"\n\"Electric vehicles already on the road in America, are one of the fastest growing industries\"\nThis doesn't work—there's a comma after \"America\" that shouldn't be there.\n\nOption 2: Cross out \"thousands of them already on the road in America\"\n\"Electric vehicles, are one of the fastest growing industries in the world\"\nThis doesn't work either—unnecessary comma after \"vehicles.\"\n\nOption 3: Cross out \"thousands of them already on the road in America\"\nWait! The commas suggest this entire phrase is unnecessary. Let's test:\n\"Electric vehicles are one of the fastest growing industries in the world\"\nPerfect! This is a complete sentence!\n\n**Step 3: Test each choice**\nWe need NO commas around \"thousands of them\" because the entire phrase (including the words after it) is one long unnecessary phrase separated by the commas before \"thousands\" and after \"America.\"\n\n- **A (\", thousands of them,\"):** Commas around just \"thousands of them\" would incorrectly break up the single phrase. Incorrect!\n\n- **B (\", thousands, of them\"):** Comma in weird positions that break up the phrase incorrectly. Incorrect!\n\n- **C (\" thousands of them\"):** No commas around these specific words, allowing the entire phrase \"thousands of them already on the road in America\" to be treated as one unit separated by commas. Correct!\n\n- **D (\" thousands of, them\"):** Comma in the middle of \"thousands of them\" breaks it up incorrectly. Incorrect!\n\n**Why C is correct:**\nThe unnecessary information is the ENTIRE phrase \"thousands of them already on the road in America,\" which is separated by the comma after \"vehicles\" and the comma after \"America.\" Within that phrase, we don't need additional commas.\n\nThe answer is **C**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:16:47.575483+00:00",
+      "updated_at": "2025-10-20T23:16:47.575483+00:00"
+    }
+  ]
+}

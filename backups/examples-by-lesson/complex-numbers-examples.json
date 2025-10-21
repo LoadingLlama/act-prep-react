@@ -1,0 +1,186 @@
+{
+  "lesson_key": "complex-numbers",
+  "lesson_title": "Topic 7.2 - Complex Numbers",
+  "examples": [
+    {
+      "id": "3750654c-68c6-4348-ad7b-03ce8ab630e4",
+      "lesson_id": "0090877d-e7d2-4ac4-80b4-87a42502a214",
+      "position": 1,
+      "title": "Subtracting Complex Numbers",
+      "problem_text": "What is the difference of complex numbers 22 - 14i and 7 - 3i?",
+      "choices": [
+        {
+          "text": "15 - 17i",
+          "letter": "A"
+        },
+        {
+          "text": "15 - 11i",
+          "letter": "B"
+        },
+        {
+          "text": "-15 + 11i",
+          "letter": "C"
+        },
+        {
+          "text": "29 - 17i",
+          "letter": "D"
+        },
+        {
+          "text": "15 + 11i",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Subtract complex numbers by combining like terms.\n\nStep 1: Set up the subtraction\n(22 - 14i) - (7 - 3i)\n\nStep 2: CRITICAL - Distribute negative sign to BOTH terms\n= 22 - 14i - 7 + 3i\n\nStep 3: Combine real parts\n22 - 7 = 15\n\nStep 4: Combine imaginary parts\n-14i + 3i = -11i\n\nStep 5: Write final answer\n15 - 11i\n\nCOMMON MISTAKE:\nForgetting to distribute negative:\n22 - 14i - 7 - 3i = 15 - 17i ✗\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:28:54.255078+00:00",
+      "updated_at": "2025-10-20T22:28:54.255078+00:00"
+    },
+    {
+      "id": "de0128dd-ba47-42c6-bed0-672640baf996",
+      "lesson_id": "0090877d-e7d2-4ac4-80b4-87a42502a214",
+      "position": 2,
+      "title": "Multiplying Complex Numbers",
+      "problem_text": "What is the product of complex numbers 1 - 3i and 11 + 2i?",
+      "choices": [
+        {
+          "text": "11 - 6i",
+          "letter": "A"
+        },
+        {
+          "text": "12 - i",
+          "letter": "B"
+        },
+        {
+          "text": "11 - 38i",
+          "letter": "C"
+        },
+        {
+          "text": "17 - 31i",
+          "letter": "D"
+        },
+        {
+          "text": "5 - 29i",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Use FOIL to multiply complex numbers.\n\nStep 1: Use FOIL\n(1 - 3i)(11 + 2i)\nFirst: 1 × 11 = 11\nOuter: 1 × 2i = 2i\nInner: -3i × 11 = -33i\nLast: -3i × 2i = -6i²\n\nStep 2: Combine\n= 11 + 2i - 33i - 6i²\n= 11 - 31i - 6i²\n\nStep 3: Replace i² with -1\ni² = -1, so:\n11 - 31i - 6(-1)\n= 11 - 31i + 6\n\nStep 4: Combine real parts\n= 17 - 31i\n\nCALCULATOR SHORTCUT:\nType directly: (1-3i)(11+2i)\nPress ENTER → get answer!\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:28:54.335304+00:00",
+      "updated_at": "2025-10-20T22:28:54.335304+00:00"
+    },
+    {
+      "id": "a5d89a8f-af86-499c-a02f-483de711e845",
+      "lesson_id": "0090877d-e7d2-4ac4-80b4-87a42502a214",
+      "position": 3,
+      "title": "Simplifying with Complex Conjugate",
+      "problem_text": "Which of the following is equivalent to 5/(3 + 4i)?",
+      "choices": [
+        {
+          "text": "3/5 - 4i/5",
+          "letter": "A"
+        },
+        {
+          "text": "3/5 + 4i/5",
+          "letter": "B"
+        },
+        {
+          "text": "15/7 - 20i/7",
+          "letter": "C"
+        },
+        {
+          "text": "15/7 + 20i/7",
+          "letter": "D"
+        },
+        {
+          "text": "5/3 - 4i",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "Use complex conjugate to remove i from denominator.\n\nStep 1: Identify conjugate\nDenominator: 3 + 4i\nConjugate: 3 - 4i (flip sign of imaginary)\n\nStep 2: Multiply top and bottom by conjugate\n[5/(3 + 4i)] × [(3 - 4i)/(3 - 4i)]\n\nStep 3: Multiply numerator\n5(3 - 4i) = 15 - 20i\n\nStep 4: Multiply denominator (shortcut!)\n(a + bi)(a - bi) = a² + b²\n(3 + 4i)(3 - 4i) = 3² + 4² = 9 + 16 = 25\n\nStep 5: Simplify fraction\n(15 - 20i) / 25\n= 15/25 - 20i/25\n= 3/5 - 4i/5\n\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:28:54.419157+00:00",
+      "updated_at": "2025-10-20T22:28:54.419157+00:00"
+    },
+    {
+      "id": "c9287d71-7131-4804-924e-5dc602eb3e4a",
+      "lesson_id": "0090877d-e7d2-4ac4-80b4-87a42502a214",
+      "position": 4,
+      "title": "Adding Complex Numbers",
+      "problem_text": "What is the sum of (8 + 5i) and (5 - 2i)?",
+      "choices": [
+        {
+          "text": "3 + 7i",
+          "letter": "A"
+        },
+        {
+          "text": "13 + 3i",
+          "letter": "B"
+        },
+        {
+          "text": "13 + 7i",
+          "letter": "C"
+        },
+        {
+          "text": "3 + 3i",
+          "letter": "D"
+        },
+        {
+          "text": "40 - 10i",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Add complex numbers by combining like terms.\n\nStep 1: Set up the addition\n(8 + 5i) + (5 - 2i)\n\nStep 2: Group like terms\n= 8 + 5 + 5i - 2i\n\nStep 3: Combine real parts\n8 + 5 = 13\n\nStep 4: Combine imaginary parts\n5i + (-2i) = 5i - 2i = 3i\n\nStep 5: Write final answer\n13 + 3i\n\nNote: Addition is simpler than subtraction\nbecause you don't need to distribute negatives!\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:28:54.498478+00:00",
+      "updated_at": "2025-10-20T22:28:54.498478+00:00"
+    },
+    {
+      "id": "9f529e54-90e9-4b19-8ffe-72274775e035",
+      "lesson_id": "0090877d-e7d2-4ac4-80b4-87a42502a214",
+      "position": 5,
+      "title": "Product of Complex Conjugates",
+      "problem_text": "What is the product of 2 + 3i and 2 - 3i?",
+      "choices": [
+        {
+          "text": "4 - 9i",
+          "letter": "A"
+        },
+        {
+          "text": "-5",
+          "letter": "B"
+        },
+        {
+          "text": "4 + 9",
+          "letter": "C"
+        },
+        {
+          "text": "13",
+          "letter": "D"
+        },
+        {
+          "text": "4 - 9i²",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Use conjugate product shortcut.\n\nMethod 1: Shortcut (FAST!)\nFor (a + bi)(a - bi) = a² + b²\n(2 + 3i)(2 - 3i)\n= 2² + 3²\n= 4 + 9\n= 13\n\nMethod 2: FOIL (slower)\n(2 + 3i)(2 - 3i)\nFirst: 2 × 2 = 4\nOuter: 2 × (-3i) = -6i\nInner: 3i × 2 = 6i\nLast: 3i × (-3i) = -9i²\n= 4 - 6i + 6i - 9i²\n= 4 - 9i²\n= 4 - 9(-1)\n= 4 + 9 = 13\n\nBoth methods work!\nShortcut is much faster.\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:28:54.567808+00:00",
+      "updated_at": "2025-10-20T22:28:54.567808+00:00"
+    }
+  ]
+}

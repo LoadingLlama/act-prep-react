@@ -1,0 +1,186 @@
+{
+  "lesson_key": "5.3",
+  "lesson_title": "Ratios and Proportions",
+  "examples": [
+    {
+      "id": "7753c549-63e8-48a6-b684-a21435320751",
+      "lesson_id": "27833f99-7aa1-4e5d-92e4-c953fadebc0d",
+      "position": 1,
+      "title": "Ratio with Total",
+      "problem_text": "The ratio of red marbles to green marbles in a bag is 4:6. If there are a total of 80 marbles in the bag and all marbles are either red or green, how many marbles are red?",
+      "choices": [
+        {
+          "text": "8",
+          "letter": "A"
+        },
+        {
+          "text": "20",
+          "letter": "B"
+        },
+        {
+          "text": "32",
+          "letter": "C"
+        },
+        {
+          "text": "48",
+          "letter": "D"
+        },
+        {
+          "text": "54",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Use the \"x trick\" to solve ratio problems with totals.\n\nStep 1: Set up using x trick\nRatio 4:6 means 4x red marbles and 6x green marbles\n\nStep 2: Write equation with total\nRed + Green = Total\n4x + 6x = 80\n\nStep 3: Solve for x\n10x = 80\nx = 8\n\nStep 4: Find red marbles\nRed = 4x = 4(8) = 32\n\nAlternative method (fraction):\nRed = (4/(4+6)) × 80 = (4/10) × 80 = 32\n\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:12:49.539414+00:00",
+      "updated_at": "2025-10-20T22:12:49.539414+00:00"
+    },
+    {
+      "id": "fb6e5d0e-be16-4b47-ada5-1f2217100865",
+      "lesson_id": "27833f99-7aa1-4e5d-92e4-c953fadebc0d",
+      "position": 2,
+      "title": "Simplifying Ratios",
+      "problem_text": "A recipe calls for 24 ounces of flour and 36 ounces of sugar. What is the simplified ratio of flour to sugar?",
+      "choices": [
+        {
+          "text": "1:2",
+          "letter": "A"
+        },
+        {
+          "text": "2:3",
+          "letter": "B"
+        },
+        {
+          "text": "3:4",
+          "letter": "C"
+        },
+        {
+          "text": "4:6",
+          "letter": "D"
+        },
+        {
+          "text": "6:9",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "Simplify ratios by dividing both parts by their GCF.\n\nStep 1: Write the ratio\nFlour:Sugar = 24:36\n\nStep 2: Find GCF of 24 and 36\nFactors of 24: 1, 2, 3, 4, 6, 8, 12, 24\nFactors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36\nGCF = 12\n\nStep 3: Divide both parts by GCF\n24 ÷ 12 = 2\n36 ÷ 12 = 3\n\nSimplified ratio = 2:3\n\nThe answer is B.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:12:49.690605+00:00",
+      "updated_at": "2025-10-20T22:12:49.690605+00:00"
+    },
+    {
+      "id": "6759e40e-4b7d-404f-90f4-d4bf3b19344d",
+      "lesson_id": "27833f99-7aa1-4e5d-92e4-c953fadebc0d",
+      "position": 3,
+      "title": "Solving Proportions",
+      "problem_text": "If 3/5 = x/20, what is the value of x?",
+      "choices": [
+        {
+          "text": "4",
+          "letter": "A"
+        },
+        {
+          "text": "8",
+          "letter": "B"
+        },
+        {
+          "text": "10",
+          "letter": "C"
+        },
+        {
+          "text": "12",
+          "letter": "D"
+        },
+        {
+          "text": "15",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Solve proportions by cross multiplying.\n\nStep 1: Set up the proportion\n3/5 = x/20\n\nStep 2: Cross multiply\n3 × 20 = 5 × x\n60 = 5x\n\nStep 3: Solve for x\n5x = 60\nx = 60 ÷ 5\nx = 12\n\nCheck: 3/5 = 12/20?\n3/5 = 0.6\n12/20 = 0.6 ✓\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:12:49.793065+00:00",
+      "updated_at": "2025-10-20T22:12:49.793065+00:00"
+    },
+    {
+      "id": "f62a9fa7-e2d5-4e8c-ab28-84b4c890b693",
+      "lesson_id": "27833f99-7aa1-4e5d-92e4-c953fadebc0d",
+      "position": 4,
+      "title": "Unit Rate Problem",
+      "problem_text": "If 5 apples cost $3.75, how much would 8 apples cost at the same rate?",
+      "choices": [
+        {
+          "text": "$4.80",
+          "letter": "A"
+        },
+        {
+          "text": "$5.25",
+          "letter": "B"
+        },
+        {
+          "text": "$6.00",
+          "letter": "C"
+        },
+        {
+          "text": "$6.40",
+          "letter": "D"
+        },
+        {
+          "text": "$7.50",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Set up a proportion to solve unit rate problems.\n\nMethod 1: Proportion\nStep 1: Set up proportion\n5 apples / $3.75 = 8 apples / x\n\nStep 2: Cross multiply\n5x = 3.75 × 8\n5x = 30\n\nStep 3: Solve\nx = $6.00\n\nMethod 2: Find unit rate\nPrice per apple = $3.75 ÷ 5 = $0.75\n8 apples = 8 × $0.75 = $6.00\n\nBoth methods give the same answer.\n\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:12:49.912195+00:00",
+      "updated_at": "2025-10-20T22:12:49.912195+00:00"
+    },
+    {
+      "id": "a195d33b-1667-4ded-af00-00629745446d",
+      "lesson_id": "27833f99-7aa1-4e5d-92e4-c953fadebc0d",
+      "position": 5,
+      "title": "Three-Part Ratio",
+      "problem_text": "The ratio of red to green to blue marbles is 2:3:5. If there are 100 marbles total, how many blue marbles are there?",
+      "choices": [
+        {
+          "text": "20",
+          "letter": "A"
+        },
+        {
+          "text": "30",
+          "letter": "B"
+        },
+        {
+          "text": "40",
+          "letter": "C"
+        },
+        {
+          "text": "50",
+          "letter": "D"
+        },
+        {
+          "text": "60",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Use the x trick for three-part ratios.\n\nStep 1: Set up with x trick\nRed:Green:Blue = 2:3:5\nRed = 2x, Green = 3x, Blue = 5x\n\nStep 2: Write equation with total\n2x + 3x + 5x = 100\n\nStep 3: Solve for x\n10x = 100\nx = 10\n\nStep 4: Find blue marbles\nBlue = 5x = 5(10) = 50\n\nCheck: Red = 20, Green = 30, Blue = 50\nTotal = 20 + 30 + 50 = 100 ✓\n\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T22:12:49.990563+00:00",
+      "updated_at": "2025-10-20T22:12:49.990563+00:00"
+    }
+  ]
+}

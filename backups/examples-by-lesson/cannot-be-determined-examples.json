@@ -1,0 +1,70 @@
+{
+  "lesson_key": "cannot-be-determined",
+  "lesson_title": "Topic 3.2 - Cannot Be Determined",
+  "examples": [
+    {
+      "id": "3738650e-7a29-4f3a-8274-817b8cb86ca7",
+      "lesson_id": "2f7ab93c-af8f-408c-9c2a-f7114b57002b",
+      "position": 1,
+      "title": "Identifying Missing Data in Figures",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">A study tracked the total weight gain of 5 rats fed different amounts of food over 4 weeks.</p>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Figure 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Graph Description:</strong> Total weight gain (grams) versus time for 5 rats combined.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Week</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Total Weight Gain (g)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">1</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">50</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">2</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">110</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">3</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">175</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">4</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">245</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">Based on Figure 1, how many grams of food per week were the rats fed?</p>",
+      "choices": [
+        {
+          "text": "50 grams per week",
+          "letter": "A"
+        },
+        {
+          "text": "60 grams per week",
+          "letter": "B"
+        },
+        {
+          "text": "70 grams per week",
+          "letter": "C"
+        },
+        {
+          "text": "Cannot be determined from the given information",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Identify what the question asks for**\nThe question asks: \"how many grams of food per week were the rats fed?\"\n- Variable needed: Food amount (grams)\n- Units needed: Grams per week\n- Time: Per week\n\n**Step 2: Check what Figure 1 shows**\nLooking at Figure 1:\n- Y-axis shows: Total Weight Gain (g)\n- X-axis shows: Week\n- The figure shows WEIGHT GAIN, not FOOD CONSUMPTION\n\n**Step 3: Search for food consumption data**\nCheck the figure: No information about food given to rats\nCheck the experimental text: Only mentions \"different amounts of food\" but doesn't specify the amounts\nCheck the table: Only shows weight gain data\n\n**Step 4: Identify the mismatch**\nQuestion asks for: grams of food per week\nFigure provides: total weight gain in grams\n\nThese are completely different variables. Weight gain ≠ food consumption.\n\n**Step 5: Conclusion**\nSince the figure doesn't show food consumption data (only weight gain), and the experimental text doesn't provide specific food amounts, the answer cannot be determined from the given information.\n\n**The answer is D.**",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T06:40:19.392827+00:00",
+      "updated_at": "2025-10-21T06:40:19.392827+00:00"
+    },
+    {
+      "id": "7a7223cb-3cb1-45b4-98f8-bd16dc644235",
+      "lesson_id": "2f7ab93c-af8f-408c-9c2a-f7114b57002b",
+      "position": 2,
+      "title": "Aggregated vs Individual Data",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">A study tracked the total food remaining in a shared bowl for 5 dogs over 3 hours.</p>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Figure 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Graph Description:</strong> Total food remaining (grams) versus time for 5 dogs sharing one bowl.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Time (hours)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Total Food Remaining (g)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">0</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">1000</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">1</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">750</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">2</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">500</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">3</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">250</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">Based on Figure 1, how much food did one of the dogs consume after 3 hours?</p>",
+      "choices": [
+        {
+          "text": "150 grams",
+          "letter": "A"
+        },
+        {
+          "text": "250 grams",
+          "letter": "B"
+        },
+        {
+          "text": "750 grams",
+          "letter": "C"
+        },
+        {
+          "text": "Cannot be determined from the given information",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Identify what the question asks for**\nThe question asks: \"how much food did ONE of the dogs consume after 3 hours?\"\n- Subject: ONE individual dog (not all 5 dogs)\n- Variable: Food consumed\n- Time: After 3 hours\n\n**Step 2: Check what Figure 1 shows**\nLooking at Figure 1:\n- Shows: Total food remaining for ALL 5 dogs combined\n- From 0 to 3 hours: Total consumption = 1000g - 250g = 750g\n- This is the TOTAL for ALL 5 dogs, not for one individual dog\n\n**Step 3: Identify the aggregated data trap**\nQuestion asks for: Individual dog consumption\nFigure provides: Group total consumption (5 dogs combined)\n\nTo find individual consumption, we would need to divide: 750g ÷ 5 = 150g\n\nBUT this assumes all dogs ate equally, which is NOT stated anywhere.\n\n**Step 4: Check for individual dog data**\nCheck the figure: No breakdown by individual dog\nCheck the table: Only shows total for all 5 dogs\nCheck the experimental text: No information about individual consumption patterns\n\n**Step 5: Conclusion**\nThe figure shows aggregated group data (total for 5 dogs), but the question asks for individual data (one dog). Without knowing how much each specific dog ate, we cannot determine the individual consumption.\n\nSome dogs might have eaten more, some less. We have no way to break down the total into individual amounts.\n\n**The answer is D.**",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T06:40:19.45892+00:00",
+      "updated_at": "2025-10-21T06:40:19.45892+00:00"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "lesson_key": "mixing",
+  "lesson_title": "Topic 3.4 - Mixing",
+  "examples": [
+    {
+      "id": "766bf76e-719e-4a9c-820e-05fa56ac4e0c",
+      "lesson_id": "9292b9a2-0e17-433a-adb5-c49f39a3e018",
+      "position": 1,
+      "title": "Two-Step Lookup Using Bridge Variable",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">A student heated water and recorded the temperature over time (Figure 1). The student also measured how pressure changed at different temperatures (Figure 2).</p>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Figure 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Graph Description:</strong> Temperature versus time for heated water.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Time (min)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Temperature (°C)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">0</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">20</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">2</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">40</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">4</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">60</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">6</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">80</td>\n      </tr>\n    </tbody>\n  </table>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; margin-top: 2.5rem; color: #1f2937;\">Figure 2</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Graph Description:</strong> Pressure versus temperature for the water vapor.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Temperature (°C)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Pressure (kPa)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">20</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">2.3</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">40</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">7.4</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">60</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">19.9</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">80</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">47.4</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">Based on Figures 1 and 2, what was the pressure of the water vapor at 4 minutes?</p>",
+      "choices": [
+        {
+          "text": "2.3 kPa",
+          "letter": "A"
+        },
+        {
+          "text": "7.4 kPa",
+          "letter": "B"
+        },
+        {
+          "text": "19.9 kPa",
+          "letter": "C"
+        },
+        {
+          "text": "47.4 kPa",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Identify the target**\nQuestion asks: \"What was the pressure at 4 minutes?\"\nWe need to find: Pressure (final answer)\n\n**Step 2: Identify the starting point**\nGiven: Time = 4 minutes\nThis information is in Figure 1 (which shows Time vs Temperature)\n\n**Step 3: Find the bridge variable**\nLooking at both figures:\n- Figure 1 has: Time and Temperature\n- Figure 2 has: Temperature and Pressure\n\nThe bridge variable is TEMPERATURE (appears in both figures)\n\n**Step 4: Cross the bridge**\n\nStep A: Use Figure 1 to go from Time → Temperature\nAt Time = 4 minutes, Temperature = 60°C\n\nStep B: Use Figure 2 to go from Temperature → Pressure\nAt Temperature = 60°C, Pressure = 19.9 kPa\n\n**The answer is C (19.9 kPa).**\n\nThe path was: 4 min (given) → 60°C (Figure 1) → 19.9 kPa (Figure 2)",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T06:43:58.605611+00:00",
+      "updated_at": "2025-10-21T06:43:58.605611+00:00"
+    },
+    {
+      "id": "7f1c9053-447b-45ae-96aa-ddf4599013f3",
+      "lesson_id": "9292b9a2-0e17-433a-adb5-c49f39a3e018",
+      "position": 2,
+      "title": "Cross-Referencing Multiple Tables",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">A researcher tested four different metal samples. Table 1 shows which metals were tested in each trial. Table 2 shows the melting point measured in each trial.</p>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Table 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Description:</strong> Metal sample tested in each trial.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Trial</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Metal</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">1</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">Iron</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">2</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">Copper</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">3</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">Aluminum</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">4</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">Lead</td>\n      </tr>\n    </tbody>\n  </table>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; margin-top: 2.5rem; color: #1f2937;\">Table 2</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Description:</strong> Measured melting point for each trial.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Trial</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Melting Point (°C)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">1</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">1538</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">2</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">1085</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">3</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">660</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">4</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">327</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">Based on Tables 1 and 2, what is the melting point of aluminum?</p>",
+      "choices": [
+        {
+          "text": "327°C",
+          "letter": "A"
+        },
+        {
+          "text": "660°C",
+          "letter": "B"
+        },
+        {
+          "text": "1085°C",
+          "letter": "C"
+        },
+        {
+          "text": "1538°C",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Identify the target**\nQuestion asks: \"What is the melting point of aluminum?\"\nWe need to find: Melting Point (final answer)\n\n**Step 2: Identify the starting point**\nGiven: Metal = Aluminum\nThis information is in Table 1 (which shows which metal was tested in each trial)\n\n**Step 3: Find the bridge variable**\nLooking at both tables:\n- Table 1 has: Trial and Metal\n- Table 2 has: Trial and Melting Point\n\nThe bridge variable is TRIAL (appears in both tables)\n\n**Step 4: Cross the bridge**\n\nStep A: Use Table 1 to find which trial tested aluminum\nLooking at Table 1: Aluminum was tested in Trial 3\n\nStep B: Use Table 2 to find the melting point for Trial 3\nLooking at Table 2: Trial 3 had a melting point of 660°C\n\n**The answer is B (660°C).**\n\nThe path was: Aluminum (given) → Trial 3 (Table 1) → 660°C (Table 2)",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T06:43:58.68434+00:00",
+      "updated_at": "2025-10-21T06:43:58.68434+00:00"
+    }
+  ]
+}

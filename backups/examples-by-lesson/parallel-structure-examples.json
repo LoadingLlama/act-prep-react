@@ -1,0 +1,134 @@
+{
+  "lesson_key": "parallel-structure",
+  "lesson_title": "Topic 1.7 - Parallel Structure",
+  "examples": [
+    {
+      "id": "52e737b1-3df8-48c3-ad18-4343f4d5d168",
+      "lesson_id": "e6153221-e330-4db4-8cc7-9c5a1d51a301",
+      "position": 1,
+      "title": "Basic List Parallelism",
+      "problem_text": "Theresa was expecting a visit from her mother, so she made her bed, <u>cleaning the shelves</u> of the refrigerator, and swept the kitchen floor.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "cleaned the shelves",
+          "letter": "B"
+        },
+        {
+          "text": "she cleaned the shelves",
+          "letter": "C"
+        },
+        {
+          "text": "was cleaning the shelves",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "This tests basic parallel structure in a three-item list.\n\n**Step 1: Identify the list**\n\"Made her bed,\" \"cleaning the shelves,\" \"swept the kitchen floor\"\n\n**Step 2: Check grammatical forms**\n- \"Made\" = past tense verb\n- \"Cleaning\" = gerund (verb + ing)\n- \"Swept\" = past tense verb\n\nNot parallel! Two are past tense, one is a gerund.\n\n**Step 3: Determine what form to use**\nThe first and third items use past tense verbs, so the second should too.\n\n**Step 4: Test choices**\n- **A:** \"cleaning\" doesn't match \"made\" and \"swept.\" Incorrect!\n- **B:** \"cleaned\" matches the past tense pattern. Correct!\n- **C:** Adds \"she\" which isn't in the other items. Incorrect!\n- **D:** \"was cleaning\" is past progressive, doesn't match. Incorrect!\n\nThe answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:09:15.98371+00:00",
+      "updated_at": "2025-10-21T00:09:15.98371+00:00"
+    },
+    {
+      "id": "c51d3842-1f25-4eeb-a246-65667f7a52c8",
+      "lesson_id": "e6153221-e330-4db4-8cc7-9c5a1d51a301",
+      "position": 2,
+      "title": "Two-Item List Comparison",
+      "problem_text": "I would rather <u>get free music with commercials than paying</u> for music with no commercials.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "get free music with commercials than to pay",
+          "letter": "B"
+        },
+        {
+          "text": "getting free music with commercials than paying",
+          "letter": "C"
+        },
+        {
+          "text": "to get free music with commercials than to pay",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "This tests parallel structure in a comparison with \"than.\"\n\n**Step 1: Identify the comparison**\n\"Get free music with commercials\" vs. \"paying for music with no commercials\"\n\n**Step 2: Check forms**\n\"Would rather get\" (base verb) vs. \"paying\" (gerund)\nNot parallel!\n\n**Step 3: Determine correct form**\nAfter \"would rather,\" we use the base verb form \"get.\"\nAfter \"than,\" we should also use the base verb form.\n\n**Step 4: Test choices**\n- **A:** \"get...than paying\" doesn't match. Incorrect!\n- **B:** \"get...than to pay\" — Wait, actually \"get...than pay\" would be best, but \"to pay\" creates parallelism with the infinitive structure. Correct!\n- **C:** \"getting...than paying\" — both gerunds, parallel, but doesn't work with \"would rather.\" Incorrect!\n- **D:** \"to get...than to pay\" — both infinitives, but \"would rather\" takes base verb not infinitive. Incorrect!\n\nThe answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:09:16.041146+00:00",
+      "updated_at": "2025-10-21T00:09:16.041146+00:00"
+    },
+    {
+      "id": "608cc74c-5df6-4e48-807e-b71b501f59ea",
+      "lesson_id": "e6153221-e330-4db4-8cc7-9c5a1d51a301",
+      "position": 3,
+      "title": "Not Only/But Also",
+      "problem_text": "My mother not only took away my keys <u>but also she locked</u> them in the safe.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "but also locked",
+          "letter": "B"
+        },
+        {
+          "text": "but she also locked",
+          "letter": "C"
+        },
+        {
+          "text": "but was also locking",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "This tests the correlative conjunction \"not only/but also.\"\n\n**Step 1: Identify what comes after each part**\nAfter \"not only\": \"took away my keys\"\nAfter \"but also\": \"she locked them\"\n\n**Step 2: Check for parallelism**\n\"Took away\" (verb phrase) vs. \"she locked\" (subject + verb)\nNot parallel! The first doesn't have \"she,\" so the second shouldn't either.\n\n**Step 3: Match the structure**\nAfter \"not only\" = verb phrase\nAfter \"but also\" = should be verb phrase too\n\n**Step 4: Test choices**\n- **A:** Includes \"she\" which breaks parallelism. Incorrect!\n- **B:** \"but also locked\" — now both are just verb phrases. Parallel! Correct!\n- **C:** Still has \"she,\" not parallel. Incorrect!\n- **D:** \"was also locking\" is progressive tense, doesn't match \"took.\" Incorrect!\n\nThe answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:09:16.115885+00:00",
+      "updated_at": "2025-10-21T00:09:16.115885+00:00"
+    },
+    {
+      "id": "87a5dc28-cafd-419f-884d-01275d3e1e17",
+      "lesson_id": "e6153221-e330-4db4-8cc7-9c5a1d51a301",
+      "position": 4,
+      "title": "Both/And Structure",
+      "problem_text": "<u>Both a scholar and quite athletic,</u> Sylvia got a scholarship to row crew in college.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "Both a scholar and an athlete,",
+          "letter": "B"
+        },
+        {
+          "text": "Both scholarly and quite athletic,",
+          "letter": "C"
+        },
+        {
+          "text": "A scholar and quite athletic,",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "This tests the correlative conjunction \"both/and.\"\n\n**Step 1: Identify what comes after each part**\nAfter \"both\": \"a scholar\" (noun phrase)\nAfter \"and\": \"quite athletic\" (adjective phrase)\n\n**Step 2: Check for parallelism**\n\"A scholar\" (noun) vs. \"quite athletic\" (adjective)\nNot parallel!\n\n**Step 3: Determine which form to use**\nWe can make both nouns or both adjectives.\n\n**Step 4: Test choices**\n- **A:** \"a scholar\" (noun) and \"quite athletic\" (adjective) don't match. Incorrect!\n- **B:** \"a scholar\" and \"an athlete\" — both are nouns! Parallel! Correct!\n- **C:** \"scholarly\" and \"quite athletic\" — both adjectives, also parallel, but changes meaning slightly.\n- **D:** Removes \"both,\" which changes the structure entirely. Incorrect!\n\nThe answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T00:09:16.186523+00:00",
+      "updated_at": "2025-10-21T00:09:16.186523+00:00"
+    }
+  ]
+}

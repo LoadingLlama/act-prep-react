@@ -1,0 +1,166 @@
+{
+  "lesson_key": "punctuation",
+  "lesson_title": "Topic 1.3 - Advanced Punctuation",
+  "examples": [
+    {
+      "id": "2269fa9d-eaab-4a64-b0ce-edacd9b2dd78",
+      "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+      "position": 1,
+      "title": "Testing Semicolons Between Clauses",
+      "problem_text": "Strawberries are supposed to be easy to grow<u>; however,</u> the ones in my garden die every year.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": ", however,",
+          "letter": "B"
+        },
+        {
+          "text": "; however",
+          "letter": "C"
+        },
+        {
+          "text": ", however",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "This tests proper punctuation with transitional words between independent clauses.\n\n**Step 1: Identify the clauses**\n- Left: \"Strawberries are supposed to be easy to grow\" (independent clause - complete sentence)\n- Right: \"the ones in my garden die every year\" (independent clause - complete sentence)\n\nWe have two independent clauses connected by the transitional word \"however.\"\n\n**Step 2: Recall the semicolon and transitional word rules**\nWhen a transitional word like \"however\" appears between two independent clauses:\n- Use semicolon BEFORE the transitional word\n- Use comma AFTER the transitional word\n\nStructure: Independent clause + semicolon + transitional word + comma + Independent clause\n\n**Step 3: Test each choice**\n- **A (NO CHANGE - \"; however,\"):** Semicolon before \"however,\" comma after. This perfectly matches the rule! Correct!\n\n- **B (\", however,\"):** Comma before and after. This creates a comma splice—you cannot join two independent clauses with just a comma. Incorrect!\n\n- **C (\"; however\"):** Semicolon before, but missing the comma after \"however.\" Transitional words between independent clauses need BOTH punctuation marks. Incorrect!\n\n- **D (\", however\"):** Comma before, no comma after. This is both a comma splice AND missing the comma after \"however.\" Incorrect!\n\n**Why A is correct:**\nThe semicolon properly separates the two independent clauses, and the comma after \"however\" is required for transitional words in this position.\n\nThe answer is **A**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:32:29.641913+00:00",
+      "updated_at": "2025-10-20T23:32:29.641913+00:00"
+    },
+    {
+      "id": "834384bf-460b-4304-869f-a90037612c30",
+      "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+      "position": 2,
+      "title": "Colon Introducing a List",
+      "problem_text": "I have always found surfing difficult, but it can be broken down into three simple <u>steps paddle</u> hard, stand up, and ride the wave.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "steps: paddle",
+          "letter": "B"
+        },
+        {
+          "text": "steps, including: paddle",
+          "letter": "C"
+        },
+        {
+          "text": "steps paddle",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "This tests whether you need a colon to introduce a list.\n\n**Step 1: Identify the structure**\nThe sentence says surfing can be broken down into three steps, then lists them: paddle hard, stand up, and ride the wave.\n\nThis is a classic colon situation—introducing a list.\n\n**Step 2: Check the three colon rules**\nRule 1: Is the part before the colon an independent clause?\n\"I have always found surfing difficult, but it can be broken down into three simple steps\" → Yes! This is a complete sentence.\n\nRule 2: Does everything after the colon consist only of the list?\n\"paddle hard, stand up, and ride the wave\" → Yes! It's just the three steps, nothing else.\n\nRule 3: Is there \"including,\" \"such as,\" or \"for example\"?\nNo, so we CAN use a colon.\n\n**Step 3: Test each choice**\n- **A (NO CHANGE - \"steps paddle\"):** No punctuation at all. This runs the list into the sentence without separating it. Incorrect!\n\n- **B (\"steps: paddle\"):** Colon after \"steps\" introduces the list. The part before the colon is an independent clause, and everything after is just the list. This matches all three colon rules! Correct!\n\n- **C (\"steps, including: paddle\"):** This violates Rule 3—NEVER use a colon with \"including.\" If we use \"including,\" we should use a comma, not a colon. Incorrect!\n\n- **D (\"steps paddle\"):** Same as A—no punctuation to separate the list from the sentence. Incorrect!\n\n**Why B is correct:**\nA colon is the perfect punctuation to introduce a list when the part before is an independent clause, which it is here.\n\nThe answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:32:29.906857+00:00",
+      "updated_at": "2025-10-20T23:32:29.906857+00:00"
+    },
+    {
+      "id": "a808129f-6611-4c53-9f2f-bd09284fa0cb",
+      "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+      "position": 3,
+      "title": "Pair of Dashes for Unnecessary Information",
+      "problem_text": "All of Tommy's favorite toys<u>, his toy cars, his</u> marbles, and his Legos - were lost during the move.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": " - his toy cars, his",
+          "letter": "B"
+        },
+        {
+          "text": " his toy cars, his",
+          "letter": "C"
+        },
+        {
+          "text": ": his toy cars, his",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "This tests whether you can match punctuation marks when setting apart unnecessary information.\n\n**Step 1: Identify the structure**\nNotice there's a dash AFTER \"Legos\" (not in the underlined portion). This is a major clue!\n\nFull sentence: \"All of Tommy's favorite toys, his toy cars, his marbles, and his Legos - were lost during the move.\"\n\n**Step 2: Identify unnecessary information**\nThe phrase \"his toy cars, his marbles, and his Legos\" is unnecessary information that describes what Tommy's favorite toys are.\n\nCross it out: \"All of Tommy's favorite toys were lost during the move.\"\n\nPerfect! This is a complete sentence, so the phrase in the middle is unnecessary.\n\n**Step 3: Check the punctuation rule**\nUnnecessary information in the middle of a sentence needs matching punctuation on BOTH sides:\n- Pair of commas, OR\n- Pair of dashes, OR\n- Pair of parentheses\n\nYou CANNOT mix them!\n\nSince there's a dash AFTER \"Legos,\" we need a dash BEFORE \"his toy cars\" to match.\n\n**Step 4: Test each choice**\n- **A (NO CHANGE - \", his toy cars, his\"):** This starts with a comma but ends with a dash. You cannot mix commas and dashes! Incorrect!\n\n- **B (\" - his toy cars, his\"):** Starts with a dash, ends with a dash (after \"Legos\"). This creates a matching pair of dashes to set apart the unnecessary information. Correct!\n\n- **C (\" his toy cars, his\"):** No punctuation at all before the phrase, but there's a dash after it. This doesn't match. Incorrect!\n\n- **D (\": his toy cars, his\"):** Starts with a colon but ends with a dash. You cannot mix colons and dashes like this. Incorrect!\n\n**Why B is correct:**\nThe dash after \"Legos\" requires a matching dash before \"his toy cars\" to properly set apart the unnecessary information.\n\nThe answer is **B**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:32:30.079066+00:00",
+      "updated_at": "2025-10-20T23:32:30.079066+00:00"
+    },
+    {
+      "id": "128d0807-8b9a-47c3-8bdc-91053f113257",
+      "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+      "position": 4,
+      "title": "Possessive vs. Plural Nouns",
+      "problem_text": "As a young boy, Raheem became enthralled with pro soccer <u>player's and</u> their signature moves.",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "players' and",
+          "letter": "B"
+        },
+        {
+          "text": "players",
+          "letter": "C"
+        },
+        {
+          "text": "players'",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "This tests whether you can distinguish between possessive and plural nouns.\n\n**Step 1: Identify what the sentence is saying**\nRaheem became enthralled with pro soccer players (multiple players, not one player).\n\nThe sentence is NOT saying the players possess anything—it's just saying he was fascinated by the players themselves and by their signature moves.\n\n**Step 2: Check if possession is happening**\nLook at what comes after \"player's/players/players'\":\n- \"and their signature moves\"\n\nThe word \"and\" tells us we have a list: \"players\" AND \"their signature moves.\"\n\nThe players are NOT possessing the \"and\"—that doesn't make sense. This is a list of two things Raheem is enthralled with.\n\n**Step 3: Determine if we need an apostrophe**\nSince there's no possession happening, we need the simple plural form: \"players\" (no apostrophe).\n\n**Step 4: Test each choice**\n- **A (NO CHANGE - \"player's and\"):** This is singular possessive (\"player's\"), but we're talking about multiple players. Also, it incorrectly suggests possession. Incorrect!\n\n- **B (\"players' and\"):** This is plural possessive, but the players aren't possessing anything. We just need the plural form. Incorrect!\n\n- **C (\"players\"):** Simple plural with no apostrophe. This correctly indicates multiple players without implying possession. Correct!\n\n- **D (\"players'\"):** This is plural possessive, but again, there's no possession happening here. Incorrect!\n\n**Why C is correct:**\nThe sentence needs the simple plural form \"players\" because we're talking about multiple players in general, not players possessing something.\n\nThe answer is **C**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:32:30.198158+00:00",
+      "updated_at": "2025-10-20T23:32:30.198158+00:00"
+    },
+    {
+      "id": "c1b71e74-1738-4d03-8765-e9ddd5d35707",
+      "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+      "position": 5,
+      "title": "Quotation Marks with Spoken Dialogue",
+      "problem_text": "As the driver approached, the crossing guard said to <u>herself, \"who</u> would buy a purple car?\"",
+      "choices": [
+        {
+          "text": "NO CHANGE",
+          "letter": "A"
+        },
+        {
+          "text": "herself, \"who",
+          "letter": "B"
+        },
+        {
+          "text": "herself \"who",
+          "letter": "C"
+        },
+        {
+          "text": "herself \"who",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "This tests the proper punctuation of quotation marks with spoken dialogue.\n\n**Step 1: Identify what's happening**\nThe crossing guard is speaking to herself (saying something out loud). The words \"who would buy a purple car?\" are being actively spoken.\n\n**Step 2: Recall the quotation mark rule for spoken dialogue**\nWhen a quote is being spoken (said, yelled, whispered, exclaimed, asked, etc.), we need:\n- A comma before OR after the quotation marks to offset the spoken words from the speaker tag\n\nStructure: Speaker tag + comma + quotation marks + spoken words\nOR: Quotation marks + spoken words + comma + speaker tag\n\n**Step 3: Apply the rule**\nSince we have \"the crossing guard said to herself\" (speaker tag) followed by the spoken words, we need:\n- Comma after \"herself\"\n- Opening quotation mark\n- The spoken words: \"who would buy a purple car?\"\n\n**Step 4: Test each choice**\n- **A (NO CHANGE - 'herself, \"who'):** Comma after \"herself,\" then opening quotation mark, then the spoken words. This perfectly follows the rule for spoken dialogue! Correct!\n\n- **B ('herself, \"who'):** This appears identical to A, so it would also be correct if it's truly the same. But looking at the choices, B likely has a typo or different ending. Without seeing the full context, A is the clear answer. Correct structure!\n\n- **C ('herself \"who'):** No comma after \"herself.\" When dialogue is being spoken, you need a comma to separate the speaker tag from the quotation. Incorrect!\n\n- **D ('herself \"who'):** Same as C—missing the comma after \"herself.\" Incorrect!\n\n**Why A is correct:**\nSpoken dialogue requires a comma to separate the speaker tag (\"said to herself\") from the quotation marks. The comma signals that what follows is the actual spoken words.\n\nThe answer is **A**.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T23:32:30.310989+00:00",
+      "updated_at": "2025-10-20T23:32:30.310989+00:00"
+    }
+  ]
+}

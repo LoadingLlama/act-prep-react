@@ -1,0 +1,150 @@
+{
+  "lesson_key": "quadratics",
+  "lesson_title": "Topic 4.2 - Quadratics",
+  "examples": [
+    {
+      "id": "47eb45fe-a538-4dbc-9e9f-7f8dbfa2bb13",
+      "lesson_id": "f7516c41-afb2-48fb-a4e2-df9fe41d8b23",
+      "position": 2,
+      "title": "FOILing Perfect Squares",
+      "problem_text": "Which of the following is equivalent to (2x + 3)² + 4x?",
+      "choices": [
+        {
+          "text": "4x² + 16x + 9",
+          "letter": "A"
+        },
+        {
+          "text": "4x² + 4x + 9",
+          "letter": "B"
+        },
+        {
+          "text": "2x² + 4x + 3",
+          "letter": "C"
+        },
+        {
+          "text": "6x² + 9",
+          "letter": "D"
+        },
+        {
+          "text": "4x² + 12x + 9",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "FOIL the perfect square first, then add 4x.\\n\\nStep 1: Expand (2x + 3)²\\n(2x + 3)² = (2x + 3)(2x + 3)\\nF: 2x · 2x = 4x²\\nO: 2x · 3 = 6x\\nI: 3 · 2x = 6x\\nL: 3 · 3 = 9\\nResult: 4x² + 12x + 9\\n\\nStep 2: Add 4x\\n4x² + 12x + 9 + 4x = 4x² + 16x + 9\\n\\nCommon mistake: (2x + 3)² ≠ 4x² + 9. You MUST FOIL!\\n\\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:13:47.358805+00:00",
+      "updated_at": "2025-10-20T21:13:47.358805+00:00"
+    },
+    {
+      "id": "55ff0717-618c-451c-aefa-78a8832b04d8",
+      "lesson_id": "f7516c41-afb2-48fb-a4e2-df9fe41d8b23",
+      "position": 3,
+      "title": "Finding Sum of Roots",
+      "problem_text": "What is the sum of the roots of the polynomial f(x) = x² - 11x + 18?",
+      "choices": [
+        {
+          "text": "-11",
+          "letter": "A"
+        },
+        {
+          "text": "-7",
+          "letter": "B"
+        },
+        {
+          "text": "7",
+          "letter": "C"
+        },
+        {
+          "text": "11",
+          "letter": "D"
+        },
+        {
+          "text": "18",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "D",
+      "solution_steps": [],
+      "answer_explanation": "Find roots by factoring, then add them.\\n\\nStep 1: Set equal to zero\\nx² - 11x + 18 = 0\\n\\nStep 2: Factor\\nNeed two numbers that multiply to 18 and add to -11\\nThose numbers are -2 and -9\\n(x - 2)(x - 9) = 0\\n\\nStep 3: Set each factor to zero\\nx - 2 = 0 → x = 2\\nx - 9 = 0 → x = 9\\n\\nStep 4: Sum the roots\\n2 + 9 = 11\\n\\nRemember: roots = solutions = zeros = x-intercepts (all the same thing!)\\n\\nThe answer is D.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:13:47.497164+00:00",
+      "updated_at": "2025-10-20T21:13:47.497164+00:00"
+    },
+    {
+      "id": "b347313d-a93d-4d00-8468-d2dff2e5d846",
+      "lesson_id": "f7516c41-afb2-48fb-a4e2-df9fe41d8b23",
+      "position": 4,
+      "title": "Using Quadratic Formula",
+      "problem_text": "Which of the following is a zero for the function f(x) = x² - 8x + 4?",
+      "choices": [
+        {
+          "text": "8 + 4√2",
+          "letter": "A"
+        },
+        {
+          "text": "4 - 2√3",
+          "letter": "B"
+        },
+        {
+          "text": "4 + 2√3",
+          "letter": "C"
+        },
+        {
+          "text": "-8 + 4√3",
+          "letter": "D"
+        },
+        {
+          "text": "8 - 2√3",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "Use quadratic formula since this does not factor easily.\\n\\nFormula: x = (-b ± √(b² - 4ac)) / (2a)\\nFor x² - 8x + 4: a = 1, b = -8, c = 4\\n\\nStep 1: Plug in values\\nx = (8 ± √(64 - 16)) / 2\\n\\nStep 2: Simplify under radical\\nx = (8 ± √48) / 2\\n\\nStep 3: Simplify √48 = √(16·3) = 4√3\\nx = (8 ± 4√3) / 2\\n\\nStep 4: Divide all terms by 2\\nx = 4 ± 2√3\\n\\nBoth solutions: x = 4 + 2√3 and x = 4 - 2√3\\n\\nThe answer is C.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:13:47.683298+00:00",
+      "updated_at": "2025-10-20T21:13:47.683298+00:00"
+    },
+    {
+      "id": "e25a02e2-d296-47cf-9835-4ea77681058f",
+      "lesson_id": "f7516c41-afb2-48fb-a4e2-df9fe41d8b23",
+      "position": 5,
+      "title": "Using the Discriminant",
+      "problem_text": "How many real roots are there to the equation 2x² - 7x + 9 = 0?",
+      "choices": [
+        {
+          "text": "0",
+          "letter": "A"
+        },
+        {
+          "text": "1",
+          "letter": "B"
+        },
+        {
+          "text": "2",
+          "letter": "C"
+        },
+        {
+          "text": "3",
+          "letter": "D"
+        },
+        {
+          "text": "4",
+          "letter": "E"
+        }
+      ],
+      "correct_answer": "A",
+      "solution_steps": [],
+      "answer_explanation": "Use the discriminant to determine number of real solutions.\\n\\nDiscriminant: b² - 4ac\\nFor 2x² - 7x + 9: a = 2, b = -7, c = 9\\n\\nStep 1: Calculate discriminant\\nb² - 4ac = (-7)² - 4(2)(9)\\n= 49 - 72\\n= -23\\n\\nStep 2: Interpret result\\nSince -23 < 0 (negative), there are 0 real roots\\n\\nDiscriminant Rules:\\n• Positive → 2 real solutions\\n• Zero → 1 real solution\\n• Negative → 0 real solutions (2 complex)\\n\\nThe answer is A.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-20T21:13:47.882819+00:00",
+      "updated_at": "2025-10-20T21:13:47.882819+00:00"
+    }
+  ]
+}

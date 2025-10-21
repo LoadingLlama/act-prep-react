@@ -1,0 +1,70 @@
+{
+  "lesson_key": "equations-as-answers",
+  "lesson_title": "Topic 3.3 - Equations as Answers",
+  "examples": [
+    {
+      "id": "4a2bec04-32c8-4bbd-94be-072ab865b8e7",
+      "lesson_id": "65784d86-bf0d-4dbe-aca9-a6fca2383101",
+      "position": 1,
+      "title": "Testing Equations with Simple Data Points",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">A study measured the temperature at different altitudes above sea level.</p>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Figure 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Graph Description:</strong> Temperature versus altitude for measurements taken on a clear day.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Altitude (km)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Temperature (°C)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">0</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">20</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">1</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">15</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">2</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">10</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">4</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">0</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">Which equation best represents the relationship between temperature (T) and altitude (h)?</p>",
+      "choices": [
+        {
+          "text": "T = 20 + 5h",
+          "letter": "A"
+        },
+        {
+          "text": "T = 20 - 5h",
+          "letter": "B"
+        },
+        {
+          "text": "T = 5h",
+          "letter": "C"
+        },
+        {
+          "text": "T = 100/h",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "B",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Identify the variables**\nT = temperature (°C)\nh = altitude (km)\n\nLooking at the data, as altitude increases, temperature decreases. This means we need a negative relationship (eliminate A and C which show positive relationships).\n\nRemaining: B (T = 20 - 5h) or D (T = 100/h)\n\n**Step 2: Test with h = 0 (easiest point)**\nFrom the table: when h = 0, T = 20\n\nTest B: T = 20 - 5(0) = 20 - 0 = 20 ✓ Matches!\nTest D: T = 100/0 = undefined ✗ Doesn't work!\n\nEquation B works for h = 0, but let's verify with another point to be sure.\n\n**Step 3: Test with h = 1 (another simple point)**\nFrom the table: when h = 1, T = 15\n\nTest B: T = 20 - 5(1) = 20 - 5 = 15 ✓ Matches!\n\n**Step 4: Verify with h = 2**\nFrom the table: when h = 2, T = 10\n\nTest B: T = 20 - 5(2) = 20 - 10 = 10 ✓ Matches!\n\n**The answer is B.**\n\nThe pattern shows that for every 1 km increase in altitude, temperature decreases by 5°C, starting from 20°C at sea level (h = 0).",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T06:42:13.364593+00:00",
+      "updated_at": "2025-10-21T06:42:13.364593+00:00"
+    },
+    {
+      "id": "104b5e15-d52f-4c16-b004-b03d3561749d",
+      "lesson_id": "65784d86-bf0d-4dbe-aca9-a6fca2383101",
+      "position": 2,
+      "title": "Identifying Inverse Relationships",
+      "problem_text": "<p style=\"margin-bottom: 1.5rem; font-size: 16px; line-height: 1.6;\">A gas was compressed in a sealed container and the pressure was measured at different volumes.</p>\n\n  <p style=\"font-weight: 700; font-size: 18px; margin-bottom: 1.2rem; color: #1f2937;\">Figure 1</p>\n  <p style=\"margin-bottom: 1rem; font-size: 15px;\"><strong>Graph Description:</strong> Pressure versus volume for a gas at constant temperature.</p>\n  <table style=\"width: auto; border-collapse: collapse; margin-top: 1.2rem; font-size: 14px;\">\n    <thead>\n      <tr style=\"background-color: #374151;\">\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Volume (L)</th>\n        <th style=\"padding: 0.6rem; border: 1px solid #1f2937; text-align: center; color: white; font-weight: 600;\">Pressure (atm)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">1</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">24</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">2</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">12</td>\n      </tr>\n      <tr style=\"background-color: white;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">3</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">8</td>\n      </tr>\n      <tr style=\"background-color: #f9fafb;\">\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-weight: 600; font-size: 14px;\">4</td>\n        <td style=\"padding: 0.5rem; border: 1px solid #d1d5db; text-align: center; font-size: 14px;\">6</td>\n      </tr>\n    </tbody>\n  </table>\n\n\n<p style=\"margin-top: 2.5rem; font-weight: 600; font-size: 17px; color: #1f2937;\">Which equation best represents the relationship between pressure (P) and volume (V)?</p>",
+      "choices": [
+        {
+          "text": "P = 24V",
+          "letter": "A"
+        },
+        {
+          "text": "P = 24 - 6V",
+          "letter": "B"
+        },
+        {
+          "text": "P = 24/V",
+          "letter": "C"
+        },
+        {
+          "text": "P = V/24",
+          "letter": "D"
+        }
+      ],
+      "correct_answer": "C",
+      "solution_steps": [],
+      "answer_explanation": "**Step 1: Check the direction of relationship**\nLooking at the data: as V increases, P decreases\n- V doubles from 1→2: P halves from 24→12\n- V doubles from 2→4: P halves from 12→6\n\nThis is an inverse relationship (not linear), so eliminate A and B.\n\nRemaining: C (P = 24/V) or D (P = V/24)\n\n**Step 2: Test with V = 1 (simplest point)**\nFrom the table: when V = 1, P = 24\n\nTest C: P = 24/1 = 24 ✓ Matches!\nTest D: P = 1/24 = 0.0417 ✗ Way too small!\n\nEquation C is clearly correct, but let's verify with another point.\n\n**Step 3: Verify with V = 2**\nFrom the table: when V = 2, P = 12\n\nTest C: P = 24/2 = 12 ✓ Matches perfectly!\n\n**Step 4: Verify with V = 4**\nFrom the table: when V = 4, P = 6\n\nTest C: P = 24/4 = 6 ✓ Matches perfectly!\n\n**The answer is C.**\n\nThis is Boyle's Law - the product P × V is constant (= 24). When volume increases, pressure decreases proportionally so that their product remains 24.",
+      "diagram_svg": null,
+      "is_worked_example": false,
+      "created_at": "2025-10-21T06:42:13.437611+00:00",
+      "updated_at": "2025-10-21T06:42:13.437611+00:00"
+    }
+  ]
+}
