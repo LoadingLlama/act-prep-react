@@ -1,0 +1,267 @@
+
+📖 STEP 1: Extracting text from OCR PDF...
+✅ Extracted 131985 characters from PDF
+
+📝 STEP 2: Parsing questions from TXT file...
+✅ Parsed 74 English questions
+✅ Parsed 60 Math questions
+✅ Parsed 40 Reading questions
+✅ Parsed 40 Science questions
+
+🔑 STEP 3: Loading answer keys from JSON...
+✅ Loaded answer keys for all sections
+
+📚 STEP 4: Extracting passages from PDF...
+✅ Extracted 5 English passages
+✅ Extracted 4 Reading passages
+✅ Created 7 Science passage stubs
+
+🏷️ STEP 5: Assigning question types...
+✅ Assigned question types for all sections
+
+📊 STEP 6: Assigning ACT reporting categories...
+✅ Assigned ACT reporting categories for all sections
+
+💾 STEP 7: Inserting passages into database...
+✅ Inserted English Passage 1
+✅ Inserted English Passage 2
+✅ Inserted English Passage 3
+✅ Inserted English Passage 4
+✅ Inserted English Passage 5
+✅ Inserted Reading Passage 1
+✅ Inserted Reading Passage 2
+✅ Inserted Reading Passage 3
+✅ Inserted Reading Passage 4
+✅ Inserted Science Passage 1
+✅ Inserted Science Passage 2
+✅ Inserted Science Passage 3
+✅ Inserted Science Passage 4
+✅ Inserted Science Passage 5
+✅ Inserted Science Passage 6
+✅ Inserted Science Passage 7
+
+💾 STEP 8: Inserting questions into database...
+❌ Error inserting English Q1: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q2: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q3: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q4: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q5: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q6: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q7: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q8: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q9: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q10: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q11: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q12: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q13: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q14: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q15: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q16: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q17: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q18: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q19: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q20: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q21: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q22: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q23: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q24: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q25: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q26: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q27: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q28: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q29: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q30: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q31: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q32: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q33: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q34: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q35: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q36: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q37: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q38: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q39: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q40: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q41: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q42: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q43: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q44: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q45: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q46: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q47: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q48: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q49: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q50: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q51: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q52: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q53: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q54: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q55: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q56: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q57: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q58: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q59: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q60: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q61: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q62: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q63: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q64: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q65: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q66: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q67: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q68: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q69: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q70: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q72: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q73: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q74: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+❌ Error inserting English Q75: Could not find the 'choices' column of 'act_english_questions' in the schema cache
+✅ Inserted 74 English questions
+❌ Error inserting Math Q1: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q2: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q3: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q4: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q5: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q6: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q7: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q8: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q9: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q10: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q11: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q12: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q13: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q14: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q15: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q16: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q17: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q18: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q19: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q20: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q21: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q22: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q23: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q24: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q25: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q26: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q27: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q28: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q29: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q30: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q31: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q32: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q33: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q34: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q35: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q36: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q37: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q38: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q39: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q40: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q41: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q42: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q43: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q44: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q45: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q46: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q47: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q48: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q49: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q50: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q51: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q52: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q53: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q54: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q55: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q56: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q57: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q58: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q59: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+❌ Error inserting Math Q60: Could not find the 'choices' column of 'act_math_questions' in the schema cache
+✅ Inserted 60 Math questions
+❌ Error inserting Reading Q1: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q2: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q3: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q4: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q5: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q6: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q7: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q8: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q9: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q10: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q11: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q12: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q13: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q14: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q15: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q16: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q17: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q18: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q19: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q20: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q21: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q22: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q23: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q24: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q25: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q26: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q27: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q28: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q29: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q30: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q31: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q32: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q33: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q34: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q35: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q36: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q37: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q38: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q39: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+❌ Error inserting Reading Q40: Could not find the 'choices' column of 'act_reading_questions' in the schema cache
+✅ Inserted 40 Reading questions
+❌ Error inserting Science Q1: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q2: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q3: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q4: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q5: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q6: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q7: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q8: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q9: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q10: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q11: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q12: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q13: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q14: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q15: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q16: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q17: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q18: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q19: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q20: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q21: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q22: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q23: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q24: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q25: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q26: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q27: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q28: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q29: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q30: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q31: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q32: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q33: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q34: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q35: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q36: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q37: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q38: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q39: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+❌ Error inserting Science Q40: Could not find the 'choices' column of 'act_science_questions' in the schema cache
+✅ Inserted 40 Science questions
+
+🔍 STEP 9: Running verification checks...
+✅ Verified 75/75 English questions in database
+✅ Verified 60/60 Math questions in database
+✅ Verified 40/40 Reading questions in database
+✅ Verified 40/40 Science questions in database

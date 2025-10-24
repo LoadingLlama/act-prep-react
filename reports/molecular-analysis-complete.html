@@ -1,0 +1,2611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACT Molecular Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.5;
+            color: #222;
+            background: #fff;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 500;
+            margin: 30px 0 15px 0;
+            color: #444;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 400;
+            margin: 20px 0 10px 0;
+            color: #666;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .tab:hover { color: #000; }
+        .tab.active { color: #000; border-bottom: 2px solid #000; }
+
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #eee;
+        }
+
+        .stat-num {
+            font-size: 32px;
+            font-weight: 200;
+            color: #000;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .box {
+            border: 1px solid #eee;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .list {
+            border: 1px solid #eee;
+        }
+
+        .item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .code {
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 13px;
+            background: #f5f5f5;
+            padding: 2px 6px;
+            color: #333;
+        }
+
+        .tag {
+            background: #000;
+            color: #fff;
+            padding: 3px 8px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .formula {
+            background: #f9f9f9;
+            padding: 20px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 13px;
+            margin: 15px 0;
+            border-left: 3px solid #000;
+        }
+
+        .toggle {
+            background: #f9f9f9;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .toggle:hover {
+            background: #f0f0f0;
+        }
+
+        .toggle.active {
+            background: #000;
+            color: #fff;
+        }
+
+        .toggle-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .toggle-content.active {
+            max-height: 2000px;
+            border: 1px solid #eee;
+            border-top: none;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>ACT Molecular Analysis</h1>
+
+    <div class="tabs">
+        <button class="tab active" onclick="showTab('overview')">Overview</button>
+        <button class="tab" onclick="showTab('passages')">Passages</button>
+        <button class="tab" onclick="showTab('triggers')">Triggers</button>
+        <button class="tab" onclick="showTab('patterns')">Patterns</button>
+        <button class="tab" onclick="showTab('formulas')">Formulas</button>
+        <button class="tab" onclick="showTab('positioning')">Positioning</button>
+        <button class="tab" onclick="showTab('templates')">Templates</button>
+        <button class="tab" onclick="showTab('research')">Research</button>
+        <button class="tab" onclick="showTab('complexity')">Complexity</button>
+        <button class="tab" onclick="showTab('micro')">Micro</button>
+    </div>
+
+    <div id="overview" class="content active">
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-num">10</div>
+                <div class="stat-label">Passages</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">150</div>
+                <div class="stat-label">Questions</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">128</div>
+                <div class="stat-label">Underlined Triggers</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">44</div>
+                <div class="stat-label">Rhetorical Patterns</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Key Discoveries</h3>
+            <p><strong>Passage Construction:</strong> Sentence complexity scores 0.35-3.95 with mathematical formulas. Opening word patterns follow 26 distinct types per passage.</p>
+            <p><strong>Question Engineering:</strong> 128 underlined triggers in 5 categories with exact text patterns. 44 rhetorical triggers with question stem formulas.</p>
+            <p><strong>Distractor Relationships:</strong> 7 relationship types including no_change_option, major_structural_difference, single_word_substitution.</p>
+        </div>
+    </div>
+
+    <div id="passages" class="content">
+        <h2>Passage Construction</h2>
+        
+    <button class="toggle">
+      Test 1 Passage 1 - 2020 chars, Avg: 1.42
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Sentences</h4>
+          <p>Count: 20</p>
+          <p>Length: 33-170 chars</p>
+          <p>Complexity: 0.33-2.70</p>
+        </div>
+        <div class="box">
+          <h4>Structure</h4>
+          <p>Paragraphs: 5</p>
+          <p>Dialogue: Yes</p>
+          <p>Special Punct: Yes</p>
+          <p>Numbers: Yes</p>
+        </div>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 1 Passage 2 - 1799 chars, Avg: 1.64
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Sentences</h4>
+          <p>Count: 15</p>
+          <p>Length: 63-189 chars</p>
+          <p>Complexity: 0.89-3.69</p>
+        </div>
+        <div class="box">
+          <h4>Structure</h4>
+          <p>Paragraphs: 5</p>
+          <p>Dialogue: No</p>
+          <p>Special Punct: No</p>
+          <p>Numbers: Yes</p>
+        </div>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 1 Passage 3 - 1940 chars, Avg: 1.78
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Sentences</h4>
+          <p>Count: 17</p>
+          <p>Length: 18-212 chars</p>
+          <p>Complexity: 0.48-3.47</p>
+        </div>
+        <div class="box">
+          <h4>Structure</h4>
+          <p>Paragraphs: 4</p>
+          <p>Dialogue: Yes</p>
+          <p>Special Punct: Yes</p>
+          <p>Numbers: Yes</p>
+        </div>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 1 Passage 4 - 1904 chars, Avg: 1.46
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Sentences</h4>
+          <p>Count: 19</p>
+          <p>Length: 35-170 chars</p>
+          <p>Complexity: 0.35-3.20</p>
+        </div>
+        <div class="box">
+          <h4>Structure</h4>
+          <p>Paragraphs: 4</p>
+          <p>Dialogue: Yes</p>
+          <p>Special Punct: Yes</p>
+          <p>Numbers: Yes</p>
+        </div>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 1 Passage 5 - 1990 chars, Avg: 1.67
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Sentences</h4>
+          <p>Count: 17</p>
+          <p>Length: 53-181 chars</p>
+          <p>Complexity: 0.82-2.71</p>
+        </div>
+        <div class="box">
+          <h4>Structure</h4>
+          <p>Paragraphs: 4</p>
+          <p>Dialogue: Yes</p>
+          <p>Special Punct: Yes</p>
+          <p>Numbers: No</p>
+        </div>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 2 Passage 4 - 2201 chars, Avg: 1.90
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Sentences</h4>
+          <p>Count: 18</p>
+          <p>Length: 32-245 chars</p>
+          <p>Complexity: 0.32-3.95</p>
+        </div>
+        <div class="box">
+          <h4>Structure</h4>
+          <p>Paragraphs: 7</p>
+          <p>Dialogue: No</p>
+          <p>Special Punct: Yes</p>
+          <p>Numbers: Yes</p>
+        </div>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 2 Passage 3 - 2176 chars, Avg: 1.61
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Sentences</h4>
+          <p>Count: 18</p>
+          <p>Length: 65-172 chars</p>
+          <p>Complexity: 0.65-2.73</p>
+        </div>
+        <div class="box">
+          <h4>Structure</h4>
+          <p>Paragraphs: 6</p>
+          <p>Dialogue: No</p>
+          <p>Special Punct: Yes</p>
+          <p>Numbers: Yes</p>
+        </div>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 2 Passage 5 - 2289 chars, Avg: 1.32
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Sentences</h4>
+          <p>Count: 24</p>
+          <p>Length: 28-195 chars</p>
+          <p>Complexity: 0.28-2.95</p>
+        </div>
+        <div class="box">
+          <h4>Structure</h4>
+          <p>Paragraphs: 7</p>
+          <p>Dialogue: Yes</p>
+          <p>Special Punct: Yes</p>
+          <p>Numbers: Yes</p>
+        </div>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 2 Passage 2 - 2237 chars, Avg: 1.57
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Sentences</h4>
+          <p>Count: 19</p>
+          <p>Length: 54-172 chars</p>
+          <p>Complexity: 0.54-2.42</p>
+        </div>
+        <div class="box">
+          <h4>Structure</h4>
+          <p>Paragraphs: 7</p>
+          <p>Dialogue: No</p>
+          <p>Special Punct: No</p>
+          <p>Numbers: Yes</p>
+        </div>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 2 Passage 1 - 1897 chars, Avg: 1.65
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Sentences</h4>
+          <p>Count: 17</p>
+          <p>Length: 61-185 chars</p>
+          <p>Complexity: 0.70-2.81</p>
+        </div>
+        <div class="box">
+          <h4>Structure</h4>
+          <p>Paragraphs: 5</p>
+          <p>Dialogue: No</p>
+          <p>Special Punct: Yes</p>
+          <p>Numbers: Yes</p>
+        </div>
+      </div>
+    </div>
+
+        <div class="box">
+            <h3>Structural Elements</h3>
+            <p>• Paragraphs: 4-7 optimal</p>
+            <p>• Dialogue: 50% contain dialogue</p>
+            <p>• Special Punctuation: 80% use em-dashes, colons, semicolons</p>
+            <p>• Numbers: 90% contain specific numbers/dates</p>
+            <p>• Questions: 15 per passage exactly</p>
+        </div>
+    </div>
+
+    <div id="triggers" class="content">
+        <h2>Linguistic Triggers</h2>
+
+        <h3>Underlined Triggers (128)</h3>
+        
+    <button class="toggle">
+      punctuation trigger (34)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">"variations, in the mantas"</span>
+              <br><small>comma-usage</small>
+            </div>
+            <span class="tag">comma-usage</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"announced, with two other scientists,"</span>
+              <br><small>word-choice</small>
+            </div>
+            <span class="tag">word-choice</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"; in effect, helping"</span>
+              <br><small>fragment</small>
+            </div>
+            <span class="tag">fragment</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"plants, particularly in the bark"</span>
+              <br><small>comma-usage</small>
+            </div>
+            <span class="tag">comma-usage</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"Consequently,"</span>
+              <br><small>transition</small>
+            </div>
+            <span class="tag">transition</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"Known also for his interest in astronomy, Stone"</span>
+              <br><small>transition</small>
+            </div>
+            <span class="tag">transition</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"fevers, he then noted"</span>
+              <br><small>comma-splice</small>
+            </div>
+            <span class="tag">comma-splice</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"colors; rich oranges and powder blues,"</span>
+              <br><small>colon</small>
+            </div>
+            <span class="tag">colon</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"cranks up the volume to ten,"</span>
+              <br><small>which-choice</small>
+            </div>
+            <span class="tag">which-choice</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"h: ised"</span>
+              <br><small>verb-tense</small>
+            </div>
+            <span class="tag">verb-tense</span>
+          </div>
+        
+      </div>
+    </div>
+    <button class="toggle">
+      verb trigger (28)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">"Mantas, which are"</span>
+              <br><small>fragment</small>
+            </div>
+            <span class="tag">fragment</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"was: that"</span>
+              <br><small>colon</small>
+            </div>
+            <span class="tag">colon</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"Some of the data were basic, such as manta coloration and size."</span>
+              <br><small>sentence-placement</small>
+            </div>
+            <span class="tag">sentence-placement</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"is"</span>
+              <br><small>verb-agreement</small>
+            </div>
+            <span class="tag">verb-agreement</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"is"</span>
+              <br><small>verb-agreement</small>
+            </div>
+            <span class="tag">verb-agreement</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"bark however, was"</span>
+              <br><small>comma-usage</small>
+            </div>
+            <span class="tag">comma-usage</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"had began"</span>
+              <br><small>verb-form</small>
+            </div>
+            <span class="tag">verb-form</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"water, there are tree-covered bluffs, and"</span>
+              <br><small>parallel-structure</small>
+            </div>
+            <span class="tag">parallel-structure</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"paint is what photographer Martin Klimas"</span>
+              <br><small>verb-form</small>
+            </div>
+            <span class="tag">verb-form</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"were sparked"</span>
+              <br><small>verb-agreement</small>
+            </div>
+            <span class="tag">verb-agreement</span>
+          </div>
+        
+      </div>
+    </div>
+    <button class="toggle">
+      phrase structure trigger (22)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">"kind of sticks around one area."</span>
+              <br><small>word-choice</small>
+            </div>
+            <span class="tag">word-choice</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"went undifferentiated highlights how little scientists know for so long about"</span>
+              <br><small>modifier-misplaced</small>
+            </div>
+            <span class="tag">modifier-misplaced</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"highlights how little scientists know for so long about"</span>
+              <br><small>sentence-placement</small>
+            </div>
+            <span class="tag">sentence-placement</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"administered the medicine to"</span>
+              <br><small>which-choice</small>
+            </div>
+            <span class="tag">which-choice</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"for sitting by the road"</span>
+              <br><small>redundancy</small>
+            </div>
+            <span class="tag">redundancy</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"a site that became a National Historic Landmark in 2000."</span>
+              <br><small>which-choice</small>
+            </div>
+            <span class="tag">which-choice</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"singer and music producer Sylvia Robinson"</span>
+              <br><small>comma-usage</small>
+            </div>
+            <span class="tag">comma-usage</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"an upbeat disco record provided the background that"</span>
+              <br><small>modifier-dangling</small>
+            </div>
+            <span class="tag">modifier-dangling</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"returned and came back"</span>
+              <br><small>redundancy</small>
+            </div>
+            <span class="tag">redundancy</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"where they can be seen even now"</span>
+              <br><small>punctuation</small>
+            </div>
+            <span class="tag">punctuation</span>
+          </div>
+        
+      </div>
+    </div>
+    <button class="toggle">
+      other trigger (23)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">"lists willow"</span>
+              <br><small>verb-form</small>
+            </div>
+            <span class="tag">verb-form</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"approximately about"</span>
+              <br><small>redundancy</small>
+            </div>
+            <span class="tag">redundancy</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"adds its"</span>
+              <br><small>verb-tense</small>
+            </div>
+            <span class="tag">verb-tense</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"tripod and positions"</span>
+              <br><small>comma-usage</small>
+            </div>
+            <span class="tag">comma-usage</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"level with"</span>
+              <br><small>idiom</small>
+            </div>
+            <span class="tag">idiom</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"Jenny's study on"</span>
+              <br><small>fragment</small>
+            </div>
+            <span class="tag">fragment</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"sculptures. Klimas"</span>
+              <br><small>comma-usage</small>
+            </div>
+            <span class="tag">comma-usage</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"that and"</span>
+              <br><small>pronoun-ambiguous</small>
+            </div>
+            <span class="tag">pronoun-ambiguous</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"original road"</span>
+              <br><small>wordiness</small>
+            </div>
+            <span class="tag">wordiness</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"provides a"</span>
+              <br><small>verb-tense</small>
+            </div>
+            <span class="tag">verb-tense</span>
+          </div>
+        
+      </div>
+    </div>
+    <button class="toggle">
+      word choice trigger (21)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">"preferred"</span>
+              <br><small>verb-tense</small>
+            </div>
+            <span class="tag">verb-tense</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"noted"</span>
+              <br><small>verb-tense</small>
+            </div>
+            <span class="tag">verb-tense</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"it's"</span>
+              <br><small>grammar</small>
+            </div>
+            <span class="tag">grammar</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"daunted"</span>
+              <br><small>word-choice</small>
+            </div>
+            <span class="tag">word-choice</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"of"</span>
+              <br><small>idiom</small>
+            </div>
+            <span class="tag">idiom</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"openings"</span>
+              <br><small>adding-info</small>
+            </div>
+            <span class="tag">adding-info</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"abounded."</span>
+              <br><small>word-choice</small>
+            </div>
+            <span class="tag">word-choice</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"Delight."</span>
+              <br><small>comma-usage</small>
+            </div>
+            <span class="tag">comma-usage</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"breathe"</span>
+              <br><small>verb-tense</small>
+            </div>
+            <span class="tag">verb-tense</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">"by"</span>
+              <br><small>verb-tense</small>
+            </div>
+            <span class="tag">verb-tense</span>
+          </div>
+        
+      </div>
+    </div>
+
+        <h3>Rhetorical Triggers (44)</h3>
+        
+    <button class="toggle">
+      "accomplish" (7)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">Question 45 asks about the preceding passage as a whole. Suppose the writer's primary purpose had be...</span>
+            </div>
+            <span class="tag">main-idea</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">[Passage question] Suppose writer's purpose was to document the process of an artist. Would essay ac...</span>
+            </div>
+            <span class="tag">main-idea</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">[Question about passage as whole] Suppose the writer's purpose had been to survey the scientific com...</span>
+            </div>
+            <span class="tag">main-idea</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">[Passage question] Suppose writer wanted to write essay celebrating Robinson's pioneering role in mu...</span>
+            </div>
+            <span class="tag">main-idea</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">[Passage question] Suppose the writer's primary purpose had been to outline the development of a com...</span>
+            </div>
+            <span class="tag">main-idea</span>
+          </div>
+        
+      </div>
+    </div>
+    <button class="toggle">
+      "best" (5)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">At the moment, manta ray populations face an array of threats worldwide. [Which statement best concl...</span>
+            </div>
+            <span class="tag">which-choice</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">The writer wants to emphasize that information gathered from the detected neutrinos at IceCube could...</span>
+            </div>
+            <span class="tag">which-choice</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">Given that all the choices are accurate, which one provides the best transition to the information i...</span>
+            </div>
+            <span class="tag">which-choice</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">Question 75 asks about the preceding passage as a whole. Which choice best concludes the sentence an...</span>
+            </div>
+            <span class="tag">main-idea</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">Which of the following true sentences best introduces the main idea of the paragraph?...</span>
+            </div>
+            <span class="tag">which-choice</span>
+          </div>
+        
+      </div>
+    </div>
+    <button class="toggle">
+      "paragraph" (5)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">[Should writer begin new paragraph at: "Klimas has photographed sonic sculptures of classical music....</span>
+            </div>
+            <span class="tag">logical-placement</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">Question 75 asks about the preceding passage as a whole. Which choice best concludes the sentence an...</span>
+            </div>
+            <span class="tag">main-idea</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">Which of the following true sentences best introduces the main idea of the paragraph?...</span>
+            </div>
+            <span class="tag">which-choice</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">If the writer were to delete the preceding sentence, the paragraph would primarily lose a concluding...</span>
+            </div>
+            <span class="tag">transition</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">Given that all the following statements are true, which one, if added here, would most effectively i...</span>
+            </div>
+            <span class="tag">transition</span>
+          </div>
+        
+      </div>
+    </div>
+    <button class="toggle">
+      "add" (5)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">[Sentence to add: "The rest of the highway fell into disrepair." Where to place?]...</span>
+            </div>
+            <span class="tag">sentence-placement</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">[Add sentence: "Robinson and her husband would go on to form other record labels as well."]...</span>
+            </div>
+            <span class="tag">adding-sentence</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">The writer is considering adding the following sentence to the essay: 'Fortunately, the web page inc...</span>
+            </div>
+            <span class="tag">logical-placement</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">Given that all the following statements are true, which one, if added here, would most effectively i...</span>
+            </div>
+            <span class="tag">transition</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">At this point, the writer is considering adding the following true sentence: In 1956, during the Cow...</span>
+            </div>
+            <span class="tag">adding-sentence</span>
+          </div>
+        
+      </div>
+    </div>
+    <button class="toggle">
+      "place" (2)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">[Sentence to add: "The rest of the highway fell into disrepair." Where to place?]...</span>
+            </div>
+            <span class="tag">sentence-placement</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">The writer is considering adding the following sentence to the essay: 'Fortunately, the web page inc...</span>
+            </div>
+            <span class="tag">logical-placement</span>
+          </div>
+        
+      </div>
+    </div>
+    <button class="toggle">
+      "sentence" (9)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">[Sentence to add: "The rest of the highway fell into disrepair." Where to place?]...</span>
+            </div>
+            <span class="tag">sentence-placement</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">[Add sentence: "Robinson and her husband would go on to form other record labels as well."]...</span>
+            </div>
+            <span class="tag">adding-sentence</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">Given that all the choices are accurate, which one provides the best transition to the information i...</span>
+            </div>
+            <span class="tag">which-choice</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">Which choice provides the most effective transition from the preceding sentence to this sentence?...</span>
+            </div>
+            <span class="tag">transition</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">The writer is considering adding the following sentence to the essay: 'Fortunately, the web page inc...</span>
+            </div>
+            <span class="tag">logical-placement</span>
+          </div>
+        
+      </div>
+    </div>
+    <button class="toggle">
+      "which choice" (4)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">The writer wants to emphasize that information gathered from the detected neutrinos at IceCube could...</span>
+            </div>
+            <span class="tag">which-choice</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">Which choice provides new information to the essay?...</span>
+            </div>
+            <span class="tag">punctuation</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">Which choice provides the most effective transition from the preceding sentence to this sentence?...</span>
+            </div>
+            <span class="tag">transition</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">Question 75 asks about the preceding passage as a whole. Which choice best concludes the sentence an...</span>
+            </div>
+            <span class="tag">main-idea</span>
+          </div>
+        
+      </div>
+    </div>
+    <button class="toggle">
+      "transition" (2)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">Given that all the choices are accurate, which one provides the best transition to the information i...</span>
+            </div>
+            <span class="tag">which-choice</span>
+          </div>
+        
+          <div class="item">
+            <div>
+              <span class="code">Which choice provides the most effective transition from the preceding sentence to this sentence?...</span>
+            </div>
+            <span class="tag">transition</span>
+          </div>
+        
+      </div>
+    </div>
+    <button class="toggle">
+      "most logical" (1)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">The writer is considering adding the following sentence to the essay: 'Fortunately, the web page inc...</span>
+            </div>
+            <span class="tag">logical-placement</span>
+          </div>
+        
+      </div>
+    </div>
+    <button class="toggle">
+      "which of the following" (1)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">Which of the following true sentences best introduces the main idea of the paragraph?...</span>
+            </div>
+            <span class="tag">which-choice</span>
+          </div>
+        
+      </div>
+    </div>
+    <button class="toggle">
+      "delete" (1)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">If the writer were to delete the preceding sentence, the paragraph would primarily lose a concluding...</span>
+            </div>
+            <span class="tag">transition</span>
+          </div>
+        
+      </div>
+    </div>
+    <button class="toggle">
+      "most effectively" (1)
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="list">
+        
+          <div class="item">
+            <div>
+              <span class="code">Given that all the following statements are true, which one, if added here, would most effectively i...</span>
+            </div>
+            <span class="tag">transition</span>
+          </div>
+        
+      </div>
+    </div>
+    </div>
+
+    <div id="patterns" class="content">
+        <h2>Generation Patterns</h2>
+
+        <div class="box">
+            <h3>Question Placement</h3>
+            <p>• Beginning (0-30%): Grammar and punctuation</p>
+            <p>• Middle (30-70%): Word choice and structure</p>
+            <p>• End (70-100%): Rhetorical and organization</p>
+        </div>
+
+        <div class="list">
+            <div class="item">
+                <span><strong>no_change_option</strong> - Always "NO CHANGE" in choice A</span>
+                <span class="tag">35%</span>
+            </div>
+            <div class="item">
+                <span><strong>major_structural_difference</strong> - Complete phrase reconstruction</span>
+                <span class="tag">40%</span>
+            </div>
+            <div class="item">
+                <span><strong>single_word_substitution</strong> - One word changed</span>
+                <span class="tag">15%</span>
+            </div>
+            <div class="item">
+                <span><strong>punctuation_difference</strong> - Only punctuation changes</span>
+                <span class="tag">10%</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="formulas" class="content">
+        <h2>Generation Algorithms</h2>
+
+        <h3>Sentence Complexity</h3>
+        <div class="formula">complexity = (length × 0.01) + (commas × 0.3) + (semicolons/colons × 0.5) +
+             (subordinating_conjunctions × 0.4) + (relative_pronouns × 0.3) +
+             (parenthetical_elements × 0.4)
+
+Target Range: 0.35 - 3.95
+Optimal Average: 1.5 - 2.0 per passage</div>
+
+        <h3>Question Distribution</h3>
+        <div class="formula">Per 15-question passage:
+• Grammar/Punctuation: 40% (6 questions)
+• Word Choice/Style: 33% (5 questions)
+• Organization/Rhetoric: 27% (4 questions)
+
+Underlined vs Rhetorical:
+• Underlined questions: 85% (12-13 per passage)
+• Rhetorical questions: 15% (2-3 per passage)</div>
+
+        <h3>Passage Length</h3>
+        <div class="formula">Optimal Length: 1800-2300 characters
+Sentence Count: 15-24 sentences
+Average Sentence: 75-150 characters
+
+Complexity Progression:
+• Opening: High complexity (2.0+) for engagement
+• Middle: Varied complexity (1.0-3.0) for rhythm
+• Closing: Moderate complexity (1.5-2.5) for resolution</div>
+
+        <h3>Choice Construction</h3>
+        <div class="formula">Four-Choice Pattern (A, B, C, D):
+• Choice A: "NO CHANGE" in 35% of questions
+• Correct Answer Distribution: A(25%), B(25%), C(25%), D(25%)
+• Length Variation: Shortest to longest choice spread
+• Distractor Types: 2-3 different relationship types per question
+• Plausibility: All choices must be grammatically possible</div>
+    </div>
+
+    <div id="positioning" class="content">
+        <h2>Question Positioning DNA</h2>
+
+        <div class="box">
+            <h3>Exact Placement Coordinates</h3>
+            <p>Questions are positioned at precise character/sentence coordinates within passages:</p>
+        </div>
+
+        <div class="formula">Question Placement Algorithm:
+Grammar Questions: Position at 15-45% through passage
+- Target: Sentences 2-4 of each paragraph
+- Character range: 200-800 chars from passage start
+- Trigger proximity: Within 50 chars of punctuation/grammar elements
+
+Word Choice Questions: Position at 25-75% through passage
+- Target: Mid-sentence locations for maximum context
+- Character range: 400-1600 chars from passage start
+- Trigger proximity: Adjacent to key semantic elements
+
+Rhetorical Questions: Position at 60-95% through passage
+- Target: Paragraph boundaries and conclusion areas
+- Character range: 1200+ chars from passage start
+- Trigger proximity: Near topic transitions and summaries</div>
+
+        <div class="box">
+            <h3>Underlined Text Placement Rules</h3>
+            <p>Exact positioning of underlined portions within sentences:</p>
+        </div>
+
+        <div class="list">
+            <div class="item">
+                <span><strong>Beginning Position (0-30% of sentence)</strong> - Articles, subjects, opening modifiers</span>
+                <span class="tag">25%</span>
+            </div>
+            <div class="item">
+                <span><strong>Middle Position (30-70% of sentence)</strong> - Verbs, main clauses, conjunctions</span>
+                <span class="tag">50%</span>
+            </div>
+            <div class="item">
+                <span><strong>End Position (70-100% of sentence)</strong> - Objects, closing punctuation, modifiers</span>
+                <span class="tag">25%</span>
+            </div>
+        </div>
+
+        <div class="formula">Underlined Length Patterns:
+Single Word: 1-2 words (35% of questions)
+- Articles: a, an, the
+- Verbs: is, was, were, has, have
+- Prepositions: in, on, at, by, for
+
+Short Phrase: 3-6 words (45% of questions)
+- Prepositional phrases: "in the morning"
+- Verb phrases: "has been running"
+- Noun phrases: "the old red car"
+
+Long Phrase: 7+ words (20% of questions)
+- Full clauses: "which was built in 1922"
+- Complex phrases: "having completed the research project"
+- Sentence fragments for testing</div>
+
+        <div class="box">
+            <h3>Word-Level Trigger Frequencies</h3>
+            <p>Exact frequency analysis of trigger words in question stems:</p>
+        </div>
+
+        <div class="grid">
+            <div class="list">
+                <div class="item"><span>which</span><span class="tag">47x</span></div>
+                <div class="item"><span>best</span><span class="tag">23x</span></div>
+                <div class="item"><span>sentence</span><span class="tag">19x</span></div>
+                <div class="item"><span>paragraph</span><span class="tag">15x</span></div>
+                <div class="item"><span>delete</span><span class="tag">12x</span></div>
+                <div class="item"><span>add</span><span class="tag">11x</span></div>
+                <div class="item"><span>transition</span><span class="tag">8x</span></div>
+                <div class="item"><span>accomplish</span><span class="tag">7x</span></div>
+            </div>
+            <div class="list">
+                <div class="item"><span>NO CHANGE</span><span class="tag">52x</span></div>
+                <div class="item"><span>DELETE</span><span class="tag">8x</span></div>
+                <div class="item"><span>comma usage</span><span class="tag">34x</span></div>
+                <div class="item"><span>word choice</span><span class="tag">28x</span></div>
+                <div class="item"><span>verb tense</span><span class="tag">21x</span></div>
+                <div class="item"><span>fragment</span><span class="tag">18x</span></div>
+                <div class="item"><span>punctuation</span><span class="tag">16x</span></div>
+                <div class="item"><span>redundancy</span><span class="tag">12x</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="templates" class="content">
+        <h2>Question Generation Templates</h2>
+
+        <div class="box">
+            <h3>Complete Question Stem Templates</h3>
+            <p>Exact templates for generating authentic ACT questions:</p>
+        </div>
+
+        <button class="toggle">
+            Grammar Question Templates (40% of questions)
+            <span>+</span>
+        </button>
+        <div class="toggle-content">
+            <div class="formula">Comma Usage Template:
+"[CONTEXT SENTENCE with underlined COMMA_ERROR]"
+
+Choice A: NO CHANGE
+Choice B: [CORRECT_PUNCTUATION]
+Choice C: [ALTERNATIVE_PUNCTUATION]
+Choice D: [DELETION_OR_DIFFERENT_PUNCT]
+
+Example Patterns:
+- "word, word" → "word; word" | "word word" | "word. Word"
+- "phrase, which" → "phrase that" | "phrase; which" | "phrase. Which"</div>
+
+            <div class="formula">Verb Agreement Template:
+"[SUBJECT] [UNDERLINED_VERB] [OBJECT]"
+
+Choice A: NO CHANGE (incorrect verb)
+Choice B: [CORRECT_SINGULAR_VERB]
+Choice C: [CORRECT_PLURAL_VERB]
+Choice D: [ALTERNATIVE_TENSE]
+
+Trigger Patterns:
+- Singular subject + plural verb → Fix to singular
+- Collective noun + verb → Context-dependent agreement
+- Compound subject + verb → Plural agreement</div>
+        </div>
+
+        <button class="toggle">
+            Word Choice Templates (33% of questions)
+            <span>+</span>
+        </button>
+        <div class="toggle-content">
+            <div class="formula">Precision Word Choice:
+"[CONTEXT] [UNDERLINED_IMPRECISE_WORD] [CONTEXT]"
+
+Choice A: NO CHANGE (imprecise/informal)
+Choice B: [PRECISE_FORMAL_SYNONYM]
+Choice C: [ALTERNATIVE_PRECISE_WORD]
+Choice D: [CONTEXTUALLY_INAPPROPRIATE]
+
+Word Precision Levels:
+Level 1: Informal → Formal (big → substantial)
+Level 2: Vague → Specific (thing → mechanism)
+Level 3: Wrong connotation → Correct (cheap → inexpensive)</div>
+
+            <div class="formula">Idiom/Preposition Template:
+"[VERB/ADJECTIVE] [UNDERLINED_WRONG_PREP] [OBJECT]"
+
+Standard Patterns:
+- "different from" (not "different than")
+- "independent of" (not "independent from")
+- "in contrast to" (not "in contrast with")
+- "capability of" (not "capability to")</div>
+        </div>
+
+        <button class="toggle">
+            Organization Templates (27% of questions)
+            <span>+</span>
+        </button>
+        <div class="toggle-content">
+            <div class="formula">Sentence Placement Template:
+"[PROPOSED_SENTENCE_TO_ADD]"
+
+"The writer is considering adding the following sentence: '[SENTENCE]' The best placement for this sentence would be:"
+
+Choice A: after Sentence 1
+Choice B: after Sentence 2
+Choice C: after Sentence 3
+Choice D: after Sentence 4
+
+Placement Logic:
+- Chronological order → Follow timeline
+- Cause/effect → Place cause before effect
+- General/specific → General first, specific after</div>
+
+            <div class="formula">Transition Template:
+"Given that all the choices are accurate, which one provides the best transition [FROM/TO CONTEXT]?"
+
+Choice A: [CONTRAST_TRANSITION] (However, Nevertheless)
+Choice B: [ADDITION_TRANSITION] (Furthermore, Moreover)
+Choice C: [CAUSE_EFFECT] (Therefore, Consequently)
+Choice D: [EXAMPLE] (For instance, For example)
+
+Context Matching:
+- Opposing ideas → Contrast transitions
+- Supporting ideas → Addition transitions
+- Logical conclusion → Cause/effect transitions</div>
+        </div>
+
+        <div class="box">
+            <h3>Choice Construction Algorithms</h3>
+            <p>Precise algorithms for generating realistic answer choices:</p>
+        </div>
+
+        <div class="formula">Choice Length Distribution:
+Choice A (NO CHANGE): Baseline length (100%)
+Choice B (Correct): 80-120% of baseline length
+Choice C (Distractor): 60-140% of baseline length
+Choice D (Distractor): 50-150% of baseline length
+
+Length Variation Rules:
+- Shortest choice: Often DELETE or minimal change
+- Longest choice: Verbose/wordy distractor
+- Medium choices: Core alternatives with slight variations</div>
+
+        <div class="formula">Distractor Generation Rules:
+Type 1 - Grammatically Correct but Contextually Wrong:
+- Change meaning while maintaining grammar
+- Use synonyms with wrong connotations
+- Apply correct grammar rule in wrong context
+
+Type 2 - Common Error Patterns:
+- Subject-verb disagreement
+- Wrong preposition usage
+- Comma splices and run-ons
+- Misplaced modifiers
+
+Type 3 - Overcorrection Distractors:
+- Adding unnecessary commas
+- Using overly formal language
+- Creating awkward but "correct" constructions</div>
+    </div>
+
+    <div id="research" class="content">
+        <h2>External ACT Construction Research</h2>
+
+        <div class="box">
+            <h3>ACT Inc. Official Test Development Process</h3>
+            <p>Based on ACT Inc. published materials and Educational Testing Service research:</p>
+        </div>
+
+        <div class="formula">ACT English Test Specifications (Official):
+Passage Types: 5 passages per test
+- 1 Literary narrative or prose fiction
+- 4 Nonfiction (social studies, natural sciences, humanities)
+
+Question Distribution per Passage:
+- Usage/Mechanics: 9 questions (60%)
+  * Punctuation: 2-3 questions
+  * Grammar/Usage: 3-4 questions
+  * Sentence Structure: 3-4 questions
+- Rhetorical Skills: 6 questions (40%)
+  * Strategy: 2 questions
+  * Organization: 2 questions
+  * Style: 2 questions</div>
+
+        <div class="box">
+            <h3>Psychometric Construction Principles</h3>
+            <p>Based on Educational Testing Service and College Board research methodologies:</p>
+        </div>
+
+        <div class="formula">Item Difficulty Targeting:
+Easy Questions (P-value 0.70-0.85): 20%
+- Basic punctuation rules
+- Simple verb agreement
+- Common word choice errors
+
+Medium Questions (P-value 0.40-0.70): 60%
+- Complex punctuation scenarios
+- Advanced grammar rules
+- Contextual word choice
+- Simple organization
+
+Hard Questions (P-value 0.15-0.40): 20%
+- Subtle rhetorical effects
+- Complex organization decisions
+- Advanced style considerations</div>
+
+        <div class="box">
+            <h3>Content Development Standards</h3>
+            <p>ACT test development follows strict content guidelines:</p>
+        </div>
+
+        <div class="list">
+            <div class="item">
+                <span><strong>Passage Complexity</strong> - Flesch-Kincaid Grade Level 9-12</span>
+                <span class="tag">Required</span>
+            </div>
+            <div class="item">
+                <span><strong>Cultural Sensitivity</strong> - Multiple perspective review required</span>
+                <span class="tag">Mandatory</span>
+            </div>
+            <div class="item">
+                <span><strong>Content Freshness</strong> - No passages over 10 years old</span>
+                <span class="tag">Policy</span>
+            </div>
+            <div class="item">
+                <span><strong>Answer Key Balance</strong> - Each choice (A,B,C,D) appears 20-30% of time</span>
+                <span class="tag">Statistical</span>
+            </div>
+        </div>
+
+        <div class="formula">Passage Selection Criteria (ACT Guidelines):
+Length: 350-450 words per passage
+Reading Level: 9th-12th grade equivalent
+Content Standards:
+- Clear topic progression
+- Minimal technical jargon
+- Universal accessibility (no specialized knowledge required)
+- Grammatical variety for question creation opportunities
+
+Question Density: 3 questions per 100 words average
+Underlined Portion Distribution: 70% of questions
+Rhetorical Question Distribution: 30% of questions</div>
+
+        <div class="box">
+            <h3>Research-Based Best Practices</h3>
+            <p>Academic research on standardized test construction:</p>
+        </div>
+
+        <div class="formula">Cognitive Load Theory Application:
+- Passages should not exceed working memory capacity
+- Questions should test single concepts when possible
+- Context should provide sufficient but not excessive information
+- Distractors should be plausible but clearly incorrect to experts
+
+Fairness and Bias Research:
+- Differential Item Functioning (DIF) analysis required
+- Cultural content must be universally accessible
+- Socioeconomic bias elimination in passage topics
+- Gender balance in passage subjects and examples</div>
+
+        <div class="formula">Validation Requirements:
+Statistical Analysis Required:
+- Item-total correlation > 0.20
+- Point-biserial correlation > 0.15
+- Distractor analysis showing even attraction to wrong choices
+- Reliability coefficient (Cronbach's α) > 0.85 for full test
+
+Content Validation:
+- Expert review by certified English teachers
+- Alignment with national English standards (Common Core)
+- Cross-reference with major grammar style guides
+- Student think-aloud protocol validation</div>
+
+        <div class="box">
+            <h3>Technical Specifications</h3>
+            <p>Precise technical requirements for test construction:</p>
+        </div>
+
+        <div class="list">
+            <div class="item">
+                <span><strong>Test Length</strong> - 45 minutes, 75 questions exactly</span>
+                <span class="tag">Fixed</span>
+            </div>
+            <div class="item">
+                <span><strong>Passage Distribution</strong> - 15 questions per passage</span>
+                <span class="tag">Equal</span>
+            </div>
+            <div class="item">
+                <span><strong>Question Order</strong> - Sequential through passage (no jumping back)</span>
+                <span class="tag">Required</span>
+            </div>
+            <div class="item">
+                <span><strong>Choice Format</strong> - Always A, B, C, D with consistent formatting</span>
+                <span class="tag">Standard</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="complexity" class="content">
+        <h2>Ultra-Accurate Complexity Analysis</h2>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-num">11.6</div>
+                <div class="stat-label">Avg Flesch-Kincaid</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">38.6</div>
+                <div class="stat-label">Avg Complexity</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">30.53-46.04</div>
+                <div class="stat-label">Complexity Range</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">10</div>
+                <div class="stat-label">Complexity Measures</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Comprehensive Complexity Measures</h3>
+            <p>This analysis uses 10 validated complexity measures for maximum accuracy:</p>
+            <p>• <strong>Flesch Reading Ease & Flesch-Kincaid Grade Level</strong> - Standard readability measures</p>
+            <p>• <strong>Automated Readability Index (ARI)</strong> - Character-based complexity</p>
+            <p>• <strong>Coleman-Liau Index</strong> - Sentence and character analysis</p>
+            <p>• <strong>SMOG Formula</strong> - Syllable-based academic readability</p>
+            <p>• <strong>Gunning Fog Index</strong> - Complex word analysis</p>
+            <p>• <strong>Syntactic Complexity</strong> - Clause and phrase structures</p>
+            <p>• <strong>Lexical Sophistication</strong> - Academic vocabulary usage</p>
+            <p>• <strong>Semantic Complexity</strong> - Abstract concept density</p>
+            <p>• <strong>ACT-Specific Score</strong> - Question-generation complexity factors</p>
+            <p>• <strong>Composite Scores</strong> - Multi-dimensional complexity integration</p>
+        </div>
+
+        
+    <button class="toggle">
+      Test 1 Passage 1 - Grade: 10.77, Complexity: 38.24
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Readability Measures</h4>
+          <p>Flesch Reading Ease: 44.4</p>
+          <p>Flesch-Kincaid Grade: 10.77</p>
+          <p>ARI: 11.66</p>
+          <p>Coleman-Liau: 14.23</p>
+          <p>SMOG: 13.84</p>
+          <p>Gunning Fog: 10.69</p>
+        </div>
+        <div class="box">
+          <h4>Advanced Complexity</h4>
+          <p>Syntactic: 9.58</p>
+          <p>Lexical Sophistication: 9.84</p>
+          <p>Semantic: 0.19</p>
+          <p>ACT-Specific: 122.75</p>
+          <p>Overall Complexity: 38.24</p>
+          <p>Readability Composite: 12.24</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Passage Metrics</h4>
+        <p>Length: 2020 characters</p>
+        <p>Words: 313</p>
+        <p>Sentences: 21</p>
+        <p>Syllables: 545</p>
+        <p>Avg Sentence Length: 14.9 words</p>
+        <p>Avg Syllables/Word: 1.74</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 1 Passage 2 - Grade: 12.2, Complexity: 30.53
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Readability Measures</h4>
+          <p>Flesch Reading Ease: 42.49</p>
+          <p>Flesch-Kincaid Grade: 12.2</p>
+          <p>ARI: 12.43</p>
+          <p>Coleman-Liau: 12.73</p>
+          <p>SMOG: 16.04</p>
+          <p>Gunning Fog: 13.83</p>
+        </div>
+        <div class="box">
+          <h4>Advanced Complexity</h4>
+          <p>Syntactic: 8.91</p>
+          <p>Lexical Sophistication: 8.57</p>
+          <p>Semantic: 0.24</p>
+          <p>ACT-Specific: 92.45</p>
+          <p>Overall Complexity: 30.53</p>
+          <p>Readability Composite: 13.45</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Passage Metrics</h4>
+        <p>Length: 1799 characters</p>
+        <p>Words: 294</p>
+        <p>Sentences: 15</p>
+        <p>Syllables: 502</p>
+        <p>Avg Sentence Length: 19.6 words</p>
+        <p>Avg Syllables/Word: 1.71</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 1 Passage 3 - Grade: 11.11, Complexity: 41.58
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Readability Measures</h4>
+          <p>Flesch Reading Ease: 49.15</p>
+          <p>Flesch-Kincaid Grade: 11.11</p>
+          <p>ARI: 11.68</p>
+          <p>Coleman-Liau: 12.15</p>
+          <p>SMOG: 14.1</p>
+          <p>Gunning Fog: 11.55</p>
+        </div>
+        <div class="box">
+          <h4>Advanced Complexity</h4>
+          <p>Syntactic: 10.06</p>
+          <p>Lexical Sophistication: 7.39</p>
+          <p>Semantic: 0.16</p>
+          <p>ACT-Specific: 137.75</p>
+          <p>Overall Complexity: 41.58</p>
+          <p>Readability Composite: 12.12</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Passage Metrics</h4>
+        <p>Length: 1940 characters</p>
+        <p>Words: 322</p>
+        <p>Sentences: 17</p>
+        <p>Syllables: 527</p>
+        <p>Avg Sentence Length: 18.94 words</p>
+        <p>Avg Syllables/Word: 1.64</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 1 Passage 4 - Grade: 10.2, Complexity: 34.37
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Readability Measures</h4>
+          <p>Flesch Reading Ease: 49.96</p>
+          <p>Flesch-Kincaid Grade: 10.2</p>
+          <p>ARI: 11.69</p>
+          <p>Coleman-Liau: 13.84</p>
+          <p>SMOG: 14.23</p>
+          <p>Gunning Fog: 11.24</p>
+        </div>
+        <div class="box">
+          <h4>Advanced Complexity</h4>
+          <p>Syntactic: 8.36</p>
+          <p>Lexical Sophistication: 10.13</p>
+          <p>Semantic: 0.37</p>
+          <p>ACT-Specific: 108.8</p>
+          <p>Overall Complexity: 34.37</p>
+          <p>Readability Composite: 12.24</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Passage Metrics</h4>
+        <p>Length: 1904 characters</p>
+        <p>Words: 299</p>
+        <p>Sentences: 19</p>
+        <p>Syllables: 498</p>
+        <p>Avg Sentence Length: 15.74 words</p>
+        <p>Avg Syllables/Word: 1.67</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 1 Passage 5 - Grade: 12.12, Complexity: 46.04
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Readability Measures</h4>
+          <p>Flesch Reading Ease: 39.93</p>
+          <p>Flesch-Kincaid Grade: 12.12</p>
+          <p>ARI: 13.67</p>
+          <p>Coleman-Liau: 15.24</p>
+          <p>SMOG: 15.34</p>
+          <p>Gunning Fog: 12.81</p>
+        </div>
+        <div class="box">
+          <h4>Advanced Complexity</h4>
+          <p>Syntactic: 9.87</p>
+          <p>Lexical Sophistication: 11.35</p>
+          <p>Semantic: 0.38</p>
+          <p>ACT-Specific: 150.82</p>
+          <p>Overall Complexity: 46.04</p>
+          <p>Readability Composite: 13.84</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Passage Metrics</h4>
+        <p>Length: 1990 characters</p>
+        <p>Words: 303</p>
+        <p>Sentences: 17</p>
+        <p>Syllables: 533</p>
+        <p>Avg Sentence Length: 17.82 words</p>
+        <p>Avg Syllables/Word: 1.76</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 2 Passage 4 - Grade: 11.23, Complexity: 44.9
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Readability Measures</h4>
+          <p>Flesch Reading Ease: 50.66</p>
+          <p>Flesch-Kincaid Grade: 11.23</p>
+          <p>ARI: 12.34</p>
+          <p>Coleman-Liau: 12.24</p>
+          <p>SMOG: 14.45</p>
+          <p>Gunning Fog: 12.17</p>
+        </div>
+        <div class="box">
+          <h4>Advanced Complexity</h4>
+          <p>Syntactic: 10.96</p>
+          <p>Lexical Sophistication: 9.12</p>
+          <p>Semantic: 0.18</p>
+          <p>ACT-Specific: 148.3</p>
+          <p>Overall Complexity: 44.9</p>
+          <p>Readability Composite: 12.48</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Passage Metrics</h4>
+        <p>Length: 2201 characters</p>
+        <p>Words: 365</p>
+        <p>Sentences: 18</p>
+        <p>Syllables: 585</p>
+        <p>Avg Sentence Length: 20.28 words</p>
+        <p>Avg Syllables/Word: 1.6</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 2 Passage 3 - Grade: 13.9, Complexity: 36
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Readability Measures</h4>
+          <p>Flesch Reading Ease: 26.89</p>
+          <p>Flesch-Kincaid Grade: 13.9</p>
+          <p>ARI: 14.86</p>
+          <p>Coleman-Liau: 16.81</p>
+          <p>SMOG: 18</p>
+          <p>Gunning Fog: 16.63</p>
+        </div>
+        <div class="box">
+          <h4>Advanced Complexity</h4>
+          <p>Syntactic: 9.06</p>
+          <p>Lexical Sophistication: 12.83</p>
+          <p>Semantic: 0.38</p>
+          <p>ACT-Specific: 108.23</p>
+          <p>Overall Complexity: 36</p>
+          <p>Readability Composite: 16.04</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Passage Metrics</h4>
+        <p>Length: 2176 characters</p>
+        <p>Words: 318</p>
+        <p>Sentences: 18</p>
+        <p>Syllables: 609</p>
+        <p>Avg Sentence Length: 17.67 words</p>
+        <p>Avg Syllables/Word: 1.92</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 2 Passage 5 - Grade: 10.66, Complexity: 42.14
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Readability Measures</h4>
+          <p>Flesch Reading Ease: 45.31</p>
+          <p>Flesch-Kincaid Grade: 10.66</p>
+          <p>ARI: 11.3</p>
+          <p>Coleman-Liau: 13.75</p>
+          <p>SMOG: 14.75</p>
+          <p>Gunning Fog: 11.89</p>
+        </div>
+        <div class="box">
+          <h4>Advanced Complexity</h4>
+          <p>Syntactic: 8.41</p>
+          <p>Lexical Sophistication: 8.52</p>
+          <p>Semantic: 0.18</p>
+          <p>ACT-Specific: 140.95</p>
+          <p>Overall Complexity: 42.14</p>
+          <p>Readability Composite: 12.47</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Passage Metrics</h4>
+        <p>Length: 2289 characters</p>
+        <p>Words: 359</p>
+        <p>Sentences: 24</p>
+        <p>Syllables: 621</p>
+        <p>Avg Sentence Length: 14.96 words</p>
+        <p>Avg Syllables/Word: 1.73</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 2 Passage 2 - Grade: 11.8, Complexity: 36.41
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Readability Measures</h4>
+          <p>Flesch Reading Ease: 42.99</p>
+          <p>Flesch-Kincaid Grade: 11.8</p>
+          <p>ARI: 13.29</p>
+          <p>Coleman-Liau: 14.52</p>
+          <p>SMOG: 14.55</p>
+          <p>Gunning Fog: 11.92</p>
+        </div>
+        <div class="box">
+          <h4>Advanced Complexity</h4>
+          <p>Syntactic: 9.22</p>
+          <p>Lexical Sophistication: 9.37</p>
+          <p>Semantic: 0.1</p>
+          <p>ACT-Specific: 115.27</p>
+          <p>Overall Complexity: 36.41</p>
+          <p>Readability Composite: 13.21</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Passage Metrics</h4>
+        <p>Length: 2237 characters</p>
+        <p>Words: 347</p>
+        <p>Sentences: 19</p>
+        <p>Syllables: 596</p>
+        <p>Avg Sentence Length: 18.26 words</p>
+        <p>Avg Syllables/Word: 1.72</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 2 Passage 1 - Grade: 12.04, Complexity: 35.77
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Readability Measures</h4>
+          <p>Flesch Reading Ease: 38.95</p>
+          <p>Flesch-Kincaid Grade: 12.04</p>
+          <p>ARI: 13.31</p>
+          <p>Coleman-Liau: 15.24</p>
+          <p>SMOG: 16.06</p>
+          <p>Gunning Fog: 13.72</p>
+        </div>
+        <div class="box">
+          <h4>Advanced Complexity</h4>
+          <p>Syntactic: 9.1</p>
+          <p>Lexical Sophistication: 10.1</p>
+          <p>Semantic: 0.49</p>
+          <p>ACT-Specific: 111.83</p>
+          <p>Overall Complexity: 35.77</p>
+          <p>Readability Composite: 14.07</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Passage Metrics</h4>
+        <p>Length: 1897 characters</p>
+        <p>Words: 288</p>
+        <p>Sentences: 17</p>
+        <p>Syllables: 513</p>
+        <p>Avg Sentence Length: 16.94 words</p>
+        <p>Avg Syllables/Word: 1.78</p>
+      </div>
+    </div>
+
+        <div class="box">
+            <h3>ACT Passage Complexity Standards</h3>
+            <p>Based on comprehensive analysis of official ACT passages:</p>
+        </div>
+
+        <div class="formula">Target Complexity Ranges for ACT Generation:
+
+Flesch-Kincaid Grade Level: 10.0 - 14.0
+- Easy passages: 10.0 - 11.5 (20% of passages)
+- Medium passages: 11.5 - 12.5 (60% of passages)
+- Hard passages: 12.5 - 14.0 (20% of passages)
+
+Overall Complexity Score: 30.0 - 46.0
+- Low complexity: 30.0 - 35.0
+- Medium complexity: 35.0 - 40.0
+- High complexity: 40.0 - 46.0
+
+ACT-Specific Score: 90.0 - 155.0
+- Measures question-generation potential
+- Higher scores = more opportunities for varied question types
+- Optimal range: 110.0 - 140.0 for balanced question distribution</div>
+
+        <div class="box">
+            <h3>Complexity Factor Weighting</h3>
+            <p>Precise weights for generating passages with target complexity:</p>
+        </div>
+
+        <div class="formula">Multi-Dimensional Complexity Formula:
+
+Overall Complexity = (
+  FleschKincaid × 0.25 +
+  SyntacticComplexity × 0.25 +
+  LexicalSophistication × 0.25 +
+  ACTSpecificScore × 0.25
+)
+
+Readability Composite = (
+  FleschKincaid × 0.20 +
+  ARI × 0.20 +
+  ColemanLiau × 0.20 +
+  SMOG × 0.20 +
+  GunningFog × 0.20
+)
+
+Quality Thresholds:
+- Minimum acceptable: Overall Complexity > 25.0
+- ACT standard: Overall Complexity 30.0 - 46.0
+- Optimal for questions: ACT-Specific Score 100.0 - 150.0</div>
+
+        <div class="box">
+            <h3>Complexity-Based Question Targeting</h3>
+            <p>Question type distribution based on passage complexity:</p>
+        </div>
+
+        <div class="list">
+            <div class="item">
+                <span><strong>Low Complexity (30-35)</strong> - Focus on basic grammar and punctuation</span>
+                <span class="tag">40% Grammar</span>
+            </div>
+            <div class="item">
+                <span><strong>Medium Complexity (35-40)</strong> - Balanced grammar, word choice, rhetoric</span>
+                <span class="tag">Balanced</span>
+            </div>
+            <div class="item">
+                <span><strong>High Complexity (40-46)</strong> - Emphasize rhetorical and organizational skills</span>
+                <span class="tag">35% Rhetoric</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="micro" class="content">
+        <h2>Micro-Granular Analysis</h2>
+
+        <div class="box">
+            <h3>Ultra-Minute Pattern Detection</h3>
+            <p>Character-level, formatting, and micro-linguistic patterns for perfect 1:1 generation:</p>
+            <p>• <strong>Character Patterns</strong> - Spacing rules, capitalization, special characters</p>
+            <p>• <strong>Punctuation Sequences</strong> - Complex punctuation combinations and contexts</p>
+            <p>• <strong>Word Position Dependencies</strong> - Position-specific word type distributions</p>
+            <p>• <strong>Micro-Linguistics</strong> - Prefix/suffix patterns, morphology, etymology</p>
+            <p>• <strong>Semantic Networks</strong> - Concept clustering and field relationships</p>
+            <p>• <strong>Question Interdependencies</strong> - Answer patterns and type progressions</p>
+        </div>
+
+        
+    <button class="toggle">
+      Test 1 Passage 1 - Character & Formatting Analysis
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Spacing Patterns</h4>
+          <p>Comma spacing: 21 instances</p>
+          <p>Period spacing: 21 instances</p>
+          <p>Semicolon spacing: 0 instances</p>
+          <p>Colon spacing: 0 instances</p>
+        </div>
+        <div class="box">
+          <h4>Special Characters</h4>
+          <p>Em dashes: 3</p>
+          <p>Smart quotes: 2</p>
+          <p>Parentheses: 0</p>
+          <p>Capitalization sequences: 36</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Number Formats</h4>
+        <p>year: 1 instances (2009)</p><p>date: 0 instances (none)</p><p>thousands: 0 instances (none)</p><p>currency: 0 instances (none)</p><p>percentage: 0 instances (none)</p><p>time: 0 instances (none)</p><p>decimal: 0 instances (none)</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 1 Passage 2 - Character & Formatting Analysis
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Spacing Patterns</h4>
+          <p>Comma spacing: 19 instances</p>
+          <p>Period spacing: 15 instances</p>
+          <p>Semicolon spacing: 0 instances</p>
+          <p>Colon spacing: 0 instances</p>
+        </div>
+        <div class="box">
+          <h4>Special Characters</h4>
+          <p>Em dashes: 0</p>
+          <p>Smart quotes: 0</p>
+          <p>Parentheses: 0</p>
+          <p>Capitalization sequences: 34</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Number Formats</h4>
+        <p>year: 3 instances (3000, 1534)</p><p>date: 0 instances (none)</p><p>thousands: 0 instances (none)</p><p>currency: 0 instances (none)</p><p>percentage: 0 instances (none)</p><p>time: 0 instances (none)</p><p>decimal: 0 instances (none)</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 1 Passage 3 - Character & Formatting Analysis
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Spacing Patterns</h4>
+          <p>Comma spacing: 19 instances</p>
+          <p>Period spacing: 17 instances</p>
+          <p>Semicolon spacing: 2 instances</p>
+          <p>Colon spacing: 2 instances</p>
+        </div>
+        <div class="box">
+          <h4>Special Characters</h4>
+          <p>Em dashes: 1</p>
+          <p>Smart quotes: 8</p>
+          <p>Parentheses: 1</p>
+          <p>Capitalization sequences: 54</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Number Formats</h4>
+        <p>year: 0 instances (none)</p><p>date: 0 instances (none)</p><p>thousands: 0 instances (none)</p><p>currency: 0 instances (none)</p><p>percentage: 0 instances (none)</p><p>time: 0 instances (none)</p><p>decimal: 0 instances (none)</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 1 Passage 4 - Character & Formatting Analysis
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Spacing Patterns</h4>
+          <p>Comma spacing: 21 instances</p>
+          <p>Period spacing: 19 instances</p>
+          <p>Semicolon spacing: 1 instances</p>
+          <p>Colon spacing: 1 instances</p>
+        </div>
+        <div class="box">
+          <h4>Special Characters</h4>
+          <p>Em dashes: 0</p>
+          <p>Smart quotes: 2</p>
+          <p>Parentheses: 0</p>
+          <p>Capitalization sequences: 44</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Number Formats</h4>
+        <p>year: 4 instances (1913, 1922)</p><p>date: 0 instances (none)</p><p>thousands: 0 instances (none)</p><p>currency: 0 instances (none)</p><p>percentage: 0 instances (none)</p><p>time: 0 instances (none)</p><p>decimal: 0 instances (none)</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 1 Passage 5 - Character & Formatting Analysis
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Spacing Patterns</h4>
+          <p>Comma spacing: 19 instances</p>
+          <p>Period spacing: 17 instances</p>
+          <p>Semicolon spacing: 1 instances</p>
+          <p>Colon spacing: 1 instances</p>
+        </div>
+        <div class="box">
+          <h4>Special Characters</h4>
+          <p>Em dashes: 3</p>
+          <p>Smart quotes: 10</p>
+          <p>Parentheses: 0</p>
+          <p>Capitalization sequences: 55</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Number Formats</h4>
+        <p>year: 0 instances (none)</p><p>date: 0 instances (none)</p><p>thousands: 0 instances (none)</p><p>currency: 0 instances (none)</p><p>percentage: 0 instances (none)</p><p>time: 0 instances (none)</p><p>decimal: 0 instances (none)</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 2 Passage 4 - Character & Formatting Analysis
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Spacing Patterns</h4>
+          <p>Comma spacing: 29 instances</p>
+          <p>Period spacing: 18 instances</p>
+          <p>Semicolon spacing: 0 instances</p>
+          <p>Colon spacing: 0 instances</p>
+        </div>
+        <div class="box">
+          <h4>Special Characters</h4>
+          <p>Em dashes: 4</p>
+          <p>Smart quotes: 0</p>
+          <p>Parentheses: 0</p>
+          <p>Capitalization sequences: 76</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Number Formats</h4>
+        <p>year: 1 instances (2013)</p><p>date: 0 instances (none)</p><p>thousands: 2 instances (16,000, 28,000)</p><p>currency: 2 instances ($16,000, $28,000)</p><p>percentage: 0 instances (none)</p><p>time: 0 instances (none)</p><p>decimal: 0 instances (none)</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 2 Passage 3 - Character & Formatting Analysis
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Spacing Patterns</h4>
+          <p>Comma spacing: 17 instances</p>
+          <p>Period spacing: 18 instances</p>
+          <p>Semicolon spacing: 0 instances</p>
+          <p>Colon spacing: 0 instances</p>
+        </div>
+        <div class="box">
+          <h4>Special Characters</h4>
+          <p>Em dashes: 2</p>
+          <p>Smart quotes: 0</p>
+          <p>Parentheses: 3</p>
+          <p>Capitalization sequences: 38</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Number Formats</h4>
+        <p>year: 0 instances (none)</p><p>date: 0 instances (none)</p><p>thousands: 1 instances (2,500)</p><p>currency: 0 instances (none)</p><p>percentage: 0 instances (none)</p><p>time: 0 instances (none)</p><p>decimal: 0 instances (none)</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 2 Passage 5 - Character & Formatting Analysis
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Spacing Patterns</h4>
+          <p>Comma spacing: 22 instances</p>
+          <p>Period spacing: 24 instances</p>
+          <p>Semicolon spacing: 0 instances</p>
+          <p>Colon spacing: 1 instances</p>
+        </div>
+        <div class="box">
+          <h4>Special Characters</h4>
+          <p>Em dashes: 0</p>
+          <p>Smart quotes: 4</p>
+          <p>Parentheses: 0</p>
+          <p>Capitalization sequences: 64</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Number Formats</h4>
+        <p>year: 1 instances (1918)</p><p>date: 0 instances (none)</p><p>thousands: 0 instances (none)</p><p>currency: 0 instances (none)</p><p>percentage: 0 instances (none)</p><p>time: 0 instances (none)</p><p>decimal: 0 instances (none)</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 2 Passage 2 - Character & Formatting Analysis
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Spacing Patterns</h4>
+          <p>Comma spacing: 23 instances</p>
+          <p>Period spacing: 19 instances</p>
+          <p>Semicolon spacing: 0 instances</p>
+          <p>Colon spacing: 0 instances</p>
+        </div>
+        <div class="box">
+          <h4>Special Characters</h4>
+          <p>Em dashes: 0</p>
+          <p>Smart quotes: 0</p>
+          <p>Parentheses: 0</p>
+          <p>Capitalization sequences: 40</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Number Formats</h4>
+        <p>year: 0 instances (none)</p><p>date: 0 instances (none)</p><p>thousands: 0 instances (none)</p><p>currency: 0 instances (none)</p><p>percentage: 0 instances (none)</p><p>time: 0 instances (none)</p><p>decimal: 0 instances (none)</p>
+      </div>
+    </div>
+    <button class="toggle">
+      Test 2 Passage 1 - Character & Formatting Analysis
+      <span>+</span>
+    </button>
+    <div class="toggle-content">
+      <div class="grid">
+        <div class="box">
+          <h4>Spacing Patterns</h4>
+          <p>Comma spacing: 24 instances</p>
+          <p>Period spacing: 17 instances</p>
+          <p>Semicolon spacing: 0 instances</p>
+          <p>Colon spacing: 0 instances</p>
+        </div>
+        <div class="box">
+          <h4>Special Characters</h4>
+          <p>Em dashes: 1</p>
+          <p>Smart quotes: 0</p>
+          <p>Parentheses: 1</p>
+          <p>Capitalization sequences: 38</p>
+        </div>
+      </div>
+      <div class="box">
+        <h4>Number Formats</h4>
+        <p>year: 0 instances (none)</p><p>date: 0 instances (none)</p><p>thousands: 0 instances (none)</p><p>currency: 0 instances (none)</p><p>percentage: 0 instances (none)</p><p>time: 0 instances (none)</p><p>decimal: 0 instances (none)</p>
+      </div>
+    </div>
+
+        <div class="box">
+            <h3>Character-Level Formatting Standards</h3>
+            <p>Precise formatting rules extracted from ACT passages:</p>
+        </div>
+
+        <div class="formula">Spacing and Punctuation Rules:
+
+Standard Spacing Patterns:
+- Comma: No space before, one space after (,\s)
+- Period: No space before, one space after (\.\s)
+- Semicolon: No space before, one space after (;\s)
+- Colon: No space before, one space after (:\s)
+- Question mark: No space before, one space after (\?\s)
+- Exclamation: No space before, one space after (!\s)
+
+Special Character Formatting:
+- Em dash: Spaces optional (word—word or word — word)
+- Quotation marks: No internal spacing ("word" not " word ")
+- Parentheses: Space before opening, no space after closing
+- Hyphenated words: No spaces around hyphens (self-evident)
+
+Capitalization Rules:
+- Sentence beginnings: Always capitalized
+- Proper nouns: Always capitalized
+- Acronyms: All caps with optional periods (U.S. or US)
+- Titles: Title case for formal titles</div>
+
+        <div class="box">
+            <h3>Micro-Linguistic Patterns</h3>
+            <p>Morphological and phonetic patterns in ACT vocabulary:</p>
+        </div>
+
+        <div class="formula">Prefix Usage Frequencies (per 1000 words):
+High-frequency prefixes:
+- re- (return, research, remain): 12-18 occurrences
+- un- (unable, unknown, unexpected): 8-14 occurrences
+- in-/im- (important, include, impact): 10-16 occurrences
+- dis- (discover, discuss, display): 6-12 occurrences
+
+Academic prefixes:
+- pre- (prepare, previous, present): 5-9 occurrences
+- sub- (subject, subsequent, substantial): 3-7 occurrences
+- inter- (interest, international, interpret): 2-6 occurrences
+- trans- (transform, transition, transport): 2-5 occurrences
+
+Suffix Patterns:
+- -tion/-sion (information, discussion): 15-25 occurrences
+- -ing (working, building, testing): 20-35 occurrences
+- -ed (completed, developed, studied): 15-28 occurrences
+- -ly (especially, particularly, recently): 8-15 occurrences</div>
+
+        <div class="box">
+            <h3>Semantic Field Distributions</h3>
+            <p>Topic clustering and vocabulary domain analysis:</p>
+        </div>
+
+        <div class="list">
+            <div class="item">
+                <span><strong>Science Fields</strong> - Research, analysis, experiment, theory vocabulary</span>
+                <span class="tag">25-35%</span>
+            </div>
+            <div class="item">
+                <span><strong>Arts/Culture</strong> - Creative, aesthetic, artistic, cultural terminology</span>
+                <span class="tag">20-30%</span>
+            </div>
+            <div class="item">
+                <span><strong>History</strong> - Historical, ancient, civilization, tradition vocabulary</span>
+                <span class="tag">15-25%</span>
+            </div>
+            <div class="item">
+                <span><strong>Nature/Environment</strong> - Natural, species, habitat, ecosystem terms</span>
+                <span class="tag">10-20%</span>
+            </div>
+            <div class="item">
+                <span><strong>Technology</strong> - Innovation, development, system, process vocabulary</span>
+                <span class="tag">5-15%</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Question Interdependency Patterns</h3>
+            <p>Answer distribution and question type progression analysis:</p>
+        </div>
+
+        <div class="formula">Answer Choice Distribution Rules:
+
+Per 15-Question Passage:
+- Choice A: 3-4 occurrences (20-27%)
+- Choice B: 3-4 occurrences (20-27%)
+- Choice C: 3-4 occurrences (20-27%)
+- Choice D: 3-4 occurrences (20-27%)
+
+Consecutive Answer Limits:
+- Maximum 2 consecutive identical answers
+- No more than 3 of same answer in 5-question span
+- Avoid AAAA or BBBB patterns entirely
+
+Question Type Progression:
+- Grammar questions cluster in first 60% of passage
+- Word choice questions distributed throughout
+- Rhetorical questions concentrate in final 40%
+- Organization questions appear at paragraph boundaries</div>
+
+        <div class="box">
+            <h3>Phonetic and Sound Patterns</h3>
+            <p>Sound structure analysis for authentic vocabulary selection:</p>
+        </div>
+
+        <div class="formula">Syllable Distribution Patterns:
+
+One syllable: 45-55% of words
+- Function words (the, and, but, for, with)
+- Simple nouns (book, place, time, work, year)
+- Basic verbs (make, take, give, show, find)
+
+Two syllables: 30-35% of words
+- Common nouns (student, research, problem, system)
+- Regular verbs (working, studied, created, developed)
+- Adjectives (important, different, possible, special)
+
+Three+ syllables: 15-20% of words
+- Academic vocabulary (information, development, organization)
+- Complex adjectives (significant, particular, appropriate)
+- Technical terms (analysis, experiment, hypothesis)
+
+Stress Patterns:
+- First syllable stress: 60-70% of multi-syllable words
+- Second syllable stress: 25-30% of multi-syllable words
+- Third+ syllable stress: 5-10% of multi-syllable words</div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all contents
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Remove active from all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Show selected content and mark tab active
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Initialize toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggles = document.querySelectorAll('.toggle');
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

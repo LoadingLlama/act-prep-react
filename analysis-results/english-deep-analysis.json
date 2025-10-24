@@ -1,0 +1,1899 @@
+{
+  "questionPatterns": {
+    "byPosition": {
+      "1": {
+        "1": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "grammar",
+          "choices": 4
+        },
+        "2": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "punctuation",
+          "choices": 4
+        },
+        "3": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "style",
+          "choices": 4
+        },
+        "4": {
+          "type": "underlined",
+          "difficulty": "hard",
+          "category": "organization",
+          "choices": 4
+        },
+        "5": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "word-choice",
+          "choices": 4
+        },
+        "6": {
+          "type": "rhetorical",
+          "difficulty": "medium",
+          "category": "comma-splice",
+          "choices": 4
+        },
+        "7": {
+          "type": "underlined",
+          "difficulty": "easy",
+          "category": "verb-tense",
+          "choices": 4
+        },
+        "8": {
+          "type": "underlined",
+          "difficulty": "easy",
+          "category": "redundancy",
+          "choices": 4
+        },
+        "9": {
+          "type": "rhetorical",
+          "difficulty": "hard",
+          "category": "transition",
+          "choices": 4
+        },
+        "10": {
+          "type": "rhetorical",
+          "difficulty": "medium",
+          "category": "grammar",
+          "choices": 4
+        },
+        "11": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "punctuation",
+          "choices": 4
+        },
+        "12": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "style",
+          "choices": 4
+        },
+        "13": {
+          "type": "underlined",
+          "difficulty": "hard",
+          "category": "organization",
+          "choices": 4
+        },
+        "14": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "word-choice",
+          "choices": 4
+        },
+        "15": {
+          "type": "rhetorical",
+          "difficulty": "medium",
+          "category": "comma-splice",
+          "choices": 4
+        }
+      },
+      "2": {
+        "1": {
+          "type": "underlined",
+          "difficulty": "easy",
+          "category": "verb-tense",
+          "choices": 4
+        },
+        "2": {
+          "type": "underlined",
+          "difficulty": "easy",
+          "category": "redundancy",
+          "choices": 4
+        },
+        "3": {
+          "type": "rhetorical",
+          "difficulty": "hard",
+          "category": "transition",
+          "choices": 4
+        },
+        "4": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "grammar",
+          "choices": 4
+        },
+        "5": {
+          "type": "rhetorical",
+          "difficulty": "medium",
+          "category": "punctuation",
+          "choices": 4
+        },
+        "6": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "style",
+          "choices": 4
+        },
+        "7": {
+          "type": "underlined",
+          "difficulty": "hard",
+          "category": "organization",
+          "choices": 4
+        },
+        "8": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "word-choice",
+          "choices": 4
+        },
+        "9": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "comma-splice",
+          "choices": 4
+        },
+        "10": {
+          "type": "underlined",
+          "difficulty": "easy",
+          "category": "verb-tense",
+          "choices": 4
+        },
+        "11": {
+          "type": "underlined",
+          "difficulty": "easy",
+          "category": "redundancy",
+          "choices": 4
+        },
+        "12": {
+          "type": "underlined",
+          "difficulty": "hard",
+          "category": "transition",
+          "choices": 4
+        },
+        "13": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "grammar",
+          "choices": 4
+        },
+        "14": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "punctuation",
+          "choices": 4
+        },
+        "15": {
+          "type": "rhetorical",
+          "difficulty": "medium",
+          "category": "style",
+          "choices": 4
+        }
+      },
+      "3": {
+        "1": {
+          "type": "underlined",
+          "difficulty": "hard",
+          "category": "organization",
+          "choices": 4
+        },
+        "2": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "comma-usage",
+          "choices": 4
+        },
+        "3": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "dash",
+          "choices": 4
+        },
+        "4": {
+          "type": "rhetorical",
+          "difficulty": "hard",
+          "category": "deleting-sentence",
+          "choices": 4
+        },
+        "5": {
+          "type": "underlined",
+          "difficulty": "hard",
+          "category": "transition",
+          "choices": 4
+        },
+        "6": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "comma-usage",
+          "choices": 4
+        },
+        "7": {
+          "type": "rhetorical",
+          "difficulty": "hard",
+          "category": "adding-sentence",
+          "choices": 4
+        },
+        "8": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "punctuation",
+          "choices": 4
+        },
+        "9": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "grammar",
+          "choices": 4
+        },
+        "10": {
+          "type": "underlined",
+          "difficulty": "easy",
+          "category": "verb-agreement",
+          "choices": 4
+        },
+        "11": {
+          "type": "rhetorical",
+          "difficulty": "hard",
+          "category": "which-choice",
+          "choices": 4
+        },
+        "12": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "punctuation",
+          "choices": 4
+        },
+        "13": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "word-choice",
+          "choices": 4
+        },
+        "14": {
+          "type": "rhetorical",
+          "difficulty": "hard",
+          "category": "which-choice",
+          "choices": 4
+        },
+        "15": {
+          "type": "rhetorical",
+          "difficulty": "hard",
+          "category": "main-idea",
+          "choices": 4
+        }
+      },
+      "4": {
+        "1": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "pronoun-ambiguous",
+          "choices": 4
+        },
+        "2": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "word-choice",
+          "choices": 4
+        },
+        "3": {
+          "type": "rhetorical",
+          "difficulty": "hard",
+          "category": "which-choice",
+          "choices": 4
+        },
+        "4": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "comma-usage",
+          "choices": 4
+        },
+        "5": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "fragment",
+          "choices": 4
+        },
+        "6": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "wordiness",
+          "choices": 4
+        },
+        "7": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "comma-usage",
+          "choices": 4
+        },
+        "8": {
+          "type": "underlined",
+          "difficulty": "easy",
+          "category": "verb-tense",
+          "choices": 4
+        },
+        "9": {
+          "type": "rhetorical",
+          "difficulty": "hard",
+          "category": "deleting-sentence",
+          "choices": 4
+        },
+        "10": {
+          "type": "underlined",
+          "difficulty": "hard",
+          "category": "logical-placement",
+          "choices": 4
+        },
+        "11": {
+          "type": "underlined",
+          "difficulty": "hard",
+          "category": "which-choice",
+          "choices": 4
+        },
+        "12": {
+          "type": "rhetorical",
+          "difficulty": "hard",
+          "category": "transition",
+          "choices": 4
+        },
+        "13": {
+          "type": "underlined",
+          "difficulty": "hard",
+          "category": "modifier-dangling",
+          "choices": 4
+        },
+        "14": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "comma-usage",
+          "choices": 4
+        },
+        "15": {
+          "type": "rhetorical",
+          "difficulty": "hard",
+          "category": "logical-placement",
+          "choices": 4
+        }
+      },
+      "5": {
+        "1": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "comma-usage",
+          "choices": 4
+        },
+        "2": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "fragment",
+          "choices": 4
+        },
+        "3": {
+          "type": "underlined",
+          "difficulty": "hard",
+          "category": "transition",
+          "choices": 4
+        },
+        "4": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "comma-usage",
+          "choices": 4
+        },
+        "5": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "grammar",
+          "choices": 4
+        },
+        "6": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "word-choice",
+          "choices": 4
+        },
+        "7": {
+          "type": "rhetorical",
+          "difficulty": "hard",
+          "category": "adding-info",
+          "choices": 4
+        },
+        "8": {
+          "type": "underlined",
+          "difficulty": "easy",
+          "category": "redundancy",
+          "choices": 4
+        },
+        "9": {
+          "type": "underlined",
+          "difficulty": "hard",
+          "category": "modifier-misplaced",
+          "choices": 4
+        },
+        "10": {
+          "type": "underlined",
+          "difficulty": "easy",
+          "category": "redundancy",
+          "choices": 4
+        },
+        "11": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "colon",
+          "choices": 4
+        },
+        "12": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "comma-splice",
+          "choices": 4
+        },
+        "13": {
+          "type": "underlined",
+          "difficulty": "medium",
+          "category": "comma-usage",
+          "choices": 4
+        },
+        "14": {
+          "type": "underlined",
+          "difficulty": "easy",
+          "category": "idiom",
+          "choices": 4
+        },
+        "15": {
+          "type": "rhetorical",
+          "difficulty": "hard",
+          "category": "main-idea",
+          "choices": 4
+        }
+      }
+    }
+  },
+  "passagePatterns": {
+    "types": {
+      "science-nature": [
+        {
+          "test_number": 1,
+          "passage_number": 1,
+          "title": "Double the Manta Rays",
+          "complexity": {
+            "characters": 2020,
+            "words": 313,
+            "sentences": 21,
+            "paragraphs": 5,
+            "avgWordsPerSentence": 14.904761904761905,
+            "avgSyllablesPerWord": 1.9776357827476039,
+            "fleschReadingEase": 24.398679446219404,
+            "gradeLevel": 12
+          }
+        },
+        {
+          "test_number": 1,
+          "passage_number": 3,
+          "title": "Good Vibrations",
+          "complexity": {
+            "characters": 1940,
+            "words": 322,
+            "sentences": 17,
+            "paragraphs": 4,
+            "avgWordsPerSentence": 18.941176470588236,
+            "avgSyllablesPerWord": 1.7763975155279503,
+            "fleschReadingEase": 37.32647606868838,
+            "gradeLevel": 12
+          }
+        }
+      ],
+      "narrative": [
+        {
+          "test_number": 1,
+          "passage_number": 2,
+          "title": "Origins of Aspirin",
+          "complexity": {
+            "characters": 1799,
+            "words": 294,
+            "sentences": 15,
+            "paragraphs": 5,
+            "avgWordsPerSentence": 19.6,
+            "avgSyllablesPerWord": 1.8503401360544218,
+            "fleschReadingEase": 30.402224489795913,
+            "gradeLevel": 12
+          }
+        },
+        {
+          "test_number": 1,
+          "passage_number": 4,
+          "title": "Building and Rebuilding \"the King of Roads\"",
+          "complexity": {
+            "characters": 1904,
+            "words": 299,
+            "sentences": 19,
+            "paragraphs": 4,
+            "avgWordsPerSentence": 15.736842105263158,
+            "avgSyllablesPerWord": 1.9765886287625418,
+            "fleschReadingEase": 23.64270726984688,
+            "gradeLevel": 12
+          }
+        },
+        {
+          "test_number": 2,
+          "passage_number": 1,
+          "title": "Making the Desert Bloom",
+          "complexity": {
+            "characters": 1897,
+            "words": 288,
+            "sentences": 17,
+            "paragraphs": 5,
+            "avgWordsPerSentence": 16.941176470588236,
+            "avgSyllablesPerWord": 2.0625,
+            "fleschReadingEase": 15.152205882352973,
+            "gradeLevel": 12
+          }
+        }
+      ],
+      "arts-culture": [
+        {
+          "test_number": 1,
+          "passage_number": 5,
+          "title": "Selling Hip-Hop",
+          "complexity": {
+            "characters": 1990,
+            "words": 303,
+            "sentences": 17,
+            "paragraphs": 4,
+            "avgWordsPerSentence": 17.823529411764707,
+            "avgSyllablesPerWord": 1.953795379537954,
+            "fleschReadingEase": 23.453028538147947,
+            "gradeLevel": 12
+          }
+        },
+        {
+          "test_number": 2,
+          "passage_number": 2,
+          "title": "A Mouthful of Music",
+          "complexity": {
+            "characters": 2237,
+            "words": 347,
+            "sentences": 19,
+            "paragraphs": 7,
+            "avgWordsPerSentence": 18.263157894736842,
+            "avgSyllablesPerWord": 1.919308357348703,
+            "fleschReadingEase": 25.924407705141846,
+            "gradeLevel": 12
+          }
+        },
+        {
+          "test_number": 2,
+          "passage_number": 4,
+          "title": "Clinton Hill's Found Artist",
+          "complexity": {
+            "characters": 2201,
+            "words": 365,
+            "sentences": 18,
+            "paragraphs": 7,
+            "avgWordsPerSentence": 20.27777777777778,
+            "avgSyllablesPerWord": 1.7780821917808218,
+            "fleschReadingEase": 35.82730213089803,
+            "gradeLevel": 12
+          }
+        }
+      ],
+      "technology": [
+        {
+          "test_number": 2,
+          "passage_number": 3,
+          "title": "Neutrinos on Ice",
+          "complexity": {
+            "characters": 2176,
+            "words": 318,
+            "sentences": 18,
+            "paragraphs": 6,
+            "avgWordsPerSentence": 17.666666666666668,
+            "avgSyllablesPerWord": 2.238993710691824,
+            "fleschReadingEase": -0.5155345911949496,
+            "gradeLevel": 12
+          }
+        }
+      ],
+      "social-studies": [
+        {
+          "test_number": 2,
+          "passage_number": 5,
+          "title": "Cher Ami, Pigeon Hero",
+          "complexity": {
+            "characters": 2289,
+            "words": 359,
+            "sentences": 24,
+            "paragraphs": 7,
+            "avgWordsPerSentence": 14.958333333333334,
+            "avgSyllablesPerWord": 1.9972144846796658,
+            "fleschReadingEase": 22.687946262766957,
+            "gradeLevel": 12
+          }
+        }
+      ]
+    },
+    "complexity": {
+      "avgCharacters": 2045,
+      "avgWords": 321,
+      "avgSentences": 19,
+      "avgGradeLevel": 12,
+      "avgReadingEase": 23.8
+    }
+  },
+  "difficultyProgression": [
+    {
+      "position": 1,
+      "passageSection": 1,
+      "positionInPassage": 1,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 2,
+      "passageSection": 1,
+      "positionInPassage": 2,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 3,
+      "passageSection": 1,
+      "positionInPassage": 3,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 4,
+      "passageSection": 1,
+      "positionInPassage": 4,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 5,
+      "passageSection": 1,
+      "positionInPassage": 5,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 6,
+      "passageSection": 1,
+      "positionInPassage": 6,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 7,
+      "passageSection": 1,
+      "positionInPassage": 7,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 8,
+      "passageSection": 1,
+      "positionInPassage": 8,
+      "easyPercent": 50,
+      "mediumPercent": 0,
+      "hardPercent": 50,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 9,
+      "passageSection": 1,
+      "positionInPassage": 9,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 10,
+      "passageSection": 1,
+      "positionInPassage": 10,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 11,
+      "passageSection": 1,
+      "positionInPassage": 11,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 12,
+      "passageSection": 1,
+      "positionInPassage": 12,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 13,
+      "passageSection": 1,
+      "positionInPassage": 13,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 14,
+      "passageSection": 1,
+      "positionInPassage": 14,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 15,
+      "passageSection": 1,
+      "positionInPassage": 15,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 16,
+      "passageSection": 2,
+      "positionInPassage": 1,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 17,
+      "passageSection": 2,
+      "positionInPassage": 2,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 18,
+      "passageSection": 2,
+      "positionInPassage": 3,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 19,
+      "passageSection": 2,
+      "positionInPassage": 4,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 20,
+      "passageSection": 2,
+      "positionInPassage": 5,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 21,
+      "passageSection": 2,
+      "positionInPassage": 6,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 22,
+      "passageSection": 2,
+      "positionInPassage": 7,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 23,
+      "passageSection": 2,
+      "positionInPassage": 8,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 24,
+      "passageSection": 2,
+      "positionInPassage": 9,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 25,
+      "passageSection": 2,
+      "positionInPassage": 10,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 26,
+      "passageSection": 2,
+      "positionInPassage": 11,
+      "easyPercent": 50,
+      "mediumPercent": 0,
+      "hardPercent": 50,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 27,
+      "passageSection": 2,
+      "positionInPassage": 12,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 28,
+      "passageSection": 2,
+      "positionInPassage": 13,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 29,
+      "passageSection": 2,
+      "positionInPassage": 14,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 30,
+      "passageSection": 2,
+      "positionInPassage": 15,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 31,
+      "passageSection": 3,
+      "positionInPassage": 1,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 32,
+      "passageSection": 3,
+      "positionInPassage": 2,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 33,
+      "passageSection": 3,
+      "positionInPassage": 3,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 34,
+      "passageSection": 3,
+      "positionInPassage": 4,
+      "easyPercent": 50,
+      "mediumPercent": 0,
+      "hardPercent": 50,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 35,
+      "passageSection": 3,
+      "positionInPassage": 5,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 36,
+      "passageSection": 3,
+      "positionInPassage": 6,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 37,
+      "passageSection": 3,
+      "positionInPassage": 7,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 38,
+      "passageSection": 3,
+      "positionInPassage": 8,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 39,
+      "passageSection": 3,
+      "positionInPassage": 9,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 40,
+      "passageSection": 3,
+      "positionInPassage": 10,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 41,
+      "passageSection": 3,
+      "positionInPassage": 11,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 42,
+      "passageSection": 3,
+      "positionInPassage": 12,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 43,
+      "passageSection": 3,
+      "positionInPassage": 13,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 44,
+      "passageSection": 3,
+      "positionInPassage": 14,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 45,
+      "passageSection": 3,
+      "positionInPassage": 15,
+      "easyPercent": 0,
+      "mediumPercent": 0,
+      "hardPercent": 100,
+      "predominantDifficulty": "hard"
+    },
+    {
+      "position": 46,
+      "passageSection": 4,
+      "positionInPassage": 1,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 47,
+      "passageSection": 4,
+      "positionInPassage": 2,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 48,
+      "passageSection": 4,
+      "positionInPassage": 3,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 49,
+      "passageSection": 4,
+      "positionInPassage": 4,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 50,
+      "passageSection": 4,
+      "positionInPassage": 5,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 51,
+      "passageSection": 4,
+      "positionInPassage": 6,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 52,
+      "passageSection": 4,
+      "positionInPassage": 7,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 53,
+      "passageSection": 4,
+      "positionInPassage": 8,
+      "easyPercent": 50,
+      "mediumPercent": 0,
+      "hardPercent": 50,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 54,
+      "passageSection": 4,
+      "positionInPassage": 9,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 55,
+      "passageSection": 4,
+      "positionInPassage": 10,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 56,
+      "passageSection": 4,
+      "positionInPassage": 11,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 57,
+      "passageSection": 4,
+      "positionInPassage": 12,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 58,
+      "passageSection": 4,
+      "positionInPassage": 13,
+      "easyPercent": 0,
+      "mediumPercent": 0,
+      "hardPercent": 100,
+      "predominantDifficulty": "hard"
+    },
+    {
+      "position": 59,
+      "passageSection": 4,
+      "positionInPassage": 14,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 60,
+      "passageSection": 4,
+      "positionInPassage": 15,
+      "easyPercent": 0,
+      "mediumPercent": 0,
+      "hardPercent": 100,
+      "predominantDifficulty": "hard"
+    },
+    {
+      "position": 61,
+      "passageSection": 5,
+      "positionInPassage": 1,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 62,
+      "passageSection": 5,
+      "positionInPassage": 2,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 63,
+      "passageSection": 5,
+      "positionInPassage": 3,
+      "easyPercent": 50,
+      "mediumPercent": 0,
+      "hardPercent": 50,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 64,
+      "passageSection": 5,
+      "positionInPassage": 4,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 65,
+      "passageSection": 5,
+      "positionInPassage": 5,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 66,
+      "passageSection": 5,
+      "positionInPassage": 6,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 67,
+      "passageSection": 5,
+      "positionInPassage": 7,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 68,
+      "passageSection": 5,
+      "positionInPassage": 8,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 69,
+      "passageSection": 5,
+      "positionInPassage": 9,
+      "easyPercent": 0,
+      "mediumPercent": 50,
+      "hardPercent": 50,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 70,
+      "passageSection": 5,
+      "positionInPassage": 10,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 71,
+      "passageSection": 5,
+      "positionInPassage": 11,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 72,
+      "passageSection": 5,
+      "positionInPassage": 12,
+      "easyPercent": 50,
+      "mediumPercent": 50,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 73,
+      "passageSection": 5,
+      "positionInPassage": 13,
+      "easyPercent": 0,
+      "mediumPercent": 100,
+      "hardPercent": 0,
+      "predominantDifficulty": "medium"
+    },
+    {
+      "position": 74,
+      "passageSection": 5,
+      "positionInPassage": 14,
+      "easyPercent": 100,
+      "mediumPercent": 0,
+      "hardPercent": 0,
+      "predominantDifficulty": "easy"
+    },
+    {
+      "position": 75,
+      "passageSection": 5,
+      "positionInPassage": 15,
+      "easyPercent": 0,
+      "mediumPercent": 0,
+      "hardPercent": 100,
+      "predominantDifficulty": "hard"
+    }
+  ],
+  "grammarRules": {
+    "strategy": [
+      {
+        "question_number": 5,
+        "underlined_text": "Her beachside lodgings in Mozambique now house the Marine Megafauna Research Center.",
+        "correct_answer": "A",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 15,
+        "underlined_text": "PASSAGE QUESTION",
+        "correct_answer": "D",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 19,
+        "underlined_text": "approximately about",
+        "correct_answer": "D",
+        "difficulty": "easy"
+      },
+      {
+        "question_number": 27,
+        "underlined_text": "adds its",
+        "correct_answer": "C",
+        "difficulty": "medium"
+      },
+      {
+        "question_number": 30,
+        "underlined_text": "PASSAGE QUESTION",
+        "correct_answer": "G",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 45,
+        "underlined_text": "PASSAGE QUESTION",
+        "correct_answer": "B",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 53,
+        "underlined_text": "openings",
+        "correct_answer": "A",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 60,
+        "underlined_text": "PLACEMENT QUESTION",
+        "correct_answer": "J",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 65,
+        "underlined_text": "ADD SENTENCE",
+        "correct_answer": "C",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 6,
+        "underlined_text": "The often tongue-twisting lyrics",
+        "correct_answer": "F",
+        "difficulty": "medium"
+      },
+      {
+        "question_number": 9,
+        "underlined_text": "",
+        "correct_answer": "A",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 11,
+        "underlined_text": "whomever",
+        "correct_answer": "D",
+        "difficulty": "medium"
+      },
+      {
+        "question_number": 18,
+        "underlined_text": "",
+        "correct_answer": "F",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 30,
+        "underlined_text": "",
+        "correct_answer": "H",
+        "difficulty": "medium"
+      },
+      {
+        "question_number": 34,
+        "underlined_text": "(fifty trillion neutrinos pass through your body every second)",
+        "correct_answer": "F",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 35,
+        "underlined_text": "For this purpose",
+        "correct_answer": "D",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 37,
+        "underlined_text": "",
+        "correct_answer": "C",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 45,
+        "underlined_text": "",
+        "correct_answer": "C",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 54,
+        "underlined_text": "—so detailed that I could see the folds in Rodia's clothing—",
+        "correct_answer": "G",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 60,
+        "underlined_text": "",
+        "correct_answer": "H",
+        "difficulty": "hard"
+      }
+    ],
+    "rhetoric": [
+      {
+        "question_number": 74,
+        "underlined_text": "music, from",
+        "correct_answer": "F",
+        "difficulty": "easy"
+      },
+      {
+        "question_number": 13,
+        "underlined_text": "exposing with audiences Celtic mouth music worldwide",
+        "correct_answer": "B",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 48,
+        "underlined_text": "",
+        "correct_answer": "H",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 57,
+        "underlined_text": "",
+        "correct_answer": "C",
+        "difficulty": "hard"
+      }
+    ],
+    "verb-tense": [
+      {
+        "question_number": 4,
+        "underlined_text": "syllables called vocables",
+        "correct_answer": "H",
+        "difficulty": "hard"
+      },
+      {
+        "question_number": 52,
+        "underlined_text": "painter, Wilhelm Freddie,",
+        "correct_answer": "J",
+        "difficulty": "medium"
+      }
+    ],
+    "punctuation": [
+      {
+        "question_number": 66,
+        "underlined_text": "Former",
+        "correct_answer": "G",
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "rhetoricPatterns": {},
+  "generationTemplates": {
+    "grammar": {
+      "strategy": {
+        "frequency": 20,
+        "difficultyDistribution": {
+          "easy": 1,
+          "medium": 4,
+          "hard": 15
+        },
+        "commonPatterns": [
+          {
+            "underlined": "Her beachside lodgings in Mozambique now house the Marine Megafauna Research Center.",
+            "correct": "A"
+          },
+          {
+            "underlined": "PASSAGE QUESTION",
+            "correct": "D"
+          },
+          {
+            "underlined": "approximately about",
+            "correct": "D"
+          }
+        ]
+      },
+      "rhetoric": {
+        "frequency": 4,
+        "difficultyDistribution": {
+          "easy": 1,
+          "medium": 0,
+          "hard": 3
+        },
+        "commonPatterns": [
+          {
+            "underlined": "music, from",
+            "correct": "F"
+          },
+          {
+            "underlined": "exposing with audiences Celtic mouth music worldwide",
+            "correct": "B"
+          },
+          {
+            "underlined": "",
+            "correct": "H"
+          }
+        ]
+      },
+      "verb-tense": {
+        "frequency": 2,
+        "difficultyDistribution": {
+          "easy": 0,
+          "medium": 1,
+          "hard": 1
+        },
+        "commonPatterns": [
+          {
+            "underlined": "syllables called vocables",
+            "correct": "H"
+          },
+          {
+            "underlined": "painter, Wilhelm Freddie,",
+            "correct": "J"
+          }
+        ]
+      },
+      "punctuation": {
+        "frequency": 1,
+        "difficultyDistribution": {
+          "easy": 0,
+          "medium": 1,
+          "hard": 0
+        },
+        "commonPatterns": [
+          {
+            "underlined": "Former",
+            "correct": "G"
+          }
+        ]
+      }
+    },
+    "passages": {
+      "targetLength": 2045,
+      "targetWords": 321,
+      "targetGradeLevel": 12,
+      "targetReadingEase": 23.8,
+      "typeDistribution": {
+        "science-nature": 2,
+        "narrative": 3,
+        "arts-culture": 3,
+        "technology": 1,
+        "social-studies": 1
+      }
+    },
+    "questionSequence": {
+      "questionsPerPassage": 15,
+      "passagesPerTest": 5,
+      "rhetoricalQuestionPositions": [
+        6,
+        9,
+        18,
+        30,
+        34,
+        37,
+        45,
+        54,
+        57,
+        60,
+        75
+      ],
+      "difficultyProgression": [
+        {
+          "position": 1,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 2,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 3,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 4,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 5,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 6,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 7,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 8,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 9,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 10,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 11,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 12,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 13,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 14,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 15,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 16,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 17,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 18,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 19,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 20,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 21,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 22,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 23,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 24,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 25,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 26,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 27,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 28,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 29,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 30,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 31,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 32,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 33,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 34,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 35,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 36,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 37,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 38,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 39,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 40,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 41,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 42,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 43,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 44,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 45,
+          "recommendedDifficulty": "hard"
+        },
+        {
+          "position": 46,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 47,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 48,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 49,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 50,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 51,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 52,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 53,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 54,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 55,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 56,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 57,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 58,
+          "recommendedDifficulty": "hard"
+        },
+        {
+          "position": 59,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 60,
+          "recommendedDifficulty": "hard"
+        },
+        {
+          "position": 61,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 62,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 63,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 64,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 65,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 66,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 67,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 68,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 69,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 70,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 71,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 72,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 73,
+          "recommendedDifficulty": "medium"
+        },
+        {
+          "position": 74,
+          "recommendedDifficulty": "easy"
+        },
+        {
+          "position": 75,
+          "recommendedDifficulty": "hard"
+        }
+      ]
+    }
+  }
+}

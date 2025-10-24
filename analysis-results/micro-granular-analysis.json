@@ -1,0 +1,7090 @@
+{
+  "characterPatterns": {
+    "test_1_passage_1": {
+      "spacingPatterns": {
+        "space_before_comma": 0,
+        "space_after_comma": 21,
+        "space_before_period": 0,
+        "space_after_period": 21,
+        "space_before_semicolon": 0,
+        "space_after_semicolon": 0,
+        "space_before_colon": 0,
+        "space_after_colon": 0,
+        "space_before_question": 0,
+        "space_after_question": 0,
+        "space_before_exclamation": 0,
+        "space_after_exclamation": 0
+      },
+      "capitalizationSequences": [
+        "T",
+        "S",
+        "A",
+        "M",
+        "M",
+        "E",
+        "A",
+        "D",
+        "M",
+        "M",
+        "H",
+        "M",
+        "M",
+        "M",
+        "R",
+        "C",
+        "S",
+        "T",
+        "M",
+        "O",
+        "T",
+        "M",
+        "A",
+        "E",
+        "I",
+        "M",
+        "T",
+        "M",
+        "T",
+        "I",
+        "M",
+        "T",
+        "A",
+        "F",
+        "D",
+        "M"
+      ],
+      "specialCharacters": {
+        "'": {
+          "count": 4,
+          "contexts": [
+            ", she didn't expect t",
+            " the manta's range ab",
+            "g Marshall's research",
+            " the manta's ancestor"
+          ],
+          "positions": [
+            225,
+            491,
+            554,
+            1375
+          ]
+        },
+        "—": {
+          "count": 3,
+          "contexts": [
+            "lack wings—up to twen",
+            " feet wide—flying slo",
+            " inch long—the vestig"
+          ],
+          "positions": [
+            356,
+            384,
+            1329
+          ]
+        },
+        "\"": {
+          "count": 2,
+          "contexts": [
+            "toothlike \"denticles.",
+            "denticles.\" Marshall "
+          ],
+          "positions": [
+            1002,
+            1013
+          ]
+        }
+      },
+      "numberFormats": [
+        {
+          "type": "year",
+          "count": 1,
+          "examples": [
+            "2009"
+          ]
+        },
+        {
+          "type": "date",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "thousands",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "currency",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "percentage",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "time",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "decimal",
+          "count": 0,
+          "examples": []
+        }
+      ],
+      "abbreviationPatterns": [],
+      "contractionPatterns": [
+        "didn't",
+        "manta's",
+        "Marshall's",
+        "manta's"
+      ],
+      "hyphenationPatterns": [
+        "plankton-eating",
+        "twenty-five",
+        "egg-shaped"
+      ],
+      "quotationPatterns": [
+        {
+          "type": "double",
+          "count": 1,
+          "examples": [
+            "\"denticles.\""
+          ]
+        },
+        {
+          "type": "single",
+          "count": 2,
+          "examples": [
+            "'t expect to identify a new species. Mantas are plankton-eating relatives of stingrays that look like pairs of enormous black wings—up to twenty-five feet wide—flying slowly through the water. Encompassing wide swaths of both temperate and tropical oceans, the manta'",
+            "'s research off the coast of Mozambique, she observed intriguing physical variations in the mantas she swam amongst. Her beachside lodgings in Mozambique now house the Marine Megafauna Research Center. She began to suspect that the one recognized species of manta might in fact be two species.\n\nTo investigate, Marshall began collecting data. Other data required a closer look. The skin of all mantas, for example, is embedded with tiny, toothlike \"denticles.\" Marshall found that denticles on some mantas were randomly spaced and occasionally overlapped, whereas denticles on other mantas were evenly spaced and never overlapped. Another discovery was that some mantas had egg-shaped masses at the base of their tail fins. Each mass contained a bony spine about an inch long—the vestige of a stinging barb from the manta'"
+          ]
+        },
+        {
+          "type": "smart_open",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "smart_close",
+          "count": 0,
+          "examples": []
+        }
+      ]
+    },
+    "test_1_passage_2": {
+      "spacingPatterns": {
+        "space_before_comma": 0,
+        "space_after_comma": 19,
+        "space_before_period": 0,
+        "space_after_period": 15,
+        "space_before_semicolon": 0,
+        "space_after_semicolon": 0,
+        "space_before_colon": 0,
+        "space_after_colon": 0,
+        "space_before_question": 0,
+        "space_after_question": 0,
+        "space_before_exclamation": 0,
+        "space_after_exclamation": 0
+      },
+      "capitalizationSequences": [
+        "W",
+        "S",
+        "H",
+        "T",
+        "E",
+        "S",
+        "O",
+        "S",
+        "BCE",
+        "A",
+        "E",
+        "BCE",
+        "T",
+        "E",
+        "T",
+        "S",
+        "A",
+        "C",
+        "E",
+        "E",
+        "S",
+        "H",
+        "K",
+        "S",
+        "H",
+        "A",
+        "S",
+        "F",
+        "C",
+        "G",
+        "D",
+        "G",
+        "F",
+        "H"
+      ],
+      "specialCharacters": {
+        "'": {
+          "count": 4,
+          "contexts": [
+            " the plant's attacker",
+            " the plant's ability ",
+            "illow bark's medicina",
+            " to willow's use as a"
+          ],
+          "positions": [
+            177,
+            236,
+            498,
+            715
+          ]
+        }
+      },
+      "numberFormats": [
+        {
+          "type": "year",
+          "count": 3,
+          "examples": [
+            "3000",
+            "1534",
+            "1853"
+          ]
+        },
+        {
+          "type": "date",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "thousands",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "currency",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "percentage",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "time",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "decimal",
+          "count": 0,
+          "examples": []
+        }
+      ],
+      "abbreviationPatterns": [
+        "BCE",
+        "BCE"
+      ],
+      "contractionPatterns": [
+        "plant's",
+        "plant's",
+        "bark's",
+        "willow's"
+      ],
+      "hyphenationPatterns": [
+        "all-purpose",
+        "mid-1700s",
+        "consumer-friendly"
+      ],
+      "quotationPatterns": [
+        {
+          "type": "double",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "single",
+          "count": 2,
+          "examples": [
+            "'s attackers. Salicylates may also play a role in the plant'",
+            "'s medicinal use date from ancient Egypt and Sumeria. On a Sumerian stone tablet from 3000 BCE, willow is listed among dozens of plants used to treat illnesses. An Egyptian papyrus from about 1534 BCE refers to willow'"
+          ]
+        },
+        {
+          "type": "smart_open",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "smart_close",
+          "count": 0,
+          "examples": []
+        }
+      ]
+    },
+    "test_1_passage_3": {
+      "spacingPatterns": {
+        "space_before_comma": 0,
+        "space_after_comma": 19,
+        "space_before_period": 0,
+        "space_after_period": 17,
+        "space_before_semicolon": 0,
+        "space_after_semicolon": 2,
+        "space_before_colon": 0,
+        "space_after_colon": 2,
+        "space_before_question": 0,
+        "space_after_question": 0,
+        "space_before_exclamation": 0,
+        "space_after_exclamation": 0
+      },
+      "capitalizationSequences": [
+        "I",
+        "D",
+        "G",
+        "M",
+        "K",
+        "T",
+        "K",
+        "H",
+        "F",
+        "D",
+        "P",
+        "H",
+        "CD",
+        "P",
+        "T",
+        "K",
+        "T",
+        "D",
+        "P",
+        "A",
+        "W",
+        "K",
+        "A",
+        "K",
+        "I",
+        "K",
+        "K",
+        "S",
+        "H",
+        "J",
+        "I",
+        "J",
+        "F",
+        "J",
+        "K",
+        "K",
+        "W",
+        "B",
+        "M",
+        "D",
+        "C",
+        "P",
+        "J",
+        "C",
+        "P",
+        "F",
+        "J",
+        "H",
+        "W",
+        "K",
+        "I",
+        "T",
+        "A",
+        "K"
+      ],
+      "specialCharacters": {
+        "(": {
+          "count": 1,
+          "contexts": [
+            "d trigger (a device t"
+          ],
+          "positions": [
+            381
+          ]
+        },
+        ")": {
+          "count": 1,
+          "contexts": [
+            "is reached) on his ca"
+          ],
+          "positions": [
+            459
+          ]
+        },
+        "'": {
+          "count": 5,
+          "contexts": [
+            " Daft Punk's Homework",
+            " Daft Punk's dance an",
+            "hat Klimas's camera c",
+            "ugh Klimas's photogra",
+            "ys. Klimas's idea for"
+          ],
+          "positions": [
+            505,
+            671,
+            757,
+            862,
+            1071
+          ]
+        },
+        "\"": {
+          "count": 8,
+          "contexts": [
+            "s calls a \"sonic scul",
+            "sculpture.\" The vibra",
+            "ce anthem \"Around the",
+            " the World\" cause the",
+            "en song.\n\n\"I leave th",
+            "nd itself,\" Klimas sa",
+            "mas says, \"I typicall",
+            "ercussive.\" That make"
+          ],
+          "positions": [
+            616,
+            633,
+            687,
+            704,
+            993,
+            1050,
+            1794,
+            1847
+          ]
+        },
+        "—": {
+          "count": 1,
+          "contexts": [
+            "a captures—sound visu"
+          ],
+          "positions": [
+            775
+          ]
+        }
+      },
+      "numberFormats": [
+        {
+          "type": "year",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "date",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "thousands",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "currency",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "percentage",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "time",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "decimal",
+          "count": 0,
+          "examples": []
+        }
+      ],
+      "abbreviationPatterns": [
+        "CD"
+      ],
+      "contractionPatterns": [
+        "Punk's",
+        "Punk's",
+        "Klimas's",
+        "Klimas's",
+        "Klimas's"
+      ],
+      "hyphenationPatterns": [],
+      "quotationPatterns": [
+        {
+          "type": "double",
+          "count": 4,
+          "examples": [
+            "\"sonic sculpture.\"",
+            "\"Around the World\"",
+            "\"I leave the creation of the picture to the sound itself,\""
+          ]
+        },
+        {
+          "type": "single",
+          "count": 2,
+          "examples": [
+            "'s Homework CD into a stereo, cranks up the volume to ten, and pushes Play.\n\nThe result is what Klimas calls a \"sonic sculpture.\" The vibrations produced by Daft Punk'",
+            "'s camera captures—sound visually rendered by the effects of the vibrations on the paint. Although Klimas'"
+          ]
+        },
+        {
+          "type": "smart_open",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "smart_close",
+          "count": 0,
+          "examples": []
+        }
+      ]
+    },
+    "test_1_passage_4": {
+      "spacingPatterns": {
+        "space_before_comma": 0,
+        "space_after_comma": 21,
+        "space_before_period": 0,
+        "space_after_period": 19,
+        "space_before_semicolon": 0,
+        "space_after_semicolon": 1,
+        "space_before_colon": 0,
+        "space_after_colon": 1,
+        "space_before_question": 0,
+        "space_after_question": 0,
+        "space_before_exclamation": 0,
+        "space_after_exclamation": 0
+      },
+      "capitalizationSequences": [
+        "S",
+        "O",
+        "W",
+        "C",
+        "R",
+        "G",
+        "T",
+        "T",
+        "S",
+        "H",
+        "S",
+        "L",
+        "T",
+        "C",
+        "R",
+        "H",
+        "R",
+        "G",
+        "E",
+        "C",
+        "K",
+        "R",
+        "I",
+        "I",
+        "O",
+        "C",
+        "B",
+        "T",
+        "I",
+        "I",
+        "N",
+        "P",
+        "S",
+        "S",
+        "D",
+        "T",
+        "T",
+        "H",
+        "C",
+        "R",
+        "H",
+        "T",
+        "H",
+        "L"
+      ],
+      "specialCharacters": {
+        "\"": {
+          "count": 2,
+          "contexts": [
+            " nickname \"the King o",
+            " of Roads.\"\n\nImpressi"
+          ],
+          "positions": [
+            901,
+            920
+          ]
+        },
+        "'": {
+          "count": 1,
+          "contexts": [
+            "cal people's interest"
+          ],
+          "positions": [
+            1353
+          ]
+        }
+      },
+      "numberFormats": [
+        {
+          "type": "year",
+          "count": 4,
+          "examples": [
+            "1913",
+            "1922",
+            "1954"
+          ]
+        },
+        {
+          "type": "date",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "thousands",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "currency",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "percentage",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "time",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "decimal",
+          "count": 0,
+          "examples": []
+        }
+      ],
+      "abbreviationPatterns": [],
+      "contractionPatterns": [
+        "people's"
+      ],
+      "hyphenationPatterns": [
+        "eighty-five",
+        "tree-covered",
+        "would-be"
+      ],
+      "quotationPatterns": [
+        {
+          "type": "double",
+          "count": 1,
+          "examples": [
+            "\"the King of Roads.\""
+          ]
+        },
+        {
+          "type": "single",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "smart_open",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "smart_close",
+          "count": 0,
+          "examples": []
+        }
+      ]
+    },
+    "test_1_passage_5": {
+      "spacingPatterns": {
+        "space_before_comma": 0,
+        "space_after_comma": 19,
+        "space_before_period": 0,
+        "space_after_period": 17,
+        "space_before_semicolon": 0,
+        "space_after_semicolon": 1,
+        "space_before_colon": 0,
+        "space_after_colon": 1,
+        "space_before_question": 0,
+        "space_after_question": 0,
+        "space_before_exclamation": 0,
+        "space_after_exclamation": 0
+      },
+      "capitalizationSequences": [
+        "O",
+        "N",
+        "Y",
+        "C",
+        "S",
+        "R",
+        "A",
+        "R",
+        "DJ",
+        "L",
+        "S",
+        "E",
+        "DJ",
+        "T",
+        "R",
+        "S",
+        "R",
+        "B",
+        "B",
+        "H",
+        "M",
+        "G",
+        "W",
+        "M",
+        "S",
+        "G",
+        "W",
+        "T",
+        "R",
+        "D",
+        "R",
+        "N",
+        "R",
+        "S",
+        "O",
+        "R",
+        "C",
+        "R",
+        "D",
+        "C",
+        "G",
+        "T",
+        "D",
+        "R",
+        "S",
+        "H",
+        "S",
+        "R",
+        "G",
+        "F",
+        "F",
+        "F",
+        "T",
+        "M",
+        "R"
+      ],
+      "specialCharacters": {
+        "—": {
+          "count": 3,
+          "contexts": [
+            "subculture—based on t",
+            " art forms—was emergi",
+            "onder Mike—to record "
+          ],
+          "positions": [
+            160,
+            230,
+            706
+          ]
+        },
+        "\"": {
+          "count": 10,
+          "contexts": [
+            " chanted, \"Throw your",
+            "n the air,\" everyone ",
+            "ng track, \"Rapper's D",
+            "s Delight,\" sold four",
+            " out that \"Rapper's D",
+            "'s Delight\" borrowed ",
+            "disco hit \"Good Times",
+            "Good Times\" without i",
+            "us Five's \"The Messag",
+            "e Message,\" which bro"
+          ],
+          "positions": [
+            408,
+            437,
+            917,
+            935,
+            1347,
+            1364,
+            1422,
+            1433,
+            1789,
+            1802
+          ]
+        },
+        "'": {
+          "count": 10,
+          "contexts": [
+            " music she'd heard, a",
+            "k, \"Rapper's Delight,",
+            "h Robinson's commerci",
+            "t Robinson's approach",
+            "wn hip-hop's raw, str",
+            "at \"Rapper's Delight\"",
+            "ne of Chic's disco hi",
+            ", Robinson's impact o",
+            "rious Five's \"The Mes",
+            ". Robinson's willingn"
+          ],
+          "positions": [
+            809,
+            924,
+            1096,
+            1231,
+            1288,
+            1354,
+            1409,
+            1519,
+            1786,
+            1856
+          ]
+        }
+      },
+      "numberFormats": [
+        {
+          "type": "year",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "date",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "thousands",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "currency",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "percentage",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "time",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "decimal",
+          "count": 0,
+          "examples": []
+        }
+      ],
+      "abbreviationPatterns": [
+        "DJ",
+        "DJ"
+      ],
+      "contractionPatterns": [
+        "she'd",
+        "Rapper's",
+        "Robinson's",
+        "Robinson's",
+        "hop's",
+        "Rapper's",
+        "Chic's",
+        "Robinson's",
+        "Five's",
+        "Robinson's"
+      ],
+      "hyphenationPatterns": [
+        "hip-hop",
+        "hip-hop",
+        "re-create",
+        "feel-good",
+        "hip-hop",
+        "hip-hop",
+        "hip-hop",
+        "pop-oriented",
+        "hip-hop",
+        "street-level",
+        "hip-hop",
+        "hip-hop",
+        "hip-hop"
+      ],
+      "quotationPatterns": [
+        {
+          "type": "double",
+          "count": 5,
+          "examples": [
+            "\"Throw your hands in the air,\"",
+            "\"Rapper's Delight,\"",
+            "\"Rapper's Delight\""
+          ]
+        },
+        {
+          "type": "single",
+          "count": 5,
+          "examples": [
+            "'d heard, an upbeat disco record provided the background that the rappers rhymed over. The resulting track, \"Rapper'",
+            "'s commercial success. Some felt that hip-hop should remain underground, accessible only to its core followers. Others thought Robinson'",
+            "'s raw, street-level energy. Critics also pointed out that \"Rapper'"
+          ]
+        },
+        {
+          "type": "smart_open",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "smart_close",
+          "count": 0,
+          "examples": []
+        }
+      ]
+    },
+    "test_2_passage_4": {
+      "spacingPatterns": {
+        "space_before_comma": 0,
+        "space_after_comma": 29,
+        "space_before_period": 0,
+        "space_after_period": 18,
+        "space_before_semicolon": 0,
+        "space_after_semicolon": 0,
+        "space_before_colon": 0,
+        "space_after_colon": 0,
+        "space_before_question": 0,
+        "space_after_question": 0,
+        "space_before_exclamation": 0,
+        "space_after_exclamation": 0
+      },
+      "capitalizationSequences": [
+        "C",
+        "H",
+        "F",
+        "A",
+        "A",
+        "U",
+        "V",
+        "C",
+        "H",
+        "B",
+        "I",
+        "I",
+        "R",
+        "L",
+        "B",
+        "C",
+        "H",
+        "B",
+        "A",
+        "N",
+        "Y",
+        "C",
+        "H",
+        "M",
+        "F",
+        "N",
+        "B",
+        "B",
+        "T",
+        "W",
+        "B",
+        "T",
+        "B",
+        "N",
+        "O",
+        "S",
+        "L",
+        "I",
+        "B",
+        "D",
+        "W",
+        "F",
+        "L",
+        "A",
+        "S",
+        "R",
+        "I",
+        "S",
+        "L",
+        "I",
+        "R",
+        "I",
+        "M",
+        "B",
+        "T",
+        "B",
+        "H",
+        "N",
+        "I",
+        "I",
+        "U",
+        "V",
+        "I",
+        "I",
+        "B",
+        "F",
+        "I",
+        "B",
+        "S",
+        "L",
+        "T",
+        "I",
+        "B",
+        "A",
+        "I",
+        "B"
+      ],
+      "specialCharacters": {
+        "'": {
+          "count": 12,
+          "contexts": [
+            "inton Hill's Found Ar",
+            "d to Black's art by o",
+            "e of Black's longtime",
+            "the artist's drawings",
+            "n of Black's pieces s",
+            ", and they're packed ",
+            "a.\n\nI wasn't sure how",
+            "s in Rodia's clothing",
+            " why Black's work cre",
+            "onder if I'll pass th",
+            "l of Black's works, i",
+            "that Black's art is l"
+          ],
+          "positions": [
+            12,
+            428,
+            450,
+            502,
+            596,
+            766,
+            1108,
+            1195,
+            1334,
+            1645,
+            1798,
+            2026
+          ]
+        },
+        "—": {
+          "count": 4,
+          "contexts": [
+            "even Lamps—so detaile",
+            "s clothing—fit togeth",
+            "and events—most of wh",
+            "n heard of—that Black"
+          ],
+          "positions": [
+            1147,
+            1206,
+            1905,
+            1945
+          ]
+        }
+      },
+      "numberFormats": [
+        {
+          "type": "year",
+          "count": 1,
+          "examples": [
+            "2013"
+          ]
+        },
+        {
+          "type": "date",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "thousands",
+          "count": 2,
+          "examples": [
+            "16,000",
+            "28,000"
+          ]
+        },
+        {
+          "type": "currency",
+          "count": 2,
+          "examples": [
+            "$16,000",
+            "$28,000"
+          ]
+        },
+        {
+          "type": "percentage",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "time",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "decimal",
+          "count": 0,
+          "examples": []
+        }
+      ],
+      "abbreviationPatterns": [],
+      "contractionPatterns": [
+        "Hill's",
+        "Black's",
+        "Black's",
+        "artist's",
+        "Black's",
+        "they're",
+        "wasn't",
+        "Rodia's",
+        "Black's",
+        "I'll",
+        "Black's",
+        "Black's"
+      ],
+      "hyphenationPatterns": [
+        "64-year-old"
+      ],
+      "quotationPatterns": [
+        {
+          "type": "double",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "single",
+          "count": 6,
+          "examples": [
+            "'s Found Artist\n\nAt the Urban Vintage, my favorite café here in Clinton Hill, Brooklyn, I was reading the newspaper when I noticed an article about Rafael Leonardo Black, a 64-year-old Clinton Hill artist who had just been discovered. Black, a native of Aruba, has been creating art in his New York City studio apartment for over three decades.\n\nHowever, in May of 2013, art dealer Francis Naumann, directed to Black'",
+            "'s longtime friends, displayed sixteen of the artist'",
+            "'s pieces sold for prices ranging from $16,000 to $28,000. The art world had found a hidden treasure.\n\nBlack draws collages in black No. 2 pencil on white board, and they'"
+          ]
+        },
+        {
+          "type": "smart_open",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "smart_close",
+          "count": 0,
+          "examples": []
+        }
+      ]
+    },
+    "test_2_passage_3": {
+      "spacingPatterns": {
+        "space_before_comma": 0,
+        "space_after_comma": 17,
+        "space_before_period": 0,
+        "space_after_period": 18,
+        "space_before_semicolon": 0,
+        "space_after_semicolon": 0,
+        "space_before_colon": 0,
+        "space_after_colon": 0,
+        "space_before_question": 0,
+        "space_after_question": 0,
+        "space_before_exclamation": 0,
+        "space_after_exclamation": 0
+      },
+      "capitalizationSequences": [
+        "N",
+        "I",
+        "A",
+        "I",
+        "C",
+        "N",
+        "O",
+        "A",
+        "E",
+        "DOM",
+        "C",
+        "T",
+        "A",
+        "N",
+        "N",
+        "F",
+        "O",
+        "S",
+        "I",
+        "C",
+        "N",
+        "O",
+        "N",
+        "A",
+        "O",
+        "U",
+        "W",
+        "D",
+        "F",
+        "T",
+        "B",
+        "T",
+        "I",
+        "C",
+        "N",
+        "O",
+        "A",
+        "T"
+      ],
+      "specialCharacters": {
+        "(": {
+          "count": 3,
+          "contexts": [
+            "l modules (DOMs), whi",
+            " universe (fifty tril",
+            "upernovae (the collap"
+          ],
+          "positions": [
+            192,
+            494,
+            1460
+          ]
+        },
+        ")": {
+          "count": 3,
+          "contexts": [
+            "ules (DOMs), which ar",
+            "ery second), actually",
+            "g of stars). The orig"
+          ],
+          "positions": [
+            197,
+            555,
+            1484
+          ]
+        },
+        "—": {
+          "count": 2,
+          "contexts": [
+            " radiation—a veritabl",
+            "nic energy—is emitted"
+          ],
+          "positions": [
+            294,
+            336
+          ]
+        },
+        "'": {
+          "count": 1,
+          "contexts": [
+            " neutrinos' origins c"
+          ],
+          "positions": [
+            1328
+          ]
+        }
+      },
+      "numberFormats": [
+        {
+          "type": "year",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "date",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "thousands",
+          "count": 1,
+          "examples": [
+            "2,500"
+          ]
+        },
+        {
+          "type": "currency",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "percentage",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "time",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "decimal",
+          "count": 0,
+          "examples": []
+        }
+      ],
+      "abbreviationPatterns": [],
+      "contractionPatterns": [],
+      "hyphenationPatterns": [
+        "eighty-six",
+        "particle-based",
+        "light-based"
+      ],
+      "quotationPatterns": [
+        {
+          "type": "double",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "single",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "smart_open",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "smart_close",
+          "count": 0,
+          "examples": []
+        }
+      ]
+    },
+    "test_2_passage_5": {
+      "spacingPatterns": {
+        "space_before_comma": 0,
+        "space_after_comma": 22,
+        "space_before_period": 0,
+        "space_after_period": 24,
+        "space_before_semicolon": 0,
+        "space_after_semicolon": 0,
+        "space_before_colon": 0,
+        "space_after_colon": 1,
+        "space_before_question": 0,
+        "space_after_question": 0,
+        "space_before_exclamation": 0,
+        "space_after_exclamation": 0
+      },
+      "capitalizationSequences": [
+        "C",
+        "A",
+        "P",
+        "H",
+        "P",
+        "I",
+        "H",
+        "T",
+        "B",
+        "T",
+        "I",
+        "O",
+        "US",
+        "A",
+        "S",
+        "C",
+        "F",
+        "W",
+        "W",
+        "I",
+        "C",
+        "A",
+        "C",
+        "A",
+        "O",
+        "M",
+        "A",
+        "O",
+        "A",
+        "G",
+        "I",
+        "D",
+        "T",
+        "G",
+        "T",
+        "US",
+        "T",
+        "A",
+        "A",
+        "T",
+        "G",
+        "C",
+        "A",
+        "W",
+        "A",
+        "C",
+        "A",
+        "T",
+        "A",
+        "T",
+        "L",
+        "B",
+        "N",
+        "T",
+        "F",
+        "C",
+        "A",
+        "W",
+        "C",
+        "A",
+        "C",
+        "A",
+        "C",
+        "A"
+      ],
+      "specialCharacters": {
+        "\"": {
+          "count": 4,
+          "contexts": [
+            "more than \"rats with ",
+            "ith wings,\" blamed fo",
+            ", and the \"Lost Batta",
+            " Battalion\" was found"
+          ],
+          "positions": [
+            120,
+            137,
+            1755,
+            1770
+          ]
+        },
+        "'": {
+          "count": 5,
+          "contexts": [
+            "\n\nCher Ami's most fam",
+            "f the 77th's whereabo",
+            "d the bird's heroism.",
+            ". Cher Ami's story is",
+            "ing pigeon's navigati"
+          ],
+          "positions": [
+            786,
+            1258,
+            1853,
+            2101,
+            2143
+          ]
+        }
+      },
+      "numberFormats": [
+        {
+          "type": "year",
+          "count": 1,
+          "examples": [
+            "1918"
+          ]
+        },
+        {
+          "type": "date",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "thousands",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "currency",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "percentage",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "time",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "decimal",
+          "count": 0,
+          "examples": []
+        }
+      ],
+      "abbreviationPatterns": [
+        "US",
+        "US"
+      ],
+      "contractionPatterns": [
+        "Ami's",
+        "77th's",
+        "bird's",
+        "Ami's",
+        "pigeon's"
+      ],
+      "hyphenationPatterns": [
+        "Meuse-Argonne",
+        "Twenty-five"
+      ],
+      "quotationPatterns": [
+        {
+          "type": "double",
+          "count": 2,
+          "examples": [
+            "\"rats with wings,\"",
+            "\"Lost Battalion\""
+          ]
+        },
+        {
+          "type": "single",
+          "count": 2,
+          "examples": [
+            "'s most famous flight took place in October 1918, during the Meuse-Argonne Offensive. American forces had advanced deep into German territory when a battalion of the 77th Infantry Division found itself trapped behind enemy lines. The men were surrounded by German troops and were rapidly running out of rations. They were separated from other US forces. They had but one link to headquarters: homing pigeons.\n\nAs it became clear that the Americans were unaware of the 77th'",
+            "'s heroism. The French military awarded Cher Ami a medal, the War Cross. Although one might question the extent to which Cher Ami understood his mission, his story proves that pigeons are remarkable creatures capable of extraordinary acts. Cher Ami'"
+          ]
+        },
+        {
+          "type": "smart_open",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "smart_close",
+          "count": 0,
+          "examples": []
+        }
+      ]
+    },
+    "test_2_passage_2": {
+      "spacingPatterns": {
+        "space_before_comma": 0,
+        "space_after_comma": 23,
+        "space_before_period": 0,
+        "space_after_period": 19,
+        "space_before_semicolon": 0,
+        "space_after_semicolon": 0,
+        "space_before_colon": 0,
+        "space_after_colon": 0,
+        "space_before_question": 0,
+        "space_after_question": 0,
+        "space_before_exclamation": 0,
+        "space_after_exclamation": 0
+      },
+      "capitalizationSequences": [
+        "A",
+        "M",
+        "M",
+        "M",
+        "E",
+        "F",
+        "E",
+        "I",
+        "S",
+        "I",
+        "C",
+        "C",
+        "I",
+        "T",
+        "C",
+        "O",
+        "S",
+        "G",
+        "T",
+        "T",
+        "A",
+        "P",
+        "M",
+        "S",
+        "A",
+        "A",
+        "S",
+        "T",
+        "T",
+        "T",
+        "C",
+        "I",
+        "M",
+        "M",
+        "S",
+        "T",
+        "C",
+        "I",
+        "C",
+        "T"
+      ],
+      "specialCharacters": {
+        "'": {
+          "count": 5,
+          "contexts": [
+            "eak a song's rhythm a",
+            "he dancers' steps.\n\nP",
+            "e who didn't read mus",
+            "he workers' movements",
+            " The bands' celebrity"
+          ],
+          "positions": [
+            1097,
+            1130,
+            1410,
+            1797,
+            2087
+          ]
+        }
+      },
+      "numberFormats": [
+        {
+          "type": "year",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "date",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "thousands",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "currency",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "percentage",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "time",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "decimal",
+          "count": 0,
+          "examples": []
+        }
+      ],
+      "abbreviationPatterns": [],
+      "contractionPatterns": [
+        "song's",
+        "didn't"
+      ],
+      "hyphenationPatterns": [
+        "first-class",
+        "puirt-a-beul",
+        "tongue-twisting",
+        "puirt-a-beul",
+        "Puirt-a-beul",
+        "puirt-a-beul"
+      ],
+      "quotationPatterns": [
+        {
+          "type": "double",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "single",
+          "count": 2,
+          "examples": [
+            "'s rhythm and disrupt the dancers'",
+            "'t read music a way to learn and pass on traditional songs.\n\nAnother form of mouth music that originated in Scotland is the waulking song. These work songs were traditionally sung by women as they prepared newly woven cloth by soaking, beating, and stretching it. The rhythmic nature of the work naturally lent itself to musical accompaniment, and the songs helped coordinate the workers'"
+          ]
+        },
+        {
+          "type": "smart_open",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "smart_close",
+          "count": 0,
+          "examples": []
+        }
+      ]
+    },
+    "test_2_passage_1": {
+      "spacingPatterns": {
+        "space_before_comma": 0,
+        "space_after_comma": 24,
+        "space_before_period": 0,
+        "space_after_period": 17,
+        "space_before_semicolon": 0,
+        "space_after_semicolon": 0,
+        "space_before_colon": 0,
+        "space_after_colon": 0,
+        "space_before_question": 0,
+        "space_after_question": 0,
+        "space_before_exclamation": 0,
+        "space_after_exclamation": 0
+      },
+      "capitalizationSequences": [
+        "M",
+        "D",
+        "B",
+        "M",
+        "R",
+        "G",
+        "S",
+        "D",
+        "B",
+        "BCE",
+        "N",
+        "A",
+        "M",
+        "T",
+        "T",
+        "T",
+        "T",
+        "G",
+        "W",
+        "A",
+        "G",
+        "O",
+        "I",
+        "A",
+        "T",
+        "B",
+        "A",
+        "T",
+        "G",
+        "M",
+        "T",
+        "G",
+        "CE",
+        "A",
+        "G",
+        "H",
+        "T",
+        "L"
+      ],
+      "specialCharacters": {
+        "'": {
+          "count": 4,
+          "contexts": [
+            " the world's driest p",
+            "ogists don't know how",
+            "n and didn't evaporat",
+            "Garamantes' populatio"
+          ],
+          "positions": [
+            151,
+            906,
+            1110,
+            1662
+          ]
+        },
+        "—": {
+          "count": 1,
+          "contexts": [
+            "est places—the Sahara"
+          ],
+          "positions": [
+            167
+          ]
+        },
+        "(": {
+          "count": 1,
+          "contexts": [
+            " foggaras (undergroun"
+          ],
+          "positions": [
+            648
+          ]
+        },
+        ")": {
+          "count": 1,
+          "contexts": [
+            " aqueducts) by diggin"
+          ],
+          "positions": [
+            670
+          ]
+        }
+      },
+      "numberFormats": [
+        {
+          "type": "year",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "date",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "thousands",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "currency",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "percentage",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "time",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "decimal",
+          "count": 0,
+          "examples": []
+        }
+      ],
+      "abbreviationPatterns": [
+        "BCE",
+        "CE"
+      ],
+      "contractionPatterns": [
+        "world's",
+        "don't",
+        "didn't"
+      ],
+      "hyphenationPatterns": [
+        "water-bearing",
+        "air-conditioning"
+      ],
+      "quotationPatterns": [
+        {
+          "type": "double",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "single",
+          "count": 2,
+          "examples": [
+            "'s driest places—the Sahara Desert. Beginning around 500 BCE, they built towns and villages, manufactured cloth and jewelry, and traded throughout North Africa and the Mediterranean. They also grew a variety of crops, including wheat, barley, and millet.\n\nThe survival of their civilization depended on hundreds of miles of underground tunnels. These tunnels carried water to desert settlements from an aquifer, an underground layer of water-bearing rock. The Garamantes learned to build foggaras (underground aqueducts) by digging vertical shafts down to the water table, then connecting them with horizontal tunnels. When the tunnels reached a town or field, the water flowed into more easily accessible surface canals or reservoirs.\n\nArchaeologists don'",
+            "'t evaporate. And because the water came from an aquifer rather than from rainfall, the supply was unaffected by drought. The Garamantes could rely on a constant supply of water for drinking, washing, and irrigation. Moreover, the cold, damp air of the foggaras lowered the temperature inside the homes that were built over them, resulting in an ancient form of air-conditioning.\n\nThe Garamantes thrived until about 500 CE, when some archaeologists believe they began to deplete the aquifer. As the foggaras supplied less and less water, the Garamantes'"
+          ]
+        },
+        {
+          "type": "smart_open",
+          "count": 0,
+          "examples": []
+        },
+        {
+          "type": "smart_close",
+          "count": 0,
+          "examples": []
+        }
+      ]
+    }
+  },
+  "punctuationSequences": {
+    "test_1_passage_1": {
+      "commonSequences": {
+        ".\"": 1
+      },
+      "complexSequences": {
+        "sentence_end": {
+          "count": 19,
+          "examples": [
+            ". S",
+            ". M",
+            ". E"
+          ]
+        },
+        "coord_conj": {
+          "count": 1,
+          "examples": [
+            ", for "
+          ]
+        },
+        "semicolon_trans": {
+          "count": 0,
+          "examples": []
+        },
+        "colon_intro": {
+          "count": 0,
+          "examples": []
+        },
+        "em_dash": {
+          "count": 3,
+          "examples": [
+            "—u",
+            "—f",
+            "—t"
+          ]
+        },
+        "relative_clause": {
+          "count": 2,
+          "examples": [
+            ", which ",
+            ", that "
+          ]
+        },
+        "parenthetical": {
+          "count": 0,
+          "examples": []
+        },
+        "double_comma": {
+          "count": 0,
+          "examples": []
+        },
+        "double_period": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "sentenceEndings": {},
+      "clauseSeparators": {},
+      "listPatterns": {}
+    },
+    "test_1_passage_2": {
+      "commonSequences": {},
+      "complexSequences": {
+        "sentence_end": {
+          "count": 14,
+          "examples": [
+            ". S",
+            ". H",
+            ".\n\nT"
+          ]
+        },
+        "coord_conj": {
+          "count": 2,
+          "examples": [
+            ", or ",
+            ", so "
+          ]
+        },
+        "semicolon_trans": {
+          "count": 0,
+          "examples": []
+        },
+        "colon_intro": {
+          "count": 0,
+          "examples": []
+        },
+        "em_dash": {
+          "count": 0,
+          "examples": []
+        },
+        "relative_clause": {
+          "count": 1,
+          "examples": [
+            ", that "
+          ]
+        },
+        "parenthetical": {
+          "count": 0,
+          "examples": []
+        },
+        "double_comma": {
+          "count": 0,
+          "examples": []
+        },
+        "double_period": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "sentenceEndings": {},
+      "clauseSeparators": {},
+      "listPatterns": {}
+    },
+    "test_1_passage_3": {
+      "commonSequences": {
+        ".\"": 2,
+        ",\"": 1
+      },
+      "complexSequences": {
+        "sentence_end": {
+          "count": 14,
+          "examples": [
+            ". T",
+            ". K",
+            ". H"
+          ]
+        },
+        "coord_conj": {
+          "count": 3,
+          "examples": [
+            ", and ",
+            ", and ",
+            ", and "
+          ]
+        },
+        "semicolon_trans": {
+          "count": 0,
+          "examples": []
+        },
+        "colon_intro": {
+          "count": 0,
+          "examples": []
+        },
+        "em_dash": {
+          "count": 1,
+          "examples": [
+            "—s"
+          ]
+        },
+        "relative_clause": {
+          "count": 0,
+          "examples": []
+        },
+        "parenthetical": {
+          "count": 1,
+          "examples": [
+            " (a device that automatically snaps a photo when a given sound level is reached) "
+          ]
+        },
+        "double_comma": {
+          "count": 0,
+          "examples": []
+        },
+        "double_period": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "sentenceEndings": {},
+      "clauseSeparators": {},
+      "listPatterns": {}
+    },
+    "test_1_passage_4": {
+      "commonSequences": {
+        ".\"": 1
+      },
+      "complexSequences": {
+        "sentence_end": {
+          "count": 17,
+          "examples": [
+            ". T",
+            ". T",
+            ". T"
+          ]
+        },
+        "coord_conj": {
+          "count": 2,
+          "examples": [
+            ", and ",
+            ", and "
+          ]
+        },
+        "semicolon_trans": {
+          "count": 0,
+          "examples": []
+        },
+        "colon_intro": {
+          "count": 0,
+          "examples": []
+        },
+        "em_dash": {
+          "count": 0,
+          "examples": []
+        },
+        "relative_clause": {
+          "count": 0,
+          "examples": []
+        },
+        "parenthetical": {
+          "count": 0,
+          "examples": []
+        },
+        "double_comma": {
+          "count": 0,
+          "examples": []
+        },
+        "double_period": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "sentenceEndings": {},
+      "clauseSeparators": {},
+      "listPatterns": {}
+    },
+    "test_1_passage_5": {
+      "commonSequences": {
+        ",\"": 3
+      },
+      "complexSequences": {
+        "sentence_end": {
+          "count": 16,
+          "examples": [
+            ". A",
+            ". R",
+            ". E"
+          ]
+        },
+        "coord_conj": {
+          "count": 2,
+          "examples": [
+            ", and ",
+            ", and "
+          ]
+        },
+        "semicolon_trans": {
+          "count": 0,
+          "examples": []
+        },
+        "colon_intro": {
+          "count": 1,
+          "examples": [
+            ": B"
+          ]
+        },
+        "em_dash": {
+          "count": 3,
+          "examples": [
+            "—b",
+            "—w",
+            "—t"
+          ]
+        },
+        "relative_clause": {
+          "count": 0,
+          "examples": []
+        },
+        "parenthetical": {
+          "count": 0,
+          "examples": []
+        },
+        "double_comma": {
+          "count": 0,
+          "examples": []
+        },
+        "double_period": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "sentenceEndings": {},
+      "clauseSeparators": {},
+      "listPatterns": {}
+    },
+    "test_2_passage_4": {
+      "commonSequences": {},
+      "complexSequences": {
+        "sentence_end": {
+          "count": 16,
+          "examples": [
+            ". B",
+            ".\n\nH",
+            ". T"
+          ]
+        },
+        "coord_conj": {
+          "count": 5,
+          "examples": [
+            ", and ",
+            ", and ",
+            ", and "
+          ]
+        },
+        "semicolon_trans": {
+          "count": 0,
+          "examples": []
+        },
+        "colon_intro": {
+          "count": 0,
+          "examples": []
+        },
+        "em_dash": {
+          "count": 4,
+          "examples": [
+            "—s",
+            "—f",
+            "—m"
+          ]
+        },
+        "relative_clause": {
+          "count": 1,
+          "examples": [
+            ", when "
+          ]
+        },
+        "parenthetical": {
+          "count": 0,
+          "examples": []
+        },
+        "double_comma": {
+          "count": 0,
+          "examples": []
+        },
+        "double_period": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "sentenceEndings": {},
+      "clauseSeparators": {},
+      "listPatterns": {}
+    },
+    "test_2_passage_3": {
+      "commonSequences": {
+        "),": 2,
+        ").": 1
+      },
+      "complexSequences": {
+        "sentence_end": {
+          "count": 17,
+          "examples": [
+            ". E",
+            ". T",
+            ".\n\nA"
+          ]
+        },
+        "coord_conj": {
+          "count": 2,
+          "examples": [
+            ", and ",
+            ", and "
+          ]
+        },
+        "semicolon_trans": {
+          "count": 0,
+          "examples": []
+        },
+        "colon_intro": {
+          "count": 0,
+          "examples": []
+        },
+        "em_dash": {
+          "count": 2,
+          "examples": [
+            "—a",
+            "—i"
+          ]
+        },
+        "relative_clause": {
+          "count": 1,
+          "examples": [
+            ", which "
+          ]
+        },
+        "parenthetical": {
+          "count": 3,
+          "examples": [
+            " (DOMs)",
+            " (fifty trillion neutrinos pass through your body every second)",
+            " (the collapsing of stars)"
+          ]
+        },
+        "double_comma": {
+          "count": 0,
+          "examples": []
+        },
+        "double_period": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "sentenceEndings": {},
+      "clauseSeparators": {},
+      "listPatterns": {}
+    },
+    "test_2_passage_5": {
+      "commonSequences": {
+        ",\"": 1
+      },
+      "complexSequences": {
+        "sentence_end": {
+          "count": 23,
+          "examples": [
+            ". I",
+            ". H",
+            ". T"
+          ]
+        },
+        "coord_conj": {
+          "count": 3,
+          "examples": [
+            ", but ",
+            ", but ",
+            ", and "
+          ]
+        },
+        "semicolon_trans": {
+          "count": 0,
+          "examples": []
+        },
+        "colon_intro": {
+          "count": 0,
+          "examples": []
+        },
+        "em_dash": {
+          "count": 0,
+          "examples": []
+        },
+        "relative_clause": {
+          "count": 0,
+          "examples": []
+        },
+        "parenthetical": {
+          "count": 0,
+          "examples": []
+        },
+        "double_comma": {
+          "count": 0,
+          "examples": []
+        },
+        "double_period": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "sentenceEndings": {},
+      "clauseSeparators": {},
+      "listPatterns": {}
+    },
+    "test_2_passage_2": {
+      "commonSequences": {},
+      "complexSequences": {
+        "sentence_end": {
+          "count": 18,
+          "examples": [
+            ". F",
+            ". I",
+            ".\n\nC"
+          ]
+        },
+        "coord_conj": {
+          "count": 7,
+          "examples": [
+            ", but ",
+            ", and ",
+            ", so "
+          ]
+        },
+        "semicolon_trans": {
+          "count": 0,
+          "examples": []
+        },
+        "colon_intro": {
+          "count": 0,
+          "examples": []
+        },
+        "em_dash": {
+          "count": 0,
+          "examples": []
+        },
+        "relative_clause": {
+          "count": 0,
+          "examples": []
+        },
+        "parenthetical": {
+          "count": 0,
+          "examples": []
+        },
+        "double_comma": {
+          "count": 0,
+          "examples": []
+        },
+        "double_period": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "sentenceEndings": {},
+      "clauseSeparators": {},
+      "listPatterns": {}
+    },
+    "test_2_passage_1": {
+      "commonSequences": {},
+      "complexSequences": {
+        "sentence_end": {
+          "count": 16,
+          "examples": [
+            ". B",
+            ". T",
+            ".\n\nT"
+          ]
+        },
+        "coord_conj": {
+          "count": 5,
+          "examples": [
+            ", and ",
+            ", and ",
+            ", and "
+          ]
+        },
+        "semicolon_trans": {
+          "count": 0,
+          "examples": []
+        },
+        "colon_intro": {
+          "count": 0,
+          "examples": []
+        },
+        "em_dash": {
+          "count": 1,
+          "examples": [
+            "—t"
+          ]
+        },
+        "relative_clause": {
+          "count": 1,
+          "examples": [
+            ", when "
+          ]
+        },
+        "parenthetical": {
+          "count": 1,
+          "examples": [
+            " (underground aqueducts) "
+          ]
+        },
+        "double_comma": {
+          "count": 0,
+          "examples": []
+        },
+        "double_period": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "sentenceEndings": {},
+      "clauseSeparators": {},
+      "listPatterns": {}
+    }
+  },
+  "wordPositionPatterns": {
+    "test_1_passage_1": {
+      "firstWordTypes": {
+        "other": 7,
+        "conjunction": 1,
+        "gerund_participle": 3,
+        "pronoun": 2,
+        "preposition": 4,
+        "article": 3,
+        "adverb": 1
+      },
+      "lastWordTypes": {
+        "past_participle": 2,
+        "other": 19
+      },
+      "middlewordPatterns": {},
+      "transitionPositions": {},
+      "modifierPositions": {
+        "identified": [
+          0.3888888888888889
+        ],
+        "geographically": [
+          0.8888888888888888
+        ],
+        "isolated": [
+          0.9444444444444444
+        ],
+        "studied": [
+          0.2608695652173913
+        ],
+        "isolated,": [
+          0.6086956521739131
+        ],
+        "plankton-eating": [
+          0.09090909090909091
+        ],
+        "twenty-five": [
+          0.6818181818181818
+        ],
+        "wide—flying": [
+          0.7727272727272727
+        ],
+        "slowly": [
+          0.8181818181818182
+        ],
+        "encompassing": [
+          0
+        ],
+        "during": [
+          0
+        ],
+        "observed": [
+          0.47368421052631576
+        ],
+        "intriguing": [
+          0.5263157894736842
+        ],
+        "recognized": [
+          0.4117647058823529
+        ],
+        "collecting": [
+          0.6666666666666666
+        ],
+        "required": [
+          0.3333333333333333
+        ],
+        "embedded": [
+          0.6153846153846154
+        ],
+        "randomly": [
+          0.36
+        ],
+        "spaced": [
+          0.4,
+          0.4
+        ],
+        "occasionally": [
+          0.48
+        ],
+        "overlapped,": [
+          0.52
+        ],
+        "evenly": [
+          0.8
+        ],
+        "overlapped": [
+          0.52
+        ],
+        "egg-shaped": [
+          0.4375
+        ],
+        "contained": [
+          0.10526315789473684
+        ],
+        "stinging": [
+          0.6842105263157895
+        ],
+        "announced,": [
+          0.2
+        ],
+        "indeed": [
+          0.6
+        ],
+        "thriving": [
+          0
+        ],
+        "rarely": [
+          0.4166666666666667
+        ],
+        "undifferentiated": [
+          0.35
+        ],
+        "fortunately,": [
+          0
+        ],
+        "devoted": [
+          0.4
+        ]
+      }
+    },
+    "test_1_passage_2": {
+      "firstWordTypes": {
+        "other": 7,
+        "article": 3,
+        "preposition": 1,
+        "adverb": 1,
+        "pronoun": 2,
+        "gerund_participle": 1
+      },
+      "lastWordTypes": {
+        "other": 14,
+        "past_participle": 1
+      },
+      "middlewordPatterns": {},
+      "transitionPositions": {
+        "however": [
+          0.7692307692307693
+        ],
+        "consequently": [
+          0
+        ]
+      },
+      "modifierPositions": {
+        "attacked": [
+          0.13793103448275862
+        ],
+        "called": [
+          0.4482758620689655
+        ],
+        "destroying": [
+          0.8620689655172413
+        ],
+        "helping": [
+          0.6666666666666666
+        ],
+        "used": [
+          0.08333333333333333,
+          0.7894736842105263
+        ],
+        "particularly": [
+          0.375
+        ],
+        "listed": [
+          0.5263157894736842
+        ],
+        "gradually": [
+          0.7307692307692307
+        ],
+        "importing": [
+          0.3076923076923077
+        ],
+        "expensive": [
+          0.9230769230769231
+        ],
+        "consequently,": [
+          0
+        ],
+        "noted": [
+          0.05555555555555555,
+          0.7333333333333333
+        ],
+        "pulverized": [
+          0.42105263157894735
+        ],
+        "added": [
+          0.6842105263157895
+        ],
+        "administered": [
+          0.06666666666666667
+        ],
+        "suffering": [
+          0.4
+        ],
+        "worked": [
+          0.9333333333333333
+        ],
+        "evolved,": [
+          0.38461538461538464
+        ],
+        "searching": [
+          0
+        ],
+        "less": [
+          0.42857142857142855
+        ],
+        "abrasive": [
+          0.4642857142857143
+        ],
+        "created": [
+          0.8571428571428571
+        ],
+        "combined": [
+          0.23076923076923078
+        ],
+        "inventing": [
+          0.5
+        ],
+        "consumer-friendly": [
+          0.5769230769230769
+        ],
+        "powdered": [
+          0.6153846153846154
+        ]
+      }
+    },
+    "test_1_passage_3": {
+      "firstWordTypes": {
+        "preposition": 3,
+        "article": 2,
+        "other": 9,
+        "pronoun": 2,
+        "adverb": 1
+      },
+      "lastWordTypes": {
+        "other": 17
+      },
+      "middlewordPatterns": {},
+      "transitionPositions": {},
+      "modifierPositions": {
+        "carefully": [
+          0.391304347826087
+        ],
+        "placed": [
+          0.6956521739130435
+        ],
+        "automatically": [
+          0.391304347826087
+        ],
+        "reached)": [
+          0.8260869565217391
+        ],
+        "finally,": [
+          0
+        ],
+        "produced": [
+          0.08571428571428572
+        ],
+        "visually": [
+          0.6857142857142857
+        ],
+        "rendered": [
+          0.7142857142857143
+        ],
+        "only": [
+          0.12,
+          0.4166666666666667
+        ],
+        "erupting": [
+          0.4
+        ],
+        "sparked": [
+          0.4375
+        ],
+        "studied": [
+          0.3076923076923077
+        ],
+        "discovered": [
+          0.10344827586206896
+        ],
+        "caused": [
+          0.27586206896551724,
+          0.27586206896551724
+        ],
+        "nuanced": [
+          0.9310344827586207
+        ],
+        "compelling": [
+          0.75
+        ],
+        "photographed": [
+          0.06666666666666667
+        ],
+        "typically": [
+          0.7142857142857143
+        ],
+        "something": [
+          0.8095238095238095
+        ],
+        "percussive": [
+          0.9523809523809523
+        ]
+      }
+    },
+    "test_1_passage_4": {
+      "firstWordTypes": {
+        "gerund_participle": 1,
+        "other": 11,
+        "past_participle": 2,
+        "preposition": 4,
+        "article": 1
+      },
+      "lastWordTypes": {
+        "other": 15,
+        "past_participle": 4
+      },
+      "middlewordPatterns": {},
+      "transitionPositions": {
+        "however": [
+          0.25
+        ]
+      },
+      "modifierPositions": {
+        "separating": [
+          0
+        ],
+        "eighty-five": [
+          0.4090909090909091
+        ],
+        "flowing": [
+          0.5454545454545454
+        ],
+        "tree-covered": [
+          0.6363636363636364
+        ],
+        "roaring": [
+          0.9090909090909091
+        ],
+        "striking": [
+          0.1111111111111111
+        ],
+        "daunted": [
+          0.3333333333333333
+        ],
+        "respectively,": [
+          0.4444444444444444
+        ],
+        "constructing": [
+          0.5185185185185185
+        ],
+        "showcased": [
+          0.46153846153846156
+        ],
+        "offered": [
+          0.11764705882352941,
+          0.2608695652173913
+        ],
+        "lined": [
+          0.3125
+        ],
+        "blurred": [
+          0.5625
+        ],
+        "created": [
+          0.05263157894736842
+        ],
+        "enabling": [
+          0.47368421052631576
+        ],
+        "surrounded": [
+          0.5789473684210527
+        ],
+        "completed": [
+          0
+        ],
+        "earned": [
+          0.38461538461538464
+        ],
+        "king": [
+          0.7692307692307693
+        ],
+        "impressive": [
+          0.058823529411764705
+        ],
+        "outmoded": [
+          0.5294117647058824
+        ],
+        "increased": [
+          0.7058823529411765
+        ],
+        "destroyed": [
+          0.6666666666666666
+        ],
+        "abandoned": [
+          0.9583333333333334
+        ],
+        "only": [
+          0.10526315789473684
+        ],
+        "mainly": [
+          0.7368421052631579
+        ],
+        "seeking": [
+          0.8947368421052632
+        ],
+        "rekindled": [
+          0.9166666666666666
+        ],
+        "restoring": [
+          0.391304347826087
+        ],
+        "repurposing": [
+          0.6521739130434783
+        ],
+        "unused": [
+          0.6956521739130435
+        ],
+        "crumbling": [
+          0.18181818181818182
+        ],
+        "repaired": [
+          0.9090909090909091
+        ],
+        "damaged": [
+          0
+        ],
+        "filled": [
+          0.2
+        ],
+        "emptied": [
+          0.7
+        ],
+        "strengthened": [
+          0.9
+        ],
+        "envisioned": [
+          0.7777777777777778
+        ],
+        "hundred": [
+          0.8888888888888888
+        ]
+      }
+    },
+    "test_1_passage_5": {
+      "firstWordTypes": {
+        "other": 11,
+        "preposition": 1,
+        "pronoun": 3,
+        "gerund_participle": 1,
+        "article": 1
+      },
+      "lastWordTypes": {
+        "other": 14,
+        "past_participle": 3
+      },
+      "middlewordPatterns": {},
+      "transitionPositions": {},
+      "modifierPositions": {
+        "subculture—based": [
+          0.2222222222222222
+        ],
+        "breakdancing,": [
+          0.4444444444444444
+        ],
+        "deejaying,": [
+          0.5
+        ],
+        "rapping": [
+          0.6111111111111112
+        ],
+        "emerging": [
+          0.7777777777777778,
+          0.34782608695652173
+        ],
+        "watched": [
+          0.05
+        ],
+        "rapped": [
+          0.6
+        ],
+        "chanted,": [
+          0.3076923076923077
+        ],
+        "obeyed": [
+          0.9230769230769231
+        ],
+        "shared": [
+          0.38461538461538464
+        ],
+        "wasted": [
+          0.04
+        ],
+        "recruiting": [
+          0.2
+        ],
+        "aspiring": [
+          0.28
+        ],
+        "wanting": [
+          0
+        ],
+        "she'd": [
+          0.391304347826087
+        ],
+        "provided": [
+          0.6521739130434783
+        ],
+        "rhymed": [
+          0.9130434782608695
+        ],
+        "resulting": [
+          0.05555555555555555
+        ],
+        "successfully": [
+          0.6111111111111112
+        ],
+        "only": [
+          0.6153846153846154
+        ],
+        "pop-oriented": [
+          0.42857142857142855
+        ],
+        "watered": [
+          0.5714285714285714
+        ],
+        "pointed": [
+          0.08
+        ],
+        "borrowed": [
+          0.28
+        ],
+        "heavily": [
+          0.32
+        ],
+        "initially": [
+          0.8
+        ],
+        "crediting": [
+          0.84
+        ],
+        "denied": [
+          0.9
+        ],
+        "proved": [
+          0.058823529411764705
+        ],
+        "commercially": [
+          0.4117647058823529
+        ],
+        "paving": [
+          0.5294117647058824
+        ],
+        "countless": [
+          0.7647058823529411
+        ],
+        "followed": [
+          0.9411764705882353
+        ],
+        "including": [
+          0.4230769230769231
+        ],
+        "helped": [
+          0.4782608695652174
+        ]
+      }
+    },
+    "test_2_passage_4": {
+      "firstWordTypes": {
+        "other": 10,
+        "article": 4,
+        "pronoun": 3,
+        "adverb": 1
+      },
+      "lastWordTypes": {
+        "past_participle": 1,
+        "other": 17
+      },
+      "middlewordPatterns": {},
+      "transitionPositions": {
+        "however": [
+          0
+        ]
+      },
+      "modifierPositions": {
+        "reading": [
+          0.45
+        ],
+        "noticed": [
+          0.575
+        ],
+        "discovered": [
+          0.975
+        ],
+        "native": [
+          0.1
+        ],
+        "creating": [
+          0.35
+        ],
+        "directed": [
+          0.3103448275862069
+        ],
+        "displayed": [
+          0.6551724137931034
+        ],
+        "ranging": [
+          0.6428571428571429
+        ],
+        "packed": [
+          0.3888888888888889
+        ],
+        "called": [
+          0.75
+        ],
+        "detailed": [
+          0.2647058823529412
+        ],
+        "logically,": [
+          0.5882352941176471
+        ],
+        "liked": [
+          0.6764705882352942
+        ],
+        "created": [
+          0.5
+        ],
+        "unmoved": [
+          0.42857142857142855
+        ],
+        "quietly": [
+          0.23529411764705882
+        ],
+        "focusing": [
+          0.47058823529411764
+        ],
+        "building": [
+          0.7
+        ],
+        "fascinating,": [
+          0.8666666666666667
+        ],
+        "newly": [
+          0.9
+        ],
+        "fortunately,": [
+          0
+        ],
+        "featuring": [
+          0.42857142857142855
+        ],
+        "including": [
+          0.7857142857142857
+        ],
+        "included": [
+          0.11538461538461539
+        ],
+        "identified": [
+          0.2692307692307692
+        ],
+        "studying": [
+          0.03125
+        ],
+        "realized": [
+          0.15625
+        ],
+        "combining": [
+          0.4375
+        ],
+        "careful": [
+          0.875
+        ]
+      }
+    },
+    "test_2_passage_3": {
+      "firstWordTypes": {
+        "other": 11,
+        "preposition": 4,
+        "gerund_participle": 1,
+        "article": 2
+      },
+      "lastWordTypes": {
+        "other": 18
+      },
+      "middlewordPatterns": {},
+      "transitionPositions": {
+        "however": [
+          0.3
+        ]
+      },
+      "modifierPositions": {
+        "equipped": [
+          0.13043478260869565
+        ],
+        "programmed": [
+          0.5217391304347826
+        ],
+        "emitted": [
+          0.36363636363636365
+        ],
+        "called": [
+          0.5454545454545454
+        ],
+        "countless": [
+          0.125
+        ],
+        "actually": [
+          0.7083333333333334
+        ],
+        "detecting": [
+          0.75
+        ],
+        "practically": [
+          0.375
+        ],
+        "weightless,": [
+          0.4375
+        ],
+        "nearly": [
+          0.6875
+        ],
+        "speed": [
+          0.8125
+        ],
+        "rarely": [
+          0.2222222222222222
+        ],
+        "affected": [
+          0.3333333333333333
+        ],
+        "traveling": [
+          0.4666666666666667
+        ],
+        "unimpeded": [
+          0.6666666666666666
+        ],
+        "specifically": [
+          0.05555555555555555
+        ],
+        "selected": [
+          0.1111111111111111
+        ],
+        "only": [
+          0.05263157894736842
+        ],
+        "exceptionally": [
+          0.3684210526315789
+        ],
+        "less": [
+          0.631578947368421
+        ],
+        "pressurized": [
+          0.6842105263157895
+        ],
+        "gathered": [
+          0.375
+        ],
+        "transferred": [
+          0.5
+        ],
+        "determining": [
+          0
+        ],
+        "produced": [
+          0.4166666666666667
+        ],
+        "during": [
+          0.5
+        ],
+        "collapsing": [
+          0.75
+        ],
+        "give": [
+          0.35294117647058826
+        ],
+        "tracking": [
+          0.05263157894736842
+        ],
+        "building": [
+          0.5833333333333334
+        ],
+        "particle-based": [
+          0.045454545454545456
+        ],
+        "understanding": [
+          0.36363636363636365
+        ],
+        "light-based": [
+          0.7727272727272727
+        ]
+      }
+    },
+    "test_2_passage_5": {
+      "firstWordTypes": {
+        "other": 14,
+        "preposition": 1,
+        "article": 6,
+        "pronoun": 3
+      },
+      "lastWordTypes": {
+        "other": 23,
+        "preposition": 1
+      },
+      "middlewordPatterns": {},
+      "transitionPositions": {
+        "however": [
+          0
+        ]
+      },
+      "modifierPositions": {
+        "fairly": [
+          0.7
+        ],
+        "considered": [
+          0.3
+        ],
+        "blamed": [
+          0.65
+        ],
+        "spreading": [
+          0.75
+        ],
+        "despoiling": [
+          0.9
+        ],
+        "homing": [
+          0.26666666666666666,
+          0.1111111111111111,
+          0.7777777777777778,
+          0.25
+        ],
+        "earned": [
+          0.3076923076923077
+        ],
+        "homely": [
+          0.46153846153846156
+        ],
+        "faced": [
+          0.6190476190476191
+        ],
+        "communicating,": [
+          0.7619047619047619
+        ],
+        "depending": [
+          0.8095238095238095
+        ],
+        "provided": [
+          0.3333333333333333
+        ],
+        "quickly": [
+          0.45454545454545453
+        ],
+        "returned": [
+          0.5454545454545454
+        ],
+        "hundred": [
+          0.125
+        ],
+        "used": [
+          0.20833333333333334
+        ],
+        "during": [
+          0.5833333333333334,
+          0.7142857142857143
+        ],
+        "successful": [
+          0.9166666666666666
+        ],
+        "offensive": [
+          0.9285714285714286
+        ],
+        "advanced": [
+          0.13636363636363635
+        ],
+        "trapped": [
+          0.8181818181818182
+        ],
+        "surrounded": [
+          0.21428571428571427
+        ],
+        "rapidly": [
+          0.6428571428571429
+        ],
+        "running": [
+          0.7142857142857143
+        ],
+        "separated": [
+          0.2857142857142857
+        ],
+        "released": [
+          0.1111111111111111
+        ],
+        "requesting": [
+          0.3888888888888889
+        ],
+        "released,": [
+          0.1111111111111111
+        ],
+        "immediately": [
+          0.4444444444444444
+        ],
+        "pierced": [
+          0.13333333333333333
+        ],
+        "shattered": [
+          0.4
+        ],
+        "twenty-five": [
+          0
+        ],
+        "reached": [
+          0.25
+        ],
+        "delivering": [
+          0.4375
+        ],
+        "launched": [
+          0.25
+        ],
+        "immediately,": [
+          0.3125
+        ],
+        "evacuated": [
+          0.8125
+        ],
+        "touted": [
+          0.5555555555555556
+        ],
+        "awarded": [
+          0.2727272727272727
+        ],
+        "demonstrating": [
+          0.4642857142857143
+        ]
+      }
+    },
+    "test_2_passage_2": {
+      "firstWordTypes": {
+        "article": 7,
+        "other": 9,
+        "preposition": 2,
+        "adverb": 1
+      },
+      "lastWordTypes": {
+        "other": 17,
+        "gerund_participle": 1,
+        "pronoun": 1
+      },
+      "middlewordPatterns": {},
+      "transitionPositions": {
+        "instead": [
+          0
+        ]
+      },
+      "modifierPositions": {
+        "mouthful": [
+          0.037037037037037035
+        ],
+        "imitating": [
+          0.6296296296296297
+        ],
+        "performed": [
+          0.25,
+          0.42105263157894735
+        ],
+        "particularly": [
+          0.65
+        ],
+        "lilting": [
+          0.2
+        ],
+        "jigging": [
+          0.3
+        ],
+        "lively": [
+          0.55
+        ],
+        "used": [
+          0.65
+        ],
+        "dancing,": [
+          0.2857142857142857
+        ],
+        "using": [
+          0.125
+        ],
+        "called": [
+          0.625
+        ],
+        "designed": [
+          0.15789473684210525
+        ],
+        "entirely": [
+          0.47368421052631576
+        ],
+        "tongue-twisting": [
+          0.2222222222222222
+        ],
+        "learning": [
+          0.6923076923076923
+        ],
+        "poorly": [
+          0.07142857142857142
+        ],
+        "timed": [
+          0.14285714285714285
+        ],
+        "likely": [
+          0.375
+        ],
+        "invented": [
+          0.5
+        ],
+        "isolated": [
+          0.19230769230769232
+        ],
+        "emerged": [
+          0.5769230769230769
+        ],
+        "provided": [
+          0.6538461538461539
+        ],
+        "wanted": [
+          0.8846153846153846
+        ],
+        "dancing": [
+          0.9615384615384616
+        ],
+        "additionally,": [
+          0
+        ],
+        "originated": [
+          0.46153846153846156
+        ],
+        "waulking": [
+          0.8461538461538461
+        ],
+        "traditionally": [
+          0.2
+        ],
+        "prepared": [
+          0.5
+        ],
+        "newly": [
+          0.55
+        ],
+        "soaking,": [
+          0.75
+        ],
+        "beating,": [
+          0.8
+        ],
+        "stretching": [
+          0.9
+        ],
+        "naturally": [
+          0.23076923076923078
+        ],
+        "helped": [
+          0.5769230769230769
+        ],
+        "making": [
+          0.8076923076923077
+        ],
+        "continuing": [
+          0.08333333333333333
+        ],
+        "exposing": [
+          0.7083333333333334
+        ],
+        "continually": [
+          0.13043478260869565
+        ],
+        "keeping": [
+          0.6086956521739131
+        ],
+        "alive": [
+          0.8260869565217391
+        ]
+      }
+    },
+    "test_2_passage_1": {
+      "firstWordTypes": {
+        "gerund_participle": 2,
+        "pronoun": 1,
+        "article": 5,
+        "other": 8,
+        "conjunction": 1
+      },
+      "lastWordTypes": {
+        "other": 15,
+        "gerund_participle": 1,
+        "past_participle": 1
+      },
+      "middlewordPatterns": {},
+      "transitionPositions": {
+        "moreover": [
+          0
+        ],
+        "however": [
+          0
+        ]
+      },
+      "modifierPositions": {
+        "making": [
+          0
+        ],
+        "called": [
+          0.4666666666666667
+        ],
+        "created": [
+          0.5666666666666667
+        ],
+        "beginning": [
+          0
+        ],
+        "manufactured": [
+          0.42857142857142855
+        ],
+        "traded": [
+          0.6666666666666666
+        ],
+        "including": [
+          0.5833333333333334
+        ],
+        "depended": [
+          0.38461538461538464
+        ],
+        "carried": [
+          0.125,
+          0.5714285714285714
+        ],
+        "water-bearing": [
+          0.875
+        ],
+        "learned": [
+          0.08695652173913043,
+          0.6
+        ],
+        "digging": [
+          0.391304347826087
+        ],
+        "connecting": [
+          0.782608695652174
+        ],
+        "reached": [
+          0.15789473684210525
+        ],
+        "flowed": [
+          0.5263157894736842
+        ],
+        "easily": [
+          0.6842105263157895
+        ],
+        "existed": [
+          0.3
+        ],
+        "stayed": [
+          0.6428571428571429
+        ],
+        "supply": [
+          0.7222222222222222,
+          0.4666666666666667
+        ],
+        "unaffected": [
+          0.8333333333333334
+        ],
+        "rely": [
+          0.2
+        ],
+        "drinking,": [
+          0.7333333333333333
+        ],
+        "washing,": [
+          0.8
+        ],
+        "lowered": [
+          0.3076923076923077
+        ],
+        "resulting": [
+          0.7307692307692307
+        ],
+        "air-conditioning": [
+          0.9615384615384616
+        ],
+        "thrived": [
+          0.11764705882352941
+        ],
+        "supplied": [
+          0.17647058823529413
+        ],
+        "less": [
+          0.23529411764705882,
+          0.23529411764705882
+        ],
+        "declined,": [
+          0.6470588235294118
+        ],
+        "eventually": [
+          0.8823529411764706
+        ],
+        "collapsed": [
+          0.9411764705882353
+        ],
+        "hundred": [
+          0.4
+        ],
+        "survive": [
+          0.9
+        ]
+      }
+    }
+  },
+  "microLinguistics": {
+    "test_1_passage_1": {
+      "prefixPatterns": {
+        "un": {
+          "count": 1,
+          "examples": [
+            "undifferentiated"
+          ]
+        },
+        "re": {
+          "count": 6,
+          "examples": [
+            "relatives",
+            "research",
+            "research",
+            "recognized",
+            "required"
+          ]
+        },
+        "pre": {
+          "count": 0,
+          "examples": []
+        },
+        "dis": {
+          "count": 1,
+          "examples": [
+            "discovery"
+          ]
+        },
+        "in": {
+          "count": 3,
+          "examples": [
+            "intriguing",
+            "investigate",
+            "indeed"
+          ]
+        },
+        "im": {
+          "count": 0,
+          "examples": []
+        },
+        "ir": {
+          "count": 0,
+          "examples": []
+        },
+        "il": {
+          "count": 0,
+          "examples": []
+        },
+        "non": {
+          "count": 0,
+          "examples": []
+        },
+        "anti": {
+          "count": 0,
+          "examples": []
+        },
+        "de": {
+          "count": 4,
+          "examples": [
+            "denticles",
+            "denticles",
+            "denticles",
+            "devoted"
+          ]
+        },
+        "over": {
+          "count": 2,
+          "examples": [
+            "overlapped",
+            "overlapped"
+          ]
+        },
+        "under": {
+          "count": 0,
+          "examples": []
+        },
+        "out": {
+          "count": 0,
+          "examples": []
+        },
+        "up": {
+          "count": 0,
+          "examples": []
+        },
+        "sub": {
+          "count": 0,
+          "examples": []
+        },
+        "inter": {
+          "count": 0,
+          "examples": []
+        },
+        "trans": {
+          "count": 0,
+          "examples": []
+        },
+        "super": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "suffixPatterns": {
+        "ing": {
+          "count": 8,
+          "examples": [
+            "eating",
+            "flying",
+            "encompassing",
+            "during",
+            "intriguing"
+          ]
+        },
+        "ed": {
+          "count": 18,
+          "examples": [
+            "identified",
+            "isolated",
+            "studied",
+            "isolated",
+            "observed"
+          ]
+        },
+        "er": {
+          "count": 13,
+          "examples": [
+            "neither",
+            "water",
+            "center",
+            "other",
+            "closer"
+          ]
+        },
+        "est": {
+          "count": 0,
+          "examples": []
+        },
+        "ly": {
+          "count": 7,
+          "examples": [
+            "geographically",
+            "slowly",
+            "randomly",
+            "occasionally",
+            "evenly"
+          ]
+        },
+        "tion": {
+          "count": 0,
+          "examples": []
+        },
+        "sion": {
+          "count": 0,
+          "examples": []
+        },
+        "ness": {
+          "count": 0,
+          "examples": []
+        },
+        "ment": {
+          "count": 0,
+          "examples": []
+        },
+        "ful": {
+          "count": 0,
+          "examples": []
+        },
+        "less": {
+          "count": 0,
+          "examples": []
+        },
+        "able": {
+          "count": 0,
+          "examples": []
+        },
+        "ible": {
+          "count": 0,
+          "examples": []
+        },
+        "ous": {
+          "count": 1,
+          "examples": [
+            "enormous"
+          ]
+        },
+        "ious": {
+          "count": 0,
+          "examples": []
+        },
+        "ive": {
+          "count": 0,
+          "examples": []
+        },
+        "ative": {
+          "count": 0,
+          "examples": []
+        },
+        "itive": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "rootPatterns": {
+        "spect": {
+          "count": 1,
+          "examples": [
+            "suspect"
+          ]
+        },
+        "fact": {
+          "count": 2,
+          "examples": [
+            "fact",
+            "fact"
+          ]
+        },
+        "graph": {
+          "count": 1,
+          "examples": [
+            "geographically"
+          ]
+        },
+        "geo": {
+          "count": 1,
+          "examples": [
+            "geographically"
+          ]
+        }
+      },
+      "morphologicalPatterns": {},
+      "phoneticPatterns": {},
+      "etymologicalPatterns": {}
+    },
+    "test_1_passage_2": {
+      "prefixPatterns": {
+        "un": {
+          "count": 0,
+          "examples": []
+        },
+        "re": {
+          "count": 6,
+          "examples": [
+            "regulate",
+            "reduce",
+            "references",
+            "refers",
+            "religious"
+          ]
+        },
+        "pre": {
+          "count": 0,
+          "examples": []
+        },
+        "dis": {
+          "count": 1,
+          "examples": [
+            "disease"
+          ]
+        },
+        "in": {
+          "count": 3,
+          "examples": [
+            "insects",
+            "interest",
+            "inventing"
+          ]
+        },
+        "im": {
+          "count": 1,
+          "examples": [
+            "importing"
+          ]
+        },
+        "ir": {
+          "count": 0,
+          "examples": []
+        },
+        "il": {
+          "count": 1,
+          "examples": [
+            "illnesses"
+          ]
+        },
+        "non": {
+          "count": 0,
+          "examples": []
+        },
+        "anti": {
+          "count": 0,
+          "examples": []
+        },
+        "de": {
+          "count": 2,
+          "examples": [
+            "destroying",
+            "decades"
+          ]
+        },
+        "over": {
+          "count": 0,
+          "examples": []
+        },
+        "under": {
+          "count": 0,
+          "examples": []
+        },
+        "out": {
+          "count": 0,
+          "examples": []
+        },
+        "up": {
+          "count": 0,
+          "examples": []
+        },
+        "sub": {
+          "count": 1,
+          "examples": [
+            "substitute"
+          ]
+        },
+        "inter": {
+          "count": 1,
+          "examples": [
+            "interest"
+          ]
+        },
+        "trans": {
+          "count": 0,
+          "examples": []
+        },
+        "super": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "suffixPatterns": {
+        "ing": {
+          "count": 6,
+          "examples": [
+            "destroying",
+            "helping",
+            "importing",
+            "suffering",
+            "searching"
+          ]
+        },
+        "ed": {
+          "count": 13,
+          "examples": [
+            "attacked",
+            "called",
+            "listed",
+            "noted",
+            "pulverized"
+          ]
+        },
+        "er": {
+          "count": 8,
+          "examples": [
+            "water",
+            "however",
+            "minister",
+            "bitter",
+            "bitter"
+          ]
+        },
+        "est": {
+          "count": 1,
+          "examples": [
+            "interest"
+          ]
+        },
+        "ly": {
+          "count": 4,
+          "examples": [
+            "particularly",
+            "gradually",
+            "consequently",
+            "friendly"
+          ]
+        },
+        "tion": {
+          "count": 0,
+          "examples": []
+        },
+        "sion": {
+          "count": 1,
+          "examples": [
+            "version"
+          ]
+        },
+        "ness": {
+          "count": 0,
+          "examples": []
+        },
+        "ment": {
+          "count": 0,
+          "examples": []
+        },
+        "ful": {
+          "count": 0,
+          "examples": []
+        },
+        "less": {
+          "count": 0,
+          "examples": []
+        },
+        "able": {
+          "count": 1,
+          "examples": [
+            "capable"
+          ]
+        },
+        "ible": {
+          "count": 0,
+          "examples": []
+        },
+        "ous": {
+          "count": 1,
+          "examples": [
+            "religious"
+          ]
+        },
+        "ious": {
+          "count": 1,
+          "examples": [
+            "religious"
+          ]
+        },
+        "ive": {
+          "count": 2,
+          "examples": [
+            "expensive",
+            "abrasive"
+          ]
+        },
+        "ative": {
+          "count": 0,
+          "examples": []
+        },
+        "itive": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "rootPatterns": {
+        "port": {
+          "count": 1,
+          "examples": [
+            "importing"
+          ]
+        },
+        "sect": {
+          "count": 1,
+          "examples": [
+            "insects"
+          ]
+        }
+      },
+      "morphologicalPatterns": {},
+      "phoneticPatterns": {},
+      "etymologicalPatterns": {}
+    },
+    "test_1_passage_3": {
+      "prefixPatterns": {
+        "un": {
+          "count": 2,
+          "examples": [
+            "unique",
+            "uniform"
+          ]
+        },
+        "re": {
+          "count": 4,
+          "examples": [
+            "reached",
+            "result",
+            "rendered",
+            "relies"
+          ]
+        },
+        "pre": {
+          "count": 0,
+          "examples": []
+        },
+        "dis": {
+          "count": 1,
+          "examples": [
+            "discovered"
+          ]
+        },
+        "in": {
+          "count": 2,
+          "examples": [
+            "inserts",
+            "instant"
+          ]
+        },
+        "im": {
+          "count": 1,
+          "examples": [
+            "image"
+          ]
+        },
+        "ir": {
+          "count": 0,
+          "examples": []
+        },
+        "il": {
+          "count": 0,
+          "examples": []
+        },
+        "non": {
+          "count": 0,
+          "examples": []
+        },
+        "anti": {
+          "count": 0,
+          "examples": []
+        },
+        "de": {
+          "count": 2,
+          "examples": [
+            "device",
+            "deeper"
+          ]
+        },
+        "over": {
+          "count": 0,
+          "examples": []
+        },
+        "under": {
+          "count": 0,
+          "examples": []
+        },
+        "out": {
+          "count": 0,
+          "examples": []
+        },
+        "up": {
+          "count": 0,
+          "examples": []
+        },
+        "sub": {
+          "count": 1,
+          "examples": [
+            "substances"
+          ]
+        },
+        "inter": {
+          "count": 0,
+          "examples": []
+        },
+        "trans": {
+          "count": 0,
+          "examples": []
+        },
+        "super": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "suffixPatterns": {
+        "ing": {
+          "count": 3,
+          "examples": [
+            "erupting",
+            "compelling",
+            "something"
+          ]
+        },
+        "ed": {
+          "count": 11,
+          "examples": [
+            "placed",
+            "reached",
+            "produced",
+            "rendered",
+            "sparked"
+          ]
+        },
+        "er": {
+          "count": 10,
+          "examples": [
+            "photographer",
+            "rubber",
+            "speaker",
+            "powder",
+            "trigger"
+          ]
+        },
+        "est": {
+          "count": 0,
+          "examples": []
+        },
+        "ly": {
+          "count": 5,
+          "examples": [
+            "carefully",
+            "automatically",
+            "finally",
+            "visually",
+            "typically"
+          ]
+        },
+        "tion": {
+          "count": 1,
+          "examples": [
+            "creation"
+          ]
+        },
+        "sion": {
+          "count": 0,
+          "examples": []
+        },
+        "ness": {
+          "count": 0,
+          "examples": []
+        },
+        "ment": {
+          "count": 0,
+          "examples": []
+        },
+        "ful": {
+          "count": 0,
+          "examples": []
+        },
+        "less": {
+          "count": 0,
+          "examples": []
+        },
+        "able": {
+          "count": 0,
+          "examples": []
+        },
+        "ible": {
+          "count": 0,
+          "examples": []
+        },
+        "ous": {
+          "count": 1,
+          "examples": [
+            "various"
+          ]
+        },
+        "ious": {
+          "count": 1,
+          "examples": [
+            "various"
+          ]
+        },
+        "ive": {
+          "count": 1,
+          "examples": [
+            "percussive"
+          ]
+        },
+        "ative": {
+          "count": 0,
+          "examples": []
+        },
+        "itive": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "rootPatterns": {
+        "graph": {
+          "count": 4,
+          "examples": [
+            "photographer",
+            "photographs",
+            "photographs"
+          ]
+        },
+        "photo": {
+          "count": 5,
+          "examples": [
+            "photographer",
+            "photo",
+            "photographs"
+          ]
+        },
+        "psych": {
+          "count": 1,
+          "examples": [
+            "psychedelic"
+          ]
+        }
+      },
+      "morphologicalPatterns": {},
+      "phoneticPatterns": {},
+      "etymologicalPatterns": {}
+    },
+    "test_1_passage_4": {
+      "prefixPatterns": {
+        "un": {
+          "count": 2,
+          "examples": [
+            "until",
+            "unused"
+          ]
+        },
+        "re": {
+          "count": 6,
+          "examples": [
+            "respectively",
+            "rekindled",
+            "restoring",
+            "repurposing",
+            "repaired"
+          ]
+        },
+        "pre": {
+          "count": 0,
+          "examples": []
+        },
+        "dis": {
+          "count": 2,
+          "examples": [
+            "distinction",
+            "disrepair"
+          ]
+        },
+        "in": {
+          "count": 2,
+          "examples": [
+            "increased",
+            "interest"
+          ]
+        },
+        "im": {
+          "count": 1,
+          "examples": [
+            "impressive"
+          ]
+        },
+        "ir": {
+          "count": 0,
+          "examples": []
+        },
+        "il": {
+          "count": 0,
+          "examples": []
+        },
+        "non": {
+          "count": 0,
+          "examples": []
+        },
+        "anti": {
+          "count": 0,
+          "examples": []
+        },
+        "de": {
+          "count": 2,
+          "examples": [
+            "design",
+            "destroyed"
+          ]
+        },
+        "over": {
+          "count": 1,
+          "examples": [
+            "overlooks"
+          ]
+        },
+        "under": {
+          "count": 0,
+          "examples": []
+        },
+        "out": {
+          "count": 1,
+          "examples": [
+            "outmoded"
+          ]
+        },
+        "up": {
+          "count": 0,
+          "examples": []
+        },
+        "sub": {
+          "count": 0,
+          "examples": []
+        },
+        "inter": {
+          "count": 1,
+          "examples": [
+            "interest"
+          ]
+        },
+        "trans": {
+          "count": 0,
+          "examples": []
+        },
+        "super": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "suffixPatterns": {
+        "ing": {
+          "count": 10,
+          "examples": [
+            "separating",
+            "flowing",
+            "roaring",
+            "striking",
+            "constructing"
+          ]
+        },
+        "ed": {
+          "count": 24,
+          "examples": [
+            "covered",
+            "daunted",
+            "showcased",
+            "offered",
+            "lined"
+          ]
+        },
+        "er": {
+          "count": 14,
+          "examples": [
+            "river",
+            "water",
+            "river",
+            "lancaster",
+            "engineer"
+          ]
+        },
+        "est": {
+          "count": 1,
+          "examples": [
+            "interest"
+          ]
+        },
+        "ly": {
+          "count": 2,
+          "examples": [
+            "respectively",
+            "mainly"
+          ]
+        },
+        "tion": {
+          "count": 1,
+          "examples": [
+            "distinction"
+          ]
+        },
+        "sion": {
+          "count": 0,
+          "examples": []
+        },
+        "ness": {
+          "count": 0,
+          "examples": []
+        },
+        "ment": {
+          "count": 1,
+          "examples": [
+            "environment"
+          ]
+        },
+        "ful": {
+          "count": 0,
+          "examples": []
+        },
+        "less": {
+          "count": 0,
+          "examples": []
+        },
+        "able": {
+          "count": 0,
+          "examples": []
+        },
+        "ible": {
+          "count": 0,
+          "examples": []
+        },
+        "ous": {
+          "count": 0,
+          "examples": []
+        },
+        "ious": {
+          "count": 0,
+          "examples": []
+        },
+        "ive": {
+          "count": 1,
+          "examples": [
+            "impressive"
+          ]
+        },
+        "ative": {
+          "count": 0,
+          "examples": []
+        },
+        "itive": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "rootPatterns": {
+        "spect": {
+          "count": 1,
+          "examples": [
+            "respectively"
+          ]
+        },
+        "duct": {
+          "count": 1,
+          "examples": [
+            "viaducts"
+          ]
+        },
+        "sect": {
+          "count": 1,
+          "examples": [
+            "sections"
+          ]
+        },
+        "struct": {
+          "count": 1,
+          "examples": [
+            "constructing"
+          ]
+        }
+      },
+      "morphologicalPatterns": {},
+      "phoneticPatterns": {},
+      "etymologicalPatterns": {}
+    },
+    "test_1_passage_5": {
+      "prefixPatterns": {
+        "un": {
+          "count": 1,
+          "examples": [
+            "underground"
+          ]
+        },
+        "re": {
+          "count": 10,
+          "examples": [
+            "revelation",
+            "records",
+            "record",
+            "recruiting",
+            "record"
+          ]
+        },
+        "pre": {
+          "count": 0,
+          "examples": []
+        },
+        "dis": {
+          "count": 0,
+          "examples": []
+        },
+        "in": {
+          "count": 4,
+          "examples": [
+            "instrumental",
+            "initially",
+            "influential",
+            "including"
+          ]
+        },
+        "im": {
+          "count": 1,
+          "examples": [
+            "impact"
+          ]
+        },
+        "ir": {
+          "count": 0,
+          "examples": []
+        },
+        "il": {
+          "count": 0,
+          "examples": []
+        },
+        "non": {
+          "count": 0,
+          "examples": []
+        },
+        "anti": {
+          "count": 0,
+          "examples": []
+        },
+        "de": {
+          "count": 5,
+          "examples": [
+            "deejaying",
+            "delight",
+            "delight",
+            "despite",
+            "denied"
+          ]
+        },
+        "over": {
+          "count": 0,
+          "examples": []
+        },
+        "under": {
+          "count": 1,
+          "examples": [
+            "underground"
+          ]
+        },
+        "out": {
+          "count": 0,
+          "examples": []
+        },
+        "up": {
+          "count": 1,
+          "examples": [
+            "upbeat"
+          ]
+        },
+        "sub": {
+          "count": 1,
+          "examples": [
+            "subculture"
+          ]
+        },
+        "inter": {
+          "count": 0,
+          "examples": []
+        },
+        "trans": {
+          "count": 1,
+          "examples": [
+            "transform"
+          ]
+        },
+        "super": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "suffixPatterns": {
+        "ing": {
+          "count": 12,
+          "examples": [
+            "breakdancing",
+            "deejaying",
+            "rapping",
+            "emerging",
+            "recruiting"
+          ]
+        },
+        "ed": {
+          "count": 17,
+          "examples": [
+            "based",
+            "watched",
+            "rapped",
+            "chanted",
+            "obeyed"
+          ]
+        },
+        "er": {
+          "count": 9,
+          "examples": [
+            "singer",
+            "producer",
+            "performer",
+            "master",
+            "wonder"
+          ]
+        },
+        "est": {
+          "count": 0,
+          "examples": []
+        },
+        "ly": {
+          "count": 4,
+          "examples": [
+            "successfully",
+            "heavily",
+            "initially",
+            "commercially"
+          ]
+        },
+        "tion": {
+          "count": 1,
+          "examples": [
+            "revelation"
+          ]
+        },
+        "sion": {
+          "count": 0,
+          "examples": []
+        },
+        "ness": {
+          "count": 1,
+          "examples": [
+            "willingness"
+          ]
+        },
+        "ment": {
+          "count": 1,
+          "examples": [
+            "excitement"
+          ]
+        },
+        "ful": {
+          "count": 0,
+          "examples": []
+        },
+        "less": {
+          "count": 1,
+          "examples": [
+            "countless"
+          ]
+        },
+        "able": {
+          "count": 0,
+          "examples": []
+        },
+        "ible": {
+          "count": 1,
+          "examples": [
+            "accessible"
+          ]
+        },
+        "ous": {
+          "count": 1,
+          "examples": [
+            "furious"
+          ]
+        },
+        "ious": {
+          "count": 1,
+          "examples": [
+            "furious"
+          ]
+        },
+        "ive": {
+          "count": 0,
+          "examples": []
+        },
+        "ative": {
+          "count": 0,
+          "examples": []
+        },
+        "itive": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "rootPatterns": {},
+      "morphologicalPatterns": {},
+      "phoneticPatterns": {},
+      "etymologicalPatterns": {}
+    },
+    "test_2_passage_4": {
+      "prefixPatterns": {
+        "un": {
+          "count": 1,
+          "examples": [
+            "unmoved"
+          ]
+        },
+        "re": {
+          "count": 5,
+          "examples": [
+            "reading",
+            "representation",
+            "realized",
+            "reward",
+            "research"
+          ]
+        },
+        "pre": {
+          "count": 0,
+          "examples": []
+        },
+        "dis": {
+          "count": 3,
+          "examples": [
+            "discovered",
+            "displayed",
+            "disparate"
+          ]
+        },
+        "in": {
+          "count": 3,
+          "examples": [
+            "interest",
+            "including",
+            "included"
+          ]
+        },
+        "im": {
+          "count": 1,
+          "examples": [
+            "immediate"
+          ]
+        },
+        "ir": {
+          "count": 0,
+          "examples": []
+        },
+        "il": {
+          "count": 0,
+          "examples": []
+        },
+        "non": {
+          "count": 0,
+          "examples": []
+        },
+        "anti": {
+          "count": 0,
+          "examples": []
+        },
+        "de": {
+          "count": 4,
+          "examples": [
+            "decades",
+            "dealer",
+            "depictions",
+            "detailed"
+          ]
+        },
+        "over": {
+          "count": 0,
+          "examples": []
+        },
+        "under": {
+          "count": 0,
+          "examples": []
+        },
+        "out": {
+          "count": 0,
+          "examples": []
+        },
+        "up": {
+          "count": 0,
+          "examples": []
+        },
+        "sub": {
+          "count": 0,
+          "examples": []
+        },
+        "inter": {
+          "count": 1,
+          "examples": [
+            "interest"
+          ]
+        },
+        "trans": {
+          "count": 0,
+          "examples": []
+        },
+        "super": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "suffixPatterns": {
+        "ing": {
+          "count": 11,
+          "examples": [
+            "reading",
+            "creating",
+            "ranging",
+            "clothing",
+            "focusing"
+          ]
+        },
+        "ed": {
+          "count": 13,
+          "examples": [
+            "noticed",
+            "discovered",
+            "directed",
+            "displayed",
+            "packed"
+          ]
+        },
+        "er": {
+          "count": 11,
+          "examples": [
+            "newspaper",
+            "however",
+            "dealer",
+            "poster",
+            "painter"
+          ]
+        },
+        "est": {
+          "count": 1,
+          "examples": [
+            "interest"
+          ]
+        },
+        "ly": {
+          "count": 4,
+          "examples": [
+            "logically",
+            "quietly",
+            "newly",
+            "fortunately"
+          ]
+        },
+        "tion": {
+          "count": 4,
+          "examples": [
+            "exhibition",
+            "attention",
+            "representation",
+            "examination"
+          ]
+        },
+        "sion": {
+          "count": 0,
+          "examples": []
+        },
+        "ness": {
+          "count": 0,
+          "examples": []
+        },
+        "ment": {
+          "count": 1,
+          "examples": [
+            "apartment"
+          ]
+        },
+        "ful": {
+          "count": 1,
+          "examples": [
+            "careful"
+          ]
+        },
+        "less": {
+          "count": 0,
+          "examples": []
+        },
+        "able": {
+          "count": 0,
+          "examples": []
+        },
+        "ible": {
+          "count": 0,
+          "examples": []
+        },
+        "ous": {
+          "count": 0,
+          "examples": []
+        },
+        "ious": {
+          "count": 0,
+          "examples": []
+        },
+        "ive": {
+          "count": 1,
+          "examples": [
+            "native"
+          ]
+        },
+        "ative": {
+          "count": 0,
+          "examples": []
+        },
+        "itive": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "rootPatterns": {
+        "port": {
+          "count": 2,
+          "examples": [
+            "portrayal",
+            "portrays"
+          ]
+        },
+        "psych": {
+          "count": 1,
+          "examples": [
+            "psychedelic"
+          ]
+        }
+      },
+      "morphologicalPatterns": {},
+      "phoneticPatterns": {},
+      "etymologicalPatterns": {}
+    },
+    "test_2_passage_3": {
+      "prefixPatterns": {
+        "un": {
+          "count": 7,
+          "examples": [
+            "universe",
+            "unimpeded",
+            "university",
+            "universe",
+            "universe"
+          ]
+        },
+        "re": {
+          "count": 3,
+          "examples": [
+            "reason",
+            "represents",
+            "revolutionize"
+          ]
+        },
+        "pre": {
+          "count": 1,
+          "examples": [
+            "pressurized"
+          ]
+        },
+        "dis": {
+          "count": 2,
+          "examples": [
+            "distant",
+            "discoveries"
+          ]
+        },
+        "in": {
+          "count": 4,
+          "examples": [
+            "insights",
+            "instance",
+            "invaluable",
+            "information"
+          ]
+        },
+        "im": {
+          "count": 0,
+          "examples": []
+        },
+        "ir": {
+          "count": 0,
+          "examples": []
+        },
+        "il": {
+          "count": 0,
+          "examples": []
+        },
+        "non": {
+          "count": 0,
+          "examples": []
+        },
+        "anti": {
+          "count": 0,
+          "examples": []
+        },
+        "de": {
+          "count": 7,
+          "examples": [
+            "descend",
+            "detect",
+            "detecting",
+            "detection",
+            "detection"
+          ]
+        },
+        "over": {
+          "count": 0,
+          "examples": []
+        },
+        "under": {
+          "count": 1,
+          "examples": [
+            "understanding"
+          ]
+        },
+        "out": {
+          "count": 0,
+          "examples": []
+        },
+        "up": {
+          "count": 0,
+          "examples": []
+        },
+        "sub": {
+          "count": 3,
+          "examples": [
+            "subatomic",
+            "subterranean",
+            "subzero"
+          ]
+        },
+        "inter": {
+          "count": 0,
+          "examples": []
+        },
+        "trans": {
+          "count": 1,
+          "examples": [
+            "transferred"
+          ]
+        },
+        "super": {
+          "count": 1,
+          "examples": [
+            "supernovae"
+          ]
+        }
+      },
+      "suffixPatterns": {
+        "ing": {
+          "count": 8,
+          "examples": [
+            "detecting",
+            "traveling",
+            "determining",
+            "during",
+            "collapsing"
+          ]
+        },
+        "ed": {
+          "count": 14,
+          "examples": [
+            "equipped",
+            "programmed",
+            "emitted",
+            "called",
+            "speed"
+          ]
+        },
+        "er": {
+          "count": 6,
+          "examples": [
+            "matter",
+            "however",
+            "other",
+            "frontier",
+            "rather"
+          ]
+        },
+        "est": {
+          "count": 0,
+          "examples": []
+        },
+        "ly": {
+          "count": 6,
+          "examples": [
+            "actually",
+            "practically",
+            "nearly",
+            "rarely",
+            "specifically"
+          ]
+        },
+        "tion": {
+          "count": 5,
+          "examples": [
+            "radiation",
+            "radiation",
+            "detection",
+            "detection",
+            "information"
+          ]
+        },
+        "sion": {
+          "count": 1,
+          "examples": [
+            "collision"
+          ]
+        },
+        "ness": {
+          "count": 0,
+          "examples": []
+        },
+        "ment": {
+          "count": 0,
+          "examples": []
+        },
+        "ful": {
+          "count": 0,
+          "examples": []
+        },
+        "less": {
+          "count": 2,
+          "examples": [
+            "countless",
+            "weightless"
+          ]
+        },
+        "able": {
+          "count": 3,
+          "examples": [
+            "veritable",
+            "formidable",
+            "invaluable"
+          ]
+        },
+        "ible": {
+          "count": 0,
+          "examples": []
+        },
+        "ous": {
+          "count": 0,
+          "examples": []
+        },
+        "ious": {
+          "count": 0,
+          "examples": []
+        },
+        "ive": {
+          "count": 0,
+          "examples": []
+        },
+        "ative": {
+          "count": 0,
+          "examples": []
+        },
+        "itive": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "rootPatterns": {
+        "photo": {
+          "count": 1,
+          "examples": [
+            "photonic"
+          ]
+        }
+      },
+      "morphologicalPatterns": {},
+      "phoneticPatterns": {},
+      "etymologicalPatterns": {}
+    },
+    "test_2_passage_5": {
+      "prefixPatterns": {
+        "un": {
+          "count": 4,
+          "examples": [
+            "undeniable",
+            "unaware",
+            "under",
+            "understood"
+          ]
+        },
+        "re": {
+          "count": 9,
+          "examples": [
+            "reputation",
+            "returned",
+            "released",
+            "requesting",
+            "released"
+          ]
+        },
+        "pre": {
+          "count": 0,
+          "examples": []
+        },
+        "dis": {
+          "count": 1,
+          "examples": [
+            "disease"
+          ]
+        },
+        "in": {
+          "count": 2,
+          "examples": [
+            "infantry",
+            "instinct"
+          ]
+        },
+        "im": {
+          "count": 3,
+          "examples": [
+            "immediately",
+            "immediately",
+            "impossible"
+          ]
+        },
+        "ir": {
+          "count": 0,
+          "examples": []
+        },
+        "il": {
+          "count": 0,
+          "examples": []
+        },
+        "non": {
+          "count": 0,
+          "examples": []
+        },
+        "anti": {
+          "count": 0,
+          "examples": []
+        },
+        "de": {
+          "count": 6,
+          "examples": [
+            "despoiling",
+            "depending",
+            "destination",
+            "delivering",
+            "demonstrating"
+          ]
+        },
+        "over": {
+          "count": 0,
+          "examples": []
+        },
+        "under": {
+          "count": 1,
+          "examples": [
+            "understood"
+          ]
+        },
+        "out": {
+          "count": 0,
+          "examples": []
+        },
+        "up": {
+          "count": 0,
+          "examples": []
+        },
+        "sub": {
+          "count": 0,
+          "examples": []
+        },
+        "inter": {
+          "count": 0,
+          "examples": []
+        },
+        "trans": {
+          "count": 0,
+          "examples": []
+        },
+        "super": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "suffixPatterns": {
+        "ing": {
+          "count": 14,
+          "examples": [
+            "spreading",
+            "despoiling",
+            "homing",
+            "communicating",
+            "depending"
+          ]
+        },
+        "ed": {
+          "count": 20,
+          "examples": [
+            "considered",
+            "blamed",
+            "earned",
+            "faced",
+            "provided"
+          ]
+        },
+        "er": {
+          "count": 6,
+          "examples": [
+            "however",
+            "october",
+            "other",
+            "under",
+            "another"
+          ]
+        },
+        "est": {
+          "count": 0,
+          "examples": []
+        },
+        "ly": {
+          "count": 6,
+          "examples": [
+            "fairly",
+            "homely",
+            "quickly",
+            "rapidly",
+            "immediately"
+          ]
+        },
+        "tion": {
+          "count": 6,
+          "examples": [
+            "reputation",
+            "location",
+            "solution",
+            "situation",
+            "destination"
+          ]
+        },
+        "sion": {
+          "count": 3,
+          "examples": [
+            "division",
+            "mission",
+            "mission"
+          ]
+        },
+        "ness": {
+          "count": 0,
+          "examples": []
+        },
+        "ment": {
+          "count": 0,
+          "examples": []
+        },
+        "ful": {
+          "count": 1,
+          "examples": [
+            "successful"
+          ]
+        },
+        "less": {
+          "count": 0,
+          "examples": []
+        },
+        "able": {
+          "count": 3,
+          "examples": [
+            "undeniable",
+            "remarkable",
+            "capable"
+          ]
+        },
+        "ible": {
+          "count": 1,
+          "examples": [
+            "impossible"
+          ]
+        },
+        "ous": {
+          "count": 1,
+          "examples": [
+            "famous"
+          ]
+        },
+        "ious": {
+          "count": 0,
+          "examples": []
+        },
+        "ive": {
+          "count": 1,
+          "examples": [
+            "offensive"
+          ]
+        },
+        "ative": {
+          "count": 0,
+          "examples": []
+        },
+        "itive": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "rootPatterns": {
+        "port": {
+          "count": 1,
+          "examples": [
+            "reports"
+          ]
+        },
+        "phon": {
+          "count": 1,
+          "examples": [
+            "telephone"
+          ]
+        },
+        "geo": {
+          "count": 9,
+          "examples": [
+            "pigeon",
+            "pigeons",
+            "pigeon"
+          ]
+        },
+        "demo": {
+          "count": 1,
+          "examples": [
+            "demonstrating"
+          ]
+        }
+      },
+      "morphologicalPatterns": {},
+      "phoneticPatterns": {},
+      "etymologicalPatterns": {}
+    },
+    "test_2_passage_2": {
+      "prefixPatterns": {
+        "un": {
+          "count": 0,
+          "examples": []
+        },
+        "re": {
+          "count": 5,
+          "examples": [
+            "region",
+            "refer",
+            "replicate",
+            "require",
+            "residents"
+          ]
+        },
+        "pre": {
+          "count": 1,
+          "examples": [
+            "prepared"
+          ]
+        },
+        "dis": {
+          "count": 1,
+          "examples": [
+            "disrupt"
+          ]
+        },
+        "in": {
+          "count": 6,
+          "examples": [
+            "instruments",
+            "instead",
+            "instrumental",
+            "instruments",
+            "invented"
+          ]
+        },
+        "im": {
+          "count": 1,
+          "examples": [
+            "imitating"
+          ]
+        },
+        "ir": {
+          "count": 2,
+          "examples": [
+            "ireland",
+            "ireland"
+          ]
+        },
+        "il": {
+          "count": 0,
+          "examples": []
+        },
+        "non": {
+          "count": 1,
+          "examples": [
+            "nonsense"
+          ]
+        },
+        "anti": {
+          "count": 0,
+          "examples": []
+        },
+        "de": {
+          "count": 1,
+          "examples": [
+            "designed"
+          ]
+        },
+        "over": {
+          "count": 0,
+          "examples": []
+        },
+        "under": {
+          "count": 0,
+          "examples": []
+        },
+        "out": {
+          "count": 0,
+          "examples": []
+        },
+        "up": {
+          "count": 0,
+          "examples": []
+        },
+        "sub": {
+          "count": 0,
+          "examples": []
+        },
+        "inter": {
+          "count": 0,
+          "examples": []
+        },
+        "trans": {
+          "count": 0,
+          "examples": []
+        },
+        "super": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "suffixPatterns": {
+        "ing": {
+          "count": 15,
+          "examples": [
+            "imitating",
+            "lilting",
+            "jigging",
+            "dancing",
+            "twisting"
+          ]
+        },
+        "ed": {
+          "count": 13,
+          "examples": [
+            "performed",
+            "called",
+            "designed",
+            "performed",
+            "timed"
+          ]
+        },
+        "er": {
+          "count": 4,
+          "examples": [
+            "refer",
+            "other",
+            "greater",
+            "another"
+          ]
+        },
+        "est": {
+          "count": 0,
+          "examples": []
+        },
+        "ly": {
+          "count": 10,
+          "examples": [
+            "particularly",
+            "lively",
+            "entirely",
+            "poorly",
+            "likely"
+          ]
+        },
+        "tion": {
+          "count": 0,
+          "examples": []
+        },
+        "sion": {
+          "count": 0,
+          "examples": []
+        },
+        "ness": {
+          "count": 0,
+          "examples": []
+        },
+        "ment": {
+          "count": 2,
+          "examples": [
+            "accompaniment",
+            "testament"
+          ]
+        },
+        "ful": {
+          "count": 1,
+          "examples": [
+            "mouthful"
+          ]
+        },
+        "less": {
+          "count": 0,
+          "examples": []
+        },
+        "able": {
+          "count": 1,
+          "examples": [
+            "enjoyable"
+          ]
+        },
+        "ible": {
+          "count": 0,
+          "examples": []
+        },
+        "ous": {
+          "count": 0,
+          "examples": []
+        },
+        "ious": {
+          "count": 0,
+          "examples": []
+        },
+        "ive": {
+          "count": 0,
+          "examples": []
+        },
+        "ative": {
+          "count": 0,
+          "examples": []
+        },
+        "itive": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "rootPatterns": {},
+      "morphologicalPatterns": {},
+      "phoneticPatterns": {},
+      "etymologicalPatterns": {}
+    },
+    "test_2_passage_1": {
+      "prefixPatterns": {
+        "un": {
+          "count": 6,
+          "examples": [
+            "underground",
+            "underground",
+            "underground",
+            "underground",
+            "unaffected"
+          ]
+        },
+        "re": {
+          "count": 3,
+          "examples": [
+            "reached",
+            "reservoirs",
+            "resulting"
+          ]
+        },
+        "pre": {
+          "count": 0,
+          "examples": []
+        },
+        "dis": {
+          "count": 0,
+          "examples": []
+        },
+        "in": {
+          "count": 2,
+          "examples": [
+            "including",
+            "inside"
+          ]
+        },
+        "im": {
+          "count": 0,
+          "examples": []
+        },
+        "ir": {
+          "count": 1,
+          "examples": [
+            "irrigation"
+          ]
+        },
+        "il": {
+          "count": 0,
+          "examples": []
+        },
+        "non": {
+          "count": 0,
+          "examples": []
+        },
+        "anti": {
+          "count": 0,
+          "examples": []
+        },
+        "de": {
+          "count": 6,
+          "examples": [
+            "desert",
+            "desert",
+            "depended",
+            "desert",
+            "deplete"
+          ]
+        },
+        "over": {
+          "count": 0,
+          "examples": []
+        },
+        "under": {
+          "count": 4,
+          "examples": [
+            "underground",
+            "underground",
+            "underground",
+            "underground"
+          ]
+        },
+        "out": {
+          "count": 0,
+          "examples": []
+        },
+        "up": {
+          "count": 0,
+          "examples": []
+        },
+        "sub": {
+          "count": 0,
+          "examples": []
+        },
+        "inter": {
+          "count": 0,
+          "examples": []
+        },
+        "trans": {
+          "count": 0,
+          "examples": []
+        },
+        "super": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "suffixPatterns": {
+        "ing": {
+          "count": 10,
+          "examples": [
+            "making",
+            "beginning",
+            "including",
+            "bearing",
+            "digging"
+          ]
+        },
+        "ed": {
+          "count": 20,
+          "examples": [
+            "called",
+            "created",
+            "manufactured",
+            "traded",
+            "depended"
+          ]
+        },
+        "er": {
+          "count": 16,
+          "examples": [
+            "water",
+            "aquifer",
+            "layer",
+            "water",
+            "water"
+          ]
+        },
+        "est": {
+          "count": 1,
+          "examples": [
+            "driest"
+          ]
+        },
+        "ly": {
+          "count": 4,
+          "examples": [
+            "easily",
+            "supply",
+            "supply",
+            "eventually"
+          ]
+        },
+        "tion": {
+          "count": 6,
+          "examples": [
+            "civilization",
+            "civilization",
+            "irrigation",
+            "population",
+            "civilization"
+          ]
+        },
+        "sion": {
+          "count": 0,
+          "examples": []
+        },
+        "ness": {
+          "count": 0,
+          "examples": []
+        },
+        "ment": {
+          "count": 0,
+          "examples": []
+        },
+        "ful": {
+          "count": 0,
+          "examples": []
+        },
+        "less": {
+          "count": 0,
+          "examples": []
+        },
+        "able": {
+          "count": 0,
+          "examples": []
+        },
+        "ible": {
+          "count": 2,
+          "examples": [
+            "accessible",
+            "visible"
+          ]
+        },
+        "ous": {
+          "count": 0,
+          "examples": []
+        },
+        "ious": {
+          "count": 0,
+          "examples": []
+        },
+        "ive": {
+          "count": 1,
+          "examples": [
+            "survive"
+          ]
+        },
+        "ative": {
+          "count": 0,
+          "examples": []
+        },
+        "itive": {
+          "count": 0,
+          "examples": []
+        }
+      },
+      "rootPatterns": {
+        "duct": {
+          "count": 1,
+          "examples": [
+            "aqueducts"
+          ]
+        },
+        "fact": {
+          "count": 1,
+          "examples": [
+            "manufactured"
+          ]
+        }
+      },
+      "morphologicalPatterns": {},
+      "phoneticPatterns": {},
+      "etymologicalPatterns": {}
+    }
+  },
+  "semanticNetworks": {
+    "test_1_passage_1": {
+      "conceptClusters": {},
+      "semanticFields": {
+        "science": {
+          "density": 5,
+          "keywords": [
+            "research",
+            "research",
+            "data",
+            "data",
+            "research"
+          ],
+          "sentences": [
+            4,
+            5,
+            7,
+            8,
+            19
+          ]
+        },
+        "arts": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "history": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "nature": {
+          "density": 4,
+          "keywords": [
+            "species",
+            "species",
+            "species",
+            "species"
+          ],
+          "sentences": [
+            0,
+            1,
+            6,
+            13
+          ]
+        },
+        "technology": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        }
+      },
+      "cooccurrencePatterns": {},
+      "abstractConcrete": {
+        "abstract": 0,
+        "concrete": 0,
+        "ratio": 0
+      },
+      "temporalReferences": {},
+      "spatialReferences": {}
+    },
+    "test_1_passage_2": {
+      "conceptClusters": {},
+      "semanticFields": {
+        "science": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "arts": {
+          "density": 1,
+          "keywords": [
+            "art"
+          ],
+          "sentences": [
+            2
+          ]
+        },
+        "history": {
+          "density": 2,
+          "keywords": [
+            "ancient",
+            "culture"
+          ],
+          "sentences": [
+            3,
+            6
+          ]
+        },
+        "nature": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "technology": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        }
+      },
+      "cooccurrencePatterns": {},
+      "abstractConcrete": {
+        "abstract": 0,
+        "concrete": 0,
+        "ratio": 0
+      },
+      "temporalReferences": {},
+      "spatialReferences": {}
+    },
+    "test_1_passage_3": {
+      "conceptClusters": {},
+      "semanticFields": {
+        "science": {
+          "density": 1,
+          "keywords": [
+            "experiment"
+          ],
+          "sentences": [
+            9
+          ]
+        },
+        "arts": {
+          "density": 5,
+          "keywords": [
+            "art",
+            "music",
+            "music",
+            "music",
+            "art"
+          ],
+          "sentences": [
+            0,
+            12,
+            13,
+            14,
+            16
+          ]
+        },
+        "history": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "nature": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "technology": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        }
+      },
+      "cooccurrencePatterns": {},
+      "abstractConcrete": {
+        "abstract": 2,
+        "concrete": 4,
+        "ratio": 0.5
+      },
+      "temporalReferences": {},
+      "spatialReferences": {}
+    },
+    "test_1_passage_4": {
+      "conceptClusters": {},
+      "semanticFields": {
+        "science": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "arts": {
+          "density": 1,
+          "keywords": [
+            "art"
+          ],
+          "sentences": [
+            14
+          ]
+        },
+        "history": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "nature": {
+          "density": 1,
+          "keywords": [
+            "environment"
+          ],
+          "sentences": [
+            6
+          ]
+        },
+        "technology": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        }
+      },
+      "cooccurrencePatterns": {},
+      "abstractConcrete": {
+        "abstract": 0,
+        "concrete": 0,
+        "ratio": 0
+      },
+      "temporalReferences": {},
+      "spatialReferences": {}
+    },
+    "test_1_passage_5": {
+      "conceptClusters": {},
+      "semanticFields": {
+        "science": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "arts": {
+          "density": 11,
+          "keywords": [
+            "music",
+            "art",
+            "music",
+            "music",
+            "music",
+            "art",
+            "artist",
+            "art",
+            "artist",
+            "art",
+            "cultural"
+          ],
+          "sentences": [
+            0,
+            1,
+            2,
+            7,
+            8,
+            12,
+            14,
+            16
+          ]
+        },
+        "history": {
+          "density": 1,
+          "keywords": [
+            "culture"
+          ],
+          "sentences": [
+            1
+          ]
+        },
+        "nature": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "technology": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        }
+      },
+      "cooccurrencePatterns": {},
+      "abstractConcrete": {
+        "abstract": 0,
+        "concrete": 1,
+        "ratio": 0
+      },
+      "temporalReferences": {},
+      "spatialReferences": {}
+    },
+    "test_2_passage_4": {
+      "conceptClusters": {},
+      "semanticFields": {
+        "science": {
+          "density": 2,
+          "keywords": [
+            "research",
+            "study"
+          ],
+          "sentences": [
+            17
+          ]
+        },
+        "arts": {
+          "density": 11,
+          "keywords": [
+            "art",
+            "artist",
+            "art",
+            "art",
+            "artist",
+            "art",
+            "art",
+            "art",
+            "art",
+            "art",
+            "artist"
+          ],
+          "sentences": [
+            0,
+            1,
+            2,
+            5,
+            11,
+            12,
+            14,
+            17
+          ]
+        },
+        "history": {
+          "density": 4,
+          "keywords": [
+            "historical",
+            "ancient",
+            "culture",
+            "culture"
+          ],
+          "sentences": [
+            7,
+            17
+          ]
+        },
+        "nature": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "technology": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        }
+      },
+      "cooccurrencePatterns": {},
+      "abstractConcrete": {
+        "abstract": 0,
+        "concrete": 1,
+        "ratio": 0
+      },
+      "temporalReferences": {},
+      "spatialReferences": {}
+    },
+    "test_2_passage_3": {
+      "conceptClusters": {},
+      "semanticFields": {
+        "science": {
+          "density": 1,
+          "keywords": [
+            "data"
+          ],
+          "sentences": [
+            10
+          ]
+        },
+        "arts": {
+          "density": 4,
+          "keywords": [
+            "art",
+            "art",
+            "art",
+            "art"
+          ],
+          "sentences": [
+            2,
+            7,
+            15,
+            17
+          ]
+        },
+        "history": {
+          "density": 1,
+          "keywords": [
+            "tradition"
+          ],
+          "sentences": [
+            17
+          ]
+        },
+        "nature": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "technology": {
+          "density": 1,
+          "keywords": [
+            "digital"
+          ],
+          "sentences": [
+            1
+          ]
+        }
+      },
+      "cooccurrencePatterns": {},
+      "abstractConcrete": {
+        "abstract": 0,
+        "concrete": 0,
+        "ratio": 0
+      },
+      "temporalReferences": {},
+      "spatialReferences": {}
+    },
+    "test_2_passage_5": {
+      "conceptClusters": {},
+      "semanticFields": {
+        "science": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "arts": {
+          "density": 1,
+          "keywords": [
+            "art"
+          ],
+          "sentences": [
+            12
+          ]
+        },
+        "history": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "nature": {
+          "density": 2,
+          "keywords": [
+            "natural",
+            "species"
+          ],
+          "sentences": [
+            2
+          ]
+        },
+        "technology": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        }
+      },
+      "cooccurrencePatterns": {},
+      "abstractConcrete": {
+        "abstract": 0,
+        "concrete": 0,
+        "ratio": 0
+      },
+      "temporalReferences": {},
+      "spatialReferences": {}
+    },
+    "test_2_passage_2": {
+      "conceptClusters": {},
+      "semanticFields": {
+        "science": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "arts": {
+          "density": 15,
+          "keywords": [
+            "music",
+            "art",
+            "music",
+            "music",
+            "music",
+            "music",
+            "music",
+            "music",
+            "music",
+            "music",
+            "music",
+            "music",
+            "music",
+            "art",
+            "music"
+          ],
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            11,
+            12,
+            13,
+            15,
+            16,
+            17,
+            18
+          ]
+        },
+        "history": {
+          "density": 7,
+          "keywords": [
+            "tradition",
+            "tradition",
+            "tradition",
+            "tradition",
+            "tradition",
+            "ancient",
+            "tradition"
+          ],
+          "sentences": [
+            4,
+            5,
+            6,
+            12,
+            14,
+            18
+          ]
+        },
+        "nature": {
+          "density": 1,
+          "keywords": [
+            "natural"
+          ],
+          "sentences": [
+            15
+          ]
+        },
+        "technology": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        }
+      },
+      "cooccurrencePatterns": {},
+      "abstractConcrete": {
+        "abstract": 0,
+        "concrete": 0,
+        "ratio": 0
+      },
+      "temporalReferences": {},
+      "spatialReferences": {}
+    },
+    "test_2_passage_1": {
+      "conceptClusters": {},
+      "semanticFields": {
+        "science": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "arts": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "history": {
+          "density": 5,
+          "keywords": [
+            "civilization",
+            "civilization",
+            "ancient",
+            "civilization",
+            "ancient"
+          ],
+          "sentences": [
+            0,
+            3,
+            12,
+            14,
+            15
+          ]
+        },
+        "nature": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        },
+        "technology": {
+          "density": 0,
+          "keywords": [],
+          "sentences": []
+        }
+      },
+      "cooccurrencePatterns": {},
+      "abstractConcrete": {
+        "abstract": 0,
+        "concrete": 0,
+        "ratio": 0
+      },
+      "temporalReferences": {},
+      "spatialReferences": {}
+    }
+  },
+  "questionInterdependencies": {
+    "test_1": {
+      "sequentialPatterns": {},
+      "topicContinuity": {},
+      "difficultyProgression": {},
+      "questionTypeProgression": {
+        "sequence": [
+          "comma-splice",
+          "fragment",
+          "dash",
+          "comma-usage",
+          "deleting-sentence",
+          "verb-agreement",
+          "colon",
+          "sentence-placement",
+          "word-choice",
+          "verb-agreement",
+          "word-choice",
+          "modifier-misplaced",
+          "sentence-placement",
+          "which-choice",
+          "main-idea",
+          "fragment",
+          "comma-usage",
+          "verb-form",
+          "redundancy",
+          "transition",
+          "verb-tense",
+          "comma-usage",
+          "transition",
+          "verb-form",
+          "verb-tense",
+          "transition",
+          "verb-tense",
+          "which-choice",
+          "comma-splice",
+          "main-idea",
+          "verb-form",
+          "colon",
+          "comma-usage",
+          "idiom",
+          "which-choice",
+          "verb-tense",
+          "word-choice",
+          "which-choice",
+          "verb-agreement",
+          "comma-usage",
+          "fragment",
+          "logical-placement",
+          "comma-usage",
+          "transition",
+          "main-idea",
+          "parallel-structure",
+          "word-choice",
+          "colon",
+          "redundancy",
+          "redundancy",
+          "idiom",
+          "pronoun-ambiguous",
+          "adding-info",
+          "comma-usage",
+          "deleting-sentence",
+          "wordiness",
+          "word-choice",
+          "verb-form",
+          "which-choice",
+          "sentence-placement",
+          "comma-usage",
+          "verb-agreement",
+          "redundancy",
+          "dash",
+          "adding-sentence",
+          "modifier-dangling",
+          "comma-usage",
+          "verb-tense",
+          "verb-tense",
+          "comma-usage",
+          "comma-usage",
+          "verb-tense",
+          "comma-usage",
+          "comma-usage",
+          "main-idea"
+        ],
+        "transitions": {
+          "comma-splice_to_fragment": 1,
+          "fragment_to_dash": 1,
+          "dash_to_comma-usage": 1,
+          "comma-usage_to_deleting-sentence": 2,
+          "deleting-sentence_to_verb-agreement": 1,
+          "verb-agreement_to_colon": 1,
+          "colon_to_sentence-placement": 1,
+          "sentence-placement_to_word-choice": 1,
+          "word-choice_to_verb-agreement": 1,
+          "verb-agreement_to_word-choice": 1,
+          "word-choice_to_modifier-misplaced": 1,
+          "modifier-misplaced_to_sentence-placement": 1,
+          "sentence-placement_to_which-choice": 1,
+          "which-choice_to_main-idea": 1,
+          "main-idea_to_fragment": 1,
+          "fragment_to_comma-usage": 1,
+          "comma-usage_to_verb-form": 1,
+          "verb-form_to_redundancy": 1,
+          "redundancy_to_transition": 1,
+          "transition_to_verb-tense": 2,
+          "verb-tense_to_comma-usage": 3,
+          "comma-usage_to_transition": 2,
+          "transition_to_verb-form": 1,
+          "verb-form_to_verb-tense": 1,
+          "verb-tense_to_transition": 1,
+          "verb-tense_to_which-choice": 1,
+          "which-choice_to_comma-splice": 1,
+          "comma-splice_to_main-idea": 1,
+          "main-idea_to_verb-form": 1,
+          "verb-form_to_colon": 1,
+          "colon_to_comma-usage": 1,
+          "comma-usage_to_idiom": 1,
+          "idiom_to_which-choice": 1,
+          "which-choice_to_verb-tense": 1,
+          "verb-tense_to_word-choice": 1,
+          "word-choice_to_which-choice": 1,
+          "which-choice_to_verb-agreement": 1,
+          "verb-agreement_to_comma-usage": 1,
+          "comma-usage_to_fragment": 1,
+          "fragment_to_logical-placement": 1,
+          "logical-placement_to_comma-usage": 1,
+          "transition_to_main-idea": 1,
+          "main-idea_to_parallel-structure": 1,
+          "parallel-structure_to_word-choice": 1,
+          "word-choice_to_colon": 1,
+          "colon_to_redundancy": 1,
+          "redundancy_to_redundancy": 1,
+          "redundancy_to_idiom": 1,
+          "idiom_to_pronoun-ambiguous": 1,
+          "pronoun-ambiguous_to_adding-info": 1,
+          "adding-info_to_comma-usage": 1,
+          "deleting-sentence_to_wordiness": 1,
+          "wordiness_to_word-choice": 1,
+          "word-choice_to_verb-form": 1,
+          "verb-form_to_which-choice": 1,
+          "which-choice_to_sentence-placement": 1,
+          "sentence-placement_to_comma-usage": 1,
+          "comma-usage_to_verb-agreement": 1,
+          "verb-agreement_to_redundancy": 1,
+          "redundancy_to_dash": 1,
+          "dash_to_adding-sentence": 1,
+          "adding-sentence_to_modifier-dangling": 1,
+          "modifier-dangling_to_comma-usage": 1,
+          "comma-usage_to_verb-tense": 2,
+          "verb-tense_to_verb-tense": 1,
+          "comma-usage_to_comma-usage": 2,
+          "comma-usage_to_main-idea": 1
+        },
+        "clustering": {}
+      },
+      "answerPatterns": {
+        "A": {
+          "frequency": 11,
+          "positions": [
+            2,
+            4,
+            16,
+            20,
+            34,
+            36,
+            46,
+            50,
+            52,
+            60,
+            62
+          ],
+          "consecutiveRuns": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "B": {
+          "frequency": 6,
+          "positions": [
+            10,
+            12,
+            32,
+            44,
+            54,
+            74
+          ],
+          "consecutiveRuns": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "C": {
+          "frequency": 11,
+          "positions": [
+            0,
+            6,
+            8,
+            22,
+            26,
+            38,
+            42,
+            56,
+            58,
+            64,
+            70
+          ],
+          "consecutiveRuns": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "D": {
+          "frequency": 10,
+          "positions": [
+            14,
+            18,
+            24,
+            28,
+            30,
+            40,
+            48,
+            66,
+            68,
+            72
+          ],
+          "consecutiveRuns": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    },
+    "test_2": {
+      "sequentialPatterns": {},
+      "topicContinuity": {},
+      "difficultyProgression": {},
+      "questionTypeProgression": {
+        "sequence": [
+          "grammar",
+          "punctuation",
+          "style",
+          "organization",
+          "word-choice",
+          "comma-splice",
+          "verb-tense",
+          "redundancy",
+          "transition",
+          "grammar",
+          "punctuation",
+          "style",
+          "organization",
+          "word-choice",
+          "comma-splice",
+          "verb-tense",
+          "redundancy",
+          "transition",
+          "grammar",
+          "punctuation",
+          "style",
+          "organization",
+          "word-choice",
+          "comma-splice",
+          "verb-tense",
+          "redundancy",
+          "transition",
+          "grammar",
+          "punctuation",
+          "style",
+          "organization",
+          "comma-usage",
+          "dash",
+          "deleting-sentence",
+          "transition",
+          "comma-usage",
+          "adding-sentence",
+          "punctuation",
+          "grammar",
+          "verb-agreement",
+          "which-choice",
+          "punctuation",
+          "word-choice",
+          "which-choice",
+          "main-idea",
+          "pronoun-ambiguous",
+          "word-choice",
+          "which-choice",
+          "comma-usage",
+          "fragment",
+          "wordiness",
+          "comma-usage",
+          "verb-tense",
+          "deleting-sentence",
+          "logical-placement",
+          "which-choice",
+          "transition",
+          "modifier-dangling",
+          "comma-usage",
+          "logical-placement",
+          "comma-usage",
+          "fragment",
+          "transition",
+          "comma-usage",
+          "grammar",
+          "word-choice",
+          "adding-info",
+          "redundancy",
+          "modifier-misplaced",
+          "redundancy",
+          "colon",
+          "comma-splice",
+          "comma-usage",
+          "idiom",
+          "main-idea"
+        ],
+        "transitions": {
+          "grammar_to_punctuation": 4,
+          "punctuation_to_style": 4,
+          "style_to_organization": 4,
+          "organization_to_word-choice": 3,
+          "word-choice_to_comma-splice": 3,
+          "comma-splice_to_verb-tense": 3,
+          "verb-tense_to_redundancy": 3,
+          "redundancy_to_transition": 3,
+          "transition_to_grammar": 3,
+          "organization_to_comma-usage": 1,
+          "comma-usage_to_dash": 1,
+          "dash_to_deleting-sentence": 1,
+          "deleting-sentence_to_transition": 1,
+          "transition_to_comma-usage": 2,
+          "comma-usage_to_adding-sentence": 1,
+          "adding-sentence_to_punctuation": 1,
+          "punctuation_to_grammar": 1,
+          "grammar_to_verb-agreement": 1,
+          "verb-agreement_to_which-choice": 1,
+          "which-choice_to_punctuation": 1,
+          "punctuation_to_word-choice": 1,
+          "word-choice_to_which-choice": 2,
+          "which-choice_to_main-idea": 1,
+          "main-idea_to_pronoun-ambiguous": 1,
+          "pronoun-ambiguous_to_word-choice": 1,
+          "which-choice_to_comma-usage": 1,
+          "comma-usage_to_fragment": 2,
+          "fragment_to_wordiness": 1,
+          "wordiness_to_comma-usage": 1,
+          "comma-usage_to_verb-tense": 1,
+          "verb-tense_to_deleting-sentence": 1,
+          "deleting-sentence_to_logical-placement": 1,
+          "logical-placement_to_which-choice": 1,
+          "which-choice_to_transition": 1,
+          "transition_to_modifier-dangling": 1,
+          "modifier-dangling_to_comma-usage": 1,
+          "comma-usage_to_logical-placement": 1,
+          "logical-placement_to_comma-usage": 1,
+          "fragment_to_transition": 1,
+          "comma-usage_to_grammar": 1,
+          "grammar_to_word-choice": 1,
+          "word-choice_to_adding-info": 1,
+          "adding-info_to_redundancy": 1,
+          "redundancy_to_modifier-misplaced": 1,
+          "modifier-misplaced_to_redundancy": 1,
+          "redundancy_to_colon": 1,
+          "colon_to_comma-splice": 1,
+          "comma-splice_to_comma-usage": 1,
+          "comma-usage_to_idiom": 1,
+          "idiom_to_main-idea": 1
+        },
+        "clustering": {}
+      },
+      "answerPatterns": {
+        "A": {
+          "frequency": 8,
+          "positions": [
+            8,
+            14,
+            18,
+            24,
+            46,
+            52,
+            62,
+            72
+          ],
+          "consecutiveRuns": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "B": {
+          "frequency": 10,
+          "positions": [
+            2,
+            12,
+            20,
+            22,
+            32,
+            42,
+            48,
+            58,
+            66,
+            70
+          ],
+          "consecutiveRuns": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "C": {
+          "frequency": 9,
+          "positions": [
+            0,
+            4,
+            26,
+            28,
+            36,
+            38,
+            44,
+            56,
+            74
+          ],
+          "consecutiveRuns": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "D": {
+          "frequency": 11,
+          "positions": [
+            6,
+            10,
+            16,
+            30,
+            34,
+            40,
+            50,
+            54,
+            60,
+            64,
+            68
+          ],
+          "consecutiveRuns": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    }
+  },
+  "phoneticPatterns": {},
+  "culturalReferences": {},
+  "formattingPatterns": {},
+  "cognitiveLoadPatterns": {},
+  "errorTypeFrequencies": {},
+  "discourseMarkers": {},
+  "registerAnalysis": {},
+  "metaphoricalLanguage": {},
+  "visualLayoutPatterns": {}
+}

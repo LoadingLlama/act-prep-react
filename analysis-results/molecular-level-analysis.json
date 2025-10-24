@@ -1,0 +1,2314 @@
+{
+  "passageConstruction": {
+    "test_1_passage_1": {
+      "sentencePatterns": {
+        "openingTypes": [
+          "there",
+          "so",
+          "mantas",
+          "encompassing",
+          "during",
+          "her",
+          "she",
+          "to",
+          "other",
+          "the",
+          "\"",
+          "another",
+          "each",
+          "in",
+          "the",
+          "thriving",
+          "in",
+          "the",
+          "at",
+          "fortunately,"
+        ],
+        "complexityProgression": [
+          1.48,
+          2.3,
+          1.84,
+          1.48,
+          1.6,
+          0.83,
+          1.2,
+          0.76,
+          0.33,
+          1.7,
+          2.7,
+          1.21,
+          1.09,
+          2.15,
+          1.32,
+          1.03,
+          1.93,
+          1.6,
+          1.01,
+          0.92
+        ],
+        "transitionWords": [
+          "for example",
+          "in contrast"
+        ],
+        "punctuationPatterns": [],
+        "lengthProgression": [
+          118,
+          140,
+          154,
+          118,
+          130,
+          83,
+          90,
+          46,
+          33,
+          80,
+          170,
+          91,
+          109,
+          95,
+          72,
+          73,
+          103,
+          130,
+          71,
+          62
+        ]
+      },
+      "questionPlacements": [],
+      "structuralElements": {
+        "paragraphCount": 5,
+        "hasDialogue": true,
+        "hasParenthetical": false,
+        "hasSpecialPunctuation": true,
+        "hasNumbers": true,
+        "hasQuestions": false
+      },
+      "questionCount": 0,
+      "passageLength": 2020
+    },
+    "test_1_passage_2": {
+      "sentencePatterns": {
+        "openingTypes": [
+          "when",
+          "salicylates",
+          "humans",
+          "the",
+          "on",
+          "an",
+          "though",
+          "the",
+          "consequently,",
+          "he",
+          "known",
+          "he",
+          "as",
+          "searching",
+          "decades"
+        ],
+        "complexityProgression": [
+          3.69,
+          1.55,
+          1.96,
+          0.93,
+          1.35,
+          0.89,
+          1.84,
+          1.43,
+          1.48,
+          1.28,
+          1.38,
+          1.2,
+          0.93,
+          1.93,
+          2.72
+        ],
+        "transitionWords": [
+          "first",
+          "however",
+          "consequently"
+        ],
+        "punctuationPatterns": [],
+        "lengthProgression": [
+          189,
+          125,
+          136,
+          93,
+          105,
+          89,
+          154,
+          83,
+          88,
+          98,
+          108,
+          90,
+          63,
+          163,
+          182
+        ]
+      },
+      "questionPlacements": [],
+      "structuralElements": {
+        "paragraphCount": 5,
+        "hasDialogue": false,
+        "hasParenthetical": false,
+        "hasSpecialPunctuation": false,
+        "hasNumbers": true,
+        "hasQuestions": false
+      },
+      "questionCount": 0,
+      "passageLength": 1799
+    },
+    "test_1_passage_3": {
+      "sentencePatterns": {
+        "openingTypes": [
+          "in",
+          "the",
+          "klimas",
+          "he",
+          "finally,",
+          "the",
+          "\"",
+          "although",
+          "\"i",
+          "klimas's",
+          "in",
+          "for",
+          "klimas",
+          "klimas",
+          "while",
+          "\"",
+          "after"
+        ],
+        "complexityProgression": [
+          2.03,
+          1.83,
+          1,
+          1.92,
+          1.93,
+          0.5,
+          2.72,
+          2.13,
+          1,
+          0.99,
+          1.1,
+          3.11,
+          1.61,
+          3.47,
+          2.72,
+          0.48,
+          1.72
+        ],
+        "transitionWords": [
+          "finally",
+          "for example"
+        ],
+        "punctuationPatterns": [],
+        "lengthProgression": [
+          143,
+          103,
+          100,
+          122,
+          103,
+          50,
+          212,
+          143,
+          70,
+          99,
+          80,
+          181,
+          81,
+          187,
+          142,
+          18,
+          72
+        ]
+      },
+      "questionPlacements": [],
+      "structuralElements": {
+        "paragraphCount": 4,
+        "hasDialogue": true,
+        "hasParenthetical": true,
+        "hasSpecialPunctuation": true,
+        "hasNumbers": true,
+        "hasQuestions": false
+      },
+      "questionCount": 0,
+      "passageLength": 1940
+    },
+    "test_1_passage_4": {
+      "sentencePatterns": {
+        "openingTypes": [
+          "separating",
+          "these",
+          "that",
+          "their",
+          "columbia",
+          "roadside",
+          "guardrails",
+          "engineers",
+          "completed",
+          "\"\n\nimpressive",
+          "in",
+          "by",
+          "the",
+          "in",
+          "in",
+          "since",
+          "damaged",
+          "tunnels,",
+          "today,"
+        ],
+        "complexityProgression": [
+          2.48,
+          1.05,
+          3.2,
+          1.36,
+          0.35,
+          0.93,
+          1.02,
+          1.48,
+          1.05,
+          1.73,
+          2.45,
+          1.68,
+          0.43,
+          1.4,
+          1.65,
+          1.46,
+          0.46,
+          1.28,
+          2.3
+        ],
+        "transitionWords": [
+          "third",
+          "however"
+        ],
+        "punctuationPatterns": [],
+        "lengthProgression": [
+          158,
+          65,
+          170,
+          86,
+          35,
+          93,
+          102,
+          118,
+          75,
+          103,
+          135,
+          108,
+          43,
+          80,
+          135,
+          76,
+          46,
+          68,
+          170
+        ]
+      },
+      "questionPlacements": [],
+      "structuralElements": {
+        "paragraphCount": 4,
+        "hasDialogue": true,
+        "hasParenthetical": false,
+        "hasSpecialPunctuation": true,
+        "hasNumbers": true,
+        "hasQuestions": false
+      },
+      "questionCount": 0,
+      "passageLength": 1904
+    },
+    "test_1_passage_5": {
+      "sentencePatterns": {
+        "openingTypes": [
+          "one",
+          "at",
+          "robinson",
+          "every",
+          "robinson",
+          "she",
+          "robinson",
+          "wanting",
+          "the",
+          "not",
+          "some",
+          "others",
+          "critics",
+          "despite",
+          "she",
+          "her",
+          "robinson's"
+        ],
+        "complexityProgression": [
+          1.87,
+          2.5,
+          1.18,
+          1.33,
+          0.88,
+          0.83,
+          2.59,
+          2.01,
+          2.46,
+          0.82,
+          1.47,
+          1.37,
+          1.96,
+          1,
+          1.95,
+          2.71,
+          1.41
+        ],
+        "transitionWords": [],
+        "punctuationPatterns": [],
+        "lengthProgression": [
+          127,
+          130,
+          118,
+          73,
+          88,
+          53,
+          149,
+          141,
+          136,
+          82,
+          87,
+          107,
+          166,
+          70,
+          105,
+          181,
+          141
+        ]
+      },
+      "questionPlacements": [],
+      "structuralElements": {
+        "paragraphCount": 4,
+        "hasDialogue": true,
+        "hasParenthetical": false,
+        "hasSpecialPunctuation": true,
+        "hasNumbers": false,
+        "hasQuestions": false
+      },
+      "questionCount": 0,
+      "passageLength": 1990
+    },
+    "test_2_passage_4": {
+      "sentencePatterns": {
+        "openingTypes": [
+          "clinton",
+          "black,",
+          "however,",
+          "the",
+          "within",
+          "the",
+          "black",
+          "2",
+          "one",
+          "it",
+          "i",
+          "maybe",
+          "the",
+          "he",
+          "now",
+          "fortunately,",
+          "the",
+          "after"
+        ],
+        "complexityProgression": [
+          3.95,
+          1.68,
+          2.9,
+          0.39,
+          1.72,
+          0.41,
+          0.32,
+          2.06,
+          0.94,
+          2.42,
+          2.75,
+          0.89,
+          0.79,
+          1.3,
+          3.26,
+          1.56,
+          2.98,
+          3.79
+        ],
+        "transitionWords": [
+          "however"
+        ],
+        "punctuationPatterns": [],
+        "lengthProgression": [
+          245,
+          108,
+          170,
+          39,
+          82,
+          41,
+          32,
+          116,
+          64,
+          182,
+          185,
+          89,
+          79,
+          100,
+          166,
+          96,
+          148,
+          219
+        ]
+      },
+      "questionPlacements": [],
+      "structuralElements": {
+        "paragraphCount": 7,
+        "hasDialogue": false,
+        "hasParenthetical": false,
+        "hasSpecialPunctuation": true,
+        "hasNumbers": true,
+        "hasQuestions": false
+      },
+      "questionCount": 0,
+      "passageLength": 2201
+    },
+    "test_2_passage_3": {
+      "sentencePatterns": {
+        "openingTypes": [
+          "neutrinos",
+          "each",
+          "this",
+          "although",
+          "neutrinos",
+          "neutrinos",
+          "for",
+          "on",
+          "scientists",
+          "not",
+          "once",
+          "determining",
+          "for",
+          "the",
+          "by",
+          "the",
+          "as",
+          "this"
+        ],
+        "complexityProgression": [
+          1.92,
+          2.44,
+          1.56,
+          2.73,
+          1.65,
+          0.65,
+          1.27,
+          1.29,
+          1.25,
+          1.49,
+          1.37,
+          0.91,
+          1.55,
+          1.67,
+          1.44,
+          1.96,
+          1.8,
+          2.02
+        ],
+        "transitionWords": [
+          "second",
+          "however",
+          "for instance"
+        ],
+        "punctuationPatterns": [],
+        "lengthProgression": [
+          132,
+          144,
+          156,
+          163,
+          105,
+          65,
+          97,
+          69,
+          125,
+          119,
+          107,
+          91,
+          85,
+          107,
+          114,
+          136,
+          150,
+          172
+        ]
+      },
+      "questionPlacements": [],
+      "structuralElements": {
+        "paragraphCount": 6,
+        "hasDialogue": false,
+        "hasParenthetical": true,
+        "hasSpecialPunctuation": true,
+        "hasNumbers": true,
+        "hasQuestions": false
+      },
+      "questionCount": 0,
+      "passageLength": 2176
+    },
+    "test_2_passage_5": {
+      "sentencePatterns": {
+        "openingTypes": [
+          "cher",
+          "in",
+          "however,",
+          "their",
+          "before",
+          "the",
+          "it",
+          "one",
+          "cher",
+          "american",
+          "the",
+          "they",
+          "they",
+          "as",
+          "the",
+          "cher",
+          "when",
+          "a",
+          "twenty-five",
+          "the",
+          "news",
+          "the",
+          "although",
+          "cher"
+        ],
+        "complexityProgression": [
+          0.9,
+          1.88,
+          1.8,
+          0.89,
+          2.54,
+          0.53,
+          0.58,
+          1.58,
+          1.22,
+          1.42,
+          0.8,
+          0.4,
+          1.03,
+          1.61,
+          1.4,
+          0.28,
+          0.87,
+          1.42,
+          2.05,
+          1.33,
+          0.55,
+          0.89,
+          2.95,
+          2.85
+        ],
+        "transitionWords": [
+          "however"
+        ],
+        "punctuationPatterns": [],
+        "lengthProgression": [
+          60,
+          128,
+          90,
+          89,
+          154,
+          53,
+          58,
+          128,
+          92,
+          142,
+          80,
+          40,
+          53,
+          101,
+          110,
+          28,
+          57,
+          82,
+          115,
+          103,
+          55,
+          59,
+          165,
+          195
+        ]
+      },
+      "questionPlacements": [],
+      "structuralElements": {
+        "paragraphCount": 7,
+        "hasDialogue": true,
+        "hasParenthetical": false,
+        "hasSpecialPunctuation": true,
+        "hasNumbers": true,
+        "hasQuestions": false
+      },
+      "questionCount": 0,
+      "passageLength": 2289
+    },
+    "test_2_passage_2": {
+      "sentencePatterns": {
+        "openingTypes": [
+          "a",
+          "forms",
+          "in",
+          "celtic",
+          "instead",
+          "these",
+          "one",
+          "the",
+          "the",
+          "a",
+          "puirt-a-beul",
+          "musical",
+          "additionally,",
+          "another",
+          "these",
+          "the",
+          "the",
+          "in",
+          "the"
+        ],
+        "complexityProgression": [
+          1.46,
+          2.14,
+          1.35,
+          1.5,
+          2.13,
+          1.94,
+          1.92,
+          0.65,
+          1.48,
+          0.8,
+          0.54,
+          2.25,
+          1.65,
+          1.06,
+          1.83,
+          2.42,
+          0.76,
+          2.09,
+          1.88
+        ],
+        "transitionWords": [
+          "first",
+          "instead",
+          "additionally"
+        ],
+        "punctuationPatterns": [],
+        "lengthProgression": [
+          146,
+          124,
+          105,
+          120,
+          123,
+          134,
+          132,
+          65,
+          88,
+          80,
+          54,
+          165,
+          105,
+          76,
+          123,
+          172,
+          76,
+          149,
+          158
+        ]
+      },
+      "questionPlacements": [],
+      "structuralElements": {
+        "paragraphCount": 7,
+        "hasDialogue": false,
+        "hasParenthetical": false,
+        "hasSpecialPunctuation": false,
+        "hasNumbers": true,
+        "hasQuestions": false
+      },
+      "questionCount": 0,
+      "passageLength": 2237
+    },
+    "test_2_passage_1": {
+      "sentencePatterns": {
+        "openingTypes": [
+          "making",
+          "beginning",
+          "they",
+          "the",
+          "these",
+          "the",
+          "when",
+          "archaeologists",
+          "other",
+          "because",
+          "and",
+          "the",
+          "moreover,",
+          "the",
+          "as",
+          "however,",
+          "the"
+        ],
+        "complexityProgression": [
+          2.15,
+          2.35,
+          1.6,
+          0.87,
+          1.39,
+          2.31,
+          1.45,
+          0.7,
+          1.57,
+          1.63,
+          1.76,
+          1.53,
+          2.81,
+          1.79,
+          1.86,
+          0.91,
+          1.33
+        ],
+        "transitionWords": [
+          "moreover",
+          "however"
+        ],
+        "punctuationPatterns": [],
+        "lengthProgression": [
+          185,
+          145,
+          70,
+          87,
+          109,
+          161,
+          115,
+          70,
+          67,
+          93,
+          106,
+          93,
+          161,
+          109,
+          126,
+          61,
+          103
+        ]
+      },
+      "questionPlacements": [],
+      "structuralElements": {
+        "paragraphCount": 5,
+        "hasDialogue": false,
+        "hasParenthetical": true,
+        "hasSpecialPunctuation": true,
+        "hasNumbers": true,
+        "hasQuestions": false
+      },
+      "questionCount": 0,
+      "passageLength": 1897
+    }
+  },
+  "questionPlacement": {},
+  "linguisticTriggers": {
+    "underlinedTriggers": {
+      "punctuation_trigger": [
+        {
+          "text": "variations, in the mantas",
+          "type": "comma-usage",
+          "choices": [
+            "variations—in the mantas",
+            "variations, in the mantas,",
+            "variations in the mantas",
+            "NO CHANGE"
+          ]
+        },
+        {
+          "text": "announced, with two other scientists,",
+          "type": "word-choice",
+          "choices": [
+            "NO CHANGE",
+            "surprised many scientists by announcing",
+            "had the evidence to announce",
+            "at long last announced"
+          ]
+        },
+        {
+          "text": "; in effect, helping",
+          "type": "fragment",
+          "choices": [
+            "NO CHANGE",
+            "temperature, helping",
+            "temperature, this helps",
+            "temperature. As a result, helping"
+          ]
+        },
+        {
+          "text": "plants, particularly in the bark",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "plants—particularly in the bark—of the willow tree,",
+            "plants; particularly in the bark of the willow tree,",
+            "plants particularly, in the bark of the willow tree."
+          ]
+        },
+        {
+          "text": "Consequently,",
+          "type": "transition",
+          "choices": [
+            "NO CHANGE",
+            "Nevertheless,",
+            "Furthermore,",
+            "Likewise,"
+          ]
+        },
+        {
+          "text": "Known also for his interest in astronomy, Stone",
+          "type": "transition",
+          "choices": [
+            "NO CHANGE",
+            "Assuming diseases and their cures derive from the same environments,",
+            "Believing that the two plants must share similar qualities,",
+            "Living on the outskirts of the town of Chipping Norton,"
+          ]
+        },
+        {
+          "text": "fevers, he then noted",
+          "type": "comma-splice",
+          "choices": [
+            "NO CHANGE",
+            "fevers, he was elated to find",
+            "fevers which",
+            "fevers. It"
+          ]
+        },
+        {
+          "text": "colors; rich oranges and powder blues,",
+          "type": "colon",
+          "choices": [
+            "NO CHANGE",
+            "colors: rich oranges and powder blues,",
+            "colors: rich oranges; and powder blues",
+            "colors; rich oranges and powder blues;"
+          ]
+        },
+        {
+          "text": "cranks up the volume to ten,",
+          "type": "which-choice",
+          "choices": [
+            "NO CHANGE",
+            "turns the volume knob a bit higher,",
+            "increases the volume of the output,",
+            "adjusts the speaker's output level,"
+          ]
+        },
+        {
+          "text": "h: ised",
+          "type": "verb-tense",
+          "choices": [
+            "NO CHANGE",
+            "cause",
+            "is causing",
+            "causes"
+          ]
+        },
+        {
+          "text": "this image that Klimas's camera captures—sound",
+          "type": "word-choice",
+          "choices": [
+            "NO CHANGE",
+            "pic, frozen in time's embrace that Klimas's camera has snapped—",
+            "picture that Klimas's photographic paraphernalia has managed to catch—",
+            "snapshot that Klimas's photographic machine snares—"
+          ]
+        },
+        {
+          "text": "Klimas says,",
+          "type": "which-choice",
+          "choices": [
+            "NO CHANGE",
+            "\"The most annoying thing was cleaning up the set thoroughly after every single shot,\"",
+            "\"In general, I use normal photographic equipment and common music stuff,\"",
+            "\"The shooting is mostly about repeating the process again and again,\""
+          ]
+        },
+        {
+          "text": "experiments, of Swiss scientist, Hans",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "experiments, of Swiss scientist",
+            "experiments of Swiss scientist",
+            "experiments of Swiss scientist"
+          ]
+        },
+        {
+          "text": "tunnel; enabling",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "tunnel; an achievement that enabled",
+            "tunnel, this enabled",
+            "tunnel, enabling"
+          ]
+        },
+        {
+          "text": "obeyed,",
+          "type": "redundancy",
+          "choices": [
+            "NO CHANGE",
+            "obeyed by throwing their hands in the air.",
+            "heeded the DJ's call and obeyed him.",
+            "did what he said and obeyed."
+          ]
+        },
+        {
+          "text": ", primarily",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "; primarily",
+            "—primarily",
+            ". Primarily,"
+          ]
+        },
+        {
+          "text": ";",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "; for example,",
+            ",",
+            ". For example,"
+          ]
+        },
+        {
+          "text": "significant, through",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "significant; through",
+            "significant. Through",
+            "significant through"
+          ]
+        },
+        {
+          "text": "music, from",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "music from",
+            "music; from",
+            "music. From"
+          ]
+        },
+        {
+          "text": "for, prices",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "sold—for",
+            "sold; for",
+            "sold for"
+          ]
+        },
+        {
+          "text": "rappers: Big Bank Hank, Master Gee, and Wonder Mike—",
+          "type": "dash",
+          "choices": [
+            "NO CHANGE",
+            "rappers—",
+            "rappers;",
+            "rappers,"
+          ]
+        },
+        {
+          "text": ": a veritable shock wave of photonic energy—",
+          "type": "dash",
+          "choices": [
+            "NO CHANGE",
+            "—a veritable shock wave of photonic energy—",
+            "; a veritable shock wave of photonic energy;",
+            ", a veritable shock wave of photonic energy,"
+          ]
+        },
+        {
+          "text": "who thrived until about 500 CE, when some archaeologists believe",
+          "type": "redundancy",
+          "choices": [
+            "NO CHANGE",
+            "thrived until about 500 CE. Some archaeologists believe",
+            "who thrived until about 500 CE, and some archaeologists believe",
+            "thrived until about 500 CE when some archaeologists believe"
+          ]
+        },
+        {
+          "text": "painter, Wilhelm Freddie,",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "painter Wilhelm Freddie,",
+            "painter, Wilhelm Freddie",
+            "painter Wilhelm Freddie"
+          ]
+        },
+        {
+          "text": "where, Black,",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "building, where Black",
+            "building where Black",
+            "building: where Black"
+          ]
+        },
+        {
+          "text": "than,",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "than—",
+            "than;",
+            "than"
+          ]
+        },
+        {
+          "text": "pigeon, which",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "pigeon that",
+            "pigeon,",
+            "pigeon"
+          ]
+        },
+        {
+          "text": "medal, the",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "medal, it was the",
+            "medal, that was",
+            "medal. The"
+          ]
+        },
+        {
+          "text": "Having left no clues, archaeologists",
+          "type": "organization",
+          "choices": [
+            "NO CHANGE",
+            "A genuine puzzle to scientists, archaeologists",
+            "Giving no indication, archaeologists",
+            "Archaeologists"
+          ]
+        },
+        {
+          "text": "wings—up to twenty-five feet wide—",
+          "type": "dash",
+          "choices": [
+            "NO CHANGE",
+            "wings: up to twenty-five feet wide—",
+            "wings, up to twenty-five feet wide—",
+            "wings, up to twenty-five feet wide:"
+          ]
+        },
+        {
+          "text": "occasions however;",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "occasions, however,",
+            "occasions however,",
+            "occasions, however"
+          ]
+        },
+        {
+          "text": "the Romans, called the Garamantes,",
+          "type": "verb-tense",
+          "choices": [
+            "NO CHANGE",
+            "Romans called the Garamantes,",
+            "Romans called: the Garamantes",
+            "Romans called the Garamantes"
+          ]
+        },
+        {
+          "text": "depictions, in the form of drawings, of",
+          "type": "wordiness",
+          "choices": [
+            "NO CHANGE",
+            "black pencil drawings that depict",
+            "drawings that create collages of",
+            "depictions of"
+          ]
+        },
+        {
+          "text": "These tunnels carried water to desert settlements from an aquifer, an underground layer of water-bearing rock",
+          "type": "grammar",
+          "choices": [
+            "NO CHANGE",
+            "upon which they depended.",
+            "used by the Garamantes,",
+            "a key to their survival."
+          ]
+        }
+      ],
+      "verb_trigger": [
+        {
+          "text": "Mantas, which are",
+          "type": "fragment",
+          "choices": [
+            "NO CHANGE",
+            "Mantas are",
+            "Mantas,",
+            "DELETE the underlined portion (adjusting the capitalization as needed)."
+          ]
+        },
+        {
+          "text": "was: that",
+          "type": "colon",
+          "choices": [
+            "NO CHANGE",
+            "was, that,",
+            "was that",
+            "was, that"
+          ]
+        },
+        {
+          "text": "Some of the data were basic, such as manta coloration and size.",
+          "type": "sentence-placement",
+          "choices": [
+            "after Sentence 1.",
+            "after Sentence 2.",
+            "after Sentence 3.",
+            "after Sentence 4."
+          ]
+        },
+        {
+          "text": "is",
+          "type": "verb-agreement",
+          "choices": [
+            "NO CHANGE",
+            "happen to be",
+            "were",
+            "are"
+          ]
+        },
+        {
+          "text": "is",
+          "type": "verb-agreement",
+          "choices": [
+            "NO CHANGE",
+            "exists",
+            "was",
+            "are"
+          ]
+        },
+        {
+          "text": "bark however, was",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "bark; however, was",
+            "bark, however, was",
+            "bark, however was"
+          ]
+        },
+        {
+          "text": "had began",
+          "type": "verb-form",
+          "choices": [
+            "NO CHANGE",
+            "would have began",
+            "begun",
+            "began"
+          ]
+        },
+        {
+          "text": "water, there are tree-covered bluffs, and",
+          "type": "parallel-structure",
+          "choices": [
+            "NO CHANGE",
+            "tree-covered bluffs flank the river,",
+            "featuring tree-covered bluffs,",
+            "tree-covered bluffs,"
+          ]
+        },
+        {
+          "text": "paint is what photographer Martin Klimas",
+          "type": "verb-form",
+          "choices": [
+            "NO CHANGE",
+            "there is paint carefully being poured by photographer Martin Klimas",
+            "paint is carefully poured by Martin Klimas, a photographer,",
+            "photographer Martin Klimas carefully pours paint"
+          ]
+        },
+        {
+          "text": "were sparked",
+          "type": "verb-agreement",
+          "choices": [
+            "NO CHANGE",
+            "have been",
+            "was",
+            "are"
+          ]
+        },
+        {
+          "text": "That would certainly impress Jenny.",
+          "type": "transition",
+          "choices": [
+            "NO CHANGE",
+            "That's simply a matter of taste.",
+            "That seems unwise.",
+            "That makes sense."
+          ]
+        },
+        {
+          "text": "gorge where the Columbia River is located.",
+          "type": "redundancy",
+          "choices": [
+            "NO CHANGE",
+            "gorge, which is over eighty miles long.",
+            "gorge and its scenery.",
+            "gorge."
+          ]
+        },
+        {
+          "text": "Impressive as it was,",
+          "type": "deleting-sentence",
+          "choices": [
+            "NO CHANGE",
+            "When",
+            "Soon",
+            "DELETE the underlined portion."
+          ]
+        },
+        {
+          "text": "Tunnels, now empty and strong. had",
+          "type": "verb-form",
+          "choices": [
+            "NO CHANGE",
+            "Rubble-filled tunnels have been emptied and strengthened.",
+            "The tunnels have had the rubble removed from them, and people have strengthened them.",
+            "Once filled with rubble, tunnels have been emptied and strengthened."
+          ]
+        },
+        {
+          "text": "were emerging",
+          "type": "verb-agreement",
+          "choices": [
+            "NO CHANGE",
+            "have emerged",
+            "was emerging",
+            "are emerging"
+          ]
+        },
+        {
+          "text": "There are thousands of new animal species identified",
+          "type": "comma-splice",
+          "choices": [
+            "NO CHANGE",
+            "Scientists say thousands of new animal species are",
+            "Of the thousands of new animal species",
+            "Thousands of new animal species are"
+          ]
+        },
+        {
+          "text": "; Robinson had",
+          "type": "verb-tense",
+          "choices": [
+            "NO CHANGE",
+            "; she had",
+            "; having",
+            "; Robinson"
+          ]
+        },
+        {
+          "text": "had evolved",
+          "type": "verb-tense",
+          "choices": [
+            "NO CHANGE",
+            "has evolved",
+            "was evolving",
+            "evolved"
+          ]
+        },
+        {
+          "text": "Though willow trees are often found near water and have become religious symbols in many cultures,",
+          "type": "transition",
+          "choices": [
+            "NO CHANGE",
+            "While the use of willow bark remained a commonplace method to reduce aches, pains, and fevers around the world,",
+            "Though the ancient Egyptian physician Imhotep was worshipped as a god of healing and thought to have used willow bark,",
+            "Despite the fact that possible side effects to using willow bark could sometimes include stomach aches and dizziness,"
+          ]
+        },
+        {
+          "text": "could of relied",
+          "type": "comma-splice",
+          "choices": [
+            "NO CHANGE",
+            "could rely",
+            "could have relied",
+            "relied"
+          ]
+        },
+        {
+          "text": "is gathered",
+          "type": "verb-agreement",
+          "choices": [
+            "NO CHANGE",
+            "are gathered",
+            "have been gathered",
+            "are being gathered"
+          ]
+        },
+        {
+          "text": "is unmoved by",
+          "type": "which-choice",
+          "choices": [
+            "NO CHANGE",
+            "gives little thought to",
+            "is nearly a celebrity in Clinton Hill due to",
+            "has benefited financially from"
+          ]
+        },
+        {
+          "text": "It was becoming clear that",
+          "type": "comma-splice",
+          "choices": [
+            "NO CHANGE",
+            "Having become",
+            "As it became",
+            "It became"
+          ]
+        },
+        {
+          "text": ", which, are programmed, to",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            ", which are programmed",
+            ": which are programmed",
+            "; which are programmed"
+          ]
+        },
+        {
+          "text": "all twelve of Cher Ami's missions were deemed successful",
+          "type": "modifier-misplaced",
+          "choices": [
+            "NO CHANGE",
+            "the twelve missions Cher Ami flew were successful.",
+            "successful missions by Cher Ami numbered twelve.",
+            "Cher Ami flew twelve successful missions."
+          ]
+        },
+        {
+          "text": "—so detailed that I could see the folds in Rodia's clothing—",
+          "type": "deleting-sentence",
+          "choices": [
+            "detail that offers much for the viewer to reflect upon and analyze.",
+            "detail suggesting that Black's collages overall, though the narrative might have underlying meanings that he or she is given to understand.",
+            "commentary on some of Black's art, he or she is given to believe that the artist enjoys revealing underlying meaning.",
+            "statement that the narrator's method is best described as one by the artist who created it."
+          ]
+        },
+        {
+          "text": "They were separated from other US forces.",
+          "type": "redundancy",
+          "choices": [
+            "NO CHANGE",
+            "German troops were all around them.",
+            "They would soon be out of rations.",
+            "DELETE the underlined portion."
+          ]
+        },
+        {
+          "text": "cloth was manufactured there and jewelry",
+          "type": "redundancy",
+          "choices": [
+            "NO CHANGE",
+            "the manufacture of cloth took place",
+            "manufactured cloth",
+            "cloth"
+          ]
+        }
+      ],
+      "phrase_structure_trigger": [
+        {
+          "text": "kind of sticks around one area.",
+          "type": "word-choice",
+          "choices": [
+            "NO CHANGE",
+            "rarely ventures far from its home territory.",
+            "doesn't delight in slogging long distances.",
+            "loves hanging around its neighborhood."
+          ]
+        },
+        {
+          "text": "went undifferentiated highlights how little scientists know for so long about",
+          "type": "modifier-misplaced",
+          "choices": [
+            "NO CHANGE",
+            "went undifferentiated for so long highlights how little scientists know about",
+            "for so long went undifferentiated, highlighting how little scientists know about",
+            "went undifferentiated, for so long highlighting how little scientists know about"
+          ]
+        },
+        {
+          "text": "highlights how little scientists know for so long about",
+          "type": "sentence-placement",
+          "choices": [
+            "NO CHANGE",
+            "for so long highlights how little scientists know",
+            "highlights for so long how little scientists know",
+            "highlights how for so long little scientists know"
+          ]
+        },
+        {
+          "text": "administered the medicine to",
+          "type": "which-choice",
+          "choices": [
+            "NO CHANGE",
+            "tested his new concoction on",
+            "The liquid was given to benefit",
+            "He decided to give the drink to"
+          ]
+        },
+        {
+          "text": "for sitting by the road",
+          "type": "redundancy",
+          "choices": [
+            "NO CHANGE",
+            "alongside the road",
+            "for travelers",
+            "DELETE the underlined portion."
+          ]
+        },
+        {
+          "text": "a site that became a National Historic Landmark in 2000.",
+          "type": "which-choice",
+          "choices": [
+            "NO CHANGE",
+            "the gorge on sections of the road where it wasn't feasible to restore motor vehicle traffic,",
+            "the splendor of the highway that Hill and Lancaster envisioned over one hundred years ago.",
+            "a beautiful path that has become a popular tourist destination."
+          ]
+        },
+        {
+          "text": "singer and music producer Sylvia Robinson",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "singer, and music producer, Sylvia Robinson,",
+            "singer and music producer, Sylvia Robinson,",
+            "singer, and music producer Sylvia Robinson"
+          ]
+        },
+        {
+          "text": "an upbeat disco record provided the background that",
+          "type": "modifier-dangling",
+          "choices": [
+            "NO CHANGE",
+            "an upbeat disco record provided by Robinson was rhymed over by the rappers.",
+            "rhymes were created by the rappers over an upbeat disco record provided by Robinson.",
+            "Robinson provided an upbeat disco record for the rappers to rhyme over."
+          ]
+        },
+        {
+          "text": "returned and came back",
+          "type": "redundancy",
+          "choices": [
+            "NO CHANGE",
+            "speedily returned, coming home",
+            "returned home",
+            "returned"
+          ]
+        },
+        {
+          "text": "where they can be seen even now",
+          "type": "punctuation",
+          "choices": [
+            "NO CHANGE",
+            "a place where visitors can see these amazing signs",
+            "and can be seen",
+            "DELETE the underlined portion."
+          ]
+        },
+        {
+          "text": "(fifty trillion neutrinos pass through your body every second)",
+          "type": "deleting-sentence",
+          "choices": [
+            "indicates why there are so many neutrinos.",
+            "specifies why neutrinos are practically weightless.",
+            "explains how neutrinos pass through matter.",
+            "emphasizes how numerous neutrinos are."
+          ]
+        },
+        {
+          "text": "and they're packed with",
+          "type": "fragment",
+          "choices": [
+            "NO CHANGE",
+            "board. They're",
+            "board, they're",
+            "board they're"
+          ]
+        },
+        {
+          "text": "exposing with audiences Celtic mouth music worldwide",
+          "type": "organization",
+          "choices": [
+            "NO CHANGE",
+            "exposing audiences worldwide to Celtic mouth music",
+            "worldwide exposing Celtic mouth music to audiences",
+            "worldwide exposing Celtic mouth music audiences,"
+          ]
+        },
+        {
+          "text": "(the collapsing of stars)",
+          "type": "punctuation",
+          "choices": [
+            "NO CHANGE",
+            "(the collapsing of stars) and the",
+            "(the collapsing of stars), the",
+            "(the collapsing of stars) the"
+          ]
+        },
+        {
+          "text": "continues to appeal to contemporary listeners",
+          "type": "comma-splice",
+          "choices": [
+            "NO CHANGE",
+            "albums and dance concerts around the world.",
+            "music CDs and performances in many different venues.",
+            "recordings that can be purchased online."
+          ]
+        },
+        {
+          "text": "Her beachside lodgings in Mozambique now house the Marine Megafauna Research Center.",
+          "type": "deleting-sentence",
+          "choices": [
+            "Yes, because the sentence interrupts the account of how Marshall came to investigate the possibility",
+            "Yes, because the sentence fails to clarify why Marshall did her research in Mozambique.",
+            "No, because the sentence explains how Marshall created a large scientific institution even though she started as a lone researcher.",
+            "No, because the sentence clarifies Marshall's role at the Marine Megafauna Center."
+          ]
+        },
+        {
+          "text": "combine traditional mouth music with modern rhythms",
+          "type": "word-choice",
+          "choices": [
+            "NO CHANGE",
+            "the classic Celtic music and modern rhythms.",
+            "traditional mouth music and modern rhythms together.",
+            "traditional mouth music with rhythms that are modern."
+          ]
+        },
+        {
+          "text": "first-class and the words take a back seat",
+          "type": "style",
+          "choices": [
+            "NO CHANGE",
+            "more important than the lyrics.",
+            "a bigger deal than the words.",
+            "way more vital than verse."
+          ]
+        },
+        {
+          "text": "easier to dance to",
+          "type": "word-choice",
+          "choices": [
+            "NO CHANGE",
+            "easily",
+            "that is easy",
+            "DELETE the underlined portion."
+          ]
+        },
+        {
+          "text": "its décor often being updated with",
+          "type": "modifier-dangling",
+          "choices": [
+            "NO CHANGE",
+            "Vintage, easily carrying my lightweight laptop",
+            "Vintage this evening—I can't be late to meet a friend exactly at eight—",
+            "Vintage tonight—I hope"
+          ]
+        },
+        {
+          "text": "The often tongue-twisting lyrics",
+          "type": "comma-splice",
+          "choices": [
+            "a description that emphasizes the difficulty of puirt-a-beul.",
+            "information about writing lyrics for puirt-a-beul music.",
+            "an indication of how often puirt-a-beul is performed in the Celtic culture.",
+            "an example of a training exercise puirt-a-beul singers use to practice lyrics."
+          ]
+        },
+        {
+          "text": "a native of Aruba",
+          "type": "word-choice",
+          "choices": [
+            "NO CHANGE",
+            "originally from Aruba, for more than half his life",
+            "living in Clinton Hill but a native of Aruba,",
+            "a newly found artist originally from Aruba,"
+          ]
+        }
+      ],
+      "other_trigger": [
+        {
+          "text": "lists willow",
+          "type": "verb-form",
+          "choices": [
+            "NO CHANGE",
+            "willow is listed among",
+            "willow is listed on",
+            "lists willow on"
+          ]
+        },
+        {
+          "text": "approximately about",
+          "type": "redundancy",
+          "choices": [
+            "NO CHANGE",
+            "an estimation of",
+            "in the region of",
+            "about"
+          ]
+        },
+        {
+          "text": "adds its",
+          "type": "verb-tense",
+          "choices": [
+            "NO CHANGE",
+            "then added it's",
+            "added its",
+            "adds it's"
+          ]
+        },
+        {
+          "text": "tripod and positions",
+          "type": "comma-usage",
+          "choices": [
+            "tripod, and he",
+            "tripod and he",
+            "tripod. He",
+            "tripod; he"
+          ]
+        },
+        {
+          "text": "level with",
+          "type": "idiom",
+          "choices": [
+            "NO CHANGE",
+            "eye-to-eye with",
+            "the same as",
+            "equal to"
+          ]
+        },
+        {
+          "text": "Jenny's study on",
+          "type": "fragment",
+          "choices": [
+            "NO CHANGE",
+            "while Jenny studied",
+            "Jenny, to study",
+            "Jenny studied"
+          ]
+        },
+        {
+          "text": "sculptures. Klimas",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "sculptures, and",
+            "sculptures,",
+            "sculptures;"
+          ]
+        },
+        {
+          "text": "that and",
+          "type": "pronoun-ambiguous",
+          "choices": [
+            "NO CHANGE",
+            "this and the",
+            "road and",
+            "it and it's"
+          ]
+        },
+        {
+          "text": "original road",
+          "type": "wordiness",
+          "choices": [
+            "NO CHANGE",
+            "road that first existed continued in a functional capacity,",
+            "highway that was completed in 1922 continued to be utilized,",
+            "original highway was still being utilized by the driving populace,"
+          ]
+        },
+        {
+          "text": "provides a",
+          "type": "verb-tense",
+          "choices": [
+            "NO CHANGE",
+            "has provided a",
+            "was providing a",
+            "provided a"
+          ]
+        },
+        {
+          "text": "practicalities it",
+          "type": "colon",
+          "choices": [
+            "NO CHANGE",
+            "practicalities: and",
+            "practicalities:",
+            "practicalities,"
+          ]
+        },
+        {
+          "text": "For this purpose",
+          "type": "transition",
+          "choices": [
+            "NO CHANGE",
+            "In contrast,",
+            "For this reason,",
+            "DELETE the underlined portion."
+          ]
+        },
+        {
+          "text": "down into the",
+          "type": "organization",
+          "choices": [
+            "NO CHANGE",
+            "down below",
+            "downwards",
+            "DELETE the underlined portion."
+          ]
+        },
+        {
+          "text": "dancers rely",
+          "type": "redundancy",
+          "choices": [
+            "NO CHANGE",
+            "they rely",
+            "dancers rely",
+            "relied"
+          ]
+        },
+        {
+          "text": "For example",
+          "type": "transition",
+          "choices": [
+            "NO CHANGE",
+            "Similarly,",
+            "However,",
+            "Thus,"
+          ]
+        },
+        {
+          "text": "headquarters homing pigeons",
+          "type": "colon",
+          "choices": [
+            "NO CHANGE",
+            "headquarters:",
+            "headquarters;",
+            "headquarters,"
+          ]
+        },
+        {
+          "text": "more easy accessible",
+          "type": "style",
+          "choices": [
+            "NO CHANGE",
+            "more easily",
+            "easier and",
+            "easy and"
+          ]
+        },
+        {
+          "text": "by imitating",
+          "type": "grammar",
+          "choices": [
+            "NO CHANGE",
+            "with",
+            "of",
+            "at"
+          ]
+        },
+        {
+          "text": "their civilization",
+          "type": "transition",
+          "choices": [
+            "NO CHANGE",
+            "and their civilization",
+            "so their civilization",
+            "because their civilization"
+          ]
+        },
+        {
+          "text": "to facilitate",
+          "type": "punctuation",
+          "choices": [
+            "NO CHANGE",
+            ", and to facilitate",
+            ". To facilitate",
+            "; to facilitate"
+          ]
+        },
+        {
+          "text": "syllables called vocables",
+          "type": "organization",
+          "choices": [
+            "NO CHANGE",
+            "syllables, called vocables,",
+            "syllables, called vocables,",
+            "syllables called, vocables,"
+          ]
+        },
+        {
+          "text": "in May",
+          "type": "logical-placement",
+          "choices": [
+            "where it is now.",
+            "after the word Maybe.",
+            "after the word explain.",
+            "after the word stir (and before the period)."
+          ]
+        },
+        {
+          "text": "in which",
+          "type": "idiom",
+          "choices": [
+            "NO CHANGE",
+            "of",
+            "to",
+            "DELETE the underlined portion."
+          ]
+        }
+      ],
+      "word_choice_trigger": [
+        {
+          "text": "preferred",
+          "type": "verb-tense",
+          "choices": [
+            "NO CHANGE",
+            "would of preferred",
+            "will prefer",
+            "prefer"
+          ]
+        },
+        {
+          "text": "noted",
+          "type": "verb-tense",
+          "choices": [
+            "NO CHANGE",
+            "notes",
+            "will note",
+            "had noted"
+          ]
+        },
+        {
+          "text": "it's",
+          "type": "grammar",
+          "choices": [
+            "NO CHANGE",
+            "their",
+            "its",
+            "its'"
+          ]
+        },
+        {
+          "text": "daunted",
+          "type": "word-choice",
+          "choices": [
+            "NO CHANGE",
+            "posed problems for",
+            "slowed potential",
+            "challenged"
+          ]
+        },
+        {
+          "text": "of",
+          "type": "idiom",
+          "choices": [
+            "NO CHANGE",
+            "up on",
+            "on",
+            "DELETE the underlined portion."
+          ]
+        },
+        {
+          "text": "openings",
+          "type": "adding-info",
+          "choices": [
+            "Yes, adds detail highlighting impressive design",
+            "Yes, hints at how engineers made openings",
+            "No, provides unrelated information",
+            "No, suggests creating intricate tunnels was easy"
+          ]
+        },
+        {
+          "text": "abounded.",
+          "type": "word-choice",
+          "choices": [
+            "NO CHANGE",
+            "took hold.",
+            "rekindled.",
+            "set in."
+          ]
+        },
+        {
+          "text": "Delight.",
+          "type": "comma-usage",
+          "choices": [
+            "NO CHANGE",
+            "Delight\"",
+            "Delight,\"",
+            "Delight,\""
+          ]
+        },
+        {
+          "text": "breathe",
+          "type": "verb-tense",
+          "choices": [
+            "NO CHANGE",
+            "at the same time,",
+            "this time,",
+            "still,"
+          ]
+        },
+        {
+          "text": "by",
+          "type": "verb-tense",
+          "choices": [
+            "NO CHANGE",
+            "and",
+            "while",
+            "DELETE the underlined portion."
+          ]
+        },
+        {
+          "text": "being",
+          "type": "punctuation",
+          "choices": [
+            "NO CHANGE",
+            "was being",
+            "is",
+            "DELETE the underlined portion."
+          ]
+        },
+        {
+          "text": "opulent",
+          "type": "word-choice",
+          "choices": [
+            "NO CHANGE",
+            "invaluable",
+            "lavish",
+            "upscale"
+          ]
+        },
+        {
+          "text": "fit",
+          "type": "verb-tense",
+          "choices": [
+            "NO CHANGE",
+            "has fit",
+            "is fit",
+            "fits"
+          ]
+        },
+        {
+          "text": "Former",
+          "type": "word-choice",
+          "choices": [
+            "NO CHANGE",
+            "Before",
+            "Earlier",
+            "Prior"
+          ]
+        },
+        {
+          "text": "whomever",
+          "type": "punctuation",
+          "choices": [
+            "NO CHANGE",
+            "which",
+            "whom",
+            "who"
+          ]
+        },
+        {
+          "text": "then",
+          "type": "word-choice",
+          "choices": [
+            "NO CHANGE",
+            "than",
+            "that",
+            "DELETE the underlined portion."
+          ]
+        },
+        {
+          "text": "having",
+          "type": "grammar",
+          "choices": [
+            "NO CHANGE",
+            "that",
+            "foggaras have",
+            "DELETE the underlined portion."
+          ]
+        },
+        {
+          "text": "them",
+          "type": "style",
+          "choices": [
+            "NO CHANGE",
+            "this musical form.",
+            "itself.",
+            "one."
+          ]
+        },
+        {
+          "text": "There",
+          "type": "grammar",
+          "choices": [
+            "NO CHANGE",
+            "They're",
+            "Its",
+            "Its'"
+          ]
+        },
+        {
+          "text": "who",
+          "type": "pronoun-ambiguous",
+          "choices": [
+            "NO CHANGE",
+            "of whom",
+            "which",
+            "whom"
+          ]
+        },
+        {
+          "text": "blamed",
+          "type": "fragment",
+          "choices": [
+            "NO CHANGE",
+            "wings\" and they are blamed",
+            "wings,\" they are blamed",
+            "wings.\" Blamed"
+          ]
+        }
+      ]
+    },
+    "rhetoricalTriggers": {
+      "accomplish": [
+        {
+          "stem": "Question 45 asks about the preceding passage as a whole. Suppose the writer's primary purpose had be",
+          "type": "main-idea"
+        },
+        {
+          "stem": "[Passage question] Suppose writer's purpose was to document the process of an artist. Would essay ac",
+          "type": "main-idea"
+        },
+        {
+          "stem": "[Question about passage as whole] Suppose the writer's purpose had been to survey the scientific com",
+          "type": "main-idea"
+        },
+        {
+          "stem": "[Passage question] Suppose writer wanted to write essay celebrating Robinson's pioneering role in mu",
+          "type": "main-idea"
+        },
+        {
+          "stem": "[Passage question] Suppose the writer's primary purpose had been to outline the development of a com",
+          "type": "main-idea"
+        },
+        {
+          "stem": "Suppose the writer's primary purpose had been to provide information about a civilization's efforts ",
+          "type": "style"
+        },
+        {
+          "stem": "The writer wants to emphasize that information gathered from the detected neutrinos at IceCube could",
+          "type": "which-choice"
+        }
+      ],
+      "best": [
+        {
+          "stem": "At the moment, manta ray populations face an array of threats worldwide. [Which statement best concl",
+          "type": "which-choice"
+        },
+        {
+          "stem": "The writer wants to emphasize that information gathered from the detected neutrinos at IceCube could",
+          "type": "which-choice"
+        },
+        {
+          "stem": "Given that all the choices are accurate, which one provides the best transition to the information i",
+          "type": "which-choice"
+        },
+        {
+          "stem": "Question 75 asks about the preceding passage as a whole. Which choice best concludes the sentence an",
+          "type": "main-idea"
+        },
+        {
+          "stem": "Which of the following true sentences best introduces the main idea of the paragraph?",
+          "type": "which-choice"
+        }
+      ],
+      "paragraph": [
+        {
+          "stem": "[Should writer begin new paragraph at: \"Klimas has photographed sonic sculptures of classical music.",
+          "type": "logical-placement"
+        },
+        {
+          "stem": "Question 75 asks about the preceding passage as a whole. Which choice best concludes the sentence an",
+          "type": "main-idea"
+        },
+        {
+          "stem": "Which of the following true sentences best introduces the main idea of the paragraph?",
+          "type": "which-choice"
+        },
+        {
+          "stem": "If the writer were to delete the preceding sentence, the paragraph would primarily lose a concluding",
+          "type": "transition"
+        },
+        {
+          "stem": "Given that all the following statements are true, which one, if added here, would most effectively i",
+          "type": "transition"
+        }
+      ],
+      "add": [
+        {
+          "stem": "[Sentence to add: \"The rest of the highway fell into disrepair.\" Where to place?]",
+          "type": "sentence-placement"
+        },
+        {
+          "stem": "[Add sentence: \"Robinson and her husband would go on to form other record labels as well.\"]",
+          "type": "adding-sentence"
+        },
+        {
+          "stem": "The writer is considering adding the following sentence to the essay: 'Fortunately, the web page inc",
+          "type": "logical-placement"
+        },
+        {
+          "stem": "Given that all the following statements are true, which one, if added here, would most effectively i",
+          "type": "transition"
+        },
+        {
+          "stem": "At this point, the writer is considering adding the following true sentence: In 1956, during the Cow",
+          "type": "adding-sentence"
+        }
+      ],
+      "place": [
+        {
+          "stem": "[Sentence to add: \"The rest of the highway fell into disrepair.\" Where to place?]",
+          "type": "sentence-placement"
+        },
+        {
+          "stem": "The writer is considering adding the following sentence to the essay: 'Fortunately, the web page inc",
+          "type": "logical-placement"
+        }
+      ],
+      "sentence": [
+        {
+          "stem": "[Sentence to add: \"The rest of the highway fell into disrepair.\" Where to place?]",
+          "type": "sentence-placement"
+        },
+        {
+          "stem": "[Add sentence: \"Robinson and her husband would go on to form other record labels as well.\"]",
+          "type": "adding-sentence"
+        },
+        {
+          "stem": "Given that all the choices are accurate, which one provides the best transition to the information i",
+          "type": "which-choice"
+        },
+        {
+          "stem": "Which choice provides the most effective transition from the preceding sentence to this sentence?",
+          "type": "transition"
+        },
+        {
+          "stem": "The writer is considering adding the following sentence to the essay: 'Fortunately, the web page inc",
+          "type": "logical-placement"
+        },
+        {
+          "stem": "Question 75 asks about the preceding passage as a whole. Which choice best concludes the sentence an",
+          "type": "main-idea"
+        },
+        {
+          "stem": "Which of the following true sentences best introduces the main idea of the paragraph?",
+          "type": "which-choice"
+        },
+        {
+          "stem": "If the writer were to delete the preceding sentence, the paragraph would primarily lose a concluding",
+          "type": "transition"
+        },
+        {
+          "stem": "At this point, the writer is considering adding the following true sentence: In 1956, during the Cow",
+          "type": "adding-sentence"
+        }
+      ],
+      "which choice": [
+        {
+          "stem": "The writer wants to emphasize that information gathered from the detected neutrinos at IceCube could",
+          "type": "which-choice"
+        },
+        {
+          "stem": "Which choice provides new information to the essay?",
+          "type": "punctuation"
+        },
+        {
+          "stem": "Which choice provides the most effective transition from the preceding sentence to this sentence?",
+          "type": "transition"
+        },
+        {
+          "stem": "Question 75 asks about the preceding passage as a whole. Which choice best concludes the sentence an",
+          "type": "main-idea"
+        }
+      ],
+      "transition": [
+        {
+          "stem": "Given that all the choices are accurate, which one provides the best transition to the information i",
+          "type": "which-choice"
+        },
+        {
+          "stem": "Which choice provides the most effective transition from the preceding sentence to this sentence?",
+          "type": "transition"
+        }
+      ],
+      "most logical": [
+        {
+          "stem": "The writer is considering adding the following sentence to the essay: 'Fortunately, the web page inc",
+          "type": "logical-placement"
+        }
+      ],
+      "which of the following": [
+        {
+          "stem": "Which of the following true sentences best introduces the main idea of the paragraph?",
+          "type": "which-choice"
+        }
+      ],
+      "delete": [
+        {
+          "stem": "If the writer were to delete the preceding sentence, the paragraph would primarily lose a concluding",
+          "type": "transition"
+        }
+      ],
+      "most effectively": [
+        {
+          "stem": "Given that all the following statements are true, which one, if added here, would most effectively i",
+          "type": "transition"
+        }
+      ]
+    },
+    "grammarPatterns": {},
+    "punctuationTriggers": {}
+  },
+  "underlinedPatterns": {},
+  "sentenceStructures": {},
+  "distractorConstruction": {},
+  "keywordAnalysis": {},
+  "positioningRules": {}
+}

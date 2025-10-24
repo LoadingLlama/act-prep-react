@@ -72,24 +72,28 @@ const LessonTableOfContents = ({ sections, currentSection }) => {
   const [headings, setHeadings] = useState([]);
 
   useEffect(() => {
-    // Extract H3 headings from sections
+    // Extract H3 and H4 headings from sections
     const extractedHeadings = [];
 
     sections.forEach((section, index) => {
       if (section.type !== 'quiz' && section.content) {
-        // Extract h4 tags (subsections)
-        const h4Matches = section.content.match(/<h4[^>]*>(.*?)<\/h4>/g);
+        // Extract both h3 and h4 tags
+        const h3Matches = section.content.match(/<h3[^>]*>(.*?)<\/h3>/g) || [];
+        const h4Matches = section.content.match(/<h4[^>]*>(.*?)<\/h4>/g) || [];
 
-        if (h4Matches) {
-          h4Matches.forEach(match => {
+        // Combine and process all headings
+        const allMatches = [...h3Matches, ...h4Matches];
+
+        if (allMatches.length > 0) {
+          allMatches.forEach(match => {
             const title = match
-              .replace(/<h4[^>]*>/, '')
-              .replace('</h4>', '')
+              .replace(/<h[34][^>]*>/, '')
+              .replace(/<\/h[34]>/, '')
               .replace(/<[^>]*>/g, '')
               .replace(/^\d+\.\s*/, '') // Remove leading numbers
               .trim();
 
-            if (title && title.length > 0) {
+            if (title && title.length > 0 && title !== 'Key Takeaways') {
               extractedHeadings.push({
                 title,
                 sectionIndex: index
