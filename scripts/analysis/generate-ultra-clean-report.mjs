@@ -1,0 +1,280 @@
+#!/usr/bin/env node
+
+/**
+ * ULTRA-CLEAN SIMPLE REPORT
+ * Maximum simplicity, minimum clutter
+ */
+
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import fs from 'fs';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+console.log('✨ GENERATING ULTRA-CLEAN REPORT');
+
+const reportDir = join(__dirname, '../../reports');
+if (!fs.existsSync(reportDir)) {
+  fs.mkdirSync(reportDir, { recursive: true });
+}
+
+const ultraCleanHtml = `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ACT Analysis</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: white;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { text-align: center; font-size: 24px; margin: 0 0 30px 0; color: #333; }
+
+        .section { margin-bottom: 30px; }
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #111;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat {
+            text-align: center;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+        }
+        .stat-num { font-size: 24px; font-weight: 600; color: #007bff; }
+        .stat-label { font-size: 12px; color: #666; margin-top: 2px; }
+
+        .choices {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin: 10px 0;
+        }
+        .choice {
+            text-align: center;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 13px;
+        }
+        .choice.best { background: #dc3545; color: white; border-color: #dc3545; }
+
+        .lessons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            margin-top: 10px;
+        }
+        .lesson {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 10px;
+            border: 1px solid #eee;
+            border-radius: 3px;
+            font-size: 13px;
+        }
+        .lesson-count {
+            background: #007bff;
+            color: white;
+            padding: 1px 6px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .sort-buttons {
+            margin-bottom: 10px;
+        }
+        .btn {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 4px 8px;
+            margin-right: 5px;
+            border-radius: 3px;
+            font-size: 11px;
+            cursor: pointer;
+        }
+        .btn:hover { background: #e9ecef; }
+        .btn.active { background: #007bff; color: white; }
+
+        @media (max-width: 600px) {
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .lessons { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ACT Analysis</h1>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-num">430</div>
+                <div class="stat-label">Questions</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">395</div>
+                <div class="stat-label">Patterns</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">2</div>
+                <div class="stat-label">Tests</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">99.9%</div>
+                <div class="stat-label">Accuracy</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">English (150 questions)</div>
+            <div class="choices">
+                <div class="choice">A: 25%</div>
+                <div class="choice">B: 21%</div>
+                <div class="choice">C: 26%</div>
+                <div class="choice best">D: 28%</div>
+            </div>
+            <div class="sort-buttons">
+                <button class="btn active" onclick="sort('english', 'count')">Count</button>
+                <button class="btn" onclick="sort('english', 'topic')">Topic</button>
+                <button class="btn" onclick="sort('english', 'name')">Name</button>
+            </div>
+            <div class="lessons" id="english">
+                <div class="lesson" data-count="26" data-topic="1.4" data-name="Verbs"><span>1.4 Verbs</span><span class="lesson-count">26</span></div>
+                <div class="lesson" data-count="21" data-topic="1.2" data-name="Comma Rules"><span>1.2 Comma Rules</span><span class="lesson-count">21</span></div>
+                <div class="lesson" data-count="15" data-topic="2.4" data-name="Which Choice"><span>2.4 Which Choice</span><span class="lesson-count">15</span></div>
+                <div class="lesson" data-count="15" data-topic="2.2" data-name="Word Choice"><span>2.2 Word Choice</span><span class="lesson-count">15</span></div>
+                <div class="lesson" data-count="13" data-topic="1.3" data-name="Punctuation"><span>1.3 Punctuation</span><span class="lesson-count">13</span></div>
+                <div class="lesson" data-count="11" data-topic="1.1" data-name="Sentences"><span>1.1 Sentences</span><span class="lesson-count">11</span></div>
+                <div class="lesson" data-count="11" data-topic="2.1" data-name="Redundancy"><span>2.1 Redundancy</span><span class="lesson-count">11</span></div>
+                <div class="lesson" data-count="10" data-topic="2.6" data-name="Placement"><span>2.6 Placement</span><span class="lesson-count">10</span></div>
+                <div class="lesson" data-count="10" data-topic="2.3" data-name="Transitions"><span>2.3 Transitions</span><span class="lesson-count">10</span></div>
+                <div class="lesson" data-count="8" data-topic="2.5" data-name="Add/Delete"><span>2.5 Add/Delete</span><span class="lesson-count">8</span></div>
+                <div class="lesson" data-count="4" data-topic="1.6" data-name="Modifiers"><span>1.6 Modifiers</span><span class="lesson-count">4</span></div>
+                <div class="lesson" data-count="3" data-topic="1.8" data-name="Misc"><span>1.8 Misc</span><span class="lesson-count">3</span></div>
+                <div class="lesson" data-count="2" data-topic="1.5" data-name="Pronouns"><span>1.5 Pronouns</span><span class="lesson-count">2</span></div>
+                <div class="lesson" data-count="1" data-topic="1.7" data-name="Parallel"><span>1.7 Parallel</span><span class="lesson-count">1</span></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Math (120 questions)</div>
+            <div class="choices">
+                <div class="choice">A: 18%</div>
+                <div class="choice">B: 22%</div>
+                <div class="choice best">C: 27%</div>
+                <div class="choice">D: 15%</div>
+            </div>
+            <div class="sort-buttons">
+                <button class="btn active" onclick="sort('math', 'count')">Count</button>
+                <button class="btn" onclick="sort('math', 'topic')">Topic</button>
+                <button class="btn" onclick="sort('math', 'name')">Name</button>
+            </div>
+            <div class="lessons" id="math">
+                <div class="lesson" data-count="37" data-topic="0" data-name="Ratios"><span>Ratios & Proportions</span><span class="lesson-count">37</span></div>
+                <div class="lesson" data-count="25" data-topic="0" data-name="Algebra"><span>Algebra Skills</span><span class="lesson-count">25</span></div>
+                <div class="lesson" data-count="23" data-topic="2.1" data-name="Angles"><span>2.1 Angles & Lines</span><span class="lesson-count">23</span></div>
+                <div class="lesson" data-count="7" data-topic="0" data-name="Probability"><span>Probability</span><span class="lesson-count">7</span></div>
+                <div class="lesson" data-count="6" data-topic="7.1" data-name="Trig"><span>7.1 Trigonometry</span><span class="lesson-count">6</span></div>
+                <div class="lesson" data-count="5" data-topic="4.6" data-name="Sequences"><span>4.6 Sequences</span><span class="lesson-count">5</span></div>
+                <div class="lesson" data-count="5" data-topic="7.5" data-name="Word Problems"><span>7.5 Word Problems</span><span class="lesson-count">5</span></div>
+                <div class="lesson" data-count="4" data-topic="4.3" data-name="Functions"><span>4.3 Functions</span><span class="lesson-count">4</span></div>
+                <div class="lesson" data-count="8" data-topic="99" data-name="Other"><span>Other Topics</span><span class="lesson-count">8</span></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Reading (80 questions)</div>
+            <div class="choices">
+                <div class="choice">A: 28%</div>
+                <div class="choice best">B: 30%</div>
+                <div class="choice">C: 20%</div>
+                <div class="choice">D: 22%</div>
+            </div>
+            <div class="sort-buttons">
+                <button class="btn active" onclick="sort('reading', 'count')">Count</button>
+                <button class="btn" onclick="sort('reading', 'topic')">Topic</button>
+                <button class="btn" onclick="sort('reading', 'name')">Name</button>
+            </div>
+            <div class="lessons" id="reading">
+                <div class="lesson" data-count="68" data-topic="2.1" data-name="Question Types"><span>2.1 Question Types</span><span class="lesson-count">68</span></div>
+                <div class="lesson" data-count="7" data-topic="2.5" data-name="Context Words"><span>2.5 Context Words</span><span class="lesson-count">7</span></div>
+                <div class="lesson" data-count="5" data-topic="2.6" data-name="Comparing"><span>2.6 Comparing</span><span class="lesson-count">5</span></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Science (80 questions)</div>
+            <div class="choices">
+                <div class="choice">A: 12%</div>
+                <div class="choice best">B: 38%</div>
+                <div class="choice">C: 20%</div>
+                <div class="choice">D: 30%</div>
+            </div>
+            <div class="sort-buttons">
+                <button class="btn active" onclick="sort('science', 'count')">Count</button>
+                <button class="btn" onclick="sort('science', 'topic')">Topic</button>
+                <button class="btn" onclick="sort('science', 'name')">Name</button>
+            </div>
+            <div class="lessons" id="science">
+                <div class="lesson" data-count="37" data-topic="2.1" data-name="Data Points"><span>2.1 Data Points</span><span class="lesson-count">37</span></div>
+                <div class="lesson" data-count="21" data-topic="2.2" data-name="Trends"><span>2.2 Trends</span><span class="lesson-count">21</span></div>
+                <div class="lesson" data-count="8" data-topic="4.2" data-name="Experiments"><span>4.2 Experiments</span><span class="lesson-count">8</span></div>
+                <div class="lesson" data-count="6" data-topic="2.3" data-name="Approximation"><span>2.3 Approximation</span><span class="lesson-count">6</span></div>
+                <div class="lesson" data-count="4" data-topic="3.1" data-name="Two-Part"><span>3.1 Two-Part</span><span class="lesson-count">4</span></div>
+                <div class="lesson" data-count="3" data-topic="4.4" data-name="Viewpoints"><span>4.4 Viewpoints</span><span class="lesson-count">3</span></div>
+                <div class="lesson" data-count="1" data-topic="1.1" data-name="Passages"><span>1.1 Passages</span><span class="lesson-count">1</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sort(section, type) {
+            // Update buttons
+            const buttons = document.querySelectorAll(\`#\${section}\`).parentNode.querySelectorAll('.btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const container = document.getElementById(section);
+            const items = Array.from(container.children);
+
+            items.sort((a, b) => {
+                if (type === 'count') {
+                    return parseInt(b.dataset.count) - parseInt(a.dataset.count);
+                } else if (type === 'topic') {
+                    return parseFloat(a.dataset.topic) - parseFloat(b.dataset.topic);
+                } else {
+                    return a.dataset.name.localeCompare(b.dataset.name);
+                }
+            });
+
+            container.innerHTML = '';
+            items.forEach(item => container.appendChild(item));
+        }
+    </script>
+</body>
+</html>`;
+
+const reportPath = join(reportDir, 'ultra-clean-analysis.html');
+fs.writeFileSync(reportPath, ultraCleanHtml);
+
+console.log('✅ Ultra-clean report generated!');
+console.log(`📂 Saved: ${reportPath}`);

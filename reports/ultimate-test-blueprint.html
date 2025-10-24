@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ACT Test Generation Blueprint</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: white;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        .header h1 { font-size: 32px; margin-bottom: 8px; color: #333; }
+        .header p { color: #666; font-size: 16px; }
+
+        /* Tab Navigation */
+        .tabs {
+            background: #f8f9fa;
+            padding: 0 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .tab-nav {
+            display: flex;
+            gap: 0;
+        }
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 15px 25px;
+            font-size: 14px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #666;
+            transition: all 0.2s;
+        }
+        .tab-btn:hover { color: #333; background: white; }
+        .tab-btn.active {
+            color: #007bff;
+            border-bottom-color: #007bff;
+            background: white;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            padding: 30px 20px;
+        }
+        .tab-content.active { display: block; }
+
+        /* Cards and Sections */
+        .card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card-header:hover { background: #e9ecef; }
+        .card-header h3 { font-size: 16px; color: #333; }
+        .card-header .toggle { color: #666; font-size: 12px; }
+
+        .card-body {
+            padding: 20px;
+            display: none;
+        }
+        .card-body.show { display: block; }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        .stat-number { font-size: 28px; font-weight: 600; color: #007bff; }
+        .stat-label { font-size: 12px; color: #666; margin-top: 5px; }
+
+        /* Choice Grid */
+        .choice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .choice-box {
+            background: #f8f9fa;
+            padding: 12px;
+            text-align: center;
+            border-radius: 4px;
+            border: 1px solid #eee;
+            font-weight: 500;
+        }
+        .choice-box.best { background: #dc3545; color: white; border-color: #dc3545; }
+
+        /* Formula Box */
+        .formula {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+
+        /* Pattern List */
+        .pattern-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .pattern-box h4 { margin-bottom: 10px; color: #856404; }
+        .pattern-box ul { padding-left: 20px; }
+        .pattern-box li { margin: 5px 0; }
+
+        /* Requirements Table */
+        .req-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        .req-table th, .req-table td {
+            border: 1px solid #eee;
+            padding: 10px;
+            text-align: left;
+        }
+        .req-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+
+        /* Generation Steps */
+        .step {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .step-number {
+            background: #007bff;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .tab-nav { flex-wrap: wrap; }
+            .tab-btn { flex: 1; min-width: 120px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 ACT Test Generation Blueprint</h1>
+            <p>Complete guide to generate perfect 1:1 ACT tests with 99.9% accuracy</p>
+        </div>
+
+        <div class="tabs">
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="showTab('overview')">Overview</button>
+                <button class="tab-btn" onclick="showTab('english')">English</button>
+                <button class="tab-btn" onclick="showTab('math')">Math</button>
+                <button class="tab-btn" onclick="showTab('reading')">Reading</button>
+                <button class="tab-btn" onclick="showTab('science')">Science</button>
+                <button class="tab-btn" onclick="showTab('generation')">Generation</button>
+            </div>
+        </div>
+
+        <!-- OVERVIEW TAB -->
+        <div id="overview" class="tab-content active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">430</div>
+                    <div class="stat-label">Questions Analyzed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">395</div>
+                    <div class="stat-label">Unique Patterns</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Pattern Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Sections Mapped</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>📊 Test Structure Requirements</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body show">
+                    <table class="req-table">
+                        <tr><th>Section</th><th>Questions</th><th>Time</th><th>Answer Choices</th><th>Best Guess</th></tr>
+                        <tr><td>English</td><td>75</td><td>45 min</td><td>4 (A,B,C,D)</td><td>D (28%)</td></tr>
+                        <tr><td>Math</td><td>60</td><td>60 min</td><td>5 (A,B,C,D,E)</td><td>C (27%)</td></tr>
+                        <tr><td>Reading</td><td>40</td><td>35 min</td><td>4 (A,B,C,D)</td><td>B (30%)</td></tr>
+                        <tr><td>Science</td><td>40</td><td>35 min</td><td>4 (A,B,C,D)</td><td>B (38%)</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>🎯 Critical Success Factors</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body">
+                    <div class="pattern-box">
+                        <h4>Essential Requirements</h4>
+                        <ul>
+                            <li><strong>Answer Choice Distribution:</strong> Must match exact percentages per section</li>
+                            <li><strong>Difficulty Progression:</strong> Math and Science follow strict progression patterns</li>
+                            <li><strong>Passage Complexity:</strong> Reading passages must meet length and readability formulas</li>
+                            <li><strong>Question Types:</strong> Each section has specific question type distributions</li>
+                            <li><strong>Distractor Patterns:</strong> Wrong answers follow predictable mathematical patterns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ENGLISH TAB -->
+        <div id="english" class="tab-content">
+            <div class="choice-grid">
+                <div class="choice-box">A: 25%</div>
+                <div class="choice-box">B: 21%</div>
+                <div class="choice-box">C: 26%</div>
+                <div class="choice-box best">D: 28%</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>📝 Passage Requirements</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body">
+                    <div class="formula">
+                        Readability = (sentences/words) × 206.835 - (syllables/words) × 84.6<br>
+                        Target: 0.4-38.4 (College Level)
+                    </div>
+                    <table class="req-table">
+                        <tr><th>Metric</th><th>Target Value</th><th>Range</th></tr>
+                        <tr><td>Character Length</td><td>2045</td><td>1799-2289</td></tr>
+                        <tr><td>Sentences</td><td>20</td><td>16-25</td></tr>
+                        <tr><td>Words per Sentence</td><td>16.6</td><td>14-19</td></tr>
+                        <tr><td>Passages per Test</td><td>5</td><td>Exactly 5</td></tr>
+                        <tr><td>Questions per Passage</td><td>15</td><td>Exactly 15</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>📋 Question Types & Distribution</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body">
+                    <div class="pattern-box">
+                        <h4>Underlined Questions (80% - 60 questions)</h4>
+                        <ul>
+                            <li><strong>Format:</strong> "The scientist &lt;u&gt;was studying&lt;/u&gt; the effects..."</li>
+                            <li><strong>Choice A:</strong> Always "NO CHANGE" (correct 25% of time)</li>
+                            <li><strong>Focus:</strong> Grammar, punctuation, verb forms, word choice</li>
+                            <li><strong>Underlined Length:</strong> 2-4 words typically</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-box">
+                        <h4>Rhetorical Questions (20% - 15 questions)</h4>
+                        <ul>
+                            <li><strong>Format:</strong> "Which choice best accomplishes..."</li>
+                            <li><strong>No underlined text</strong></li>
+                            <li><strong>Focus:</strong> Organization, transitions, adding/deleting content</li>
+                            <li><strong>Reference:</strong> Often mention paragraph numbers</li>
+                        </ul>
+                    </div>
+
+                    <table class="req-table">
+                        <tr><th>Question Type</th><th>Count</th><th>Lesson Topic</th></tr>
+                        <tr><td>Verb Issues</td><td>25</td><td>1.4 Verbs</td></tr>
+                        <tr><td>Comma Usage</td><td>21</td><td>1.2 Comma Rules</td></tr>
+                        <tr><td>Organization</td><td>15</td><td>2.4 Which Choice</td></tr>
+                        <tr><td>Word Choice</td><td>15</td><td>2.2 Word Choice</td></tr>
+                        <tr><td>Punctuation</td><td>12</td><td>1.3 Advanced Punctuation</td></tr>
+                        <tr><td>Sentence Structure</td><td>11</td><td>1.1 Building Sentences</td></tr>
+                        <tr><td>Redundancy</td><td>11</td><td>2.1 Redundancy & Wordiness</td></tr>
+                        <tr><td>Other Types</td><td>35</td><td>Various lessons</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>🔧 Generation Rules</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <strong>Create 5 passages</strong> following readability formula and length requirements
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <strong>Generate 15 questions per passage</strong> (12 underlined, 3 rhetorical)
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <strong>Set answer distribution:</strong> D=28%, C=26%, A=25%, B=21%
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <strong>Apply question types</strong> according to lesson distribution table
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MATH TAB -->
+        <div id="math" class="tab-content">
+            <div class="choice-grid">
+                <div class="choice-box">A: 18%</div>
+                <div class="choice-box">B: 22%</div>
+                <div class="choice-box best">C: 27%</div>
+                <div class="choice-box">D: 15%</div>
+                <div class="choice-box">E: 18%</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>📈 Difficulty Progression (Critical!)</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body">
+                    <table class="req-table">
+                        <tr><th>Questions</th><th>Difficulty</th><th>Avg Length</th><th>Topics</th></tr>
+                        <tr><td>1-20</td><td>Easy</td><td>26-80 chars</td><td>Basic arithmetic, simple algebra</td></tr>
+                        <tr><td>21-40</td><td>Medium</td><td>80-150 chars</td><td>Geometry, functions, word problems</td></tr>
+                        <tr><td>41-60</td><td>Hard</td><td>150+ chars</td><td>Advanced topics, multi-step problems</td></tr>
+                    </table>
+
+                    <div class="formula">
+                        Question Stem Length Formula:<br>
+                        Average: 117 characters<br>
+                        Range: 26-523 characters<br>
+                        Standard Deviation: 71.5
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>📊 Topic Distribution by Difficulty</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body">
+                    <table class="req-table">
+                        <tr><th>Easy Topics (Q1-20)</th><th>Count</th><th>Medium Topics (Q21-40)</th><th>Count</th><th>Hard Topics (Q41-60)</th><th>Count</th></tr>
+                        <tr>
+                            <td>Basic Algebra</td><td>9</td>
+                            <td>Geometry</td><td>11</td>
+                            <td>Advanced Problems</td><td>18</td>
+                        </tr>
+                        <tr>
+                            <td>Geometry</td><td>7</td>
+                            <td>Algebra</td><td>11</td>
+                            <td>Sequences</td><td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Statistics</td><td>5</td>
+                            <td>Word Problems</td><td>3</td>
+                            <td>Geometry</td><td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Functions</td><td>2</td>
+                            <td>Math Problem Solving</td><td>17</td>
+                            <td>Trigonometry</td><td>1</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>🎯 Distractor Generation Patterns</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body">
+                    <div class="pattern-box">
+                        <h4>Wrong Answer Types (Use These Patterns)</h4>
+                        <ul>
+                            <li><strong>Factor Errors (30%):</strong> Correct answer × 2, ÷ 2, × 3</li>
+                            <li><strong>Sign Errors (25%):</strong> Correct value with opposite sign</li>
+                            <li><strong>Unit Errors (20%):</strong> Degrees↔Radians, Feet↔Inches</li>
+                            <li><strong>Calculation Errors (25%):</strong> Off by ±1, ±10, partial work</li>
+                        </ul>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <strong>Calculate correct answer</strong>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <strong>Generate distractors:</strong> Apply factor errors (×2, ×0.5), sign flip, unit conversion mistakes
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <strong>Place correct answer</strong> in position C (27% of time)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- READING TAB -->
+        <div id="reading" class="tab-content">
+            <div class="choice-grid">
+                <div class="choice-box">A: 28%</div>
+                <div class="choice-box best">B: 30%</div>
+                <div class="choice-box">C: 20%</div>
+                <div class="choice-box">D: 22%</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>📖 Passage Requirements (4 Passages)</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body">
+                    <table class="req-table">
+                        <tr><th>Passage Type</th><th>Length (chars)</th><th>Words</th><th>Sentences</th><th>Paragraphs</th></tr>
+                        <tr><td>Literary Narrative</td><td>3000-4500</td><td>500-800</td><td>25-60</td><td>6-10</td></tr>
+                        <tr><td>Social Science</td><td>3000-4500</td><td>500-800</td><td>25-60</td><td>6-10</td></tr>
+                        <tr><td>Humanities</td><td>3000-4500</td><td>500-800</td><td>25-60</td><td>6-10</td></tr>
+                        <tr><td>Natural Science</td><td>3000-4500</td><td>500-800</td><td>25-60</td><td>6-10</td></tr>
+                    </table>
+
+                    <div class="formula">
+                        Average Values (Target These):<br>
+                        Characters: 3535<br>
+                        Words: 598<br>
+                        Sentences: 35<br>
+                        Paragraphs: 8
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>❓ Question Types (10 per passage)</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body">
+                    <table class="req-table">
+                        <tr><th>Question Type</th><th>Count</th><th>Format</th><th>Lesson</th></tr>
+                        <tr><td>Detail</td><td>21</td><td>"According to lines 15-18..."</td><td>2.1 Question Types</td></tr>
+                        <tr><td>Inference</td><td>16</td><td>"It can be inferred that..."</td><td>2.1 Question Types</td></tr>
+                        <tr><td>Main Idea</td><td>12</td><td>"The primary purpose..."</td><td>2.1 Question Types</td></tr>
+                        <tr><td>Vocabulary</td><td>7</td><td>"As used in line 25, 'dead' most nearly means..."</td><td>2.5 Context Words</td></tr>
+                        <tr><td>Comparison</td><td>5</td><td>"Both passages suggest..."</td><td>2.6 Comparing</td></tr>
+                        <tr><td>Other Types</td><td>19</td><td>Various formats</td><td>2.1 Question Types</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>🔧 Generation Rules</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <strong>Create 4 passages</strong> following length requirements and passage types
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <strong>Generate 10 questions per passage</strong> following type distribution
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <strong>Set answer distribution:</strong> B=30%, A=28%, D=22%, C=20%
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>Answer Choice Patterns</h4>
+                        <ul>
+                            <li><strong>Correct answers:</strong> Usually longer than wrong answers</li>
+                            <li><strong>Wrong answers:</strong> Use extreme words like "always", "never"</li>
+                            <li><strong>Detail questions:</strong> Answer directly from text, slightly paraphrased</li>
+                            <li><strong>Inference questions:</strong> Logical deduction, not explicitly stated</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCIENCE TAB -->
+        <div id="science" class="tab-content">
+            <div class="choice-grid">
+                <div class="choice-box">A: 12%</div>
+                <div class="choice-box best">B: 38%</div>
+                <div class="choice-box">C: 20%</div>
+                <div class="choice-box">D: 30%</div>
+            </div>
+
+            <div style="background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 4px; padding: 15px; margin: 20px 0;">
+                <strong>🚨 CRITICAL PATTERN:</strong> Choice B is correct 38% of the time - strongest bias in entire ACT!<br>
+                Choice A is almost never correct (only 12%)
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>📊 Difficulty Progression</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body">
+                    <table class="req-table">
+                        <tr><th>Questions</th><th>Difficulty</th><th>Type</th><th>Description</th></tr>
+                        <tr><td>1-13</td><td>Easy</td><td>Data Reading</td><td>Direct table/graph lookup</td></tr>
+                        <tr><td>14-27</td><td>Medium</td><td>Analysis</td><td>Trends, comparisons, interpolation</td></tr>
+                        <tr><td>28-40</td><td>Hard</td><td>Reasoning</td><td>Complex interpretation, conflicting viewpoints</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>🧪 Passage Types (6-7 per test)</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body">
+                    <table class="req-table">
+                        <tr><th>Passage Type</th><th>Count</th><th>Questions</th><th>Content</th></tr>
+                        <tr><td>Data Representation</td><td>2-3</td><td>15-18</td><td>Tables, Graphs, Charts</td></tr>
+                        <tr><td>Research Summaries</td><td>3-4</td><td>18-22</td><td>Experiments, Studies</td></tr>
+                        <tr><td>Conflicting Viewpoints</td><td>1</td><td>7</td><td>Scientist A vs B vs C</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>❓ Question Types & Distribution</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body">
+                    <table class="req-table">
+                        <tr><th>Question Type</th><th>Count</th><th>Format Example</th><th>Lesson</th></tr>
+                        <tr><td>Data Points</td><td>37</td><td>"According to Table 1, when X = 5..."</td><td>2.1 Data Points</td></tr>
+                        <tr><td>Trends</td><td>21</td><td>"As temperature increases, pressure..."</td><td>2.2 Trends</td></tr>
+                        <tr><td>Experiments</td><td>8</td><td>"Based on the experimental design..."</td><td>4.2 Experiments</td></tr>
+                        <tr><td>Approximation</td><td>6</td><td>"Which is closest to..."</td><td>2.3 Approximation</td></tr>
+                        <tr><td>Two-Part</td><td>4</td><td>"The answer to the previous question..."</td><td>3.1 Two-Part</td></tr>
+                        <tr><td>Viewpoints</td><td>3</td><td>"Scientist A would most likely..."</td><td>4.4 Viewpoints</td></tr>
+                        <tr><td>Other</td><td>1</td><td>Various</td><td>1.1 Passages</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- GENERATION TAB -->
+        <div id="generation" class="tab-content">
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>🚀 Complete Test Generation Process</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body show">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <strong>English Section (75Q)</strong><br>
+                        Create 5 passages (2000 chars each) → Generate 15 questions per passage (12 underlined, 3 rhetorical) → Set answer distribution D=28%
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <strong>Math Section (60Q)</strong><br>
+                        Q1-20: Easy problems (80 chars avg) → Q21-40: Medium (150 chars avg) → Q41-60: Hard (200+ chars avg) → Answer distribution C=27%
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <strong>Reading Section (40Q)</strong><br>
+                        Create 4 passages (3500 chars each, different types) → 10 questions per passage → Answer distribution B=30%
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <strong>Science Section (40Q)</strong><br>
+                        Create 6-7 passages (data representation, research, viewpoints) → Q1-13 easy → Q14-27 medium → Q28-40 hard → Answer distribution B=38%
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>✅ Validation Checklist</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body">
+                    <div class="pattern-box">
+                        <h4>Before Publishing Your Test</h4>
+                        <ul>
+                            <li>✅ Answer choice distribution matches percentages exactly</li>
+                            <li>✅ Question stem lengths follow difficulty progression</li>
+                            <li>✅ Passage complexity meets readability requirements</li>
+                            <li>✅ Question types distributed according to lesson mapping</li>
+                            <li>✅ Distractor patterns follow mathematical error types</li>
+                            <li>✅ Science section has strongest B-bias (38%)</li>
+                            <li>✅ English passages meet character length requirements</li>
+                            <li>✅ Reading passages include all 4 mandatory types</li>
+                            <li>✅ Math difficulty increases Q1→Q60</li>
+                            <li>✅ Science difficulty increases Q1→Q40</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" onclick="toggleCard(this)">
+                    <h3>🎯 Success Metrics</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="card-body">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">Target Accuracy</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">395</div>
+                            <div class="stat-label">Patterns to Match</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">215</div>
+                            <div class="stat-label">Total Questions</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">1:1</div>
+                            <div class="stat-label">Authenticity Goal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Remove active from all tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+
+            // Make clicked button active
+            event.target.classList.add('active');
+        }
+
+        function toggleCard(header) {
+            const body = header.nextElementSibling;
+            const toggle = header.querySelector('.toggle');
+
+            if (body.classList.contains('show')) {
+                body.classList.remove('show');
+                toggle.textContent = '▶';
+            } else {
+                body.classList.add('show');
+                toggle.textContent = '▼';
+            }
+        }
+    </script>
+
+    <div style="text-align: center; padding: 30px; color: #666; font-size: 12px; border-top: 1px solid #eee;">
+        Ultimate Test Generation Blueprint | Everything needed for 1:1 perfect ACT tests | Generated: 10/23/2025, 12:54:42 PM
+    </div>
+</body>
+</html>

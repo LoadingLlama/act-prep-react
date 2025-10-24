@@ -1,0 +1,1006 @@
+{
+  "metadata": {
+    "timestamp": "2025-10-23T19:17:01.278Z",
+    "testsAnalyzed": [
+      1,
+      2
+    ],
+    "totalQuestions": 430,
+    "analysisVersion": "1.0.0"
+  },
+  "english": {
+    "questionTypes": {
+      "comma-splice": 6,
+      "fragment": 5,
+      "dash": 3,
+      "comma-usage": 21,
+      "deleting-sentence": 4,
+      "verb-agreement": 5,
+      "colon": 4,
+      "sentence-placement": 3,
+      "word-choice": 11,
+      "modifier-misplaced": 2,
+      "which-choice": 9,
+      "main-idea": 6,
+      "verb-form": 4,
+      "redundancy": 9,
+      "transition": 10,
+      "verb-tense": 11,
+      "idiom": 3,
+      "logical-placement": 3,
+      "parallel-structure": 1,
+      "pronoun-ambiguous": 2,
+      "adding-info": 2,
+      "wordiness": 2,
+      "adding-sentence": 2,
+      "modifier-dangling": 2,
+      "grammar": 6,
+      "punctuation": 6,
+      "style": 4,
+      "organization": 4
+    },
+    "totalQuestions": 150,
+    "passagesPerTest": 5,
+    "questionsPerPassage": {
+      "1": 30,
+      "2": 30,
+      "3": 30,
+      "4": 30,
+      "5": 30
+    },
+    "difficultyProgression": {
+      "1": [
+        "medium",
+        "medium"
+      ],
+      "2": [
+        "medium",
+        "medium"
+      ],
+      "3": [
+        "medium",
+        "medium"
+      ],
+      "4": [
+        "medium",
+        "hard"
+      ],
+      "5": [
+        "hard",
+        "medium"
+      ],
+      "6": [
+        "easy",
+        "medium"
+      ],
+      "7": [
+        "medium",
+        "easy"
+      ],
+      "8": [
+        "hard",
+        "easy"
+      ],
+      "9": [
+        "medium",
+        "hard"
+      ],
+      "10": [
+        "easy",
+        "medium"
+      ],
+      "11": [
+        "medium",
+        "medium"
+      ],
+      "12": [
+        "hard",
+        "medium"
+      ],
+      "13": [
+        "medium",
+        "hard"
+      ],
+      "14": [
+        "hard",
+        "medium"
+      ],
+      "15": [
+        "hard",
+        "medium"
+      ],
+      "16": [
+        "medium",
+        "easy"
+      ],
+      "17": [
+        "medium",
+        "easy"
+      ],
+      "18": [
+        "medium",
+        "hard"
+      ],
+      "19": [
+        "easy",
+        "medium"
+      ],
+      "20": [
+        "hard",
+        "medium"
+      ],
+      "21": [
+        "easy",
+        "medium"
+      ],
+      "22": [
+        "medium",
+        "hard"
+      ],
+      "23": [
+        "medium",
+        "medium"
+      ],
+      "24": [
+        "easy",
+        "medium"
+      ],
+      "25": [
+        "medium",
+        "easy"
+      ],
+      "26": [
+        "hard",
+        "easy"
+      ],
+      "27": [
+        "medium",
+        "hard"
+      ],
+      "28": [
+        "medium",
+        "medium"
+      ],
+      "29": [
+        "medium",
+        "medium"
+      ],
+      "30": [
+        "hard",
+        "medium"
+      ],
+      "31": [
+        "medium",
+        "hard"
+      ],
+      "32": [
+        "medium",
+        "medium"
+      ],
+      "33": [
+        "medium",
+        "medium"
+      ],
+      "34": [
+        "easy",
+        "hard"
+      ],
+      "35": [
+        "medium",
+        "hard"
+      ],
+      "36": [
+        "easy",
+        "medium"
+      ],
+      "37": [
+        "medium",
+        "hard"
+      ],
+      "38": [
+        "hard",
+        "medium"
+      ],
+      "39": [
+        "easy",
+        "medium"
+      ],
+      "40": [
+        "medium",
+        "easy"
+      ],
+      "41": [
+        "medium",
+        "hard"
+      ],
+      "42": [
+        "hard",
+        "medium"
+      ],
+      "43": [
+        "medium",
+        "medium"
+      ],
+      "44": [
+        "medium",
+        "hard"
+      ],
+      "45": [
+        "hard",
+        "hard"
+      ],
+      "46": [
+        "hard",
+        "medium"
+      ],
+      "47": [
+        "medium",
+        "medium"
+      ],
+      "48": [
+        "medium",
+        "hard"
+      ],
+      "49": [
+        "easy",
+        "medium"
+      ],
+      "50": [
+        "easy",
+        "medium"
+      ],
+      "51": [
+        "easy",
+        "medium"
+      ],
+      "52": [
+        "medium",
+        "medium"
+      ],
+      "53": [
+        "hard",
+        "easy"
+      ],
+      "54": [
+        "medium",
+        "hard"
+      ],
+      "55": [
+        "medium",
+        "hard"
+      ],
+      "56": [
+        "medium",
+        "hard"
+      ],
+      "57": [
+        "medium",
+        "hard"
+      ],
+      "58": [
+        "hard",
+        "hard"
+      ],
+      "59": [
+        "hard",
+        "medium"
+      ],
+      "60": [
+        "hard",
+        "hard"
+      ],
+      "61": [
+        "medium",
+        "medium"
+      ],
+      "62": [
+        "easy",
+        "medium"
+      ],
+      "63": [
+        "easy",
+        "hard"
+      ],
+      "64": [
+        "medium",
+        "medium"
+      ],
+      "65": [
+        "hard",
+        "medium"
+      ],
+      "66": [
+        "hard",
+        "medium"
+      ],
+      "67": [
+        "medium",
+        "hard"
+      ],
+      "68": [
+        "medium",
+        "easy"
+      ],
+      "69": [
+        "medium",
+        "hard"
+      ],
+      "70": [
+        "medium",
+        "easy"
+      ],
+      "71": [
+        "medium",
+        "medium"
+      ],
+      "72": [
+        "easy",
+        "medium"
+      ],
+      "73": [
+        "medium",
+        "medium"
+      ],
+      "74": [
+        "easy",
+        "easy"
+      ],
+      "75": [
+        "hard",
+        "hard"
+      ]
+    },
+    "passageStats": {
+      "lengths": {
+        "count": 10,
+        "min": 1799,
+        "max": 2289,
+        "mean": 2045.3,
+        "median": 2020,
+        "standardDeviation": 159.64714216045334
+      },
+      "complexity": {
+        "sentences": {
+          "count": 10,
+          "min": 16,
+          "max": 25,
+          "mean": 19.5,
+          "median": 19,
+          "standardDeviation": 2.3769728648009427
+        },
+        "words": {
+          "count": 10,
+          "min": 288,
+          "max": 365,
+          "mean": 320.8,
+          "median": 318,
+          "standardDeviation": 25.991537084212624
+        },
+        "avgWordsPerSentence": {
+          "count": 10,
+          "min": 14.227272727272727,
+          "max": 19.210526315789473,
+          "mean": 16.593186337054757,
+          "median": 16.833333333333332,
+          "standardDeviation": 1.6121987430296671
+        },
+        "readability": {
+          "count": 10,
+          "min": 0.42823733862962854,
+          "max": 38.3945479641132,
+          "mean": 24.76187252475707,
+          "median": 25.08633096137092,
+          "standardDeviation": 10.269698073451744
+        }
+      }
+    }
+  },
+  "math": {
+    "topics": {
+      "functions": 4,
+      "geometry": 24,
+      "algebra": 25,
+      "word-problem": 5,
+      "statistics-probability": 8,
+      "number-theory": 1,
+      "math-problem-solving": 38,
+      "sequences": 5,
+      "matrices": 1,
+      "trigonometry": 6,
+      "complex-numbers": 1,
+      "vectors": 1,
+      "counting": 1
+    },
+    "totalQuestions": 120,
+    "difficultyProgression": {
+      "1": [
+        "easy",
+        "easy"
+      ],
+      "2": [
+        "medium",
+        "easy"
+      ],
+      "3": [
+        "medium",
+        "easy"
+      ],
+      "4": [
+        "medium",
+        "easy"
+      ],
+      "5": [
+        "easy",
+        "easy"
+      ],
+      "6": [
+        "medium",
+        "easy"
+      ],
+      "7": [
+        "medium",
+        "easy"
+      ],
+      "8": [
+        "easy",
+        "easy"
+      ],
+      "9": [
+        "medium",
+        "easy"
+      ],
+      "10": [
+        "medium",
+        "easy"
+      ],
+      "11": [
+        "medium",
+        "easy"
+      ],
+      "12": [
+        "easy",
+        "easy"
+      ],
+      "13": [
+        "easy",
+        "easy"
+      ],
+      "14": [
+        "medium",
+        "hard"
+      ],
+      "15": [
+        "easy",
+        "easy"
+      ],
+      "16": [
+        "easy",
+        "easy"
+      ],
+      "17": [
+        "medium",
+        "easy"
+      ],
+      "18": [
+        "hard",
+        "easy"
+      ],
+      "19": [
+        "medium",
+        "easy"
+      ],
+      "20": [
+        "medium",
+        "easy"
+      ],
+      "21": [
+        "easy",
+        "medium"
+      ],
+      "22": [
+        "medium",
+        "medium"
+      ],
+      "23": [
+        "medium",
+        "medium"
+      ],
+      "24": [
+        "hard",
+        "medium"
+      ],
+      "25": [
+        "medium",
+        "medium"
+      ],
+      "26": [
+        "easy",
+        "medium"
+      ],
+      "27": [
+        "medium",
+        "medium"
+      ],
+      "28": [
+        "medium",
+        "medium"
+      ],
+      "29": [
+        "medium",
+        "medium"
+      ],
+      "30": [
+        "easy",
+        "medium"
+      ],
+      "31": [
+        "hard",
+        "medium"
+      ],
+      "32": [
+        "hard",
+        "medium"
+      ],
+      "33": [
+        "medium",
+        "medium"
+      ],
+      "34": [
+        "hard",
+        "medium"
+      ],
+      "35": [
+        "easy",
+        "medium"
+      ],
+      "36": [
+        "medium",
+        "medium"
+      ],
+      "37": [
+        "medium",
+        "medium"
+      ],
+      "38": [
+        "easy",
+        "medium"
+      ],
+      "39": [
+        "medium",
+        "medium"
+      ],
+      "40": [
+        "medium",
+        "medium"
+      ],
+      "41": [
+        "hard",
+        "hard"
+      ],
+      "42": [
+        "medium",
+        "hard"
+      ],
+      "43": [
+        "medium",
+        "hard"
+      ],
+      "44": [
+        "medium",
+        "hard"
+      ],
+      "45": [
+        "hard",
+        "hard"
+      ],
+      "46": [
+        "medium",
+        "hard"
+      ],
+      "47": [
+        "medium",
+        "hard"
+      ],
+      "48": [
+        "medium",
+        "hard"
+      ],
+      "49": [
+        "medium",
+        "hard"
+      ],
+      "50": [
+        "medium",
+        "hard"
+      ],
+      "51": [
+        "medium",
+        "hard"
+      ],
+      "52": [
+        "hard",
+        "hard"
+      ],
+      "53": [
+        "medium",
+        "hard"
+      ],
+      "54": [
+        "hard",
+        "hard"
+      ],
+      "55": [
+        "hard",
+        "hard"
+      ],
+      "56": [
+        "hard",
+        "hard"
+      ],
+      "57": [
+        "hard",
+        "hard"
+      ],
+      "58": [
+        "hard",
+        "hard"
+      ],
+      "59": [
+        "medium",
+        "hard"
+      ],
+      "60": [
+        "hard",
+        "hard"
+      ]
+    },
+    "questionComplexity": {
+      "stemLengths": {
+        "count": 120,
+        "min": 26,
+        "max": 523,
+        "mean": 117.05,
+        "median": 100,
+        "standardDeviation": 71.54880036264296
+      }
+    },
+    "choicePatterns": {
+      "5": 120
+    },
+    "topicsByDifficulty": {
+      "easy": {
+        "functions": 2,
+        "algebra": 9,
+        "number-theory": 1,
+        "geometry": 7,
+        "math-problem-solving": 3,
+        "statistics-probability": 5,
+        "word-problem": 2,
+        "trigonometry": 2
+      },
+      "medium": {
+        "geometry": 11,
+        "algebra": 11,
+        "word-problem": 3,
+        "statistics-probability": 3,
+        "math-problem-solving": 17,
+        "sequences": 1,
+        "matrices": 1,
+        "trigonometry": 3,
+        "functions": 2,
+        "complex-numbers": 1,
+        "counting": 1
+      },
+      "hard": {
+        "geometry": 6,
+        "sequences": 4,
+        "algebra": 5,
+        "trigonometry": 1,
+        "vectors": 1,
+        "math-problem-solving": 18
+      }
+    }
+  },
+  "reading": {
+    "questionTypes": {
+      "main-idea": 12,
+      "characterization": 1,
+      "sequence": 1,
+      "interpretation": 3,
+      "detail": 17,
+      "inference": 16,
+      "perspective": 1,
+      "vocabulary": 7,
+      "comprehension": 4,
+      "comparison": 5,
+      "structure": 8,
+      "tone": 5
+    },
+    "passageTypes": {
+      "humanities": 4,
+      "natural-science": 3,
+      "social-science": 1
+    },
+    "totalQuestions": 80,
+    "passagesPerTest": 4,
+    "questionsPerPassage": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "passageStats": {
+      "lengths": {
+        "count": 8,
+        "min": 2705,
+        "max": 4588,
+        "mean": 3535.375,
+        "median": 3362,
+        "standardDeviation": 801.1705401317499
+      },
+      "complexity": {
+        "sentences": {
+          "count": 8,
+          "min": 27,
+          "max": 59,
+          "mean": 35.125,
+          "median": 31,
+          "standardDeviation": 10.564533827860082
+        },
+        "words": {
+          "count": 8,
+          "min": 430,
+          "max": 838,
+          "mean": 598.125,
+          "median": 517,
+          "standardDeviation": 151.69660304370694
+        },
+        "paragraphs": {
+          "count": 8,
+          "min": 6,
+          "max": 10,
+          "mean": 7.5,
+          "median": 7,
+          "standardDeviation": 1.224744871391589
+        },
+        "avgWordsPerSentence": {
+          "count": 8,
+          "min": 10.88888888888889,
+          "max": 28.48148148148148,
+          "mean": 17.804837916933497,
+          "median": 17.344827586206897,
+          "standardDeviation": 5.071491458331599
+        }
+      }
+    }
+  },
+  "science": {
+    "questionTypes": {
+      "data-interpretation": 33,
+      "ordering-data": 1,
+      "comparison": 3,
+      "application": 3,
+      "two-part-reasoning": 4,
+      "trends": 21,
+      "experimental-design": 3,
+      "approximation": 6,
+      "conflicting-viewpoints": 3,
+      "finding-information": 1,
+      "evaluating-information": 2
+    },
+    "totalQuestions": 80,
+    "difficultyProgression": {
+      "1": [
+        "medium",
+        "easy"
+      ],
+      "2": [
+        "hard",
+        "easy"
+      ],
+      "3": [
+        "medium",
+        "easy"
+      ],
+      "4": [
+        "hard",
+        "easy"
+      ],
+      "5": [
+        "hard",
+        "easy"
+      ],
+      "6": [
+        "hard",
+        "easy"
+      ],
+      "7": [
+        "easy",
+        "easy"
+      ],
+      "8": [
+        "easy",
+        "easy"
+      ],
+      "9": [
+        "medium",
+        "easy"
+      ],
+      "10": [
+        "medium",
+        "easy"
+      ],
+      "11": [
+        "easy",
+        "easy"
+      ],
+      "12": [
+        "medium",
+        "easy"
+      ],
+      "13": [
+        "hard",
+        "easy"
+      ],
+      "14": [
+        "easy",
+        "easy"
+      ],
+      "15": [
+        "medium",
+        "easy"
+      ],
+      "16": [
+        "easy",
+        "easy"
+      ],
+      "17": [
+        "medium",
+        "easy"
+      ],
+      "18": [
+        "easy",
+        "easy"
+      ],
+      "19": [
+        "medium",
+        "easy"
+      ],
+      "20": [
+        "hard",
+        "easy"
+      ],
+      "21": [
+        "hard",
+        "medium"
+      ],
+      "22": [
+        "medium",
+        "medium"
+      ],
+      "23": [
+        "medium",
+        "easy"
+      ],
+      "24": [
+        "hard",
+        "easy"
+      ],
+      "25": [
+        "easy",
+        "medium"
+      ],
+      "26": [
+        "easy",
+        "easy"
+      ],
+      "27": [
+        "medium",
+        "easy"
+      ],
+      "28": [
+        "hard",
+        "hard"
+      ],
+      "29": [
+        "easy",
+        "hard"
+      ],
+      "30": [
+        "medium",
+        "hard"
+      ],
+      "31": [
+        "medium",
+        "hard"
+      ],
+      "32": [
+        "easy",
+        "hard"
+      ],
+      "33": [
+        "easy",
+        "hard"
+      ],
+      "34": [
+        "medium",
+        "hard"
+      ],
+      "35": [
+        "medium",
+        "hard"
+      ],
+      "36": [
+        "hard",
+        "hard"
+      ],
+      "37": [
+        "hard",
+        "hard"
+      ],
+      "38": [
+        "easy",
+        "hard"
+      ],
+      "39": [
+        "medium",
+        "hard"
+      ],
+      "40": [
+        "medium",
+        "easy"
+      ]
+    },
+    "questionComplexity": {
+      "stemLengths": {
+        "count": 80,
+        "min": 58,
+        "max": 337,
+        "mean": 134.275,
+        "median": 119,
+        "standardDeviation": 52.80198268057744
+      }
+    }
+  },
+  "crossSection": {
+    "totalQuestions": 430,
+    "difficultyDistribution": {
+      "medium": 187,
+      "hard": 120,
+      "easy": 123
+    },
+    "sectionDifficulties": {
+      "english": {
+        "medium": 81,
+        "hard": 43,
+        "easy": 26
+      },
+      "math": {
+        "easy": 31,
+        "medium": 54,
+        "hard": 35
+      },
+      "reading": {
+        "medium": 32,
+        "hard": 19,
+        "easy": 29
+      },
+      "science": {
+        "medium": 20,
+        "hard": 23,
+        "easy": 37
+      }
+    },
+    "sectionSizes": {
+      "english": 150,
+      "math": 120,
+      "reading": 80,
+      "science": 80
+    }
+  },
+  "generation": {}
+}

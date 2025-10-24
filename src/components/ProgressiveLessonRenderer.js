@@ -604,36 +604,41 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
             <div style={{
               display: 'flex',
               justifyContent: 'center',
-              gap: '1rem',
+              gap: '0.75rem',
               flexWrap: 'wrap'
             }}>
-              {/* Back to Lessons */}
+              {/* Previous Lesson */}
               <button
                 onClick={() => {
+                  // TODO: Navigate to previous lesson
+                  console.log('Previous lesson clicked');
                   if (onNavigate) onNavigate('home');
                 }}
                 style={{
-                  backgroundColor: 'transparent',
-                  color: '#6b7280',
-                  padding: '0.75rem 1.5rem',
-                  fontSize: '0.95rem',
+                  backgroundColor: '#ffffff',
+                  color: '#4b5563',
+                  padding: '0.625rem 1.25rem',
+                  fontSize: '0.875rem',
                   fontWeight: '500',
-                  borderRadius: '8px',
-                  border: '1px solid #d1d5db',
+                  borderRadius: '6px',
+                  border: '1px solid #e5e7eb',
                   cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  minWidth: '140px'
+                  transition: 'all 0.15s ease',
+                  minWidth: '130px',
+                  boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)'
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.backgroundColor = '#f9fafb';
-                  e.target.style.borderColor = '#9ca3af';
+                  e.target.style.borderColor = '#d1d5db';
+                  e.target.style.color = '#1f2937';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = 'transparent';
-                  e.target.style.borderColor = '#d1d5db';
+                  e.target.style.backgroundColor = '#ffffff';
+                  e.target.style.borderColor = '#e5e7eb';
+                  e.target.style.color = '#4b5563';
                 }}
               >
-                ← Back to Lessons
+                ← Previous Lesson
               </button>
 
               {/* Practice Quiz */}
@@ -643,63 +648,61 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
                   console.log('Practice quiz clicked for lesson:', lesson?.lesson_key);
                 }}
                 style={{
-                  backgroundColor: '#3b82f6',
-                  color: 'white',
-                  padding: '0.75rem 1.5rem',
-                  fontSize: '0.95rem',
-                  fontWeight: '600',
-                  borderRadius: '8px',
-                  border: 'none',
+                  backgroundColor: '#ffffff',
+                  color: '#2563eb',
+                  padding: '0.625rem 1.25rem',
+                  fontSize: '0.875rem',
+                  fontWeight: '500',
+                  borderRadius: '6px',
+                  border: '1px solid #e5e7eb',
                   cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  minWidth: '140px',
-                  boxShadow: '0 2px 6px rgba(59, 130, 246, 0.25)'
+                  transition: 'all 0.15s ease',
+                  minWidth: '130px',
+                  boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#2563eb';
-                  e.target.style.transform = 'translateY(-1px)';
-                  e.target.style.boxShadow = '0 4px 10px rgba(59, 130, 246, 0.35)';
+                  e.target.style.backgroundColor = '#eff6ff';
+                  e.target.style.borderColor = '#bfdbfe';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#3b82f6';
-                  e.target.style.transform = 'translateY(0)';
-                  e.target.style.boxShadow = '0 2px 6px rgba(59, 130, 246, 0.25)';
+                  e.target.style.backgroundColor = '#ffffff';
+                  e.target.style.borderColor = '#e5e7eb';
                 }}
               >
-                📝 Practice
+                Practice Quiz
               </button>
 
-              {/* Complete Lesson */}
+              {/* Next Lesson */}
               <button
                 onClick={() => {
                   if (onStatusChange) onStatusChange('completed');
+                  // TODO: Navigate to next lesson
+                  console.log('Next lesson clicked');
                   if (onNavigate) onNavigate('home');
                 }}
                 style={{
-                  backgroundColor: '#10b981',
-                  color: 'white',
-                  padding: '0.75rem 1.5rem',
-                  fontSize: '0.95rem',
-                  fontWeight: '600',
-                  borderRadius: '8px',
-                  border: 'none',
+                  backgroundColor: '#ffffff',
+                  color: '#059669',
+                  padding: '0.625rem 1.25rem',
+                  fontSize: '0.875rem',
+                  fontWeight: '500',
+                  borderRadius: '6px',
+                  border: '1px solid #e5e7eb',
                   cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  minWidth: '140px',
-                  boxShadow: '0 2px 6px rgba(16, 185, 129, 0.25)'
+                  transition: 'all 0.15s ease',
+                  minWidth: '130px',
+                  boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#059669';
-                  e.target.style.transform = 'translateY(-1px)';
-                  e.target.style.boxShadow = '0 4px 10px rgba(16, 185, 129, 0.35)';
+                  e.target.style.backgroundColor = '#f0fdf4';
+                  e.target.style.borderColor = '#bbf7d0';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#10b981';
-                  e.target.style.transform = 'translateY(0)';
-                  e.target.style.boxShadow = '0 2px 6px rgba(16, 185, 129, 0.25)';
+                  e.target.style.backgroundColor = '#ffffff';
+                  e.target.style.borderColor = '#e5e7eb';
                 }}
               >
-                ✓ Complete
+                Next Lesson →
               </button>
             </div>
           </div>

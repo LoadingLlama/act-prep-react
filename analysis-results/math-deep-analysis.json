@@ -1,0 +1,2427 @@
+{
+  "topicProgression": {
+    "byPosition": [
+      {
+        "position": 1,
+        "section": "foundation",
+        "mostCommonTopic": "geometry",
+        "mostCommonDifficulty": "easy",
+        "topicVariety": 2
+      },
+      {
+        "position": 2,
+        "section": "foundation",
+        "mostCommonTopic": "statistics-probability",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 3,
+        "section": "foundation",
+        "mostCommonTopic": "algebra",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 1
+      },
+      {
+        "position": 4,
+        "section": "foundation",
+        "mostCommonTopic": "algebra",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 5,
+        "section": "foundation",
+        "mostCommonTopic": "statistics-probability",
+        "mostCommonDifficulty": "easy",
+        "topicVariety": 2
+      },
+      {
+        "position": 6,
+        "section": "foundation",
+        "mostCommonTopic": "word-problem",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 1
+      },
+      {
+        "position": 7,
+        "section": "foundation",
+        "mostCommonTopic": "word-problem",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 8,
+        "section": "foundation",
+        "mostCommonTopic": "algebra",
+        "mostCommonDifficulty": "easy",
+        "topicVariety": 2
+      },
+      {
+        "position": 9,
+        "section": "foundation",
+        "mostCommonTopic": "algebra",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 10,
+        "section": "foundation",
+        "mostCommonTopic": "geometry",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 1
+      },
+      {
+        "position": 11,
+        "section": "foundation",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 12,
+        "section": "foundation",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "easy",
+        "topicVariety": 2
+      },
+      {
+        "position": 13,
+        "section": "foundation",
+        "mostCommonTopic": "geometry",
+        "mostCommonDifficulty": "easy",
+        "topicVariety": 2
+      },
+      {
+        "position": 14,
+        "section": "foundation",
+        "mostCommonTopic": "sequences",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 15,
+        "section": "foundation",
+        "mostCommonTopic": "geometry",
+        "mostCommonDifficulty": "easy",
+        "topicVariety": 2
+      },
+      {
+        "position": 16,
+        "section": "foundation",
+        "mostCommonTopic": "trigonometry",
+        "mostCommonDifficulty": "easy",
+        "topicVariety": 2
+      },
+      {
+        "position": 17,
+        "section": "foundation",
+        "mostCommonTopic": "statistics-probability",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 18,
+        "section": "foundation",
+        "mostCommonTopic": "functions",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 19,
+        "section": "foundation",
+        "mostCommonTopic": "statistics-probability",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 20,
+        "section": "foundation",
+        "mostCommonTopic": "trigonometry",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 21,
+        "section": "intermediate",
+        "mostCommonTopic": "trigonometry",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 22,
+        "section": "intermediate",
+        "mostCommonTopic": "functions",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 23,
+        "section": "intermediate",
+        "mostCommonTopic": "geometry",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 24,
+        "section": "intermediate",
+        "mostCommonTopic": "trigonometry",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 25,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 26,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 27,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 28,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 29,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 30,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 31,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 32,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 33,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 34,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 35,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 36,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 37,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 38,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 39,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 40,
+        "section": "intermediate",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "medium",
+        "topicVariety": 2
+      },
+      {
+        "position": 41,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 42,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 43,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 44,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 45,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 46,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 47,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 48,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 49,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 50,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 51,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 52,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 53,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 54,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 55,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 56,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 57,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 58,
+        "section": "advanced",
+        "mostCommonTopic": "math-problem-solving",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 59,
+        "section": "advanced",
+        "mostCommonTopic": "sequences",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      },
+      {
+        "position": 60,
+        "section": "advanced",
+        "mostCommonTopic": "geometry",
+        "mostCommonDifficulty": "hard",
+        "topicVariety": 2
+      }
+    ],
+    "frequency": {
+      "functions": 4,
+      "geometry": 24,
+      "algebra": 25,
+      "word-problem": 5,
+      "statistics-probability": 8,
+      "number-theory": 1,
+      "math-problem-solving": 38,
+      "sequences": 5,
+      "matrices": 1,
+      "trigonometry": 6,
+      "complex-numbers": 1,
+      "vectors": 1,
+      "counting": 1
+    },
+    "difficultyByTopic": {
+      "functions": {
+        "easy": 2,
+        "medium": 2,
+        "hard": 0
+      },
+      "geometry": {
+        "easy": 7,
+        "medium": 11,
+        "hard": 6
+      },
+      "algebra": {
+        "easy": 9,
+        "medium": 11,
+        "hard": 5
+      },
+      "word-problem": {
+        "easy": 2,
+        "medium": 3,
+        "hard": 0
+      },
+      "statistics-probability": {
+        "easy": 5,
+        "medium": 3,
+        "hard": 0
+      },
+      "number-theory": {
+        "easy": 1,
+        "medium": 0,
+        "hard": 0
+      },
+      "math-problem-solving": {
+        "easy": 3,
+        "medium": 17,
+        "hard": 18
+      },
+      "sequences": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 4
+      },
+      "matrices": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 0
+      },
+      "trigonometry": {
+        "easy": 2,
+        "medium": 3,
+        "hard": 1
+      },
+      "complex-numbers": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 0
+      },
+      "vectors": {
+        "easy": 0,
+        "medium": 0,
+        "hard": 1
+      },
+      "counting": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 0
+      }
+    }
+  },
+  "difficultyDistribution": {},
+  "questionComplexity": {
+    "metrics": [
+      {
+        "position": 1,
+        "topic": "functions",
+        "difficulty": "easy",
+        "wordCount": 17,
+        "charCount": 76,
+        "numberCount": 4,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 43,
+        "choiceCount": 5,
+        "complexityScore": 12
+      },
+      {
+        "position": 2,
+        "topic": "geometry",
+        "difficulty": "medium",
+        "wordCount": 24,
+        "charCount": 125,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 86,
+        "choiceCount": 5,
+        "complexityScore": 20.2
+      },
+      {
+        "position": 3,
+        "topic": "algebra",
+        "difficulty": "medium",
+        "wordCount": 17,
+        "charCount": 102,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 1,
+        "variableCount": 74,
+        "choiceCount": 5,
+        "complexityScore": 17.5
+      },
+      {
+        "position": 4,
+        "topic": "word-problem",
+        "difficulty": "medium",
+        "wordCount": 47,
+        "charCount": 283,
+        "numberCount": 6,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 216,
+        "choiceCount": 5,
+        "complexityScore": 49.7
+      },
+      {
+        "position": 5,
+        "topic": "algebra",
+        "difficulty": "easy",
+        "wordCount": 12,
+        "charCount": 41,
+        "numberCount": 3,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 21,
+        "choiceCount": 5,
+        "complexityScore": 6.800000000000001
+      },
+      {
+        "position": 6,
+        "topic": "word-problem",
+        "difficulty": "medium",
+        "wordCount": 49,
+        "charCount": 224,
+        "numberCount": 5,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 161,
+        "choiceCount": 5,
+        "complexityScore": 38.6
+      },
+      {
+        "position": 7,
+        "topic": "statistics-probability",
+        "difficulty": "medium",
+        "wordCount": 46,
+        "charCount": 254,
+        "numberCount": 3,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 200,
+        "choiceCount": 5,
+        "complexityScore": 45.5
+      },
+      {
+        "position": 8,
+        "topic": "number-theory",
+        "difficulty": "easy",
+        "wordCount": 40,
+        "charCount": 234,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 180,
+        "choiceCount": 5,
+        "complexityScore": 40.6
+      },
+      {
+        "position": 9,
+        "topic": "word-problem",
+        "difficulty": "medium",
+        "wordCount": 38,
+        "charCount": 181,
+        "numberCount": 6,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 127,
+        "choiceCount": 5,
+        "complexityScore": 31
+      },
+      {
+        "position": 10,
+        "topic": "geometry",
+        "difficulty": "medium",
+        "wordCount": 17,
+        "charCount": 95,
+        "numberCount": 4,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 63,
+        "choiceCount": 5,
+        "complexityScore": 15.500000000000002
+      },
+      {
+        "position": 11,
+        "topic": "statistics-probability",
+        "difficulty": "medium",
+        "wordCount": 55,
+        "charCount": 337,
+        "numberCount": 4,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 268,
+        "choiceCount": 5,
+        "complexityScore": 60.300000000000004
+      },
+      {
+        "position": 12,
+        "topic": "algebra",
+        "difficulty": "easy",
+        "wordCount": 17,
+        "charCount": 83,
+        "numberCount": 4,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 59,
+        "choiceCount": 5,
+        "complexityScore": 15.200000000000001
+      },
+      {
+        "position": 13,
+        "topic": "algebra",
+        "difficulty": "easy",
+        "wordCount": 15,
+        "charCount": 73,
+        "numberCount": 5,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 46,
+        "choiceCount": 5,
+        "complexityScore": 12.200000000000001
+      },
+      {
+        "position": 14,
+        "topic": "algebra",
+        "difficulty": "medium",
+        "wordCount": 17,
+        "charCount": 102,
+        "numberCount": 0,
+        "equationCount": 0,
+        "fractionCount": 1,
+        "variableCount": 75,
+        "choiceCount": 5,
+        "complexityScore": 17.1
+      },
+      {
+        "position": 15,
+        "topic": "algebra",
+        "difficulty": "easy",
+        "wordCount": 29,
+        "charCount": 179,
+        "numberCount": 4,
+        "equationCount": 1,
+        "fractionCount": 1,
+        "variableCount": 133,
+        "choiceCount": 5,
+        "complexityScore": 31.6
+      },
+      {
+        "position": 16,
+        "topic": "geometry",
+        "difficulty": "easy",
+        "wordCount": 16,
+        "charCount": 78,
+        "numberCount": 1,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 57,
+        "choiceCount": 5,
+        "complexityScore": 13.3
+      },
+      {
+        "position": 17,
+        "topic": "geometry",
+        "difficulty": "medium",
+        "wordCount": 34,
+        "charCount": 182,
+        "numberCount": 4,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 133,
+        "choiceCount": 5,
+        "complexityScore": 31.200000000000003
+      },
+      {
+        "position": 18,
+        "topic": "geometry",
+        "difficulty": "hard",
+        "wordCount": 28,
+        "charCount": 122,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 87,
+        "choiceCount": 5,
+        "complexityScore": 20.800000000000004
+      },
+      {
+        "position": 19,
+        "topic": "algebra",
+        "difficulty": "medium",
+        "wordCount": 26,
+        "charCount": 102,
+        "numberCount": 6,
+        "equationCount": 2,
+        "fractionCount": 0,
+        "variableCount": 61,
+        "choiceCount": 5,
+        "complexityScore": 17.6
+      },
+      {
+        "position": 20,
+        "topic": "algebra",
+        "difficulty": "medium",
+        "wordCount": 26,
+        "charCount": 122,
+        "numberCount": 3,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 81,
+        "choiceCount": 5,
+        "complexityScore": 20.2
+      },
+      {
+        "position": 21,
+        "topic": "math-problem-solving",
+        "difficulty": "easy",
+        "wordCount": 26,
+        "charCount": 133,
+        "numberCount": 3,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 99,
+        "choiceCount": 5,
+        "complexityScore": 23.3
+      },
+      {
+        "position": 22,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 13,
+        "charCount": 76,
+        "numberCount": 0,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 61,
+        "choiceCount": 5,
+        "complexityScore": 13.500000000000002
+      },
+      {
+        "position": 23,
+        "topic": "statistics-probability",
+        "difficulty": "medium",
+        "wordCount": 33,
+        "charCount": 154,
+        "numberCount": 3,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 113,
+        "choiceCount": 5,
+        "complexityScore": 26.8
+      },
+      {
+        "position": 24,
+        "topic": "geometry",
+        "difficulty": "hard",
+        "wordCount": 34,
+        "charCount": 150,
+        "numberCount": 2,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 103,
+        "choiceCount": 5,
+        "complexityScore": 25.1
+      },
+      {
+        "position": 25,
+        "topic": "geometry",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 115,
+        "numberCount": 4,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 80,
+        "choiceCount": 5,
+        "complexityScore": 19
+      },
+      {
+        "position": 26,
+        "topic": "algebra",
+        "difficulty": "easy",
+        "wordCount": 10,
+        "charCount": 26,
+        "numberCount": 3,
+        "equationCount": 2,
+        "fractionCount": 0,
+        "variableCount": 8,
+        "choiceCount": 5,
+        "complexityScore": 4.5
+      },
+      {
+        "position": 27,
+        "topic": "geometry",
+        "difficulty": "medium",
+        "wordCount": 22,
+        "charCount": 116,
+        "numberCount": 3,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 86,
+        "choiceCount": 5,
+        "complexityScore": 20.3
+      },
+      {
+        "position": 28,
+        "topic": "algebra",
+        "difficulty": "medium",
+        "wordCount": 13,
+        "charCount": 61,
+        "numberCount": 1,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 41,
+        "choiceCount": 5,
+        "complexityScore": 10.3
+      },
+      {
+        "position": 29,
+        "topic": "geometry",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 89,
+        "numberCount": 3,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 60,
+        "choiceCount": 5,
+        "complexityScore": 15.2
+      },
+      {
+        "position": 30,
+        "topic": "geometry",
+        "difficulty": "easy",
+        "wordCount": 35,
+        "charCount": 167,
+        "numberCount": 2,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 123,
+        "choiceCount": 5,
+        "complexityScore": 29.200000000000003
+      },
+      {
+        "position": 31,
+        "topic": "sequences",
+        "difficulty": "hard",
+        "wordCount": 10,
+        "charCount": 50,
+        "numberCount": 1,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 38,
+        "choiceCount": 5,
+        "complexityScore": 8.9
+      },
+      {
+        "position": 32,
+        "topic": "geometry",
+        "difficulty": "hard",
+        "wordCount": 32,
+        "charCount": 132,
+        "numberCount": 3,
+        "equationCount": 3,
+        "fractionCount": 0,
+        "variableCount": 87,
+        "choiceCount": 5,
+        "complexityScore": 23
+      },
+      {
+        "position": 33,
+        "topic": "algebra",
+        "difficulty": "medium",
+        "wordCount": 13,
+        "charCount": 51,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 32,
+        "choiceCount": 5,
+        "complexityScore": 8.3
+      },
+      {
+        "position": 34,
+        "topic": "algebra",
+        "difficulty": "hard",
+        "wordCount": 11,
+        "charCount": 41,
+        "numberCount": 3,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 23,
+        "choiceCount": 5,
+        "complexityScore": 7.1000000000000005
+      },
+      {
+        "position": 35,
+        "topic": "statistics-probability",
+        "difficulty": "easy",
+        "wordCount": 27,
+        "charCount": 142,
+        "numberCount": 3,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 108,
+        "choiceCount": 5,
+        "complexityScore": 25.200000000000003
+      },
+      {
+        "position": 36,
+        "topic": "geometry",
+        "difficulty": "medium",
+        "wordCount": 28,
+        "charCount": 127,
+        "numberCount": 3,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 80,
+        "choiceCount": 5,
+        "complexityScore": 20.2
+      },
+      {
+        "position": 37,
+        "topic": "algebra",
+        "difficulty": "medium",
+        "wordCount": 8,
+        "charCount": 26,
+        "numberCount": 1,
+        "equationCount": 2,
+        "fractionCount": 0,
+        "variableCount": 11,
+        "choiceCount": 5,
+        "complexityScore": 4.300000000000001
+      },
+      {
+        "position": 38,
+        "topic": "geometry",
+        "difficulty": "easy",
+        "wordCount": 23,
+        "charCount": 110,
+        "numberCount": 3,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 74,
+        "choiceCount": 5,
+        "complexityScore": 18.5
+      },
+      {
+        "position": 39,
+        "topic": "algebra",
+        "difficulty": "medium",
+        "wordCount": 10,
+        "charCount": 51,
+        "numberCount": 3,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 33,
+        "choiceCount": 5,
+        "complexityScore": 9
+      },
+      {
+        "position": 40,
+        "topic": "algebra",
+        "difficulty": "medium",
+        "wordCount": 20,
+        "charCount": 104,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 75,
+        "choiceCount": 5,
+        "complexityScore": 17.6
+      },
+      {
+        "position": 41,
+        "topic": "geometry",
+        "difficulty": "hard",
+        "wordCount": 14,
+        "charCount": 63,
+        "numberCount": 2,
+        "equationCount": 1,
+        "fractionCount": 1,
+        "variableCount": 37,
+        "choiceCount": 5,
+        "complexityScore": 10.3
+      },
+      {
+        "position": 42,
+        "topic": "algebra",
+        "difficulty": "medium",
+        "wordCount": 8,
+        "charCount": 49,
+        "numberCount": 1,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 35,
+        "choiceCount": 5,
+        "complexityScore": 8.1
+      },
+      {
+        "position": 43,
+        "topic": "sequences",
+        "difficulty": "medium",
+        "wordCount": 20,
+        "charCount": 101,
+        "numberCount": 3,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 75,
+        "choiceCount": 5,
+        "complexityScore": 17.9
+      },
+      {
+        "position": 44,
+        "topic": "geometry",
+        "difficulty": "medium",
+        "wordCount": 24,
+        "charCount": 116,
+        "numberCount": 1,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 88,
+        "choiceCount": 5,
+        "complexityScore": 20.3
+      },
+      {
+        "position": 45,
+        "topic": "algebra",
+        "difficulty": "hard",
+        "wordCount": 21,
+        "charCount": 95,
+        "numberCount": 2,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 68,
+        "choiceCount": 5,
+        "complexityScore": 16.8
+      },
+      {
+        "position": 46,
+        "topic": "matrices",
+        "difficulty": "medium",
+        "wordCount": 17,
+        "charCount": 77,
+        "numberCount": 4,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 53,
+        "choiceCount": 5,
+        "complexityScore": 13.500000000000002
+      },
+      {
+        "position": 47,
+        "topic": "trigonometry",
+        "difficulty": "medium",
+        "wordCount": 12,
+        "charCount": 58,
+        "numberCount": 3,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 37,
+        "choiceCount": 5,
+        "complexityScore": 10
+      },
+      {
+        "position": 48,
+        "topic": "geometry",
+        "difficulty": "medium",
+        "wordCount": 21,
+        "charCount": 104,
+        "numberCount": 4,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 74,
+        "choiceCount": 5,
+        "complexityScore": 18.6
+      },
+      {
+        "position": 49,
+        "topic": "functions",
+        "difficulty": "medium",
+        "wordCount": 13,
+        "charCount": 49,
+        "numberCount": 2,
+        "equationCount": 2,
+        "fractionCount": 0,
+        "variableCount": 19,
+        "choiceCount": 5,
+        "complexityScore": 6.7
+      },
+      {
+        "position": 50,
+        "topic": "geometry",
+        "difficulty": "medium",
+        "wordCount": 14,
+        "charCount": 68,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 51,
+        "choiceCount": 5,
+        "complexityScore": 12.200000000000001
+      },
+      {
+        "position": 51,
+        "topic": "complex-numbers",
+        "difficulty": "medium",
+        "wordCount": 10,
+        "charCount": 36,
+        "numberCount": 1,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 20,
+        "choiceCount": 5,
+        "complexityScore": 5.8
+      },
+      {
+        "position": 52,
+        "topic": "trigonometry",
+        "difficulty": "hard",
+        "wordCount": 10,
+        "charCount": 50,
+        "numberCount": 1,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 34,
+        "choiceCount": 5,
+        "complexityScore": 8.600000000000001
+      },
+      {
+        "position": 53,
+        "topic": "algebra",
+        "difficulty": "medium",
+        "wordCount": 8,
+        "charCount": 31,
+        "numberCount": 1,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 19,
+        "choiceCount": 5,
+        "complexityScore": 5.4
+      },
+      {
+        "position": 54,
+        "topic": "geometry",
+        "difficulty": "hard",
+        "wordCount": 20,
+        "charCount": 97,
+        "numberCount": 1,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 66,
+        "choiceCount": 5,
+        "complexityScore": 16
+      },
+      {
+        "position": 55,
+        "topic": "vectors",
+        "difficulty": "hard",
+        "wordCount": 14,
+        "charCount": 51,
+        "numberCount": 4,
+        "equationCount": 6,
+        "fractionCount": 0,
+        "variableCount": 22,
+        "choiceCount": 5,
+        "complexityScore": 10
+      },
+      {
+        "position": 56,
+        "topic": "sequences",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 69,
+        "numberCount": 1,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 40,
+        "choiceCount": 5,
+        "complexityScore": 10.1
+      },
+      {
+        "position": 57,
+        "topic": "algebra",
+        "difficulty": "hard",
+        "wordCount": 10,
+        "charCount": 36,
+        "numberCount": 2,
+        "equationCount": 2,
+        "fractionCount": 0,
+        "variableCount": 15,
+        "choiceCount": 5,
+        "complexityScore": 5.6
+      },
+      {
+        "position": 58,
+        "topic": "algebra",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 67,
+        "numberCount": 4,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 37,
+        "choiceCount": 5,
+        "complexityScore": 10.4
+      },
+      {
+        "position": 59,
+        "topic": "counting",
+        "difficulty": "medium",
+        "wordCount": 12,
+        "charCount": 52,
+        "numberCount": 1,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 39,
+        "choiceCount": 5,
+        "complexityScore": 9.3
+      },
+      {
+        "position": 60,
+        "topic": "algebra",
+        "difficulty": "hard",
+        "wordCount": 17,
+        "charCount": 95,
+        "numberCount": 4,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 66,
+        "choiceCount": 5,
+        "complexityScore": 16.1
+      },
+      {
+        "position": 1,
+        "topic": "geometry",
+        "difficulty": "easy",
+        "wordCount": 17,
+        "charCount": 96,
+        "numberCount": 1,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 74,
+        "choiceCount": 5,
+        "complexityScore": 16.8
+      },
+      {
+        "position": 2,
+        "topic": "statistics-probability",
+        "difficulty": "easy",
+        "wordCount": 33,
+        "charCount": 199,
+        "numberCount": 4,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 153,
+        "choiceCount": 5,
+        "complexityScore": 35.1
+      },
+      {
+        "position": 3,
+        "topic": "algebra",
+        "difficulty": "easy",
+        "wordCount": 11,
+        "charCount": 53,
+        "numberCount": 3,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 34,
+        "choiceCount": 5,
+        "complexityScore": 8.8
+      },
+      {
+        "position": 4,
+        "topic": "algebra",
+        "difficulty": "easy",
+        "wordCount": 16,
+        "charCount": 60,
+        "numberCount": 3,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 34,
+        "choiceCount": 5,
+        "complexityScore": 9.8
+      },
+      {
+        "position": 5,
+        "topic": "statistics-probability",
+        "difficulty": "easy",
+        "wordCount": 27,
+        "charCount": 151,
+        "numberCount": 5,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 112,
+        "choiceCount": 5,
+        "complexityScore": 26.6
+      },
+      {
+        "position": 6,
+        "topic": "word-problem",
+        "difficulty": "easy",
+        "wordCount": 25,
+        "charCount": 125,
+        "numberCount": 4,
+        "equationCount": 0,
+        "fractionCount": 1,
+        "variableCount": 92,
+        "choiceCount": 5,
+        "complexityScore": 22.500000000000004
+      },
+      {
+        "position": 7,
+        "topic": "word-problem",
+        "difficulty": "easy",
+        "wordCount": 63,
+        "charCount": 311,
+        "numberCount": 8,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 228,
+        "choiceCount": 5,
+        "complexityScore": 54.300000000000004
+      },
+      {
+        "position": 8,
+        "topic": "algebra",
+        "difficulty": "easy",
+        "wordCount": 42,
+        "charCount": 246,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 192,
+        "choiceCount": 5,
+        "complexityScore": 43.2
+      },
+      {
+        "position": 9,
+        "topic": "algebra",
+        "difficulty": "easy",
+        "wordCount": 15,
+        "charCount": 70,
+        "numberCount": 5,
+        "equationCount": 1,
+        "fractionCount": 0,
+        "variableCount": 43,
+        "choiceCount": 5,
+        "complexityScore": 12.1
+      },
+      {
+        "position": 10,
+        "topic": "geometry",
+        "difficulty": "easy",
+        "wordCount": 22,
+        "charCount": 128,
+        "numberCount": 3,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 96,
+        "choiceCount": 5,
+        "complexityScore": 22.300000000000004
+      },
+      {
+        "position": 11,
+        "topic": "math-problem-solving",
+        "difficulty": "easy",
+        "wordCount": 53,
+        "charCount": 300,
+        "numberCount": 11,
+        "equationCount": 0,
+        "fractionCount": 4,
+        "variableCount": 226,
+        "choiceCount": 5,
+        "complexityScore": 55.400000000000006
+      },
+      {
+        "position": 12,
+        "topic": "math-problem-solving",
+        "difficulty": "easy",
+        "wordCount": 8,
+        "charCount": 46,
+        "numberCount": 1,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 35,
+        "choiceCount": 5,
+        "complexityScore": 8.1
+      },
+      {
+        "position": 13,
+        "topic": "geometry",
+        "difficulty": "easy",
+        "wordCount": 25,
+        "charCount": 112,
+        "numberCount": 3,
+        "equationCount": 1,
+        "fractionCount": 1,
+        "variableCount": 78,
+        "choiceCount": 5,
+        "complexityScore": 19.900000000000002
+      },
+      {
+        "position": 14,
+        "topic": "sequences",
+        "difficulty": "hard",
+        "wordCount": 31,
+        "charCount": 186,
+        "numberCount": 11,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 129,
+        "choiceCount": 5,
+        "complexityScore": 32.2
+      },
+      {
+        "position": 15,
+        "topic": "geometry",
+        "difficulty": "easy",
+        "wordCount": 24,
+        "charCount": 119,
+        "numberCount": 3,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 85,
+        "choiceCount": 5,
+        "complexityScore": 20.3
+      },
+      {
+        "position": 16,
+        "topic": "trigonometry",
+        "difficulty": "easy",
+        "wordCount": 38,
+        "charCount": 216,
+        "numberCount": 5,
+        "equationCount": 0,
+        "fractionCount": 2,
+        "variableCount": 168,
+        "choiceCount": 5,
+        "complexityScore": 39.7
+      },
+      {
+        "position": 17,
+        "topic": "statistics-probability",
+        "difficulty": "easy",
+        "wordCount": 49,
+        "charCount": 255,
+        "numberCount": 5,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 189,
+        "choiceCount": 5,
+        "complexityScore": 44.2
+      },
+      {
+        "position": 18,
+        "topic": "functions",
+        "difficulty": "easy",
+        "wordCount": 23,
+        "charCount": 116,
+        "numberCount": 3,
+        "equationCount": 2,
+        "fractionCount": 0,
+        "variableCount": 76,
+        "choiceCount": 5,
+        "complexityScore": 19.400000000000002
+      },
+      {
+        "position": 19,
+        "topic": "statistics-probability",
+        "difficulty": "easy",
+        "wordCount": 56,
+        "charCount": 257,
+        "numberCount": 12,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 167,
+        "choiceCount": 5,
+        "complexityScore": 42.599999999999994
+      },
+      {
+        "position": 20,
+        "topic": "trigonometry",
+        "difficulty": "easy",
+        "wordCount": 40,
+        "charCount": 209,
+        "numberCount": 3,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 160,
+        "choiceCount": 5,
+        "complexityScore": 36.9
+      },
+      {
+        "position": 21,
+        "topic": "trigonometry",
+        "difficulty": "medium",
+        "wordCount": 20,
+        "charCount": 117,
+        "numberCount": 4,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 82,
+        "choiceCount": 5,
+        "complexityScore": 19.6
+      },
+      {
+        "position": 22,
+        "topic": "functions",
+        "difficulty": "medium",
+        "wordCount": 23,
+        "charCount": 140,
+        "numberCount": 0,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 111,
+        "choiceCount": 5,
+        "complexityScore": 24.500000000000004
+      },
+      {
+        "position": 23,
+        "topic": "geometry",
+        "difficulty": "medium",
+        "wordCount": 40,
+        "charCount": 201,
+        "numberCount": 2,
+        "equationCount": 6,
+        "fractionCount": 0,
+        "variableCount": 136,
+        "choiceCount": 5,
+        "complexityScore": 34.800000000000004
+      },
+      {
+        "position": 24,
+        "topic": "trigonometry",
+        "difficulty": "medium",
+        "wordCount": 19,
+        "charCount": 106,
+        "numberCount": 4,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 73,
+        "choiceCount": 5,
+        "complexityScore": 17.700000000000003
+      },
+      {
+        "position": 25,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 16,
+        "charCount": 41,
+        "numberCount": 4,
+        "equationCount": 3,
+        "fractionCount": 0,
+        "variableCount": 14,
+        "choiceCount": 5,
+        "complexityScore": 7.1
+      },
+      {
+        "position": 26,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 27,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 28,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 29,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 30,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 31,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 32,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 33,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 34,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 35,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 36,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 37,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 38,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 39,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 40,
+        "topic": "math-problem-solving",
+        "difficulty": "medium",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 41,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 42,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 43,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 44,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 45,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 46,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 47,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 48,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 49,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 50,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 51,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 52,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 53,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 54,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 55,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 56,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 57,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 58,
+        "topic": "math-problem-solving",
+        "difficulty": "hard",
+        "wordCount": 18,
+        "charCount": 100,
+        "numberCount": 2,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 77,
+        "choiceCount": 5,
+        "complexityScore": 17.8
+      },
+      {
+        "position": 59,
+        "topic": "sequences",
+        "difficulty": "hard",
+        "wordCount": 15,
+        "charCount": 83,
+        "numberCount": 1,
+        "equationCount": 0,
+        "fractionCount": 0,
+        "variableCount": 61,
+        "choiceCount": 5,
+        "complexityScore": 14.000000000000002
+      },
+      {
+        "position": 60,
+        "topic": "geometry",
+        "difficulty": "hard",
+        "wordCount": 107,
+        "charCount": 523,
+        "numberCount": 4,
+        "equationCount": 3,
+        "fractionCount": 3,
+        "variableCount": 370,
+        "choiceCount": 5,
+        "complexityScore": 88.6
+      }
+    ],
+    "keywords": {
+      "function": 4,
+      "probability": 4,
+      "coordinate": 10,
+      "slope": 2,
+      "equation": 8,
+      "perimeter": 2,
+      "area": 6,
+      "triangle": 9,
+      "angle": 7,
+      "circle": 5,
+      "volume": 3,
+      "factor": 2,
+      "quadratic": 2,
+      "matrix": 3,
+      "linear": 1,
+      "multiple": 1
+    },
+    "formulas": {
+      "x = 3": 1,
+      "F = (9/5)C + 32. What Fahrenheit temperature is equivalent to 95° Celsius?": 1,
+      "b = 12 and 5a − 3b = 9?": 1,
+      "y = −2(x − 3)² + 5 is a parabola. What is the vertex of the parabola?": 1,
+      "C = 120°?": 1,
+      "x = ?": 3,
+      "y = 12?": 1,
+      "V = πr²h. What is the volume": 1,
+      "E = 13": 1,
+      "E = 5": 1,
+      "B = 12. What is the area of triangle AED?": 1,
+      "B = 10. What is the measure of angle C?": 1,
+      "y = 2x + 3 that passes through (0": 1,
+      "u = <3": 1,
+      "v = <−1": 1,
+      "x = 36 true?": 1,
+      "C = 3/5 and the length of AB is 6 inches. What is the length": 1,
+      "A = x°": 1,
+      "B = (2x)°": 1,
+      "C = (3x)°": 1,
+      "B = c inches": 1,
+      "C = b inches": 1,
+      "C = a inches. Which of the following inequalities correctly relates the side lengths of triangle ABC?": 1,
+      "y = 12 and x - y = 1": 1,
+      "y = ?": 1,
+      "a = sin∠B/b = sin∠C/c and c² = a² + b² - 2ab cos∠C.)": 1
+    },
+    "averages": {
+      "wordCount": 23,
+      "numberCount": 2.9,
+      "complexityScore": 20.3
+    }
+  },
+  "conceptMap": {
+    "functions": {
+      "frequency": 4,
+      "avgDifficulty": 1.5,
+      "avgPosition": 23,
+      "prerequisites": [
+        "algebra"
+      ],
+      "difficultyDistribution": {
+        "easy": 2,
+        "medium": 2,
+        "hard": 0
+      }
+    },
+    "geometry": {
+      "frequency": 24,
+      "avgDifficulty": 2,
+      "avgPosition": 28,
+      "prerequisites": [
+        "arithmetic"
+      ],
+      "difficultyDistribution": {
+        "easy": 7,
+        "medium": 11,
+        "hard": 6
+      }
+    },
+    "algebra": {
+      "frequency": 25,
+      "avgDifficulty": 1.8,
+      "avgPosition": 27,
+      "prerequisites": [
+        "arithmetic"
+      ],
+      "difficultyDistribution": {
+        "easy": 9,
+        "medium": 11,
+        "hard": 5
+      }
+    },
+    "word-problem": {
+      "frequency": 5,
+      "avgDifficulty": 1.6,
+      "avgPosition": 6,
+      "prerequisites": [
+        "arithmetic"
+      ],
+      "difficultyDistribution": {
+        "easy": 2,
+        "medium": 3,
+        "hard": 0
+      }
+    },
+    "statistics-probability": {
+      "frequency": 8,
+      "avgDifficulty": 1.4,
+      "avgPosition": 15,
+      "prerequisites": [
+        "arithmetic"
+      ],
+      "difficultyDistribution": {
+        "easy": 5,
+        "medium": 3,
+        "hard": 0
+      }
+    },
+    "number-theory": {
+      "frequency": 1,
+      "avgDifficulty": 1,
+      "avgPosition": 8,
+      "prerequisites": [
+        "arithmetic"
+      ],
+      "difficultyDistribution": {
+        "easy": 1,
+        "medium": 0,
+        "hard": 0
+      }
+    },
+    "math-problem-solving": {
+      "frequency": 38,
+      "avgDifficulty": 2.4,
+      "avgPosition": 39,
+      "prerequisites": [
+        "arithmetic"
+      ],
+      "difficultyDistribution": {
+        "easy": 3,
+        "medium": 17,
+        "hard": 18
+      }
+    },
+    "sequences": {
+      "frequency": 5,
+      "avgDifficulty": 2.8,
+      "avgPosition": 41,
+      "prerequisites": [
+        "algebra"
+      ],
+      "difficultyDistribution": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 4
+      }
+    },
+    "matrices": {
+      "frequency": 1,
+      "avgDifficulty": 2,
+      "avgPosition": 46,
+      "prerequisites": [
+        "algebra"
+      ],
+      "difficultyDistribution": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 0
+      }
+    },
+    "trigonometry": {
+      "frequency": 6,
+      "avgDifficulty": 1.8,
+      "avgPosition": 30,
+      "prerequisites": [
+        "geometry",
+        "algebra"
+      ],
+      "difficultyDistribution": {
+        "easy": 2,
+        "medium": 3,
+        "hard": 1
+      }
+    },
+    "complex-numbers": {
+      "frequency": 1,
+      "avgDifficulty": 2,
+      "avgPosition": 51,
+      "prerequisites": [
+        "algebra"
+      ],
+      "difficultyDistribution": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 0
+      }
+    },
+    "vectors": {
+      "frequency": 1,
+      "avgDifficulty": 3,
+      "avgPosition": 55,
+      "prerequisites": [
+        "trigonometry",
+        "geometry"
+      ],
+      "difficultyDistribution": {
+        "easy": 0,
+        "medium": 0,
+        "hard": 1
+      }
+    },
+    "counting": {
+      "frequency": 1,
+      "avgDifficulty": 2,
+      "avgPosition": 59,
+      "prerequisites": [
+        "arithmetic"
+      ],
+      "difficultyDistribution": {
+        "easy": 0,
+        "medium": 1,
+        "hard": 0
+      }
+    }
+  },
+  "generationFramework": {
+    "questionDistribution": {
+      "foundation": {
+        "geometry": 4,
+        "statistics-probability": 4,
+        "algebra": 4,
+        "word-problem": 2,
+        "math-problem-solving": 2,
+        "sequences": 1,
+        "trigonometry": 2,
+        "functions": 1
+      },
+      "intermediate": {
+        "trigonometry": 2,
+        "functions": 1,
+        "geometry": 1,
+        "math-problem-solving": 16
+      },
+      "advanced": {
+        "math-problem-solving": 18,
+        "sequences": 1,
+        "geometry": 1
+      }
+    },
+    "difficultyProgression": {
+      "positions1to20": "easy-medium bias",
+      "positions21to40": "medium bias",
+      "positions41to60": "medium-hard bias"
+    },
+    "complexityTargets": {
+      "wordCount": 23,
+      "numberDensity": 2.9,
+      "complexityScore": 20.3
+    },
+    "topicSequencing": [
+      {
+        "topic": "word-problem",
+        "recommendedPosition": 6,
+        "prerequisites": [
+          "arithmetic"
+        ]
+      },
+      {
+        "topic": "number-theory",
+        "recommendedPosition": 8,
+        "prerequisites": [
+          "arithmetic"
+        ]
+      },
+      {
+        "topic": "statistics-probability",
+        "recommendedPosition": 15,
+        "prerequisites": [
+          "arithmetic"
+        ]
+      },
+      {
+        "topic": "functions",
+        "recommendedPosition": 23,
+        "prerequisites": [
+          "algebra"
+        ]
+      },
+      {
+        "topic": "algebra",
+        "recommendedPosition": 27,
+        "prerequisites": [
+          "arithmetic"
+        ]
+      },
+      {
+        "topic": "geometry",
+        "recommendedPosition": 28,
+        "prerequisites": [
+          "arithmetic"
+        ]
+      },
+      {
+        "topic": "trigonometry",
+        "recommendedPosition": 30,
+        "prerequisites": [
+          "geometry",
+          "algebra"
+        ]
+      },
+      {
+        "topic": "math-problem-solving",
+        "recommendedPosition": 39,
+        "prerequisites": [
+          "arithmetic"
+        ]
+      },
+      {
+        "topic": "sequences",
+        "recommendedPosition": 41,
+        "prerequisites": [
+          "algebra"
+        ]
+      },
+      {
+        "topic": "matrices",
+        "recommendedPosition": 46,
+        "prerequisites": [
+          "algebra"
+        ]
+      },
+      {
+        "topic": "complex-numbers",
+        "recommendedPosition": 51,
+        "prerequisites": [
+          "algebra"
+        ]
+      },
+      {
+        "topic": "vectors",
+        "recommendedPosition": 55,
+        "prerequisites": [
+          "trigonometry",
+          "geometry"
+        ]
+      },
+      {
+        "topic": "counting",
+        "recommendedPosition": 59,
+        "prerequisites": [
+          "arithmetic"
+        ]
+      }
+    ]
+  }
+}

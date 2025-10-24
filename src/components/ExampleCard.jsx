@@ -121,17 +121,24 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
       margin: '3rem 0',
       padding: '0'
     }}>
-      {/* Example Header with red left border marker */}
-      <h4 style={{
-        margin: '0 0 1rem 0',
-        paddingLeft: '0.75rem',
-        borderLeft: '4px solid #b91c1c',
-        color: '#000000',
-        fontWeight: 700,
-        fontSize: '1.1rem'
+      {/* Example Header - gray bar with red accent */}
+      <div style={{
+        backgroundColor: '#f3f4f6',
+        padding: '0.5rem 0.75rem',
+        marginBottom: '1.25rem',
+        borderLeft: '3px solid #ef4444',
+        display: 'flex',
+        alignItems: 'center'
       }}>
-        Example {position}: {example.title}
-      </h4>
+        <div style={{
+          fontSize: '0.8rem',
+          fontWeight: '600',
+          color: '#6b7280',
+          letterSpacing: '0.025em'
+        }}>
+          Example {position}: {example.title}
+        </div>
+      </div>
 
       {/* Two-column layout: Problem/Table on left, Answer Choices on right */}
       <div style={{
