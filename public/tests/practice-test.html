@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Test</title>
+    <link rel="stylesheet" href="shared-test-styles.css">
+</head>
+<body>
+    <!-- Header outside container for full width -->
+    <div class="test-header">
+        <div class="header-content">
+            <a href="/" class="logo">actcourse.org</a>
+            <div class="header-center"></div>
+            <div class="header-right">
+                <span class="question-counter" id="questionCounter">Question 1 of 50</span>
+                <button class="end-section-link" onclick="confirmEndSection()">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            <rect x="2" y="2" width="12" height="12" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        </svg>
+                    </span>
+                    End Section
+                </button>
+                <div class="timer" id="timer">35:00</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="test-container">
+        <div class="test-main">
+            <!-- Questions Navigation - Outside container -->
+            <div class="questions-nav-external">
+                <div class="sidebar-icon" onclick="showQuestionModal()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M9 2C8.44772 2 8 2.44772 8 3V4H6C4.89543 4 4 4.89543 4 6V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V6C20 4.89543 19.1046 4 18 4H16V3C16 2.44772 15.5523 2 15 2C14.4477 2 14 2.44772 14 3V4H10V3C10 2.44772 9.55228 2 9 2ZM6 8V20H18V8H6ZM8 11C8 10.4477 8.44772 10 9 10H15C15.5523 10 16 10.4477 16 11C16 11.5523 15.5523 12 15 12H9C8.44772 12 8 11.5523 8 11ZM9 14C8.44772 14 8 14.4477 8 15C8 15.5523 8.44772 16 9 16H15C15.5523 16 16 15.5523 16 15C16 14.4477 15.5523 14 15 14H9Z"/>
+                    </svg>
+                </div>
+                <div class="sidebar-text">Questions</div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="test-content" id="testContent">
+                <!-- Flag Bar -->
+                <div class="flag-bar">
+                    <span class="item-number" id="itemNumber">Item 1</span>
+                    <button class="flag-button" id="flagBtn" onclick="toggleFlag()">Flag</button>
+                </div>
+
+                <!-- Passages Section -->
+                <div class="passage-section" id="passageSection">
+                    <!-- Passage content will be injected here -->
+                </div>
+
+                <!-- Questions Section -->
+                <div class="question-section" id="questionSection">
+                    <!-- Question content will be injected here -->
+                </div>
+
+                <!-- Navigation inside content -->
+                <div class="navigation">
+                    <button class="nav-button" id="prevBtn" onclick="previousQuestion()" disabled>‹ PREV</button>
+                    <button class="nav-button primary" id="nextBtn" onclick="nextQuestion()">NEXT ›</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question Navigator Modal -->
+    <div class="modal" id="questionModal">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 class="modal-title">Question Navigator</h3>
+                <button class="close" onclick="closeQuestionModal()">×</button>
+            </div>
+            <div class="question-grid" id="questionGrid"></div>
+            <div class="modal-footer">
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color current"></div>
+                        <span>Current</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color answered"></div>
+                        <span>Answered</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color flagged"></div>
+                        <span>Flagged</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 class="modal-title">End Section</h3>
+                <button class="close" onclick="closeConfirmModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to end this section?</p>
+                <p id="unansweredWarning" class="warning-text"></p>
+                <div class="modal-actions">
+                    <button class="nav-button" onclick="closeConfirmModal()">Cancel</button>
+                    <button class="nav-button primary" onclick="endSection()">End Section</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load test data from sessionStorage
+        const questions = JSON.parse(sessionStorage.getItem('practiceTestQuestions') || '[]');
+        const section = sessionStorage.getItem('practiceTestSection') || 'english';
+        const testNumber = sessionStorage.getItem('practiceTestNumber') || '1';
+        const duration = parseInt(sessionStorage.getItem('practiceTestDuration') || '35');
+
+        // Debug logging
+        console.log('Practice Test Debug:', {
+            section: section,
+            sectionType: typeof section,
+            testNumber: testNumber,
+            questionsLoaded: questions.length,
+            duration: duration,
+            firstQuestion: questions[0]
+        });
+
+        const hasPassages = questions.some(q => q.passage);
+        const totalQuestions = questions.length;
+
+        // State
+        let currentQuestion = 1;
+        let answers = {};
+        let flaggedQuestions = new Set();
+        let timeLeft = duration * 60; // Convert to seconds
+
+        // Initialize test
+        function initTest() {
+            if (questions.length === 0) {
+                document.getElementById('questionSection').innerHTML =
+                    '<div style="padding: 2rem; text-align: center; color: #6b7280;">No questions loaded. Please go back and select a test.</div>';
+                return;
+            }
+
+            // Add math-test class if no passages
+            if (!hasPassages) {
+                document.body.classList.add('math-test');
+            }
+
+            // Render questions and passages
+            renderContent();
+            updateDisplay();
+            startTimer();
+        }
+
+        function renderContent() {
+            const passageSection = document.getElementById('passageSection');
+            const questionSection = document.getElementById('questionSection');
+
+            // Render passages if they exist
+            if (hasPassages) {
+                // Group questions by passage
+                const passageGroups = {};
+                questions.forEach((q, idx) => {
+                    if (q.passage) {
+                        if (!passageGroups[q.passage]) {
+                            passageGroups[q.passage] = [];
+                        }
+                        passageGroups[q.passage].push(idx + 1);
+                    }
+                });
+
+                let passageHTML = '';
+                let passageNum = 1;
+                Object.entries(passageGroups).forEach(([passageKey, questionNums]) => {
+                    // Get the first question in this passage group to access passage data
+                    const firstQuestionIndex = questionNums[0] - 1;
+                    const firstQuestion = questions[firstQuestionIndex];
+
+                    // Get passage title and text
+                    const passageTitle = firstQuestion.passage_title || '';
+                    const passageContent = passageKey; // passageKey is the passage text
+
+                    passageHTML += `
+                        <div class="passage-content" id="passage${passageNum}" data-questions="${questionNums.join(',')}">
+                            ${passageTitle ? `<h3 class="passage-title">${passageTitle}</h3>` : ''}
+                            <div class="passage-text">
+                                ${passageContent.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('')}
+                            </div>
+                        </div>
+                    `;
+                    passageNum++;
+                });
+                passageSection.innerHTML = passageHTML;
+            } else {
+                passageSection.style.display = 'none';
+            }
+
+            // Helper function to extract rhetorical question prompt
+            function extractQuestionPrompt(text) {
+                if (!text) return '';
+                // Extract text inside brackets [...]
+                const match = text.match(/\[([^\]]+)\]/);
+                return match ? match[1] : ''; // Return only bracketed text, or empty if no brackets
+            }
+
+            // Render questions
+            let questionHTML = '';
+            questions.forEach((q, idx) => {
+                const questionNum = idx + 1;
+                const answerKeys = Object.keys(q.answers || {}).sort();
+                const questionPrompt = extractQuestionPrompt(q.text);
+
+                questionHTML += `
+                    <div class="question" id="question${questionNum}" data-passage="${hasPassages ? (questions.findIndex(x => x.passage === q.passage) + 1) : ''}">
+                        ${questionPrompt ? `<div class="question-text">${questionPrompt}</div>` : ''}
+                        <div class="answer-choices">
+                            ${answerKeys.map(key => `
+                                <label class="answer-choice" for="q${questionNum}_${key}">
+                                    <input
+                                        type="radio"
+                                        name="question${questionNum}"
+                                        id="q${questionNum}_${key}"
+                                        value="${key}"
+                                        onchange="selectAnswer(${questionNum}, '${key}')"
+                                    >
+                                    <span class="answer-text"><strong>${key}.</strong> ${q.answers[key]}</span>
+                                </label>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            questionSection.innerHTML = questionHTML;
+        }
+
+        function highlightUnderlinedPortion(passageElement, currentQuestionNum, questionsInPassage) {
+            // Find the index of current question within this passage (0-based)
+            const indexInPassage = questionsInPassage.indexOf(currentQuestionNum);
+            if (indexInPassage === -1) return;
+
+            // Get all underlined elements in this passage
+            const allUnderlined = passageElement.querySelectorAll('.passage-text u');
+
+            // Highlight the underlined portion at this index
+            if (allUnderlined[indexInPassage]) {
+                allUnderlined[indexInPassage].classList.add('highlighted');
+            }
+        }
+
+        function selectAnswer(questionNum, answer) {
+            answers[`q${questionNum}`] = answer;
+
+            // Add visual feedback - highlight selected answer
+            const questionElement = document.getElementById(`question${questionNum}`);
+            if (questionElement) {
+                questionElement.querySelectorAll('.answer-choice').forEach(choice => {
+                    choice.classList.remove('selected');
+                });
+                const selectedLabel = questionElement.querySelector(`label[for="q${questionNum}_${answer}"]`);
+                if (selectedLabel) {
+                    selectedLabel.classList.add('selected');
+                }
+            }
+
+            updateQuestionGrid();
+        }
+
+        function updateDisplay() {
+            // Hide all questions and passages
+            document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+            document.querySelectorAll('.passage-content').forEach(p => p.classList.remove('active'));
+
+            // Remove all previous highlights from underlined portions
+            document.querySelectorAll('.passage-text u').forEach(u => {
+                u.classList.remove('highlighted');
+            });
+
+            // Show current question
+            const questionElement = document.getElementById(`question${currentQuestion}`);
+            if (questionElement) {
+                questionElement.classList.add('active');
+
+                // Show corresponding passage
+                if (hasPassages) {
+                    // Find which passage contains this question number
+                    let activePassage = null;
+                    document.querySelectorAll('.passage-content').forEach(p => {
+                        const questionsInPassage = p.dataset.questions.split(',').map(Number);
+                        if (questionsInPassage.includes(currentQuestion)) {
+                            p.classList.add('active');
+                            activePassage = p;
+
+                            // Highlight the corresponding underlined portion
+                            highlightUnderlinedPortion(p, currentQuestion, questionsInPassage);
+                        }
+                    });
+
+                    // Scroll the active passage into view
+                    if (activePassage) {
+                        setTimeout(() => {
+                            activePassage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100);
+                    }
+                }
+            }
+
+            // Update navigation
+            document.getElementById('prevBtn').disabled = currentQuestion === 1;
+
+            const nextBtn = document.getElementById('nextBtn');
+            if (currentQuestion === totalQuestions) {
+                nextBtn.textContent = 'Review Answers';
+                nextBtn.onclick = showQuestionModal;
+            } else {
+                nextBtn.textContent = 'NEXT ›';
+                nextBtn.onclick = nextQuestion;
+            }
+
+            document.getElementById('questionCounter').textContent = `Question ${currentQuestion} of ${totalQuestions}`;
+            document.getElementById('itemNumber').textContent = `Item ${currentQuestion}`;
+
+            updateFlagButton();
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions) {
+                currentQuestion++;
+                updateDisplay();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 1) {
+                currentQuestion--;
+                updateDisplay();
+            }
+        }
+
+        function goToQuestion(questionNum) {
+            if (questionNum >= 1 && questionNum <= totalQuestions) {
+                currentQuestion = questionNum;
+                updateDisplay();
+                closeQuestionModal();
+            }
+        }
+
+        function toggleFlag() {
+            if (flaggedQuestions.has(currentQuestion)) {
+                flaggedQuestions.delete(currentQuestion);
+            } else {
+                flaggedQuestions.add(currentQuestion);
+            }
+            updateFlagButton();
+            updateQuestionGrid();
+        }
+
+        function updateFlagButton() {
+            const flagBtn = document.getElementById('flagBtn');
+            const flagIcon = `<span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path d="M3 2C3 1.44772 3.44772 1 4 1C4.55228 1 5 1.44772 5 2V3H13C13.3466 3 13.6684 3.17959 13.8507 3.47427C14.0329 3.76894 14.0494 4.13681 13.8944 4.44721L11.618 9L13.8944 13.5528C14.0494 13.8632 14.0329 14.2311 13.8507 14.5257C13.6684 14.8204 13.3466 15 13 15H5V16C5 16.5523 4.55228 17 4 17C3.44772 17 3 16.5523 3 16V2Z"/>
+                </svg>
+            </span>`;
+
+            if (flaggedQuestions.has(currentQuestion)) {
+                flagBtn.innerHTML = flagIcon + 'Unflag';
+                flagBtn.classList.add('flagged');
+            } else {
+                flagBtn.innerHTML = flagIcon + 'Flag';
+                flagBtn.classList.remove('flagged');
+            }
+        }
+
+        function showQuestionModal() {
+            document.getElementById('questionModal').style.display = 'block';
+            generateQuestionGrid();
+        }
+
+        function closeQuestionModal() {
+            document.getElementById('questionModal').style.display = 'none';
+        }
+
+        function generateQuestionGrid() {
+            const grid = document.getElementById('questionGrid');
+            grid.innerHTML = '';
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const item = document.createElement('div');
+                item.className = 'question-nav-item';
+                item.textContent = i;
+                item.onclick = () => goToQuestion(i);
+
+                if (i === currentQuestion) {
+                    item.classList.add('current');
+                } else if (answers[`q${i}`]) {
+                    item.classList.add('answered');
+                }
+
+                if (flaggedQuestions.has(i)) {
+                    item.classList.add('flagged');
+                }
+
+                grid.appendChild(item);
+            }
+        }
+
+        function updateQuestionGrid() {
+            if (document.getElementById('questionModal').style.display === 'block') {
+                generateQuestionGrid();
+            }
+        }
+
+        function startTimer() {
+            const timerElement = document.getElementById('timer');
+
+            function updateTimer() {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+                // Warning color when under 5 minutes
+                if (timeLeft <= 300 && timeLeft > 0) {
+                    timerElement.style.color = '#dc2626';
+                    timerElement.style.fontWeight = '600';
+                    timerElement.style.opacity = '1';
+                }
+
+                if (timeLeft <= 0) {
+                    endSection();
+                } else {
+                    timeLeft--;
+                    setTimeout(updateTimer, 1000);
+                }
+            }
+
+            updateTimer();
+        }
+
+        function confirmEndSection() {
+            const unanswered = totalQuestions - Object.keys(answers).length;
+            const warning = document.getElementById('unansweredWarning');
+
+            if (unanswered > 0) {
+                warning.textContent = `You have ${unanswered} unanswered question${unanswered > 1 ? 's' : ''}.`;
+            } else {
+                warning.textContent = '';
+            }
+
+            document.getElementById('confirmModal').style.display = 'block';
+        }
+
+        function closeConfirmModal() {
+            document.getElementById('confirmModal').style.display = 'none';
+        }
+
+        function endSection() {
+            closeConfirmModal();
+
+            // Calculate score for current section
+            let correct = 0;
+            questions.forEach((q, idx) => {
+                const questionNum = idx + 1;
+                const userAnswer = answers[`q${questionNum}`];
+                if (userAnswer === q.correctAnswer) {
+                    correct++;
+                }
+            });
+
+            const percentage = Math.round((correct / totalQuestions) * 100);
+
+            // Store current section results
+            const currentResults = {
+                section,
+                correct,
+                total: totalQuestions,
+                percentage,
+                answers,
+                flagged: Array.from(flaggedQuestions),
+                questions: questions.map((q, idx) => ({
+                    questionNum: idx + 1,
+                    userAnswer: answers[`q${idx + 1}`],
+                    correctAnswer: q.correctAnswer,
+                    isCorrect: answers[`q${idx + 1}`] === q.correctAnswer
+                }))
+            };
+
+            // Get all previous results
+            const allResults = JSON.parse(sessionStorage.getItem('practiceTestAllResults') || '[]');
+            allResults.push(currentResults);
+            sessionStorage.setItem('practiceTestAllResults', JSON.stringify(allResults));
+
+            // Determine next section
+            const sectionOrder = ['english', 'math', 'reading', 'science'];
+            const currentIndex = sectionOrder.indexOf(section);
+            const isFullTest = section === 'full';
+
+            console.log('🎯 Section ended:', {
+                section,
+                currentIndex,
+                nextAvailable: currentIndex < sectionOrder.length - 1
+            });
+
+            // Always progress through sections (full test simulation)
+            if (currentIndex >= 0 && currentIndex < sectionOrder.length - 1) {
+                // Load next section
+                const nextSection = sectionOrder[currentIndex + 1];
+                console.log('📤 Sending NEXT_SECTION message:', nextSection);
+                window.parent.postMessage({
+                    type: 'PRACTICE_TEST_NEXT_SECTION',
+                    nextSection: nextSection,
+                    currentResults: currentResults
+                }, '*');
+            } else {
+                // Test complete - all 4 sections done
+                console.log('📤 Sending COMPLETE message - All sections finished');
+                sessionStorage.setItem('practiceTestResults', JSON.stringify({
+                    allSections: allResults,
+                    totalCorrect: allResults.reduce((sum, r) => sum + r.correct, 0),
+                    totalQuestions: allResults.reduce((sum, r) => sum + r.total, 0)
+                }));
+
+                window.parent.postMessage({ type: 'PRACTICE_TEST_COMPLETE' }, '*');
+            }
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const questionModal = document.getElementById('questionModal');
+            const confirmModal = document.getElementById('confirmModal');
+
+            if (event.target === questionModal) {
+                closeQuestionModal();
+            }
+            if (event.target === confirmModal) {
+                closeConfirmModal();
+            }
+        };
+
+        // Prevent accidental page close
+        window.addEventListener('beforeunload', function (e) {
+            if (Object.keys(answers).length > 0) {
+                e.preventDefault();
+                e.returnValue = '';
+            }
+        });
+
+        // Initialize when page loads
+        window.addEventListener('load', initTest);
+    </script>
+</body>
+</html>

@@ -103,6 +103,7 @@ const PracticeTestsService = {
           if (question.passage_id && passageMap[question.passage_id]) {
             question.passage = passageMap[question.passage_id].passage_text;
             question.passage_type = passageMap[question.passage_id].passage_type;
+            question.passage_title = passageMap[question.passage_id].passage_title;
           }
         });
       }
@@ -125,6 +126,7 @@ const PracticeTestsService = {
           id: q.id,
           text: q.question_text, // SequentialTest expects 'text'
           passage: q.passage,
+          passage_title: q.passage_title, // Include passage title
           answers: answers, // SequentialTest expects 'answers' as object
           correctAnswer: String.fromCharCode(65 + q.correct_answer), // Convert 0->A, 1->B, etc.
           explanation: q.explanation,
