@@ -75,16 +75,27 @@
 
             <!-- Question Sidebar -->
             <div class="question-sidebar">
-                <div class="sidebar-icon" onclick="showQuestionModal()">
+                <div class="sidebar-icon" onclick="toggleNavigator()">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="3" y1="6" x2="21" y2="6"></line>
                         <line x1="3" y1="12" x2="21" y2="12"></line>
                         <line x1="3" y1="18" x2="21" y2="18"></line>
                     </svg>
                 </div>
-                <div class="sidebar-text">Index</div>
+                <div class="sidebar-text" onclick="toggleNavigator()">Index</div>
                 <div class="sidebar-divider"></div>
                 <div class="sidebar-questions" id="sidebarQuestions"></div>
+            </div>
+
+            <!-- Sliding Question Navigator Panel -->
+            <div class="question-navigator-panel" id="navigatorPanel">
+                <div class="navigator-header">
+                    <h3>Question Navigator</h3>
+                    <button class="navigator-close" onclick="toggleNavigator()">✕</button>
+                </div>
+                <div class="navigator-content" id="navigatorContent">
+                    <!-- Questions will be populated here -->
+                </div>
             </div>
         </div>
     </div>
@@ -595,6 +606,74 @@
 
                 window.parent.postMessage({ type: 'PRACTICE_TEST_COMPLETE' }, '*');
             }
+        }
+
+        // Sliding Navigator Panel Functions
+        function toggleNavigator() {
+            const panel = document.getElementById('navigatorPanel');
+            const testMain = document.querySelector('.test-main');
+            const sidebar = document.querySelector('.question-sidebar');
+            const isOpen = panel.classList.contains('open');
+
+            if (isOpen) {
+                panel.classList.remove('open');
+                testMain.classList.remove('navigator-open');
+                sidebar.classList.remove('navigator-open');
+            } else {
+                panel.classList.add('open');
+                testMain.classList.add('navigator-open');
+                sidebar.classList.add('navigator-open');
+                populateNavigator();
+            }
+        }
+
+        function populateNavigator() {
+            const navigatorContent = document.getElementById('navigatorContent');
+            navigatorContent.innerHTML = '';
+
+            questions.forEach((q, idx) => {
+                const questionNum = idx + 1;
+                const isAnswered = answers[`q${questionNum}`];
+                const isFlagged = flaggedQuestions.has(questionNum);
+                const isCurrent = questionNum === currentQuestion;
+
+                const item = document.createElement('div');
+                item.className = 'navigator-question-item';
+                if (isCurrent) item.classList.add('current');
+                if (isAnswered) item.classList.add('answered');
+                if (isFlagged) item.classList.add('flagged');
+
+                // Get question preview (first 100 chars of question text)
+                const questionText = q.question || 'Select the correct answer:';
+                const preview = questionText.length > 100 ? questionText.substring(0, 100) + '...' : questionText;
+
+                item.innerHTML = `
+                    <div class="navigator-question-header">
+                        <div class="navigator-question-number">Question ${questionNum}</div>
+                        <div class="navigator-question-status">
+                            ${isAnswered ? '<span class="navigator-status-badge answered">✓</span>' : ''}
+                            ${isFlagged ? '<span class="navigator-status-badge flagged">⚑</span>' : ''}
+                        </div>
+                    </div>
+                    <div class="navigator-question-preview">${preview}</div>
+                `;
+
+                item.onclick = () => {
+                    currentQuestion = questionNum;
+                    updateDisplay();
+                    toggleNavigator(); // Close after selection
+                };
+
+                navigatorContent.appendChild(item);
+            });
+
+            // Scroll to current question
+            setTimeout(() => {
+                const currentItem = navigatorContent.querySelector('.navigator-question-item.current');
+                if (currentItem) {
+                    currentItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 100);
         }
 
         // Close modals when clicking outside
