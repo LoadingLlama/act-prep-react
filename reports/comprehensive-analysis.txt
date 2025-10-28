@@ -1,0 +1,733 @@
+====================================================================================================
+SECTION 1: FIGURE & DIAGRAM ANALYSIS
+====================================================================================================
+
+MATH: 42/420 questions have figures (10.0%)
+
+--- MATH FIGURE EXAMPLES (First 10) ---
+
+Q17 [Test 1] - geometry
+Stem: In the figure below, 3 streets form a triangle. Elm Street is 700 meters long, Oak Street is 500 meters long, and the angle between them measures 70°....
+
+Q24 [Test 1] - geometry
+Stem: In the figure below, the circle with center O has a radius of 10 units. Points A, B, and C lie on the circle. What is the length of BC if ∠AOC = 120°?...
+
+Q5 [Test 4] - geometry
+Stem: In the figure below, AB is congruent to BC, and AE intersects BF at C. What is the measure of ∠B?...
+
+Q32 [Test 1] - geometry
+Stem: In the figure below, ABCD is a rectangle. Point E is on BC such that AE = 13, BE = 5, and AB = 12. What is the area of triangle AED?...
+
+Q44 [Test 1] - geometry
+Stem: In the figure below, square ABCD has side length 6. Point E is the midpoint of AB. What is the area of triangle AED?...
+
+Q27 [Test 1] - geometry
+Stem: In the figure below, parallel lines are cut by transversal. If angle 1 measures 65°, what is the measure of angle 5?...
+
+Q1 [Test 3] - geometry
+Stem: In the figure below, C is on BD, ∠BAC measures 40°, and ∠ABC measures 110°. What is the measure of ∠ACD?...
+
+Q6 [Test 4] - geometry
+Stem: The dimensions, in feet, of a standard tennis court are shown in the figure below. All lines that meet in the figure do so at right angles. Which of t...
+
+Q56 [Test 4] - word-problem
+Stem: Bill and Nate are participating in a fund-raising event in which they run or walk a distance of 30 miles. A graph representing their progress during t...
+
+Q9 [Test 4] - geometry
+Stem: Regular octagon ABCDEFGH is inscribed in a circle, as shown below. The sector of the circle bounded by radii AJ and DJ and by AD is shaded. The area o...
+
+
+SCIENCE: 11/280 questions have figures (3.9%)
+
+--- SCIENCE FIGURE EXAMPLES (First 10) ---
+
+Q27 [Test 3] - chemical-properties
+Stem: Based on the results in Table 5, as the concentration of HCl increases, the pH:...
+
+Q2 [Test 3] - biological-processes
+Stem: Based on the data in Table 1, as light intensity increases from 100 to 400 μmol/m²/s, the rate of photosynthesis:...
+
+Q9 [Test 3] - chemical-properties
+Stem: Based on Figure 2, as temperature increases from 10°C to 50°C, the conductivity of the 0.5 M NaCl solution:...
+
+Q12 [Test 3] - earth-processes
+Stem: Based on Figure 3, atmospheric CO₂ concentration has increased by approximately how much from 1960 to 2010?...
+
+Q14 [Test 3] - earth-processes
+Stem: The data in Table 2 suggest that global average temperature and atmospheric CO₂ concentration are:...
+
+Q22 [Test 3] - earth-processes
+Stem: Based on Table 4, which mineral has the highest hardness rating on the Mohs scale?...
+
+Q24 [Test 3] - earth-processes
+Stem: According to Figure 4, the sedimentary layers show that the oldest rocks are:...
+
+Q32 [Test 3] - physics-mechanics
+Stem: Based on Figure 5, which planet has the longest orbital period?...
+
+Q37 [Test 3] - biological-processes
+Stem: Based on the data in Table 6, which treatment resulted in the highest rate of cellular respiration?...
+
+Q17 [Test 3] - biological-processes
+Stem: Based on the results in Table 3, the allele for purple flowers appears to be:...
+
+
+SCIENCE PASSAGES: 0/43 passages contain figures
+
+--- SCIENCE PASSAGE FIGURES (First 5) ---
+
+
+
+====================================================================================================
+SECTION 2: LESSON MAPPING & CONTENT
+====================================================================================================
+
+TOTAL LESSONS: 84
+
+
+--- ENGLISH LESSONS (16) ---
+
+ID: 3c3585a1-f137-4331-8390-29ef1f5e889f | Key: pronouns
+Title: Topic 1.5 - Pronouns
+Questions using this lesson: 214 (Eng:214 Math:0 Read:0 Sci:0)
+
+ID: f7ac1d6c-6416-47fd-9720-807224100517 | Key: modifiers
+Title: Topic 1.6 - Misplaced Modifiers
+Questions using this lesson: 3 (Eng:3 Math:0 Read:0 Sci:0)
+
+ID: e6153221-e330-4db4-8cc7-9c5a1d51a301 | Key: parallel-structure
+Title: Topic 1.7 - Parallel Structure
+Questions using this lesson: 3 (Eng:3 Math:0 Read:0 Sci:0)
+
+ID: 4a9e06f8-5ee5-4e5d-9e5d-2ce9b7c6bf16 | Key: misc-topics
+Title: Topic 1.8 - Miscellaneous Topics
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 749af103-4c42-4b62-9b8b-5448836e8804 | Key: getting-started
+Title: ACT Test Basics & Overview
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: a5fd241f-9832-4a5d-a7e9-90cb6232c4ac | Key: sentence-structure
+Title: Topic 1.1 - Building Complete Sentences
+Questions using this lesson: 18 (Eng:18 Math:0 Read:0 Sci:0)
+
+ID: a2e663e5-60b8-402a-ab1f-1d1bf2d93336 | Key: grammar-review
+Title: Topic 1.9 - Grammar Review
+Questions using this lesson: 26 (Eng:26 Math:0 Read:0 Sci:0)
+
+ID: 3e8f0696-1bf7-4b5c-880d-fb5359923b7d | Key: commas
+Title: Topic 1.2 - Essential Comma Rules
+Questions using this lesson: 7 (Eng:7 Math:0 Read:0 Sci:0)
+
+ID: 66776383-9334-4efb-bd72-74b1bbeab8ac | Key: punctuation
+Title: Topic 1.3 - Advanced Punctuation
+Questions using this lesson: 9 (Eng:9 Math:0 Read:0 Sci:0)
+
+ID: 10fff941-59e1-4d3a-84b7-d0fe8f9985ef | Key: verbs
+Title: Topic 1.4 - Verbs
+Questions using this lesson: 128 (Eng:128 Math:0 Read:0 Sci:0)
+
+ID: 04df2a09-a910-4456-8fe5-2f8e7f62c50f | Key: word-choice
+Title: Topic 2.2 - Word Choice
+Questions using this lesson: 8 (Eng:8 Math:0 Read:0 Sci:0)
+
+ID: 9eef3d0e-d5a2-4104-b9a9-3e575e8e6734 | Key: redundancy
+Title: Topic 2.1 - Redundancy & Wordiness
+Questions using this lesson: 69 (Eng:69 Math:0 Read:0 Sci:0)
+
+ID: 7aae3763-017b-4762-ad5a-346aac1f027b | Key: transitions
+Title: Topic 2.3 - Transitions
+Questions using this lesson: 12 (Eng:12 Math:0 Read:0 Sci:0)
+
+ID: 29b59c9d-ef2e-4f7f-aae2-464222884d3a | Key: which-choice
+Title: Topic 2.4 - Which Choice Questions
+Questions using this lesson: 15 (Eng:15 Math:0 Read:0 Sci:0)
+
+ID: 784a146b-8809-4189-a1b4-4b2fdcaf8199 | Key: adding-deleting
+Title: Topic 2.5 - Adding or Deleting Information
+Questions using this lesson: 9 (Eng:9 Math:0 Read:0 Sci:0)
+
+ID: 7dd5f9a2-c597-4d33-a0a0-e98d58075eb4 | Key: logical-placement
+Title: Topic 2.6 - Logical Placement
+Questions using this lesson: 4 (Eng:4 Math:0 Read:0 Sci:0)
+
+
+--- MATH LESSONS (35) ---
+
+ID: d2ae4a84-cb54-4006-8dee-8c325e443c2d | Key: 2.2
+Title: Areas, Volumes & Triangles
+Questions using this lesson: 79 (Eng:0 Math:79 Read:0 Sci:0)
+
+ID: 8e92077d-ae10-48ce-a80d-348cc56969c3 | Key: 2.3
+Title: Lines
+Questions using this lesson: 2 (Eng:0 Math:2 Read:0 Sci:0)
+
+ID: 928ee683-cf5c-46ab-a148-77da4e887e3b | Key: 2.4
+Title: Arcs and Sectors
+Questions using this lesson: 3 (Eng:0 Math:3 Read:0 Sci:0)
+
+ID: a0fbdb59-614b-4597-99c1-344c4f3ad47e | Key: 3.4
+Title: Logarithms
+Questions using this lesson: 6 (Eng:0 Math:6 Read:0 Sci:0)
+
+ID: 0b4b783a-9945-47b9-b3fc-e194374d6818 | Key: 2.5
+Title: Circles, Ellipses, and Hyperbolas
+Questions using this lesson: 18 (Eng:0 Math:18 Read:0 Sci:0)
+
+ID: 06685249-874d-431f-9b7f-1c711d64a9cf | Key: backsolving
+Title: Topic 1.1 - Working Backwards Strategy
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f | Key: 3.1
+Title: Algebra Skills
+Questions using this lesson: 151 (Eng:0 Math:151 Read:0 Sci:0)
+
+ID: 60e3cd06-406b-45bc-b9d7-e887ef8eeca6 | Key: 3.5
+Title: Inequalities
+Questions using this lesson: 1 (Eng:0 Math:1 Read:0 Sci:0)
+
+ID: 56a20188-c413-48c6-b1ba-6cbddf9ba247 | Key: substitution
+Title: Topic 1.2 - Number Substitution Technique
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: a8cd8513-f0a8-4bb1-9890-f21dc053939a | Key: 3.2
+Title: Fractions
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 34e50480-0a09-4f9f-add4-c1121f66776b | Key: 3.6
+Title: Absolute Value
+Questions using this lesson: 3 (Eng:0 Math:3 Read:0 Sci:0)
+
+ID: 7af23229-16aa-4455-a777-66cdd8011dff | Key: vectors
+Title: Topic 7.4 - Vectors
+Questions using this lesson: 2 (Eng:0 Math:2 Read:0 Sci:0)
+
+ID: ec9b95cf-47f7-4c01-8118-91aef61f7170 | Key: word-problems
+Title: Topic 7.5 - Word Problems
+Questions using this lesson: 33 (Eng:0 Math:33 Read:0 Sci:0)
+
+ID: b5f5c943-7bcd-431a-aa94-df51be6612e2 | Key: 6.3
+Title: Probability
+Questions using this lesson: 25 (Eng:0 Math:25 Read:0 Sci:0)
+
+ID: 9fec6937-fba1-40f2-9a28-5ff838420384 | Key: systems-equations
+Title: Topic 4.1 - Systems of Equations
+Questions using this lesson: 3 (Eng:0 Math:3 Read:0 Sci:0)
+
+ID: b8c03bf0-99df-460d-be21-0015eebe7920 | Key: 3.3
+Title: Exponents and Roots
+Questions using this lesson: 1 (Eng:0 Math:1 Read:0 Sci:0)
+
+ID: 74013e77-3111-4dc6-beca-ff15948e4351 | Key: 5.1
+Title: Number Theory
+Questions using this lesson: 11 (Eng:0 Math:11 Read:0 Sci:0)
+
+ID: 6203e4a3-6648-4e0c-9c31-52e35ee2c735 | Key: 5.2
+Title: Percentages
+Questions using this lesson: 1 (Eng:0 Math:1 Read:0 Sci:0)
+
+ID: 3e2c98a9-98e3-40e3-8301-11f38aa0c15b | Key: geometry-angles
+Title: Topic 2.1 - Understanding Angles & Lines
+Questions using this lesson: 12 (Eng:0 Math:12 Read:0 Sci:0)
+
+ID: 27833f99-7aa1-4e5d-92e4-c953fadebc0d | Key: 5.3
+Title: Ratios and Proportions
+Questions using this lesson: 1 (Eng:0 Math:1 Read:0 Sci:0)
+
+ID: f7516c41-afb2-48fb-a4e2-df9fe41d8b23 | Key: quadratics
+Title: Topic 4.2 - Quadratics
+Questions using this lesson: 7 (Eng:0 Math:7 Read:0 Sci:0)
+
+ID: c59913aa-4a4e-4bc3-bdaf-596b9414ff81 | Key: 5.4
+Title: Unit Conversion
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 4d711b65-dcda-4fb5-9740-7bfaae194ff2 | Key: 5.5
+Title: Scientific Notation
+Questions using this lesson: 1 (Eng:0 Math:1 Read:0 Sci:0)
+
+ID: d946c7ef-0543-46fd-a938-79592c05c044 | Key: 5.6
+Title: Repeating Patterns
+Questions using this lesson: 2 (Eng:0 Math:2 Read:0 Sci:0)
+
+ID: cd5f10f6-2970-4d73-82b1-029645565ae7 | Key: 6.2
+Title: Advanced Statistics
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 89b5a825-cb28-4e50-a4a7-de9d73922bc9 | Key: functions
+Title: Topic 4.3 - Functions
+Questions using this lesson: 7 (Eng:0 Math:7 Read:0 Sci:0)
+
+ID: c3c04aee-0641-470f-97d1-eeabce912c87 | Key: transforming-functions
+Title: Topic 4.4 - Shifting and Transforming Functions
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: da718634-9257-4c01-845e-a948650dd68c | Key: exponential-growth
+Title: Topic 4.5 - Exponential Growth and Decay
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: ad844a99-7156-4315-ac86-958f52468df2 | Key: sequences
+Title: Topic 4.6 - Sequences
+Questions using this lesson: 8 (Eng:0 Math:8 Read:0 Sci:0)
+
+ID: a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a | Key: trigonometry
+Title: Topic 7.1 - Trigonometry
+Questions using this lesson: 10 (Eng:0 Math:10 Read:0 Sci:0)
+
+ID: 0090877d-e7d2-4ac4-80b4-87a42502a214 | Key: complex-numbers
+Title: Topic 7.2 - Complex Numbers
+Questions using this lesson: 3 (Eng:0 Math:3 Read:0 Sci:0)
+
+ID: 6e95c291-2e8a-4ae9-8f7e-10caad8588b9 | Key: matrices
+Title: Topic 7.3 - Matrices
+Questions using this lesson: 6 (Eng:0 Math:6 Read:0 Sci:0)
+
+ID: 4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17 | Key: 6.1
+Title: Mean, Median, and Mode
+Questions using this lesson: 21 (Eng:0 Math:21 Read:0 Sci:0)
+
+ID: aaea35f0-81c0-4b3e-930c-d13edeeb3db5 | Key: 6.4
+Title: Permutations and Combinations
+Questions using this lesson: 1 (Eng:0 Math:1 Read:0 Sci:0)
+
+ID: 15d5d79e-44fe-4aa6-a257-9e6260c83720 | Key: miscellaneous-topics
+Title: Topic 7.6 - Miscellaneous Topics
+Questions using this lesson: 2 (Eng:0 Math:2 Read:0 Sci:0)
+
+
+--- READING LESSONS (14) ---
+
+ID: 413af8b0-2287-4863-a1b2-9ada2ed01ebd | Key: pacing-time-management
+Title: Topic 1.4 - Pacing and 10 Time Management Skills
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 25fb92b6-429e-4940-802a-e339ae3a47e1 | Key: question-types
+Title: Topic 2.1 - How to Spot and Approach the 7 Most Common Types of Questions
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 7a364f5c-98c3-4c74-a115-159dd6c64cf0 | Key: breaking-down-questions
+Title: Topic 2.2 - Breaking Down Questions
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: f3f83683-e489-40f6-8651-33ae565aeffd | Key: answer-choices
+Title: Topic 2.3 - How to Approach the Answer Choices
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 189a5ffc-6e86-4c9a-9569-63b81c991635 | Key: correct-vs-incorrect
+Title: Topic 2.4 - Correct vs. Incorrect Answer Choices
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: c22d531f-b59a-41fe-8b19-bf2f8e063b48 | Key: words-in-context
+Title: Topic 2.5 - Words in Context Questions
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 11c2f823-445d-4d13-8083-3d0599aa8613 | Key: reading-intro
+Title: Reading Section Fundamentals
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 5a176fd8-0715-406c-95af-f4a532789b9f | Key: core-principles
+Title: Topic 1.1 - 7 Core Principles for ACT Reading
+Questions using this lesson: 280 (Eng:0 Math:0 Read:280 Sci:0)
+
+ID: ac4440f6-f391-4a04-9a5c-751a2e0ca5b7 | Key: finding-correct-answer
+Title: Topic 1.2 - 3 Strategies for Finding the Correct Answer
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 58a3fd6e-a958-498a-91eb-935f5fa281af | Key: reading-approaches
+Title: Topic 1.3 - How to Approach the Reading Test
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 680d39ef-6fc8-490b-a574-c68fad112466 | Key: comparing-passages
+Title: Topic 2.6 - Tips for Comparing Passages Questions
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 050df26d-52a1-4cd1-80bf-2bf64cb4923a | Key: working-backwards
+Title: Topic 3.1 - Working Backwards
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: a88d6452-a9bc-45d2-bb84-3e483ce948c6 | Key: maximizing-score
+Title: Topic 3.2 - 7 Tips to Maximize Your Reading Score
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 406a197f-f7d0-4c0d-9582-594dbb1bd8a0 | Key: practice-passages
+Title: Topic 3.3 - Practice Passages
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+
+--- SCIENCE LESSONS (19) ---
+
+ID: 8d819556-9a8d-4cf0-9d8e-a42c4d6442cf | Key: figures-text
+Title: Topic 2.5 - Figures + Text Questions
+Questions using this lesson: 2 (Eng:0 Math:0 Read:0 Sci:2)
+
+ID: eb0ae215-47e8-4b48-8251-250067974600 | Key: two-part-answers
+Title: Topic 3.1 - 2-Part Answers
+Questions using this lesson: 27 (Eng:0 Math:0 Read:0 Sci:27)
+
+ID: 667d146c-bca2-4c29-800a-40b1fb577bca | Key: science-introduction
+Title: Science Section Basics
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 2f7ab93c-af8f-408c-9c2a-f7114b57002b | Key: cannot-be-determined
+Title: Topic 3.2 - Cannot Be Determined
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 42594785-0153-49f9-bedf-b2daf9bb837a | Key: passage-approach
+Title: Topic 1.1 - How to Approach the Passages
+Questions using this lesson: 1 (Eng:0 Math:0 Read:0 Sci:1)
+
+ID: e735446e-a5c1-4ba3-b952-e6a5bc05c2ca | Key: outside-knowledge
+Title: Topic 4.3 - Other Outside Knowledge
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 4ca7c266-f0e2-48ff-adbd-204ae486d503 | Key: approximation
+Title: Topic 2.3 - Approximation Questions
+Questions using this lesson: 27 (Eng:0 Math:0 Read:0 Sci:27)
+
+ID: 8a05747a-31df-4a21-822f-3cc6d7739416 | Key: multiple-figures
+Title: Topic 2.4 - Multiple Figures Questions
+Questions using this lesson: 3 (Eng:0 Math:0 Read:0 Sci:3)
+
+ID: 22c56dfe-b819-42f2-a601-54d0ea5f2707 | Key: question-diagnosis
+Title: Topic 1.2 - Question Diagnosis
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 53c5676d-0fa7-4416-8848-38268483599e | Key: specific-data-point
+Title: Topic 2.1 - Specific Data Point Questions
+Questions using this lesson: 108 (Eng:0 Math:0 Read:0 Sci:108)
+
+ID: b8825e84-e3de-4642-913e-fc5c1ea70690 | Key: trends
+Title: Topic 2.2 - Trends Questions
+Questions using this lesson: 33 (Eng:0 Math:0 Read:0 Sci:33)
+
+ID: 9292b9a2-0e17-433a-adb5-c49f39a3e018 | Key: mixing
+Title: Topic 3.4 - Mixing
+Questions using this lesson: 18 (Eng:0 Math:0 Read:0 Sci:18)
+
+ID: a30dfe02-47a0-4c7c-86a6-b5dde55a467a | Key: scatter-plots
+Title: Topic 2.6 - Scatter Plots
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 6f9652ad-13d6-447f-bc9f-df706d1e45aa | Key: conflicting-viewpoints
+Title: Topic 4.4 - Conflicting Viewpoints
+Questions using this lesson: 37 (Eng:0 Math:0 Read:0 Sci:37)
+
+ID: 65784d86-bf0d-4dbe-aca9-a6fca2383101 | Key: equations-as-answers
+Title: Topic 3.3 - Equations as Answers
+Questions using this lesson: 0 (Eng:0 Math:0 Read:0 Sci:0)
+
+ID: 9b8da732-182a-44c5-b3d2-3a95d8718fbb | Key: inverse-trends-multiple-axes
+Title: Topic 2.7 - Inverse Trends and Graphs with Multiple Axes
+Questions using this lesson: 1 (Eng:0 Math:0 Read:0 Sci:1)
+
+ID: 69db2ad0-40cb-4e75-8a57-b62673b41694 | Key: math-on-science
+Title: Topic 3.5 - Math on the Science Test
+Questions using this lesson: 14 (Eng:0 Math:0 Read:0 Sci:14)
+
+ID: 3dd67429-a421-4449-86be-4f622d21e7ce | Key: water-knowledge
+Title: Topic 4.1 - Water Knowledge
+Questions using this lesson: 3 (Eng:0 Math:0 Read:0 Sci:3)
+
+ID: 1513e653-31c1-418d-9e7f-f91253d9438b | Key: experimental-setup
+Title: Topic 4.2 - Experimental Setup
+Questions using this lesson: 6 (Eng:0 Math:0 Read:0 Sci:6)
+
+
+
+====================================================================================================
+SECTION 3: WRONG ANSWER CONSTRUCTION PATTERNS
+====================================================================================================
+
+--- ENGLISH WRONG ANSWER PATTERNS ---
+
+Average CORRECT answer length: 27.3 characters
+Average WRONG answer length: 28.8 characters
+"NO CHANGE" appears 429 times, correct 117 times (27.3%)
+
+--- MATH WRONG ANSWER PATTERNS ---
+
+Average CORRECT answer length: 5.8 characters
+Average WRONG answer length: 5.7 characters
+
+--- ENGLISH WRONG ANSWER EXAMPLES ---
+
+Q6 [verb-agreement] - CORRECT: A
+Stem: In 2009, Marshall announced that indeed there <u>is</u> two manta species....
+  A: NO CHANGE ✓ CORRECT
+  B: happen to be ✗ WRONG
+  C: were ✗ WRONG
+  D: are ✗ WRONG
+  Notes: Passage I - Subject-verb agreement, "two species" is plural
+
+Q10 [verb-agreement] - CORRECT: D
+Stem: Marshall announced that indeed there <u>is</u> two manta species....
+  A: NO CHANGE ✗ WRONG
+  B: exists ✗ WRONG
+  C: was ✗ WRONG
+  D: are ✓ CORRECT
+  Notes: Passage I - Subject-verb agreement
+
+Q45 [main-idea] - CORRECT: B
+Stem: [Passage question] Suppose writer's purpose was to document the process of an artist. Would essay ac...
+  A: Yes, because it focuses on how Jenny used artistic process similar to Klimas ✗ WRONG
+  B: Yes, because it describes how Klimas photographs effects of vibrations created by music on paint ✓ CORRECT
+  C: No, because it focuses on cultural significance of Klimas's artwork ✗ WRONG
+  D: No, because it provides general overview of how Jenny inspired visual artists ✗ WRONG
+  Notes: Passage III - Essay documents Klimas's process
+
+Q12 [modifier-misplaced] - CORRECT: A
+Stem: The fact that such large animals <u>went undifferentiated highlights how little scientists know for ...
+  A: NO CHANGE ✓ CORRECT
+  B: went undifferentiated for so long highlights how little scientists know about ✗ WRONG
+  C: for so long went undifferentiated, highlighting how little scientists know about ✗ WRONG
+  D: went undifferentiated, for so long highlighting how little scientists know about ✗ WRONG
+  Notes: Passage I - Misplaced modifier "for so long"
+
+Q7 [colon] - CORRECT: C
+Stem: Another discovery <u>was: that</u> some mantas had egg-shaped masses at the base of their tail fins....
+  A: NO CHANGE ✗ WRONG
+  B: was, that, ✗ WRONG
+  C: was that ✓ CORRECT
+  D: was, that ✗ WRONG
+  Notes: Passage I - Unnecessary colon
+
+Q8 [sentence-placement] - CORRECT: A
+Stem: [Where should this sentence be placed?] <u>Some of the data were basic, such as manta coloration and...
+  A: after Sentence 1. ✓ CORRECT
+  B: after Sentence 2. ✗ WRONG
+  C: after Sentence 3. ✗ WRONG
+  D: after Sentence 4. ✗ WRONG
+  Notes: Passage I - Logical placement, general before specific
+
+Q9 [word-choice] - CORRECT: C
+Stem: In 2009, Marshall <u>announced, with two other scientists,</u> that indeed there are two manta speci...
+  A: NO CHANGE ✗ WRONG
+  B: surprised many scientists by announcing ✗ WRONG
+  C: had the evidence to announce ✓ CORRECT
+  D: at long last announced ✗ WRONG
+  Notes: Passage I - Word choice to convey scientific backing
+
+Q13 [sentence-placement] - CORRECT: B
+Stem: The fact that such large animals went undifferentiated <u>highlights how little scientists know for ...
+  A: NO CHANGE ✗ WRONG
+  B: for so long highlights how little scientists know ✓ CORRECT
+  C: highlights for so long how little scientists know ✗ WRONG
+  D: highlights how for so long little scientists know ✗ WRONG
+  Notes: Passage I - Modifier placement
+
+Q1 [usage-mechanics] - CORRECT: D
+Stem: directly on <u>Rjukan, a small town</u> in south-central Norway...
+  A: Rjukan, which is ✗ WRONG
+  B: Rjukan; ✗ WRONG
+  C: Rjukan— ✗ WRONG
+  D: Rjukan: ✓ CORRECT
+  Notes: Practice ACT 3 English Question 1 - punctuation alternatives
+
+Q11 [word-choice] - CORRECT: B
+Stem: Thriving in shallow water, it <u>kind of sticks around one area.</u>...
+  A: NO CHANGE ✗ WRONG
+  B: rarely ventures far from its home territory. ✓ CORRECT
+  C: doesn't delight in slogging long distances. ✗ WRONG
+  D: loves hanging around its neighborhood. ✗ WRONG
+  Notes: Passage I - Informal language, needs formal tone
+
+
+--- MATH WRONG ANSWER EXAMPLES ---
+
+Q9 [word-problem] - CORRECT: C
+Stem: The total cost of renting a car is $35.00 for each day the car is rented plus 42.5¢ for each mile dr...
+  A: $154.75 ✗ WRONG
+  B: $224.88 ✗ WRONG
+  C: $358.75 ✓ CORRECT
+  D: $420.00 ✗ WRONG
+  E: $1,697.50 ✗ WRONG
+  Notes: Word problem - unit pricing
+
+Q21 [math-problem-solving] - CORRECT: A
+Stem: A certain car can travel 42 miles on 1 gallon of gasoline. At this rate, how many gallons of gasolin...
+  A: 7.5 ✓ CORRECT
+  B: 8 ✗ WRONG
+  C: 13,230 ✗ WRONG
+  D: 273 ✗ WRONG
+  E: 357 ✗ WRONG
+  Notes: Ratios - unit rates
+
+Q8 [number-theory] - CORRECT: A
+Stem: When Tyrone fell asleep one night, the temperature was 24°F. When Tyrone awoke the next morning, the...
+  A: −36°F ✓ CORRECT
+  B: −12°F ✗ WRONG
+  C: +6°F ✗ WRONG
+  D: +12°F ✗ WRONG
+  E: +36°F ✗ WRONG
+  Notes: Integers - temperature change
+
+Q10 [geometry] - CORRECT: C
+Stem: In the standard (x,y) coordinate plane, what is the slope of the line through (−6,4) and (1,3)?...
+  A: −7 ✗ WRONG
+  B: −1/7 ✗ WRONG
+  C: 1/7 ✓ CORRECT
+  D: 7 ✗ WRONG
+  E: Undefined ✗ WRONG
+  Notes: Coordinate geometry - slope
+
+Q12 [algebra] - CORRECT: D
+Stem: Which of the following inequalities describes the solution set for 3x − 5 < 2x + 1?...
+  A: x < −4 ✗ WRONG
+  B: x > −4 ✗ WRONG
+  C: x < 2/5 ✗ WRONG
+  D: x < 6 ✓ CORRECT
+  E: x > 6 ✗ WRONG
+  Notes: Algebra - linear inequalities
+
+Q14 [algebra] - CORRECT: B
+Stem: For positive real numbers x, y, and z, which of the following expressions is equivalent to (x²y³/z⁴)...
+  A: x⁵y⁶/z⁷ ✗ WRONG
+  B: x⁶y⁹/z¹² ✓ CORRECT
+  C: x⁶y⁹z¹² ✗ WRONG
+  D: x⁸y¹²z¹⁶ ✗ WRONG
+  E: x²³y³⁴z⁴³ ✗ WRONG
+  Notes: Algebra - exponent rules
+
+Q17 [geometry] - CORRECT: B
+Stem: In the figure below, 3 streets form a triangle. Elm Street is 700 meters long, Oak Street is 500 met...
+  A: 200 m ✗ WRONG
+  B: 700 m ✓ CORRECT
+  C: 850 m ✗ WRONG
+  D: 1,200 m ✗ WRONG
+  E: 1,500 m ✗ WRONG
+  Notes: Geometry - Law of Cosines
+
+Q15 [algebra] - CORRECT: B
+Stem: The relationship between temperature measured in Celsius (C) and Fahrenheit (F) is given by the equa...
+  A: 58°F ✗ WRONG
+  B: 203°F ✓ CORRECT
+  C: 207°F ✗ WRONG
+  D: 221°F ✗ WRONG
+  E: 235°F ✗ WRONG
+  Notes: Algebra - formula substitution
+
+Q19 [algebra] - CORRECT: D
+Stem: What is the value of a in the solution (a,b) to the system of equations: 2a + 3b = 12 and 5a − 3b = ...
+  A: 1 ✗ WRONG
+  B: 2 ✗ WRONG
+  C: 2.5 ✗ WRONG
+  D: 3 ✓ CORRECT
+  E: 7 ✗ WRONG
+  Notes: Algebra - system of equations
+
+Q23 [statistics-probability] - CORRECT: C
+Stem: The mean of a set of 5 numbers is 48. If one number is removed, the mean of the remaining numbers is...
+  A: 3 ✗ WRONG
+  B: 45 ✗ WRONG
+  C: 60 ✓ CORRECT
+  D: 48 ✗ WRONG
+  E: 240 ✗ WRONG
+  Notes: Statistics - mean
+
+
+
+====================================================================================================
+SECTION 4: QUESTION WORDING TEMPLATES
+====================================================================================================
+
+--- READING QUESTION WORDING PATTERNS ---
+
+"according to": 34 questions (12.1%)
+"which following": 51 questions (18.2%)
+"passage suggests": 18 questions (6.4%)
+"best describes": 2 questions (0.7%)
+"main purpose": 12 questions (4.3%)
+"primarily serves": 2 questions (0.7%)
+
+--- READING WORDING EXAMPLES ---
+
+Q17: As it is used in line 90, the phrase remotely close to most nearly means:
+
+Q3: Which of the following events mentioned in the passage occurred first chronologically?
+
+Q13: It can reasonably be inferred from Passage A that an animal "captured" by light is most nearly one that:
+
+Q5: According to the passage, one similarity between Murali and Vani is that both:
+
+Q14: Compared to what Joseph appreciates about The Starry Night, the author of Passage B is more appreciative of the:
+
+Q15: The main purpose of the first paragraph of Passage B (lines 42-53) is to introduce the passage by:
+
+Q35: According to the passage, crevasses form in glaciers because:
+
+Q31: The main purpose of the passage is to:
+
+Q9: The narrator of Passage B would be more likely than the narrator of Passage A to describe her relationship with her mother as being marked by:
+
+Q14: Based on the passage, the 1879 Maine ice that was fifteen to twenty inches thick can best be described as:
+
+Q24: The anecdote about Fellini's footage of a woman recounting a tragic tale (lines 25-33) primarily serves to:
+
+Q8: According to Cruz, she returned to the city to:
+
+Q23: The narrator's attitude toward her grandmother's cooking can best be described as:
+
+Q24: The main purpose of the second paragraph (lines 15-28) is to:
+
+Q2: Details in the passage indicate that, compared to Cruz's first apartment, Capote's first apartment:
+
+Q33: The passage author's characterization of Owen as a "Museum man" (lines 81-82) can best be described as:
+
+Q29: In the passage, the author indicates that photography's limitations with respect to memory give the medium:
+
+Q31: The main purpose of the passage is to:
+
+Q33: The passage indicates that a glacier's zone of accumulation is an area where:
+
+Q36: The passage most strongly suggests that if a glacier's zone of accumulation and zone of ablation are balanced, the glacier will:
+
+
+--- SCIENCE QUESTION WORDING PATTERNS ---
+
+"according to": 49 questions (17.5%)
+"based on": 87 questions (31.1%)
+"which following": 44 questions (15.7%)
+"table shows": 107 questions (38.2%)
+
+--- SCIENCE WORDING EXAMPLES ---
+
+Q36: Which of the following statements best describes the primary difference between the two hypotheses?
+
+Q11: Based on Figure 2, at 30 min, the average number of E. coli colonies per dish was closest to:
+
+Q7: As the amount of cleaning time increased, the average number of colonies per dish:
+
+Q6: Which, if either, of the paraffin and the cover slip likely functioned to slow the rate of evaporation from each slide?
+
+Q16: Based on Figure 2, oceanic crust that has an age of 60 million years is at an average depth closest to:
+
+Q18: Suppose that at a certain location on the ocean floor, the oceanic crust has an age of 20 million years. Based on Figure 2, the average depth of the ocean floor at this location is closest to:
+
+Q19: Scientist 1 would most likely agree with which of the following statements about the fossil record?
+
+Q2: Consider the molar volumes of He, Ar, H₂, and N₂ listed in Table 2 at 323 K. What is the order of these gases from the gas having the smallest molar volume to the gas having the largest molar volume?
+
+Q4: An ideal gas has a molar volume of 63.429 L at 1.00 atm and 773 K. At 1.00 atm and 773 K, how many of the gases listed in Table 2 have a smaller molar volume than that of an ideal gas?
+
+Q8: What was the total number of flies tested in Experiment 3?
+
+Q12: Which of the following statements gives the most likely hypothesis for Experiment 3?
+
+Q14: According to Figure 1, at a depth of 50 km, the temperature is closest to:
+
+Q15: Based on Figure 2, as the age of the oceanic crust increases from 0 million years to 80 million years, the average depth of the ocean floor:
+
+Q17: Based on Figure 1, at which of the following depths is the temperature most likely 2000°C?
+
+Q27: Based on the results in Table 5, as the concentration of HCl increases, the pH:
+
+Q34: The gravitational force between two objects depends on:
+
+Q7: Was the solution placed on the Group 10 slides acidic or basic?
+
+Q5: Assume that for A. limax, the greater the activity level, the greater the frequency of cell division. Under the conditions of Experiment 1, an A. limax would most likely undergo the fewest cell divisions at which of the incubation temperatures tested?
+
+Q2: Based on the data in Table 1, as light intensity increases from 100 to 400 μmol/m²/s, the rate of photosynthesis:
+
+Q32: Based on Table 1, as distance from the Sun increases, orbital period:
+

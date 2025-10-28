@@ -1,0 +1,335 @@
+PASSAGE WRITING QUALITY PATTERNS - Literary Analysis
+====================================================================================================
+
+READING PASSAGE WRITING PATTERNS:
+----------------------------------------------------------------------------------------------------
+
+Test 2 - HUMANITIES
+  Title: The Art of Film Dubbing
+  Vocabulary richness: 53.0%
+  Avg word length: 5.0 chars
+  Long words (7+ chars): 26.9%
+  Avg sentence length: 23.4 words
+  Sentence variety (std dev): 12.7
+  Paragraphs: 7
+  Words per paragraph: 108.9
+
+Test 1 - SOCIAL_SCIENCE
+  Title: Our Vanishing Night / The End of Night
+  Vocabulary richness: 48.5%
+  Avg word length: 4.7 chars
+  Long words (7+ chars): 23.4%
+  Avg sentence length: 19.4 words
+  Sentence variety (std dev): 9.3
+  Paragraphs: 9
+  Words per paragraph: 57.4
+
+Test 1 - NATURAL_SCIENCE
+  Title: Glaciers
+  Vocabulary richness: 56.3%
+  Avg word length: 5.4 chars
+  Long words (7+ chars): 32.8%
+  Avg sentence length: 17.5 words
+  Sentence variety (std dev): 5.5
+  Paragraphs: 7
+  Words per paragraph: 61.4
+
+Test 2 - NATURAL_SCIENCE
+  Title: Ocean Acidification
+  Vocabulary richness: 50.5%
+  Avg word length: 5.7 chars
+  Long words (7+ chars): 36.8%
+  Avg sentence length: 18.9 words
+  Sentence variety (std dev): 10.2
+  Paragraphs: 7
+  Words per paragraph: 71.9
+
+Test 4 - HUMANITIES
+  Title: Japanese Bunraku Theatre
+  Vocabulary richness: 49.4%
+  Avg word length: 4.9 chars
+  Long words (7+ chars): 27.1%
+  Avg sentence length: 19.9 words
+  Sentence variety (std dev): 7.5
+  Paragraphs: 4
+  Words per paragraph: 193.8
+
+Test 6 - LITERARY_NARRATIVE
+  Title: LITERARY NARRATIVE: Introduction by Charlotte Noruzi
+  Vocabulary richness: 46.6%
+  Avg word length: 4.7 chars
+  Long words (7+ chars): 23.3%
+  Avg sentence length: 19.9 words
+  Sentence variety (std dev): 8.0
+  Paragraphs: 8
+  Words per paragraph: 99.3
+
+Test 6 - SOCIAL_SCIENCE
+  Title: SOCIAL SCIENCE: Down on the Batture by Oliver A. Houck
+  Vocabulary richness: 45.7%
+  Avg word length: 4.8 chars
+  Long words (7+ chars): 22.3%
+  Avg sentence length: 17.2 words
+  Sentence variety (std dev): 10.3
+  Paragraphs: 9
+  Words per paragraph: 86.6
+
+Test 6 - HUMANITIES
+  Title: HUMANITIES: Passage A - Searching for Silence: John Cage's Art of Noise by Alex Ross / Passage B - This Is Your Brain on Music by Daniel J. Levitin
+  Vocabulary richness: 50.3%
+  Avg word length: 5.0 chars
+  Long words (7+ chars): 27.2%
+  Avg sentence length: 19.6 words
+  Sentence variety (std dev): 9.2
+  Paragraphs: 11
+  Words per paragraph: 67.9
+
+Test 6 - NATURAL_SCIENCE
+  Title: NATURAL SCIENCE: How We Are Evolving by Jonathan K. Pritchard
+  Vocabulary richness: 47.5%
+  Avg word length: 5.1 chars
+  Long words (7+ chars): 29.7%
+  Avg sentence length: 25.8 words
+  Sentence variety (std dev): 9.6
+  Paragraphs: 6
+  Words per paragraph: 124.2
+
+Test 1 - LITERARY NARRATIVE
+  Title: Love Marriage
+  Vocabulary richness: 48.0%
+  Avg word length: 4.5 chars
+  Long words (7+ chars): 18.4%
+  Avg sentence length: 12.1 words
+  Sentence variety (std dev): 7.5
+  Paragraphs: 6
+  Words per paragraph: 81.7
+
+Test 1 - HUMANITIES
+  Title: On Places, Photographs, and Memory
+  Vocabulary richness: 48.7%
+  Avg word length: 5.0 chars
+  Long words (7+ chars): 27.1%
+  Avg sentence length: 16.8 words
+  Sentence variety (std dev): 7.1
+  Paragraphs: 7
+  Words per paragraph: 68.0
+
+Test 2 - LITERARY NARRATIVE
+  Title: Mothers and Memory
+  Vocabulary richness: 47.6%
+  Avg word length: 4.4 chars
+  Long words (7+ chars): 18.1%
+  Avg sentence length: 15.4 words
+  Sentence variety (std dev): 6.7
+  Paragraphs: 10
+  Words per paragraph: 83.8
+
+Test 2 - SOCIAL_SCIENCE
+  Title: The Natural Ice Industry
+  Vocabulary richness: 46.8%
+  Avg word length: 4.8 chars
+  Long words (7+ chars): 23.5%
+  Avg sentence length: 30.5 words
+  Sentence variety (std dev): 15.8
+  Paragraphs: 7
+  Words per paragraph: 109.9
+
+Test 4 - NATURAL_SCIENCE
+  Title: Sociable, and Smart
+  Vocabulary richness: 44.3%
+  Avg word length: 5.0 chars
+  Long words (7+ chars): 25.5%
+  Avg sentence length: 14.3 words
+  Sentence variety (std dev): 6.1
+  Paragraphs: 15
+  Words per paragraph: 50.5
+
+Test 7 - LITERARY_NARRATIVE
+  Title: LITERARY NARRATIVE: City Kid by Nelson George
+  Vocabulary richness: 51.6%
+  Avg word length: 4.6 chars
+  Long words (7+ chars): 22.6%
+  Avg sentence length: 19.3 words
+  Sentence variety (std dev): 13.0
+  Paragraphs: 9
+  Words per paragraph: 89.3
+
+Test 7 - SOCIAL_SCIENCE
+  Title: SOCIAL SCIENCE: Dual Passage on Gestures
+  Vocabulary richness: 51.8%
+  Avg word length: 5.3 chars
+  Long words (7+ chars): 30.5%
+  Avg sentence length: 18.9 words
+  Sentence variety (std dev): 9.3
+  Paragraphs: 11
+  Words per paragraph: 66.7
+
+Test 7 - HUMANITIES
+  Title: HUMANITIES: The Lost Painting by Jonathan Harr
+  Vocabulary richness: 46.1%
+  Avg word length: 4.9 chars
+  Long words (7+ chars): 26.0%
+  Avg sentence length: 20.1 words
+  Sentence variety (std dev): 10.3
+  Paragraphs: 8
+  Words per paragraph: 95.6
+
+Test 7 - NATURAL_SCIENCE
+  Title: NATURAL SCIENCE: Archives of Life: Science and Collections by Richard Fortey
+  Vocabulary richness: 51.7%
+  Avg word length: 5.2 chars
+  Long words (7+ chars): 31.4%
+  Avg sentence length: 23.7 words
+  Sentence variety (std dev): 9.8
+  Paragraphs: 6
+  Words per paragraph: 121.2
+
+Test 4 - LITERARY NARRATIVE
+  Title: Atop the Mound
+  Vocabulary richness: 49.6%
+  Avg word length: 4.5 chars
+  Long words (7+ chars): 21.2%
+  Avg sentence length: 27.6 words
+  Sentence variety (std dev): 11.3
+  Paragraphs: 7
+  Words per paragraph: 118.0
+
+Test 5 - SOCIAL_SCIENCE
+  Title: INFORMATIONAL: Notes from a Wedding by Lauren Wilcox Puchowski
+  Vocabulary richness: 49.1%
+  Avg word length: 4.7 chars
+  Long words (7+ chars): 24.4%
+  Avg sentence length: 20.6 words
+  Sentence variety (std dev): 14.2
+  Paragraphs: 12
+  Words per paragraph: 67.2
+
+Test 5 - HUMANITIES
+  Title: INFORMATIONAL: Photography Changes How Cultural Groups Are Represented and Perceived by Edwin Schupman
+  Vocabulary richness: 53.0%
+  Avg word length: 5.5 chars
+  Long words (7+ chars): 30.5%
+  Avg sentence length: 18.5 words
+  Sentence variety (std dev): 10.0
+  Paragraphs: 6
+  Words per paragraph: 117.0
+
+Test 5 - NATURAL_SCIENCE
+  Title: INFORMATIONAL: Summer World: A Season of Bounty by Bernd Heinrich
+  Vocabulary richness: 46.9%
+  Avg word length: 4.9 chars
+  Long words (7+ chars): 26.0%
+  Avg sentence length: 23.6 words
+  Sentence variety (std dev): 11.1
+  Paragraphs: 5
+  Words per paragraph: 154.0
+
+Test 3 - SOCIAL_SCIENCE
+  Title: The Aluminum Revolution: From Precious Metal to Industrial Commodity
+  Vocabulary richness: 53.3%
+  Avg word length: 5.9 chars
+  Long words (7+ chars): 38.9%
+  Avg sentence length: 23.2 words
+  Sentence variety (std dev): 9.2
+  Paragraphs: 11
+  Words per paragraph: 60.5
+
+Test 3 - NATURAL_SCIENCE
+  Title: Coral Reefs: Underwater Rainforests in Crisis
+  Vocabulary richness: 50.9%
+  Avg word length: 6.0 chars
+  Long words (7+ chars): 40.7%
+  Avg sentence length: 23.4 words
+  Sentence variety (std dev): 7.3
+  Paragraphs: 12
+  Words per paragraph: 61.7
+
+Test 4 - SOCIAL_SCIENCE
+  Title: The History of Money
+  Vocabulary richness: 46.4%
+  Avg word length: 4.9 chars
+  Long words (7+ chars): 24.9%
+  Avg sentence length: 25.1 words
+  Sentence variety (std dev): 12.7
+  Paragraphs: 5
+  Words per paragraph: 154.4
+
+Test 5 - LITERARY NARRATIVE
+  Title: LITERARY NARRATIVE: Passage A is adapted from The Piano Shop on the Left Bank / Passage B is adapted from Me and My Violin
+  Vocabulary richness: 47.4%
+  Avg word length: 4.6 chars
+  Long words (7+ chars): 21.6%
+  Avg sentence length: 20.6 words
+  Sentence variety (std dev): 13.2
+  Paragraphs: 12
+  Words per paragraph: 68.6
+
+Test 3 - LITERARY NARRATIVE
+  Title: Urban Apartments and Writing Spaces
+  Vocabulary richness: 52.3%
+  Avg word length: 5.4 chars
+  Long words (7+ chars): 32.0%
+  Avg sentence length: 25.8 words
+  Sentence variety (std dev): 6.2
+  Paragraphs: 11
+  Words per paragraph: 58.7
+
+Test 3 - LITERARY NARRATIVE
+  Title: Learning to Cook: Family Traditions and Personal Discovery
+  Vocabulary richness: 45.6%
+  Avg word length: 5.4 chars
+  Long words (7+ chars): 35.2%
+  Avg sentence length: 28.5 words
+  Sentence variety (std dev): 8.8
+  Paragraphs: 11
+  Words per paragraph: 67.6
+
+
+====================================================================================================
+READING PASSAGE QUALITY BENCHMARKS:
+====================================================================================================
+
+TARGET METRICS FOR NEW PASSAGES:
+
+  Vocabulary richness: 49.3% (unique words / total words)
+  Average word length: 5.0 characters
+  Long words (7+ chars): 27.4%
+  Average sentence length: 21.1 words
+  Sentence variety: High variance (mix of short and long sentences)
+  Paragraphs: 8-15 paragraphs
+  Words per paragraph: 50-100 words
+
+WRITING QUALITY RULES:
+
+1. VOCABULARY:
+   - Use 49% unique words (avoid repetition)
+   - Include 27% complex words (7+ characters)
+   - Mix common and sophisticated vocabulary
+
+2. SENTENCE STRUCTURE:
+   - Average 21 words per sentence
+   - Vary sentence length (some short, some long)
+   - Use complex sentences with subordinate clauses
+   - Avoid consecutive short sentences
+
+3. PARAGRAPH STRUCTURE:
+   - 8-15 paragraphs total
+   - 50-100 words per paragraph
+   - Clear topic sentences
+   - Logical transitions between paragraphs
+
+
+====================================================================================================
+LITERARY DEVICES FOUND IN ACT PASSAGES:
+====================================================================================================
+
+Example from actual passage:
+"Filmmakers have debated the respective merits of subtitles and dubbing since the earliest sound films. In "The Impossible Life of Clark Costa," published in 1940 in the film journal Cinema, director Michelangelo Antonioni wrote that Romolo Costa, the person who dubbed all of actor Clark Gable's perf..."
+
+Observed techniques:
+  - Narrative hook (engaging opening)
+  - Descriptive language
+  - Clear subject introduction
+  - Specific details and examples
+  - Varied sentence structure
+

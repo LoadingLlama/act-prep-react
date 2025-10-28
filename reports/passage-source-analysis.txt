@@ -1,0 +1,387 @@
+PASSAGE SOURCE ANALYSIS - Can I Use AI-Generated Passages?
+====================================================================================================
+
+CRITICAL QUESTION: Are ACT passages from published sources or original?
+
+READING PASSAGES SOURCE ANALYSIS:
+----------------------------------------------------------------------------------------------------
+
+Test 2 P3: HUMANITIES
+  Title: The Art of Film Dubbing
+  Author: Chiara Barzini
+  Source: Harper's Magazine article "Read My Lips"
+  Assessment: PUBLISHED WORK
+
+Test 1 P2: SOCIAL_SCIENCE
+  Title: Our Vanishing Night / The End of Night
+  Author: Verlyn Klinkenborg / Paul Bogard
+  Source: National Geographic (2008) / The End of Night (2013)
+  Assessment: PUBLISHED WORK
+
+Test 1 P4: NATURAL_SCIENCE
+  Title: Glaciers
+  Author: N/A
+  Source: Article about glaciers
+  Assessment: PUBLISHED WORK
+
+Test 2 P4: NATURAL_SCIENCE
+  Title: Ocean Acidification
+  Author: N/A
+  Source: NO SOURCE LISTED
+  Assessment: POSSIBLY ORIGINAL
+
+Test 4 P3: HUMANITIES
+  Title: Japanese Bunraku Theatre
+  Author: Theodora Skipitares and Joan Acocella
+  Source: Dual Passage
+  Assessment: PUBLISHED WORK
+
+Test 6 P1: LITERARY_NARRATIVE
+  Title: LITERARY NARRATIVE: Introduction by Charlotte Noruzi
+  Author: N/A
+  Source: NO SOURCE LISTED
+  Assessment: POSSIBLY ORIGINAL
+
+Test 6 P2: SOCIAL_SCIENCE
+  Title: SOCIAL SCIENCE: Down on the Batture by Oliver A. Houck
+  Author: N/A
+  Source: NO SOURCE LISTED
+  Assessment: POSSIBLY ORIGINAL
+
+Test 6 P3: HUMANITIES
+  Title: HUMANITIES: Passage A - Searching for Silence: John Cage's Art of Noise by Alex Ross / Passage B - This Is Your Brain on Music by Daniel J. Levitin
+  Author: N/A
+  Source: NO SOURCE LISTED
+  Assessment: POSSIBLY ORIGINAL
+
+Test 6 P4: NATURAL_SCIENCE
+  Title: NATURAL SCIENCE: How We Are Evolving by Jonathan K. Pritchard
+  Author: N/A
+  Source: NO SOURCE LISTED
+  Assessment: POSSIBLY ORIGINAL
+
+Test 1 P1: LITERARY NARRATIVE
+  Title: Love Marriage
+  Author: V. V. Ganeshananthan
+  Source: Love Marriage novel (2008)
+  Assessment: PUBLISHED WORK
+
+Test 1 P3: HUMANITIES
+  Title: On Places, Photographs, and Memory
+  Author: Chris Engman
+  Source: Essay (2012)
+  Assessment: PUBLISHED WORK
+
+Test 2 P1: LITERARY NARRATIVE
+  Title: Mothers and Memory
+  Author: Susan Power (Passage A) and Leslie Chang (Passage B)
+  Source: Various memoirs and essays
+  Assessment: PUBLISHED WORK
+
+Test 2 P2: SOCIAL_SCIENCE
+  Title: The Natural Ice Industry
+  Author: Gavin Weightman
+  Source: The Frozen-Water Trade: A True Story
+  Assessment: PUBLISHED WORK
+
+Test 4 P4: NATURAL_SCIENCE
+  Title: Sociable, and Smart
+  Author: Carl Zimmer
+  Source: ©2008 by The New York Times Company
+  Assessment: PUBLISHED WORK
+
+Test 7 P1: LITERARY_NARRATIVE
+  Title: LITERARY NARRATIVE: City Kid by Nelson George
+  Author: N/A
+  Source: NO SOURCE LISTED
+  Assessment: POSSIBLY ORIGINAL
+
+Test 7 P2: SOCIAL_SCIENCE
+  Title: SOCIAL SCIENCE: Dual Passage on Gestures
+  Author: N/A
+  Source: NO SOURCE LISTED
+  Assessment: POSSIBLY ORIGINAL
+
+Test 7 P3: HUMANITIES
+  Title: HUMANITIES: The Lost Painting by Jonathan Harr
+  Author: N/A
+  Source: NO SOURCE LISTED
+  Assessment: POSSIBLY ORIGINAL
+
+Test 7 P4: NATURAL_SCIENCE
+  Title: NATURAL SCIENCE: Archives of Life: Science and Collections by Richard Fortey
+  Author: N/A
+  Source: NO SOURCE LISTED
+  Assessment: POSSIBLY ORIGINAL
+
+Test 4 P1: LITERARY NARRATIVE
+  Title: Atop the Mound
+  Author: William Least Heat-Moon
+  Source: ©1991 by William Least Heat-Moon
+  Assessment: PUBLISHED WORK
+
+Test 5 P2: SOCIAL_SCIENCE
+  Title: INFORMATIONAL: Notes from a Wedding by Lauren Wilcox Puchowski
+  Author: N/A
+  Source: NO SOURCE LISTED
+  Assessment: POSSIBLY ORIGINAL
+
+Test 5 P3: HUMANITIES
+  Title: INFORMATIONAL: Photography Changes How Cultural Groups Are Represented and Perceived by Edwin Schupman
+  Author: N/A
+  Source: NO SOURCE LISTED
+  Assessment: POSSIBLY ORIGINAL
+
+Test 5 P4: NATURAL_SCIENCE
+  Title: INFORMATIONAL: Summer World: A Season of Bounty by Bernd Heinrich
+  Author: N/A
+  Source: NO SOURCE LISTED
+  Assessment: POSSIBLY ORIGINAL
+
+Test 3 P2: SOCIAL_SCIENCE
+  Title: The Aluminum Revolution: From Precious Metal to Industrial Commodity
+  Author: Historical Account
+  Source: Practice ACT 3
+  Assessment: PUBLISHED WORK
+
+Test 3 P4: NATURAL_SCIENCE
+  Title: Coral Reefs: Underwater Rainforests in Crisis
+  Author: Marine Biology Research
+  Source: Practice ACT 3
+  Assessment: PUBLISHED WORK
+
+Test 4 P2: SOCIAL_SCIENCE
+  Title: The History of Money
+  Author: Jack Weatherford
+  Source: ©1997 by Jack McIver Weatherford
+  Assessment: PUBLISHED WORK
+
+Test 5 P1: LITERARY NARRATIVE
+  Title: LITERARY NARRATIVE: Passage A is adapted from The Piano Shop on the Left Bank / Passage B is adapted from Me and My Violin
+  Author: N/A
+  Source: NO SOURCE LISTED
+  Assessment: POSSIBLY ORIGINAL
+
+Test 3 P1: LITERARY NARRATIVE
+  Title: Urban Apartments and Writing Spaces
+  Author: Angie Cruz
+  Source: Practice ACT 3
+  Assessment: PUBLISHED WORK
+
+Test 3 P3: LITERARY NARRATIVE
+  Title: Learning to Cook: Family Traditions and Personal Discovery
+  Author: Personal Narrative
+  Source: Practice ACT 3
+  Assessment: PUBLISHED WORK
+
+
+READING PASSAGE SUMMARY:
+  Published/Attributed: 15/28
+  No Source Listed: 13/28
+
+CONCLUSION: 53.6% of reading passages have attribution/sources
+This suggests ACT uses PUBLISHED WORKS, not AI-generated content.
+
+
+====================================================================================================
+ENGLISH PASSAGES SOURCE ANALYSIS:
+----------------------------------------------------------------------------------------------------
+
+Test 1 P1: Double the Manta Rays
+  Introduction: Essay about marine biologist Andrea Marshall discovering two species of manta rays...
+  Assessment: POSSIBLY ORIGINAL
+
+Test 1 P2: Origins of Aspirin
+  Introduction: The history of aspirin from ancient willow bark to modern medicine...
+  Assessment: POSSIBLY ORIGINAL
+
+Test 1 P3: Good Vibrations
+  Introduction: Photographer Martin Klimas creates "sonic sculptures" by photographing paint vibrating to music...
+  Assessment: POSSIBLY ORIGINAL
+
+Test 1 P4: Building and Rebuilding "the King of Roads"
+  Introduction: The history of the Columbia River Highway in Oregon...
+  Assessment: POSSIBLY ORIGINAL
+
+Test 1 P5: Selling Hip-Hop
+  Introduction: Sylvia Robinson and the commercialization of hip-hop music...
+  Assessment: POSSIBLY ORIGINAL
+
+Test 2 P4: Clinton Hill's Found Artist
+  Introduction: Discovery of artist Rafael Leonardo Black...
+  Assessment: POSSIBLY ORIGINAL
+
+Test 2 P2: A Mouthful of Music
+  Introduction: The Garamantes civilization in the Sahara Desert...
+  Assessment: POSSIBLY ORIGINAL
+
+Test 2 P3: Neutrinos on Ice
+  Introduction: The IceCube Neutrino Observatory in Antarctica...
+  Assessment: POSSIBLY ORIGINAL
+
+Test 2 P5: Cher Ami, Pigeon Hero
+  Introduction: The historical significance of homing pigeons...
+  Assessment: POSSIBLY ORIGINAL
+
+Test 2 P1: Making the Desert Bloom
+  Introduction: Celtic mouth music and its traditions...
+  Assessment: POSSIBLY ORIGINAL
+
+Test 3 P1: Here Comes the Sun
+  Introduction: Essay about using mirrors to bring sunlight to Rjukan, Norway...
+  Assessment: POSSIBLY ORIGINAL
+
+Test 3 P2: Talking Scop
+  Introduction: Essay about the Anglo-Saxon oral tradition and the scop (storyteller)...
+  Assessment: POSSIBLY ORIGINAL
+
+Test 3 P3: Logging the Lake
+  Introduction: Personal narrative about a summer job helping with lake logging in Maine...
+  Assessment: POSSIBLY ORIGINAL
+
+Test 3 P4: The Meteoric Rise of Meenakshi Wadhwa
+  Introduction: Profile of planetary scientist Meenakshi Wadhwa and her work with meteorites...
+  Assessment: POSSIBLY ORIGINAL
+
+Test 3 P5: The Soul of Stax
+  Introduction: Essay about Stax Records and its influence on 1960s soul music...
+  Assessment: POSSIBLY ORIGINAL
+
+Test 4 P1: Dragon and Snow
+  Assessment: POSSIBLY ORIGINAL
+
+Test 4 P2: Aquatic Explorer AQUA2
+  Assessment: POSSIBLY ORIGINAL
+
+Test 4 P3: The Fisherman of Porgy Key
+  Assessment: POSSIBLY ORIGINAL
+
+Test 4 P4: Close Encounters of the Bird Kind
+  Assessment: POSSIBLY ORIGINAL
+
+Test 4 P5: Choreographing Change
+  Assessment: POSSIBLY ORIGINAL
+
+Test 5 P1: Bar Codes: A Linear History
+  Assessment: POSSIBLY ORIGINAL
+
+Test 5 P2: Glowing on an Adventure
+  Assessment: POSSIBLY ORIGINAL
+
+Test 5 P3: A Rose by the Name Antique
+  Assessment: POSSIBLY ORIGINAL
+
+Test 5 P4: Jeremy Frey, Weaving Heritage Into Modern Art
+  Assessment: POSSIBLY ORIGINAL
+
+Test 5 P5: The Flow of Time
+  Assessment: POSSIBLY ORIGINAL
+
+Test 6 P1: Deborah Sampson: A Revolutionary Hero
+  Assessment: POSSIBLY ORIGINAL
+
+Test 6 P2: Senator Fong's Plantation and Gardens
+  Assessment: POSSIBLY ORIGINAL
+
+Test 6 P3: Rescuing the Lord Howe Stick Insect
+  Assessment: POSSIBLY ORIGINAL
+
+Test 6 P4: Morse Code in the Modern Age
+  Assessment: POSSIBLY ORIGINAL
+
+Test 6 P5: Urban Legend
+  Assessment: POSSIBLY ORIGINAL
+
+Test 7 P1: King Tut's Space Bug
+  Assessment: POSSIBLY ORIGINAL
+
+Test 7 P2: Not All It's Krakened Up to Be
+  Assessment: POSSIBLY ORIGINAL
+
+Test 7 P3: Programmed for Success
+  Assessment: POSSIBLY ORIGINAL
+
+Test 7 P4: Painting Outside the Lines
+  Assessment: POSSIBLY ORIGINAL
+
+Test 7 P5: In Tune
+  Assessment: POSSIBLY ORIGINAL
+
+
+ENGLISH PASSAGE SUMMARY:
+  With source attribution: 0/35 (0.0%)
+
+
+====================================================================================================
+SCIENCE PASSAGES SOURCE ANALYSIS:
+----------------------------------------------------------------------------------------------------
+
+Science passages typically describe experimental setups.
+These are likely ORIGINAL to ACT (not from published papers).
+However, they must be SCIENTIFICALLY ACCURATE.
+
+Example: Test 6 P2 - "13-Lined Ground Squirrel Hibernation"
+  Type: DATA_REPRESENTATION
+  Words: 162
+
+Example: Test 1 P2 - "Flies as Bacterial Vectors"
+  Type: RESEARCH_SUMMARY
+  Words: 264
+
+Example: Test 2 P5 - "Carbon Dioxide Solubility in Magma"
+  Type: DATA_REPRESENTATION
+  Words: 106
+
+Example: Test 1 P3 - "Forest Fires and Oxygen Levels"
+  Type: DATA_REPRESENTATION
+  Words: 132
+
+Example: Test 6 P4 - "Acetate Hydrolysis Rate Constants"
+  Type: RESEARCH_SUMMARY
+  Words: 362
+
+
+
+====================================================================================================
+PASSAGE CREATION GUIDELINES FOR NEW TESTS:
+====================================================================================================
+
+READING PASSAGES:
+  Option 1: Use excerpts from published works (with permission/fair use)
+  Option 2: Write original passages that match ACT quality standards
+  Option 3: Adapt/modify published works (clearly state "adapted from")
+
+  Quality Requirements:
+    - College-level reading complexity
+    - Clear narrative or argumentative structure
+    - 430-826 words depending on type
+    - Age-appropriate content
+    - Literary/journalistic quality writing
+
+ENGLISH PASSAGES:
+  More flexibility - can be original
+  Must contain deliberate grammar errors for testing
+  279-356 words
+  Biographical, historical, or personal narrative topics
+
+SCIENCE PASSAGES:
+  Can be original experimental descriptions
+  MUST be scientifically accurate
+  Data tables must show realistic relationships
+  89-414 words depending on type
+
+
+====================================================================================================
+CRITICAL LIMITATION FOR AI GENERATION:
+====================================================================================================
+
+For TRUE 1:1 accuracy, reading passages should ideally come from
+published sources to match ACT quality standards.
+
+AI-generated passages may:
+  - Lack the literary quality of published works
+  - Be detectably "AI-written" in style
+  - Not match the depth of real journalism/literature
+
+However, for PRACTICE TESTS: AI-generated passages are acceptable
+if they meet quality standards (reading level, complexity, length).

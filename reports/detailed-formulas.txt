@@ -1,0 +1,955 @@
+DETAILED DISTRACTOR CONSTRUCTION FORMULAS
+====================================================================================================
+
+
+====================================================================================================
+GRAMMAR (84 questions)
+====================================================================================================
+
+CONSTRUCTION FORMULA:
+
+1. Correct Answer Position:
+   A: 23/84 (27.4%)
+   B: 18/84 (21.4%)
+   C: 25/84 (29.8%)
+   D: 18/84 (21.4%)
+
+2. "NO CHANGE" Usage:
+   Appears in: 82 questions
+   As CORRECT answer: 23 (28.0%)
+   As WRONG answer: 59 (72.0%)
+   RULE: "NO CHANGE" is correct 28.0% of the time for grammar
+
+3. Choice Length Pattern:
+   Correct answers avg: 15.1 characters
+   Wrong answers avg: 17.8 characters
+   Difference: -2.7 characters
+   RULE: Correct answers tend to be SHORTER
+
+4. Most Common Wrong Answer Choices:
+   "NO CHANGE" appears 59 times
+   "DELETE the underlined portion." appears 9 times
+   "with" appears 3 times
+   "its'" appears 3 times
+   "They're" appears 2 times
+
+5. PATTERN EXAMPLES (showing distractor strategy):
+
+Q18 [Test 5]:
+Underlined: "with"
+
+CHOICES:
+  A: "NO CHANGE" ✓ CORRECT
+  B: "Although" ✗ WRONG
+  C: "Since" ✗ WRONG
+     Strategy [too brief]
+  D: "DELETE the underlined portion." ✗ WRONG
+     Strategy [wordier]
+
+Q19 [Test 5]:
+Underlined: "While"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "with" ✗ WRONG
+     Strategy [wordier]
+  C: "by" ✗ WRONG
+  D: "in" ✓ CORRECT
+
+Q27 [Test 5]:
+Underlined: "them"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "the light" ✗ WRONG
+     Strategy [wordier]
+  C: "these" ✓ CORRECT
+  D: "DELETE the underlined portion." ✗ WRONG
+     Strategy [wordier]
+
+Q1 [Test 4]:
+Underlined: "snowy blizzards"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "blizzards of snowfall" ✗ WRONG
+  C: "blizzards of snow" ✓ CORRECT
+  D: "blizzards" ✗ WRONG
+     Strategy [too brief]
+
+Q4 [Test 4]:
+Underlined: "one The History of Chinatown,"
+
+CHOICES:
+  A: "NO CHANGE" ✓ CORRECT
+  B: "one: The History of Chinatown," ✗ WRONG
+     Strategy [wordier]
+  C: "one, The History of Chinatown," ✗ WRONG
+     Strategy [wordier]
+  D: "one The History of Chinatown" ✗ WRONG
+     Strategy [wordier]
+
+
+====================================================================================================
+STYLE (74 questions)
+====================================================================================================
+
+CONSTRUCTION FORMULA:
+
+1. Correct Answer Position:
+   A: 24/74 (32.4%)
+   B: 19/74 (25.7%)
+   C: 16/74 (21.6%)
+   D: 15/74 (20.3%)
+
+2. "NO CHANGE" Usage:
+   Appears in: 70 questions
+   As CORRECT answer: 22 (31.4%)
+   As WRONG answer: 48 (68.6%)
+   RULE: "NO CHANGE" is correct 31.4% of the time for style
+
+3. Choice Length Pattern:
+   Correct answers avg: 22.8 characters
+   Wrong answers avg: 24.4 characters
+   Difference: -1.6 characters
+   RULE: Correct answers tend to be SHORTER
+
+4. Most Common Wrong Answer Choices:
+   "NO CHANGE" appears 48 times
+   "DELETE the underlined portion." appears 5 times
+   "on the other hand," appears 1 times
+   "above all," appears 1 times
+   "have not a lot of light." appears 1 times
+
+5. PATTERN EXAMPLES (showing distractor strategy):
+
+Q26 [Test 5]:
+Underlined: "however,"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "on the other hand," ✗ WRONG
+     Strategy [wordier]
+  C: "for example," ✓ CORRECT
+  D: "above all," ✗ WRONG
+
+Q20 [Test 5]:
+Underlined: "feel as though it were downright ensconced in shadows."
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "end up pretty hard to see." ✓ CORRECT
+  C: "have not a lot of light." ✗ WRONG
+  D: "be utterly dark." ✗ WRONG
+     Strategy [too brief]
+
+Q3 [Test 4]:
+
+CHOICES:
+  A: "NO CHANGE" ✓ CORRECT
+  B: "pulled" ✗ WRONG
+     Strategy [too brief]
+  C: "lured" ✗ WRONG
+     Strategy [too brief]
+  D: "drew" ✗ WRONG
+     Strategy [too brief]
+
+Q6 [Test 4]:
+
+CHOICES:
+  A: "NO CHANGE" ✓ CORRECT
+  B: "gripping it with an enormous hand," ✗ WRONG
+     Strategy [wordier]
+  C: "in the center of the image," ✗ WRONG
+     Strategy [wordier]
+  D: "others hard at work," ✗ WRONG
+     Strategy [wordier]
+
+Q29 [Test 5]:
+
+CHOICES:
+  A: "Yes, because the revised phrase more specifically describes the dragonfly's actions to help support the narrator's claim that she knew what its fate would be." ✓ CORRECT
+  B: "Yes, because the revised phrase adds information that explains why the light of the glowworms was effective at attracting insects." ✗ WRONG
+  C: "No, because the revised phrase distracts from the essay's focus on the narrator's experience in the cave." ✗ WRONG
+     Strategy [too brief]
+  D: "No, because the revised phrase contradicts information provided earlier in the essay." ✗ WRONG
+     Strategy [too brief]
+
+
+====================================================================================================
+RHETORICAL-SKILLS (39 questions)
+====================================================================================================
+
+CONSTRUCTION FORMULA:
+
+1. Correct Answer Position:
+   A: 11/39 (28.2%)
+   B: 6/39 (15.4%)
+   C: 11/39 (28.2%)
+   D: 11/39 (28.2%)
+
+2. "NO CHANGE" Usage:
+   Appears in: 27 questions
+   As CORRECT answer: 7 (25.9%)
+   As WRONG answer: 20 (74.1%)
+   RULE: "NO CHANGE" is correct 25.9% of the time for rhetorical-skills
+
+3. Choice Length Pattern:
+   Correct answers avg: 39.2 characters
+   Wrong answers avg: 36.8 characters
+   Difference: 2.4 characters
+   RULE: Correct answers tend to be LONGER
+
+4. Most Common Wrong Answer Choices:
+   "NO CHANGE" appears 20 times
+   "showed" appears 2 times
+   "The" appears 2 times
+   "help each other out" appears 1 times
+   "conspire together" appears 1 times
+
+5. PATTERN EXAMPLES (showing distractor strategy):
+
+Q11 [Test 3]:
+Underlined: "tracking the sun as it crosses the sky"
+
+CHOICES:
+  A: "reveals the size and location of the light reflected by the mirrors" ✗ WRONG
+     Strategy [wordier]
+  B: "describes the mechanism that adjusts the mirrors during the day" ✗ WRONG
+  C: "clarifies where the mirrors are located in relation to the town" ✗ WRONG
+  D: "specifies why the mirrors adjust throughout the day" ✓ CORRECT
+
+Explanation: Practice ACT 3 English Question 11 - deletion effects
+
+Q9 [Test 3]:
+Underlined: "team up as a group"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "help each other out" ✗ WRONG
+  C: "are synchronized" ✓ CORRECT
+  D: "conspire together" ✗ WRONG
+
+Explanation: Practice ACT 3 English Question 9 - word choice
+
+Q17 [Test 3]:
+Underlined: "by people being conversant"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "by folks rattling them off" ✗ WRONG
+     Strategy [wordier]
+  C: "through spoken word" ✓ CORRECT
+  D: "in chitchat" ✗ WRONG
+     Strategy [too brief]
+
+Explanation: Practice ACT 3 English Question 17 - precise language choice
+
+Q4 [Test 3]:
+Underlined: "had considered the idea"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "had come to understand that building the mirrors wasn't feasible" ✗ WRONG
+  C: "had realized that the necessary technology didn't exist" ✓ CORRECT
+  D: "had recognized that the project could not succeed" ✗ WRONG
+
+Explanation: Practice ACT 3 English Question 4 - specific details
+
+Q6 [Test 3]:
+Underlined: "mountain, moreover,"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "mountain because" ✓ CORRECT
+  C: "mountain and" ✗ WRONG
+  D: "mountain," ✗ WRONG
+     Strategy [too brief]
+
+Explanation: Practice ACT 3 English Question 6 - transitions
+
+
+====================================================================================================
+ORGANIZATION (37 questions)
+====================================================================================================
+
+CONSTRUCTION FORMULA:
+
+1. Correct Answer Position:
+   A: 8/37 (21.6%)
+   B: 10/37 (27.0%)
+   C: 10/37 (27.0%)
+   D: 9/37 (24.3%)
+
+2. "NO CHANGE" Usage:
+   Appears in: 11 questions
+   As CORRECT answer: 4 (36.4%)
+   As WRONG answer: 7 (63.6%)
+   RULE: "NO CHANGE" is correct 36.4% of the time for organization
+
+3. Choice Length Pattern:
+   Correct answers avg: 49.1 characters
+   Wrong answers avg: 50.9 characters
+   Difference: -1.8 characters
+   RULE: Correct answers tend to be SHORTER
+
+4. Most Common Wrong Answer Choices:
+   "NO CHANGE" appears 7 times
+   "where it is now." appears 5 times
+   "after Paragraph 5." appears 3 times
+   "Point A in Paragraph 1." appears 2 times
+   "after Sentence 3." appears 2 times
+
+5. PATTERN EXAMPLES (showing distractor strategy):
+
+Q31 [Test 2]:
+Underlined: "down into the"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "down below" ✗ WRONG
+     Strategy [too brief]
+  C: "downwards" ✗ WRONG
+     Strategy [too brief]
+  D: "DELETE the underlined portion." ✓ CORRECT
+
+Explanation: Test 2 Question 31
+
+Q15 [Test 4]:
+
+CHOICES:
+  A: "Point A." ✗ WRONG
+  B: "Point B." ✗ WRONG
+  C: "Point C." ✓ CORRECT
+  D: "Point D." ✗ WRONG
+
+Q22 [Test 2]:
+Underlined: "Having left no clues, archaeologists"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "A genuine puzzle to scientists, archaeologists" ✗ WRONG
+     Strategy [wordier]
+  C: "Giving no indication, archaeologists" ✗ WRONG
+     Strategy [wordier]
+  D: "Archaeologists" ✓ CORRECT
+
+Explanation: Test 2 Question 22
+
+Q24 [Test 4]:
+
+CHOICES:
+  A: "Yes, because it explains how the engineers came up with the design for the legs." ✗ WRONG
+  B: "Yes, because it provides a description that helps clarify how the legs work." ✓ CORRECT
+  C: "No, because it introduces a comparison to windmills that is not developed in the rest of the essay." ✗ WRONG
+     Strategy [wordier]
+  D: "No, because it blurs the paragraph's focus on the robot's ability to move from land to water." ✗ WRONG
+
+Q22 [Test 4]:
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "operate equally smoothly in tethered or untethered modes." ✗ WRONG
+  C: "perform in mere minutes tasks that take scientists hours." ✗ WRONG
+  D: "move in harmony with the creatures it would study." ✓ CORRECT
+
+
+====================================================================================================
+USAGE-MECHANICS (36 questions)
+====================================================================================================
+
+CONSTRUCTION FORMULA:
+
+1. Correct Answer Position:
+   A: 6/36 (16.7%)
+   B: 10/36 (27.8%)
+   C: 10/36 (27.8%)
+   D: 10/36 (27.8%)
+
+2. "NO CHANGE" Usage:
+   Appears in: 35 questions
+   As CORRECT answer: 6 (17.1%)
+   As WRONG answer: 29 (82.9%)
+   RULE: "NO CHANGE" is correct 17.1% of the time for usage-mechanics
+
+3. Choice Length Pattern:
+   Correct answers avg: 16.5 characters
+   Wrong answers avg: 16.9 characters
+   Difference: -0.4 characters
+   RULE: Correct answers tend to be SHORTER
+
+4. Most Common Wrong Answer Choices:
+   "NO CHANGE" appears 29 times
+   "DELETE the underlined portion" appears 4 times
+   "Rjukan, which is" appears 1 times
+   "Rjukan;" appears 1 times
+   "Rjukan—" appears 1 times
+
+5. PATTERN EXAMPLES (showing distractor strategy):
+
+Q1 [Test 3]:
+Underlined: "Rjukan, a small town"
+
+CHOICES:
+  A: "Rjukan, which is" ✗ WRONG
+     Strategy [wordier]
+  B: "Rjukan;" ✗ WRONG
+  C: "Rjukan—" ✗ WRONG
+  D: "Rjukan:" ✓ CORRECT
+
+Explanation: Practice ACT 3 English Question 1 - punctuation alternatives
+
+Q33 [Test 3]:
+Underlined: "sonar, and piloted"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "sonar, and piloted," ✗ WRONG
+     Strategy [adds punctuation]
+  C: "sonar and piloted," ✗ WRONG
+     Strategy [adds punctuation]
+  D: "sonar and piloted" ✓ CORRECT
+
+Explanation: Practice ACT 3 English Question 33 - comma usage in series
+
+Q8 [Test 3]:
+Underlined: "tools such as thirty-foot wooden tripods"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "tools, such as thirty-foot, wooden, tripods" ✗ WRONG
+  C: "tools such as thirty-foot wooden tripods," ✗ WRONG
+  D: "tools, such as thirty-foot wooden tripods" ✓ CORRECT
+
+Explanation: Practice ACT 3 English Question 8 - comma usage
+
+Q13 [Test 3]:
+Underlined: "rays that reaches the town is"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "rays that reaches the town are" ✗ WRONG
+  C: "rays that reach the town are" ✓ CORRECT
+  D: "rays that reach the town is" ✗ WRONG
+
+Explanation: Practice ACT 3 English Question 13 - subject-verb agreement
+
+Q5 [Test 3]:
+Underlined: "reality. Three"
+
+CHOICES:
+  A: "NO CHANGE" ✓ CORRECT
+  B: "reality. When three" ✗ WRONG
+     Strategy [wordier]
+  C: "reality, three" ✗ WRONG
+     Strategy [wordier]
+  D: "reality three" ✗ WRONG
+     Strategy [wordier]
+
+Explanation: Practice ACT 3 English Question 5 - punctuation
+
+
+====================================================================================================
+PUNCTUATION (34 questions)
+====================================================================================================
+
+CONSTRUCTION FORMULA:
+
+1. Correct Answer Position:
+   A: 14/34 (41.2%)
+   B: 5/34 (14.7%)
+   C: 8/34 (23.5%)
+   D: 7/34 (20.6%)
+
+2. "NO CHANGE" Usage:
+   Appears in: 34 questions
+   As CORRECT answer: 14 (41.2%)
+   As WRONG answer: 20 (58.8%)
+   RULE: "NO CHANGE" is correct 41.2% of the time for punctuation
+
+3. Choice Length Pattern:
+   Correct answers avg: 17.0 characters
+   Wrong answers avg: 21.9 characters
+   Difference: -4.9 characters
+   RULE: Correct answers tend to be SHORTER
+
+4. Most Common Wrong Answer Choices:
+   "NO CHANGE" appears 20 times
+   "DELETE the underlined portion." appears 2 times
+   "was being" appears 1 times
+   "which" appears 1 times
+   "whom" appears 1 times
+
+5. PATTERN EXAMPLES (showing distractor strategy):
+
+Q2 [Test 2]:
+Underlined: "being"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "was being" ✗ WRONG
+     Strategy [wordier]
+  C: "is" ✓ CORRECT
+  D: "DELETE the underlined portion." ✗ WRONG
+     Strategy [wordier]
+
+Explanation: Test 2 Question 2
+
+Q11 [Test 2]:
+Underlined: "whomever"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "which" ✗ WRONG
+     Strategy [wordier]
+  C: "whom" ✗ WRONG
+     Strategy [wordier]
+  D: "who" ✓ CORRECT
+
+Explanation: Test 2 Question 11
+
+Q1 [Test 6]:
+Underlined: "such as"
+
+CHOICES:
+  A: "NO CHANGE" ✓ CORRECT
+  B: "heroes, such as," ✗ WRONG
+     Strategy [wordier]
+  C: "heroes: such as" ✗ WRONG
+     Strategy [wordier]
+  D: "heroes such as," ✗ WRONG
+     Strategy [wordier]
+
+Q1 [Test 7]:
+Underlined: "tomb, in the 1920s"
+
+CHOICES:
+  A: "NO CHANGE" ✓ CORRECT
+  B: "tomb: in the 1920s" ✗ WRONG
+     Strategy [wordier]
+  C: "tomb in the 1920s," ✗ WRONG
+     Strategy [wordier]
+  D: "tomb in the 1920s" ✗ WRONG
+     Strategy [wordier]
+
+Q38 [Test 2]:
+Underlined: "to facilitate"
+
+CHOICES:
+  A: "NO CHANGE" ✓ CORRECT
+  B: ", and to facilitate" ✗ WRONG
+     Strategy [wordier]
+  C: ". To facilitate" ✗ WRONG
+     Strategy [wordier]
+  D: "; to facilitate" ✗ WRONG
+     Strategy [wordier]
+
+Explanation: Test 2 Question 38
+
+
+====================================================================================================
+COMMA-USAGE (21 questions)
+====================================================================================================
+
+CONSTRUCTION FORMULA:
+
+1. Correct Answer Position:
+   A: 4/21 (19.0%)
+   B: 6/21 (28.6%)
+   C: 3/21 (14.3%)
+   D: 8/21 (38.1%)
+
+2. "NO CHANGE" Usage:
+   Appears in: 20 questions
+   As CORRECT answer: 5 (25.0%)
+   As WRONG answer: 15 (75.0%)
+   RULE: "NO CHANGE" is correct 25.0% of the time for comma-usage
+
+3. Choice Length Pattern:
+   Correct answers avg: 13.1 characters
+   Wrong answers avg: 17.4 characters
+   Difference: -4.3 characters
+   RULE: Correct answers tend to be SHORTER
+
+4. Most Common Wrong Answer Choices:
+   "NO CHANGE" appears 15 times
+   "bark; however, was" appears 1 times
+   "bark, however, was" appears 1 times
+   "experiments, of Swiss scientist" appears 1 times
+   "experiments of Swiss scientist" appears 1 times
+
+5. PATTERN EXAMPLES (showing distractor strategy):
+
+Q22 [Test 1]:
+Underlined: "bark however, was"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "bark; however, was" ✗ WRONG
+  C: "bark, however, was" ✗ WRONG
+  D: "bark, however was" ✓ CORRECT
+
+Explanation: Passage II - "However" needs commas on both sides when interrupting
+
+Q40 [Test 1]:
+Underlined: "experiments, of Swiss scientist, Hans"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "experiments, of Swiss scientist" ✗ WRONG
+     Strategy [adds punctuation]
+  C: "experiments of Swiss scientist" ✗ WRONG
+  D: "experiments of Swiss scientist" ✓ CORRECT
+
+Explanation: Passage III - No commas needed
+
+Q43 [Test 1]:
+Underlined: "sculptures. Klimas"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "sculptures, and" ✗ WRONG
+     Strategy [wordier]
+  C: "sculptures," ✓ CORRECT
+  D: "sculptures;" ✗ WRONG
+     Strategy [removes punctuation]
+
+Explanation: Passage III - Subordinate clause needs comma not period
+
+Q33 [Test 1]:
+Underlined: "tripod and positions"
+
+CHOICES:
+  A: "tripod, and he" ✗ WRONG
+     Strategy [adds punctuation]
+  B: "tripod and he" ✓ CORRECT
+  C: "tripod. He" ✗ WRONG
+  D: "tripod; he" ✗ WRONG
+
+Explanation: Passage III - Compound predicate needs no comma; "and he" requires comma
+
+Q61 [Test 1]:
+Underlined: "singer and music producer Sylvia Robinson"
+
+CHOICES:
+  A: "NO CHANGE" ✓ CORRECT
+  B: "singer, and music producer, Sylvia Robinson," ✗ WRONG
+     Strategy [wordier]
+  C: "singer and music producer, Sylvia Robinson," ✗ WRONG
+     Strategy [wordier]
+  D: "singer, and music producer Sylvia Robinson" ✗ WRONG
+     Strategy [wordier]
+
+Explanation: Passage V - No comma with restrictive appositive
+
+
+====================================================================================================
+WHICH-CHOICE (18 questions)
+====================================================================================================
+
+CONSTRUCTION FORMULA:
+
+1. Correct Answer Position:
+   A: 6/18 (33.3%)
+   B: 5/18 (27.8%)
+   C: 5/18 (27.8%)
+   D: 2/18 (11.1%)
+
+2. "NO CHANGE" Usage:
+   Appears in: 15 questions
+   As CORRECT answer: 5 (33.3%)
+   As WRONG answer: 10 (66.7%)
+   RULE: "NO CHANGE" is correct 33.3% of the time for which-choice
+
+3. Choice Length Pattern:
+   Correct answers avg: 42.2 characters
+   Wrong answers avg: 42.2 characters
+   Difference: 0.0 characters
+   RULE: Correct answers tend to be SHORTER
+
+4. Most Common Wrong Answer Choices:
+   "NO CHANGE" appears 10 times
+   "The liquid was given to benefit" appears 1 times
+   "He decided to give the drink to" appears 1 times
+   "turns the volume knob a bit higher," appears 1 times
+   "increases the volume of the output," appears 1 times
+
+5. PATTERN EXAMPLES (showing distractor strategy):
+
+Q14 [Test 1]:
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "A 2009 documentary film about Dr. Marshall related the story of her manta-species discovery." ✗ WRONG
+     Strategy [removes punctuation]
+  C: "Dr. Marshall once described the manta ray as "like the largest, most beautiful underwater bird."" ✗ WRONG
+     Strategy [wordier]
+  D: "Fortunately, mantas have a devoted and expert researcher in Dr. Marshall." ✓ CORRECT
+
+Explanation: Passage I - Concluding sentence that suggests continued study
+
+Q28 [Test 1]:
+Underlined: "administered the medicine to"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "tested his new concoction on" ✓ CORRECT
+  C: "The liquid was given to benefit" ✗ WRONG
+  D: "He decided to give the drink to" ✗ WRONG
+
+Explanation: Passage II - "Tested...on" emphasizes experimental nature
+
+Q35 [Test 1]:
+Underlined: "cranks up the volume to ten,"
+
+CHOICES:
+  A: "NO CHANGE" ✓ CORRECT
+  B: "turns the volume knob a bit higher," ✗ WRONG
+     Strategy [wordier]
+  C: "increases the volume of the output," ✗ WRONG
+     Strategy [wordier]
+  D: "adjusts the speaker's output level," ✗ WRONG
+     Strategy [wordier]
+
+Explanation: Passage III - NO CHANGE most dramatic
+
+Q59 [Test 1]:
+Underlined: "a site that became a National Historic Landmark in 2000."
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "the gorge on sections of the road where it wasn't feasible to restore motor vehicle traffic," ✗ WRONG
+     Strategy [adds punctuation]
+  C: "the splendor of the highway that Hill and Lancaster envisioned over one hundred years ago." ✓ CORRECT
+  D: "a beautiful path that has become a popular tourist destination." ✗ WRONG
+
+Explanation: Passage IV - NO CHANGE refers back to first paragraph
+
+Q44 [Test 2]:
+
+CHOICES:
+  A: "at our galaxy—and galaxies beyond." ✓ CORRECT
+  B: "phenomena that have puzzled scientists over the last decade." ✗ WRONG
+     Strategy [wordier]
+  C: "common occurrences in space." ✗ WRONG
+  D: "the world around us." ✗ WRONG
+     Strategy [too brief]
+
+Explanation: Test 2 Question 44
+
+
+====================================================================================================
+REDUNDANCY (15 questions)
+====================================================================================================
+
+CONSTRUCTION FORMULA:
+
+1. Correct Answer Position:
+   A: 1/15 (6.7%)
+   B: 2/15 (13.3%)
+   C: 0/15 (0.0%)
+   D: 12/15 (80.0%)
+
+2. "NO CHANGE" Usage:
+   Appears in: 15 questions
+   As CORRECT answer: 1 (6.7%)
+   As WRONG answer: 14 (93.3%)
+   RULE: "NO CHANGE" is correct 6.7% of the time for redundancy
+
+3. Choice Length Pattern:
+   Correct answers avg: 19.1 characters
+   Wrong answers avg: 20.0 characters
+   Difference: -0.9 characters
+   RULE: Correct answers tend to be SHORTER
+
+4. Most Common Wrong Answer Choices:
+   "NO CHANGE" appears 14 times
+   "an estimation of" appears 1 times
+   "in the region of" appears 1 times
+   "obeyed by throwing their hands in the air." appears 1 times
+   "heeded the DJ's call and obeyed him." appears 1 times
+
+5. PATTERN EXAMPLES (showing distractor strategy):
+
+Q19 [Test 1]:
+Underlined: "approximately about"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "an estimation of" ✗ WRONG
+     Strategy [wordier]
+  C: "in the region of" ✗ WRONG
+     Strategy [wordier]
+  D: "about" ✓ CORRECT
+
+Explanation: Passage II - "Approximately about" is redundant
+
+Q63 [Test 1]:
+Underlined: "obeyed,"
+
+CHOICES:
+  A: "NO CHANGE" ✓ CORRECT
+  B: "obeyed by throwing their hands in the air." ✗ WRONG
+     Strategy [wordier]
+  C: "heeded the DJ's call and obeyed him." ✗ WRONG
+     Strategy [wordier]
+  D: "did what he said and obeyed." ✗ WRONG
+     Strategy [wordier]
+
+Explanation: Passage V - NO CHANGE concise, already know what obeying means
+
+Q49 [Test 1]:
+Underlined: "gorge where the Columbia River is located."
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "gorge, which is over eighty miles long." ✗ WRONG
+     Strategy [wordier]
+  C: "gorge and its scenery." ✗ WRONG
+     Strategy [wordier]
+  D: "gorge." ✓ CORRECT
+
+Explanation: Passage IV - Already mentioned Columbia River Gorge, redundant
+
+Q8 [Test 2]:
+Underlined: "dancers rely"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "they rely" ✓ CORRECT
+  C: "dancers rely" ✗ WRONG
+     Strategy [wordier]
+  D: "relied" ✗ WRONG
+     Strategy [too brief]
+
+Explanation: Test 2 Question 8
+
+Q68 [Test 2]:
+Underlined: "returned and came back"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "speedily returned, coming home" ✓ CORRECT
+  C: "returned home" ✗ WRONG
+     Strategy [too brief]
+  D: "returned" ✗ WRONG
+     Strategy [too brief]
+
+Explanation: Test 2 Question 68
+
+
+====================================================================================================
+SENTENCE-STRUCTURE (15 questions)
+====================================================================================================
+
+CONSTRUCTION FORMULA:
+
+1. Correct Answer Position:
+   A: 1/15 (6.7%)
+   B: 4/15 (26.7%)
+   C: 4/15 (26.7%)
+   D: 6/15 (40.0%)
+
+2. "NO CHANGE" Usage:
+   Appears in: 15 questions
+   As CORRECT answer: 1 (6.7%)
+   As WRONG answer: 14 (93.3%)
+   RULE: "NO CHANGE" is correct 6.7% of the time for sentence-structure
+
+3. Choice Length Pattern:
+   Correct answers avg: 26.1 characters
+   Wrong answers avg: 24.2 characters
+   Difference: 1.9 characters
+   RULE: Correct answers tend to be LONGER
+
+4. Most Common Wrong Answer Choices:
+   "NO CHANGE" appears 14 times
+   "Sampson served in the army for fourteen months," appears 1 times
+   "Her fourteen months of service in the army," appears 1 times
+   "their assignment was" appears 1 times
+   "who's been assigned" appears 1 times
+
+5. PATTERN EXAMPLES (showing distractor strategy):
+
+Q5 [Test 6]:
+Underlined: "For fourteen months Sampson served in the army, she"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "In the fourteen months that Sampson served in the army," ✓ CORRECT
+  C: "Sampson served in the army for fourteen months," ✗ WRONG
+  D: "Her fourteen months of service in the army," ✗ WRONG
+
+Q7 [Test 6]:
+Underlined: "whose assignment to track"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "their assignment was" ✗ WRONG
+     Strategy [wordier]
+  C: "who's been assigned" ✗ WRONG
+     Strategy [wordier]
+  D: "assigned" ✓ CORRECT
+
+Q7 [Test 7]:
+Underlined: "around the globe of meteorite impacts in many places have created"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "in many places around the globe of meteorite impacts have created glass." ✗ WRONG
+  C: "of meteorite impacts have created glass in many places around the globe." ✓ CORRECT
+  D: "have created glass of meteorite impacts in many places around the globe." ✗ WRONG
+
+Q11 [Test 6]:
+Underlined: "It was the weight of"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "She felt weighted down by" ✗ WRONG
+     Strategy [wordier]
+  C: "Weighted down by" ✓ CORRECT
+  D: "The weight of" ✗ WRONG
+
+Q62 [Test 7]:
+Underlined: "Since most"
+
+CHOICES:
+  A: "NO CHANGE" ✗ WRONG
+     Strategy [keeps error]
+  B: "Considering most" ✗ WRONG
+     Strategy [wordier]
+  C: "While most" ✗ WRONG
+     Strategy [wordier]
+  D: "Most" ✓ CORRECT
+

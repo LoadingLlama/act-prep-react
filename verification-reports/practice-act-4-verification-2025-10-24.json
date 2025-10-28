@@ -1,0 +1,199 @@
+{
+  "timestamp": "2025-10-24T17:26:49.761Z",
+  "test_number": 4,
+  "sections": {
+    "english": {
+      "passages": {
+        "count": 5,
+        "expected": 5,
+        "status": "COMPLETE",
+        "details": [
+          {
+            "number": 1,
+            "title": "The Art of Snowboard Design",
+            "word_count": 211
+          },
+          {
+            "number": 2,
+            "title": "Urban Wildlife Conservation",
+            "word_count": 222
+          },
+          {
+            "number": 3,
+            "title": "The Digital Revolution in Education",
+            "word_count": 234
+          },
+          {
+            "number": 4,
+            "title": "Sustainable Agriculture Innovations",
+            "word_count": 264
+          },
+          {
+            "number": 5,
+            "title": "The Psychology of Color in Marketing",
+            "word_count": 285
+          }
+        ]
+      },
+      "questions": {
+        "count": 75,
+        "expected": 75,
+        "status": "COMPLETE",
+        "by_category": {
+          "EDI": 42,
+          "KLA": 33
+        },
+        "by_type": {
+          "addition-deletion": 2,
+          "main-idea": 18,
+          "punctuation": 20,
+          "sentence-structure": 1,
+          "word-choice": 17,
+          "transitions": 1,
+          "grammar": 16
+        },
+        "answer_distribution": {
+          "C": 18,
+          "A": 23,
+          "D": 18,
+          "B": 16
+        }
+      }
+    },
+    "math": {
+      "questions": {
+        "count": 60,
+        "expected": 60,
+        "status": "COMPLETE",
+        "answer_distribution": {
+          "B": 13,
+          "D": 12,
+          "A": 12,
+          "C": 12,
+          "E": 11
+        }
+      }
+    },
+    "reading": {
+      "passages": {
+        "count": 4,
+        "expected": 4,
+        "status": "COMPLETE",
+        "details": [
+          {
+            "number": 1,
+            "title": "The Evolution of Jazz Music",
+            "passage_type": "HUMANITIES",
+            "word_count": 152
+          },
+          {
+            "number": 2,
+            "title": "Climate Change and Arctic Wildlife",
+            "passage_type": "NATURAL_SCIENCE",
+            "word_count": 300
+          },
+          {
+            "number": 3,
+            "title": "The Harlem Renaissance",
+            "passage_type": "HUMANITIES",
+            "word_count": 332
+          },
+          {
+            "number": 4,
+            "title": "The Philosophy of Time",
+            "passage_type": "HUMANITIES",
+            "word_count": 323
+          }
+        ]
+      },
+      "questions": {
+        "count": 40,
+        "expected": 40,
+        "status": "COMPLETE",
+        "answer_distribution": {
+          "B": 10,
+          "C": 10,
+          "D": 10,
+          "A": 10
+        }
+      }
+    },
+    "science": {
+      "passages": {
+        "count": 6,
+        "expected": 7,
+        "status": "INCOMPLETE",
+        "details": [
+          {
+            "number": 1,
+            "title": "Plant Growth and Light Intensity",
+            "passage_type": "DATA_REPRESENTATION",
+            "has_figure": false
+          },
+          {
+            "number": 2,
+            "title": "Chemical Reaction Rates",
+            "passage_type": "RESEARCH_SUMMARIES",
+            "has_figure": false
+          },
+          {
+            "number": 3,
+            "title": "Climate Change Causes",
+            "passage_type": "CONFLICTING_VIEWPOINTS",
+            "has_figure": false
+          },
+          {
+            "number": 4,
+            "title": "Earthquake Frequency and Magnitude",
+            "passage_type": "DATA_REPRESENTATION",
+            "has_figure": false
+          },
+          {
+            "number": 5,
+            "title": "Genetic Inheritance Patterns",
+            "passage_type": "RESEARCH_SUMMARIES",
+            "has_figure": false
+          },
+          {
+            "number": 6,
+            "title": "Origin of the Moon",
+            "passage_type": "CONFLICTING_VIEWPOINTS",
+            "has_figure": false
+          }
+        ]
+      },
+      "questions": {
+        "count": 40,
+        "expected": 40,
+        "status": "COMPLETE",
+        "answer_distribution": {
+          "B": 10,
+          "C": 10,
+          "D": 10,
+          "A": 10
+        }
+      }
+    }
+  },
+  "summary": {
+    "questions": {
+      "total": 215,
+      "expected": 215,
+      "completion_percentage": 100
+    },
+    "passages": {
+      "total": 15,
+      "expected": 16,
+      "completion_percentage": "93.8"
+    },
+    "sections_complete": [
+      "English",
+      "Math",
+      "Reading"
+    ],
+    "overall_status": "PARTIAL"
+  },
+  "recommendations": [
+    "Missing 1 Science passages"
+  ]
+}

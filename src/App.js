@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AIChat from './components/AIChat';
 import DiagnosticTest from './components/DiagnosticTest';
+import PracticeTestPage from './pages/PracticeTestPage';
 import Sidebar from './components/Sidebar';
 import Home from './components/Home';
 import TestsContent from './components/app/TestsContent';
@@ -19,6 +20,8 @@ function App() {
   const [currentLesson, setCurrentLesson] = useState(null);
   const [lessonModalOpen, setLessonModalOpen] = useState(false);
   const [diagnosticTestOpen, setDiagnosticTestOpen] = useState(false);
+  const [practiceTestOpen, setPracticeTestOpen] = useState(false);
+  const [practiceTestNumber, setPracticeTestNumber] = useState(null);
   const [hoveredMoreTag, setHoveredMoreTag] = useState(null);
   const [moreTagPosition, setMoreTagPosition] = useState({ top: 0, left: 0 });
   const [lessonProgress, setLessonProgress] = useState(() => {
@@ -105,6 +108,18 @@ function App() {
     domUtils.restoreBodyScroll();
   };
 
+  const openPracticeTest = (testNumber) => {
+    setPracticeTestNumber(testNumber);
+    setPracticeTestOpen(true);
+    domUtils.preventBodyScroll();
+  };
+
+  const closePracticeTest = () => {
+    setPracticeTestOpen(false);
+    setPracticeTestNumber(null);
+    domUtils.restoreBodyScroll();
+  };
+
   return (
     <div className={classes.container}>
       <Sidebar activeView={activeTab} onNavigate={handleTabClick} />
@@ -121,6 +136,7 @@ function App() {
             classes={classes}
             activeTab={activeTab}
             setDiagnosticTestOpen={setDiagnosticTestOpen}
+            setPracticeTestOpen={openPracticeTest}
           />
           <LessonsContent
             classes={classes}
@@ -158,6 +174,22 @@ function App() {
       {/* Diagnostic Test Modal */}
       {diagnosticTestOpen && (
         <DiagnosticTest onClose={() => setDiagnosticTestOpen(false)} />
+      )}
+
+      {/* Practice Test Modal */}
+      {practiceTestOpen && practiceTestNumber && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'white',
+          zIndex: 2000,
+          overflow: 'auto'
+        }}>
+          <PracticeTestPage testId={practiceTestNumber} onClose={closePracticeTest} />
+        </div>
       )}
 
       {/* Key Terms Popup */}

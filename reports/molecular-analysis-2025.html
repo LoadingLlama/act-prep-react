@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACT Blueprint Analysis</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      color: #111;
+      background: #fafafa;
+      padding: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 8px 12px;
+      color: #fff;
+      display: inline-block;
+    }
+
+    h2.english { background: #7c3aed; }
+    h2.math { background: #059669; }
+    h2.reading { background: #dc2626; }
+    h2.science { background: #2563eb; }
+    h2.lessons { background: #ea580c; }
+    h2.generation { background: #6366f1; }
+
+    h3 {
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      color: #666;
+      letter-spacing: 0.5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 20px 0;
+      font-size: 13px;
+      background: #fff;
+    }
+
+    th {
+      text-align: left;
+      font-weight: 600;
+      padding: 6px 10px;
+      background: #f5f5f5;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      color: #666;
+    }
+
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:hover { background: #fafafa; }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px;
+      margin: 8px 0 20px 0;
+    }
+
+    .metric {
+      background: #fff;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .metric-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #999;
+      margin-bottom: 4px;
+    }
+
+    .metric-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .note {
+      background: #fff;
+      padding: 12px;
+      margin: 12px 0;
+      border-left: 3px solid #111;
+      font-size: 13px;
+    }
+
+    .note strong {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      color: #666;
+    }
+
+    ul {
+      margin: 6px 0 6px 18px;
+      font-size: 13px;
+    }
+
+    li { margin: 3px 0; }
+
+    .section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    @media print {
+      body { padding: 12px; background: #fff; }
+      .section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <h1>ACT Blueprint Analysis</h1>
+  <div class="subtitle">Molecular analysis of Practice Tests 1, 2, 3, 4, 5, 6, 7 for 1:1 accurate test generation</div>
+
+  <div class="note">
+    <strong>Purpose</strong>
+    This blueprint provides comprehensive data distributions from 7 official ACT practice tests to generate new tests that match the exact structure, difficulty, and format of real ACT exams.
+  </div>
+
+  <!-- ENGLISH SECTION -->
+  <div class="section">
+    <h2 class="english">English</h2>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">Questions</div>
+        <div class="metric-value">75</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Passages</div>
+        <div class="metric-value">5</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Q/Passage</div>
+        <div class="metric-value">15</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">NO CHANGE %</div>
+        <div class="metric-value">0.0%</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Avg Words</div>
+        <div class="metric-value">323</div>
+      </div>
+    </div>
+
+    <h3>Answer Distribution</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Answer</th>
+          <th>Count</th>
+          <th>%</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>A</td>
+          <td>138</td>
+          <td>26.3%</td>
+        </tr>
+        
+        <tr>
+          <td>B</td>
+          <td>125</td>
+          <td>23.8%</td>
+        </tr>
+        
+        <tr>
+          <td>C</td>
+          <td>132</td>
+          <td>25.1%</td>
+        </tr>
+        
+        <tr>
+          <td>D</td>
+          <td>130</td>
+          <td>24.8%</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <h3>Per-Test Breakdown</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Test</th>
+          <th>Q</th>
+          <th>A</th>
+          <th>B</th>
+          <th>C</th>
+          <th>D</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Test 1</td>
+          <td>75</td>
+          <td>19</td>
+          <td>18</td>
+          <td>17</td>
+          <td>21</td>
+        </tr>
+        
+        <tr>
+          <td>Test 2</td>
+          <td>75</td>
+          <td>20</td>
+          <td>19</td>
+          <td>18</td>
+          <td>18</td>
+        </tr>
+        
+        <tr>
+          <td>Test 3</td>
+          <td>75</td>
+          <td>17</td>
+          <td>16</td>
+          <td>21</td>
+          <td>21</td>
+        </tr>
+        
+        <tr>
+          <td>Test 4</td>
+          <td>75</td>
+          <td>24</td>
+          <td>17</td>
+          <td>20</td>
+          <td>14</td>
+        </tr>
+        
+        <tr>
+          <td>Test 5</td>
+          <td>75</td>
+          <td>19</td>
+          <td>19</td>
+          <td>17</td>
+          <td>20</td>
+        </tr>
+        
+        <tr>
+          <td>Test 6</td>
+          <td>75</td>
+          <td>19</td>
+          <td>17</td>
+          <td>19</td>
+          <td>20</td>
+        </tr>
+        
+        <tr>
+          <td>Test 7</td>
+          <td>75</td>
+          <td>20</td>
+          <td>19</td>
+          <td>20</td>
+          <td>16</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MATH SECTION -->
+  <div class="section">
+    <h2 class="math">Math</h2>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">Questions</div>
+        <div class="metric-value">60</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Choices</div>
+        <div class="metric-value">5</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Format</div>
+        <div class="metric-value" style="font-size: 14px;">A-E/F-K</div>
+      </div>
+    </div>
+
+    <h3>Answer Distribution</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Answer</th>
+          <th>Count</th>
+          <th>%</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>A</td>
+          <td>84</td>
+          <td>20.0%</td>
+        </tr>
+        
+        <tr>
+          <td>B</td>
+          <td>95</td>
+          <td>22.6%</td>
+        </tr>
+        
+        <tr>
+          <td>C</td>
+          <td>104</td>
+          <td>24.8%</td>
+        </tr>
+        
+        <tr>
+          <td>D</td>
+          <td>79</td>
+          <td>18.8%</td>
+        </tr>
+        
+        <tr>
+          <td>E</td>
+          <td>58</td>
+          <td>13.8%</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <h3>Difficulty Progression</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Range</th>
+          <th>Easy</th>
+          <th>Medium</th>
+          <th>Hard</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Q 1-20</td>
+          <td>37</td>
+          <td>99</td>
+          <td>4</td>
+        </tr>
+        
+        <tr>
+          <td>Q 21-40</td>
+          <td>14</td>
+          <td>115</td>
+          <td>11</td>
+        </tr>
+        
+        <tr>
+          <td>Q 41-60</td>
+          <td>3</td>
+          <td>90</td>
+          <td>47</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <h3>Per-Test Breakdown</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Test</th>
+          <th>Q</th>
+          <th>A/F</th>
+          <th>B/G</th>
+          <th>C/H</th>
+          <th>D/J</th>
+          <th>E/K</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Test 1</td>
+          <td>60</td>
+          <td>14</td>
+          <td>14</td>
+          <td>15</td>
+          <td>11</td>
+          <td>6</td>
+        </tr>
+        
+        <tr>
+          <td>Test 2</td>
+          <td>60</td>
+          <td>12</td>
+          <td>12</td>
+          <td>19</td>
+          <td>8</td>
+          <td>9</td>
+        </tr>
+        
+        <tr>
+          <td>Test 3</td>
+          <td>60</td>
+          <td>9</td>
+          <td>19</td>
+          <td>20</td>
+          <td>7</td>
+          <td>5</td>
+        </tr>
+        
+        <tr>
+          <td>Test 4</td>
+          <td>60</td>
+          <td>12</td>
+          <td>9</td>
+          <td>14</td>
+          <td>14</td>
+          <td>11</td>
+        </tr>
+        
+        <tr>
+          <td>Test 5</td>
+          <td>60</td>
+          <td>13</td>
+          <td>14</td>
+          <td>11</td>
+          <td>11</td>
+          <td>11</td>
+        </tr>
+        
+        <tr>
+          <td>Test 6</td>
+          <td>60</td>
+          <td>12</td>
+          <td>12</td>
+          <td>14</td>
+          <td>15</td>
+          <td>7</td>
+        </tr>
+        
+        <tr>
+          <td>Test 7</td>
+          <td>60</td>
+          <td>12</td>
+          <td>15</td>
+          <td>11</td>
+          <td>13</td>
+          <td>9</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <!-- READING SECTION -->
+  <div class="section">
+    <h2 class="reading">Reading</h2>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">Questions</div>
+        <div class="metric-value">40</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Passages</div>
+        <div class="metric-value">4</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Q/Passage</div>
+        <div class="metric-value">10</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Line Ref %</div>
+        <div class="metric-value">0.0%</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Avg Words</div>
+        <div class="metric-value">711</div>
+      </div>
+    </div>
+
+    <h3>Answer Distribution</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Answer</th>
+          <th>Count</th>
+          <th>%</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>A</td>
+          <td>72</td>
+          <td>25.7%</td>
+        </tr>
+        
+        <tr>
+          <td>B</td>
+          <td>73</td>
+          <td>26.1%</td>
+        </tr>
+        
+        <tr>
+          <td>C</td>
+          <td>70</td>
+          <td>25.0%</td>
+        </tr>
+        
+        <tr>
+          <td>D</td>
+          <td>65</td>
+          <td>23.2%</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <h3>Per-Test Breakdown</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Test</th>
+          <th>Q</th>
+          <th>A/F</th>
+          <th>B/G</th>
+          <th>C/H</th>
+          <th>D/J</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Test 1</td>
+          <td>40</td>
+          <td>10</td>
+          <td>11</td>
+          <td>10</td>
+          <td>9</td>
+        </tr>
+        
+        <tr>
+          <td>Test 2</td>
+          <td>40</td>
+          <td>12</td>
+          <td>10</td>
+          <td>10</td>
+          <td>8</td>
+        </tr>
+        
+        <tr>
+          <td>Test 3</td>
+          <td>40</td>
+          <td>9</td>
+          <td>14</td>
+          <td>9</td>
+          <td>8</td>
+        </tr>
+        
+        <tr>
+          <td>Test 4</td>
+          <td>40</td>
+          <td>8</td>
+          <td>9</td>
+          <td>11</td>
+          <td>12</td>
+        </tr>
+        
+        <tr>
+          <td>Test 5</td>
+          <td>40</td>
+          <td>10</td>
+          <td>11</td>
+          <td>10</td>
+          <td>9</td>
+        </tr>
+        
+        <tr>
+          <td>Test 6</td>
+          <td>40</td>
+          <td>12</td>
+          <td>9</td>
+          <td>10</td>
+          <td>9</td>
+        </tr>
+        
+        <tr>
+          <td>Test 7</td>
+          <td>40</td>
+          <td>11</td>
+          <td>9</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SCIENCE SECTION -->
+  <div class="section">
+    <h2 class="science">Science</h2>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">Questions</div>
+        <div class="metric-value">40</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Passages</div>
+        <div class="metric-value">6</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Required Distribution</strong>
+      <ul>
+        <li>3 Data Representation (5q each = 15 total)</li>
+        <li>2 Research Summaries (6-7q each = 12-14 total)</li>
+        <li>1 Conflicting Viewpoints (11-13q)</li>
+      </ul>
+    </div>
+
+    <h3>Answer Distribution</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Answer</th>
+          <th>Count</th>
+          <th>%</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>A</td>
+          <td>61</td>
+          <td>21.8%</td>
+        </tr>
+        
+        <tr>
+          <td>B</td>
+          <td>82</td>
+          <td>29.3%</td>
+        </tr>
+        
+        <tr>
+          <td>C</td>
+          <td>81</td>
+          <td>28.9%</td>
+        </tr>
+        
+        <tr>
+          <td>D</td>
+          <td>56</td>
+          <td>20.0%</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <h3>Passage Types</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Count</th>
+          <th>Avg Q</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>DATA_REPRESENTATION</td>
+          <td>19</td>
+          <td>6.4</td>
+        </tr>
+        
+        <tr>
+          <td>RESEARCH_SUMMARY</td>
+          <td>17</td>
+          <td>6.6</td>
+        </tr>
+        
+        <tr>
+          <td>CONFLICTING_VIEWPOINTS</td>
+          <td>7</td>
+          <td>6.6</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <h3>Per-Test Breakdown</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Test</th>
+          <th>Q</th>
+          <th>A/F</th>
+          <th>B/G</th>
+          <th>C/H</th>
+          <th>D/J</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Test 1</td>
+          <td>40</td>
+          <td>9</td>
+          <td>12</td>
+          <td>9</td>
+          <td>10</td>
+        </tr>
+        
+        <tr>
+          <td>Test 2</td>
+          <td>40</td>
+          <td>10</td>
+          <td>13</td>
+          <td>9</td>
+          <td>8</td>
+        </tr>
+        
+        <tr>
+          <td>Test 3</td>
+          <td>40</td>
+          <td>3</td>
+          <td>19</td>
+          <td>16</td>
+          <td>2</td>
+        </tr>
+        
+        <tr>
+          <td>Test 4</td>
+          <td>40</td>
+          <td>9</td>
+          <td>9</td>
+          <td>14</td>
+          <td>8</td>
+        </tr>
+        
+        <tr>
+          <td>Test 5</td>
+          <td>40</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+          <td>10</td>
+        </tr>
+        
+        <tr>
+          <td>Test 6</td>
+          <td>40</td>
+          <td>10</td>
+          <td>9</td>
+          <td>12</td>
+          <td>9</td>
+        </tr>
+        
+        <tr>
+          <td>Test 7</td>
+          <td>40</td>
+          <td>10</td>
+          <td>10</td>
+          <td>11</td>
+          <td>9</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <!-- LESSON MAPPING -->
+  <div class="section">
+    <h2 class="lessons">Lessons</h2>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">Total</div>
+        <div class="metric-value">84</div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>english</td>
+          <td>16</td>
+        </tr>
+        
+        <tr>
+          <td>reading</td>
+          <td>14</td>
+        </tr>
+        
+        <tr>
+          <td>science</td>
+          <td>19</td>
+        </tr>
+        
+        <tr>
+          <td>math</td>
+          <td>35</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <!-- GENERATION REQUIREMENTS -->
+  <div class="section">
+    <h2 class="generation">Generation Requirements</h2>
+
+    <div class="note">
+      <strong>Test Structure</strong>
+      <ul>
+        <li>English: 75q, 5 passages (15q each), ~25% "NO CHANGE"</li>
+        <li>Math: 60q, progressive difficulty (easy → medium → hard)</li>
+        <li>Reading: 40q, 4 passages (10q each), include line refs</li>
+        <li>Science: 40q, 6 passages (3 Data + 2 Research + 1 Conflicting)</li>
+      </ul>
+    </div>
+
+    <div class="note">
+      <strong>Quality Guidelines</strong>
+      <ul>
+        <li>Balanced answer distribution (20-28% per choice)</li>
+        <li>Max 2-3 consecutive identical answers</li>
+        <li>Match difficulty progression from official tests</li>
+        <li>Ensure lesson coverage across all topics</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top: 32px; padding-top: 16px; border-top: 1px solid #e0e0e0; font-size: 11px; color: #999; text-align: center;">
+    Generated from Practice Tests 1, 2, 3, 4, 5, 6, 7 | 10/25/2025
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+SCIENTIFIC DATA RANGES - Real Experiment Templates
+====================================================================================================
+
+CRITICAL INSIGHT: I have 43 real science passages with data!
+I can extract REALISTIC value ranges from these experiments.
+
+Passage: "13-Lined Ground Squirrel Hibernation" [DATA_REPRESENTATION]
+  Sample text: When a 13-lined ground squirrel (a mammal) hibernates, it does not eat, and it alternates between periods of torpor (characterized by a reduced rate of metabolism, low body temperature, and little mov...
+
+Passage: "Flies as Bacterial Vectors" [RESEARCH_SUMMARY]
+  Sample text: Scientists conducted 3 experiments to study the transfer of bacteria from one surface to another by 2 species of flies: Musca domestica and Sarcophaga carnaria.  **Experiment 1** A group of 10 M. dome...
+
+Passage: "Carbon Dioxide Solubility in Magma" [DATA_REPRESENTATION]
+  Sample text: When rocks are melted at very high temperatures beneath Earth's surface, magma (molten rock) is formed. The gases CO₂ and H₂O can dissolve in magma. Scientists studied how the solubility of CO₂ in mag...
+
+Passage: "Forest Fires and Oxygen Levels" [DATA_REPRESENTATION]
+  Sample text: Forest fires require oxygen (O₂) to burn. Figure 1 shows the number of paleowildfires (large forest fires known from the rock record) for each 10-million-year interval of the Mesozoic era (250-65 mill...
+
+Passage: "Acetate Hydrolysis Rate Constants" [RESEARCH_SUMMARY]
+  Sample text: Acetates are compounds with the chemical formula CH₃CO₂R, where R is an unreactive chain of carbon and hydrogen atoms. In the presence of a catalyst, acetates can undergo hydrolysis (reaction with H₂O...
+
+Passage: "Termite Mulch Consumption Study" [DATA_REPRESENTATION]
+  Sample text: The termite Reticulitermes flavipes consumes wood and bark. A study examined whether the consumption of wood or bark mulch by R. flavipes varies with the type of mulch or the age of the mulch. Separat...
+
+Passage: "Planetary Motion and Retrograde Movement" [DATA_REPRESENTATION]
+  Sample text: When viewed from Earth, the other planets usually appear to move prograde (eastward relative to the stars). Occasionally, however, each planet appears to briefly move retrograde (westward relative to ...
+
+Passage: "Exothermic Reaction Study" [CONFLICTING_VIEWPOINTS]
+  Sample text: Chemical reactions that release heat are exothermic reactions. The amount of heat released depends on the number of moles of reactants consumed. When sodium hypochlorite (NaClO) and sodium iodide (NaI...
+
+Passage: "Tadpole Response to Protein F" [RESEARCH_SUMMARY]
+  Sample text: When attacked by predators, tadpoles secrete Protein F into their surroundings. A scientist conducted 2 experiments with Protein F: one to examine how the activity of tadpoles changes immediately afte...
+
+Passage: "Light Properties Through Glass" [CONFLICTING_VIEWPOINTS]
+  Sample text: A physics teacher asked 3 students to predict the changes, if any, to light's energy, E; frequency, f (the number of wave peaks passing a given point each second); wavelength, λ (the distance between ...
+
+Passage: "Water Electrolysis Using Solar Cells" [DATA_REPRESENTATION]
+  Sample text: Liquid H₂O can be broken down into hydrogen gas (H₂) and oxygen gas (O₂) by electrolysis according to the following chemical equation: 2H₂O → 2H₂ + O₂  A scientist performed an experiment to study the...
+
+Passage: "Standing Waves on Strings" [DATA_REPRESENTATION]
+  Sample text: A standing wave on a taut string is a wave that appears to vibrate without traveling along the string. Such waves are called the string's harmonics. Each harmonic has a characteristic number of nodes:...
+
+Passage: "Polyol Dissolution in Water" [DATA_REPRESENTATION]
+  Sample text: As a polyol (a natural sweetener) dissolves in water, the temperature of the solution that forms changes over time. Table 1 shows the change in temperature of each of 4 polyol solutions over the first...
+
+Passage: "Physics Motion Experiments" [RESEARCH_SUMMARY]
+  Sample text: A class of physics students performed 3 experiments on the topic of motion using the apparatus shown in Figure 1.  In each trial, the following occurred: First, the students placed a platform with a r...
+
+Passage: "Photosynthesis in Aquatic Plants" [DATA_REPRESENTATION]
+  Sample text: Photosynthesis is the process by which plants convert light energy into chemical energy, producing glucose and oxygen from carbon dioxide and water. In aquatic plants, this process is particularly imp...
+
+Passage: "Electrical Conductivity of Salt Solutions" [RESEARCH_SUMMARY]
+  Sample text: Electrical conductivity is a measure of a material's ability to conduct electric current. In solutions, conductivity depends on the concentration of ions and their mobility.  Scientists conducted two ...
+
+Passage: "Climate Change and Greenhouse Gases" [CONFLICTING_VIEWPOINTS]
+  Sample text: Atmospheric concentrations of greenhouse gases have increased significantly since the Industrial Revolution. Scientists agree that this increase contributes to global warming, but there are different ...
+
+Passage: "Methane Production in Forest Soil" [RESEARCH_SUMMARY]
+  Sample text: A study examined the production and consumption of methane (CH₄) by soil bacteria in 4 areas of a particular forest: an area of healthy black spruce trees, an area of burned black spruce trees, an are...
+
+Passage: "Soil Compressive Strength" [DATA_REPRESENTATION]
+  Sample text: The soil beneath a heavy structure can fail (crack or flow). Adding wires to a soil produces a mixture with a greater compressive strength than that of the soil alone. (Compressive strength is the min...
+
+Passage: "Rock Formation and Mineral Properties" [DATA_REPRESENTATION]
+  Sample text: Rocks are classified into three major types based on their formation processes: igneous (formed from cooling magma), sedimentary (formed from compressed sediments), and metamorphic (formed from heat a...
+
+Passage: "Planetary Motion and Cellular Respiration" [DATA_REPRESENTATION]
+  Sample text: This passage presents data from two separate studies: planetary orbital characteristics and cellular respiration in organisms.  Study A - Orbital Mechanics: Scientists analyzed the orbital periods and...
+
+Passage: "Whitefly Life Stages and Temperature" [DATA_REPRESENTATION]
+  Sample text: The whitefly Bemisia argentifolii is an insect that has 3 distinct life stages: egg, nymph (juvenile), and adult. A study examined the effects of external temperature on the duration of each of the 3 ...
+
+Passage: "Amoeba limax Activity Experiments" [RESEARCH_SUMMARY]
+  Sample text: Two experiments examined how pH and temperature affect the activity of Amoeba limax (a single-celled eukaryote).  Experiment 1 Twenty identical glass slides were equally divided into 5 groups (Groups ...
+
+Passage: "Oil Spill Cleanup Sorbents" [RESEARCH_SUMMARY]
+  Sample text: Oil spills in the ocean are cleaned up by using a sorbent to soak up the oil floating on the water's surface. Two studies examined the effectiveness of 4 sorbents: 3 natural (milkweed, cotton, and ken...
+
+Passage: "Acid Solutions: Surface Tension and pH" [RESEARCH_SUMMARY]
+  Sample text: Three experiments were performed to study the surface tension and pH of colorless aqueous solutions of 4 different acids: nitric acid, formic acid, chloroacetic acid, and acetic acid. A liquid's surfa...
+
+Passage: "Structural Beam Deflection" [RESEARCH_SUMMARY]
+  Sample text: A structural beam, such as one used in construction, will deflect (bend) when a sufficiently large force is applied perpendicular to the beam's length. Three studies of 12 trials each were performed o...
+
+Passage: "Spring Oscillation Student Viewpoints" [CONFLICTING_VIEWPOINTS]
+  Sample text: A spring with a spring constant k (which indicates the spring's stiffness) is attached to a cube of mass M and then to a wall. The cube initially rests at Point Q on a frictionless horizontal surface....
+
+Passage: "Moving Rocks in the Playa" [CONFLICTING_VIEWPOINTS]
+  Sample text: In a particular playa (relatively flat, dry desert basin) evidence shows that some large rocks have moved along the surface, leaving shallow trails in the clay sediment, some up to several hundred met...
+
+Passage: "CO2 Gas Production from Diet Cola" [RESEARCH_SUMMARY]
+  Sample text: When certain substances are added to diet cola, CO2 gas is produced, generating a foam. Two experiments were done to study this process.  In each trial, an apparatus like that shown in Figure 1 was us...
+
+Passage: "Effects of pH and Nickel on Plant Growth" [DATA_REPRESENTATION]
+  Sample text: Scientists studied the effects of pH and of nickel concentration on plant growth and on the uptake of iron and zinc by plants. Recently germinated seedlings of Species M and Species U were fed 1 of 12...
+
+Passage: "Ammonia Production" [RESEARCH_SUMMARY]
+  Sample text: Ammonia (NH3) can be produced according to the chemical equation: N2 + 3H2 ⇌ 2NH3  The equilibrium arrow (⇌) indicates that this reaction proceeds in both directions until it is at equilibrium, so tha...
+
+Passage: "Sound Wave Attenuation" [DATA_REPRESENTATION]
+  Sample text: As a sound wave travels through a medium, the wave becomes attenuated (loses energy). The attenuation coefficient, α, is the rate at which the wave's intensity level (a measure of sound volume) decrea...
+
+Passage: "Effects of Sweeteners on Rats" [RESEARCH_SUMMARY]
+  Sample text: Three studies compared the effects of 5 sweeteners (Sweeteners Q-U) on food consumption by rats and on the concentrations of leptin and ghrelin (hormones that regulate appetite) in the blood of rats. ...
+
+Passage: "Molar Volume of Gases" [DATA_REPRESENTATION]
+  Sample text: The molar volume of a gas is the volume occupied by 1 mole (mol; 6 × 10²³ atoms or molecules) of that gas at a given pressure and temperature.  Table 1 shows how the molar volume, in L, of each of 6 g...
+
+Passage: "Plant Stem Color Genetics" [CONFLICTING_VIEWPOINTS]
+  Sample text: Four students observed that in a population of land plants, Population A, a plant could have a green stem or a purple stem. Each student proposed an explanation for this observation.  Student 1 All pl...
+
+Passage: "Buoyant Forces Study" [DATA_REPRESENTATION]
+  Sample text: When an object is submerged in a fluid, the object displaces a volume of fluid equal to the object's submerged volume. The fluid exerts an upward buoyant force on the object that is equal in magnitude...
+
+Passage: "Bacterial Survival After Lyophilization" [RESEARCH_SUMMARY]
+  Sample text: Samples of Species C bacteria must often be transported from the areas in which they are collected. During transport, the samples are typically packed in ice to keep them alive. However, ice is not al...
+
+Passage: "Mendelian Genetics in Plant Breeding" [RESEARCH_SUMMARY]
+  Sample text: Gregor Mendel's principles of inheritance explain how traits are passed from parents to offspring through discrete units called genes. Modern plant breeding relies heavily on these principles.  Experi...
+
+Passage: "pH and Chemical Indicators" [RESEARCH_SUMMARY]
+  Sample text: The pH scale measures the acidity or alkalinity of solutions, ranging from 0 (most acidic) to 14 (most alkaline), with 7 being neutral. Each unit represents a 10-fold change in hydrogen ion concentrat...
+
+Passage: "Primary Amines Chemistry" [DATA_REPRESENTATION]
+  Sample text: Primary amines (PAs) are compounds containing an amino (NH₂) group bound to a hydrocarbon chain (a group made up of C and H atoms). Table 1 lists, for each of 5 PAs, the chemical formula, molecular ma...
+
+Passage: "Amino Acid Production on Earth" [CONFLICTING_VIEWPOINTS]
+  Sample text: The amino acid molecules necessary for life are thought to have been produced on Earth before organisms were present. Amino acids can be produced through chemical reactions among ammonia (NH₃), methan...
+
+Passage: "Sunscreen UV Light Absorbance" [RESEARCH_SUMMARY]
+  Sample text: Ultraviolet (UV) light is harmful to skin. A sunscreen applied to the skin lessens the skin's exposure to the harmful light, such as through absorption of the light. A sunscreen's sun protection facto...
+
+Passage: "Gas Exchange in the Human Body" [DATA_REPRESENTATION]
+  Sample text: In the human body, O₂ and CO₂ are exchanged between the lungs and the blood and between the blood and the tissues as indicated in Figure 1. These exchanges occur by the diffusion of each gas from a re...
+
+
+====================================================================================================
+REALISTIC DATA RANGES FROM ACTUAL EXPERIMENTS:
+====================================================================================================
+
+TEMPERATURE:
+  Range found: 0°C to 750°C
+  Common values: 5, 40, 37, 150, 750, 25, 20, 35, 45, 20
+  RULE: Use temperatures in 0-100°C range for most experiments
+
+pH VALUES:
+  Range found: 5.0 to 8.2
+  Values: 8.2, 7, 7, 7, 7, 6, 6, 6, 6, 5, 5, 5, 5, 7
+  RULE: pH must be 0-14, typical experiments use 3-11
+
+PERCENTAGES:
+  Sample values: 12, 18, 37, 63, 70, 30, 25, 0.5, 0.75, 1, 0.5, 0.75, 1, 0.5, 0.75
+  RULE: Must be 0-100%, often use 10-90% range
+
+
+====================================================================================================
+DATA TABLE PATTERNS:
+====================================================================================================
+
+Found 107 questions referencing tables/figures
+
+Common table references:
+  - "Based on Figure 2, at 30 min, the average number of E. coli colonies per dish was closest to:..."
+  - "Based on Figure 2, oceanic crust that has an age of 60 million years is at an average depth closest to:..."
+  - "Suppose that at a certain location on the ocean floor, the oceanic crust has an age of 20 million years. Based on Figure..."
+  - "Consider the molar volumes of He, Ar, H₂, and N₂ listed in Table 2 at 323 K. What is the order of these gases from the g..."
+  - "An ideal gas has a molar volume of 63.429 L at 1.00 atm and 773 K. At 1.00 atm and 773 K, how many of the gases listed i..."
+  - "According to Figure 1, at a depth of 50 km, the temperature is closest to:..."
+  - "Based on Figure 2, as the age of the oceanic crust increases from 0 million years to 80 million years, the average depth..."
+  - "Based on Figure 1, at which of the following depths is the temperature most likely 2000°C?..."
+  - "Based on the results in Table 5, as the concentration of HCl increases, the pH:..."
+  - "Based on the data in Table 1, as light intensity increases from 100 to 400 μmol/m²/s, the rate of photosynthesis:..."
+
+
+====================================================================================================
+SCIENTIFIC ACCURACY RULES:
+====================================================================================================
+
+When creating science passages, ensure:
+
+1. REALISTIC VALUE RANGES:
+   - Temperature: 0-100°C for most experiments
+   - pH: 0-14 (acids: 0-7, bases: 7-14)
+   - Percentages: 0-100%
+   - Time: Use realistic units (seconds, minutes, hours, days)
+
+2. LOGICAL RELATIONSHIPS:
+   - If temperature increases, some property should change
+   - Tables should show clear trends (increasing, decreasing, or constant)
+   - Data points should be consistent with scientific laws
+
+3. REALISTIC PRECISION:
+   - Temperature: 1-2 decimal places (25.5°C)
+   - pH: 1 decimal place (pH 7.2)
+   - Percentages: 0-1 decimal places (35% or 35.5%)
+
+4. PLAUSIBILITY CHECKS:
+   - Water boils at 100°C (not 150°C)
+   - pH 7 is neutral (not acidic)
+   - Photosynthesis requires light (not darkness)
+   - Reactions speeds up with temperature (usually)
+

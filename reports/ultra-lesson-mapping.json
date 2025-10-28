@@ -1,0 +1,3469 @@
+{
+  "generated_at": "2025-10-25T19:44:56.862Z",
+  "summary": {
+    "total_questions": 1505,
+    "questions_with_lesson": 1505,
+    "questions_without_lesson": 0,
+    "coverage_percentage": 100
+  },
+  "lessons": [
+    {
+      "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+      "lesson_key": "3.1",
+      "title": "Algebra Skills",
+      "subject": "math",
+      "question_count": 303,
+      "question_types": {
+        "functions": 12,
+        "algebra": 61,
+        "word-problem": 21,
+        "statistics-probability": 16,
+        "number-theory": 1,
+        "math-problem-solving": 41,
+        "sequences": 8,
+        "matrices": 3,
+        "trigonometry": 20,
+        "complex-numbers": 1,
+        "vectors": 2,
+        "counting": 2,
+        "prealgebra": 23,
+        "probability": 11,
+        "arithmetic": 16,
+        "statistics": 12,
+        "complex_numbers": 3,
+        "inequalities": 2,
+        "percentages": 2,
+        "fractions": 2,
+        "word_problems": 3,
+        "radicals": 2,
+        "logic": 2,
+        "linear_equations": 4,
+        "combinatorics": 2,
+        "sets": 1,
+        "graphing": 1,
+        "logarithms": 3,
+        "plane_geometry": 11,
+        "exponents": 1,
+        "expressions": 2,
+        "number_properties": 8,
+        "quadratics": 1,
+        "solid_geometry": 1,
+        "linear_inequalities": 1,
+        "ratios": 1
+      },
+      "question_categories": {
+        "PHM-F": 12,
+        "PHM-A": 46,
+        "IES": 12,
+        "PHM-S": 19,
+        "PHM-N": 29,
+        "PHM-G": 14,
+        "elementary-algebra": 4,
+        "number-properties": 3,
+        "rates": 2,
+        "arithmetic-sequences": 1,
+        "exponents": 1,
+        "intermediate-algebra": 3,
+        "time-calculations": 1,
+        "data-analysis": 1,
+        "probability-statistics": 6,
+        "statistics-averages": 2,
+        "fractions": 1,
+        "functions": 4,
+        "proportions": 1,
+        "percentages": 3,
+        "scientific-notation": 1,
+        "IM": 2,
+        "ALG": 113,
+        "GEO": 22
+      }
+    },
+    {
+      "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+      "lesson_key": "core-principles",
+      "title": "Topic 1.1 - 7 Core Principles for ACT Reading",
+      "subject": "reading",
+      "question_count": 280,
+      "question_types": {
+        "main-idea": 52,
+        "characterization": 1,
+        "sequence": 1,
+        "interpretation": 3,
+        "detail": 33,
+        "inference": 25,
+        "perspective": 1,
+        "vocabulary": 7,
+        "comprehension": 4,
+        "comparison": 7,
+        "structure": 9,
+        "tone": 5,
+        "literary-narrative": 20,
+        "social-science": 10,
+        "natural-science": 10,
+        "vocab": 2,
+        "main_idea": 2,
+        "purpose": 8,
+        "reading": 40,
+        "reading-comprehension": 40
+      },
+      "question_categories": {
+        "KID": 95,
+        "IKI": 22,
+        "CS": 43,
+        "KEY": 120
+      }
+    },
+    {
+      "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+      "lesson_key": "passage-approach",
+      "title": "Topic 1.1 - How to Approach the Passages",
+      "subject": "science",
+      "question_count": 266,
+      "question_types": {
+        "data-interpretation": 85,
+        "ordering-data": 1,
+        "comparison": 3,
+        "application": 3,
+        "two-part-reasoning": 4,
+        "trends": 21,
+        "experimental-design": 3,
+        "approximation": 6,
+        "conflicting-viewpoints": 10,
+        "finding-information": 1,
+        "evaluating-information": 2,
+        "biological-processes": 15,
+        "chemical-properties": 10,
+        "earth-processes": 10,
+        "physics-mechanics": 5,
+        "research-summaries": 21,
+        "data-analysis": 26,
+        "science": 40
+      },
+      "question_categories": {
+        "IOD": 165,
+        "SIN": 79,
+        "EMI": 20,
+        "INT": 2
+      }
+    },
+    {
+      "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+      "lesson_key": "redundancy",
+      "title": "Topic 2.1 - Redundancy & Wordiness",
+      "subject": "english",
+      "question_count": 158,
+      "question_types": {
+        "sentence-placement": 1,
+        "redundancy": 9,
+        "which-choice": 5,
+        "logical-placement": 1,
+        "main-idea": 3,
+        "word-choice": 5,
+        "adding-info": 2,
+        "deleting-sentence": 1,
+        "wordiness": 1,
+        "style": 45,
+        "organization": 14,
+        "comma-splice": 2,
+        "transition": 2,
+        "grammar": 1,
+        "verb-agreement": 1,
+        "fragment": 2,
+        "verb-tense": 1,
+        "modifier-dangling": 1,
+        "rhetorical-skills": 29,
+        "usage-mechanics": 20,
+        "adding-deleting": 5,
+        "idiom": 3,
+        "transitions": 3,
+        "word-placement": 1
+      },
+      "question_categories": {
+        "POW": 108,
+        "KLA": 49,
+        "CSE": 1
+      }
+    },
+    {
+      "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+      "lesson_key": "sentence-structure",
+      "title": "Topic 1.1 - Building Complete Sentences",
+      "subject": "english",
+      "question_count": 151,
+      "question_types": {
+        "comma-splice": 3,
+        "fragment": 2,
+        "verb-agreement": 4,
+        "sentence-placement": 1,
+        "word-choice": 4,
+        "modifier-misplaced": 2,
+        "verb-form": 3,
+        "verb-tense": 7,
+        "idiom": 3,
+        "transition": 1,
+        "redundancy": 2,
+        "pronoun-ambiguous": 2,
+        "which-choice": 2,
+        "comma-usage": 3,
+        "modifier-dangling": 1,
+        "grammar": 56,
+        "punctuation": 13,
+        "deleting-sentence": 1,
+        "logical-placement": 1,
+        "usage-mechanics": 2,
+        "style": 5,
+        "organization": 2,
+        "pronouns": 12,
+        "sentence-structure": 10,
+        "modifiers": 3,
+        "verbs": 4,
+        "parallel-structure": 2
+      },
+      "question_categories": {
+        "CSE": 135,
+        "POW": 13,
+        "KLA": 3
+      }
+    },
+    {
+      "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+      "lesson_key": "commas",
+      "title": "Topic 1.2 - Essential Comma Rules",
+      "subject": "english",
+      "question_count": 96,
+      "question_types": {
+        "comma-usage": 7,
+        "word-choice": 1,
+        "which-choice": 5,
+        "fragment": 1,
+        "transition": 2,
+        "parallel-structure": 3,
+        "verb-form": 1,
+        "dash": 1,
+        "verb-tense": 1,
+        "organization": 4,
+        "wordiness": 1,
+        "rhetorical-skills": 7,
+        "usage-mechanics": 9,
+        "grammar": 19,
+        "style": 11,
+        "sentence-structure": 5,
+        "redundancy": 3,
+        "punctuation": 12,
+        "transitions": 2,
+        "adding-deleting": 1
+      },
+      "question_categories": {
+        "CSE": 49,
+        "KLA": 4,
+        "POW": 43
+      }
+    },
+    {
+      "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+      "lesson_key": "2.2",
+      "title": "Areas, Volumes & Triangles",
+      "subject": "math",
+      "question_count": 61,
+      "question_types": {
+        "geometry": 61
+      },
+      "question_categories": {
+        "PHM-G": 21,
+        "PHM-A": 2,
+        "PHM-F": 1,
+        "PHM-N": 1,
+        "PHM-S": 1,
+        "plane-geometry": 8,
+        "trigonometry": 3,
+        "coordinate-geometry": 3,
+        "solid-geometry": 1,
+        "conic-sections": 1,
+        "GEO": 19
+      }
+    },
+    {
+      "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+      "lesson_key": "punctuation",
+      "title": "Topic 1.3 - Advanced Punctuation",
+      "subject": "english",
+      "question_count": 40,
+      "question_types": {
+        "dash": 2,
+        "colon": 4,
+        "comma-usage": 9,
+        "verb-tense": 2,
+        "word-choice": 1,
+        "punctuation": 9,
+        "deleting-sentence": 1,
+        "usage-mechanics": 5,
+        "grammar": 6,
+        "style": 1
+      },
+      "question_categories": {
+        "CSE": 30,
+        "KLA": 2,
+        "POW": 8
+      }
+    },
+    {
+      "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+      "lesson_key": "adding-deleting",
+      "title": "Topic 2.5 - Adding or Deleting Information",
+      "subject": "english",
+      "question_count": 32,
+      "question_types": {
+        "deleting-sentence": 1,
+        "sentence-placement": 1,
+        "adding-sentence": 2,
+        "comma-splice": 1,
+        "transition": 2,
+        "logical-placement": 5,
+        "rhetorical-skills": 2,
+        "style": 2,
+        "organization": 7,
+        "adding-deleting": 9
+      },
+      "question_categories": {
+        "POW": 29,
+        "CSE": 3
+      }
+    },
+    {
+      "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+      "lesson_key": "which-choice",
+      "title": "Topic 2.4 - Which Choice Questions",
+      "subject": "english",
+      "question_count": 23,
+      "question_types": {
+        "main-idea": 5,
+        "style": 5,
+        "which-choice": 3,
+        "transition": 1,
+        "organization": 4,
+        "redundancy": 1,
+        "transitions": 2,
+        "purpose": 2
+      },
+      "question_categories": {
+        "POW": 19,
+        "KLA": 3,
+        "CSE": 1
+      }
+    },
+    {
+      "lesson_id": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+      "lesson_key": "2.3",
+      "title": "Lines",
+      "subject": "math",
+      "question_count": 20,
+      "question_types": {
+        "geometry": 9,
+        "coordinate_geometry": 11
+      },
+      "question_categories": {
+        "PHM-G": 6,
+        "coordinate-geometry": 1,
+        "GEO": 13
+      }
+    },
+    {
+      "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+      "lesson_key": "transitions",
+      "title": "Topic 2.3 - Transitions",
+      "subject": "english",
+      "question_count": 16,
+      "question_types": {
+        "comma-usage": 2,
+        "transition": 2,
+        "which-choice": 1,
+        "rhetorical-skills": 1,
+        "grammar": 2,
+        "style": 5,
+        "transitions": 3
+      },
+      "question_categories": {
+        "CSE": 3,
+        "POW": 10,
+        "KLA": 3
+      }
+    },
+    {
+      "lesson_id": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+      "lesson_key": "logical-placement",
+      "title": "Topic 2.6 - Logical Placement",
+      "subject": "english",
+      "question_count": 9,
+      "question_types": {
+        "organization": 6,
+        "which-choice": 2,
+        "modifiers": 1
+      },
+      "question_categories": {
+        "POW": 8,
+        "CSE": 1
+      }
+    },
+    {
+      "lesson_id": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+      "lesson_key": "2.4",
+      "title": "Arcs and Sectors",
+      "subject": "math",
+      "question_count": 9,
+      "question_types": {
+        "geometry": 9
+      },
+      "question_categories": {
+        "PHM-G": 5,
+        "coordinate-geometry": 2,
+        "transformations": 1,
+        "GEO": 1
+      }
+    },
+    {
+      "lesson_id": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+      "lesson_key": "3.5",
+      "title": "Inequalities",
+      "subject": "math",
+      "question_count": 8,
+      "question_types": {
+        "algebra": 8
+      },
+      "question_categories": {
+        "PHM-A": 4,
+        "elementary-algebra": 1,
+        "sequences": 1,
+        "ALG": 2
+      }
+    },
+    {
+      "lesson_id": "22c56dfe-b819-42f2-a601-54d0ea5f2707",
+      "lesson_key": "question-diagnosis",
+      "title": "Topic 1.2 - Question Diagnosis",
+      "subject": "science",
+      "question_count": 8,
+      "question_types": {
+        "evaluation": 8
+      },
+      "question_categories": {
+        "EVA": 4,
+        "EMI": 4
+      }
+    },
+    {
+      "lesson_id": "b8c03bf0-99df-460d-be21-0015eebe7920",
+      "lesson_key": "3.3",
+      "title": "Exponents and Roots",
+      "subject": "math",
+      "question_count": 7,
+      "question_types": {
+        "algebra": 7
+      },
+      "question_categories": {
+        "PHM-A": 1,
+        "intermediate-algebra": 1,
+        "functions": 1,
+        "PHM-N": 1,
+        "PHM-F": 1,
+        "ALG": 2
+      }
+    },
+    {
+      "lesson_id": "1513e653-31c1-418d-9e7f-f91253d9438b",
+      "lesson_key": "experimental-setup",
+      "title": "Topic 4.2 - Experimental Setup",
+      "subject": "science",
+      "question_count": 6,
+      "question_types": {
+        "scientific-investigation": 6
+      },
+      "question_categories": {
+        "SCI": 1,
+        "SIN": 5
+      }
+    },
+    {
+      "lesson_id": "a0fbdb59-614b-4597-99c1-344c4f3ad47e",
+      "lesson_key": "3.4",
+      "title": "Logarithms",
+      "subject": "math",
+      "question_count": 3,
+      "question_types": {
+        "algebra": 3
+      },
+      "question_categories": {
+        "PHM-A": 2,
+        "functions": 1
+      }
+    },
+    {
+      "lesson_id": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+      "lesson_key": "5.2",
+      "title": "Percentages",
+      "subject": "math",
+      "question_count": 3,
+      "question_types": {
+        "arithmetic": 3
+      },
+      "question_categories": {
+        "ALG": 3
+      }
+    },
+    {
+      "lesson_id": "74013e77-3111-4dc6-beca-ff15948e4351",
+      "lesson_key": "5.1",
+      "title": "Number Theory",
+      "subject": "math",
+      "question_count": 3,
+      "question_types": {
+        "number_theory": 3
+      },
+      "question_categories": {
+        "ALG": 3
+      }
+    },
+    {
+      "lesson_id": "a8cd8513-f0a8-4bb1-9890-f21dc053939a",
+      "lesson_key": "3.2",
+      "title": "Fractions",
+      "subject": "math",
+      "question_count": 2,
+      "question_types": {
+        "algebra": 2
+      },
+      "question_categories": {
+        "sequences": 1,
+        "ALG": 1
+      }
+    },
+    {
+      "lesson_id": "34e50480-0a09-4f9f-add4-c1121f66776b",
+      "lesson_key": "3.6",
+      "title": "Absolute Value",
+      "subject": "math",
+      "question_count": 1,
+      "question_types": {
+        "algebra": 1
+      },
+      "question_categories": {
+        "ALG": 1
+      }
+    }
+  ],
+  "question_type_mappings": [
+    {
+      "question_type": "data-interpretation",
+      "total_count": 85,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 85,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "grammar",
+      "total_count": 84,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 56,
+          "percentage": "66.7"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 19,
+          "percentage": "22.6"
+        },
+        {
+          "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+          "lesson_key": "punctuation",
+          "count": 6,
+          "percentage": "7.1"
+        },
+        {
+          "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+          "lesson_key": "transitions",
+          "count": 2,
+          "percentage": "2.4"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 1,
+          "percentage": "1.2"
+        }
+      ]
+    },
+    {
+      "question_type": "algebra",
+      "total_count": 82,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 61,
+          "percentage": "74.4"
+        },
+        {
+          "lesson_id": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+          "lesson_key": "3.5",
+          "count": 8,
+          "percentage": "9.8"
+        },
+        {
+          "lesson_id": "b8c03bf0-99df-460d-be21-0015eebe7920",
+          "lesson_key": "3.3",
+          "count": 7,
+          "percentage": "8.5"
+        },
+        {
+          "lesson_id": "a0fbdb59-614b-4597-99c1-344c4f3ad47e",
+          "lesson_key": "3.4",
+          "count": 3,
+          "percentage": "3.7"
+        },
+        {
+          "lesson_id": "a8cd8513-f0a8-4bb1-9890-f21dc053939a",
+          "lesson_key": "3.2",
+          "count": 2,
+          "percentage": "2.4"
+        },
+        {
+          "lesson_id": "34e50480-0a09-4f9f-add4-c1121f66776b",
+          "lesson_key": "3.6",
+          "count": 1,
+          "percentage": "1.2"
+        }
+      ]
+    },
+    {
+      "question_type": "geometry",
+      "total_count": 79,
+      "lesson_distribution": [
+        {
+          "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+          "lesson_key": "2.2",
+          "count": 61,
+          "percentage": "77.2"
+        },
+        {
+          "lesson_id": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+          "lesson_key": "2.3",
+          "count": 9,
+          "percentage": "11.4"
+        },
+        {
+          "lesson_id": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+          "lesson_key": "2.4",
+          "count": 9,
+          "percentage": "11.4"
+        }
+      ]
+    },
+    {
+      "question_type": "style",
+      "total_count": 74,
+      "lesson_distribution": [
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 45,
+          "percentage": "60.8"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 11,
+          "percentage": "14.9"
+        },
+        {
+          "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+          "lesson_key": "which-choice",
+          "count": 5,
+          "percentage": "6.8"
+        },
+        {
+          "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+          "lesson_key": "transitions",
+          "count": 5,
+          "percentage": "6.8"
+        },
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 5,
+          "percentage": "6.8"
+        },
+        {
+          "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+          "lesson_key": "adding-deleting",
+          "count": 2,
+          "percentage": "2.7"
+        },
+        {
+          "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+          "lesson_key": "punctuation",
+          "count": 1,
+          "percentage": "1.4"
+        }
+      ]
+    },
+    {
+      "question_type": "main-idea",
+      "total_count": 60,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 52,
+          "percentage": "86.7"
+        },
+        {
+          "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+          "lesson_key": "which-choice",
+          "count": 5,
+          "percentage": "8.3"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 3,
+          "percentage": "5.0"
+        }
+      ]
+    },
+    {
+      "question_type": "math-problem-solving",
+      "total_count": 41,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 41,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "reading",
+      "total_count": 40,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 40,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "reading-comprehension",
+      "total_count": 40,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 40,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "science",
+      "total_count": 40,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 40,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "rhetorical-skills",
+      "total_count": 39,
+      "lesson_distribution": [
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 29,
+          "percentage": "74.4"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 7,
+          "percentage": "17.9"
+        },
+        {
+          "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+          "lesson_key": "adding-deleting",
+          "count": 2,
+          "percentage": "5.1"
+        },
+        {
+          "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+          "lesson_key": "transitions",
+          "count": 1,
+          "percentage": "2.6"
+        }
+      ]
+    },
+    {
+      "question_type": "organization",
+      "total_count": 37,
+      "lesson_distribution": [
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 14,
+          "percentage": "37.8"
+        },
+        {
+          "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+          "lesson_key": "adding-deleting",
+          "count": 7,
+          "percentage": "18.9"
+        },
+        {
+          "lesson_id": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+          "lesson_key": "logical-placement",
+          "count": 6,
+          "percentage": "16.2"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 4,
+          "percentage": "10.8"
+        },
+        {
+          "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+          "lesson_key": "which-choice",
+          "count": 4,
+          "percentage": "10.8"
+        },
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 2,
+          "percentage": "5.4"
+        }
+      ]
+    },
+    {
+      "question_type": "usage-mechanics",
+      "total_count": 36,
+      "lesson_distribution": [
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 20,
+          "percentage": "55.6"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 9,
+          "percentage": "25.0"
+        },
+        {
+          "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+          "lesson_key": "punctuation",
+          "count": 5,
+          "percentage": "13.9"
+        },
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 2,
+          "percentage": "5.6"
+        }
+      ]
+    },
+    {
+      "question_type": "punctuation",
+      "total_count": 34,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 13,
+          "percentage": "38.2"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 12,
+          "percentage": "35.3"
+        },
+        {
+          "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+          "lesson_key": "punctuation",
+          "count": 9,
+          "percentage": "26.5"
+        }
+      ]
+    },
+    {
+      "question_type": "detail",
+      "total_count": 33,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 33,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "data-analysis",
+      "total_count": 26,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 26,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "inference",
+      "total_count": 25,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 25,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "prealgebra",
+      "total_count": 23,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 23,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "comma-usage",
+      "total_count": 21,
+      "lesson_distribution": [
+        {
+          "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+          "lesson_key": "punctuation",
+          "count": 9,
+          "percentage": "42.9"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 7,
+          "percentage": "33.3"
+        },
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 3,
+          "percentage": "14.3"
+        },
+        {
+          "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+          "lesson_key": "transitions",
+          "count": 2,
+          "percentage": "9.5"
+        }
+      ]
+    },
+    {
+      "question_type": "word-problem",
+      "total_count": 21,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 21,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "trends",
+      "total_count": 21,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 21,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "research-summaries",
+      "total_count": 21,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 21,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "trigonometry",
+      "total_count": 20,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 20,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "literary-narrative",
+      "total_count": 20,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 20,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "arithmetic",
+      "total_count": 19,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 16,
+          "percentage": "84.2"
+        },
+        {
+          "lesson_id": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+          "lesson_key": "5.2",
+          "count": 3,
+          "percentage": "15.8"
+        }
+      ]
+    },
+    {
+      "question_type": "which-choice",
+      "total_count": 18,
+      "lesson_distribution": [
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 5,
+          "percentage": "27.8"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 5,
+          "percentage": "27.8"
+        },
+        {
+          "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+          "lesson_key": "which-choice",
+          "count": 3,
+          "percentage": "16.7"
+        },
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 2,
+          "percentage": "11.1"
+        },
+        {
+          "lesson_id": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+          "lesson_key": "logical-placement",
+          "count": 2,
+          "percentage": "11.1"
+        },
+        {
+          "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+          "lesson_key": "transitions",
+          "count": 1,
+          "percentage": "5.6"
+        }
+      ]
+    },
+    {
+      "question_type": "statistics-probability",
+      "total_count": 16,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 16,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "redundancy",
+      "total_count": 15,
+      "lesson_distribution": [
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 9,
+          "percentage": "60.0"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 3,
+          "percentage": "20.0"
+        },
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 2,
+          "percentage": "13.3"
+        },
+        {
+          "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+          "lesson_key": "which-choice",
+          "count": 1,
+          "percentage": "6.7"
+        }
+      ]
+    },
+    {
+      "question_type": "sentence-structure",
+      "total_count": 15,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 10,
+          "percentage": "66.7"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 5,
+          "percentage": "33.3"
+        }
+      ]
+    },
+    {
+      "question_type": "adding-deleting",
+      "total_count": 15,
+      "lesson_distribution": [
+        {
+          "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+          "lesson_key": "adding-deleting",
+          "count": 9,
+          "percentage": "60.0"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 5,
+          "percentage": "33.3"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 1,
+          "percentage": "6.7"
+        }
+      ]
+    },
+    {
+      "question_type": "biological-processes",
+      "total_count": 15,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 15,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "pronouns",
+      "total_count": 12,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 12,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "functions",
+      "total_count": 12,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 12,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "statistics",
+      "total_count": 12,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 12,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "word-choice",
+      "total_count": 11,
+      "lesson_distribution": [
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 5,
+          "percentage": "45.5"
+        },
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 4,
+          "percentage": "36.4"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 1,
+          "percentage": "9.1"
+        },
+        {
+          "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+          "lesson_key": "punctuation",
+          "count": 1,
+          "percentage": "9.1"
+        }
+      ]
+    },
+    {
+      "question_type": "verb-tense",
+      "total_count": 11,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 7,
+          "percentage": "63.6"
+        },
+        {
+          "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+          "lesson_key": "punctuation",
+          "count": 2,
+          "percentage": "18.2"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 1,
+          "percentage": "9.1"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 1,
+          "percentage": "9.1"
+        }
+      ]
+    },
+    {
+      "question_type": "probability",
+      "total_count": 11,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 11,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "coordinate_geometry",
+      "total_count": 11,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+          "lesson_key": "2.3",
+          "count": 11,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "plane_geometry",
+      "total_count": 11,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 11,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "transition",
+      "total_count": 10,
+      "lesson_distribution": [
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 2,
+          "percentage": "20.0"
+        },
+        {
+          "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+          "lesson_key": "transitions",
+          "count": 2,
+          "percentage": "20.0"
+        },
+        {
+          "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+          "lesson_key": "adding-deleting",
+          "count": 2,
+          "percentage": "20.0"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 2,
+          "percentage": "20.0"
+        },
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 1,
+          "percentage": "10.0"
+        },
+        {
+          "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+          "lesson_key": "which-choice",
+          "count": 1,
+          "percentage": "10.0"
+        }
+      ]
+    },
+    {
+      "question_type": "transitions",
+      "total_count": 10,
+      "lesson_distribution": [
+        {
+          "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+          "lesson_key": "transitions",
+          "count": 3,
+          "percentage": "30.0"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 3,
+          "percentage": "30.0"
+        },
+        {
+          "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+          "lesson_key": "which-choice",
+          "count": 2,
+          "percentage": "20.0"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 2,
+          "percentage": "20.0"
+        }
+      ]
+    },
+    {
+      "question_type": "purpose",
+      "total_count": 10,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 8,
+          "percentage": "80.0"
+        },
+        {
+          "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+          "lesson_key": "which-choice",
+          "count": 2,
+          "percentage": "20.0"
+        }
+      ]
+    },
+    {
+      "question_type": "comparison",
+      "total_count": 10,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 7,
+          "percentage": "70.0"
+        },
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 3,
+          "percentage": "30.0"
+        }
+      ]
+    },
+    {
+      "question_type": "social-science",
+      "total_count": 10,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 10,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "natural-science",
+      "total_count": 10,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 10,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "conflicting-viewpoints",
+      "total_count": 10,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 10,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "chemical-properties",
+      "total_count": 10,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 10,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "earth-processes",
+      "total_count": 10,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 10,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "structure",
+      "total_count": 9,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 9,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "sequences",
+      "total_count": 8,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 8,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "number_properties",
+      "total_count": 8,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 8,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "evaluation",
+      "total_count": 8,
+      "lesson_distribution": [
+        {
+          "lesson_id": "22c56dfe-b819-42f2-a601-54d0ea5f2707",
+          "lesson_key": "question-diagnosis",
+          "count": 8,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "logical-placement",
+      "total_count": 7,
+      "lesson_distribution": [
+        {
+          "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+          "lesson_key": "adding-deleting",
+          "count": 5,
+          "percentage": "71.4"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 1,
+          "percentage": "14.3"
+        },
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 1,
+          "percentage": "14.3"
+        }
+      ]
+    },
+    {
+      "question_type": "vocabulary",
+      "total_count": 7,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 7,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "comma-splice",
+      "total_count": 6,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 3,
+          "percentage": "50.0"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 2,
+          "percentage": "33.3"
+        },
+        {
+          "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+          "lesson_key": "adding-deleting",
+          "count": 1,
+          "percentage": "16.7"
+        }
+      ]
+    },
+    {
+      "question_type": "idiom",
+      "total_count": 6,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 3,
+          "percentage": "50.0"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 3,
+          "percentage": "50.0"
+        }
+      ]
+    },
+    {
+      "question_type": "approximation",
+      "total_count": 6,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 6,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "scientific-investigation",
+      "total_count": 6,
+      "lesson_distribution": [
+        {
+          "lesson_id": "1513e653-31c1-418d-9e7f-f91253d9438b",
+          "lesson_key": "experimental-setup",
+          "count": 6,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "fragment",
+      "total_count": 5,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 2,
+          "percentage": "40.0"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 2,
+          "percentage": "40.0"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 1,
+          "percentage": "20.0"
+        }
+      ]
+    },
+    {
+      "question_type": "verb-agreement",
+      "total_count": 5,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 4,
+          "percentage": "80.0"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 1,
+          "percentage": "20.0"
+        }
+      ]
+    },
+    {
+      "question_type": "parallel-structure",
+      "total_count": 5,
+      "lesson_distribution": [
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 3,
+          "percentage": "60.0"
+        },
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 2,
+          "percentage": "40.0"
+        }
+      ]
+    },
+    {
+      "question_type": "tone",
+      "total_count": 5,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 5,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "physics-mechanics",
+      "total_count": 5,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 5,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "deleting-sentence",
+      "total_count": 4,
+      "lesson_distribution": [
+        {
+          "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+          "lesson_key": "adding-deleting",
+          "count": 1,
+          "percentage": "25.0"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 1,
+          "percentage": "25.0"
+        },
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 1,
+          "percentage": "25.0"
+        },
+        {
+          "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+          "lesson_key": "punctuation",
+          "count": 1,
+          "percentage": "25.0"
+        }
+      ]
+    },
+    {
+      "question_type": "colon",
+      "total_count": 4,
+      "lesson_distribution": [
+        {
+          "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+          "lesson_key": "punctuation",
+          "count": 4,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "verb-form",
+      "total_count": 4,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 3,
+          "percentage": "75.0"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 1,
+          "percentage": "25.0"
+        }
+      ]
+    },
+    {
+      "question_type": "modifiers",
+      "total_count": 4,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 3,
+          "percentage": "75.0"
+        },
+        {
+          "lesson_id": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+          "lesson_key": "logical-placement",
+          "count": 1,
+          "percentage": "25.0"
+        }
+      ]
+    },
+    {
+      "question_type": "verbs",
+      "total_count": 4,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 4,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "linear_equations",
+      "total_count": 4,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 4,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "comprehension",
+      "total_count": 4,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 4,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "two-part-reasoning",
+      "total_count": 4,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 4,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "dash",
+      "total_count": 3,
+      "lesson_distribution": [
+        {
+          "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+          "lesson_key": "punctuation",
+          "count": 2,
+          "percentage": "66.7"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 1,
+          "percentage": "33.3"
+        }
+      ]
+    },
+    {
+      "question_type": "sentence-placement",
+      "total_count": 3,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 1,
+          "percentage": "33.3"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 1,
+          "percentage": "33.3"
+        },
+        {
+          "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+          "lesson_key": "adding-deleting",
+          "count": 1,
+          "percentage": "33.3"
+        }
+      ]
+    },
+    {
+      "question_type": "matrices",
+      "total_count": 3,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 3,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "number_theory",
+      "total_count": 3,
+      "lesson_distribution": [
+        {
+          "lesson_id": "74013e77-3111-4dc6-beca-ff15948e4351",
+          "lesson_key": "5.1",
+          "count": 3,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "complex_numbers",
+      "total_count": 3,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 3,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "word_problems",
+      "total_count": 3,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 3,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "logarithms",
+      "total_count": 3,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 3,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "interpretation",
+      "total_count": 3,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 3,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "application",
+      "total_count": 3,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 3,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "experimental-design",
+      "total_count": 3,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 3,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "modifier-misplaced",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "pronoun-ambiguous",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "adding-info",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "wordiness",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 1,
+          "percentage": "50.0"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 1,
+          "percentage": "50.0"
+        }
+      ]
+    },
+    {
+      "question_type": "adding-sentence",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+          "lesson_key": "adding-deleting",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "modifier-dangling",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 1,
+          "percentage": "50.0"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 1,
+          "percentage": "50.0"
+        }
+      ]
+    },
+    {
+      "question_type": "vectors",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "counting",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "inequalities",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "percentages",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "fractions",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "radicals",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "logic",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "combinatorics",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "expressions",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "vocab",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "main_idea",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "evaluating-information",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "word-placement",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "number-theory",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "complex-numbers",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "sets",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "graphing",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "exponents",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "quadratics",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "solid_geometry",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "linear_inequalities",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "ratios",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "characterization",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "sequence",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "perspective",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "ordering-data",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_type": "finding-information",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    }
+  ],
+  "question_category_mappings": [
+    {
+      "question_category": "POW",
+      "total_count": 238,
+      "lesson_distribution": [
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 108,
+          "percentage": "45.4"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 43,
+          "percentage": "18.1"
+        },
+        {
+          "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+          "lesson_key": "adding-deleting",
+          "count": 29,
+          "percentage": "12.2"
+        },
+        {
+          "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+          "lesson_key": "which-choice",
+          "count": 19,
+          "percentage": "8.0"
+        },
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 13,
+          "percentage": "5.5"
+        },
+        {
+          "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+          "lesson_key": "transitions",
+          "count": 10,
+          "percentage": "4.2"
+        },
+        {
+          "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+          "lesson_key": "punctuation",
+          "count": 8,
+          "percentage": "3.4"
+        },
+        {
+          "lesson_id": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+          "lesson_key": "logical-placement",
+          "count": 8,
+          "percentage": "3.4"
+        }
+      ]
+    },
+    {
+      "question_category": "CSE",
+      "total_count": 223,
+      "lesson_distribution": [
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 135,
+          "percentage": "60.5"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 49,
+          "percentage": "22.0"
+        },
+        {
+          "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+          "lesson_key": "punctuation",
+          "count": 30,
+          "percentage": "13.5"
+        },
+        {
+          "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+          "lesson_key": "transitions",
+          "count": 3,
+          "percentage": "1.3"
+        },
+        {
+          "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+          "lesson_key": "adding-deleting",
+          "count": 3,
+          "percentage": "1.3"
+        },
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 1,
+          "percentage": "0.4"
+        },
+        {
+          "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+          "lesson_key": "which-choice",
+          "count": 1,
+          "percentage": "0.4"
+        },
+        {
+          "lesson_id": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+          "lesson_key": "logical-placement",
+          "count": 1,
+          "percentage": "0.4"
+        }
+      ]
+    },
+    {
+      "question_category": "IOD",
+      "total_count": 165,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 165,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "ALG",
+      "total_count": 125,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 113,
+          "percentage": "90.4"
+        },
+        {
+          "lesson_id": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+          "lesson_key": "5.2",
+          "count": 3,
+          "percentage": "2.4"
+        },
+        {
+          "lesson_id": "74013e77-3111-4dc6-beca-ff15948e4351",
+          "lesson_key": "5.1",
+          "count": 3,
+          "percentage": "2.4"
+        },
+        {
+          "lesson_id": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+          "lesson_key": "3.5",
+          "count": 2,
+          "percentage": "1.6"
+        },
+        {
+          "lesson_id": "b8c03bf0-99df-460d-be21-0015eebe7920",
+          "lesson_key": "3.3",
+          "count": 2,
+          "percentage": "1.6"
+        },
+        {
+          "lesson_id": "a8cd8513-f0a8-4bb1-9890-f21dc053939a",
+          "lesson_key": "3.2",
+          "count": 1,
+          "percentage": "0.8"
+        },
+        {
+          "lesson_id": "34e50480-0a09-4f9f-add4-c1121f66776b",
+          "lesson_key": "3.6",
+          "count": 1,
+          "percentage": "0.8"
+        }
+      ]
+    },
+    {
+      "question_category": "KEY",
+      "total_count": 120,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 120,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "KID",
+      "total_count": 95,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 95,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "SIN",
+      "total_count": 84,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 79,
+          "percentage": "94.0"
+        },
+        {
+          "lesson_id": "1513e653-31c1-418d-9e7f-f91253d9438b",
+          "lesson_key": "experimental-setup",
+          "count": 5,
+          "percentage": "6.0"
+        }
+      ]
+    },
+    {
+      "question_category": "KLA",
+      "total_count": 64,
+      "lesson_distribution": [
+        {
+          "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+          "lesson_key": "redundancy",
+          "count": 49,
+          "percentage": "76.6"
+        },
+        {
+          "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+          "lesson_key": "commas",
+          "count": 4,
+          "percentage": "6.3"
+        },
+        {
+          "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+          "lesson_key": "sentence-structure",
+          "count": 3,
+          "percentage": "4.7"
+        },
+        {
+          "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+          "lesson_key": "which-choice",
+          "count": 3,
+          "percentage": "4.7"
+        },
+        {
+          "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+          "lesson_key": "transitions",
+          "count": 3,
+          "percentage": "4.7"
+        },
+        {
+          "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+          "lesson_key": "punctuation",
+          "count": 2,
+          "percentage": "3.1"
+        }
+      ]
+    },
+    {
+      "question_category": "PHM-A",
+      "total_count": 55,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 46,
+          "percentage": "83.6"
+        },
+        {
+          "lesson_id": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+          "lesson_key": "3.5",
+          "count": 4,
+          "percentage": "7.3"
+        },
+        {
+          "lesson_id": "a0fbdb59-614b-4597-99c1-344c4f3ad47e",
+          "lesson_key": "3.4",
+          "count": 2,
+          "percentage": "3.6"
+        },
+        {
+          "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+          "lesson_key": "2.2",
+          "count": 2,
+          "percentage": "3.6"
+        },
+        {
+          "lesson_id": "b8c03bf0-99df-460d-be21-0015eebe7920",
+          "lesson_key": "3.3",
+          "count": 1,
+          "percentage": "1.8"
+        }
+      ]
+    },
+    {
+      "question_category": "GEO",
+      "total_count": 55,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 22,
+          "percentage": "40.0"
+        },
+        {
+          "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+          "lesson_key": "2.2",
+          "count": 19,
+          "percentage": "34.5"
+        },
+        {
+          "lesson_id": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+          "lesson_key": "2.3",
+          "count": 13,
+          "percentage": "23.6"
+        },
+        {
+          "lesson_id": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+          "lesson_key": "2.4",
+          "count": 1,
+          "percentage": "1.8"
+        }
+      ]
+    },
+    {
+      "question_category": "PHM-G",
+      "total_count": 46,
+      "lesson_distribution": [
+        {
+          "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+          "lesson_key": "2.2",
+          "count": 21,
+          "percentage": "45.7"
+        },
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 14,
+          "percentage": "30.4"
+        },
+        {
+          "lesson_id": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+          "lesson_key": "2.3",
+          "count": 6,
+          "percentage": "13.0"
+        },
+        {
+          "lesson_id": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+          "lesson_key": "2.4",
+          "count": 5,
+          "percentage": "10.9"
+        }
+      ]
+    },
+    {
+      "question_category": "CS",
+      "total_count": 43,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 43,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "PHM-N",
+      "total_count": 31,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 29,
+          "percentage": "93.5"
+        },
+        {
+          "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+          "lesson_key": "2.2",
+          "count": 1,
+          "percentage": "3.2"
+        },
+        {
+          "lesson_id": "b8c03bf0-99df-460d-be21-0015eebe7920",
+          "lesson_key": "3.3",
+          "count": 1,
+          "percentage": "3.2"
+        }
+      ]
+    },
+    {
+      "question_category": "EMI",
+      "total_count": 24,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 20,
+          "percentage": "83.3"
+        },
+        {
+          "lesson_id": "22c56dfe-b819-42f2-a601-54d0ea5f2707",
+          "lesson_key": "question-diagnosis",
+          "count": 4,
+          "percentage": "16.7"
+        }
+      ]
+    },
+    {
+      "question_category": "IKI",
+      "total_count": 22,
+      "lesson_distribution": [
+        {
+          "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+          "lesson_key": "core-principles",
+          "count": 22,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "PHM-S",
+      "total_count": 20,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 19,
+          "percentage": "95.0"
+        },
+        {
+          "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+          "lesson_key": "2.2",
+          "count": 1,
+          "percentage": "5.0"
+        }
+      ]
+    },
+    {
+      "question_category": "PHM-F",
+      "total_count": 14,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 12,
+          "percentage": "85.7"
+        },
+        {
+          "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+          "lesson_key": "2.2",
+          "count": 1,
+          "percentage": "7.1"
+        },
+        {
+          "lesson_id": "b8c03bf0-99df-460d-be21-0015eebe7920",
+          "lesson_key": "3.3",
+          "count": 1,
+          "percentage": "7.1"
+        }
+      ]
+    },
+    {
+      "question_category": "IES",
+      "total_count": 12,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 12,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "plane-geometry",
+      "total_count": 8,
+      "lesson_distribution": [
+        {
+          "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+          "lesson_key": "2.2",
+          "count": 8,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "coordinate-geometry",
+      "total_count": 6,
+      "lesson_distribution": [
+        {
+          "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+          "lesson_key": "2.2",
+          "count": 3,
+          "percentage": "50.0"
+        },
+        {
+          "lesson_id": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+          "lesson_key": "2.4",
+          "count": 2,
+          "percentage": "33.3"
+        },
+        {
+          "lesson_id": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+          "lesson_key": "2.3",
+          "count": 1,
+          "percentage": "16.7"
+        }
+      ]
+    },
+    {
+      "question_category": "probability-statistics",
+      "total_count": 6,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 6,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "functions",
+      "total_count": 6,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 4,
+          "percentage": "66.7"
+        },
+        {
+          "lesson_id": "b8c03bf0-99df-460d-be21-0015eebe7920",
+          "lesson_key": "3.3",
+          "count": 1,
+          "percentage": "16.7"
+        },
+        {
+          "lesson_id": "a0fbdb59-614b-4597-99c1-344c4f3ad47e",
+          "lesson_key": "3.4",
+          "count": 1,
+          "percentage": "16.7"
+        }
+      ]
+    },
+    {
+      "question_category": "elementary-algebra",
+      "total_count": 5,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 4,
+          "percentage": "80.0"
+        },
+        {
+          "lesson_id": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+          "lesson_key": "3.5",
+          "count": 1,
+          "percentage": "20.0"
+        }
+      ]
+    },
+    {
+      "question_category": "intermediate-algebra",
+      "total_count": 4,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 3,
+          "percentage": "75.0"
+        },
+        {
+          "lesson_id": "b8c03bf0-99df-460d-be21-0015eebe7920",
+          "lesson_key": "3.3",
+          "count": 1,
+          "percentage": "25.0"
+        }
+      ]
+    },
+    {
+      "question_category": "EVA",
+      "total_count": 4,
+      "lesson_distribution": [
+        {
+          "lesson_id": "22c56dfe-b819-42f2-a601-54d0ea5f2707",
+          "lesson_key": "question-diagnosis",
+          "count": 4,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "number-properties",
+      "total_count": 3,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 3,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "trigonometry",
+      "total_count": 3,
+      "lesson_distribution": [
+        {
+          "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+          "lesson_key": "2.2",
+          "count": 3,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "percentages",
+      "total_count": 3,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 3,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "rates",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "statistics-averages",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "sequences",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+          "lesson_key": "3.5",
+          "count": 1,
+          "percentage": "50.0"
+        },
+        {
+          "lesson_id": "a8cd8513-f0a8-4bb1-9890-f21dc053939a",
+          "lesson_key": "3.2",
+          "count": 1,
+          "percentage": "50.0"
+        }
+      ]
+    },
+    {
+      "question_category": "IM",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "INT",
+      "total_count": 2,
+      "lesson_distribution": [
+        {
+          "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+          "lesson_key": "passage-approach",
+          "count": 2,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "arithmetic-sequences",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "exponents",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "time-calculations",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "data-analysis",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "fractions",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "proportions",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "scientific-notation",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+          "lesson_key": "3.1",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "solid-geometry",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+          "lesson_key": "2.2",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "transformations",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+          "lesson_key": "2.4",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "conic-sections",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+          "lesson_key": "2.2",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    },
+    {
+      "question_category": "SCI",
+      "total_count": 1,
+      "lesson_distribution": [
+        {
+          "lesson_id": "1513e653-31c1-418d-9e7f-f91253d9438b",
+          "lesson_key": "experimental-setup",
+          "count": 1,
+          "percentage": "100.0"
+        }
+      ]
+    }
+  ],
+  "by_subject": {
+    "ENGLISH": {
+      "total": 525,
+      "withLesson": 525,
+      "withoutLesson": 0,
+      "byType": {
+        "comma-splice": 6,
+        "fragment": 5,
+        "dash": 3,
+        "comma-usage": 21,
+        "deleting-sentence": 4,
+        "verb-agreement": 5,
+        "colon": 4,
+        "sentence-placement": 3,
+        "word-choice": 11,
+        "modifier-misplaced": 2,
+        "which-choice": 18,
+        "main-idea": 8,
+        "verb-form": 4,
+        "redundancy": 15,
+        "transition": 10,
+        "verb-tense": 11,
+        "idiom": 6,
+        "logical-placement": 7,
+        "parallel-structure": 5,
+        "pronoun-ambiguous": 2,
+        "adding-info": 2,
+        "wordiness": 2,
+        "adding-sentence": 2,
+        "modifier-dangling": 2,
+        "grammar": 84,
+        "punctuation": 34,
+        "style": 74,
+        "organization": 37,
+        "usage-mechanics": 36,
+        "rhetorical-skills": 39,
+        "pronouns": 12,
+        "sentence-structure": 15,
+        "transitions": 10,
+        "modifiers": 4,
+        "adding-deleting": 15,
+        "verbs": 4,
+        "word-placement": 1,
+        "purpose": 2
+      },
+      "byCategory": {
+        "CSE": 223,
+        "POW": 238,
+        "KLA": 64
+      },
+      "byLesson": {
+        "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac": 151,
+        "66776383-9334-4efb-bd72-74b1bbeab8ac": 40,
+        "3e8f0696-1bf7-4b5c-880d-fb5359923b7d": 96,
+        "784a146b-8809-4189-a1b4-4b2fdcaf8199": 32,
+        "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734": 158,
+        "29b59c9d-ef2e-4f7f-aae2-464222884d3a": 23,
+        "7aae3763-017b-4762-ad5a-346aac1f027b": 16,
+        "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4": 9
+      }
+    },
+    "MATH": {
+      "total": 420,
+      "withLesson": 420,
+      "withoutLesson": 0,
+      "byType": {
+        "functions": 12,
+        "geometry": 79,
+        "algebra": 82,
+        "word-problem": 21,
+        "statistics-probability": 16,
+        "number-theory": 1,
+        "math-problem-solving": 41,
+        "sequences": 8,
+        "matrices": 3,
+        "trigonometry": 20,
+        "complex-numbers": 1,
+        "vectors": 2,
+        "counting": 2,
+        "prealgebra": 23,
+        "probability": 11,
+        "arithmetic": 19,
+        "coordinate_geometry": 11,
+        "statistics": 12,
+        "number_theory": 3,
+        "complex_numbers": 3,
+        "inequalities": 2,
+        "percentages": 2,
+        "fractions": 2,
+        "word_problems": 3,
+        "radicals": 2,
+        "logic": 2,
+        "linear_equations": 4,
+        "combinatorics": 2,
+        "sets": 1,
+        "graphing": 1,
+        "logarithms": 3,
+        "plane_geometry": 11,
+        "exponents": 1,
+        "expressions": 2,
+        "number_properties": 8,
+        "quadratics": 1,
+        "solid_geometry": 1,
+        "linear_inequalities": 1,
+        "ratios": 1
+      },
+      "byCategory": {
+        "PHM-F": 14,
+        "PHM-G": 46,
+        "PHM-A": 55,
+        "IES": 12,
+        "PHM-S": 20,
+        "PHM-N": 31,
+        "plane-geometry": 8,
+        "elementary-algebra": 5,
+        "number-properties": 3,
+        "rates": 2,
+        "arithmetic-sequences": 1,
+        "exponents": 1,
+        "trigonometry": 3,
+        "intermediate-algebra": 4,
+        "time-calculations": 1,
+        "coordinate-geometry": 6,
+        "data-analysis": 1,
+        "probability-statistics": 6,
+        "functions": 6,
+        "statistics-averages": 2,
+        "fractions": 1,
+        "proportions": 1,
+        "percentages": 3,
+        "scientific-notation": 1,
+        "solid-geometry": 1,
+        "transformations": 1,
+        "sequences": 2,
+        "conic-sections": 1,
+        "IM": 2,
+        "ALG": 125,
+        "GEO": 55
+      },
+      "byLesson": {
+        "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f": 303,
+        "8e92077d-ae10-48ce-a80d-348cc56969c3": 20,
+        "60e3cd06-406b-45bc-b9d7-e887ef8eeca6": 8,
+        "d2ae4a84-cb54-4006-8dee-8c325e443c2d": 61,
+        "928ee683-cf5c-46ab-a148-77da4e887e3b": 9,
+        "b8c03bf0-99df-460d-be21-0015eebe7920": 7,
+        "a0fbdb59-614b-4597-99c1-344c4f3ad47e": 3,
+        "a8cd8513-f0a8-4bb1-9890-f21dc053939a": 2,
+        "6203e4a3-6648-4e0c-9c31-52e35ee2c735": 3,
+        "74013e77-3111-4dc6-beca-ff15948e4351": 3,
+        "34e50480-0a09-4f9f-add4-c1121f66776b": 1
+      }
+    },
+    "READING": {
+      "total": 280,
+      "withLesson": 280,
+      "withoutLesson": 0,
+      "byType": {
+        "main-idea": 52,
+        "characterization": 1,
+        "sequence": 1,
+        "interpretation": 3,
+        "detail": 33,
+        "inference": 25,
+        "perspective": 1,
+        "vocabulary": 7,
+        "comprehension": 4,
+        "comparison": 7,
+        "structure": 9,
+        "tone": 5,
+        "literary-narrative": 20,
+        "social-science": 10,
+        "natural-science": 10,
+        "vocab": 2,
+        "main_idea": 2,
+        "purpose": 8,
+        "reading": 40,
+        "reading-comprehension": 40
+      },
+      "byCategory": {
+        "KID": 95,
+        "IKI": 22,
+        "CS": 43,
+        "KEY": 120
+      },
+      "byLesson": {
+        "5a176fd8-0715-406c-95af-f4a532789b9f": 280
+      }
+    },
+    "SCIENCE": {
+      "total": 280,
+      "withLesson": 280,
+      "withoutLesson": 0,
+      "byType": {
+        "data-interpretation": 85,
+        "ordering-data": 1,
+        "comparison": 3,
+        "application": 3,
+        "two-part-reasoning": 4,
+        "trends": 21,
+        "experimental-design": 3,
+        "approximation": 6,
+        "conflicting-viewpoints": 10,
+        "finding-information": 1,
+        "evaluating-information": 2,
+        "biological-processes": 15,
+        "chemical-properties": 10,
+        "earth-processes": 10,
+        "physics-mechanics": 5,
+        "research-summaries": 21,
+        "data-analysis": 26,
+        "scientific-investigation": 6,
+        "evaluation": 8,
+        "science": 40
+      },
+      "byCategory": {
+        "IOD": 165,
+        "SIN": 84,
+        "EMI": 24,
+        "INT": 2,
+        "SCI": 1,
+        "EVA": 4
+      },
+      "byLesson": {
+        "42594785-0153-49f9-bedf-b2daf9bb837a": 266,
+        "1513e653-31c1-418d-9e7f-f91253d9438b": 6,
+        "22c56dfe-b819-42f2-a601-54d0ea5f2707": 8
+      }
+    }
+  }
+}

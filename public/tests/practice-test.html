@@ -204,7 +204,7 @@
                 if (!text) return '';
                 // Extract text inside brackets [...]
                 const match = text.match(/\[([^\]]+)\]/);
-                return match ? match[1] : ''; // Return only bracketed text, or empty if no brackets
+                return match ? match[1] : text; // Return bracketed text if exists, otherwise full text
             }
 
             // Render questions

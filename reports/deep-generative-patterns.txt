@@ -1,0 +1,1028 @@
+====================================================================================================
+SECTION 1: ANSWER DISTRIBUTION SEQUENCES & PATTERNS
+====================================================================================================
+
+
+--- TEST 1 ANSWER SEQUENCES ---
+
+ENGLISH (75q): CBADAACACDBABDDBABDBADCADCCBDBDBBAABAACDDBCDBDACDDACADBACBCDACABCDDCDBCCDAB
+Distribution: A=19 (25.3%), B=18 (24.0%), C=17 (22.7%), D=21 (28.0%)
+Max consecutive same answer: 2
+
+MATH (60q): CCECEBEACCBDBBBABEDBABCBCACCDDDABCBDECACCBADDDBCAABAAEADCAAD
+Distribution: A=14 (23.3%), B=14 (23.3%), C=15 (25.0%), D=11 (18.3%), E=6 (10.0%)
+Max consecutive same answer: 3
+
+READING (40q): CABCADBDDBCABCACBDAABBDBDCCBABACCAADCBDD
+Distribution: A=10 (25.0%), B=11 (27.5%), C=10 (25.0%), D=9 (22.5%)
+Max consecutive same answer: 2
+
+SCIENCE (40q): BBBADDBDABAABACBCABBAADCDDBCBACDDCCBDCDC
+Distribution: A=9 (22.5%), B=12 (30.0%), C=9 (22.5%), D=10 (25.0%)
+Max consecutive same answer: 3
+
+--- TEST 2 ANSWER SEQUENCES ---
+
+ENGLISH (75q): CCBCCADBACDBBDADDAAABDBCADCBCCDBBADBCACADABACAACBBDDABDACDBCDAACDBBBDDBCAAC
+Distribution: A=20 (26.7%), B=19 (25.3%), C=18 (24.0%), D=18 (24.0%)
+Max consecutive same answer: 3
+
+MATH (60q): CCECEBEACCECCBBCDACCEACBBDECCBAADBACDBADDACEACBACBBDEACCBEDA
+Distribution: A=12 (20.0%), B=12 (20.0%), C=19 (31.7%), D=8 (13.3%), E=9 (15.0%)
+Max consecutive same answer: 2
+
+READING (40q): DDCCBCAADABABAACACDDCBBCDBAABABADBBCACCD
+Distribution: A=12 (30.0%), B=10 (25.0%), C=10 (25.0%), D=8 (20.0%)
+Max consecutive same answer: 2
+
+SCIENCE (40q): DAABDBBBACDCCBBCDACACCDABDBCBBBADACABDBA
+Distribution: A=10 (25.0%), B=13 (32.5%), C=9 (22.5%), D=8 (20.0%)
+Max consecutive same answer: 3
+
+--- TEST 3 ANSWER SEQUENCES ---
+
+ENGLISH (75q): DCBCABDDCBDDCDBBCCCDCDDADDBBAABADABDAACDBCBACCBCCCACAACDACBABCCDADACDDBBADD
+Distribution: A=17 (22.7%), B=16 (21.3%), C=21 (28.0%), D=21 (28.0%)
+Max consecutive same answer: 3
+
+MATH (60q): CBBBECCBACACBCCBDDCBABDBBCBBEABABECBAECCBDCCDDBACBCBEDACCCAC
+Distribution: A=9 (15.0%), B=19 (31.7%), C=20 (33.3%), D=7 (11.7%), E=5 (8.3%)
+Max consecutive same answer: 3
+
+READING (40q): BBDBCABDAACDCDBACDABCDABCBDBBAACBBBACDBC
+Distribution: A=9 (22.5%), B=14 (35.0%), C=9 (22.5%), D=8 (20.0%)
+Max consecutive same answer: 3
+
+SCIENCE (40q): BCBBCDCBBBBBCCCCACBBCBABCBBCCCCDBACBCBBB
+Distribution: A=3 (7.5%), B=19 (47.5%), C=16 (40.0%), D=2 (5.0%)
+Max consecutive same answer: 5
+
+--- TEST 4 ANSWER SEQUENCES ---
+
+ENGLISH (75q): CCAAAAAABBCBACCCADDABDABBADCBCBACACCAADCACBADBDAACCDACBBCDDDBDBADCBABCACDBA
+Distribution: A=24 (32.0%), B=17 (22.7%), C=20 (26.7%), D=14 (18.7%)
+Max consecutive same answer: 6
+
+MATH (60q): AEDDDABEDEACDBBCDECDBCEBECCCCDBADACDEEADCCACBEAAEAABDACDBCDE
+Distribution: A=12 (20.0%), B=9 (15.0%), C=14 (23.3%), D=14 (23.3%), E=11 (18.3%)
+Max consecutive same answer: 4
+
+READING (40q): BADCCDBABDADDDDBABCCBCADBADCACCABDCCDCBD
+Distribution: A=8 (20.0%), B=9 (22.5%), C=11 (27.5%), D=12 (30.0%)
+Max consecutive same answer: 4
+
+SCIENCE (40q): ADDCCBBCCCADABDBBBCCBABCAAACDACADDCCCCBD
+Distribution: A=9 (22.5%), B=9 (22.5%), C=14 (35.0%), D=8 (20.0%)
+Max consecutive same answer: 4
+
+--- TEST 5 ANSWER SEQUENCES ---
+
+ENGLISH (75q): CDBBDAADDBBCACCDBADBABDDACCAADBBCCDABBADCCBADDABCADCBBADCADCBBADCADCBBADCAD
+Distribution: A=19 (25.3%), B=19 (25.3%), C=17 (22.7%), D=20 (26.7%)
+Max consecutive same answer: 2
+
+MATH (60q): BCAADBBEABCCEDBBDEACCAEBBEDAACCDEBBEDAADCCEEBBDDAACEECBBDDAA
+Distribution: A=13 (21.7%), B=14 (23.3%), C=11 (18.3%), D=11 (18.3%), E=11 (18.3%)
+Max consecutive same answer: 2
+
+READING (40q): BADBCCADBBDACCABBDDACCABBDDACCABBDDACCAB
+Distribution: A=10 (25.0%), B=11 (27.5%), C=10 (25.0%), D=9 (22.5%)
+Max consecutive same answer: 2
+
+SCIENCE (40q): CBBDAADCCBBDAADCCBBDAADCCBBDAADCCBBDAADC
+Distribution: A=10 (25.0%), B=10 (25.0%), C=10 (25.0%), D=10 (25.0%)
+Max consecutive same answer: 2
+
+--- TEST 6 ANSWER SEQUENCES ---
+
+ENGLISH (75q): ACAABADBDACDDBCCBCCACDDCACDDDAAACBCBBACABDCCDDDCABBDBCADBBCDADAACDBABBDDABC
+Distribution: A=19 (25.3%), B=17 (22.7%), C=19 (25.3%), D=20 (26.7%)
+Max consecutive same answer: 3
+
+MATH (60q): ABDCDEDCBABCDDDBAEDEBBDCACBCECAADBCDCAAEDAAEDDCDCDBCCBCBBEAA
+Distribution: A=12 (20.0%), B=12 (20.0%), C=14 (23.3%), D=15 (25.0%), E=7 (11.7%)
+Max consecutive same answer: 3
+
+READING (40q): BBAACDCDABBBCCABAACDBADDCADADCBDAADCCBCA
+Distribution: A=12 (30.0%), B=9 (22.5%), C=10 (25.0%), D=9 (22.5%)
+Max consecutive same answer: 3
+
+SCIENCE (40q): DCBAABDCACCBAADDABBCCCBADDCDBCCADBCCABDA
+Distribution: A=10 (25.0%), B=9 (22.5%), C=12 (30.0%), D=9 (22.5%)
+Max consecutive same answer: 3
+
+--- TEST 7 ANSWER SEQUENCES ---
+
+ENGLISH (75q): ACADCACDBCBACBDACDDBBABBCCCACCADDDBCCCCCCADDBBBBBABAADCCBAAACDBBAADDABBADAD
+Distribution: A=20 (26.7%), B=19 (25.3%), C=20 (26.7%), D=16 (21.3%)
+Max consecutive same answer: 6
+
+MATH (60q): ABDCBEBCABDDCAEBDEBCBADDBCABADBEACCEABECDCABADCBEDDBEDEACBDA
+Distribution: A=12 (20.0%), B=15 (25.0%), C=11 (18.3%), D=13 (21.7%), E=9 (15.0%)
+Max consecutive same answer: 2
+
+READING (40q): DBACADBACDADCBCAADCBCCABDBCDAADBBCDACBAD
+Distribution: A=11 (27.5%), B=9 (22.5%), C=10 (25.0%), D=10 (25.0%)
+Max consecutive same answer: 2
+
+SCIENCE (40q): CADBABCACBDABCDCBDCABDACCBADCADCABDBCABD
+Distribution: A=10 (25.0%), B=10 (25.0%), C=11 (27.5%), D=9 (22.5%)
+Max consecutive same answer: 2
+
+
+====================================================================================================
+SECTION 2: QUESTION TYPE DISTRIBUTION PER INDIVIDUAL TEST
+====================================================================================================
+
+
+--- TEST 1 QUESTION TYPES ---
+
+ENGLISH:
+  comma-usage: 13
+  verb-tense: 7
+  word-choice: 5
+  which-choice: 5
+  verb-agreement: 4
+  main-idea: 4
+  transition: 4
+  verb-form: 4
+  redundancy: 4
+  colon: 3
+  sentence-placement: 3
+  fragment: 3
+  comma-splice: 2
+  idiom: 2
+  deleting-sentence: 2
+  dash: 2
+  modifier-misplaced: 1
+  parallel-structure: 1
+  adding-info: 1
+  logical-placement: 1
+  pronoun-ambiguous: 1
+  wordiness: 1
+  adding-sentence: 1
+  modifier-dangling: 1
+
+MATH:
+  algebra: 21
+  geometry: 18
+  statistics-probability: 4
+  word-problem: 3
+  sequences: 3
+  math-problem-solving: 2
+  trigonometry: 2
+  functions: 2
+  number-theory: 1
+  complex-numbers: 1
+  vectors: 1
+  matrices: 1
+  counting: 1
+
+READING:
+  detail: 7
+  main-idea: 7
+  inference: 6
+  comparison: 5
+  comprehension: 4
+  vocabulary: 3
+  interpretation: 3
+  sequence: 1
+  structure: 1
+  tone: 1
+  perspective: 1
+  characterization: 1
+
+SCIENCE:
+  data-interpretation: 14
+  approximation: 6
+  trends: 4
+  two-part-reasoning: 4
+  conflicting-viewpoints: 3
+  experimental-design: 3
+  evaluating-information: 2
+  ordering-data: 1
+  comparison: 1
+  finding-information: 1
+  application: 1
+
+--- TEST 2 QUESTION TYPES ---
+
+ENGLISH:
+  comma-usage: 8
+  grammar: 6
+  transition: 6
+  punctuation: 6
+  word-choice: 6
+  redundancy: 5
+  verb-tense: 4
+  comma-splice: 4
+  organization: 4
+  style: 4
+  which-choice: 4
+  fragment: 2
+  logical-placement: 2
+  main-idea: 2
+  deleting-sentence: 2
+  dash: 1
+  colon: 1
+  verb-agreement: 1
+  wordiness: 1
+  pronoun-ambiguous: 1
+  modifier-misplaced: 1
+  idiom: 1
+  modifier-dangling: 1
+  adding-sentence: 1
+  adding-info: 1
+
+MATH:
+  math-problem-solving: 36
+  geometry: 6
+  algebra: 4
+  statistics-probability: 4
+  trigonometry: 4
+  word-problem: 2
+  sequences: 2
+  functions: 2
+
+READING:
+  detail: 10
+  inference: 10
+  structure: 7
+  main-idea: 5
+  vocabulary: 4
+  tone: 4
+
+SCIENCE:
+  data-interpretation: 19
+  trends: 17
+  application: 2
+  comparison: 2
+
+--- TEST 3 QUESTION TYPES ---
+
+ENGLISH:
+  rhetorical-skills: 39
+  usage-mechanics: 36
+
+MATH:
+  prealgebra: 23
+  geometry: 20
+  algebra: 17
+
+READING:
+  literary-narrative: 20
+  social-science: 10
+  natural-science: 10
+
+SCIENCE:
+  biological-processes: 15
+  chemical-properties: 10
+  earth-processes: 10
+  physics-mechanics: 5
+
+--- TEST 4 QUESTION TYPES ---
+
+ENGLISH:
+  grammar: 41
+  style: 17
+  organization: 17
+
+MATH:
+  algebra: 16
+  word-problem: 16
+  geometry: 13
+  statistics-probability: 8
+  trigonometry: 4
+  math-problem-solving: 3
+
+READING:
+  detail: 16
+  inference: 9
+  purpose: 8
+  vocab: 2
+  main_idea: 2
+  comparison: 2
+  structure: 1
+
+SCIENCE:
+  research-summaries: 21
+  data-interpretation: 12
+  conflicting-viewpoints: 7
+
+--- TEST 5 QUESTION TYPES ---
+
+ENGLISH:
+  grammar: 37
+  style: 26
+  organization: 12
+
+MATH:
+  algebra: 13
+  geometry: 10
+  arithmetic: 9
+  statistics: 5
+  coordinate_geometry: 5
+  probability: 4
+  trigonometry: 4
+  functions: 3
+  number_theory: 2
+  matrices: 1
+  counting: 1
+  vectors: 1
+  inequalities: 1
+  complex_numbers: 1
+
+READING:
+  main-idea: 40
+
+SCIENCE:
+  data-analysis: 26
+  evaluation: 8
+  scientific-investigation: 6
+
+--- TEST 6 QUESTION TYPES ---
+
+ENGLISH:
+  style: 14
+  punctuation: 11
+  sentence-structure: 8
+  pronouns: 7
+  adding-deleting: 7
+  transitions: 4
+  redundancy: 4
+  which-choice: 4
+  modifiers: 3
+  logical-placement: 3
+  idiom: 3
+  parallel-structure: 2
+  purpose: 2
+  organization: 1
+  verbs: 1
+  word-placement: 1
+
+MATH:
+  geometry: 12
+  algebra: 11
+  statistics: 4
+  coordinate_geometry: 4
+  word_problems: 3
+  functions: 3
+  trigonometry: 3
+  percentages: 2
+  probability: 2
+  fractions: 2
+  sequences: 2
+  logic: 1
+  linear_equations: 1
+  radicals: 1
+  number_theory: 1
+  combinatorics: 1
+  sets: 1
+  complex_numbers: 1
+  graphing: 1
+  matrices: 1
+  logarithms: 1
+  inequalities: 1
+  arithmetic: 1
+
+READING:
+  reading: 40
+
+SCIENCE:
+  science: 40
+
+--- TEST 7 QUESTION TYPES ---
+
+ENGLISH:
+  punctuation: 17
+  style: 13
+  adding-deleting: 8
+  sentence-structure: 7
+  transitions: 6
+  pronouns: 5
+  which-choice: 5
+  organization: 3
+  verbs: 3
+  main-idea: 2
+  redundancy: 2
+  parallel-structure: 2
+  logical-placement: 1
+  modifiers: 1
+
+MATH:
+  plane_geometry: 11
+  arithmetic: 9
+  number_properties: 8
+  probability: 5
+  linear_equations: 3
+  statistics: 3
+  trigonometry: 3
+  logarithms: 2
+  functions: 2
+  expressions: 2
+  coordinate_geometry: 2
+  sequences: 1
+  linear_inequalities: 1
+  ratios: 1
+  exponents: 1
+  logic: 1
+  quadratics: 1
+  radicals: 1
+  solid_geometry: 1
+  complex_numbers: 1
+  combinatorics: 1
+
+READING:
+  reading-comprehension: 40
+
+SCIENCE:
+  data-interpretation: 40
+
+
+====================================================================================================
+SECTION 3: PASSAGE CHARACTERISTICS FOR GENERATION
+====================================================================================================
+
+--- ENGLISH PASSAGE PATTERNS ---
+
+Test 1 P1: "Double the Manta Rays"
+  Words: 313, Sentences: 21, Avg word length: 5.4 chars
+  Has introduction: YES
+
+Test 1 P2: "Origins of Aspirin"
+  Words: 294, Sentences: 15, Avg word length: 5.1 chars
+  Has introduction: YES
+
+Test 1 P3: "Good Vibrations"
+  Words: 322, Sentences: 17, Avg word length: 5.0 chars
+  Has introduction: YES
+
+Test 1 P4: "Building and Rebuilding "the King of Roads""
+  Words: 299, Sentences: 19, Avg word length: 5.4 chars
+  Has introduction: YES
+
+Test 1 P5: "Selling Hip-Hop"
+  Words: 303, Sentences: 17, Avg word length: 5.6 chars
+  Has introduction: YES
+
+Test 2 P4: "Clinton Hill's Found Artist"
+  Words: 365, Sentences: 18, Avg word length: 5.0 chars
+  Has introduction: YES
+
+Test 2 P2: "A Mouthful of Music"
+  Words: 347, Sentences: 19, Avg word length: 5.4 chars
+  Has introduction: YES
+
+Test 2 P3: "Neutrinos on Ice"
+  Words: 318, Sentences: 18, Avg word length: 5.8 chars
+  Has introduction: YES
+
+Test 2 P5: "Cher Ami, Pigeon Hero"
+  Words: 359, Sentences: 24, Avg word length: 5.4 chars
+  Has introduction: YES
+
+Test 2 P1: "Making the Desert Bloom"
+  Words: 288, Sentences: 17, Avg word length: 5.6 chars
+  Has introduction: YES
+
+Test 3 P1: "Here Comes the Sun"
+  Words: 283, Sentences: 15, Avg word length: 5.0 chars
+  Has introduction: YES
+
+Test 3 P2: "Talking Scop"
+  Words: 305, Sentences: 21, Avg word length: 5.2 chars
+  Has introduction: YES
+
+Test 3 P3: "Logging the Lake"
+  Words: 370, Sentences: 20, Avg word length: 4.7 chars
+  Has introduction: YES
+
+Test 3 P4: "The Meteoric Rise of Meenakshi Wadhwa"
+  Words: 314, Sentences: 19, Avg word length: 5.3 chars
+  Has introduction: YES
+
+Test 3 P5: "The Soul of Stax"
+  Words: 316, Sentences: 20, Avg word length: 5.3 chars
+  Has introduction: YES
+
+Test 4 P1: "Dragon and Snow"
+  Words: 356, Sentences: 17, Avg word length: 4.8 chars
+
+Test 4 P2: "Aquatic Explorer AQUA2"
+  Words: 336, Sentences: 19, Avg word length: 5.1 chars
+
+Test 4 P3: "The Fisherman of Porgy Key"
+  Words: 348, Sentences: 21, Avg word length: 4.9 chars
+
+Test 4 P4: "Close Encounters of the Bird Kind"
+  Words: 336, Sentences: 18, Avg word length: 5.1 chars
+
+Test 4 P5: "Choreographing Change"
+  Words: 304, Sentences: 20, Avg word length: 5.6 chars
+
+Test 5 P1: "Bar Codes: A Linear History"
+  Words: 325, Sentences: 18, Avg word length: 5.3 chars
+
+Test 5 P2: "Glowing on an Adventure"
+  Words: 327, Sentences: 20, Avg word length: 5.0 chars
+
+Test 5 P3: "A Rose by the Name Antique"
+  Words: 350, Sentences: 19, Avg word length: 4.9 chars
+
+Test 5 P4: "Jeremy Frey, Weaving Heritage Into Modern Art"
+  Words: 279, Sentences: 14, Avg word length: 5.2 chars
+
+Test 5 P5: "The Flow of Time"
+  Words: 336, Sentences: 18, Avg word length: 5.3 chars
+
+Test 6 P1: "Deborah Sampson: A Revolutionary Hero"
+  Words: 323, Sentences: 21, Avg word length: 5.1 chars
+
+Test 6 P2: "Senator Fong's Plantation and Gardens"
+  Words: 325, Sentences: 16, Avg word length: 5.0 chars
+
+Test 6 P3: "Rescuing the Lord Howe Stick Insect"
+  Words: 317, Sentences: 16, Avg word length: 5.0 chars
+
+Test 6 P4: "Morse Code in the Modern Age"
+  Words: 316, Sentences: 15, Avg word length: 5.3 chars
+
+Test 6 P5: "Urban Legend"
+  Words: 317, Sentences: 19, Avg word length: 5.2 chars
+
+Test 7 P1: "King Tut's Space Bug"
+  Words: 314, Sentences: 17, Avg word length: 5.2 chars
+
+Test 7 P2: "Not All It's Krakened Up to Be"
+  Words: 344, Sentences: 24, Avg word length: 4.7 chars
+
+Test 7 P3: "Programmed for Success"
+  Words: 326, Sentences: 17, Avg word length: 5.2 chars
+
+Test 7 P4: "Painting Outside the Lines"
+  Words: 312, Sentences: 17, Avg word length: 5.4 chars
+
+Test 7 P5: "In Tune"
+  Words: 302, Sentences: 17, Avg word length: 5.7 chars
+
+
+--- READING PASSAGE PATTERNS ---
+
+Test 2 P3: HUMANITIES
+  Title: "The Art of Film Dubbing" | Author: Chiara Barzini
+  Words: 762, Sentences: 34
+  Source: Harper's Magazine article "Read My Lips"
+
+Test 1 P2: SOCIAL_SCIENCE
+  Title: "Our Vanishing Night / The End of Night" | Author: Verlyn Klinkenborg / Paul Bogard
+  Words: 517, Sentences: 28
+  Source: National Geographic (2008) / The End of Night (2013)
+
+Test 1 P4: NATURAL_SCIENCE
+  Title: "Glaciers" | Author: N/A
+  Words: 430, Sentences: 26
+  Source: Article about glaciers
+
+Test 2 P4: NATURAL_SCIENCE
+  Title: "Ocean Acidification" | Author: N/A
+  Words: 503, Sentences: 28
+
+Test 4 P3: HUMANITIES
+  Title: "Japanese Bunraku Theatre" | Author: Theodora Skipitares and Joan Acocella
+  Words: 775, Sentences: 41
+  Source: Dual Passage
+
+Test 6 P1: LITERARY_NARRATIVE
+  Title: "LITERARY NARRATIVE: Introduction by Charlotte Noruzi" | Author: N/A
+  Words: 794, Sentences: 42
+
+Test 6 P2: SOCIAL_SCIENCE
+  Title: "SOCIAL SCIENCE: Down on the Batture by Oliver A. Houck" | Author: N/A
+  Words: 779, Sentences: 48
+
+Test 6 P3: HUMANITIES
+  Title: "HUMANITIES: Passage A - Searching for Silence: John Cage's Art of Noise by Alex Ross / Passage B - This Is Your Brain on Music by Daniel J. Levitin" | Author: N/A
+  Words: 747, Sentences: 40
+
+Test 6 P4: NATURAL_SCIENCE
+  Title: "NATURAL SCIENCE: How We Are Evolving by Jonathan K. Pritchard" | Author: N/A
+  Words: 745, Sentences: 30
+
+Test 1 P1: LITERARY NARRATIVE
+  Title: "Love Marriage" | Author: V. V. Ganeshananthan
+  Words: 490, Sentences: 44
+  Source: Love Marriage novel (2008)
+
+Test 1 P3: HUMANITIES
+  Title: "On Places, Photographs, and Memory" | Author: Chris Engman
+  Words: 476, Sentences: 30
+  Source: Essay (2012)
+
+Test 2 P1: LITERARY NARRATIVE
+  Title: "Mothers and Memory" | Author: Susan Power (Passage A) and Leslie Chang (Passage B)
+  Words: 838, Sentences: 58
+  Source: Various memoirs and essays
+
+Test 2 P2: SOCIAL_SCIENCE
+  Title: "The Natural Ice Industry" | Author: Gavin Weightman
+  Words: 769, Sentences: 26
+  Source: The Frozen-Water Trade: A True Story
+
+Test 4 P4: NATURAL_SCIENCE
+  Title: "Sociable, and Smart" | Author: Carl Zimmer
+  Words: 757, Sentences: 57
+  Source: ©2008 by The New York Times Company
+
+Test 7 P1: LITERARY_NARRATIVE
+  Title: "LITERARY NARRATIVE: City Kid by Nelson George" | Author: N/A
+  Words: 804, Sentences: 44
+
+Test 7 P2: SOCIAL_SCIENCE
+  Title: "SOCIAL SCIENCE: Dual Passage on Gestures" | Author: N/A
+  Words: 734, Sentences: 41
+
+Test 7 P3: HUMANITIES
+  Title: "HUMANITIES: The Lost Painting by Jonathan Harr" | Author: N/A
+  Words: 765, Sentences: 40
+
+Test 7 P4: NATURAL_SCIENCE
+  Title: "NATURAL SCIENCE: Archives of Life: Science and Collections by Richard Fortey" | Author: N/A
+  Words: 727, Sentences: 32
+
+Test 4 P1: LITERARY NARRATIVE
+  Title: "Atop the Mound" | Author: William Least Heat-Moon
+  Words: 826, Sentences: 31
+  Source: ©1991 by William Least Heat-Moon
+
+Test 5 P2: SOCIAL_SCIENCE
+  Title: "INFORMATIONAL: Notes from a Wedding by Lauren Wilcox Puchowski" | Author: N/A
+  Words: 806, Sentences: 41
+
+Test 5 P3: HUMANITIES
+  Title: "INFORMATIONAL: Photography Changes How Cultural Groups Are Represented and Perceived by Edwin Schupman" | Author: N/A
+  Words: 702, Sentences: 40
+
+Test 5 P4: NATURAL_SCIENCE
+  Title: "INFORMATIONAL: Summer World: A Season of Bounty by Bernd Heinrich" | Author: N/A
+  Words: 770, Sentences: 34
+
+Test 3 P2: SOCIAL_SCIENCE
+  Title: "The Aluminum Revolution: From Precious Metal to Industrial Commodity" | Author: Historical Account
+  Words: 666, Sentences: 30
+  Source: Practice ACT 3
+
+Test 3 P4: NATURAL_SCIENCE
+  Title: "Coral Reefs: Underwater Rainforests in Crisis" | Author: Marine Biology Research
+  Words: 740, Sentences: 33
+  Source: Practice ACT 3
+
+Test 4 P2: SOCIAL_SCIENCE
+  Title: "The History of Money" | Author: Jack Weatherford
+  Words: 772, Sentences: 32
+  Source: ©1997 by Jack McIver Weatherford
+
+Test 5 P1: LITERARY NARRATIVE
+  Title: "LITERARY NARRATIVE: Passage A is adapted from The Piano Shop on the Left Bank / Passage B is adapted from Me and My Violin" | Author: N/A
+  Words: 823, Sentences: 42
+
+Test 3 P1: LITERARY NARRATIVE
+  Title: "Urban Apartments and Writing Spaces" | Author: Angie Cruz
+  Words: 646, Sentences: 26
+  Source: Practice ACT 3
+
+Test 3 P3: LITERARY NARRATIVE
+  Title: "Learning to Cook: Family Traditions and Personal Discovery" | Author: Personal Narrative
+  Words: 744, Sentences: 27
+  Source: Practice ACT 3
+
+
+--- SCIENCE PASSAGE PATTERNS ---
+
+Test 6 P2: DATA_REPRESENTATION
+  Title: "13-Lined Ground Squirrel Hibernation"
+  Words: 162
+
+Test 1 P2: RESEARCH_SUMMARY
+  Title: "Flies as Bacterial Vectors"
+  Words: 264
+
+Test 2 P5: DATA_REPRESENTATION
+  Title: "Carbon Dioxide Solubility in Magma"
+  Words: 106
+
+Test 1 P3: DATA_REPRESENTATION
+  Title: "Forest Fires and Oxygen Levels"
+  Words: 132
+
+Test 6 P4: RESEARCH_SUMMARY
+  Title: "Acetate Hydrolysis Rate Constants"
+  Words: 362
+
+Test 2 P1: DATA_REPRESENTATION
+  Title: "Termite Mulch Consumption Study"
+  Words: 128
+
+Test 2 P6: DATA_REPRESENTATION
+  Title: "Planetary Motion and Retrograde Movement"
+  Words: 142
+
+Test 2 P4: CONFLICTING_VIEWPOINTS
+  Title: "Exothermic Reaction Study"
+  Words: 108
+
+Test 6 P5: RESEARCH_SUMMARY
+  Title: "Tadpole Response to Protein F"
+  Words: 387
+
+Test 6 P6: CONFLICTING_VIEWPOINTS
+  Title: "Light Properties Through Glass"
+  Words: 414
+
+Test 1 P5: DATA_REPRESENTATION
+  Title: "Water Electrolysis Using Solar Cells"
+  Words: 186
+
+Test 1 P6: DATA_REPRESENTATION
+  Title: "Standing Waves on Strings"
+  Words: 238
+
+Test 6 P1: DATA_REPRESENTATION
+  Title: "Polyol Dissolution in Water"
+  Words: 284
+
+Test 7 P3: RESEARCH_SUMMARY
+  Title: "Physics Motion Experiments"
+  Words: 420
+
+Test 3 P1: DATA_REPRESENTATION
+  Title: "Photosynthesis in Aquatic Plants"
+  Words: 145
+
+Test 3 P2: RESEARCH_SUMMARY
+  Title: "Electrical Conductivity of Salt Solutions"
+  Words: 128
+
+Test 3 P3: CONFLICTING_VIEWPOINTS
+  Title: "Climate Change and Greenhouse Gases"
+  Words: 153
+
+Test 6 P3: RESEARCH_SUMMARY
+  Title: "Methane Production in Forest Soil"
+  Words: 306
+
+Test 7 P4: DATA_REPRESENTATION
+  Title: "Soil Compressive Strength"
+  Words: 198
+
+Test 3 P5: DATA_REPRESENTATION
+  Title: "Rock Formation and Mineral Properties"
+  Words: 133
+
+Test 3 P7: DATA_REPRESENTATION
+  Title: "Planetary Motion and Cellular Respiration"
+  Words: 135
+
+Test 4 P1: DATA_REPRESENTATION
+  Title: "Whitefly Life Stages and Temperature"
+  Words: 161
+
+Test 7 P1: RESEARCH_SUMMARY
+  Title: "Amoeba limax Activity Experiments"
+  Words: 365
+
+Test 4 P3: RESEARCH_SUMMARY
+  Title: "Oil Spill Cleanup Sorbents"
+  Words: 289
+
+Test 4 P4: RESEARCH_SUMMARY
+  Title: "Acid Solutions: Surface Tension and pH"
+  Words: 276
+
+Test 4 P5: RESEARCH_SUMMARY
+  Title: "Structural Beam Deflection"
+  Words: 247
+
+Test 4 P6: CONFLICTING_VIEWPOINTS
+  Title: "Spring Oscillation Student Viewpoints"
+  Words: 390
+
+Test 5 P1: CONFLICTING_VIEWPOINTS
+  Title: "Moving Rocks in the Playa"
+  Words: 360
+
+Test 5 P2: RESEARCH_SUMMARY
+  Title: "CO2 Gas Production from Diet Cola"
+  Words: 343
+
+Test 5 P3: DATA_REPRESENTATION
+  Title: "Effects of pH and Nickel on Plant Growth"
+  Words: 324
+
+Test 5 P4: RESEARCH_SUMMARY
+  Title: "Ammonia Production"
+  Words: 362
+
+Test 5 P5: DATA_REPRESENTATION
+  Title: "Sound Wave Attenuation"
+  Words: 198
+
+Test 5 P6: RESEARCH_SUMMARY
+  Title: "Effects of Sweeteners on Rats"
+  Words: 367
+
+Test 1 P1: DATA_REPRESENTATION
+  Title: "Molar Volume of Gases"
+  Words: 89
+
+Test 1 P4: CONFLICTING_VIEWPOINTS
+  Title: "Plant Stem Color Genetics"
+  Words: 383
+
+Test 2 P3: DATA_REPRESENTATION
+  Title: "Buoyant Forces Study"
+  Words: 157
+
+Test 2 P2: RESEARCH_SUMMARY
+  Title: "Bacterial Survival After Lyophilization"
+  Words: 174
+
+Test 3 P4: RESEARCH_SUMMARY
+  Title: "Mendelian Genetics in Plant Breeding"
+  Words: 131
+
+Test 3 P6: RESEARCH_SUMMARY
+  Title: "pH and Chemical Indicators"
+  Words: 142
+
+Test 4 P2: DATA_REPRESENTATION
+  Title: "Primary Amines Chemistry"
+  Words: 184
+
+Test 7 P2: CONFLICTING_VIEWPOINTS
+  Title: "Amino Acid Production on Earth"
+  Words: 339
+
+Test 7 P5: RESEARCH_SUMMARY
+  Title: "Sunscreen UV Light Absorbance"
+  Words: 299
+
+Test 7 P6: DATA_REPRESENTATION
+  Title: "Gas Exchange in the Human Body"
+  Words: 220
+
+
+
+====================================================================================================
+SECTION 4: WRONG ANSWER CONSTRUCTION BY QUESTION TYPE
+====================================================================================================
+
+
+--- VERB-AGREEMENT (5 questions) ---
+
+Q6 [Test 1]:
+Stem: In 2009, Marshall announced that indeed there <u>is</u> two manta species....
+  A: NO CHANGE ✓ CORRECT
+  B: happen to be ✗ WRONG
+  C: were ✗ WRONG
+  D: are ✗ WRONG
+Notes: Passage I - Subject-verb agreement, "two species" is plural
+
+Q10 [Test 1]:
+Stem: Marshall announced that indeed there <u>is</u> two manta species....
+  A: NO CHANGE ✗ WRONG
+  B: exists ✗ WRONG
+  C: was ✗ WRONG
+  D: are ✓ CORRECT
+Notes: Passage I - Subject-verb agreement
+
+Q39 [Test 1]:
+Stem: Klimas's idea for his sonic sculptures <u>were sparked</u> by the experiments of Swiss scientist Hans Jenny....
+  A: NO CHANGE ✗ WRONG
+  B: have been ✗ WRONG
+  C: was ✓ CORRECT
+  D: are ✗ WRONG
+Notes: Passage III - "idea" is singular, needs "was"
+
+
+--- MAIN-IDEA (8 questions) ---
+
+Q45 [Test 1]:
+Stem: [Passage question] Suppose writer's purpose was to document the process of an artist. Would essay accomplish that?...
+  A: Yes, because it focuses on how Jenny used artistic process similar to Klimas ✗ WRONG
+  B: Yes, because it describes how Klimas photographs effects of vibrations created by music on paint ✓ CORRECT
+  C: No, because it focuses on cultural significance of Klimas's artwork ✗ WRONG
+  D: No, because it provides general overview of how Jenny inspired visual artists ✗ WRONG
+Notes: Passage III - Essay documents Klimas's process
+
+Q60 [Test 7]:
+Stem: Suppose the writer's primary purpose had been to discuss a significant point in an artist's career. Would this essay accomplish that purpose?...
+  A: Yes, because it describes Howe's interaction with the jurors of the Philbrook competition and the effect of that interaction. ✓ CORRECT
+  B: Yes, because it chronicles Howe's career up to Howe's involvement with the Philbrook competition. ✗ WRONG
+  C: No, because it does not explain why Howe's participation in the 1958 competition at the Philbrook was important. ✗ WRONG
+  D: No, because although it mentions Howe, it focuses mainly on the jurors for the Philbrook's annual competition. ✗ WRONG
+
+Q75 [Test 1]:
+Stem: [Passage question] Suppose writer wanted to write essay celebrating Robinson's pioneering role in music industry. Would this essay accomplish that?...
+  A: Yes, because it describes her discovery of hip-hop subculture ✗ WRONG
+  B: Yes, because it explains her role in producing first commercially successful rap record ✓ CORRECT
+  C: No, because it focuses primarily on Sugarhill Gang ✗ WRONG
+  D: No, because it emphasizes business aspects over artistic achievements ✗ WRONG
+Notes: Passage V - Essay celebrates Robinson producing first rap hit
+
+
+--- MODIFIER-MISPLACED (2 questions) ---
+
+Q12 [Test 1]:
+Stem: The fact that such large animals <u>went undifferentiated highlights how little scientists know for so long about</u> these gentle giants....
+  A: NO CHANGE ✓ CORRECT
+  B: went undifferentiated for so long highlights how little scientists know about ✗ WRONG
+  C: for so long went undifferentiated, highlighting how little scientists know about ✗ WRONG
+  D: went undifferentiated, for so long highlighting how little scientists know about ✗ WRONG
+Notes: Passage I - Misplaced modifier "for so long"
+
+Q69 [Test 2]:
+Stem: One of six hundred birds used by the US Army Signal Corps in France during World War I, <u>all twelve of Cher Ami's missions were deemed successful</u...
+  A: NO CHANGE ✗ WRONG
+  B: the twelve missions Cher Ami flew were successful. ✗ WRONG
+  C: successful missions by Cher Ami numbered twelve. ✗ WRONG
+  D: Cher Ami flew twelve successful missions. ✓ CORRECT
+Notes: Test 2 Question 69
+
+
+--- COLON (4 questions) ---
+
+Q7 [Test 1]:
+Stem: Another discovery <u>was: that</u> some mantas had egg-shaped masses at the base of their tail fins....
+  A: NO CHANGE ✗ WRONG
+  B: was, that, ✗ WRONG
+  C: was that ✓ CORRECT
+  D: was, that ✗ WRONG
+Notes: Passage I - Unnecessary colon
+
+Q71 [Test 2]:
+Stem: They had but one link to <u>headquarters homing pigeons</u>....
+  A: NO CHANGE ✗ WRONG
+  B: headquarters: ✓ CORRECT
+  C: headquarters; ✗ WRONG
+  D: headquarters, ✗ WRONG
+Notes: Test 2 Question 71
+
+Q32 [Test 1]:
+Stem: The paint collects in a puddle of <u>colors; rich oranges and powder blues,</u> hot pinks and electric yellows....
+  A: NO CHANGE ✗ WRONG
+  B: colors: rich oranges and powder blues, ✓ CORRECT
+  C: colors: rich oranges; and powder blues ✗ WRONG
+  D: colors; rich oranges and powder blues; ✗ WRONG
+Notes: Passage III - Colon introduces list
+
+
+--- SENTENCE-PLACEMENT (3 questions) ---
+
+Q8 [Test 1]:
+Stem: [Where should this sentence be placed?] <u>Some of the data were basic, such as manta coloration and size.</u>...
+  A: after Sentence 1. ✓ CORRECT
+  B: after Sentence 2. ✗ WRONG
+  C: after Sentence 3. ✗ WRONG
+  D: after Sentence 4. ✗ WRONG
+Notes: Passage I - Logical placement, general before specific
+
+Q13 [Test 1]:
+Stem: The fact that such large animals went undifferentiated <u>highlights how little scientists know for so long about</u> these gentle giants....
+  A: NO CHANGE ✗ WRONG
+  B: for so long highlights how little scientists know ✓ CORRECT
+  C: highlights for so long how little scientists know ✗ WRONG
+  D: highlights how for so long little scientists know ✗ WRONG
+Notes: Passage I - Modifier placement
+
+Q60 [Test 1]:
+Stem: [Sentence to add: "The rest of the highway fell into disrepair." Where to place?]...
+  A: Point A in Paragraph 1. ✗ WRONG
+  B: Point B in Paragraph 2. ✗ WRONG
+  C: Point C in Paragraph 2. ✗ WRONG
+  D: Point D in Paragraph 3. ✓ CORRECT
+Notes: Passage IV - After "only western third still in use" (Point D)
+
+
+
+====================================================================================================
+SECTION 5: DIFFICULTY CALIBRATION FACTORS
+====================================================================================================
+
+EASY:
+  Avg stem length: 100.4 chars
+  Avg context length: 77.5 chars
+  Avg question position: Q40.1
+  Sample count: 41
+
+MEDIUM:
+  Avg stem length: 112.1 chars
+  Avg context length: 80.7 chars
+  Avg question position: Q36.4
+  Sample count: 124
+
+HARD:
+  Avg stem length: 130.4 chars
+  Avg context length: 81.0 chars
+  Avg question position: Q40.0
+  Sample count: 60
+

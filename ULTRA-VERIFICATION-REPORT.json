@@ -1,0 +1,113 @@
+{
+  "timestamp": "2025-10-25T01:16:52.569Z",
+  "totalIssues": 0,
+  "totalWarnings": 1,
+  "testStats": {
+    "1": {
+      "english": {
+        "questions": 75,
+        "passages": 5,
+        "withUTags": 67
+      },
+      "math": {
+        "questions": 60
+      },
+      "reading": {
+        "questions": 40,
+        "passages": 4
+      },
+      "science": {
+        "questions": 40,
+        "passages": 6
+      }
+    },
+    "2": {
+      "english": {
+        "questions": 75,
+        "passages": 5,
+        "withUTags": 61
+      },
+      "math": {
+        "questions": 60
+      },
+      "reading": {
+        "questions": 40,
+        "passages": 4
+      },
+      "science": {
+        "questions": 40,
+        "passages": 6
+      }
+    },
+    "3": {
+      "english": {
+        "questions": 75,
+        "passages": 5,
+        "withUTags": 75
+      },
+      "math": {
+        "questions": 60
+      },
+      "reading": {
+        "questions": 40,
+        "passages": 4
+      },
+      "science": {
+        "questions": 40,
+        "passages": 7
+      }
+    },
+    "4": {
+      "english": {
+        "questions": 75,
+        "passages": 5,
+        "withUTags": 50
+      },
+      "math": {
+        "questions": 60
+      },
+      "reading": {
+        "questions": 40,
+        "passages": 4
+      },
+      "science": {
+        "questions": 40,
+        "passages": 6
+      }
+    },
+    "5": {
+      "english": {
+        "questions": 75,
+        "passages": 5,
+        "withUTags": 54
+      },
+      "math": {
+        "questions": 60
+      },
+      "reading": {
+        "questions": 40,
+        "passages": 4
+      },
+      "science": {
+        "questions": 40,
+        "passages": 6
+      }
+    }
+  },
+  "allIssues": {
+    "1": [],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": []
+  },
+  "allWarnings": {
+    "1": [
+      "⚠️  CROSS-TEST: Large variation in <u> tag counts (50 to 75)"
+    ],
+    "2": [],
+    "3": [],
+    "4": [],
+    "5": []
+  }
+}

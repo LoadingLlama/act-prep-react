@@ -1,0 +1,1983 @@
+=== ENGLISH QUESTIONS (FIRST 50 COMPLETE) ===
+
+TEST 1 | Q6 | verb-agreement | CSE | DIFF: easy
+CONTEXT BEFORE: In 2009, Marshall announced that indeed there 
+UNDERLINED: is
+CONTEXT AFTER:  two manta species.
+STEM: In 2009, Marshall announced that indeed there <u>is</u> two manta species.
+  A: NO CHANGE
+  B: happen to be
+  C: were
+  D: are
+CORRECT: A
+NOTES: Passage I - Subject-verb agreement, "two species" is plural
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q10 | verb-agreement | CSE | DIFF: easy
+CONTEXT BEFORE: Marshall announced that indeed there 
+UNDERLINED: is
+CONTEXT AFTER:  two manta species.
+STEM: Marshall announced that indeed there <u>is</u> two manta species.
+  A: NO CHANGE
+  B: exists
+  C: was
+  D: are
+CORRECT: D
+NOTES: Passage I - Subject-verb agreement
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q45 | main-idea | POW | DIFF: hard
+CONTEXT BEFORE: 
+UNDERLINED: 
+CONTEXT AFTER: 
+STEM: [Passage question] Suppose writer's purpose was to document the process of an artist. Would essay accomplish that?
+  A: Yes, because it focuses on how Jenny used artistic process similar to Klimas
+  B: Yes, because it describes how Klimas photographs effects of vibrations created by music on paint
+  C: No, because it focuses on cultural significance of Klimas's artwork
+  D: No, because it provides general overview of how Jenny inspired visual artists
+CORRECT: B
+NOTES: Passage III - Essay documents Klimas's process
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q12 | modifier-misplaced | CSE | DIFF: hard
+CONTEXT BEFORE: The fact that such large animals 
+UNDERLINED: went undifferentiated highlights how little scientists know for so long about
+CONTEXT AFTER:  these gentle giants.
+STEM: The fact that such large animals <u>went undifferentiated highlights how little scientists know for so long about</u> these gentle giants.
+  A: NO CHANGE
+  B: went undifferentiated for so long highlights how little scientists know about
+  C: for so long went undifferentiated, highlighting how little scientists know about
+  D: went undifferentiated, for so long highlighting how little scientists know about
+CORRECT: A
+NOTES: Passage I - Misplaced modifier "for so long"
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q7 | colon | CSE | DIFF: medium
+CONTEXT BEFORE: Another discovery 
+UNDERLINED: was: that
+CONTEXT AFTER:  some mantas had egg-shaped masses at the base of their tail fins.
+STEM: Another discovery <u>was: that</u> some mantas had egg-shaped masses at the base of their tail fins.
+  A: NO CHANGE
+  B: was, that,
+  C: was that
+  D: was, that
+CORRECT: C
+NOTES: Passage I - Unnecessary colon
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q8 | sentence-placement | POW | DIFF: hard
+CONTEXT BEFORE: [Where should this sentence be placed?] 
+UNDERLINED: Some of the data were basic, such as manta coloration and size.
+CONTEXT AFTER: 
+STEM: [Where should this sentence be placed?] <u>Some of the data were basic, such as manta coloration and size.</u>
+  A: after Sentence 1.
+  B: after Sentence 2.
+  C: after Sentence 3.
+  D: after Sentence 4.
+CORRECT: A
+NOTES: Passage I - Logical placement, general before specific
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q9 | word-choice | KLA | DIFF: medium
+CONTEXT BEFORE: In 2009, Marshall 
+UNDERLINED: announced, with two other scientists,
+CONTEXT AFTER:  that indeed there are two manta species.
+STEM: In 2009, Marshall <u>announced, with two other scientists,</u> that indeed there are two manta species.
+  A: NO CHANGE
+  B: surprised many scientists by announcing
+  C: had the evidence to announce
+  D: at long last announced
+CORRECT: C
+NOTES: Passage I - Word choice to convey scientific backing
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q13 | sentence-placement | POW | DIFF: medium
+CONTEXT BEFORE: The fact that such large animals went undifferentiated 
+UNDERLINED: highlights how little scientists know for so long about
+CONTEXT AFTER:  these gentle giants.
+STEM: The fact that such large animals went undifferentiated <u>highlights how little scientists know for so long about</u> these gentle giants.
+  A: NO CHANGE
+  B: for so long highlights how little scientists know
+  C: highlights for so long how little scientists know
+  D: highlights how for so long little scientists know
+CORRECT: B
+NOTES: Passage I - Modifier placement
+
+----------------------------------------------------------------------------------------------------
+
+TEST 3 | Q1 | usage-mechanics | POW | DIFF: medium
+CONTEXT BEFORE: directly on
+UNDERLINED: Rjukan, a small town
+CONTEXT AFTER: in south-central Norway
+STEM: directly on <u>Rjukan, a small town</u> in south-central Norway
+  A: Rjukan, which is
+  B: Rjukan;
+  C: Rjukan—
+  D: Rjukan:
+CORRECT: D
+NOTES: Practice ACT 3 English Question 1 - punctuation alternatives
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q11 | word-choice | KLA | DIFF: medium
+CONTEXT BEFORE: Thriving in shallow water, it 
+UNDERLINED: kind of sticks around one area.
+CONTEXT AFTER:  In contrast, the giant manta favors deep water.
+STEM: Thriving in shallow water, it <u>kind of sticks around one area.</u>
+  A: NO CHANGE
+  B: rarely ventures far from its home territory.
+  C: doesn't delight in slogging long distances.
+  D: loves hanging around its neighborhood.
+CORRECT: B
+NOTES: Passage I - Informal language, needs formal tone
+
+----------------------------------------------------------------------------------------------------
+
+TEST 5 | Q26 | style | POW | DIFF: null
+CONTEXT BEFORE: The sound of splashing water, 
+UNDERLINED: however,
+CONTEXT AFTER:  might signal that prey is nearby
+STEM: The sound of splashing water, <u>however,</u> might signal that prey is nearby
+  A: NO CHANGE
+  B: on the other hand,
+  C: for example,
+  D: above all,
+CORRECT: C
+
+----------------------------------------------------------------------------------------------------
+
+TEST 5 | Q18 | grammar | CSE | DIFF: null
+CONTEXT BEFORE: that clung to the limestone ceiling and, 
+UNDERLINED: with
+CONTEXT AFTER:  their radiant bodies, flooded the cave
+STEM: that clung to the limestone ceiling and, <u>with</u> their radiant bodies, flooded the cave
+  A: NO CHANGE
+  B: Although
+  C: Since
+  D: DELETE the underlined portion.
+CORRECT: A
+
+----------------------------------------------------------------------------------------------------
+
+TEST 5 | Q19 | grammar | CSE | DIFF: null
+CONTEXT BEFORE: flooded the cave in aquamarine light. 
+UNDERLINED: While
+CONTEXT AFTER:  I was traveling on canoe on a group tour
+STEM: flooded the cave in aquamarine light. <u>While</u> I was traveling on canoe on a group tour
+  A: NO CHANGE
+  B: with
+  C: by
+  D: in
+CORRECT: D
+
+----------------------------------------------------------------------------------------------------
+
+TEST 5 | Q27 | grammar | CSE | DIFF: null
+CONTEXT BEFORE: that prey is nearby, causing 
+UNDERLINED: them
+CONTEXT AFTER:  to brighten.
+STEM: that prey is nearby, causing <u>them</u> to brighten.
+  A: NO CHANGE
+  B: the light
+  C: these
+  D: DELETE the underlined portion.
+CORRECT: C
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q14 | which-choice | POW | DIFF: hard
+CONTEXT BEFORE: 
+UNDERLINED: 
+CONTEXT AFTER: 
+STEM: At the moment, manta ray populations face an array of threats worldwide. [Which statement best concludes by suggesting study will continue?]
+  A: NO CHANGE
+  B: A 2009 documentary film about Dr. Marshall related the story of her manta-species discovery.
+  C: Dr. Marshall once described the manta ray as "like the largest, most beautiful underwater bird."
+  D: Fortunately, mantas have a devoted and expert researcher in Dr. Marshall.
+CORRECT: D
+NOTES: Passage I - Concluding sentence that suggests continued study
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q28 | which-choice | POW | DIFF: medium
+CONTEXT BEFORE: He 
+UNDERLINED: administered the medicine to
+CONTEXT AFTER:  people suffering from fevers.
+STEM: He <u>administered the medicine to</u> people suffering from fevers.
+  A: NO CHANGE
+  B: tested his new concoction on
+  C: The liquid was given to benefit
+  D: He decided to give the drink to
+CORRECT: B
+NOTES: Passage II - "Tested...on" emphasizes experimental nature
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q21 | verb-tense | CSE | DIFF: easy
+CONTEXT BEFORE: Apothecaries increasingly 
+UNDERLINED: preferred
+CONTEXT AFTER:  the imported bark of South American cinchona trees as a fever reducer.
+STEM: Apothecaries increasingly <u>preferred</u> the imported bark of South American cinchona trees as a fever reducer.
+  A: NO CHANGE
+  B: would of preferred
+  C: will prefer
+  D: prefer
+CORRECT: A
+NOTES: Passage II - Past tense correct; "would of" is wrong (should be "would have")
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q23 | transition | POW | DIFF: medium
+CONTEXT BEFORE: [Previous sentence about cost] 
+UNDERLINED: Consequently,
+CONTEXT AFTER:  in the mid-1700s, English minister Edward Stone began to seek a substitute.
+STEM: The high cost was expensive. <u>Consequently,</u> in the mid-1700s, English minister Edward Stone began to seek a substitute.
+  A: NO CHANGE
+  B: Nevertheless,
+  C: Furthermore,
+  D: Likewise,
+CORRECT: C
+NOTES: Passage II - "Consequently" shows cause-effect relationship
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q24 | verb-form | CSE | DIFF: easy
+CONTEXT BEFORE: Consequently, in the mid-1700s, English minister Edward Stone 
+UNDERLINED: had began
+CONTEXT AFTER:  to seek a substitute.
+STEM: Consequently, in the mid-1700s, English minister Edward Stone <u>had began</u> to seek a substitute.
+  A: NO CHANGE
+  B: would have began
+  C: begun
+  D: began
+CORRECT: A
+NOTES: Passage II - "Had began" is wrong, should be "began" (simple past) or "had begun"
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q27 | verb-tense | CSE | DIFF: medium
+CONTEXT BEFORE: Stone pulverized some willow bark and 
+UNDERLINED: adds its
+CONTEXT AFTER:  powder to a liquid.
+STEM: Stone pulverized some willow bark and <u>adds its</u> powder to a liquid.
+  A: NO CHANGE
+  B: then added it's
+  C: added its
+  D: adds it's
+CORRECT: C
+NOTES: Passage II - Parallel structure with "pulverized"; "its" not "it's"
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q46 | parallel-structure | CSE | DIFF: hard
+CONTEXT BEFORE: The Columbia River Gorge is eighty-five miles of flowing 
+UNDERLINED: water, there are tree-covered bluffs, and
+CONTEXT AFTER:  roaring waterfalls.
+STEM: The Columbia River Gorge is eighty-five miles of flowing <u>water, there are tree-covered bluffs, and</u> roaring waterfalls.
+  A: NO CHANGE
+  B: tree-covered bluffs flank the river,
+  C: featuring tree-covered bluffs,
+  D: tree-covered bluffs,
+CORRECT: D
+NOTES: Passage IV - Needs parallel noun phrases
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q29 | comma-splice | CSE | DIFF: medium
+CONTEXT BEFORE: He administered the medicine to people suffering from 
+UNDERLINED: fevers, he then noted
+CONTEXT AFTER:  that it worked.
+STEM: He administered the medicine to people suffering from <u>fevers, he then noted</u> that it worked.
+  A: NO CHANGE
+  B: fevers, he was elated to find
+  C: fevers which
+  D: fevers. It
+CORRECT: D
+NOTES: Passage II - Comma splice, needs period or semicolon
+
+----------------------------------------------------------------------------------------------------
+
+TEST 4 | Q1 | grammar | CSE | DIFF: null
+CONTEXT BEFORE: No new snow had fallen since the weekend, when back-to-back 
+UNDERLINED: snowy blizzards
+CONTEXT AFTER:  had turned Philadelphia into a place she did not recognize.
+STEM: No new snow had fallen since the weekend, when back-to-back <u>snowy blizzards</u> had turned Philadelphia into a place she did not recognize.
+  A: NO CHANGE
+  B: blizzards of snowfall
+  C: blizzards of snow
+  D: blizzards
+CORRECT: C
+
+----------------------------------------------------------------------------------------------------
+
+TEST 4 | Q4 | grammar | CSE | DIFF: null
+CONTEXT BEFORE: This 
+UNDERLINED: one The History of Chinatown,
+CONTEXT AFTER:  looked especially bright today
+STEM: This <u>one The History of Chinatown,</u> looked especially bright today
+  A: NO CHANGE
+  B: one: The History of Chinatown,
+  C: one, The History of Chinatown,
+  D: one The History of Chinatown
+CORRECT: A
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q53 | adding-info | POW | DIFF: hard
+CONTEXT BEFORE: Engineers created 
+UNDERLINED: openings
+CONTEXT AFTER:  in the side of one tunnel.
+STEM: Engineers created <u>openings</u> in the side of one tunnel. [Add "an unprecedented five"?]
+  A: Yes, adds detail highlighting impressive design
+  B: Yes, hints at how engineers made openings
+  C: No, provides unrelated information
+  D: No, suggests creating intricate tunnels was easy
+CORRECT: A
+NOTES: Passage IV - Unrelated to sentence about enabling motorists to glimpse
+
+----------------------------------------------------------------------------------------------------
+
+TEST 4 | Q2 | grammar | CSE | DIFF: null
+CONTEXT BEFORE: The New Year's festivities, fifteen days of 
+UNDERLINED: it
+CONTEXT AFTER: , were half over
+STEM: The New Year's festivities, fifteen days of <u>it</u>, were half over
+  A: NO CHANGE
+  B: such,
+  C: them,
+  D: this,
+CORRECT: C
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q22 | comma-usage | CSE | DIFF: medium
+CONTEXT BEFORE: The high cost of importing cinchona 
+UNDERLINED: bark however, was
+CONTEXT AFTER:  expensive.
+STEM: The high cost of importing cinchona <u>bark however, was</u> expensive.
+  A: NO CHANGE
+  B: bark; however, was
+  C: bark, however, was
+  D: bark, however was
+CORRECT: D
+NOTES: Passage II - "However" needs commas on both sides when interrupting
+
+----------------------------------------------------------------------------------------------------
+
+TEST 4 | Q5 | grammar | CSE | DIFF: null
+CONTEXT BEFORE: the sun's reflection off the 
+UNDERLINED: snow, working
+CONTEXT AFTER:  some magic with the colors.
+STEM: the sun's reflection off the <u>snow, working</u> some magic with the colors.
+  A: NO CHANGE
+  B: snow was working,
+  C: snow working,
+  D: snow working
+CORRECT: A
+
+----------------------------------------------------------------------------------------------------
+
+TEST 5 | Q20 | style | POW | DIFF: null
+CONTEXT BEFORE: this meandering subterranean passageway would 
+UNDERLINED: feel as though it were downright ensconced in shadows.
+CONTEXT AFTER: 
+STEM: this meandering subterranean passageway would <u>feel as though it were downright ensconced in shadows.</u>
+  A: NO CHANGE
+  B: end up pretty hard to see.
+  C: have not a lot of light.
+  D: be utterly dark.
+CORRECT: B
+
+----------------------------------------------------------------------------------------------------
+
+TEST 5 | Q22 | grammar | CSE | DIFF: null
+CONTEXT BEFORE: A badge 
+UNDERLINED: was pinned to her shirt indicated
+CONTEXT AFTER:  she was a biochemist
+STEM: A badge <u>was pinned to her shirt indicated</u> she was a biochemist
+  A: NO CHANGE
+  B: had been
+  C: it was
+  D: DELETE the underlined portion.
+CORRECT: B
+
+----------------------------------------------------------------------------------------------------
+
+TEST 5 | Q24 | grammar | CSE | DIFF: null
+CONTEXT BEFORE: From its mouth, she showed me, 
+UNDERLINED: all glowworms dangle
+CONTEXT AFTER:  shimmering silken threads
+STEM: From its mouth, she showed me, <u>all glowworms dangle</u> shimmering silken threads
+  A: NO CHANGE
+  B: all of the glowworms are dangling
+  C: each of the glowworms dangle
+  D: each glowworm dangles
+CORRECT: D
+
+----------------------------------------------------------------------------------------------------
+
+TEST 4 | Q3 | style | POW | DIFF: null
+CONTEXT BEFORE: The cold air 
+UNDERLINED: 
+CONTEXT AFTER:  Yueming out of an afternoon daze.
+STEM: Which choice best suggests that the effect of the cold air on Yueming was immediate?
+  A: NO CHANGE
+  B: pulled
+  C: lured
+  D: drew
+CORRECT: A
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q19 | redundancy | KLA | DIFF: easy
+CONTEXT BEFORE: An Egyptian papyrus from 
+UNDERLINED: approximately about
+CONTEXT AFTER:  1534 BCE refers to willow's use as an all-purpose medicine.
+STEM: An Egyptian papyrus from <u>approximately about</u> 1534 BCE refers to willow's use as an all-purpose medicine.
+  A: NO CHANGE
+  B: an estimation of
+  C: in the region of
+  D: about
+CORRECT: D
+NOTES: Passage II - "Approximately about" is redundant
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q34 | idiom | CSE | DIFF: easy
+CONTEXT BEFORE: Klimas positions the camera so it is 
+UNDERLINED: level with
+CONTEXT AFTER:  the paint puddle.
+STEM: Klimas positions the camera so it is <u>level with</u> the paint puddle.
+  A: NO CHANGE
+  B: eye-to-eye with
+  C: the same as
+  D: equal to
+CORRECT: A
+NOTES: Passage III - "Level with" is correct idiom
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q36 | verb-tense | CSE | DIFF: easy
+CONTEXT BEFORE: The vibrations produced by Daft Punk's dance anthem "Around the World" 
+UNDERLINED: h: ised
+CONTEXT AFTER:  the paint to rise.
+STEM: The vibrations produced by Daft Punk's dance anthem "Around the World" <u>h: ised</u> the paint to rise.
+  A: NO CHANGE
+  B: cause
+  C: is causing
+  D: causes
+CORRECT: B
+NOTES: Passage III - Simple present "cause" for general truth
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q40 | comma-usage | CSE | DIFF: medium
+CONTEXT BEFORE: Klimas's idea was sparked by the 
+UNDERLINED: experiments, of Swiss scientist, Hans
+CONTEXT AFTER:  Jenny.
+STEM: Klimas's idea was sparked by the <u>experiments, of Swiss scientist, Hans</u> Jenny.
+  A: NO CHANGE
+  B: experiments, of Swiss scientist
+  C: experiments of Swiss scientist
+  D: experiments of Swiss scientist
+CORRECT: D
+NOTES: Passage III - No commas needed
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q39 | verb-agreement | CSE | DIFF: easy
+CONTEXT BEFORE: Klimas's idea for his sonic sculptures 
+UNDERLINED: were sparked
+CONTEXT AFTER:  by the experiments of Swiss scientist Hans Jenny.
+STEM: Klimas's idea for his sonic sculptures <u>were sparked</u> by the experiments of Swiss scientist Hans Jenny.
+  A: NO CHANGE
+  B: have been
+  C: was
+  D: are
+CORRECT: C
+NOTES: Passage III - "idea" is singular, needs "was"
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q37 | word-choice | KLA | DIFF: medium
+CONTEXT BEFORE: The vibrations cause the paint to rise and 
+UNDERLINED: this image that Klimas's camera captures—sound
+CONTEXT AFTER:  visually rendered by the effects of the vibrations on the paint.
+STEM: The vibrations cause the paint to rise and <u>this image that Klimas's camera captures—sound</u> visually rendered by the effects of the vibrations on the paint.
+  A: NO CHANGE
+  B: pic, frozen in time's embrace that Klimas's camera has snapped—
+  C: picture that Klimas's photographic paraphernalia has managed to catch—
+  D: snapshot that Klimas's photographic machine snares—
+CORRECT: A
+NOTES: Passage III - NO CHANGE most concise
+
+----------------------------------------------------------------------------------------------------
+
+TEST 4 | Q6 | style | POW | DIFF: null
+CONTEXT BEFORE: one bent over a clothes iron, 
+UNDERLINED: 
+CONTEXT AFTER:  a giant figure on the horizon
+STEM: Which choice indicates there is another, specific type of work depicted in the mural?
+  A: NO CHANGE
+  B: gripping it with an enormous hand,
+  C: in the center of the image,
+  D: others hard at work,
+CORRECT: A
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q43 | comma-usage | CSE | DIFF: medium
+CONTEXT BEFORE: While he acknowledges that all forms of music can generate sonic 
+UNDERLINED: sculptures. Klimas
+CONTEXT AFTER:  says, "I typically select something dynamic."
+STEM: While he acknowledges that all forms of music can generate sonic <u>sculptures. Klimas</u> says, "I typically select something dynamic."
+  A: NO CHANGE
+  B: sculptures, and
+  C: sculptures,
+  D: sculptures;
+CORRECT: C
+NOTES: Passage III - Subordinate clause needs comma not period
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q44 | transition | POW | DIFF: medium
+CONTEXT BEFORE: Klimas says, "I typically select something dynamic and percussive." 
+UNDERLINED: That would certainly impress Jenny.
+CONTEXT AFTER:  After all, to create his art, Klimas needs his paint to get up and dance.
+STEM: Klimas says, "I typically select something dynamic and percussive." <u>That would certainly impress Jenny.</u> After all, to create his art, Klimas needs his paint to get up and dance.
+  A: NO CHANGE
+  B: That's simply a matter of taste.
+  C: That seems unwise.
+  D: That makes sense.
+CORRECT: D
+NOTES: Passage III - "That makes sense" best connects to conclusion
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q41 | fragment | CSE | DIFF: medium
+CONTEXT BEFORE: In the 1960s, 
+UNDERLINED: Jenny's study on
+CONTEXT AFTER:  the effects of sound vibrations on various materials.
+STEM: In the 1960s, <u>Jenny's study on</u> the effects of sound vibrations on various materials.
+  A: NO CHANGE
+  B: while Jenny studied
+  C: Jenny, to study
+  D: Jenny studied
+CORRECT: D
+NOTES: Passage III - Fragment needs verb "studied"
+
+----------------------------------------------------------------------------------------------------
+
+TEST 5 | Q23 | grammar | CSE | DIFF: null
+CONTEXT BEFORE: emit light through their translucent 
+UNDERLINED: skin; via
+CONTEXT AFTER:  a cellular chemical reaction.
+STEM: emit light through their translucent <u>skin; via</u> a cellular chemical reaction.
+  A: NO CHANGE
+  B: skin, and via
+  C: skin. Via
+  D: skin via
+CORRECT: D
+
+----------------------------------------------------------------------------------------------------
+
+TEST 2 | Q39 | grammar | KLA | DIFF: medium
+CONTEXT BEFORE: Not only is the Antarctic subterranean ice exceptionally clear, it is also less pressurized due to 
+UNDERLINED: it's
+CONTEXT AFTER:  subzero altitude.
+STEM: Not only is the Antarctic subterranean ice exceptionally clear, it is also less pressurized due to <u>it's</u> subzero altitude.
+  A: NO CHANGE
+  B: their
+  C: its
+  D: its'
+CORRECT: C
+NOTES: Test 2 Question 39
+
+----------------------------------------------------------------------------------------------------
+
+TEST 7 | Q60 | main-idea | POW | DIFF: null
+CONTEXT BEFORE: 
+UNDERLINED: 
+CONTEXT AFTER: 
+STEM: Suppose the writer's primary purpose had been to discuss a significant point in an artist's career. Would this essay accomplish that purpose?
+  A: Yes, because it describes Howe's interaction with the jurors of the Philbrook competition and the effect of that interaction.
+  B: Yes, because it chronicles Howe's career up to Howe's involvement with the Philbrook competition.
+  C: No, because it does not explain why Howe's participation in the 1958 competition at the Philbrook was important.
+  D: No, because although it mentions Howe, it focuses mainly on the jurors for the Philbrook's annual competition.
+CORRECT: A
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q33 | comma-usage | CSE | DIFF: medium
+CONTEXT BEFORE: Klimas attaches his camera to a 
+UNDERLINED: tripod and positions
+CONTEXT AFTER:  the camera so it is level with the paint puddle.
+STEM: Klimas attaches his camera to a <u>tripod and positions</u> the camera so it is level with the paint puddle. [Which alternative would NOT be acceptable?]
+  A: tripod, and he
+  B: tripod and he
+  C: tripod. He
+  D: tripod; he
+CORRECT: B
+NOTES: Passage III - Compound predicate needs no comma; "and he" requires comma
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q42 | logical-placement | POW | DIFF: hard
+CONTEXT BEFORE: 
+UNDERLINED: 
+CONTEXT AFTER: 
+STEM: [Should writer begin new paragraph at: "Klimas has photographed sonic sculptures of classical music..."]
+  A: Begin new paragraph because essay shifts from harmonics explanation to Klimas's taste
+  B: Begin new paragraph because essay shifts from Jenny's experiments to music Klimas uses
+  C: DO NOT begin new paragraph because it would interrupt Jenny's experiments analysis
+  D: DO NOT begin new paragraph because it would interrupt Klimas's scientific background
+CORRECT: B
+NOTES: Passage III - New paragraph shifts topic from Jenny to Klimas's music
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q35 | which-choice | POW | DIFF: medium
+CONTEXT BEFORE: Finally, he inserts Daft Punk's Homework CD into a stereo, 
+UNDERLINED: cranks up the volume to ten,
+CONTEXT AFTER:  and pushes Play.
+STEM: Finally, he inserts Daft Punk's Homework CD into a stereo, <u>cranks up the volume to ten,</u> and pushes Play.
+  A: NO CHANGE
+  B: turns the volume knob a bit higher,
+  C: increases the volume of the output,
+  D: adjusts the speaker's output level,
+CORRECT: A
+NOTES: Passage III - NO CHANGE most dramatic
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q51 | idiom | CSE | DIFF: easy
+CONTEXT BEFORE: Roadside overlooks offered travelers the chance to take in a view 
+UNDERLINED: of
+CONTEXT AFTER:  the river or a waterfall.
+STEM: Roadside overlooks offered travelers the chance to take in a view <u>of</u> the river or a waterfall.
+  A: NO CHANGE
+  B: up on
+  C: on
+  D: DELETE the underlined portion.
+CORRECT: A
+NOTES: Passage IV - "view of" is correct idiom
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q52 | pronoun-ambiguous | CSE | DIFF: medium
+CONTEXT BEFORE: Guardrails lined the route and blurred the distinction between 
+UNDERLINED: that and
+CONTEXT AFTER:  environment.
+STEM: Guardrails lined the route and blurred the distinction between <u>that and</u> environment.
+  A: NO CHANGE
+  B: this and the
+  C: road and
+  D: it and it's
+CORRECT: C
+NOTES: Passage IV - "road and" clear referent
+
+----------------------------------------------------------------------------------------------------
+
+
+
+=== MATH QUESTIONS (FIRST 50 COMPLETE) ===
+
+TEST 1 | Q9 | word-problem | IES | DIFF: medium
+HAS_FIGURE: false
+STEM: The total cost of renting a car is $35.00 for each day the car is rented plus 42.5¢ for each mile driven. What is the total cost of renting the car for 6 days and driving 350 miles?
+  A: $154.75
+  B: $224.88
+  C: $358.75
+  D: $420.00
+  E: $1,697.50
+CORRECT: C
+NOTES: Word problem - unit pricing
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q21 | math-problem-solving | IES | DIFF: easy
+HAS_FIGURE: false
+STEM: A certain car can travel 42 miles on 1 gallon of gasoline. At this rate, how many gallons of gasoline are needed to travel 315 miles?
+  A: 7.5
+  B: 8
+  C: 13,230
+  D: 273
+  E: 357
+CORRECT: A
+NOTES: Ratios - unit rates
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q8 | number-theory | PHM-N | DIFF: easy
+HAS_FIGURE: false
+STEM: When Tyrone fell asleep one night, the temperature was 24°F. When Tyrone awoke the next morning, the temperature was −12°F. Letting + denote a rise in temperature and − denote a drop in temperature, what was the change in temperature?
+  A: −36°F
+  B: −12°F
+  C: +6°F
+  D: +12°F
+  E: +36°F
+CORRECT: A
+NOTES: Integers - temperature change
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q10 | geometry | PHM-G | DIFF: medium
+HAS_FIGURE: false
+STEM: In the standard (x,y) coordinate plane, what is the slope of the line through (−6,4) and (1,3)?
+  A: −7
+  B: −1/7
+  C: 1/7
+  D: 7
+  E: Undefined
+CORRECT: C
+NOTES: Coordinate geometry - slope
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q12 | algebra | PHM-A | DIFF: easy
+HAS_FIGURE: false
+STEM: Which of the following inequalities describes the solution set for 3x − 5 < 2x + 1?
+  A: x < −4
+  B: x > −4
+  C: x < 2/5
+  D: x < 6
+  E: x > 6
+CORRECT: D
+NOTES: Algebra - linear inequalities
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q14 | algebra | PHM-A | DIFF: medium
+HAS_FIGURE: false
+STEM: For positive real numbers x, y, and z, which of the following expressions is equivalent to (x²y³/z⁴)³?
+  A: x⁵y⁶/z⁷
+  B: x⁶y⁹/z¹²
+  C: x⁶y⁹z¹²
+  D: x⁸y¹²z¹⁶
+  E: x²³y³⁴z⁴³
+CORRECT: B
+NOTES: Algebra - exponent rules
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q17 | geometry | PHM-G | DIFF: medium
+HAS_FIGURE: true
+STEM: In the figure below, 3 streets form a triangle. Elm Street is 700 meters long, Oak Street is 500 meters long, and the angle between them measures 70°. About how long is Maple Street?
+  A: 200 m
+  B: 700 m
+  C: 850 m
+  D: 1,200 m
+  E: 1,500 m
+CORRECT: B
+NOTES: Geometry - Law of Cosines
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q15 | algebra | PHM-A | DIFF: easy
+HAS_FIGURE: false
+STEM: The relationship between temperature measured in Celsius (C) and Fahrenheit (F) is given by the equation F = (9/5)C + 32. What Fahrenheit temperature is equivalent to 95° Celsius?
+  A: 58°F
+  B: 203°F
+  C: 207°F
+  D: 221°F
+  E: 235°F
+CORRECT: B
+NOTES: Algebra - formula substitution
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q19 | algebra | PHM-A | DIFF: medium
+HAS_FIGURE: false
+STEM: What is the value of a in the solution (a,b) to the system of equations: 2a + 3b = 12 and 5a − 3b = 9?
+  A: 1
+  B: 2
+  C: 2.5
+  D: 3
+  E: 7
+CORRECT: D
+NOTES: Algebra - system of equations
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q23 | statistics-probability | PHM-S | DIFF: medium
+HAS_FIGURE: false
+STEM: The mean of a set of 5 numbers is 48. If one number is removed, the mean of the remaining numbers is 45. What is the value of the number that was removed?
+  A: 3
+  B: 45
+  C: 60
+  D: 48
+  E: 240
+CORRECT: C
+NOTES: Statistics - mean
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q24 | geometry | PHM-G | DIFF: hard
+HAS_FIGURE: true
+STEM: In the figure below, the circle with center O has a radius of 10 units. Points A, B, and C lie on the circle. What is the length of BC if ∠AOC = 120°?
+  A: 5
+  B: 10
+  C: 10√3
+  D: 20
+  E: 20√3
+CORRECT: B
+NOTES: Geometry - circles and triangles
+
+----------------------------------------------------------------------------------------------------
+
+TEST 6 | Q23 | geometry | GEO | DIFF: null
+HAS_FIGURE: false
+STEM: On a rectangular sheet of paper, Aiko drew a triangle whose base length is the same as the length of the sheet and whose height is the same as the width of the sheet. What is the ratio of the area of the triangle to the area of the rectangular sheet of paper?
+  A: 1/4
+  B: 1/2
+  C: 1
+  D: 2
+  E: 4
+CORRECT: D
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q13 | algebra | PHM-A | DIFF: easy
+HAS_FIGURE: false
+STEM: Which of the following expressions is equivalent to 4(x + 2) + 3(2x − 1)?
+  A: 10x + 1
+  B: 10x + 5
+  C: 14x − 1
+  D: 14x + 1
+  E: 14x + 5
+CORRECT: B
+NOTES: Algebra - distributing
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q16 | geometry | PHM-G | DIFF: easy
+HAS_FIGURE: false
+STEM: What is the perimeter, in centimeters, of a square that has an area of 49 cm²?
+  A: 7 cm
+  B: 14 cm
+  C: 21 cm
+  D: 28 cm
+  E: 196 cm
+CORRECT: A
+NOTES: Geometry - square perimeter
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q4 | word-problem | IES | DIFF: medium
+HAS_FIGURE: false
+STEM: At a certain airline company, the cost to transfer mileage points from one person's account to another person's account is $0.75 for every 100 mileage points transferred plus a onetime $20 processing fee. What is the cost to transfer 7,000 mileage points from one account to another?
+  A: $27.50
+  B: $52.50
+  C: $72.50
+  D: $525.00
+  E: $5,270.00
+CORRECT: C
+NOTES: Word problem - unit rates
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q18 | geometry | PHM-G | DIFF: hard
+HAS_FIGURE: false
+STEM: Points A and B lie on a circle with center O and radius 5 units. The measure of ∠AOB is 72°. What is the length of arc AB?
+  A: π
+  B: 2π
+  C: 5π
+  D: 10π
+  E: 25π
+CORRECT: E
+NOTES: Geometry - arc length
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q22 | math-problem-solving | PHM-A | DIFF: medium
+HAS_FIGURE: false
+STEM: Which of the following statements is the negation of "All dogs are mammals"?
+  A: All dogs are not mammals
+  B: Some dogs are not mammals
+  C: Some mammals are not dogs
+  D: No dogs are mammals
+  E: No mammals are dogs
+CORRECT: B
+NOTES: Logic - negation
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q25 | geometry | PHM-G | DIFF: medium
+HAS_FIGURE: false
+STEM: What is the distance, in coordinate units, between points (3,−5) and (−2,7) in the standard (x,y) coordinate plane?
+  A: 13
+  B: 17
+  C: √13
+  D: √17
+  E: 13
+CORRECT: C
+NOTES: Coordinate geometry - distance formula
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q20 | algebra | PHM-A | DIFF: medium
+HAS_FIGURE: false
+STEM: In the standard (x,y) coordinate plane, the graph of y = −2(x − 3)² + 5 is a parabola. What is the vertex of the parabola?
+  A: (−3,5)
+  B: (3,5)
+  C: (3,−5)
+  D: (−3,−5)
+  E: (0,5)
+CORRECT: B
+NOTES: Algebra - vertex form parabola
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q7 | statistics-probability | PHM-S | DIFF: medium
+HAS_FIGURE: false
+STEM: A science class has 8 juniors and 4 seniors. The teacher will randomly select 2 students, one at a time, to represent the class. Given that the first student selected is a junior, what is the probability that the second student selected will be a senior?
+  A: 1/3
+  B: 1/4
+  C: 4/11
+  D: 4/12
+  E: 4/33
+CORRECT: E
+NOTES: Probability - conditional
+
+----------------------------------------------------------------------------------------------------
+
+TEST 6 | Q26 | word_problems | ALG | DIFF: null
+HAS_FIGURE: false
+STEM: Door clear widths, in feet, of 5 elevator cars with centered doors built before 2010 are listed below.
+3.5, 3.6, 3.8, 3.2, 2.8
+How many of the elevator cars do NOT meet the 2010 ADA standard for minimum door clear width of 42 inches?
+  A: 0
+  B: 1
+  C: 2
+  D: 3
+  E: 4
+CORRECT: C
+
+----------------------------------------------------------------------------------------------------
+
+TEST 4 | Q5 | geometry | PHM-G | DIFF: medium
+HAS_FIGURE: true
+STEM: In the figure below, AB is congruent to BC, and AE intersects BF at C. What is the measure of ∠B?
+  A: 26°
+  B: 38°
+  C: 52°
+  D: 128°
+  E: 154°
+CORRECT: D
+NOTES: Practice Test 4 Math Question 5
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q5 | algebra | PHM-A | DIFF: easy
+HAS_FIGURE: false
+STEM: If x = 3, what is the value of 4x² − 11x?
+  A: −21
+  B: −3
+  C: 3
+  D: 21
+  E: 36
+CORRECT: E
+NOTES: Algebra - substitution
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q33 | algebra | PHM-A | DIFF: medium
+HAS_FIGURE: false
+STEM: Which of the following is a factor of x² − 5x − 24?
+  A: (x − 12)
+  B: (x − 8)
+  C: (x − 6)
+  D: (x − 4)
+  E: (x − 3)
+CORRECT: B
+NOTES: Algebra - factoring quadratics
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q37 | algebra | PHM-A | DIFF: medium
+HAS_FIGURE: false
+STEM: If log₂(x) = 5, then x = ?
+  A: 10
+  B: 25
+  C: 32
+  D: 64
+  E: 128
+CORRECT: E
+NOTES: Algebra - logarithms
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q32 | geometry | PHM-G | DIFF: hard
+HAS_FIGURE: true
+STEM: In the figure below, ABCD is a rectangle. Point E is on BC such that AE = 13, BE = 5, and AB = 12. What is the area of triangle AED?
+  A: 30
+  B: 39
+  C: 60
+  D: 65
+  E: 78
+CORRECT: A
+NOTES: Geometry - triangles in rectangles
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q41 | geometry | PHM-G | DIFF: hard
+HAS_FIGURE: false
+STEM: If sin(θ) = 3/5 and θ is in the first quadrant, what is cos(θ)?
+  A: 3/5
+  B: 4/5
+  C: 5/3
+  D: 5/4
+  E: Cannot be determined
+CORRECT: C
+NOTES: Trigonometry - Pythagorean identity
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q43 | sequences | PHM-N | DIFF: medium
+HAS_FIGURE: false
+STEM: The first term of an arithmetic sequence is 7, and the common difference is 4. What is the 10th term?
+  A: 43
+  B: 47
+  C: 40
+  D: 44
+  E: 51
+CORRECT: A
+NOTES: Sequences - arithmetic
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q39 | algebra | PHM-A | DIFF: medium
+HAS_FIGURE: false
+STEM: What value of x satisfies the equation 3^(2x) = 81?
+  A: 2
+  B: 3
+  C: 4
+  D: 27
+  E: 40.5
+CORRECT: A
+NOTES: Algebra - exponential equations
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q45 | algebra | PHM-A | DIFF: hard
+HAS_FIGURE: false
+STEM: For what value of k will the quadratic equation x² + kx + 9 = 0 have exactly one real solution?
+  A: ±3
+  B: ±6
+  C: ±9
+  D: ±12
+  E: There is no such value
+CORRECT: D
+NOTES: Algebra - discriminant
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q47 | trigonometry | PHM-G | DIFF: medium
+HAS_FIGURE: false
+STEM: What is the amplitude of the function f(x) = 4sin(2x) + 1?
+  A: 1
+  B: 2
+  C: 4
+  D: 8
+  E: Cannot be determined
+CORRECT: B
+NOTES: Trigonometry - amplitude
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q57 | algebra | PHM-A | DIFF: hard
+HAS_FIGURE: false
+STEM: If log(x) + log(x+3) = 1, then x = ?
+  A: −5
+  B: 2
+  C: 3
+  D: 5
+  E: 7
+CORRECT: C
+NOTES: Algebra - logarithmic equations
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q49 | functions | PHM-F | DIFF: medium
+HAS_FIGURE: false
+STEM: If f(x) = x² − 4 and g(x) = √x, what is f(g(16))?
+  A: 12
+  B: 16
+  C: 20
+  D: 252
+  E: 256
+CORRECT: A
+NOTES: Functions - composition
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q51 | complex-numbers | PHM-N | DIFF: medium
+HAS_FIGURE: false
+STEM: If i² = −1, what is the value of i⁴?
+  A: −1
+  B: 1
+  C: i
+  D: −i
+  E: 0
+CORRECT: B
+NOTES: Complex numbers - powers of i
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q53 | algebra | PHM-A | DIFF: medium
+HAS_FIGURE: false
+STEM: The solution set of x² < 16 is:
+  A: {x: −4 < x < 4}
+  B: {x: x < 4}
+  C: {x: x > −4}
+  D: {x: x < −4 or x > 4}
+  E: {x: all real numbers}
+CORRECT: A
+NOTES: Algebra - quadratic inequalities
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q55 | vectors | PHM-N | DIFF: hard
+HAS_FIGURE: false
+STEM: If vectors u = <3,4> and v = <−1,2>, what is u · v?
+  A: 5
+  B: 7
+  C: <2,6>
+  D: <−3,8>
+  E: 11
+CORRECT: A
+NOTES: Vectors - dot product
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q34 | algebra | PHM-A | DIFF: hard
+HAS_FIGURE: false
+STEM: What is the solution set of |2x − 3| < 5?
+  A: {x: x < 1}
+  B: {x: x > 4}
+  C: {x: −1 < x < 4}
+  D: {x: x < −1 or x > 4}
+  E: {x: all real numbers}
+CORRECT: C
+NOTES: Algebra - absolute value inequalities
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q46 | matrices | PHM-A | DIFF: medium
+HAS_FIGURE: false
+STEM: If matrix A is 3×4 and matrix B is 4×2, what are the dimensions of matrix AB?
+  A: 3×2
+  B: 3×4
+  C: 4×2
+  D: 4×4
+  E: Cannot be multiplied
+CORRECT: D
+NOTES: Matrices - multiplication
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q40 | algebra | PHM-A | DIFF: medium
+HAS_FIGURE: false
+STEM: A rectangle has length (x + 5) and width (x − 2). Which expression represents the area of the rectangle?
+  A: 2x + 3
+  B: 4x + 6
+  C: x² + 3x − 10
+  D: x² + 7x − 10
+  E: x² − 10
+CORRECT: C
+NOTES: Algebra - multiplying binomials
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q48 | geometry | PHM-G | DIFF: medium
+HAS_FIGURE: false
+STEM: Which of the following is an equation of the line perpendicular to y = 2x + 3 that passes through (0,5)?
+  A: y = 2x + 5
+  B: y = −½x + 5
+  C: y = ½x + 5
+  D: y = −2x + 5
+  E: y = −2x + 3
+CORRECT: C
+NOTES: Coordinate geometry - perpendicular lines
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q42 | algebra | PHM-A | DIFF: medium
+HAS_FIGURE: false
+STEM: Which of the following is equivalent to (3x²y³)²?
+  A: 6x⁴y⁶
+  B: 9x⁴y⁶
+  C: 9x⁴y⁹
+  D: 27x⁴y⁶
+  E: 27x⁴y⁹
+CORRECT: B
+NOTES: Algebra - exponent rules
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q44 | geometry | PHM-G | DIFF: medium
+HAS_FIGURE: true
+STEM: In the figure below, square ABCD has side length 6. Point E is the midpoint of AB. What is the area of triangle AED?
+  A: 6
+  B: 9
+  C: 12
+  D: 18
+  E: 36
+CORRECT: D
+NOTES: Geometry - triangle area
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q52 | trigonometry | PHM-G | DIFF: hard
+HAS_FIGURE: false
+STEM: What is the period of the function f(x) = tan(3x)?
+  A: π/3
+  B: π/2
+  C: π
+  D: 2π
+  E: 3π
+CORRECT: A
+NOTES: Trigonometry - period
+
+----------------------------------------------------------------------------------------------------
+
+TEST 6 | Q27 | percentages | ALG | DIFF: null
+HAS_FIGURE: false
+STEM: An elevator car with centered doors has a door clear width that is 8% wider than the minimum distance required by the 2010 ADA standard of 42 inches. Which of the following distances, in inches, is closest to the door clear width of the elevator car?
+  A: 34
+  B: 43
+  C: 45
+  D: 50
+  E: 76
+CORRECT: B
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q56 | sequences | PHM-N | DIFF: hard
+HAS_FIGURE: false
+STEM: What is the sum of the infinite geometric series 1 + ½ + ¼ + ⅛ + ...?
+  A: 1
+  B: 1.5
+  C: 2
+  D: 2.5
+  E: The series does not converge
+CORRECT: D
+NOTES: Sequences - infinite geometric series
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q35 | statistics-probability | PHM-S | DIFF: easy
+HAS_FIGURE: false
+STEM: A bag contains 3 red marbles, 5 blue marbles, and 7 green marbles. If one marble is randomly selected, what is the probability it is NOT blue?
+  A: 1/3
+  B: 2/3
+  C: 1/5
+  D: 5/15
+  E: 10/15
+CORRECT: B
+NOTES: Probability - complementary events
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q54 | geometry | PHM-G | DIFF: hard
+HAS_FIGURE: false
+STEM: In the standard (x,y) coordinate plane, what is the area of the region enclosed by |x| + |y| = 4?
+  A: 8
+  B: 16
+  C: 32
+  D: 64
+  E: Cannot be determined
+CORRECT: E
+NOTES: Coordinate geometry - absolute value graphs
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q36 | geometry | PHM-G | DIFF: medium
+HAS_FIGURE: false
+STEM: In the standard (x,y) coordinate plane, the equation of a circle is (x − 2)² + (y + 3)² = 25. What is the radius of the circle?
+  A: 2
+  B: 3
+  C: 4
+  D: 5
+  E: 25
+CORRECT: D
+NOTES: Coordinate geometry - circle equation
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q38 | geometry | PHM-G | DIFF: easy
+HAS_FIGURE: false
+STEM: In triangle ABC, angle A measures 45°, angle B measures 60°, and side AB = 10. What is the measure of angle C?
+  A: 15°
+  B: 45°
+  C: 75°
+  D: 105°
+  E: Cannot be determined
+CORRECT: C
+NOTES: Geometry - triangle angle sum
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q50 | geometry | PHM-G | DIFF: medium
+HAS_FIGURE: false
+STEM: A right circular cone has radius 3 and height 4. What is its volume?
+  A: 12π
+  B: 16π
+  C: 36π
+  D: 48π
+  E: 144π
+CORRECT: A
+NOTES: Geometry - cone volume
+
+----------------------------------------------------------------------------------------------------
+
+
+
+=== READING QUESTIONS (FIRST 50 COMPLETE) ===
+
+TEST 1 | Q17 | vocabulary | CS | DIFF: easy
+STEM: As it is used in line 90, the phrase remotely close to most nearly means:
+  A: exactly similar to.
+  B: anything like.
+  C: anywhere nearby.
+  D: somewhat adjacent to.
+CORRECT: B
+NOTES: Passage II-B: Vocabulary
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q3 | sequence | KID | DIFF: hard
+STEM: Which of the following events mentioned in the passage occurred first chronologically?
+  A: The elders organized occasions in which Vani and Murali would be together.
+  B: A friend suggested that Murali drive Vani home.
+  C: Vani smiled at Murali without thinking about her teeth.
+  D: Vani's brother burst into Murali's brother's home.
+CORRECT: B
+NOTES: Passage I: Sequence of events
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q13 | inference | KID | DIFF: medium
+STEM: It can reasonably be inferred from Passage A that an animal "captured" by light is most nearly one that:
+  A: has lost the ability to search for food in dark areas.
+  B: is irresistibly drawn to artificial light at night.
+  C: is confined to limited dark areas at night.
+  D: has lost its natural habitat to urban expansion.
+CORRECT: B
+NOTES: Passage II-A: Inference/vocabulary
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q5 | detail | KID | DIFF: easy
+STEM: According to the passage, one similarity between Murali and Vani is that both:
+  A: enjoyed eating spicy food.
+  B: were born in New York City.
+  C: had a passion for cooking.
+  D: worked at a medical clinic.
+CORRECT: A
+NOTES: Passage I: Detail
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q14 | comparison | IKI | DIFF: medium
+STEM: Compared to what Joseph appreciates about The Starry Night, the author of Passage B is more appreciative of the:
+  A: painting's vivid colors.
+  B: beauty of the painting.
+  C: story the painting tells.
+  D: technique used in the painting.
+CORRECT: C
+NOTES: Passage II-B: Comparison
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q15 | main-idea | KID | DIFF: medium
+STEM: The main purpose of the first paragraph of Passage B (lines 42-53) is to introduce the passage by:
+  A: describing The Starry Night and providing an idea of the painting's popularity.
+  B: conveying the passage author's excitement when he first saw The Starry Night.
+  C: showing examples of people's expectations about The Starry Night and their reactions to it.
+  D: establishing when and why Van Gogh painted The Starry Night.
+CORRECT: A
+NOTES: Passage II-B: Purpose
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q35 | comprehension | KID | DIFF: hard
+STEM: According to the passage, crevasses form in glaciers because:
+  A: the upper layer of ice is brittle and cracks as the glacier moves.
+  B: rocks embedded in the ice create weak points.
+  C: melting water carves channels in the ice.
+  D: the glacier flows over uneven terrain.
+CORRECT: A
+NOTES: Passage IV: Cause and effect
+
+----------------------------------------------------------------------------------------------------
+
+TEST 2 | Q31 | structure | KID | DIFF: hard
+STEM: The main purpose of the passage is to:
+  A: explain in detail the various experiments Bessemer conducted in order to develop a better steel.
+  B: provide an overview of some of the scientific principles that apply to the creation and behavior of steel.
+  C: describe some of the philosophical questions concerning metallurgy.
+  D: illustrate the differences between pig iron and cast iron.
+CORRECT: B
+NOTES: Test 2 Reading Question 31
+
+----------------------------------------------------------------------------------------------------
+
+TEST 2 | Q9 | structure | IKI | DIFF: easy
+STEM: The narrator of Passage B would be more likely than the narrator of Passage A to describe her relationship with her mother as being marked by:
+  A: moments of lively conversation and pure joy.
+  B: years of fierce competition and debate.
+  C: displays of physical affection and warmth.
+  D: feelings of distance and tension.
+CORRECT: D
+NOTES: Test 2 Reading Question 9
+
+----------------------------------------------------------------------------------------------------
+
+TEST 2 | Q14 | detail | KID | DIFF: easy
+STEM: Based on the passage, the 1879 Maine ice that was fifteen to twenty inches thick can best be described as:
+  A: a top-quality crop that was shipped to New York City, Philadelphia, and destinations further south.
+  B: sufficient for local demand but not a solution to the problem of the ice 'famine' in the South.
+  C: typical of Maine crops of ice until the ice 'famine' struck.
+  D: remarkable but surpassed in size and quality by crops the following year.
+CORRECT: A
+NOTES: Test 2 Reading Question 14
+
+----------------------------------------------------------------------------------------------------
+
+TEST 2 | Q24 | main-idea | CS | DIFF: medium
+STEM: The anecdote about Fellini's footage of a woman recounting a tragic tale (lines 25-33) primarily serves to:
+  A: explain why Fellini preferred to feature voices with northern accents in his films.
+  B: provide a famous example of Fellini closely following scripted dialogue.
+  C: illustrate the extent to which dubbing was a part of Fellini's craft.
+  D: show why Fellini preferred his actors to follow a script rather than tell their own stories.
+CORRECT: C
+NOTES: Test 2 Reading Question 24
+
+----------------------------------------------------------------------------------------------------
+
+TEST 3 | Q8 | literary-narrative | KID | DIFF: easy
+STEM: According to Cruz, she returned to the city to:
+  A: be near family.
+  B: find an apartment.
+  C: finish her second novel.
+  D: study creative writing.
+CORRECT: D
+NOTES: Practice ACT 3 Reading Question 8 - explicit information
+
+----------------------------------------------------------------------------------------------------
+
+TEST 3 | Q23 | literary-narrative | CS | DIFF: medium
+STEM: The narrator's attitude toward her grandmother's cooking can best be described as:
+  A: respectful admiration.
+  B: mild disappointment.
+  C: cautious skepticism.
+  D: enthusiastic appreciation.
+CORRECT: A
+NOTES: Practice ACT 3 Reading Question 23 - attitude analysis
+
+----------------------------------------------------------------------------------------------------
+
+TEST 3 | Q24 | literary-narrative | CS | DIFF: medium
+STEM: The main purpose of the second paragraph (lines 15-28) is to:
+  A: describe the narrator's earliest cooking memories.
+  B: explain how the narrator's family influenced her cooking style.
+  C: contrast different approaches to learning cooking skills.
+  D: establish the setting for the narrator's cooking education.
+CORRECT: B
+NOTES: Practice ACT 3 Reading Question 24 - paragraph purpose
+
+----------------------------------------------------------------------------------------------------
+
+TEST 3 | Q2 | literary-narrative | KID | DIFF: medium
+STEM: Details in the passage indicate that, compared to Cruz's first apartment, Capote's first apartment:
+  A: was somewhat larger.
+  B: had less natural light.
+  C: was in a different city.
+  D: had a clearer view.
+CORRECT: B
+NOTES: Practice ACT 3 Reading Question 2 - comparing details
+
+----------------------------------------------------------------------------------------------------
+
+TEST 7 | Q33 | reading-comprehension | KEY | DIFF: null
+STEM: The passage author's characterization of Owen as a "Museum man" (lines 81-82) can best be described as:
+  A: a compliment; the author respects Owen as both a Darwinian and an anatomist.
+  B: a compliment; the author appreciates Owen's understanding of the importance of safely curating a fossil.
+  C: an insult; the author resents Owen's lack of interest in the Archaeopteryx fossil.
+  D: an insult; the author believes the Archaeopteryx fossil should have been curated by a more capable anatomist than Owen.
+CORRECT: B
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q29 | interpretation | IKI | DIFF: hard
+STEM: In the passage, the author indicates that photography's limitations with respect to memory give the medium:
+  A: little value compared to revisiting places.
+  B: greater value as an artistic medium.
+  C: limited usefulness in preserving family histories.
+  D: a unique ability to explore the nature of memory.
+CORRECT: A
+NOTES: Passage III: Interpretation
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q31 | main-idea | KID | DIFF: medium
+STEM: The main purpose of the passage is to:
+  A: describe how glaciers form, move, and affect landscapes.
+  B: explain why glaciers are important to study.
+  C: compare different types of glaciers.
+  D: argue for increased glacier conservation.
+CORRECT: A
+NOTES: Passage IV: Main purpose
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q33 | detail | KID | DIFF: easy
+STEM: The passage indicates that a glacier's zone of accumulation is an area where:
+  A: ice flows most rapidly.
+  B: crevasses form most frequently.
+  C: snowfall exceeds melting.
+  D: the glacier is thickest.
+CORRECT: C
+NOTES: Passage IV: Detail
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q36 | inference | KID | DIFF: hard
+STEM: The passage most strongly suggests that if a glacier's zone of accumulation and zone of ablation are balanced, the glacier will:
+  A: advance.
+  B: retreat.
+  C: remain stable in size.
+  D: flow more rapidly.
+CORRECT: D
+NOTES: Passage IV: Inference
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q19 | comparison | IKI | DIFF: medium
+STEM: One similarity between the passages is that, in order to make a point about light at night, both authors discuss:
+  A: how dark large cities once were.
+  B: the opinions of scientific researchers.
+  C: well-known works of art.
+  D: personal memories of when night was darker.
+CORRECT: A
+NOTES: Passage II: Dual passage similarity
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q21 | structure | CS | DIFF: medium
+STEM: The passage as a whole can best be described as:
+  A: a summary of a childhood incident followed by reflections on how the memory of that incident has changed.
+  B: a description of an experience followed by consideration of a topic raised by that experience.
+  C: an account of the author's lifelong interest in a hobby.
+  D: an explanation of why the author's opinions on a topic have changed.
+CORRECT: B
+NOTES: Passage III: Structure
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q23 | tone | CS | DIFF: medium
+STEM: The author's tone when recounting his visit to the waterfall can best be described as:
+  A: joking.
+  B: gloomy.
+  C: pleading.
+  D: reverent.
+CORRECT: D
+NOTES: Passage III: Tone
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q24 | main-idea | KID | DIFF: medium
+STEM: The main idea of the second paragraph (lines 20-33) is that:
+  A: places preserve memories better than people do.
+  B: conversations about past events can be enjoyable.
+  C: family members often have differing recollections of shared experiences.
+  D: people's memories change as they themselves change.
+CORRECT: B
+NOTES: Passage III: Main idea of paragraph
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q26 | comprehension | KID | DIFF: medium
+STEM: The author claims that when people take photographs during events, they:
+  A: capture the essence of the experience they are having.
+  B: preserve memories that would otherwise be lost.
+  C: experience the act of taking photographs rather than the event itself.
+  D: distract themselves from unpleasant aspects of the event.
+CORRECT: C
+NOTES: Passage III: Author's claim
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q28 | interpretation | IKI | DIFF: hard
+STEM: According to the passage, photographs are "a dangerously compelling abstraction" (lines 60-61) because they:
+  A: seem more trustworthy than fragile human memories.
+  B: capture moments that would otherwise be forgotten.
+  C: prevent people from revisiting places from their past.
+  D: replace sensory experiences with visual representations.
+CORRECT: B
+NOTES: Passage III: Interpretation
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q30 | inference | KID | DIFF: medium
+STEM: It can most reasonably be inferred from the passage that the author believes that compared to photographs, places:
+  A: are less reliable because they change over time.
+  B: are more effective at evoking memories because they engage multiple senses.
+  C: provide memories that are less vivid but more accurate.
+  D: preserve fewer details but create stronger emotional connections.
+CORRECT: B
+NOTES: Passage III: Inference
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q32 | detail | KID | DIFF: medium
+STEM: According to the passage, a glacier begins to flow when:
+  A: snow accumulates to a depth of about 50 feet.
+  B: the temperature drops below freezing.
+  C: ice accumulates to a thickness of about 100 feet.
+  D: annual snowfall exceeds annual melting.
+CORRECT: C
+NOTES: Passage IV: Detail
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q34 | vocabulary | CS | DIFF: medium
+STEM: As it is used in line 45, the word plastic most nearly means:
+  A: malleable.
+  B: artificial.
+  C: elastic.
+  D: synthetic.
+CORRECT: A
+NOTES: Passage IV: Vocabulary
+
+----------------------------------------------------------------------------------------------------
+
+TEST 2 | Q34 | detail | CS | DIFF: easy
+STEM: According to the passage, which of the following conversions is a direct result of adding oxygen to molten pig iron?
+  A: Light silica slag is converted into carbon dioxide.
+  B: Carbon dioxide is converted into carbon.
+  C: Silicon is converted into light silica slag.
+  D: Impurities in the metal are converted into silicon.
+CORRECT: B
+NOTES: Test 2 Reading Question 34
+
+----------------------------------------------------------------------------------------------------
+
+TEST 4 | Q22 | purpose | CS | DIFF: null
+STEM: One main function of the last paragraph of Passage A (lines 30-42) is to:
+  A: explain the author's perspective on the Japanese methods used to create puppets.
+  B: suggest that puppets are inevitably unrealistic in their appearance.
+  C: describe a shortcoming in the author's early understanding of Bunraku.
+  D: assert that the complexity of Bunraku comes from its depiction of a flat surface of reality.
+CORRECT: C
+
+----------------------------------------------------------------------------------------------------
+
+TEST 7 | Q34 | reading-comprehension | KEY | DIFF: null
+STEM: In the passage, the main point the author makes about museums is that they primarily:
+  A: exist to educate tourists about the areas they are visiting.
+  B: function to protect and preserve specimens for future study.
+  C: preserve only the specimens excavated from nearby sites.
+  D: display only the specimens that are currently considered to be important.
+CORRECT: C
+
+----------------------------------------------------------------------------------------------------
+
+TEST 7 | Q35 | reading-comprehension | KEY | DIFF: null
+STEM: The detail about the Archaeopteryx fossil being "a mere 35 cm at its longest" (line 48) helps establish a contrast between the fossil's small size and the:
+  A: considerable time it took to curate the fossil.
+  B: substantial impact the fossil had on the scientific community.
+  C: overall complexity of Archaeopteryx's bone structure.
+  D: ferocity associated with the Archaeopteryx species.
+CORRECT: D
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q39 | inference | KID | DIFF: hard
+STEM: It can reasonably be inferred from the passage that the rate at which a glacier moves is influenced by:
+  A: the steepness of the slope and the thickness of the ice.
+  B: the temperature of the surrounding air.
+  C: the amount of debris embedded in the ice.
+  D: the time of year.
+CORRECT: D
+NOTES: Passage IV: Inference
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q40 | detail | KID | DIFF: easy
+STEM: The passage indicates that U-shaped valleys are formed by:
+  A: erosion from rivers.
+  B: volcanic activity.
+  C: tectonic plate movement.
+  D: glacial erosion.
+CORRECT: D
+NOTES: Passage IV: Detail
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q10 | vocabulary | CS | DIFF: easy
+STEM: As it is used in line 79, the word observe most nearly means:
+  A: study.
+  B: follow.
+  C: express.
+  D: perceive.
+CORRECT: B
+NOTES: Passage I: Vocabulary in context
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q7 | detail | KID | DIFF: medium
+STEM: In the passage, the narrator makes clear that Vani didn't ask Murali in for coffee because Vani:
+  A: felt extremely self-conscious in Murali's presence.
+  B: did not want to invite Murali into someone else's house.
+  C: assumed that Murali wanted to get home at a reasonable hour.
+  D: did not want to further burden Murali with her requests.
+CORRECT: B
+NOTES: Passage I: Detail/Inference
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q12 | comprehension | KID | DIFF: hard
+STEM: In the third paragraph of Passage A (lines 21-30), the author makes a contrast between the:
+  A: hazy night sky over cities today and the bright stars and planets that exist above it.
+  B: gray night sky over cities and the various colors of the stars.
+  C: brightness of the planet Venus on an unlit night and the comparative dimness of the stars.
+  D: appreciation that people once had for stars and the apathy that is pervasive today.
+CORRECT: A
+NOTES: Passage II-A: Contrast
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q8 | perspective | CS | DIFF: hard
+STEM: The passage indicates that the description of Vani in lines 61-65 most closely reflects the perspective of:
+  A: Murali.
+  B: Vani's family in Sri Lanka.
+  C: Murali's friends in New York City.
+  D: the Sri Lankan elders in New York City.
+CORRECT: D
+NOTES: Passage I: Perspective
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q1 | main-idea | KID | DIFF: medium
+STEM: The passage is best described as being told from the perspective of a narrator who focuses primarily on:
+  A: Murali's life as a married man.
+  B: Murali's concerns about marriage.
+  C: Murali and Vani's courtship and its effects on others.
+  D: Murali's characteristics and his family conflicts.
+CORRECT: C
+NOTES: Passage I: Main idea/perspective
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q38 | comparison | IKI | DIFF: medium
+STEM: The passage indicates that compared to valley glaciers, continental glaciers:
+  A: flow more rapidly.
+  B: cover much larger areas.
+  C: form at higher elevations.
+  D: create deeper valleys.
+CORRECT: B
+NOTES: Passage IV: Comparison
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q9 | inference | KID | DIFF: medium
+STEM: It can reasonably be inferred from the passage that, by traditional standards, the Sri Lankan community would have considered Murali and Vani's direct discussion of marriage to be:
+  A: proper.
+  B: sensible.
+  C: superficial.
+  D: unconventional.
+CORRECT: D
+NOTES: Passage I: Inference
+
+----------------------------------------------------------------------------------------------------
+
+TEST 1 | Q11 | main-idea | KID | DIFF: medium
+STEM: The main idea of the first paragraph of Passage A is that:
+  A: before electricity, it was difficult to travel to London at night.
+  B: gas lighting existed long before it was widely used.
+  C: light pollution is a relatively recent phenomenon in human history.
+  D: because of its large population, London has had light pollution for centuries.
+CORRECT: C
+NOTES: Passage II-A: Main idea
+
+----------------------------------------------------------------------------------------------------
+
+TEST 2 | Q8 | structure | KID | DIFF: easy
+STEM: Which of the following actions do the narrators of both passages closely connect with their mothers?
+  A: Traveling and moving
+  B: Exploring Chicago streets
+  C: Speaking openly and boldly
+  D: Staying at hotels in cities
+CORRECT: A
+NOTES: Test 2 Reading Question 8
+
+----------------------------------------------------------------------------------------------------
+
+TEST 2 | Q12 | detail | CS | DIFF: easy
+STEM: The passage states that, in terms of the natural-ice industry, the decade from 1869 to 1879 was characterized by:
+  A: significant growth.
+  B: damaging publicity.
+  C: high shipping prices.
+  D: mildly declining demand.
+CORRECT: A
+NOTES: Test 2 Reading Question 12
+
+----------------------------------------------------------------------------------------------------
+
+TEST 2 | Q5 | inference | KID | DIFF: easy
+STEM: As they are used in Passage B, the word 'blinding' (line 68) and the word 'overwhelm' (line 69) both have a connotation that most strongly suggests a feeling of:
+  A: fright.
+  B: awe.
+  C: regret.
+  D: quietness.
+CORRECT: B
+NOTES: Test 2 Reading Question 5
+
+----------------------------------------------------------------------------------------------------
+
+TEST 3 | Q14 | social-science | KID | DIFF: easy
+STEM: In the passage, which of the following individuals or groups is presented as believing in Jewett's "aluminium El Dorado" (line 41)?
+  A: Most students at Oberlin
+  B: Manufacturers in France
+  C: Héroult
+  D: Hall
+CORRECT: D
+NOTES: Practice ACT 3 Reading Question 14 - explicit information
+
+----------------------------------------------------------------------------------------------------
+
+TEST 3 | Q22 | literary-narrative | KID | DIFF: easy
+STEM: According to the passage, the narrator learned about cooking mainly through:
+  A: watching cooking shows on television.
+  B: reading cookbooks and food magazines.
+  C: taking formal cooking classes.
+  D: observing and helping family members in the kitchen.
+CORRECT: D
+NOTES: Practice ACT 3 Reading Question 22 - explicit information
+
+----------------------------------------------------------------------------------------------------
+
+TEST 6 | Q1 | reading | KEY | DIFF: null
+STEM: As it is used in line 63, the word sensitive most nearly means:
+  A: pliant.
+  B: perceptive.
+  C: touchy.
+  D: evasive.
+CORRECT: B
+
+----------------------------------------------------------------------------------------------------
+
+TEST 6 | Q2 | reading | KEY | DIFF: null
+STEM: The author of the passage can best be described as a children's book author and illustrator who is:
+  A: remembering the day she first read a children's book from Iran.
+  B: considering the influences on her artistic interests and work.
+  C: explaining the goals of the Kanoon Parvaresh Fekri Koodakan va Nojavanan.
+  D: analyzing the loss of her cultural identity.
+CORRECT: B
+
+----------------------------------------------------------------------------------------------------
+
+
+
+=== PASSAGE FULL TEXTS ===
+
+--- ENGLISH PASSAGES (FIRST 3) ---
+
+TEST 1 PASSAGE 1: Double the Manta Rays
+INTRO: Essay about marine biologist Andrea Marshall discovering two species of manta rays
+
+There are thousands of new animal species identified each year, the vast majority are small or geographically isolated. So as graduate student Andrea Marshall studied manta rays, which are neither small nor isolated, she didn't expect to identify a new species. Mantas are plankton-eating relatives of stingrays that look like pairs of enormous black wings—up to twenty-five feet wide—flying slowly through the water. Encompassing wide swaths of both temperate and tropical oceans, the manta's range abuts every continent but Antarctica.
+
+During Marshall's research off the coast of Mozambique, she observed intriguing physical variations in the mantas she swam amongst. Her beachside lodgings in Mozambique now house the Marine Megafauna Research Center. She began to suspect that the one recognized species of manta might in fact be two species.
+
+To investigate, Marshall began collecting data. Other data required a closer look. The skin of all mantas, for example, is embedded with tiny, toothlike "denticles." Marshall found that denticles on some mantas were randomly spaced and occasionally overlapped, whereas denticles on other mantas were evenly spaced and never overlapped. Another discovery was that some mantas had egg-shaped masses at the base of their tail fins. Each mass contained a bony spine about an inch long—the vestige of a stinging barb from the manta's ancestors.
+
+In 2009, Marshall announced, with two other scientists, that indeed there are two manta species. The reef manta, Manta alfredi, is the smaller and more common of the two. Thriving in shallow water, it rarely ventures far from its home territory. In contrast, the giant manta, Manta birostris, favors deep water and migrates thousands of miles a year.
+
+The fact that such large animals went undifferentiated for so long highlights how little scientists know about these gentle giants. At the moment, manta ray populations face an array of threats worldwide. Fortunately, mantas have a devoted and expert researcher in Dr. Marshall.
+
+====================================================================================================
+
+TEST 1 PASSAGE 2: Origins of Aspirin
+INTRO: The history of aspirin from ancient willow bark to modern medicine
+
+When a plant is attacked by bacteria, fungi, or insects, it produces chemicals, called salicylates, that help the plant produce enzymes or toxins capable of destroying the plant's attackers. Salicylates may also play a role in the plant's ability to regulate its temperature, helping the plant tolerate heat and cold. Humans have used the salicylic acids found in plants, particularly in the bark of the willow tree, to fight disease and to reduce fevers.
+
+The first known references to willow bark's medicinal use date from ancient Egypt and Sumeria. On a Sumerian stone tablet from 3000 BCE, willow is listed among dozens of plants used to treat illnesses. An Egyptian papyrus from about 1534 BCE refers to willow's use as an all-purpose medicine.
+
+Though willow trees are often found near water and have become religious symbols in many cultures, its medicinal use gradually fell out of favor in Europe. The high cost of importing cinchona bark from South America, however, was expensive. Consequently, in the mid-1700s, English minister Edward Stone began to seek a substitute. He noted that the bitter taste of willow bark was reminiscent of the bitter taste of cinchona bark.
+
+Known also for his interest in astronomy, Stone pulverized some willow bark and added its powder to a liquid. He administered the medicine to people suffering from fevers and then noted that it worked.
+
+As the field of medicine evolved, so did the use of willow bark. Searching for a way to make the salicylic acid in willow bark less abrasive to the stomach, in 1853 French chemist Charles von Gerhardt created a synthetic version. Decades later, German chemist Felix Hoffmann combined synthetic salicylic acid with acetic acid, inventing a consumer-friendly powdered formula that would come to be known as aspirin.
+
+====================================================================================================
+
+TEST 1 PASSAGE 3: Good Vibrations
+INTRO: Photographer Martin Klimas creates "sonic sculptures" by photographing paint vibrating to music
+
+In his studio in Düsseldorf, Germany, photographer Martin Klimas carefully pours paint onto a rubber membrane placed on top of an audio speaker. The paint collects in a puddle of colors: rich oranges and powder blues, hot pinks and electric yellows. Klimas attaches his camera to a tripod and positions the camera so it is level with the paint puddle. He then sets a sound trigger (a device that automatically snaps a photo when a given sound level is reached) on his camera. Finally, he inserts Daft Punk's Homework CD into a stereo, cranks up the volume to ten, and pushes Play.
+
+The result is what Klimas calls a "sonic sculpture." The vibrations produced by Daft Punk's dance anthem "Around the World" cause the paint to rise, and this image that Klimas's camera captures—sound visually rendered by the effects of the vibrations on the paint. Although Klimas's photographs only capture an instant of the paint erupting in arcs of color, each of the photographs is unique to a given song.
+
+"I leave the creation of the picture to the sound itself," Klimas says. Klimas's idea for his sonic sculptures was sparked by the experiments of Swiss scientist Hans Jenny. In the 1960s, Jenny studied the effects of sound vibrations on various materials. For example, Jenny discovered that low sonic tones caused powdery substances to form into uniform lines, while deeper tones caused the same powder to form into more nuanced patterns. Klimas relies on similar principles, only with a more compelling component: music.
+
+Klimas has photographed sonic sculptures of classical music by Wagner and Bach; jazz by Miles Davis, Charlie Parker, and John Coltrane; and psychedelic rock by Pink Floyd and Jimi Hendrix. While he acknowledges that all forms of music can generate sonic sculptures, Klimas says, "I typically select something dynamic and percussive." That makes sense. After all, to create his art, Klimas needs his paint to get up and dance.
+
+====================================================================================================
+
+--- READING PASSAGES (FIRST 2) ---
+
+TEST 2 PASSAGE 3: HUMANITIES
+TITLE: The Art of Film Dubbing | AUTHOR: Chiara Barzini
+INTRO: Adapted from the article "Read My Lips" by Chiara Barzini, published in Harper's Magazine.
+
+Filmmakers have debated the respective merits of subtitles and dubbing since the earliest sound films. In "The Impossible Life of Clark Costa," published in 1940 in the film journal Cinema, director Michelangelo Antonioni wrote that Romolo Costa, the person who dubbed all of actor Clark Gable's performances, was a "hybrid individual born out of a chemical combination." This "half Clark, half Costa" was unbearable to Antonioni, who considered dubbing to be a mere "acoustic surrogate" of acting. To him, dubbing compromised the intention of the director, leading to an artificial product that lacked artistic unity.
+
+Director Pier Paolo Pasolini, who called both dubbing and subtitles "evils," said that, between the two, dubbing was the less harmful, since it allowed you to see the picture in full. Director Jean Renoir called dubbing a "monstrosity, a challenge to human and divine laws."
+
+Director Federico Fellini didn't agree with any of them. Dubbing was an extension of his shoots, a technique he would use to retouch and rewrite. He mercilessly dubbed over his actors, changing dialogue in postproduction, sometimes having worked without a script. (He reportedly instructed his actors to count aloud in front of the camera so that he could insert new dialogue afterward.) Renato Cortesi, a veteran Fellini dubber, told me that, during the filming of Amarcord (1973), he witnessed Fellini ask an old Neapolitan lady to tell him a sad story. Over footage of this woman recounting a tragic tale about her grandson, Fellini added a new sound track about war and hunger recorded by an actor from Emilia-Romagna, combining the vivid expressiveness of the South with his favorite northern accent.
+
+If you visit a dubbing studio, the over-the-top zest of the actors is evident in everything from their melodramatic speech to their movements; standing in front of the microphone, they coil and twitch. I asked Cortesi whether this was a consequence of having to focus one's lifelong talent into the few centimeters between mouth and microphone, a kind of bodily rebellion to the condition of being heard but not seen, and he laughed. "Of course it isn't easy to spend a life in the darkness, but this is hardly the reason why they twitch and turn! Dubbers are used to reciting while trying to re-create the bodily sensations of what they see on the screen before them. If there is running in the film, they will run on their feet. The moving," he explained, "is the result of re-creating large movements in small spaces."
+
+There are still few options for those seeking to watch subtitled, original-language films at a movie house in Italy. The Metropolitan cinema on Via del Corso closed recently after a long battle involving intellectuals, show-business people, and American tourists in Rome, to be replaced with a clothing store. Italians remain hooked on dubbing—perhaps because of simple affection. Familiar voices yield emotional attachment.
+
+Francesco Vairano, a dubber and dubbing director known for adapting foreign films considered to be "undubbable," such as the French box office hit Bienvenue chez les Ch'tis ("Welcome to the Sticks," 2008), which relies on linguistic misunderstandings for much of its comedy, explained that actors become just as attached to their parts as audiences do. Vairano has been one of the few directors to break the habit of matching the same Italian dubber to a foreign actor for all his films, preferring instead to select the dubber according to the requirements of the role, and, he admits, he was hated by all the prima donna dubbers for this. "If you take that actor away from them," he told me, "they will insult you."
+
+In 2007, I met dubber Luca Ward, who provided the voice of the narrator for a romantic comedy I co-wrote, Scusa ma Ti Chiamo Amore ("Sorry but I Love You"). What I didn't then know was that everyone Ward met wanted him to recite actor Samuel L. Jackson's Ezekiel 25:17 passage from the film Pulp Fiction, and that I should consider it an honor that he would offer a performance to a stranger. When he finally did recite the monologue, it was astonishing, every dramatic pause carefully timed and every word perfectly enunciated. I understood that, if anybody took Samuel L. Jackson away from Ward, it would have meant taking away a part of his soul; he was, as Antonioni would say, half Ward, half Jackson. Leaving the day's recording session, Ward told me he was off to have dinner with actress Meg Ryan, before raising an eyebrow and clarifying, "With Meg Ryan's dubber... I am having dinner with Meg Ryan's voice."
+
+====================================================================================================
+
+TEST 1 PASSAGE 2: SOCIAL_SCIENCE
+TITLE: Our Vanishing Night / The End of Night | AUTHOR: Verlyn Klinkenborg / Paul Bogard
+INTRO: Passage A is adapted from "Our Vanishing Night" by Verlyn Klinkenborg (©2008 by National Geographic Society). Passage B is adapted from The End of Night by Paul Bogard (©2013 by Paul Bogard).
+
+Passage A
+
+If humans were truly at home under the light of the moon and stars, we would go in darkness happily, the midnight world as visible to us as it is to the vast number of nocturnal species on this planet. Instead, we are diurnal creatures, with eyes adapted to living in the sun's light. This is a basic evolutionary fact, even though most of us don't think of ourselves as diurnal beings any more than we think of ourselves as primates or mammals or Earthlings. Yet it's the only way to explain what we've done to the night: We've engineered it to receive us by filling it with light.
+
+This kind of engineering is no different from damming a river. Its benefits come with consequences—called light pollution—whose effects scientists are only now beginning to study. Light pollution is largely the result of bad lighting design, which allows artificial light to shine outward and upward into the sky, where it's not wanted, instead of focusing it downward, where it is. Wherever human light spills into the natural world, some aspect of life—migration, reproduction, feeding—is affected, and not for the better.
+
+Most cities have never been darker, in the sense of having less exposure to natural darkness, and so today's children in urban areas are growing up largely blind to the stars and planets. We've become so used to the glow of light pollution that we may not even miss the darkness when it's gone. But the ecological and human health consequences of disrupting natural patterns of light and dark are real.
+
+Passage B
+
+I worry we are rapidly losing night's natural darkness before realizing its worth. For those of us living in cities and suburbs, it has been lost already. We have forgotten what real darkness is like. We have forgotten what we are missing.
+
+But it's not too late. The  decision to keep our night skies dark is not some abstract scientific or environmental issue—this is about our human heritage, our quality of life, and our cultural connection to the universe. To see the Milky Way draped across the sky is to realize our place in the cosmos—it's our home galaxy, visible from the surface of our home planet.
+
+Astronomers divide darkness into categories. "Truly dark sky" means you can see the Milky Way in detail. But near cities, sky glow brightens the night, and the Milky Way becomes difficult or impossible to see. Studies show that two-thirds of Americans and Europeans no longer experience truly dark skies. More than 99 percent of people living in the United States and Europe experience light-polluted skies.
+
+What we lose when we lose darkness is hard to measure but easy to experience. Stand under a dark sky and look up. Give your eyes time to adjust—the cones and rods need time to become sensitive. After twenty minutes or so, the stars begin to emerge, more and more of them, until the sky is full. This is our natural birthright: a sky filled with stars and the arc of the Milky Way, our home in the universe made visible.
+
+====================================================================================================
+

@@ -1,0 +1,13 @@
+{
+  "testNumber": 4,
+  "timestamp": "2025-10-24T17:29:31.726Z",
+  "method": "manual_golden_template",
+  "results": {
+    "englishPassages": 5,
+    "englishQuestions": 75,
+    "totalErrors": 0,
+    "accuracy": "100.0"
+  },
+  "errors": [],
+  "status": "SUCCESS"
+}

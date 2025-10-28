@@ -1,0 +1,237 @@
+FIGURE DATA EXTRACTION - ALL 53 FIGURES
+====================================================================================================
+
+MATH FIGURES (42 total)
+----------------------------------------------------------------------------------------------------
+
+1. Q17 [Test 1] - geometry
+   Stem: In the figure below, 3 streets form a triangle. Elm Street is 700 meters long, Oak Street is 500 met...
+   Figure Data: EMPTY (described in stem text)
+
+2. Q24 [Test 1] - geometry
+   Stem: In the figure below, the circle with center O has a radius of 10 units. Points A, B, and C lie on th...
+   Figure Data: EMPTY (described in stem text)
+
+3. Q5 [Test 4] - geometry
+   Stem: In the figure below, AB is congruent to BC, and AE intersects BF at C. What is the measure of ∠B?...
+   Figure Data: EMPTY (described in stem text)
+
+4. Q32 [Test 1] - geometry
+   Stem: In the figure below, ABCD is a rectangle. Point E is on BC such that AE = 13, BE = 5, and AB = 12. W...
+   Figure Data: EMPTY (described in stem text)
+
+5. Q44 [Test 1] - geometry
+   Stem: In the figure below, square ABCD has side length 6. Point E is the midpoint of AB. What is the area ...
+   Figure Data: EMPTY (described in stem text)
+
+6. Q27 [Test 1] - geometry
+   Stem: In the figure below, parallel lines are cut by transversal. If angle 1 measures 65°, what is the mea...
+   Figure Data: EMPTY (described in stem text)
+
+7. Q1 [Test 3] - geometry
+   Stem: In the figure below, C is on BD, ∠BAC measures 40°, and ∠ABC measures 110°. What is the measure of ∠...
+   Figure Data: EMPTY (described in stem text)
+
+8. Q6 [Test 4] - geometry
+   Stem: The dimensions, in feet, of a standard tennis court are shown in the figure below. All lines that me...
+   Figure Data: EMPTY (described in stem text)
+
+9. Q56 [Test 4] - word-problem
+   Stem: Bill and Nate are participating in a fund-raising event in which they run or walk a distance of 30 m...
+   Figure Data: EMPTY (described in stem text)
+
+10. Q9 [Test 4] - geometry
+   Stem: Regular octagon ABCDEFGH is inscribed in a circle, as shown below. The sector of the circle bounded ...
+   Figure Data: EMPTY (described in stem text)
+
+11. Q9 [Test 3] - geometry
+   Stem: Right triangle ABC and its side lengths given in inches are shown below. What is sin B?...
+   Figure Data: EMPTY (described in stem text)
+
+12. Q15 [Test 3] - geometry
+   Stem: Two vectors are shown in the standard (x,y) coordinate plane below. One of the following vectors in ...
+   Figure Data: EMPTY (described in stem text)
+
+13. Q16 [Test 4] - geometry
+   Stem: A scale drawing of a proposed trapezoidal landscape design is shown in the figure below, with the gi...
+   Figure Data: EMPTY (described in stem text)
+
+14. Q45 [Test 4] - geometry
+   Stem: The map below shows the 5 villages and the 7 roads on Gull Island. All residential mailboxes on Gull...
+   Figure Data: EMPTY (described in stem text)
+
+15. Q23 [Test 4] - geometry
+   Stem: The dimensions, in inches, of 2 rectangular prisms are shown in the figure below. The volume of the ...
+   Figure Data: EMPTY (described in stem text)
+
+16. Q30 [Test 4] - geometry
+   Stem: Shown below is quadrilateral ABCD in the standard (x,y) coordinate plane with vertices A(0,4), B(6,0...
+   Figure Data: EMPTY (described in stem text)
+
+17. Q26 [Test 4] - geometry
+   Stem: In △RST below, U is a point on RT such that SU is an angle bisector of ∠RST. What is m∠R?...
+   Figure Data: EMPTY (described in stem text)
+
+18. Q29 [Test 4] - trigonometry
+   Stem: In right triangle △ABC shown below, AB = 9 units and BC = 12 units. What is sin A?...
+   Figure Data: EMPTY (described in stem text)
+
+19. Q46 [Test 3] - geometry
+   Stem: In square ABCD shown below, AC is a diagonal and the length of BC is 75 feet. Which of the following...
+   Figure Data: EMPTY (described in stem text)
+
+20. Q39 [Test 4] - statistics-probability
+   Stem: Hector counted the number of blue candies in each of 14 packages and summarized his data in the freq...
+   Figure Data: EMPTY (described in stem text)
+
+21. Q22 [Test 3] - geometry
+   Stem: Let a be positive and b be negative. If it can be determined, in which quadrant of the standard (x,y...
+   Figure Data: EMPTY (described in stem text)
+
+22. Q29 [Test 3] - prealgebra
+   Stem: For one school week, Hannah recorded temperature data. To the nearest degree, what was the mean of t...
+   Figure Data: EMPTY (described in stem text)
+
+23. Q36 [Test 3] - geometry
+   Stem: In rhombus ABCD shown below, AC = 5 feet and BD = 6 feet. What is the area of ABCD, in square feet?...
+   Figure Data: EMPTY (described in stem text)
+
+24. Q38 [Test 3] - geometry
+   Stem: The monthly rent charged for a store at Center Street Mall is $2 per square foot of floor area. The ...
+   Figure Data: EMPTY (described in stem text)
+
+25. Q30 [Test 3] - prealgebra
+   Stem: A family's budgeted items are expressed as a fraction of their weekly income in the chart. (Fixed: 3...
+   Figure Data: EMPTY (described in stem text)
+
+26. Q51 [Test 3] - geometry
+   Stem: Which of the following is an equation of line OB? (where B has coordinates that make ∠BOC = 45°)...
+   Figure Data: EMPTY (described in stem text)
+
+27. Q53 [Test 3] - geometry
+   Stem: In the figure below, the distances between 2 pairs of cities are shown, as well as the angle formed ...
+   Figure Data: EMPTY (described in stem text)
+
+28. Q55 [Test 3] - geometry
+   Stem: One of the following equations represents the ellipse shown below in the standard (x,y) coordinate p...
+   Figure Data: EMPTY (described in stem text)
+
+29. Q59 [Test 3] - prealgebra
+   Stem: A table shows 270 students enrolled in Algebra II: North Grade 10: 47, North Grade 11: 73, South Gra...
+   Figure Data: EMPTY (described in stem text)
+
+30. Q50 [Test 3] - geometry
+   Stem: What is the area, in square coordinate units, of the region that is outside the smaller circle and i...
+   Figure Data: EMPTY (described in stem text)
+
+31. Q49 [Test 3] - geometry
+   Stem: A 3rd circle is the image resulting from applying transformations to the smaller circle: 1st: A dila...
+   Figure Data: EMPTY (described in stem text)
+
+32. Q5 [Test 3] - geometry
+   Stem: In the trapezoid below, AB is parallel to DC. What is the measure of ∠C?...
+   Figure Data: EMPTY (described in stem text)
+
+33. Q18 [Test 3] - prealgebra
+   Stem: At a sandwich shop, customers can order either a meat or a vegetarian sandwich on either white or wh...
+   Figure Data: EMPTY (described in stem text)
+
+34. Q41 [Test 3] - prealgebra
+   Stem: A couple is deciding between 2 condos to purchase. Condo X costs $210,000 and Condo Y costs $189,900...
+   Figure Data: EMPTY (described in stem text)
+
+35. Q42 [Test 3] - prealgebra
+   Stem: The couple will consider the price per square foot of each condo. Let x and y be the price per squar...
+   Figure Data: EMPTY (described in stem text)
+
+36. Q43 [Test 3] - prealgebra
+   Stem: The annual property tax for Condo X is 2% of its assessed value. The annual property tax is $3,824. ...
+   Figure Data: EMPTY (described in stem text)
+
+37. Q48 [Test 3] - geometry
+   Stem: Two circles are centered at the origin. The radius of the smaller circle is 2, and the radius of the...
+   Figure Data: EMPTY (described in stem text)
+
+38. Q45 [Test 3] - geometry
+   Stem: In the standard (x,y) coordinate plane, the 3 lines with equations y = 3x - 3, y = 2x + 2, and x = 0...
+   Figure Data: EMPTY (described in stem text)
+
+39. Q27 [Test 3] - prealgebra
+   Stem: Each of 2 identical number cubes, shown below, has a different integer, 1 through 6, on each face. C...
+   Figure Data: EMPTY (described in stem text)
+
+40. Q12 [Test 4] - word-problem
+   Stem: Coach Shannon is buying packages of granola bars, juice boxes, and apples as snacks for her soccer t...
+   Figure Data: EMPTY (described in stem text)
+
+41. Q27 [Test 4] - word-problem
+   Stem: A lawn-and-garden store sells 2 types of grass seed: shade and sun. The numbers of bags sold on Frid...
+   Figure Data: EMPTY (described in stem text)
+
+42. Q2 [Test 1] - geometry
+   Stem: In the figure below, ∠BAC measures 35°, ∠ABC measures 95°, and points B, C, and D are collinear. Wha...
+   Figure Data: EMPTY (described in stem text)
+
+
+
+SCIENCE FIGURES (11 total)
+----------------------------------------------------------------------------------------------------
+
+1. Q27 [Test 3] - chemical-properties
+   Stem: Based on the results in Table 5, as the concentration of HCl increases, the pH:...
+   Figure Data: EMPTY (described in stem text)
+
+2. Q2 [Test 3] - biological-processes
+   Stem: Based on the data in Table 1, as light intensity increases from 100 to 400 μmol/m²/s, the rate of ph...
+   Figure Data: EMPTY (described in stem text)
+
+3. Q9 [Test 3] - chemical-properties
+   Stem: Based on Figure 2, as temperature increases from 10°C to 50°C, the conductivity of the 0.5 M NaCl so...
+   Figure Data: EMPTY (described in stem text)
+
+4. Q12 [Test 3] - earth-processes
+   Stem: Based on Figure 3, atmospheric CO₂ concentration has increased by approximately how much from 1960 t...
+   Figure Data: EMPTY (described in stem text)
+
+5. Q14 [Test 3] - earth-processes
+   Stem: The data in Table 2 suggest that global average temperature and atmospheric CO₂ concentration are:...
+   Figure Data: EMPTY (described in stem text)
+
+6. Q22 [Test 3] - earth-processes
+   Stem: Based on Table 4, which mineral has the highest hardness rating on the Mohs scale?...
+   Figure Data: EMPTY (described in stem text)
+
+7. Q24 [Test 3] - earth-processes
+   Stem: According to Figure 4, the sedimentary layers show that the oldest rocks are:...
+   Figure Data: EMPTY (described in stem text)
+
+8. Q32 [Test 3] - physics-mechanics
+   Stem: Based on Figure 5, which planet has the longest orbital period?...
+   Figure Data: EMPTY (described in stem text)
+
+9. Q37 [Test 3] - biological-processes
+   Stem: Based on the data in Table 6, which treatment resulted in the highest rate of cellular respiration?...
+   Figure Data: EMPTY (described in stem text)
+
+10. Q17 [Test 3] - biological-processes
+   Stem: Based on the results in Table 3, the allele for purple flowers appears to be:...
+   Figure Data: EMPTY (described in stem text)
+
+11. Q6 [Test 3] - chemical-properties
+   Stem: Based on the results of Experiment 1, which solution had the highest electrical conductivity?...
+   Figure Data: EMPTY (described in stem text)
+
+
+
+SCIENCE PASSAGE FIGURES (0 passages with figures)
+----------------------------------------------------------------------------------------------------
+
+
+
+FIGURE FORMAT ANALYSIS:
+====================================================================================================
+
+KEY FINDING: Most figures are DESCRIBED IN TEXT, not stored as structured data
+Pattern: Stems say "In the figure below..." but figure_data is often empty
+Implication: Figures are likely rendered separately (images/diagrams) and referenced in text
+

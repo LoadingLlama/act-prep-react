@@ -1,0 +1,10 @@
+{
+  "timestamp": "2025-10-24T23:46:03.204Z",
+  "critical_issues": [],
+  "warnings": [],
+  "summary": {
+    "total_critical": 0,
+    "total_warnings": 0,
+    "status": "PASS"
+  }
+}
