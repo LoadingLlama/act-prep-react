@@ -382,12 +382,19 @@ const PracticeTestPage = ({ testId, onClose }) => {
    */
   if (selectedSection && questions.length > 0) {
     // Store questions in sessionStorage for the test to access
+    const duration = selectedSection === 'full' ? 175 : sectionConfig[selectedSection]?.timeMinutes || 45;
+
     sessionStorage.setItem('practiceTestQuestions', JSON.stringify(questions));
     sessionStorage.setItem('practiceTestSection', selectedSection);
     sessionStorage.setItem('practiceTestNumber', testNumber);
-    sessionStorage.setItem('practiceTestDuration',
-      selectedSection === 'full' ? 175 : sectionConfig[selectedSection]?.timeMinutes || 35
-    );
+    sessionStorage.setItem('practiceTestDuration', duration);
+
+    console.log('📦 React: Storing in sessionStorage:', {
+      section: selectedSection,
+      questionsCount: questions.length,
+      duration: duration,
+      testNumber: testNumber
+    });
 
     return (
       <div style={{
