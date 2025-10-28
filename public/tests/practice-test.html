@@ -10,19 +10,23 @@
     <!-- Header outside container for full width -->
     <div class="test-header">
         <div class="header-content">
-            <a href="/" class="logo">actcourse.org</a>
+            <a href="/" class="logo">Nomi Academy</a>
             <div class="header-center"></div>
             <div class="header-right">
-                <span class="question-counter" id="questionCounter">Question 1 of 50</span>
+                <span class="question-counter">
+                    <span class="question-counter-label">Answered</span>
+                    <span class="question-counter-value" id="questionCounter">0 of 215</span>
+                </span>
+                <div class="timer-container">
+                    <span class="timer-label">Total Time Left</span>
+                    <div class="timer" id="timer">--:--</div>
+                </div>
                 <button class="end-section-link" onclick="confirmEndSection()">
-                    <span class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                            <rect x="2" y="2" width="12" height="12" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                        </svg>
-                    </span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                        <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                    </svg>
                     End Section
                 </button>
-                <div class="timer" id="timer">35:00</div>
             </div>
         </div>
     </div>
@@ -44,7 +48,12 @@
                 <!-- Flag Bar -->
                 <div class="flag-bar">
                     <span class="item-number" id="itemNumber">Item 1</span>
-                    <button class="flag-button" id="flagBtn" onclick="toggleFlag()">Flag</button>
+                    <button class="flag-button" id="flagBtn" onclick="toggleFlag()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                            <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
+                        </svg>
+                        Flag
+                    </button>
                 </div>
 
                 <!-- Passages Section -->
@@ -62,6 +71,20 @@
                     <button class="nav-button" id="prevBtn" onclick="previousQuestion()" disabled>‹ PREV</button>
                     <button class="nav-button primary" id="nextBtn" onclick="nextQuestion()">NEXT ›</button>
                 </div>
+            </div>
+
+            <!-- Question Sidebar -->
+            <div class="question-sidebar">
+                <div class="sidebar-icon" onclick="showQuestionModal()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </div>
+                <div class="sidebar-text">Index</div>
+                <div class="sidebar-divider"></div>
+                <div class="sidebar-questions" id="sidebarQuestions"></div>
             </div>
         </div>
     </div>
@@ -116,7 +139,7 @@
         const questions = JSON.parse(sessionStorage.getItem('practiceTestQuestions') || '[]');
         const section = sessionStorage.getItem('practiceTestSection') || 'english';
         const testNumber = sessionStorage.getItem('practiceTestNumber') || '1';
-        const duration = parseInt(sessionStorage.getItem('practiceTestDuration') || '35');
+        const duration = parseInt(sessionStorage.getItem('practiceTestDuration') || '45');
 
         // Debug logging
         console.log('Practice Test Debug:', {
@@ -125,6 +148,8 @@
             testNumber: testNumber,
             questionsLoaded: questions.length,
             duration: duration,
+            durationFromStorage: sessionStorage.getItem('practiceTestDuration'),
+            timeLeft: duration * 60,
             firstQuestion: questions[0]
         });
 
@@ -139,11 +164,16 @@
 
         // Initialize test
         function initTest() {
+            console.log('🚀 initTest called, questions.length:', questions.length);
+
             if (questions.length === 0) {
+                console.log('❌ No questions found - timer will NOT start');
                 document.getElementById('questionSection').innerHTML =
                     '<div style="padding: 2rem; text-align: center; color: #6b7280;">No questions loaded. Please go back and select a test.</div>';
                 return;
             }
+
+            console.log('✅ Questions loaded, initializing test...');
 
             // Add math-test class if no passages
             if (!hasPassages) {
@@ -153,6 +183,7 @@
             // Render questions and passages
             renderContent();
             updateDisplay();
+            generateSidebarQuestions();
             startTimer();
         }
 
@@ -320,7 +351,7 @@
                 nextBtn.onclick = nextQuestion;
             }
 
-            document.getElementById('questionCounter').textContent = `Question ${currentQuestion} of ${totalQuestions}`;
+            document.getElementById('questionCounter').textContent = `${currentQuestion} of ${totalQuestions}`;
             document.getElementById('itemNumber').textContent = `Item ${currentQuestion}`;
 
             updateFlagButton();
@@ -407,8 +438,40 @@
                 grid.appendChild(item);
             }
         }
+        function generateSidebarQuestions() {
+            const sidebar = document.getElementById('sidebarQuestions');
+            if (!sidebar) {
+                console.log('⚠️ Sidebar element not found, skipping sidebar generation');
+                return;
+            }
+
+            sidebar.innerHTML = '';
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const item = document.createElement('div');
+                item.className = 'sidebar-question-item';
+                item.textContent = i;
+                item.onclick = () => goToQuestion(i);
+
+                if (i === currentQuestion) {
+                    item.classList.add('current');
+                } else if (answers[`q${i}`]) {
+                    item.classList.add('answered');
+                } else if (flaggedQuestions.has(i)) {
+                    item.classList.add('flagged');
+                }
+
+                sidebar.appendChild(item);
+            }
+        }
+
+        function toggleSidebar() {
+            // Sidebar is always visible now, this could be used for future expand/collapse
+            showQuestionModal();
+        }
 
         function updateQuestionGrid() {
+            generateSidebarQuestions();
             if (document.getElementById('questionModal').style.display === 'block') {
                 generateQuestionGrid();
             }
@@ -416,28 +479,35 @@
 
         function startTimer() {
             const timerElement = document.getElementById('timer');
-
-            function updateTimer() {
-                const minutes = Math.floor(timeLeft / 60);
-                const seconds = timeLeft % 60;
-                timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-
-                // Warning color when under 5 minutes
-                if (timeLeft <= 300 && timeLeft > 0) {
-                    timerElement.style.color = '#dc2626';
-                    timerElement.style.fontWeight = '600';
-                    timerElement.style.opacity = '1';
-                }
-
-                if (timeLeft <= 0) {
-                    endSection();
-                } else {
-                    timeLeft--;
-                    setTimeout(updateTimer, 1000);
-                }
+            if (!timerElement) {
+                console.error('Timer element not found!');
+                return;
             }
 
-            updateTimer();
+            console.log('⏰ Starting timer with duration:', duration, 'minutes');
+
+            // Set initial display immediately
+            const initialMinutes = Math.floor(timeLeft / 60);
+            const initialSeconds = timeLeft % 60;
+            timerElement.textContent = `${initialMinutes}:${initialSeconds.toString().padStart(2, '0')}`;
+
+            // Update every second
+            setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    const minutes = Math.floor(timeLeft / 60);
+                    const seconds = timeLeft % 60;
+                    timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+                    // Red color when under 5 minutes
+                    if (timeLeft <= 300) {
+                        timerElement.style.color = '#dc2626';
+                    }
+                } else if (timeLeft === 0) {
+                    timerElement.textContent = '0:00';
+                    console.log('Time is up!');
+                }
+            }, 1000);
         }
 
         function confirmEndSection() {
