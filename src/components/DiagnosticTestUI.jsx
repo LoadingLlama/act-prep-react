@@ -94,18 +94,19 @@ const useStyles = createUseStyles({
   flagBar: {
     background: '#f8f9fa',
     borderBottom: '1px solid #e5e7eb',
-    padding: '0.5rem 1rem',
+    padding: '0.75rem 1.5rem',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    height: '3rem',
+    height: 'auto',
+    minHeight: '3rem',
     fontSize: '0.85rem',
     gridColumn: (props) => props.hasPassages ? '1 / 3' : '1 / 2',
     zIndex: 5
   },
   itemNumber: {
-    fontSize: '0.85rem',
-    color: '#9ca3af',
+    fontSize: '0.875rem',
+    color: '#6b7280',
     fontWeight: 500
   },
   flagButton: {
@@ -130,13 +131,13 @@ const useStyles = createUseStyles({
   passageSection: {
     gridColumn: 1,
     overflowY: 'auto',
-    padding: '1.5rem',
+    padding: '2rem 1.5rem',
     background: 'white',
     borderRight: '1px solid #e5e7eb'
   },
   passageContent: {
     fontSize: '1rem',
-    lineHeight: 1.8,
+    lineHeight: 1.75,
     color: '#1f2937',
     '& p': {
       marginBottom: '1rem'
@@ -151,7 +152,7 @@ const useStyles = createUseStyles({
   questionSection: {
     gridColumn: (props) => props.hasPassages ? 2 : 1,
     overflowY: 'auto',
-    padding: '1.5rem',
+    padding: '2rem 1.5rem',
     background: 'white'
   },
   question: {
@@ -161,20 +162,20 @@ const useStyles = createUseStyles({
     fontSize: '1rem',
     lineHeight: 1.6,
     color: '#1f2937',
-    marginBottom: '1rem',
-    fontWeight: 500
+    marginBottom: '1.5rem',
+    fontWeight: 400
   },
   choicesContainer: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.5rem'
+    gap: '0.75rem'
   },
   choice: {
     display: 'flex',
     alignItems: 'flex-start',
-    padding: '0.75rem 1rem',
+    padding: '1rem',
     border: '1px solid #e5e7eb',
-    borderRadius: '4px',
+    borderRadius: '6px',
     cursor: 'pointer',
     transition: 'all 0.2s',
     background: 'white',
@@ -191,14 +192,16 @@ const useStyles = createUseStyles({
     }
   },
   choiceLetter: {
-    fontWeight: 600,
+    fontWeight: 700,
     color: '#374151',
-    marginRight: '0.75rem',
-    minWidth: '1.5rem'
+    marginRight: '1rem',
+    minWidth: '1.5rem',
+    fontSize: '0.9rem'
   },
   choiceText: {
     flex: 1,
-    color: '#1f2937'
+    color: '#1f2937',
+    lineHeight: 1.5
   },
   questionSidebar: {
     background: '#f8f9fa',
@@ -230,11 +233,11 @@ const useStyles = createUseStyles({
   },
   navigation: {
     background: 'white',
-    padding: '0.5rem 1rem',
+    padding: '1rem 1.5rem',
     display: 'flex',
     justifyContent: 'flex-end',
     alignItems: 'center',
-    gap: '0.75rem',
+    gap: '1rem',
     borderTop: '1px solid #e5e7eb',
     position: 'fixed',
     bottom: 0,
@@ -243,15 +246,15 @@ const useStyles = createUseStyles({
     zIndex: 10
   },
   navButton: {
-    padding: '0.5rem 1rem',
+    padding: '0.625rem 1.25rem',
     border: '1px solid #d1d5db',
-    borderRadius: '4px',
+    borderRadius: '6px',
     background: 'white',
+    fontSize: '0.9375rem',
+    fontWeight: 500,
     color: '#374151',
     cursor: 'pointer',
     transition: 'all 0.2s',
-    fontWeight: 500,
-    fontSize: '0.9rem',
     '&:hover:not(:disabled)': {
       background: '#f9fafb',
       borderColor: '#6b7280'

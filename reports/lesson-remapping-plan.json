@@ -1,0 +1,3623 @@
+{
+  "generated_at": "2025-10-25T19:53:32.965Z",
+  "math": {
+    "updates": 265,
+    "distribution": {
+      "6.2": 16,
+      "5.1": 26,
+      "2.2": 112,
+      "3.1": 106,
+      "word-problems": 23,
+      "sequences": 26,
+      "trigonometry": 8,
+      "functions": 29,
+      "complex-numbers": 4,
+      "vectors": 2,
+      "matrices": 3,
+      "5.2": 5,
+      "6.4": 4,
+      "6.3": 17,
+      "6.1": 14,
+      "3.5": 6,
+      "5.3": 2,
+      "3.4": 3,
+      "2.3": 5,
+      "3.2": 3,
+      "3.3": 4,
+      "quadratics": 1,
+      "5.5": 1
+    }
+  },
+  "english": {
+    "updates": 245,
+    "distribution": {
+      "sentence-structure": 226,
+      "redundancy": 210,
+      "logical-placement": 9,
+      "word-choice": 12,
+      "which-choice": 19,
+      "transitions": 20,
+      "adding-deleting": 21,
+      "commas": 4,
+      "verbs": 2,
+      "punctuation": 1,
+      "modifiers": 1
+    }
+  },
+  "changes": {
+    "math": [
+      {
+        "id": "8fc109f6-2b9e-4e9c-95d4-ae7c9a3c4ed2",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "statistics-probability",
+        "category": "PHM-S"
+      },
+      {
+        "id": "62b6197b-f246-4942-88c7-a4be030b34aa",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "number-theory",
+        "category": "PHM-N"
+      },
+      {
+        "id": "7490103c-ee6e-44d1-8377-f6d40160b036",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "word-problem",
+        "category": "IES"
+      },
+      {
+        "id": "ecad7e36-8ce0-4911-8c50-369ad42b64b1",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "f0a74934-ac56-46c3-a996-dafac5d5e487",
+        "oldLesson": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "PHM-A"
+      },
+      {
+        "id": "7c3b8888-8892-419f-b21a-852d7eb02cca",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "math-problem-solving",
+        "category": "IES"
+      },
+      {
+        "id": "cc62518c-5bc6-40fb-9e66-93218d5114f0",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "statistics-probability",
+        "category": "PHM-S"
+      },
+      {
+        "id": "129cecab-8a0f-4a8d-9321-f53bb1e3f276",
+        "oldLesson": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "f7dd7425-1629-41cc-894b-bdc8ac4b0790",
+        "oldLesson": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "35d43e98-6545-47c6-a022-221a7a4bc519",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word_problems",
+        "category": "ALG"
+      },
+      {
+        "id": "b1aefeed-e21d-4e78-babf-4f590260d987",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "word-problem",
+        "category": "IES"
+      },
+      {
+        "id": "61cff991-f01e-4913-9947-3e86861de3b5",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "statistics-probability",
+        "category": "PHM-S"
+      },
+      {
+        "id": "fb4ad37d-fe29-4df2-88d5-bd991aef3567",
+        "oldLesson": "a0fbdb59-614b-4597-99c1-344c4f3ad47e",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "PHM-A"
+      },
+      {
+        "id": "4181d7ed-6974-47cb-a684-aa30a715db72",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "sequences",
+        "category": "PHM-N"
+      },
+      {
+        "id": "98d9b1f7-9950-4ad2-bd1c-29b510d1a569",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+        "type": "trigonometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "7039a5ba-6684-4922-bc36-6400766a00f1",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "functions",
+        "category": "PHM-F"
+      },
+      {
+        "id": "85cfd25a-6f80-49aa-afec-a7dbe298c64e",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "0090877d-e7d2-4ac4-80b4-87a42502a214",
+        "type": "complex-numbers",
+        "category": "PHM-N"
+      },
+      {
+        "id": "f03b8913-0341-4961-b3e4-0145017b3abf",
+        "oldLesson": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "PHM-A"
+      },
+      {
+        "id": "885510fc-3ba7-43e7-8986-e9ed190fb7b9",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "7af23229-16aa-4455-a777-66cdd8011dff",
+        "type": "vectors",
+        "category": "PHM-N"
+      },
+      {
+        "id": "d9e16390-1bde-4bf4-98a8-c45d47166122",
+        "oldLesson": "a0fbdb59-614b-4597-99c1-344c4f3ad47e",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "PHM-A"
+      },
+      {
+        "id": "efc1923e-7b0d-4a26-a506-9d14ca826bfb",
+        "oldLesson": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "PHM-A"
+      },
+      {
+        "id": "9da2fc7c-3104-42d4-8bf3-81c864c36599",
+        "oldLesson": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "1e2d71e1-5d9b-43af-800a-08957dc015a7",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "6e95c291-2e8a-4ae9-8f7e-10caad8588b9",
+        "type": "matrices",
+        "category": "PHM-A"
+      },
+      {
+        "id": "e7e62b20-c6f6-4a70-88df-60772071e30c",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "6fc426f9-b15c-4bde-beeb-3c91b8903a53",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+        "type": "trigonometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "173f5ff0-361b-4664-bd09-d90de9677815",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "sequences",
+        "category": "PHM-N"
+      },
+      {
+        "id": "1ed04d33-f711-4edb-9db7-cf8809cc67f6",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+        "type": "percentages",
+        "category": "ALG"
+      },
+      {
+        "id": "8d9efb59-9cc0-4e88-ae42-e2e6757f5c6a",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "word-problem",
+        "category": "IES"
+      },
+      {
+        "id": "cd3b1682-4df3-47fb-981d-c0c385576b5b",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "sequences",
+        "category": "PHM-N"
+      },
+      {
+        "id": "150a6154-c26a-4da5-a471-4d9ac5d6f3b5",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "aaea35f0-81c0-4b3e-930c-d13edeeb3db5",
+        "type": "counting",
+        "category": "PHM-S"
+      },
+      {
+        "id": "3abdcd89-7792-4fff-ad5a-f4c82fc40409",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "algebra",
+        "category": "PHM-F"
+      },
+      {
+        "id": "1a8f34a0-4232-4939-8fbb-16b614ab3ec9",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "statistics-probability",
+        "category": "PHM-N"
+      },
+      {
+        "id": "219a348c-f6d9-4c1e-8103-feef20979421",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "09a2fe35-c91e-4ba2-b4a8-fc6dee195963",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "PHM-N"
+      },
+      {
+        "id": "084aed50-c00d-4765-95d2-5e548dd61860",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "statistics-probability",
+        "category": "PHM-S"
+      },
+      {
+        "id": "e4d0641f-7f05-4e02-ac54-419c3a6d3c07",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "sequences",
+        "category": "IES"
+      },
+      {
+        "id": "0739235f-b8c4-451e-984b-4996788f55fb",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "trigonometry",
+        "category": "IES"
+      },
+      {
+        "id": "ff9cfd18-8585-46fd-aecb-058a40472eea",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "trigonometry",
+        "category": "PHM-F"
+      },
+      {
+        "id": "420d03b2-76f3-4a81-ab52-7cbd1507e74e",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "math-problem-solving",
+        "category": "PHM-F"
+      },
+      {
+        "id": "460f0e95-3ade-454f-9706-07c53781eba5",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "statistics-probability",
+        "category": "PHM-S"
+      },
+      {
+        "id": "364fc9a1-ab42-4a5e-a548-a9b0c50476d8",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "functions",
+        "category": "PHM-F"
+      },
+      {
+        "id": "e399992b-56f4-4efc-aa64-a12e76cc807f",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "38283afa-7fcf-468d-a0e4-a353834875da",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "functions",
+        "category": "PHM-A"
+      },
+      {
+        "id": "f9ca2718-10d3-471e-acbe-566c90587f16",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "math-problem-solving",
+        "category": "PHM-F"
+      },
+      {
+        "id": "7427095c-423d-4efa-bba9-da93e82d80f3",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "math-problem-solving",
+        "category": "IES"
+      },
+      {
+        "id": "e49b1f02-4b01-4cfc-bb57-039ebe74c24b",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "math-problem-solving",
+        "category": "PHM-F"
+      },
+      {
+        "id": "1b729cee-e19c-4790-aed1-11aa8a21ee2d",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "sequences",
+        "category": "PHM-F"
+      },
+      {
+        "id": "a9d94c9e-d106-4406-876b-6e4d9e324295",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "algebra",
+        "category": "PHM-F"
+      },
+      {
+        "id": "3e4f8d10-aec8-4cd3-8483-98e5300a15e2",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "b4756eb4-5db0-4e85-877a-8617100557ba",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+        "type": "trigonometry",
+        "category": "PHM-N"
+      },
+      {
+        "id": "76c6816a-67c7-4693-b5ca-b56a1f7f35c1",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "math-problem-solving",
+        "category": "IES"
+      },
+      {
+        "id": "5e60f87e-0ac3-40ed-974a-23db8c252f54",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "6e95c291-2e8a-4ae9-8f7e-10caad8588b9",
+        "type": "matrices",
+        "category": "ALG"
+      },
+      {
+        "id": "f1904d31-1191-4e21-afe5-4c5dd7c9a73d",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "probability",
+        "category": "ALG"
+      },
+      {
+        "id": "6a02a147-c4e1-4f46-9271-1fc9b85e1c8b",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "math-problem-solving",
+        "category": "IES"
+      },
+      {
+        "id": "675c0dcd-cf11-49c5-a7cf-71696cd5e7a5",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "math-problem-solving",
+        "category": "PHM-F"
+      },
+      {
+        "id": "608f47f1-fc53-4449-bb58-a4666b29af94",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "statistics-probability",
+        "category": "PHM-S"
+      },
+      {
+        "id": "ca055689-47eb-4c7d-a247-dfd1e7045ef6",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "9423cd5d-bc56-4c14-8072-a0939310ffca",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+        "type": "statistics",
+        "category": "ALG"
+      },
+      {
+        "id": "b0ad1d17-2342-41d5-b707-b7df52ba6175",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+        "type": "statistics",
+        "category": "ALG"
+      },
+      {
+        "id": "3032de9a-2a09-4b65-936e-6b0eb2d5cab1",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "probability",
+        "category": "ALG"
+      },
+      {
+        "id": "eaa42270-a5d0-410a-99a3-7c2ce89ae543",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "c12ba996-83e9-4d75-b166-5194744cc9c9",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "sequences",
+        "category": "ALG"
+      },
+      {
+        "id": "704c210b-eb68-4ec5-852d-1804901bf055",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "functions",
+        "category": "PHM-S"
+      },
+      {
+        "id": "8dee21c4-d991-407f-800c-bd012231f7c3",
+        "oldLesson": "a8cd8513-f0a8-4bb1-9890-f21dc053939a",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "ALG"
+      },
+      {
+        "id": "0cb8fafc-6eda-463a-9902-16b009959327",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "aaea35f0-81c0-4b3e-930c-d13edeeb3db5",
+        "type": "counting",
+        "category": "ALG"
+      },
+      {
+        "id": "eeed602d-a012-465b-85cb-5dfb2f2ad2d2",
+        "oldLesson": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "be409f8f-7fb0-4fa4-99b6-81cd2569fbde",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+        "type": "trigonometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "636be26d-dd9c-4add-be19-54e01a92b6c7",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "statistics-probability",
+        "category": "PHM-F"
+      },
+      {
+        "id": "1d8a1355-9416-4d88-bb8e-250580610d58",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "math-problem-solving",
+        "category": "IES"
+      },
+      {
+        "id": "72e154a1-1b11-44db-92d2-a73940a4be97",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "prealgebra",
+        "category": "number-properties"
+      },
+      {
+        "id": "773a3714-adb7-4916-b1ad-1b42b328859b",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "probability",
+        "category": "ALG"
+      },
+      {
+        "id": "002d7fce-59ad-4537-8858-343be785e895",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "trigonometry",
+        "category": "GEO"
+      },
+      {
+        "id": "6e53993b-5b9e-49aa-8007-c0d54950310d",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+        "type": "linear_inequalities",
+        "category": "ALG"
+      },
+      {
+        "id": "0ce0a006-dc3f-40eb-bef3-d3cedb5e761d",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "27833f99-7aa1-4e5d-92e4-c953fadebc0d",
+        "type": "ratios",
+        "category": "ALG"
+      },
+      {
+        "id": "26fb0747-90c2-4453-b4f9-0770b2f1e7a3",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "number_properties",
+        "category": "ALG"
+      },
+      {
+        "id": "41bcd938-d9c8-494b-8ff6-bd8d0837448a",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "a0fbdb59-614b-4597-99c1-344c4f3ad47e",
+        "type": "logarithms",
+        "category": "ALG"
+      },
+      {
+        "id": "89b49f09-bb5e-4bdc-89dc-d738128a7825",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "statistics-probability",
+        "category": "PHM-N"
+      },
+      {
+        "id": "2d52749e-fd02-4e1d-9a1c-38fca646a4f8",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "statistics-probability",
+        "category": "PHM-N"
+      },
+      {
+        "id": "e3817580-c278-4c06-976f-38d7edbad67d",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "PHM-A"
+      },
+      {
+        "id": "d589e73d-acca-409d-bddf-11ccb2bd044c",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "IM"
+      },
+      {
+        "id": "1a26d21f-087a-41d6-a19b-ae6ea917ad9a",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "4cbd15ab-1593-4be9-ad3f-285236ba7869",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "functions",
+        "category": "ALG"
+      },
+      {
+        "id": "eebdaf1f-4e5e-4ca1-b3dc-22c7e2bf2323",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "4a37217d-5ebf-40fd-8b4c-c47500c6d436",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "e6d04145-438f-4265-902a-8fdcdb8c6057",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "probability",
+        "category": "ALG"
+      },
+      {
+        "id": "3e50dd26-a2a2-4820-b61d-e36982c9ee85",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "type": "linear_equations",
+        "category": "ALG"
+      },
+      {
+        "id": "fd8a8a4e-bcc2-43bd-a631-a255539a796c",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "number_properties",
+        "category": "ALG"
+      },
+      {
+        "id": "98fa3ec8-d380-451c-9f74-39d107289983",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "trigonometry",
+        "category": "GEO"
+      },
+      {
+        "id": "3b5f4749-7186-4df3-82f1-566233246d7e",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+        "type": "statistics",
+        "category": "ALG"
+      },
+      {
+        "id": "434ba4ac-3ef5-47c4-ba46-2d136f65c71b",
+        "oldLesson": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "bc662e31-7287-4e9c-a584-7e10679903c6",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "coordinate_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "ea9ab1fd-ec5d-405e-8182-a410eec86fc8",
+        "oldLesson": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "ALG"
+      },
+      {
+        "id": "6d592144-1997-455c-9189-c59ba146fd3a",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+        "type": "percentages",
+        "category": "ALG"
+      },
+      {
+        "id": "1bbce349-fdf5-4457-8bc3-e48a2397f124",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "445727bd-8d4e-414b-b1ea-bee6babd8a07",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "prealgebra",
+        "category": "time-calculations"
+      },
+      {
+        "id": "34483ad3-16f4-462b-92bc-18e3e1184a3e",
+        "oldLesson": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "coordinate-geometry"
+      },
+      {
+        "id": "eaabbfda-8679-486b-9676-fc4c15b415da",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "coordinate_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "108ba204-75d6-430a-a189-b3360ace7313",
+        "oldLesson": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "0a79c3ab-98cc-4c52-b293-092fa44ed680",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "algebra",
+        "category": "PHM-F"
+      },
+      {
+        "id": "fe3dd80b-1491-4f92-93d3-90f2271c6858",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+        "type": "trigonometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "ceda08da-cd92-4629-a35a-27f29624a7e6",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "IM"
+      },
+      {
+        "id": "df4dbc2b-b764-48d6-83df-16f59bb53c67",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "PHM-A"
+      },
+      {
+        "id": "e875113e-1463-46ab-91fd-2492e55fd36b",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "PHM-A"
+      },
+      {
+        "id": "07cc2b67-183a-423d-aa03-7fcf301470ce",
+        "oldLesson": "b8c03bf0-99df-460d-be21-0015eebe7920",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "PHM-N"
+      },
+      {
+        "id": "82e49eb9-352f-43af-b2d0-9185709f9693",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+        "type": "trigonometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "82d5e1e1-079c-4d0d-8b5d-e9a3ae832376",
+        "oldLesson": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "5851e523-0a13-40ee-95a9-ad1c0bd578d8",
+        "oldLesson": "b8c03bf0-99df-460d-be21-0015eebe7920",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "algebra",
+        "category": "PHM-F"
+      },
+      {
+        "id": "540940a8-dede-4462-bcf9-6f357eb3a26a",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "coordinate_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "ffb96ff3-7c85-4ef3-8237-8142220c92f7",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "a8cd8513-f0a8-4bb1-9890-f21dc053939a",
+        "type": "fractions",
+        "category": "ALG"
+      },
+      {
+        "id": "716e4720-3b65-48c3-b57c-efa8142a3f08",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "functions",
+        "category": "ALG"
+      },
+      {
+        "id": "4c91b798-494a-4c3f-b0ed-6f81d5a73c60",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+        "type": "statistics",
+        "category": "ALG"
+      },
+      {
+        "id": "d2f8fafb-9476-4fb6-8994-306e72061b5a",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "type": "linear_equations",
+        "category": "ALG"
+      },
+      {
+        "id": "b193d2d6-e28a-413b-95c4-8293944ff7a4",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+        "type": "statistics",
+        "category": "ALG"
+      },
+      {
+        "id": "9dd2aecc-8535-4483-8b3f-58a9f1344742",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "plane_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "7434b658-6e92-4f80-831a-3b1c19e0c7d6",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "algebra",
+        "category": "functions"
+      },
+      {
+        "id": "4c9fb11c-f1f5-468c-8800-5d5122e2b0b4",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "statistics-probability",
+        "category": "PHM-S"
+      },
+      {
+        "id": "22abe617-35cd-47d5-9e6e-c5443e848bcf",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "statistics-probability",
+        "category": "PHM-S"
+      },
+      {
+        "id": "c12872eb-724c-4cfd-99ba-143ccb403ed1",
+        "oldLesson": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "38b734e2-6279-4b12-9d8d-85c310494396",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+        "type": "trigonometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "568ebea8-8722-43ff-a4bc-178f697b2db3",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "PHM-A"
+      },
+      {
+        "id": "28d5050e-5b9f-4e7c-b978-7b41e47ce093",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "cc277215-49a5-48c9-897c-3996cb6e280b",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "PHM-A"
+      },
+      {
+        "id": "44247274-f179-40dc-802b-a7ddc613bd41",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "coordinate_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "7f286b33-9bc3-41db-b025-99b28cc124ad",
+        "oldLesson": "34e50480-0a09-4f9f-add4-c1121f66776b",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "ALG"
+      },
+      {
+        "id": "907b48b3-879c-40a5-a005-7108e6cc61c3",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "functions",
+        "category": "ALG"
+      },
+      {
+        "id": "e0f6280b-7a11-4dec-8c05-b4e2cbbee6f2",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "coordinate_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "c82a9553-c55e-4dcd-b22e-248757db94db",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "plane_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "86c702cb-b802-479f-b23d-30389aad72ed",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "type": "linear_equations",
+        "category": "ALG"
+      },
+      {
+        "id": "ce73ad40-d950-4a76-9158-ff75fc1b5c17",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "statistics-probability",
+        "category": "PHM-S"
+      },
+      {
+        "id": "dbff9a55-8466-4b5c-8d70-605d0e96e769",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "PHM-N"
+      },
+      {
+        "id": "4b9df2c4-0275-45ec-ac00-18ac9924c643",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "PHM-A"
+      },
+      {
+        "id": "0c7076a4-73e6-4ff9-bf89-da5f7f676e84",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "PHM-A"
+      },
+      {
+        "id": "f8890559-c53c-42b5-a3fc-fadbc9c5e2ad",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+        "type": "trigonometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "518fbf22-ffc6-41e2-9f9d-5e571ad12c83",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "PHM-A"
+      },
+      {
+        "id": "3de7b01c-abd9-415a-92d5-d13678fe87aa",
+        "oldLesson": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "PHM-A"
+      },
+      {
+        "id": "1219341f-1f83-49d8-b83a-f63c243398dc",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "coordinate_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "1750eff3-db4d-46ff-b63c-275e6b0adbcf",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "sequences",
+        "category": "ALG"
+      },
+      {
+        "id": "76a2f807-fda5-42b2-aa06-c511387fe29e",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "probability",
+        "category": "ALG"
+      },
+      {
+        "id": "735bc95b-c659-407e-9567-8067b95b20de",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "functions",
+        "category": "ALG"
+      },
+      {
+        "id": "fd2b0e17-e07c-4a97-9f61-e373ace69c36",
+        "oldLesson": "b8c03bf0-99df-460d-be21-0015eebe7920",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "intermediate-algebra"
+      },
+      {
+        "id": "25fd6717-1412-437d-9551-1e4d2084a1b5",
+        "oldLesson": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "elementary-algebra"
+      },
+      {
+        "id": "7b861bc8-8a7b-41bd-99af-a9337d7cce38",
+        "oldLesson": "b8c03bf0-99df-460d-be21-0015eebe7920",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "algebra",
+        "category": "functions"
+      },
+      {
+        "id": "bc0baae0-a860-4049-ac9a-684d59161efb",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "prealgebra",
+        "category": "probability-statistics"
+      },
+      {
+        "id": "86c71798-bc51-4eed-8163-305c045d1cee",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+        "type": "prealgebra",
+        "category": "statistics-averages"
+      },
+      {
+        "id": "74306f50-a5a6-4792-a8a4-934bf49b47f3",
+        "oldLesson": "a0fbdb59-614b-4597-99c1-344c4f3ad47e",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "algebra",
+        "category": "functions"
+      },
+      {
+        "id": "c8cebadd-04ec-4664-82d8-8e2f251ba05a",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+        "type": "prealgebra",
+        "category": "statistics-averages"
+      },
+      {
+        "id": "4f2d13fe-8ee8-4aa7-a8bb-89a0e256a68b",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "a8cd8513-f0a8-4bb1-9890-f21dc053939a",
+        "type": "prealgebra",
+        "category": "fractions"
+      },
+      {
+        "id": "e12324c5-9629-4dd9-9d5d-82363281d507",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "27833f99-7aa1-4e5d-92e4-c953fadebc0d",
+        "type": "prealgebra",
+        "category": "proportions"
+      },
+      {
+        "id": "8c99c8f6-4754-46d4-be48-eb5091c87db3",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+        "type": "prealgebra",
+        "category": "percentages"
+      },
+      {
+        "id": "7ec1f38e-9463-4d32-98fa-359000324123",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+        "type": "prealgebra",
+        "category": "percentages"
+      },
+      {
+        "id": "17915a15-cc3b-467a-b3fa-9c7e69b89aea",
+        "oldLesson": "b8c03bf0-99df-460d-be21-0015eebe7920",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "ALG"
+      },
+      {
+        "id": "9805c2a8-cfe8-4853-94a2-09fbc31af3b7",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "coordinate_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "d79d7ee2-9f19-4545-8759-47df3eb006e4",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "453287b2-1a70-466f-86b8-1296d3a36f22",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "type": "linear_equations",
+        "category": "ALG"
+      },
+      {
+        "id": "c239e58d-d7fe-47a9-8d7c-ff3e4491fd02",
+        "oldLesson": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "transformations"
+      },
+      {
+        "id": "e7071abd-054d-4ece-86ec-048225597496",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "coordinate-geometry"
+      },
+      {
+        "id": "13b2f918-4eab-4c67-8ef7-04ae26e528b2",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "algebra",
+        "category": "functions"
+      },
+      {
+        "id": "bc479205-1b61-44c0-8502-ea5132331d5a",
+        "oldLesson": "a8cd8513-f0a8-4bb1-9890-f21dc053939a",
+        "newLesson": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+        "type": "algebra",
+        "category": "sequences"
+      },
+      {
+        "id": "59626b6f-397c-47b9-973d-d7ea7075d1ab",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "algebra",
+        "category": "functions"
+      },
+      {
+        "id": "d04288cf-1093-427e-ab99-721f598b98ef",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "prealgebra",
+        "category": "probability-statistics"
+      },
+      {
+        "id": "c296c069-cbf7-4ed3-9b0b-79f5306ab370",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "prealgebra",
+        "category": "probability-statistics"
+      },
+      {
+        "id": "4c7d50ba-2237-4d6a-b151-d5cac1ec9489",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "coordinate_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "2dd08e35-55e3-477a-a9aa-d44d8da2253e",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "a8cd8513-f0a8-4bb1-9890-f21dc053939a",
+        "type": "fractions",
+        "category": "ALG"
+      },
+      {
+        "id": "923b7e9c-05b6-4bc3-84f6-102e49475057",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b8c03bf0-99df-460d-be21-0015eebe7920",
+        "type": "exponents",
+        "category": "ALG"
+      },
+      {
+        "id": "5ff47c2e-2dea-4e7f-a259-790a98e64f60",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "plane_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "5cc1896c-1486-4920-9e17-f7113bccdbd7",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "plane_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "d15a1bb4-8b9b-4b61-ab7d-05bb7d3e235f",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+        "type": "statistics",
+        "category": "ALG"
+      },
+      {
+        "id": "a44e6149-eec2-4768-9c4c-c878e6d3b987",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "7af23229-16aa-4455-a777-66cdd8011dff",
+        "type": "vectors",
+        "category": "ALG"
+      },
+      {
+        "id": "b90053a6-ff64-4636-97b2-06bd44c45c2a",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "31574e82-38a2-4699-9299-b54beeeb850b",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "coordinate_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "c3ab4a35-270a-426f-89b6-a328314edbdd",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "functions",
+        "category": "ALG"
+      },
+      {
+        "id": "abee6fbc-9503-41df-8f9c-502f43aa6009",
+        "oldLesson": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "ALG"
+      },
+      {
+        "id": "2edb0879-f3a9-4618-a583-9ee36d56f1de",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+        "type": "inequalities",
+        "category": "ALG"
+      },
+      {
+        "id": "eb071dec-fa47-48d2-a787-1d066893b6e5",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "trigonometry",
+        "category": "GEO"
+      },
+      {
+        "id": "53a6f88d-8d9a-411a-8e5a-c779ee83ab60",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "trigonometry",
+        "category": "GEO"
+      },
+      {
+        "id": "95660599-bbcf-47ca-a779-55960f281c41",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word_problems",
+        "category": "ALG"
+      },
+      {
+        "id": "f14d6a59-b265-4a5b-82c3-77a052d2d295",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b8c03bf0-99df-460d-be21-0015eebe7920",
+        "type": "radicals",
+        "category": "ALG"
+      },
+      {
+        "id": "0d0498aa-4a63-4586-8b13-7b0fa6c2e074",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "7cd992ac-09e9-487d-a6cb-defcb48aa6fd",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "number_properties",
+        "category": "ALG"
+      },
+      {
+        "id": "5786d598-f52b-4448-909f-6c522e3989ec",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "probability",
+        "category": "ALG"
+      },
+      {
+        "id": "97bb80ad-9a66-446e-9043-0224e018f327",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "0090877d-e7d2-4ac4-80b4-87a42502a214",
+        "type": "complex_numbers",
+        "category": "ALG"
+      },
+      {
+        "id": "cf2f7ccb-c1f1-4d7e-88f5-5fb808bf556d",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "228e2bbc-68aa-4499-855c-81728c7c01f0",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "6e95c291-2e8a-4ae9-8f7e-10caad8588b9",
+        "type": "matrices",
+        "category": "ALG"
+      },
+      {
+        "id": "e958d693-80fa-421c-9e1e-8f4bdd5fd8b0",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "trigonometry",
+        "category": "GEO"
+      },
+      {
+        "id": "688411cd-c43a-42b5-9d0b-dcffb1281442",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "probability",
+        "category": "ALG"
+      },
+      {
+        "id": "43321328-67a6-4e69-89c2-ac6d019cd954",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "aaea35f0-81c0-4b3e-930c-d13edeeb3db5",
+        "type": "combinatorics",
+        "category": "ALG"
+      },
+      {
+        "id": "73158834-1b5d-492f-b39b-764ef1a68ea2",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "0090877d-e7d2-4ac4-80b4-87a42502a214",
+        "type": "complex_numbers",
+        "category": "ALG"
+      },
+      {
+        "id": "93ac65b9-bf60-4ea9-9610-8a0d90627d09",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "functions",
+        "category": "ALG"
+      },
+      {
+        "id": "ea027f0c-7e5c-4c7e-8ee9-d9ad5b4ef63f",
+        "oldLesson": "b8c03bf0-99df-460d-be21-0015eebe7920",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "ALG"
+      },
+      {
+        "id": "97d2ac3a-126e-4e43-a31d-9a091d62ea95",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+        "type": "statistics",
+        "category": "ALG"
+      },
+      {
+        "id": "3351eca9-f3b1-436c-9acc-e36ae9905f92",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "type": "graphing",
+        "category": "ALG"
+      },
+      {
+        "id": "fd0a9b46-6291-4309-a7b6-50825e581b94",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+        "type": "statistics",
+        "category": "ALG"
+      },
+      {
+        "id": "f7721e1a-8c0b-45ef-bb65-e7715b484f81",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+        "type": "statistics",
+        "category": "ALG"
+      },
+      {
+        "id": "90b7054e-d205-442d-8ef2-2c72589b8caa",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "97e09d01-6121-4057-a9a0-6b91d2dec1c5",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "number_properties",
+        "category": "ALG"
+      },
+      {
+        "id": "d090dcba-db0b-4b71-808f-30d1b9a27e1f",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "trigonometry",
+        "category": "GEO"
+      },
+      {
+        "id": "42229697-dddf-484d-be8f-e102172e5617",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "f7516c41-afb2-48fb-a4e2-df9fe41d8b23",
+        "type": "quadratics",
+        "category": "ALG"
+      },
+      {
+        "id": "b1c429d6-5250-467f-921e-352a23ef123a",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "0d596b74-7247-4aae-b243-be07f1da0181",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "trigonometry",
+        "category": "GEO"
+      },
+      {
+        "id": "a19a8321-caa5-407c-94d0-e3d27dec4971",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "a0fbdb59-614b-4597-99c1-344c4f3ad47e",
+        "type": "logarithms",
+        "category": "ALG"
+      },
+      {
+        "id": "42822b05-839d-4705-b855-0e0a5803578c",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "functions",
+        "category": "ALG"
+      },
+      {
+        "id": "5837c626-8f16-41ef-8005-04863ddf99ad",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "sequences",
+        "category": "ALG"
+      },
+      {
+        "id": "77030687-4863-4270-86d7-8d90761b7f9b",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+        "type": "inequalities",
+        "category": "ALG"
+      },
+      {
+        "id": "062ab40d-20b2-4c22-8ae5-e3d63de54ba1",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "word-problem",
+        "category": "IES"
+      },
+      {
+        "id": "c485d187-ab08-4a8c-9ec1-b3b6aad8a978",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "statistics-probability",
+        "category": "PHM-N"
+      },
+      {
+        "id": "f701d707-fa60-41ed-b7e2-adbd30f5178c",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "prealgebra",
+        "category": "number-properties"
+      },
+      {
+        "id": "a2656e35-3680-4acc-8c60-1a2682e92471",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+        "type": "prealgebra",
+        "category": "arithmetic-sequences"
+      },
+      {
+        "id": "4e1e2083-ced1-4ba1-9007-15bb26cccd79",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "prealgebra",
+        "category": "data-analysis"
+      },
+      {
+        "id": "feb15e5b-7e68-4734-b1bd-2b68d20c9d59",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "prealgebra",
+        "category": "probability-statistics"
+      },
+      {
+        "id": "94eafb45-d794-4742-8137-deb683bcc324",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "4d711b65-dcda-4fb5-9740-7bfaae194ff2",
+        "type": "prealgebra",
+        "category": "scientific-notation"
+      },
+      {
+        "id": "d0f5a213-aa9b-45d2-bdb3-5447ea047514",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "prealgebra",
+        "category": "rates"
+      },
+      {
+        "id": "0d899809-7a57-4302-b705-3c23cf0024d7",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "algebra",
+        "category": "functions"
+      },
+      {
+        "id": "04d62e1a-a73b-4492-8956-f85be915293e",
+        "oldLesson": "b8c03bf0-99df-460d-be21-0015eebe7920",
+        "newLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "type": "algebra",
+        "category": "PHM-A"
+      },
+      {
+        "id": "7e8336f8-53fd-4375-8ca7-30193a2123c1",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word_problems",
+        "category": "ALG"
+      },
+      {
+        "id": "1bb08b81-0dc7-4487-bfda-fcfe3db7a47a",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "number_properties",
+        "category": "ALG"
+      },
+      {
+        "id": "3221d33a-103b-4ba9-a672-c3c2d077468b",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "number_properties",
+        "category": "ALG"
+      },
+      {
+        "id": "d6eefe42-4ea0-4c1a-8575-a8b6eb6f9e3b",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+        "type": "functions",
+        "category": "ALG"
+      },
+      {
+        "id": "1396da43-fe94-4bb5-86cd-eb65165fd7ad",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "number_properties",
+        "category": "ALG"
+      },
+      {
+        "id": "3145a58e-2c21-4a1b-9fe5-36e82db7ac9c",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "1cfba176-b0b3-4c41-b72a-4caed3105034",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+        "type": "statistics",
+        "category": "ALG"
+      },
+      {
+        "id": "ae42eae0-4317-429b-b3ec-29d07a6a67c7",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "coordinate_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "64722f0b-2bba-40b3-af66-9c2864491b6f",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "number_properties",
+        "category": "ALG"
+      },
+      {
+        "id": "6947f65f-3a3d-439b-8238-078c47c9c1a6",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "plane_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "8984f7d6-61f8-435a-9634-1fd6717a5867",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "3f0d8304-7fcd-4f23-aa8d-18569aa32ffb",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+        "type": "statistics",
+        "category": "ALG"
+      },
+      {
+        "id": "51896e22-c9b7-4f33-98c2-0d8ed52e63e1",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "8eaca618-3449-4544-8edd-9ca8025ed2d0",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "probability",
+        "category": "ALG"
+      },
+      {
+        "id": "4991192c-b1c6-4f8b-a041-3ae531fdd70e",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "trigonometry",
+        "category": "GEO"
+      },
+      {
+        "id": "189192d3-8744-4c5a-9cf8-9ac78833de98",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "plane_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "92bd9656-f9ec-401a-ae47-ba23e24bbdd2",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "plane_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "af3f2902-6173-4191-a54a-17be083a922b",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "coordinate_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "e7b96d77-06ea-4830-8047-06c6d93bd24c",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "probability",
+        "category": "ALG"
+      },
+      {
+        "id": "7dbbfe26-a09a-4636-b60b-f7667392a0a3",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "a0fbdb59-614b-4597-99c1-344c4f3ad47e",
+        "type": "logarithms",
+        "category": "ALG"
+      },
+      {
+        "id": "79a6e3bc-c896-44d2-8b26-d89a1f850f5f",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "solid_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "81f69d65-06d9-4679-ad34-58efb8413266",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "probability",
+        "category": "ALG"
+      },
+      {
+        "id": "3571eaa7-9b1e-4996-98ee-15e5faca6ab4",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+        "type": "statistics",
+        "category": "ALG"
+      },
+      {
+        "id": "dd64f865-7484-439f-ae52-527c48f1eb73",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "plane_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "4995634f-d61f-4586-8511-588037acb28a",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "plane_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "d208daef-ebc0-49c0-9c69-78fd300dcf40",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "0090877d-e7d2-4ac4-80b4-87a42502a214",
+        "type": "complex_numbers",
+        "category": "ALG"
+      },
+      {
+        "id": "042789d3-a5de-4daf-84aa-c068847fa035",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "plane_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "f50f82de-53b9-46af-bba1-4a4a353f23b6",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "trigonometry",
+        "category": "GEO"
+      },
+      {
+        "id": "889ec51a-fc20-4c91-8297-beb3ac401ddf",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "plane_geometry",
+        "category": "GEO"
+      },
+      {
+        "id": "eb2bd105-1aca-4ed6-91ea-45b370f82426",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b8c03bf0-99df-460d-be21-0015eebe7920",
+        "type": "radicals",
+        "category": "ALG"
+      },
+      {
+        "id": "c942355d-051d-4abd-8be0-2ee25a5f7393",
+        "oldLesson": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "PHM-G"
+      },
+      {
+        "id": "f9183dc7-8f6e-4544-8f8b-05870e0e1ad2",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "statistics-probability",
+        "category": "PHM-G"
+      },
+      {
+        "id": "4bb730a7-62da-46a7-8416-5b04f8f5369b",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "math-problem-solving",
+        "category": "IES"
+      },
+      {
+        "id": "78a4f821-f746-4c4a-9683-427f47f9af23",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "prealgebra",
+        "category": "rates"
+      },
+      {
+        "id": "356de8d1-a4b1-4d99-8980-eb5b39b4e73b",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b8c03bf0-99df-460d-be21-0015eebe7920",
+        "type": "prealgebra",
+        "category": "exponents"
+      },
+      {
+        "id": "fa795cad-e9de-4972-a394-fa1c5db2db6b",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "prealgebra",
+        "category": "probability-statistics"
+      },
+      {
+        "id": "b03a4a45-58e8-4a13-b5de-630ef3bb3f4b",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "prealgebra",
+        "category": "probability-statistics"
+      },
+      {
+        "id": "25a319dd-3c1d-401a-aec0-687f2d884458",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "74013e77-3111-4dc6-beca-ff15948e4351",
+        "type": "prealgebra",
+        "category": "number-properties"
+      },
+      {
+        "id": "a562dfc4-5ace-41ca-9a14-f555e0e45a4b",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+        "type": "prealgebra",
+        "category": "percentages"
+      },
+      {
+        "id": "455ed433-ddb6-4d7d-948b-92ef8aa34a64",
+        "oldLesson": "928ee683-cf5c-46ab-a148-77da4e887e3b",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "geometry",
+        "category": "coordinate-geometry"
+      },
+      {
+        "id": "923f8645-6be3-48b7-a657-780db4bbccc1",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "PHM-N"
+      },
+      {
+        "id": "9c952c8e-866f-41ff-a8ea-8dcca239ec9c",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "PHM-A"
+      },
+      {
+        "id": "b0fd9a31-417d-4a1a-ae76-813a87855fc5",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "PHM-A"
+      },
+      {
+        "id": "76919c1e-32bd-4f5c-ae90-aee9985fee37",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "PHM-A"
+      },
+      {
+        "id": "4208d07d-92e9-4991-98bd-565f968e79a6",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+        "type": "word-problem",
+        "category": "PHM-A"
+      },
+      {
+        "id": "53af0fbf-525d-409d-8ec8-bebdde24d958",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "cd5f10f6-2970-4d73-82b1-029645565ae7",
+        "type": "statistics-probability",
+        "category": "PHM-S"
+      },
+      {
+        "id": "dabbf48d-6b74-4ac4-9e88-e895d175d79c",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+        "type": "probability",
+        "category": "ALG"
+      },
+      {
+        "id": "78374a8d-e497-492a-b3ba-a9acd9417afd",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "7a72a1a3-f054-47e6-97f7-098d3658970e",
+        "oldLesson": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "a46504c4-1a0f-4e12-8e37-0e58637f19b8",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "ad844a99-7156-4315-ac86-958f52468df2",
+        "type": "arithmetic",
+        "category": "ALG"
+      },
+      {
+        "id": "591f3dcb-183d-4fc8-8875-fd0cd0dad1e9",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "aaea35f0-81c0-4b3e-930c-d13edeeb3db5",
+        "type": "combinatorics",
+        "category": "ALG"
+      },
+      {
+        "id": "9ddb852e-572a-43cd-afb0-4453dbbd4684",
+        "oldLesson": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "newLesson": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "type": "trigonometry",
+        "category": "GEO"
+      }
+    ],
+    "english": [
+      {
+        "id": "a8a7dc52-bd1b-4eda-b387-bc350c5ada70",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "type": "sentence-placement",
+        "category": "POW"
+      },
+      {
+        "id": "b7ef3f3e-6da3-4abe-bff4-6cf4190395e1",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+        "type": "word-choice",
+        "category": "KLA"
+      },
+      {
+        "id": "2a3fbcff-1483-48e9-bb80-b910c6bb6b54",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+        "type": "word-choice",
+        "category": "KLA"
+      },
+      {
+        "id": "feeaa781-3d10-401c-8a3b-4ae48c30e1d0",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "type": "sentence-placement",
+        "category": "POW"
+      },
+      {
+        "id": "93955e31-fc55-4b0b-bf2b-a434ef630c2c",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "f58fadea-ab69-4651-9a1b-6cc6d8d8f800",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "colon",
+        "category": "CSE"
+      },
+      {
+        "id": "0ca8aa59-51e8-4ebc-ab32-27d6c9e0564a",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "69ef8f6c-c91d-4859-a791-5505a6b483df",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "type": "which-choice",
+        "category": "POW"
+      },
+      {
+        "id": "a2f2896d-4357-49e4-a511-651b67a0d5e8",
+        "oldLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-usage",
+        "category": "CSE"
+      },
+      {
+        "id": "9bd5cb04-515a-4d2d-b0e6-14ae69f58de1",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "type": "which-choice",
+        "category": "POW"
+      },
+      {
+        "id": "ab782701-d140-47ac-b058-fb986139d415",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "parallel-structure",
+        "category": "CSE"
+      },
+      {
+        "id": "994f7e1c-1822-490f-a63e-b8d31b2258a4",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "type": "adding-info",
+        "category": "POW"
+      },
+      {
+        "id": "7bb23987-60a5-493b-9834-6bdde96541b6",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "c446d84a-fd05-4298-a4c2-7ed45ed12d19",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "683060aa-f40e-4b71-84cb-10f7c80ea763",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "16b5f368-a2fb-4d6a-8634-b65a1fc2d103",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "main-idea",
+        "category": "POW"
+      },
+      {
+        "id": "6485f4b8-7899-42eb-96a2-21830f9e0ab2",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "type": "which-choice",
+        "category": "POW"
+      },
+      {
+        "id": "c3b3077f-8286-4329-a33b-76ebf9362534",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "verb-tense",
+        "category": "CSE"
+      },
+      {
+        "id": "30c790bc-0ca2-47eb-9648-5bfd921dbf5f",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+        "type": "word-choice",
+        "category": "KLA"
+      },
+      {
+        "id": "7cdbbeb5-8b19-41b3-ac0d-85a6c0fbafd5",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-usage",
+        "category": "CSE"
+      },
+      {
+        "id": "da165feb-a699-49f1-8f67-77123d2d4d62",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "b7061d62-5407-4f63-9ace-60c2e83377ca",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-usage",
+        "category": "CSE"
+      },
+      {
+        "id": "149dbb7a-291d-4c96-896c-10a6c79d48f7",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "type": "transition",
+        "category": "POW"
+      },
+      {
+        "id": "c230f7d5-aa66-4496-a057-462a42af2fe1",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "952d17e9-19dc-43c0-8af8-3060a998e189",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-usage",
+        "category": "CSE"
+      },
+      {
+        "id": "87cd56a5-dbfb-4e4c-adca-8e8315a572fb",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "type": "logical-placement",
+        "category": "POW"
+      },
+      {
+        "id": "748562dd-59e4-4f96-8a7c-9e28803b70d8",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "type": "deleting-sentence",
+        "category": "POW"
+      },
+      {
+        "id": "0944c6ff-6a75-4e39-aa7e-2fca58c796d7",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+        "type": "word-choice",
+        "category": "KLA"
+      },
+      {
+        "id": "dfd9866c-1af7-414d-99f7-9d0e8ca3fde8",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "verb-form",
+        "category": "CSE"
+      },
+      {
+        "id": "3dc5510e-f20a-4641-b345-71fc8daa7de8",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "type": "which-choice",
+        "category": "POW"
+      },
+      {
+        "id": "d9133f46-e4cd-497e-ba45-5d6d73705e6b",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "d8f02bb1-a36c-4d7a-a169-184c55d5a9bb",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "type": "sentence-placement",
+        "category": "POW"
+      },
+      {
+        "id": "dc542895-08ab-4199-b89e-5c719a25d071",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+        "type": "word-choice",
+        "category": "KLA"
+      },
+      {
+        "id": "d7e1bcb1-ddf5-491e-bca9-38a7a7f3c517",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "redundancy",
+        "category": "KLA"
+      },
+      {
+        "id": "0cd9b6be-d686-4b62-8cf5-95f8c93d7a61",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "verb-tense",
+        "category": "CSE"
+      },
+      {
+        "id": "fdade88c-7acc-4f84-a88b-e8fa323d9cf5",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-usage",
+        "category": "CSE"
+      },
+      {
+        "id": "03902a00-194c-4cc8-942f-cdef15b04cfe",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-usage",
+        "category": "CSE"
+      },
+      {
+        "id": "62ed33b6-f804-49d9-973a-ff9cb7324afd",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-usage",
+        "category": "CSE"
+      },
+      {
+        "id": "a61fcd04-9321-429d-b4df-3bf21a67652d",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-usage",
+        "category": "CSE"
+      },
+      {
+        "id": "41e63d55-4c23-4b85-a0a9-2a7a4ff85de5",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "dacc6576-a1fd-4c80-86a3-c0682127bed4",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "type": "comma-usage",
+        "category": "POW"
+      },
+      {
+        "id": "bd8db426-2b7d-4403-9c36-b62975a38e20",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "5102bbd6-868b-4c5d-9fc6-413abb8d6ae1",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "dash",
+        "category": "CSE"
+      },
+      {
+        "id": "0634f9c9-ac21-4356-be48-bf9febf053fb",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "type": "transition",
+        "category": "KLA"
+      },
+      {
+        "id": "eed5f8f2-f15b-4ea5-9f69-17dd6279d6ac",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "dash",
+        "category": "CSE"
+      },
+      {
+        "id": "4060de1a-3f08-4d43-b98e-b1d513399cf4",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "08696d8a-b746-4c00-9630-7e1ecf3476b1",
+        "oldLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "551d2145-4a57-45e2-97d1-ac06ef31f999",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "7bd22e65-3a15-432e-a908-698f299ecb40",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "10fff941-59e1-4d3a-84b7-d0fe8f9985ef",
+        "type": "verb-tense",
+        "category": "KLA"
+      },
+      {
+        "id": "87d6374a-7c39-4cd5-9e68-71914d6fcf53",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-usage",
+        "category": "CSE"
+      },
+      {
+        "id": "75a6b38e-2763-4243-86c2-77e42e71346d",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+        "type": "word-choice",
+        "category": "KLA"
+      },
+      {
+        "id": "6a78eb79-d273-427c-97e3-47ec8dc427ee",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-usage",
+        "category": "CSE"
+      },
+      {
+        "id": "364f8e2d-7eaf-4ab8-af0f-4d2f8fa17a5d",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "adbabee8-23c3-4b7f-960c-dea769c40d5b",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "a154a04c-dd1c-495f-91f3-e93cb080e073",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "fragment",
+        "category": "KLA"
+      },
+      {
+        "id": "05358797-cadd-4444-b1d3-d7b58abdc710",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "type": "transitions",
+        "category": "POW"
+      },
+      {
+        "id": "b6c83eb7-57a4-41fc-8bd3-868fc608aaed",
+        "oldLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "newLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "type": "comma-usage",
+        "category": "POW"
+      },
+      {
+        "id": "1e4c2f64-ff30-440e-b715-165ee14b1e74",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "e7a1a206-1641-47c9-af11-206db6839cbc",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "10fff941-59e1-4d3a-84b7-d0fe8f9985ef",
+        "type": "verb-agreement",
+        "category": "POW"
+      },
+      {
+        "id": "35f2c742-078b-428d-975a-54ddc75f4648",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "bef0b61a-1235-4c27-a1fb-7c09eae9998e",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+        "type": "word-choice",
+        "category": "KLA"
+      },
+      {
+        "id": "daa8e3e1-d659-456e-bf2a-2f96f9352b9f",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "type": "transition",
+        "category": "POW"
+      },
+      {
+        "id": "0a85b693-dd26-4367-ac53-c030bd975077",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "26719f07-fc26-402b-a3ff-52cbf239594b",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+        "type": "word-choice",
+        "category": "KLA"
+      },
+      {
+        "id": "986f6946-9bce-460f-a23d-c7992c039498",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-splice",
+        "category": "CSE"
+      },
+      {
+        "id": "88ea3642-e98f-425e-99d2-148c387d6ccc",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "verb-tense",
+        "category": "CSE"
+      },
+      {
+        "id": "e8402a1d-b68d-4690-a258-1275c8c1105d",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "wordiness",
+        "category": "CSE"
+      },
+      {
+        "id": "960697f5-85dd-4fee-b6e3-c166826ff319",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "3166873d-5518-41c4-a2e8-85e9e411d03a",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "which-choice",
+        "category": "CSE"
+      },
+      {
+        "id": "6adce4a0-f3f0-4efa-8b2e-a436ddeaf5fe",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-splice",
+        "category": "POW"
+      },
+      {
+        "id": "7461ca78-b1c7-44f8-9f19-33400b6c2d27",
+        "oldLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "bce86cab-7be3-44bd-8fc4-74020468656c",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "sentence-structure",
+        "category": "CSE"
+      },
+      {
+        "id": "bef2a6db-150c-45c4-8401-9ead5660eedb",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "type": "transition",
+        "category": "POW"
+      },
+      {
+        "id": "00d82d32-878e-495a-adae-fe0de62ca22f",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "type": "which-choice",
+        "category": "KLA"
+      },
+      {
+        "id": "6855b89e-d5ff-4933-9319-eb15a75fa097",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "e971238c-8a76-4013-bd8e-dd11cb962f46",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "fragment",
+        "category": "KLA"
+      },
+      {
+        "id": "ddc1186c-33fc-48c9-9870-bc03e6715dd1",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "b3c63458-43c7-4461-9ebc-ba5cf9a429ec",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "acf72394-a296-4354-b14f-9507914afe11",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "980a34b1-a25f-441a-b093-a83fce9dab6f",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "20ef655c-9ca5-46c0-b2d2-211577150250",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "1c857a86-6dd5-40cd-a038-f549e3d8b70d",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "a595feb7-a771-4144-b288-74f5533bd016",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "32eb6d93-18aa-4740-a2dd-a75bc9ea404a",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "3e1b603b-b32c-4a0a-bdd0-95895ebcb30f",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "5221fd7e-5baa-46ae-b43b-132c9cc5c155",
+        "oldLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "1430d21b-d70b-453b-90cc-d9bbb3968876",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "75579f30-02a4-4671-ae37-56316561b187",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "1839b010-ba46-401e-ae08-4865e978f925",
+        "oldLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "60baa741-cfaf-4c07-8ef8-d079915096cd",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "ee372661-7236-49f4-8779-99839db1d58f",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "7b5fabb9-07a6-43b3-914a-35997fdc49bb",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "c8e02144-978f-484a-b16d-48407b8aef19",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "258f289d-c7be-4d9b-95e6-970bdebbe551",
+        "oldLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "97d657e0-acc6-476c-8f5f-1567c09c6063",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "6ca8d59c-6aec-461d-acf2-99c74f5a3f8b",
+        "oldLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "e80127f8-55fc-4928-9487-1a07f998cbcb",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "684490f4-0f41-448c-b418-303adbc9ff6a",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "ddd38998-91c0-44e2-83ae-f07a8efde4ed",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "6c068c72-f401-47df-982d-955bb90dc41a",
+        "oldLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "a4b38e54-6a41-4104-b0b5-c9c847248e4e",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "e6de54da-b492-41ef-a6aa-8dd00aed6f2f",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "rhetorical-skills",
+        "category": "POW"
+      },
+      {
+        "id": "86c76893-f970-4caa-a7eb-4bfb7443820b",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "5f4838cb-edb8-4dbd-a5a3-18021122fdcc",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "type": "transitions",
+        "category": "KLA"
+      },
+      {
+        "id": "836fb8cd-307c-4d33-9c99-4054b855d479",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "rhetorical-skills",
+        "category": "POW"
+      },
+      {
+        "id": "b3132002-e33f-4863-8986-460c1d91767f",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "rhetorical-skills",
+        "category": "POW"
+      },
+      {
+        "id": "9f776b14-4f40-450c-a638-dd7578b5f3ca",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "973c71a1-02fd-47c9-9a09-e0a268217b88",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "12767778-640c-4492-8cd9-5e3ba4a6c428",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "type": "which-choice",
+        "category": "POW"
+      },
+      {
+        "id": "f6209a50-585a-401c-8051-579c27343b06",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "f1b04a53-2011-464a-9eb3-dfca0babc1f4",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "7c431e54-9271-4033-9ed9-0092a7d958f0",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "rhetorical-skills",
+        "category": "POW"
+      },
+      {
+        "id": "ee465b37-6987-42ab-9b5c-2781ff93cdba",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "ebd6dd46-5c1f-4a12-8cda-718ce078feb6",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "0e846235-f475-4207-ba03-135a411d59e9",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "rhetorical-skills",
+        "category": "POW"
+      },
+      {
+        "id": "7278b68d-ced1-42f2-9f2e-728fce91fbe0",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "3aae7b9d-dba2-4381-a58b-98dd7279da94",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "e60bee63-61f6-4c3d-8a71-b51e823724e4",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "d6b5610e-e487-4deb-9705-43973bb602fc",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "e981cfdb-2154-418b-aeb4-8528b681592a",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "rhetorical-skills",
+        "category": "POW"
+      },
+      {
+        "id": "9a4ea34d-497f-4ecf-aa33-7105a6f5fada",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "8ced707a-0bb5-416b-8728-77618ee857ee",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "a685aaed-6ea1-4edc-a55a-210d840cd7fa",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "rhetorical-skills",
+        "category": "POW"
+      },
+      {
+        "id": "7deda0bb-fbb5-4bc5-8b36-bf49a5dfe4f2",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "sentence-structure",
+        "category": "CSE"
+      },
+      {
+        "id": "19a89d03-cc6a-49d0-9c30-31b06e188038",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "type": "deleting-sentence",
+        "category": "POW"
+      },
+      {
+        "id": "f1e9ebb7-7450-40b8-8665-a54cb0b30035",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "type": "transition",
+        "category": "KLA"
+      },
+      {
+        "id": "26a0fafb-ea14-4f9a-ae76-41fbe1ca75c9",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "4bfa96bb-1323-40df-b17f-1bd193398a83",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "rhetorical-skills",
+        "category": "POW"
+      },
+      {
+        "id": "3a5b38cd-f44d-4e87-9cc1-e97d0fd8dfec",
+        "oldLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "rhetorical-skills",
+        "category": "POW"
+      },
+      {
+        "id": "225ae554-dbb4-41d3-8b9e-9955bcbf0551",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "colon",
+        "category": "CSE"
+      },
+      {
+        "id": "a29c33b7-db01-4203-86b1-13c862e8af60",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "type": "which-choice",
+        "category": "POW"
+      },
+      {
+        "id": "9371fd03-a878-49b7-af27-3ee800848764",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "redundancy",
+        "category": "POW"
+      },
+      {
+        "id": "82ba8952-6db5-464c-bc3d-7f1c5290dc77",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "cb7bf9e4-508b-4aa6-a0af-8ba4ce914d22",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "rhetorical-skills",
+        "category": "POW"
+      },
+      {
+        "id": "d67b611e-03bd-4b09-ac3c-b7df343ba784",
+        "oldLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "f0edd772-99c5-4c0a-9218-d13fdf85149f",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "redundancy",
+        "category": "POW"
+      },
+      {
+        "id": "2dd7867d-7dbe-452e-9680-e67e3b2c9f59",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "d983e645-e02e-4e18-a4de-1d1cc19f050b",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "ee59aabb-4454-46ba-a7f7-44c5da688c92",
+        "oldLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "91732778-4ffe-42e9-a074-df55dd1dcd46",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "bcdc9ce1-79b6-4264-b667-60db5e4b6695",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "e8976a5b-a4e0-480a-82fd-d08e80323b3a",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "type": "logical-placement",
+        "category": "POW"
+      },
+      {
+        "id": "e776e318-3f5a-4645-8282-a53e2e8f246e",
+        "oldLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "d7ac9bcc-e72e-410c-a9b0-9754261b4fd2",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "21547ebb-bafe-4fec-94c5-10973a574420",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "1e994867-2095-4ccc-b905-ed746f6326fa",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "f5178ead-d4ee-4741-a31e-8d73b9464c5b",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "c41002b2-79b1-4217-ad47-52a815b58d03",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "572401d1-7920-435a-a58c-d0c50d9fe081",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "6fe574d6-db8d-40de-b1d0-fa05825327cd",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "2473e06f-4506-4c87-b917-8492c5058fab",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "type": "transitions",
+        "category": "POW"
+      },
+      {
+        "id": "af652af9-58a1-4d19-a97c-50ab0f6f8bf9",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "1c93956b-62e7-46f3-9581-e7ce7c94f40d",
+        "oldLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "d80f1814-def3-4cf8-8d53-a382b5f5218e",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "bcae0c95-f8f6-4577-aa4d-0a7449f0d521",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "f6e126a6-809f-4f57-b6f9-053068137a86",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "1db3f32a-5900-4a80-818b-396a317af67f",
+        "oldLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "346ea792-ea48-476a-b4cc-fdc7d323a522",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "752b9980-2939-4320-8811-c3d60e626cfc",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "999926f4-7a7a-401f-94f0-b9d4dc4fdbdc",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "0848bd20-780f-4c92-8d20-1f1504e14c1a",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "5e47b501-d53b-453e-8856-1a548918b83d",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "02d94300-9c15-4d18-96a9-fecc815ff156",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "d509d366-eb23-4d05-821f-555f7cda41c1",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "0e6208fc-49e7-4feb-ab16-60b1aba7c49f",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+        "type": "idiom",
+        "category": "KLA"
+      },
+      {
+        "id": "6819e160-1e9a-4cbb-ba7a-09e6bf98f06d",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "type": "adding-deleting",
+        "category": "POW"
+      },
+      {
+        "id": "3f19c8eb-d5cb-455d-8d5f-fffca1f8972a",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "3277eeec-dc02-4645-ac68-f55d4e59a075",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "cb8709f8-7445-4b45-8274-77a7865f9ad6",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "grammar",
+        "category": "CSE"
+      },
+      {
+        "id": "23e7b933-2eea-486a-a689-d7e007f6d7e7",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "f8af146d-9ce5-45d4-95f7-df9fa890b238",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "d6d6f56f-ead6-4b58-ab86-e7e0b8d7cb9a",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "sentence-structure",
+        "category": "CSE"
+      },
+      {
+        "id": "4387eb4a-0081-4ec3-9373-f601673af08c",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "fc7b27cd-c658-4d79-95b1-3dbbc4db5acc",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+        "type": "idiom",
+        "category": "KLA"
+      },
+      {
+        "id": "16ec2a51-9277-4468-a62f-29a8d74817b7",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "type": "which-choice",
+        "category": "POW"
+      },
+      {
+        "id": "10215d7b-abfe-4122-bb77-7a1d5385ef88",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "sentence-structure",
+        "category": "CSE"
+      },
+      {
+        "id": "3bb5c7a1-74af-43b5-8c93-dd86751a4390",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-usage",
+        "category": "CSE"
+      },
+      {
+        "id": "fdd8acb1-088c-4933-96d6-34e688ba7ed8",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "f7ac1d6c-6416-47fd-9720-807224100517",
+        "type": "modifier-dangling",
+        "category": "POW"
+      },
+      {
+        "id": "7e0c523e-292b-426f-b68d-24f88541bbb1",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "type": "adding-deleting",
+        "category": "POW"
+      },
+      {
+        "id": "acad023a-3e70-4fe6-826f-76fc98a2f93c",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "sentence-structure",
+        "category": "CSE"
+      },
+      {
+        "id": "3f8df324-07c9-4d75-8b1d-fd3625a2da99",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "type": "transitions",
+        "category": "KLA"
+      },
+      {
+        "id": "41a164fa-e835-4425-86f0-8e651cd38af6",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+        "type": "idiom",
+        "category": "KLA"
+      },
+      {
+        "id": "c1aceef8-7e07-4445-ba45-6c2434e8d457",
+        "oldLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "newLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "type": "which-choice",
+        "category": "POW"
+      },
+      {
+        "id": "1359bf7b-528d-4647-8a15-83cd0456c77e",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "parallel-structure",
+        "category": "CSE"
+      },
+      {
+        "id": "dffbdfe9-b364-4461-b7f4-be7684e67312",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "KLA"
+      },
+      {
+        "id": "91110c87-5c26-494b-b233-481f835fb8a8",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "type": "which-choice",
+        "category": "POW"
+      },
+      {
+        "id": "9ae7bff2-e1fa-4073-9902-4dfbe8116af9",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "main-idea",
+        "category": "POW"
+      },
+      {
+        "id": "8935046d-d25f-44d4-800a-2723e9f4f023",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "type": "transitions",
+        "category": "POW"
+      },
+      {
+        "id": "77cf8afe-1439-4700-ad44-0382e67e1949",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "type": "logical-placement",
+        "category": "POW"
+      },
+      {
+        "id": "e0737afc-562c-4db8-82af-7687b2158af7",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "4e74e0db-0bf8-412e-9fec-d7872ca9a923",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "POW"
+      },
+      {
+        "id": "936f0702-6dbe-4ca2-b863-ad823fc63dc5",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "11273711-4e1f-4489-8177-c3e3e0e7c003",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "redundancy",
+        "category": "POW"
+      },
+      {
+        "id": "6e1a7935-b04d-49dd-a9ad-31d16c1a8001",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "type": "logical-placement",
+        "category": "POW"
+      },
+      {
+        "id": "c64c335d-1255-497f-9fb3-dab2bf648b6e",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "c9584256-8e2f-4673-8ef3-36914d90a31b",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "fragment",
+        "category": "CSE"
+      },
+      {
+        "id": "571752b9-2ac0-458c-95e2-221f08538ce8",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "type": "transition",
+        "category": "POW"
+      },
+      {
+        "id": "15dbfcc0-5387-4ed2-afcb-9fc5943a0000",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "colon",
+        "category": "CSE"
+      },
+      {
+        "id": "d626f703-0dde-4461-aff5-60b86cedd8a5",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "redundancy",
+        "category": "POW"
+      },
+      {
+        "id": "e6e04baa-bc23-44a5-b372-4e8e46e7cdf3",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "type": "word-placement",
+        "category": "POW"
+      },
+      {
+        "id": "182ce754-602b-4812-b8d3-2e9118ccb57e",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "main-idea",
+        "category": "POW"
+      },
+      {
+        "id": "15d767b8-bd5d-403a-811c-0cd7b65a2adc",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "main-idea",
+        "category": "POW"
+      },
+      {
+        "id": "89882799-0948-4c65-ad2b-ab4b355d3397",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-splice",
+        "category": "CSE"
+      },
+      {
+        "id": "f33d84ac-1fe1-4966-90d4-51c344987c09",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "type": "transitions",
+        "category": "POW"
+      },
+      {
+        "id": "36a7b901-13ec-498c-8278-dc6c3b3b23d0",
+        "oldLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "KLA"
+      },
+      {
+        "id": "bd26ef24-62f0-4b97-9382-7053a6967080",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "20b0a3a3-ba2b-4f89-a207-879205f48a79",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "type": "adding-deleting",
+        "category": "POW"
+      },
+      {
+        "id": "2cc69574-4f03-4307-b889-348f7728c822",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-usage",
+        "category": "CSE"
+      },
+      {
+        "id": "ac8423e7-5c41-4968-ae51-0332a86f09c4",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "logical-placement",
+        "category": "CSE"
+      },
+      {
+        "id": "ce7a890a-703b-4e7a-a1aa-523c08bb9778",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "adcc1837-d1ca-41c3-af10-73bfea8be759",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "9ca4a751-7a1b-410c-8248-0c6802ac8765",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "021f3952-f106-4d53-acdb-c3702f2c5f60",
+        "oldLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "newLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "type": "which-choice",
+        "category": "POW"
+      },
+      {
+        "id": "66fee25b-e2a3-46c9-a726-d3ad1c3e741d",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "6c61c90c-2114-475d-a131-1bb7111b0161",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "type": "which-choice",
+        "category": "POW"
+      },
+      {
+        "id": "53923719-1f17-4e97-b841-d355427bf5e5",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "type": "transitions",
+        "category": "POW"
+      },
+      {
+        "id": "b30577ee-867b-4cfd-83f9-d315bcdb91f2",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "type": "logical-placement",
+        "category": "POW"
+      },
+      {
+        "id": "6a66f464-578a-4831-8401-42e9c10a82b4",
+        "oldLesson": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "modifiers",
+        "category": "CSE"
+      },
+      {
+        "id": "3d7af421-ab4a-406a-97c9-d2ef7ba854bf",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "type": "which-choice",
+        "category": "POW"
+      },
+      {
+        "id": "9e1c74d8-f20c-4cb1-ab74-a56208b43c7e",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "24fd55b2-0a86-46d8-94f2-89f3b36df703",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "parallel-structure",
+        "category": "CSE"
+      },
+      {
+        "id": "63dd1054-1777-44ab-a76f-dc9cae8697c3",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "2551b9ba-0311-474d-b872-e22533c644e7",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "3ee53673-33b6-4f81-8676-d50918e93728",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "type": "which-choice",
+        "category": "POW"
+      },
+      {
+        "id": "8fa39f27-4c02-4343-886a-23669d512fe9",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "dash",
+        "category": "CSE"
+      },
+      {
+        "id": "ccf5d4a3-db85-414a-9372-baf27556fae9",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-usage",
+        "category": "CSE"
+      },
+      {
+        "id": "384cb916-0c95-494c-a42c-4e0b725d7a25",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "comma-usage",
+        "category": "CSE"
+      },
+      {
+        "id": "760ed804-ab6c-40ff-b2e8-8c797d9c6187",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "type": "transition",
+        "category": "POW"
+      },
+      {
+        "id": "2efcd188-2490-4daa-8ef5-0e16c671d5e9",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+        "type": "word-choice",
+        "category": "KLA"
+      },
+      {
+        "id": "67f35832-3f71-41de-bde0-bfec9ae2607e",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "type": "transition",
+        "category": "POW"
+      },
+      {
+        "id": "090be407-3ba3-4643-9089-40218f745cbe",
+        "oldLesson": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "punctuation",
+        "category": "CSE"
+      },
+      {
+        "id": "37b5530c-5c8a-4c67-b430-046b4b0467d6",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "style",
+        "category": "KLA"
+      },
+      {
+        "id": "30d7a75c-ebe2-41cd-8af7-b58d379490df",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "type": "adding-sentence",
+        "category": "CSE"
+      },
+      {
+        "id": "6c8f61fc-bab4-4e68-bc8e-ddbffbe7d6c2",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "main-idea",
+        "category": "POW"
+      },
+      {
+        "id": "acfec341-a903-494c-93d3-b5649527b035",
+        "oldLesson": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "newLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "type": "which-choice",
+        "category": "KLA"
+      },
+      {
+        "id": "116c445f-9029-4e7e-bf7e-ee190dcee9bc",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "type": "adding-info",
+        "category": "POW"
+      },
+      {
+        "id": "ff169e22-2a75-48ff-bcac-96eefb1380e9",
+        "oldLesson": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "usage-mechanics",
+        "category": "POW"
+      },
+      {
+        "id": "db5959f0-8520-48ce-b9a0-c60a520eb16f",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "type": "adding-deleting",
+        "category": "POW"
+      },
+      {
+        "id": "0c3f37ad-3ae8-4ada-93bb-ad7e9bd07e15",
+        "oldLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "2757d55c-988d-42fd-bdfa-7f4a46b37d23",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "06aab33f-f905-407f-a076-282597c92688",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "dcde5f92-4b19-4649-86c5-da9c07b60896",
+        "oldLesson": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "82a38bea-2e8f-499d-a586-b7c8e5439868",
+        "oldLesson": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "newLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "type": "organization",
+        "category": "POW"
+      },
+      {
+        "id": "c789c8a7-cd93-4b96-87ec-f63469a6a9f5",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "type": "adding-deleting",
+        "category": "POW"
+      },
+      {
+        "id": "9a0c9ff5-6f96-466c-b80c-63a9fe2dd81c",
+        "oldLesson": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "newLesson": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "type": "adding-deleting",
+        "category": "POW"
+      }
+    ]
+  }
+}

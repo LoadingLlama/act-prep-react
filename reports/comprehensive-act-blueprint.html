@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprehensive ACT Blueprint</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.4;
+      color: #111;
+      background: #f5f5f5;
+    }
+
+    .header {
+      background: #fff;
+      padding: 20px 24px;
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .tabs {
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      gap: 0;
+      position: sticky;
+      top: 73px;
+      z-index: 99;
+    }
+
+    .tab {
+      padding: 12px 20px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      color: #666;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .tab:hover {
+      background: #fafafa;
+      color: #111;
+    }
+
+    .tab.active {
+      color: #111;
+      border-bottom-color: #0066ff;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 24px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 16px;
+      border-radius: 4px;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    h3 {
+      font-size: 12px;
+      font-weight: 600;
+      margin: 16px 0 8px 0;
+      text-transform: uppercase;
+      color: #666;
+      letter-spacing: 0.5px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .metric {
+      background: #fafafa;
+      padding: 12px;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .metric-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .metric-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #111;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 8px 0 16px 0;
+    }
+
+    th {
+      text-align: left;
+      font-weight: 600;
+      padding: 8px 10px;
+      background: #fafafa;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: #666;
+      letter-spacing: 0.3px;
+    }
+
+    td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #f5f5f5;
+    }
+
+    tr:hover {
+      background: #fafafa;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Comprehensive ACT Blueprint</h1>
+    <div class="subtitle">Deep molecular analysis • Tests 1, 2, 3, 4, 5, 6, 7 • For 1:1 accurate generation</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('overview')">Overview</button>
+    <button class="tab" onclick="showTab('english')">English</button>
+    <button class="tab" onclick="showTab('math')">Math</button>
+    <button class="tab" onclick="showTab('reading')">Reading</button>
+    <button class="tab" onclick="showTab('science')">Science</button>
+    <button class="tab" onclick="showTab('generation')">Generation</button>
+  </div>
+
+  <!-- OVERVIEW TAB -->
+  <div id="overview" class="tab-content active">
+    <div class="section">
+      <h2>Test Structure Overview</h2>
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">Tests Analyzed</div>
+          <div class="metric-value">7</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Total Questions</div>
+          <div class="metric-value">1505</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Passages</div>
+          <div class="metric-value">63</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Lessons</div>
+          <div class="metric-value">84</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="section">
+        <h2>Section Breakdown</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Section</th>
+              <th>Questions</th>
+              <th>Per Test</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>English</td>
+              <td>525</td>
+              <td>75</td>
+            </tr>
+            <tr>
+              <td>Math</td>
+              <td>420</td>
+              <td>60</td>
+            </tr>
+            <tr>
+              <td>Reading</td>
+              <td>280</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td>Science</td>
+              <td>280</td>
+              <td>40</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <h2>Lesson Distribution</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Lessons</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>english</td>
+              <td>16</td>
+            </tr>
+            
+            <tr>
+              <td>reading</td>
+              <td>14</td>
+            </tr>
+            
+            <tr>
+              <td>science</td>
+              <td>19</td>
+            </tr>
+            
+            <tr>
+              <td>math</td>
+              <td>35</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENGLISH TAB -->
+  <div id="english" class="tab-content">
+    <div class="section">
+      <h2>English Section Analysis</h2>
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">Total Questions</div>
+          <div class="metric-value">525</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">NO CHANGE %</div>
+          <div class="metric-value">0.0%</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Passages</div>
+          <div class="metric-value">35</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="section">
+        <h2>Answer Distribution</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Answer</th>
+              <th>Count</th>
+              <th>%</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>A</td>
+              <td>138</td>
+              <td>26.3%</td>
+            </tr>
+            
+            <tr>
+              <td>B</td>
+              <td>125</td>
+              <td>23.8%</td>
+            </tr>
+            
+            <tr>
+              <td>C</td>
+              <td>132</td>
+              <td>25.1%</td>
+            </tr>
+            
+            <tr>
+              <td>D</td>
+              <td>130</td>
+              <td>24.8%</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <h2>Question Types</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Count</th>
+              <th>%</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td style="text-transform: capitalize;">grammar</td>
+              <td>525</td>
+              <td>100.0%</td>
+            </tr>
+            
+            <tr>
+              <td style="text-transform: capitalize;">punctuation</td>
+              <td>0</td>
+              <td>0.0%</td>
+            </tr>
+            
+            <tr>
+              <td style="text-transform: capitalize;">style</td>
+              <td>0</td>
+              <td>0.0%</td>
+            </tr>
+            
+            <tr>
+              <td style="text-transform: capitalize;">organization</td>
+              <td>0</td>
+              <td>0.0%</td>
+            </tr>
+            
+            <tr>
+              <td style="text-transform: capitalize;">rhetoric</td>
+              <td>0</td>
+              <td>0.0%</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Passage Analysis</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Test</th>
+            <th>Passage</th>
+            <th>Type</th>
+            <th>Words</th>
+            <th>Sentences</th>
+            <th>Avg Word Len</th>
+            <th>Avg Sent Len</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>N/A</td>
+            <td>313</td>
+            <td>21</td>
+            <td>5.4</td>
+            <td>14.9</td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>N/A</td>
+            <td>294</td>
+            <td>15</td>
+            <td>5.1</td>
+            <td>19.6</td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>3</td>
+            <td>N/A</td>
+            <td>322</td>
+            <td>17</td>
+            <td>5.0</td>
+            <td>18.9</td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>4</td>
+            <td>N/A</td>
+            <td>299</td>
+            <td>19</td>
+            <td>5.4</td>
+            <td>15.7</td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>5</td>
+            <td>N/A</td>
+            <td>303</td>
+            <td>17</td>
+            <td>5.6</td>
+            <td>17.8</td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>4</td>
+            <td>N/A</td>
+            <td>365</td>
+            <td>18</td>
+            <td>5.0</td>
+            <td>20.3</td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>2</td>
+            <td>N/A</td>
+            <td>347</td>
+            <td>19</td>
+            <td>5.4</td>
+            <td>18.3</td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>N/A</td>
+            <td>318</td>
+            <td>18</td>
+            <td>5.8</td>
+            <td>17.7</td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>5</td>
+            <td>N/A</td>
+            <td>359</td>
+            <td>24</td>
+            <td>5.4</td>
+            <td>15.0</td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>1</td>
+            <td>N/A</td>
+            <td>288</td>
+            <td>17</td>
+            <td>5.6</td>
+            <td>16.9</td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>1</td>
+            <td>N/A</td>
+            <td>283</td>
+            <td>15</td>
+            <td>5.0</td>
+            <td>18.9</td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>2</td>
+            <td>N/A</td>
+            <td>305</td>
+            <td>21</td>
+            <td>5.2</td>
+            <td>14.5</td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>3</td>
+            <td>N/A</td>
+            <td>370</td>
+            <td>20</td>
+            <td>4.7</td>
+            <td>18.5</td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>4</td>
+            <td>N/A</td>
+            <td>314</td>
+            <td>19</td>
+            <td>5.3</td>
+            <td>16.5</td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>5</td>
+            <td>N/A</td>
+            <td>316</td>
+            <td>20</td>
+            <td>5.3</td>
+            <td>15.8</td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>1</td>
+            <td>N/A</td>
+            <td>356</td>
+            <td>17</td>
+            <td>4.8</td>
+            <td>20.9</td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>2</td>
+            <td>N/A</td>
+            <td>336</td>
+            <td>19</td>
+            <td>5.1</td>
+            <td>17.7</td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>3</td>
+            <td>N/A</td>
+            <td>348</td>
+            <td>21</td>
+            <td>4.9</td>
+            <td>16.6</td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>4</td>
+            <td>N/A</td>
+            <td>336</td>
+            <td>18</td>
+            <td>5.1</td>
+            <td>18.7</td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>N/A</td>
+            <td>304</td>
+            <td>20</td>
+            <td>5.6</td>
+            <td>15.2</td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>1</td>
+            <td>N/A</td>
+            <td>325</td>
+            <td>18</td>
+            <td>5.3</td>
+            <td>18.1</td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>2</td>
+            <td>N/A</td>
+            <td>327</td>
+            <td>20</td>
+            <td>5.0</td>
+            <td>16.4</td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>3</td>
+            <td>N/A</td>
+            <td>350</td>
+            <td>19</td>
+            <td>4.9</td>
+            <td>18.4</td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>4</td>
+            <td>N/A</td>
+            <td>279</td>
+            <td>14</td>
+            <td>5.2</td>
+            <td>19.9</td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>5</td>
+            <td>N/A</td>
+            <td>336</td>
+            <td>18</td>
+            <td>5.3</td>
+            <td>18.7</td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>1</td>
+            <td>N/A</td>
+            <td>323</td>
+            <td>21</td>
+            <td>5.1</td>
+            <td>15.4</td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>2</td>
+            <td>N/A</td>
+            <td>325</td>
+            <td>16</td>
+            <td>5.0</td>
+            <td>20.3</td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>3</td>
+            <td>N/A</td>
+            <td>317</td>
+            <td>16</td>
+            <td>5.0</td>
+            <td>19.8</td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>4</td>
+            <td>N/A</td>
+            <td>316</td>
+            <td>15</td>
+            <td>5.3</td>
+            <td>21.1</td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>5</td>
+            <td>N/A</td>
+            <td>317</td>
+            <td>19</td>
+            <td>5.2</td>
+            <td>16.7</td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>1</td>
+            <td>N/A</td>
+            <td>314</td>
+            <td>17</td>
+            <td>5.2</td>
+            <td>18.5</td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>2</td>
+            <td>N/A</td>
+            <td>344</td>
+            <td>24</td>
+            <td>4.7</td>
+            <td>14.3</td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>3</td>
+            <td>N/A</td>
+            <td>326</td>
+            <td>17</td>
+            <td>5.2</td>
+            <td>19.2</td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>4</td>
+            <td>N/A</td>
+            <td>312</td>
+            <td>17</td>
+            <td>5.4</td>
+            <td>18.4</td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>5</td>
+            <td>N/A</td>
+            <td>302</td>
+            <td>17</td>
+            <td>5.7</td>
+            <td>17.8</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Per-Test Breakdown</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Test</th>
+            <th>Questions</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>Test 1</td>
+            <td>75</td>
+            <td>19</td>
+            <td>18</td>
+            <td>17</td>
+            <td>21</td>
+          </tr>
+          
+          <tr>
+            <td>Test 2</td>
+            <td>75</td>
+            <td>20</td>
+            <td>19</td>
+            <td>18</td>
+            <td>18</td>
+          </tr>
+          
+          <tr>
+            <td>Test 3</td>
+            <td>75</td>
+            <td>17</td>
+            <td>16</td>
+            <td>21</td>
+            <td>21</td>
+          </tr>
+          
+          <tr>
+            <td>Test 4</td>
+            <td>75</td>
+            <td>24</td>
+            <td>17</td>
+            <td>20</td>
+            <td>14</td>
+          </tr>
+          
+          <tr>
+            <td>Test 5</td>
+            <td>75</td>
+            <td>19</td>
+            <td>19</td>
+            <td>17</td>
+            <td>20</td>
+          </tr>
+          
+          <tr>
+            <td>Test 6</td>
+            <td>75</td>
+            <td>19</td>
+            <td>17</td>
+            <td>19</td>
+            <td>20</td>
+          </tr>
+          
+          <tr>
+            <td>Test 7</td>
+            <td>75</td>
+            <td>20</td>
+            <td>19</td>
+            <td>20</td>
+            <td>16</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- MATH TAB -->
+  <div id="math" class="tab-content">
+    <div class="section">
+      <h2>Math Section Analysis</h2>
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">Total Questions</div>
+          <div class="metric-value">420</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Topics</div>
+          <div class="metric-value">1</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="section">
+        <h2>Answer Distribution</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Answer</th>
+              <th>Count</th>
+              <th>%</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>A</td>
+              <td>84</td>
+              <td>20.0%</td>
+            </tr>
+            
+            <tr>
+              <td>B</td>
+              <td>95</td>
+              <td>22.6%</td>
+            </tr>
+            
+            <tr>
+              <td>C</td>
+              <td>104</td>
+              <td>24.8%</td>
+            </tr>
+            
+            <tr>
+              <td>D</td>
+              <td>79</td>
+              <td>18.8%</td>
+            </tr>
+            
+            <tr>
+              <td>E</td>
+              <td>58</td>
+              <td>13.8%</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <h2>Difficulty Progression</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Range</th>
+              <th>Easy</th>
+              <th>Medium</th>
+              <th>Hard</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>Q 1-20</td>
+              <td>37</td>
+              <td>99</td>
+              <td>4</td>
+            </tr>
+            
+            <tr>
+              <td>Q 21-40</td>
+              <td>14</td>
+              <td>115</td>
+              <td>11</td>
+            </tr>
+            
+            <tr>
+              <td>Q 41-60</td>
+              <td>3</td>
+              <td>90</td>
+              <td>47</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Topic Distribution</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Topic</th>
+            <th>Count</th>
+            <th>%</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>General</td>
+            <td>420</td>
+            <td>100.0%</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- READING TAB -->
+  <div id="reading" class="tab-content">
+    <div class="section">
+      <h2>Reading Section Analysis</h2>
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">Total Questions</div>
+          <div class="metric-value">280</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Line Ref %</div>
+          <div class="metric-value">0.0%</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Passages</div>
+          <div class="metric-value">28</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="section">
+        <h2>Answer Distribution</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Answer</th>
+              <th>Count</th>
+              <th>%</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>A</td>
+              <td>72</td>
+              <td>25.7%</td>
+            </tr>
+            
+            <tr>
+              <td>B</td>
+              <td>73</td>
+              <td>26.1%</td>
+            </tr>
+            
+            <tr>
+              <td>C</td>
+              <td>70</td>
+              <td>25.0%</td>
+            </tr>
+            
+            <tr>
+              <td>D</td>
+              <td>65</td>
+              <td>23.2%</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <h2>Question Types</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Count</th>
+              <th>%</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td style="text-transform: capitalize;">detail</td>
+              <td>280</td>
+              <td>100.0%</td>
+            </tr>
+            
+            <tr>
+              <td style="text-transform: capitalize;">inference</td>
+              <td>0</td>
+              <td>0.0%</td>
+            </tr>
+            
+            <tr>
+              <td style="text-transform: capitalize;">mainIdea</td>
+              <td>0</td>
+              <td>0.0%</td>
+            </tr>
+            
+            <tr>
+              <td style="text-transform: capitalize;">vocabulary</td>
+              <td>0</td>
+              <td>0.0%</td>
+            </tr>
+            
+            <tr>
+              <td style="text-transform: capitalize;">purpose</td>
+              <td>0</td>
+              <td>0.0%</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Passage Analysis</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Test</th>
+            <th>Passage</th>
+            <th>Type</th>
+            <th>Genre</th>
+            <th>Words</th>
+            <th>Sentences</th>
+            <th>Avg Word Len</th>
+            <th>Avg Sent Len</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>HUMANITIES</td>
+            <td>N/A</td>
+            <td>762</td>
+            <td>34</td>
+            <td>5.0</td>
+            <td>22.4</td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>SOCIAL_SCIENCE</td>
+            <td>N/A</td>
+            <td>517</td>
+            <td>28</td>
+            <td>4.7</td>
+            <td>18.5</td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>4</td>
+            <td>NATURAL_SCIENCE</td>
+            <td>N/A</td>
+            <td>430</td>
+            <td>26</td>
+            <td>5.4</td>
+            <td>16.5</td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>4</td>
+            <td>NATURAL_SCIENCE</td>
+            <td>N/A</td>
+            <td>503</td>
+            <td>28</td>
+            <td>5.7</td>
+            <td>18.0</td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>3</td>
+            <td>HUMANITIES</td>
+            <td>N/A</td>
+            <td>775</td>
+            <td>41</td>
+            <td>4.9</td>
+            <td>18.9</td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>1</td>
+            <td>LITERARY_NARRATIVE</td>
+            <td>N/A</td>
+            <td>794</td>
+            <td>42</td>
+            <td>4.7</td>
+            <td>18.9</td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>2</td>
+            <td>SOCIAL_SCIENCE</td>
+            <td>N/A</td>
+            <td>779</td>
+            <td>48</td>
+            <td>4.8</td>
+            <td>16.2</td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>3</td>
+            <td>HUMANITIES</td>
+            <td>N/A</td>
+            <td>747</td>
+            <td>40</td>
+            <td>5.0</td>
+            <td>18.7</td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>4</td>
+            <td>NATURAL_SCIENCE</td>
+            <td>N/A</td>
+            <td>745</td>
+            <td>30</td>
+            <td>5.1</td>
+            <td>24.8</td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>LITERARY NARRATIVE</td>
+            <td>N/A</td>
+            <td>490</td>
+            <td>44</td>
+            <td>4.5</td>
+            <td>11.1</td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>3</td>
+            <td>HUMANITIES</td>
+            <td>N/A</td>
+            <td>476</td>
+            <td>30</td>
+            <td>5.0</td>
+            <td>15.9</td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>1</td>
+            <td>LITERARY NARRATIVE</td>
+            <td>N/A</td>
+            <td>838</td>
+            <td>58</td>
+            <td>4.4</td>
+            <td>14.4</td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>2</td>
+            <td>SOCIAL_SCIENCE</td>
+            <td>N/A</td>
+            <td>769</td>
+            <td>26</td>
+            <td>4.8</td>
+            <td>29.6</td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>4</td>
+            <td>NATURAL_SCIENCE</td>
+            <td>N/A</td>
+            <td>757</td>
+            <td>57</td>
+            <td>5.0</td>
+            <td>13.3</td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>1</td>
+            <td>LITERARY_NARRATIVE</td>
+            <td>N/A</td>
+            <td>804</td>
+            <td>44</td>
+            <td>4.6</td>
+            <td>18.3</td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>2</td>
+            <td>SOCIAL_SCIENCE</td>
+            <td>N/A</td>
+            <td>734</td>
+            <td>41</td>
+            <td>5.3</td>
+            <td>17.9</td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>3</td>
+            <td>HUMANITIES</td>
+            <td>N/A</td>
+            <td>765</td>
+            <td>40</td>
+            <td>4.9</td>
+            <td>19.1</td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>4</td>
+            <td>NATURAL_SCIENCE</td>
+            <td>N/A</td>
+            <td>727</td>
+            <td>32</td>
+            <td>5.2</td>
+            <td>22.7</td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>1</td>
+            <td>LITERARY NARRATIVE</td>
+            <td>N/A</td>
+            <td>826</td>
+            <td>31</td>
+            <td>4.5</td>
+            <td>26.6</td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>2</td>
+            <td>SOCIAL_SCIENCE</td>
+            <td>N/A</td>
+            <td>806</td>
+            <td>41</td>
+            <td>4.7</td>
+            <td>19.7</td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>3</td>
+            <td>HUMANITIES</td>
+            <td>N/A</td>
+            <td>702</td>
+            <td>40</td>
+            <td>5.5</td>
+            <td>17.6</td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>4</td>
+            <td>NATURAL_SCIENCE</td>
+            <td>N/A</td>
+            <td>770</td>
+            <td>34</td>
+            <td>4.9</td>
+            <td>22.6</td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>2</td>
+            <td>SOCIAL_SCIENCE</td>
+            <td>N/A</td>
+            <td>666</td>
+            <td>30</td>
+            <td>5.9</td>
+            <td>22.2</td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>4</td>
+            <td>NATURAL_SCIENCE</td>
+            <td>N/A</td>
+            <td>740</td>
+            <td>33</td>
+            <td>6.0</td>
+            <td>22.4</td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>2</td>
+            <td>SOCIAL_SCIENCE</td>
+            <td>N/A</td>
+            <td>772</td>
+            <td>32</td>
+            <td>4.9</td>
+            <td>24.1</td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>1</td>
+            <td>LITERARY NARRATIVE</td>
+            <td>N/A</td>
+            <td>823</td>
+            <td>42</td>
+            <td>4.6</td>
+            <td>19.6</td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>1</td>
+            <td>LITERARY NARRATIVE</td>
+            <td>N/A</td>
+            <td>646</td>
+            <td>26</td>
+            <td>5.4</td>
+            <td>24.8</td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>3</td>
+            <td>LITERARY NARRATIVE</td>
+            <td>N/A</td>
+            <td>744</td>
+            <td>27</td>
+            <td>5.4</td>
+            <td>27.6</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SCIENCE TAB -->
+  <div id="science" class="tab-content">
+    <div class="section">
+      <h2>Science Section Analysis</h2>
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">Total Questions</div>
+          <div class="metric-value">280</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Passages</div>
+          <div class="metric-value">43</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="section">
+        <h2>Answer Distribution</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Answer</th>
+              <th>Count</th>
+              <th>%</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>A</td>
+              <td>61</td>
+              <td>21.8%</td>
+            </tr>
+            
+            <tr>
+              <td>B</td>
+              <td>82</td>
+              <td>29.3%</td>
+            </tr>
+            
+            <tr>
+              <td>C</td>
+              <td>81</td>
+              <td>28.9%</td>
+            </tr>
+            
+            <tr>
+              <td>D</td>
+              <td>56</td>
+              <td>20.0%</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <h2>Passage Types</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Count</th>
+              <th>Avg Q</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>DATA_REPRESENTATION</td>
+              <td>19</td>
+              <td>6.4</td>
+            </tr>
+            
+            <tr>
+              <td>RESEARCH_SUMMARY</td>
+              <td>17</td>
+              <td>6.6</td>
+            </tr>
+            
+            <tr>
+              <td>CONFLICTING_VIEWPOINTS</td>
+              <td>7</td>
+              <td>6.6</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- GENERATION TAB -->
+  <div id="generation" class="tab-content">
+    <div class="section">
+      <h2>Test Generation Requirements</h2>
+      <p style="margin-bottom: 16px; color: #666;">Use this data to generate 1:1 accurate ACT tests</p>
+
+      <h3>Test Structure</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Section</th>
+            <th>Questions</th>
+            <th>Passages</th>
+            <th>Key Requirements</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>English</td>
+            <td>75</td>
+            <td>5 (15q each)</td>
+            <td>~0.0% "NO CHANGE"</td>
+          </tr>
+          <tr>
+            <td>Math</td>
+            <td>60</td>
+            <td>-</td>
+            <td>Progressive difficulty (easy → hard)</td>
+          </tr>
+          <tr>
+            <td>Reading</td>
+            <td>40</td>
+            <td>4 (10q each)</td>
+            <td>~0.0% with line references</td>
+          </tr>
+          <tr>
+            <td>Science</td>
+            <td>40</td>
+            <td>6</td>
+            <td>3 Data Rep + 2 Research + 1 Conflicting</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Quality Guidelines</h3>
+      <ul style="margin: 16px 0; padding-left: 20px; line-height: 1.8;">
+        <li>Maintain balanced answer distributions (20-28% per choice)</li>
+        <li>Avoid consecutive identical answers (max 2-3)</li>
+        <li>Match difficulty progression patterns</li>
+        <li>Ensure comprehensive lesson coverage</li>
+        <li>Match linguistic patterns from passages</li>
+        <li>Follow question type distributions</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function showTab(tabName) {
+      // Hide all tabs
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+
+      // Show selected tab
+      document.getElementById(tabName).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1544 @@
+MATHEMATICS TEST
+60 Minutes—60 Questions
+DIRECTIONS: Solve each problem, choose the correct
+
+but some of the problems may best be done without
+
+answer, and then fill in the corresponding oval on your
+
+using a calculator.
+
+answer document.
+
+Note: Unless otherwise stated, all of the following should
+be assumed.
+
+Do not linger over problems that take too much time.
+
+Solve as many as you can; then return to the others in
+
+1. Illustrative figures are NOT necessarily drawn to scale.
+
+the time you have left for this test.
+
+2. Geometric figures lie in a plane.
+
+You are permitted to use a calculator on this test. You
+
+3. The word /ine indicates a straight line.
+
+may use your calculator for any problems you choose,
+
+4. The word average indicates arithmetic mean.
+
+1.
+
+DO YOUR FIGURING HERE.
+
+Given x =5, y=3, andz=-6, (x+y-z)(y+z)=?
+A.
+B.
+C.
+D.
+E.
+
+—42
+-6
+6
+11
+18
+
+2. Each student attending the East Central High School
+preprom dinner must choose | item from each of
+3 categories: entrée, side dish, and beverage. There are
+3 entrée choices, 4 side dish choices, and 2 beverage
+choices. How many different dinner combinations for
+each student are possible?
+
+ASBO
+3. A bag contains 13 solid-colored marbles: 3 red,
+5 white, 4 black, and 1 yellow. If only 1 marble is
+selected, what is the probability of randomly selecting
+1 marble that is NOT black?
+A.
+
+B.
+
+=
+
+D. >
+
+ACT-E26
+
+14
+
+GO ON TO THE NEXT PAGE.
+
+PAA AA AAAA
+AD
+4. Sam works at Glendale Hospital and earns $12 per
+
+DO YOUR FIGURING HERE.
+
+hour for the first 40 hours and $18 per hour for every
+additional hour he works each week. Last week, Sam
+earned $570. To the nearest whole number, how many
+hours did he work?
+
+ASBO
+
+32
+35
+38
+45
+48
+
+5. In the figure below, AB is congruent to BC, and AE
+intersects BF at C. What is the measure of ZB ?
+B
+
+NN,
+
+C
+
+A
+
+e
+
+26° 6
+F
+
+A.
+B.
+C.
+D.
+E.
+
+26°
+38°
+52°
+128°
+154°
+
+6. The dimensions, in feet, of a standard tennis court are
+shown in the figure below. All lines that meet in the
+figure do so at right angles. Which of the following
+values is closest to the area, in square feet, of the
+1 service box shown shaded?
+|
+
+78
+
+4.5
+
+!
+
+21
+
+18
+
+|
+
+13.5
+27
+
+36
+
+13.5
+
+{|
+
+L18
+
+4:5
+F.
+G.
+H.
+J.
+K.
+
+21
+
+—
+284
+527
+567
+1,053
+1,134
+
+7. In scientific notation, what is the product of 3 and
+0.000 000 72 ?
+
+>
+
+2.16 x 107
+
+OAoF
+
+2.16 x 10°
+
+ACT-E26
+
+2.4x 10°
+2.4x 107
+
+6.9 x 107’
+
+15
+
+GO ON TO THE NEXT PAGE.
+
+PAA A AAAAA
+AD
+8.
+
+If f(x) = (4x + 3)’, then f(1) =?
+
+ASBO
+
+DO YOUR FIGURING HERE.
+
+o
+
+. Regular octagon ABCDEFGH is inscribed in a
+
+circle,
+
+as shown below. The sector of the circle bounded by
+
+radii AJ and DJ and by AD is shaded. The area of the
+shaded sector is what fraction of the area of the circle?
+A.
+
+1
+s
+
+B.
+
+1
+7
+3
+
+C. 10
+3
+
+D.
+
+8
+
+E.
+
+5
+
+B
+
+C
+
+A
+
+D
+
+H
+
+E
+GF
+
+|
+
+10. The expression (2x + 3)(5x — 6) is equivalent to:
+
+F
+
+7x°-18
+
+G.
+
+7x7 + 3x—18
+
+H. 10x? -18
+
+11.
+
+J.
+
+10x? -3x-18
+
+K.
+
+10x7 + 3x—18
+
+A cake recipe requires 2 cup of flour. Mary and Haloa
+decide to make the cake together. Mary has + cup of
+
+flour and Haloa has 71 cup of flour. How many more
+cups of flour do they need to make the cake?
+A.
+
+B.
+
+ACT-E26
+
+16
+
+GO ON TO THE NEXT PAGE.
+
+PAA AA AAAA
+AD
+DO YOUR FIGURING HERE.
+
+12. Coach Shannon is buying packages of granola bars,
+juice boxes, and apples as snacks for her soccer team.
+The table below gives the number of snacks per package
+and the price per package.
+
+Snack type
+
+Granola bars
+Juice boxes
+
+Apples
+
+Snacks per | Price per
+package
+package
+
+3
+4
+
+5
+
+$2.50
+$3.00
+
+$4.50
+
+What is the minimum total price of the snacks, all
+bought in whole packages, Coach Shannon buys so
+that each of the 15 girls on the team gets at least
+1 snack of each type?
+
+ASBO
+
+$30.00
+$35.00
+$38.00
+$42.00
+$50.00
+
+13. Given functions f(x) = 5x + 1 and g(x) = x° — 2, what is
+the value of f(g(—3)) ?
+A.
+B.
+C.
+D.
+E.
+
+—198
+—-54
+—39
+36
+194
+
+14. For 7y = 2x — 5, which of the following expressions
+gives x in terms of y ?
+
+FE.
+
+De
+
+G.
+
+Dre
+
+H. ty —5
+
+J.
+
+ty + 5
+
+K.
+
+5Sy+5
+
+15. For an angle with measure © in a
+
+right triangle,
+
+sin & = 45 and tan @ = 4
+What is the value of cos a ?
+3
+
+A.
+
+oe
+
+B.
+
+2
+
+D.
+
+5
+
+ACT-E26
+
+17
+
+GO ON TO THE NEXT PAGE.
+
+PAA A AAAAA
+AD
+16. A scale drawing of a proposed trapezoidal landscape
+
+DO YOUR FIGURING HERE.
+
+design is shown in the figure below, with the given
+dimensions in meters. The trapezoid consists of a right
+triangle and a square divided into 3 isosceles right
+triangles. The unshaded regions will be white rock; the
+shaded triangular regions will be black rock. What is
+the area, in square meters, that will be black rock?
+
+10
+
+10
+
+Ammo
+
+a ws
+
+17. One construction sign flashes every 6 seconds, and
+another construction sign flashes every 10 seconds. At
+a certain instant, the 2 signs flash at the same time.
+How many seconds elapse until the 2 signs next flash
+at the same time?
+
+>BO K
+
+4
+
+8
+16
+30
+60
+
+18. Which of the following expressions is equivalent to
+
+4x°+8x-12?
+
+ASBO
+
+(4x — 3)(x + 4)
+(4x + 3)(x —- 4)
+A(x — 3)(x - 1)
+A(x — 3)(x + 1)
+A(x + 3)(x - 1)
+
+19. A person’s vertical jump is the difference between the
+maximum height the person can reach at the top of a
+jump and the maximum height the person can reach
+when standing. The maximum height Donald can reach
+at the top of his jump is 10 feet 4 inches, and the
+maximum height he can reach when standing is
+7 feet 10 inches. What is Donald’s vertical jump?
+
+>OWAO
+ACT-E26
+
+2 feet 0 inches
+2 feet 4 inches
+2 feet 6 inches
+3 feet 0 inches
+3 feet 6 inches
+
+18
+
+GO ON TO THE NEXT PAGE.
+
+PAA AA AAAA
+AD
+DO YOUR FIGURING HERE.
+
+Use the following information to answer
+
+questions 20-22.
+
+Jocelyn wants to become a member of | of 3 gyms. The
+onetime sign-up fee, the monthly fee, and the late fee for
+each gym are shown in the table below. Monthly fees are
+due on the Ist day of each month for each gym. A onetime
+late fee is added to the monthly fee if the monthly fee is
+paid after the Ist day of that particular month. Felix, a
+coworker of Jocelyn’s, became a member of PowerPeople
+on March 1.
+
+Gym
+
+Sign-up | Monthly
+fee
+fee
+
+Late fee
+
+PowerPeople
+
+$35
+
+$50
+
+$ 5
+
+TrimTime
+
+$25
+
+$60
+
+$10
+
+FirmFactory
+
+$ 0
+
+$65
+
+$10
+
+20. Given that Jocelyn becomes a member of TrimTime on
+July 1 and that she pays all monthly fees on time, what
+total amount will Jocelyn have paid to the gym by
+September 2 of that year?
+=
+
+G.
+H.
+
+J.
+
+K~
+
+$ 85
+
+$145
+$180
+
+$205
+
+$215
+
+21. Before October 1, Felix had paid all 7 of his monthly
+gym fees on time. He will make his next gym payment
+on October 4. What total amount must Felix pay on
+October 4 so that his gym account will be paid in full?
+
+>SO W
+
+$50
+$55
+$70
+$75
+$90
+
+22. Another gym, Good-As-New, has a sign-up fee equal
+to the mean of all the sign-up fees in the table. What is
+the sign-up fee for Good-As-New?
+
+=AO
+.
+»
+
+ACT-E26
+
+$ 8
+
+$15
+$20
+
+$30
+$58
+
+19
+
+GO ON TO THE NEXT PAGE.
+
+PAA A AAAAA
+AD
+DO YOUR FIGURING HERE.
+
+23. The dimensions, in inches, of 2 rectangular prisms are
+shown in the figure below. The volume of the large
+prism is the same as the volume of how many of the
+small prisms?
+l
+
+|
+
+!
+
+3z
+
+|
+|
+|
+|
+
+~
+A.
+B.
+C.
+D.
+E.
+
+x
+
+[A
+
+y
+
+a
+
+2x
+
+2y
+
+2
+4
+6
+7
+12
+
+24. For what real number value of x is the equation
+1
+
+64° = 2* true?
+
+ABDM? KfDowiNFWOe
+es
+
+25. Suppose that the 8 identical faces of a regular
+octahedron, like the one shown below, are numbered
+from 11 through 18, with 1 number per face, and each
+face is equally likely to land down when the
+octahedron is tossed. What is the probability that, on
+l toss of this octahedron, the number on the face
+landing down is a prime number or an even number?
+A.
+
+0
+
+B.
+
+8
+
+C.
+
+4
+
+D.
+
+5
+
+E.
+
+8
+
+1
+
+1i
+18
+
+1
+
+1
+
+7
+
+ACT-E26
+
+20
+
+GO ON TO THE NEXT PAGE.
+
+PAA AA AAAA
+AD
+DO YOUR FIGURING HERE.
+
+26. In ARST below, U is a point on RT such that SU is an
+angle bisector of ZRST. What is mZR ?
+
+ASBO
+
+~] S
+
+90°
+100°
+
+27. A lawn-and-garden store sells 2 types of grass seed:
+shade and sun. The numbers of bags sold on Friday
+and Saturday last week are given in matrix A; the
+selling price per bag and the profit per bag are given in
+matrix B, Price and profit are in dollars. What is the
+total profit for the sale of the 2 types of grass seed sold
+on Friday and Saturday?
+
+Zs
+
+3
+
+A= E 13 | Friday
+13
+
+A.
+B.
+C.
+D.
+E.
+
+15]
+
+6
+
+A
+
+BG
+
+Saturday
+
+_ 1475 120 shade
+8.00 1.50]
+
+sun
+
+$ 65.00
+$ 97.50
+$102.50
+$110.50
+$208.00
+
+28. What real value of x satisfies the equation 36°"' = 6 ?
+F.
+
+G
+H.
+
+J.
+K
+
+eNiRslYw)o
+
+29. In right triangle AABC shown below, AB = 9 units and
+BC = 12 units. What is sin
+A ?
+A.
+
+3
+5
+
+A
+
+3
+
+c.
+
+4+
+
+D.
+
+2
+
+5
+
+“
+
+E.
+
+ACT-E26
+
+B
+
+12
+
+C
+
+4
+4
+
+3
+
+21
+
+GO ON TO THE NEXT PAGE.
+
+PAA A AAAAA
+AD
+DO YOUR FIGURING HERE.
+
+Use the following information to answer
+
+questions 30-32.
+
+Shown below is quadrilateral ABCD in the standard (x,y)
+coordinate plane.
+
+A(0,4)
+
+D(-2,0)
+
+B(6,0)
+
+> xX
+
+C(0,—4)
+
+30. What is the area, in square coordinate units, of ABCD ?
+16
+24
+32
+48
+64
+
+ASBO
+
+31. What is the perimeter, in coordinate units, of ABCD ?
+
+A.
+
+4V5
+
+B
+
+AV/5 + 4V/13
+
+C
+
+4V/13
+
+D.
+
+16
+
+E.
+
+144
+
+32. What are the coordinates of the image of point
+B
+resulting from a rotation of 180° about the origin?
+
+BIOAS
+
+|
+
+N Ss
+
+33. Which of the following expressions is equivalent to
+2
+
+wt4e—
+1}? for?
+x”
+
+— 36
+
+3640?
+
+FPSOe
+ACT-E26
+
+22
+
+GO ON TO THE NEXT PAGE.
+
+PAA AA AAAA
+AD
+DO YOUR FIGURING HERE.
+
+34. The rectangular top surface of a patio is 4 feet longer
+than it is wide and has an area of 192 square feet. What
+is the width, in feet, of the rectangular top surface of
+the patio?
+
+ASmo=
+
+No i
+
+35. In the standard (x,y) coordinate plane, what is the slope
+of the line that contains (—2,—2) and has a y-intercept
+of 1?
+A.
+
+B.
+
+C.
+D.
+
+E.
+
+|
+
+—_
+
+wNWiel(Sy
+
+36. Veronica delivers 27 copies of the News Report and
+22 copies of the City Times to 38 of the 40 houses on
+Oakland Street. No house receives more than 1 copy
+of each newspaper. How many houses receive both
+newspapers?
+F
+G.
+H.
+
+37.
+
+2
+5
+7
+
+J.
+
+9
+
+K.
+
+11
+
+|-3] + |-5|(7-3)
+=?
+A.
+B.
+Cc.
+D.
+E.
+
+-41
+—23
+23
+32
+35
+
+38. Julia, an archaeology student, needs to dig 6 cylindrical
+pits at an archaeological site. Each pit will be 8 feet in
+diameter and 6 feet deep. Since she needs to work
+slowly and carefully, Julia can remove dirt at an
+average rate of 3 cubic feet per hour. Which of the
+following values is closest to the number of hours it
+will take Julia to dig all 6 pits?
+(Note: The volume, V, of a cylinder with radius r and
+
+height his V=nr-h;
+m= 3.14.)
+
+BIOAS
+ACT-E26
+
+100
+200
+400
+600
+800
+
+23
+
+GO ON TO THE NEXT PAGE.
+
+PAA A AAAAA
+AD
+DO YOUR FIGURING HERE.
+
+39. Hector counted the number of blue candies in each of
+14 packages and summarized his data in the frequency
+bar graph below.
+
+an OT
+
+——
+
+oO
+
+Lo}
+
+247
+
+Gy
+
+5 Ty
+
+2+
+5
+
+°
+
+|4
+2
+
+3
+
+4
+
+5
+
+6
+
+number of blue candies
+
+What is the median of the numbers of blue candies in
+the 14 packages?
+A.
+B.
+
+C.
+D.
+E.
+
+4.0
+2
+a)
+.O
+.O
+
+Nnb
+
+40. In certain years, July, a month with 31 days, has
+exactly 4 Mondays and 4 Fridays. The first of July in
+those years will be on:
+F.
+G.
+H.
+
+Tuesday.
+Wednesday.
+Thursday.
+
+J.
+
+Saturday.
+
+K.
+
+Sunday.
+
+41. Ms. Siochi has a rectangular lot with a perimeter of
+
+100 meters. She paid $2,420.00 for fencing to install
+along the entire perimeter. She chose standard fencing
+for 3 sides of the lot and decorative fencing for 1 of the
+
+20-meter sides. Ms. Siochi paid $1.00 more per meter
+for the decorative fencing than for the standard
+fencing. How much did Ms. Siochi pay per meter for
+the decorative fencing?
+
+A.
+B.
+C.
+D.
+E.
+
+$22.40
+$23.40
+$24.00
+$25.00
+$26.00
+
+42. Students use dowel rods to learn about equations. They
+lay several rods, some of which are red and some of
+which are white, end to end. The length of each red rod
+is R centimeters, and the length of each white rod is
+W centimeters. The students determine that the total
+length of 2 red rods and 7 white rods is the same as the
+total length of 4 red rods and 3 white rods. Based on
+this relationship, which of the following equations
+must be true?
+FEF
+
+R=2W
+
+G.
+H.
+
+R=3W
+3R=5W
+
+J.
+
+7R=9W
+
+K.
+
+ACT-E26
+
+9R=7W
+
+24
+
+GO ON TO THE NEXT PAGE.
+
+PAA AA AAAA
+AD
+43.
+
+For i= V-1, (2+2i) =?
+A.
+B
+C.
+D.
+E
+
+DO YOUR FIGURING HERE.
+
+—-16
+0
+8i
+4+2i
+4+4i
+
+44. For all 8 such that cos 0 # 0 and sin 9 # 0, which of the
+.
+
+.
+
+.
+
+tanO
+
+9»
+
+following expressions is equal to sec)
+
+F.
+
+cos 9
+
+G.
+
+sin 0
+
+o
+
+sin 8
+
+J.
+K.
+
+1
+
+cos 9
+
+sin’@
+sin 8
+
+cos’0
+
+45. The map below shows the 5 villages and the 7 roads on
+Gull Island. All residential mailboxes on Gull Island
+are located along these roads. During a mail run, the
+island’s mail carrier travels on each road exactly once,
+but she may pass through a village more than once.
+The carrier starts her run in 1 of the 5 villages and ends
+her run in 1| of the 4 remaining villages. One of the
+following pairs of villages gives the starting point and
+ending point for the mail run. Which one?
+Ripley
+Marcus
+
+Portville
+
+Willa
+Baytown
+
+starting point
+
+ending point
+
+A.
+B.
+
+Baytown
+Baytown
+
+Marcus
+Portville
+
+Marcus
+Ripley
+
+Portville
+Willa
+
+E.
+
+Ripley
+
+Willa
+
+C.
+D.
+
+46. Which of the
+
+following
+
+sets
+
+is
+
+the range
+
+of the
+
+2
+
+9
+functi
+unction f(x) =—34 aaSie6)
+a 516
+2
+
+F.
+
+(0, 3)
+
+G.
+
+[0, ©)
+
+K.
+
+[3, o)
+
+H. (—c0, od)
+J. [-3, co)
+
+ACT-E26
+
+25
+
+GO ON TO THE NEXT PAGE.
+
+PAA A AAAAA
+AD
+DO YOUR FIGURING HERE.
+
+47. Mr. Schulte has a fair 12-sided die, with the sides
+numbered from 1 through 12. On both Monday and
+Tuesday, Mr. Schulte will roll the die 1 time. If the
+side that lands faceup is numbered with a prime
+number, Mr. Schulte will collect the homework that
+day—otherwise, he will not collect the homework.
+What is the probability that Mr. Schulte will collect
+homework on both Monday and Tuesday?
+
+(Note: 1 is NOT a prime number.)
+
+B.
+
+OQ
+
+e
+
+o
+
+N
+
+Ss
+
+NN
+
+wo
+
+eTtBSilIeRaOe
+e”
+
+A.
+
+NO
+
+48. The table below gives the number of Jerry’s
+Construction workers needed to frame a specific type
+of house in certain selected numbers of days. Given
+that all the workers work at the same rate, how many
+workers will it take to frame this specific type of house
+in 10 days?
+
+Workers | Days
+2
+?
+6
+30
+
+15
+10
+5
+1
+
+ASBO N®~B
+—a
+
+49. Considering only positive integer factors, which of the
+following integers has an odd number of distinct
+factors?
+
+>OWAO
+ACT-E26
+
+N Oo
+
+26
+
+GO ON TO THE NEXT PAGE.
+
+PAA AA AAAA
+AD
+DO YOUR FIGURING HERE.
+
+50. A solution is 5% alcohol and 95% water. A second
+solution is 20% alcohol and 80% water. If 2 gallons of
+the first solution are mixed with 1 gallon of the second
+solution, the resulting solution is what percent
+alcohol?
+F.
+
+10%
+
+G. 125%
+H.
+
+15%
+
+J.
+
+25%
+
+K.
+
+30%
+
+51. In the standard (x,y) coordinate plane, the graph of the
+equation y = 3 sin(2x + 0.57%) has what amplitude and
+period?
+
+amplitude
+
+period
+
+3
+3
+3
+6
+6
+
+Tt
+2m
+An
+Tt
+2m
+
+A.
+B.
+C.
+D.
+E.
+
+52. A pet shop always has 54 hamsters that are either solidcolored or multicolored in the front of the store for
+customers to see. Any additional hamsters are kept in
+an area at the back of the store. Which of the following
+ratios of solid-colored hamsters to multicolored
+hamsters is possible for the hamsters in the front of this
+pet shop?
+
+1:54
+2:7
+
+ASBO LDNW
+
+53. A cookie jar contains 10 cookies of 3 types. There are
+5 chocolate-chip cookies, 3 oatmeal-raisin cookies,
+and 2 sugar cookies. You reach into the jar and choose
+a cookie at random and then, without replacing the
+first cookie, reach into the jar and choose another
+cookie at random. What is the probability that both of
+the cookies you choose are the same type?
+
+A.
+
+7
+
+B.
+
+3
+
+D.
+E.
+
+ACT-E26
+
+27
+
+GO ON TO THE NEXT PAGE.
+
+PAA A AAAAA
+AD
+54. Quadrilateral ABCD is a parallelogram. Which of the
+
+DO YOUR FIGURING HERE.
+
+following statements about ABCD must be true?
+
+F.
+G.
+H.
+J.
+K.
+
+The diagonals bisect each other.
+The diagonals are perpendicular.
+The diagonals are congruent.
+All 4 sides are congruent.
+All 4 interior angles are congruent.
+
+55. For all m such that 0 < m <1, the value of mTM! must be:
+A.
+B.
+C.
+D.
+E.
+
+greater than m.
+equal to m.
+less than m, but greater than 0.
+equal to 0.
+less than 0.
+
+56. Bill and Nate are participating in a fund-raising event
+in which they run or walk a distance of 30 miles. A
+graph representing their progress during the first hour
+is shown in the standard (x,y) coordinate plane below.
+
+YA
+12
+
+m(distlaenc)
+
+—_ an)
+
+oO
+ON
+
+Bill
+
+a
+
+l Nate
+
+N
+O
+
+>
+
+1
+
+2
+
+3
+
+4
+
+x
+
+time (in hours)
+Assume that Bill continues to travel at the same speed
+until he reaches the finish line. One of the following
+phrases describes how Nate will need to change his
+average speed for the remainder of the event in order to
+finish at exactly the same time as Bill. Which one?
+
+Aamo
+ACT-E26
+
+Decrease it by 2 mph
+Decrease it by 2.5 mph
+Increase it by 2 mph
+Increase it by 2.5 mph
+Increase it by 4 mph
+
+28
+
+GO ON TO THE NEXT PAGE.
+
+PAA AA AAAA
+AD
+DO YOUR FIGURING HERE.
+
+57. The math club is selling T-shirts as a fund-raiser. There
+is a linear relationship between x, the number of
+T-shirts sold, and y, the profit in dollars from selling
+the T-shirts. When the club sells 6 shirts, it makes a
+
+profit of $10; when it sells 10 shirts, it makes a profit
+of $20. Which of the following equations gives the
+relationship between x and y ?
+
+A. y= ox4 2
+B. y=ix+ 3
+C. y= x4 4
+D. ysdxt 5
+E. y=3x- 5
+58. For the following system of equations
+
+2*°* = 32
+ty
+
+=ABOSm
+
+a
+
+8,
+
+?
+
+—3
+—]
+1
+2
+3
+
+59. Nineteen students are eligible to play doubles tennis.
+What is the maximum number of different 2-person
+teams possible?
+A.
+B
+C.
+D.
+E
+
+9
+38
+76
+171
+
+342
+
+60. In the equation ax’ + bx +c = 0, coefficients a, b, and c
+are positive real numbers. If a = c and both roots of the
+quadratic equation are real numbers, which of the
+following relations must hold between a and b ?
+
+a>2c
+
+Q V
+
+Q A
+
+>
+
+WO|S
+END OF TEST 2
+STOP! DO NOT TURN THE PAGE UNTIL TOLD TO DO SO.
+DO NOT RETURN TO THE PREVIOUS TEST.
+
+ACT-E26
+
+29
+
+READING TEST

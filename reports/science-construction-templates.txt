@@ -1,0 +1,164 @@
+SCIENCE EXPERIMENT DESIGN TEMPLATES - Step-by-Step Construction
+====================================================================================================
+
+CRITICAL: I need the CONSTRUCTION PROCESS, not just examples.
+
+====================================================================================================
+TEMPLATE 1: DATA REPRESENTATION (3 passages, 5 questions each)
+====================================================================================================
+
+PURPOSE: Present experimental data in tables/graphs for interpretation
+
+CONSTRUCTION STEPS:
+
+STEP 1: Choose experimental setup
+  Variables to test:
+    - Temperature vs. some property
+    - pH vs. some property
+    - Concentration vs. some property
+    - Time vs. some property
+    - Distance/depth vs. some property
+
+EXAMPLE from actual test:
+  Title: "13-Lined Ground Squirrel Hibernation"
+  Words: 162
+  Preview: When a 13-lined ground squirrel (a mammal) hibernates, it does not eat, and it alternates between periods of torpor (characterized by a reduced rate of metabolism, low body temperature, and little mov...
+
+STEP 2: Create data table
+  Structure:
+    - 2-3 columns (independent variable + 1-2 dependent variables)
+    - 3-5 rows of data
+    - Show clear trend (increase, decrease, or plateau)
+    - Use realistic values (from extracted ranges)
+
+STEP 3: Write description (80-150 words)
+  Include:
+    - What was measured
+    - How it was measured
+    - Results summary (reference table)
+  Format: 2-3 short paragraphs
+
+STEP 4: Create 5 questions
+  Q1: Direct data reading ("According to Table X, when Y=Z, what is...")
+  Q2: Trend identification ("As X increases, Y...")
+  Q3: Comparison ("Which has higher/lower...")
+  Q4: Extrapolation ("If trend continues, at X=W, Y would be...")
+  Q5: Interpretation ("Data suggests that...")
+
+DATA RANGES (use realistic values):
+  - Temperature: 0-100°C
+  - pH: 3-11
+  - Percentages: 0-100%
+  - Concentration: 0.1-5.0 M
+  - Time: 0-120 minutes or 0-24 hours
+
+
+====================================================================================================
+TEMPLATE 2: RESEARCH SUMMARY (2 passages, 6-7 questions each)
+====================================================================================================
+
+PURPOSE: Describe experimental procedure and results
+
+CONSTRUCTION STEPS:
+
+STEP 1: Design experiment
+  Components:
+    - Hypothesis or research question
+    - Materials needed
+    - Procedure (2-3 steps)
+    - Results (data or observations)
+
+EXAMPLE from actual test:
+  Title: "Flies as Bacterial Vectors"
+  Words: 264
+  Preview: Scientists conducted 3 experiments to study the transfer of bacteria from one surface to another by 2 species of flies: Musca domestica and Sarcophaga carnaria.  **Experiment 1** A group of 10 M. dome...
+
+STEP 2: Write experimental description (200-350 words)
+  Structure:
+    - Paragraph 1: Background and purpose
+    - Paragraph 2: Procedure and methods
+    - Paragraph 3: Results (reference tables/figures)
+    - Paragraph 4: Additional observations (optional)
+
+STEP 3: Create 2 experiments (Experiment 1 and Experiment 2)
+  Relationship:
+    - Test same concept with different variable
+    - Or test at different conditions
+    - Results should be related/comparable
+
+STEP 4: Create 6-7 questions
+  Q1-2: Procedure understanding ("In Experiment 1, what was measured?")
+  Q3-4: Data interpretation ("Results of Experiment 2 show that...")
+  Q5-6: Comparison ("Experiments 1 and 2 differ in...")
+  Q7: Application ("To test [new hypothesis], scientists should...")
+
+
+====================================================================================================
+TEMPLATE 3: CONFLICTING VIEWPOINTS (1 passage, 11-13 questions)
+====================================================================================================
+
+PURPOSE: Present 2-3 competing scientific explanations
+
+CONSTRUCTION STEPS:
+
+STEP 1: Choose controversial topic
+  Examples:
+    - Formation of geological feature
+    - Cause of observed phenomenon
+    - Mechanism of biological process
+    - Classification of organism/object
+
+EXAMPLE from actual test:
+  Title: "Exothermic Reaction Study"
+  Words: 108
+  Preview: Chemical reactions that release heat are exothermic reactions. The amount of heat released depends on the number of moles of reactants consumed. When sodium hypochlorite (NaClO) and sodium iodide (NaI...
+
+STEP 2: Write introduction (50-100 words)
+  Content:
+    - Background information
+    - Describe phenomenon to be explained
+    - State that scientists disagree
+
+STEP 3: Write Hypothesis 1 (100-150 words)
+  Structure:
+    - State the hypothesis clearly
+    - Provide 2-3 supporting arguments
+    - Reference specific evidence
+
+STEP 4: Write Hypothesis 2 (100-150 words)
+  Structure:
+    - State alternative hypothesis
+    - Provide different supporting arguments
+    - Must contradict Hypothesis 1 on key point
+
+STEP 5: (Optional) Write Hypothesis 3 (100-150 words)
+  Structure:
+    - Third alternative explanation
+    - Distinct from both H1 and H2
+
+STEP 6: Create 11-13 questions
+  Q1-4: Understanding each hypothesis ("According to Hypothesis 1...")
+  Q5-7: Comparing hypotheses ("H1 and H2 differ in their explanation of...")
+  Q8-10: Evidence evaluation ("Which finding supports H1?")
+  Q11-13: Application ("If [new data], which hypothesis is supported?")
+
+
+====================================================================================================
+UNIVERSAL SCIENCE PASSAGE RULES:
+====================================================================================================
+
+1. SCIENTIFIC ACCURACY:
+   - All data must be physically/chemically possible
+   - Trends must be realistic
+   - Use correct scientific terminology
+
+2. CLARITY:
+   - Define all variables
+   - Label all tables/figures
+   - Use consistent units
+
+3. APPROPRIATE COMPLEXITY:
+   - High school level science
+   - No advanced college concepts
+   - Focus on data interpretation, not memorization
+

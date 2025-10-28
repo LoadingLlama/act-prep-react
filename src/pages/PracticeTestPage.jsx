@@ -1,11 +1,10 @@
 /**
  * Practice Test Page
- * Displays a full practice test using DiagnosticTestUI component
+ * Displays a full practice test using the diagnostic test HTML interface
  */
 
 import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
-import DiagnosticTestUI from '../components/DiagnosticTestUI';
 import PracticeTestsService from '../services/api/practiceTests.service';
 import logger from '../services/logging/logger';
 import errorTracker from '../services/logging/errorTracker';
@@ -214,34 +213,6 @@ const PracticeTestPage = ({ testId, onClose }) => {
   }, [testNumber]);
 
   /**
-   * Load the test structure (question counts by section)
-   */
-  const loadTestStructure = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-
-      logger.info('PracticeTestPage', 'loadTestStructure', { testNumber });
-
-      const structure = await PracticeTestsService.getTestStructure(testNumber);
-
-      if (!structure) {
-        throw new Error('Failed to load test structure');
-      }
-
-      setTestStructure(structure);
-      logger.info('PracticeTestPage', 'loadTestStructure', { structure });
-
-    } catch (err) {
-      console.error('Error loading test structure:', err);
-      errorTracker.trackError('PracticeTestPage', 'loadTestStructure', { testNumber }, err);
-      setError('Failed to load practice test. Please try again later.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  /**
    * Load questions for a specific section
    */
   const loadSectionQuestions = async (section) => {
@@ -279,6 +250,55 @@ const PracticeTestPage = ({ testId, onClose }) => {
         err
       );
       setError(`Failed to load ${section} questions. Please try again.`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Listen for test completion message from iframe
+  useEffect(() => {
+    const handleMessage = (event) => {
+      console.log('📨 Message received:', event.data);
+
+      if (event.data?.type === 'PRACTICE_TEST_COMPLETE') {
+        console.log('✅ Test complete - returning to selection');
+        handleBackToSelection();
+      } else if (event.data?.type === 'PRACTICE_TEST_NEXT_SECTION') {
+        // Load next section
+        const nextSection = event.data.nextSection;
+        console.log('🔄 Loading next section:', nextSection);
+        logger.info('PracticeTestPage', 'loadingNextSection', { nextSection });
+        loadSectionQuestions(nextSection);
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, [loadSectionQuestions]);
+
+  /**
+   * Load the test structure (question counts by section)
+   */
+  const loadTestStructure = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      logger.info('PracticeTestPage', 'loadTestStructure', { testNumber });
+
+      const structure = await PracticeTestsService.getTestStructure(testNumber);
+
+      if (!structure) {
+        throw new Error('Failed to load test structure');
+      }
+
+      setTestStructure(structure);
+      logger.info('PracticeTestPage', 'loadTestStructure', { structure });
+
+    } catch (err) {
+      console.error('Error loading test structure:', err);
+      errorTracker.trackError('PracticeTestPage', 'loadTestStructure', { testNumber }, err);
+      setError('Failed to load practice test. Please try again later.');
     } finally {
       setLoading(false);
     }
@@ -361,29 +381,41 @@ const PracticeTestPage = ({ testId, onClose }) => {
    * Render test in progress
    */
   if (selectedSection && questions.length > 0) {
-    const sectionName =
-      selectedSection === 'full'
-        ? 'Full Practice Test'
-        : sectionConfig[selectedSection]?.name || selectedSection;
+    // Store questions in sessionStorage for the test to access
+    sessionStorage.setItem('practiceTestQuestions', JSON.stringify(questions));
+    sessionStorage.setItem('practiceTestSection', selectedSection);
+    sessionStorage.setItem('practiceTestNumber', testNumber);
+    sessionStorage.setItem('practiceTestDuration',
+      selectedSection === 'full' ? 175 : sectionConfig[selectedSection]?.timeMinutes || 35
+    );
 
     return (
-      <DiagnosticTestUI
-        title={`Practice Test ${testNumber} - ${sectionName}`}
-        section={selectedSection === 'full' ? 'Full' : sectionConfig[selectedSection]?.name}
-        questions={questions}
-        duration={
-          selectedSection === 'full'
-            ? 175
-            : sectionConfig[selectedSection]?.timeMinutes || null
-        }
-        onComplete={handleBackToSelection}
-        onClose={onClose}
-      />
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: 'white',
+        zIndex: 2000
+      }}>
+        <iframe
+          key={`${testNumber}-${selectedSection}`}
+          src="/tests/practice-test.html"
+          style={{
+            width: '100%',
+            height: '100%',
+            border: 'none',
+            background: 'white'
+          }}
+          title={`Practice Test ${testNumber} - ${selectedSection}`}
+        />
+      </div>
     );
   }
 
   /**
-   * Render section selection
+   * Render section selection - Auto-start full test
    */
   return (
     <div className={classes.container}>
@@ -393,36 +425,14 @@ const PracticeTestPage = ({ testId, onClose }) => {
       <div className={classes.sectionSelector}>
         <h1 className={classes.sectionTitle}>Practice Test {testNumber}</h1>
         <p className={classes.sectionDescription}>
-          Choose a section to practice, or take the full test with 215 questions across all
-          sections.
+          Full simulated ACT test with 215 questions across all four sections.
         </p>
 
-        <div className={classes.sectionGrid}>
-          {Object.entries(sectionConfig).map(([key, config]) => {
-            const questionCount = testStructure?.[key] || 0;
-            return (
-              <div
-                key={key}
-                className={classes.sectionCard}
-                onClick={() => loadSectionQuestions(key)}
-              >
-                <div className={classes.sectionCardTitle}>
-                  {config.emoji} {config.name}
-                </div>
-                <div className={classes.sectionCardQuestions}>
-                  {questionCount} questions
-                </div>
-                <div className={classes.sectionCardTime}>
-                  {config.timeMinutes} minutes
-                </div>
-              </div>
-            );
-          })}
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          <button onClick={() => loadSectionQuestions('english')} className={classes.fullTestButton}>
+            Begin Test
+          </button>
         </div>
-
-        <button onClick={loadFullTest} className={classes.fullTestButton}>
-          🎯 Take Full Practice Test (215 questions, 175 minutes)
-        </button>
       </div>
     </div>
   );

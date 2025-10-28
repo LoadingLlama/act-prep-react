@@ -1,0 +1,1712 @@
+DISTRACTOR CONSTRUCTION FORMULAS - ENGLISH
+====================================================================================================
+
+
+GRAMMAR (84 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 23 (27.4%)
+  B: 18 (21.4%)
+  C: 25 (29.8%)
+  D: 18 (21.4%)
+
+"NO CHANGE" appears 82 times, correct 23 times (28.0%)
+
+EXAMPLES:
+
+Q18 [Test 5]:
+Stem: that clung to the limestone ceiling and, <u>with</u> their radiant bodies, flooded the cave...
+  A: NO CHANGE [CORRECT]
+  B: Although
+  C: Since
+  D: DELETE the underlined portion.
+
+Q19 [Test 5]:
+Stem: flooded the cave in aquamarine light. <u>While</u> I was traveling on canoe on a group tour...
+  A: NO CHANGE
+  B: with
+  C: by
+  D: in [CORRECT]
+
+Q27 [Test 5]:
+Stem: that prey is nearby, causing <u>them</u> to brighten....
+  A: NO CHANGE
+  B: the light
+  C: these [CORRECT]
+  D: DELETE the underlined portion.
+
+Q1 [Test 4]:
+Stem: No new snow had fallen since the weekend, when back-to-back <u>snowy blizzards</u> had turned Philad...
+  A: NO CHANGE
+  B: blizzards of snowfall
+  C: blizzards of snow [CORRECT]
+  D: blizzards
+
+Q4 [Test 4]:
+Stem: This <u>one The History of Chinatown,</u> looked especially bright today...
+  A: NO CHANGE [CORRECT]
+  B: one: The History of Chinatown,
+  C: one, The History of Chinatown,
+  D: one The History of Chinatown
+
+
+STYLE (74 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 24 (32.4%)
+  B: 19 (25.7%)
+  C: 16 (21.6%)
+  D: 15 (20.3%)
+
+"NO CHANGE" appears 70 times, correct 22 times (31.4%)
+
+EXAMPLES:
+
+Q26 [Test 5]:
+Stem: The sound of splashing water, <u>however,</u> might signal that prey is nearby...
+  A: NO CHANGE
+  B: on the other hand,
+  C: for example, [CORRECT]
+  D: above all,
+
+Q20 [Test 5]:
+Stem: this meandering subterranean passageway would <u>feel as though it were downright ensconced in shado...
+  A: NO CHANGE
+  B: end up pretty hard to see. [CORRECT]
+  C: have not a lot of light.
+  D: be utterly dark.
+
+Q3 [Test 4]:
+Stem: Which choice best suggests that the effect of the cold air on Yueming was immediate?...
+  A: NO CHANGE [CORRECT]
+  B: pulled
+  C: lured
+  D: drew
+
+Q6 [Test 4]:
+Stem: Which choice indicates there is another, specific type of work depicted in the mural?...
+  A: NO CHANGE [CORRECT]
+  B: gripping it with an enormous hand,
+  C: in the center of the image,
+  D: others hard at work,
+
+Q29 [Test 5]:
+Stem: The writer is considering revising the underlined portion to the following: soaring toward the light...
+  A: Yes, because the revised phrase more specifically describes the dragonfly's actions to help support the narrator's claim that she knew what its fate would be. [CORRECT]
+  B: Yes, because the revised phrase adds information that explains why the light of the glowworms was effective at attracting insects.
+  C: No, because the revised phrase distracts from the essay's focus on the narrator's experience in the cave.
+  D: No, because the revised phrase contradicts information provided earlier in the essay.
+
+
+RHETORICAL-SKILLS (39 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 11 (28.2%)
+  B: 6 (15.4%)
+  C: 11 (28.2%)
+  D: 11 (28.2%)
+
+"NO CHANGE" appears 27 times, correct 7 times (25.9%)
+
+EXAMPLES:
+
+Q11 [Test 3]:
+Stem: the mirrors adjust every ten seconds, <u>tracking the sun as it crosses the sky</u> They're controll...
+  A: reveals the size and location of the light reflected by the mirrors
+  B: describes the mechanism that adjusts the mirrors during the day
+  C: clarifies where the mirrors are located in relation to the town
+  D: specifies why the mirrors adjust throughout the day [CORRECT]
+Notes: Practice ACT 3 English Question 11 - deletion effects
+
+Q9 [Test 3]:
+Stem: The three mirrors <u>team up as a group</u> to create a bright ellipse...
+  A: NO CHANGE
+  B: help each other out
+  C: are synchronized [CORRECT]
+  D: conspire together
+Notes: Practice ACT 3 English Question 9 - word choice
+
+Q17 [Test 3]:
+Stem: has been passed on <u>by people being conversant</u> for centuries...
+  A: NO CHANGE
+  B: by folks rattling them off
+  C: through spoken word [CORRECT]
+  D: in chitchat
+Notes: Practice ACT 3 English Question 17 - precise language choice
+
+Q4 [Test 3]:
+Stem: Sam Eyde, the town's founder, <u>had considered the idea</u> However, Eyde did not follow through...
+  A: NO CHANGE
+  B: had come to understand that building the mirrors wasn't feasible
+  C: had realized that the necessary technology didn't exist [CORRECT]
+  D: had recognized that the project could not succeed
+Notes: Practice ACT 3 English Question 4 - specific details
+
+Q6 [Test 3]:
+Stem: carried the heavy equipment up the <u>mountain, moreover,</u> no roads led to the cliffside...
+  A: NO CHANGE
+  B: mountain because [CORRECT]
+  C: mountain and
+  D: mountain,
+Notes: Practice ACT 3 English Question 6 - transitions
+
+
+ORGANIZATION (37 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 8 (21.6%)
+  B: 10 (27.0%)
+  C: 10 (27.0%)
+  D: 9 (24.3%)
+
+"NO CHANGE" appears 11 times, correct 4 times (36.4%)
+
+EXAMPLES:
+
+Q31 [Test 2]:
+Stem: At the IceCube Neutrino Observatory in Antarctica, eighty-six cables descend 2,500 meters <u>down in...
+  A: NO CHANGE
+  B: down below
+  C: downwards
+  D: DELETE the underlined portion. [CORRECT]
+Notes: Test 2 Question 31
+
+Q15 [Test 4]:
+Stem: The writer wants to divide this paragraph into two in order to separate the statement indicating Yue...
+  A: Point A.
+  B: Point B.
+  C: Point C. [CORRECT]
+  D: Point D.
+
+Q22 [Test 2]:
+Stem: <u>Having left no clues, archaeologists</u> don't know how the Garamantes learned to build foggaras....
+  A: NO CHANGE
+  B: A genuine puzzle to scientists, archaeologists
+  C: Giving no indication, archaeologists
+  D: Archaeologists [CORRECT]
+Notes: Test 2 Question 22
+
+Q24 [Test 4]:
+Stem: At this point, the writer is considering adding the following accurate information: rotate like wind...
+  A: Yes, because it explains how the engineers came up with the design for the legs.
+  B: Yes, because it provides a description that helps clarify how the legs work. [CORRECT]
+  C: No, because it introduces a comparison to windmills that is not developed in the rest of the essay.
+  D: No, because it blurs the paragraph's focus on the robot's ability to move from land to water.
+
+Q22 [Test 4]:
+Stem: Given that all the choices are accurate, which one provides the best transition between the precedin...
+  A: NO CHANGE
+  B: operate equally smoothly in tethered or untethered modes.
+  C: perform in mere minutes tasks that take scientists hours.
+  D: move in harmony with the creatures it would study. [CORRECT]
+
+
+USAGE-MECHANICS (36 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 6 (16.7%)
+  B: 10 (27.8%)
+  C: 10 (27.8%)
+  D: 10 (27.8%)
+
+"NO CHANGE" appears 35 times, correct 6 times (17.1%)
+
+EXAMPLES:
+
+Q1 [Test 3]:
+Stem: directly on <u>Rjukan, a small town</u> in south-central Norway...
+  A: Rjukan, which is
+  B: Rjukan;
+  C: Rjukan—
+  D: Rjukan: [CORRECT]
+Notes: Practice ACT 3 English Question 1 - punctuation alternatives
+
+Q33 [Test 3]:
+Stem: He activated the boat's <u>sonar, and piloted</u> slowly forward...
+  A: NO CHANGE
+  B: sonar, and piloted,
+  C: sonar and piloted,
+  D: sonar and piloted [CORRECT]
+Notes: Practice ACT 3 English Question 33 - comma usage in series
+
+Q8 [Test 3]:
+Stem: workers used <u>tools such as thirty-foot wooden tripods</u> to install the mirrors...
+  A: NO CHANGE
+  B: tools, such as thirty-foot, wooden, tripods
+  C: tools such as thirty-foot wooden tripods,
+  D: tools, such as thirty-foot wooden tripods [CORRECT]
+Notes: Practice ACT 3 English Question 8 - comma usage
+
+Q13 [Test 3]:
+Stem: The light <u>rays that reaches the town is</u> between 80 and 100 percent as bright...
+  A: NO CHANGE
+  B: rays that reaches the town are
+  C: rays that reach the town are [CORRECT]
+  D: rays that reach the town is
+Notes: Practice ACT 3 English Question 13 - subject-verb agreement
+
+Q5 [Test 3]:
+Stem: Andersen made the mirrors a <u>reality. Three</u> 550-square-foot mirrors were airlifted...
+  A: NO CHANGE [CORRECT]
+  B: reality. When three
+  C: reality, three
+  D: reality three
+Notes: Practice ACT 3 English Question 5 - punctuation
+
+
+PUNCTUATION (34 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 14 (41.2%)
+  B: 5 (14.7%)
+  C: 8 (23.5%)
+  D: 7 (20.6%)
+
+"NO CHANGE" appears 34 times, correct 14 times (41.2%)
+
+EXAMPLES:
+
+Q2 [Test 2]:
+Stem: Forms of mouth music are performed around the world, but the genre <u>being</u> particularly popular...
+  A: NO CHANGE
+  B: was being
+  C: is [CORRECT]
+  D: DELETE the underlined portion.
+Notes: Test 2 Question 2
+
+Q11 [Test 2]:
+Stem: Additionally, puirt-a-beul gave anyone <u>whomever</u> didn't read music a way to learn and pass on ...
+  A: NO CHANGE
+  B: which
+  C: whom
+  D: who [CORRECT]
+Notes: Test 2 Question 11
+
+Q1 [Test 6]:
+Stem: US history books have traditionally chronicled the actions of male Revolutionary War heroes <u>such ...
+  A: NO CHANGE [CORRECT]
+  B: heroes, such as,
+  C: heroes: such as
+  D: heroes such as,
+
+Q1 [Test 7]:
+Stem: Among the treasures found in Pharaoh Tutankhamen's <u>tomb, in the 1920s</u> one diminutive ornament...
+  A: NO CHANGE [CORRECT]
+  B: tomb: in the 1920s
+  C: tomb in the 1920s,
+  D: tomb in the 1920s
+
+Q38 [Test 2]:
+Stem: Scientists specifically selected the site of the IceCube Neutrino Observatory <u>to facilitate</u> t...
+  A: NO CHANGE [CORRECT]
+  B: , and to facilitate
+  C: . To facilitate
+  D: ; to facilitate
+Notes: Test 2 Question 38
+
+
+COMMA-USAGE (21 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 4 (19.0%)
+  B: 6 (28.6%)
+  C: 3 (14.3%)
+  D: 8 (38.1%)
+
+"NO CHANGE" appears 20 times, correct 5 times (25.0%)
+
+EXAMPLES:
+
+Q22 [Test 1]:
+Stem: The high cost of importing cinchona <u>bark however, was</u> expensive....
+  A: NO CHANGE
+  B: bark; however, was
+  C: bark, however, was
+  D: bark, however was [CORRECT]
+Notes: Passage II - "However" needs commas on both sides when interrupting
+
+Q40 [Test 1]:
+Stem: Klimas's idea was sparked by the <u>experiments, of Swiss scientist, Hans</u> Jenny....
+  A: NO CHANGE
+  B: experiments, of Swiss scientist
+  C: experiments of Swiss scientist
+  D: experiments of Swiss scientist [CORRECT]
+Notes: Passage III - No commas needed
+
+Q43 [Test 1]:
+Stem: While he acknowledges that all forms of music can generate sonic <u>sculptures. Klimas</u> says, "I ...
+  A: NO CHANGE
+  B: sculptures, and
+  C: sculptures, [CORRECT]
+  D: sculptures;
+Notes: Passage III - Subordinate clause needs comma not period
+
+Q33 [Test 1]:
+Stem: Klimas attaches his camera to a <u>tripod and positions</u> the camera so it is level with the paint...
+  A: tripod, and he
+  B: tripod and he [CORRECT]
+  C: tripod. He
+  D: tripod; he
+Notes: Passage III - Compound predicate needs no comma; "and he" requires comma
+
+Q61 [Test 1]:
+Stem: One night in the late seventies, at a popular club in New York City, <u>singer and music producer Sy...
+  A: NO CHANGE [CORRECT]
+  B: singer, and music producer, Sylvia Robinson,
+  C: singer and music producer, Sylvia Robinson,
+  D: singer, and music producer Sylvia Robinson
+Notes: Passage V - No comma with restrictive appositive
+
+
+WHICH-CHOICE (18 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 6 (33.3%)
+  B: 5 (27.8%)
+  C: 5 (27.8%)
+  D: 2 (11.1%)
+
+"NO CHANGE" appears 15 times, correct 5 times (33.3%)
+
+EXAMPLES:
+
+Q14 [Test 1]:
+Stem: At the moment, manta ray populations face an array of threats worldwide. [Which statement best concl...
+  A: NO CHANGE
+  B: A 2009 documentary film about Dr. Marshall related the story of her manta-species discovery.
+  C: Dr. Marshall once described the manta ray as "like the largest, most beautiful underwater bird."
+  D: Fortunately, mantas have a devoted and expert researcher in Dr. Marshall. [CORRECT]
+Notes: Passage I - Concluding sentence that suggests continued study
+
+Q28 [Test 1]:
+Stem: He <u>administered the medicine to</u> people suffering from fevers....
+  A: NO CHANGE
+  B: tested his new concoction on [CORRECT]
+  C: The liquid was given to benefit
+  D: He decided to give the drink to
+Notes: Passage II - "Tested...on" emphasizes experimental nature
+
+Q35 [Test 1]:
+Stem: Finally, he inserts Daft Punk's Homework CD into a stereo, <u>cranks up the volume to ten,</u> and p...
+  A: NO CHANGE [CORRECT]
+  B: turns the volume knob a bit higher,
+  C: increases the volume of the output,
+  D: adjusts the speaker's output level,
+Notes: Passage III - NO CHANGE most dramatic
+
+Q59 [Test 1]:
+Stem: Today, hikers and bikers experience <u>a site that became a National Historic Landmark in 2000.</u>...
+  A: NO CHANGE
+  B: the gorge on sections of the road where it wasn't feasible to restore motor vehicle traffic,
+  C: the splendor of the highway that Hill and Lancaster envisioned over one hundred years ago. [CORRECT]
+  D: a beautiful path that has become a popular tourist destination.
+Notes: Passage IV - NO CHANGE refers back to first paragraph
+
+Q44 [Test 2]:
+Stem: The writer wants to emphasize that information gathered from the detected neutrinos at IceCube could...
+  A: at our galaxy—and galaxies beyond. [CORRECT]
+  B: phenomena that have puzzled scientists over the last decade.
+  C: common occurrences in space.
+  D: the world around us.
+Notes: Test 2 Question 44
+
+
+REDUNDANCY (15 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 1 (6.7%)
+  B: 2 (13.3%)
+  C: 0 (0.0%)
+  D: 12 (80.0%)
+
+"NO CHANGE" appears 15 times, correct 1 times (6.7%)
+
+EXAMPLES:
+
+Q19 [Test 1]:
+Stem: An Egyptian papyrus from <u>approximately about</u> 1534 BCE refers to willow's use as an all-purpos...
+  A: NO CHANGE
+  B: an estimation of
+  C: in the region of
+  D: about [CORRECT]
+Notes: Passage II - "Approximately about" is redundant
+
+Q63 [Test 1]:
+Stem: Every time the DJ chanted, "Throw your hands in the air," everyone <u>obeyed,</u> Robinson could hea...
+  A: NO CHANGE [CORRECT]
+  B: obeyed by throwing their hands in the air.
+  C: heeded the DJ's call and obeyed him.
+  D: did what he said and obeyed.
+Notes: Passage V - NO CHANGE concise, already know what obeying means
+
+Q49 [Test 1]:
+Stem: It showcased the scenic grandeur of the <u>gorge where the Columbia River is located.</u>...
+  A: NO CHANGE
+  B: gorge, which is over eighty miles long.
+  C: gorge and its scenery.
+  D: gorge. [CORRECT]
+Notes: Passage IV - Already mentioned Columbia River Gorge, redundant
+
+Q8 [Test 2]:
+Stem: A poorly timed breath might break a song's flow, interrupting the steady beat it relies on to help <...
+  A: NO CHANGE
+  B: they rely [CORRECT]
+  C: dancers rely
+  D: relied
+Notes: Test 2 Question 8
+
+Q68 [Test 2]:
+Stem: It flew high. And it always quickly <u>returned and came back</u> to its home roost....
+  A: NO CHANGE
+  B: speedily returned, coming home [CORRECT]
+  C: returned home
+  D: returned
+Notes: Test 2 Question 68
+
+
+SENTENCE-STRUCTURE (15 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 1 (6.7%)
+  B: 4 (26.7%)
+  C: 4 (26.7%)
+  D: 6 (40.0%)
+
+"NO CHANGE" appears 15 times, correct 1 times (6.7%)
+
+EXAMPLES:
+
+Q5 [Test 6]:
+Stem: <u>For fourteen months Sampson served in the army, she</u> acted with exceptional bravery and fortit...
+  A: NO CHANGE
+  B: In the fourteen months that Sampson served in the army, [CORRECT]
+  C: Sampson served in the army for fourteen months,
+  D: Her fourteen months of service in the army,
+
+Q7 [Test 6]:
+Stem: Sampson was part of a scouting party <u>whose assignment to track</u> and capture a British convoy....
+  A: NO CHANGE
+  B: their assignment was
+  C: who's been assigned
+  D: assigned [CORRECT]
+
+Q7 [Test 7]:
+Stem: It's true that the tremendous heat and pressure <u>around the globe of meteorite impacts in many pla...
+  A: NO CHANGE
+  B: in many places around the globe of meteorite impacts have created glass.
+  C: of meteorite impacts have created glass in many places around the globe. [CORRECT]
+  D: have created glass of meteorite impacts in many places around the globe.
+
+Q11 [Test 6]:
+Stem: <u>It was the weight of</u> her heavy backpack and musket, Sampson struggled....
+  A: NO CHANGE
+  B: She felt weighted down by
+  C: Weighted down by [CORRECT]
+  D: The weight of
+
+Q62 [Test 7]:
+Stem: <u>Since most</u> whistlers aren't professional (though a few do make a living from whistling tours ...
+  A: NO CHANGE
+  B: Considering most
+  C: While most
+  D: Most [CORRECT]
+
+
+ADDING-DELETING (15 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 1 (6.7%)
+  B: 7 (46.7%)
+  C: 6 (40.0%)
+  D: 1 (6.7%)
+
+EXAMPLES:
+
+Q13 [Test 7]:
+Stem: Which of the following true statements, if added here, would provide the best transition to the next...
+  A: In 2010 and 2011, scientific studies using microspectroscopy and chemical analysis bolstered Wasson and Boslough's theory.
+  B: In 1932, English surveyor P. A. Clayton happened upon the desert glass and helped write the first detailed account of it.
+  C: The resulting glass was broken, scattered, and eroded over millions of years. [CORRECT]
+  D: Scientists marvel at the desert glass's purity—about 98 percent silica.
+
+Q25 [Test 7]:
+Stem: At this point, the writer is considering adding the following accurate information: 'who spent five ...
+  A: Yes, because it explains how Anderson's experiences helped him come up with the concept of the pink kraken.
+  B: Yes, because it provides information about Anderson's background as an artist.
+  C: No, because it provides information that is not directly related to the description of Anderson's pink kraken. [CORRECT]
+  D: No, because it detracts from the paragraph's focus on Rhonda's knowledge of art.
+
+Q36 [Test 6]:
+Stem: By 1920, the insects were presumed to be extinct. Which of the following true statements, if added h...
+  A: Ball's Pyramid is named for Lieutenant Henry Ball, who spotted it in 1788.
+  B: Then, in the 1960s, climbers on Ball's Pyramid reported sighting a large insect. [CORRECT]
+  C: Ball's Pyramid is the tip of an enormous volcano.
+  D: There are thousands of stick insect species.
+
+Q29 [Test 7]:
+Stem: Which of the following statements, if added here, would best conclude the essay by maintaining the c...
+  A: It was a sight I wouldn't soon forget.
+  B: But it still looked too real to me.
+  C: It waved back. [CORRECT]
+  D: But was it art?
+
+Q71 [Test 6]:
+Stem: Given that all the following statements are true, which one, if added here, would provide the most e...
+  A: Afterward, only a blank wall stood where Banksy's art had been.
+  B: Even in Los Angeles, some of Banksy's art was washed away.
+  C: Banksy had assumed that his art would eventually disappear.
+  D: Still, people had begun to take notice. [CORRECT]
+
+
+PRONOUNS (12 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 5 (41.7%)
+  B: 3 (25.0%)
+  C: 1 (8.3%)
+  D: 3 (25.0%)
+
+"NO CHANGE" appears 12 times, correct 5 times (41.7%)
+
+EXAMPLES:
+
+Q2 [Test 6]:
+Stem: Increasingly, such books include accounts of the many brave women <u>which</u> also contributed—as s...
+  A: NO CHANGE
+  B: whom
+  C: who [CORRECT]
+  D: DELETE the underlined portion.
+
+Q8 [Test 7]:
+Stem: But meteorites leave craters, and <u>their</u> was no crater that could account for the desert glass...
+  A: NO CHANGE
+  B: there were
+  C: their were
+  D: there was [CORRECT]
+
+Q23 [Test 6]:
+Stem: Eventually, he divided his land into five gardens, each one named for a US president <u>whom</u> had...
+  A: NO CHANGE
+  B: being one who
+  C: of whom
+  D: who [CORRECT]
+
+Q25 [Test 6]:
+Stem: Kennedy Valley, with <u>its</u> rain forest canopy,...
+  A: NO CHANGE [CORRECT]
+  B: their
+  C: it's
+  D: its'
+
+Q22 [Test 7]:
+Stem: And <u>who</u> had ever heard of a neon-pink sea monster?...
+  A: NO CHANGE [CORRECT]
+  B: whom had ever heard
+  C: who will ever hear
+  D: whomever hears
+
+
+WORD-CHOICE (11 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 3 (27.3%)
+  B: 4 (36.4%)
+  C: 3 (27.3%)
+  D: 1 (9.1%)
+
+"NO CHANGE" appears 11 times, correct 3 times (27.3%)
+
+EXAMPLES:
+
+Q9 [Test 1]:
+Stem: In 2009, Marshall <u>announced, with two other scientists,</u> that indeed there are two manta speci...
+  A: NO CHANGE
+  B: surprised many scientists by announcing
+  C: had the evidence to announce [CORRECT]
+  D: at long last announced
+Notes: Passage I - Word choice to convey scientific backing
+
+Q11 [Test 1]:
+Stem: Thriving in shallow water, it <u>kind of sticks around one area.</u>...
+  A: NO CHANGE
+  B: rarely ventures far from its home territory. [CORRECT]
+  C: doesn't delight in slogging long distances.
+  D: loves hanging around its neighborhood.
+Notes: Passage I - Informal language, needs formal tone
+
+Q37 [Test 1]:
+Stem: The vibrations cause the paint to rise and <u>this image that Klimas's camera captures—sound</u> vis...
+  A: NO CHANGE [CORRECT]
+  B: pic, frozen in time's embrace that Klimas's camera has snapped—
+  C: picture that Klimas's photographic paraphernalia has managed to catch—
+  D: snapshot that Klimas's photographic machine snares—
+Notes: Passage III - NO CHANGE most concise
+
+Q57 [Test 1]:
+Stem: In the 1980s, however, local people's interest in the original highway <u>abounded.</u>...
+  A: NO CHANGE
+  B: took hold.
+  C: rekindled. [CORRECT]
+  D: set in.
+Notes: Passage IV - "rekindled" = not new phenomenon, renewed
+
+Q47 [Test 1]:
+Stem: These striking features <u>daunted</u> would-be road builders....
+  A: NO CHANGE [CORRECT]
+  B: posed problems for
+  C: slowed potential
+  D: challenged
+Notes: Passage IV - "daunted" means intimidated and kept them from building
+
+
+VERB-TENSE (11 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 3 (27.3%)
+  B: 1 (9.1%)
+  C: 3 (27.3%)
+  D: 4 (36.4%)
+
+"NO CHANGE" appears 11 times, correct 3 times (27.3%)
+
+EXAMPLES:
+
+Q21 [Test 1]:
+Stem: Apothecaries increasingly <u>preferred</u> the imported bark of South American cinchona trees as a f...
+  A: NO CHANGE [CORRECT]
+  B: would of preferred
+  C: will prefer
+  D: prefer
+Notes: Passage II - Past tense correct; "would of" is wrong (should be "would have")
+
+Q27 [Test 1]:
+Stem: Stone pulverized some willow bark and <u>adds its</u> powder to a liquid....
+  A: NO CHANGE
+  B: then added it's
+  C: added its [CORRECT]
+  D: adds it's
+Notes: Passage II - Parallel structure with "pulverized"; "its" not "it's"
+
+Q36 [Test 1]:
+Stem: The vibrations produced by Daft Punk's dance anthem "Around the World" <u>h: ised</u> the paint to r...
+  A: NO CHANGE
+  B: cause [CORRECT]
+  C: is causing
+  D: causes
+Notes: Passage III - Simple present "cause" for general truth
+
+Q69 [Test 1]:
+Stem: She and her business partners also realized that hip-hop's growing popularity <u>provides a</u> new ...
+  A: NO CHANGE
+  B: has provided a
+  C: was providing a
+  D: provided a [CORRECT]
+Notes: Passage V - Past tense "provided" consistent
+
+Q72 [Test 1]:
+Stem: In the early 1980s, rap music <u>had evolved</u> from a local phenomenon into a national movement....
+  A: NO CHANGE
+  B: has evolved
+  C: was evolving [CORRECT]
+  D: evolved
+Notes: Passage V - NO CHANGE, past perfect shows progression by early 1980s
+
+
+TRANSITION (10 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 3 (30.0%)
+  B: 1 (10.0%)
+  C: 4 (40.0%)
+  D: 2 (20.0%)
+
+"NO CHANGE" appears 7 times, correct 1 times (14.3%)
+
+EXAMPLES:
+
+Q23 [Test 1]:
+Stem: The high cost was expensive. <u>Consequently,</u> in the mid-1700s, English minister Edward Stone be...
+  A: NO CHANGE
+  B: Nevertheless,
+  C: Furthermore, [CORRECT]
+  D: Likewise,
+Notes: Passage II - "Consequently" shows cause-effect relationship
+
+Q44 [Test 1]:
+Stem: Klimas says, "I typically select something dynamic and percussive." <u>That would certainly impress ...
+  A: NO CHANGE
+  B: That's simply a matter of taste.
+  C: That seems unwise.
+  D: That makes sense. [CORRECT]
+Notes: Passage III - "That makes sense" best connects to conclusion
+
+Q35 [Test 2]:
+Stem: Neutrinos are rarely affected by matter or electromagnetic fields. <u>For this purpose</u>, many neu...
+  A: NO CHANGE
+  B: In contrast,
+  C: For this reason,
+  D: DELETE the underlined portion. [CORRECT]
+Notes: Test 2 Question 35
+
+Q63 [Test 2]:
+Stem: <u>For example</u>, one species, the homing pigeon, which is among the best navigators of the natura...
+  A: NO CHANGE [CORRECT]
+  B: Similarly,
+  C: However,
+  D: Thus,
+Notes: Test 2 Question 63
+
+Q27 [Test 2]:
+Stem: As the foggaras supplied less and less water, the Garamantes' population declined, <u>their civiliza...
+  A: NO CHANGE
+  B: and their civilization
+  C: so their civilization [CORRECT]
+  D: because their civilization
+Notes: Test 2 Question 27
+
+
+TRANSITIONS (10 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 4 (40.0%)
+  B: 2 (20.0%)
+  C: 3 (30.0%)
+  D: 1 (10.0%)
+
+"NO CHANGE" appears 10 times, correct 4 times (40.0%)
+
+EXAMPLES:
+
+Q2 [Test 7]:
+Stem: In 1996, <u>likewise,</u> mineralogist Vincenzo de Michele noticed the beetle at the Egyptian Museum...
+  A: NO CHANGE
+  B: though,
+  C: truly, [CORRECT]
+  D: also,
+
+Q12 [Test 6]:
+Stem: <u>For instance, a</u> colonial soldier standing on a sandbar threw her a rope....
+  A: NO CHANGE
+  B: Moreover, a
+  C: Instead, a
+  D: A [CORRECT]
+
+Q12 [Test 7]:
+Stem: Their conclusion: a meteoroid burned up in the atmosphere, <u>but</u> its fireball reached Earth and...
+  A: NO CHANGE [CORRECT]
+  B: whether
+  C: which
+  D: that
+
+Q23 [Test 7]:
+Stem: Which choice provides the best transition to what follows in the paragraph? <u>A month after my orde...
+  A: NO CHANGE
+  B: Although [CORRECT]
+  C: Being
+  D: I was
+
+Q48 [Test 6]:
+Stem: <u>Despite</u> the speed and precision of technologies such as global positioning satellites, decodi...
+  A: NO CHANGE
+  B: Notwithstanding
+  C: Given [CORRECT]
+  D: Like
+
+
+MAIN-IDEA (8 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 1 (12.5%)
+  B: 3 (37.5%)
+  C: 3 (37.5%)
+  D: 1 (12.5%)
+
+EXAMPLES:
+
+Q45 [Test 1]:
+Stem: [Passage question] Suppose writer's purpose was to document the process of an artist. Would essay ac...
+  A: Yes, because it focuses on how Jenny used artistic process similar to Klimas
+  B: Yes, because it describes how Klimas photographs effects of vibrations created by music on paint [CORRECT]
+  C: No, because it focuses on cultural significance of Klimas's artwork
+  D: No, because it provides general overview of how Jenny inspired visual artists
+Notes: Passage III - Essay documents Klimas's process
+
+Q60 [Test 7]:
+Stem: Suppose the writer's primary purpose had been to discuss a significant point in an artist's career. ...
+  A: Yes, because it describes Howe's interaction with the jurors of the Philbrook competition and the effect of that interaction. [CORRECT]
+  B: Yes, because it chronicles Howe's career up to Howe's involvement with the Philbrook competition.
+  C: No, because it does not explain why Howe's participation in the 1958 competition at the Philbrook was important.
+  D: No, because although it mentions Howe, it focuses mainly on the jurors for the Philbrook's annual competition.
+
+Q75 [Test 1]:
+Stem: [Passage question] Suppose writer wanted to write essay celebrating Robinson's pioneering role in mu...
+  A: Yes, because it describes her discovery of hip-hop subculture
+  B: Yes, because it explains her role in producing first commercially successful rap record [CORRECT]
+  C: No, because it focuses primarily on Sugarhill Gang
+  D: No, because it emphasizes business aspects over artistic achievements
+Notes: Passage V - Essay celebrates Robinson producing first rap hit
+
+Q30 [Test 7]:
+Stem: Suppose the writer's primary purpose had been to write an essay describing the art scene in Muscatin...
+  A: Yes, because it describes the pink kraken art installation and its origins.
+  B: Yes, because it describes how the narrator became interested in local art.
+  C: No, because it instead describes how one particular piece of art became a tourist attraction. [CORRECT]
+  D: No, because it instead describes the narrator's experience with one particular piece of art.
+
+Q30 [Test 1]:
+Stem: [Passage question] Suppose the writer's primary purpose had been to outline the development of a com...
+  A: Yes, because the essay describes how Egyptians used to administer willow bark and how this process evolved from ancient Sumerian practices.
+  B: Yes, because the essay documents the historical use of willow bark as a medicine and traces its gradual refinement into modern aspirin. [CORRECT]
+  C: No, because the essay primarily explains the function of salicylates in willow bark and how aspirin affects the human body.
+  D: No, because the essay primarily compares the use of willow bark to the use of cinchona bark in eighteenth-century European medicine.
+Notes: Passage II - Purpose question, essay traces development from willow bark to aspirin
+
+
+LOGICAL-PLACEMENT (7 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 2 (28.6%)
+  B: 1 (14.3%)
+  C: 2 (28.6%)
+  D: 2 (28.6%)
+
+EXAMPLES:
+
+Q42 [Test 1]:
+Stem: [Should writer begin new paragraph at: "Klimas has photographed sonic sculptures of classical music....
+  A: Begin new paragraph because essay shifts from harmonics explanation to Klimas's taste
+  B: Begin new paragraph because essay shifts from Jenny's experiments to music Klimas uses [CORRECT]
+  C: DO NOT begin new paragraph because it would interrupt Jenny's experiments analysis
+  D: DO NOT begin new paragraph because it would interrupt Klimas's scientific background
+Notes: Passage III - New paragraph shifts topic from Jenny to Klimas's music
+
+Q55 [Test 2]:
+Stem: Maybe this complexity <u>in May</u> helps explain why Black's work created such a stir....
+  A: where it is now.
+  B: after the word Maybe.
+  C: after the word explain.
+  D: after the word stir (and before the period). [CORRECT]
+Notes: Test 2 Question 55
+
+Q30 [Test 6]:
+Stem: The writer wants to add the following sentence to the essay: 'Fong eventually led several companies....
+  A: Point A in Paragraph 1. [CORRECT]
+  B: Point B in Paragraph 1.
+  C: Point C in Paragraph 2.
+  D: Point D in Paragraph 4.
+
+Q45 [Test 6]:
+Stem: The writer wants to add the following sentence to the essay: 'By 2012, the zoo had bred over nine th...
+  A: Point A in Paragraph 2.
+  B: Point B in Paragraph 3.
+  C: Point C in Paragraph 4.
+  D: Point D in Paragraph 4. [CORRECT]
+
+Q59 [Test 6]:
+Stem: The writer is considering adding the following sentence to the essay: 'Even laundry hung on a clothe...
+  A: Point A in Paragraph 1.
+  B: Point B in Paragraph 2.
+  C: Point C in Paragraph 3. [CORRECT]
+  D: Point D in Paragraph 3.
+
+
+COMMA-SPLICE (6 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 2 (33.3%)
+  B: 0 (0.0%)
+  C: 3 (50.0%)
+  D: 1 (16.7%)
+
+"NO CHANGE" appears 5 times, correct 1 times (20.0%)
+
+EXAMPLES:
+
+Q29 [Test 1]:
+Stem: He administered the medicine to people suffering from <u>fevers, he then noted</u> that it worked....
+  A: NO CHANGE
+  B: fevers, he was elated to find
+  C: fevers which
+  D: fevers. It [CORRECT]
+Notes: Passage II - Comma splice, needs period or semicolon
+
+Q1 [Test 1]:
+Stem: <u>There are thousands of new animal species identified</u> each year, the vast majority are small o...
+  A: NO CHANGE
+  B: Scientists say thousands of new animal species are
+  C: Of the thousands of new animal species [CORRECT]
+  D: Thousands of new animal species are
+Notes: Passage I - Comma splice, needs coordination or subordination
+
+Q24 [Test 2]:
+Stem: The Garamantes <u>could of relied</u> on a constant supply of water for drinking, washing, and irrig...
+  A: NO CHANGE
+  B: could rely
+  C: could have relied [CORRECT]
+  D: relied
+Notes: Test 2 Question 24
+
+Q15 [Test 2]:
+Stem: Given that all the choices are accurate, which one most concisely conveys the idea that Celtic mouth...
+  A: NO CHANGE [CORRECT]
+  B: albums and dance concerts around the world.
+  C: music CDs and performances in many different venues.
+  D: recordings that can be purchased online.
+Notes: Test 2 Question 15
+
+Q72 [Test 2]:
+Stem: <u>It was becoming clear that</u> the Americans were unaware of the 77th's whereabouts, the situatio...
+  A: NO CHANGE
+  B: Having become
+  C: As it became [CORRECT]
+  D: It became
+Notes: Test 2 Question 72
+
+
+IDIOM (6 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 3 (50.0%)
+  B: 2 (33.3%)
+  C: 1 (16.7%)
+  D: 0 (0.0%)
+
+"NO CHANGE" appears 6 times, correct 3 times (50.0%)
+
+EXAMPLES:
+
+Q34 [Test 1]:
+Stem: Klimas positions the camera so it is <u>level with</u> the paint puddle....
+  A: NO CHANGE [CORRECT]
+  B: eye-to-eye with
+  C: the same as
+  D: equal to
+Notes: Passage III - "Level with" is correct idiom
+
+Q51 [Test 1]:
+Stem: Roadside overlooks offered travelers the chance to take in a view <u>of</u> the river or a waterfall...
+  A: NO CHANGE [CORRECT]
+  B: up on
+  C: on
+  D: DELETE the underlined portion.
+Notes: Passage IV - "view of" is correct idiom
+
+Q74 [Test 2]:
+Stem: Although one might question the extent <u>in which</u> Cher Ami understood his mission, his story pr...
+  A: NO CHANGE [CORRECT]
+  B: of
+  C: to
+  D: DELETE the underlined portion.
+Notes: Test 2 Question 74
+
+Q34 [Test 6]:
+Stem: Dryococelus australis, also known as the Lord Howe stick insect, is native to Lord Howe Island, loca...
+  A: NO CHANGE
+  B: than fifteen miles from [CORRECT]
+  C: then fifteen miles from
+  D: then fifteen miles to
+
+Q39 [Test 6]:
+Stem: In 2003, the Australian government permitted the removal of four insects from the island in order to...
+  A: NO CHANGE
+  B: over from
+  C: back from [CORRECT]
+  D: against
+
+
+VERB-AGREEMENT (5 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 2 (40.0%)
+  B: 0 (0.0%)
+  C: 2 (40.0%)
+  D: 1 (20.0%)
+
+"NO CHANGE" appears 5 times, correct 2 times (40.0%)
+
+EXAMPLES:
+
+Q6 [Test 1]:
+Stem: In 2009, Marshall announced that indeed there <u>is</u> two manta species....
+  A: NO CHANGE [CORRECT]
+  B: happen to be
+  C: were
+  D: are
+Notes: Passage I - Subject-verb agreement, "two species" is plural
+
+Q10 [Test 1]:
+Stem: Marshall announced that indeed there <u>is</u> two manta species....
+  A: NO CHANGE
+  B: exists
+  C: was
+  D: are [CORRECT]
+Notes: Passage I - Subject-verb agreement
+
+Q39 [Test 1]:
+Stem: Klimas's idea for his sonic sculptures <u>were sparked</u> by the experiments of Swiss scientist Han...
+  A: NO CHANGE
+  B: have been
+  C: was [CORRECT]
+  D: are
+Notes: Passage III - "idea" is singular, needs "was"
+
+Q62 [Test 1]:
+Stem: At the time, hip-hop subculture—based on graffiti, breakdancing, deejaying, and rapping art forms—<u...
+  A: NO CHANGE
+  B: have emerged
+  C: was emerging [CORRECT]
+  D: are emerging
+Notes: Passage V - "subculture" singular needs "was"
+
+Q40 [Test 2]:
+Stem: Once this detection occurs, data <u>is gathered</u> and transferred to laboratories at the Universit...
+  A: NO CHANGE [CORRECT]
+  B: are gathered
+  C: have been gathered
+  D: are being gathered
+Notes: Test 2 Question 40
+
+
+PARALLEL-STRUCTURE (5 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 1 (20.0%)
+  B: 0 (0.0%)
+  C: 1 (20.0%)
+  D: 3 (60.0%)
+
+"NO CHANGE" appears 5 times, correct 1 times (20.0%)
+
+EXAMPLES:
+
+Q46 [Test 1]:
+Stem: The Columbia River Gorge is eighty-five miles of flowing <u>water, there are tree-covered bluffs, an...
+  A: NO CHANGE
+  B: tree-covered bluffs flank the river,
+  C: featuring tree-covered bluffs,
+  D: tree-covered bluffs, [CORRECT]
+Notes: Passage IV - Needs parallel noun phrases
+
+Q29 [Test 6]:
+Stem: Until his death in 2004 at ninety-seven, Fong spent every weekend tending to his flowers and trees <...
+  A: NO CHANGE
+  B: having mingled
+  C: then mingles
+  D: mingling [CORRECT]
+
+Q54 [Test 6]:
+Stem: Messages can be transmitted by clicking a flashlight on and off, <u>by flashing a mirror in the sun,...
+  A: NO CHANGE
+  B: flashing a mirror in the sun can work,
+  C: a mirror can be flashed in the sun, [CORRECT]
+  D: flashing a mirror in the sun,
+
+Q50 [Test 7]:
+Stem: Works in this style depict traditional ceremonies, dance, and mythology <u>and feature</u> strong ou...
+  A: NO CHANGE [CORRECT]
+  B: and while it featured
+  C: and featuring
+  D: featured
+
+Q67 [Test 7]:
+Stem: Presentation and performance make up the rest, requiring judges to scrutinize participants' facial e...
+  A: NO CHANGE
+  B: participants' overall stage presence,
+  C: presenting themselves overall,
+  D: overall stage presence, [CORRECT]
+
+
+FRAGMENT (5 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 1 (20.0%)
+  B: 3 (60.0%)
+  C: 0 (0.0%)
+  D: 1 (20.0%)
+
+"NO CHANGE" appears 5 times, correct 1 times (20.0%)
+
+EXAMPLES:
+
+Q41 [Test 1]:
+Stem: In the 1960s, <u>Jenny's study on</u> the effects of sound vibrations on various materials....
+  A: NO CHANGE
+  B: while Jenny studied
+  C: Jenny, to study
+  D: Jenny studied [CORRECT]
+Notes: Passage III - Fragment needs verb "studied"
+
+Q2 [Test 1]:
+Stem: <u>Mantas, which are</u> plankton-eating relatives of stingrays that look like pairs of enormous bla...
+  A: NO CHANGE
+  B: Mantas are [CORRECT]
+  C: Mantas,
+  D: DELETE the underlined portion (adjusting the capitalization as needed).
+Notes: Passage I - Fragment, needs main verb
+
+Q50 [Test 2]:
+Stem: Black draws collages in black No. 2 pencil on white board <u>and they're packed with</u> depictions ...
+  A: NO CHANGE
+  B: board. They're [CORRECT]
+  C: board, they're
+  D: board they're
+Notes: Test 2 Question 50
+
+Q62 [Test 2]:
+Stem: In many urban areas, they are considered little more than a "rats with wings," <u>blamed</u> for spr...
+  A: NO CHANGE [CORRECT]
+  B: wings" and they are blamed
+  C: wings," they are blamed
+  D: wings." Blamed
+Notes: Test 2 Question 62
+
+Q16 [Test 1]:
+Stem: Salicylates may also play a role in the plant's ability to regulate its temperature<u>; in effect, h...
+  A: NO CHANGE
+  B: temperature, helping [CORRECT]
+  C: temperature, this helps
+  D: temperature. As a result, helping
+Notes: Passage II - Semicolon creates fragment, needs comma
+
+
+COLON (4 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 0 (0.0%)
+  B: 2 (50.0%)
+  C: 2 (50.0%)
+  D: 0 (0.0%)
+
+"NO CHANGE" appears 4 times, correct 0 times (0.0%)
+
+EXAMPLES:
+
+Q7 [Test 1]:
+Stem: Another discovery <u>was: that</u> some mantas had egg-shaped masses at the base of their tail fins....
+  A: NO CHANGE
+  B: was, that,
+  C: was that [CORRECT]
+  D: was, that
+Notes: Passage I - Unnecessary colon
+
+Q71 [Test 2]:
+Stem: They had but one link to <u>headquarters homing pigeons</u>....
+  A: NO CHANGE
+  B: headquarters: [CORRECT]
+  C: headquarters;
+  D: headquarters,
+Notes: Test 2 Question 71
+
+Q32 [Test 1]:
+Stem: The paint collects in a puddle of <u>colors; rich oranges and powder blues,</u> hot pinks and electr...
+  A: NO CHANGE
+  B: colors: rich oranges and powder blues, [CORRECT]
+  C: colors: rich oranges; and powder blues
+  D: colors; rich oranges and powder blues;
+Notes: Passage III - Colon introduces list
+
+Q48 [Test 1]:
+Stem: Their design went beyond <u>practicalities it</u> showcased the scenic grandeur of the gorge....
+  A: NO CHANGE
+  B: practicalities: and
+  C: practicalities: [CORRECT]
+  D: practicalities,
+Notes: Passage IV - Colon introduces explanation
+
+
+VERB-FORM (4 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 1 (25.0%)
+  B: 2 (50.0%)
+  C: 0 (0.0%)
+  D: 1 (25.0%)
+
+"NO CHANGE" appears 4 times, correct 1 times (25.0%)
+
+EXAMPLES:
+
+Q24 [Test 1]:
+Stem: Consequently, in the mid-1700s, English minister Edward Stone <u>had began</u> to seek a substitute....
+  A: NO CHANGE [CORRECT]
+  B: would have began
+  C: begun
+  D: began
+Notes: Passage II - "Had began" is wrong, should be "began" (simple past) or "had begun"
+
+Q58 [Test 1]:
+Stem: Crumbling stone guardrails have been repaired. Damaged bridges have been rebuilt. <u>Tunnels, now em...
+  A: NO CHANGE
+  B: Rubble-filled tunnels have been emptied and strengthened. [CORRECT]
+  C: The tunnels have had the rubble removed from them, and people have strengthened them.
+  D: Once filled with rubble, tunnels have been emptied and strengthened.
+Notes: Passage IV - Match "have been [verb]" pattern
+
+Q31 [Test 1]:
+Stem: In his studio in Dusseldorf, Germany, <u>paint is what photographer Martin Klimas</u> carefully pour...
+  A: NO CHANGE
+  B: there is paint carefully being poured by photographer Martin Klimas
+  C: paint is carefully poured by Martin Klimas, a photographer,
+  D: photographer Martin Klimas carefully pours paint [CORRECT]
+Notes: Passage III - Wordy, needs direct subject-verb
+
+Q18 [Test 1]:
+Stem: On a Sumerian stone tablet from 3000 BCE, <u>lists willow</u> among dozens of plants used to treat i...
+  A: NO CHANGE
+  B: willow is listed among [CORRECT]
+  C: willow is listed on
+  D: lists willow on
+Notes: Passage II - Needs subject, passive voice correct here
+
+
+DELETING-SENTENCE (4 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 2 (50.0%)
+  B: 2 (50.0%)
+  C: 0 (0.0%)
+  D: 0 (0.0%)
+
+"NO CHANGE" appears 1 times, correct 0 times (0.0%)
+
+EXAMPLES:
+
+Q55 [Test 1]:
+Stem: <u>Impressive as it was,</u> the highway was soon outmoded....
+  A: NO CHANGE
+  B: When [CORRECT]
+  C: Soon
+  D: DELETE the underlined portion.
+Notes: Passage IV - Need DELETE, "soon" already in "soon outmoded"
+
+Q5 [Test 1]:
+Stem: <u>Her beachside lodgings in Mozambique now house the Marine Megafauna Research Center.</u> [Should ...
+  A: Yes, because the sentence interrupts the account of how Marshall came to investigate the possibility [CORRECT]
+  B: Yes, because the sentence fails to clarify why Marshall did her research in Mozambique.
+  C: No, because the sentence explains how Marshall created a large scientific institution even though she started as a lone researcher.
+  D: No, because the sentence clarifies Marshall's role at the Marine Megafauna Center.
+Notes: Passage I - Relevance, sentence interrupts flow
+
+Q34 [Test 2]:
+Stem: If the writer were to delete the underlined portion <u>(fifty trillion neutrinos pass through your b...
+  A: indicates why there are so many neutrinos. [CORRECT]
+  B: specifies why neutrinos are practically weightless.
+  C: explains how neutrinos pass through matter.
+  D: emphasizes how numerous neutrinos are.
+Notes: Test 2 Question 34
+
+Q54 [Test 2]:
+Stem: If the writer were to delete the underlined portion <u>—so detailed that I could see the folds in Ro...
+  A: detail that offers much for the viewer to reflect upon and analyze.
+  B: detail suggesting that Black's collages overall, though the narrative might have underlying meanings that he or she is given to understand. [CORRECT]
+  C: commentary on some of Black's art, he or she is given to believe that the artist enjoys revealing underlying meaning.
+  D: statement that the narrator's method is best described as one by the artist who created it.
+Notes: Test 2 Question 54
+
+
+MODIFIERS (4 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 0 (0.0%)
+  B: 2 (50.0%)
+  C: 2 (50.0%)
+  D: 0 (0.0%)
+
+"NO CHANGE" appears 3 times, correct 0 times (0.0%)
+
+EXAMPLES:
+
+Q16 [Test 6]:
+Stem: With a full career in both politics and business, Hiram Fong never set out to develop one of Oahu's ...
+  A: NO CHANGE
+  B: spectacular horticulturally
+  C: spectacular horticultural [CORRECT]
+  D: spectacle horticultural
+
+Q17 [Test 6]:
+Stem: Fong, whose political career spanned over thirty years, was one of the first two senators from Hawai...
+  A: NO CHANGE
+  B: when it became [CORRECT]
+  C: that became
+  D: becoming
+
+Q33 [Test 6]:
+Stem: Wingless and up to fifteen inches long, <u>the men see</u> Dryococelus australis—a nocturnal species...
+  A: NO CHANGE
+  B: the men have found
+  C: the insects are [CORRECT]
+  D: DELETE the underlined portion.
+
+Q49 [Test 7]:
+Stem: The <u>then widely held jurors shared the position</u> that American Indian art should be based on t...
+  A: where it is now.
+  B: after the words shared the. [CORRECT]
+  C: after the word that.
+  D: after the word art.
+
+
+VERBS (4 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 0 (0.0%)
+  B: 1 (25.0%)
+  C: 0 (0.0%)
+  D: 3 (75.0%)
+
+"NO CHANGE" appears 4 times, correct 0 times (0.0%)
+
+EXAMPLES:
+
+Q27 [Test 6]:
+Stem: Nixon Valley <u>will abound with</u> flowers—plumeria, crown flower, and bougainvillea are just a fe...
+  A: NO CHANGE
+  B: had abounded
+  C: abounding
+  D: abounds [CORRECT]
+
+Q32 [Test 7]:
+Stem: ENIAC was designed during World War II with the intention of helping the US military calculate preci...
+  A: NO CHANGE
+  B: would allow
+  C: has allowed
+  D: allows [CORRECT]
+
+Q34 [Test 7]:
+Stem: Although a group of men designed and built ENIAC, a group of six women mathematicians, <u>lead by</u...
+  A: NO CHANGE
+  B: led among
+  C: lead with
+  D: led by [CORRECT]
+
+Q64 [Test 7]:
+Stem: Technique, which includes tone and pitch, <u>represent</u> only fifty percent of their scoring crite...
+  A: NO CHANGE
+  B: pitch, represents [CORRECT]
+  C: pitch represents
+  D: pitch represent
+
+
+SENTENCE-PLACEMENT (3 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 1 (33.3%)
+  B: 1 (33.3%)
+  C: 0 (0.0%)
+  D: 1 (33.3%)
+
+"NO CHANGE" appears 1 times, correct 0 times (0.0%)
+
+EXAMPLES:
+
+Q8 [Test 1]:
+Stem: [Where should this sentence be placed?] <u>Some of the data were basic, such as manta coloration and...
+  A: after Sentence 1. [CORRECT]
+  B: after Sentence 2.
+  C: after Sentence 3.
+  D: after Sentence 4.
+Notes: Passage I - Logical placement, general before specific
+
+Q13 [Test 1]:
+Stem: The fact that such large animals went undifferentiated <u>highlights how little scientists know for ...
+  A: NO CHANGE
+  B: for so long highlights how little scientists know [CORRECT]
+  C: highlights for so long how little scientists know
+  D: highlights how for so long little scientists know
+Notes: Passage I - Modifier placement
+
+Q60 [Test 1]:
+Stem: [Sentence to add: "The rest of the highway fell into disrepair." Where to place?]...
+  A: Point A in Paragraph 1.
+  B: Point B in Paragraph 2.
+  C: Point C in Paragraph 2.
+  D: Point D in Paragraph 3. [CORRECT]
+Notes: Passage IV - After "only western third still in use" (Point D)
+
+
+DASH (3 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 1 (33.3%)
+  B: 2 (66.7%)
+  C: 0 (0.0%)
+  D: 0 (0.0%)
+
+"NO CHANGE" appears 3 times, correct 1 times (33.3%)
+
+EXAMPLES:
+
+Q64 [Test 1]:
+Stem: Robinson wasted no time in recruiting three aspiring <u>rappers: Big Bank Hank, Master Gee, and Wond...
+  A: NO CHANGE
+  B: rappers— [CORRECT]
+  C: rappers;
+  D: rappers,
+Notes: Passage V - Dash before "to record" matches colon before list
+
+Q33 [Test 2]:
+Stem: This radiation<u>: a veritable shock wave of photonic energy—</u>is emitted when subatomic particles...
+  A: NO CHANGE
+  B: —a veritable shock wave of photonic energy— [CORRECT]
+  C: ; a veritable shock wave of photonic energy;
+  D: , a veritable shock wave of photonic energy,
+Notes: Test 2 Question 33
+
+Q3 [Test 1]:
+Stem: Mantas are plankton-eating relatives of stingrays that look like pairs of enormous black <u>wings—up...
+  A: NO CHANGE [CORRECT]
+  B: wings: up to twenty-five feet wide—
+  C: wings, up to twenty-five feet wide—
+  D: wings, up to twenty-five feet wide:
+Notes: Passage I - Dashes for parenthetical info, must match
+
+
+MODIFIER-MISPLACED (2 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 1 (50.0%)
+  B: 0 (0.0%)
+  C: 0 (0.0%)
+  D: 1 (50.0%)
+
+"NO CHANGE" appears 2 times, correct 1 times (50.0%)
+
+EXAMPLES:
+
+Q12 [Test 1]:
+Stem: The fact that such large animals <u>went undifferentiated highlights how little scientists know for ...
+  A: NO CHANGE [CORRECT]
+  B: went undifferentiated for so long highlights how little scientists know about
+  C: for so long went undifferentiated, highlighting how little scientists know about
+  D: went undifferentiated, for so long highlighting how little scientists know about
+Notes: Passage I - Misplaced modifier "for so long"
+
+Q69 [Test 2]:
+Stem: One of six hundred birds used by the US Army Signal Corps in France during World War I, <u>all twelv...
+  A: NO CHANGE
+  B: the twelve missions Cher Ami flew were successful.
+  C: successful missions by Cher Ami numbered twelve.
+  D: Cher Ami flew twelve successful missions. [CORRECT]
+Notes: Test 2 Question 69
+
+
+ADDING-INFO (2 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 1 (50.0%)
+  B: 1 (50.0%)
+  C: 0 (0.0%)
+  D: 0 (0.0%)
+
+EXAMPLES:
+
+Q53 [Test 1]:
+Stem: Engineers created <u>openings</u> in the side of one tunnel. [Add "an unprecedented five"?]...
+  A: Yes, adds detail highlighting impressive design [CORRECT]
+  B: Yes, hints at how engineers made openings
+  C: No, provides unrelated information
+  D: No, suggests creating intricate tunnels was easy
+Notes: Passage IV - Unrelated to sentence about enabling motorists to glimpse
+
+Q67 [Test 2]:
+Stem: The writer is considering revising the underlined portion to the following: especially across long d...
+  A: Yes, because it offers a better indication of the circumstances that made communication difficult.
+  B: Yes, because it more clearly identifies the locations of and distance between troops. [CORRECT]
+  C: No, because it adds information that is irrelevant to the paragraph's discussion of homing pigeons.
+  D: No, because it suggests that homing pigeons are unnecessary today.
+Notes: Test 2 Question 67
+
+
+PRONOUN-AMBIGUOUS (2 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 1 (50.0%)
+  B: 0 (0.0%)
+  C: 1 (50.0%)
+  D: 0 (0.0%)
+
+"NO CHANGE" appears 2 times, correct 1 times (50.0%)
+
+EXAMPLES:
+
+Q52 [Test 1]:
+Stem: Guardrails lined the route and blurred the distinction between <u>that and</u> environment....
+  A: NO CHANGE
+  B: this and the
+  C: road and [CORRECT]
+  D: it and it's
+Notes: Passage IV - "road and" clear referent
+
+Q46 [Test 2]:
+Stem: I noticed an article about Rafael Leonardo Black, a 64-year-old Clinton Hill artist <u>who</u> had j...
+  A: NO CHANGE [CORRECT]
+  B: of whom
+  C: which
+  D: whom
+Notes: Test 2 Question 46
+
+
+WORDINESS (2 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 1 (50.0%)
+  B: 0 (0.0%)
+  C: 0 (0.0%)
+  D: 1 (50.0%)
+
+"NO CHANGE" appears 2 times, correct 1 times (50.0%)
+
+EXAMPLES:
+
+Q56 [Test 1]:
+Stem: By 1954, only the western third of the <u>original road</u> was still in use....
+  A: NO CHANGE [CORRECT]
+  B: road that first existed continued in a functional capacity,
+  C: highway that was completed in 1922 continued to be utilized,
+  D: original highway was still being utilized by the driving populace,
+Notes: Passage IV - NO CHANGE concise
+
+Q51 [Test 2]:
+Stem: Black draws collages in black No. 2 pencil on white board and they're packed with <u>depictions, in ...
+  A: NO CHANGE
+  B: black pencil drawings that depict
+  C: drawings that create collages of
+  D: depictions of [CORRECT]
+Notes: Test 2 Question 51
+
+
+ADDING-SENTENCE (2 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 0 (0.0%)
+  B: 0 (0.0%)
+  C: 2 (100.0%)
+  D: 0 (0.0%)
+
+EXAMPLES:
+
+Q65 [Test 1]:
+Stem: [Add sentence: "Robinson and her husband would go on to form other record labels as well."]...
+  A: Yes, suggests Sugarhill Gang could choose where to record
+  B: Yes, explains why rappers decided to record with Robinson
+  C: No, interrupts discussion of how "Rapper's Delight" was created [CORRECT]
+  D: No, fails to specify time period when labels started
+Notes: Passage V - Interrupts flow about creating Rapper's Delight
+
+Q37 [Test 2]:
+Stem: At this point, the writer is considering adding the following true sentence: In 1956, during the Cow...
+  A: Yes, because the information is relevant to the history of neutrino detection outlined in the paragraph.
+  B: Yes, because the information indicates that subzero altitude is essential to the detection of neutrinos.
+  C: No, because the information is unrelated to the discussion of why scientists selected the location of the IceCube Neutrino Observatory. [CORRECT]
+  D: No, because the information is unrelated to why the detection of neutrinos is facilitated by zero-gravity conditions.
+Notes: Test 2 Question 37
+
+
+MODIFIER-DANGLING (2 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 0 (0.0%)
+  B: 0 (0.0%)
+  C: 0 (0.0%)
+  D: 2 (100.0%)
+
+"NO CHANGE" appears 2 times, correct 0 times (0.0%)
+
+EXAMPLES:
+
+Q58 [Test 2]:
+Stem: When I walk home from the Urban Vintage, <u>its décor often being updated with</u> restored antiques...
+  A: NO CHANGE
+  B: Vintage, easily carrying my lightweight laptop
+  C: Vintage this evening—I can't be late to meet a friend exactly at eight—
+  D: Vintage tonight—I hope [CORRECT]
+Notes: Test 2 Question 58
+
+Q66 [Test 1]:
+Stem: Wanting to re-create the feel-good vibe, <u>an upbeat disco record provided the background that</u> ...
+  A: NO CHANGE
+  B: an upbeat disco record provided by Robinson was rhymed over by the rappers.
+  C: rhymes were created by the rappers over an upbeat disco record provided by Robinson.
+  D: Robinson provided an upbeat disco record for the rappers to rhyme over. [CORRECT]
+Notes: Passage V - "Wanting" modifies Robinson not "record"
+
+
+PURPOSE (2 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 0 (0.0%)
+  B: 0 (0.0%)
+  C: 1 (50.0%)
+  D: 1 (50.0%)
+
+EXAMPLES:
+
+Q75 [Test 6]:
+Stem: Suppose the writer's primary purpose had been to explain a common debate about the definition of art...
+  A: Yes, because it demonstrates that characteristics of street art are similar to those found in other types of art.
+  B: Yes, because it explains why street art is controversial.
+  C: No, because it focuses on why the work of one street artist has gained popularity. [CORRECT]
+  D: No, because it explains Banksy's reasons for choosing to create street art.
+
+Q60 [Test 6]:
+Stem: Suppose the writer's primary purpose had been to discuss how a new technology revolutionized communi...
+  A: Yes, because it explains how Morse code changed the way people sent messages over long distances.
+  B: Yes, because it describes how the advent of new technologies rendered Morse code obsolete.
+  C: No, because it indicates that Morse code today is pursued primarily as a hobby.
+  D: No, because it focuses instead on the advantages of and continuing uses for Morse code. [CORRECT]
+
+
+WORD-PLACEMENT (1 questions)
+--------------------------------------------------------------------------------
+
+Correct Answer Distribution:
+  A: 0 (0.0%)
+  B: 0 (0.0%)
+  C: 0 (0.0%)
+  D: 1 (100.0%)
+
+EXAMPLES:
+
+Q52 [Test 6]:
+Stem: Which of the following placements for the underlined portion would most clearly indicate that each l...
+  A: Where it is now
+  B: After the word each
+  C: After the word a
+  D: After the phrase pattern of [CORRECT]
+

@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACT Content & Difficulty Blueprint</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      color: #111;
+      background: #f8f9fa;
+    }
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    .tabs {
+      background: #fff;
+      border-bottom: 2px solid #e9ecef;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .tab {
+      padding: 16px 32px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      color: #6c757d;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+    }
+    .tab:hover { background: #f8f9fa; color: #495057; }
+    .tab.active { color: #667eea; border-bottom-color: #667eea; }
+    .tab-content {
+      display: none;
+      padding: 32px 24px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .tab-content.active { display: block; }
+    .section {
+      background: #fff;
+      padding: 24px;
+      margin-bottom: 24px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #212529;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f8f9fa;
+    }
+    h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 24px 0 12px 0;
+      text-transform: uppercase;
+      color: #6c757d;
+      letter-spacing: 0.5px;
+    }
+    .key-insight {
+      background: #e7f3ff;
+      border-left: 4px solid #0066ff;
+      padding: 16px;
+      margin: 16px 0;
+      border-radius: 4px;
+    }
+    .key-insight strong {
+      display: block;
+      color: #0056d6;
+      margin-bottom: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 12px 0;
+    }
+    th {
+      text-align: left;
+      font-weight: 600;
+      padding: 10px 12px;
+      background: #f8f9fa;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: #6c757d;
+      letter-spacing: 0.5px;
+    }
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #f8f9fa;
+    }
+    tr:hover { background: #f8f9fa; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    ul { margin: 12px 0; padding-left: 24px; line-height: 1.8; }
+    li { margin: 6px 0; }
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      background: #e9ecef;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin: 2px 4px 2px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>ACT Content & Difficulty Blueprint</h1>
+    <div class="subtitle">Deep content analysis from 7 tests • Focus on replication patterns</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('english')">English</button>
+    <button class="tab" onclick="showTab('math')">Math</button>
+    <button class="tab" onclick="showTab('reading')">Reading</button>
+    <button class="tab" onclick="showTab('science')">Science</button>
+  </div>
+
+  <!-- ENGLISH TAB -->
+  <div id="english" class="tab-content active">
+    <div class="section">
+      <h2>English Section Content Patterns</h2>
+      <div class="key-insight">
+        <strong>Replication Strategy</strong>
+        Create 5 passages (15 questions each) covering diverse themes with progressive difficulty. Mix question types across grammar, punctuation, style, organization, and rhetoric.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Question Type Distribution</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Question Type</th>
+            <th>Count</th>
+            <th>% of Total</th>
+            <th>How to Replicate</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>Grammar - Subject-Verb Agreement</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Test specific grammar rules
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Grammar - Pronoun Usage</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Test specific grammar rules
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Grammar - Verb Tense</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Test specific grammar rules
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Grammar - Modifier Placement</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Test specific grammar rules
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Punctuation - Commas</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Focus on punctuation placement/usage
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Punctuation - Semicolons/Colons</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Focus on punctuation placement/usage
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Punctuation - Apostrophes</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Focus on punctuation placement/usage
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Style - Word Choice</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Evaluate word choice and conciseness
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Style - Redundancy</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Evaluate word choice and conciseness
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Organization - Transitions</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Test logical flow and structure
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Organization - Placement</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Test logical flow and structure
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Rhetoric - Main Idea</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Assess rhetorical effectiveness
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Rhetoric - Add/Delete</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Assess rhetorical effectiveness
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Passage Content Breakdown</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Test</th>
+            <th>Passage</th>
+            <th>Themes</th>
+            <th>Words</th>
+            <th>Readability</th>
+            <th>Avg Word Len</th>
+            <th>Avg Sent Len</th>
+            <th>Complex Punct</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td><span class="badge">Scientific</span><span class="badge">Nature/Environment</span></td>
+            <td>313</td>
+            <td>Difficult</td>
+            <td>5.4</td>
+            <td>14.9</td>
+            <td>3</td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td><span class="badge">General</span></td>
+            <td>294</td>
+            <td>Difficult</td>
+            <td>5.1</td>
+            <td>19.6</td>
+            <td>0</td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>3</td>
+            <td><span class="badge">Arts/Culture</span></td>
+            <td>322</td>
+            <td>Standard</td>
+            <td>5.0</td>
+            <td>18.9</td>
+            <td>5</td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>4</td>
+            <td><span class="badge">Nature/Environment</span></td>
+            <td>299</td>
+            <td>Difficult</td>
+            <td>5.4</td>
+            <td>15.7</td>
+            <td>2</td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>5</td>
+            <td><span class="badge">Arts/Culture</span></td>
+            <td>303</td>
+            <td>Difficult</td>
+            <td>5.6</td>
+            <td>17.8</td>
+            <td>5</td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>4</td>
+            <td><span class="badge">Historical</span><span class="badge">Scientific</span><span class="badge">Arts/Culture</span></td>
+            <td>365</td>
+            <td>Difficult</td>
+            <td>5.0</td>
+            <td>20.3</td>
+            <td>4</td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>2</td>
+            <td><span class="badge">Arts/Culture</span><span class="badge">Nature/Environment</span></td>
+            <td>347</td>
+            <td>Difficult</td>
+            <td>5.4</td>
+            <td>18.3</td>
+            <td>0</td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>3</td>
+            <td><span class="badge">General</span></td>
+            <td>318</td>
+            <td>Difficult</td>
+            <td>5.8</td>
+            <td>17.7</td>
+            <td>2</td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>5</td>
+            <td><span class="badge">Historical</span><span class="badge">Nature/Environment</span></td>
+            <td>359</td>
+            <td>Difficult</td>
+            <td>5.4</td>
+            <td>15.0</td>
+            <td>1</td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>1</td>
+            <td><span class="badge">General</span></td>
+            <td>288</td>
+            <td>Difficult</td>
+            <td>5.6</td>
+            <td>16.9</td>
+            <td>1</td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>1</td>
+            <td><span class="badge">General</span></td>
+            <td>283</td>
+            <td>Difficult</td>
+            <td>5.0</td>
+            <td>18.9</td>
+            <td>1</td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>2</td>
+            <td><span class="badge">Historical</span><span class="badge">Arts/Culture</span></td>
+            <td>305</td>
+            <td>Standard</td>
+            <td>5.2</td>
+            <td>14.5</td>
+            <td>2</td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>3</td>
+            <td><span class="badge">Personal/Family</span><span class="badge">Historical</span></td>
+            <td>370</td>
+            <td>Standard</td>
+            <td>4.7</td>
+            <td>18.5</td>
+            <td>3</td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>4</td>
+            <td><span class="badge">Historical</span><span class="badge">Scientific</span></td>
+            <td>314</td>
+            <td>Difficult</td>
+            <td>5.3</td>
+            <td>16.5</td>
+            <td>0</td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>5</td>
+            <td><span class="badge">Personal/Family</span><span class="badge">Historical</span><span class="badge">Arts/Culture</span></td>
+            <td>316</td>
+            <td>Difficult</td>
+            <td>5.3</td>
+            <td>15.8</td>
+            <td>0</td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>1</td>
+            <td><span class="badge">Personal/Family</span><span class="badge">Historical</span><span class="badge">Arts/Culture</span></td>
+            <td>356</td>
+            <td>Standard</td>
+            <td>4.8</td>
+            <td>20.9</td>
+            <td>2</td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>2</td>
+            <td><span class="badge">Scientific</span></td>
+            <td>336</td>
+            <td>Standard</td>
+            <td>5.1</td>
+            <td>17.7</td>
+            <td>5</td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>3</td>
+            <td><span class="badge">Personal/Family</span><span class="badge">Nature/Environment</span></td>
+            <td>348</td>
+            <td>Standard</td>
+            <td>4.9</td>
+            <td>16.6</td>
+            <td>2</td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>4</td>
+            <td><span class="badge">Nature/Environment</span></td>
+            <td>336</td>
+            <td>Standard</td>
+            <td>5.1</td>
+            <td>18.7</td>
+            <td>1</td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>5</td>
+            <td><span class="badge">Arts/Culture</span></td>
+            <td>304</td>
+            <td>Difficult</td>
+            <td>5.6</td>
+            <td>15.2</td>
+            <td>4</td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>1</td>
+            <td><span class="badge">Historical</span><span class="badge">Scientific</span></td>
+            <td>325</td>
+            <td>Difficult</td>
+            <td>5.3</td>
+            <td>18.1</td>
+            <td>2</td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>2</td>
+            <td><span class="badge">Scientific</span><span class="badge">Nature/Environment</span></td>
+            <td>327</td>
+            <td>Difficult</td>
+            <td>5.0</td>
+            <td>16.4</td>
+            <td>2</td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>3</td>
+            <td><span class="badge">Historical</span></td>
+            <td>350</td>
+            <td>Standard</td>
+            <td>4.9</td>
+            <td>18.4</td>
+            <td>1</td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>4</td>
+            <td><span class="badge">Personal/Family</span><span class="badge">Historical</span><span class="badge">Arts/Culture</span></td>
+            <td>279</td>
+            <td>Difficult</td>
+            <td>5.2</td>
+            <td>19.9</td>
+            <td>2</td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>5</td>
+            <td><span class="badge">Historical</span><span class="badge">Scientific</span></td>
+            <td>336</td>
+            <td>Difficult</td>
+            <td>5.3</td>
+            <td>18.7</td>
+            <td>1</td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>1</td>
+            <td><span class="badge">Historical</span></td>
+            <td>323</td>
+            <td>Standard</td>
+            <td>5.1</td>
+            <td>15.4</td>
+            <td>2</td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>2</td>
+            <td><span class="badge">Scientific</span><span class="badge">Nature/Environment</span></td>
+            <td>325</td>
+            <td>Difficult</td>
+            <td>5.0</td>
+            <td>20.3</td>
+            <td>2</td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>3</td>
+            <td><span class="badge">Nature/Environment</span></td>
+            <td>317</td>
+            <td>Standard</td>
+            <td>5.0</td>
+            <td>19.8</td>
+            <td>4</td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>4</td>
+            <td><span class="badge">Historical</span></td>
+            <td>316</td>
+            <td>Difficult</td>
+            <td>5.3</td>
+            <td>21.1</td>
+            <td>1</td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>5</td>
+            <td><span class="badge">Arts/Culture</span></td>
+            <td>317</td>
+            <td>Difficult</td>
+            <td>5.2</td>
+            <td>16.7</td>
+            <td>0</td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>1</td>
+            <td><span class="badge">Scientific</span></td>
+            <td>314</td>
+            <td>Difficult</td>
+            <td>5.2</td>
+            <td>18.5</td>
+            <td>3</td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>2</td>
+            <td><span class="badge">Arts/Culture</span></td>
+            <td>344</td>
+            <td>Standard</td>
+            <td>4.7</td>
+            <td>14.3</td>
+            <td>2</td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>3</td>
+            <td><span class="badge">Historical</span><span class="badge">Scientific</span></td>
+            <td>326</td>
+            <td>Difficult</td>
+            <td>5.2</td>
+            <td>19.2</td>
+            <td>0</td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>4</td>
+            <td><span class="badge">Historical</span><span class="badge">Arts/Culture</span></td>
+            <td>312</td>
+            <td>Difficult</td>
+            <td>5.4</td>
+            <td>18.4</td>
+            <td>2</td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>5</td>
+            <td><span class="badge">Personal/Family</span><span class="badge">Arts/Culture</span></td>
+            <td>302</td>
+            <td>Difficult</td>
+            <td>5.7</td>
+            <td>17.8</td>
+            <td>1</td>
+          </tr>
+          
+        </tbody>
+      </table>
+      <div class="key-insight">
+        <strong>Content Patterns</strong>
+        Mix personal narratives, historical accounts, scientific explanations, and cultural discussions. Maintain 350-450 words per passage with moderate readability (Flesch 30-60).
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Difficulty Progression Pattern</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Question Range</th>
+            <th>Easy</th>
+            <th>Medium</th>
+            <th>Hard</th>
+            <th>Strategy</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>Q 1-15</td>
+            <td>7</td>
+            <td>87</td>
+            <td>11</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Start with straightforward grammar/punctuation
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Q 16-30</td>
+            <td>9</td>
+            <td>85</td>
+            <td>11</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Mix in style and organization questions
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Q 31-45</td>
+            <td>6</td>
+            <td>85</td>
+            <td>14</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Increase complexity with rhetoric
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Q 46-60</td>
+            <td>8</td>
+            <td>83</td>
+            <td>14</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Focus on nuanced style decisions
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Q 61-75</td>
+            <td>11</td>
+            <td>84</td>
+            <td>10</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Most challenging rhetoric and organization
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- MATH TAB -->
+  <div id="math" class="tab-content">
+    <div class="section">
+      <h2>Math Section Content Patterns</h2>
+      <div class="key-insight">
+        <strong>Replication Strategy</strong>
+        Build 60 questions with clear difficulty progression. Start with basic arithmetic/algebra (Q1-20), transition to geometry/intermediate algebra (Q21-40), finish with advanced topics (Q41-60).
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Concept Distribution</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Concept Area</th>
+            <th>Count</th>
+            <th>% of Total</th>
+            <th>Typical Placement</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Difficulty Progression by Range</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Range</th>
+            <th>Primary Topics</th>
+            <th>Avg Complexity</th>
+            <th>Content Strategy</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>Q 1-20</td>
+            <td style="font-size: 11px;">Unknown</td>
+            <td>0 chars</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Simple, direct questions with minimal setup
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Q 21-40</td>
+            <td style="font-size: 11px;">Unknown</td>
+            <td>0 chars</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Multi-step problems, more context
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Q 41-60</td>
+            <td style="font-size: 11px;">Unknown</td>
+            <td>0 chars</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Complex scenarios, abstract reasoning
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Topic Distribution</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Topic</th>
+            <th>Count</th>
+            <th>%</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>Unknown</td>
+            <td>420</td>
+            <td>100.0%</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- READING TAB -->
+  <div id="reading" class="tab-content">
+    <div class="section">
+      <h2>Reading Section Content Patterns</h2>
+      <div class="key-insight">
+        <strong>Replication Strategy</strong>
+        Create 4 passages (10 questions each): Literary Fiction, Social Science, Humanities, Natural Science. Each ~700-900 words with varied question types.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Question Type Distribution</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Question Type</th>
+            <th>Count</th>
+            <th>% of Total</th>
+            <th>How to Construct</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>Detail/Explicit</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Ask about explicitly stated facts
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Inference/Implicit</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Require reading between the lines
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Main Idea/Theme</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Test overall comprehension
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Vocabulary in Context</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Context-dependent word meaning
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Function/Purpose</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Why author included specific elements
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Comparison</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Relationships between passage parts
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Author Technique</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Analyze author's techniques and choices
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Passage Content Analysis</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Test</th>
+            <th>P</th>
+            <th>Genre</th>
+            <th>Subject Matter</th>
+            <th>Words</th>
+            <th>Readability</th>
+            <th>Narrative Elements</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Dialogue-heavy</span><span class="badge">Social/Cultural</span><span class="badge">Chemistry</span></td>
+            <td>762</td>
+            <td>Difficult</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Research-based</span><span class="badge">Social/Cultural</span><span class="badge">Biology/Ecology</span><span class="badge">Astronomy</span></td>
+            <td>517</td>
+            <td>Standard</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>4</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Research-based</span><span class="badge">Social/Cultural</span><span class="badge">Astronomy</span></td>
+            <td>430</td>
+            <td>Difficult</td>
+            <td style="font-size: 10px;">
+              
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>4</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Research-based</span><span class="badge">Biology/Ecology</span><span class="badge">Historical</span></td>
+            <td>503</td>
+            <td>Difficult</td>
+            <td style="font-size: 10px;">
+              💬
+              
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>3</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Character introspection</span><span class="badge">Social/Cultural</span><span class="badge">Astronomy</span><span class="badge">Art</span><span class="badge">Music</span></td>
+            <td>775</td>
+            <td>Standard</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>1</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Character introspection</span><span class="badge">Social/Cultural</span><span class="badge">Historical</span><span class="badge">Art</span></td>
+            <td>794</td>
+            <td>Standard</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>2</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Social/Cultural</span><span class="badge">Astronomy</span></td>
+            <td>779</td>
+            <td>Standard</td>
+            <td style="font-size: 10px;">
+              
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>3</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Character introspection</span><span class="badge">Dialogue-heavy</span><span class="badge">Social/Cultural</span><span class="badge">Historical</span><span class="badge">Art</span><span class="badge">Music</span></td>
+            <td>747</td>
+            <td>Difficult</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>4</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Research-based</span><span class="badge">Social/Cultural</span><span class="badge">Biology/Ecology</span><span class="badge">Historical</span></td>
+            <td>745</td>
+            <td>Difficult</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Character introspection</span><span class="badge">Social/Cultural</span><span class="badge">Astronomy</span></td>
+            <td>490</td>
+            <td>Standard</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td>3</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Social/Cultural</span><span class="badge">Astronomy</span><span class="badge">Art</span></td>
+            <td>476</td>
+            <td>Standard</td>
+            <td style="font-size: 10px;">
+              
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>1</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Social/Cultural</span><span class="badge">Historical</span><span class="badge">Art</span></td>
+            <td>838</td>
+            <td>Standard</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>2</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Historical</span></td>
+            <td>769</td>
+            <td>Difficult</td>
+            <td style="font-size: 10px;">
+              💬
+              
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>4</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Character introspection</span><span class="badge">Dialogue-heavy</span><span class="badge">Research-based</span><span class="badge">Social/Cultural</span><span class="badge">Biology/Ecology</span></td>
+            <td>757</td>
+            <td>Standard</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>1</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Social/Cultural</span><span class="badge">Astronomy</span><span class="badge">Music</span></td>
+            <td>804</td>
+            <td>Standard</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>2</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Dialogue-heavy</span><span class="badge">Research-based</span><span class="badge">Social/Cultural</span><span class="badge">Historical</span></td>
+            <td>734</td>
+            <td>Difficult</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>3</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Character introspection</span><span class="badge">Art</span></td>
+            <td>765</td>
+            <td>Standard</td>
+            <td style="font-size: 10px;">
+              
+              
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>7</td>
+            <td>4</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Biology/Ecology</span><span class="badge">Historical</span><span class="badge">Art</span></td>
+            <td>727</td>
+            <td>Difficult</td>
+            <td style="font-size: 10px;">
+              
+              
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>1</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Character introspection</span><span class="badge">Social/Cultural</span><span class="badge">Historical</span></td>
+            <td>826</td>
+            <td>Standard</td>
+            <td style="font-size: 10px;">
+              
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>2</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Dialogue-heavy</span><span class="badge">Social/Cultural</span><span class="badge">Art</span><span class="badge">Music</span></td>
+            <td>806</td>
+            <td>Standard</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>3</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Research-based</span><span class="badge">Social/Cultural</span><span class="badge">Historical</span></td>
+            <td>702</td>
+            <td>Difficult</td>
+            <td style="font-size: 10px;">
+              💬
+              
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>4</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Biology/Ecology</span><span class="badge">Historical</span></td>
+            <td>770</td>
+            <td>Difficult</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>2</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Research-based</span><span class="badge">Chemistry</span><span class="badge">Historical</span></td>
+            <td>666</td>
+            <td>Difficult</td>
+            <td style="font-size: 10px;">
+              💬
+              
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>4</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Research-based</span><span class="badge">Biology/Ecology</span><span class="badge">Astronomy</span></td>
+            <td>740</td>
+            <td>Difficult</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>2</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Social/Cultural</span><span class="badge">Historical</span></td>
+            <td>772</td>
+            <td>Difficult</td>
+            <td style="font-size: 10px;">
+              
+              
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>1</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Social/Cultural</span><span class="badge">Historical</span><span class="badge">Art</span><span class="badge">Music</span></td>
+            <td>823</td>
+            <td>Standard</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>1</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Character introspection</span><span class="badge">Social/Cultural</span><span class="badge">Astronomy</span></td>
+            <td>646</td>
+            <td>Difficult</td>
+            <td style="font-size: 10px;">
+              💬
+              
+              3rd
+            </td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>3</td>
+            <td>Unknown</td>
+            <td style="font-size: 11px;"><span class="badge">Character introspection</span><span class="badge">Social/Cultural</span><span class="badge">Astronomy</span></td>
+            <td>744</td>
+            <td>Difficult</td>
+            <td style="font-size: 10px;">
+              💬
+              1st
+              3rd
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+      <div class="key-insight">
+        <strong>Content Guidelines</strong>
+        <ul>
+          <li><strong>Literary Fiction:</strong> Character development, narrative structure, emotional depth. Use dialogue and introspection.</li>
+          <li><strong>Social Science:</strong> Research findings, cultural phenomena, societal trends. Data-driven with analytical tone.</li>
+          <li><strong>Humanities:</strong> Historical context, artistic movements, philosophical ideas. Rich descriptive language.</li>
+          <li><strong>Natural Science:</strong> Scientific processes, discoveries, natural phenomena. Technical but accessible.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCIENCE TAB -->
+  <div id="science" class="tab-content">
+    <div class="section">
+      <h2>Science Section Content Patterns</h2>
+      <div class="key-insight">
+        <strong>Replication Strategy</strong>
+        Create 6 passages: 3 Data Representation (5q each), 2 Research Summaries (6-7q each), 1 Conflicting Viewpoints (11-13q). Include tables, graphs, and scientific diagrams.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Passage Type Analysis</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Passage Type</th>
+            <th>Count</th>
+            <th>Scientific Domains</th>
+            <th>Data Presentation</th>
+            <th>Content Focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td style="font-weight: 600;">DATA_REPRESENTATION</td>
+            <td>19</td>
+            <td style="font-size: 11px;"><span class="badge">Earth Science</span><span class="badge">Physics</span><span class="badge">Biology</span><span class="badge">Chemistry</span></td>
+            <td style="font-size: 11px;"><span class="badge">Tables</span><span class="badge">Graphs</span><span class="badge">Diagrams</span></td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Comparing contrasting viewpoints on scientific topics
+            </td>
+          </tr>
+          
+          <tr>
+            <td style="font-weight: 600;">RESEARCH_SUMMARY</td>
+            <td>17</td>
+            <td style="font-size: 11px;"><span class="badge">Biology</span><span class="badge">Chemistry</span><span class="badge">Physics</span><span class="badge">Earth Science</span></td>
+            <td style="font-size: 11px;"><span class="badge">Tables</span><span class="badge">Graphs</span><span class="badge">Diagrams</span></td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Comparing contrasting viewpoints on scientific topics
+            </td>
+          </tr>
+          
+          <tr>
+            <td style="font-weight: 600;">CONFLICTING_VIEWPOINTS</td>
+            <td>7</td>
+            <td style="font-size: 11px;"><span class="badge">Chemistry</span><span class="badge">Physics</span><span class="badge">Biology</span><span class="badge">Earth Science</span></td>
+            <td style="font-size: 11px;"><span class="badge">Tables</span></td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Comparing contrasting viewpoints on scientific topics
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Question Pattern Analysis</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Question Pattern</th>
+            <th>Count</th>
+            <th>% of Total</th>
+            <th>Construction Method</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>Data Interpretation</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Direct questions from figures/tables
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Experimental Design</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Test understanding of methodology
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Hypothesis/Prediction</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Predict outcomes based on data
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Comparison Across Studies</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Compare across multiple experiments
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Variable Identification</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Identify independent/dependent variables
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Conclusion Drawing</td>
+            <td>0</td>
+            <td>0.0%</td>
+            <td style="font-size: 11px; color: #6c757d;">
+              Draw conclusions from presented evidence
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Content Replication Guide</h2>
+      <div class="key-insight">
+        <strong>Data Representation (5 questions per passage)</strong>
+        <ul>
+          <li>Include 2-3 figures (graphs, tables, or diagrams)</li>
+          <li>Focus on a single experiment or dataset</li>
+          <li>Questions test basic data reading and trend identification</li>
+          <li>Common domains: Chemistry, Biology, Physics, Earth Science</li>
+        </ul>
+      </div>
+      <div class="key-insight">
+        <strong>Research Summaries (6-7 questions per passage)</strong>
+        <ul>
+          <li>Describe 2-3 related experiments</li>
+          <li>Include methods, results, and data presentation</li>
+          <li>Questions test experimental design understanding and comparison</li>
+          <li>Build progressive complexity across experiments</li>
+        </ul>
+      </div>
+      <div class="key-insight">
+        <strong>Conflicting Viewpoints (11-13 questions)</strong>
+        <ul>
+          <li>Present 2-3 different perspectives on a scientific topic</li>
+          <li>Each viewpoint should be 150-200 words</li>
+          <li>Questions compare viewpoints and test comprehension</li>
+          <li>Use current scientific debates (evolution, climate, etc.)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showTab(tabName) {
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(tabName).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>

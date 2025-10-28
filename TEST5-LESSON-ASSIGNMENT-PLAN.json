@@ -1,0 +1,1355 @@
+{
+  "timestamp": "2025-10-25T01:25:08.862Z",
+  "test_number": 5,
+  "total_questions": 215,
+  "assignments": {
+    "english": [
+      {
+        "question_number": 1,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 2,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 3,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 4,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: organization (POW)"
+      },
+      {
+        "question_number": 5,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 6,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 7,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 8,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 9,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 10,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: organization (POW)"
+      },
+      {
+        "question_number": 11,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 12,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 13,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 14,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: organization (POW)"
+      },
+      {
+        "question_number": 15,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: organization (POW)"
+      },
+      {
+        "question_number": 16,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 17,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 18,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 19,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 20,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 21,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 22,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 23,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 24,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 25,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: organization (POW)"
+      },
+      {
+        "question_number": 26,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 27,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 28,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: organization (POW)"
+      },
+      {
+        "question_number": 29,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 30,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 31,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 32,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 33,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 34,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 35,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 36,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 37,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 38,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 39,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: organization (POW)"
+      },
+      {
+        "question_number": 40,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 41,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 42,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 43,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 44,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: organization (POW)"
+      },
+      {
+        "question_number": 45,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: organization (POW)"
+      },
+      {
+        "question_number": 46,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 47,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 48,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 49,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 50,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 51,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: organization (POW)"
+      },
+      {
+        "question_number": 52,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 53,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: organization (POW)"
+      },
+      {
+        "question_number": 54,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 55,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 56,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 57,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 58,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 59,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 60,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: organization (POW)"
+      },
+      {
+        "question_number": 61,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 62,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 63,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 64,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 65,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 66,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 67,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 68,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 69,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 70,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 71,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 72,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      },
+      {
+        "question_number": 73,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 74,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+        "lesson_key": "sentence-structure",
+        "reason": "Default: grammar (CSE)"
+      },
+      {
+        "question_number": 75,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "lesson_key": "redundancy",
+        "reason": "Default: style (POW)"
+      }
+    ],
+    "math": [
+      {
+        "question_number": 1,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "4.2",
+        "reason": "Type: probability"
+      },
+      {
+        "question_number": 2,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 3,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 4,
+        "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "lesson_key": "2.2",
+        "reason": "Type: geometry"
+      },
+      {
+        "question_number": 5,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 6,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 7,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 8,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 9,
+        "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "lesson_key": "2.2",
+        "reason": "Type: geometry"
+      },
+      {
+        "question_number": 10,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 11,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "4.2",
+        "reason": "Type: probability"
+      },
+      {
+        "question_number": 12,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 13,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 14,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 15,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 16,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 17,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "2.1",
+        "reason": "Type: trigonometry"
+      },
+      {
+        "question_number": 18,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 19,
+        "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "lesson_key": "2.2",
+        "reason": "Type: geometry"
+      },
+      {
+        "question_number": 20,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "4.2",
+        "reason": "Type: statistics"
+      },
+      {
+        "question_number": 21,
+        "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "lesson_key": "2.2",
+        "reason": "Type: geometry"
+      },
+      {
+        "question_number": 22,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 23,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 24,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 25,
+        "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "lesson_key": "2.2",
+        "reason": "Type: geometry"
+      },
+      {
+        "question_number": 26,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "4.2",
+        "reason": "Type: probability"
+      },
+      {
+        "question_number": 27,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "4.2",
+        "reason": "Type: statistics"
+      },
+      {
+        "question_number": 28,
+        "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "lesson_key": "2.2",
+        "reason": "Type: geometry"
+      },
+      {
+        "question_number": 29,
+        "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "lesson_key": "2.2",
+        "reason": "Type: geometry"
+      },
+      {
+        "question_number": 30,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "4.2",
+        "reason": "Type: statistics"
+      },
+      {
+        "question_number": 31,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 32,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 33,
+        "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "lesson_key": "2.2",
+        "reason": "Type: geometry"
+      },
+      {
+        "question_number": 34,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 35,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 36,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "4.2",
+        "reason": "Type: statistics"
+      },
+      {
+        "question_number": 37,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "4.2",
+        "reason": "Type: statistics"
+      },
+      {
+        "question_number": 38,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "4.2",
+        "reason": "Type: probability"
+      },
+      {
+        "question_number": 39,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 40,
+        "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "lesson_key": "2.2",
+        "reason": "Type: geometry"
+      },
+      {
+        "question_number": 41,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 42,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "2.1",
+        "reason": "Type: trigonometry"
+      },
+      {
+        "question_number": 43,
+        "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+        "lesson_key": "2.2",
+        "reason": "Type: geometry"
+      },
+      {
+        "question_number": 44,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 45,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 46,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 47,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 48,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 49,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 50,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 51,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 52,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 53,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 54,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 55,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 56,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 57,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      },
+      {
+        "question_number": 58,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "2.1",
+        "reason": "Type: trigonometry"
+      },
+      {
+        "question_number": 59,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "2.1",
+        "reason": "Type: trigonometry"
+      },
+      {
+        "question_number": 60,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+        "lesson_key": "3.1",
+        "reason": "Default: Algebra"
+      }
+    ],
+    "reading": [
+      {
+        "question_number": 1,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 2,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 3,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 4,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 5,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 6,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 7,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 8,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 9,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 10,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 11,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 12,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 13,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 14,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 15,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 16,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 17,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 18,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 19,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 20,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 21,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 22,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 23,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 24,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 25,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 26,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 27,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 28,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 29,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 30,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 31,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 32,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 33,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 34,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 35,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 36,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 37,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 38,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 39,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      },
+      {
+        "question_number": 40,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f",
+        "lesson_key": "core-principles",
+        "reason": "Default: Core reading principles"
+      }
+    ],
+    "science": [
+      {
+        "question_number": 1,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 2,
+        "lesson_id": "1513e653-31c1-418d-9e7f-f91253d9438b",
+        "lesson_key": "experimental-setup",
+        "reason": "Type: scientific-investigation"
+      },
+      {
+        "question_number": 3,
+        "lesson_id": "22c56dfe-b819-42f2-a601-54d0ea5f2707",
+        "lesson_key": "question-diagnosis",
+        "reason": "Type: evaluation"
+      },
+      {
+        "question_number": 4,
+        "lesson_id": "22c56dfe-b819-42f2-a601-54d0ea5f2707",
+        "lesson_key": "question-diagnosis",
+        "reason": "Type: evaluation"
+      },
+      {
+        "question_number": 5,
+        "lesson_id": "22c56dfe-b819-42f2-a601-54d0ea5f2707",
+        "lesson_key": "question-diagnosis",
+        "reason": "Type: evaluation"
+      },
+      {
+        "question_number": 6,
+        "lesson_id": "22c56dfe-b819-42f2-a601-54d0ea5f2707",
+        "lesson_key": "question-diagnosis",
+        "reason": "Type: evaluation"
+      },
+      {
+        "question_number": 7,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 8,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 9,
+        "lesson_id": "22c56dfe-b819-42f2-a601-54d0ea5f2707",
+        "lesson_key": "question-diagnosis",
+        "reason": "Type: evaluation"
+      },
+      {
+        "question_number": 10,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 11,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 12,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 13,
+        "lesson_id": "1513e653-31c1-418d-9e7f-f91253d9438b",
+        "lesson_key": "experimental-setup",
+        "reason": "Type: scientific-investigation"
+      },
+      {
+        "question_number": 14,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 15,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 16,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 17,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 18,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 19,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 20,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 21,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 22,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 23,
+        "lesson_id": "1513e653-31c1-418d-9e7f-f91253d9438b",
+        "lesson_key": "experimental-setup",
+        "reason": "Type: scientific-investigation"
+      },
+      {
+        "question_number": 24,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 25,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 26,
+        "lesson_id": "22c56dfe-b819-42f2-a601-54d0ea5f2707",
+        "lesson_key": "question-diagnosis",
+        "reason": "Type: evaluation"
+      },
+      {
+        "question_number": 27,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 28,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 29,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 30,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 31,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 32,
+        "lesson_id": "22c56dfe-b819-42f2-a601-54d0ea5f2707",
+        "lesson_key": "question-diagnosis",
+        "reason": "Type: evaluation"
+      },
+      {
+        "question_number": 33,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 34,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 35,
+        "lesson_id": "1513e653-31c1-418d-9e7f-f91253d9438b",
+        "lesson_key": "experimental-setup",
+        "reason": "Type: scientific-investigation"
+      },
+      {
+        "question_number": 36,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 37,
+        "lesson_id": "22c56dfe-b819-42f2-a601-54d0ea5f2707",
+        "lesson_key": "question-diagnosis",
+        "reason": "Type: evaluation"
+      },
+      {
+        "question_number": 38,
+        "lesson_id": "1513e653-31c1-418d-9e7f-f91253d9438b",
+        "lesson_key": "experimental-setup",
+        "reason": "Type: scientific-investigation"
+      },
+      {
+        "question_number": 39,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a",
+        "lesson_key": "passage-approach",
+        "reason": "Type: data-analysis"
+      },
+      {
+        "question_number": 40,
+        "lesson_id": "1513e653-31c1-418d-9e7f-f91253d9438b",
+        "lesson_key": "experimental-setup",
+        "reason": "Type: scientific-investigation"
+      }
+    ]
+  },
+  "summary": {
+    "english": {
+      "sentence-structure": {
+        "count": 37,
+        "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac"
+      },
+      "redundancy": {
+        "count": 38,
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734"
+      }
+    },
+    "math": {
+      "4.2": {
+        "count": 9,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f"
+      },
+      "3.1": {
+        "count": 37,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f"
+      },
+      "2.2": {
+        "count": 10,
+        "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d"
+      },
+      "2.1": {
+        "count": 4,
+        "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f"
+      }
+    },
+    "reading": {
+      "core-principles": {
+        "count": 40,
+        "lesson_id": "5a176fd8-0715-406c-95af-f4a532789b9f"
+      }
+    },
+    "science": {
+      "passage-approach": {
+        "count": 26,
+        "lesson_id": "42594785-0153-49f9-bedf-b2daf9bb837a"
+      },
+      "experimental-setup": {
+        "count": 6,
+        "lesson_id": "1513e653-31c1-418d-9e7f-f91253d9438b"
+      },
+      "question-diagnosis": {
+        "count": 8,
+        "lesson_id": "22c56dfe-b819-42f2-a601-54d0ea5f2707"
+      }
+    }
+  }
+}

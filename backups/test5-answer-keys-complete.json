@@ -1,0 +1,74 @@
+{
+  "test_number": 5,
+  "extracted_date": "2025-10-25T00:09:01.953Z",
+  "english": {
+    "answers": {},
+    "count": 0,
+    "expected": 75,
+    "status": "MANUAL_ENTRY_REQUIRED"
+  },
+  "math": {
+    "answers": {
+      "1": "E",
+      "2": "J",
+      "3": "B",
+      "4": "G",
+      "5": "C",
+      "6": "F",
+      "7": "B",
+      "8": "H",
+      "9": "D",
+      "10": "G",
+      "11": "B",
+      "12": "G",
+      "13": "D",
+      "14": "J",
+      "15": "A",
+      "16": "K",
+      "17": "D",
+      "18": "J",
+      "21": "E",
+      "22": "G",
+      "32": "K",
+      "33": "D",
+      "34": "F",
+      "35": "E",
+      "36": "J",
+      "37": "C",
+      "38": "F",
+      "39": "D",
+      "40": "K",
+      "41": "A",
+      "42": "J",
+      "43": "D",
+      "44": "G",
+      "45": "E",
+      "47": "D",
+      "48": "G",
+      "49": "D",
+      "50": "K",
+      "51": "D",
+      "52": "K",
+      "53": "A"
+    },
+    "count": 41,
+    "expected": 60,
+    "status": "INCOMPLETE"
+  },
+  "reading": {
+    "answers": {},
+    "count": 0,
+    "expected": 40,
+    "status": "INCOMPLETE"
+  },
+  "science": {
+    "answers": {},
+    "count": 0,
+    "expected": 40,
+    "status": "INCOMPLETE"
+  },
+  "total": {
+    "extracted": 41,
+    "expected": 215
+  }
+}

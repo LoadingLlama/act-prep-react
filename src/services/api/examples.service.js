@@ -15,6 +15,7 @@ class ExamplesService {
    */
   async getExamplesByLessonId(lessonId) {
     try {
+      console.log('🔍 ExamplesService.getExamplesByLessonId called with:', lessonId);
       logger.debug('ExamplesService', 'getExamplesByLessonId', { lessonId });
 
       const { data, error } = await supabase
@@ -23,8 +24,11 @@ class ExamplesService {
         .eq('lesson_id', lessonId)
         .order('position', { ascending: true });
 
+      console.log('🔍 Supabase response - data:', data, 'error:', error);
+
       if (error) {
         console.error('❌ Error fetching examples:', error);
+        console.error('❌ Error details:', JSON.stringify(error, null, 2));
         errorTracker.trackError(
           'ExamplesService',
           'getExamplesByLessonId',
@@ -35,6 +39,7 @@ class ExamplesService {
       }
 
       console.log('✅ Fetched examples from database:', data);
+      console.log('✅ Number of examples fetched:', data?.length || 0);
       logger.info('ExamplesService', 'getExamplesByLessonId', {
         lessonId,
         examplesCount: data?.length || 0
@@ -43,6 +48,7 @@ class ExamplesService {
       return data || [];
     } catch (error) {
       console.error('❌ Exception fetching examples:', error);
+      console.error('❌ Exception details:', error.message, error.stack);
       errorTracker.trackError(
         'ExamplesService',
         'getExamplesByLessonId',

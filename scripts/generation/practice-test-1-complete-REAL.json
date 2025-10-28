@@ -1,0 +1,13 @@
+{
+  "test_number": 1,
+  "created_at": "2025-10-26T06:00:00.000Z",
+  "english": {
+    "passages": [
+      {
+        "passage_number": 1,
+        "title": "The Rise of Urban Farming",
+        "passage_text": "In recent years, urban farming has transformed from a niche hobby into a significant movement reshaping city landscapes. Community gardens now dot neighborhoods from Brooklyn to San Francisco, converting vacant lots into productive green spaces. These gardens serve multiple purposes: they provide fresh produce to food deserts, create gathering places for neighbors, and offer educational opportunities for children who might otherwise never see how vegetables grow. The movement has gained momentum as cities recognize the multiple benefits these spaces provide.\n\nMaya Rodriguez, a coordinator for the Detroit Urban Farming Initiative, has witnessed this transformation firsthand. She recalls when the organization started in 2005 with just three raised beds in an abandoned lot. Today, the initiative manages over forty community gardens across the city, employing twenty full-time staff members and hundreds of volunteers. The gardens produce thousands of pounds of vegetables annually, distributing them free to residents who need them most. Rodriguez notes that the program has exceeded all initial expectations, becoming a model for other urban areas.\n\nThe environmental benefits extend far beyond food production. Urban gardens absorb rainwater that would otherwise overwhelm storm drains, reduce the urban heat island effect, and provide habitat for pollinators like bees and butterflies. Studies have shown that neighborhoods with community gardens experience lower crime rates and increased property values. Residents report feeling more connected to their communities and more invested in neighborhood improvement. These social benefits often prove as valuable as the food produced.\n\nHowever, significant challenges remain. Access to land continues to be the primary obstacle, as property owners and city governments often prioritize development over green space. Funding for tools, seeds, and infrastructure requires constant fundraising efforts. Volunteer coordination demands considerable time and energy. Despite these hurdles, the urban farming movement continues to grow, demonstrating that cities can be places not just of consumption, but of cultivation and community building."
+      }
+    ]
+  }
+}

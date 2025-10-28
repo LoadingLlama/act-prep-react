@@ -1,0 +1,38 @@
+{
+  "english": {
+    "totalQuestions": 0,
+    "questionTypes": {},
+    "difficulty": {},
+    "avgChoiceLength": null,
+    "noChangeCount": 0,
+    "underlineCount": 0,
+    "avgUnderlineLength": null,
+    "passageCount": 0,
+    "questionsPerPassage": 0
+  },
+  "math": {
+    "totalQuestions": 0,
+    "questionTypes": {},
+    "difficulty": {},
+    "avgChoiceLength": null,
+    "questionsWithImages": 0
+  },
+  "reading": {
+    "totalQuestions": 0,
+    "questionTypes": {},
+    "difficulty": {},
+    "passageCount": 0,
+    "passageTypes": {},
+    "avgPassageLength": null,
+    "questionsPerPassage": null
+  },
+  "science": {
+    "totalQuestions": 0,
+    "questionTypes": {},
+    "difficulty": {},
+    "passageCount": 0,
+    "passageTypes": {},
+    "passagesWithTables": 0,
+    "questionsPerPassage": null
+  }
+}

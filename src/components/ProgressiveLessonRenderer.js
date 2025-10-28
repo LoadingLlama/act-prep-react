@@ -75,8 +75,12 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
       }
 
       // Fetch quizzes and examples from Supabase
+      console.log('🔍 About to fetch examples for lessonUUID:', lessonUUID);
+      console.log('🔍 lessonUUID is truthy?', !!lessonUUID);
       const quizzes = lessonUUID ? await QuizzesService.getQuizzesByLessonId(lessonUUID) : [];
+      console.log('🔍 Calling ExamplesService.getExamplesByLessonId now...');
       const examples = lessonUUID ? await ExamplesService.getExamplesByLessonId(lessonUUID) : [];
+      console.log('🔍 ExamplesService returned:', examples);
 
       console.log('📚 Loaded quizzes for lesson:', lessonUUID);
       console.log('📝 Number of quizzes:', quizzes?.length || 0);

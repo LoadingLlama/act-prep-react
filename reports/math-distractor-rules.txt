@@ -1,0 +1,625 @@
+EXPLICIT MATH DISTRACTOR CONSTRUCTION RULES
+====================================================================================================
+
+CRITICAL: I need to extract the FORMULA for wrong answers, not just examples.
+
+
+====================================================================================================
+ALGEBRA DISTRACTOR RULES (82 questions)
+====================================================================================================
+
+ANALYSIS OF WRONG ANSWERS:
+
+Q12 [Test 1]:
+Stem: Which of the following inequalities describes the solution set for 3x − 5 < 2x + 1?...
+CORRECT: D = "x < 6"
+WRONG ANSWERS:
+  A: "x < −4"
+  B: "x > −4"
+  C: "x < 2/5"
+  E: "x > 6"
+Notes: Algebra - linear inequalities
+
+Q14 [Test 1]:
+Stem: For positive real numbers x, y, and z, which of the following expressions is equivalent to (x²y³/z⁴)...
+CORRECT: B = "x⁶y⁹/z¹²"
+WRONG ANSWERS:
+  A: "x⁵y⁶/z⁷"
+  C: "x⁶y⁹z¹²"
+  D: "x⁸y¹²z¹⁶"
+  E: "x²³y³⁴z⁴³"
+Notes: Algebra - exponent rules
+
+Q15 [Test 1]:
+Stem: The relationship between temperature measured in Celsius (C) and Fahrenheit (F) is given by the equa...
+CORRECT: B = "203°F"
+WRONG ANSWERS:
+  A: "58°F" [TOO SMALL]
+  C: "207°F"
+  D: "221°F"
+  E: "235°F"
+Notes: Algebra - formula substitution
+
+Q19 [Test 1]:
+Stem: What is the value of a in the solution (a,b) to the system of equations: 2a + 3b = 12 and 5a − 3b = ...
+CORRECT: D = "3"
+WRONG ANSWERS:
+  A: "1" [TOO SMALL]
+  B: "2" [OFF BY 1]
+  C: "2.5"
+  E: "7" [TOO LARGE]
+Notes: Algebra - system of equations
+
+Q13 [Test 1]:
+Stem: Which of the following expressions is equivalent to 4(x + 2) + 3(2x − 1)?...
+CORRECT: B = "10x + 5"
+WRONG ANSWERS:
+  A: "10x + 1"
+  C: "14x − 1"
+  D: "14x + 1"
+  E: "14x + 5"
+Notes: Algebra - distributing
+
+Q20 [Test 1]:
+Stem: In the standard (x,y) coordinate plane, the graph of y = −2(x − 3)² + 5 is a parabola. What is the v...
+CORRECT: B = "(3,5)"
+WRONG ANSWERS:
+  A: "(−3,5)"
+  C: "(3,−5)"
+  D: "(−3,−5)"
+  E: "(0,5)"
+Notes: Algebra - vertex form parabola
+
+Q5 [Test 1]:
+Stem: If x = 3, what is the value of 4x² − 11x?...
+CORRECT: E = "36"
+WRONG ANSWERS:
+  A: "−21"
+  B: "−3"
+  C: "3" [TOO SMALL]
+  D: "21"
+Notes: Algebra - substitution
+
+Q33 [Test 1]:
+Stem: Which of the following is a factor of x² − 5x − 24?...
+CORRECT: B = "(x − 8)"
+WRONG ANSWERS:
+  A: "(x − 12)"
+  C: "(x − 6)"
+  D: "(x − 4)"
+  E: "(x − 3)"
+Notes: Algebra - factoring quadratics
+
+Q37 [Test 1]:
+Stem: If log₂(x) = 5, then x = ?...
+CORRECT: E = "128"
+WRONG ANSWERS:
+  A: "10" [TOO SMALL]
+  B: "25" [TOO SMALL]
+  C: "32" [TOO SMALL]
+  D: "64" [HALVED]
+Notes: Algebra - logarithms
+
+Q39 [Test 1]:
+Stem: What value of x satisfies the equation 3^(2x) = 81?...
+CORRECT: A = "2"
+WRONG ANSWERS:
+  B: "3" [OFF BY 1]
+  C: "4" [DOUBLED]
+  D: "27" [TOO LARGE]
+  E: "40.5" [TOO LARGE]
+Notes: Algebra - exponential equations
+
+
+DISTRACTOR CONSTRUCTION RULES FOR algebra:
+
+Based on examples above:
+  1. Calculate correct answer first
+  2. Create distractor A: [common error type 1]
+  3. Create distractor B: [common error type 2]
+  4. Create distractor C: [common error type 3]
+  5. Create distractor D: [common error type 4]
+  6. Verify all 5 choices are distinct
+
+
+====================================================================================================
+GEOMETRY DISTRACTOR RULES (79 questions)
+====================================================================================================
+
+ANALYSIS OF WRONG ANSWERS:
+
+Q10 [Test 1]:
+Stem: In the standard (x,y) coordinate plane, what is the slope of the line through (−6,4) and (1,3)?...
+CORRECT: C = "1/7"
+WRONG ANSWERS:
+  A: "−7"
+  B: "−1/7"
+  D: "7" [TOO LARGE]
+  E: "Undefined"
+Notes: Coordinate geometry - slope
+
+Q17 [Test 1]:
+Stem: In the figure below, 3 streets form a triangle. Elm Street is 700 meters long, Oak Street is 500 met...
+CORRECT: B = "700 m"
+WRONG ANSWERS:
+  A: "200 m" [TOO SMALL]
+  C: "850 m"
+  D: "1,200 m" [TOO SMALL]
+  E: "1,500 m" [TOO SMALL]
+Notes: Geometry - Law of Cosines
+
+Q24 [Test 1]:
+Stem: In the figure below, the circle with center O has a radius of 10 units. Points A, B, and C lie on th...
+CORRECT: B = "10"
+WRONG ANSWERS:
+  A: "5" [HALVED]
+  C: "10√3"
+  D: "20" [DOUBLED]
+  E: "20√3" [DOUBLED]
+Notes: Geometry - circles and triangles
+
+Q23 [Test 6]:
+Stem: On a rectangular sheet of paper, Aiko drew a triangle whose base length is the same as the length of...
+CORRECT: D = "2"
+WRONG ANSWERS:
+  A: "1/4" [OFF BY 1]
+  B: "1/2" [OFF BY 1]
+  C: "1" [OFF BY 1]
+  E: "4" [DOUBLED]
+
+Q16 [Test 1]:
+Stem: What is the perimeter, in centimeters, of a square that has an area of 49 cm²?...
+CORRECT: A = "7 cm"
+WRONG ANSWERS:
+  B: "14 cm" [DOUBLED]
+  C: "21 cm" [TOO LARGE]
+  D: "28 cm" [TOO LARGE]
+  E: "196 cm" [TOO LARGE]
+Notes: Geometry - square perimeter
+
+Q18 [Test 1]:
+Stem: Points A and B lie on a circle with center O and radius 5 units. The measure of ∠AOB is 72°. What is...
+CORRECT: E = "25π"
+WRONG ANSWERS:
+  A: "π"
+  B: "2π" [TOO SMALL]
+  C: "5π" [TOO SMALL]
+  D: "10π" [TOO SMALL]
+Notes: Geometry - arc length
+
+Q25 [Test 1]:
+Stem: What is the distance, in coordinate units, between points (3,−5) and (−2,7) in the standard (x,y) co...
+CORRECT: C = "√13"
+WRONG ANSWERS:
+  A: "13"
+  B: "17"
+  D: "√17"
+  E: "13"
+Notes: Coordinate geometry - distance formula
+
+Q5 [Test 4]:
+Stem: In the figure below, AB is congruent to BC, and AE intersects BF at C. What is the measure of ∠B?...
+CORRECT: D = "128°"
+WRONG ANSWERS:
+  A: "26°" [TOO SMALL]
+  B: "38°" [TOO SMALL]
+  C: "52°" [TOO SMALL]
+  E: "154°"
+Notes: Practice Test 4 Math Question 5
+
+Q32 [Test 1]:
+Stem: In the figure below, ABCD is a rectangle. Point E is on BC such that AE = 13, BE = 5, and AB = 12. W...
+CORRECT: A = "30"
+WRONG ANSWERS:
+  B: "39"
+  C: "60" [DOUBLED]
+  D: "65" [TOO LARGE]
+  E: "78" [TOO LARGE]
+Notes: Geometry - triangles in rectangles
+
+Q41 [Test 1]:
+Stem: If sin(θ) = 3/5 and θ is in the first quadrant, what is cos(θ)?...
+CORRECT: C = "5/3"
+WRONG ANSWERS:
+  A: "3/5"
+  B: "4/5" [OFF BY 1]
+  D: "5/4"
+  E: "Cannot be determined"
+Notes: Trigonometry - Pythagorean identity
+
+
+DISTRACTOR CONSTRUCTION RULES FOR geometry:
+
+Based on examples above:
+  1. Calculate correct answer first
+  2. Create distractor A: [common error type 1]
+  3. Create distractor B: [common error type 2]
+  4. Create distractor C: [common error type 3]
+  5. Create distractor D: [common error type 4]
+  6. Verify all 5 choices are distinct
+
+
+====================================================================================================
+MATH-PROBLEM-SOLVING DISTRACTOR RULES (41 questions)
+====================================================================================================
+
+ANALYSIS OF WRONG ANSWERS:
+
+Q21 [Test 1]:
+Stem: A certain car can travel 42 miles on 1 gallon of gasoline. At this rate, how many gallons of gasolin...
+CORRECT: A = "7.5"
+WRONG ANSWERS:
+  B: "8"
+  C: "13,230" [TOO LARGE]
+  D: "273" [TOO LARGE]
+  E: "357" [TOO LARGE]
+Notes: Ratios - unit rates
+
+Q22 [Test 1]:
+Stem: Which of the following statements is the negation of "All dogs are mammals"?...
+CORRECT: B = "Some dogs are not mammals"
+WRONG ANSWERS:
+  A: "All dogs are not mammals"
+  C: "Some mammals are not dogs"
+  D: "No dogs are mammals"
+  E: "No mammals are dogs"
+Notes: Logic - negation
+
+Q31 [Test 2]:
+Stem: Question 31 - Math problem from Test 2 - This question needs manual content extraction from the PDF....
+CORRECT: A = "A"
+WRONG ANSWERS:
+  B: "B"
+  C: "C"
+  D: "D"
+  E: "E"
+Notes: Test 2 Math Question 31
+
+Q12 [Test 2]:
+Stem: What is the smallest integer greater than √61?...
+CORRECT: C = "9"
+WRONG ANSWERS:
+  A: "7"
+  B: "8" [OFF BY 1]
+  D: "30" [TOO LARGE]
+  E: "31" [TOO LARGE]
+Notes: Test 2 Math Question 12
+
+Q26 [Test 2]:
+Stem: Question 26 - Math problem from Test 2 - This question needs manual content extraction from the PDF....
+CORRECT: D = "D"
+WRONG ANSWERS:
+  A: "A"
+  B: "B"
+  C: "C"
+  E: "E"
+Notes: Test 2 Math Question 26
+
+Q27 [Test 2]:
+Stem: Question 27 - Math problem from Test 2 - This question needs manual content extraction from the PDF....
+CORRECT: E = "E"
+WRONG ANSWERS:
+  A: "A"
+  B: "B"
+  C: "C"
+  D: "D"
+Notes: Test 2 Math Question 27
+
+Q32 [Test 2]:
+Stem: Question 32 - Math problem from Test 2 - This question needs manual content extraction from the PDF....
+CORRECT: A = "A"
+WRONG ANSWERS:
+  B: "B"
+  C: "C"
+  D: "D"
+  E: "E"
+Notes: Test 2 Math Question 32
+
+Q33 [Test 2]:
+Stem: Question 33 - Math problem from Test 2 - This question needs manual content extraction from the PDF....
+CORRECT: D = "D"
+WRONG ANSWERS:
+  A: "A"
+  B: "B"
+  C: "C"
+  E: "E"
+Notes: Test 2 Math Question 33
+
+Q38 [Test 2]:
+Stem: Question 38 - Math problem from Test 2 - This question needs manual content extraction from the PDF....
+CORRECT: B = "B"
+WRONG ANSWERS:
+  A: "A"
+  C: "C"
+  D: "D"
+  E: "E"
+Notes: Test 2 Math Question 38
+
+Q49 [Test 2]:
+Stem: Question 49 - Math problem from Test 2 - This question needs manual content extraction from the PDF....
+CORRECT: C = "C"
+WRONG ANSWERS:
+  A: "A"
+  B: "B"
+  D: "D"
+  E: "E"
+Notes: Test 2 Math Question 49
+
+
+DISTRACTOR CONSTRUCTION RULES FOR math-problem-solving:
+
+Based on examples above:
+  1. Calculate correct answer first
+  2. Create distractor A: [common error type 1]
+  3. Create distractor B: [common error type 2]
+  4. Create distractor C: [common error type 3]
+  5. Create distractor D: [common error type 4]
+  6. Verify all 5 choices are distinct
+
+
+====================================================================================================
+PREALGEBRA DISTRACTOR RULES (23 questions)
+====================================================================================================
+
+ANALYSIS OF WRONG ANSWERS:
+
+Q3 [Test 3]:
+Stem: What is the least common denominator of the fractions 1/4, 3/15, and 2/9?...
+CORRECT: B = "120"
+WRONG ANSWERS:
+  A: "24" [TOO SMALL]
+  C: "300" [TOO LARGE]
+  D: "480" [TOO LARGE]
+  E: "2,400" [TOO SMALL]
+Notes: Practice ACT 3 Math Question 3 - least common denominator
+
+Q12 [Test 3]:
+Stem: Tim's flight was originally scheduled to depart at 4:51 p.m., but it was delayed 563 minutes. What t...
+CORRECT: C = "2:14 a.m."
+WRONG ANSWERS:
+  A: "1:12 a.m." [OFF BY 1]
+  B: "1:28 a.m." [OFF BY 1]
+  D: "10:14 p.m." [TOO LARGE]
+  E: "10:54 p.m." [TOO LARGE]
+Notes: Practice ACT 3 Math Question 12 - time calculation with delays
+
+Q24 [Test 3]:
+Stem: One day will be randomly selected from the 7 days in a week. Then 1 month will be randomly selected ...
+CORRECT: B = "1/84"
+WRONG ANSWERS:
+  A: "1/19"
+  C: "2/19" [OFF BY 1]
+  D: "7/12" [TOO LARGE]
+  E: "19/84" [TOO LARGE]
+Notes: Practice ACT 3 Math Question 24 - independent probability
+
+Q25 [Test 3]:
+Stem: The average weight of Juan, Jim, and Malik is exactly 160 pounds. The average weight of Juan, Jim, M...
+CORRECT: B = "120"
+WRONG ANSWERS:
+  A: "100"
+  C: "130"
+  D: "155"
+  E: "190" [TOO LARGE]
+Notes: Practice ACT 3 Math Question 25 - calculating from averages
+
+Q29 [Test 3]:
+Stem: For one school week, Hannah recorded temperature data. To the nearest degree, what was the mean of t...
+CORRECT: E = "34°"
+WRONG ANSWERS:
+  A: "28°"
+  B: "29°"
+  C: "30°"
+  D: "32°"
+Notes: Practice ACT 3 Math Question 29 - mean of differences
+
+Q30 [Test 3]:
+Stem: A family's budgeted items are expressed as a fraction of their weekly income in the chart. (Fixed: 3...
+CORRECT: A = "1/48"
+WRONG ANSWERS:
+  B: "1/24"
+  C: "1/12"
+  D: "1/8"
+  E: "1/4"
+Notes: Practice ACT 3 Math Question 30 - adding fractions with different denominators
+
+Q35 [Test 3]:
+Stem: Anoki made a scale drawing of his rectangular classroom. The classroom is 7.5 meters by 9.0 meters. ...
+CORRECT: C = "10.8"
+WRONG ANSWERS:
+  A: "7.5"
+  B: "10.5"
+  D: "15.0"
+  E: "16.5" [TOO LARGE]
+Notes: Practice ACT 3 Math Question 35 - scale drawings and proportions
+
+Q37 [Test 3]:
+Stem: One number is 25% of a second number, and the second number is 70% of a third number. The first numb...
+CORRECT: A = "17.5%"
+WRONG ANSWERS:
+  B: "42.5%" [TOO LARGE]
+  C: "45%" [TOO LARGE]
+  D: "87.5%" [TOO LARGE]
+  E: "95%" [TOO LARGE]
+Notes: Practice ACT 3 Math Question 37 - compound percentages
+
+Q39 [Test 3]:
+Stem: Mrs. Neeson, a science teacher, told her students that 30.0% of their final semester grades will com...
+CORRECT: C = "14.0%"
+WRONG ANSWERS:
+  A: "6.0%" [TOO SMALL]
+  B: "10.5%"
+  D: "20.0%"
+  E: "28.6%" [TOO LARGE]
+Notes: Practice ACT 3 Math Question 39 - weighted averages and percentages
+
+Q59 [Test 3]:
+Stem: A table shows 270 students enrolled in Algebra II: North Grade 10: 47, North Grade 11: 73, South Gra...
+CORRECT: A = "47(46)/270(269) + 93(92)/270(269) + 73(72)/270(269) + 57(56)/270(269)"
+WRONG ANSWERS:
+  B: "47²/270² + 93²/270² + 73²/270² + 57²/270²"
+  C: "47(73)/270(269) + 93(57)/270(269)"
+  D: "47(93)/270(269) + 73(57)/270(269)"
+  E: "1/4(47+93+73+57)/270" [TOO SMALL]
+Notes: Practice ACT 3 Math Question 59 - conditional probability with combinations
+
+
+DISTRACTOR CONSTRUCTION RULES FOR prealgebra:
+
+Based on examples above:
+  1. Calculate correct answer first
+  2. Create distractor A: [common error type 1]
+  3. Create distractor B: [common error type 2]
+  4. Create distractor C: [common error type 3]
+  5. Create distractor D: [common error type 4]
+  6. Verify all 5 choices are distinct
+
+
+====================================================================================================
+WORD-PROBLEM DISTRACTOR RULES (21 questions)
+====================================================================================================
+
+ANALYSIS OF WRONG ANSWERS:
+
+Q9 [Test 1]:
+Stem: The total cost of renting a car is $35.00 for each day the car is rented plus 42.5¢ for each mile dr...
+CORRECT: C = "$358.75"
+WRONG ANSWERS:
+  A: "$154.75"
+  B: "$224.88"
+  D: "$420.00"
+  E: "$1,697.50"
+Notes: Word problem - unit pricing
+
+Q4 [Test 1]:
+Stem: At a certain airline company, the cost to transfer mileage points from one person's account to anoth...
+CORRECT: C = "$72.50"
+WRONG ANSWERS:
+  A: "$27.50"
+  B: "$52.50"
+  D: "$525.00"
+  E: "$5,270.00"
+Notes: Word problem - unit rates
+
+Q6 [Test 1]:
+Stem: Taho earns his regular pay of $11 per hour for up to 40 hours of work per week. For each hour over 4...
+CORRECT: B = "$550"
+WRONG ANSWERS:
+  A: "$440"
+  C: "$605"
+  D: "$715"
+  E: "$825"
+Notes: Word problem - overtime pay
+
+Q6 [Test 2]:
+Stem: On a map, 1/4 inch represents 12 actual miles. Two towns that are 5 inches apart on this map are how...
+CORRECT: B = "60"
+WRONG ANSWERS:
+  A: "120" [DOUBLED]
+  C: "30" [HALVED]
+  D: "24" [TOO SMALL]
+  E: "12" [TOO SMALL]
+Notes: Test 2 Math Question 6
+
+Q4 [Test 4]:
+Stem: Sam works at Glendale Hospital and earns $12 per hour for the first 40 hours and $18 per hour for ev...
+CORRECT: D = "45"
+WRONG ANSWERS:
+  A: "32"
+  B: "35"
+  C: "38"
+  E: "48"
+Notes: Practice Test 4 Math Question 4
+
+Q56 [Test 4]:
+Stem: Bill and Nate are participating in a fund-raising event in which they run or walk a distance of 30 m...
+CORRECT: D = "Increase it by 2.5 mph"
+WRONG ANSWERS:
+  A: "Decrease it by 2 mph"
+  B: "Decrease it by 2.5 mph"
+  C: "Increase it by 2 mph"
+  E: "Increase it by 4 mph"
+Notes: Practice Test 4 Math Question 56
+
+Q19 [Test 4]:
+Stem: A person's vertical jump is the difference between the maximum height the person can reach at the to...
+CORRECT: C = "2 feet 6 inches"
+WRONG ANSWERS:
+  A: "2 feet 0 inches"
+  B: "2 feet 4 inches"
+  D: "3 feet 0 inches" [OFF BY 1]
+  E: "3 feet 6 inches" [OFF BY 1]
+Notes: Practice Test 4 Math Question 19
+
+Q41 [Test 4]:
+Stem: Ms. Siochi has a rectangular lot with a perimeter of 100 meters. She paid $2,420.00 for fencing to i...
+CORRECT: C = "$24.00"
+WRONG ANSWERS:
+  A: "$22.40"
+  B: "$23.40"
+  D: "$25.00"
+  E: "$26.00"
+Notes: Practice Test 4 Math Question 41
+
+Q20 [Test 4]:
+Stem: Given that Jocelyn becomes a member of TrimTime on July 1 and that she pays all monthly fees on time...
+CORRECT: D = "$205"
+WRONG ANSWERS:
+  A: "$85"
+  B: "$145"
+  C: "$180"
+  E: "$215"
+Notes: Practice Test 4 Math Question 20
+
+Q34 [Test 4]:
+Stem: The rectangular top surface of a patio is 4 feet longer than it is wide and has an area of 192 squar...
+CORRECT: A = "12"
+WRONG ANSWERS:
+  B: "14"
+  C: "16"
+  D: "48" [TOO LARGE]
+  E: "96" [TOO LARGE]
+Notes: Practice Test 4 Math Question 34
+
+
+DISTRACTOR CONSTRUCTION RULES FOR word-problem:
+
+Based on examples above:
+  1. Calculate correct answer first
+  2. Create distractor A: [common error type 1]
+  3. Create distractor B: [common error type 2]
+  4. Create distractor C: [common error type 3]
+  5. Create distractor D: [common error type 4]
+  6. Verify all 5 choices are distinct
+
+
+====================================================================================================
+UNIVERSAL MATH DISTRACTOR STRATEGIES:
+====================================================================================================
+
+1. SIGN ERROR:
+   If correct answer is negative, offer positive version
+   If answer is +5, distractor is -5
+
+2. CALCULATION ERROR:
+   Off by one: If answer is 12, distractor is 11 or 13
+   Doubled: If answer is 8, distractor is 16
+   Halved: If answer is 20, distractor is 10
+
+3. PARTIAL SOLUTION:
+   Stop before final step
+   Example: Find perimeter but give area instead
+
+4. CONCEPTUAL ERROR:
+   Use wrong formula
+   Example: Use diameter instead of radius in circle formula
+
+5. UNIT ERROR:
+   Give answer in wrong units
+   Example: Answer should be meters but give centimeters
+
+CHOICE E PATTERNS:
+  - "Cannot be determined from the information given"
+  - Most extreme value (highest or lowest)
+  - Least common answer (8-18% correct rate)
+

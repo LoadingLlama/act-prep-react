@@ -1,0 +1,143 @@
+QUESTION STEM TEMPLATES - EXACT PATTERNS
+====================================================================================================
+
+READING QUESTION STEM TEMPLATES:
+----------------------------------------------------------------------------------------------------
+
+
+OTHER (156 questions, 55.7%)
+Templates:
+  1. "It can reasonably be inferred from Passage A that an animal "captured" by light is most nearly one t..."
+  2. "Compared to what Joseph appreciates about The Starry Night, the author of Passage B is more apprecia..."
+  3. "The narrator of Passage B would be more likely than the narrator of Passage A to describe her relati..."
+  4. "Based on the passage, the 1879 Maine ice that was fifteen to twenty inches thick can best be describ..."
+  5. "The anecdote about Fellini's footage of a woman recounting a tragic tale (lines 25-33) primarily ser..."
+
+WHICH FOLLOWING (48 questions, 17.1%)
+Templates:
+  1. "Which of the following events mentioned in the passage occurred first chronologically?..."
+  2. "Which of the following actions do the narrators of both passages closely connect with their mothers?..."
+  3. "In the passage, which of the following individuals or groups is presented as believing in Jewett's "..."
+  4. "Which of the following events mentioned in the passage occurred first chronologically?..."
+  5. "The passage author characterizes the timing of the Archaeopteryx fossil discovery as ideal. Which of..."
+
+ACCORDING TO (34 questions, 12.1%)
+Templates:
+  1. "According to the passage, one similarity between Murali and Vani is that both:..."
+  2. "According to the passage, crevasses form in glaciers because:..."
+  3. "According to Cruz, she returned to the city to:..."
+  4. "According to the passage, photographs are "a dangerously compelling abstraction" (lines 60-61) becau..."
+  5. "According to the passage, a glacier begins to flow when:..."
+
+VOCABULARY (15 questions, 5.4%)
+Templates:
+  1. "As it is used in line 90, the phrase remotely close to most nearly means:..."
+  2. "As it is used in line 45, the word plastic most nearly means:..."
+  3. "As it is used in line 79, the word observe most nearly means:..."
+  4. "As it is used in line 63, the word sensitive most nearly means:..."
+  5. "As it is used in line 56, the word "stretched" most nearly means:..."
+
+INFERENCE (15 questions, 5.4%)
+Templates:
+  1. "The passage most strongly suggests that if a glacier's zone of accumulation and zone of ablation are..."
+  2. "As they are used in Passage B, the word 'blinding' (line 68) and the word 'overwhelm' (line 69) both..."
+  3. "The passage most strongly suggests that Noruzi's own children's book includes:..."
+  4. "The passage most strongly suggests that the study of the behavior of materials and the study of the ..."
+  5. "The passage most strongly suggests that at movie houses in Italy today, compared to subtitled, origi..."
+
+MAIN PURPOSE (12 questions, 4.3%)
+Templates:
+  1. "The main purpose of the first paragraph of Passage B (lines 42-53) is to introduce the passage by:..."
+  2. "The main purpose of the passage is to:..."
+  3. "The main purpose of the second paragraph (lines 15-28) is to:..."
+  4. "The main purpose of the passage is to:..."
+  5. "The main purpose of the fourth paragraph (lines 34-45) is for Noruzi to:..."
+
+
+====================================================================================================
+SCIENCE QUESTION STEM TEMPLATES:
+----------------------------------------------------------------------------------------------------
+
+
+DATA REFERENCE (136 questions, 48.6%)
+Templates:
+  1. "Based on Figure 2, at 30 min, the average number of E. coli colonies per dish was closest to:..."
+  2. "Based on Figure 2, oceanic crust that has an age of 60 million years is at an average depth closest ..."
+  3. "Suppose that at a certain location on the ocean floor, the oceanic crust has an age of 20 million ye..."
+  4. "According to Figure 1, at a depth of 50 km, the temperature is closest to:..."
+  5. "Based on Figure 2, as the age of the oceanic crust increases from 0 million years to 80 million year..."
+
+OTHER (89 questions, 31.8%)
+Templates:
+  1. "Which, if either, of the paraffin and the cover slip likely functioned to slow the rate of evaporati..."
+  2. "What was the total number of flies tested in Experiment 3?..."
+  3. "The gravitational force between two objects depends on:..."
+  4. "Was the solution placed on the Group 10 slides acidic or basic?..."
+  5. "Assume that for A. limax, the greater the activity level, the greater the frequency of cell division..."
+
+WHICH FOLLOWING (22 questions, 7.9%)
+Templates:
+  1. "Which of the following statements best describes the primary difference between the two hypotheses?..."
+  2. "Scientist 1 would most likely agree with which of the following statements about the fossil record?..."
+  3. "Which of the following statements gives the most likely hypothesis for Experiment 3?..."
+  4. "Which of the following conditions differed between Experiments 1 and 2?..."
+  5. "Which of the following statements best explains why ΔT was 0.0°C for Trial 8? The volume of solution..."
+
+TABLE FIGURE (20 questions, 7.1%)
+Templates:
+  1. "Consider the molar volumes of He, Ar, H₂, and N₂ listed in Table 2 at 323 K. What is the order of th..."
+  2. "An ideal gas has a molar volume of 63.429 L at 1.00 atm and 773 K. At 1.00 atm and 773 K, how many o..."
+  3. "Which of the polyols listed in Table 2 is least soluble in water at 40°C?..."
+  4. "Assume that Figures 2 and 3 are drawn to scale. Which of the figures, if either, implies that the di..."
+  5. "Suppose a student hypothesizes that increasing temperature will decrease the reaction rate. Are the ..."
+
+TREND (13 questions, 4.6%)
+Templates:
+  1. "As the amount of cleaning time increased, the average number of colonies per dish:..."
+  2. "Suppose that the reaction studied had been endothermic. As the endothermic reaction progressed, woul..."
+  3. "If the temperature were increased to 45°C, the rate of cellular respiration would most likely:..."
+  4. "The electrical conductivity of a solution increases with salt concentration because:..."
+  5. "Temperature affects the production and consumption of CH₄ by bacteria. What part or component of the..."
+
+
+====================================================================================================
+ENGLISH QUESTION STEM TEMPLATES:
+----------------------------------------------------------------------------------------------------
+
+Note: 525/525 English questions have question_stem
+Most English questions test underlined portions directly without separate stem.
+
+
+OTHER (458 questions)
+Templates:
+  1. "In 2009, Marshall announced that indeed there <u>is</u> two manta species...."
+  2. "Marshall announced that indeed there <u>is</u> two manta species...."
+  3. "[Passage question] Suppose writer's purpose was to document the process of an artist. Would essay accomplish that?..."
+  4. "The fact that such large animals <u>went undifferentiated highlights how little scientists know for so long about</u> th..."
+  5. "Another discovery <u>was: that</u> some mantas had egg-shaped masses at the base of their tail fins...."
+
+WHICH CHOICE (41 questions)
+Templates:
+  1. "Which choice best suggests that the effect of the cold air on Yueming was immediate?..."
+  2. "Which choice indicates there is another, specific type of work depicted in the mural?..."
+  3. "The writer wants to add a detail here that emphasizes the antique rose's ability to survive without human care. Which ch..."
+  4. "Which choice connects Yueming in a figurative way to the mural described in the essay?..."
+  5. "The writer wants to emphasize that information gathered from the detected neutrinos at IceCube could have dramatic effec..."
+
+BEST (15 questions)
+Templates:
+  1. "At the moment, manta ray populations face an array of threats worldwide. [Which statement best concludes by suggesting s..."
+  2. "The writer wants to divide this paragraph into two in order to separate the statement indicating Yueming's plans for her..."
+  3. "For example, one species, the homing <u>pigeon, which</u> is among the best navigators of the natural world...."
+  4. "<u>For example</u>, one species, the homing pigeon, which is among the best navigators of the natural world...."
+  5. "Which of the following true sentences best introduces the main idea of the paragraph?..."
+
+PLACEMENT (11 questions)
+Templates:
+  1. "[Where should this sentence be placed?] <u>Some of the data were basic, such as manta coloration and size.</u>..."
+  2. "The writer wants to add the following sentence to the essay:
+The park idea gained momentum.
+The sentence would most logi..."
+  3. "The writer wants to add the following sentence to the essay: 'When she was hospitalized for a severe fever, authorities ..."
+  4. "The writer wants to add the following sentence to the essay: 'Fong eventually led several companies.' The sentence would..."
+  5. "The writer is considering adding the following sentence to the essay: 'The black stripes were woven flat, sharply settin..."

@@ -1,0 +1,366 @@
+LESSON ASSIGNMENT ALGORITHM
+====================================================================================================
+
+ENGLISH QUESTION TYPE -> LESSON ID MAPPING:
+
+adding-deleting -> Topic 1.4 - Verbs
+  Lesson ID: 10fff941-59e1-4d3a-84b7-d0fe8f9985ef
+  Occurrences: 9
+  Lesson Key: verbs
+
+adding-info -> Topic 2.5 - Adding or Deleting Information
+  Lesson ID: 784a146b-8809-4189-a1b4-4b2fdcaf8199
+  Occurrences: 2
+  Lesson Key: adding-deleting
+
+adding-sentence -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 1
+  Lesson Key: pronouns
+
+colon -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 3
+  Lesson Key: pronouns
+
+comma-splice -> Topic 1.1 - Building Complete Sentences
+  Lesson ID: a5fd241f-9832-4a5d-a7e9-90cb6232c4ac
+  Occurrences: 3
+  Lesson Key: sentence-structure
+
+comma-usage -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 10
+  Lesson Key: pronouns
+
+dash -> Topic 1.3 - Advanced Punctuation
+  Lesson ID: 66776383-9334-4efb-bd72-74b1bbeab8ac
+  Occurrences: 2
+  Lesson Key: punctuation
+
+deleting-sentence -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 2
+  Lesson Key: pronouns
+
+fragment -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 3
+  Lesson Key: pronouns
+
+grammar -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 43
+  Lesson Key: pronouns
+
+idiom -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 3
+  Lesson Key: pronouns
+
+logical-placement -> Topic 1.4 - Verbs
+  Lesson ID: 10fff941-59e1-4d3a-84b7-d0fe8f9985ef
+  Occurrences: 3
+  Lesson Key: verbs
+
+main-idea -> Topic 1.4 - Verbs
+  Lesson ID: 10fff941-59e1-4d3a-84b7-d0fe8f9985ef
+  Occurrences: 7
+  Lesson Key: verbs
+
+modifier-dangling -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 1
+  Lesson Key: pronouns
+
+modifier-misplaced -> Topic 1.6 - Misplaced Modifiers
+  Lesson ID: f7ac1d6c-6416-47fd-9720-807224100517
+  Occurrences: 1
+  Lesson Key: modifiers
+
+modifiers -> Topic 1.4 - Verbs
+  Lesson ID: 10fff941-59e1-4d3a-84b7-d0fe8f9985ef
+  Occurrences: 2
+  Lesson Key: verbs
+
+organization -> Topic 1.4 - Verbs
+  Lesson ID: 10fff941-59e1-4d3a-84b7-d0fe8f9985ef
+  Occurrences: 13
+  Lesson Key: verbs
+
+parallel-structure -> Topic 1.7 - Parallel Structure
+  Lesson ID: e6153221-e330-4db4-8cc7-9c5a1d51a301
+  Occurrences: 3
+  Lesson Key: parallel-structure
+
+pronoun-ambiguous -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 2
+  Lesson Key: pronouns
+
+pronouns -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 12
+  Lesson Key: pronouns
+
+punctuation -> Topic 1.1 - Building Complete Sentences
+  Lesson ID: a5fd241f-9832-4a5d-a7e9-90cb6232c4ac
+  Occurrences: 10
+  Lesson Key: sentence-structure
+
+purpose -> Topic 1.4 - Verbs
+  Lesson ID: 10fff941-59e1-4d3a-84b7-d0fe8f9985ef
+  Occurrences: 2
+  Lesson Key: verbs
+
+redundancy -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 8
+  Lesson Key: pronouns
+
+rhetorical-skills -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 17
+  Lesson Key: pronouns
+
+sentence-placement -> Topic 1.4 - Verbs
+  Lesson ID: 10fff941-59e1-4d3a-84b7-d0fe8f9985ef
+  Occurrences: 1
+  Lesson Key: verbs
+
+sentence-structure -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 8
+  Lesson Key: pronouns
+
+style -> Topic 2.1 - Redundancy & Wordiness
+  Lesson ID: 9eef3d0e-d5a2-4104-b9a9-3e575e8e6734
+  Occurrences: 25
+  Lesson Key: redundancy
+
+transition -> Topic 1.4 - Verbs
+  Lesson ID: 10fff941-59e1-4d3a-84b7-d0fe8f9985ef
+  Occurrences: 4
+  Lesson Key: verbs
+
+transitions -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 8
+  Lesson Key: pronouns
+
+usage-mechanics -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 14
+  Lesson Key: pronouns
+
+verb-agreement -> Topic 1.4 - Verbs
+  Lesson ID: 10fff941-59e1-4d3a-84b7-d0fe8f9985ef
+  Occurrences: 4
+  Lesson Key: verbs
+
+verb-form -> Topic 1.4 - Verbs
+  Lesson ID: 10fff941-59e1-4d3a-84b7-d0fe8f9985ef
+  Occurrences: 2
+  Lesson Key: verbs
+
+verb-tense -> Topic 1.4 - Verbs
+  Lesson ID: 10fff941-59e1-4d3a-84b7-d0fe8f9985ef
+  Occurrences: 8
+  Lesson Key: verbs
+
+verbs -> Topic 1.4 - Verbs
+  Lesson ID: 10fff941-59e1-4d3a-84b7-d0fe8f9985ef
+  Occurrences: 2
+  Lesson Key: verbs
+
+which-choice -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 9
+  Lesson Key: pronouns
+
+word-choice -> Topic 2.2 - Word Choice
+  Lesson ID: 04df2a09-a910-4456-8fe5-2f8e7f62c50f
+  Occurrences: 5
+  Lesson Key: word-choice
+
+word-placement -> Topic 1.5 - Pronouns
+  Lesson ID: 3c3585a1-f137-4331-8390-29ef1f5e889f
+  Occurrences: 1
+  Lesson Key: pronouns
+
+wordiness -> Topic 1.4 - Verbs
+  Lesson ID: 10fff941-59e1-4d3a-84b7-d0fe8f9985ef
+  Occurrences: 1
+  Lesson Key: verbs
+
+
+
+MATH QUESTION TYPE -> LESSON ID MAPPING:
+
+algebra -> Algebra Skills
+  Lesson ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f
+  Occurrences: 60
+
+arithmetic -> Algebra Skills
+  Lesson ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f
+  Occurrences: 12
+
+combinatorics -> Topic 4.6 - Sequences
+  Lesson ID: ad844a99-7156-4315-ac86-958f52468df2
+  Occurrences: 1
+
+complex-numbers -> Topic 7.2 - Complex Numbers
+  Lesson ID: 0090877d-e7d2-4ac4-80b4-87a42502a214
+  Occurrences: 1
+
+complex_numbers -> Algebra Skills
+  Lesson ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f
+  Occurrences: 2
+
+coordinate_geometry -> Areas, Volumes & Triangles
+  Lesson ID: d2ae4a84-cb54-4006-8dee-8c325e443c2d
+  Occurrences: 8
+
+counting -> Permutations and Combinations
+  Lesson ID: aaea35f0-81c0-4b3e-930c-d13edeeb3db5
+  Occurrences: 1
+
+exponents -> Algebra Skills
+  Lesson ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f
+  Occurrences: 1
+
+expressions -> Algebra Skills
+  Lesson ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f
+  Occurrences: 2
+
+fractions -> Algebra Skills
+  Lesson ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f
+  Occurrences: 2
+
+functions -> Algebra Skills
+  Lesson ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f
+  Occurrences: 7
+
+geometry -> Areas, Volumes & Triangles
+  Lesson ID: d2ae4a84-cb54-4006-8dee-8c325e443c2d
+  Occurrences: 49
+
+graphing -> Algebra Skills
+  Lesson ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f
+  Occurrences: 1
+
+inequalities -> Algebra Skills
+  Lesson ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f
+  Occurrences: 1
+
+linear_equations -> Lines
+  Lesson ID: 8e92077d-ae10-48ce-a80d-348cc56969c3
+  Occurrences: 2
+
+linear_inequalities -> Algebra Skills
+  Lesson ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f
+  Occurrences: 1
+
+logarithms -> Logarithms
+  Lesson ID: a0fbdb59-614b-4597-99c1-344c4f3ad47e
+  Occurrences: 3
+
+logic -> Topic 7.5 - Word Problems
+  Lesson ID: ec9b95cf-47f7-4c01-8118-91aef61f7170
+  Occurrences: 1
+
+math-problem-solving -> Algebra Skills
+  Lesson ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f
+  Occurrences: 38
+
+matrices -> Topic 7.3 - Matrices
+  Lesson ID: 6e95c291-2e8a-4ae9-8f7e-10caad8588b9
+  Occurrences: 3
+
+number-theory -> Number Theory
+  Lesson ID: 74013e77-3111-4dc6-beca-ff15948e4351
+  Occurrences: 1
+
+number_properties -> Algebra Skills
+  Lesson ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f
+  Occurrences: 6
+
+number_theory -> Number Theory
+  Lesson ID: 74013e77-3111-4dc6-beca-ff15948e4351
+  Occurrences: 1
+
+percentages -> Topic 7.5 - Word Problems
+  Lesson ID: ec9b95cf-47f7-4c01-8118-91aef61f7170
+  Occurrences: 1
+
+plane_geometry -> Areas, Volumes & Triangles
+  Lesson ID: d2ae4a84-cb54-4006-8dee-8c325e443c2d
+  Occurrences: 8
+
+prealgebra -> Algebra Skills
+  Lesson ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f
+  Occurrences: 10
+
+probability -> Probability
+  Lesson ID: b5f5c943-7bcd-431a-aa94-df51be6612e2
+  Occurrences: 11
+
+quadratics -> Topic 4.2 - Quadratics
+  Lesson ID: f7516c41-afb2-48fb-a4e2-df9fe41d8b23
+  Occurrences: 1
+
+radicals -> Algebra Skills
+  Lesson ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f
+  Occurrences: 2
+
+ratios -> Ratios and Proportions
+  Lesson ID: 27833f99-7aa1-4e5d-92e4-c953fadebc0d
+  Occurrences: 1
+
+sequences -> Topic 4.6 - Sequences
+  Lesson ID: ad844a99-7156-4315-ac86-958f52468df2
+  Occurrences: 6
+
+sets -> Algebra Skills
+  Lesson ID: 8d9e41b9-d906-48f6-a1d3-eecb02a7be9f
+  Occurrences: 1
+
+solid_geometry -> Areas, Volumes & Triangles
+  Lesson ID: d2ae4a84-cb54-4006-8dee-8c325e443c2d
+  Occurrences: 1
+
+statistics -> Mean, Median, and Mode
+  Lesson ID: 4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17
+  Occurrences: 9
+
+statistics-probability -> Probability
+  Lesson ID: b5f5c943-7bcd-431a-aa94-df51be6612e2
+  Occurrences: 8
+
+trigonometry -> Topic 7.1 - Trigonometry
+  Lesson ID: a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a
+  Occurrences: 9
+
+vectors -> Topic 7.4 - Vectors
+  Lesson ID: 7af23229-16aa-4455-a777-66cdd8011dff
+  Occurrences: 2
+
+word-problem -> Topic 7.5 - Word Problems
+  Lesson ID: ec9b95cf-47f7-4c01-8118-91aef61f7170
+  Occurrences: 16
+
+word_problems -> Topic 7.5 - Word Problems
+  Lesson ID: ec9b95cf-47f7-4c01-8118-91aef61f7170
+  Occurrences: 3
+
+
+
+ALGORITHM SUMMARY:
+====================================================================================================
+
+To assign lesson_id to a new question:
+1. Determine question_type (e.g., "verb-agreement", "comma-usage", "geometry")
+2. Look up question_type in the mapping above
+3. Assign the corresponding lesson_id
+4. If question_type not in mapping, assign based on question_category
+
