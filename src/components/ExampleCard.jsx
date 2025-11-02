@@ -94,7 +94,7 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
   const handleCheckAnswer = () => {
     if (!selectedChoice) return; // Must select an answer first
     setHasCheckedAnswer(true);
-    setTimeout(() => setShowSolution(true), 100);
+    setShowSolution(true); // Immediate, smooth transition
   };
 
   return (
@@ -203,7 +203,7 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
                                      showFeedback && !isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.08)' : 'transparent',
                     borderRadius: '6px',
                     padding: '0.75rem',
-                    transition: 'all 0.2s ease'
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
                   }}
                 >
                   {/* Choice letter and text */}
@@ -218,7 +218,7 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
                       height: '26px',
                       minWidth: '26px',
                       borderRadius: '50%',
-                      border: isSelected && !showFeedback ? '2px solid #10b981' :
+                      border: isSelected && !showFeedback ? '2px solid #3b82f6' :
                               showFeedback && isSelected && isCorrectAnswer ? '2px solid #48bb78' :
                               showFeedback && isSelected && !isCorrectAnswer ? '2px solid #f56565' :
                               showFeedback && !isSelected && isCorrectAnswer ? '2px solid #48bb78' : '2px solid #cbd5e0',
@@ -227,15 +227,15 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
                       justifyContent: 'center',
                       fontWeight: '600',
                       fontSize: '0.7rem',
-                      color: isSelected && !showFeedback ? '#10b981' :
+                      color: isSelected && !showFeedback ? '#3b82f6' :
                               showFeedback && isSelected && isCorrectAnswer ? '#48bb78' :
                               showFeedback && isSelected && !isCorrectAnswer ? '#f56565' :
                               showFeedback && !isSelected && isCorrectAnswer ? '#48bb78' : '#718096',
-                      backgroundColor: isSelected && !showFeedback ? 'rgba(16, 185, 129, 0.1)' :
+                      backgroundColor: isSelected && !showFeedback ? 'rgba(59, 130, 246, 0.1)' :
                                        showFeedback && isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.15)' :
                                        showFeedback && isSelected && !isCorrectAnswer ? 'rgba(245, 101, 101, 0.15)' :
                                        showFeedback && !isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.15)' : 'transparent',
-                      transition: 'all 0.2s ease'
+                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
                     }}>
                       {showFeedback && isSelected && isCorrectAnswer ? '✓' :
                        showFeedback && isSelected && !isCorrectAnswer ? '✗' :
@@ -262,7 +262,9 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
                       marginTop: '0.75rem',
                       marginLeft: '2.25rem',
                       paddingTop: '0.75rem',
-                      borderTop: '1px solid rgba(0, 0, 0, 0.05)'
+                      borderTop: '1px solid rgba(0, 0, 0, 0.05)',
+                      animation: 'fadeSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                      opacity: 1
                     }}>
                       <div style={{
                         fontSize: '0.8rem',
@@ -327,6 +329,22 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
 
         </div> {/* Close right side div */}
       </div> {/* Close grid container */}
+
+      {/* Smooth animation styles */}
+      <style>{`
+        @keyframes fadeSlideIn {
+          from {
+            opacity: 0;
+            transform: translateY(-8px);
+            max-height: 0;
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+            max-height: 500px;
+          }
+        }
+      `}</style>
     </div>
   );
 };
