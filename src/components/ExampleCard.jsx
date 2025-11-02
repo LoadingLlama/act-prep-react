@@ -320,7 +320,12 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
                     e.target.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
                   }}
                 >
-                  Check Answer
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ marginTop: '-1px' }}>
+                      <path d="M13.5 4.5L6 12L2.5 8.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Check Answer
+                  </span>
                 </button>
               </div>
             )}
