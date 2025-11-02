@@ -499,7 +499,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
               <circle cx="12" cy="12" r="10"/>
               <polyline points="12 6 12 12 16 14"/>
             </svg>
-            <span style={{ fontWeight: '500' }}>Reading Time: 5 min</span>
+            <span style={{ fontWeight: '500' }}>Reading Time: {lesson?.duration || '5 min'}</span>
           </div>
           <div style={{
             display: 'flex',
