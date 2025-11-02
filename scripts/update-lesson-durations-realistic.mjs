@@ -81,36 +81,36 @@ function calculateRealisticDuration(contentJson) {
 
   // REALISTIC TIME CALCULATION:
 
-  // 1. Base reading at COMPREHENSION pace (150 wpm, not skimming)
-  const readingMinutes = Math.max(2, Math.round(wordCount / 150));
+  // 1. Base reading at ACTIVE LEARNING pace (100 wpm - careful comprehension, not passive reading)
+  const readingMinutes = Math.max(3, Math.round(wordCount / 100));
   totalMinutes += readingMinutes;
-  breakdown.push(`${readingMinutes} min reading (${wordCount.toLocaleString()} words @ 150 wpm)`);
+  breakdown.push(`${readingMinutes} min reading (${wordCount.toLocaleString()} words @ 100 wpm)`);
 
   // 2. Interactive examples (users work through them)
   if (exampleCount > 0) {
-    const exampleMinutes = exampleCount * 3; // 3 min per example
+    const exampleMinutes = exampleCount * 5; // 5 min per example (read, attempt, review solution)
     totalMinutes += exampleMinutes;
-    breakdown.push(`${exampleMinutes} min for ${exampleCount} example${exampleCount > 1 ? 's' : ''} (3 min each)`);
+    breakdown.push(`${exampleMinutes} min for ${exampleCount} example${exampleCount > 1 ? 's' : ''} (5 min each)`);
   }
 
   // 3. Practice questions (users solve them)
   if (practiceQuestionCount > 0) {
-    const practiceMinutes = Math.round(practiceQuestionCount * 1.5); // 1.5 min per question
+    const practiceMinutes = Math.round(practiceQuestionCount * 2.5); // 2.5 min per question
     totalMinutes += practiceMinutes;
-    breakdown.push(`${practiceMinutes} min for ${practiceQuestionCount} practice question${practiceQuestionCount > 1 ? 's' : ''} (1.5 min each)`);
+    breakdown.push(`${practiceMinutes} min for ${practiceQuestionCount} practice question${practiceQuestionCount > 1 ? 's' : ''} (2.5 min each)`);
   }
 
   // 4. Diagrams (study time)
   if (diagramCount > 0) {
-    const diagramMinutes = diagramCount * 1; // 1 min per diagram
+    const diagramMinutes = diagramCount * 2; // 2 min per diagram
     totalMinutes += diagramMinutes;
     breakdown.push(`${diagramMinutes} min for ${diagramCount} diagram${diagramCount > 1 ? 's' : ''}`);
   }
 
-  // 5. Buffer for pausing, note-taking, reflection (20%)
-  const bufferMinutes = Math.round(totalMinutes * 0.2);
+  // 5. Buffer for pausing, note-taking, re-reading, reflection (50% - active learning takes time!)
+  const bufferMinutes = Math.round(totalMinutes * 0.5);
   totalMinutes += bufferMinutes;
-  breakdown.push(`${bufferMinutes} min buffer (20% for pausing/notes)`);
+  breakdown.push(`${bufferMinutes} min buffer (50% for pausing/notes/re-reading)`);
 
   // Round to nearest 5 minutes for cleaner estimates
   totalMinutes = Math.max(5, Math.round(totalMinutes / 5) * 5);
@@ -149,9 +149,11 @@ async function main() {
       result = calculateRealisticDuration(lesson.content_json);
     } else {
       // Fallback for lessons without content_json
+      // Use conservative estimate: 100 wpm active learning + 2.5x multiplier for examples/practice/reflection
       const wordCount = countWords(lesson.content || '');
-      const minutes = Math.max(5, Math.round((wordCount / 150) * 1.2 / 5) * 5);
-      result = { minutes, breakdown: `${wordCount} words, basic estimate` };
+      const baseMinutes = wordCount / 100; // 100 wpm comprehension pace
+      const totalMinutes = Math.max(15, Math.round((baseMinutes * 2.5) / 5) * 5); // 2.5x for active learning, min 15 min
+      result = { minutes: totalMinutes, breakdown: `${wordCount} words @ 100 wpm × 2.5 active learning multiplier` };
     }
 
     const newDuration = `${result.minutes} min`;
