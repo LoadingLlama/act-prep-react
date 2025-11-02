@@ -21,7 +21,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
   const [textCompletionStatus, setTextCompletionStatus] = useState({});
   const [exampleCompletionStatus, setExampleCompletionStatus] = useState({});
   const [sectionStatusOverride, setSectionStatusOverride] = useState({});
-  const [typingSpeed, setTypingSpeed] = useState(1); // Fast typing speed
+  const [typingSpeed, setTypingSpeed] = useState(20); // Slower, more readable typing speed
   const [isCompleting, setIsCompleting] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   const typewriterRef = React.useRef(null);
@@ -204,6 +204,13 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
       setSections(processedSections);
       sectionRefs.current = processedSections.map((_, i) => sectionRefs.current[i] || React.createRef());
 
+      // Safety: Reset currentSection if it's beyond bounds
+      if (restoredState && restoredState.currentSection >= processedSections.length) {
+        console.warn('⚠️ Restored currentSection', restoredState.currentSection, 'exceeds total sections', processedSections.length, '- resetting to last section');
+        setCurrentSection(processedSections.length - 1);
+        setVisibleSections(processedSections.length);
+      }
+
       // If lesson is completed, unlock all sections
       if (isLessonCompleted && processedSections.length > 0) {
         setVisibleSections(processedSections.length);
@@ -288,9 +295,12 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
 
         // Advance to next section if current is complete
         if ((quizIsComplete || exampleIsComplete || textIsComplete) && currentSection < sections.length - 1) {
-          setCurrentSection(prev => prev + 1);
-          setVisibleSections(prev => prev + 1);
+          console.log('⏭️ Advancing from section', currentSection, 'to', currentSection + 1);
+          setCurrentSection(prev => Math.min(prev + 1, sections.length - 1));
+          setVisibleSections(prev => Math.min(prev + 1, sections.length));
           setCurrentSectionComplete(false);
+        } else if (currentSection >= sections.length - 1) {
+          console.log('⚠️ Already at last section, not advancing');
         }
       }
 
@@ -366,9 +376,16 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
   };
 
   const handleTextComplete = (index) => {
+    console.log('📝 Text section completed:', index, 'Total sections:', sections.length);
     if (index === currentSection) {
       setCurrentSectionComplete(true);
       setTextCompletionStatus(prev => ({ ...prev, [index]: true }));
+
+      // If this is the last section, mark lesson as complete
+      if (index === sections.length - 1) {
+        console.log('🎉 Last section completed! Marking lesson as complete...');
+        setIsComplete(true);
+      }
     }
   };
 
@@ -380,6 +397,11 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
       // Auto-mark lesson as "in-progress" after completing first example
       if (onStatusChange && initialStatus === 'not-started') {
         onStatusChange('in-progress');
+      }
+
+      // If this is the last section, mark lesson as complete
+      if (index === sections.length - 1) {
+        setIsComplete(true);
       }
     }
   };
@@ -570,7 +592,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
             sectionStatusOverride={sectionStatusOverride}
             sections={sections}
             classes={classes}
-            lessonKey={lesson?.id}
+            lessonKey={lesson?.lesson_key}
             typewriterRef={index === currentSection ? typewriterRef : null}
             onTextComplete={handleTextComplete}
             onExampleComplete={handleExampleComplete}
@@ -612,102 +634,161 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
               flexWrap: 'wrap'
             }}>
               {/* Previous Lesson */}
-              <button
-                onClick={() => {
-                  // TODO: Navigate to previous lesson
-                  console.log('Previous lesson clicked');
-                  if (onNavigate) onNavigate('home');
-                }}
-                style={{
-                  backgroundColor: '#ffffff',
-                  color: '#4b5563',
-                  padding: '0.625rem 1.25rem',
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  borderRadius: '6px',
-                  border: '1px solid #e5e7eb',
-                  cursor: 'pointer',
-                  transition: 'all 0.15s ease',
-                  minWidth: '130px',
-                  boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#f9fafb';
-                  e.target.style.borderColor = '#d1d5db';
-                  e.target.style.color = '#1f2937';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#ffffff';
-                  e.target.style.borderColor = '#e5e7eb';
-                  e.target.style.color = '#4b5563';
-                }}
-              >
-                ← Previous Lesson
-              </button>
+              {(() => {
+                const currentIndex = lessonStructure.findIndex(l => l.id === lesson?.id);
+                const previousLesson = currentIndex > 0 ? lessonStructure[currentIndex - 1] : null;
 
-              {/* Practice Quiz */}
-              <button
-                onClick={() => {
-                  // TODO: Navigate to practice quiz for this lesson
-                  console.log('Practice quiz clicked for lesson:', lesson?.lesson_key);
-                }}
-                style={{
-                  backgroundColor: '#ffffff',
-                  color: '#2563eb',
-                  padding: '0.625rem 1.25rem',
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  borderRadius: '6px',
-                  border: '1px solid #e5e7eb',
-                  cursor: 'pointer',
-                  transition: 'all 0.15s ease',
-                  minWidth: '130px',
-                  boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#eff6ff';
-                  e.target.style.borderColor = '#bfdbfe';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#ffffff';
-                  e.target.style.borderColor = '#e5e7eb';
-                }}
-              >
-                Practice Quiz
-              </button>
+                return (
+                  <div style={{ textAlign: 'center' }}>
+                    <button
+                      onClick={() => {
+                        if (previousLesson && onNavigate) {
+                          onNavigate('lesson', previousLesson.id);
+                        } else if (onNavigate) {
+                          onNavigate('home');
+                        }
+                      }}
+                      disabled={!previousLesson}
+                      style={{
+                        backgroundColor: '#ffffff',
+                        color: previousLesson ? '#4b5563' : '#d1d5db',
+                        padding: '0.625rem 1.25rem',
+                        fontSize: '0.875rem',
+                        fontWeight: '500',
+                        borderRadius: '6px',
+                        border: '1px solid #e5e7eb',
+                        cursor: previousLesson ? 'pointer' : 'not-allowed',
+                        transition: 'all 0.15s ease',
+                        minWidth: '130px',
+                        boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)'
+                      }}
+                      onMouseEnter={(e) => {
+                        if (previousLesson) {
+                          e.target.style.backgroundColor = '#f9fafb';
+                          e.target.style.borderColor = '#d1d5db';
+                          e.target.style.color = '#1f2937';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (previousLesson) {
+                          e.target.style.backgroundColor = '#ffffff';
+                          e.target.style.borderColor = '#e5e7eb';
+                          e.target.style.color = '#4b5563';
+                        }
+                      }}
+                    >
+                      ← Previous Lesson
+                    </button>
+                    {previousLesson && (
+                      <div style={{
+                        fontSize: '0.75rem',
+                        color: '#9ca3af',
+                        marginTop: '0.5rem',
+                        maxWidth: '150px'
+                      }}>
+                        {previousLesson.title}
+                      </div>
+                    )}
+                  </div>
+                );
+              })()}
+
+              {/* Practice */}
+              <div style={{ textAlign: 'center' }}>
+                <button
+                  onClick={() => {
+                    // TODO: Navigate to practice quiz for this lesson
+                    console.log('Practice clicked for lesson:', lesson?.lesson_key);
+                  }}
+                  style={{
+                    backgroundColor: '#ffffff',
+                    color: '#2563eb',
+                    padding: '0.625rem 1.25rem',
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                    borderRadius: '6px',
+                    border: '1px solid #e5e7eb',
+                    cursor: 'pointer',
+                    transition: 'all 0.15s ease',
+                    minWidth: '130px',
+                    boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = '#eff6ff';
+                    e.target.style.borderColor = '#bfdbfe';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = '#ffffff';
+                    e.target.style.borderColor = '#e5e7eb';
+                  }}
+                >
+                  Practice
+                </button>
+                <div style={{
+                  fontSize: '0.75rem',
+                  color: '#9ca3af',
+                  marginTop: '0.5rem',
+                  maxWidth: '150px'
+                }}>
+                  Test your knowledge
+                </div>
+              </div>
 
               {/* Next Lesson */}
-              <button
-                onClick={() => {
-                  if (onStatusChange) onStatusChange('completed');
-                  // TODO: Navigate to next lesson
-                  console.log('Next lesson clicked');
-                  if (onNavigate) onNavigate('home');
-                }}
-                style={{
-                  backgroundColor: '#ffffff',
-                  color: '#059669',
-                  padding: '0.625rem 1.25rem',
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  borderRadius: '6px',
-                  border: '1px solid #e5e7eb',
-                  cursor: 'pointer',
-                  transition: 'all 0.15s ease',
-                  minWidth: '130px',
-                  boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#f0fdf4';
-                  e.target.style.borderColor = '#bbf7d0';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#ffffff';
-                  e.target.style.borderColor = '#e5e7eb';
-                }}
-              >
-                Next Lesson →
-              </button>
+              {(() => {
+                const currentIndex = lessonStructure.findIndex(l => l.id === lesson?.id);
+                const nextLesson = currentIndex >= 0 && currentIndex < lessonStructure.length - 1
+                  ? lessonStructure[currentIndex + 1]
+                  : null;
+
+                return (
+                  <div style={{ textAlign: 'center' }}>
+                    <button
+                      onClick={() => {
+                        if (onStatusChange) onStatusChange('completed');
+                        if (nextLesson && onNavigate) {
+                          onNavigate('lesson', nextLesson.id);
+                        } else if (onNavigate) {
+                          onNavigate('home');
+                        }
+                      }}
+                      style={{
+                        backgroundColor: '#ffffff',
+                        color: '#059669',
+                        padding: '0.625rem 1.25rem',
+                        fontSize: '0.875rem',
+                        fontWeight: '500',
+                        borderRadius: '6px',
+                        border: '1px solid #e5e7eb',
+                        cursor: 'pointer',
+                        transition: 'all 0.15s ease',
+                        minWidth: '130px',
+                        boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.backgroundColor = '#f0fdf4';
+                        e.target.style.borderColor = '#bbf7d0';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.backgroundColor = '#ffffff';
+                        e.target.style.borderColor = '#e5e7eb';
+                      }}
+                    >
+                      Next Lesson →
+                    </button>
+                    {nextLesson && (
+                      <div style={{
+                        fontSize: '0.75rem',
+                        color: '#9ca3af',
+                        marginTop: '0.5rem',
+                        maxWidth: '150px'
+                      }}>
+                        {nextLesson.title}
+                      </div>
+                    )}
+                  </div>
+                );
+              })()}
             </div>
           </div>
         </>
@@ -718,6 +799,89 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
           <span className={classes.promptText}>
             Press <span className={classes.enterKey}>Enter</span> to continue
           </span>
+        </div>
+      )}
+
+      {/* Show finishing message for last section if not yet complete */}
+      {(() => {
+        const isLastSection = currentSection === sections.length - 1;
+        const isTextSection = sections[currentSection]?.type === 'text';
+        const isNotCompleted = !textCompletionStatus[currentSection];
+
+        console.log('🔍 Debug bar check:', {
+          hasStarted,
+          isComplete,
+          currentSection,
+          totalSections: sections.length,
+          isLastSection,
+          isTextSection,
+          isNotCompleted,
+          textCompletionStatus
+        });
+
+        return null;
+      })()}
+      {hasStarted && !isComplete && currentSection === sections.length - 1 && sections[currentSection]?.type === 'text' && !textCompletionStatus[currentSection] && (
+        <div style={{
+          position: 'fixed',
+          bottom: '2rem',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          background: 'rgba(37, 99, 235, 0.95)',
+          color: 'white',
+          padding: '0.75rem 1.5rem',
+          borderRadius: '8px',
+          fontSize: '0.875rem',
+          fontWeight: '500',
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+          zIndex: 1000,
+          animation: 'fadeIn 0.3s ease'
+        }}>
+          Reading final section... Press <kbd style={{
+            background: 'rgba(255, 255, 255, 0.2)',
+            padding: '0.25rem 0.5rem',
+            borderRadius: '4px',
+            fontFamily: 'monospace',
+            fontWeight: 'bold'
+          }}>Ctrl+→</kbd> to speed up
+        </div>
+      )}
+
+      {/* Manual completion button for stuck final section */}
+      {hasStarted && !isComplete && currentSection === sections.length - 1 && sections[currentSection]?.type === 'text' && textCompletionStatus[currentSection] && (
+        <div style={{
+          position: 'fixed',
+          bottom: '2rem',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          background: 'rgba(220, 38, 38, 0.95)',
+          color: 'white',
+          padding: '0.75rem 1.5rem',
+          borderRadius: '8px',
+          fontSize: '0.875rem',
+          fontWeight: '500',
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+          zIndex: 1000
+        }}>
+          ⚠️ Section completed but lesson stuck.
+          <button
+            onClick={() => {
+              console.log('🔧 Manual completion triggered');
+              setIsComplete(true);
+            }}
+            style={{
+              marginLeft: '1rem',
+              background: 'white',
+              color: '#dc2626',
+              border: 'none',
+              padding: '0.5rem 1rem',
+              borderRadius: '6px',
+              fontWeight: '600',
+              cursor: 'pointer'
+            }}
+          >
+            Click to finish
+          </button>
         </div>
       )}
     </div>

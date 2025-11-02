@@ -19,24 +19,25 @@ export const useAppStyles = createUseStyles({
     },
     body: {
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif',
-      backgroundColor: '#fafbfc',
-      color: '#1a1a1a',
+      backgroundColor: '#f8fafc',
+      color: '#0f172a',
       lineHeight: 1.6,
       overflowX: 'hidden',
-      backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 70%)',
-      backgroundAttachment: 'fixed'
+      background: '#f8fafc',
+      margin: 0,
+      padding: 0
     }
   },
   container: {
     minHeight: '100vh',
     display: 'flex',
-    background: '#fafbfc'
+    background: '#f8fafc'
   },
   mainContent: {
-    marginLeft: '260px',
+    marginLeft: '240px',
     flex: 1,
     minHeight: '100vh',
-    background: '#fafbfc'
+    background: '#f8fafc'
   },
   header: {
     background: '#ffffff',

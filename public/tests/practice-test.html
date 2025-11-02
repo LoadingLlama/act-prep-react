@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice Test</title>
     <link rel="stylesheet" href="shared-test-styles.css">
+
+    <!-- MathJax for math rendering -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            },
+            startup: {
+                pageReady: () => {
+                    return MathJax.startup.defaultPageReady();
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
 </head>
 <body>
     <!-- Header outside container for full width -->
@@ -54,6 +75,15 @@
                         </svg>
                         Flag
                     </button>
+                </div>
+
+                <!-- Hidden image upload section template -->
+                <div id="imageUploadSection" style="display: none;">
+                    <div class="image-upload-container">
+                        <p>Need to show work? Upload an image of your scratch paper.</p>
+                        <input type="file" accept="image/*" id="imageUpload" style="display: none;">
+                        <button onclick="document.getElementById('imageUpload').click()">Upload Image</button>
+                    </div>
                 </div>
 
                 <!-- Passages Section -->
@@ -149,6 +179,7 @@
         // Load test data from sessionStorage
         const questions = JSON.parse(sessionStorage.getItem('practiceTestQuestions') || '[]');
         const section = sessionStorage.getItem('practiceTestSection') || 'english';
+        const currentSection = section; // For image upload functionality
         const testNumber = sessionStorage.getItem('practiceTestNumber') || '1';
         const duration = parseInt(sessionStorage.getItem('practiceTestDuration') || '45');
 
@@ -161,8 +192,33 @@
             duration: duration,
             durationFromStorage: sessionStorage.getItem('practiceTestDuration'),
             timeLeft: duration * 60,
-            firstQuestion: questions[0]
+            firstQuestion: questions[0],
+            rawQuestionsFromStorage: sessionStorage.getItem('practiceTestQuestions'),
+            allSessionStorage: {
+                questions: sessionStorage.getItem('practiceTestQuestions'),
+                section: sessionStorage.getItem('practiceTestSection'),
+                testNumber: sessionStorage.getItem('practiceTestNumber'),
+                duration: sessionStorage.getItem('practiceTestDuration')
+            }
         });
+
+        // If no questions, show error immediately
+        if (questions.length === 0) {
+            console.error('❌ NO QUESTIONS LOADED');
+            console.error('SessionStorage keys:', Object.keys(sessionStorage));
+            console.error('SessionStorage practiceTestQuestions:', sessionStorage.getItem('practiceTestQuestions'));
+
+            document.getElementById('questionSection').innerHTML = `
+                <div style="padding: 3rem; text-align: center;">
+                    <h2 style="color: #dc2626; margin-bottom: 1rem;">⚠️ No Questions Loaded</h2>
+                    <p style="color: #6b7280; margin-bottom: 1rem;">The test data was not loaded properly.</p>
+                    <button onclick="window.parent.postMessage({type: 'PRACTICE_TEST_COMPLETE'}, '*')"
+                            style="background: #4299e1; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; font-size: 1rem;">
+                        Back to Tests
+                    </button>
+                </div>
+            `;
+        }
 
         const hasPassages = questions.some(q => q.passage);
         const totalQuestions = questions.length;
@@ -224,7 +280,12 @@
 
                     // Get passage title and text
                     const passageTitle = firstQuestion.passage_title || '';
-                    const passageContent = passageKey; // passageKey is the passage text
+                    let passageContent = passageKey; // passageKey is the passage text
+
+                    // Replace image placeholders with actual URLs
+                    if (firstQuestion.passage_image_urls) {
+                        passageContent = replaceImagePlaceholders(passageContent, firstQuestion.passage_image_urls);
+                    }
 
                     passageHTML += `
                         <div class="passage-content" id="passage${passageNum}" data-questions="${questionNums.join(',')}">
@@ -236,9 +297,38 @@
                     `;
                     passageNum++;
                 });
-                passageSection.innerHTML = passageHTML;
+
+                // For Math/Science, prepend upload section to passage HTML
+                if (section === 'math' || section === 'science') {
+                    const uploadSectionHTML = document.getElementById('imageUploadSection').outerHTML;
+                    passageSection.innerHTML = uploadSectionHTML + passageHTML;
+                } else {
+                    passageSection.innerHTML = passageHTML;
+                }
             } else {
-                passageSection.style.display = 'none';
+                // No passages - show upload section for Math/Science, hide for others
+                if (section === 'math' || section === 'science') {
+                    passageSection.style.display = 'flex';
+                    const uploadSectionHTML = document.getElementById('imageUploadSection').outerHTML;
+                    passageSection.innerHTML = uploadSectionHTML;
+                } else {
+                    passageSection.style.display = 'none';
+                }
+            }
+
+            // Helper function to replace image placeholders with actual URLs
+            function replaceImagePlaceholders(text, imageUrls) {
+                if (!text || !imageUrls) return text;
+
+                // Replace {{key}} placeholders with actual URLs from imageUrls object
+                let result = text;
+                Object.keys(imageUrls).forEach(key => {
+                    const placeholder = `{{${key}}}`;
+                    const url = imageUrls[key];
+                    result = result.replace(new RegExp(placeholder, 'g'), url);
+                });
+
+                return result;
             }
 
             // Helper function to extract rhetorical question prompt
@@ -259,6 +349,7 @@
                 questionHTML += `
                     <div class="question" id="question${questionNum}" data-passage="${hasPassages ? (questions.findIndex(x => x.passage === q.passage) + 1) : ''}">
                         ${questionPrompt ? `<div class="question-text">${questionPrompt}</div>` : ''}
+                        ${q.image_url ? `<div class="question-image"><img src="${q.image_url}" alt="Question ${questionNum} diagram" /></div>` : ''}
                         <div class="answer-choices">
                             ${answerKeys.map(key => `
                                 <label class="answer-choice" for="q${questionNum}_${key}">
@@ -277,6 +368,13 @@
                 `;
             });
             questionSection.innerHTML = questionHTML;
+
+            // Typeset math after content is rendered
+            if (window.MathJax) {
+                MathJax.typesetPromise([passageSection, questionSection]).catch(err => {
+                    console.error('MathJax typesetting failed:', err);
+                });
+            }
         }
 
         function highlightUnderlinedPortion(passageElement, currentQuestionNum, questionsInPassage) {
@@ -366,6 +464,18 @@
             document.getElementById('itemNumber').textContent = `Item ${currentQuestion}`;
 
             updateFlagButton();
+
+            // Typeset math in the currently visible question and passage
+            if (window.MathJax) {
+                const questionElement = document.getElementById(`question${currentQuestion}`);
+                const activePassage = document.querySelector('.passage-content.active');
+                const elementsToTypeset = [questionElement, activePassage].filter(el => el);
+                if (elementsToTypeset.length > 0) {
+                    MathJax.typesetPromise(elementsToTypeset).catch(err => {
+                        console.error('MathJax typesetting failed:', err);
+                    });
+                }
+            }
         }
 
         function nextQuestion() {
@@ -698,7 +808,9 @@
         });
 
         // Initialize when page loads
-        window.addEventListener('load', initTest);
+        window.addEventListener('load', () => {
+            initTest();
+        });
     </script>
 </body>
 </html>

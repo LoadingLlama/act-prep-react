@@ -4,6 +4,7 @@ import './index.css';
 import 'katex/dist/katex.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AuthProvider } from './contexts/AuthContext';
 
 // Clear all caches on load to ensure fresh data
 console.log('🔄 Clearing all caches...');
@@ -17,7 +18,9 @@ console.log('✅ Caches cleared');
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </React.StrictMode>
 );
 

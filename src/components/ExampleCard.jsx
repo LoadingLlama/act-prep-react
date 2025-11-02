@@ -7,56 +7,28 @@
 import React, { useState, useEffect } from 'react';
 
 /**
- * Format solution text with better readability:
- * - Bold numbers and formulas
- * - Add spacing between paragraphs
- * - Highlight important terms
+ * Parse answer explanation to extract explanation for each choice
  */
-const formatSolutionText = (text) => {
-  if (!text) return null;
+const parseChoiceExplanations = (text) => {
+  if (!text) return {};
 
-  // Split by double line breaks to identify paragraphs
-  const paragraphs = text.split('\n\n');
+  const explanations = {};
 
-  return paragraphs.map((paragraph, idx) => {
-    // Split by single line breaks for individual lines
-    const lines = paragraph.split('\n');
+  // Extract each choice section
+  text.match(/\*\*Choice ([A-E]):(.*?)(?=\*\*Choice [A-E]:|The answer is|$)/gs)?.forEach(match => {
+    const letterMatch = match.match(/\*\*Choice ([A-E]):/);
+    const letter = letterMatch ? letterMatch[1] : '';
 
-    return (
-      <div key={idx} style={{ marginBottom: '1.5rem' }}>
-        {lines.map((line, lineIdx) => {
-          // Check if this line is a calculation or formula (contains =, ×, ÷, etc.)
-          const isCalculation = /[=×÷+\-]/.test(line) && /\d/.test(line);
+    // Extract explanation (everything between the choice text and the correct/incorrect marker)
+    const contentMatch = match.match(/:\s*"([^"]+)"\*\*\s*(.*?)(?=✓ CORRECT|✗ Incorrect)/s);
+    const explanation = contentMatch ? contentMatch[2].trim() : '';
 
-          // Check if line has checkmarks/crosses (feedback line)
-          const isFeedback = /[✓✗]/.test(line);
-
-          return (
-            <div
-              key={lineIdx}
-              style={{
-                marginBottom: lineIdx < lines.length - 1 ? '0.75rem' : '0',
-                paddingLeft: isCalculation ? '1rem' : '0',
-                fontWeight: isCalculation ? '500' : '400',
-                color: isFeedback ? '#6b7280' : '#1f2937',
-                fontSize: isCalculation ? '1.05rem' : '1rem',
-                lineHeight: '1.8'
-              }}
-              dangerouslySetInnerHTML={{
-                __html: line
-                  // Bold numbers
-                  .replace(/\b(\d+(?:\.\d+)?)\b/g, '<strong>$1</strong>')
-                  // Bold answer choices (A, B, C, D, E followed by period)
-                  .replace(/\b([A-E])\./g, '<strong>$1.</strong>')
-                  // Bold key terms like "Total", "He needs to sell", etc.
-                  .replace(/\b(Total|Step \d+|Answer|Result|Therefore|So|Note):/gi, '<strong>$1:</strong>')
-              }}
-            />
-          );
-        })}
-      </div>
-    );
+    if (letter && explanation) {
+      explanations[letter] = explanation;
+    }
   });
+
+  return explanations;
 };
 
 const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onComplete, onSolutionViewed }) => {
@@ -104,6 +76,9 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
 
   const { content: problemContent, question: questionText } = extractQuestionAndContent(example?.problem_text);
 
+  // Parse explanations for each choice
+  const choiceExplanations = parseChoiceExplanations(example?.answer_explanation);
+
   // If example data is missing, don't render anything
   if (!example || !example.title || !example.problem_text) {
     console.warn('⚠️ ExampleCard: Missing required example data, not rendering');
@@ -119,7 +94,8 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
   return (
     <div style={{
       margin: '3rem 0',
-      padding: '0'
+      padding: '0',
+      position: 'relative'
     }}>
       {/* Example Header - gray bar with red accent */}
       <div style={{
@@ -140,24 +116,28 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
         </div>
       </div>
 
-      {/* Two-column layout: Problem/Table on left, Answer Choices on right */}
+      {/* Container for sticky question and scrollable content */}
       <div style={{
-        display: 'flex',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
         gap: '3rem',
-        alignItems: 'flex-start',
-        marginBottom: '1.25rem'
+        alignItems: 'start'
       }}>
-        {/* LEFT SIDE: Problem Statement and Table */}
+        {/* LEFT SIDE: Sticky Problem Statement */}
         <div style={{
-          flex: '1 1 60%',
-          minWidth: '0'
+          position: 'sticky',
+          top: '1rem',
+          alignSelf: 'start',
+          maxHeight: 'calc(100vh - 2rem)',
+          overflowY: 'auto'
         }}>
           <div style={{
             fontSize: '17px',
             fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
             lineHeight: '1.6',
             fontWeight: '400',
-            color: '#1f2937'
+            color: '#1f2937',
+            paddingRight: '1rem'
           }}
           dangerouslySetInnerHTML={{ __html: problemContent }}
           >
@@ -165,9 +145,12 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
 
           {/* Diagram (if present) */}
           {example.diagram_svg && (
-            <div dangerouslySetInnerHTML={{ __html: example.diagram_svg }} />
+            <div style={{ marginTop: '1.5rem' }} dangerouslySetInnerHTML={{ __html: example.diagram_svg }} />
           )}
         </div>
+
+        {/* RIGHT SIDE: Scrollable content (choices and solution) */}
+        <div>
 
         {/* RIGHT SIDE: Question + Answer Choices - sticky positioned with subtle separator */}
         {!example.is_worked_example && example.choices && example.choices.length > 0 && (
@@ -198,160 +181,113 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
             const isSelected = selectedChoice === choice.letter;
             const isCorrectAnswer = choice.letter === example.correct_answer;
             const showFeedback = showSolution;
+            const explanation = choiceExplanations[choice.letter];
 
             return (
-              <div
-                key={choice.letter}
-                onClick={() => {
-                  if (!showFeedback) {
-                    handleChoiceClick(choice.letter);
-                  }
-                }}
-                style={{
-                  display: 'flex',
-                  gap: '0.8rem',
-                  padding: '0.5rem 0.75rem',
-                  margin: '0.25rem 0',
-                  cursor: showFeedback ? 'default' : 'pointer',
-                  alignItems: 'center',
-                  borderLeft: showFeedback && isSelected && isCorrectAnswer ? '3px solid #48bb78' :
-                              showFeedback && isSelected && !isCorrectAnswer ? '3px solid #f56565' :
-                              showFeedback && !isSelected && isCorrectAnswer ? '3px solid #48bb78' : 'none',
-                  paddingLeft: showFeedback && (isSelected || isCorrectAnswer) ? '0.75rem' : '0.75rem',
-                  backgroundColor: showFeedback && isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.08)' :
-                                   showFeedback && isSelected && !isCorrectAnswer ? 'rgba(245, 101, 101, 0.08)' :
-                                   showFeedback && !isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.08)' : 'transparent',
-                  borderRadius: '6px',
-                  transition: 'all 0.2s ease',
-                  '&:hover': {
-                    backgroundColor: !showFeedback ? 'rgba(0, 0, 0, 0.02)' : undefined
-                  }
-                }}
-              >
-                {/* Circular letter indicator */}
-                <div style={{
-                  width: '26px',
-                  height: '26px',
-                  minWidth: '26px',
-                  borderRadius: '50%',
-                  border: isSelected && !showFeedback ? '2px solid #10b981' :
-                          showFeedback && isSelected && isCorrectAnswer ? '2px solid #48bb78' :
-                          showFeedback && isSelected && !isCorrectAnswer ? '2px solid #f56565' :
-                          showFeedback && !isSelected && isCorrectAnswer ? '2px solid #48bb78' : '2px solid #cbd5e0',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: '600',
-                  fontSize: '0.7rem',
-                  color: isSelected && !showFeedback ? '#10b981' :
-                          showFeedback && isSelected && isCorrectAnswer ? '#48bb78' :
-                          showFeedback && isSelected && !isCorrectAnswer ? '#f56565' :
-                          showFeedback && !isSelected && isCorrectAnswer ? '#48bb78' : '#718096',
-                  backgroundColor: isSelected && !showFeedback ? 'rgba(16, 185, 129, 0.1)' :
-                                   showFeedback && isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.15)' :
-                                   showFeedback && isSelected && !isCorrectAnswer ? 'rgba(245, 101, 101, 0.15)' :
-                                   showFeedback && !isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.15)' : 'transparent',
-                  transition: 'all 0.2s ease'
-                }}>
-                  {showFeedback && isSelected && isCorrectAnswer ? '✓' :
-                   showFeedback && isSelected && !isCorrectAnswer ? '✗' :
-                   showFeedback && !isSelected && isCorrectAnswer ? '✓' : choice.letter}
-                </div>
-
-                {/* Option text */}
-                <div style={{ flex: 1 }}>
+              <div key={choice.letter} style={{ marginBottom: '1rem' }}>
+                <div
+                  onClick={() => {
+                    if (!showFeedback) {
+                      handleChoiceClick(choice.letter);
+                    }
+                  }}
+                  style={{
+                    cursor: showFeedback ? 'default' : 'pointer',
+                    borderLeft: showFeedback && isSelected && isCorrectAnswer ? '3px solid #48bb78' :
+                                showFeedback && isSelected && !isCorrectAnswer ? '3px solid #f56565' :
+                                showFeedback && !isSelected && isCorrectAnswer ? '3px solid #48bb78' : 'none',
+                    backgroundColor: showFeedback && isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.08)' :
+                                     showFeedback && isSelected && !isCorrectAnswer ? 'rgba(245, 101, 101, 0.08)' :
+                                     showFeedback && !isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.08)' : 'transparent',
+                    borderRadius: '6px',
+                    padding: '0.75rem',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  {/* Choice letter and text */}
                   <div style={{
-                    fontSize: '15px',
-                    color: '#1f2937',
-                    lineHeight: '1.5',
-                    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-                    fontWeight: '400'
+                    display: 'flex',
+                    gap: '0.8rem',
+                    alignItems: 'center'
                   }}>
-                    {choice.text}
+                    {/* Circular letter indicator */}
+                    <div style={{
+                      width: '26px',
+                      height: '26px',
+                      minWidth: '26px',
+                      borderRadius: '50%',
+                      border: isSelected && !showFeedback ? '2px solid #10b981' :
+                              showFeedback && isSelected && isCorrectAnswer ? '2px solid #48bb78' :
+                              showFeedback && isSelected && !isCorrectAnswer ? '2px solid #f56565' :
+                              showFeedback && !isSelected && isCorrectAnswer ? '2px solid #48bb78' : '2px solid #cbd5e0',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontWeight: '600',
+                      fontSize: '0.7rem',
+                      color: isSelected && !showFeedback ? '#10b981' :
+                              showFeedback && isSelected && isCorrectAnswer ? '#48bb78' :
+                              showFeedback && isSelected && !isCorrectAnswer ? '#f56565' :
+                              showFeedback && !isSelected && isCorrectAnswer ? '#48bb78' : '#718096',
+                      backgroundColor: isSelected && !showFeedback ? 'rgba(16, 185, 129, 0.1)' :
+                                       showFeedback && isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.15)' :
+                                       showFeedback && isSelected && !isCorrectAnswer ? 'rgba(245, 101, 101, 0.15)' :
+                                       showFeedback && !isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.15)' : 'transparent',
+                      transition: 'all 0.2s ease'
+                    }}>
+                      {showFeedback && isSelected && isCorrectAnswer ? '✓' :
+                       showFeedback && isSelected && !isCorrectAnswer ? '✗' :
+                       showFeedback && !isSelected && isCorrectAnswer ? '✓' : choice.letter}
+                    </div>
+
+                    {/* Option text */}
+                    <div style={{ flex: 1 }}>
+                      <div style={{
+                        fontSize: '15px',
+                        color: '#1f2937',
+                        lineHeight: '1.5',
+                        fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                        fontWeight: '400'
+                      }}>
+                        {choice.text}
+                      </div>
+                    </div>
                   </div>
+
+                  {/* Explanation integrated into the same box */}
+                  {showFeedback && explanation && (
+                    <div style={{
+                      marginTop: '0.75rem',
+                      marginLeft: '2.25rem',
+                      paddingTop: '0.75rem',
+                      borderTop: '1px solid rgba(0, 0, 0, 0.05)'
+                    }}>
+                      <div style={{
+                        fontSize: '0.8rem',
+                        lineHeight: '1.6',
+                        color: '#374151',
+                        marginBottom: '0.5rem'
+                      }}>
+                        {explanation}
+                      </div>
+                      <div style={{
+                        fontSize: '0.7rem',
+                        fontWeight: '700',
+                        color: isCorrectAnswer ? '#16a34a' : '#dc2626'
+                      }}>
+                        {isCorrectAnswer ? '✓ CORRECT' : '✗ Incorrect'}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             );
           })}
           </div>
         )}
-      </div>
 
-      {/* Solution - matches quiz explanation style */}
-      {showSolution && (
-        <div style={{
-          marginTop: '2rem',
-          paddingTop: '1.5rem',
-          borderTop: '1px solid #e5e7eb'
-        }}>
-          {/* Show correct answer in bold red */}
-          <div style={{
-            fontSize: '1.15rem',
-            fontWeight: '700',
-            color: '#dc2626',
-            marginBottom: '1.25rem',
-            letterSpacing: '0.01em'
-          }}>
-            Answer: {example.correct_answer}
-          </div>
-
-          {/* Solution header */}
-          <div style={{
-            fontSize: '0.75rem',
-            fontWeight: '600',
-            color: '#6b7280',
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            marginBottom: '1rem'
-          }}>
-            Solution
-          </div>
-
-          {/* Solution Steps or Answer Explanation */}
-          <div style={{
-            fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-          }}>
-            {/* If solution_steps exists and has items, display them */}
-            {example.solution_steps && example.solution_steps.length > 0 ? (
-              <ul style={{
-                margin: '0',
-                paddingLeft: '1.5rem',
-                listStyle: 'none'
-              }}>
-                {example.solution_steps.map((step, idx) => (
-                  <li key={step.step} style={{
-                    marginBottom: '1.25rem',
-                    paddingLeft: '1.5rem',
-                    position: 'relative',
-                    fontSize: '1rem',
-                    lineHeight: '1.8',
-                    color: '#1f2937'
-                  }}>
-                    {/* Step number bullet */}
-                    <span style={{
-                      position: 'absolute',
-                      left: '0',
-                      fontWeight: '600',
-                      color: '#2563eb'
-                    }}>
-                      {idx + 1}.
-                    </span>
-                    <span dangerouslySetInnerHTML={{ __html: step.text }} />
-                  </li>
-                ))}
-              </ul>
-            ) : example.answer_explanation ? (
-              /* Format answer_explanation with better spacing and bold text */
-              <div style={{
-                fontSize: '1rem',
-                lineHeight: '1.8'
-              }}>
-                {formatSolutionText(example.answer_explanation)}
-              </div>
-            ) : null}
-          </div>
-        </div>
-      )}
+        </div> {/* Close right side div */}
+      </div> {/* Close grid container */}
     </div>
   );
 };

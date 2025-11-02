@@ -6,6 +6,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { createUseStyles } from 'react-jss';
+import ImageUploadSection from './ImageUploadSection';
 
 const useStyles = createUseStyles({
   testContainer: {
@@ -356,13 +357,15 @@ const DiagnosticTestUI = ({
   onClose
 }) => {
   const hasPassages = questions.some((q) => q.passage);
-  const classes = useStyles({ hasPassages });
+  const showLeftPanel = hasPassages || section === 'Math' || section === 'Science';
+  const classes = useStyles({ hasPassages: showLeftPanel });
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [flaggedQuestions, setFlaggedQuestions] = useState(new Set());
   const [showModal, setShowModal] = useState(false);
   const [timeLeft, setTimeLeft] = useState(duration ? duration * 60 : null);
+  const [uploadedImages, setUploadedImages] = useState([]);
 
   const currentQuestion = questions[currentQuestionIndex];
   const currentQuestionNumber = currentQuestionIndex + 1;
@@ -493,6 +496,16 @@ const DiagnosticTestUI = ({
                   <p key={i}>{para}</p>
                 ))}
               </div>
+            </div>
+          )}
+
+          {/* Image Upload Section for Math and Science (when no passages) */}
+          {!hasPassages && (section === 'Math' || section === 'Science') && (
+            <div className={classes.passageSection}>
+              <ImageUploadSection
+                onImagesChange={(images) => setUploadedImages(images)}
+                maxImages={5}
+              />
             </div>
           )}
 

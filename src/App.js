@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useAuth } from './contexts/AuthContext';
+import AuthPage from './pages/AuthPage';
+import ProtectedRoute from './components/auth/ProtectedRoute';
+import ProfilePage from './pages/ProfilePage';
+import SettingsPage from './pages/SettingsPage';
 import AIChat from './components/AIChat';
 import DiagnosticTest from './components/DiagnosticTest';
 import PracticeTestPage from './pages/PracticeTestPage';
@@ -13,9 +18,10 @@ import { getAllLessons } from './utils/lessonsDb';
 import { lessonStructure } from './data/lessonStructure';
 
 function App() {
+  const { user, loading } = useAuth();
   const classes = useAppStyles();
   const [activeTab, setActiveTab] = useState('home');
-  const [activeSection, setActiveSection] = useState('all');
+  const [activeSection, setActiveSection] = useState('english');
   const [lessonContent, setLessonContent] = useState({});
   const [currentLesson, setCurrentLesson] = useState(null);
   const [lessonModalOpen, setLessonModalOpen] = useState(false);
@@ -120,105 +126,121 @@ function App() {
     domUtils.restoreBodyScroll();
   };
 
+  // Show auth page if not authenticated
+  if (!user && !loading) {
+    return <AuthPage />;
+  }
+
+  // Show loading or protected content
   return (
-    <div className={classes.container}>
-      <Sidebar activeView={activeTab} onNavigate={handleTabClick} />
+    <ProtectedRoute>
+      <div className={classes.container}>
+        <Sidebar activeView={activeTab} onNavigate={handleTabClick} />
 
-      <div className={classes.mainContent}>
-        <div className={classes.content}>
-          {activeTab === 'home' && (
-            <Home
-              lessonProgress={lessonProgress}
-              lessonStructure={lessonStructure}
-            />
-          )}
-          <TestsContent
-            classes={classes}
-            activeTab={activeTab}
-            setDiagnosticTestOpen={setDiagnosticTestOpen}
-            setPracticeTestOpen={openPracticeTest}
-          />
-          <LessonsContent
-            classes={classes}
-            activeTab={activeTab}
-            activeSection={activeSection}
-            handleSectionFilter={handleSectionFilter}
-            viewMode={viewMode}
-            setViewMode={setViewMode}
-            lessonStructure={lessonStructure}
-            expandedSections={expandedSections}
-            toggleSection={toggleSection}
-            getLessonStatus={getLessonStatus}
-            openLesson={openLesson}
-            hoveredMoreTag={hoveredMoreTag}
-            setHoveredMoreTag={setHoveredMoreTag}
-            setMoreTagPosition={setMoreTagPosition}
-          />
-        </div>
-      </div>
-
-      <LessonModal
-        classes={classes}
-        lessonModalOpen={lessonModalOpen}
-        lessonContent={lessonContent[currentLesson]}
-        currentLesson={currentLesson}
-        lessonStructure={lessonStructure}
-        lessonMode={lessonMode}
-        setLessonMode={setLessonMode}
-        lessonProgress={lessonProgress}
-        closeLessonModal={closeLessonModal}
-        openLesson={openLesson}
-        updateLessonProgress={updateLessonProgress}
-      />
-
-      {/* Diagnostic Test Modal */}
-      {diagnosticTestOpen && (
-        <DiagnosticTest onClose={() => setDiagnosticTestOpen(false)} />
-      )}
-
-      {/* Practice Test Modal */}
-      {practiceTestOpen && practiceTestNumber && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'white',
-          zIndex: 2000,
-          overflow: 'auto'
-        }}>
-          <PracticeTestPage testId={practiceTestNumber} onClose={closePracticeTest} />
-        </div>
-      )}
-
-      {/* Key Terms Popup */}
-      {hoveredMoreTag && (
-        <div
-          className={classes.keyTermsPopup}
-          style={{
-            top: `${moreTagPosition.top}px`,
-            left: `${moreTagPosition.left}px`,
-            transform: 'translate(-50%, -100%)'
-          }}
-        >
-          <div className={classes.keyTermsPopupTitle}>Key Terms</div>
-          <div className={classes.keyTermsPopupList}>
-            {hoveredMoreTag.keyTerms?.map((term, index) => (
-              <div key={index} className={classes.keyTermsPopupItem}>
-                {term}
-              </div>
-            ))}
+        <div className={classes.mainContent}>
+          <div className={classes.content}>
+            {activeTab === 'home' && (
+              <Home
+                lessonProgress={lessonProgress}
+                lessonStructure={lessonStructure}
+                onNavigate={handleTabClick}
+                onLessonOpen={openLesson}
+              />
+            )}
+            {activeTab === 'tests' && (
+              <TestsContent
+                classes={classes}
+                activeTab={activeTab}
+                setDiagnosticTestOpen={setDiagnosticTestOpen}
+                setPracticeTestOpen={openPracticeTest}
+              />
+            )}
+            {activeTab === 'lessons' && (
+              <LessonsContent
+                classes={classes}
+                activeTab={activeTab}
+                activeSection={activeSection}
+                handleSectionFilter={handleSectionFilter}
+                viewMode={viewMode}
+                setViewMode={setViewMode}
+                lessonStructure={lessonStructure}
+                expandedSections={expandedSections}
+                toggleSection={toggleSection}
+                getLessonStatus={getLessonStatus}
+                openLesson={openLesson}
+                hoveredMoreTag={hoveredMoreTag}
+                setHoveredMoreTag={setHoveredMoreTag}
+                setMoreTagPosition={setMoreTagPosition}
+              />
+            )}
+            {activeTab === 'profile' && <ProfilePage />}
+            {activeTab === 'settings' && <SettingsPage />}
           </div>
         </div>
-      )}
 
-      {/* AI Chat Component */}
-      <AIChat
-        currentLesson={currentLesson}
-        lessonContent={lessonContent[currentLesson]}
-      />
-    </div>
+        <LessonModal
+          classes={classes}
+          lessonModalOpen={lessonModalOpen}
+          lessonContent={lessonContent[currentLesson]}
+          currentLesson={currentLesson}
+          lessonStructure={lessonStructure}
+          lessonMode={lessonMode}
+          setLessonMode={setLessonMode}
+          lessonProgress={lessonProgress}
+          closeLessonModal={closeLessonModal}
+          openLesson={openLesson}
+          updateLessonProgress={updateLessonProgress}
+        />
+
+        {/* Diagnostic Test Modal */}
+        {diagnosticTestOpen && (
+          <DiagnosticTest onClose={() => setDiagnosticTestOpen(false)} />
+        )}
+
+        {/* Practice Test Modal */}
+        {practiceTestOpen && practiceTestNumber && (
+          <div style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'white',
+            zIndex: 2000,
+            overflow: 'auto'
+          }}>
+            <PracticeTestPage testId={practiceTestNumber} onClose={closePracticeTest} />
+          </div>
+        )}
+
+        {/* Key Terms Popup */}
+        {hoveredMoreTag && (
+          <div
+            className={classes.keyTermsPopup}
+            style={{
+              top: `${moreTagPosition.top}px`,
+              left: `${moreTagPosition.left}px`,
+              transform: 'translate(-50%, -100%)'
+            }}
+          >
+            <div className={classes.keyTermsPopupTitle}>Key Terms</div>
+            <div className={classes.keyTermsPopupList}>
+              {hoveredMoreTag.keyTerms?.map((term, index) => (
+                <div key={index} className={classes.keyTermsPopupItem}>
+                  {term}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* AI Chat Component */}
+        <AIChat
+          currentLesson={currentLesson}
+          lessonContent={lessonContent[currentLesson]}
+        />
+      </div>
+    </ProtectedRoute>
   );
 }
 

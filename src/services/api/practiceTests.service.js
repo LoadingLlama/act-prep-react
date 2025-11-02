@@ -101,9 +101,22 @@ const PracticeTestsService = {
         // Merge passage text into questions
         questions.forEach((question) => {
           if (question.passage_id && passageMap[question.passage_id]) {
-            question.passage = passageMap[question.passage_id].passage_text;
-            question.passage_type = passageMap[question.passage_id].passage_type;
-            question.passage_title = passageMap[question.passage_id].passage_title;
+            const passage = passageMap[question.passage_id];
+            question.passage = passage.passage_text;
+            question.passage_type = passage.passage_type;
+            question.passage_title = passage.passage_title;
+
+            // Collect all image URLs from image_url_1, image_url_2, etc.
+            const imageUrls = {};
+            for (let i = 1; i <= 5; i++) {
+              const urlKey = `image_url_${i}`;
+              if (passage[urlKey]) {
+                imageUrls[`image${i}`] = passage[urlKey];
+              }
+            }
+            if (Object.keys(imageUrls).length > 0) {
+              question.passage_image_urls = imageUrls;
+            }
           }
         });
       }
@@ -127,11 +140,13 @@ const PracticeTestsService = {
           text: q.question_text, // SequentialTest expects 'text'
           passage: q.passage,
           passage_title: q.passage_title, // Include passage title
+          passage_image_urls: q.passage_image_urls, // Include passage image URLs for placeholder replacement
           answers: answers, // SequentialTest expects 'answers' as object
           correctAnswer: String.fromCharCode(65 + q.correct_answer), // Convert 0->A, 1->B, etc.
           explanation: q.explanation,
           question_type: q.question_type,
-          difficulty: q.difficulty
+          difficulty: q.difficulty,
+          image_url: q.image_url // Include image URL for questions with diagrams
         };
       });
 

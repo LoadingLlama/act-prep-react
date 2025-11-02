@@ -11,7 +11,7 @@ class TermDefinitionsService {
       const { data, error } = await supabase
         .from('lesson_term_definitions')
         .select('*')
-        .eq('lesson_key', lessonKey);
+        .or(`lesson_key.eq.${lessonKey},lesson_key.is.null`);
 
       if (error) {
         console.error('Error fetching term definitions:', error);

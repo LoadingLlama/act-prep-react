@@ -1,7 +1,7 @@
 /**
  * ExampleModal Component
  * Displays an example in a centered modal with blurred backdrop
- * User must complete the example to close the modal and proceed
+ * User can close at any time via X button or Continue button, marking example as complete
  * Uses React Portal to render at document.body level for proper positioning
  */
 
@@ -32,9 +32,8 @@ const ExampleModal = ({ example, position, isOpen, onComplete, typingSpeed }) =>
   }, [isOpen]);
 
   const handleClose = () => {
-    if (solutionViewed) {
-      onComplete();
-    }
+    // Always allow closing and mark as complete
+    onComplete();
   };
 
   if (!isOpen) return null;
@@ -58,7 +57,7 @@ const ExampleModal = ({ example, position, isOpen, onComplete, typingSpeed }) =>
         padding: '2rem',
         overflowY: 'auto'
       }}
-      onClick={handleClose} // Click backdrop to close (only if solution viewed)
+      onClick={handleClose} // Click backdrop to close and mark as complete
       >
         {/* Close X button - positioned outside modal in top-right of screen */}
         <button
@@ -71,11 +70,11 @@ const ExampleModal = ({ example, position, isOpen, onComplete, typingSpeed }) =>
             height: '40px',
             borderRadius: '50%',
             border: 'none',
-            backgroundColor: solutionViewed ? 'rgba(255, 255, 255, 0.9)' : 'rgba(156, 163, 175, 0.3)',
-            color: solutionViewed ? '#9ca3af' : '#d1d5db',
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            color: '#9ca3af',
             fontSize: '1.5rem',
             fontWeight: '300',
-            cursor: solutionViewed ? 'pointer' : 'not-allowed',
+            cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -83,30 +82,26 @@ const ExampleModal = ({ example, position, isOpen, onComplete, typingSpeed }) =>
             lineHeight: '1',
             padding: '0',
             zIndex: 10000,
-            boxShadow: solutionViewed ? '0 2px 8px rgba(0, 0, 0, 0.1)' : 'none',
-            opacity: solutionViewed ? 1 : 0.5
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+            opacity: 1
           }}
           onMouseEnter={(e) => {
-            if (solutionViewed) {
-              e.target.style.backgroundColor = 'rgba(255, 255, 255, 1)';
-              e.target.style.color = '#374151';
-              e.target.style.transform = 'scale(1.05)';
-            }
+            e.target.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+            e.target.style.color = '#374151';
+            e.target.style.transform = 'scale(1.05)';
           }}
           onMouseLeave={(e) => {
-            if (solutionViewed) {
-              e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
-              e.target.style.color = '#9ca3af';
-              e.target.style.transform = 'scale(1)';
-            }
+            e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+            e.target.style.color = '#9ca3af';
+            e.target.style.transform = 'scale(1)';
           }}
           aria-label="Close"
-          title={solutionViewed ? "Close" : "View solution to continue"}
+          title="Close and mark as complete"
         >
           ✕
         </button>
 
-        {/* Modal Container */}
+        {/* Modal Container - wrapper for content */}
         <div
           onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
           style={{
@@ -115,58 +110,68 @@ const ExampleModal = ({ example, position, isOpen, onComplete, typingSpeed }) =>
             maxWidth: '1200px',
             width: '90%',
             maxHeight: '90vh',
-            overflowY: 'auto',
-            padding: '2.5rem',
-            boxShadow: '0 10px 40px rgba(0, 0, 0, 0.15)',
             position: 'relative',
             margin: 'auto',
-            animation: 'modalFadeIn 0.2s ease-out'
+            animation: 'modalFadeIn 0.2s ease-out',
+            boxShadow: '0 10px 40px rgba(0, 0, 0, 0.15)',
+            display: 'flex',
+            flexDirection: 'column'
           }}
         >
-          {/* ExampleCard with callback when solution is viewed */}
-          <ExampleCard
-            example={example}
-            position={position}
-            isCurrentSection={true}
-            typingSpeed={typingSpeed}
-            onSolutionViewed={() => setSolutionViewed(true)}
-          />
+          {/* Scrollable content area */}
+          <div style={{
+            overflowY: 'auto',
+            padding: '2.5rem',
+            flex: '1 1 auto'
+          }}>
+            {/* ExampleCard with callback when solution is viewed */}
+            <ExampleCard
+              example={example}
+              position={position}
+              isCurrentSection={true}
+              typingSpeed={typingSpeed}
+              onSolutionViewed={() => setSolutionViewed(true)}
+            />
+          </div>
 
-          {/* Continue button - only shows after solution is viewed */}
+          {/* Fixed Continue Button - always at bottom of modal */}
           {solutionViewed && (
             <div style={{
-              marginTop: '2rem',
-              paddingTop: '1.5rem',
-              borderTop: '2px solid #e5e7eb',
+              flex: '0 0 auto',
+              padding: '0.75rem 2.5rem',
+              backgroundColor: 'rgba(249, 250, 251, 0.95)',
+              borderTop: '1px solid #f3f4f6',
+              borderBottomLeftRadius: '8px',
+              borderBottomRightRadius: '8px',
               display: 'flex',
-              justifyContent: 'center'
+              justifyContent: 'flex-end'
             }}>
               <button
                 onClick={onComplete}
                 style={{
-                  backgroundColor: '#10b981',
-                  color: 'white',
-                  padding: '0.75rem 2rem',
-                  fontSize: '1rem',
-                  fontWeight: '600',
-                  borderRadius: '8px',
-                  border: 'none',
+                  backgroundColor: 'transparent',
+                  color: '#6b7280',
+                  padding: '0.5rem 1rem',
+                  fontSize: '0.8rem',
+                  fontWeight: '500',
+                  borderRadius: '4px',
+                  border: '1px solid #e5e7eb',
                   cursor: 'pointer',
-                  boxShadow: '0 2px 8px rgba(16, 185, 129, 0.3)',
-                  transition: 'all 0.2s ease'
+                  boxShadow: 'none',
+                  transition: 'all 0.15s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#059669';
-                  e.target.style.transform = 'translateY(-1px)';
-                  e.target.style.boxShadow = '0 4px 12px rgba(16, 185, 129, 0.4)';
+                  e.target.style.backgroundColor = '#f9fafb';
+                  e.target.style.borderColor = '#d1d5db';
+                  e.target.style.color = '#374151';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#10b981';
-                  e.target.style.transform = 'translateY(0)';
-                  e.target.style.boxShadow = '0 2px 8px rgba(16, 185, 129, 0.3)';
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.borderColor = '#e5e7eb';
+                  e.target.style.color = '#6b7280';
                 }}
               >
-                Continue →
+                Continue
               </button>
             </div>
           )}

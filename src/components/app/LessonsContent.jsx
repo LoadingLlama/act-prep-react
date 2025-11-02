@@ -1,34 +1,245 @@
 /**
  * Lessons Content Component
- * Displays the lessons grid with filtering and view modes
- * Extracted from App.js to reduce file size
+ * Displays the lessons grid with filtering and compact professional design
  */
 
 import React from 'react';
+import { createUseStyles } from 'react-jss';
 import StatusIcon from '../StatusIcon';
 
-/**
- * LessonsContent - Renders the lessons tab with filtering and view switching
- * @param {Object} props - Component props
- * @param {Object} props.classes - JSS style classes
- * @param {string} props.activeTab - Currently active tab
- * @param {string} props.activeSection - Currently active section filter
- * @param {Function} props.handleSectionFilter - Handler for section filtering
- * @param {string} props.viewMode - Current view mode ('grid' or 'list')
- * @param {Function} props.setViewMode - Function to set view mode
- * @param {Array} props.lessonStructure - Array of lesson data
- * @param {Object} props.expandedSections - Object tracking which sections are expanded
- * @param {Function} props.toggleSection - Function to toggle section expansion
- * @param {Function} props.getLessonStatus - Function to get lesson completion status
- * @param {Function} props.openLesson - Function to open a lesson modal
- * @param {Object|null} props.hoveredMoreTag - Currently hovered "more" tag lesson
- * @param {Function} props.setHoveredMoreTag - Function to set hovered more tag
- * @param {Function} props.setMoreTagPosition - Function to set more tag popup position
- * @returns {JSX.Element} Lessons content component
- */
+const useStyles = createUseStyles({
+  lessonsContainer: {
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    padding: '2rem',
+    margin: '0 auto',
+    minHeight: '100vh',
+    background: '#fafafa',
+    maxWidth: '1200px'
+  },
+  pageHeader: {
+    padding: '0',
+    marginBottom: '2rem'
+  },
+  pageTitle: {
+    fontSize: '2.5rem',
+    fontWeight: '900',
+    color: '#000000',
+    margin: '0 0 0.5rem 0',
+    letterSpacing: '-0.04em'
+  },
+  pageSubtitle: {
+    fontSize: '1rem',
+    color: '#64748b',
+    margin: 0
+  },
+  contentSection: {
+    padding: '0'
+  },
+  controlsBar: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: '1.5rem',
+    gap: '1rem',
+    background: '#ffffff',
+    padding: '0.75rem 1rem',
+    borderRadius: '8px',
+    border: '1px solid #e2e8f0'
+  },
+  filterButtons: {
+    display: 'flex',
+    gap: '0.4rem',
+    flexWrap: 'wrap'
+  },
+  filterButton: {
+    background: 'transparent',
+    border: 'none',
+    borderRadius: '6px',
+    padding: '0.4rem 0.85rem',
+    fontSize: '0.8rem',
+    fontWeight: '600',
+    color: '#64748b',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    '&:hover': {
+      background: '#f8fafc',
+      color: '#1a1a1a'
+    },
+    '&.active': {
+      color: '#ffffff',
+      '&.english': {
+        background: '#08245b'
+      },
+      '&.math': {
+        background: '#dc2626'
+      },
+      '&.reading': {
+        background: '#08245b'
+      },
+      '&.science': {
+        background: '#16a34a'
+      }
+    }
+  },
+  viewToggle: {
+    display: 'flex',
+    gap: '0.25rem',
+    background: '#ffffff',
+    border: '1px solid #e2e8f0',
+    borderRadius: '6px',
+    padding: '0.25rem'
+  },
+  viewButton: {
+    background: 'transparent',
+    border: 'none',
+    borderRadius: '4px',
+    padding: '0.5rem',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    color: '#64748b',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    '&:hover': {
+      background: '#f8fafc'
+    },
+    '&.active': {
+      background: '#08245b',
+      color: '#ffffff'
+    }
+  },
+  lessonsGrid: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0'
+  },
+  lessonsList: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gap: '0.75rem'
+  },
+  lessonsListView: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem'
+  },
+  lessonCard: {
+    background: '#ffffff',
+    border: '1px solid #e2e8f0',
+    borderRadius: '6px',
+    padding: '0.75rem',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    position: 'relative',
+    minHeight: '95px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.4rem',
+    '&:hover': {
+      borderColor: '#08245b',
+      boxShadow: '0 2px 8px rgba(0, 24, 69, 0.08)',
+      transform: 'translateY(-1px)'
+    },
+    '&.completed': {
+      borderColor: '#3b82f6',
+      background: '#f0f9ff'
+    }
+  },
+  lessonCardListView: {
+    background: '#ffffff',
+    border: '1px solid #e2e8f0',
+    borderRadius: '8px',
+    padding: '1rem 1.25rem',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '1rem',
+    '&:hover': {
+      borderColor: '#08245b',
+      transform: 'translateX(4px)'
+    }
+  },
+  lessonStatus: {
+    position: 'absolute',
+    top: '0.75rem',
+    right: '0.75rem'
+  },
+  lessonInfo: {
+    flex: 1
+  },
+  lessonChapter: {
+    fontSize: '0.65rem',
+    fontWeight: '700',
+    color: '#64748b',
+    letterSpacing: '0.08em',
+    textTransform: 'uppercase',
+    marginBottom: '0.3rem'
+  },
+  lessonTitle: {
+    fontSize: '0.9rem',
+    fontWeight: '600',
+    color: '#1a1a1a',
+    lineHeight: '1.25',
+    marginBottom: '0.3rem'
+  },
+  keyTermsTags: {
+    marginTop: '0.35rem',
+    fontSize: '0.65rem',
+    color: '#94a3b8',
+    fontWeight: '400',
+    lineHeight: '1.3',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
+  },
+  lessonActions: {
+    display: 'flex',
+    gap: '0.5rem',
+    marginTop: 'auto'
+  },
+  practiceButton: {
+    border: '1px solid #e2e8f0',
+    borderRadius: '6px',
+    padding: '0.35rem 0.75rem',
+    fontSize: '0.7rem',
+    fontWeight: '500',
+    color: '#64748b',
+    background: '#ffffff',
+    cursor: 'pointer',
+    transition: 'all 0.15s ease',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.3rem',
+    '&:hover': {
+      background: '#f8fafc',
+      borderColor: '#cbd5e1',
+      color: '#1a1a1a'
+    }
+  },
+  unitHeader: {
+    padding: '1.5rem 1rem 0.75rem',
+    marginTop: '1.5rem',
+    '&:first-child': {
+      marginTop: 0
+    }
+  },
+  unitTitle: {
+    fontSize: '0.75rem',
+    fontWeight: '700',
+    color: '#64748b',
+    letterSpacing: '0.08em',
+    textTransform: 'uppercase',
+    margin: 0
+  },
+  unitDivider: {
+    height: '1px',
+    background: '#e2e8f0',
+    marginTop: '0.75rem'
+  }
+});
+
 const LessonsContent = ({
-  classes,
-  activeTab,
   activeSection,
   handleSectionFilter,
   viewMode,
@@ -38,183 +249,104 @@ const LessonsContent = ({
   toggleSection,
   getLessonStatus,
   openLesson,
-  hoveredMoreTag,
   setHoveredMoreTag,
   setMoreTagPosition
 }) => {
-  // When a specific section is selected, show all lessons from that section
-  if (activeSection !== 'all') {
-    const filteredLessons = lessonStructure.filter(lesson => lesson.section === activeSection);
+  const classes = useStyles();
+
+  const getFilteredLessons = () => {
+    return lessonStructure.filter(lesson => lesson.section === activeSection);
+  };
+
+  const getLessonsByCategory = () => {
+    const filtered = getFilteredLessons();
+    const grouped = {};
+
+    filtered.forEach(lesson => {
+      const category = lesson.category || 'Other';
+      if (!grouped[category]) {
+        grouped[category] = [];
+      }
+      grouped[category].push(lesson);
+    });
+
+    return grouped;
+  };
+
+  const renderLessonCard = (lesson) => {
+    const status = getLessonStatus(lesson.id);
+    const isGridView = viewMode === 'grid';
 
     return (
-      <div className={`${classes.tabContent} ${activeTab === 'lessons' ? 'active' : ''}`}>
-        <div className={classes.contentSection}>
-          <h2 className={classes.sectionTitle}>Study Lessons</h2>
-
-          <div className={classes.sectionFilters}>
-            <div className={classes.filterButtons}>
-              <button
-                className={`${classes.sectionFilter} ${activeSection === 'all' ? 'active' : ''}`}
-                onClick={() => handleSectionFilter('all')}
-              >
-                All Sections
-              </button>
-              <button
-                className={`${classes.sectionFilter} ${activeSection === 'english' ? 'active' : ''}`}
-                onClick={() => handleSectionFilter('english')}
-              >
-                English
-              </button>
-              <button
-                className={`${classes.sectionFilter} ${activeSection === 'math' ? 'active' : ''}`}
-                onClick={() => handleSectionFilter('math')}
-              >
-                Math
-              </button>
-              <button
-                className={`${classes.sectionFilter} ${activeSection === 'reading' ? 'active' : ''}`}
-                onClick={() => handleSectionFilter('reading')}
-              >
-                Reading
-              </button>
-              <button
-                className={`${classes.sectionFilter} ${activeSection === 'science' ? 'active' : ''}`}
-                onClick={() => handleSectionFilter('science')}
-              >
-                Science
-              </button>
+      <div
+        key={lesson.id}
+        className={`${isGridView ? classes.lessonCard : classes.lessonCardListView} ${status}`}
+        onClick={() => openLesson(lesson.id, 'review')}
+        onMouseLeave={() => setHoveredMoreTag(null)}
+      >
+        <div className={classes.lessonStatus}>
+          <StatusIcon status={status} />
+        </div>
+        <div className={classes.lessonInfo}>
+          {lesson.chapterNum && (
+            <div className={classes.lessonChapter}>Topic {lesson.chapterNum}</div>
+          )}
+          <div className={classes.lessonTitle}>{lesson.title}</div>
+          {lesson.keyTerms && lesson.keyTerms.length > 0 && (
+            <div className={classes.keyTermsTags}>
+              {lesson.keyTerms.slice(0, 2).join(' • ')}
+              {lesson.keyTerms.length > 2 && ` • +${lesson.keyTerms.length - 2} more`}
             </div>
-
-            <div className={classes.viewToggle}>
-              <button
-                className={`${classes.viewToggleButton} ${viewMode === 'grid' ? 'active' : ''}`}
-                onClick={() => setViewMode('grid')}
-                title="Grid view"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="3" width="7" height="7"></rect>
-                  <rect x="14" y="3" width="7" height="7"></rect>
-                  <rect x="14" y="14" width="7" height="7"></rect>
-                  <rect x="3" y="14" width="7" height="7"></rect>
-                </svg>
-              </button>
-              <button
-                className={`${classes.viewToggleButton} ${viewMode === 'list' ? 'active' : ''}`}
-                onClick={() => setViewMode('list')}
-                title="List view"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="8" y1="6" x2="21" y2="6"></line>
-                  <line x1="8" y1="12" x2="21" y2="12"></line>
-                  <line x1="8" y1="18" x2="21" y2="18"></line>
-                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <div className={classes.lessonsGrid}>
-            {(() => {
-              // Group lessons by category
-              const groupedLessons = filteredLessons.reduce((acc, lesson) => {
-                const category = lesson.category || 'Other';
-                if (!acc[category]) acc[category] = [];
-                acc[category].push(lesson);
-                return acc;
-              }, {});
-
-              let unitNumber = 0;
-              return Object.entries(groupedLessons).map(([category, lessons]) => {
-                if (category === 'Introduction' || category === 'Practice Test') return null;
-
-                unitNumber++;
-
-                // Calculate progress for this unit
-                const completedLessons = lessons.filter(l => getLessonStatus(l.id) === 'completed').length;
-                const totalLessons = lessons.length;
-                const progressPercent = totalLessons > 0 ? (completedLessons / totalLessons) * 100 : 0;
-
-                return (
-                  <div key={category} className={classes.unitCard}>
-                    <div className={classes.unitHeader}>
-                      <div className={classes.unitLabel}>UNIT {unitNumber}</div>
-                      <div className={classes.unitTitle}>{category}</div>
-                      <div className={classes.unitProgress}>
-                        <span className={classes.unitProgressText}>
-                          {completedLessons} / {totalLessons} lessons
-                        </span>
-                        <div className={classes.unitProgressBar}>
-                          <div className={classes.unitProgressFill} style={{ width: `${progressPercent}%` }} />
-                        </div>
-                      </div>
-                    </div>
-                    <div className={viewMode === 'grid' ? classes.lessonsList : classes.lessonsListView}>
-                      {lessons.map((lesson) => (
-                        <LessonCard
-                          key={lesson.id}
-                          lesson={lesson}
-                          classes={classes}
-                          viewMode={viewMode}
-                          getLessonStatus={getLessonStatus}
-                          openLesson={openLesson}
-                          setHoveredMoreTag={setHoveredMoreTag}
-                          setMoreTagPosition={setMoreTagPosition}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                );
-              });
-            })()}
-          </div>
+          )}
+        </div>
+        <div className={classes.lessonActions}>
+          <button
+            className={classes.practiceButton}
+            onClick={(e) => {
+              e.stopPropagation();
+              openLesson(lesson.id, 'practice');
+            }}
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 20h9"></path>
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+            </svg>
+            Practice
+          </button>
         </div>
       </div>
     );
-  }
-
-  // When "All Sections" is selected, show collapsible sections
-  const sections = [
-    { key: 'english', title: 'English Section', lessons: lessonStructure.filter(l => l.section === 'english') },
-    { key: 'math', title: 'Math Section', lessons: lessonStructure.filter(l => l.section === 'math') },
-    { key: 'reading', title: 'Reading Section', lessons: lessonStructure.filter(l => l.section === 'reading') },
-    { key: 'science', title: 'Science Section', lessons: lessonStructure.filter(l => l.section === 'science') }
-  ];
+  };
 
   return (
-    <div className={`${classes.tabContent} ${activeTab === 'lessons' ? 'active' : ''}`}>
+    <div className={classes.lessonsContainer}>
+      <div className={classes.pageHeader}>
+        <h1 className={classes.pageTitle}>Lessons</h1>
+        <p className={classes.pageSubtitle}>Master every concept with structured lessons and practice</p>
+      </div>
       <div className={classes.contentSection}>
-        <h2 className={classes.sectionTitle}>Study Lessons</h2>
-
-        <div className={classes.sectionFilters}>
+        <div className={classes.controlsBar}>
           <div className={classes.filterButtons}>
             <button
-              className={`${classes.sectionFilter} ${activeSection === 'all' ? 'active' : ''}`}
-              onClick={() => handleSectionFilter('all')}
-            >
-              All Sections
-            </button>
-            <button
-              className={`${classes.sectionFilter} ${activeSection === 'english' ? 'active' : ''}`}
+              className={`${classes.filterButton} english ${activeSection === 'english' ? 'active' : ''}`}
               onClick={() => handleSectionFilter('english')}
             >
               English
             </button>
             <button
-              className={`${classes.sectionFilter} ${activeSection === 'math' ? 'active' : ''}`}
+              className={`${classes.filterButton} math ${activeSection === 'math' ? 'active' : ''}`}
               onClick={() => handleSectionFilter('math')}
             >
               Math
             </button>
             <button
-              className={`${classes.sectionFilter} ${activeSection === 'reading' ? 'active' : ''}`}
+              className={`${classes.filterButton} reading ${activeSection === 'reading' ? 'active' : ''}`}
               onClick={() => handleSectionFilter('reading')}
             >
               Reading
             </button>
             <button
-              className={`${classes.sectionFilter} ${activeSection === 'science' ? 'active' : ''}`}
+              className={`${classes.filterButton} science ${activeSection === 'science' ? 'active' : ''}`}
               onClick={() => handleSectionFilter('science')}
             >
               Science
@@ -223,11 +355,11 @@ const LessonsContent = ({
 
           <div className={classes.viewToggle}>
             <button
-              className={`${classes.viewToggleButton} ${viewMode === 'grid' ? 'active' : ''}`}
+              className={`${classes.viewButton} ${viewMode === 'grid' ? 'active' : ''}`}
               onClick={() => setViewMode('grid')}
               title="Grid view"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="3" width="7" height="7"></rect>
                 <rect x="14" y="3" width="7" height="7"></rect>
                 <rect x="14" y="14" width="7" height="7"></rect>
@@ -235,11 +367,11 @@ const LessonsContent = ({
               </svg>
             </button>
             <button
-              className={`${classes.viewToggleButton} ${viewMode === 'list' ? 'active' : ''}`}
+              className={`${classes.viewButton} ${viewMode === 'list' ? 'active' : ''}`}
               onClick={() => setViewMode('list')}
               title="List view"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="8" y1="6" x2="21" y2="6"></line>
                 <line x1="8" y1="12" x2="21" y2="12"></line>
                 <line x1="8" y1="18" x2="21" y2="18"></line>
@@ -251,163 +383,22 @@ const LessonsContent = ({
           </div>
         </div>
 
-        <div className={classes.lessonsGrid}>
-          {sections.map(section => {
-            // Group lessons by category within each section
-            const groupedLessons = section.lessons.reduce((acc, lesson) => {
-              const category = lesson.category || 'Other';
-              if (!acc[category]) acc[category] = [];
-              acc[category].push(lesson);
-              return acc;
-            }, {});
-
-            return (
-              <React.Fragment key={section.key}>
-                <div className={classes.sectionHeader} onClick={() => toggleSection(section.key)}>
-                  <h3>{section.title} ({section.lessons.length} lessons)</h3>
-                  <span className={`${classes.sectionHeaderIcon} ${expandedSections[section.key] ? 'expanded' : ''}`}>
-                    ▶
-                  </span>
-                </div>
-                {expandedSections[section.key] && (
-                  <div className={classes.expandedSectionContent}>
-                    {(() => {
-                      let unitNumber = 0;
-                      return Object.entries(groupedLessons).map(([category, lessons]) => {
-                        if (category === 'Introduction' || category === 'Practice Test') return null;
-
-                        unitNumber++;
-
-                        // Calculate progress for this unit
-                        const completedLessons = lessons.filter(l => getLessonStatus(l.id) === 'completed').length;
-                        const totalLessons = lessons.length;
-                        const progressPercent = totalLessons > 0 ? (completedLessons / totalLessons) * 100 : 0;
-
-                        return (
-                          <div key={`${section.key}-${category}`} className={classes.unitCard} style={{ gridColumn: '1 / -1' }}>
-                            <div className={classes.unitHeader}>
-                              <div className={classes.unitLabel}>UNIT {unitNumber}</div>
-                              <div className={classes.unitTitle}>{category}</div>
-                              <div className={classes.unitProgress}>
-                                <span className={classes.unitProgressText}>
-                                  {completedLessons} / {totalLessons} lessons
-                                </span>
-                                <div className={classes.unitProgressBar}>
-                                  <div className={classes.unitProgressFill} style={{ width: `${progressPercent}%` }} />
-                                </div>
-                              </div>
-                            </div>
-                            <div className={viewMode === 'grid' ? classes.lessonsList : classes.lessonsListView}>
-                              {lessons.map((lesson) => (
-                                <LessonCard
-                                  key={lesson.id}
-                                  lesson={lesson}
-                                  classes={classes}
-                                  viewMode={viewMode}
-                                  getLessonStatus={getLessonStatus}
-                                  openLesson={openLesson}
-                                  setHoveredMoreTag={setHoveredMoreTag}
-                                  setMoreTagPosition={setMoreTagPosition}
-                                />
-                              ))}
-                            </div>
-                          </div>
-                        );
-                      });
-                    })()}
-                  </div>
-                )}
-              </React.Fragment>
-            );
-          })}
+        <div>
+          {Object.entries(getLessonsByCategory()).map(([category, lessons], idx) => (
+            <div key={category}>
+              <div className={classes.unitHeader}>
+                <h3 className={classes.unitTitle}>{category}</h3>
+                <div className={classes.unitDivider}></div>
+              </div>
+              <div className={viewMode === 'grid' ? classes.lessonsList : classes.lessonsListView}>
+                {lessons.map(lesson => renderLessonCard(lesson))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
-
-/**
- * LessonCard - Individual lesson card component
- * @param {Object} props - Component props
- * @returns {JSX.Element} Lesson card
- */
-const LessonCard = ({
-  lesson,
-  classes,
-  viewMode,
-  getLessonStatus,
-  openLesson,
-  setHoveredMoreTag,
-  setMoreTagPosition
-}) => (
-  <div
-    className={`${viewMode === 'grid' ? classes.lessonItem : classes.lessonItemListView} ${getLessonStatus(lesson.id)}`}
-    onClick={() => openLesson(lesson.id, 'review')}
-    onMouseLeave={() => setHoveredMoreTag(null)}
-  >
-    <div className={classes.lessonStatus}>
-      <StatusIcon status={getLessonStatus(lesson.id)} />
-    </div>
-    <div className={viewMode === 'grid' ? classes.lessonInfo : classes.lessonInfoListView}>
-      <h4>
-        {lesson.chapterNum && (
-          <div style={{ color: '#3b82f6', fontWeight: '600', fontSize: '0.85rem', marginBottom: '0.35rem' }}>
-            Topic {lesson.chapterNum}
-          </div>
-        )}
-        <div style={{ color: '#000000', fontWeight: '500', fontSize: '0.9rem', lineHeight: '1.3' }}>
-          {lesson.title}
-        </div>
-      </h4>
-      {lesson.keyTerms && lesson.keyTerms.length > 0 && (
-        <div className={classes.keyTermsTags}>
-          {lesson.keyTerms.slice(0, 2).map((term, index) => (
-            <div
-              key={index}
-              className={classes.keyTermTag}
-            >
-              {term}
-            </div>
-          ))}
-          {lesson.keyTerms.length > 2 && (
-            <div
-              className={classes.keyTermTag}
-              onMouseEnter={(e) => {
-                e.stopPropagation();
-                const rect = e.currentTarget.getBoundingClientRect();
-                setMoreTagPosition({
-                  top: rect.top - 8,
-                  left: rect.left + rect.width / 2
-                });
-                setHoveredMoreTag(lesson);
-              }}
-              onMouseLeave={(e) => {
-                e.stopPropagation();
-                setHoveredMoreTag(null);
-              }}
-            >
-              +{lesson.keyTerms.length - 2} more
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-    <div className={viewMode === 'grid' ? classes.lessonActions : classes.lessonActionsListView}>
-      <button
-        className={classes.lessonPracticeButton}
-        onClick={(e) => {
-          e.stopPropagation();
-          openLesson(lesson.id, 'practice');
-        }}
-      >
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 20h9"></path>
-          <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-        </svg>
-        Practice
-      </button>
-    </div>
-  </div>
-);
 
 export default LessonsContent;

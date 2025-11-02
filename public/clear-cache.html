@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Cache - ACT Prep</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 500px;
+        }
+        h1 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        button {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        button:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+        }
+        .success {
+            background: #10b981;
+            padding: 1rem;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: none;
+        }
+        .info {
+            background: #f3f4f6;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: #4b5563;
+        }
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🗑️ Clear All Cache</h1>
+        <p>This will clear all saved progress, settings, and cached data for the ACT Prep application.</p>
+
+        <div class="info">
+            <strong>What will be cleared:</strong><br>
+            • Lesson progress<br>
+            • Quiz answers<br>
+            • Saved position in lessons<br>
+            • All localStorage data
+        </div>
+
+        <button onclick="clearAllCache()">Clear All Cache & Refresh</button>
+
+        <div class="success" id="success">
+            ✅ Cache cleared! Redirecting to home...
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="/">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        function clearAllCache() {
+            // Clear localStorage
+            localStorage.clear();
+
+            // Clear sessionStorage
+            sessionStorage.clear();
+
+            // Show success message
+            document.getElementById('success').style.display = 'block';
+
+            // Redirect to home after 1 second
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
