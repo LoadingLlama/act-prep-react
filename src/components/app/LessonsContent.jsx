@@ -245,6 +245,7 @@ const LessonsContent = ({
   viewMode,
   setViewMode,
   lessonStructure,
+  lessonContent,
   expandedSections,
   toggleSection,
   getLessonStatus,
@@ -255,7 +256,11 @@ const LessonsContent = ({
   const classes = useStyles();
 
   const getFilteredLessons = () => {
-    return lessonStructure.filter(lesson => lesson.section === activeSection);
+    // Merge durations from database into lesson structure
+    return lessonStructure.filter(lesson => lesson.section === activeSection).map(lesson => ({
+      ...lesson,
+      duration: lessonContent[lesson.id]?.duration || lesson.duration
+    }));
   };
 
   const getLessonsByCategory = () => {

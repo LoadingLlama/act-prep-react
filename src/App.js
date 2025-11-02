@@ -164,6 +164,7 @@ function App() {
                 viewMode={viewMode}
                 setViewMode={setViewMode}
                 lessonStructure={lessonStructure}
+                lessonContent={lessonContent}
                 expandedSections={expandedSections}
                 toggleSection={toggleSection}
                 getLessonStatus={getLessonStatus}
