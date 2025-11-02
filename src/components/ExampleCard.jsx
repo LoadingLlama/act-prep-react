@@ -298,7 +298,7 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
                 <button
                   onClick={handleCheckAnswer}
                   style={{
-                    backgroundColor: '#10b981',
+                    backgroundColor: '#007AFF',
                     color: 'white',
                     padding: '0.75rem 1.5rem',
                     fontSize: '0.95rem',
@@ -310,12 +310,12 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
                     boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = '#059669';
+                    e.target.style.backgroundColor = '#0051D5';
                     e.target.style.transform = 'translateY(-1px)';
                     e.target.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = '#10b981';
+                    e.target.style.backgroundColor = '#007AFF';
                     e.target.style.transform = 'translateY(0)';
                     e.target.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
                   }}
