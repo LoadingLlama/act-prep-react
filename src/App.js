@@ -234,11 +234,13 @@ function App() {
           </div>
         )}
 
-        {/* AI Chat Component */}
-        <AIChat
-          currentLesson={currentLesson}
-          lessonContent={lessonContent[currentLesson]}
-        />
+        {/* AI Chat Component - Hidden for now */}
+        {false && (
+          <AIChat
+            currentLesson={currentLesson}
+            lessonContent={lessonContent[currentLesson]}
+          />
+        )}
       </div>
     </ProtectedRoute>
   );

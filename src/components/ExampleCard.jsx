@@ -34,6 +34,7 @@ const parseChoiceExplanations = (text) => {
 const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onComplete, onSolutionViewed }) => {
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [showSolution, setShowSolution] = useState(false);
+  const [hasCheckedAnswer, setHasCheckedAnswer] = useState(false);
 
   // For worked examples (no choices), show solution immediately
   useEffect(() => {
@@ -86,9 +87,14 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
   }
 
   const handleChoiceClick = (letter) => {
-    if (selectedChoice) return; // Already selected
+    if (hasCheckedAnswer) return; // Already checked answer
     setSelectedChoice(letter);
-    setTimeout(() => setShowSolution(true), 300);
+  };
+
+  const handleCheckAnswer = () => {
+    if (!selectedChoice) return; // Must select an answer first
+    setHasCheckedAnswer(true);
+    setTimeout(() => setShowSolution(true), 100);
   };
 
   return (
@@ -180,19 +186,15 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
             {example.choices.map((choice) => {
             const isSelected = selectedChoice === choice.letter;
             const isCorrectAnswer = choice.letter === example.correct_answer;
-            const showFeedback = showSolution;
+            const showFeedback = hasCheckedAnswer;
             const explanation = choiceExplanations[choice.letter];
 
             return (
               <div key={choice.letter} style={{ marginBottom: '1rem' }}>
                 <div
-                  onClick={() => {
-                    if (!showFeedback) {
-                      handleChoiceClick(choice.letter);
-                    }
-                  }}
+                  onClick={() => handleChoiceClick(choice.letter)}
                   style={{
-                    cursor: showFeedback ? 'default' : 'pointer',
+                    cursor: hasCheckedAnswer ? 'default' : 'pointer',
                     borderLeft: showFeedback && isSelected && isCorrectAnswer ? '3px solid #48bb78' :
                                 showFeedback && isSelected && !isCorrectAnswer ? '3px solid #f56565' :
                                 showFeedback && !isSelected && isCorrectAnswer ? '3px solid #48bb78' : 'none',
@@ -283,6 +285,40 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
               </div>
             );
           })}
+
+            {/* Check Answer Button */}
+            {!hasCheckedAnswer && selectedChoice && (
+              <div style={{ marginTop: '1.5rem' }}>
+                <button
+                  onClick={handleCheckAnswer}
+                  style={{
+                    width: '100%',
+                    backgroundColor: '#10b981',
+                    color: 'white',
+                    padding: '0.75rem 1.5rem',
+                    fontSize: '0.95rem',
+                    fontWeight: '600',
+                    borderRadius: '6px',
+                    border: 'none',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = '#059669';
+                    e.target.style.transform = 'translateY(-1px)';
+                    e.target.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = '#10b981';
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+                  }}
+                >
+                  Check Answer
+                </button>
+              </div>
+            )}
           </div>
         )}
 

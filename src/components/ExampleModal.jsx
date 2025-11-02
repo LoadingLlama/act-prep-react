@@ -149,26 +149,26 @@ const ExampleModal = ({ example, position, isOpen, onComplete, typingSpeed }) =>
               <button
                 onClick={onComplete}
                 style={{
-                  backgroundColor: 'transparent',
-                  color: '#6b7280',
-                  padding: '0.5rem 1rem',
-                  fontSize: '0.8rem',
-                  fontWeight: '500',
-                  borderRadius: '4px',
-                  border: '1px solid #e5e7eb',
+                  backgroundColor: '#10b981',
+                  color: 'white',
+                  padding: '0.75rem 1.5rem',
+                  fontSize: '0.95rem',
+                  fontWeight: '600',
+                  borderRadius: '6px',
+                  border: 'none',
                   cursor: 'pointer',
-                  boxShadow: 'none',
-                  transition: 'all 0.15s ease'
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+                  transition: 'all 0.2s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#f9fafb';
-                  e.target.style.borderColor = '#d1d5db';
-                  e.target.style.color = '#374151';
+                  e.target.style.backgroundColor = '#059669';
+                  e.target.style.transform = 'translateY(-1px)';
+                  e.target.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = 'transparent';
-                  e.target.style.borderColor = '#e5e7eb';
-                  e.target.style.color = '#6b7280';
+                  e.target.style.backgroundColor = '#10b981';
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
                 }}
               >
                 Continue
