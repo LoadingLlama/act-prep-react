@@ -153,7 +153,7 @@ const ExampleModal = ({ example, position, isOpen, onComplete, typingSpeed }) =>
                   color: 'white',
                   padding: '0.75rem 1.5rem',
                   fontSize: '0.95rem',
-                  fontWeight: '600',
+                  fontWeight: '400',
                   borderRadius: '6px',
                   border: 'none',
                   cursor: 'pointer',
