@@ -286,13 +286,16 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
             );
           })}
 
-            {/* Check Answer Button */}
+            {/* Check Answer Button - Bottom Right */}
             {!hasCheckedAnswer && selectedChoice && (
-              <div style={{ marginTop: '1.5rem' }}>
+              <div style={{
+                marginTop: '1.5rem',
+                display: 'flex',
+                justifyContent: 'flex-end'
+              }}>
                 <button
                   onClick={handleCheckAnswer}
                   style={{
-                    width: '100%',
                     backgroundColor: '#10b981',
                     color: 'white',
                     padding: '0.75rem 1.5rem',
