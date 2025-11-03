@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from './contexts/AuthContext';
 import AuthPage from './pages/AuthPage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
+import OnboardingQuestionnaire from './components/auth/OnboardingQuestionnaire';
 import ProfilePage from './pages/ProfilePage';
 import SettingsPage from './pages/SettingsPage';
 import AIChat from './components/AIChat';
@@ -11,17 +12,19 @@ import Sidebar from './components/Sidebar';
 import Home from './components/Home';
 import TestsContent from './components/app/TestsContent';
 import LessonsContent from './components/app/LessonsContent';
+import CourseContent from './components/app/CourseContent';
 import LessonModal from './components/app/LessonModal';
 import { useAppStyles } from './styles/App.styles';
 import { storage, domUtils } from './utils/helpers';
 import { getAllLessons } from './utils/lessonsDb';
 import { lessonStructure } from './data/lessonStructure';
+import { supabase } from './supabaseClient';
 
 function App() {
   const { user, loading } = useAuth();
   const classes = useAppStyles();
   const [activeTab, setActiveTab] = useState('home');
-  const [activeSection, setActiveSection] = useState('english');
+  const [activeSection, setActiveSection] = useState('getting-started');
   const [lessonContent, setLessonContent] = useState({});
   const [currentLesson, setCurrentLesson] = useState(null);
   const [lessonModalOpen, setLessonModalOpen] = useState(false);
@@ -40,11 +43,46 @@ function App() {
   const [viewMode, setViewMode] = useState(() => {
     return storage.get('lessonsViewMode', 'grid'); // 'grid' or 'list'
   });
+  const [onboardingComplete, setOnboardingComplete] = useState(null); // null = loading, true/false = status
+  const [onboardingData, setOnboardingData] = useState(null);
 
   // Save view mode to localStorage when it changes
   useEffect(() => {
     storage.set('lessonsViewMode', viewMode);
   }, [viewMode]);
+
+  // Check onboarding status when user logs in
+  useEffect(() => {
+    const checkOnboardingStatus = async () => {
+      if (!user) {
+        setOnboardingComplete(null);
+        return;
+      }
+
+      try {
+        const { data, error } = await supabase
+          .from('profiles')
+          .select('onboarding_completed, onboarding_data')
+          .eq('id', user.id)
+          .single();
+
+        if (error) {
+          console.error('Error checking onboarding status:', error);
+          // If profile doesn't exist or error, assume onboarding not complete
+          setOnboardingComplete(false);
+          return;
+        }
+
+        setOnboardingComplete(data?.onboarding_completed || false);
+        setOnboardingData(data?.onboarding_data);
+      } catch (error) {
+        console.error('Error checking onboarding:', error);
+        setOnboardingComplete(false);
+      }
+    };
+
+    checkOnboardingStatus();
+  }, [user]);
 
   useEffect(() => {
     // Load lessons from Supabase
@@ -126,9 +164,43 @@ function App() {
     domUtils.restoreBodyScroll();
   };
 
+  const handleOnboardingComplete = (data, shouldStartDiagnostic = false) => {
+    setOnboardingComplete(true);
+    setOnboardingData(data);
+    // Open diagnostic test if user chose to start it
+    if (shouldStartDiagnostic) {
+      setDiagnosticTestOpen(true);
+    }
+  };
+
   // Show auth page if not authenticated
   if (!user && !loading) {
     return <AuthPage />;
+  }
+
+  // Show onboarding if user is authenticated but hasn't completed it
+  if (user && onboardingComplete === false) {
+    return (
+      <OnboardingQuestionnaire
+        userId={user.id}
+        onComplete={handleOnboardingComplete}
+      />
+    );
+  }
+
+  // Show loading while checking onboarding status
+  if (user && onboardingComplete === null) {
+    return (
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        background: '#ffffff'
+      }}>
+        <div style={{ color: '#1a1a1a', fontSize: '1.2rem' }}>Loading...</div>
+      </div>
+    );
   }
 
   // Show loading or protected content
@@ -145,6 +217,14 @@ function App() {
                 lessonStructure={lessonStructure}
                 onNavigate={handleTabClick}
                 onLessonOpen={openLesson}
+              />
+            )}
+            {activeTab === 'course' && (
+              <CourseContent
+                lessonProgress={lessonProgress}
+                lessonStructure={lessonStructure}
+                onLessonOpen={openLesson}
+                onTestOpen={openPracticeTest}
               />
             )}
             {activeTab === 'tests' && (

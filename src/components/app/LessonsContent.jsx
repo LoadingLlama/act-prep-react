@@ -67,6 +67,9 @@ const useStyles = createUseStyles({
     },
     '&.active': {
       color: '#ffffff',
+      '&.getting-started': {
+        background: '#6366f1'
+      },
       '&.english': {
         background: '#08245b'
       },
@@ -348,6 +351,12 @@ const LessonsContent = ({
       <div className={classes.contentSection}>
         <div className={classes.controlsBar}>
           <div className={classes.filterButtons}>
+            <button
+              className={`${classes.filterButton} getting-started ${activeSection === 'getting-started' ? 'active' : ''}`}
+              onClick={() => handleSectionFilter('getting-started')}
+            >
+              Getting Started
+            </button>
             <button
               className={`${classes.filterButton} english ${activeSection === 'english' ? 'active' : ''}`}
               onClick={() => handleSectionFilter('english')}

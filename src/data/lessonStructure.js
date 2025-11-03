@@ -1,5 +1,8 @@
 export const lessonStructure = [
-  { id: 'getting-started', section: 'all', chapterNum: null, title: 'ACT Test Basics & Overview', desc: 'Test format, timing, and scoring overview', status: 'completed', category: 'Introduction' },
+  { id: 'getting-started', section: 'getting-started', chapterNum: null, title: 'ACT Test Basics & Overview', desc: 'Test format, timing, and scoring overview', status: 'completed', category: 'Introduction' },
+
+  // English Section - Introduction
+  { id: 'english-intro', section: 'english', chapterNum: null, title: 'English Section Fundamentals', desc: 'What is on the ACT English Test and what you\'ll learn in this course', status: 'not-started', category: 'Introduction' },
 
   // English Section - Grammar Fundamentals (Chapter 1)
   { id: 'sentence-structure', section: 'english', chapterNum: '1.1', title: 'Building Complete Sentences', desc: 'Independent clauses, dependent clauses, compound sentences, and comma splices', status: 'completed', category: 'Grammar Fundamentals', keyTerms: ['Independent Clause', 'Dependent Clause', 'Compound Sentence', 'Comma Splice', 'Run-on Sentence', 'Fragment'] },

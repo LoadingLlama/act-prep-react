@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { HiHome, HiDocumentText, HiBookOpen, HiUser, HiCog6Tooth, HiArrowRightOnRectangle } from 'react-icons/hi2';
+import { HiHome, HiAcademicCap, HiDocumentText, HiBookOpen, HiUser, HiCog6Tooth, HiArrowRightOnRectangle } from 'react-icons/hi2';
 import { useAuth } from '../contexts/AuthContext';
 
 const useStyles = createUseStyles({
@@ -127,6 +127,13 @@ const Sidebar = ({ activeView, onNavigate }) => {
 
       <div className={classes.navSection}>
         <div className={classes.navSectionTitle}>ACT PREP</div>
+        <button
+          className={`${classes.navItem} ${activeView === 'course' ? 'active' : ''}`}
+          onClick={() => onNavigate('course')}
+        >
+          <span className={classes.icon}><HiAcademicCap /></span>
+          Learning Path
+        </button>
         <button
           className={`${classes.navItem} ${activeView === 'tests' ? 'active' : ''}`}
           onClick={() => onNavigate('tests')}
