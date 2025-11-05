@@ -18,8 +18,6 @@ const Home = () => {
     onLessonOpen
   } = useOutletContext();
 
-  const [hoveredDataPoint, setHoveredDataPoint] = React.useState(null);
-
   const handleCalendarNavigate = (type, id) => {
     if (type === 'lessons' && id) {
       onLessonOpen && onLessonOpen(id, 'review');
@@ -31,19 +29,9 @@ const Home = () => {
   const totalLessons = lessonStructure.length;
   const completedLessons = Object.values(lessonProgress).filter(status => status === 'completed').length;
   const inProgressLessons = Object.values(lessonProgress).filter(status => status === 'in-progress').length;
-  const notStartedLessons = totalLessons - completedLessons - inProgressLessons;
 
   const progressPercentage = totalLessons > 0 ? (completedLessons / totalLessons) * 100 : 0;
   const inProgressPercentage = totalLessons > 0 ? (inProgressLessons / totalLessons) * 100 : 0;
-
-  // Mock score timeline data
-  const scoreTimeline = [
-    { week: 'Week 1', score: 22, date: 'Jan 1' },
-    { week: 'Week 2', score: 24, date: 'Jan 8' },
-    { week: 'Week 3', score: 26, date: 'Jan 15' },
-    { week: 'Week 4', score: 28, date: 'Jan 22' },
-    { week: 'Goal', score: 32, date: 'Feb 1', isGoal: true }
-  ];
 
   return (
     <div className={classes.homeContainer}>
