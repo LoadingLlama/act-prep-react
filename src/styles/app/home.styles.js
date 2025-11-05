@@ -51,20 +51,20 @@ export const useHomeStyles = createUseStyles({
     }
   },
   upcomingSection: {
-    background: '#ffffff',
-    border: '1px solid #e2e8f0',
-    borderRadius: '6px',
-    padding: '1rem',
+    background: 'transparent',
+    border: 'none',
+    borderRadius: '0',
+    padding: '0',
     display: 'flex',
     flexDirection: 'column',
-    gap: '1rem'
+    gap: '1.5rem'
   },
   upcomingHeader: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingBottom: '0.75rem',
-    borderBottom: '1px solid #f3f4f6'
+    borderBottom: '1px solid #e5e7eb'
   },
   upcomingActions: {
     display: 'flex',
@@ -141,25 +141,31 @@ export const useHomeStyles = createUseStyles({
     marginLeft: '1.75rem'
   },
   calendarSection: {
-    background: '#ffffff',
-    border: '1px solid #e2e8f0',
-    borderRadius: '6px',
+    background: 'transparent',
+    border: 'none',
+    borderRadius: '0',
     padding: '0'
   },
   upcomingCard: {
-    background: '#ffffff',
-    border: '1px solid #e2e8f0',
-    borderRadius: '6px',
-    padding: '0.75rem',
+    background: 'transparent',
+    border: 'none',
+    borderBottom: '1px solid #f1f5f9',
+    borderRadius: '0',
+    padding: '1rem 0.5rem',
     display: 'flex',
     alignItems: 'center',
     gap: '0.75rem',
     transition: 'all 0.2s ease',
     cursor: 'pointer',
     '&:hover': {
-      borderColor: '#08245b',
+      borderBottomColor: '#08245b',
       transform: 'translateX(4px)',
-      boxShadow: '0 2px 8px rgba(8, 36, 91, 0.08)'
+      '& $upcomingCardTitle': {
+        color: '#08245b'
+      }
+    },
+    '&:last-child': {
+      borderBottom: 'none'
     }
   },
   upcomingCardIcon: {
@@ -241,10 +247,12 @@ export const useHomeStyles = createUseStyles({
     }
   },
   progressSection: {
-    background: '#ffffff',
-    border: '1px solid #e2e8f0',
-    borderRadius: '6px',
-    padding: '1rem'
+    background: 'transparent',
+    border: 'none',
+    borderRadius: '0',
+    padding: '0',
+    paddingTop: '1.5rem',
+    borderTop: '1px solid #e5e7eb'
   },
   sectionTitle: {
     fontSize: '0.85rem',
@@ -383,12 +391,6 @@ export const useHomeStyles = createUseStyles({
     fontWeight: '600',
     color: '#1a1a1a',
     lineHeight: '1.3'
-  },
-  progressSection: {
-    background: '#ffffff',
-    border: '1px solid #e2e8f0',
-    borderRadius: '6px',
-    padding: '0.85rem'
   },
   progressItem: {
     marginBottom: '0.65rem',

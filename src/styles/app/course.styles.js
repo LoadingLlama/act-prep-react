@@ -40,15 +40,16 @@ export const useCourseStyles = createUseStyles({
     minWidth: '160px'
   },
   nextAssignmentBanner: {
-    background: '#ffffff',
+    background: 'transparent',
     color: '#1a1a1a',
-    padding: '1rem 1.25rem',
-    borderRadius: '8px',
-    marginBottom: '1.25rem',
+    padding: '1rem 0',
+    borderRadius: '0',
+    marginBottom: '1.5rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    border: '1px solid #e5e7eb'
+    border: 'none',
+    borderBottom: '1px solid #e5e7eb'
   },
   nextAssignmentContent: {
     flex: 1
@@ -84,17 +85,17 @@ export const useCourseStyles = createUseStyles({
   statsGrid: {
     display: 'grid',
     gridTemplateColumns: 'repeat(4, 1fr)',
-    gap: '0.65rem',
-    marginBottom: '1.25rem'
+    gap: '2rem',
+    marginBottom: '1.5rem'
   },
   statCard: {
-    background: '#ffffff',
-    border: '1px solid #e2e8f0',
-    borderRadius: '6px',
-    padding: '0.7rem',
+    background: 'transparent',
+    border: 'none',
+    borderRadius: '0',
+    padding: '0',
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.25rem'
+    gap: '0.35rem'
   },
   statLabel: {
     fontSize: '0.65rem',
@@ -114,11 +115,13 @@ export const useCourseStyles = createUseStyles({
     color: '#64748b'
   },
   strengthsSection: {
-    background: '#ffffff',
-    border: '1px solid #e2e8f0',
-    borderRadius: '6px',
-    padding: '1rem',
-    marginBottom: '1.5rem'
+    background: 'transparent',
+    border: 'none',
+    borderRadius: '0',
+    padding: '0',
+    marginBottom: '2rem',
+    paddingBottom: '1.5rem',
+    borderBottom: '1px solid #e5e7eb'
   },
   strengthsHeader: {
     fontSize: '0.85rem',
@@ -168,10 +171,10 @@ export const useCourseStyles = createUseStyles({
     textAlign: 'right'
   },
   pathContainer: {
-    background: '#ffffff',
-    border: '1px solid #e2e8f0',
-    borderRadius: '6px',
-    padding: '1rem'
+    background: 'transparent',
+    border: 'none',
+    borderRadius: '0',
+    padding: '0'
   },
   pathHeader: {
     display: 'flex',
@@ -258,10 +261,11 @@ export const useCourseStyles = createUseStyles({
     gap: '0.5rem'
   },
   courseItem: {
-    background: '#ffffff',
-    border: '1px solid #e2e8f0',
-    borderRadius: '6px',
-    padding: '0.5rem 0.75rem',
+    background: 'transparent',
+    border: 'none',
+    borderBottom: '1px solid #f1f5f9',
+    borderRadius: '0',
+    padding: '1rem 0.5rem',
     display: 'flex',
     alignItems: 'center',
     gap: '0.75rem',
@@ -269,16 +273,23 @@ export const useCourseStyles = createUseStyles({
     cursor: 'pointer',
     minHeight: '48px',
     '&:hover': {
-      borderColor: '#08245b',
-      transform: 'translateX(4px)'
+      borderBottomColor: '#08245b',
+      transform: 'translateX(4px)',
+      '& $itemTitle': {
+        color: '#08245b'
+      }
     },
     '&:active': {
-      transform: 'translateX(2px)',
-      background: '#f8fafc'
+      transform: 'translateX(2px)'
     },
     '&.completed': {
-      background: '#f0f9ff',
-      borderColor: '#3b82f6'
+      background: 'transparent',
+      '& $itemTitle': {
+        color: '#3b82f6'
+      }
+    },
+    '&:last-child': {
+      borderBottom: 'none'
     }
   },
   itemIcon: {
