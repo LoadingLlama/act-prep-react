@@ -5,6 +5,7 @@
 
 import React from 'react';
 import { questionStyles } from '../../styles/quiz.styles';
+import { sanitizeHTML } from '../../utils/security';
 
 const QuizQuestion = ({
   question,
@@ -16,7 +17,7 @@ const QuizQuestion = ({
     <div style={questionStyles.container}>
       <h3
         style={questionStyles.questionText}
-        dangerouslySetInnerHTML={{ __html: question.text }}
+        dangerouslySetInnerHTML={{ __html: sanitizeHTML(question.text) }}
       />
 
       <div style={questionStyles.optionsContainer}>
@@ -44,7 +45,7 @@ const QuizQuestion = ({
                 </span>
                 <span
                   style={questionStyles.optionText}
-                  dangerouslySetInnerHTML={{ __html: option.text }}
+                  dangerouslySetInnerHTML={{ __html: sanitizeHTML(option.text) }}
                 />
               </div>
 

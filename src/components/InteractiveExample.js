@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 import TypewriterText from './TypewriterText';
 import PhotomathSolution from './PhotomathSolution';
+import { sanitizeHTML } from '../utils/security';
 
 const useStyles = createUseStyles({
   exampleContainer: {
@@ -173,20 +174,20 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
             onComplete={() => {}}
           />
         ) : (
-          <div dangerouslySetInnerHTML={{ __html: title }} />
+          <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(title) }} />
         )}
 
         {/* Problem */}
         <div className={classes.problemSection}>
-        <div dangerouslySetInnerHTML={{ __html: `
+        <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(`
           <p style="margin: 1rem 0 1rem 0; font-size: 19px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; font-weight: 500; color: #111827;">
             ${problemText}
           </p>
-        `}} />
+        `) }} />
 
         {/* Render diagram if present */}
         {diagramHTML && (
-          <div dangerouslySetInnerHTML={{ __html: diagramHTML }} />
+          <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(diagramHTML) }} />
         )}
 
         {/* Answer Choices - only for quiz-style examples */}
@@ -263,7 +264,7 @@ const InteractiveExample = ({ content, onComplete, currentSection, index, typing
                       fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
                       fontWeight: '400'
                     }}
-                    dangerouslySetInnerHTML={{ __html: choice.text }}
+                    dangerouslySetInnerHTML={{ __html: sanitizeHTML(choice.text) }}
                   />
                 </div>
               </div>

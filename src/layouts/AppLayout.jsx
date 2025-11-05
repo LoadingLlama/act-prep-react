@@ -21,7 +21,6 @@ import LessonModal from '../components/app/LessonModal';
 import DiagnosticTest from '../components/DiagnosticTest';
 import PracticeTestPage from '../pages/PracticeTestPage';
 import OnboardingQuestionnaire from '../components/auth/OnboardingQuestionnaire';
-import AIChat from '../components/AIChat';
 
 /**
  * AppLayout - Protected area wrapper with sidebar and routing
@@ -394,11 +393,6 @@ export default function AppLayout() {
         </div>
       )}
 
-      {/* AI Chat Assistant - Mobile Optimized */}
-      <AIChat
-        currentLesson={currentLesson}
-        lessonContent={lessonContent[currentLesson]}
-      />
     </div>
   );
 }

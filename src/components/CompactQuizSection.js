@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 
 import { useCompactQuizStyles } from './CompactQuizSection.styles';
+import { sanitizeHTML } from '../utils/security';
 
 
   const handleNext = () => {
@@ -69,7 +70,7 @@ import { useCompactQuizStyles } from './CompactQuizSection.styles';
       <div className={classes.questionCard}>
         <div
           className={classes.questionText}
-          dangerouslySetInnerHTML={{ __html: currentQuestion.question }}
+          dangerouslySetInnerHTML={{ __html: sanitizeHTML(currentQuestion.question) }}
         />
 
         <div className={classes.answersGrid}>

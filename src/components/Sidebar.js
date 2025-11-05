@@ -183,7 +183,14 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose }) => {
         </button>
 
         <div className={classes.logoSection}>
-          <div className={classes.logo}>Nomi Academy</div>
+          <img
+            src="/images/nomi-academy-logo.png"
+            alt="Nomi Academy"
+            style={{
+              height: '48px',
+              objectFit: 'contain'
+            }}
+          />
         </div>
 
       <div className={classes.navSection}>
@@ -206,18 +213,18 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose }) => {
           Learning Path
         </button>
         <button
-          className={`${classes.navItem} ${activeView === 'tests' ? 'active' : ''}`}
-          onClick={() => handleNavigate('tests')}
-        >
-          <span className={classes.icon}><HiDocumentText /></span>
-          Practice Tests
-        </button>
-        <button
           className={`${classes.navItem} ${activeView === 'lessons' ? 'active' : ''}`}
           onClick={() => handleNavigate('lessons')}
         >
           <span className={classes.icon}><HiBookOpen /></span>
           Lessons
+        </button>
+        <button
+          className={`${classes.navItem} ${activeView === 'tests' ? 'active' : ''}`}
+          onClick={() => handleNavigate('tests')}
+        >
+          <span className={classes.icon}><HiDocumentText /></span>
+          Tests
         </button>
         <button
           className={`${classes.navItem} ${activeView === 'results' ? 'active' : ''}`}

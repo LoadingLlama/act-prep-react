@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { loginStyles } from '../../styles/auth/login.styles';
+import { validateEmail, sanitizeInput } from '../../utils/security';
 
 const Login = ({ onSwitchToSignup }) => {
   const { signIn, signInWithGoogle } = useAuth();
@@ -22,8 +23,24 @@ const Login = ({ onSwitchToSignup }) => {
     setError('');
     setLoading(true);
 
+    // Validate email
+    const validatedEmail = validateEmail(email);
+    if (!validatedEmail) {
+      setError('Please enter a valid email address');
+      setLoading(false);
+      return;
+    }
+
+    // Sanitize password input (basic sanitization, not HTML escaping)
+    const sanitizedPassword = sanitizeInput(password, { allowHTML: false, maxLength: 128 });
+    if (!sanitizedPassword) {
+      setError('Password is required');
+      setLoading(false);
+      return;
+    }
+
     try {
-      const { error: signInError } = await signIn(email, password);
+      const { error: signInError } = await signIn(validatedEmail, sanitizedPassword);
 
       if (signInError) {
         setError(signInError.message || 'Failed to sign in');

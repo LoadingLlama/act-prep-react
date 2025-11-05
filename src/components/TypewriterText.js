@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
+import { sanitizeHTML } from '../utils/security';
 
 const useStyles = createUseStyles({
   typewriterContainer: {
@@ -238,7 +239,7 @@ const TypewriterText = React.forwardRef(({
       ref={containerRef}
       className={`${classes.typewriterContainer} ${classes.lineReveal} ${className}`}
     >
-      <div dangerouslySetInnerHTML={{ __html: displayHTML }} />
+      <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(displayHTML) }} />
     </div>
   );
 });

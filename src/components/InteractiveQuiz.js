@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 
 import { useInteractiveQuizStyles } from './InteractiveQuiz.styles';
+import { sanitizeHTML } from '../utils/security';
 
 const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initialCompleted = false }) => {
   const classes = useInteractiveQuizStyles();
@@ -244,7 +245,7 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
               fontWeight: '500',
               color: '#111827'
             }}
-            dangerouslySetInnerHTML={{ __html: question.text }}
+            dangerouslySetInnerHTML={{ __html: sanitizeHTML(question.text) }}
           />
 
           {/* Vertical answer choices - compact format matching examples */}
@@ -365,7 +366,7 @@ const InteractiveQuiz = ({ quizData, quizId, isFinal = false, onComplete, initia
                 fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
                 fontWeight: '400'
               }}
-              dangerouslySetInnerHTML={{ __html: feedback[currentQuestion] }}
+              dangerouslySetInnerHTML={{ __html: sanitizeHTML(feedback[currentQuestion]) }}
               />
             </div>
           )}

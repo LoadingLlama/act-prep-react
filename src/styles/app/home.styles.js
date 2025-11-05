@@ -171,16 +171,20 @@ export const useHomeStyles = createUseStyles({
     justifyContent: 'center',
     flexShrink: 0,
     '&.lesson': {
-      background: '#eff6ff',
-      color: '#08245b'
+      background: '#dbeafe',
+      color: '#3b82f6'
     },
     '&.test': {
-      background: '#fef2f2',
-      color: '#dc2626'
+      background: '#fee2e2',
+      color: '#ef4444'
     },
     '&.practice': {
-      background: '#f0fdf4',
-      color: '#16a34a'
+      background: '#d1fae5',
+      color: '#10b981'
+    },
+    '&.review': {
+      background: '#ede9fe',
+      color: '#8b5cf6'
     }
   },
   upcomingCardContent: {
@@ -216,6 +220,24 @@ export const useHomeStyles = createUseStyles({
     flexShrink: 0,
     '&:hover': {
       background: '#0a2f73'
+    }
+  },
+  upcomingCardStatus: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.25rem',
+    fontSize: '0.65rem',
+    fontWeight: '600',
+    padding: '0.25rem 0.5rem',
+    borderRadius: '4px',
+    flexShrink: 0,
+    '&.completed': {
+      background: '#d1fae5',
+      color: '#10b981'
+    },
+    '&.in-progress': {
+      background: '#dbeafe',
+      color: '#3b82f6'
     }
   },
   progressSection: {
@@ -256,12 +278,20 @@ export const useHomeStyles = createUseStyles({
     justifyContent: 'center',
     flexShrink: 0,
     '&.lesson': {
-      background: '#eff6ff',
-      color: '#08245b'
+      background: '#dbeafe',
+      color: '#3b82f6'
     },
     '&.test': {
-      background: '#fef2f2',
-      color: '#dc2626'
+      background: '#fee2e2',
+      color: '#ef4444'
+    },
+    '&.practice': {
+      background: '#d1fae5',
+      color: '#10b981'
+    },
+    '&.review': {
+      background: '#ede9fe',
+      color: '#8b5cf6'
     }
   },
   upcomingContent: {
@@ -332,20 +362,20 @@ export const useHomeStyles = createUseStyles({
       height: '14px'
     },
     '&.diagnostic': {
-      background: '#fef2f2',
-      color: '#dc2626'
+      background: '#fee2e2',
+      color: '#ef4444'
     },
     '&.lessons': {
-      background: '#eff6ff',
-      color: '#08245b'
+      background: '#dbeafe',
+      color: '#3b82f6'
     },
     '&.practice': {
-      background: '#fef2f2',
-      color: '#dc2626'
+      background: '#d1fae5',
+      color: '#10b981'
     },
     '&.progress': {
-      background: '#f0fdf4',
-      color: '#16a34a'
+      background: '#ede9fe',
+      color: '#8b5cf6'
     }
   },
   actionTitle: {

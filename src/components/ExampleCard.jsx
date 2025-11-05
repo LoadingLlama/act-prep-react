@@ -5,6 +5,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { sanitizeHTML } from '../utils/security';
 
 /**
  * Parse answer explanation to extract explanation for each choice
@@ -145,13 +146,13 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
             color: '#1f2937',
             paddingRight: '1rem'
           }}
-          dangerouslySetInnerHTML={{ __html: problemContent }}
+          dangerouslySetInnerHTML={{ __html: sanitizeHTML(problemContent) }}
           >
           </div>
 
           {/* Diagram (if present) */}
           {example.diagram_svg && (
-            <div style={{ marginTop: '1.5rem' }} dangerouslySetInnerHTML={{ __html: example.diagram_svg }} />
+            <div style={{ marginTop: '1.5rem' }} dangerouslySetInnerHTML={{ __html: sanitizeHTML(example.diagram_svg) }} />
           )}
         </div>
 

@@ -162,5 +162,38 @@ export const usePracticeTestStyles = createUseStyles({
     '&:hover': {
       backgroundColor: '#c53030'
     }
+  },
+  testInfo: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+    gap: '1.5rem',
+    marginBottom: '2rem',
+    marginTop: '2rem'
+  },
+  testInfoItem: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '1rem',
+    backgroundColor: '#f7fafc',
+    padding: '1.25rem',
+    borderRadius: '8px',
+    border: '2px solid #e2e8f0'
+  },
+  testInfoIcon: {
+    fontSize: '2rem',
+    flexShrink: 0
+  },
+  testInfoLabel: {
+    fontSize: '0.85rem',
+    color: '#718096',
+    fontWeight: '600',
+    textTransform: 'uppercase',
+    letterSpacing: '0.05em',
+    marginBottom: '0.25rem'
+  },
+  testInfoValue: {
+    fontSize: '1.1rem',
+    color: '#2d3748',
+    fontWeight: '700'
   }
 });

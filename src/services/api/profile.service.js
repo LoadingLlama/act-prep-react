@@ -6,6 +6,7 @@
 import { supabase } from './supabase.service';
 import logger from '../logging/logger';
 import errorTracker from '../logging/errorTracker';
+import { validateFileUpload, validateImageDimensions } from '../../utils/security';
 
 const ProfileService = {
   /**
@@ -153,6 +154,49 @@ const ProfileService = {
         fileSize: file.size,
       });
 
+      // SECURITY: Verify authorization - user can only upload to their own profile
+      const { data: { user }, error: authError } = await supabase.auth.getUser();
+
+      if (authError || !user) {
+        const error = new Error('Authentication required');
+        errorTracker.trackError('ProfileService', 'uploadAvatar', { userId }, error);
+        return { data: null, error };
+      }
+
+      if (user.id !== userId) {
+        const error = new Error('Unauthorized: Cannot modify another user\'s profile');
+        errorTracker.trackError('ProfileService', 'uploadAvatar', {
+          userId,
+          currentUserId: user.id,
+          reason: 'authorization_mismatch'
+        }, error);
+        return { data: null, error };
+      }
+
+      // SECURITY: Validate file upload (type and size)
+      const fileValidation = validateFileUpload(file, {
+        maxSize: 5 * 1024 * 1024, // 5MB max
+        allowedTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+      });
+
+      if (!fileValidation.valid) {
+        const error = new Error(fileValidation.error);
+        errorTracker.trackError('ProfileService', 'uploadAvatar', { userId }, error);
+        return { data: null, error };
+      }
+
+      // SECURITY: Validate image dimensions
+      const dimensionValidation = await validateImageDimensions(file, {
+        maxWidth: 2000,
+        maxHeight: 2000
+      });
+
+      if (!dimensionValidation.valid) {
+        const error = new Error(dimensionValidation.error);
+        errorTracker.trackError('ProfileService', 'uploadAvatar', { userId }, error);
+        return { data: null, error };
+      }
+
       const fileExt = file.name.split('.').pop();
       const fileName = `${userId}-${Date.now()}.${fileExt}`;
       const filePath = `avatars/${fileName}`;
@@ -205,6 +249,25 @@ const ProfileService = {
   async deleteAvatar(userId, avatarUrl) {
     try {
       logger.info('ProfileService', 'deleteAvatar', { userId });
+
+      // SECURITY: Verify authorization - user can only delete their own avatar
+      const { data: { user }, error: authError } = await supabase.auth.getUser();
+
+      if (authError || !user) {
+        const error = new Error('Authentication required');
+        errorTracker.trackError('ProfileService', 'deleteAvatar', { userId }, error);
+        return { error };
+      }
+
+      if (user.id !== userId) {
+        const error = new Error('Unauthorized: Cannot modify another user\'s profile');
+        errorTracker.trackError('ProfileService', 'deleteAvatar', {
+          userId,
+          currentUserId: user.id,
+          reason: 'authorization_mismatch'
+        }, error);
+        return { error };
+      }
 
       // Extract file path from URL
       const urlParts = avatarUrl.split('/avatars/');

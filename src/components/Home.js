@@ -6,7 +6,7 @@
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { useHomeStyles } from '../styles/app/home.styles';
-import { HiClipboardDocumentCheck, HiBookOpen, HiAcademicCap, HiChartBar } from 'react-icons/hi2';
+import { HiBookOpen, HiAcademicCap, HiClipboardDocumentCheck, HiChartBar } from 'react-icons/hi2';
 import Calendar from './Calendar';
 
 const Home = () => {
@@ -85,20 +85,19 @@ const Home = () => {
                     onClick={() => onLessonOpen && onLessonOpen('english-1-1', 'review')}
                   >
                     <div className={`${classes.upcomingCardIcon} lesson`}>
-                      <HiBookOpen style={{ width: '18px', height: '18px' }} />
+                      <HiBookOpen style={{ width: '20px', height: '20px' }} />
                     </div>
                     <div className={classes.upcomingCardContent}>
                       <div className={classes.upcomingCardTitle}>Grammar Fundamentals</div>
                       <div className={classes.upcomingCardMeta}>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <circle cx="12" cy="12" r="10"></circle>
-                          <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
-                        15 min • Lesson
+                        Grammar • 15 min • Lesson
                       </div>
                     </div>
+                    <div className={`${classes.upcomingCardStatus} in-progress`}>
+                      ⏱️ In Progress
+                    </div>
                     <button className={classes.upcomingCardBtn} onClick={(e) => e.stopPropagation()}>
-                      Start
+                      Continue
                     </button>
                   </div>
 
@@ -108,20 +107,16 @@ const Home = () => {
                     onClick={() => onLessonOpen && onLessonOpen('english-1-1', 'practice')}
                   >
                     <div className={`${classes.upcomingCardIcon} practice`}>
-                      <HiAcademicCap style={{ width: '18px', height: '18px' }} />
+                      <HiAcademicCap style={{ width: '20px', height: '20px' }} />
                     </div>
                     <div className={classes.upcomingCardContent}>
                       <div className={classes.upcomingCardTitle}>Practice Questions</div>
                       <div className={classes.upcomingCardMeta}>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M9 11l3 3L22 4"></path>
-                          <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
-                        </svg>
-                        10 questions
+                        Grammar • 10 questions • Practice
                       </div>
                     </div>
                     <button className={classes.upcomingCardBtn} onClick={(e) => e.stopPropagation()}>
-                      Practice
+                      Start
                     </button>
                   </div>
                 </div>
@@ -137,26 +132,22 @@ const Home = () => {
                   </div>
                 </div>
                 <div className={classes.timelineItems}>
-                  {/* Practice Test */}
+                  {/* Test */}
                   <div
                     className={classes.upcomingCard}
                     onClick={() => onNavigate && onNavigate('tests')}
                   >
                     <div className={`${classes.upcomingCardIcon} test`}>
-                      <HiClipboardDocumentCheck style={{ width: '18px', height: '18px' }} />
+                      <HiClipboardDocumentCheck style={{ width: '20px', height: '20px' }} />
                     </div>
                     <div className={classes.upcomingCardContent}>
-                      <div className={classes.upcomingCardTitle}>Practice Test 1</div>
+                      <div className={classes.upcomingCardTitle}>Test 1</div>
                       <div className={classes.upcomingCardMeta}>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <circle cx="12" cy="12" r="10"></circle>
-                          <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
-                        175 min • Full Test
+                        All Sections • 175 min • Full Test
                       </div>
                     </div>
                     <button className={classes.upcomingCardBtn} onClick={(e) => e.stopPropagation()}>
-                      View
+                      Start
                     </button>
                   </div>
 
@@ -165,16 +156,13 @@ const Home = () => {
                     className={classes.upcomingCard}
                     onClick={() => onLessonOpen && onLessonOpen('math-1-1', 'review')}
                   >
-                    <div className={`${classes.upcomingCardIcon} lesson`}>
-                      <HiChartBar style={{ width: '18px', height: '18px' }} />
+                    <div className={`${classes.upcomingCardIcon} review`}>
+                      <HiChartBar style={{ width: '20px', height: '20px' }} />
                     </div>
                     <div className={classes.upcomingCardContent}>
                       <div className={classes.upcomingCardTitle}>Review Weak Areas</div>
                       <div className={classes.upcomingCardMeta}>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                        </svg>
-                        Math • Recommended
+                        Math • Recommended • Review
                       </div>
                     </div>
                     <button className={classes.upcomingCardBtn} onClick={(e) => e.stopPropagation()}>

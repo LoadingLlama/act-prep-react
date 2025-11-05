@@ -31,89 +31,86 @@ export const useCourseStyles = createUseStyles({
     margin: '0 0 0.5rem 0'
   },
   testCountdown: {
-    fontSize: '1.1rem',
     color: '#1a1a1a',
-    fontWeight: '700',
-    letterSpacing: '-0.02em',
-    background: '#fef3c7',
-    padding: '0.5rem 0.85rem',
-    borderRadius: '6px',
-    display: 'inline-block',
-    border: '2px solid #f59e0b'
+    background: '#f8fafc',
+    padding: '0.75rem 1rem',
+    borderRadius: '8px',
+    border: '1px solid #e5e7eb',
+    textAlign: 'center',
+    minWidth: '160px'
   },
   nextAssignmentBanner: {
-    background: 'linear-gradient(135deg, #08245b 0%, #1e40af 100%)',
-    color: '#ffffff',
-    padding: '1rem',
+    background: '#ffffff',
+    color: '#1a1a1a',
+    padding: '1rem 1.25rem',
     borderRadius: '8px',
-    marginBottom: '1.5rem',
+    marginBottom: '1.25rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    border: '2px solid #1e40af'
+    border: '1px solid #e5e7eb'
   },
   nextAssignmentContent: {
     flex: 1
   },
   nextAssignmentLabel: {
-    fontSize: '0.7rem',
+    fontSize: '0.65rem',
     fontWeight: '600',
     textTransform: 'uppercase',
     letterSpacing: '0.08em',
-    opacity: 0.9,
-    marginBottom: '0.35rem'
-  },
-  nextAssignmentTitle: {
-    fontSize: '1.1rem',
-    fontWeight: '700',
+    color: '#64748b',
     marginBottom: '0.25rem'
   },
+  nextAssignmentTitle: {
+    fontSize: '0.95rem',
+    fontWeight: '700',
+    marginBottom: '0.2rem'
+  },
   nextAssignmentDue: {
-    fontSize: '0.85rem',
-    opacity: 0.9,
+    fontSize: '0.75rem',
+    color: '#64748b',
     fontWeight: '500'
   },
   nextAssignmentIcon: {
-    width: '48px',
-    height: '48px',
-    borderRadius: '8px',
-    background: 'rgba(255, 255, 255, 0.15)',
+    width: '40px',
+    height: '40px',
+    borderRadius: '6px',
+    background: '#f8fafc',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: '24px',
     marginLeft: '1rem'
   },
   statsGrid: {
     display: 'grid',
     gridTemplateColumns: 'repeat(4, 1fr)',
-    gap: '0.75rem',
-    marginBottom: '1.5rem'
+    gap: '0.65rem',
+    marginBottom: '1.25rem'
   },
   statCard: {
     background: '#ffffff',
     border: '1px solid #e2e8f0',
     borderRadius: '6px',
-    padding: '0.85rem',
+    padding: '0.7rem',
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.35rem'
+    gap: '0.25rem'
   },
   statLabel: {
-    fontSize: '0.7rem',
+    fontSize: '0.65rem',
     fontWeight: '600',
     color: '#64748b',
     textTransform: 'uppercase',
     letterSpacing: '0.05em'
   },
   statValue: {
-    fontSize: '1.75rem',
+    fontSize: '1.5rem',
     fontWeight: '700',
     color: '#1a1a1a',
     lineHeight: '1'
   },
   statDetail: {
-    fontSize: '0.75rem',
+    fontSize: '0.7rem',
     color: '#64748b'
   },
   strengthsSection: {
@@ -264,13 +261,13 @@ export const useCourseStyles = createUseStyles({
     background: '#ffffff',
     border: '1px solid #e2e8f0',
     borderRadius: '6px',
-    padding: '0.75rem 1rem',
+    padding: '0.5rem 0.75rem',
     display: 'flex',
     alignItems: 'center',
     gap: '0.75rem',
     transition: 'all 0.2s ease',
     cursor: 'pointer',
-    minHeight: '60px',
+    minHeight: '48px',
     '&:hover': {
       borderColor: '#08245b',
       transform: 'translateX(4px)'
@@ -288,62 +285,73 @@ export const useCourseStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '32px',
-    height: '32px',
-    borderRadius: '6px',
+    width: '28px',
+    height: '28px',
+    borderRadius: '5px',
     flexShrink: 0,
-    fontSize: '16px',
+    '&.strategy': {
+      background: '#dbeafe',
+      color: '#3b82f6'
+    },
     '&.grammar': {
-      background: '#eff6ff',
-      color: '#1d4ed8'
+      background: '#ede9fe',
+      color: '#8b5cf6'
     },
     '&.punctuation': {
-      background: '#dbeafe',
-      color: '#1e40af'
-    },
-    '&.algebra': {
-      background: '#fee2e2',
-      color: '#dc2626'
-    },
-    '&.numbers': {
-      background: '#fecaca',
-      color: '#b91c1c'
-    },
-    '&.geometry': {
-      background: '#fce7f3',
-      color: '#be123c'
-    },
-    '&.reading': {
       background: '#f3e8ff',
-      color: '#7c3aed'
-    },
-    '&.comprehension': {
-      background: '#e9d5ff',
-      color: '#6b21a8'
-    },
-    '&.science': {
-      background: '#d1fae5',
-      color: '#059669'
-    },
-    '&.data-analysis': {
-      background: '#a7f3d0',
-      color: '#047857'
-    },
-    '&.interpretation': {
-      background: '#6ee7b7',
-      color: '#065f46'
-    },
-    '&.strategy': {
-      background: '#fed7aa',
-      color: '#ea580c'
+      color: '#a855f7'
     },
     '&.problem-solving': {
-      background: '#fdba74',
-      color: '#c2410c'
+      background: '#fed7aa',
+      color: '#f97316'
+    },
+    '&.algebra': {
+      background: '#fef3c7',
+      color: '#fb923c'
+    },
+    '&.numbers': {
+      background: '#fed7aa',
+      color: '#fdba74'
+    },
+    '&.geometry': {
+      background: '#ffe4e6',
+      color: '#fed7aa'
+    },
+    '&.reading': {
+      background: '#d1fae5',
+      color: '#10b981'
+    },
+    '&.comprehension': {
+      background: '#a7f3d0',
+      color: '#34d399'
+    },
+    '&.science': {
+      background: '#ccfbf1',
+      color: '#14b8a6'
+    },
+    '&.data-analysis': {
+      background: '#99f6e4',
+      color: '#2dd4bf'
+    },
+    '&.interpretation': {
+      background: '#5eead4',
+      color: '#14b8a6'
     },
     '&.test': {
-      background: '#fef3c7',
-      color: '#d97706'
+      background: '#fee2e2',
+      color: '#ef4444'
+    },
+    '&.lesson': {
+      background: '#dbeafe',
+      color: '#3b82f6'
+    },
+    '&.practice': {
+      background: '#d1fae5',
+      color: '#10b981'
+    },
+    '&.review': {
+      background: '#ede9fe',
+      color: '#8b5cf6'
     }
   },
   itemInfo: {

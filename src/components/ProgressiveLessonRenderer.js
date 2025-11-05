@@ -10,7 +10,7 @@ import LessonTableOfContents from './LessonTableOfContents';
 import { lessonStructure } from '../data/lessonStructure';
 import { LessonRenderer } from './lesson/LessonRenderer';
 
-const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatusChange, onNavigate, lessonProgress = {} }) => {
+const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatusChange, onNavigate, lessonProgress = {}, lessonMode, setLessonMode }) => {
   const classes = useProgressiveLessonStyles();
   const [sections, setSections] = useState([]);
   const [currentSection, setCurrentSection] = useState(0);
@@ -46,10 +46,15 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         if (savedProgress) {
           try {
             restoredState = JSON.parse(savedProgress);
+            console.log('📊 Progress Tracking: Restored progress for lesson', lesson.id, restoredState);
           } catch (e) {
-            console.error('Failed to parse saved progress:', e);
+            console.error('❌ Progress Tracking: Failed to parse saved progress:', e);
           }
+        } else {
+          console.log('📊 Progress Tracking: No saved progress found for lesson', lesson.id);
         }
+      } else {
+        console.log('📊 Progress Tracking: Lesson already completed, starting fresh');
       }
 
       // Use restored state if available, otherwise start fresh
@@ -62,6 +67,12 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
       setExampleCompletionStatus(restoredState?.exampleCompletionStatus || {});
       setSectionStatusOverride({});
       setHasStarted(restoredState?.hasStarted || isLessonCompleted); // Auto-start if completed or was started before
+
+      if (restoredState) {
+        console.log('📊 Progress Tracking: Lesson state initialized from saved progress');
+      } else {
+        console.log('📊 Progress Tracking: Lesson state initialized fresh');
+      }
 
       const processedSections = [];
 
@@ -241,6 +252,19 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
 
   useEffect(() => {
     const handleScroll = () => {
+      // Mark as in-progress if user scrolls past first section
+      if (onStatusChange && initialStatus === 'not-started' && sections.length > 0) {
+        const firstSection = sectionRefs.current[0];
+        if (firstSection) {
+          const rect = firstSection.getBoundingClientRect();
+          // If first section is scrolled past (top is above viewport)
+          if (rect.bottom < window.innerHeight / 2) {
+            console.log('📊 Progress Tracking: User scrolled past first section, marking as in-progress');
+            onStatusChange('in-progress');
+          }
+        }
+      }
+
       if (visibleSections < sections.length) {
         const lastVisibleSection = sectionRefs.current[visibleSections - 1];
         if (lastVisibleSection) {
@@ -258,7 +282,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [visibleSections, sections.length]);
+  }, [visibleSections, sections.length, onStatusChange, initialStatus]);
 
   useEffect(() => {
     const handleKeyPress = (e) => {
@@ -362,7 +386,34 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
     };
 
     const savedProgressKey = `lesson_progress_${lesson.id}`;
+    console.log('💾 Progress Tracking: Saving progress for lesson', lesson.id, {
+      currentSection,
+      visibleSections,
+      hasStarted,
+      totalSections: sections.length
+    });
     localStorage.setItem(savedProgressKey, JSON.stringify(progressState));
+  }, [currentSection, visibleSections, quizCompletionStatus, textCompletionStatus, exampleCompletionStatus, hasStarted, lesson?.id, sections.length]);
+
+  // Save progress on component unmount (when user exits lesson)
+  useEffect(() => {
+    return () => {
+      if (!lesson?.id || sections.length === 0) return;
+
+      const progressState = {
+        currentSection,
+        visibleSections,
+        quizCompletionStatus,
+        textCompletionStatus,
+        exampleCompletionStatus,
+        hasStarted,
+        timestamp: Date.now()
+      };
+
+      const savedProgressKey = `lesson_progress_${lesson.id}`;
+      console.log('💾 Progress Tracking: Saving progress on unmount for lesson', lesson.id);
+      localStorage.setItem(savedProgressKey, JSON.stringify(progressState));
+    };
   }, [currentSection, visibleSections, quizCompletionStatus, textCompletionStatus, exampleCompletionStatus, hasStarted, lesson?.id, sections.length]);
 
   const handleSectionClick = (index) => {
@@ -376,31 +427,34 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
   };
 
   const handleTextComplete = (index) => {
-    console.log('📝 Text section completed:', index, 'Total sections:', sections.length);
+    console.log('📊 Progress Tracking: Text section completed at index', index, '/', sections.length - 1);
     if (index === currentSection) {
       setCurrentSectionComplete(true);
       setTextCompletionStatus(prev => ({ ...prev, [index]: true }));
 
       // If this is the last section, mark lesson as complete
       if (index === sections.length - 1) {
-        console.log('🎉 Last section completed! Marking lesson as complete...');
+        console.log('📊 Progress Tracking: Last text section completed, marking lesson as complete');
         setIsComplete(true);
       }
     }
   };
 
   const handleExampleComplete = (index) => {
+    console.log('📊 Progress Tracking: Example completed at index', index);
     if (index === currentSection) {
       setCurrentSectionComplete(true);
       setExampleCompletionStatus(prev => ({ ...prev, [index]: true }));
 
       // Auto-mark lesson as "in-progress" after completing first example
       if (onStatusChange && initialStatus === 'not-started') {
+        console.log('📊 Progress Tracking: First example completed, marking lesson as in-progress');
         onStatusChange('in-progress');
       }
 
       // If this is the last section, mark lesson as complete
       if (index === sections.length - 1) {
+        console.log('📊 Progress Tracking: Last section completed, marking lesson as complete');
         setIsComplete(true);
       }
     }
@@ -448,6 +502,8 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         lessonStructure={lessonStructure}
         currentLessonId={lesson?.id}
         lessonProgress={lessonProgress}
+        lessonMode={lessonMode}
+        setLessonMode={setLessonMode}
         onLessonChange={(lessonId) => {
           // Find lesson in structure and navigate to it
           const targetLesson = lessonStructure.find(l => l.id === lessonId);

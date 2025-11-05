@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { loginStyles } from '../../styles/auth/login.styles';
+import { validatePassword, validateEmail, sanitizeInput } from '../../utils/security';
 
 const Signup = ({ onSwitchToLogin }) => {
   const { signUp } = useAuth();
@@ -34,18 +35,24 @@ const Signup = ({ onSwitchToLogin }) => {
    * Validate form data
    */
   const validateForm = () => {
-    if (!formData.name.trim()) {
+    // Sanitize name input
+    const sanitizedName = sanitizeInput(formData.name, { maxLength: 100 });
+    if (!sanitizedName) {
       setError('Name is required');
       return false;
     }
 
-    if (!formData.email.trim()) {
-      setError('Email is required');
+    // Validate email
+    const validatedEmail = validateEmail(formData.email);
+    if (!validatedEmail) {
+      setError('Please enter a valid email address');
       return false;
     }
 
-    if (formData.password.length < 6) {
-      setError('Password must be at least 6 characters');
+    // Validate password strength
+    const passwordValidation = validatePassword(formData.password);
+    if (!passwordValidation.valid) {
+      setError(passwordValidation.errors.join('. '));
       return false;
     }
 

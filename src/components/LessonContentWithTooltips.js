@@ -1,5 +1,6 @@
 import React from 'react';
 import TermDefinition from './TermDefinition';
+import { sanitizeHTML } from '../utils/security';
 
 /**
  * Component that processes lesson HTML content and adds hover tooltips
@@ -25,7 +26,7 @@ const LessonContentWithTooltips = ({ htmlContent }) => {
 
     // If no terms found, return original HTML
     if (termsMap.size === 0) {
-      return <div dangerouslySetInnerHTML={{ __html: html }} />;
+      return <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(html) }} />;
     }
 
     // Split content by blue underlined terms and create React elements

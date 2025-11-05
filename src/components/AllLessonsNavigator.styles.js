@@ -15,7 +15,7 @@ export const useAllLessonsNavigatorStyles = createUseStyles({
     overflowY: 'auto',
     background: '#f5f5f5',
     padding: '0.5rem 0.75rem',
-    zIndex: 50,
+    zIndex: 1100,
     borderRight: '1px solid #e0e0e0',
     transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     '&.collapsed': {
@@ -58,8 +58,37 @@ export const useAllLessonsNavigatorStyles = createUseStyles({
     fontSize: '0.9rem',
     fontWeight: '600',
     color: '#5f6368',
-    marginBottom: '1rem',
+    marginBottom: '0.75rem',
     paddingLeft: '0.25rem'
+  },
+  modeToggle: {
+    display: 'flex',
+    background: '#e8eaed',
+    borderRadius: '4px',
+    padding: '2px',
+    gap: '2px',
+    marginBottom: '1rem'
+  },
+  modeButton: {
+    flex: 1,
+    padding: '0.5rem 0.75rem',
+    fontSize: '0.75rem',
+    fontWeight: '500',
+    border: 'none',
+    borderRadius: '3px',
+    cursor: 'pointer',
+    transition: 'all 0.15s ease',
+    background: 'transparent',
+    color: '#5f6368',
+    '&:hover': {
+      color: '#202124'
+    },
+    '&.active': {
+      background: '#ffffff',
+      color: '#1a73e8',
+      fontWeight: '600',
+      boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
+    }
   },
   unitGroup: {
     marginBottom: '0.35rem'
@@ -190,7 +219,7 @@ export const useAllLessonsNavigatorStyles = createUseStyles({
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
-    zIndex: 100,
+    zIndex: 1200,
     opacity: 0.4,
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     transform: 'translateY(-50%)',

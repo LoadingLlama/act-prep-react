@@ -6,6 +6,7 @@
 
 import React from 'react';
 import ProgressiveLessonRenderer from '../ProgressiveLessonRenderer';
+import PracticeSession from './PracticeSession';
 
 /**
  * LessonModal - Full-screen modal for lesson viewing
@@ -44,85 +45,22 @@ const LessonModal = ({
     <div className={`${classes.lessonModal} ${lessonModalOpen ? 'active' : ''}`}>
       <div style={{
         position: 'fixed',
-        top: 0,
-        left: '320px',
-        right: 0,
-        height: '60px',
-        background: '#ffffff',
-        borderBottom: '1px solid #e5e7eb',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: '0 2rem',
-        zIndex: 200
-      }}>
-        <h1 style={{
-          fontSize: '1.1rem',
-          fontWeight: 500,
-          color: '#1a1a1a',
-          margin: 0
-        }}>
-          {currentSection ? `${currentSection.charAt(0).toUpperCase() + currentSection.slice(1)} Lessons` : 'Lessons'}
-        </h1>
-
-        <div style={{
-          display: 'inline-flex',
-          background: '#f3f4f6',
-          borderRadius: '6px',
-          padding: '3px',
-          gap: '2px'
-        }}>
-          <button
-            style={{
-              padding: '0.4rem 1rem',
-              fontSize: '0.85rem',
-              fontWeight: 500,
-              border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              background: lessonMode === 'review' ? 'white' : 'transparent',
-              color: lessonMode === 'review' ? '#1a1a1a' : '#6b7280',
-              boxShadow: lessonMode === 'review' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none'
-            }}
-            onClick={() => setLessonMode('review')}
-          >
-            Review
-          </button>
-          <button
-            style={{
-              padding: '0.4rem 1rem',
-              fontSize: '0.85rem',
-              fontWeight: 500,
-              border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              background: lessonMode === 'practice' ? 'white' : 'transparent',
-              color: lessonMode === 'practice' ? '#1a1a1a' : '#6b7280',
-              boxShadow: lessonMode === 'practice' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none'
-            }}
-            onClick={() => setLessonMode('practice')}
-          >
-            Practice
-          </button>
-        </div>
-      </div>
-
-      <div style={{
-        position: 'fixed',
-        top: '60px',
+        top: '0',
         left: '0',
         right: '0',
         bottom: '0',
         overflowY: 'auto',
         background: '#ffffff'
       }}>
-        {lessonMode === 'review' ? (
-          lesson && currentLessonData ? (
+        {/* Review Mode - Always mounted but hidden when not active */}
+        <div style={{ display: lessonMode === 'review' ? 'block' : 'none' }}>
+          {lesson && currentLessonData ? (
             <ProgressiveLessonRenderer
               lesson={{...lesson, id: currentLessonData.id}}
+              initialStatus={lessonProgress[currentLesson] || 'not-started'}
               lessonProgress={lessonProgress}
+              lessonMode={lessonMode}
+              setLessonMode={setLessonMode}
               onNavigate={(type, lessonId) => {
                 if (type === 'home') {
                   closeLessonModal();
@@ -151,17 +89,34 @@ const LessonModal = ({
             }}>
               <p>This lesson content is being prepared. Check back soon!</p>
             </div>
-          )
-        ) : (
-          <div style={{
-            textAlign: 'center',
-            padding: '4rem 2rem',
-            color: '#999',
-            fontSize: '1rem'
-          }}>
-            <p>Practice exercises coming soon!</p>
-          </div>
-        )}
+          )}
+        </div>
+
+        {/* Practice Mode - Always mounted but hidden when not active */}
+        <div style={{ display: lessonMode === 'practice' ? 'block' : 'none' }}>
+          {lesson && currentLessonData ? (
+            <PracticeSession
+              lesson={{...lesson, id: currentLessonData.id, title: currentLessonData.title}}
+              onClose={closeLessonModal}
+              onComplete={(rating) => {
+                console.log('Practice completed with rating:', rating);
+                updateLessonProgress(currentLesson, 'completed');
+              }}
+              lessonProgress={lessonProgress}
+              lessonMode={lessonMode}
+              setLessonMode={setLessonMode}
+            />
+          ) : (
+            <div style={{
+              textAlign: 'center',
+              padding: '4rem 2rem',
+              color: '#999',
+              fontSize: '1rem'
+            }}>
+              <p>This lesson content is being prepared. Check back soon!</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

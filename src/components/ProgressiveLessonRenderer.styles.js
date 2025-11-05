@@ -19,7 +19,8 @@ export const useProgressiveLessonStyles = createUseStyles({
     paddingTop: '2rem',
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     'body.sidebar-collapsed &': {
-      marginLeft: '270px',
+      marginLeft: 'auto',
+      marginRight: 'auto',
       maxWidth: '1000px'
     },
 
@@ -290,22 +291,23 @@ export const useProgressiveLessonStyles = createUseStyles({
   },
   progressBar: {
     position: 'fixed',
-    top: '60px',
+    top: '0',
     left: '320px',
     right: 0,
-    height: '2px', // Thinner - was 4px
-    backgroundColor: '#f3f4f6', // Much lighter gray
-    zIndex: 1000,
+    height: '3px',
+    backgroundColor: '#e5e7eb',
+    zIndex: 1050,
     transition: 'left 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     'body.sidebar-collapsed &': {
-      left: '60px'
+      left: '0',
+      right: '0'
     }
   },
   progressFill: {
     height: '100%',
-    background: '#93c5fd', // Light blue, no gradient
+    background: '#3b82f6',
     transition: 'width 0.3s ease',
-    boxShadow: 'none' // No glow
+    boxShadow: 'none'
   },
   completed: {
     '& .continue-prompt': {

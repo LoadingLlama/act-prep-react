@@ -16,13 +16,13 @@ const TestsContent = () => {
   } = useOutletContext();
 
   const practiceTests = [
-    { number: 1, title: 'Practice Test 1', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
-    { number: 2, title: 'Practice Test 2', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
-    { number: 3, title: 'Practice Test 3', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
-    { number: 4, title: 'Practice Test 4', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
-    { number: 5, title: 'Practice Test 5', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
-    { number: 6, title: 'Practice Test 6', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
-    { number: 7, title: 'Practice Test 7', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' }
+    { number: 1, title: 'Test 1', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
+    { number: 2, title: 'Test 2', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
+    { number: 3, title: 'Test 3', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
+    { number: 4, title: 'Test 4', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
+    { number: 5, title: 'Test 5', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
+    { number: 6, title: 'Test 6', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
+    { number: 7, title: 'Test 7', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' }
   ];
 
   const sectionTests = [
@@ -35,7 +35,7 @@ const TestsContent = () => {
   return (
     <div className={classes.testsContainer}>
       <div className={classes.pageHeader}>
-        <h1 className={classes.pageTitle}>Practice Tests</h1>
+        <h1 className={classes.pageTitle}>Tests</h1>
         <p className={classes.subtitle}>Take full-length tests and track your progress</p>
       </div>
       <div className={classes.contentSection}>
@@ -57,9 +57,9 @@ const TestsContent = () => {
         </div>
 
         <div className={classes.sectionHeader}>
-          <h2 className={classes.sectionTitle}>Full-Length Practice Tests</h2>
+          <h2 className={classes.sectionTitle}>Full-Length Tests</h2>
           <p className={classes.sectionDescription}>
-            Complete ACT practice tests with all four sections
+            Complete ACT tests with all four sections
           </p>
         </div>
         <div className={classes.testsGrid}>

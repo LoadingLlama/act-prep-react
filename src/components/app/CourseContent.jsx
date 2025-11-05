@@ -6,7 +6,17 @@
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { useCourseStyles } from '../../styles/app/course.styles';
-import { HiCheckCircle, HiClock } from 'react-icons/hi2';
+import {
+  HiCheckCircle,
+  HiClock,
+  HiBookOpen,
+  HiPencilSquare,
+  HiCalculator,
+  HiBeaker,
+  HiClipboardDocumentCheck,
+  HiAcademicCap,
+  HiChartBar
+} from 'react-icons/hi2';
 
 const CourseContent = () => {
   const classes = useCourseStyles();
@@ -51,24 +61,24 @@ const CourseContent = () => {
     return diffDays;
   };
 
-  // Skill emoji mapping
-  const getSkillEmoji = (skill) => {
-    const emojiMap = {
-      'Strategy': '🎯',
-      'All Sections': '📝',
-      'Grammar': '📘',
-      'Punctuation': '✏️',
-      'Problem Solving': '🧮',
-      'Algebra': '🔢',
-      'Numbers': '➗',
-      'Geometry': '📐',
-      'Reading': '📖',
-      'Comprehension': '🤔',
-      'Science': '🔬',
-      'Data Analysis': '📊',
-      'Interpretation': '🧪'
+  // Skill icon mapping - returns React Icon component
+  const getSkillIcon = (skill, size = 16) => {
+    const iconMap = {
+      'Strategy': <HiAcademicCap size={size} />,
+      'All Sections': <HiClipboardDocumentCheck size={size} />,
+      'Grammar': <HiPencilSquare size={size} />,
+      'Punctuation': <HiPencilSquare size={size} />,
+      'Problem Solving': <HiCalculator size={size} />,
+      'Algebra': <HiCalculator size={size} />,
+      'Numbers': <HiCalculator size={size} />,
+      'Geometry': <HiCalculator size={size} />,
+      'Reading': <HiBookOpen size={size} />,
+      'Comprehension': <HiBookOpen size={size} />,
+      'Science': <HiBeaker size={size} />,
+      'Data Analysis': <HiChartBar size={size} />,
+      'Interpretation': <HiBeaker size={size} />
     };
-    return emojiMap[skill] || '📚';
+    return iconMap[skill] || <HiBookOpen size={size} />;
   };
 
   // Get skill category for color coding
@@ -144,7 +154,7 @@ const CourseContent = () => {
         { id: 'reading-intro', type: 'lesson', title: 'Reading Section Fundamentals', skills: 'Reading', duration: '40 min', dueDate: getDateFromToday(22) },
         { id: 'passage-approach', type: 'lesson', title: 'How to Approach Passages', skills: 'Strategy', duration: '15 min', dueDate: getDateFromToday(24) },
         { id: 'core-principles', type: 'lesson', title: '7 Core Principles', skills: 'Comprehension', duration: '15 min', dueDate: getDateFromToday(25) },
-        { id: 'practice-test-1', type: 'test', title: 'Practice Test 1', skills: 'All Sections', duration: '180 min', dueDate: getDateFromToday(27) }
+        { id: 'practice-test-1', type: 'test', title: 'Test 1', skills: 'All Sections', duration: '180 min', dueDate: getDateFromToday(27) }
       ]
     },
     {
@@ -165,7 +175,7 @@ const CourseContent = () => {
         { id: 'verbs', type: 'lesson', title: 'Verb Agreement & Tenses', skills: 'Grammar', duration: '25 min', dueDate: getDateFromToday(36) },
         { id: 'pronouns', type: 'lesson', title: 'Pronoun Usage', skills: 'Grammar', duration: '30 min', dueDate: getDateFromToday(38) },
         { id: 'systems-equations', type: 'lesson', title: 'Systems of Equations', skills: 'Algebra', duration: '15 min', dueDate: getDateFromToday(39) },
-        { id: 'practice-test-2', type: 'test', title: 'Practice Test 2', skills: 'All Sections', duration: '180 min', dueDate: getDateFromToday(41) }
+        { id: 'practice-test-2', type: 'test', title: 'Test 2', skills: 'All Sections', duration: '180 min', dueDate: getDateFromToday(41) }
       ]
     }
   ];
@@ -205,10 +215,16 @@ const CourseContent = () => {
   return (
     <div className={classes.courseContainer}>
       <div className={classes.pageHeader}>
-        <h1 className={classes.pageTitle}>Learning Path</h1>
-        <p className={classes.pageSubtitle}>Your personalized ACT prep journey</p>
-        <div className={classes.testCountdown}>
-          🎯 Test Date: {testDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} • {daysUntilTest} days remaining
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
+          <div>
+            <h1 className={classes.pageTitle}>Learning Path</h1>
+            <p className={classes.pageSubtitle}>Your personalized ACT prep journey</p>
+          </div>
+          <div className={classes.testCountdown}>
+            <div style={{ fontSize: '0.7rem', fontWeight: '600', opacity: 0.8, marginBottom: '0.25rem' }}>TEST DATE</div>
+            <div style={{ fontSize: '0.95rem', fontWeight: '700' }}>{testDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div>
+            <div style={{ fontSize: '0.75rem', marginTop: '0.25rem' }}>{daysUntilTest} days left</div>
+          </div>
         </div>
       </div>
 
@@ -223,7 +239,7 @@ const CourseContent = () => {
             </div>
           </div>
           <div className={classes.nextAssignmentIcon}>
-            {getSkillEmoji(nextAssignment.skills)}
+            {getSkillIcon(nextAssignment.skills, 20)}
           </div>
         </div>
       )}
@@ -312,7 +328,7 @@ const CourseContent = () => {
                       onClick={() => handleItemClick(item)}
                     >
                       <div className={`${classes.itemIcon} ${getSkillCategory(item.skills)}`}>
-                        {getSkillEmoji(item.skills)}
+                        {getSkillIcon(item.skills, 16)}
                       </div>
                       <div className={classes.itemInfo}>
                         <div className={classes.itemTitle}>{item.title}</div>

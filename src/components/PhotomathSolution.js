@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { createUseStyles } from 'react-jss';
+import { sanitizeHTML } from '../utils/security';
 
 const useStyles = createUseStyles({
   solutionContainer: {
@@ -281,7 +282,7 @@ const PhotomathSolution = ({ solutionHTML, answer }) => {
               {/* Main step text */}
               <div
                 className={classes.stepMainText}
-                dangerouslySetInnerHTML={{ __html: step.mainText }}
+                dangerouslySetInnerHTML={{ __html: sanitizeHTML(step.mainText) }}
               />
 
               {/* Sub-steps (nested items) */}
@@ -291,7 +292,7 @@ const PhotomathSolution = ({ solutionHTML, answer }) => {
                     <div
                       key={nestedIndex}
                       className={classes.subStep}
-                      dangerouslySetInnerHTML={{ __html: nestedItem }}
+                      dangerouslySetInnerHTML={{ __html: sanitizeHTML(nestedItem) }}
                     />
                   ))}
                 </div>

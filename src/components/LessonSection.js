@@ -4,6 +4,7 @@ import InteractiveQuiz from './InteractiveQuiz';
 import InteractiveExample from './InteractiveExample';
 import ExampleModal from './ExampleModal';
 import { useTermTooltips } from '../hooks/useTermTooltips';
+import { sanitizeHTML } from '../utils/security';
 
 const LessonSection = ({
   section,
@@ -72,7 +73,7 @@ const LessonSection = ({
               />
             </div>
           ) : index < currentSection ? (
-            <div dangerouslySetInnerHTML={{ __html: section.content }} />
+            <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(section.content) }} />
           ) : null}
         </>
       ) : section.type === 'example' ? (

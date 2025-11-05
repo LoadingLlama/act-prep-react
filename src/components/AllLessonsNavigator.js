@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAllLessonsNavigatorStyles } from './AllLessonsNavigator.styles';
 
-const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange, onBackClick, lessonProgress = {} }) => {
+const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange, onBackClick, lessonProgress = {}, lessonMode, setLessonMode }) => {
   const classes = useAllLessonsNavigatorStyles();
 
   // Collapse state with localStorage persistence
@@ -120,14 +120,14 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
           marginBottom: '0.75rem',
           borderBottom: '1px solid #e0e0e0'
         }}>
-          <div style={{
-            fontSize: '1.15rem',
-            fontWeight: '600',
-            color: '#1a73e8',
-            letterSpacing: '-0.02em'
-          }}>
-            Launch Prep
-          </div>
+          <img
+            src="/images/nomi-academy-logo.png"
+            alt="Nomi Academy"
+            style={{
+              height: '48px',
+              objectFit: 'contain'
+            }}
+          />
         </div>
 
         <button className={classes.backButton} onClick={onBackClick}>
@@ -135,6 +135,24 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
         </button>
 
         <div className={classes.courseTitle}>{courseTitle}</div>
+
+        {/* Mode Toggle */}
+        {setLessonMode && (
+          <div className={classes.modeToggle}>
+            <button
+              className={`${classes.modeButton} ${lessonMode === 'review' ? 'active' : ''}`}
+              onClick={() => setLessonMode('review')}
+            >
+              Review
+            </button>
+            <button
+              className={`${classes.modeButton} ${lessonMode === 'practice' ? 'active' : ''}`}
+              onClick={() => setLessonMode('practice')}
+            >
+              Practice
+            </button>
+          </div>
+        )}
 
       {/* Progress Bar */}
       <div className={classes.progressSection}>
