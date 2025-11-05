@@ -73,14 +73,15 @@ export const useCourseStyles = createUseStyles({
     fontWeight: '500'
   },
   nextAssignmentIcon: {
-    width: '40px',
-    height: '40px',
-    borderRadius: '6px',
-    background: '#f8fafc',
+    width: '20px',
+    height: '20px',
+    borderRadius: '0',
+    background: 'transparent',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: '1rem'
+    marginLeft: '1rem',
+    color: '#64748b'
   },
   statsGrid: {
     display: 'grid',
@@ -140,9 +141,13 @@ export const useCourseStyles = createUseStyles({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '0.5rem 0.75rem',
-    background: '#f8fafc',
-    borderRadius: '4px'
+    padding: '0.75rem 0',
+    background: 'transparent',
+    borderRadius: '0',
+    borderBottom: '1px solid #f1f5f9',
+    '&:last-child': {
+      borderBottom: 'none'
+    }
   },
   strengthLabel: {
     fontSize: '0.8rem',
@@ -296,73 +301,73 @@ export const useCourseStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '28px',
-    height: '28px',
-    borderRadius: '5px',
+    width: '20px',
+    height: '20px',
+    borderRadius: '0',
     flexShrink: 0,
     '&.strategy': {
-      background: '#dbeafe',
-      color: '#3b82f6'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.grammar': {
-      background: '#ede9fe',
-      color: '#8b5cf6'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.punctuation': {
-      background: '#f3e8ff',
-      color: '#a855f7'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.problem-solving': {
-      background: '#fed7aa',
-      color: '#f97316'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.algebra': {
-      background: '#fef3c7',
-      color: '#fb923c'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.numbers': {
-      background: '#fed7aa',
-      color: '#fdba74'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.geometry': {
-      background: '#ffe4e6',
-      color: '#fed7aa'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.reading': {
-      background: '#d1fae5',
-      color: '#10b981'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.comprehension': {
-      background: '#a7f3d0',
-      color: '#34d399'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.science': {
-      background: '#ccfbf1',
-      color: '#14b8a6'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.data-analysis': {
-      background: '#99f6e4',
-      color: '#2dd4bf'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.interpretation': {
-      background: '#5eead4',
-      color: '#14b8a6'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.test': {
-      background: '#fee2e2',
-      color: '#ef4444'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.lesson': {
-      background: '#dbeafe',
-      color: '#3b82f6'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.practice': {
-      background: '#d1fae5',
-      color: '#10b981'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.review': {
-      background: '#ede9fe',
-      color: '#8b5cf6'
+      background: 'transparent',
+      color: '#64748b'
     }
   },
   itemInfo: {
@@ -385,20 +390,20 @@ export const useCourseStyles = createUseStyles({
   },
   itemSkills: {
     fontSize: '0.7rem',
-    color: '#6366f1',
-    background: '#f5f3ff',
-    padding: '0.15rem 0.4rem',
-    borderRadius: '3px',
+    color: '#64748b',
+    background: 'transparent',
+    padding: '0',
+    borderRadius: '0',
     fontWeight: '500'
   },
   itemDueDate: {
     fontSize: '0.7rem',
-    color: '#f59e0b',
-    background: '#fef3c7',
-    padding: '0.15rem 0.4rem',
-    borderRadius: '3px',
-    fontWeight: '600',
-    border: '1px solid #fde68a'
+    color: '#64748b',
+    background: 'transparent',
+    padding: '0',
+    borderRadius: '0',
+    fontWeight: '500',
+    border: 'none'
   },
   itemStatus: {
     display: 'flex',

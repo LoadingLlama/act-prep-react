@@ -169,28 +169,28 @@ export const useHomeStyles = createUseStyles({
     }
   },
   upcomingCardIcon: {
-    width: '36px',
-    height: '36px',
-    borderRadius: '6px',
+    width: '20px',
+    height: '20px',
+    borderRadius: '0',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     flexShrink: 0,
     '&.lesson': {
-      background: '#dbeafe',
-      color: '#3b82f6'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.test': {
-      background: '#fee2e2',
-      color: '#ef4444'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.practice': {
-      background: '#d1fae5',
-      color: '#10b981'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.review': {
-      background: '#ede9fe',
-      color: '#8b5cf6'
+      background: 'transparent',
+      color: '#64748b'
     }
   },
   upcomingCardContent: {
@@ -231,19 +231,20 @@ export const useHomeStyles = createUseStyles({
   upcomingCardStatus: {
     display: 'flex',
     alignItems: 'center',
-    gap: '0.25rem',
-    fontSize: '0.65rem',
-    fontWeight: '600',
-    padding: '0.25rem 0.5rem',
-    borderRadius: '4px',
+    gap: '0.35rem',
+    fontSize: '0.7rem',
+    fontWeight: '500',
+    padding: '0',
+    borderRadius: '0',
     flexShrink: 0,
+    color: '#64748b',
     '&.completed': {
-      background: '#d1fae5',
-      color: '#10b981'
+      background: 'transparent',
+      color: '#64748b'
     },
     '&.in-progress': {
-      background: '#dbeafe',
-      color: '#3b82f6'
+      background: 'transparent',
+      color: '#64748b'
     }
   },
   progressSection: {
