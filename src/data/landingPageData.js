@@ -26,15 +26,15 @@ export const dynamicTexts = [
 ];
 
 export const chartData = [
-  { week: 1, traditional: 45, launchPrep: 35, tooltip: 'Traditional: 45% vs Launch Prep: 35%' },
-  { week: 2, traditional: 60, launchPrep: 40, tooltip: 'Traditional: 60% vs Launch Prep: 40%' },
-  { week: 3, traditional: 70, launchPrep: 45, tooltip: 'Traditional: 70% vs Launch Prep: 45%' },
-  { week: 4, traditional: 75, launchPrep: 50, tooltip: 'Traditional: 75% vs Launch Prep: 50%' },
-  { week: 5, traditional: 78, launchPrep: 65, tooltip: 'Traditional: 78% vs Launch Prep: 65%' },
-  { week: 6, traditional: 80, launchPrep: 78, tooltip: 'Traditional: 80% vs Launch Prep: 78%' },
-  { week: 7, traditional: 81, launchPrep: 88, tooltip: 'Traditional: 81% vs Launch Prep: 88%' },
-  { week: 8, traditional: 82, launchPrep: 95, tooltip: 'Traditional: 82% vs Launch Prep: 95%' },
-  { week: 9, traditional: 82, launchPrep: 100, tooltip: 'Traditional: 82% vs Launch Prep: 100%' }
+  { week: 1, traditional: 45, nomiAcademy: 35, tooltip: 'Traditional: 45% vs Nomi Academy: 35%' },
+  { week: 2, traditional: 60, nomiAcademy: 40, tooltip: 'Traditional: 60% vs Nomi Academy: 40%' },
+  { week: 3, traditional: 70, nomiAcademy: 45, tooltip: 'Traditional: 70% vs Nomi Academy: 45%' },
+  { week: 4, traditional: 75, nomiAcademy: 50, tooltip: 'Traditional: 75% vs Nomi Academy: 50%' },
+  { week: 5, traditional: 78, nomiAcademy: 65, tooltip: 'Traditional: 78% vs Nomi Academy: 65%' },
+  { week: 6, traditional: 80, nomiAcademy: 78, tooltip: 'Traditional: 80% vs Nomi Academy: 78%' },
+  { week: 7, traditional: 81, nomiAcademy: 88, tooltip: 'Traditional: 81% vs Nomi Academy: 88%' },
+  { week: 8, traditional: 82, nomiAcademy: 95, tooltip: 'Traditional: 82% vs Nomi Academy: 95%' },
+  { week: 9, traditional: 82, nomiAcademy: 100, tooltip: 'Traditional: 82% vs Nomi Academy: 100%' }
 ];
 
 export const features = [

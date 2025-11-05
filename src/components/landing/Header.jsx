@@ -5,7 +5,13 @@ const Header = ({ openModal, handleNavClick }) => {
   return (
     <header style={headerStyles.header}>
       <nav style={headerStyles.nav}>
-        <div style={headerStyles.logo}>Launch Prep</div>
+        <div style={headerStyles.logo}>
+          <img
+            src="/images/nomi-academy-logo.png"
+            alt="Nomi Academy"
+            style={{ height: '48px', objectFit: 'contain' }}
+          />
+        </div>
         <ul style={headerStyles.navLinks}>
           <li>
             <a

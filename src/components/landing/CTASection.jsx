@@ -7,7 +7,7 @@ const CTASection = ({ openModal }) => {
       <div style={ctaStyles.container}>
         <h2 style={ctaStyles.title}>Ready to Transform Your ACT Score?</h2>
         <p style={ctaStyles.subtitle}>
-          Join thousands of students already preparing with Launch Prep
+          Join thousands of students already preparing with Nomi Academy
         </p>
         <button style={ctaStyles.ctaButton} onClick={openModal}>
           Get Early Access

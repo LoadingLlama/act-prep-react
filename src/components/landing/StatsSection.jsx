@@ -68,7 +68,7 @@ const StatsSection = () => {
                   <div
                     style={{
                       ...statsStyles.barLaunchPrep,
-                      height: animatedBars ? `${data.launchPrep}%` : '0%'
+                      height: animatedBars ? `${data.nomiAcademy}%` : '0%'
                     }}
                     title={data.tooltip}
                   />
@@ -84,7 +84,7 @@ const StatsSection = () => {
             </div>
             <div style={statsStyles.legendItem}>
               <span style={statsStyles.legendDotLaunchPrep}></span>
-              Launch Prep
+              Nomi Academy
             </div>
           </div>
         </div>
