@@ -1,9 +1,24 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { HiHome, HiAcademicCap, HiDocumentText, HiBookOpen, HiUser, HiCog6Tooth, HiArrowRightOnRectangle } from 'react-icons/hi2';
+import { HiHome, HiAcademicCap, HiDocumentText, HiBookOpen, HiChartBar, HiUser, HiCog6Tooth, HiArrowRightOnRectangle, HiXMark } from 'react-icons/hi2';
 import { useAuth } from '../contexts/AuthContext';
 
 const useStyles = createUseStyles({
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: 'rgba(0, 0, 0, 0.5)',
+    zIndex: 999,
+    display: 'none',
+    '@media (max-width: 1024px)': {
+      '&.open': {
+        display: 'block'
+      }
+    }
+  },
   sidebar: {
     position: 'fixed',
     left: 0,
@@ -13,10 +28,11 @@ const useStyles = createUseStyles({
     background: '#ffffff',
     padding: '0',
     overflowY: 'auto',
-    zIndex: 100,
+    zIndex: 1000,
     display: 'flex',
     flexDirection: 'column',
     borderRight: '1px solid #e5e7eb',
+    transition: 'transform 0.3s ease',
     '&::-webkit-scrollbar': {
       width: '4px'
     },
@@ -28,6 +44,35 @@ const useStyles = createUseStyles({
       borderRadius: '2px',
       '&:hover': {
         background: 'rgba(0, 0, 0, 0.12)'
+      }
+    },
+    '@media (max-width: 1024px)': {
+      transform: 'translateX(-100%)',
+      boxShadow: '2px 0 8px rgba(0, 0, 0, 0.15)',
+      '&.open': {
+        transform: 'translateX(0)'
+      }
+    }
+  },
+  closeButton: {
+    display: 'none',
+    '@media (max-width: 1024px)': {
+      display: 'block',
+      position: 'absolute',
+      top: '1.5rem',
+      right: '1rem',
+      background: 'transparent',
+      border: 'none',
+      padding: '0.5rem',
+      cursor: 'pointer',
+      color: '#6b7280',
+      transition: 'color 0.15s ease',
+      '&:hover': {
+        color: '#1a1a1a'
+      },
+      '& svg': {
+        width: '24px',
+        height: '24px'
       }
     }
   },
@@ -60,7 +105,7 @@ const useStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     gap: '0.75rem',
-    padding: '0.65rem 1.25rem',
+    padding: '0.75rem 1.25rem',
     fontSize: '0.9rem',
     color: '#6b7280',
     cursor: 'pointer',
@@ -71,9 +116,14 @@ const useStyles = createUseStyles({
     textAlign: 'left',
     fontWeight: '500',
     position: 'relative',
+    minHeight: '44px',
     '&:hover': {
       background: '#f9fafb',
       color: '#1a1a1a'
+    },
+    '&:active': {
+      background: '#e5e7eb',
+      transform: 'scale(0.98)'
     },
     '&.active': {
       background: '#f3f4f6',
@@ -101,7 +151,7 @@ const useStyles = createUseStyles({
   }
 });
 
-const Sidebar = ({ activeView, onNavigate }) => {
+const Sidebar = ({ activeView, onNavigate, isOpen, onClose }) => {
   const classes = useStyles();
   const { signOut } = useAuth();
 
@@ -109,16 +159,37 @@ const Sidebar = ({ activeView, onNavigate }) => {
     await signOut();
   };
 
+  const handleNavigate = (view) => {
+    onNavigate(view);
+    // Close sidebar on mobile after navigation
+    if (onClose) {
+      onClose();
+    }
+  };
+
   return (
-    <div className={classes.sidebar}>
-      <div className={classes.logoSection}>
-        <div className={classes.logo}>Nomi Academy</div>
-      </div>
+    <>
+      {/* Overlay for mobile */}
+      <div
+        className={`${classes.overlay} ${isOpen ? 'open' : ''}`}
+        onClick={onClose}
+      />
+
+      {/* Sidebar */}
+      <div className={`${classes.sidebar} ${isOpen ? 'open' : ''}`}>
+        {/* Close button for mobile */}
+        <button className={classes.closeButton} onClick={onClose}>
+          <HiXMark />
+        </button>
+
+        <div className={classes.logoSection}>
+          <div className={classes.logo}>Nomi Academy</div>
+        </div>
 
       <div className={classes.navSection}>
         <button
           className={`${classes.navItem} ${activeView === 'home' ? 'active' : ''}`}
-          onClick={() => onNavigate('home')}
+          onClick={() => handleNavigate('home')}
         >
           <span className={classes.icon}><HiHome /></span>
           Home
@@ -129,24 +200,31 @@ const Sidebar = ({ activeView, onNavigate }) => {
         <div className={classes.navSectionTitle}>ACT PREP</div>
         <button
           className={`${classes.navItem} ${activeView === 'course' ? 'active' : ''}`}
-          onClick={() => onNavigate('course')}
+          onClick={() => handleNavigate('course')}
         >
           <span className={classes.icon}><HiAcademicCap /></span>
           Learning Path
         </button>
         <button
           className={`${classes.navItem} ${activeView === 'tests' ? 'active' : ''}`}
-          onClick={() => onNavigate('tests')}
+          onClick={() => handleNavigate('tests')}
         >
           <span className={classes.icon}><HiDocumentText /></span>
           Practice Tests
         </button>
         <button
           className={`${classes.navItem} ${activeView === 'lessons' ? 'active' : ''}`}
-          onClick={() => onNavigate('lessons')}
+          onClick={() => handleNavigate('lessons')}
         >
           <span className={classes.icon}><HiBookOpen /></span>
           Lessons
+        </button>
+        <button
+          className={`${classes.navItem} ${activeView === 'results' ? 'active' : ''}`}
+          onClick={() => handleNavigate('results')}
+        >
+          <span className={classes.icon}><HiChartBar /></span>
+          Results
         </button>
       </div>
 
@@ -155,14 +233,14 @@ const Sidebar = ({ activeView, onNavigate }) => {
       <div className={classes.bottomSection}>
         <button
           className={`${classes.navItem} ${activeView === 'profile' ? 'active' : ''}`}
-          onClick={() => onNavigate('profile')}
+          onClick={() => handleNavigate('profile')}
         >
           <span className={classes.icon}><HiUser /></span>
           Profile
         </button>
         <button
           className={`${classes.navItem} ${activeView === 'settings' ? 'active' : ''}`}
-          onClick={() => onNavigate('settings')}
+          onClick={() => handleNavigate('settings')}
         >
           <span className={classes.icon}><HiCog6Tooth /></span>
           Settings
@@ -172,7 +250,8 @@ const Sidebar = ({ activeView, onNavigate }) => {
           Logout
         </button>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

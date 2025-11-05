@@ -1,4 +1,5 @@
 import React from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
 import { HiClipboardDocumentCheck, HiBookOpen, HiAcademicCap, HiChartBar } from 'react-icons/hi2';
 import Calendar from './Calendar';
@@ -11,7 +12,10 @@ const useStyles = createUseStyles({
     minHeight: '100vh',
     background: '#fafafa',
     color: '#0f172a',
-    maxWidth: '1400px'
+    maxWidth: '1400px',
+    '@media (max-width: 768px)': {
+      padding: '1rem'
+    }
   },
   pageHeader: {
     padding: '0',
@@ -22,7 +26,10 @@ const useStyles = createUseStyles({
     fontWeight: '900',
     color: '#000000',
     margin: '0 0 0.5rem 0',
-    letterSpacing: '-0.04em'
+    letterSpacing: '-0.04em',
+    '@media (max-width: 768px)': {
+      fontSize: '2rem'
+    }
   },
   pageSubtitle: {
     fontSize: '1rem',
@@ -36,7 +43,11 @@ const useStyles = createUseStyles({
     display: 'grid',
     gridTemplateColumns: '2fr 1fr',
     gap: '1rem',
-    marginBottom: '1rem'
+    marginBottom: '1rem',
+    '@media (max-width: 768px)': {
+      gridTemplateColumns: '1fr',
+      gap: '1rem'
+    }
   },
   upcomingSection: {
     background: '#ffffff',
@@ -593,8 +604,15 @@ const useStyles = createUseStyles({
   },
 });
 
-const Home = ({ lessonProgress = {}, lessonStructure = [], onNavigate, onLessonOpen }) => {
+const Home = () => {
   const classes = useStyles();
+  const {
+    lessonProgress = {},
+    lessonStructure = [],
+    onNavigate,
+    onLessonOpen
+  } = useOutletContext();
+
   const [hoveredDataPoint, setHoveredDataPoint] = React.useState(null);
 
   const handleCalendarNavigate = (type, id) => {

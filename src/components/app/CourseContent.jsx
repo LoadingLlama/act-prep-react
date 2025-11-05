@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
 import { HiCheckCircle, HiClock } from 'react-icons/hi2';
 
@@ -266,15 +267,20 @@ const useStyles = createUseStyles({
     background: '#ffffff',
     border: '1px solid #e2e8f0',
     borderRadius: '6px',
-    padding: '0.65rem 0.85rem',
+    padding: '0.75rem 1rem',
     display: 'flex',
     alignItems: 'center',
-    gap: '0.65rem',
+    gap: '0.75rem',
     transition: 'all 0.2s ease',
     cursor: 'pointer',
+    minHeight: '60px',
     '&:hover': {
       borderColor: '#08245b',
       transform: 'translateX(4px)'
+    },
+    '&:active': {
+      transform: 'translateX(2px)',
+      background: '#f8fafc'
     },
     '&.completed': {
       background: '#f0f9ff',
@@ -394,13 +400,14 @@ const useStyles = createUseStyles({
   }
 });
 
-const CourseContent = ({
-  lessonProgress,
-  lessonStructure,
-  onLessonOpen,
-  onTestOpen
-}) => {
+const CourseContent = () => {
   const classes = useStyles();
+  const {
+    lessonProgress = {},
+    lessonStructure = [],
+    onLessonOpen,
+    onTestOpen
+  } = useOutletContext();
 
   // Calculate statistics
   const totalLessons = lessonStructure.length;

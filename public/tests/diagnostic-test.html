@@ -224,6 +224,11 @@
         localStorage.removeItem('currentSection');
         localStorage.removeItem('totalSections');
 
+        // Auto-start the test immediately (skip intro screen)
+        window.addEventListener('load', function() {
+            startTest();
+        });
+
         // Handle page visibility to prevent back button issues
         document.addEventListener('visibilitychange', function() {
             if (document.visibilityState === 'visible') {

@@ -3,7 +3,8 @@
  * Displays the lessons grid with filtering and compact professional design
  */
 
-import React from 'react';
+import React, { useState } from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
 import StatusIcon from '../StatusIcon';
 
@@ -14,7 +15,10 @@ const useStyles = createUseStyles({
     margin: '0 auto',
     minHeight: '100vh',
     background: '#fafafa',
-    maxWidth: '1200px'
+    maxWidth: '1200px',
+    '@media (max-width: 768px)': {
+      padding: '1rem'
+    }
   },
   pageHeader: {
     padding: '0',
@@ -25,7 +29,10 @@ const useStyles = createUseStyles({
     fontWeight: '900',
     color: '#000000',
     margin: '0 0 0.5rem 0',
-    letterSpacing: '-0.04em'
+    letterSpacing: '-0.04em',
+    '@media (max-width: 768px)': {
+      fontSize: '2rem'
+    }
   },
   pageSubtitle: {
     fontSize: '1rem',
@@ -44,7 +51,12 @@ const useStyles = createUseStyles({
     background: '#ffffff',
     padding: '0.75rem 1rem',
     borderRadius: '8px',
-    border: '1px solid #e2e8f0'
+    border: '1px solid #e2e8f0',
+    '@media (max-width: 640px)': {
+      flexDirection: 'column',
+      alignItems: 'stretch',
+      gap: '0.75rem'
+    }
   },
   filterButtons: {
     display: 'flex',
@@ -55,15 +67,23 @@ const useStyles = createUseStyles({
     background: 'transparent',
     border: 'none',
     borderRadius: '6px',
-    padding: '0.4rem 0.85rem',
+    padding: '0.75rem 1rem',
     fontSize: '0.8rem',
     fontWeight: '600',
     color: '#64748b',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
+    minHeight: '44px',
+    minWidth: '44px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     '&:hover': {
       background: '#f8fafc',
       color: '#1a1a1a'
+    },
+    '&:active': {
+      transform: 'scale(0.97)'
     },
     '&.active': {
       color: '#ffffff',
@@ -96,15 +116,20 @@ const useStyles = createUseStyles({
     background: 'transparent',
     border: 'none',
     borderRadius: '4px',
-    padding: '0.5rem',
+    padding: '0.75rem',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
     color: '#64748b',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    minWidth: '44px',
+    minHeight: '44px',
     '&:hover': {
       background: '#f8fafc'
+    },
+    '&:active': {
+      transform: 'scale(0.95)'
     },
     '&.active': {
       background: '#08245b',
@@ -119,7 +144,13 @@ const useStyles = createUseStyles({
   lessonsList: {
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '0.75rem'
+    gap: '0.75rem',
+    '@media (max-width: 1024px)': {
+      gridTemplateColumns: 'repeat(2, 1fr)'
+    },
+    '@media (max-width: 640px)': {
+      gridTemplateColumns: '1fr'
+    }
   },
   lessonsListView: {
     display: 'flex',
@@ -143,6 +174,10 @@ const useStyles = createUseStyles({
       boxShadow: '0 2px 8px rgba(0, 24, 69, 0.08)',
       transform: 'translateY(-1px)'
     },
+    '&:active': {
+      transform: 'translateY(0)',
+      boxShadow: '0 1px 4px rgba(0, 24, 69, 0.06)'
+    },
     '&.completed': {
       borderColor: '#3b82f6',
       background: '#f0f9ff'
@@ -158,9 +193,14 @@ const useStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     gap: '1rem',
+    minHeight: '60px',
     '&:hover': {
       borderColor: '#08245b',
       transform: 'translateX(4px)'
+    },
+    '&:active': {
+      transform: 'translateX(2px)',
+      background: '#f8fafc'
     }
   },
   lessonStatus: {
@@ -204,8 +244,8 @@ const useStyles = createUseStyles({
   practiceButton: {
     border: '1px solid #e2e8f0',
     borderRadius: '6px',
-    padding: '0.35rem 0.75rem',
-    fontSize: '0.7rem',
+    padding: '0.75rem 1rem',
+    fontSize: '0.75rem',
     fontWeight: '500',
     color: '#64748b',
     background: '#ffffff',
@@ -213,11 +253,16 @@ const useStyles = createUseStyles({
     transition: 'all 0.15s ease',
     display: 'flex',
     alignItems: 'center',
-    gap: '0.3rem',
+    gap: '0.4rem',
+    minHeight: '44px',
     '&:hover': {
       background: '#f8fafc',
       borderColor: '#cbd5e1',
       color: '#1a1a1a'
+    },
+    '&:active': {
+      transform: 'scale(0.98)',
+      background: '#f1f5f9'
     }
   },
   unitHeader: {
@@ -242,21 +287,26 @@ const useStyles = createUseStyles({
   }
 });
 
-const LessonsContent = ({
-  activeSection,
-  handleSectionFilter,
-  viewMode,
-  setViewMode,
-  lessonStructure,
-  lessonContent,
-  expandedSections,
-  toggleSection,
-  getLessonStatus,
-  openLesson,
-  setHoveredMoreTag,
-  setMoreTagPosition
-}) => {
+const LessonsContent = () => {
   const classes = useStyles();
+  const {
+    lessonStructure = [],
+    lessonContent = {},
+    expandedSections = {},
+    toggleSection,
+    getLessonStatus,
+    onLessonOpen: openLesson,
+    setHoveredMoreTag,
+    setMoreTagPosition
+  } = useOutletContext();
+
+  // Local state for filtering
+  const [activeSection, setActiveSection] = useState('all');
+  const [viewMode, setViewMode] = useState('grid');
+
+  const handleSectionFilter = (section) => {
+    setActiveSection(section);
+  };
 
   const getFilteredLessons = () => {
     // Merge durations from database into lesson structure

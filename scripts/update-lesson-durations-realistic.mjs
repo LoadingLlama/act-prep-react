@@ -79,41 +79,52 @@ function calculateRealisticDuration(contentJson) {
     }
   }
 
-  // REALISTIC TIME CALCULATION:
+  // REALISTIC TIME CALCULATION BASED ON WORD COUNT RANGES:
 
-  // 1. Base reading at ACTIVE LEARNING pace (100 wpm - careful comprehension, not passive reading)
-  const readingMinutes = Math.max(3, Math.round(wordCount / 100));
-  totalMinutes += readingMinutes;
-  breakdown.push(`${readingMinutes} min reading (${wordCount.toLocaleString()} words @ 100 wpm)`);
+  // Base time from word count ranges
+  let baseMinutes;
+  if (wordCount < 600) {
+    baseMinutes = 15;
+  } else if (wordCount < 1000) {
+    baseMinutes = 15; // 600-999 words
+  } else if (wordCount < 1200) {
+    baseMinutes = 20; // 1000-1199 words
+  } else if (wordCount < 1400) {
+    baseMinutes = 25; // 1200-1399 words
+  } else if (wordCount < 2000) {
+    baseMinutes = 30; // 1400-1999 words
+  } else if (wordCount < 2500) {
+    baseMinutes = 35; // 2000-2499 words
+  } else {
+    baseMinutes = 40; // 2500+ words
+  }
 
-  // 2. Interactive examples (users work through them)
+  totalMinutes = baseMinutes;
+  breakdown.push(`${baseMinutes} min base (${wordCount.toLocaleString()} words)`);
+
+  // Add time for interactive examples (users work through them)
   if (exampleCount > 0) {
-    const exampleMinutes = exampleCount * 5; // 5 min per example (read, attempt, review solution)
+    const exampleMinutes = Math.round(exampleCount * 2); // 2 min per example
     totalMinutes += exampleMinutes;
-    breakdown.push(`${exampleMinutes} min for ${exampleCount} example${exampleCount > 1 ? 's' : ''} (5 min each)`);
+    breakdown.push(`+${exampleMinutes} min for ${exampleCount} example${exampleCount > 1 ? 's' : ''}`);
   }
 
-  // 3. Practice questions (users solve them)
+  // Add time for practice questions (users solve them)
   if (practiceQuestionCount > 0) {
-    const practiceMinutes = Math.round(practiceQuestionCount * 2.5); // 2.5 min per question
+    const practiceMinutes = Math.round(practiceQuestionCount * 1.5); // 1.5 min per question
     totalMinutes += practiceMinutes;
-    breakdown.push(`${practiceMinutes} min for ${practiceQuestionCount} practice question${practiceQuestionCount > 1 ? 's' : ''} (2.5 min each)`);
+    breakdown.push(`+${practiceMinutes} min for ${practiceQuestionCount} question${practiceQuestionCount > 1 ? 's' : ''}`);
   }
 
-  // 4. Diagrams (study time)
+  // Add time for diagrams
   if (diagramCount > 0) {
-    const diagramMinutes = diagramCount * 2; // 2 min per diagram
+    const diagramMinutes = diagramCount * 1; // 1 min per diagram
     totalMinutes += diagramMinutes;
-    breakdown.push(`${diagramMinutes} min for ${diagramCount} diagram${diagramCount > 1 ? 's' : ''}`);
+    breakdown.push(`+${diagramMinutes} min for ${diagramCount} diagram${diagramCount > 1 ? 's' : ''}`);
   }
-
-  // 5. Buffer for pausing, note-taking, re-reading, reflection (50% - active learning takes time!)
-  const bufferMinutes = Math.round(totalMinutes * 0.5);
-  totalMinutes += bufferMinutes;
-  breakdown.push(`${bufferMinutes} min buffer (50% for pausing/notes/re-reading)`);
 
   // Round to nearest 5 minutes for cleaner estimates
-  totalMinutes = Math.max(5, Math.round(totalMinutes / 5) * 5);
+  totalMinutes = Math.round(totalMinutes / 5) * 5;
 
   return {
     minutes: totalMinutes,
@@ -149,11 +160,33 @@ async function main() {
       result = calculateRealisticDuration(lesson.content_json);
     } else {
       // Fallback for lessons without content_json
-      // Use conservative estimate: 100 wpm active learning + 2.5x multiplier for examples/practice/reflection
       const wordCount = countWords(lesson.content || '');
-      const baseMinutes = wordCount / 100; // 100 wpm comprehension pace
-      const totalMinutes = Math.max(15, Math.round((baseMinutes * 2.5) / 5) * 5); // 2.5x for active learning, min 15 min
-      result = { minutes: totalMinutes, breakdown: `${wordCount} words @ 100 wpm × 2.5 active learning multiplier` };
+
+      // Word count based duration ranges
+      let minutes;
+      if (wordCount < 600) {
+        minutes = 15; // Short lessons
+      } else if (wordCount < 1000) {
+        minutes = 15; // 600-999 words
+      } else if (wordCount < 1200) {
+        minutes = 20; // 1000-1199 words
+      } else if (wordCount < 1400) {
+        minutes = 25; // 1200-1399 words
+      } else if (wordCount < 2000) {
+        minutes = 30; // 1400-1999 words
+      } else if (wordCount < 2500) {
+        minutes = 35; // 2000-2499 words
+      } else {
+        minutes = 40; // 2500+ words
+      }
+
+      result = { minutes, breakdown: `${wordCount} words, ${minutes} min based on length` };
+    }
+
+    // Apply minimums for introduction lessons only
+    const isIntro = lesson.lesson_key.includes('intro') || lesson.lesson_key === 'getting-started';
+    if (isIntro && result.minutes < 15) {
+      result.minutes = 15;
     }
 
     const newDuration = `${result.minutes} min`;

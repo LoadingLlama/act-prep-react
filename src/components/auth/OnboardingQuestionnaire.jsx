@@ -10,7 +10,7 @@ import { onboardingUtils } from '../../utils/helpers';
 const useStyles = createUseStyles({
   container: {
     minHeight: '100vh',
-    background: '#ffffff',
+    background: 'linear-gradient(135deg, #08245b 0%, #0a2f73 100%)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -21,12 +21,18 @@ const useStyles = createUseStyles({
     '&::before': {
       content: '""',
       position: 'absolute',
-      top: '-50%',
-      left: '-50%',
-      width: '200%',
-      height: '200%',
-      background: 'radial-gradient(circle at 20% 50%, rgba(30, 64, 175, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(30, 64, 175, 0.04) 0%, transparent 50%)',
-      animation: '$float 20s ease-in-out infinite',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      opacity: 0.03,
+      backgroundImage: `repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 100px,
+        rgba(255, 255, 255, 0.1) 100px,
+        rgba(255, 255, 255, 0.1) 101px
+      )`,
       pointerEvents: 'none'
     }
   },
@@ -42,12 +48,16 @@ const useStyles = createUseStyles({
     }
   },
   card: {
-    background: '#ffffff',
+    background: 'rgba(255, 255, 255, 0.06)',
+    backdropFilter: 'blur(20px)',
+    border: '1px solid rgba(255, 255, 255, 0.12)',
+    borderRadius: '20px',
     padding: '3rem',
     maxWidth: '600px',
     width: '100%',
     position: 'relative',
-    zIndex: 1
+    zIndex: 1,
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.25)'
   },
   progressBar: {
     position: 'fixed',
@@ -55,12 +65,12 @@ const useStyles = createUseStyles({
     left: 0,
     right: 0,
     height: '3px',
-    background: '#f3f4f6',
+    background: 'rgba(255, 255, 255, 0.1)',
     zIndex: 1000
   },
   progressFill: {
     height: '100%',
-    background: '#1e40af',
+    background: 'rgba(255, 255, 255, 0.6)',
     transition: 'width 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   question: {
@@ -91,23 +101,26 @@ const useStyles = createUseStyles({
     }
   },
   questionNumber: {
-    fontSize: '0.85rem',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    fontSize: '0.8rem',
     fontWeight: '600',
-    color: '#1e40af',
+    color: 'rgba(255, 255, 255, 0.5)',
     textTransform: 'uppercase',
-    letterSpacing: '0.1em',
-    marginBottom: '0.5rem'
+    letterSpacing: '0.08em',
+    marginBottom: '0.75rem'
   },
   questionTitle: {
+    fontFamily: 'Georgia, "Times New Roman", serif',
     fontSize: '2rem',
-    fontWeight: '700',
-    color: '#1a1a1a',
+    fontWeight: '600',
+    color: '#ffffff',
     marginBottom: '1rem',
-    lineHeight: '1.2'
+    lineHeight: '1.3',
+    letterSpacing: '-0.01em'
   },
   questionSubtitle: {
     fontSize: '1rem',
-    color: '#64748b',
+    color: 'rgba(255, 255, 255, 0.75)',
     marginBottom: '2.5rem',
     lineHeight: '1.5'
   },
@@ -119,30 +132,57 @@ const useStyles = createUseStyles({
     width: '100%',
     padding: '1rem 1.25rem',
     fontSize: '1.1rem',
-    border: '2px solid #e5e7eb',
+    border: '2px solid rgba(255, 255, 255, 0.2)',
     borderRadius: '10px',
     outline: 'none',
-    transition: 'all 0.2s ease',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     fontFamily: 'inherit',
+    background: 'rgba(255, 255, 255, 0.08)',
+    color: '#ffffff',
     '&:focus': {
-      borderColor: '#1e40af',
-      boxShadow: '0 0 0 4px rgba(102, 126, 234, 0.1)'
+      borderColor: 'rgba(255, 255, 255, 0.5)',
+      boxShadow: '0 0 0 4px rgba(255, 255, 255, 0.1)',
+      background: 'rgba(255, 255, 255, 0.12)'
+    },
+    '&::placeholder': {
+      color: 'rgba(255, 255, 255, 0.4)'
+    },
+    '&::-webkit-calendar-picker-indicator': {
+      filter: 'invert(1) brightness(1.2)',
+      cursor: 'pointer',
+      opacity: 0.8,
+      transition: 'opacity 0.2s ease',
+      '&:hover': {
+        opacity: 1
+      }
+    },
+    '&[type="date"]::-webkit-datetime-edit': {
+      color: '#ffffff'
+    },
+    '&[type="date"]::-webkit-datetime-edit-fields-wrapper': {
+      color: '#ffffff'
     }
   },
   select: {
     width: '100%',
     padding: '1rem 1.25rem',
     fontSize: '1.1rem',
-    border: '2px solid #e5e7eb',
+    border: '2px solid rgba(255, 255, 255, 0.2)',
     borderRadius: '10px',
     outline: 'none',
     transition: 'all 0.2s ease',
     fontFamily: 'inherit',
-    background: '#ffffff',
+    background: 'rgba(255, 255, 255, 0.08)',
+    color: '#ffffff',
     cursor: 'pointer',
     '&:focus': {
-      borderColor: '#1e40af',
-      boxShadow: '0 0 0 4px rgba(102, 126, 234, 0.1)'
+      borderColor: 'rgba(255, 255, 255, 0.5)',
+      boxShadow: '0 0 0 4px rgba(255, 255, 255, 0.1)',
+      background: 'rgba(255, 255, 255, 0.12)'
+    },
+    '& option': {
+      background: '#08245b',
+      color: '#ffffff'
     }
   },
   optionsGrid: {
@@ -153,19 +193,22 @@ const useStyles = createUseStyles({
   },
   optionCard: {
     padding: '1.25rem',
-    border: '1px solid #e5e7eb',
-    borderRadius: '8px',
+    border: '2px solid rgba(255, 255, 255, 0.15)',
+    borderRadius: '12px',
     cursor: 'pointer',
-    transition: 'all 0.2s ease',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     textAlign: 'center',
-    background: '#ffffff',
+    background: 'rgba(255, 255, 255, 0.04)',
+    color: '#ffffff',
     '&:hover': {
-      borderColor: '#1e40af'
+      borderColor: 'rgba(255, 255, 255, 0.3)',
+      background: 'rgba(255, 255, 255, 0.08)',
+      transform: 'translateY(-2px)'
     },
     '&.selected': {
-      borderColor: '#1e40af',
-      background: '#1e40af',
-      color: '#ffffff'
+      borderColor: 'rgba(255, 255, 255, 0.6)',
+      background: 'rgba(255, 255, 255, 0.12)',
+      boxShadow: '0 4px 16px rgba(255, 255, 255, 0.08)'
     }
   },
   optionTitle: {
@@ -183,32 +226,35 @@ const useStyles = createUseStyles({
     marginTop: 'auto'
   },
   button: {
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     flex: 1,
     padding: '0.875rem 2rem',
     fontSize: '0.95rem',
-    fontWeight: '500',
-    border: '1px solid #e5e7eb',
-    borderRadius: '6px',
+    fontWeight: '600',
+    border: 'none',
+    borderRadius: '10px',
     cursor: 'pointer',
-    transition: 'all 0.2s ease',
-    fontFamily: 'inherit',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    letterSpacing: '-0.01em',
     '&.primary': {
-      background: '#1e40af',
-      color: '#ffffff',
-      borderColor: '#1e40af',
+      background: '#ffffff',
+      color: '#08245b',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
       '&:hover': {
-        background: '#5568d3'
+        transform: 'translateY(-2px)',
+        boxShadow: '0 6px 16px rgba(0, 0, 0, 0.25)'
       },
       '&:disabled': {
-        opacity: 0.4,
-        cursor: 'not-allowed'
+        opacity: 0.5,
+        cursor: 'not-allowed',
+        transform: 'none'
       }
     },
     '&.secondary': {
-      background: '#ffffff',
-      color: '#6b7280',
+      background: 'rgba(255, 255, 255, 0.1)',
+      color: 'rgba(255, 255, 255, 0.9)',
       '&:hover': {
-        background: '#f9fafb'
+        background: 'rgba(255, 255, 255, 0.15)'
       }
     }
   },
@@ -223,26 +269,30 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     gap: '0.75rem',
     padding: '1rem',
-    border: '1px solid #e5e7eb',
-    borderRadius: '6px',
+    border: '2px solid rgba(255, 255, 255, 0.15)',
+    borderRadius: '10px',
     cursor: 'pointer',
-    transition: 'all 0.2s ease',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    background: 'rgba(255, 255, 255, 0.04)',
     '&:hover': {
-      borderColor: '#1e40af'
+      borderColor: 'rgba(255, 255, 255, 0.3)',
+      background: 'rgba(255, 255, 255, 0.08)',
+      transform: 'translateY(-2px)'
     },
     '&.selected': {
-      borderColor: '#1e40af',
-      background: '#f9fafb'
+      borderColor: 'rgba(255, 255, 255, 0.6)',
+      background: 'rgba(255, 255, 255, 0.12)',
+      boxShadow: '0 4px 16px rgba(255, 255, 255, 0.08)'
     }
   },
   checkboxInput: {
     width: '20px',
     height: '20px',
-    accentColor: '#1e40af'
+    accentColor: '#ffffff'
   },
   checkboxLabel: {
     fontSize: '1rem',
-    color: '#1a1a1a',
+    color: '#ffffff',
     flex: 1
   },
   completionScreen: {
@@ -256,19 +306,21 @@ const useStyles = createUseStyles({
     marginBottom: '1.5rem'
   },
   completionTitle: {
-    fontSize: '2rem',
-    fontWeight: '700',
-    color: '#1a1a1a',
-    marginBottom: '1rem'
+    fontFamily: 'Georgia, "Times New Roman", serif',
+    fontSize: '2.2rem',
+    fontWeight: '600',
+    color: '#ffffff',
+    marginBottom: '1rem',
+    letterSpacing: '-0.01em'
   },
   completionSubtitle: {
     fontSize: '1.1rem',
-    color: '#64748b',
+    color: 'rgba(255, 255, 255, 0.85)',
     marginBottom: '2.5rem'
   }
 });
 
-const OnboardingQuestionnaire = ({ userId, onComplete, showDiagnosticScreen = false }) => {
+const OnboardingQuestionnaire = ({ userId, onComplete = () => {}, showDiagnosticScreen = false }) => {
   const classes = useStyles();
   // If showDiagnosticScreen is true, skip to completion screen (step 6)
   const [currentStep, setCurrentStep] = useState(showDiagnosticScreen ? 6 : 0);
@@ -465,12 +517,15 @@ const OnboardingQuestionnaire = ({ userId, onComplete, showDiagnosticScreen = fa
                   style={{
                     background: 'none',
                     border: 'none',
-                    color: '#64748b',
+                    color: 'rgba(255, 255, 255, 0.6)',
                     fontSize: '0.9rem',
                     cursor: 'pointer',
                     textDecoration: 'underline',
-                    padding: '0.5rem'
+                    padding: '0.5rem',
+                    transition: 'color 0.2s ease'
                   }}
+                  onMouseEnter={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.9)'}
+                  onMouseLeave={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.6)'}
                 >
                   Not planning on taking yet
                 </button>
@@ -525,12 +580,10 @@ const OnboardingQuestionnaire = ({ userId, onComplete, showDiagnosticScreen = fa
   };
 
   const handleStartDiagnostic = () => {
-    // If no userId, trigger signup flow first
-    if (!userId) {
-      onComplete(answers, 'signup'); // Trigger signup, will show diagnostic after
-    } else {
-      onComplete(answers, true); // Pass true to indicate diagnostic should start
-    }
+    console.log('✅✅✅ BEGIN DIAGNOSTIC CLICKED ✅✅✅');
+    console.log('📋 Answers:', answers);
+    console.log('📋 Calling onComplete with action=true');
+    onComplete(answers, true); // Pass true to indicate diagnostic should start
   };
 
   const handleSkipDiagnostic = () => {
@@ -563,40 +616,40 @@ const OnboardingQuestionnaire = ({ userId, onComplete, showDiagnosticScreen = fa
               <div style={{
                 marginBottom: '0.75rem',
                 fontSize: '0.95rem',
-                color: '#374151',
+                color: 'rgba(255, 255, 255, 0.9)',
                 display: 'flex',
                 alignItems: 'flex-start',
                 gap: '0.5rem'
               }}>
-                <span style={{ color: '#1e40af', fontWeight: '600' }}>•</span>
+                <span style={{ color: 'rgba(255, 255, 255, 0.9)', fontWeight: '600' }}>•</span>
                 <span>Evaluate your proficiency across all four ACT sections</span>
               </div>
               <div style={{
                 marginBottom: '0.75rem',
                 fontSize: '0.95rem',
-                color: '#374151',
+                color: 'rgba(255, 255, 255, 0.9)',
                 display: 'flex',
                 alignItems: 'flex-start',
                 gap: '0.5rem'
               }}>
-                <span style={{ color: '#1e40af', fontWeight: '600' }}>•</span>
+                <span style={{ color: 'rgba(255, 255, 255, 0.9)', fontWeight: '600' }}>•</span>
                 <span>Identify your strengths and areas for improvement</span>
               </div>
               <div style={{
                 marginBottom: '0.75rem',
                 fontSize: '0.95rem',
-                color: '#374151',
+                color: 'rgba(255, 255, 255, 0.9)',
                 display: 'flex',
                 alignItems: 'flex-start',
                 gap: '0.5rem'
               }}>
-                <span style={{ color: '#1e40af', fontWeight: '600' }}>•</span>
+                <span style={{ color: 'rgba(255, 255, 255, 0.9)', fontWeight: '600' }}>•</span>
                 <span>Generate your personalized study plan and curriculum</span>
               </div>
             </div>
             <div style={{
               fontSize: '0.9rem',
-              color: '#64748b',
+              color: 'rgba(255, 255, 255, 0.65)',
               marginBottom: '2rem',
               fontStyle: 'italic'
             }}>
@@ -617,12 +670,15 @@ const OnboardingQuestionnaire = ({ userId, onComplete, showDiagnosticScreen = fa
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#64748b',
+                  color: 'rgba(255, 255, 255, 0.6)',
                   fontSize: '0.9rem',
                   cursor: 'pointer',
                   textDecoration: 'underline',
-                  padding: '0.5rem'
+                  padding: '0.5rem',
+                  transition: 'color 0.2s ease'
                 }}
+                onMouseEnter={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.9)'}
+                onMouseLeave={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.6)'}
               >
                 I'll do this later
               </button>

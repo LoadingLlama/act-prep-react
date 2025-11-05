@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
 import { HiClipboardDocumentList, HiClipboardDocumentCheck, HiPencilSquare, HiCalculator, HiBookOpen, HiBeaker } from 'react-icons/hi2';
 
@@ -14,7 +15,10 @@ const useStyles = createUseStyles({
     margin: '0',
     minHeight: '100vh',
     background: '#fafafa',
-    maxWidth: '1400px'
+    maxWidth: '1400px',
+    '@media (max-width: 768px)': {
+      padding: '1rem'
+    }
   },
   pageHeader: {
     padding: '0',
@@ -25,7 +29,10 @@ const useStyles = createUseStyles({
     fontWeight: '900',
     color: '#000000',
     margin: '0 0 0.5rem 0',
-    letterSpacing: '-0.04em'
+    letterSpacing: '-0.04em',
+    '@media (max-width: 768px)': {
+      fontSize: '2rem'
+    }
   },
   subtitle: {
     fontSize: '1rem',
@@ -54,7 +61,13 @@ const useStyles = createUseStyles({
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
     gap: '0.75rem',
-    marginBottom: '1.5rem'
+    marginBottom: '1.5rem',
+    '@media (max-width: 1024px)': {
+      gridTemplateColumns: 'repeat(2, 1fr)'
+    },
+    '@media (max-width: 640px)': {
+      gridTemplateColumns: '1fr'
+    }
   },
   testCard: {
     background: '#ffffff',
@@ -72,6 +85,10 @@ const useStyles = createUseStyles({
       boxShadow: '0 4px 12px rgba(0, 24, 69, 0.08)',
       transform: 'translateY(-2px)'
     },
+    '&:active': {
+      transform: 'scale(0.98)',
+      boxShadow: '0 2px 6px rgba(0, 24, 69, 0.06)'
+    },
     '&.disabled': {
       opacity: 0.5,
       cursor: 'not-allowed',
@@ -79,6 +96,9 @@ const useStyles = createUseStyles({
         transform: 'none',
         boxShadow: 'none',
         borderColor: '#e2e8f0'
+      },
+      '&:active': {
+        transform: 'none'
       }
     }
   },
@@ -120,9 +140,24 @@ const useStyles = createUseStyles({
     gap: '1.25rem',
     border: '1px solid #fecaca',
     borderRadius: '8px',
+    minHeight: '100px',
     '&:hover': {
       borderColor: '#fca5a5',
-      boxShadow: '0 2px 12px rgba(220, 38, 38, 0.08)'
+      boxShadow: '0 2px 12px rgba(220, 38, 38, 0.08)',
+      transform: 'translateY(-1px)'
+    },
+    '&:active': {
+      transform: 'scale(0.99)',
+      boxShadow: '0 1px 6px rgba(220, 38, 38, 0.06)'
+    },
+    '@media (max-width: 1024px)': {
+      gridColumn: 'span 2'
+    },
+    '@media (max-width: 640px)': {
+      gridColumn: 'span 1',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      padding: '1rem'
     }
   },
   diagnosticInfo: {
@@ -169,23 +204,40 @@ const useStyles = createUseStyles({
     color: '#ffffff',
     border: 'none',
     borderRadius: '6px',
-    padding: '0.65rem 1.5rem',
-    fontSize: '0.85rem',
+    padding: '0.875rem 1.5rem',
+    fontSize: '0.9rem',
     fontWeight: '600',
     cursor: 'pointer',
     transition: 'all 0.15s ease',
     whiteSpace: 'nowrap',
     flexShrink: 0,
+    minHeight: '48px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     '&:hover': {
       transform: 'translateY(-1px)',
       boxShadow: '0 4px 12px rgba(220, 38, 38, 0.25)',
       background: '#b91c1c'
+    },
+    '&:active': {
+      transform: 'scale(0.97)',
+      boxShadow: '0 2px 6px rgba(220, 38, 38, 0.2)'
+    },
+    '@media (max-width: 640px)': {
+      width: '100%',
+      padding: '0.875rem 1.5rem',
+      fontSize: '0.95rem'
     }
   }
 });
 
-const TestsContent = ({ setDiagnosticTestOpen, setPracticeTestOpen }) => {
+const TestsContent = () => {
   const classes = useStyles();
+  const {
+    setDiagnosticTestOpen,
+    onTestOpen: setPracticeTestOpen
+  } = useOutletContext();
 
   const practiceTests = [
     { number: 1, title: 'Practice Test 1', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },

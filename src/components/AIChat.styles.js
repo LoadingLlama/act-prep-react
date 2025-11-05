@@ -8,7 +8,13 @@ export const useAIChatStyles = createUseStyles({
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     zIndex: 1001,
     userSelect: 'none',
-    transformOrigin: 'top right' // Ensure expansions happen towards the left and down
+    transformOrigin: 'top right', // Ensure expansions happen towards the left and down
+    '@media (max-width: 768px)': {
+      top: 'auto',
+      right: '12px',
+      bottom: '12px',
+      transformOrigin: 'bottom right'
+    }
   },
   chatBox: {
     backgroundColor: 'rgba(255, 255, 255, 0.1)',
@@ -51,7 +57,11 @@ export const useAIChatStyles = createUseStyles({
     border: '1px solid rgba(255, 255, 255, 0.3)',
     borderRadius: '16px 0 0 16px', // Right side friendly: sharp right edge
     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-    cursor: 'text'
+    cursor: 'text',
+    '@media (max-width: 768px)': {
+      width: '280px',
+      borderRadius: '16px 16px 0 0' // Rounded top on mobile
+    }
   },
   // State: Chat open (with messages) - right side optimized glassy translucent
   chatOpen: {
@@ -65,7 +75,13 @@ export const useAIChatStyles = createUseStyles({
     borderRadius: '20px 0 0 20px', // Right side friendly: sharp right edge
     boxShadow: '0 12px 48px rgba(0, 0, 0, 0.15)',
     cursor: 'default',
-    transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
+    transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+    '@media (max-width: 768px)': {
+      width: '100vw',
+      maxWidth: '360px',
+      borderRadius: '20px 20px 0 0', // Rounded top on mobile
+      maxHeight: '60vh' // Limit height on mobile
+    }
   },
   // State: Dragged away from center
   dragged: {

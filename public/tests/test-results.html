@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Complete</title>
+</head>
+<body>
+    <script>
+        // Test completed - redirect back to React app home page
+        console.log('🏁 Diagnostic test completed, redirecting to home...');
+
+        // If we're in an iframe, try to communicate with parent
+        if (window.parent && window.parent !== window) {
+            try {
+                // Try to access parent to close the modal
+                window.parent.postMessage({ type: 'DIAGNOSTIC_COMPLETE' }, '*');
+            } catch (e) {
+                console.log('Could not communicate with parent:', e);
+            }
+        }
+
+        // Redirect to home page
+        setTimeout(() => {
+            window.location.href = '/app/home';
+        }, 500);
+    </script>
+
+    <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: sans-serif; text-align: center;">
+        <div>
+            <h1>Test Complete!</h1>
+            <p>Redirecting to your dashboard...</p>
+        </div>
+    </div>
+</body>
+</html>
