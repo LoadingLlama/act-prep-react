@@ -7,6 +7,7 @@ import LessonsService from '../services/api/lessons.service';
 import ExamplesService from '../services/api/examples.service';
 import AllLessonsNavigator from './AllLessonsNavigator';
 import LessonTableOfContents from './LessonTableOfContents';
+import DiscussionSection from './discussion/DiscussionSection';
 import { lessonStructure } from '../data/lessonStructure';
 import { LessonRenderer } from './lesson/LessonRenderer';
 
@@ -658,6 +659,11 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         </div>
       ))}
         </>
+      )}
+
+      {/* Discussion Section */}
+      {hasStarted && lesson?.id && (
+        <DiscussionSection lessonId={lesson.id} />
       )}
 
       {hasStarted && isComplete && (
