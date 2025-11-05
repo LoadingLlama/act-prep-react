@@ -661,6 +661,162 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         </>
       )}
 
+      {/* End of Lesson Navigation */}
+      {hasStarted && lesson?.id && (
+        <>
+          <div style={{
+            marginTop: '4rem',
+            paddingTop: '2rem',
+            borderTop: '1px solid #e5e7eb'
+          }}>
+            {/* End of Lesson Header */}
+            <div style={{
+              fontSize: '1.5rem',
+              fontWeight: '700',
+              color: '#1a1a1a',
+              marginBottom: '2rem',
+              textAlign: 'center'
+            }}>
+              End of Lesson
+            </div>
+
+            {/* Navigation Section */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr auto 1fr',
+              gap: '1rem',
+              marginBottom: '3rem',
+              alignItems: 'center'
+            }}>
+              {/* Previous Lesson */}
+              {(() => {
+                const currentIndex = lessonStructure.findIndex(l => l.id === lesson.id);
+                const previousLesson = currentIndex > 0 ? lessonStructure[currentIndex - 1] : null;
+
+                return previousLesson ? (
+                  <button
+                    onClick={() => {
+                      if (onNavigate) {
+                        onNavigate('lesson', previousLesson.id);
+                      }
+                    }}
+                    style={{
+                      background: 'transparent',
+                      border: 'none',
+                      padding: '1rem',
+                      textAlign: 'left',
+                      cursor: 'pointer',
+                      borderRadius: '8px',
+                      transition: 'all 0.2s ease',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.5rem'
+                    }}
+                    onMouseOver={(e) => e.currentTarget.style.background = '#f8fafc'}
+                    onMouseOut={(e) => e.currentTarget.style.background = 'transparent'}
+                  >
+                    <div style={{
+                      fontSize: '0.75rem',
+                      fontWeight: '600',
+                      color: '#64748b',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em'
+                    }}>
+                      ← Previous Lesson
+                    </div>
+                    <div style={{
+                      fontSize: '0.95rem',
+                      fontWeight: '600',
+                      color: '#1a1a1a'
+                    }}>
+                      {previousLesson.title}
+                    </div>
+                  </button>
+                ) : <div />;
+              })()}
+
+              {/* Practice Button (Center) */}
+              <button
+                onClick={() => {
+                  if (setLessonMode) {
+                    setLessonMode('practice');
+                  }
+                }}
+                style={{
+                  background: '#08245b',
+                  color: '#ffffff',
+                  border: 'none',
+                  borderRadius: '8px',
+                  padding: '1rem 2rem',
+                  fontSize: '0.95rem',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  whiteSpace: 'nowrap',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '0.25rem'
+                }}
+                onMouseOver={(e) => e.currentTarget.style.background = '#0a2f73'}
+                onMouseOut={(e) => e.currentTarget.style.background = '#08245b'}
+              >
+                <div>Practice</div>
+                <div style={{ fontSize: '0.75rem', opacity: 0.9 }}>Test your knowledge</div>
+              </button>
+
+              {/* Next Lesson */}
+              {(() => {
+                const currentIndex = lessonStructure.findIndex(l => l.id === lesson.id);
+                const nextLesson = currentIndex < lessonStructure.length - 1 ? lessonStructure[currentIndex + 1] : null;
+
+                return nextLesson ? (
+                  <button
+                    onClick={() => {
+                      if (onNavigate) {
+                        onNavigate('lesson', nextLesson.id);
+                      }
+                    }}
+                    style={{
+                      background: 'transparent',
+                      border: 'none',
+                      padding: '1rem',
+                      textAlign: 'right',
+                      cursor: 'pointer',
+                      borderRadius: '8px',
+                      transition: 'all 0.2s ease',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.5rem',
+                      alignItems: 'flex-end'
+                    }}
+                    onMouseOver={(e) => e.currentTarget.style.background = '#f8fafc'}
+                    onMouseOut={(e) => e.currentTarget.style.background = 'transparent'}
+                  >
+                    <div style={{
+                      fontSize: '0.75rem',
+                      fontWeight: '600',
+                      color: '#64748b',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em'
+                    }}>
+                      Next Lesson →
+                    </div>
+                    <div style={{
+                      fontSize: '0.95rem',
+                      fontWeight: '600',
+                      color: '#1a1a1a'
+                    }}>
+                      {nextLesson.title}
+                    </div>
+                  </button>
+                ) : <div />;
+              })()}
+            </div>
+          </div>
+        </>
+      )}
+
       {/* Discussion Section */}
       {hasStarted && lesson?.id && (
         <DiscussionSection lessonId={lesson.id} />
