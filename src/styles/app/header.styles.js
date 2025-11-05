@@ -155,18 +155,5 @@ export const headerStyles = {
       lineHeight: '1.5',
       display: 'none'
     }
-  },
-  btn: {
-    ...buttonStyles.base,
-    ...buttonStyles.sizes.md,
-    background: '#f8f9fa',
-    color: '#666',
-    '&:hover': {
-      background: '#e9ecef',
-      borderColor: '#adb5bd',
-      transform: 'translateY(-1px)',
-      boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-      color: '#333'
-    }
-  },
+  }
 };

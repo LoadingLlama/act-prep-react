@@ -293,4 +293,6 @@ export const modalStyles = {
       background: 'linear-gradient(90deg, #22c55e, #16a34a)',
       borderRadius: '2px',
       transition: 'width 0.3s ease'
+    }
+  }
 };
