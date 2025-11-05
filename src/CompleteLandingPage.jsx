@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 
-const CompleteLandingPage = () => {
+const CompleteLandingPage = ({ onGetStarted, onSignIn }) => {
   // State management for all interactive features
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -2034,8 +2034,8 @@ const CompleteLandingPage = () => {
               </a>
             </li>
           </ul>
-          <button style={styles.ctaNav} onClick={openModal}>
-            Join Waitlist
+          <button style={styles.ctaNav} onClick={onGetStarted}>
+            Get Started
           </button>
         </nav>
       </header>
@@ -2092,8 +2092,8 @@ const CompleteLandingPage = () => {
           Guaranteed 35+ ACT score or your money back.*
         </p>
         <div style={styles.heroCta}>
-          <button style={styles.btnPrimary} onClick={openModal}>
-            Join Waitlist
+          <button style={styles.btnPrimary} onClick={onGetStarted}>
+            Get Started Free
           </button>
           <a href="#demo" style={styles.btnSecondary} onClick={(e) => handleNavClick(e, '#demo')}>
             Watch Demo
@@ -2756,7 +2756,7 @@ const CompleteLandingPage = () => {
         <div style={styles.ctaContent}>
           <h2 style={styles.ctaTitle}>Ready to Transform Your Future?</h2>
           <p style={styles.ctaSubtitle}>Join the waitlist • Get free access when we launch</p>
-          <button style={styles.ctaSpecial} onClick={openModal}>Join Waitlist</button>
+          <button style={styles.ctaSpecial} onClick={onGetStarted}>Get Started Free</button>
         </div>
       </section>
 

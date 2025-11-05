@@ -3,9 +3,9 @@
  * Interactive questionnaire for new users to complete before accessing the course
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
-import { supabase } from '../../supabaseClient';
+import { onboardingUtils } from '../../utils/helpers';
 
 const useStyles = createUseStyles({
   container: {
@@ -268,9 +268,10 @@ const useStyles = createUseStyles({
   }
 });
 
-const OnboardingQuestionnaire = ({ userId, onComplete }) => {
+const OnboardingQuestionnaire = ({ userId, onComplete, showDiagnosticScreen = false }) => {
   const classes = useStyles();
-  const [currentStep, setCurrentStep] = useState(0);
+  // If showDiagnosticScreen is true, skip to completion screen (step 6)
+  const [currentStep, setCurrentStep] = useState(showDiagnosticScreen ? 6 : 0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [answers, setAnswers] = useState({
     testDate: '',
@@ -280,6 +281,23 @@ const OnboardingQuestionnaire = ({ userId, onComplete }) => {
     concernedSections: [],
     studyExperience: ''
   });
+
+  // Load from localStorage on mount
+  useEffect(() => {
+    const savedAnswers = onboardingUtils.getAnswers();
+    if (savedAnswers) {
+      setAnswers(savedAnswers);
+      console.log('📋 Loaded onboarding answers from localStorage');
+    }
+  }, []);
+
+  // Save to localStorage whenever answers change
+  useEffect(() => {
+    if (Object.values(answers).some(v => v && v.length > 0)) {
+      onboardingUtils.saveAnswers(answers);
+      console.log('💾 Saved answers to localStorage');
+    }
+  }, [answers]);
 
   const questions = [
     {
@@ -394,30 +412,28 @@ const OnboardingQuestionnaire = ({ userId, onComplete }) => {
     if (currentQuestion?.allowSkip) {
       handleAnswer(currentQuestion.id, currentQuestion.skipValue);
       // Auto-advance after skipping
-      setTimeout(() => {
-        handleNext();
-      }, 100);
-    }
-  };
-
-  const handleNext = async () => {
-    if (!canProceed()) return;
-
-    if (currentStep === questions.length - 1) {
-      // Last question - save and complete
-      setIsTransitioning(true);
-      setTimeout(async () => {
-        await saveOnboardingData();
-        setIsTransitioning(false);
-      }, 150);
-    } else {
-      // Transition to next question
       setIsTransitioning(true);
       setTimeout(() => {
         setCurrentStep(prev => prev + 1);
         setIsTransitioning(false);
       }, 150);
     }
+  };
+
+  const handleSkipAll = () => {
+    // Skip entire onboarding and diagnostic
+    onComplete({}, false);
+  };
+
+  const handleNext = () => {
+    if (!canProceed()) return;
+
+    // Transition to next question or completion screen
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentStep(prev => prev + 1);
+      setIsTransitioning(false);
+    }, 150);
   };
 
   const handleBack = () => {
@@ -427,44 +443,6 @@ const OnboardingQuestionnaire = ({ userId, onComplete }) => {
       setCurrentStep(prev => prev - 1);
       setIsTransitioning(false);
     }, 150);
-  };
-
-  const saveOnboardingData = async () => {
-    try {
-      // Calculate days until test
-      let daysUntilTest = null;
-      if (answers.testDate && answers.testDate !== 'not-scheduled') {
-        const testDate = new Date(answers.testDate);
-        const today = new Date();
-        today.setHours(0, 0, 0, 0); // Reset time to start of day
-        testDate.setHours(0, 0, 0, 0);
-        daysUntilTest = Math.ceil((testDate - today) / (1000 * 60 * 60 * 24));
-      }
-
-      const onboardingData = {
-        ...answers,
-        daysUntilTest,
-        completedAt: new Date().toISOString()
-      };
-
-      // Update user profile in Supabase
-      const { error } = await supabase
-        .from('profiles')
-        .update({
-          onboarding_completed: true,
-          onboarding_data: onboardingData
-        })
-        .eq('id', userId);
-
-      if (error) throw error;
-
-      // Transition to diagnostic ready screen
-      setCurrentStep(questions.length);
-    } catch (error) {
-      console.error('Error saving onboarding data:', error);
-      // Still complete onboarding even if save fails
-      onComplete(answers);
-    }
   };
 
   const renderInput = () => {
@@ -547,7 +525,12 @@ const OnboardingQuestionnaire = ({ userId, onComplete }) => {
   };
 
   const handleStartDiagnostic = () => {
-    onComplete(answers, true); // Pass true to indicate diagnostic should start
+    // If no userId, trigger signup flow first
+    if (!userId) {
+      onComplete(answers, 'signup'); // Trigger signup, will show diagnostic after
+    } else {
+      onComplete(answers, true); // Pass true to indicate diagnostic should start
+    }
   };
 
   const handleSkipDiagnostic = () => {
@@ -555,6 +538,10 @@ const OnboardingQuestionnaire = ({ userId, onComplete }) => {
   };
 
   if (isComplete) {
+    // Show diagnostic screen for both authenticated and non-authenticated users
+    // For non-authenticated users, clicking "Begin Test" will trigger signup
+
+    // If userId exists, show diagnostic screen (authenticated flow)
     return (
       <div className={classes.container}>
         <div className={classes.progressBar}>
@@ -680,6 +667,33 @@ const OnboardingQuestionnaire = ({ userId, onComplete }) => {
             </button>
           </div>
         </div>
+      </div>
+
+      {/* Global Skip Button */}
+      <div style={{
+        position: 'fixed',
+        bottom: '2rem',
+        right: '2rem',
+        zIndex: 10
+      }}>
+        <button
+          type="button"
+          onClick={handleSkipAll}
+          style={{
+            background: 'none',
+            border: 'none',
+            color: '#9ca3af',
+            fontSize: '0.85rem',
+            cursor: 'pointer',
+            textDecoration: 'underline',
+            padding: '0.5rem',
+            transition: 'color 0.2s ease'
+          }}
+          onMouseEnter={(e) => e.target.style.color = '#6b7280'}
+          onMouseLeave={(e) => e.target.style.color = '#9ca3af'}
+        >
+          I'll do this later
+        </button>
       </div>
     </div>
   );

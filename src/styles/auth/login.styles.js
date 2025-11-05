@@ -113,41 +113,48 @@ export const loginStyles = {
   divider: {
     display: 'flex',
     alignItems: 'center',
-    margin: '24px 0',
+    margin: '20px 0',
     color: '#cbd5e0',
   },
 
   dividerText: {
-    padding: '0 16px',
-    fontSize: '14px',
-    color: '#a0aec0',
+    padding: '0 12px',
+    fontSize: '13px',
+    color: '#9ca3af',
+    fontWeight: '500',
   },
 
   googleButton: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '12px',
-    padding: '14px',
-    fontSize: '15px',
+    gap: '10px',
+    padding: '11px 20px',
+    fontSize: '14px',
     fontWeight: '600',
-    color: '#0f172a',
+    color: '#1f2937',
     background: '#ffffff',
-    border: '1px solid #e2e8f0',
-    borderRadius: '6px',
+    border: '1px solid #d1d5db',
+    borderRadius: '8px',
     cursor: 'pointer',
-    transition: 'all 0.2s',
+    transition: 'all 0.2s ease',
+    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)',
     '&:hover': {
-      background: '#f8fafc',
-      borderColor: '#cbd5e1',
-      transform: 'translateY(-1px)',
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
+      background: '#ffffff',
+      borderColor: '#9ca3af',
+      transform: 'translateY(-2px)',
+      boxShadow: '0 8px 16px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.08)',
+    },
+    '&:active': {
+      transform: 'translateY(0)',
+      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)',
     },
   },
 
   googleIcon: {
-    width: '20px',
-    height: '20px',
+    width: '18px',
+    height: '18px',
+    flexShrink: 0,
   },
 
   footer: {
@@ -187,5 +194,17 @@ export const loginStyles = {
   successMessage: {
     padding: '32px',
     textAlign: 'center',
+  },
+
+  logo: {
+    position: 'absolute',
+    top: '32px',
+    left: '32px',
+    color: '#ffffff',
+    fontFamily: '"Times New Roman", Times, serif',
+    fontSize: '28px',
+    fontWeight: '600',
+    letterSpacing: '0.02em',
+    zIndex: 10,
   },
 };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from './contexts/AuthContext';
 import AuthPage from './pages/AuthPage';
+import LandingPage from './pages/LandingPage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import OnboardingQuestionnaire from './components/auth/OnboardingQuestionnaire';
 import ProfilePage from './pages/ProfilePage';
@@ -15,7 +16,7 @@ import LessonsContent from './components/app/LessonsContent';
 import CourseContent from './components/app/CourseContent';
 import LessonModal from './components/app/LessonModal';
 import { useAppStyles } from './styles/App.styles';
-import { storage, domUtils } from './utils/helpers';
+import { storage, domUtils, onboardingUtils } from './utils/helpers';
 import { getAllLessons } from './utils/lessonsDb';
 import { lessonStructure } from './data/lessonStructure';
 import { supabase } from './supabaseClient';
@@ -45,13 +46,28 @@ function App() {
   });
   const [onboardingComplete, setOnboardingComplete] = useState(null); // null = loading, true/false = status
   const [onboardingData, setOnboardingData] = useState(null);
+  const [showAuthPage, setShowAuthPage] = useState(false); // true when user should see signup after onboarding
+  const [shouldShowDiagnostic, setShouldShowDiagnostic] = useState(false); // true when user should see diagnostic after signup
+  const [hasStarted, setHasStarted] = useState(() => {
+    // Check if user has clicked "Get Started" in this session
+    // Don't check localStorage to ensure fresh visits always show landing page
+    return sessionStorage.getItem('hasStarted') === 'true';
+  });
 
   // Save view mode to localStorage when it changes
   useEffect(() => {
     storage.set('lessonsViewMode', viewMode);
   }, [viewMode]);
 
-  // Check onboarding status when user logs in
+  // Reset hasStarted when user logs out
+  useEffect(() => {
+    if (!user && !loading) {
+      // User is not authenticated, reset hasStarted to show landing page
+      setHasStarted(false);
+    }
+  }, [user, loading]);
+
+  // Check onboarding status and transfer localStorage data when user logs in
   useEffect(() => {
     const checkOnboardingStatus = async () => {
       if (!user) {
@@ -60,19 +76,88 @@ function App() {
       }
 
       try {
+        // Check if user has onboarding data in database
         const { data, error } = await supabase
           .from('profiles')
           .select('onboarding_completed, onboarding_data')
           .eq('id', user.id)
-          .single();
+          .maybeSingle();
 
-        if (error) {
-          console.error('Error checking onboarding status:', error);
-          // If profile doesn't exist or error, assume onboarding not complete
+        // If profile doesn't exist yet, create it
+        if (error && error.code === 'PGRST116') {
+          console.log('📝 Profile does not exist, creating...');
+          const { error: insertError } = await supabase
+            .from('profiles')
+            .insert({ id: user.id, email: user.email });
+
+          if (insertError) {
+            console.error('Error creating profile:', insertError);
+          }
           setOnboardingComplete(false);
           return;
         }
 
+        if (error) {
+          console.error('Error checking onboarding status:', error);
+          setOnboardingComplete(false);
+          return;
+        }
+
+        // If no data (profile doesn't exist), create it
+        if (!data) {
+          console.log('📝 Profile does not exist, creating...');
+          const { error: insertError } = await supabase
+            .from('profiles')
+            .insert({ id: user.id, email: user.email });
+
+          if (insertError) {
+            console.error('Error creating profile:', insertError);
+          }
+          setOnboardingComplete(false);
+          return;
+        }
+
+        // Check if localStorage has onboarding data
+        const localOnboardingData = onboardingUtils.getAnswers();
+        const shouldShowDiagnosticFlag = storage.get('shouldShowDiagnosticAfterSignup', false);
+
+        // If user doesn't have onboarding in database but has it in localStorage, transfer it
+        if (!data?.onboarding_completed && localOnboardingData) {
+          console.log('💾 Transferring onboarding data from localStorage to database...');
+          try {
+            const { error: updateError } = await supabase
+              .from('profiles')
+              .update({
+                onboarding_completed: true,
+                onboarding_data: localOnboardingData
+              })
+              .eq('id', user.id);
+
+            if (updateError) {
+              console.error('Error saving onboarding data:', updateError);
+            } else {
+              console.log('✅ Onboarding data saved to database');
+              // Clear localStorage after successful transfer
+              onboardingUtils.clearAnswers();
+
+              // If user signed up from onboarding, show diagnostic screen
+              if (shouldShowDiagnosticFlag) {
+                console.log('🎯 User signed up from onboarding, will show diagnostic screen');
+                storage.remove('shouldShowDiagnosticAfterSignup');
+                setShouldShowDiagnostic(true);
+                setOnboardingComplete(false); // Show onboarding component with diagnostic screen
+              } else {
+                setOnboardingComplete(true);
+              }
+              setOnboardingData(localOnboardingData);
+            }
+          } catch (error) {
+            console.error('Error transferring onboarding data:', error);
+          }
+          return;
+        }
+
+        // Use database data
         setOnboardingComplete(data?.onboarding_completed || false);
         setOnboardingData(data?.onboarding_data);
       } catch (error) {
@@ -164,22 +249,90 @@ function App() {
     domUtils.restoreBodyScroll();
   };
 
-  const handleOnboardingComplete = (data, shouldStartDiagnostic = false) => {
+  const handleGetStarted = () => {
+    console.log('🚀 User clicked Get Started');
+    sessionStorage.setItem('hasStarted', 'true');
+    setHasStarted(true);
+  };
+
+  const handleSignIn = () => {
+    console.log('🔐 User clicked Sign In');
+    sessionStorage.setItem('hasStarted', 'true');
+    setHasStarted(true);
+    setShowAuthPage(true);
+  };
+
+  const handleOnboardingComplete = (data, action = false) => {
+    console.log('📋 Onboarding complete:', { action, hasData: !!data });
+
+    // If action is 'signup', user wants to create account
+    if (action === 'signup') {
+      console.log('🔐 User wants to sign up, showing auth page');
+      // Mark that diagnostic should be shown after signup
+      storage.set('shouldShowDiagnosticAfterSignup', true);
+      setShowAuthPage(true);
+      return;
+    }
+
+    // If user skipped onboarding (action === false)
+    if (action === false) {
+      console.log('⏭️  User skipped onboarding');
+      // If not authenticated, show auth page
+      if (!user) {
+        console.log('🔐 User not authenticated, showing auth page');
+        setShowAuthPage(true);
+      } else {
+        // If authenticated, just mark onboarding as complete
+        setOnboardingComplete(true);
+      }
+      return;
+    }
+
+    // If action is true (shouldStartDiagnostic from authenticated flow)
     setOnboardingComplete(true);
     setOnboardingData(data);
-    // Open diagnostic test if user chose to start it
-    if (shouldStartDiagnostic) {
+    if (action === true) {
       setDiagnosticTestOpen(true);
     }
   };
 
-  // Show auth page if not authenticated
+  // ========== NOT AUTHENTICATED ==========
   if (!user && !loading) {
-    return <AuthPage />;
+    // If user completed onboarding and wants to sign up, show auth page
+    if (showAuthPage) {
+      console.log('🔐 Showing auth page after onboarding completion');
+      return <AuthPage />;
+    }
+
+    // Always show landing page first for unauthenticated users
+    if (!hasStarted) {
+      console.log('👋 Showing landing page');
+      return <LandingPage onGetStarted={handleGetStarted} onSignIn={handleSignIn} />;
+    }
+
+    // If user clicked "Get Started" but hasn't completed onboarding yet, show questionnaire
+    console.log('📝 Showing onboarding questionnaire');
+    return <OnboardingQuestionnaire onComplete={handleOnboardingComplete} />;
   }
+
+  // ========== AUTHENTICATED ==========
 
   // Show onboarding if user is authenticated but hasn't completed it
   if (user && onboardingComplete === false) {
+    // If shouldShowDiagnostic is true, show just the diagnostic screen
+    if (shouldShowDiagnostic) {
+      console.log('🎯 Showing diagnostic screen after signup');
+      return (
+        <OnboardingQuestionnaire
+          userId={user.id}
+          onComplete={handleOnboardingComplete}
+          showDiagnosticScreen={true}
+        />
+      );
+    }
+
+    // Otherwise show full onboarding (backwards compatibility)
+    console.log('📝 Showing post-auth onboarding (database says not complete)');
     return (
       <OnboardingQuestionnaire
         userId={user.id}

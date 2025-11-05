@@ -176,19 +176,45 @@ export const AuthProvider = ({ children }) => {
     try {
       logger.info('AuthContext', 'signOut', { userId: user?.id });
 
+      // Attempt to sign out from Supabase
       const { error } = await supabase.auth.signOut();
 
       if (error) {
-        errorTracker.trackError('AuthContext', 'signOut', { userId: user?.id }, error);
-        throw error;
+        // Log the error but don't throw - we still want to clear local state
+        logger.warn('AuthContext', 'signOut', {
+          userId: user?.id,
+          error: error.message,
+          note: 'Supabase signOut failed, but clearing local state anyway'
+        });
       }
+
+      // Clear local state regardless of Supabase API result
+      setUser(null);
+      setSession(null);
+
+      // Clear session flags so user sees landing page on next visit
+      sessionStorage.removeItem('hasStarted');
+      sessionStorage.removeItem('wasAuthenticated');
 
       logger.info('AuthContext', 'signOut', { success: true });
 
       return { error: null };
     } catch (error) {
-      errorTracker.trackError('AuthContext', 'signOut', { userId: user?.id }, error);
-      return { error };
+      // Even if there's an error, clear local state
+      setUser(null);
+      setSession(null);
+
+      // Clear session flags
+      sessionStorage.removeItem('hasStarted');
+      sessionStorage.removeItem('wasAuthenticated');
+
+      logger.warn('AuthContext', 'signOut', {
+        userId: user?.id,
+        error: error.message,
+        note: 'Error during signOut, but local state cleared'
+      });
+
+      return { error: null }; // Return success since local state is cleared
     }
   };
 

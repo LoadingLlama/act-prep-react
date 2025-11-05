@@ -63,6 +63,7 @@ const Login = ({ onSwitchToSignup }) => {
 
   return (
     <div style={loginStyles.container}>
+      <div style={loginStyles.logo}>Nomi Academy</div>
       <div style={loginStyles.card}>
         <h2 style={loginStyles.title}>Welcome Back</h2>
         <p style={loginStyles.subtitle}>Sign in to continue your ACT prep journey</p>

@@ -5,7 +5,7 @@
  * Styles and data are separated into their own files
  */
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Import components
 import Header from './components/landing/Header';
@@ -13,7 +13,6 @@ import HeroSection from './components/landing/HeroSection';
 import FeaturesSection from './components/landing/FeaturesSection';
 import StatsSection from './components/landing/StatsSection';
 import CTASection from './components/landing/CTASection';
-import SignupModal from './components/landing/SignupModal';
 
 // Import data
 import { recentSignups } from './data/landingPageData';
@@ -21,10 +20,8 @@ import { recentSignups } from './data/landingPageData';
 // Import styles
 import { pageStyles } from './styles/landing/page.styles';
 
-const CompleteLandingPageRefactored = () => {
+const CompleteLandingPageRefactored = ({ onGetStarted, onSignIn }) => {
   // State management
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [currentDynamicText, setCurrentDynamicText] = useState(0);
   const [signupCount, setSignupCount] = useState(7567);
   const [currentSignupIndex, setCurrentSignupIndex] = useState(0);
@@ -67,9 +64,6 @@ const CompleteLandingPageRefactored = () => {
   }, []);
 
   // Handler functions
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
-
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     const target = document.querySelector(targetId);
@@ -78,35 +72,21 @@ const CompleteLandingPageRefactored = () => {
     }
   };
 
-  const handleFormSubmit = (formData) => {
-    // TODO: Send to Supabase instead of console.log
-    console.log('Form submitted:', formData);
-    setIsModalOpen(false);
-    setShowSuccessMessage(true);
-
-    // Hide success message after 3 seconds
-    setTimeout(() => {
-      setShowSuccessMessage(false);
-    }, 3000);
-  };
-
   return (
     <div style={pageStyles.root}>
       {/* Navigation Header */}
       <Header
-        openModal={openModal}
+        onGetStarted={onGetStarted}
+        onSignIn={onSignIn}
         handleNavClick={handleNavClick}
       />
 
       {/* Hero Section */}
       <HeroSection
         currentDynamicText={currentDynamicText}
-        openModal={openModal}
+        onGetStarted={onGetStarted}
         signupCount={signupCount}
       />
-
-      {/* Other sections would go here - TimelineSection, LearningProgressSection, DemoSection */}
-      {/* For now, showing the main sections */}
 
       {/* Features Section */}
       <FeaturesSection />
@@ -115,23 +95,7 @@ const CompleteLandingPageRefactored = () => {
       <StatsSection />
 
       {/* Call to Action Section */}
-      <CTASection openModal={openModal} />
-
-      {/* Signup Modal */}
-      <SignupModal
-        isOpen={isModalOpen}
-        closeModal={closeModal}
-        onSubmit={handleFormSubmit}
-      />
-
-      {/* Success Message */}
-      {showSuccessMessage && (
-        <div style={pageStyles.successMessage}>
-          <div style={pageStyles.successContent}>
-            ✓ Successfully joined the waitlist! Check your email for next steps.
-          </div>
-        </div>
-      )}
+      <CTASection onGetStarted={onGetStarted} />
 
       {/* Social Proof Notification */}
       <div style={pageStyles.socialProof}>
@@ -141,7 +105,7 @@ const CompleteLandingPageRefactored = () => {
       {/* Footer */}
       <footer style={pageStyles.footer}>
         <div style={pageStyles.footerContent}>
-          <p>&copy; 2024 Launch Prep. All rights reserved.</p>
+          <p>&copy; 2024 Nomi Academy. All rights reserved.</p>
           <div style={pageStyles.footerLinks}>
             <a href="/privacy" style={pageStyles.footerLink}>Privacy Policy</a>
             <a href="/terms" style={pageStyles.footerLink}>Terms of Service</a>

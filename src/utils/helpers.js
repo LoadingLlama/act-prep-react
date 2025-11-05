@@ -129,6 +129,59 @@ export const lessonUtils = {
   },
 };
 
+// Onboarding utilities
+export const onboardingUtils = {
+  // Key for localStorage
+  STORAGE_KEY: 'onboardingAnswers',
+
+  // Save onboarding answers to localStorage
+  saveAnswers: (answers) => {
+    try {
+      storage.set(onboardingUtils.STORAGE_KEY, answers);
+      logger.debug('OnboardingUtils', 'saveAnswers', { questionCount: Object.keys(answers).length });
+      return true;
+    } catch (error) {
+      errorTracker.trackError('OnboardingUtils', 'saveAnswers', {}, error);
+      return false;
+    }
+  },
+
+  // Get onboarding answers from localStorage
+  getAnswers: () => {
+    try {
+      const answers = storage.get(onboardingUtils.STORAGE_KEY, null);
+      logger.debug('OnboardingUtils', 'getAnswers', { found: !!answers });
+      return answers;
+    } catch (error) {
+      errorTracker.trackError('OnboardingUtils', 'getAnswers', {}, error);
+      return null;
+    }
+  },
+
+  // Clear onboarding answers from localStorage
+  clearAnswers: () => {
+    try {
+      storage.remove(onboardingUtils.STORAGE_KEY);
+      logger.debug('OnboardingUtils', 'clearAnswers', {});
+      return true;
+    } catch (error) {
+      errorTracker.trackError('OnboardingUtils', 'clearAnswers', {}, error);
+      return false;
+    }
+  },
+
+  // Check if user has completed onboarding in localStorage
+  hasCompleted: () => {
+    try {
+      const answers = onboardingUtils.getAnswers();
+      return answers && Object.keys(answers).length > 0;
+    } catch (error) {
+      errorTracker.trackError('OnboardingUtils', 'hasCompleted', {}, error);
+      return false;
+    }
+  }
+};
+
 // Script loader utilities
 export const scriptLoader = {
   load: (src) => {

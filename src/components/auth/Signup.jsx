@@ -102,6 +102,7 @@ const Signup = ({ onSwitchToLogin }) => {
   if (success) {
     return (
       <div style={loginStyles.container}>
+        <div style={loginStyles.logo}>Nomi Academy</div>
         <div style={loginStyles.card}>
           <div style={loginStyles.successMessage}>
             <h2 style={loginStyles.title}>Account Created!</h2>
@@ -116,6 +117,7 @@ const Signup = ({ onSwitchToLogin }) => {
 
   return (
     <div style={loginStyles.container}>
+      <div style={loginStyles.logo}>Nomi Academy</div>
       <div style={loginStyles.card}>
         <h2 style={loginStyles.title}>Create Account</h2>
         <p style={loginStyles.subtitle}>Start your ACT prep journey today</p>
