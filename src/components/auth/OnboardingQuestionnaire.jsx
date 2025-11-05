@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useOnboardingStyles } from '../../styles/auth/onboarding.styles';
+import { onboardingUtils } from '../../utils/helpers';
 
 const OnboardingQuestionnaire = ({ userId, onComplete = () => {}, showDiagnosticScreen = false }) => {
   const classes = useOnboardingStyles();
