@@ -221,9 +221,9 @@ const CourseContent = () => {
             <p className={classes.pageSubtitle}>Your personalized ACT prep journey</p>
           </div>
           <div className={classes.testCountdown}>
-            <div style={{ fontSize: '0.7rem', fontWeight: '600', opacity: 0.8, marginBottom: '0.25rem' }}>TEST DATE</div>
+            <div style={{ fontSize: '0.7rem', fontWeight: '600', color: '#64748b', marginBottom: '0.25rem' }}>TEST DATE</div>
             <div style={{ fontSize: '0.95rem', fontWeight: '700' }}>{testDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div>
-            <div style={{ fontSize: '0.75rem', marginTop: '0.25rem' }}>{daysUntilTest} days left</div>
+            <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '0.25rem' }}>{daysUntilTest} days left</div>
           </div>
         </div>
       </div>
