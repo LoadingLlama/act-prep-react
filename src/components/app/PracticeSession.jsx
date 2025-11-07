@@ -18,6 +18,33 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
   const [isComplete, setIsComplete] = useState(false);
   const [currentStars, setCurrentStars] = useState(0);
   const [newStars, setNewStars] = useState(0);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(() => {
+    const saved = localStorage.getItem('sidebarCollapsed');
+    return saved === 'true';
+  });
+
+  // Listen for sidebar collapse changes
+  useEffect(() => {
+    const handleStorageChange = () => {
+      const saved = localStorage.getItem('sidebarCollapsed');
+      setSidebarCollapsed(saved === 'true');
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+
+    // Also check on body class changes (for same-tab updates)
+    const observer = new MutationObserver(() => {
+      const saved = localStorage.getItem('sidebarCollapsed');
+      setSidebarCollapsed(saved === 'true');
+    });
+
+    observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      observer.disconnect();
+    };
+  }, []);
 
   useEffect(() => {
     // Load current mastery level
@@ -217,13 +244,14 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
         <div style={{
           fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
           padding: '0',
-          marginLeft: '320px',
+          marginLeft: sidebarCollapsed ? '64px' : '320px',
           minHeight: '100vh',
           background: '#ffffff',
-          maxWidth: 'calc(100% - 320px)',
+          maxWidth: sidebarCollapsed ? 'calc(100% - 64px)' : 'calc(100% - 320px)',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          transition: 'margin-left 0.3s ease, max-width 0.3s ease'
         }}>
           <div style={{ textAlign: 'center', padding: '3rem' }}>
             <div style={{ fontSize: '0.95rem', color: '#64748b' }}>Loading practice questions...</div>
@@ -266,10 +294,11 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
         <div style={{
           fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
           padding: '0',
-          marginLeft: '320px',
+          marginLeft: sidebarCollapsed ? '64px' : '320px',
           minHeight: '100vh',
           background: '#ffffff',
-          maxWidth: 'calc(100% - 320px)'
+          maxWidth: sidebarCollapsed ? 'calc(100% - 64px)' : 'calc(100% - 320px)',
+          transition: 'margin-left 0.3s ease, max-width 0.3s ease'
         }}>
         <div style={{
           padding: '4rem 3rem',
@@ -539,10 +568,11 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
       <div style={{
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
         padding: '0',
-        marginLeft: '320px',
+        marginLeft: sidebarCollapsed ? '64px' : '320px',
         minHeight: '100vh',
         background: '#ffffff',
-        maxWidth: 'calc(100% - 320px)'
+        maxWidth: sidebarCollapsed ? 'calc(100% - 64px)' : 'calc(100% - 320px)',
+        transition: 'margin-left 0.3s ease, max-width 0.3s ease'
       }}>
         {/* Minimal Header */}
         <div style={{

@@ -13,16 +13,11 @@ import { supabase } from './supabase.service';
  */
 export const getCommentsByLesson = async (lessonId, sortBy = 'top') => {
   try {
-    // Fetch comments with user profile data
+    // Fetch comments with votes data
     let query = supabase
       .from('lesson_comments')
       .select(`
         *,
-        user:user_id (
-          id,
-          email,
-          user_metadata
-        ),
         votes:comment_votes (
           vote_type,
           user_id
@@ -45,8 +40,9 @@ export const getCommentsByLesson = async (lessonId, sortBy = 'top') => {
 
     // Calculate vote scores and apply sorting
     const commentsWithScores = data.map(comment => {
-      const upvotes = comment.votes.filter(v => v.vote_type === 1).length;
-      const downvotes = comment.votes.filter(v => v.vote_type === -1).length;
+      const votes = comment.votes || [];
+      const upvotes = votes.filter(v => v.vote_type === 1).length;
+      const downvotes = votes.filter(v => v.vote_type === -1).length;
       const score = upvotes - downvotes;
 
       // Trending calculation: score / hours_since_posted
@@ -130,17 +126,12 @@ export const createComment = async (commentData) => {
           lesson_id: commentData.lessonId,
           user_id: user.id,
           parent_comment_id: commentData.parentCommentId || null,
-          content: commentData.content
+          content: commentData.content,
+          user_email: user.email,
+          user_name: user.user_metadata?.full_name || user.email?.split('@')[0] || 'Anonymous'
         }
       ])
-      .select(`
-        *,
-        user:user_id (
-          id,
-          email,
-          user_metadata
-        )
-      `)
+      .select()
       .single();
 
     if (error) throw error;

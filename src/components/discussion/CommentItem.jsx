@@ -4,7 +4,12 @@
  */
 
 import React, { useState } from 'react';
-import { HiArrowUp, HiArrowDown } from 'react-icons/hi2';
+import {
+  HiOutlineChatBubbleLeftRight,
+  HiOutlinePencilSquare,
+  HiOutlineTrash
+} from 'react-icons/hi2';
+import { TbArrowBigUp, TbArrowBigDown } from 'react-icons/tb';
 import { useDiscussionStyles } from '../../styles/components/discussion.styles';
 import CommentForm from './CommentForm';
 
@@ -39,13 +44,13 @@ const CommentItem = ({
 
   // Get user initials for avatar
   const getUserInitials = () => {
-    const name = comment.user?.user_metadata?.full_name || comment.user?.email || 'U';
+    const name = comment.user_name || comment.user_email || 'U';
     return name.charAt(0).toUpperCase();
   };
 
   // Get user display name
   const getUserName = () => {
-    return comment.user?.user_metadata?.full_name || comment.user?.email?.split('@')[0] || 'Anonymous';
+    return comment.user_name || comment.user_email?.split('@')[0] || 'Anonymous';
   };
 
   // Handle vote
@@ -72,32 +77,6 @@ const CommentItem = ({
   return (
     <>
       <div className={`${classes.commentItem} ${depth > 0 ? 'reply' : ''}`}>
-        {/* Vote Column */}
-        <div className={classes.voteColumn}>
-          <button
-            className={`${classes.voteButton} upvote ${userVote === 1 ? 'active' : ''}`}
-            onClick={() => handleVote(1)}
-            disabled={!currentUser}
-          >
-            <HiArrowUp size={18} />
-          </button>
-          <div
-            className={`${classes.voteCount} ${
-              comment.score > 0 ? 'positive' : comment.score < 0 ? 'negative' : ''
-            }`}
-          >
-            {comment.score}
-          </div>
-          <button
-            className={`${classes.voteButton} downvote ${userVote === -1 ? 'active' : ''}`}
-            onClick={() => handleVote(-1)}
-            disabled={!currentUser}
-          >
-            <HiArrowDown size={18} />
-          </button>
-        </div>
-
-        {/* Comment Content */}
         <div className={classes.commentContent}>
           <div className={classes.commentHeader}>
             <div className={classes.userAvatar}>{getUserInitials()}</div>
@@ -125,21 +104,45 @@ const CommentItem = ({
             <>
               <div className={classes.commentText}>{comment.content}</div>
               <div className={classes.commentActions}>
+                {/* Vote Buttons */}
+                {currentUser && (
+                  <div className={classes.voteGroup}>
+                    <button
+                      className={`${classes.actionButton} ${classes.voteButton} ${userVote === 1 ? 'active' : ''}`}
+                      onClick={() => handleVote(1)}
+                    >
+                      <TbArrowBigUp size={20} />
+                    </button>
+                    <span className={classes.voteScore}>{comment.score || 0}</span>
+                    <button
+                      className={`${classes.actionButton} ${classes.voteButton} ${userVote === -1 ? 'active' : ''}`}
+                      onClick={() => handleVote(-1)}
+                    >
+                      <TbArrowBigDown size={20} />
+                    </button>
+                  </div>
+                )}
+
+                {/* Reply Button */}
                 {currentUser && (
                   <button
                     className={classes.actionButton}
                     onClick={() => setShowReplyForm(!showReplyForm)}
                   >
-                    Reply
+                    <HiOutlineChatBubbleLeftRight size={14} />
+                    <span>Reply</span>
                   </button>
                 )}
+
+                {/* Edit/Delete Buttons */}
                 {isOwner && (
                   <>
                     <button
                       className={classes.actionButton}
                       onClick={() => setIsEditing(true)}
                     >
-                      Edit
+                      <HiOutlinePencilSquare size={14} />
+                      <span>Edit</span>
                     </button>
                     <button
                       className={classes.actionButton}
@@ -149,7 +152,8 @@ const CommentItem = ({
                         }
                       }}
                     >
-                      Delete
+                      <HiOutlineTrash size={14} />
+                      <span>Delete</span>
                     </button>
                   </>
                 )}

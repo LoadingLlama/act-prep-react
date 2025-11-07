@@ -57,6 +57,16 @@ const DiscussionSection = ({ lessonId }) => {
       setComments(prevComments => [newComment, ...prevComments]);
     } catch (err) {
       console.error('Error creating comment:', err);
+
+      // Check if it's a table not found error
+      if (err.message?.includes('relation') && err.message?.includes('does not exist')) {
+        alert('Discussion feature not set up yet. Please contact the administrator to run the database migration.');
+      } else if (err.message?.includes('authenticated')) {
+        alert('You must be signed in to comment.');
+      } else {
+        alert(`Failed to post comment: ${err.message || 'Please try again.'}`);
+      }
+
       throw err;
     }
   };
@@ -149,7 +159,7 @@ const DiscussionSection = ({ lessonId }) => {
       setComments(prevComments => removeComment(prevComments));
     } catch (err) {
       console.error('Error deleting comment:', err);
-      alert('Failed to delete comment');
+      alert(`Failed to delete comment: ${err.message || 'Please try again.'}`);
     }
   };
 

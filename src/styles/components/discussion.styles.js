@@ -55,8 +55,6 @@ export const useDiscussionStyles = createUseStyles({
     gap: '0'
   },
   commentItem: {
-    display: 'flex',
-    gap: '0.75rem',
     padding: '1rem 0',
     borderBottom: '1px solid #f1f5f9',
     '&.reply': {
@@ -65,51 +63,28 @@ export const useDiscussionStyles = createUseStyles({
       borderLeft: '2px solid #f1f5f9'
     }
   },
-  voteColumn: {
+  voteGroup: {
     display: 'flex',
-    flexDirection: 'column',
     alignItems: 'center',
-    gap: '0.25rem',
-    minWidth: '40px'
+    gap: '0.25rem'
   },
   voteButton: {
-    background: 'transparent',
-    border: 'none',
-    padding: '0.25rem',
-    cursor: 'pointer',
-    color: '#94a3b8',
-    transition: 'all 0.2s ease',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
+    padding: '0.15rem',
     '&:hover': {
-      transform: 'scale(1.1)'
+      color: '#1a1a1a'
     },
-    '&.upvote:hover': {
-      color: '#10b981'
-    },
-    '&.downvote:hover': {
-      color: '#ef4444'
-    },
-    '&.upvote.active': {
-      color: '#10b981',
-      fontWeight: 'bold'
-    },
-    '&.downvote.active': {
-      color: '#ef4444',
-      fontWeight: 'bold'
+    '&.active': {
+      color: '#08245b !important'
     }
   },
-  voteCount: {
-    fontSize: '0.8rem',
+  voteScore: {
+    fontSize: '0.85rem',
     fontWeight: '600',
     color: '#64748b',
-    '&.positive': {
-      color: '#10b981'
-    },
-    '&.negative': {
-      color: '#ef4444'
-    }
+    minWidth: '20px',
+    textAlign: 'center'
   },
   commentContent: {
     flex: 1,
@@ -156,7 +131,8 @@ export const useDiscussionStyles = createUseStyles({
   commentActions: {
     display: 'flex',
     gap: '1rem',
-    marginTop: '0.5rem'
+    marginTop: '0.5rem',
+    alignItems: 'center'
   },
   actionButton: {
     background: 'transparent',
@@ -167,6 +143,9 @@ export const useDiscussionStyles = createUseStyles({
     color: '#64748b',
     cursor: 'pointer',
     transition: 'color 0.2s ease',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.35rem',
     '&:hover': {
       color: '#08245b'
     }
