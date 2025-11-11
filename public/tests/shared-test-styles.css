@@ -782,12 +782,54 @@ body {
 }
 
 .passage-text p {
-    margin-bottom: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.75rem;
     text-indent: 0;
+}
+
+.passage-text p:first-child {
+    margin-top: 0;
 }
 
 .passage-text p:last-child {
     margin-bottom: 0;
+}
+
+/* Extra spacing for experiment headers and sections in science passages */
+.passage-text p strong {
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+/* If a paragraph starts with bold text (experiment headers), add extra top margin */
+.passage-text p:has(strong:first-child) {
+    margin-top: 2rem;
+}
+
+/* Also handle double-italic experiment headers like <i><i>Experiment 1</i></i> */
+.passage-text p:has(> i:first-child > i:first-child) {
+    margin-top: 2rem;
+}
+
+/* Images in science passages (figures and tables) */
+.passage-image {
+    display: block;
+    width: 90%;
+    max-width: 800px;
+    min-width: 400px;
+    height: auto;
+    margin: 1.5rem auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Make images responsive on smaller screens */
+@media (max-width: 768px) {
+    .passage-image {
+        min-width: 100%;
+        width: 100%;
+    }
 }
 
 /* Underlined portions in English passages */

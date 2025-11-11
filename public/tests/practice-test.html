@@ -273,7 +273,17 @@
 
                 let passageHTML = '';
                 let passageNum = 1;
-                Object.entries(passageGroups).forEach(([passageKey, questionNums]) => {
+
+                // Sort passages by passage_number to maintain correct order
+                const sortedPassages = Object.entries(passageGroups).sort((a, b) => {
+                    const firstQuestionA = questions[a[1][0] - 1];
+                    const firstQuestionB = questions[b[1][0] - 1];
+                    const passageNumA = firstQuestionA.passage_number || Math.min(...a[1]);
+                    const passageNumB = firstQuestionB.passage_number || Math.min(...b[1]);
+                    return passageNumA - passageNumB;
+                });
+
+                sortedPassages.forEach(([passageKey, questionNums]) => {
                     // Get the first question in this passage group to access passage data
                     const firstQuestionIndex = questionNums[0] - 1;
                     const firstQuestion = questions[firstQuestionIndex];
@@ -316,16 +326,17 @@
                 }
             }
 
-            // Helper function to replace image placeholders with actual URLs
+            // Helper function to replace image placeholders with actual image tags
             function replaceImagePlaceholders(text, imageUrls) {
                 if (!text || !imageUrls) return text;
 
-                // Replace {{key}} placeholders with actual URLs from imageUrls object
+                // Replace {{key}} placeholders with actual <img> tags
                 let result = text;
                 Object.keys(imageUrls).forEach(key => {
                     const placeholder = `{{${key}}}`;
                     const url = imageUrls[key];
-                    result = result.replace(new RegExp(placeholder, 'g'), url);
+                    const imgTag = `<img src="${url}" alt="Figure or Table" class="passage-image" />`;
+                    result = result.replace(new RegExp(placeholder, 'g'), imgTag);
                 });
 
                 return result;
@@ -632,8 +643,11 @@
         }
 
         function confirmEndSection() {
+            console.log('🔴 confirmEndSection called');
             const unanswered = totalQuestions - Object.keys(answers).length;
             const warning = document.getElementById('unansweredWarning');
+
+            console.log('📊 Stats:', { totalQuestions, answeredCount: Object.keys(answers).length, unanswered });
 
             if (unanswered > 0) {
                 warning.textContent = `You have ${unanswered} unanswered question${unanswered > 1 ? 's' : ''}.`;
@@ -641,7 +655,10 @@
                 warning.textContent = '';
             }
 
-            document.getElementById('confirmModal').style.display = 'block';
+            const modal = document.getElementById('confirmModal');
+            console.log('📦 Modal element:', modal);
+            modal.style.display = 'block';
+            console.log('✅ Modal should now be visible');
         }
 
         function closeConfirmModal() {
@@ -649,6 +666,7 @@
         }
 
         function endSection() {
+            console.log('🟢 endSection called');
             closeConfirmModal();
 
             // Calculate score for current section
@@ -662,6 +680,8 @@
             });
 
             const percentage = Math.round((correct / totalQuestions) * 100);
+
+            console.log('📈 Score calculated:', { correct, total: totalQuestions, percentage });
 
             // Store current section results
             const currentResults = {
@@ -691,7 +711,9 @@
 
             console.log('🎯 Section ended:', {
                 section,
+                sectionType: typeof section,
                 currentIndex,
+                sectionOrder,
                 nextAvailable: currentIndex < sectionOrder.length - 1
             });
 
@@ -700,11 +722,14 @@
                 // Load next section
                 const nextSection = sectionOrder[currentIndex + 1];
                 console.log('📤 Sending NEXT_SECTION message:', nextSection);
-                window.parent.postMessage({
+                const message = {
                     type: 'PRACTICE_TEST_NEXT_SECTION',
                     nextSection: nextSection,
                     currentResults: currentResults
-                }, '*');
+                };
+                console.log('📦 Full message object:', message);
+                window.parent.postMessage(message, '*');
+                console.log('✅ Message posted to parent');
             } else {
                 // Test complete - all 4 sections done
                 console.log('📤 Sending COMPLETE message - All sections finished');
@@ -715,6 +740,7 @@
                 }));
 
                 window.parent.postMessage({ type: 'PRACTICE_TEST_COMPLETE' }, '*');
+                console.log('✅ Complete message posted to parent');
             }
         }
 

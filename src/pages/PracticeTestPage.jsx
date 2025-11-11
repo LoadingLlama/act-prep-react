@@ -3,7 +3,7 @@
  * Displays a full practice test using the diagnostic test HTML interface
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { usePracticeTestStyles } from '../styles/pages/practice-test.styles';
 import PracticeTestsService from '../services/api/practiceTests.service';
 import logger from '../services/logging/logger';
@@ -48,14 +48,18 @@ const PracticeTestPage = ({ testId, onClose }) => {
     }
   };
 
-  useEffect(() => {
-    loadTestStructure();
-  }, [testNumber]);
+  /**
+   * Handle back to section selection
+   */
+  const handleBackToSelection = useCallback(() => {
+    setSelectedSection(null);
+    setQuestions([]);
+  }, []);
 
   /**
    * Load questions for a specific section
    */
-  const loadSectionQuestions = async (section) => {
+  const loadSectionQuestions = useCallback(async (section) => {
     try {
       setLoading(true);
       setError(null);
@@ -93,7 +97,11 @@ const PracticeTestPage = ({ testId, onClose }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [testNumber]);
+
+  useEffect(() => {
+    loadTestStructure();
+  }, [testNumber]);
 
   // Listen for test completion message from iframe
   useEffect(() => {
@@ -114,7 +122,7 @@ const PracticeTestPage = ({ testId, onClose }) => {
 
     window.addEventListener('message', handleMessage);
     return () => window.removeEventListener('message', handleMessage);
-  }, [loadSectionQuestions]);
+  }, [loadSectionQuestions, handleBackToSelection]);
 
   /**
    * Load the test structure (question counts by section)
@@ -176,14 +184,6 @@ const PracticeTestPage = ({ testId, onClose }) => {
     } finally {
       setLoading(false);
     }
-  };
-
-  /**
-   * Handle back to section selection
-   */
-  const handleBackToSelection = () => {
-    setSelectedSection(null);
-    setQuestions([]);
   };
 
   /**

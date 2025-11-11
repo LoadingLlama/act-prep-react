@@ -105,6 +105,7 @@ const PracticeTestsService = {
             question.passage = passage.passage_text;
             question.passage_type = passage.passage_type;
             question.passage_title = passage.passage_title;
+            question.passage_number = passage.passage_number; // Add passage_number for correct ordering
 
             // Collect all image URLs from image_url_1, image_url_2, etc.
             const imageUrls = {};
@@ -127,9 +128,10 @@ const PracticeTestsService = {
 
         // Convert choices array to answers object for InteractiveQuestion
         // ["A. Text", "B. Text"] => {A: "Text", B: "Text"}
+        // Also supports F-K for math questions: ["F. Text", "G. Text", "H. Text", "J. Text", "K. Text"]
         const answers = {};
         parsedChoices.forEach(choice => {
-          const match = choice.match(/^([A-E])\.\s*(.+)$/);
+          const match = choice.match(/^([A-K])\.\s*(.+)$/);
           if (match) {
             answers[match[1]] = match[2];
           }
