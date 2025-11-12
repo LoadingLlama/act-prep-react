@@ -3,102 +3,130 @@
  * Shows recommended learning path with stats, lessons, and tests in order
  */
 
-import React from 'react';
-import { useOutletContext } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useOutletContext, useNavigate } from 'react-router-dom';
+import { HiBookOpen, HiDocumentText, HiPencilSquare, HiAcademicCap, HiUserCircle, HiSparkles } from 'react-icons/hi2';
 import { useCourseStyles } from '../../styles/app/course.styles';
-import {
-  HiCheckCircle,
-  HiClock,
-  HiBookOpen,
-  HiPencilSquare,
-  HiCalculator,
-  HiBeaker,
-  HiClipboardDocumentCheck,
-  HiAcademicCap,
-  HiChartBar
-} from 'react-icons/hi2';
+import { supabase } from '../../services/api/supabase.service';
+import { useAuth } from '../../contexts/AuthContext';
+import soundEffects from '../../services/soundEffects';
 
 const CourseContent = () => {
   const classes = useCourseStyles();
+  const { user } = useAuth();
+  const navigate = useNavigate();
   const {
     lessonProgress = {},
     lessonStructure = [],
     onLessonOpen,
-    onTestOpen
+    onTestOpen,
+    setDiagnosticTestOpen
   } = useOutletContext();
+
+  // State for user goals and edit modal
+  const [userGoals, setUserGoals] = useState(null);
+  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [diagnosticCompleted, setDiagnosticCompleted] = useState(false);
+  const [loadingDiagnostic, setLoadingDiagnostic] = useState(true);
+  const [editForm, setEditForm] = useState({
+    target_exam_date: '',
+    target_score: 28,
+    daily_study_minutes: 30,
+    current_score: null
+  });
+
+  // Load user goals and check diagnostic completion on mount
+  useEffect(() => {
+    if (user) {
+      loadUserGoals();
+      checkDiagnosticCompletion();
+    }
+  }, [user]);
+
+  const checkDiagnosticCompletion = async () => {
+    try {
+      const { data: results } = await supabase
+        .from('diagnostic_results')
+        .select('id')
+        .eq('user_id', user.id)
+        .maybeSingle();
+
+      setDiagnosticCompleted(!!results);
+    } catch (error) {
+      console.error('Error checking diagnostic completion:', error);
+      setDiagnosticCompleted(false);
+    } finally {
+      setLoadingDiagnostic(false);
+    }
+  };
+
+  const loadUserGoals = async () => {
+    try {
+      const { data: goals } = await supabase
+        .from('user_goals')
+        .select('*')
+        .eq('user_id', user.id)
+        .maybeSingle();
+
+      if (goals) {
+        setUserGoals(goals);
+        setEditForm({
+          target_exam_date: goals.target_exam_date || '',
+          target_score: goals.target_score || 28,
+          daily_study_minutes: goals.daily_study_minutes || 30,
+          current_score: goals.current_score || null
+        });
+      }
+    } catch (error) {
+      console.error('Error loading user goals:', error);
+    }
+  };
+
+  const saveUserGoals = async () => {
+    try {
+      const { error } = await supabase
+        .from('user_goals')
+        .upsert({
+          user_id: user.id,
+          target_exam_date: editForm.target_exam_date || null,
+          target_score: editForm.target_score,
+          daily_study_minutes: editForm.daily_study_minutes,
+          current_score: editForm.current_score,
+          updated_at: new Date().toISOString()
+        });
+
+      if (!error) {
+        await loadUserGoals();
+        setEditModalOpen(false);
+      }
+    } catch (error) {
+      console.error('Error saving user goals:', error);
+    }
+  };
 
   // Calculate statistics
   const totalLessons = lessonStructure.length;
   const completedLessons = Object.values(lessonProgress).filter(s => s === 'completed').length;
   const inProgressLessons = Object.values(lessonProgress).filter(s => s === 'in-progress').length;
 
-  // Calculate section strengths (example data - would come from test results in real app)
+  // Calculate section strengths from diagnostic results or use defaults
   const sectionStrengths = {
-    'English': 75,
-    'Math': 62,
-    'Reading': 88,
-    'Science': 70
+    'English': userGoals?.section_scores?.english || 75,
+    'Math': userGoals?.section_scores?.math || 62,
+    'Reading': userGoals?.section_scores?.reading || 88,
+    'Science': userGoals?.section_scores?.science || 70
   };
 
-  // Calculate test date (example: 60 days from now)
-  const testDate = new Date();
-  testDate.setDate(testDate.getDate() + 60);
-  const daysUntilTest = 60;
+  // Use user's target exam date or default to 60 days
+  const testDate = userGoals?.target_exam_date
+    ? new Date(userGoals.target_exam_date)
+    : new Date(Date.now() + 60 * 24 * 60 * 60 * 1000);
+
+  const daysUntilTest = Math.max(0, Math.ceil((testDate - new Date()) / (1000 * 60 * 60 * 24)));
 
   // Helper to format date
   const formatDate = (date) => {
     return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-  };
-
-  // Helper to calculate days until due
-  const getDaysUntil = (dueDate) => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const due = new Date(dueDate);
-    due.setHours(0, 0, 0, 0);
-    const diffTime = due - today;
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return diffDays;
-  };
-
-  // Skill icon mapping - returns React Icon component
-  const getSkillIcon = (skill, size = 16) => {
-    const iconMap = {
-      'Strategy': <HiAcademicCap size={size} />,
-      'All Sections': <HiClipboardDocumentCheck size={size} />,
-      'Grammar': <HiPencilSquare size={size} />,
-      'Punctuation': <HiPencilSquare size={size} />,
-      'Problem Solving': <HiCalculator size={size} />,
-      'Algebra': <HiCalculator size={size} />,
-      'Numbers': <HiCalculator size={size} />,
-      'Geometry': <HiCalculator size={size} />,
-      'Reading': <HiBookOpen size={size} />,
-      'Comprehension': <HiBookOpen size={size} />,
-      'Science': <HiBeaker size={size} />,
-      'Data Analysis': <HiChartBar size={size} />,
-      'Interpretation': <HiBeaker size={size} />
-    };
-    return iconMap[skill] || <HiBookOpen size={size} />;
-  };
-
-  // Get skill category for color coding
-  const getSkillCategory = (skill) => {
-    const categoryMap = {
-      'Strategy': 'strategy',
-      'All Sections': 'test',
-      'Grammar': 'grammar',
-      'Punctuation': 'punctuation',
-      'Problem Solving': 'problem-solving',
-      'Algebra': 'algebra',
-      'Numbers': 'numbers',
-      'Geometry': 'geometry',
-      'Reading': 'reading',
-      'Comprehension': 'comprehension',
-      'Science': 'science',
-      'Data Analysis': 'data-analysis',
-      'Interpretation': 'interpretation'
-    };
-    return categoryMap[skill] || 'strategy';
   };
 
   const getLessonStatus = (itemId) => {
@@ -180,20 +208,8 @@ const CourseContent = () => {
     }
   ];
 
-  // Find next upcoming assignment (not completed)
-  let nextAssignment = null;
-  for (const week of learningPath) {
-    for (const item of week.items) {
-      const status = getLessonStatus(item.id);
-      if (status !== 'completed') {
-        nextAssignment = item;
-        break;
-      }
-    }
-    if (nextAssignment) break;
-  }
-
   const handleItemClick = (item) => {
+    soundEffects.playClick();
     if (item.type === 'lesson') {
       onLessonOpen(item.id, 'review');
     } else if (item.type === 'test') {
@@ -206,163 +222,551 @@ const CourseContent = () => {
     }
   };
 
-  const getStrengthColor = (percentage) => {
-    if (percentage >= 80) return '#10b981';
-    if (percentage >= 60) return '#3b82f6';
-    return '#f59e0b';
+  const getItemIcon = (type) => {
+    if (type === 'test') {
+      return (
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+      );
+    }
+    return (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+      </svg>
+    );
   };
 
-  return (
-    <div className={classes.courseContainer}>
-      <div className={classes.pageHeader}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
-          <div>
-            <h1 className={classes.pageTitle}>Learning Path</h1>
-            <p className={classes.pageSubtitle}>Your personalized ACT prep journey</p>
-          </div>
-          <div className={classes.testCountdown}>
-            <div style={{ fontSize: '0.7rem', fontWeight: '600', color: '#64748b', marginBottom: '0.25rem' }}>TEST DATE</div>
-            <div style={{ fontSize: '0.95rem', fontWeight: '700' }}>{testDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div>
-            <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '0.25rem' }}>{daysUntilTest} days left</div>
-          </div>
+  // Loading state
+  if (loadingDiagnostic) {
+    return (
+      <div className={classes.container}>
+        <div className={classes.header}>
+          <h1 className={classes.title}>Learning Path</h1>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px', color: '#6b7280' }}>
+          Loading...
         </div>
       </div>
+    );
+  }
 
-      {/* Next Assignment Banner */}
-      {nextAssignment && (
-        <div className={classes.nextAssignmentBanner}>
-          <div className={classes.nextAssignmentContent}>
-            <div className={classes.nextAssignmentLabel}>Next Assignment</div>
-            <div className={classes.nextAssignmentTitle}>{nextAssignment.title}</div>
-            <div className={classes.nextAssignmentDue}>
-              Due {formatDate(nextAssignment.dueDate)} • {getDaysUntil(nextAssignment.dueDate)} days remaining • {nextAssignment.duration}
+  // Locked state - diagnostic not completed (show blurred content)
+  const renderLockedContent = () => {
+    return (
+      <div className={classes.container} style={{ position: 'relative' }}>
+        <div className={classes.header}>
+          <h1 className={classes.title}>Learning Path</h1>
+        </div>
+
+        {/* Blurred background content */}
+        <div style={{
+          filter: 'blur(8px)',
+          pointerEvents: 'none',
+          userSelect: 'none',
+          opacity: 0.4
+        }}>
+          <div className={classes.content}>
+            {/* Top Stats Grid */}
+            <div className={classes.statsGrid}>
+              <div className={classes.statCard}>
+                <div className={classes.statLabel}>Test Date</div>
+                <div className={classes.statValue}>Dec 15</div>
+                <div className={classes.statDetail}>45 days left</div>
+              </div>
+              <div className={classes.statCard}>
+                <div className={classes.statLabel}>Completed</div>
+                <div className={classes.statValue}>0 / {totalLessons}</div>
+              </div>
+              <div className={classes.statCard}>
+                <div className={classes.statLabel}>English</div>
+                <div className={classes.statValue}>--</div>
+              </div>
+              <div className={classes.statCard}>
+                <div className={classes.statLabel}>Math</div>
+                <div className={classes.statValue}>--</div>
+              </div>
+              <div className={classes.statCard}>
+                <div className={classes.statLabel}>Reading</div>
+                <div className={classes.statValue}>--</div>
+              </div>
+              <div className={classes.statCard}>
+                <div className={classes.statLabel}>Science</div>
+                <div className={classes.statValue}>--</div>
+              </div>
+            </div>
+
+            {/* Weekly Assignments */}
+            <div className={classes.weeksContainer}>
+              {learningPath.slice(0, 3).map((week, weekIndex) => (
+                <div key={weekIndex} className={classes.section}>
+                  <div className={classes.sectionHeader}>
+                    <h2 className={classes.sectionTitle}>{week.week}</h2>
+                  </div>
+                  <div className={classes.weekGrid}>
+                    {week.items.map((item, itemIndex) => (
+                      <div key={itemIndex} className={classes.weekCard}>
+                        <div className={classes.weekCardContent}>
+                          <span className={classes.weekCardIcon}>{getItemIcon(item.type)}</span>
+                          <span className={classes.weekCardText}>{item.title}</span>
+                        </div>
+                        <span className={classes.weekCardArrow}>→</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-          <div className={classes.nextAssignmentIcon}>
-            {getSkillIcon(nextAssignment.skills, 20)}
+        </div>
+
+        {/* Lock overlay */}
+        <div style={{
+          position: 'fixed',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          zIndex: 10,
+          textAlign: 'center',
+          width: '100%',
+          maxWidth: '600px',
+          padding: '0 2rem'
+        }}>
+          <div style={{
+            background: 'rgba(255, 255, 255, 0.98)',
+            backdropFilter: 'blur(10px)',
+            border: '1px solid #e5e7eb',
+            borderRadius: '12px',
+            padding: '3rem 2rem',
+            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)'
+          }}>
+            <div style={{
+              width: '80px',
+              height: '80px',
+              margin: '0 auto 1.5rem',
+              background: '#fef2f2',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#b91c1c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h2 style={{
+              fontSize: '1.5rem',
+              fontWeight: '700',
+              color: '#1a1a1a',
+              marginBottom: '0.75rem'
+            }}>
+              Complete Your Full Diagnostic
+            </h2>
+            <p style={{
+              fontSize: '1rem',
+              color: '#6b7280',
+              lineHeight: '1.6',
+              marginBottom: '2rem'
+            }}>
+              Your personalized learning path will be generated after you complete the full diagnostic assessment. This includes ACT questions and personalized study preferences to identify your strengths and create a customized study plan.
+            </p>
+            <button
+              onClick={() => {
+                soundEffects.playSuccess();
+                setDiagnosticTestOpen(true);
+              }}
+              style={{
+                background: '#b91c1c',
+                color: 'white',
+                border: 'none',
+                borderRadius: '8px',
+                padding: '0.875rem 2rem',
+                fontSize: '1rem',
+                fontWeight: '600',
+                cursor: 'pointer',
+                transition: 'all 0.15s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = '#991b1b';
+                e.target.style.transform = 'translateY(-1px)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = '#b91c1c';
+                e.target.style.transform = 'translateY(0)';
+              }}
+            >
+              Start Full Diagnostic
+            </button>
           </div>
         </div>
-      )}
+      </div>
+    );
+  };
 
-      {/* Statistics Grid */}
-      <div className={classes.statsGrid}>
-        <div className={classes.statCard}>
-          <div className={classes.statLabel}>Completed</div>
-          <div className={classes.statValue}>{completedLessons}</div>
-          <div className={classes.statDetail}>of {totalLessons} lessons</div>
+  if (!diagnosticCompleted) {
+    return renderLockedContent();
+  }
+
+  return (
+    <div className={classes.container}>
+      {/* Top Bar */}
+      <div style={{
+        position: 'sticky',
+        top: 0,
+        left: 0,
+        right: 0,
+        height: '64px',
+        background: '#ffffff',
+        borderBottom: '1px solid #e5e7eb',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '0 2rem',
+        zIndex: 100,
+        marginBottom: '2rem'
+      }}>
+        {/* Left: Explore */}
+        <button
+          onClick={() => navigate('/app/lessons')}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            background: 'transparent',
+            border: 'none',
+            padding: '0.5rem 1rem',
+            cursor: 'pointer',
+            fontSize: '0.95rem',
+            fontWeight: '600',
+            color: '#6b7280',
+            borderRadius: '8px',
+            transition: 'all 0.15s ease'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = '#f3f4f6';
+            e.currentTarget.style.color = '#1a1a1a';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = 'transparent';
+            e.currentTarget.style.color = '#6b7280';
+          }}
+        >
+          <HiSparkles style={{ fontSize: '1.25rem' }} />
+          Explore
+        </button>
+
+        {/* Center: Logo */}
+        <div style={{
+          position: 'absolute',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          fontSize: '1.5rem',
+          fontWeight: '800',
+          color: '#08245b',
+          letterSpacing: '-0.02em'
+        }}>
+          ACT PREP
         </div>
-        <div className={classes.statCard}>
-          <div className={classes.statLabel}>In Progress</div>
-          <div className={classes.statValue}>{inProgressLessons}</div>
-          <div className={classes.statDetail}>lessons started</div>
+
+        {/* Right: Profile Picture */}
+        <button
+          onClick={() => navigate('/app/profile')}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            padding: '0',
+            cursor: 'pointer',
+            borderRadius: '50%',
+            transition: 'transform 0.15s ease'
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+          onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+        >
+          <HiUserCircle style={{ fontSize: '2.5rem', color: '#6b7280' }} />
+        </button>
+      </div>
+
+      {/* Header */}
+      <div className={classes.header}>
+        <h1 className={classes.title}>Learning Path</h1>
+        <button
+          onClick={() => setEditModalOpen(true)}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            padding: '0.5rem',
+            cursor: 'pointer',
+            color: '#6b7280',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            fontSize: '0.875rem',
+            transition: 'color 0.15s ease'
+          }}
+          onMouseEnter={(e) => e.target.style.color = '#1a1a1a'}
+          onMouseLeave={(e) => e.target.style.color = '#6b7280'}
+        >
+          <HiPencilSquare style={{ width: '16px', height: '16px' }} />
+          Edit Goals
+        </button>
+      </div>
+
+      {/* Main Content */}
+      <div className={classes.content}>
+        {/* Top Stats Grid */}
+        <div className={classes.statsGrid}>
+          {/* Test Date */}
+          <div className={classes.statCard}>
+            <div className={classes.statLabel}>Test Date</div>
+            <div className={classes.statValue}>{testDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
+            <div className={classes.statDetail}>{daysUntilTest} days left</div>
+          </div>
+
+          {/* Completed */}
+          <div className={classes.statCard}>
+            <div className={classes.statLabel}>Completed</div>
+            <div className={classes.statValue}>{completedLessons} / {totalLessons}</div>
+          </div>
+
+          {/* English */}
+          <div className={classes.statCard}>
+            <div className={classes.statLabel}>English</div>
+            <div className={classes.statValue}>{sectionStrengths.English}%</div>
+          </div>
+
+          {/* Math */}
+          <div className={classes.statCard}>
+            <div className={classes.statLabel}>Math</div>
+            <div className={classes.statValue}>{sectionStrengths.Math}%</div>
+          </div>
+
+          {/* Reading */}
+          <div className={classes.statCard}>
+            <div className={classes.statLabel}>Reading</div>
+            <div className={classes.statValue}>{sectionStrengths.Reading}%</div>
+          </div>
+
+          {/* Science */}
+          <div className={classes.statCard}>
+            <div className={classes.statLabel}>Science</div>
+            <div className={classes.statValue}>{sectionStrengths.Science}%</div>
+          </div>
         </div>
-        <div className={classes.statCard}>
-          <div className={classes.statLabel}>Study Time</div>
-          <div className={classes.statValue}>{Math.round(completedLessons * 20)}</div>
-          <div className={classes.statDetail}>minutes logged</div>
-        </div>
-        <div className={classes.statCard}>
-          <div className={classes.statLabel}>Progress</div>
-          <div className={classes.statValue}>{Math.round((completedLessons / totalLessons) * 100)}%</div>
-          <div className={classes.statDetail}>overall completion</div>
+
+        {/* Weekly Assignments */}
+        <div className={classes.weeksContainer}>
+          {learningPath.map((week, weekIndex) => {
+            // Determine if this is the current week
+            const now = new Date();
+            const isCurrentWeek = now >= week.startDate && now <= week.endDate;
+
+            return (
+              <div key={weekIndex} className={`${classes.section} ${isCurrentWeek ? 'current' : ''}`}>
+                <div className={classes.sectionHeader}>
+                  <h2 className={classes.sectionTitle}>{week.week}</h2>
+                </div>
+                <div className={classes.weekGrid}>
+                  {week.items.map((item, itemIndex) => {
+                    const status = getLessonStatus(item.id);
+                    const isCompleted = status === 'completed';
+                    const lessonData = lessonStructure.find(l => l.id === item.id);
+                    const chapterNum = lessonData?.chapterNum;
+
+                    return (
+                      <div
+                        key={itemIndex}
+                        className={`${classes.weekCard} ${isCompleted ? 'completed' : ''}`}
+                        onClick={() => handleItemClick(item)}
+                      >
+                        <div className={classes.weekCardContent}>
+                          <span className={classes.weekCardIcon}>{getItemIcon(item.type)}</span>
+                          <span className={classes.weekCardText}>
+                            {item.title}
+                            {chapterNum && (
+                              <span style={{
+                                marginLeft: '0.5rem',
+                                color: '#9ca3af',
+                                fontSize: '0.8125rem',
+                                fontWeight: '400'
+                              }}>
+                                {chapterNum}
+                              </span>
+                            )}
+                          </span>
+                        </div>
+                        <span className={classes.weekCardArrow}>→</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* Strengths & Weaknesses */}
-      <div className={classes.strengthsSection}>
-        <div className={classes.strengthsHeader}>Section Performance</div>
-        <div className={classes.strengthsGrid}>
-          {Object.entries(sectionStrengths).map(([section, percentage]) => (
-            <div key={section} className={classes.strengthItem}>
-              <div className={classes.strengthLabel}>{section}</div>
-              <div className={classes.strengthBar}>
-                <div
-                  className={classes.strengthFill}
+      {/* Edit Goals Modal */}
+      {editModalOpen && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'rgba(0, 0, 0, 0.5)',
+          zIndex: 3000,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '1rem'
+        }}>
+          <div style={{
+            background: 'white',
+            borderRadius: '12px',
+            padding: '2rem',
+            maxWidth: '500px',
+            width: '100%',
+            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)'
+          }}>
+            <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.5rem', fontWeight: '600', color: '#1a1a1a' }}>
+              Edit Learning Path Goals
+            </h2>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              {/* Test Date */}
+              <div>
+                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
+                  Target Test Date
+                </label>
+                <input
+                  type="date"
+                  value={editForm.target_exam_date}
+                  onChange={(e) => setEditForm({ ...editForm, target_exam_date: e.target.value })}
                   style={{
-                    width: `${percentage}%`,
-                    background: getStrengthColor(percentage)
+                    width: '100%',
+                    padding: '0.625rem',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '6px',
+                    fontSize: '0.875rem',
+                    fontFamily: 'inherit'
                   }}
                 />
               </div>
-              <div className={classes.strengthValue}>{percentage}%</div>
-            </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Learning Path */}
-      <div className={classes.pathContainer}>
-        <div className={classes.pathHeader}>
-          <div className={classes.pathTitle}>Recommended Learning Path</div>
-          <div className={classes.pathProgress}>
-            {completedLessons} of {totalLessons} completed
-          </div>
-        </div>
-
-        {learningPath.map((week, weekIndex) => (
-          <div key={weekIndex} className={classes.weekSection}>
-            {/* Timeline column with dot and connecting bar */}
-            <div className={classes.timelineColumn}>
-              <div className={classes.weekDot} />
-              <div className={classes.timelineBar} />
-            </div>
-
-            {/* Week content */}
-            <div className={classes.weekContent}>
-              <div className={classes.weekHeader}>
-                <div className={classes.weekTitle}>{week.week}</div>
-                <div className={classes.weekDateRange}>
-                  {formatDate(week.startDate)} - {formatDate(week.endDate)}
-                </div>
+              {/* Current ACT Score */}
+              <div>
+                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
+                  Current ACT Score (Optional)
+                </label>
+                <input
+                  type="number"
+                  min="1"
+                  max="36"
+                  placeholder="e.g., 24"
+                  value={editForm.current_score || ''}
+                  onChange={(e) => setEditForm({ ...editForm, current_score: e.target.value ? parseInt(e.target.value) : null })}
+                  style={{
+                    width: '100%',
+                    padding: '0.625rem',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '6px',
+                    fontSize: '0.875rem',
+                    fontFamily: 'inherit'
+                  }}
+                />
               </div>
-              <div className={classes.itemsList}>
-                {week.items.map((item, itemIndex) => {
-                  const status = getLessonStatus(item.id);
-                  const isCompleted = status === 'completed';
-                  const daysUntilDue = getDaysUntil(item.dueDate);
 
-                  return (
-                    <div
-                      key={itemIndex}
-                      className={`${classes.courseItem} ${isCompleted ? 'completed' : ''}`}
-                      onClick={() => handleItemClick(item)}
-                    >
-                      <div className={`${classes.itemIcon} ${getSkillCategory(item.skills)}`}>
-                        {getSkillIcon(item.skills, 16)}
-                      </div>
-                      <div className={classes.itemInfo}>
-                        <div className={classes.itemTitle}>{item.title}</div>
-                        <div className={classes.itemMeta}>
-                          <span className={classes.itemSkills}>{item.skills}</span>
-                          <span>•</span>
-                          <span>{item.duration}</span>
-                          <span>•</span>
-                          <span className={classes.itemDueDate}>
-                            Due {formatDate(item.dueDate)}
-                          </span>
-                        </div>
-                      </div>
-                      <div className={`${classes.itemStatus} ${isCompleted ? 'completed' : 'pending'}`}>
-                        {isCompleted ? (
-                          <>
-                            <HiCheckCircle size={16} />
-                            <span>Done</span>
-                          </>
-                        ) : (
-                          <>
-                            <HiClock size={16} />
-                            <span>{status === 'in-progress' ? 'In Progress' : 'Start'}</span>
-                          </>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
+              {/* Target Score */}
+              <div>
+                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
+                  Target ACT Score
+                </label>
+                <input
+                  type="number"
+                  min="1"
+                  max="36"
+                  value={editForm.target_score}
+                  onChange={(e) => setEditForm({ ...editForm, target_score: parseInt(e.target.value) || 28 })}
+                  style={{
+                    width: '100%',
+                    padding: '0.625rem',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '6px',
+                    fontSize: '0.875rem',
+                    fontFamily: 'inherit'
+                  }}
+                />
+              </div>
+
+              {/* Daily Study Time */}
+              <div>
+                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
+                  Daily Study Time (minutes)
+                </label>
+                <input
+                  type="number"
+                  min="10"
+                  max="240"
+                  step="5"
+                  value={editForm.daily_study_minutes}
+                  onChange={(e) => setEditForm({ ...editForm, daily_study_minutes: parseInt(e.target.value) || 30 })}
+                  style={{
+                    width: '100%',
+                    padding: '0.625rem',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '6px',
+                    fontSize: '0.875rem',
+                    fontFamily: 'inherit'
+                  }}
+                />
               </div>
             </div>
+
+            <div style={{ display: 'flex', gap: '0.75rem', marginTop: '2rem' }}>
+              <button
+                onClick={() => setEditModalOpen(false)}
+                style={{
+                  flex: 1,
+                  padding: '0.75rem',
+                  border: '1px solid #d1d5db',
+                  borderRadius: '6px',
+                  background: 'white',
+                  color: '#374151',
+                  fontSize: '0.875rem',
+                  fontWeight: '500',
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease'
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={saveUserGoals}
+                style={{
+                  flex: 1,
+                  padding: '0.75rem',
+                  border: 'none',
+                  borderRadius: '6px',
+                  background: '#1a1a1a',
+                  color: 'white',
+                  fontSize: '0.875rem',
+                  fontWeight: '500',
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease'
+                }}
+              >
+                Save Changes
+              </button>
+            </div>
           </div>
-        ))}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
