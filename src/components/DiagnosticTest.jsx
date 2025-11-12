@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { HiXMark } from 'react-icons/hi2';
+import { HiXMark, HiArrowRight } from 'react-icons/hi2';
 import { usePracticeTestStyles } from '../styles/pages/practice-test.styles';
 import DiagnosticService from '../services/api/diagnostic.service';
 import DiagnosticAnalysisService from '../services/api/diagnostic-analysis.service';
@@ -137,11 +137,22 @@ const DiagnosticTest = ({ onClose }) => {
   const [analyzing, setAnalyzing] = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState(false);
+  const [showIntro, setShowIntro] = useState(false);
   const [onboardingData, setOnboardingData] = useState({
     target_exam_date: '',
     current_score: '',
     target_score: 28,
+    use_alternating_weeks: false,
     study_hours: {
+      monday: 0.75,
+      tuesday: 1,
+      wednesday: 0,
+      thursday: 0.75,
+      friday: 1,
+      saturday: 2,
+      sunday: 2
+    },
+    study_hours_week2: {
       monday: 0.75,
       tuesday: 1,
       wednesday: 0,
@@ -178,9 +189,25 @@ const DiagnosticTest = ({ onClose }) => {
             target_exam_date: goals.target_exam_date || '',
             current_score: goals.current_score || '',
             target_score: goals.target_score || 28,
-            daily_study_hours: (goals.daily_study_minutes || 30) / 60,
-            study_days_per_week: goals.study_days_per_week || 5,
-            primary_goal: goals.primary_goal || 'improve_score',
+            use_alternating_weeks: false,
+            study_hours: {
+              monday: 0.75,
+              tuesday: 1,
+              wednesday: 0,
+              thursday: 0.75,
+              friday: 1,
+              saturday: 2,
+              sunday: 2
+            },
+            study_hours_week2: {
+              monday: 0.75,
+              tuesday: 1,
+              wednesday: 0,
+              thursday: 0.75,
+              friday: 1,
+              saturday: 2,
+              sunday: 2
+            },
             weakest_section: goals.weakest_section || '',
             review_day: goals.review_day || 'sunday',
             mock_exam_day: goals.mock_exam_day || 'saturday'
@@ -238,6 +265,13 @@ const DiagnosticTest = ({ onClose }) => {
         count: transformedQuestions.length
       });
 
+      // Automatically show onboarding if user hasn't completed it
+      if (!hasCompletedOnboarding) {
+        setShowOnboarding(true);
+      } else {
+        setShowIntro(true);
+      }
+
     } catch (err) {
       console.error('Error loading diagnostic questions:', err);
       errorTracker.trackError(
@@ -262,10 +296,28 @@ const DiagnosticTest = ({ onClose }) => {
   const saveOnboardingData = async () => {
     try {
       // Calculate study metrics from individual day hours
-      const studyHours = Object.values(onboardingData.study_hours);
-      const totalWeeklyHours = studyHours.reduce((sum, hours) => sum + hours, 0);
-      const studyDaysCount = studyHours.filter(hours => hours > 0).length;
-      const avgDailyMinutes = studyDaysCount > 0 ? Math.round((totalWeeklyHours / studyDaysCount) * 60) : 0;
+      let totalWeeklyHours, studyDaysCount, avgDailyMinutes;
+
+      if (onboardingData.use_alternating_weeks) {
+        // Calculate average across both weeks
+        const week1Hours = Object.values(onboardingData.study_hours);
+        const week2Hours = Object.values(onboardingData.study_hours_week2);
+        const totalWeek1 = week1Hours.reduce((sum, hours) => sum + hours, 0);
+        const totalWeek2 = week2Hours.reduce((sum, hours) => sum + hours, 0);
+        totalWeeklyHours = (totalWeek1 + totalWeek2) / 2; // Average of two weeks
+
+        const week1Days = week1Hours.filter(hours => hours > 0).length;
+        const week2Days = week2Hours.filter(hours => hours > 0).length;
+        studyDaysCount = Math.round((week1Days + week2Days) / 2);
+
+        avgDailyMinutes = studyDaysCount > 0 ? Math.round((totalWeeklyHours / studyDaysCount) * 60) : 0;
+      } else {
+        // Single week schedule
+        const studyHours = Object.values(onboardingData.study_hours);
+        totalWeeklyHours = studyHours.reduce((sum, hours) => sum + hours, 0);
+        studyDaysCount = studyHours.filter(hours => hours > 0).length;
+        avgDailyMinutes = studyDaysCount > 0 ? Math.round((totalWeeklyHours / studyDaysCount) * 60) : 0;
+      }
 
       const { error } = await supabase
         .from('user_goals')
@@ -276,23 +328,26 @@ const DiagnosticTest = ({ onClose }) => {
           target_score: onboardingData.target_score,
           daily_study_minutes: avgDailyMinutes,
           study_days_per_week: studyDaysCount,
-          study_hours_per_day: onboardingData.study_hours,
-          weakest_section: onboardingData.weakest_section || null,
-          review_day: onboardingData.review_day,
-          mock_exam_day: onboardingData.mock_exam_day,
           updated_at: new Date().toISOString()
+        }, {
+          onConflict: 'user_id'
         });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Supabase error:', error);
+        throw error;
+      }
 
+      console.log('Onboarding data saved successfully');
       setHasCompletedOnboarding(true);
       setShowOnboarding(false);
 
-      // Now start the actual test
-      await beginDiagnosticTest();
+      // Show intro screen before starting test
+      setShowIntro(true);
     } catch (error) {
-      logger.error('DiagnosticTest', 'saveOnboardingDataFailed', { error });
-      setError('Failed to save your information. Please try again.');
+      console.error('Full error details:', error);
+      logger.error('DiagnosticTest', 'saveOnboardingDataFailed', { error: error.message, details: error });
+      setError(`Failed to save your information: ${error.message || 'Unknown error'}. Please try again.`);
     }
   };
 
@@ -542,7 +597,7 @@ const DiagnosticTest = ({ onClose }) => {
         width: '16px',
         height: '16px',
         borderRadius: '50%',
-        background: '#1a1a1a',
+        background: '#3b82f6',
         color: 'white',
         display: 'flex',
         alignItems: 'center',
@@ -560,17 +615,15 @@ const DiagnosticTest = ({ onClose }) => {
           left: '50%',
           transform: 'translateX(-50%)',
           marginBottom: '0.5rem',
-          padding: '0.75rem',
-          background: '#1a1a1a',
+          padding: '0.5rem 0.75rem',
+          background: '#3b82f6',
           color: 'white',
           borderRadius: '6px',
           fontSize: '0.75rem',
-          lineHeight: '1.4',
+          lineHeight: '1.3',
           whiteSpace: 'nowrap',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-          zIndex: 1000,
-          maxWidth: '250px',
-          whiteSpace: 'normal'
+          boxShadow: '0 2px 8px rgba(59, 130, 246, 0.3)',
+          zIndex: 1000
         }}>
           {text}
           <div style={{
@@ -582,7 +635,7 @@ const DiagnosticTest = ({ onClose }) => {
             height: 0,
             borderLeft: '6px solid transparent',
             borderRight: '6px solid transparent',
-            borderTop: '6px solid #1a1a1a'
+            borderTop: '6px solid #3b82f6'
           }} />
         </div>
       )}
@@ -600,228 +653,418 @@ const DiagnosticTest = ({ onClose }) => {
           Close
         </button>
         <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          minHeight: '90vh',
-          padding: '2rem'
+          maxWidth: '1200px',
+          margin: '0 auto',
+          padding: '2rem',
+          minHeight: '90vh'
         }}>
           <div style={{
-            maxWidth: '920px',
             width: '100%',
-            background: '#ffffff',
-            borderRadius: '16px',
-            padding: '3rem',
-            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
-            border: '1px solid #e5e7eb'
+            background: 'transparent'
           }}>
-            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
               <h1 style={{
-                fontSize: '2.25rem',
-                fontWeight: '800',
+                fontSize: '1.75rem',
+                fontWeight: '700',
                 color: '#1a1a1a',
-                marginBottom: '0.75rem',
-                letterSpacing: '-0.03em'
+                marginBottom: '0.5rem',
+                letterSpacing: '-0.02em'
               }}>
                 Personalize Your Study Plan
               </h1>
               <p style={{
-                fontSize: '1.05rem',
+                fontSize: '0.95rem',
                 color: '#6b7280',
-                lineHeight: '1.6',
-                maxWidth: '560px',
-                margin: '0 auto'
+                lineHeight: '1.5',
+                maxWidth: '600px',
+                margin: '0 auto 0.5rem'
               }}>
-                Help us create a customized learning path tailored to your goals and schedule.
+                Build a flexible study schedule that works for your life.
+              </p>
+              <p style={{
+                fontSize: '0.85rem',
+                color: '#9ca3af',
+                fontStyle: 'italic'
+              }}>
+                These settings are flexible and can be adjusted anytime from your profile.
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem 2.5rem' }}>
-            {/* Target Test Date */}
-            <div>
-              <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', fontWeight: '600', color: '#374151', marginBottom: '0.5rem' }}>
-                Test Date
-              </label>
-              <input
-                type="date"
-                value={onboardingData.target_exam_date}
-                onChange={(e) => setOnboardingData({ ...onboardingData, target_exam_date: e.target.value })}
-                style={{ width: '100%', padding: '0.75rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit' }}
-              />
-            </div>
+            <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem 2rem', marginBottom: '1.5rem' }}>
+                {/* Target Test Date */}
+                <div>
+                  <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', fontWeight: '600', color: '#374151', marginBottom: '0.5rem' }}>
+                    Test Date
+                  </label>
+                  <input
+                    type="date"
+                    value={onboardingData.target_exam_date}
+                    onChange={(e) => setOnboardingData({ ...onboardingData, target_exam_date: e.target.value })}
+                    style={{ width: '100%', padding: '0.65rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit' }}
+                  />
+                </div>
 
-            {/* Current Score */}
-            <div>
-              <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', fontWeight: '600', color: '#374151', marginBottom: '0.5rem' }}>
-                Current ACT Score
-              </label>
-              <input
-                type="number"
-                min="1"
-                max="36"
-                placeholder="Leave blank if not taken"
-                value={onboardingData.current_score}
-                onChange={(e) => setOnboardingData({ ...onboardingData, current_score: e.target.value })}
-                style={{ width: '100%', padding: '0.75rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit' }}
-              />
-            </div>
+                {/* Current Score */}
+                <div>
+                  <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', fontWeight: '600', color: '#374151', marginBottom: '0.5rem' }}>
+                    Current ACT Score
+                  </label>
+                  <input
+                    type="number"
+                    min="1"
+                    max="36"
+                    placeholder="Leave blank if not taken"
+                    value={onboardingData.current_score}
+                    onChange={(e) => setOnboardingData({ ...onboardingData, current_score: e.target.value })}
+                    style={{ width: '100%', padding: '0.65rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit' }}
+                  />
+                </div>
 
-            {/* Target Score */}
-            <div>
-              <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', fontWeight: '600', color: '#374151', marginBottom: '0.5rem' }}>
-                Target ACT Score
-              </label>
-              <input
-                type="number"
-                min="1"
-                max="36"
-                value={onboardingData.target_score}
-                onChange={(e) => setOnboardingData({ ...onboardingData, target_score: parseInt(e.target.value) || 28 })}
-                style={{ width: '100%', padding: '0.75rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit' }}
-              />
-            </div>
+                {/* Target Score */}
+                <div>
+                  <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', fontWeight: '600', color: '#374151', marginBottom: '0.5rem' }}>
+                    Target ACT Score
+                  </label>
+                  <input
+                    type="number"
+                    min="1"
+                    max="36"
+                    value={onboardingData.target_score}
+                    onChange={(e) => setOnboardingData({ ...onboardingData, target_score: parseInt(e.target.value) || 28 })}
+                    style={{ width: '100%', padding: '0.65rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit' }}
+                  />
+                </div>
+              </div>
 
             {/* Daily Study Hours - Full Width */}
-            <div style={{ gridColumn: '1 / -1' }}>
-              <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', fontWeight: '600', color: '#374151', marginBottom: '0.75rem' }}>
-                <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '18px', height: '18px', borderRadius: '50%', background: '#3b82f6', color: 'white', fontSize: '0.75rem', fontWeight: '600', marginRight: '0.5rem' }}>i</span>
-                Daily Study Hours
-              </label>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '1rem' }}>
-                {['monday', 'tuesday', 'wednesday', 'thursday'].map(day => (
-                  <div key={day}>
-                    <label style={{ fontSize: '0.75rem', fontWeight: '600', color: '#6b7280', marginBottom: '0.5rem', display: 'block', textTransform: 'capitalize' }}>
-                      {day}
-                    </label>
-                    <input
-                      type="number"
-                      min="0"
-                      max="8"
-                      step="0.25"
-                      value={onboardingData.study_hours[day]}
-                      onChange={(e) => setOnboardingData({
-                        ...onboardingData,
-                        study_hours: { ...onboardingData.study_hours, [day]: parseFloat(e.target.value) || 0 }
-                      })}
-                      style={{ width: '100%', padding: '0.75rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit' }}
-                    />
-                  </div>
-                ))}
+            <div style={{ marginTop: '0.5rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
+                <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', fontWeight: '600', color: '#374151' }}>
+                  Daily Study Hours
+                  <Tooltip id="daily-study-hours" text="Customize your study schedule—set different hours for each day, rest days, or alternate weeks." />
+                </label>
+                <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.8rem', color: '#6b7280', cursor: 'pointer' }}>
+                  <input
+                    type="checkbox"
+                    checked={onboardingData.use_alternating_weeks}
+                    onChange={(e) => setOnboardingData({ ...onboardingData, use_alternating_weeks: e.target.checked })}
+                    style={{ marginRight: '0.5rem', cursor: 'pointer' }}
+                  />
+                  Use alternating weeks
+                </label>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
-                {['friday', 'saturday', 'sunday'].map((day, idx) => (
-                  <div key={day}>
-                    <label style={{ fontSize: '0.75rem', fontWeight: '600', color: '#6b7280', marginBottom: '0.5rem', display: 'block', textTransform: 'capitalize' }}>
-                      {day}
-                    </label>
-                    <input
-                      type="number"
-                      min="0"
-                      max="8"
-                      step="0.25"
-                      value={onboardingData.study_hours[day]}
-                      onChange={(e) => setOnboardingData({
-                        ...onboardingData,
-                        study_hours: { ...onboardingData.study_hours, [day]: parseFloat(e.target.value) || 0 }
-                      })}
-                      style={{ width: '100%', padding: '0.75rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit' }}
-                    />
+
+              {/* Week 1 Schedule */}
+              <div style={{ marginBottom: onboardingData.use_alternating_weeks ? '1rem' : '0' }}>
+                {onboardingData.use_alternating_weeks && (
+                  <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#6b7280', marginBottom: '0.5rem' }}>
+                    Week 1 Schedule
                   </div>
-                ))}
+                )}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '1rem' }}>
+                  {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => (
+                    <div key={day}>
+                      <label style={{ fontSize: '0.75rem', fontWeight: '600', color: '#6b7280', marginBottom: '0.5rem', display: 'block', textTransform: 'capitalize' }}>
+                        {day.slice(0, 3)}
+                      </label>
+                      <input
+                        type="number"
+                        min="0"
+                        max="8"
+                        step="0.25"
+                        value={onboardingData.study_hours?.[day] || 0}
+                        onChange={(e) => setOnboardingData({
+                          ...onboardingData,
+                          study_hours: { ...(onboardingData.study_hours || {}), [day]: parseFloat(e.target.value) || 0 }
+                        })}
+                        style={{ width: '100%', padding: '0.65rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit' }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Week 2 Schedule (only shown if alternating weeks is enabled) */}
+              {onboardingData.use_alternating_weeks && (
+                <div>
+                  <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#6b7280', marginBottom: '0.5rem' }}>
+                    Week 2 Schedule
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '1rem' }}>
+                    {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => (
+                      <div key={day}>
+                        <label style={{ fontSize: '0.75rem', fontWeight: '600', color: '#6b7280', marginBottom: '0.5rem', display: 'block', textTransform: 'capitalize' }}>
+                          {day.slice(0, 3)}
+                        </label>
+                        <input
+                          type="number"
+                          min="0"
+                          max="8"
+                          step="0.25"
+                          value={onboardingData.study_hours_week2?.[day] || 0}
+                          onChange={(e) => setOnboardingData({
+                            ...onboardingData,
+                            study_hours_week2: { ...(onboardingData.study_hours_week2 || {}), [day]: parseFloat(e.target.value) || 0 }
+                          })}
+                          style={{ width: '100%', padding: '0.65rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit' }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem 2rem', marginTop: '1.5rem' }}>
+              {/* Weekly Review Day */}
+              <div>
+                <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', fontWeight: '600', color: '#374151', marginBottom: '0.5rem' }}>
+                  Weekly Review Day
+                  <Tooltip id="review-day" text="Day you'll review your full practice exam results and mistakes." />
+                </label>
+                <select
+                  value={onboardingData.review_day}
+                  onChange={(e) => setOnboardingData({ ...onboardingData, review_day: e.target.value })}
+                  style={{ width: '100%', padding: '0.65rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit', background: 'white' }}
+                >
+                  <option value="monday">Monday</option>
+                  <option value="tuesday">Tuesday</option>
+                  <option value="wednesday">Wednesday</option>
+                  <option value="thursday">Thursday</option>
+                  <option value="friday">Friday</option>
+                  <option value="saturday">Saturday</option>
+                  <option value="sunday">Sunday</option>
+                </select>
+              </div>
+
+              {/* Mock Exam Day */}
+              <div>
+                <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', fontWeight: '600', color: '#374151', marginBottom: '0.5rem' }}>
+                  Mock Exam Day
+                  <Tooltip id="mock-exam-day" text="Day you'll take a full-length practice test each week." />
+                </label>
+                <select
+                  value={onboardingData.mock_exam_day}
+                  onChange={(e) => setOnboardingData({ ...onboardingData, mock_exam_day: e.target.value })}
+                  style={{ width: '100%', padding: '0.65rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit', background: 'white' }}
+                >
+                  <option value="monday">Monday</option>
+                  <option value="tuesday">Tuesday</option>
+                  <option value="wednesday">Wednesday</option>
+                  <option value="thursday">Thursday</option>
+                  <option value="friday">Friday</option>
+                  <option value="saturday">Saturday</option>
+                  <option value="sunday">Sunday</option>
+                </select>
               </div>
             </div>
 
-            {/* Weakest Section */}
-            <div>
-              <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', fontWeight: '600', color: '#374151', marginBottom: '0.5rem' }}>
-                Weakest Section
-              </label>
-              <select
-                value={onboardingData.weakest_section}
-                onChange={(e) => setOnboardingData({ ...onboardingData, weakest_section: e.target.value })}
-                style={{ width: '100%', padding: '0.75rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit', background: 'white' }}
-              >
-                <option value="">Not sure yet</option>
-                <option value="english">English</option>
-                <option value="math">Math</option>
-                <option value="reading">Reading</option>
-                <option value="science">Science</option>
-              </select>
-            </div>
-
-            {/* Weekly Review Day */}
-            <div>
-              <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', fontWeight: '600', color: '#374151', marginBottom: '0.5rem' }}>
-                Weekly Review Day <Tooltip id="review-day" text="Pick one day each week to review your progress, mistakes, and concepts you've learned." />
-              </label>
-              <select
-                value={onboardingData.review_day}
-                onChange={(e) => setOnboardingData({ ...onboardingData, review_day: e.target.value })}
-                style={{ width: '100%', padding: '0.75rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit', background: 'white' }}
-              >
-                <option value="monday">Monday</option>
-                <option value="tuesday">Tuesday</option>
-                <option value="wednesday">Wednesday</option>
-                <option value="thursday">Thursday</option>
-                <option value="friday">Friday</option>
-                <option value="saturday">Saturday</option>
-                <option value="sunday">Sunday</option>
-              </select>
-            </div>
-
-            {/* Mock Exam Day */}
-            <div>
-              <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', fontWeight: '600', color: '#374151', marginBottom: '0.5rem' }}>
-                Mock Exam Day
-              </label>
-              <select
-                value={onboardingData.mock_exam_day}
-                onChange={(e) => setOnboardingData({ ...onboardingData, mock_exam_day: e.target.value })}
-                style={{ width: '100%', padding: '0.75rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit', background: 'white' }}
-              >
-                <option value="monday">Monday</option>
-                <option value="tuesday">Tuesday</option>
-                <option value="wednesday">Wednesday</option>
-                <option value="thursday">Thursday</option>
-                <option value="friday">Friday</option>
-                <option value="saturday">Saturday</option>
-                <option value="sunday">Sunday</option>
-              </select>
-            </div>
           </div>
 
-          <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
             <button
               onClick={saveOnboardingData}
               style={{
-                background: '#08245b',
+                background: '#b91c1c',
                 color: 'white',
                 border: 'none',
-                borderRadius: '10px',
-                padding: '1rem 3rem',
-                fontSize: '1.05rem',
+                borderRadius: '8px',
+                padding: '0.875rem 2.5rem',
+                fontSize: '1rem',
                 fontWeight: '600',
                 cursor: 'pointer',
                 transition: 'all 0.15s ease',
-                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
               }}
               onMouseEnter={(e) => {
-                e.target.style.background = '#061a3d';
-                e.target.style.transform = 'translateY(-2px)';
-                e.target.style.boxShadow = '0 8px 16px rgba(8, 36, 91, 0.25)';
+                e.target.style.background = '#991b1b';
+                e.target.style.transform = 'translateY(-1px)';
+                e.target.style.boxShadow = '0 4px 8px rgba(185, 28, 28, 0.25)';
               }}
               onMouseLeave={(e) => {
-                e.target.style.background = '#08245b';
+                e.target.style.background = '#b91c1c';
                 e.target.style.transform = 'translateY(0)';
-                e.target.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+                e.target.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
               }}
             >
-              Continue to Diagnostic Test
+              <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                Continue to Diagnostic Test
+                <HiArrowRight style={{ fontSize: '1.1rem' }} />
+              </span>
             </button>
           </div>
         </div>
       </div>
     </div>
+    );
+  }
+
+  /**
+   * Render intro screen after onboarding
+   */
+  if (showIntro) {
+    return (
+      <div className={classes.container}>
+        <button onClick={onClose} className={classes.closeButton}>
+          <HiXMark style={{ fontSize: '1.125rem' }} />
+          Close
+        </button>
+        <div style={{
+          maxWidth: '900px',
+          margin: '0 auto',
+          padding: '4rem 2rem',
+          minHeight: '90vh',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h1 style={{
+              fontSize: '2.5rem',
+              fontWeight: '700',
+              color: '#1a1a1a',
+              marginBottom: '1rem',
+              letterSpacing: '-0.02em'
+            }}>
+              ACT Diagnostic Test
+            </h1>
+            <p style={{
+              fontSize: '1.125rem',
+              color: '#6b7280',
+              lineHeight: '1.6',
+              maxWidth: '700px',
+              margin: '0 auto'
+            }}>
+              Complete diagnostic assessment with {questions.length} questions covering all four ACT sections to identify your strengths and areas for improvement.
+            </p>
+          </div>
+
+          {/* Stats Grid */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '2rem',
+            marginBottom: '3rem',
+            width: '100%',
+            maxWidth: '600px'
+          }}>
+            <div style={{
+              textAlign: 'center',
+              padding: '1.5rem',
+              background: 'linear-gradient(135deg, #fef2f2 0%, #ffffff 100%)',
+              borderRadius: '12px',
+              border: '1px solid #fee2e2'
+            }}>
+              <div style={{
+                fontSize: '2.5rem',
+                fontWeight: '700',
+                color: '#b91c1c',
+                marginBottom: '0.5rem'
+              }}>
+                {questions.length}
+              </div>
+              <div style={{
+                fontSize: '0.875rem',
+                fontWeight: '600',
+                color: '#6b7280',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Questions
+              </div>
+            </div>
+
+            <div style={{
+              textAlign: 'center',
+              padding: '1.5rem',
+              background: 'linear-gradient(135deg, #fef2f2 0%, #ffffff 100%)',
+              borderRadius: '12px',
+              border: '1px solid #fee2e2'
+            }}>
+              <div style={{
+                fontSize: '2.5rem',
+                fontWeight: '700',
+                color: '#b91c1c',
+                marginBottom: '0.5rem'
+              }}>
+                175
+              </div>
+              <div style={{
+                fontSize: '0.875rem',
+                fontWeight: '600',
+                color: '#6b7280',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Minutes
+              </div>
+            </div>
+
+            <div style={{
+              textAlign: 'center',
+              padding: '1.5rem',
+              background: 'linear-gradient(135deg, #fef2f2 0%, #ffffff 100%)',
+              borderRadius: '12px',
+              border: '1px solid #fee2e2'
+            }}>
+              <div style={{
+                fontSize: '2.5rem',
+                fontWeight: '700',
+                color: '#b91c1c',
+                marginBottom: '0.5rem'
+              }}>
+                4
+              </div>
+              <div style={{
+                fontSize: '0.875rem',
+                fontWeight: '600',
+                color: '#6b7280',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Sections
+              </div>
+            </div>
+          </div>
+
+          {/* Begin Button */}
+          <button
+            onClick={async () => {
+              setShowIntro(false);
+              await beginDiagnosticTest();
+            }}
+            style={{
+              background: '#b91c1c',
+              color: 'white',
+              border: 'none',
+              borderRadius: '12px',
+              padding: '1.25rem 3.5rem',
+              fontSize: '1.125rem',
+              fontWeight: '600',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
+              boxShadow: '0 4px 12px rgba(185, 28, 28, 0.3)'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = '#991b1b';
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = '0 6px 16px rgba(185, 28, 28, 0.4)';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = '#b91c1c';
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = '0 4px 12px rgba(185, 28, 28, 0.3)';
+            }}
+          >
+            <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+              Begin Diagnostic Test
+              <HiArrowRight style={{ fontSize: '1.25rem' }} />
+            </span>
+          </button>
+        </div>
+      </div>
     );
   }
 

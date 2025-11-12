@@ -7,7 +7,7 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { onboardingUtils, storage } from '../utils/helpers';
+import { storage } from '../utils/helpers';
 
 // Eagerly load critical pages
 import LandingPage from '../pages/LandingPage';
@@ -15,12 +15,10 @@ import AuthPage from '../pages/AuthPage';
 import AppLayout from '../layouts/AppLayout';
 
 // Lazy load other pages for better initial load performance
-const OnboardingQuestionnaire = lazy(() => import('../components/auth/OnboardingQuestionnaire'));
-const Home = lazy(() => import('../components/Home'));
 const CourseContent = lazy(() => import('../components/app/CourseContent'));
 const TestsContent = lazy(() => import('../components/app/TestsContent'));
 const LessonsContent = lazy(() => import('../components/app/LessonsContent'));
-const ResultsPage = lazy(() => import('../pages/ResultsPage'));
+const InsightsPage = lazy(() => import('../pages/InsightsPage'));
 const ProfilePage = lazy(() => import('../pages/ProfilePage'));
 const SettingsPage = lazy(() => import('../pages/SettingsPage'));
 
@@ -87,14 +85,6 @@ function PublicRoute({ children }) {
  * Main App Router
  */
 export default function AppRouter() {
-  // Handler for onboarding completion when accessed directly (not logged in)
-  // Note: Primary flow is now Login → Onboarding, so this is rarely used
-  const handleOnboardingComplete = (data, action) => {
-    console.log('⚠️ Public onboarding completed - redirecting to login');
-    // Redirect to login page
-    window.location.href = '/login';
-  };
-
   return (
     <BrowserRouter>
       <Suspense fallback={<RouteLoader />}>
@@ -103,14 +93,6 @@ export default function AppRouter() {
           <Route path="/" element={
             <PublicRoute>
               <LandingPage />
-            </PublicRoute>
-          } />
-
-          <Route path="/onboarding" element={
-            <PublicRoute>
-              <Suspense fallback={<RouteLoader />}>
-                <OnboardingQuestionnaire onComplete={handleOnboardingComplete} />
-              </Suspense>
             </PublicRoute>
           } />
 
@@ -130,11 +112,6 @@ export default function AppRouter() {
             <Route index element={<Navigate to="home" replace />} />
             <Route path="home" element={
               <Suspense fallback={<RouteLoader />}>
-                <Home />
-              </Suspense>
-            } />
-            <Route path="course" element={
-              <Suspense fallback={<RouteLoader />}>
                 <CourseContent />
               </Suspense>
             } />
@@ -148,9 +125,9 @@ export default function AppRouter() {
                 <LessonsContent />
               </Suspense>
             } />
-            <Route path="results" element={
+            <Route path="insights" element={
               <Suspense fallback={<RouteLoader />}>
-                <ResultsPage />
+                <InsightsPage />
               </Suspense>
             } />
             <Route path="profile" element={

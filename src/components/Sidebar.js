@@ -1,7 +1,8 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { HiHome, HiAcademicCap, HiDocumentText, HiBookOpen, HiChartBar, HiUser, HiCog6Tooth, HiArrowRightOnRectangle, HiXMark } from 'react-icons/hi2';
+import { HiHome, HiDocumentText, HiBookOpen, HiChartBar, HiUser, HiCog6Tooth, HiArrowRightOnRectangle, HiXMark } from 'react-icons/hi2';
 import { useAuth } from '../contexts/AuthContext';
+import soundEffects from '../services/soundEffects';
 
 const useStyles = createUseStyles({
   overlay: {
@@ -34,10 +35,10 @@ const useStyles = createUseStyles({
     borderRight: '1px solid #e5e7eb',
     transition: 'transform 0.3s ease',
     '&::-webkit-scrollbar': {
-      width: '4px'
+      width: '2px'
     },
     '&::-webkit-scrollbar-track': {
-      background: 'transparent'
+      background: '#ffffff'
     },
     '&::-webkit-scrollbar-thumb': {
       background: 'rgba(0, 0, 0, 0.08)',
@@ -77,8 +78,7 @@ const useStyles = createUseStyles({
     }
   },
   logoSection: {
-    padding: '1.5rem 1.25rem',
-    borderBottom: '1px solid #f3f4f6'
+    padding: '0.75rem 1rem'
   },
   logo: {
     fontSize: '1.35rem',
@@ -126,9 +126,13 @@ const useStyles = createUseStyles({
       transform: 'scale(0.98)'
     },
     '&.active': {
-      background: '#f3f4f6',
-      color: '#1a1a1a',
-      fontWeight: '600'
+      background: '#f1f5f9',
+      color: '#08245b',
+      fontWeight: '600',
+      '&:hover': {
+        background: '#e2e8f0',
+        color: '#08245b'
+      }
     }
   },
   icon: {
@@ -160,6 +164,7 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose }) => {
   };
 
   const handleNavigate = (view) => {
+    soundEffects.playNavigation();
     onNavigate(view);
     // Close sidebar on mobile after navigation
     if (onClose) {
@@ -187,7 +192,7 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose }) => {
             src="/images/nomi-academy-logo.png"
             alt="Nomi Academy"
             style={{
-              height: '48px',
+              height: '64px',
               objectFit: 'contain'
             }}
           />
@@ -206,13 +211,6 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose }) => {
       <div className={classes.navSection}>
         <div className={classes.navSectionTitle}>ACT PREP</div>
         <button
-          className={`${classes.navItem} ${activeView === 'course' ? 'active' : ''}`}
-          onClick={() => handleNavigate('course')}
-        >
-          <span className={classes.icon}><HiAcademicCap /></span>
-          Learning Path
-        </button>
-        <button
           className={`${classes.navItem} ${activeView === 'lessons' ? 'active' : ''}`}
           onClick={() => handleNavigate('lessons')}
         >
@@ -227,11 +225,11 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose }) => {
           Tests
         </button>
         <button
-          className={`${classes.navItem} ${activeView === 'results' ? 'active' : ''}`}
-          onClick={() => handleNavigate('results')}
+          className={`${classes.navItem} ${activeView === 'insights' ? 'active' : ''}`}
+          onClick={() => handleNavigate('insights')}
         >
           <span className={classes.icon}><HiChartBar /></span>
-          Results
+          Insights
         </button>
       </div>
 
