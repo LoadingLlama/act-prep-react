@@ -1,422 +1,252 @@
 /**
  * Course Content Styles
- * Extracted from CourseContent.jsx
+ * Simplified, compact design matching Home page
  */
 
 import { createUseStyles } from 'react-jss';
 
 export const useCourseStyles = createUseStyles({
-  courseContainer: {
+  container: {
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    padding: '2rem',
-    margin: '0 auto',
+    maxWidth: '100%',
+    margin: '0',
+    padding: '1rem 2rem',
     minHeight: '100vh',
-    background: '#fafafa',
-    maxWidth: '1200px'
+    background: 'transparent',
+    '@media (max-width: 768px)': {
+      padding: '1rem'
+    }
   },
-  pageHeader: {
-    padding: '0',
-    marginBottom: '1.5rem'
+
+  header: {
+    marginBottom: '2rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between'
   },
-  pageTitle: {
+
+  title: {
     fontSize: '2.5rem',
     fontWeight: '900',
-    color: '#000000',
+    background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
     margin: '0 0 0.5rem 0',
-    letterSpacing: '-0.04em'
+    letterSpacing: '-0.04em',
+    '@media (max-width: 768px)': {
+      fontSize: '2rem'
+    }
   },
-  pageSubtitle: {
-    fontSize: '1rem',
-    color: '#64748b',
-    margin: '0 0 0.5rem 0'
-  },
-  testCountdown: {
-    color: '#1a1a1a',
-    background: '#f8fafc',
-    padding: '0.75rem 1rem',
-    borderRadius: '8px',
-    border: '1px solid #e5e7eb',
-    textAlign: 'center',
-    minWidth: '160px'
-  },
-  nextAssignmentBanner: {
-    background: 'transparent',
-    color: '#1a1a1a',
-    padding: '1rem 0',
-    borderRadius: '0',
-    marginBottom: '1.5rem',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    border: 'none',
-    borderBottom: '1px solid #e5e7eb'
-  },
-  nextAssignmentContent: {
-    flex: 1
-  },
-  nextAssignmentLabel: {
-    fontSize: '0.65rem',
-    fontWeight: '600',
-    textTransform: 'uppercase',
-    letterSpacing: '0.08em',
-    color: '#64748b',
-    marginBottom: '0.25rem'
-  },
-  nextAssignmentTitle: {
-    fontSize: '0.95rem',
-    fontWeight: '700',
-    marginBottom: '0.2rem'
-  },
-  nextAssignmentDue: {
-    fontSize: '0.75rem',
-    color: '#64748b',
-    fontWeight: '500'
-  },
-  nextAssignmentIcon: {
-    width: '20px',
-    height: '20px',
-    borderRadius: '0',
-    background: 'transparent',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginLeft: '1rem',
-    color: '#64748b'
-  },
-  statsGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)',
-    gap: '2rem',
-    marginBottom: '1.5rem'
-  },
-  statCard: {
-    background: 'transparent',
-    border: 'none',
-    borderRadius: '0',
-    padding: '0',
+
+  content: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.35rem'
+    gap: '0'
   },
+
+  statsGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+    gap: '1.5rem',
+    marginBottom: '1rem',
+    paddingBottom: '1rem',
+    borderBottom: '1px solid #f3f4f6'
+  },
+
+  statCard: {
+    padding: '0.75rem 1rem',
+    background: 'linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%)',
+    borderRadius: '8px',
+    border: '1px solid #e5e7eb',
+    transition: 'all 0.2s ease',
+    '&:hover': {
+      borderColor: '#cbd5e1',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+      transform: 'translateY(-1px)'
+    }
+  },
+
   statLabel: {
-    fontSize: '0.65rem',
+    fontSize: '0.7rem',
     fontWeight: '600',
-    color: '#64748b',
+    color: '#9ca3af',
+    marginBottom: '0.25rem',
     textTransform: 'uppercase',
     letterSpacing: '0.05em'
   },
+
   statValue: {
     fontSize: '1.5rem',
     fontWeight: '700',
-    color: '#1a1a1a',
-    lineHeight: '1'
+    background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    marginBottom: '0.1rem'
   },
+
   statDetail: {
     fontSize: '0.7rem',
-    color: '#64748b'
+    color: '#9ca3af'
   },
-  strengthsSection: {
-    background: 'transparent',
-    border: 'none',
-    borderRadius: '0',
-    padding: '0',
-    marginBottom: '2rem',
-    paddingBottom: '1.5rem',
-    borderBottom: '1px solid #e5e7eb'
-  },
-  strengthsHeader: {
-    fontSize: '0.85rem',
-    fontWeight: '700',
-    color: '#1a1a1a',
-    marginBottom: '0.75rem',
-    textTransform: 'uppercase',
-    letterSpacing: '0.05em'
-  },
-  strengthsGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '0.75rem'
-  },
-  strengthItem: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '0.75rem 0',
-    background: 'transparent',
-    borderRadius: '0',
-    borderBottom: '1px solid #f1f5f9',
-    '&:last-child': {
-      borderBottom: 'none'
-    }
-  },
-  strengthLabel: {
-    fontSize: '0.8rem',
-    fontWeight: '500',
-    color: '#1a1a1a'
-  },
-  strengthBar: {
-    height: '6px',
-    background: '#e2e8f0',
-    borderRadius: '3px',
-    overflow: 'hidden',
-    flex: 1,
-    marginLeft: '0.75rem',
-    marginRight: '0.5rem'
-  },
-  strengthFill: {
-    height: '100%',
-    borderRadius: '3px',
-    transition: 'width 0.3s ease'
-  },
-  strengthValue: {
-    fontSize: '0.75rem',
-    fontWeight: '600',
-    color: '#64748b',
-    minWidth: '35px',
-    textAlign: 'right'
-  },
-  pathContainer: {
-    background: 'transparent',
-    border: 'none',
-    borderRadius: '0',
-    padding: '0'
-  },
-  pathHeader: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: '1rem',
-    paddingBottom: '0.75rem',
-    borderBottom: '1px solid #f3f4f6'
-  },
-  pathTitle: {
-    fontSize: '0.85rem',
-    fontWeight: '700',
-    color: '#1a1a1a',
-    textTransform: 'uppercase',
-    letterSpacing: '0.05em'
-  },
-  pathProgress: {
-    fontSize: '0.75rem',
-    color: '#64748b',
-    fontWeight: '600'
-  },
-  weekSection: {
-    display: 'flex',
-    gap: '0.75rem',
-    marginBottom: '1.5rem',
+
+  weeksContainer: {
     position: 'relative',
-    '&:last-child': {
-      '& $timelineBar': {
-        display: 'none'
+    paddingLeft: '2.5rem',
+    '@media (max-width: 768px)': {
+      paddingLeft: '2rem'
+    },
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      left: '0.5625rem',
+      top: '1.5rem',
+      bottom: '1.5rem',
+      width: '2px',
+      background: '#e5e7eb',
+      '@media (max-width: 768px)': {
+        left: '0.4375rem'
       }
     }
   },
-  timelineColumn: {
+
+  section: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    marginBottom: '1rem',
+    background: 'linear-gradient(135deg, #ffffff 0%, #fafafa 100%)',
+    border: '1px solid #e5e7eb',
+    borderTop: '2px solid #e5e7eb',
+    borderRadius: '8px',
+    padding: '1rem',
     position: 'relative',
-    width: '32px',
-    flexShrink: 0
+    transition: 'all 0.2s ease',
+    '&:hover': {
+      borderTopColor: '#cbd5e1',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
+    },
+    '@media (max-width: 768px)': {
+      padding: '0.75rem'
+    },
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      left: '-2.375rem',
+      top: '1.25rem',
+      width: '10px',
+      height: '10px',
+      background: '#ffffff',
+      border: '2px solid #08245b',
+      borderRadius: '50%',
+      zIndex: 2,
+      transition: 'all 0.2s ease',
+      '@media (max-width: 768px)': {
+        left: '-2rem',
+        width: '8px',
+        height: '8px'
+      }
+    },
+    '&.current::before': {
+      left: '-2.4375rem',
+      top: '1.125rem',
+      width: '16px',
+      height: '16px',
+      background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
+      border: 'none',
+      boxShadow: '0 0 0 4px rgba(8, 36, 91, 0.15)',
+      '@media (max-width: 768px)': {
+        left: '-2.0625rem',
+        width: '14px',
+        height: '14px'
+      }
+    }
   },
-  weekDot: {
-    width: '16px',
-    height: '16px',
-    borderRadius: '50%',
-    background: '#08245b',
-    border: '3px solid #dbeafe',
-    flexShrink: 0,
-    position: 'relative',
-    zIndex: 2
+
+  sectionHeader: {
+    marginBottom: '0.5rem'
   },
-  timelineBar: {
-    position: 'absolute',
-    top: '16px',
-    bottom: '-24px',
-    left: '50%',
-    width: '3px',
-    background: '#e5e7eb',
-    transform: 'translateX(-50%)'
-  },
-  weekContent: {
-    flex: 1
-  },
-  weekHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginBottom: '0.65rem'
-  },
-  weekTitle: {
-    fontSize: '0.8rem',
-    fontWeight: '700',
-    color: '#1a1a1a',
+
+  sectionTitle: {
+    fontSize: '0.75rem',
+    fontWeight: '600',
+    color: '#6b7280',
+    margin: 0,
     textTransform: 'uppercase',
     letterSpacing: '0.05em'
   },
-  weekDateRange: {
-    fontSize: '0.75rem',
-    color: '#64748b',
-    fontWeight: '600'
-  },
-  itemsList: {
+
+  weekGrid: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.5rem'
+    gap: '0'
   },
-  courseItem: {
-    background: 'transparent',
-    border: 'none',
-    borderBottom: '1px solid #f1f5f9',
-    borderRadius: '0',
-    padding: '1rem 0.5rem',
+
+  weekCard: {
     display: 'flex',
     alignItems: 'center',
-    gap: '0.75rem',
-    transition: 'all 0.2s ease',
+    justifyContent: 'space-between',
+    padding: '0.75rem 0.5rem',
+    background: 'transparent',
+    border: 'none',
+    borderBottom: '1px solid #f3f4f6',
+    borderLeft: '2px solid transparent',
+    borderRadius: '0',
     cursor: 'pointer',
-    minHeight: '48px',
+    transition: 'all 0.2s ease',
+    gap: '1rem',
+    '&:last-child': {
+      borderBottom: 'none'
+    },
     '&:hover': {
-      borderBottomColor: '#08245b',
-      transform: 'translateX(4px)',
-      '& $itemTitle': {
+      background: 'linear-gradient(90deg, #f0f9ff 0%, #f9fafb 100%)',
+      borderLeftColor: '#08245b',
+      paddingLeft: '0.75rem',
+      '& $weekCardArrow': {
+        opacity: 1,
+        transform: 'translateX(0)',
         color: '#08245b'
       }
     },
-    '&:active': {
-      transform: 'translateX(2px)'
-    },
     '&.completed': {
-      background: 'transparent',
-      '& $itemTitle': {
-        color: '#3b82f6'
+      '& $weekCardText': {
+        color: '#9ca3af'
       }
-    },
-    '&:last-child': {
-      borderBottom: 'none'
     }
   },
-  itemIcon: {
+
+  weekCardContent: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.75rem',
+    flex: 1
+  },
+
+  weekCardIcon: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '20px',
-    height: '20px',
-    borderRadius: '0',
-    flexShrink: 0,
-    '&.strategy': {
-      background: 'transparent',
-      color: '#64748b'
-    },
-    '&.grammar': {
-      background: 'transparent',
-      color: '#64748b'
-    },
-    '&.punctuation': {
-      background: 'transparent',
-      color: '#64748b'
-    },
-    '&.problem-solving': {
-      background: 'transparent',
-      color: '#64748b'
-    },
-    '&.algebra': {
-      background: 'transparent',
-      color: '#64748b'
-    },
-    '&.numbers': {
-      background: 'transparent',
-      color: '#64748b'
-    },
-    '&.geometry': {
-      background: 'transparent',
-      color: '#64748b'
-    },
-    '&.reading': {
-      background: 'transparent',
-      color: '#64748b'
-    },
-    '&.comprehension': {
-      background: 'transparent',
-      color: '#64748b'
-    },
-    '&.science': {
-      background: 'transparent',
-      color: '#64748b'
-    },
-    '&.data-analysis': {
-      background: 'transparent',
-      color: '#64748b'
-    },
-    '&.interpretation': {
-      background: 'transparent',
-      color: '#64748b'
-    },
-    '&.test': {
-      background: 'transparent',
-      color: '#64748b'
-    },
-    '&.lesson': {
-      background: 'transparent',
-      color: '#64748b'
-    },
-    '&.practice': {
-      background: 'transparent',
-      color: '#64748b'
-    },
-    '&.review': {
-      background: 'transparent',
-      color: '#64748b'
+    color: '#6b7280',
+    fontSize: '1rem',
+    '& svg': {
+      width: '16px',
+      height: '16px'
     }
   },
-  itemInfo: {
-    flex: 1,
-    minWidth: 0
-  },
-  itemTitle: {
-    fontSize: '0.85rem',
-    fontWeight: '600',
+
+  weekCardText: {
+    fontSize: '0.875rem',
     color: '#1a1a1a',
-    marginBottom: '0.15rem'
+    fontWeight: '400',
+    transition: 'color 0.2s ease'
   },
-  itemMeta: {
-    fontSize: '0.7rem',
-    color: '#64748b',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '0.5rem',
-    flexWrap: 'wrap'
+
+  weekCardArrow: {
+    fontSize: '1rem',
+    color: '#9ca3af',
+    opacity: 0,
+    transform: 'translateX(-8px)',
+    transition: 'all 0.2s ease'
   },
-  itemSkills: {
-    fontSize: '0.7rem',
-    color: '#64748b',
-    background: 'transparent',
-    padding: '0',
-    borderRadius: '0',
-    fontWeight: '500'
-  },
-  itemDueDate: {
-    fontSize: '0.7rem',
-    color: '#64748b',
-    background: 'transparent',
-    padding: '0',
-    borderRadius: '0',
-    fontWeight: '500',
-    border: 'none'
-  },
-  itemStatus: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '0.35rem',
-    fontSize: '0.7rem',
-    fontWeight: '600',
-    flexShrink: 0,
-    '&.completed': {
-      color: '#10b981'
-    },
-    '&.pending': {
-      color: '#64748b'
-    }
-  }
+
 });

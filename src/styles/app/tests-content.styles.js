@@ -24,7 +24,10 @@ export const useTestsContentStyles = createUseStyles({
   pageTitle: {
     fontSize: '2.5rem',
     fontWeight: '900',
-    color: '#000000',
+    background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
     margin: '0 0 0.5rem 0',
     letterSpacing: '-0.04em',
     '@media (max-width: 768px)': {
@@ -69,6 +72,7 @@ export const useTestsContentStyles = createUseStyles({
   testCard: {
     background: '#ffffff',
     border: '1px solid #e2e8f0',
+    borderLeft: '3px solid #e2e8f0',
     borderRadius: '8px',
     padding: '1rem',
     cursor: 'pointer',
@@ -78,9 +82,10 @@ export const useTestsContentStyles = createUseStyles({
     flexDirection: 'column',
     justifyContent: 'space-between',
     '&:hover': {
-      borderColor: '#08245b',
-      boxShadow: '0 4px 12px rgba(0, 24, 69, 0.08)',
-      transform: 'translateY(-2px)'
+      borderColor: '#cbd5e1',
+      borderLeftColor: '#08245b',
+      boxShadow: '0 6px 16px rgba(8, 36, 91, 0.15)',
+      transform: 'translateY(-3px)'
     },
     '&:active': {
       transform: 'scale(0.98)',
@@ -102,7 +107,7 @@ export const useTestsContentStyles = createUseStyles({
   testIcon: {
     width: '40px',
     height: '40px',
-    borderRadius: '6px',
+    borderRadius: '50%',
     background: '#08245b',
     display: 'flex',
     alignItems: 'center',
@@ -126,7 +131,7 @@ export const useTestsContentStyles = createUseStyles({
     lineHeight: '1.5'
   },
   diagnosticCard: {
-    background: 'linear-gradient(135deg, #fef2f2 0%, #fff1f2 100%)',
+    background: 'linear-gradient(135deg, #fef2f2 0%, #ffe4e6 100%)',
     gridColumn: 'span 3',
     padding: '1.25rem 1.5rem',
     display: 'flex',
@@ -136,12 +141,14 @@ export const useTestsContentStyles = createUseStyles({
     textAlign: 'left',
     gap: '1.25rem',
     border: '1px solid #fecaca',
+    borderLeft: '4px solid #f87171',
     borderRadius: '8px',
     minHeight: '100px',
     '&:hover': {
       borderColor: '#fca5a5',
-      boxShadow: '0 2px 12px rgba(220, 38, 38, 0.08)',
-      transform: 'translateY(-1px)'
+      borderLeftColor: '#dc2626',
+      boxShadow: '0 6px 20px rgba(220, 38, 38, 0.15)',
+      transform: 'translateY(-2px)'
     },
     '&:active': {
       transform: 'scale(0.99)',
@@ -173,7 +180,7 @@ export const useTestsContentStyles = createUseStyles({
   diagnosticIcon: {
     width: '48px',
     height: '48px',
-    borderRadius: '8px',
+    borderRadius: '50%',
     background: '#dc2626',
     display: 'flex',
     alignItems: 'center',
@@ -200,7 +207,7 @@ export const useTestsContentStyles = createUseStyles({
     background: '#dc2626',
     color: '#ffffff',
     border: 'none',
-    borderRadius: '6px',
+    borderRadius: '24px',
     padding: '0.875rem 1.5rem',
     fontSize: '0.9rem',
     fontWeight: '600',

@@ -7,7 +7,27 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { useLessonsContentStyles } from '../../styles/app/lessons-content.styles';
 import StatusIcon from '../StatusIcon';
-import { HiStar, HiBookOpen, HiAcademicCap, HiPencil, HiBeaker, HiChartBar, HiCalculator, HiScale, HiDocumentText, HiLightBulb } from 'react-icons/hi2';
+import {
+  HiStar,
+  HiBookOpen,
+  HiAcademicCap,
+  HiBeaker,
+  HiChartBar,
+  HiCalculator,
+  HiDocumentText,
+  HiLightBulb,
+  HiSparkles,
+  HiPencilSquare,
+  HiChatBubbleLeftRight,
+  HiCube,
+  HiArrowTrendingUp,
+  HiHashtag,
+  HiChartPie,
+  HiCpuChip,
+  HiQuestionMarkCircle,
+  HiRocketLaunch,
+  HiPuzzlePiece
+} from 'react-icons/hi2';
 import soundEffects from '../../services/soundEffects';
 
 const LessonsContent = () => {
@@ -130,25 +150,40 @@ const LessonsContent = () => {
 
   const getCategoryIcon = (category, section) => {
     const iconMap = {
-      'Introduction': HiLightBulb,
-      'Grammar Fundamentals': HiBookOpen,
-      'Rhetorical Skills': HiPencil,
-      'Advanced Grammar': HiAcademicCap,
-      'Math Strategies': HiLightBulb,
-      'Algebra': HiCalculator,
-      'Geometry': HiScale,
-      'Reading Strategies': HiBookOpen,
-      'Passage Types': HiDocumentText,
-      'Science Basics': HiBeaker,
-      'Data Analysis': HiChartBar,
+      'Introduction': HiSparkles,
+      'Grammar Fundamentals': HiPencilSquare,
+      'Rhetorical Skills': HiChatBubbleLeftRight,
+      'Test-Taking Strategies': HiLightBulb,
+      'Geometry': HiCube,
+      'Algebra Fundamentals': HiCalculator,
+      'Advanced Algebra': HiArrowTrendingUp,
+      'Numbers & Operations': HiHashtag,
+      'Statistics & Probability': HiChartPie,
+      'Advanced Topics': HiCpuChip,
+      'Fundamentals': HiAcademicCap,
+      'Question Types': HiQuestionMarkCircle,
+      'Advanced Strategies': HiRocketLaunch,
+      'Data Interpretation': HiChartBar,
+      'Advanced Question Types': HiPuzzlePiece,
+      'Background Knowledge': HiBookOpen,
       'Other': HiDocumentText
     };
     const IconComponent = iconMap[category] || HiDocumentText;
 
     // Determine icon color based on section
-    const iconColor = section === 'science' ? '#10b981' : '#08245b';
-    const bgColor = section === 'science' ? '#d1fae5' : '#dbeafe';
-    const borderColor = section === 'science' ? '#10b981' : '#08245b';
+    let iconColor = '#08245b';
+    let bgColor = '#dbeafe';
+
+    if (section === 'science') {
+      iconColor = '#10b981';
+      bgColor = '#d1fae5';
+    } else if (section === 'math') {
+      iconColor = '#b91c1c';
+      bgColor = '#fecaca';
+    } else if (section === 'reading') {
+      iconColor = '#713f12';
+      bgColor = '#fef3c7';
+    }
 
     return (
       <div style={{
@@ -156,7 +191,6 @@ const LessonsContent = () => {
         height: '36px',
         borderRadius: '6px',
         background: bgColor,
-        border: `2px solid ${borderColor}`,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -214,15 +248,15 @@ const LessonsContent = () => {
         }}
         onMouseLeave={() => setHoveredMoreTag(null)}
       >
-        <div className={classes.lessonStatus}>
+        <div className={classes.lessonStatus} style={!isGridView ? { position: 'relative', top: 'auto', right: 'auto' } : {}}>
           <StatusIcon status={status} />
         </div>
-        <div className={classes.lessonInfo}>
-          <div className={classes.lessonTitle}>{lesson.title}</div>
-          {lesson.chapterNum && (
+        <div className={classes.lessonInfo} style={!isGridView ? { paddingRight: 0 } : {}}>
+          <div className={classes.lessonTitle} style={!isGridView ? { fontSize: '0.8rem', marginBottom: '0.15rem', lineHeight: '1.2' } : {}}>{lesson.title}</div>
+          {lesson.chapterNum && isGridView && (
             <div className={classes.lessonChapter}>{lesson.chapterNum}</div>
           )}
-          {lesson.keyTerms && lesson.keyTerms.length > 0 && (
+          {lesson.keyTerms && lesson.keyTerms.length > 0 && isGridView && (
             <div className={classes.keyTermsTags}>
               {lesson.keyTerms.slice(0, 2).join(' • ')}
               {lesson.keyTerms.length > 2 && (
@@ -235,7 +269,7 @@ const LessonsContent = () => {
               )}
             </div>
           )}
-          {lesson.duration && (
+          {lesson.duration && isGridView && (
             <div style={{
               fontSize: '0.75rem',
               color: '#64748b',
@@ -251,7 +285,26 @@ const LessonsContent = () => {
               {formatDuration(lesson.duration)}
             </div>
           )}
+          {lesson.chapterNum && !isGridView && (
+            <div style={{ fontSize: '0.65rem', color: '#94a3b8', fontWeight: '500' }}>{lesson.chapterNum}</div>
+          )}
         </div>
+        {lesson.duration && !isGridView && (
+          <div style={{
+            fontSize: '0.7rem',
+            color: '#94a3b8',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.25rem',
+            flexShrink: 0
+          }}>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            {formatDuration(lesson.duration)}
+          </div>
+        )}
       </div>
     );
   };
@@ -290,43 +343,13 @@ const LessonsContent = () => {
         }}
         onMouseLeave={() => setHoveredMoreTag(null)}
       >
-        <div className={classes.lessonStatus}>
-          {/* Star Rating instead of status icon */}
-          <div style={{ display: 'flex', gap: '2px', alignItems: 'center' }}>
-            {[1, 2, 3, 4, 5].map((star) => {
-              const isFilled = rating >= star;
-              const isHalf = rating >= star - 0.5 && rating < star;
-              const starColor = '#fbbf24'; // Golden color for all filled stars
-
-              return (
-                <div key={star} style={{ position: 'relative', width: '0.875rem', height: '0.875rem' }}>
-                  {isHalf ? (
-                    <>
-                      <HiStar style={{ position: 'absolute', color: '#e5e7eb', fontSize: '0.875rem' }} />
-                      <div style={{ position: 'absolute', width: '50%', overflow: 'hidden' }}>
-                        <HiStar style={{ color: starColor, fontSize: '0.875rem' }} />
-                      </div>
-                    </>
-                  ) : (
-                    <HiStar
-                      style={{
-                        color: isFilled ? starColor : '#e5e7eb',
-                        fontSize: '0.875rem'
-                      }}
-                    />
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <div className={classes.lessonInfo}>
-          <div className={classes.lessonTitle}>{lesson.title}</div>
-          {lesson.chapterNum && (
+        <div className={classes.lessonInfo} style={!isGridView ? { paddingRight: 0 } : {}}>
+          <div className={classes.lessonTitle} style={!isGridView ? { fontSize: '0.8rem', marginBottom: '0.15rem', lineHeight: '1.2' } : { overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', paddingRight: '5rem' }}>{lesson.title}</div>
+          {lesson.chapterNum && isGridView && (
             <div className={classes.lessonChapter}>{lesson.chapterNum}</div>
           )}
-          {lesson.keyTerms && lesson.keyTerms.length > 0 && (
-            <div className={classes.keyTermsTags}>
+          {lesson.keyTerms && lesson.keyTerms.length > 0 && isGridView && (
+            <div className={classes.keyTermsTags} style={{ paddingRight: '5rem', boxSizing: 'border-box' }}>
               {lesson.keyTerms.slice(0, 2).join(' • ')}
               {lesson.keyTerms.length > 2 && (
                 <span
@@ -338,22 +361,52 @@ const LessonsContent = () => {
               )}
             </div>
           )}
-          {lesson.duration && (
-            <div style={{
-              fontSize: '0.75rem',
-              color: '#64748b',
-              marginTop: '0.5rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.25rem'
-            }}>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-              {formatDuration(lesson.duration)}
-            </div>
+          {lesson.chapterNum && !isGridView && (
+            <div style={{ fontSize: '0.65rem', color: '#94a3b8', fontWeight: '500' }}>{lesson.chapterNum}</div>
           )}
+        </div>
+        {/* Star Rating - positioned inline on the right for list view, absolute for grid view */}
+        <div style={!isGridView ? {
+          display: 'flex',
+          alignItems: 'center',
+          gap: '2px',
+          flexShrink: 0
+        } : {
+          position: 'absolute',
+          top: '0.75rem',
+          right: '0.75rem',
+          display: 'flex',
+          gap: '1px',
+          alignItems: 'center',
+          zIndex: 10,
+          pointerEvents: 'none'
+        }}>
+          {[1, 2, 3, 4, 5].map((star) => {
+            const isFilled = rating >= star;
+            const isHalf = rating >= star - 0.5 && rating < star;
+            const starColor = '#fbbf24'; // Golden color for all filled stars
+            const starSize = !isGridView ? '0.7rem' : '0.875rem';
+
+            return (
+              <div key={star} style={{ position: 'relative', display: 'inline-block', fontSize: starSize, lineHeight: 1 }}>
+                {isHalf ? (
+                  <>
+                    <HiStar style={{ display: 'block', color: '#e5e7eb' }} />
+                    <div style={{ position: 'absolute', width: '50%', overflow: 'hidden', left: 0, top: 0, height: '100%' }}>
+                      <HiStar style={{ display: 'block', color: starColor }} />
+                    </div>
+                  </>
+                ) : (
+                  <HiStar
+                    style={{
+                      display: 'block',
+                      color: isFilled ? starColor : '#e5e7eb'
+                    }}
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     );
@@ -373,8 +426,8 @@ const LessonsContent = () => {
               <span style={{
                 fontSize: '0.75rem',
                 fontWeight: '700',
-                color: activeSection === 'science' ? '#10b981' : '#08245b',
-                background: activeSection === 'science' ? '#d1fae5' : '#f0f9ff',
+                color: activeSection === 'science' ? '#10b981' : activeSection === 'math' ? '#b91c1c' : activeSection === 'reading' ? '#713f12' : '#08245b',
+                background: activeSection === 'science' ? '#d1fae5' : activeSection === 'math' ? '#fecaca' : activeSection === 'reading' ? '#fef3c7' : '#f0f9ff',
                 padding: '0.25rem 0.5rem',
                 borderRadius: '4px'
               }}>
@@ -427,7 +480,7 @@ const LessonsContent = () => {
       <div className={classes.contentSection}>
         <div className={classes.controlsBar}>
           <div className={classes.filterButtons} ref={filterContainerRef}>
-            <div className={`${classes.filterSlider} ${activeSection === 'science' ? 'science' : ''}`} style={sliderStyle} />
+            <div className={`${classes.filterSlider} ${activeSection}`} style={sliderStyle} />
             <button
               ref={el => filterButtonsRef.current['getting-started'] = el}
               className={`${classes.filterButton} getting-started ${activeSection === 'getting-started' ? 'active' : ''}`}
@@ -473,6 +526,14 @@ const LessonsContent = () => {
                 setViewMode('grid');
               }}
               title="Grid view"
+              style={viewMode === 'grid' ? {
+                background: activeSection === 'science' ? '#10b981' : activeSection === 'math' ? '#b91c1c' : activeSection === 'reading' ? '#713f12' : '#08245b',
+                color: '#ffffff',
+                boxShadow: activeSection === 'science' ? '0 2px 4px rgba(16, 185, 129, 0.25), 0 1px 2px rgba(16, 185, 129, 0.15)' :
+                           activeSection === 'math' ? '0 2px 4px rgba(185, 28, 28, 0.25), 0 1px 2px rgba(185, 28, 28, 0.15)' :
+                           activeSection === 'reading' ? '0 2px 4px rgba(113, 63, 18, 0.25), 0 1px 2px rgba(113, 63, 18, 0.15)' :
+                           '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)'
+              } : {}}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="3" width="7" height="7"></rect>
@@ -488,6 +549,14 @@ const LessonsContent = () => {
                 setViewMode('list');
               }}
               title="List view"
+              style={viewMode === 'list' ? {
+                background: activeSection === 'science' ? '#10b981' : activeSection === 'math' ? '#b91c1c' : activeSection === 'reading' ? '#713f12' : '#08245b',
+                color: '#ffffff',
+                boxShadow: activeSection === 'science' ? '0 2px 4px rgba(16, 185, 129, 0.25), 0 1px 2px rgba(16, 185, 129, 0.15)' :
+                           activeSection === 'math' ? '0 2px 4px rgba(185, 28, 28, 0.25), 0 1px 2px rgba(185, 28, 28, 0.15)' :
+                           activeSection === 'reading' ? '0 2px 4px rgba(113, 63, 18, 0.25), 0 1px 2px rgba(113, 63, 18, 0.15)' :
+                           '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)'
+              } : {}}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="8" y1="6" x2="21" y2="6"></line>
@@ -515,8 +584,8 @@ const LessonsContent = () => {
                 <span style={{
                   fontSize: '0.75rem',
                   fontWeight: '700',
-                  color: activeSection === 'science' ? '#10b981' : '#08245b',
-                  background: activeSection === 'science' ? '#d1fae5' : '#f0f9ff',
+                  color: activeSection === 'science' ? '#10b981' : activeSection === 'math' ? '#b91c1c' : activeSection === 'reading' ? '#713f12' : '#08245b',
+                  background: activeSection === 'science' ? '#d1fae5' : activeSection === 'math' ? '#fecaca' : activeSection === 'reading' ? '#fef3c7' : '#f0f9ff',
                   padding: '0.25rem 0.5rem',
                   borderRadius: '4px'
                 }}>

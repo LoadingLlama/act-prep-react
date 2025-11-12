@@ -54,7 +54,7 @@ export const useLessonsContentStyles = createUseStyles({
   pageTitle: {
     fontSize: '2.5rem',
     fontWeight: '900',
-    background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 100%)',
+    background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
@@ -132,6 +132,14 @@ export const useLessonsContentStyles = createUseStyles({
     '&.science': {
       background: '#10b981',
       boxShadow: '0 2px 4px rgba(16, 185, 129, 0.25), 0 1px 2px rgba(16, 185, 129, 0.15)'
+    },
+    '&.math': {
+      background: '#b91c1c',
+      boxShadow: '0 2px 4px rgba(185, 28, 28, 0.25), 0 1px 2px rgba(185, 28, 28, 0.15)'
+    },
+    '&.reading': {
+      background: '#713f12',
+      boxShadow: '0 2px 4px rgba(113, 63, 18, 0.25), 0 1px 2px rgba(113, 63, 18, 0.15)'
     }
   },
   viewToggle: {
@@ -185,7 +193,8 @@ export const useLessonsContentStyles = createUseStyles({
   lessonsListView: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.5rem'
+    gap: '0.35rem',
+    padding: '0.5rem 1rem'
   },
   lessonCard: {
     background: '#ffffff',
@@ -247,14 +256,14 @@ export const useLessonsContentStyles = createUseStyles({
   lessonCardListView: {
     background: '#ffffff',
     border: '1px solid #e2e8f0',
-    borderRadius: '8px',
-    padding: '1rem 1.25rem',
+    borderRadius: '6px',
+    padding: '0.5rem 0.75rem',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
     display: 'flex',
     alignItems: 'center',
-    gap: '1rem',
-    minHeight: '60px',
+    gap: '0.75rem',
+    minHeight: '42px',
     position: 'relative',
     '&:hover': {
       borderColor: '#cbd5e1',
@@ -297,11 +306,14 @@ export const useLessonsContentStyles = createUseStyles({
     top: '0.75rem',
     right: '0.75rem',
     zIndex: 1,
-    pointerEvents: 'none'
+    pointerEvents: 'none',
+    flexShrink: 0
   },
   lessonInfo: {
     flex: 1,
-    paddingRight: '2.5rem'
+    paddingRight: '2.5rem',
+    minWidth: 0,
+    overflow: 'hidden'
   },
   lessonChapter: {
     fontSize: '0.65rem',
