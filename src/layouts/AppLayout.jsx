@@ -9,10 +9,11 @@ import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { HiBars3 } from 'react-icons/hi2';
 import { useAuth } from '../contexts/AuthContext';
 import { useAppStyles } from '../styles/App.styles';
-import { storage, domUtils, onboardingUtils } from '../utils/helpers';
+import { storage, domUtils } from '../utils/helpers';
 import { getAllLessons } from '../utils/lessonsDb';
 import { lessonStructure } from '../data/lessonStructure';
 import { getAllProgress, migrateLocalStorageProgress, updateProgress } from '../services/progressService';
+import { hasProSubscription } from '../services/subscription.service';
 import { supabase } from '../supabaseClient';
 
 // Components
@@ -20,7 +21,6 @@ import Sidebar from '../components/Sidebar';
 import LessonModal from '../components/app/LessonModal';
 import DiagnosticTest from '../components/DiagnosticTest';
 import PracticeTestPage from '../pages/PracticeTestPage';
-import OnboardingQuestionnaire from '../components/auth/OnboardingQuestionnaire';
 
 /**
  * AppLayout - Protected area wrapper with sidebar and routing
@@ -37,6 +37,8 @@ export default function AppLayout() {
   const [diagnosticTestOpen, setDiagnosticTestOpen] = useState(false);
   const [practiceTestOpen, setPracticeTestOpen] = useState(false);
   const [practiceTestNumber, setPracticeTestNumber] = useState(null);
+  const [isPro, setIsPro] = useState(false);
+  const [trialDaysLeft, setTrialDaysLeft] = useState(14);
 
   // Debug logging for diagnostic state changes
   useEffect(() => {
@@ -53,9 +55,6 @@ export default function AppLayout() {
   });
   const [hoveredMoreTag, setHoveredMoreTag] = useState(null);
   const [moreTagPosition, setMoreTagPosition] = useState({ top: 0, left: 0 });
-
-  // Onboarding State
-  const [onboardingComplete, setOnboardingComplete] = useState(null);
 
   // Get active view from URL
   const activeView = location.pathname.split('/')[2] || 'home';
@@ -84,87 +83,69 @@ export default function AppLayout() {
     loadLessonsFromSupabase();
   }, []);
 
-  // Check onboarding status and load progress
+  // Load user progress when authenticated
   useEffect(() => {
-    const checkOnboardingAndLoadProgress = async () => {
-      console.log('🔍 AppLayout: Checking onboarding status...', { hasUser: !!user });
-
-      if (!user) {
-        setOnboardingComplete(null);
-        return;
-      }
+    const loadProgress = async () => {
+      if (!user) return;
 
       try {
-        // DEMO MODE: Check if onboarding was completed in this session
-        if (user.email === 'demo@nomiacademy.com') {
-          console.log('🎭 DEMO MODE: Checking session state...');
-          const demoOnboardingComplete = sessionStorage.getItem('demo_onboarding_complete');
+        console.log('📚 Loading lesson progress...');
 
-          if (demoOnboardingComplete === 'true') {
-            console.log('🎭 DEMO MODE: Already completed in this session');
-            setOnboardingComplete(true);
-          } else {
-            console.log('🎭 DEMO MODE: First load, showing onboarding');
-            setOnboardingComplete(false);
-          }
-          return;
-        }
+        // Migrate localStorage progress if it exists
+        await migrateLocalStorageProgress(user.id);
 
-        // Check onboarding status
-        const { data: profile, error } = await supabase
-          .from('profiles')
-          .select('onboarding_completed, onboarding_data')
-          .eq('id', user.id)
-          .maybeSingle();
-
-        console.log('📊 Profile data:', { profile, error });
-
-        if (error && error.code === 'PGRST116') {
-          // Profile doesn't exist, create it
-          console.log('📝 Creating profile...');
-          await supabase.from('profiles').insert({ id: user.id, email: user.email });
-          setOnboardingComplete(false);
-          return;
-        }
-
-        if (error) {
-          console.error('❌ Error checking onboarding:', error);
-          setOnboardingComplete(false);
-          return;
-        }
-
-        if (!profile) {
-          // Create profile if doesn't exist
-          console.log('📝 No profile found, creating...');
-          await supabase.from('profiles').insert({ id: user.id, email: user.email });
-          setOnboardingComplete(false);
-          return;
-        }
-
-        // Set onboarding status from profile
-        console.log('📊 Profile onboarding status:', profile?.onboarding_completed);
-        setOnboardingComplete(profile?.onboarding_completed || false);
-
-        // Load progress from database
-        if (profile?.onboarding_completed) {
-          console.log('📚 Loading lesson progress...');
-
-          // Migrate localStorage progress if it exists
-          await migrateLocalStorageProgress(user.id);
-
-          // Load all progress from database
-          const progress = await getAllProgress(user.id);
-          setLessonProgress(progress);
-          console.log(`✅ Loaded progress for ${Object.keys(progress).length} lessons`);
-        }
+        // Load all progress from database
+        const progress = await getAllProgress(user.id);
+        setLessonProgress(progress);
+        console.log(`✅ Loaded progress for ${Object.keys(progress).length} lessons`);
       } catch (error) {
-        console.error('Error in checkOnboardingAndLoadProgress:', error);
-        setOnboardingComplete(false);
+        console.error('Error loading progress:', error);
       }
     };
 
-    checkOnboardingAndLoadProgress();
+    loadProgress();
   }, [user]);
+
+  // Check subscription status
+  useEffect(() => {
+    const checkSubscription = async () => {
+      if (!user) return;
+
+      try {
+        // Check if user is Pro
+        const proStatus = await hasProSubscription(user.id);
+        setIsPro(proStatus);
+
+        // Only calculate trial days if not Pro
+        if (!proStatus) {
+          const { data: userData } = await supabase.auth.getUser();
+          if (userData?.user?.created_at) {
+            const createdAt = new Date(userData.user.created_at);
+            const now = new Date();
+            const daysSinceCreation = Math.floor((now - createdAt) / (1000 * 60 * 60 * 24));
+            const daysRemaining = Math.max(0, 14 - daysSinceCreation);
+            setTrialDaysLeft(daysRemaining);
+          }
+        }
+      } catch (error) {
+        console.error('Error checking subscription:', error);
+      }
+    };
+
+    checkSubscription();
+  }, [user]);
+
+  // Get user initials from email
+  const getUserInitials = () => {
+    if (!user?.email) return '?';
+    const email = user.email;
+    const name = email.split('@')[0];
+    const parts = name.split(/[._-]/);
+    if (parts.length >= 2) {
+      return (parts[0][0] + parts[1][0]).toUpperCase();
+    }
+    return name.substring(0, 2).toUpperCase();
+  };
 
   // Navigation handler
   const handleNavigate = (view) => {
@@ -222,73 +203,8 @@ export default function AppLayout() {
     storage.set('expandedSections', newExpandedSections);
   };
 
-  // Onboarding handler - Called when user completes onboarding questions
-  const handleOnboardingComplete = async (data, action = false) => {
-    console.log('🎯🎯🎯 APPLAYOUT: ONBOARDING COMPLETE HANDLER 🎯🎯🎯');
-    console.log('📋 Action:', action);
-    console.log('📋 Data:', data);
-    console.log('📋 Current onboardingComplete state:', onboardingComplete);
 
-    // DEMO MODE: Don't save onboarding data for demo account
-    const isDemoUser = user?.email === 'demo@nomiacademy.com';
-
-    if (isDemoUser) {
-      console.log('🎭 DEMO MODE: Skipping database save, saving to sessionStorage');
-      sessionStorage.setItem('demo_onboarding_complete', 'true');
-    } else if (user && data) {
-      // Save onboarding data to database for regular users
-      await supabase
-        .from('profiles')
-        .update({
-          onboarding_completed: true,
-          onboarding_data: data
-        })
-        .eq('id', user.id);
-      console.log('💾 Saved to database');
-    }
-
-    // Open diagnostic test directly if user wants to take it
-    if (action === true) {
-      console.log('🚀🚀🚀 ACTION IS TRUE - Opening diagnostic immediately...');
-      // Open diagnostic FIRST, before changing onboarding state
-      setDiagnosticTestOpen(true);
-      // THEN mark onboarding complete so home page renders underneath
-      setTimeout(() => {
-        console.log('📋 Setting onboardingComplete to TRUE');
-        setOnboardingComplete(true);
-      }, 100);
-    } else {
-      console.log('⏭️ User skipped, going to home');
-      // Mark complete and navigate
-      setOnboardingComplete(true);
-      navigate('/app/home');
-    }
-  };
-
-  // Show onboarding if not complete
-  if (user && onboardingComplete === false) {
-    return (
-      <OnboardingQuestionnaire
-        userId={user.id}
-        onComplete={handleOnboardingComplete}
-      />
-    );
-  }
-
-  // Show loading while checking onboarding
-  if (user && onboardingComplete === null) {
-    return (
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        minHeight: '100vh',
-        background: '#ffffff'
-      }}>
-        <div style={{ color: '#1a1a1a', fontSize: '1.2rem' }}>Loading...</div>
-      </div>
-    );
-  }
+  // Onboarding questionnaire now handled in DiagnosticTest.jsx - no blocking UI needed here
 
   // Render main app layout
   return (
@@ -312,6 +228,19 @@ export default function AppLayout() {
 
       {/* Main Content Area */}
       <div className={classes.mainContent}>
+        {/* Top Right Header */}
+        <div className={classes.topHeader}>
+          <div
+            className={classes.profilePicture}
+            onClick={() => handleNavigate('profile')}
+          >
+            {getUserInitials()}
+          </div>
+          <div className={`${classes.statusBadge} ${isPro ? classes.proBadge : classes.trialBadge}`}>
+            {isPro ? 'Pro' : `${trialDaysLeft}d left`}
+          </div>
+        </div>
+
         <div className={classes.content}>
           <Outlet context={{
             lessonProgress,
@@ -349,11 +278,22 @@ export default function AppLayout() {
 
       {/* Diagnostic Test Modal */}
       {diagnosticTestOpen && (
-        <DiagnosticTest onClose={() => {
-          console.log('🏁 Diagnostic test closed, navigating to home');
-          setDiagnosticTestOpen(false);
-          navigate('/app/home');
-        }} />
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'white',
+          zIndex: 2000,
+          overflow: 'auto'
+        }}>
+          <DiagnosticTest onClose={() => {
+            console.log('🏁 Diagnostic test closed, navigating to home');
+            setDiagnosticTestOpen(false);
+            navigate('/app/home');
+          }} />
+        </div>
       )}
 
       {/* Practice Test Modal */}

@@ -152,7 +152,7 @@ const useStyles = createUseStyles({
     padding: '0.5rem 0',
     borderTop: '1px solid #f3f4f6',
     marginTop: 'auto'
-  }
+  },
 });
 
 const Sidebar = ({ activeView, onNavigate, isOpen, onClose }) => {

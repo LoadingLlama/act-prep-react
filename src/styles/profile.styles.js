@@ -262,4 +262,175 @@ export const profileStyles = {
       transform: 'none',
     },
   },
+
+  // Subscription Management Styles
+  subscriptionCard: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1.5rem',
+  },
+
+  subscriptionHeader: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    flexWrap: 'wrap',
+    gap: '1rem',
+  },
+
+  statusBadge: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    fontSize: '0.875rem',
+    fontWeight: '600',
+    padding: '0.5rem 1rem',
+    borderRadius: '6px',
+    textTransform: 'uppercase',
+    letterSpacing: '0.03em',
+  },
+
+  proBadge: {
+    background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%)',
+    color: '#64748b',
+    border: 'none',
+    boxShadow: '0 2px 12px rgba(100, 116, 139, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -1px 0 rgba(148, 163, 184, 0.2)',
+    fontWeight: '700',
+    letterSpacing: '0.05em',
+  },
+
+  trialBadge: {
+    background: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)',
+    color: '#1e40af',
+    border: '1px solid #93c5fd',
+  },
+
+  accountDate: {
+    fontSize: '0.875rem',
+    color: '#64748b',
+    margin: '0.5rem 0 0 0',
+  },
+
+  trialWarning: {
+    fontSize: '0.875rem',
+    color: '#ea580c',
+    background: '#ffedd5',
+    padding: '0.75rem 1rem',
+    borderRadius: '6px',
+    border: '1px solid #fed7aa',
+    fontWeight: '500',
+  },
+
+  trialExpired: {
+    fontSize: '0.875rem',
+    color: '#dc2626',
+    background: '#fee2e2',
+    padding: '0.75rem 1rem',
+    borderRadius: '6px',
+    border: '1px solid #fecaca',
+    fontWeight: '600',
+  },
+
+  featureGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+    gap: '1rem',
+  },
+
+  featureCard: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '1rem',
+    padding: '1.25rem',
+    background: '#ffffff',
+    border: '1px solid #e2e8f0',
+    borderRadius: '8px',
+    transition: 'all 0.2s ease',
+    '&:hover': {
+      borderColor: '#cbd5e1',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+    },
+  },
+
+  featureIcon: {
+    width: '48px',
+    height: '48px',
+    borderRadius: '12px',
+    background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+  },
+
+  featureContent: {
+    flex: 1,
+    minWidth: 0,
+  },
+
+  featureLabel: {
+    fontSize: '0.75rem',
+    fontWeight: '600',
+    color: '#64748b',
+    textTransform: 'uppercase',
+    letterSpacing: '0.05em',
+    marginBottom: '0.25rem',
+  },
+
+  featureValue: {
+    fontSize: '0.95rem',
+    fontWeight: '600',
+    color: '#0f172a',
+    lineHeight: '1.3',
+  },
+
+  upgradeButton: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.5rem',
+    padding: '14px 32px',
+    fontSize: '15px',
+    fontWeight: '600',
+    color: '#ffffff',
+    background: 'linear-gradient(135deg, #08245b 0%, #0a2f73 100%)',
+    border: 'none',
+    borderRadius: '6px',
+    cursor: 'pointer',
+    transition: 'all 0.2s',
+    width: '100%',
+    '&:hover': {
+      transform: 'translateY(-1px)',
+      boxShadow: '0 4px 12px rgba(8, 36, 91, 0.3)',
+    },
+    '&:active': {
+      transform: 'translateY(0)',
+    },
+  },
+
+  manageButton: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.5rem',
+    padding: '14px 32px',
+    fontSize: '15px',
+    fontWeight: '600',
+    color: '#475569',
+    background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
+    border: '1px solid #cbd5e1',
+    borderRadius: '6px',
+    cursor: 'pointer',
+    transition: 'all 0.2s',
+    width: '100%',
+    '&:hover': {
+      background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+      borderColor: '#94a3b8',
+      transform: 'translateY(-1px)',
+      boxShadow: '0 4px 12px rgba(100, 116, 139, 0.2)',
+    },
+    '&:active': {
+      transform: 'translateY(0)',
+    },
+  },
 };

@@ -4,17 +4,25 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import ProfileService from '../services/api/profile.service';
+import { hasProSubscription, getFeatureAccess } from '../services/subscription.service';
+import { supabase } from '../supabaseClient';
 import { profileStyles } from '../styles/profile.styles';
-import { HiUser, HiCamera, HiAcademicCap, HiCalendar, HiPhone, HiEnvelope } from 'react-icons/hi2';
+import { HiUser, HiCamera, HiAcademicCap, HiCalendar, HiPhone, HiEnvelope, HiCheckBadge, HiClock, HiRocketLaunch, HiSparkles, HiDocumentText, HiBookOpen, HiChartBar, HiCog6Tooth } from 'react-icons/hi2';
 
 const ProfilePage = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState('');
+  const [isPro, setIsPro] = useState(false);
+  const [trialDaysLeft, setTrialDaysLeft] = useState(14);
+  const [accountCreatedAt, setAccountCreatedAt] = useState(null);
+  const [featureAccess, setFeatureAccess] = useState(null);
   const [formData, setFormData] = useState({
     full_name: '',
     phone: '',
@@ -28,8 +36,39 @@ const ProfilePage = () => {
   useEffect(() => {
     if (user) {
       loadProfile();
+      loadSubscriptionStatus();
     }
   }, [user]);
+
+  const loadSubscriptionStatus = async () => {
+    if (!user) return;
+
+    try {
+      // Check if user is Pro
+      const proStatus = await hasProSubscription(user.id);
+      setIsPro(proStatus);
+
+      // Get feature access
+      const access = await getFeatureAccess(user.id);
+      setFeatureAccess(access);
+
+      // Get account creation date and calculate trial days
+      const { data: userData } = await supabase.auth.getUser();
+      if (userData?.user?.created_at) {
+        const createdAt = new Date(userData.user.created_at);
+        setAccountCreatedAt(createdAt);
+
+        if (!proStatus) {
+          const now = new Date();
+          const daysSinceCreation = Math.floor((now - createdAt) / (1000 * 60 * 60 * 24));
+          const daysRemaining = Math.max(0, 14 - daysSinceCreation);
+          setTrialDaysLeft(daysRemaining);
+        }
+      }
+    } catch (error) {
+      console.error('Error loading subscription status:', error);
+    }
+  };
 
   const loadProfile = async () => {
     setLoading(true);
@@ -165,6 +204,138 @@ const ProfilePage = () => {
           <div style={profileStyles.avatarInfo}>
             <h3 style={profileStyles.userName}>{formData.full_name || 'No name set'}</h3>
             <p style={profileStyles.userEmail}>{user?.email}</p>
+          </div>
+        </div>
+
+        {/* Subscription Management Section */}
+        <div style={profileStyles.formSection}>
+          <h3 style={profileStyles.sectionTitle}>
+            {isPro ? <HiCheckBadge size={20} /> : <HiClock size={20} />}
+            Subscription Status
+          </h3>
+
+          <div style={profileStyles.subscriptionCard}>
+            <div style={profileStyles.subscriptionHeader}>
+              <div>
+                <div style={{
+                  ...profileStyles.statusBadge,
+                  ...(isPro ? profileStyles.proBadge : profileStyles.trialBadge)
+                }}>
+                  {isPro ? (
+                    <>
+                      <HiCheckBadge size={16} />
+                      <span>Pro Member</span>
+                    </>
+                  ) : (
+                    <>
+                      <HiClock size={16} />
+                      <span>Free Trial</span>
+                    </>
+                  )}
+                </div>
+                {accountCreatedAt && (
+                  <p style={profileStyles.accountDate}>
+                    Member since {accountCreatedAt.toLocaleDateString('en-US', {
+                      month: 'long',
+                      day: 'numeric',
+                      year: 'numeric'
+                    })}
+                  </p>
+                )}
+              </div>
+              {!isPro && trialDaysLeft > 0 && (
+                <div style={profileStyles.trialWarning}>
+                  <strong>{trialDaysLeft} days</strong> remaining in your trial
+                </div>
+              )}
+              {!isPro && trialDaysLeft === 0 && (
+                <div style={profileStyles.trialExpired}>
+                  Your trial has expired
+                </div>
+              )}
+            </div>
+
+            {featureAccess && (
+              <div style={profileStyles.featureGrid}>
+                <div style={profileStyles.featureCard}>
+                  <div style={profileStyles.featureIcon}>
+                    <HiAcademicCap size={24} color="#3b82f6" />
+                  </div>
+                  <div style={profileStyles.featureContent}>
+                    <div style={profileStyles.featureLabel}>Lessons</div>
+                    <div style={profileStyles.featureValue}>
+                      {isPro ? 'Unlimited' : `${featureAccess.lessonsPerSection} per section`}
+                    </div>
+                  </div>
+                </div>
+
+                <div style={profileStyles.featureCard}>
+                  <div style={profileStyles.featureIcon}>
+                    <HiDocumentText size={24} color="#3b82f6" />
+                  </div>
+                  <div style={profileStyles.featureContent}>
+                    <div style={profileStyles.featureLabel}>Practice Tests</div>
+                    <div style={profileStyles.featureValue}>
+                      {isPro ? 'Unlimited' : `${featureAccess.practiceTests} test only`}
+                    </div>
+                  </div>
+                </div>
+
+                <div style={profileStyles.featureCard}>
+                  <div style={profileStyles.featureIcon}>
+                    <HiBookOpen size={24} color="#3b82f6" />
+                  </div>
+                  <div style={profileStyles.featureContent}>
+                    <div style={profileStyles.featureLabel}>Practice Questions</div>
+                    <div style={profileStyles.featureValue}>
+                      {isPro ? 'Unlimited' : `${featureAccess.practiceQuestionsPerLesson} per lesson`}
+                    </div>
+                  </div>
+                </div>
+
+                <div style={profileStyles.featureCard}>
+                  <div style={profileStyles.featureIcon}>
+                    <HiChartBar size={24} color="#3b82f6" />
+                  </div>
+                  <div style={profileStyles.featureContent}>
+                    <div style={profileStyles.featureLabel}>Insights</div>
+                    <div style={profileStyles.featureValue}>
+                      {isPro ? 'Full access' : 'Not available'}
+                    </div>
+                  </div>
+                </div>
+
+                <div style={profileStyles.featureCard}>
+                  <div style={profileStyles.featureIcon}>
+                    <HiSparkles size={24} color="#3b82f6" />
+                  </div>
+                  <div style={profileStyles.featureContent}>
+                    <div style={profileStyles.featureLabel}>AI Learning Path</div>
+                    <div style={profileStyles.featureValue}>
+                      {isPro ? 'Enabled' : 'Not available'}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {!isPro ? (
+              <button
+                style={profileStyles.upgradeButton}
+                onClick={() => navigate('/app/upgrade')}
+              >
+                <HiRocketLaunch size={20} />
+                Upgrade to Pro
+              </button>
+            ) : (
+              <button
+                style={profileStyles.manageButton}
+                onClick={() => navigate('/app/settings')}
+              >
+                <HiCog6Tooth size={20} />
+                Manage Subscription
+              </button>
+            )}
           </div>
         </div>
 
