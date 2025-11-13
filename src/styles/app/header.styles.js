@@ -160,9 +160,6 @@ export const headerStyles = {
     position: 'absolute',
     top: '1.5rem',
     right: '2rem',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '0.75rem',
     zIndex: 100,
     '@media (max-width: 1024px)': {
       top: '1rem',
@@ -190,23 +187,40 @@ export const headerStyles = {
       boxShadow: '0 4px 12px rgba(59, 130, 246, 0.2)'
     }
   },
+  profilePicturePro: {
+    border: '2.5px solid transparent',
+    backgroundImage: 'linear-gradient(#08245b, #3b82f6), linear-gradient(135deg, #e8eef5 0%, #cbd5e1 25%, #94a3b8 50%, #cbd5e1 75%, #e8eef5 100%)',
+    backgroundOrigin: 'border-box',
+    backgroundClip: 'padding-box, border-box',
+    boxShadow: '0 0 12px rgba(148, 163, 184, 0.6), 0 0 20px rgba(203, 213, 225, 0.4), 0 2px 8px rgba(100, 116, 139, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4)',
+    '&:hover': {
+      transform: 'scale(1.05)',
+      boxShadow: '0 0 16px rgba(148, 163, 184, 0.8), 0 0 24px rgba(203, 213, 225, 0.5), 0 3px 10px rgba(100, 116, 139, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4)'
+    }
+  },
   statusBadge: {
-    fontSize: '0.7rem',
-    fontWeight: '600',
-    padding: '0.35rem 0.65rem',
-    borderRadius: '6px',
-    textTransform: 'uppercase',
-    letterSpacing: '0.03em',
-    whiteSpace: 'nowrap',
-    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)'
+    position: 'absolute',
+    bottom: '-6px',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    minWidth: '20px',
+    height: '11px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '5px',
+    padding: '0 4px',
+    fontSize: '0.48rem',
+    boxShadow: '0 1px 4px rgba(0, 0, 0, 0.15)'
   },
   proBadge: {
-    background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%)',
+    background: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)',
     color: '#64748b',
-    border: 'none',
-    boxShadow: '0 2px 12px rgba(100, 116, 139, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -1px 0 rgba(148, 163, 184, 0.2)',
-    fontWeight: '700',
-    letterSpacing: '0.05em'
+    border: '0.5px solid #cbd5e1',
+    boxShadow: '0 1px 2px rgba(100, 116, 139, 0.1)',
+    fontWeight: '500',
+    letterSpacing: '0.03em',
+    textTransform: 'uppercase'
   },
   trialBadge: {
     background: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)',

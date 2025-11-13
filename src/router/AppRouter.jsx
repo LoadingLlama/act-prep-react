@@ -19,6 +19,7 @@ const CourseContent = lazy(() => import('../components/app/CourseContent'));
 const TestsContent = lazy(() => import('../components/app/TestsContent'));
 const LessonsContent = lazy(() => import('../components/app/LessonsContent'));
 const InsightsPage = lazy(() => import('../pages/InsightsPage'));
+const UpgradePage = lazy(() => import('../pages/UpgradePage'));
 const ProfilePage = lazy(() => import('../pages/ProfilePage'));
 const SettingsPage = lazy(() => import('../pages/SettingsPage'));
 
@@ -128,6 +129,11 @@ export default function AppRouter() {
             <Route path="insights" element={
               <Suspense fallback={<RouteLoader />}>
                 <InsightsPage />
+              </Suspense>
+            } />
+            <Route path="upgrade" element={
+              <Suspense fallback={<RouteLoader />}>
+                <UpgradePage />
               </Suspense>
             } />
             <Route path="profile" element={

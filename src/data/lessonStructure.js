@@ -120,14 +120,5 @@ export const lessonStructure = [
   { id: 'water-knowledge', section: 'science', chapterNum: '4.1', title: 'Water Knowledge', desc: 'Boiling point, freezing point, evaporation, and condensation', status: 'not-started', category: 'Background Knowledge' },
   { id: 'experimental-setup', section: 'science', chapterNum: '4.2', title: 'Experimental Setup', desc: 'Understanding why certain experimental procedures are used', status: 'not-started', category: 'Background Knowledge' },
   { id: 'outside-knowledge', section: 'science', chapterNum: '4.3', title: 'Other Outside Knowledge', desc: 'Genetics, biology, chemistry, and physics concepts for the ACT', status: 'not-started', category: 'Background Knowledge' },
-  { id: 'conflicting-viewpoints', section: 'science', chapterNum: '4.4', title: 'Conflicting Viewpoints', desc: 'Practice with the unique conflicting viewpoints passage type', status: 'not-started', category: 'Background Knowledge' },
-
-  // Practice Tests (separate category)
-  { id: 'sentence-structure-practice', section: 'english', chapterNum: null, title: 'Practice: Building Complete Sentences', desc: 'Authentic ACT questions testing sentence structure concepts', status: 'not-started', category: 'Practice Test' },
-  { id: 'commas-practice', section: 'english', chapterNum: null, title: 'Practice: Essential Comma Rules', desc: 'ACT-style questions on comma usage and punctuation', status: 'not-started', category: 'Practice Test' },
-  { id: 'punctuation-practice', section: 'english', chapterNum: null, title: 'Practice: Advanced Punctuation', desc: 'Semicolons, colons, dashes and apostrophes on the ACT', status: 'not-started', category: 'Practice Test' },
-  { id: 'backsolving-practice', section: 'math', chapterNum: null, title: 'Practice: Working Backwards Strategy', desc: 'ACT math problems perfect for backsolving technique', status: 'not-started', category: 'Practice Test' },
-  { id: 'substitution-practice', section: 'math', chapterNum: null, title: 'Practice: Number Substitution Technique', desc: 'Variable problems using substitution method', status: 'not-started', category: 'Practice Test' },
-  { id: 'geometry-angles-practice', section: 'math', chapterNum: null, title: 'Practice: Understanding Angles & Lines', desc: 'Parallel lines, intersecting lines, and polygon angles', status: 'not-started', category: 'Practice Test' },
-  { id: 'geometry-shapes-practice', section: 'math', chapterNum: null, title: 'Practice: Areas, Volumes & Triangles', desc: 'Area, volume, and triangle problems from real ACTs', status: 'not-started', category: 'Practice Test' }
+  { id: 'conflicting-viewpoints', section: 'science', chapterNum: '4.4', title: 'Conflicting Viewpoints', desc: 'Practice with the unique conflicting viewpoints passage type', status: 'not-started', category: 'Background Knowledge' }
 ];

@@ -13,14 +13,13 @@ export const useAllLessonsNavigatorStyles = createUseStyles({
     width: '320px',
     height: '100vh',
     overflowY: 'auto',
-    background: '#f5f5f5',
-    padding: '0.5rem 0.75rem',
+    background: '#ffffff',
+    padding: '0',
     zIndex: 1100,
     borderRight: '1px solid #e0e0e0',
-    transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     '&.collapsed': {
       width: '60px',
-      padding: '0.5rem 0.5rem',
       overflowY: 'hidden'
     },
     '&::-webkit-scrollbar': {
@@ -30,12 +29,24 @@ export const useAllLessonsNavigatorStyles = createUseStyles({
       background: 'transparent'
     },
     '&::-webkit-scrollbar-thumb': {
+      background: 'transparent',
+      borderRadius: '3px'
+    },
+    '&:hover::-webkit-scrollbar-thumb': {
       background: '#d1d5db',
-      borderRadius: '3px',
       '&:hover': {
         background: '#9ca3af'
       }
     }
+  },
+  headerSection: {
+    background: '#f8f9fa',
+    borderBottom: '1px solid #e0e0e0',
+    padding: '1rem 0.75rem 0.75rem 0.75rem'
+  },
+  contentSection: {
+    padding: '0.75rem 0.75rem',
+    background: '#ffffff'
   },
   backButton: {
     display: 'flex',
@@ -63,7 +74,7 @@ export const useAllLessonsNavigatorStyles = createUseStyles({
   },
   modeToggle: {
     display: 'flex',
-    background: '#e8eaed',
+    background: '#e0e3e7',
     borderRadius: '4px',
     padding: '2px',
     gap: '2px',
@@ -181,9 +192,8 @@ export const useAllLessonsNavigatorStyles = createUseStyles({
     fontSize: '0.75rem'
   },
   progressSection: {
-    padding: '0.75rem 0.5rem',
-    marginBottom: '0.75rem',
-    borderBottom: '1px solid #e0e0e0'
+    padding: '0.75rem 0.5rem 0 0.5rem',
+    marginBottom: '0'
   },
   progressText: {
     fontSize: '0.7rem',
@@ -207,40 +217,32 @@ export const useAllLessonsNavigatorStyles = createUseStyles({
     transition: 'width 0.3s ease'
   },
   toggleButton: {
-    position: 'fixed',
-    top: '50%',
-    left: '318px',
-    width: '4px',
-    height: '50px',
-    borderRadius: '0 3px 3px 0',
-    background: '#d1d5db',
+    position: 'absolute',
+    top: '0.5rem',
+    right: '0.5rem',
+    width: '28px',
+    height: '28px',
+    borderRadius: '4px',
+    background: 'transparent',
     border: 'none',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
     zIndex: 1200,
-    opacity: 0.4,
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-    transform: 'translateY(-50%)',
-    '$navigator.collapsed &': {
-      left: '58px'
-    },
+    transition: 'all 0.2s ease',
     '&:hover': {
-      width: '16px',
-      background: '#9ca3af',
-      opacity: 0.8,
-      boxShadow: '1px 0 4px rgba(0,0,0,0.1)'
+      background: '#e8eaed'
     },
-    '&:hover $toggleIcon': {
-      opacity: 1
+    '$navigator.collapsed &': {
+      right: '16px'
     }
   },
   toggleIcon: {
-    fontSize: '0.5rem',
-    color: '#ffffff',
-    opacity: 0,
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    fontSize: '0.65rem',
+    color: '#5f6368',
+    transition: 'transform 0.2s ease',
+    display: 'inline-block',
     '&.collapsed': {
       transform: 'rotate(180deg)'
     }

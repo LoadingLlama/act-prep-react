@@ -14,6 +14,8 @@ const Login = ({ onSwitchToSignup }) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [emailFocused, setEmailFocused] = useState(false);
+  const [passwordFocused, setPasswordFocused] = useState(false);
 
   /**
    * Handle email/password login
@@ -80,11 +82,10 @@ const Login = ({ onSwitchToSignup }) => {
 
   return (
     <div style={loginStyles.container}>
-      <img
-        src="/images/nomi-academy-logo.png"
-        alt="Nomi Academy"
-        style={loginStyles.logo}
-      />
+      <div style={loginStyles.logo}>
+        <span style={loginStyles.logoNomi}>Nomi</span>
+        <span style={loginStyles.logoAcademy}> Academy</span>
+      </div>
       <div style={loginStyles.card}>
         <h2 style={loginStyles.title}>Welcome Back</h2>
         <p style={loginStyles.subtitle}>Sign in to continue your ACT prep journey</p>
@@ -102,7 +103,12 @@ const Login = ({ onSwitchToSignup }) => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              style={loginStyles.input}
+              onFocus={() => setEmailFocused(true)}
+              onBlur={() => setEmailFocused(false)}
+              style={{
+                ...loginStyles.input,
+                ...(emailFocused ? loginStyles.inputFocus : {}),
+              }}
               placeholder="you@example.com"
               required
               disabled={loading}
@@ -115,7 +121,12 @@ const Login = ({ onSwitchToSignup }) => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              style={loginStyles.input}
+              onFocus={() => setPasswordFocused(true)}
+              onBlur={() => setPasswordFocused(false)}
+              style={{
+                ...loginStyles.input,
+                ...(passwordFocused ? loginStyles.inputFocus : {}),
+              }}
               placeholder="••••••••"
               required
               disabled={loading}
@@ -124,7 +135,10 @@ const Login = ({ onSwitchToSignup }) => {
 
           <button
             type="submit"
-            style={loginStyles.submitButton}
+            style={{
+              ...loginStyles.submitButton,
+              ...(loading ? loginStyles.submitButtonDisabled : {}),
+            }}
             disabled={loading}
           >
             {loading ? 'Signing in...' : 'Sign In'}

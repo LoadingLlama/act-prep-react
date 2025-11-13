@@ -1,0 +1,423 @@
+/**
+ * Upgrade Page
+ * Single-tier pricing focused on converting free trial users
+ */
+
+import React, { useState, useEffect } from 'react';
+import { createUseStyles } from 'react-jss';
+import { HiCheck, HiSparkles, HiRocketLaunch, HiStar, HiLockClosed } from 'react-icons/hi2';
+import { useAuth } from '../contexts/AuthContext';
+import { supabase } from '../services/api/supabase.service';
+
+const useStyles = createUseStyles({
+  container: {
+    maxWidth: '900px',
+    margin: '0 auto',
+    padding: '2rem 2rem',
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    '@media (max-width: 768px)': {
+      padding: '1.5rem 1rem'
+    }
+  },
+  trialBadge: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '0.4rem',
+    padding: '0.35rem 0.85rem',
+    background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
+    border: '1px solid #93c5fd',
+    borderRadius: '16px',
+    fontSize: '0.75rem',
+    fontWeight: '600',
+    color: '#1e40af',
+    marginBottom: '1rem'
+  },
+  header: {
+    textAlign: 'center',
+    marginBottom: '1.5rem',
+    maxWidth: '700px'
+  },
+  title: {
+    fontSize: '2.25rem',
+    fontWeight: '800',
+    color: '#1a1a1a',
+    marginBottom: '0.5rem',
+    letterSpacing: '-0.03em',
+    lineHeight: '1.1',
+    '@media (max-width: 768px)': {
+      fontSize: '1.75rem'
+    }
+  },
+  subtitle: {
+    fontSize: '1rem',
+    color: '#6b7280',
+    lineHeight: '1.5',
+    marginBottom: '0.5rem'
+  },
+  priceHighlight: {
+    fontSize: '0.9rem',
+    color: '#3b82f6',
+    fontWeight: '600',
+    marginTop: '0.5rem'
+  },
+  mainCard: {
+    maxWidth: '750px',
+    width: '100%',
+    background: 'linear-gradient(135deg, #ffffff 0%, #f9fafb 100%)',
+    borderRadius: '16px',
+    border: '2px solid #e5e7eb',
+    padding: '2rem',
+    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
+    '@media (max-width: 768px)': {
+      padding: '1.5rem 1rem'
+    }
+  },
+  priceSection: {
+    textAlign: 'center',
+    padding: '1.5rem',
+    background: 'linear-gradient(135deg, #08245b 0%, #0d3a8f 100%)',
+    borderRadius: '12px',
+    marginBottom: '1.5rem',
+    color: '#ffffff'
+  },
+  priceContainer: {
+    display: 'flex',
+    alignItems: 'baseline',
+    justifyContent: 'center',
+    gap: '0.35rem',
+    marginBottom: '0.5rem'
+  },
+  price: {
+    fontSize: '3rem',
+    fontWeight: '800',
+    lineHeight: '1',
+    '@media (max-width: 768px)': {
+      fontSize: '2.5rem'
+    }
+  },
+  priceSymbol: {
+    fontSize: '1.75rem',
+    opacity: 0.9
+  },
+  pricePeriod: {
+    fontSize: '1.125rem',
+    opacity: 0.9,
+    fontWeight: '500'
+  },
+  priceNote: {
+    fontSize: '0.8rem',
+    opacity: 0.8,
+    marginBottom: '1rem'
+  },
+  ctaButton: {
+    width: '100%',
+    maxWidth: '320px',
+    padding: '0.875rem 2rem',
+    borderRadius: '10px',
+    border: 'none',
+    fontSize: '1rem',
+    fontWeight: '700',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    background: '#ffffff',
+    color: '#08245b',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.5rem',
+    '&:hover': {
+      transform: 'translateY(-2px)',
+      boxShadow: '0 8px 16px rgba(255, 255, 255, 0.3)'
+    }
+  },
+  featuresGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    gap: '1rem',
+    marginBottom: '1.5rem',
+    '@media (max-width: 768px)': {
+      gridTemplateColumns: '1fr',
+      gap: '0.75rem'
+    }
+  },
+  featureColumn: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem'
+  },
+  featureItem: {
+    display: 'flex',
+    alignItems: 'flex-start',
+    gap: '0.5rem'
+  },
+  checkIcon: {
+    fontSize: '1.125rem',
+    color: '#10b981',
+    flexShrink: 0,
+    marginTop: '0.125rem'
+  },
+  featureText: {
+    fontSize: '0.85rem',
+    color: '#374151',
+    lineHeight: '1.4',
+    fontWeight: '500'
+  },
+  featureHighlight: {
+    fontWeight: '600',
+    color: '#1a1a1a'
+  },
+  comparisonSection: {
+    marginTop: '1.5rem',
+    padding: '1.25rem',
+    background: '#f9fafb',
+    borderRadius: '10px',
+    border: '1px solid #e5e7eb'
+  },
+  comparisonTitle: {
+    fontSize: '1rem',
+    fontWeight: '700',
+    color: '#1a1a1a',
+    marginBottom: '1rem',
+    textAlign: 'center'
+  },
+  comparisonGrid: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gap: '1rem',
+    '@media (max-width: 768px)': {
+      gridTemplateColumns: '1fr'
+    }
+  },
+  comparisonCard: {
+    padding: '1rem',
+    borderRadius: '8px'
+  },
+  freeCard: {
+    background: '#ffffff',
+    border: '1.5px solid #e5e7eb'
+  },
+  proCard: {
+    background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
+    border: '1.5px solid #60a5fa'
+  },
+  comparisonCardTitle: {
+    fontSize: '0.95rem',
+    fontWeight: '700',
+    marginBottom: '0.75rem',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.4rem'
+  },
+  comparisonList: {
+    listStyle: 'none',
+    padding: 0,
+    margin: 0,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem'
+  },
+  comparisonItem: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.4rem',
+    fontSize: '0.75rem',
+    color: '#6b7280'
+  },
+  limitedIcon: {
+    fontSize: '0.95rem',
+    color: '#ef4444',
+    flexShrink: 0
+  },
+  guaranteeBanner: {
+    textAlign: 'center',
+    marginTop: '1.5rem',
+    padding: '1rem',
+    background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
+    border: '1.5px solid #86efac',
+    borderRadius: '10px'
+  },
+  guaranteeTitle: {
+    fontSize: '0.95rem',
+    fontWeight: '700',
+    color: '#166534',
+    marginBottom: '0.35rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.4rem'
+  },
+  guaranteeText: {
+    fontSize: '0.8rem',
+    color: '#15803d',
+    lineHeight: '1.5'
+  }
+});
+
+const UpgradePage = () => {
+  const classes = useStyles();
+  const { user } = useAuth();
+  const [trialDaysLeft, setTrialDaysLeft] = useState(14);
+
+  useEffect(() => {
+    const calculateTrialDays = async () => {
+      if (!user) return;
+
+      try {
+        const { data: userData } = await supabase.auth.getUser();
+        if (userData?.user?.created_at) {
+          const createdAt = new Date(userData.user.created_at);
+          const now = new Date();
+          const daysSinceCreation = Math.floor((now - createdAt) / (1000 * 60 * 60 * 24));
+          const daysRemaining = Math.max(0, 14 - daysSinceCreation);
+          setTrialDaysLeft(daysRemaining);
+        }
+      } catch (error) {
+        console.error('Error calculating trial days:', error);
+      }
+    };
+
+    calculateTrialDays();
+  }, [user]);
+
+  const handleUpgrade = () => {
+    console.log('Upgrade to Pro');
+    // TODO: Integrate with payment processor (Stripe, etc.)
+  };
+
+  const proFeatures = [
+    { text: 'Unlimited lessons across all sections', highlight: 'Unlimited' },
+    { text: 'Full diagnostic test access' },
+    { text: 'Unlimited practice tests' },
+    { text: 'Unlimited practice questions per lesson' },
+    { text: 'AI-powered learning path recommendations' },
+    { text: 'Advanced performance insights & analytics' },
+    { text: 'Detailed progress tracking' },
+    { text: 'Section-by-section performance breakdown' },
+    { text: 'Weak area identification & recommendations' },
+    { text: 'Study schedule customization' }
+  ];
+
+  const freeFeatures = [
+    '5 lessons per section (limited)',
+    '1 practice test only',
+    '10 practice questions per lesson',
+    'No insights or analytics'
+  ];
+
+  return (
+    <div className={classes.container}>
+      <div className={classes.trialBadge}>
+        <HiSparkles />
+        {trialDaysLeft} {trialDaysLeft === 1 ? 'Day' : 'Days'} Left in Your Free Trial
+      </div>
+
+      <div className={classes.header}>
+        <h1 className={classes.title}>
+          Unlock Everything to Ace the ACT
+        </h1>
+        <p className={classes.subtitle}>
+          Get unlimited access to all lessons, tests, and AI-powered features to maximize your score.
+        </p>
+        <div className={classes.priceHighlight}>
+          Save $48/year with annual billing
+        </div>
+      </div>
+
+      <div className={classes.mainCard}>
+        <div className={classes.priceSection}>
+          <div className={classes.priceContainer}>
+            <span className={classes.priceSymbol}>$</span>
+            <span className={classes.price}>29</span>
+            <span className={classes.pricePeriod}>/month</span>
+          </div>
+          <div className={classes.priceNote}>
+            Billed monthly • Cancel anytime
+          </div>
+          <button className={classes.ctaButton} onClick={handleUpgrade}>
+            <HiRocketLaunch style={{ fontSize: '1.125rem' }} />
+            Start Pro Now
+          </button>
+        </div>
+
+        <div className={classes.featuresGrid}>
+          <div className={classes.featureColumn}>
+            {proFeatures.slice(0, 5).map((feature, index) => (
+              <div key={index} className={classes.featureItem}>
+                <HiCheck className={classes.checkIcon} />
+                <span className={classes.featureText}>
+                  {feature.highlight ? (
+                    <>
+                      {feature.text.split(feature.highlight)[0]}
+                      <span className={classes.featureHighlight}>{feature.highlight}</span>
+                      {feature.text.split(feature.highlight)[1]}
+                    </>
+                  ) : (
+                    feature.text
+                  )}
+                </span>
+              </div>
+            ))}
+          </div>
+          <div className={classes.featureColumn}>
+            {proFeatures.slice(5).map((feature, index) => (
+              <div key={index} className={classes.featureItem}>
+                <HiCheck className={classes.checkIcon} />
+                <span className={classes.featureText}>{feature.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={classes.comparisonSection}>
+          <h3 className={classes.comparisonTitle}>Free vs Pro</h3>
+          <div className={classes.comparisonGrid}>
+            <div className={`${classes.comparisonCard} ${classes.freeCard}`}>
+              <div className={classes.comparisonCardTitle} style={{ color: '#6b7280' }}>
+                <HiLockClosed />
+                Free Trial
+              </div>
+              <ul className={classes.comparisonList}>
+                {freeFeatures.map((feature, index) => (
+                  <li key={index} className={classes.comparisonItem}>
+                    <HiLockClosed className={classes.limitedIcon} />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className={`${classes.comparisonCard} ${classes.proCard}`}>
+              <div className={classes.comparisonCardTitle} style={{ color: '#1e40af' }}>
+                <HiStar />
+                Pro Access
+              </div>
+              <ul className={classes.comparisonList}>
+                {proFeatures.slice(0, 4).map((feature, index) => (
+                  <li key={index} className={classes.comparisonItem} style={{ color: '#1e40af', fontWeight: '600' }}>
+                    <HiCheck style={{ color: '#10b981', fontSize: '0.95rem' }} />
+                    {feature.text}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className={classes.guaranteeBanner}>
+          <div className={classes.guaranteeTitle}>
+            <HiCheck style={{ fontSize: '1.125rem' }} />
+            14-Day Money-Back Guarantee
+          </div>
+          <p className={classes.guaranteeText}>
+            Not satisfied? Get a full refund within 14 days, no questions asked.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default UpgradePage;

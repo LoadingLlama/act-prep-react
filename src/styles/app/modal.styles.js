@@ -88,9 +88,9 @@ export const modalStyles = {
       color: '#1a1a1a'
     },
     '&.active': {
-      background: '#1a1a1a',
+      background: '#08245b',
       color: 'white',
-      borderColor: '#1a1a1a'
+      borderColor: '#08245b'
     }
   },
   lessonClose: {
@@ -240,8 +240,8 @@ export const modalStyles = {
       color: '#1a1a1a'
     },
     '&.active': {
-      background: '#e0e7ff',
-      color: '#4f46e5',
+      background: '#f1f5f9',
+      color: '#08245b',
       fontWeight: 500
     }
   },

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset Diagnostic Test</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .container {
+      background: white;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+    }
+    h1 {
+      color: #111827;
+      margin: 0 0 1rem 0;
+    }
+    p {
+      color: #6b7280;
+      margin: 0 0 2rem 0;
+    }
+    button {
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    button:hover {
+      transform: translateY(-2px);
+    }
+    .success {
+      display: none;
+      color: #22c55e;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+    .status {
+      background: #f3f4f6;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+    .status-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .status-item:last-child {
+      border-bottom: none;
+    }
+    .status-label {
+      color: #6b7280;
+    }
+    .status-value {
+      font-weight: 600;
+      color: #111827;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔄 Reset Diagnostic Test</h1>
+    <p>Click the button below to clear your diagnostic test progress and start fresh.</p>
+
+    <div class="status" id="status">
+      <div class="status-item">
+        <span class="status-label">Diagnostic Processing:</span>
+        <span class="status-value" id="processingStatus">Checking...</span>
+      </div>
+      <div class="status-item">
+        <span class="status-label">localStorage Items:</span>
+        <span class="status-value" id="storageCount">Checking...</span>
+      </div>
+    </div>
+
+    <button onclick="resetDiagnostic()">Reset Diagnostic Test</button>
+    <div class="success" id="success">
+      ✅ Reset complete! You can now close this page and refresh your app.
+    </div>
+  </div>
+
+  <script>
+    // Check current status
+    function checkStatus() {
+      const processing = localStorage.getItem('diagnosticProcessing');
+      const storageCount = localStorage.length;
+
+      document.getElementById('processingStatus').textContent = processing ? 'Active' : 'None';
+      document.getElementById('storageCount').textContent = storageCount;
+    }
+
+    function resetDiagnostic() {
+      // Clear diagnostic processing flag
+      localStorage.removeItem('diagnosticProcessing');
+
+      // Clear any other diagnostic-related data
+      const keysToRemove = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.includes('diagnostic') || key.includes('Diagnostic')) {
+          keysToRemove.push(key);
+        }
+      }
+
+      keysToRemove.forEach(key => localStorage.removeItem(key));
+
+      // Also clear sessionStorage
+      sessionStorage.clear();
+
+      // Show success message
+      document.getElementById('success').style.display = 'block';
+
+      // Update status
+      checkStatus();
+
+      console.log('✅ Diagnostic test reset complete!');
+      console.log('Cleared items:', keysToRemove.length > 0 ? keysToRemove : ['diagnosticProcessing']);
+    }
+
+    // Check status on load
+    checkStatus();
+  </script>
+</body>
+</html>

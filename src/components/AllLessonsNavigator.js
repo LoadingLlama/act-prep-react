@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useAllLessonsNavigatorStyles } from './AllLessonsNavigator.styles';
+import { HiStar } from 'react-icons/hi2';
 
-const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange, onBackClick, lessonProgress = {}, lessonMode, setLessonMode }) => {
+const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange, onBackClick, lessonProgress = {}, lessonMode, setLessonMode, practiceQuestions = [], currentQuestionIndex = 0, onQuestionChange, questionResults = [] }) => {
   const classes = useAllLessonsNavigatorStyles();
 
   // Collapse state with localStorage persistence
@@ -93,79 +94,177 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
 
   return (
     <div className={`${classes.navigator} ${isCollapsed ? 'collapsed' : ''}`}>
-      {/* Toggle Button */}
-      <button className={classes.toggleButton} onClick={toggleCollapse}>
-        <span className={`${classes.toggleIcon} ${isCollapsed ? 'collapsed' : ''}`}>
-          ◀
-        </span>
-      </button>
-
       {/* Collapsed View */}
       <div className={classes.collapsedView}>
+        {/* Toggle Button for collapsed state */}
+        <button
+          className={classes.toggleButton}
+          onClick={toggleCollapse}
+          style={{ position: 'relative', top: 'auto', right: 'auto', marginBottom: '1rem' }}
+        >
+          <span className={`${classes.toggleIcon} ${isCollapsed ? 'collapsed' : ''}`}>
+            ◀
+          </span>
+        </button>
+
+        {/* Simple back arrow icon */}
         <div
-          className={classes.collapsedIcon}
           onClick={onBackClick}
           title="Back to Subjects"
+          style={{
+            cursor: 'pointer',
+            padding: '0.75rem',
+            color: '#5f6368',
+            transition: 'color 0.2s ease',
+            fontSize: '1.2rem'
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.color = '#202124'}
+          onMouseLeave={(e) => e.currentTarget.style.color = '#5f6368'}
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
+          ←
         </div>
       </div>
 
       {/* Full Content View */}
       <div className={classes.contentWrapper}>
-        <div style={{
-          padding: '0.5rem 0.5rem',
-          marginBottom: '0.75rem',
-          borderBottom: '1px solid #e0e0e0'
-        }}>
-          <img
-            src="/images/nomi-academy-logo.png"
-            alt="Nomi Academy"
-            style={{
-              height: '48px',
-              objectFit: 'contain'
-            }}
-          />
-        </div>
+        {/* Header Section with darker background */}
+        <div className={classes.headerSection} style={{ position: 'relative' }}>
+          {/* Toggle Button in top right */}
+          <button className={classes.toggleButton} onClick={toggleCollapse}>
+            <span className={`${classes.toggleIcon} ${isCollapsed ? 'collapsed' : ''}`}>
+              ◀
+            </span>
+          </button>
 
-        <button className={classes.backButton} onClick={onBackClick}>
-          ← Back to Subjects
-        </button>
-
-        <div className={classes.courseTitle}>{courseTitle}</div>
-
-        {/* Mode Toggle */}
-        {setLessonMode && (
-          <div className={classes.modeToggle}>
-            <button
-              className={`${classes.modeButton} ${lessonMode === 'review' ? 'active' : ''}`}
-              onClick={() => setLessonMode('review')}
-            >
-              Review
-            </button>
-            <button
-              className={`${classes.modeButton} ${lessonMode === 'practice' ? 'active' : ''}`}
-              onClick={() => setLessonMode('practice')}
-            >
-              Practice
-            </button>
+          <div style={{
+            padding: '0 0.5rem',
+            marginBottom: '0.75rem'
+          }}>
+            <img
+              src="/images/nomi-academy-logo.png"
+              alt="Nomi Academy"
+              style={{
+                height: '48px',
+                objectFit: 'contain',
+                display: 'block'
+              }}
+            />
           </div>
-        )}
 
-      {/* Progress Bar */}
-      <div className={classes.progressSection}>
-        <div className={classes.progressText}>
-          <span>Progress</span>
-          <span>{completedLessons}/{totalLessons}</span>
-        </div>
-        <div className={classes.progressBarContainer}>
-          <div className={classes.progressBarFill} style={{ width: `${progressPercentage}%` }} />
-        </div>
-      </div>
+          <button className={classes.backButton} onClick={onBackClick}>
+            ← Back to Subjects
+          </button>
 
-      {Object.entries(groupedLessons).map(([section, units]) => {
+          <div className={classes.courseTitle}>{courseTitle}</div>
+
+          {/* Mode Toggle */}
+          {setLessonMode && (
+            <div className={classes.modeToggle}>
+              <button
+                className={`${classes.modeButton} ${lessonMode === 'review' ? 'active' : ''}`}
+                onClick={() => setLessonMode('review')}
+              >
+                Review
+              </button>
+              <button
+                className={`${classes.modeButton} ${lessonMode === 'practice' ? 'active' : ''}`}
+                onClick={() => setLessonMode('practice')}
+              >
+                Practice
+              </button>
+            </div>
+          )}
+
+          {/* Progress Bar */}
+          <div className={classes.progressSection}>
+            <div className={classes.progressText}>
+              <span>Progress</span>
+              <span>{completedLessons}/{totalLessons}</span>
+            </div>
+            <div className={classes.progressBarContainer}>
+              <div className={classes.progressBarFill} style={{ width: `${progressPercentage}%` }} />
+            </div>
+          </div>
+        </div>
+
+        {/* Content Section with white background */}
+        <div className={classes.contentSection}>
+          {/* Practice Questions List (when in practice mode) */}
+          {lessonMode === 'practice' && practiceQuestions.length > 0 && (
+            <div style={{ padding: '0' }}>
+              <div style={{
+                fontSize: '0.7rem',
+                fontWeight: '600',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                color: '#64748b',
+                marginBottom: '0.5rem',
+                paddingLeft: '0.5rem'
+              }}>
+                {practiceQuestions.length} Questions
+              </div>
+              <div>
+                {practiceQuestions.map((question, index) => {
+              const isAnswered = questionResults.some(r => r.questionId === question.id);
+              const isCorrect = questionResults.find(r => r.questionId === question.id)?.correct;
+              const isCurrent = index === currentQuestionIndex;
+
+              return (
+                <div
+                  key={index}
+                  onClick={() => onQuestionChange && onQuestionChange(index)}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    padding: '0.5rem 0.75rem',
+                    cursor: 'pointer',
+                    background: isCurrent ? '#e3f2fd' : 'transparent',
+                    borderLeft: isCurrent ? '3px solid #2196f3' : '3px solid transparent',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isCurrent) e.currentTarget.style.background = '#f5f5f5';
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isCurrent) e.currentTarget.style.background = 'transparent';
+                  }}
+                >
+                  <div style={{
+                    width: '24px',
+                    height: '24px',
+                    minWidth: '24px',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '0.7rem',
+                    fontWeight: '600',
+                    background: isAnswered
+                      ? (isCorrect ? '#c8e6c9' : '#ffcdd2')
+                      : (isCurrent ? '#bbdefb' : '#f5f5f5'),
+                    color: isAnswered
+                      ? (isCorrect ? '#2e7d32' : '#c62828')
+                      : (isCurrent ? '#1976d2' : '#757575')
+                  }}>
+                    {isAnswered ? (isCorrect ? '✓' : '✗') : (index + 1)}
+                  </div>
+                  <div style={{
+                    fontSize: '0.8rem',
+                    fontWeight: isCurrent ? '600' : '400',
+                    color: isCurrent ? '#1a1a1a' : '#5f6368'
+                  }}>
+                    Question {index + 1}
+                  </div>
+                  </div>
+                );
+              })}
+              </div>
+            </div>
+          )}
+
+          {/* Lesson Units List (when in review mode) */}
+          {lessonMode === 'review' && Object.entries(groupedLessons).map(([section, units]) => {
         // Only show current section
         if (section !== currentSectionName && section !== 'Introduction') return null;
 
@@ -206,7 +305,7 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
                         <div className={`${classes.statusDot} ${getStatusDotClass(lessonProgress[lesson.id] || 'not-started')}`} />
                         <div className={classes.lessonText}>
                           {lesson.chapterNum && (
-                            <span className={classes.lessonNumber}>Topic {lesson.chapterNum}:</span>
+                            <span className={classes.lessonNumber}>{lesson.chapterNum}:</span>
                           )}
                           {lesson.title}
                         </div>
@@ -215,10 +314,11 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
                   })}
                 </div>
               )}
-            </div>
-          );
-        });
-      })}
+              </div>
+            );
+          });
+        })}
+        </div>
       </div>
     </div>
   );

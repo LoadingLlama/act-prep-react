@@ -7,11 +7,10 @@ import LessonsService from '../services/api/lessons.service';
 import ExamplesService from '../services/api/examples.service';
 import AllLessonsNavigator from './AllLessonsNavigator';
 import LessonTableOfContents from './LessonTableOfContents';
-import DiscussionSection from './discussion/DiscussionSection';
 import { lessonStructure } from '../data/lessonStructure';
 import { LessonRenderer } from './lesson/LessonRenderer';
 
-const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatusChange, onNavigate, lessonProgress = {}, lessonMode, setLessonMode }) => {
+const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatusChange, onNavigate, lessonProgress = {}, lessonMode, setLessonMode, hideNavigator = false }) => {
   const classes = useProgressiveLessonStyles();
   const [sections, setSections] = useState([]);
   const [currentSection, setCurrentSection] = useState(0);
@@ -62,7 +61,10 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
       setCurrentSection(restoredState?.currentSection || 0);
       setVisibleSections(restoredState?.visibleSections || 1);
       setCurrentSectionComplete(false);
-      setIsComplete(false);
+      // Only reset isComplete if lesson is not already completed
+      if (!isLessonCompleted) {
+        setIsComplete(false);
+      }
       setQuizCompletionStatus(restoredState?.quizCompletionStatus || {});
       setTextCompletionStatus(restoredState?.textCompletionStatus || {});
       setExampleCompletionStatus(restoredState?.exampleCompletionStatus || {});
@@ -249,7 +251,8 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
     };
 
     loadLessonContent();
-  }, [lesson, lessonProgress]);
+  }, [lesson?.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Note: Only re-run when lesson ID changes, not on every lessonProgress update to avoid re-rendering glitches
 
   useEffect(() => {
     const handleScroll = () => {
@@ -499,26 +502,28 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
 
   return (
     <div className={classes.progressiveContainer}>
-      <AllLessonsNavigator
-        lessonStructure={lessonStructure}
-        currentLessonId={lesson?.id}
-        lessonProgress={lessonProgress}
-        lessonMode={lessonMode}
-        setLessonMode={setLessonMode}
-        onLessonChange={(lessonId) => {
-          // Find lesson in structure and navigate to it
-          const targetLesson = lessonStructure.find(l => l.id === lessonId);
-          if (targetLesson && onNavigate) {
-            onNavigate('lesson', lessonId);
-          }
-        }}
-        onBackClick={() => {
-          // Navigate back to home
-          if (onNavigate) {
-            onNavigate('home');
-          }
-        }}
-      />
+      {!hideNavigator && (
+        <AllLessonsNavigator
+          lessonStructure={lessonStructure}
+          currentLessonId={lesson?.id}
+          lessonProgress={lessonProgress}
+          lessonMode={lessonMode}
+          setLessonMode={setLessonMode}
+          onLessonChange={(lessonId) => {
+            // Find lesson in structure and navigate to it
+            const targetLesson = lessonStructure.find(l => l.id === lessonId);
+            if (targetLesson && onNavigate) {
+              onNavigate('lesson', lessonId);
+            }
+          }}
+          onBackClick={() => {
+            // Navigate back to home
+            if (onNavigate) {
+              onNavigate('home');
+            }
+          }}
+        />
+      )}
 
       <LessonTableOfContents
         sections={sections}
@@ -545,6 +550,25 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
           flexWrap: 'wrap',
           justifyContent: 'flex-start'
         }}>
+          {(() => {
+            const currentLessonData = lessonStructure.find(l => l.id === lesson?.id);
+            return currentLessonData?.chapterNum ? (
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                fontSize: '0.875rem',
+                fontWeight: '600',
+                color: '#b91c1c'
+              }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                {currentLessonData.chapterNum}
+              </div>
+            ) : null;
+          })()}
           <div style={{
             display: 'flex',
             alignItems: 'center',
@@ -581,7 +605,11 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
           marginBottom: '0.5rem',
           lineHeight: '1.3'
         }}>
-          {lesson?.title || 'Lesson'}
+          {(() => {
+            const title = lesson?.title || 'Lesson';
+            // Remove "Topic X.X - " prefix if present
+            return title.replace(/^Topic\s+[\d.]+\s*-\s*/i, '');
+          })()}
         </h2>
       </div>
 
@@ -659,11 +687,6 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         </div>
       ))}
         </>
-      )}
-
-      {/* Discussion Section */}
-      {hasStarted && isComplete && lesson?.id && (
-        <DiscussionSection lessonId={lesson.id} />
       )}
 
       {hasStarted && isComplete && (
@@ -909,43 +932,6 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         </div>
       )}
 
-      {/* Manual completion button for stuck final section */}
-      {hasStarted && !isComplete && currentSection === sections.length - 1 && sections[currentSection]?.type === 'text' && textCompletionStatus[currentSection] && (
-        <div style={{
-          position: 'fixed',
-          bottom: '2rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          background: 'rgba(220, 38, 38, 0.95)',
-          color: 'white',
-          padding: '0.75rem 1.5rem',
-          borderRadius: '8px',
-          fontSize: '0.875rem',
-          fontWeight: '500',
-          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-          zIndex: 1000
-        }}>
-          ⚠️ Section completed but lesson stuck.
-          <button
-            onClick={() => {
-              console.log('🔧 Manual completion triggered');
-              setIsComplete(true);
-            }}
-            style={{
-              marginLeft: '1rem',
-              background: 'white',
-              color: '#dc2626',
-              border: 'none',
-              padding: '0.5rem 1rem',
-              borderRadius: '6px',
-              fontWeight: '600',
-              cursor: 'pointer'
-            }}
-          >
-            Click to finish
-          </button>
-        </div>
-      )}
     </div>
   );
 };

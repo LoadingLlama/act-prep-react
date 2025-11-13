@@ -333,29 +333,30 @@ export const profileStyles = {
 
   featureGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-    gap: '1rem',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+    gap: '0.75rem',
   },
 
   featureCard: {
     display: 'flex',
     alignItems: 'center',
-    gap: '1rem',
-    padding: '1.25rem',
-    background: '#ffffff',
-    border: '1px solid #e2e8f0',
-    borderRadius: '8px',
+    gap: '0.65rem',
+    padding: '0.75rem',
+    background: 'transparent',
+    border: 'none',
+    borderRadius: '6px',
     transition: 'all 0.2s ease',
     '&:hover': {
-      borderColor: '#cbd5e1',
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+      background: '#f8fafc',
+      transform: 'translateY(-1px)',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
     },
   },
 
   featureIcon: {
-    width: '48px',
-    height: '48px',
-    borderRadius: '12px',
+    width: '32px',
+    height: '32px',
+    borderRadius: '8px',
     background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
     display: 'flex',
     alignItems: 'center',
@@ -369,16 +370,16 @@ export const profileStyles = {
   },
 
   featureLabel: {
-    fontSize: '0.75rem',
+    fontSize: '0.65rem',
     fontWeight: '600',
     color: '#64748b',
     textTransform: 'uppercase',
     letterSpacing: '0.05em',
-    marginBottom: '0.25rem',
+    marginBottom: '0.15rem',
   },
 
   featureValue: {
-    fontSize: '0.95rem',
+    fontSize: '0.8rem',
     fontWeight: '600',
     color: '#0f172a',
     lineHeight: '1.3',

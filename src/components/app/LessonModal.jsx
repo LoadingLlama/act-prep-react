@@ -7,6 +7,8 @@
 import React from 'react';
 import ProgressiveLessonRenderer from '../ProgressiveLessonRenderer';
 import PracticeSession from './PracticeSession';
+import AllLessonsNavigator from '../AllLessonsNavigator';
+import { lessonStructure as allLessonStructure } from '../../data/lessonStructure';
 
 /**
  * LessonModal - Full-screen modal for lesson viewing
@@ -40,9 +42,45 @@ const LessonModal = ({
   const lesson = lessonContent;
   const currentLessonData = lessonStructure.find(item => item.id === currentLesson);
   const currentSection = currentLessonData?.section;
+  const [practiceState, setPracticeState] = React.useState({
+    questions: [],
+    currentQuestionIndex: 0,
+    results: []
+  });
+
+  // Mark lesson as in-progress when opened (if not already completed)
+  React.useEffect(() => {
+    if (lessonModalOpen && currentLesson) {
+      const currentStatus = lessonProgress[currentLesson];
+      console.log(`📊 Lesson opened: ${currentLesson}, current status: ${currentStatus}`);
+
+      // Only mark as in-progress if it's not-started or undefined
+      if (!currentStatus || currentStatus === 'not-started') {
+        console.log(`📝 Marking lesson as in-progress: ${currentLesson}`);
+        updateLessonProgress(currentLesson, 'in-progress');
+      }
+    }
+  }, [lessonModalOpen, currentLesson, lessonProgress, updateLessonProgress]);
 
   return (
     <div className={`${classes.lessonModal} ${lessonModalOpen ? 'active' : ''}`}>
+      {/* Always render AllLessonsNavigator sidebar */}
+      <AllLessonsNavigator
+        lessonStructure={allLessonStructure}
+        currentLessonId={currentLesson}
+        lessonProgress={lessonProgress}
+        lessonMode={lessonMode}
+        setLessonMode={setLessonMode}
+        onLessonChange={openLesson}
+        onBackClick={closeLessonModal}
+        practiceQuestions={practiceState.questions}
+        currentQuestionIndex={practiceState.currentQuestionIndex}
+        questionResults={practiceState.results}
+        onQuestionChange={(index) => {
+          setPracticeState(prev => ({ ...prev, currentQuestionIndex: index }));
+        }}
+      />
+
       <div style={{
         position: 'fixed',
         top: '0',
@@ -61,6 +99,7 @@ const LessonModal = ({
               lessonProgress={lessonProgress}
               lessonMode={lessonMode}
               setLessonMode={setLessonMode}
+              hideNavigator={true}
               onNavigate={(type, lessonId) => {
                 if (type === 'home') {
                   closeLessonModal();
@@ -105,6 +144,10 @@ const LessonModal = ({
               lessonProgress={lessonProgress}
               lessonMode={lessonMode}
               setLessonMode={setLessonMode}
+              useExternalSidebar={true}
+              currentQuestionIndex={practiceState.currentQuestionIndex}
+              onPracticeStateChange={setPracticeState}
+              updateLessonProgress={updateLessonProgress}
             />
           ) : (
             <div style={{

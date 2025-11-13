@@ -203,18 +203,63 @@ const LearningPathService = {
 
   /**
    * Update learning path item status
+   * Enforces 5-star mastery requirement before marking as complete
    */
   async updatePathItemStatus(itemId, status, completionData = {}) {
     logger.debug('LearningPathService', 'updatePathItemStatus', { itemId, status });
+
+    // Get the path item with user and lesson info
+    const { data: pathItem, error: fetchError } = await supabase
+      .from('learning_path_items')
+      .select('*, learning_path:user_learning_paths(user_id)')
+      .eq('id', itemId)
+      .single();
+
+    if (fetchError) {
+      errorTracker.trackError('LearningPathService', 'updatePathItemStatus', { itemId }, fetchError);
+      throw fetchError;
+    }
+
+    const userId = pathItem.learning_path.user_id;
+    const lessonId = pathItem.lesson_id;
+
+    // If trying to mark as completed, check mastery level
+    if (status === 'completed') {
+      const { data: performance } = await supabase
+        .from('user_lesson_performance')
+        .select('mastery_level, accuracy_percentage')
+        .eq('user_id', userId)
+        .eq('lesson_id', lessonId)
+        .single();
+
+      const masteryLevel = performance?.mastery_level || 0;
+      const accuracy = performance?.accuracy_percentage || 0;
+
+      // CRITICAL: Only allow completion if mastery_level >= 5 OR accuracy >= 90%
+      if (masteryLevel < 5 && accuracy < 90) {
+        logger.warn('LearningPathService', 'masteryNotAchieved', {
+          itemId,
+          lessonId,
+          masteryLevel,
+          accuracy,
+          message: 'Cannot complete lesson - must achieve 5-star mastery (90%+ accuracy)'
+        });
+
+        // Mark as in_progress instead, requiring more practice
+        status = 'in_progress';
+        completionData.mastery_achieved = masteryLevel;
+        completionData.requires_more_practice = true;
+      } else {
+        // Mastery achieved! Mark as truly complete
+        completionData.completed_at = new Date().toISOString();
+        completionData.mastery_achieved = 5;
+      }
+    }
 
     const updateData = {
       status,
       ...completionData
     };
-
-    if (status === 'completed') {
-      updateData.completed_at = new Date().toISOString();
-    }
 
     const { data, error } = await supabase
       .from('learning_path_items')
@@ -230,6 +275,12 @@ const LearningPathService = {
 
     // Recalculate path completion percentage
     await this._recalculatePathCompletion(data.learning_path_id);
+
+    logger.info('LearningPathService', 'pathItemUpdated', {
+      itemId,
+      status: data.status,
+      masteryAchieved: data.mastery_achieved
+    });
 
     return data;
   },

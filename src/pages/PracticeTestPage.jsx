@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useEffect, useCallback } from 'react';
+import { HiXMark } from 'react-icons/hi2';
 import { usePracticeTestStyles } from '../styles/pages/practice-test.styles';
 import PracticeTestsService from '../services/api/practiceTests.service';
 import logger from '../services/logging/logger';
@@ -18,7 +19,8 @@ const PracticeTestPage = ({ testId, onClose }) => {
   const [selectedSection, setSelectedSection] = useState(null);
   const [questions, setQuestions] = useState([]);
 
-  const testNumber = parseInt(testId, 10);
+  const testNumber = parseInt(testId, 10); // Actual DB test number (2-7)
+  const displayTestNumber = testNumber - 1; // Display number to user (1-6)
 
   // Section configurations
   const sectionConfig = {
@@ -194,7 +196,7 @@ const PracticeTestPage = ({ testId, onClose }) => {
       <div className={classes.container}>
         <div className={classes.loadingContainer}>
           <div className={classes.loadingSpinner} />
-          <div className={classes.loadingText}>Loading Practice Test {testNumber}...</div>
+          <div className={classes.loadingText}>Loading Practice Test {displayTestNumber}...</div>
         </div>
       </div>
     );
@@ -255,7 +257,7 @@ const PracticeTestPage = ({ testId, onClose }) => {
             border: 'none',
             background: 'white'
           }}
-          title={`Practice Test ${testNumber} - ${selectedSection}`}
+          title={`Practice Test ${displayTestNumber} - ${selectedSection}`}
         />
       </div>
     );
@@ -267,10 +269,11 @@ const PracticeTestPage = ({ testId, onClose }) => {
   return (
     <div className={classes.container}>
       <button onClick={onClose} className={classes.closeButton}>
-        ✕ Close
+        <HiXMark style={{ fontSize: '1.125rem' }} />
+        Close
       </button>
       <div className={classes.sectionSelector}>
-        <h1 className={classes.sectionTitle}>Practice Test {testNumber}</h1>
+        <h1 className={classes.sectionTitle}>Practice Test {displayTestNumber}</h1>
         <p className={classes.sectionDescription}>
           Full simulated ACT test with 215 questions across all four sections.
         </p>

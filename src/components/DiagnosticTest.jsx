@@ -13,6 +13,7 @@ import LearningPathService from '../services/api/learning-path.service';
 import { supabase } from '../services/api/supabase.service';
 import logger from '../services/logging/logger';
 import errorTracker from '../services/logging/errorTracker';
+import { convertDiagnosticToACT, getPerformanceLevel } from '../utils/actScoreConversion';
 
 /**
  * Transform onboarding answers to user goals format for learning path
@@ -88,7 +89,9 @@ const getUserGoals = async (userId) => {
         target_score: existingGoals.target_score,
         study_days_per_week: existingGoals.study_days_per_week || 5,
         focus_sections: existingGoals.focus_sections || [],
-        study_experience: 'never'
+        study_experience: 'never',
+        review_day: existingGoals.review_day,
+        mock_exam_day: existingGoals.mock_exam_day
       };
     }
 
@@ -130,7 +133,7 @@ const DiagnosticTest = ({ onClose }) => {
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [questions, setQuestions] = useState([]);
+  const [questions, setQuestions] = useState([]); // Current section questions
   const [testStarted, setTestStarted] = useState(false);
   const [sessionId, setSessionId] = useState(null);
   const [userId, setUserId] = useState(null);
@@ -138,6 +141,13 @@ const DiagnosticTest = ({ onClose }) => {
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState(false);
   const [showIntro, setShowIntro] = useState(false);
+  const [currentSection, setCurrentSection] = useState('english'); // Track current section
+  const [processing, setProcessing] = useState(false);
+  const [processingStep, setProcessingStep] = useState('');
+  const [processingProgress, setProcessingProgress] = useState(0);
+  const [showResults, setShowResults] = useState(false);
+  const [analysisData, setAnalysisData] = useState(null);
+  const [userGoalsData, setUserGoalsData] = useState(null);
   const [onboardingData, setOnboardingData] = useState({
     target_exam_date: '',
     current_score: '',
@@ -166,121 +176,115 @@ const DiagnosticTest = ({ onClose }) => {
     mock_exam_day: 'saturday'
   });
   const [hoveredTooltip, setHoveredTooltip] = useState(null);
+  const [confirmStart, setConfirmStart] = useState(false);
+  const [showCountdown, setShowCountdown] = useState(false);
+  const [countdown, setCountdown] = useState(3);
+  const [showInsights, setShowInsights] = useState(false);
+  const [insightsData, setInsightsData] = useState(null);
+  const [selectedQuestion, setSelectedQuestion] = useState(null);
 
-  // Get current user and check onboarding status on mount
+  // Countdown timer effect
+  useEffect(() => {
+    if (showCountdown && countdown > 0) {
+      const timer = setTimeout(() => {
+        setCountdown(countdown - 1);
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else if (showCountdown && countdown === 0) {
+      // Hide countdown and start the test
+      setShowCountdown(false);
+      if (!testStarted) {
+        beginDiagnosticTest();
+      }
+    }
+  }, [showCountdown, countdown, testStarted]);
+
+  // Section configurations
+  const sectionConfig = {
+    english: {
+      name: 'English',
+      emoji: '📝',
+      timeMinutes: 45,
+      description: '75 questions covering grammar, punctuation, and rhetorical skills',
+      nextSection: 'math'
+    },
+    math: {
+      name: 'Mathematics',
+      emoji: '🔢',
+      timeMinutes: 60,
+      description: '60 questions covering algebra, geometry, and trigonometry',
+      nextSection: 'reading'
+    },
+    reading: {
+      name: 'Reading',
+      emoji: '📖',
+      timeMinutes: 35,
+      description: '40 questions across 4 passages',
+      nextSection: 'science'
+    },
+    science: {
+      name: 'Science',
+      emoji: '🔬',
+      timeMinutes: 35,
+      description: '40 questions testing scientific reasoning',
+      nextSection: null // Last section
+    }
+  };
+
+  // Verify user on mount only
   useEffect(() => {
     const getCurrentUser = async () => {
       const { data: { user } } = await supabase.auth.getUser();
       if (user) {
         setUserId(user.id);
-
-        // Check if user has completed onboarding (has user_goals)
-        const { data: goals } = await supabase
-          .from('user_goals')
-          .select('*')
-          .eq('user_id', user.id)
-          .maybeSingle();
-
-        setHasCompletedOnboarding(!!goals);
-
-        // Pre-fill onboarding data if it exists
-        if (goals) {
-          setOnboardingData({
-            target_exam_date: goals.target_exam_date || '',
-            current_score: goals.current_score || '',
-            target_score: goals.target_score || 28,
-            use_alternating_weeks: false,
-            study_hours: {
-              monday: 0.75,
-              tuesday: 1,
-              wednesday: 0,
-              thursday: 0.75,
-              friday: 1,
-              saturday: 2,
-              sunday: 2
-            },
-            study_hours_week2: {
-              monday: 0.75,
-              tuesday: 1,
-              wednesday: 0,
-              thursday: 0.75,
-              friday: 1,
-              saturday: 2,
-              sunday: 2
-            },
-            weakest_section: goals.weakest_section || '',
-            review_day: goals.review_day || 'sunday',
-            mock_exam_day: goals.mock_exam_day || 'saturday'
-          });
-        }
       } else {
         setError('You must be logged in to take the diagnostic test.');
       }
+      setLoading(false);
     };
     getCurrentUser();
   }, []);
 
-  // Load all diagnostic questions on mount
-  useEffect(() => {
-    if (userId) {
-      loadDiagnosticQuestions();
-    }
-  }, [userId]);
-
   /**
-   * Load all diagnostic questions from database
+   * Load questions for a specific section
    */
-  const loadDiagnosticQuestions = async () => {
+  const loadSectionQuestions = async (section) => {
     try {
       setLoading(true);
       setError(null);
 
-      logger.info('DiagnosticTest', 'loadDiagnosticQuestions', {});
+      logger.info('DiagnosticTest', 'loadSectionQuestions', { section });
 
-      const diagnosticQuestions = await DiagnosticService.getDiagnosticQuestions();
+      const sectionQuestions = await DiagnosticService.getDiagnosticQuestions(section);
 
-      if (!diagnosticQuestions || diagnosticQuestions.length === 0) {
-        throw new Error('No diagnostic questions found');
+      if (!sectionQuestions || sectionQuestions.length === 0) {
+        throw new Error(`No ${section} questions found`);
       }
 
-      // Transform questions to match practice test format
-      const transformedQuestions = diagnosticQuestions.map(q => ({
-        id: q.id, // UUID from database - CRITICAL for saving answers
-        question_id: q.question_id, // Integer question number
-        section: q.section,
-        passage_id: q.passage_id,
-        question_number: q.question_number,
-        question_text: q.question_text,
-        choices: q.choices,
-        correct_answer: q.correct_answer,
-        correctAnswer: q.correct_answer, // Alias for practice test format
-        explanation: q.explanation,
-        difficulty: q.difficulty,
-        tags: q.tags,
-        lesson_id: q.lesson_id
-      }));
-
-      setQuestions(transformedQuestions);
-      logger.info('DiagnosticTest', 'loadDiagnosticQuestions', {
-        count: transformedQuestions.length
+      console.log(`✅ Loaded ${section} section:`, {
+        count: sectionQuestions.length,
+        questionNumbers: sectionQuestions.map(q => q.question_number).join(', '),
+        fromTest: 'Practice Test #1 (Diagnostic)'
       });
 
-      // Automatically show onboarding if user hasn't completed it
-      if (!hasCompletedOnboarding) {
-        setShowOnboarding(true);
-      } else {
-        setShowIntro(true);
-      }
+      // Questions are already in the correct format from the service
+      setQuestions(sectionQuestions);
+      setCurrentSection(section);
+
+      logger.info('DiagnosticTest', 'loadSectionQuestions', {
+        section,
+        count: sectionQuestions.length
+      });
 
     } catch (err) {
-      console.error('Error loading diagnostic questions:', err);
+      console.error(`Error loading ${section} questions:`, err);
       errorTracker.trackError(
         'DiagnosticTest',
-        'loadDiagnosticQuestions',
-        {},
+        'loadSectionQuestions',
+        { section },
         err
       );
-      setError('Failed to load diagnostic test. Please try again.');
+      setError(`Failed to load ${section} section. Please try again.`);
     } finally {
       setLoading(false);
     }
@@ -291,10 +295,279 @@ const DiagnosticTest = ({ onClose }) => {
    * Creates a diagnostic session before loading the test
    */
   /**
-   * Save onboarding data to user_goals table
+   * Save onboarding data - just move to intro screen without persisting
+   * Data will be saved when test is completed
    */
   const saveOnboardingData = async () => {
     try {
+      console.log('📝 Onboarding data collected (will save after test completion)');
+      setHasCompletedOnboarding(true);
+      setShowOnboarding(false);
+
+      // Show intro screen before starting test
+      setShowIntro(true);
+    } catch (error) {
+      console.error('Error processing onboarding:', error);
+      logger.error('DiagnosticTest', 'saveOnboardingDataFailed', { error: error.message });
+      setError(`Failed to process your information: ${error.message || 'Unknown error'}. Please try again.`);
+    }
+  };
+
+  /**
+   * Begin diagnostic test - starts with English section
+   */
+  const beginDiagnosticTest = async () => {
+    try {
+      logger.info('DiagnosticTest', 'beginDiagnosticTest', { userId });
+
+      console.log('📝 Creating diagnostic session in database...');
+
+      // Create actual diagnostic session in database to get proper UUID
+      const session = await DiagnosticService.createDiagnosticSession(
+        userId,
+        'full', // All sections
+        215 // Total questions (75 English + 60 Math + 40 Reading + 40 Science)
+      );
+
+      if (!session || !session.id) {
+        throw new Error('Failed to create diagnostic session');
+      }
+
+      console.log('✅ Diagnostic session created:', session.id);
+      setSessionId(session.id);
+      sessionStorage.setItem('diagnosticSessionId', session.id);
+
+      // Load English section first
+      await loadSectionQuestions('english');
+      setTestStarted(true);
+
+      logger.info('DiagnosticTest', 'testStarted', { sessionId: session.id, section: 'english' });
+
+    } catch (error) {
+      logger.error('DiagnosticTest', 'beginDiagnosticTestFailed', { error });
+      setError(error.message || 'Failed to start the diagnostic test');
+    }
+  };
+
+  /**
+   * Store current section questions in sessionStorage when they change
+   */
+  useEffect(() => {
+    if (testStarted && questions.length > 0 && currentSection) {
+      const duration = sectionConfig[currentSection]?.timeMinutes || 45;
+
+      sessionStorage.setItem('practiceTestQuestions', JSON.stringify(questions));
+      sessionStorage.setItem('practiceTestSection', currentSection);
+      sessionStorage.setItem('practiceTestNumber', 'diagnostic');
+      sessionStorage.setItem('practiceTestDuration', duration);
+
+      console.log('📦 Storing section in sessionStorage:', {
+        section: currentSection,
+        questionsCount: questions.length,
+        duration
+      });
+    }
+  }, [testStarted, questions, currentSection]);
+
+  /**
+   * Handle "Begin Diagnostic Test" button click
+   */
+  const startTest = async () => {
+    // Check if user needs to complete onboarding first
+    if (!hasCompletedOnboarding) {
+      setShowOnboarding(true);
+      return;
+    }
+
+    // Otherwise, start test directly
+    await beginDiagnosticTest();
+  };
+
+  // Listen for section completion and test completion messages from iframe
+  useEffect(() => {
+    const handleMessage = async (event) => {
+      console.log('📨 Diagnostic Test Message received:', event.data);
+
+      if (event.data?.type === 'PRACTICE_TEST_NEXT_SECTION') {
+        // Move to next section
+        const nextSection = sectionConfig[currentSection]?.nextSection;
+        console.log(`🔄 Moving to next section: ${currentSection} → ${nextSection}`);
+
+        if (nextSection) {
+          logger.info('DiagnosticTest', 'loadingNextSection', { nextSection });
+          await loadSectionQuestions(nextSection);
+        } else {
+          console.log('✅ All sections complete - processing results');
+          await handleTestCompletion();
+        }
+      } else if (event.data?.type === 'PRACTICE_TEST_COMPLETE') {
+        console.log('✅ Diagnostic test complete - processing results');
+        await handleTestCompletion();
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, [onClose, sessionId, userId, questions, currentSection]);
+
+  /**
+   * Check onboarding and auto-show it if not completed
+   */
+  useEffect(() => {
+    if (userId && !testStarted && !loading) {
+      const checkOnboarding = async () => {
+        const { data: goals } = await supabase
+          .from('user_goals')
+          .select('*')
+          .eq('user_id', userId)
+          .maybeSingle();
+
+        if (goals) {
+          // User has completed onboarding before
+          setHasCompletedOnboarding(true);
+          // Pre-fill onboarding data if it exists
+          setOnboardingData({
+            target_exam_date: goals.target_exam_date || '',
+            current_score: goals.current_score || '',
+            target_score: goals.target_score || 28,
+            use_alternating_weeks: false,
+            study_hours: onboardingData.study_hours,
+            study_hours_week2: onboardingData.study_hours_week2,
+            weakest_section: goals.weakest_section || '',
+            review_day: goals.review_day || 'sunday',
+            mock_exam_day: goals.mock_exam_day || 'saturday'
+          });
+          // Show intro screen directly since they've done onboarding
+          setShowIntro(true);
+        } else {
+          // No onboarding completed - show it immediately
+          setHasCompletedOnboarding(false);
+          setShowOnboarding(true);
+        }
+      };
+      checkOnboarding();
+    }
+  }, [userId, testStarted, loading]);
+
+  /**
+   * Prevent scrolling on intro and onboarding screens
+   */
+  useEffect(() => {
+    if (showIntro || showOnboarding) {
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = 'unset';
+      };
+    }
+  }, [showIntro, showOnboarding]);
+
+  /**
+   * Process test results with progress updates
+   */
+  const processTestResultsInBackground = async (allSections) => {
+    try {
+      console.log('🔄 Processing started...');
+      setProcessingStep('Loading questions...');
+      setProcessingProgress(10);
+
+      // Load all questions from all sections for review
+      console.log('📚 Loading all questions from all sections for review...');
+      const allDiagnosticQuestions = await DiagnosticService.getDiagnosticQuestions(); // Gets all sections
+      console.log('✅ Loaded all diagnostic questions:', allDiagnosticQuestions.length);
+      setProcessingProgress(20);
+
+      // Flatten all question results from all sections
+      const allQuestionResults = [];
+      allSections.forEach(sectionResult => {
+        sectionResult.questions.forEach(q => {
+          allQuestionResults.push(q);
+        });
+      });
+
+      logger.info('DiagnosticTest', 'savingAnswers', {
+        totalAnswers: allQuestionResults.length
+      });
+
+      setProcessingStep('Saving your answers...');
+      setProcessingProgress(30);
+
+      // Save each answer to diagnostic_test_results
+      console.log('💾 Saving question results to database...');
+      for (const questionResult of allQuestionResults) {
+        // Find question by question number and match section if available
+        const question = allDiagnosticQuestions.find(q =>
+          q.question_number === questionResult.questionNum
+        );
+
+        if (!question) {
+          console.warn('❌ Question not found for number:', questionResult.questionNum);
+          continue;
+        }
+
+        if (!question.id) {
+          console.warn('❌ Question missing UUID:', { questionNum: questionResult.questionNum, question });
+          continue;
+        }
+
+        console.log(`Saving Q${questionResult.questionNum}:`, {
+          questionId: question.id,
+          userAnswer: questionResult.userAnswer,
+          isCorrect: questionResult.isCorrect
+        });
+
+        try {
+          const result = await DiagnosticService.saveDiagnosticAnswer(
+            userId,
+            sessionId,
+            question.id, // question UUID from database
+            questionResult.userAnswer,
+            questionResult.isCorrect,
+            0 // Time spent - not tracked in current implementation
+          );
+
+          if (result === null) {
+            console.error(`❌ Failed to save Q${questionResult.questionNum}: Service returned null`);
+          }
+        } catch (saveError) {
+          console.error(`❌ Failed to save Q${questionResult.questionNum}:`, {
+            error: saveError.message,
+            questionId: question.id,
+            sessionId,
+            userId
+          });
+          // Continue with other questions even if one fails
+        }
+      }
+
+      // Calculate final scores
+      const correctAnswers = allQuestionResults.filter(q => q.isCorrect).length;
+      const totalQuestions = allQuestionResults.length;
+      const scorePercentage = (correctAnswers / totalQuestions) * 100;
+
+      logger.info('DiagnosticTest', 'completingSession', {
+        correctAnswers,
+        totalQuestions,
+        scorePercentage: scorePercentage.toFixed(2)
+      });
+
+      console.log('✅ Question results saved. Completing session...');
+      setProcessingStep('Calculating your scores...');
+      setProcessingProgress(50);
+
+      // Complete diagnostic session
+      await DiagnosticService.completeDiagnosticSession(
+        sessionId,
+        correctAnswers,
+        scorePercentage
+      );
+
+      console.log('✅ Session completed. Saving user goals...');
+      setProcessingStep('Saving your goals...');
+      setProcessingProgress(60);
+
+      // Save user goals from onboarding data
+      logger.info('DiagnosticTest', 'savingUserGoals', { userId });
+
       // Calculate study metrics from individual day hours
       let totalWeeklyHours, studyDaysCount, avgDailyMinutes;
 
@@ -319,171 +592,41 @@ const DiagnosticTest = ({ onClose }) => {
         avgDailyMinutes = studyDaysCount > 0 ? Math.round((totalWeeklyHours / studyDaysCount) * 60) : 0;
       }
 
-      const { error } = await supabase
+      // Default to 12 weeks (84 days) if no exam date is set
+      const defaultExamDate = new Date();
+      defaultExamDate.setDate(defaultExamDate.getDate() + 84); // 12 weeks = 84 days
+
+      const userGoalsData = {
+        user_id: userId,
+        target_exam_date: onboardingData.target_exam_date || defaultExamDate.toISOString().split('T')[0],
+        current_score: onboardingData.current_score ? parseInt(onboardingData.current_score) : null,
+        target_score: onboardingData.target_score,
+        daily_study_minutes: avgDailyMinutes,
+        study_days_per_week: studyDaysCount,
+        review_day: onboardingData.review_day,
+        mock_exam_day: onboardingData.mock_exam_day,
+        updated_at: new Date().toISOString()
+      };
+
+      console.log('💾 Saving user goals from onboarding:', {
+        target_exam_date: userGoalsData.target_exam_date,
+        target_score: userGoalsData.target_score,
+        daily_study_minutes: userGoalsData.daily_study_minutes,
+        study_days_per_week: userGoalsData.study_days_per_week,
+        review_day: userGoalsData.review_day,
+        mock_exam_day: userGoalsData.mock_exam_day
+      });
+
+      await supabase
         .from('user_goals')
-        .upsert({
-          user_id: userId,
-          target_exam_date: onboardingData.target_exam_date || null,
-          current_score: onboardingData.current_score ? parseInt(onboardingData.current_score) : null,
-          target_score: onboardingData.target_score,
-          daily_study_minutes: avgDailyMinutes,
-          study_days_per_week: studyDaysCount,
-          updated_at: new Date().toISOString()
-        }, {
+        .upsert(userGoalsData, {
           onConflict: 'user_id'
         });
 
-      if (error) {
-        console.error('Supabase error:', error);
-        throw error;
-      }
+      logger.info('DiagnosticTest', 'userGoalsSaved', { userId });
 
-      console.log('Onboarding data saved successfully');
-      setHasCompletedOnboarding(true);
-      setShowOnboarding(false);
-
-      // Show intro screen before starting test
-      setShowIntro(true);
-    } catch (error) {
-      console.error('Full error details:', error);
-      logger.error('DiagnosticTest', 'saveOnboardingDataFailed', { error: error.message, details: error });
-      setError(`Failed to save your information: ${error.message || 'Unknown error'}. Please try again.`);
-    }
-  };
-
-  /**
-   * Begin diagnostic test (called after onboarding if needed)
-   */
-  const beginDiagnosticTest = async () => {
-    try {
-      logger.info('DiagnosticTest', 'beginDiagnosticTest', { userId, questionsCount: questions.length });
-
-      // Create diagnostic session
-      const session = await DiagnosticService.createDiagnosticSession(
-        userId,
-        'full', // Full diagnostic test covering all sections
-        questions.length
-      );
-
-      if (!session) {
-        throw new Error('Failed to create diagnostic session');
-      }
-
-      setSessionId(session.id);
-
-      // Store session ID and questions in sessionStorage
-      sessionStorage.setItem('diagnosticSessionId', session.id);
-      sessionStorage.setItem('practiceTestQuestions', JSON.stringify(questions));
-      sessionStorage.setItem('practiceTestSection', 'diagnostic');
-      sessionStorage.setItem('practiceTestNumber', 'diagnostic');
-      sessionStorage.setItem('practiceTestDuration', 175); // Full test duration
-
-      logger.info('DiagnosticTest', 'sessionCreated', {
-        sessionId: session.id,
-        questionsCount: questions.length
-      });
-
-      setTestStarted(true);
-    } catch (error) {
-      logger.error('DiagnosticTest', 'beginDiagnosticTestFailed', { error });
-      setError(error.message || 'Failed to start the diagnostic test');
-    }
-  };
-
-  /**
-   * Handle "Begin Diagnostic Test" button click
-   */
-  const startTest = async () => {
-    // Check if user needs to complete onboarding first
-    if (!hasCompletedOnboarding) {
-      setShowOnboarding(true);
-      return;
-    }
-
-    // Otherwise, start test directly
-    await beginDiagnosticTest();
-  };
-
-  // Listen for test completion message from iframe
-  useEffect(() => {
-    const handleMessage = async (event) => {
-      console.log('📨 Diagnostic Test Message received:', event.data);
-
-      if (event.data?.type === 'PRACTICE_TEST_COMPLETE') {
-        console.log('✅ Diagnostic test complete - processing results');
-        await handleTestCompletion();
-      }
-    };
-
-    window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
-  }, [onClose, sessionId, userId, questions]);
-
-  /**
-   * Handle test completion
-   * Saves all answers, completes session, triggers analysis, and generates learning path
-   */
-  const handleTestCompletion = async () => {
-    try {
-      setAnalyzing(true);
-      logger.info('DiagnosticTest', 'handleTestCompletion', { sessionId, userId });
-
-      // Get results from sessionStorage (set by practice-test.html)
-      const resultsData = sessionStorage.getItem('practiceTestResults');
-      if (!resultsData) {
-        throw new Error('No test results found');
-      }
-
-      const results = JSON.parse(resultsData);
-      const allSections = results.allSections || [];
-
-      // Flatten all question results from all sections
-      const allQuestionResults = [];
-      allSections.forEach(sectionResult => {
-        sectionResult.questions.forEach(q => {
-          allQuestionResults.push(q);
-        });
-      });
-
-      logger.info('DiagnosticTest', 'savingAnswers', {
-        totalAnswers: allQuestionResults.length
-      });
-
-      // Save each answer to diagnostic_test_results
-      for (const questionResult of allQuestionResults) {
-        const question = questions.find(q => q.question_number === questionResult.questionNum);
-        if (!question || !question.id) {
-          console.warn('Question not found for number:', questionResult.questionNum);
-          continue;
-        }
-
-        await DiagnosticService.saveDiagnosticAnswer(
-          userId,
-          sessionId,
-          question.id, // question UUID from database
-          questionResult.userAnswer,
-          questionResult.isCorrect,
-          0 // Time spent - not tracked in current implementation
-        );
-      }
-
-      // Calculate final scores
-      const correctAnswers = allQuestionResults.filter(q => q.isCorrect).length;
-      const totalQuestions = allQuestionResults.length;
-      const scorePercentage = (correctAnswers / totalQuestions) * 100;
-
-      logger.info('DiagnosticTest', 'completingSession', {
-        correctAnswers,
-        totalQuestions,
-        scorePercentage: scorePercentage.toFixed(2)
-      });
-
-      // Complete diagnostic session
-      await DiagnosticService.completeDiagnosticSession(
-        sessionId,
-        correctAnswers,
-        scorePercentage
-      );
+      setProcessingStep('Analyzing your performance...');
+      setProcessingProgress(70);
 
       // Trigger diagnostic analysis algorithm
       logger.info('DiagnosticTest', 'analyzingResults', { sessionId });
@@ -500,6 +643,25 @@ const DiagnosticTest = ({ onClose }) => {
       // Get user goals from onboarding data
       const userGoals = await getUserGoals(userId);
 
+      console.log('🎯 User goals for learning path generation:', {
+        target_score: userGoals.target_score,
+        daily_study_minutes: userGoals.daily_study_minutes,
+        study_days_per_week: userGoals.study_days_per_week,
+        exam_date: userGoals.exam_date,
+        review_day: userGoals.review_day || onboardingData.review_day,
+        mock_exam_day: userGoals.mock_exam_day || onboardingData.mock_exam_day
+      });
+
+      console.log('📊 Diagnostic analysis for learning path:', {
+        overall_score: analysis.overall_score,
+        weak_lessons_count: analysis.weak_lessons?.length || 0,
+        strong_lessons_count: analysis.strong_lessons?.length || 0,
+        weak_sections: analysis.weak_sections || []
+      });
+
+      setProcessingStep('Creating your personalized learning path...');
+      setProcessingProgress(85);
+
       // Generate personalized learning path
       logger.info('DiagnosticTest', 'generatingLearningPath', { userId });
       const learningPath = await LearningPathService.generateLearningPath(
@@ -513,21 +675,98 @@ const DiagnosticTest = ({ onClose }) => {
         itemsCount: learningPath.items?.length || 0
       });
 
+      console.log('✨ Learning path generated successfully:', {
+        pathId: learningPath.id,
+        totalItems: learningPath.items?.length || 0,
+        schedule: learningPath.schedule
+      });
+
+      // Mark diagnostic as completed in profile to unlock learning path
+      console.log('🔓 Marking diagnostic test as completed to unlock learning path...');
+      await supabase
+        .from('profiles')
+        .update({
+          diagnostic_completed: true,
+          updated_at: new Date().toISOString()
+        })
+        .eq('id', userId);
+
+      console.log('✅ Diagnostic test completed - Learning path is now unlocked!');
+
+      setProcessingStep('Finalizing your results...');
+      setProcessingProgress(95);
+
+      // Store insights data with full question details
+      console.log('📊 Processing complete. Preparing results...');
+
+      // Store analysis and user goals data for results screen
+      setAnalysisData(analysis);
+      setUserGoalsData(userGoalsData);
+
       // Clean up sessionStorage
       sessionStorage.removeItem('diagnosticSessionId');
       sessionStorage.removeItem('practiceTestQuestions');
       sessionStorage.removeItem('practiceTestResults');
 
-      // Close diagnostic test
-      if (onClose) {
-        onClose();
-      }
+      console.log('✅ All processing completed successfully!');
+
+      // Clear processing flag and show results
+      localStorage.removeItem('diagnosticProcessing');
+      setProcessingProgress(100);
+      setProcessing(false);
+      setShowResults(true);
     } catch (err) {
-      console.error('Error processing diagnostic completion:', err);
+      console.error('❌ Error in background processing:', err);
+      console.error('Error details:', {
+        message: err.message,
+        stack: err.stack,
+        sessionId,
+        userId
+      });
+      errorTracker.trackError('DiagnosticTest', 'processTestResultsInBackground', { sessionId }, err);
+
+      // Clear processing flag even on error
+      localStorage.removeItem('diagnosticProcessing');
+      // Don't set error state since user has already navigated away
+    }
+  };
+
+  /**
+   * Handle test completion
+   * Keep modal open and process results with progress updates
+   */
+  const handleTestCompletion = async () => {
+    try {
+      logger.info('DiagnosticTest', 'handleTestCompletion', { sessionId, userId });
+
+      // Get results from sessionStorage (set by practice-test.html)
+      const resultsData = sessionStorage.getItem('practiceTestResults');
+      if (!resultsData) {
+        throw new Error('No test results found');
+      }
+
+      const results = JSON.parse(resultsData);
+      const allSections = results.allSections || [];
+
+      console.log('📊 Test complete! Processing results...');
+
+      // Set localStorage flag to indicate processing has started
+      localStorage.setItem('diagnosticProcessing', 'true');
+
+      // Keep modal open and show processing screen
+      setProcessing(true);
+      setProcessingStep('Starting analysis...');
+      setProcessingProgress(0);
+
+      // Process results (NOT in background - keep modal open)
+      await processTestResultsInBackground(allSections);
+
+    } catch (err) {
+      console.error('❌ Error processing test:', err);
       errorTracker.trackError('DiagnosticTest', 'handleTestCompletion', { sessionId }, err);
-      setError('Failed to process test results. Please contact support.');
-    } finally {
-      setAnalyzing(false);
+      setError(`Failed to process test results: ${err.message}`);
+      setProcessing(false);
+      localStorage.removeItem('diagnosticProcessing');
     }
   };
 
@@ -546,17 +785,1090 @@ const DiagnosticTest = ({ onClose }) => {
   }
 
   /**
-   * Render analyzing state
+   * Render processing screen with progress bar
    */
-  if (analyzing) {
+  if (processing) {
     return (
       <div className={classes.container}>
-        <div className={classes.loadingContainer}>
-          <div className={classes.loadingSpinner} />
-          <div className={classes.loadingText}>Analyzing your results...</div>
-          <p style={{ marginTop: '1rem', color: '#6b7280', fontSize: '0.875rem' }}>
-            Identifying your strengths and areas for improvement
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '400px',
+          padding: '3rem 2rem',
+          textAlign: 'center'
+        }}>
+          <div style={{
+            width: '80px',
+            height: '80px',
+            border: '4px solid #fee2e2',
+            borderTop: '4px solid #dc2626',
+            borderRadius: '50%',
+            animation: 'spin 1s linear infinite',
+            marginBottom: '2rem'
+          }} />
+
+          <h2 style={{
+            fontSize: '1.5rem',
+            fontWeight: '600',
+            color: '#1a1a1a',
+            marginBottom: '0.5rem'
+          }}>
+            Analyzing Your Results
+          </h2>
+
+          <p style={{
+            fontSize: '1rem',
+            color: '#6b7280',
+            marginBottom: '2rem',
+            maxWidth: '500px'
+          }}>
+            {processingStep}
           </p>
+
+          {/* Progress bar */}
+          <div style={{
+            width: '100%',
+            maxWidth: '400px',
+            height: '12px',
+            background: '#f3f4f6',
+            borderRadius: '9999px',
+            overflow: 'hidden',
+            marginBottom: '0.5rem'
+          }}>
+            <div style={{
+              height: '100%',
+              background: 'linear-gradient(90deg, #b91c1c 0%, #dc2626 100%)',
+              width: `${processingProgress}%`,
+              transition: 'width 0.3s ease'
+            }} />
+          </div>
+
+          <div style={{
+            fontSize: '0.875rem',
+            color: '#9ca3af',
+            fontWeight: '500'
+          }}>
+            {processingProgress}%
+          </div>
+
+          <p style={{
+            fontSize: '0.875rem',
+            color: '#9ca3af',
+            marginTop: '2rem',
+            fontStyle: 'italic'
+          }}>
+            Please don't close this window...
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  /**
+   * Render results screen with personalized learning path explanation
+   */
+  if (showResults && analysisData) {
+    const weeksUntilExam = userGoalsData?.target_exam_date
+      ? Math.ceil((new Date(userGoalsData.target_exam_date) - new Date()) / (1000 * 60 * 60 * 24 * 7))
+      : 12; // Default to 12 weeks
+
+    const isDefaultTimeline = !onboardingData?.target_exam_date;
+
+    return (
+      <div className={classes.container}>
+        <div style={{
+          padding: '3rem 2rem',
+          maxWidth: '800px',
+          margin: '0 auto'
+        }}>
+          {/* Success Header */}
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div style={{
+              width: '80px',
+              height: '80px',
+              margin: '0 auto 1.5rem',
+              background: '#dcfce7',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: '700',
+              color: '#1a1a1a',
+              marginBottom: '0.75rem'
+            }}>
+              Your Personalized Learning Path is Ready!
+            </h2>
+
+            <p style={{
+              fontSize: '1.125rem',
+              color: '#6b7280',
+              lineHeight: '1.6'
+            }}>
+              Based on your diagnostic test results, we've created a custom study plan designed specifically for you.
+            </p>
+          </div>
+
+          {/* Score Overview */}
+          <div style={{
+            background: '#f9fafb',
+            borderRadius: '12px',
+            padding: '2rem',
+            marginBottom: '2rem'
+          }}>
+            <h3 style={{
+              fontSize: '1.25rem',
+              fontWeight: '600',
+              color: '#1a1a1a',
+              marginBottom: '1.5rem'
+            }}>
+              Your Performance
+            </h3>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+              gap: '1rem',
+              marginBottom: '1.5rem'
+            }}>
+              <div style={{
+                background: 'white',
+                padding: '1rem',
+                borderRadius: '8px',
+                textAlign: 'center'
+              }}>
+                <div style={{ fontSize: '2rem', fontWeight: '700', color: '#b91c1c' }}>
+                  {analysisData.overall_score || 0}
+                </div>
+                <div style={{ fontSize: '0.875rem', color: '#6b7280', marginTop: '0.25rem' }}>
+                  Overall Score
+                </div>
+              </div>
+
+              <div style={{
+                background: 'white',
+                padding: '1rem',
+                borderRadius: '8px',
+                textAlign: 'center'
+              }}>
+                <div style={{ fontSize: '2rem', fontWeight: '700', color: '#dc2626' }}>
+                  {analysisData.english_score || 0}
+                </div>
+                <div style={{ fontSize: '0.875rem', color: '#6b7280', marginTop: '0.25rem' }}>
+                  English
+                </div>
+              </div>
+
+              <div style={{
+                background: 'white',
+                padding: '1rem',
+                borderRadius: '8px',
+                textAlign: 'center'
+              }}>
+                <div style={{ fontSize: '2rem', fontWeight: '700', color: '#dc2626' }}>
+                  {analysisData.math_score || 0}
+                </div>
+                <div style={{ fontSize: '0.875rem', color: '#6b7280', marginTop: '0.25rem' }}>
+                  Math
+                </div>
+              </div>
+
+              <div style={{
+                background: 'white',
+                padding: '1rem',
+                borderRadius: '8px',
+                textAlign: 'center'
+              }}>
+                <div style={{ fontSize: '2rem', fontWeight: '700', color: '#dc2626' }}>
+                  {analysisData.reading_score || 0}
+                </div>
+                <div style={{ fontSize: '0.875rem', color: '#6b7280', marginTop: '0.25rem' }}>
+                  Reading
+                </div>
+              </div>
+
+              <div style={{
+                background: 'white',
+                padding: '1rem',
+                borderRadius: '8px',
+                textAlign: 'center'
+              }}>
+                <div style={{ fontSize: '2rem', fontWeight: '700', color: '#dc2626' }}>
+                  {analysisData.science_score || 0}
+                </div>
+                <div style={{ fontSize: '0.875rem', color: '#6b7280', marginTop: '0.25rem' }}>
+                  Science
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Learning Path Explanation */}
+          <div style={{
+            background: 'linear-gradient(135deg, #fef2f2 0%, #ffffff 100%)',
+            border: '2px solid #fee2e2',
+            borderRadius: '12px',
+            padding: '2rem',
+            marginBottom: '2rem'
+          }}>
+            <h3 style={{
+              fontSize: '1.25rem',
+              fontWeight: '600',
+              color: '#1a1a1a',
+              marginBottom: '1rem'
+            }}>
+              Why This Learning Path?
+            </h3>
+
+            <div style={{
+              fontSize: '1rem',
+              color: '#374151',
+              lineHeight: '1.8'
+            }}>
+              <p style={{ marginBottom: '1rem' }}>
+                Based on your diagnostic test, we identified <strong>{analysisData.weak_lessons?.length || 0} areas</strong> where you can improve the most. Your personalized {weeksUntilExam}-week study plan focuses on:
+              </p>
+
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: '1rem 0'
+              }}>
+                {analysisData.weak_lessons?.slice(0, 5).map((lesson, index) => (
+                  <li key={index} style={{
+                    display: 'flex',
+                    alignItems: 'start',
+                    marginBottom: '0.75rem'
+                  }}>
+                    <span style={{
+                      background: '#b91c1c',
+                      color: 'white',
+                      borderRadius: '50%',
+                      width: '24px',
+                      height: '24px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '0.75rem',
+                      fontWeight: '600',
+                      marginRight: '0.75rem',
+                      flexShrink: 0,
+                      marginTop: '2px'
+                    }}>
+                      {index + 1}
+                    </span>
+                    <span>
+                      <strong>{lesson.lesson_name || lesson.lesson_id}</strong> – You got {lesson.correct_count || 0} out of {lesson.total_questions || 0} correct ({((lesson.accuracy_percentage || 0)).toFixed(0)}%)
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <p style={{ marginTop: '1.5rem', marginBottom: '1rem' }}>
+                {isDefaultTimeline ? (
+                  <>
+                    Since you haven't set a specific test date, we've created a <strong>12-week plan</strong> that gives you plenty of time to master the material at a comfortable pace.
+                  </>
+                ) : (
+                  <>
+                    With <strong>{weeksUntilExam} weeks</strong> until your test date, your study plan is optimized to help you reach your target score of <strong>{userGoalsData?.target_score || 28}</strong>.
+                  </>
+                )}
+              </p>
+
+              <p style={{
+                marginTop: '1.5rem',
+                padding: '1rem',
+                background: 'white',
+                borderRadius: '8px',
+                borderLeft: '4px solid #b91c1c'
+              }}>
+                💡 <strong>Pro Tip:</strong> Your learning path prioritizes your weak areas first, then reinforces your strengths. Stick to the schedule and you'll see consistent improvement!
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div style={{ textAlign: 'center' }}>
+            <button
+              onClick={() => {
+                setShowResults(false);
+                if (onClose) onClose();
+              }}
+              style={{
+                background: '#b91c1c',
+                color: 'white',
+                border: 'none',
+                borderRadius: '8px',
+                padding: '1rem 2rem',
+                fontSize: '1rem',
+                fontWeight: '600',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem'
+              }}
+              onMouseEnter={(e) => e.target.style.background = '#991b1b'}
+              onMouseLeave={(e) => e.target.style.background = '#b91c1c'}
+            >
+              Start Learning
+              <HiArrowRight style={{ fontSize: '1.25rem' }} />
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  /**
+   * Render insights page
+   */
+  if (showInsights && insightsData) {
+    const { results, analysis, correctAnswers, totalQuestions, scorePercentage, allQuestionResults, questions: allQuestions } = insightsData;
+
+    // Calculate section scores and ACT scores
+    const sectionScores = results.map(section => {
+      const correct = section.questions.filter(q => q.isCorrect).length;
+      const total = section.questions.length;
+      return {
+        section: section.section,
+        correct,
+        total,
+        percentage: ((correct / total) * 100).toFixed(1)
+      };
+    });
+
+    // Convert to ACT scores (1-36 scale)
+    const actScores = convertDiagnosticToACT(sectionScores);
+
+    console.log('🎯 ACT Score Conversion:', {
+      raw_scores: sectionScores,
+      act_scores: actScores,
+      composite: actScores.composite
+    });
+
+    // Log insights display for verification
+    console.log('📈 Displaying insights from diagnostic test:', {
+      totalSections: results.length,
+      sections: sectionScores,
+      overallScore: `${correctAnswers}/${totalQuestions} (${scorePercentage.toFixed(1)}%)`,
+      analysisStrengths: analysis?.strong_lessons?.length || 0,
+      analysisWeaknesses: analysis?.weak_lessons?.length || 0
+    });
+
+    return (
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'rgba(0, 0, 0, 0.5)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 1000,
+          padding: '2rem'
+        }}
+        onClick={onClose}
+      >
+        <div
+          style={{
+            background: 'white',
+            borderRadius: '12px',
+            width: '100%',
+            maxWidth: '900px',
+            maxHeight: '85vh',
+            overflow: 'auto',
+            position: 'relative',
+            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
+          }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Close Button */}
+          <button
+            onClick={onClose}
+            style={{
+              position: 'sticky',
+              top: '1rem',
+              right: '1rem',
+              float: 'right',
+              background: '#f3f4f6',
+              border: 'none',
+              borderRadius: '6px',
+              padding: '0.5rem',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              fontSize: '0.875rem',
+              fontWeight: '500',
+              color: '#374151',
+              transition: 'all 0.15s ease',
+              zIndex: 10
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = '#e5e7eb';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = '#f3f4f6';
+            }}
+          >
+            <HiXMark style={{ fontSize: '1rem' }} />
+            Close
+          </button>
+
+        <div style={{
+          padding: '2.5rem',
+          clear: 'both'
+        }}>
+          {/* Header */}
+          <div style={{ textAlign: 'left', marginBottom: '2rem' }}>
+            <h1 style={{
+              fontSize: '1.75rem',
+              fontWeight: '700',
+              color: '#1a1a1a',
+              marginBottom: '0.5rem',
+              letterSpacing: '-0.02em'
+            }}>
+              Diagnostic Test Results
+            </h1>
+            <p style={{
+              fontSize: '0.95rem',
+              color: '#6b7280',
+              lineHeight: '1.5',
+              margin: 0
+            }}>
+              Here's your comprehensive performance analysis and personalized insights
+            </p>
+          </div>
+
+          {/* Overall Score Card */}
+          <div style={{
+            background: 'linear-gradient(135deg, #08245b 0%, #0a2f6e 100%)',
+            borderRadius: '12px',
+            padding: '2rem',
+            marginBottom: '2rem',
+            color: 'white'
+          }}>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '0.875rem', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem', opacity: 0.9 }}>
+                Your Estimated ACT Score
+              </div>
+              <div style={{ fontSize: '5rem', fontWeight: '700', marginBottom: '0.5rem' }}>
+                {actScores.composite}
+              </div>
+              <div style={{ fontSize: '1.125rem', fontWeight: '600', opacity: 0.9, marginBottom: '1rem' }}>
+                {getPerformanceLevel(actScores.composite)} • {correctAnswers}/{totalQuestions} ({scorePercentage.toFixed(1)}%)
+              </div>
+              <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                gap: '2rem',
+                fontSize: '0.875rem',
+                opacity: 0.9
+              }}>
+                <div>
+                  <div style={{ fontWeight: '600' }}>English: {actScores.english}</div>
+                </div>
+                <div>
+                  <div style={{ fontWeight: '600' }}>Math: {actScores.math}</div>
+                </div>
+                <div>
+                  <div style={{ fontWeight: '600' }}>Reading: {actScores.reading}</div>
+                </div>
+                <div>
+                  <div style={{ fontWeight: '600' }}>Science: {actScores.science}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Section Breakdown */}
+          <div style={{ marginBottom: '2rem' }}>
+            <h2 style={{
+              fontSize: '1.25rem',
+              fontWeight: '700',
+              color: '#1a1a1a',
+              marginBottom: '1rem'
+            }}>
+              Section Breakdown
+            </h2>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gap: '1rem'
+            }}>
+              {sectionScores.map(section => {
+                const sectionActScore = actScores[section.section];
+                const performanceLevel = getPerformanceLevel(sectionActScore);
+
+                return (
+                  <div key={section.section} style={{
+                    background: '#f9fafb',
+                    border: '1px solid #e5e7eb',
+                    borderRadius: '8px',
+                    padding: '1.5rem'
+                  }}>
+                    <div style={{
+                      fontSize: '0.875rem',
+                      fontWeight: '600',
+                      color: '#6b7280',
+                      textTransform: 'capitalize',
+                      marginBottom: '0.5rem'
+                    }}>
+                      {section.section}
+                    </div>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'baseline',
+                      gap: '0.75rem',
+                      marginBottom: '0.5rem'
+                    }}>
+                      <div style={{
+                        fontSize: '2.5rem',
+                        fontWeight: '700',
+                        color: '#1a1a1a'
+                      }}>
+                        {sectionActScore}
+                      </div>
+                      <div style={{
+                        fontSize: '1rem',
+                        color: '#6b7280'
+                      }}>
+                        / 36
+                      </div>
+                    </div>
+                    <div style={{
+                      fontSize: '0.8rem',
+                      fontWeight: '600',
+                      color: sectionActScore >= 28 ? '#059669' : sectionActScore >= 20 ? '#d97706' : '#dc2626',
+                      marginBottom: '0.5rem'
+                    }}>
+                      {performanceLevel}
+                    </div>
+                    <div style={{
+                      fontSize: '0.875rem',
+                      color: '#9ca3af',
+                      borderTop: '1px solid #e5e7eb',
+                      paddingTop: '0.5rem'
+                    }}>
+                      {section.correct}/{section.total} ({section.percentage}% Correct)
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Question-by-Question Results */}
+          <div style={{ marginBottom: '2rem' }}>
+            <h2 style={{
+              fontSize: '1.25rem',
+              fontWeight: '700',
+              color: '#1a1a1a',
+              marginBottom: '1rem'
+            }}>
+              Question-by-Question Results
+            </h2>
+            {results.map((section, sectionIdx) => (
+              <div key={sectionIdx} style={{ marginBottom: '2rem' }}>
+                <h3 style={{
+                  fontSize: '1rem',
+                  fontWeight: '600',
+                  color: '#374151',
+                  marginBottom: '1rem',
+                  textTransform: 'capitalize'
+                }}>
+                  {section.section} Section
+                </h3>
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(60px, 1fr))',
+                  gap: '0.5rem'
+                }}>
+                  {section.questions.map((q, qIdx) => {
+                    const fullQuestion = allQuestions?.find(fq => fq.question_number === q.questionNum);
+                    return (
+                      <div
+                        key={qIdx}
+                        onClick={() => {
+                          if (fullQuestion) {
+                            setSelectedQuestion({
+                              ...fullQuestion,
+                              userAnswer: q.userAnswer,
+                              isCorrect: q.isCorrect,
+                              questionNum: q.questionNum
+                            });
+                          }
+                        }}
+                        style={{
+                          width: '60px',
+                          height: '60px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          borderRadius: '8px',
+                          fontSize: '0.875rem',
+                          fontWeight: '600',
+                          background: q.isCorrect ? '#dcfce7' : '#fee2e2',
+                          color: q.isCorrect ? '#166534' : '#991b1b',
+                          border: `2px solid ${q.isCorrect ? '#bbf7d0' : '#fecaca'}`,
+                          cursor: 'pointer',
+                          transition: 'all 0.15s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.target.style.transform = 'scale(1.05)';
+                          e.target.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.target.style.transform = 'scale(1)';
+                          e.target.style.boxShadow = 'none';
+                        }}
+                        title={`Q${q.questionNum}: ${q.isCorrect ? 'Correct' : 'Incorrect'} - Click to review`}
+                      >
+                        {q.questionNum}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Strengths and Weaknesses */}
+          {analysis && (
+            <div style={{ marginBottom: '2rem' }}>
+              <h2 style={{
+                fontSize: '1.25rem',
+                fontWeight: '700',
+                color: '#1a1a1a',
+                marginBottom: '1rem'
+              }}>
+                Strengths & Areas for Improvement
+              </h2>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '1.5rem'
+              }}>
+                {/* Strengths */}
+                <div style={{
+                  background: '#dcfce7',
+                  border: '1px solid #bbf7d0',
+                  borderRadius: '8px',
+                  padding: '1.5rem'
+                }}>
+                  <div style={{
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    color: '#166534',
+                    marginBottom: '1rem'
+                  }}>
+                    💪 Strong Areas
+                  </div>
+                  {analysis.strong_lessons && analysis.strong_lessons.length > 0 ? (
+                    <ul style={{ margin: 0, paddingLeft: '1.25rem', color: '#166534' }}>
+                      {analysis.strong_lessons.slice(0, 5).map((lesson, idx) => (
+                        <li key={idx} style={{ marginBottom: '0.5rem' }}>
+                          {lesson.lesson_title} ({lesson.accuracy.toFixed(0)}% accuracy)
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p style={{ color: '#166534', margin: 0 }}>Keep practicing to identify your strengths!</p>
+                  )}
+                </div>
+
+                {/* Weaknesses */}
+                <div style={{
+                  background: '#fee2e2',
+                  border: '1px solid #fecaca',
+                  borderRadius: '8px',
+                  padding: '1.5rem'
+                }}>
+                  <div style={{
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    color: '#991b1b',
+                    marginBottom: '1rem'
+                  }}>
+                    📚 Focus Areas
+                  </div>
+                  {analysis.weak_lessons && analysis.weak_lessons.length > 0 ? (
+                    <ul style={{ margin: 0, paddingLeft: '1.25rem', color: '#991b1b' }}>
+                      {analysis.weak_lessons.slice(0, 5).map((lesson, idx) => (
+                        <li key={idx} style={{ marginBottom: '0.5rem' }}>
+                          {lesson.lesson_title} ({lesson.accuracy.toFixed(0)}% accuracy)
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p style={{ color: '#991b1b', margin: 0 }}>Great job! No major weak areas identified.</p>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Question Type Analysis */}
+          {analysis && analysis.question_type_breakdown && analysis.question_type_breakdown.length > 0 && (
+            <div style={{ marginBottom: '2rem' }}>
+              <h2 style={{
+                fontSize: '1.25rem',
+                fontWeight: '700',
+                color: '#1a1a1a',
+                marginBottom: '1rem'
+              }}>
+                Performance by Question Type
+              </h2>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: '1rem'
+              }}>
+                {analysis.question_type_breakdown.map((qt, idx) => {
+                  const isWeak = qt.accuracy < 70;
+                  return (
+                    <div key={idx} style={{
+                      background: isWeak ? '#fef3c7' : '#f9fafb',
+                      border: `1px solid ${isWeak ? '#fcd34d' : '#e5e7eb'}`,
+                      borderRadius: '8px',
+                      padding: '1rem'
+                    }}>
+                      <div style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        marginBottom: '0.5rem'
+                      }}>
+                        <div style={{
+                          fontSize: '0.875rem',
+                          fontWeight: '600',
+                          color: '#1a1a1a',
+                          textTransform: 'capitalize'
+                        }}>
+                          {qt.question_type.replace(/_/g, ' ')}
+                        </div>
+                        <div style={{
+                          fontSize: '0.75rem',
+                          fontWeight: '600',
+                          color: '#6b7280',
+                          textTransform: 'uppercase'
+                        }}>
+                          {qt.section}
+                        </div>
+                      </div>
+                      <div style={{
+                        fontSize: '1.5rem',
+                        fontWeight: '700',
+                        color: isWeak ? '#b45309' : '#059669',
+                        marginBottom: '0.25rem'
+                      }}>
+                        {qt.accuracy.toFixed(0)}%
+                      </div>
+                      <div style={{
+                        fontSize: '0.75rem',
+                        color: '#6b7280'
+                      }}>
+                        {qt.correct}/{qt.total} correct
+                        {isWeak && (
+                          <span style={{ color: '#b45309', marginLeft: '0.5rem', fontWeight: '600' }}>
+                            ⚠ Focus needed
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Learning Path Generated Notice */}
+          <div style={{
+            background: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)',
+            border: '1px solid #93c5fd',
+            borderRadius: '12px',
+            padding: '2rem',
+            marginBottom: '2rem',
+            textAlign: 'center'
+          }}>
+            <div style={{
+              fontSize: '2.5rem',
+              marginBottom: '0.5rem'
+            }}>
+              🎉
+            </div>
+            <div style={{
+              fontSize: '1.25rem',
+              fontWeight: '700',
+              color: '#1e40af',
+              marginBottom: '0.5rem'
+            }}>
+              Your Personalized Learning Path is Ready!
+            </div>
+            <div style={{
+              fontSize: '0.95rem',
+              color: '#1e3a8a',
+              lineHeight: '1.6'
+            }}>
+              Based on your diagnostic results and study preferences, we've created a customized plan with lessons prioritized for your weak areas. Your learning path includes:
+            </div>
+            <div style={{
+              marginTop: '1rem',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: '1rem',
+              fontSize: '0.875rem',
+              color: '#1e3a8a'
+            }}>
+              <div>
+                <div style={{ fontWeight: '600' }}>📅 Study Schedule</div>
+                <div>{insightsData.questions ? 'Personalized daily plan' : 'Custom schedule'}</div>
+              </div>
+              <div>
+                <div style={{ fontWeight: '600' }}>🎯 Target Score</div>
+                <div>{analysis?.target_score || 'Your goal'}</div>
+              </div>
+              <div>
+                <div style={{ fontWeight: '600' }}>⏱️ Daily Study Time</div>
+                <div>{analysis?.daily_minutes ? `${analysis.daily_minutes} minutes` : 'Custom duration'}</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Continue Button */}
+          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+            <button
+              onClick={onClose}
+              style={{
+                background: '#08245b',
+                color: 'white',
+                border: 'none',
+                borderRadius: '6px',
+                padding: '0.875rem 2.5rem',
+                fontSize: '1rem',
+                fontWeight: '600',
+                cursor: 'pointer',
+                transition: 'all 0.15s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = '#061a3d';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = '#08245b';
+              }}
+            >
+              Start Your Learning Journey →
+            </button>
+          </div>
+        </div>
+
+        {/* Question Review Modal */}
+        {selectedQuestion && (
+          <div
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'rgba(0, 0, 0, 0.5)',
+              zIndex: 3000,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '2rem'
+            }}
+            onClick={() => setSelectedQuestion(null)}
+          >
+            <div
+              style={{
+                background: 'white',
+                borderRadius: '12px',
+                maxWidth: '900px',
+                width: '100%',
+                maxHeight: '90vh',
+                overflow: 'auto',
+                padding: '2rem',
+                position: 'relative'
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedQuestion(null)}
+                style={{
+                  position: 'absolute',
+                  top: '1rem',
+                  right: '1rem',
+                  background: 'transparent',
+                  border: 'none',
+                  fontSize: '1.5rem',
+                  cursor: 'pointer',
+                  color: '#6b7280',
+                  padding: '0.5rem',
+                  lineHeight: 1
+                }}
+              >
+                <HiXMark />
+              </button>
+
+              {/* Question Header */}
+              <div style={{ marginBottom: '1.5rem' }}>
+                <div style={{
+                  display: 'inline-block',
+                  padding: '0.5rem 1rem',
+                  background: selectedQuestion.isCorrect ? '#dcfce7' : '#fee2e2',
+                  color: selectedQuestion.isCorrect ? '#166534' : '#991b1b',
+                  borderRadius: '6px',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  marginBottom: '0.5rem'
+                }}>
+                  Question {selectedQuestion.questionNum} - {selectedQuestion.isCorrect ? '✓ Correct' : '✗ Incorrect'}
+                </div>
+                <div style={{
+                  fontSize: '0.875rem',
+                  color: '#6b7280',
+                  textTransform: 'capitalize'
+                }}>
+                  {selectedQuestion.section} Section
+                </div>
+              </div>
+
+              {/* Passage (if applicable) */}
+              {selectedQuestion.passage && (
+                <div style={{
+                  background: '#f9fafb',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '8px',
+                  padding: '1.5rem',
+                  marginBottom: '1.5rem'
+                }}>
+                  {selectedQuestion.passage_title && (
+                    <div style={{
+                      fontSize: '1rem',
+                      fontWeight: '600',
+                      color: '#1a1a1a',
+                      marginBottom: '1rem'
+                    }}>
+                      {selectedQuestion.passage_title}
+                    </div>
+                  )}
+                  <div style={{
+                    fontSize: '0.95rem',
+                    color: '#374151',
+                    lineHeight: '1.6',
+                    whiteSpace: 'pre-wrap'
+                  }}>
+                    {selectedQuestion.passage}
+                  </div>
+                </div>
+              )}
+
+              {/* Question Text */}
+              <div style={{
+                fontSize: '1rem',
+                fontWeight: '600',
+                color: '#1a1a1a',
+                marginBottom: '1.5rem',
+                lineHeight: '1.6'
+              }}>
+                {selectedQuestion.text}
+              </div>
+
+              {/* Answer Choices */}
+              <div style={{ marginBottom: '1.5rem' }}>
+                {Object.entries(selectedQuestion.answers || {}).map(([letter, text]) => {
+                  const isUserAnswer = selectedQuestion.userAnswer === letter;
+                  const isCorrectAnswer = selectedQuestion.correctAnswer === letter;
+
+                  let backgroundColor = 'white';
+                  let borderColor = '#e5e7eb';
+                  let textColor = '#1a1a1a';
+
+                  if (isCorrectAnswer) {
+                    backgroundColor = '#dcfce7';
+                    borderColor = '#bbf7d0';
+                    textColor = '#166534';
+                  } else if (isUserAnswer && !isCorrectAnswer) {
+                    backgroundColor = '#fee2e2';
+                    borderColor = '#fecaca';
+                    textColor = '#991b1b';
+                  }
+
+                  return (
+                    <div
+                      key={letter}
+                      style={{
+                        padding: '1rem',
+                        border: `2px solid ${borderColor}`,
+                        borderRadius: '8px',
+                        marginBottom: '0.75rem',
+                        background: backgroundColor,
+                        color: textColor
+                      }}
+                    >
+                      <div style={{ display: 'flex', gap: '0.75rem' }}>
+                        <div style={{ fontWeight: '600', flexShrink: 0 }}>{letter}.</div>
+                        <div style={{ flex: 1 }}>
+                          {text}
+                          {isCorrectAnswer && (
+                            <span style={{ marginLeft: '0.5rem', fontWeight: '600' }}>✓ Correct Answer</span>
+                          )}
+                          {isUserAnswer && !isCorrectAnswer && (
+                            <span style={{ marginLeft: '0.5rem', fontWeight: '600' }}>✗ Your Answer</span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Explanation */}
+              {selectedQuestion.explanation && (
+                <div style={{
+                  background: '#eff6ff',
+                  border: '1px solid #bfdbfe',
+                  borderRadius: '8px',
+                  padding: '1.5rem'
+                }}>
+                  <div style={{
+                    fontSize: '0.875rem',
+                    fontWeight: '600',
+                    color: '#1e40af',
+                    marginBottom: '0.5rem',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em'
+                  }}>
+                    Explanation
+                  </div>
+                  <div style={{
+                    fontSize: '0.95rem',
+                    color: '#1e3a8a',
+                    lineHeight: '1.6'
+                  }}>
+                    {selectedQuestion.explanation}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
         </div>
       </div>
     );
@@ -647,7 +1959,7 @@ const DiagnosticTest = ({ onClose }) => {
    */
   if (showOnboarding) {
     return (
-      <div className={classes.container}>
+      <div className={classes.container} style={{ overflow: 'hidden', height: '100vh' }}>
         <button onClick={onClose} className={classes.closeButton}>
           <HiXMark style={{ fontSize: '1.125rem' }} />
           Close
@@ -656,13 +1968,14 @@ const DiagnosticTest = ({ onClose }) => {
           maxWidth: '1200px',
           margin: '0 auto',
           padding: '2rem',
-          minHeight: '90vh'
+          height: '100vh',
+          overflow: 'auto'
         }}>
           <div style={{
             width: '100%',
             background: 'transparent'
           }}>
-            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+            <div style={{ textAlign: 'left', marginBottom: '2rem' }}>
               <h1 style={{
                 fontSize: '1.75rem',
                 fontWeight: '700',
@@ -677,7 +1990,7 @@ const DiagnosticTest = ({ onClose }) => {
                 color: '#6b7280',
                 lineHeight: '1.5',
                 maxWidth: '600px',
-                margin: '0 auto 0.5rem'
+                margin: '0 0 0.5rem'
               }}>
                 Build a flexible study schedule that works for your life.
               </p>
@@ -862,35 +2175,30 @@ const DiagnosticTest = ({ onClose }) => {
 
           </div>
 
-          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+          <div style={{ textAlign: 'right', marginTop: '2.5rem' }}>
             <button
               onClick={saveOnboardingData}
               style={{
                 background: '#b91c1c',
                 color: 'white',
                 border: 'none',
-                borderRadius: '8px',
-                padding: '0.875rem 2.5rem',
-                fontSize: '1rem',
-                fontWeight: '600',
+                borderRadius: '6px',
+                padding: '0.75rem 1.5rem',
+                fontSize: '0.95rem',
+                fontWeight: '500',
                 cursor: 'pointer',
-                transition: 'all 0.15s ease',
-                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
+                transition: 'all 0.15s ease'
               }}
               onMouseEnter={(e) => {
                 e.target.style.background = '#991b1b';
-                e.target.style.transform = 'translateY(-1px)';
-                e.target.style.boxShadow = '0 4px 8px rgba(185, 28, 28, 0.25)';
               }}
               onMouseLeave={(e) => {
                 e.target.style.background = '#b91c1c';
-                e.target.style.transform = 'translateY(0)';
-                e.target.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
               }}
             >
               <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
                 Continue to Diagnostic Test
-                <HiArrowRight style={{ fontSize: '1.1rem' }} />
+                <HiArrowRight style={{ fontSize: '1rem' }} />
               </span>
             </button>
           </div>
@@ -901,177 +2209,9 @@ const DiagnosticTest = ({ onClose }) => {
   }
 
   /**
-   * Render intro screen after onboarding
+   * Render test in progress (with countdown or actual test)
    */
-  if (showIntro) {
-    return (
-      <div className={classes.container}>
-        <button onClick={onClose} className={classes.closeButton}>
-          <HiXMark style={{ fontSize: '1.125rem' }} />
-          Close
-        </button>
-        <div style={{
-          maxWidth: '900px',
-          margin: '0 auto',
-          padding: '4rem 2rem',
-          minHeight: '90vh',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h1 style={{
-              fontSize: '2.5rem',
-              fontWeight: '700',
-              color: '#1a1a1a',
-              marginBottom: '1rem',
-              letterSpacing: '-0.02em'
-            }}>
-              ACT Diagnostic Test
-            </h1>
-            <p style={{
-              fontSize: '1.125rem',
-              color: '#6b7280',
-              lineHeight: '1.6',
-              maxWidth: '700px',
-              margin: '0 auto'
-            }}>
-              Complete diagnostic assessment with {questions.length} questions covering all four ACT sections to identify your strengths and areas for improvement.
-            </p>
-          </div>
-
-          {/* Stats Grid */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '2rem',
-            marginBottom: '3rem',
-            width: '100%',
-            maxWidth: '600px'
-          }}>
-            <div style={{
-              textAlign: 'center',
-              padding: '1.5rem',
-              background: 'linear-gradient(135deg, #fef2f2 0%, #ffffff 100%)',
-              borderRadius: '12px',
-              border: '1px solid #fee2e2'
-            }}>
-              <div style={{
-                fontSize: '2.5rem',
-                fontWeight: '700',
-                color: '#b91c1c',
-                marginBottom: '0.5rem'
-              }}>
-                {questions.length}
-              </div>
-              <div style={{
-                fontSize: '0.875rem',
-                fontWeight: '600',
-                color: '#6b7280',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Questions
-              </div>
-            </div>
-
-            <div style={{
-              textAlign: 'center',
-              padding: '1.5rem',
-              background: 'linear-gradient(135deg, #fef2f2 0%, #ffffff 100%)',
-              borderRadius: '12px',
-              border: '1px solid #fee2e2'
-            }}>
-              <div style={{
-                fontSize: '2.5rem',
-                fontWeight: '700',
-                color: '#b91c1c',
-                marginBottom: '0.5rem'
-              }}>
-                175
-              </div>
-              <div style={{
-                fontSize: '0.875rem',
-                fontWeight: '600',
-                color: '#6b7280',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Minutes
-              </div>
-            </div>
-
-            <div style={{
-              textAlign: 'center',
-              padding: '1.5rem',
-              background: 'linear-gradient(135deg, #fef2f2 0%, #ffffff 100%)',
-              borderRadius: '12px',
-              border: '1px solid #fee2e2'
-            }}>
-              <div style={{
-                fontSize: '2.5rem',
-                fontWeight: '700',
-                color: '#b91c1c',
-                marginBottom: '0.5rem'
-              }}>
-                4
-              </div>
-              <div style={{
-                fontSize: '0.875rem',
-                fontWeight: '600',
-                color: '#6b7280',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Sections
-              </div>
-            </div>
-          </div>
-
-          {/* Begin Button */}
-          <button
-            onClick={async () => {
-              setShowIntro(false);
-              await beginDiagnosticTest();
-            }}
-            style={{
-              background: '#b91c1c',
-              color: 'white',
-              border: 'none',
-              borderRadius: '12px',
-              padding: '1.25rem 3.5rem',
-              fontSize: '1.125rem',
-              fontWeight: '600',
-              cursor: 'pointer',
-              transition: 'all 0.15s ease',
-              boxShadow: '0 4px 12px rgba(185, 28, 28, 0.3)'
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.background = '#991b1b';
-              e.target.style.transform = 'translateY(-2px)';
-              e.target.style.boxShadow = '0 6px 16px rgba(185, 28, 28, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.background = '#b91c1c';
-              e.target.style.transform = 'translateY(0)';
-              e.target.style.boxShadow = '0 4px 12px rgba(185, 28, 28, 0.3)';
-            }}
-          >
-            <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-              Begin Diagnostic Test
-              <HiArrowRight style={{ fontSize: '1.25rem' }} />
-            </span>
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  /**
-   * Render test in progress
-   */
-  if (testStarted) {
+  if (testStarted || showCountdown) {
     return (
       <div style={{
         position: 'fixed',
@@ -1093,12 +2233,279 @@ const DiagnosticTest = ({ onClose }) => {
           }}
           title="ACT Diagnostic Test"
         />
+        {showCountdown && (
+          <div style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(255, 255, 255, 0.98)',
+            zIndex: 2001,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{
+                fontSize: '8rem',
+                fontWeight: '700',
+                color: '#08245b',
+                marginBottom: '1rem'
+              }}>
+                {countdown}
+              </div>
+              <div style={{
+                fontSize: '1.5rem',
+                fontWeight: '600',
+                color: '#6b7280',
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase'
+              }}>
+                Starting Test...
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
 
   /**
-   * Render start screen
+   * Render intro screen after onboarding
+   */
+  if (showIntro) {
+    return (
+      <div className={classes.container} style={{ overflow: 'hidden', height: '100vh' }}>
+        <button onClick={onClose} className={classes.closeButton}>
+          <HiXMark style={{ fontSize: '1.125rem' }} />
+          Close
+        </button>
+        <div style={{
+          maxWidth: '700px',
+          margin: '0 auto',
+          padding: '1.5rem 1.5rem',
+          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden'
+        }}>
+          {/* Header */}
+          <div style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
+            <h1 style={{
+              fontSize: '1.75rem',
+              fontWeight: '700',
+              color: '#1a1a1a',
+              marginBottom: '0.5rem',
+              letterSpacing: '-0.02em'
+            }}>
+              ACT Diagnostic Test
+            </h1>
+            <p style={{
+              fontSize: '0.95rem',
+              color: '#6b7280',
+              lineHeight: '1.5',
+              margin: 0
+            }}>
+              Complete diagnostic assessment with 215 questions covering all four ACT sections to identify your strengths and areas for improvement.
+            </p>
+          </div>
+
+          {/* Environment Warning */}
+          <div style={{
+            padding: '0.75rem 1rem',
+            background: '#fef3c7',
+            border: '1px solid #fbbf24',
+            borderRadius: '6px',
+            marginBottom: '1rem',
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: '0.5rem'
+          }}>
+            <span style={{ fontSize: '1rem', flexShrink: 0 }}>⚠️</span>
+            <div>
+              <div style={{ fontSize: '0.8rem', fontWeight: '600', color: '#92400e', marginBottom: '0.125rem' }}>
+                Before You Begin
+              </div>
+              <div style={{ fontSize: '0.75rem', color: '#78350f', lineHeight: '1.3' }}>
+                Ensure you're in a quiet environment with 3 hours available. Test must be completed in one sitting.
+              </div>
+            </div>
+          </div>
+
+          {/* Section Details */}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.5rem',
+            marginBottom: '1.25rem'
+          }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '0.75rem 1rem',
+              background: '#f9fafb',
+              border: '1px solid #e5e7eb',
+              borderRadius: '8px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <span style={{ fontSize: '1.25rem' }}>📝</span>
+                <div>
+                  <div style={{ fontSize: '0.9rem', fontWeight: '600', color: '#1a1a1a' }}>English</div>
+                  <div style={{ fontSize: '0.8rem', color: '#6b7280' }}>Grammar, punctuation, rhetorical skills</div>
+                </div>
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                <div style={{ fontSize: '0.875rem', fontWeight: '600', color: '#1a1a1a' }}>75 questions</div>
+                <div style={{ fontSize: '0.8rem', color: '#6b7280' }}>45 minutes</div>
+              </div>
+            </div>
+
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '0.75rem 1rem',
+              background: '#f9fafb',
+              border: '1px solid #e5e7eb',
+              borderRadius: '8px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <span style={{ fontSize: '1.25rem' }}>🔢</span>
+                <div>
+                  <div style={{ fontSize: '0.9rem', fontWeight: '600', color: '#1a1a1a' }}>Mathematics</div>
+                  <div style={{ fontSize: '0.8rem', color: '#6b7280' }}>Algebra, geometry, trigonometry</div>
+                </div>
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                <div style={{ fontSize: '0.875rem', fontWeight: '600', color: '#1a1a1a' }}>60 questions</div>
+                <div style={{ fontSize: '0.8rem', color: '#6b7280' }}>60 minutes</div>
+              </div>
+            </div>
+
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '0.75rem 1rem',
+              background: '#f9fafb',
+              border: '1px solid #e5e7eb',
+              borderRadius: '8px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <span style={{ fontSize: '1.25rem' }}>📖</span>
+                <div>
+                  <div style={{ fontSize: '0.9rem', fontWeight: '600', color: '#1a1a1a' }}>Reading</div>
+                  <div style={{ fontSize: '0.8rem', color: '#6b7280' }}>Comprehension across 4 passages</div>
+                </div>
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                <div style={{ fontSize: '0.875rem', fontWeight: '600', color: '#1a1a1a' }}>40 questions</div>
+                <div style={{ fontSize: '0.8rem', color: '#6b7280' }}>35 minutes</div>
+              </div>
+            </div>
+
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '0.75rem 1rem',
+              background: '#f9fafb',
+              border: '1px solid #e5e7eb',
+              borderRadius: '8px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <span style={{ fontSize: '1.25rem' }}>🔬</span>
+                <div>
+                  <div style={{ fontSize: '0.9rem', fontWeight: '600', color: '#1a1a1a' }}>Science</div>
+                  <div style={{ fontSize: '0.8rem', color: '#6b7280' }}>Scientific reasoning, data interpretation</div>
+                </div>
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                <div style={{ fontSize: '0.875rem', fontWeight: '600', color: '#1a1a1a' }}>40 questions</div>
+                <div style={{ fontSize: '0.8rem', color: '#6b7280' }}>35 minutes</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Total Time */}
+          <div style={{
+            padding: '0.75rem 1rem',
+            background: '#08245b',
+            color: 'white',
+            borderRadius: '8px',
+            marginBottom: '1.25rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}>
+            <div style={{ fontSize: '0.9rem', fontWeight: '600' }}>Total Test Time</div>
+            <div style={{ fontSize: '1.125rem', fontWeight: '700' }}>2 hours 55 minutes</div>
+          </div>
+
+          {/* Begin Button - Double Click Required */}
+          <button
+            onClick={() => {
+              if (!confirmStart) {
+                setConfirmStart(true);
+              } else {
+                setCountdown(3);
+                setShowCountdown(true);
+              }
+            }}
+            style={{
+              background: confirmStart ? '#b91c1c' : '#08245b',
+              color: 'white',
+              border: 'none',
+              borderRadius: '6px',
+              padding: '0.75rem 1.5rem',
+              fontSize: '0.95rem',
+              fontWeight: '500',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = confirmStart ? '#991b1b' : '#061a3d';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = confirmStart ? '#b91c1c' : '#08245b';
+            }}
+          >
+            {confirmStart ? (
+              <>
+                Click Again to Start Test
+                <HiArrowRight style={{ fontSize: '1rem' }} />
+              </>
+            ) : (
+              <>
+                I'm Ready - Begin Test
+                <HiArrowRight style={{ fontSize: '1rem' }} />
+              </>
+            )}
+          </button>
+          {confirmStart && (
+            <p style={{
+              textAlign: 'center',
+              fontSize: '0.85rem',
+              color: '#6b7280',
+              marginTop: '0.75rem',
+              marginBottom: 0
+            }}>
+              Click the button again to confirm and start the test
+            </p>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  /**
+   * Default loading state (while checking onboarding status)
    */
   return (
     <div className={classes.container}>
@@ -1106,87 +2513,10 @@ const DiagnosticTest = ({ onClose }) => {
         <HiXMark style={{ fontSize: '1.125rem' }} />
         Close
       </button>
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        minHeight: '80vh',
-        padding: '2rem'
-      }}>
-        <div style={{
-          maxWidth: '560px',
-          textAlign: 'center'
-        }}>
-          <h1 style={{
-            fontSize: '2.5rem',
-            fontWeight: '800',
-            color: '#1a1a1a',
-            marginBottom: '1rem',
-            letterSpacing: '-0.03em'
-          }}>
-            ACT Diagnostic Test
-          </h1>
-          <p style={{
-            fontSize: '1.05rem',
-            color: '#6b7280',
-            lineHeight: '1.7',
-            marginBottom: '2.5rem',
-            maxWidth: '480px',
-            margin: '0 auto 2.5rem'
-          }}>
-            Complete diagnostic assessment with {questions.length} questions covering all four ACT sections to identify your strengths and areas for improvement.
-          </p>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '1.5rem',
-            marginBottom: '3rem',
-            padding: '2rem',
-            background: '#f9fafb',
-            borderRadius: '12px',
-            border: '1px solid #e5e7eb'
-          }}>
-            <div>
-              <div style={{ fontWeight: '700', color: '#08245b', fontSize: '2rem', marginBottom: '0.5rem' }}>{questions.length}</div>
-              <div style={{ fontSize: '0.875rem', color: '#6b7280', fontWeight: '500' }}>Questions</div>
-            </div>
-            <div>
-              <div style={{ fontWeight: '700', color: '#08245b', fontSize: '2rem', marginBottom: '0.5rem' }}>175</div>
-              <div style={{ fontSize: '0.875rem', color: '#6b7280', fontWeight: '500' }}>Minutes</div>
-            </div>
-            <div>
-              <div style={{ fontWeight: '700', color: '#08245b', fontSize: '2rem', marginBottom: '0.5rem' }}>4</div>
-              <div style={{ fontSize: '0.875rem', color: '#6b7280', fontWeight: '500' }}>Sections</div>
-            </div>
-          </div>
-
-          <button onClick={startTest} style={{
-            background: '#08245b',
-            color: 'white',
-            border: 'none',
-            borderRadius: '10px',
-            padding: '1.125rem 3rem',
-            fontSize: '1.05rem',
-            fontWeight: '600',
-            cursor: 'pointer',
-          transition: 'all 0.15s ease',
-          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
-        }}
-        onMouseEnter={(e) => {
-          e.target.style.background = '#061a3d';
-          e.target.style.transform = 'translateY(-2px)';
-          e.target.style.boxShadow = '0 8px 16px rgba(8, 36, 91, 0.25)';
-        }}
-        onMouseLeave={(e) => {
-          e.target.style.background = '#08245b';
-          e.target.style.transform = 'translateY(0)';
-          e.target.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
-        }}>
-          Begin Diagnostic Test
-        </button>
+      <div className={classes.loadingContainer}>
+        <div className={classes.loadingSpinner} />
+        <div className={classes.loadingText}>Loading...</div>
       </div>
-    </div>
     </div>
   );
 };

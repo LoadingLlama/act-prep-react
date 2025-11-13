@@ -1,6 +1,6 @@
 /**
  * Login and Authentication Styles
- * Claude-inspired elegant, modern, and playful design with navy glassmorphism
+ * Clean professional design matching landing page navy theme
  */
 
 export const loginStyles = {
@@ -9,107 +9,108 @@ export const loginStyles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    background: 'linear-gradient(135deg, #08245b 0%, #0a2f73 100%)',
-    padding: '20px',
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    background: '#ffffff',
+    padding: '24px',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica, Arial, sans-serif',
     position: 'relative',
-    overflow: 'hidden',
   },
 
   card: {
-    background: 'rgba(255, 255, 255, 0.06)',
-    backdropFilter: 'blur(20px)',
-    border: '1px solid rgba(255, 255, 255, 0.12)',
-    borderRadius: '20px',
-    padding: '48px',
-    maxWidth: '480px',
+    background: '#ffffff',
+    border: '1px solid #E5E7EB',
+    borderRadius: '12px',
+    padding: '48px 40px',
+    maxWidth: '440px',
     width: '100%',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.25)',
+    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
     position: 'relative',
-    zIndex: 1,
   },
 
   title: {
-    fontFamily: 'Georgia, "Times New Roman", serif',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica, Arial, sans-serif',
     fontSize: '32px',
-    fontWeight: '600',
-    color: '#ffffff',
+    fontWeight: '700',
+    color: '#111827',
     marginBottom: '8px',
     textAlign: 'center',
-    letterSpacing: '-0.01em',
+    letterSpacing: '-0.02em',
   },
 
   subtitle: {
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica, Arial, sans-serif',
     fontSize: '15px',
-    color: 'rgba(255, 255, 255, 0.75)',
+    color: '#6B7280',
     marginBottom: '32px',
     textAlign: 'center',
     lineHeight: '1.5',
+    fontWeight: '400',
   },
 
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '20px',
+    gap: '16px',
   },
 
   inputGroup: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '8px',
+    gap: '6px',
   },
 
   label: {
     fontSize: '14px',
     fontWeight: '600',
-    color: 'rgba(255, 255, 255, 0.85)',
+    color: '#374151',
+    letterSpacing: '0',
+    marginBottom: '2px',
   },
 
   input: {
-    padding: '12px 16px',
+    padding: '12px 14px',
     fontSize: '15px',
-    border: '2px solid rgba(255, 255, 255, 0.2)',
-    borderRadius: '10px',
+    border: '1px solid #D1D5DB',
+    borderRadius: '8px',
     outline: 'none',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    transition: 'all 0.2s ease',
     fontFamily: 'inherit',
-    background: 'rgba(255, 255, 255, 0.08)',
-    color: '#ffffff',
+    background: '#ffffff',
+    color: '#111827',
     '&:focus': {
-      borderColor: 'rgba(255, 255, 255, 0.4)',
-      background: 'rgba(255, 255, 255, 0.12)',
+      borderColor: '#1e3a8a',
+      boxShadow: '0 0 0 3px rgba(30, 58, 138, 0.1)',
     },
     '&::placeholder': {
-      color: 'rgba(255, 255, 255, 0.4)',
+      color: '#9CA3AF',
     },
   },
 
   inputFocus: {
-    borderColor: 'rgba(255, 255, 255, 0.4)',
-    background: 'rgba(255, 255, 255, 0.12)',
+    borderColor: '#1e3a8a',
+    boxShadow: '0 0 0 3px rgba(30, 58, 138, 0.1)',
   },
 
   hint: {
     fontSize: '12px',
-    color: 'rgba(255, 255, 255, 0.6)',
+    color: '#6B7280',
   },
 
   submitButton: {
-    padding: '14px',
+    padding: '13px',
     fontSize: '15px',
     fontWeight: '600',
-    color: '#08245b',
-    background: '#ffffff',
+    color: '#ffffff',
+    background: '#1e3a8a',
     border: 'none',
-    borderRadius: '10px',
+    borderRadius: '8px',
     cursor: 'pointer',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    transition: 'all 0.2s ease',
     marginTop: '8px',
-    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+    boxShadow: '0 2px 8px rgba(30, 58, 138, 0.2)',
     '&:hover': {
-      transform: 'translateY(-2px)',
-      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)',
+      background: '#1e40af',
+      transform: 'translateY(-1px)',
+      boxShadow: '0 4px 12px rgba(30, 58, 138, 0.3)',
     },
     '&:active': {
       transform: 'translateY(0)',
@@ -117,7 +118,7 @@ export const loginStyles = {
   },
 
   submitButtonDisabled: {
-    opacity: '0.5',
+    opacity: '0.6',
     cursor: 'not-allowed',
   },
 
@@ -125,14 +126,16 @@ export const loginStyles = {
     display: 'flex',
     alignItems: 'center',
     margin: '20px 0',
-    color: 'rgba(255, 255, 255, 0.2)',
+    position: 'relative',
   },
 
   dividerText: {
-    padding: '0 12px',
+    padding: '0 16px',
     fontSize: '13px',
-    color: 'rgba(255, 255, 255, 0.5)',
+    color: '#9CA3AF',
     fontWeight: '500',
+    background: '#ffffff',
+    margin: '0 auto',
   },
 
   googleButton: {
@@ -140,20 +143,20 @@ export const loginStyles = {
     alignItems: 'center',
     justifyContent: 'center',
     gap: '10px',
-    padding: '12px 20px',
-    fontSize: '14px',
+    padding: '12px 16px',
+    fontSize: '15px',
     fontWeight: '600',
-    color: 'rgba(255, 255, 255, 0.9)',
-    background: 'rgba(255, 255, 255, 0.1)',
-    border: '2px solid rgba(255, 255, 255, 0.2)',
-    borderRadius: '10px',
+    color: '#374151',
+    background: '#ffffff',
+    border: '1px solid #D1D5DB',
+    borderRadius: '8px',
     cursor: 'pointer',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-    backdropFilter: 'blur(10px)',
+    transition: 'all 0.2s ease',
     '&:hover': {
-      background: 'rgba(255, 255, 255, 0.15)',
-      borderColor: 'rgba(255, 255, 255, 0.3)',
-      transform: 'translateY(-2px)',
+      background: '#F9FAFB',
+      borderColor: '#9CA3AF',
+      transform: 'translateY(-1px)',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
     },
     '&:active': {
       transform: 'translateY(0)',
@@ -167,62 +170,70 @@ export const loginStyles = {
   },
 
   footer: {
-    marginTop: '32px',
+    marginTop: '28px',
     textAlign: 'center',
   },
 
   footerText: {
     fontSize: '14px',
-    color: 'rgba(255, 255, 255, 0.7)',
+    color: '#6B7280',
   },
 
   linkButton: {
-    color: 'rgba(255, 255, 255, 0.9)',
+    color: '#1e3a8a',
     fontWeight: '600',
     background: 'none',
     border: 'none',
     cursor: 'pointer',
-    textDecoration: 'underline',
-    textUnderlineOffset: '3px',
-    textDecorationColor: 'rgba(255, 255, 255, 0.4)',
+    textDecoration: 'none',
     fontSize: '14px',
     padding: '0',
     transition: 'all 0.2s ease',
     '&:hover': {
-      color: '#ffffff',
-      textDecorationColor: 'rgba(255, 255, 255, 0.8)',
+      color: '#1e40af',
+      textDecoration: 'underline',
     },
   },
 
   errorMessage: {
-    padding: '12px 16px',
-    background: 'rgba(239, 68, 68, 0.15)',
-    border: '1px solid rgba(239, 68, 68, 0.3)',
-    borderRadius: '10px',
-    color: '#fca5a5',
+    padding: '12px 14px',
+    background: '#FEF2F2',
+    border: '1px solid #FCA5A5',
+    borderRadius: '8px',
+    color: '#DC2626',
     fontSize: '14px',
-    marginBottom: '16px',
-    backdropFilter: 'blur(10px)',
+    marginBottom: '20px',
   },
 
   successMessage: {
     padding: '32px',
     textAlign: 'center',
-    color: '#ffffff',
+    color: '#111827',
   },
 
   logo: {
     position: 'absolute',
     top: '32px',
     left: '32px',
-    height: '60px',
-    width: 'auto',
-    objectFit: 'contain',
+    fontSize: '24px',
+    fontWeight: '700',
     zIndex: 10,
+    display: 'flex',
+    alignItems: 'center',
     '@media (max-width: 768px)': {
-      height: '50px',
+      fontSize: '20px',
       top: '24px',
       left: '24px',
     },
+  },
+
+  logoNomi: {
+    color: '#1e3a8a',
+    fontWeight: '700',
+  },
+
+  logoAcademy: {
+    color: '#000000',
+    fontWeight: '400',
   },
 };

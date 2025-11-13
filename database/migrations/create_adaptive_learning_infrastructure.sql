@@ -334,60 +334,106 @@ ALTER TABLE user_goals ENABLE ROW LEVEL SECURITY;
 ALTER TABLE diagnostic_analysis ENABLE ROW LEVEL SECURITY;
 ALTER TABLE algorithm_runs ENABLE ROW LEVEL SECURITY;
 
--- Users can only access their own data
+-- Drop existing policies if they exist (for re-runs)
+DROP POLICY IF EXISTS "Users can view own performance" ON user_lesson_performance;
+DROP POLICY IF EXISTS "Users can insert own performance" ON user_lesson_performance;
+DROP POLICY IF EXISTS "Users can update own performance" ON user_lesson_performance;
+DROP POLICY IF EXISTS "Users can view own paths" ON user_learning_paths;
+DROP POLICY IF EXISTS "Users can create own paths" ON user_learning_paths;
+DROP POLICY IF EXISTS "Users can update own paths" ON user_learning_paths;
+DROP POLICY IF EXISTS "Users can view own path items" ON learning_path_items;
+DROP POLICY IF EXISTS "Users can create own path items" ON learning_path_items;
+DROP POLICY IF EXISTS "Users can update own path items" ON learning_path_items;
+DROP POLICY IF EXISTS "Users can view own recommendations" ON daily_recommendations;
+DROP POLICY IF EXISTS "Users can create own recommendations" ON daily_recommendations;
+DROP POLICY IF EXISTS "Users can update own recommendations" ON daily_recommendations;
+DROP POLICY IF EXISTS "Users can view own goals" ON user_goals;
+DROP POLICY IF EXISTS "Users can create own goals" ON user_goals;
+DROP POLICY IF EXISTS "Users can update own goals" ON user_goals;
+DROP POLICY IF EXISTS "Users can view own diagnostic analysis" ON diagnostic_analysis;
+DROP POLICY IF EXISTS "Users can create own diagnostic analysis" ON diagnostic_analysis;
+DROP POLICY IF EXISTS "Users can view own algorithm runs" ON algorithm_runs;
+DROP POLICY IF EXISTS "Users can create own algorithm runs" ON algorithm_runs;
+
+-- USER_LESSON_PERFORMANCE policies
 CREATE POLICY "Users can view own performance"
   ON user_lesson_performance FOR SELECT
   USING (auth.uid() = user_id);
 
+CREATE POLICY "Users can insert own performance"
+  ON user_lesson_performance FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Users can update own performance"
+  ON user_lesson_performance FOR UPDATE
+  USING (auth.uid() = user_id);
+
+-- USER_LEARNING_PATHS policies
 CREATE POLICY "Users can view own paths"
   ON user_learning_paths FOR SELECT
   USING (auth.uid() = user_id);
 
+CREATE POLICY "Users can create own paths"
+  ON user_learning_paths FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Users can update own paths"
+  ON user_learning_paths FOR UPDATE
+  USING (auth.uid() = user_id);
+
+-- LEARNING_PATH_ITEMS policies
 CREATE POLICY "Users can view own path items"
   ON learning_path_items FOR SELECT
   USING (auth.uid() IN (SELECT user_id FROM user_learning_paths WHERE id = learning_path_id));
 
+CREATE POLICY "Users can create own path items"
+  ON learning_path_items FOR INSERT
+  WITH CHECK (auth.uid() IN (SELECT user_id FROM user_learning_paths WHERE id = learning_path_id));
+
+CREATE POLICY "Users can update own path items"
+  ON learning_path_items FOR UPDATE
+  USING (auth.uid() IN (SELECT user_id FROM user_learning_paths WHERE id = learning_path_id));
+
+-- DAILY_RECOMMENDATIONS policies
 CREATE POLICY "Users can view own recommendations"
   ON daily_recommendations FOR SELECT
   USING (auth.uid() = user_id);
 
+CREATE POLICY "Users can create own recommendations"
+  ON daily_recommendations FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Users can update own recommendations"
+  ON daily_recommendations FOR UPDATE
+  USING (auth.uid() = user_id);
+
+-- USER_GOALS policies
 CREATE POLICY "Users can view own goals"
   ON user_goals FOR SELECT
   USING (auth.uid() = user_id);
 
+CREATE POLICY "Users can create own goals"
+  ON user_goals FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Users can update own goals"
+  ON user_goals FOR UPDATE
+  USING (auth.uid() = user_id);
+
+-- DIAGNOSTIC_ANALYSIS policies
 CREATE POLICY "Users can view own diagnostic analysis"
   ON diagnostic_analysis FOR SELECT
   USING (auth.uid() = user_id);
 
+CREATE POLICY "Users can create own diagnostic analysis"
+  ON diagnostic_analysis FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+-- ALGORITHM_RUNS policies (read-only for users)
 CREATE POLICY "Users can view own algorithm runs"
   ON algorithm_runs FOR SELECT
   USING (auth.uid() = user_id);
 
--- Service role can do everything (for algorithm execution)
-CREATE POLICY "Service role can manage all data"
-  ON user_lesson_performance FOR ALL
-  USING (auth.role() = 'service_role');
-
-CREATE POLICY "Service role can manage paths"
-  ON user_learning_paths FOR ALL
-  USING (auth.role() = 'service_role');
-
-CREATE POLICY "Service role can manage path items"
-  ON learning_path_items FOR ALL
-  USING (auth.role() = 'service_role');
-
-CREATE POLICY "Service role can manage recommendations"
-  ON daily_recommendations FOR ALL
-  USING (auth.role() = 'service_role');
-
-CREATE POLICY "Service role can manage goals"
-  ON user_goals FOR ALL
-  USING (auth.role() = 'service_role');
-
-CREATE POLICY "Service role can manage analysis"
-  ON diagnostic_analysis FOR ALL
-  USING (auth.role() = 'service_role');
-
-CREATE POLICY "Service role can manage algorithm runs"
-  ON algorithm_runs FOR ALL
-  USING (auth.role() = 'service_role');
+CREATE POLICY "Users can create own algorithm runs"
+  ON algorithm_runs FOR INSERT
+  WITH CHECK (auth.uid() = user_id);

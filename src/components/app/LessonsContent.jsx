@@ -4,8 +4,10 @@
  */
 
 import React, { useState, useRef, useEffect } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useOutletContext, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
 import { useLessonsContentStyles } from '../../styles/app/lessons-content.styles';
+import { getFeatureAccess } from '../../services/subscription.service';
 import StatusIcon from '../StatusIcon';
 import {
   HiStar,
@@ -26,12 +28,15 @@ import {
   HiCpuChip,
   HiQuestionMarkCircle,
   HiRocketLaunch,
-  HiPuzzlePiece
+  HiPuzzlePiece,
+  HiLockClosed
 } from 'react-icons/hi2';
 import soundEffects from '../../services/soundEffects';
 
 const LessonsContent = () => {
   const classes = useLessonsContentStyles();
+  const { user } = useAuth();
+  const navigate = useNavigate();
   const {
     lessonStructure = [],
     lessonContent = {},
@@ -48,10 +53,27 @@ const LessonsContent = () => {
   const [viewMode, setViewMode] = useState('grid');
   const [mode, setMode] = useState('lessons'); // 'lessons' or 'practice'
   const [sliderStyle, setSliderStyle] = useState({});
+  const [featureAccess, setFeatureAccess] = useState(null);
 
   // Refs for filter buttons
   const filterButtonsRef = useRef({});
   const filterContainerRef = useRef(null);
+
+  // Check feature access
+  useEffect(() => {
+    if (user) {
+      checkFeatureAccess();
+    }
+  }, [user]);
+
+  const checkFeatureAccess = async () => {
+    try {
+      const access = await getFeatureAccess(user.id);
+      setFeatureAccess(access);
+    } catch (error) {
+      console.error('Error checking feature access:', error);
+    }
+  };
 
   // Get mastery rating for a lesson from localStorage
   const getMasteryRating = (lessonId) => {
@@ -142,10 +164,17 @@ const LessonsContent = () => {
 
   const getFilteredLessons = () => {
     // Merge durations from database into lesson structure
-    return lessonStructure.filter(lesson => lesson.section === activeSection).map(lesson => ({
-      ...lesson,
-      duration: lessonContent[lesson.id]?.duration || lesson.duration
-    }));
+    const sectionLessons = lessonStructure
+      .filter(lesson => lesson.section === activeSection)
+      .map((lesson, index) => {
+        const isLocked = featureAccess && !featureAccess.isPro && index >= featureAccess.lessonsPerSection;
+        return {
+          ...lesson,
+          duration: lessonContent[lesson.id]?.duration || lesson.duration,
+          isLocked
+        };
+      });
+    return sectionLessons;
   };
 
   const getCategoryIcon = (category, section) => {
@@ -244,15 +273,23 @@ const LessonsContent = () => {
         className={`${isGridView ? classes.lessonCard : classes.lessonCardListView} ${status}`}
         onClick={() => {
           soundEffects.playClick();
-          openLesson(lesson.id, 'review');
+          if (lesson.isLocked) {
+            navigate('/app/upgrade');
+          } else {
+            openLesson(lesson.id, 'review');
+          }
         }}
         onMouseLeave={() => setHoveredMoreTag(null)}
+        style={lesson.isLocked ? { opacity: 0.6, cursor: 'pointer' } : {}}
       >
         <div className={classes.lessonStatus} style={!isGridView ? { position: 'relative', top: 'auto', right: 'auto' } : {}}>
-          <StatusIcon status={status} />
+          {lesson.isLocked ? <HiLockClosed style={{ fontSize: '1.125rem', color: '#3b82f6' }} /> : <StatusIcon status={status} />}
         </div>
         <div className={classes.lessonInfo} style={!isGridView ? { paddingRight: 0 } : {}}>
-          <div className={classes.lessonTitle} style={!isGridView ? { fontSize: '0.8rem', marginBottom: '0.15rem', lineHeight: '1.2' } : {}}>{lesson.title}</div>
+          <div className={classes.lessonTitle} style={!isGridView ? { fontSize: '0.8rem', marginBottom: '0.15rem', lineHeight: '1.2' } : {}}>
+            {lesson.title}
+            {lesson.isLocked && <span style={{ marginLeft: '0.5rem', fontSize: '0.75rem', color: '#3b82f6', fontWeight: '600' }}>Pro</span>}
+          </div>
           {lesson.chapterNum && isGridView && (
             <div className={classes.lessonChapter}>{lesson.chapterNum}</div>
           )}
@@ -344,22 +381,9 @@ const LessonsContent = () => {
         onMouseLeave={() => setHoveredMoreTag(null)}
       >
         <div className={classes.lessonInfo} style={!isGridView ? { paddingRight: 0 } : {}}>
-          <div className={classes.lessonTitle} style={!isGridView ? { fontSize: '0.8rem', marginBottom: '0.15rem', lineHeight: '1.2' } : { overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', paddingRight: '5rem' }}>{lesson.title}</div>
+          <div className={classes.lessonTitle} style={!isGridView ? { fontSize: '0.8rem', marginBottom: '0.15rem', lineHeight: '1.2' } : { overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{lesson.title}</div>
           {lesson.chapterNum && isGridView && (
             <div className={classes.lessonChapter}>{lesson.chapterNum}</div>
-          )}
-          {lesson.keyTerms && lesson.keyTerms.length > 0 && isGridView && (
-            <div className={classes.keyTermsTags} style={{ paddingRight: '5rem', boxSizing: 'border-box' }}>
-              {lesson.keyTerms.slice(0, 2).join(' • ')}
-              {lesson.keyTerms.length > 2 && (
-                <span
-                  onMouseEnter={(e) => handleMoreTagHover(e, lesson)}
-                  style={{ cursor: 'pointer', textDecoration: 'underline', textDecorationStyle: 'dotted' }}
-                >
-                  {` • +${lesson.keyTerms.length - 2} more`}
-                </span>
-              )}
-            </div>
           )}
           {lesson.chapterNum && !isGridView && (
             <div style={{ fontSize: '0.65rem', color: '#94a3b8', fontWeight: '500' }}>{lesson.chapterNum}</div>

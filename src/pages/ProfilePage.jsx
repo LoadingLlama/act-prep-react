@@ -259,7 +259,7 @@ const ProfilePage = () => {
               <div style={profileStyles.featureGrid}>
                 <div style={profileStyles.featureCard}>
                   <div style={profileStyles.featureIcon}>
-                    <HiAcademicCap size={24} color="#3b82f6" />
+                    <HiAcademicCap size={18} color="#3b82f6" />
                   </div>
                   <div style={profileStyles.featureContent}>
                     <div style={profileStyles.featureLabel}>Lessons</div>
@@ -271,48 +271,48 @@ const ProfilePage = () => {
 
                 <div style={profileStyles.featureCard}>
                   <div style={profileStyles.featureIcon}>
-                    <HiDocumentText size={24} color="#3b82f6" />
+                    <HiDocumentText size={18} color="#3b82f6" />
                   </div>
                   <div style={profileStyles.featureContent}>
-                    <div style={profileStyles.featureLabel}>Practice Tests</div>
+                    <div style={profileStyles.featureLabel}>Tests</div>
                     <div style={profileStyles.featureValue}>
-                      {isPro ? 'Unlimited' : `${featureAccess.practiceTests} test only`}
+                      {isPro ? 'Unlimited' : `${featureAccess.practiceTests} test`}
                     </div>
                   </div>
                 </div>
 
                 <div style={profileStyles.featureCard}>
                   <div style={profileStyles.featureIcon}>
-                    <HiBookOpen size={24} color="#3b82f6" />
+                    <HiBookOpen size={18} color="#3b82f6" />
                   </div>
                   <div style={profileStyles.featureContent}>
-                    <div style={profileStyles.featureLabel}>Practice Questions</div>
+                    <div style={profileStyles.featureLabel}>Questions</div>
                     <div style={profileStyles.featureValue}>
-                      {isPro ? 'Unlimited' : `${featureAccess.practiceQuestionsPerLesson} per lesson`}
+                      {isPro ? 'Unlimited' : `${featureAccess.practiceQuestionsPerLesson}/lesson`}
                     </div>
                   </div>
                 </div>
 
                 <div style={profileStyles.featureCard}>
                   <div style={profileStyles.featureIcon}>
-                    <HiChartBar size={24} color="#3b82f6" />
+                    <HiChartBar size={18} color="#3b82f6" />
                   </div>
                   <div style={profileStyles.featureContent}>
                     <div style={profileStyles.featureLabel}>Insights</div>
                     <div style={profileStyles.featureValue}>
-                      {isPro ? 'Full access' : 'Not available'}
+                      {isPro ? 'Full access' : 'Locked'}
                     </div>
                   </div>
                 </div>
 
                 <div style={profileStyles.featureCard}>
                   <div style={profileStyles.featureIcon}>
-                    <HiSparkles size={24} color="#3b82f6" />
+                    <HiSparkles size={18} color="#3b82f6" />
                   </div>
                   <div style={profileStyles.featureContent}>
-                    <div style={profileStyles.featureLabel}>AI Learning Path</div>
+                    <div style={profileStyles.featureLabel}>AI Path</div>
                     <div style={profileStyles.featureValue}>
-                      {isPro ? 'Enabled' : 'Not available'}
+                      {isPro ? 'Enabled' : 'Locked'}
                     </div>
                   </div>
                 </div>

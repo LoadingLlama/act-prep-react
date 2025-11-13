@@ -35,7 +35,8 @@ const parseChoiceExplanations = (text) => {
 const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onComplete, onSolutionViewed }) => {
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [showSolution, setShowSolution] = useState(false);
-  const [hasCheckedAnswer, setHasCheckedAnswer] = useState(false);
+  const [answeredCorrectly, setAnsweredCorrectly] = useState(null);
+  const [showTryAgain, setShowTryAgain] = useState(false);
 
   // For worked examples (no choices), show solution immediately
   useEffect(() => {
@@ -65,7 +66,7 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
     for (let i = matches.length - 1; i >= 0; i--) {
       const match = matches[i];
       const text = match[1];
-      if (text.includes('?') || text.includes(':') && text.length < 200) {
+      if (text.includes('?') || (text.includes(':') && text.length < 200)) {
         // This is likely the question
         const questionHtml = match[0];
         const content = htmlText.replace(questionHtml, '').trim();
@@ -78,8 +79,13 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
 
   const { content: problemContent, question: questionText } = extractQuestionAndContent(example?.problem_text);
 
-  // Parse explanations for each choice
-  const choiceExplanations = parseChoiceExplanations(example?.answer_explanation);
+  // Get explanations directly from choice objects
+  const choiceExplanations = {};
+  example?.choices?.forEach(choice => {
+    if (choice.explanation) {
+      choiceExplanations[choice.letter] = choice.explanation;
+    }
+  });
 
   // If example data is missing, don't render anything
   if (!example || !example.title || !example.problem_text) {
@@ -88,14 +94,28 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
   }
 
   const handleChoiceClick = (letter) => {
-    if (hasCheckedAnswer) return; // Already checked answer
+    if (showSolution) return; // Prevent changing answer after checking
     setSelectedChoice(letter);
+    setAnsweredCorrectly(null); // Reset the wrong answer state when selecting new answer
+    setShowTryAgain(false); // Hide try again when selecting new answer
   };
 
   const handleCheckAnswer = () => {
     if (!selectedChoice) return; // Must select an answer first
-    setHasCheckedAnswer(true);
-    setShowSolution(true); // Immediate, smooth transition
+
+    const isCorrect = selectedChoice === example.correct_answer;
+    setAnsweredCorrectly(isCorrect);
+
+    // Only show solution/explanation if correct
+    if (isCorrect) {
+      setShowSolution(true);
+    } else {
+      // Wrong answer - show "Try again" then fade out
+      setShowTryAgain(true);
+      setTimeout(() => {
+        setShowTryAgain(false);
+      }, 2000);
+    }
   };
 
   return (
@@ -187,7 +207,6 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
             {example.choices.map((choice) => {
             const isSelected = selectedChoice === choice.letter;
             const isCorrectAnswer = choice.letter === example.correct_answer;
-            const showFeedback = hasCheckedAnswer;
             const explanation = choiceExplanations[choice.letter];
 
             return (
@@ -195,13 +214,9 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
                 <div
                   onClick={() => handleChoiceClick(choice.letter)}
                   style={{
-                    cursor: hasCheckedAnswer ? 'default' : 'pointer',
-                    borderLeft: showFeedback && isSelected && isCorrectAnswer ? '3px solid #48bb78' :
-                                showFeedback && isSelected && !isCorrectAnswer ? '3px solid #f56565' :
-                                showFeedback && !isSelected && isCorrectAnswer ? '3px solid #48bb78' : 'none',
-                    backgroundColor: showFeedback && isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.08)' :
-                                     showFeedback && isSelected && !isCorrectAnswer ? 'rgba(245, 101, 101, 0.08)' :
-                                     showFeedback && !isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.08)' : 'transparent',
+                    cursor: showSolution ? 'default' : 'pointer',
+                    borderLeft: answeredCorrectly === true && isCorrectAnswer ? '3px solid #48bb78' : 'none',
+                    backgroundColor: answeredCorrectly === true && isCorrectAnswer ? 'rgba(72, 187, 120, 0.08)' : 'transparent',
                     borderRadius: '6px',
                     padding: '0.75rem',
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
@@ -219,28 +234,20 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
                       height: '26px',
                       minWidth: '26px',
                       borderRadius: '50%',
-                      border: isSelected && !showFeedback ? '2px solid #3b82f6' :
-                              showFeedback && isSelected && isCorrectAnswer ? '2px solid #48bb78' :
-                              showFeedback && isSelected && !isCorrectAnswer ? '2px solid #f56565' :
-                              showFeedback && !isSelected && isCorrectAnswer ? '2px solid #48bb78' : '2px solid #cbd5e0',
+                      border: isSelected && answeredCorrectly === null ? '2px solid #3b82f6' :
+                              answeredCorrectly === true && isCorrectAnswer ? '2px solid #48bb78' : '2px solid #cbd5e0',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       fontWeight: '600',
                       fontSize: '0.7rem',
-                      color: isSelected && !showFeedback ? '#3b82f6' :
-                              showFeedback && isSelected && isCorrectAnswer ? '#48bb78' :
-                              showFeedback && isSelected && !isCorrectAnswer ? '#f56565' :
-                              showFeedback && !isSelected && isCorrectAnswer ? '#48bb78' : '#718096',
-                      backgroundColor: isSelected && !showFeedback ? 'rgba(59, 130, 246, 0.1)' :
-                                       showFeedback && isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.15)' :
-                                       showFeedback && isSelected && !isCorrectAnswer ? 'rgba(245, 101, 101, 0.15)' :
-                                       showFeedback && !isSelected && isCorrectAnswer ? 'rgba(72, 187, 120, 0.15)' : 'transparent',
+                      color: isSelected && answeredCorrectly === null ? '#3b82f6' :
+                              answeredCorrectly === true && isCorrectAnswer ? '#48bb78' : '#718096',
+                      backgroundColor: isSelected && answeredCorrectly === null ? 'rgba(59, 130, 246, 0.1)' :
+                                       answeredCorrectly === true && isCorrectAnswer ? 'rgba(72, 187, 120, 0.15)' : 'transparent',
                       transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
                     }}>
-                      {showFeedback && isSelected && isCorrectAnswer ? '✓' :
-                       showFeedback && isSelected && !isCorrectAnswer ? '✗' :
-                       showFeedback && !isSelected && isCorrectAnswer ? '✓' : choice.letter}
+                      {answeredCorrectly === true && isCorrectAnswer ? '✓' : choice.letter}
                     </div>
 
                     {/* Option text */}
@@ -254,11 +261,24 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
                       }}>
                         {choice.text}
                       </div>
+
+                      {/* Try again message for wrong answer */}
+                      {answeredCorrectly === false && isSelected && showTryAgain && (
+                        <div style={{
+                          marginTop: '0.5rem',
+                          fontSize: '0.85rem',
+                          color: '#6b7280',
+                          fontStyle: 'italic',
+                          animation: 'fadeOut 2s ease-in-out forwards'
+                        }}>
+                          Try again
+                        </div>
+                      )}
                     </div>
                   </div>
 
-                  {/* Explanation integrated into the same box */}
-                  {showFeedback && explanation && (
+                  {/* Explanation - only show when answered correctly */}
+                  {answeredCorrectly === true && explanation && (
                     <div style={{
                       marginTop: '0.75rem',
                       marginLeft: '2.25rem',
@@ -267,14 +287,15 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
                       animation: 'fadeSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                       opacity: 1
                     }}>
-                      <div style={{
-                        fontSize: '0.8rem',
-                        lineHeight: '1.6',
-                        color: '#374151',
-                        marginBottom: '0.5rem'
-                      }}>
-                        {explanation}
-                      </div>
+                      <div
+                        style={{
+                          fontSize: '0.8rem',
+                          lineHeight: '1.6',
+                          color: '#374151',
+                          marginBottom: '0.5rem'
+                        }}
+                        dangerouslySetInnerHTML={{ __html: explanation }}
+                      />
                       <div style={{
                         fontSize: '0.7rem',
                         fontWeight: '700',
@@ -289,8 +310,8 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
             );
           })}
 
-            {/* Check Answer Button - Bottom Right */}
-            {!hasCheckedAnswer && selectedChoice && (
+            {/* Check Answer Button */}
+            {!showSolution && selectedChoice && (
               <div style={{
                 marginTop: '1.5rem',
                 display: 'flex',
@@ -348,6 +369,18 @@ const ExampleCard = ({ example, position, isCurrentSection, typingSpeed, onCompl
             opacity: 1;
             transform: translateY(0);
             max-height: 500px;
+          }
+        }
+
+        @keyframes fadeOut {
+          0% {
+            opacity: 1;
+          }
+          70% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
           }
         }
       `}</style>

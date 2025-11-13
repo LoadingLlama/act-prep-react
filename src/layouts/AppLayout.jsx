@@ -6,7 +6,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import { HiBars3 } from 'react-icons/hi2';
+import { HiBars3, HiClock } from 'react-icons/hi2';
 import { useAuth } from '../contexts/AuthContext';
 import { useAppStyles } from '../styles/App.styles';
 import { storage, domUtils } from '../utils/helpers';
@@ -224,20 +224,24 @@ export default function AppLayout() {
         onNavigate={handleNavigate}
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
+        isPro={isPro}
+        trialDaysLeft={trialDaysLeft}
       />
 
       {/* Main Content Area */}
       <div className={classes.mainContent}>
         {/* Top Right Header */}
         <div className={classes.topHeader}>
-          <div
-            className={classes.profilePicture}
-            onClick={() => handleNavigate('profile')}
-          >
-            {getUserInitials()}
-          </div>
-          <div className={`${classes.statusBadge} ${isPro ? classes.proBadge : classes.trialBadge}`}>
-            {isPro ? 'Pro' : `${trialDaysLeft}d left`}
+          <div style={{ position: 'relative' }}>
+            <div
+              className={`${classes.profilePicture} ${isPro ? classes.profilePicturePro : ''}`}
+              onClick={() => handleNavigate('profile')}
+            >
+              {getUserInitials()}
+            </div>
+            <div className={`${classes.statusBadge} ${isPro ? classes.proBadge : classes.trialBadge}`}>
+              {isPro ? 'PRO' : <HiClock size={10} />}
+            </div>
           </div>
         </div>
 

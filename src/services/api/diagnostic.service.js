@@ -10,32 +10,140 @@ import errorTracker from '../logging/errorTracker';
 const DiagnosticService = {
   /**
    * Fetch all diagnostic test questions (optionally filtered by section)
+   * NOTE: Diagnostic test is Practice Test #1 (test_number = 1)
    */
   async getDiagnosticQuestions(section = null) {
     logger.debug('DiagnosticService', 'getDiagnosticQuestions', { section });
 
-    let query = supabase
-      .from('diagnostic_test_questions')
-      .select('*')
-      .order('lesson_id', { ascending: true })
-      .order('question_id', { ascending: true });
+    // Load all sections from practice test #1 (the diagnostic test)
+    const sections = section ? [section] : ['english', 'math', 'reading', 'science'];
+    const allQuestions = [];
 
-    if (section) {
-      query = query.eq('section', section);
+    for (const sectionName of sections) {
+      const questionsTableName = `practice_test_${sectionName}_questions`;
+      const passagesTableName = `practice_test_${sectionName}_passages`;
+      const hasPassages = ['english', 'reading', 'science'].includes(sectionName);
+
+      console.log(`🔍 Loading ${sectionName} questions from ${questionsTableName}`);
+
+      // Fetch questions
+      const { data: questions, error: questionsError } = await supabase
+        .from(questionsTableName)
+        .select('*')
+        .eq('test_number', 1) // Practice Test #1 is the Diagnostic Test
+        .order('question_number', { ascending: true });
+
+      if (questionsError) {
+        console.error(`❌ Error loading ${sectionName} questions:`, questionsError);
+        errorTracker.trackError('DiagnosticService', 'getDiagnosticQuestions', { section: sectionName }, questionsError);
+        throw questionsError; // Throw instead of continue to fail fast
+      }
+
+      if (!questions || questions.length === 0) {
+        console.warn(`⚠️ No questions found for ${sectionName}`);
+        logger.warn('DiagnosticService', 'getDiagnosticQuestions', { section: sectionName, message: 'No questions found' });
+        continue;
+      }
+
+      console.log(`✅ Loaded ${questions.length} ${sectionName} questions`);
+
+      // If section has passages, fetch and merge them
+      if (hasPassages) {
+        const { data: passages, error: passagesError } = await supabase
+          .from(passagesTableName)
+          .select('*')
+          .eq('test_number', 1)
+          .order('passage_number', { ascending: true });
+
+        if (passagesError) {
+          errorTracker.trackError('DiagnosticService', 'getDiagnosticQuestions', { section: sectionName }, passagesError);
+        } else if (passages) {
+          // Create passage lookup map
+          const passageMap = {};
+          passages.forEach((passage) => {
+            passageMap[passage.id] = passage;
+          });
+
+          // Merge passage text into questions
+          questions.forEach((question) => {
+            if (question.passage_id && passageMap[question.passage_id]) {
+              const passage = passageMap[question.passage_id];
+              question.passage = passage.passage_text;
+              question.passage_type = passage.passage_type;
+              question.passage_title = passage.passage_title;
+              question.passage_number = passage.passage_number;
+
+              // Collect all image URLs from image_url_1, image_url_2, etc.
+              const imageUrls = {};
+              for (let i = 1; i <= 5; i++) {
+                const urlKey = `image_url_${i}`;
+                if (passage[urlKey]) {
+                  imageUrls[`image${i}`] = passage[urlKey];
+                }
+              }
+              if (Object.keys(imageUrls).length > 0) {
+                question.passage_image_urls = imageUrls;
+              }
+            }
+          });
+        }
+      }
+
+      // Transform questions to match practice test format
+      const transformedQuestions = questions.map((q, index) => {
+        try {
+          const parsedChoices = typeof q.choices === 'string' ? JSON.parse(q.choices) : q.choices;
+
+          // Convert choices array to answers object
+          // ["A. Text", "B. Text"] => {A: "Text", B: "Text"}
+          const answers = {};
+          if (parsedChoices && Array.isArray(parsedChoices)) {
+            parsedChoices.forEach(choice => {
+              const match = choice.match(/^([A-K])\.\s*(.+)$/);
+              if (match) {
+                answers[match[1]] = match[2];
+              }
+            });
+          }
+
+          return {
+            id: q.id,
+            text: q.question_text,
+            passage: q.passage,
+            passage_title: q.passage_title,
+            passage_image_urls: q.passage_image_urls,
+            answers: answers,
+            correctAnswer: String.fromCharCode(65 + q.correct_answer), // Convert 0->A, 1->B, etc.
+            explanation: q.explanation,
+            question_type: q.question_type,
+            difficulty: q.difficulty,
+            image_url: q.image_url,
+            section: sectionName,
+            question_number: q.question_number,
+            chapter: q.chapter, // Include chapter for lesson mapping
+            lesson_id: q.lesson_id // Include lesson_id if available
+          };
+        } catch (err) {
+          console.error(`❌ Error transforming question ${index + 1} in ${sectionName}:`, err, q);
+          throw new Error(`Failed to transform question ${index + 1} in ${sectionName}: ${err.message}`);
+        }
+      });
+
+      console.log(`✅ Transformed ${transformedQuestions.length} ${sectionName} questions`);
+      allQuestions.push(...transformedQuestions);
     }
 
-    const { data, error } = await query;
-
-    if (error) {
-      errorTracker.trackError('DiagnosticService', 'getDiagnosticQuestions', { section }, error);
-      return null;
-    }
-
+    console.log(`🎉 Total questions loaded: ${allQuestions.length}`);
     logger.info('DiagnosticService', 'getDiagnosticQuestions', {
       section,
-      count: data?.length,
+      count: allQuestions.length,
     });
-    return data;
+
+    if (allQuestions.length === 0) {
+      throw new Error('No questions found for diagnostic test (test_number = 1)');
+    }
+
+    return allQuestions;
   },
 
   /**
@@ -70,9 +178,10 @@ const DiagnosticService = {
   /**
    * Save user's answer to a diagnostic question
    */
-  async saveDiagnosticAnswer(userId, questionId, userAnswer, isCorrect, timeSpent) {
+  async saveDiagnosticAnswer(userId, sessionId, questionId, userAnswer, isCorrect, timeSpent) {
     logger.debug('DiagnosticService', 'saveDiagnosticAnswer', {
       userId,
+      sessionId,
       questionId,
       isCorrect,
       timeSpent,
@@ -81,6 +190,7 @@ const DiagnosticService = {
     const { data, error } = await supabase.from('diagnostic_test_results').insert([
       {
         user_id: userId,
+        diagnostic_session_id: sessionId,
         question_id: questionId,
         user_answer: userAnswer,
         is_correct: isCorrect,
@@ -89,13 +199,22 @@ const DiagnosticService = {
     ]);
 
     if (error) {
+      console.error('❌ saveDiagnosticAnswer error:', {
+        message: error.message,
+        details: error.details,
+        hint: error.hint,
+        code: error.code,
+        userId,
+        sessionId,
+        questionId
+      });
       errorTracker.trackError(
         'DiagnosticService',
         'saveDiagnosticAnswer',
-        { userId, questionId },
+        { userId, sessionId, questionId },
         error
       );
-      return null;
+      throw error;
     }
 
     logger.info('DiagnosticService', 'saveDiagnosticAnswer', {
@@ -128,13 +247,22 @@ const DiagnosticService = {
       .select();
 
     if (error) {
+      console.error('❌ createDiagnosticSession error:', {
+        message: error.message,
+        details: error.details,
+        hint: error.hint,
+        code: error.code,
+        userId,
+        section,
+        totalQuestions
+      });
       errorTracker.trackError(
         'DiagnosticService',
         'createDiagnosticSession',
         { userId, section },
         error
       );
-      return null;
+      throw error;
     }
 
     logger.info('DiagnosticService', 'createDiagnosticSession', {
@@ -166,13 +294,22 @@ const DiagnosticService = {
       .eq('id', sessionId);
 
     if (error) {
+      console.error('❌ completeDiagnosticSession error:', {
+        message: error.message,
+        details: error.details,
+        hint: error.hint,
+        code: error.code,
+        sessionId,
+        correctAnswers,
+        scorePercentage
+      });
       errorTracker.trackError(
         'DiagnosticService',
         'completeDiagnosticSession',
         { sessionId },
         error
       );
-      return null;
+      throw error;
     }
 
     logger.info('DiagnosticService', 'completeDiagnosticSession', {

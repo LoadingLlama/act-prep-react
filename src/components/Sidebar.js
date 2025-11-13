@@ -153,9 +153,31 @@ const useStyles = createUseStyles({
     borderTop: '1px solid #f3f4f6',
     marginTop: 'auto'
   },
+  statusBadge: {
+    fontSize: '0.6rem',
+    fontWeight: '600',
+    padding: '0.2rem 0.4rem',
+    borderRadius: '3px',
+    textTransform: 'uppercase',
+    letterSpacing: '0.03em',
+    whiteSpace: 'nowrap',
+    marginLeft: 'auto'
+  },
+  proBadge: {
+    background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%)',
+    color: '#64748b',
+    boxShadow: '0 2px 12px rgba(100, 116, 139, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -1px 0 rgba(148, 163, 184, 0.2)',
+    fontWeight: '700',
+    letterSpacing: '0.05em'
+  },
+  trialBadge: {
+    background: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)',
+    color: '#1e40af',
+    border: '1px solid #93c5fd'
+  }
 });
 
-const Sidebar = ({ activeView, onNavigate, isOpen, onClose }) => {
+const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft }) => {
   const classes = useStyles();
   const { signOut } = useAuth();
 
@@ -242,6 +264,9 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose }) => {
         >
           <span className={classes.icon}><HiUser /></span>
           Profile
+          <span className={`${classes.statusBadge} ${isPro ? classes.proBadge : classes.trialBadge}`}>
+            {isPro ? 'Pro' : `${trialDaysLeft}d left`}
+          </span>
         </button>
         <button
           className={`${classes.navItem} ${activeView === 'settings' ? 'active' : ''}`}

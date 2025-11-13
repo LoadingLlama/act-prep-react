@@ -5,10 +5,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
-import { HiChartBar, HiAcademicCap, HiTrophy, HiExclamationTriangle, HiArrowTrendingUp, HiClipboardDocumentCheck } from 'react-icons/hi2';
+import { HiChartBar, HiAcademicCap, HiTrophy, HiExclamationTriangle, HiArrowTrendingUp, HiClipboardDocumentCheck, HiLockClosed, HiRocketLaunch } from 'react-icons/hi2';
 import { useAuth } from '../contexts/AuthContext';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import InsightsService from '../services/api/insights.service';
+import { getFeatureAccess } from '../services/subscription.service';
 import logger from '../services/logging/logger';
+import DiagnosticTestCTA from '../components/DiagnosticTestCTA';
 
 const useStyles = createUseStyles({
   container: {
@@ -282,22 +285,122 @@ const useStyles = createUseStyles({
     fontSize: '0.875rem',
     color: '#6b7280',
     fontWeight: '500'
+  },
+  blurOverlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: 'rgba(255, 255, 255, 0.95)',
+    backdropFilter: 'blur(10px)',
+    zIndex: 1000,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '2rem'
+  },
+  upgradeCard: {
+    maxWidth: '600px',
+    background: 'linear-gradient(135deg, #ffffff 0%, #f9fafb 100%)',
+    padding: '3rem 2.5rem',
+    borderRadius: '20px',
+    border: '2px solid #e5e7eb',
+    boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
+    textAlign: 'center',
+    '@media (max-width: 768px)': {
+      padding: '2rem 1.5rem'
+    }
+  },
+  upgradeLockIcon: {
+    fontSize: '4rem',
+    color: '#3b82f6',
+    marginBottom: '1.5rem'
+  },
+  upgradeTitle: {
+    fontSize: '2rem',
+    fontWeight: '800',
+    color: '#1a1a1a',
+    marginBottom: '1rem',
+    letterSpacing: '-0.02em'
+  },
+  upgradeSubtitle: {
+    fontSize: '1.125rem',
+    color: '#6b7280',
+    marginBottom: '2rem',
+    lineHeight: '1.6'
+  },
+  upgradeButton: {
+    padding: '1rem 2.5rem',
+    borderRadius: '12px',
+    border: 'none',
+    fontSize: '1.125rem',
+    fontWeight: '700',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    background: 'linear-gradient(135deg, #08245b 0%, #3b82f6 100%)',
+    color: '#ffffff',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '0.75rem',
+    '&:hover': {
+      transform: 'translateY(-2px)',
+      boxShadow: '0 12px 24px rgba(8, 36, 91, 0.3)'
+    }
+  },
+  blurredContent: {
+    filter: 'blur(8px)',
+    pointerEvents: 'none',
+    userSelect: 'none'
   }
 });
 
 const InsightsPage = () => {
   const classes = useStyles();
   const { user } = useAuth();
+  const navigate = useNavigate();
+  const outletContext = useOutletContext();
+  const { setDiagnosticTestOpen } = outletContext || {};
   const [loading, setLoading] = useState(true);
   const [insights, setInsights] = useState(null);
   const [weakAreas, setWeakAreas] = useState([]);
   const [strengths, setStrengths] = useState([]);
+  const [featureAccess, setFeatureAccess] = useState(null);
 
   useEffect(() => {
     if (user) {
       loadInsights();
+      checkFeatureAccess();
     }
   }, [user]);
+
+  // Poll for diagnostic completion when processing
+  useEffect(() => {
+    if (user && localStorage.getItem('diagnosticProcessing')) {
+      const pollInterval = setInterval(async () => {
+        console.log('🔄 Polling for diagnostic completion...');
+        await loadInsights();
+
+        // Check if processing is complete
+        if (insights?.diagnostic?.hasCompletedDiagnostic) {
+          console.log('✅ Diagnostic processing complete!');
+          localStorage.removeItem('diagnosticProcessing');
+          clearInterval(pollInterval);
+        }
+      }, 3000);
+
+      return () => clearInterval(pollInterval);
+    }
+  }, [user, insights?.diagnostic?.hasCompletedDiagnostic]);
+
+  const checkFeatureAccess = async () => {
+    try {
+      const access = await getFeatureAccess(user.id);
+      setFeatureAccess(access);
+    } catch (error) {
+      logger.error('InsightsPage', 'checkFeatureAccess', { error: error.message });
+    }
+  };
 
   const loadInsights = async () => {
     try {
@@ -341,6 +444,16 @@ const InsightsPage = () => {
     return '#dc2626';
   };
 
+  const handleUpgradeClick = () => {
+    navigate('/app/upgrade');
+  };
+
+  const handleStartDiagnostic = () => {
+    if (setDiagnosticTestOpen) {
+      setDiagnosticTestOpen(true);
+    }
+  };
+
   if (loading) {
     return (
       <div className={classes.container}>
@@ -363,6 +476,10 @@ const InsightsPage = () => {
           <h1 className={classes.title}>Test Insights</h1>
           <p className={classes.subtitle}>Track your progress and identify areas for improvement</p>
         </div>
+
+        {/* Diagnostic Test CTA */}
+        <DiagnosticTestCTA onClick={handleStartDiagnostic} />
+
         <div className={classes.emptyState}>
           <div className={classes.emptyStateIcon}>
             <HiChartBar />
@@ -376,61 +493,132 @@ const InsightsPage = () => {
     );
   }
 
-  return (
-    <div className={classes.container}>
-      <div className={classes.header}>
-        <h1 className={classes.title}>Test Insights</h1>
-        <p className={classes.subtitle}>Track your progress and identify areas for improvement</p>
-      </div>
+  // Show blur overlay if user doesn't have access to insights
+  const showBlurOverlay = featureAccess && !featureAccess.hasInsights;
 
-      {/* Diagnostic Test Results */}
-      {insights.diagnostic.hasCompletedDiagnostic && (
+  return (
+    <>
+      {showBlurOverlay && (
+        <div className={classes.blurOverlay}>
+          <div className={classes.upgradeCard}>
+            <HiLockClosed className={classes.upgradeLockIcon} />
+            <h2 className={classes.upgradeTitle}>Insights Available with Pro</h2>
+            <p className={classes.upgradeSubtitle}>
+              Unlock detailed performance analytics, track your progress, and identify areas for improvement with a Pro subscription.
+            </p>
+            <button className={classes.upgradeButton} onClick={handleUpgradeClick}>
+              <HiRocketLaunch style={{ fontSize: '1.5rem' }} />
+              Upgrade to Pro
+            </button>
+          </div>
+        </div>
+      )}
+      <div className={`${classes.container} ${showBlurOverlay ? classes.blurredContent : ''}`}>
+        <div className={classes.header}>
+          <h1 className={classes.title}>Test Insights</h1>
+          <p className={classes.subtitle}>Track your progress and identify areas for improvement</p>
+        </div>
+
+      {/* Diagnostic Test CTA - Show if not completed and not processing */}
+      {!insights.diagnostic.hasCompletedDiagnostic && !localStorage.getItem('diagnosticProcessing') && (
+        <DiagnosticTestCTA onClick={handleStartDiagnostic} />
+      )}
+
+      {/* Diagnostic Test Results or Loading Card */}
+      {(insights.diagnostic.hasCompletedDiagnostic || localStorage.getItem('diagnosticProcessing')) && (
         <div className={classes.section}>
           <h2 className={classes.sectionTitle}>
             <HiClipboardDocumentCheck className={classes.sectionIcon} />
             Diagnostic Test Results
           </h2>
           <div className={classes.grid}>
-            <div className={`${classes.card} ${classes.diagnosticCard}`}>
-              <div className={classes.diagnosticScore}>
-                {insights.diagnostic.latestScore?.toFixed(1)}%
-              </div>
-              <div className={classes.diagnosticLabel}>Overall Score</div>
-              <div className={classes.diagnosticDate}>
-                Completed {formatDate(insights.diagnostic.completedAt)}
-              </div>
-              <div className={classes.cardSubtext}>
-                {insights.diagnostic.correctAnswers} out of {insights.diagnostic.totalQuestions} questions correct
-              </div>
-            </div>
-
-            <div className={classes.card}>
-              <div className={classes.cardHeader}>
-                <div className={classes.cardTitle}>Section Breakdown</div>
-              </div>
-              <div className={classes.sectionBreakdown}>
-                {insights.diagnostic.sectionBreakdown?.map((section) => (
-                  <div key={section.section} className={classes.sectionItem}>
-                    <div className={classes.sectionName}>{section.section}</div>
-                    <div className={classes.sectionScore} style={{ color: getAccuracyColor(section.accuracy) }}>
-                      {section.accuracy.toFixed(0)}%
-                    </div>
-                    <div className={classes.sectionDetails}>
-                      {section.correct}/{section.total} correct
-                    </div>
-                    <div className={classes.progressBar}>
-                      <div
-                        className={classes.progressFill}
-                        style={{
-                          width: `${section.accuracy}%`,
-                          background: getAccuracyColor(section.accuracy)
-                        }}
-                      />
-                    </div>
+            {/* Loading Card */}
+            {!insights.diagnostic.hasCompletedDiagnostic && localStorage.getItem('diagnosticProcessing') ? (
+              <div className={`${classes.card} ${classes.diagnosticCard}`}>
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '2rem 0'
+                }}>
+                  <div style={{
+                    width: '48px',
+                    height: '48px',
+                    border: '4px solid #fee2e2',
+                    borderTop: '4px solid #dc2626',
+                    borderRadius: '50%',
+                    animation: 'spin 1s linear infinite',
+                    marginBottom: '1.5rem'
+                  }} />
+                  <div className={classes.diagnosticLabel} style={{ marginBottom: '0.5rem' }}>
+                    Analyzing Your Test
                   </div>
-                ))}
+                  <div className={classes.cardSubtext} style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+                    Processing your results and generating insights...
+                  </div>
+                  <div style={{
+                    width: '100%',
+                    height: '8px',
+                    background: '#fee2e2',
+                    borderRadius: '9999px',
+                    overflow: 'hidden',
+                    marginTop: '0.5rem'
+                  }}>
+                    <div style={{
+                      height: '100%',
+                      background: 'linear-gradient(90deg, #b91c1c 0%, #dc2626 100%)',
+                      width: '100%',
+                      animation: 'pulse 2s ease-in-out infinite'
+                    }} />
+                  </div>
+                </div>
               </div>
-            </div>
+            ) : (
+              <>
+                {/* Completed Results */}
+                <div className={`${classes.card} ${classes.diagnosticCard}`}>
+                  <div className={classes.diagnosticScore}>
+                    {insights.diagnostic.latestScore?.toFixed(1)}%
+                  </div>
+                  <div className={classes.diagnosticLabel}>Overall Score</div>
+                  <div className={classes.diagnosticDate}>
+                    Completed {formatDate(insights.diagnostic.completedAt)}
+                  </div>
+                  <div className={classes.cardSubtext}>
+                    {insights.diagnostic.correctAnswers} out of {insights.diagnostic.totalQuestions} questions correct
+                  </div>
+                </div>
+
+                <div className={classes.card}>
+                  <div className={classes.cardHeader}>
+                    <div className={classes.cardTitle}>Section Breakdown</div>
+                  </div>
+                  <div className={classes.sectionBreakdown}>
+                    {insights.diagnostic.sectionBreakdown?.map((section) => (
+                      <div key={section.section} className={classes.sectionItem}>
+                        <div className={classes.sectionName}>{section.section}</div>
+                        <div className={classes.sectionScore} style={{ color: getAccuracyColor(section.accuracy) }}>
+                          {section.accuracy.toFixed(0)}%
+                        </div>
+                        <div className={classes.sectionDetails}>
+                          {section.correct}/{section.total} correct
+                        </div>
+                        <div className={classes.progressBar}>
+                          <div
+                            className={classes.progressFill}
+                            style={{
+                              width: `${section.accuracy}%`,
+                              background: getAccuracyColor(section.accuracy)
+                            }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}
@@ -566,7 +754,8 @@ const InsightsPage = () => {
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 };
 

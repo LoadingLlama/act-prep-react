@@ -40,18 +40,33 @@ const CourseContent = () => {
     if (user) {
       loadUserGoals();
       checkDiagnosticCompletion();
+    } else {
+      setLoadingDiagnostic(false);
+      setDiagnosticCompleted(false);
     }
   }, [user]);
 
   const checkDiagnosticCompletion = async () => {
     try {
-      const { data: results } = await supabase
-        .from('diagnostic_results')
-        .select('id')
+      // Get the latest completed diagnostic session
+      const { data: session, error: sessionError } = await supabase
+        .from('diagnostic_test_sessions')
+        .select('*')
         .eq('user_id', user.id)
+        .eq('completed', true)
+        .order('session_start', { ascending: false })
+        .limit(1)
         .maybeSingle();
 
-      setDiagnosticCompleted(!!results);
+      if (sessionError) throw sessionError;
+
+      if (session) {
+        setDiagnosticCompleted(true);
+        console.log('📊 Diagnostic test completed:', session);
+      } else {
+        setDiagnosticCompleted(false);
+        console.log('📋 No diagnostic test completed yet');
+      }
     } catch (error) {
       console.error('Error checking diagnostic completion:', error);
       setDiagnosticCompleted(false);
@@ -149,7 +164,7 @@ const CourseContent = () => {
       endDate: getDateFromToday(6),
       items: [
         { id: 'getting-started', type: 'lesson', title: 'ACT Test Basics & Overview', skills: 'Strategy', duration: '20 min', dueDate: getDateFromToday(1) },
-        { id: 'diagnostic', type: 'test', title: 'Diagnostic Test', skills: 'All Sections', duration: '60 min', dueDate: getDateFromToday(3) }
+        { id: 'diagnostic', type: 'test', title: 'Start with a Free Diagnostic Test to Identify Your Strengths & Gaps', description: 'Take our AI-powered Diagnostic Test to pinpoint exactly where you excel and where you need practice—so you know your starting point from day one.', skills: 'All Sections', duration: '60 min', dueDate: getDateFromToday(3), isDiagnostic: true }
       ]
     },
     {
@@ -310,12 +325,29 @@ const CourseContent = () => {
                   </div>
                   <div className={classes.weekGrid}>
                     {week.items.map((item, itemIndex) => (
-                      <div key={itemIndex} className={classes.weekCard}>
+                      <div key={itemIndex} className={classes.weekCard} style={item.isDiagnostic ? {
+                        borderLeft: '3px solid #b91c1c',
+                        paddingLeft: '0.75rem',
+                        background: 'linear-gradient(90deg, #fef2f2 0%, #ffffff 100%)'
+                      } : {}}>
                         <div className={classes.weekCardContent}>
-                          <span className={classes.weekCardIcon}>{getItemIcon(item.type)}</span>
-                          <span className={classes.weekCardText}>{item.title}</span>
+                          <span className={classes.weekCardIcon} style={item.isDiagnostic ? { color: '#b91c1c' } : {}}>{getItemIcon(item.type)}</span>
+                          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.5rem', flex: 1, flexWrap: 'wrap' }}>
+                            <span className={classes.weekCardText} style={item.isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : {}}>{item.title}</span>
+                            {item.description && (
+                              <span style={{
+                                fontSize: '0.8125rem',
+                                color: '#6b7280',
+                                lineHeight: '1.4',
+                                fontWeight: '400',
+                                flex: '1 1 100%'
+                              }}>
+                                {item.description}
+                              </span>
+                            )}
+                          </div>
                         </div>
-                        <span className={classes.weekCardArrow}>→</span>
+                        <span className={classes.weekCardArrow} style={item.isDiagnostic ? { color: '#b91c1c' } : {}}>→</span>
                       </div>
                     ))}
                   </div>
@@ -364,45 +396,50 @@ const CourseContent = () => {
               fontSize: '1.5rem',
               fontWeight: '700',
               color: '#1a1a1a',
-              marginBottom: '0.75rem'
+              marginBottom: '0.75rem',
+              textAlign: 'center'
             }}>
-              Complete Your Full Diagnostic
+              Start with a Free Diagnostic Test
             </h2>
             <p style={{
               fontSize: '1rem',
               color: '#6b7280',
               lineHeight: '1.6',
-              marginBottom: '2rem'
+              marginBottom: '2rem',
+              textAlign: 'center'
             }}>
-              Your personalized learning path will be generated after you complete the full diagnostic assessment. This includes ACT questions and personalized study preferences to identify your strengths and create a customized study plan.
+              Take our diagnostic test to pinpoint exactly where you excel and where you need practice—so you know your starting point from day one.
             </p>
-            <button
-              onClick={() => {
-                soundEffects.playSuccess();
-                setDiagnosticTestOpen(true);
-              }}
-              style={{
-                background: '#b91c1c',
-                color: 'white',
-                border: 'none',
-                borderRadius: '8px',
-                padding: '0.875rem 2rem',
-                fontSize: '1rem',
-                fontWeight: '600',
-                cursor: 'pointer',
-                transition: 'all 0.15s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.background = '#991b1b';
-                e.target.style.transform = 'translateY(-1px)';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.background = '#b91c1c';
-                e.target.style.transform = 'translateY(0)';
-              }}
-            >
-              Start Full Diagnostic
-            </button>
+            <div style={{ textAlign: 'center' }}>
+              <button
+                onClick={() => {
+                  soundEffects.playSuccess();
+                  setDiagnosticTestOpen(true);
+                }}
+                style={{
+                  background: '#b91c1c',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '6px',
+                  padding: '0.75rem 1.5rem',
+                  fontSize: '0.95rem',
+                  fontWeight: '500',
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = '#991b1b';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = '#b91c1c';
+                }}
+              >
+                <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                  Start the Diagnostic Test
+                  <span style={{ fontSize: '1rem' }}>→</span>
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -415,83 +452,6 @@ const CourseContent = () => {
 
   return (
     <div className={classes.container}>
-      {/* Top Bar */}
-      <div style={{
-        position: 'sticky',
-        top: 0,
-        left: 0,
-        right: 0,
-        height: '64px',
-        background: '#ffffff',
-        borderBottom: '1px solid #e5e7eb',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: '0 2rem',
-        zIndex: 100,
-        marginBottom: '2rem'
-      }}>
-        {/* Left: Explore */}
-        <button
-          onClick={() => navigate('/app/lessons')}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.5rem',
-            background: 'transparent',
-            border: 'none',
-            padding: '0.5rem 1rem',
-            cursor: 'pointer',
-            fontSize: '0.95rem',
-            fontWeight: '600',
-            color: '#6b7280',
-            borderRadius: '8px',
-            transition: 'all 0.15s ease'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = '#f3f4f6';
-            e.currentTarget.style.color = '#1a1a1a';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'transparent';
-            e.currentTarget.style.color = '#6b7280';
-          }}
-        >
-          <HiSparkles style={{ fontSize: '1.25rem' }} />
-          Explore
-        </button>
-
-        {/* Center: Logo */}
-        <div style={{
-          position: 'absolute',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          fontSize: '1.5rem',
-          fontWeight: '800',
-          color: '#08245b',
-          letterSpacing: '-0.02em'
-        }}>
-          ACT PREP
-        </div>
-
-        {/* Right: Profile Picture */}
-        <button
-          onClick={() => navigate('/app/profile')}
-          style={{
-            background: 'transparent',
-            border: 'none',
-            padding: '0',
-            cursor: 'pointer',
-            borderRadius: '50%',
-            transition: 'transform 0.15s ease'
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-          onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-        >
-          <HiUserCircle style={{ fontSize: '2.5rem', color: '#6b7280' }} />
-        </button>
-      </div>
-
       {/* Header */}
       <div className={classes.header}>
         <h1 className={classes.title}>Learning Path</h1>
@@ -583,24 +543,42 @@ const CourseContent = () => {
                         key={itemIndex}
                         className={`${classes.weekCard} ${isCompleted ? 'completed' : ''}`}
                         onClick={() => handleItemClick(item)}
+                        style={item.isDiagnostic ? {
+                          borderLeft: '3px solid #b91c1c',
+                          paddingLeft: '0.75rem',
+                          background: 'linear-gradient(90deg, #fef2f2 0%, #ffffff 100%)'
+                        } : {}}
                       >
                         <div className={classes.weekCardContent}>
-                          <span className={classes.weekCardIcon}>{getItemIcon(item.type)}</span>
-                          <span className={classes.weekCardText}>
-                            {item.title}
-                            {chapterNum && (
+                          <span className={classes.weekCardIcon} style={item.isDiagnostic ? { color: '#b91c1c' } : {}}>{getItemIcon(item.type)}</span>
+                          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.5rem', flex: 1, flexWrap: 'wrap' }}>
+                            <span className={classes.weekCardText} style={item.isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : {}}>
+                              {item.title}
+                              {chapterNum && (
+                                <span style={{
+                                  marginLeft: '0.5rem',
+                                  color: '#9ca3af',
+                                  fontSize: '0.8125rem',
+                                  fontWeight: '400'
+                                }}>
+                                  {chapterNum}
+                                </span>
+                              )}
+                            </span>
+                            {item.description && (
                               <span style={{
-                                marginLeft: '0.5rem',
-                                color: '#9ca3af',
                                 fontSize: '0.8125rem',
-                                fontWeight: '400'
+                                color: '#6b7280',
+                                lineHeight: '1.4',
+                                fontWeight: '400',
+                                flex: '1 1 100%'
                               }}>
-                                {chapterNum}
+                                {item.description}
                               </span>
                             )}
-                          </span>
+                          </div>
                         </div>
-                        <span className={classes.weekCardArrow}>→</span>
+                        <span className={classes.weekCardArrow} style={item.isDiagnostic ? { color: '#b91c1c' } : {}}>→</span>
                       </div>
                     );
                   })}
@@ -767,6 +745,7 @@ const CourseContent = () => {
           </div>
         </div>
       )}
+
     </div>
   );
 };
