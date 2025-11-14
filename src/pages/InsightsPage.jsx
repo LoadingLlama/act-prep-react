@@ -5,13 +5,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
-import { HiChartBar, HiAcademicCap, HiTrophy, HiExclamationTriangle, HiArrowTrendingUp, HiClipboardDocumentCheck, HiLockClosed, HiRocketLaunch } from 'react-icons/hi2';
+import { HiChartBar, HiAcademicCap, HiTrophy, HiExclamationTriangle, HiArrowTrendingUp, HiClipboardDocumentCheck, HiLockClosed, HiRocketLaunch, HiClipboardDocumentList } from 'react-icons/hi2';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate, useOutletContext } from 'react-router-dom';
 import InsightsService from '../services/api/insights.service';
 import { getFeatureAccess } from '../services/subscription.service';
 import logger from '../services/logging/logger';
 import DiagnosticTestCTA from '../components/DiagnosticTestCTA';
+import DiagnosticTestReview from '../components/DiagnosticTestReview';
 
 const useStyles = createUseStyles({
   container: {
@@ -139,17 +140,86 @@ const useStyles = createUseStyles({
     color: '#6b7280',
     marginTop: '0.5rem'
   },
+  diagnosticSection: {
+    maxWidth: '400px', // Compact width like a test card
+    marginBottom: '2rem'
+  },
   diagnosticCard: {
-    background: 'linear-gradient(135deg, #fef2f2 0%, #ffffff 100%)',
+    background: '#ffffff',
+    border: '1px solid #e2e8f0',
+    borderLeft: '3px solid #fee2e2',
+    borderRadius: '8px',
+    padding: '1.25rem',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    '&:hover': {
+      borderColor: '#cbd5e1',
+      borderLeftColor: '#b91c1c',
+      boxShadow: '0 6px 16px rgba(185, 28, 28, 0.15)',
+      transform: 'translateY(-3px)'
+    }
+  },
+  diagnosticBadge: {
+    display: 'inline-block',
+    padding: '0.25rem 0.75rem',
+    borderRadius: '999px',
+    fontSize: '0.7rem',
+    fontWeight: '700',
+    background: '#fef2f2',
+    color: '#b91c1c',
     border: '1px solid #fee2e2',
-    padding: '2rem'
+    letterSpacing: '0.05em',
+    textTransform: 'uppercase'
+  },
+  diagnosticCardHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: '1rem'
+  },
+  diagnosticIcon: {
+    fontSize: '1.75rem',
+    color: '#b91c1c'
+  },
+  diagnosticTitle: {
+    fontSize: '1.125rem',
+    fontWeight: '600',
+    color: '#1a1a1a',
+    marginBottom: '0.35rem'
+  },
+  diagnosticMeta: {
+    fontSize: '0.8rem',
+    color: '#6b7280',
+    marginBottom: '1rem'
   },
   diagnosticScore: {
-    fontSize: '3.5rem',
+    fontSize: '2.5rem',
     fontWeight: '700',
     color: '#b91c1c',
     lineHeight: '1',
     marginBottom: '0.5rem'
+  },
+  diagnosticScoreLabel: {
+    fontSize: '0.8rem',
+    color: '#6b7280',
+    marginBottom: '1rem'
+  },
+  diagnosticButton: {
+    width: '100%',
+    padding: '0.75rem 1.5rem',
+    background: 'linear-gradient(135deg, #b91c1c 0%, #dc2626 100%)',
+    color: '#ffffff',
+    border: 'none',
+    borderRadius: '6px',
+    fontSize: '0.875rem',
+    fontWeight: '600',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    '&:hover': {
+      background: 'linear-gradient(135deg, #991b1b 0%, #b91c1c 100%)',
+      transform: 'translateY(-1px)',
+      boxShadow: '0 4px 8px rgba(185, 28, 28, 0.2)'
+    }
   },
   diagnosticLabel: {
     fontSize: '0.875rem',
@@ -366,6 +436,7 @@ const InsightsPage = () => {
   const [weakAreas, setWeakAreas] = useState([]);
   const [strengths, setStrengths] = useState([]);
   const [featureAccess, setFeatureAccess] = useState(null);
+  const [viewingDiagnosticReview, setViewingDiagnosticReview] = useState(false);
 
   useEffect(() => {
     if (user) {
@@ -498,6 +569,14 @@ const InsightsPage = () => {
 
   return (
     <>
+      {/* Diagnostic Test Review Modal */}
+      {viewingDiagnosticReview && insights?.diagnostic?.latestSession && (
+        <DiagnosticTestReview
+          sessionId={insights.diagnostic.latestSession.id}
+          onClose={() => setViewingDiagnosticReview(false)}
+        />
+      )}
+
       {showBlurOverlay && (
         <div className={classes.blurOverlay}>
           <div className={classes.upgradeCard}>
@@ -526,100 +605,82 @@ const InsightsPage = () => {
 
       {/* Diagnostic Test Results or Loading Card */}
       {(insights.diagnostic.hasCompletedDiagnostic || localStorage.getItem('diagnosticProcessing')) && (
-        <div className={classes.section}>
+        <div className={classes.diagnosticSection}>
           <h2 className={classes.sectionTitle}>
             <HiClipboardDocumentCheck className={classes.sectionIcon} />
-            Diagnostic Test Results
+            Diagnostic Test
           </h2>
-          <div className={classes.grid}>
-            {/* Loading Card */}
-            {!insights.diagnostic.hasCompletedDiagnostic && localStorage.getItem('diagnosticProcessing') ? (
-              <div className={`${classes.card} ${classes.diagnosticCard}`}>
+          {/* Loading Card */}
+          {!insights.diagnostic.hasCompletedDiagnostic && localStorage.getItem('diagnosticProcessing') ? (
+            <div className={classes.diagnosticCard}>
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '1rem 0'
+              }}>
                 <div style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '2rem 0'
+                  width: '40px',
+                  height: '40px',
+                  border: '3px solid #fee2e2',
+                  borderTop: '3px solid #dc2626',
+                  borderRadius: '50%',
+                  animation: 'spin 1s linear infinite',
+                  marginBottom: '1rem'
+                }} />
+                <div className={classes.diagnosticLabel} style={{ marginBottom: '0.35rem' }}>
+                  Analyzing Your Test
+                </div>
+                <div className={classes.cardSubtext} style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                  Processing your results and generating insights...
+                </div>
+                <div style={{
+                  width: '100%',
+                  height: '6px',
+                  background: '#fee2e2',
+                  borderRadius: '9999px',
+                  overflow: 'hidden',
+                  marginTop: '0.35rem'
                 }}>
                   <div style={{
-                    width: '48px',
-                    height: '48px',
-                    border: '4px solid #fee2e2',
-                    borderTop: '4px solid #dc2626',
-                    borderRadius: '50%',
-                    animation: 'spin 1s linear infinite',
-                    marginBottom: '1.5rem'
-                  }} />
-                  <div className={classes.diagnosticLabel} style={{ marginBottom: '0.5rem' }}>
-                    Analyzing Your Test
-                  </div>
-                  <div className={classes.cardSubtext} style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-                    Processing your results and generating insights...
-                  </div>
-                  <div style={{
+                    height: '100%',
+                    background: 'linear-gradient(90deg, #b91c1c 0%, #dc2626 100%)',
                     width: '100%',
-                    height: '8px',
-                    background: '#fee2e2',
-                    borderRadius: '9999px',
-                    overflow: 'hidden',
-                    marginTop: '0.5rem'
-                  }}>
-                    <div style={{
-                      height: '100%',
-                      background: 'linear-gradient(90deg, #b91c1c 0%, #dc2626 100%)',
-                      width: '100%',
-                      animation: 'pulse 2s ease-in-out infinite'
-                    }} />
-                  </div>
+                    animation: 'pulse 2s ease-in-out infinite'
+                  }} />
                 </div>
               </div>
-            ) : (
-              <>
-                {/* Completed Results */}
-                <div className={`${classes.card} ${classes.diagnosticCard}`}>
-                  <div className={classes.diagnosticScore}>
-                    {insights.diagnostic.latestScore?.toFixed(1)}%
-                  </div>
-                  <div className={classes.diagnosticLabel}>Overall Score</div>
-                  <div className={classes.diagnosticDate}>
-                    Completed {formatDate(insights.diagnostic.completedAt)}
-                  </div>
-                  <div className={classes.cardSubtext}>
-                    {insights.diagnostic.correctAnswers} out of {insights.diagnostic.totalQuestions} questions correct
-                  </div>
+            </div>
+          ) : (
+            /* Diagnostic Test Card - Clickable */
+            <div
+              className={classes.diagnosticCard}
+              onClick={() => setViewingDiagnosticReview(true)}
+            >
+              <div className={classes.diagnosticCardHeader}>
+                <div className={classes.diagnosticBadge}>
+                  DIAGNOSTIC TEST
                 </div>
-
-                <div className={classes.card}>
-                  <div className={classes.cardHeader}>
-                    <div className={classes.cardTitle}>Section Breakdown</div>
-                  </div>
-                  <div className={classes.sectionBreakdown}>
-                    {insights.diagnostic.sectionBreakdown?.map((section) => (
-                      <div key={section.section} className={classes.sectionItem}>
-                        <div className={classes.sectionName}>{section.section}</div>
-                        <div className={classes.sectionScore} style={{ color: getAccuracyColor(section.accuracy) }}>
-                          {section.accuracy.toFixed(0)}%
-                        </div>
-                        <div className={classes.sectionDetails}>
-                          {section.correct}/{section.total} correct
-                        </div>
-                        <div className={classes.progressBar}>
-                          <div
-                            className={classes.progressFill}
-                            style={{
-                              width: `${section.accuracy}%`,
-                              background: getAccuracyColor(section.accuracy)
-                            }}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </>
-            )}
-          </div>
+                <HiClipboardDocumentList className={classes.diagnosticIcon} />
+              </div>
+              <h3 className={classes.diagnosticTitle}>
+                Diagnostic Test
+              </h3>
+              <p className={classes.diagnosticMeta}>
+                {insights.diagnostic.totalQuestions} questions • Completed {formatDate(insights.diagnostic.completedAt)}
+              </p>
+              <div className={classes.diagnosticScore}>
+                {insights.diagnostic.latestScore?.toFixed(1)}%
+              </div>
+              <div className={classes.diagnosticScoreLabel}>
+                {insights.diagnostic.correctAnswers} out of {insights.diagnostic.totalQuestions} questions correct
+              </div>
+              <button className={classes.diagnosticButton}>
+                View Results
+              </button>
+            </div>
+          )}
         </div>
       )}
 
@@ -755,6 +816,14 @@ const InsightsPage = () => {
         </div>
       )}
       </div>
+
+      {/* Diagnostic Test Review Modal */}
+      {viewingDiagnosticReview && insights?.diagnostic?.latestSession?.id && (
+        <DiagnosticTestReview
+          sessionId={insights.diagnostic.latestSession.id}
+          onClose={() => setViewingDiagnosticReview(false)}
+        />
+      )}
     </>
   );
 };

@@ -68,17 +68,42 @@ const InsightsService = {
       const latestSession = sessions[0];
       const { data: results, error: resultsError } = await supabase
         .from('diagnostic_test_results')
-        .select(`
-          *,
-          question:diagnostic_test_questions(
-            section,
-            lesson_id,
-            difficulty
-          )
-        `)
+        .select('*')
         .eq('diagnostic_session_id', latestSession.id);
 
       if (resultsError) throw resultsError;
+
+      // Fetch question details from practice test tables
+      const questionIds = results.map(r => r.question_id);
+      const sections = ['english', 'math', 'reading', 'science'];
+      const questionDetails = new Map();
+
+      for (const section of sections) {
+        const tableName = `practice_test_${section}_questions`;
+        const { data: sectionQuestions, error: questionsError } = await supabase
+          .from(tableName)
+          .select('id, lesson_id, section, difficulty, question_type')
+          .in('id', questionIds);
+
+        if (!questionsError && sectionQuestions) {
+          sectionQuestions.forEach(q => {
+            questionDetails.set(q.id, {
+              lesson_id: q.lesson_id,
+              section: section,
+              difficulty: q.difficulty,
+              question_type: q.question_type
+            });
+          });
+        }
+      }
+
+      // Merge question details into results
+      results.forEach(result => {
+        const details = questionDetails.get(result.question_id);
+        if (details) {
+          result.question = details;
+        }
+      });
 
       // Calculate section breakdown
       const sectionBreakdown = this._calculateSectionBreakdown(results);
@@ -278,7 +303,7 @@ const InsightsService = {
         .eq('user_id', userId)
         .gte('accuracy_percentage', 80)
         .gte('mastery_level', 3)
-        .order('accuracy_percentage', { ascending: false })
+        .order('accuracy_percentage', { ascending: false})
         .limit(10);
 
       if (error) throw error;
@@ -286,6 +311,168 @@ const InsightsService = {
       return data || [];
     } catch (error) {
       errorTracker.trackError('InsightsService', 'getStrengths', { userId }, error);
+      throw error;
+    }
+  },
+
+  /**
+   * Get detailed diagnostic test results with all questions and answers
+   * @param {string} sessionId - Diagnostic test session ID
+   * @returns {Promise<Object>} Complete diagnostic test data with questions
+   */
+  async getDiagnosticTestDetails(sessionId) {
+    try {
+      logger.info('InsightsService', 'getDiagnosticTestDetails', { sessionId });
+
+      // Get session details
+      const { data: session, error: sessionError } = await supabase
+        .from('diagnostic_test_sessions')
+        .select('*')
+        .eq('id', sessionId)
+        .single();
+
+      if (sessionError) throw sessionError;
+
+      console.log('🔍 Diagnostic session:', session);
+
+      // Get all question results for this session
+      const { data: results, error: resultsError } = await supabase
+        .from('diagnostic_test_results')
+        .select('*')
+        .eq('diagnostic_session_id', sessionId)
+        .order('created_at', { ascending: true });
+
+      if (resultsError) throw resultsError;
+
+      console.log(`🔍 Found ${results?.length || 0} results in diagnostic_test_results table`);
+      console.log('Expected: 215 questions (75 English + 60 Math + 40 Reading + 40 Science)');
+
+      if (results && results.length < 215) {
+        console.warn(`⚠️  WARNING: Only ${results.length} results found, expected 215!`);
+        console.warn('This means not all questions were saved during the diagnostic test.');
+      }
+
+      // Fetch full question details from practice test tables
+      const sections = ['english', 'math', 'reading', 'science'];
+      const questionIds = results.map(r => r.question_id);
+      console.log(`🔍 Fetching details for ${questionIds.length} question IDs`);
+
+      const questionsMap = new Map();
+      let totalQuestionsFound = 0;
+
+      for (const section of sections) {
+        const tableName = `practice_test_${section}_questions`;
+        const { data: sectionQuestions, error: questionsError} = await supabase
+          .from(tableName)
+          .select('*')
+          .in('id', questionIds);
+
+        if (questionsError) {
+          console.error(`❌ Error fetching ${section} questions:`, questionsError);
+        } else if (sectionQuestions) {
+          console.log(`✅ Found ${sectionQuestions.length} ${section} questions`);
+
+          // Debug: Log first question structure
+          if (sectionQuestions.length > 0) {
+            console.log(`📊 First ${section} question structure:`, {
+              id: sectionQuestions[0].id,
+              question_number: sectionQuestions[0].question_number,
+              correct_answer: sectionQuestions[0].correct_answer,
+              hasExplanation: !!sectionQuestions[0].explanation,
+              allKeys: Object.keys(sectionQuestions[0])
+            });
+          }
+
+          totalQuestionsFound += sectionQuestions.length;
+
+          // Load passages for sections that have them
+          const hasPassages = ['english', 'reading', 'science'].includes(section);
+          if (hasPassages) {
+            const passagesTableName = `practice_test_${section}_passages`;
+            const { data: passages, error: passagesError } = await supabase
+              .from(passagesTableName)
+              .select('*')
+              .eq('test_number', 1);
+
+            if (!passagesError && passages) {
+              const passageMap = {};
+              passages.forEach(passage => {
+                passageMap[passage.id] = passage;
+              });
+
+              // Merge passage text into questions
+              sectionQuestions.forEach(question => {
+                if (question.passage_id && passageMap[question.passage_id]) {
+                  const passage = passageMap[question.passage_id];
+                  question.passage = passage.passage_text;
+                  question.passage_type = passage.passage_type;
+                  question.passage_title = passage.passage_title;
+                  question.passage_number = passage.passage_number;
+
+                  // Collect all image URLs
+                  const imageUrls = {};
+                  for (let i = 1; i <= 5; i++) {
+                    const urlKey = `image_url_${i}`;
+                    if (passage[urlKey]) {
+                      imageUrls[`image${i}`] = passage[urlKey];
+                    }
+                  }
+                  if (Object.keys(imageUrls).length > 0) {
+                    question.passage_image_urls = imageUrls;
+                  }
+                }
+              });
+            }
+          }
+
+          sectionQuestions.forEach(q => {
+            questionsMap.set(q.id, {
+              ...q,
+              section: section
+            });
+          });
+        }
+      }
+
+      console.log(`📊 Total question details fetched: ${totalQuestionsFound} out of ${questionIds.length}`);
+
+      // Merge question details with results
+      const questionsWithResults = results.map(result => {
+        const question = questionsMap.get(result.question_id);
+        if (!question) {
+          console.warn(`⚠️  No question details found for question ID: ${result.question_id}`);
+        }
+        return {
+          ...result,
+          question: question || null
+        };
+      });
+
+      // Group questions by section
+      const questionsBySection = {
+        english: questionsWithResults.filter(q => q.question?.section === 'english'),
+        math: questionsWithResults.filter(q => q.question?.section === 'math'),
+        reading: questionsWithResults.filter(q => q.question?.section === 'reading'),
+        science: questionsWithResults.filter(q => q.question?.section === 'science')
+      };
+
+      console.log('📊 Questions by section:');
+      console.log(`   English: ${questionsBySection.english.length}`);
+      console.log(`   Math: ${questionsBySection.math.length}`);
+      console.log(`   Reading: ${questionsBySection.reading.length}`);
+      console.log(`   Science: ${questionsBySection.science.length}`);
+
+      return {
+        session,
+        results: questionsWithResults,
+        questionsBySection,
+        totalQuestions: results.length,
+        correctAnswers: results.filter(r => r.is_correct).length,
+        scorePercentage: session.score_percentage
+      };
+    } catch (error) {
+      errorTracker.trackError('InsightsService', 'getDiagnosticTestDetails', { sessionId }, error);
+      console.error('❌ Error in getDiagnosticTestDetails:', error);
       throw error;
     }
   }

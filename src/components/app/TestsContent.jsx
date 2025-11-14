@@ -9,6 +9,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useTestsContentStyles } from '../../styles/app/tests-content.styles';
 import { HiClipboardDocumentList, HiPencilSquare, HiCalculator, HiBookOpen, HiBeaker, HiDocumentText, HiLockClosed } from 'react-icons/hi2';
 import { getFeatureAccess } from '../../services/subscription.service';
+import { supabase } from '../../supabaseClient';
 import soundEffects from '../../services/soundEffects';
 import DiagnosticTestCTA from '../DiagnosticTestCTA';
 
@@ -21,10 +22,13 @@ const TestsContent = () => {
     onTestOpen: setPracticeTestOpen
   } = useOutletContext();
   const [featureAccess, setFeatureAccess] = useState(null);
+  const [previewTest, setPreviewTest] = useState(null);
+  const [hasCompletedDiagnostic, setHasCompletedDiagnostic] = useState(false);
 
   useEffect(() => {
     if (user) {
       checkFeatureAccess();
+      checkDiagnosticStatus();
     }
   }, [user]);
 
@@ -34,6 +38,26 @@ const TestsContent = () => {
       setFeatureAccess(access);
     } catch (error) {
       console.error('Error checking feature access:', error);
+    }
+  };
+
+  const checkDiagnosticStatus = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('diagnostic_test_sessions')
+        .select('id, completed')
+        .eq('user_id', user.id)
+        .eq('completed', true)
+        .limit(1);
+
+      if (error) {
+        console.error('Error checking diagnostic status:', error);
+        return;
+      }
+
+      setHasCompletedDiagnostic(data && data.length > 0);
+    } catch (error) {
+      console.error('Error checking diagnostic status:', error);
     }
   };
 
@@ -61,10 +85,13 @@ const TestsContent = () => {
         <p className={classes.subtitle}>Take full-length tests and track your progress</p>
       </div>
       <div className={classes.contentSection}>
-        <DiagnosticTestCTA onClick={() => {
-          soundEffects.playSuccess();
-          setDiagnosticTestOpen(true);
-        }} />
+        {/* Only show diagnostic CTA if user hasn't completed it */}
+        {!hasCompletedDiagnostic && !localStorage.getItem('diagnosticProcessing') && (
+          <DiagnosticTestCTA onClick={() => {
+            soundEffects.playSuccess();
+            setDiagnosticTestOpen(true);
+          }} />
+        )}
 
         <div className={classes.sectionHeader}>
           <h2 className={classes.sectionTitle}>Full-Length Tests</h2>
@@ -87,7 +114,7 @@ const TestsContent = () => {
                     navigate('/app/upgrade');
                   } else {
                     soundEffects.playClick();
-                    setPracticeTestOpen(test.number); // Pass actual DB test number (2-7)
+                    setPreviewTest(test);
                   }
                 }}
                 style={isLocked ? { opacity: 0.6, cursor: 'pointer' } : {}}
@@ -130,6 +157,146 @@ const TestsContent = () => {
           ))}
         </div>
       </div>
+
+      {/* Test Preview Modal */}
+      {previewTest && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'rgba(0, 0, 0, 0.5)',
+          zIndex: 3000,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '1rem'
+        }}
+        onClick={() => setPreviewTest(null)}
+        >
+          <div style={{
+            background: 'white',
+            borderRadius: '12px',
+            padding: '2rem',
+            maxWidth: '500px',
+            width: '100%',
+            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+            position: 'relative'
+          }}
+          onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setPreviewTest(null)}
+              style={{
+                position: 'absolute',
+                top: '1rem',
+                right: '1rem',
+                background: 'transparent',
+                border: 'none',
+                fontSize: '1.5rem',
+                color: '#6b7280',
+                cursor: 'pointer',
+                padding: '0.25rem',
+                lineHeight: 1
+              }}
+            >
+              ×
+            </button>
+
+            <h2 style={{ margin: '0 0 1rem', fontSize: '1.25rem', fontWeight: '600', color: '#1a1a1a', paddingRight: '2rem' }}>
+              Full ACT Practice Test {previewTest.displayNumber}
+            </h2>
+
+            <div style={{
+              display: 'inline-block',
+              padding: '0.25rem 0.75rem',
+              borderRadius: '999px',
+              fontSize: '0.75rem',
+              fontWeight: '600',
+              marginBottom: '1.5rem',
+              background: '#eff6ff',
+              color: '#1e40af'
+            }}>
+              FULL LENGTH TEST
+            </div>
+
+            <div style={{ marginBottom: '1.5rem' }}>
+              <p style={{ margin: '0 0 0.75rem', fontSize: '0.875rem', color: '#374151' }}>
+                <strong>Format:</strong> Complete ACT simulation
+              </p>
+              <p style={{ margin: '0 0 0.75rem', fontSize: '0.875rem', color: '#374151' }}>
+                <strong>Total Questions:</strong> 215 questions
+              </p>
+              <p style={{ margin: '0 0 0.75rem', fontSize: '0.875rem', color: '#374151' }}>
+                <strong>Total Time:</strong> 175 minutes (2 hours 55 minutes)
+              </p>
+            </div>
+
+            <div style={{ marginBottom: '1.5rem', borderTop: '1px solid #e5e7eb', paddingTop: '1rem' }}>
+              <p style={{ margin: '0 0 0.5rem', fontSize: '0.875rem', fontWeight: '600', color: '#374151' }}>
+                Test Sections:
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8125rem', color: '#6b7280' }}>
+                  <span>English</span>
+                  <span>75 questions • 45 min</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8125rem', color: '#6b7280' }}>
+                  <span>Math</span>
+                  <span>60 questions • 60 min</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8125rem', color: '#6b7280' }}>
+                  <span>Reading</span>
+                  <span>40 questions • 35 min</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8125rem', color: '#6b7280' }}>
+                  <span>Science</span>
+                  <span>40 questions • 35 min</span>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', gap: '0.75rem', marginTop: '2rem' }}>
+              <button
+                onClick={() => setPreviewTest(null)}
+                style={{
+                  flex: 1,
+                  padding: '0.75rem',
+                  border: '1px solid #d1d5db',
+                  borderRadius: '6px',
+                  background: 'white',
+                  color: '#374151',
+                  fontSize: '0.875rem',
+                  fontWeight: '500',
+                  cursor: 'pointer'
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => {
+                  setPreviewTest(null);
+                  setPracticeTestOpen(previewTest.number);
+                }}
+                style={{
+                  flex: 1,
+                  padding: '0.75rem',
+                  border: 'none',
+                  borderRadius: '6px',
+                  background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+                  color: 'white',
+                  fontSize: '0.875rem',
+                  fontWeight: '500',
+                  cursor: 'pointer'
+                }}
+              >
+                Start Test
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

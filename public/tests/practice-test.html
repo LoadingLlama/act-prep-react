@@ -176,12 +176,41 @@
     </div>
 
     <script>
+        // Review mode state
+        let reviewMode = false;
+        let reviewModeData = null;
+
         // Load test data from sessionStorage
-        const questions = JSON.parse(sessionStorage.getItem('practiceTestQuestions') || '[]');
-        const section = sessionStorage.getItem('practiceTestSection') || 'english';
+        let questions = JSON.parse(sessionStorage.getItem('practiceTestQuestions') || '[]');
+        let section = sessionStorage.getItem('practiceTestSection') || 'english';
         const currentSection = section; // For image upload functionality
-        const testNumber = sessionStorage.getItem('practiceTestNumber') || '1';
-        const duration = parseInt(sessionStorage.getItem('practiceTestDuration') || '45');
+        let testNumber = sessionStorage.getItem('practiceTestNumber') || '1';
+        let duration = parseInt(sessionStorage.getItem('practiceTestDuration') || '45');
+
+        // Listen for review mode data from parent
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'LOAD_REVIEW_MODE') {
+                console.log('📨 Received LOAD_REVIEW_MODE message:', event.data);
+                reviewMode = true;
+                reviewModeData = event.data;
+
+                // Override test data with review data
+                questions = event.data.questions;
+                section = event.data.section;
+                testNumber = '1'; // Diagnostic is always test 1
+                duration = 0; // No timer in review mode
+
+                console.log('✅ Review mode enabled with', questions.length, 'questions');
+
+                // Initialize test with review data
+                initTest();
+            }
+        });
+
+        // Notify parent that iframe is ready
+        window.addEventListener('load', function() {
+            window.parent.postMessage({ type: 'IFRAME_READY' }, '*');
+        });
 
         // Debug logging
         console.log('Practice Test Debug:', {
@@ -202,8 +231,16 @@
             }
         });
 
-        // If no questions, show error immediately
-        if (questions.length === 0) {
+        // State - will be recalculated in initTest for review mode
+        let hasPassages = false;
+        let totalQuestions = 0;
+        let currentQuestion = 1;
+        let answers = {};
+        let flaggedQuestions = new Set();
+        let timeLeft = duration * 60; // Convert to seconds
+
+        // If no questions on initial load and not waiting for review mode, show error
+        if (questions.length === 0 && !sessionStorage.getItem('waitingForReviewMode')) {
             console.error('❌ NO QUESTIONS LOADED');
             console.error('SessionStorage keys:', Object.keys(sessionStorage));
             console.error('SessionStorage practiceTestQuestions:', sessionStorage.getItem('practiceTestQuestions'));
@@ -220,15 +257,6 @@
             `;
         }
 
-        const hasPassages = questions.some(q => q.passage);
-        const totalQuestions = questions.length;
-
-        // State
-        let currentQuestion = 1;
-        let answers = {};
-        let flaggedQuestions = new Set();
-        let timeLeft = duration * 60; // Convert to seconds
-
         // Initialize test
         function initTest() {
             console.log('🚀 initTest called, questions.length:', questions.length);
@@ -242,6 +270,40 @@
 
             console.log('✅ Questions loaded, initializing test...');
 
+            // Recalculate these values based on current questions array
+            hasPassages = questions.some(q => q.passage);
+            totalQuestions = questions.length;
+            currentQuestion = questions.length > 0 ? (questions[0].question_number || 1) : 1;
+            timeLeft = duration * 60;
+
+            console.log('📊 Test configuration:', {
+                hasPassages,
+                totalQuestions,
+                currentQuestion,
+                section
+            });
+
+            // If in review mode, pre-fill answers
+            if (reviewMode && reviewModeData) {
+                console.log('📝 Pre-filling answers from review data');
+                answers = { ...reviewModeData.userAnswers };
+                console.log('✅ Pre-filled answers:', answers);
+
+                // Update timer text for review mode
+                const timerEl = document.getElementById('timer');
+                const timerLabel = document.querySelector('.timer-label');
+                if (timerEl && timerLabel) {
+                    timerLabel.textContent = 'Review Mode';
+                    timerEl.textContent = '--:--';
+                }
+
+                // Update header for review mode
+                const endButton = document.querySelector('.end-section-link span');
+                if (endButton) {
+                    endButton.textContent = 'Close';
+                }
+            }
+
             // Add math-test class if no passages
             if (!hasPassages) {
                 document.body.classList.add('math-test');
@@ -251,10 +313,16 @@
             renderContent();
             updateDisplay();
             generateSidebarQuestions();
-            startTimer();
+
+            // Only start timer if not in review mode
+            if (!reviewMode) {
+                startTimer();
+            }
         }
 
         function renderContent() {
+            console.log('🎨 renderContent called, reviewMode:', reviewMode, 'hasReviewData:', !!reviewModeData);
+
             const passageSection = document.getElementById('passageSection');
             const questionSection = document.getElementById('questionSection');
 
@@ -351,33 +419,128 @@
             }
 
             // Render questions
+            console.log('📝 Starting question rendering. reviewMode:', reviewMode, 'questions:', questions.length);
+
             let questionHTML = '';
             questions.forEach((q, idx) => {
-                const questionNum = idx + 1;
+                const questionNum = q.question_number || (idx + 1); // Use database question_number
                 const answerKeys = Object.keys(q.answers || {}).sort();
                 const questionPrompt = extractQuestionPrompt(q.text);
+
+                // In review mode, get user's answer and correctness
+                const userAnswerKey = `q${questionNum}`;
+                const userAnswer = reviewMode && reviewModeData ? reviewModeData.userAnswers[userAnswerKey] : null;
+                const isCorrect = reviewMode && reviewModeData ? reviewModeData.correctnessMap[userAnswerKey] : null;
+                const correctAnswer = q.correctAnswer;
+
+                if (idx === 0) {
+                    console.log('🔍 First question render debug:', {
+                        reviewMode,
+                        hasReviewData: !!reviewModeData,
+                        questionNum,
+                        userAnswerKey,
+                        userAnswer,
+                        isCorrect,
+                        correctAnswer,
+                        hasExplanation: !!q.explanation,
+                        explanation: q.explanation ? q.explanation.substring(0, 50) : null,
+                        reviewModeData: reviewModeData ? Object.keys(reviewModeData) : null
+                    });
+                }
+
+                if (idx === 0 && reviewMode) {
+                    console.log('🔍 ReviewModeData structure:', {
+                        userAnswersKeys: reviewModeData ? Object.keys(reviewModeData.userAnswers || {}).slice(0, 5) : null,
+                        correctnessMapKeys: reviewModeData ? Object.keys(reviewModeData.correctnessMap || {}).slice(0, 5) : null
+                    });
+                }
 
                 questionHTML += `
                     <div class="question" id="question${questionNum}" data-passage="${hasPassages ? (questions.findIndex(x => x.passage === q.passage) + 1) : ''}">
                         ${questionPrompt ? `<div class="question-text">${questionPrompt}</div>` : ''}
                         ${q.image_url ? `<div class="question-image"><img src="${q.image_url}" alt="Question ${questionNum} diagram" /></div>` : ''}
                         <div class="answer-choices">
-                            ${answerKeys.map(key => `
-                                <label class="answer-choice" for="q${questionNum}_${key}">
-                                    <input
-                                        type="radio"
-                                        name="question${questionNum}"
-                                        id="q${questionNum}_${key}"
-                                        value="${key}"
-                                        onchange="selectAnswer(${questionNum}, '${key}')"
-                                    >
-                                    <span class="answer-text"><strong>${key}.</strong> ${q.answers[key]}</span>
-                                </label>
-                            `).join('')}
+                            ${answerKeys.map(key => {
+                                const isUserAnswer = reviewMode && userAnswer === key;
+                                const isCorrectAnswer = reviewMode && correctAnswer === key;
+                                let choiceClass = 'answer-choice';
+                                let inlineStyle = '';
+
+                                if (reviewMode) {
+                                    if (isCorrectAnswer) {
+                                        choiceClass += ' correct-answer';
+                                        inlineStyle = 'background: #d1fae5 !important; border-left: 3px solid #10b981; padding-left: 0.5rem;';
+                                    }
+                                    if (isUserAnswer && !isCorrect) {
+                                        choiceClass += ' wrong-answer';
+                                        inlineStyle = 'background: #fee2e2 !important; border-left: 3px solid #ef4444; padding-left: 0.5rem;';
+                                    }
+                                    if (isUserAnswer && isCorrect) {
+                                        choiceClass += ' user-answer';
+                                        inlineStyle = 'background: #d1fae5 !important; border-left: 3px solid #10b981; padding-left: 0.5rem;';
+                                    }
+                                }
+
+                                // Debug first question
+                                if (idx === 0 && key === answerKeys[0]) {
+                                    console.log('🎨 Answer choice styling:', {
+                                        questionNum,
+                                        key,
+                                        correctAnswer,
+                                        isCorrectAnswer,
+                                        choiceClass,
+                                        inlineStyle,
+                                        reviewMode
+                                    });
+                                }
+
+                                return `
+                                    <label class="${choiceClass}" for="q${questionNum}_${key}" style="${inlineStyle}">
+                                        <input
+                                            type="radio"
+                                            name="question${questionNum}"
+                                            id="q${questionNum}_${key}"
+                                            value="${key}"
+                                            ${reviewMode ? 'disabled' : ''}
+                                            ${isUserAnswer ? 'checked' : ''}
+                                            onchange="selectAnswer(${questionNum}, '${key}')"
+                                        >
+                                        <span class="answer-text">
+                                            <strong>${key}.</strong> ${q.answers[key]}
+                                            ${reviewMode && isCorrectAnswer ? ' <span class="answer-indicator" style="display: inline-block; font-size: 0.8125rem; font-weight: 600; padding: 0.125rem 0.5rem; border-radius: 4px; margin-left: 0.5rem; background: #10b981; color: white;">✓ Correct Answer</span>' : ''}
+                                            ${reviewMode && isUserAnswer && !isCorrect ? ' <span class="answer-indicator wrong" style="display: inline-block; font-size: 0.8125rem; font-weight: 600; padding: 0.125rem 0.5rem; border-radius: 4px; margin-left: 0.5rem; background: #ef4444; color: white;">✗ Your answer (Incorrect)</span>' : ''}
+                                            ${reviewMode && isUserAnswer && isCorrect ? ' <span class="answer-indicator" style="display: inline-block; font-size: 0.8125rem; font-weight: 600; padding: 0.125rem 0.5rem; border-radius: 4px; margin-left: 0.5rem; background: #10b981; color: white;">✓ Your answer (Correct)</span>' : ''}
+                                        </span>
+                                    </label>
+                                `;
+                            }).join('')}
                         </div>
+                        ${reviewMode ? `
+                            <div class="explanation-box" style="margin-top: 1rem; padding: 0.875rem; background: #f8fafc; border-left: 4px solid ${isCorrect ? '#10b981' : userAnswer ? '#ef4444' : '#94a3b8'}; border-radius: 4px;">
+                                ${q.explanation ? `
+                                    <div style="font-size: 0.875rem; line-height: 1.6; color: #374151; margin-bottom: 0.5rem;">
+                                        ${q.explanation}
+                                    </div>
+                                ` : ''}
+                                <div style="font-size: 0.8125rem; color: #64748b; margin-top: ${q.explanation ? '0.5rem' : '0'}; padding-top: ${q.explanation ? '0.5rem' : '0'}; border-top: ${q.explanation ? '1px solid #e2e8f0' : 'none'};">
+                                    ${userAnswer ? (
+                                        isCorrect
+                                            ? `You selected <strong style="color: #10b981;">${userAnswer}</strong>, which is correct.`
+                                            : `You selected <strong style="color: #ef4444;">${userAnswer}</strong>. The correct answer is <strong style="color: #10b981;">${correctAnswer}</strong>.`
+                                    ) : `You did not answer this question. The correct answer is <strong style="color: #10b981;">${correctAnswer}</strong>.`}
+                                </div>
+                            </div>
+                        ` : ''}
                     </div>
                 `;
+
+                // Log first question HTML to see what's being generated
+                if (idx === 0) {
+                    console.log('🔍 First question HTML (first 500 chars):', questionHTML.substring(0, 500));
+                }
             });
+
+            console.log('✅ Finished rendering', questions.length, 'questions. Review mode:', reviewMode);
             questionSection.innerHTML = questionHTML;
 
             // Typeset math after content is rendered
@@ -460,10 +623,15 @@
             }
 
             // Update navigation
-            document.getElementById('prevBtn').disabled = currentQuestion === 1;
+            const currentIdx = questions.findIndex(q => (q.question_number || 0) === currentQuestion);
+            const isFirstQuestion = currentIdx === 0;
+            const isLastQuestion = currentIdx === questions.length - 1;
+
+            document.getElementById('prevBtn').disabled = isFirstQuestion;
 
             const nextBtn = document.getElementById('nextBtn');
-            if (currentQuestion === totalQuestions) {
+
+            if (isLastQuestion) {
                 nextBtn.textContent = 'Review Answers';
                 nextBtn.onclick = showQuestionModal;
             } else {
@@ -471,7 +639,38 @@
                 nextBtn.onclick = nextQuestion;
             }
 
-            document.getElementById('questionCounter').textContent = `${currentQuestion} of ${totalQuestions}`;
+            // Show answered count instead of current question number for counter
+            const answeredCount = Object.keys(answers).length;
+
+            // In review mode, show correct/incorrect stats
+            if (reviewMode && reviewModeData) {
+                let correctCount = 0;
+                let incorrectCount = 0;
+                let unansweredCount = 0;
+
+                questions.forEach((q, idx) => {
+                    const questionNum = q.question_number || (idx + 1);
+                    const userAnswerKey = `q${questionNum}`;
+                    const isCorrect = reviewModeData.correctnessMap[userAnswerKey];
+                    const userAnswer = reviewModeData.userAnswers[userAnswerKey];
+
+                    if (userAnswer) {
+                        if (isCorrect) correctCount++;
+                        else incorrectCount++;
+                    } else {
+                        unansweredCount++;
+                    }
+                });
+
+                document.getElementById('questionCounter').innerHTML = `
+                    <span style="color: #10b981; font-weight: 600;">${correctCount} correct</span> •
+                    <span style="color: #ef4444; font-weight: 600;">${incorrectCount} incorrect</span> •
+                    <span style="color: #94a3b8; font-weight: 600;">${unansweredCount} unanswered</span>
+                `;
+            } else {
+                document.getElementById('questionCounter').textContent = `${answeredCount} of ${totalQuestions}`;
+            }
+
             document.getElementById('itemNumber').textContent = `Item ${currentQuestion}`;
 
             updateFlagButton();
@@ -490,21 +689,27 @@
         }
 
         function nextQuestion() {
-            if (currentQuestion < totalQuestions) {
-                currentQuestion++;
+            // Find current question index
+            const currentIdx = questions.findIndex(q => (q.question_number || 0) === currentQuestion);
+            if (currentIdx >= 0 && currentIdx < questions.length - 1) {
+                currentQuestion = questions[currentIdx + 1].question_number || (currentIdx + 2);
                 updateDisplay();
             }
         }
 
         function previousQuestion() {
-            if (currentQuestion > 1) {
-                currentQuestion--;
+            // Find current question index
+            const currentIdx = questions.findIndex(q => (q.question_number || 0) === currentQuestion);
+            if (currentIdx > 0) {
+                currentQuestion = questions[currentIdx - 1].question_number || currentIdx;
                 updateDisplay();
             }
         }
 
         function goToQuestion(questionNum) {
-            if (questionNum >= 1 && questionNum <= totalQuestions) {
+            // Check if question exists in questions array
+            const questionExists = questions.some(q => (q.question_number || 0) === questionNum);
+            if (questionExists) {
                 currentQuestion = questionNum;
                 updateDisplay();
                 closeQuestionModal();
@@ -551,24 +756,39 @@
             const grid = document.getElementById('questionGrid');
             grid.innerHTML = '';
 
-            for (let i = 1; i <= totalQuestions; i++) {
+            // Use actual question numbers from questions array
+            questions.forEach((q, idx) => {
+                const questionNum = q.question_number || (idx + 1);
                 const item = document.createElement('div');
                 item.className = 'question-nav-item';
-                item.textContent = i;
-                item.onclick = () => goToQuestion(i);
+                item.textContent = questionNum;
+                item.onclick = () => goToQuestion(questionNum);
 
-                if (i === currentQuestion) {
+                if (questionNum === currentQuestion) {
                     item.classList.add('current');
-                } else if (answers[`q${i}`]) {
+                } else if (answers[`q${questionNum}`]) {
                     item.classList.add('answered');
                 }
 
-                if (flaggedQuestions.has(i)) {
+                if (flaggedQuestions.has(questionNum)) {
                     item.classList.add('flagged');
                 }
 
+                // In review mode, add correct/incorrect styling
+                if (reviewMode && reviewModeData) {
+                    const userAnswerKey = `q${questionNum}`;
+                    const isCorrect = reviewModeData.correctnessMap[userAnswerKey];
+                    const userAnswer = reviewModeData.userAnswers[userAnswerKey];
+
+                    if (userAnswer) {
+                        item.classList.add(isCorrect ? 'review-correct' : 'review-incorrect');
+                    } else {
+                        item.classList.add('review-unanswered');
+                    }
+                }
+
                 grid.appendChild(item);
-            }
+            });
         }
         function generateSidebarQuestions() {
             const sidebar = document.getElementById('sidebarQuestions');
@@ -579,22 +799,37 @@
 
             sidebar.innerHTML = '';
 
-            for (let i = 1; i <= totalQuestions; i++) {
+            // Use actual question numbers from questions array
+            questions.forEach((q, idx) => {
+                const questionNum = q.question_number || (idx + 1);
                 const item = document.createElement('div');
                 item.className = 'sidebar-question-item';
-                item.textContent = i;
-                item.onclick = () => goToQuestion(i);
+                item.textContent = questionNum;
+                item.onclick = () => goToQuestion(questionNum);
 
-                if (i === currentQuestion) {
+                if (questionNum === currentQuestion) {
                     item.classList.add('current');
-                } else if (answers[`q${i}`]) {
+                } else if (answers[`q${questionNum}`]) {
                     item.classList.add('answered');
-                } else if (flaggedQuestions.has(i)) {
+                } else if (flaggedQuestions.has(questionNum)) {
                     item.classList.add('flagged');
                 }
 
+                // In review mode, add correct/incorrect styling
+                if (reviewMode && reviewModeData) {
+                    const userAnswerKey = `q${questionNum}`;
+                    const isCorrect = reviewModeData.correctnessMap[userAnswerKey];
+                    const userAnswer = reviewModeData.userAnswers[userAnswerKey];
+
+                    if (userAnswer) {
+                        item.classList.add(isCorrect ? 'review-correct' : 'review-incorrect');
+                    } else {
+                        item.classList.add('review-unanswered');
+                    }
+                }
+
                 sidebar.appendChild(item);
-            }
+            });
         }
 
         function toggleSidebar() {
@@ -692,7 +927,7 @@
                 answers,
                 flagged: Array.from(flaggedQuestions),
                 questions: questions.map((q, idx) => ({
-                    questionNum: idx + 1,
+                    questionNum: q.question_number, // Use actual question_number from database
                     userAnswer: answers[`q${idx + 1}`],
                     correctAnswer: q.correctAnswer,
                     isCorrect: answers[`q${idx + 1}`] === q.correctAnswer

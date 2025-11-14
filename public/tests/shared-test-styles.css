@@ -947,6 +947,101 @@ body {
     font-weight: 300;
 }
 
+/* Review Mode Styles */
+.answer-choice input:disabled {
+    cursor: not-allowed;
+}
+
+.answer-choice.correct-answer {
+    background: #d1fae5 !important;
+    border-left: 3px solid #10b981;
+    padding-left: 0.5rem;
+}
+
+.answer-choice.wrong-answer {
+    background: #fee2e2 !important;
+    border-left: 3px solid #ef4444;
+    padding-left: 0.5rem;
+}
+
+.answer-choice.user-answer:not(.correct-answer):not(.wrong-answer) {
+    background: #e0f2fe !important;
+    border-left: 3px solid #0ea5e9;
+    padding-left: 0.5rem;
+}
+
+.answer-indicator {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.125rem 0.5rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    background: #10b981;
+    color: white;
+}
+
+.answer-indicator.wrong {
+    background: #ef4444;
+}
+
+.explanation-box {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-left: 4px solid #3b82f6;
+    border-radius: 4px;
+}
+
+.explanation-header {
+    font-size: 0.9375rem;
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+}
+
+.explanation-text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #374151;
+}
+
+/* Review Mode Question Navigator Styles */
+.sidebar-question-item.review-correct {
+    background: #10b981 !important;
+    color: white !important;
+    border-color: #059669 !important;
+}
+
+.sidebar-question-item.review-incorrect {
+    background: #ef4444 !important;
+    color: white !important;
+    border-color: #dc2626 !important;
+}
+
+.sidebar-question-item.review-unanswered {
+    background: #94a3b8 !important;
+    color: white !important;
+    border-color: #64748b !important;
+}
+
+.question-nav-item.review-correct {
+    background: #10b981 !important;
+    color: white !important;
+    border-color: #059669 !important;
+}
+
+.question-nav-item.review-incorrect {
+    background: #ef4444 !important;
+    color: white !important;
+    border-color: #dc2626 !important;
+}
+
+.question-nav-item.review-unanswered {
+    background: #94a3b8 !important;
+    color: white !important;
+    border-color: #64748b !important;
+}
+
 /* Science Table Styles */
 .science-table {
     width: 100%;
