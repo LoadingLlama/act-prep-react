@@ -10,6 +10,7 @@ import { useCourseStyles } from '../../styles/app/course.styles';
 import { supabase } from '../../services/api/supabase.service';
 import { useAuth } from '../../contexts/AuthContext';
 import soundEffects from '../../services/soundEffects';
+import LearningPathService from '../../services/api/learning-path.service';
 
 const CourseContent = () => {
   const classes = useCourseStyles();
@@ -28,11 +29,36 @@ const CourseContent = () => {
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [diagnosticCompleted, setDiagnosticCompleted] = useState(false);
   const [loadingDiagnostic, setLoadingDiagnostic] = useState(true);
+  const [diagnosticResults, setDiagnosticResults] = useState(null);
+  const [learningPathData, setLearningPathData] = useState(null);
+  const [viewMode, setViewMode] = useState('list'); // 'list' or 'calendar'
+  const [currentMonth, setCurrentMonth] = useState(new Date());
+  const [previewItem, setPreviewItem] = useState(null);
   const [editForm, setEditForm] = useState({
     target_exam_date: '',
+    current_score: '',
     target_score: 28,
-    daily_study_minutes: 30,
-    current_score: null
+    study_hours: {
+      monday: 0.75,
+      tuesday: 1,
+      wednesday: 0,
+      thursday: 0.75,
+      friday: 1,
+      saturday: 2,
+      sunday: 2
+    },
+    study_hours_week2: {
+      monday: 0.75,
+      tuesday: 1,
+      wednesday: 0,
+      thursday: 0.75,
+      friday: 1,
+      saturday: 2,
+      sunday: 2
+    },
+    use_alternating_weeks: false,
+    review_day: 'sunday',
+    mock_exam_day: 'saturday'
   });
 
   // Load user goals and check diagnostic completion on mount
@@ -40,6 +66,8 @@ const CourseContent = () => {
     if (user) {
       loadUserGoals();
       checkDiagnosticCompletion();
+      loadDiagnosticResults();
+      loadLearningPath();
     } else {
       setLoadingDiagnostic(false);
       setDiagnosticCompleted(false);
@@ -87,9 +115,19 @@ const CourseContent = () => {
         setUserGoals(goals);
         setEditForm({
           target_exam_date: goals.target_exam_date || '',
+          current_score: goals.current_score || '',
           target_score: goals.target_score || 28,
-          daily_study_minutes: goals.daily_study_minutes || 30,
-          current_score: goals.current_score || null
+          study_hours: goals.study_hours || {
+            monday: 0.75, tuesday: 1, wednesday: 0, thursday: 0.75,
+            friday: 1, saturday: 2, sunday: 2
+          },
+          study_hours_week2: goals.study_hours_week2 || {
+            monday: 0.75, tuesday: 1, wednesday: 0, thursday: 0.75,
+            friday: 1, saturday: 2, sunday: 2
+          },
+          use_alternating_weeks: goals.use_alternating_weeks || false,
+          review_day: goals.review_day || 'sunday',
+          mock_exam_day: goals.mock_exam_day || 'saturday'
         });
       }
     } catch (error) {
@@ -99,23 +137,160 @@ const CourseContent = () => {
 
   const saveUserGoals = async () => {
     try {
+      console.log('💾 Saving user goals...', editForm);
+
+      // Parse numeric values properly
+      const currentScore = editForm.current_score ? parseInt(editForm.current_score) : null;
+      const targetScore = editForm.target_score ? parseInt(editForm.target_score) : 28;
+
       const { error } = await supabase
         .from('user_goals')
         .upsert({
           user_id: user.id,
           target_exam_date: editForm.target_exam_date || null,
-          target_score: editForm.target_score,
-          daily_study_minutes: editForm.daily_study_minutes,
-          current_score: editForm.current_score,
+          current_score: currentScore,
+          target_score: targetScore,
+          study_hours: editForm.study_hours,
+          study_hours_week2: editForm.study_hours_week2,
+          use_alternating_weeks: editForm.use_alternating_weeks,
+          review_day: editForm.review_day,
+          mock_exam_day: editForm.mock_exam_day,
           updated_at: new Date().toISOString()
+        }, {
+          onConflict: 'user_id'
         });
 
-      if (!error) {
-        await loadUserGoals();
-        setEditModalOpen(false);
+      if (error) {
+        console.error('❌ Error saving user goals:', error);
+        alert(`Error saving goals: ${error.message}`);
+        return;
+      }
+
+      console.log('✅ Saved user goals, regenerating learning path...');
+      await loadUserGoals();
+
+      // Always regenerate learning path with new goals (diagnostic results are optional)
+      console.log('🔄 Regenerating learning path with new settings...');
+      console.log('📋 Using settings:', {
+        exam_date: editForm.target_exam_date,
+        study_hours: editForm.study_hours,
+        study_hours_week2: editForm.study_hours_week2,
+        use_alternating_weeks: editForm.use_alternating_weeks,
+        review_day: editForm.review_day,
+        mock_exam_day: editForm.mock_exam_day
+      });
+
+      // Get diagnostic results (optional - used for prioritization)
+      const diagnosticResults = await loadDiagnosticResults();
+
+      await LearningPathService.generateLearningPath(
+        user.id,
+        {
+          exam_date: editForm.target_exam_date,
+          study_hours: editForm.study_hours,
+          study_hours_week2: editForm.study_hours_week2,
+          use_alternating_weeks: editForm.use_alternating_weeks,
+          review_day: editForm.review_day,
+          mock_exam_day: editForm.mock_exam_day
+        },
+        diagnosticResults?.analysis || null
+      );
+
+      // Force reload learning path to update UI
+      console.log('🔄 Reloading learning path from database...');
+      await loadLearningPath();
+      console.log('✅ Learning path regenerated and reloaded!');
+
+      // Show success message
+      alert('Learning path updated successfully! The calendar now reflects your new schedule.');
+
+      // Force UI refresh
+      window.location.reload();
+
+      setEditModalOpen(false);
+    } catch (error) {
+      console.error('❌ Exception saving user goals:', error);
+      alert(`Error saving goals: ${error.message}`);
+    }
+  };
+
+  const loadDiagnosticResults = async () => {
+    try {
+      // Get latest completed diagnostic session with answers
+      const { data: session, error: sessionError } = await supabase
+        .from('diagnostic_test_sessions')
+        .select('*')
+        .eq('user_id', user.id)
+        .eq('completed', true)
+        .order('session_start', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+
+      if (sessionError) throw sessionError;
+      if (!session) return null;
+
+      // Get diagnostic analysis
+      const { data: analysis, error: analysisError } = await supabase
+        .from('diagnostic_analysis')
+        .select('*')
+        .eq('diagnostic_session_id', session.id)
+        .maybeSingle();
+
+      if (analysisError) throw analysisError;
+
+      const results = {
+        session,
+        analysis
+      };
+
+      setDiagnosticResults(results);
+
+      console.log('📊 Loaded diagnostic results:', results);
+
+      return results; // RETURN THE VALUE!
+    } catch (error) {
+      console.error('Error loading diagnostic results:', error);
+      return null;
+    }
+  };
+
+  const loadLearningPath = async () => {
+    try {
+      console.log('📚 Loading learning path for user:', user.id);
+
+      // Get active learning path with items and lessons
+      const { data: path, error: pathError } = await supabase
+        .from('user_learning_paths')
+        .select(`
+          *,
+          items:learning_path_items(
+            *,
+            lesson:lessons(*)
+          )
+        `)
+        .eq('user_id', user.id)
+        .eq('is_active', true)
+        .maybeSingle();
+
+      if (pathError) {
+        console.error('❌ Error loading learning path:', pathError);
+        throw pathError;
+      }
+
+      if (path) {
+        console.log('✅ Loaded learning path:', {
+          pathId: path.id,
+          itemsCount: path.items?.length || 0,
+          examDate: path.exam_date,
+          path
+        });
+        setLearningPathData(path);
+      } else {
+        console.log('⚠️ No learning path found for user');
+        setLearningPathData(null);
       }
     } catch (error) {
-      console.error('Error saving user goals:', error);
+      console.error('❌ Exception loading learning path:', error);
     }
   };
 
@@ -124,18 +299,20 @@ const CourseContent = () => {
   const completedLessons = Object.values(lessonProgress).filter(s => s === 'completed').length;
   const inProgressLessons = Object.values(lessonProgress).filter(s => s === 'in-progress').length;
 
-  // Calculate section strengths from diagnostic results or use defaults
+  // Calculate section strengths from diagnostic results
   const sectionStrengths = {
-    'English': userGoals?.section_scores?.english || 75,
-    'Math': userGoals?.section_scores?.math || 62,
-    'Reading': userGoals?.section_scores?.reading || 88,
-    'Science': userGoals?.section_scores?.science || 70
+    'English': diagnosticResults?.session?.section_scores?.english || 0,
+    'Math': diagnosticResults?.session?.section_scores?.math || 0,
+    'Reading': diagnosticResults?.session?.section_scores?.reading || 0,
+    'Science': diagnosticResults?.session?.section_scores?.science || 0
   };
 
-  // Use user's target exam date or default to 60 days
+  // Use user's target exam date or learning path exam date
   const testDate = userGoals?.target_exam_date
     ? new Date(userGoals.target_exam_date)
-    : new Date(Date.now() + 60 * 24 * 60 * 60 * 1000);
+    : learningPathData?.exam_date
+    ? new Date(learningPathData.exam_date)
+    : new Date(Date.now() + 84 * 24 * 60 * 60 * 1000); // Default 12 weeks
 
   const daysUntilTest = Math.max(0, Math.ceil((testDate - new Date()) / (1000 * 60 * 60 * 24)));
 
@@ -148,80 +325,134 @@ const CourseContent = () => {
     return lessonProgress[itemId] || 'not-started';
   };
 
-  // Calculate specific due dates for learning path
-  const today = new Date();
-  const getDateFromToday = (days) => {
-    const date = new Date(today);
-    date.setDate(date.getDate() + days);
-    return date;
+  // Helper to clean lesson titles
+  const cleanLessonTitle = (title) => {
+    if (!title) return 'Lesson';
+    // Remove "Topic X.X - " prefix for consistent formatting
+    return title.replace(/^Topic\s+[\d.]+\s+-\s+/, '');
   };
 
-  // Recommended learning path with specific due dates
-  const learningPath = [
-    {
-      week: 'Week 1',
-      startDate: getDateFromToday(0),
-      endDate: getDateFromToday(6),
-      items: [
-        { id: 'getting-started', type: 'lesson', title: 'ACT Test Basics & Overview', skills: 'Strategy', duration: '20 min', dueDate: getDateFromToday(1) },
-        { id: 'diagnostic', type: 'test', title: 'Start with a Free Diagnostic Test to Identify Your Strengths & Gaps', description: 'Take our AI-powered Diagnostic Test to pinpoint exactly where you excel and where you need practice—so you know your starting point from day one.', skills: 'All Sections', duration: '60 min', dueDate: getDateFromToday(3), isDiagnostic: true }
-      ]
-    },
-    {
-      week: 'Week 2',
-      startDate: getDateFromToday(7),
-      endDate: getDateFromToday(13),
-      items: [
-        { id: 'english-intro', type: 'lesson', title: 'English Section Fundamentals', skills: 'Grammar', duration: '15 min', dueDate: getDateFromToday(8) },
-        { id: 'sentence-structure', type: 'lesson', title: 'Building Complete Sentences', skills: 'Grammar', duration: '15 min', dueDate: getDateFromToday(9) },
-        { id: 'commas', type: 'lesson', title: 'Essential Comma Rules', skills: 'Punctuation', duration: '25 min', dueDate: getDateFromToday(11) },
-        { id: 'punctuation', type: 'lesson', title: 'Advanced Punctuation', skills: 'Punctuation', duration: '30 min', dueDate: getDateFromToday(13) }
-      ]
-    },
-    {
-      week: 'Week 3',
-      startDate: getDateFromToday(14),
-      endDate: getDateFromToday(20),
-      items: [
-        { id: 'backsolving', type: 'lesson', title: 'Working Backwards Strategy', skills: 'Problem Solving', duration: '15 min', dueDate: getDateFromToday(15) },
-        { id: 'substitution', type: 'lesson', title: 'Number Substitution', skills: 'Algebra', duration: '15 min', dueDate: getDateFromToday(16) },
-        { id: '3.1', type: 'lesson', title: 'Algebra Skills', skills: 'Algebra', duration: '20 min', dueDate: getDateFromToday(18) },
-        { id: '3.2', type: 'lesson', title: 'Fractions', skills: 'Numbers', duration: '15 min', dueDate: getDateFromToday(20) }
-      ]
-    },
-    {
-      week: 'Week 4',
-      startDate: getDateFromToday(21),
-      endDate: getDateFromToday(27),
-      items: [
-        { id: 'reading-intro', type: 'lesson', title: 'Reading Section Fundamentals', skills: 'Reading', duration: '40 min', dueDate: getDateFromToday(22) },
-        { id: 'passage-approach', type: 'lesson', title: 'How to Approach Passages', skills: 'Strategy', duration: '15 min', dueDate: getDateFromToday(24) },
-        { id: 'core-principles', type: 'lesson', title: '7 Core Principles', skills: 'Comprehension', duration: '15 min', dueDate: getDateFromToday(25) },
-        { id: 'practice-test-1', type: 'test', title: 'Test 1', skills: 'All Sections', duration: '180 min', dueDate: getDateFromToday(27) }
-      ]
-    },
-    {
-      week: 'Week 5',
-      startDate: getDateFromToday(28),
-      endDate: getDateFromToday(34),
-      items: [
-        { id: 'science-introduction', type: 'lesson', title: 'Science Section Basics', skills: 'Science', duration: '40 min', dueDate: getDateFromToday(29) },
-        { id: 'specific-data-point', type: 'lesson', title: 'Data Point Questions', skills: 'Data Analysis', duration: '15 min', dueDate: getDateFromToday(31) },
-        { id: 'trends', type: 'lesson', title: 'Trends Questions', skills: 'Interpretation', duration: '15 min', dueDate: getDateFromToday(34) }
-      ]
-    },
-    {
-      week: 'Week 6',
-      startDate: getDateFromToday(35),
-      endDate: getDateFromToday(41),
-      items: [
-        { id: 'verbs', type: 'lesson', title: 'Verb Agreement & Tenses', skills: 'Grammar', duration: '25 min', dueDate: getDateFromToday(36) },
-        { id: 'pronouns', type: 'lesson', title: 'Pronoun Usage', skills: 'Grammar', duration: '30 min', dueDate: getDateFromToday(38) },
-        { id: 'systems-equations', type: 'lesson', title: 'Systems of Equations', skills: 'Algebra', duration: '15 min', dueDate: getDateFromToday(39) },
-        { id: 'practice-test-2', type: 'test', title: 'Test 2', skills: 'All Sections', duration: '180 min', dueDate: getDateFromToday(41) }
-      ]
+  // Transform learning path data from database into display format
+  const learningPath = React.useMemo(() => {
+    console.log('🔄 Transforming learning path data:', learningPathData);
+
+    if (!learningPathData || !learningPathData.items) {
+      console.log('⚠️ No learning path data to transform');
+      return [];
     }
-  ];
+
+    console.log('📊 Learning path items:', learningPathData.items);
+
+    // Group items by week number
+    const weekGroups = {};
+    learningPathData.items.forEach(item => {
+      const weekNum = item.week_number || 1;
+      if (!weekGroups[weekNum]) {
+        weekGroups[weekNum] = [];
+      }
+      weekGroups[weekNum].push(item);
+    });
+
+    console.log('📅 Week groups:', weekGroups);
+
+    // Transform into week objects
+    const transformed = Object.entries(weekGroups)
+      .sort(([a], [b]) => parseInt(a) - parseInt(b))
+      .map(([weekNum, items]) => {
+        // Calculate week start/end dates
+        const firstItem = items[0];
+        const lastItem = items[items.length - 1];
+        const startDate = firstItem.scheduled_date ? new Date(firstItem.scheduled_date) : new Date();
+        const endDate = lastItem.scheduled_date ? new Date(lastItem.scheduled_date) : new Date();
+
+        // Get subjects for this week from item metadata
+        const weekSubjects = firstItem.item_metadata?.week_subjects || [];
+        const subjectLabels = weekSubjects
+          .map(s => s.charAt(0).toUpperCase() + s.slice(1))
+          .join(' & ');
+        const weekTitle = subjectLabels
+          ? `Week ${weekNum} - ${subjectLabels}`
+          : `Week ${weekNum}`;
+
+        return {
+          week: weekTitle,
+          startDate,
+          endDate,
+          items: items.map(item => {
+            // Check item type
+            const itemType = item.item_type;
+            const metadata = item.item_metadata || {};
+
+            if (itemType === 'test') {
+              return {
+                id: `test-${metadata.test_number || 1}-${metadata.section || 'full'}`,
+                type: 'test',
+                title: metadata.title || `Practice Test ${metadata.test_number}`,
+                testNumber: metadata.test_number,
+                section: metadata.section,
+                duration: `${item.estimated_minutes || 45} min`,
+                dueDate: item.scheduled_date ? new Date(item.scheduled_date) : new Date(),
+                status: item.status,
+                isPriority: false
+              };
+            } else if (itemType === 'review') {
+              return {
+                id: `review-${item.week_number}`,
+                type: 'review',
+                title: metadata.title || `Week ${item.week_number} Review`,
+                description: metadata.description,
+                duration: `${item.estimated_minutes || 45} min`,
+                dueDate: item.scheduled_date ? new Date(item.scheduled_date) : new Date(),
+                status: item.status,
+                isPriority: false
+              };
+            } else if (itemType === 'mock_exam') {
+              return {
+                id: `mock-exam-final`,
+                type: 'mock_exam',
+                title: metadata.title || 'Full ACT Mock Exam',
+                description: metadata.description,
+                duration: `${item.estimated_minutes || 180} min`,
+                dueDate: item.scheduled_date ? new Date(item.scheduled_date) : new Date(),
+                status: item.status,
+                isPriority: true,
+                isFinal: true
+              };
+            } else if (itemType === 'exam_day') {
+              return {
+                id: `exam-day-${item.week_number}`,
+                type: 'exam_day',
+                title: '🎯 OFFICIAL ACT EXAM DAY',
+                description: 'This is your official ACT test date. Good luck!',
+                duration: '0 min',
+                dueDate: item.scheduled_date ? new Date(item.scheduled_date) : new Date(),
+                status: 'pending',
+                isPriority: true,
+                isExamDay: true
+              };
+            } else {
+              // Regular lesson - use UUID for both progress tracking and identification
+              const lessonId = item.lesson?.id || item.lesson_id;
+              const actualStatus = getLessonStatus(lessonId);
+
+              return {
+                id: lessonId,  // Use UUID instead of lesson_key
+                type: 'lesson',
+                title: cleanLessonTitle(item.lesson?.title),
+                skills: item.lesson?.skill_category || 'General',
+                duration: `${item.estimated_minutes || 30} min`,
+                dueDate: item.scheduled_date ? new Date(item.scheduled_date) : new Date(),
+                status: actualStatus,
+                isPriority: item.is_priority
+              };
+            }
+          })
+        };
+      });
+
+    console.log('✅ Transformed learning path:', transformed);
+    return transformed;
+  }, [learningPathData, lessonProgress]);
 
   const handleItemClick = (item) => {
     soundEffects.playClick();
@@ -229,16 +460,25 @@ const CourseContent = () => {
       onLessonOpen(item.id, 'review');
     } else if (item.type === 'test') {
       if (item.id === 'diagnostic') {
-        // Open diagnostic test
+        setDiagnosticTestOpen(true);
       } else {
-        const testNumber = parseInt(item.id.split('-').pop());
-        onTestOpen(testNumber);
+        // Extract test number from id (e.g., "test-1-english" -> 1)
+        const testNumber = item.testNumber || parseInt(item.id.split('-')[1]);
+        onTestOpen(testNumber, item.section);
       }
     }
   };
 
   const getItemIcon = (type) => {
-    if (type === 'test') {
+    if (type === 'exam_day') {
+      return (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2">
+          <circle cx="12" cy="12" r="10" fill="currentColor"/>
+          <path d="M12 6v6l4 2" stroke="#ffffff" strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+      );
+    }
+    if (type === 'test' || type === 'mock_exam') {
       return (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -249,12 +489,178 @@ const CourseContent = () => {
         </svg>
       );
     }
+    if (type === 'review') {
+      return (
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      );
+    }
     return (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
       </svg>
     );
+  };
+
+  // Generate Apple-style calendar view data
+  const generateAppleCalendarView = () => {
+    if (!learningPathData || !learningPathData.items) return { weeks: [], itemsByDate: {} };
+
+    // Group items by date
+    const itemsByDate = {};
+    learningPathData.items.forEach(item => {
+      const date = item.scheduled_date;
+      if (!itemsByDate[date]) {
+        itemsByDate[date] = [];
+      }
+
+      const itemType = item.item_type;
+      const metadata = item.item_metadata || {};
+
+      let calendarItem;
+      if (itemType === 'test') {
+        calendarItem = {
+          id: `test-${metadata.test_number}-${metadata.section}`,
+          type: 'test',
+          title: metadata.title || `Practice Test ${metadata.test_number}`,
+          duration: item.estimated_minutes,
+          status: item.status,
+          testNumber: metadata.test_number,
+          section: metadata.section
+        };
+      } else if (itemType === 'review') {
+        calendarItem = {
+          id: `review-${item.week_number}`,
+          type: 'review',
+          title: metadata.title || `Week ${item.week_number} Review`,
+          description: metadata.description,
+          duration: item.estimated_minutes,
+          status: item.status
+        };
+      } else if (itemType === 'mock_exam') {
+        calendarItem = {
+          id: `mock-exam-final`,
+          type: 'mock_exam',
+          title: metadata.title || 'Full ACT Mock Exam',
+          description: metadata.description,
+          duration: item.estimated_minutes,
+          status: item.status,
+          isPriority: true,
+          isFinal: true
+        };
+      } else if (itemType === 'exam_day') {
+        calendarItem = {
+          id: `exam-day-${item.week_number}`,
+          type: 'exam_day',
+          title: '🎯 OFFICIAL ACT EXAM',
+          description: 'This is your official ACT test date!',
+          duration: 0,
+          status: 'pending',
+          isPriority: true,
+          isExamDay: true
+        };
+      } else {
+        // For lessons, use UUID for both progress tracking and identification
+        const lessonId = item.lesson?.id || item.lesson_id;
+        const actualStatus = getLessonStatus(lessonId);
+
+        calendarItem = {
+          id: lessonId,  // Use UUID instead of lesson_key
+          type: 'lesson',
+          title: cleanLessonTitle(item.lesson?.title),
+          duration: item.estimated_minutes,
+          status: actualStatus,
+          isPriority: item.is_priority
+        };
+      }
+
+      itemsByDate[date].push(calendarItem);
+    });
+
+    // Generate calendar grid for current month
+    const year = currentMonth.getFullYear();
+    const month = currentMonth.getMonth();
+
+    // Get first day of month and last day of month
+    const firstDay = new Date(year, month, 1);
+    const lastDay = new Date(year, month + 1, 0);
+
+    // Get the day of week for first day (0 = Sunday)
+    const startingDayOfWeek = firstDay.getDay();
+
+    // Calculate how many days to show from previous month
+    const prevMonthLastDay = new Date(year, month, 0);
+    const prevMonthDays = prevMonthLastDay.getDate();
+
+    // Build calendar grid
+    const weeks = [];
+    let currentWeek = [];
+
+    // Add days from previous month (grayed out)
+    for (let i = startingDayOfWeek - 1; i >= 0; i--) {
+      const day = prevMonthDays - i;
+      const date = new Date(year, month - 1, day);
+      currentWeek.push({
+        date,
+        dateString: date.toISOString().split('T')[0],
+        dayNumber: day,
+        isCurrentMonth: false,
+        isToday: false,
+        items: []
+      });
+    }
+
+    // Add days from current month
+    for (let day = 1; day <= lastDay.getDate(); day++) {
+      const date = new Date(year, month, day);
+      const dateString = date.toISOString().split('T')[0];
+      const today = new Date();
+      const isToday = date.toDateString() === today.toDateString();
+
+      currentWeek.push({
+        date,
+        dateString,
+        dayNumber: day,
+        isCurrentMonth: true,
+        isToday,
+        items: itemsByDate[dateString] || []
+      });
+
+      // If week is complete (7 days), start new week
+      if (currentWeek.length === 7) {
+        weeks.push(currentWeek);
+        currentWeek = [];
+      }
+    }
+
+    // Add days from next month to complete the last week
+    if (currentWeek.length > 0) {
+      let nextMonthDay = 1;
+      while (currentWeek.length < 7) {
+        const date = new Date(year, month + 1, nextMonthDay);
+        currentWeek.push({
+          date,
+          dateString: date.toISOString().split('T')[0],
+          dayNumber: nextMonthDay,
+          isCurrentMonth: false,
+          isToday: false,
+          items: []
+        });
+        nextMonthDay++;
+      }
+      weeks.push(currentWeek);
+    }
+
+    return { weeks, itemsByDate };
+  };
+
+  const navigateMonth = (direction) => {
+    const newMonth = new Date(currentMonth);
+    newMonth.setMonth(currentMonth.getMonth() + direction);
+    setCurrentMonth(newMonth);
   };
 
   // Loading state
@@ -318,7 +724,7 @@ const CourseContent = () => {
 
             {/* Weekly Assignments */}
             <div className={classes.weeksContainer}>
-              {learningPath.slice(0, 3).map((week, weekIndex) => (
+              {learningPath.map((week, weekIndex) => (
                 <div key={weekIndex} className={classes.section}>
                   <div className={classes.sectionHeader}>
                     <h2 className={classes.sectionTitle}>{week.week}</h2>
@@ -454,7 +860,57 @@ const CourseContent = () => {
     <div className={classes.container}>
       {/* Header */}
       <div className={classes.header}>
-        <h1 className={classes.title}>Learning Path</h1>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <h1 className={classes.title}>Learning Path</h1>
+          {/* View Toggle */}
+          <div style={{
+            display: 'flex',
+            background: '#f1f5f9',
+            borderRadius: '6px',
+            padding: '0.25rem'
+          }}>
+            <button
+              onClick={() => {
+                soundEffects.playClick();
+                setViewMode('list');
+              }}
+              style={{
+                background: viewMode === 'list' ? '#ffffff' : 'transparent',
+                border: 'none',
+                borderRadius: '4px',
+                padding: '0.375rem 0.75rem',
+                fontSize: '0.8125rem',
+                fontWeight: '500',
+                color: viewMode === 'list' ? '#1e40af' : '#64748b',
+                cursor: 'pointer',
+                transition: 'all 0.15s ease',
+                boxShadow: viewMode === 'list' ? '0 1px 2px rgba(0,0,0,0.05)' : 'none'
+              }}
+            >
+              List
+            </button>
+            <button
+              onClick={() => {
+                soundEffects.playClick();
+                setViewMode('calendar');
+              }}
+              style={{
+                background: viewMode === 'calendar' ? '#ffffff' : 'transparent',
+                border: 'none',
+                borderRadius: '4px',
+                padding: '0.375rem 0.75rem',
+                fontSize: '0.8125rem',
+                fontWeight: '500',
+                color: viewMode === 'calendar' ? '#1e40af' : '#64748b',
+                cursor: 'pointer',
+                transition: 'all 0.15s ease',
+                boxShadow: viewMode === 'calendar' ? '0 1px 2px rgba(0,0,0,0.05)' : 'none'
+              }}
+            >
+              Calendar
+            </button>
+          </div>
+        </div>
         <button
           onClick={() => setEditModalOpen(true)}
           style={{
@@ -519,40 +975,415 @@ const CourseContent = () => {
           </div>
         </div>
 
-        {/* Weekly Assignments */}
+        {/* Weekly Assignments - List or Calendar View */}
         <div className={classes.weeksContainer}>
-          {learningPath.map((week, weekIndex) => {
+          {viewMode === 'calendar' && learningPath.length > 0 ? (
+            // Apple Calendar View
+            <div style={{
+              background: '#ffffff',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              boxShadow: '0 2px 4px rgba(0,0,0,0.08)'
+            }}>
+              {/* Month Header with Navigation */}
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '1.25rem 1.5rem',
+                borderBottom: '1px solid #e5e7eb',
+                background: '#fafafa'
+              }}>
+                <h2 style={{
+                  fontSize: '1.375rem',
+                  fontWeight: '600',
+                  color: '#1a1a1a',
+                  margin: 0
+                }}>
+                  {currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                </h2>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <button
+                    onClick={() => {
+                      soundEffects.playClick();
+                      navigateMonth(-1);
+                    }}
+                    style={{
+                      background: '#ffffff',
+                      border: '1px solid #d1d5db',
+                      borderRadius: '6px',
+                      width: '32px',
+                      height: '32px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      color: '#6b7280',
+                      fontSize: '1rem',
+                      transition: 'all 0.15s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.background = '#f3f4f6';
+                      e.target.style.borderColor = '#9ca3af';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.background = '#ffffff';
+                      e.target.style.borderColor = '#d1d5db';
+                    }}
+                  >
+                    ‹
+                  </button>
+                  <button
+                    onClick={() => {
+                      soundEffects.playClick();
+                      setCurrentMonth(new Date());
+                    }}
+                    style={{
+                      background: '#ffffff',
+                      border: '1px solid #d1d5db',
+                      borderRadius: '6px',
+                      padding: '0 0.75rem',
+                      height: '32px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      color: '#6b7280',
+                      fontSize: '0.8125rem',
+                      fontWeight: '500',
+                      transition: 'all 0.15s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.background = '#f3f4f6';
+                      e.target.style.borderColor = '#9ca3af';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.background = '#ffffff';
+                      e.target.style.borderColor = '#d1d5db';
+                    }}
+                  >
+                    Today
+                  </button>
+                  <button
+                    onClick={() => {
+                      soundEffects.playClick();
+                      navigateMonth(1);
+                    }}
+                    style={{
+                      background: '#ffffff',
+                      border: '1px solid #d1d5db',
+                      borderRadius: '6px',
+                      width: '32px',
+                      height: '32px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      color: '#6b7280',
+                      fontSize: '1rem',
+                      transition: 'all 0.15s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.background = '#f3f4f6';
+                      e.target.style.borderColor = '#9ca3af';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.background = '#ffffff';
+                      e.target.style.borderColor = '#d1d5db';
+                    }}
+                  >
+                    ›
+                  </button>
+                </div>
+              </div>
+
+              {/* Day of Week Headers */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(7, 1fr)',
+                borderBottom: '1px solid #d1d5db',
+                borderLeft: '1px solid #d1d5db',
+                borderRight: '1px solid #d1d5db',
+                background: '#fafafa'
+              }}>
+                {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day, idx) => (
+                  <div
+                    key={idx}
+                    style={{
+                      padding: '0.75rem',
+                      fontSize: '0.75rem',
+                      fontWeight: '600',
+                      color: '#6b7280',
+                      textAlign: 'center',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                      borderRight: idx < 6 ? '1px solid #d1d5db' : 'none'
+                    }}
+                  >
+                    {day}
+                  </div>
+                ))}
+              </div>
+
+              {/* Calendar Grid */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(7, 1fr)',
+                gridAutoRows: '120px',
+                borderLeft: '1px solid #d1d5db',
+                borderRight: '1px solid #d1d5db',
+                borderBottom: '1px solid #d1d5db'
+              }}>
+                {(() => {
+                  const { weeks } = generateAppleCalendarView();
+                  const totalWeeks = weeks.length;
+                  return weeks.map((week, weekIdx) => (
+                    week.map((day, dayIdx) => (
+                      <div
+                        key={`${weekIdx}-${dayIdx}`}
+                        style={{
+                          padding: '0.5rem',
+                          borderRight: dayIdx < 6 ? '1px solid #d1d5db' : 'none',
+                          borderBottom: weekIdx < totalWeeks - 1 ? '1px solid #d1d5db' : 'none',
+                          background: day.isCurrentMonth ? '#ffffff' : '#fafafa',
+                          position: 'relative',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          overflow: 'hidden'
+                        }}
+                      >
+                        {/* Date Number */}
+                        <div style={{
+                          display: 'flex',
+                          justifyContent: 'center',
+                          marginBottom: '0.375rem',
+                          flexShrink: 0
+                        }}>
+                          <div style={{
+                            width: '26px',
+                            height: '26px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: '0.8125rem',
+                            fontWeight: day.isToday ? '600' : '500',
+                            color: day.isToday ? '#ffffff' : day.isCurrentMonth ? '#1a1a1a' : '#9ca3af',
+                            background: day.isToday ? '#ef4444' : 'transparent',
+                            borderRadius: '50%'
+                          }}>
+                            {day.dayNumber}
+                          </div>
+                        </div>
+
+                        {/* Event Items */}
+                        <div style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '0.25rem',
+                          flex: 1,
+                          overflow: 'hidden'
+                        }}>
+                          {day.items.slice(0, 3).map((item, itemIdx) => (
+                            <div
+                              key={itemIdx}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                soundEffects.playClick();
+                                setPreviewItem({ ...item, date: day.date });
+                              }}
+                              style={{
+                                padding: '0.25rem 0.375rem',
+                                background: item.type === 'exam_day'
+                                  ? 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)'
+                                  : item.type === 'test' || item.type === 'mock_exam'
+                                  ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
+                                  : item.type === 'review'
+                                  ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
+                                  : 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
+                                borderRadius: '4px',
+                                cursor: item.type === 'exam_day' ? 'default' : 'pointer',
+                                fontSize: '0.6875rem',
+                                fontWeight: item.type === 'exam_day' ? '700' : '500',
+                                color: '#ffffff',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                                whiteSpace: 'nowrap',
+                                transition: 'all 0.15s ease',
+                                boxShadow: item.type === 'exam_day'
+                                  ? '0 4px 8px rgba(220,38,38,0.4)'
+                                  : item.type === 'mock_exam'
+                                  ? '0 2px 4px rgba(59,130,246,0.3)'
+                                  : '0 1px 2px rgba(0,0,0,0.1)',
+                                border: item.type === 'exam_day' ? '2px solid #fca5a5' : 'none'
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-1px)';
+                                e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.15)';
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 1px 2px rgba(0,0,0,0.1)';
+                              }}
+                              title={item.title}
+                            >
+                              {item.title}
+                            </div>
+                          ))}
+                          {day.items.length > 3 && (
+                            <div style={{
+                              padding: '0.25rem 0.375rem',
+                              fontSize: '0.6875rem',
+                              fontWeight: '500',
+                              color: '#6b7280',
+                              textAlign: 'center'
+                            }}>
+                              +{day.items.length - 3} more
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    ))
+                  )).flat();
+                })()}
+              </div>
+            </div>
+          ) : learningPath.length === 0 ? (
+            <div style={{
+              textAlign: 'center',
+              padding: '3rem 2rem',
+              background: '#f9fafb',
+              borderRadius: '12px',
+              border: '1px solid #e5e7eb'
+            }}>
+              <h3 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1a1a1a', marginBottom: '0.5rem' }}>
+                No Learning Path Yet
+              </h3>
+              <p style={{ fontSize: '0.9375rem', color: '#6b7280', marginBottom: '1.5rem' }}>
+                Complete the diagnostic test to generate your personalized learning path based on your strengths and weaknesses.
+              </p>
+              <button
+                onClick={() => {
+                  soundEffects.playSuccess();
+                  setDiagnosticTestOpen(true);
+                }}
+                style={{
+                  background: '#b91c1c',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '6px',
+                  padding: '0.75rem 1.5rem',
+                  fontSize: '0.95rem',
+                  fontWeight: '500',
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = '#991b1b';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = '#b91c1c';
+                }}
+              >
+                Start Diagnostic Test
+              </button>
+            </div>
+          ) : learningPath.map((week, weekIndex) => {
             // Determine if this is the current week
             const now = new Date();
             const isCurrentWeek = now >= week.startDate && now <= week.endDate;
 
             return (
-              <div key={weekIndex} className={`${classes.section} ${isCurrentWeek ? 'current' : ''}`}>
-                <div className={classes.sectionHeader}>
-                  <h2 className={classes.sectionTitle}>{week.week}</h2>
+              <div key={weekIndex} className={`${classes.section} ${isCurrentWeek ? 'current' : ''}`} style={{ padding: 0 }}>
+                <div
+                  className={classes.sectionHeader}
+                  style={{
+                    background: 'linear-gradient(to right, #1e3a8a, #1e40af)',
+                    borderBottom: '1px solid #1e40af',
+                    padding: '0.5rem 1.5rem',
+                    margin: 0,
+                    borderRadius: '0'
+                  }}
+                >
+                  <h2
+                    className={classes.sectionTitle}
+                    style={{
+                      fontSize: '0.875rem',
+                      fontWeight: '600',
+                      color: '#ffffff',
+                      margin: 0,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em'
+                    }}
+                  >
+                    {week.week}
+                  </h2>
                 </div>
-                <div className={classes.weekGrid}>
+                <div className={classes.weekGrid} style={{ padding: '1rem 1.5rem' }}>
                   {week.items.map((item, itemIndex) => {
                     const status = getLessonStatus(item.id);
                     const isCompleted = status === 'completed';
                     const lessonData = lessonStructure.find(l => l.id === item.id);
                     const chapterNum = lessonData?.chapterNum;
+                    const isTest = item.type === 'test' || item.type === 'mock_exam';
+                    const isReview = item.type === 'review';
+                    const isMockExam = item.type === 'mock_exam';
+                    const isExamDay = item.type === 'exam_day';
+                    const isDiagnostic = item.isDiagnostic;
+
+                    // Style for different item types
+                    let cardStyle = {};
+                    if (isExamDay) {
+                      cardStyle = {
+                        borderLeft: '4px solid #dc2626',
+                        paddingLeft: '0.75rem',
+                        background: 'linear-gradient(90deg, #fee2e2 0%, #fef2f2 100%)',
+                        border: '2px solid #dc2626'
+                      };
+                    } else if (isDiagnostic) {
+                      cardStyle = {
+                        borderLeft: '3px solid #b91c1c',
+                        paddingLeft: '0.75rem',
+                        background: 'linear-gradient(90deg, #fef2f2 0%, #ffffff 100%)'
+                      };
+                    } else if (isMockExam) {
+                      cardStyle = {
+                        borderLeft: '3px solid #f59e0b',
+                        paddingLeft: '0.75rem',
+                        background: 'linear-gradient(90deg, #fef3c7 0%, #ffffff 100%)'
+                      };
+                    } else if (isTest) {
+                      cardStyle = {
+                        borderLeft: '3px solid #2563eb',
+                        paddingLeft: '0.75rem',
+                        background: 'linear-gradient(90deg, #eff6ff 0%, #ffffff 100%)'
+                      };
+                    } else if (isReview) {
+                      cardStyle = {
+                        borderLeft: '3px solid #10b981',
+                        paddingLeft: '0.75rem',
+                        background: 'linear-gradient(90deg, #d1fae5 0%, #ffffff 100%)'
+                      };
+                    }
 
                     return (
                       <div
                         key={itemIndex}
                         className={`${classes.weekCard} ${isCompleted ? 'completed' : ''}`}
                         onClick={() => handleItemClick(item)}
-                        style={item.isDiagnostic ? {
-                          borderLeft: '3px solid #b91c1c',
-                          paddingLeft: '0.75rem',
-                          background: 'linear-gradient(90deg, #fef2f2 0%, #ffffff 100%)'
-                        } : {}}
+                        style={cardStyle}
                       >
                         <div className={classes.weekCardContent}>
-                          <span className={classes.weekCardIcon} style={item.isDiagnostic ? { color: '#b91c1c' } : {}}>{getItemIcon(item.type)}</span>
+                          <span
+                            className={classes.weekCardIcon}
+                            style={isExamDay ? { color: '#dc2626' } : isDiagnostic ? { color: '#b91c1c' } : isMockExam ? { color: '#f59e0b' } : isTest ? { color: '#2563eb' } : isReview ? { color: '#10b981' } : {}}
+                          >
+                            {getItemIcon(item.type)}
+                          </span>
                           <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.5rem', flex: 1, flexWrap: 'wrap' }}>
-                            <span className={classes.weekCardText} style={item.isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : {}}>
+                            <span
+                              className={classes.weekCardText}
+                              style={isExamDay ? { fontWeight: '800', color: '#dc2626', fontSize: '1rem' } : isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : isMockExam ? { fontWeight: '700', color: '#f59e0b' } : isTest ? { fontWeight: '600', color: '#2563eb' } : isReview ? { fontWeight: '600', color: '#10b981' } : {}}
+                            >
                               {item.title}
                               {chapterNum && (
                                 <span style={{
@@ -578,7 +1409,12 @@ const CourseContent = () => {
                             )}
                           </div>
                         </div>
-                        <span className={classes.weekCardArrow} style={item.isDiagnostic ? { color: '#b91c1c' } : {}}>→</span>
+                        <span
+                          className={classes.weekCardArrow}
+                          style={isExamDay ? { color: '#dc2626' } : isDiagnostic ? { color: '#b91c1c' } : isMockExam ? { color: '#f59e0b' } : isTest ? { color: '#2563eb' } : isReview ? { color: '#10b981' } : {}}
+                        >
+                          {isExamDay ? '🎯' : '→'}
+                        </span>
                       </div>
                     );
                   })}
@@ -588,6 +1424,339 @@ const CourseContent = () => {
           })}
         </div>
       </div>
+
+      {/* Preview Item Modal */}
+      {previewItem && (
+        <div
+          onClick={() => setPreviewItem(null)}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(0, 0, 0, 0.5)',
+            zIndex: 3000,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1rem'
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              background: 'white',
+              borderRadius: '16px',
+              padding: '0',
+              maxWidth: '500px',
+              width: '100%',
+              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+              overflow: 'hidden'
+            }}
+          >
+            {/* Header with gradient */}
+            <div style={{
+              background: previewItem.type === 'test' || previewItem.type === 'mock_exam'
+                ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
+                : previewItem.type === 'review'
+                ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
+                : 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
+              padding: '2rem',
+              color: '#ffffff'
+            }}>
+              <div style={{
+                fontSize: '0.875rem',
+                fontWeight: '500',
+                opacity: 0.9,
+                marginBottom: '0.5rem'
+              }}>
+                {previewItem.date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
+              </div>
+              <h2 style={{
+                margin: 0,
+                fontSize: '1.75rem',
+                fontWeight: '700',
+                lineHeight: '1.2'
+              }}>
+                {previewItem.title}
+              </h2>
+              <div style={{
+                marginTop: '0.75rem',
+                fontSize: '0.875rem',
+                opacity: 0.9,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem'
+              }}>
+                <span style={{
+                  background: 'rgba(255,255,255,0.2)',
+                  padding: '0.25rem 0.75rem',
+                  borderRadius: '12px',
+                  fontWeight: '500'
+                }}>
+                  {previewItem.type === 'test' ? 'Practice Test' : previewItem.type === 'mock_exam' ? 'Mock Exam' : previewItem.type === 'review' ? 'Review Day' : 'Lesson'}
+                </span>
+                <span>•</span>
+                <span>{previewItem.duration} minutes</span>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div style={{ padding: '2rem' }}>
+              {previewItem.type === 'mock_exam' ? (
+                <div>
+                  <div style={{
+                    background: '#fef3c7',
+                    border: '2px solid #f59e0b',
+                    borderRadius: '8px',
+                    padding: '1rem',
+                    marginBottom: '1.5rem'
+                  }}>
+                    <div style={{
+                      fontSize: '0.875rem',
+                      fontWeight: '700',
+                      color: '#92400e',
+                      marginBottom: '0.5rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem'
+                    }}>
+                      <span style={{ fontSize: '1.25rem' }}>🎯</span>
+                      Final Mock Exam
+                    </div>
+                    <div style={{ fontSize: '0.875rem', color: '#78350f', lineHeight: '1.5' }}>
+                      This is your final full-length practice exam before test day. Take it seriously and simulate real testing conditions.
+                    </div>
+                  </div>
+
+                  <div style={{
+                    fontSize: '0.875rem',
+                    color: '#6b7280',
+                    marginBottom: '1.5rem',
+                    lineHeight: '1.6'
+                  }}>
+                    <div style={{ marginBottom: '0.5rem' }}>
+                      <strong style={{ color: '#374151' }}>Important:</strong>
+                    </div>
+                    <ul style={{ margin: 0, paddingLeft: '1.5rem' }}>
+                      <li>Find a quiet space with no distractions</li>
+                      <li>Use a timer to enforce strict time limits</li>
+                      <li>Review your performance thoroughly after</li>
+                      <li>Identify last-minute areas to focus on</li>
+                    </ul>
+                  </div>
+                </div>
+              ) : previewItem.type === 'review' ? (
+                <div>
+                  <div style={{
+                    background: '#d1fae5',
+                    border: '1px solid #6ee7b7',
+                    borderRadius: '8px',
+                    padding: '1rem',
+                    marginBottom: '1.5rem'
+                  }}>
+                    <div style={{
+                      fontSize: '0.875rem',
+                      fontWeight: '600',
+                      color: '#065f46',
+                      marginBottom: '0.5rem'
+                    }}>
+                      Weekly Review Session
+                    </div>
+                    <div style={{ fontSize: '0.875rem', color: '#047857', lineHeight: '1.5' }}>
+                      {previewItem.description || 'Review and practice problems from this week to reinforce what you learned.'}
+                    </div>
+                  </div>
+
+                  <div style={{
+                    fontSize: '0.875rem',
+                    color: '#6b7280',
+                    marginBottom: '1.5rem',
+                    lineHeight: '1.6'
+                  }}>
+                    <div style={{ marginBottom: '0.5rem' }}>
+                      <strong style={{ color: '#374151' }}>Review activities:</strong>
+                    </div>
+                    <ul style={{ margin: 0, paddingLeft: '1.5rem' }}>
+                      <li>Review notes from this week's lessons</li>
+                      <li>Redo practice problems you got wrong</li>
+                      <li>Practice applying strategies you learned</li>
+                      <li>Identify areas that need more focus</li>
+                    </ul>
+                  </div>
+                </div>
+              ) : previewItem.type === 'test' ? (
+                <div>
+                  <div style={{
+                    background: '#eff6ff',
+                    border: '1px solid #bfdbfe',
+                    borderRadius: '8px',
+                    padding: '1rem',
+                    marginBottom: '1.5rem'
+                  }}>
+                    <div style={{
+                      fontSize: '0.875rem',
+                      fontWeight: '600',
+                      color: '#1e40af',
+                      marginBottom: '0.5rem'
+                    }}>
+                      Test Details
+                    </div>
+                    <div style={{ fontSize: '0.875rem', color: '#374151', lineHeight: '1.5' }}>
+                      {previewItem.section === 'full'
+                        ? 'This is a full-length practice test covering all four sections: English, Math, Reading, and Science.'
+                        : `This practice test focuses on the ${previewItem.section.charAt(0).toUpperCase() + previewItem.section.slice(1)} section.`
+                      }
+                    </div>
+                  </div>
+
+                  <div style={{
+                    fontSize: '0.875rem',
+                    color: '#6b7280',
+                    marginBottom: '1.5rem',
+                    lineHeight: '1.6'
+                  }}>
+                    <div style={{ marginBottom: '0.5rem' }}>
+                      <strong style={{ color: '#374151' }}>What to expect:</strong>
+                    </div>
+                    <ul style={{ margin: 0, paddingLeft: '1.5rem' }}>
+                      <li>Timed test simulation</li>
+                      <li>Real ACT question format</li>
+                      <li>Detailed score report after completion</li>
+                      <li>Personalized recommendations</li>
+                    </ul>
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  <div style={{
+                    background: '#f5f3ff',
+                    border: '1px solid #ddd6fe',
+                    borderRadius: '8px',
+                    padding: '1rem',
+                    marginBottom: '1.5rem'
+                  }}>
+                    <div style={{
+                      fontSize: '0.875rem',
+                      fontWeight: '600',
+                      color: '#6d28d9',
+                      marginBottom: '0.5rem'
+                    }}>
+                      Lesson Overview
+                    </div>
+                    <div style={{ fontSize: '0.875rem', color: '#374151', lineHeight: '1.5' }}>
+                      This lesson will help you master key concepts and strategies for the ACT.
+                    </div>
+                  </div>
+
+                  <div style={{
+                    fontSize: '0.875rem',
+                    color: '#6b7280',
+                    marginBottom: '1.5rem',
+                    lineHeight: '1.6'
+                  }}>
+                    <div style={{ marginBottom: '0.5rem' }}>
+                      <strong style={{ color: '#374151' }}>What you'll learn:</strong>
+                    </div>
+                    <ul style={{ margin: 0, paddingLeft: '1.5rem' }}>
+                      <li>Core concepts and strategies</li>
+                      <li>Step-by-step examples</li>
+                      <li>Practice problems</li>
+                      <li>Expert tips and tricks</li>
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              {/* Status badge */}
+              {previewItem.status && (
+                <div style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  padding: '0.5rem 0.75rem',
+                  background: previewItem.status === 'completed' ? '#dcfce7' : '#fef3c7',
+                  color: previewItem.status === 'completed' ? '#166534' : '#92400e',
+                  borderRadius: '6px',
+                  fontSize: '0.8125rem',
+                  fontWeight: '500',
+                  marginBottom: '1.5rem'
+                }}>
+                  <div style={{
+                    width: '8px',
+                    height: '8px',
+                    borderRadius: '50%',
+                    background: previewItem.status === 'completed' ? '#16a34a' : '#f59e0b'
+                  }} />
+                  {previewItem.status === 'completed' ? 'Completed' : previewItem.status === 'in_progress' ? 'In Progress' : 'Not Started'}
+                </div>
+              )}
+
+              {/* Action buttons */}
+              <div style={{ display: 'flex', gap: '0.75rem' }}>
+                <button
+                  onClick={() => setPreviewItem(null)}
+                  style={{
+                    flex: 1,
+                    padding: '0.875rem',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '8px',
+                    background: 'white',
+                    color: '#374151',
+                    fontSize: '0.9375rem',
+                    fontWeight: '500',
+                    cursor: 'pointer',
+                    transition: 'all 0.15s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = '#f9fafb';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = 'white';
+                  }}
+                >
+                  Close
+                </button>
+                <button
+                  onClick={() => {
+                    soundEffects.playSuccess();
+                    handleItemClick(previewItem);
+                    setPreviewItem(null);
+                  }}
+                  style={{
+                    flex: 1,
+                    padding: '0.875rem',
+                    border: 'none',
+                    borderRadius: '8px',
+                    background: previewItem.type === 'test' || previewItem.type === 'mock_exam'
+                      ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
+                      : previewItem.type === 'review'
+                      ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
+                      : 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
+                    color: 'white',
+                    fontSize: '0.9375rem',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.15s ease',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = 'translateY(-1px)';
+                    e.target.style.boxShadow = '0 4px 8px rgba(0,0,0,0.15)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                  }}
+                >
+                  {previewItem.type === 'review' ? 'Start Review' : previewItem.type === 'mock_exam' ? 'Start Mock Exam' : previewItem.type === 'test' ? 'Start Test' : 'Start Lesson'} →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Edit Goals Modal */}
       {editModalOpen && (
@@ -602,107 +1771,311 @@ const CourseContent = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '1rem'
+          padding: '1rem',
+          overflowY: 'auto'
         }}>
           <div style={{
             background: 'white',
             borderRadius: '12px',
             padding: '2rem',
-            maxWidth: '500px',
+            maxWidth: '900px',
             width: '100%',
+            margin: '2rem auto',
             boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)'
           }}>
             <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.5rem', fontWeight: '600', color: '#1a1a1a' }}>
               Edit Learning Path Goals
             </h2>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              {/* Test Date */}
-              <div>
-                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
-                  Target Test Date
-                </label>
-                <input
-                  type="date"
-                  value={editForm.target_exam_date}
-                  onChange={(e) => setEditForm({ ...editForm, target_exam_date: e.target.value })}
-                  style={{
-                    width: '100%',
-                    padding: '0.625rem',
-                    border: '1px solid #d1d5db',
-                    borderRadius: '6px',
-                    fontSize: '0.875rem',
-                    fontFamily: 'inherit'
-                  }}
-                />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              {/* Basic Info Section */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1.25rem' }}>
+                {/* Target Exam Date */}
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
+                    Target Exam Date
+                  </label>
+                  <input
+                    type="date"
+                    value={editForm.target_exam_date}
+                    onChange={(e) => setEditForm({ ...editForm, target_exam_date: e.target.value })}
+                    style={{
+                      width: '100%',
+                      padding: '0.625rem',
+                      border: '1px solid #d1d5db',
+                      borderRadius: '6px',
+                      fontSize: '0.875rem',
+                      fontFamily: 'inherit'
+                    }}
+                  />
+                </div>
+
+                {/* Current Score */}
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
+                    Current ACT Score (Optional)
+                  </label>
+                  <input
+                    type="number"
+                    min="1"
+                    max="36"
+                    placeholder="1-36"
+                    value={editForm.current_score}
+                    onChange={(e) => setEditForm({ ...editForm, current_score: e.target.value })}
+                    style={{
+                      width: '100%',
+                      padding: '0.625rem',
+                      border: '1px solid #d1d5db',
+                      borderRadius: '6px',
+                      fontSize: '0.875rem',
+                      fontFamily: 'inherit'
+                    }}
+                  />
+                </div>
+
+                {/* Target Score */}
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
+                    Target ACT Score
+                  </label>
+                  <input
+                    type="number"
+                    min="1"
+                    max="36"
+                    placeholder="1-36"
+                    value={editForm.target_score}
+                    onChange={(e) => setEditForm({ ...editForm, target_score: e.target.value })}
+                    style={{
+                      width: '100%',
+                      padding: '0.625rem',
+                      border: '1px solid #d1d5db',
+                      borderRadius: '6px',
+                      fontSize: '0.875rem',
+                      fontFamily: 'inherit'
+                    }}
+                  />
+                </div>
               </div>
 
-              {/* Current ACT Score */}
-              <div>
-                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
-                  Current ACT Score (Optional)
-                </label>
+              {/* Alternating Weeks Checkbox */}
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                padding: '1rem',
+                background: '#f9fafb',
+                borderRadius: '8px',
+                border: '1px solid #e5e7eb'
+              }}>
                 <input
-                  type="number"
-                  min="1"
-                  max="36"
-                  placeholder="e.g., 24"
-                  value={editForm.current_score || ''}
-                  onChange={(e) => setEditForm({ ...editForm, current_score: e.target.value ? parseInt(e.target.value) : null })}
+                  type="checkbox"
+                  id="use_alternating_weeks"
+                  checked={editForm.use_alternating_weeks}
+                  onChange={(e) => setEditForm({ ...editForm, use_alternating_weeks: e.target.checked })}
                   style={{
-                    width: '100%',
-                    padding: '0.625rem',
-                    border: '1px solid #d1d5db',
-                    borderRadius: '6px',
-                    fontSize: '0.875rem',
-                    fontFamily: 'inherit'
+                    width: '18px',
+                    height: '18px',
+                    cursor: 'pointer'
                   }}
                 />
+                <label htmlFor="use_alternating_weeks" style={{
+                  fontSize: '0.875rem',
+                  fontWeight: '500',
+                  color: '#374151',
+                  cursor: 'pointer'
+                }}>
+                  Use Alternating Weeks (Different schedule for Week 1 vs Week 2)
+                </label>
               </div>
 
-              {/* Target Score */}
-              <div>
-                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
-                  Target ACT Score
-                </label>
-                <input
-                  type="number"
-                  min="1"
-                  max="36"
-                  value={editForm.target_score}
-                  onChange={(e) => setEditForm({ ...editForm, target_score: parseInt(e.target.value) || 28 })}
-                  style={{
-                    width: '100%',
-                    padding: '0.625rem',
-                    border: '1px solid #d1d5db',
-                    borderRadius: '6px',
-                    fontSize: '0.875rem',
-                    fontFamily: 'inherit'
-                  }}
-                />
+              {/* Week 1 Schedule */}
+              <div style={{
+                padding: '1.25rem',
+                background: '#ffffff',
+                borderRadius: '8px',
+                border: '1px solid #e5e7eb'
+              }}>
+                <h3 style={{
+                  margin: '0 0 1rem',
+                  fontSize: '1rem',
+                  fontWeight: '600',
+                  color: '#1a1a1a'
+                }}>
+                  Week 1 Schedule - Daily Study Hours
+                </h3>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.75rem' }}>
+                  {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => (
+                    <div key={day}>
+                      <label style={{
+                        display: 'block',
+                        fontSize: '0.75rem',
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        marginBottom: '0.375rem',
+                        textTransform: 'capitalize'
+                      }}>
+                        {day.slice(0, 3)}
+                      </label>
+                      <input
+                        type="number"
+                        step="0.25"
+                        min="0"
+                        max="12"
+                        value={editForm.study_hours[day]}
+                        onChange={(e) => setEditForm({
+                          ...editForm,
+                          study_hours: {
+                            ...editForm.study_hours,
+                            [day]: parseFloat(e.target.value) || 0
+                          }
+                        })}
+                        style={{
+                          width: '100%',
+                          padding: '0.5rem',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '6px',
+                          fontSize: '0.875rem',
+                          fontFamily: 'inherit',
+                          textAlign: 'center'
+                        }}
+                      />
+                      <div style={{
+                        fontSize: '0.625rem',
+                        color: '#9ca3af',
+                        marginTop: '0.25rem',
+                        textAlign: 'center'
+                      }}>
+                        {editForm.study_hours[day]}h
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              {/* Daily Study Time */}
-              <div>
-                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
-                  Daily Study Time (minutes)
-                </label>
-                <input
-                  type="number"
-                  min="10"
-                  max="240"
-                  step="5"
-                  value={editForm.daily_study_minutes}
-                  onChange={(e) => setEditForm({ ...editForm, daily_study_minutes: parseInt(e.target.value) || 30 })}
-                  style={{
-                    width: '100%',
-                    padding: '0.625rem',
-                    border: '1px solid #d1d5db',
-                    borderRadius: '6px',
-                    fontSize: '0.875rem',
-                    fontFamily: 'inherit'
-                  }}
-                />
+              {/* Week 2 Schedule (only if alternating weeks is checked) */}
+              {editForm.use_alternating_weeks && (
+                <div style={{
+                  padding: '1.25rem',
+                  background: '#eff6ff',
+                  borderRadius: '8px',
+                  border: '1px solid #bfdbfe'
+                }}>
+                  <h3 style={{
+                    margin: '0 0 1rem',
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    color: '#1e40af'
+                  }}>
+                    Week 2 Schedule - Daily Study Hours
+                  </h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.75rem' }}>
+                    {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => (
+                      <div key={day}>
+                        <label style={{
+                          display: 'block',
+                          fontSize: '0.75rem',
+                          fontWeight: '600',
+                          color: '#1e40af',
+                          marginBottom: '0.375rem',
+                          textTransform: 'capitalize'
+                        }}>
+                          {day.slice(0, 3)}
+                        </label>
+                        <input
+                          type="number"
+                          step="0.25"
+                          min="0"
+                          max="12"
+                          value={editForm.study_hours_week2[day]}
+                          onChange={(e) => setEditForm({
+                            ...editForm,
+                            study_hours_week2: {
+                              ...editForm.study_hours_week2,
+                              [day]: parseFloat(e.target.value) || 0
+                            }
+                          })}
+                          style={{
+                            width: '100%',
+                            padding: '0.5rem',
+                            border: '1px solid #bfdbfe',
+                            borderRadius: '6px',
+                            fontSize: '0.875rem',
+                            fontFamily: 'inherit',
+                            textAlign: 'center',
+                            background: '#ffffff'
+                          }}
+                        />
+                        <div style={{
+                          fontSize: '0.625rem',
+                          color: '#1e40af',
+                          marginTop: '0.25rem',
+                          textAlign: 'center'
+                        }}>
+                          {editForm.study_hours_week2[day]}h
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Special Days Section */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+                {/* Review Day */}
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
+                    Weekly Review Day
+                  </label>
+                  <select
+                    value={editForm.review_day}
+                    onChange={(e) => setEditForm({ ...editForm, review_day: e.target.value })}
+                    style={{
+                      width: '100%',
+                      padding: '0.625rem',
+                      border: '1px solid #d1d5db',
+                      borderRadius: '6px',
+                      fontSize: '0.875rem',
+                      fontFamily: 'inherit',
+                      background: 'white'
+                    }}
+                  >
+                    <option value="sunday">Sunday</option>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                  </select>
+                </div>
+
+                {/* Mock Exam Day */}
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
+                    Mock Exam Day
+                  </label>
+                  <select
+                    value={editForm.mock_exam_day}
+                    onChange={(e) => setEditForm({ ...editForm, mock_exam_day: e.target.value })}
+                    style={{
+                      width: '100%',
+                      padding: '0.625rem',
+                      border: '1px solid #d1d5db',
+                      borderRadius: '6px',
+                      fontSize: '0.875rem',
+                      fontFamily: 'inherit',
+                      background: 'white'
+                    }}
+                  >
+                    <option value="sunday">Sunday</option>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                  </select>
+                </div>
               </div>
             </div>
 
