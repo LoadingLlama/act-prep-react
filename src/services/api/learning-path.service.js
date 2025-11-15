@@ -201,7 +201,17 @@ const LearningPathService = {
       // Parse exam date in local timezone to avoid timezone shift issues
       const examDate = goals.exam_date ? (() => {
         const [year, month, day] = goals.exam_date.split('-').map(Number);
-        return new Date(year, month - 1, day);
+        const date = new Date(year, month - 1, day);
+        console.log('📅 PARSING EXAM DATE:', {
+          goalExamDate: goals.exam_date,
+          parsedYear: year,
+          parsedMonth: month,
+          parsedDay: day,
+          createdDate: date,
+          dateISO: date.toISOString(),
+          dateLocal: date.toLocaleDateString()
+        });
+        return date;
       })() : null;
       const today = new Date();
       let maxWeeks = 50; // Default if no exam date specified
@@ -635,6 +645,14 @@ const LearningPathService = {
 
       // Handle EXAM WEEK specially - schedule it on the actual exam date
       if (week.isExamWeek && examDate) {
+        const examDateString = formatLocalDate(examDate);
+        console.log('🎯 SCHEDULING EXAM DAY:', {
+          examDate,
+          examDateString,
+          examDateISO: examDate.toISOString(),
+          examDateLocal: examDate.toLocaleDateString()
+        });
+
         pathItems.push({
           learning_path_id: learningPathId,
           lesson_id: null,
@@ -643,7 +661,7 @@ const LearningPathService = {
           day_number: 1,
           is_priority: false,
           estimated_minutes: 0,
-          scheduled_date: formatLocalDate(examDate),
+          scheduled_date: examDateString,
           status: 'pending',
           item_type: 'exam_day'
         });
