@@ -31,6 +31,7 @@ const CourseContent = () => {
   const [loadingDiagnostic, setLoadingDiagnostic] = useState(true);
   const [diagnosticResults, setDiagnosticResults] = useState(null);
   const [learningPathData, setLearningPathData] = useState(null);
+  const [savingGoals, setSavingGoals] = useState(false);
   const [viewMode, setViewMode] = useState('list'); // 'list' or 'calendar'
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [previewItem, setPreviewItem] = useState(null);
@@ -137,6 +138,7 @@ const CourseContent = () => {
 
   const saveUserGoals = async () => {
     try {
+      setSavingGoals(true);
       console.log('💾 Saving user goals...', editForm);
 
       // Parse numeric values properly
@@ -162,6 +164,7 @@ const CourseContent = () => {
 
       if (error) {
         console.error('❌ Error saving user goals:', error);
+        setSavingGoals(false);
         alert(`Error saving goals: ${error.message}`);
         return;
       }
@@ -196,20 +199,22 @@ const CourseContent = () => {
         diagnosticResults?.analysis || null
       );
 
-      // Force reload learning path to update UI
+      // Reload learning path to update UI
       console.log('🔄 Reloading learning path from database...');
       await loadLearningPath();
       console.log('✅ Learning path regenerated and reloaded!');
 
-      // Show success message
-      alert('Learning path updated successfully! The calendar now reflects your new schedule.');
-
-      // Force UI refresh
-      window.location.reload();
-
+      // Close modal first
       setEditModalOpen(false);
+      setSavingGoals(false);
+
+      // Show success message after modal closes
+      setTimeout(() => {
+        alert('Learning path updated successfully! The calendar now reflects your new schedule.');
+      }, 100);
     } catch (error) {
       console.error('❌ Exception saving user goals:', error);
+      setSavingGoals(false);
       alert(`Error saving goals: ${error.message}`);
     }
   };
@@ -2111,6 +2116,7 @@ const CourseContent = () => {
             <div style={{ display: 'flex', gap: '0.75rem', marginTop: '2rem' }}>
               <button
                 onClick={() => setEditModalOpen(false)}
+                disabled={savingGoals}
                 style={{
                   flex: 1,
                   padding: '0.75rem',
@@ -2120,28 +2126,31 @@ const CourseContent = () => {
                   color: '#374151',
                   fontSize: '0.875rem',
                   fontWeight: '500',
-                  cursor: 'pointer',
-                  transition: 'all 0.15s ease'
+                  cursor: savingGoals ? 'not-allowed' : 'pointer',
+                  transition: 'all 0.15s ease',
+                  opacity: savingGoals ? 0.5 : 1
                 }}
               >
                 Cancel
               </button>
               <button
                 onClick={saveUserGoals}
+                disabled={savingGoals}
                 style={{
                   flex: 1,
                   padding: '0.75rem',
                   border: 'none',
                   borderRadius: '6px',
-                  background: '#1a1a1a',
+                  background: savingGoals ? '#9ca3af' : '#1a1a1a',
                   color: 'white',
                   fontSize: '0.875rem',
                   fontWeight: '500',
-                  cursor: 'pointer',
-                  transition: 'all 0.15s ease'
+                  cursor: savingGoals ? 'not-allowed' : 'pointer',
+                  transition: 'all 0.15s ease',
+                  opacity: savingGoals ? 0.7 : 1
                 }}
               >
-                Save Changes
+                {savingGoals ? 'Saving...' : 'Save Changes'}
               </button>
             </div>
           </div>
