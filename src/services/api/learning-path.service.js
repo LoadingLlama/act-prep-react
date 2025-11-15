@@ -340,12 +340,56 @@ const LearningPathService = {
     const mockExamDay = goals.mock_exam_day || 'saturday';
     const learningPace = goals.learning_pace || 'moderate';
 
+    // Calculate total weekly hours to determine study intensity
+    const studyHours = goals.study_hours || {};
+    const totalWeeklyHours = Object.values(studyHours).reduce((sum, hours) => sum + (hours || 0), 0);
+
+    // Determine mock exam frequency based on urgency and available time
+    // More weeks = less frequent mock exams, fewer weeks = more frequent
+    let mockExamFrequency;
+    if (maxWeeks >= 8) {
+      mockExamFrequency = 2; // Every 2 weeks for long prep times
+    } else if (maxWeeks >= 6) {
+      mockExamFrequency = 2; // Every 2 weeks
+    } else if (maxWeeks >= 4) {
+      mockExamFrequency = 1; // Every week for medium urgency
+    } else if (maxWeeks >= 2) {
+      mockExamFrequency = 0.5; // Twice per week for high urgency
+    } else {
+      mockExamFrequency = 0.25; // Almost every other day for critical urgency
+    }
+
+    logger.info('LearningPathService', 'mockExamScheduling', {
+      maxWeeks,
+      totalWeeklyHours,
+      mockExamFrequency,
+      message: `Mock exams every ${mockExamFrequency} week(s) based on ${maxWeeks} weeks until exam`
+    });
+
     // Lessons per week based on pace
     const lessonsPerWeek = {
       'relaxed': 3,
       'moderate': 4,
       'intensive': 6
     }[learningPace] || 4;
+
+    // Helper function to determine if this week should have a mock exam
+    const shouldHaveMockExam = (currentWeekNum) => {
+      if (mockExamFrequency >= 2) {
+        // Every 2 weeks
+        return currentWeekNum % 2 === 0;
+      } else if (mockExamFrequency === 1) {
+        // Every week
+        return true;
+      } else if (mockExamFrequency === 0.5) {
+        // Twice per week - alternating pattern within weeks
+        // This will be handled differently in scheduling
+        return currentWeekNum >= 2; // Start from week 2
+      } else {
+        // Almost every other day - very frequent
+        return currentWeekNum >= 2; // Start from week 2
+      }
+    };
 
     // Always start with ACT Test Basics
     const introLesson = lessonsBySubject.english.find(l =>
@@ -465,12 +509,13 @@ const LearningPathService = {
       }
 
       curriculum.push({
-        weekNumber: weekNumber++,
+        weekNumber: weekNumber,
         focus: `${subject.charAt(0).toUpperCase() + subject.slice(1)} + Math`,
         lessons: [...primaryLessons, ...mathLessons],
         reviewDay: reviewDay,
-        mockExam: (weekNumber % 2 === 0) ? mockExamDay : null // Mock exam every 2 weeks
+        mockExam: shouldHaveMockExam(weekNumber) ? mockExamDay : null
       });
+      weekNumber++;
 
       subjectIndex++;
     }
@@ -478,13 +523,14 @@ const LearningPathService = {
     // Fill remaining weeks with comprehensive review until exam week
     while (weekNumber <= lastContentWeek) {
       curriculum.push({
-        weekNumber: weekNumber++,
+        weekNumber: weekNumber,
         focus: 'Comprehensive Review & Practice',
         lessons: [], // No new lessons, just review
         reviewDay: reviewDay,
-        mockExam: (weekNumber % 2 === 0) ? mockExamDay : null,
+        mockExam: shouldHaveMockExam(weekNumber) ? mockExamDay : null,
         isReviewWeek: true
       });
+      weekNumber++;
     }
 
     // Add final EXAM WEEK (always the last week before exam date)
