@@ -312,11 +312,18 @@ const CourseContent = () => {
     'Science': diagnosticResults?.session?.section_scores?.science || 0
   };
 
+  // Parse exam date in local timezone (avoid UTC conversion)
+  const parseLocalDate = (dateString) => {
+    if (!dateString) return null;
+    const [year, month, day] = dateString.split('-').map(Number);
+    return new Date(year, month - 1, day);
+  };
+
   // Use user's target exam date or learning path exam date
   const testDate = userGoals?.target_exam_date
-    ? new Date(userGoals.target_exam_date)
+    ? parseLocalDate(userGoals.target_exam_date)
     : learningPathData?.exam_date
-    ? new Date(learningPathData.exam_date)
+    ? parseLocalDate(learningPathData.exam_date)
     : new Date(Date.now() + 84 * 24 * 60 * 60 * 1000); // Default 12 weeks
 
   const daysUntilTest = Math.max(0, Math.ceil((testDate - new Date()) / (1000 * 60 * 60 * 24)));
