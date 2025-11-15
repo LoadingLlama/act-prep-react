@@ -799,13 +799,31 @@ const LearningPathService = {
         const reviewDayNum = dayNameToNumber[week.reviewDay.toLowerCase()];
         const reviewDayName = dayNumberToName[reviewDayNum];
 
-        // Move to review day (must be after lessons)
-        while (currentDate.getDay() !== reviewDayNum && isBeforeExam()) {
+        // Move to review day, but limit forward jump to prevent gaps
+        let daysSearched = 0;
+        while (currentDate.getDay() !== reviewDayNum && isBeforeExam() && daysSearched < 7) {
           currentDate.setDate(currentDate.getDate() + 1);
+          daysSearched++;
+        }
+
+        // If we searched 7 days and didn't find it, or it's too far, schedule on next available day
+        if (daysSearched >= 3) {
+          // Don't create gaps - schedule review on the very next day with study time instead
+          let foundDay = false;
+          for (let i = 1; i <= 3 && !foundDay && isBeforeExam(); i++) {
+            const testDate = new Date(currentDate);
+            testDate.setDate(currentDate.getDate() + i);
+            const testDayName = dayNumberToName[testDate.getDay()];
+            if (getStudyMinutesForDay(testDayName, isWeek2) > 0) {
+              currentDate = testDate;
+              foundDay = true;
+            }
+          }
         }
 
         if (isBeforeExam()) {
-          const reviewMinutes = getStudyMinutesForDay(reviewDayName, isWeek2);
+          const actualDayName = dayNumberToName[currentDate.getDay()];
+          const reviewMinutes = getStudyMinutesForDay(actualDayName, isWeek2);
           if (reviewMinutes > 0) {
             pathItems.push({
               learning_path_id: learningPathId,
@@ -828,8 +846,25 @@ const LearningPathService = {
       if (week.mockExam && isBeforeExam()) {
         const mockExamDayNum = dayNameToNumber[week.mockExam.toLowerCase()];
 
-        while (currentDate.getDay() !== mockExamDayNum && isBeforeExam()) {
+        // Limit forward jump to prevent gaps
+        let daysSearched = 0;
+        while (currentDate.getDay() !== mockExamDayNum && isBeforeExam() && daysSearched < 7) {
           currentDate.setDate(currentDate.getDate() + 1);
+          daysSearched++;
+        }
+
+        // If we need to jump too far, schedule on next available day instead
+        if (daysSearched >= 3) {
+          let foundDay = false;
+          for (let i = 1; i <= 3 && !foundDay && isBeforeExam(); i++) {
+            const testDate = new Date(currentDate);
+            testDate.setDate(currentDate.getDate() + i);
+            const testDayName = dayNumberToName[testDate.getDay()];
+            if (getStudyMinutesForDay(testDayName, isWeek2) >= 2 * 60) { // Need at least 2 hours for mock exam
+              currentDate = testDate;
+              foundDay = true;
+            }
+          }
         }
 
         if (isBeforeExam()) {
@@ -849,10 +884,8 @@ const LearningPathService = {
         }
       }
 
-      // Move to start of next week
-      while (currentDate.getDay() !== 1 && isBeforeExam()) {
-        currentDate.setDate(currentDate.getDate() + 1);
-      }
+      // Don't force jump to Monday - just continue from current date to prevent gaps
+      // The next week will start from wherever we are
 
       weekIndex++;
     });
