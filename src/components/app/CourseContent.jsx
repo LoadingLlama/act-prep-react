@@ -555,8 +555,8 @@ const CourseContent = () => {
         calendarItem = {
           id: `exam-day-${item.week_number}`,
           type: 'exam_day',
-          title: '🎯 OFFICIAL ACT EXAM',
-          description: 'This is your official ACT test date!',
+          title: '🎯 OFFICIAL ACT EXAM DAY',
+          description: 'This is your official ACT test date. Good luck! 🎯',
           duration: 0,
           status: 'pending',
           isPriority: true,
@@ -1194,7 +1194,7 @@ const CourseContent = () => {
                               style={{
                                 padding: '0.25rem 0.375rem',
                                 background: item.type === 'exam_day'
-                                  ? 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)'
+                                  ? '#dc2626'
                                   : item.type === 'test' || item.type === 'mock_exam'
                                   ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
                                   : item.type === 'review'
