@@ -32,7 +32,7 @@ const CourseContent = () => {
   const [diagnosticResults, setDiagnosticResults] = useState(null);
   const [learningPathData, setLearningPathData] = useState(null);
   const [savingGoals, setSavingGoals] = useState(false);
-  const [viewMode, setViewMode] = useState('list'); // 'list' or 'calendar'
+  const [viewMode, setViewMode] = useState('calendar'); // 'list' or 'calendar' - default to calendar
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [previewItem, setPreviewItem] = useState(null);
   const [editForm, setEditForm] = useState({
@@ -405,7 +405,7 @@ const CourseContent = () => {
                 testNumber: metadata.test_number,
                 section: metadata.section,
                 duration: `${item.estimated_minutes || 45} min`,
-                dueDate: item.scheduled_date ? new Date(item.scheduled_date) : new Date(),
+                dueDate: item.scheduled_date ? parseLocalDate(item.scheduled_date) : new Date(),
                 status: item.status,
                 isPriority: false
               };
@@ -416,7 +416,7 @@ const CourseContent = () => {
                 title: metadata.title || `Week ${item.week_number} Review`,
                 description: metadata.description,
                 duration: `${item.estimated_minutes || 45} min`,
-                dueDate: item.scheduled_date ? new Date(item.scheduled_date) : new Date(),
+                dueDate: item.scheduled_date ? parseLocalDate(item.scheduled_date) : new Date(),
                 status: item.status,
                 isPriority: false
               };
@@ -427,7 +427,7 @@ const CourseContent = () => {
                 title: metadata.title || 'Full ACT Mock Exam',
                 description: metadata.description,
                 duration: `${item.estimated_minutes || 180} min`,
-                dueDate: item.scheduled_date ? new Date(item.scheduled_date) : new Date(),
+                dueDate: item.scheduled_date ? parseLocalDate(item.scheduled_date) : new Date(),
                 status: item.status,
                 isPriority: true,
                 isFinal: true
@@ -439,7 +439,7 @@ const CourseContent = () => {
                 title: '🎯 OFFICIAL ACT EXAM DAY',
                 description: 'This is your official ACT test date. Good luck!',
                 duration: '0 min',
-                dueDate: item.scheduled_date ? new Date(item.scheduled_date) : new Date(),
+                dueDate: item.scheduled_date ? parseLocalDate(item.scheduled_date) : new Date(),
                 status: 'pending',
                 isPriority: true,
                 isExamDay: true
@@ -458,7 +458,7 @@ const CourseContent = () => {
                   title: cleanLessonTitle(lesson.title),
                   skills: lesson.category || 'General',
                   duration: `${item.estimated_minutes || 30} min`,
-                  dueDate: item.scheduled_date ? new Date(item.scheduled_date) : new Date(),
+                  dueDate: item.scheduled_date ? parseLocalDate(item.scheduled_date) : new Date(),
                   status: actualStatus,
                   isPriority: item.is_priority
                 };
@@ -471,7 +471,7 @@ const CourseContent = () => {
                   title: 'Unknown Lesson',
                   skills: 'General',
                   duration: `${item.estimated_minutes || 30} min`,
-                  dueDate: item.scheduled_date ? new Date(item.scheduled_date) : new Date(),
+                  dueDate: item.scheduled_date ? parseLocalDate(item.scheduled_date) : new Date(),
                   status: 'not-started',
                   isPriority: item.is_priority
                 };
@@ -926,26 +926,6 @@ const CourseContent = () => {
             <button
               onClick={() => {
                 soundEffects.playClick();
-                setViewMode('list');
-              }}
-              style={{
-                background: viewMode === 'list' ? '#ffffff' : 'transparent',
-                border: 'none',
-                borderRadius: '4px',
-                padding: '0.375rem 0.75rem',
-                fontSize: '0.8125rem',
-                fontWeight: '500',
-                color: viewMode === 'list' ? '#1e40af' : '#64748b',
-                cursor: 'pointer',
-                transition: 'all 0.15s ease',
-                boxShadow: viewMode === 'list' ? '0 1px 2px rgba(0,0,0,0.05)' : 'none'
-              }}
-            >
-              List
-            </button>
-            <button
-              onClick={() => {
-                soundEffects.playClick();
                 setViewMode('calendar');
               }}
               style={{
@@ -962,6 +942,26 @@ const CourseContent = () => {
               }}
             >
               Calendar
+            </button>
+            <button
+              onClick={() => {
+                soundEffects.playClick();
+                setViewMode('list');
+              }}
+              style={{
+                background: viewMode === 'list' ? '#ffffff' : 'transparent',
+                border: 'none',
+                borderRadius: '4px',
+                padding: '0.375rem 0.75rem',
+                fontSize: '0.8125rem',
+                fontWeight: '500',
+                color: viewMode === 'list' ? '#1e40af' : '#64748b',
+                cursor: 'pointer',
+                transition: 'all 0.15s ease',
+                boxShadow: viewMode === 'list' ? '0 1px 2px rgba(0,0,0,0.05)' : 'none'
+              }}
+            >
+              List
             </button>
           </div>
         </div>
@@ -1434,30 +1434,41 @@ const CourseContent = () => {
                           >
                             {getItemIcon(item.type)}
                           </span>
-                          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.5rem', flex: 1, flexWrap: 'wrap' }}>
-                            <span
-                              className={classes.weekCardText}
-                              style={isExamDay ? { fontWeight: '800', color: '#ffffff', fontSize: '1rem' } : isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : isMockExam ? { fontWeight: '700', color: '#f59e0b' } : isTest ? { fontWeight: '600', color: '#2563eb' } : isReview ? { fontWeight: '600', color: '#10b981' } : {}}
-                            >
-                              {item.title}
-                              {chapterNum && (
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', flex: 1 }}>
+                            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.5rem', flexWrap: 'wrap' }}>
+                              <span
+                                className={classes.weekCardText}
+                                style={isExamDay ? { fontWeight: '800', color: '#ffffff', fontSize: '1rem' } : isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : isMockExam ? { fontWeight: '700', color: '#f59e0b' } : isTest ? { fontWeight: '600', color: '#2563eb' } : isReview ? { fontWeight: '600', color: '#10b981' } : {}}
+                              >
+                                {item.title}
+                                {chapterNum && (
+                                  <span style={{
+                                    marginLeft: '0.5rem',
+                                    color: '#9ca3af',
+                                    fontSize: '0.8125rem',
+                                    fontWeight: '400'
+                                  }}>
+                                    {chapterNum}
+                                  </span>
+                                )}
+                              </span>
+                              {item.dueDate && (
                                 <span style={{
-                                  marginLeft: '0.5rem',
-                                  color: '#9ca3af',
-                                  fontSize: '0.8125rem',
-                                  fontWeight: '400'
+                                  fontSize: '0.75rem',
+                                  color: isExamDay ? 'rgba(255,255,255,0.8)' : '#9ca3af',
+                                  fontWeight: '400',
+                                  fontStyle: 'italic'
                                 }}>
-                                  {chapterNum}
+                                  Due {item.dueDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                                 </span>
                               )}
-                            </span>
+                            </div>
                             {item.description && (
                               <span style={{
                                 fontSize: '0.8125rem',
                                 color: isExamDay ? '#ffffff' : '#6b7280',
                                 lineHeight: '1.4',
-                                fontWeight: '400',
-                                flex: '1 1 100%'
+                                fontWeight: '400'
                               }}>
                                 {item.description}
                               </span>
