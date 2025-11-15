@@ -12,28 +12,43 @@ const DiagnosticAnalysisService = {
    * Analyze diagnostic test results by lesson
    * @param {string} userId - User ID
    * @param {string} diagnosticSessionId - Diagnostic session ID
+   * @param {Array} questionResults - Optional array of question results (if not saved to DB)
    * @returns {Promise<Object>} Analysis results with weak areas and recommendations
    */
-  async analyzeDiagnosticResults(userId, diagnosticSessionId) {
+  async analyzeDiagnosticResults(userId, diagnosticSessionId, questionResults = null) {
     const startTime = Date.now();
-    logger.debug('DiagnosticAnalysisService', 'analyzeDiagnosticResults', { userId, diagnosticSessionId });
+    logger.debug('DiagnosticAnalysisService', 'analyzeDiagnosticResults', { userId, diagnosticSessionId, hasQuestionResults: !!questionResults });
 
     try {
-      // 1. Get all results from the diagnostic session
-      const { data: results, error: resultsError } = await supabase
-        .from('diagnostic_test_results')
-        .select('*')
-        .eq('user_id', userId)
-        .eq('diagnostic_session_id', diagnosticSessionId);
+      let results = questionResults;
 
-      if (resultsError) throw resultsError;
+      // If no results provided, load from database
+      if (!results) {
+        const { data: dbResults, error: resultsError } = await supabase
+          .from('diagnostic_test_results')
+          .select('*')
+          .eq('user_id', userId)
+          .eq('diagnostic_session_id', diagnosticSessionId);
 
-      console.log(`📊 Analyzing ${results.length} question results from diagnostic test`);
+        if (resultsError) throw resultsError;
+        results = dbResults;
+      }
+
+      console.log('\n═══════════════════════════════════════════════════════');
+      console.log('🔍 DIAGNOSTIC ANALYSIS - LOADING RESULTS');
+      console.log('═══════════════════════════════════════════════════════');
+      console.log(`📊 Analyzing ${results?.length || 0} question results from diagnostic test`);
+      console.log(`   Session ID: ${diagnosticSessionId}`);
+      console.log(`   User ID: ${userId}\n`);
 
       // 1b. Fetch question details from practice test tables to get lesson_id mapping
       const questionIds = results.map(r => r.question_id);
       const sections = ['english', 'math', 'reading', 'science'];
       const questionDetails = new Map();
+
+      console.log('📚 Fetching question details for lesson mapping...');
+
+      const sectionQuestionCounts = {};
 
       for (const section of sections) {
         const tableName = `practice_test_${section}_questions`;
@@ -43,6 +58,17 @@ const DiagnosticAnalysisService = {
           .in('id', questionIds);
 
         if (!questionsError && sectionQuestions) {
+          const withLesson = sectionQuestions.filter(q => q.lesson_id).length;
+          const withoutLesson = sectionQuestions.length - withLesson;
+
+          sectionQuestionCounts[section] = {
+            total: sectionQuestions.length,
+            withLesson,
+            withoutLesson
+          };
+
+          console.log(`  ${section}: ${sectionQuestions.length} questions (${withLesson} mapped to lessons, ${withoutLesson} unmapped)`);
+
           sectionQuestions.forEach(q => {
             questionDetails.set(q.id, {
               lesson_id: q.lesson_id,
@@ -56,7 +82,7 @@ const DiagnosticAnalysisService = {
         }
       }
 
-      console.log(`✅ Found lesson mapping for ${questionDetails.size} questions`);
+      console.log(`\n✅ Found lesson mapping for ${questionDetails.size} questions total`);
 
       // 2. Get session metadata
       const { data: session, error: sessionError } = await supabase
@@ -124,7 +150,30 @@ const DiagnosticAnalysisService = {
         }
       }
 
-      console.log(`📈 Grouped results into ${Object.keys(lessonPerformance).length} lessons`);
+      console.log(`\n📈 Grouped results into ${Object.keys(lessonPerformance).length} unique lessons`);
+
+      // Log lesson distribution by section
+      const lessonsBySection = {
+        english: [],
+        math: [],
+        reading: [],
+        science: []
+      };
+
+      Object.values(lessonPerformance).forEach(perf => {
+        if (perf.section && lessonsBySection[perf.section]) {
+          lessonsBySection[perf.section].push(perf);
+        }
+      });
+
+      console.log('\n📚 Lessons analyzed by section:');
+      Object.keys(lessonsBySection).forEach(section => {
+        const lessons = lessonsBySection[section];
+        if (lessons.length > 0) {
+          console.log(`  ${section}: ${lessons.length} lessons`);
+        }
+      });
+      console.log();
 
       // 3b. Analyze by question type
       const questionTypePerformance = {};
@@ -242,14 +291,42 @@ const DiagnosticAnalysisService = {
       lessonBreakdown.sort((a, b) => b.priority - a.priority);
       strongLessons.sort((a, b) => b.accuracy - a.accuracy);
 
-      console.log(`🎯 Identified ${weakLessons.length} weak and ${strongLessons.length} strong lessons from diagnostic test:`, {
-        total_lessons_analyzed: lessonBreakdown.length,
-        weak_lessons: weakLessons.length,
-        strong_lessons: strongLessons.length,
-        high_priority: priorityLessons.filter(p => p.priority >= 4).length,
-        medium_priority: priorityLessons.filter(p => p.priority === 3).length,
-        low_priority: priorityLessons.filter(p => p.priority <= 2).length
+      console.log('\n═══════════════════════════════════════════════════════');
+      console.log('🎯 WEAK & STRONG LESSONS IDENTIFIED');
+      console.log('═══════════════════════════════════════════════════════\n');
+
+      console.log(`Total Lessons Analyzed: ${lessonBreakdown.length}`);
+      console.log(`Weak Lessons (<70%):    ${weakLessons.length}`);
+      console.log(`Strong Lessons (≥80%):  ${strongLessons.length}\n`);
+
+      // Count weak lessons by section
+      const weakBySection = lessonBreakdown.filter(l => l.is_weak).reduce((acc, l) => {
+        acc[l.section] = (acc[l.section] || 0) + 1;
+        return acc;
+      }, {});
+
+      console.log('Weak Lessons by Section:');
+      Object.keys(weakBySection).forEach(section => {
+        console.log(`  ${section}: ${weakBySection[section]} weak lessons`);
       });
+
+      // Count strong lessons by section
+      const strongBySection = strongLessons.reduce((acc, l) => {
+        acc[l.section] = (acc[l.section] || 0) + 1;
+        return acc;
+      }, {});
+
+      console.log('\nStrong Lessons by Section:');
+      Object.keys(strongBySection).forEach(section => {
+        console.log(`  ${section}: ${strongBySection[section]} strong lessons`);
+      });
+
+      console.log('\nPriority Distribution:');
+      console.log(`  High Priority (4-5):   ${priorityLessons.filter(p => p.priority >= 4).length}`);
+      console.log(`  Medium Priority (3):   ${priorityLessons.filter(p => p.priority === 3).length}`);
+      console.log(`  Low Priority (1-2):    ${priorityLessons.filter(p => p.priority <= 2).length}`);
+      console.log();
+
       priorityLessons.sort((a, b) => b.priority - a.priority);
 
       // 4b. Fetch lesson titles for strong and weak lessons
@@ -288,6 +365,103 @@ const DiagnosticAnalysisService = {
         }
       }
 
+      // 4c. FALLBACK: If no weak lessons identified, create recommendations based on sections
+      // This ensures EVERY user gets a learning path, even with incomplete lesson mappings
+      if (weakLessons.length === 0) {
+        console.warn('⚠️  No weak lessons identified (unmapped: ' + unmappedPercentage.toFixed(1) + '%)');
+        console.warn('📋 Creating fallback recommendations based on section performance...');
+
+        // Analyze by section
+        const sectionPerformance = {};
+        results.forEach(result => {
+          const questionInfo = questionDetails.get(result.question_id);
+          const section = questionInfo?.section || 'unknown';
+
+          if (!sectionPerformance[section]) {
+            sectionPerformance[section] = { total: 0, correct: 0 };
+          }
+
+          sectionPerformance[section].total++;
+          if (result.is_correct) {
+            sectionPerformance[section].correct++;
+          }
+        });
+
+        // Find weak sections (< 70% accuracy)
+        const weakSections = Object.entries(sectionPerformance)
+          .filter(([_, perf]) => {
+            const accuracy = (perf.correct / perf.total) * 100;
+            return accuracy < 70;
+          })
+          .map(([section, perf]) => ({
+            section,
+            accuracy: (perf.correct / perf.total) * 100,
+            total: perf.total
+          }))
+          .sort((a, b) => a.accuracy - b.accuracy);
+
+        console.log(`📊 Found ${weakSections.length} weak section(s):`, weakSections);
+
+        // Get top 5 lessons from each weak section
+        if (weakSections.length > 0) {
+          for (const weakSection of weakSections) {
+            const { data: sectionLessons } = await supabase
+              .from('lessons')
+              .select('id, title, lesson_key')
+              .ilike('lesson_key', `${weakSection.section}%`)
+              .limit(5);
+
+            if (sectionLessons && sectionLessons.length > 0) {
+              sectionLessons.forEach(lesson => {
+                weakLessons.push({
+                  lesson_id: lesson.id,
+                  lesson_title: lesson.title,
+                  lesson_key: lesson.lesson_key,
+                  accuracy_percentage: weakSection.accuracy,
+                  section: weakSection.section,
+                  is_fallback: true // Mark as fallback recommendation
+                });
+              });
+            }
+          }
+
+          console.log(`✅ Created ${weakLessons.length} fallback lesson recommendations`);
+        }
+      }
+
+      // 4d. LAST RESORT: If still no weak lessons (user scored well on everything),
+      // recommend foundational lessons from each section to ensure SOME learning path
+      if (weakLessons.length === 0) {
+        console.warn('⚠️  User performed well on all sections! Creating foundational learning path...');
+
+        // Get 3 foundational lessons from each section (12 total)
+        const sections = ['english', 'math', 'reading', 'science'];
+        for (const section of sections) {
+          const { data: foundationalLessons } = await supabase
+            .from('lessons')
+            .select('id, title, lesson_key')
+            .ilike('lesson_key', `${section}%`)
+            .order('lesson_key')
+            .limit(3);
+
+          if (foundationalLessons && foundationalLessons.length > 0) {
+            foundationalLessons.forEach(lesson => {
+              weakLessons.push({
+                lesson_id: lesson.id,
+                lesson_title: lesson.title,
+                lesson_key: lesson.lesson_key,
+                accuracy_percentage: 100, // Mark as mastered since they scored well
+                section: section,
+                is_fallback: true,
+                is_foundational: true // Extra flag to indicate this is for strong performers
+              });
+            });
+          }
+        }
+
+        console.log(`✅ Created ${weakLessons.length} foundational lesson recommendations for strong performer`);
+      }
+
       // 5. Calculate section scores
       const sectionScores = {
         english: 0,
@@ -297,7 +471,8 @@ const DiagnosticAnalysisService = {
       };
 
       results.forEach(result => {
-        const section = result.question?.section;
+        const questionInfo = questionDetails.get(result.question_id);
+        const section = questionInfo?.section;
         if (section && result.is_correct) {
           sectionScores[section] = (sectionScores[section] || 0) + 1;
         }

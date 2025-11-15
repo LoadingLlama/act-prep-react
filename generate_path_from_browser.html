@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Learning Path from Diagnostic Data</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 { color: #333; margin-top: 0; }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 10px 5px;
+    }
+    button:hover { background: #45a049; }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .info {
+      background: #e3f2fd;
+      padding: 15px;
+      border-radius: 4px;
+      margin: 15px 0;
+    }
+    .error {
+      background: #ffebee;
+      color: #c62828;
+      padding: 15px;
+      border-radius: 4px;
+      margin: 15px 0;
+    }
+    .success {
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 15px;
+      border-radius: 4px;
+      margin: 15px 0;
+    }
+    pre {
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    .loading {
+      display: inline-block;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Generate Learning Path from Diagnostic Data</h1>
+
+    <div class="info">
+      <strong>Instructions:</strong>
+      <ol>
+        <li>Make sure you're logged into the app in another tab</li>
+        <li>Click "Check Diagnostic Data" to see what's in the database</li>
+        <li>If data exists, click "Generate Learning Path" to create it</li>
+      </ol>
+    </div>
+
+    <div>
+      <button id="checkBtn" onclick="checkData()">Check Diagnostic Data</button>
+      <button id="generateBtn" onclick="generatePath()" disabled>Generate Learning Path</button>
+      <span class="loading" id="loading" style="display:none">⏳ Working...</span>
+    </div>
+
+    <div id="output"></div>
+  </div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+    const supabaseUrl = 'https://rabavobdklnwvwsldbix.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJhYmF2b2Jka2xud3Z3c2xkYml4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk3NjU0NzgsImV4cCI6MjA3NTM0MTQ3OH0.z_1N3TG-cS9Bc1s7UAif91PkIjhBKvicrUqupiNP80Y';
+
+    window.supabase = createClient(supabaseUrl, supabaseKey);
+    window.diagnosticData = null;
+
+    window.checkData = async function() {
+      const output = document.getElementById('output');
+      const loading = document.getElementById('loading');
+      const checkBtn = document.getElementById('checkBtn');
+      const generateBtn = document.getElementById('generateBtn');
+
+      loading.style.display = 'inline';
+      checkBtn.disabled = true;
+      output.innerHTML = '';
+
+      try {
+        // Check if user is logged in
+        const { data: { user }, error: authError } = await window.supabase.auth.getUser();
+
+        if (authError || !user) {
+          output.innerHTML = '<div class="error">❌ Not logged in. Please log in to the app first.</div>';
+          loading.style.display = 'none';
+          checkBtn.disabled = false;
+          return;
+        }
+
+        output.innerHTML += `<div class="success">✅ Logged in as: ${user.email}</div>`;
+
+        // Check diagnostic sessions
+        const { data: sessions, error: sessError } = await window.supabase
+          .from('diagnostic_test_sessions')
+          .select('*')
+          .eq('user_id', user.id)
+          .order('created_at', { ascending: false });
+
+        if (sessError) {
+          output.innerHTML += `<div class="error">❌ Error: ${sessError.message}</div>`;
+          loading.style.display = 'none';
+          checkBtn.disabled = false;
+          return;
+        }
+
+        output.innerHTML += `<div class="info">📊 Found ${sessions?.length || 0} diagnostic session(s)</div>`;
+
+        if (sessions && sessions.length > 0) {
+          const session = sessions[0];
+          window.diagnosticData = session;
+
+          output.innerHTML += `<pre>${JSON.stringify(session, null, 2)}</pre>`;
+
+          // Check if learning path exists
+          const { data: paths } = await window.supabase
+            .from('user_learning_paths')
+            .select('*')
+            .eq('user_id', user.id)
+            .eq('is_active', true);
+
+          if (paths && paths.length > 0) {
+            output.innerHTML += `<div class="info">🛤️  Learning path already exists</div>`;
+            generateBtn.disabled = true;
+          } else {
+            output.innerHTML += `<div class="success">✅ Ready to generate learning path!</div>`;
+            generateBtn.disabled = false;
+          }
+        } else {
+          output.innerHTML += '<div class="error">⚠️  No diagnostic data found. Please complete the diagnostic test first.</div>';
+          generateBtn.disabled = true;
+        }
+
+      } catch (err) {
+        output.innerHTML += `<div class="error">❌ Exception: ${err.message}</div>`;
+      } finally {
+        loading.style.display = 'none';
+        checkBtn.disabled = false;
+      }
+    };
+
+    window.generatePath = async function() {
+      const output = document.getElementById('output');
+      const loading = document.getElementById('loading');
+      const generateBtn = document.getElementById('generateBtn');
+
+      loading.style.display = 'inline';
+      generateBtn.disabled = true;
+
+      try {
+        // Call the API to generate learning path
+        const response = await fetch('http://localhost:3000/api/learning-path/generate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            sessionId: window.diagnosticData.id
+          })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          output.innerHTML += `<div class="success">✅ Learning path created successfully!</div>`;
+          output.innerHTML += `<pre>${JSON.stringify(result, null, 2)}</pre>`;
+        } else {
+          output.innerHTML += `<div class="error">❌ Error: ${result.message || 'Unknown error'}</div>`;
+        }
+
+      } catch (err) {
+        output.innerHTML += `<div class="error">❌ Exception: ${err.message}</div>`;
+      } finally {
+        loading.style.display = 'none';
+      }
+    };
+  </script>
+</body>
+</html>

@@ -258,15 +258,12 @@ const CourseContent = () => {
     try {
       console.log('📚 Loading learning path for user:', user.id);
 
-      // Get active learning path with items and lessons
+      // Get active learning path with items (no lesson join since using lessonStructure)
       const { data: path, error: pathError } = await supabase
         .from('user_learning_paths')
         .select(`
           *,
-          items:learning_path_items(
-            *,
-            lesson:lessons(*)
-          )
+          items:learning_path_items(*)
         `)
         .eq('user_id', user.id)
         .eq('is_active', true)
@@ -431,20 +428,37 @@ const CourseContent = () => {
                 isExamDay: true
               };
             } else {
-              // Regular lesson - use UUID for both progress tracking and identification
-              const lessonId = item.lesson?.id || item.lesson_id;
-              const actualStatus = getLessonStatus(lessonId);
+              // Regular lesson - look up from lessonStructure using lesson_key
+              const lessonKey = item.lesson_key;
+              const lesson = lessonStructure.find(l => l.id === lessonKey);
 
-              return {
-                id: lessonId,  // Use UUID instead of lesson_key
-                type: 'lesson',
-                title: cleanLessonTitle(item.lesson?.title),
-                skills: item.lesson?.skill_category || 'General',
-                duration: `${item.estimated_minutes || 30} min`,
-                dueDate: item.scheduled_date ? new Date(item.scheduled_date) : new Date(),
-                status: actualStatus,
-                isPriority: item.is_priority
-              };
+              if (lesson) {
+                const actualStatus = getLessonStatus(lessonKey);
+
+                return {
+                  id: lessonKey,  // Use lessonStructure ID
+                  type: 'lesson',
+                  title: cleanLessonTitle(lesson.title),
+                  skills: lesson.category || 'General',
+                  duration: `${item.estimated_minutes || 30} min`,
+                  dueDate: item.scheduled_date ? new Date(item.scheduled_date) : new Date(),
+                  status: actualStatus,
+                  isPriority: item.is_priority
+                };
+              } else {
+                // Fallback if lesson not found
+                console.warn('⚠️ Lesson not found in lessonStructure:', lessonKey);
+                return {
+                  id: lessonKey || `unknown-${item.id}`,
+                  type: 'lesson',
+                  title: 'Unknown Lesson',
+                  skills: 'General',
+                  duration: `${item.estimated_minutes || 30} min`,
+                  dueDate: item.scheduled_date ? new Date(item.scheduled_date) : new Date(),
+                  status: 'not-started',
+                  isPriority: item.is_priority
+                };
+              }
             }
           })
         };
@@ -563,18 +577,33 @@ const CourseContent = () => {
           isExamDay: true
         };
       } else {
-        // For lessons, use UUID for both progress tracking and identification
-        const lessonId = item.lesson?.id || item.lesson_id;
-        const actualStatus = getLessonStatus(lessonId);
+        // For lessons, look up from lessonStructure using lesson_key
+        const lessonKey = item.lesson_key;
+        const lesson = lessonStructure.find(l => l.id === lessonKey);
 
-        calendarItem = {
-          id: lessonId,  // Use UUID instead of lesson_key
-          type: 'lesson',
-          title: cleanLessonTitle(item.lesson?.title),
-          duration: item.estimated_minutes,
-          status: actualStatus,
-          isPriority: item.is_priority
-        };
+        if (lesson) {
+          const actualStatus = getLessonStatus(lessonKey);
+
+          calendarItem = {
+            id: lessonKey,  // Use lessonStructure ID (e.g., "getting-started")
+            type: 'lesson',
+            title: cleanLessonTitle(lesson.title),
+            duration: item.estimated_minutes,
+            status: actualStatus,
+            isPriority: item.is_priority
+          };
+        } else {
+          // Fallback if lesson not found in lessonStructure
+          console.warn('⚠️ Lesson not found in lessonStructure:', lessonKey);
+          calendarItem = {
+            id: lessonKey || `unknown-${item.id}`,
+            type: 'lesson',
+            title: 'Unknown Lesson',
+            duration: item.estimated_minutes,
+            status: 'not-started',
+            isPriority: item.is_priority
+          };
+        }
       }
 
       itemsByDate[date].push(calendarItem);

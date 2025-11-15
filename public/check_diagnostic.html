@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Check Diagnostic Status</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 { color: #333; margin-top: 0; }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 10px 5px;
+    }
+    button:hover { background: #45a049; }
+    button:disabled { background: #ccc; cursor: not-allowed; }
+    .info { background: #e3f2fd; padding: 15px; border-radius: 4px; margin: 15px 0; }
+    .error { background: #ffebee; color: #c62828; padding: 15px; border-radius: 4px; margin: 15px 0; }
+    .success { background: #e8f5e9; color: #2e7d32; padding: 15px; border-radius: 4px; margin: 15px 0; }
+    pre { background: #f5f5f5; padding: 15px; border-radius: 4px; overflow-x: auto; font-size: 12px; }
+    .section { margin: 20px 0; border-left: 3px solid #4CAF50; padding-left: 15px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Diagnostic Status Checker</h1>
+    <div class="info">
+      <strong>This page checks your diagnostic test data using your logged-in session.</strong>
+    </div>
+
+    <button id="checkBtn" onclick="checkStatus()">Check Diagnostic Status</button>
+    <button onclick="location.reload()">Refresh Page</button>
+
+    <div id="output"></div>
+  </div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+    const supabaseUrl = 'https://rabavobdklnwvwsldbix.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJhYmF2b2Jka2xud3Z3c2xkYml4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk3NjU0NzgsImV4cCI6MjA3NTM0MTQ3OH0.z_1N3TG-cS9Bc1s7UAif91PkIjhBKvicrUqupiNP80Y';
+
+    window.supabase = createClient(supabaseUrl, supabaseKey);
+
+    window.checkStatus = async function() {
+      const output = document.getElementById('output');
+      const checkBtn = document.getElementById('checkBtn');
+
+      checkBtn.disabled = true;
+      output.innerHTML = '<div class="info">⏳ Checking...</div>';
+
+      try {
+        // Check if logged in
+        const { data: { user }, error: authError } = await window.supabase.auth.getUser();
+
+        if (authError || !user) {
+          output.innerHTML = '<div class="error">❌ Not logged in. Please log in to the app first.</div>';
+          checkBtn.disabled = false;
+          return;
+        }
+
+        let html = `<div class="success">✅ Logged in as: ${user.email}</div>`;
+
+        // 1. Check Sessions
+        html += '<div class="section"><h2>📊 Diagnostic Sessions</h2>';
+        const { data: sessions, error: sessError } = await window.supabase
+          .from('diagnostic_test_sessions')
+          .select('*')
+          .eq('user_id', user.id)
+          .order('created_at', { ascending: false });
+
+        if (sessError) {
+          html += `<div class="error">❌ Error: ${sessError.message}</div>`;
+        } else if (!sessions || sessions.length === 0) {
+          html += '<div class="error">❌ No sessions found</div>';
+        } else {
+          html += `<div class="info">Found ${sessions.length} session(s)</div>`;
+          sessions.forEach((s, i) => {
+            html += `<pre>Session ${i + 1}:
+  ID: ${s.id}
+  Completed: ${s.completed ? '✅ YES' : '❌ NO'}
+  Score: ${s.score_percentage}%
+  Questions: ${s.correct_answers}/${s.total_questions}
+  Created: ${s.created_at}</pre>`;
+          });
+        }
+        html += '</div>';
+
+        if (sessions && sessions.length > 0) {
+          const latestSession = sessions[0];
+
+          // 2. Check Results
+          html += '<div class="section"><h2>📝 Diagnostic Results</h2>';
+          const { data: results, error: resError } = await window.supabase
+            .from('diagnostic_test_results')
+            .select('*')
+            .eq('diagnostic_session_id', latestSession.id);
+
+          if (resError) {
+            html += `<div class="error">❌ Error: ${resError.message}</div>`;
+          } else {
+            const correct = results?.filter(r => r.is_correct).length || 0;
+            html += `<div class="info">
+              Total: ${results?.length || 0} results<br>
+              Correct: ${correct}<br>
+              Accuracy: ${results?.length ? ((correct / results.length) * 100).toFixed(1) : 0}%
+            </div>`;
+          }
+          html += '</div>';
+
+          // 3. Check Analysis
+          html += '<div class="section"><h2>📊 Diagnostic Analysis</h2>';
+          const { data: analysis, error: anaError } = await window.supabase
+            .from('diagnostic_analysis')
+            .select('*')
+            .eq('diagnostic_session_id', latestSession.id);
+
+          if (anaError) {
+            html += `<div class="error">❌ Error: ${anaError.message}</div>`;
+          } else if (!analysis || analysis.length === 0) {
+            html += '<div class="error">❌ NO ANALYSIS FOUND - This is the problem!</div>';
+            html += '<div class="info">The diagnostic test completed but analysis was not created. Check browser console for errors during test completion.</div>';
+          } else {
+            const a = analysis[0];
+            html += `<div class="success">✅ Analysis exists</div>`;
+            html += `<pre>Analysis:
+  Overall Score: ${a.overall_score}/36
+  Accuracy: ${a.overall_accuracy}%
+  Weak Lessons: ${a.weak_lessons?.length || 0}
+  Strong Lessons: ${a.strong_lessons?.length || 0}</pre>`;
+
+            if (a.weak_lessons && a.weak_lessons.length > 0) {
+              html += '<div class="info"><strong>Weak Lessons:</strong></div>';
+              html += '<pre>' + JSON.stringify(a.weak_lessons.slice(0, 5), null, 2) + '</pre>';
+            }
+          }
+          html += '</div>';
+
+          // 4. Check Learning Paths
+          html += '<div class="section"><h2>🛤️ Learning Paths</h2>';
+          const { data: paths, error: pathError } = await window.supabase
+            .from('user_learning_paths')
+            .select('*')
+            .eq('user_id', user.id)
+            .order('created_at', { ascending: false });
+
+          if (pathError) {
+            html += `<div class="error">❌ Error: ${pathError.message}</div>`;
+          } else if (!paths || paths.length === 0) {
+            html += '<div class="error">❌ NO LEARNING PATH FOUND - This is why nothing shows!</div>';
+            html += '<div class="info">Learning path should have been created automatically after analysis. Check browser console for errors.</div>';
+          } else {
+            html += `<div class="success">✅ Found ${paths.length} learning path(s)</div>`;
+            for (const p of paths) {
+              html += `<pre>Path: ${p.path_name}
+  ID: ${p.id}
+  Active: ${p.is_active ? '✅' : '❌'}
+  Created: ${p.created_at}</pre>`;
+
+              // Check items
+              const { data: items } = await window.supabase
+                .from('learning_path_items')
+                .select('*')
+                .eq('learning_path_id', p.id);
+
+              html += `<div class="info">Learning Path Items: ${items?.length || 0}</div>`;
+              if (!items || items.length === 0) {
+                html += '<div class="error">⚠️ Path exists but has NO ITEMS!</div>';
+              }
+            }
+          }
+          html += '</div>';
+
+          // 5. Diagnosis
+          html += '<div class="section"><h2>💡 Diagnosis</h2>';
+          if (!analysis || analysis.length === 0) {
+            html += '<div class="error"><strong>ISSUE:</strong> Analysis was not created during diagnostic completion.</div>';
+            html += '<div class="info"><strong>Solution:</strong> Check browser console (F12) for errors. The analysis creation might have failed silently.</div>';
+          } else if (!paths || paths.length === 0) {
+            html += '<div class="error"><strong>ISSUE:</strong> Learning path was not created after analysis.</div>';
+            html += '<div class="info"><strong>Solution:</strong> Check browser console (F12) for errors during learning path generation.</div>';
+          } else {
+            const activePath = paths.find(p => p.is_active);
+            if (!activePath) {
+              html += '<div class="error"><strong>ISSUE:</strong> Learning path exists but is_active = false.</div>';
+            } else {
+              const { data: items } = await window.supabase
+                .from('learning_path_items')
+                .select('*')
+                .eq('learning_path_id', activePath.id);
+
+              if (!items || items.length === 0) {
+                html += '<div class="error"><strong>ISSUE:</strong> Learning path has no items (lessons).</div>';
+                html += '<div class="info">This means weak_lessons array was empty. Check if questions have lesson_id mappings.</div>';
+              } else {
+                html += '<div class="success"><strong>✅ Everything looks good!</strong> Try refreshing the app (Ctrl+Shift+R)</div>';
+              }
+            }
+          }
+          html += '</div>';
+        }
+
+        output.innerHTML = html;
+
+      } catch (err) {
+        output.innerHTML = `<div class="error">❌ Exception: ${err.message}<br><pre>${err.stack}</pre></div>`;
+      } finally {
+        checkBtn.disabled = false;
+      }
+    };
+  </script>
+</body>
+</html>

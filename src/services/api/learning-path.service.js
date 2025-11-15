@@ -709,14 +709,16 @@ const LearningPathService = {
 
           pathItems.push({
             learning_path_id: learningPathId,
-            lesson_id: lesson.id,
+            lesson_id: null, // Set to null since using lessonStructure IDs
+            lesson_key: lesson.id, // Store lessonStructure ID (e.g., "getting-started")
             sequence_order: sequenceOrder++,
             week_number: week.weekNumber,
             day_number: dayNumber++,
             is_priority: lesson.isWeak || false,
             estimated_minutes: lessonMinutes,
             scheduled_date: checkDate.toISOString().split('T')[0],
-            status: 'pending'
+            status: 'pending',
+            item_type: 'lesson'
           });
         });
 

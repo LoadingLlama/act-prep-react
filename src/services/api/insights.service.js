@@ -364,7 +364,7 @@ const InsightsService = {
         const tableName = `practice_test_${section}_questions`;
         const { data: sectionQuestions, error: questionsError} = await supabase
           .from(tableName)
-          .select('*')
+          .select('id, test_number, question_number, passage_id, question_text, question_prompt, choices, correct_answer, explanation, question_type, difficulty, image_url, created_at, updated_at, chapter, lesson_id')
           .in('id', questionIds);
 
         if (questionsError) {
@@ -374,12 +374,15 @@ const InsightsService = {
 
           // Debug: Log first question structure
           if (sectionQuestions.length > 0) {
-            console.log(`📊 First ${section} question structure:`, {
-              id: sectionQuestions[0].id,
-              question_number: sectionQuestions[0].question_number,
-              correct_answer: sectionQuestions[0].correct_answer,
-              hasExplanation: !!sectionQuestions[0].explanation,
-              allKeys: Object.keys(sectionQuestions[0])
+            const firstQ = sectionQuestions[0];
+            console.log(`📊 First ${section} question from DB:`, {
+              id: firstQ.id,
+              question_number: firstQ.question_number,
+              correct_answer: firstQ.correct_answer,
+              correct_answer_type: typeof firstQ.correct_answer,
+              hasExplanation: !!firstQ.explanation,
+              explanation_length: firstQ.explanation?.length || 0,
+              allKeys: Object.keys(firstQ)
             });
           }
 

@@ -1,6 +1,6 @@
 /**
  * Onboarding Questionnaire
- * 6-question diagnostic flow to personalize learning path
+ * 11-question diagnostic flow to personalize learning path
  */
 
 import React, { useState, useEffect } from 'react';
@@ -9,16 +9,21 @@ import { onboardingUtils } from '../../utils/helpers';
 
 const OnboardingQuestionnaire = ({ userId, onComplete = () => {}, showDiagnosticScreen = false }) => {
   const classes = useOnboardingStyles();
-  // If showDiagnosticScreen is true, skip to completion screen (step 6)
-  const [currentStep, setCurrentStep] = useState(showDiagnosticScreen ? 6 : 0);
+  // If showDiagnosticScreen is true, skip to completion screen (step 11)
+  const [currentStep, setCurrentStep] = useState(showDiagnosticScreen ? 11 : 0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [answers, setAnswers] = useState({
     testDate: '',
+    currentScore: '',
     grade: '',
     targetScore: '',
     studyTimePerWeek: '',
+    studyDaysPerWeek: '',
+    preferredStudyTime: '',
     concernedSections: [],
-    studyExperience: ''
+    studyExperience: '',
+    learningPace: '',
+    reminderFrequency: ''
   });
 
   // Load from localStorage on mount
@@ -47,6 +52,21 @@ const OnboardingQuestionnaire = ({ userId, onComplete = () => {}, showDiagnostic
       placeholder: "Select your test date",
       allowSkip: true,
       skipValue: 'not-scheduled'
+    },
+    {
+      id: 'currentScore',
+      type: 'select',
+      title: "What's your current ACT score?",
+      subtitle: "If you've taken a practice test or the actual ACT, select your score. Otherwise, skip this question.",
+      allowSkip: true,
+      skipValue: 'not-taken',
+      options: [
+        { value: '1-15', label: '1-15', subtitle: 'Starting out' },
+        { value: '16-20', label: '16-20', subtitle: 'Building foundation' },
+        { value: '21-25', label: '21-25', subtitle: 'Solid progress' },
+        { value: '26-30', label: '26-30', subtitle: 'Strong performance' },
+        { value: '31-36', label: '31-36', subtitle: 'Excellent level' }
+      ]
     },
     {
       id: 'grade',
@@ -85,6 +105,31 @@ const OnboardingQuestionnaire = ({ userId, onComplete = () => {}, showDiagnostic
       ]
     },
     {
+      id: 'studyDaysPerWeek',
+      type: 'select',
+      title: "How many days per week can you study?",
+      subtitle: "We'll schedule your lessons on these days only.",
+      options: [
+        { value: '3', label: '3 days', subtitle: 'Mon, Wed, Fri' },
+        { value: '4', label: '4 days', subtitle: 'Mon, Wed, Fri, Sat' },
+        { value: '5', label: '5 days', subtitle: 'Mon-Fri' },
+        { value: '6', label: '6 days', subtitle: 'Mon-Sat' },
+        { value: '7', label: '7 days', subtitle: 'Every day' }
+      ]
+    },
+    {
+      id: 'preferredStudyTime',
+      type: 'select',
+      title: "When do you study best?",
+      subtitle: "We'll send reminders during your preferred time.",
+      options: [
+        { value: 'morning', label: 'Morning', subtitle: '6am - 12pm' },
+        { value: 'afternoon', label: 'Afternoon', subtitle: '12pm - 5pm' },
+        { value: 'evening', label: 'Evening', subtitle: '5pm - 9pm' },
+        { value: 'night', label: 'Night', subtitle: '9pm - 12am' }
+      ]
+    },
+    {
       id: 'concernedSections',
       type: 'checkbox',
       title: "Which sections concern you most?",
@@ -105,6 +150,28 @@ const OnboardingQuestionnaire = ({ userId, onComplete = () => {}, showDiagnostic
         { value: 'never', label: 'First time', subtitle: 'New to ACT prep' },
         { value: 'some', label: 'Some prep', subtitle: 'Studied a little' },
         { value: 'extensive', label: 'Extensive prep', subtitle: 'Studied a lot' }
+      ]
+    },
+    {
+      id: 'learningPace',
+      type: 'select',
+      title: "What learning pace works best for you?",
+      subtitle: "This affects how many lessons we schedule each week.",
+      options: [
+        { value: 'slow', label: 'Slow & Steady', subtitle: 'Take time to absorb' },
+        { value: 'moderate', label: 'Moderate', subtitle: 'Balanced approach' },
+        { value: 'fast', label: 'Fast Track', subtitle: 'Cover more quickly' }
+      ]
+    },
+    {
+      id: 'reminderFrequency',
+      type: 'select',
+      title: "How often should we remind you to study?",
+      subtitle: "Stay on track with gentle reminders.",
+      options: [
+        { value: 'none', label: 'No reminders', subtitle: 'I'll manage myself' },
+        { value: 'daily', label: 'Daily', subtitle: 'Every study day' },
+        { value: 'weekly', label: 'Weekly', subtitle: 'Once a week' }
       ]
     }
   ];
@@ -134,7 +201,10 @@ const OnboardingQuestionnaire = ({ userId, onComplete = () => {}, showDiagnostic
       return answer && Array.isArray(answer) && answer.length > 0;
     }
     if (currentQuestion?.type === 'select') {
-      // Select: a valid option must be chosen
+      // Select: a valid option must be chosen, or can be skipped
+      if (currentQuestion.allowSkip && answer === currentQuestion.skipValue) {
+        return true;
+      }
       return answer && typeof answer === 'string' && answer.length > 0;
     }
     if (currentQuestion?.type === 'date') {
@@ -223,17 +293,41 @@ const OnboardingQuestionnaire = ({ userId, onComplete = () => {}, showDiagnostic
 
       case 'select':
         return (
-          <div className={classes.optionsGrid}>
-            {currentQuestion.options.map((option) => (
-              <div
-                key={option.value}
-                className={`${classes.optionCard} ${answers[currentQuestion.id] === option.value ? 'selected' : ''}`}
-                onClick={() => handleAnswer(currentQuestion.id, option.value)}
-              >
-                <div className={classes.optionTitle}>{option.label}</div>
-                <div className={classes.optionSubtitle}>{option.subtitle}</div>
+          <div className={classes.inputGroup}>
+            <div className={classes.optionsGrid}>
+              {currentQuestion.options.map((option) => (
+                <div
+                  key={option.value}
+                  className={`${classes.optionCard} ${answers[currentQuestion.id] === option.value ? 'selected' : ''}`}
+                  onClick={() => handleAnswer(currentQuestion.id, option.value)}
+                >
+                  <div className={classes.optionTitle}>{option.label}</div>
+                  <div className={classes.optionSubtitle}>{option.subtitle}</div>
+                </div>
+              ))}
+            </div>
+            {currentQuestion.allowSkip && (
+              <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+                <button
+                  type="button"
+                  onClick={handleSkip}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: 'rgba(255, 255, 255, 0.6)',
+                    fontSize: '0.9rem',
+                    cursor: 'pointer',
+                    textDecoration: 'underline',
+                    padding: '0.5rem',
+                    transition: 'color 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.9)'}
+                  onMouseLeave={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.6)'}
+                >
+                  Haven't taken a practice test yet
+                </button>
               </div>
-            ))}
+            )}
           </div>
         );
 

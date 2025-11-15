@@ -204,6 +204,58 @@
 
                 // Initialize test with review data
                 initTest();
+            } else if (event.data.type === 'LOAD_NEXT_SECTION') {
+                console.log('📨 Received LOAD_NEXT_SECTION message - reloading from sessionStorage');
+                console.log('   Current state before reload:', {
+                    section: section,
+                    questionCount: questions.length,
+                    answersCount: Object.keys(answers).length
+                });
+
+                // Reload questions and section from sessionStorage (updated by parent)
+                const newQuestions = JSON.parse(sessionStorage.getItem('practiceTestQuestions') || '[]');
+                const newSection = sessionStorage.getItem('practiceTestSection') || 'english';
+                const newDuration = parseInt(sessionStorage.getItem('practiceTestDuration') || '45');
+
+                console.log('   SessionStorage contains:', {
+                    section: newSection,
+                    questionCount: newQuestions.length,
+                    duration: newDuration,
+                    firstQuestionNum: newQuestions[0]?.question_number,
+                    lastQuestionNum: newQuestions[newQuestions.length - 1]?.question_number
+                });
+
+                questions = newQuestions;
+                section = newSection;
+                duration = newDuration;
+
+                console.log('✅ Loaded next section:', {
+                    section: section,
+                    questionCount: questions.length,
+                    duration: duration
+                });
+
+                // Reset test state for new section
+                answers = {};  // Clear answers from previous section
+                hasPassages = questions.some(q => q.passage);
+                totalQuestions = questions.length;
+                currentQuestion = questions.length > 0 ? (questions[0].question_number || 1) : 1;
+                timeLeft = duration * 60;
+
+                // Add/remove math-test class based on passages
+                if (!hasPassages) {
+                    document.body.classList.add('math-test');
+                } else {
+                    document.body.classList.remove('math-test');
+                }
+
+                // Re-render the test with new questions
+                renderContent();
+                updateDisplay();
+                generateSidebarQuestions();
+                startTimer();
+
+                console.log('✅ New section initialized and ready');
             }
         });
 
@@ -481,16 +533,23 @@
                                     }
                                 }
 
-                                // Debug first question
+                                                // Debug first question's first answer choice
                                 if (idx === 0 && key === answerKeys[0]) {
-                                    console.log('🎨 Answer choice styling:', {
+                                    console.log('🎨 First question answer styling:', {
                                         questionNum,
-                                        key,
+                                        answerKeys,
+                                        testingKey: key,
                                         correctAnswer,
+                                        correctAnswerType: typeof correctAnswer,
                                         isCorrectAnswer,
                                         choiceClass,
-                                        inlineStyle,
-                                        reviewMode
+                                        hasInlineStyle: !!inlineStyle,
+                                        reviewMode,
+                                        questionObject: {
+                                            id: q.id,
+                                            correctAnswer: q.correctAnswer,
+                                            hasExplanation: !!q.explanation
+                                        }
                                     });
                                 }
 

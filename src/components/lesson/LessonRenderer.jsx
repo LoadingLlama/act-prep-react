@@ -53,7 +53,7 @@ import { LessonList } from './elements/LessonList';
 import { LessonExample } from './elements/LessonExample';
 import { KeyTakeaways } from './elements/KeyTakeaways';
 
-export const LessonRenderer = ({ data }) => {
+export const LessonRenderer = ({ data, onKeyTakeawaysRendered }) => {
   console.log('📘 LessonRenderer: Starting render');
   console.log('📘 Lesson version:', data.version);
   console.log('📘 Lesson ID:', data.lessonId);
@@ -145,6 +145,7 @@ export const LessonRenderer = ({ data }) => {
           <KeyTakeaways
             key={index}
             items={block.items}
+            onRendered={onKeyTakeawaysRendered}
           />
         );
 

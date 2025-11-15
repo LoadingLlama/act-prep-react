@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Regenerate Learning Path</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 { color: #333; margin-top: 0; }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 10px 5px;
+    }
+    button:hover { background: #45a049; }
+    button:disabled { background: #ccc; cursor: not-allowed; }
+    .info { background: #e3f2fd; padding: 15px; border-radius: 4px; margin: 15px 0; }
+    .error { background: #ffebee; color: #c62828; padding: 15px; border-radius: 4px; margin: 15px 0; }
+    .success { background: #e8f5e9; color: #2e7d32; padding: 15px; border-radius: 4px; margin: 15px 0; }
+    pre { background: #f5f5f5; padding: 15px; border-radius: 4px; overflow-x: auto; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔄 Regenerate Learning Path</h1>
+    <div class="info">
+      <strong>This will:</strong>
+      <ol>
+        <li>Re-run the diagnostic analysis with fallback logic</li>
+        <li>Create weak lesson recommendations based on sections</li>
+        <li>Generate a new learning path with items</li>
+      </ol>
+    </div>
+
+    <button id="regenerateBtn" onclick="regeneratePath()">Regenerate Learning Path</button>
+
+    <div id="output"></div>
+  </div>
+
+  <script type="module">
+    const API_URL = 'http://localhost:3000';
+
+    window.regeneratePath = async function() {
+      const output = document.getElementById('output');
+      const regenerateBtn = document.getElementById('regenerateBtn');
+
+      regenerateBtn.disabled = true;
+      output.innerHTML = '<div class="info">⏳ Working...</div>';
+
+      try {
+        // This would need a server-side endpoint to trigger the analysis
+        // For now, show instructions to retake the test
+        output.innerHTML = `
+          <div class="info">
+            <h3>Option 1: Retake Diagnostic (Recommended)</h3>
+            <p>The easiest way is to retake the diagnostic test. The new code has fallback logic that will:</p>
+            <ul>
+              <li>Analyze performance by section even without lesson mappings</li>
+              <li>Create recommendations based on weak sections</li>
+              <li>Generate a learning path with 5 lessons per weak section</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+              <li>Clear browser storage (F12 → Application → Storage → Clear site data)</li>
+              <li>Go back to app</li>
+              <li>Retake diagnostic test</li>
+            </ol>
+          </div>
+
+          <div class="info">
+            <h3>Option 2: Manual SQL Fix (Advanced)</h3>
+            <p>Run this SQL in Supabase Dashboard to get all lessons:</p>
+            <pre>-- Get user_id from the diagnostic session
+SELECT user_id FROM diagnostic_test_sessions
+WHERE id = 'cdefcca4-ead0-4b45-83c2-4fe788a0a879';
+
+-- Get first 15 lessons (3 from each section) as recommendations
+INSERT INTO learning_path_items (learning_path_id, lesson_id, sequence_order, is_priority)
+SELECT
+  'a5eb38c8-f4d1-4387-b71b-8d99c06c66a2'::uuid,  -- Your active learning path ID
+  id,
+  ROW_NUMBER() OVER (ORDER BY lesson_key),
+  true
+FROM lessons
+WHERE lesson_key ~ '^(english|math|reading|science)_'
+LIMIT 15;</pre>
+          </div>
+        `;
+      } catch (err) {
+        output.innerHTML = `<div class="error">❌ Error: ${err.message}</div>`;
+      } finally {
+        regenerateBtn.disabled = false;
+      }
+    };
+  </script>
+</body>
+</html>

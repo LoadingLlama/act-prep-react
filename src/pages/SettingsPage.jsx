@@ -8,6 +8,7 @@ import { useAuth } from '../contexts/AuthContext';
 import ProfileService from '../services/api/profile.service';
 import { settingsStyles } from '../styles/settings.styles';
 import { HiBell, HiMoon, HiEnvelope, HiShieldCheck, HiTrash } from 'react-icons/hi2';
+import GoalsSettings from '../components/GoalsSettings';
 
 const SettingsPage = () => {
   const { user, signOut, resetPassword } = useAuth();
@@ -236,6 +237,11 @@ const SettingsPage = () => {
               </label>
             </div>
           </div>
+        </div>
+
+        {/* Study Goals */}
+        <div style={{ marginBottom: '2rem' }}>
+          <GoalsSettings />
         </div>
 
         {/* Security */}

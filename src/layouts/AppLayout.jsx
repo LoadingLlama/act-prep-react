@@ -169,13 +169,54 @@ export default function AppLayout() {
   };
 
   const updateLessonProgress = async (lessonId, status) => {
+    console.log(`🎯 [${new Date().toISOString()}] updateLessonProgress called: ${lessonId} → ${status}`);
+    const currentStatus = lessonProgress[lessonId];
+    console.log(`   Current status in state: ${currentStatus}`);
+
+    // Skip if status is the same (avoid unnecessary updates)
+    if (currentStatus === status) {
+      console.log(`   ℹ️ Status unchanged, skipping update`);
+      return;
+    }
+
+    // Skip if trying to mark as in-progress when already completed
+    if (status === 'in-progress' && currentStatus === 'completed') {
+      console.log(`   ℹ️ Lesson already completed, not reverting to in-progress`);
+      return;
+    }
+
     // Update local state immediately for responsiveness
-    const newProgress = { ...lessonProgress, [lessonId]: status };
-    setLessonProgress(newProgress);
+    console.log(`📥 Setting local state for ${lessonId}: ${currentStatus} → ${status}`);
+    setLessonProgress(prevProgress => {
+      // Double-check at the moment of setState
+      if (prevProgress[lessonId] === status) {
+        console.log(`   ℹ️ Status already ${status}, no change needed`);
+        return prevProgress;
+      }
+      if (status === 'in-progress' && prevProgress[lessonId] === 'completed') {
+        console.log(`   ℹ️ Preventing downgrade from completed to in-progress`);
+        return prevProgress;
+      }
+      const newProgress = { ...prevProgress, [lessonId]: status };
+      console.log(`✅ Local state will be updated for ${lessonId}: ${prevProgress[lessonId]} → ${status}`);
+      return newProgress;
+    });
 
     // Sync to database in background
     if (user) {
-      await updateProgress(user.id, lessonId, status);
+      try {
+        console.log(`🔄 Starting database sync for ${lessonId}...`);
+        const success = await updateProgress(user.id, lessonId, status);
+        if (success) {
+          console.log(`✅ [${new Date().toISOString()}] Database synced for ${lessonId} → ${status}`);
+        } else {
+          console.error(`❌ [${new Date().toISOString()}] Failed to update database for ${lessonId}`);
+          // Optionally revert local state on failure
+        }
+      } catch (error) {
+        console.error(`❌ [${new Date().toISOString()}] Error updating database for ${lessonId}:`, error);
+        // Optionally revert local state on error
+      }
     }
   };
 

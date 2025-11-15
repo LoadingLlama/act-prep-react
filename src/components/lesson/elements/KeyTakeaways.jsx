@@ -6,6 +6,7 @@
  *
  * Props:
  * - items (array): Array of takeaway strings
+ * - onRendered (function): Optional callback when key takeaways are rendered
  *
  * Example:
  * <KeyTakeaways items={[
@@ -21,16 +22,26 @@
  * etc.
  */
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { lessonStyles } from '../styles/lessonComponents.styles';
 
-export const KeyTakeaways = ({ items }) => {
+export const KeyTakeaways = ({ items, onRendered }) => {
   const classes = lessonStyles;
+  const hasCalledCallback = useRef(false);
 
   console.log('✅ Rendering KeyTakeaways:', {
     itemsCount: items.length
   });
+
+  // Call onRendered callback when key takeaways are displayed (only once)
+  useEffect(() => {
+    if (onRendered && typeof onRendered === 'function' && !hasCalledCallback.current) {
+      console.log('✅ Key Takeaways loaded - marking lesson as completed');
+      hasCalledCallback.current = true;
+      onRendered();
+    }
+  }, [onRendered]);
 
   return (
     <div style={classes.keyTakeaways}>
@@ -48,7 +59,8 @@ export const KeyTakeaways = ({ items }) => {
 };
 
 KeyTakeaways.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.string).isRequired
+  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onRendered: PropTypes.func
 };
 
 console.log('✅ KeyTakeaways component loaded');

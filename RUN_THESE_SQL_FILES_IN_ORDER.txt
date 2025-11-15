@@ -1,0 +1,91 @@
+================================================================
+📋 SQL FILES TO RUN - IN THIS EXACT ORDER
+================================================================
+
+⚠️  IMPORTANT: DO NOT run the .md files! They are documentation only!
+    Only run files ending in .sql
+
+================================================================
+STEP 1: Fix Practice Test IDs (Required for diagnostic test)
+================================================================
+
+FILE TO RUN: FIX_ALL_PRACTICE_TESTS.sql
+
+What it does:
+- Clears old test results with wrong IDs
+- Renumbers all 7 practice tests (1,505 questions)
+- Eliminates 450+ ID collisions
+- Adds unique constraint for diagnostic_test_results
+
+How to run:
+1. Open Supabase Dashboard → SQL Editor
+2. Open the file: FIX_ALL_PRACTICE_TESTS.sql
+3. Copy ALL contents
+4. Paste into Supabase SQL Editor
+5. Click "Run"
+
+Expected result: You should see ✅ messages for each test
+
+================================================================
+STEP 2: Fix Lesson Performance & Profile Updates
+================================================================
+
+FILE TO RUN: FIX_USER_LESSON_PERFORMANCE_AND_PROFILES.sql
+
+What it does:
+- Creates user_lesson_performance table with proper RLS
+- Adds diagnostic_completed column to profiles
+- Fixes RLS policies for both tables
+- Eliminates 406 and 400 errors
+
+How to run:
+1. Open Supabase Dashboard → SQL Editor
+2. Open the file: FIX_USER_LESSON_PERFORMANCE_AND_PROFILES.sql
+3. Copy ALL contents
+4. Paste into Supabase SQL Editor
+5. Click "Run"
+
+Expected result: You should see ✅ messages confirming table creation
+
+================================================================
+DOCUMENTATION FILES (DO NOT RUN AS SQL!)
+================================================================
+
+These are MARKDOWN (.md) files for reference only:
+- PRACTICE_TEST_ID_SCHEME.md  ← Documentation about ID allocation
+
+DO NOT copy these into SQL Editor! They contain markdown formatting
+(```, tables, etc.) that will cause syntax errors if run as SQL.
+
+================================================================
+AFTER RUNNING THE SQL FILES
+================================================================
+
+1. Clear browser storage:
+   - Open DevTools (F12)
+   - Application → Storage → Clear site data
+
+2. Refresh the page
+
+3. Retake the diagnostic test
+
+4. Verify results:
+   ✅ All 215 questions save (100%)
+   ✅ No 406 errors
+   ✅ No 400 errors
+   ✅ Learning path generates successfully
+   ✅ Profile updates correctly
+
+================================================================
+SUMMARY
+================================================================
+
+Run these 2 SQL files in order:
+1. FIX_ALL_PRACTICE_TESTS.sql
+2. FIX_USER_LESSON_PERFORMANCE_AND_PROFILES.sql
+
+Do NOT run:
+- PRACTICE_TEST_ID_SCHEME.md (documentation only)
+- Any other .md files
+
+================================================================

@@ -48,30 +48,58 @@ export async function getAllProgress(userId) {
  * @returns {Promise<boolean>} Success status
  */
 export async function updateProgress(userId, lessonId, status) {
-  console.log(`📝 Updating progress: ${lessonId} → ${status}`);
+  console.log(`📝 [${new Date().toISOString()}] Updating progress: ${lessonId} → ${status}`);
 
   try {
-    // Upsert (insert or update)
-    const { error } = await supabase
+    // Get current status from database first to prevent downgrades
+    const { data: currentData } = await supabase
       .from('lesson_progress')
-      .upsert({
-        user_id: userId,
-        lesson_id: lessonId,
-        status: status,
-        last_accessed_at: new Date().toISOString()
-      }, {
+      .select('status')
+      .eq('user_id', userId)
+      .eq('lesson_id', lessonId)
+      .maybeSingle();
+
+    // Prevent downgrade from completed to in-progress
+    if (currentData?.status === 'completed' && status === 'in-progress') {
+      console.log(`⚠️  Preventing downgrade: ${lessonId} is already completed`);
+      return true; // Return true because the lesson is already at a higher state
+    }
+
+    // Prepare upsert data
+    const updateData = {
+      user_id: userId,
+      lesson_id: lessonId,
+      status: status,
+      last_accessed_at: new Date().toISOString()
+    };
+
+    // Add completed_at timestamp if status is completed
+    if (status === 'completed') {
+      updateData.completed_at = new Date().toISOString();
+      console.log(`✅ Setting completed_at timestamp for ${lessonId}`);
+    }
+
+    console.log(`📤 Sending upsert request for ${lessonId}...`);
+
+    // Upsert (insert or update)
+    const { data, error } = await supabase
+      .from('lesson_progress')
+      .upsert(updateData, {
         onConflict: 'user_id,lesson_id'
-      });
+      })
+      .select();
 
     if (error) {
-      console.error('❌ Error updating progress:', error);
+      console.error(`❌ [${new Date().toISOString()}] Error updating progress:`, error);
+      console.error('Error details:', error);
       return false;
     }
 
-    console.log(`✅ Progress updated: ${lessonId}`);
+    console.log(`✅ [${new Date().toISOString()}] Database updated successfully for ${lessonId}:`, data);
     return true;
   } catch (error) {
-    console.error('❌ Error in updateProgress:', error);
+    console.error(`❌ [${new Date().toISOString()}] Exception in updateProgress:`, error);
+    console.error('Exception details:', error);
     return false;
   }
 }

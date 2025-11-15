@@ -119,18 +119,18 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
         });
       }
 
-      // Handle correct_answer properly - check for various column name variations
-      const correctAnswerIndex = q.correct_answer ?? q.correct_naswer ?? q.answer_index ?? 0;
-      const correctAnswerLetter = String.fromCharCode(65 + correctAnswerIndex);
+      // correct_answer is already stored as a letter (A, B, C, D, etc.) in the database
+      const correctAnswerLetter = q.correct_answer || 'A';
 
       if (idx === 0) {
-        console.log('🔍 Question correct_answer debug:', {
-          q_correct_answer: q.correct_answer,
-          q_correct_naswer: q.correct_naswer,
-          q_answer_index: q.answer_index,
-          finalIndex: correctAnswerIndex,
+        console.log('🔍 DiagnosticReview first question:', {
+          question_number: q.question_number,
+          raw_correct_answer: q.correct_answer,
+          correct_answer_type: typeof q.correct_answer,
           finalLetter: correctAnswerLetter,
-          allKeys: Object.keys(q).filter(k => k.includes('answer') || k.includes('correct'))
+          will_show_as: `Answer ${correctAnswerLetter}`,
+          allKeys: Object.keys(q),
+          answer_related_keys: Object.keys(q).filter(k => k.toLowerCase().includes('answer') || k.toLowerCase().includes('correct'))
         });
       }
 
@@ -139,7 +139,7 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
         question_number: q.question_number,
         text: q.question_text, // practice-test.html expects 'text', not 'question_text'
         answers: answers, // practice-test.html expects 'answers', not 'choices'
-        correctAnswer: correctAnswerLetter, // 0 -> A, 1 -> B, etc.
+        correctAnswer: correctAnswerLetter, // Already a letter (A, B, C, D) from database
         explanation: q.explanation || null,
         passage: q.passage || null,
         passage_title: q.passage_title || null,

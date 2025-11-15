@@ -4,7 +4,7 @@
  * Integrates with adaptive learning algorithm for personalized recommendations
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { HiXMark, HiArrowRight } from 'react-icons/hi2';
 import { usePracticeTestStyles } from '../styles/pages/practice-test.styles';
 import DiagnosticService from '../services/api/diagnostic.service';
@@ -23,7 +23,16 @@ const transformOnboardingToGoals = (onboardingData) => {
     exam_date: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
     daily_study_minutes: 30,
     target_score: 28,
-    study_days_per_week: 5
+    current_score: null,
+    study_days_per_week: 5,
+    study_hours_per_week: 6,
+    preferred_study_time: '',
+    focus_sections: [],
+    weak_areas: [],
+    learning_pace: 'moderate',
+    reminder_frequency: 'daily',
+    grade: '',
+    study_experience: 'never'
   };
 
   if (!onboardingData) return defaults;
@@ -34,8 +43,21 @@ const transformOnboardingToGoals = (onboardingData) => {
     exam_date = new Date(onboardingData.testDate).toISOString();
   }
 
-  // Transform study time (hours/week → minutes/day)
-  let daily_study_minutes = defaults.daily_study_minutes;
+  // Transform current score
+  let current_score = null;
+  if (onboardingData.currentScore && onboardingData.currentScore !== 'not-taken') {
+    const scoreRanges = {
+      '1-15': 13,
+      '16-20': 18,
+      '21-25': 23,
+      '26-30': 28,
+      '31-36': 33
+    };
+    current_score = scoreRanges[onboardingData.currentScore] || null;
+  }
+
+  // Transform study hours per week
+  let study_hours_per_week = defaults.study_hours_per_week;
   if (onboardingData.studyTimePerWeek) {
     const hoursPerWeek = {
       '2-4': 3,
@@ -43,10 +65,12 @@ const transformOnboardingToGoals = (onboardingData) => {
       '8-10': 9,
       '10+': 12
     }[onboardingData.studyTimePerWeek] || 6;
-
-    // Convert to daily minutes (assuming 5 study days/week)
-    daily_study_minutes = Math.round((hoursPerWeek * 60) / 5);
+    study_hours_per_week = hoursPerWeek;
   }
+
+  // Calculate daily_study_minutes from hours per week and days per week
+  const days_per_week = onboardingData.studyDaysPerWeek ? parseInt(onboardingData.studyDaysPerWeek) : 5;
+  const daily_study_minutes = Math.round((study_hours_per_week * 60) / days_per_week);
 
   // Transform target score
   let target_score = defaults.target_score;
@@ -62,10 +86,17 @@ const transformOnboardingToGoals = (onboardingData) => {
 
   return {
     exam_date,
+    current_score,
     daily_study_minutes,
     target_score,
-    study_days_per_week: 5,
+    study_days_per_week: days_per_week,
+    study_hours_per_week,
+    preferred_study_time: onboardingData.preferredStudyTime || '',
     focus_sections: onboardingData.concernedSections || [],
+    weak_areas: onboardingData.concernedSections || [], // Use concernedSections for both focus and weak areas
+    learning_pace: onboardingData.learningPace || 'moderate',
+    reminder_frequency: onboardingData.reminderFrequency || 'daily',
+    grade: onboardingData.grade || '',
     study_experience: onboardingData.studyExperience || 'never'
   };
 };
@@ -85,11 +116,18 @@ const getUserGoals = async (userId) => {
     if (existingGoals) {
       return {
         exam_date: existingGoals.target_exam_date,
+        current_score: existingGoals.current_score,
         daily_study_minutes: existingGoals.daily_study_minutes,
         target_score: existingGoals.target_score,
         study_days_per_week: existingGoals.study_days_per_week || 5,
+        study_hours_per_week: existingGoals.study_hours_per_week || 6,
+        preferred_study_time: existingGoals.preferred_study_time || '',
         focus_sections: existingGoals.focus_sections || [],
-        study_experience: 'never',
+        weak_areas: existingGoals.weak_areas || [],
+        learning_pace: existingGoals.learning_pace || 'moderate',
+        reminder_frequency: existingGoals.reminder_frequency || 'daily',
+        grade: existingGoals.grade || '',
+        study_experience: existingGoals.study_experience || 'never',
         review_day: existingGoals.review_day,
         mock_exam_day: existingGoals.mock_exam_day
       };
@@ -108,10 +146,18 @@ const getUserGoals = async (userId) => {
     await supabase.from('user_goals').upsert({
       user_id: userId,
       target_exam_date: goals.exam_date,
+      current_score: goals.current_score,
       daily_study_minutes: goals.daily_study_minutes,
       target_score: goals.target_score,
       study_days_per_week: goals.study_days_per_week,
-      focus_sections: goals.focus_sections
+      study_hours_per_week: goals.study_hours_per_week,
+      preferred_study_time: goals.preferred_study_time,
+      focus_sections: goals.focus_sections,
+      weak_areas: goals.weak_areas,
+      learning_pace: goals.learning_pace,
+      reminder_frequency: goals.reminder_frequency,
+      grade: goals.grade,
+      study_experience: goals.study_experience
     });
 
     logger.info('DiagnosticTest', 'getUserGoals', { userId, goals });
@@ -182,6 +228,9 @@ const DiagnosticTest = ({ onClose }) => {
   const [showInsights, setShowInsights] = useState(false);
   const [insightsData, setInsightsData] = useState(null);
   const [selectedQuestion, setSelectedQuestion] = useState(null);
+
+  // Ref for iframe to send messages
+  const iframeRef = useRef(null);
 
   // Countdown timer effect
   useEffect(() => {
@@ -366,6 +415,32 @@ const DiagnosticTest = ({ onClose }) => {
         questionsCount: questions.length,
         duration
       });
+
+      // Tell iframe to reload questions from sessionStorage
+      // (Skip for initial English load - iframe will load on its own)
+      if (currentSection !== 'english' && iframeRef.current?.contentWindow) {
+        console.log('📤 Sending LOAD_NEXT_SECTION message to iframe:', {
+          section: currentSection,
+          questionsCount: questions.length,
+          iframeExists: !!iframeRef.current,
+          contentWindowExists: !!iframeRef.current?.contentWindow
+        });
+
+        // Add small delay to ensure sessionStorage is fully written
+        setTimeout(() => {
+          iframeRef.current.contentWindow.postMessage({
+            type: 'LOAD_NEXT_SECTION'
+          }, '*');
+          console.log('✅ LOAD_NEXT_SECTION message sent');
+        }, 100);
+      } else {
+        console.log('⏭️ Skipping LOAD_NEXT_SECTION (English section or iframe not ready):', {
+          currentSection,
+          isEnglish: currentSection === 'english',
+          iframeExists: !!iframeRef.current,
+          contentWindowExists: !!iframeRef.current?.contentWindow
+        });
+      }
     }
   }, [testStarted, questions, currentSection]);
 
@@ -467,81 +542,47 @@ const DiagnosticTest = ({ onClose }) => {
   const processTestResultsInBackground = async (allSections) => {
     try {
       console.log('🔄 Processing started...');
-      setProcessingStep('Loading questions...');
-      setProcessingProgress(10);
+      setProcessingStep('Loading your test questions...');
+      setProcessingProgress(5);
 
       // Load all questions from all sections for review
       console.log('📚 Loading all questions from all sections for review...');
       const allDiagnosticQuestions = await DiagnosticService.getDiagnosticQuestions(); // Gets all sections
       console.log('✅ Loaded all diagnostic questions:', allDiagnosticQuestions.length);
       setProcessingProgress(20);
+      setProcessingStep('Preparing to save your answers...');
 
       // Flatten all question results from all sections
+      // CRITICAL: Preserve section information for each question
       const allQuestionResults = [];
       allSections.forEach(sectionResult => {
         sectionResult.questions.forEach(q => {
-          allQuestionResults.push(q);
+          allQuestionResults.push({
+            ...q,
+            section: sectionResult.section  // Add section to each question
+          });
         });
       });
+
+      // Verify section distribution
+      const questionsBySection = allQuestionResults.reduce((acc, q) => {
+        acc[q.section] = (acc[q.section] || 0) + 1;
+        return acc;
+      }, {});
+      console.log('📊 Questions by section before saving:', questionsBySection);
 
       logger.info('DiagnosticTest', 'savingAnswers', {
         totalAnswers: allQuestionResults.length
       });
 
-      setProcessingStep('Saving your answers...');
-      setProcessingProgress(30);
-
-      // Save each answer to diagnostic_test_results
-      console.log('💾 Saving question results to database...');
-      for (const questionResult of allQuestionResults) {
-        // Find question by question number and match section if available
-        const question = allDiagnosticQuestions.find(q =>
-          q.question_number === questionResult.questionNum
-        );
-
-        if (!question) {
-          console.warn('❌ Question not found for number:', questionResult.questionNum);
-          continue;
-        }
-
-        if (!question.id) {
-          console.warn('❌ Question missing UUID:', { questionNum: questionResult.questionNum, question });
-          continue;
-        }
-
-        console.log(`Saving Q${questionResult.questionNum}:`, {
-          questionId: question.id,
-          userAnswer: questionResult.userAnswer,
-          isCorrect: questionResult.isCorrect
-        });
-
-        try {
-          const result = await DiagnosticService.saveDiagnosticAnswer(
-            userId,
-            sessionId,
-            question.id, // question UUID from database
-            questionResult.userAnswer,
-            questionResult.isCorrect,
-            0 // Time spent - not tracked in current implementation
-          );
-
-          if (result === null) {
-            console.error(`❌ Failed to save Q${questionResult.questionNum}: Service returned null`);
-          }
-        } catch (saveError) {
-          console.error(`❌ Failed to save Q${questionResult.questionNum}:`, {
-            error: saveError.message,
-            questionId: question.id,
-            sessionId,
-            userId
-          });
-          // Continue with other questions even if one fails
-        }
-      }
+      setProcessingProgress(25);
 
       // Calculate final scores
-      const correctAnswers = allQuestionResults.filter(q => q.isCorrect).length;
+      setProcessingProgress(45);
+      setProcessingStep('Calculating your scores...');
+
       const totalQuestions = allQuestionResults.length;
+      const correctAnswers = allQuestionResults.filter(q => q.isCorrect).length;
       const scorePercentage = (correctAnswers / totalQuestions) * 100;
 
       logger.info('DiagnosticTest', 'completingSession', {
@@ -551,8 +592,7 @@ const DiagnosticTest = ({ onClose }) => {
       });
 
       console.log('✅ Question results saved. Completing session...');
-      setProcessingStep('Calculating your scores...');
-      setProcessingProgress(50);
+      setProcessingProgress(55);
 
       // Complete diagnostic session
       await DiagnosticService.completeDiagnosticSession(
@@ -562,8 +602,8 @@ const DiagnosticTest = ({ onClose }) => {
       );
 
       console.log('✅ Session completed. Saving user goals...');
-      setProcessingStep('Saving your goals...');
-      setProcessingProgress(60);
+      setProcessingStep('Saving your study preferences...');
+      setProcessingProgress(65);
 
       // Save user goals from onboarding data
       logger.info('DiagnosticTest', 'savingUserGoals', { userId });
@@ -625,20 +665,198 @@ const DiagnosticTest = ({ onClose }) => {
 
       logger.info('DiagnosticTest', 'userGoalsSaved', { userId });
 
-      setProcessingStep('Analyzing your performance...');
+      setProcessingStep('Saving your test results...');
       setProcessingProgress(70);
 
-      // Trigger diagnostic analysis algorithm
+      // Save each question result to diagnostic_test_results table (deduplicated)
+      // Remove duplicates by section + question number (e.g., "english:1", "math:1")
+      const uniqueResults = [];
+      const seenQuestions = new Set();
+
+      allQuestionResults.forEach(result => {
+        const uniqueKey = `${result.section}:${result.questionNum}`;
+        if (!seenQuestions.has(uniqueKey)) {
+          seenQuestions.add(uniqueKey);
+          uniqueResults.push(result);
+        }
+      });
+
+      console.log('💾 Saving', uniqueResults.length, 'unique question results to database (removed', allQuestionResults.length - uniqueResults.length, 'duplicates)');
+      logger.info('DiagnosticTest', 'savingResults', { sessionId, resultsCount: uniqueResults.length, duplicatesRemoved: allQuestionResults.length - uniqueResults.length });
+
+      // VALIDATION: Count expected questions per section
+      const expectedCounts = {
+        english: uniqueResults.filter(r => r.section === 'english').length,
+        math: uniqueResults.filter(r => r.section === 'math').length,
+        reading: uniqueResults.filter(r => r.section === 'reading').length,
+        science: uniqueResults.filter(r => r.section === 'science').length
+      };
+
+      console.log('\n📋 EXPECTED QUESTION COUNTS BY SECTION:');
+      console.log(`  English:  ${expectedCounts.english} questions (should be ~75)`);
+      console.log(`  Math:     ${expectedCounts.math} questions (should be ~60)`);
+      console.log(`  Reading:  ${expectedCounts.reading} questions (should be ~40)`);
+      console.log(`  Science:  ${expectedCounts.science} questions (should be ~40)`);
+      console.log(`  TOTAL:    ${uniqueResults.length} questions (should be 215)\n`);
+
+      if (uniqueResults.length !== 215) {
+        console.warn(`⚠️  WARNING: Expected 215 questions but got ${uniqueResults.length}!`);
+      }
+
+      // Create efficient lookup map: section:questionNum -> question
+      const questionLookup = new Map();
+      allDiagnosticQuestions.forEach(q => {
+        const key = `${q.section}:${q.question_number}`;
+        questionLookup.set(key, q);
+      });
+
+      console.log(`📚 Question lookup map created: ${questionLookup.size} entries`);
+      console.log('📋 Sample lookup keys:', Array.from(questionLookup.keys()).slice(0, 10).join(', '));
+
+      // Track saving statistics by section
+      const saveStats = {
+        english: { attempted: 0, saved: 0, failed: 0, questionNumbers: [] },
+        math: { attempted: 0, saved: 0, failed: 0, questionNumbers: [] },
+        reading: { attempted: 0, saved: 0, failed: 0, questionNumbers: [] },
+        science: { attempted: 0, saved: 0, failed: 0, questionNumbers: [] }
+      };
+
+      // Save each question result
+      console.log('\n💾 Starting to save answers to database...\n');
+
+      let progressCounter = 0;
+      for (const result of uniqueResults) {
+        const section = result.section;
+
+        if (!section) {
+          console.error('❌ CRITICAL: Result missing section!', result);
+          continue;
+        }
+
+        saveStats[section].attempted++;
+
+        // Look up question using section:questionNum key
+        const lookupKey = `${section}:${result.questionNum}`;
+        const question = questionLookup.get(lookupKey);
+
+        if (!question?.id) {
+          console.error(`❌ Question not found - Key: ${lookupKey}`, result);
+          saveStats[section].failed++;
+          continue;
+        }
+
+        try {
+          const saveResult = await DiagnosticService.saveDiagnosticAnswer(
+            userId,
+            sessionId,
+            question.id,
+            result.userAnswer,
+            result.isCorrect,
+            result.timeSpent || 0
+          );
+
+          if (saveResult === null) {
+            console.error(`❌ Failed to save answer for ${lookupKey}`);
+            saveStats[section].failed++;
+          } else {
+            saveStats[section].saved++;
+            saveStats[section].questionNumbers.push(result.questionNum);
+          }
+        } catch (error) {
+          console.error(`❌ Exception saving answer for ${lookupKey}:`, error);
+          saveStats[section].failed++;
+        }
+
+        // Progress logging every 50 questions
+        progressCounter++;
+        if (progressCounter % 50 === 0) {
+          const totalSoFar = Object.values(saveStats).reduce((sum, s) => sum + s.saved, 0);
+          console.log(`📊 Progress: ${totalSoFar}/${uniqueResults.length} questions saved (${((totalSoFar/uniqueResults.length)*100).toFixed(1)}%)`);
+        }
+      }
+
+      // Log final statistics
+      console.log('\n═══════════════════════════════════════════════════════');
+      console.log('📊 FINAL SAVE STATISTICS BY SECTION');
+      console.log('═══════════════════════════════════════════════════════\n');
+
+      Object.keys(saveStats).forEach(section => {
+        const stats = saveStats[section];
+        if (stats.attempted > 0) {
+          const sectionName = section.toUpperCase();
+          const percentage = ((stats.saved / stats.attempted) * 100).toFixed(1);
+          console.log(`${sectionName}:`);
+          console.log(`  Attempted: ${stats.attempted}`);
+          console.log(`  Saved:     ${stats.saved} (${percentage}%)`);
+          console.log(`  Failed:    ${stats.failed}`);
+
+          // Show question number ranges
+          if (stats.questionNumbers.length > 0) {
+            const sortedQs = stats.questionNumbers.sort((a, b) => a - b);
+            const ranges = [];
+            let rangeStart = sortedQs[0];
+            let rangeEnd = sortedQs[0];
+
+            for (let i = 1; i < sortedQs.length; i++) {
+              if (sortedQs[i] === rangeEnd + 1) {
+                rangeEnd = sortedQs[i];
+              } else {
+                ranges.push(rangeStart === rangeEnd ? `${rangeStart}` : `${rangeStart}-${rangeEnd}`);
+                rangeStart = sortedQs[i];
+                rangeEnd = sortedQs[i];
+              }
+            }
+            ranges.push(rangeStart === rangeEnd ? `${rangeStart}` : `${rangeStart}-${rangeEnd}`);
+
+            console.log(`  Questions: ${ranges.join(', ')}`);
+          }
+          console.log();
+        }
+      });
+
+      const totalSaved = Object.values(saveStats).reduce((sum, s) => sum + s.saved, 0);
+      const totalFailed = Object.values(saveStats).reduce((sum, s) => sum + s.failed, 0);
+      const totalPercentage = ((totalSaved / uniqueResults.length) * 100).toFixed(1);
+
+      console.log('═══════════════════════════════════════════════════════');
+      console.log(`TOTAL: ${totalSaved}/${uniqueResults.length} saved (${totalPercentage}%)`);
+      console.log('═══════════════════════════════════════════════════════\n');
+
+      if (totalSaved === 215) {
+        console.log('✅✅✅ SUCCESS: ALL 215 QUESTIONS SAVED TO DATABASE! ✅✅✅\n');
+      } else if (totalSaved >= 200) {
+        console.log(`✅ GOOD: ${totalSaved} questions saved (${215 - totalSaved} missing)\n`);
+      } else {
+        console.warn(`⚠️  WARNING: Only ${totalSaved}/215 questions saved!\n`);
+      }
+
+      if (totalFailed > 0) {
+        console.error(`❌ CRITICAL: ${totalFailed} answers failed to save!`);
+        throw new Error(`Failed to save ${totalFailed} diagnostic answers`);
+      }
+
+      console.log('✅ All question results saved to database successfully\n');
+
+      setProcessingStep('Analyzing your performance across all sections...');
+      setProcessingProgress(73);
+
+      // Trigger diagnostic analysis algorithm (it will load results from DB)
       logger.info('DiagnosticTest', 'analyzingResults', { sessionId });
       const analysis = await DiagnosticAnalysisService.analyzeDiagnosticResults(
         userId,
         sessionId
+        // No third parameter - let it load from diagnostic_test_results table
       );
+
+      setProcessingProgress(75);
+      setProcessingStep('Identifying your strengths and weaknesses...');
 
       logger.info('DiagnosticTest', 'analysisComplete', {
         weakLessons: analysis.weak_lessons?.length || 0,
         overallScore: analysis.overall_score
       });
+
+      setProcessingProgress(80);
 
       // Get user goals from onboarding data
       const userGoals = await getUserGoals(userId);
@@ -749,6 +967,18 @@ const DiagnosticTest = ({ onClose }) => {
       const allSections = results.allSections || [];
 
       console.log('📊 Test complete! Processing results...');
+      console.log('📦 Raw results from sessionStorage:', {
+        hasAllSections: !!results.allSections,
+        allSectionsCount: allSections.length,
+        allSections: allSections.map(s => ({
+          section: s.section,
+          questionsCount: s.questions?.length || 0,
+          correct: s.correct,
+          total: s.total
+        })),
+        totalCorrect: results.totalCorrect,
+        totalQuestions: results.totalQuestions
+      });
 
       // Set localStorage flag to indicate processing has started
       localStorage.setItem('diagnosticProcessing', 'true');
@@ -789,13 +1019,19 @@ const DiagnosticTest = ({ onClose }) => {
    */
   if (processing) {
     return (
-      <div className={classes.container}>
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        width: '100%',
+        backgroundColor: 'transparent'
+      }}>
         <div style={{
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          minHeight: '400px',
           padding: '3rem 2rem',
           textAlign: 'center'
         }}>
@@ -831,26 +1067,17 @@ const DiagnosticTest = ({ onClose }) => {
           <div style={{
             width: '100%',
             maxWidth: '400px',
-            height: '12px',
+            height: '8px',
             background: '#f3f4f6',
             borderRadius: '9999px',
-            overflow: 'hidden',
-            marginBottom: '0.5rem'
+            overflow: 'hidden'
           }}>
             <div style={{
               height: '100%',
               background: 'linear-gradient(90deg, #b91c1c 0%, #dc2626 100%)',
               width: `${processingProgress}%`,
-              transition: 'width 0.3s ease'
+              transition: 'width 0.5s ease'
             }} />
-          </div>
-
-          <div style={{
-            fontSize: '0.875rem',
-            color: '#9ca3af',
-            fontWeight: '500'
-          }}>
-            {processingProgress}%
           </div>
 
           <p style={{
@@ -879,133 +1106,132 @@ const DiagnosticTest = ({ onClose }) => {
     return (
       <div className={classes.container}>
         <div style={{
-          padding: '3rem 2rem',
-          maxWidth: '800px',
+          padding: '2rem 1.5rem',
+          maxWidth: '900px',
           margin: '0 auto'
         }}>
           {/* Success Header */}
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
             <div style={{
-              width: '80px',
-              height: '80px',
-              margin: '0 auto 1.5rem',
+              width: '60px',
+              height: '60px',
+              margin: '0 auto 1rem',
               background: '#dcfce7',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
             }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
             </div>
 
             <h2 style={{
-              fontSize: '2rem',
+              fontSize: '1.75rem',
               fontWeight: '700',
               color: '#1a1a1a',
-              marginBottom: '0.75rem'
+              marginBottom: '0.5rem'
             }}>
               Your Personalized Learning Path is Ready!
             </h2>
 
             <p style={{
-              fontSize: '1.125rem',
+              fontSize: '1rem',
               color: '#6b7280',
-              lineHeight: '1.6'
+              lineHeight: '1.5'
             }}>
-              Based on your diagnostic test results, we've created a custom study plan designed specifically for you.
+              We've created a custom study plan based on your diagnostic test results.
             </p>
           </div>
 
           {/* Score Overview */}
           <div style={{
             background: '#f9fafb',
-            borderRadius: '12px',
-            padding: '2rem',
-            marginBottom: '2rem'
+            borderRadius: '8px',
+            padding: '1.5rem',
+            marginBottom: '1.5rem'
           }}>
             <h3 style={{
-              fontSize: '1.25rem',
+              fontSize: '1.125rem',
               fontWeight: '600',
               color: '#1a1a1a',
-              marginBottom: '1.5rem'
+              marginBottom: '1rem'
             }}>
               Your Performance
             </h3>
 
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-              gap: '1rem',
-              marginBottom: '1.5rem'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
+              gap: '0.75rem'
             }}>
               <div style={{
                 background: 'white',
-                padding: '1rem',
-                borderRadius: '8px',
+                padding: '0.875rem',
+                borderRadius: '6px',
                 textAlign: 'center'
               }}>
-                <div style={{ fontSize: '2rem', fontWeight: '700', color: '#b91c1c' }}>
+                <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#b91c1c' }}>
                   {analysisData.overall_score || 0}
                 </div>
-                <div style={{ fontSize: '0.875rem', color: '#6b7280', marginTop: '0.25rem' }}>
-                  Overall Score
+                <div style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '0.25rem' }}>
+                  Overall
                 </div>
               </div>
 
               <div style={{
                 background: 'white',
-                padding: '1rem',
-                borderRadius: '8px',
+                padding: '0.875rem',
+                borderRadius: '6px',
                 textAlign: 'center'
               }}>
-                <div style={{ fontSize: '2rem', fontWeight: '700', color: '#dc2626' }}>
+                <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#dc2626' }}>
                   {analysisData.english_score || 0}
                 </div>
-                <div style={{ fontSize: '0.875rem', color: '#6b7280', marginTop: '0.25rem' }}>
+                <div style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '0.25rem' }}>
                   English
                 </div>
               </div>
 
               <div style={{
                 background: 'white',
-                padding: '1rem',
-                borderRadius: '8px',
+                padding: '0.875rem',
+                borderRadius: '6px',
                 textAlign: 'center'
               }}>
-                <div style={{ fontSize: '2rem', fontWeight: '700', color: '#dc2626' }}>
+                <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#dc2626' }}>
                   {analysisData.math_score || 0}
                 </div>
-                <div style={{ fontSize: '0.875rem', color: '#6b7280', marginTop: '0.25rem' }}>
+                <div style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '0.25rem' }}>
                   Math
                 </div>
               </div>
 
               <div style={{
                 background: 'white',
-                padding: '1rem',
-                borderRadius: '8px',
+                padding: '0.875rem',
+                borderRadius: '6px',
                 textAlign: 'center'
               }}>
-                <div style={{ fontSize: '2rem', fontWeight: '700', color: '#dc2626' }}>
+                <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#dc2626' }}>
                   {analysisData.reading_score || 0}
                 </div>
-                <div style={{ fontSize: '0.875rem', color: '#6b7280', marginTop: '0.25rem' }}>
+                <div style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '0.25rem' }}>
                   Reading
                 </div>
               </div>
 
               <div style={{
                 background: 'white',
-                padding: '1rem',
-                borderRadius: '8px',
+                padding: '0.875rem',
+                borderRadius: '6px',
                 textAlign: 'center'
               }}>
-                <div style={{ fontSize: '2rem', fontWeight: '700', color: '#dc2626' }}>
+                <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#dc2626' }}>
                   {analysisData.science_score || 0}
                 </div>
-                <div style={{ fontSize: '0.875rem', color: '#6b7280', marginTop: '0.25rem' }}>
+                <div style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '0.25rem' }}>
                   Science
                 </div>
               </div>
@@ -1016,89 +1242,84 @@ const DiagnosticTest = ({ onClose }) => {
           <div style={{
             background: 'linear-gradient(135deg, #fef2f2 0%, #ffffff 100%)',
             border: '2px solid #fee2e2',
-            borderRadius: '12px',
-            padding: '2rem',
-            marginBottom: '2rem'
+            borderRadius: '8px',
+            padding: '1.5rem',
+            marginBottom: '1.5rem'
           }}>
             <h3 style={{
-              fontSize: '1.25rem',
+              fontSize: '1.125rem',
               fontWeight: '600',
               color: '#1a1a1a',
-              marginBottom: '1rem'
+              marginBottom: '0.75rem'
             }}>
-              Why This Learning Path?
+              Your Learning Plan
             </h3>
 
             <div style={{
-              fontSize: '1rem',
+              fontSize: '0.95rem',
               color: '#374151',
-              lineHeight: '1.8'
+              lineHeight: '1.6'
             }}>
-              <p style={{ marginBottom: '1rem' }}>
-                Based on your diagnostic test, we identified <strong>{analysisData.weak_lessons?.length || 0} areas</strong> where you can improve the most. Your personalized {weeksUntilExam}-week study plan focuses on:
-              </p>
+              {analysisData.weak_lessons?.length > 0 ? (
+                <>
+                  <p style={{ marginBottom: '0.75rem' }}>
+                    We identified <strong>{analysisData.weak_lessons.length} areas</strong> for improvement. Your {weeksUntilExam}-week study plan focuses on:
+                  </p>
 
-              <ul style={{
-                listStyle: 'none',
-                padding: 0,
-                margin: '1rem 0'
-              }}>
-                {analysisData.weak_lessons?.slice(0, 5).map((lesson, index) => (
-                  <li key={index} style={{
-                    display: 'flex',
-                    alignItems: 'start',
-                    marginBottom: '0.75rem'
+                  <ul style={{
+                    listStyle: 'none',
+                    padding: 0,
+                    margin: '0.75rem 0'
                   }}>
-                    <span style={{
-                      background: '#b91c1c',
-                      color: 'white',
-                      borderRadius: '50%',
-                      width: '24px',
-                      height: '24px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '0.75rem',
-                      fontWeight: '600',
-                      marginRight: '0.75rem',
-                      flexShrink: 0,
-                      marginTop: '2px'
-                    }}>
-                      {index + 1}
-                    </span>
-                    <span>
-                      <strong>{lesson.lesson_name || lesson.lesson_id}</strong> – You got {lesson.correct_count || 0} out of {lesson.total_questions || 0} correct ({((lesson.accuracy_percentage || 0)).toFixed(0)}%)
-                    </span>
-                  </li>
-                ))}
-              </ul>
+                    {analysisData.weak_lessons.slice(0, 5).map((lesson, index) => (
+                      <li key={index} style={{
+                        display: 'flex',
+                        alignItems: 'start',
+                        marginBottom: '0.5rem',
+                        fontSize: '0.875rem'
+                      }}>
+                        <span style={{
+                          background: '#b91c1c',
+                          color: 'white',
+                          borderRadius: '50%',
+                          width: '20px',
+                          height: '20px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '0.7rem',
+                          fontWeight: '600',
+                          marginRight: '0.5rem',
+                          flexShrink: 0,
+                          marginTop: '1px'
+                        }}>
+                          {index + 1}
+                        </span>
+                        <span>
+                          <strong>{lesson.lesson_title || lesson.lesson_id}</strong> ({((lesson.accuracy || 0)).toFixed(0)}% accuracy)
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <p style={{ marginBottom: '0.75rem' }}>
+                  Your {weeksUntilExam}-week personalized study plan is ready! Start with the recommended lessons to build your skills.
+                </p>
+              )}
 
-              <p style={{ marginTop: '1.5rem', marginBottom: '1rem' }}>
+              <p style={{ marginTop: '1rem', marginBottom: '0' }}>
                 {isDefaultTimeline ? (
-                  <>
-                    Since you haven't set a specific test date, we've created a <strong>12-week plan</strong> that gives you plenty of time to master the material at a comfortable pace.
-                  </>
+                  <>We've created a <strong>12-week plan</strong> to help you master the material at your own pace.</>
                 ) : (
-                  <>
-                    With <strong>{weeksUntilExam} weeks</strong> until your test date, your study plan is optimized to help you reach your target score of <strong>{userGoalsData?.target_score || 28}</strong>.
-                  </>
+                  <>With <strong>{weeksUntilExam} weeks</strong> until your test, your plan is optimized to reach your target score of <strong>{userGoalsData?.target_score || 28}</strong>.</>
                 )}
-              </p>
-
-              <p style={{
-                marginTop: '1.5rem',
-                padding: '1rem',
-                background: 'white',
-                borderRadius: '8px',
-                borderLeft: '4px solid #b91c1c'
-              }}>
-                💡 <strong>Pro Tip:</strong> Your learning path prioritizes your weak areas first, then reinforces your strengths. Stick to the schedule and you'll see consistent improvement!
               </p>
             </div>
           </div>
 
           {/* CTA Button */}
-          <div style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
             <button
               onClick={() => {
                 setShowResults(false);
@@ -1108,9 +1329,9 @@ const DiagnosticTest = ({ onClose }) => {
                 background: '#b91c1c',
                 color: 'white',
                 border: 'none',
-                borderRadius: '8px',
-                padding: '1rem 2rem',
-                fontSize: '1rem',
+                borderRadius: '6px',
+                padding: '0.875rem 1.75rem',
+                fontSize: '0.95rem',
                 fontWeight: '600',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
@@ -1122,7 +1343,7 @@ const DiagnosticTest = ({ onClose }) => {
               onMouseLeave={(e) => e.target.style.background = '#b91c1c'}
             >
               Start Learning
-              <HiArrowRight style={{ fontSize: '1.25rem' }} />
+              <HiArrowRight style={{ fontSize: '1.125rem' }} />
             </button>
           </div>
         </div>
@@ -2223,6 +2444,7 @@ const DiagnosticTest = ({ onClose }) => {
         zIndex: 2000
       }}>
         <iframe
+          ref={iframeRef}
           key="diagnostic-test"
           src="/tests/practice-test.html"
           style={{

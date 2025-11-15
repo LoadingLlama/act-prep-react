@@ -177,8 +177,16 @@ const DiagnosticService = {
 
   /**
    * Save user's answer to a diagnostic question
+   * @param {string} userId - User ID (UUID)
+   * @param {string} sessionId - Session ID (UUID)
+   * @param {string} questionId - Question ID (UUID from practice test tables)
+   * @param {string} userAnswer - User's answer
+   * @param {boolean} isCorrect - Whether the answer was correct
+   * @param {number} timeSpent - Time spent in seconds
    */
   async saveDiagnosticAnswer(userId, sessionId, questionId, userAnswer, isCorrect, timeSpent) {
+    console.log(`💾 Saving diagnostic answer - Question: ${questionId}, Answer: ${userAnswer}, Correct: ${isCorrect}`);
+
     logger.debug('DiagnosticService', 'saveDiagnosticAnswer', {
       userId,
       sessionId,
@@ -187,7 +195,9 @@ const DiagnosticService = {
       timeSpent,
     });
 
-    const { data, error } = await supabase.from('diagnostic_test_results').insert([
+    // Save to diagnostic_test_results table
+    // Use upsert to prevent duplicates (in case same question is saved twice)
+    const { data, error } = await supabase.from('diagnostic_test_results').upsert([
       {
         user_id: userId,
         diagnostic_session_id: sessionId,
@@ -196,17 +206,21 @@ const DiagnosticService = {
         is_correct: isCorrect,
         time_spent_seconds: timeSpent,
       },
-    ]);
+    ], {
+      onConflict: 'diagnostic_session_id,question_id',
+      ignoreDuplicates: false // Update if exists
+    }).select(); // Return inserted data for verification
 
     if (error) {
-      console.error('❌ saveDiagnosticAnswer error:', {
+      console.error(`❌ FAILED TO SAVE DIAGNOSTIC ANSWER - Question ${questionId}:`, {
         message: error.message,
         details: error.details,
         hint: error.hint,
         code: error.code,
         userId,
         sessionId,
-        questionId
+        questionId,
+        questionIdType: typeof questionId
       });
       errorTracker.trackError(
         'DiagnosticService',
@@ -214,15 +228,15 @@ const DiagnosticService = {
         { userId, sessionId, questionId },
         error
       );
-      throw error;
+      return null; // Return null on error
     }
 
-    logger.info('DiagnosticService', 'saveDiagnosticAnswer', {
-      userId,
-      questionId,
-      isCorrect,
-    });
-    return data;
+    if (!data || data.length === 0) {
+      console.error(`❌ SAVE RETURNED NO DATA - Question ${questionId}`);
+      return null;
+    }
+
+    return data; // Return saved data on success
   },
 
   /**

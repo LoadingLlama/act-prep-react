@@ -627,7 +627,21 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
       })()}
       {lesson.content_json ? (
         <div style={{ marginTop: '2rem' }}>
-          <LessonRenderer data={lesson.content_json} />
+          <LessonRenderer
+            data={lesson.content_json}
+            onKeyTakeawaysRendered={() => {
+              console.log(`🎓 Key Takeaways reached for lesson ${lesson.id}`);
+              console.log(`   onStatusChange available: ${!!onStatusChange}`);
+
+              if (onStatusChange) {
+                console.log(`   ✅ Calling onStatusChange('completed') for ${lesson.id}`);
+                // Always call onStatusChange - let the parent decide whether to update
+                onStatusChange('completed');
+              } else {
+                console.error(`   ❌ onStatusChange callback not provided!`);
+              }
+            }}
+          />
         </div>
       ) : !hasStarted ? (
         <div style={{
