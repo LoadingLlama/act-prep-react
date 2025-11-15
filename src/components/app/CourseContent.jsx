@@ -1381,8 +1381,9 @@ const CourseContent = () => {
                       cardStyle = {
                         borderLeft: '4px solid #dc2626',
                         paddingLeft: '0.75rem',
-                        background: 'linear-gradient(90deg, #fee2e2 0%, #fef2f2 100%)',
-                        border: '2px solid #dc2626'
+                        background: '#dc2626', // Solid red color for exam day
+                        border: '2px solid #dc2626',
+                        cursor: 'default' // Change cursor to indicate it's not clickable
                       };
                     } else if (isDiagnostic) {
                       cardStyle = {
@@ -1414,20 +1415,20 @@ const CourseContent = () => {
                       <div
                         key={itemIndex}
                         className={`${classes.weekCard} ${isCompleted ? 'completed' : ''}`}
-                        onClick={() => handleItemClick(item)}
+                        onClick={() => !isExamDay && handleItemClick(item)}
                         style={cardStyle}
                       >
                         <div className={classes.weekCardContent}>
                           <span
                             className={classes.weekCardIcon}
-                            style={isExamDay ? { color: '#dc2626' } : isDiagnostic ? { color: '#b91c1c' } : isMockExam ? { color: '#f59e0b' } : isTest ? { color: '#2563eb' } : isReview ? { color: '#10b981' } : {}}
+                            style={isExamDay ? { color: '#ffffff' } : isDiagnostic ? { color: '#b91c1c' } : isMockExam ? { color: '#f59e0b' } : isTest ? { color: '#2563eb' } : isReview ? { color: '#10b981' } : {}}
                           >
                             {getItemIcon(item.type)}
                           </span>
                           <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.5rem', flex: 1, flexWrap: 'wrap' }}>
                             <span
                               className={classes.weekCardText}
-                              style={isExamDay ? { fontWeight: '800', color: '#dc2626', fontSize: '1rem' } : isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : isMockExam ? { fontWeight: '700', color: '#f59e0b' } : isTest ? { fontWeight: '600', color: '#2563eb' } : isReview ? { fontWeight: '600', color: '#10b981' } : {}}
+                              style={isExamDay ? { fontWeight: '800', color: '#ffffff', fontSize: '1rem' } : isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : isMockExam ? { fontWeight: '700', color: '#f59e0b' } : isTest ? { fontWeight: '600', color: '#2563eb' } : isReview ? { fontWeight: '600', color: '#10b981' } : {}}
                             >
                               {item.title}
                               {chapterNum && (
@@ -1444,7 +1445,7 @@ const CourseContent = () => {
                             {item.description && (
                               <span style={{
                                 fontSize: '0.8125rem',
-                                color: '#6b7280',
+                                color: isExamDay ? '#ffffff' : '#6b7280',
                                 lineHeight: '1.4',
                                 fontWeight: '400',
                                 flex: '1 1 100%'
@@ -1454,12 +1455,14 @@ const CourseContent = () => {
                             )}
                           </div>
                         </div>
-                        <span
-                          className={classes.weekCardArrow}
-                          style={isExamDay ? { color: '#dc2626' } : isDiagnostic ? { color: '#b91c1c' } : isMockExam ? { color: '#f59e0b' } : isTest ? { color: '#2563eb' } : isReview ? { color: '#10b981' } : {}}
-                        >
-                          {isExamDay ? '🎯' : '→'}
-                        </span>
+                        {!isExamDay && (
+                          <span
+                            className={classes.weekCardArrow}
+                            style={isDiagnostic ? { color: '#b91c1c' } : isMockExam ? { color: '#f59e0b' } : isTest ? { color: '#2563eb' } : isReview ? { color: '#10b981' } : {}}
+                          >
+                            →
+                          </span>
+                        )}
                       </div>
                     );
                   })}
