@@ -448,106 +448,82 @@ const LearningPathService = {
       message: `Will build content until week ${lastContentWeek}, then EXAM WEEK at week ${maxWeeks}`
     });
 
-    // Week 2-3 (if space): English + Math (fundamentals)
-    for (let i = 0; i < 2 && weekNumber <= lastContentWeek; i++) {
-      const englishLessons = getNextLessons('english', Math.ceil(lessonsPerWeek * 0.5));
-      const mathLessons = getNextLessons('math', Math.floor(lessonsPerWeek * 0.5));
-
-      if (englishLessons.length > 0 || mathLessons.length > 0) {
-        curriculum.push({
-          weekNumber: weekNumber++,
-          focus: 'English + Math Fundamentals',
-          lessons: [...englishLessons, ...mathLessons],
-          reviewDay: reviewDay,
-          mockExam: i === 1 ? mockExamDay : null // Mock exam at end of week 2
-        });
-      }
-    }
-
-    // Week 4-5 (if space): Reading + Math
-    for (let i = 0; i < 2 && weekNumber <= lastContentWeek; i++) {
-      const readingLessons = getNextLessons('reading', Math.ceil(lessonsPerWeek * 0.5));
-      const mathLessons = getNextLessons('math', Math.floor(lessonsPerWeek * 0.5));
-
-      if (readingLessons.length > 0 || mathLessons.length > 0) {
-        curriculum.push({
-          weekNumber: weekNumber++,
-          focus: 'Reading + Math',
-          lessons: [...readingLessons, ...mathLessons],
-          reviewDay: reviewDay,
-          mockExam: i === 1 ? mockExamDay : null // Mock exam every 2 weeks
-        });
-      }
-    }
-
-    // Week 6-7 (if space): Science + Math
-    for (let i = 0; i < 2 && weekNumber <= lastContentWeek; i++) {
-      const scienceLessons = getNextLessons('science', Math.ceil(lessonsPerWeek * 0.5));
-      const mathLessons = getNextLessons('math', Math.floor(lessonsPerWeek * 0.5));
-
-      if (scienceLessons.length > 0 || mathLessons.length > 0) {
-        curriculum.push({
-          weekNumber: weekNumber++,
-          focus: 'Science + Math',
-          lessons: [...scienceLessons, ...mathLessons],
-          reviewDay: reviewDay,
-          mockExam: i === 1 ? mockExamDay : null
-        });
-      }
-    }
-
-    // Continue rotating through subjects until we run out of time (must stop BEFORE exam week)
+    // Fill ALL remaining weeks until exam week with rotating subjects
+    // This ensures no gaps in the schedule regardless of timeline
     let subjectIndex = 0;
-    const subjectRotation = ['english', 'reading', 'science']; // Always pair with math
+    const subjectRotation = ['english', 'reading', 'science', 'english', 'math']; // Varied rotation
     const totalLessons = Object.values(lessonsBySubject).flat().length;
 
-    logger.info('LearningPathService', 'continuingCurriculum', {
+    logger.info('LearningPathService', 'fillingAllWeeks', {
       maxWeeks,
       lastContentWeek,
       currentWeekNumber: weekNumber,
       totalLessons,
-      message: `Continuing from week ${weekNumber} to week ${lastContentWeek}`
+      lessonsPerWeek,
+      message: `Filling weeks ${weekNumber} through ${lastContentWeek} with ${lessonsPerWeek} lessons each`
     });
 
-    while (usedLessons.size < totalLessons && weekNumber <= lastContentWeek) {
+    // Continue until we reach the last content week OR run out of lessons
+    while (weekNumber <= lastContentWeek) {
       const subject = subjectRotation[subjectIndex % subjectRotation.length];
-      const primaryLessons = getNextLessons(subject, Math.ceil(lessonsPerWeek * 0.5));
-      const mathLessons = getNextLessons('math', Math.floor(lessonsPerWeek * 0.5));
+      const primaryLessons = getNextLessons(subject, Math.ceil(lessonsPerWeek * 0.6));
+      const mathLessons = getNextLessons('math', Math.floor(lessonsPerWeek * 0.4));
 
+      // If we're out of lessons from both subjects, try to get ANY remaining lessons
       if (primaryLessons.length === 0 && mathLessons.length === 0) {
-        // No more lessons available - fill remaining time with review weeks
-        logger.info('LearningPathService', 'allLessonsCompleted', {
-          usedLessons: usedLessons.size,
-          totalLessons: totalLessons,
-          weekNumber: weekNumber,
-          weeksRemaining: lastContentWeek - weekNumber + 1
+        // Try to get lessons from any subject
+        const anyLessons = [];
+        for (const subj of ['english', 'math', 'reading', 'science']) {
+          const remaining = getNextLessons(subj, lessonsPerWeek);
+          anyLessons.push(...remaining);
+          if (anyLessons.length >= lessonsPerWeek) break;
+        }
+
+        if (anyLessons.length === 0) {
+          // Truly out of lessons - fill remaining weeks with review-only weeks
+          logger.info('LearningPathService', 'outOfLessons', {
+            usedLessons: usedLessons.size,
+            totalLessons,
+            weekNumber,
+            weeksRemaining: lastContentWeek - weekNumber + 1
+          });
+
+          // Fill remaining weeks with review weeks
+          while (weekNumber <= lastContentWeek) {
+            curriculum.push({
+              weekNumber: weekNumber++,
+              focus: 'Review & Practice',
+              lessons: [],
+              reviewDay: reviewDay,
+              mockExam: shouldHaveMockExam(weekNumber - 1) ? mockExamDay : null,
+              isReviewWeek: true
+            });
+          }
+          break;
+        }
+
+        // Use whatever lessons we found
+        curriculum.push({
+          weekNumber: weekNumber++,
+          focus: 'Mixed Review',
+          lessons: anyLessons,
+          reviewDay: reviewDay,
+          mockExam: shouldHaveMockExam(weekNumber - 1) ? mockExamDay : null
         });
-        break;
+        subjectIndex++;
+        continue;
       }
 
+      // Normal week with primary + math lessons
       curriculum.push({
-        weekNumber: weekNumber,
+        weekNumber: weekNumber++,
         focus: `${subject.charAt(0).toUpperCase() + subject.slice(1)} + Math`,
         lessons: [...primaryLessons, ...mathLessons],
         reviewDay: reviewDay,
-        mockExam: shouldHaveMockExam(weekNumber) ? mockExamDay : null
+        mockExam: shouldHaveMockExam(weekNumber - 1) ? mockExamDay : null
       });
-      weekNumber++;
 
       subjectIndex++;
-    }
-
-    // Fill remaining weeks with comprehensive review until exam week
-    while (weekNumber <= lastContentWeek) {
-      curriculum.push({
-        weekNumber: weekNumber,
-        focus: 'Comprehensive Review & Practice',
-        lessons: [], // No new lessons, just review
-        reviewDay: reviewDay,
-        mockExam: shouldHaveMockExam(weekNumber) ? mockExamDay : null,
-        isReviewWeek: true
-      });
-      weekNumber++;
     }
 
     // Add final EXAM WEEK (always the last week before exam date)
