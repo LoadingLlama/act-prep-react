@@ -198,7 +198,11 @@ const LearningPathService = {
       });
 
       // 8. Calculate days until exam and maximum weeks available
-      const examDate = goals.exam_date ? new Date(goals.exam_date) : null;
+      // Parse exam date in local timezone to avoid timezone shift issues
+      const examDate = goals.exam_date ? (() => {
+        const [year, month, day] = goals.exam_date.split('-').map(Number);
+        return new Date(year, month - 1, day);
+      })() : null;
       const today = new Date();
       let maxWeeks = 50; // Default if no exam date specified
       let daysUntilExam = null;
@@ -533,6 +537,21 @@ const LearningPathService = {
       4: 'thursday', 5: 'friday', 6: 'saturday'
     };
 
+    // Helper functions to handle dates in local timezone (no UTC conversion)
+    const parseLocalDate = (dateString) => {
+      // Parse YYYY-MM-DD as local date, not UTC
+      const [year, month, day] = dateString.split('-').map(Number);
+      return new Date(year, month - 1, day);
+    };
+
+    const formatLocalDate = (date) => {
+      // Format as YYYY-MM-DD in local timezone
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    };
+
     // Parse study hours from goals
     const useAlternatingWeeks = goals.use_alternating_weeks || false;
     const studyHoursWeek1 = goals.study_hours || {
@@ -561,8 +580,8 @@ const LearningPathService = {
       // Stop scheduling if we've reached or passed the exam date (unless it's exam week)
       if (!isBeforeExam() && !week.isExamWeek) {
         logger.warn('LearningPathService', 'stoppedAtExamDate', {
-          currentDate: currentDate.toISOString().split('T')[0],
-          examDate: examDate ? examDate.toISOString().split('T')[0] : null,
+          currentDate: formatLocalDate(currentDate),
+          examDate: examDate ? formatLocalDate(examDate) : null,
           weekNumber: week.weekNumber
         });
         return;
@@ -578,7 +597,7 @@ const LearningPathService = {
           day_number: 1,
           is_priority: false,
           estimated_minutes: 0,
-          scheduled_date: examDate.toISOString().split('T')[0],
+          scheduled_date: formatLocalDate(examDate),
           status: 'pending',
           item_type: 'exam_day'
         });
@@ -608,7 +627,7 @@ const LearningPathService = {
               day_number: 1,
               is_priority: false,
               estimated_minutes: reviewMinutes,
-              scheduled_date: currentDate.toISOString().split('T')[0],
+              scheduled_date: formatLocalDate(currentDate),
               status: 'pending',
               item_type: 'review'
             });
@@ -633,7 +652,7 @@ const LearningPathService = {
               day_number: 2,
               is_priority: false,
               estimated_minutes: 180, // 3 hours for full mock exam
-              scheduled_date: currentDate.toISOString().split('T')[0],
+              scheduled_date: formatLocalDate(currentDate),
               status: 'pending',
               item_type: 'mock_exam'
             });
@@ -716,7 +735,7 @@ const LearningPathService = {
             day_number: dayNumber++,
             is_priority: lesson.isWeak || false,
             estimated_minutes: lessonMinutes,
-            scheduled_date: checkDate.toISOString().split('T')[0],
+            scheduled_date: formatLocalDate(checkDate),
             status: 'pending',
             item_type: 'lesson'
           });
@@ -749,7 +768,7 @@ const LearningPathService = {
               day_number: dayNumber++,
               is_priority: false,
               estimated_minutes: reviewMinutes,
-              scheduled_date: currentDate.toISOString().split('T')[0],
+              scheduled_date: formatLocalDate(currentDate),
               status: 'pending',
               item_type: 'review'
             });
@@ -775,7 +794,7 @@ const LearningPathService = {
             day_number: dayNumber++,
             is_priority: false,
             estimated_minutes: 180,
-            scheduled_date: currentDate.toISOString().split('T')[0],
+            scheduled_date: formatLocalDate(currentDate),
             status: 'pending',
             item_type: 'mock_exam'
           });
