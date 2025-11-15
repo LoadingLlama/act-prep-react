@@ -6,6 +6,7 @@
 import { supabase } from './supabase.service';
 import logger from '../logging/logger';
 import errorTracker from '../logging/errorTracker';
+import { lessonStructure } from '../../data/lessonStructure';
 
 const LearningPathService = {
   /**
@@ -118,14 +119,43 @@ const LearningPathService = {
 
       if (pathError) throw pathError;
 
-      // 5. Fetch ALL lessons organized by subject
-      const { data: allLessons, error: lessonsError } = await supabase
-        .from('lessons')
-        .select('id, subject, title, order_index, topic_number, topic_title, duration')
-        .order('subject')
-        .order('order_index');
+      // 5. Use lessons from lessonStructure data file (same source as Lessons tab)
+      console.log('📚 Using lessons from lessonStructure data file (total:', lessonStructure.length, 'lessons)');
 
-      if (lessonsError) throw lessonsError;
+      // Transform lessonStructure format to match what the algorithm expects
+      const allLessons = lessonStructure.map((lesson, index) => {
+        // Map section to subject format
+        // Keep getting-started as is since intro lesson is searched by title later
+        let subject = lesson.section;
+
+        // For intro lessons without a specific section, map to 'english' so they can be found
+        if (lesson.section === 'getting-started') {
+          subject = 'english'; // Intro lesson searched in english array
+        }
+
+        // Calculate order_index from chapterNum or use array index
+        let order_index = index;
+        if (lesson.chapterNum) {
+          // Parse chapter numbers like "1.1", "2.3", etc. into sortable index
+          const parts = lesson.chapterNum.split('.');
+          if (parts.length === 2) {
+            order_index = parseInt(parts[0]) * 100 + parseInt(parts[1]);
+          }
+        }
+
+        // Assign default duration (45 minutes for most lessons)
+        const duration = 45;
+
+        return {
+          id: lesson.id,
+          subject: subject,
+          title: lesson.title,
+          order_index: order_index,
+          topic_number: lesson.chapterNum || null,
+          topic_title: lesson.category || null,
+          duration: duration
+        };
+      });
 
       // 6. Get priority/weak areas from diagnostic
       const priorityLessons = diagnosticAnalysis?.priority_lessons || [];
