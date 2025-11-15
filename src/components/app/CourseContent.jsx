@@ -1183,7 +1183,7 @@ const CourseContent = () => {
               <div style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(7, 1fr)',
-                gridAutoRows: '120px',
+                gridAutoRows: '90px',
                 borderLeft: '1px solid #d1d5db',
                 borderRight: '1px solid #d1d5db',
                 borderBottom: '1px solid #d1d5db'
@@ -1196,7 +1196,7 @@ const CourseContent = () => {
                       <div
                         key={`${weekIdx}-${dayIdx}`}
                         style={{
-                          padding: '0.5rem',
+                          padding: '0.375rem',
                           borderRight: dayIdx < 6 ? '1px solid #d1d5db' : 'none',
                           borderBottom: weekIdx < totalWeeks - 1 ? '1px solid #d1d5db' : 'none',
                           background: day.isCurrentMonth ? '#ffffff' : '#fafafa',
@@ -1210,16 +1210,16 @@ const CourseContent = () => {
                         <div style={{
                           display: 'flex',
                           justifyContent: 'center',
-                          marginBottom: '0.375rem',
+                          marginBottom: '0.25rem',
                           flexShrink: 0
                         }}>
                           <div style={{
-                            width: '26px',
-                            height: '26px',
+                            width: '22px',
+                            height: '22px',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            fontSize: '0.8125rem',
+                            fontSize: '0.75rem',
                             fontWeight: day.isToday ? '600' : '500',
                             color: day.isToday ? '#ffffff' : day.isCurrentMonth ? '#1a1a1a' : '#9ca3af',
                             background: day.isToday ? '#ef4444' : 'transparent',
@@ -1233,7 +1233,7 @@ const CourseContent = () => {
                         <div style={{
                           display: 'flex',
                           flexDirection: 'column',
-                          gap: '0.25rem',
+                          gap: '0.1875rem',
                           flex: 1,
                           overflow: 'hidden'
                         }}>
@@ -1246,7 +1246,7 @@ const CourseContent = () => {
                                 setPreviewItem({ ...item, date: day.date });
                               }}
                               style={{
-                                padding: '0.25rem 0.375rem',
+                                padding: '0.1875rem 0.3125rem',
                                 background: item.type === 'exam_day'
                                   ? '#dc2626'
                                   : item.type === 'test' || item.type === 'mock_exam'
@@ -1254,9 +1254,9 @@ const CourseContent = () => {
                                   : item.type === 'review'
                                   ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
                                   : 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
-                                borderRadius: '4px',
+                                borderRadius: '3px',
                                 cursor: item.type === 'exam_day' ? 'default' : 'pointer',
-                                fontSize: '0.6875rem',
+                                fontSize: '0.625rem',
                                 fontWeight: item.type === 'exam_day' ? '700' : '500',
                                 color: '#ffffff',
                                 overflow: 'hidden',
@@ -1268,7 +1268,7 @@ const CourseContent = () => {
                                   : item.type === 'mock_exam'
                                   ? '0 2px 4px rgba(59,130,246,0.3)'
                                   : '0 1px 2px rgba(0,0,0,0.1)',
-                                border: item.type === 'exam_day' ? '2px solid #fca5a5' : 'none'
+                                border: item.type === 'exam_day' ? '1px solid #fca5a5' : 'none'
                               }}
                               onMouseEnter={(e) => {
                                 e.currentTarget.style.transform = 'translateY(-1px)';
