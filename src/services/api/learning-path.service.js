@@ -354,6 +354,18 @@ const LearningPathService = {
     const studyHours = goals.study_hours || {};
     const totalWeeklyHours = Object.values(studyHours).reduce((sum, hours) => sum + (hours || 0), 0);
 
+    // Get weekly hours tier (light, moderate, intensive, extreme)
+    const weeklyHoursTier = goals.weekly_hours_tier || 'moderate';
+
+    // DRASTICALLY adjust lessons per week based on weekly hours tier
+    const lessonsPerWeekByTier = {
+      'light': 2,      // 1-5 hours/week: Very slow pace, 2 lessons/week
+      'moderate': 4,   // 5-10 hours/week: Standard pace, 4 lessons/week
+      'intensive': 7,  // 10-15 hours/week: Fast pace, 7 lessons/week
+      'extreme': 12    // 15+ hours/week: Maximum pace, 12 lessons/week
+    };
+    const lessonsPerWeek = lessonsPerWeekByTier[weeklyHoursTier] || 4;
+
     // Determine mock exam frequency based on urgency and available time
     // More weeks = less frequent mock exams, fewer weeks = more frequent
     let mockExamFrequency;
@@ -369,19 +381,14 @@ const LearningPathService = {
       mockExamFrequency = 0.25; // Almost every other day for critical urgency
     }
 
-    logger.info('LearningPathService', 'mockExamScheduling', {
+    logger.info('LearningPathService', 'curriculumPacing', {
       maxWeeks,
       totalWeeklyHours,
+      weeklyHoursTier,
+      lessonsPerWeek,
       mockExamFrequency,
-      message: `Mock exams every ${mockExamFrequency} week(s) based on ${maxWeeks} weeks until exam`
+      message: `${weeklyHoursTier.toUpperCase()} tier: ${lessonsPerWeek} lessons/week, mock exams every ${mockExamFrequency} week(s)`
     });
-
-    // Lessons per week based on pace
-    const lessonsPerWeek = {
-      'relaxed': 3,
-      'moderate': 4,
-      'intensive': 6
-    }[learningPace] || 4;
 
     // Helper function to determine if this week should have a mock exam
     const shouldHaveMockExam = (currentWeekNum) => {

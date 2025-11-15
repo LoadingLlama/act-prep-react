@@ -183,7 +183,8 @@ const CourseContent = () => {
         study_hours_week2: editForm.study_hours_week2,
         use_alternating_weeks: editForm.use_alternating_weeks,
         review_day: editForm.review_day,
-        mock_exam_day: editForm.mock_exam_day
+        mock_exam_day: editForm.mock_exam_day,
+        weekly_hours_tier: editForm.weekly_hours_tier
       });
 
       // Get diagnostic results (optional - used for prioritization)
@@ -197,7 +198,8 @@ const CourseContent = () => {
           study_hours_week2: editForm.study_hours_week2,
           use_alternating_weeks: editForm.use_alternating_weeks,
           review_day: editForm.review_day,
-          mock_exam_day: editForm.mock_exam_day
+          mock_exam_day: editForm.mock_exam_day,
+          weekly_hours_tier: editForm.weekly_hours_tier
         },
         diagnosticResults?.analysis || null
       );
