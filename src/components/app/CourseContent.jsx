@@ -59,7 +59,8 @@ const CourseContent = () => {
     },
     use_alternating_weeks: false,
     review_day: 'sunday',
-    mock_exam_day: 'saturday'
+    mock_exam_day: 'saturday',
+    weekly_hours_tier: 'moderate'
   });
 
   // Load user goals and check diagnostic completion on mount
@@ -128,7 +129,8 @@ const CourseContent = () => {
           },
           use_alternating_weeks: goals.use_alternating_weeks || false,
           review_day: goals.review_day || 'sunday',
-          mock_exam_day: goals.mock_exam_day || 'saturday'
+          mock_exam_day: goals.mock_exam_day || 'saturday',
+          weekly_hours_tier: goals.weekly_hours_tier || 'moderate'
         });
       }
     } catch (error) {
@@ -157,6 +159,7 @@ const CourseContent = () => {
           use_alternating_weeks: editForm.use_alternating_weeks,
           review_day: editForm.review_day,
           mock_exam_day: editForm.mock_exam_day,
+          weekly_hours_tier: editForm.weekly_hours_tier,
           updated_at: new Date().toISOString()
         }, {
           onConflict: 'user_id'
@@ -2118,6 +2121,34 @@ const CourseContent = () => {
                     <option value="saturday">Saturday</option>
                   </select>
                 </div>
+              </div>
+
+              {/* Weekly Hours Tier */}
+              <div style={{ marginTop: '1.5rem' }}>
+                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
+                  Weekly Study Commitment
+                </label>
+                <select
+                  value={editForm.weekly_hours_tier}
+                  onChange={(e) => setEditForm({ ...editForm, weekly_hours_tier: e.target.value })}
+                  style={{
+                    width: '100%',
+                    padding: '0.625rem',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '6px',
+                    fontSize: '0.875rem',
+                    fontFamily: 'inherit',
+                    background: 'white'
+                  }}
+                >
+                  <option value="light">Light (1-5 hours/week)</option>
+                  <option value="moderate">Moderate (5-10 hours/week)</option>
+                  <option value="intensive">Intensive (10-15 hours/week)</option>
+                  <option value="extreme">Extreme (15+ hours/week)</option>
+                </select>
+                <p style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '0.5rem' }}>
+                  This helps optimize your mock exam frequency and lesson pacing
+                </p>
               </div>
             </div>
 
