@@ -524,6 +524,14 @@ const CourseContent = () => {
     );
   };
 
+  // Helper to format date as YYYY-MM-DD in local timezone (no UTC conversion)
+  const formatLocalDate = (date) => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
   // Generate Apple-style calendar view data
   const generateAppleCalendarView = () => {
     if (!learningPathData || !learningPathData.items) return { weeks: [], itemsByDate: {} };
@@ -639,7 +647,7 @@ const CourseContent = () => {
       const date = new Date(year, month - 1, day);
       currentWeek.push({
         date,
-        dateString: date.toISOString().split('T')[0],
+        dateString: formatLocalDate(date),
         dayNumber: day,
         isCurrentMonth: false,
         isToday: false,
@@ -650,7 +658,7 @@ const CourseContent = () => {
     // Add days from current month
     for (let day = 1; day <= lastDay.getDate(); day++) {
       const date = new Date(year, month, day);
-      const dateString = date.toISOString().split('T')[0];
+      const dateString = formatLocalDate(date);
       const today = new Date();
       const isToday = date.toDateString() === today.toDateString();
 
@@ -677,7 +685,7 @@ const CourseContent = () => {
         const date = new Date(year, month + 1, nextMonthDay);
         currentWeek.push({
           date,
-          dateString: date.toISOString().split('T')[0],
+          dateString: formatLocalDate(date),
           dayNumber: nextMonthDay,
           isCurrentMonth: false,
           isToday: false,
