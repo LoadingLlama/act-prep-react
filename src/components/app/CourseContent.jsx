@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useOutletContext, useNavigate } from 'react-router-dom';
-import { HiBookOpen, HiDocumentText, HiPencilSquare, HiAcademicCap, HiUserCircle, HiSparkles } from 'react-icons/hi2';
+import { HiBookOpen, HiDocumentText, HiPencilSquare, HiAcademicCap, HiUserCircle, HiSparkles, HiArrowPath, HiQuestionMarkCircle, HiCheckCircle } from 'react-icons/hi2';
 import { useCourseStyles } from '../../styles/app/course.styles';
 import { supabase } from '../../services/api/supabase.service';
 import { useAuth } from '../../contexts/AuthContext';
@@ -27,14 +27,27 @@ const CourseContent = () => {
   // State for user goals and edit modal
   const [userGoals, setUserGoals] = useState(null);
   const [editModalOpen, setEditModalOpen] = useState(false);
+  const [showMockExamTooltipModal, setShowMockExamTooltipModal] = useState(false);
+  const [showReviewTooltipModal, setShowReviewTooltipModal] = useState(false);
   const [diagnosticCompleted, setDiagnosticCompleted] = useState(false);
   const [loadingDiagnostic, setLoadingDiagnostic] = useState(true);
   const [diagnosticResults, setDiagnosticResults] = useState(null);
   const [learningPathData, setLearningPathData] = useState(null);
   const [savingGoals, setSavingGoals] = useState(false);
   const [viewMode, setViewMode] = useState('calendar'); // 'list' or 'calendar' - default to calendar
+  const [calendarViewType, setCalendarViewType] = useState('month'); // 'month' or 'week'
   const [currentMonth, setCurrentMonth] = useState(new Date());
+  const [currentWeekStart, setCurrentWeekStart] = useState(() => {
+    const today = new Date();
+    const dayOfWeek = today.getDay();
+    const weekStart = new Date(today);
+    weekStart.setDate(today.getDate() - dayOfWeek); // Start on Sunday
+    return weekStart;
+  });
   const [previewItem, setPreviewItem] = useState(null);
+  const [validationError, setValidationError] = useState(null);
+  const [saveButtonShake, setSaveButtonShake] = useState(false);
+  const [showBestPracticeWarning, setShowBestPracticeWarning] = useState(false);
   const [editForm, setEditForm] = useState({
     target_exam_date: '',
     current_score: '',
@@ -114,24 +127,47 @@ const CourseContent = () => {
         .maybeSingle();
 
       if (goals) {
+        // Ensure all days are present in study_hours (fill missing days with 1 hour)
+        const defaultHours = {
+          monday: 1, tuesday: 1, wednesday: 1, thursday: 1,
+          friday: 1, saturday: 1, sunday: 1
+        };
+
+        const completeStudyHours = {
+          ...defaultHours,
+          ...(goals.study_hours || {})
+        };
+
+        // CRITICAL: Mock exam day should ALWAYS be 0 hours (practice test takes 3 hours on that day)
+        const mockExamDay = goals.mock_exam_day || 'saturday';
+        completeStudyHours[mockExamDay] = 0;
+
+        // CRITICAL: If alternating weeks is OFF, use Week 1 schedule for Week 2
+        // Don't load old database values that might have 0 hours for some days
+        const useAlternatingWeeks = goals.use_alternating_weeks || false;
+        const completeStudyHoursWeek2 = useAlternatingWeeks
+          ? { ...defaultHours, ...(goals.study_hours_week2 || goals.study_hours || {}) }
+          : completeStudyHours; // Copy Week 1 when alternating is OFF
+
+        // Also set mock exam day to 0 in Week 2
+        completeStudyHoursWeek2[mockExamDay] = 0;
+
         setUserGoals(goals);
         setEditForm({
           target_exam_date: goals.target_exam_date || '',
           current_score: goals.current_score || '',
           target_score: goals.target_score || 28,
-          study_hours: goals.study_hours || {
-            monday: 0.75, tuesday: 1, wednesday: 0, thursday: 0.75,
-            friday: 1, saturday: 2, sunday: 2
-          },
-          study_hours_week2: goals.study_hours_week2 || {
-            monday: 0.75, tuesday: 1, wednesday: 0, thursday: 0.75,
-            friday: 1, saturday: 2, sunday: 2
-          },
-          use_alternating_weeks: goals.use_alternating_weeks || false,
+          study_hours: completeStudyHours,
+          study_hours_week2: completeStudyHoursWeek2,
+          use_alternating_weeks: useAlternatingWeeks,
           review_day: goals.review_day || 'sunday',
-          mock_exam_day: goals.mock_exam_day || 'saturday',
+          mock_exam_day: mockExamDay,
           weekly_hours_tier: goals.weekly_hours_tier || 'moderate'
         });
+
+        console.log('📥 Loaded goals with study_hours:', completeStudyHours);
+        console.log('📥 use_alternating_weeks:', useAlternatingWeeks);
+        console.log('📥 study_hours_week2:', completeStudyHoursWeek2);
       }
     } catch (error) {
       console.error('Error loading user goals:', error);
@@ -143,9 +179,84 @@ const CourseContent = () => {
       setSavingGoals(true);
       console.log('💾 Saving user goals...', editForm);
 
+      // VALIDATION 1: Ensure daily hours match weekly tier
+      const studyHours = editForm.study_hours || {};
+      const regularStudyHours = Object.values(studyHours).reduce((sum, hours) => sum + (hours || 0), 0);
+      const practiceTestHours = 3; // Guaranteed 3 hours for practice test
+      const reviewHours = 2; // Guaranteed 2 hours for review
+
+      // Calculate total including guaranteed hours
+      let totalWeeklyHours = regularStudyHours + practiceTestHours + reviewHours;
+
+      // If alternating weeks, calculate average of both weeks
+      if (editForm.use_alternating_weeks) {
+        const studyHoursWeek2 = editForm.study_hours_week2 || {};
+        const regularStudyHoursWeek2 = Object.values(studyHoursWeek2).reduce((sum, hours) => sum + (hours || 0), 0);
+        const week2TotalHours = regularStudyHoursWeek2 + practiceTestHours + reviewHours;
+        totalWeeklyHours = (totalWeeklyHours + week2TotalHours) / 2;
+      }
+
+      const selectedTier = editForm.weekly_hours_tier || 'moderate';
+
+      const tierRanges = {
+        'light': { min: 1, max: 5, label: '1-5 hours/week' },
+        'moderate': { min: 5, max: 10, label: '5-10 hours/week' },
+        'intensive': { min: 10, max: 15, label: '10-15 hours/week' },
+        'extreme': { min: 15, max: 100, label: '15+ hours/week' }
+      };
+
+      const range = tierRanges[selectedTier];
+      if (totalWeeklyHours < range.min || totalWeeklyHours > range.max) {
+        setSavingGoals(false);
+        // Trigger shake animation
+        setSaveButtonShake(true);
+        setTimeout(() => setSaveButtonShake(false), 500);
+        return; // Prevent save - error is already shown inline
+      }
+
+      // VALIDATION 2: Ensure Review Day and Mock Exam Day don't conflict
+      const reviewDay = editForm.review_day || 'sunday';
+      const mockExamDay = editForm.mock_exam_day || 'saturday';
+
+      if (reviewDay === mockExamDay) {
+        setSavingGoals(false);
+        // Trigger shake animation
+        setSaveButtonShake(true);
+        setTimeout(() => setSaveButtonShake(false), 500);
+        return; // Prevent save - error is already shown inline
+      }
+
       // Parse numeric values properly
       const currentScore = editForm.current_score ? parseInt(editForm.current_score) : null;
       const targetScore = editForm.target_score ? parseInt(editForm.target_score) : 28;
+
+      // CRITICAL: Ensure all days are present in study_hours before saving
+      // This prevents database from having incomplete data
+      const defaultHours = {
+        monday: 1, tuesday: 1, wednesday: 1, thursday: 1,
+        friday: 1, saturday: 1, sunday: 1
+      };
+
+      const completeStudyHours = {
+        ...defaultHours,
+        ...(editForm.study_hours || {})
+      };
+
+      // CRITICAL: Mock exam day should ALWAYS be 0 hours (practice test takes 3 hours on that day)
+      // mockExamDay is already declared above at line 203
+      completeStudyHours[mockExamDay] = 0;
+
+      // CRITICAL: If alternating weeks is OFF, Week 2 should be IDENTICAL to Week 1
+      // This prevents old Week 2 values from being used
+      const completeStudyHoursWeek2 = editForm.use_alternating_weeks
+        ? { ...defaultHours, ...(editForm.study_hours_week2 || {}) }
+        : completeStudyHours; // Copy Week 1 when alternating is OFF
+
+      // Also set mock exam day to 0 in Week 2
+      completeStudyHoursWeek2[mockExamDay] = 0;
+
+      console.log('💾 Saving user goals with study_hours:', completeStudyHours);
+      console.log('💾 Mock exam day set to 0 hours:', mockExamDay);
 
       const { error } = await supabase
         .from('user_goals')
@@ -154,8 +265,8 @@ const CourseContent = () => {
           target_exam_date: editForm.target_exam_date || null,
           current_score: currentScore,
           target_score: targetScore,
-          study_hours: editForm.study_hours,
-          study_hours_week2: editForm.study_hours_week2,
+          study_hours: completeStudyHours,
+          study_hours_week2: completeStudyHoursWeek2,
           use_alternating_weeks: editForm.use_alternating_weeks,
           review_day: editForm.review_day,
           mock_exam_day: editForm.mock_exam_day,
@@ -168,7 +279,11 @@ const CourseContent = () => {
       if (error) {
         console.error('❌ Error saving user goals:', error);
         setSavingGoals(false);
-        alert(`Error saving goals: ${error.message}`);
+        setValidationError({
+          title: 'Save Failed',
+          message: `Unable to save your goals: ${error.message}`,
+          suggestions: ['Please try again', 'Check your internet connection']
+        });
         return;
       }
 
@@ -190,37 +305,62 @@ const CourseContent = () => {
       // Get diagnostic results (optional - used for prioritization)
       const diagnosticResults = await loadDiagnosticResults();
 
-      await LearningPathService.generateLearningPath(
-        user.id,
-        {
-          exam_date: editForm.target_exam_date,
-          study_hours: editForm.study_hours,
-          study_hours_week2: editForm.study_hours_week2,
-          use_alternating_weeks: editForm.use_alternating_weeks,
-          review_day: editForm.review_day,
-          mock_exam_day: editForm.mock_exam_day,
-          weekly_hours_tier: editForm.weekly_hours_tier
-        },
-        diagnosticResults?.analysis || null
-      );
+      // Wrap learning path generation with timeout to prevent browser freeze
+      const GENERATION_TIMEOUT = 25000; // 25 seconds (less than backend timeout)
 
-      // Reload learning path to update UI
-      console.log('🔄 Reloading learning path from database...');
-      await loadLearningPath();
-      console.log('✅ Learning path regenerated and reloaded!');
+      try {
+        const generationPromise = LearningPathService.generateLearningPath(
+          user.id,
+          {
+            exam_date: editForm.target_exam_date,
+            current_score: currentScore,
+            target_score: targetScore,
+            study_hours: editForm.study_hours,
+            study_hours_week2: editForm.study_hours_week2,
+            use_alternating_weeks: editForm.use_alternating_weeks,
+            review_day: editForm.review_day,
+            mock_exam_day: editForm.mock_exam_day,
+            weekly_hours_tier: editForm.weekly_hours_tier
+          },
+          diagnosticResults?.analysis || null
+        );
 
-      // Close modal first
-      setEditModalOpen(false);
-      setSavingGoals(false);
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('Learning path generation timed out. Please try with a shorter time frame or fewer study hours.')), GENERATION_TIMEOUT)
+        );
 
-      // Show success message after modal closes
-      setTimeout(() => {
-        alert('Learning path updated successfully! The calendar now reflects your new schedule.');
-      }, 100);
+        await Promise.race([generationPromise, timeoutPromise]);
+
+        // Reload learning path to update UI
+        console.log('🔄 Reloading learning path from database...');
+        await loadLearningPath();
+        console.log('✅ Learning path regenerated and reloaded!');
+
+        // Close modal
+        setEditModalOpen(false);
+        setSavingGoals(false);
+      } catch (genError) {
+        console.error('❌ Learning path generation failed:', genError);
+        setSavingGoals(false);
+        setValidationError({
+          title: 'Learning Path Generation Failed',
+          message: genError.message || 'The algorithm took too long to complete.',
+          suggestions: [
+            'Try setting a closer exam date',
+            'Reduce weekly study hours',
+            'Try again in a moment'
+          ]
+        });
+        return;
+      }
     } catch (error) {
       console.error('❌ Exception saving user goals:', error);
       setSavingGoals(false);
-      alert(`Error saving goals: ${error.message}`);
+      setValidationError({
+        title: 'Unexpected Error',
+        message: `An error occurred while saving: ${error.message}`,
+        suggestions: ['Please try again', 'If the problem persists, contact support']
+      });
     }
   };
 
@@ -357,9 +497,16 @@ const CourseContent = () => {
 
     console.log('📊 Learning path items:', learningPathData.items);
 
-    // Group items by week number
+    // FIRST: Sort ALL items by scheduled_date chronologically
+    const sortedItems = [...learningPathData.items].sort((a, b) => {
+      const dateA = a.scheduled_date ? new Date(a.scheduled_date) : new Date();
+      const dateB = b.scheduled_date ? new Date(b.scheduled_date) : new Date();
+      return dateA - dateB;
+    });
+
+    // Group items by week number (now in chronological order)
     const weekGroups = {};
-    learningPathData.items.forEach(item => {
+    sortedItems.forEach(item => {
       const weekNum = item.week_number || 1;
       if (!weekGroups[weekNum]) {
         weekGroups[weekNum] = [];
@@ -379,9 +526,20 @@ const CourseContent = () => {
         const startDate = firstItem.scheduled_date ? new Date(firstItem.scheduled_date) : new Date();
         const endDate = lastItem.scheduled_date ? new Date(lastItem.scheduled_date) : new Date();
 
-        // Get subjects for this week from item metadata
-        const weekSubjects = firstItem.item_metadata?.week_subjects || [];
-        const subjectLabels = weekSubjects
+        // Detect subjects for this week by analyzing lessons
+        const weekSubjects = new Set();
+        items.forEach(item => {
+          if (item.item_type === 'lesson' && item.lesson_key) {
+            // Find lesson in lessonStructure to get its section
+            const lesson = lessonStructure.find(l => l.id === item.lesson_key);
+            if (lesson && lesson.section) {
+              const section = lesson.section === 'getting-started' ? 'intro' : lesson.section;
+              weekSubjects.add(section);
+            }
+          }
+        });
+
+        const subjectLabels = Array.from(weekSubjects)
           .map(s => s.charAt(0).toUpperCase() + s.slice(1))
           .join(' & ');
         const weekTitle = subjectLabels
@@ -433,17 +591,67 @@ const CourseContent = () => {
                 isFinal: true
               };
             } else if (itemType === 'exam_day') {
+              const examDateObj = item.scheduled_date ? parseLocalDate(item.scheduled_date) : new Date();
+              const formattedExamDate = examDateObj.toLocaleDateString('en-US', {
+                weekday: 'long',
+                month: 'long',
+                day: 'numeric'
+              });
+
               return {
                 id: `exam-day-${item.week_number}`,
                 type: 'exam_day',
-                title: '🎯 OFFICIAL ACT EXAM DAY',
-                description: 'This is your official ACT test date. Good luck!',
+                title: 'OFFICIAL ACT EXAM',
+                description: formattedExamDate,
                 duration: '0 min',
-                dueDate: item.scheduled_date ? parseLocalDate(item.scheduled_date) : new Date(),
+                dueDate: examDateObj,
                 status: 'pending',
                 isPriority: true,
                 isExamDay: true
               };
+            } else if (itemType === 'practice_test') {
+              const testNumber = item.practice_test_number;
+              const section = item.practice_test_section;
+
+              // Full test = all 4 sections in one sitting
+              const isFullTest = section === 'full';
+
+              return {
+                id: `practice-test-${testNumber}-full`,
+                type: 'practice_test',
+                title: `Practice Test ${testNumber}${isFullTest ? ' (Full Test)' : ''}`,
+                testNumber: testNumber,
+                section: section,
+                description: isFullTest
+                  ? 'Complete all 4 sections: English, Math, Reading, Science'
+                  : null,
+                duration: `${item.estimated_minutes || 175} min`,
+                dueDate: item.scheduled_date ? parseLocalDate(item.scheduled_date) : new Date(),
+                status: item.status,
+                isPriority: true
+              };
+            } else if (itemType === 'practice') {
+              // Practice activity - look up the lesson being practiced
+              const lessonKey = item.lesson_key;
+              const lesson = lessonStructure.find(l => l.id === lessonKey);
+
+              if (lesson) {
+                return {
+                  id: `practice-${lessonKey}-${item.id}`,
+                  type: 'practice',
+                  title: cleanLessonTitle(lesson.title),
+                  skills: 'Practice',
+                  duration: `${item.estimated_minutes || 30} min`,
+                  dueDate: item.scheduled_date ? parseLocalDate(item.scheduled_date) : new Date(),
+                  status: 'not-started', // Practice is always fresh
+                  isPriority: false,
+                  lessonKey: lessonKey, // Store reference to original lesson
+                  isPractice: true // Flag for styling
+                };
+              } else {
+                console.warn('⚠️ Practice lesson not found:', lessonKey);
+                return null;
+              }
             } else {
               // Regular lesson - look up from lessonStructure using lesson_key
               const lessonKey = item.lesson_key;
@@ -477,6 +685,13 @@ const CourseContent = () => {
                 };
               }
             }
+          }).filter(Boolean) // Remove nulls
+          .sort((a, b) => {
+            // Sort by dueDate chronologically (already pre-sorted from database)
+            // Special case: exam_day should always be last in its week
+            if (a.type === 'exam_day' && b.type !== 'exam_day') return 1;
+            if (a.type !== 'exam_day' && b.type === 'exam_day') return -1;
+            return a.dueDate - b.dueDate;
           })
         };
       });
@@ -489,6 +704,9 @@ const CourseContent = () => {
     soundEffects.playClick();
     if (item.type === 'lesson') {
       onLessonOpen(item.id, 'review');
+    } else if (item.type === 'practice') {
+      // Open the lesson in practice mode
+      onLessonOpen(item.lessonKey, 'practice');
     } else if (item.type === 'test') {
       if (item.id === 'diagnostic') {
         setDiagnosticTestOpen(true);
@@ -497,15 +715,30 @@ const CourseContent = () => {
         const testNumber = item.testNumber || parseInt(item.id.split('-')[1]);
         onTestOpen(testNumber, item.section);
       }
+    } else if (item.type === 'practice_test') {
+      // Navigate to practice test page with the specific test number and section
+      const testNumber = item.testNumber;
+      const section = item.section;
+      // Use onTestOpen to open the practice test
+      onTestOpen(testNumber, section);
     }
   };
 
   const getItemIcon = (type) => {
     if (type === 'exam_day') {
+      return null; // No icon for exam day
+    }
+    if (type === 'practice') {
+      // Distinct icon for practice activities - circular arrows (refresh/repeat)
+      return <HiArrowPath style={{ width: '16px', height: '16px' }} />;
+    }
+    if (type === 'practice_test') {
+      // Distinct icon for practice tests - clipboard with checkmark
       return (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2">
-          <circle cx="12" cy="12" r="10" fill="currentColor"/>
-          <path d="M12 6v6l4 2" stroke="#ffffff" strokeWidth="2" strokeLinecap="round"/>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"></path>
+          <rect x="9" y="3" width="6" height="4" rx="1"></rect>
+          <path d="M9 14l2 2 4-4"></path>
         </svg>
       );
     }
@@ -569,6 +802,18 @@ const CourseContent = () => {
           status: item.status,
           testNumber: metadata.test_number,
           section: metadata.section
+        };
+      } else if (itemType === 'practice_test') {
+        const isFullTest = item.practice_test_section === 'full';
+        calendarItem = {
+          id: `practice-test-${item.practice_test_number}-full`,
+          type: 'practice_test',
+          title: `Practice Test ${item.practice_test_number}${isFullTest ? ' (Full Test)' : ''}`,
+          testNumber: item.practice_test_number,
+          section: item.practice_test_section,
+          duration: item.estimated_minutes,
+          status: item.status,
+          isPriority: true
         };
       } else if (itemType === 'review') {
         calendarItem = {
@@ -711,10 +956,143 @@ const CourseContent = () => {
     return { weeks, itemsByDate };
   };
 
+  const generateWeekView = () => {
+    if (!learningPathData || !learningPathData.items) return [];
+
+    const weekDays = [];
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(currentWeekStart);
+      date.setDate(currentWeekStart.getDate() + i);
+      const dateString = formatLocalDate(date);
+      const today = new Date();
+      const isToday = date.toDateString() === today.toDateString();
+
+      // Get items for this date
+      const dayItems = learningPathData.items.filter(item => item.scheduled_date === dateString);
+
+      // Transform items for display
+      const transformedItems = dayItems.map(item => {
+        const itemType = item.item_type;
+
+        if (itemType === 'lesson' && item.lesson_key) {
+          const lesson = lessonStructure.find(l => l.id === item.lesson_key);
+          if (lesson) {
+            const actualStatus = getLessonStatus(item.lesson_key);
+            return {
+              id: item.lesson_key,
+              type: 'lesson',
+              title: cleanLessonTitle(lesson.title),
+              category: lesson.category || 'General',
+              section: lesson.section,
+              duration: item.estimated_minutes || 30,
+              status: actualStatus,
+              isPriority: item.is_priority
+            };
+          }
+        } else if (itemType === 'practice_test') {
+          const isFullTest = item.practice_test_section === 'full';
+          return {
+            id: `practice-test-${item.practice_test_number}-full`,
+            type: 'practice_test',
+            title: `Practice Test ${item.practice_test_number}${isFullTest ? ' (Full)' : ''}`,
+            testNumber: item.practice_test_number,
+            section: item.practice_test_section,
+            duration: item.estimated_minutes,
+            status: item.status,
+            isPriority: true
+          };
+        } else if (itemType === 'review') {
+          return {
+            id: `review-${item.week_number}`,
+            type: 'review',
+            title: `Week ${item.week_number} Review`,
+            duration: item.estimated_minutes,
+            status: item.status
+          };
+        } else if (itemType === 'mock_exam') {
+          return {
+            id: `mock-exam-${item.week_number}`,
+            type: 'mock_exam',
+            title: 'Full ACT Mock Exam',
+            duration: item.estimated_minutes,
+            status: item.status,
+            isPriority: true
+          };
+        } else if (itemType === 'exam_day') {
+          return {
+            id: `exam-day-${item.week_number}`,
+            type: 'exam_day',
+            title: 'OFFICIAL ACT EXAM DAY',
+            duration: 0,
+            status: 'pending',
+            isExamDay: true
+          };
+        } else if (itemType === 'practice') {
+          // Practice activity for month view
+          const lessonKey = item.lesson_key;
+          const lesson = lessonStructure.find(l => l.id === lessonKey);
+
+          if (lesson) {
+            return {
+              id: `practice-${lessonKey}-${item.id}`,
+              type: 'practice',
+              title: cleanLessonTitle(lesson.title),
+              category: 'Practice',
+              duration: item.estimated_minutes || 30,
+              status: 'not-started',
+              lessonKey: lessonKey,
+              isPractice: true
+            };
+          }
+        }
+
+        return null;
+      }).filter(Boolean);
+
+      weekDays.push({
+        date,
+        dateString,
+        dayNumber: date.getDate(),
+        dayName: date.toLocaleDateString('en-US', { weekday: 'short' }),
+        fullDayName: date.toLocaleDateString('en-US', { weekday: 'long' }),
+        isToday,
+        items: transformedItems
+      });
+    }
+
+    return weekDays;
+  };
+
   const navigateMonth = (direction) => {
     const newMonth = new Date(currentMonth);
     newMonth.setMonth(currentMonth.getMonth() + direction);
     setCurrentMonth(newMonth);
+  };
+
+  const navigateWeek = (direction) => {
+    const newWeekStart = new Date(currentWeekStart);
+    newWeekStart.setDate(currentWeekStart.getDate() + (direction * 7));
+    setCurrentWeekStart(newWeekStart);
+  };
+
+  const navigateCalendar = (direction) => {
+    if (calendarViewType === 'month') {
+      navigateMonth(direction);
+    } else {
+      navigateWeek(direction);
+    }
+  };
+
+  const goToToday = () => {
+    if (calendarViewType === 'month') {
+      setCurrentMonth(new Date());
+    } else {
+      const today = new Date();
+      const dayOfWeek = today.getDay();
+      const weekStart = new Date(today);
+      weekStart.setDate(today.getDate() - dayOfWeek);
+      setCurrentWeekStart(weekStart);
+    }
   };
 
   // Loading state
@@ -918,10 +1296,12 @@ const CourseContent = () => {
           <h1 className={classes.title}>Learning Path</h1>
           {/* View Toggle */}
           <div style={{
-            display: 'flex',
+            display: 'inline-flex',
             background: '#f1f5f9',
-            borderRadius: '6px',
-            padding: '0.25rem'
+            borderRadius: '100px',
+            padding: '0.25rem',
+            gap: '0.25rem',
+            border: '1px solid #e2e8f0'
           }}>
             <button
               onClick={() => {
@@ -929,16 +1309,29 @@ const CourseContent = () => {
                 setViewMode('calendar');
               }}
               style={{
-                background: viewMode === 'calendar' ? '#ffffff' : 'transparent',
+                background: viewMode === 'calendar' ? '#08245b' : 'transparent',
                 border: 'none',
-                borderRadius: '4px',
-                padding: '0.375rem 0.75rem',
+                borderRadius: '100px',
+                padding: '0.625rem 1.5rem',
                 fontSize: '0.8125rem',
-                fontWeight: '500',
-                color: viewMode === 'calendar' ? '#1e40af' : '#64748b',
+                fontWeight: viewMode === 'calendar' ? '600' : '500',
+                color: viewMode === 'calendar' ? '#ffffff' : '#64748b',
                 cursor: 'pointer',
-                transition: 'all 0.15s ease',
-                boxShadow: viewMode === 'calendar' ? '0 1px 2px rgba(0,0,0,0.05)' : 'none'
+                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                boxShadow: viewMode === 'calendar' ? '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)' : 'none',
+                whiteSpace: 'nowrap'
+              }}
+              onMouseEnter={(e) => {
+                if (viewMode !== 'calendar') {
+                  e.target.style.color = '#1a1a1a';
+                  e.target.style.background = '#e2e8f0';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (viewMode !== 'calendar') {
+                  e.target.style.color = '#64748b';
+                  e.target.style.background = 'transparent';
+                }
               }}
             >
               Calendar
@@ -949,16 +1342,29 @@ const CourseContent = () => {
                 setViewMode('list');
               }}
               style={{
-                background: viewMode === 'list' ? '#ffffff' : 'transparent',
+                background: viewMode === 'list' ? '#08245b' : 'transparent',
                 border: 'none',
-                borderRadius: '4px',
-                padding: '0.375rem 0.75rem',
+                borderRadius: '100px',
+                padding: '0.625rem 1.5rem',
                 fontSize: '0.8125rem',
-                fontWeight: '500',
-                color: viewMode === 'list' ? '#1e40af' : '#64748b',
+                fontWeight: viewMode === 'list' ? '600' : '500',
+                color: viewMode === 'list' ? '#ffffff' : '#64748b',
                 cursor: 'pointer',
-                transition: 'all 0.15s ease',
-                boxShadow: viewMode === 'list' ? '0 1px 2px rgba(0,0,0,0.05)' : 'none'
+                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                boxShadow: viewMode === 'list' ? '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)' : 'none',
+                whiteSpace: 'nowrap'
+              }}
+              onMouseEnter={(e) => {
+                if (viewMode !== 'list') {
+                  e.target.style.color = '#1a1a1a';
+                  e.target.style.background = '#e2e8f0';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (viewMode !== 'list') {
+                  e.target.style.color = '#64748b';
+                  e.target.style.background = 'transparent';
+                }
               }}
             >
               List
@@ -1048,19 +1454,100 @@ const CourseContent = () => {
                 borderBottom: '1px solid #e5e7eb',
                 background: '#fafafa'
               }}>
-                <h2 style={{
-                  fontSize: '1.375rem',
-                  fontWeight: '600',
-                  color: '#1a1a1a',
-                  margin: 0
-                }}>
-                  {currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-                </h2>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                  <h2 style={{
+                    fontSize: '1.375rem',
+                    fontWeight: '600',
+                    color: '#1a1a1a',
+                    margin: 0
+                  }}>
+                    {calendarViewType === 'month'
+                      ? currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+                      : `Week of ${currentWeekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`
+                    }
+                  </h2>
+                  {/* Month/Week Toggle */}
+                  <div style={{
+                    display: 'inline-flex',
+                    background: '#f1f5f9',
+                    borderRadius: '100px',
+                    padding: '0.25rem',
+                    gap: '0.25rem',
+                    border: '1px solid #e2e8f0'
+                  }}>
+                    <button
+                      onClick={() => {
+                        soundEffects.playClick();
+                        setCalendarViewType('month');
+                      }}
+                      style={{
+                        background: calendarViewType === 'month' ? '#08245b' : 'transparent',
+                        border: 'none',
+                        borderRadius: '100px',
+                        padding: '0.5rem 1rem',
+                        fontSize: '0.75rem',
+                        fontWeight: calendarViewType === 'month' ? '600' : '500',
+                        color: calendarViewType === 'month' ? '#ffffff' : '#64748b',
+                        cursor: 'pointer',
+                        transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                        boxShadow: calendarViewType === 'month' ? '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)' : 'none',
+                        whiteSpace: 'nowrap'
+                      }}
+                      onMouseEnter={(e) => {
+                        if (calendarViewType !== 'month') {
+                          e.target.style.color = '#1a1a1a';
+                          e.target.style.background = '#e2e8f0';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (calendarViewType !== 'month') {
+                          e.target.style.color = '#64748b';
+                          e.target.style.background = 'transparent';
+                        }
+                      }}
+                    >
+                      Month
+                    </button>
+                    <button
+                      onClick={() => {
+                        soundEffects.playClick();
+                        setCalendarViewType('week');
+                      }}
+                      style={{
+                        background: calendarViewType === 'week' ? '#08245b' : 'transparent',
+                        border: 'none',
+                        borderRadius: '100px',
+                        padding: '0.5rem 1rem',
+                        fontSize: '0.75rem',
+                        fontWeight: calendarViewType === 'week' ? '600' : '500',
+                        color: calendarViewType === 'week' ? '#ffffff' : '#64748b',
+                        cursor: 'pointer',
+                        transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                        boxShadow: calendarViewType === 'week' ? '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)' : 'none',
+                        whiteSpace: 'nowrap'
+                      }}
+                      onMouseEnter={(e) => {
+                        if (calendarViewType !== 'week') {
+                          e.target.style.color = '#1a1a1a';
+                          e.target.style.background = '#e2e8f0';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (calendarViewType !== 'week') {
+                          e.target.style.color = '#64748b';
+                          e.target.style.background = 'transparent';
+                        }
+                      }}
+                    >
+                      Week
+                    </button>
+                  </div>
+                </div>
                 <div style={{ display: 'flex', gap: '0.5rem' }}>
                   <button
                     onClick={() => {
                       soundEffects.playClick();
-                      navigateMonth(-1);
+                      navigateCalendar(-1);
                     }}
                     style={{
                       background: '#ffffff',
@@ -1090,7 +1577,7 @@ const CourseContent = () => {
                   <button
                     onClick={() => {
                       soundEffects.playClick();
-                      setCurrentMonth(new Date());
+                      goToToday();
                     }}
                     style={{
                       background: '#ffffff',
@@ -1121,7 +1608,7 @@ const CourseContent = () => {
                   <button
                     onClick={() => {
                       soundEffects.playClick();
-                      navigateMonth(1);
+                      navigateCalendar(1);
                     }}
                     style={{
                       background: '#ffffff',
@@ -1179,20 +1666,22 @@ const CourseContent = () => {
                 ))}
               </div>
 
-              {/* Calendar Grid */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(7, 1fr)',
-                gridAutoRows: '90px',
-                borderLeft: '1px solid #d1d5db',
-                borderRight: '1px solid #d1d5db',
-                borderBottom: '1px solid #d1d5db'
-              }}>
-                {(() => {
-                  const { weeks } = generateAppleCalendarView();
-                  const totalWeeks = weeks.length;
-                  return weeks.map((week, weekIdx) => (
-                    week.map((day, dayIdx) => (
+              {/* Calendar Grid - Month or Week View */}
+              {calendarViewType === 'month' ? (
+                // MONTH VIEW
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(7, 1fr)',
+                  gridAutoRows: '90px',
+                  borderLeft: '1px solid #d1d5db',
+                  borderRight: '1px solid #d1d5db',
+                  borderBottom: '1px solid #d1d5db'
+                }}>
+                  {(() => {
+                    const { weeks } = generateAppleCalendarView();
+                    const totalWeeks = weeks.length;
+                    return weeks.map((week, weekIdx) => (
+                      week.map((day, dayIdx) => (
                       <div
                         key={`${weekIdx}-${dayIdx}`}
                         style={{
@@ -1203,6 +1692,9 @@ const CourseContent = () => {
                           position: 'relative',
                           display: 'flex',
                           flexDirection: 'column',
+                          height: '90px',
+                          minHeight: '90px',
+                          maxHeight: '90px',
                           overflow: 'hidden'
                         }}
                       >
@@ -1235,7 +1727,8 @@ const CourseContent = () => {
                           flexDirection: 'column',
                           gap: '0.1875rem',
                           flex: 1,
-                          overflow: 'hidden'
+                          minHeight: 0,
+                          overflow: 'auto'
                         }}>
                           {day.items.slice(0, 3).map((item, itemIdx) => (
                             <div
@@ -1249,11 +1742,13 @@ const CourseContent = () => {
                                 padding: '0.1875rem 0.3125rem',
                                 background: item.type === 'exam_day'
                                   ? '#dc2626'
+                                  : item.type === 'practice_test'
+                                  ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
                                   : item.type === 'test' || item.type === 'mock_exam'
                                   ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
                                   : item.type === 'review'
                                   ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
-                                  : 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
+                                  : 'linear-gradient(135deg, #64748b 0%, #475569 100%)',
                                 borderRadius: '3px',
                                 cursor: item.type === 'exam_day' ? 'default' : 'pointer',
                                 fontSize: '0.625rem',
@@ -1300,6 +1795,158 @@ const CourseContent = () => {
                   )).flat();
                 })()}
               </div>
+            ) : (
+              // WEEK VIEW
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(7, minmax(0, 1fr))',
+                gap: '0',
+                background: '#d1d5db',
+                borderLeft: '1px solid #d1d5db',
+                borderRight: '1px solid #d1d5db',
+                borderBottom: '1px solid #d1d5db'
+              }}>
+                {generateWeekView().map((day, idx) => (
+                  <div
+                    key={idx}
+                    style={{
+                      background: day.isToday ? '#eff6ff' : '#ffffff',
+                      padding: '1rem',
+                      height: '500px',
+                      minHeight: '500px',
+                      maxHeight: '500px',
+                      width: '100%',
+                      minWidth: 0,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      overflow: 'hidden',
+                      borderRight: idx < 6 ? '1px solid #d1d5db' : 'none'
+                    }}
+                  >
+                    {/* Day Header - Just the date number */}
+                    <div style={{ marginBottom: '1rem', flexShrink: 0, textAlign: 'center' }}>
+                      <div style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '32px',
+                        height: '32px',
+                        fontSize: '1.125rem',
+                        fontWeight: day.isToday ? '700' : '600',
+                        color: day.isToday ? '#ffffff' : '#1a1a1a',
+                        background: day.isToday ? '#3b82f6' : 'transparent',
+                        borderRadius: '50%'
+                      }}>
+                        {day.dayNumber}
+                      </div>
+                    </div>
+
+                    {/* Day Items */}
+                    <div style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.25rem',
+                      minHeight: '400px',
+                      maxHeight: '400px',
+                      minWidth: 0,
+                      overflowY: 'auto',
+                      overflowX: 'hidden'
+                    }}>
+                      {day.items.length === 0 ? (
+                        <div style={{
+                          fontSize: '0.75rem',
+                          color: '#d1d5db',
+                          textAlign: 'center',
+                          marginTop: '1rem'
+                        }}>
+                          No events
+                        </div>
+                      ) : day.items.map((item, itemIdx) => {
+                        const isExamDay = item.type === 'exam_day';
+                        const isMockExam = item.type === 'mock_exam';
+                        const isPracticeTest = item.type === 'practice_test';
+                        const isTest = item.type === 'test';
+                        const isReview = item.type === 'review';
+                        const isPractice = item.type === 'practice';
+                        const isLesson = item.type === 'lesson';
+
+                        return (
+                          <div
+                            key={itemIdx}
+                            onClick={() => !isExamDay && handleItemClick(item)}
+                            style={{
+                              padding: '0.375rem 0.5rem',
+                              background: isExamDay
+                                ? '#dc2626'
+                                : isMockExam || isTest
+                                ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
+                                : isPracticeTest
+                                ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
+                                : isReview
+                                ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
+                                : isPractice
+                                ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
+                                : 'linear-gradient(135deg, #64748b 0%, #475569 100%)',
+                              border: isExamDay ? '1px solid #fca5a5' : 'none',
+                              borderRadius: '4px',
+                              cursor: isExamDay ? 'default' : 'pointer',
+                              transition: 'all 0.15s ease',
+                              boxShadow: isExamDay
+                                ? '0 4px 8px rgba(220,38,38,0.4)'
+                                : isMockExam || isTest || isPracticeTest
+                                ? '0 2px 4px rgba(59,130,246,0.3)'
+                                : '0 1px 2px rgba(0,0,0,0.1)',
+                              minWidth: 0,
+                              overflow: 'hidden'
+                            }}
+                            onMouseEnter={(e) => {
+                              if (!isExamDay) {
+                                e.currentTarget.style.transform = 'translateY(-1px)';
+                                e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.15)';
+                              }
+                            }}
+                            onMouseLeave={(e) => {
+                              if (!isExamDay) {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = isExamDay
+                                  ? '0 4px 8px rgba(220,38,38,0.4)'
+                                  : isMockExam || isTest
+                                  ? '0 2px 4px rgba(59,130,246,0.3)'
+                                  : '0 1px 2px rgba(0,0,0,0.1)';
+                              }
+                            }}
+                          >
+                            <div style={{
+                              fontSize: '0.75rem',
+                              fontWeight: isExamDay ? '700' : '500',
+                              color: '#ffffff',
+                              marginBottom: item.category ? '0.125rem' : '0',
+                              lineHeight: '1.3',
+                              overflow: 'hidden',
+                              textOverflow: 'ellipsis',
+                              whiteSpace: 'nowrap'
+                            }}>
+                              {item.title}
+                            </div>
+                            {item.category && (
+                              <div style={{
+                                fontSize: '0.6875rem',
+                                color: 'rgba(255,255,255,0.7)',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                                whiteSpace: 'nowrap'
+                              }}>
+                                {item.category}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
             </div>
           ) : learningPath.length === 0 ? (
             <div style={{
@@ -1377,10 +2024,10 @@ const CourseContent = () => {
                     const status = getLessonStatus(item.id);
                     const isCompleted = status === 'completed';
                     const lessonData = lessonStructure.find(l => l.id === item.id);
-                    const chapterNum = lessonData?.chapterNum;
                     const isTest = item.type === 'test' || item.type === 'mock_exam';
                     const isReview = item.type === 'review';
                     const isMockExam = item.type === 'mock_exam';
+                    const isPracticeTest = item.type === 'practice_test';
                     const isExamDay = item.type === 'exam_day';
                     const isDiagnostic = item.isDiagnostic;
 
@@ -1388,17 +2035,24 @@ const CourseContent = () => {
                     let cardStyle = {};
                     if (isExamDay) {
                       cardStyle = {
-                        borderLeft: '4px solid #dc2626',
-                        paddingLeft: '0.75rem',
-                        background: '#dc2626', // Solid red color for exam day
-                        border: '2px solid #dc2626',
-                        cursor: 'default' // Change cursor to indicate it's not clickable
+                        background: 'linear-gradient(135deg, #dc2626 0%, #991b1b 100%)',
+                        border: 'none',
+                        cursor: 'default',
+                        boxShadow: '0 4px 12px rgba(220, 38, 38, 0.3)',
+                        padding: '1.25rem'
                       };
                     } else if (isDiagnostic) {
                       cardStyle = {
                         borderLeft: '3px solid #b91c1c',
                         paddingLeft: '0.75rem',
                         background: 'linear-gradient(90deg, #fef2f2 0%, #ffffff 100%)'
+                      };
+                    } else if (isPracticeTest) {
+                      // Blue styling for practice tests
+                      cardStyle = {
+                        borderLeft: '3px solid #3b82f6',
+                        paddingLeft: '0.75rem',
+                        background: 'linear-gradient(90deg, #dbeafe 0%, #ffffff 100%)'
                       };
                     } else if (isMockExam) {
                       cardStyle = {
@@ -1430,7 +2084,7 @@ const CourseContent = () => {
                         <div className={classes.weekCardContent}>
                           <span
                             className={classes.weekCardIcon}
-                            style={isExamDay ? { color: '#ffffff' } : isDiagnostic ? { color: '#b91c1c' } : isMockExam ? { color: '#f59e0b' } : isTest ? { color: '#2563eb' } : isReview ? { color: '#10b981' } : {}}
+                            style={isExamDay ? { color: '#ffffff' } : isDiagnostic ? { color: '#b91c1c' } : isPracticeTest ? { color: '#3b82f6' } : isMockExam ? { color: '#f59e0b' } : isTest ? { color: '#2563eb' } : isReview ? { color: '#10b981' } : {}}
                           >
                             {getItemIcon(item.type)}
                           </span>
@@ -1438,19 +2092,9 @@ const CourseContent = () => {
                             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.5rem', flexWrap: 'wrap' }}>
                               <span
                                 className={classes.weekCardText}
-                                style={isExamDay ? { fontWeight: '800', color: '#ffffff', fontSize: '1rem' } : isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : isMockExam ? { fontWeight: '700', color: '#f59e0b' } : isTest ? { fontWeight: '600', color: '#2563eb' } : isReview ? { fontWeight: '600', color: '#10b981' } : {}}
+                                style={isExamDay ? { fontWeight: '800', color: '#ffffff', fontSize: '1rem' } : isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : isPracticeTest ? { fontWeight: '700', color: '#3b82f6' } : isMockExam ? { fontWeight: '700', color: '#f59e0b' } : isTest ? { fontWeight: '600', color: '#2563eb' } : isReview ? { fontWeight: '600', color: '#10b981' } : {}}
                               >
                                 {item.title}
-                                {chapterNum && (
-                                  <span style={{
-                                    marginLeft: '0.5rem',
-                                    color: '#9ca3af',
-                                    fontSize: '0.8125rem',
-                                    fontWeight: '400'
-                                  }}>
-                                    {chapterNum}
-                                  </span>
-                                )}
                               </span>
                               {item.dueDate && (
                                 <span style={{
@@ -1463,7 +2107,7 @@ const CourseContent = () => {
                                 </span>
                               )}
                             </div>
-                            {item.description && (
+                            {item.description && !isPracticeTest && (
                               <span style={{
                                 fontSize: '0.8125rem',
                                 color: isExamDay ? '#ffffff' : '#6b7280',
@@ -1478,7 +2122,7 @@ const CourseContent = () => {
                         {!isExamDay && (
                           <span
                             className={classes.weekCardArrow}
-                            style={isDiagnostic ? { color: '#b91c1c' } : isMockExam ? { color: '#f59e0b' } : isTest ? { color: '#2563eb' } : isReview ? { color: '#10b981' } : {}}
+                            style={isDiagnostic ? { color: '#b91c1c' } : isPracticeTest ? { color: '#3b82f6' } : isMockExam ? { color: '#f59e0b' } : isTest ? { color: '#2563eb' } : isReview ? { color: '#10b981' } : {}}
                           >
                             →
                           </span>
@@ -1525,11 +2169,13 @@ const CourseContent = () => {
           >
             {/* Header with gradient */}
             <div style={{
-              background: previewItem.type === 'test' || previewItem.type === 'mock_exam'
+              background: previewItem.type === 'practice_test'
+                ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
+                : previewItem.type === 'test' || previewItem.type === 'mock_exam'
                 ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
                 : previewItem.type === 'review'
                 ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
-                : 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
+                : 'linear-gradient(135deg, #64748b 0%, #475569 100%)',
               padding: '2rem',
               color: '#ffffff'
             }}>
@@ -1827,33 +2473,67 @@ const CourseContent = () => {
       )}
 
       {/* Edit Goals Modal */}
-      {editModalOpen && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'rgba(0, 0, 0, 0.5)',
-          zIndex: 3000,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '1rem',
-          overflowY: 'auto'
-        }}>
+      {editModalOpen && (() => {
+        // Real-time validation calculations
+        const studyHours = editForm.study_hours || {};
+        const regularStudyHours = Object.values(studyHours).reduce((sum, hours) => sum + (hours || 0), 0);
+        const practiceTestHours = 3; // Guaranteed 3 hours for practice test
+        const reviewHours = 2; // Guaranteed 2 hours for review
+        const week1TotalHours = regularStudyHours + practiceTestHours + reviewHours;
+
+        // Calculate Week 2 hours if alternating weeks is enabled
+        let totalWeeklyHours = week1TotalHours;
+        if (editForm.use_alternating_weeks) {
+          const studyHoursWeek2 = editForm.study_hours_week2 || {};
+          const regularStudyHoursWeek2 = Object.values(studyHoursWeek2).reduce((sum, hours) => sum + (hours || 0), 0);
+          const week2TotalHours = regularStudyHoursWeek2 + practiceTestHours + reviewHours;
+          // Average of both weeks
+          totalWeeklyHours = (week1TotalHours + week2TotalHours) / 2;
+        }
+
+        const selectedTier = editForm.weekly_hours_tier || 'moderate';
+
+        const tierRanges = {
+          'light': { min: 1, max: 5, label: '1-5 hours/week' },
+          'moderate': { min: 5, max: 10, label: '5-10 hours/week' },
+          'intensive': { min: 10, max: 15, label: '10-15 hours/week' },
+          'extreme': { min: 15, max: 100, label: '15+ hours/week' }
+        };
+
+        const range = tierRanges[selectedTier];
+        const hoursMismatch = totalWeeklyHours < range.min || totalWeeklyHours > range.max;
+
+        const reviewDay = editForm.review_day || 'sunday';
+        const mockExamDay = editForm.mock_exam_day || 'saturday';
+        const dayConflict = reviewDay === mockExamDay;
+
+        return (
           <div style={{
-            background: 'white',
-            borderRadius: '12px',
-            padding: '2rem',
-            maxWidth: '900px',
-            width: '100%',
-            margin: '2rem auto',
-            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)'
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(0, 0, 0, 0.5)',
+            zIndex: 3000,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1rem',
+            overflowY: 'auto'
           }}>
-            <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.5rem', fontWeight: '600', color: '#1a1a1a' }}>
-              Edit Learning Path Goals
-            </h2>
+            <div style={{
+              background: 'white',
+              borderRadius: '12px',
+              padding: '2rem',
+              maxWidth: '900px',
+              width: '100%',
+              margin: '2rem auto',
+              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)'
+            }}>
+              <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.5rem', fontWeight: '600', color: '#1a1a1a' }}>
+                Edit Learning Path Goals
+              </h2>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {/* Basic Info Section */}
@@ -1961,35 +2641,64 @@ const CourseContent = () => {
                 padding: '1.25rem',
                 background: '#ffffff',
                 borderRadius: '8px',
-                border: '1px solid #e5e7eb'
+                border: hoursMismatch ? '1px solid #ef4444' : '1px solid #e5e7eb',
+                borderLeft: hoursMismatch ? '3px solid #ef4444' : '1px solid #e5e7eb'
               }}>
-                <h3 style={{
-                  margin: '0 0 1rem',
-                  fontSize: '1rem',
-                  fontWeight: '600',
-                  color: '#1a1a1a'
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  marginBottom: '1rem'
                 }}>
-                  Week 1 Schedule - Daily Study Hours
-                </h3>
+                  <h3 style={{
+                    margin: 0,
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    color: '#1a1a1a'
+                  }}>
+                    Week 1 Schedule - Daily Study Hours
+                  </h3>
+                  <span style={{
+                    fontSize: '0.75rem',
+                    color: '#6b7280',
+                    fontWeight: '500',
+                    padding: '0.25rem 0.5rem',
+                    background: '#f3f4f6',
+                    borderRadius: '4px'
+                  }}>
+                    {(() => {
+                      const studyHoursTotal = Object.values(editForm.study_hours).reduce((sum, hours) => sum + (hours || 0), 0);
+                      const practiceTestHours = 3; // Practice tests count as 3 hours
+                      const reviewHours = 2; // Review day counts as 2 hours
+                      return (studyHoursTotal + practiceTestHours + reviewHours).toFixed(1);
+                    })()}h total (includes 3h practice test + 2h review)
+                  </span>
+                </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.75rem' }}>
-                  {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => (
+                  {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => {
+                    const isMockExamDay = day === (editForm.mock_exam_day || 'saturday');
+                    const isReviewDay = day === (editForm.review_day || 'sunday');
+                    return (
                     <div key={day}>
                       <label style={{
                         display: 'block',
                         fontSize: '0.75rem',
                         fontWeight: '600',
-                        color: '#6b7280',
+                        color: isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#6b7280',
                         marginBottom: '0.375rem',
                         textTransform: 'capitalize'
                       }}>
                         {day.slice(0, 3)}
+                        {isMockExamDay && ' 🎯'}
+                        {isReviewDay && ' ✓'}
                       </label>
                       <input
                         type="number"
                         step="0.25"
                         min="0"
                         max="12"
-                        value={editForm.study_hours[day]}
+                        value={isMockExamDay ? 3 : isReviewDay ? 2 : (editForm.study_hours[day] || 0)}
+                        disabled={isMockExamDay || isReviewDay}
                         onChange={(e) => setEditForm({
                           ...editForm,
                           study_hours: {
@@ -2000,23 +2709,37 @@ const CourseContent = () => {
                         style={{
                           width: '100%',
                           padding: '0.5rem',
-                          border: '1px solid #d1d5db',
+                          border: `1px solid ${isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#d1d5db'}`,
                           borderRadius: '6px',
                           fontSize: '0.875rem',
                           fontFamily: 'inherit',
-                          textAlign: 'center'
+                          textAlign: 'center',
+                          background: isMockExamDay ? '#eff6ff' : isReviewDay ? '#d1fae5' : 'white',
+                          cursor: (isMockExamDay || isReviewDay) ? 'not-allowed' : 'text',
+                          fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400'
                         }}
                       />
                       <div style={{
                         fontSize: '0.625rem',
-                        color: '#9ca3af',
+                        color: isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#9ca3af',
                         marginTop: '0.25rem',
-                        textAlign: 'center'
+                        textAlign: 'center',
+                        fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400'
                       }}>
-                        {editForm.study_hours[day]}h
+                        {isMockExamDay ? '3h' : isReviewDay ? '2h' : `${editForm.study_hours[day] || 0}h`}
                       </div>
                     </div>
-                  ))}
+                  );
+                  })}
+                </div>
+                <div style={{
+                  fontSize: '0.7rem',
+                  color: '#6b7280',
+                  marginTop: '0.75rem',
+                  fontStyle: 'italic',
+                  textAlign: 'center'
+                }}>
+                  💡 Recommended: Schedule your review day (✓) the day after taking practice tests (🎯)
                 </div>
               </div>
 
@@ -2028,99 +2751,164 @@ const CourseContent = () => {
                   borderRadius: '8px',
                   border: '1px solid #bfdbfe'
                 }}>
-                  <h3 style={{
-                    margin: '0 0 1rem',
-                    fontSize: '1rem',
-                    fontWeight: '600',
-                    color: '#1e40af'
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    marginBottom: '1rem'
                   }}>
-                    Week 2 Schedule - Daily Study Hours
-                  </h3>
+                    <h3 style={{
+                      margin: 0,
+                      fontSize: '1rem',
+                      fontWeight: '600',
+                      color: '#1e40af'
+                    }}>
+                      Week 2 Schedule - Daily Study Hours
+                    </h3>
+                    <span style={{
+                      fontSize: '0.75rem',
+                      color: '#1e40af',
+                      fontWeight: '500',
+                      padding: '0.25rem 0.5rem',
+                      background: '#eff6ff',
+                      borderRadius: '4px'
+                    }}>
+                      {(() => {
+                        const studyHoursTotal = Object.values(editForm.study_hours_week2).reduce((sum, hours) => sum + (hours || 0), 0);
+                        const practiceTestHours = 3;
+                        const reviewHours = 2;
+                        return (studyHoursTotal + practiceTestHours + reviewHours).toFixed(1);
+                      })()}h total (includes 3h practice test + 2h review)
+                    </span>
+                  </div>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.75rem' }}>
-                    {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => (
-                      <div key={day}>
-                        <label style={{
-                          display: 'block',
-                          fontSize: '0.75rem',
-                          fontWeight: '600',
-                          color: '#1e40af',
-                          marginBottom: '0.375rem',
-                          textTransform: 'capitalize'
-                        }}>
-                          {day.slice(0, 3)}
-                        </label>
-                        <input
-                          type="number"
-                          step="0.25"
-                          min="0"
-                          max="12"
-                          value={editForm.study_hours_week2[day]}
-                          onChange={(e) => setEditForm({
-                            ...editForm,
-                            study_hours_week2: {
-                              ...editForm.study_hours_week2,
-                              [day]: parseFloat(e.target.value) || 0
-                            }
-                          })}
-                          style={{
-                            width: '100%',
-                            padding: '0.5rem',
-                            border: '1px solid #bfdbfe',
-                            borderRadius: '6px',
-                            fontSize: '0.875rem',
-                            fontFamily: 'inherit',
+                    {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => {
+                      const isMockExamDay = day === (editForm.mock_exam_day || 'saturday');
+                      const isReviewDay = day === (editForm.review_day || 'sunday');
+                      return (
+                        <div key={day}>
+                          <label style={{
+                            display: 'block',
+                            fontSize: '0.75rem',
+                            fontWeight: '600',
+                            color: isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#1e40af',
+                            marginBottom: '0.375rem',
+                            textTransform: 'capitalize'
+                          }}>
+                            {day.slice(0, 3)}
+                            {isMockExamDay && ' 🎯'}
+                            {isReviewDay && ' ✓'}
+                          </label>
+                          <input
+                            type="number"
+                            step="0.25"
+                            min="0"
+                            max="12"
+                            value={isMockExamDay ? 3 : isReviewDay ? 2 : (editForm.study_hours_week2[day] || 0)}
+                            disabled={isMockExamDay || isReviewDay}
+                            onChange={(e) => setEditForm({
+                              ...editForm,
+                              study_hours_week2: {
+                                ...editForm.study_hours_week2,
+                                [day]: parseFloat(e.target.value) || 0
+                              }
+                            })}
+                            style={{
+                              width: '100%',
+                              padding: '0.5rem',
+                              border: `1px solid ${isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#bfdbfe'}`,
+                              borderRadius: '6px',
+                              fontSize: '0.875rem',
+                              fontFamily: 'inherit',
+                              textAlign: 'center',
+                              background: isMockExamDay ? '#eff6ff' : isReviewDay ? '#d1fae5' : '#ffffff',
+                              cursor: (isMockExamDay || isReviewDay) ? 'not-allowed' : 'text',
+                              fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400'
+                            }}
+                          />
+                          <div style={{
+                            fontSize: '0.625rem',
+                            color: isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#1e40af',
+                            marginTop: '0.25rem',
                             textAlign: 'center',
-                            background: '#ffffff'
-                          }}
-                        />
-                        <div style={{
-                          fontSize: '0.625rem',
-                          color: '#1e40af',
-                          marginTop: '0.25rem',
-                          textAlign: 'center'
-                        }}>
-                          {editForm.study_hours_week2[day]}h
+                            fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400'
+                          }}>
+                            {isMockExamDay ? '3h' : isReviewDay ? '2h' : `${editForm.study_hours_week2[day] || 0}h`}
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
+                  </div>
+                  <div style={{
+                    fontSize: '0.7rem',
+                    color: '#6b7280',
+                    marginTop: '0.75rem',
+                    fontStyle: 'italic',
+                    textAlign: 'center'
+                  }}>
+                    💡 Recommended: Schedule your review day (✓) the day after taking practice tests (🎯)
                   </div>
                 </div>
               )}
 
               {/* Special Days Section */}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
-                {/* Review Day */}
-                <div>
-                  <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
-                    Weekly Review Day
-                  </label>
-                  <select
-                    value={editForm.review_day}
-                    onChange={(e) => setEditForm({ ...editForm, review_day: e.target.value })}
-                    style={{
-                      width: '100%',
-                      padding: '0.625rem',
-                      border: '1px solid #d1d5db',
-                      borderRadius: '6px',
-                      fontSize: '0.875rem',
-                      fontFamily: 'inherit',
-                      background: 'white'
-                    }}
-                  >
-                    <option value="sunday">Sunday</option>
-                    <option value="monday">Monday</option>
-                    <option value="tuesday">Tuesday</option>
-                    <option value="wednesday">Wednesday</option>
-                    <option value="thursday">Thursday</option>
-                    <option value="friday">Friday</option>
-                    <option value="saturday">Saturday</option>
-                  </select>
-                </div>
-
                 {/* Mock Exam Day */}
-                <div>
-                  <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
-                    Mock Exam Day
+                <div style={{ position: 'relative' }}>
+                  <label style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                    color: '#3b82f6',
+                    marginBottom: '0.5rem'
+                  }}>
+                    🎯 Mock Exam Day (3h)
+                    <div style={{ position: 'relative', display: 'inline-block' }}>
+                      <HiQuestionMarkCircle
+                        onMouseEnter={() => setShowMockExamTooltipModal(true)}
+                        onMouseLeave={() => setShowMockExamTooltipModal(false)}
+                        style={{
+                          fontSize: '1rem',
+                          color: '#6b7280',
+                          cursor: 'help',
+                          transition: 'color 0.2s'
+                        }}
+                      />
+                      {showMockExamTooltipModal && (
+                        <div style={{
+                          position: 'absolute',
+                          bottom: '100%',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          marginBottom: '0.5rem',
+                          padding: '0.75rem',
+                          backgroundColor: '#111827',
+                          color: '#ffffff',
+                          borderRadius: '8px',
+                          fontSize: '0.75rem',
+                          lineHeight: '1.5',
+                          zIndex: 1000,
+                          boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                          width: '280px',
+                          whiteSpace: 'normal'
+                        }}>
+                          Choose a day when you have 3 uninterrupted hours to take a full practice test. Saturday is recommended as it mimics real ACT test day conditions.
+                          <div style={{
+                            position: 'absolute',
+                            top: '100%',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            width: '0',
+                            height: '0',
+                            borderLeft: '6px solid transparent',
+                            borderRight: '6px solid transparent',
+                            borderTop: '6px solid #111827'
+                          }} />
+                        </div>
+                      )}
+                    </div>
                   </label>
                   <select
                     value={editForm.mock_exam_day}
@@ -2128,11 +2916,14 @@ const CourseContent = () => {
                     style={{
                       width: '100%',
                       padding: '0.625rem',
-                      border: '1px solid #d1d5db',
+                      border: dayConflict ? '2px solid #ef4444' : '2px solid #3b82f6',
                       borderRadius: '6px',
                       fontSize: '0.875rem',
                       fontFamily: 'inherit',
-                      background: 'white'
+                      backgroundColor: '#eff6ff',
+                      color: '#1e40af',
+                      fontWeight: '400',
+                      cursor: 'pointer'
                     }}
                   >
                     <option value="sunday">Sunday</option>
@@ -2143,8 +2934,103 @@ const CourseContent = () => {
                     <option value="friday">Friday</option>
                     <option value="saturday">Saturday</option>
                   </select>
+                  <small style={{ fontSize: '0.75rem', color: '#2563eb', marginTop: '0.25rem', display: 'block', fontWeight: '400' }}>
+                    Automatically set to 3 hours
+                  </small>
+                </div>
+
+                {/* Review Day */}
+                <div style={{ position: 'relative' }}>
+                  <label style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                    color: '#10b981',
+                    marginBottom: '0.5rem'
+                  }}>
+                    <HiCheckCircle style={{ display: 'inline' }} />
+                    Weekly Review Day (2h)
+                    <div style={{ position: 'relative', display: 'inline-block' }}>
+                      <HiQuestionMarkCircle
+                        onMouseEnter={() => setShowReviewTooltipModal(true)}
+                        onMouseLeave={() => setShowReviewTooltipModal(false)}
+                        style={{
+                          fontSize: '1rem',
+                          color: '#6b7280',
+                          cursor: 'help',
+                          transition: 'color 0.2s'
+                        }}
+                      />
+                      {showReviewTooltipModal && (
+                        <div style={{
+                          position: 'absolute',
+                          bottom: '100%',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          marginBottom: '0.5rem',
+                          padding: '0.75rem',
+                          backgroundColor: '#111827',
+                          color: '#ffffff',
+                          borderRadius: '8px',
+                          fontSize: '0.75rem',
+                          lineHeight: '1.5',
+                          zIndex: 1000,
+                          boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                          width: '280px',
+                          whiteSpace: 'normal'
+                        }}>
+                          💡 Schedule this the day after your practice test (🎯). This lets you review mistakes while fresh, turning weak areas into learning opportunities.
+                          <div style={{
+                            position: 'absolute',
+                            top: '100%',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            width: '0',
+                            height: '0',
+                            borderLeft: '6px solid transparent',
+                            borderRight: '6px solid transparent',
+                            borderTop: '6px solid #111827'
+                          }} />
+                        </div>
+                      )}
+                    </div>
+                  </label>
+                  <select
+                    value={editForm.review_day}
+                    onChange={(e) => setEditForm({ ...editForm, review_day: e.target.value })}
+                    style={{
+                      width: '100%',
+                      padding: '0.625rem',
+                      border: dayConflict ? '2px solid #ef4444' : '2px solid #10b981',
+                      borderRadius: '6px',
+                      fontSize: '0.875rem',
+                      fontFamily: 'inherit',
+                      backgroundColor: '#d1fae5',
+                      color: '#065f46',
+                      fontWeight: '400',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <option value="sunday">Sunday</option>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                  </select>
+                  <small style={{ fontSize: '0.75rem', color: '#059669', marginTop: '0.25rem', display: 'block', fontWeight: '400' }}>
+                    Automatically set to 2 hours
+                  </small>
                 </div>
               </div>
+              {dayConflict && (
+                <p style={{ fontSize: '0.75rem', color: '#ef4444', marginTop: '0.5rem', fontWeight: '500' }}>
+                  Review Day and Mock Exam Day cannot be the same day
+                </p>
+              )}
 
               {/* Weekly Hours Tier */}
               <div style={{ marginTop: '1.5rem' }}>
@@ -2157,23 +3043,97 @@ const CourseContent = () => {
                   style={{
                     width: '100%',
                     padding: '0.625rem',
-                    border: '1px solid #d1d5db',
+                    border: hoursMismatch ? '1px solid #ef4444' : '1px solid #d1d5db',
+                    borderLeft: hoursMismatch ? '3px solid #ef4444' : '1px solid #d1d5db',
                     borderRadius: '6px',
                     fontSize: '0.875rem',
                     fontFamily: 'inherit',
                     background: 'white'
                   }}
                 >
-                  <option value="light">Light (1-5 hours/week)</option>
-                  <option value="moderate">Moderate (5-10 hours/week)</option>
-                  <option value="intensive">Intensive (10-15 hours/week)</option>
-                  <option value="extreme">Extreme (15+ hours/week)</option>
+                  <option value="light" disabled={totalWeeklyHours > 5}>Light (1-5 hours/week)</option>
+                  <option value="moderate" disabled={totalWeeklyHours < 5 || totalWeeklyHours > 10}>Moderate (5-10 hours/week)</option>
+                  <option value="intensive" disabled={totalWeeklyHours < 10 || totalWeeklyHours > 15}>Intensive (10-15 hours/week)</option>
+                  <option value="extreme" disabled={totalWeeklyHours < 15}>Extreme (15+ hours/week)</option>
                 </select>
                 <p style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '0.5rem' }}>
-                  This helps optimize your mock exam frequency and lesson pacing
+                  {editForm.use_alternating_weeks
+                    ? `Average: ${totalWeeklyHours.toFixed(1)}h/week (both weeks include 3h practice test + 2h review)`
+                    : `Total: ${totalWeeklyHours.toFixed(1)}h/week (includes 3h practice test + 2h review)`
+                  }
                 </p>
+                {hoursMismatch && (
+                  <p style={{ fontSize: '0.75rem', color: '#ef4444', marginTop: '0.5rem', fontWeight: '500' }}>
+                    Your {editForm.use_alternating_weeks ? 'average' : 'total'} hours ({totalWeeklyHours.toFixed(1)}h/week) don't match {selectedTier.toUpperCase()} ({range.label})
+                  </p>
+                )}
               </div>
             </div>
+
+            {/* Save Error Display */}
+            {validationError && (
+              <div style={{
+                marginTop: '1.5rem',
+                padding: '1rem',
+                background: '#fef2f2',
+                border: '1px solid #fecaca',
+                borderLeft: '3px solid #ef4444',
+                borderRadius: '8px'
+              }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '0.75rem'
+                }}>
+                  <span style={{ fontSize: '1.25rem' }}>❌</span>
+                  <div style={{ flex: 1 }}>
+                    <h4 style={{
+                      margin: 0,
+                      fontSize: '0.875rem',
+                      fontWeight: '600',
+                      color: '#991b1b',
+                      marginBottom: '0.5rem'
+                    }}>
+                      {validationError.title}
+                    </h4>
+                    <p style={{
+                      margin: 0,
+                      fontSize: '0.8125rem',
+                      color: '#7f1d1d',
+                      marginBottom: validationError.suggestions ? '0.75rem' : 0
+                    }}>
+                      {validationError.message}
+                    </p>
+                    {validationError.suggestions && (
+                      <ul style={{
+                        margin: 0,
+                        paddingLeft: '1.25rem',
+                        fontSize: '0.8125rem',
+                        color: '#7f1d1d'
+                      }}>
+                        {validationError.suggestions.map((suggestion, idx) => (
+                          <li key={idx} style={{ marginBottom: '0.25rem' }}>{suggestion}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                  <button
+                    onClick={() => setValidationError(null)}
+                    style={{
+                      padding: '0.25rem',
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      color: '#991b1b',
+                      fontSize: '1.25rem',
+                      lineHeight: 1
+                    }}
+                  >
+                    ×
+                  </button>
+                </div>
+              </div>
+            )}
 
             <div style={{ display: 'flex', gap: '0.75rem', marginTop: '2rem' }}>
               <button
@@ -2209,15 +3169,25 @@ const CourseContent = () => {
                   fontWeight: '500',
                   cursor: savingGoals ? 'not-allowed' : 'pointer',
                   transition: 'all 0.15s ease',
-                  opacity: savingGoals ? 0.7 : 1
+                  opacity: savingGoals ? 0.7 : 1,
+                  animation: saveButtonShake ? 'shake 0.5s' : 'none'
                 }}
               >
                 {savingGoals ? 'Saving...' : 'Save Changes'}
               </button>
             </div>
+
+            <style>{`
+              @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+                20%, 40%, 60%, 80% { transform: translateX(10px); }
+              }
+            `}</style>
           </div>
         </div>
-      )}
+        );
+      })()}
 
     </div>
   );

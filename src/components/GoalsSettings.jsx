@@ -8,13 +8,15 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../services/api/supabase.service';
 import logger from '../services/logging/logger';
-import { HiAcademicCap, HiCalendar, HiClock, HiCheckCircle, HiXCircle } from 'react-icons/hi2';
+import { HiAcademicCap, HiCalendar, HiClock, HiCheckCircle, HiXCircle, HiQuestionMarkCircle } from 'react-icons/hi2';
 
 const GoalsSettings = () => {
   const { user } = useAuth();
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });
+  const [showMockExamTooltip, setShowMockExamTooltip] = useState(false);
+  const [showReviewTooltip, setShowReviewTooltip] = useState(false);
   const [goals, setGoals] = useState({
     target_exam_date: '',
     current_score: '',
@@ -372,46 +374,61 @@ const GoalsSettings = () => {
 
         {/* Schedule Days */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-          <div>
+          <div style={{ position: 'relative' }}>
             <label style={{
-              display: 'block',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
               fontSize: '0.875rem',
               fontWeight: '500',
-              color: '#374151',
+              color: '#3b82f6',
               marginBottom: '0.5rem'
             }}>
-              Review Day
-            </label>
-            <select
-              value={goals.review_day}
-              onChange={(e) => handleChange('review_day', e.target.value)}
-              style={{
-                width: '100%',
-                padding: '0.5rem',
-                borderRadius: '6px',
-                border: '1px solid #d1d5db',
-                fontSize: '0.875rem'
-              }}
-            >
-              <option value="sunday">Sunday</option>
-              <option value="monday">Monday</option>
-              <option value="tuesday">Tuesday</option>
-              <option value="wednesday">Wednesday</option>
-              <option value="thursday">Thursday</option>
-              <option value="friday">Friday</option>
-              <option value="saturday">Saturday</option>
-            </select>
-          </div>
-
-          <div>
-            <label style={{
-              display: 'block',
-              fontSize: '0.875rem',
-              fontWeight: '500',
-              color: '#374151',
-              marginBottom: '0.5rem'
-            }}>
-              Mock Exam Day
+              🎯 Mock Exam Day (3h)
+              <div style={{ position: 'relative', display: 'inline-block' }}>
+                <HiQuestionMarkCircle
+                  onMouseEnter={() => setShowMockExamTooltip(true)}
+                  onMouseLeave={() => setShowMockExamTooltip(false)}
+                  style={{
+                    fontSize: '1rem',
+                    color: '#6b7280',
+                    cursor: 'help',
+                    transition: 'color 0.2s'
+                  }}
+                />
+                {showMockExamTooltip && (
+                  <div style={{
+                    position: 'absolute',
+                    bottom: '100%',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    marginBottom: '0.5rem',
+                    padding: '0.75rem',
+                    backgroundColor: '#111827',
+                    color: '#ffffff',
+                    borderRadius: '8px',
+                    fontSize: '0.75rem',
+                    lineHeight: '1.5',
+                    zIndex: 1000,
+                    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                    width: '280px',
+                    whiteSpace: 'normal'
+                  }}>
+                    Choose a day when you have 3 uninterrupted hours to take a full practice test. Saturday is recommended as it mimics real ACT test day conditions.
+                    <div style={{
+                      position: 'absolute',
+                      top: '100%',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      width: '0',
+                      height: '0',
+                      borderLeft: '6px solid transparent',
+                      borderRight: '6px solid transparent',
+                      borderTop: '6px solid #111827'
+                    }} />
+                  </div>
+                )}
+              </div>
             </label>
             <select
               value={goals.mock_exam_day}
@@ -420,8 +437,12 @@ const GoalsSettings = () => {
                 width: '100%',
                 padding: '0.5rem',
                 borderRadius: '6px',
-                border: '1px solid #d1d5db',
-                fontSize: '0.875rem'
+                border: '2px solid #3b82f6',
+                fontSize: '0.875rem',
+                backgroundColor: '#eff6ff',
+                color: '#1e40af',
+                fontWeight: '400',
+                cursor: 'pointer'
               }}
             >
               <option value="sunday">Sunday</option>
@@ -432,6 +453,94 @@ const GoalsSettings = () => {
               <option value="friday">Friday</option>
               <option value="saturday">Saturday</option>
             </select>
+            <small style={{ fontSize: '0.75rem', color: '#2563eb', marginTop: '0.25rem', display: 'block', fontWeight: '400' }}>
+              Automatically set to 3 hours
+            </small>
+          </div>
+
+          <div style={{ position: 'relative' }}>
+            <label style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              fontSize: '0.875rem',
+              fontWeight: '500',
+              color: '#10b981',
+              marginBottom: '0.5rem'
+            }}>
+              <HiCheckCircle style={{ display: 'inline' }} />
+              Weekly Review Day (2h)
+              <div style={{ position: 'relative', display: 'inline-block' }}>
+                <HiQuestionMarkCircle
+                  onMouseEnter={() => setShowReviewTooltip(true)}
+                  onMouseLeave={() => setShowReviewTooltip(false)}
+                  style={{
+                    fontSize: '1rem',
+                    color: '#6b7280',
+                    cursor: 'help',
+                    transition: 'color 0.2s'
+                  }}
+                />
+                {showReviewTooltip && (
+                  <div style={{
+                    position: 'absolute',
+                    bottom: '100%',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    marginBottom: '0.5rem',
+                    padding: '0.75rem',
+                    backgroundColor: '#111827',
+                    color: '#ffffff',
+                    borderRadius: '8px',
+                    fontSize: '0.75rem',
+                    lineHeight: '1.5',
+                    zIndex: 1000,
+                    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                    width: '280px',
+                    whiteSpace: 'normal'
+                  }}>
+                    💡 Schedule this the day after your practice test (🎯). This lets you review mistakes while fresh, turning weak areas into learning opportunities.
+                    <div style={{
+                      position: 'absolute',
+                      top: '100%',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      width: '0',
+                      height: '0',
+                      borderLeft: '6px solid transparent',
+                      borderRight: '6px solid transparent',
+                      borderTop: '6px solid #111827'
+                    }} />
+                  </div>
+                )}
+              </div>
+            </label>
+            <select
+              value={goals.review_day}
+              onChange={(e) => handleChange('review_day', e.target.value)}
+              style={{
+                width: '100%',
+                padding: '0.5rem',
+                borderRadius: '6px',
+                border: '2px solid #10b981',
+                fontSize: '0.875rem',
+                backgroundColor: '#d1fae5',
+                color: '#065f46',
+                fontWeight: '400',
+                cursor: 'pointer'
+              }}
+            >
+              <option value="sunday">Sunday</option>
+              <option value="monday">Monday</option>
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">Saturday</option>
+            </select>
+            <small style={{ fontSize: '0.75rem', color: '#059669', marginTop: '0.25rem', display: 'block', fontWeight: '400' }}>
+              Automatically set to 2 hours
+            </small>
           </div>
         </div>
 
