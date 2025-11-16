@@ -47,47 +47,36 @@ export const useCourseStyles = createUseStyles({
 
   statsGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-    gap: '1.5rem',
-    marginBottom: '1rem',
-    paddingBottom: '1rem',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
+    gap: '0.5rem',
+    marginBottom: '0.5rem',
+    paddingBottom: '0.5rem',
     borderBottom: '1px solid #f3f4f6'
   },
 
   statCard: {
-    padding: '0.75rem 1rem',
-    background: 'linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%)',
-    borderRadius: '8px',
-    border: '1px solid #e5e7eb',
-    transition: 'all 0.2s ease',
-    '&:hover': {
-      borderColor: '#cbd5e1',
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
-      transform: 'translateY(-1px)'
-    }
+    padding: '0.25rem 0',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.125rem'
   },
 
   statLabel: {
-    fontSize: '0.7rem',
+    fontSize: '0.5625rem',
     fontWeight: '600',
     color: '#9ca3af',
-    marginBottom: '0.25rem',
     textTransform: 'uppercase',
     letterSpacing: '0.05em'
   },
 
   statValue: {
-    fontSize: '1.5rem',
+    fontSize: '0.875rem',
     fontWeight: '700',
-    background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
-    marginBottom: '0.1rem'
+    color: '#1a1a1a'
   },
 
   statDetail: {
-    fontSize: '0.7rem',
+    fontSize: '0.5625rem',
     color: '#9ca3af'
   },
 

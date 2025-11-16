@@ -457,6 +457,10 @@ const LearningPathService = {
     const reviewDay = goals.review_day || 'sunday';
     const mockExamDay = goals.mock_exam_day || 'saturday';
 
+    // PRIORITY: Schedule practice tests for LATER weeks, not earlier weeks
+    // Calculate how many weeks to SKIP at the beginning before assigning practice tests
+    const weeksToSkipForPracticeTests = Math.max(0, maxWeeks - availablePracticeTests.length);
+
     // Calculate total weekly hours to determine study intensity
     const studyHours = goals.study_hours || {};
     const totalWeeklyHours = Object.values(studyHours).reduce((sum, hours) => sum + (hours || 0), 0);
@@ -644,9 +648,9 @@ const LearningPathService = {
     const mathLessons = getNextLessonsForInit('math', Math.floor(lessonsPerWeek * 0.4));
     week1Lessons.push(...mathLessons);
 
-    // Add practice test to Week 1 if available
+    // Add practice test to Week 1 ONLY if we're not skipping early weeks for practice tests
     let week1PracticeTest = null;
-    if (practiceTestIndex < availablePracticeTests.length) {
+    if (1 > weeksToSkipForPracticeTests && practiceTestIndex < availablePracticeTests.length) {
       week1PracticeTest = {
         testNumber: availablePracticeTests[practiceTestIndex].testNumber,
         sections: ['english', 'math', 'reading', 'science'],
@@ -693,7 +697,9 @@ const LearningPathService = {
       maxWeeks,
       lastContentWeek,
       currentWeekNumber: weekNumber,
-      message: `Will build content for ALL ${maxWeeks} weeks until exam`
+      availablePracticeTests: availablePracticeTests.length,
+      weeksToSkipForPracticeTests,
+      message: `Will build content for ALL ${maxWeeks} weeks until exam. Practice tests assigned to weeks ${weeksToSkipForPracticeTests + 1}-${lastContentWeek} (skipping first ${weeksToSkipForPracticeTests} weeks)`
     });
 
     // Fill ALL remaining weeks until exam with rotating subjects
@@ -793,8 +799,9 @@ const LearningPathService = {
       // Add practice tests (mock exams are disabled)
       let practiceTest = null;
 
-      // Add practice test if available
-      if (practiceTestIndex < availablePracticeTests.length) {
+      // Add practice test if available AND we're past the weeks to skip
+      // Priority: Later weeks get practice tests first
+      if (weekNumber > weeksToSkipForPracticeTests && practiceTestIndex < availablePracticeTests.length) {
         const test = availablePracticeTests[practiceTestIndex];
         practiceTest = {
           testNumber: test.testNumber,
@@ -1272,7 +1279,8 @@ const LearningPathService = {
 
           // ALWAYS add practice if at least 1 lesson is scheduled today
           // Practice is critical for retention and test preparation
-          if (hasLessonToday && remainingMinutes >= 15) {
+          // NOTE: We add practice even if it exceeds available minutes - it's that important!
+          if (hasLessonToday) {
             // Build practice pool: Include TODAY'S lessons + lessons from previous days this week + completed lessons
             // This allows same-day practice for immediate reinforcement
             const practiceLessonPool = [...lessonsScheduledThisWeek, ...completedLessons];
@@ -1320,15 +1328,21 @@ const LearningPathService = {
                 });
               }
 
+              // Practice gets at least 15 minutes, ideally 30 minutes
+              // Use available time if it exists, otherwise just allocate 30 minutes
+              const practiceMinutes = remainingMinutes > 0
+                ? Math.max(15, Math.min(practiceItemDuration, remainingMinutes))
+                : practiceItemDuration;
+
               itemsScheduledToday.push({
                 type: 'practice',
                 lesson_key: lessonToPractice,
-                estimated_minutes: Math.min(practiceItemDuration, remainingMinutes),
+                estimated_minutes: practiceMinutes,
                 week_number: week.weekNumber,
                 is_priority: false
               });
 
-              minutesUsed += Math.min(practiceItemDuration, remainingMinutes);
+              minutesUsed += practiceMinutes;
             }
           }
 

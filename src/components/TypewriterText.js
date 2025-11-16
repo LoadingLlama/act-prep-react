@@ -7,18 +7,14 @@ const useStyles = createUseStyles({
     position: 'relative',
     '& .preview-char': {
       opacity: 0.25,
-      transition: 'opacity 0.1s ease'
+      transition: 'none' // Remove fade transition
     }
   },
   lineReveal: {
     '& .revealing-line': {
-      opacity: 0,
-      animation: '$fadeInLine 0.5s ease-out forwards'
+      opacity: 1, // No fade in, instant appearance
+      animation: 'none' // Remove fade animation
     }
-  },
-  '@keyframes fadeInLine': {
-    'from': { opacity: 0, transform: 'translateY(10px)' },
-    'to': { opacity: 1, transform: 'translateY(0)' }
   }
 });
 
@@ -142,7 +138,7 @@ const TypewriterText = React.forwardRef(({
 
     // Fallback to simple text truncation if HTML parsing fails
     try {
-      const PREVIEW_CHARS = 10; // Number of preview characters to show ahead
+      const PREVIEW_CHARS = 0; // No preview characters - pure typewriter effect
 
       // Find positions of all characters in the HTML
       let textCount = 0;
@@ -188,11 +184,10 @@ const TypewriterText = React.forwardRef(({
         previewChars.forEach(({ index }, i) => {
           result += text.substring(lastIndex, index);
 
-          // Exponential decay for smoother gradient: starts at 0.85 and fades to 0.05
-          const progress = i / (PREVIEW_CHARS - 1);
-          const opacity = 0.85 * Math.pow(1 - progress, 1.5) + 0.05;
+          // No fade - instant typewriter effect
+          const opacity = 0.25; // Fixed low opacity for preview chars, no animation
 
-          result += `<span style="opacity: ${opacity.toFixed(2)}; transition: opacity 0.08s ease;">${text[index]}</span>`;
+          result += `<span style="opacity: ${opacity}; transition: none;">${text[index]}</span>`;
           lastIndex = index + 1;
         });
         result += text.substring(lastIndex, previewEndIndex);

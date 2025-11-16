@@ -729,8 +729,8 @@ const CourseContent = () => {
       return null; // No icon for exam day
     }
     if (type === 'practice') {
-      // Distinct icon for practice activities - circular arrows (refresh/repeat)
-      return <HiArrowPath style={{ width: '16px', height: '16px' }} />;
+      // Distinct icon for practice activities - pencil/writing
+      return <HiPencilSquare style={{ width: '16px', height: '16px' }} />;
     }
     if (type === 'practice_test') {
       // Distinct icon for practice tests - clipboard with checkmark
@@ -846,6 +846,24 @@ const CourseContent = () => {
           isPriority: true,
           isExamDay: true
         };
+      } else if (itemType === 'practice') {
+        // Practice activity - look up the lesson being practiced
+        const lessonKey = item.lesson_key;
+        const lesson = lessonStructure.find(l => l.id === lessonKey);
+
+        if (lesson) {
+          calendarItem = {
+            id: `practice-${lessonKey}-${item.id}`,
+            type: 'practice',
+            title: cleanLessonTitle(lesson.title),
+            duration: item.estimated_minutes,
+            status: 'not-started',
+            isPractice: true
+          };
+        } else {
+          console.warn('⚠️ Practice lesson not found:', lessonKey);
+          calendarItem = null;
+        }
       } else {
         // For lessons, look up from lessonStructure using lesson_key
         const lessonKey = item.lesson_key;
@@ -876,7 +894,9 @@ const CourseContent = () => {
         }
       }
 
-      itemsByDate[date].push(calendarItem);
+      if (calendarItem) {
+        itemsByDate[date].push(calendarItem);
+      }
     });
 
     // Generate calendar grid for current month
@@ -1735,6 +1755,8 @@ const CourseContent = () => {
                               key={itemIdx}
                               onClick={(e) => {
                                 e.stopPropagation();
+                                // Don't open modal for exam day
+                                if (item.type === 'exam_day') return;
                                 soundEffects.playClick();
                                 setPreviewItem({ ...item, date: day.date });
                               }}
@@ -1748,6 +1770,8 @@ const CourseContent = () => {
                                   ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
                                   : item.type === 'review'
                                   ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
+                                  : item.type === 'practice'
+                                  ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
                                   : 'linear-gradient(135deg, #64748b 0%, #475569 100%)',
                                 borderRadius: '3px',
                                 cursor: item.type === 'exam_day' ? 'default' : 'pointer',
@@ -2030,6 +2054,7 @@ const CourseContent = () => {
                     const isPracticeTest = item.type === 'practice_test';
                     const isExamDay = item.type === 'exam_day';
                     const isDiagnostic = item.isDiagnostic;
+                    const isPractice = item.type === 'practice';
 
                     // Style for different item types
                     let cardStyle = {};
@@ -2072,6 +2097,13 @@ const CourseContent = () => {
                         paddingLeft: '0.75rem',
                         background: 'linear-gradient(90deg, #d1fae5 0%, #ffffff 100%)'
                       };
+                    } else if (isPractice) {
+                      // Orange styling for practice activities
+                      cardStyle = {
+                        borderLeft: '3px solid #f59e0b',
+                        paddingLeft: '0.75rem',
+                        background: 'linear-gradient(90deg, #fef3c7 0%, #ffffff 100%)'
+                      };
                     }
 
                     return (
@@ -2084,7 +2116,7 @@ const CourseContent = () => {
                         <div className={classes.weekCardContent}>
                           <span
                             className={classes.weekCardIcon}
-                            style={isExamDay ? { color: '#ffffff' } : isDiagnostic ? { color: '#b91c1c' } : isPracticeTest ? { color: '#3b82f6' } : isMockExam ? { color: '#f59e0b' } : isTest ? { color: '#2563eb' } : isReview ? { color: '#10b981' } : {}}
+                            style={isExamDay ? { color: '#ffffff' } : isDiagnostic ? { color: '#b91c1c' } : isPracticeTest ? { color: '#3b82f6' } : isMockExam ? { color: '#f59e0b' } : isTest ? { color: '#2563eb' } : isReview ? { color: '#10b981' } : isPractice ? { color: '#f59e0b' } : {}}
                           >
                             {getItemIcon(item.type)}
                           </span>
@@ -2092,7 +2124,7 @@ const CourseContent = () => {
                             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.5rem', flexWrap: 'wrap' }}>
                               <span
                                 className={classes.weekCardText}
-                                style={isExamDay ? { fontWeight: '800', color: '#ffffff', fontSize: '1rem' } : isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : isPracticeTest ? { fontWeight: '700', color: '#3b82f6' } : isMockExam ? { fontWeight: '700', color: '#f59e0b' } : isTest ? { fontWeight: '600', color: '#2563eb' } : isReview ? { fontWeight: '600', color: '#10b981' } : {}}
+                                style={isExamDay ? { fontWeight: '800', color: '#ffffff', fontSize: '1rem' } : isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : isPracticeTest ? { fontWeight: '700', color: '#3b82f6' } : isMockExam ? { fontWeight: '700', color: '#f59e0b' } : isTest ? { fontWeight: '600', color: '#2563eb' } : isReview ? { fontWeight: '600', color: '#10b981' } : isPractice ? { fontWeight: '600', color: '#f59e0b' } : {}}
                               >
                                 {item.title}
                               </span>
@@ -2175,6 +2207,8 @@ const CourseContent = () => {
                 ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
                 : previewItem.type === 'review'
                 ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
+                : previewItem.type === 'practice'
+                ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
                 : 'linear-gradient(135deg, #64748b 0%, #475569 100%)',
               padding: '2rem',
               color: '#ffffff'
@@ -2209,7 +2243,7 @@ const CourseContent = () => {
                   borderRadius: '12px',
                   fontWeight: '500'
                 }}>
-                  {previewItem.type === 'test' ? 'Practice Test' : previewItem.type === 'mock_exam' ? 'Mock Exam' : previewItem.type === 'review' ? 'Review Day' : 'Lesson'}
+                  {previewItem.type === 'test' ? 'Practice Test' : previewItem.type === 'mock_exam' ? 'Mock Exam' : previewItem.type === 'review' ? 'Review Day' : previewItem.type === 'practice' ? 'Practice' : 'Lesson'}
                 </span>
                 <span>•</span>
                 <span>{previewItem.duration} minutes</span>
@@ -2342,45 +2376,134 @@ const CourseContent = () => {
                     </ul>
                   </div>
                 </div>
-              ) : (
-                <div>
-                  <div style={{
-                    background: '#f5f3ff',
-                    border: '1px solid #ddd6fe',
-                    borderRadius: '8px',
-                    padding: '1rem',
-                    marginBottom: '1.5rem'
-                  }}>
-                    <div style={{
-                      fontSize: '0.875rem',
-                      fontWeight: '600',
-                      color: '#6d28d9',
-                      marginBottom: '0.5rem'
-                    }}>
-                      Lesson Overview
-                    </div>
-                    <div style={{ fontSize: '0.875rem', color: '#374151', lineHeight: '1.5' }}>
-                      This lesson will help you master key concepts and strategies for the ACT.
-                    </div>
-                  </div>
+              ) : previewItem.type === 'practice' ? (
+                (() => {
+                  // For practice items, show what lessons they'll be practicing
+                  const practiceDate = previewItem.date;
+                  // Find all lessons scheduled on the same day
+                  const lessonsOnSameDay = learningPath
+                    .flatMap(week => week.days)
+                    .find(day => day.date === practiceDate)
+                    ?.items.filter(item => item.type === 'lesson') || [];
 
-                  <div style={{
-                    fontSize: '0.875rem',
-                    color: '#6b7280',
-                    marginBottom: '1.5rem',
-                    lineHeight: '1.6'
-                  }}>
-                    <div style={{ marginBottom: '0.5rem' }}>
-                      <strong style={{ color: '#374151' }}>What you'll learn:</strong>
+                  const lessonTitles = lessonsOnSameDay.map(lesson => {
+                    const lessonData = lessonStructure.find(l => l.id === (lesson.id || lesson.lessonKey));
+                    return lessonData?.title || lesson.title || 'Lesson';
+                  });
+
+                  return (
+                    <div>
+                      <div style={{
+                        background: '#fef3c7',
+                        border: '1px solid #f59e0b',
+                        borderRadius: '8px',
+                        padding: '1rem',
+                        marginBottom: '1.5rem'
+                      }}>
+                        <div style={{
+                          fontSize: '0.875rem',
+                          fontWeight: '600',
+                          color: '#92400e',
+                          marginBottom: '0.5rem'
+                        }}>
+                          Practice Session
+                        </div>
+                        <div style={{ fontSize: '0.875rem', color: '#78350f', lineHeight: '1.5' }}>
+                          {lessonTitles.length > 0
+                            ? `Reinforce what you learned today with practice problems covering: ${lessonTitles.join(', ')}`
+                            : 'Practice problems to reinforce concepts you\'ve learned recently.'}
+                        </div>
+                      </div>
+
+                      <div style={{
+                        fontSize: '0.875rem',
+                        color: '#6b7280',
+                        marginBottom: '1.5rem',
+                        lineHeight: '1.6'
+                      }}>
+                        <div style={{ marginBottom: '0.5rem' }}>
+                          <strong style={{ color: '#374151' }}>What you'll do:</strong>
+                        </div>
+                        <ul style={{ margin: 0, paddingLeft: '1.5rem' }}>
+                          <li>Apply concepts from today's lessons</li>
+                          <li>Work through practice problems</li>
+                          <li>Get immediate feedback</li>
+                          <li>Strengthen your understanding</li>
+                        </ul>
+                      </div>
                     </div>
-                    <ul style={{ margin: 0, paddingLeft: '1.5rem' }}>
-                      <li>Core concepts and strategies</li>
-                      <li>Step-by-step examples</li>
-                      <li>Practice problems</li>
-                      <li>Expert tips and tricks</li>
-                    </ul>
-                  </div>
-                </div>
+                  );
+                })()
+              ) : (
+                (() => {
+                  // Look up lesson details from lessonStructure
+                  const lessonId = previewItem.id || previewItem.lessonKey;
+                  const lessonData = lessonStructure.find(l => l.id === lessonId);
+                  const lessonDesc = lessonData?.desc || 'This lesson will help you master key concepts and strategies for the ACT.';
+                  const lessonCategory = lessonData?.category || 'ACT Preparation';
+                  const keyTerms = lessonData?.keyTerms || [];
+
+                  return (
+                    <div>
+                      <div style={{
+                        background: '#f5f3ff',
+                        border: '1px solid #ddd6fe',
+                        borderRadius: '8px',
+                        padding: '1rem',
+                        marginBottom: '1.5rem'
+                      }}>
+                        <div style={{
+                          fontSize: '0.875rem',
+                          fontWeight: '600',
+                          color: '#6d28d9',
+                          marginBottom: '0.5rem'
+                        }}>
+                          {lessonCategory}
+                        </div>
+                        <div style={{ fontSize: '0.875rem', color: '#374151', lineHeight: '1.5' }}>
+                          {lessonDesc}
+                        </div>
+                      </div>
+
+                      {keyTerms.length > 0 && (
+                        <div style={{
+                          fontSize: '0.875rem',
+                          color: '#6b7280',
+                          marginBottom: '1.5rem',
+                          lineHeight: '1.6'
+                        }}>
+                          <div style={{ marginBottom: '0.5rem' }}>
+                            <strong style={{ color: '#374151' }}>Key concepts covered:</strong>
+                          </div>
+                          <ul style={{ margin: 0, paddingLeft: '1.5rem' }}>
+                            {keyTerms.slice(0, 4).map((term, idx) => (
+                              <li key={idx}>{term}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {keyTerms.length === 0 && (
+                        <div style={{
+                          fontSize: '0.875rem',
+                          color: '#6b7280',
+                          marginBottom: '1.5rem',
+                          lineHeight: '1.6'
+                        }}>
+                          <div style={{ marginBottom: '0.5rem' }}>
+                            <strong style={{ color: '#374151' }}>What you'll learn:</strong>
+                          </div>
+                          <ul style={{ margin: 0, paddingLeft: '1.5rem' }}>
+                            <li>Core concepts and strategies</li>
+                            <li>Step-by-step examples</li>
+                            <li>Practice problems</li>
+                            <li>Expert tips and tricks</li>
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })()
               )}
 
               {/* Status badge */}
@@ -2686,7 +2809,8 @@ const CourseContent = () => {
                         fontWeight: '600',
                         color: isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#6b7280',
                         marginBottom: '0.375rem',
-                        textTransform: 'capitalize'
+                        textTransform: 'capitalize',
+                        opacity: (isMockExamDay || isReviewDay) ? 0.6 : 1
                       }}>
                         {day.slice(0, 3)}
                         {isMockExamDay && ' 🎯'}
@@ -2716,7 +2840,8 @@ const CourseContent = () => {
                           textAlign: 'center',
                           background: isMockExamDay ? '#eff6ff' : isReviewDay ? '#d1fae5' : 'white',
                           cursor: (isMockExamDay || isReviewDay) ? 'not-allowed' : 'text',
-                          fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400'
+                          fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400',
+                          opacity: (isMockExamDay || isReviewDay) ? 0.6 : 1
                         }}
                       />
                       <div style={{
@@ -2724,7 +2849,8 @@ const CourseContent = () => {
                         color: isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#9ca3af',
                         marginTop: '0.25rem',
                         textAlign: 'center',
-                        fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400'
+                        fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400',
+                        opacity: (isMockExamDay || isReviewDay) ? 0.6 : 1
                       }}>
                         {isMockExamDay ? '3h' : isReviewDay ? '2h' : `${editForm.study_hours[day] || 0}h`}
                       </div>
@@ -2793,7 +2919,8 @@ const CourseContent = () => {
                             fontWeight: '600',
                             color: isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#1e40af',
                             marginBottom: '0.375rem',
-                            textTransform: 'capitalize'
+                            textTransform: 'capitalize',
+                            opacity: (isMockExamDay || isReviewDay) ? 0.6 : 1
                           }}>
                             {day.slice(0, 3)}
                             {isMockExamDay && ' 🎯'}
@@ -2823,7 +2950,8 @@ const CourseContent = () => {
                               textAlign: 'center',
                               background: isMockExamDay ? '#eff6ff' : isReviewDay ? '#d1fae5' : '#ffffff',
                               cursor: (isMockExamDay || isReviewDay) ? 'not-allowed' : 'text',
-                              fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400'
+                              fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400',
+                              opacity: (isMockExamDay || isReviewDay) ? 0.6 : 1
                             }}
                           />
                           <div style={{
@@ -2831,7 +2959,8 @@ const CourseContent = () => {
                             color: isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#1e40af',
                             marginTop: '0.25rem',
                             textAlign: 'center',
-                            fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400'
+                            fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400',
+                            opacity: (isMockExamDay || isReviewDay) ? 0.6 : 1
                           }}>
                             {isMockExamDay ? '3h' : isReviewDay ? '2h' : `${editForm.study_hours_week2[day] || 0}h`}
                           </div>

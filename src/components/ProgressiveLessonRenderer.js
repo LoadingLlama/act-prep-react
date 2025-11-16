@@ -525,10 +525,12 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
         />
       )}
 
+      {/* Table of Contents - Hidden per user request
       <LessonTableOfContents
         sections={sections}
         currentSection={currentSection}
       />
+      */}
 
       <div className={classes.progressBar}>
         <div className={classes.progressFill} style={{ width: `${progressPercentage}%` }} />

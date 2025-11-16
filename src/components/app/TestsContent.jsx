@@ -23,7 +23,7 @@ const TestsContent = () => {
   } = useOutletContext();
   const [featureAccess, setFeatureAccess] = useState(null);
   const [previewTest, setPreviewTest] = useState(null);
-  const [hasCompletedDiagnostic, setHasCompletedDiagnostic] = useState(false);
+  const [hasCompletedDiagnostic, setHasCompletedDiagnostic] = useState(null); // null = loading, true/false = known status
 
   useEffect(() => {
     if (user) {
@@ -85,8 +85,8 @@ const TestsContent = () => {
         <p className={classes.subtitle}>Take full-length tests and track your progress</p>
       </div>
       <div className={classes.contentSection}>
-        {/* Only show diagnostic CTA if user hasn't completed it */}
-        {!hasCompletedDiagnostic && !localStorage.getItem('diagnosticProcessing') && (
+        {/* Only show diagnostic CTA if user hasn't completed it (and status is loaded) */}
+        {hasCompletedDiagnostic === false && !localStorage.getItem('diagnosticProcessing') && (
           <DiagnosticTestCTA onClick={() => {
             soundEffects.playSuccess();
             setDiagnosticTestOpen(true);

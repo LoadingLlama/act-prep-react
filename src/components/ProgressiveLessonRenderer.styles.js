@@ -270,7 +270,7 @@ export const useProgressiveLessonStyles = createUseStyles({
     fontSize: '0.75rem',
     fontWeight: '600',
     color: 'white',
-    fontFamily: 'Monaco, Consolas, monospace',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     boxShadow: '0 2px 4px rgba(26, 115, 232, 0.2)',
     '.autoCompleteHint &': {
       background: 'rgba(156, 163, 175, 0.2)',
