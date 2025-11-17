@@ -62,7 +62,7 @@ export const useCourseStyles = createUseStyles({
   },
 
   statLabel: {
-    fontSize: '0.5625rem',
+    fontSize: '0.6875rem',
     fontWeight: '600',
     color: '#9ca3af',
     textTransform: 'uppercase',
@@ -70,13 +70,13 @@ export const useCourseStyles = createUseStyles({
   },
 
   statValue: {
-    fontSize: '0.875rem',
+    fontSize: '1.125rem',
     fontWeight: '700',
     color: '#1a1a1a'
   },
 
   statDetail: {
-    fontSize: '0.5625rem',
+    fontSize: '0.6875rem',
     color: '#9ca3af'
   },
 

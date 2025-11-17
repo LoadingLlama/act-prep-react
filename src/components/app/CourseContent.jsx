@@ -922,13 +922,14 @@ const CourseContent = () => {
     for (let i = startingDayOfWeek - 1; i >= 0; i--) {
       const day = prevMonthDays - i;
       const date = new Date(year, month - 1, day);
+      const dateString = formatLocalDate(date);
       currentWeek.push({
         date,
-        dateString: formatLocalDate(date),
+        dateString,
         dayNumber: day,
         isCurrentMonth: false,
         isToday: false,
-        items: []
+        items: itemsByDate[dateString] || []
       });
     }
 
@@ -960,13 +961,14 @@ const CourseContent = () => {
       let nextMonthDay = 1;
       while (currentWeek.length < 7) {
         const date = new Date(year, month + 1, nextMonthDay);
+        const dateString = formatLocalDate(date);
         currentWeek.push({
           date,
-          dateString: formatLocalDate(date),
+          dateString,
           dayNumber: nextMonthDay,
           isCurrentMonth: false,
           isToday: false,
-          items: []
+          items: itemsByDate[dateString] || []
         });
         nextMonthDay++;
       }
