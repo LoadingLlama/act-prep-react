@@ -58,6 +58,22 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
       // Get full diagnostic test data with questions and user answers
       const data = await InsightsService.getDiagnosticTestDetails(sessionId);
       console.log('📊 Loaded diagnostic data for review:', data);
+      console.log('📊 Session:', data.session);
+      console.log('📊 Total results:', data.results?.length);
+      console.log('📊 Questions by section:', {
+        english: data.questionsBySection?.english?.length,
+        math: data.questionsBySection?.math?.length,
+        reading: data.questionsBySection?.reading?.length,
+        science: data.questionsBySection?.science?.length
+      });
+
+      if (!data.results || data.results.length === 0) {
+        console.error('❌ NO RESULTS FOUND - This diagnostic test has no saved answers!');
+        console.error('This means the test was not properly saved to diagnostic_test_results table');
+        setError('No results found for this diagnostic test. The test data may not have been saved properly.');
+        setLoading(false);
+        return;
+      }
 
       setTestData(data);
       setLoading(false);

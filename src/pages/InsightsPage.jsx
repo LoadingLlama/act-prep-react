@@ -656,7 +656,11 @@ const InsightsPage = () => {
             /* Diagnostic Test Card - Clickable */
             <div
               className={classes.diagnosticCard}
-              onClick={() => setViewingDiagnosticReview(true)}
+              onClick={() => {
+                console.log('🔍 Opening diagnostic review with session:', insights.diagnostic.latestSession);
+                console.log('Session ID:', insights.diagnostic.latestSession?.id);
+                setViewingDiagnosticReview(true);
+              }}
             >
               <div className={classes.diagnosticCardHeader}>
                 <div className={classes.diagnosticBadge}>
