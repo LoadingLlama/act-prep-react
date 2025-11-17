@@ -8,6 +8,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { HiXMark, HiArrowLeft } from 'react-icons/hi2';
 import InsightsService from '../services/api/insights.service';
 import DiagnosticService from '../services/api/diagnostic.service';
+import { supabase } from '../supabaseClient';
 import logger from '../services/logging/logger';
 
 export default function DiagnosticTestReview({ sessionId, onClose }) {
@@ -55,25 +56,82 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
       setLoading(true);
       logger.info('DiagnosticTestReview', 'loadDiagnosticData', { sessionId });
 
-      // Get full diagnostic test data with questions and user answers
-      const data = await InsightsService.getDiagnosticTestDetails(sessionId);
-      console.log('📊 Loaded diagnostic data for review:', data);
-      console.log('📊 Session:', data.session);
-      console.log('📊 Total results:', data.results?.length);
-      console.log('📊 Questions by section:', {
-        english: data.questionsBySection?.english?.length,
-        math: data.questionsBySection?.math?.length,
-        reading: data.questionsBySection?.reading?.length,
-        science: data.questionsBySection?.science?.length
+      // Get user's answers and session info
+      const { data: session, error: sessionError } = await supabase
+        .from('diagnostic_test_sessions')
+        .select('*')
+        .eq('id', sessionId)
+        .single();
+
+      if (sessionError) throw sessionError;
+
+      // Get all user answers for this session
+      const { data: results, error: resultsError } = await supabase
+        .from('diagnostic_test_results')
+        .select('*')
+        .eq('diagnostic_session_id', sessionId)
+        .order('created_at', { ascending: true });
+
+      if (resultsError) throw resultsError;
+
+      console.log(`📊 Loaded ${results?.length || 0} user answers from diagnostic_test_results`);
+
+      // Load THE EXACT SAME QUESTIONS that the diagnostic test uses
+      // This ensures review shows the same questions user saw during the test
+      const sections = ['english', 'math', 'reading', 'science'];
+      const questionsBySection = {};
+
+      for (const section of sections) {
+        console.log(`📥 Loading ${section} questions using DiagnosticService (same source as test)...`);
+        const sectionQuestions = await DiagnosticService.getDiagnosticQuestions(section);
+        console.log(`✅ Loaded ${sectionQuestions?.length || 0} ${section} questions`);
+        questionsBySection[section] = sectionQuestions || [];
+      }
+
+      // Create a map of question_id -> user's answer/correctness
+      const userAnswersMap = {};
+      const correctnessMap = {};
+
+      results.forEach(result => {
+        userAnswersMap[result.question_id] = result.user_answer;
+        correctnessMap[result.question_id] = result.is_correct;
       });
 
-      if (!data.results || data.results.length === 0) {
-        console.error('❌ NO RESULTS FOUND - This diagnostic test has no saved answers!');
-        console.error('This means the test was not properly saved to diagnostic_test_results table');
-        setError('No results found for this diagnostic test. The test data may not have been saved properly.');
-        setLoading(false);
-        return;
+      // Merge questions with user answers
+      const allResults = [];
+      for (const section of sections) {
+        const sectionQs = questionsBySection[section];
+        sectionQs.forEach(q => {
+          allResults.push({
+            question_id: q.id,
+            user_answer: userAnswersMap[q.id],
+            is_correct: correctnessMap[q.id],
+            question: q
+          });
+        });
       }
+
+      const data = {
+        session,
+        results: allResults,
+        questionsBySection: {
+          english: allResults.filter(r => questionsBySection.english.find(q => q.id === r.question_id)).map(r => r),
+          math: allResults.filter(r => questionsBySection.math.find(q => q.id === r.question_id)).map(r => r),
+          reading: allResults.filter(r => questionsBySection.reading.find(q => q.id === r.question_id)).map(r => r),
+          science: allResults.filter(r => questionsBySection.science.find(q => q.id === r.question_id)).map(r => r)
+        },
+        totalQuestions: results.length,
+        correctAnswers: results.filter(r => r.is_correct).length,
+        scorePercentage: session.score_percentage
+      };
+
+      console.log('📊 Final diagnostic review data:', {
+        totalQuestions: data.totalQuestions,
+        english: data.questionsBySection.english.length,
+        math: data.questionsBySection.math.length,
+        reading: data.questionsBySection.reading.length,
+        science: data.questionsBySection.science.length
+      });
 
       setTestData(data);
       setLoading(false);
