@@ -174,23 +174,6 @@ const LandingPage = () => {
       <div className={classes.mainContent}>
         <div className={classes.heroSection}>
           <div className={classes.badge}>
-            {/* Left Laurel Wreath */}
-            <svg width="20" height="20" viewBox="0 0 50 60" fill="none" style={{ marginRight: '6px' }}>
-              <path d="M25 5 Q20 15, 18 25 Q16 35, 15 45 Q14 52, 13 58" stroke="#1e3a8a" strokeWidth="1.5" fill="none"/>
-              <ellipse cx="10" cy="10" rx="4" ry="6" transform="rotate(-30 10 10)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="8" cy="18" rx="4" ry="6" transform="rotate(-25 8 18)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="7" cy="26" rx="4" ry="6" transform="rotate(-20 7 26)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="6" cy="34" rx="4" ry="6" transform="rotate(-15 6 34)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="5" cy="42" rx="4" ry="6" transform="rotate(-10 5 42)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="5" cy="50" rx="4" ry="6" transform="rotate(-5 5 50)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="32" cy="10" rx="4" ry="6" transform="rotate(30 32 10)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="30" cy="18" rx="4" ry="6" transform="rotate(25 30 18)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="29" cy="26" rx="4" ry="6" transform="rotate(20 29 26)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="28" cy="34" rx="4" ry="6" transform="rotate(15 28 34)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="27" cy="42" rx="4" ry="6" transform="rotate(10 27 42)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="27" cy="50" rx="4" ry="6" transform="rotate(5 27 50)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-            </svg>
-
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ marginRight: '4px' }}>
               <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFB800"/>
             </svg>
@@ -206,24 +189,6 @@ const LandingPage = () => {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ marginRight: '8px' }}>
               <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFB800"/>
             </svg>
-
-            {/* Right Laurel Wreath (mirrored) */}
-            <svg width="20" height="20" viewBox="0 0 50 60" fill="none" style={{ marginRight: '8px', transform: 'scaleX(-1)' }}>
-              <path d="M25 5 Q20 15, 18 25 Q16 35, 15 45 Q14 52, 13 58" stroke="#1e3a8a" strokeWidth="1.5" fill="none"/>
-              <ellipse cx="10" cy="10" rx="4" ry="6" transform="rotate(-30 10 10)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="8" cy="18" rx="4" ry="6" transform="rotate(-25 8 18)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="7" cy="26" rx="4" ry="6" transform="rotate(-20 7 26)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="6" cy="34" rx="4" ry="6" transform="rotate(-15 6 34)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="5" cy="42" rx="4" ry="6" transform="rotate(-10 5 42)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="5" cy="50" rx="4" ry="6" transform="rotate(-5 5 50)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="32" cy="10" rx="4" ry="6" transform="rotate(30 32 10)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="30" cy="18" rx="4" ry="6" transform="rotate(25 30 18)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="29" cy="26" rx="4" ry="6" transform="rotate(20 29 26)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="28" cy="34" rx="4" ry="6" transform="rotate(15 28 34)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="27" cy="42" rx="4" ry="6" transform="rotate(10 27 42)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-              <ellipse cx="27" cy="50" rx="4" ry="6" transform="rotate(5 27 50)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
-            </svg>
-
             Free • No Credit Card Required
           </div>
 
