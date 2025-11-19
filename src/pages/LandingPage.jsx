@@ -341,7 +341,7 @@ const LandingPage = () => {
           {/* Bottom CTA Section */}
           <div className={classes.bottomCtaSection}>
             <h2 className={classes.bottomCtaHeadline}>
-              Let's get you started with a free diagnostic test
+              Let's get you started with a <span className={classes.highlightText}>free diagnostic test</span>.
             </h2>
             <p className={classes.bottomCtaSubtext}>
               Click below to claim your test before resources run out!
