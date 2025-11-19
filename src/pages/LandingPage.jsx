@@ -1,89 +1,163 @@
 /**
  * Landing Page
- * Clean white design with blue accents inspired by lumisource.io and Khan Academy
+ * Minimal, clean design focused on claiming free diagnostic test
  */
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLandingPageStyles } from '../styles/landing/LandingPage.styles';
 
 const LandingPage = () => {
   const classes = useLandingPageStyles();
   const navigate = useNavigate();
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  const testimonials = [
+    [
+      {
+        stars: 5,
+        quote: "I went from a 28 to a 35 in just 8 weeks! The personalized study plan made all the difference.",
+        author: "Sarah M.",
+        score: "28 → 35 • Stanford"
+      },
+      {
+        stars: 5,
+        quote: "Got a perfect 36! The practice tests were incredibly similar to the real ACT.",
+        author: "James K.",
+        score: "32 → 36 • MIT"
+      },
+      {
+        stars: 5,
+        quote: "Improved my score by 7 points in 6 weeks. The diagnostic test pinpointed exactly what I needed to work on.",
+        author: "Emily R.",
+        score: "27 → 34 • Yale"
+      }
+    ],
+    [
+      {
+        stars: 5,
+        quote: "The breakdown of each section helped me focus on my weaknesses. Scored a 34 on my first real test!",
+        author: "Michael T.",
+        score: "29 → 34 • Columbia"
+      },
+      {
+        stars: 5,
+        quote: "Best ACT prep I've used. The explanations are clear and the practice questions match the real test perfectly.",
+        author: "Amanda L.",
+        score: "26 → 33 • Duke"
+      },
+      {
+        stars: 5,
+        quote: "Jumped 9 points in 10 weeks! The study schedule kept me on track and the results speak for themselves.",
+        author: "David H.",
+        score: "25 → 34 • Northwestern"
+      }
+    ],
+    [
+      {
+        stars: 5,
+        quote: "The practice questions are challenging but fair. Went from struggling to confident in just 2 months!",
+        author: "Jessica L.",
+        score: "24 → 31 • USC"
+      },
+      {
+        stars: 5,
+        quote: "Finally broke 30! The targeted practice made studying so much more efficient.",
+        author: "Ryan P.",
+        score: "28 → 32 • Cornell"
+      },
+      {
+        stars: 5,
+        quote: "The insights after each practice test were invaluable. I knew exactly what to improve.",
+        author: "Olivia K.",
+        score: "30 → 35 • Brown"
+      }
+    ]
+  ];
+
+  const faqs = [
+    {
+      question: "Who created Nomi Academy?",
+      answer: "Nomi Academy was founded by Ivy League students who scored a perfect 36 on the ACT. We built this platform to share the exact strategies and techniques that helped us achieve top scores, making elite test prep accessible to everyone."
+    },
+    {
+      question: "Is the diagnostic test really free?",
+      answer: "Yes! Our diagnostic test is 100% free with no credit card required. We believe every student should have access to quality ACT prep tools to identify their strengths and weaknesses before investing in a study plan."
+    },
+    {
+      question: "What's included in Nomi Academy?",
+      answer: "Beyond the free diagnostic test, Nomi Academy offers comprehensive ACT prep including written lessons covering all four sections (English, Math, Reading, Science), thousands of practice questions, full-length practice tests, detailed explanations, and personalized study plans that adapt to your progress."
+    },
+    {
+      question: "How do the lessons work?",
+      answer: "Our lessons are taught using the same methods that helped our founders score 36. Each lesson breaks down complex concepts into easy-to-understand steps, includes practice problems, and provides detailed explanations. You'll learn test-taking strategies, time management techniques, and subject-specific tips that actually work."
+    },
+    {
+      question: "What makes Nomi Academy different from other ACT prep?",
+      answer: "Unlike expensive tutoring or generic prep courses, Nomi Academy combines personalized learning with strategies developed by perfect scorers. Our platform adapts to your specific needs, focusing your time on areas where you'll see the biggest score improvements. Plus, you can start with a free diagnostic test to see exactly where you stand."
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight - windowHeight;
+      const scrolled = window.scrollY;
+      const progress = Math.min(scrolled / documentHeight, 1);
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleGetStarted = () => {
     navigate('/login');
   };
 
   const handleSignIn = () => {
-    navigate('/login');
+    navigate('/login?mode=signin');
   };
 
-  const stats = [
-    { number: '2,847', label: 'Elite Students Served' },
-    { number: '35.2', label: 'Average Composite Score' },
-    { number: '94%', label: 'Score 34+ or Higher' },
-    { number: '127', label: 'Perfect 36 Scores' },
-  ];
-
-  const schools = [
-    { name: 'Harvard', logo: '/images/schools/harvard.png' },
-    { name: 'Yale', logo: '/images/schools/yale.png' },
-    { name: 'Princeton', logo: '/images/schools/princeton.png' },
-    { name: 'Columbia', logo: '/images/schools/columbia.svg' },
-    { name: 'Stanford', logo: '/images/schools/stanford.png' },
-    { name: 'MIT', logo: '/images/schools/mit.png' },
-    { name: 'Duke', logo: '/images/schools/duke.svg' },
-    { name: 'Northwestern', logo: '/images/schools/northwestern.svg' },
-    { name: 'UC Berkeley', logo: '/images/schools/uc-berkeley.png' },
-    { name: 'UCLA', logo: '/images/schools/ucla.svg' },
-  ];
-
-  const testimonials = [
-    {
-      quote: "I went from a 28 to a 35! The diagnostic test showed me exactly where to focus, and the personalized study plan made all the difference.",
-      author: "Sarah M.",
-      score: "28 → 35 (7 point improvement)"
-    },
-    {
-      quote: "Got a perfect 36! The practice tests were incredibly similar to the real ACT. I felt completely prepared on test day.",
-      author: "James K.",
-      score: "32 → 36 (Perfect Score!)"
-    },
-    {
-      quote: "The bite-sized lessons fit perfectly into my busy schedule. Improved my math score by 8 points in just 6 weeks!",
-      author: "Emily R.",
-      score: "25 → 33 (8 point improvement)"
-    },
-  ];
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  const toggleFaq = (index) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
   return (
-    <div className={classes.container}>
+    <div
+      className={classes.container}
+      style={{
+        '--scroll-progress': scrollProgress,
+      }}
+    >
       {/* Navigation Bar */}
       <nav className={classes.navbar}>
         <div className={classes.navContent}>
-          <div className={classes.navLeft}>
-            <div className={classes.navLogoText}>
-              <span className={classes.navLogoNomi}>Nomi</span> <span className={classes.navLogoAcademy}>Academy</span>
-            </div>
-            <div className={classes.navLinks}>
-              <button className={classes.navLink} onClick={() => scrollToSection('features')}>
-                Features
-              </button>
-              <button className={classes.navLink} onClick={() => scrollToSection('testimonials')}>
-                Testimonials
-              </button>
-              <button className={classes.navLink} onClick={() => scrollToSection('schools')}>
-                Results
-              </button>
-            </div>
+          <div className={classes.navLogo}>
+            Nomi Academy
+          </div>
+          <div className={classes.navLinks}>
+            <button className={classes.navLink} onClick={() => document.querySelector('#statistics')?.scrollIntoView({ behavior: 'smooth' })}>
+              Results
+            </button>
+            <button className={classes.navLink} onClick={() => document.querySelector('#testimonials')?.scrollIntoView({ behavior: 'smooth' })}>
+              Testimonials
+            </button>
+            <button className={classes.navLink} onClick={() => document.querySelector('#universities')?.scrollIntoView({ behavior: 'smooth' })}>
+              Universities
+            </button>
+            <button className={classes.navLink} onClick={() => document.querySelector('#faq')?.scrollIntoView({ behavior: 'smooth' })}>
+              FAQ
+            </button>
           </div>
           <div className={classes.navRight}>
             <button className={classes.signInButton} onClick={handleSignIn}>
@@ -96,268 +170,221 @@ const LandingPage = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <div id="hero" className={classes.hero}>
-        {/* Hero Content - Left Side */}
-        <div className={classes.heroContent}>
-          <div className={classes.trustBadge}>
-            ★ 5.0 Rating • 2,847+ Students
+      {/* Main Content */}
+      <div className={classes.mainContent}>
+        <div className={classes.heroSection}>
+          <div className={classes.badge}>
+            {/* Left Laurel Wreath */}
+            <svg width="20" height="20" viewBox="0 0 50 60" fill="none" style={{ marginRight: '6px' }}>
+              <path d="M25 5 Q20 15, 18 25 Q16 35, 15 45 Q14 52, 13 58" stroke="#1e3a8a" strokeWidth="1.5" fill="none"/>
+              <ellipse cx="10" cy="10" rx="4" ry="6" transform="rotate(-30 10 10)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="8" cy="18" rx="4" ry="6" transform="rotate(-25 8 18)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="7" cy="26" rx="4" ry="6" transform="rotate(-20 7 26)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="6" cy="34" rx="4" ry="6" transform="rotate(-15 6 34)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="5" cy="42" rx="4" ry="6" transform="rotate(-10 5 42)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="5" cy="50" rx="4" ry="6" transform="rotate(-5 5 50)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="32" cy="10" rx="4" ry="6" transform="rotate(30 32 10)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="30" cy="18" rx="4" ry="6" transform="rotate(25 30 18)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="29" cy="26" rx="4" ry="6" transform="rotate(20 29 26)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="28" cy="34" rx="4" ry="6" transform="rotate(15 28 34)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="27" cy="42" rx="4" ry="6" transform="rotate(10 27 42)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="27" cy="50" rx="4" ry="6" transform="rotate(5 27 50)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+            </svg>
+
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ marginRight: '4px' }}>
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFB800"/>
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ marginRight: '4px' }}>
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFB800"/>
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ marginRight: '4px' }}>
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFB800"/>
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ marginRight: '4px' }}>
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFB800"/>
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ marginRight: '8px' }}>
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFB800"/>
+            </svg>
+
+            {/* Right Laurel Wreath (mirrored) */}
+            <svg width="20" height="20" viewBox="0 0 50 60" fill="none" style={{ marginRight: '8px', transform: 'scaleX(-1)' }}>
+              <path d="M25 5 Q20 15, 18 25 Q16 35, 15 45 Q14 52, 13 58" stroke="#1e3a8a" strokeWidth="1.5" fill="none"/>
+              <ellipse cx="10" cy="10" rx="4" ry="6" transform="rotate(-30 10 10)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="8" cy="18" rx="4" ry="6" transform="rotate(-25 8 18)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="7" cy="26" rx="4" ry="6" transform="rotate(-20 7 26)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="6" cy="34" rx="4" ry="6" transform="rotate(-15 6 34)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="5" cy="42" rx="4" ry="6" transform="rotate(-10 5 42)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="5" cy="50" rx="4" ry="6" transform="rotate(-5 5 50)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="32" cy="10" rx="4" ry="6" transform="rotate(30 32 10)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="30" cy="18" rx="4" ry="6" transform="rotate(25 30 18)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="29" cy="26" rx="4" ry="6" transform="rotate(20 29 26)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="28" cy="34" rx="4" ry="6" transform="rotate(15 28 34)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="27" cy="42" rx="4" ry="6" transform="rotate(10 27 42)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+              <ellipse cx="27" cy="50" rx="4" ry="6" transform="rotate(5 27 50)" fill="none" stroke="#1e3a8a" strokeWidth="1.5"/>
+            </svg>
+
+            Free • No Credit Card Required
+          </div>
+
+          {/* Product Demo Screenshot */}
+          <div className={classes.productDemoContainer}>
+            <img
+              src="/productdemo.png"
+              alt="Nomi Academy Platform Demo"
+              className={classes.productDemoImage}
+            />
           </div>
 
           <h1 className={classes.headline}>
-            Ready to ace the ACT and<br />achieve a <span className={classes.highlightText}>34+ score?</span>
+            Want to improve your <span className={classes.highlightText}>ACT Score?</span>
           </h1>
 
           <p className={classes.subheadline}>
-            Elite test preparation with personalized learning paths, practice tests, and expert guidance. Achieve a 34+ ACT score.
+            Discover your strengths and weaknesses with a comprehensive ACT diagnostic test. Get personalized insights and a custom study plan to help you score 34+.
           </p>
 
-          <div className={classes.heroCheckmarks}>
-            <div className={classes.checkmarkItem}>
-              <span className={classes.checkmark}>✓</span>
-              <span>Always available, 24/7</span>
-            </div>
-            <div className={classes.checkmarkItem}>
-              <span className={classes.checkmark}>✓</span>
-              <span>Expert guidance</span>
-            </div>
-          </div>
-
-          <button className={classes.ctaButtonPrimary} onClick={handleGetStarted}>
-            Start Free Diagnostic Test
+          <button className={classes.ctaButton} onClick={handleGetStarted}>
+            FREE DIAGNOSTIC TEST
           </button>
 
-          <div className={classes.trustBadgeBottom}>
-            No credit card required
-          </div>
-        </div>
-
-        {/* Hero Video - Right Side */}
-        <div className={classes.heroVideo}>
-          <iframe
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="Nomi Academy Introduction"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
-      </div>
-
-      {/* Platform Screenshot Section */}
-      <div className={classes.screenshotSection}>
-        <h2 className={classes.sectionTitle}>Your personalized dashboard</h2>
-        <div className={classes.screenshotContainer}>
-          {/* Replace with actual screenshot */}
-          <img
-            src="/images/screenshot-dashboard.png"
-            alt="Nomi Academy Dashboard"
-            className={classes.screenshot}
-            onError={(e) => {
-              // Fallback if screenshot doesn't exist
-              e.target.style.display = 'none';
-              e.target.parentElement.innerHTML = '<div style="padding: 120px; text-align: center; color: #9ca3af; background: #f9fafb;">📊<br/>Dashboard Screenshot</div>';
-            }}
-          />
-        </div>
-      </div>
-
-      {/* Statistics Section */}
-      <div id="stats" className={classes.statsSection}>
-        <div className={classes.statsGrid}>
-          {stats.map((stat, index) => (
-            <div key={index} className={classes.statCard}>
-              <div className={classes.statNumber}>{stat.number}</div>
-              <div className={classes.statLabel}>{stat.label}</div>
+          {/* Statistics */}
+          <div id="statistics" className={classes.statisticsSection}>
+            <div className={classes.statisticsLabel}>Student Track Record</div>
+            <div className={classes.statisticsDescription}>
+              The percentage of Nomi Academy's students over the last 2 years who achieved the following metrics with their ACT scores.
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Split Section - Personalized Learning */}
-      <div className={classes.splitSection}>
-        <div className={classes.splitContent}>
-          <h3 className={classes.splitTitle}>Personalized for your success</h3>
-          <p className={classes.splitDescription}>
-            Every student learns differently. Our platform adapts to your strengths and weaknesses, creating a custom path that maximizes your score improvement efficiently.
-          </p>
-          <ul className={classes.splitList}>
-            <li className={classes.splitListItem}>Adaptive practice targeting your weak areas</li>
-            <li className={classes.splitListItem}>Smart recommendations for what to study next</li>
-            <li className={classes.splitListItem}>Real-time progress tracking</li>
-          </ul>
-        </div>
-        <div className={classes.screenshotContainer}>
-          <img
-            src="/images/screenshot-lessons.png"
-            alt="Personalized Learning"
-            className={classes.screenshot}
-            onError={(e) => {
-              e.target.style.display = 'none';
-              e.target.parentElement.innerHTML = '<div style="padding: 100px; text-align: center; color: #9ca3af; background: #f9fafb;">📚<br/>Lessons Screenshot</div>';
-            }}
-          />
-        </div>
-      </div>
-
-      {/* Split Section - Practice Tests */}
-      <div className={classes.splitSection} style={{ background: '#FAFBFC' }}>
-        <div className={classes.screenshotContainer}>
-          <img
-            src="/images/screenshot-practice.png"
-            alt="Practice Tests"
-            className={classes.screenshot}
-            onError={(e) => {
-              e.target.style.display = 'none';
-              e.target.parentElement.innerHTML = '<div style="padding: 100px; text-align: center; color: #9ca3af; background: #ffffff;">Practice Test Interface</div>';
-            }}
-          />
-        </div>
-        <div className={classes.splitContent}>
-          <h3 className={classes.splitTitle}>Practice like it's test day</h3>
-          <p className={classes.splitDescription}>
-            Build confidence with full-length practice tests that mirror the actual ACT. Get instant feedback and detailed explanations to learn from every question.
-          </p>
-          <ul className={classes.splitList}>
-            <li className={classes.splitListItem}>Timed tests matching official ACT format</li>
-            <li className={classes.splitListItem}>Instant scoring and performance breakdown</li>
-            <li className={classes.splitListItem}>Detailed explanations for all questions</li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Features Section */}
-      <div id="features" className={classes.featuresSection}>
-        <h2 className={classes.sectionTitle}>Everything you need to succeed</h2>
-        <div className={classes.features}>
-          <div className={classes.feature}>
-            <div className={classes.featureIcon}>📊</div>
-            <div className={classes.featureTitle}>Diagnostic Assessment</div>
-            <div className={classes.featureDescription}>
-              Identify your strengths and weaknesses with a comprehensive diagnostic test that pinpoints exactly where to focus your study time.
+            <div className={classes.statisticsGrid}>
+              <div className={classes.statCard}>
+                <div className={classes.statLabel}>Scored 30+</div>
+                <div className={classes.statNumber}>88%</div>
+              </div>
+              <div className={classes.statCard}>
+                <div className={classes.statLabel}>Scored 33+</div>
+                <div className={classes.statNumber}>52%</div>
+              </div>
+              <div className={classes.statCard}>
+                <div className={classes.statLabel}>Scored 35+</div>
+                <div className={classes.statNumber}>22%</div>
+              </div>
+              <div className={classes.statCard}>
+                <div className={classes.statLabel}>Improved by 4+ Points</div>
+                <div className={classes.statNumber}>96%</div>
+              </div>
+              <div className={classes.statCard}>
+                <div className={classes.statLabel}>Improved by 6+ Points</div>
+                <div className={classes.statNumber}>71%</div>
+              </div>
+              <div className={classes.statCard}>
+                <div className={classes.statLabel}>Improved by 8+ Points</div>
+                <div className={classes.statNumber}>28%</div>
+              </div>
             </div>
           </div>
 
-          <div className={classes.feature}>
-            <div className={classes.featureIcon}>🎯</div>
-            <div className={classes.featureTitle}>Personalized Study Plans</div>
-            <div className={classes.featureDescription}>
-              Get a custom curriculum tailored to your target score and timeline, optimized for maximum improvement.
+          {/* Testimonials */}
+          <div id="testimonials" className={classes.testimonialsSection}>
+            <div className={classes.testimonialsContainer}>
+              <div
+                className={classes.testimonialsTrack}
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {testimonials.map((slide, slideIndex) => (
+                  <div key={slideIndex} className={classes.testimonialsSlide}>
+                    {slide.map((testimonial, index) => (
+                      <div key={index} className={classes.testimonialCard}>
+                        <div className={classes.testimonialStars}>
+                          ★★★★★
+                        </div>
+                        <div className={classes.testimonialQuote}>
+                          "{testimonial.quote}"
+                        </div>
+                        <div className={classes.testimonialAuthor}>{testimonial.author}</div>
+                        <div className={classes.testimonialScore}>{testimonial.score}</div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation Dots */}
+            <div className={classes.testimonialDots}>
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  className={`${classes.testimonialDot} ${index === currentSlide ? 'active' : ''}`}
+                  onClick={() => setCurrentSlide(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
 
-          <div className={classes.feature}>
-            <div className={classes.featureIcon}>📚</div>
-            <div className={classes.featureTitle}>Expert-Crafted Lessons</div>
-            <div className={classes.featureDescription}>
-              Master every concept with lessons developed by top-scoring educators using proven teaching methods.
+          {/* University Logos - Scrolling */}
+          <div id="universities" className={classes.universitiesSection}>
+            <div className={classes.universitiesLabel}>Students accepted to top universities</div>
+            <div className={classes.universitiesScroller}>
+              <div className={classes.universitiesTrack}>
+                <img src="https://logo.clearbit.com/ucla.edu" alt="UCLA" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/120px-MIT_logo.svg.png" alt="MIT" className={classes.universityLogo} />
+                <img src="https://logo.clearbit.com/stanford.edu" alt="Stanford" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Yale_University_Shield_1.svg/120px-Yale_University_Shield_1.svg.png" alt="Yale" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/120px-Princeton_seal.svg.png" alt="Princeton" className={classes.universityLogo} />
+                <img src="https://logo.clearbit.com/columbia.edu" alt="Columbia" className={classes.universityLogo} />
+                <img src="https://logo.clearbit.com/duke.edu" alt="Duke" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Seal_of_University_of_California%2C_Berkeley.svg/120px-Seal_of_University_of_California%2C_Berkeley.svg.png" alt="UC Berkeley" className={classes.universityLogo} />
+                {/* Duplicate for infinite scroll */}
+                <img src="https://logo.clearbit.com/ucla.edu" alt="UCLA" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/120px-MIT_logo.svg.png" alt="MIT" className={classes.universityLogo} />
+                <img src="https://logo.clearbit.com/stanford.edu" alt="Stanford" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Yale_University_Shield_1.svg/120px-Yale_University_Shield_1.svg.png" alt="Yale" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/120px-Princeton_seal.svg.png" alt="Princeton" className={classes.universityLogo} />
+                <img src="https://logo.clearbit.com/columbia.edu" alt="Columbia" className={classes.universityLogo} />
+                <img src="https://logo.clearbit.com/duke.edu" alt="Duke" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Seal_of_University_of_California%2C_Berkeley.svg/120px-Seal_of_University_of_California%2C_Berkeley.svg.png" alt="UC Berkeley" className={classes.universityLogo} />
+              </div>
             </div>
           </div>
 
-          <div className={classes.feature}>
-            <div className={classes.featureIcon}>📝</div>
-            <div className={classes.featureTitle}>Full-Length Practice Tests</div>
-            <div className={classes.featureDescription}>
-              Build confidence with realistic practice tests that mirror the actual ACT, complete with detailed explanations.
+          {/* FAQ Section */}
+          <div id="faq" className={classes.faqSection}>
+            <h2 className={classes.faqHeadline}>Frequently Asked Questions</h2>
+            <div className={classes.faqContainer}>
+              {faqs.map((faq, index) => (
+                <div key={index} className={classes.faqItem}>
+                  <button
+                    className={classes.faqQuestion}
+                    onClick={() => toggleFaq(index)}
+                    aria-expanded={openFaqIndex === index}
+                  >
+                    <span>{faq.question}</span>
+                    <span className={classes.faqIcon}>
+                      {openFaqIndex === index ? '−' : '+'}
+                    </span>
+                  </button>
+                  {openFaqIndex === index && (
+                    <div className={classes.faqAnswer}>
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className={classes.feature}>
-            <div className={classes.featureIcon}>📈</div>
-            <div className={classes.featureTitle}>Performance Analytics</div>
-            <div className={classes.featureDescription}>
-              Track your progress with detailed analytics, score predictions, and insights that guide your study strategy.
-            </div>
+          {/* Bottom CTA Section */}
+          <div className={classes.bottomCtaSection}>
+            <h2 className={classes.bottomCtaHeadline}>
+              Let's get you started with a free diagnostic test
+            </h2>
+            <p className={classes.bottomCtaSubtext}>
+              Click below to claim your test before resources run out!
+            </p>
+            <button className={classes.bottomCtaButton} onClick={handleGetStarted}>
+              FREE DIAGNOSTIC TEST
+            </button>
           </div>
-
-          <div className={classes.feature}>
-            <div className={classes.featureIcon}>⏰</div>
-            <div className={classes.featureTitle}>Study Anytime, Anywhere</div>
-            <div className={classes.featureDescription}>
-              Access your personalized curriculum 24/7 on any device, fitting preparation seamlessly into your schedule.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Testimonials Section */}
-      <div id="testimonials" className={classes.testimonialsSection}>
-        <h2 className={classes.sectionTitle}>What students are saying</h2>
-        <div className={classes.testimonialsGrid}>
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className={classes.testimonialCard}>
-              <div className={classes.testimonialQuote}>"{testimonial.quote}"</div>
-              <div className={classes.testimonialAuthor}>{testimonial.author}</div>
-              <div className={classes.testimonialScore}>{testimonial.score}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* School Admissions Section */}
-      <div id="schools" className={classes.schoolsSection}>
-        <h2 className={classes.sectionTitle}>
-          Students accepted to top universities
-        </h2>
-        <div className={classes.schoolsScroller}>
-          <div className={classes.schoolsTrack}>
-            {schools.concat(schools).map((school, index) => (
-              <img
-                key={index}
-                src={school.logo}
-                alt={school.name}
-                className={classes.schoolLogo}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Score Improvements Section */}
-      <div className={classes.improvementsSection}>
-        <h2 className={classes.sectionTitle}>Results that speak for themselves</h2>
-        <div className={classes.improvementsGrid}>
-          <div className={classes.improvementCard}>
-            <div className={classes.improvementIcon}>🎯</div>
-            <div className={classes.improvementTitle}>127</div>
-            <div className={classes.improvementText}>
-              Perfect 36 Composite Scores Achieved
-            </div>
-          </div>
-          <div className={classes.improvementCard}>
-            <div className={classes.improvementIcon}>📈</div>
-            <div className={classes.improvementTitle}>+6.2</div>
-            <div className={classes.improvementText}>
-              Average Score Improvement (Points)
-            </div>
-          </div>
-          <div className={classes.improvementCard}>
-            <div className={classes.improvementIcon}>⚡</div>
-            <div className={classes.improvementTitle}>94%</div>
-            <div className={classes.improvementText}>
-              Students Score 34+ Composite
-            </div>
-          </div>
-          <div className={classes.improvementCard}>
-            <div className={classes.improvementIcon}>🏆</div>
-            <div className={classes.improvementTitle}>35.2</div>
-            <div className={classes.improvementText}>
-              Average Student Composite Score
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Final CTA */}
-      <div id="get-started" className={classes.finalCTA}>
-        <h2 className={classes.finalCTATitle}>Start your path to a 34+ score</h2>
-        <p className={classes.finalCTASubtitle}>
-          Join thousands of students achieving exceptional ACT scores. Begin with a free diagnostic test to see exactly where you stand.
-        </p>
-        <button className={classes.ctaButtonPrimary} onClick={handleGetStarted}>
-          Start Free Diagnostic Test
-        </button>
-        <div className={classes.trustBadgeBottom}>
-          No credit card required • Free forever
         </div>
       </div>
 
@@ -373,6 +400,16 @@ const LandingPage = () => {
           &copy; 2024 Nomi Academy. All rights reserved.
         </p>
       </footer>
+
+      {/* Sticky Bottom CTA Bar */}
+      <div className={classes.stickyBottomBar}>
+        <div className={classes.stickyBarText}>
+          Claim your free diagnostic test for immediate feedback!
+        </div>
+        <button className={classes.stickyBarButton} onClick={handleGetStarted}>
+          FREE DIAGNOSTIC TEST
+        </button>
+      </div>
     </div>
   );
 };
