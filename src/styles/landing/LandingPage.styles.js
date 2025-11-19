@@ -27,9 +27,10 @@ export const useLandingPageStyles = createUseStyles({
         radial-gradient(ellipse 1400px 1000px at calc(15% + var(--scroll-progress, 0) * 60%) calc(15% + var(--scroll-progress, 0) * 50%), rgba(59, 130, 246, 0.16) 0%, transparent 65%),
         radial-gradient(ellipse 1200px 1400px at calc(85% - var(--scroll-progress, 0) * 40%) calc(55% + var(--scroll-progress, 0) * 30%), rgba(37, 99, 235, 0.14) 0%, transparent 65%),
         radial-gradient(ellipse 1300px 900px at calc(50% + var(--scroll-progress, 0) * 30%) calc(75% - var(--scroll-progress, 0) * 60%), rgba(251, 243, 219, 0.20) 0%, transparent 65%),
-        radial-gradient(ellipse 1200px 1200px at -15% 5%, rgba(59, 130, 246, 0.14) 0%, transparent 60%),
-        radial-gradient(ellipse 1100px 1100px at -20% 20%, rgba(37, 99, 235, 0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 1000px 1200px at -10% 50%, rgba(59, 130, 246, 0.10) 0%, transparent 50%),
+        radial-gradient(ellipse 1500px 1500px at -35% 0%, rgba(59, 130, 246, 0.16) 0%, transparent 55%),
+        radial-gradient(ellipse 1400px 1400px at -40% 25%, rgba(37, 99, 235, 0.14) 0%, transparent 50%),
+        radial-gradient(ellipse 1300px 1500px at -30% 50%, rgba(59, 130, 246, 0.12) 0%, transparent 48%),
+        radial-gradient(ellipse 1200px 1400px at -25% 75%, rgba(251, 243, 219, 0.18) 0%, transparent 45%),
         radial-gradient(ellipse 1200px 1200px at 115% 5%, rgba(37, 99, 235, 0.14) 0%, transparent 60%),
         radial-gradient(ellipse 1100px 1100px at 120% 20%, rgba(59, 130, 246, 0.12) 0%, transparent 55%),
         radial-gradient(ellipse 1000px 1200px at 110% 50%, rgba(251, 243, 219, 0.15) 0%, transparent 50%)
