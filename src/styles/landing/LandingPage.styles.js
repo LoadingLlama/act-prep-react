@@ -472,23 +472,22 @@ export const useLandingPageStyles = createUseStyles({
   testimonialsTrack: {
     display: 'flex',
     transition: 'transform 0.5s ease-in-out',
-    gap: '16px',
-    '@media (max-width: 768px)': {
-      gap: '12px',
-    },
   },
 
   testimonialsSlide: {
     display: 'flex',
     gap: '16px',
+    width: '100%',
     minWidth: '100%',
+    flexShrink: 0,
     '@media (max-width: 768px)': {
       gap: '12px',
     },
   },
 
   testimonialCard: {
-    flex: '1',
+    flex: '1 1 0',
+    minWidth: 0,
     padding: '24px 20px',
     background: 'rgba(255, 255, 255, 0.6)',
     backdropFilter: 'blur(20px) saturate(180%)',
