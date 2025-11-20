@@ -474,7 +474,7 @@ const AboutUs = () => {
               <div className={classes.founderRole}>Co-Founder</div>
               <div className={classes.schoolInfo}>
                 <img
-                  src="/images/schools/uc-berkeley.png"
+                  src="/images/schools/uc-berkeley.svg"
                   alt="UC Berkeley"
                   className={classes.schoolLogo}
                 />
@@ -496,7 +496,7 @@ const AboutUs = () => {
               <div className={classes.founderRole}>Co-Founder</div>
               <div className={classes.schoolInfo}>
                 <img
-                  src="/images/schools/uc-berkeley.png"
+                  src="/images/schools/uc-berkeley.svg"
                   alt="UC Berkeley"
                   className={classes.schoolLogo}
                 />
@@ -518,7 +518,7 @@ const AboutUs = () => {
               <div className={classes.founderRole}>Advisor</div>
               <div className={classes.schoolInfo}>
                 <img
-                  src="/images/schools/brown.png"
+                  src="/images/schools/brown.svg"
                   alt="Brown University"
                   className={classes.schoolLogo}
                 />
