@@ -67,6 +67,9 @@ const useStyles = createUseStyles({
     '@media (max-width: 768px)': {
       padding: '100px 20px 48px',
     },
+    '@media (max-width: 480px)': {
+      padding: '90px 16px 40px',
+    },
   },
   section: {
     background: '#ffffff',
@@ -81,7 +84,8 @@ const useStyles = createUseStyles({
       borderRadius: '12px',
     },
     '@media (max-width: 480px)': {
-      padding: '24px 20px',
+      padding: '24px 16px',
+      marginBottom: '20px',
     },
   },
   title: {
@@ -125,7 +129,9 @@ const useStyles = createUseStyles({
       marginBottom: '16px',
     },
     '@media (max-width: 480px)': {
-      fontSize: '14px',
+      fontSize: '13px',
+      lineHeight: '1.6',
+      marginBottom: '14px',
     },
   },
   foundersGrid: {
@@ -149,6 +155,9 @@ const useStyles = createUseStyles({
     '@media (max-width: 768px)': {
       padding: '24px 20px',
     },
+    '@media (max-width: 480px)': {
+      padding: '20px 16px',
+    },
     '&:hover': {
       transform: 'translateY(-4px)',
       boxShadow: '0 8px 24px rgba(30, 58, 138, 0.12)',
@@ -169,8 +178,8 @@ const useStyles = createUseStyles({
       marginBottom: '16px',
     },
     '@media (max-width: 480px)': {
-      width: '90px',
-      height: '90px',
+      width: '80px',
+      height: '80px',
       marginBottom: '12px',
     },
   },
@@ -192,9 +201,11 @@ const useStyles = createUseStyles({
     lineHeight: '1.6',
     '@media (max-width: 768px)': {
       fontSize: '14px',
+      lineHeight: '1.5',
     },
     '@media (max-width: 480px)': {
-      fontSize: '13px',
+      fontSize: '12px',
+      lineHeight: '1.4',
     },
   },
   highlight: {

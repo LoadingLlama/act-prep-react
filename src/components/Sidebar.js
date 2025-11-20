@@ -96,7 +96,7 @@ const useStyles = createUseStyles({
     margin: 0,
     whiteSpace: 'nowrap',
     '@media (max-width: 1024px)': {
-      fontSize: '1.05rem'
+      fontSize: '0.95rem'
     }
   },
   navSection: {
