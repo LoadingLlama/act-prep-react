@@ -137,6 +137,41 @@ const PracticeTestsService = {
           }
         });
 
+        // Handle correct_answer in multiple formats:
+        // - If already a letter ("A", "B", etc.), use as-is
+        // - If a number string ("0", "1", "2", etc.), convert to letter
+        // - If "TBD" or invalid, skip this question
+        let correctAnswer = null;
+        if (q.correct_answer) {
+          const answer = String(q.correct_answer).trim();
+
+          // Check if already a letter (A-K)
+          if (/^[A-K]$/i.test(answer)) {
+            correctAnswer = answer.toUpperCase();
+          }
+          // Check if a number (0-4 for A-E, 0-5 for F-K in math)
+          else if (/^\d+$/.test(answer)) {
+            const numAnswer = parseInt(answer, 10);
+            correctAnswer = String.fromCharCode(65 + numAnswer); // 0->A, 1->B, etc.
+          }
+          // If contains "TBD" or other invalid format, log warning
+          else if (answer.includes('TBD')) {
+            console.warn(`Question ${q.question_number} has placeholder answer "TBD", skipping`);
+            return null; // Skip questions without proper answers
+          }
+        }
+
+        if (!correctAnswer) {
+          console.warn(`Question ${q.question_number} has invalid correct_answer: ${q.correct_answer}`);
+          return null;
+        }
+
+        // Check if question_text is missing or invalid
+        if (!q.question_text || q.question_text.trim().length === 0 || q.question_text.includes('TBD')) {
+          console.warn(`Question ${q.question_number} has missing or invalid question_text, skipping`);
+          return null;
+        }
+
         return {
           id: q.id,
           text: q.question_text, // SequentialTest expects 'text'
@@ -144,13 +179,13 @@ const PracticeTestsService = {
           passage_title: q.passage_title, // Include passage title
           passage_image_urls: q.passage_image_urls, // Include passage image URLs for placeholder replacement
           answers: answers, // SequentialTest expects 'answers' as object
-          correctAnswer: String.fromCharCode(65 + q.correct_answer), // Convert 0->A, 1->B, etc.
+          correctAnswer: correctAnswer,
           explanation: q.explanation,
           question_type: q.question_type,
           difficulty: q.difficulty,
           image_url: q.image_url // Include image URL for questions with diagrams
         };
-      });
+      }).filter(q => q !== null); // Remove skipped questions
 
       logger.info('PracticeTestsService', 'getPracticeTestSection', {
         testNumber,
