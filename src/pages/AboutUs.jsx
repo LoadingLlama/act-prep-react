@@ -157,6 +157,8 @@ const useStyles = createUseStyles({
     border: '1px solid rgba(147, 197, 253, 0.3)',
     transition: 'all 0.3s ease',
     textAlign: 'center',
+    position: 'relative',
+    overflow: 'hidden',
     '@media (max-width: 768px)': {
       padding: '24px 20px',
     },
@@ -168,6 +170,29 @@ const useStyles = createUseStyles({
       boxShadow: '0 8px 24px rgba(30, 58, 138, 0.12)',
       borderColor: 'rgba(59, 130, 246, 0.5)',
     },
+  },
+  schoolLogoBackground: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '200px',
+    height: '200px',
+    opacity: 0.03,
+    zIndex: 0,
+    pointerEvents: 'none',
+    '@media (max-width: 768px)': {
+      width: '160px',
+      height: '160px',
+    },
+    '@media (max-width: 480px)': {
+      width: '140px',
+      height: '140px',
+    },
+  },
+  founderContent: {
+    position: 'relative',
+    zIndex: 1,
   },
   founderImage: {
     width: '120px',
@@ -395,59 +420,80 @@ const AboutUs = () => {
           <div className={classes.foundersGrid}>
             <div className={classes.founderCard}>
               <img
-                src="/cadenchiangheadshot.jpeg"
-                alt="Caden Chiang"
-                className={classes.founderImage}
+                src="/images/schools/uc-berkeley.svg"
+                alt=""
+                className={classes.schoolLogoBackground}
               />
-              <div className={classes.badge}>Perfect 36 ACT Score</div>
-              <h3 className={classes.founderName}>Caden Chiang</h3>
-              <div className={classes.founderRole}>Co-Founder</div>
-              <div className={classes.schoolInfo}>
-                <div className={classes.schoolName}>
-                  <span className={classes.schoolHighlight}>UC Berkeley Haas</span> School of Business
+              <div className={classes.founderContent}>
+                <img
+                  src="/cadenchiangheadshot.jpeg"
+                  alt="Caden Chiang"
+                  className={classes.founderImage}
+                />
+                <div className={classes.badge}>Perfect 36 ACT Score</div>
+                <h3 className={classes.founderName}>Caden Chiang</h3>
+                <div className={classes.founderRole}>Co-Founder</div>
+                <div className={classes.schoolInfo}>
+                  <div className={classes.schoolName}>
+                    <span className={classes.schoolHighlight}>UC Berkeley</span>
+                  </div>
                 </div>
+                <p className={classes.founderDetails}>
+                  Caden achieved a perfect 36 on the ACT and is passionate about making test prep accessible to all students. He developed the core curriculum and learning methodology that powers Nomi Academy's lessons.
+                </p>
               </div>
-              <p className={classes.founderDetails}>
-                Caden achieved a perfect 36 on the ACT and is passionate about making test prep accessible to all students. He developed the core curriculum and learning methodology that powers Nomi Academy's lessons.
-              </p>
             </div>
 
             <div className={classes.founderCard}>
               <img
-                src="/willisyangheadshot.jpeg"
-                alt="Willis Yang"
-                className={classes.founderImage}
+                src="/images/schools/uc-berkeley.svg"
+                alt=""
+                className={classes.schoolLogoBackground}
               />
-              <div className={classes.badge}>Perfect 36 ACT Score</div>
-              <h3 className={classes.founderName}>Willis Yang</h3>
-              <div className={classes.founderRole}>Co-Founder</div>
-              <div className={classes.schoolInfo}>
-                <div className={classes.schoolName}>
-                  <span className={classes.schoolHighlight}>UC Berkeley Haas</span> School of Business
+              <div className={classes.founderContent}>
+                <img
+                  src="/willisyangheadshot.jpeg"
+                  alt="Willis Yang"
+                  className={classes.founderImage}
+                />
+                <div className={classes.badge}>Perfect 36 ACT Score</div>
+                <h3 className={classes.founderName}>Willis Yang</h3>
+                <div className={classes.founderRole}>Co-Founder</div>
+                <div className={classes.schoolInfo}>
+                  <div className={classes.schoolName}>
+                    <span className={classes.schoolHighlight}>UC Berkeley</span>
+                  </div>
                 </div>
+                <p className={classes.founderDetails}>
+                  Willis also scored a perfect 36 on the ACT and brings expertise in creating effective practice questions and study plans. He designed the platform's personalized learning features and analytics.
+                </p>
               </div>
-              <p className={classes.founderDetails}>
-                Willis also scored a perfect 36 on the ACT and brings expertise in creating effective practice questions and study plans. He designed the platform's personalized learning features and analytics.
-              </p>
             </div>
 
             <div className={classes.founderCard}>
               <img
-                src="/jonathanheadshot.jpeg"
-                alt="Jonathan"
-                className={classes.founderImage}
+                src="/images/schools/brown.svg"
+                alt=""
+                className={classes.schoolLogoBackground}
               />
-              <div className={classes.badge}>Perfect 36 ACT Score</div>
-              <h3 className={classes.founderName}>Jonathan Lee</h3>
-              <div className={classes.founderRole}>Advisor</div>
-              <div className={classes.schoolInfo}>
-                <div className={classes.schoolName}>
-                  <span className={classes.schoolHighlight}>Brown University</span>
+              <div className={classes.founderContent}>
+                <img
+                  src="/jonathanheadshot.jpeg"
+                  alt="Jonathan"
+                  className={classes.founderImage}
+                />
+                <div className={classes.badge}>Perfect 36 ACT Score</div>
+                <h3 className={classes.founderName}>Jonathan Lee</h3>
+                <div className={classes.founderRole}>Advisor</div>
+                <div className={classes.schoolInfo}>
+                  <div className={classes.schoolName}>
+                    <span className={classes.schoolHighlight}>Brown University</span>
+                  </div>
                 </div>
+                <p className={classes.founderDetails}>
+                  Jonathan achieved a perfect 36 on the ACT and serves as an advisor to Nomi Academy. He provides strategic guidance and helps ensure our curriculum stays aligned with the latest ACT testing strategies.
+                </p>
               </div>
-              <p className={classes.founderDetails}>
-                Jonathan achieved a perfect 36 on the ACT and serves as an advisor to Nomi Academy. He provides strategic guidance and helps ensure our curriculum stays aligned with the latest ACT testing strategies.
-              </p>
             </div>
           </div>
         </div>
