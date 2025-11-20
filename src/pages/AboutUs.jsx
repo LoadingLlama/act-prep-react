@@ -6,6 +6,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
+import { HiAcademicCap, HiLightBulb, HiChartBar, HiCurrencyDollar, HiCheckCircle, HiSparkles, HiTrophy, HiHeart } from 'react-icons/hi2';
 import Logo from '../components/common/Logo';
 
 const useStyles = createUseStyles({
@@ -272,16 +273,17 @@ const useStyles = createUseStyles({
     },
   },
   schoolLogo: {
-    width: '32px',
-    height: '32px',
+    width: '40px',
+    height: '40px',
     objectFit: 'contain',
+    filter: 'brightness(1.1)',
     '@media (max-width: 768px)': {
-      width: '28px',
-      height: '28px',
+      width: '36px',
+      height: '36px',
     },
     '@media (max-width: 480px)': {
-      width: '24px',
-      height: '24px',
+      width: '32px',
+      height: '32px',
     },
   },
   schoolName: {
@@ -293,6 +295,96 @@ const useStyles = createUseStyles({
     },
     '@media (max-width: 480px)': {
       fontSize: '14px',
+    },
+  },
+  iconFeature: {
+    display: 'flex',
+    alignItems: 'flex-start',
+    gap: '16px',
+    marginBottom: '20px',
+    '@media (max-width: 480px)': {
+      gap: '12px',
+      marginBottom: '16px',
+    },
+  },
+  iconCircle: {
+    width: '48px',
+    height: '48px',
+    minWidth: '48px',
+    borderRadius: '50%',
+    background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
+    border: '2px solid #93c5fd',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '24px',
+    color: '#1e40af',
+    '@media (max-width: 480px)': {
+      width: '40px',
+      height: '40px',
+      minWidth: '40px',
+      fontSize: '20px',
+    },
+  },
+  iconContent: {
+    flex: 1,
+  },
+  iconTitle: {
+    fontSize: '18px',
+    fontWeight: '700',
+    color: '#1e293b',
+    marginBottom: '6px',
+    '@media (max-width: 480px)': {
+      fontSize: '16px',
+    },
+  },
+  iconDescription: {
+    fontSize: '15px',
+    color: '#64748b',
+    lineHeight: '1.6',
+    '@media (max-width: 480px)': {
+      fontSize: '14px',
+    },
+  },
+  statsGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gap: '20px',
+    marginTop: '32px',
+    '@media (max-width: 768px)': {
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gap: '16px',
+    },
+    '@media (max-width: 480px)': {
+      gridTemplateColumns: '1fr',
+      gap: '12px',
+    },
+  },
+  statBox: {
+    textAlign: 'center',
+    padding: '24px 16px',
+    background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
+    borderRadius: '12px',
+    border: '2px solid #86efac',
+    '@media (max-width: 480px)': {
+      padding: '20px 16px',
+    },
+  },
+  statNumber: {
+    fontSize: '36px',
+    fontWeight: '800',
+    color: '#15803d',
+    marginBottom: '4px',
+    '@media (max-width: 480px)': {
+      fontSize: '32px',
+    },
+  },
+  statLabel: {
+    fontSize: '14px',
+    fontWeight: '600',
+    color: '#166534',
+    '@media (max-width: 480px)': {
+      fontSize: '13px',
     },
   },
 });
@@ -322,20 +414,50 @@ const AboutUs = () => {
         {/* Our Mission */}
         <div className={classes.section}>
           <h1 className={classes.title}>About Nomi Academy</h1>
-          <p className={classes.paragraph}>
-            We believe that <span className={classes.highlight}>achieving a top ACT score shouldn't require overpaying for expensive tutoring</span> or navigating complicated study programs. Test prep has become unnecessarily expensive and overcomplicated, keeping quality education out of reach for many students who need it most.
-          </p>
-          <p className={classes.paragraph}>
-            That's why we built Nomi Academy — to make elite test prep accessible to everyone. Our platform is designed with one simple principle: <strong>don't overcomplicate studying for the exam</strong>. We focus on what actually works, cutting through the noise to deliver proven strategies that help you improve your score efficiently.
-          </p>
-          <p className={classes.paragraph}>
-            You don't need to spend thousands of dollars to get a great ACT score. With the right approach, clear explanations, and targeted practice, any motivated student can achieve their goals. We're here to show you how.
-          </p>
+
+          <div className={classes.iconFeature}>
+            <div className={classes.iconCircle}>
+              <HiHeart />
+            </div>
+            <div className={classes.iconContent}>
+              <h3 className={classes.iconTitle}>Our Mission</h3>
+              <p className={classes.iconDescription}>
+                We believe achieving a top ACT score shouldn't require overpaying for expensive tutoring or navigating complicated study programs. Test prep has become unnecessarily expensive, keeping quality education out of reach.
+              </p>
+            </div>
+          </div>
+
+          <div className={classes.iconFeature}>
+            <div className={classes.iconCircle}>
+              <HiLightBulb />
+            </div>
+            <div className={classes.iconContent}>
+              <h3 className={classes.iconTitle}>Simple & Effective</h3>
+              <p className={classes.iconDescription}>
+                That's why we built Nomi Academy — to make elite test prep accessible to everyone. Our platform focuses on what actually works, cutting through the noise to deliver proven strategies.
+              </p>
+            </div>
+          </div>
+
+          <div className={classes.statsGrid}>
+            <div className={classes.statBox}>
+              <div className={classes.statNumber}>36</div>
+              <div className={classes.statLabel}>Perfect Score</div>
+            </div>
+            <div className={classes.statBox}>
+              <div className={classes.statNumber}>3</div>
+              <div className={classes.statLabel}>Perfect Scorers</div>
+            </div>
+            <div className={classes.statBox}>
+              <div className={classes.statNumber}>$29</div>
+              <div className={classes.statLabel}>Per Month</div>
+            </div>
+          </div>
         </div>
 
         {/* Meet the Team */}
         <div className={classes.section}>
-          <h2 className={classes.subtitle}>Meet the Team</h2>
+          <h2 className={classes.subtitle}><HiTrophy style={{ display: 'inline', marginRight: '12px', color: '#1e3a8a' }} />Meet the Team</h2>
           <p className={classes.paragraph}>
             Nomi Academy was founded by UC Berkeley students who know firsthand what it takes to excel on the ACT. Our team of perfect scorers has been in your shoes, and we built this platform using the exact strategies that helped us succeed.
           </p>
@@ -392,7 +514,7 @@ const AboutUs = () => {
                 className={classes.founderImage}
               />
               <div className={classes.badge}>Perfect 36 ACT Score</div>
-              <h3 className={classes.founderName}>Jonathan</h3>
+              <h3 className={classes.founderName}>Jonathan Lee</h3>
               <div className={classes.founderRole}>Advisor</div>
               <div className={classes.schoolInfo}>
                 <img
@@ -411,22 +533,55 @@ const AboutUs = () => {
 
         {/* Our Approach */}
         <div className={classes.section}>
-          <h2 className={classes.subtitle}>Our Approach</h2>
-          <p className={classes.paragraph}>
-            We're not just test prep experts — we're students who recently navigated the college admissions process ourselves. We understand the pressure, the time constraints, and the importance of every single point on your ACT score.
-          </p>
-          <p className={classes.paragraph}>
-            Our platform strips away the unnecessary complexity that plagues traditional test prep. Instead, we focus on:
-          </p>
-          <p className={classes.paragraph}>
-            <strong>✓ Clear, concise lessons</strong> that teach you exactly what you need to know<br />
-            <strong>✓ Targeted practice</strong> that focuses on your specific weaknesses<br />
-            <strong>✓ Proven strategies</strong> that helped us achieve perfect scores<br />
-            <strong>✓ Affordable pricing</strong> that makes elite test prep accessible to everyone
-          </p>
-          <p className={classes.paragraph}>
-            We believe that with the right tools and guidance, any student can dramatically improve their ACT score — without breaking the bank or getting lost in overly complicated study programs.
-          </p>
+          <h2 className={classes.subtitle}><HiSparkles style={{ display: 'inline', marginRight: '12px', color: '#1e3a8a' }} />Our Approach</h2>
+
+          <div className={classes.iconFeature}>
+            <div className={classes.iconCircle}>
+              <HiAcademicCap />
+            </div>
+            <div className={classes.iconContent}>
+              <h3 className={classes.iconTitle}>Clear, Concise Lessons</h3>
+              <p className={classes.iconDescription}>
+                We teach you exactly what you need to know — no fluff, no complicated jargon. Just proven strategies that work.
+              </p>
+            </div>
+          </div>
+
+          <div className={classes.iconFeature}>
+            <div className={classes.iconCircle}>
+              <HiChartBar />
+            </div>
+            <div className={classes.iconContent}>
+              <h3 className={classes.iconTitle}>Targeted Practice</h3>
+              <p className={classes.iconDescription}>
+                Focus on your specific weaknesses with personalized practice questions and detailed analytics to track your progress.
+              </p>
+            </div>
+          </div>
+
+          <div className={classes.iconFeature}>
+            <div className={classes.iconCircle}>
+              <HiCheckCircle />
+            </div>
+            <div className={classes.iconContent}>
+              <h3 className={classes.iconTitle}>Proven Strategies</h3>
+              <p className={classes.iconDescription}>
+                Learn the exact techniques that helped us achieve perfect scores. No guesswork — just strategies that actually work.
+              </p>
+            </div>
+          </div>
+
+          <div className={classes.iconFeature}>
+            <div className={classes.iconCircle}>
+              <HiCurrencyDollar />
+            </div>
+            <div className={classes.iconContent}>
+              <h3 className={classes.iconTitle}>Affordable Pricing</h3>
+              <p className={classes.iconDescription}>
+                Elite test prep shouldn't cost thousands. At just $29/month, we make quality ACT preparation accessible to everyone.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
