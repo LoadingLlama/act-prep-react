@@ -172,10 +172,10 @@ export const useLandingPageStyles = createUseStyles({
     zIndex: 1,
     boxSizing: 'border-box',
     '@media (max-width: 768px)': {
-      padding: '70px 20px 30px',
+      padding: '80px 20px 30px',
     },
     '@media (max-width: 480px)': {
-      padding: '70px 20px 32px',
+      padding: '90px 20px 32px',
     },
   },
 

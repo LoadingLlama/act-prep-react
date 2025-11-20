@@ -367,6 +367,9 @@ const styles = {
     padding: '28px 24px',
     boxShadow: '0 4px 24px rgba(0, 0, 0, 0.08)',
     border: '1px solid #e2e8f0',
+    '@media (max-width: 480px)': {
+      maxWidth: '90%',
+    },
   },
   logo: {
     textAlign: 'center',
