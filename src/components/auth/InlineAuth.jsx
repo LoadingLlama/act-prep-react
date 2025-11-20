@@ -355,9 +355,10 @@ const styles = {
     height: '100vh',
     maxHeight: '100vh',
     width: '100%',
-    padding: '20px',
+    padding: '16px',
     background: 'transparent',
     overflow: 'hidden',
+    boxSizing: 'border-box',
   },
   card: {
     width: '100%',
@@ -367,8 +368,10 @@ const styles = {
     padding: '28px 24px',
     boxShadow: '0 4px 24px rgba(0, 0, 0, 0.08)',
     border: '1px solid #e2e8f0',
+    boxSizing: 'border-box',
     '@media (max-width: 480px)': {
-      maxWidth: '90%',
+      maxWidth: '95%',
+      padding: '24px 20px',
     },
   },
   logo: {

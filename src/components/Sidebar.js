@@ -87,12 +87,13 @@ const useStyles = createUseStyles({
     }
   },
   logo: {
-    fontSize: '1.35rem',
+    fontSize: '1.15rem',
     fontWeight: '600',
     color: '#1a1a1a',
-    letterSpacing: '-0.01em',
+    letterSpacing: '-0.02em',
     lineHeight: '1.1',
-    margin: 0
+    margin: 0,
+    whiteSpace: 'nowrap'
   },
   navSection: {
     padding: '0.5rem 0'
