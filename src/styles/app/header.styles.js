@@ -170,7 +170,7 @@ export const headerStyles = {
     width: '44px',
     height: '44px',
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #9ca3af 0%, #6b7280 100%)',
+    background: 'linear-gradient(135deg, #d1d5db 0%, #9ca3af 100%)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

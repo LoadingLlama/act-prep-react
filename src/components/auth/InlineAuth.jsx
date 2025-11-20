@@ -414,7 +414,7 @@ const styles = {
     fontWeight: '500',
     width: '100%',
     background: '#ffffff',
-    border: '1.5px solid #d1d5db',
+    border: '1.5px solid #f3f4f6',
     borderRadius: '8px',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
