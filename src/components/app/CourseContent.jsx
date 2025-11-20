@@ -1186,15 +1186,27 @@ const CourseContent = () => {
                   <div className={classes.weekGrid}>
                     {week.items.map((item, itemIndex) => {
                       const isCompleted = item.status === 'completed';
+                      const isLesson = item.type === 'lesson';
+                      const isPractice = item.type === 'practice' || item.type === 'practice_test';
+
+                      // Apple gray for lessons, subtle red for practice
+                      const itemStyle = item.isDiagnostic ? {
+                        borderLeft: '3px solid #b91c1c',
+                        paddingLeft: '0.75rem',
+                        background: 'linear-gradient(90deg, #fef2f2 0%, #ffffff 100%)'
+                      } : isPractice ? {
+                        background: 'linear-gradient(135deg, #fef2f2 0%, #ffffff 100%)',
+                        borderLeft: '2px solid #fca5a5'
+                      } : isLesson ? {
+                        background: 'linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%)',
+                        borderLeft: '2px solid #d1d5db'
+                      } : {};
+
                       return (
                         <div
                           key={itemIndex}
                           className={`${classes.weekCard} ${isCompleted ? 'completed' : ''}`}
-                          style={item.isDiagnostic ? {
-                            borderLeft: '3px solid #b91c1c',
-                            paddingLeft: '0.75rem',
-                            background: 'linear-gradient(90deg, #fef2f2 0%, #ffffff 100%)'
-                          } : {}}
+                          style={itemStyle}
                         >
                           <div className={classes.weekCardCheckbox}></div>
                           <div className={classes.weekCardContent}>
