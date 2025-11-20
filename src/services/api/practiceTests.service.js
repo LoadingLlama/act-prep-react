@@ -140,8 +140,8 @@ const PracticeTestsService = {
         // Handle correct_answer in multiple formats:
         // - If already a letter ("A", "B", etc.), use as-is
         // - If a number string ("0", "1", "2", etc.), convert to letter
-        // - If "TBD" or invalid, skip this question
-        let correctAnswer = null;
+        // - If "TBD" or invalid, use "A" as placeholder (will be wrong but allows rendering)
+        let correctAnswer = 'A'; // Default placeholder
         if (q.correct_answer) {
           const answer = String(q.correct_answer).trim();
 
@@ -154,21 +154,16 @@ const PracticeTestsService = {
             const numAnswer = parseInt(answer, 10);
             correctAnswer = String.fromCharCode(65 + numAnswer); // 0->A, 1->B, etc.
           }
-          // If contains "TBD" or other invalid format, log warning
+          // If contains "TBD" or other invalid format, use default 'A'
           else if (answer.includes('TBD')) {
-            console.warn(`Question ${q.question_number} has placeholder answer "TBD", skipping`);
-            return null; // Skip questions without proper answers
+            console.warn(`Question ${q.question_number} has placeholder answer "TBD", using 'A' as default`);
+            correctAnswer = 'A';
           }
         }
 
-        if (!correctAnswer) {
-          console.warn(`Question ${q.question_number} has invalid correct_answer: ${q.correct_answer}`);
-          return null;
-        }
-
-        // Check if question_text is missing or invalid
-        if (!q.question_text || q.question_text.trim().length === 0 || q.question_text.includes('TBD')) {
-          console.warn(`Question ${q.question_number} has missing or invalid question_text, skipping`);
+        // Skip only if question_text is completely missing (not if it has TBD)
+        if (!q.question_text || q.question_text.trim().length === 0) {
+          console.warn(`Question ${q.question_number} has no question_text, skipping`);
           return null;
         }
 
