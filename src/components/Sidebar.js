@@ -102,7 +102,7 @@ const useStyles = createUseStyles({
   navSection: {
     padding: '0.5rem 0',
     '@media (max-width: 1024px)': {
-      padding: '0.25rem 0'
+      padding: '0.15rem 0'
     }
   },
   navSectionTitle: {
@@ -116,8 +116,8 @@ const useStyles = createUseStyles({
     marginTop: '0.75rem',
     '@media (max-width: 1024px)': {
       fontSize: '0.65rem',
-      marginTop: '0.5rem',
-      marginBottom: '0.35rem'
+      marginTop: '0.35rem',
+      marginBottom: '0.25rem'
     }
   },
   navItem: {
@@ -137,9 +137,9 @@ const useStyles = createUseStyles({
     position: 'relative',
     minHeight: '44px',
     '@media (max-width: 1024px)': {
-      padding: '0.6rem 1.25rem',
+      padding: '0.5rem 1.25rem',
       fontSize: '0.85rem',
-      minHeight: '38px'
+      minHeight: '36px'
     },
     '&:hover': {
       background: '#f9fafb',
@@ -177,7 +177,7 @@ const useStyles = createUseStyles({
     borderTop: '1px solid #f3f4f6',
     marginTop: 'auto',
     '@media (max-width: 1024px)': {
-      padding: '0.35rem 0'
+      padding: '0.25rem 0'
     }
   },
   statusBadge: {
