@@ -499,11 +499,15 @@
                         passageContent = replaceImagePlaceholders(passageContent, firstQuestion.passage_image_urls);
                     }
 
+                    // Normalize line breaks: handle \r\n\r\n (Windows) and \n\n (Unix)
+                    const normalizedContent = passageContent.replace(/\r\n/g, '\n');
+                    const paragraphs = normalizedContent.split('\n\n').filter(p => p.trim().length > 0);
+
                     passageHTML += `
                         <div class="passage-content" id="passage${passageNum}" data-questions="${questionNums.join(',')}">
                             ${passageTitle ? `<h3 class="passage-title">${passageTitle}</h3>` : ''}
                             <div class="passage-text">
-                                ${passageContent.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('')}
+                                ${paragraphs.map(p => `<p>${p.trim()}</p>`).join('')}
                             </div>
                         </div>
                     `;
