@@ -4,7 +4,7 @@
  * Collapsible email/password form
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { validatePassword, validateEmail, sanitizeInput } from '../../utils/security';
 import Logo from '../common/Logo';
@@ -21,6 +21,21 @@ const InlineAuth = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [hoveredButton, setHoveredButton] = useState(null);
+
+  // Prevent body scrolling when auth is shown
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.height = '100%';
+
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+    };
+  }, []);
 
   // Don't render if user is logged in
   if (user) {
@@ -353,9 +368,12 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     height: '100vh',
+    minHeight: '100vh',
     maxHeight: '100vh',
-    width: '100%',
+    width: '100vw',
+    maxWidth: '100vw',
     padding: '0',
+    margin: '0',
     background: 'transparent',
     overflow: 'hidden',
     boxSizing: 'border-box',
@@ -364,6 +382,7 @@ const styles = {
     left: 0,
     right: 0,
     bottom: 0,
+    zIndex: 1,
   },
   card: {
     width: '100%',
@@ -374,13 +393,16 @@ const styles = {
     boxShadow: '0 4px 24px rgba(0, 0, 0, 0.08)',
     border: '1px solid #e2e8f0',
     boxSizing: 'border-box',
-    maxHeight: '90vh',
+    maxHeight: '85vh',
     overflowY: 'auto',
+    overflowX: 'hidden',
+    display: 'flex',
+    flexDirection: 'column',
     '@media (max-width: 480px)': {
       maxWidth: 'calc(100% - 24px)',
       width: 'calc(100% - 24px)',
       padding: '24px 24px',
-      maxHeight: '95vh',
+      maxHeight: '90vh',
       margin: '0',
       borderRadius: '16px',
     },
