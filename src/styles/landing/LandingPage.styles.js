@@ -357,8 +357,7 @@ export const useLandingPageStyles = createUseStyles({
     overflow: 'hidden',
     display: 'inline-block',
     '@media (max-width: 768px)': {
-      width: '85%',
-      maxWidth: '320px',
+      width: '100%',
       fontSize: '14px',
       padding: '12px 24px',
       display: 'block',
@@ -402,8 +401,7 @@ export const useLandingPageStyles = createUseStyles({
     display: 'inline-block',
     textDecoration: 'none',
     '@media (max-width: 768px)': {
-      width: '85%',
-      maxWidth: '320px',
+      width: '100%',
       fontSize: '14px',
       padding: '12px 24px',
       display: 'block',
@@ -979,8 +977,7 @@ export const useLandingPageStyles = createUseStyles({
     boxShadow: '0 4px 16px rgba(30, 58, 138, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
     display: 'inline-block',
     '@media (max-width: 768px)': {
-      width: '85%',
-      maxWidth: '320px',
+      width: '100%',
       fontSize: '14px',
       padding: '12px 24px',
     },
