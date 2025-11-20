@@ -227,9 +227,18 @@ const useStyles = createUseStyles({
     fontWeight: '600',
     color: '#15803d',
     marginBottom: '8px',
-    '@media (max-width: 480px)': {
+    whiteSpace: 'nowrap',
+    '@media (max-width: 1024px)': {
       fontSize: '12px',
-      padding: '5px 12px',
+      padding: '5px 11px',
+    },
+    '@media (max-width: 768px)': {
+      fontSize: '13px',
+      padding: '6px 14px',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '11px',
+      padding: '4px 10px',
     },
   },
 });

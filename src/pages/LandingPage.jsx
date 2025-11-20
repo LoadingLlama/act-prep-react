@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLandingPageStyles } from '../styles/landing/LandingPage.styles';
+import { HiBars3, HiXMark } from 'react-icons/hi2';
 import Logo from '../components/common/Logo';
 import SocialBrowserWarning from '../components/auth/SocialBrowserWarning';
 
@@ -18,6 +19,7 @@ const LandingPage = () => {
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [showSocialWarning, setShowSocialWarning] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const testimonials = [
     [
@@ -209,9 +211,48 @@ const LandingPage = () => {
             <button className={classes.getStartedButton} onClick={handleGetStarted}>
               Get started
             </button>
+            <button className={classes.hamburgerButton} onClick={() => setMobileMenuOpen(true)}>
+              <HiBars3 />
+            </button>
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`${classes.mobileMenuOverlay} ${mobileMenuOpen ? 'open' : ''}`}
+        onClick={() => setMobileMenuOpen(false)}
+      />
+
+      {/* Mobile Menu */}
+      <div className={`${classes.mobileMenu} ${mobileMenuOpen ? 'open' : ''}`}>
+        <div className={classes.mobileMenuHeader}>
+          <Logo size="small" />
+          <button className={classes.mobileMenuClose} onClick={() => setMobileMenuOpen(false)}>
+            <HiXMark />
+          </button>
+        </div>
+        <div className={classes.mobileMenuLinks}>
+          <button className={classes.mobileMenuLink} onClick={() => { document.querySelector('#statistics')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>
+            Results
+          </button>
+          <button className={classes.mobileMenuLink} onClick={() => { document.querySelector('#testimonials')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>
+            Testimonials
+          </button>
+          <button className={classes.mobileMenuLink} onClick={() => { document.querySelector('#universities')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>
+            Universities
+          </button>
+          <button className={classes.mobileMenuLink} onClick={() => { document.querySelector('#faq')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>
+            FAQ
+          </button>
+          <button className={classes.mobileMenuLink} onClick={() => { handleAboutUs(); setMobileMenuOpen(false); }}>
+            About Us
+          </button>
+        </div>
+        <button className={classes.mobileMenuButton} onClick={() => { handleGetStarted(); setMobileMenuOpen(false); }}>
+          Get started
+        </button>
+      </div>
 
       {/* Main Content */}
       <div className={classes.mainContent}>

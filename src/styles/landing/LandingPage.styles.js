@@ -70,7 +70,10 @@ export const useLandingPageStyles = createUseStyles({
     transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease',
     cursor: 'pointer',
     '@media (max-width: 768px)': {
-      fontSize: '18px',
+      fontSize: '15px',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '14px',
     },
     '&:hover': {
       transform: 'scale(1.02)',
@@ -1114,5 +1117,123 @@ export const useLandingPageStyles = createUseStyles({
     color: '#94a3b8',
     marginBottom: '6px',
     fontWeight: '400',
+  },
+
+  // Mobile Menu
+  hamburgerButton: {
+    display: 'none',
+    '@media (max-width: 768px)': {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: 'none',
+      border: 'none',
+      cursor: 'pointer',
+      padding: '8px',
+      fontSize: '24px',
+      color: '#374151',
+      transition: 'color 0.2s ease',
+      '&:hover': {
+        color: '#1e3a8a',
+      },
+    },
+  },
+
+  mobileMenuOverlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: 'rgba(0, 0, 0, 0.5)',
+    zIndex: 1999,
+    opacity: 0,
+    visibility: 'hidden',
+    transition: 'opacity 0.3s ease, visibility 0.3s ease',
+    '&.open': {
+      opacity: 1,
+      visibility: 'visible',
+    },
+  },
+
+  mobileMenu: {
+    position: 'fixed',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    width: '280px',
+    maxWidth: '80vw',
+    background: '#ffffff',
+    zIndex: 2000,
+    transform: 'translateX(100%)',
+    transition: 'transform 0.3s ease',
+    boxShadow: '-4px 0 16px rgba(0, 0, 0, 0.15)',
+    display: 'flex',
+    flexDirection: 'column',
+    overflowY: 'auto',
+    '&.open': {
+      transform: 'translateX(0)',
+    },
+  },
+
+  mobileMenuHeader: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '16px 20px',
+    borderBottom: '1px solid #e5e7eb',
+  },
+
+  mobileMenuClose: {
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    padding: '8px',
+    fontSize: '24px',
+    color: '#6b7280',
+    transition: 'color 0.2s ease',
+    '&:hover': {
+      color: '#1a1a1a',
+    },
+  },
+
+  mobileMenuLinks: {
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '16px 0',
+  },
+
+  mobileMenuLink: {
+    padding: '14px 24px',
+    fontSize: '16px',
+    fontWeight: '500',
+    color: '#374151',
+    background: 'none',
+    border: 'none',
+    textAlign: 'left',
+    cursor: 'pointer',
+    transition: 'background 0.2s ease, color 0.2s ease',
+    '&:hover': {
+      background: '#f9fafb',
+      color: '#1e3a8a',
+    },
+  },
+
+  mobileMenuButton: {
+    margin: '16px 24px',
+    padding: '12px 20px',
+    fontSize: '16px',
+    fontWeight: '600',
+    color: '#ffffff',
+    background: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)',
+    border: 'none',
+    borderRadius: '8px',
+    cursor: 'pointer',
+    textAlign: 'center',
+    transition: 'all 0.2s ease',
+    boxShadow: '0 2px 8px rgba(30, 58, 138, 0.25)',
+    '&:active': {
+      transform: 'scale(0.98)',
+    },
   },
 });
