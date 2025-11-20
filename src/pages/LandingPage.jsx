@@ -156,9 +156,9 @@ const LandingPage = () => {
     }
   };
 
-  const handleSignIn = () => {
-    // Navigate to app - will show auth if not logged in
-    navigate('/app/home');
+  const handleAboutUs = () => {
+    // Navigate to About Us page
+    navigate('/about');
   };
 
   const handleLogoClick = () => {
@@ -201,11 +201,11 @@ const LandingPage = () => {
             <button className={classes.navLink} onClick={() => document.querySelector('#faq')?.scrollIntoView({ behavior: 'smooth' })}>
               FAQ
             </button>
+            <button className={classes.navLink} onClick={handleAboutUs}>
+              About Us
+            </button>
           </div>
           <div className={classes.navRight}>
-            <button className={classes.signInButton} onClick={handleSignIn}>
-              Sign in
-            </button>
             <button className={classes.getStartedButton} onClick={handleGetStarted}>
               Get started
             </button>

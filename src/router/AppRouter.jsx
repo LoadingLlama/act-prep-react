@@ -13,6 +13,7 @@ import InlineAuth from '../components/auth/InlineAuth';
 // Eagerly load critical pages
 import LandingPage from '../pages/LandingPage';
 import AuthPage from '../pages/AuthPage';
+import AboutUs from '../pages/AboutUs';
 import AppLayout from '../layouts/AppLayout';
 
 // Lazy load other pages for better initial load performance
@@ -96,6 +97,9 @@ export default function AppRouter() {
         <Routes>
           {/* Landing Page - Always accessible */}
           <Route path="/" element={<LandingPage />} />
+
+          {/* About Us Page - Always accessible */}
+          <Route path="/about" element={<AboutUs />} />
 
           {/* Legacy login route - redirect to home */}
           <Route path="/login" element={
