@@ -352,10 +352,12 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    minHeight: '100vh',
+    height: '100vh',
+    maxHeight: '100vh',
     width: '100%',
     padding: '20px',
     background: 'transparent',
+    overflow: 'hidden',
   },
   card: {
     width: '100%',
