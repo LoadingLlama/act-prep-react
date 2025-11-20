@@ -28,7 +28,7 @@ export const useCourseStyles = createUseStyles({
   title: {
     fontSize: '2.5rem',
     fontWeight: '900',
-    background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
+    background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
@@ -93,7 +93,7 @@ export const useCourseStyles = createUseStyles({
       top: '1.5rem',
       bottom: '1.5rem',
       width: '2px',
-      background: '#e5e7eb',
+      background: 'linear-gradient(180deg, #e9d5ff 0%, #c4b5fd 100%)',
       '@media (max-width: 768px)': {
         left: '0.4375rem'
       }
@@ -104,16 +104,16 @@ export const useCourseStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     marginBottom: '1rem',
-    background: 'linear-gradient(135deg, #ffffff 0%, #fafafa 100%)',
-    border: '1px solid #e5e7eb',
-    borderTop: '2px solid #e5e7eb',
+    background: 'linear-gradient(135deg, #ffffff 0%, #faf5ff 100%)',
+    border: '1px solid #e9d5ff',
+    borderTop: '2px solid #e9d5ff',
     borderRadius: '8px',
     padding: '1rem',
     position: 'relative',
     transition: 'all 0.2s ease',
     '&:hover': {
-      borderTopColor: '#cbd5e1',
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
+      borderTopColor: '#c4b5fd',
+      boxShadow: '0 2px 12px rgba(139, 92, 246, 0.08)'
     },
     '@media (max-width: 768px)': {
       padding: '0.75rem'
@@ -126,7 +126,7 @@ export const useCourseStyles = createUseStyles({
       width: '10px',
       height: '10px',
       background: '#ffffff',
-      border: '2px solid #08245b',
+      border: '2px solid #8b5cf6',
       borderRadius: '50%',
       zIndex: 2,
       transition: 'all 0.2s ease',
@@ -141,9 +141,9 @@ export const useCourseStyles = createUseStyles({
       top: '1.125rem',
       width: '16px',
       height: '16px',
-      background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
+      background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
       border: 'none',
-      boxShadow: '0 0 0 4px rgba(8, 36, 91, 0.15)',
+      boxShadow: '0 0 0 4px rgba(139, 92, 246, 0.15)',
       '@media (max-width: 768px)': {
         left: '-2.0625rem',
         width: '14px',
@@ -188,13 +188,13 @@ export const useCourseStyles = createUseStyles({
       borderBottom: 'none'
     },
     '&:hover': {
-      background: 'linear-gradient(90deg, #f0f9ff 0%, #f9fafb 100%)',
-      borderLeftColor: '#08245b',
+      background: 'linear-gradient(90deg, #f5f3ff 0%, #faf5ff 100%)',
+      borderLeftColor: '#8b5cf6',
       paddingLeft: '0.75rem',
       '& $weekCardArrow': {
         opacity: 1,
         transform: 'translateX(0)',
-        color: '#08245b'
+        color: '#8b5cf6'
       }
     },
     '&.completed': {
@@ -215,7 +215,7 @@ export const useCourseStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: '#6b7280',
+    color: '#8b5cf6',
     fontSize: '1rem',
     '& svg': {
       width: '16px',
