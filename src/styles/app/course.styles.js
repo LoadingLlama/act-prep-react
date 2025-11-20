@@ -175,24 +175,23 @@ export const useCourseStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '0.5rem 0.75rem',
+    padding: '0.65rem 0.75rem',
     background: 'transparent',
     border: 'none',
     borderBottom: '1px solid #f3f4f6',
-    borderRadius: '6px',
+    borderRadius: '0',
     cursor: 'pointer',
     transition: 'all 0.15s ease',
-    gap: '0.75rem',
-    margin: '0 0 2px 0',
+    gap: '0.875rem',
+    margin: '0 0 4px 0',
     '&:last-child': {
       borderBottom: 'none'
     },
     '&:hover': {
       background: '#fafbfc',
-      borderBottom: '1px solid #e5e7eb',
       '& $weekCardCheckbox': {
         borderColor: '#14b8a6',
-        transform: 'scale(1.05)'
+        transform: 'scale(1.08)'
       },
       '& $weekCardArrow': {
         opacity: 1,
@@ -212,7 +211,7 @@ export const useCourseStyles = createUseStyles({
           content: '"✓"',
           position: 'absolute',
           color: '#ffffff',
-          fontSize: '0.75rem',
+          fontSize: '0.7rem',
           fontWeight: '700',
           top: '50%',
           left: '50%',
@@ -223,20 +222,31 @@ export const useCourseStyles = createUseStyles({
   },
 
   weekCardCheckbox: {
-    width: '18px',
-    height: '18px',
-    borderRadius: '4px',
-    border: '2px solid #d1d5db',
+    width: '20px',
+    height: '20px',
+    borderRadius: '5px',
+    border: '2.5px solid #d1d5db',
     flexShrink: 0,
     transition: 'all 0.2s ease',
     position: 'relative',
-    background: '#ffffff'
+    background: '#ffffff',
+    cursor: 'pointer',
+    '&:hover': {
+      borderColor: '#14b8a6'
+    }
   },
 
   weekCardContent: {
     display: 'flex',
     alignItems: 'center',
-    gap: '0.75rem',
+    gap: '0.625rem',
+    flex: 1
+  },
+
+  weekCardTextWrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
     flex: 1
   },
 
@@ -246,6 +256,7 @@ export const useCourseStyles = createUseStyles({
     justifyContent: 'center',
     color: '#9ca3af',
     fontSize: '0.875rem',
+    flexShrink: 0,
     '& svg': {
       width: '14px',
       height: '14px'
@@ -256,8 +267,7 @@ export const useCourseStyles = createUseStyles({
     fontSize: '0.875rem',
     color: '#1a1a1a',
     fontWeight: '400',
-    transition: 'all 0.2s ease',
-    flex: 1
+    transition: 'all 0.2s ease'
   },
 
   weekCardArrow: {

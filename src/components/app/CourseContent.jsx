@@ -1189,44 +1189,54 @@ const CourseContent = () => {
                       const isLesson = item.type === 'lesson';
                       const isPractice = item.type === 'practice' || item.type === 'practice_test';
 
-                      // Apple gray for lessons, subtle red for practice
-                      const itemStyle = item.isDiagnostic ? {
-                        borderLeft: '3px solid #b91c1c',
-                        paddingLeft: '0.75rem',
-                        background: 'linear-gradient(90deg, #fef2f2 0%, #ffffff 100%)'
-                      } : isPractice ? {
-                        background: 'linear-gradient(135deg, #fef2f2 0%, #ffffff 100%)',
-                        borderLeft: '2px solid #fca5a5'
-                      } : isLesson ? {
-                        background: 'linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%)',
-                        borderLeft: '2px solid #d1d5db'
-                      } : {};
+                      // Color text instead of backgrounds
+                      const textColor = item.isDiagnostic ? '#b91c1c'
+                        : isPractice ? '#dc2626'
+                        : isLesson ? '#6b7280'
+                        : '#1a1a1a';
+
+                      const handleCheckboxClick = (e) => {
+                        e.stopPropagation();
+                        // TODO: Toggle completion status
+                        console.log('Checkbox clicked for:', item.title);
+                      };
 
                       return (
                         <div
                           key={itemIndex}
                           className={`${classes.weekCard} ${isCompleted ? 'completed' : ''}`}
-                          style={itemStyle}
                         >
-                          <div className={classes.weekCardCheckbox}></div>
+                          <div
+                            className={classes.weekCardCheckbox}
+                            onClick={handleCheckboxClick}
+                          ></div>
                           <div className={classes.weekCardContent}>
-                            <span className={classes.weekCardIcon} style={item.isDiagnostic ? { color: '#b91c1c' } : {}}>{getItemIcon(item.type)}</span>
-                            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.5rem', flex: 1, flexWrap: 'wrap' }}>
-                              <span className={classes.weekCardText} style={item.isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : {}}>{item.title}</span>
-                              {item.description && (
-                                <span style={{
-                                  fontSize: '0.8125rem',
-                                  color: '#6b7280',
-                                  lineHeight: '1.4',
-                                  fontWeight: '400',
-                                  flex: '1 1 100%'
-                                }}>
-                                  {item.description}
-                                </span>
-                              )}
+                            <div className={classes.weekCardTextWrapper}>
+                              <span
+                                className={classes.weekCardText}
+                                style={{
+                                  color: textColor,
+                                  fontWeight: item.isDiagnostic ? '600' : '400'
+                                }}
+                              >
+                                {item.title}
+                              </span>
+                              <span className={classes.weekCardIcon}>
+                                {getItemIcon(item.type)}
+                              </span>
                             </div>
+                            {item.description && (
+                              <span style={{
+                                fontSize: '0.8125rem',
+                                color: '#9ca3af',
+                                lineHeight: '1.4',
+                                fontWeight: '400'
+                              }}>
+                                {item.description}
+                              </span>
+                            )}
                           </div>
-                          <span className={classes.weekCardArrow} style={item.isDiagnostic ? { color: '#b91c1c' } : {}}>→</span>
+                          <span className={classes.weekCardArrow}>→</span>
                         </div>
                       );
                     })}
