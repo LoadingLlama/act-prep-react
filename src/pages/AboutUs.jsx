@@ -439,7 +439,7 @@ const AboutUs = () => {
                   </div>
                 </div>
                 <p className={classes.founderDetails}>
-                  Caden achieved a perfect 36 on the ACT and is passionate about making test prep accessible to all students. He developed the core curriculum and learning methodology that powers Nomi Academy's lessons.
+                  Caden is a student at UC Berkeley. He scored a perfect 36 on the ACT and built Nomi Academy's core curriculum. He's passionate about making test prep accessible to everyone.
                 </p>
               </div>
             </div>
@@ -465,7 +465,7 @@ const AboutUs = () => {
                   </div>
                 </div>
                 <p className={classes.founderDetails}>
-                  Willis also scored a perfect 36 on the ACT and brings expertise in creating effective practice questions and study plans. He designed the platform's personalized learning features and analytics.
+                  Willis is a student at UC Berkeley. He scored a perfect 36 on the ACT and designed the platform's personalized learning features. He enjoys building tools that help students succeed.
                 </p>
               </div>
             </div>
@@ -491,7 +491,7 @@ const AboutUs = () => {
                   </div>
                 </div>
                 <p className={classes.founderDetails}>
-                  Jonathan achieved a perfect 36 on the ACT and serves as an advisor to Nomi Academy. He provides strategic guidance and helps ensure our curriculum stays aligned with the latest ACT testing strategies.
+                  Jonathan is a student at Brown University. He scored a perfect 36 on the ACT and advises on Nomi Academy's curriculum strategy. He's helped students improve their test scores since high school.
                 </p>
               </div>
             </div>
