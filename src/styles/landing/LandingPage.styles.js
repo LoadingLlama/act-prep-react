@@ -197,7 +197,7 @@ export const useLandingPageStyles = createUseStyles({
       display: 'block',
     },
     '@media (max-width: 480px)': {
-      marginBottom: '36px',
+      marginBottom: '44px',
     },
   },
 
@@ -277,7 +277,7 @@ export const useLandingPageStyles = createUseStyles({
     },
     '@media (max-width: 480px)': {
       fontSize: '24px',
-      marginBottom: '36px',
+      marginBottom: '44px',
       lineHeight: '1.2',
     },
   },
@@ -305,7 +305,7 @@ export const useLandingPageStyles = createUseStyles({
     },
     '@media (max-width: 480px)': {
       fontSize: '13px',
-      marginBottom: '48px',
+      marginBottom: '56px',
     },
   },
 
@@ -325,8 +325,8 @@ export const useLandingPageStyles = createUseStyles({
     },
     '@media (max-width: 480px)': {
       fontSize: '14px',
-      marginBottom: '28px',
-      marginTop: '24px',
+      marginBottom: '16px',
+      marginTop: '12px',
     },
   },
 
@@ -338,7 +338,7 @@ export const useLandingPageStyles = createUseStyles({
     marginBottom: '0',
     '@media (max-width: 768px)': {
       flexDirection: 'column',
-      gap: '10px',
+      gap: '8px',
       width: '100%',
     },
   },
@@ -449,7 +449,7 @@ export const useLandingPageStyles = createUseStyles({
       marginTop: '56px',
     },
     '@media (max-width: 480px)': {
-      marginTop: '60px',
+      marginTop: '72px',
     },
   },
 
@@ -525,7 +525,7 @@ export const useLandingPageStyles = createUseStyles({
       marginTop: '56px',
     },
     '@media (max-width: 480px)': {
-      marginTop: '60px',
+      marginTop: '72px',
     },
   },
 
