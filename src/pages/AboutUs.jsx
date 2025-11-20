@@ -258,44 +258,30 @@ const useStyles = createUseStyles({
     },
   },
   schoolInfo: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '10px',
     marginBottom: '16px',
+    textAlign: 'center',
     '@media (max-width: 768px)': {
-      gap: '8px',
       marginBottom: '12px',
     },
     '@media (max-width: 480px)': {
-      gap: '6px',
       marginBottom: '10px',
     },
   },
-  schoolLogo: {
-    width: '40px',
-    height: '40px',
-    objectFit: 'contain',
-    filter: 'brightness(1.1)',
-    '@media (max-width: 768px)': {
-      width: '36px',
-      height: '36px',
-    },
-    '@media (max-width: 480px)': {
-      width: '32px',
-      height: '32px',
-    },
-  },
   schoolName: {
-    fontSize: '16px',
-    fontWeight: '700',
-    color: '#1e3a8a',
+    fontSize: '15px',
+    fontWeight: '600',
+    color: '#64748b',
+    letterSpacing: '0.02em',
     '@media (max-width: 768px)': {
-      fontSize: '15px',
-    },
-    '@media (max-width: 480px)': {
       fontSize: '14px',
     },
+    '@media (max-width: 480px)': {
+      fontSize: '13px',
+    },
+  },
+  schoolHighlight: {
+    color: '#1e3a8a',
+    fontWeight: '700',
   },
   iconFeature: {
     display: 'flex',
@@ -344,47 +330,6 @@ const useStyles = createUseStyles({
     lineHeight: '1.6',
     '@media (max-width: 480px)': {
       fontSize: '14px',
-    },
-  },
-  statsGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '20px',
-    marginTop: '32px',
-    '@media (max-width: 768px)': {
-      gridTemplateColumns: 'repeat(3, 1fr)',
-      gap: '16px',
-    },
-    '@media (max-width: 480px)': {
-      gridTemplateColumns: '1fr',
-      gap: '12px',
-    },
-  },
-  statBox: {
-    textAlign: 'center',
-    padding: '24px 16px',
-    background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
-    borderRadius: '12px',
-    border: '2px solid #86efac',
-    '@media (max-width: 480px)': {
-      padding: '20px 16px',
-    },
-  },
-  statNumber: {
-    fontSize: '36px',
-    fontWeight: '800',
-    color: '#15803d',
-    marginBottom: '4px',
-    '@media (max-width: 480px)': {
-      fontSize: '32px',
-    },
-  },
-  statLabel: {
-    fontSize: '14px',
-    fontWeight: '600',
-    color: '#166534',
-    '@media (max-width: 480px)': {
-      fontSize: '13px',
     },
   },
 });
@@ -438,21 +383,6 @@ const AboutUs = () => {
               </p>
             </div>
           </div>
-
-          <div className={classes.statsGrid}>
-            <div className={classes.statBox}>
-              <div className={classes.statNumber}>36</div>
-              <div className={classes.statLabel}>Perfect Score</div>
-            </div>
-            <div className={classes.statBox}>
-              <div className={classes.statNumber}>3</div>
-              <div className={classes.statLabel}>Perfect Scorers</div>
-            </div>
-            <div className={classes.statBox}>
-              <div className={classes.statNumber}>$29</div>
-              <div className={classes.statLabel}>Per Month</div>
-            </div>
-          </div>
         </div>
 
         {/* Meet the Team */}
@@ -473,12 +403,9 @@ const AboutUs = () => {
               <h3 className={classes.founderName}>Caden Chiang</h3>
               <div className={classes.founderRole}>Co-Founder</div>
               <div className={classes.schoolInfo}>
-                <img
-                  src="/images/schools/uc-berkeley.svg"
-                  alt="UC Berkeley"
-                  className={classes.schoolLogo}
-                />
-                <span className={classes.schoolName}>UC Berkeley</span>
+                <div className={classes.schoolName}>
+                  <span className={classes.schoolHighlight}>UC Berkeley Haas</span> School of Business
+                </div>
               </div>
               <p className={classes.founderDetails}>
                 Caden achieved a perfect 36 on the ACT and is passionate about making test prep accessible to all students. He developed the core curriculum and learning methodology that powers Nomi Academy's lessons.
@@ -495,12 +422,9 @@ const AboutUs = () => {
               <h3 className={classes.founderName}>Willis Yang</h3>
               <div className={classes.founderRole}>Co-Founder</div>
               <div className={classes.schoolInfo}>
-                <img
-                  src="/images/schools/uc-berkeley.svg"
-                  alt="UC Berkeley"
-                  className={classes.schoolLogo}
-                />
-                <span className={classes.schoolName}>UC Berkeley</span>
+                <div className={classes.schoolName}>
+                  <span className={classes.schoolHighlight}>UC Berkeley Haas</span> School of Business
+                </div>
               </div>
               <p className={classes.founderDetails}>
                 Willis also scored a perfect 36 on the ACT and brings expertise in creating effective practice questions and study plans. He designed the platform's personalized learning features and analytics.
@@ -517,12 +441,9 @@ const AboutUs = () => {
               <h3 className={classes.founderName}>Jonathan Lee</h3>
               <div className={classes.founderRole}>Advisor</div>
               <div className={classes.schoolInfo}>
-                <img
-                  src="/images/schools/brown.svg"
-                  alt="Brown University"
-                  className={classes.schoolLogo}
-                />
-                <span className={classes.schoolName}>Brown University</span>
+                <div className={classes.schoolName}>
+                  <span className={classes.schoolHighlight}>Brown University</span>
+                </div>
               </div>
               <p className={classes.founderDetails}>
                 Jonathan achieved a perfect 36 on the ACT and serves as an advisor to Nomi Academy. He provides strategic guidance and helps ensure our curriculum stays aligned with the latest ACT testing strategies.
