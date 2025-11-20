@@ -343,7 +343,7 @@ const AboutUs = () => {
           <div className={classes.foundersGrid}>
             <div className={classes.founderCard}>
               <img
-                src={`${process.env.PUBLIC_URL}/cadenchiangheadshot.jpeg`}
+                src="/cadenchiangheadshot.jpeg"
                 alt="Caden Chiang"
                 className={classes.founderImage}
               />
@@ -352,7 +352,7 @@ const AboutUs = () => {
               <div className={classes.founderRole}>Co-Founder</div>
               <div className={classes.schoolInfo}>
                 <img
-                  src={`${process.env.PUBLIC_URL}/images/schools/uc-berkeley.png`}
+                  src="/images/schools/uc-berkeley.png"
                   alt="UC Berkeley"
                   className={classes.schoolLogo}
                 />
@@ -365,7 +365,7 @@ const AboutUs = () => {
 
             <div className={classes.founderCard}>
               <img
-                src={`${process.env.PUBLIC_URL}/willisyangheadshot.jpeg`}
+                src="/willisyangheadshot.jpeg"
                 alt="Willis Yang"
                 className={classes.founderImage}
               />
@@ -374,7 +374,7 @@ const AboutUs = () => {
               <div className={classes.founderRole}>Co-Founder</div>
               <div className={classes.schoolInfo}>
                 <img
-                  src={`${process.env.PUBLIC_URL}/images/schools/uc-berkeley.png`}
+                  src="/images/schools/uc-berkeley.png"
                   alt="UC Berkeley"
                   className={classes.schoolLogo}
                 />
@@ -387,7 +387,7 @@ const AboutUs = () => {
 
             <div className={classes.founderCard}>
               <img
-                src={`${process.env.PUBLIC_URL}/jonathanheadshot.jpeg`}
+                src="/jonathanheadshot.jpeg"
                 alt="Jonathan"
                 className={classes.founderImage}
               />
@@ -396,7 +396,7 @@ const AboutUs = () => {
               <div className={classes.founderRole}>Advisor</div>
               <div className={classes.schoolInfo}>
                 <img
-                  src={`${process.env.PUBLIC_URL}/images/schools/brown.png`}
+                  src="/images/schools/brown.png"
                   alt="Brown University"
                   className={classes.schoolLogo}
                 />
