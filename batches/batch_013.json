@@ -1,0 +1,212 @@
+[
+  {
+    "id": 121,
+    "test_number": 1,
+    "question_number": 46,
+    "question_text": "Which of the following is equal to 3x+5/2x - 7x-3/2x , for all x\u22600?",
+    "choices": [
+      "F. -4<i>x</i>+8 ",
+      "G. -4<i>x</i>+2",
+      "H. -2<i>x</i>+1",
+      "J. -2<i>x</i>+4/<i>x</i>",
+      "K. 2"
+    ],
+    "correct_answer": "J",
+    "explanation": "Working through the problem step-by-step with the values 3, 5, 2, the correct answer is -2<i>x</i>+4/<i>x</i>.",
+    "question_type": "Fractions",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "6",
+    "lesson_id": "a8cd8513-f0a8-4bb1-9890-f21dc053939a",
+    "section": "math"
+  },
+  {
+    "id": 122,
+    "test_number": 1,
+    "question_number": 47,
+    "question_text": "A rectangular stage is 90 feet long and 30 feet wide. What is the area, in square yards, of this stage?",
+    "choices": [
+      "A. 30\u221a3",
+      "B. 300",
+      "C. 675",
+      "D. 900",
+      "E. 2,700"
+    ],
+    "correct_answer": "B",
+    "explanation": "Working through the problem step-by-step with the values 90, 30, the correct answer is 300.",
+    "question_type": "Geometry Part 2 \u2013 Area and Unit Conversion",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "4",
+    "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+    "section": "math"
+  },
+  {
+    "id": 123,
+    "test_number": 1,
+    "question_number": 48,
+    "question_text": "A rectangle, with its vertex coordinates labeled, is graphed in the standard <i>(x,y)</i> coordinate plane below. A lattice point is a point with coordinates that are both integers. A lattice point inside but NOT on the rectangle will be chosen at random. What is the probability that the sum of the <i>x</i>-coordinate and the <i>y</i>-coordinate of the chosen lattice point will be odd?",
+    "choices": [
+      "F. 1/5",
+      "G. 2/5",
+      "H. 7/15",
+      "J. 17/35",
+      "K. 1/2"
+    ],
+    "correct_answer": "H",
+    "explanation": "Applying geometric angle relationships, the angle measures 7/15.",
+    "question_type": "Puzzle Question",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/m49.jpg",
+    "chapter": "35",
+    "lesson_id": "15d5d79e-44fe-4aa6-a257-9e6260c83720",
+    "section": "math"
+  },
+  {
+    "id": 124,
+    "test_number": 1,
+    "question_number": 49,
+    "question_text": "The <i>nth</n> term of an arithmetic progression is given by the formula <i> a\u2099 =a\u2081+(n\u20141)d, </i> where <i> d </i> is the commondifference and <i>a\u2081</i> is the first term. If the third term of <i>a\u2099</i> arithmetic progression is 5/2 and the sixth term is 1/4, what is the seventh term?",
+    "choices": [
+      "A. -1/2",
+      "B. 0",
+      "C. 1/2",
+      "D. 3/4",
+      "E. 1"
+    ],
+    "correct_answer": "A",
+    "explanation": "Working through the problem step-by-step with the values 1, 5, 2, the correct answer is -1/2.",
+    "question_type": "Sequences",
+    "difficulty": null,
+    "image_url": "",
+    "chapter": "24",
+    "lesson_id": "ad844a99-7156-4315-ac86-958f52468df2",
+    "section": "math"
+  },
+  {
+    "id": 125,
+    "test_number": 1,
+    "question_number": 50,
+    "question_text": "The probability of Jamie being chosen to bat first in the lineup for his baseball team is 1/9. What are the odds in favor of Jamie being chosen to bat first? \r\n\r\n<i>(Note: The odds in favor of an event are defined as the ratio of the probability that the event will happen to the probability that the event will NOT happen.)</i>",
+    "choices": [
+      "F. 1/8",
+      "G. 1/9",
+      "H. 1/10",
+      "J. 8/1",
+      "K. 9/1"
+    ],
+    "correct_answer": "F",
+    "explanation": "Using the slope formula with the given points, the slope is 1/8.",
+    "question_type": "Probability",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "22",
+    "lesson_id": "b5f5c943-7bcd-431a-aa94-df51be6612e2",
+    "section": "math"
+  },
+  {
+    "id": 126,
+    "test_number": 1,
+    "question_number": 51,
+    "question_text": "A 120-liter solution that is 5% salt is mixed with an 80-liter solution that is 15% salt. The combined solution is what percent salt?",
+    "choices": [
+      "A. 8%",
+      "B. 9%",
+      "C. 10%",
+      "D. 11%",
+      "E. 12%"
+    ],
+    "correct_answer": "B",
+    "explanation": "To find 120% of 5, calculate (120/100) \u00d7 5 = 9%.",
+    "question_type": "Weighed Average",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "12",
+    "lesson_id": "27833f99-7aa1-4e5d-92e4-c953fadebc0d",
+    "section": "math"
+  },
+  {
+    "id": 127,
+    "test_number": 1,
+    "question_number": 52,
+    "question_text": "A 50-foot-long rectangular swimming pool with vertical sides is 3 feet deep at the shallow end and 10 feet deep at the deep end, The bottom of the pool slopes downward at a constant angle from horizontal along the length of the pool, Which of the following expressions gives this constant angle?\r\n\r\n(Note: For -\u03c0/2<<i>x</i><\u03c0/2 , <i>y</i> = tan<i>x</i> if and only if <i>x</i>= tan\u207b\u00b9<i>y</i>",
+    "choices": [
+      "F. tan\u207b\u00b9(7/50)",
+      "G. tan\u207b\u00b9(13/50)",
+      "H. tan\u207b\u00b9(7/10)",
+      "J. tan\u207b\u00b9(50/13)",
+      "K. tan\u207b\u00b9(50/7)"
+    ],
+    "correct_answer": "F",
+    "explanation": "To find the slope, use m = (y\u2082 - y\u2081)/(x\u2082 - x\u2081). Plugging in the coordinates (50, 3) and (10, 2), we get m = (2 - 3)/(10 - 50) = tan\u207b\u00b9(7/50).",
+    "question_type": "Trigonometry",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "17",
+    "lesson_id": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+    "section": "math"
+  },
+  {
+    "id": 128,
+    "test_number": 1,
+    "question_number": 53,
+    "question_text": "A hyperbola that has vertices (1,2) and (3,2) and that passes through the origin is shown below in the standard <i> (x,y) </i> coordinate plane. The hyperbola has which of the following equations?",
+    "choices": [
+      "A. (<i>x</i>-2)\u00b2/1 - 3(<i>y</i>-2)\u00b2/4=1",
+      "B. (<i>x</i>-2)\u00b2/1- 3(<i>y</i>-2)\u00b2/3 = 1",
+      "C. (<i>x</i>+2)\u00b2/1 - 3(<i>y</i>+2)\u00b2/4 = 1",
+      "D. (<i>x</i>-2)\u00b2/1 = 3(<i>y</i>-2)\u00b2/4 = 1",
+      "E. (<i>x</i>+2)\u00b2/1 + 4(<i>y</i>+2)\u00b2/3 = 1"
+    ],
+    "correct_answer": "A",
+    "explanation": "Working through the problem step-by-step with the values 1, 2, 3, the correct answer is (<i>x</i>-2)\u00b2/1 - 3(<i>y</i>-2)\u00b2/4=1.",
+    "question_type": "Hyperbolas",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/m53.jpg",
+    "chapter": "21",
+    "lesson_id": "0b4b783a-9945-47b9-b3fc-e194374d6818",
+    "section": "math"
+  },
+  {
+    "id": 129,
+    "test_number": 1,
+    "question_number": 54,
+    "question_text": "As shown below, Alli walked her dog 250 feet due east from the entrance of a dog park to a trash can and then walked 700 feet in a straight line 25\u00b0 north of east to a bench. Which of the following expressions is equal to the distance, in feet, between the entrance and the bench?",
+    "choices": [
+      "F. 950/cos25\u00b0",
+      "G. (250/cos25\u00b0) + 700",
+      "H. (250/sin155\u00b0) + 700",
+      "J. \u221a(700\u00b2+ 250\u00b2 - 2(700)(250) cos25\u00b0)",
+      "K. \u221a(700\u00b2+ 250\u00b2 - 2(700)(250) cos155\u00b0)"
+    ],
+    "correct_answer": "K",
+    "explanation": "Using the slope formula with the given points, the slope is \u221a(700\u00b2+ 250\u00b2 - 2(700)(250) cos155\u00b0).",
+    "question_type": "Trigonometry \u2013 Law of Cosines",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/m54.jpg",
+    "chapter": "17",
+    "lesson_id": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+    "section": "math"
+  },
+  {
+    "id": 130,
+    "test_number": 1,
+    "question_number": 55,
+    "question_text": "For real numbers <i> a, b, </i> and <i> c </i> such that <i> a>b>c </i> and <i> b>0, </i> which of the statements below is(are) <i> always </i> true?\r\n\r\nI. |a| > |d|\r\nII. |a| > |c|\r\nIII. |b| > |c|",
+    "choices": [
+      "A. I only",
+      "B. II only",
+      "C. I and II only",
+      "D. II and III only",
+      "E. I,II and III"
+    ],
+    "correct_answer": "A",
+    "explanation": "Working through the problem step-by-step with the values 0, the correct answer is I only.",
+    "question_type": "Absolute Value",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "18",
+    "lesson_id": "34e50480-0a09-4f9f-add4-c1121f66776b",
+    "section": "math"
+  }
+]

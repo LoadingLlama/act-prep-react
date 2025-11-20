@@ -9,10 +9,12 @@ import { HiChartBar, HiAcademicCap, HiTrophy, HiExclamationTriangle, HiArrowTren
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate, useOutletContext } from 'react-router-dom';
 import InsightsService from '../services/api/insights.service';
+import { supabase } from '../services/api/supabase.service';
 import { getFeatureAccess } from '../services/subscription.service';
 import logger from '../services/logging/logger';
 import DiagnosticTestCTA from '../components/DiagnosticTestCTA';
 import DiagnosticTestReview from '../components/DiagnosticTestReview';
+import { lessonStructure } from '../data/lessonStructure';
 
 const useStyles = createUseStyles({
   container: {
@@ -285,6 +287,12 @@ const useStyles = createUseStyles({
     background: '#fef2f2',
     borderRadius: '8px',
     border: '1px solid #fee2e2',
+    transition: 'all 0.2s ease',
+    '&:hover': {
+      background: '#fee2e2',
+      transform: 'translateY(-2px)',
+      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+    },
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center'
@@ -356,72 +364,88 @@ const useStyles = createUseStyles({
     color: '#6b7280',
     fontWeight: '500'
   },
-  blurOverlay: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: 'rgba(255, 255, 255, 0.95)',
-    backdropFilter: 'blur(10px)',
-    zIndex: 1000,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '2rem'
-  },
-  upgradeCard: {
-    maxWidth: '600px',
-    background: 'linear-gradient(135deg, #ffffff 0%, #f9fafb 100%)',
-    padding: '3rem 2.5rem',
-    borderRadius: '20px',
-    border: '2px solid #e5e7eb',
-    boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
-    textAlign: 'center',
-    '@media (max-width: 768px)': {
-      padding: '2rem 1.5rem'
+  lockedCard: {
+    position: 'relative',
+    opacity: 0.6,
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: 'rgba(255, 255, 255, 0.5)',
+      borderRadius: '12px',
+      pointerEvents: 'none'
     }
   },
-  upgradeLockIcon: {
-    fontSize: '4rem',
-    color: '#3b82f6',
-    marginBottom: '1.5rem'
+  lockBadge: {
+    position: 'absolute',
+    top: '1rem',
+    right: '1rem',
+    background: '#3b82f6',
+    color: '#ffffff',
+    padding: '0.35rem 0.75rem',
+    borderRadius: '6px',
+    fontSize: '0.75rem',
+    fontWeight: '600',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.35rem',
+    zIndex: 1,
+    boxShadow: '0 2px 8px rgba(59, 130, 246, 0.3)'
   },
-  upgradeTitle: {
-    fontSize: '2rem',
-    fontWeight: '800',
-    color: '#1a1a1a',
-    marginBottom: '1rem',
-    letterSpacing: '-0.02em'
-  },
-  upgradeSubtitle: {
-    fontSize: '1.125rem',
-    color: '#6b7280',
-    marginBottom: '2rem',
-    lineHeight: '1.6'
-  },
-  upgradeButton: {
-    padding: '1rem 2.5rem',
+  upgradePrompt: {
+    background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
+    border: '2px solid #3b82f6',
     borderRadius: '12px',
-    border: 'none',
+    padding: '1.5rem',
+    marginBottom: '2rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: '1.5rem',
+    '@media (max-width: 768px)': {
+      flexDirection: 'column',
+      textAlign: 'center'
+    }
+  },
+  upgradePromptContent: {
+    flex: 1
+  },
+  upgradePromptTitle: {
     fontSize: '1.125rem',
     fontWeight: '700',
+    color: '#1e40af',
+    marginBottom: '0.35rem',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem'
+  },
+  upgradePromptText: {
+    fontSize: '0.875rem',
+    color: '#1e40af',
+    lineHeight: '1.5'
+  },
+  upgradeButton: {
+    padding: '0.75rem 1.5rem',
+    borderRadius: '8px',
+    border: 'none',
+    fontSize: '0.95rem',
+    fontWeight: '600',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
     background: 'linear-gradient(135deg, #08245b 0%, #3b82f6 100%)',
     color: '#ffffff',
     display: 'inline-flex',
     alignItems: 'center',
-    gap: '0.75rem',
+    justifyContent: 'center',
+    gap: '0.5rem',
+    whiteSpace: 'nowrap',
     '&:hover': {
       transform: 'translateY(-2px)',
-      boxShadow: '0 12px 24px rgba(8, 36, 91, 0.3)'
+      boxShadow: '0 8px 16px rgba(8, 36, 91, 0.3)'
     }
-  },
-  blurredContent: {
-    filter: 'blur(8px)',
-    pointerEvents: 'none',
-    userSelect: 'none'
   }
 });
 
@@ -437,6 +461,7 @@ const InsightsPage = () => {
   const [strengths, setStrengths] = useState([]);
   const [featureAccess, setFeatureAccess] = useState(null);
   const [viewingDiagnosticReview, setViewingDiagnosticReview] = useState(false);
+  const [lessonMetadataMap, setLessonMetadataMap] = useState({});
 
   useEffect(() => {
     if (user) {
@@ -478,20 +503,122 @@ const InsightsPage = () => {
       setLoading(true);
       logger.info('InsightsPage', 'loadInsights', { userId: user.id });
 
-      const [insightsData, weakAreasData, strengthsData] = await Promise.all([
-        InsightsService.getUserInsights(user.id),
-        InsightsService.getWeakAreas(user.id),
-        InsightsService.getStrengths(user.id)
-      ]);
+      // Load insights data
+      const insightsData = await InsightsService.getUserInsights(user.id);
+
+      // Get the diagnostic session to analyze
+      const diagnosticSession = insightsData.diagnostic?.latestSession;
+
+      if (diagnosticSession) {
+        console.log('📊 Analyzing diagnostic test results for weak areas...');
+
+        // Get all question results from the diagnostic
+        const { data: questionResults, error: resultsError } = await supabase
+          .from('diagnostic_test_results')
+          .select('*')
+          .eq('diagnostic_session_id', diagnosticSession.id);
+
+        if (!resultsError && questionResults) {
+          console.log(`   Found ${questionResults.length} question results`);
+
+          // Get question details to map to lessons
+          const questionIds = questionResults.map(r => r.question_id);
+          const sections = ['english', 'math', 'reading', 'science'];
+          const questionMap = new Map();
+          const lessonIdToTitleMap = new Map();
+
+          // Fetch question details from all sections
+          for (const section of sections) {
+            const { data: questions } = await supabase
+              .from(`practice_test_${section}_questions`)
+              .select('id, lesson_id, chapter')
+              .in('id', questionIds);
+
+            if (questions) {
+              questions.forEach(q => {
+                questionMap.set(q.id, { lesson_id: q.lesson_id, chapter: q.chapter, section });
+              });
+            }
+          }
+
+          // Fetch lesson titles from the lessons table
+          const uniqueLessonIds = [...new Set(
+            Array.from(questionMap.values())
+              .map(q => q.lesson_id)
+              .filter(Boolean)
+          )];
+
+          if (uniqueLessonIds.length > 0) {
+            const { data: lessons } = await supabase
+              .from('lessons')
+              .select('id, title, lesson_key, subject')
+              .in('id', uniqueLessonIds);
+
+            if (lessons) {
+              lessons.forEach(lesson => {
+                lessonIdToTitleMap.set(lesson.id, {
+                  title: lesson.title,
+                  lesson_key: lesson.lesson_key,
+                  subject: lesson.subject
+                });
+              });
+            }
+          }
+
+          console.log(`   Built mapping for ${lessonIdToTitleMap.size} lesson IDs to titles`);
+
+          // Group results by lesson and calculate performance
+          const lessonStats = {};
+
+          questionResults.forEach(result => {
+            const questionInfo = questionMap.get(result.question_id);
+            if (!questionInfo?.lesson_id) return;
+
+            const lessonId = questionInfo.lesson_id;
+            if (!lessonStats[lessonId]) {
+              const lessonInfo = lessonIdToTitleMap.get(lessonId);
+              lessonStats[lessonId] = {
+                lesson_id: lessonId,
+                chapter: questionInfo.chapter,
+                section: questionInfo.section,
+                lesson_title: lessonInfo?.title,
+                lesson_key: lessonInfo?.lesson_key,
+                subject: lessonInfo?.subject,
+                correct: 0,
+                total: 0
+              };
+            }
+
+            lessonStats[lessonId].total++;
+            if (result.is_correct) {
+              lessonStats[lessonId].correct++;
+            }
+          });
+
+          // Calculate accuracy and find weak areas (< 60%)
+          const weakAreasFromDiagnostic = Object.values(lessonStats)
+            .map(stat => ({
+              ...stat,
+              accuracy: (stat.correct / stat.total) * 100
+            }))
+            .filter(stat => stat.accuracy < 60 && stat.total >= 2) // At least 2 questions
+            .sort((a, b) => a.accuracy - b.accuracy)
+            .slice(0, 10);
+
+          console.log(`   Found ${weakAreasFromDiagnostic.length} weak areas (< 60% accuracy)`);
+          weakAreasFromDiagnostic.forEach(area => {
+            console.log(`     - ${area.lesson_title || area.chapter}: ${area.accuracy.toFixed(0)}%`);
+          });
+
+          setWeakAreas(weakAreasFromDiagnostic);
+          setStrengths([]); // We'll compute strengths later if needed
+        }
+      }
 
       setInsights(insightsData);
-      setWeakAreas(weakAreasData);
-      setStrengths(strengthsData);
 
       logger.info('InsightsPage', 'loadInsightsComplete', {
-        hasDiagnostic: insightsData.diagnostic.hasCompletedDiagnostic,
-        lessonPerformanceCount: insightsData.lessonPerformance.length,
-        weakAreasCount: weakAreasData.length
+        hasDiagnostic: insightsData.diagnostic.hasCompletedDiagnostic
       });
     } catch (error) {
       logger.error('InsightsPage', 'loadInsightsFailed', { error });
@@ -513,6 +640,63 @@ const InsightsPage = () => {
     if (accuracy >= 80) return '#16a34a';
     if (accuracy >= 60) return '#f59e0b';
     return '#dc2626';
+  };
+
+  const getLessonTitle = (weakArea) => {
+    // weakArea now has { lesson_id, chapter, section, accuracy, lesson_title }
+    if (!weakArea) return 'Unknown Lesson';
+
+    // First priority: use lesson_title from the database if available
+    if (weakArea.lesson_title) {
+      // Remove "Topic X.X - " prefix
+      return weakArea.lesson_title.replace(/^Topic \d+\.\d+ - /, '');
+    }
+
+    // Second priority: try to map using chapter number
+    const chapter = weakArea.chapter;
+    if (!chapter) return 'Unknown Lesson';
+
+    const chapterStr = chapter.toString().trim();
+
+    // Try exact match on chapterNum
+    let lesson = lessonStructure.find(l => l.chapterNum === chapterStr);
+
+    // Try matching id
+    if (!lesson) {
+      lesson = lessonStructure.find(l => l.id === chapterStr);
+    }
+
+    // Handle "2, 3" format -> "2.3"
+    if (!lesson && chapterStr.includes(',')) {
+      const normalized = chapterStr.replace(/,\s*/g, '.');
+      lesson = lessonStructure.find(l => l.chapterNum === normalized || l.id === normalized);
+    }
+
+    // Return lesson title if found
+    if (lesson) {
+      return lesson.title;
+    }
+
+    // Enhanced fallback: try to find category for broad chapter numbers
+    if (weakArea.section === 'english') {
+      const chapterNum = parseInt(chapterStr);
+      if (!isNaN(chapterNum)) {
+        // Find lessons that start with this chapter number
+        const categoryLessons = lessonStructure.filter(l =>
+          l.section === 'english' &&
+          l.chapterNum &&
+          l.chapterNum.startsWith(chapterNum + '.')
+        );
+
+        if (categoryLessons.length > 0) {
+          // Return the category name
+          return categoryLessons[0].category;
+        }
+      }
+    }
+
+    // Fallback: show section + chapter
+    return `${weakArea.section} - Chapter ${chapter}`.replace(/\b\w/g, l => l.toUpperCase());
   };
 
   const handleUpgradeClick = () => {
@@ -565,7 +749,7 @@ const InsightsPage = () => {
   }
 
   // Show blur overlay if user doesn't have access to insights
-  const showBlurOverlay = featureAccess && !featureAccess.hasInsights;
+  const showBlurOverlay = false; // Removed Pro gatekeeping for insights
 
   return (
     <>
@@ -577,26 +761,30 @@ const InsightsPage = () => {
         />
       )}
 
-      {showBlurOverlay && (
-        <div className={classes.blurOverlay}>
-          <div className={classes.upgradeCard}>
-            <HiLockClosed className={classes.upgradeLockIcon} />
-            <h2 className={classes.upgradeTitle}>Insights Available with Pro</h2>
-            <p className={classes.upgradeSubtitle}>
-              Unlock detailed performance analytics, track your progress, and identify areas for improvement with a Pro subscription.
-            </p>
-            <button className={classes.upgradeButton} onClick={handleUpgradeClick}>
-              <HiRocketLaunch style={{ fontSize: '1.5rem' }} />
-              Upgrade to Pro
-            </button>
-          </div>
-        </div>
-      )}
-      <div className={`${classes.container} ${showBlurOverlay ? classes.blurredContent : ''}`}>
+      <div className={classes.container}>
         <div className={classes.header}>
           <h1 className={classes.title}>Test Insights</h1>
           <p className={classes.subtitle}>Track your progress and identify areas for improvement</p>
         </div>
+
+        {/* Upgrade Prompt Banner */}
+        {showBlurOverlay && (
+          <div className={classes.upgradePrompt}>
+            <div className={classes.upgradePromptContent}>
+              <div className={classes.upgradePromptTitle}>
+                <HiLockClosed />
+                Unlock Detailed Insights
+              </div>
+              <p className={classes.upgradePromptText}>
+                Upgrade to Pro for full performance analytics and progress tracking
+              </p>
+            </div>
+            <button className={classes.upgradeButton} onClick={handleUpgradeClick}>
+              <HiRocketLaunch />
+              Upgrade to Pro
+            </button>
+          </div>
+        )}
 
       {/* Diagnostic Test CTA - Show if not completed and not processing */}
       {!insights.diagnostic.hasCompletedDiagnostic && !localStorage.getItem('diagnosticProcessing') && (
@@ -696,7 +884,13 @@ const InsightsPage = () => {
             Learning Path Progress
           </h2>
           <div className={classes.grid}>
-            <div className={`${classes.card} ${classes.learningPathCard}`}>
+            <div className={`${classes.card} ${classes.learningPathCard} ${showBlurOverlay ? classes.lockedCard : ''}`}>
+              {showBlurOverlay && (
+                <div className={classes.lockBadge}>
+                  <HiLockClosed style={{ fontSize: '0.875rem' }} />
+                  Pro
+                </div>
+              )}
               <div className={classes.cardTitle}>Your Study Plan</div>
               <div className={classes.pathStats}>
                 <div className={classes.pathStatItem}>
@@ -734,19 +928,34 @@ const InsightsPage = () => {
         <div className={classes.grid}>
           {/* Weak Areas */}
           {weakAreas.length > 0 && (
-            <div className={classes.card}>
+            <div className={`${classes.card} ${showBlurOverlay ? classes.lockedCard : ''}`}>
+              {showBlurOverlay && (
+                <div className={classes.lockBadge}>
+                  <HiLockClosed style={{ fontSize: '0.875rem' }} />
+                  Pro
+                </div>
+              )}
               <h3 className={classes.sectionTitle}>
                 <HiExclamationTriangle className={classes.sectionIcon} style={{ color: '#dc2626' }} />
                 Areas to Improve
               </h3>
               <div className={classes.weakAreasList}>
-                {weakAreas.slice(0, 5).map((area) => (
-                  <div key={area.id} className={classes.weakAreaItem}>
+                {weakAreas.slice(0, 5).map((area, idx) => (
+                  <div
+                    key={area.lesson_id || idx}
+                    className={classes.weakAreaItem}
+                    onClick={() => {
+                      if (area.lesson_key && area.subject) {
+                        navigate(`/app/lessons/${area.subject}/${area.lesson_key}`);
+                      }
+                    }}
+                    style={{ cursor: area.lesson_key ? 'pointer' : 'default' }}
+                  >
                     <div className={classes.weakAreaName}>
-                      {area.lesson_id.replace(/-/g, ' ')}
+                      {getLessonTitle(area)}
                     </div>
                     <div className={classes.weakAreaAccuracy}>
-                      {area.accuracy_percentage?.toFixed(0)}%
+                      {area.accuracy?.toFixed(0)}%
                     </div>
                   </div>
                 ))}
@@ -756,7 +965,13 @@ const InsightsPage = () => {
 
           {/* Strengths */}
           {strengths.length > 0 && (
-            <div className={classes.card}>
+            <div className={`${classes.card} ${showBlurOverlay ? classes.lockedCard : ''}`}>
+              {showBlurOverlay && (
+                <div className={classes.lockBadge}>
+                  <HiLockClosed style={{ fontSize: '0.875rem' }} />
+                  Pro
+                </div>
+              )}
               <h3 className={classes.sectionTitle}>
                 <HiTrophy className={classes.sectionIcon} style={{ color: '#16a34a' }} />
                 Your Strengths
@@ -765,7 +980,7 @@ const InsightsPage = () => {
                 {strengths.slice(0, 5).map((strength) => (
                   <div key={strength.id} className={classes.strengthItem}>
                     <div className={classes.strengthName}>
-                      {strength.lesson_id.replace(/-/g, ' ')}
+                      {getLessonTitle(strength.lesson_id)}
                     </div>
                     <div className={classes.strengthAccuracy}>
                       {strength.accuracy_percentage?.toFixed(0)}%
@@ -786,7 +1001,13 @@ const InsightsPage = () => {
             Overall Performance
           </h2>
           <div className={classes.grid}>
-            <div className={classes.card}>
+            <div className={`${classes.card} ${showBlurOverlay ? classes.lockedCard : ''}`}>
+              {showBlurOverlay && (
+                <div className={classes.lockBadge}>
+                  <HiLockClosed style={{ fontSize: '0.875rem' }} />
+                  Pro
+                </div>
+              )}
               <div className={classes.cardTitle}>Total Questions</div>
               <div className={classes.cardValue}>
                 {insights.lessonPerformance.reduce((sum, perf) => sum + perf.total_questions_attempted, 0)}
@@ -795,7 +1016,13 @@ const InsightsPage = () => {
                 Across all lessons
               </div>
             </div>
-            <div className={classes.card}>
+            <div className={`${classes.card} ${showBlurOverlay ? classes.lockedCard : ''}`}>
+              {showBlurOverlay && (
+                <div className={classes.lockBadge}>
+                  <HiLockClosed style={{ fontSize: '0.875rem' }} />
+                  Pro
+                </div>
+              )}
               <div className={classes.cardTitle}>Average Accuracy</div>
               <div className={classes.cardValue}>
                 {(insights.lessonPerformance.reduce((sum, perf) => sum + perf.accuracy_percentage, 0) /
@@ -805,12 +1032,20 @@ const InsightsPage = () => {
                 Across {insights.lessonPerformance.length} lessons
               </div>
             </div>
-            <div className={classes.card}>
+            <div className={`${classes.card} ${showBlurOverlay ? classes.lockedCard : ''}`}>
+              {showBlurOverlay && (
+                <div className={classes.lockBadge}>
+                  <HiLockClosed style={{ fontSize: '0.875rem' }} />
+                  Pro
+                </div>
+              )}
               <div className={classes.cardTitle}>Study Time</div>
               <div className={classes.cardValue}>
-                {Math.floor(
-                  insights.lessonPerformance.reduce((sum, perf) => sum + perf.total_time_spent_seconds, 0) / 3600
-                )}h
+                {(() => {
+                  const totalSeconds = insights.lessonPerformance.reduce((sum, perf) => sum + (perf.total_time_spent_seconds || 0), 0);
+                  const hours = Math.floor(totalSeconds / 3600);
+                  return hours > 0 ? `${hours}h` : '0h';
+                })()}
               </div>
               <div className={classes.cardSubtext}>
                 Total time invested

@@ -1,0 +1,26 @@
+EXPLANATION GENERATION PLAN
+===========================
+
+Total: 140 questions
+- Math: 60 questions
+- Reading: 40 questions  
+- Science: 40 questions
+
+Due to the volume of this task, I will:
+
+1. Create comprehensive JSON files with all 140 explanations
+2. Each explanation will follow the required HTML format
+3. Explanations will be subject-specific and detailed
+4. All files will be ready for database upload
+
+Files to create:
+- math-explanations.json (60 explanations)
+- reading-explanations.json (40 explanations)
+- science-explanations.json (40 explanations)
+
+Update scripts:
+- update-math-explanations.js
+- update-reading-explanations.js
+- update-science-explanations.js
+
+Estimated time: This is a substantial undertaking requiring detailed analysis of each question.

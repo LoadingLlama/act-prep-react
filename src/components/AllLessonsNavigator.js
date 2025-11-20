@@ -168,9 +168,33 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
               </button>
               <button
                 className={`${classes.modeButton} ${lessonMode === 'practice' ? 'active' : ''}`}
-                onClick={() => setLessonMode('practice')}
+                onClick={() => {
+                  // Check if current lesson is an introduction lesson (no practice available)
+                  const isIntroLesson = currentLesson?.category === 'Introduction';
+                  if (!isIntroLesson) {
+                    setLessonMode('practice');
+                  }
+                }}
+                disabled={currentLesson?.category === 'Introduction'}
+                style={{
+                  opacity: currentLesson?.category === 'Introduction' ? 0.4 : 1,
+                  cursor: currentLesson?.category === 'Introduction' ? 'not-allowed' : 'pointer',
+                  position: 'relative'
+                }}
+                title={currentLesson?.category === 'Introduction' ? 'Practice unavailable for introduction lessons' : ''}
               >
                 Practice
+                {currentLesson?.category === 'Introduction' && (
+                  <div style={{
+                    fontSize: '0.6rem',
+                    fontWeight: '400',
+                    marginTop: '0.125rem',
+                    opacity: 0.7,
+                    lineHeight: 1
+                  }}>
+                    Unavailable
+                  </div>
+                )}
               </button>
             </div>
           )}
@@ -295,12 +319,21 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
 
                   {lessons.map(lesson => {
                     const isActive = lesson.id === currentLessonId;
+                    const isIntroLesson = lesson.category === 'Introduction';
+                    const isPracticeMode = lessonMode === 'practice';
+                    const isDisabled = isPracticeMode && isIntroLesson;
 
                     return (
                       <div
                         key={lesson.id}
                         className={`${classes.lessonItem} ${isActive ? classes.lessonItemActive : ''}`}
-                        onClick={() => onLessonChange && onLessonChange(lesson.id)}
+                        onClick={() => !isDisabled && onLessonChange && onLessonChange(lesson.id)}
+                        style={{
+                          opacity: isDisabled ? 0.5 : 1,
+                          cursor: isDisabled ? 'not-allowed' : 'pointer',
+                          pointerEvents: isDisabled ? 'none' : 'auto'
+                        }}
+                        title={isDisabled ? 'Practice unavailable for introduction lessons' : ''}
                       >
                         <div className={`${classes.statusDot} ${getStatusDotClass(lessonProgress[lesson.id] || 'not-started')}`} />
                         <div className={classes.lessonText}>
@@ -308,6 +341,17 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
                             <span className={classes.lessonNumber}>{lesson.chapterNum}:</span>
                           )}
                           {lesson.title}
+                          {isDisabled && (
+                            <span style={{
+                              fontSize: '0.65rem',
+                              fontWeight: '500',
+                              marginLeft: '0.5rem',
+                              color: '#94a3b8',
+                              fontStyle: 'italic'
+                            }}>
+                              (No practice)
+                            </span>
+                          )}
                         </div>
                       </div>
                     );

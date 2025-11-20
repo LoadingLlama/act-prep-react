@@ -1,0 +1,202 @@
+[
+  {
+    "id": 51,
+    "test_number": 1,
+    "question_number": 51,
+    "passage_id": 111,
+    "question_text": "Which choice best corrects the underlined portion?\r\n",
+    "choices": [
+      "A. NO CHANGE",
+      "B. up",
+      "C. on",
+      "D. DELETE the underlined portion."
+    ],
+    "correct_answer": "A",
+    "explanation": "\"NO CHANGE\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Prepositional Idiom",
+    "difficulty": null,
+    "chapter": "8",
+    "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+    "section": "english"
+  },
+  {
+    "id": 52,
+    "test_number": 1,
+    "question_number": 52,
+    "passage_id": 111,
+    "question_text": "Which choice best corrects the underlined portion?\r\n",
+    "choices": [
+      "F. NO CHANGE",
+      "G. this and the",
+      "H. road and",
+      "J. it and it's"
+    ],
+    "correct_answer": "H",
+    "explanation": "\"road and\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Ambiguous Pronoun",
+    "difficulty": null,
+    "chapter": "5",
+    "lesson_id": "10fff941-59e1-4d3a-84b7-d0fe8f9985ef",
+    "section": "english"
+  },
+  {
+    "id": 53,
+    "test_number": 1,
+    "question_number": 53,
+    "passage_id": 111,
+    "question_text": "At this point, the writer is considering adding the following accurate phrase:\r\n\r\nan unprecedented five\r\n\r\nShould the writer make this addition here?",
+    "choices": [
+      "A. Yes, because it adds a detail that highlights the impressive design of the highway.",
+      "B. Yes, because it hints at how the engineers were able to make openings in the tunnel.",
+      "C. No, because it provides information that is unrelated to the sentence.",
+      "D. No, because it suggests that creating intricate tunnels was easy for road engineers."
+    ],
+    "correct_answer": "A",
+    "explanation": "Yes, the writer should make this change because because it adds a detail that highlights the impressive design of the highway..",
+    "question_type": "Adding/Deleting Information",
+    "difficulty": null,
+    "chapter": "14",
+    "lesson_id": "4a9e06f8-5ee5-4e5d-9e5d-2ce9b7c6bf16",
+    "section": "english"
+  },
+  {
+    "id": 54,
+    "test_number": 1,
+    "question_number": 54,
+    "passage_id": 111,
+    "question_text": "Which choice best corrects the underlined portion?\r\n",
+    "choices": [
+      "F. NO CHANGE",
+      "G. tunnel; an achievement that enabled",
+      "H. tunnel, this enabled",
+      "J. tunnel, enabling"
+    ],
+    "correct_answer": "J",
+    "explanation": "\"tunnel, enabling\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Sentence Structure/Punctuation",
+    "difficulty": null,
+    "chapter": "1, 2, 3",
+    "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+    "section": "english"
+  },
+  {
+    "id": 55,
+    "test_number": 1,
+    "question_number": 55,
+    "passage_id": 111,
+    "question_text": "Which choice best corrects the underlined portion?\r\n",
+    "choices": [
+      "A. NO CHANGE",
+      "B. When",
+      "C. Soon",
+      "D. DELETE the underlined portion."
+    ],
+    "correct_answer": "B",
+    "explanation": "\"When\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Sentence Structure",
+    "difficulty": null,
+    "chapter": "1",
+    "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+    "section": "english"
+  },
+  {
+    "id": 56,
+    "test_number": 1,
+    "question_number": 56,
+    "passage_id": 111,
+    "question_text": "Which choice best corrects the underlined portion?\r\n",
+    "choices": [
+      "F. NO CHANGE",
+      "G. road that first existed continued in a functional capacity,",
+      "H. highway that was completed in 1922 continued to be utilized,",
+      "J. original highway was still being utilized by the driving populace,"
+    ],
+    "correct_answer": "F",
+    "explanation": "\"NO CHANGE\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Wordiness/Redundancy",
+    "difficulty": null,
+    "chapter": "10",
+    "lesson_id": "e6153221-e330-4db4-8cc7-9c5a1d51a301",
+    "section": "english"
+  },
+  {
+    "id": 57,
+    "test_number": 1,
+    "question_number": 57,
+    "passage_id": 111,
+    "question_text": "Which choice most clearly conveys that people\u2019s interest in the original Columbia River Highway was not a\r\nnew phenomenon?",
+    "choices": [
+      "A. NO CHANGE",
+      "B. took hold.",
+      "C. rekindled.",
+      "D. set in."
+    ],
+    "correct_answer": "C",
+    "explanation": "\"rekindled.\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Which Choice",
+    "difficulty": null,
+    "chapter": "13",
+    "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+    "section": "english"
+  },
+  {
+    "id": 58,
+    "test_number": 1,
+    "question_number": 58,
+    "passage_id": 111,
+    "question_text": "Which choice most closely maintains the sentence pattern the writer has established in the previous two\r\nsentences?",
+    "choices": [
+      "F. NO CHANGE",
+      "G. Rubble-filled tunnels have been emptied and strengthened.",
+      "H. The tunnels have had the rubble removed from them, and people have strengthened them.",
+      "J. Once filled with rubble, tunnels have been emptied and strengthened."
+    ],
+    "correct_answer": "G",
+    "explanation": "\"Rubble-filled tunnels have been emptied and strengthened.\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Which Choice",
+    "difficulty": null,
+    "chapter": "13",
+    "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+    "section": "english"
+  },
+  {
+    "id": 59,
+    "test_number": 1,
+    "question_number": 59,
+    "passage_id": 111,
+    "question_text": "Given that all the choices are accurate, which one best\r\nconcludes the essay by referring back to the first\r\nparagraph?",
+    "choices": [
+      "A. NO CHANGE",
+      "B. the gorge on sections of the road where it wasn't feasible to restore motor vehicle traffic,",
+      "C. the splendor of the highway that Hill and Lancaster envisioned over one hundred years ago.",
+      "D. a beautiful path that has become a popular tourist destination."
+    ],
+    "correct_answer": "C",
+    "explanation": "\"the splendor of the highway that Hill and Lancaster envisioned over one hundred years ago.\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Which Choice",
+    "difficulty": null,
+    "chapter": "13",
+    "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+    "section": "english"
+  },
+  {
+    "id": 60,
+    "test_number": 1,
+    "question_number": 60,
+    "passage_id": 111,
+    "question_text": "The writer wants to add the following sentence to the\r\nessay:",
+    "choices": [
+      "F. Point A in Paragraph 1.",
+      "G. Point B in Paragraph 2.",
+      "H. Point C in Paragraph 2.",
+      "J. Point D in Paragraph 3."
+    ],
+    "correct_answer": "J",
+    "explanation": "\"Point D in Paragraph 3.\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Logical Placement",
+    "difficulty": null,
+    "chapter": "15",
+    "lesson_id": "4a9e06f8-5ee5-4e5d-9e5d-2ce9b7c6bf16",
+    "section": "english"
+  }
+]

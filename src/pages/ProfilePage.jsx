@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import ProfileService from '../services/api/profile.service';
 import { hasProSubscription, getFeatureAccess } from '../services/subscription.service';
+import { redirectToCustomerPortal, getSubscription } from '../services/stripe.service';
 import { supabase } from '../supabaseClient';
 import { profileStyles } from '../styles/profile.styles';
 import { HiUser, HiCamera, HiAcademicCap, HiCalendar, HiPhone, HiEnvelope, HiCheckBadge, HiClock, HiRocketLaunch, HiSparkles, HiDocumentText, HiBookOpen, HiChartBar, HiCog6Tooth } from 'react-icons/hi2';
@@ -20,6 +21,7 @@ const ProfilePage = () => {
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState('');
   const [isPro, setIsPro] = useState(false);
+  const [hasStripeSubscription, setHasStripeSubscription] = useState(false);
   const [trialDaysLeft, setTrialDaysLeft] = useState(14);
   const [accountCreatedAt, setAccountCreatedAt] = useState(null);
   const [featureAccess, setFeatureAccess] = useState(null);
@@ -48,6 +50,10 @@ const ProfilePage = () => {
       const proStatus = await hasProSubscription(user.id);
       setIsPro(proStatus);
 
+      // Check if user has actual Stripe subscription
+      const subscription = await getSubscription(user.id);
+      setHasStripeSubscription(!!subscription);
+
       // Get feature access
       const access = await getFeatureAccess(user.id);
       setFeatureAccess(access);
@@ -58,11 +64,8 @@ const ProfilePage = () => {
         const createdAt = new Date(userData.user.created_at);
         setAccountCreatedAt(createdAt);
 
-        if (!proStatus) {
-          const now = new Date();
-          const daysSinceCreation = Math.floor((now - createdAt) / (1000 * 60 * 60 * 24));
-          const daysRemaining = Math.max(0, 14 - daysSinceCreation);
-          setTrialDaysLeft(daysRemaining);
+        if (!proStatus && access.trialDaysRemaining !== null) {
+          setTrialDaysLeft(access.trialDaysRemaining);
         }
       }
     } catch (error) {
@@ -327,15 +330,22 @@ const ProfilePage = () => {
                 <HiRocketLaunch size={20} />
                 Upgrade to Pro
               </button>
-            ) : (
+            ) : hasStripeSubscription ? (
               <button
                 style={profileStyles.manageButton}
-                onClick={() => navigate('/app/settings')}
+                onClick={async () => {
+                  try {
+                    await redirectToCustomerPortal(user.id);
+                  } catch (error) {
+                    console.error('Error opening customer portal:', error);
+                    setMessage('Failed to open customer portal. Please try again.');
+                  }
+                }}
               >
                 <HiCog6Tooth size={20} />
                 Manage Subscription
               </button>
-            )}
+            ) : null}
           </div>
         </div>
 

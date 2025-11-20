@@ -8,25 +8,50 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../services/api/supabase.service';
 import logger from '../services/logging/logger';
-import { HiAcademicCap, HiCalendar, HiClock, HiCheckCircle, HiXCircle, HiQuestionMarkCircle } from 'react-icons/hi2';
+import { HiAcademicCap, HiCalendar, HiCheckCircle, HiXCircle, HiQuestionMarkCircle } from 'react-icons/hi2';
+
+// Tooltip component
+const Tooltip = ({ id, text }) => (
+  <span style={{ position: 'relative', display: 'inline-flex', marginLeft: '0.25rem' }}>
+    <HiQuestionMarkCircle
+      style={{
+        fontSize: '1rem',
+        color: '#9ca3af',
+        cursor: 'help'
+      }}
+      title={text}
+    />
+  </span>
+);
 
 const GoalsSettings = () => {
   const { user } = useAuth();
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });
-  const [showMockExamTooltip, setShowMockExamTooltip] = useState(false);
-  const [showReviewTooltip, setShowReviewTooltip] = useState(false);
   const [goals, setGoals] = useState({
     target_exam_date: '',
     current_score: '',
     target_score: '',
-    daily_study_minutes: 30,
-    study_days_per_week: 5,
-    study_hours_per_week: 6,
-    preferred_study_time: 'evening',
-    learning_pace: 'moderate',
-    reminder_frequency: 'daily',
+    study_hours: {
+      monday: 0.75,
+      tuesday: 1,
+      wednesday: 0,
+      thursday: 0.75,
+      friday: 1,
+      saturday: 2,
+      sunday: 2
+    },
+    study_hours_week2: {
+      monday: 0.75,
+      tuesday: 1,
+      wednesday: 0,
+      thursday: 0.75,
+      friday: 1,
+      saturday: 2,
+      sunday: 2
+    },
+    use_alternating_weeks: false,
     review_day: 'sunday',
     mock_exam_day: 'saturday'
   });
@@ -55,12 +80,25 @@ const GoalsSettings = () => {
           target_exam_date: data.target_exam_date || '',
           current_score: data.current_score || '',
           target_score: data.target_score || '',
-          daily_study_minutes: data.daily_study_minutes || 30,
-          study_days_per_week: data.study_days_per_week || 5,
-          study_hours_per_week: data.study_hours_per_week || 6,
-          preferred_study_time: data.preferred_study_time || 'evening',
-          learning_pace: data.learning_pace || 'moderate',
-          reminder_frequency: data.reminder_frequency || 'daily',
+          study_hours: data.study_hours || {
+            monday: 0.75,
+            tuesday: 1,
+            wednesday: 0,
+            thursday: 0.75,
+            friday: 1,
+            saturday: 2,
+            sunday: 2
+          },
+          study_hours_week2: data.study_hours_week2 || {
+            monday: 0.75,
+            tuesday: 1,
+            wednesday: 0,
+            thursday: 0.75,
+            friday: 1,
+            saturday: 2,
+            sunday: 2
+          },
+          use_alternating_weeks: data.use_alternating_weeks || false,
           review_day: data.review_day || 'sunday',
           mock_exam_day: data.mock_exam_day || 'saturday'
         });
@@ -107,6 +145,17 @@ const GoalsSettings = () => {
     setGoals(prev => ({ ...prev, [field]: value }));
   };
 
+  const handleStudyHoursChange = (day, value, week = 1) => {
+    const field = week === 1 ? 'study_hours' : 'study_hours_week2';
+    setGoals(prev => ({
+      ...prev,
+      [field]: {
+        ...prev[field],
+        [day]: parseFloat(value) || 0
+      }
+    }));
+  };
+
   if (loading) {
     return (
       <div style={{ padding: '2rem', textAlign: 'center' }}>
@@ -117,29 +166,37 @@ const GoalsSettings = () => {
 
   return (
     <div style={{
-      maxWidth: '800px',
-      margin: '0 auto',
       padding: '2rem',
-      backgroundColor: '#ffffff',
-      borderRadius: '12px',
-      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+      background: '#ffffff',
+      border: '1px solid #e2e8f0',
+      borderRadius: '8px',
     }}>
-      <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{
-          fontSize: '1.5rem',
-          fontWeight: '600',
-          color: '#111827',
-          marginBottom: '0.5rem',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem'
-        }}>
-          <HiAcademicCap style={{ fontSize: '1.75rem', color: '#3b82f6' }} />
-          Study Goals & Preferences
-        </h2>
-        <p style={{ fontSize: '0.875rem', color: '#6b7280' }}>
-          Update your goals to personalize your learning path. Changes will be applied to future study sessions.
-        </p>
+      <div style={{
+        display: 'flex',
+        alignItems: 'flex-start',
+        gap: '1rem',
+        marginBottom: '1.5rem',
+        color: '#0f172a',
+      }}>
+        <HiAcademicCap size={24} />
+        <div>
+          <h3 style={{
+            fontSize: '1.125rem',
+            fontWeight: '700',
+            color: '#0f172a',
+            margin: '0 0 0.25rem 0',
+            letterSpacing: '-0.01em',
+          }}>
+            Study Goals & Preferences
+          </h3>
+          <p style={{
+            fontSize: '0.875rem',
+            color: '#64748b',
+            margin: 0,
+          }}>
+            Update your goals to personalize your learning path
+          </p>
+        </div>
       </div>
 
       {message.text && (
@@ -168,18 +225,18 @@ const GoalsSettings = () => {
       )}
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-        {/* Exam Date & Scores */}
+        {/* Test Date and Scores */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
           <div>
             <label style={{
               display: 'block',
               fontSize: '0.875rem',
-              fontWeight: '500',
+              fontWeight: '600',
               color: '#374151',
               marginBottom: '0.5rem'
             }}>
               <HiCalendar style={{ display: 'inline', marginRight: '0.25rem' }} />
-              Target Exam Date
+              Test Date
             </label>
             <input
               type="date"
@@ -187,10 +244,10 @@ const GoalsSettings = () => {
               onChange={(e) => handleChange('target_exam_date', e.target.value)}
               style={{
                 width: '100%',
-                padding: '0.5rem',
-                borderRadius: '6px',
+                padding: '0.65rem',
+                borderRadius: '8px',
                 border: '1px solid #d1d5db',
-                fontSize: '0.875rem'
+                fontSize: '0.95rem'
               }}
             />
           </div>
@@ -199,11 +256,11 @@ const GoalsSettings = () => {
             <label style={{
               display: 'block',
               fontSize: '0.875rem',
-              fontWeight: '500',
+              fontWeight: '600',
               color: '#374151',
               marginBottom: '0.5rem'
             }}>
-              Current Score
+              Current ACT Score
             </label>
             <input
               type="number"
@@ -211,13 +268,13 @@ const GoalsSettings = () => {
               max="36"
               value={goals.current_score}
               onChange={(e) => handleChange('current_score', e.target.value)}
-              placeholder="1-36"
+              placeholder="Leave blank if not taken"
               style={{
                 width: '100%',
-                padding: '0.5rem',
-                borderRadius: '6px',
+                padding: '0.65rem',
+                borderRadius: '8px',
                 border: '1px solid #d1d5db',
-                fontSize: '0.875rem'
+                fontSize: '0.95rem'
               }}
             />
           </div>
@@ -226,12 +283,12 @@ const GoalsSettings = () => {
             <label style={{
               display: 'block',
               fontSize: '0.875rem',
-              fontWeight: '500',
+              fontWeight: '600',
               color: '#374151',
               marginBottom: '0.5rem'
             }}>
               <HiAcademicCap style={{ display: 'inline', marginRight: '0.25rem' }} />
-              Target Score
+              Target ACT Score
             </label>
             <input
               type="number"
@@ -239,226 +296,93 @@ const GoalsSettings = () => {
               max="36"
               value={goals.target_score}
               onChange={(e) => handleChange('target_score', e.target.value)}
-              placeholder="1-36"
               style={{
                 width: '100%',
-                padding: '0.5rem',
-                borderRadius: '6px',
+                padding: '0.65rem',
+                borderRadius: '8px',
                 border: '1px solid #d1d5db',
-                fontSize: '0.875rem'
+                fontSize: '0.95rem'
               }}
             />
           </div>
         </div>
 
-        {/* Study Time */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-          <div>
-            <label style={{
-              display: 'block',
-              fontSize: '0.875rem',
-              fontWeight: '500',
-              color: '#374151',
-              marginBottom: '0.5rem'
-            }}>
-              <HiClock style={{ display: 'inline', marginRight: '0.25rem' }} />
-              Daily Study Minutes
+        {/* Daily Study Hours */}
+        <div style={{ marginTop: '0.5rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
+            <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', fontWeight: '600', color: '#374151' }}>
+              Daily Study Hours
+              <Tooltip id="daily-study-hours" text="Customize your study schedule—set different hours for each day, rest days, or alternate weeks." />
             </label>
-            <input
-              type="number"
-              min="15"
-              max="480"
-              step="15"
-              value={goals.daily_study_minutes}
-              onChange={(e) => handleChange('daily_study_minutes', parseInt(e.target.value))}
-              style={{
-                width: '100%',
-                padding: '0.5rem',
-                borderRadius: '6px',
-                border: '1px solid #d1d5db',
-                fontSize: '0.875rem'
-              }}
-            />
-            <small style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '0.25rem', display: 'block' }}>
-              {Math.floor(goals.daily_study_minutes / 60)}h {goals.daily_study_minutes % 60}m per day
-            </small>
+            <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.8rem', color: '#6b7280', cursor: 'pointer' }}>
+              <input
+                type="checkbox"
+                checked={goals.use_alternating_weeks}
+                onChange={(e) => handleChange('use_alternating_weeks', e.target.checked)}
+                style={{ marginRight: '0.5rem', cursor: 'pointer' }}
+              />
+              Use alternating weeks
+            </label>
           </div>
 
-          <div>
-            <label style={{
-              display: 'block',
-              fontSize: '0.875rem',
-              fontWeight: '500',
-              color: '#374151',
-              marginBottom: '0.5rem'
-            }}>
-              Study Days Per Week
-            </label>
-            <select
-              value={goals.study_days_per_week}
-              onChange={(e) => handleChange('study_days_per_week', parseInt(e.target.value))}
-              style={{
-                width: '100%',
-                padding: '0.5rem',
-                borderRadius: '6px',
-                border: '1px solid #d1d5db',
-                fontSize: '0.875rem'
-              }}
-            >
-              <option value="3">3 days</option>
-              <option value="4">4 days</option>
-              <option value="5">5 days</option>
-              <option value="6">6 days</option>
-              <option value="7">7 days</option>
-            </select>
-          </div>
-        </div>
-
-        {/* Preferences */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-          <div>
-            <label style={{
-              display: 'block',
-              fontSize: '0.875rem',
-              fontWeight: '500',
-              color: '#374151',
-              marginBottom: '0.5rem'
-            }}>
-              Preferred Study Time
-            </label>
-            <select
-              value={goals.preferred_study_time}
-              onChange={(e) => handleChange('preferred_study_time', e.target.value)}
-              style={{
-                width: '100%',
-                padding: '0.5rem',
-                borderRadius: '6px',
-                border: '1px solid #d1d5db',
-                fontSize: '0.875rem'
-              }}
-            >
-              <option value="morning">Morning</option>
-              <option value="afternoon">Afternoon</option>
-              <option value="evening">Evening</option>
-              <option value="night">Night</option>
-            </select>
-          </div>
-
-          <div>
-            <label style={{
-              display: 'block',
-              fontSize: '0.875rem',
-              fontWeight: '500',
-              color: '#374151',
-              marginBottom: '0.5rem'
-            }}>
-              Learning Pace
-            </label>
-            <select
-              value={goals.learning_pace}
-              onChange={(e) => handleChange('learning_pace', e.target.value)}
-              style={{
-                width: '100%',
-                padding: '0.5rem',
-                borderRadius: '6px',
-                border: '1px solid #d1d5db',
-                fontSize: '0.875rem'
-              }}
-            >
-              <option value="relaxed">Relaxed</option>
-              <option value="moderate">Moderate</option>
-              <option value="intensive">Intensive</option>
-            </select>
-          </div>
-        </div>
-
-        {/* Schedule Days */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-          <div style={{ position: 'relative' }}>
-            <label style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              fontSize: '0.875rem',
-              fontWeight: '500',
-              color: '#3b82f6',
-              marginBottom: '0.5rem'
-            }}>
-              🎯 Mock Exam Day (3h)
-              <div style={{ position: 'relative', display: 'inline-block' }}>
-                <HiQuestionMarkCircle
-                  onMouseEnter={() => setShowMockExamTooltip(true)}
-                  onMouseLeave={() => setShowMockExamTooltip(false)}
-                  style={{
-                    fontSize: '1rem',
-                    color: '#6b7280',
-                    cursor: 'help',
-                    transition: 'color 0.2s'
-                  }}
-                />
-                {showMockExamTooltip && (
-                  <div style={{
-                    position: 'absolute',
-                    bottom: '100%',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    marginBottom: '0.5rem',
-                    padding: '0.75rem',
-                    backgroundColor: '#111827',
-                    color: '#ffffff',
-                    borderRadius: '8px',
-                    fontSize: '0.75rem',
-                    lineHeight: '1.5',
-                    zIndex: 1000,
-                    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-                    width: '280px',
-                    whiteSpace: 'normal'
-                  }}>
-                    Choose a day when you have 3 uninterrupted hours to take a full practice test. Saturday is recommended as it mimics real ACT test day conditions.
-                    <div style={{
-                      position: 'absolute',
-                      top: '100%',
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      width: '0',
-                      height: '0',
-                      borderLeft: '6px solid transparent',
-                      borderRight: '6px solid transparent',
-                      borderTop: '6px solid #111827'
-                    }} />
-                  </div>
-                )}
+          {/* Week 1 Schedule */}
+          <div style={{ marginBottom: goals.use_alternating_weeks ? '1rem' : '0' }}>
+            {goals.use_alternating_weeks && (
+              <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#6b7280', marginBottom: '0.5rem' }}>
+                Week 1 Schedule
               </div>
-            </label>
-            <select
-              value={goals.mock_exam_day}
-              onChange={(e) => handleChange('mock_exam_day', e.target.value)}
-              style={{
-                width: '100%',
-                padding: '0.5rem',
-                borderRadius: '6px',
-                border: '2px solid #3b82f6',
-                fontSize: '0.875rem',
-                backgroundColor: '#eff6ff',
-                color: '#1e40af',
-                fontWeight: '400',
-                cursor: 'pointer'
-              }}
-            >
-              <option value="sunday">Sunday</option>
-              <option value="monday">Monday</option>
-              <option value="tuesday">Tuesday</option>
-              <option value="wednesday">Wednesday</option>
-              <option value="thursday">Thursday</option>
-              <option value="friday">Friday</option>
-              <option value="saturday">Saturday</option>
-            </select>
-            <small style={{ fontSize: '0.75rem', color: '#2563eb', marginTop: '0.25rem', display: 'block', fontWeight: '400' }}>
-              Automatically set to 3 hours
-            </small>
+            )}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '1rem' }}>
+              {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => (
+                <div key={day}>
+                  <label style={{ fontSize: '0.75rem', fontWeight: '600', color: '#6b7280', marginBottom: '0.5rem', display: 'block', textTransform: 'capitalize' }}>
+                    {day.slice(0, 3)}
+                  </label>
+                  <input
+                    type="number"
+                    min="0"
+                    max="8"
+                    step="0.25"
+                    value={goals.study_hours[day] || 0}
+                    onChange={(e) => handleStudyHoursChange(day, e.target.value, 1)}
+                    style={{ width: '100%', padding: '0.65rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit' }}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div style={{ position: 'relative' }}>
+          {/* Week 2 Schedule */}
+          {goals.use_alternating_weeks && (
+            <div>
+              <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#6b7280', marginBottom: '0.5rem' }}>
+                Week 2 Schedule
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '1rem' }}>
+                {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => (
+                  <div key={day}>
+                    <label style={{ fontSize: '0.75rem', fontWeight: '600', color: '#6b7280', marginBottom: '0.5rem', display: 'block', textTransform: 'capitalize' }}>
+                      {day.slice(0, 3)}
+                    </label>
+                    <input
+                      type="number"
+                      min="0"
+                      max="8"
+                      step="0.25"
+                      value={goals.study_hours_week2[day] || 0}
+                      onChange={(e) => handleStudyHoursChange(day, e.target.value, 2)}
+                      style={{ width: '100%', padding: '0.65rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit' }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Review Day and Mock Exam Day */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
+          <div>
             <label style={{
               display: 'flex',
               alignItems: 'center',
@@ -470,60 +394,16 @@ const GoalsSettings = () => {
             }}>
               <HiCheckCircle style={{ display: 'inline' }} />
               Weekly Review Day (2h)
-              <div style={{ position: 'relative', display: 'inline-block' }}>
-                <HiQuestionMarkCircle
-                  onMouseEnter={() => setShowReviewTooltip(true)}
-                  onMouseLeave={() => setShowReviewTooltip(false)}
-                  style={{
-                    fontSize: '1rem',
-                    color: '#6b7280',
-                    cursor: 'help',
-                    transition: 'color 0.2s'
-                  }}
-                />
-                {showReviewTooltip && (
-                  <div style={{
-                    position: 'absolute',
-                    bottom: '100%',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    marginBottom: '0.5rem',
-                    padding: '0.75rem',
-                    backgroundColor: '#111827',
-                    color: '#ffffff',
-                    borderRadius: '8px',
-                    fontSize: '0.75rem',
-                    lineHeight: '1.5',
-                    zIndex: 1000,
-                    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-                    width: '280px',
-                    whiteSpace: 'normal'
-                  }}>
-                    💡 Schedule this the day after your practice test (🎯). This lets you review mistakes while fresh, turning weak areas into learning opportunities.
-                    <div style={{
-                      position: 'absolute',
-                      top: '100%',
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      width: '0',
-                      height: '0',
-                      borderLeft: '6px solid transparent',
-                      borderRight: '6px solid transparent',
-                      borderTop: '6px solid #111827'
-                    }} />
-                  </div>
-                )}
-              </div>
             </label>
             <select
               value={goals.review_day}
               onChange={(e) => handleChange('review_day', e.target.value)}
               style={{
                 width: '100%',
-                padding: '0.5rem',
-                borderRadius: '6px',
+                padding: '0.65rem',
+                borderRadius: '8px',
                 border: '2px solid #10b981',
-                fontSize: '0.875rem',
+                fontSize: '0.95rem',
                 backgroundColor: '#d1fae5',
                 color: '#065f46',
                 fontWeight: '400',
@@ -539,38 +419,49 @@ const GoalsSettings = () => {
               <option value="saturday">Saturday</option>
             </select>
             <small style={{ fontSize: '0.75rem', color: '#059669', marginTop: '0.25rem', display: 'block', fontWeight: '400' }}>
-              Automatically set to 2 hours
+              Day you'll review your practice exam results
             </small>
           </div>
-        </div>
 
-        {/* Reminder Frequency */}
-        <div>
-          <label style={{
-            display: 'block',
-            fontSize: '0.875rem',
-            fontWeight: '500',
-            color: '#374151',
-            marginBottom: '0.5rem'
-          }}>
-            Reminder Frequency
-          </label>
-          <select
-            value={goals.reminder_frequency}
-            onChange={(e) => handleChange('reminder_frequency', e.target.value)}
-            style={{
-              width: '100%',
-              padding: '0.5rem',
-              borderRadius: '6px',
-              border: '1px solid #d1d5db',
-              fontSize: '0.875rem'
-            }}
-          >
-            <option value="never">Never</option>
-            <option value="daily">Daily</option>
-            <option value="weekly">Weekly</option>
-            <option value="biweekly">Bi-weekly</option>
-          </select>
+          <div>
+            <label style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              fontSize: '0.875rem',
+              fontWeight: '500',
+              color: '#3b82f6',
+              marginBottom: '0.5rem'
+            }}>
+              🎯 Mock Exam Day (3h)
+            </label>
+            <select
+              value={goals.mock_exam_day}
+              onChange={(e) => handleChange('mock_exam_day', e.target.value)}
+              style={{
+                width: '100%',
+                padding: '0.65rem',
+                borderRadius: '8px',
+                border: '2px solid #3b82f6',
+                fontSize: '0.95rem',
+                backgroundColor: '#eff6ff',
+                color: '#1e40af',
+                fontWeight: '400',
+                cursor: 'pointer'
+              }}
+            >
+              <option value="sunday">Sunday</option>
+              <option value="monday">Monday</option>
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">Saturday</option>
+            </select>
+            <small style={{ fontSize: '0.75rem', color: '#2563eb', marginTop: '0.25rem', display: 'block', fontWeight: '400' }}>
+              Day you'll take a full-length practice test
+            </small>
+          </div>
         </div>
 
         {/* Save Button */}

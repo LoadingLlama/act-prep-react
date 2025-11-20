@@ -1,0 +1,202 @@
+[
+  {
+    "id": 151,
+    "test_number": 1,
+    "question_number": 16,
+    "passage_id": 51,
+    "question_text": "Based on Passage B, which of the following statements best summarizes the passage author's point about Van Gogh's use of imagination while painting <i>The Starry Night</i>?",
+    "choices": [
+      "F. Van Gogh had to rely heavily on his imagination because he usually painted during the daytime.",
+      "G. Van Gogh's work is almost entirely imagined because the painting's stars have colors that are unlike actual stars.",
+      "H. Van Gogh used his imagination in part, but his painting was also inspired by the real night sky he observed.",
+      "J. Van Gogh barely used his imagination at all; he tried to depict the vivid night sky exactly as it was."
+    ],
+    "correct_answer": "H",
+    "explanation": "Van Gogh used his imagination in part, but his painting was also inspired by the real night sky he observed. best answers the question based on the evidence and context provided in the passage.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Clear Evidence",
+    "lesson_id": "ac4440f6-f391-4a04-9a5c-751a2e0ca5b7",
+    "section": "reading"
+  },
+  {
+    "id": 152,
+    "test_number": 1,
+    "question_number": 17,
+    "passage_id": 51,
+    "question_text": "As it is used in line 90, the phrase remotely close to most nearly means:",
+    "choices": [
+      "A. exactly similar to.",
+      "B. anything like.",
+      "C. anywhere nearby.",
+      "D. somewhat adjacent to."
+    ],
+    "correct_answer": "B",
+    "explanation": "anything like. best answers the question based on the evidence and context provided in the passage.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Words In Context",
+    "lesson_id": "c22d531f-b59a-41fe-8b19-bf2f8e063b48",
+    "section": "reading"
+  },
+  {
+    "id": 153,
+    "test_number": 1,
+    "question_number": 18,
+    "passage_id": 51,
+    "question_text": "Which of the following statements best captures the main difference in the information presented in the two passages?",
+    "choices": [
+      "F. Passage A summarizes the process by which light at night became common, whereas Passage B explores one person's reaction to Van Gogh's <i>The Starry Night</i>.",
+      "G. Passage A offers suggestions for restoring darkness to today's night, whereas Passage B compares the night skies of several Van Gogh paintings.",
+      "H. Passage A discusses the problems of today's bright night sky, whereas Passage B explains how people in Van Gogh's time used light at night.",
+      "J. Passage A gives an overview of the issue of light at night, whereas Passage B examines the matter of light at night through a discussion of Van Gogh's <i>The Starry Night</i>."
+    ],
+    "correct_answer": "J",
+    "explanation": "Passage A gives an overview of the issue of light at night, whereas Passage B examines the matter of light at night through a discussion of Van Gogh's <i>The Starry Night</i>. best answers the question based on the evidence and context provided in the passage.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Comparing Passages",
+    "lesson_id": "680d39ef-6fc8-490b-a574-c68fad112466",
+    "section": "reading"
+  },
+  {
+    "id": 154,
+    "test_number": 1,
+    "question_number": 19,
+    "passage_id": 51,
+    "question_text": "One similarity between the passages is that, in order to make a point about light at night, both authors discuss:",
+    "choices": [
+      "A. how dark large cities once were.",
+      "B. the opinions of scientific researchers.",
+      "C. well-known works of art.",
+      "D. personal memories of when night was darker."
+    ],
+    "correct_answer": "A",
+    "explanation": "how dark large cities once were. best answers the question based on the evidence and context provided in the passage.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Comparing Passages",
+    "lesson_id": "680d39ef-6fc8-490b-a574-c68fad112466",
+    "section": "reading"
+  },
+  {
+    "id": 155,
+    "test_number": 1,
+    "question_number": 20,
+    "passage_id": 51,
+    "question_text": "Compared to Passage B, Passage A offers more information about the:",
+    "choices": [
+      "F. effects lighting up the night sky can have on animals.",
+      "G. colorful appearance stars had prior to electric lights.",
+      "H. interaction between nature and the imagination.",
+      "J. places where night's original darkness remains."
+    ],
+    "correct_answer": "F",
+    "explanation": "effects lighting up the night sky can have on animals. best answers the question based on the evidence and context provided in the passage.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Comparing Passages",
+    "lesson_id": "680d39ef-6fc8-490b-a574-c68fad112466",
+    "section": "reading"
+  },
+  {
+    "id": 156,
+    "test_number": 1,
+    "question_number": 21,
+    "passage_id": 52,
+    "question_text": "The passage as a whole can best be described as:",
+    "choices": [
+      "A. a summary of a childhood incident followed by reflections on how the memory of that incident has changed.",
+      "B. a description of an experience followed by consideration of a topic raised by that experience.",
+      "C. an account of the author's lifelong interest in a hobby.",
+      "D. an explanation of why the author's opinions on a topic have changed."
+    ],
+    "correct_answer": "B",
+    "explanation": "a description of an experience followed by consideration of a topic raised by that experience. best answers the question based on the evidence and context provided in the passage.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Broad Passage",
+    "lesson_id": "25fb92b6-429e-4940-802a-e339ae3a47e1",
+    "section": "reading"
+  },
+  {
+    "id": 157,
+    "test_number": 1,
+    "question_number": 22,
+    "passage_id": 52,
+    "question_text": "Which of the following statements best represents the passage's central claim?",
+    "choices": [
+      "F. The accuracy of most memories is improved by viewing photographs related to the memories.",
+      "G. Revisiting a place evokes clearer and more accurate memories than conversations or photographs.",
+      "H. The truth represented by a photograph is only as accurate as your memory of the event in the photograph.",
+      "J. Memories are sustained over time only through a combination of conversations, photographs, and visits to places."
+    ],
+    "correct_answer": "G",
+    "explanation": "The passage's main focus is revisiting a place evokes clearer and more accurate memories than conversations or photographs.. This central theme is developed throughout the text.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Broad Passage",
+    "lesson_id": "25fb92b6-429e-4940-802a-e339ae3a47e1",
+    "section": "reading"
+  },
+  {
+    "id": 158,
+    "test_number": 1,
+    "question_number": 23,
+    "passage_id": 52,
+    "question_text": "The author's tone when recounting his visit to the waterfall can best be described as:",
+    "choices": [
+      "A. joking.",
+      "B. gloomy.",
+      "C. pleading.",
+      "D. reverent."
+    ],
+    "correct_answer": "D",
+    "explanation": "The author's tone is best characterized as reverent., as evidenced by the language choices and presentation of ideas.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Miscellaneous - Tone",
+    "lesson_id": "25fb92b6-429e-4940-802a-e339ae3a47e1",
+    "section": "reading"
+  },
+  {
+    "id": 159,
+    "test_number": 1,
+    "question_number": 24,
+    "passage_id": 52,
+    "question_text": "The main idea of the second paragraph (lines 20-33) is that:",
+    "choices": [
+      "F. over time, some memories fade.",
+      "G. frequently, reminiscing with other people changes one\u2019s memories.",
+      "H. reminiscing with other people helps preserve one\u2019s memories,",
+      "J. family members better evoke one\u2019s memories than nonfamily members."
+    ],
+    "correct_answer": "G",
+    "explanation": "The passage's main focus is frequently, reminiscing with other people changes one\u2019s memories.. This central theme is developed throughout the text.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Main Idea",
+    "lesson_id": "25fb92b6-429e-4940-802a-e339ae3a47e1",
+    "section": "reading"
+  },
+  {
+    "id": 160,
+    "test_number": 1,
+    "question_number": 25,
+    "passage_id": 52,
+    "question_text": "When the author states \u201cWhat photographs most accurately record, ultimately. nothing more than the act\r\nof photography, itself\u201d (lines 70-72), he most nearly\r\nmeans that:",
+    "choices": [
+      "A. the quality of a photograph reflects the skill of the photographer.",
+      "B. when veiwing a photograph people forget that the photographer is an unseen participant in the scene.",
+      "C. photographs by nature are records of brief momemnts.",
+      "D. photographs tend to depict people stopping an activity and posing for the photographer."
+    ],
+    "correct_answer": "D",
+    "explanation": "photographs tend to depict people stopping an activity and posing for the photographer. best answers the question based on the evidence and context provided in the passage.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Clear Evidence",
+    "lesson_id": "ac4440f6-f391-4a04-9a5c-751a2e0ca5b7",
+    "section": "reading"
+  }
+]

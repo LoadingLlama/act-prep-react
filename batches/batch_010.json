@@ -1,0 +1,212 @@
+[
+  {
+    "id": 91,
+    "test_number": 1,
+    "question_number": 16,
+    "question_text": "The point (3,27) is labeled on the graph of <i>f</i>(x) =x\" in the standard (x,y) coordinate plane below. The graph of <i>f</i>(x) will be translated 3 coordinate units to the left Which of the following points will be on the image of the graph after the translation?",
+    "choices": [
+      "F. (0,27)",
+      "G. (3,24)",
+      "H. (3,27)",
+      "J. (3,30)",
+      "K. (6,27)"
+    ],
+    "correct_answer": "F",
+    "explanation": "Working through the problem step-by-step with the values 3, 27, 3, the correct answer is (0,27).",
+    "question_type": "Shifting and Transforming Functions",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/m16.jpg",
+    "chapter": "33",
+    "lesson_id": "c3c04aee-0641-470f-97d1-eeabce912c87",
+    "section": "math"
+  },
+  {
+    "id": 92,
+    "test_number": 1,
+    "question_number": 17,
+    "question_text": "In the standard (<i>x,y</i>) coordinate plane, what is the midpoint of the line segment that has endpoints (-6,9) and (2,5) ?",
+    "choices": [
+      "A. (-4,-4)",
+      "B. (-2,7)",
+      "C. (3/2, 7/2)",
+      "D. (4,-2)",
+      "E. (8,-4)"
+    ],
+    "correct_answer": "B",
+    "explanation": "To find the slope, use m = (y\u2082 - y\u2081)/(x\u2082 - x\u2081). Plugging in the coordinates (-6, 9) and (2, 5), we get m = (5 - 9)/(2 - -6) = (-2,7).",
+    "question_type": "Lines",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "5",
+    "lesson_id": "8e92077d-ae10-48ce-a80d-348cc56969c3",
+    "section": "math"
+  },
+  {
+    "id": 93,
+    "test_number": 1,
+    "question_number": 18,
+    "question_text": "What value of x satisfies the equation <i>x</i>\u00b2 + 2<i>x</i>/x+2= 2 ?",
+    "choices": [
+      "F. -4",
+      "G. -3",
+      "H. -2",
+      "J. 1",
+      "K. 2"
+    ],
+    "correct_answer": "K",
+    "explanation": "Solving the equation with the given values 2, 2, 2, we find that the answer is 2.",
+    "question_type": "Algebra Skills",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "7",
+    "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+    "section": "math"
+  },
+  {
+    "id": 94,
+    "test_number": 1,
+    "question_number": 19,
+    "question_text": "Based on the survey results, what was the average number of moviegoers for each of the 4 categories?",
+    "choices": [
+      "A. 610",
+      "B. 1,060",
+      "C. 1,240",
+      "D. 1,250",
+      "E. 1,985"
+    ],
+    "correct_answer": "D",
+    "explanation": "Working through the problem step-by-step with the values 4, the correct answer is 1,250.",
+    "question_type": "Mean",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/m19.jpg",
+    "chapter": "12",
+    "lesson_id": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+    "section": "math"
+  },
+  {
+    "id": 95,
+    "test_number": 1,
+    "question_number": 20,
+    "question_text": "Suppose all the adults surveyed happened to attend 1 movie each in one particular week. The total amount spent on tickets by those surveyed in that week was $44,000.00. How many adults attended matinees that week?",
+    "choices": [
+      "F. 500",
+      "G. 1,400",
+      "H. 2,500",
+      "J. 3,600",
+      "K. 4,500"
+    ],
+    "correct_answer": "G",
+    "explanation": "Working through the problem step-by-step with the values 1, 44, 000.00, the correct answer is 1,400.",
+    "question_type": "Systems of Equations",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/ques19-21.png",
+    "chapter": "15",
+    "lesson_id": "9fec6937-fba1-40f2-9a28-5ff838420384",
+    "section": "math"
+  },
+  {
+    "id": 96,
+    "test_number": 1,
+    "question_number": 21,
+    "question_text": "One of the following circle graphs represents the proportion by age group of the adults surveyed. Which one?",
+    "choices": [
+      "A. 7.5",
+      "B. 8",
+      "C. 13,230",
+      "D. 273",
+      "E. 357"
+    ],
+    "correct_answer": "A",
+    "explanation": "Following the mathematical operations, the answer is 7.5.",
+    "question_type": "Percentages",
+    "difficulty": null,
+    "image_url": "",
+    "chapter": "9",
+    "lesson_id": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+    "section": "math"
+  },
+  {
+    "id": 97,
+    "test_number": 1,
+    "question_number": 22,
+    "question_text": "In the figure shown below, all angles are right angles, and the side lengths given are in centimeters. What is the area, in square centimeters, of the figure?",
+    "choices": [
+      "F. 42",
+      "G. 75",
+      "H. 93",
+      "J. 99",
+      "K. 117"
+    ],
+    "correct_answer": "G",
+    "explanation": "Applying geometric angle relationships, the angle measures 75.",
+    "question_type": "Geometry Part 2 - Area",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/m22.jpg",
+    "chapter": "4",
+    "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+    "section": "math"
+  },
+  {
+    "id": 98,
+    "test_number": 1,
+    "question_number": 23,
+    "question_text": "In the figure below, <i>E</i> is on <i>CA</i>, and the measures of \u2220<i><BED</i> and \u2220<i><AEB</i> are 90\u00b0 and 145\u00b0, respectively. If it can be determined, what is the measure of \u2220<i><CED</i> ?",
+    "choices": [
+      "A. 35*",
+      "B. 45*",
+      "C. 55*",
+      "D. 80*",
+      "E. Cannont be determined from the given information"
+    ],
+    "correct_answer": "C",
+    "explanation": "Working through the problem step-by-step with the values 90, 145, the correct answer is 55*.",
+    "question_type": "Geometry Part 1 - Angles",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/m23.jpg",
+    "chapter": "3",
+    "lesson_id": "3e2c98a9-98e3-40e3-8301-11f38aa0c15b",
+    "section": "math"
+  },
+  {
+    "id": 99,
+    "test_number": 1,
+    "question_number": 24,
+    "question_text": "In the standard <i>(x,y)</i> coordinate plane, the graph of the function y = 5 sin(x) - 7 undergoes a single translation such that the equation of its image is sin(x) \u2014 14.Which of the following describes this translation?",
+    "choices": [
+      "F. Up 7 coordinate",
+      "G. Down 7 coordinate units",
+      "H. Left 7 coordinate units",
+      "J. Right 7 coordinate units",
+      "K. Right 14 coordinate units"
+    ],
+    "correct_answer": "G",
+    "explanation": "Working through the problem step-by-step with the values 5, 7, 14., the correct answer is Down 7 coordinate units.",
+    "question_type": "Shifting and Transforming Functions",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "33",
+    "lesson_id": "c3c04aee-0641-470f-97d1-eeabce912c87",
+    "section": "math"
+  },
+  {
+    "id": 100,
+    "test_number": 1,
+    "question_number": 25,
+    "question_text": "What is the value of (9^\u00b9\u141f\u2082 + 16^\u00b9\u141f\u2082)\u00b2",
+    "choices": [
+      "A. 7",
+      "B. 25",
+      "C. 49",
+      "D. 337",
+      "E. 625"
+    ],
+    "correct_answer": "C",
+    "explanation": "Working through the problem step-by-step with the values 9, 16, the correct answer is 49.",
+    "question_type": "Exponents",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "13",
+    "lesson_id": "b8c03bf0-99df-460d-be21-0015eebe7920",
+    "section": "math"
+  }
+]

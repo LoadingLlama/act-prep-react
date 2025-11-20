@@ -1,0 +1,1481 @@
+/**
+ * MATH EXPLANATIONS
+ * 
+ * Add specific explanations for each question below.
+ * Each entry should reference actual content from the question.
+ */
+
+const MATH_EXPLANATIONS = [
+  {
+    id: 76,
+    question_number: 1,
+    question_text: "A function, <i>f</i>, is defined by <i>f</i>(<i>x</i>, <i>y</i>) = 3<i>x</i>² − 4<i>y</i>. What is the value of <i>f</i>(3,2)?",
+    choices: [
+      "A. 0",
+      "B. 10",
+      "C. 19",
+      "D. 24",
+      "E. 28"
+],
+    correct_answer: "C",
+    correct_choice: "C. 19",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why C is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 77,
+    question_number: 2,
+    question_text: "In the figure below, ∠<i>BAC</i> measures 35°, ∠<i>ABC</i> measures 95°, and points <i>B, C,</i> and <i>D</i> are collinear. What is the measure of ∠<i>ACD</i>?",
+    choices: [
+      "F. 95°",
+      "G. 125°",
+      "H. 130°",
+      "J. 140°",
+      "K. 145°"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 78,
+    question_number: 3,
+    question_text: "For all nonzero values of <i>x</i> and <i>y</i>, which of the following expressions is equivalent to −(36<i>x</i>⁴<i>y</i>³)/(4<i>xy</i>)?",
+    choices: [
+      "A. −40<i>x</i>³<i>y</i>²",
+      "B. −32<i>x</i>³<i>y</i>²",
+      "C. −9<i>x</i>⁵<i>y</i>⁴",
+      "D. −9<i>x</i>⁴<i>y</i>³",
+      "E. 9<i>x</i>³<i>y</i>²"
+],
+    correct_answer: "E",
+    correct_choice: "E. 9<i>x</i>³<i>y</i>²",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why E is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+    }
+  },
+
+  {
+    id: 79,
+    question_number: 4,
+    question_text: "At a certain airline company, the cost to transfer mileage points from one person's account to another person's account is $0.75 for every 100 mileage points transferred plus a onetime $20 processing fee. What is the cost to transfer 7,000 mileage points from one account to another?",
+    choices: [
+      "F. $25.25",
+      "G. $67.50",
+      "H. $72.50",
+      "J. $75.00",
+      "K. $95.00"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 80,
+    question_number: 5,
+    question_text: "If <i>x</i> = -5, what is the value of 4<i>x</i>² − 11<i>x</i>?",
+    choices: [
+      "A. −155",
+      "B. -84",
+      "C. -45",
+      "D. 84",
+      "E. 155"
+],
+    correct_answer: "E",
+    correct_choice: "E. 155",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why E is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+    }
+  },
+
+  {
+    id: 81,
+    question_number: 6,
+    question_text: "Taho earns his regular pay of $11 per hour for up to 40 hours of work per week. For each hour over 40 hours of work per week, Taho earns 1½ times his regular pay. How much does Taho earn in a week in which he works 50 hours?",
+    choices: [
+      "F. $550",
+      "G. $605",
+      "H. $625",
+      "J. $750",
+      "K. $825"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 82,
+    question_number: 7,
+    question_text: "A science class has 8 juniors and 4 seniors. The teacher will randomly select 2 students, one at a time, to represent the class. Given that the first student selected is a junior, what is the probability that the second student selected will be a senior?",
+    choices: [
+      "A. 1/11",
+      "B. 1/4",
+      "C. 3/11",
+      "D. 1/3",
+      "E. 4/11"
+],
+    correct_answer: "E",
+    correct_choice: "E. 4/11",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why E is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+    }
+  },
+
+  {
+    id: 83,
+    question_number: 8,
+    question_text: "When Tyrone fell asleep one night, the temperature was 24°F. When Tyrone awoke the next morning, the temperature was −12°F. Letting + denote a rise in temperature and − denote a drop in temperature, what was the change in temperature from the time Tyrone fell asleep until the time he awoke?",
+    choices: [
+      "F. −36°F",
+      "G. −12°F",
+      "H. +6°F",
+      "J. +12°F",
+      "K. +36°F"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 84,
+    question_number: 9,
+    question_text: "The total cost of renting a car is $35.00 for each day the car is rented plus 42.5¢ for each mile driven. What is the total cost of renting the car for 6 days and driving 350 miles?\r\n\r\n(Note: No sales tax is involved.)",
+    choices: [
+      "A. $154.75",
+      "B. $224.88",
+      "C. $358.75",
+      "D. $420.00",
+      "E. $1,697.50"
+],
+    correct_answer: "C",
+    correct_choice: "C. $358.75",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why C is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 85,
+    question_number: 10,
+    question_text: "In the standard (<i>x</i>,<i>y</i>) coordinate plane, what is the slope of the line through (−6,4) and (1,3)?",
+    choices: [
+      "F. −7/5",
+      "G. −1/5",
+      "H. -1/7",
+      "J. 1/7",
+      "K. 1/5"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 86,
+    question_number: 11,
+    question_text: "One morning at a coffee shop, each customer ordered either decaf or regular coffee, and each ordered it either with milk or without milk. The number of customers who ordered each type of coffee with or without milk is listed in the table below.\r\n\r\nA customer will be randomly selected from all 36 customers for a prize, What is the probability that the selected customer will have ordered a regular coffee without milk?\r\n",
+    choices: [
+      "A. 1/6",
+      "B. 5/18",
+      "C. 5/13",
+      "D. 1/2",
+      "E. 5/8"
+],
+    correct_answer: "B",
+    correct_choice: "B. 5/18",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why B is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 87,
+    question_number: 12,
+    question_text: "Which of the following inequalities describes the solution set for 3<i>x</i> − 5 < 2<i>x</i> + 1?",
+    choices: [
+      "F. <i>x</i> < −4",
+      "G. <i>x</i> > −4/5",
+      "H. <i>x</i> < 6/5",
+      "J. <i>x</i> < 6",
+      "K. <i>x</i> > 6"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 88,
+    question_number: 13,
+    question_text: "Which of the following expressions is equivalent to 4(<i>x</i> + 2) + 3(2<i>x</i> − 1)?",
+    choices: [
+      "A. 3<i>x</i> + 8",
+      "B. 5(2<i>x</i> + 1)",
+      "C. 10(<i>x</i> + 1)",
+      "D. 10<i>x</i> + 11",
+      "E. 15<i>x</i>"
+],
+    correct_answer: "B",
+    correct_choice: "B. 5(2<i>x</i> + 1)",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why B is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 89,
+    question_number: 14,
+    question_text: "What is 4% of 1.36 x 10⁴?",
+    choices: [
+      "F. 340",
+      "G. 544",
+      "H. 3,400",
+      "J. 5,440",
+      "K. 54,400"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 90,
+    question_number: 15,
+    question_text: "What is the least common denominator of the fractions? 4/35, 1/77, 3/22",
+    choices: [
+      "A. 110",
+      "B. 770",
+      "C. 2,695",
+      "D. 8,470",
+      "E. 59,290"
+],
+    correct_answer: "B",
+    correct_choice: "B. 770",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why B is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 91,
+    question_number: 16,
+    question_text: "The point (3,27) is labeled on the graph of <i>f</i>(x) =x\" in the standard (x,y) coordinate plane below. The graph of <i>f</i>(x) will be translated 3 coordinate units to the left Which of the following points will be on the image of the graph after the translation?",
+    choices: [
+      "F. (0,27)",
+      "G. (3,24)",
+      "H. (3,27)",
+      "J. (3,30)",
+      "K. (6,27)"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 92,
+    question_number: 17,
+    question_text: "In the standard (<i>x,y</i>) coordinate plane, what is the midpoint of the line segment that has endpoints (-6,9) and (2,5) ?",
+    choices: [
+      "A. (-4,-4)",
+      "B. (-2,7)",
+      "C. (3/2, 7/2)",
+      "D. (4,-2)",
+      "E. (8,-4)"
+],
+    correct_answer: "B",
+    correct_choice: "B. (-2,7)",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why B is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 93,
+    question_number: 18,
+    question_text: "What value of x satisfies the equation <i>x</i>² + 2<i>x</i>/x+2= 2 ?",
+    choices: [
+      "F. -4",
+      "G. -3",
+      "H. -2",
+      "J. 1",
+      "K. 2"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 94,
+    question_number: 19,
+    question_text: "Based on the survey results, what was the average number of moviegoers for each of the 4 categories?",
+    choices: [
+      "A. 610",
+      "B. 1,060",
+      "C. 1,240",
+      "D. 1,250",
+      "E. 1,985"
+],
+    correct_answer: "D",
+    correct_choice: "D. 1,250",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why D is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 95,
+    question_number: 20,
+    question_text: "Suppose all the adults surveyed happened to attend 1 movie each in one particular week. The total amount spent on tickets by those surveyed in that week was $44,000.00. How many adults attended matinees that week?",
+    choices: [
+      "F. 500",
+      "G. 1,400",
+      "H. 2,500",
+      "J. 3,600",
+      "K. 4,500"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 96,
+    question_number: 21,
+    question_text: "One of the following circle graphs represents the proportion by age group of the adults surveyed. Which one?",
+    choices: [
+      "A. 7.5",
+      "B. 8",
+      "C. 13,230",
+      "D. 273",
+      "E. 357"
+],
+    correct_answer: "A",
+    correct_choice: "A. 7.5",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why A is correct using specific details",
+    wrong_explanations: {
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 97,
+    question_number: 22,
+    question_text: "In the figure shown below, all angles are right angles, and the side lengths given are in centimeters. What is the area, in square centimeters, of the figure?",
+    choices: [
+      "F. 42",
+      "G. 75",
+      "H. 93",
+      "J. 99",
+      "K. 117"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 98,
+    question_number: 23,
+    question_text: "In the figure below, <i>E</i> is on <i>CA</i>, and the measures of ∠<i><BED</i> and ∠<i><AEB</i> are 90° and 145°, respectively. If it can be determined, what is the measure of ∠<i><CED</i> ?",
+    choices: [
+      "A. 35*",
+      "B. 45*",
+      "C. 55*",
+      "D. 80*",
+      "E. Cannont be determined from the given information"
+],
+    correct_answer: "C",
+    correct_choice: "C. 55*",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why C is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 99,
+    question_number: 24,
+    question_text: "In the standard <i>(x,y)</i> coordinate plane, the graph of the function y = 5 sin(x) - 7 undergoes a single translation such that the equation of its image is sin(x) — 14.Which of the following describes this translation?",
+    choices: [
+      "F. Up 7 coordinate",
+      "G. Down 7 coordinate units",
+      "H. Left 7 coordinate units",
+      "J. Right 7 coordinate units",
+      "K. Right 14 coordinate units"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 100,
+    question_number: 25,
+    question_text: "What is the value of (9^¹ᐟ₂ + 16^¹ᐟ₂)²",
+    choices: [
+      "A. 7",
+      "B. 25",
+      "C. 49",
+      "D. 337",
+      "E. 625"
+],
+    correct_answer: "C",
+    correct_choice: "C. 49",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why C is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 101,
+    question_number: 26,
+    question_text: "A right triangle is shown in the figure below. What is the value of sinθ ?",
+    choices: [
+      "F. 5/13",
+      "G. 5/12",
+      "H. 12/13",
+      "J. 13/12",
+      "K. 13/5"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 102,
+    question_number: 27,
+    question_text: "A 6-inch-by-6-inch square grid shown below is divided into 36 squares, each with a side length of 1 inch. Each vertex of the 2 shaded triangles lies at an intersection of 2 grid lines. What fractional part of the 6-inch-by-6-inch square is shaded?",
+    choices: [
+      "A. 2/3",
+      "B. 4/5",
+      "C. 4/9",
+      "D. 5/9",
+      "E. 8/9"
+],
+    correct_answer: "C",
+    correct_choice: "C. 4/9",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why C is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 103,
+    question_number: 28,
+    question_text: "All the values in the equation below are exact. What value of ¢ makes the equation true?  \r\n           (4.25 x 10^(2<i>x<i/>+4))(6 x 10⁷) = 255",
+    choices: [
+      "F. -7",
+      "G. -6.5",
+      "H. -5",
+      "J. -4.5",
+      "K. -4"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 104,
+    question_number: 29,
+    question_text: "Which of the following inequalities is true for all positive integers <i>m<i/>?",
+    choices: [
+      "A. <i>m<i/> <= 1/<i>m<i/> ",
+      "B. <i>m<i/> <= √<i>m<i/> ",
+      "C. <i>m<i/> => <i>m<i/>^2 ",
+      "D. <i>m<i/> <= (<i>m<i/> + 1)",
+      "E. <i>m<i/> => √(<i>m<i/> + 1)"
+],
+    correct_answer: "D",
+    correct_choice: "D. <i>m<i/> <= (<i>m<i/> + 1)",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why D is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 105,
+    question_number: 30,
+    question_text: "A formula for the volume, V, of a right circular cylinder is V = πr²<i>h</i>, where <i>r</i> is the radius and A is the height. The cylindrical tank shown below has radius 5 meters and height 3 meters and is filled with water.\r\n\r\nGiven that the weight of 1 cubic meter of water is approximately 2,205 pounds, the weight, in pounds, of the water in the tank is:",
+    choices: [
+      "F. less than 200,000,",
+      "G. between 200,000 and 300,000",
+      "H. between 300,000 and 500,000",
+      "J. between 500,000 and 1,000,000.",
+      "K. more than 1,000,000."
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 106,
+    question_number: 31,
+    question_text: "Graphed in the standard <i>(x,y) </i> coordinate plane below is a right triangle with vertices (0,0), (—40,0), and (0,30). What is the length, in coordinate units, of the hypotenuse of the triangle?",
+    choices: [
+      "A. 30",
+      "B. 35",
+      "C. 40",
+      "D. 50",
+      "E. 70"
+],
+    correct_answer: "D",
+    correct_choice: "D. 50",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why D is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 107,
+    question_number: 32,
+    question_text: "Every graph in one of the following categories has a vertical line of symmetry regardless of how it is oriented in the standard <i>(x,y)</i> coordinate plane. Which one?",
+    choices: [
+      "F. Circles",
+      "G. Squares",
+      "H. Ellipses",
+      "J. Triangles",
+      "K. Rectangles"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 108,
+    question_number: 33,
+    question_text: " In the standard <i>(x,y)</i> coordinate plane, the graph of y=30(<i>x</i>+17)²— 42 is a parabola. What are the coordinates of the vertex of the parabola?",
+    choices: [
+      "A. (-30,-42)",
+      "B. (-17,-42)",
+      "C. (17,-42)",
+      "D. (17,42)",
+      "E. (30,42)"
+],
+    correct_answer: "B",
+    correct_choice: "B. (-17,-42)",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why B is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 109,
+    question_number: 34,
+    question_text: "One side of square <i>ABCD</i> has a length of 15 meters. A certain rectangle whose area is equal to the area of <i>ABCD</i> has a width of 10 meters. What is the length, in meters, of the rectangle?",
+    choices: [
+      "F. 15",
+      "G. 20",
+      "H. 22.5",
+      "J. 25",
+      "K. 37.5"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 110,
+    question_number: 35,
+    question_text: "The average weight of 10 boys is 77.0 pounds. If the youngest boy is excluded, the average weight of the 9 remaining boys is 78.0 pounds. What is the weight, in pounds, of the youngest boy?",
+    choices: [
+      "A. 62",
+      "B. 68",
+      "C. 70",
+      "D. 78",
+      "E. 87"
+],
+    correct_answer: "B",
+    correct_choice: "B. 68",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why B is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 111,
+    question_number: 36,
+    question_text: "The total amount of a certain substance present in a laboratory experiment is given by the formula A=A₀(2^<i>h</i>/5), where A is the total amount of the substance f hours after an initial amount (A₀) of the substance began accumulating. Which of the following expressions gives the number of hours it will take an initial amount of 10 grams of this substance to accumulate to 100 grams?",
+    choices: [
+      "F. 5",
+      "G. 25",
+      "H. log₂(50)",
+      "J. 5log₂(10)",
+      "K. 5log₂₀(100)"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 112,
+    question_number: 37,
+    question_text: "For all values of x greater than 3, which of the following is equivalent to x² - x - 6/x²-9",
+    choices: [
+      "A. <i>-x</i>-6/-9",
+      "B. <i>x</i>-2/<i>x</i>-3",
+      "C. <i>x</i>-2/<i>x</i>+3",
+      "D. <i>x</i>+2/<i>x</i>-3",
+      "E. <i>x</i>+2/<i>x</i>+3"
+],
+    correct_answer: "E",
+    correct_choice: "E. <i>x</i>+2/<i>x</i>+3",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why E is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+    }
+  },
+
+  {
+    id: 113,
+    question_number: 38,
+    question_text: "Shown below, a board 9 feet 4 inches long is cut into 2 equal parts. What is the length, to the nearest inch, of each part?",
+    choices: [
+      "F. 4 feet 5 inches",
+      "G. 4 feet 7 inches ",
+      "H. 4 feet 8 inches",
+      "J. 5 feet 4 inches",
+      "K. 5 feet 5 inches"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 114,
+    question_number: 39,
+    question_text: "If the positive integers x and y are relatively prime (their 1 greatest common factor is 1) and (1/2+1/3) (1/3+1/4) = <i>x/y</i> then <i>x+y=</i> ?",
+    choices: [
+      "A. 23",
+      "B. 25",
+      "C. 49",
+      "D. 91",
+      "E. 132"
+],
+    correct_answer: "A",
+    correct_choice: "A. 23",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why A is correct using specific details",
+    wrong_explanations: {
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 115,
+    question_number: 40,
+    question_text: "What is the 358th digit after the decimal point in the repeating decimal 0.3̅1̅7̅8̅  ?",
+    choices: [
+      "F. 0",
+      "G. 3",
+      "H. 1",
+      "J. 7",
+      "K. 8"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 116,
+    question_number: 41,
+    question_text: "To promote a new brand of shoes, a shoe store will run a promotion using a jar containing 3 red balls marked “10% off.” 2 white balls marked “30% off.’ and 1 green ball marked “60% off.” Each customer will randomly select | ball from the jar to determine the discount that the customer will receive on any single pair of the new brand of shoes. Given that the new brand of shoes regularly costs $60 per pair, what is the average discount amount, in dollars, that the store can expect to give each customer due to this promotion?",
+    choices: [
+      "A. $6",
+      "B. $10",
+      "C. $15",
+      "D. $20",
+      "E. $25"
+],
+    correct_answer: "C",
+    correct_choice: "C. $15",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why C is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 117,
+    question_number: 42,
+    question_text: "At the beginning of 2014, the number of lions in the park was <i>p</i> percent of the total number of large animals. Which of the following is closest to the value of <i>p</i>?",
+    choices: [
+      "F. 2",
+      "G. 8",
+      "H. 9",
+      "J. 11",
+      "K. 12"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 118,
+    question_number: 43,
+    question_text: "In this park, the average number of gallons of water consumed per day by each elephant, lion, and giraffe is 50, 5, and 10, respectively, Which of the following matrix product yeilds the avg total number of gallons of water consumed per day by all the elephants, lions, and giraffes in the park?",
+    choices: [
+      "A. [600 200 800] [50/5/10]​",
+      "B. [600 800 200] [50/5/10]",
+      "C. [600/200/800] [50 5 10]",
+      "D. [600/800/200] [50 5 10]",
+      "E. [600/800/200] [50/5/10]"
+],
+    correct_answer: "A",
+    correct_choice: "A. [600 200 800] [50/5/10]​",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why A is correct using specific details",
+    wrong_explanations: {
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 119,
+    question_number: 44,
+    question_text: "Let <i>t</i> be a positive integer less than 6. Based on DO YOUR FIGURING HERE. the zoologists’ prediction, which of the following expressions represents the number of protected animals in the park <i>t</i> years after the beginning of 2014?",
+    choices: [
+      "F. 10,000+0.02<i>t</i>",
+      "G. 10,000+0.2<i>t</i>",
+      "H. 10,000(1 + 0.02)^<i>t</i>",
+      "J. 10,000(1+0.02)^<i>t</i>",
+      "K. 10,000(1+0.2)^<i>t</i>"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 120,
+    question_number: 45,
+    question_text: "Anela and Jacob plan to attend a concert in Brady. Anela will drive 375 km to Brady at a constant speed of 75 km/hr, stopping one time for a 30-minute break. Jacob will start 600 km from Brady and will drive at a constant speed of 90 km/hr for 2 hours. He will take a 1-hour break and then drive to Brady at a constant speed of 70 km/hr. To the nearest 0.1 hour, Jacob must leave how much earlier than Anela in order for them to arrive in Brady at the same time?",
+    choices: [
+      "A. 2.2",
+      "B. 2.5",
+      "C. 3.1",
+      "D. 3.5",
+      "E. 4.0"
+],
+    correct_answer: "D",
+    correct_choice: "D. 3.5",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why D is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 121,
+    question_number: 46,
+    question_text: "Which of the following is equal to 3x+5/2x - 7x-3/2x , for all x≠0?",
+    choices: [
+      "F. -4<i>x</i>+8 ",
+      "G. -4<i>x</i>+2",
+      "H. -2<i>x</i>+1",
+      "J. -2<i>x</i>+4/<i>x</i>",
+      "K. 2"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 122,
+    question_number: 47,
+    question_text: "A rectangular stage is 90 feet long and 30 feet wide. What is the area, in square yards, of this stage?",
+    choices: [
+      "A. 30√3",
+      "B. 300",
+      "C. 675",
+      "D. 900",
+      "E. 2,700"
+],
+    correct_answer: "B",
+    correct_choice: "B. 300",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why B is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 123,
+    question_number: 48,
+    question_text: "A rectangle, with its vertex coordinates labeled, is graphed in the standard <i>(x,y)</i> coordinate plane below. A lattice point is a point with coordinates that are both integers. A lattice point inside but NOT on the rectangle will be chosen at random. What is the probability that the sum of the <i>x</i>-coordinate and the <i>y</i>-coordinate of the chosen lattice point will be odd?",
+    choices: [
+      "F. 1/5",
+      "G. 2/5",
+      "H. 7/15",
+      "J. 17/35",
+      "K. 1/2"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 124,
+    question_number: 49,
+    question_text: "The <i>nth</n> term of an arithmetic progression is given by the formula <i> aₙ =a₁+(n—1)d, </i> where <i> d </i> is the commondifference and <i>a₁</i> is the first term. If the third term of <i>aₙ</i> arithmetic progression is 5/2 and the sixth term is 1/4, what is the seventh term?",
+    choices: [
+      "A. -1/2",
+      "B. 0",
+      "C. 1/2",
+      "D. 3/4",
+      "E. 1"
+],
+    correct_answer: "A",
+    correct_choice: "A. -1/2",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why A is correct using specific details",
+    wrong_explanations: {
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 125,
+    question_number: 50,
+    question_text: "The probability of Jamie being chosen to bat first in the lineup for his baseball team is 1/9. What are the odds in favor of Jamie being chosen to bat first? \r\n\r\n<i>(Note: The odds in favor of an event are defined as the ratio of the probability that the event will happen to the probability that the event will NOT happen.)</i>",
+    choices: [
+      "F. 1/8",
+      "G. 1/9",
+      "H. 1/10",
+      "J. 8/1",
+      "K. 9/1"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 126,
+    question_number: 51,
+    question_text: "A 120-liter solution that is 5% salt is mixed with an 80-liter solution that is 15% salt. The combined solution is what percent salt?",
+    choices: [
+      "A. 8%",
+      "B. 9%",
+      "C. 10%",
+      "D. 11%",
+      "E. 12%"
+],
+    correct_answer: "B",
+    correct_choice: "B. 9%",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why B is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 127,
+    question_number: 52,
+    question_text: "A 50-foot-long rectangular swimming pool with vertical sides is 3 feet deep at the shallow end and 10 feet deep at the deep end, The bottom of the pool slopes downward at a constant angle from horizontal along the length of the pool, Which of the following expressions gives this constant angle?\r\n\r\n(Note: For -π/2<<i>x</i><π/2 , <i>y</i> = tan<i>x</i> if and only if <i>x</i>= tan⁻¹<i>y</i>",
+    choices: [
+      "F. tan⁻¹(7/50)",
+      "G. tan⁻¹(13/50)",
+      "H. tan⁻¹(7/10)",
+      "J. tan⁻¹(50/13)",
+      "K. tan⁻¹(50/7)"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 128,
+    question_number: 53,
+    question_text: "A hyperbola that has vertices (1,2) and (3,2) and that passes through the origin is shown below in the standard <i> (x,y) </i> coordinate plane. The hyperbola has which of the following equations?",
+    choices: [
+      "A. (<i>x</i>-2)²/1 - 3(<i>y</i>-2)²/4=1",
+      "B. (<i>x</i>-2)²/1- 3(<i>y</i>-2)²/3 = 1",
+      "C. (<i>x</i>+2)²/1 - 3(<i>y</i>+2)²/4 = 1",
+      "D. (<i>x</i>-2)²/1 = 3(<i>y</i>-2)²/4 = 1",
+      "E. (<i>x</i>+2)²/1 + 4(<i>y</i>+2)²/3 = 1"
+],
+    correct_answer: "A",
+    correct_choice: "A. (<i>x</i>-2)²/1 - 3(<i>y</i>-2)²/4=1",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why A is correct using specific details",
+    wrong_explanations: {
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 129,
+    question_number: 54,
+    question_text: "As shown below, Alli walked her dog 250 feet due east from the entrance of a dog park to a trash can and then walked 700 feet in a straight line 25° north of east to a bench. Which of the following expressions is equal to the distance, in feet, between the entrance and the bench?",
+    choices: [
+      "F. 950/cos25°",
+      "G. (250/cos25°) + 700",
+      "H. (250/sin155°) + 700",
+      "J. √(700²+ 250² - 2(700)(250) cos25°)",
+      "K. √(700²+ 250² - 2(700)(250) cos155°)"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 130,
+    question_number: 55,
+    question_text: "For real numbers <i> a, b, </i> and <i> c </i> such that <i> a>b>c </i> and <i> b>0, </i> which of the statements below is(are) <i> always </i> true?\r\n\r\nI. |a| > |d|\r\nII. |a| > |c|\r\nIII. |b| > |c|",
+    choices: [
+      "A. I only",
+      "B. II only",
+      "C. I and II only",
+      "D. II and III only",
+      "E. I,II and III"
+],
+    correct_answer: "A",
+    correct_choice: "A. I only",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why A is correct using specific details",
+    wrong_explanations: {
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 131,
+    question_number: 56,
+    question_text: "Kenji and Mary are members of a school committee that will be meeting this afternoon. The 6 members of the committee will be seated randomly around a circular table, What is the probability that Kenji and Mary will NOT sit next to each other at the meeting?",
+    choices: [
+      "F. 1/5",
+      "G. 1/3",
+      "H. 2/3",
+      "J. 3/5",
+      "K. 4/5"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 132,
+    question_number: 57,
+    question_text: "The digit in the ones place of 2⁸⁸ is 6. What is the digit in the ones place of 2⁹⁰?",
+    choices: [
+      "A. 0",
+      "B. 2",
+      "C. 4",
+      "D. 6",
+      "E. 8"
+],
+    correct_answer: "C",
+    correct_choice: "C. 4",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why C is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 133,
+    question_number: 58,
+    question_text: "Which of the following expressions represents the area, in square coordinate units, of <i>△RST</i> shown in the standard <i>(x,y)</i> coordinate plane below?",
+    choices: [
+      "F. 1/2<i>(c-a)(e-d)</i>",
+      "G. 1/2<i>c(c-a)</i>",
+      "H. 1/2<i>e(c-a)</i>",
+      "J. 1/2<i>{(e-d)²+ (b-a)²}{(e-d)²+(b-c)²}</i>",
+      "K. 1/2<i>{√((e-d)²+ (b-a)²)}{√((e-d)²+(b-c)²)}</i>"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 134,
+    question_number: 59,
+    question_text: "In the complex numbers where <i>i</i>²=-1 what complex number <i> x</i> is a solution to the equation <i> x</i>(2+3<i>i</i>)=1",
+    choices: [
+      "A. 2/13 - 3/13<i>i</i>",
+      "B. 2/5 + 3/5<i>i</i>",
+      "C. 1",
+      "D. -1",
+      "E. -<i>i</i>/13"
+],
+    correct_answer: "A",
+    correct_choice: "A. 2/13 - 3/13<i>i</i>",
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why A is correct using specific details",
+    wrong_explanations: {
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  },
+
+  {
+    id: 135,
+    question_number: 60,
+    question_text: "The rectangular container shown below has a small compartment for water created by a rectangular dividing wall of negligible width. One face of the dividing wall, shown shaded, has an area of 39 square inches. What is the volume, in cubic inches, of the larger compartment?",
+    choices: [
+      "F. 180",
+      "B. 195",
+      "C. 390",
+      "D. 450",
+      "E. 540"
+],
+    correct_answer: "undefined",
+    correct_choice: undefined,
+    
+    // WRITE SPECIFIC EXPLANATION HERE:
+    correct_explanation: "TODO: Explain why undefined is correct using specific details",
+    wrong_explanations: {
+      "A": "TODO: Explain why A is wrong",
+      "B": "TODO: Explain why B is wrong",
+      "C": "TODO: Explain why C is wrong",
+      "D": "TODO: Explain why D is wrong",
+      "E": "TODO: Explain why E is wrong",
+    }
+  }
+
+];
+
+module.exports = MATH_EXPLANATIONS;

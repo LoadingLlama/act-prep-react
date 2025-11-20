@@ -32,20 +32,32 @@ const transformOnboardingToGoals = (onboardingData) => {
     learning_pace: 'moderate',
     reminder_frequency: 'daily',
     grade: '',
-    study_experience: 'never'
+    study_experience: 'never',
+    review_day: 'sunday',
+    mock_exam_day: 'saturday'
   };
 
   if (!onboardingData) return defaults;
 
-  // Transform exam date
+  console.log('🔄 Transforming onboarding data:', onboardingData);
+
+  // Handle exam date - support both new (target_exam_date) and old (testDate) formats
   let exam_date = defaults.exam_date;
-  if (onboardingData.testDate && onboardingData.testDate !== 'not-scheduled') {
+  if (onboardingData.target_exam_date) {
+    // New format: direct date string
+    exam_date = new Date(onboardingData.target_exam_date).toISOString();
+  } else if (onboardingData.testDate && onboardingData.testDate !== 'not-scheduled') {
+    // Old format: testDate field
     exam_date = new Date(onboardingData.testDate).toISOString();
   }
 
-  // Transform current score
+  // Handle current score - support both new and old formats
   let current_score = null;
-  if (onboardingData.currentScore && onboardingData.currentScore !== 'not-taken') {
+  if (onboardingData.current_score) {
+    // New format: direct number
+    current_score = parseInt(onboardingData.current_score) || null;
+  } else if (onboardingData.currentScore && onboardingData.currentScore !== 'not-taken') {
+    // Old format: score ranges
     const scoreRanges = {
       '1-15': 13,
       '16-20': 18,
@@ -56,25 +68,13 @@ const transformOnboardingToGoals = (onboardingData) => {
     current_score = scoreRanges[onboardingData.currentScore] || null;
   }
 
-  // Transform study hours per week
-  let study_hours_per_week = defaults.study_hours_per_week;
-  if (onboardingData.studyTimePerWeek) {
-    const hoursPerWeek = {
-      '2-4': 3,
-      '5-7': 6,
-      '8-10': 9,
-      '10+': 12
-    }[onboardingData.studyTimePerWeek] || 6;
-    study_hours_per_week = hoursPerWeek;
-  }
-
-  // Calculate daily_study_minutes from hours per week and days per week
-  const days_per_week = onboardingData.studyDaysPerWeek ? parseInt(onboardingData.studyDaysPerWeek) : 5;
-  const daily_study_minutes = Math.round((study_hours_per_week * 60) / days_per_week);
-
-  // Transform target score
+  // Handle target score - support both formats
   let target_score = defaults.target_score;
-  if (onboardingData.targetScore) {
+  if (onboardingData.target_score) {
+    // New format: direct number
+    target_score = parseInt(onboardingData.target_score) || 28;
+  } else if (onboardingData.targetScore) {
+    // Old format: score ranges
     const scoreRanges = {
       '20-24': 22,
       '25-29': 27,
@@ -84,21 +84,58 @@ const transformOnboardingToGoals = (onboardingData) => {
     target_score = scoreRanges[onboardingData.targetScore] || 28;
   }
 
-  return {
+  // Handle study hours - NEW format with per-day breakdown
+  let study_hours_per_week = defaults.study_hours_per_week;
+  let study_days_per_week = defaults.study_days_per_week;
+  let daily_study_minutes = defaults.daily_study_minutes;
+
+  if (onboardingData.study_hours) {
+    // New format: study_hours object with days
+    const hoursPerDay = onboardingData.study_hours;
+    study_hours_per_week = Object.values(hoursPerDay).reduce((sum, hours) => sum + (parseFloat(hours) || 0), 0);
+    study_days_per_week = Object.values(hoursPerDay).filter(hours => (parseFloat(hours) || 0) > 0).length;
+    daily_study_minutes = study_days_per_week > 0 ? Math.round((study_hours_per_week * 60) / study_days_per_week) : 30;
+  } else if (onboardingData.studyTimePerWeek) {
+    // Old format: studyTimePerWeek ranges
+    const hoursPerWeek = {
+      '2-4': 3,
+      '5-7': 6,
+      '8-10': 9,
+      '10+': 12
+    }[onboardingData.studyTimePerWeek] || 6;
+    study_hours_per_week = hoursPerWeek;
+    study_days_per_week = onboardingData.studyDaysPerWeek ? parseInt(onboardingData.studyDaysPerWeek) : 5;
+    daily_study_minutes = Math.round((study_hours_per_week * 60) / study_days_per_week);
+  }
+
+  // Review day and mock exam day - NEW fields
+  const review_day = onboardingData.review_day || defaults.review_day;
+  const mock_exam_day = onboardingData.mock_exam_day || defaults.mock_exam_day;
+
+  const transformed = {
     exam_date,
     current_score,
     daily_study_minutes,
     target_score,
-    study_days_per_week: days_per_week,
+    study_days_per_week,
     study_hours_per_week,
     preferred_study_time: onboardingData.preferredStudyTime || '',
     focus_sections: onboardingData.concernedSections || [],
-    weak_areas: onboardingData.concernedSections || [], // Use concernedSections for both focus and weak areas
+    weak_areas: onboardingData.concernedSections || [],
     learning_pace: onboardingData.learningPace || 'moderate',
     reminder_frequency: onboardingData.reminderFrequency || 'daily',
     grade: onboardingData.grade || '',
-    study_experience: onboardingData.studyExperience || 'never'
+    study_experience: onboardingData.studyExperience || 'never',
+    review_day,
+    mock_exam_day,
+    // Pass through new fields
+    study_hours: onboardingData.study_hours,
+    study_hours_week2: onboardingData.study_hours_week2,
+    use_alternating_weeks: onboardingData.use_alternating_weeks || false
   };
+
+  console.log('✅ Transformed goals:', transformed);
+  return transformed;
 };
 
 /**
@@ -194,32 +231,34 @@ const DiagnosticTest = ({ onClose }) => {
   const [showResults, setShowResults] = useState(false);
   const [analysisData, setAnalysisData] = useState(null);
   const [userGoalsData, setUserGoalsData] = useState(null);
+  const [learningPathData, setLearningPathData] = useState(null);
   const [onboardingData, setOnboardingData] = useState({
     target_exam_date: '',
     current_score: '',
-    target_score: 28,
+    target_score: 34,
     use_alternating_weeks: false,
     study_hours: {
-      monday: 0.75,
+      monday: 1,
       tuesday: 1,
-      wednesday: 0,
-      thursday: 0.75,
+      wednesday: 1,
+      thursday: 1,
       friday: 1,
-      saturday: 2,
+      saturday: 3,
       sunday: 2
     },
     study_hours_week2: {
-      monday: 0.75,
+      monday: 1,
       tuesday: 1,
-      wednesday: 0,
-      thursday: 0.75,
+      wednesday: 1,
+      thursday: 1,
       friday: 1,
-      saturday: 2,
+      saturday: 3,
       sunday: 2
     },
     weakest_section: '',
     review_day: 'sunday',
-    mock_exam_day: 'saturday'
+    mock_exam_day: 'saturday',
+    weekly_hours_tier: 'moderate'
   });
   const [hoveredTooltip, setHoveredTooltip] = useState(null);
   const [confirmStart, setConfirmStart] = useState(false);
@@ -643,8 +682,12 @@ const DiagnosticTest = ({ onClose }) => {
         target_score: onboardingData.target_score,
         daily_study_minutes: avgDailyMinutes,
         study_days_per_week: studyDaysCount,
+        study_hours: onboardingData.study_hours,
+        study_hours_week2: onboardingData.study_hours_week2,
+        use_alternating_weeks: onboardingData.use_alternating_weeks || false,
         review_day: onboardingData.review_day,
         mock_exam_day: onboardingData.mock_exam_day,
+        weekly_hours_tier: onboardingData.weekly_hours_tier || 'moderate',
         updated_at: new Date().toISOString()
       };
 
@@ -653,6 +696,9 @@ const DiagnosticTest = ({ onClose }) => {
         target_score: userGoalsData.target_score,
         daily_study_minutes: userGoalsData.daily_study_minutes,
         study_days_per_week: userGoalsData.study_days_per_week,
+        study_hours: userGoalsData.study_hours,
+        study_hours_week2: userGoalsData.study_hours_week2,
+        use_alternating_weeks: userGoalsData.use_alternating_weeks,
         review_day: userGoalsData.review_day,
         mock_exam_day: userGoalsData.mock_exam_day
       });
@@ -861,13 +907,25 @@ const DiagnosticTest = ({ onClose }) => {
       // Get user goals from onboarding data
       const userGoals = await getUserGoals(userId);
 
-      console.log('🎯 User goals for learning path generation:', {
-        target_score: userGoals.target_score,
-        daily_study_minutes: userGoals.daily_study_minutes,
-        study_days_per_week: userGoals.study_days_per_week,
-        exam_date: userGoals.exam_date,
+      // Merge onboarding data with user goals to ensure all new fields are included
+      const mergedGoals = {
+        ...userGoals,
         review_day: userGoals.review_day || onboardingData.review_day,
-        mock_exam_day: userGoals.mock_exam_day || onboardingData.mock_exam_day
+        mock_exam_day: userGoals.mock_exam_day || onboardingData.mock_exam_day,
+        study_hours: userGoals.study_hours || onboardingData.study_hours,
+        study_hours_week2: userGoals.study_hours_week2 || onboardingData.study_hours_week2,
+        use_alternating_weeks: userGoals.use_alternating_weeks || onboardingData.use_alternating_weeks
+      };
+
+      console.log('🎯 User goals for learning path generation:', {
+        target_score: mergedGoals.target_score,
+        daily_study_minutes: mergedGoals.daily_study_minutes,
+        study_days_per_week: mergedGoals.study_days_per_week,
+        exam_date: mergedGoals.exam_date,
+        review_day: mergedGoals.review_day,
+        mock_exam_day: mergedGoals.mock_exam_day,
+        study_hours: mergedGoals.study_hours,
+        use_alternating_weeks: mergedGoals.use_alternating_weeks
       });
 
       console.log('📊 Diagnostic analysis for learning path:', {
@@ -884,7 +942,7 @@ const DiagnosticTest = ({ onClose }) => {
       logger.info('DiagnosticTest', 'generatingLearningPath', { userId });
       const learningPath = await LearningPathService.generateLearningPath(
         userId,
-        userGoals,
+        mergedGoals,
         analysis
       );
 
@@ -917,9 +975,16 @@ const DiagnosticTest = ({ onClose }) => {
       // Store insights data with full question details
       console.log('📊 Processing complete. Preparing results...');
 
-      // Store analysis and user goals data for results screen
+      console.log('📚 Learning path generated with items:', {
+        pathId: learningPath.id,
+        itemsCount: learningPath.items?.length || 0,
+        hasItems: !!learningPath.items
+      });
+
+      // Store analysis, user goals, and learning path data for results screen
       setAnalysisData(analysis);
-      setUserGoalsData(userGoalsData);
+      setUserGoalsData(mergedGoals);
+      setLearningPathData(learningPath);
 
       // Clean up sessionStorage
       sessionStorage.removeItem('diagnosticSessionId');
@@ -1238,7 +1303,7 @@ const DiagnosticTest = ({ onClose }) => {
             </div>
           </div>
 
-          {/* Learning Path Explanation */}
+          {/* Learning Path Schedule Preview */}
           <div style={{
             background: 'linear-gradient(135deg, #fef2f2 0%, #ffffff 100%)',
             border: '2px solid #fee2e2',
@@ -1255,67 +1320,161 @@ const DiagnosticTest = ({ onClose }) => {
               Your Learning Plan
             </h3>
 
-            <div style={{
-              fontSize: '0.95rem',
-              color: '#374151',
-              lineHeight: '1.6'
-            }}>
-              {analysisData.weak_lessons?.length > 0 ? (
-                <>
-                  <p style={{ marginBottom: '0.75rem' }}>
-                    We identified <strong>{analysisData.weak_lessons.length} areas</strong> for improvement. Your {weeksUntilExam}-week study plan focuses on:
-                  </p>
-
-                  <ul style={{
-                    listStyle: 'none',
-                    padding: 0,
-                    margin: '0.75rem 0'
-                  }}>
-                    {analysisData.weak_lessons.slice(0, 5).map((lesson, index) => (
-                      <li key={index} style={{
-                        display: 'flex',
-                        alignItems: 'start',
-                        marginBottom: '0.5rem',
-                        fontSize: '0.875rem'
-                      }}>
-                        <span style={{
-                          background: '#b91c1c',
-                          color: 'white',
-                          borderRadius: '50%',
-                          width: '20px',
-                          height: '20px',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          fontSize: '0.7rem',
-                          fontWeight: '600',
-                          marginRight: '0.5rem',
-                          flexShrink: 0,
-                          marginTop: '1px'
-                        }}>
-                          {index + 1}
-                        </span>
-                        <span>
-                          <strong>{lesson.lesson_title || lesson.lesson_id}</strong> ({((lesson.accuracy || 0)).toFixed(0)}% accuracy)
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              ) : (
-                <p style={{ marginBottom: '0.75rem' }}>
-                  Your {weeksUntilExam}-week personalized study plan is ready! Start with the recommended lessons to build your skills.
+            {learningPathData && learningPathData.items && learningPathData.items.length > 0 ? (
+              <div style={{
+                fontSize: '0.95rem',
+                color: '#374151',
+                lineHeight: '1.6'
+              }}>
+                <p style={{ marginBottom: '1rem' }}>
+                  We've created a <strong>{weeksUntilExam}-week personalized plan</strong> with <strong>{learningPathData.items.length} lessons and activities</strong>{isDefaultTimeline ? ' to help you master the material at your own pace.' : ` to reach your target score of ${userGoalsData?.target_score || 28}.`}
                 </p>
-              )}
 
-              <p style={{ marginTop: '1rem', marginBottom: '0' }}>
-                {isDefaultTimeline ? (
-                  <>We've created a <strong>12-week plan</strong> to help you master the material at your own pace.</>
-                ) : (
-                  <>With <strong>{weeksUntilExam} weeks</strong> until your test, your plan is optimized to reach your target score of <strong>{userGoalsData?.target_score || 28}</strong>.</>
+                {analysisData.weak_lessons?.length > 0 && (
+                  <div style={{
+                    background: 'white',
+                    border: '1px solid #fee2e2',
+                    borderRadius: '6px',
+                    padding: '1rem',
+                    marginBottom: '1rem'
+                  }}>
+                    <div style={{
+                      fontSize: '0.875rem',
+                      fontWeight: '600',
+                      color: '#b91c1c',
+                      marginBottom: '0.5rem'
+                    }}>
+                      Areas for Improvement ({analysisData.weak_lessons.length})
+                    </div>
+                    <div style={{ fontSize: '0.8125rem', color: '#6b7280' }}>
+                      Your plan prioritizes {analysisData.weak_lessons.slice(0, 3).map(l => l.lesson_title || l.lesson_id).join(', ')}{analysisData.weak_lessons.length > 3 && ` and ${analysisData.weak_lessons.length - 3} more`}
+                    </div>
+                  </div>
                 )}
-              </p>
-            </div>
+
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(3, 1fr)',
+                  gap: '0.75rem',
+                  marginTop: '1rem'
+                }}>
+                  <div style={{
+                    background: 'white',
+                    padding: '0.75rem',
+                    borderRadius: '6px',
+                    border: '1px solid #fee2e2',
+                    textAlign: 'center'
+                  }}>
+                    <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#b91c1c' }}>
+                      {learningPathData.items.filter(i => i.type === 'lesson').length}
+                    </div>
+                    <div style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '0.25rem' }}>
+                      Lessons
+                    </div>
+                  </div>
+                  <div style={{
+                    background: 'white',
+                    padding: '0.75rem',
+                    borderRadius: '6px',
+                    border: '1px solid #fee2e2',
+                    textAlign: 'center'
+                  }}>
+                    <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#b91c1c' }}>
+                      {learningPathData.items.filter(i => i.type === 'practice').length}
+                    </div>
+                    <div style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '0.25rem' }}>
+                      Practice
+                    </div>
+                  </div>
+                  <div style={{
+                    background: 'white',
+                    padding: '0.75rem',
+                    borderRadius: '6px',
+                    border: '1px solid #fee2e2',
+                    textAlign: 'center'
+                  }}>
+                    <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#b91c1c' }}>
+                      {learningPathData.items.filter(i => i.type === 'practice_test').length}
+                    </div>
+                    <div style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '0.25rem' }}>
+                      Tests
+                    </div>
+                  </div>
+                </div>
+
+                <p style={{
+                  marginTop: '1rem',
+                  marginBottom: '0',
+                  fontSize: '0.875rem',
+                  color: '#6b7280',
+                  fontStyle: 'italic'
+                }}>
+                  Your complete schedule with dates and times is ready in your Learning Path
+                </p>
+              </div>
+            ) : (
+              <div style={{
+                fontSize: '0.95rem',
+                color: '#374151',
+                lineHeight: '1.6'
+              }}>
+                {analysisData.weak_lessons?.length > 0 ? (
+                  <>
+                    <p style={{ marginBottom: '0.75rem' }}>
+                      We identified <strong>{analysisData.weak_lessons.length} areas</strong> for improvement. Your {weeksUntilExam}-week study plan focuses on:
+                    </p>
+
+                    <ul style={{
+                      listStyle: 'none',
+                      padding: 0,
+                      margin: '0.75rem 0'
+                    }}>
+                      {analysisData.weak_lessons.slice(0, 5).map((lesson, index) => (
+                        <li key={index} style={{
+                          display: 'flex',
+                          alignItems: 'start',
+                          marginBottom: '0.5rem',
+                          fontSize: '0.875rem'
+                        }}>
+                          <span style={{
+                            background: '#b91c1c',
+                            color: 'white',
+                            borderRadius: '50%',
+                            width: '20px',
+                            height: '20px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: '0.7rem',
+                            fontWeight: '600',
+                            marginRight: '0.5rem',
+                            flexShrink: 0,
+                            marginTop: '1px'
+                          }}>
+                            {index + 1}
+                          </span>
+                          <span>
+                            <strong>{lesson.lesson_title || lesson.lesson_id}</strong> ({((lesson.accuracy || 0)).toFixed(0)}% accuracy)
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <p style={{ marginBottom: '0.75rem' }}>
+                    Your {weeksUntilExam}-week personalized study plan is ready! Start with the recommended lessons to build your skills.
+                  </p>
+                )}
+
+                <p style={{ marginTop: '1rem', marginBottom: '0' }}>
+                  {isDefaultTimeline ? (
+                    <>We've created a <strong>12-week plan</strong> to help you master the material at your own pace.</>
+                  ) : (
+                    <>With <strong>{weeksUntilExam} weeks</strong> until your test, your plan is optimized to reach your target score of <strong>{userGoalsData?.target_score || 28}</strong>.</>
+                  )}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* CTA Button */}
@@ -2393,6 +2552,71 @@ const DiagnosticTest = ({ onClose }) => {
                 </select>
               </div>
             </div>
+
+            {/* Weekly Study Commitment */}
+            {(() => {
+              const practiceTestHours = 3;
+              const reviewHours = 2;
+              const regularStudyHours = Object.values(onboardingData.study_hours).reduce((sum, hours) => sum + (hours || 0), 0);
+              const week1TotalHours = regularStudyHours + practiceTestHours + reviewHours;
+
+              let totalWeeklyHours = week1TotalHours;
+              if (onboardingData.use_alternating_weeks) {
+                const studyHoursWeek2 = onboardingData.study_hours_week2 || {};
+                const regularStudyHoursWeek2 = Object.values(studyHoursWeek2).reduce((sum, hours) => sum + (hours || 0), 0);
+                const week2TotalHours = regularStudyHoursWeek2 + practiceTestHours + reviewHours;
+                totalWeeklyHours = (week1TotalHours + week2TotalHours) / 2;
+              }
+
+              const selectedTier = onboardingData.weekly_hours_tier || 'moderate';
+              const tierRanges = {
+                'light': { min: 1, max: 5, label: '1-5 hours/week' },
+                'moderate': { min: 5, max: 10, label: '5-10 hours/week' },
+                'intensive': { min: 10, max: 15, label: '10-15 hours/week' },
+                'extreme': { min: 15, max: 100, label: '15+ hours/week' }
+              };
+
+              const range = tierRanges[selectedTier];
+              const hoursMismatch = totalWeeklyHours < range.min || totalWeeklyHours > range.max;
+
+              return (
+                <div style={{ marginTop: '1.5rem' }}>
+                  <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '600', color: '#374151', marginBottom: '0.5rem' }}>
+                    Weekly Study Commitment
+                  </label>
+                  <select
+                    value={onboardingData.weekly_hours_tier}
+                    onChange={(e) => setOnboardingData({ ...onboardingData, weekly_hours_tier: e.target.value })}
+                    style={{
+                      width: '100%',
+                      padding: '0.65rem',
+                      border: hoursMismatch ? '1px solid #ef4444' : '1px solid #d1d5db',
+                      borderLeft: hoursMismatch ? '3px solid #ef4444' : '1px solid #d1d5db',
+                      borderRadius: '8px',
+                      fontSize: '0.95rem',
+                      fontFamily: 'inherit',
+                      background: 'white'
+                    }}
+                  >
+                    <option value="light" disabled={totalWeeklyHours > 8}>Light (5-8 hours/week)</option>
+                    <option value="moderate" disabled={totalWeeklyHours < 8 || totalWeeklyHours > 12}>Moderate (8-12 hours/week)</option>
+                    <option value="intensive" disabled={totalWeeklyHours < 12 || totalWeeklyHours > 17}>Intensive (12-17 hours/week)</option>
+                    <option value="extreme" disabled={totalWeeklyHours < 17}>Extreme (17+ hours/week)</option>
+                  </select>
+                  <p style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '0.5rem' }}>
+                    {onboardingData.use_alternating_weeks
+                      ? `Average: ${totalWeeklyHours.toFixed(1)}h/week (both weeks include 3h practice test + 2h review)`
+                      : `Total: ${totalWeeklyHours.toFixed(1)}h/week (includes 3h practice test + 2h review)`
+                    }
+                  </p>
+                  {hoursMismatch && (
+                    <p style={{ fontSize: '0.75rem', color: '#ef4444', marginTop: '0.5rem', fontWeight: '500' }}>
+                      Your {onboardingData.use_alternating_weeks ? 'average' : 'total'} hours ({totalWeeklyHours.toFixed(1)}h/week) don't match {selectedTier.toUpperCase()} ({range.label})
+                    </p>
+                  )}
+                </div>
+              );
+            })()}
 
           </div>
 

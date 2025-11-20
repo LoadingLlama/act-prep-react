@@ -5,57 +5,70 @@
 
 export const loginStyles = {
   container: {
-    minHeight: '100vh',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: '100vh',
+    maxHeight: '100vh',
+    width: '100vw',
+    maxWidth: '100vw',
+    overflow: 'hidden',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    background: '#ffffff',
-    padding: '24px',
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica, Arial, sans-serif',
-    position: 'relative',
+    background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%)',
+    padding: '0',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Helvetica, Arial, sans-serif',
   },
 
   card: {
-    background: '#ffffff',
-    border: '1px solid #E5E7EB',
-    borderRadius: '12px',
-    padding: '48px 40px',
-    maxWidth: '440px',
-    width: '100%',
-    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+    background: 'rgba(255, 255, 255, 0.7)',
+    backdropFilter: 'blur(20px) saturate(180%)',
+    WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+    border: '1px solid rgba(226, 232, 240, 0.6)',
+    borderRadius: '16px',
+    padding: '24px 32px',
+    maxWidth: '380px',
+    width: '90%',
+    maxHeight: '90vh',
+    overflowY: 'hidden',
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8)',
     position: 'relative',
+    margin: '0 auto',
   },
 
   title: {
     fontFamily: '-apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica, Arial, sans-serif',
-    fontSize: '32px',
+    fontSize: '26px',
     fontWeight: '700',
     color: '#111827',
-    marginBottom: '8px',
+    marginBottom: '4px',
     textAlign: 'center',
     letterSpacing: '-0.02em',
   },
 
   subtitle: {
     fontFamily: '-apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica, Arial, sans-serif',
-    fontSize: '15px',
+    fontSize: '13px',
     color: '#6B7280',
-    marginBottom: '32px',
+    marginBottom: '16px',
     textAlign: 'center',
-    lineHeight: '1.5',
+    lineHeight: '1.4',
     fontWeight: '400',
   },
 
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '16px',
+    gap: '10px',
   },
 
   inputGroup: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '6px',
+    gap: '3px',
   },
 
   label: {
@@ -67,18 +80,21 @@ export const loginStyles = {
   },
 
   input: {
-    padding: '12px 14px',
-    fontSize: '15px',
-    border: '1px solid #D1D5DB',
+    padding: '8px 10px',
+    fontSize: '13px',
+    border: '1px solid rgba(209, 213, 219, 0.6)',
     borderRadius: '8px',
     outline: 'none',
-    transition: 'all 0.2s ease',
+    transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
     fontFamily: 'inherit',
-    background: '#ffffff',
+    background: 'rgba(255, 255, 255, 0.8)',
+    backdropFilter: 'blur(10px)',
+    WebkitBackdropFilter: 'blur(10px)',
     color: '#111827',
     '&:focus': {
       borderColor: '#1e3a8a',
-      boxShadow: '0 0 0 3px rgba(30, 58, 138, 0.1)',
+      boxShadow: '0 0 0 3px rgba(30, 58, 138, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5)',
+      background: 'rgba(255, 255, 255, 1)',
     },
     '&::placeholder': {
       color: '#9CA3AF',
@@ -87,33 +103,38 @@ export const loginStyles = {
 
   inputFocus: {
     borderColor: '#1e3a8a',
-    boxShadow: '0 0 0 3px rgba(30, 58, 138, 0.1)',
+    boxShadow: '0 0 0 3px rgba(30, 58, 138, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5)',
+    background: 'rgba(255, 255, 255, 1)',
   },
 
   hint: {
-    fontSize: '12px',
+    fontSize: '11px',
     color: '#6B7280',
   },
 
   submitButton: {
-    padding: '13px',
-    fontSize: '15px',
+    padding: '11px 16px',
+    fontSize: '13px',
     fontWeight: '600',
     color: '#ffffff',
-    background: '#1e3a8a',
+    background: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)',
     border: 'none',
     borderRadius: '8px',
     cursor: 'pointer',
-    transition: 'all 0.2s ease',
-    marginTop: '8px',
-    boxShadow: '0 2px 8px rgba(30, 58, 138, 0.2)',
+    transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+    marginTop: '2px',
+    minHeight: '44px',
+    width: '100%',
+    boxShadow: '0 2px 4px rgba(30, 58, 138, 0.3)',
     '&:hover': {
-      background: '#1e40af',
       transform: 'translateY(-1px)',
-      boxShadow: '0 4px 12px rgba(30, 58, 138, 0.3)',
+      boxShadow: '0 6px 12px rgba(30, 58, 138, 0.4)',
+      background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
     },
     '&:active': {
       transform: 'translateY(0)',
+      boxShadow: '0 2px 4px rgba(30, 58, 138, 0.3)',
+      background: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)',
     },
   },
 
@@ -125,42 +146,96 @@ export const loginStyles = {
   divider: {
     display: 'flex',
     alignItems: 'center',
-    margin: '20px 0',
+    margin: '12px 0',
     position: 'relative',
   },
 
   dividerText: {
-    padding: '0 16px',
-    fontSize: '13px',
+    padding: '0 12px',
+    fontSize: '12px',
     color: '#9CA3AF',
     fontWeight: '500',
     background: '#ffffff',
     margin: '0 auto',
   },
 
-  googleButton: {
+  socialButton: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     gap: '10px',
-    padding: '12px 16px',
-    fontSize: '15px',
-    fontWeight: '600',
-    color: '#374151',
-    background: '#ffffff',
-    border: '1px solid #D1D5DB',
+    padding: '11px 16px',
+    fontSize: '13px',
+    fontWeight: '500',
+    width: '100%',
+    minHeight: '44px',
+    background: 'rgba(255, 255, 255, 0.8)',
+    backdropFilter: 'blur(10px)',
+    WebkitBackdropFilter: 'blur(10px)',
+    border: '1px solid rgba(209, 213, 219, 0.6)',
     borderRadius: '8px',
     cursor: 'pointer',
-    transition: 'all 0.2s ease',
+    transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.06)',
+    textAlign: 'center',
+    position: 'relative',
     '&:hover': {
-      background: '#F9FAFB',
-      borderColor: '#9CA3AF',
       transform: 'translateY(-1px)',
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
+      boxShadow: '0 6px 12px rgba(0, 0, 0, 0.12)',
     },
     '&:active': {
       transform: 'translateY(0)',
+      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.06)',
     },
+  },
+
+  googleButton: {
+    color: '#374151',
+    background: 'rgba(255, 255, 255, 0.9)',
+    border: '1px solid rgba(209, 213, 219, 0.6)',
+    '&:hover': {
+      background: '#ffffff',
+      borderColor: '#9CA3AF',
+      boxShadow: '0 6px 12px rgba(0, 0, 0, 0.12)',
+    },
+    '&:active': {
+      background: '#f9fafb',
+    },
+  },
+
+  facebookButton: {
+    background: '#1877F2',
+    color: '#ffffff',
+    border: '1px solid #1877F2',
+    '&:hover': {
+      background: '#0c66d8',
+      borderColor: '#0c66d8',
+      boxShadow: '0 6px 12px rgba(24, 119, 242, 0.4)',
+    },
+    '&:active': {
+      background: '#0a5bc4',
+    },
+  },
+
+  appleButton: {
+    background: '#000000',
+    color: '#ffffff',
+    border: '1px solid #000000',
+    '&:hover': {
+      background: '#2a2a2a',
+      borderColor: '#2a2a2a',
+      boxShadow: '0 6px 12px rgba(0, 0, 0, 0.4)',
+    },
+    '&:active': {
+      background: '#0a0a0a',
+    },
+  },
+
+  socialButtonsContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '8px',
+    width: '100%',
   },
 
   googleIcon: {
@@ -170,12 +245,12 @@ export const loginStyles = {
   },
 
   footer: {
-    marginTop: '28px',
+    marginTop: '12px',
     textAlign: 'center',
   },
 
   footerText: {
-    fontSize: '14px',
+    fontSize: '12px',
     color: '#6B7280',
   },
 
@@ -216,10 +291,14 @@ export const loginStyles = {
     top: '32px',
     left: '32px',
     fontSize: '24px',
-    fontWeight: '700',
+    fontWeight: '400',
+    fontFamily: '"Times New Roman", Times, serif',
+    color: '#1e3a8a',
     zIndex: 10,
     display: 'flex',
     alignItems: 'center',
+    gap: '4px',
+    letterSpacing: '-0.01em',
     '@media (max-width: 768px)': {
       fontSize: '20px',
       top: '24px',
@@ -229,11 +308,11 @@ export const loginStyles = {
 
   logoNomi: {
     color: '#1e3a8a',
-    fontWeight: '700',
+    fontWeight: '400',
   },
 
   logoAcademy: {
-    color: '#000000',
+    color: '#1e3a8a',
     fontWeight: '400',
   },
 };

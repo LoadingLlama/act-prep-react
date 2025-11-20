@@ -1,0 +1,217 @@
+[
+  {
+    "id": 171,
+    "test_number": 1,
+    "question_number": 36,
+    "passage_id": 53,
+    "question_text": "According to the passage, what size are the prototype leaves being developed in Lewis's lab?",
+    "choices": [
+      "F. About the size of a human hand.",
+      "G. About the size of a maple leaf.",
+      "H. rNot much larger than a carpet square.",
+      "J. Not much larger than a computer chip."
+    ],
+    "correct_answer": "J",
+    "explanation": "According to the passage, not much larger than a computer chip.. This information is directly stated in the text.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Clear Evidence",
+    "lesson_id": "ac4440f6-f391-4a04-9a5c-751a2e0ca5b7",
+    "section": "reading"
+  },
+  {
+    "id": 172,
+    "test_number": 1,
+    "question_number": 37,
+    "passage_id": 53,
+    "question_text": "As it is used in line 25, the phrase <i>pump out </i> most nearly means:",
+    "choices": [
+      "A. Remove.",
+      "B. Drain.",
+      "C. Produce.",
+      "D. Siphon."
+    ],
+    "correct_answer": "C",
+    "explanation": "Produce. best answers the question based on the evidence and context provided in the passage.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Words In Context",
+    "lesson_id": "c22d531f-b59a-41fe-8b19-bf2f8e063b48",
+    "section": "reading"
+  },
+  {
+    "id": 173,
+    "test_number": 1,
+    "question_number": 38,
+    "passage_id": 53,
+    "question_text": "According to the passage, what physical form does Lewis imagine his artificial leaves will ideally take?",
+    "choices": [
+      "F. Chiplike devices.",
+      "G. Thin, flexible films.",
+      "H. Rigid miniature solar panels.",
+      "J. Refrigerated photovoltaic cells."
+    ],
+    "correct_answer": "G",
+    "explanation": "According to the passage, thin, flexible films.. This information is directly stated in the text.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Clear Evidence",
+    "lesson_id": "ac4440f6-f391-4a04-9a5c-751a2e0ca5b7",
+    "section": "reading"
+  },
+  {
+    "id": 174,
+    "test_number": 1,
+    "question_number": 39,
+    "passage_id": 53,
+    "question_text": "The passage states that the two principal elements of Lewis\u2019s artificial leaf technology are:",
+    "choices": [
+      "A. a fuel cell and ambient air.",
+      "B. solar electricity and a catalyst..",
+      "C. platinum and silicon.",
+      "D. acollector and an electrolyzer."
+    ],
+    "correct_answer": "D",
+    "explanation": "According to the passage, acollector and an electrolyzer.. This information is directly stated in the text.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Clear Evidence",
+    "lesson_id": "ac4440f6-f391-4a04-9a5c-751a2e0ca5b7",
+    "section": "reading"
+  },
+  {
+    "id": 175,
+    "test_number": 1,
+    "question_number": 40,
+    "passage_id": 53,
+    "question_text": "According to the passage, what is one outcome of the process of burning hydrogen in a fuel cell?",
+    "choices": [
+      "F. The electron energy splits silicon crystals.",
+      "G. The hydrogen bonds with oxygen.",
+      "H. The fuel cell\u2019s lining deteriorates.",
+      "J. The exhaust produced is water."
+    ],
+    "correct_answer": "J",
+    "explanation": "According to the passage, the exhaust produced is water.. This information is directly stated in the text.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Clear Evidence",
+    "lesson_id": "ac4440f6-f391-4a04-9a5c-751a2e0ca5b7",
+    "section": "reading"
+  },
+  {
+    "id": 176,
+    "test_number": 1,
+    "question_number": 1,
+    "passage_id": 91,
+    "question_text": "Based on <i><i>Table 1</i></i>, for H\u2082 at 273 K, the absolute value of the difference between the molar volume at 5.00 atm and the molar volume at 10.0 atm is approximately:",
+    "choices": [
+      "A. 1.8 L",
+      "B. 2.2 L",
+      "C. 4.0 L",
+      "D. 5.0 L"
+    ],
+    "correct_answer": "B",
+    "explanation": "Analyzing Table 1, we can determine that 2.2 l.",
+    "question_type": "Reading Charts, Graphs, and Tables",
+    "difficulty": null,
+    "created_at": "2025-10-28T07:48:11.563974+00:00",
+    "updated_at": "2025-10-28T07:48:11.563974+00:00",
+    "Image_url": null,
+    "chapter": null,
+    "lesson_id": "53c5676d-0fa7-4416-8848-38268483599e",
+    "section": "science"
+  },
+  {
+    "id": 177,
+    "test_number": 1,
+    "question_number": 2,
+    "passage_id": 91,
+    "question_text": "Consider the molar volumes of He, Ar, H\u2082, and N\u2082 listed in <i><i>Table 2</i></i> at 323 K. What is the order of these gases from the gas having the smallest molar volume to the gas having the largest molar volume?",
+    "choices": [
+      "A. Ar, He, N\u2082, H\u2082",
+      "B. Ar, N\u2082, He, H\u2082",
+      "C. H\u2082, He, N\u2082, Ar",
+      "D. H\u2082, N\u2082, He, Ar"
+    ],
+    "correct_answer": "G",
+    "explanation": "Analyzing Table 2, we can determine that .",
+    "question_type": "Reading Charts, Graphs, and Tables",
+    "difficulty": null,
+    "created_at": "2025-10-28T07:48:11.563974+00:00",
+    "updated_at": "2025-10-28T07:48:11.563974+00:00",
+    "Image_url": null,
+    "chapter": null,
+    "lesson_id": "53c5676d-0fa7-4416-8848-38268483599e",
+    "section": "science"
+  },
+  {
+    "id": 178,
+    "test_number": 1,
+    "question_number": 3,
+    "passage_id": 91,
+    "question_text": "Based on Tables 1 and 2, at any given temperature and pressure, the molar volume of which other gas is most similar to the molar volume of O\u2082?",
+    "choices": [
+      "A. He",
+      "B. Ar",
+      "C. H\u2082",
+      "D. N\u2082"
+    ],
+    "correct_answer": "B",
+    "explanation": "Analyzing the data, we can determine that ar.",
+    "question_type": "Reading Charts, Graphs, and Tables",
+    "difficulty": null,
+    "created_at": "2025-10-28T07:48:11.563974+00:00",
+    "updated_at": "2025-10-28T07:48:11.563974+00:00",
+    "Image_url": null,
+    "chapter": null,
+    "lesson_id": "53c5676d-0fa7-4416-8848-38268483599e",
+    "section": "science"
+  },
+  {
+    "id": 179,
+    "test_number": 1,
+    "question_number": 4,
+    "passage_id": 91,
+    "question_text": "An ideal gas has a molar volume of 63.429 L at 1.00 atm and 773 K. At 1.00 atm and 773 K, how many of the gases listed in <i><i>Table 2</i></i> have a <i> smaller </i> molar volume than that of an ideal gas?",
+    "choices": [
+      "A. 0",
+      "B. 2",
+      "C. 4",
+      "D. 6"
+    ],
+    "correct_answer": "F",
+    "explanation": "Analyzing Table 2, we can determine that .",
+    "question_type": "Reading Charts, Graphs, and Tables",
+    "difficulty": null,
+    "created_at": "2025-10-28T07:48:11.563974+00:00",
+    "updated_at": "2025-10-28T07:48:11.563974+00:00",
+    "Image_url": null,
+    "chapter": null,
+    "lesson_id": "53c5676d-0fa7-4416-8848-38268483599e",
+    "section": "science"
+  },
+  {
+    "id": 180,
+    "test_number": 1,
+    "question_number": 5,
+    "passage_id": 91,
+    "question_text": "In a gas sample, collisions between gas particles are common. The average time a gas particle spends between one collision and the next is called the <i> mean free time.</i> In general, mean free time decreases as a sample's volume decreases. Based on <i><i>Table 1</i></i>, the mean free time would be <i> least </i> for a 1 mol sample of which gas at which pressure?",
+    "choices": [
+      "A. He at 0.500 atm",
+      "B. O\u2082 at 0.500 atm",
+      "C. He at 100.0 atm",
+      "D. O\u2082 at 100.0 atm"
+    ],
+    "correct_answer": "D",
+    "explanation": "The data in Table 1 demonstrates that o\u2082 at 100.0 atm, showing the relationship between the variables being studied.",
+    "question_type": "Reading Charts, Graphs, and Tables",
+    "difficulty": null,
+    "created_at": "2025-10-28T07:48:11.563974+00:00",
+    "updated_at": "2025-10-28T07:48:11.563974+00:00",
+    "Image_url": null,
+    "chapter": null,
+    "lesson_id": "53c5676d-0fa7-4416-8848-38268483599e",
+    "section": "science"
+  }
+]

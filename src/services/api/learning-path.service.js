@@ -9,6 +9,20 @@ import errorTracker from '../logging/errorTracker';
 import { lessonStructure } from '../../data/lessonStructure';
 import PracticeTestsService from './practiceTests.service';
 
+/**
+ * Helper function to check if a lesson has practice available
+ * Introduction lessons (ACT Test Basics, Section Fundamentals) do NOT have practice
+ * @param {string} lessonKey - Lesson key to check
+ * @returns {boolean} - True if lesson has practice, false otherwise
+ */
+const lessonHasPractice = (lessonKey) => {
+  const lesson = lessonStructure.find(l => l.id === lessonKey);
+  if (!lesson) return true; // Default to true if lesson not found
+
+  // Introduction lessons do NOT have practice available
+  return lesson.category !== 'Introduction';
+};
+
 const LearningPathService = {
   /**
    * Generate a personalized learning path for a user
@@ -29,17 +43,22 @@ const LearningPathService = {
     const startTime = Date.now();
     const TIMEOUT_MS = 30000; // 30 second hard timeout
 
+    console.log('🚀 STARTING LEARNING PATH GENERATION:', { userId, goals, diagnosticAnalysis });
     logger.info('LearningPathService', 'generateLearningPath:START', { userId });
 
     try {
       // Wrap entire generation in a timeout
+      console.log('⏱️  Starting generation with 30s timeout...');
       const generationPromise = this._generateLearningPathInternal(userId, goals, diagnosticAnalysis, startTime);
       const timeoutPromise = new Promise((_, reject) =>
         setTimeout(() => reject(new Error('Learning path generation timeout after 30s')), TIMEOUT_MS)
       );
 
-      return await Promise.race([generationPromise, timeoutPromise]);
+      const result = await Promise.race([generationPromise, timeoutPromise]);
+      console.log('✅ GENERATION COMPLETED:', result);
+      return result;
     } catch (error) {
+      console.error('❌ GENERATION FAILED:', error);
       errorTracker.trackError('LearningPathService', 'generateLearningPath', { userId }, error);
 
       // Log failed algorithm run
@@ -205,15 +224,19 @@ const LearningPathService = {
       });
 
       // 8. Calculate days until exam and maximum weeks available
-      // Parse exam date in local timezone to avoid timezone shift issues
+      // Parse exam date - handles both ISO timestamps and simple date strings
       const examDate = goals.exam_date ? (() => {
-        const [year, month, day] = goals.exam_date.split('-').map(Number);
-        const date = new Date(year, month - 1, day);
+        // Create Date object from ISO string or simple date string
+        const date = new Date(goals.exam_date);
+
+        // Validate the date
+        if (isNaN(date.getTime())) {
+          console.error('❌ Invalid exam date:', goals.exam_date);
+          return null;
+        }
+
         console.log('📅 PARSING EXAM DATE:', {
           goalExamDate: goals.exam_date,
-          parsedYear: year,
-          parsedMonth: month,
-          parsedDay: day,
           createdDate: date,
           dateISO: date.toISOString(),
           dateLocal: date.toLocaleDateString()
@@ -1261,7 +1284,13 @@ const LearningPathService = {
             itemsScheduledToday.push(lesson);
             minutesUsed += lesson.estimated_minutes;
             // Track this lesson as scheduled (for practice eligibility)
-            lessonsScheduledThisWeek.push(lesson.lesson_key);
+            // IMPORTANT: Only add to practice pool if lesson has practice available
+            // Introduction lessons (ACT Test Basics, Section Fundamentals, etc.) do NOT have practice
+            if (lessonHasPractice(lesson.lesson_key)) {
+              lessonsScheduledThisWeek.push(lesson.lesson_key);
+            } else {
+              console.log(`⏭️  Skipping practice for intro lesson: ${lesson.lesson_key}`);
+            }
           }
 
           // THIRD: Add ONE practice activity if there's a lesson today
@@ -1273,11 +1302,12 @@ const LearningPathService = {
           // NEVER include lessons not yet taught (scheduled for future days)
           const practiceItemDuration = 30; // Practice activities are ~30 minutes each
 
-          // Check if at least 1 lesson was scheduled today
-          const hasLessonToday = itemsScheduledToday.some(item => item.type === 'lesson');
+          // Check if at least 1 lesson WITH PRACTICE AVAILABLE was scheduled today
+          // Introduction lessons do NOT have practice, so we skip practice generation if only intro lessons were taught
+          const hasLessonToday = itemsScheduledToday.some(item => item.type === 'lesson' && lessonHasPractice(item.lesson_key));
           const remainingMinutes = availableMinutes - minutesUsed;
 
-          // ALWAYS add practice if at least 1 lesson is scheduled today
+          // ALWAYS add practice if at least 1 lesson WITH PRACTICE is scheduled today
           // Practice is critical for retention and test preparation
           // NOTE: We add practice even if it exceeds available minutes - it's that important!
           if (hasLessonToday) {
@@ -1378,8 +1408,13 @@ const LearningPathService = {
             if (item.type === 'lesson') {
               pathItem.lesson_key = item.lesson_key;
               // Track this lesson as completed for future practice
-              if (!completedLessons.includes(item.lesson_key)) {
+              // IMPORTANT: Only add to practice pool if lesson has practice available
+              // Introduction lessons (ACT Test Basics, Section Fundamentals, etc.) do NOT have practice
+              const hasPractice = lessonHasPractice(item.lesson_key);
+              if (!completedLessons.includes(item.lesson_key) && hasPractice) {
                 completedLessons.push(item.lesson_key);
+              } else if (!hasPractice) {
+                console.log(`⏭️  Not adding intro lesson to practice pool: ${item.lesson_key}`);
               }
             } else if (item.type === 'practice') {
               // Practice item - references a previously completed lesson

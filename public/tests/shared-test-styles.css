@@ -1042,6 +1042,21 @@ body {
     border-color: #64748b !important;
 }
 
+.navigator-question-item.review-correct {
+    background: #dcfce7 !important;
+    border-color: #86efac !important;
+}
+
+.navigator-question-item.review-incorrect {
+    background: #fee2e2 !important;
+    border-color: #fecaca !important;
+}
+
+.navigator-question-item.review-skipped {
+    background: #fef3c7 !important;
+    border-color: #fde68a !important;
+}
+
 /* Science Table Styles */
 .science-table {
     width: 100%;

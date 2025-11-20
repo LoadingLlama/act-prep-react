@@ -1,0 +1,212 @@
+[
+  {
+    "id": 101,
+    "test_number": 1,
+    "question_number": 26,
+    "question_text": "A right triangle is shown in the figure below. What is the value of sin\u03b8 ?",
+    "choices": [
+      "F. 5/13",
+      "G. 5/12",
+      "H. 12/13",
+      "J. 13/12",
+      "K. 13/5"
+    ],
+    "correct_answer": "F",
+    "explanation": "Applying geometric angle relationships, the angle measures 5/13.",
+    "question_type": "Trigonometry",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/m26.jpg",
+    "chapter": "17",
+    "lesson_id": "a0cddccc-a9e8-4ec0-a0b2-ef1cc46a161a",
+    "section": "math"
+  },
+  {
+    "id": 102,
+    "test_number": 1,
+    "question_number": 27,
+    "question_text": "A 6-inch-by-6-inch square grid shown below is divided into 36 squares, each with a side length of 1 inch. Each vertex of the 2 shaded triangles lies at an intersection of 2 grid lines. What fractional part of the 6-inch-by-6-inch square is shaded?",
+    "choices": [
+      "A. 2/3",
+      "B. 4/5",
+      "C. 4/9",
+      "D. 5/9",
+      "E. 8/9"
+    ],
+    "correct_answer": "C",
+    "explanation": "To find the slope, use m = (y\u2082 - y\u2081)/(x\u2082 - x\u2081). Plugging in the coordinates (6, -6) and (36, 1), we get m = (1 - -6)/(36 - 6) = 4/9.",
+    "question_type": "Geometry Part 2 - Area",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/m27.jpg",
+    "chapter": "4",
+    "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+    "section": "math"
+  },
+  {
+    "id": 103,
+    "test_number": 1,
+    "question_number": 28,
+    "question_text": "All the values in the equation below are exact. What value of \u00a2 makes the equation true?  \r\n           (4.25 x 10^(2<i>x<i/>+4))(6 x 10\u2077) = 255",
+    "choices": [
+      "F. -7",
+      "G. -6.5",
+      "H. -5",
+      "J. -4.5",
+      "K. -4"
+    ],
+    "correct_answer": "H",
+    "explanation": "Working through the problem step-by-step with the values 4.25, 10, 2, the correct answer is -5.",
+    "question_type": "Exponents, Scientific Notation",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "13, 30",
+    "lesson_id": "b8c03bf0-99df-460d-be21-0015eebe7920",
+    "section": "math"
+  },
+  {
+    "id": 104,
+    "test_number": 1,
+    "question_number": 29,
+    "question_text": "Which of the following inequalities is true for all positive integers <i>m<i/>?",
+    "choices": [
+      "A. <i>m<i/> <= 1/<i>m<i/> ",
+      "B. <i>m<i/> <= \u221a<i>m<i/> ",
+      "C. <i>m<i/> => <i>m<i/>^2 ",
+      "D. <i>m<i/> <= (<i>m<i/> + 1)",
+      "E. <i>m<i/> => \u221a(<i>m<i/> + 1)"
+    ],
+    "correct_answer": "D",
+    "explanation": "Following the mathematical operations, the answer is <i>m<i/> <= (<i>m<i/> + 1).",
+    "question_type": "Inequalities",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "27",
+    "lesson_id": "60e3cd06-406b-45bc-b9d7-e887ef8eeca6",
+    "section": "math"
+  },
+  {
+    "id": 105,
+    "test_number": 1,
+    "question_number": 30,
+    "question_text": "A formula for the volume, V, of a right circular cylinder is V = \u03c0r\u00b2<i>h</i>, where <i>r</i> is the radius and A is the height. The cylindrical tank shown below has radius 5 meters and height 3 meters and is filled with water.\r\n\r\nGiven that the weight of 1 cubic meter of water is approximately 2,205 pounds, the weight, in pounds, of the water in the tank is:",
+    "choices": [
+      "F. less than 200,000,",
+      "G. between 200,000 and 300,000",
+      "H. between 300,000 and 500,000",
+      "J. between 500,000 and 1,000,000.",
+      "K. more than 1,000,000."
+    ],
+    "correct_answer": "J",
+    "explanation": "Working through the problem step-by-step with the values 5, 3, 1, the correct answer is between 500,000 and 1,000,000..",
+    "question_type": "Geometry Part 2 - Volume",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/m30.jpg",
+    "chapter": "4",
+    "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+    "section": "math"
+  },
+  {
+    "id": 106,
+    "test_number": 1,
+    "question_number": 31,
+    "question_text": "Graphed in the standard <i>(x,y) </i> coordinate plane below is a right triangle with vertices (0,0), (\u201440,0), and (0,30). What is the length, in coordinate units, of the hypotenuse of the triangle?",
+    "choices": [
+      "A. 30",
+      "B. 35",
+      "C. 40",
+      "D. 50",
+      "E. 70"
+    ],
+    "correct_answer": "D",
+    "explanation": "Using properties of angles and the given measurement of 0\u00b0, the angle in question measures 50.",
+    "question_type": "Geometry Part 2 \u2013 Pythagorean Theorem",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/m31.jpg",
+    "chapter": "4",
+    "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+    "section": "math"
+  },
+  {
+    "id": 107,
+    "test_number": 1,
+    "question_number": 32,
+    "question_text": "Every graph in one of the following categories has a vertical line of symmetry regardless of how it is oriented in the standard <i>(x,y)</i> coordinate plane. Which one?",
+    "choices": [
+      "F. Circles",
+      "G. Squares",
+      "H. Ellipses",
+      "J. Triangles",
+      "K. Rectangles"
+    ],
+    "correct_answer": "F",
+    "explanation": "Using the slope formula with the given points, the slope is Circles.",
+    "question_type": "Visual Spatial",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "35",
+    "lesson_id": "15d5d79e-44fe-4aa6-a257-9e6260c83720",
+    "section": "math"
+  },
+  {
+    "id": 108,
+    "test_number": 1,
+    "question_number": 33,
+    "question_text": " In the standard <i>(x,y)</i> coordinate plane, the graph of y=30(<i>x</i>+17)\u00b2\u2014 42 is a parabola. What are the coordinates of the vertex of the parabola?",
+    "choices": [
+      "A. (-30,-42)",
+      "B. (-17,-42)",
+      "C. (17,-42)",
+      "D. (17,42)",
+      "E. (30,42)"
+    ],
+    "correct_answer": "B",
+    "explanation": "Working through the problem step-by-step with the values 30, 17, 42, the correct answer is (-17,-42).",
+    "question_type": "Quadratics \u2013 Vertex Form",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "16",
+    "lesson_id": "f7516c41-afb2-48fb-a4e2-df9fe41d8b23",
+    "section": "math"
+  },
+  {
+    "id": 109,
+    "test_number": 1,
+    "question_number": 34,
+    "question_text": "One side of square <i>ABCD</i> has a length of 15 meters. A certain rectangle whose area is equal to the area of <i>ABCD</i> has a width of 10 meters. What is the length, in meters, of the rectangle?",
+    "choices": [
+      "F. 15",
+      "G. 20",
+      "H. 22.5",
+      "J. 25",
+      "K. 37.5"
+    ],
+    "correct_answer": "H",
+    "explanation": "The area of a rectangle is length \u00d7 width = 15 \u00d7 10 = 22.5.",
+    "question_type": "Geometry Part 2 - Area",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "4",
+    "lesson_id": "d2ae4a84-cb54-4006-8dee-8c325e443c2d",
+    "section": "math"
+  },
+  {
+    "id": 110,
+    "test_number": 1,
+    "question_number": 35,
+    "question_text": "The average weight of 10 boys is 77.0 pounds. If the youngest boy is excluded, the average weight of the 9 remaining boys is 78.0 pounds. What is the weight, in pounds, of the youngest boy?",
+    "choices": [
+      "A. 62",
+      "B. 68",
+      "C. 70",
+      "D. 78",
+      "E. 87"
+    ],
+    "correct_answer": "B",
+    "explanation": "Working through the problem step-by-step with the values 10, 77.0, 9, the correct answer is 68.",
+    "question_type": "Mean",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "12",
+    "lesson_id": "4b3fd0c3-4de3-4e74-bd87-f78f5fb0ad17",
+    "section": "math"
+  }
+]

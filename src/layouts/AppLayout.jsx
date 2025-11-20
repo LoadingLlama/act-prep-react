@@ -13,7 +13,7 @@ import { storage, domUtils } from '../utils/helpers';
 import { getAllLessons } from '../utils/lessonsDb';
 import { lessonStructure } from '../data/lessonStructure';
 import { getAllProgress, migrateLocalStorageProgress, updateProgress } from '../services/progressService';
-import { hasProSubscription } from '../services/subscription.service';
+import { hasProSubscription, getTrialInfo } from '../services/subscription.service';
 import { supabase } from '../supabaseClient';
 
 // Components
@@ -38,7 +38,8 @@ export default function AppLayout() {
   const [practiceTestOpen, setPracticeTestOpen] = useState(false);
   const [practiceTestNumber, setPracticeTestNumber] = useState(null);
   const [isPro, setIsPro] = useState(false);
-  const [trialDaysLeft, setTrialDaysLeft] = useState(14);
+  const [trialDaysLeft, setTrialDaysLeft] = useState(3);
+  const [isTrialExpired, setIsTrialExpired] = useState(false);
 
   // Debug logging for diagnostic state changes
   useEffect(() => {
@@ -118,14 +119,9 @@ export default function AppLayout() {
 
         // Only calculate trial days if not Pro
         if (!proStatus) {
-          const { data: userData } = await supabase.auth.getUser();
-          if (userData?.user?.created_at) {
-            const createdAt = new Date(userData.user.created_at);
-            const now = new Date();
-            const daysSinceCreation = Math.floor((now - createdAt) / (1000 * 60 * 60 * 24));
-            const daysRemaining = Math.max(0, 14 - daysSinceCreation);
-            setTrialDaysLeft(daysRemaining);
-          }
+          const trialInfo = await getTrialInfo(user.id);
+          setTrialDaysLeft(trialInfo.daysRemaining);
+          setIsTrialExpired(trialInfo.isExpired);
         }
       } catch (error) {
         console.error('Error checking subscription:', error);
@@ -134,6 +130,14 @@ export default function AppLayout() {
 
     checkSubscription();
   }, [user]);
+
+  // Redirect to upgrade page if trial expired
+  useEffect(() => {
+    if (!isPro && isTrialExpired && location.pathname !== '/app/upgrade') {
+      console.log('🚫 Trial expired, redirecting to upgrade page');
+      navigate('/app/upgrade', { replace: true });
+    }
+  }, [isPro, isTrialExpired, location.pathname, navigate]);
 
   // Get user initials from email
   const getUserInitials = () => {
@@ -267,6 +271,7 @@ export default function AppLayout() {
         onClose={() => setSidebarOpen(false)}
         isPro={isPro}
         trialDaysLeft={trialDaysLeft}
+        isTrialExpired={isTrialExpired}
       />
 
       {/* Main Content Area */}

@@ -1,0 +1,117 @@
+[
+  {
+    "id": 211,
+    "test_number": 1,
+    "question_number": 36,
+    "passage_id": 90,
+    "question_text": "A piece of String Y that is 1 cm in length would have the same mass as a piece of:",
+    "choices": [
+      "F. String X that is 1 cm in length.",
+      "G. String X that is 4 cm in length.",
+      "H. String Z that is 1 cm in length.",
+      "J. String Z that is 4 cm in length."
+    ],
+    "correct_answer": "G",
+    "explanation": "Analyzing the data, we can determine that string x that is 4 cm in length..",
+    "question_type": "Reading Charts, Graphs, and Tables",
+    "difficulty": null,
+    "created_at": "2025-10-28T07:48:11.563974+00:00",
+    "updated_at": "2025-10-28T07:48:11.563974+00:00",
+    "Image_url": null,
+    "chapter": null,
+    "lesson_id": "53c5676d-0fa7-4416-8848-38268483599e",
+    "section": "science"
+  },
+  {
+    "id": 212,
+    "test_number": 1,
+    "question_number": 37,
+    "passage_id": 90,
+    "question_text": "The student reported the data in Table 1 with how <i> many significant digits</i>?",
+    "choices": [
+      "A. Some data were reported with | significant digit, and some were reported with 2 significant digits,",
+      "B. Some data were reported with 2 significant digits, and some were reported with 3 significant digits.",
+      "C. All data were reported with 2 significant digits.",
+      "D. All data were reported with 3 significant digits."
+    ],
+    "correct_answer": "D",
+    "explanation": "Analyzing Table 1, we can determine that all data were reported with 3 significant digits..",
+    "question_type": "Reading Charts, Graphs, and Tables",
+    "difficulty": null,
+    "created_at": "2025-10-28T07:48:11.563974+00:00",
+    "updated_at": "2025-10-28T07:48:11.563974+00:00",
+    "Image_url": null,
+    "chapter": null,
+    "lesson_id": "53c5676d-0fa7-4416-8848-38268483599e",
+    "section": "science"
+  },
+  {
+    "id": 213,
+    "test_number": 1,
+    "question_number": 38,
+    "passage_id": 90,
+    "question_text": "For a string at constant tension, 1et <i>fn</n> represent the frequency of the nth harmonic (<n>f1</n> is the frequency of the 1st harmonic, <n>f2</n> is the frequency of the 2nd harmonic, <n>f3</n> is the frequency of the 3rd harmonic, and so on). Which of the following equations for <i>fn</n> is consistent with the results of Experiment 1 for String X ?",
+    "choices": [
+      "F. <n>fn</n>=<n>n</n>+<n>f1</n>",
+      "G. <n>fn</n>=<n>n</n>-<n>f1</n>",
+      "C. <n>fn</n>=<n>n</n>\u00d7<n>f1</n>",
+      "D. <n>fn</n>=<n>n</n>\u00f7<n>f1</n>"
+    ],
+    "correct_answer": "H",
+    "explanation": "Based on the experimental design and results presented, .",
+    "question_type": "Reading Charts, Graphs, and Tables",
+    "difficulty": null,
+    "created_at": "2025-10-28T07:48:11.563974+00:00",
+    "updated_at": "2025-10-28T07:48:11.563974+00:00",
+    "Image_url": null,
+    "chapter": null,
+    "lesson_id": "53c5676d-0fa7-4416-8848-38268483599e",
+    "section": "science"
+  },
+  {
+    "id": 214,
+    "test_number": 1,
+    "question_number": 39,
+    "passage_id": 90,
+    "question_text": "Suppose that a string having a mass per unit length of 0.32 g/cm had been tested in Experiment 2. The 4th harmonic of this string would most likely have occurred at a tension;",
+    "choices": [
+      "A. less than 0.03 N.",
+      "B. between 0.03 N and 0.13 N",
+      "C. between 0.13 N and 0.25 N",
+      "D. greater than 0.25 N."
+    ],
+    "correct_answer": "D",
+    "explanation": "Based on the experimental design and results presented, greater than 0.25 n..",
+    "question_type": "Approximation",
+    "difficulty": null,
+    "created_at": "2025-10-28T07:48:11.563974+00:00",
+    "updated_at": "2025-10-28T07:48:11.563974+00:00",
+    "Image_url": null,
+    "chapter": null,
+    "lesson_id": "4ca7c266-f0e2-48ff-adbd-204ae486d503",
+    "section": "science"
+  },
+  {
+    "id": 215,
+    "test_number": 1,
+    "question_number": 40,
+    "passage_id": 90,
+    "question_text": "Based on the results of Experiments 1 and 2, for a given harmonic, as \u03bc increased, did <i>f</n> increase or decrease, and did <i>T</n> increase or decrease?",
+    "choices": [
+      "F. <i>f</n> increased and <i>T</n> increased.",
+      "G. <i>f</n> increased and <i>T</n> decreased.",
+      "H. <i>f</n> decreased and <i>T</n> increased.",
+      "J. <i>f</n> decreased and <i>T</n> increased."
+    ],
+    "correct_answer": "H",
+    "explanation": "The data in the data demonstrates that <i>f</n> decreased and <i>t</n> increased., showing the relationship between the variables being studied.",
+    "question_type": "Trends",
+    "difficulty": null,
+    "created_at": "2025-10-28T07:48:11.563974+00:00",
+    "updated_at": "2025-10-28T07:48:11.563974+00:00",
+    "Image_url": null,
+    "chapter": null,
+    "lesson_id": "b8825e84-e3de-4642-913e-fc5c1ea70690",
+    "section": "science"
+  }
+]

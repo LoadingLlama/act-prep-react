@@ -1,0 +1,207 @@
+[
+  {
+    "id": 71,
+    "test_number": 1,
+    "question_number": 71,
+    "passage_id": 112,
+    "question_text": "Which choice best corrects the underlined portion?\r\n",
+    "choices": [
+      "A. NO CHANGE",
+      "B. protected",
+      "C. covered",
+      "D. filled,"
+    ],
+    "correct_answer": "C",
+    "explanation": "\"covered\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Word Choice",
+    "difficulty": null,
+    "chapter": "11",
+    "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+    "section": "english"
+  },
+  {
+    "id": 72,
+    "test_number": 1,
+    "question_number": 72,
+    "passage_id": 112,
+    "question_text": "Which choice best corrects the underlined portion?\r\n",
+    "choices": [
+      "F. NO CHANGE",
+      "G. released although",
+      "H. released, so",
+      "J. released, for"
+    ],
+    "correct_answer": "H",
+    "explanation": "\"released, so\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Sentence Structure/Word Choice",
+    "difficulty": null,
+    "chapter": "1, 11",
+    "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+    "section": "english"
+  },
+  {
+    "id": 73,
+    "test_number": 1,
+    "question_number": 73,
+    "passage_id": 112,
+    "question_text": "Which choice best corrects the underlined portion?\r\n",
+    "choices": [
+      "A. NO CHANGE",
+      "B. first place,",
+      "C. same way,",
+      "D. end,"
+    ],
+    "correct_answer": "D",
+    "explanation": "\"end,\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Transitions",
+    "difficulty": null,
+    "chapter": "12",
+    "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+    "section": "english"
+  },
+  {
+    "id": 74,
+    "test_number": 1,
+    "question_number": 74,
+    "passage_id": 112,
+    "question_text": "Which choice best corrects the underlined portion?\r\n",
+    "choices": [
+      "F. NO CHANGE",
+      "G. Its socially conscience",
+      "H. It\u2019s socially conscious",
+      "J.Ivs socially conscience"
+    ],
+    "correct_answer": "F",
+    "explanation": "\"NO CHANGE\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Punctuation/Word Choice",
+    "difficulty": null,
+    "chapter": "3, 11",
+    "lesson_id": "3c3585a1-f137-4331-8390-29ef1f5e889f",
+    "section": "english"
+  },
+  {
+    "id": 75,
+    "test_number": 1,
+    "question_number": 75,
+    "passage_id": 112,
+    "question_text": "Which of the following alternatives to the underlined\r\nportion would NOT be acceptable?",
+    "choices": [
+      "A. artists, and it secured",
+      "B. artists and securing",
+      "C. artists and secure",
+      "D. artists, securing"
+    ],
+    "correct_answer": "B",
+    "explanation": "\"artists and securing\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Which Choice",
+    "difficulty": null,
+    "chapter": "13",
+    "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+    "section": "english"
+  },
+  {
+    "id": 76,
+    "test_number": 1,
+    "question_number": 1,
+    "question_text": "A function, <i>f</i>, is defined by <i>f</i>(<i>x</i>, <i>y</i>) = 3<i>x</i>\u00b2 \u2212 4<i>y</i>. What is the value of <i>f</i>(3,2)?",
+    "choices": [
+      "A. 0",
+      "B. 10",
+      "C. 19",
+      "D. 24",
+      "E. 28"
+    ],
+    "correct_answer": "C",
+    "explanation": "Working through the problem step-by-step with the values 3, 4, 3, the correct answer is 19.",
+    "question_type": "Functions",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "11",
+    "lesson_id": "89b5a825-cb28-4e50-a4a7-de9d73922bc9",
+    "section": "math"
+  },
+  {
+    "id": 77,
+    "test_number": 1,
+    "question_number": 2,
+    "question_text": "In the figure below, \u2220<i>BAC</i> measures 35\u00b0, \u2220<i>ABC</i> measures 95\u00b0, and points <i>B, C,</i> and <i>D</i> are collinear. What is the measure of \u2220<i>ACD</i>?",
+    "choices": [
+      "F. 95\u00b0",
+      "G. 125\u00b0",
+      "H. 130\u00b0",
+      "J. 140\u00b0",
+      "K. 145\u00b0"
+    ],
+    "correct_answer": "H",
+    "explanation": "Using the slope formula with the given points, the slope is 130\u00b0.",
+    "question_type": "Geometry Part 1 - Angles",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/question%202.png",
+    "chapter": "3",
+    "lesson_id": "3e2c98a9-98e3-40e3-8301-11f38aa0c15b",
+    "section": "math"
+  },
+  {
+    "id": 78,
+    "test_number": 1,
+    "question_number": 3,
+    "question_text": "For all nonzero values of <i>x</i> and <i>y</i>, which of the following expressions is equivalent to \u2212(36<i>x</i>\u2074<i>y</i>\u00b3)/(4<i>xy</i>)?",
+    "choices": [
+      "A. \u221240<i>x</i>\u00b3<i>y</i>\u00b2",
+      "B. \u221232<i>x</i>\u00b3<i>y</i>\u00b2",
+      "C. \u22129<i>x</i>\u2075<i>y</i>\u2074",
+      "D. \u22129<i>x</i>\u2074<i>y</i>\u00b3",
+      "E. 9<i>x</i>\u00b3<i>y</i>\u00b2"
+    ],
+    "correct_answer": "E",
+    "explanation": "Working through the problem step-by-step with the values 36, 4, the correct answer is 9<i>x</i>\u00b3<i>y</i>\u00b2.",
+    "question_type": "Exponents",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "13",
+    "lesson_id": "b8c03bf0-99df-460d-be21-0015eebe7920",
+    "section": "math"
+  },
+  {
+    "id": 79,
+    "test_number": 1,
+    "question_number": 4,
+    "question_text": "At a certain airline company, the cost to transfer mileage points from one person's account to another person's account is $0.75 for every 100 mileage points transferred plus a onetime $20 processing fee. What is the cost to transfer 7,000 mileage points from one account to another?",
+    "choices": [
+      "F. $25.25",
+      "G. $67.50",
+      "H. $72.50",
+      "J. $75.00",
+      "K. $95.00"
+    ],
+    "correct_answer": "H",
+    "explanation": "To find the slope, use m = (y\u2082 - y\u2081)/(x\u2082 - x\u2081). Plugging in the coordinates (0.75, 100) and (20, 7), we get m = (7 - 100)/(20 - 0.75) = $72.50.",
+    "question_type": "Word Problems",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "26",
+    "lesson_id": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+    "section": "math"
+  },
+  {
+    "id": 80,
+    "test_number": 1,
+    "question_number": 5,
+    "question_text": "If <i>x</i> = -5, what is the value of 4<i>x</i>\u00b2 \u2212 11<i>x</i>?",
+    "choices": [
+      "A. \u2212155",
+      "B. -84",
+      "C. -45",
+      "D. 84",
+      "E. 155"
+    ],
+    "correct_answer": "E",
+    "explanation": "Working through the problem step-by-step with the values -5, 4, 11, the correct answer is 155.",
+    "question_type": "Algebra Skills",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "7",
+    "lesson_id": "8d9e41b9-d906-48f6-a1d3-eecb02a7be9f",
+    "section": "math"
+  }
+]

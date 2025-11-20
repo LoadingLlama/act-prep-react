@@ -1,0 +1,284 @@
+{
+  "Math": [
+    {
+      "id": 76,
+      "num": 1,
+      "text": "A function, <i>f</i>, is defined by <i>f</i>(<i>x</i>, <i>y</i>) = 3<i>x</i>² − 4<i>y</i>. What is the value of <i>f</i>(3,2)?",
+      "choices": [
+        "A. 0",
+        "B. 10",
+        "C. 19",
+        "D. 24",
+        "E. 28"
+      ],
+      "correct": "C",
+      "type": "Functions"
+    },
+    {
+      "id": 77,
+      "num": 2,
+      "text": "In the figure below, ∠<i>BAC</i> measures 35°, ∠<i>ABC</i> measures 95°, and points <i>B, C,</i> and <i>D</i> are collinear. What is the measure of ∠<i>ACD</i>?",
+      "choices": [
+        "F. 95°",
+        "G. 125°",
+        "H. 130°",
+        "J. 140°",
+        "K. 145°"
+      ],
+      "correct": "H",
+      "type": "Geometry Part 1 - Angles"
+    },
+    {
+      "id": 78,
+      "num": 3,
+      "text": "For all nonzero values of <i>x</i> and <i>y</i>, which of the following expressions is equivalent to −(36<i>x</i>⁴<i>y</i>³)/(4<i>xy</i>)?",
+      "choices": [
+        "A. −40<i>x</i>³<i>y</i>²",
+        "B. −32<i>x</i>³<i>y</i>²",
+        "C. −9<i>x</i>⁵<i>y</i>⁴",
+        "D. −9<i>x</i>⁴<i>y</i>³",
+        "E. 9<i>x</i>³<i>y</i>²"
+      ],
+      "correct": "E",
+      "type": "Exponents"
+    },
+    {
+      "id": 79,
+      "num": 4,
+      "text": "At a certain airline company, the cost to transfer mileage points from one person's account to another person's account is $0.75 for every 100 mileage points transferred plus a onetime $20 processing ",
+      "choices": [
+        "F. $25.25",
+        "G. $67.50",
+        "H. $72.50",
+        "J. $75.00",
+        "K. $95.00"
+      ],
+      "correct": "H",
+      "type": "Word Problems"
+    },
+    {
+      "id": 80,
+      "num": 5,
+      "text": "If <i>x</i> = -5, what is the value of 4<i>x</i>² − 11<i>x</i>?",
+      "choices": [
+        "A. −155",
+        "B. -84",
+        "C. -45",
+        "D. 84",
+        "E. 155"
+      ],
+      "correct": "E",
+      "type": "Algebra Skills"
+    },
+    {
+      "id": 81,
+      "num": 6,
+      "text": "Taho earns his regular pay of $11 per hour for up to 40 hours of work per week. For each hour over 40 hours of work per week, Taho earns 1½ times his regular pay. How much does Taho earn in a week in ",
+      "choices": [
+        "F. $550",
+        "G. $605",
+        "H. $625",
+        "J. $750",
+        "K. $825"
+      ],
+      "correct": "G",
+      "type": "Word Problems"
+    },
+    {
+      "id": 82,
+      "num": 7,
+      "text": "A science class has 8 juniors and 4 seniors. The teacher will randomly select 2 students, one at a time, to represent the class. Given that the first student selected is a junior, what is the probabil",
+      "choices": [
+        "A. 1/11",
+        "B. 1/4",
+        "C. 3/11",
+        "D. 1/3",
+        "E. 4/11"
+      ],
+      "correct": "E",
+      "type": "Probability"
+    },
+    {
+      "id": 83,
+      "num": 8,
+      "text": "When Tyrone fell asleep one night, the temperature was 24°F. When Tyrone awoke the next morning, the temperature was −12°F. Letting + denote a rise in temperature and − denote a drop in temperature, w",
+      "choices": [
+        "F. −36°F",
+        "G. −12°F",
+        "H. +6°F",
+        "J. +12°F",
+        "K. +36°F"
+      ],
+      "correct": "F",
+      "type": "Word Problems"
+    },
+    {
+      "id": 84,
+      "num": 9,
+      "text": "The total cost of renting a car is $35.00 for each day the car is rented plus 42.5¢ for each mile driven. What is the total cost of renting the car for 6 days and driving 350 miles?\r\n\r\n(Note: No sales",
+      "choices": [
+        "A. $154.75",
+        "B. $224.88",
+        "C. $358.75",
+        "D. $420.00",
+        "E. $1,697.50"
+      ],
+      "correct": "C",
+      "type": "Word Problems"
+    },
+    {
+      "id": 85,
+      "num": 10,
+      "text": "In the standard (<i>x</i>,<i>y</i>) coordinate plane, what is the slope of the line through (−6,4) and (1,3)?",
+      "choices": [
+        "F. −7/5",
+        "G. −1/5",
+        "H. -1/7",
+        "J. 1/7",
+        "K. 1/5"
+      ],
+      "correct": "H",
+      "type": "Lines"
+    },
+    {
+      "id": 86,
+      "num": 11,
+      "text": "One morning at a coffee shop, each customer ordered either decaf or regular coffee, and each ordered it either with milk or without milk. The number of customers who ordered each type of coffee with o",
+      "choices": [
+        "A. 1/6",
+        "B. 5/18",
+        "C. 5/13",
+        "D. 1/2",
+        "E. 5/8"
+      ],
+      "correct": "B",
+      "type": "Probability"
+    },
+    {
+      "id": 87,
+      "num": 12,
+      "text": "Which of the following inequalities describes the solution set for 3<i>x</i> − 5 < 2<i>x</i> + 1?",
+      "choices": [
+        "F. <i>x</i> < −4",
+        "G. <i>x</i> > −4/5",
+        "H. <i>x</i> < 6/5",
+        "J. <i>x</i> < 6",
+        "K. <i>x</i> > 6"
+      ],
+      "correct": "J",
+      "type": "Inequalities"
+    },
+    {
+      "id": 88,
+      "num": 13,
+      "text": "Which of the following expressions is equivalent to 4(<i>x</i> + 2) + 3(2<i>x</i> − 1)?",
+      "choices": [
+        "A. 3<i>x</i> + 8",
+        "B. 5(2<i>x</i> + 1)",
+        "C. 10(<i>x</i> + 1)",
+        "D. 10<i>x</i> + 11",
+        "E. 15<i>x</i>"
+      ],
+      "correct": "B",
+      "type": "Algebra Skills"
+    },
+    {
+      "id": 89,
+      "num": 14,
+      "text": "What is 4% of 1.36 x 10⁴?",
+      "choices": [
+        "F. 340",
+        "G. 544",
+        "H. 3,400",
+        "J. 5,440",
+        "K. 54,400"
+      ],
+      "correct": "G",
+      "type": "Percentages, Scientific Notation"
+    },
+    {
+      "id": 90,
+      "num": 15,
+      "text": "What is the least common denominator of the fractions? 4/35, 1/77, 3/22",
+      "choices": [
+        "A. 110",
+        "B. 770",
+        "C. 2,695",
+        "D. 8,470",
+        "E. 59,290"
+      ],
+      "correct": "B",
+      "type": "Fractions"
+    },
+    {
+      "id": 91,
+      "num": 16,
+      "text": "The point (3,27) is labeled on the graph of <i>f</i>(x) =x\" in the standard (x,y) coordinate plane below. The graph of <i>f</i>(x) will be translated 3 coordinate units to the left Which of the follow",
+      "choices": [
+        "F. (0,27)",
+        "G. (3,24)",
+        "H. (3,27)",
+        "J. (3,30)",
+        "K. (6,27)"
+      ],
+      "correct": "F",
+      "type": "Shifting and Transforming Functions"
+    },
+    {
+      "id": 92,
+      "num": 17,
+      "text": "In the standard (<i>x,y</i>) coordinate plane, what is the midpoint of the line segment that has endpoints (-6,9) and (2,5) ?",
+      "choices": [
+        "A. (-4,-4)",
+        "B. (-2,7)",
+        "C. (3/2, 7/2)",
+        "D. (4,-2)",
+        "E. (8,-4)"
+      ],
+      "correct": "B",
+      "type": "Lines"
+    },
+    {
+      "id": 93,
+      "num": 18,
+      "text": "What value of x satisfies the equation <i>x</i>² + 2<i>x</i>/x+2= 2 ?",
+      "choices": [
+        "F. -4",
+        "G. -3",
+        "H. -2",
+        "J. 1",
+        "K. 2"
+      ],
+      "correct": "K",
+      "type": "Algebra Skills"
+    },
+    {
+      "id": 94,
+      "num": 19,
+      "text": "Based on the survey results, what was the average number of moviegoers for each of the 4 categories?",
+      "choices": [
+        "A. 610",
+        "B. 1,060",
+        "C. 1,240",
+        "D. 1,250",
+        "E. 1,985"
+      ],
+      "correct": "D",
+      "type": "Mean"
+    },
+    {
+      "id": 95,
+      "num": 20,
+      "text": "Suppose all the adults surveyed happened to attend 1 movie each in one particular week. The total amount spent on tickets by those surveyed in that week was $44,000.00. How many adults attended matine",
+      "choices": [
+        "F. 500",
+        "G. 1,400",
+        "H. 2,500",
+        "J. 3,600",
+        "K. 4,500"
+      ],
+      "correct": "G",
+      "type": "Systems of Equations"
+    }
+  ]
+}

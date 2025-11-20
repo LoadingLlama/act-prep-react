@@ -1,0 +1,212 @@
+[
+  {
+    "id": 111,
+    "test_number": 1,
+    "question_number": 36,
+    "question_text": "The total amount of a certain substance present in a laboratory experiment is given by the formula A=A\u2080(2^<i>h</i>/5), where A is the total amount of the substance f hours after an initial amount (A\u2080) of the substance began accumulating. Which of the following expressions gives the number of hours it will take an initial amount of 10 grams of this substance to accumulate to 100 grams?",
+    "choices": [
+      "F. 5",
+      "G. 25",
+      "H. log\u2082(50)",
+      "J. 5log\u2082(10)",
+      "K. 5log\u2082\u2080(100)"
+    ],
+    "correct_answer": "J",
+    "explanation": "Working through the problem step-by-step with the values 2, 5, 10, the correct answer is 5log\u2082(10).",
+    "question_type": "Logarithms",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "14",
+    "lesson_id": "a0fbdb59-614b-4597-99c1-344c4f3ad47e",
+    "section": "math"
+  },
+  {
+    "id": 112,
+    "test_number": 1,
+    "question_number": 37,
+    "question_text": "For all values of x greater than 3, which of the following is equivalent to x\u00b2 - x - 6/x\u00b2-9",
+    "choices": [
+      "A. <i>-x</i>-6/-9",
+      "B. <i>x</i>-2/<i>x</i>-3",
+      "C. <i>x</i>-2/<i>x</i>+3",
+      "D. <i>x</i>+2/<i>x</i>-3",
+      "E. <i>x</i>+2/<i>x</i>+3"
+    ],
+    "correct_answer": "E",
+    "explanation": "Working through the problem step-by-step with the values 3, 6, -9, the correct answer is <i>x</i>+2/<i>x</i>+3.",
+    "question_type": "Quadratics - Factoring",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "16",
+    "lesson_id": "f7516c41-afb2-48fb-a4e2-df9fe41d8b23",
+    "section": "math"
+  },
+  {
+    "id": 113,
+    "test_number": 1,
+    "question_number": 38,
+    "question_text": "Shown below, a board 9 feet 4 inches long is cut into 2 equal parts. What is the length, to the nearest inch, of each part?",
+    "choices": [
+      "F. 4 feet 5 inches",
+      "G. 4 feet 7 inches ",
+      "H. 4 feet 8 inches",
+      "J. 5 feet 4 inches",
+      "K. 5 feet 5 inches"
+    ],
+    "correct_answer": "H",
+    "explanation": "Working through the problem step-by-step with the values 9, 4, 2, the correct answer is 4 feet 8 inches.",
+    "question_type": "Unit Conversion",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/m38.jpg",
+    "chapter": "29",
+    "lesson_id": "c59913aa-4a4e-4bc3-bdaf-596b9414ff81",
+    "section": "math"
+  },
+  {
+    "id": 114,
+    "test_number": 1,
+    "question_number": 39,
+    "question_text": "If the positive integers x and y are relatively prime (their 1 greatest common factor is 1) and (1/2+1/3) (1/3+1/4) = <i>x/y</i> then <i>x+y=</i> ?",
+    "choices": [
+      "A. 23",
+      "B. 25",
+      "C. 49",
+      "D. 91",
+      "E. 132"
+    ],
+    "correct_answer": "A",
+    "explanation": "Working through the problem step-by-step with the values 1, 1, 1, the correct answer is 23.",
+    "question_type": "Number Theory",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "8",
+    "lesson_id": "74013e77-3111-4dc6-beca-ff15948e4351",
+    "section": "math"
+  },
+  {
+    "id": 115,
+    "test_number": 1,
+    "question_number": 40,
+    "question_text": "What is the 358th digit after the decimal point in the repeating decimal 0.3\u03051\u03057\u03058\u0305  ?",
+    "choices": [
+      "F. 0",
+      "G. 3",
+      "H. 1",
+      "J. 7",
+      "K. 8"
+    ],
+    "correct_answer": "H",
+    "explanation": "Working through the problem step-by-step with the values 358, 0.3, 1, the correct answer is 1.",
+    "question_type": "Repeating Patterns",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "20",
+    "lesson_id": "d946c7ef-0543-46fd-a938-79592c05c044",
+    "section": "math"
+  },
+  {
+    "id": 116,
+    "test_number": 1,
+    "question_number": 41,
+    "question_text": "To promote a new brand of shoes, a shoe store will run a promotion using a jar containing 3 red balls marked \u201c10% off.\u201d 2 white balls marked \u201c30% off.\u2019 and 1 green ball marked \u201c60% off.\u201d Each customer will randomly select | ball from the jar to determine the discount that the customer will receive on any single pair of the new brand of shoes. Given that the new brand of shoes regularly costs $60 per pair, what is the average discount amount, in dollars, that the store can expect to give each customer due to this promotion?",
+    "choices": [
+      "A. $6",
+      "B. $10",
+      "C. $15",
+      "D. $20",
+      "E. $25"
+    ],
+    "correct_answer": "C",
+    "explanation": "Working through the problem step-by-step with the values 3, 10, 2, the correct answer is $15.",
+    "question_type": "Percentages, Weighted Average",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "9, 12",
+    "lesson_id": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+    "section": "math"
+  },
+  {
+    "id": 117,
+    "test_number": 1,
+    "question_number": 42,
+    "question_text": "At the beginning of 2014, the number of lions in the park was <i>p</i> percent of the total number of large animals. Which of the following is closest to the value of <i>p</i>?",
+    "choices": [
+      "F. 2",
+      "G. 8",
+      "H. 9",
+      "J. 11",
+      "K. 12"
+    ],
+    "correct_answer": "G",
+    "explanation": "Calculating the percentage gives 8.",
+    "question_type": "Percentages",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/ques42-44.png",
+    "chapter": "9",
+    "lesson_id": "6203e4a3-6648-4e0c-9c31-52e35ee2c735",
+    "section": "math"
+  },
+  {
+    "id": 118,
+    "test_number": 1,
+    "question_number": 43,
+    "question_text": "In this park, the average number of gallons of water consumed per day by each elephant, lion, and giraffe is 50, 5, and 10, respectively, Which of the following matrix product yeilds the avg total number of gallons of water consumed per day by all the elephants, lions, and giraffes in the park?",
+    "choices": [
+      "A. [600 200 800] [50/5/10]\u200b",
+      "B. [600 800 200] [50/5/10]",
+      "C. [600/200/800] [50 5 10]",
+      "D. [600/800/200] [50 5 10]",
+      "E. [600/800/200] [50/5/10]"
+    ],
+    "correct_answer": "A",
+    "explanation": "Working through the problem step-by-step with the values 50, 5, 10, the correct answer is [600 200 800] [50/5/10]\u200b.",
+    "question_type": "Matrices",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/ques42-44.png",
+    "chapter": "19",
+    "lesson_id": "6e95c291-2e8a-4ae9-8f7e-10caad8588b9",
+    "section": "math"
+  },
+  {
+    "id": 119,
+    "test_number": 1,
+    "question_number": 44,
+    "question_text": "Let <i>t</i> be a positive integer less than 6. Based on DO YOUR FIGURING HERE. the zoologists\u2019 prediction, which of the following expressions represents the number of protected animals in the park <i>t</i> years after the beginning of 2014?",
+    "choices": [
+      "F. 10,000+0.02<i>t</i>",
+      "G. 10,000+0.2<i>t</i>",
+      "H. 10,000(1 + 0.02)^<i>t</i>",
+      "J. 10,000(1+0.02)^<i>t</i>",
+      "K. 10,000(1+0.2)^<i>t</i>"
+    ],
+    "correct_answer": "J",
+    "explanation": "Working through the problem step-by-step with the values 6., 2014, the correct answer is 10,000(1+0.02)^<i>t</i>.",
+    "question_type": "Exponential Growth and Decay",
+    "difficulty": null,
+    "image_url": "https://rabavobdklnwvwsldbix.supabase.co/storage/v1/object/public/test-images/ques42-44.png",
+    "chapter": "28",
+    "lesson_id": "da718634-9257-4c01-845e-a948650dd68c",
+    "section": "math"
+  },
+  {
+    "id": 120,
+    "test_number": 1,
+    "question_number": 45,
+    "question_text": "Anela and Jacob plan to attend a concert in Brady. Anela will drive 375 km to Brady at a constant speed of 75 km/hr, stopping one time for a 30-minute break. Jacob will start 600 km from Brady and will drive at a constant speed of 90 km/hr for 2 hours. He will take a 1-hour break and then drive to Brady at a constant speed of 70 km/hr. To the nearest 0.1 hour, Jacob must leave how much earlier than Anela in order for them to arrive in Brady at the same time?",
+    "choices": [
+      "A. 2.2",
+      "B. 2.5",
+      "C. 3.1",
+      "D. 3.5",
+      "E. 4.0"
+    ],
+    "correct_answer": "D",
+    "explanation": "Working through the problem step-by-step with the values 375, 75, 30, the correct answer is 3.5.",
+    "question_type": "Word Problems",
+    "difficulty": null,
+    "image_url": null,
+    "chapter": "26",
+    "lesson_id": "ec9b95cf-47f7-4c01-8118-91aef61f7170",
+    "section": "math"
+  }
+]

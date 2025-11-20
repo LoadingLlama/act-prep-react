@@ -7,14 +7,19 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import ProfileService from '../services/api/profile.service';
 import { settingsStyles } from '../styles/settings.styles';
-import { HiBell, HiMoon, HiEnvelope, HiShieldCheck, HiTrash } from 'react-icons/hi2';
+import '../styles/settings.css';
+import { HiBell, HiMoon, HiEnvelope, HiShieldCheck, HiCreditCard, HiCheckBadge } from 'react-icons/hi2';
 import GoalsSettings from '../components/GoalsSettings';
+import { hasProSubscription } from '../services/subscription.service';
+import { redirectToCustomerPortal, getSubscription } from '../services/stripe.service';
 
 const SettingsPage = () => {
   const { user, signOut, resetPassword } = useAuth();
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState('');
+  const [isPro, setIsPro] = useState(false);
+  const [subscription, setSubscription] = useState(null);
   const [preferences, setPreferences] = useState({
     emailNotifications: true,
     practiceReminders: true,
@@ -26,7 +31,27 @@ const SettingsPage = () => {
 
   useEffect(() => {
     loadPreferences();
+    loadSubscriptionStatus();
   }, [user]);
+
+  const loadSubscriptionStatus = async () => {
+    if (!user) return;
+
+    try {
+      console.log('🔍 Checking subscription status for user:', user.id);
+      const proStatus = await hasProSubscription(user.id);
+      console.log('✅ Pro status:', proStatus);
+      setIsPro(proStatus);
+
+      if (proStatus) {
+        const subData = await getSubscription(user.id);
+        console.log('📊 Subscription data:', subData);
+        setSubscription(subData);
+      }
+    } catch (error) {
+      console.error('❌ Error loading subscription:', error);
+    }
+  };
 
   const loadPreferences = async () => {
     setLoading(true);
@@ -83,13 +108,6 @@ const SettingsPage = () => {
     setSaving(false);
   };
 
-  const handleDeleteAccount = () => {
-    if (window.confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
-      // TODO: Implement account deletion
-      alert('Account deletion coming soon');
-    }
-  };
-
   if (loading) {
     return (
       <div style={settingsStyles.container}>
@@ -119,6 +137,72 @@ const SettingsPage = () => {
       )}
 
       <div style={settingsStyles.content}>
+        {/* Subscription Management */}
+        {isPro && subscription && (
+          <div style={settingsStyles.section}>
+            <div style={settingsStyles.sectionHeader}>
+              <HiCreditCard size={24} />
+              <div>
+                <h3 style={settingsStyles.sectionTitle}>Subscription</h3>
+                <p style={settingsStyles.sectionDescription}>
+                  Manage your Pro subscription and billing
+                </p>
+              </div>
+            </div>
+
+            <div style={{
+              padding: '1.5rem',
+              background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
+              borderRadius: '12px',
+              border: '2px solid #bae6fd',
+              marginTop: '1rem'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+                <HiCheckBadge size={28} color="#0ea5e9" />
+                <div>
+                  <h4 style={{ fontSize: '1.125rem', fontWeight: '700', color: '#0c4a6e', marginBottom: '0.25rem' }}>
+                    Pro Member
+                  </h4>
+                  <p style={{ fontSize: '0.875rem', color: '#0369a1' }}>
+                    {subscription.subscription_status === 'active' && subscription.current_period_end
+                      ? `Renews on ${new Date(subscription.current_period_end).toLocaleDateString()}`
+                      : 'Active subscription'}
+                  </p>
+                </div>
+              </div>
+
+              <button
+                onClick={async () => {
+                  try {
+                    await redirectToCustomerPortal(user.id);
+                  } catch (error) {
+                    setMessage('Failed to open customer portal. Please try again.');
+                  }
+                }}
+                style={{
+                  padding: '0.75rem 1.5rem',
+                  background: '#0ea5e9',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '8px',
+                  fontSize: '0.9375rem',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem'
+                }}
+                onMouseOver={(e) => e.currentTarget.style.background = '#0284c7'}
+                onMouseOut={(e) => e.currentTarget.style.background = '#0ea5e9'}
+              >
+                <HiCreditCard size={20} />
+                Manage Billing & Payment
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* Notifications */}
         <div style={settingsStyles.section}>
           <div style={settingsStyles.sectionHeader}>
@@ -139,14 +223,14 @@ const SettingsPage = () => {
                   Receive emails about your account and progress
                 </p>
               </div>
-              <label style={settingsStyles.toggle}>
+              <label className="settings-toggle">
                 <input
                   type="checkbox"
                   checked={preferences.emailNotifications}
                   onChange={() => handleToggle('emailNotifications')}
                   disabled={saving}
                 />
-                <span style={settingsStyles.toggleSlider}></span>
+                <span className="settings-toggle-slider"></span>
               </label>
             </div>
 
@@ -157,14 +241,14 @@ const SettingsPage = () => {
                   Get reminders to complete your daily practice
                 </p>
               </div>
-              <label style={settingsStyles.toggle}>
+              <label className="settings-toggle">
                 <input
                   type="checkbox"
                   checked={preferences.practiceReminders}
                   onChange={() => handleToggle('practiceReminders')}
                   disabled={saving}
                 />
-                <span style={settingsStyles.toggleSlider}></span>
+                <span className="settings-toggle-slider"></span>
               </label>
             </div>
 
@@ -175,14 +259,14 @@ const SettingsPage = () => {
                   Receive weekly progress reports via email
                 </p>
               </div>
-              <label style={settingsStyles.toggle}>
+              <label className="settings-toggle">
                 <input
                   type="checkbox"
                   checked={preferences.weeklyReports}
                   onChange={() => handleToggle('weeklyReports')}
                   disabled={saving}
                 />
-                <span style={settingsStyles.toggleSlider}></span>
+                <span className="settings-toggle-slider"></span>
               </label>
             </div>
           </div>
@@ -208,14 +292,14 @@ const SettingsPage = () => {
                   Automatically save your progress as you learn
                 </p>
               </div>
-              <label style={settingsStyles.toggle}>
+              <label className="settings-toggle">
                 <input
                   type="checkbox"
                   checked={preferences.autoSave}
                   onChange={() => handleToggle('autoSave')}
                   disabled={saving}
                 />
-                <span style={settingsStyles.toggleSlider}></span>
+                <span className="settings-toggle-slider"></span>
               </label>
             </div>
 
@@ -226,23 +310,21 @@ const SettingsPage = () => {
                   Display hints and tips during practice questions
                 </p>
               </div>
-              <label style={settingsStyles.toggle}>
+              <label className="settings-toggle">
                 <input
                   type="checkbox"
                   checked={preferences.showHints}
                   onChange={() => handleToggle('showHints')}
                   disabled={saving}
                 />
-                <span style={settingsStyles.toggleSlider}></span>
+                <span className="settings-toggle-slider"></span>
               </label>
             </div>
           </div>
         </div>
 
         {/* Study Goals */}
-        <div style={{ marginBottom: '2rem' }}>
-          <GoalsSettings />
-        </div>
+        <GoalsSettings />
 
         {/* Security */}
         <div style={settingsStyles.section}>
@@ -286,37 +368,6 @@ const SettingsPage = () => {
                 style={settingsStyles.secondaryButton}
               >
                 Sign Out
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Danger Zone */}
-        <div style={{ ...settingsStyles.section, ...settingsStyles.dangerSection }}>
-          <div style={settingsStyles.sectionHeader}>
-            <HiTrash size={24} color="#dc2626" />
-            <div>
-              <h3 style={{ ...settingsStyles.sectionTitle, color: '#dc2626' }}>Danger Zone</h3>
-              <p style={settingsStyles.sectionDescription}>
-                Irreversible actions
-              </p>
-            </div>
-          </div>
-
-          <div style={settingsStyles.settingsList}>
-            <div style={settingsStyles.settingItem}>
-              <div style={settingsStyles.settingInfo}>
-                <h4 style={settingsStyles.settingLabel}>Delete Account</h4>
-                <p style={settingsStyles.settingDescription}>
-                  Permanently delete your account and all data
-                </p>
-              </div>
-              <button
-                onClick={handleDeleteAccount}
-                style={settingsStyles.dangerButton}
-              >
-                <HiTrash size={18} />
-                Delete Account
               </button>
             </div>
           </div>

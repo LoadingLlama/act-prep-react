@@ -1,0 +1,202 @@
+[
+  {
+    "id": 161,
+    "test_number": 1,
+    "question_number": 26,
+    "passage_id": 52,
+    "question_text": "It can most reasonably be inferred that immediately\r\nafter the events described in the first paragraph, the\r\nauthor:",
+    "choices": [
+      "F. hikes back down the cliffs.",
+      "G. sits on the rock ledge.",
+      "H. jumps into the water below.",
+      "J. takes a photograph of the scene."
+    ],
+    "correct_answer": "H",
+    "explanation": "Based on contextual clues in the passage, we can infer that jumps into the water below..",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Inference",
+    "lesson_id": "ac4440f6-f391-4a04-9a5c-751a2e0ca5b7",
+    "section": "reading"
+  },
+  {
+    "id": 162,
+    "test_number": 1,
+    "question_number": 27,
+    "passage_id": 52,
+    "question_text": "Which of the following details does the author use to support his claim that photographs don't accurately reflect experiences?",
+    "choices": [
+      "A. Photographs are three-dimensional representations of two-dimensional experiences.",
+      "B. Photographs capture only visual information about an experience.",
+      "C. Photographs eliminate spatial dimensions, time, and sensory information like smell and sound.",
+      "D. Photographs are abstractions that can never match the vividness of returning to a place."
+    ],
+    "correct_answer": "C",
+    "explanation": "Photographs eliminate spatial dimensions, time, and sensory information like smell and sound. best answers the question based on the evidence and context provided in the passage.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Clear Evidence",
+    "lesson_id": "ac4440f6-f391-4a04-9a5c-751a2e0ca5b7",
+    "section": "reading"
+  },
+  {
+    "id": 163,
+    "test_number": 1,
+    "question_number": 28,
+    "passage_id": 52,
+    "question_text": "The information between the dashes in lines 43-44 primarily serves to:",
+    "choices": [
+      "F. highlight the difference between trivial pictures and meaningful pictures.",
+      "G. exemplify the kind of commonplace pictures that people take.",
+      "H. point out the usefulness of photographs in capturing moments in our lives.",
+      "J. list events from the aurthors life that he wihses has pictures of."
+    ],
+    "correct_answer": "G",
+    "explanation": "The referenced portion serves to exemplify the kind of commonplace pictures that people take., supporting the overall structure and argument of the passage.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Purpose",
+    "lesson_id": "25fb92b6-429e-4940-802a-e339ae3a47e1",
+    "section": "reading"
+  },
+  {
+    "id": 164,
+    "test_number": 1,
+    "question_number": 29,
+    "passage_id": 52,
+    "question_text": "The phrase \u201cseemingly irrefutable factuality\u201d (lines 52-53) mainly serves to emphasize that photographs:",
+    "choices": [
+      "A. convey an impresssion of objective truth.",
+      "B. help clarify the events being photographed.",
+      "C. record details that can't be proven.",
+      "D. imply a story beyond what they actually depict."
+    ],
+    "correct_answer": "A",
+    "explanation": "The referenced portion serves to convey an impresssion of objective truth., supporting the overall structure and argument of the passage.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Purpose",
+    "lesson_id": "25fb92b6-429e-4940-802a-e339ae3a47e1",
+    "section": "reading"
+  },
+  {
+    "id": 165,
+    "test_number": 1,
+    "question_number": 30,
+    "passage_id": 52,
+    "question_text": "As it is used in line 82, the word nature most nearly means:",
+    "choices": [
+      "F. temperament.",
+      "G. essence.",
+      "H. scenery.",
+      "J. environment."
+    ],
+    "correct_answer": "G",
+    "explanation": "essence. best answers the question based on the evidence and context provided in the passage.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Words In Context",
+    "lesson_id": "c22d531f-b59a-41fe-8b19-bf2f8e063b48",
+    "section": "reading"
+  },
+  {
+    "id": 166,
+    "test_number": 1,
+    "question_number": 31,
+    "passage_id": 53,
+    "question_text": "The main function of the seventh and eighth paragraphs (lines 65-82) is to:",
+    "choices": [
+      "A. suggest that solar technology has advanced but still faces problems that prevent it from being a viable power source on large scale .",
+      "B. introduce the information that under specific laboratory conditions electrolyzers can be used to release enegry from water molecules.",
+      "C. establish that the United states and Japan are collaborating on research on new energy sources.",
+      "D. question whether the auto industry will be a leader in the race to develop new sources of energy."
+    ],
+    "correct_answer": "A",
+    "explanation": "The referenced portion serves to suggest that solar technology has advanced but still faces problems that prevent it from being a viable power source on large scale ., supporting the overall structure and argument of the passage.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Purpose",
+    "lesson_id": "25fb92b6-429e-4940-802a-e339ae3a47e1",
+    "section": "reading"
+  },
+  {
+    "id": 167,
+    "test_number": 1,
+    "question_number": 32,
+    "passage_id": 53,
+    "question_text": "Based on the passage, whose opinion is it that there is a need for \u201cmore than 10 trillion watts of clean, carbon-free energy by 2050\u201d (lines 4-6)?",
+    "choices": [
+      "F. researchers in south carolina who are developing a form of artificial algae.",
+      "G. An unidentified chemist whom Lewis challanges in his lectures.",
+      "H. Lewis as expressed in lectures he gives on the subject of world energy needs.",
+      "J. The author before attending a lecture by lewis that changed the authors mind."
+    ],
+    "correct_answer": "H",
+    "explanation": "Lewis as expressed in lectures he gives on the subject of world energy needs. best answers the question based on the evidence and context provided in the passage.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Inference",
+    "lesson_id": "ac4440f6-f391-4a04-9a5c-751a2e0ca5b7",
+    "section": "reading"
+  },
+  {
+    "id": 168,
+    "test_number": 1,
+    "question_number": 33,
+    "passage_id": 53,
+    "question_text": "Based on the passage, what is the relationship between the \u201cradical breakthrough\u201d referred to in line 12 and the capabilities described in lines 14-17?",
+    "choices": [
+      "A. Both were made possible as a result of Lewis's work in his lab.",
+      "B. Both serve as examples for Lewis of the energy industry's misguided focus on consumption.",
+      "C. The breakthrough will make capbilities possible.",
+      "D. The breakthrough has been made based on the capabilities."
+    ],
+    "correct_answer": "C",
+    "explanation": "The breakthrough will make capbilities possible. best answers the question based on the evidence and context provided in the passage.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Clear Evidence",
+    "lesson_id": "ac4440f6-f391-4a04-9a5c-751a2e0ca5b7",
+    "section": "reading"
+  },
+  {
+    "id": 169,
+    "test_number": 1,
+    "question_number": 34,
+    "passage_id": 53,
+    "question_text": "According to the passage, one challenge facing Lewis in developing his energy solution is the:",
+    "choices": [
+      "F. high price of the silicon crystals and platinum that are integral to the process.",
+      "G. lack if technology to split water into hydrogen and oxygen.",
+      "H. dimisninging availability of federal funding for his research.",
+      "J. Public reluctance to embrace new technology."
+    ],
+    "correct_answer": "F",
+    "explanation": "According to the passage, high price of the silicon crystals and platinum that are integral to the process.. This information is directly stated in the text.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Clear Evidence",
+    "lesson_id": "ac4440f6-f391-4a04-9a5c-751a2e0ca5b7",
+    "section": "reading"
+  },
+  {
+    "id": 170,
+    "test_number": 1,
+    "question_number": 35,
+    "passage_id": 53,
+    "question_text": "According to Lewis, compared to the amount of energy the sun pours onto the earth in one hour, what amount of energy does humankind use in one year?",
+    "choices": [
+      "A. Asmaller amount.",
+      "B. The same amount.",
+      "C. Twice the amount.",
+      "D. Ten times the amount."
+    ],
+    "correct_answer": "A",
+    "explanation": "According to the passage, asmaller amount.. This information is directly stated in the text.",
+    "difficulty": null,
+    "chapter": null,
+    "question_type": "Clear Evidence",
+    "lesson_id": "ac4440f6-f391-4a04-9a5c-751a2e0ca5b7",
+    "section": "reading"
+  }
+]

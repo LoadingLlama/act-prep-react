@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "test_number": 1,
+    "question_number": 1,
+    "passage_id": 108,
+    "question_text": "Which choice best corrects the underlined portion?",
+    "choices": [
+      "A. NO CHANGE",
+      "B. Scientists say thousands of new animal species are",
+      "C. Of the thousands of new animal species",
+      "D. Thousands of new animal species are"
+    ],
+    "correct_answer": "C",
+    "explanation": "\"Of the thousands of new animal species\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Sentence Structure",
+    "difficulty": null,
+    "chapter": "1",
+    "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+    "section": "english"
+  },
+  {
+    "id": 2,
+    "test_number": 1,
+    "question_number": 2,
+    "passage_id": 108,
+    "question_text": "Which choice best corrects the underlined portion?\r\n",
+    "choices": [
+      "F. NO CHANGE",
+      "G. Mantas are",
+      "H. Mantas,",
+      "J. DELETE the underlined portion (adjusting the capitalization as needed)."
+    ],
+    "correct_answer": "G",
+    "explanation": "\"Mantas are\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Sentence Structure",
+    "difficulty": null,
+    "chapter": "1",
+    "lesson_id": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+    "section": "english"
+  },
+  {
+    "id": 3,
+    "test_number": 1,
+    "question_number": 3,
+    "passage_id": 108,
+    "question_text": "Which choice best corrects the underlined portion?\r\n",
+    "choices": [
+      "A. NO CHANGE",
+      "B. wings: up to twenty-five feet wide\u2014",
+      "C. wings, up to twenty-five feet wide\u2014",
+      "D. wings, up to twenty-five feet wide:"
+    ],
+    "correct_answer": "A",
+    "explanation": "\"NO CHANGE\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Punctuation",
+    "difficulty": null,
+    "chapter": "2, 3",
+    "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+    "section": "english"
+  },
+  {
+    "id": 4,
+    "test_number": 1,
+    "question_number": 4,
+    "passage_id": 108,
+    "question_text": "Which choice best corrects the underlined portion?",
+    "choices": [
+      "F. NO CHANGE",
+      "G. variations\u2014in the mantas",
+      "H. variations, in the mantas,",
+      "J. variations in the mantas"
+    ],
+    "correct_answer": "J",
+    "explanation": "\"variations in the mantas\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Punctuation",
+    "difficulty": null,
+    "chapter": "2, 3",
+    "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+    "section": "english"
+  },
+  {
+    "id": 5,
+    "test_number": 1,
+    "question_number": 5,
+    "passage_id": 108,
+    "question_text": "The writer is considering deleting the underlined sentence. Should the writer make this deletion?",
+    "choices": [
+      "A. Yes, because the sentence interrupts the account of how Marshall came to investigate the possibility that there were two manta ray species.",
+      "B. Yes, because the sentence fails to clarify why Marshall did her research in Mozambique.",
+      "C. No, because the sentence explains how Marshall created a large scientific institution even though she started as a lone researcher.",
+      "D. No, because the sentence clarifies Marshall's role at the Marine Megafauna Center."
+    ],
+    "correct_answer": "A",
+    "explanation": "Yes, the writer should make this change because because the sentence interrupts the account of how marshall came to investigate the possibility that there were two manta ray species..",
+    "question_type": "Adding/Deleting Information",
+    "difficulty": null,
+    "chapter": "14",
+    "lesson_id": "4a9e06f8-5ee5-4e5d-9e5d-2ce9b7c6bf16",
+    "section": "english"
+  },
+  {
+    "id": 6,
+    "test_number": 1,
+    "question_number": 6,
+    "passage_id": 108,
+    "question_text": "Which choice best corrects the underlined portion?\r\n",
+    "choices": [
+      "F. NO CHANGE",
+      "G. happen to be",
+      "H. were",
+      "J. are"
+    ],
+    "correct_answer": "F",
+    "explanation": "\"NO CHANGE\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Subject Verb Agreement",
+    "difficulty": null,
+    "chapter": "4",
+    "lesson_id": "f7ac1d6c-6416-47fd-9720-807224100517",
+    "section": "english"
+  },
+  {
+    "id": 7,
+    "test_number": 1,
+    "question_number": 7,
+    "passage_id": 108,
+    "question_text": "Which choice best corrects the underlined portion?\r\n",
+    "choices": [
+      "A. NO CHANGE",
+      "B. was, that,",
+      "C. was that",
+      "D. was, that"
+    ],
+    "correct_answer": "C",
+    "explanation": "\"was that\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Punctuation",
+    "difficulty": null,
+    "chapter": "2, 3",
+    "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+    "section": "english"
+  },
+  {
+    "id": 8,
+    "test_number": 1,
+    "question_number": 8,
+    "passage_id": 108,
+    "question_text": "The writer wants to add the following sentence to this\r\nparagraph:\r\n\r\nSome of the data were basic, such as manta\r\ncoloration and size.\r\n\r\nThe sentence would most logically be placed:",
+    "choices": [
+      "F. after Sentence 1.",
+      "G. after Sentence 2.",
+      "H. after Sentence 3.",
+      "J. after Sentence 4."
+    ],
+    "correct_answer": "F",
+    "explanation": "\"after Sentence 1.\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Logical Placement",
+    "difficulty": null,
+    "chapter": "15",
+    "lesson_id": "4a9e06f8-5ee5-4e5d-9e5d-2ce9b7c6bf16",
+    "section": "english"
+  },
+  {
+    "id": 9,
+    "test_number": 1,
+    "question_number": 9,
+    "passage_id": 108,
+    "question_text": "Which choice best conveys that Marshall's announcement was backed by scientific data?",
+    "choices": [
+      "A. NO CHANGE",
+      "B. surprised many scientists by announcing",
+      "C. had the evidence to announce",
+      "D. at long last announced"
+    ],
+    "correct_answer": "C",
+    "explanation": "\"had the evidence to announce\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Which Choice",
+    "difficulty": null,
+    "chapter": "13",
+    "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+    "section": "english"
+  },
+  {
+    "id": 10,
+    "test_number": 1,
+    "question_number": 10,
+    "passage_id": 108,
+    "question_text": "Which choice best corrects the underlined portion?\r\n",
+    "choices": [
+      "F. NO CHANGE",
+      "G. exists",
+      "H. was",
+      "J. are"
+    ],
+    "correct_answer": "J",
+    "explanation": "\"are\" is correct because it provides the most grammatically sound and rhetorically effective phrasing for this context.",
+    "question_type": "Subject Verb Agreement",
+    "difficulty": null,
+    "chapter": "4",
+    "lesson_id": "f7ac1d6c-6416-47fd-9720-807224100517",
+    "section": "english"
+  }
+]

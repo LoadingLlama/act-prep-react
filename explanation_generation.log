@@ -1,0 +1,483 @@
+Loading questions...
+Loaded 215 questions
+
+Breakdown:
+  English: 75 questions
+  Math: 60 questions
+  Reading: 40 questions
+  Science: 40 questions
+
+================================================================================
+Starting explanation generation...
+================================================================================
+
+
+### Processing ENGLISH (75 questions) ###
+
+  [1/75] Question #1... ERROR generating explanation for question 1: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [2/75] Question #2... ERROR generating explanation for question 2: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [3/75] Question #3... ERROR generating explanation for question 3: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [4/75] Question #4... ERROR generating explanation for question 4: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [5/75] Question #5... ERROR generating explanation for question 5: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [6/75] Question #6... ERROR generating explanation for question 6: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [7/75] Question #7... ERROR generating explanation for question 7: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [8/75] Question #8... ERROR generating explanation for question 8: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [9/75] Question #9... ERROR generating explanation for question 9: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [10/75] Question #10... ERROR generating explanation for question 10: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [11/75] Question #11... ERROR generating explanation for question 11: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [12/75] Question #12... ERROR generating explanation for question 12: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [13/75] Question #13... ERROR generating explanation for question 13: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [14/75] Question #14... ERROR generating explanation for question 14: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [15/75] Question #15... ERROR generating explanation for question 15: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [16/75] Question #16... ERROR generating explanation for question 16: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [17/75] Question #17... ERROR generating explanation for question 17: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [18/75] Question #18... ERROR generating explanation for question 18: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [19/75] Question #19... ERROR generating explanation for question 19: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [20/75] Question #20... ERROR generating explanation for question 20: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [21/75] Question #21... ERROR generating explanation for question 21: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [22/75] Question #22... ERROR generating explanation for question 22: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [23/75] Question #23... ERROR generating explanation for question 23: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [24/75] Question #24... ERROR generating explanation for question 24: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [25/75] Question #25... ERROR generating explanation for question 25: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+
+--- PROGRESS: 25/215 complete (0 successful, 25 failed) ---
+
+  [26/75] Question #26... ERROR generating explanation for question 26: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [27/75] Question #27... ERROR generating explanation for question 27: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [28/75] Question #28... ERROR generating explanation for question 28: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [29/75] Question #29... ERROR generating explanation for question 29: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [30/75] Question #30... ERROR generating explanation for question 30: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [31/75] Question #31... ERROR generating explanation for question 31: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [32/75] Question #32... ERROR generating explanation for question 32: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [33/75] Question #33... ERROR generating explanation for question 33: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [34/75] Question #34... ERROR generating explanation for question 34: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [35/75] Question #35... ERROR generating explanation for question 35: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [36/75] Question #36... ERROR generating explanation for question 36: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [37/75] Question #37... ERROR generating explanation for question 37: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [38/75] Question #38... ERROR generating explanation for question 38: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [39/75] Question #39... ERROR generating explanation for question 39: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [40/75] Question #40... ERROR generating explanation for question 40: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [41/75] Question #41... ERROR generating explanation for question 41: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [42/75] Question #42... ERROR generating explanation for question 42: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [43/75] Question #43... ERROR generating explanation for question 43: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [44/75] Question #44... ERROR generating explanation for question 44: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [45/75] Question #45... ERROR generating explanation for question 45: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [46/75] Question #46... ERROR generating explanation for question 46: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [47/75] Question #47... ERROR generating explanation for question 47: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [48/75] Question #48... ERROR generating explanation for question 48: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [49/75] Question #49... ERROR generating explanation for question 49: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [50/75] Question #50... ERROR generating explanation for question 50: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+
+--- PROGRESS: 50/215 complete (0 successful, 50 failed) ---
+
+  [51/75] Question #51... ERROR generating explanation for question 51: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [52/75] Question #52... ERROR generating explanation for question 52: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [53/75] Question #53... ERROR generating explanation for question 53: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [54/75] Question #54... ERROR generating explanation for question 54: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [55/75] Question #55... ERROR generating explanation for question 55: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [56/75] Question #56... ERROR generating explanation for question 56: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [57/75] Question #57... ERROR generating explanation for question 57: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [58/75] Question #58... ERROR generating explanation for question 58: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [59/75] Question #59... ERROR generating explanation for question 59: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [60/75] Question #60... ERROR generating explanation for question 60: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [61/75] Question #61... ERROR generating explanation for question 61: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [62/75] Question #62... ERROR generating explanation for question 62: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [63/75] Question #63... ERROR generating explanation for question 63: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [64/75] Question #64... ERROR generating explanation for question 64: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [65/75] Question #65... ERROR generating explanation for question 65: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [66/75] Question #66... ERROR generating explanation for question 66: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [67/75] Question #67... ERROR generating explanation for question 67: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [68/75] Question #68... ERROR generating explanation for question 68: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [69/75] Question #69... ERROR generating explanation for question 69: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [70/75] Question #70... ERROR generating explanation for question 70: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [71/75] Question #71... ERROR generating explanation for question 71: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [72/75] Question #72... ERROR generating explanation for question 72: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [73/75] Question #73... ERROR generating explanation for question 73: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [74/75] Question #74... ERROR generating explanation for question 74: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [75/75] Question #75... ERROR generating explanation for question 75: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+
+--- PROGRESS: 75/215 complete (0 successful, 75 failed) ---
+
+
+### Processing MATH (60 questions) ###
+
+  [1/60] Question #1... ERROR generating explanation for question 1: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [2/60] Question #2... ERROR generating explanation for question 2: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [3/60] Question #3... ERROR generating explanation for question 3: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [4/60] Question #4... ERROR generating explanation for question 4: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [5/60] Question #5... ERROR generating explanation for question 5: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [6/60] Question #6... ERROR generating explanation for question 6: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [7/60] Question #7... ERROR generating explanation for question 7: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [8/60] Question #8... ERROR generating explanation for question 8: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [9/60] Question #9... ERROR generating explanation for question 9: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [10/60] Question #10... ERROR generating explanation for question 10: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [11/60] Question #11... ERROR generating explanation for question 11: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [12/60] Question #12... ERROR generating explanation for question 12: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [13/60] Question #13... ERROR generating explanation for question 13: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [14/60] Question #14... ERROR generating explanation for question 14: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [15/60] Question #15... ERROR generating explanation for question 15: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [16/60] Question #16... ERROR generating explanation for question 16: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [17/60] Question #17... ERROR generating explanation for question 17: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [18/60] Question #18... ERROR generating explanation for question 18: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [19/60] Question #19... ERROR generating explanation for question 19: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [20/60] Question #20... ERROR generating explanation for question 20: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [21/60] Question #21... ERROR generating explanation for question 21: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [22/60] Question #22... ERROR generating explanation for question 22: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [23/60] Question #23... ERROR generating explanation for question 23: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [24/60] Question #24... ERROR generating explanation for question 24: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [25/60] Question #25... ERROR generating explanation for question 25: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+
+--- PROGRESS: 100/215 complete (0 successful, 100 failed) ---
+
+  [26/60] Question #26... ERROR generating explanation for question 26: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [27/60] Question #27... ERROR generating explanation for question 27: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [28/60] Question #28... ERROR generating explanation for question 28: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [29/60] Question #29... ERROR generating explanation for question 29: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [30/60] Question #30... ERROR generating explanation for question 30: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [31/60] Question #31... ERROR generating explanation for question 31: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [32/60] Question #32... ERROR generating explanation for question 32: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [33/60] Question #33... ERROR generating explanation for question 33: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [34/60] Question #34... ERROR generating explanation for question 34: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [35/60] Question #35... ERROR generating explanation for question 35: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [36/60] Question #36... ERROR generating explanation for question 36: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [37/60] Question #37... ERROR generating explanation for question 37: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [38/60] Question #38... ERROR generating explanation for question 38: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [39/60] Question #39... ERROR generating explanation for question 39: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [40/60] Question #40... ERROR generating explanation for question 40: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [41/60] Question #41... ERROR generating explanation for question 41: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [42/60] Question #42... ERROR generating explanation for question 42: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [43/60] Question #43... ERROR generating explanation for question 43: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [44/60] Question #44... ERROR generating explanation for question 44: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [45/60] Question #45... ERROR generating explanation for question 45: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [46/60] Question #46... ERROR generating explanation for question 46: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [47/60] Question #47... ERROR generating explanation for question 47: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [48/60] Question #48... ERROR generating explanation for question 48: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [49/60] Question #49... ERROR generating explanation for question 49: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [50/60] Question #50... ERROR generating explanation for question 50: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+
+--- PROGRESS: 125/215 complete (0 successful, 125 failed) ---
+
+  [51/60] Question #51... ERROR generating explanation for question 51: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [52/60] Question #52... ERROR generating explanation for question 52: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [53/60] Question #53... ERROR generating explanation for question 53: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [54/60] Question #54... ERROR generating explanation for question 54: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [55/60] Question #55... ERROR generating explanation for question 55: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [56/60] Question #56... ERROR generating explanation for question 56: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [57/60] Question #57... ERROR generating explanation for question 57: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [58/60] Question #58... ERROR generating explanation for question 58: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [59/60] Question #59... ERROR generating explanation for question 59: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [60/60] Question #60... ERROR generating explanation for question 60: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+
+### Processing READING (40 questions) ###
+
+  [1/40] Question #1... ERROR generating explanation for question 1: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [2/40] Question #2... ERROR generating explanation for question 2: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [3/40] Question #3... ERROR generating explanation for question 3: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [4/40] Question #4... ERROR generating explanation for question 4: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [5/40] Question #5... ERROR generating explanation for question 5: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [6/40] Question #6... ERROR generating explanation for question 6: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [7/40] Question #7... ERROR generating explanation for question 7: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [8/40] Question #8... ERROR generating explanation for question 8: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [9/40] Question #9... ERROR generating explanation for question 9: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [10/40] Question #10... ERROR generating explanation for question 10: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [11/40] Question #11... ERROR generating explanation for question 11: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [12/40] Question #12... ERROR generating explanation for question 12: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [13/40] Question #13... ERROR generating explanation for question 13: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [14/40] Question #14... ERROR generating explanation for question 14: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [15/40] Question #15... ERROR generating explanation for question 15: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+
+--- PROGRESS: 150/215 complete (0 successful, 150 failed) ---
+
+  [16/40] Question #16... ERROR generating explanation for question 16: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [17/40] Question #17... ERROR generating explanation for question 17: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [18/40] Question #18... ERROR generating explanation for question 18: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [19/40] Question #19... ERROR generating explanation for question 19: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [20/40] Question #20... ERROR generating explanation for question 20: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [21/40] Question #21... ERROR generating explanation for question 21: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [22/40] Question #22... ERROR generating explanation for question 22: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [23/40] Question #23... ERROR generating explanation for question 23: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [24/40] Question #24... ERROR generating explanation for question 24: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [25/40] Question #25... ERROR generating explanation for question 25: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [26/40] Question #26... ERROR generating explanation for question 26: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [27/40] Question #27... ERROR generating explanation for question 27: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [28/40] Question #28... ERROR generating explanation for question 28: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [29/40] Question #29... ERROR generating explanation for question 29: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [30/40] Question #30... ERROR generating explanation for question 30: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [31/40] Question #31... ERROR generating explanation for question 31: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [32/40] Question #32... ERROR generating explanation for question 32: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [33/40] Question #33... ERROR generating explanation for question 33: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [34/40] Question #34... ERROR generating explanation for question 34: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [35/40] Question #35... ERROR generating explanation for question 35: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [36/40] Question #36... ERROR generating explanation for question 36: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [37/40] Question #37... ERROR generating explanation for question 37: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [38/40] Question #38... ERROR generating explanation for question 38: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [39/40] Question #39... ERROR generating explanation for question 39: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [40/40] Question #40... ERROR generating explanation for question 40: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+
+--- PROGRESS: 175/215 complete (0 successful, 175 failed) ---
+
+
+### Processing SCIENCE (40 questions) ###
+
+  [1/40] Question #1... ERROR generating explanation for question 1: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [2/40] Question #2... ERROR generating explanation for question 2: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [3/40] Question #3... ERROR generating explanation for question 3: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [4/40] Question #4... ERROR generating explanation for question 4: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [5/40] Question #5... ERROR generating explanation for question 5: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [6/40] Question #6... ERROR generating explanation for question 6: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [7/40] Question #7... ERROR generating explanation for question 7: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [8/40] Question #8... ERROR generating explanation for question 8: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [9/40] Question #9... ERROR generating explanation for question 9: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [10/40] Question #10... ERROR generating explanation for question 10: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [11/40] Question #11... ERROR generating explanation for question 11: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [12/40] Question #12... ERROR generating explanation for question 12: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [13/40] Question #13... ERROR generating explanation for question 13: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [14/40] Question #14... ERROR generating explanation for question 14: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [15/40] Question #15... ERROR generating explanation for question 15: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [16/40] Question #16... ERROR generating explanation for question 16: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [17/40] Question #17... ERROR generating explanation for question 17: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [18/40] Question #18... ERROR generating explanation for question 18: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [19/40] Question #19... ERROR generating explanation for question 19: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [20/40] Question #20... ERROR generating explanation for question 20: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [21/40] Question #21... ERROR generating explanation for question 21: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [22/40] Question #22... ERROR generating explanation for question 22: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [23/40] Question #23... ERROR generating explanation for question 23: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [24/40] Question #24... ERROR generating explanation for question 24: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [25/40] Question #25... ERROR generating explanation for question 25: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+
+--- PROGRESS: 200/215 complete (0 successful, 200 failed) ---
+
+  [26/40] Question #26... ERROR generating explanation for question 26: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [27/40] Question #27... ERROR generating explanation for question 27: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [28/40] Question #28... ERROR generating explanation for question 28: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [29/40] Question #29... ERROR generating explanation for question 29: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [30/40] Question #30... ERROR generating explanation for question 30: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [31/40] Question #31... ERROR generating explanation for question 31: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [32/40] Question #32... ERROR generating explanation for question 32: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [33/40] Question #33... ERROR generating explanation for question 33: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [34/40] Question #34... ERROR generating explanation for question 34: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [35/40] Question #35... ERROR generating explanation for question 35: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [36/40] Question #36... ERROR generating explanation for question 36: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [37/40] Question #37... ERROR generating explanation for question 37: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [38/40] Question #38... ERROR generating explanation for question 38: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [39/40] Question #39... ERROR generating explanation for question 39: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+  [40/40] Question #40... ERROR generating explanation for question 40: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted"
+FAILED TO GENERATE
+
+================================================================================
+FINAL RESULTS: 0/215 successful, 215 failed
+================================================================================

@@ -6,9 +6,10 @@
 import { supabase } from './api/supabase.service';
 
 /**
- * Free trial limits
+ * Free trial configuration
  */
 export const FREE_TRIAL_LIMITS = {
+  TRIAL_DAYS: 3,
   LESSONS_PER_SECTION: 5,
   PRACTICE_TESTS: 1,
   PRACTICE_QUESTIONS_PER_LESSON: 10,
@@ -18,10 +19,10 @@ export const FREE_TRIAL_LIMITS = {
 };
 
 /**
- * List of Pro user emails
- * TODO: Replace with database table when payment integration is ready
+ * Fallback Pro user emails (for admin access)
+ * These emails will always have Pro access regardless of subscription status
  */
-const PRO_USERS = [
+const ADMIN_PRO_USERS = [
   'cadenchiangjunk@gmail.com'
 ];
 
@@ -39,8 +40,35 @@ export async function hasProSubscription(userId) {
       return false;
     }
 
-    // Check if user email is in Pro users list
-    return PRO_USERS.includes(userData.user.email);
+    // Check if user is an admin (fallback/override)
+    if (ADMIN_PRO_USERS.includes(userData.user.email)) {
+      return true;
+    }
+
+    // Check subscription status in database
+    const { data: subscription, error } = await supabase
+      .from('subscriptions')
+      .select('subscription_status, current_period_end')
+      .eq('user_id', userId)
+      .maybeSingle();
+
+    if (error) {
+      console.error('Error checking subscription:', error);
+      return false;
+    }
+
+    // User has no subscription record
+    if (!subscription) {
+      return false;
+    }
+
+    // Check if subscription is active and not expired
+    const isActive = subscription.subscription_status === 'active';
+    const notExpired = subscription.current_period_end
+      ? new Date(subscription.current_period_end) > new Date()
+      : false;
+
+    return isActive && notExpired;
   } catch (error) {
     console.error('Error checking subscription:', error);
     return false;
@@ -56,6 +84,34 @@ export async function hasProSubscription(userId) {
 export async function isFreeTrial(userId) {
   const isPro = await hasProSubscription(userId);
   return !isPro;
+}
+
+/**
+ * Get trial info for user
+ *
+ * @param {string} userId - User ID
+ * @returns {Promise<Object>} Trial info object
+ */
+export async function getTrialInfo(userId) {
+  try {
+    const { data: userData } = await supabase.auth.getUser();
+    if (!userData?.user?.created_at) {
+      return { daysRemaining: 3, isExpired: false };
+    }
+
+    const createdAt = new Date(userData.user.created_at);
+    const now = new Date();
+    const daysSinceCreation = Math.floor((now - createdAt) / (1000 * 60 * 60 * 24));
+    const daysRemaining = Math.max(0, FREE_TRIAL_LIMITS.TRIAL_DAYS - daysSinceCreation);
+
+    return {
+      daysRemaining,
+      isExpired: daysRemaining === 0
+    };
+  } catch (error) {
+    console.error('Error getting trial info:', error);
+    return { daysRemaining: 3, isExpired: false };
+  }
 }
 
 /**
@@ -75,11 +131,15 @@ export async function getFeatureAccess(userId) {
       hasInsights: true,
       hasLearningPath: true,
       hasAdvancedAnalytics: true,
-      isPro: true
+      isPro: true,
+      trialDaysRemaining: null,
+      isTrialExpired: false
     };
   }
 
-  // Free trial limits
+  // Free users (trial or expired) get the same restricted access
+  const trialInfo = await getTrialInfo(userId);
+
   return {
     lessonsPerSection: FREE_TRIAL_LIMITS.LESSONS_PER_SECTION,
     practiceTests: FREE_TRIAL_LIMITS.PRACTICE_TESTS,
@@ -87,7 +147,9 @@ export async function getFeatureAccess(userId) {
     hasInsights: FREE_TRIAL_LIMITS.HAS_INSIGHTS,
     hasLearningPath: FREE_TRIAL_LIMITS.HAS_LEARNING_PATH,
     hasAdvancedAnalytics: FREE_TRIAL_LIMITS.HAS_ADVANCED_ANALYTICS,
-    isPro: false
+    isPro: false,
+    trialDaysRemaining: trialInfo.daysRemaining,
+    isTrialExpired: trialInfo.isExpired
   };
 }
 
@@ -95,5 +157,6 @@ export default {
   hasProSubscription,
   isFreeTrial,
   getFeatureAccess,
+  getTrialInfo,
   FREE_TRIAL_LIMITS
 };

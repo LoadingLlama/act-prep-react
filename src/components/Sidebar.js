@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { HiHome, HiDocumentText, HiBookOpen, HiChartBar, HiUser, HiCog6Tooth, HiArrowRightOnRectangle, HiXMark } from 'react-icons/hi2';
+import { HiHome, HiDocumentText, HiBookOpen, HiChartBar, HiUser, HiCog6Tooth, HiArrowRightOnRectangle, HiXMark, HiLockClosed } from 'react-icons/hi2';
 import { useAuth } from '../contexts/AuthContext';
 import soundEffects from '../services/soundEffects';
 
@@ -174,10 +174,21 @@ const useStyles = createUseStyles({
     background: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)',
     color: '#1e40af',
     border: '1px solid #93c5fd'
+  },
+  lockedBadge: {
+    background: 'linear-gradient(135deg, #fecaca 0%, #fca5a5 100%)',
+    color: '#991b1b',
+    border: '1px solid #f87171'
+  },
+  lockIcon: {
+    marginLeft: 'auto',
+    fontSize: '0.8rem',
+    color: '#ef4444',
+    opacity: 0.7
   }
 });
 
-const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft }) => {
+const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft, isTrialExpired }) => {
   const classes = useStyles();
   const { signOut } = useAuth();
 
@@ -186,6 +197,18 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
   };
 
   const handleNavigate = (view) => {
+    // Allow navigation to profile, settings, and upgrade even if trial expired
+    const allowedViews = ['profile', 'settings', 'upgrade'];
+    if (isTrialExpired && !isPro && !allowedViews.includes(view)) {
+      // Redirect to upgrade page if trying to access locked content
+      soundEffects.playNavigation();
+      onNavigate('upgrade');
+      if (onClose) {
+        onClose();
+      }
+      return;
+    }
+
     soundEffects.playNavigation();
     onNavigate(view);
     // Close sidebar on mobile after navigation
@@ -210,23 +233,26 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
         </button>
 
         <div className={classes.logoSection}>
-          <img
-            src="/images/nomi-academy-logo.png"
-            alt="Nomi Academy"
-            style={{
-              height: '64px',
-              objectFit: 'contain'
-            }}
-          />
+          <div style={{
+            fontSize: '28px',
+            fontWeight: '400',
+            fontFamily: '"Times New Roman", Times, serif',
+            color: '#1e3a8a',
+            letterSpacing: '-0.01em'
+          }}>
+            Nomi Academy
+          </div>
         </div>
 
       <div className={classes.navSection}>
         <button
           className={`${classes.navItem} ${activeView === 'home' ? 'active' : ''}`}
           onClick={() => handleNavigate('home')}
+          style={{ opacity: isTrialExpired && !isPro ? 0.5 : 1 }}
         >
           <span className={classes.icon}><HiHome /></span>
           Home
+          {isTrialExpired && !isPro && <HiLockClosed className={classes.lockIcon} />}
         </button>
       </div>
 
@@ -235,23 +261,29 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
         <button
           className={`${classes.navItem} ${activeView === 'lessons' ? 'active' : ''}`}
           onClick={() => handleNavigate('lessons')}
+          style={{ opacity: isTrialExpired && !isPro ? 0.5 : 1 }}
         >
           <span className={classes.icon}><HiBookOpen /></span>
           Lessons
+          {isTrialExpired && !isPro && <HiLockClosed className={classes.lockIcon} />}
         </button>
         <button
           className={`${classes.navItem} ${activeView === 'tests' ? 'active' : ''}`}
           onClick={() => handleNavigate('tests')}
+          style={{ opacity: isTrialExpired && !isPro ? 0.5 : 1 }}
         >
           <span className={classes.icon}><HiDocumentText /></span>
           Tests
+          {isTrialExpired && !isPro && <HiLockClosed className={classes.lockIcon} />}
         </button>
         <button
           className={`${classes.navItem} ${activeView === 'insights' ? 'active' : ''}`}
           onClick={() => handleNavigate('insights')}
+          style={{ opacity: isTrialExpired && !isPro ? 0.5 : 1 }}
         >
           <span className={classes.icon}><HiChartBar /></span>
           Insights
+          {isTrialExpired && !isPro && <HiLockClosed className={classes.lockIcon} />}
         </button>
       </div>
 
@@ -264,8 +296,8 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
         >
           <span className={classes.icon}><HiUser /></span>
           Profile
-          <span className={`${classes.statusBadge} ${isPro ? classes.proBadge : classes.trialBadge}`}>
-            {isPro ? 'Pro' : `${trialDaysLeft}d left`}
+          <span className={`${classes.statusBadge} ${isPro ? classes.proBadge : isTrialExpired ? classes.lockedBadge : classes.trialBadge}`}>
+            {isPro ? 'Pro' : isTrialExpired ? 'Locked' : `${trialDaysLeft}d left`}
           </span>
         </button>
         <button

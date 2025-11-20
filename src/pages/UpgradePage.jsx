@@ -8,6 +8,8 @@ import { createUseStyles } from 'react-jss';
 import { HiCheck, HiSparkles, HiRocketLaunch, HiStar, HiLockClosed } from 'react-icons/hi2';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../services/api/supabase.service';
+import { createCheckoutSession } from '../services/stripe.service';
+import { getTrialInfo } from '../services/subscription.service';
 
 const useStyles = createUseStyles({
   container: {
@@ -260,21 +262,16 @@ const useStyles = createUseStyles({
 const UpgradePage = () => {
   const classes = useStyles();
   const { user } = useAuth();
-  const [trialDaysLeft, setTrialDaysLeft] = useState(14);
+  const [trialDaysLeft, setTrialDaysLeft] = useState(3);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const calculateTrialDays = async () => {
       if (!user) return;
 
       try {
-        const { data: userData } = await supabase.auth.getUser();
-        if (userData?.user?.created_at) {
-          const createdAt = new Date(userData.user.created_at);
-          const now = new Date();
-          const daysSinceCreation = Math.floor((now - createdAt) / (1000 * 60 * 60 * 24));
-          const daysRemaining = Math.max(0, 14 - daysSinceCreation);
-          setTrialDaysLeft(daysRemaining);
-        }
+        const trialInfo = await getTrialInfo(user.id);
+        setTrialDaysLeft(trialInfo.daysRemaining);
       } catch (error) {
         console.error('Error calculating trial days:', error);
       }
@@ -283,16 +280,28 @@ const UpgradePage = () => {
     calculateTrialDays();
   }, [user]);
 
-  const handleUpgrade = () => {
-    console.log('Upgrade to Pro');
-    // TODO: Integrate with payment processor (Stripe, etc.)
+  const handleUpgrade = async () => {
+    try {
+      if (!user) {
+        console.error('No user found');
+        return;
+      }
+
+      setIsLoading(true);
+      console.log('Redirecting to Stripe Checkout...');
+      await createCheckoutSession(user.id, user.email);
+    } catch (error) {
+      console.error('Error starting checkout:', error);
+      setIsLoading(false);
+      alert('Failed to start checkout. Please try again.');
+    }
   };
 
   const proFeatures = [
-    { text: 'Unlimited lessons across all sections', highlight: 'Unlimited' },
+    { text: 'Full access to all lessons across all sections', highlight: 'Full access' },
     { text: 'Full diagnostic test access' },
-    { text: 'Unlimited practice tests' },
-    { text: 'Unlimited practice questions per lesson' },
+    { text: 'Full access to all practice tests' },
+    { text: 'Full access to all practice questions per lesson' },
     { text: 'AI-powered learning path recommendations' },
     { text: 'Advanced performance insights & analytics' },
     { text: 'Detailed progress tracking' },
@@ -320,7 +329,7 @@ const UpgradePage = () => {
           Unlock Everything to Ace the ACT
         </h1>
         <p className={classes.subtitle}>
-          Get unlimited access to all lessons, tests, and AI-powered features to maximize your score.
+          Get full access to all lessons, tests, and AI-powered features to maximize your score.
         </p>
         <div className={classes.priceHighlight}>
           Save $48/year with annual billing
@@ -337,9 +346,14 @@ const UpgradePage = () => {
           <div className={classes.priceNote}>
             Billed monthly • Cancel anytime
           </div>
-          <button className={classes.ctaButton} onClick={handleUpgrade}>
+          <button
+            className={classes.ctaButton}
+            onClick={handleUpgrade}
+            disabled={isLoading}
+            style={{ opacity: isLoading ? 0.7 : 1, cursor: isLoading ? 'wait' : 'pointer' }}
+          >
             <HiRocketLaunch style={{ fontSize: '1.125rem' }} />
-            Start Pro Now
+            {isLoading ? 'Redirecting to Checkout...' : 'Start Pro Now'}
           </button>
         </div>
 
@@ -406,15 +420,6 @@ const UpgradePage = () => {
           </div>
         </div>
 
-        <div className={classes.guaranteeBanner}>
-          <div className={classes.guaranteeTitle}>
-            <HiCheck style={{ fontSize: '1.125rem' }} />
-            14-Day Money-Back Guarantee
-          </div>
-          <p className={classes.guaranteeText}>
-            Not satisfied? Get a full refund within 14 days, no questions asked.
-          </p>
-        </div>
       </div>
     </div>
   );

@@ -98,11 +98,31 @@ const DiagnosticService = {
           // ["A. Text", "B. Text"] => {A: "Text", B: "Text"}
           const answers = {};
           if (parsedChoices && Array.isArray(parsedChoices)) {
-            parsedChoices.forEach(choice => {
-              const match = choice.match(/^([A-K])\.\s*(.+)$/);
+            parsedChoices.forEach((choice, choiceIdx) => {
+              // Try multiple patterns: "A. text", "A) text", "A: text", or just text
+              let match = choice.match(/^([A-K])\.\s*(.+)$/);
+              if (!match) match = choice.match(/^([A-K])\)\s*(.+)$/);
+              if (!match) match = choice.match(/^([A-K]):\s*(.+)$/);
+              if (!match) match = choice.match(/^([A-K])\s+(.+)$/);
+
               if (match) {
-                answers[match[1]] = match[2];
+                answers[match[1]] = match[2].trim();
+              } else {
+                // If no pattern matches, use array index to generate letter
+                const letter = String.fromCharCode(65 + choiceIdx); // 0->A, 1->B, etc.
+                answers[letter] = choice.trim();
+                console.warn(`⚠️ Question ${q.question_number}: Choice didn't match expected format, using index:`, { choice, generatedLetter: letter });
               }
+            });
+          }
+
+          // Debug if answers is empty
+          if (Object.keys(answers).length === 0 && parsedChoices) {
+            console.error(`❌ Question ${q.question_number} in ${sectionName} has no answers after parsing!`, {
+              rawChoices: q.choices,
+              parsedChoices,
+              parsedChoicesType: typeof parsedChoices,
+              isArray: Array.isArray(parsedChoices)
             });
           }
 
@@ -113,7 +133,9 @@ const DiagnosticService = {
             passage_title: q.passage_title,
             passage_image_urls: q.passage_image_urls,
             answers: answers,
-            correctAnswer: String.fromCharCode(65 + q.correct_answer), // Convert 0->A, 1->B, etc.
+            choices: parsedChoices, // Include raw choices as fallback
+            // correct_answer is already a letter (A, B, C, etc.) in the database, not a number
+            correctAnswer: q.correct_answer,
             explanation: q.explanation,
             question_type: q.question_type,
             difficulty: q.difficulty,
