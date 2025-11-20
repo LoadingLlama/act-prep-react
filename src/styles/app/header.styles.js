@@ -170,7 +170,7 @@ export const headerStyles = {
     width: '44px',
     height: '44px',
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #08245b 0%, #3b82f6 100%)',
+    background: 'linear-gradient(135deg, #9ca3af 0%, #6b7280 100%)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -183,13 +183,13 @@ export const headerStyles = {
     boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
     '&:hover': {
       transform: 'scale(1.05)',
-      borderColor: '#3b82f6',
-      boxShadow: '0 4px 12px rgba(59, 130, 246, 0.2)'
+      borderColor: '#9ca3af',
+      boxShadow: '0 4px 12px rgba(156, 163, 175, 0.2)'
     }
   },
   profilePicturePro: {
     border: '2.5px solid transparent',
-    backgroundImage: 'linear-gradient(#08245b, #3b82f6), linear-gradient(135deg, #e8eef5 0%, #cbd5e1 25%, #94a3b8 50%, #cbd5e1 75%, #e8eef5 100%)',
+    backgroundImage: 'linear-gradient(#9ca3af, #6b7280), linear-gradient(135deg, #e8eef5 0%, #cbd5e1 25%, #94a3b8 50%, #cbd5e1 75%, #e8eef5 100%)',
     backgroundOrigin: 'border-box',
     backgroundClip: 'padding-box, border-box',
     boxShadow: '0 0 12px rgba(148, 163, 184, 0.6), 0 0 20px rgba(203, 213, 225, 0.4), 0 2px 8px rgba(100, 116, 139, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4)',

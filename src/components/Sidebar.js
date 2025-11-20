@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
-import { HiHome, HiDocumentText, HiBookOpen, HiChartBar, HiUser, HiCog6Tooth, HiArrowRightOnRectangle, HiXMark, HiLockClosed } from 'react-icons/hi2';
+import { HiHome, HiDocumentText, HiBookOpen, HiChartBar, HiUser, HiCog6Tooth, HiArrowRightOnRectangle, HiArrowLeftOnRectangle, HiXMark, HiLockClosed } from 'react-icons/hi2';
 import { useAuth } from '../contexts/AuthContext';
 import soundEffects from '../services/soundEffects';
+import Logo from './common/Logo';
 
 const useStyles = createUseStyles({
   overlay: {
@@ -190,10 +192,31 @@ const useStyles = createUseStyles({
 
 const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft, isTrialExpired }) => {
   const classes = useStyles();
-  const { signOut } = useAuth();
+  const navigate = useNavigate();
+  const { signOut, user } = useAuth();
 
   const handleLogout = async () => {
     await signOut();
+    // Clear trial session data
+    sessionStorage.clear();
+    // Stay on current page - InlineAuth will show automatically
+  };
+
+  const handleLogin = () => {
+    // Just navigate to profile which will show the inline auth
+    soundEffects.playNavigation();
+    onNavigate('home');
+    if (onClose) {
+      onClose();
+    }
+  };
+
+  const handleLogoClick = () => {
+    soundEffects.playNavigation();
+    navigate('/');
+    if (onClose) {
+      onClose();
+    }
   };
 
   const handleNavigate = (view) => {
@@ -233,15 +256,7 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
         </button>
 
         <div className={classes.logoSection}>
-          <div style={{
-            fontSize: '28px',
-            fontWeight: '400',
-            fontFamily: '"Times New Roman", Times, serif',
-            color: '#1e3a8a',
-            letterSpacing: '-0.01em'
-          }}>
-            Nomi Academy
-          </div>
+          <Logo size="large" clickable onClick={handleLogoClick} />
         </div>
 
       <div className={classes.navSection}>
@@ -290,27 +305,38 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
       <div className={classes.spacer} />
 
       <div className={classes.bottomSection}>
-        <button
-          className={`${classes.navItem} ${activeView === 'profile' ? 'active' : ''}`}
-          onClick={() => handleNavigate('profile')}
-        >
-          <span className={classes.icon}><HiUser /></span>
-          Profile
-          <span className={`${classes.statusBadge} ${isPro ? classes.proBadge : isTrialExpired ? classes.lockedBadge : classes.trialBadge}`}>
-            {isPro ? 'Pro' : isTrialExpired ? 'Locked' : `${trialDaysLeft}d left`}
-          </span>
-        </button>
-        <button
-          className={`${classes.navItem} ${activeView === 'settings' ? 'active' : ''}`}
-          onClick={() => handleNavigate('settings')}
-        >
-          <span className={classes.icon}><HiCog6Tooth /></span>
-          Settings
-        </button>
-        <button className={classes.navItem} onClick={handleLogout}>
-          <span className={classes.icon}><HiArrowRightOnRectangle /></span>
-          Logout
-        </button>
+        {user && (
+          <button
+            className={`${classes.navItem} ${activeView === 'profile' ? 'active' : ''}`}
+            onClick={() => handleNavigate('profile')}
+          >
+            <span className={classes.icon}><HiUser /></span>
+            Profile
+            <span className={`${classes.statusBadge} ${isPro ? classes.proBadge : isTrialExpired ? classes.lockedBadge : classes.trialBadge}`}>
+              {isPro ? 'Pro' : isTrialExpired ? 'Locked' : `${trialDaysLeft}d left`}
+            </span>
+          </button>
+        )}
+        {user && (
+          <button
+            className={`${classes.navItem} ${activeView === 'settings' ? 'active' : ''}`}
+            onClick={() => handleNavigate('settings')}
+          >
+            <span className={classes.icon}><HiCog6Tooth /></span>
+            Settings
+          </button>
+        )}
+        {user ? (
+          <button className={classes.navItem} onClick={handleLogout}>
+            <span className={classes.icon}><HiArrowRightOnRectangle /></span>
+            Logout
+          </button>
+        ) : (
+          <button className={classes.navItem} onClick={handleLogin}>
+            <span className={classes.icon}><HiArrowLeftOnRectangle /></span>
+            Login
+          </button>
+        )}
       </div>
       </div>
     </>

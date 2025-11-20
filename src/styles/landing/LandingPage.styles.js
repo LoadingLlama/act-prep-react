@@ -63,10 +63,10 @@ export const useLandingPageStyles = createUseStyles({
 
   navLogo: {
     fontSize: '24px',
-    fontWeight: '400',
-    fontFamily: '"Times New Roman", Times, serif',
+    fontWeight: '800',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     color: '#1e3a8a',
-    letterSpacing: '-0.01em',
+    letterSpacing: '-0.02em',
     transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease',
     cursor: 'pointer',
     '@media (max-width: 768px)': {
@@ -189,15 +189,19 @@ export const useLandingPageStyles = createUseStyles({
     width: '100%',
     maxWidth: '600px',
     margin: '0 auto 32px',
+    display: 'block',
     '@media (max-width: 768px)': {
       marginBottom: '24px',
       maxWidth: '100%',
+      padding: '0',
+      display: 'block',
     },
   },
 
   productDemoImage: {
     width: '100%',
     height: 'auto',
+    display: 'block',
     borderRadius: '12px',
     boxShadow: '0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08)',
     border: '1px solid rgba(226, 232, 240, 0.6)',
@@ -205,6 +209,12 @@ export const useLandingPageStyles = createUseStyles({
     background: 'rgba(255, 255, 255, 0.8)',
     backdropFilter: 'blur(10px)',
     WebkitBackdropFilter: 'blur(10px)',
+    '@media (max-width: 768px)': {
+      display: 'block',
+      width: '100%',
+      maxWidth: '100%',
+      borderRadius: '8px',
+    },
     '&:hover': {
       transform: 'translateY(-2px) scale(1.01)',
       boxShadow: '0 16px 50px rgba(0, 0, 0, 0.15), 0 8px 24px rgba(0, 0, 0, 0.1)',
@@ -284,6 +294,35 @@ export const useLandingPageStyles = createUseStyles({
     },
   },
 
+  ctaSubtext: {
+    fontSize: '18px',
+    fontWeight: '500',
+    color: '#4b5563',
+    marginBottom: '20px',
+    marginTop: '12px',
+    lineHeight: '1.5',
+    '@media (max-width: 768px)': {
+      fontSize: '19px',
+      marginBottom: '24px',
+      marginTop: '20px',
+      fontWeight: '600',
+      color: '#374151',
+    },
+  },
+
+  ctaButtonContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '16px',
+    marginBottom: '0',
+    '@media (max-width: 768px)': {
+      flexDirection: 'column',
+      gap: '12px',
+      width: '100%',
+    },
+  },
+
   ctaButton: {
     fontSize: '16px',
     fontWeight: '600',
@@ -298,10 +337,12 @@ export const useLandingPageStyles = createUseStyles({
     marginBottom: '0',
     position: 'relative',
     overflow: 'hidden',
+    display: 'inline-block',
     '@media (max-width: 768px)': {
       width: '100%',
       fontSize: '15px',
       padding: '14px 28px',
+      display: 'inline-block',
     },
     '&::before': {
       content: '""',
@@ -316,6 +357,50 @@ export const useLandingPageStyles = createUseStyles({
     '&:hover': {
       transform: 'translateY(-2px)',
       boxShadow: '0 8px 24px rgba(30, 58, 138, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+      '&::before': {
+        left: '100%',
+      },
+    },
+    '&:active': {
+      transform: 'translateY(0) scale(0.98)',
+    },
+  },
+
+  discordButton: {
+    fontSize: '16px',
+    fontWeight: '600',
+    color: '#ffffff',
+    background: 'linear-gradient(135deg, #5865F2 0%, #4752C4 100%)',
+    border: 'none',
+    padding: '16px 32px',
+    borderRadius: '12px',
+    cursor: 'pointer',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    boxShadow: '0 4px 16px rgba(88, 101, 242, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
+    marginBottom: '0',
+    position: 'relative',
+    overflow: 'hidden',
+    display: 'inline-block',
+    textDecoration: 'none',
+    '@media (max-width: 768px)': {
+      width: '100%',
+      fontSize: '15px',
+      padding: '14px 28px',
+      display: 'inline-block',
+    },
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: '-100%',
+      width: '100%',
+      height: '100%',
+      background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)',
+      transition: 'left 0.5s ease',
+    },
+    '&:hover': {
+      transform: 'translateY(-2px)',
+      boxShadow: '0 8px 24px rgba(88, 101, 242, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
       '&::before': {
         left: '100%',
       },

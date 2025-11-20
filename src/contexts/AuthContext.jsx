@@ -170,6 +170,62 @@ export const AuthProvider = ({ children }) => {
   };
 
   /**
+   * Sign in with Facebook OAuth
+   */
+  const signInWithFacebook = async () => {
+    try {
+      logger.info('AuthContext', 'signInWithFacebook', { action: 'start' });
+
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'facebook',
+        options: {
+          redirectTo: `${window.location.origin}/auth/callback`,
+        },
+      });
+
+      if (error) {
+        errorTracker.trackError('AuthContext', 'signInWithFacebook', {}, error);
+        throw error;
+      }
+
+      logger.info('AuthContext', 'signInWithFacebook', { success: true });
+
+      return { data, error: null };
+    } catch (error) {
+      errorTracker.trackError('AuthContext', 'signInWithFacebook', {}, error);
+      return { data: null, error };
+    }
+  };
+
+  /**
+   * Sign in with Apple OAuth
+   */
+  const signInWithApple = async () => {
+    try {
+      logger.info('AuthContext', 'signInWithApple', { action: 'start' });
+
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'apple',
+        options: {
+          redirectTo: `${window.location.origin}/auth/callback`,
+        },
+      });
+
+      if (error) {
+        errorTracker.trackError('AuthContext', 'signInWithApple', {}, error);
+        throw error;
+      }
+
+      logger.info('AuthContext', 'signInWithApple', { success: true });
+
+      return { data, error: null };
+    } catch (error) {
+      errorTracker.trackError('AuthContext', 'signInWithApple', {}, error);
+      return { data: null, error };
+    }
+  };
+
+  /**
    * Sign out
    */
   const signOut = async () => {
@@ -250,6 +306,8 @@ export const AuthProvider = ({ children }) => {
     signUp,
     signIn,
     signInWithGoogle,
+    signInWithFacebook,
+    signInWithApple,
     signOut,
     resetPassword,
   };

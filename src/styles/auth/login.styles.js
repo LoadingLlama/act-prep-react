@@ -291,14 +291,14 @@ export const loginStyles = {
     top: '32px',
     left: '32px',
     fontSize: '24px',
-    fontWeight: '400',
-    fontFamily: '"Times New Roman", Times, serif',
+    fontWeight: '800',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     color: '#1e3a8a',
     zIndex: 10,
     display: 'flex',
     alignItems: 'center',
     gap: '4px',
-    letterSpacing: '-0.01em',
+    letterSpacing: '-0.02em',
     '@media (max-width: 768px)': {
       fontSize: '20px',
       top: '24px',
@@ -308,11 +308,11 @@ export const loginStyles = {
 
   logoNomi: {
     color: '#1e3a8a',
-    fontWeight: '400',
+    fontWeight: '800',
   },
 
   logoAcademy: {
     color: '#1e3a8a',
-    fontWeight: '400',
+    fontWeight: '800',
   },
 };

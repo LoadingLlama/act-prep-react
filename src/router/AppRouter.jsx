@@ -8,6 +8,8 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { storage } from '../utils/helpers';
+import InlineAuth from '../components/auth/InlineAuth';
+import SocialBrowserWarning from '../components/auth/SocialBrowserWarning';
 
 // Eagerly load critical pages
 import LandingPage from '../pages/LandingPage';
@@ -48,7 +50,7 @@ function RouteLoader() {
 
 /**
  * Protected Route wrapper
- * Redirects to landing page if not authenticated
+ * Shows inline auth if not authenticated (keeps sidebar visible)
  */
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth();
@@ -57,8 +59,9 @@ function ProtectedRoute({ children }) {
     return <RouteLoader />;
   }
 
+  // If not authenticated, show inline auth in the content area
   if (!user) {
-    return <Navigate to="/" replace />;
+    return <InlineAuth />;
   }
 
   return children;
@@ -86,65 +89,75 @@ function PublicRoute({ children }) {
  * Main App Router
  */
 export default function AppRouter() {
+  const { user } = useAuth();
+
   return (
     <BrowserRouter>
+      {/* Social Browser Warning - Shows on all pages if in Instagram/TikTok browser */}
+      <SocialBrowserWarning />
+
       <Suspense fallback={<RouteLoader />}>
         <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={
-            <PublicRoute>
-              <LandingPage />
-            </PublicRoute>
-          } />
+          {/* Landing Page - Always accessible */}
+          <Route path="/" element={<LandingPage />} />
 
+          {/* Legacy login route - redirect to home */}
           <Route path="/login" element={
-            <PublicRoute>
-              <AuthPage />
-            </PublicRoute>
+            user ? <Navigate to="/app/home" replace /> : <Navigate to="/" replace />
           } />
 
-          {/* Protected Routes - All under /app/* */}
-          <Route path="/app/*" element={
-            <ProtectedRoute>
-              <AppLayout />
-            </ProtectedRoute>
-          }>
+          {/* App Routes - Sidebar always visible, content locked until login */}
+          <Route path="/app/*" element={<AppLayout />}>
             {/* Nested routes inside AppLayout */}
             <Route index element={<Navigate to="home" replace />} />
             <Route path="home" element={
-              <Suspense fallback={<RouteLoader />}>
-                <CourseContent />
-              </Suspense>
+              <ProtectedRoute>
+                <Suspense fallback={<RouteLoader />}>
+                  <CourseContent />
+                </Suspense>
+              </ProtectedRoute>
             } />
             <Route path="tests" element={
-              <Suspense fallback={<RouteLoader />}>
-                <TestsContent />
-              </Suspense>
+              <ProtectedRoute>
+                <Suspense fallback={<RouteLoader />}>
+                  <TestsContent />
+                </Suspense>
+              </ProtectedRoute>
             } />
             <Route path="lessons" element={
-              <Suspense fallback={<RouteLoader />}>
-                <LessonsContent />
-              </Suspense>
+              <ProtectedRoute>
+                <Suspense fallback={<RouteLoader />}>
+                  <LessonsContent />
+                </Suspense>
+              </ProtectedRoute>
             } />
             <Route path="insights" element={
-              <Suspense fallback={<RouteLoader />}>
-                <InsightsPage />
-              </Suspense>
+              <ProtectedRoute>
+                <Suspense fallback={<RouteLoader />}>
+                  <InsightsPage />
+                </Suspense>
+              </ProtectedRoute>
             } />
             <Route path="upgrade" element={
-              <Suspense fallback={<RouteLoader />}>
-                <UpgradePage />
-              </Suspense>
+              <ProtectedRoute>
+                <Suspense fallback={<RouteLoader />}>
+                  <UpgradePage />
+                </Suspense>
+              </ProtectedRoute>
             } />
             <Route path="profile" element={
-              <Suspense fallback={<RouteLoader />}>
-                <ProfilePage />
-              </Suspense>
+              <ProtectedRoute>
+                <Suspense fallback={<RouteLoader />}>
+                  <ProfilePage />
+                </Suspense>
+              </ProtectedRoute>
             } />
             <Route path="settings" element={
-              <Suspense fallback={<RouteLoader />}>
-                <SettingsPage />
-              </Suspense>
+              <ProtectedRoute>
+                <Suspense fallback={<RouteLoader />}>
+                  <SettingsPage />
+                </Suspense>
+              </ProtectedRoute>
             } />
           </Route>
 

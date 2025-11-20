@@ -4,8 +4,8 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { useOutletContext, useNavigate } from 'react-router-dom';
-import { HiBookOpen, HiDocumentText, HiPencilSquare, HiAcademicCap, HiUserCircle, HiSparkles, HiArrowPath, HiQuestionMarkCircle, HiCheckCircle } from 'react-icons/hi2';
+import { useOutletContext } from 'react-router-dom';
+import { HiPencilSquare, HiQuestionMarkCircle, HiCheckCircle } from 'react-icons/hi2';
 import { useCourseStyles } from '../../styles/app/course.styles';
 import { supabase } from '../../services/api/supabase.service';
 import { useAuth } from '../../contexts/AuthContext';
@@ -15,13 +15,13 @@ import LearningPathService from '../../services/api/learning-path.service';
 const CourseContent = () => {
   const classes = useCourseStyles();
   const { user } = useAuth();
-  const navigate = useNavigate();
   const {
     lessonProgress = {},
     lessonStructure = [],
     onLessonOpen,
     onTestOpen,
-    setDiagnosticTestOpen
+    setDiagnosticTestOpen,
+    updateLessonProgress
   } = useOutletContext();
 
   // State for user goals and edit modal
@@ -47,7 +47,6 @@ const CourseContent = () => {
   const [previewItem, setPreviewItem] = useState(null);
   const [validationError, setValidationError] = useState(null);
   const [saveButtonShake, setSaveButtonShake] = useState(false);
-  const [showBestPracticeWarning, setShowBestPracticeWarning] = useState(false);
   const [editForm, setEditForm] = useState({
     target_exam_date: '',
     current_score: '',
@@ -444,7 +443,6 @@ const CourseContent = () => {
   // Calculate statistics
   const totalLessons = lessonStructure.length;
   const completedLessons = Object.values(lessonProgress).filter(s => s === 'completed').length;
-  const inProgressLessons = Object.values(lessonProgress).filter(s => s === 'in-progress').length;
 
   // Calculate section strengths from diagnostic results
   const sectionStrengths = {
@@ -469,11 +467,6 @@ const CourseContent = () => {
     : new Date(Date.now() + 84 * 24 * 60 * 60 * 1000); // Default 12 weeks
 
   const daysUntilTest = Math.max(0, Math.ceil((testDate - new Date()) / (1000 * 60 * 60 * 24)));
-
-  // Helper to format date
-  const formatDate = (date) => {
-    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-  };
 
   const getLessonStatus = (itemId) => {
     return lessonProgress[itemId] || 'not-started';
@@ -721,6 +714,22 @@ const CourseContent = () => {
       const section = item.section;
       // Use onTestOpen to open the practice test
       onTestOpen(testNumber, section);
+    }
+  };
+
+  const toggleItemCompletion = async (itemId) => {
+    if (!updateLessonProgress || !itemId) return;
+
+    const currentStatus = lessonProgress[itemId] || 'not-started';
+    const newStatus = currentStatus === 'completed' ? 'not-started' : 'completed';
+
+    console.log(`Toggle completion for ${itemId}: ${currentStatus} → ${newStatus}`);
+    soundEffects.playClick();
+
+    try {
+      await updateLessonProgress(itemId, newStatus);
+    } catch (error) {
+      console.error('Failed to toggle completion:', error);
     }
   };
 
@@ -1782,58 +1791,123 @@ const CourseContent = () => {
                           minHeight: 0,
                           overflow: 'auto'
                         }}>
-                          {day.items.slice(0, 3).map((item, itemIdx) => (
-                            <div
-                              key={itemIdx}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                // Don't open modal for exam day
-                                if (item.type === 'exam_day') return;
-                                soundEffects.playClick();
-                                setPreviewItem({ ...item, date: day.date });
-                              }}
-                              style={{
-                                padding: '0.1875rem 0.3125rem',
-                                background: item.type === 'exam_day'
-                                  ? '#dc2626'
-                                  : item.type === 'practice_test'
-                                  ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
-                                  : item.type === 'test' || item.type === 'mock_exam'
-                                  ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
-                                  : item.type === 'review'
-                                  ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
-                                  : item.type === 'practice'
-                                  ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
-                                  : 'linear-gradient(135deg, #64748b 0%, #475569 100%)',
-                                borderRadius: '3px',
-                                cursor: item.type === 'exam_day' ? 'default' : 'pointer',
-                                fontSize: '0.625rem',
-                                fontWeight: item.type === 'exam_day' ? '700' : '500',
-                                color: '#ffffff',
-                                overflow: 'hidden',
-                                textOverflow: 'ellipsis',
-                                whiteSpace: 'nowrap',
-                                transition: 'all 0.15s ease',
-                                boxShadow: item.type === 'exam_day'
-                                  ? '0 4px 8px rgba(220,38,38,0.4)'
-                                  : item.type === 'mock_exam'
-                                  ? '0 2px 4px rgba(59,130,246,0.3)'
-                                  : '0 1px 2px rgba(0,0,0,0.1)',
-                                border: item.type === 'exam_day' ? '1px solid #fca5a5' : 'none'
-                              }}
-                              onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'translateY(-1px)';
-                                e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.15)';
-                              }}
-                              onMouseLeave={(e) => {
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = '0 1px 2px rgba(0,0,0,0.1)';
-                              }}
-                              title={item.title}
-                            >
-                              {item.title}
-                            </div>
-                          ))}
+                          {day.items.slice(0, 3).map((item, itemIdx) => {
+                            const isDiagnostic = item.isDiagnostic;
+                            const isPractice = item.type === 'practice' || item.type === 'practice_test';
+                            const isExamDay = item.type === 'exam_day';
+                            const isReview = item.type === 'review';
+                            const isMockExam = item.type === 'mock_exam';
+
+                            const dotColor = isExamDay ? '#ffffff'
+                              : isDiagnostic ? '#b91c1c'
+                              : isPractice ? '#ef4444'
+                              : isReview ? '#10b981'
+                              : isMockExam ? '#3b82f6'
+                              : '#64748b';
+
+                            const textColor = isExamDay ? '#ffffff'
+                              : isDiagnostic ? '#b91c1c'
+                              : isPractice ? '#dc2626'
+                              : isReview ? '#10b981'
+                              : isMockExam ? '#3b82f6'
+                              : '#6b7280';
+
+                            // Exam day gets special treatment
+                            if (isExamDay) {
+                              return (
+                                <div
+                                  key={itemIdx}
+                                  style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.25rem',
+                                    padding: '0.25rem 0.375rem',
+                                    background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
+                                    border: '1px solid #fca5a5',
+                                    borderRadius: '4px',
+                                    cursor: 'default',
+                                    fontSize: '0.625rem',
+                                    fontWeight: '700',
+                                    color: '#ffffff',
+                                    overflow: 'hidden',
+                                    textOverflow: 'ellipsis',
+                                    whiteSpace: 'nowrap',
+                                    boxShadow: '0 2px 6px rgba(220, 38, 38, 0.3)'
+                                  }}
+                                  title={item.title}
+                                >
+                                  <div
+                                    style={{
+                                      width: '4px',
+                                      height: '4px',
+                                      borderRadius: '50%',
+                                      background: '#ffffff',
+                                      flexShrink: 0
+                                    }}
+                                  />
+                                  <span style={{
+                                    overflow: 'hidden',
+                                    textOverflow: 'ellipsis',
+                                    whiteSpace: 'nowrap'
+                                  }}>
+                                    {item.title}
+                                  </span>
+                                </div>
+                              );
+                            }
+
+                            return (
+                              <div
+                                key={itemIdx}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  soundEffects.playClick();
+                                  setPreviewItem({ ...item, date: day.date });
+                                }}
+                                style={{
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  gap: '0.25rem',
+                                  padding: '0.1875rem 0.3125rem',
+                                  background: 'transparent',
+                                  borderRadius: '3px',
+                                  cursor: 'pointer',
+                                  fontSize: '0.625rem',
+                                  fontWeight: isDiagnostic || isMockExam || isReview ? '600' : '400',
+                                  color: textColor,
+                                  overflow: 'hidden',
+                                  textOverflow: 'ellipsis',
+                                  whiteSpace: 'nowrap',
+                                  transition: 'all 0.15s ease',
+                                  border: 'none'
+                                }}
+                                onMouseEnter={(e) => {
+                                  e.currentTarget.style.background = '#f3f4f6';
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.currentTarget.style.background = 'transparent';
+                                }}
+                                title={item.title}
+                              >
+                                <div
+                                  style={{
+                                    width: '4px',
+                                    height: '4px',
+                                    borderRadius: '50%',
+                                    background: dotColor,
+                                    flexShrink: 0
+                                  }}
+                                />
+                                <span style={{
+                                  overflow: 'hidden',
+                                  textOverflow: 'ellipsis',
+                                  whiteSpace: 'nowrap'
+                                }}>
+                                  {item.title}
+                                </span>
+                              </div>
+                            );
+                          })}
                           {day.items.length > 3 && (
                             <div style={{
                               padding: '0.25rem 0.375rem',
@@ -1918,83 +1992,177 @@ const CourseContent = () => {
                           No events
                         </div>
                       ) : day.items.map((item, itemIdx) => {
+                        const status = getLessonStatus(item.id);
+                        const isCompleted = status === 'completed';
                         const isExamDay = item.type === 'exam_day';
-                        const isMockExam = item.type === 'mock_exam';
-                        const isPracticeTest = item.type === 'practice_test';
-                        const isTest = item.type === 'test';
+                        const isDiagnostic = item.isDiagnostic;
+                        const isPractice = item.type === 'practice' || item.type === 'practice_test';
                         const isReview = item.type === 'review';
-                        const isPractice = item.type === 'practice';
-                        const isLesson = item.type === 'lesson';
+                        const isMockExam = item.type === 'mock_exam';
+
+                        // Determine dot color and text color based on item type
+                        const dotColor = isExamDay ? '#dc2626'
+                          : isDiagnostic ? '#b91c1c'
+                          : isPractice ? '#ef4444'
+                          : isReview ? '#10b981'
+                          : isMockExam ? '#3b82f6'
+                          : '#64748b';
+
+                        const textColor = isExamDay ? '#dc2626'
+                          : isDiagnostic ? '#b91c1c'
+                          : isPractice ? '#dc2626'
+                          : isReview ? '#10b981'
+                          : isMockExam ? '#3b82f6'
+                          : '#6b7280';
+
+                        const handleCheckboxClick = async (e) => {
+                          e.stopPropagation();
+                          await toggleItemCompletion(item.id);
+                        };
+
+                        // Exam day gets special treatment
+                        if (isExamDay) {
+                          return (
+                            <div
+                              key={itemIdx}
+                              style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.5rem',
+                                padding: '0.5rem 0.5rem',
+                                background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
+                                border: '1px solid #fca5a5',
+                                borderRadius: '6px',
+                                cursor: 'default',
+                                margin: '0.125rem 0',
+                                boxShadow: '0 2px 8px rgba(220, 38, 38, 0.3)'
+                              }}
+                            >
+                              {/* White Dot */}
+                              <div
+                                style={{
+                                  width: '6px',
+                                  height: '6px',
+                                  borderRadius: '50%',
+                                  background: '#ffffff',
+                                  flexShrink: 0,
+                                  boxShadow: '0 0 0 1px rgba(255, 255, 255, 0.3)'
+                                }}
+                              />
+
+                              {/* Content */}
+                              <span style={{
+                                fontSize: '0.75rem',
+                                fontWeight: '700',
+                                color: '#ffffff',
+                                lineHeight: '1.3',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                                whiteSpace: 'nowrap',
+                                flex: 1
+                              }}>
+                                {item.title}
+                              </span>
+                            </div>
+                          );
+                        }
 
                         return (
                           <div
                             key={itemIdx}
-                            onClick={() => !isExamDay && handleItemClick(item)}
+                            onClick={() => handleItemClick(item)}
                             style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '0.5rem',
                               padding: '0.375rem 0.5rem',
-                              background: isExamDay
-                                ? '#dc2626'
-                                : isMockExam || isTest
-                                ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
-                                : isPracticeTest
-                                ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
-                                : isReview
-                                ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
-                                : isPractice
-                                ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
-                                : 'linear-gradient(135deg, #64748b 0%, #475569 100%)',
-                              border: isExamDay ? '1px solid #fca5a5' : 'none',
-                              borderRadius: '4px',
-                              cursor: isExamDay ? 'default' : 'pointer',
-                              transition: 'all 0.15s ease',
-                              boxShadow: isExamDay
-                                ? '0 4px 8px rgba(220,38,38,0.4)'
-                                : isMockExam || isTest || isPracticeTest
-                                ? '0 2px 4px rgba(59,130,246,0.3)'
-                                : '0 1px 2px rgba(0,0,0,0.1)',
+                              background: 'transparent',
+                              border: 'none',
+                              borderBottom: '1px solid #f3f4f6',
+                              borderRadius: '0',
+                              cursor: 'pointer',
+                              transition: 'background 0.15s ease',
                               minWidth: 0,
                               overflow: 'hidden'
                             }}
                             onMouseEnter={(e) => {
-                              if (!isExamDay) {
-                                e.currentTarget.style.transform = 'translateY(-1px)';
-                                e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.15)';
-                              }
+                              e.currentTarget.style.background = '#fafbfc';
                             }}
                             onMouseLeave={(e) => {
-                              if (!isExamDay) {
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = isExamDay
-                                  ? '0 4px 8px rgba(220,38,38,0.4)'
-                                  : isMockExam || isTest
-                                  ? '0 2px 4px rgba(59,130,246,0.3)'
-                                  : '0 1px 2px rgba(0,0,0,0.1)';
-                              }
+                              e.currentTarget.style.background = 'transparent';
                             }}
                           >
-                            <div style={{
-                              fontSize: '0.75rem',
-                              fontWeight: isExamDay ? '700' : '500',
-                              color: '#ffffff',
-                              marginBottom: item.category ? '0.125rem' : '0',
-                              lineHeight: '1.3',
-                              overflow: 'hidden',
-                              textOverflow: 'ellipsis',
-                              whiteSpace: 'nowrap'
-                            }}>
-                              {item.title}
+                            {/* Checkbox */}
+                            <div
+                              onClick={handleCheckboxClick}
+                              style={{
+                                width: '16px',
+                                height: '16px',
+                                borderRadius: '4px',
+                                border: '2px solid #d1d5db',
+                                flexShrink: 0,
+                                transition: 'border-color 0.2s ease',
+                                position: 'relative',
+                                background: isCompleted ? '#14b8a6' : '#ffffff',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                              }}
+                            >
+                              {isCompleted && (
+                                <span style={{
+                                  color: '#ffffff',
+                                  fontSize: '0.625rem',
+                                  fontWeight: '700'
+                                }}>
+                                  ✓
+                                </span>
+                              )}
                             </div>
-                            {item.category && (
-                              <div style={{
-                                fontSize: '0.6875rem',
-                                color: 'rgba(255,255,255,0.7)',
+
+                            {/* Colored Dot */}
+                            <div
+                              style={{
+                                width: '6px',
+                                height: '6px',
+                                borderRadius: '50%',
+                                background: dotColor,
+                                flexShrink: 0
+                              }}
+                            />
+
+                            {/* Content */}
+                            <div style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '0.375rem',
+                              flex: 1,
+                              minWidth: 0
+                            }}>
+                              <span style={{
+                                fontSize: '0.75rem',
+                                fontWeight: isDiagnostic || isMockExam || isReview ? '600' : '400',
+                                color: textColor,
+                                lineHeight: '1.3',
                                 overflow: 'hidden',
                                 textOverflow: 'ellipsis',
-                                whiteSpace: 'nowrap'
+                                whiteSpace: 'nowrap',
+                                flex: 1
                               }}>
-                                {item.category}
-                              </div>
-                            )}
+                                {item.title}
+                              </span>
+                              <span style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: '#9ca3af',
+                                fontSize: '0.75rem',
+                                flexShrink: 0
+                              }}>
+                                {getItemIcon(item.type)}
+                              </span>
+                            </div>
                           </div>
                         );
                       })}
@@ -2075,122 +2243,181 @@ const CourseContent = () => {
                     {week.week}
                   </h2>
                 </div>
-                <div className={classes.weekGrid} style={{ padding: '1rem 1.5rem' }}>
+                <div className={classes.weekGrid} style={{ padding: '0.5rem 1rem' }}>
                   {week.items.map((item, itemIndex) => {
                     const status = getLessonStatus(item.id);
                     const isCompleted = status === 'completed';
-                    const lessonData = lessonStructure.find(l => l.id === item.id);
-                    const isTest = item.type === 'test' || item.type === 'mock_exam';
-                    const isReview = item.type === 'review';
-                    const isMockExam = item.type === 'mock_exam';
-                    const isPracticeTest = item.type === 'practice_test';
                     const isExamDay = item.type === 'exam_day';
                     const isDiagnostic = item.isDiagnostic;
-                    const isPractice = item.type === 'practice';
+                    const isPractice = item.type === 'practice' || item.type === 'practice_test';
+                    const isReview = item.type === 'review';
+                    const isMockExam = item.type === 'mock_exam';
 
-                    // Style for different item types
-                    let cardStyle = {};
+                    // Determine dot color and text color based on item type
+                    const dotColor = isExamDay ? '#dc2626'
+                      : isDiagnostic ? '#b91c1c'
+                      : isPractice ? '#ef4444'
+                      : isReview ? '#10b981'
+                      : isMockExam ? '#3b82f6'
+                      : '#64748b';
+
+                    const textColor = isExamDay ? '#dc2626'
+                      : isDiagnostic ? '#b91c1c'
+                      : isPractice ? '#dc2626'
+                      : isReview ? '#10b981'
+                      : isMockExam ? '#3b82f6'
+                      : '#6b7280';
+
+                    const handleCheckboxClick = async (e) => {
+                      e.stopPropagation();
+                      await toggleItemCompletion(item.id);
+                    };
+
+                    // Exam day gets special treatment
                     if (isExamDay) {
-                      cardStyle = {
-                        background: 'linear-gradient(135deg, #dc2626 0%, #991b1b 100%)',
-                        border: 'none',
-                        cursor: 'default',
-                        boxShadow: '0 4px 12px rgba(220, 38, 38, 0.3)',
-                        padding: '1.25rem'
-                      };
-                    } else if (isDiagnostic) {
-                      cardStyle = {
-                        borderLeft: '3px solid #b91c1c',
-                        paddingLeft: '0.75rem',
-                        background: 'linear-gradient(90deg, #fef2f2 0%, #ffffff 100%)'
-                      };
-                    } else if (isPracticeTest) {
-                      // Blue styling for practice tests
-                      cardStyle = {
-                        borderLeft: '3px solid #3b82f6',
-                        paddingLeft: '0.75rem',
-                        background: 'linear-gradient(90deg, #dbeafe 0%, #ffffff 100%)'
-                      };
-                    } else if (isMockExam) {
-                      cardStyle = {
-                        borderLeft: '3px solid #f59e0b',
-                        paddingLeft: '0.75rem',
-                        background: 'linear-gradient(90deg, #fef3c7 0%, #ffffff 100%)'
-                      };
-                    } else if (isTest) {
-                      cardStyle = {
-                        borderLeft: '3px solid #2563eb',
-                        paddingLeft: '0.75rem',
-                        background: 'linear-gradient(90deg, #eff6ff 0%, #ffffff 100%)'
-                      };
-                    } else if (isReview) {
-                      cardStyle = {
-                        borderLeft: '3px solid #10b981',
-                        paddingLeft: '0.75rem',
-                        background: 'linear-gradient(90deg, #d1fae5 0%, #ffffff 100%)'
-                      };
-                    } else if (isPractice) {
-                      // Orange styling for practice activities
-                      cardStyle = {
-                        borderLeft: '3px solid #f59e0b',
-                        paddingLeft: '0.75rem',
-                        background: 'linear-gradient(90deg, #fef3c7 0%, #ffffff 100%)'
-                      };
+                      return (
+                        <div
+                          key={itemIndex}
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.875rem',
+                            padding: '0.85rem 0.75rem',
+                            background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
+                            border: '2px solid #fca5a5',
+                            borderRadius: '8px',
+                            cursor: 'default',
+                            margin: '0.25rem 0',
+                            boxShadow: '0 4px 12px rgba(220, 38, 38, 0.3)'
+                          }}
+                        >
+                          {/* Dot */}
+                          <div
+                            style={{
+                              width: '10px',
+                              height: '10px',
+                              borderRadius: '50%',
+                              background: '#ffffff',
+                              flexShrink: 0,
+                              boxShadow: '0 0 0 2px rgba(255, 255, 255, 0.3)'
+                            }}
+                          />
+
+                          {/* Content */}
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flex: 1 }}>
+                            <span
+                              style={{
+                                fontSize: '0.95rem',
+                                color: '#ffffff',
+                                fontWeight: '700',
+                                transition: 'all 0.2s ease'
+                              }}
+                            >
+                              {item.title}
+                            </span>
+                            <span style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              color: '#ffffff',
+                              fontSize: '0.875rem',
+                              flexShrink: 0
+                            }}>
+                              {getItemIcon(item.type)}
+                            </span>
+                          </div>
+                        </div>
+                      );
                     }
 
                     return (
                       <div
                         key={itemIndex}
                         className={`${classes.weekCard} ${isCompleted ? 'completed' : ''}`}
-                        onClick={() => !isExamDay && handleItemClick(item)}
-                        style={cardStyle}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.875rem',
+                          padding: '0.65rem 0.75rem',
+                          background: 'transparent',
+                          border: 'none',
+                          borderBottom: '1px solid #f3f4f6',
+                          borderRadius: '0',
+                          cursor: 'pointer',
+                          transition: 'background 0.15s ease',
+                          margin: '0 0 2px 0'
+                        }}
+                        onClick={() => handleItemClick(item)}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = '#fafbfc';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = 'transparent';
+                        }}
                       >
-                        <div className={classes.weekCardContent}>
+                        {/* Checkbox */}
+                        <div
+                          onClick={handleCheckboxClick}
+                          style={{
+                            width: '20px',
+                            height: '20px',
+                            borderRadius: '5px',
+                            border: '2.5px solid #d1d5db',
+                            flexShrink: 0,
+                            transition: 'border-color 0.2s ease',
+                            position: 'relative',
+                            background: isCompleted ? '#14b8a6' : '#ffffff',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}
+                        >
+                          {isCompleted && (
+                            <span style={{
+                              color: '#ffffff',
+                              fontSize: '0.7rem',
+                              fontWeight: '700'
+                            }}>
+                              ✓
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Colored Dot */}
+                        <div
+                          style={{
+                            width: '8px',
+                            height: '8px',
+                            borderRadius: '50%',
+                            background: dotColor,
+                            flexShrink: 0
+                          }}
+                        />
+
+                        {/* Content */}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flex: 1 }}>
                           <span
-                            className={classes.weekCardIcon}
-                            style={isExamDay ? { color: '#ffffff' } : isDiagnostic ? { color: '#b91c1c' } : isPracticeTest ? { color: '#3b82f6' } : isMockExam ? { color: '#f59e0b' } : isTest ? { color: '#2563eb' } : isReview ? { color: '#10b981' } : isPractice ? { color: '#f59e0b' } : {}}
+                            style={{
+                              fontSize: '0.875rem',
+                              color: textColor,
+                              fontWeight: isDiagnostic || isMockExam || isReview ? '600' : '400',
+                              transition: 'all 0.2s ease'
+                            }}
                           >
+                            {item.title}
+                          </span>
+                          <span style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            color: '#9ca3af',
+                            fontSize: '0.875rem',
+                            flexShrink: 0
+                          }}>
                             {getItemIcon(item.type)}
                           </span>
-                          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', flex: 1 }}>
-                            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.5rem', flexWrap: 'wrap' }}>
-                              <span
-                                className={classes.weekCardText}
-                                style={isExamDay ? { fontWeight: '800', color: '#ffffff', fontSize: '1rem' } : isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : isPracticeTest ? { fontWeight: '700', color: '#3b82f6' } : isMockExam ? { fontWeight: '700', color: '#f59e0b' } : isTest ? { fontWeight: '600', color: '#2563eb' } : isReview ? { fontWeight: '600', color: '#10b981' } : isPractice ? { fontWeight: '600', color: '#f59e0b' } : {}}
-                              >
-                                {item.title}
-                              </span>
-                              {item.dueDate && (
-                                <span style={{
-                                  fontSize: '0.75rem',
-                                  color: isExamDay ? 'rgba(255,255,255,0.8)' : '#9ca3af',
-                                  fontWeight: '400',
-                                  fontStyle: 'italic'
-                                }}>
-                                  Due {item.dueDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-                                </span>
-                              )}
-                            </div>
-                            {item.description && !isPracticeTest && (
-                              <span style={{
-                                fontSize: '0.8125rem',
-                                color: isExamDay ? '#ffffff' : '#6b7280',
-                                lineHeight: '1.4',
-                                fontWeight: '400'
-                              }}>
-                                {item.description}
-                              </span>
-                            )}
-                          </div>
                         </div>
-                        {!isExamDay && (
-                          <span
-                            className={classes.weekCardArrow}
-                            style={isDiagnostic ? { color: '#b91c1c' } : isPracticeTest ? { color: '#3b82f6' } : isMockExam ? { color: '#f59e0b' } : isTest ? { color: '#2563eb' } : isReview ? { color: '#10b981' } : {}}
-                          >
-                            →
-                          </span>
-                        )}
                       </div>
                     );
                   })}
@@ -2231,19 +2458,12 @@ const CourseContent = () => {
               overflow: 'hidden'
             }}
           >
-            {/* Header with gradient */}
+            {/* Header */}
             <div style={{
-              background: previewItem.type === 'practice_test'
-                ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
-                : previewItem.type === 'test' || previewItem.type === 'mock_exam'
-                ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
-                : previewItem.type === 'review'
-                ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
-                : previewItem.type === 'practice'
-                ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
-                : 'linear-gradient(135deg, #64748b 0%, #475569 100%)',
+              background: '#f9fafb',
+              borderBottom: '1px solid #e5e7eb',
               padding: '2rem',
-              color: '#ffffff'
+              color: '#1a1a1a'
             }}>
               <div style={{
                 fontSize: '0.875rem',
@@ -2264,16 +2484,17 @@ const CourseContent = () => {
               <div style={{
                 marginTop: '0.75rem',
                 fontSize: '0.875rem',
-                opacity: 0.9,
+                color: '#6b7280',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.5rem'
               }}>
                 <span style={{
-                  background: 'rgba(255,255,255,0.2)',
+                  background: '#e5e7eb',
                   padding: '0.25rem 0.75rem',
                   borderRadius: '12px',
-                  fontWeight: '500'
+                  fontWeight: '500',
+                  color: '#374151'
                 }}>
                   {previewItem.type === 'test' ? 'Practice Test' : previewItem.type === 'mock_exam' ? 'Mock Exam' : previewItem.type === 'review' ? 'Review Day' : previewItem.type === 'practice' ? 'Practice' : 'Lesson'}
                 </span>
