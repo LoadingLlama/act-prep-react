@@ -136,9 +136,13 @@ const useStyles = createUseStyles({
   },
   foundersGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
+    gridTemplateColumns: 'repeat(3, 1fr)',
     gap: '32px',
     marginTop: '32px',
+    '@media (max-width: 1024px)': {
+      gridTemplateColumns: 'repeat(2, 1fr)',
+      gap: '28px',
+    },
     '@media (max-width: 768px)': {
       gridTemplateColumns: '1fr',
       gap: '24px',
@@ -187,12 +191,23 @@ const useStyles = createUseStyles({
     fontSize: '22px',
     fontWeight: '700',
     color: '#1e3a8a',
-    marginBottom: '8px',
+    marginBottom: '4px',
     '@media (max-width: 768px)': {
       fontSize: '20px',
     },
     '@media (max-width: 480px)': {
       fontSize: '18px',
+    },
+  },
+  founderRole: {
+    fontSize: '13px',
+    fontWeight: '600',
+    color: '#64748b',
+    marginBottom: '8px',
+    textTransform: 'uppercase',
+    letterSpacing: '0.05em',
+    '@media (max-width: 480px)': {
+      fontSize: '12px',
     },
   },
   founderDetails: {
@@ -318,11 +333,11 @@ const AboutUs = () => {
           </p>
         </div>
 
-        {/* Meet the Founders */}
+        {/* Meet the Team */}
         <div className={classes.section}>
-          <h2 className={classes.subtitle}>Meet the Founders</h2>
+          <h2 className={classes.subtitle}>Meet the Team</h2>
           <p className={classes.paragraph}>
-            Nomi Academy was founded by two UC Berkeley students who know firsthand what it takes to excel on the ACT. We've been in your shoes, and we built this platform using the exact strategies that helped us succeed.
+            Nomi Academy was founded by UC Berkeley students who know firsthand what it takes to excel on the ACT. Our team of perfect scorers has been in your shoes, and we built this platform using the exact strategies that helped us succeed.
           </p>
 
           <div className={classes.foundersGrid}>
@@ -334,6 +349,7 @@ const AboutUs = () => {
               />
               <div className={classes.badge}>Perfect 36 ACT Score</div>
               <h3 className={classes.founderName}>Caden Chiang</h3>
+              <div className={classes.founderRole}>Co-Founder</div>
               <div className={classes.schoolInfo}>
                 <img
                   src={`${process.env.PUBLIC_URL}/images/schools/uc-berkeley.png`}
@@ -355,6 +371,7 @@ const AboutUs = () => {
               />
               <div className={classes.badge}>Perfect 36 ACT Score</div>
               <h3 className={classes.founderName}>Willis Yang</h3>
+              <div className={classes.founderRole}>Co-Founder</div>
               <div className={classes.schoolInfo}>
                 <img
                   src={`${process.env.PUBLIC_URL}/images/schools/uc-berkeley.png`}
@@ -365,6 +382,28 @@ const AboutUs = () => {
               </div>
               <p className={classes.founderDetails}>
                 Willis also scored a perfect 36 on the ACT and brings expertise in creating effective practice questions and study plans. He designed the platform's personalized learning features and analytics.
+              </p>
+            </div>
+
+            <div className={classes.founderCard}>
+              <img
+                src={`${process.env.PUBLIC_URL}/jonathanheadshot.jpeg`}
+                alt="Jonathan"
+                className={classes.founderImage}
+              />
+              <div className={classes.badge}>Perfect 36 ACT Score</div>
+              <h3 className={classes.founderName}>Jonathan</h3>
+              <div className={classes.founderRole}>Advisor</div>
+              <div className={classes.schoolInfo}>
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/schools/brown.png`}
+                  alt="Brown University"
+                  className={classes.schoolLogo}
+                />
+                <span className={classes.schoolName}>Brown University</span>
+              </div>
+              <p className={classes.founderDetails}>
+                Jonathan achieved a perfect 36 on the ACT and serves as an advisor to Nomi Academy. He provides strategic guidance and helps ensure our curriculum stays aligned with the latest ACT testing strategies.
               </p>
             </div>
           </div>
