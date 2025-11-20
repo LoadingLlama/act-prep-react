@@ -431,7 +431,7 @@ const LandingPage = () => {
       <footer className={classes.footer}>
         <p className={classes.footerText}>
           Already have an account?{' '}
-          <button className={classes.signInButton} onClick={handleSignIn}>
+          <button className={classes.signInButton} onClick={handleGetStarted}>
             Sign in
           </button>
         </p>
