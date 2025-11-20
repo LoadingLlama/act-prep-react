@@ -241,6 +241,45 @@ const useStyles = createUseStyles({
       padding: '4px 10px',
     },
   },
+  schoolInfo: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '10px',
+    marginBottom: '16px',
+    '@media (max-width: 768px)': {
+      gap: '8px',
+      marginBottom: '12px',
+    },
+    '@media (max-width: 480px)': {
+      gap: '6px',
+      marginBottom: '10px',
+    },
+  },
+  schoolLogo: {
+    width: '32px',
+    height: '32px',
+    objectFit: 'contain',
+    '@media (max-width: 768px)': {
+      width: '28px',
+      height: '28px',
+    },
+    '@media (max-width: 480px)': {
+      width: '24px',
+      height: '24px',
+    },
+  },
+  schoolName: {
+    fontSize: '16px',
+    fontWeight: '700',
+    color: '#1e3a8a',
+    '@media (max-width: 768px)': {
+      fontSize: '15px',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '14px',
+    },
+  },
 });
 
 const AboutUs = () => {
@@ -295,8 +334,15 @@ const AboutUs = () => {
               />
               <div className={classes.badge}>Perfect 36 ACT Score</div>
               <h3 className={classes.founderName}>Caden Chiang</h3>
+              <div className={classes.schoolInfo}>
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/schools/uc-berkeley.png`}
+                  alt="UC Berkeley"
+                  className={classes.schoolLogo}
+                />
+                <span className={classes.schoolName}>UC Berkeley</span>
+              </div>
               <p className={classes.founderDetails}>
-                <strong>UC Berkeley</strong><br />
                 Caden achieved a perfect 36 on the ACT and is passionate about making test prep accessible to all students. He developed the core curriculum and learning methodology that powers Nomi Academy's lessons.
               </p>
             </div>
@@ -309,8 +355,15 @@ const AboutUs = () => {
               />
               <div className={classes.badge}>Perfect 36 ACT Score</div>
               <h3 className={classes.founderName}>Willis Yang</h3>
+              <div className={classes.schoolInfo}>
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/schools/uc-berkeley.png`}
+                  alt="UC Berkeley"
+                  className={classes.schoolLogo}
+                />
+                <span className={classes.schoolName}>UC Berkeley</span>
+              </div>
               <p className={classes.founderDetails}>
-                <strong>UC Berkeley</strong><br />
                 Willis also scored a perfect 36 on the ACT and brings expertise in creating effective practice questions and study plans. He designed the platform's personalized learning features and analytics.
               </p>
             </div>
