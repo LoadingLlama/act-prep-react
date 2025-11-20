@@ -70,7 +70,7 @@ export const useLandingPageStyles = createUseStyles({
     transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease',
     cursor: 'pointer',
     '@media (max-width: 768px)': {
-      fontSize: '20px',
+      fontSize: '18px',
     },
     '&:hover': {
       transform: 'scale(1.02)',
@@ -652,11 +652,17 @@ export const useLandingPageStyles = createUseStyles({
     width: '100%',
     textAlign: 'center',
     overflow: 'hidden',
+    paddingTop: '48px',
+    paddingBottom: '48px',
     '@media (max-width: 768px)': {
       marginTop: '56px',
+      paddingTop: '52px',
+      paddingBottom: '52px',
     },
     '@media (max-width: 480px)': {
-      marginTop: '60px',
+      marginTop: '68px',
+      paddingTop: '56px',
+      paddingBottom: '56px',
     },
   },
 
@@ -668,8 +674,13 @@ export const useLandingPageStyles = createUseStyles({
     letterSpacing: '0.05em',
     marginBottom: '20px',
     '@media (max-width: 768px)': {
-      fontSize: '10px',
-      marginBottom: '16px',
+      fontSize: '13px',
+      marginBottom: '20px',
+      fontWeight: '600',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '12px',
+      fontWeight: '600',
     },
   },
 

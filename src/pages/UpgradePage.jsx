@@ -51,14 +51,19 @@ const useStyles = createUseStyles({
     letterSpacing: '-0.03em',
     lineHeight: '1.1',
     '@media (max-width: 768px)': {
-      fontSize: '1.75rem'
+      fontSize: '1.5rem',
+      lineHeight: '1.2'
     }
   },
   subtitle: {
     fontSize: '1rem',
     color: '#6b7280',
     lineHeight: '1.5',
-    marginBottom: '0.5rem'
+    marginBottom: '0.5rem',
+    '@media (max-width: 768px)': {
+      fontSize: '0.875rem',
+      lineHeight: '1.4'
+    }
   },
   priceHighlight: {
     fontSize: '0.9rem',
@@ -75,7 +80,7 @@ const useStyles = createUseStyles({
     padding: '2rem',
     boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
     '@media (max-width: 768px)': {
-      padding: '1.5rem 1rem'
+      padding: '1.25rem 1rem'
     }
   },
   priceSection: {
@@ -84,36 +89,52 @@ const useStyles = createUseStyles({
     background: 'linear-gradient(135deg, #08245b 0%, #0d3a8f 100%)',
     borderRadius: '12px',
     marginBottom: '1.5rem',
-    color: '#ffffff'
+    color: '#ffffff',
+    '@media (max-width: 768px)': {
+      padding: '1.25rem 1rem'
+    }
   },
   priceContainer: {
     display: 'flex',
     alignItems: 'baseline',
     justifyContent: 'center',
     gap: '0.35rem',
-    marginBottom: '0.5rem'
+    marginBottom: '0.5rem',
+    '@media (max-width: 768px)': {
+      gap: '0.25rem'
+    }
   },
   price: {
     fontSize: '3rem',
     fontWeight: '800',
     lineHeight: '1',
     '@media (max-width: 768px)': {
-      fontSize: '2.5rem'
+      fontSize: '2.25rem'
     }
   },
   priceSymbol: {
     fontSize: '1.75rem',
-    opacity: 0.9
+    opacity: 0.9,
+    '@media (max-width: 768px)': {
+      fontSize: '1.5rem'
+    }
   },
   pricePeriod: {
     fontSize: '1.125rem',
     opacity: 0.9,
-    fontWeight: '500'
+    fontWeight: '500',
+    '@media (max-width: 768px)': {
+      fontSize: '1rem'
+    }
   },
   priceNote: {
     fontSize: '0.8rem',
     opacity: 0.8,
-    marginBottom: '1rem'
+    marginBottom: '1rem',
+    '@media (max-width: 768px)': {
+      fontSize: '0.75rem',
+      marginBottom: '0.875rem'
+    }
   },
   ctaButton: {
     width: '100%',
@@ -166,7 +187,11 @@ const useStyles = createUseStyles({
     fontSize: '0.85rem',
     color: '#374151',
     lineHeight: '1.4',
-    fontWeight: '500'
+    fontWeight: '500',
+    '@media (max-width: 768px)': {
+      fontSize: '0.8rem',
+      lineHeight: '1.35'
+    }
   },
   featureHighlight: {
     fontWeight: '600',
@@ -177,14 +202,22 @@ const useStyles = createUseStyles({
     padding: '1.25rem',
     background: '#f9fafb',
     borderRadius: '10px',
-    border: '1px solid #e5e7eb'
+    border: '1px solid #e5e7eb',
+    '@media (max-width: 768px)': {
+      padding: '1rem',
+      marginTop: '1.25rem'
+    }
   },
   comparisonTitle: {
     fontSize: '1rem',
     fontWeight: '700',
     color: '#1a1a1a',
     marginBottom: '1rem',
-    textAlign: 'center'
+    textAlign: 'center',
+    '@media (max-width: 768px)': {
+      fontSize: '0.9rem',
+      marginBottom: '0.75rem'
+    }
   },
   comparisonGrid: {
     display: 'grid',
@@ -300,14 +333,14 @@ const UpgradePage = () => {
   const proFeatures = [
     { text: 'Full access to all lessons across all sections', highlight: 'Full access' },
     { text: 'Full diagnostic test access' },
-    { text: 'Full access to all practice tests' },
-    { text: 'Full access to all practice questions per lesson' },
-    { text: 'AI-powered learning path recommendations' },
-    { text: 'Advanced performance insights & analytics' },
+    { text: 'Unlimited practice tests' },
+    { text: 'Unlimited practice questions' },
+    { text: 'AI learning path recommendations' },
+    { text: 'Performance insights & analytics' },
     { text: 'Detailed progress tracking' },
-    { text: 'Section-by-section performance breakdown' },
-    { text: 'Weak area identification & recommendations' },
-    { text: 'Study schedule customization' }
+    { text: 'Section performance breakdown' },
+    { text: 'Weak area identification' },
+    { text: 'Custom study schedules' }
   ];
 
   const freeFeatures = [
@@ -326,10 +359,10 @@ const UpgradePage = () => {
 
       <div className={classes.header}>
         <h1 className={classes.title}>
-          Unlock Everything to Ace the ACT
+          Get Full Access to Ace the ACT
         </h1>
         <p className={classes.subtitle}>
-          Get full access to all lessons, tests, and AI-powered features to maximize your score.
+          All lessons, tests, and AI-powered features to maximize your score.
         </p>
         <div className={classes.priceHighlight}>
           Save $48/year with annual billing

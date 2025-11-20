@@ -83,6 +83,7 @@ const useStyles = createUseStyles({
   logoSection: {
     padding: '0.75rem 1rem',
     '@media (max-width: 1024px)': {
+      padding: '0.5rem 1rem',
       paddingRight: '3.5rem'
     }
   },
@@ -93,10 +94,16 @@ const useStyles = createUseStyles({
     letterSpacing: '-0.02em',
     lineHeight: '1.1',
     margin: 0,
-    whiteSpace: 'nowrap'
+    whiteSpace: 'nowrap',
+    '@media (max-width: 1024px)': {
+      fontSize: '1.05rem'
+    }
   },
   navSection: {
-    padding: '0.5rem 0'
+    padding: '0.5rem 0',
+    '@media (max-width: 1024px)': {
+      padding: '0.25rem 0'
+    }
   },
   navSectionTitle: {
     fontSize: '0.7rem',
@@ -106,7 +113,12 @@ const useStyles = createUseStyles({
     letterSpacing: '0.08em',
     padding: '0 1.25rem',
     marginBottom: '0.5rem',
-    marginTop: '0.75rem'
+    marginTop: '0.75rem',
+    '@media (max-width: 1024px)': {
+      fontSize: '0.65rem',
+      marginTop: '0.5rem',
+      marginBottom: '0.35rem'
+    }
   },
   navItem: {
     display: 'flex',
@@ -124,6 +136,11 @@ const useStyles = createUseStyles({
     fontWeight: '500',
     position: 'relative',
     minHeight: '44px',
+    '@media (max-width: 1024px)': {
+      padding: '0.6rem 1.25rem',
+      fontSize: '0.85rem',
+      minHeight: '38px'
+    },
     '&:hover': {
       background: '#f9fafb',
       color: '#1a1a1a'
@@ -158,7 +175,10 @@ const useStyles = createUseStyles({
   bottomSection: {
     padding: '0.5rem 0',
     borderTop: '1px solid #f3f4f6',
-    marginTop: 'auto'
+    marginTop: 'auto',
+    '@media (max-width: 1024px)': {
+      padding: '0.35rem 0'
+    }
   },
   statusBadge: {
     fontSize: '0.6rem',
@@ -168,7 +188,11 @@ const useStyles = createUseStyles({
     textTransform: 'uppercase',
     letterSpacing: '0.03em',
     whiteSpace: 'nowrap',
-    marginLeft: 'auto'
+    marginLeft: 'auto',
+    '@media (max-width: 1024px)': {
+      fontSize: '0.55rem',
+      padding: '0.15rem 0.35rem'
+    }
   },
   proBadge: {
     background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%)',
