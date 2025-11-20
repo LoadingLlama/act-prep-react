@@ -10,6 +10,7 @@ const SocialBrowserWarning = () => {
   const [isInAppBrowser, setIsInAppBrowser] = useState(false);
   const [platform, setPlatform] = useState('');
   const [copied, setCopied] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
 
   useEffect(() => {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -34,6 +35,15 @@ const SocialBrowserWarning = () => {
       setPlatform('Facebook');
       return;
     }
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const handleCopyLink = async () => {
@@ -78,15 +88,21 @@ const SocialBrowserWarning = () => {
   return (
     <div style={styles.overlay}>
       <div style={styles.container}>
-        <div style={styles.card}>
+        <div style={{
+          ...styles.card,
+          padding: isMobile ? '32px 20px' : '40px 28px',
+        }}>
           {/* Logo */}
           <div style={styles.logo}>
-            <span style={styles.logoText}>Nomi Academy</span>
+            <span style={{
+              ...styles.logoText,
+              fontSize: isMobile ? '24px' : '28px',
+            }}>Nomi Academy</span>
           </div>
 
           {/* Icon */}
           <div style={styles.iconContainer}>
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width={isMobile ? "56" : "64"} height={isMobile ? "56" : "64"} viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10" />
               <line x1="12" y1="8" x2="12" y2="12" />
               <line x1="12" y1="16" x2="12.01" y2="16" />
@@ -94,7 +110,10 @@ const SocialBrowserWarning = () => {
           </div>
 
           {/* Message */}
-          <h2 style={styles.heading}>
+          <h2 style={{
+            ...styles.heading,
+            fontSize: isMobile ? '17px' : '22px',
+          }}>
             Thanks for checking out Nomi Academy!
           </h2>
 

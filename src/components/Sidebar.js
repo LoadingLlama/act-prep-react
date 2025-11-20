@@ -62,7 +62,7 @@ const useStyles = createUseStyles({
     '@media (max-width: 1024px)': {
       display: 'block',
       position: 'absolute',
-      top: '1.5rem',
+      top: '1rem',
       right: '1rem',
       background: 'transparent',
       border: 'none',
@@ -70,6 +70,7 @@ const useStyles = createUseStyles({
       cursor: 'pointer',
       color: '#6b7280',
       transition: 'color 0.15s ease',
+      zIndex: 10,
       '&:hover': {
         color: '#1a1a1a'
       },
@@ -80,7 +81,10 @@ const useStyles = createUseStyles({
     }
   },
   logoSection: {
-    padding: '0.75rem 1rem'
+    padding: '0.75rem 1rem',
+    '@media (max-width: 1024px)': {
+      paddingRight: '3.5rem'
+    }
   },
   logo: {
     fontSize: '1.35rem',

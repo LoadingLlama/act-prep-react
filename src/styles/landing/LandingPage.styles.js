@@ -120,7 +120,7 @@ export const useLandingPageStyles = createUseStyles({
     transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
     borderRadius: '8px',
     '@media (max-width: 768px)': {
-      padding: '6px 12px',
+      padding: '7px 14px',
       fontSize: '13px',
     },
     '&:hover': {
@@ -145,7 +145,7 @@ export const useLandingPageStyles = createUseStyles({
     transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
     boxShadow: '0 2px 8px rgba(30, 58, 138, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
     '@media (max-width: 768px)': {
-      padding: '6px 12px',
+      padding: '7px 14px',
       fontSize: '13px',
     },
     '&:hover': {
@@ -172,10 +172,10 @@ export const useLandingPageStyles = createUseStyles({
     zIndex: 1,
     boxSizing: 'border-box',
     '@media (max-width: 768px)': {
-      padding: '70px 16px 30px',
+      padding: '70px 20px 30px',
     },
     '@media (max-width: 480px)': {
-      padding: '60px 12px 24px',
+      padding: '60px 16px 24px',
     },
   },
 
@@ -264,11 +264,13 @@ export const useLandingPageStyles = createUseStyles({
     maxWidth: '700px',
     margin: '0 auto 20px auto',
     '@media (max-width: 768px)': {
-      fontSize: '32px',
-      marginBottom: '16px',
+      fontSize: '28px',
+      marginBottom: '20px',
     },
     '@media (max-width: 480px)': {
-      fontSize: '28px',
+      fontSize: '24px',
+      marginBottom: '18px',
+      lineHeight: '1.2',
     },
   },
 
@@ -289,7 +291,12 @@ export const useLandingPageStyles = createUseStyles({
     maxWidth: '700px',
     margin: '0 auto 36px auto',
     '@media (max-width: 768px)': {
-      fontSize: '15px',
+      fontSize: '14px',
+      marginBottom: '32px',
+      lineHeight: '1.5',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '13px',
       marginBottom: '28px',
     },
   },
@@ -302,11 +309,15 @@ export const useLandingPageStyles = createUseStyles({
     marginTop: '12px',
     lineHeight: '1.5',
     '@media (max-width: 768px)': {
-      fontSize: '19px',
-      marginBottom: '24px',
-      marginTop: '20px',
-      fontWeight: '600',
-      color: '#374151',
+      fontSize: '15px',
+      marginBottom: '20px',
+      marginTop: '16px',
+      fontWeight: '500',
+      color: '#4b5563',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '14px',
+      marginBottom: '18px',
     },
   },
 
@@ -340,9 +351,9 @@ export const useLandingPageStyles = createUseStyles({
     display: 'inline-block',
     '@media (max-width: 768px)': {
       width: '100%',
-      fontSize: '15px',
-      padding: '14px 28px',
-      display: 'inline-block',
+      fontSize: '14px',
+      padding: '12px 24px',
+      display: 'block',
     },
     '&::before': {
       content: '""',
@@ -384,9 +395,9 @@ export const useLandingPageStyles = createUseStyles({
     textDecoration: 'none',
     '@media (max-width: 768px)': {
       width: '100%',
-      fontSize: '15px',
-      padding: '14px 28px',
-      display: 'inline-block',
+      fontSize: '14px',
+      padding: '12px 24px',
+      display: 'block',
     },
     '&::before': {
       content: '""',
@@ -422,6 +433,9 @@ export const useLandingPageStyles = createUseStyles({
     marginTop: '56px',
     width: '100%',
     '@media (max-width: 768px)': {
+      marginTop: '48px',
+    },
+    '@media (max-width: 480px)': {
       marginTop: '40px',
     },
   },
@@ -432,7 +446,7 @@ export const useLandingPageStyles = createUseStyles({
     gap: '16px',
     '@media (max-width: 768px)': {
       gridTemplateColumns: '1fr',
-      gap: '12px',
+      gap: '16px',
     },
   },
 
@@ -449,7 +463,7 @@ export const useLandingPageStyles = createUseStyles({
     position: 'relative',
     overflow: 'hidden',
     '@media (max-width: 768px)': {
-      padding: '20px 16px',
+      padding: '18px 16px',
     },
     '&::before': {
       content: '""',
@@ -495,7 +509,10 @@ export const useLandingPageStyles = createUseStyles({
     width: '100%',
     position: 'relative',
     '@media (max-width: 768px)': {
-      marginTop: '36px',
+      marginTop: '48px',
+    },
+    '@media (max-width: 480px)': {
+      marginTop: '40px',
     },
   },
 
@@ -516,7 +533,8 @@ export const useLandingPageStyles = createUseStyles({
     minWidth: '100%',
     flexShrink: 0,
     '@media (max-width: 768px)': {
-      gap: '12px',
+      flexDirection: 'column',
+      gap: '16px',
     },
   },
 
@@ -532,7 +550,8 @@ export const useLandingPageStyles = createUseStyles({
     boxShadow: '0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8)',
     transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
     '@media (max-width: 768px)': {
-      padding: '20px 16px',
+      padding: '18px 16px',
+      flex: 'none',
     },
     '&:hover': {
       transform: 'translateY(-2px)',
@@ -572,6 +591,10 @@ export const useLandingPageStyles = createUseStyles({
     marginBottom: '12px',
     fontSize: '16px',
     color: '#fbbf24',
+    '@media (max-width: 768px)': {
+      fontSize: '14px',
+      marginBottom: '10px',
+    },
   },
 
   testimonialQuote: {
@@ -582,6 +605,8 @@ export const useLandingPageStyles = createUseStyles({
     fontStyle: 'italic',
     '@media (max-width: 768px)': {
       fontSize: '13px',
+      lineHeight: '1.5',
+      marginBottom: '12px',
     },
   },
 
@@ -590,12 +615,18 @@ export const useLandingPageStyles = createUseStyles({
     color: '#111827',
     fontWeight: '600',
     marginBottom: '4px',
+    '@media (max-width: 768px)': {
+      fontSize: '12px',
+    },
   },
 
   testimonialScore: {
     fontSize: '12px',
     color: '#10b981',
     fontWeight: '600',
+    '@media (max-width: 768px)': {
+      fontSize: '11px',
+    },
   },
 
   // Universities Section
@@ -605,7 +636,10 @@ export const useLandingPageStyles = createUseStyles({
     textAlign: 'center',
     overflow: 'hidden',
     '@media (max-width: 768px)': {
-      marginTop: '36px',
+      marginTop: '48px',
+    },
+    '@media (max-width: 480px)': {
+      marginTop: '40px',
     },
   },
 
@@ -616,6 +650,10 @@ export const useLandingPageStyles = createUseStyles({
     textTransform: 'uppercase',
     letterSpacing: '0.05em',
     marginBottom: '20px',
+    '@media (max-width: 768px)': {
+      fontSize: '10px',
+      marginBottom: '16px',
+    },
   },
 
   universitiesScroller: {
@@ -667,7 +705,11 @@ export const useLandingPageStyles = createUseStyles({
     paddingTop: '48px',
     borderTop: '1px solid rgba(226, 232, 240, 0.5)',
     '@media (max-width: 768px)': {
-      marginTop: '36px',
+      marginTop: '48px',
+      paddingTop: '40px',
+    },
+    '@media (max-width: 480px)': {
+      marginTop: '40px',
       paddingTop: '36px',
     },
   },
@@ -680,6 +722,9 @@ export const useLandingPageStyles = createUseStyles({
     letterSpacing: '0.05em',
     marginBottom: '6px',
     textAlign: 'center',
+    '@media (max-width: 768px)': {
+      fontSize: '10px',
+    },
   },
 
   statisticsDescription: {
@@ -735,7 +780,8 @@ export const useLandingPageStyles = createUseStyles({
     lineHeight: '1.4',
     marginBottom: '8px',
     '@media (max-width: 768px)': {
-      fontSize: '14px',
+      fontSize: '13px',
+      marginBottom: '6px',
     },
   },
 
@@ -747,7 +793,7 @@ export const useLandingPageStyles = createUseStyles({
     letterSpacing: '-0.02em',
     transition: 'transform 0.2s ease',
     '@media (max-width: 768px)': {
-      fontSize: '36px',
+      fontSize: '32px',
     },
   },
 
@@ -756,6 +802,10 @@ export const useLandingPageStyles = createUseStyles({
     marginTop: '64px',
     padding: '0 24px',
     '@media (max-width: 768px)': {
+      marginTop: '56px',
+      padding: '0 20px',
+    },
+    '@media (max-width: 480px)': {
       marginTop: '48px',
       padding: '0 16px',
     },
@@ -770,7 +820,11 @@ export const useLandingPageStyles = createUseStyles({
     lineHeight: '1.2',
     letterSpacing: '-0.02em',
     '@media (max-width: 768px)': {
-      fontSize: '26px',
+      fontSize: '24px',
+      marginBottom: '28px',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '22px',
       marginBottom: '24px',
     },
   },
@@ -809,8 +863,8 @@ export const useLandingPageStyles = createUseStyles({
       color: '#1e3a8a',
     },
     '@media (max-width: 768px)': {
-      padding: '20px 0',
-      fontSize: '16px',
+      padding: '18px 0',
+      fontSize: '15px',
     },
   },
 
@@ -821,6 +875,10 @@ export const useLandingPageStyles = createUseStyles({
     marginLeft: '16px',
     flexShrink: 0,
     lineHeight: '1',
+    '@media (max-width: 768px)': {
+      fontSize: '20px',
+      marginLeft: '12px',
+    },
   },
 
   faqAnswer: {
@@ -830,8 +888,9 @@ export const useLandingPageStyles = createUseStyles({
     color: '#6b7280',
     animation: '$fadeIn 0.3s ease',
     '@media (max-width: 768px)': {
-      padding: '0 0 20px 0',
-      fontSize: '14px',
+      padding: '0 0 18px 0',
+      fontSize: '13px',
+      lineHeight: '1.6',
     },
   },
 
@@ -853,9 +912,13 @@ export const useLandingPageStyles = createUseStyles({
     padding: '0 32px',
     textAlign: 'center',
     '@media (max-width: 768px)': {
-      marginTop: '60px',
+      marginTop: '64px',
       marginBottom: '32px',
-      padding: '0 24px',
+      padding: '0 20px',
+    },
+    '@media (max-width: 480px)': {
+      marginTop: '56px',
+      padding: '0 16px',
     },
   },
 
@@ -867,7 +930,11 @@ export const useLandingPageStyles = createUseStyles({
     lineHeight: '1.1',
     letterSpacing: '-0.03em',
     '@media (max-width: 768px)': {
-      fontSize: '36px',
+      fontSize: '28px',
+      marginBottom: '14px',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '24px',
     },
   },
 
@@ -879,8 +946,13 @@ export const useLandingPageStyles = createUseStyles({
     maxWidth: '600px',
     margin: '0 auto 32px auto',
     '@media (max-width: 768px)': {
-      fontSize: '16px',
-      marginBottom: '28px',
+      fontSize: '14px',
+      marginBottom: '24px',
+      lineHeight: '1.5',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '13px',
+      marginBottom: '20px',
     },
   },
 
@@ -898,8 +970,8 @@ export const useLandingPageStyles = createUseStyles({
     display: 'inline-block',
     '@media (max-width: 768px)': {
       width: '100%',
-      fontSize: '15px',
-      padding: '14px 32px',
+      fontSize: '14px',
+      padding: '12px 24px',
     },
     '&:hover': {
       transform: 'translateY(-2px)',
@@ -924,7 +996,7 @@ export const useLandingPageStyles = createUseStyles({
     border: '1px solid rgba(226, 232, 240, 0.8)',
     borderRadius: '12px 12px 0 0',
     boxShadow: '0 -4px 20px rgba(0, 0, 0, 0.08)',
-    padding: '12px 24px',
+    padding: '16px 24px',
     zIndex: 1001,
     display: 'flex',
     alignItems: 'center',
@@ -932,18 +1004,18 @@ export const useLandingPageStyles = createUseStyles({
     gap: '16px',
     boxSizing: 'border-box',
     '@media (max-width: 1024px)': {
-      padding: '10px 16px',
-      gap: '10px',
+      padding: '14px 16px',
+      gap: '12px',
       width: 'calc(100% - 32px)',
     },
     '@media (max-width: 768px)': {
-      padding: '10px 12px',
-      gap: '8px',
+      padding: '16px 12px',
+      gap: '10px',
       width: 'calc(100% - 24px)',
     },
     '@media (max-width: 480px)': {
-      padding: '8px 10px',
-      gap: '6px',
+      padding: '14px 12px',
+      gap: '8px',
       width: 'calc(100% - 16px)',
       borderRadius: '8px 8px 0 0',
     },
@@ -969,7 +1041,7 @@ export const useLandingPageStyles = createUseStyles({
     color: '#ffffff',
     background: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)',
     border: 'none',
-    padding: '10px 20px',
+    padding: '12px 20px',
     borderRadius: '8px',
     cursor: 'pointer',
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -978,11 +1050,11 @@ export const useLandingPageStyles = createUseStyles({
     flexShrink: 0,
     '@media (max-width: 1024px)': {
       fontSize: '12px',
-      padding: '9px 18px',
+      padding: '11px 18px',
     },
     '@media (max-width: 768px)': {
-      fontSize: '11px',
-      padding: '8px 14px',
+      fontSize: '12px',
+      padding: '10px 16px',
     },
     '&:hover': {
       transform: 'translateY(-2px)',

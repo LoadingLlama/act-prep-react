@@ -14,6 +14,8 @@ const LandingPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [showStickyBar, setShowStickyBar] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const testimonials = [
     [
@@ -115,10 +117,21 @@ const LandingPage = () => {
       const scrolled = window.scrollY;
       const progress = Math.min(scrolled / documentHeight, 1);
       setScrollProgress(progress);
+
+      // Show sticky bar after scrolling 300px down
+      setShowStickyBar(scrolled > 300);
+    };
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const handleGetStarted = () => {
@@ -405,20 +418,22 @@ const LandingPage = () => {
         </p>
       </footer>
 
-      {/* Sticky Bottom CTA Bar */}
-      <div className={classes.stickyBottomBar}>
-        <div className={classes.stickyBarText}>
-          Claim your free diagnostic test for immediate feedback!
+      {/* Sticky Bottom CTA Bar - Only shows after scrolling */}
+      {showStickyBar && (
+        <div className={classes.stickyBottomBar}>
+          <div className={classes.stickyBarText}>
+            {isMobile ? 'Get your free diagnostic test!' : 'Claim your free diagnostic test for immediate feedback!'}
+          </div>
+          <button className={classes.stickyBarButton} onClick={handleGetStarted}>
+            <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+              {isMobile ? 'Start' : 'Free Diagnostic Test'}
+              <svg width="20" height="14" viewBox="0 0 28 16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M2 8h24M20 2l6 6-6 6"/>
+              </svg>
+            </span>
+          </button>
         </div>
-        <button className={classes.stickyBarButton} onClick={handleGetStarted}>
-          <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-            Free Diagnostic Test
-            <svg width="20" height="14" viewBox="0 0 28 16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M2 8h24M20 2l6 6-6 6"/>
-            </svg>
-          </span>
-        </button>
-      </div>
+      )}
     </div>
   );
 };

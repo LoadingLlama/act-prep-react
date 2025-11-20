@@ -163,7 +163,7 @@ export const headerStyles = {
     zIndex: 100,
     '@media (max-width: 1024px)': {
       top: '1rem',
-      right: '4.5rem'
+      right: '1rem'
     }
   },
   profilePicture: {
