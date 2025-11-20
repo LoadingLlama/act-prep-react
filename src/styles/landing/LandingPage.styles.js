@@ -9,13 +9,14 @@ export const useLandingPageStyles = createUseStyles({
   container: {
     minHeight: '100vh',
     width: '100%',
-    maxWidth: '100vw',
+    maxWidth: '100%',
     overflowX: 'hidden',
     background: '#f9fafb',
     display: 'flex',
     flexDirection: 'column',
     fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Helvetica, Arial, sans-serif',
     position: 'relative',
+    boxSizing: 'border-box',
   },
 
   // Navigation - Glassy and floating
@@ -25,6 +26,7 @@ export const useLandingPageStyles = createUseStyles({
     left: 0,
     right: 0,
     width: '100%',
+    maxWidth: '100%',
     background: 'rgba(255, 255, 255, 0.65)',
     backdropFilter: 'blur(24px) saturate(200%)',
     WebkitBackdropFilter: 'blur(24px) saturate(200%)',
@@ -32,6 +34,8 @@ export const useLandingPageStyles = createUseStyles({
     boxShadow: '0 1px 3px rgba(0, 0, 0, 0.02), inset 0 1px 0 rgba(255, 255, 255, 0.6)',
     zIndex: 1000,
     padding: '12px 0',
+    boxSizing: 'border-box',
+    overflowX: 'hidden',
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     '@media (max-width: 768px)': {
       padding: '10px 0',
@@ -40,6 +44,7 @@ export const useLandingPageStyles = createUseStyles({
 
   navContent: {
     maxWidth: '1000px',
+    width: '100%',
     margin: '0 auto',
     padding: '0 32px',
     display: 'flex',
@@ -47,8 +52,12 @@ export const useLandingPageStyles = createUseStyles({
     alignItems: 'center',
     position: 'relative',
     zIndex: 1,
+    boxSizing: 'border-box',
     '@media (max-width: 768px)': {
-      padding: '0 20px',
+      padding: '0 16px',
+    },
+    '@media (max-width: 480px)': {
+      padding: '0 12px',
     },
   },
 
@@ -161,8 +170,12 @@ export const useLandingPageStyles = createUseStyles({
     padding: '80px 32px 40px',
     position: 'relative',
     zIndex: 1,
+    boxSizing: 'border-box',
     '@media (max-width: 768px)': {
-      padding: '70px 20px 30px',
+      padding: '70px 16px 30px',
+    },
+    '@media (max-width: 480px)': {
+      padding: '60px 12px 24px',
     },
   },
 
@@ -832,15 +845,22 @@ export const useLandingPageStyles = createUseStyles({
     alignItems: 'center',
     justifyContent: 'space-between',
     gap: '16px',
+    boxSizing: 'border-box',
     '@media (max-width: 1024px)': {
       padding: '10px 16px',
       gap: '10px',
-      width: 'calc(100% - 40px)',
+      width: 'calc(100% - 32px)',
     },
     '@media (max-width: 768px)': {
       padding: '10px 12px',
       gap: '8px',
       width: 'calc(100% - 24px)',
+    },
+    '@media (max-width: 480px)': {
+      padding: '8px 10px',
+      gap: '6px',
+      width: 'calc(100% - 16px)',
+      borderRadius: '8px 8px 0 0',
     },
   },
 

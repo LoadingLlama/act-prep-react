@@ -76,8 +76,12 @@ export const layoutStyles = {
     maxWidth: '1400px',
     margin: '0 auto',
     width: '100%',
+    boxSizing: 'border-box',
     '@media (max-width: 768px)': {
       padding: '1rem'
+    },
+    '@media (max-width: 480px)': {
+      padding: '0.75rem'
     }
   }
 };
