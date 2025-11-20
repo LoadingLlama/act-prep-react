@@ -22,7 +22,11 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     justifyContent: 'center',
     '@media (max-width: 768px)': {
-      padding: '1.5rem 1rem'
+      padding: '4.5rem 0.5rem 1.5rem 0.5rem',
+      justifyContent: 'flex-start',
+      width: '100%',
+      maxWidth: '100%',
+      margin: 0
     }
   },
   trialBadge: {
@@ -80,7 +84,11 @@ const useStyles = createUseStyles({
     padding: '2rem',
     boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
     '@media (max-width: 768px)': {
-      padding: '1.25rem 1rem'
+      padding: '1.25rem 0.875rem',
+      maxWidth: '100%',
+      width: '100%',
+      borderRadius: '12px',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.06)'
     }
   },
   priceSection: {
@@ -163,25 +171,36 @@ const useStyles = createUseStyles({
     gap: '1rem',
     marginBottom: '1.5rem',
     '@media (max-width: 768px)': {
-      gridTemplateColumns: '1fr',
-      gap: '0.75rem'
+      gridTemplateColumns: 'repeat(2, 1fr)',
+      gap: '0.625rem',
+      marginBottom: '1.25rem'
     }
   },
   featureColumn: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.5rem'
+    gap: '0.5rem',
+    '@media (max-width: 768px)': {
+      gap: '0.4rem'
+    }
   },
   featureItem: {
     display: 'flex',
     alignItems: 'flex-start',
-    gap: '0.5rem'
+    gap: '0.5rem',
+    '@media (max-width: 768px)': {
+      gap: '0.35rem'
+    }
   },
   checkIcon: {
     fontSize: '1.125rem',
     color: '#10b981',
     flexShrink: 0,
-    marginTop: '0.125rem'
+    marginTop: '0.125rem',
+    '@media (max-width: 768px)': {
+      fontSize: '0.9rem',
+      marginTop: '0.05rem'
+    }
   },
   featureText: {
     fontSize: '0.85rem',
@@ -189,8 +208,8 @@ const useStyles = createUseStyles({
     lineHeight: '1.4',
     fontWeight: '500',
     '@media (max-width: 768px)': {
-      fontSize: '0.8rem',
-      lineHeight: '1.35'
+      fontSize: '0.7rem',
+      lineHeight: '1.3'
     }
   },
   featureHighlight: {
@@ -224,12 +243,16 @@ const useStyles = createUseStyles({
     gridTemplateColumns: '1fr 1fr',
     gap: '1rem',
     '@media (max-width: 768px)': {
-      gridTemplateColumns: '1fr'
+      gridTemplateColumns: '1fr 1fr',
+      gap: '0.625rem'
     }
   },
   comparisonCard: {
     padding: '1rem',
-    borderRadius: '8px'
+    borderRadius: '8px',
+    '@media (max-width: 768px)': {
+      padding: '0.75rem 0.625rem'
+    }
   },
   freeCard: {
     background: '#ffffff',
@@ -245,7 +268,12 @@ const useStyles = createUseStyles({
     marginBottom: '0.75rem',
     display: 'flex',
     alignItems: 'center',
-    gap: '0.4rem'
+    gap: '0.4rem',
+    '@media (max-width: 768px)': {
+      fontSize: '0.825rem',
+      marginBottom: '0.5rem',
+      gap: '0.3rem'
+    }
   },
   comparisonList: {
     listStyle: 'none',
@@ -253,14 +281,22 @@ const useStyles = createUseStyles({
     margin: 0,
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.5rem'
+    gap: '0.5rem',
+    '@media (max-width: 768px)': {
+      gap: '0.35rem'
+    }
   },
   comparisonItem: {
     display: 'flex',
     alignItems: 'center',
     gap: '0.4rem',
     fontSize: '0.75rem',
-    color: '#6b7280'
+    color: '#6b7280',
+    '@media (max-width: 768px)': {
+      fontSize: '0.65rem',
+      gap: '0.3rem',
+      lineHeight: '1.3'
+    }
   },
   limitedIcon: {
     fontSize: '0.95rem',
