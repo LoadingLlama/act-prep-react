@@ -145,6 +145,7 @@ const useStyles = createUseStyles({
     padding: '32px 28px',
     border: '1px solid rgba(147, 197, 253, 0.3)',
     transition: 'all 0.3s ease',
+    textAlign: 'center',
     '@media (max-width: 768px)': {
       padding: '24px 20px',
     },
@@ -152,6 +153,25 @@ const useStyles = createUseStyles({
       transform: 'translateY(-4px)',
       boxShadow: '0 8px 24px rgba(30, 58, 138, 0.12)',
       borderColor: 'rgba(59, 130, 246, 0.5)',
+    },
+  },
+  founderImage: {
+    width: '120px',
+    height: '120px',
+    borderRadius: '50%',
+    objectFit: 'cover',
+    margin: '0 auto 20px',
+    border: '3px solid rgba(30, 58, 138, 0.2)',
+    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
+    '@media (max-width: 768px)': {
+      width: '100px',
+      height: '100px',
+      marginBottom: '16px',
+    },
+    '@media (max-width: 480px)': {
+      width: '90px',
+      height: '90px',
+      marginBottom: '12px',
     },
   },
   founderName: {
@@ -248,6 +268,11 @@ const AboutUs = () => {
 
           <div className={classes.foundersGrid}>
             <div className={classes.founderCard}>
+              <img
+                src={`${process.env.PUBLIC_URL}/cadenchiangheadshot.jpeg`}
+                alt="Caden Chiang"
+                className={classes.founderImage}
+              />
               <div className={classes.badge}>Perfect 36 ACT Score</div>
               <h3 className={classes.founderName}>Caden Chiang</h3>
               <p className={classes.founderDetails}>
@@ -257,6 +282,11 @@ const AboutUs = () => {
             </div>
 
             <div className={classes.founderCard}>
+              <img
+                src={`${process.env.PUBLIC_URL}/willisyangheadshot.jpeg`}
+                alt="Willis Yang"
+                className={classes.founderImage}
+              />
               <div className={classes.badge}>Perfect 36 ACT Score</div>
               <h3 className={classes.founderName}>Willis Yang</h3>
               <p className={classes.founderDetails}>
