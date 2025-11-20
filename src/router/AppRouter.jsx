@@ -9,7 +9,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { storage } from '../utils/helpers';
 import InlineAuth from '../components/auth/InlineAuth';
-import SocialBrowserWarning from '../components/auth/SocialBrowserWarning';
 
 // Eagerly load critical pages
 import LandingPage from '../pages/LandingPage';
@@ -93,9 +92,6 @@ export default function AppRouter() {
 
   return (
     <BrowserRouter>
-      {/* Social Browser Warning - Shows on all pages if in Instagram/TikTok browser */}
-      <SocialBrowserWarning />
-
       <Suspense fallback={<RouteLoader />}>
         <Routes>
           {/* Landing Page - Always accessible */}

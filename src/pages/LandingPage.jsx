@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLandingPageStyles } from '../styles/landing/LandingPage.styles';
 import Logo from '../components/common/Logo';
+import SocialBrowserWarning from '../components/auth/SocialBrowserWarning';
 
 const LandingPage = () => {
   const classes = useLandingPageStyles();
@@ -16,6 +17,7 @@ const LandingPage = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [showSocialWarning, setShowSocialWarning] = useState(false);
 
   const testimonials = [
     [
@@ -135,8 +137,23 @@ const LandingPage = () => {
   }, []);
 
   const handleGetStarted = () => {
-    // Navigate to app - will show auth if not logged in
-    navigate('/app/home');
+    // Check if in social media in-app browser
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const isInAppBrowser =
+      userAgent.includes('Instagram') ||
+      userAgent.includes('TikTok') ||
+      userAgent.includes('musical_ly') ||
+      userAgent.includes('Bytedance') ||
+      userAgent.includes('FBAN') ||
+      userAgent.includes('FBAV');
+
+    if (isInAppBrowser) {
+      // Show social browser warning instead of navigating
+      setShowSocialWarning(true);
+    } else {
+      // Navigate to app - will show auth if not logged in
+      navigate('/app/home');
+    }
   };
 
   const handleSignIn = () => {
@@ -152,6 +169,11 @@ const LandingPage = () => {
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
+
+  // Show social browser warning if user clicked get started in social browser
+  if (showSocialWarning) {
+    return <SocialBrowserWarning />;
+  }
 
   return (
     <div

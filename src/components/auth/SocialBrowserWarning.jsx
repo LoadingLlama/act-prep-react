@@ -86,11 +86,14 @@ const SocialBrowserWarning = () => {
   }
 
   return (
-    <div style={styles.overlay}>
+    <div style={{
+      ...styles.overlay,
+      padding: isMobile ? '12px' : '20px',
+    }}>
       <div style={styles.container}>
         <div style={{
           ...styles.card,
-          padding: isMobile ? '32px 20px' : '40px 28px',
+          padding: isMobile ? '28px 16px' : '40px 28px',
         }}>
           {/* Logo */}
           <div style={styles.logo}>
@@ -199,6 +202,7 @@ const styles = {
     zIndex: 10000,
     overflow: 'auto',
     padding: '20px',
+    boxSizing: 'border-box',
   },
   container: {
     display: 'flex',
@@ -214,6 +218,7 @@ const styles = {
     padding: '40px 28px',
     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
     border: '1px solid #e2e8f0',
+    boxSizing: 'border-box',
   },
   logo: {
     textAlign: 'center',
