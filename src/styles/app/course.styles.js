@@ -175,33 +175,62 @@ export const useCourseStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '0.75rem 0.5rem',
+    padding: '0.5rem 0.75rem',
     background: 'transparent',
     border: 'none',
     borderBottom: '1px solid #f3f4f6',
-    borderLeft: '2px solid transparent',
-    borderRadius: '0',
+    borderRadius: '6px',
     cursor: 'pointer',
-    transition: 'all 0.2s ease',
-    gap: '1rem',
+    transition: 'all 0.15s ease',
+    gap: '0.75rem',
+    margin: '0 0 2px 0',
     '&:last-child': {
       borderBottom: 'none'
     },
     '&:hover': {
-      background: 'linear-gradient(90deg, #f0f9ff 0%, #f9fafb 100%)',
-      borderLeftColor: '#08245b',
-      paddingLeft: '0.75rem',
+      background: '#fafbfc',
+      borderBottom: '1px solid #e5e7eb',
+      '& $weekCardCheckbox': {
+        borderColor: '#14b8a6',
+        transform: 'scale(1.05)'
+      },
       '& $weekCardArrow': {
         opacity: 1,
         transform: 'translateX(0)',
-        color: '#08245b'
+        color: '#14b8a6'
       }
     },
     '&.completed': {
       '& $weekCardText': {
-        color: '#9ca3af'
+        color: '#9ca3af',
+        textDecoration: 'line-through'
+      },
+      '& $weekCardCheckbox': {
+        background: '#14b8a6',
+        borderColor: '#14b8a6',
+        '&::after': {
+          content: '"✓"',
+          position: 'absolute',
+          color: '#ffffff',
+          fontSize: '0.75rem',
+          fontWeight: '700',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)'
+        }
       }
     }
+  },
+
+  weekCardCheckbox: {
+    width: '18px',
+    height: '18px',
+    borderRadius: '4px',
+    border: '2px solid #d1d5db',
+    flexShrink: 0,
+    transition: 'all 0.2s ease',
+    position: 'relative',
+    background: '#ffffff'
   },
 
   weekCardContent: {
@@ -215,11 +244,11 @@ export const useCourseStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: '#6b7280',
-    fontSize: '1rem',
+    color: '#9ca3af',
+    fontSize: '0.875rem',
     '& svg': {
-      width: '16px',
-      height: '16px'
+      width: '14px',
+      height: '14px'
     }
   },
 
@@ -227,15 +256,17 @@ export const useCourseStyles = createUseStyles({
     fontSize: '0.875rem',
     color: '#1a1a1a',
     fontWeight: '400',
-    transition: 'color 0.2s ease'
+    transition: 'all 0.2s ease',
+    flex: 1
   },
 
   weekCardArrow: {
-    fontSize: '1rem',
+    fontSize: '0.875rem',
     color: '#9ca3af',
     opacity: 0,
-    transform: 'translateX(-8px)',
-    transition: 'all 0.2s ease'
+    transform: 'translateX(-4px)',
+    transition: 'all 0.15s ease',
+    flexShrink: 0
   },
 
 });

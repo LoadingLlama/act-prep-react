@@ -1184,32 +1184,40 @@ const CourseContent = () => {
                     <h2 className={classes.sectionTitle}>{week.week}</h2>
                   </div>
                   <div className={classes.weekGrid}>
-                    {week.items.map((item, itemIndex) => (
-                      <div key={itemIndex} className={classes.weekCard} style={item.isDiagnostic ? {
-                        borderLeft: '3px solid #b91c1c',
-                        paddingLeft: '0.75rem',
-                        background: 'linear-gradient(90deg, #fef2f2 0%, #ffffff 100%)'
-                      } : {}}>
-                        <div className={classes.weekCardContent}>
-                          <span className={classes.weekCardIcon} style={item.isDiagnostic ? { color: '#b91c1c' } : {}}>{getItemIcon(item.type)}</span>
-                          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.5rem', flex: 1, flexWrap: 'wrap' }}>
-                            <span className={classes.weekCardText} style={item.isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : {}}>{item.title}</span>
-                            {item.description && (
-                              <span style={{
-                                fontSize: '0.8125rem',
-                                color: '#6b7280',
-                                lineHeight: '1.4',
-                                fontWeight: '400',
-                                flex: '1 1 100%'
-                              }}>
-                                {item.description}
-                              </span>
-                            )}
+                    {week.items.map((item, itemIndex) => {
+                      const isCompleted = item.status === 'completed';
+                      return (
+                        <div
+                          key={itemIndex}
+                          className={`${classes.weekCard} ${isCompleted ? 'completed' : ''}`}
+                          style={item.isDiagnostic ? {
+                            borderLeft: '3px solid #b91c1c',
+                            paddingLeft: '0.75rem',
+                            background: 'linear-gradient(90deg, #fef2f2 0%, #ffffff 100%)'
+                          } : {}}
+                        >
+                          <div className={classes.weekCardCheckbox}></div>
+                          <div className={classes.weekCardContent}>
+                            <span className={classes.weekCardIcon} style={item.isDiagnostic ? { color: '#b91c1c' } : {}}>{getItemIcon(item.type)}</span>
+                            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', gap: '0.5rem', flex: 1, flexWrap: 'wrap' }}>
+                              <span className={classes.weekCardText} style={item.isDiagnostic ? { fontWeight: '600', color: '#b91c1c' } : {}}>{item.title}</span>
+                              {item.description && (
+                                <span style={{
+                                  fontSize: '0.8125rem',
+                                  color: '#6b7280',
+                                  lineHeight: '1.4',
+                                  fontWeight: '400',
+                                  flex: '1 1 100%'
+                                }}>
+                                  {item.description}
+                                </span>
+                              )}
+                            </div>
                           </div>
+                          <span className={classes.weekCardArrow} style={item.isDiagnostic ? { color: '#b91c1c' } : {}}>→</span>
                         </div>
-                        <span className={classes.weekCardArrow} style={item.isDiagnostic ? { color: '#b91c1c' } : {}}>→</span>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               ))}
