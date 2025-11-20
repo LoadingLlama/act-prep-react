@@ -97,7 +97,7 @@ export const lessonsItemsStyles = {
   },
   learnIndicator: {
     fontSize: '1.1rem',
-    color: '#2563eb',
+    color: '#14b8a6',
     fontWeight: 700,
     marginTop: '0.75rem',
     display: 'flex',
@@ -140,14 +140,14 @@ export const lessonsItemsStyles = {
     cursor: 'pointer',
     transition: 'all 0.2s ease',
     background: 'transparent',
-    color: '#6b7280',
+    color: '#8b5cf6',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     gap: '0.35rem',
     '&:hover': {
-      background: '#f9fafb',
-      color: '#374151'
+      background: 'linear-gradient(135deg, #f5f3ff 0%, #faf5ff 100%)',
+      color: '#7c3aed'
     }
   },
   sectionHeader: {

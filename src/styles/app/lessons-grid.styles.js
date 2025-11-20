@@ -152,25 +152,25 @@ export const lessonsGridStyles = {
     position: 'relative',
     overflow: 'hidden',
     '&:hover': {
-      borderColor: '#3b82f6',
-      boxShadow: '0 4px 12px rgba(59, 130, 246, 0.15)',
+      borderColor: '#14b8a6',
+      boxShadow: '0 4px 12px rgba(20, 184, 166, 0.18)',
       transform: 'translateY(-2px)',
-      background: '#fafbff',
+      background: 'linear-gradient(135deg, #f0fdfa 0%, #fafbff 100%)',
       '& $lessonInfo h4': {
-        color: '#000000'
+        color: '#0f766e'
       }
     },
     '&.completed': {
-      borderLeft: '3px solid #10b981',
+      borderLeft: '3px solid #22c55e',
       '& h4': {
         color: '#000000',
         textDecoration: 'line-through'
       }
     },
     '&.in-progress': {
-      borderLeft: '3px solid #fbbf24',
+      borderLeft: '3px solid #f59e0b',
       '&:hover': {
-        background: '#fafbff'
+        background: 'linear-gradient(135deg, #fffbeb 0%, #fafbff 100%)'
       }
     },
     '&.hidden': {
@@ -192,18 +192,18 @@ export const lessonsGridStyles = {
     position: 'relative',
     gap: '1rem',
     '&:hover': {
-      borderColor: '#3b82f6',
-      boxShadow: '0 2px 8px rgba(59, 130, 246, 0.1)',
-      background: '#fafbff'
+      borderColor: '#14b8a6',
+      boxShadow: '0 2px 8px rgba(20, 184, 166, 0.12)',
+      background: 'linear-gradient(90deg, #f0fdfa 0%, #fafbff 100%)'
     },
     '&.completed': {
-      borderLeft: '3px solid #10b981',
+      borderLeft: '3px solid #22c55e',
       '& h4': {
         textDecoration: 'line-through'
       }
     },
     '&.in-progress': {
-      borderLeft: '3px solid #fbbf24'
+      borderLeft: '3px solid #f59e0b'
     }
   },
 };
