@@ -370,13 +370,16 @@ const styles = {
     border: '1px solid #e2e8f0',
     boxSizing: 'border-box',
     '@media (max-width: 480px)': {
-      maxWidth: '95%',
-      padding: '24px 20px',
+      maxWidth: '96%',
+      padding: '20px 18px',
     },
   },
   logo: {
     textAlign: 'center',
     marginBottom: '12px',
+    '@media (max-width: 480px)': {
+      marginBottom: '8px',
+    },
   },
   heading: {
     fontSize: '14px',
@@ -386,12 +389,20 @@ const styles = {
     marginBottom: '16px',
     lineHeight: '1.4',
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    '@media (max-width: 480px)': {
+      fontSize: '13px',
+      marginBottom: '12px',
+    },
   },
   socialContainer: {
     display: 'flex',
     flexDirection: 'column',
     gap: '8px',
     marginBottom: '12px',
+    '@media (max-width: 480px)': {
+      gap: '6px',
+      marginBottom: '8px',
+    },
   },
   socialButton: {
     display: 'flex',
@@ -409,6 +420,10 @@ const styles = {
     transition: 'all 0.2s ease',
     color: '#374151',
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    '@media (max-width: 480px)': {
+      padding: '8px 14px',
+      fontSize: '12px',
+    },
   },
   socialButtonHover: {
     transform: 'translateY(-2px)',

@@ -244,10 +244,12 @@ export const useLandingPageStyles = createUseStyles({
     '@media (max-width: 768px)': {
       fontSize: '10px',
       padding: '5px 12px',
-      marginBottom: '24px',
+      marginTop: '20px',
+      marginBottom: '20px',
     },
     '@media (max-width: 480px)': {
-      marginBottom: '32px',
+      marginTop: '24px',
+      marginBottom: '16px',
     },
     '&:hover': {
       transform: 'translateY(-1px)',
@@ -316,15 +318,15 @@ export const useLandingPageStyles = createUseStyles({
     lineHeight: '1.5',
     '@media (max-width: 768px)': {
       fontSize: '15px',
-      marginBottom: '32px',
-      marginTop: '28px',
+      marginBottom: '24px',
+      marginTop: '20px',
       fontWeight: '500',
       color: '#4b5563',
     },
     '@media (max-width: 480px)': {
       fontSize: '14px',
-      marginBottom: '40px',
-      marginTop: '36px',
+      marginBottom: '28px',
+      marginTop: '24px',
     },
   },
 
