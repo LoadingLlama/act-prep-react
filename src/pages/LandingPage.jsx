@@ -448,7 +448,7 @@ const LandingPage = () => {
           </div>
           <button className={classes.stickyBarButton} onClick={handleGetStarted}>
             <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-              {isMobile ? 'Start' : 'Free Diagnostic Test'}
+              Free Diagnostic Test
               <svg width="20" height="14" viewBox="0 0 28 16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M2 8h24M20 2l6 6-6 6"/>
               </svg>

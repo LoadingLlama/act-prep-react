@@ -244,10 +244,10 @@ export const useLandingPageStyles = createUseStyles({
     '@media (max-width: 768px)': {
       fontSize: '10px',
       padding: '5px 12px',
-      marginBottom: '20px',
+      marginBottom: '24px',
     },
     '@media (max-width: 480px)': {
-      marginBottom: '24px',
+      marginBottom: '32px',
     },
     '&:hover': {
       transform: 'translateY(-1px)',
@@ -271,11 +271,11 @@ export const useLandingPageStyles = createUseStyles({
     margin: '0 auto 20px auto',
     '@media (max-width: 768px)': {
       fontSize: '28px',
-      marginBottom: '24px',
+      marginBottom: '28px',
     },
     '@media (max-width: 480px)': {
       fontSize: '24px',
-      marginBottom: '28px',
+      marginBottom: '36px',
       lineHeight: '1.2',
     },
   },
@@ -298,12 +298,12 @@ export const useLandingPageStyles = createUseStyles({
     margin: '0 auto 36px auto',
     '@media (max-width: 768px)': {
       fontSize: '14px',
-      marginBottom: '36px',
+      marginBottom: '40px',
       lineHeight: '1.5',
     },
     '@media (max-width: 480px)': {
       fontSize: '13px',
-      marginBottom: '40px',
+      marginBottom: '48px',
     },
   },
 
@@ -316,15 +316,15 @@ export const useLandingPageStyles = createUseStyles({
     lineHeight: '1.5',
     '@media (max-width: 768px)': {
       fontSize: '15px',
-      marginBottom: '24px',
-      marginTop: '20px',
+      marginBottom: '32px',
+      marginTop: '28px',
       fontWeight: '500',
       color: '#4b5563',
     },
     '@media (max-width: 480px)': {
       fontSize: '14px',
-      marginBottom: '28px',
-      marginTop: '24px',
+      marginBottom: '40px',
+      marginTop: '36px',
     },
   },
 
@@ -401,10 +401,12 @@ export const useLandingPageStyles = createUseStyles({
     display: 'inline-block',
     textDecoration: 'none',
     '@media (max-width: 768px)': {
-      width: '100%',
-      fontSize: '14px',
-      padding: '12px 24px',
+      width: '75%',
+      maxWidth: '280px',
+      fontSize: '13px',
+      padding: '10px 20px',
       display: 'block',
+      margin: '0 auto',
     },
     '&::before': {
       content: '""',
@@ -1012,19 +1014,19 @@ export const useLandingPageStyles = createUseStyles({
     gap: '16px',
     boxSizing: 'border-box',
     '@media (max-width: 1024px)': {
-      padding: '14px 16px',
+      padding: '14px 20px',
       gap: '12px',
-      width: 'calc(100% - 32px)',
+      width: 'calc(100% - 48px)',
     },
     '@media (max-width: 768px)': {
-      padding: '16px 12px',
-      gap: '10px',
-      width: 'calc(100% - 24px)',
+      padding: '16px 20px',
+      gap: '12px',
+      width: 'calc(100% - 48px)',
     },
     '@media (max-width: 480px)': {
-      padding: '14px 12px',
-      gap: '8px',
-      width: 'calc(100% - 16px)',
+      padding: '14px 16px',
+      gap: '10px',
+      width: 'calc(100% - 32px)',
       borderRadius: '8px 8px 0 0',
     },
   },
