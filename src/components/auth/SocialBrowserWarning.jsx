@@ -93,19 +93,25 @@ const SocialBrowserWarning = () => {
       <div style={styles.container}>
         <div style={{
           ...styles.card,
-          padding: isMobile ? '28px 16px' : '40px 28px',
+          padding: isMobile ? '20px 14px' : '40px 28px',
         }}>
           {/* Logo */}
-          <div style={styles.logo}>
+          <div style={{
+            ...styles.logo,
+            marginBottom: isMobile ? '12px' : '24px',
+          }}>
             <span style={{
               ...styles.logoText,
-              fontSize: isMobile ? '24px' : '28px',
+              fontSize: isMobile ? '20px' : '28px',
             }}>Nomi Academy</span>
           </div>
 
           {/* Icon */}
-          <div style={styles.iconContainer}>
-            <svg width={isMobile ? "56" : "64"} height={isMobile ? "56" : "64"} viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <div style={{
+            ...styles.iconContainer,
+            marginBottom: isMobile ? '12px' : '24px',
+          }}>
+            <svg width={isMobile ? "40" : "64"} height={isMobile ? "40" : "64"} viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10" />
               <line x1="12" y1="8" x2="12" y2="12" />
               <line x1="12" y1="16" x2="12.01" y2="16" />
@@ -115,42 +121,80 @@ const SocialBrowserWarning = () => {
           {/* Message */}
           <h2 style={{
             ...styles.heading,
-            fontSize: isMobile ? '17px' : '22px',
+            fontSize: isMobile ? '15px' : '22px',
+            marginBottom: isMobile ? '10px' : '16px',
           }}>
             Thanks for checking out Nomi Academy!
           </h2>
 
-          <p style={styles.message}>
-            <strong>{platform}</strong> does not support Google login, so please follow these instructions to check out our site:
+          <p style={{
+            ...styles.message,
+            fontSize: isMobile ? '13px' : '16px',
+            marginBottom: isMobile ? '16px' : '32px',
+          }}>
+            <strong>{platform}</strong> does not support Google login, so please follow these instructions:
           </p>
 
           {/* Instructions */}
-          <div style={styles.instructions}>
+          <div style={{
+            ...styles.instructions,
+            padding: isMobile ? '14px 12px' : '24px 20px',
+            gap: isMobile ? '12px' : '20px',
+            marginBottom: isMobile ? '16px' : '32px',
+          }}>
             <div style={styles.step}>
-              <div style={styles.stepNumber}>1</div>
-              <div style={styles.stepText}>
-                Tap the <strong>three dots</strong> in the top right corner
+              <div style={{
+                ...styles.stepNumber,
+                width: isMobile ? '24px' : '32px',
+                height: isMobile ? '24px' : '32px',
+                fontSize: isMobile ? '13px' : '16px',
+              }}>1</div>
+              <div style={{
+                ...styles.stepText,
+                fontSize: isMobile ? '13px' : '15px',
+                paddingTop: isMobile ? '2px' : '4px',
+              }}>
+                Tap the <strong>three dots</strong> in the top right
               </div>
             </div>
 
             <div style={styles.step}>
-              <div style={styles.stepNumber}>2</div>
-              <div style={styles.stepText}>
-                Select <strong>"Open in Browser"</strong> or <strong>"Open in Safari"</strong>
+              <div style={{
+                ...styles.stepNumber,
+                width: isMobile ? '24px' : '32px',
+                height: isMobile ? '24px' : '32px',
+                fontSize: isMobile ? '13px' : '16px',
+              }}>2</div>
+              <div style={{
+                ...styles.stepText,
+                fontSize: isMobile ? '13px' : '15px',
+                paddingTop: isMobile ? '2px' : '4px',
+              }}>
+                Select <strong>"Open in Browser"</strong>
               </div>
             </div>
           </div>
 
           {/* Divider */}
-          <div style={styles.divider}>
+          <div style={{
+            ...styles.divider,
+            marginBottom: isMobile ? '12px' : '24px',
+          }}>
             <span style={styles.dividerLine} />
-            <span style={styles.dividerText}>or</span>
+            <span style={{
+              ...styles.dividerText,
+              fontSize: isMobile ? '12px' : '14px',
+            }}>or</span>
             <span style={styles.dividerLine} />
           </div>
 
           {/* Alternative */}
-          <p style={styles.alternativeText}>
-            If the above doesn't work, copy this link and paste it into your browser:
+          <p style={{
+            ...styles.alternativeText,
+            fontSize: isMobile ? '12px' : '14px',
+            marginBottom: isMobile ? '10px' : '16px',
+          }}>
+            Copy this link and paste it into your browser:
           </p>
 
           {/* Copy Link Button */}
@@ -158,19 +202,22 @@ const SocialBrowserWarning = () => {
             onClick={handleCopyLink}
             style={{
               ...styles.copyButton,
+              padding: isMobile ? '12px 16px' : '16px 24px',
+              fontSize: isMobile ? '14px' : '16px',
+              marginBottom: isMobile ? '10px' : '16px',
               ...(copied ? styles.copyButtonSuccess : {}),
             }}
           >
             {copied ? (
               <>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width={isMobile ? "16" : "20"} height={isMobile ? "16" : "20"} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
                 Link Copied!
               </>
             ) : (
               <>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width={isMobile ? "16" : "20"} height={isMobile ? "16" : "20"} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
                 </svg>
@@ -180,8 +227,14 @@ const SocialBrowserWarning = () => {
           </button>
 
           {/* URL Display */}
-          <div style={styles.urlBox}>
-            <p style={styles.url}>{window.location.href}</p>
+          <div style={{
+            ...styles.urlBox,
+            padding: isMobile ? '10px 12px' : '14px 16px',
+          }}>
+            <p style={{
+              ...styles.url,
+              fontSize: isMobile ? '11px' : '13px',
+            }}>{window.location.href}</p>
           </div>
         </div>
       </div>
@@ -346,13 +399,18 @@ const styles = {
     border: '1px solid #e5e7eb',
     borderRadius: '10px',
     wordBreak: 'break-all',
+    overflowWrap: 'break-word',
+    maxHeight: '80px',
+    overflow: 'auto',
   },
   url: {
     fontSize: '13px',
     color: '#6b7280',
     margin: 0,
     fontFamily: 'Monaco, Menlo, "Courier New", monospace',
-    lineHeight: '1.5',
+    lineHeight: '1.4',
+    wordBreak: 'break-all',
+    overflowWrap: 'break-word',
   },
 };
 
