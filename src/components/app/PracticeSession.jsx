@@ -407,6 +407,9 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
     // Question patterns ordered by priority (most specific first)
     // These patterns typically start the actual question part
     const questionPatterns = [
+      'For the sake of logic and cohesion',
+      'For the sake of logic and coherence',
+      'For the sake of the logic and cohesion',
       'The writer is considering adding',
       'The writer is considering deleting',
       'The writer is considering',
