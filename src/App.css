@@ -430,3 +430,12 @@
     opacity: 0.5;
   }
 }
+
+/* Practice Question Passage Underline Styling */
+.passage-content u {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #3b82f6;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}

@@ -343,6 +343,13 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
       const correctCount = results.filter(r => r.correct && r.firstAttempt).length;
       const accuracy = (correctCount / questions.length) * 100;
       console.log('⭐ Practice Complete: First-Attempt Accuracy:', accuracy.toFixed(1) + '%', 'Final Rating:', currentStars.toFixed(1), 'stars');
+
+      // Mark lesson as completed in the database
+      if (updateLessonProgress) {
+        console.log(`✅ Marking lesson as completed: ${lesson.id}`);
+        updateLessonProgress(lesson.id, 'completed');
+      }
+
       setIsComplete(true);
     }
   };
@@ -358,6 +365,12 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
     };
     console.log('⭐ Saving mastery data:', masteryData);
     localStorage.setItem(masteryKey, JSON.stringify(masteryData));
+
+    // Ensure lesson is marked as completed when user clicks "Complete" button
+    if (updateLessonProgress) {
+      console.log(`✅ Final completion: marking ${lesson.id} as completed`);
+      updateLessonProgress(lesson.id, 'completed');
+    }
 
     if (onComplete) {
       onComplete(newStars);
@@ -386,6 +399,89 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
   const accuracy = results.length > 0 ? Math.round((correctCount / results.length) * 100) : 0;
 
   const masteryData = getMasteryLevel();
+
+  // Helper function to separate passage from question
+  const parseQuestionText = (fullText) => {
+    if (!fullText) return { passage: '', question: '' };
+
+    // Question patterns ordered by priority (most specific first)
+    // These patterns typically start the actual question part
+    const questionPatterns = [
+      'The writer is considering adding',
+      'The writer is considering deleting',
+      'The writer is considering',
+      'The writer wants to',
+      'At this point, the writer',
+      'Which choice most effectively',
+      'Which choice best',
+      'Which choice',
+      'Which sentence',
+      'Which of the following',
+      'Given that all',
+      'Given that the',
+      'If the writer were to',
+      'The best placement',
+      'Should the underlined',
+      'Should the writer',  // This is last because it often appears at the end
+      'In the context of',
+      'Suppose the writer',
+      'What would be lost'
+    ];
+
+    // Find the FIRST occurrence of any question pattern (earliest in text)
+    let questionStartIndex = fullText.length;
+    let foundPattern = '';
+
+    for (const pattern of questionPatterns) {
+      const index = fullText.indexOf(pattern);
+      if (index !== -1 && index < questionStartIndex) {
+        questionStartIndex = index;
+        foundPattern = pattern;
+      }
+    }
+
+    // If we found a question pattern, split there
+    if (questionStartIndex < fullText.length) {
+      // Check if there's a paragraph break before the question
+      const textBeforeQuestion = fullText.substring(0, questionStartIndex);
+      const lastDoubleNewline = textBeforeQuestion.lastIndexOf('\n\n');
+
+      // If there's a paragraph break within 50 chars before the question pattern, split there
+      if (lastDoubleNewline > 0 && (questionStartIndex - lastDoubleNewline) < 100) {
+        return {
+          passage: fullText.substring(0, lastDoubleNewline).trim(),
+          question: fullText.substring(lastDoubleNewline).trim()
+        };
+      }
+
+      // Otherwise split at the pattern itself
+      return {
+        passage: fullText.substring(0, questionStartIndex).trim(),
+        question: fullText.substring(questionStartIndex).trim()
+      };
+    }
+
+    // Fallback: look for the last question mark
+    const lastQuestionMark = fullText.lastIndexOf('?');
+    if (lastQuestionMark > 0) {
+      // Find the start of the last question (look backward for paragraph break)
+      let questionStart = fullText.lastIndexOf('\n\n', lastQuestionMark);
+      if (questionStart === -1) {
+        questionStart = 0;
+      }
+
+      return {
+        passage: fullText.substring(0, questionStart).trim(),
+        question: fullText.substring(questionStart).trim()
+      };
+    }
+
+    // If no question found, treat it all as passage
+    return {
+      passage: fullText,
+      question: ''
+    };
+  };
 
   // Safety check - if no current question or questions not loaded yet
   if (questions.length === 0 || !currentQuestion) {
@@ -752,6 +848,18 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
       </div>
       </>
     );
+  }
+
+  // Parse question text to separate passage from question
+  const { passage, question } = parseQuestionText(currentQuestion.text);
+
+  // Debug logging to help identify parsing issues
+  if (!passage || !question) {
+    console.warn('⚠️ PracticeSession: Question parsing issue', {
+      hasPassage: !!passage,
+      hasQuestion: !!question,
+      fullText: currentQuestion.text?.substring(0, 100) + '...'
+    });
   }
 
   return (
@@ -1170,21 +1278,21 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
         </div>
       </div>
 
-      {/* Question - matching ExampleCard.jsx layout */}
+      {/* Question - two column layout: passage left, question+answers right */}
       <div style={{
         padding: '2rem 3rem',
         position: 'relative'
       }}>
-        {/* Two-column grid layout */}
+        {/* Two column layout */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
-          gap: '4rem',
+          gap: '3rem',
           alignItems: 'start',
           maxWidth: '1400px',
           margin: '0 auto'
         }}>
-          {/* LEFT SIDE: Problem Statement */}
+          {/* LEFT SIDE: Passage/Paragraph/Context */}
           <div style={{
             position: 'sticky',
             top: '2rem',
@@ -1192,66 +1300,97 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
             maxHeight: 'calc(100vh - 4rem)',
             overflowY: 'auto'
           }}>
-            <div
-              style={{
-                fontSize: '17px',
-                fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-                lineHeight: '1.6',
-                fontWeight: '400',
-                color: '#1f2937'
-              }}
-              dangerouslySetInnerHTML={{ __html: currentQuestion.text }}
-            />
+            {passage && (
+              <div
+                style={{
+                  fontSize: '16px',
+                  fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                  lineHeight: '1.7',
+                  fontWeight: '400',
+                  color: '#1f2937'
+                }}
+                dangerouslySetInnerHTML={{ __html: passage }}
+                className="passage-content"
+              />
+            )}
           </div>
 
-          {/* RIGHT SIDE: Answer Choices */}
+          {/* RIGHT SIDE: Question + Answer Choices */}
           <div style={{
             position: 'sticky',
             top: '2rem',
-            alignSelf: 'flex-start'
+            alignSelf: 'start'
           }}>
+            {/* Question Text */}
+            {question && (
+              <div style={{
+                fontSize: '17px',
+                fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                lineHeight: '1.6',
+                fontWeight: '500',
+                color: '#1a1a1a',
+                marginBottom: '1.5rem',
+                paddingBottom: '1.25rem',
+                borderBottom: '2px solid #e5e7eb'
+              }}
+              dangerouslySetInnerHTML={{ __html: question }}
+              />
+            )}
+
             {/* Answer choices */}
             {currentQuestion.choices.map((choice, index) => {
               const isSelected = selectedAnswer === index;
               const isCorrectAnswer = index === currentQuestion.correctAnswer;
 
               return (
-                <div key={index} style={{ marginBottom: '1rem' }}>
+                <div key={index} style={{ marginBottom: '0.75rem' }}>
                   <div
                     onClick={() => handleAnswerSelect(index)}
                     style={{
                       cursor: showExplanation ? 'default' : 'pointer',
-                      borderLeft: answeredCorrectly === true && isCorrectAnswer ? '3px solid #48bb78' : 'none',
-                      backgroundColor: answeredCorrectly === true && isCorrectAnswer ? 'rgba(72, 187, 120, 0.08)' : 'transparent',
-                      borderRadius: '6px',
-                      padding: '0.75rem',
-                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                      border: isSelected && answeredCorrectly === null ? '2px solid #3b82f6' :
+                              answeredCorrectly === true && isCorrectAnswer ? '2px solid #48bb78' : '2px solid #e5e7eb',
+                      backgroundColor: answeredCorrectly === true && isCorrectAnswer ? 'rgba(72, 187, 120, 0.08)' :
+                                       isSelected && answeredCorrectly === null ? 'rgba(59, 130, 246, 0.05)' : '#ffffff',
+                      borderRadius: '8px',
+                      padding: '1rem',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!showExplanation) {
+                        e.currentTarget.style.backgroundColor = answeredCorrectly === true && isCorrectAnswer ? 'rgba(72, 187, 120, 0.08)' : 'rgba(0, 0, 0, 0.02)';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!showExplanation) {
+                        e.currentTarget.style.backgroundColor = answeredCorrectly === true && isCorrectAnswer ? 'rgba(72, 187, 120, 0.08)' :
+                                                                 isSelected && answeredCorrectly === null ? 'rgba(59, 130, 246, 0.05)' : '#ffffff';
+                      }
                     }}
                   >
                     {/* Choice letter and text */}
                     <div style={{
                       display: 'flex',
-                      gap: '0.8rem',
-                      alignItems: 'center'
+                      gap: '1rem',
+                      alignItems: 'flex-start'
                     }}>
                       {/* Circular letter indicator */}
                       <div style={{
-                        width: '26px',
-                        height: '26px',
-                        minWidth: '26px',
+                        width: '28px',
+                        height: '28px',
+                        minWidth: '28px',
                         borderRadius: '50%',
-                        border: isSelected && answeredCorrectly === null ? '2px solid #3b82f6' :
-                                answeredCorrectly === true && isCorrectAnswer ? '2px solid #48bb78' : '2px solid #cbd5e0',
+                        border: 'none',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         fontWeight: '600',
-                        fontSize: '0.7rem',
+                        fontSize: '0.8rem',
                         color: isSelected && answeredCorrectly === null ? '#ffffff' :
-                                answeredCorrectly === true && isCorrectAnswer ? '#ffffff' : '#718096',
+                                answeredCorrectly === true && isCorrectAnswer ? '#ffffff' : '#64748b',
                         backgroundColor: isSelected && answeredCorrectly === null ? '#3b82f6' :
-                                         answeredCorrectly === true && isCorrectAnswer ? '#48bb78' : 'transparent',
-                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                                         answeredCorrectly === true && isCorrectAnswer ? '#48bb78' : '#f1f5f9',
+                        transition: 'all 0.2s ease'
                       }}>
                         {answeredCorrectly === true && isCorrectAnswer ? '✓' : String.fromCharCode(65 + index)}
                       </div>
@@ -1271,9 +1410,9 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                           />
                         ) : (
                           <div style={{
-                            fontSize: '15px',
+                            fontSize: '16px',
                             color: '#1f2937',
-                            lineHeight: '1.5',
+                            lineHeight: '1.6',
                             fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
                             fontWeight: '400'
                           }}>
@@ -1288,17 +1427,17 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                     {answeredCorrectly === true && currentQuestion.choiceExplanations && currentQuestion.choiceExplanations[index] && (
                       <div style={{
                         marginTop: '0.75rem',
-                        marginLeft: '2.25rem',
+                        marginLeft: '2.75rem',
                         paddingTop: '0.75rem',
-                        borderTop: '1px solid rgba(0, 0, 0, 0.05)',
-                        animation: 'fadeSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                        borderTop: '1px solid #e5e7eb',
+                        animation: 'fadeSlideIn 0.3s ease',
                         opacity: 1
                       }}>
                         <div
                           style={{
-                            fontSize: '0.8rem',
+                            fontSize: '0.85rem',
                             lineHeight: '1.6',
-                            color: '#374151'
+                            color: '#4b5563'
                           }}
                           dangerouslySetInnerHTML={{ __html: currentQuestion.choiceExplanations[index] }}
                         />
@@ -1312,36 +1451,36 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
             {/* Check Answer or Try Again Button */}
             {!showExplanation ? (
               <div style={{
-                marginTop: '1.5rem',
+                marginTop: '2rem',
                 display: 'flex',
-                justifyContent: 'flex-end',
+                justifyContent: 'center',
                 position: 'relative'
               }}>
-                {/* Try again popup */}
+                {/* Try again popup - positioned relative to button */}
                 {showTryAgain && (
                   <div style={{
                     position: 'absolute',
                     bottom: '100%',
-                    right: '0',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
                     marginBottom: '0.5rem',
                     backgroundColor: '#ffffff',
                     color: '#1f2937',
-                    padding: '0.5rem 0.75rem',
+                    padding: '0.625rem 0.875rem',
                     borderRadius: '6px',
-                    fontSize: '0.75rem',
+                    fontSize: '0.8rem',
                     fontWeight: '400',
                     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
                     border: '1px solid #e5e7eb',
                     zIndex: 10,
-                    maxWidth: '200px',
+                    whiteSpace: 'nowrap',
                     display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: '0.5rem',
+                    alignItems: 'center',
+                    gap: '0.625rem',
                     animation: 'fadeOut 3s ease-in-out forwards'
                   }}>
-                    <div style={{ flex: 1, lineHeight: '1.4' }}>
-                      Not quite yet...<br />
-                      Give it another try!
+                    <div style={{ lineHeight: '1.3' }}>
+                      Not quite yet... Give it another try!
                     </div>
                     <button
                       onClick={(e) => {
@@ -1364,18 +1503,18 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                     >
                       ×
                     </button>
-                    {/* Arrow pointing down */}
+                    {/* Arrow pointing down - centered */}
                     <div style={{
                       position: 'absolute',
                       bottom: '-4px',
-                      right: '1.5rem',
+                      left: '50%',
+                      transform: 'translateX(-50%) rotate(45deg)',
                       width: '8px',
                       height: '8px',
                       backgroundColor: '#ffffff',
                       border: '1px solid #e5e7eb',
                       borderTop: 'none',
-                      borderLeft: 'none',
-                      transform: 'rotate(45deg)'
+                      borderLeft: 'none'
                     }} />
                   </div>
                 )}
@@ -1385,10 +1524,10 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                   style={{
                     backgroundColor: selectedAnswer === null ? '#cbd5e1' : '#007AFF',
                     color: '#ffffff',
-                    padding: '0.75rem 1.5rem',
-                    fontSize: '0.95rem',
-                    fontWeight: '400',
-                    borderRadius: '6px',
+                    padding: '0.875rem 2rem',
+                    fontSize: '1rem',
+                    fontWeight: '500',
+                    borderRadius: '8px',
                     border: 'none',
                     cursor: selectedAnswer === null ? 'not-allowed' : 'pointer',
                     transition: 'all 0.2s ease',
@@ -1434,19 +1573,19 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
               </div>
             ) : (
               <div style={{
-                marginTop: '1.5rem',
+                marginTop: '2rem',
                 display: 'flex',
-                justifyContent: 'flex-end'
+                justifyContent: 'center'
               }}>
                 <button
                   onClick={handleNext}
                   style={{
                     backgroundColor: '#10b981',
                     color: 'white',
-                    padding: '0.75rem 1.5rem',
-                    fontSize: '0.95rem',
-                    fontWeight: '400',
-                    borderRadius: '6px',
+                    padding: '0.875rem 2rem',
+                    fontSize: '1rem',
+                    fontWeight: '500',
+                    borderRadius: '8px',
                     border: 'none',
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
