@@ -3,7 +3,7 @@
  * Displays the practice tests grid with compact professional design
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useOutletContext, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTestsContentStyles } from '../../styles/app/tests-content.styles';
@@ -25,23 +25,16 @@ const TestsContent = () => {
   const [previewTest, setPreviewTest] = useState(null);
   const [hasCompletedDiagnostic, setHasCompletedDiagnostic] = useState(null); // null = loading, true/false = known status
 
-  useEffect(() => {
-    if (user) {
-      checkFeatureAccess();
-      checkDiagnosticStatus();
-    }
-  }, [user]);
-
-  const checkFeatureAccess = async () => {
+  const checkFeatureAccess = useCallback(async () => {
     try {
       const access = await getFeatureAccess(user.id);
       setFeatureAccess(access);
     } catch (error) {
       console.error('Error checking feature access:', error);
     }
-  };
+  }, [user?.id]);
 
-  const checkDiagnosticStatus = async () => {
+  const checkDiagnosticStatus = useCallback(async () => {
     try {
       const { data, error } = await supabase
         .from('diagnostic_test_sessions')
@@ -59,24 +52,32 @@ const TestsContent = () => {
     } catch (error) {
       console.error('Error checking diagnostic status:', error);
     }
-  };
+  }, [user?.id]);
+
+  useEffect(() => {
+    if (user) {
+      checkFeatureAccess();
+      checkDiagnosticStatus();
+    }
+  }, [user, checkFeatureAccess, checkDiagnosticStatus]);
 
   // Note: Test 1 in database is the Diagnostic Test, so practice tests start at 2
-  const practiceTests = [
+  // Memoized to prevent recreating array on every render
+  const practiceTests = useMemo(() => [
     { number: 2, displayNumber: 1, title: 'Test 1', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
     { number: 3, displayNumber: 2, title: 'Test 2', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
     { number: 4, displayNumber: 3, title: 'Test 3', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
     { number: 5, displayNumber: 4, title: 'Test 4', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
     { number: 6, displayNumber: 5, title: 'Test 5', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' },
     { number: 7, displayNumber: 6, title: 'Test 6', icon: <HiClipboardDocumentList />, description: '215 questions • 175 minutes' }
-  ];
+  ], []);
 
-  const sectionTests = [
+  const sectionTests = useMemo(() => [
     { title: 'English Practice', icon: <HiPencilSquare />, description: 'Coming soon', disabled: true },
     { title: 'Math Practice', icon: <HiCalculator />, description: 'Coming soon', disabled: true },
     { title: 'Reading Practice', icon: <HiBookOpen />, description: 'Coming soon', disabled: true },
     { title: 'Science Practice', icon: <HiBeaker />, description: 'Coming soon', disabled: true }
-  ];
+  ], []);
 
   return (
     <div className={classes.testsContainer}>
