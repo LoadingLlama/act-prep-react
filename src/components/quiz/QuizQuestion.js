@@ -13,11 +13,23 @@ const QuizQuestion = ({
   showResult,
   onAnswerClick
 }) => {
+  // Safety check: ensure question and options exist
+  if (!question || !question.options || !Array.isArray(question.options)) {
+    console.error('QuizQuestion: Invalid question data', question);
+    return (
+      <div style={questionStyles.container}>
+        <p style={{ color: '#ef4444', padding: '1rem' }}>
+          Error: Question data is invalid or missing.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div style={questionStyles.container}>
       <h3
         style={questionStyles.questionText}
-        dangerouslySetInnerHTML={{ __html: sanitizeHTML(question.text) }}
+        dangerouslySetInnerHTML={{ __html: sanitizeHTML(question.text || 'Question text missing') }}
       />
 
       <div style={questionStyles.optionsContainer}>
@@ -64,9 +76,9 @@ const QuizQuestion = ({
         })}
       </div>
 
-      {showResult && selectedAnswer !== null && (
+      {showResult && selectedAnswer !== null && question.options[selectedAnswer] && (
         <div style={questionStyles.explanation}>
-          {question.options[selectedAnswer].explanation}
+          {question.options[selectedAnswer].explanation || 'No explanation available.'}
         </div>
       )}
     </div>

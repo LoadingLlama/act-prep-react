@@ -70,6 +70,15 @@ const InteractiveQuizRefactored = ({
   const handleAnswerClick = (answerIndex) => {
     if (showResult) return; // Don't allow changing answer after showing result
 
+    // Safety check: ensure question and option exist
+    if (!quizData?.questions?.[currentQuestion]?.options?.[answerIndex]) {
+      logger.error('InteractiveQuiz', 'Invalid question or option', {
+        currentQuestion,
+        answerIndex
+      });
+      return;
+    }
+
     setSelectedAnswer(answerIndex);
     const isCorrect = quizData.questions[currentQuestion].options[answerIndex].isCorrect;
 
@@ -91,6 +100,12 @@ const InteractiveQuizRefactored = ({
 
   // Move to next question
   const handleNextQuestion = () => {
+    // Safety check: ensure questions array exists
+    if (!quizData?.questions || !Array.isArray(quizData.questions)) {
+      logger.error('InteractiveQuiz', 'Invalid quiz data in handleNextQuestion');
+      return;
+    }
+
     if (currentQuestion < quizData.questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
       setSelectedAnswer(null);
@@ -104,13 +119,21 @@ const InteractiveQuizRefactored = ({
   const completeQuiz = async () => {
     setQuizCompleted(true);
 
+    // Safety check: ensure questions array exists and has items
+    if (!quizData?.questions || !Array.isArray(quizData.questions) || quizData.questions.length === 0) {
+      logger.error('InteractiveQuiz', 'Cannot complete quiz - invalid questions data');
+      return;
+    }
+
+    const totalQuestions = quizData.questions.length;
+
     if (userId) {
       // Save progress to Supabase
       await QuizzesService.saveQuizProgress(
         userId,
         quizData.id,
         score,
-        quizData.questions.length,
+        totalQuestions,
         answers,
         true
       );
@@ -118,7 +141,7 @@ const InteractiveQuizRefactored = ({
       logger.info('InteractiveQuiz', 'Quiz completed', {
         quizId: quizData.id,
         score,
-        total: quizData.questions.length
+        total: totalQuestions
       });
     }
 
@@ -126,8 +149,8 @@ const InteractiveQuizRefactored = ({
       onComplete({
         quizId: quizData.id,
         score,
-        total: quizData.questions.length,
-        percentage: Math.round((score / quizData.questions.length) * 100)
+        total: totalQuestions,
+        percentage: Math.round((score / totalQuestions) * 100)
       });
     }
   };
@@ -188,6 +211,21 @@ const InteractiveQuizRefactored = ({
 
   // Render current question
   const question = quizData.questions[currentQuestion];
+
+  // Safety check: ensure current question exists
+  if (!question) {
+    logger.error('InteractiveQuiz', 'Current question not found', { currentQuestion });
+    return (
+      <div style={quizStyles.container}>
+        <div style={quizStyles.error}>
+          <p>Question not found. Please try restarting the quiz.</p>
+          <button onClick={handleRetry} style={quizStyles.retryButton}>
+            Restart Quiz
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div style={quizStyles.container}>
