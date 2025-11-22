@@ -1321,21 +1321,24 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
             top: '2rem',
             alignSelf: 'start'
           }}>
-            {/* Question Text */}
-            {question && (
-              <div style={{
-                fontSize: '17px',
-                fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-                lineHeight: '1.6',
-                fontWeight: '500',
-                color: '#1a1a1a',
-                marginBottom: '1.5rem',
-                paddingBottom: '1.25rem',
-                borderBottom: '2px solid #e5e7eb'
-              }}
-              dangerouslySetInnerHTML={{ __html: question }}
-              />
-            )}
+            {/* Question Number and Text - ALWAYS show question number */}
+            <div style={{
+              fontSize: '17px',
+              fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+              lineHeight: '1.6',
+              fontWeight: '600',
+              color: '#1a1a1a',
+              marginBottom: '1.5rem',
+              paddingBottom: '1.25rem',
+              borderBottom: '2px solid #e5e7eb'
+            }}>
+              <div style={{ fontSize: '16px', fontWeight: '700', marginBottom: '0.5rem', color: '#3b82f6' }}>
+                {currentQuestionIndex + 1}.
+              </div>
+              {question && (
+                <div style={{ fontWeight: '500' }} dangerouslySetInnerHTML={{ __html: question }} />
+              )}
+            </div>
 
             {/* Answer choices */}
             {currentQuestion.choices.map((choice, index) => {
