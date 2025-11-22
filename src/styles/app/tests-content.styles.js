@@ -14,12 +14,21 @@ export const useTestsContentStyles = createUseStyles({
     background: '#fafafa',
     maxWidth: '1400px',
     '@media (max-width: 768px)': {
-      padding: '1rem'
+      padding: '0.75rem'
+    },
+    '@media (max-width: 480px)': {
+      padding: '0.5rem'
     }
   },
   pageHeader: {
     padding: '0',
-    marginBottom: '2rem'
+    marginBottom: '2rem',
+    '@media (max-width: 768px)': {
+      marginBottom: '1rem'
+    },
+    '@media (max-width: 480px)': {
+      marginBottom: '0.75rem'
+    }
   },
   pageTitle: {
     fontSize: '2.5rem',
@@ -31,7 +40,10 @@ export const useTestsContentStyles = createUseStyles({
     margin: '0 0 0.5rem 0',
     letterSpacing: '-0.04em',
     '@media (max-width: 768px)': {
-      fontSize: '2rem'
+      fontSize: '1.5rem'
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '1.25rem'
     }
   },
   subtitle: {
@@ -81,6 +93,14 @@ export const useTestsContentStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+    '@media (max-width: 768px)': {
+      padding: '0.75rem',
+      minHeight: '100px'
+    },
+    '@media (max-width: 480px)': {
+      padding: '0.625rem',
+      minHeight: '90px'
+    },
     '&:hover': {
       borderColor: '#cbd5e1',
       borderLeftColor: '#08245b',

@@ -181,6 +181,16 @@ export const headerStyles = {
     cursor: 'pointer',
     transition: 'all 0.2s ease',
     boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
+    '@media (max-width: 768px)': {
+      width: '36px',
+      height: '36px',
+      fontSize: '0.85rem'
+    },
+    '@media (max-width: 480px)': {
+      width: '32px',
+      height: '32px',
+      fontSize: '0.75rem'
+    },
     '&:hover': {
       transform: 'scale(1.05)',
       borderColor: '#9ca3af',
@@ -211,7 +221,21 @@ export const headerStyles = {
     borderRadius: '5px',
     padding: '0 4px',
     fontSize: '0.48rem',
-    boxShadow: '0 1px 4px rgba(0, 0, 0, 0.15)'
+    boxShadow: '0 1px 4px rgba(0, 0, 0, 0.15)',
+    '@media (max-width: 768px)': {
+      minWidth: '18px',
+      height: '10px',
+      fontSize: '0.42rem',
+      padding: '0 3px',
+      bottom: '-5px'
+    },
+    '@media (max-width: 480px)': {
+      minWidth: '16px',
+      height: '9px',
+      fontSize: '0.38rem',
+      padding: '0 2px',
+      bottom: '-4px'
+    }
   },
   proBadge: {
     background: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)',

@@ -14,7 +14,10 @@ export const useCourseStyles = createUseStyles({
     minHeight: '100vh',
     background: 'transparent',
     '@media (max-width: 768px)': {
-      padding: '1rem'
+      padding: '0.75rem'
+    },
+    '@media (max-width: 480px)': {
+      padding: '0.5rem'
     }
   },
 
@@ -22,7 +25,13 @@ export const useCourseStyles = createUseStyles({
     marginBottom: '2rem',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    '@media (max-width: 768px)': {
+      marginBottom: '1rem'
+    },
+    '@media (max-width: 480px)': {
+      marginBottom: '0.75rem'
+    }
   },
 
   title: {
@@ -35,7 +44,10 @@ export const useCourseStyles = createUseStyles({
     margin: '0 0 0.5rem 0',
     letterSpacing: '-0.04em',
     '@media (max-width: 768px)': {
-      fontSize: '2rem'
+      fontSize: '1.5rem'
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '1.25rem'
     }
   },
 
@@ -51,7 +63,15 @@ export const useCourseStyles = createUseStyles({
     gap: '0.5rem',
     marginBottom: '0.5rem',
     paddingBottom: '0.5rem',
-    borderBottom: '1px solid #f3f4f6'
+    borderBottom: '1px solid #f3f4f6',
+    '@media (max-width: 768px)': {
+      gridTemplateColumns: 'repeat(auto-fit, minmax(90px, 1fr))',
+      gap: '0.375rem'
+    },
+    '@media (max-width: 480px)': {
+      gridTemplateColumns: 'repeat(2, 1fr)',
+      gap: '0.25rem'
+    }
   },
 
   statCard: {
@@ -72,7 +92,13 @@ export const useCourseStyles = createUseStyles({
   statValue: {
     fontSize: '1.125rem',
     fontWeight: '700',
-    color: '#1a1a1a'
+    color: '#1a1a1a',
+    '@media (max-width: 768px)': {
+      fontSize: '0.95rem'
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '0.875rem'
+    }
   },
 
   statDetail: {
@@ -116,7 +142,12 @@ export const useCourseStyles = createUseStyles({
       boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
     },
     '@media (max-width: 768px)': {
-      padding: '0.75rem'
+      padding: '0.625rem',
+      marginBottom: '0.75rem'
+    },
+    '@media (max-width: 480px)': {
+      padding: '0.5rem',
+      marginBottom: '0.5rem'
     },
     '&::before': {
       content: '""',

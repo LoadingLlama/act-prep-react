@@ -34,7 +34,14 @@ export const modalStyles = {
     borderRight: '1px solid #e9ecef',
     padding: '1.5rem',
     overflowY: 'auto',
-    flexShrink: 0
+    flexShrink: 0,
+    '@media (max-width: 1024px)': {
+      width: '240px',
+      padding: '1rem'
+    },
+    '@media (max-width: 768px)': {
+      display: 'none'
+    }
   },
   lessonMain: {
     flex: 1,
@@ -52,7 +59,13 @@ export const modalStyles = {
     textAlign: 'left',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    '@media (max-width: 768px)': {
+      padding: '1rem 1.5rem 0.75rem'
+    },
+    '@media (max-width: 480px)': {
+      padding: '0.75rem 1rem 0.5rem'
+    }
   },
   lessonTitle: {
     fontSize: '1.75rem',
@@ -61,7 +74,13 @@ export const modalStyles = {
     margin: '0',
     letterSpacing: '-0.01em',
     lineHeight: '1.3',
-    flex: 1
+    flex: 1,
+    '@media (max-width: 768px)': {
+      fontSize: '1.25rem'
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '1.1rem'
+    }
   },
   lessonModeToggle: {
     display: 'flex',
@@ -113,7 +132,14 @@ export const modalStyles = {
     borderLeft: '1px solid #e9ecef',
     padding: '1.5rem',
     overflowY: 'auto',
-    flexShrink: 0
+    flexShrink: 0,
+    '@media (max-width: 1024px)': {
+      width: '240px',
+      padding: '1rem'
+    },
+    '@media (max-width: 768px)': {
+      display: 'none'
+    }
   },
   lessonBody: {
     padding: '2rem 2.5rem 4rem',
@@ -121,6 +147,14 @@ export const modalStyles = {
     lineHeight: 1.6,
     fontSize: '15px',
     color: '#6d6e75',
+    '@media (max-width: 768px)': {
+      padding: '1.5rem 1.5rem 3rem',
+      fontSize: '14px'
+    },
+    '@media (max-width: 480px)': {
+      padding: '1rem 1rem 2rem',
+      fontSize: '13px'
+    },
     '& h1, & h2, & h3, & h4': {
       color: '#000000 !important',
       fontWeight: '800 !important',

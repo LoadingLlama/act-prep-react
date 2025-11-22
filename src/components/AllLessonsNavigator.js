@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAllLessonsNavigatorStyles } from './AllLessonsNavigator.styles';
 import { HiStar } from 'react-icons/hi2';
+import Logo from './common/Logo';
 
 const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange, onBackClick, lessonProgress = {}, lessonMode, setLessonMode, practiceQuestions = [], currentQuestionIndex = 0, onQuestionChange, questionResults = [] }) => {
   const classes = useAllLessonsNavigatorStyles();
@@ -47,6 +48,11 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
 
   // Group lessons by section and then by category (unit)
   const groupedLessons = lessonStructure.reduce((acc, lesson) => {
+    // In practice mode, completely skip Introduction lessons
+    if (lessonMode === 'practice' && lesson.category === 'Introduction') {
+      return acc;
+    }
+
     const section = lesson.section === 'all' ? 'Introduction' : lesson.section;
     const category = lesson.category || 'Other';
 
@@ -87,7 +93,12 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
   const courseTitle = getSectionTitle(currentSectionName);
 
   // Calculate progress for current section
-  const sectionLessons = lessonStructure.filter(l => l.section === currentSectionName);
+  const sectionLessons = lessonStructure.filter(l => {
+    if (l.section !== currentSectionName) return false;
+    // In practice mode, exclude Introduction lessons from progress calculation
+    if (lessonMode === 'practice' && l.category === 'Introduction') return false;
+    return true;
+  });
   const completedLessons = sectionLessons.filter(l => lessonProgress[l.id] === 'completed').length;
   const totalLessons = sectionLessons.length;
   const progressPercentage = totalLessons > 0 ? (completedLessons / totalLessons) * 100 : 0;
@@ -140,15 +151,7 @@ const AllLessonsNavigator = ({ lessonStructure, currentLessonId, onLessonChange,
             padding: '0 0.5rem',
             marginBottom: '0.75rem'
           }}>
-            <img
-              src="/images/nomi-academy-logo.png"
-              alt="Nomi Academy"
-              style={{
-                height: '48px',
-                objectFit: 'contain',
-                display: 'block'
-              }}
-            />
+            <Logo size="large" />
           </div>
 
           <button className={classes.backButton} onClick={onBackClick}>

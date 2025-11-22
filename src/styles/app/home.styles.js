@@ -15,13 +15,24 @@ export const useHomeStyles = createUseStyles({
     background: '#ffffff',
     '@media (max-width: 768px)': {
       padding: '1rem'
+    },
+    '@media (max-width: 480px)': {
+      padding: '0.75rem'
     }
   },
 
   header: {
     marginBottom: '2rem',
     paddingBottom: '1rem',
-    borderBottom: '2px solid #f3f4f6'
+    borderBottom: '2px solid #f3f4f6',
+    '@media (max-width: 768px)': {
+      marginBottom: '1.5rem',
+      paddingBottom: '0.75rem'
+    },
+    '@media (max-width: 480px)': {
+      marginBottom: '1rem',
+      paddingBottom: '0.5rem'
+    }
   },
 
   title: {
@@ -29,13 +40,25 @@ export const useHomeStyles = createUseStyles({
     fontWeight: '700',
     color: '#1a1a1a',
     margin: 0,
-    letterSpacing: '-0.02em'
+    letterSpacing: '-0.02em',
+    '@media (max-width: 768px)': {
+      fontSize: '1.5rem'
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '1.25rem'
+    }
   },
 
   content: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '2rem'
+    gap: '2rem',
+    '@media (max-width: 768px)': {
+      gap: '1.5rem'
+    },
+    '@media (max-width: 480px)': {
+      gap: '1rem'
+    }
   },
 
   section: {
@@ -71,6 +94,14 @@ export const useHomeStyles = createUseStyles({
     cursor: 'pointer',
     transition: 'background 0.15s ease',
     gap: '1rem',
+    '@media (max-width: 768px)': {
+      padding: '0.625rem 0.5rem',
+      gap: '0.75rem'
+    },
+    '@media (max-width: 480px)': {
+      padding: '0.5rem 0.375rem',
+      gap: '0.5rem'
+    },
     '&:hover': {
       background: '#f9fafb'
     },
@@ -83,7 +114,10 @@ export const useHomeStyles = createUseStyles({
     fontSize: '0.875rem',
     color: '#374151',
     flex: 1,
-    fontWeight: '400'
+    fontWeight: '400',
+    '@media (max-width: 480px)': {
+      fontSize: '0.8125rem'
+    }
   },
 
   listValue: {
@@ -103,6 +137,10 @@ export const useHomeStyles = createUseStyles({
     cursor: 'pointer',
     flexShrink: 0,
     transition: 'all 0.15s ease',
+    '@media (max-width: 480px)': {
+      padding: '0.3125rem 0.625rem',
+      fontSize: '0.6875rem'
+    },
     '&:hover': {
       background: '#0a2f73'
     }

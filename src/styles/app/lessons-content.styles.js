@@ -14,12 +14,21 @@ export const useLessonsContentStyles = createUseStyles({
     background: '#fafafa',
     maxWidth: '1200px',
     '@media (max-width: 768px)': {
-      padding: '1rem'
+      padding: '0.75rem'
+    },
+    '@media (max-width: 480px)': {
+      padding: '0.5rem'
     }
   },
   pageHeader: {
     padding: '0',
-    marginBottom: '1.5rem'
+    marginBottom: '1.5rem',
+    '@media (max-width: 768px)': {
+      marginBottom: '1rem'
+    },
+    '@media (max-width: 480px)': {
+      marginBottom: '0.75rem'
+    }
   },
   modeToggle: {
     display: 'inline-flex',
@@ -61,7 +70,10 @@ export const useLessonsContentStyles = createUseStyles({
     margin: '0 0 0.5rem 0',
     letterSpacing: '-0.04em',
     '@media (max-width: 768px)': {
-      fontSize: '2rem'
+      fontSize: '1.5rem'
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '1.25rem'
     }
   },
   pageSubtitle: {

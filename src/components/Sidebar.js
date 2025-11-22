@@ -96,7 +96,10 @@ const useStyles = createUseStyles({
     margin: 0,
     whiteSpace: 'nowrap',
     '@media (max-width: 1024px)': {
-      fontSize: '0.8rem'
+      fontSize: '0.7rem'
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '0.65rem'
     }
   },
   navSection: {
@@ -285,7 +288,7 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
         </button>
 
         <div className={classes.logoSection}>
-          <Logo size="large" clickable onClick={handleLogoClick} />
+          <Logo size="small" clickable onClick={handleLogoClick} />
         </div>
 
       <div className={classes.navSection}>

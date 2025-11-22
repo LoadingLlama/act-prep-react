@@ -12,14 +12,28 @@ export const usePracticeSessionStyles = createUseStyles({
     margin: '0 auto',
     minHeight: '100vh',
     background: '#fafafa',
-    maxWidth: '900px'
+    maxWidth: '900px',
+    '@media (max-width: 768px)': {
+      padding: '1rem'
+    },
+    '@media (max-width: 480px)': {
+      padding: '0.75rem'
+    }
   },
   practiceHeader: {
     background: '#ffffff',
     border: '1px solid #e2e8f0',
     borderRadius: '8px',
     padding: '1.25rem',
-    marginBottom: '1.5rem'
+    marginBottom: '1.5rem',
+    '@media (max-width: 768px)': {
+      padding: '1rem',
+      marginBottom: '1rem'
+    },
+    '@media (max-width: 480px)': {
+      padding: '0.75rem',
+      marginBottom: '0.75rem'
+    }
   },
   headerTop: {
     display: 'flex',
@@ -62,7 +76,13 @@ export const usePracticeSessionStyles = createUseStyles({
     fontWeight: '700',
     color: '#1a1a1a',
     marginBottom: '0.5rem',
-    lineHeight: '1.3'
+    lineHeight: '1.3',
+    '@media (max-width: 768px)': {
+      fontSize: '1.25rem'
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '1.1rem'
+    }
   },
   practiceSubtitle: {
     fontSize: '0.875rem',
@@ -92,7 +112,15 @@ export const usePracticeSessionStyles = createUseStyles({
     border: '1px solid #e2e8f0',
     borderRadius: '8px',
     padding: '1.5rem',
-    marginBottom: '1.5rem'
+    marginBottom: '1.5rem',
+    '@media (max-width: 768px)': {
+      padding: '1rem',
+      marginBottom: '1rem'
+    },
+    '@media (max-width: 480px)': {
+      padding: '0.75rem',
+      marginBottom: '0.75rem'
+    }
   },
   questionNumber: {
     fontSize: '0.75rem',
@@ -107,7 +135,15 @@ export const usePracticeSessionStyles = createUseStyles({
     fontWeight: '600',
     color: '#1a1a1a',
     lineHeight: '1.5',
-    marginBottom: '1.5rem'
+    marginBottom: '1.5rem',
+    '@media (max-width: 768px)': {
+      fontSize: '1rem',
+      marginBottom: '1rem'
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '0.95rem',
+      marginBottom: '0.75rem'
+    }
   },
   choicesList: {
     display: 'flex',
@@ -128,6 +164,14 @@ export const usePracticeSessionStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     gap: '0.75rem',
+    '@media (max-width: 768px)': {
+      padding: '0.75rem 1rem',
+      fontSize: '0.9rem'
+    },
+    '@media (max-width: 480px)': {
+      padding: '0.625rem 0.75rem',
+      fontSize: '0.85rem'
+    },
     '&:hover': {
       borderColor: '#3b82f6',
       background: '#f0f9ff',
@@ -232,13 +276,25 @@ export const usePracticeSessionStyles = createUseStyles({
     border: '1px solid #e2e8f0',
     borderRadius: '8px',
     padding: '2rem',
-    textAlign: 'center'
+    textAlign: 'center',
+    '@media (max-width: 768px)': {
+      padding: '1.5rem'
+    },
+    '@media (max-width: 480px)': {
+      padding: '1rem'
+    }
   },
   ratingTitle: {
     fontSize: '1.5rem',
     fontWeight: '700',
     color: '#1a1a1a',
-    marginBottom: '0.5rem'
+    marginBottom: '0.5rem',
+    '@media (max-width: 768px)': {
+      fontSize: '1.25rem'
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '1.1rem'
+    }
   },
   ratingSubtitle: {
     fontSize: '0.95rem',
@@ -256,6 +312,12 @@ export const usePracticeSessionStyles = createUseStyles({
     cursor: 'pointer',
     transition: 'all 0.2s ease',
     color: '#e2e8f0',
+    '@media (max-width: 768px)': {
+      fontSize: '2.5rem'
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '2rem'
+    },
     '&.filled': {
       color: '#fbbf24'
     },
@@ -279,7 +341,16 @@ export const usePracticeSessionStyles = createUseStyles({
     marginBottom: '2rem',
     padding: '1.5rem',
     background: '#f8fafc',
-    borderRadius: '8px'
+    borderRadius: '8px',
+    '@media (max-width: 768px)': {
+      padding: '1rem',
+      gap: '0.75rem'
+    },
+    '@media (max-width: 480px)': {
+      gridTemplateColumns: '1fr',
+      padding: '0.75rem',
+      gap: '0.5rem'
+    }
   },
   stat: {
     textAlign: 'center'
@@ -288,7 +359,13 @@ export const usePracticeSessionStyles = createUseStyles({
     fontSize: '2rem',
     fontWeight: '700',
     color: '#1a1a1a',
-    lineHeight: '1'
+    lineHeight: '1',
+    '@media (max-width: 768px)': {
+      fontSize: '1.5rem'
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '1.25rem'
+    }
   },
   statLabel: {
     fontSize: '0.75rem',
