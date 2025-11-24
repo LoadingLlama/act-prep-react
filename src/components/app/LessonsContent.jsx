@@ -49,7 +49,10 @@ const LessonsContent = () => {
   } = useOutletContext();
 
   // Local state for filtering
-  const [activeSection, setActiveSection] = useState('english');
+  const [activeSection, setActiveSection] = useState(() => {
+    const saved = localStorage.getItem('selectedSubject');
+    return saved || 'english';
+  });
   const [viewMode, setViewMode] = useState('grid');
   const [mode, setMode] = useState('lessons'); // 'lessons' or 'practice'
   const [sliderStyle, setSliderStyle] = useState({});
@@ -66,6 +69,11 @@ const LessonsContent = () => {
       checkFeatureAccess();
     }
   }, [user]);
+
+  // Save selected subject to localStorage
+  useEffect(() => {
+    localStorage.setItem('selectedSubject', activeSection);
+  }, [activeSection]);
 
   const checkFeatureAccess = async () => {
     try {
@@ -166,7 +174,15 @@ const LessonsContent = () => {
   const getFilteredLessons = () => {
     // Merge durations from database into lesson structure
     const sectionLessons = lessonStructure
-      .filter(lesson => lesson.section === activeSection)
+      .filter(lesson => {
+        // Filter by section
+        if (lesson.section !== activeSection) return false;
+
+        // In practice mode, exclude Introduction lessons
+        if (mode === 'practice' && lesson.category === 'Introduction') return false;
+
+        return true;
+      })
       .map((lesson, index) => {
         const isLocked = featureAccess && !featureAccess.isPro && index >= featureAccess.lessonsPerSection;
         return {
@@ -391,48 +407,51 @@ const LessonsContent = () => {
           )}
         </div>
         {/* Star Rating - positioned inline on the right for list view, absolute for grid view */}
-        <div style={!isGridView ? {
-          display: 'flex',
-          alignItems: 'center',
-          gap: '2px',
-          flexShrink: 0
-        } : {
-          position: 'absolute',
-          top: '0.75rem',
-          right: '0.75rem',
-          display: 'flex',
-          gap: '1px',
-          alignItems: 'center',
-          zIndex: 10,
-          pointerEvents: 'none'
-        }}>
-          {[1, 2, 3, 4, 5].map((star) => {
-            const isFilled = rating >= star;
-            const isHalf = rating >= star - 0.5 && rating < star;
-            const starColor = '#fbbf24'; // Golden color for all filled stars
-            const starSize = !isGridView ? '0.7rem' : '0.875rem';
+        {/* Hide stars for Introduction lessons */}
+        {lesson.category !== 'Introduction' && (
+          <div style={!isGridView ? {
+            display: 'flex',
+            alignItems: 'center',
+            gap: '2px',
+            flexShrink: 0
+          } : {
+            position: 'absolute',
+            top: '0.75rem',
+            right: '0.75rem',
+            display: 'flex',
+            gap: '1px',
+            alignItems: 'center',
+            zIndex: 10,
+            pointerEvents: 'none'
+          }}>
+            {[1, 2, 3, 4, 5].map((star) => {
+              const isFilled = rating >= star;
+              const isHalf = rating >= star - 0.5 && rating < star;
+              const starColor = '#fbbf24'; // Golden color for all filled stars
+              const starSize = !isGridView ? '0.7rem' : '0.875rem';
 
-            return (
-              <div key={star} style={{ position: 'relative', display: 'inline-block', fontSize: starSize, lineHeight: 1 }}>
-                {isHalf ? (
-                  <>
-                    <HiStar style={{ display: 'block', color: '#e5e7eb' }} />
-                    <div style={{ position: 'absolute', width: '50%', overflow: 'hidden', left: 0, top: 0, height: '100%' }}>
-                      <HiStar style={{ display: 'block', color: starColor }} />
-                    </div>
-                  </>
-                ) : (
-                  <HiStar
-                    style={{
-                      display: 'block',
-                      color: isFilled ? starColor : '#e5e7eb'
-                    }}
-                  />
-                )}
-              </div>
-            );
-          })}
-        </div>
+              return (
+                <div key={star} style={{ position: 'relative', display: 'inline-block', fontSize: starSize, lineHeight: 1 }}>
+                  {isHalf ? (
+                    <>
+                      <HiStar style={{ display: 'block', color: '#e5e7eb' }} />
+                      <div style={{ position: 'absolute', width: '50%', overflow: 'hidden', left: 0, top: 0, height: '100%' }}>
+                        <HiStar style={{ display: 'block', color: starColor }} />
+                      </div>
+                    </>
+                  ) : (
+                    <HiStar
+                      style={{
+                        display: 'block',
+                        color: isFilled ? starColor : '#e5e7eb'
+                      }}
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     );
   };

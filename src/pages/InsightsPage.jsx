@@ -455,7 +455,6 @@ const InsightsPage = () => {
   const navigate = useNavigate();
   const outletContext = useOutletContext();
   const { setDiagnosticTestOpen } = outletContext || {};
-  const [loading, setLoading] = useState(true);
   const [insights, setInsights] = useState(null);
   const [weakAreas, setWeakAreas] = useState([]);
   const [strengths, setStrengths] = useState([]);
@@ -500,7 +499,6 @@ const InsightsPage = () => {
 
   const loadInsights = async () => {
     try {
-      setLoading(true);
       logger.info('InsightsPage', 'loadInsights', { userId: user.id });
 
       // Load insights data
@@ -623,8 +621,6 @@ const InsightsPage = () => {
     } catch (error) {
       logger.error('InsightsPage', 'loadInsightsFailed', { error });
       console.error('Failed to load insights:', error);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -708,17 +704,6 @@ const InsightsPage = () => {
       setDiagnosticTestOpen(true);
     }
   };
-
-  if (loading) {
-    return (
-      <div className={classes.container}>
-        <div className={classes.loadingContainer}>
-          <div className={classes.loadingSpinner} />
-          <div style={{ color: '#6b7280', fontSize: '1rem' }}>Loading your insights...</div>
-        </div>
-      </div>
-    );
-  }
 
   const hasAnyData = insights?.diagnostic?.hasCompletedDiagnostic ||
     insights?.lessonPerformance?.length > 0 ||
