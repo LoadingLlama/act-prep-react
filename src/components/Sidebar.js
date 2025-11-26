@@ -28,25 +28,25 @@ const useStyles = createUseStyles({
     top: 0,
     width: '240px',
     height: '100vh',
-    background: '#ffffff',
+    background: '#08245b',
     padding: '0',
     overflowY: 'auto',
     zIndex: 1000,
     display: 'flex',
     flexDirection: 'column',
-    borderRight: '1px solid #e5e7eb',
+    borderRight: 'none',
     transition: 'transform 0.3s ease',
     '&::-webkit-scrollbar': {
       width: '2px'
     },
     '&::-webkit-scrollbar-track': {
-      background: '#ffffff'
+      background: '#08245b'
     },
     '&::-webkit-scrollbar-thumb': {
-      background: 'rgba(0, 0, 0, 0.08)',
+      background: 'rgba(255, 255, 255, 0.2)',
       borderRadius: '2px',
       '&:hover': {
-        background: 'rgba(0, 0, 0, 0.12)'
+        background: 'rgba(255, 255, 255, 0.3)'
       }
     },
     '@media (max-width: 1024px)': {
@@ -68,11 +68,11 @@ const useStyles = createUseStyles({
       border: 'none',
       padding: '0.5rem',
       cursor: 'pointer',
-      color: '#6b7280',
+      color: 'rgba(255, 255, 255, 0.7)',
       transition: 'color 0.15s ease',
       zIndex: 10,
       '&:hover': {
-        color: '#1a1a1a'
+        color: '#ffffff'
       },
       '& svg': {
         width: '24px',
@@ -90,7 +90,7 @@ const useStyles = createUseStyles({
   logo: {
     fontSize: '1.15rem',
     fontWeight: '600',
-    color: '#1a1a1a',
+    color: '#ffffff',
     letterSpacing: '-0.02em',
     lineHeight: '1.1',
     margin: 0,
@@ -111,7 +111,7 @@ const useStyles = createUseStyles({
   navSectionTitle: {
     fontSize: '0.7rem',
     fontWeight: '600',
-    color: '#9ca3af',
+    color: 'rgba(255, 255, 255, 0.5)',
     textTransform: 'uppercase',
     letterSpacing: '0.08em',
     padding: '0 1.25rem',
@@ -127,39 +127,37 @@ const useStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     gap: '0.75rem',
-    padding: '0.75rem 1.25rem',
+    padding: '0.75rem 0.75rem',
     fontSize: '0.9rem',
-    color: '#6b7280',
+    color: '#ffffff',
     cursor: 'pointer',
-    transition: 'all 0.15s ease',
+    transition: 'all 0.12s cubic-bezier(0.4, 0, 0.2, 1)',
     background: 'transparent',
     border: 'none',
-    width: '100%',
+    width: 'calc(100% - 1rem)',
     textAlign: 'left',
-    fontWeight: '500',
+    fontWeight: '700',
     position: 'relative',
     minHeight: '44px',
+    borderRadius: '22px',
+    margin: '0 0.5rem',
     '@media (max-width: 1024px)': {
-      padding: '0.5rem 1.25rem',
+      padding: '0.5rem 0.75rem',
       fontSize: '0.85rem',
       minHeight: '36px'
     },
     '&:hover': {
-      background: '#f9fafb',
-      color: '#1a1a1a'
+      background: 'rgba(255, 255, 255, 0.1)',
+      color: '#ffffff'
     },
     '&:active': {
-      background: '#e5e7eb',
+      background: 'rgba(255, 255, 255, 0.15)',
       transform: 'scale(0.98)'
     },
     '&.active': {
-      background: '#f1f5f9',
-      color: '#08245b',
-      fontWeight: '600',
-      '&:hover': {
-        background: '#e2e8f0',
-        color: '#08245b'
-      }
+      background: 'rgba(255, 255, 255, 0.15)',
+      color: '#ffffff',
+      fontWeight: '700'
     }
   },
   icon: {
@@ -177,7 +175,7 @@ const useStyles = createUseStyles({
   },
   bottomSection: {
     padding: '0.5rem 0',
-    borderTop: '1px solid #f3f4f6',
+    borderTop: 'none',
     marginTop: 'auto',
     '@media (max-width: 1024px)': {
       padding: '0.25rem 0'
@@ -217,8 +215,8 @@ const useStyles = createUseStyles({
   lockIcon: {
     marginLeft: 'auto',
     fontSize: '0.8rem',
-    color: '#ef4444',
-    opacity: 0.7
+    color: '#fca5a5',
+    opacity: 0.9
   }
 });
 
@@ -288,7 +286,7 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
         </button>
 
         <div className={classes.logoSection}>
-          <Logo size="small" clickable onClick={handleLogoClick} />
+          <Logo size="small" clickable onClick={handleLogoClick} style={{ color: '#ffffff', textTransform: 'lowercase' }} />
         </div>
 
       <div className={classes.navSection}>
@@ -298,13 +296,9 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
           style={{ opacity: isTrialExpired && !isPro ? 0.5 : 1 }}
         >
           <span className={classes.icon}><HiHome /></span>
-          Home
+          Study plan
           {isTrialExpired && !isPro && <HiLockClosed className={classes.lockIcon} />}
         </button>
-      </div>
-
-      <div className={classes.navSection}>
-        <div className={classes.navSectionTitle}>ACT PREP</div>
         <button
           className={`${classes.navItem} ${activeView === 'lessons' ? 'active' : ''}`}
           onClick={() => handleNavigate('lessons')}
@@ -344,9 +338,6 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
           >
             <span className={classes.icon}><HiUser /></span>
             Profile
-            <span className={`${classes.statusBadge} ${isPro ? classes.proBadge : isTrialExpired ? classes.lockedBadge : classes.trialBadge}`}>
-              {isPro ? 'Pro' : isTrialExpired ? 'Locked' : `${trialDaysLeft}d left`}
-            </span>
           </button>
         )}
         {user && (

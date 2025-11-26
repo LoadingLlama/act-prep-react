@@ -10,39 +10,39 @@ export const useCourseStyles = createUseStyles({
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     maxWidth: '100%',
     margin: '0',
-    padding: '1rem 2rem',
+    padding: '0',
     minHeight: '100vh',
-    background: 'transparent',
+    background: '#ffffff',
     '@media (max-width: 768px)': {
-      padding: '0.75rem'
+      padding: '0'
     },
     '@media (max-width: 480px)': {
-      padding: '0.5rem'
+      padding: '0'
     }
   },
 
   header: {
-    marginBottom: '2rem',
+    marginBottom: '1rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
     '@media (max-width: 768px)': {
-      marginBottom: '1rem'
+      marginBottom: '0.75rem'
     },
     '@media (max-width: 480px)': {
-      marginBottom: '0.75rem'
+      marginBottom: '0.5rem'
     }
   },
 
   title: {
-    fontSize: '2.5rem',
-    fontWeight: '900',
+    fontSize: '1.75rem',
+    fontWeight: '700',
     background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
     margin: '0 0 0.5rem 0',
-    letterSpacing: '-0.04em',
+    letterSpacing: '-0.02em',
     '@media (max-width: 768px)': {
       fontSize: '1.5rem'
     },
@@ -108,21 +108,9 @@ export const useCourseStyles = createUseStyles({
 
   weeksContainer: {
     position: 'relative',
-    paddingLeft: '2.5rem',
+    paddingLeft: '0',
     '@media (max-width: 768px)': {
-      paddingLeft: '2rem'
-    },
-    '&::before': {
-      content: '""',
-      position: 'absolute',
-      left: '0.5625rem',
-      top: '1.5rem',
-      bottom: '1.5rem',
-      width: '2px',
-      background: '#e5e7eb',
-      '@media (max-width: 768px)': {
-        left: '0.4375rem'
-      }
+      paddingLeft: '0'
     }
   },
 

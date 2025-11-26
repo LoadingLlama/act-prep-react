@@ -995,6 +995,15 @@ const DiagnosticTest = ({ onClose }) => {
 
       // Clear processing flag and show results
       localStorage.removeItem('diagnosticProcessing');
+
+      // Clear session storage caches to force data refresh
+      Object.keys(sessionStorage).forEach(key => {
+        if (key.startsWith('diagnostic_completed_') || key.startsWith('insights_') || key.startsWith('learning_path_')) {
+          sessionStorage.removeItem(key);
+          console.log('🗑️ Cleared cache:', key);
+        }
+      });
+
       setProcessingProgress(100);
       setProcessing(false);
       setShowResults(true);
@@ -1008,8 +1017,13 @@ const DiagnosticTest = ({ onClose }) => {
       });
       errorTracker.trackError('DiagnosticTest', 'processTestResultsInBackground', { sessionId }, err);
 
-      // Clear processing flag even on error
+      // Clear processing flag and caches even on error
       localStorage.removeItem('diagnosticProcessing');
+      Object.keys(sessionStorage).forEach(key => {
+        if (key.startsWith('diagnostic_completed_') || key.startsWith('insights_') || key.startsWith('learning_path_')) {
+          sessionStorage.removeItem(key);
+        }
+      });
       // Don't set error state since user has already navigated away
     }
   };

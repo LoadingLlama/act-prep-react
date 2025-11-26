@@ -74,6 +74,33 @@ const ProfilePage = () => {
   };
 
   const loadProfile = async () => {
+    // Check cache first for instant load
+    const cacheKey = `profile_${user.id}`;
+    const cached = sessionStorage.getItem(cacheKey);
+    const cacheTimestamp = sessionStorage.getItem(`${cacheKey}_timestamp`);
+    const now = Date.now();
+
+    // Use cache if less than 60 seconds old
+    if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 60000) {
+      const cachedData = JSON.parse(cached);
+      setProfile(cachedData);
+      setFormData({
+        full_name: cachedData.full_name || '',
+        phone: cachedData.phone || '',
+        school: cachedData.school || '',
+        grade: cachedData.grade || '',
+        current_score: cachedData.current_score || '',
+        target_score: cachedData.target_score || '',
+        test_date: cachedData.test_date || '',
+      });
+      setLoading(false);
+      console.log('📊 Using cached profile data');
+
+      // Still refresh in background
+      refreshProfileInBackground(cacheKey);
+      return;
+    }
+
     setLoading(true);
     const { data, error } = await ProfileService.getProfile(user.id);
 
@@ -88,6 +115,9 @@ const ProfilePage = () => {
         target_score: data.target_score || '',
         test_date: data.test_date || '',
       });
+      // Cache the profile data
+      sessionStorage.setItem(cacheKey, JSON.stringify(data));
+      sessionStorage.setItem(`${cacheKey}_timestamp`, String(now));
     } else if (error && error.code === 'PGRST116') {
       // Profile doesn't exist, create it
       await ProfileService.createProfile(user.id, {
@@ -98,6 +128,35 @@ const ProfilePage = () => {
     }
 
     setLoading(false);
+  };
+
+  const refreshProfileInBackground = async (cacheKey) => {
+    try {
+      const { data } = await ProfileService.getProfile(user.id);
+      if (data) {
+        // Update cache
+        sessionStorage.setItem(cacheKey, JSON.stringify(data));
+        sessionStorage.setItem(`${cacheKey}_timestamp`, String(Date.now()));
+
+        // Update state if changed
+        const cached = sessionStorage.getItem(cacheKey);
+        if (JSON.stringify(data) !== cached) {
+          setProfile(data);
+          setFormData({
+            full_name: data.full_name || '',
+            phone: data.phone || '',
+            school: data.school || '',
+            grade: data.grade || '',
+            current_score: data.current_score || '',
+            target_score: data.target_score || '',
+            test_date: data.test_date || '',
+          });
+          console.log('📊 Updated profile from background check');
+        }
+      }
+    } catch (error) {
+      console.error('Background profile check error:', error);
+    }
   };
 
   const handleChange = (e) => {

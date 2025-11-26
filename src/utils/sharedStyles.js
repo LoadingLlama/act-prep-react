@@ -32,7 +32,7 @@ export const borderRadius = {
 // Common button styles
 export const buttonStyles = {
   base: {
-    border: '1px solid #dee2e6',
+    border: 'none',
     borderRadius: borderRadius.md,
     cursor: 'pointer',
     fontSize: '0.95rem',
@@ -63,17 +63,17 @@ export const statusStyles = {
   completed: {
     background: gradients.successFull,
     color: '#065f46',
-    border: '1px solid #10b981'
+    border: 'none'
   },
   inProgress: {
     background: gradients.warningFull,
     color: '#92400e',
-    border: '1px solid #f59e0b'
+    border: 'none'
   },
   notStarted: {
     background: gradients.light,
     color: '#64748b',
-    border: '1px solid #cbd5e1'
+    border: 'none'
   }
 };
 

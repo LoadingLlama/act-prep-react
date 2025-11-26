@@ -9,7 +9,6 @@ const useStyles = createUseStyles({
     color: '#666',
     '&:hover': {
       background: gradients.neutralHover,
-      borderColor: '#adb5bd',
       ...hoverEffects.lift,
       color: '#333'
     }
@@ -20,10 +19,8 @@ const useStyles = createUseStyles({
   primary: {
     background: '#1a1a1a',
     color: 'white',
-    borderColor: '#1a1a1a',
     '&:hover': {
-      background: '#333',
-      borderColor: '#333'
+      background: '#333'
     }
   },
   danger: {

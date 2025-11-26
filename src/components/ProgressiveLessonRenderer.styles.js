@@ -255,9 +255,9 @@ export const useProgressiveLessonStyles = createUseStyles({
     }
   },
   promptText: {
-    color: '#9ca3af',
+    color: '#1a1a1a',
     fontSize: '0.75rem',
-    fontWeight: '400',
+    fontWeight: '700',
     display: 'flex',
     alignItems: 'center',
     gap: '0.4rem'

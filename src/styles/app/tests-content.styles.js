@@ -8,37 +8,37 @@ import { createUseStyles } from 'react-jss';
 export const useTestsContentStyles = createUseStyles({
   testsContainer: {
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    padding: '2rem',
+    padding: '0.5rem 0',
     margin: '0',
     minHeight: '100vh',
-    background: '#fafafa',
+    background: '#ffffff',
     maxWidth: '1400px',
     '@media (max-width: 768px)': {
-      padding: '0.75rem'
+      padding: '0.375rem 0'
     },
     '@media (max-width: 480px)': {
-      padding: '0.5rem'
+      padding: '0.25rem 0'
     }
   },
   pageHeader: {
     padding: '0',
-    marginBottom: '2rem',
+    marginBottom: '1rem',
     '@media (max-width: 768px)': {
-      marginBottom: '1rem'
+      marginBottom: '0.75rem'
     },
     '@media (max-width: 480px)': {
-      marginBottom: '0.75rem'
+      marginBottom: '0.5rem'
     }
   },
   pageTitle: {
-    fontSize: '2.5rem',
-    fontWeight: '900',
+    fontSize: '1.75rem',
+    fontWeight: '700',
     background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
     margin: '0 0 0.5rem 0',
-    letterSpacing: '-0.04em',
+    letterSpacing: '-0.02em',
     '@media (max-width: 768px)': {
       fontSize: '1.5rem'
     },

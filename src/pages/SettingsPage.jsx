@@ -54,6 +54,33 @@ const SettingsPage = () => {
   };
 
   const loadPreferences = async () => {
+    // Check cache first for instant load
+    const cacheKey = `profile_${user.id}`;
+    const cached = sessionStorage.getItem(cacheKey);
+    const cacheTimestamp = sessionStorage.getItem(`${cacheKey}_timestamp`);
+    const now = Date.now();
+
+    // Use cache if less than 60 seconds old
+    if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 60000) {
+      const cachedData = JSON.parse(cached);
+      if (cachedData?.preferences) {
+        setPreferences({
+          emailNotifications: cachedData.preferences.emailNotifications ?? true,
+          practiceReminders: cachedData.preferences.practiceReminders ?? true,
+          weeklyReports: cachedData.preferences.weeklyReports ?? false,
+          darkMode: cachedData.preferences.darkMode ?? false,
+          autoSave: cachedData.preferences.autoSave ?? true,
+          showHints: cachedData.preferences.showHints ?? true,
+        });
+      }
+      setLoading(false);
+      console.log('📊 Using cached preferences data');
+
+      // Still refresh in background
+      refreshPreferencesInBackground(cacheKey);
+      return;
+    }
+
     setLoading(true);
     const { data } = await ProfileService.getProfile(user.id);
 
@@ -66,9 +93,38 @@ const SettingsPage = () => {
         autoSave: data.preferences.autoSave ?? true,
         showHints: data.preferences.showHints ?? true,
       });
+      // Cache the profile data
+      sessionStorage.setItem(cacheKey, JSON.stringify(data));
+      sessionStorage.setItem(`${cacheKey}_timestamp`, String(now));
     }
 
     setLoading(false);
+  };
+
+  const refreshPreferencesInBackground = async (cacheKey) => {
+    try {
+      const { data } = await ProfileService.getProfile(user.id);
+      if (data) {
+        // Update cache
+        sessionStorage.setItem(cacheKey, JSON.stringify(data));
+        sessionStorage.setItem(`${cacheKey}_timestamp`, String(Date.now()));
+
+        // Update state if changed
+        if (data?.preferences) {
+          setPreferences({
+            emailNotifications: data.preferences.emailNotifications ?? true,
+            practiceReminders: data.preferences.practiceReminders ?? true,
+            weeklyReports: data.preferences.weeklyReports ?? false,
+            darkMode: data.preferences.darkMode ?? false,
+            autoSave: data.preferences.autoSave ?? true,
+            showHints: data.preferences.showHints ?? true,
+          });
+          console.log('📊 Updated preferences from background check');
+        }
+      }
+    } catch (error) {
+      console.error('Background preferences check error:', error);
+    }
   };
 
   const handleToggle = async (key) => {

@@ -15,11 +15,11 @@ export const layoutStyles = {
     },
     body: {
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif',
-      backgroundColor: '#f8fafc',
+      backgroundColor: '#ffffff',
       color: '#0f172a',
       lineHeight: 1.6,
       overflowX: 'hidden',
-      background: '#f8fafc',
+      background: '#ffffff',
       margin: 0,
       padding: 0
     }
@@ -27,14 +27,17 @@ export const layoutStyles = {
   container: {
     minHeight: '100vh',
     display: 'flex',
-    background: '#f8fafc'
+    background: '#ffffff'
   },
   mainContent: {
     marginLeft: '240px',
     flex: 1,
-    minHeight: '100vh',
-    background: '#f8fafc',
+    height: '100vh',
+    background: '#ffffff',
     transition: 'margin-left 0.3s ease',
+    display: 'flex',
+    flexDirection: 'column',
+    overflow: 'hidden',
     '@media (max-width: 1024px)': {
       marginLeft: 0
     }
@@ -72,16 +75,20 @@ export const layoutStyles = {
     }
   },
   content: {
-    padding: '1.5rem',
+    padding: '0 2rem',
     maxWidth: '1400px',
     margin: '0 auto',
     width: '100%',
     boxSizing: 'border-box',
+    flex: 1,
+    overflow: 'hidden',
+    display: 'flex',
+    flexDirection: 'column',
     '@media (max-width: 768px)': {
-      padding: '1rem'
+      padding: '0 1rem'
     },
     '@media (max-width: 480px)': {
-      padding: '0.75rem'
+      padding: '0 0.75rem'
     }
   }
 };

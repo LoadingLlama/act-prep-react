@@ -293,7 +293,7 @@ export default function AppLayout() {
                 className={classes.profilePicture}
                 onClick={() => handleNavigate('profile')}
               >
-                🐱
+                <HiUser style={{ width: '24px', height: '24px' }} />
               </div>
             </div>
           </div>

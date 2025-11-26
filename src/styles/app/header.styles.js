@@ -181,17 +181,17 @@ export const headerStyles = {
     width: '40px',
     height: '40px',
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #ff6b9d 0%, #c06c84 20%, #f67280 40%, #ffa07a 60%, #fa8072 80%, #ff6b9d 100%)',
+    background: '#e5e7eb',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: '#ffffff',
+    color: '#6b7280',
     fontSize: '1.375rem',
     fontWeight: '600',
-    border: '2px solid #ffd6e0',
+    border: 'none',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
-    boxShadow: '0 2px 8px rgba(255, 107, 157, 0.25)',
+    boxShadow: 'none',
     '@media (max-width: 768px)': {
       width: '36px',
       height: '36px',
@@ -204,8 +204,7 @@ export const headerStyles = {
     },
     '&:hover': {
       transform: 'scale(1.05)',
-      borderColor: '#ffb3d0',
-      boxShadow: '0 4px 12px rgba(255, 107, 157, 0.35)'
+      background: '#d1d5db'
     }
   },
   proBadge: {
@@ -213,7 +212,7 @@ export const headerStyles = {
     backdropFilter: 'blur(10px)',
     WebkitBackdropFilter: 'blur(10px)',
     color: '#059669',
-    border: '1px solid rgba(16, 185, 129, 0.3)',
+    border: 'none',
     boxShadow: '0 1px 3px rgba(16, 185, 129, 0.1)',
     fontWeight: '600',
     letterSpacing: '0.02em',

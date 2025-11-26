@@ -36,7 +36,7 @@ const CourseContent = () => {
   const [learningPathData, setLearningPathData] = useState(null);
   const [savingGoals, setSavingGoals] = useState(false);
   const [viewMode, setViewMode] = useState('calendar'); // 'list' or 'calendar' - default to calendar
-  const [calendarViewType, setCalendarViewType] = useState('month'); // 'month' or 'week'
+  const [calendarViewType, setCalendarViewType] = useState('month'); // 'day', 'week', 'month', or 'year'
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [currentWeekStart, setCurrentWeekStart] = useState(() => {
     const today = new Date();
@@ -45,10 +45,22 @@ const CourseContent = () => {
     weekStart.setDate(today.getDate() - dayOfWeek); // Start on Sunday
     return weekStart;
   });
+  const [currentDay, setCurrentDay] = useState(new Date());
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [previewItem, setPreviewItem] = useState(null);
   const [validationError, setValidationError] = useState(null);
   const [saveButtonShake, setSaveButtonShake] = useState(false);
   const [calendarDropdownOpen, setCalendarDropdownOpen] = useState(false);
+  const [addEventModalOpen, setAddEventModalOpen] = useState(false);
+  const [hoveredDayCell, setHoveredDayCell] = useState(null); // Track which day cell is hovered for add event
+  const [customEventForm, setCustomEventForm] = useState({
+    title: '',
+    date: '',
+    type: 'lesson', // lesson, practice, practice_test, or custom
+    description: '',
+    duration: 30,
+    customColor: '#6b7280'
+  });
   const [editForm, setEditForm] = useState({
     target_exam_date: '',
     current_score: '',
@@ -120,7 +132,7 @@ const CourseContent = () => {
               borderRadius: '20px',
               padding: '0.4rem 0.75rem',
               fontSize: '0.75rem',
-              fontWeight: '500',
+              fontWeight: '700',
               color: '#1a1a1a',
               cursor: 'pointer',
               transition: 'all 0.15s ease'
@@ -157,8 +169,8 @@ const CourseContent = () => {
                 borderRadius: '20px',
                 padding: '0.4rem 0.9rem',
                 fontSize: '0.75rem',
-                fontWeight: '500',
-                color: viewMode === 'calendar' ? '#ffffff' : '#6b7280',
+                fontWeight: '700',
+                color: viewMode === 'calendar' ? '#ffffff' : '#1a1a1a',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease'
               }}
@@ -176,8 +188,8 @@ const CourseContent = () => {
                 borderRadius: '20px',
                 padding: '0.4rem 0.9rem',
                 fontSize: '0.75rem',
-                fontWeight: '500',
-                color: viewMode === 'list' ? '#ffffff' : '#6b7280',
+                fontWeight: '700',
+                color: viewMode === 'list' ? '#ffffff' : '#1a1a1a',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease'
               }}
@@ -191,7 +203,7 @@ const CourseContent = () => {
             onClick={() => setEditModalOpen(true)}
             style={{
               background: '#ffffff',
-              border: '1px solid #e5e7eb',
+              border: 'none',
               padding: '0.4rem 0.75rem',
               cursor: 'pointer',
               color: '#1a1a1a',
@@ -199,7 +211,7 @@ const CourseContent = () => {
               alignItems: 'center',
               gap: '0.4rem',
               fontSize: '0.75rem',
-              fontWeight: '500',
+              fontWeight: '700',
               transition: 'all 0.15s ease',
               borderRadius: '6px'
             }}
@@ -1313,6 +1325,155 @@ const CourseContent = () => {
     return weekDays;
   };
 
+  const generateDayView = () => {
+    if (!learningPathData || !learningPathData.items) return null;
+
+    const dateString = formatLocalDate(currentDay);
+    const today = new Date();
+    const isToday = currentDay.toDateString() === today.toDateString();
+
+    // Get items for this date
+    const dayItems = learningPathData.items.filter(item => item.scheduled_date === dateString);
+
+    // Transform items for display (reuse same logic as week view)
+    const transformedItems = dayItems.map(item => {
+      const itemType = item.item_type;
+
+      if (itemType === 'lesson' && item.lesson_key) {
+        const lesson = lessonStructure.find(l => l.id === item.lesson_key);
+        if (lesson) {
+          const actualStatus = getLessonStatus(item.lesson_key);
+          return {
+            id: item.lesson_key,
+            type: 'lesson',
+            title: cleanLessonTitle(lesson.title),
+            category: lesson.category || 'General',
+            section: lesson.section,
+            duration: item.estimated_minutes || 30,
+            status: actualStatus,
+            isPriority: item.is_priority
+          };
+        }
+      } else if (itemType === 'practice_test') {
+        const isFullTest = item.practice_test_section === 'full';
+        return {
+          id: `practice-test-${item.practice_test_number}-full`,
+          type: 'practice_test',
+          title: `Practice Test ${item.practice_test_number}${isFullTest ? ' (Full)' : ''}`,
+          testNumber: item.practice_test_number,
+          section: item.practice_test_section,
+          duration: item.estimated_minutes,
+          status: item.status,
+          isPriority: true
+        };
+      } else if (itemType === 'review') {
+        return {
+          id: `review-${item.week_number}`,
+          type: 'review',
+          title: `Week ${item.week_number} Review`,
+          duration: item.estimated_minutes,
+          status: item.status
+        };
+      } else if (itemType === 'mock_exam') {
+        return {
+          id: `mock-exam-${item.week_number}`,
+          type: 'mock_exam',
+          title: 'Full ACT Mock Exam',
+          duration: item.estimated_minutes,
+          status: item.status,
+          isPriority: true
+        };
+      } else if (itemType === 'exam_day') {
+        return {
+          id: `exam-day-${item.week_number}`,
+          type: 'exam_day',
+          title: 'OFFICIAL ACT EXAM DAY',
+          duration: 0,
+          status: 'pending',
+          isExamDay: true
+        };
+      } else if (itemType === 'practice') {
+        const lessonKey = item.lesson_key;
+        const lesson = lessonStructure.find(l => l.id === lessonKey);
+        if (lesson) {
+          return {
+            id: `practice-${lessonKey}-${item.id}`,
+            type: 'practice',
+            title: cleanLessonTitle(lesson.title),
+            category: 'Practice',
+            duration: item.estimated_minutes || 30,
+            status: 'not-started',
+            lessonKey: lessonKey,
+            isPractice: true
+          };
+        }
+      }
+
+      return null;
+    }).filter(Boolean);
+
+    return {
+      date: currentDay,
+      dateString,
+      dayNumber: currentDay.getDate(),
+      dayName: currentDay.toLocaleDateString('en-US', { weekday: 'short' }),
+      fullDayName: currentDay.toLocaleDateString('en-US', { weekday: 'long' }),
+      monthName: currentDay.toLocaleDateString('en-US', { month: 'long' }),
+      year: currentDay.getFullYear(),
+      isToday,
+      items: transformedItems
+    };
+  };
+
+  const generateYearView = () => {
+    if (!learningPathData || !learningPathData.items) return [];
+
+    const months = [];
+    for (let month = 0; month < 12; month++) {
+      const monthDate = new Date(currentYear, month, 1);
+      const monthName = monthDate.toLocaleDateString('en-US', { month: 'short' });
+      const daysInMonth = new Date(currentYear, month + 1, 0).getDate();
+      const firstDayOfMonth = new Date(currentYear, month, 1).getDay();
+
+      // Build days array for this month
+      const days = [];
+
+      // Add empty slots for days before month starts
+      for (let i = 0; i < firstDayOfMonth; i++) {
+        days.push(null);
+      }
+
+      // Add all days of the month
+      for (let day = 1; day <= daysInMonth; day++) {
+        const date = new Date(currentYear, month, day);
+        const dateString = formatLocalDate(date);
+        const today = new Date();
+        const isToday = date.toDateString() === today.toDateString();
+
+        // Check if there are items on this day
+        const dayItems = learningPathData.items.filter(item => item.scheduled_date === dateString);
+        const hasItems = dayItems.length > 0;
+
+        days.push({
+          dayNumber: day,
+          date,
+          dateString,
+          isToday,
+          hasItems
+        });
+      }
+
+      months.push({
+        monthNumber: month,
+        monthName,
+        monthDate,
+        days
+      });
+    }
+
+    return months;
+  };
+
   const navigateMonth = (direction) => {
     const newMonth = new Date(currentMonth);
     newMonth.setMonth(currentMonth.getMonth() + direction);
@@ -1328,20 +1489,30 @@ const CourseContent = () => {
   const navigateCalendar = (direction) => {
     if (calendarViewType === 'month') {
       navigateMonth(direction);
-    } else {
+    } else if (calendarViewType === 'week') {
       navigateWeek(direction);
+    } else if (calendarViewType === 'day') {
+      const newDay = new Date(currentDay);
+      newDay.setDate(currentDay.getDate() + direction);
+      setCurrentDay(newDay);
+    } else if (calendarViewType === 'year') {
+      setCurrentYear(currentYear + direction);
     }
   };
 
   const goToToday = () => {
+    const today = new Date();
     if (calendarViewType === 'month') {
-      setCurrentMonth(new Date());
-    } else {
-      const today = new Date();
+      setCurrentMonth(today);
+    } else if (calendarViewType === 'week') {
       const dayOfWeek = today.getDay();
       const weekStart = new Date(today);
       weekStart.setDate(today.getDate() - dayOfWeek);
       setCurrentWeekStart(weekStart);
+    } else if (calendarViewType === 'day') {
+      setCurrentDay(today);
+    } else if (calendarViewType === 'year') {
+      setCurrentYear(today.getFullYear());
     }
   };
 
@@ -1454,11 +1625,11 @@ const CourseContent = () => {
   }
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} style={{ height: '100%', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
       {/* Main Content */}
-      <div className={classes.content}>
+      <div className={classes.content} style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column', padding: 0 }}>
         {/* Weekly Assignments - List or Calendar View */}
-        <div className={classes.weeksContainer}>
+        <div className={classes.weeksContainer} style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', minHeight: 0, paddingTop: '1rem' }}>
           {viewMode === 'calendar' && learningPath.length > 0 ? (
             // Apple Calendar View
             <div style={{
@@ -1466,28 +1637,56 @@ const CourseContent = () => {
               borderRadius: '12px',
               overflow: 'hidden',
               border: '1px solid #e5e7eb',
-              marginTop: '1rem'
+              display: 'flex',
+              flexDirection: 'column',
+              flex: 1,
+              minHeight: 0,
+              maxHeight: 'calc(100vh - 100px)'
             }}>
               {/* Month Header with Navigation */}
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                padding: '0.5rem 1.5rem',
+                padding: '0.4rem 1.5rem',
                 borderBottom: '1px solid #e5e7eb',
-                background: '#ffffff'
+                background: '#ffffff',
+                flexShrink: 0,
+                position: 'relative'
               }}>
-                {/* Left: Days until exam */}
-                <div style={{
-                  fontSize: '0.75rem',
-                  color: '#9ca3af',
-                  fontWeight: '500'
-                }}>
-                  {daysUntilTest} days until exam
-                </div>
+                {/* Left: Add Event Button */}
+                <button
+                  onClick={() => {
+                    soundEffects.playClick();
+                    setAddEventModalOpen(true);
+                  }}
+                  style={{
+                    background: '#08245b',
+                    border: 'none',
+                    borderRadius: '20px',
+                    padding: '0.5rem 0.75rem',
+                    fontSize: '0.75rem',
+                    fontWeight: '700',
+                    color: '#ffffff',
+                    cursor: 'pointer',
+                    transition: 'all 0.15s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.4rem'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = '#0a2d75';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = '#08245b';
+                  }}
+                >
+                  <span style={{ fontSize: '1rem', lineHeight: '1' }}>+</span>
+                  Add Event
+                </button>
 
                 {/* Center: Month/Week title with arrows */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
                   <button
                     onClick={() => {
                       soundEffects.playClick();
@@ -1517,15 +1716,18 @@ const CourseContent = () => {
                     ‹
                   </button>
                   <h2 style={{
-                    fontSize: '1.375rem',
+                    fontSize: '1.125rem',
                     fontWeight: '600',
                     color: '#1a1a1a',
                     margin: 0
                   }}>
-                    {calendarViewType === 'month'
-                      ? currentMonth.toLocaleDateString('en-US', { month: 'long' })
-                      : `Week of ${currentWeekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`
-                    }
+                    {calendarViewType === 'day'
+                      ? currentDay.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })
+                      : calendarViewType === 'week'
+                      ? `Week of ${currentWeekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`
+                      : calendarViewType === 'month'
+                      ? `${currentMonth.toLocaleDateString('en-US', { month: 'long' })} ${currentMonth.toLocaleDateString('en-US', { year: 'numeric' })}`
+                      : currentYear}
                   </h2>
                   <button
                     onClick={() => {
@@ -1585,7 +1787,7 @@ const CourseContent = () => {
                       e.currentTarget.style.background = '#ffffff';
                     }}
                   >
-                    {calendarViewType === 'month' ? 'Month' : 'Week'}
+                    {calendarViewType === 'day' ? 'Day' : calendarViewType === 'week' ? 'Week' : calendarViewType === 'month' ? 'Month' : 'Year'}
                     <HiChevronDown style={{
                       width: '14px',
                       height: '14px',
@@ -1624,18 +1826,18 @@ const CourseContent = () => {
                         <button
                           onClick={() => {
                             soundEffects.playClick();
-                            setCalendarViewType('month');
+                            setCalendarViewType('day');
                             setCalendarDropdownOpen(false);
                           }}
                           style={{
                             width: '100%',
                             padding: '0.65rem 1rem',
-                            background: calendarViewType === 'month' ? '#f9fafb' : 'transparent',
+                            background: calendarViewType === 'day' ? '#f9fafb' : 'transparent',
                             border: 'none',
                             textAlign: 'left',
                             fontSize: '0.8rem',
                             fontWeight: '400',
-                            color: calendarViewType === 'month' ? '#08245b' : '#1a1a1a',
+                            color: calendarViewType === 'day' ? '#08245b' : '#1a1a1a',
                             cursor: 'pointer',
                             transition: 'all 0.15s ease'
                           }}
@@ -1643,10 +1845,10 @@ const CourseContent = () => {
                             e.currentTarget.style.background = '#f9fafb';
                           }}
                           onMouseLeave={(e) => {
-                            e.currentTarget.style.background = calendarViewType === 'month' ? '#f9fafb' : 'transparent';
+                            e.currentTarget.style.background = calendarViewType === 'day' ? '#f9fafb' : 'transparent';
                           }}
                         >
-                          Month
+                          Day
                         </button>
                         <button
                           onClick={() => {
@@ -1675,69 +1877,423 @@ const CourseContent = () => {
                         >
                           Week
                         </button>
+                        <button
+                          onClick={() => {
+                            soundEffects.playClick();
+                            setCalendarViewType('month');
+                            setCalendarDropdownOpen(false);
+                          }}
+                          style={{
+                            width: '100%',
+                            padding: '0.65rem 1rem',
+                            background: calendarViewType === 'month' ? '#f9fafb' : 'transparent',
+                            border: 'none',
+                            textAlign: 'left',
+                            fontSize: '0.8rem',
+                            fontWeight: '400',
+                            color: calendarViewType === 'month' ? '#08245b' : '#1a1a1a',
+                            cursor: 'pointer',
+                            transition: 'all 0.15s ease'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.background = '#f9fafb';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.background = calendarViewType === 'month' ? '#f9fafb' : 'transparent';
+                          }}
+                        >
+                          Month
+                        </button>
+                        <button
+                          onClick={() => {
+                            soundEffects.playClick();
+                            setCalendarViewType('year');
+                            setCalendarDropdownOpen(false);
+                          }}
+                          style={{
+                            width: '100%',
+                            padding: '0.65rem 1rem',
+                            background: calendarViewType === 'year' ? '#f9fafb' : 'transparent',
+                            border: 'none',
+                            textAlign: 'left',
+                            fontSize: '0.8rem',
+                            fontWeight: '400',
+                            color: calendarViewType === 'year' ? '#08245b' : '#1a1a1a',
+                            cursor: 'pointer',
+                            transition: 'all 0.15s ease'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.background = '#f9fafb';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.background = calendarViewType === 'year' ? '#f9fafb' : 'transparent';
+                          }}
+                        >
+                          Year
+                        </button>
                       </div>
                     </>
                   )}
                 </div>
               </div>
 
-              {/* Day of Week Headers */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(7, 1fr)',
-                borderBottom: '1px solid #d1d5db',
-                borderLeft: '1px solid #d1d5db',
-                borderRight: '1px solid #d1d5db',
-                background: '#fafafa'
-              }}>
-                {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day, idx) => (
-                  <div
-                    key={idx}
-                    style={{
-                      padding: '0.4rem',
-                      fontSize: '0.65rem',
-                      fontWeight: '600',
-                      color: '#6b7280',
-                      textAlign: 'center',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
-                      borderRight: idx < 6 ? '1px solid #d1d5db' : 'none'
-                    }}
-                  >
-                    {day}
-                  </div>
-                ))}
-              </div>
-
-              {/* Calendar Grid - Month or Week View */}
-              {calendarViewType === 'month' ? (
-                // MONTH VIEW
+              {/* Day of Week Headers - Only for Week and Month views */}
+              {(calendarViewType === 'week' || calendarViewType === 'month') && (
                 <div style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(7, 1fr)',
-                  gridAutoRows: '95px',
+                  borderBottom: '1px solid #d1d5db',
                   borderLeft: '1px solid #d1d5db',
                   borderRight: '1px solid #d1d5db',
-                  borderBottom: '1px solid #d1d5db'
+                  background: '#fafafa',
+                  flexShrink: 0
                 }}>
-                  {(() => {
-                    const { weeks } = generateAppleCalendarView();
-                    const totalWeeks = weeks.length;
-                    return weeks.map((week, weekIdx) => (
+                  {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day, idx) => (
+                    <div
+                      key={idx}
+                      style={{
+                        padding: '0.3rem',
+                        fontSize: '0.625rem',
+                        fontWeight: '700',
+                        color: '#6b7280',
+                        textAlign: 'center',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em',
+                        borderRight: idx < 6 ? '1px solid #d1d5db' : 'none'
+                      }}
+                    >
+                      {day}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Calendar Grid - Day, Week, Month, or Year View */}
+              {calendarViewType === 'day' ? (
+                // DAY VIEW
+                (() => {
+                  const dayData = generateDayView();
+                  if (!dayData) return null;
+
+                  return (
+                    <div style={{
+                      background: '#ffffff',
+                      borderLeft: '1px solid #d1d5db',
+                      borderRight: '1px solid #d1d5db',
+                      borderBottom: '1px solid #d1d5db',
+                      padding: '2rem',
+                      overflowY: 'auto',
+                      flex: 1
+                    }}>
+                      <div style={{
+                        maxWidth: '800px',
+                        margin: '0 auto'
+                      }}>
+                        {/* Day header */}
+                        <h2 style={{
+                          fontSize: '1.5rem',
+                          fontWeight: '700',
+                          color: '#1a1a1a',
+                          marginBottom: '0.5rem'
+                        }}>
+                          {dayData.fullDayName}, {dayData.monthName} {dayData.dayNumber}, {dayData.year}
+                        </h2>
+
+                        {/* Items list */}
+                        <div style={{
+                          marginTop: '1.5rem',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '0.75rem'
+                        }}>
+                          {dayData.items.map((item, idx) => {
+                            const status = getLessonStatus(item.id);
+                            const isCompleted = status === 'completed';
+                            const isExamDay = item.type === 'exam_day';
+                            const isDiagnostic = item.isDiagnostic;
+                            const isPracticeTest = item.type === 'practice_test';
+                            const isPractice = item.type === 'practice';
+                            const isReview = item.type === 'review';
+                            const isMockExam = item.type === 'mock_exam';
+
+                            const bgColor = isPracticeTest ? 'rgba(220, 38, 38, 0.1)'
+                              : isMockExam ? 'rgba(220, 38, 38, 0.1)'
+                              : isDiagnostic ? 'rgba(185, 28, 28, 0.1)'
+                              : isPractice ? 'rgba(245, 158, 11, 0.1)'
+                              : isReview ? 'rgba(16, 185, 129, 0.1)'
+                              : 'rgba(59, 130, 246, 0.1)';
+
+                            const hoverBgColor = isPracticeTest ? 'rgba(220, 38, 38, 0.15)'
+                              : isMockExam ? 'rgba(220, 38, 38, 0.15)'
+                              : isDiagnostic ? 'rgba(185, 28, 28, 0.15)'
+                              : isPractice ? 'rgba(245, 158, 11, 0.15)'
+                              : isReview ? 'rgba(16, 185, 129, 0.15)'
+                              : 'rgba(59, 130, 246, 0.15)';
+
+                            const textColorMatch = isPracticeTest ? '#dc2626'
+                              : isMockExam ? '#dc2626'
+                              : isDiagnostic ? '#b91c1c'
+                              : isPractice ? '#f59e0b'
+                              : isReview ? '#10b981'
+                              : '#3b82f6';
+
+                            if (isExamDay) {
+                              return (
+                                <div
+                                  key={idx}
+                                  style={{
+                                    padding: '1rem',
+                                    background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
+                                    border: '1px solid #fca5a5',
+                                    borderRadius: '8px',
+                                    color: '#ffffff',
+                                    fontWeight: '700'
+                                  }}
+                                >
+                                  {item.title}
+                                </div>
+                              );
+                            }
+
+                            return (
+                              <div
+                                key={idx}
+                                onClick={() => handleItemClick(item)}
+                                style={{
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  gap: '1rem',
+                                  padding: '1rem',
+                                  background: bgColor,
+                                  borderRadius: '8px',
+                                  cursor: 'pointer',
+                                  transition: 'background 0.15s ease'
+                                }}
+                                onMouseEnter={(e) => {
+                                  e.currentTarget.style.background = hoverBgColor;
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.currentTarget.style.background = bgColor;
+                                }}
+                              >
+                                <span style={{
+                                  fontSize: '0.875rem',
+                                  fontWeight: '700',
+                                  color: textColorMatch,
+                                  flex: 1,
+                                  textDecoration: item.status === 'completed' ? 'line-through' : 'none'
+                                }}>
+                                  {item.title}
+                                </span>
+                                {item.duration && (
+                                  <span style={{
+                                    fontSize: '0.75rem',
+                                    color: '#6b7280'
+                                  }}>
+                                    {item.duration} min
+                                  </span>
+                                )}
+                              </div>
+                            );
+                          })}
+
+                          {/* Add Event Card */}
+                          <div
+                            onClick={() => {
+                              soundEffects.playClick();
+                              setCustomEventForm({
+                                ...customEventForm,
+                                date: dayData.dateString
+                              });
+                              setAddEventModalOpen(true);
+                            }}
+                            style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              gap: '0.5rem',
+                              padding: '1rem',
+                              background: '#f9fafb',
+                              border: '2px dashed #d1d5db',
+                              borderRadius: '8px',
+                              cursor: 'pointer',
+                              transition: 'all 0.15s ease',
+                              marginTop: dayData.items.length > 0 ? '0.5rem' : '0'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.background = '#f3f4f6';
+                              e.currentTarget.style.borderColor = '#9ca3af';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.background = '#f9fafb';
+                              e.currentTarget.style.borderColor = '#d1d5db';
+                            }}
+                          >
+                            <span style={{
+                              fontSize: '1.25rem',
+                              color: '#6b7280'
+                            }}>+</span>
+                            <span style={{
+                              fontSize: '0.875rem',
+                              fontWeight: '600',
+                              color: '#6b7280'
+                            }}>
+                              Add Event
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })()
+              ) : calendarViewType === 'year' ? (
+                // YEAR VIEW
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(4, 1fr)',
+                  gap: '2rem',
+                  padding: '2rem',
+                  background: '#ffffff',
+                  borderLeft: '1px solid #d1d5db',
+                  borderRight: '1px solid #d1d5db',
+                  borderBottom: '1px solid #d1d5db',
+                  overflowY: 'auto',
+                  flex: 1
+                }}>
+                  {generateYearView().map((month, idx) => (
+                    <div
+                      key={idx}
+                      style={{
+                        background: '#ffffff',
+                        padding: '0',
+                        transition: 'all 0.2s ease'
+                      }}
+                    >
+                      {/* Month name - left aligned and full name */}
+                      <div style={{
+                        fontSize: '0.875rem',
+                        fontWeight: '700',
+                        color: '#1a1a1a',
+                        marginBottom: '0.5rem',
+                        textAlign: 'left'
+                      }}>
+                        {month.monthDate.toLocaleDateString('en-US', { month: 'long' })}
+                      </div>
+
+                      {/* Day headers */}
+                      <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(7, 1fr)',
+                        marginBottom: '0.25rem'
+                      }}>
+                        {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, i) => (
+                          <div
+                            key={i}
+                            style={{
+                              fontSize: '0.625rem',
+                              fontWeight: '600',
+                              color: '#9ca3af',
+                              textAlign: 'center',
+                              padding: '0.125rem'
+                            }}
+                          >
+                            {day}
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Days grid */}
+                      <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(7, 1fr)',
+                        gap: '0.125rem'
+                      }}>
+                        {month.days.map((day, dayIdx) => {
+                          if (!day) {
+                            return <div key={dayIdx} style={{ padding: '0.375rem' }} />;
+                          }
+
+                          return (
+                            <div
+                              key={dayIdx}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                soundEffects.playClick();
+                                setCurrentDay(day.date);
+                                setCalendarViewType('day');
+                              }}
+                              style={{
+                                position: 'relative',
+                                padding: '0.375rem',
+                                fontSize: '0.7rem',
+                                fontWeight: day.isToday ? '700' : '500',
+                                color: day.isToday ? '#ffffff' : '#1a1a1a',
+                                background: day.isToday ? '#3b82f6' : 'transparent',
+                                borderRadius: '4px',
+                                textAlign: 'center',
+                                cursor: 'pointer',
+                                transition: 'all 0.15s ease'
+                              }}
+                              onMouseEnter={(e) => {
+                                if (!day.isToday) {
+                                  e.currentTarget.style.background = '#f3f4f6';
+                                }
+                              }}
+                              onMouseLeave={(e) => {
+                                if (!day.isToday) {
+                                  e.currentTarget.style.background = 'transparent';
+                                }
+                              }}
+                            >
+                              {day.dayNumber}
+                              {day.hasItems && (
+                                <div style={{
+                                  position: 'absolute',
+                                  bottom: '2px',
+                                  left: '50%',
+                                  transform: 'translateX(-50%)',
+                                  width: '3px',
+                                  height: '3px',
+                                  borderRadius: '50%',
+                                  background: day.isToday ? '#ffffff' : '#3b82f6'
+                                }} />
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : calendarViewType === 'month' ? (
+                // MONTH VIEW
+                (() => {
+                  const { weeks } = generateAppleCalendarView();
+                  const totalWeeks = weeks.length;
+                  return (
+                    <div style={{
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(7, 1fr)',
+                      flex: 1,
+                      gridTemplateRows: `repeat(${totalWeeks}, 1fr)`,
+                      borderLeft: '1px solid #d1d5db',
+                      borderRight: '1px solid #d1d5db',
+                      borderBottom: '1px solid #d1d5db',
+                      overflow: 'hidden'
+                    }}>
+                    {weeks.map((week, weekIdx) => (
                       week.map((day, dayIdx) => (
                       <div
                         key={`${weekIdx}-${dayIdx}`}
                         style={{
-                          padding: '0.4rem',
+                          padding: '0.3rem',
                           borderRight: dayIdx < 6 ? '1px solid #d1d5db' : 'none',
                           borderBottom: weekIdx < totalWeeks - 1 ? '1px solid #d1d5db' : 'none',
                           background: day.isCurrentMonth ? '#ffffff' : '#fafafa',
                           position: 'relative',
                           display: 'flex',
                           flexDirection: 'column',
-                          height: '95px',
-                          minHeight: '95px',
-                          maxHeight: '95px',
+                          height: '100%',
                           overflow: 'hidden'
                         }}
                       >
@@ -1745,17 +2301,17 @@ const CourseContent = () => {
                         <div style={{
                           display: 'flex',
                           justifyContent: 'center',
-                          marginBottom: '0.25rem',
+                          marginBottom: '0.2rem',
                           flexShrink: 0
                         }}>
                           <div style={{
-                            width: '22px',
-                            height: '22px',
+                            width: '20px',
+                            height: '20px',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            fontSize: '0.75rem',
-                            fontWeight: day.isToday ? '600' : '500',
+                            fontSize: '0.7rem',
+                            fontWeight: '700',
                             color: day.isToday ? '#ffffff' : day.isCurrentMonth ? '#1a1a1a' : '#9ca3af',
                             background: day.isToday ? '#ef4444' : 'transparent',
                             borderRadius: '50%'
@@ -1765,14 +2321,32 @@ const CourseContent = () => {
                         </div>
 
                         {/* Event Items */}
-                        <div style={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          gap: '0.1875rem',
-                          flex: 1,
-                          minHeight: 0,
-                          overflow: 'auto'
-                        }}>
+                        <div
+                          style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '0.15rem',
+                            flex: 1,
+                            minHeight: 0,
+                            overflow: 'auto',
+                            cursor: 'pointer'
+                          }}
+                          onMouseEnter={() => setHoveredDayCell(day.dateString)}
+                          onMouseLeave={() => setHoveredDayCell(null)}
+                          onClick={(e) => {
+                            // Only trigger if clicking on empty space
+                            if (e.target === e.currentTarget || e.target.closest('[data-placeholder]')) {
+                              e.stopPropagation();
+                              soundEffects.playClick();
+                              setCustomEventForm({
+                                ...customEventForm,
+                                date: day.dateString
+                              });
+                              setAddEventModalOpen(true);
+                              setHoveredDayCell(null);
+                            }
+                          }}
+                        >
                           {day.items.slice(0, 3).map((item, itemIdx) => {
                             const isDiagnostic = item.isDiagnostic;
                             const isPracticeTest = item.type === 'practice_test';
@@ -1805,13 +2379,13 @@ const CourseContent = () => {
                                   style={{
                                     display: 'flex',
                                     alignItems: 'center',
-                                    gap: '0.25rem',
-                                    padding: '0.25rem 0.375rem',
+                                    gap: '0.2rem',
+                                    padding: '0.2rem 0.3rem',
                                     background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
                                     border: '1px solid #fca5a5',
                                     borderRadius: '4px',
                                     cursor: 'default',
-                                    fontSize: '0.625rem',
+                                    fontSize: '0.6rem',
                                     fontWeight: '700',
                                     color: '#ffffff',
                                     overflow: 'hidden',
@@ -1841,6 +2415,28 @@ const CourseContent = () => {
                               );
                             }
 
+                            // Determine background color based on item type
+                            const bgColor = isPracticeTest ? 'rgba(220, 38, 38, 0.1)'
+                              : isMockExam ? 'rgba(220, 38, 38, 0.1)'
+                              : isDiagnostic ? 'rgba(185, 28, 28, 0.1)'
+                              : isPractice ? 'rgba(245, 158, 11, 0.1)'
+                              : isReview ? 'rgba(16, 185, 129, 0.1)'
+                              : 'rgba(59, 130, 246, 0.1)';
+
+                            const hoverBgColor = isPracticeTest ? 'rgba(220, 38, 38, 0.15)'
+                              : isMockExam ? 'rgba(220, 38, 38, 0.15)'
+                              : isDiagnostic ? 'rgba(185, 28, 28, 0.15)'
+                              : isPractice ? 'rgba(245, 158, 11, 0.15)'
+                              : isReview ? 'rgba(16, 185, 129, 0.15)'
+                              : 'rgba(59, 130, 246, 0.15)';
+
+                            const textColorMatch = isPracticeTest ? '#dc2626'
+                              : isMockExam ? '#dc2626'
+                              : isDiagnostic ? '#b91c1c'
+                              : isPractice ? '#f59e0b'
+                              : isReview ? '#10b981'
+                              : '#3b82f6';
+
                             return (
                               <div
                                 key={itemIdx}
@@ -1852,14 +2448,14 @@ const CourseContent = () => {
                                 style={{
                                   display: 'flex',
                                   alignItems: 'center',
-                                  gap: '0.25rem',
-                                  padding: '0.1875rem 0.3125rem',
-                                  background: 'transparent',
+                                  gap: '0.2rem',
+                                  padding: '0.15rem 0.25rem',
+                                  background: bgColor,
                                   borderRadius: '3px',
                                   cursor: 'pointer',
-                                  fontSize: '0.625rem',
-                                  fontWeight: isDiagnostic || isMockExam || isReview ? '600' : '400',
-                                  color: textColor,
+                                  fontSize: '0.6rem',
+                                  fontWeight: '700',
+                                  color: textColorMatch,
                                   overflow: 'hidden',
                                   textOverflow: 'ellipsis',
                                   whiteSpace: 'nowrap',
@@ -1867,32 +2463,45 @@ const CourseContent = () => {
                                   border: 'none'
                                 }}
                                 onMouseEnter={(e) => {
-                                  e.currentTarget.style.background = '#f3f4f6';
+                                  e.currentTarget.style.background = hoverBgColor;
                                 }}
                                 onMouseLeave={(e) => {
-                                  e.currentTarget.style.background = 'transparent';
+                                  e.currentTarget.style.background = bgColor;
                                 }}
                                 title={item.title}
                               >
-                                <div
-                                  style={{
-                                    width: '4px',
-                                    height: '4px',
-                                    borderRadius: '50%',
-                                    background: dotColor,
-                                    flexShrink: 0
-                                  }}
-                                />
                                 <span style={{
                                   overflow: 'hidden',
                                   textOverflow: 'ellipsis',
-                                  whiteSpace: 'nowrap'
+                                  whiteSpace: 'nowrap',
+                                  textDecoration: item.status === 'completed' ? 'line-through' : 'none'
                                 }}>
                                   {item.title}
                                 </span>
                               </div>
                             );
                           })}
+
+                          {/* Placeholder for adding new event on hover */}
+                          {hoveredDayCell === day.dateString && (
+                            <div
+                              data-placeholder="true"
+                              style={{
+                                padding: '0.15rem 0.25rem',
+                                background: 'rgba(59, 130, 246, 0.05)',
+                                border: '1px dashed rgba(59, 130, 246, 0.3)',
+                                borderRadius: '3px',
+                                fontSize: '0.6rem',
+                                fontWeight: '700',
+                                color: '#9ca3af',
+                                textAlign: 'center',
+                                transition: 'all 0.15s ease'
+                              }}
+                            >
+                              + Add Event
+                            </div>
+                          )}
+
                           {day.items.length > 3 && (
                             <div style={{
                               padding: '0.25rem 0.375rem',
@@ -1907,10 +2516,11 @@ const CourseContent = () => {
                         </div>
                       </div>
                     ))
-                  )).flat();
-                })()}
-              </div>
-            ) : (
+                  )).flat()}
+                    </div>
+                  );
+                })()
+              ) : (
               // WEEK VIEW
               <div style={{
                 display: 'grid',
@@ -1926,7 +2536,7 @@ const CourseContent = () => {
                     key={idx}
                     style={{
                       background: day.isToday ? '#eff6ff' : '#ffffff',
-                      padding: '1rem',
+                      padding: '1rem 0.125rem',
                       height: '500px',
                       minHeight: '500px',
                       maxHeight: '500px',
@@ -1957,26 +2567,36 @@ const CourseContent = () => {
                     </div>
 
                     {/* Day Items */}
-                    <div style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '0.25rem',
-                      minHeight: '400px',
-                      maxHeight: '400px',
-                      minWidth: 0,
-                      overflowY: 'auto',
-                      overflowX: 'hidden'
-                    }}>
-                      {day.items.length === 0 ? (
-                        <div style={{
-                          fontSize: '0.75rem',
-                          color: '#d1d5db',
-                          textAlign: 'center',
-                          marginTop: '1rem'
-                        }}>
-                          No events
-                        </div>
-                      ) : day.items.map((item, itemIdx) => {
+                    <div
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '0.125rem',
+                        minHeight: '400px',
+                        maxHeight: '400px',
+                        minWidth: 0,
+                        overflowY: 'auto',
+                        overflowX: 'hidden',
+                        padding: '0 0.125rem',
+                        cursor: 'pointer'
+                      }}
+                      onMouseEnter={() => setHoveredDayCell(day.dateString)}
+                      onMouseLeave={() => setHoveredDayCell(null)}
+                      onClick={(e) => {
+                        // Only trigger if clicking on empty space
+                        if (e.target === e.currentTarget || e.target.closest('[data-placeholder]')) {
+                          e.stopPropagation();
+                          soundEffects.playClick();
+                          setCustomEventForm({
+                            ...customEventForm,
+                            date: day.dateString
+                          });
+                          setAddEventModalOpen(true);
+                          setHoveredDayCell(null);
+                        }
+                      }}
+                    >
+                      {day.items.map((item, itemIdx) => {
                         const status = getLessonStatus(item.id);
                         const isCompleted = status === 'completed';
                         const isExamDay = item.type === 'exam_day';
@@ -2055,105 +2675,91 @@ const CourseContent = () => {
                           );
                         }
 
+                        // Determine background color based on item type
+                        const bgColor = isPracticeTest ? 'rgba(220, 38, 38, 0.1)'
+                          : isMockExam ? 'rgba(220, 38, 38, 0.1)'
+                          : isDiagnostic ? 'rgba(185, 28, 28, 0.1)'
+                          : isPractice ? 'rgba(245, 158, 11, 0.1)'
+                          : isReview ? 'rgba(16, 185, 129, 0.1)'
+                          : 'rgba(59, 130, 246, 0.1)';
+
+                        const hoverBgColor = isPracticeTest ? 'rgba(220, 38, 38, 0.15)'
+                          : isMockExam ? 'rgba(220, 38, 38, 0.15)'
+                          : isDiagnostic ? 'rgba(185, 28, 28, 0.15)'
+                          : isPractice ? 'rgba(245, 158, 11, 0.15)'
+                          : isReview ? 'rgba(16, 185, 129, 0.15)'
+                          : 'rgba(59, 130, 246, 0.15)';
+
+                        const textColorMatch = isPracticeTest ? '#dc2626'
+                          : isMockExam ? '#dc2626'
+                          : isDiagnostic ? '#b91c1c'
+                          : isPractice ? '#f59e0b'
+                          : isReview ? '#10b981'
+                          : '#3b82f6';
+
                         return (
                           <div
                             key={itemIdx}
-                            onClick={() => handleItemClick(item)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              soundEffects.playClick();
+                              setPreviewItem({ ...item, date: day.date });
+                            }}
                             style={{
                               display: 'flex',
                               alignItems: 'center',
-                              gap: '0.5rem',
-                              padding: '0.375rem 0.5rem',
-                              background: 'transparent',
+                              justifyContent: 'flex-start',
+                              padding: '0.5rem 0.75rem',
+                              background: bgColor,
                               border: 'none',
-                              borderBottom: '1px solid #f3f4f6',
-                              borderRadius: '0',
+                              borderRadius: '6px',
                               cursor: 'pointer',
                               transition: 'background 0.15s ease',
                               minWidth: 0,
-                              overflow: 'hidden'
+                              marginBottom: '0.25rem',
+                              width: '100%'
                             }}
                             onMouseEnter={(e) => {
-                              e.currentTarget.style.background = '#fafbfc';
+                              e.currentTarget.style.background = hoverBgColor;
                             }}
                             onMouseLeave={(e) => {
-                              e.currentTarget.style.background = 'transparent';
+                              e.currentTarget.style.background = bgColor;
                             }}
                           >
-                            {/* Checkbox */}
-                            <div
-                              onClick={handleCheckboxClick}
-                              style={{
-                                width: '16px',
-                                height: '16px',
-                                borderRadius: '4px',
-                                border: '2px solid #d1d5db',
-                                flexShrink: 0,
-                                transition: 'border-color 0.2s ease',
-                                position: 'relative',
-                                background: isCompleted ? '#14b8a6' : '#ffffff',
-                                cursor: 'pointer',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                              }}
-                            >
-                              {isCompleted && (
-                                <span style={{
-                                  color: '#ffffff',
-                                  fontSize: '0.625rem',
-                                  fontWeight: '700'
-                                }}>
-                                  ✓
-                                </span>
-                              )}
-                            </div>
-
-                            {/* Colored Dot */}
-                            <div
-                              style={{
-                                width: '6px',
-                                height: '6px',
-                                borderRadius: '50%',
-                                background: dotColor,
-                                flexShrink: 0
-                              }}
-                            />
-
                             {/* Content */}
-                            <div style={{
-                              display: 'flex',
-                              alignItems: 'center',
-                              gap: '0.375rem',
-                              flex: 1,
-                              minWidth: 0
+                            <span style={{
+                              fontSize: '0.75rem',
+                              fontWeight: '700',
+                              color: textColorMatch,
+                              lineHeight: '1.4',
+                              textAlign: 'left',
+                              textDecoration: item.status === 'completed' ? 'line-through' : 'none'
                             }}>
-                              <span style={{
-                                fontSize: '0.75rem',
-                                fontWeight: isDiagnostic || isMockExam || isReview ? '600' : '400',
-                                color: textColor,
-                                lineHeight: '1.3',
-                                overflow: 'hidden',
-                                textOverflow: 'ellipsis',
-                                whiteSpace: 'nowrap',
-                                flex: 1
-                              }}>
-                                {item.title}
-                              </span>
-                              <span style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                color: '#9ca3af',
-                                fontSize: '0.75rem',
-                                flexShrink: 0
-                              }}>
-                                {getItemIcon(item.type)}
-                              </span>
-                            </div>
+                              {item.title}
+                            </span>
                           </div>
                         );
                       })}
+
+                      {/* Placeholder for adding new event on hover */}
+                      {hoveredDayCell === day.dateString && (
+                        <div
+                          data-placeholder="true"
+                          style={{
+                            padding: '0.5rem 0.75rem',
+                            background: 'rgba(59, 130, 246, 0.05)',
+                            border: '1px dashed rgba(59, 130, 246, 0.3)',
+                            borderRadius: '6px',
+                            fontSize: '0.75rem',
+                            fontWeight: '700',
+                            color: '#9ca3af',
+                            textAlign: 'center',
+                            transition: 'all 0.15s ease'
+                          }}
+                        >
+                          + Add Event
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -2491,22 +3097,29 @@ const CourseContent = () => {
                 <div style={{
                   marginTop: '0.75rem',
                   fontSize: '0.875rem',
-                  color: '#6b7280',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem'
                 }}>
                   <span style={{
-                    background: '#e5e7eb',
+                    background: isPracticeTest ? '#fee2e2' :
+                               isPractice ? '#fef3c7' :
+                               isReview ? '#dcfce7' :
+                               isMockExam ? '#fee2e2' :
+                               '#dbeafe',
                     padding: '0.25rem 0.75rem',
                     borderRadius: '12px',
-                    fontWeight: '500',
-                    color: '#374151'
+                    fontWeight: '700',
+                    color: isPracticeTest ? '#991b1b' :
+                           isPractice ? '#92400e' :
+                           isReview ? '#166534' :
+                           isMockExam ? '#991b1b' :
+                           '#1e40af'
                   }}>
                     {previewItem.type === 'practice_test' || previewItem.type === 'test' ? 'Practice Test' : previewItem.type === 'mock_exam' ? 'Mock Exam' : previewItem.type === 'review' ? 'Review Day' : previewItem.type === 'practice' ? 'Practice' : 'Lesson'}
                   </span>
-                  <span>•</span>
-                  <span>{previewItem.duration} minutes</span>
+                  <span style={{ color: '#374151' }}>•</span>
+                  <span style={{ fontWeight: '600', color: '#374151' }}>{previewItem.duration} minutes</span>
                 </div>
               </div>
 
@@ -2770,6 +3383,34 @@ const CourseContent = () => {
                 })()
               )}
 
+              {/* Description - Show if available */}
+              {previewItem.description && (
+                <div style={{
+                  background: '#f9fafb',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '8px',
+                  padding: '1rem',
+                  marginBottom: '1.5rem'
+                }}>
+                  <div style={{
+                    fontSize: '0.875rem',
+                    fontWeight: '600',
+                    color: '#374151',
+                    marginBottom: '0.5rem'
+                  }}>
+                    Description
+                  </div>
+                  <div style={{
+                    fontSize: '0.875rem',
+                    color: '#6b7280',
+                    lineHeight: '1.6',
+                    whiteSpace: 'pre-wrap'
+                  }}>
+                    {previewItem.description}
+                  </div>
+                </div>
+              )}
+
               {/* Status badge */}
               {previewItem.status && (
                 <div style={{
@@ -2777,20 +3418,26 @@ const CourseContent = () => {
                   alignItems: 'center',
                   gap: '0.5rem',
                   padding: '0.5rem 0.75rem',
-                  background: previewItem.status === 'completed' ? '#dcfce7' : '#fef3c7',
-                  color: previewItem.status === 'completed' ? '#166534' : '#92400e',
+                  background: previewItem.status === 'completed' ? '#dcfce7' :
+                             previewItem.status === 'in-progress' ? '#fef3c7' :
+                             '#f3f4f6',
+                  color: previewItem.status === 'completed' ? '#166534' :
+                         previewItem.status === 'in-progress' ? '#92400e' :
+                         '#6b7280',
                   borderRadius: '6px',
                   fontSize: '0.8125rem',
-                  fontWeight: '500',
+                  fontWeight: '600',
                   marginBottom: '1.5rem'
                 }}>
                   <div style={{
                     width: '8px',
                     height: '8px',
                     borderRadius: '50%',
-                    background: previewItem.status === 'completed' ? '#16a34a' : '#f59e0b'
+                    background: previewItem.status === 'completed' ? '#16a34a' :
+                               previewItem.status === 'in-progress' ? '#f59e0b' :
+                               '#9ca3af'
                   }} />
-                  {previewItem.status === 'completed' ? 'Completed' : previewItem.status === 'in_progress' ? 'In Progress' : 'Not Started'}
+                  {previewItem.status === 'completed' ? 'Completed' : previewItem.status === 'in-progress' ? 'In Progress' : 'Not Started'}
                 </div>
               )}
 
@@ -3586,6 +4233,339 @@ const CourseContent = () => {
         </div>
         );
       })()}
+
+      {/* Add Event Modal */}
+      {addEventModalOpen && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'rgba(0, 0, 0, 0.5)',
+          zIndex: 2000,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '2rem'
+        }}
+        onClick={() => setAddEventModalOpen(false)}
+        >
+          <div
+            style={{
+              background: '#ffffff',
+              borderRadius: '12px',
+              padding: '2rem',
+              maxWidth: '500px',
+              width: '100%',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+              maxHeight: '90vh',
+              overflowY: 'auto'
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 style={{
+              fontSize: '1.5rem',
+              fontWeight: '700',
+              color: '#1a1a1a',
+              marginBottom: '1.5rem'
+            }}>
+              Add Custom Event
+            </h2>
+
+            {/* Event Title */}
+            <div style={{ marginBottom: '1rem' }}>
+              <label style={{
+                display: 'block',
+                fontSize: '0.875rem',
+                fontWeight: '600',
+                color: '#1a1a1a',
+                marginBottom: '0.5rem'
+              }}>
+                Event Title *
+              </label>
+              <input
+                type="text"
+                value={customEventForm.title}
+                onChange={(e) => setCustomEventForm({ ...customEventForm, title: e.target.value })}
+                placeholder="e.g., Study Session, Practice Problems"
+                style={{
+                  width: '100%',
+                  padding: '0.75rem',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem',
+                  outline: 'none',
+                  transition: 'border-color 0.15s ease'
+                }}
+                onFocus={(e) => e.target.style.borderColor = '#08245b'}
+                onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
+              />
+            </div>
+
+            {/* Date */}
+            <div style={{ marginBottom: '1rem' }}>
+              <label style={{
+                display: 'block',
+                fontSize: '0.875rem',
+                fontWeight: '600',
+                color: '#1a1a1a',
+                marginBottom: '0.5rem'
+              }}>
+                Date *
+              </label>
+              <input
+                type="date"
+                value={customEventForm.date}
+                onChange={(e) => setCustomEventForm({ ...customEventForm, date: e.target.value })}
+                style={{
+                  width: '100%',
+                  padding: '0.75rem',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem',
+                  outline: 'none',
+                  transition: 'border-color 0.15s ease'
+                }}
+                onFocus={(e) => e.target.style.borderColor = '#08245b'}
+                onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
+              />
+            </div>
+
+            {/* Event Type */}
+            <div style={{ marginBottom: '1rem' }}>
+              <label style={{
+                display: 'block',
+                fontSize: '0.875rem',
+                fontWeight: '600',
+                color: '#1a1a1a',
+                marginBottom: '0.5rem'
+              }}>
+                Event Type *
+              </label>
+              <select
+                value={customEventForm.type}
+                onChange={(e) => setCustomEventForm({ ...customEventForm, type: e.target.value })}
+                style={{
+                  width: '100%',
+                  padding: '0.75rem',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem',
+                  outline: 'none',
+                  transition: 'border-color 0.15s ease',
+                  background: '#ffffff',
+                  cursor: 'pointer'
+                }}
+                onFocus={(e) => e.target.style.borderColor = '#08245b'}
+                onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
+              >
+                <option value="lesson">Lesson</option>
+                <option value="practice">Practice</option>
+                <option value="practice_test">Practice Test</option>
+                <option value="custom">Other</option>
+              </select>
+            </div>
+
+            {/* Custom Color Picker - Only show if type is "custom" */}
+            {customEventForm.type === 'custom' && (
+              <div style={{ marginBottom: '1rem' }}>
+                <label style={{
+                  display: 'block',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  color: '#1a1a1a',
+                  marginBottom: '0.5rem'
+                }}>
+                  Color
+                </label>
+                <input
+                  type="color"
+                  value={customEventForm.customColor}
+                  onChange={(e) => setCustomEventForm({ ...customEventForm, customColor: e.target.value })}
+                  style={{
+                    width: '100%',
+                    height: '50px',
+                    padding: '0.25rem',
+                    border: '1px solid #e5e7eb',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    outline: 'none',
+                    transition: 'border-color 0.15s ease'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#08245b'}
+                  onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
+                />
+              </div>
+            )}
+
+            {/* Duration */}
+            <div style={{ marginBottom: '1rem' }}>
+              <label style={{
+                display: 'block',
+                fontSize: '0.875rem',
+                fontWeight: '600',
+                color: '#1a1a1a',
+                marginBottom: '0.5rem'
+              }}>
+                Duration (minutes)
+              </label>
+              <input
+                type="number"
+                value={customEventForm.duration}
+                onChange={(e) => setCustomEventForm({ ...customEventForm, duration: parseInt(e.target.value) || 30 })}
+                style={{
+                  width: '100%',
+                  padding: '0.75rem',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem',
+                  outline: 'none',
+                  transition: 'border-color 0.15s ease'
+                }}
+                onFocus={(e) => e.target.style.borderColor = '#08245b'}
+                onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
+              />
+            </div>
+
+            {/* Description */}
+            <div style={{ marginBottom: '1.5rem' }}>
+              <label style={{
+                display: 'block',
+                fontSize: '0.875rem',
+                fontWeight: '600',
+                color: '#1a1a1a',
+                marginBottom: '0.5rem'
+              }}>
+                Description (Optional)
+              </label>
+              <textarea
+                value={customEventForm.description}
+                onChange={(e) => setCustomEventForm({ ...customEventForm, description: e.target.value })}
+                placeholder="Add any notes or details..."
+                rows={3}
+                style={{
+                  width: '100%',
+                  padding: '0.75rem',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem',
+                  outline: 'none',
+                  transition: 'border-color 0.15s ease',
+                  resize: 'vertical',
+                  fontFamily: 'inherit'
+                }}
+                onFocus={(e) => e.target.style.borderColor = '#08245b'}
+                onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
+              />
+            </div>
+
+            {/* Buttons */}
+            <div style={{
+              display: 'flex',
+              gap: '0.75rem',
+              justifyContent: 'flex-end'
+            }}>
+              <button
+                onClick={() => {
+                  soundEffects.playClick();
+                  setAddEventModalOpen(false);
+                  setCustomEventForm({
+                    title: '',
+                    date: '',
+                    type: 'lesson',
+                    description: '',
+                    duration: 30,
+                    customColor: '#6b7280'
+                  });
+                }}
+                style={{
+                  padding: '0.75rem 1.5rem',
+                  background: '#ffffff',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  color: '#1a1a1a',
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = '#f9fafb';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = '#ffffff';
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={async () => {
+                  if (!customEventForm.title || !customEventForm.date) {
+                    alert('Please fill in all required fields');
+                    return;
+                  }
+
+                  try {
+                    soundEffects.playClick();
+
+                    // Save to Supabase
+                    const { data, error } = await supabase
+                      .from('custom_events')
+                      .insert([{
+                        user_id: user.id,
+                        title: customEventForm.title,
+                        scheduled_date: customEventForm.date,
+                        duration: customEventForm.duration,
+                        description: customEventForm.description,
+                        event_type: customEventForm.type,
+                        custom_color: customEventForm.type === 'custom' ? customEventForm.customColor : null
+                      }]);
+
+                    if (error) throw error;
+
+                    soundEffects.playSuccess();
+                    setAddEventModalOpen(false);
+                    setCustomEventForm({
+                      title: '',
+                      date: '',
+                      type: 'lesson',
+                      description: '',
+                      duration: 30,
+                      customColor: '#6b7280'
+                    });
+
+                    // Reload learning path to include custom events
+                    loadLearningPath();
+                  } catch (error) {
+                    console.error('Error saving custom event:', error);
+                    alert('Failed to save event. Please try again.');
+                  }
+                }}
+                style={{
+                  padding: '0.75rem 1.5rem',
+                  background: '#08245b',
+                  border: 'none',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  color: '#ffffff',
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = '#0a2d75';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = '#08245b';
+                }}
+              >
+                Add Event
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
