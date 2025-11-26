@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import { HiPencilSquare, HiQuestionMarkCircle, HiCheckCircle } from 'react-icons/hi2';
+import { HiPencilSquare, HiQuestionMarkCircle, HiCheckCircle, HiChevronDown } from 'react-icons/hi2';
 import { useCourseStyles } from '../../styles/app/course.styles';
 import { supabase } from '../../services/api/supabase.service';
 import { useAuth } from '../../contexts/AuthContext';
@@ -21,7 +21,8 @@ const CourseContent = () => {
     onLessonOpen,
     onTestOpen,
     setDiagnosticTestOpen,
-    updateLessonProgress
+    updateLessonProgress,
+    setHeaderControls
   } = useOutletContext();
 
   // State for user goals and edit modal
@@ -29,7 +30,7 @@ const CourseContent = () => {
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [showMockExamTooltipModal, setShowMockExamTooltipModal] = useState(false);
   const [showReviewTooltipModal, setShowReviewTooltipModal] = useState(false);
-  const [diagnosticCompleted, setDiagnosticCompleted] = useState(false);
+  const [diagnosticCompleted, setDiagnosticCompleted] = useState(null);
   const [loadingDiagnostic, setLoadingDiagnostic] = useState(true);
   const [diagnosticResults, setDiagnosticResults] = useState(null);
   const [learningPathData, setLearningPathData] = useState(null);
@@ -47,6 +48,7 @@ const CourseContent = () => {
   const [previewItem, setPreviewItem] = useState(null);
   const [validationError, setValidationError] = useState(null);
   const [saveButtonShake, setSaveButtonShake] = useState(false);
+  const [calendarDropdownOpen, setCalendarDropdownOpen] = useState(false);
   const [editForm, setEditForm] = useState({
     target_exam_date: '',
     current_score: '',
@@ -84,13 +86,167 @@ const CourseContent = () => {
       loadLearningPath();
     } else {
       setLoadingDiagnostic(false);
-      setDiagnosticCompleted(false);
+      setDiagnosticCompleted(null);
     }
   }, [user]);
 
+  // Register header controls with parent AppLayout
+  useEffect(() => {
+    if (setHeaderControls) {
+      const goToToday = () => {
+        setCurrentMonth(new Date());
+        const today = new Date();
+        const dayOfWeek = today.getDay();
+        const weekStart = new Date(today);
+        weekStart.setDate(today.getDate() - dayOfWeek);
+        setCurrentWeekStart(weekStart);
+      };
+
+      const controls = (
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.75rem'
+        }}>
+          {/* Today Button */}
+          <button
+            onClick={() => {
+              soundEffects.playClick();
+              goToToday();
+            }}
+            style={{
+              background: '#ffffff',
+              border: '1px solid #e5e7eb',
+              borderRadius: '20px',
+              padding: '0.4rem 0.75rem',
+              fontSize: '0.75rem',
+              fontWeight: '500',
+              color: '#1a1a1a',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = '#f9fafb';
+              e.target.style.borderColor = '#d1d5db';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = '#ffffff';
+              e.target.style.borderColor = '#e5e7eb';
+            }}
+          >
+            Today
+          </button>
+
+          {/* View Toggle - Calendar/List */}
+          <div style={{
+            display: 'inline-flex',
+            background: '#ffffff',
+            border: '1px solid #e5e7eb',
+            borderRadius: '20px',
+            padding: '0.15rem',
+            gap: '0.15rem'
+          }}>
+            <button
+              onClick={() => {
+                soundEffects.playClick();
+                setViewMode('calendar');
+              }}
+              style={{
+                background: viewMode === 'calendar' ? '#08245b' : 'transparent',
+                border: 'none',
+                borderRadius: '20px',
+                padding: '0.4rem 0.9rem',
+                fontSize: '0.75rem',
+                fontWeight: '500',
+                color: viewMode === 'calendar' ? '#ffffff' : '#6b7280',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              Calendar
+            </button>
+            <button
+              onClick={() => {
+                soundEffects.playClick();
+                setViewMode('list');
+              }}
+              style={{
+                background: viewMode === 'list' ? '#08245b' : 'transparent',
+                border: 'none',
+                borderRadius: '20px',
+                padding: '0.4rem 0.9rem',
+                fontSize: '0.75rem',
+                fontWeight: '500',
+                color: viewMode === 'list' ? '#ffffff' : '#6b7280',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              List
+            </button>
+          </div>
+
+          {/* Edit Goals Button */}
+          <button
+            onClick={() => setEditModalOpen(true)}
+            style={{
+              background: '#ffffff',
+              border: '1px solid #e5e7eb',
+              padding: '0.4rem 0.75rem',
+              cursor: 'pointer',
+              color: '#1a1a1a',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              fontSize: '0.75rem',
+              fontWeight: '500',
+              transition: 'all 0.15s ease',
+              borderRadius: '6px'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = '#f9fafb';
+              e.target.style.borderColor = '#d1d5db';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = '#ffffff';
+              e.target.style.borderColor = '#e5e7eb';
+            }}
+          >
+            <HiPencilSquare style={{ width: '14px', height: '14px' }} />
+            Edit Goals
+          </button>
+        </div>
+      );
+
+      setHeaderControls(controls);
+    }
+
+    // Clean up on unmount
+    return () => {
+      if (setHeaderControls) {
+        setHeaderControls(null);
+      }
+    };
+  }, [viewMode, setHeaderControls]);
+
   const checkDiagnosticCompletion = async () => {
     try {
-      // Get the latest completed diagnostic session
+      // Check cache first for instant load
+      const cacheKey = `diagnostic_completed_${user.id}`;
+      const cached = sessionStorage.getItem(cacheKey);
+
+      if (cached !== null) {
+        const isCompleted = cached === 'true';
+        setDiagnosticCompleted(isCompleted);
+        setLoadingDiagnostic(false);
+        console.log('📊 Using cached diagnostic status:', isCompleted);
+
+        // Still verify in background and update cache if changed
+        verifyDiagnosticInBackground(cacheKey);
+        return;
+      }
+
+      // No cache - fetch from database
       const { data: session, error: sessionError } = await supabase
         .from('diagnostic_test_sessions')
         .select('*')
@@ -102,18 +258,40 @@ const CourseContent = () => {
 
       if (sessionError) throw sessionError;
 
-      if (session) {
-        setDiagnosticCompleted(true);
-        console.log('📊 Diagnostic test completed:', session);
-      } else {
-        setDiagnosticCompleted(false);
-        console.log('📋 No diagnostic test completed yet');
-      }
+      const isCompleted = !!session;
+      setDiagnosticCompleted(isCompleted);
+      sessionStorage.setItem(cacheKey, String(isCompleted));
+      console.log('📊 Diagnostic test status:', isCompleted);
     } catch (error) {
       console.error('Error checking diagnostic completion:', error);
       setDiagnosticCompleted(false);
     } finally {
       setLoadingDiagnostic(false);
+    }
+  };
+
+  const verifyDiagnosticInBackground = async (cacheKey) => {
+    try {
+      const { data: session } = await supabase
+        .from('diagnostic_test_sessions')
+        .select('*')
+        .eq('user_id', user.id)
+        .eq('completed', true)
+        .order('session_start', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+
+      const isCompleted = !!session;
+      const cachedValue = sessionStorage.getItem(cacheKey);
+
+      // Update cache and state if changed
+      if (String(isCompleted) !== cachedValue) {
+        sessionStorage.setItem(cacheKey, String(isCompleted));
+        setDiagnosticCompleted(isCompleted);
+        console.log('📊 Updated diagnostic status from background check:', isCompleted);
+      }
+    } catch (error) {
+      console.error('Background diagnostic check error:', error);
     }
   };
 
@@ -407,7 +585,21 @@ const CourseContent = () => {
     try {
       console.log('📚 Loading learning path for user:', user.id);
 
-      // Get active learning path with items (no lesson join since using lessonStructure)
+      // Check cache first for instant load
+      const cacheKey = `learning_path_${user.id}`;
+      const cached = sessionStorage.getItem(cacheKey);
+
+      if (cached) {
+        const cachedPath = JSON.parse(cached);
+        setLearningPathData(cachedPath);
+        console.log('📚 Using cached learning path:', cachedPath?.items?.length || 0, 'items');
+
+        // Verify in background
+        verifyLearningPathInBackground(cacheKey);
+        return;
+      }
+
+      // No cache - fetch from database
       const { data: path, error: pathError } = await supabase
         .from('user_learning_paths')
         .select(`
@@ -427,16 +619,43 @@ const CourseContent = () => {
         console.log('✅ Loaded learning path:', {
           pathId: path.id,
           itemsCount: path.items?.length || 0,
-          examDate: path.exam_date,
-          path
+          examDate: path.exam_date
         });
         setLearningPathData(path);
+        sessionStorage.setItem(cacheKey, JSON.stringify(path));
       } else {
         console.log('⚠️ No learning path found for user');
         setLearningPathData(null);
+        sessionStorage.setItem(cacheKey, JSON.stringify(null));
       }
     } catch (error) {
       console.error('❌ Exception loading learning path:', error);
+    }
+  };
+
+  const verifyLearningPathInBackground = async (cacheKey) => {
+    try {
+      const { data: path } = await supabase
+        .from('user_learning_paths')
+        .select(`
+          *,
+          items:learning_path_items(*)
+        `)
+        .eq('user_id', user.id)
+        .eq('is_active', true)
+        .maybeSingle();
+
+      // Update cache
+      sessionStorage.setItem(cacheKey, JSON.stringify(path));
+
+      // Update state if changed
+      const cached = sessionStorage.getItem(cacheKey);
+      if (JSON.stringify(path) !== cached) {
+        setLearningPathData(path);
+        console.log('📚 Updated learning path from background check');
+      }
+    } catch (error) {
+      console.error('Background learning path check error:', error);
     }
   };
 
@@ -1126,13 +1345,10 @@ const CourseContent = () => {
     }
   };
 
-  // Loading state
-  if (loadingDiagnostic) {
+  // Loading state - show while checking diagnostic status
+  if (loadingDiagnostic || diagnosticCompleted === null) {
     return (
       <div className={classes.container}>
-        <div className={classes.header}>
-          <h1 className={classes.title}>Learning Path</h1>
-        </div>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px', color: '#6b7280' }}>
           Loading...
         </div>
@@ -1140,133 +1356,21 @@ const CourseContent = () => {
     );
   }
 
-  // Locked state - diagnostic not completed (show blurred content)
+  // Locked state - diagnostic not completed
   const renderLockedContent = () => {
     return (
-      <div className={classes.container} style={{ position: 'relative' }}>
-        <div className={classes.header}>
-          <h1 className={classes.title}>Learning Path</h1>
-        </div>
-
-        {/* Blurred background content */}
-        <div style={{
-          filter: 'blur(8px)',
-          pointerEvents: 'none',
-          userSelect: 'none',
-          opacity: 0.4
-        }}>
-          <div className={classes.content}>
-            {/* Top Stats Grid */}
-            <div className={classes.statsGrid}>
-              <div className={classes.statCard}>
-                <div className={classes.statLabel}>Test Date</div>
-                <div className={classes.statValue}>Dec 15</div>
-                <div className={classes.statDetail}>45 days left</div>
-              </div>
-              <div className={classes.statCard}>
-                <div className={classes.statLabel}>Completed</div>
-                <div className={classes.statValue}>0 / {totalLessons}</div>
-              </div>
-              <div className={classes.statCard}>
-                <div className={classes.statLabel}>English</div>
-                <div className={classes.statValue}>--</div>
-              </div>
-              <div className={classes.statCard}>
-                <div className={classes.statLabel}>Math</div>
-                <div className={classes.statValue}>--</div>
-              </div>
-              <div className={classes.statCard}>
-                <div className={classes.statLabel}>Reading</div>
-                <div className={classes.statValue}>--</div>
-              </div>
-              <div className={classes.statCard}>
-                <div className={classes.statLabel}>Science</div>
-                <div className={classes.statValue}>--</div>
-              </div>
-            </div>
-
-            {/* Weekly Assignments */}
-            <div className={classes.weeksContainer}>
-              {learningPath.map((week, weekIndex) => (
-                <div key={weekIndex} className={classes.section}>
-                  <div className={classes.sectionHeader}>
-                    <h2 className={classes.sectionTitle}>{week.week}</h2>
-                  </div>
-                  <div className={classes.weekGrid}>
-                    {week.items.map((item, itemIndex) => {
-                      const isCompleted = item.status === 'completed';
-                      const isLesson = item.type === 'lesson';
-                      const isPractice = item.type === 'practice' || item.type === 'practice_test';
-
-                      // Color text instead of backgrounds
-                      const textColor = item.isDiagnostic ? '#b91c1c'
-                        : isPractice ? '#dc2626'
-                        : isLesson ? '#6b7280'
-                        : '#1a1a1a';
-
-                      const handleCheckboxClick = (e) => {
-                        e.stopPropagation();
-                        // TODO: Toggle completion status
-                        console.log('Checkbox clicked for:', item.title);
-                      };
-
-                      return (
-                        <div
-                          key={itemIndex}
-                          className={`${classes.weekCard} ${isCompleted ? 'completed' : ''}`}
-                        >
-                          <div
-                            className={classes.weekCardCheckbox}
-                            onClick={handleCheckboxClick}
-                          ></div>
-                          <div className={classes.weekCardContent}>
-                            <div className={classes.weekCardTextWrapper}>
-                              <span
-                                className={classes.weekCardText}
-                                style={{
-                                  color: textColor,
-                                  fontWeight: item.isDiagnostic ? '600' : '400'
-                                }}
-                              >
-                                {item.title}
-                              </span>
-                              <span className={classes.weekCardIcon}>
-                                {getItemIcon(item.type)}
-                              </span>
-                            </div>
-                            {item.description && (
-                              <span style={{
-                                fontSize: '0.8125rem',
-                                color: '#9ca3af',
-                                lineHeight: '1.4',
-                                fontWeight: '400'
-                              }}>
-                                {item.description}
-                              </span>
-                            )}
-                          </div>
-                          <span className={classes.weekCardArrow}>→</span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
+      <div className={classes.container} style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '70vh',
+        padding: '2rem'
+      }}>
         {/* Lock overlay */}
         <div style={{
-          position: 'fixed',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          zIndex: 10,
           textAlign: 'center',
           width: '100%',
-          maxWidth: '600px',
-          padding: '0 2rem'
+          maxWidth: '600px'
         }}>
           <div style={{
             background: 'rgba(255, 255, 255, 0.98)',
@@ -1345,157 +1449,14 @@ const CourseContent = () => {
     );
   };
 
-  if (!diagnosticCompleted) {
+  if (diagnosticCompleted === false) {
     return renderLockedContent();
   }
 
   return (
     <div className={classes.container}>
-      {/* Header */}
-      <div className={classes.header}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <h1 className={classes.title}>Learning Path</h1>
-          {/* View Toggle */}
-          <div style={{
-            display: 'inline-flex',
-            background: '#f1f5f9',
-            borderRadius: '100px',
-            padding: '0.25rem',
-            gap: '0.25rem',
-            border: '1px solid #e2e8f0'
-          }}>
-            <button
-              onClick={() => {
-                soundEffects.playClick();
-                setViewMode('calendar');
-              }}
-              style={{
-                background: viewMode === 'calendar' ? '#08245b' : 'transparent',
-                border: 'none',
-                borderRadius: '100px',
-                padding: '0.625rem 1.5rem',
-                fontSize: '0.8125rem',
-                fontWeight: viewMode === 'calendar' ? '600' : '500',
-                color: viewMode === 'calendar' ? '#ffffff' : '#64748b',
-                cursor: 'pointer',
-                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
-                boxShadow: viewMode === 'calendar' ? '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)' : 'none',
-                whiteSpace: 'nowrap'
-              }}
-              onMouseEnter={(e) => {
-                if (viewMode !== 'calendar') {
-                  e.target.style.color = '#1a1a1a';
-                  e.target.style.background = '#e2e8f0';
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (viewMode !== 'calendar') {
-                  e.target.style.color = '#64748b';
-                  e.target.style.background = 'transparent';
-                }
-              }}
-            >
-              Calendar
-            </button>
-            <button
-              onClick={() => {
-                soundEffects.playClick();
-                setViewMode('list');
-              }}
-              style={{
-                background: viewMode === 'list' ? '#08245b' : 'transparent',
-                border: 'none',
-                borderRadius: '100px',
-                padding: '0.625rem 1.5rem',
-                fontSize: '0.8125rem',
-                fontWeight: viewMode === 'list' ? '600' : '500',
-                color: viewMode === 'list' ? '#ffffff' : '#64748b',
-                cursor: 'pointer',
-                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
-                boxShadow: viewMode === 'list' ? '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)' : 'none',
-                whiteSpace: 'nowrap'
-              }}
-              onMouseEnter={(e) => {
-                if (viewMode !== 'list') {
-                  e.target.style.color = '#1a1a1a';
-                  e.target.style.background = '#e2e8f0';
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (viewMode !== 'list') {
-                  e.target.style.color = '#64748b';
-                  e.target.style.background = 'transparent';
-                }
-              }}
-            >
-              List
-            </button>
-          </div>
-        </div>
-        <button
-          onClick={() => setEditModalOpen(true)}
-          style={{
-            background: 'transparent',
-            border: 'none',
-            padding: '0.5rem',
-            cursor: 'pointer',
-            color: '#6b7280',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.5rem',
-            fontSize: '0.875rem',
-            transition: 'color 0.15s ease'
-          }}
-          onMouseEnter={(e) => e.target.style.color = '#1a1a1a'}
-          onMouseLeave={(e) => e.target.style.color = '#6b7280'}
-        >
-          <HiPencilSquare style={{ width: '16px', height: '16px' }} />
-          Edit Goals
-        </button>
-      </div>
-
       {/* Main Content */}
       <div className={classes.content}>
-        {/* Top Stats Grid */}
-        <div className={classes.statsGrid}>
-          {/* Test Date */}
-          <div className={classes.statCard}>
-            <div className={classes.statLabel}>Test Date</div>
-            <div className={classes.statValue}>{testDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</div>
-            <div className={classes.statDetail}>{daysUntilTest} days left</div>
-          </div>
-
-          {/* Completed */}
-          <div className={classes.statCard}>
-            <div className={classes.statLabel}>Completed</div>
-            <div className={classes.statValue}>{completedLessons} / {totalLessons}</div>
-          </div>
-
-          {/* English */}
-          <div className={classes.statCard}>
-            <div className={classes.statLabel}>English</div>
-            <div className={classes.statValue}>{sectionStrengths.English}%</div>
-          </div>
-
-          {/* Math */}
-          <div className={classes.statCard}>
-            <div className={classes.statLabel}>Math</div>
-            <div className={classes.statValue}>{sectionStrengths.Math}%</div>
-          </div>
-
-          {/* Reading */}
-          <div className={classes.statCard}>
-            <div className={classes.statLabel}>Reading</div>
-            <div className={classes.statValue}>{sectionStrengths.Reading}%</div>
-          </div>
-
-          {/* Science */}
-          <div className={classes.statCard}>
-            <div className={classes.statLabel}>Science</div>
-            <div className={classes.statValue}>{sectionStrengths.Science}%</div>
-          </div>
-        </div>
-
         {/* Weekly Assignments - List or Calendar View */}
         <div className={classes.weeksContainer}>
           {viewMode === 'calendar' && learningPath.length > 0 ? (
@@ -1504,18 +1465,57 @@ const CourseContent = () => {
               background: '#ffffff',
               borderRadius: '12px',
               overflow: 'hidden',
-              boxShadow: '0 2px 4px rgba(0,0,0,0.08)'
+              border: '1px solid #e5e7eb',
+              marginTop: '1rem'
             }}>
               {/* Month Header with Navigation */}
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                padding: '1.25rem 1.5rem',
+                padding: '0.5rem 1.5rem',
                 borderBottom: '1px solid #e5e7eb',
-                background: '#fafafa'
+                background: '#ffffff'
               }}>
+                {/* Left: Days until exam */}
+                <div style={{
+                  fontSize: '0.75rem',
+                  color: '#9ca3af',
+                  fontWeight: '500'
+                }}>
+                  {daysUntilTest} days until exam
+                </div>
+
+                {/* Center: Month/Week title with arrows */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                  <button
+                    onClick={() => {
+                      soundEffects.playClick();
+                      navigateCalendar(-1);
+                    }}
+                    style={{
+                      background: 'transparent',
+                      border: 'none',
+                      width: '32px',
+                      height: '32px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      color: '#6b7280',
+                      fontSize: '1.25rem',
+                      transition: 'all 0.15s ease',
+                      borderRadius: '6px'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.background = '#f3f4f6';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.background = 'transparent';
+                    }}
+                  >
+                    ‹
+                  </button>
                   <h2 style={{
                     fontSize: '1.375rem',
                     fontWeight: '600',
@@ -1523,158 +1523,18 @@ const CourseContent = () => {
                     margin: 0
                   }}>
                     {calendarViewType === 'month'
-                      ? currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+                      ? currentMonth.toLocaleDateString('en-US', { month: 'long' })
                       : `Week of ${currentWeekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`
                     }
                   </h2>
-                  {/* Month/Week Toggle */}
-                  <div style={{
-                    display: 'inline-flex',
-                    background: '#f1f5f9',
-                    borderRadius: '100px',
-                    padding: '0.25rem',
-                    gap: '0.25rem',
-                    border: '1px solid #e2e8f0'
-                  }}>
-                    <button
-                      onClick={() => {
-                        soundEffects.playClick();
-                        setCalendarViewType('month');
-                      }}
-                      style={{
-                        background: calendarViewType === 'month' ? '#08245b' : 'transparent',
-                        border: 'none',
-                        borderRadius: '100px',
-                        padding: '0.5rem 1rem',
-                        fontSize: '0.75rem',
-                        fontWeight: calendarViewType === 'month' ? '600' : '500',
-                        color: calendarViewType === 'month' ? '#ffffff' : '#64748b',
-                        cursor: 'pointer',
-                        transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
-                        boxShadow: calendarViewType === 'month' ? '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)' : 'none',
-                        whiteSpace: 'nowrap'
-                      }}
-                      onMouseEnter={(e) => {
-                        if (calendarViewType !== 'month') {
-                          e.target.style.color = '#1a1a1a';
-                          e.target.style.background = '#e2e8f0';
-                        }
-                      }}
-                      onMouseLeave={(e) => {
-                        if (calendarViewType !== 'month') {
-                          e.target.style.color = '#64748b';
-                          e.target.style.background = 'transparent';
-                        }
-                      }}
-                    >
-                      Month
-                    </button>
-                    <button
-                      onClick={() => {
-                        soundEffects.playClick();
-                        setCalendarViewType('week');
-                      }}
-                      style={{
-                        background: calendarViewType === 'week' ? '#08245b' : 'transparent',
-                        border: 'none',
-                        borderRadius: '100px',
-                        padding: '0.5rem 1rem',
-                        fontSize: '0.75rem',
-                        fontWeight: calendarViewType === 'week' ? '600' : '500',
-                        color: calendarViewType === 'week' ? '#ffffff' : '#64748b',
-                        cursor: 'pointer',
-                        transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
-                        boxShadow: calendarViewType === 'week' ? '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)' : 'none',
-                        whiteSpace: 'nowrap'
-                      }}
-                      onMouseEnter={(e) => {
-                        if (calendarViewType !== 'week') {
-                          e.target.style.color = '#1a1a1a';
-                          e.target.style.background = '#e2e8f0';
-                        }
-                      }}
-                      onMouseLeave={(e) => {
-                        if (calendarViewType !== 'week') {
-                          e.target.style.color = '#64748b';
-                          e.target.style.background = 'transparent';
-                        }
-                      }}
-                    >
-                      Week
-                    </button>
-                  </div>
-                </div>
-                <div style={{ display: 'flex', gap: '0.5rem' }}>
-                  <button
-                    onClick={() => {
-                      soundEffects.playClick();
-                      navigateCalendar(-1);
-                    }}
-                    style={{
-                      background: '#ffffff',
-                      border: '1px solid #d1d5db',
-                      borderRadius: '6px',
-                      width: '32px',
-                      height: '32px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      cursor: 'pointer',
-                      color: '#6b7280',
-                      fontSize: '1rem',
-                      transition: 'all 0.15s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.target.style.background = '#f3f4f6';
-                      e.target.style.borderColor = '#9ca3af';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.background = '#ffffff';
-                      e.target.style.borderColor = '#d1d5db';
-                    }}
-                  >
-                    ‹
-                  </button>
-                  <button
-                    onClick={() => {
-                      soundEffects.playClick();
-                      goToToday();
-                    }}
-                    style={{
-                      background: '#ffffff',
-                      border: '1px solid #d1d5db',
-                      borderRadius: '6px',
-                      padding: '0 0.75rem',
-                      height: '32px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      cursor: 'pointer',
-                      color: '#6b7280',
-                      fontSize: '0.8125rem',
-                      fontWeight: '500',
-                      transition: 'all 0.15s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.target.style.background = '#f3f4f6';
-                      e.target.style.borderColor = '#9ca3af';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.background = '#ffffff';
-                      e.target.style.borderColor = '#d1d5db';
-                    }}
-                  >
-                    Today
-                  </button>
                   <button
                     onClick={() => {
                       soundEffects.playClick();
                       navigateCalendar(1);
                     }}
                     style={{
-                      background: '#ffffff',
-                      border: '1px solid #d1d5db',
-                      borderRadius: '6px',
+                      background: 'transparent',
+                      border: 'none',
                       width: '32px',
                       height: '32px',
                       display: 'flex',
@@ -1682,20 +1542,142 @@ const CourseContent = () => {
                       justifyContent: 'center',
                       cursor: 'pointer',
                       color: '#6b7280',
-                      fontSize: '1rem',
-                      transition: 'all 0.15s ease'
+                      fontSize: '1.25rem',
+                      transition: 'all 0.15s ease',
+                      borderRadius: '6px'
                     }}
                     onMouseEnter={(e) => {
                       e.target.style.background = '#f3f4f6';
-                      e.target.style.borderColor = '#9ca3af';
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.background = '#ffffff';
-                      e.target.style.borderColor = '#d1d5db';
+                      e.target.style.background = 'transparent';
                     }}
                   >
                     ›
                   </button>
+                </div>
+
+                {/* Right: Month/Week Dropdown */}
+                <div style={{ position: 'relative' }}>
+                  <button
+                    onClick={() => {
+                      soundEffects.playClick();
+                      setCalendarDropdownOpen(!calendarDropdownOpen);
+                    }}
+                    style={{
+                      background: '#ffffff',
+                      border: '1px solid #e5e7eb',
+                      borderRadius: '20px',
+                      padding: '0.5rem 0.75rem',
+                      fontSize: '0.75rem',
+                      fontWeight: '500',
+                      color: '#1a1a1a',
+                      cursor: 'pointer',
+                      transition: 'all 0.15s ease',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = '#f9fafb';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = '#ffffff';
+                    }}
+                  >
+                    {calendarViewType === 'month' ? 'Month' : 'Week'}
+                    <HiChevronDown style={{
+                      width: '14px',
+                      height: '14px',
+                      transition: 'transform 0.2s ease',
+                      transform: calendarDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)'
+                    }} />
+                  </button>
+
+                  {calendarDropdownOpen && (
+                    <>
+                      {/* Invisible backdrop to close dropdown */}
+                      <div
+                        onClick={() => setCalendarDropdownOpen(false)}
+                        style={{
+                          position: 'fixed',
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          bottom: 0,
+                          zIndex: 999
+                        }}
+                      />
+                      {/* Dropdown menu */}
+                      <div style={{
+                        position: 'absolute',
+                        top: 'calc(100% + 0.5rem)',
+                        right: 0,
+                        background: '#ffffff',
+                        border: '1px solid #e5e7eb',
+                        borderRadius: '12px',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                        zIndex: 1000,
+                        minWidth: '120px',
+                        overflow: 'hidden'
+                      }}>
+                        <button
+                          onClick={() => {
+                            soundEffects.playClick();
+                            setCalendarViewType('month');
+                            setCalendarDropdownOpen(false);
+                          }}
+                          style={{
+                            width: '100%',
+                            padding: '0.65rem 1rem',
+                            background: calendarViewType === 'month' ? '#f9fafb' : 'transparent',
+                            border: 'none',
+                            textAlign: 'left',
+                            fontSize: '0.8rem',
+                            fontWeight: '400',
+                            color: calendarViewType === 'month' ? '#08245b' : '#1a1a1a',
+                            cursor: 'pointer',
+                            transition: 'all 0.15s ease'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.background = '#f9fafb';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.background = calendarViewType === 'month' ? '#f9fafb' : 'transparent';
+                          }}
+                        >
+                          Month
+                        </button>
+                        <button
+                          onClick={() => {
+                            soundEffects.playClick();
+                            setCalendarViewType('week');
+                            setCalendarDropdownOpen(false);
+                          }}
+                          style={{
+                            width: '100%',
+                            padding: '0.65rem 1rem',
+                            background: calendarViewType === 'week' ? '#f9fafb' : 'transparent',
+                            border: 'none',
+                            textAlign: 'left',
+                            fontSize: '0.8rem',
+                            fontWeight: '400',
+                            color: calendarViewType === 'week' ? '#08245b' : '#1a1a1a',
+                            cursor: 'pointer',
+                            transition: 'all 0.15s ease'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.background = '#f9fafb';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.background = calendarViewType === 'week' ? '#f9fafb' : 'transparent';
+                          }}
+                        >
+                          Week
+                        </button>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
 
@@ -1712,8 +1694,8 @@ const CourseContent = () => {
                   <div
                     key={idx}
                     style={{
-                      padding: '0.75rem',
-                      fontSize: '0.75rem',
+                      padding: '0.4rem',
+                      fontSize: '0.65rem',
                       fontWeight: '600',
                       color: '#6b7280',
                       textAlign: 'center',
@@ -1733,7 +1715,7 @@ const CourseContent = () => {
                 <div style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(7, 1fr)',
-                  gridAutoRows: '90px',
+                  gridAutoRows: '95px',
                   borderLeft: '1px solid #d1d5db',
                   borderRight: '1px solid #d1d5db',
                   borderBottom: '1px solid #d1d5db'
@@ -1746,16 +1728,16 @@ const CourseContent = () => {
                       <div
                         key={`${weekIdx}-${dayIdx}`}
                         style={{
-                          padding: '0.375rem',
+                          padding: '0.4rem',
                           borderRight: dayIdx < 6 ? '1px solid #d1d5db' : 'none',
                           borderBottom: weekIdx < totalWeeks - 1 ? '1px solid #d1d5db' : 'none',
                           background: day.isCurrentMonth ? '#ffffff' : '#fafafa',
                           position: 'relative',
                           display: 'flex',
                           flexDirection: 'column',
-                          height: '90px',
-                          minHeight: '90px',
-                          maxHeight: '90px',
+                          height: '95px',
+                          minHeight: '95px',
+                          maxHeight: '95px',
                           overflow: 'hidden'
                         }}
                       >
@@ -1793,24 +1775,27 @@ const CourseContent = () => {
                         }}>
                           {day.items.slice(0, 3).map((item, itemIdx) => {
                             const isDiagnostic = item.isDiagnostic;
-                            const isPractice = item.type === 'practice' || item.type === 'practice_test';
+                            const isPracticeTest = item.type === 'practice_test';
+                            const isPractice = item.type === 'practice';
                             const isExamDay = item.type === 'exam_day';
                             const isReview = item.type === 'review';
                             const isMockExam = item.type === 'mock_exam';
 
                             const dotColor = isExamDay ? '#ffffff'
                               : isDiagnostic ? '#b91c1c'
-                              : isPractice ? '#ef4444'
+                              : isPracticeTest ? '#dc2626'
+                              : isMockExam ? '#dc2626'
+                              : isPractice ? '#f59e0b'
                               : isReview ? '#10b981'
-                              : isMockExam ? '#3b82f6'
-                              : '#64748b';
+                              : '#3b82f6';
 
                             const textColor = isExamDay ? '#ffffff'
                               : isDiagnostic ? '#b91c1c'
-                              : isPractice ? '#dc2626'
+                              : isPracticeTest ? '#dc2626'
+                              : isMockExam ? '#dc2626'
+                              : isPractice ? '#f59e0b'
                               : isReview ? '#10b981'
-                              : isMockExam ? '#3b82f6'
-                              : '#6b7280';
+                              : '#3b82f6';
 
                             // Exam day gets special treatment
                             if (isExamDay) {
@@ -1996,24 +1981,27 @@ const CourseContent = () => {
                         const isCompleted = status === 'completed';
                         const isExamDay = item.type === 'exam_day';
                         const isDiagnostic = item.isDiagnostic;
-                        const isPractice = item.type === 'practice' || item.type === 'practice_test';
+                        const isPracticeTest = item.type === 'practice_test';
+                        const isPractice = item.type === 'practice';
                         const isReview = item.type === 'review';
                         const isMockExam = item.type === 'mock_exam';
 
                         // Determine dot color and text color based on item type
                         const dotColor = isExamDay ? '#dc2626'
                           : isDiagnostic ? '#b91c1c'
-                          : isPractice ? '#ef4444'
+                          : isPracticeTest ? '#dc2626'
+                          : isMockExam ? '#dc2626'
+                          : isPractice ? '#f59e0b'
                           : isReview ? '#10b981'
-                          : isMockExam ? '#3b82f6'
-                          : '#64748b';
+                          : '#3b82f6';
 
                         const textColor = isExamDay ? '#dc2626'
                           : isDiagnostic ? '#b91c1c'
-                          : isPractice ? '#dc2626'
+                          : isPracticeTest ? '#dc2626'
+                          : isMockExam ? '#dc2626'
+                          : isPractice ? '#f59e0b'
                           : isReview ? '#10b981'
-                          : isMockExam ? '#3b82f6'
-                          : '#6b7280';
+                          : '#3b82f6';
 
                         const handleCheckboxClick = async (e) => {
                           e.stopPropagation();
@@ -2429,79 +2417,98 @@ const CourseContent = () => {
       </div>
 
       {/* Preview Item Modal */}
-      {previewItem && (
-        <div
-          onClick={() => setPreviewItem(null)}
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: 'rgba(0, 0, 0, 0.5)',
-            zIndex: 3000,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '1rem'
-          }}
-        >
+      {previewItem && (() => {
+        // Determine colors based on item type
+        const isPracticeTest = previewItem.type === 'practice_test' || previewItem.type === 'test';
+        const isPractice = previewItem.type === 'practice';
+        const isReview = previewItem.type === 'review';
+        const isMockExam = previewItem.type === 'mock_exam';
+
+        const headerBg = isPracticeTest ? '#fee2e2' : // Red for practice tests
+                         isPractice ? '#fef3c7' :      // Yellow for practice
+                         isReview ? '#dcfce7' :         // Green for review
+                         isMockExam ? '#fef3c7' :       // Yellow for mock exams
+                         '#dbeafe';                      // Blue for lessons
+
+        const headerBorder = isPracticeTest ? '#fecaca' :
+                            isPractice ? '#fde68a' :
+                            isReview ? '#bbf7d0' :
+                            isMockExam ? '#fde68a' :
+                            '#bfdbfe';
+
+        return (
           <div
-            onClick={(e) => e.stopPropagation()}
+            onClick={() => setPreviewItem(null)}
             style={{
-              background: 'white',
-              borderRadius: '16px',
-              padding: '0',
-              maxWidth: '500px',
-              width: '100%',
-              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
-              overflow: 'hidden'
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'rgba(0, 0, 0, 0.5)',
+              zIndex: 3000,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '1rem'
             }}
           >
-            {/* Header */}
-            <div style={{
-              background: '#f9fafb',
-              borderBottom: '1px solid #e5e7eb',
-              padding: '2rem',
-              color: '#1a1a1a'
-            }}>
+            <div
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                background: 'white',
+                borderRadius: '16px',
+                padding: '0',
+                maxWidth: '500px',
+                width: '100%',
+                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+                overflow: 'hidden'
+              }}
+            >
+              {/* Header */}
               <div style={{
-                fontSize: '0.875rem',
-                fontWeight: '500',
-                opacity: 0.9,
-                marginBottom: '0.5rem'
+                background: headerBg,
+                borderBottom: `1px solid ${headerBorder}`,
+                padding: '2rem',
+                color: '#1a1a1a'
               }}>
-                {previewItem.date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
-              </div>
-              <h2 style={{
-                margin: 0,
-                fontSize: '1.75rem',
-                fontWeight: '700',
-                lineHeight: '1.2'
-              }}>
-                {previewItem.title}
-              </h2>
-              <div style={{
-                marginTop: '0.75rem',
-                fontSize: '0.875rem',
-                color: '#6b7280',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem'
-              }}>
-                <span style={{
-                  background: '#e5e7eb',
-                  padding: '0.25rem 0.75rem',
-                  borderRadius: '12px',
+                <div style={{
+                  fontSize: '0.875rem',
                   fontWeight: '500',
-                  color: '#374151'
+                  opacity: 0.9,
+                  marginBottom: '0.5rem'
                 }}>
-                  {previewItem.type === 'test' ? 'Practice Test' : previewItem.type === 'mock_exam' ? 'Mock Exam' : previewItem.type === 'review' ? 'Review Day' : previewItem.type === 'practice' ? 'Practice' : 'Lesson'}
-                </span>
-                <span>•</span>
-                <span>{previewItem.duration} minutes</span>
+                  {previewItem.date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
+                </div>
+                <h2 style={{
+                  margin: 0,
+                  fontSize: '1.75rem',
+                  fontWeight: '700',
+                  lineHeight: '1.2'
+                }}>
+                  {previewItem.title}
+                </h2>
+                <div style={{
+                  marginTop: '0.75rem',
+                  fontSize: '0.875rem',
+                  color: '#6b7280',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem'
+                }}>
+                  <span style={{
+                    background: '#e5e7eb',
+                    padding: '0.25rem 0.75rem',
+                    borderRadius: '12px',
+                    fontWeight: '500',
+                    color: '#374151'
+                  }}>
+                    {previewItem.type === 'practice_test' || previewItem.type === 'test' ? 'Practice Test' : previewItem.type === 'mock_exam' ? 'Mock Exam' : previewItem.type === 'review' ? 'Review Day' : previewItem.type === 'practice' ? 'Practice' : 'Lesson'}
+                  </span>
+                  <span>•</span>
+                  <span>{previewItem.duration} minutes</span>
+                </div>
               </div>
-            </div>
 
             {/* Content */}
             <div style={{ padding: '2rem' }}>
@@ -2587,27 +2594,31 @@ const CourseContent = () => {
                     </ul>
                   </div>
                 </div>
-              ) : previewItem.type === 'test' ? (
+              ) : isPracticeTest ? (
                 <div>
                   <div style={{
-                    background: '#eff6ff',
-                    border: '1px solid #bfdbfe',
+                    background: '#fee2e2',
+                    border: '2px solid #fca5a5',
                     borderRadius: '8px',
                     padding: '1rem',
                     marginBottom: '1.5rem'
                   }}>
                     <div style={{
                       fontSize: '0.875rem',
-                      fontWeight: '600',
-                      color: '#1e40af',
-                      marginBottom: '0.5rem'
+                      fontWeight: '700',
+                      color: '#991b1b',
+                      marginBottom: '0.5rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem'
                     }}>
-                      Test Details
+                      <span style={{ fontSize: '1.25rem' }}>📝</span>
+                      Practice Test
                     </div>
-                    <div style={{ fontSize: '0.875rem', color: '#374151', lineHeight: '1.5' }}>
+                    <div style={{ fontSize: '0.875rem', color: '#7f1d1d', lineHeight: '1.5' }}>
                       {previewItem.section === 'full'
-                        ? 'This is a full-length practice test covering all four sections: English, Math, Reading, and Science.'
-                        : `This practice test focuses on the ${previewItem.section.charAt(0).toUpperCase() + previewItem.section.slice(1)} section.`
+                        ? 'This is a full-length practice test covering all four sections: English, Math, Reading, and Science. Simulate real test conditions for the best practice.'
+                        : `This practice test focuses on the ${previewItem.section?.charAt(0).toUpperCase() + previewItem.section?.slice(1)} section. Master this section with realistic practice questions.`
                       }
                     </div>
                   </div>
@@ -2819,11 +2830,15 @@ const CourseContent = () => {
                     padding: '0.875rem',
                     border: 'none',
                     borderRadius: '8px',
-                    background: previewItem.type === 'test' || previewItem.type === 'mock_exam'
-                      ? 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)'
+                    background: isPracticeTest
+                      ? 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)'  // Red for practice tests
+                      : previewItem.type === 'mock_exam'
+                      ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'  // Yellow for mock exams
                       : previewItem.type === 'review'
-                      ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
-                      : 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
+                      ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'  // Green for review
+                      : isPractice
+                      ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'  // Yellow for practice
+                      : 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)', // Blue for lessons
                     color: 'white',
                     fontSize: '0.9375rem',
                     fontWeight: '600',
@@ -2840,13 +2855,14 @@ const CourseContent = () => {
                     e.target.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
                   }}
                 >
-                  {previewItem.type === 'review' ? 'Start Review' : previewItem.type === 'mock_exam' ? 'Start Mock Exam' : previewItem.type === 'test' ? 'Start Test' : 'Start Lesson'} →
+                  {previewItem.type === 'review' ? 'Start Review' : previewItem.type === 'mock_exam' ? 'Start Mock Exam' : isPracticeTest ? 'Start Test' : isPractice ? 'Start Practice' : 'Start Lesson'} →
                 </button>
               </div>
             </div>
           </div>
         </div>
-      )}
+        );
+      })()}
 
       {/* Edit Goals Modal */}
       {editModalOpen && (() => {

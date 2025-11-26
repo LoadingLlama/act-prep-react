@@ -20,20 +20,32 @@ const useStyles = createUseStyles({
   container: {
     maxWidth: '1400px',
     margin: '0 auto',
-    padding: '2rem',
+    padding: '0.5rem 0',
     '@media (max-width: 768px)': {
-      padding: '1rem'
+      padding: '0.375rem 0'
+    },
+    '@media (max-width: 480px)': {
+      padding: '0.25rem 0'
     }
   },
   header: {
-    marginBottom: '2rem'
+    marginBottom: '1rem'
   },
   title: {
-    fontSize: '2rem',
+    fontSize: '1.75rem',
     fontWeight: '700',
-    color: '#1a1a1a',
+    background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
     marginBottom: '0.5rem',
-    letterSpacing: '-0.02em'
+    letterSpacing: '-0.02em',
+    '@media (max-width: 768px)': {
+      fontSize: '1.5rem'
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '1.25rem'
+    }
   },
   subtitle: {
     fontSize: '1rem',
@@ -63,7 +75,7 @@ const useStyles = createUseStyles({
   emptyState: {
     textAlign: 'center',
     padding: '4rem 2rem',
-    background: '#f9fafb',
+    background: '#ffffff',
     borderRadius: '12px',
     border: '1px solid #e5e7eb'
   },
@@ -461,6 +473,7 @@ const InsightsPage = () => {
   const [featureAccess, setFeatureAccess] = useState(null);
   const [viewingDiagnosticReview, setViewingDiagnosticReview] = useState(false);
   const [lessonMetadataMap, setLessonMetadataMap] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (user) {
@@ -500,6 +513,27 @@ const InsightsPage = () => {
   const loadInsights = async () => {
     try {
       logger.info('InsightsPage', 'loadInsights', { userId: user.id });
+
+      // Check cache first
+      const cacheKey = `insights_${user.id}`;
+      const cached = sessionStorage.getItem(cacheKey);
+      const cacheTimestamp = sessionStorage.getItem(`${cacheKey}_timestamp`);
+      const now = Date.now();
+
+      // Use cache if less than 30 seconds old
+      if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 30000) {
+        const cachedData = JSON.parse(cached);
+        setInsights(cachedData);
+        setIsLoading(false);
+        console.log('📊 Using cached insights data');
+
+        // Still refresh in background
+        refreshInsightsInBackground(cacheKey);
+        return;
+      }
+
+      // Only set loading if we don't have cached data
+      setIsLoading(true);
 
       // Load insights data
       const insightsData = await InsightsService.getUserInsights(user.id);
@@ -615,12 +649,34 @@ const InsightsPage = () => {
 
       setInsights(insightsData);
 
+      // Cache the insights
+      sessionStorage.setItem(cacheKey, JSON.stringify(insightsData));
+      sessionStorage.setItem(`${cacheKey}_timestamp`, String(Date.now()));
+
       logger.info('InsightsPage', 'loadInsightsComplete', {
         hasDiagnostic: insightsData.diagnostic.hasCompletedDiagnostic
       });
     } catch (error) {
       logger.error('InsightsPage', 'loadInsightsFailed', { error });
       console.error('Failed to load insights:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const refreshInsightsInBackground = async (cacheKey) => {
+    try {
+      const insightsData = await InsightsService.getUserInsights(user.id);
+
+      // Update cache
+      sessionStorage.setItem(cacheKey, JSON.stringify(insightsData));
+      sessionStorage.setItem(`${cacheKey}_timestamp`, String(Date.now()));
+
+      // Update state
+      setInsights(insightsData);
+      console.log('📊 Refreshed insights in background');
+    } catch (error) {
+      console.error('Background insights refresh error:', error);
     }
   };
 
@@ -705,6 +761,21 @@ const InsightsPage = () => {
     }
   };
 
+  // Only show loading if we have no data AND we're still loading
+  if (isLoading && !insights) {
+    return (
+      <div className={classes.container}>
+        <div className={classes.header}>
+          <h1 className={classes.title}>Test Insights</h1>
+        </div>
+        <div className={classes.loadingContainer}>
+          <div className={classes.loadingSpinner}></div>
+          <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>Loading your insights...</p>
+        </div>
+      </div>
+    );
+  }
+
   const hasAnyData = insights?.diagnostic?.hasCompletedDiagnostic ||
     insights?.lessonPerformance?.length > 0 ||
     insights?.learningPath?.hasLearningPath;
@@ -714,7 +785,6 @@ const InsightsPage = () => {
       <div className={classes.container}>
         <div className={classes.header}>
           <h1 className={classes.title}>Test Insights</h1>
-          <p className={classes.subtitle}>Track your progress and identify areas for improvement</p>
         </div>
 
         {/* Diagnostic Test CTA */}
@@ -749,7 +819,6 @@ const InsightsPage = () => {
       <div className={classes.container}>
         <div className={classes.header}>
           <h1 className={classes.title}>Test Insights</h1>
-          <p className={classes.subtitle}>Track your progress and identify areas for improvement</p>
         </div>
 
         {/* Upgrade Prompt Banner */}
@@ -779,10 +848,6 @@ const InsightsPage = () => {
       {/* Diagnostic Test Results or Loading Card */}
       {(insights.diagnostic.hasCompletedDiagnostic || localStorage.getItem('diagnosticProcessing')) && (
         <div className={classes.diagnosticSection}>
-          <h2 className={classes.sectionTitle}>
-            <HiClipboardDocumentCheck className={classes.sectionIcon} />
-            Diagnostic Test
-          </h2>
           {/* Loading Card */}
           {!insights.diagnostic.hasCompletedDiagnostic && localStorage.getItem('diagnosticProcessing') ? (
             <div className={classes.diagnosticCard}>
@@ -861,52 +926,6 @@ const InsightsPage = () => {
         </div>
       )}
 
-      {/* Learning Path Progress */}
-      {insights.learningPath.hasLearningPath && (
-        <div className={classes.section}>
-          <h2 className={classes.sectionTitle}>
-            <HiArrowTrendingUp className={classes.sectionIcon} />
-            Learning Path Progress
-          </h2>
-          <div className={classes.grid}>
-            <div className={`${classes.card} ${classes.learningPathCard} ${showBlurOverlay ? classes.lockedCard : ''}`}>
-              {showBlurOverlay && (
-                <div className={classes.lockBadge}>
-                  <HiLockClosed style={{ fontSize: '0.875rem' }} />
-                  Pro
-                </div>
-              )}
-              <div className={classes.cardTitle}>Your Study Plan</div>
-              <div className={classes.pathStats}>
-                <div className={classes.pathStatItem}>
-                  <div className={classes.pathStatValue}>
-                    {insights.learningPath.stats.completionPercentage.toFixed(0)}%
-                  </div>
-                  <div className={classes.pathStatLabel}>Complete</div>
-                </div>
-                <div className={classes.pathStatItem}>
-                  <div className={classes.pathStatValue}>
-                    {insights.learningPath.stats.completed}
-                  </div>
-                  <div className={classes.pathStatLabel}>Lessons Completed</div>
-                </div>
-                <div className={classes.pathStatItem}>
-                  <div className={classes.pathStatValue}>
-                    {insights.learningPath.stats.inProgress}
-                  </div>
-                  <div className={classes.pathStatLabel}>In Progress</div>
-                </div>
-                <div className={classes.pathStatItem}>
-                  <div className={classes.pathStatValue}>
-                    {insights.learningPath.stats.pending}
-                  </div>
-                  <div className={classes.pathStatLabel}>Remaining</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Weak Areas and Strengths */}
       <div className={classes.section}>
@@ -978,67 +997,6 @@ const InsightsPage = () => {
         </div>
       </div>
 
-      {/* Overall Stats */}
-      {insights.lessonPerformance.length > 0 && (
-        <div className={classes.section}>
-          <h2 className={classes.sectionTitle}>
-            <HiAcademicCap className={classes.sectionIcon} />
-            Overall Performance
-          </h2>
-          <div className={classes.grid}>
-            <div className={`${classes.card} ${showBlurOverlay ? classes.lockedCard : ''}`}>
-              {showBlurOverlay && (
-                <div className={classes.lockBadge}>
-                  <HiLockClosed style={{ fontSize: '0.875rem' }} />
-                  Pro
-                </div>
-              )}
-              <div className={classes.cardTitle}>Total Questions</div>
-              <div className={classes.cardValue}>
-                {insights.lessonPerformance.reduce((sum, perf) => sum + perf.total_questions_attempted, 0)}
-              </div>
-              <div className={classes.cardSubtext}>
-                Across all lessons
-              </div>
-            </div>
-            <div className={`${classes.card} ${showBlurOverlay ? classes.lockedCard : ''}`}>
-              {showBlurOverlay && (
-                <div className={classes.lockBadge}>
-                  <HiLockClosed style={{ fontSize: '0.875rem' }} />
-                  Pro
-                </div>
-              )}
-              <div className={classes.cardTitle}>Average Accuracy</div>
-              <div className={classes.cardValue}>
-                {(insights.lessonPerformance.reduce((sum, perf) => sum + perf.accuracy_percentage, 0) /
-                  insights.lessonPerformance.length).toFixed(0)}%
-              </div>
-              <div className={classes.cardSubtext}>
-                Across {insights.lessonPerformance.length} lessons
-              </div>
-            </div>
-            <div className={`${classes.card} ${showBlurOverlay ? classes.lockedCard : ''}`}>
-              {showBlurOverlay && (
-                <div className={classes.lockBadge}>
-                  <HiLockClosed style={{ fontSize: '0.875rem' }} />
-                  Pro
-                </div>
-              )}
-              <div className={classes.cardTitle}>Study Time</div>
-              <div className={classes.cardValue}>
-                {(() => {
-                  const totalSeconds = insights.lessonPerformance.reduce((sum, perf) => sum + (perf.total_time_spent_seconds || 0), 0);
-                  const hours = Math.floor(totalSeconds / 3600);
-                  return hours > 0 ? `${hours}h` : '0h';
-                })()}
-              </div>
-              <div className={classes.cardSubtext}>
-                Total time invested
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
       </div>
 
       {/* Diagnostic Test Review Modal */}

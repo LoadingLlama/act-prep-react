@@ -74,7 +74,7 @@ export const headerStyles = {
   },
   content: {
     flex: 1,
-    padding: '2rem 4rem',
+    padding: '0.25rem 4rem 2rem 4rem',
     maxWidth: '1400px',
     margin: '0 auto',
     width: '100%',
@@ -113,14 +113,14 @@ export const headerStyles = {
     margin: '0'
   },
   sectionTitle: {
-    fontSize: '2.5rem',
-    fontWeight: 900,
+    fontSize: '1.75rem',
+    fontWeight: 700,
     color: '#000000',
-    marginBottom: '2rem',
+    marginBottom: '1.5rem',
     marginTop: '0',
     textAlign: 'left',
     lineHeight: '1.2',
-    letterSpacing: '-0.04em'
+    letterSpacing: '-0.02em'
   },
   testGrid: {
     display: 'grid',
@@ -157,98 +157,71 @@ export const headerStyles = {
     }
   },
   topHeader: {
-    position: 'absolute',
-    top: '1.5rem',
-    right: '2rem',
-    zIndex: 100,
-    '@media (max-width: 1024px)': {
-      top: '1rem',
-      right: '1rem'
+    width: '100%',
+    background: '#ffffff',
+    borderBottom: '1px solid #e5e7eb',
+    padding: '0.625rem 0',
+    zIndex: 100
+  },
+  topHeaderContent: {
+    maxWidth: '1400px',
+    margin: '0 auto',
+    padding: '0 4rem',
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    '@media (max-width: 768px)': {
+      padding: '0 2rem'
+    },
+    '@media (max-width: 480px)': {
+      padding: '0 1rem'
     }
   },
   profilePicture: {
-    width: '44px',
-    height: '44px',
+    width: '40px',
+    height: '40px',
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #d1d5db 0%, #9ca3af 100%)',
+    background: 'linear-gradient(135deg, #ff6b9d 0%, #c06c84 20%, #f67280 40%, #ffa07a 60%, #fa8072 80%, #ff6b9d 100%)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     color: '#ffffff',
-    fontSize: '1rem',
+    fontSize: '1.375rem',
     fontWeight: '600',
-    border: '2px solid #e5e7eb',
+    border: '2px solid #ffd6e0',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
-    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
+    boxShadow: '0 2px 8px rgba(255, 107, 157, 0.25)',
     '@media (max-width: 768px)': {
       width: '36px',
       height: '36px',
-      fontSize: '0.85rem'
+      fontSize: '1.25rem'
     },
     '@media (max-width: 480px)': {
       width: '32px',
       height: '32px',
-      fontSize: '0.75rem'
+      fontSize: '1.1rem'
     },
     '&:hover': {
       transform: 'scale(1.05)',
-      borderColor: '#9ca3af',
-      boxShadow: '0 4px 12px rgba(156, 163, 175, 0.2)'
-    }
-  },
-  profilePicturePro: {
-    border: '2.5px solid transparent',
-    backgroundImage: 'linear-gradient(#9ca3af, #6b7280), linear-gradient(135deg, #e8eef5 0%, #cbd5e1 25%, #94a3b8 50%, #cbd5e1 75%, #e8eef5 100%)',
-    backgroundOrigin: 'border-box',
-    backgroundClip: 'padding-box, border-box',
-    boxShadow: '0 0 12px rgba(148, 163, 184, 0.6), 0 0 20px rgba(203, 213, 225, 0.4), 0 2px 8px rgba(100, 116, 139, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4)',
-    '&:hover': {
-      transform: 'scale(1.05)',
-      boxShadow: '0 0 16px rgba(148, 163, 184, 0.8), 0 0 24px rgba(203, 213, 225, 0.5), 0 3px 10px rgba(100, 116, 139, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4)'
-    }
-  },
-  statusBadge: {
-    position: 'absolute',
-    bottom: '-6px',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    minWidth: '20px',
-    height: '11px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: '5px',
-    padding: '0 4px',
-    fontSize: '0.48rem',
-    boxShadow: '0 1px 4px rgba(0, 0, 0, 0.15)',
-    '@media (max-width: 768px)': {
-      minWidth: '18px',
-      height: '10px',
-      fontSize: '0.42rem',
-      padding: '0 3px',
-      bottom: '-5px'
-    },
-    '@media (max-width: 480px)': {
-      minWidth: '16px',
-      height: '9px',
-      fontSize: '0.38rem',
-      padding: '0 2px',
-      bottom: '-4px'
+      borderColor: '#ffb3d0',
+      boxShadow: '0 4px 12px rgba(255, 107, 157, 0.35)'
     }
   },
   proBadge: {
-    background: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)',
-    color: '#64748b',
-    border: '0.5px solid #cbd5e1',
-    boxShadow: '0 1px 2px rgba(100, 116, 139, 0.1)',
-    fontWeight: '500',
-    letterSpacing: '0.03em',
-    textTransform: 'uppercase'
-  },
-  trialBadge: {
-    background: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)',
-    color: '#1e40af',
-    border: '1px solid #93c5fd'
+    background: 'rgba(16, 185, 129, 0.15)',
+    backdropFilter: 'blur(10px)',
+    WebkitBackdropFilter: 'blur(10px)',
+    color: '#059669',
+    border: '1px solid rgba(16, 185, 129, 0.3)',
+    boxShadow: '0 1px 3px rgba(16, 185, 129, 0.1)',
+    fontWeight: '600',
+    letterSpacing: '0.02em',
+    fontSize: '0.7rem',
+    padding: '0.3rem 0.6rem',
+    borderRadius: '6px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 };

@@ -56,6 +56,7 @@ export default function AppLayout() {
   });
   const [hoveredMoreTag, setHoveredMoreTag] = useState(null);
   const [moreTagPosition, setMoreTagPosition] = useState({ top: 0, left: 0 });
+  const [headerControls, setHeaderControls] = useState(null);
 
   // Get active view from URL
   const activeView = location.pathname.split('/')[2] || 'home';
@@ -276,20 +277,25 @@ export default function AppLayout() {
 
       {/* Main Content Area */}
       <div className={classes.mainContent}>
-        {/* Top Right Header - Always show */}
+        {/* Top Header Bar - Always show */}
         <div className={classes.topHeader}>
-          <div style={{ position: 'relative' }}>
-            <div
-              className={`${classes.profilePicture} ${user && isPro ? classes.profilePicturePro : ''}`}
-              onClick={() => handleNavigate('profile')}
-            >
-              {user ? getUserInitials() : <HiUser size={22} />}
+          <div className={classes.topHeaderContent}>
+            <div style={{ flex: 1, display: 'flex', alignItems: 'center' }}>
+              {headerControls}
             </div>
-            {user && (
-              <div className={`${classes.statusBadge} ${isPro ? classes.proBadge : classes.trialBadge}`}>
-                {isPro ? 'PRO' : <HiClock size={10} />}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              {user && isPro && (
+                <div className={classes.proBadge}>
+                  Pro
+                </div>
+              )}
+              <div
+                className={classes.profilePicture}
+                onClick={() => handleNavigate('profile')}
+              >
+                🐱
               </div>
-            )}
+            </div>
           </div>
         </div>
 
@@ -308,7 +314,8 @@ export default function AppLayout() {
             updateLessonProgress,
             setHoveredMoreTag,
             setMoreTagPosition,
-            setDiagnosticTestOpen
+            setDiagnosticTestOpen,
+            setHeaderControls
           }} />
         </div>
       </div>

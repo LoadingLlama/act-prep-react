@@ -8,35 +8,35 @@ import { createUseStyles } from 'react-jss';
 export const useLessonsContentStyles = createUseStyles({
   lessonsContainer: {
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    padding: '2rem',
+    padding: '0.5rem 0',
     margin: '0 auto',
     minHeight: '100vh',
-    background: '#fafafa',
+    background: '#ffffff',
     maxWidth: '1200px',
     '@media (max-width: 768px)': {
-      padding: '0.75rem'
+      padding: '0.375rem 0'
     },
     '@media (max-width: 480px)': {
-      padding: '0.5rem'
+      padding: '0.25rem 0'
     }
   },
   pageHeader: {
     padding: '0',
-    marginBottom: '1.5rem',
+    marginBottom: '1rem',
     '@media (max-width: 768px)': {
-      marginBottom: '1rem'
+      marginBottom: '0.75rem'
     },
     '@media (max-width: 480px)': {
-      marginBottom: '0.75rem'
+      marginBottom: '0.5rem'
     }
   },
   modeToggle: {
     display: 'inline-flex',
-    background: '#f1f5f9',
+    background: '#ffffff',
     borderRadius: '100px',
     padding: '0.25rem',
     gap: '0.25rem',
-    border: '1px solid #e2e8f0'
+    border: '1px solid #e5e7eb'
   },
   modeButton: {
     padding: '0.625rem 1.5rem',
@@ -56,19 +56,19 @@ export const useLessonsContentStyles = createUseStyles({
     '&.active': {
       background: '#08245b',
       color: '#ffffff',
-      fontWeight: '600',
+      fontWeight: '500',
       boxShadow: '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)'
     }
   },
   pageTitle: {
-    fontSize: '2.5rem',
-    fontWeight: '900',
+    fontSize: '1.75rem',
+    fontWeight: '700',
     background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
     margin: '0 0 0.5rem 0',
-    letterSpacing: '-0.04em',
+    letterSpacing: '-0.02em',
     '@media (max-width: 768px)': {
       fontSize: '1.5rem'
     },
@@ -99,12 +99,12 @@ export const useLessonsContentStyles = createUseStyles({
   filterButtons: {
     display: 'flex',
     position: 'relative',
-    background: '#f1f5f9',
+    background: '#ffffff',
     borderRadius: '100px',
     padding: '0.25rem',
     gap: '0.25rem',
     width: 'fit-content',
-    border: '1px solid #e2e8f0'
+    border: '1px solid #e5e7eb'
   },
   filterButton: {
     background: 'transparent',
@@ -128,7 +128,7 @@ export const useLessonsContentStyles = createUseStyles({
     },
     '&.active': {
       color: '#ffffff',
-      fontWeight: '600'
+      fontWeight: '500'
     }
   },
   filterSlider: {
@@ -157,10 +157,10 @@ export const useLessonsContentStyles = createUseStyles({
   viewToggle: {
     display: 'flex',
     gap: '0.25rem',
-    background: '#f1f5f9',
+    background: '#ffffff',
     borderRadius: '100px',
     padding: '0.25rem',
-    border: '1px solid #e2e8f0'
+    border: '1px solid #e5e7eb'
   },
   viewButton: {
     background: 'transparent',
@@ -175,6 +175,7 @@ export const useLessonsContentStyles = createUseStyles({
     justifyContent: 'center',
     minWidth: '36px',
     minHeight: '36px',
+    fontWeight: '500',
     '&:hover': {
       color: '#1a1a1a',
       background: '#e2e8f0'
@@ -182,6 +183,7 @@ export const useLessonsContentStyles = createUseStyles({
     '&.active': {
       background: '#08245b',
       color: '#ffffff',
+      fontWeight: '500',
       boxShadow: '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)'
     }
   },
@@ -357,7 +359,7 @@ export const useLessonsContentStyles = createUseStyles({
   },
   unitHeader: {
     padding: '1rem 1.25rem',
-    background: '#f8fafc',
+    background: '#ffffff',
     borderRadius: '8px 8px 0 0',
     borderBottom: '1px solid #e5e7eb',
     display: 'flex',
@@ -367,12 +369,15 @@ export const useLessonsContentStyles = createUseStyles({
   unitTitle: {
     fontSize: '0.875rem',
     fontWeight: '700',
-    color: '#1a1a1a',
+    background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
     letterSpacing: '-0.01em',
     margin: 0
   },
   unitBox: {
-    background: 'linear-gradient(135deg, #ffffff 0%, #fafafa 100%)',
+    background: '#ffffff',
     border: '1px solid #e5e7eb',
     borderTop: '3px solid #e5e7eb',
     borderRadius: '8px',
