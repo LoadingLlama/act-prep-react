@@ -5,12 +5,52 @@
 
 import React, { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import { HiPencilSquare, HiQuestionMarkCircle, HiCheckCircle, HiChevronDown } from 'react-icons/hi2';
+import { HiPencilSquare, HiQuestionMarkCircle, HiCheckCircle, HiChevronDown, HiFlag } from 'react-icons/hi2';
 import { useCourseStyles } from '../../styles/app/course.styles';
 import { supabase } from '../../services/api/supabase.service';
 import { useAuth } from '../../contexts/AuthContext';
 import soundEffects from '../../services/soundEffects';
 import LearningPathService from '../../services/api/learning-path.service';
+
+// Helper function to get holidays for a given year
+const getHolidays = (year) => {
+  // Helper to get nth weekday of month (e.g., 3rd Monday)
+  const getNthWeekdayOfMonth = (year, month, weekday, n) => {
+    const date = new Date(year, month, 1);
+    let count = 0;
+    while (date.getMonth() === month) {
+      if (date.getDay() === weekday) {
+        count++;
+        if (count === n) return new Date(date);
+      }
+      date.setDate(date.getDate() + 1);
+    }
+    return null;
+  };
+
+  // Helper to get last weekday of month
+  const getLastWeekdayOfMonth = (year, month, weekday) => {
+    const date = new Date(year, month + 1, 0); // Last day of month
+    while (date.getDay() !== weekday) {
+      date.setDate(date.getDate() - 1);
+    }
+    return date;
+  };
+
+  return {
+    [`${year}-01-01`]: { name: "New Year's Day", emoji: '🎉', color: '#3b82f6' },
+    [`${year}-02-14`]: { name: "Valentine's Day", emoji: '❤️', color: '#ec4899' },
+    [getNthWeekdayOfMonth(year, 0, 1, 3).toISOString().split('T')[0]]: { name: 'MLK Jr. Day', emoji: '✊', color: '#6366f1' },
+    [getNthWeekdayOfMonth(year, 1, 1, 3).toISOString().split('T')[0]]: { name: "Presidents' Day", emoji: '🇺🇸', color: '#dc2626' },
+    [getLastWeekdayOfMonth(year, 4, 1).toISOString().split('T')[0]]: { name: 'Memorial Day', emoji: '🇺🇸', color: '#dc2626' },
+    [`${year}-07-04`]: { name: 'Independence Day', emoji: '🎆', color: '#dc2626' },
+    [getNthWeekdayOfMonth(year, 8, 1, 1).toISOString().split('T')[0]]: { name: 'Labor Day', emoji: '⚒️', color: '#f59e0b' },
+    [`${year}-10-31`]: { name: 'Halloween', emoji: '🎃', color: '#f97316' },
+    [getNthWeekdayOfMonth(year, 10, 4, 4).toISOString().split('T')[0]]: { name: 'Thanksgiving', emoji: '🦃', color: '#f59e0b' },
+    [`${year}-12-25`]: { name: 'Christmas', emoji: '🎄', color: '#22c55e' },
+    [`${year}-12-31`]: { name: "New Year's Eve", emoji: '🎊', color: '#3b82f6' }
+  };
+};
 
 const CourseContent = () => {
   const classes = useCourseStyles();
@@ -92,10 +132,15 @@ const CourseContent = () => {
   // Load user goals and check diagnostic completion on mount
   useEffect(() => {
     if (user) {
-      loadUserGoals();
-      checkDiagnosticCompletion();
-      loadDiagnosticResults();
-      loadLearningPath();
+      // Run all data loading in parallel for faster initial load
+      Promise.all([
+        loadUserGoals(),
+        checkDiagnosticCompletion(),
+        loadDiagnosticResults(),
+        loadLearningPath()
+      ]).catch(error => {
+        console.error('Error loading course data:', error);
+      });
     } else {
       setLoadingDiagnostic(false);
       setDiagnosticCompleted(null);
@@ -118,7 +163,8 @@ const CourseContent = () => {
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '0.75rem'
+          gap: '0.75rem',
+          marginLeft: '-2rem'
         }}>
           {/* Today Button */}
           <button
@@ -129,21 +175,24 @@ const CourseContent = () => {
             style={{
               background: '#ffffff',
               border: '1px solid #e5e7eb',
-              borderRadius: '20px',
-              padding: '0.4rem 0.75rem',
-              fontSize: '0.75rem',
-              fontWeight: '700',
+              borderRadius: '100px',
+              padding: '0.625rem 1.5rem',
+              fontSize: '0.8125rem',
+              fontWeight: '500',
               color: '#1a1a1a',
               cursor: 'pointer',
-              transition: 'all 0.15s ease'
+              transition: 'all 0.15s ease',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
             }}
             onMouseEnter={(e) => {
               e.target.style.background = '#f9fafb';
               e.target.style.borderColor = '#d1d5db';
+              e.target.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.12)';
             }}
             onMouseLeave={(e) => {
               e.target.style.background = '#ffffff';
               e.target.style.borderColor = '#e5e7eb';
+              e.target.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
             }}
           >
             Today
@@ -154,9 +203,10 @@ const CourseContent = () => {
             display: 'inline-flex',
             background: '#ffffff',
             border: '1px solid #e5e7eb',
-            borderRadius: '20px',
-            padding: '0.15rem',
-            gap: '0.15rem'
+            borderRadius: '100px',
+            padding: '0.25rem',
+            gap: '0.25rem',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
           }}>
             <button
               onClick={() => {
@@ -166,13 +216,26 @@ const CourseContent = () => {
               style={{
                 background: viewMode === 'calendar' ? '#08245b' : 'transparent',
                 border: 'none',
-                borderRadius: '20px',
-                padding: '0.4rem 0.9rem',
-                fontSize: '0.75rem',
-                fontWeight: '700',
-                color: viewMode === 'calendar' ? '#ffffff' : '#1a1a1a',
+                borderRadius: '100px',
+                padding: '0.625rem 1.5rem',
+                fontSize: '0.8125rem',
+                fontWeight: '500',
+                color: viewMode === 'calendar' ? '#ffffff' : '#64748b',
                 cursor: 'pointer',
-                transition: 'all 0.2s ease'
+                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                boxShadow: viewMode === 'calendar' ? '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)' : 'none'
+              }}
+              onMouseEnter={(e) => {
+                if (viewMode !== 'calendar') {
+                  e.target.style.color = '#1a1a1a';
+                  e.target.style.background = '#e2e8f0';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (viewMode !== 'calendar') {
+                  e.target.style.color = '#64748b';
+                  e.target.style.background = 'transparent';
+                }
               }}
             >
               Calendar
@@ -185,13 +248,26 @@ const CourseContent = () => {
               style={{
                 background: viewMode === 'list' ? '#08245b' : 'transparent',
                 border: 'none',
-                borderRadius: '20px',
-                padding: '0.4rem 0.9rem',
-                fontSize: '0.75rem',
-                fontWeight: '700',
-                color: viewMode === 'list' ? '#ffffff' : '#1a1a1a',
+                borderRadius: '100px',
+                padding: '0.625rem 1.5rem',
+                fontSize: '0.8125rem',
+                fontWeight: '500',
+                color: viewMode === 'list' ? '#ffffff' : '#64748b',
                 cursor: 'pointer',
-                transition: 'all 0.2s ease'
+                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                boxShadow: viewMode === 'list' ? '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)' : 'none'
+              }}
+              onMouseEnter={(e) => {
+                if (viewMode !== 'list') {
+                  e.target.style.color = '#1a1a1a';
+                  e.target.style.background = '#e2e8f0';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (viewMode !== 'list') {
+                  e.target.style.color = '#64748b';
+                  e.target.style.background = 'transparent';
+                }
               }}
             >
               List
@@ -203,29 +279,33 @@ const CourseContent = () => {
             onClick={() => setEditModalOpen(true)}
             style={{
               background: '#ffffff',
-              border: 'none',
-              padding: '0.4rem 0.75rem',
+              border: '1px solid #e5e7eb',
+              padding: '0.5rem',
               cursor: 'pointer',
               color: '#1a1a1a',
               display: 'flex',
               alignItems: 'center',
-              gap: '0.4rem',
+              justifyContent: 'center',
               fontSize: '0.75rem',
-              fontWeight: '700',
+              fontWeight: '500',
               transition: 'all 0.15s ease',
-              borderRadius: '6px'
+              borderRadius: '50%',
+              width: '36px',
+              height: '36px',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
             }}
             onMouseEnter={(e) => {
               e.target.style.background = '#f9fafb';
               e.target.style.borderColor = '#d1d5db';
+              e.target.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.12)';
             }}
             onMouseLeave={(e) => {
               e.target.style.background = '#ffffff';
               e.target.style.borderColor = '#e5e7eb';
+              e.target.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
             }}
           >
-            <HiPencilSquare style={{ width: '14px', height: '14px' }} />
-            Edit Goals
+            <HiFlag style={{ width: '16px', height: '16px' }} />
           </button>
         </div>
       );
@@ -1641,7 +1721,9 @@ const CourseContent = () => {
               flexDirection: 'column',
               flex: 1,
               minHeight: 0,
-              maxHeight: 'calc(100vh - 100px)'
+              maxHeight: 'calc(100vh - 100px)',
+              maxWidth: '900px',
+              margin: '0 auto'
             }}>
               {/* Month Header with Navigation */}
               <div style={{
@@ -1651,42 +1733,19 @@ const CourseContent = () => {
                 padding: '0.4rem 1.5rem',
                 borderBottom: '1px solid #e5e7eb',
                 background: '#ffffff',
-                flexShrink: 0,
-                position: 'relative'
+                flexShrink: 0
               }}>
-                {/* Left: Add Event Button */}
-                <button
-                  onClick={() => {
-                    soundEffects.playClick();
-                    setAddEventModalOpen(true);
-                  }}
-                  style={{
-                    background: '#08245b',
-                    border: 'none',
-                    borderRadius: '20px',
-                    padding: '0.5rem 0.75rem',
-                    fontSize: '0.75rem',
-                    fontWeight: '700',
-                    color: '#ffffff',
-                    cursor: 'pointer',
-                    transition: 'all 0.15s ease',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.4rem'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = '#0a2d75';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = '#08245b';
-                  }}
-                >
-                  <span style={{ fontSize: '1rem', lineHeight: '1' }}>+</span>
-                  Add Event
-                </button>
+                {/* Left: Days until exam */}
+                <div style={{
+                  fontSize: '0.75rem',
+                  color: '#9ca3af',
+                  fontWeight: '500'
+                }}>
+                  {daysUntilTest} days until exam
+                </div>
 
                 {/* Center: Month/Week title with arrows */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                   <button
                     onClick={() => {
                       soundEffects.playClick();
@@ -1726,7 +1785,7 @@ const CourseContent = () => {
                       : calendarViewType === 'week'
                       ? `Week of ${currentWeekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`
                       : calendarViewType === 'month'
-                      ? `${currentMonth.toLocaleDateString('en-US', { month: 'long' })} ${currentMonth.toLocaleDateString('en-US', { year: 'numeric' })}`
+                      ? currentMonth.toLocaleDateString('en-US', { month: 'long' })
                       : currentYear}
                   </h2>
                   <button
@@ -1759,12 +1818,13 @@ const CourseContent = () => {
                   </button>
                 </div>
 
-                {/* Right: Month/Week Dropdown */}
-                <div style={{ position: 'relative' }}>
+                {/* Right: Add Event Button and Month/Week Dropdown */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  {/* Add Event Button */}
                   <button
                     onClick={() => {
                       soundEffects.playClick();
-                      setCalendarDropdownOpen(!calendarDropdownOpen);
+                      setAddEventModalOpen(true);
                     }}
                     style={{
                       background: '#ffffff',
@@ -1778,13 +1838,54 @@ const CourseContent = () => {
                       transition: 'all 0.15s ease',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '0.5rem'
+                      gap: '0.4rem',
+                      height: '32px'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = '#f9fafb';
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.95)';
+                      e.currentTarget.style.backdropFilter = 'blur(10px)';
+                      e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.background = '#ffffff';
+                      e.currentTarget.style.backdropFilter = 'none';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  >
+                    <span style={{ fontSize: '1rem', lineHeight: '1' }}>+</span>
+                    Add Event
+                  </button>
+
+                  {/* Month/Week Dropdown */}
+                  <div style={{ position: 'relative' }}>
+                    <button
+                      onClick={() => {
+                        soundEffects.playClick();
+                        setCalendarDropdownOpen(!calendarDropdownOpen);
+                      }}
+                      style={{
+                        background: '#ffffff',
+                        border: '1px solid #e5e7eb',
+                        borderRadius: '20px',
+                        padding: '0.5rem 0.75rem',
+                      fontSize: '0.75rem',
+                      fontWeight: '500',
+                      color: '#1a1a1a',
+                      cursor: 'pointer',
+                      transition: 'all 0.15s ease',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.95)';
+                      e.currentTarget.style.backdropFilter = 'blur(10px)';
+                      e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = '#ffffff';
+                      e.currentTarget.style.backdropFilter = 'none';
+                      e.currentTarget.style.boxShadow = 'none';
                     }}
                   >
                     {calendarViewType === 'day' ? 'Day' : calendarViewType === 'week' ? 'Week' : calendarViewType === 'month' ? 'Month' : 'Year'}
@@ -1934,6 +2035,7 @@ const CourseContent = () => {
                       </div>
                     </>
                   )}
+                  </div>
                 </div>
               </div>
 
@@ -1943,8 +2045,6 @@ const CourseContent = () => {
                   display: 'grid',
                   gridTemplateColumns: 'repeat(7, 1fr)',
                   borderBottom: '1px solid #d1d5db',
-                  borderLeft: '1px solid #d1d5db',
-                  borderRight: '1px solid #d1d5db',
                   background: '#fafafa',
                   flexShrink: 0
                 }}>
@@ -1952,8 +2052,8 @@ const CourseContent = () => {
                     <div
                       key={idx}
                       style={{
-                        padding: '0.3rem',
-                        fontSize: '0.625rem',
+                        padding: '0.25rem',
+                        fontSize: '0.6rem',
                         fontWeight: '700',
                         color: '#6b7280',
                         textAlign: 'center',
@@ -1978,26 +2078,47 @@ const CourseContent = () => {
                   return (
                     <div style={{
                       background: '#ffffff',
-                      borderLeft: '1px solid #d1d5db',
-                      borderRight: '1px solid #d1d5db',
-                      borderBottom: '1px solid #d1d5db',
-                      padding: '2rem',
+                      padding: '2.5rem',
                       overflowY: 'auto',
                       flex: 1
                     }}>
                       <div style={{
-                        maxWidth: '800px',
+                        maxWidth: '750px',
                         margin: '0 auto'
                       }}>
-                        {/* Day header */}
-                        <h2 style={{
-                          fontSize: '1.5rem',
-                          fontWeight: '700',
-                          color: '#1a1a1a',
+                        {/* Day header with holiday */}
+                        <div style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.75rem',
                           marginBottom: '0.5rem'
                         }}>
-                          {dayData.fullDayName}, {dayData.monthName} {dayData.dayNumber}, {dayData.year}
-                        </h2>
+                          <h2 style={{
+                            fontSize: '1.5rem',
+                            fontWeight: '700',
+                            color: '#1a1a1a',
+                            margin: 0
+                          }}>
+                            {dayData.fullDayName}, {dayData.monthName} {dayData.dayNumber}, {dayData.year}
+                          </h2>
+                          {(() => {
+                            const holidays = getHolidays(dayData.year);
+                            const holiday = holidays[dayData.dateString];
+                            if (holiday) {
+                              return (
+                                <span style={{
+                                  fontSize: '0.875rem',
+                                  opacity: 0.5,
+                                  fontWeight: '400',
+                                  color: '#6b7280'
+                                }} title={holiday.name}>
+                                  {holiday.emoji} {holiday.name}
+                                </span>
+                              );
+                            }
+                            return null;
+                          })()}
+                        </div>
 
                         {/* Items list */}
                         <div style={{
@@ -2070,6 +2191,8 @@ const CourseContent = () => {
                                   transition: 'background 0.15s ease'
                                 }}
                                 onMouseEnter={(e) => {
+                                  e.stopPropagation();
+                                  setHoveredDayCell(null);
                                   e.currentTarget.style.background = hoverBgColor;
                                 }}
                                 onMouseLeave={(e) => {
@@ -2152,11 +2275,8 @@ const CourseContent = () => {
                   display: 'grid',
                   gridTemplateColumns: 'repeat(4, 1fr)',
                   gap: '2rem',
-                  padding: '2rem',
+                  padding: '2.5rem',
                   background: '#ffffff',
-                  borderLeft: '1px solid #d1d5db',
-                  borderRight: '1px solid #d1d5db',
-                  borderBottom: '1px solid #d1d5db',
                   overflowY: 'auto',
                   flex: 1
                 }}>
@@ -2245,7 +2365,31 @@ const CourseContent = () => {
                                 }
                               }}
                             >
-                              {day.dayNumber}
+                              <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.15rem',
+                                justifyContent: 'center'
+                              }}>
+                                <span>{day.dayNumber}</span>
+                                {(() => {
+                                  const dateStr = day.date.toISOString().split('T')[0];
+                                  const holidays = getHolidays(day.date.getFullYear());
+                                  const holiday = holidays[dateStr];
+                                  if (holiday) {
+                                    return (
+                                      <span style={{
+                                        fontSize: '0.45rem',
+                                        opacity: 0.6,
+                                        lineHeight: '1'
+                                      }} title={holiday.name}>
+                                        {holiday.emoji}
+                                      </span>
+                                    );
+                                  }
+                                  return null;
+                                })()}
+                              </div>
                               {day.hasItems && (
                                 <div style={{
                                   position: 'absolute',
@@ -2276,9 +2420,6 @@ const CourseContent = () => {
                       gridTemplateColumns: 'repeat(7, 1fr)',
                       flex: 1,
                       gridTemplateRows: `repeat(${totalWeeks}, 1fr)`,
-                      borderLeft: '1px solid #d1d5db',
-                      borderRight: '1px solid #d1d5db',
-                      borderBottom: '1px solid #d1d5db',
                       overflow: 'hidden'
                     }}>
                     {weeks.map((week, weekIdx) => (
@@ -2286,7 +2427,7 @@ const CourseContent = () => {
                       <div
                         key={`${weekIdx}-${dayIdx}`}
                         style={{
-                          padding: '0.3rem',
+                          padding: '0.25rem',
                           borderRight: dayIdx < 6 ? '1px solid #d1d5db' : 'none',
                           borderBottom: weekIdx < totalWeeks - 1 ? '1px solid #d1d5db' : 'none',
                           background: day.isCurrentMonth ? '#ffffff' : '#fafafa',
@@ -2297,20 +2438,22 @@ const CourseContent = () => {
                           overflow: 'hidden'
                         }}
                       >
-                        {/* Date Number */}
+                        {/* Date Number with Holiday */}
                         <div style={{
                           display: 'flex',
-                          justifyContent: 'center',
-                          marginBottom: '0.2rem',
-                          flexShrink: 0
+                          justifyContent: 'flex-start',
+                          alignItems: 'center',
+                          marginBottom: '0.15rem',
+                          flexShrink: 0,
+                          gap: '0.2rem'
                         }}>
                           <div style={{
-                            width: '20px',
-                            height: '20px',
+                            width: '18px',
+                            height: '18px',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            fontSize: '0.7rem',
+                            fontSize: '0.65rem',
                             fontWeight: '700',
                             color: day.isToday ? '#ffffff' : day.isCurrentMonth ? '#1a1a1a' : '#9ca3af',
                             background: day.isToday ? '#ef4444' : 'transparent',
@@ -2318,14 +2461,30 @@ const CourseContent = () => {
                           }}>
                             {day.dayNumber}
                           </div>
+                          {(() => {
+                            const holidays = getHolidays(new Date(day.dateString).getFullYear());
+                            const holiday = holidays[day.dateString];
+                            if (holiday) {
+                              return (
+                                <span style={{
+                                  fontSize: '0.55rem',
+                                  opacity: 0.6
+                                }} title={holiday.name}>
+                                  {holiday.emoji}
+                                </span>
+                              );
+                            }
+                            return null;
+                          })()}
                         </div>
+
 
                         {/* Event Items */}
                         <div
                           style={{
                             display: 'flex',
                             flexDirection: 'column',
-                            gap: '0.15rem',
+                            gap: day.items.length <= 2 ? '0.1rem' : '0.075rem',
                             flex: 1,
                             minHeight: 0,
                             overflow: 'auto',
@@ -2347,13 +2506,16 @@ const CourseContent = () => {
                             }
                           }}
                         >
-                          {day.items.slice(0, 3).map((item, itemIdx) => {
+                          {day.items.slice(0, day.items.length <= 2 ? 3 : 4).map((item, itemIdx) => {
                             const isDiagnostic = item.isDiagnostic;
                             const isPracticeTest = item.type === 'practice_test';
                             const isPractice = item.type === 'practice';
                             const isExamDay = item.type === 'exam_day';
                             const isReview = item.type === 'review';
                             const isMockExam = item.type === 'mock_exam';
+
+                            // Adjust line clamp based on number of items
+                            const lineClamp = day.items.length <= 2 ? 2 : 1;
 
                             const dotColor = isExamDay ? '#ffffff'
                               : isDiagnostic ? '#b91c1c'
@@ -2376,38 +2538,32 @@ const CourseContent = () => {
                               return (
                                 <div
                                   key={itemIdx}
+                                  onMouseEnter={(e) => {
+                                    e.stopPropagation();
+                                    setHoveredDayCell(null);
+                                  }}
                                   style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.2rem',
-                                    padding: '0.2rem 0.3rem',
+                                    display: 'block',
+                                    padding: day.items.length <= 2 ? '0.15rem 0.25rem' : '0.1rem 0.2rem',
                                     background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
                                     border: '1px solid #fca5a5',
-                                    borderRadius: '4px',
+                                    borderRadius: '3px',
                                     cursor: 'default',
-                                    fontSize: '0.6rem',
+                                    fontSize: '0.55rem',
                                     fontWeight: '700',
                                     color: '#ffffff',
-                                    overflow: 'hidden',
-                                    textOverflow: 'ellipsis',
-                                    whiteSpace: 'nowrap',
-                                    boxShadow: '0 2px 6px rgba(220, 38, 38, 0.3)'
+                                    boxShadow: '0 1px 3px rgba(220, 38, 38, 0.3)',
+                                    lineHeight: day.items.length <= 2 ? '1.2' : '1.15'
                                   }}
                                   title={item.title}
                                 >
-                                  <div
-                                    style={{
-                                      width: '4px',
-                                      height: '4px',
-                                      borderRadius: '50%',
-                                      background: '#ffffff',
-                                      flexShrink: 0
-                                    }}
-                                  />
                                   <span style={{
+                                    display: '-webkit-box',
+                                    WebkitLineClamp: lineClamp,
+                                    WebkitBoxOrient: 'vertical',
                                     overflow: 'hidden',
                                     textOverflow: 'ellipsis',
-                                    whiteSpace: 'nowrap'
+                                    wordBreak: 'break-word'
                                   }}>
                                     {item.title}
                                   </span>
@@ -2446,23 +2602,21 @@ const CourseContent = () => {
                                   setPreviewItem({ ...item, date: day.date });
                                 }}
                                 style={{
-                                  display: 'flex',
-                                  alignItems: 'center',
-                                  gap: '0.2rem',
-                                  padding: '0.15rem 0.25rem',
+                                  display: 'block',
+                                  padding: day.items.length <= 2 ? '0.125rem 0.2rem' : '0.1rem 0.2rem',
                                   background: bgColor,
-                                  borderRadius: '3px',
+                                  borderRadius: '2px',
                                   cursor: 'pointer',
-                                  fontSize: '0.6rem',
+                                  fontSize: '0.55rem',
                                   fontWeight: '700',
                                   color: textColorMatch,
-                                  overflow: 'hidden',
-                                  textOverflow: 'ellipsis',
-                                  whiteSpace: 'nowrap',
                                   transition: 'all 0.15s ease',
-                                  border: 'none'
+                                  border: 'none',
+                                  lineHeight: day.items.length <= 2 ? '1.2' : '1.15'
                                 }}
                                 onMouseEnter={(e) => {
+                                  e.stopPropagation();
+                                  setHoveredDayCell(null);
                                   e.currentTarget.style.background = hoverBgColor;
                                 }}
                                 onMouseLeave={(e) => {
@@ -2471,10 +2625,13 @@ const CourseContent = () => {
                                 title={item.title}
                               >
                                 <span style={{
+                                  display: '-webkit-box',
+                                  WebkitLineClamp: lineClamp,
+                                  WebkitBoxOrient: 'vertical',
                                   overflow: 'hidden',
                                   textOverflow: 'ellipsis',
-                                  whiteSpace: 'nowrap',
-                                  textDecoration: item.status === 'completed' ? 'line-through' : 'none'
+                                  textDecoration: item.status === 'completed' ? 'line-through' : 'none',
+                                  wordBreak: 'break-word'
                                 }}>
                                   {item.title}
                                 </span>
@@ -2487,11 +2644,11 @@ const CourseContent = () => {
                             <div
                               data-placeholder="true"
                               style={{
-                                padding: '0.15rem 0.25rem',
+                                padding: '0.125rem 0.2rem',
                                 background: 'rgba(59, 130, 246, 0.05)',
                                 border: '1px dashed rgba(59, 130, 246, 0.3)',
-                                borderRadius: '3px',
-                                fontSize: '0.6rem',
+                                borderRadius: '2px',
+                                fontSize: '0.55rem',
                                 fontWeight: '700',
                                 color: '#9ca3af',
                                 textAlign: 'center',
@@ -2502,15 +2659,15 @@ const CourseContent = () => {
                             </div>
                           )}
 
-                          {day.items.length > 3 && (
+                          {day.items.length > (day.items.length <= 2 ? 3 : 4) && (
                             <div style={{
-                              padding: '0.25rem 0.375rem',
-                              fontSize: '0.6875rem',
+                              padding: '0.15rem 0.25rem',
+                              fontSize: '0.55rem',
                               fontWeight: '500',
                               color: '#6b7280',
                               textAlign: 'center'
                             }}>
-                              +{day.items.length - 3} more
+                              +{day.items.length - (day.items.length <= 2 ? 3 : 4)} more
                             </div>
                           )}
                         </div>
@@ -2526,10 +2683,7 @@ const CourseContent = () => {
                 display: 'grid',
                 gridTemplateColumns: 'repeat(7, minmax(0, 1fr))',
                 gap: '0',
-                background: '#d1d5db',
-                borderLeft: '1px solid #d1d5db',
-                borderRight: '1px solid #d1d5db',
-                borderBottom: '1px solid #d1d5db'
+                background: '#d1d5db'
               }}>
                 {generateWeekView().map((day, idx) => (
                   <div
@@ -2633,6 +2787,10 @@ const CourseContent = () => {
                           return (
                             <div
                               key={itemIdx}
+                              onMouseEnter={(e) => {
+                                e.stopPropagation();
+                                setHoveredDayCell(null);
+                              }}
                               style={{
                                 display: 'flex',
                                 alignItems: 'center',
@@ -3049,34 +3207,77 @@ const CourseContent = () => {
               position: 'fixed',
               top: 0,
               left: 0,
-              right: 0,
-              bottom: 0,
+              width: '100%',
+              height: '100%',
               background: 'rgba(0, 0, 0, 0.5)',
-              zIndex: 3000,
+              backdropFilter: 'blur(4px)',
+              zIndex: 1000,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              padding: '1rem'
+              overflow: 'hidden',
+              padding: '2rem'
             }}
           >
             <div
               onClick={(e) => e.stopPropagation()}
               style={{
-                background: 'white',
-                borderRadius: '16px',
+                background: 'rgba(255, 255, 255, 0.98)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid #e5e7eb',
+                borderRadius: '12px',
+                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
                 padding: '0',
-                maxWidth: '500px',
+                maxWidth: '600px',
                 width: '100%',
-                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
-                overflow: 'hidden'
+                maxHeight: '80vh',
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative'
               }}
             >
+              {/* Close button */}
+              <button
+                onClick={() => setPreviewItem(null)}
+                style={{
+                  position: 'absolute',
+                  top: '1rem',
+                  right: '1rem',
+                  zIndex: 1001,
+                  background: 'white',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '50%',
+                  width: '36px',
+                  height: '36px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  fontSize: '1.25rem',
+                  color: '#6b7280',
+                  transition: 'all 0.15s',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.background = '#f3f4f6';
+                  e.currentTarget.style.color = '#1a1a1a';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.background = 'white';
+                  e.currentTarget.style.color = '#6b7280';
+                }}
+              >
+                ×
+              </button>
+
               {/* Header */}
               <div style={{
                 background: headerBg,
                 borderBottom: `1px solid ${headerBorder}`,
-                padding: '2rem',
-                color: '#1a1a1a'
+                padding: '1.5rem 2.5rem 1rem',
+                color: '#1a1a1a',
+                flexShrink: 0
               }}>
                 <div style={{
                   fontSize: '0.875rem',
@@ -3090,42 +3291,16 @@ const CourseContent = () => {
                   margin: 0,
                   fontSize: '1.75rem',
                   fontWeight: '700',
-                  lineHeight: '1.2'
+                  lineHeight: '1.2',
+                  color: '#3b82f6'
                 }}>
                   {previewItem.title}
                 </h2>
-                <div style={{
-                  marginTop: '0.75rem',
-                  fontSize: '0.875rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem'
-                }}>
-                  <span style={{
-                    background: isPracticeTest ? '#fee2e2' :
-                               isPractice ? '#fef3c7' :
-                               isReview ? '#dcfce7' :
-                               isMockExam ? '#fee2e2' :
-                               '#dbeafe',
-                    padding: '0.25rem 0.75rem',
-                    borderRadius: '12px',
-                    fontWeight: '700',
-                    color: isPracticeTest ? '#991b1b' :
-                           isPractice ? '#92400e' :
-                           isReview ? '#166534' :
-                           isMockExam ? '#991b1b' :
-                           '#1e40af'
-                  }}>
-                    {previewItem.type === 'practice_test' || previewItem.type === 'test' ? 'Practice Test' : previewItem.type === 'mock_exam' ? 'Mock Exam' : previewItem.type === 'review' ? 'Review Day' : previewItem.type === 'practice' ? 'Practice' : 'Lesson'}
-                  </span>
-                  <span style={{ color: '#374151' }}>•</span>
-                  <span style={{ fontWeight: '600', color: '#374151' }}>{previewItem.duration} minutes</span>
-                </div>
               </div>
 
             {/* Content */}
-            <div style={{ padding: '2rem' }}>
-              {previewItem.type === 'mock_exam' ? (
+            <div style={{ padding: '2rem 2.5rem 2.5rem', overflowY: 'auto', flex: 1 }}>
+              {false && previewItem.type === 'mock_exam' ? (
                 <div>
                   <div style={{
                     background: '#fef3c7',
@@ -3442,30 +3617,14 @@ const CourseContent = () => {
               )}
 
               {/* Action buttons */}
-              <div style={{ display: 'flex', gap: '0.75rem' }}>
-                <button
-                  onClick={() => setPreviewItem(null)}
-                  style={{
-                    flex: 1,
-                    padding: '0.875rem',
-                    border: '1px solid #d1d5db',
-                    borderRadius: '8px',
-                    background: 'white',
-                    color: '#374151',
-                    fontSize: '0.9375rem',
-                    fontWeight: '500',
-                    cursor: 'pointer',
-                    transition: 'all 0.15s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.background = '#f9fafb';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.background = 'white';
-                  }}
-                >
-                  Close
-                </button>
+              <div style={{
+                display: 'flex',
+                gap: '0.75rem',
+                padding: '1.5rem 2.5rem',
+                borderTop: '1px solid #e9ecef',
+                background: '#fafbfc',
+                flexShrink: 0
+              }}>
                 <button
                   onClick={() => {
                     soundEffects.playSuccess();
@@ -3474,18 +3633,18 @@ const CourseContent = () => {
                   }}
                   style={{
                     flex: 1,
-                    padding: '0.875rem',
+                    padding: '0.875rem 1.5rem',
                     border: 'none',
                     borderRadius: '8px',
                     background: isPracticeTest
-                      ? 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)'  // Red for practice tests
+                      ? 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)'
                       : previewItem.type === 'mock_exam'
-                      ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'  // Yellow for mock exams
+                      ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
                       : previewItem.type === 'review'
-                      ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'  // Green for review
+                      ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
                       : isPractice
-                      ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'  // Yellow for practice
-                      : 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)', // Blue for lessons
+                      ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
+                      : 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
                     color: 'white',
                     fontSize: '0.9375rem',
                     fontWeight: '600',

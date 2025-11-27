@@ -15,6 +15,7 @@ import LandingPage from '../pages/LandingPage';
 import AuthPage from '../pages/AuthPage';
 import AboutUs from '../pages/AboutUs';
 import AppLayout from '../layouts/AppLayout';
+import AuthCallback from '../pages/AuthCallback';
 
 // Lazy load other pages for better initial load performance
 const CourseContent = lazy(() => import('../components/app/CourseContent'));
@@ -100,6 +101,9 @@ export default function AppRouter() {
 
           {/* About Us Page - Always accessible */}
           <Route path="/about" element={<AboutUs />} />
+
+          {/* OAuth Callback - Handle Google/Facebook/Apple auth redirects */}
+          <Route path="/auth/callback" element={<AuthCallback />} />
 
           {/* Legacy login route - redirect to home */}
           <Route path="/login" element={
