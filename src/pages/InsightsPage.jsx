@@ -167,11 +167,12 @@ const useStyles = createUseStyles({
     padding: '1.25rem',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
+    boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)',
     '&:hover': {
       borderColor: '#cbd5e1',
       borderLeftColor: '#b91c1c',
-      boxShadow: '0 6px 16px rgba(185, 28, 28, 0.15)',
-      transform: 'translateY(-3px)'
+      boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.15)',
+      transform: 'none'
     }
   },
   diagnosticBadge: {
@@ -222,18 +223,22 @@ const useStyles = createUseStyles({
   diagnosticButton: {
     width: '100%',
     padding: '0.75rem 1.5rem',
-    background: 'linear-gradient(135deg, #b91c1c 0%, #dc2626 100%)',
+    background: '#2563eb',
     color: '#ffffff',
     border: 'none',
-    borderRadius: '6px',
+    borderRadius: '12px',
     fontSize: '0.875rem',
     fontWeight: '600',
     cursor: 'pointer',
-    transition: 'all 0.2s ease',
+    transition: 'all 0.15s ease',
+    boxShadow: '0 3px 0 0 rgba(37, 99, 235, 0.4)',
     '&:hover': {
-      background: 'linear-gradient(135deg, #991b1b 0%, #b91c1c 100%)',
-      transform: 'translateY(-1px)',
-      boxShadow: '0 4px 8px rgba(185, 28, 28, 0.2)'
+      background: '#1d4ed8',
+      boxShadow: '0 3px 0 0 rgba(29, 78, 216, 0.5)'
+    },
+    '&:active': {
+      transform: 'translateY(1px)',
+      boxShadow: '0 2px 0 0 rgba(29, 78, 216, 0.5)'
     }
   },
   diagnosticLabel: {

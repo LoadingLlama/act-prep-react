@@ -100,28 +100,28 @@
                         id="sectionDropdown"
                         onchange="switchSection(this.value)"
                         style="
-                            background: #ffffff;
-                            border: 1px solid #e2e8f0;
-                            color: #0f172a;
+                            background: transparent;
+                            border: none;
+                            color: #ffffff;
                             font-size: 0.875rem;
                             font-weight: 600;
-                            padding: 0.5rem 2rem 0.5rem 0.75rem;
+                            padding: 0.5rem 2.25rem 0.5rem 0.75rem;
                             border-radius: 6px;
                             cursor: pointer;
                             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
                             appearance: none;
-                            background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg width=\"12\" height=\"8\" viewBox=\"0 0 12 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3e%3cpath d=\"M1 1.5L6 6.5L11 1.5\" stroke=\"%230f172a\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/%3e%3c/svg%3e');
+                            background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg width=\"14\" height=\"10\" viewBox=\"0 0 14 10\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3e%3cpath d=\"M1 1.5L7 8L13 1.5\" stroke=\"%23ffffff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/%3e%3c/svg%3e');
                             background-repeat: no-repeat;
-                            background-position: right 0.5rem center;
+                            background-position: right 0.75rem center;
                             transition: all 0.2s ease;
                         "
-                        onmouseover="this.style.background='#f8fafc'; this.style.borderColor='#cbd5e1';"
-                        onmouseout="this.style.background='#ffffff'; this.style.borderColor='#e2e8f0';"
+                        onmouseover="this.style.background='rgba(255, 255, 255, 0.15)'; this.style.backgroundImage='url(\'data:image/svg+xml;charset=UTF-8,%3csvg width=\"14\" height=\"10\" viewBox=\"0 0 14 10\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3e%3cpath d=\"M1 1.5L7 8L13 1.5\" stroke=\"%23ffffff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/%3e%3c/svg%3e\'); this.style.backgroundRepeat='no-repeat'; this.style.backgroundPosition='right 0.75rem center'; this.style.backdropFilter='blur(10px)';"
+                        onmouseout="this.style.background='transparent'; this.style.backgroundImage='url(\'data:image/svg+xml;charset=UTF-8,%3csvg width=\"14\" height=\"10\" viewBox=\"0 0 14 10\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3e%3cpath d=\"M1 1.5L7 8L13 1.5\" stroke=\"%23ffffff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/%3e%3c/svg%3e\'); this.style.backgroundRepeat='no-repeat'; this.style.backgroundPosition='right 0.75rem center'; this.style.backdropFilter='none';"
                     >
-                        <option value="english">English</option>
-                        <option value="math">Mathematics</option>
-                        <option value="reading">Reading</option>
-                        <option value="science">Science</option>
+                        <option value="english" style="background: #0f172a; color: #ffffff;">English</option>
+                        <option value="math" style="background: #0f172a; color: #ffffff;">Mathematics</option>
+                        <option value="reading" style="background: #0f172a; color: #ffffff;">Reading</option>
+                        <option value="science" style="background: #0f172a; color: #ffffff;">Science</option>
                     </select>
                 </div>
                 <button class="end-section-link" id="endButton" onclick="confirmEndSection()">
@@ -192,9 +192,9 @@
                         <button
                             id="explanationNavBtn"
                             onclick="toggleCurrentExplanation()"
-                            style="display: none; background: #ffffff; border: 1px solid #e2e8f0; color: #0f172a; font-size: 0.875rem; font-weight: 600; cursor: pointer; padding: 0.5rem 1rem; border-radius: 6px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; transition: all 0.2s ease;"
-                            onmouseover="this.style.background='#f8fafc'; this.style.borderColor='#cbd5e1';"
-                            onmouseout="this.style.background='#ffffff'; this.style.borderColor='#e2e8f0';"
+                            style="display: none; background: #ffffff; border: 1px solid #e2e8f0; color: #0f172a; font-size: 0.875rem; font-weight: 600; cursor: pointer; padding: 0.5rem 1rem; border-radius: 8px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; transition: all 0.2s ease; box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.1);"
+                            onmouseover="this.style.background='#f8fafc'; this.style.borderColor='#cbd5e1'; this.style.boxShadow='0 3px 0 0 rgba(0, 0, 0, 0.15)';"
+                            onmouseout="this.style.background='#ffffff'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 3px 0 0 rgba(0, 0, 0, 0.1)';"
                         >
                             Explanation
                         </button>
@@ -505,10 +505,18 @@
                     counterLabel.style.display = 'none';
                 }
 
-                // Update header for review mode
-                const endButton = document.querySelector('.end-section-link span');
-                if (endButton) {
-                    endButton.textContent = 'Close';
+                // Show section switcher and hide end button in review mode
+                const sectionSwitcher = document.getElementById('sectionSwitcher');
+                const endButton = document.querySelector('.end-section-link');
+                if (sectionSwitcher && endButton) {
+                    sectionSwitcher.style.display = 'block';
+                    endButton.style.display = 'none';
+
+                    // Set the current section in the dropdown
+                    const sectionDropdown = document.getElementById('sectionDropdown');
+                    if (sectionDropdown) {
+                        sectionDropdown.value = section;
+                    }
                 }
             }
 
@@ -727,15 +735,15 @@
                                 if (reviewMode) {
                                     if (isCorrectAnswer) {
                                         choiceClass += ' correct-answer';
-                                        inlineStyle = 'background: #d1fae5 !important; border-left: 3px solid #10b981; padding-left: 0.5rem;';
+                                        inlineStyle = '';
                                     }
                                     if (isUserAnswer && !isCorrect) {
                                         choiceClass += ' wrong-answer';
-                                        inlineStyle = 'background: #fee2e2 !important; border-left: 3px solid #ef4444; padding-left: 0.5rem;';
+                                        inlineStyle = '';
                                     }
                                     if (isUserAnswer && isCorrect) {
                                         choiceClass += ' user-answer';
-                                        inlineStyle = 'background: #d1fae5 !important; border-left: 3px solid #10b981; padding-left: 0.5rem;';
+                                        inlineStyle = '';
                                     }
                                 }
 
@@ -760,7 +768,7 @@
                                 }
 
                                 return `
-                                    <label class="${choiceClass}" for="q${questionNum}_${key}" style="${inlineStyle}; ${reviewMode && isCorrectAnswer ? 'border: 2px solid #10b981 !important;' : ''}">
+                                    <label class="${choiceClass}" for="q${questionNum}_${key}" style="${inlineStyle}">
                                         <input
                                             type="radio"
                                             name="question${questionNum}"
@@ -805,7 +813,7 @@
                             ${q.explanation ? `
                                 <div id="explanation-content-${questionNum}" style="display: none; margin-top: 0.75rem; padding: 1rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
                                     <div style="font-size: 0.875rem; line-height: 1.7; color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
-                                        ${q.explanation.replace(/\n/g, '<br>')}
+                                        ${q.explanation.replace(/\n\n+/g, '<br><br>').replace(/\n/g, ' ')}
                                     </div>
                                 </div>
                             ` : ''}
@@ -1121,6 +1129,19 @@
                 closeQuestionModal();
             } else {
                 console.log('⚠️ Question', questionNum, 'not found');
+            }
+        }
+
+        function switchSection(newSection) {
+            console.log('🔄 Switching to section:', newSection);
+            if (reviewMode && window.parent) {
+                // In review mode, communicate with parent to switch sections
+                window.parent.postMessage({
+                    type: 'SWITCH_SECTION',
+                    section: newSection
+                }, '*');
+            } else {
+                console.log('⚠️ Cannot switch sections - not in review mode or no parent window');
             }
         }
 

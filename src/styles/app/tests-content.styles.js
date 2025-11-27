@@ -93,6 +93,7 @@ export const useTestsContentStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+    boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)',
     '@media (max-width: 768px)': {
       padding: '0.75rem',
       minHeight: '100px'
@@ -104,19 +105,20 @@ export const useTestsContentStyles = createUseStyles({
     '&:hover': {
       borderColor: '#cbd5e1',
       borderLeftColor: '#08245b',
-      boxShadow: '0 6px 16px rgba(8, 36, 91, 0.15)',
-      transform: 'translateY(-3px)'
+      boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.15)',
+      transform: 'none'
     },
     '&:active': {
       transform: 'scale(0.98)',
-      boxShadow: '0 2px 6px rgba(0, 24, 69, 0.06)'
+      boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)'
     },
     '&.disabled': {
       opacity: 0.5,
       cursor: 'not-allowed',
+      boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.05)',
       '&:hover': {
         transform: 'none',
-        boxShadow: 'none',
+        boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.05)',
         borderColor: '#e2e8f0'
       },
       '&:active': {

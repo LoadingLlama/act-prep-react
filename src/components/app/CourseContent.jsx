@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import { HiPencilSquare, HiQuestionMarkCircle, HiCheckCircle, HiChevronDown, HiFlag } from 'react-icons/hi2';
+import { HiPencilSquare, HiQuestionMarkCircle, HiCheckCircle, HiChevronDown, HiChevronUp, HiFlag } from 'react-icons/hi2';
 import { useCourseStyles } from '../../styles/app/course.styles';
 import { supabase } from '../../services/api/supabase.service';
 import { useAuth } from '../../contexts/AuthContext';
@@ -101,6 +101,7 @@ const CourseContent = () => {
     duration: 30,
     customColor: '#6b7280'
   });
+  const [expandedWeeks, setExpandedWeeks] = useState({});
   const [editForm, setEditForm] = useState({
     target_exam_date: '',
     current_score: '',
@@ -182,17 +183,17 @@ const CourseContent = () => {
               color: '#1a1a1a',
               cursor: 'pointer',
               transition: 'all 0.15s ease',
-              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+              boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)'
             }}
             onMouseEnter={(e) => {
               e.target.style.background = '#f9fafb';
               e.target.style.borderColor = '#d1d5db';
-              e.target.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.12)';
+              e.target.style.boxShadow = '0 3px 0 0 rgba(0, 0, 0, 0.15)';
             }}
             onMouseLeave={(e) => {
               e.target.style.background = '#ffffff';
               e.target.style.borderColor = '#e5e7eb';
-              e.target.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+              e.target.style.boxShadow = '0 3px 0 0 rgba(0, 0, 0, 0.1)';
             }}
           >
             Today
@@ -206,7 +207,7 @@ const CourseContent = () => {
             borderRadius: '100px',
             padding: '0.25rem',
             gap: '0.25rem',
-            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+            boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)'
           }}>
             <button
               onClick={() => {
@@ -292,17 +293,17 @@ const CourseContent = () => {
               borderRadius: '50%',
               width: '36px',
               height: '36px',
-              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+              boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)'
             }}
             onMouseEnter={(e) => {
               e.target.style.background = '#f9fafb';
               e.target.style.borderColor = '#d1d5db';
-              e.target.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.12)';
+              e.target.style.boxShadow = '0 3px 0 0 rgba(0, 0, 0, 0.15)';
             }}
             onMouseLeave={(e) => {
               e.target.style.background = '#ffffff';
               e.target.style.borderColor = '#e5e7eb';
-              e.target.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+              e.target.style.boxShadow = '0 3px 0 0 rgba(0, 0, 0, 0.1)';
             }}
           >
             <HiFlag style={{ width: '16px', height: '16px' }} />
@@ -1580,6 +1581,14 @@ const CourseContent = () => {
     }
   };
 
+  const toggleWeek = (weekKey) => {
+    soundEffects.playToggle();
+    setExpandedWeeks(prev => ({
+      ...prev,
+      [weekKey]: !prev[weekKey]
+    }));
+  };
+
   const goToToday = () => {
     const today = new Date();
     if (calendarViewType === 'month') {
@@ -1671,21 +1680,32 @@ const CourseContent = () => {
                   setDiagnosticTestOpen(true);
                 }}
                 style={{
-                  background: '#b91c1c',
+                  background: '#2563eb',
                   color: 'white',
                   border: 'none',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   padding: '0.75rem 1.5rem',
                   fontSize: '0.95rem',
-                  fontWeight: '500',
+                  fontWeight: '600',
                   cursor: 'pointer',
-                  transition: 'all 0.15s ease'
+                  transition: 'all 0.15s ease',
+                  boxShadow: '0 3px 0 0 rgba(37, 99, 235, 0.4)'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.background = '#991b1b';
+                  e.target.style.background = '#1d4ed8';
+                  e.target.style.boxShadow = '0 3px 0 0 rgba(29, 78, 216, 0.5)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.background = '#b91c1c';
+                  e.target.style.background = '#2563eb';
+                  e.target.style.boxShadow = '0 3px 0 0 rgba(37, 99, 235, 0.4)';
+                }}
+                onMouseDown={(e) => {
+                  e.target.style.transform = 'translateY(1px)';
+                  e.target.style.boxShadow = '0 2px 0 0 rgba(29, 78, 216, 0.5)';
+                }}
+                onMouseUp={(e) => {
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = '0 3px 0 0 rgba(29, 78, 216, 0.5)';
                 }}
               >
                 <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
@@ -1707,7 +1727,7 @@ const CourseContent = () => {
   return (
     <div className={classes.container} style={{ height: '100%', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
       {/* Main Content */}
-      <div className={classes.content} style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column', padding: 0 }}>
+      <div className={classes.content} style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column', padding: '0 1.5rem' }}>
         {/* Weekly Assignments - List or Calendar View */}
         <div className={classes.weeksContainer} style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', minHeight: 0, paddingTop: '1rem' }}>
           {viewMode === 'calendar' && learningPath.length > 0 ? (
@@ -2964,219 +2984,261 @@ const CourseContent = () => {
                 Start Diagnostic Test
               </button>
             </div>
-          ) : learningPath.map((week, weekIndex) => {
-            // Determine if this is the current week
-            const now = new Date();
-            const isCurrentWeek = now >= week.startDate && now <= week.endDate;
+          ) : (
+            // LIST VIEW - Collapsible Week Sections
+            <div style={{
+              maxWidth: '900px',
+              margin: '0 auto',
+              width: '100%'
+            }}>
+              {learningPath.map((week, weekIndex) => {
+                const weekKey = `week-${weekIndex}`;
+                const isExpanded = expandedWeeks[weekKey];
+                const now = new Date();
+                const isCurrentWeek = now >= week.startDate && now <= week.endDate;
 
-            return (
-              <div key={weekIndex} className={`${classes.section} ${isCurrentWeek ? 'current' : ''}`} style={{ padding: 0 }}>
-                <div
-                  className={classes.sectionHeader}
-                  style={{
-                    background: 'linear-gradient(to right, #1e3a8a, #1e40af)',
-                    borderBottom: '1px solid #1e40af',
-                    padding: '0.5rem 1.5rem',
-                    margin: 0,
-                    borderRadius: '0'
-                  }}
-                >
-                  <h2
-                    className={classes.sectionTitle}
-                    style={{
-                      fontSize: '0.875rem',
-                      fontWeight: '600',
-                      color: '#ffffff',
-                      margin: 0,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.05em'
-                    }}
-                  >
-                    {week.week}
-                  </h2>
-                </div>
-                <div className={classes.weekGrid} style={{ padding: '0.5rem 1rem' }}>
-                  {week.items.map((item, itemIndex) => {
-                    const status = getLessonStatus(item.id);
-                    const isCompleted = status === 'completed';
-                    const isExamDay = item.type === 'exam_day';
-                    const isDiagnostic = item.isDiagnostic;
-                    const isPractice = item.type === 'practice' || item.type === 'practice_test';
-                    const isReview = item.type === 'review';
-                    const isMockExam = item.type === 'mock_exam';
+                // Calculate completed items for this week
+                const completedCount = week.items.filter(item => {
+                  const status = getLessonStatus(item.id);
+                  return status === 'completed';
+                }).length;
+                const totalCount = week.items.length;
 
-                    // Determine dot color and text color based on item type
-                    const dotColor = isExamDay ? '#dc2626'
-                      : isDiagnostic ? '#b91c1c'
-                      : isPractice ? '#ef4444'
-                      : isReview ? '#10b981'
-                      : isMockExam ? '#3b82f6'
-                      : '#64748b';
+                // Calculate total duration
+                const totalMinutes = week.items.reduce((sum, item) => {
+                  const minutes = parseInt(item.duration) || 0;
+                  return sum + minutes;
+                }, 0);
+                const totalHours = (totalMinutes / 60).toFixed(1);
 
-                    const textColor = isExamDay ? '#dc2626'
-                      : isDiagnostic ? '#b91c1c'
-                      : isPractice ? '#dc2626'
-                      : isReview ? '#10b981'
-                      : isMockExam ? '#3b82f6'
-                      : '#6b7280';
-
-                    const handleCheckboxClick = async (e) => {
-                      e.stopPropagation();
-                      await toggleItemCompletion(item.id);
-                    };
-
-                    // Exam day gets special treatment
-                    if (isExamDay) {
-                      return (
-                        <div
-                          key={itemIndex}
-                          style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '0.875rem',
-                            padding: '0.85rem 0.75rem',
-                            background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
-                            border: '2px solid #fca5a5',
-                            borderRadius: '8px',
-                            cursor: 'default',
-                            margin: '0.25rem 0',
-                            boxShadow: '0 4px 12px rgba(220, 38, 38, 0.3)'
-                          }}
-                        >
-                          {/* Dot */}
-                          <div
-                            style={{
-                              width: '10px',
-                              height: '10px',
-                              borderRadius: '50%',
-                              background: '#ffffff',
-                              flexShrink: 0,
-                              boxShadow: '0 0 0 2px rgba(255, 255, 255, 0.3)'
-                            }}
-                          />
-
-                          {/* Content */}
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flex: 1 }}>
-                            <span
-                              style={{
-                                fontSize: '0.95rem',
-                                color: '#ffffff',
-                                fontWeight: '700',
-                                transition: 'all 0.2s ease'
-                              }}
-                            >
-                              {item.title}
-                            </span>
+                return (
+                  <div key={weekKey} style={{
+                    marginBottom: '0.5rem',
+                    border: isExpanded ? '1px solid #e5e7eb' : 'none',
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    background: isCurrentWeek ? '#f0f9ff' : 'transparent'
+                  }}>
+                    {/* Week Header (clickable) */}
+                    <button
+                      onClick={() => toggleWeek(weekKey)}
+                      style={{
+                        width: '100%',
+                        padding: '1rem 1.25rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        cursor: 'pointer',
+                        background: 'white',
+                        border: 'none',
+                        transition: 'background 0.15s',
+                        textAlign: 'left'
+                      }}
+                      onMouseOver={(e) => e.currentTarget.style.background = '#f9fafb'}
+                      onMouseOut={(e) => e.currentTarget.style.background = 'white'}
+                    >
+                      <div>
+                        <div style={{
+                          fontSize: '1rem',
+                          fontWeight: '600',
+                          color: '#1a1a1a',
+                          marginBottom: '0.25rem'
+                        }}>
+                          {week.week}
+                          {isCurrentWeek && (
                             <span style={{
-                              display: 'flex',
-                              alignItems: 'center',
-                              justifyContent: 'center',
-                              color: '#ffffff',
-                              fontSize: '0.875rem',
-                              flexShrink: 0
+                              marginLeft: '0.5rem',
+                              fontSize: '0.75rem',
+                              fontWeight: '500',
+                              color: '#3b82f6',
+                              background: '#dbeafe',
+                              padding: '0.125rem 0.5rem',
+                              borderRadius: '999px'
                             }}>
-                              {getItemIcon(item.type)}
-                            </span>
-                          </div>
-                        </div>
-                      );
-                    }
-
-                    return (
-                      <div
-                        key={itemIndex}
-                        className={`${classes.weekCard} ${isCompleted ? 'completed' : ''}`}
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.875rem',
-                          padding: '0.65rem 0.75rem',
-                          background: 'transparent',
-                          border: 'none',
-                          borderBottom: '1px solid #f3f4f6',
-                          borderRadius: '0',
-                          cursor: 'pointer',
-                          transition: 'background 0.15s ease',
-                          margin: '0 0 2px 0'
-                        }}
-                        onClick={() => handleItemClick(item)}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.background = '#fafbfc';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.background = 'transparent';
-                        }}
-                      >
-                        {/* Checkbox */}
-                        <div
-                          onClick={handleCheckboxClick}
-                          style={{
-                            width: '20px',
-                            height: '20px',
-                            borderRadius: '5px',
-                            border: '2.5px solid #d1d5db',
-                            flexShrink: 0,
-                            transition: 'border-color 0.2s ease',
-                            position: 'relative',
-                            background: isCompleted ? '#14b8a6' : '#ffffff',
-                            cursor: 'pointer',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center'
-                          }}
-                        >
-                          {isCompleted && (
-                            <span style={{
-                              color: '#ffffff',
-                              fontSize: '0.7rem',
-                              fontWeight: '700'
-                            }}>
-                              ✓
+                              Current Week
                             </span>
                           )}
                         </div>
-
-                        {/* Colored Dot */}
-                        <div
-                          style={{
-                            width: '8px',
-                            height: '8px',
-                            borderRadius: '50%',
-                            background: dotColor,
-                            flexShrink: 0
-                          }}
-                        />
-
-                        {/* Content */}
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flex: 1 }}>
-                          <span
-                            style={{
-                              fontSize: '0.875rem',
-                              color: textColor,
-                              fontWeight: isDiagnostic || isMockExam || isReview ? '600' : '400',
-                              transition: 'all 0.2s ease'
-                            }}
-                          >
-                            {item.title}
-                          </span>
-                          <span style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            color: '#9ca3af',
-                            fontSize: '0.875rem',
-                            flexShrink: 0
-                          }}>
-                            {getItemIcon(item.type)}
-                          </span>
+                        <div style={{
+                          fontSize: '0.875rem',
+                          color: '#6b7280'
+                        }}>
+                          {totalCount} item{totalCount !== 1 ? 's' : ''} • {totalHours}h total
                         </div>
                       </div>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          })}
+                      <div style={{
+                        fontSize: '1.25rem',
+                        color: '#6b7280'
+                      }}>
+                        {isExpanded ? <HiChevronUp /> : <HiChevronDown />}
+                      </div>
+                    </button>
+
+                    {/* Expanded Week Items */}
+                    {isExpanded && (
+                      <div style={{
+                        padding: '0.5rem 1.25rem 1rem',
+                        borderTop: '1px solid #e5e7eb'
+                      }}>
+                        {week.items.map((item, itemIndex) => {
+                          const status = getLessonStatus(item.id);
+                          const isCompleted = status === 'completed';
+                          const isInProgress = status === 'in-progress';
+                          const showCheckmark = isCompleted || isInProgress;
+                          const isExamDay = item.type === 'exam_day';
+                          const isDiagnostic = item.isDiagnostic;
+                          const isPracticeTest = item.type === 'practice_test';
+                          const isPractice = item.type === 'practice';
+                          const isReview = item.type === 'review';
+                          const isMockExam = item.type === 'mock_exam';
+
+                          // Exam day gets special treatment
+                          if (isExamDay) {
+                            return (
+                              <div
+                                key={itemIndex}
+                                style={{
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  gap: '0.75rem',
+                                  padding: '0.75rem',
+                                  margin: '0.25rem 0',
+                                  background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
+                                  border: '2px solid #fca5a5',
+                                  borderRadius: '6px',
+                                  cursor: 'default',
+                                  boxShadow: '0 2px 8px rgba(220, 38, 38, 0.2)'
+                                }}
+                              >
+                                <div style={{
+                                  fontSize: '0.9rem',
+                                  color: '#ffffff',
+                                  fontWeight: '600',
+                                  flex: 1
+                                }}>
+                                  {item.title}
+                                </div>
+                              </div>
+                            );
+                          }
+
+                          return (
+                            <div
+                              key={itemIndex}
+                              onClick={() => {
+                                if (!item.isLocked) {
+                                  soundEffects.playClick();
+                                  handleItemClick(item);
+                                }
+                              }}
+                              style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.75rem',
+                                padding: '0.625rem 0.75rem',
+                                margin: '0.25rem 0',
+                                cursor: item.isLocked ? 'not-allowed' : 'pointer',
+                                opacity: item.isLocked ? 0.5 : 1,
+                                borderRadius: '6px',
+                                transition: 'background 0.15s'
+                              }}
+                              onMouseOver={(e) => {
+                                if (!item.isLocked) e.currentTarget.style.background = '#f3f4f6';
+                              }}
+                              onMouseOut={(e) => e.currentTarget.style.background = 'transparent'}
+                            >
+                              {/* Checkbox */}
+                              <div style={{
+                                width: '20px',
+                                height: '20px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                flexShrink: 0
+                              }}>
+                                {showCheckmark ? (
+                                  <HiCheckCircle style={{
+                                    fontSize: '1.25rem',
+                                    color: '#3b82f6'
+                                  }} />
+                                ) : (
+                                  <div style={{
+                                    width: '18px',
+                                    height: '18px',
+                                    border: '2px solid #d1d5db',
+                                    borderRadius: '4px'
+                                  }} />
+                                )}
+                              </div>
+
+                              {/* Item Title */}
+                              <div style={{
+                                flex: 1,
+                                fontSize: '0.9rem',
+                                color: isPracticeTest || isMockExam ? '#dc2626' : isReview ? '#10b981' : '#374151',
+                                fontWeight: isPracticeTest || isMockExam || isReview ? '600' : '500'
+                              }}>
+                                {item.title}
+                              </div>
+
+                              {/* Duration */}
+                              <div style={{
+                                fontSize: '0.875rem',
+                                color: '#6b7280',
+                                fontWeight: '500'
+                              }}>
+                                {item.duration}
+                              </div>
+                            </div>
+                          );
+                        })}
+
+                        {/* Start Button at Bottom */}
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            soundEffects.playClick();
+                            const firstItem = week.items.find(item => !item.isLocked);
+                            if (firstItem) {
+                              handleItemClick(firstItem);
+                            }
+                          }}
+                          style={{
+                            display: 'block',
+                            marginTop: '1rem',
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
+                            padding: '0.625rem 1.25rem',
+                            background: 'white',
+                            border: '1px solid #e5e7eb',
+                            borderRadius: '6px',
+                            fontSize: '0.875rem',
+                            fontWeight: '500',
+                            color: '#374151',
+                            cursor: 'pointer',
+                            transition: 'all 0.15s',
+                            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+                          }}
+                          onMouseOver={(e) => {
+                            e.currentTarget.style.background = '#f9fafb';
+                            e.currentTarget.style.borderColor = '#d1d5db';
+                            e.currentTarget.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.12)';
+                          }}
+                          onMouseOut={(e) => {
+                            e.currentTarget.style.background = 'white';
+                            e.currentTarget.style.borderColor = '#e5e7eb';
+                            e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+                          }}
+                        >
+                          Start week
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </div>
 
@@ -4098,14 +4160,15 @@ const CourseContent = () => {
                   flex: 1,
                   padding: '0.625rem',
                   border: '1px solid #e0e0e0',
-                  borderRadius: '4px',
+                  borderRadius: '8px',
                   background: 'white',
                   color: '#111',
                   fontSize: '0.8125rem',
                   fontWeight: '500',
                   cursor: savingGoals ? 'not-allowed' : 'pointer',
                   opacity: savingGoals ? 0.5 : 1,
-                  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+                  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                  boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)'
                 }}
               >
                 Cancel
@@ -4117,7 +4180,7 @@ const CourseContent = () => {
                   flex: 1,
                   padding: '0.625rem',
                   border: 'none',
-                  borderRadius: '4px',
+                  borderRadius: '8px',
                   background: savingGoals ? '#9ca3af' : '#1a1a1a',
                   color: 'white',
                   fontSize: '0.8125rem',
@@ -4125,7 +4188,8 @@ const CourseContent = () => {
                   cursor: savingGoals ? 'not-allowed' : 'pointer',
                   opacity: savingGoals ? 0.7 : 1,
                   animation: saveButtonShake ? 'shake 0.5s' : 'none',
-                  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+                  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                  boxShadow: savingGoals ? '0 3px 0 0 rgba(0, 0, 0, 0.05)' : '0 3px 0 0 rgba(26, 26, 26, 0.25)'
                 }}
               >
                 {savingGoals ? 'Saving...' : 'Save'}
@@ -4398,13 +4462,16 @@ const CourseContent = () => {
                   fontWeight: '600',
                   color: '#1a1a1a',
                   cursor: 'pointer',
-                  transition: 'all 0.15s ease'
+                  transition: 'all 0.15s ease',
+                  boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = '#f9fafb';
+                  e.currentTarget.style.boxShadow = '0 3px 0 0 rgba(0, 0, 0, 0.15)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = '#ffffff';
+                  e.currentTarget.style.boxShadow = '0 3px 0 0 rgba(0, 0, 0, 0.1)';
                 }}
               >
                 Cancel
@@ -4461,13 +4528,16 @@ const CourseContent = () => {
                   fontWeight: '600',
                   color: '#ffffff',
                   cursor: 'pointer',
-                  transition: 'all 0.15s ease'
+                  transition: 'all 0.15s ease',
+                  boxShadow: '0 3px 0 0 rgba(8, 36, 91, 0.25)'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = '#0a2d75';
+                  e.currentTarget.style.boxShadow = '0 3px 0 0 rgba(8, 36, 91, 0.3)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = '#08245b';
+                  e.currentTarget.style.boxShadow = '0 3px 0 0 rgba(8, 36, 91, 0.25)';
                 }}
               >
                 Add Event

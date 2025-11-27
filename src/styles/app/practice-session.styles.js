@@ -152,7 +152,7 @@ export const usePracticeSessionStyles = createUseStyles({
   },
   choiceButton: {
     background: '#ffffff',
-    border: '2px solid #e2e8f0',
+    border: '1px solid #e2e8f0',
     borderRadius: '8px',
     padding: '1rem 1.25rem',
     fontSize: '0.95rem',
@@ -164,6 +164,7 @@ export const usePracticeSessionStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     gap: '0.75rem',
+    boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)',
     '@media (max-width: 768px)': {
       padding: '0.75rem 1rem',
       fontSize: '0.9rem'
@@ -173,26 +174,29 @@ export const usePracticeSessionStyles = createUseStyles({
       fontSize: '0.85rem'
     },
     '&:hover': {
-      borderColor: '#3b82f6',
-      background: '#f0f9ff',
-      transform: 'translateX(4px)'
+      borderColor: '#cbd5e1',
+      boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.15)',
+      transform: 'none'
     },
     '&.selected': {
-      borderColor: '#3b82f6',
+      borderColor: '#0f172a',
       background: '#eff6ff',
-      fontWeight: '600'
+      fontWeight: '600',
+      boxShadow: '0 3px 0 0 rgba(15, 23, 42, 0.25)'
     },
     '&.correct': {
       borderColor: '#10b981',
-      background: '#f0fdf4',
+      background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.08) 100%)',
       color: '#10b981',
-      fontWeight: '600'
+      fontWeight: '600',
+      boxShadow: '0 3px 0 0 rgba(16, 185, 129, 0.3)'
     },
     '&.incorrect': {
       borderColor: '#ef4444',
-      background: '#fef2f2',
+      background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(239, 68, 68, 0.06) 100%)',
       color: '#ef4444',
-      fontWeight: '600'
+      fontWeight: '600',
+      boxShadow: '0 3px 0 0 rgba(239, 68, 68, 0.2)'
     },
     '&:disabled': {
       cursor: 'not-allowed',
@@ -242,32 +246,35 @@ export const usePracticeSessionStyles = createUseStyles({
     padding: '0.75rem 1.5rem',
     fontSize: '0.875rem',
     fontWeight: '600',
-    borderRadius: '6px',
+    borderRadius: '8px',
     border: 'none',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
     '&.primary': {
       background: '#3b82f6',
       color: '#ffffff',
+      boxShadow: '0 3px 0 0 rgba(59, 130, 246, 0.25)',
       '&:hover': {
         background: '#2563eb',
-        transform: 'translateY(-1px)',
-        boxShadow: '0 4px 12px rgba(59, 130, 246, 0.3)'
+        transform: 'none',
+        boxShadow: '0 3px 0 0 rgba(37, 99, 235, 0.3)'
       },
       '&:disabled': {
         background: '#cbd5e1',
         cursor: 'not-allowed',
         transform: 'none',
-        boxShadow: 'none'
+        boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.05)'
       }
     },
     '&.secondary': {
       background: '#ffffff',
       color: '#64748b',
       border: '1px solid #e2e8f0',
+      boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)',
       '&:hover': {
         background: '#f8fafc',
-        borderColor: '#cbd5e1'
+        borderColor: '#cbd5e1',
+        boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.15)'
       }
     }
   },

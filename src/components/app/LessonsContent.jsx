@@ -66,6 +66,7 @@ const LessonsContent = () => {
   const [previewLesson, setPreviewLesson] = useState(null);
   const [expandedCategories, setExpandedCategories] = useState({});
   const [isInitialRender, setIsInitialRender] = useState(true);
+  const [practiceQuestionCounts, setPracticeQuestionCounts] = useState({});
 
 
   // Check for mode parameter in URL
@@ -141,6 +142,35 @@ const LessonsContent = () => {
       console.error('Error checking feature access:', error);
     }
   };
+
+  // Load practice question counts
+  useEffect(() => {
+    const loadPracticeQuestionCounts = async () => {
+      try {
+        const { supabase } = await import('../../services/api/supabase.service');
+
+        // Get all practice questions with lesson IDs
+        const { data: questions, error } = await supabase
+          .from('practice_questions')
+          .select('lesson_id');
+
+        if (error) throw error;
+
+        // Count questions per lesson
+        const counts = {};
+        questions?.forEach(q => {
+          counts[q.lesson_id] = (counts[q.lesson_id] || 0) + 1;
+        });
+
+        console.log('📊 Practice question counts loaded:', Object.keys(counts).length, 'lessons');
+        setPracticeQuestionCounts(counts);
+      } catch (error) {
+        console.error('Error loading practice question counts:', error);
+      }
+    };
+
+    loadPracticeQuestionCounts();
+  }, []);
 
   // Get mastery rating for a lesson from localStorage
   const getMasteryRating = (lessonId) => {
@@ -530,10 +560,9 @@ const LessonsContent = () => {
                   const totalCount = lessons.length;
                   const isAllCompleted = completedCount === totalCount;
 
-                  // Calculate total questions from lesson content
+                  // Calculate total questions from practice_questions table
                   const totalQuestions = lessons.reduce((sum, l) => {
-                    const content = lessonContent[l.id];
-                    const questionCount = content?.questions?.length || 0;
+                    const questionCount = practiceQuestionCounts[l.id] || 0;
                     return sum + questionCount;
                   }, 0);
 
@@ -680,7 +709,7 @@ const LessonsContent = () => {
                                     color: '#6b7280',
                                     fontWeight: '500'
                                   }}>
-                                    0/{lessonContent[lesson.id]?.questions?.length || 0}
+                                    0/{practiceQuestionCounts[lesson.id] || 0}
                                   </div>
                                 )}
                               </div>

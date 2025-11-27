@@ -66,15 +66,15 @@ const useStyles = createUseStyles({
     marginBottom: '0'
   },
   diagnosticButton: {
-    background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
+    background: '#2563eb',
     color: '#ffffff',
     border: 'none',
-    borderRadius: '8px',
+    borderRadius: '12px',
     padding: '0.75rem 1.75rem',
     fontSize: '0.95rem',
-    fontWeight: '700',
+    fontWeight: '600',
     cursor: 'pointer',
-    transition: 'all 0.2s ease',
+    transition: 'all 0.15s ease',
     whiteSpace: 'nowrap',
     flexShrink: 0,
     minHeight: '48px',
@@ -82,13 +82,14 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     justifyContent: 'center',
     gap: '0.75rem',
+    boxShadow: '0 3px 0 0 rgba(37, 99, 235, 0.4)',
     '&:hover': {
-      transform: 'translateY(-2px)',
-      boxShadow: '0 8px 16px rgba(220, 38, 38, 0.3)'
+      background: '#1d4ed8',
+      boxShadow: '0 3px 0 0 rgba(29, 78, 216, 0.5)'
     },
     '&:active': {
-      transform: 'scale(0.98)',
-      boxShadow: '0 2px 6px rgba(220, 38, 38, 0.2)'
+      transform: 'translateY(1px)',
+      boxShadow: '0 2px 0 0 rgba(29, 78, 216, 0.5)'
     },
     '@media (max-width: 640px)': {
       width: '100%'

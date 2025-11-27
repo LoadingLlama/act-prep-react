@@ -62,12 +62,13 @@ const useStyles = createUseStyles({
     fontSize: '16px',
     fontWeight: '600',
     color: '#ffffff',
-    background: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)',
+    background: '#2563eb',
+    border: 'none',
     padding: '16px 40px',
     borderRadius: '12px',
     cursor: 'pointer',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-    boxShadow: '0 4px 16px rgba(30, 58, 138, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
+    transition: 'all 0.15s ease',
+    boxShadow: '0 3px 0 0 rgba(37, 99, 235, 0.4)',
     display: 'inline-block',
     '@media (max-width: 768px)': {
       width: '100%',
@@ -75,11 +76,12 @@ const useStyles = createUseStyles({
       padding: '12px 24px',
     },
     '&:hover': {
-      transform: 'translateY(-2px)',
-      boxShadow: '0 8px 24px rgba(30, 58, 138, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+      background: '#1d4ed8',
+      boxShadow: '0 3px 0 0 rgba(29, 78, 216, 0.5)',
     },
     '&:active': {
-      transform: 'translateY(0) scale(0.98)',
+      transform: 'translateY(1px)',
+      boxShadow: '0 2px 0 0 rgba(29, 78, 216, 0.5)',
     },
   },
 

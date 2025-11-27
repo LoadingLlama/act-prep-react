@@ -143,9 +143,11 @@ export const useLessonsContentStyles = createUseStyles({
     color: '#1a1a1a',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
+    boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)',
     '&:hover': {
       background: '#f9fafb',
-      borderColor: '#d1d5db'
+      borderColor: '#d1d5db',
+      boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.15)'
     }
   },
   pageHeader: {
@@ -164,7 +166,8 @@ export const useLessonsContentStyles = createUseStyles({
     borderRadius: '100px',
     padding: '0.25rem',
     gap: '0.25rem',
-    border: '1px solid #e5e7eb'
+    border: '1px solid #e5e7eb',
+    boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)'
   },
   modeButton: {
     padding: '0.625rem 1.5rem',

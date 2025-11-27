@@ -37,9 +37,11 @@ export const useCalendarStyles = createUseStyles({
     transition: 'all 0.15s ease',
     color: '#64748b',
     fontSize: '0.75rem',
+    boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)',
     '&:hover': {
       background: '#f8fafc',
-      borderColor: '#cbd5e1'
+      borderColor: '#cbd5e1',
+      boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.15)'
     }
   },
   weekDays: {

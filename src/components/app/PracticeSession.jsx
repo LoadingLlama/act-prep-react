@@ -74,11 +74,11 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
   }, [lesson.id]);
 
   useEffect(() => {
-    // Load practice questions from the lesson's examples
+    // Load practice questions from the practice_questions table
     const loadPracticeQuestions = async () => {
       try {
-        // Import the examples service
-        const ExamplesService = (await import('../../services/api/examples.service')).default;
+        // Import supabase
+        const { supabase } = await import('../../services/api/supabase.service');
         const LessonsService = (await import('../../services/api/lessons.service')).default;
 
         // Get the actual lesson UUID from Supabase
@@ -90,13 +90,23 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
 
         console.log('📝 Loading practice questions for lesson:', lessonUUID);
 
-        // Fetch examples from the database
-        const examples = lessonUUID ? await ExamplesService.getExamplesByLessonId(lessonUUID) : [];
-        console.log('📝 Found', examples.length, 'examples for practice');
+        // Fetch practice questions from the database
+        const { data: practiceQs, error } = await supabase
+          .from('practice_questions')
+          .select('*')
+          .eq('lesson_id', lessonUUID)
+          .order('position', { ascending: true });
 
-        if (examples.length === 0) {
-          // Fallback to mock questions if no examples found
-          console.log('⚠️ No examples found, using mock questions');
+        if (error) {
+          console.error('Error loading practice questions:', error);
+          throw error;
+        }
+
+        console.log('📝 Found', practiceQs?.length || 0, 'practice questions');
+
+        if (!practiceQs || practiceQs.length === 0) {
+          // Fallback to mock questions if no practice questions found
+          console.log('⚠️ No practice questions found, using mock questions');
           const mockQuestions = [
             {
               id: 1,
@@ -110,46 +120,35 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
           return;
         }
 
-        // Convert all examples to practice questions
-        const practiceQuestions = examples.map((example, index) => {
-          // Parse the example data to extract question format
-          const questionData = example.question_data || {};
-
-          // Get choices - handle both old format and new format
+        // Convert practice questions to the format expected by the component
+        const practiceQuestions = practiceQs.map((q, index) => {
+          // Get choices array
           let choices = [];
-          let choiceExplanations = [];
-          if (example.choices && Array.isArray(example.choices)) {
-            // New format: [{letter: 'A', text: 'NO CHANGE', explanation: '...'}, ...]
-            // Filter out any null/undefined entries
-            choices = example.choices.filter(c => c).map(c => c.text || c);
-            choiceExplanations = example.choices.filter(c => c).map(c => c.explanation || '');
-          } else if (questionData.choices) {
-            choices = questionData.choices;
-            choiceExplanations = [];
+          if (q.choices && Array.isArray(q.choices)) {
+            choices = q.choices;
           } else {
             choices = ["Option A", "Option B", "Option C", "Option D"];
-            choiceExplanations = [];
           }
 
           // Get correct answer index (convert letter to index if needed)
           let correctAnswerIndex = 0;
-          if (example.correct_answer) {
+          if (q.correct_answer) {
             // Convert letter (A, B, C, D) to index (0, 1, 2, 3)
             const letterToIndex = { 'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5 };
-            correctAnswerIndex = letterToIndex[example.correct_answer] !== undefined
-              ? letterToIndex[example.correct_answer]
-              : parseInt(example.correct_answer) || 0;
-          } else if (questionData.correct_answer !== undefined) {
-            correctAnswerIndex = questionData.correct_answer;
+            correctAnswerIndex = letterToIndex[q.correct_answer] !== undefined
+              ? letterToIndex[q.correct_answer]
+              : parseInt(q.correct_answer) || 0;
           }
 
           return {
-            id: example.id || index + 1,
-            text: example.problem_text || questionData.question || example.question_text || example.title || `Question ${index + 1}`,
+            id: q.id || index + 1,
+            text: q.problem_text || q.title || `Question ${index + 1}`,
             choices: choices,
-            choiceExplanations: choiceExplanations,
+            choiceExplanations: [],
             correctAnswer: correctAnswerIndex,
-            explanation: example.answer_explanation || questionData.explanation || example.explanation || "Review the lesson content for detailed explanation."
+            explanation: q.answer_explanation || "Review the lesson content for detailed explanation.",
+            solutionSteps: q.solution_steps || null,
+            diagram: q.diagram_svg || null
           };
         });
 

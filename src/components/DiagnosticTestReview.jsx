@@ -368,7 +368,7 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
     const handleMessage = (event) => {
       if (event.origin !== window.location.origin) return;
 
-      const { type } = event.data;
+      const { type, section } = event.data;
 
       if (type === 'PRACTICE_TEST_CLOSE') {
         setSelectedSection(null);
@@ -377,12 +377,17 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
         if (selectedSection) {
           loadSectionIntoIframe(selectedSection);
         }
+      } else if (type === 'SWITCH_SECTION') {
+        console.log('📨 Received SWITCH_SECTION message:', section);
+        if (section && section !== selectedSection) {
+          handleSectionSelect(section);
+        }
       }
     };
 
     window.addEventListener('message', handleMessage);
     return () => window.removeEventListener('message', handleMessage);
-  }, [selectedSection, testData, loadSectionIntoIframe]);
+  }, [selectedSection, testData, loadSectionIntoIframe, handleSectionSelect]);
 
   // Loading state
   if (loading) {
@@ -998,20 +1003,25 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                         padding: '0.5rem 1rem',
                         background: '#0f172a',
                         color: '#ffffff',
-                        border: 'none',
-                        borderRadius: '6px',
+                        border: '1px solid #0f172a',
+                        borderRadius: '8px',
                         fontSize: '0.75rem',
                         fontWeight: '600',
                         cursor: 'pointer',
                         transition: 'all 0.2s ease',
                         letterSpacing: '-0.01em',
-                        whiteSpace: 'nowrap'
+                        whiteSpace: 'nowrap',
+                        boxShadow: '0 3px 0 0 rgba(15, 23, 42, 0.25)'
                       }}
                       onMouseOver={(e) => {
                         e.currentTarget.style.background = '#1e293b';
+                        e.currentTarget.style.borderColor = '#1e293b';
+                        e.currentTarget.style.boxShadow = '0 3px 0 0 rgba(30, 41, 59, 0.3)';
                       }}
                       onMouseOut={(e) => {
                         e.currentTarget.style.background = '#0f172a';
+                        e.currentTarget.style.borderColor = '#0f172a';
+                        e.currentTarget.style.boxShadow = '0 3px 0 0 rgba(15, 23, 42, 0.25)';
                       }}
                     >
                       Review
@@ -1023,25 +1033,34 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                       }}
                       style={{
                         padding: '0.5rem 0.75rem',
-                        background: isExpanded ? '#f8fafc' : 'transparent',
+                        background: isExpanded ? '#f8fafc' : '#ffffff',
                         color: isExpanded ? '#0f172a' : '#64748b',
-                        border: 'none',
-                        borderRadius: '6px',
+                        border: '1px solid #e2e8f0',
+                        borderRadius: '8px',
                         fontSize: '0.75rem',
                         fontWeight: '600',
                         cursor: 'pointer',
                         transition: 'all 0.2s ease',
                         letterSpacing: '-0.01em',
-                        whiteSpace: 'nowrap'
+                        whiteSpace: 'nowrap',
+                        boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)'
                       }}
                       onMouseOver={(e) => {
                         e.currentTarget.style.background = '#f8fafc';
                         e.currentTarget.style.color = '#0f172a';
+                        e.currentTarget.style.borderColor = '#cbd5e1';
+                        e.currentTarget.style.boxShadow = '0 3px 0 0 rgba(0, 0, 0, 0.15)';
                       }}
                       onMouseOut={(e) => {
                         if (!isExpanded) {
-                          e.currentTarget.style.background = 'transparent';
+                          e.currentTarget.style.background = '#ffffff';
                           e.currentTarget.style.color = '#64748b';
+                          e.currentTarget.style.borderColor = '#e2e8f0';
+                          e.currentTarget.style.boxShadow = '0 3px 0 0 rgba(0, 0, 0, 0.1)';
+                        } else {
+                          e.currentTarget.style.background = '#f8fafc';
+                          e.currentTarget.style.borderColor = '#e2e8f0';
+                          e.currentTarget.style.boxShadow = '0 3px 0 0 rgba(0, 0, 0, 0.1)';
                         }
                       }}
                     >
