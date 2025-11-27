@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 import { HiChartBar, HiAcademicCap, HiTrophy, HiExclamationTriangle, HiArrowTrendingUp, HiClipboardDocumentCheck, HiLockClosed, HiRocketLaunch, HiClipboardDocumentList } from 'react-icons/hi2';
 import { useAuth } from '../contexts/AuthContext';
-import { useNavigate, useOutletContext } from 'react-router-dom';
+import { useNavigate, useOutletContext, useSearchParams } from 'react-router-dom';
 import InsightsService from '../services/api/insights.service';
 import { supabase } from '../services/api/supabase.service';
 import { getFeatureAccess } from '../services/subscription.service';
@@ -466,6 +466,7 @@ const InsightsPage = () => {
   const classes = useStyles();
   const { user } = useAuth();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const outletContext = useOutletContext();
   const { setDiagnosticTestOpen } = outletContext || {};
 
@@ -497,6 +498,15 @@ const InsightsPage = () => {
   const [viewingDiagnosticReview, setViewingDiagnosticReview] = useState(false);
   const [lessonMetadataMap, setLessonMetadataMap] = useState({});
   const [isLoading, setIsLoading] = useState(!getCachedInsights());
+
+  // Check URL params to restore diagnostic review state
+  useEffect(() => {
+    const section = searchParams.get('section');
+    if (section) {
+      console.log('📍 URL has section param, opening diagnostic review:', section);
+      setViewingDiagnosticReview(true);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     if (user) {
