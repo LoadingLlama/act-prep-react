@@ -9,6 +9,8 @@ import ProgressiveLessonRenderer from '../ProgressiveLessonRenderer';
 import PracticeSession from './PracticeSession';
 import AllLessonsNavigator from '../AllLessonsNavigator';
 import { lessonStructure as allLessonStructure } from '../../data/lessonStructure';
+import { supabase } from '../../services/api/supabase.service';
+import LessonsService from '../../services/api/lessons.service';
 
 /**
  * LessonModal - Full-screen modal for lesson viewing
@@ -61,6 +63,101 @@ const LessonModal = ({
     }
   }, [lessonModalOpen, currentLesson, lessonProgress, updateLessonProgress]);
 
+  // Preload practice questions when lesson opens
+  React.useEffect(() => {
+    const preloadPracticeQuestions = async () => {
+      if (!lessonModalOpen || !currentLesson || !lessonContent) return;
+
+      try {
+        const startTime = performance.now();
+        console.log('🔄 Preloading practice questions for:', currentLesson);
+
+        // Get the actual lesson UUID from Supabase
+        let lessonUUID = currentLesson;
+        if (!currentLesson.includes('-') || currentLesson.length < 30) {
+          const lessonData = await LessonsService.getLessonByKey(currentLesson);
+          lessonUUID = lessonData?.id;
+        }
+
+        // Fetch practice questions from the database
+        const { data: practiceQs, error } = await supabase
+          .from('practice_questions')
+          .select('id, problem_text, choices, correct_answer, answer_explanation, solution_steps, diagram_svg, position')
+          .eq('lesson_id', lessonUUID)
+          .order('position', { ascending: true })
+          .limit(500);
+
+        if (error) {
+          console.error('❌ Error preloading practice questions:', error);
+          return;
+        }
+
+        if (!practiceQs || practiceQs.length === 0) {
+          console.log('⚠️ No practice questions found for preloading');
+          return;
+        }
+
+        // Convert practice questions to the format expected by the component
+        const letterToIndex = { 'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5 };
+
+        const practiceQuestions = practiceQs.map((q, index) => ({
+          id: q.id || index + 1,
+          text: q.problem_text || `Question ${index + 1}`,
+          choices: Array.isArray(q.choices) ? q.choices : ["Option A", "Option B", "Option C", "Option D"],
+          choiceExplanations: [],
+          correctAnswer: q.correct_answer
+            ? (letterToIndex[q.correct_answer] !== undefined ? letterToIndex[q.correct_answer] : parseInt(q.correct_answer) || 0)
+            : 0,
+          explanation: q.answer_explanation || "Review the lesson content for detailed explanation.",
+          solutionSteps: q.solution_steps || null,
+          diagram: q.diagram_svg || null
+        }));
+
+        const loadTime = performance.now() - startTime;
+        console.log(`✅ Preloaded ${practiceQuestions.length} practice questions in ${loadTime.toFixed(0)}ms`);
+
+        // Update practice state with preloaded questions
+        setPracticeState(prev => ({
+          ...prev,
+          questions: practiceQuestions
+        }));
+
+      } catch (error) {
+        console.error('❌ Error preloading practice questions:', error);
+      }
+    };
+
+    preloadPracticeQuestions();
+  }, [lessonModalOpen, currentLesson, lessonContent]);
+
+  // Handler for question navigation in practice mode
+  const handleQuestionClick = (index) => {
+    if (lessonMode === 'practice') {
+      setPracticeState(prev => ({
+        ...prev,
+        currentQuestionIndex: index
+      }));
+    }
+  };
+
+  // Handler for flag toggle in practice mode
+  const handleFlagToggle = (index) => {
+    if (lessonMode === 'practice') {
+      setPracticeState(prev => {
+        const newFlags = new Set(prev.flaggedQuestions || new Set());
+        if (newFlags.has(index)) {
+          newFlags.delete(index);
+        } else {
+          newFlags.add(index);
+        }
+        return {
+          ...prev,
+          flaggedQuestions: newFlags
+        };
+      });
+    }
+  };
+
   return (
     <div className={`${classes.lessonModal} ${lessonModalOpen ? 'active' : ''}`}>
       <div className={classes.lessonContent}>
@@ -71,6 +168,13 @@ const LessonModal = ({
           onLessonSelect={(lessonId) => openLesson(lessonId)}
           onClose={closeLessonModal}
           currentSection={currentLessonData?.section}
+          practiceMode={lessonMode === 'practice'}
+          questions={practiceState.questions || []}
+          currentQuestionIndex={practiceState.currentQuestionIndex || 0}
+          results={practiceState.results || []}
+          flaggedQuestions={practiceState.flaggedQuestions || new Set()}
+          onQuestionClick={handleQuestionClick}
+          onFlagToggle={handleFlagToggle}
         />
 
         <div className={classes.lessonMain}>
@@ -132,7 +236,9 @@ const LessonModal = ({
                 lessonMode={lessonMode}
                 setLessonMode={setLessonMode}
                 useExternalSidebar={true}
+                preloadedQuestions={practiceState.questions}
                 currentQuestionIndex={practiceState.currentQuestionIndex}
+                externalFlaggedQuestions={practiceState.flaggedQuestions}
                 onPracticeStateChange={setPracticeState}
                 updateLessonProgress={updateLessonProgress}
               />

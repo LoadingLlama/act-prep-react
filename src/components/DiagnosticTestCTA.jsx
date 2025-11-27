@@ -66,7 +66,7 @@ const useStyles = createUseStyles({
     marginBottom: '0'
   },
   diagnosticButton: {
-    background: '#2563eb',
+    background: '#dc2626',
     color: '#ffffff',
     border: 'none',
     borderRadius: '12px',
@@ -82,14 +82,14 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     justifyContent: 'center',
     gap: '0.75rem',
-    boxShadow: '0 3px 0 0 rgba(37, 99, 235, 0.4)',
+    boxShadow: '0 3px 0 0 rgba(220, 38, 38, 0.4)',
     '&:hover': {
-      background: '#1d4ed8',
-      boxShadow: '0 3px 0 0 rgba(29, 78, 216, 0.5)'
+      background: '#b91c1c',
+      boxShadow: '0 3px 0 0 rgba(185, 28, 28, 0.5)'
     },
     '&:active': {
       transform: 'translateY(1px)',
-      boxShadow: '0 2px 0 0 rgba(29, 78, 216, 0.5)'
+      boxShadow: '0 2px 0 0 rgba(185, 28, 28, 0.5)'
     },
     '@media (max-width: 640px)': {
       width: '100%'

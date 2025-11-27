@@ -149,23 +149,45 @@ const LessonsContent = () => {
       try {
         const { supabase } = await import('../../services/api/supabase.service');
 
-        // Get all practice questions with lesson IDs
-        const { data: questions, error } = await supabase
-          .from('practice_questions')
-          .select('lesson_id');
+        console.log('📊 Loading practice question counts...');
 
-        if (error) throw error;
+        // Fetch both lessons and questions in parallel
+        const [lessonsResult, questionsResult] = await Promise.all([
+          supabase.from('lessons').select('id, lesson_key'),
+          supabase.from('practice_questions').select('lesson_id')
+        ]);
 
-        // Count questions per lesson
-        const counts = {};
-        questions?.forEach(q => {
-          counts[q.lesson_id] = (counts[q.lesson_id] || 0) + 1;
+        if (lessonsResult.error) {
+          console.error('Error loading lessons:', lessonsResult.error);
+          throw lessonsResult.error;
+        }
+        if (questionsResult.error) {
+          console.error('Error loading questions:', questionsResult.error);
+          throw questionsResult.error;
+        }
+
+        console.log('📊 Loaded', lessonsResult.data?.length, 'lessons and', questionsResult.data?.length, 'questions');
+
+        // Create mapping from UUID to lesson_key
+        const idToKeyMap = {};
+        lessonsResult.data?.forEach(l => {
+          idToKeyMap[l.id] = l.lesson_key;
         });
 
-        console.log('📊 Practice question counts loaded:', Object.keys(counts).length, 'lessons');
+        // Count questions per lesson using lesson_key
+        const counts = {};
+        questionsResult.data?.forEach(q => {
+          const lessonKey = idToKeyMap[q.lesson_id];
+          if (lessonKey) {
+            counts[lessonKey] = (counts[lessonKey] || 0) + 1;
+          }
+        });
+
+        console.log('📊 Practice question counts loaded:', Object.keys(counts).length, 'lessons with questions');
+        console.log('📊 Sample counts:', Object.entries(counts).slice(0, 5));
         setPracticeQuestionCounts(counts);
       } catch (error) {
-        console.error('Error loading practice question counts:', error);
+        console.error('❌ Error loading practice question counts:', error);
       }
     };
 

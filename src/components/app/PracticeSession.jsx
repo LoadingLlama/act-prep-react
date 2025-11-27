@@ -4,11 +4,21 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { HiStar } from 'react-icons/hi2';
+import { useNavigate } from 'react-router-dom';
+import { HiStar, HiUser } from 'react-icons/hi2';
+import { useAuth } from '../../contexts/AuthContext';
+import { useAppStyles } from '../../styles/App.styles';
+import { hasProSubscription } from '../../services/subscription.service';
+import { supabase } from '../../services/api/supabase.service';
+import LessonsService from '../../services/api/lessons.service';
 import AllLessonsNavigator from '../AllLessonsNavigator';
 import { lessonStructure } from '../../data/lessonStructure';
 
-const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMode, lessonProgress = {}, useExternalSidebar = false, currentQuestionIndex: externalQuestionIndex, onPracticeStateChange, updateLessonProgress }) => {
+const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMode, lessonProgress = {}, useExternalSidebar = false, preloadedQuestions, currentQuestionIndex: externalQuestionIndex, externalFlaggedQuestions, onPracticeStateChange, updateLessonProgress }) => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const classes = useAppStyles();
+
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(externalQuestionIndex || 0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -25,6 +35,35 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
     return saved === 'true';
   });
   const [sidebarView, setSidebarView] = useState('practice'); // 'lessons' or 'practice'
+  const [isPro, setIsPro] = useState(false);
+  const [flaggedQuestions, setFlaggedQuestions] = useState(new Set());
+
+  // Check subscription status
+  useEffect(() => {
+    const checkSubscription = async () => {
+      if (!user) return;
+      try {
+        const proStatus = await hasProSubscription(user.id);
+        setIsPro(proStatus);
+      } catch (error) {
+        console.error('Error checking subscription:', error);
+      }
+    };
+    checkSubscription();
+  }, [user]);
+
+  // Toggle flag on a question
+  const toggleFlag = (questionIndex) => {
+    setFlaggedQuestions(prev => {
+      const newFlags = new Set(prev);
+      if (newFlags.has(questionIndex)) {
+        newFlags.delete(questionIndex);
+      } else {
+        newFlags.add(questionIndex);
+      }
+      return newFlags;
+    });
+  };
 
   // Reset state when question index changes
   useEffect(() => {
@@ -74,12 +113,18 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
   }, [lesson.id]);
 
   useEffect(() => {
-    // Load practice questions from the practice_questions table
+    // Use preloaded questions if available, otherwise load them
     const loadPracticeQuestions = async () => {
+      // Check if we have preloaded questions
+      if (preloadedQuestions && preloadedQuestions.length > 0) {
+        console.log(`✅ Using ${preloadedQuestions.length} preloaded practice questions (instant)`);
+        setQuestions(preloadedQuestions);
+        return;
+      }
+
+      // Otherwise, load them now
       try {
-        // Import supabase
-        const { supabase } = await import('../../services/api/supabase.service');
-        const LessonsService = (await import('../../services/api/lessons.service')).default;
+        const startTime = performance.now();
 
         // Get the actual lesson UUID from Supabase
         let lessonUUID = lesson.id;
@@ -90,69 +135,53 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
 
         console.log('📝 Loading practice questions for lesson:', lessonUUID);
 
-        // Fetch practice questions from the database
+        // Fetch practice questions from the database with optimized query
         const { data: practiceQs, error } = await supabase
           .from('practice_questions')
-          .select('*')
+          .select('id, problem_text, choices, correct_answer, answer_explanation, solution_steps, diagram_svg, position')
           .eq('lesson_id', lessonUUID)
-          .order('position', { ascending: true });
+          .order('position', { ascending: true })
+          .limit(500);
 
         if (error) {
           console.error('Error loading practice questions:', error);
           throw error;
         }
 
-        console.log('📝 Found', practiceQs?.length || 0, 'practice questions');
+        const loadTime = performance.now() - startTime;
+        console.log(`📝 Found ${practiceQs?.length || 0} practice questions in ${loadTime.toFixed(0)}ms`);
 
         if (!practiceQs || practiceQs.length === 0) {
           // Fallback to mock questions if no practice questions found
           console.log('⚠️ No practice questions found, using mock questions');
-          const mockQuestions = [
-            {
-              id: 1,
-              text: "This is a practice question for " + (lesson?.title || "this lesson"),
-              choices: ["Option A", "Option B", "Option C", "Option D"],
-              correctAnswer: 1,
-              explanation: "Practice questions will be generated from lesson examples once they are added to the database."
-            }
-          ];
+          const mockQuestions = [{
+            id: 1,
+            text: "This is a practice question for " + (lesson?.title || "this lesson"),
+            choices: ["Option A", "Option B", "Option C", "Option D"],
+            correctAnswer: 1,
+            explanation: "Practice questions will be generated from lesson examples once they are added to the database."
+          }];
           setQuestions(mockQuestions);
           return;
         }
 
         // Convert practice questions to the format expected by the component
-        const practiceQuestions = practiceQs.map((q, index) => {
-          // Get choices array
-          let choices = [];
-          if (q.choices && Array.isArray(q.choices)) {
-            choices = q.choices;
-          } else {
-            choices = ["Option A", "Option B", "Option C", "Option D"];
-          }
+        const letterToIndex = { 'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5 };
 
-          // Get correct answer index (convert letter to index if needed)
-          let correctAnswerIndex = 0;
-          if (q.correct_answer) {
-            // Convert letter (A, B, C, D) to index (0, 1, 2, 3)
-            const letterToIndex = { 'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5 };
-            correctAnswerIndex = letterToIndex[q.correct_answer] !== undefined
-              ? letterToIndex[q.correct_answer]
-              : parseInt(q.correct_answer) || 0;
-          }
+        const practiceQuestions = practiceQs.map((q, index) => ({
+          id: q.id || index + 1,
+          text: q.problem_text || `Question ${index + 1}`,
+          choices: Array.isArray(q.choices) ? q.choices : ["Option A", "Option B", "Option C", "Option D"],
+          choiceExplanations: [],
+          correctAnswer: q.correct_answer
+            ? (letterToIndex[q.correct_answer] !== undefined ? letterToIndex[q.correct_answer] : parseInt(q.correct_answer) || 0)
+            : 0,
+          explanation: q.answer_explanation || "Review the lesson content for detailed explanation.",
+          solutionSteps: q.solution_steps || null,
+          diagram: q.diagram_svg || null
+        }));
 
-          return {
-            id: q.id || index + 1,
-            text: q.problem_text || q.title || `Question ${index + 1}`,
-            choices: choices,
-            choiceExplanations: [],
-            correctAnswer: correctAnswerIndex,
-            explanation: q.answer_explanation || "Review the lesson content for detailed explanation.",
-            solutionSteps: q.solution_steps || null,
-            diagram: q.diagram_svg || null
-          };
-        });
-
-        console.log('📝 Generated', practiceQuestions.length, 'practice questions');
+        console.log(`✅ Practice questions ready in ${(performance.now() - startTime).toFixed(0)}ms`);
         setQuestions(practiceQuestions);
 
       } catch (error) {
@@ -169,7 +198,7 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
     };
 
     loadPracticeQuestions();
-  }, [lesson]);
+  }, [lesson, preloadedQuestions]);
 
   // Sync external question index from sidebar navigation
   useEffect(() => {
@@ -181,16 +210,24 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
     }
   }, [externalQuestionIndex]);
 
+  // Sync external flagged questions from sidebar navigation
+  useEffect(() => {
+    if (externalFlaggedQuestions !== undefined) {
+      setFlaggedQuestions(externalFlaggedQuestions);
+    }
+  }, [externalFlaggedQuestions]);
+
   // Update parent component with practice state changes
   useEffect(() => {
     if (onPracticeStateChange) {
       onPracticeStateChange({
         questions,
         currentQuestionIndex,
-        results
+        results,
+        flaggedQuestions
       });
     }
-  }, [questions, currentQuestionIndex, results, onPracticeStateChange]);
+  }, [questions, currentQuestionIndex, results, flaggedQuestions, onPracticeStateChange]);
 
   const handleAnswerSelect = (choiceIndex) => {
     if (showExplanation) return; // Prevent changing answer after checking
@@ -511,13 +548,33 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
           minHeight: '100vh',
           background: '#ffffff',
           maxWidth: sidebarCollapsed ? 'calc(100% - 64px)' : 'calc(100% - 320px)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
           transition: 'margin-left 0.3s ease, max-width 0.3s ease'
         }}>
-          <div style={{ textAlign: 'center', padding: '3rem' }}>
-            <div style={{ fontSize: '0.95rem', color: '#64748b' }}>Loading practice questions...</div>
+          {/* Top Header Bar matching home page */}
+          <div className={classes.topHeader}>
+            <div className={classes.topHeaderContent}>
+              <div style={{ flex: 1 }}></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                {user && isPro && (
+                  <div className={classes.proBadge}>
+                    Pro
+                  </div>
+                )}
+                {user && (
+                  <div
+                    className={classes.profilePicture}
+                    onClick={() => navigate('/app/profile')}
+                  >
+                    <HiUser style={{ width: '24px', height: '24px' }} />
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 'calc(100vh - 60px)' }}>
+            <div style={{ textAlign: 'center', padding: '3rem' }}>
+              <div style={{ fontSize: '0.95rem', color: '#64748b' }}>Loading practice questions...</div>
+            </div>
           </div>
         </div>
       </>
@@ -563,6 +620,25 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
           maxWidth: sidebarCollapsed ? 'calc(100% - 64px)' : 'calc(100% - 320px)',
           transition: 'margin-left 0.3s ease, max-width 0.3s ease'
         }}>
+        {/* Top Header Bar matching home page */}
+        <div className={classes.topHeader}>
+          <div className={classes.topHeaderContent}>
+            <div style={{ flex: 1 }}></div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              {user && isPro && (
+                <div className={classes.proBadge}>
+                  Pro
+                </div>
+              )}
+              <div
+                className={classes.profilePicture}
+                onClick={() => navigate('/app/profile')}
+              >
+                <HiUser style={{ width: '24px', height: '24px' }} />
+              </div>
+            </div>
+          </div>
+        </div>
         <div style={{
           padding: '4rem 3rem',
           margin: '0 auto',
@@ -792,23 +868,29 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                     background: '#ef4444',
                     color: 'white',
                     border: 'none',
-                    borderRadius: '8px',
+                    borderRadius: '12px',
                     fontSize: '1rem',
                     fontWeight: '600',
                     cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+                    transition: 'all 0.15s ease',
+                    boxShadow: '0 3px 0 0 rgba(239, 68, 68, 0.4)',
                     marginBottom: '1rem'
                   }}
                   onMouseEnter={(e) => {
                     e.target.style.backgroundColor = '#dc2626';
-                    e.target.style.transform = 'translateY(-1px)';
-                    e.target.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                    e.target.style.boxShadow = '0 3px 0 0 rgba(220, 38, 38, 0.5)';
                   }}
                   onMouseLeave={(e) => {
                     e.target.style.backgroundColor = '#ef4444';
+                    e.target.style.boxShadow = '0 3px 0 0 rgba(239, 68, 68, 0.4)';
+                  }}
+                  onMouseDown={(e) => {
+                    e.target.style.transform = 'translateY(1px)';
+                    e.target.style.boxShadow = '0 2px 0 0 rgba(220, 38, 38, 0.5)';
+                  }}
+                  onMouseUp={(e) => {
                     e.target.style.transform = 'translateY(0)';
-                    e.target.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+                    e.target.style.boxShadow = '0 3px 0 0 rgba(220, 38, 38, 0.5)';
                   }}
                 >
                   Retry Incorrect Questions ({incorrectCount})
@@ -823,25 +905,31 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
             style={{
               width: '100%',
               padding: '1rem',
-              background: '#007AFF',
+              background: '#2563eb',
               color: 'white',
               border: 'none',
-              borderRadius: '8px',
+              borderRadius: '12px',
               fontSize: '1rem',
               fontWeight: '600',
               cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+              transition: 'all 0.15s ease',
+              boxShadow: '0 3px 0 0 rgba(37, 99, 235, 0.4)'
             }}
             onMouseEnter={(e) => {
-              e.target.style.backgroundColor = '#0051D5';
-              e.target.style.transform = 'translateY(-1px)';
-              e.target.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+              e.target.style.backgroundColor = '#1d4ed8';
+              e.target.style.boxShadow = '0 3px 0 0 rgba(29, 78, 216, 0.5)';
             }}
             onMouseLeave={(e) => {
-              e.target.style.backgroundColor = '#007AFF';
+              e.target.style.backgroundColor = '#2563eb';
+              e.target.style.boxShadow = '0 3px 0 0 rgba(37, 99, 235, 0.4)';
+            }}
+            onMouseDown={(e) => {
+              e.target.style.transform = 'translateY(1px)';
+              e.target.style.boxShadow = '0 2px 0 0 rgba(29, 78, 216, 0.5)';
+            }}
+            onMouseUp={(e) => {
               e.target.style.transform = 'translateY(0)';
-              e.target.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+              e.target.style.boxShadow = '0 3px 0 0 rgba(29, 78, 216, 0.5)';
             }}
           >
             Continue
@@ -1013,85 +1101,137 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
               letterSpacing: '0.05em',
               color: '#64748b',
               marginBottom: '0.75rem',
-              paddingLeft: '0.5rem'
+              paddingLeft: '0.5rem',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center'
             }}>
-              {questions.length} Questions
+              <span>{questions.length} Questions</span>
+              {flaggedQuestions.size > 0 && (
+                <span style={{ color: '#dc2626', fontSize: '0.7rem' }}>
+                  {flaggedQuestions.size} flagged
+                </span>
+              )}
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
               {questions.map((question, index) => {
                 const isAnswered = results.some(r => r.questionId === question.id);
                 const isCorrect = results.find(r => r.questionId === question.id)?.correct;
                 const isCurrent = index === currentQuestionIndex;
+                const isFlagged = flaggedQuestions.has(index);
 
                 return (
-                  <button
+                  <div
                     key={index}
-                    onClick={() => {
-                      setCurrentQuestionIndex(index);
-                      setSelectedAnswer(null);
-                      setAnsweredCorrectly(null);
-                      setShowExplanation(false);
-                      setShowTryAgain(false);
-                    }}
                     style={{
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '0.75rem',
-                      padding: '0.75rem',
+                      gap: '0.5rem',
                       background: isCurrent ? '#e0f2fe' : 'transparent',
-                      border: 'none',
                       borderLeft: isCurrent ? '3px solid #3b82f6' : '3px solid transparent',
                       borderRadius: '6px',
-                      cursor: 'pointer',
-                      textAlign: 'left',
-                      transition: 'all 0.2s ease',
-                      width: '100%'
-                    }}
-                    onMouseEnter={(e) => {
-                      if (!isCurrent) {
-                        e.currentTarget.style.background = '#f1f5f9';
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      if (!isCurrent) {
-                        e.currentTarget.style.background = 'transparent';
-                      }
+                      padding: '0.5rem 0.5rem 0.5rem 0.25rem',
+                      transition: 'all 0.2s ease'
                     }}
                   >
-                    <div style={{
-                      width: '28px',
-                      height: '28px',
-                      minWidth: '28px',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '0.8rem',
-                      fontWeight: '600',
-                      background: isAnswered
-                        ? (isCorrect ? '#dcfce7' : '#fee2e2')
-                        : (isCurrent ? '#dbeafe' : '#f1f5f9'),
-                      color: isAnswered
-                        ? (isCorrect ? '#16a34a' : '#dc2626')
-                        : (isCurrent ? '#3b82f6' : '#64748b')
-                    }}>
-                      {isAnswered
-                        ? (isCorrect ? '✓' : '✗')
-                        : (index + 1)}
-                    </div>
-                    <div style={{ flex: 1, minWidth: 0 }}>
+                    <button
+                      onClick={() => {
+                        setCurrentQuestionIndex(index);
+                        setSelectedAnswer(null);
+                        setAnsweredCorrectly(null);
+                        setShowExplanation(false);
+                        setShowTryAgain(false);
+                      }}
+                      style={{
+                        flex: 1,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.75rem',
+                        padding: '0.25rem',
+                        background: 'transparent',
+                        border: 'none',
+                        cursor: 'pointer',
+                        textAlign: 'left',
+                        transition: 'all 0.2s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        if (!isCurrent) {
+                          e.currentTarget.parentElement.style.background = '#f1f5f9';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (!isCurrent) {
+                          e.currentTarget.parentElement.style.background = 'transparent';
+                        }
+                      }}
+                    >
                       <div style={{
-                        fontSize: '0.85rem',
-                        fontWeight: isCurrent ? '600' : '400',
-                        color: isCurrent ? '#1a1a1a' : '#374151',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                        whiteSpace: 'nowrap'
+                        width: '28px',
+                        height: '28px',
+                        minWidth: '28px',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '0.8rem',
+                        fontWeight: '600',
+                        background: isAnswered
+                          ? (isCorrect ? '#dcfce7' : '#fee2e2')
+                          : (isCurrent ? '#dbeafe' : '#f1f5f9'),
+                        color: isAnswered
+                          ? (isCorrect ? '#16a34a' : '#dc2626')
+                          : (isCurrent ? '#3b82f6' : '#64748b')
                       }}>
-                        Question {index + 1}
+                        {isAnswered
+                          ? (isCorrect ? '✓' : '✗')
+                          : (index + 1)}
                       </div>
-                    </div>
-                  </button>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{
+                          fontSize: '0.85rem',
+                          fontWeight: isCurrent ? '600' : '400',
+                          color: isCurrent ? '#1a1a1a' : '#374151',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                          whiteSpace: 'nowrap'
+                        }}>
+                          Question {index + 1}
+                        </div>
+                      </div>
+                    </button>
+                    {/* Flag button */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleFlag(index);
+                      }}
+                      style={{
+                        background: 'transparent',
+                        border: 'none',
+                        cursor: 'pointer',
+                        padding: '0.25rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '1rem',
+                        color: isFlagged ? '#dc2626' : '#9ca3af',
+                        transition: 'color 0.2s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        if (!isFlagged) {
+                          e.target.style.color = '#dc2626';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (!isFlagged) {
+                          e.target.style.color = '#9ca3af';
+                        }
+                      }}
+                      title={isFlagged ? 'Remove flag' : 'Flag for review'}
+                    >
+                      🚩
+                    </button>
+                  </div>
                 );
               })}
             </div>
@@ -1224,123 +1364,152 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
         maxWidth: useExternalSidebar ? (sidebarCollapsed ? 'calc(100% - 64px)' : 'calc(100% - 320px)') : (sidebarCollapsed ? 'calc(100% - 64px)' : 'calc(100% - 320px)'),
         transition: 'margin-left 0.3s ease, max-width 0.3s ease'
       }}>
-        {/* Minimal Header */}
+        {/* Top Header Bar matching home page */}
         <div style={{
-          padding: '1.5rem 3rem 1rem 3rem',
-          borderBottom: '1px solid #e5e7eb'
-        }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-          alignItems: 'center',
-          marginBottom: '0.75rem'
+          width: `calc(100% + ${useExternalSidebar ? (sidebarCollapsed ? '64px' : '240px') : (sidebarCollapsed ? '64px' : '320px')})`,
+          marginLeft: useExternalSidebar ? (sidebarCollapsed ? '-64px' : '-240px') : (sidebarCollapsed ? '-64px' : '-320px'),
+          background: '#ffffff',
+          borderBottom: '1px solid #e5e7eb',
+          position: 'sticky',
+          top: 0,
+          zIndex: 100,
+          transition: 'width 0.3s ease, margin-left 0.3s ease'
         }}>
           <div style={{
+            width: '100%',
+            paddingTop: '0.625rem',
+            paddingBottom: '0.625rem',
+            paddingLeft: useExternalSidebar ? (sidebarCollapsed ? 'calc(64px + 1rem)' : 'calc(240px + 1rem)') : (sidebarCollapsed ? 'calc(64px + 1rem)' : 'calc(320px + 1rem)'),
+            paddingRight: '2rem',
             display: 'flex',
+            justifyContent: 'space-between',
             alignItems: 'center',
-            gap: '0.4rem',
-            fontSize: '0.8rem',
-            fontWeight: '500',
-            color: '#64748b'
+            transition: 'padding-left 0.3s ease'
           }}>
-            <HiStar size={14} style={{
-              color: currentStars >= 1 ? '#fbbf24' : '#d1d5db',
-              transition: 'color 0.3s ease'
-            }} />
-            {currentStars.toFixed(1)}/5
-          </div>
-        </div>
-        <div style={{
-          fontSize: '1.25rem',
-          fontWeight: '600',
-          color: '#1a1a1a',
-          marginBottom: '0.35rem'
-        }}>
-          {lesson?.title || 'Practice Session'}
-        </div>
-        <div style={{
-          fontSize: '0.8rem',
-          color: '#64748b',
-          marginBottom: '0.75rem'
-        }}>
-          Question {currentQuestionIndex + 1} of {questions.length}
-        </div>
-        <div style={{
-          width: '100%',
-          height: '3px',
-          background: '#f1f5f9',
-          overflow: 'hidden'
-        }}>
-          <div style={{
-            width: `${progress}%`,
-            height: '100%',
-            background: '#10b981',
-            transition: 'width 0.3s ease'
-          }} />
-        </div>
-      </div>
-
-      {/* Question - two column layout: passage left, question+answers right */}
-      <div style={{
-        padding: '2rem 3rem',
-        position: 'relative'
-      }}>
-        {/* Two column layout */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '3rem',
-          alignItems: 'start',
-          maxWidth: '1400px',
-          margin: '0 auto'
-        }}>
-          {/* LEFT SIDE: Passage/Paragraph/Context */}
-          <div style={{
-            position: 'sticky',
-            top: '2rem',
-            alignSelf: 'start',
-            maxHeight: 'calc(100vh - 4rem)',
-            overflowY: 'auto'
-          }}>
-            {passage && (
-              <div
-                style={{
-                  fontSize: '16px',
-                  fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-                  lineHeight: '1.7',
-                  fontWeight: '400',
-                  color: '#1f2937'
-                }}
-                dangerouslySetInnerHTML={{ __html: passage }}
-                className="passage-content"
-              />
-            )}
-          </div>
-
-          {/* RIGHT SIDE: Question + Answer Choices */}
-          <div style={{
-            position: 'sticky',
-            top: '2rem',
-            alignSelf: 'start'
-          }}>
-            {/* Question Number and Text - ALWAYS show question number */}
-            <div style={{
-              fontSize: '17px',
-              fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-              lineHeight: '1.6',
-              fontWeight: '600',
-              color: '#1a1a1a',
-              marginBottom: '1.5rem',
-              paddingBottom: '1.25rem',
-              borderBottom: '2px solid #e5e7eb'
-            }}>
-              <div style={{ fontSize: '16px', fontWeight: '700', marginBottom: '0.5rem', color: '#3b82f6' }}>
-                {currentQuestionIndex + 1}.
+            <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <div style={{
+                fontSize: '1.125rem',
+                fontWeight: '600',
+                color: '#1a1a1a'
+              }}>
+                {lesson?.title || 'Practice Session'}
               </div>
-              {question && (
-                <div style={{ fontWeight: '500' }} dangerouslySetInnerHTML={{ __html: question }} />
-              )}
+              <div style={{
+                fontSize: '0.875rem',
+                color: '#1a1a1a',
+                fontWeight: '500',
+                display: 'flex',
+                alignItems: 'center'
+              }}>
+                Question {currentQuestionIndex + 1} of {questions.length}
+              </div>
             </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              {user && isPro && (
+                <div className={classes.proBadge}>
+                  Pro
+                </div>
+              )}
+              <div
+                className={classes.profilePicture}
+                onClick={() => navigate('/app/profile')}
+              >
+                <HiUser style={{ width: '24px', height: '24px' }} />
+              </div>
+            </div>
+          </div>
+          {/* Progress Bar inside header */}
+          <div style={{
+            width: '100%',
+            height: '3px',
+            background: '#f1f5f9',
+            overflow: 'hidden'
+          }}>
+            <div style={{
+              width: `${progress}%`,
+              height: '100%',
+              background: '#10b981',
+              transition: 'width 0.3s ease'
+            }} />
+          </div>
+        </div>
+
+      {/* Question - centered single column layout */}
+      <div style={{
+        padding: '0 3rem',
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'center',
+        minHeight: 'calc(100vh - 60px)'
+      }}>
+        {/* Single column centered layout */}
+        <div style={{
+          maxWidth: '900px',
+          margin: '0 auto',
+          width: '100%'
+        }}>
+          {/* Passage/Context at top if it exists */}
+          {passage && (
+            <div style={{
+              fontSize: '16px',
+              fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+              lineHeight: '1.7',
+              fontWeight: '400',
+              color: '#1f2937',
+              marginBottom: '2rem'
+            }}
+              dangerouslySetInnerHTML={{ __html: passage }}
+              className="passage-content"
+            />
+          )}
+
+          {/* Question Text centered with flag button */}
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '1.5rem' }}>
+            {question && (
+              <div style={{
+                flex: 1,
+                fontSize: '17px',
+                fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                lineHeight: '1.6',
+                fontWeight: '500',
+                color: '#1a1a1a',
+                textAlign: 'left'
+              }} dangerouslySetInnerHTML={{ __html: question }} />
+            )}
+            {/* Flag button */}
+            <button
+              onClick={() => toggleFlag(currentQuestionIndex)}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                borderRadius: '6px',
+                padding: '0.375rem 0.5rem',
+                cursor: 'pointer',
+                fontSize: '0.875rem',
+                transition: 'all 0.2s ease',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.375rem',
+                color: flaggedQuestions.has(currentQuestionIndex) ? '#dc2626' : '#9ca3af'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = 'rgba(0, 0, 0, 0.03)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = 'transparent';
+              }}
+              title={flaggedQuestions.has(currentQuestionIndex) ? 'Remove flag' : 'Flag for review'}
+            >
+              <span style={{ fontSize: '0.875rem' }}>🚩</span>
+              <span style={{
+                fontSize: '0.75rem',
+                fontWeight: '500',
+                color: flaggedQuestions.has(currentQuestionIndex) ? '#dc2626' : '#9ca3af'
+              }}>
+                {flaggedQuestions.has(currentQuestionIndex) ? 'Flagged' : 'Flag'}
+              </span>
+            </button>
+          </div>
 
             {/* Answer choices */}
             {currentQuestion.choices.map((choice, index) => {
@@ -1359,17 +1528,25 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                                        isSelected && answeredCorrectly === null ? 'rgba(59, 130, 246, 0.05)' : '#ffffff',
                       borderRadius: '8px',
                       padding: '1rem',
-                      transition: 'all 0.2s ease'
+                      transition: 'all 0.15s ease',
+                      boxShadow: isSelected && answeredCorrectly === null ? '0 3px 0 0 rgba(59, 130, 246, 0.3)' :
+                                 answeredCorrectly === true && isCorrectAnswer ? '0 3px 0 0 rgba(72, 187, 120, 0.3)' : '0 2px 0 0 rgba(0, 0, 0, 0.05)'
                     }}
                     onMouseEnter={(e) => {
                       if (!showExplanation) {
                         e.currentTarget.style.backgroundColor = answeredCorrectly === true && isCorrectAnswer ? 'rgba(72, 187, 120, 0.08)' : 'rgba(0, 0, 0, 0.02)';
+                        if (!isSelected && answeredCorrectly !== true) {
+                          e.currentTarget.style.boxShadow = '0 3px 0 0 rgba(0, 0, 0, 0.1)';
+                        }
                       }
                     }}
                     onMouseLeave={(e) => {
                       if (!showExplanation) {
                         e.currentTarget.style.backgroundColor = answeredCorrectly === true && isCorrectAnswer ? 'rgba(72, 187, 120, 0.08)' :
                                                                  isSelected && answeredCorrectly === null ? 'rgba(59, 130, 246, 0.05)' : '#ffffff';
+                        if (!isSelected && answeredCorrectly !== true) {
+                          e.currentTarget.style.boxShadow = '0 2px 0 0 rgba(0, 0, 0, 0.05)';
+                        }
                       }
                     }}
                   >
@@ -1527,16 +1704,16 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                   onClick={handleCheckAnswer}
                   disabled={selectedAnswer === null}
                   style={{
-                    backgroundColor: selectedAnswer === null ? '#cbd5e1' : '#007AFF',
+                    backgroundColor: selectedAnswer === null ? '#cbd5e1' : '#2563eb',
                     color: '#ffffff',
                     padding: '0.875rem 2rem',
                     fontSize: '1rem',
-                    fontWeight: '500',
-                    borderRadius: '8px',
+                    fontWeight: '600',
+                    borderRadius: '12px',
                     border: 'none',
                     cursor: selectedAnswer === null ? 'not-allowed' : 'pointer',
-                    transition: 'all 0.2s ease',
-                    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+                    transition: 'all 0.15s ease',
+                    boxShadow: selectedAnswer === null ? '0 2px 0 0 rgba(0, 0, 0, 0.1)' : '0 3px 0 0 rgba(37, 99, 235, 0.4)',
                     userSelect: 'none',
                     WebkitUserSelect: 'none',
                     MozUserSelect: 'none',
@@ -1544,16 +1721,26 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                   }}
                   onMouseEnter={(e) => {
                     if (selectedAnswer !== null) {
-                      e.target.style.backgroundColor = '#0051D5';
-                      e.target.style.transform = 'translateY(-1px)';
-                      e.target.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                      e.target.style.backgroundColor = '#1d4ed8';
+                      e.target.style.boxShadow = '0 3px 0 0 rgba(29, 78, 216, 0.5)';
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (selectedAnswer !== null) {
-                      e.target.style.backgroundColor = '#007AFF';
+                      e.target.style.backgroundColor = '#2563eb';
+                      e.target.style.boxShadow = '0 3px 0 0 rgba(37, 99, 235, 0.4)';
+                    }
+                  }}
+                  onMouseDown={(e) => {
+                    if (selectedAnswer !== null) {
+                      e.target.style.transform = 'translateY(1px)';
+                      e.target.style.boxShadow = '0 2px 0 0 rgba(29, 78, 216, 0.5)';
+                    }
+                  }}
+                  onMouseUp={(e) => {
+                    if (selectedAnswer !== null) {
                       e.target.style.transform = 'translateY(0)';
-                      e.target.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+                      e.target.style.boxShadow = '0 3px 0 0 rgba(29, 78, 216, 0.5)';
                     }
                   }}
                 >
@@ -1589,29 +1776,34 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                     color: 'white',
                     padding: '0.875rem 2rem',
                     fontSize: '1rem',
-                    fontWeight: '500',
-                    borderRadius: '8px',
+                    fontWeight: '600',
+                    borderRadius: '12px',
                     border: 'none',
                     cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+                    transition: 'all 0.15s ease',
+                    boxShadow: '0 3px 0 0 rgba(16, 185, 129, 0.4)'
                   }}
                   onMouseEnter={(e) => {
                     e.target.style.backgroundColor = '#059669';
-                    e.target.style.transform = 'translateY(-1px)';
-                    e.target.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                    e.target.style.boxShadow = '0 3px 0 0 rgba(5, 150, 105, 0.5)';
                   }}
                   onMouseLeave={(e) => {
                     e.target.style.backgroundColor = '#10b981';
+                    e.target.style.boxShadow = '0 3px 0 0 rgba(16, 185, 129, 0.4)';
+                  }}
+                  onMouseDown={(e) => {
+                    e.target.style.transform = 'translateY(1px)';
+                    e.target.style.boxShadow = '0 2px 0 0 rgba(5, 150, 105, 0.5)';
+                  }}
+                  onMouseUp={(e) => {
                     e.target.style.transform = 'translateY(0)';
-                    e.target.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+                    e.target.style.boxShadow = '0 3px 0 0 rgba(5, 150, 105, 0.5)';
                   }}
                 >
                   {currentQuestionIndex < questions.length - 1 ? 'Next Question →' : 'Finish Practice'}
                 </button>
               </div>
             )}
-          </div>
         </div>
       </div>
 
