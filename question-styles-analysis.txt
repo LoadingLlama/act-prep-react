@@ -1,0 +1,818 @@
+====================================================================================================
+LOGICAL-PLACEMENT - Topic 2.6 - Logical Placement
+Total questions: 36
+====================================================================================================
+
+Position 1: Bracketed Numbers - Read Carefully
+----------------------------------------------------------------------------------------------------
+Problem Text:
+[1] Most Americans have never tried truly great chocolate. [2] Sure, we have Hershey's chocolate bars, which are delicious. [3] But have you ever had chocolate from Switzerland? [4] Take a real Swiss chocolate like Lindt, for example. [5] The higher percentage of cacao, 23 percent in Lindt chocolate in comparison with only 11 percent in Hershey's, results in a much darker, richer taste, and the lower sugar content brings out the natural bitterness of the chocolate. [6] The Swiss really know how to make chocolate properly. [7] <u>It just melts in your mouth and has such a rich, bold flavor with just the right amount of bitterness.</u>
+
+For the sake of logic and coherence, Sentence 7 should be placed:
+
+Choices:
+  A. where it is now
+  B. after sentence 2
+  C. after sentence 4
+  D. after sentence 5
+
+Correct Answer: D
+
+Explanations:
+  A. This placement would create illogical flow - either separating related ideas, introducing information before context is established, or breaking up coherent progressions.
+
+  B. This placement would create illogical flow - either separating related ideas, introducing information before context is established, or breaking up coherent progressions.
+
+  C. This placement would create illogical flow - either separating related ideas, introducing information before context is established, or breaking up coherent progressions.
+
+  D. Correct. This placement ensures the sentence logically flows with the surrounding content and maintains coherent idea progression.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 13: Transitional Logic Flow
+----------------------------------------------------------------------------------------------------
+Problem Text:
+[1] Renewable energy sources offer significant environmental benefits. [2] Solar and wind power produce no greenhouse gas emissions during operation. [3] <u>However, transitioning to renewable energy also presents economic opportunities.</u> [4] The renewable energy sector has created millions of new jobs worldwide. [5] These positions range from manufacturing solar panels to installing wind turbines.
+
+For the sake of logic and coherence, Sentence 3 should be placed:
+
+Choices:
+  A. where it is now.
+  B. after Sentence 1.
+  C. before Sentence 1.
+  D. after Sentence 2.
+
+Correct Answer: D
+
+Explanations:
+  A. "However" signals contrast, but transitioning from environmental benefits (emissions) to economic benefits (jobs) is addition, not contrast—"however" is the wrong transition, and the placement interrupts the environmental benefit discussion.
+
+  B. Placing the economic transition right after the opening would interrupt the development of environmental benefits before they're fully explained—the emissions point (Sentence 2) would be orphaned without clear connection.
+
+  C. Beginning with "However" and economic opportunities makes no sense—"however" requires something to contrast with, but there's nothing before it, and starting with economics before establishing environmental benefits is illogical.
+
+  D. This creates better flow but "However" is still wrong—the sentence should signal addition ("Additionally" or "Moreover") not contrast when moving from environmental to economic benefits, both of which are positive arguments for renewables.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 29: Complex Causal Chain Organization
+----------------------------------------------------------------------------------------------------
+Problem Text:
+[1] Deforestation in the Amazon has global climate implications. [2] Trees absorb CO2 from the atmosphere during photosynthesis. [3] <u>When forests are cleared, this stored carbon is released back into the atmosphere.</u> [4] Additionally, fewer trees remain to absorb future emissions. [5] This double effect accelerates atmospheric CO2 accumulation.
+
+For the sake of logic and coherence, Sentence 3 should be placed:
+
+Choices:
+  A. where it is now.
+  B. after Sentence 1.
+  C. after Sentence 4.
+  D. before Sentence 1.
+
+Correct Answer: A
+
+Explanations:
+  A. This creates proper causal chain: trees absorb CO2 (mechanism) → clearing releases stored carbon (consequence 1) → fewer trees to absorb future emissions (consequence 2) → double effect accelerates accumulation (synthesis). The logical flow is clear.
+
+  B. Explaining that clearing releases stored carbon before establishing that trees absorb/store carbon (Sentence 2) is backwards—readers need to understand the storage mechanism before understanding its release.
+
+  C. Discussing carbon release after mentioning the reduction in absorption capacity disrupts the logical build: better to explain both consequences in order (release stored + lose future absorption) before synthesizing the "double effect."
+
+  D. Beginning with forest clearing releasing carbon before establishing the context (Amazon deforestation, global climate) or mechanism (trees absorbing CO2) leaves readers without necessary framework for understanding the claim.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 40: Advanced Contextual Dependencies
+----------------------------------------------------------------------------------------------------
+Problem Text:
+[1] The Harlem Renaissance transformed African American cultural expression in the 1920s. [2] Writers like Langston Hughes and Zora Neale Hurston gained national recognition. [3] <u>This artistic flowering emerged partly from the Great Migration, when millions of Black Americans moved from the rural South to Northern cities seeking economic opportunities and escaping Jim Crow oppression.</u> [4] Jazz clubs became cultural centers where musicians like Duke Ellington pioneered new sounds. [5] The movement established Black artistic achievement as central to American culture.
+
+For the sake of logic and coherence, Sentence 3 should be placed:
+
+Choices:
+  A. where it is now.
+  B. after Sentence 1.
+  C. after Sentence 4.
+  D. before Sentence 1.
+
+Correct Answer: B
+
+Explanations:
+  A. Explaining the Great Migration context after mentioning specific writers is acceptable but slightly interrupts the flow of artistic achievements—the migration context would work better before listing specific cultural achievements it enabled.
+
+  B. This creates superior logical flow: introduce the Renaissance transformation → explain the demographic/social context that enabled it (Great Migration) → list specific achievements in literature (Hughes, Hurston) → music (Ellington) → conclude with cultural impact. The context frames the achievements.
+
+  C. Explaining the contextual migration after discussing both literary and musical achievements makes the important context feel like an afterthought—it should frame the achievements, not follow them.
+
+  D. Beginning with the Great Migration before introducing the Harlem Renaissance itself is backwards—the opening should establish the main topic before providing the contextual background.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 50: Ultimate Placement Complexity: Maximum Integration
+----------------------------------------------------------------------------------------------------
+Problem Text:
+[1] The development of antibiotics transformed medicine, but overuse has created a crisis of drug-resistant bacteria. [2] When patients fail to complete antibiotic courses, some bacteria survive exposure and develop resistance. [3] <u>Agricultural use of antibiotics in livestock feed accelerates resistance by exposing bacterial populations to constant low-level doses—conditions ideal for selecting resistant strains.</u> [4] These resistant bacteria spread through multiple pathways. [5] Hospital environments create additional pressure favoring resistant strains. [6] Direct contact, contaminated food, and environmental reservoirs all contribute to transmission. [7] Addressing resistance requires simultaneous action in medical practice, agriculture, and public health policy.
+
+For the sake of logic and coherence, Sentence 3 should be placed:
+
+Choices:
+  A. where it is now.
+  B. after Sentence 4.
+  C. after Sentence 5.
+  D. after Sentence 7.
+
+Correct Answer: A
+
+Explanations:
+  A. This placement works well, presenting agricultural use as the second cause of resistance (after incomplete treatment) before discussing spread mechanisms (Sentences 4, 6) and other contributing environments (hospitals), creating logical flow from causes to transmission to solutions.
+
+  B. Describing agricultural antibiotic use (a cause of resistance) after the general statement about spread "pathways" disrupts the logical structure—better to group all causes together (medical misuse, agricultural use, hospital environments) before discussing transmission mechanisms.
+
+  C. Placing agricultural use after hospital environments works but slightly weakens the flow—the current placement groups two major external causes (incomplete courses, agricultural use) before discussing spread and additional pressure, creating clearer thematic organization.
+
+  D. Describing agricultural antibiotic use after the conclusion about needing action in multiple spheres is backwards—the agricultural contribution should be presented as part of the problem analysis before the solution statement.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+====================================================================================================
+MISC-TOPICS - Topic 1.8 - Miscellaneous Topics
+Total questions: 49
+====================================================================================================
+
+Position 1: Affect vs. Effect
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The documentary explored the effect that social media has on teenagers, showing how constant connectivity <u>affects</u> their mental health and self-esteem.
+
+Choices:
+  A. NO CHANGE
+  B. effects
+  C. has an affect on
+  D. effecting
+
+Correct Answer: A
+
+Explanations:
+  A. Correct. 'Effect' is a noun meaning 'result' or 'consequence' - the documentary explored the RESULT (effect) that social media has on teenagers, not the verb 'affect' (to influence).
+
+  B. Incorrect. 'Affect' is a verb meaning 'to influence' - but 'the effect that' requires a noun (the result), not a verb. The documentary explored the RESULT (effect), not the action of influencing (affect).
+
+  C. Incorrect. 'Effective' is an adjective meaning 'producing the desired result' - but 'the _____ that social media has' requires a noun (effect = result), not an adjective describing something as successful.
+
+  D. Incorrect. 'Affecting' is a verb form (present participle) meaning 'influencing' - but the sentence needs a noun to complete 'the _____ that social media has', not a verb. Use 'effect' (result) as the noun.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 13: Who's vs. Whose (Contraction)
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The teacher wants to know <u>whose</u> been completing the extra credit assignments.
+
+Choices:
+  A. whose
+  B. who's
+  C. whom
+  D. who
+
+Correct Answer: B
+
+Explanations:
+  A. Incorrect. 'Whose' is possessive, but the sentence needs 'who has' (who's) to work with 'been completing.'
+
+  B. Correct. 'Who's' is a contraction of 'who has,' creating the present perfect 'who has been completing.'
+
+  C. Incorrect. 'Whom' is the object form and doesn't fit as the subject of 'has been completing.'
+
+  D. Incorrect. 'Who' alone doesn't work with 'been,' which requires the auxiliary verb 'has.'
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 25: Interested In
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The company is interested <u>on</u> expanding its operations into international markets.
+
+Choices:
+  A. on
+  B. in
+  C. about
+  D. for
+
+Correct Answer: B
+
+Explanations:
+  A. Incorrect. 'Interested on' is not a standard prepositional idiom in English.
+
+  B. Correct. 'Interested in' is the correct prepositional idiom for expressing interest.
+
+  C. Incorrect. 'Interested about' is not standard; use 'interested in' or 'curious about.'
+
+  D. Incorrect. 'Interested for' is not a standard prepositional idiom in English.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 37: Eliminating Colloquialisms
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The debate team <u>totally crushed</u> their opponents in the final round of competition.
+
+Choices:
+  A. totally crushed
+  B. decisively defeated
+  C. really beat
+  D. destroyed
+
+Correct Answer: B
+
+Explanations:
+  A. Incorrect. This is slang and overly informal, inappropriate for formal writing.
+
+  B. Correct. This formal expression appropriately conveys a strong victory without slang.
+
+  C. Incorrect. While less slangy, this is still too informal and lacks precision.
+
+  D. Incorrect. While more formal than 'crushed,' 'destroyed' is hyperbolic for a debate context.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 50: Complex Idiomatic Expression
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The scholarship provides students <u>with the opportunity of studying</u> abroad for a full academic year.
+
+Choices:
+  A. NO CHANGE
+  B. the opportunity to study
+  C. with opportunities for studying
+  D. opportunities of study
+
+Correct Answer: B
+
+Explanations:
+  A. Incorrect. 'Opportunity of studying' is not standard - while 'of' can follow 'opportunity' with a noun (opportunity of a lifetime), when followed by a verb, the idiomatic form is 'opportunity TO study', not 'opportunity OF studying'.
+
+  B. Correct. 'Opportunity to study' is the standard idiomatic expression - when 'opportunity' is followed by a verb, English requires the infinitive form 'to study' (not the gerund 'of studying'). Think: opportunity TO do something.
+
+  C. Incorrect. 'Opportunity for study' changes the meaning slightly - while grammatically possible, this treats 'study' as a noun rather than an action, and doesn't match the original phrasing's intent of students actively studying abroad.
+
+  D. Incorrect. 'Opportunity in studying' is not idiomatic - 'in' suggests location or method, but the standard English expression is 'opportunity TO study' when followed by a verb indicating the action students can take.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+====================================================================================================
+REDUNDANCY - Topic 2.1 - Redundancy & Wordiness
+Total questions: 37
+====================================================================================================
+
+Position 1: Redundancy in Context
+----------------------------------------------------------------------------------------------------
+Problem Text:
+After two years of traveling abroad, Jerome finally <u>returned back home</u> to his family in California.
+
+Choices:
+  A. NO CHANGE
+  B. returned home
+  C. came back home
+  D. returned back
+
+Correct Answer: B
+
+Explanations:
+  A. This is redundant - it repeats information that's already clear from context or uses unnecessary words that don't add meaning.
+
+  B. Correct. This is the most concise way to express the idea without repeating information or using unnecessary words.
+
+  C. This is redundant - it repeats information that's already clear from context or uses unnecessary words that don't add meaning.
+
+  D. This is redundant - it repeats information that's already clear from context or uses unnecessary words that don't add meaning.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 13: Wordy Phrase Elimination
+----------------------------------------------------------------------------------------------------
+Problem Text:
+<u>Due to the fact that</u> it was raining, the game was postponed.
+
+Choices:
+  A. NO CHANGE
+  B. encircled on all sides
+  C. surrounded
+  D. completely surrounded on all sides
+
+Correct Answer: B
+
+Explanations:
+  A. "Surrounded" means completely encircled—this already implies "on all sides," making the addition of "on all sides" a redundant clarification of what "surrounded" means.
+
+  B. "Encircled" has the same redundancy issue as "surrounded"—the word itself means completely circled around, so "on all sides" is unnecessary repetition.
+
+  C. "Surrounded" alone is complete and unambiguous—the word inherently means encircled on all sides, requiring no additional specification.
+
+  D. This triples the redundancy—"completely," "surrounded," and "on all sides" all convey the same idea of total encirclement, making it extremely wordy.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 26: Practice Question 27
+----------------------------------------------------------------------------------------------------
+Problem Text:
+At this point, the writer is considering dividing the paragraph into two. Should the writer begin or not begin a new paragraph here, and why?
+
+Choices:
+  F. Begin new paragraph because essay shifts from harmonics explanation to Klimas's taste in music
+  G. Begin new paragraph because essay shifts from Jenny's experiments to music Klimas uses for his artwork.
+  H. DO NOT begin new paragraph because it would interrupt Jenny's experiments analysis of Jenny's experiments.
+  J. O NOT begin a new paragraph because doing so would interrupt a description of Klimas’s scientific background.
+
+Correct Answer: G
+
+Explanations:
+  F. This choice is wordy or repeats information that's already clear from context.
+
+  G. Correct. This choice avoids redundant phrasing while maintaining clarity.
+
+  H. This choice is wordy or repeats information that's already clear from context.
+
+  J. This choice is wordy or repeats information that's already clear from context.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 39: Complex Implicit Redundancy
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The author's memoir <u>recounts her personal experiences</u> growing up in rural Montana.
+
+Choices:
+  A. NO CHANGE
+  B. conclusion
+  C. ultimate final conclusion
+  D. ending conclusion
+
+Correct Answer: B
+
+Explanations:
+  A. A conclusion is by definition the final part or judgment—"final" is redundant because conclusions come at the end by nature.
+
+  B. "Conclusion" alone is clear and complete—the word inherently refers to a final determination or ending, making "final" unnecessary.
+
+  C. This doubles the redundant modifier—"ultimate" and "final" are synonyms, and both are unnecessary with "conclusion."
+
+  D. "Ending" creates the same redundancy as "final"—conclusions are endpoints by definition, making temporal specification verbose.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 50: Advanced Contextual Wordiness
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The chef's innovative techniques <u>create dishes that are characterized by bold flavors</u>.
+
+Choices:
+  A. NO CHANGE
+  B. if
+  C. whether
+  D. whether or not if
+
+Correct Answer: C
+
+Explanations:
+  A. "Whether" already presents two alternatives (if something is true or not true)—adding "or not" is usually redundant unless emphasizing both possibilities equally.
+
+  B. "If" is more concise and works when introducing a conditional—it's appropriate here and eliminates the wordiness of "whether or not."
+
+  C. "Whether" alone typically suffices—it inherently presents alternatives without requiring "or not," though "or not" is sometimes added for emphasis (not needed here).
+
+  D. This combines two different conjunctions redundantly—"whether or not" and "if" both introduce conditional clauses, making one of them unnecessary.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+====================================================================================================
+TRANSITIONS - Topic 2.3 - Transitions
+Total questions: 37
+====================================================================================================
+
+Position 1: Reading for Context
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The new restaurant received excellent reviews. <u>However,</u> the chef had trained at the finest culinary schools in France.
+
+Which transition word is the most logical in context?
+
+Choices:
+  A. NO CHANGE
+  B. In fact,
+  C. For example,
+  D. Therefore,
+
+Correct Answer: B
+
+Explanations:
+  A. This transition doesn't match the logical relationship between ideas - it signals the wrong type of connection.
+
+  B. Correct. This transition properly signals the logical relationship between the ideas being connected.
+
+  C. This transition doesn't match the logical relationship between ideas - it signals the wrong type of connection.
+
+  D. This transition doesn't match the logical relationship between ideas - it signals the wrong type of connection.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 13: Emphasis Transition
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The medication reduces symptoms. <u>For instance,</u> it completely eliminates severe pain in most patients.
+
+Choices:
+  A. NO CHANGE
+  B. Indeed,
+  C. However,
+  D. Meanwhile,
+
+Correct Answer: B
+
+Explanations:
+  A. "For instance" signals examples, but eliminating severe pain isn't just an example of reduction—it's a dramatic extent of it.
+
+  B. "Indeed" signals emphasis/confirmation, correctly highlighting that complete elimination is a strong confirmation of symptom reduction.
+
+  C. "However" signals contrast, implying complete elimination opposes symptom reduction. Complete elimination is an extreme form of reduction, not opposition.
+
+  D. "Meanwhile" signals simultaneous action, implying pain elimination happens at the same time as something else. This emphasizes the result, not timing.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 26: Practice Question 27
+----------------------------------------------------------------------------------------------------
+Problem Text:
+At this point, the writer is considering dividing the paragraph into two. Should the writer begin or not begin a new paragraph here, and why?
+
+Choices:
+  F. Begin new paragraph because essay shifts from harmonics explanation to Klimas's taste in music
+  G. Begin new paragraph because essay shifts from Jenny's experiments to music Klimas uses for his artwork.
+  H. DO NOT begin new paragraph because it would interrupt Jenny's experiments analysis of Jenny's experiments.
+  J. O NOT begin a new paragraph because doing so would interrupt a description of Klimas’s scientific background.
+
+Correct Answer: G
+
+Explanations:
+  F. This transition signals the wrong type of relationship between the ideas being connected.
+
+  G. Correct. This transition properly signals the logical relationship between the ideas being connected.
+
+  H. This transition signals the wrong type of relationship between the ideas being connected.
+
+  J. This transition signals the wrong type of relationship between the ideas being connected.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 39: Parallel Structure Signal
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The program benefits students academically. <u>In contrast,</u> it enhances their social development.
+
+Choices:
+  A. NO CHANGE
+  B. Likewise,
+  C. Nevertheless,
+  D. Otherwise,
+
+Correct Answer: B
+
+Explanations:
+  A. "In contrast" signals social development opposes academic benefit. Both are positive program outcomes being listed, not opposed.
+
+  B. "Likewise" correctly signals that social enhancement parallels academic benefit—two similar positive outcomes.
+
+  C. "Nevertheless" signals social development happens despite academic benefit. Both are intended program outcomes, not concessions.
+
+  D. "Otherwise" signals social development is an alternative to academic benefit. The program provides both simultaneously.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 50: Complex Culmination
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The expedition faced equipment failures, extreme weather, and supply shortages. <u>However,</u> these challenges tested the team's resilience and determination.
+
+Choices:
+  A. NO CHANGE
+  B. Ultimately,
+  C. For example,
+  D. Similarly,
+
+Correct Answer: B
+
+Explanations:
+  A. "However" signals challenges testing resilience opposes the difficulties. Testing resilience is a reframing that finds meaning in hardship, not opposition to it.
+
+  B. "Ultimately" correctly signals that resilience-testing is the final significance/outcome of the challenges—the culminating meaning of the difficulties.
+
+  C. "For example" signals resilience-testing exemplifies specific challenges. It's the overall significance of all challenges, not an example of one.
+
+  D. "Similarly" signals testing resilience is like the challenges. Testing is the meaning derived from challenges, not a similar event.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+====================================================================================================
+WHICH-CHOICE - Topic 2.4 - Which Choice Questions
+Total questions: 34
+====================================================================================================
+
+Position 1: Specific Description
+----------------------------------------------------------------------------------------------------
+Problem Text:
+Before refrigerators, Americans kept food cold in <u>iceboxes, which required ice to be bought and placed into the box each week</u>.
+
+Which choice most specifically describes what was used to build iceboxes?
+
+Choices:
+  A. NO CHANGE
+  B. iceboxes, which were only cold enough to keep food cool but not freeze anything.
+  C. wooden boxes with tin and insulated with cork and sawdust.
+  D. the very first invention that allowed people to keep food cold in their houses.
+
+Correct Answer: C
+
+Explanations:
+  A. This choice either doesn't fulfill what the question specifically asks for, or it adds requirements that aren't in the question.
+
+  B. This choice either doesn't fulfill what the question specifically asks for, or it adds requirements that aren't in the question.
+
+  C. Correct. This choice does exactly what the question asks for - it fulfills the requirement without overreaching or making claims beyond what's asked.
+
+  D. This choice either doesn't fulfill what the question specifically asks for, or it adds requirements that aren't in the question.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 13: Establishing Context: Setting Up Following Information
+----------------------------------------------------------------------------------------------------
+Problem Text:
+<u>Urban gardens have become increasingly popular.</u> These spaces allow city residents to grow fresh vegetables, reducing their reliance on grocery stores while building community connections. The gardens also improve air quality and provide habitats for pollinators.
+
+Which choice most effectively introduces the paragraph's focus on multiple benefits of urban gardens?
+
+Choices:
+  A. NO CHANGE
+  B. Many cities have started urban garden programs.
+  C. Urban gardens offer environmental, social, and nutritional benefits to city communities.
+  D. Growing vegetables in cities is a practical solution.
+
+Correct Answer: C
+
+Explanations:
+  A. While accurate, "increasingly popular" focuses on a trend rather than introducing the specific benefits (food production, community, environment, pollinators) that the paragraph will detail.
+
+  B. This introduces the idea that cities sponsor programs but doesn't preview the diverse benefits (food, community, environment) that follow—it focuses on who creates gardens, not what gardens accomplish.
+
+  C. This directly previews the three categories of benefits detailed in the paragraph: environmental (air quality, pollinators), social (community connections), and nutritional (fresh vegetables), effectively setting up what follows.
+
+  D. This only introduces the food production aspect, failing to preview the community-building and environmental benefits that constitute half of the paragraph's content.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 29: Effective Transition Sentence: Bridging Paragraphs
+----------------------------------------------------------------------------------------------------
+Problem Text:
+Regular exercise provides numerous physical health benefits. Studies have consistently shown that physical activity strengthens the cardiovascular system, reduces the risk of chronic diseases like diabetes and heart disease, and helps maintain healthy body weight. Additionally, exercise improves bone density, enhances muscular strength, and boosts immune function.
+
+<u>Exercise has many benefits.</u> Studies show that physical activity reduces symptoms of depression and anxiety by releasing endorphins and other mood-regulating neurotransmitters. Regular exercisers report better sleep quality and improved self-esteem.
+
+Which choice most effectively transitions from physical health benefits to mental health benefits?
+
+Choices:
+  A. NO CHANGE
+  B. Beyond these physical advantages, exercise also profoundly impacts mental and emotional well-being.
+  C. Depression affects millions of people worldwide.
+  D. Many people exercise regularly.
+
+Correct Answer: B
+
+Explanations:
+  A. "Exercise has many benefits" is too vague to serve as an effective transition—it could apply to the previous paragraph (physical) or this one (mental) without specifically signaling the shift in focus.
+
+  B. This explicitly acknowledges what came before ("physical advantages") while clearly signaling the new focus ("mental and emotional well-being"), creating a smooth bridge between paragraphs with clear directional language.
+
+  C. This abruptly introduces depression statistics without connecting to the previous paragraph about physical health—it's a jarring topic switch rather than a bridge.
+
+  D. This generic statement about exercise prevalence doesn't transition between topics—it could appear in either paragraph and doesn't signal the shift from physical to mental health benefits.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 40: Sophisticated Concision: Eliminating Redundancy
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The archaeologist carefully excavated the fragile artifacts <u>with great care and attention to detail, taking caution not to damage them.</u>
+
+Which choice most effectively eliminates redundancy while preserving essential meaning?
+
+Choices:
+  A. NO CHANGE
+  B. to avoid damage.
+  C. in a way that showed carefulness and avoided breaking them.
+  D. with extreme caution and paying very close attention so as not to cause any damage whatsoever to them.
+
+Correct Answer: B
+
+Explanations:
+  A. This is extremely redundant: "carefully" already conveys "with great care," "attention to detail," and "taking caution"—the phrase repeats the same idea four times using different words.
+
+  B. Since "carefully excavated" already implies avoiding damage, and "fragile artifacts" establishes that damage is a concern, simply stating the purpose "to avoid damage" provides new information (the goal) without repeating "carefully."
+
+  C. This still contains redundancy: "carefully excavated" already means "in a way that showed carefulness," so this phrase repeats rather than adds to the meaning.
+
+  D. This is even more redundant than the original—it expands "carefully" into multiple overlapping phrases without adding any new information beyond what "carefully excavated fragile artifacts" already conveys.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 50: Ultimate Synthesis: Achieving Multiple Complex Goals
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The restoration of native prairie ecosystems involves complex ecological relationships. <u>Plants and animals interact in prairies.</u>
+
+Which choice best concludes this technical article by emphasizing restoration complexity while maintaining scientific credibility and providing meaningful closure?
+
+Choices:
+  A. NO CHANGE
+  B. Success requires not only reintroducing native species but also reestablishing the intricate relationships among flora, fauna, soil microbiota, and disturbance regimes like fire—a process that may take decades to achieve stable, self-sustaining communities.
+  C. Prairies are cool ecosystems that we should totally save.
+  D. In summary, this article discussed prairie restoration.
+
+Correct Answer: B
+
+Explanations:
+  A. "Plants and animals interact" is overly simplistic for a technical article conclusion—it doesn't convey complexity, lacks scientific precision, and provides no meaningful closure about restoration challenges or significance.
+
+  B. This achieves all three goals: emphasizes complexity (intricate relationships, multiple components), maintains scientific credibility (technical terms like soil microbiota, disturbance regimes), and provides closure (time scale, definition of success as stable communities).
+
+  C. Casual language ("cool," "totally") destroys scientific credibility, "we should save" shifts to opinion rather than technical analysis, and there's no discussion of complexity—this fails all three goals.
+
+  D. Meta-commentary provides weak closure, doesn't emphasize complexity or scientific concepts, and adds no meaningful content—it merely announces the topic was discussed without synthesizing insights about restoration challenges.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+====================================================================================================
+WORD-CHOICE - Topic 2.2 - Word Choice
+Total questions: 37
+====================================================================================================
+
+Position 1: Identifying Context
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The documentary <u>exhibited</u> rare footage of the endangered species in its natural habitat.
+
+Which choice is clearest and most precise in context?
+
+Choices:
+  A. NO CHANGE
+  B. displayed
+  C. revealed
+  D. outlined
+
+Correct Answer: C
+
+Explanations:
+  A. "Exhibited" is used for museum or gallery displays, not for showing documentary footage. It doesn't convey the sense of uncovering rare material.
+
+  B. "Displayed" is too general and suggests showing something already visible. It doesn't capture the significance of revealing rare, previously unseen footage.
+
+  C. "Revealed" is correct because it implies showing something previously hidden or unknown, which perfectly matches the context of presenting "rare footage" that audiences haven't seen before.
+
+  D. "Outlined" means to describe in general terms or give a summary. You can't "outline" footage - you show it.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 13: Academic vs. Casual Register
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The research <u>shows</u> a correlation between exercise and improved cognitive function.
+
+Choices:
+  A. NO CHANGE
+  B. demonstrates
+  C. proves
+  D. says
+
+Correct Answer: B
+
+Explanations:
+  A. "Shows" is acceptable but somewhat plain for academic writing. While not wrong, a more formal alternative would elevate the register.
+
+  B. "Demonstrates" is the standard academic term for presenting research findings, providing appropriate formality for scientific writing.
+
+  C. "Proves" overstates what correlation studies can establish. Research shows relationships but rarely "proves" causation, especially in complex systems like cognitive function.
+
+  D. "Says" is too casual and imprecise for academic writing. Research doesn't "say" things; it demonstrates, indicates, or suggests findings through data.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 26: Practice Question 27
+----------------------------------------------------------------------------------------------------
+Problem Text:
+At this point, the writer is considering dividing the paragraph into two. Should the writer begin or not begin a new paragraph here, and why?
+
+Choices:
+  F. Begin new paragraph because essay shifts from harmonics explanation to Klimas's taste in music
+  G. Begin new paragraph because essay shifts from Jenny's experiments to music Klimas uses for his artwork.
+  H. DO NOT begin new paragraph because it would interrupt Jenny's experiments analysis of Jenny's experiments.
+  J. O NOT begin a new paragraph because doing so would interrupt a description of Klimas’s scientific background.
+
+Correct Answer: G
+
+Explanations:
+  F. This word doesn't accurately fit the context or intended meaning of the sentence.
+
+  G. Correct. This word choice accurately fits the context and meaning required by the sentence.
+
+  H. This word doesn't accurately fit the context or intended meaning of the sentence.
+
+  J. This word doesn't accurately fit the context or intended meaning of the sentence.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 39: Sophisticated Context Matching
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The novel's protagonist <u>struggles</u> with moral ambiguity throughout the narrative.
+
+Choices:
+  A. NO CHANGE
+  B. deals with
+  C. has problems with
+  D. faces
+
+Correct Answer: A
+
+Explanations:
+  A. "Struggles" appropriately conveys ongoing difficulty and internal conflict with moral ambiguity, matching the serious literary context.
+
+  B. "Deals with" is vague about whether the protagonist finds this easy or difficult. It lacks the specificity of "struggles" in conveying internal conflict.
+
+  C. "Has problems with" is too casual for literary analysis and less precise than "struggles" about the nature of the protagonist's engagement with moral ambiguity.
+
+  D. "Faces" suggests mere encountering rather than the ongoing internal conflict implied by "struggles." It doesn't capture the difficulty and emotional depth.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Position 50: Advanced Contextual Sophistication
+----------------------------------------------------------------------------------------------------
+Problem Text:
+The philosopher's treatise <u>elucidates</u> complex ethical questions.
+
+Choices:
+  A. NO CHANGE
+  B. explains
+  C. talks about
+  D. goes into
+
+Correct Answer: A
+
+Explanations:
+  A. "Elucidates" is sophisticated vocabulary appropriate for philosophical writing, precisely meaning to make clear or explain complex ideas.
+
+  B. "Explains" is acceptable but less sophisticated than "elucidates" for philosophical contexts. "Elucidates" better matches the formal register of treatises.
+
+  C. "Talks about" is far too informal for philosophical treatises. It's conversational and lacks the precision required for scholarly philosophical writing.
+
+  D. "Goes into" is informal and vague about the nature of the philosophical treatment. It lacks the precision and formality appropriate for philosophical treatises.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+

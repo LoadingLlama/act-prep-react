@@ -105,6 +105,11 @@ const PracticeTestPage = ({ testId, onClose }) => {
     loadTestStructure();
   }, [testNumber]);
 
+  // Auto-start the test when component mounts
+  useEffect(() => {
+    loadSectionQuestions('english');
+  }, [testNumber, loadSectionQuestions]);
+
   // Listen for test completion message from iframe
   useEffect(() => {
     const handleMessage = (event) => {

@@ -107,6 +107,17 @@ const LandingPage = () => {
     }
   ];
 
+  // Detect OAuth callback and redirect to /auth/callback
+  useEffect(() => {
+    // Check if URL has OAuth hash fragments (access_token, refresh_token, etc.)
+    const hash = window.location.hash;
+    if (hash && (hash.includes('access_token') || hash.includes('refresh_token'))) {
+      console.log('OAuth callback detected on landing page, redirecting to /auth/callback with hash:', hash);
+      // Preserve the hash when redirecting
+      window.location.replace(`/auth/callback${hash}`);
+    }
+  }, [navigate]);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % testimonials.length);
@@ -258,22 +269,74 @@ const LandingPage = () => {
       <div className={classes.mainContent}>
         <div className={classes.heroSection}>
           <div className={classes.badge}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ marginRight: '4px' }}>
-              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFB800"/>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ marginRight: '4px' }}>
-              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFB800"/>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ marginRight: '4px' }}>
-              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFB800"/>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ marginRight: '4px' }}>
-              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFB800"/>
-            </svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ marginRight: '8px' }}>
-              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFB800"/>
-            </svg>
-            Free • No Credit Card Required
+            <div style={{ display: 'flex', alignItems: 'center', marginRight: '8px' }}>
+              <img
+                src="https://i.pravatar.cc/150?img=1"
+                alt="Student"
+                style={{
+                  width: '20px',
+                  height: '20px',
+                  borderRadius: '50%',
+                  border: '1.5px solid #ffffff',
+                  marginLeft: '-2px',
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+                  objectFit: 'cover'
+                }}
+              />
+              <img
+                src="https://i.pravatar.cc/150?img=5"
+                alt="Student"
+                style={{
+                  width: '20px',
+                  height: '20px',
+                  borderRadius: '50%',
+                  border: '1.5px solid #ffffff',
+                  marginLeft: '-6px',
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+                  objectFit: 'cover'
+                }}
+              />
+              <img
+                src="https://i.pravatar.cc/150?img=9"
+                alt="Student"
+                style={{
+                  width: '20px',
+                  height: '20px',
+                  borderRadius: '50%',
+                  border: '1.5px solid #ffffff',
+                  marginLeft: '-6px',
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+                  objectFit: 'cover'
+                }}
+              />
+              <img
+                src="https://i.pravatar.cc/150?img=15"
+                alt="Student"
+                style={{
+                  width: '20px',
+                  height: '20px',
+                  borderRadius: '50%',
+                  border: '1.5px solid #ffffff',
+                  marginLeft: '-6px',
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+                  objectFit: 'cover'
+                }}
+              />
+              <img
+                src="https://i.pravatar.cc/150?img=20"
+                alt="Student"
+                style={{
+                  width: '20px',
+                  height: '20px',
+                  borderRadius: '50%',
+                  border: '1.5px solid #ffffff',
+                  marginLeft: '-6px',
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+                  objectFit: 'cover'
+                }}
+              />
+            </div>
+            Trusted by 20k+ students across 20+ countries | 21% of users scored 32+
           </div>
 
           {/* Product Demo Screenshot */}

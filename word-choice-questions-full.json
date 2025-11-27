@@ -1,0 +1,1488 @@
+[
+  {
+    "id": "bc9a4158-faac-4996-9053-18c620ac98f6",
+    "position": 1,
+    "title": "Identifying Context",
+    "problemText": "The documentary <u>exhibited</u> rare footage of the endangered species in its natural habitat.\n\nWhich choice is clearest and most precise in context?",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+      },
+      {
+        "text": "displayed",
+        "letter": "B",
+        "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+      },
+      {
+        "text": "revealed",
+        "letter": "C",
+        "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+      },
+      {
+        "text": "outlined",
+        "letter": "D",
+        "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+      }
+    ],
+    "correctAnswer": "C",
+    "currentExplanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"exhibited\" contains an error. One of the other answer choices provides the grammatically correct or more effective wording.\n✗ Incorrect\n\n**Choice B: \"displayed\"**\nThis choice is incorrect. While \"displayed\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"revealed\"**\nThis is the correct answer. The choice \"revealed\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice D: \"outlined\"**\nThis choice is incorrect. While \"outlined\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is C.",
+    "hasGeneric": true
+  },
+  {
+    "id": "7faec793-cbd2-4e65-81a9-940c4a1ee2d5",
+    "position": 2,
+    "title": "Testing Each Word",
+    "problemText": "After reading my paper, my teacher was <u>adamant</u> that I needed to learn how to properly cite my sources.\n\nWhich choice is clearest and most precise in context?",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+      },
+      {
+        "text": "ecstatic",
+        "letter": "B",
+        "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+      },
+      {
+        "text": "eminent",
+        "letter": "C",
+        "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+      },
+      {
+        "text": "trivial",
+        "letter": "D",
+        "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "**Choice A: \"NO CHANGE\"**\nThe original text is grammatically correct and effectively expresses the intended meaning. Making changes would either introduce errors or make the sentence less clear.\n✓ CORRECT\n\n**Choice B: \"ecstatic\"**\nThis choice is incorrect. While \"ecstatic\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"eminent\"**\nThis choice is incorrect. While \"eminent\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"trivial\"**\nThis choice is incorrect. While \"trivial\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is A.",
+    "hasGeneric": true
+  },
+  {
+    "id": "3893c3d2-6523-4805-8413-09c4b15631cb",
+    "position": 3,
+    "title": "Using Known Words",
+    "problemText": "When I first moved in, the passing train woke me up every night. However, I can now just <u>tune it out</u> and sleep through the entire night.\n\nWhich choice is clearest and most precise in context?",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+      },
+      {
+        "text": "scorn it",
+        "letter": "B",
+        "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+      },
+      {
+        "text": "snub it",
+        "letter": "C",
+        "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+      },
+      {
+        "text": "overlook it",
+        "letter": "D",
+        "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "**Choice A: \"NO CHANGE\"**\nThe original text is grammatically correct and effectively expresses the intended meaning. Making changes would either introduce errors or make the sentence less clear.\n✓ CORRECT\n\n**Choice B: \"scorn it\"**\nThis choice is incorrect. While \"scorn it\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"snub it\"**\nThis choice is incorrect. While \"snub it\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"overlook it\"**\nThis choice is incorrect. While \"overlook it\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is A.",
+    "hasGeneric": true
+  },
+  {
+    "id": "d02089c7-880d-4c79-b2fb-608ca6514113",
+    "position": 4,
+    "title": "Similar Meanings, Different Uses",
+    "problemText": "The officials must be <u>dispassionate about</u> the outcome of the game in order to do their jobs properly.\n\nWhich choice is clearest and most precise in context?",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+      },
+      {
+        "text": "unbiased with",
+        "letter": "B",
+        "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+      },
+      {
+        "text": "disinterested in",
+        "letter": "C",
+        "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+      },
+      {
+        "text": "without care in regarding",
+        "letter": "D",
+        "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+      }
+    ],
+    "correctAnswer": "C",
+    "currentExplanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"dispassionate about\" contains an error. One of the other answer choices provides the grammatically correct or more effective wording.\n✗ Incorrect\n\n**Choice B: \"unbiased with\"**\nThis choice is incorrect. While \"unbiased with\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"disinterested in\"**\nThis is the correct answer. The choice \"disinterested in\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice D: \"without care in regarding\"**\nThis choice is incorrect. While \"without care in regarding\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is C.",
+    "hasGeneric": true
+  },
+  {
+    "id": "a827306c-82be-4cb3-835b-48a2d2dd95ae",
+    "position": 5,
+    "title": "Basic Precision: Vague vs. Specific",
+    "problemText": "The scientist made a <u>good</u> discovery that advanced our understanding of cellular biology.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Good\" is too vague and doesn't convey the significance of a scientific discovery. More precise language is needed to describe a breakthrough that \"advanced understanding.\""
+      },
+      {
+        "text": "significant",
+        "letter": "B",
+        "explanation": "\"Significant\" precisely conveys that the discovery had important implications for the field, matching the context that it \"advanced our understanding.\""
+      },
+      {
+        "text": "nice",
+        "letter": "C",
+        "explanation": "\"Nice\" is even more vague than \"good\" and too casual for describing a scientific discovery. It doesn't convey the importance or impact of the finding."
+      },
+      {
+        "text": "okay",
+        "letter": "D",
+        "explanation": "\"Okay\" suggests something merely acceptable or adequate, which contradicts the idea that the discovery \"advanced understanding.\" It's also too informal for academic context."
+      }
+    ],
+    "correctAnswer": "B",
+    "currentExplanation": "In formal writing, especially about scientific achievements, precise language is essential. \"Significant\" accurately describes a discovery that advances understanding, while \"good,\" \"nice,\" and \"okay\" are too vague or casual.",
+    "hasGeneric": false
+  },
+  {
+    "id": "0352f55d-33f9-446d-9e70-15fb872c6907",
+    "position": 6,
+    "title": "Formal vs. Informal Diction",
+    "problemText": "The committee <u>got rid of</u> outdated regulations to streamline the approval process.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Got rid of\" is conversational and informal, not appropriate for describing official committee actions. Formal writing requires more professional vocabulary."
+      },
+      {
+        "text": "eliminated",
+        "letter": "B",
+        "explanation": "\"Eliminated\" is the precise, formal term for removing regulations. It matches the professional tone appropriate for describing committee decisions."
+      },
+      {
+        "text": "ditched",
+        "letter": "C",
+        "explanation": "\"Ditched\" is slang and highly informal, even more casual than \"got rid of.\" It's inappropriate for formal writing about government or organizational processes."
+      },
+      {
+        "text": "threw out",
+        "letter": "D",
+        "explanation": "\"Threw out\" is colloquial and suggests physical disposal rather than the formal process of repealing regulations. It lacks the professionalism needed here."
+      }
+    ],
+    "correctAnswer": "B",
+    "currentExplanation": "Formal contexts require formal vocabulary. \"Eliminated\" is the standard, professional term for removing regulations, while the other choices are too casual or colloquial.",
+    "hasGeneric": false
+  },
+  {
+    "id": "36260939-e204-43f9-89ae-a3b528ff8643",
+    "position": 7,
+    "title": "Connotation: Neutral vs. Loaded",
+    "problemText": "The senator <u>argued</u> for increased funding for public education.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Argued\" has a neutral to slightly negative connotation, suggesting conflict or debate. It doesn't imply the senator was necessarily convincing or constructive."
+      },
+      {
+        "text": "advocated",
+        "letter": "B",
+        "explanation": "\"Advocated\" has a positive connotation of actively supporting a cause. It suggests the senator was championing education funding, which fits the constructive context."
+      },
+      {
+        "text": "complained",
+        "letter": "C",
+        "explanation": "\"Complained\" has a negative connotation of whining or criticizing without offering solutions. It doesn't fit the constructive action of seeking funding."
+      },
+      {
+        "text": "protested",
+        "letter": "D",
+        "explanation": "\"Protested\" suggests opposition to something, not support for it. The senator is supporting funding, not opposing it."
+      }
+    ],
+    "correctAnswer": "B",
+    "currentExplanation": "Word connotation matters. \"Advocated\" suggests active, positive support, while \"argued\" is neutral, \"complained\" is negative, and \"protested\" implies opposition rather than support.",
+    "hasGeneric": false
+  },
+  {
+    "id": "eabcf3f2-f66e-43f3-a76c-d32421b8997c",
+    "position": 8,
+    "title": "Practice Question 9",
+    "problemText": "The writer is considering deleting the underlined sentence. Should the writer make this deletion?",
+    "choices": [
+      {
+        "text": "Yes, because the sentence interrupts the account of how Marshall came to investigate the possibility that there were two manta ray species.",
+        "letter": "A"
+      },
+      {
+        "text": "Yes, because the sentence fails to clarify why Marshall did her research in Mozambique.",
+        "letter": "B"
+      },
+      {
+        "text": "No, because the sentence explains how Marshall created a large scientific institution even though she started as a lone researcher.",
+        "letter": "C"
+      },
+      {
+        "text": "No, because the sentence clarifies Marshall's role at the Marine Megafauna Center.",
+        "letter": "D"
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "<div style=\"line-height: 1.6; margin-bottom: 0.75rem; color: #374151;\">\nYes, because the sentence \"Her beachside lodgings in Mozambique now house the Marine Megafauna Research Center\" interrupts the logical flow from Marshall observing physical variations to her suspecting two species exist.\n</div>\n\n<div>\n<strong style=\"font-size: 0.875rem; color: #6b7280;\">Why Other Answers Are Wrong:</strong>\n<div style=\"margin-top: 0.5rem; line-height: 1.6; color: #374151;\">\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice B:</strong> is incorrect.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice C:</strong> misrepresents what the sentence says.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice D:</strong> because the sentence does clarify Marshall's connection to the Marine Megafauna Center,.</div>\n</div>\n</div>",
+    "hasGeneric": false
+  },
+  {
+    "id": "1a3c58d4-9767-4c46-8bfc-0d1d03eb3896",
+    "position": 9,
+    "title": "Precise Verb Selection",
+    "problemText": "The new policy will <u>help</u> small businesses by reducing regulatory burdens.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Help\" is vague about how or to what extent the policy assists businesses. More specific language would clarify the nature of the benefit."
+      },
+      {
+        "text": "benefit",
+        "letter": "B",
+        "explanation": "\"Benefit\" is more specific than \"help,\" clearly indicating that businesses will gain advantages from the policy. It's more precise for formal policy discussion."
+      },
+      {
+        "text": "be good for",
+        "letter": "C",
+        "explanation": "\"Be good for\" is colloquial and vague, offering no specific information about how the policy assists businesses. It's too informal for policy writing."
+      },
+      {
+        "text": "do stuff for",
+        "letter": "D",
+        "explanation": "\"Do stuff for\" is extremely informal slang. \"Stuff\" is vague, and the phrase is far too casual for discussing government policy."
+      }
+    ],
+    "correctAnswer": "B",
+    "currentExplanation": "Precision in verb choice clarifies meaning. \"Benefit\" specifically indicates positive effects, while \"help\" is vague and the other options are too informal.",
+    "hasGeneric": false
+  },
+  {
+    "id": "f3f083a3-2eb6-4d3e-8de3-e73b1ba5cc99",
+    "position": 10,
+    "title": "Context-Appropriate Intensity",
+    "problemText": "The earthquake caused <u>bad</u> damage to the city's infrastructure.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Bad\" understates the severity of earthquake damage to infrastructure. Given the context, more specific language about extent or severity is needed."
+      },
+      {
+        "text": "extensive",
+        "letter": "B",
+        "explanation": "\"Extensive\" precisely describes damage that is widespread across the infrastructure, appropriate for the scope of earthquake damage."
+      },
+      {
+        "text": "some",
+        "letter": "C",
+        "explanation": "\"Some\" minimizes the damage, suggesting it might be minor or limited. This contradicts the significance implied by mentioning earthquake damage to city infrastructure."
+      },
+      {
+        "text": "not good",
+        "letter": "D",
+        "explanation": "\"Not good\" is informal and uses understatement inappropriately. It's too vague and casual for describing serious infrastructure damage."
+      }
+    ],
+    "correctAnswer": "B",
+    "currentExplanation": "The intensity of descriptive words must match context. Earthquake damage to city infrastructure warrants \"extensive\" rather than the vague \"bad\" or understated alternatives.",
+    "hasGeneric": false
+  },
+  {
+    "id": "632c6ee6-50d9-4321-8092-99d683219759",
+    "position": 11,
+    "title": "Practice Question 12",
+    "problemText": "The writer wants to add the following sentence to this\r\nparagraph:\r\n\r\nSome of the data were basic, such as manta\r\ncoloration and size.\r\n\r\nThe sentence would most logically be placed:",
+    "choices": [
+      {
+        "text": "after Sentence 1.",
+        "letter": "F"
+      },
+      {
+        "text": "after Sentence 2.",
+        "letter": "G"
+      },
+      {
+        "text": "after Sentence 3.",
+        "letter": "H"
+      },
+      {
+        "text": "after Sentence 4.",
+        "letter": "J"
+      }
+    ],
+    "correctAnswer": "F",
+    "currentExplanation": "<div style=\"line-height: 1.6; margin-bottom: 0.75rem; color: #374151;\">\n\"To investigate, Marshall began collecting data,\" nd the new sentence \"Some of the data were basic, such as manta coloration and size\" directly provides examples of what data Marshall collected, creating a clear and immediate connection.\n</div>\n\n<div>\n<strong style=\"font-size: 0.875rem; color: #6b7280;\">Why Other Answers Are Wrong:</strong>\n<div style=\"margin-top: 0.5rem; line-height: 1.6; color: #374151;\">\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice G:</strong> After Sentence 2 (\"Other data required a closer look\") doesn't work logically.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice H:</strong> After Sentence 3 (\"The skin of all mantas, for example, is embedded.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice J:</strong> After Sentence 4 (about denticle spacing patterns) is too late in the paragraph.</div>\n</div>\n</div>",
+    "hasGeneric": false
+  },
+  {
+    "id": "b9c4ab6c-4c63-4192-991f-22c69bc82c9f",
+    "position": 12,
+    "title": "Practice Question 13",
+    "problemText": "Which choice best conveys that Marshall's announcement was backed by scientific data?",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A"
+      },
+      {
+        "text": "surprised many scientists by announcing",
+        "letter": "B"
+      },
+      {
+        "text": "had the evidence to announce",
+        "letter": "C"
+      },
+      {
+        "text": "at long last announced",
+        "letter": "D"
+      }
+    ],
+    "correctAnswer": "C",
+    "currentExplanation": "<div style=\"line-height: 1.6; margin-bottom: 0.75rem; color: #374151;\">\n\"had the evidence to announce\" directly conveys that Marshall's announcement was backed by scientific data.\n</div>\n\n<div>\n<strong style=\"font-size: 0.875rem; color: #6b7280;\">Why Other Answers Are Wrong:</strong>\n<div style=\"margin-top: 0.5rem; line-height: 1.6; color: #374151;\">\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice B:</strong> surprised many scientists.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice D:</strong> at long last announced\" emphasizes the timing or delay of the announcement, not whether.</div>\n</div>\n</div>",
+    "hasGeneric": false
+  },
+  {
+    "id": "89843d02-445f-443c-a3a5-39feff932d6d",
+    "position": 13,
+    "title": "Academic vs. Casual Register",
+    "problemText": "The research <u>shows</u> a correlation between exercise and improved cognitive function.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Shows\" is acceptable but somewhat plain for academic writing. While not wrong, a more formal alternative would elevate the register."
+      },
+      {
+        "text": "demonstrates",
+        "letter": "B",
+        "explanation": "\"Demonstrates\" is the standard academic term for presenting research findings, providing appropriate formality for scientific writing."
+      },
+      {
+        "text": "proves",
+        "letter": "C",
+        "explanation": "\"Proves\" overstates what correlation studies can establish. Research shows relationships but rarely \"proves\" causation, especially in complex systems like cognitive function."
+      },
+      {
+        "text": "says",
+        "letter": "D",
+        "explanation": "\"Says\" is too casual and imprecise for academic writing. Research doesn't \"say\" things; it demonstrates, indicates, or suggests findings through data."
+      }
+    ],
+    "correctAnswer": "B",
+    "currentExplanation": "Academic writing requires precise, formal language. \"Demonstrates\" is the conventional term for presenting research findings, more appropriate than casual alternatives.",
+    "hasGeneric": false
+  },
+  {
+    "id": "4a6ad224-6d19-4135-af4f-25cc17c1b3de",
+    "position": 14,
+    "title": "Precise Adjective Choice",
+    "problemText": "The museum's <u>old</u> collection includes artifacts from ancient civilizations.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Old\" is vague and could apply to anything from decades to millennia. For artifacts from ancient civilizations, more precise terminology is needed."
+      },
+      {
+        "text": "historic",
+        "letter": "B",
+        "explanation": "\"Historic\" precisely indicates items of historical significance, appropriate for artifacts from ancient civilizations that have scholarly or cultural importance."
+      },
+      {
+        "text": "aged",
+        "letter": "C",
+        "explanation": "\"Aged\" emphasizes the passage of time but doesn't convey significance or importance. It could apply to anything old, not necessarily valuable artifacts."
+      },
+      {
+        "text": "antique",
+        "letter": "D",
+        "explanation": "\"Antique\" typically refers to items 100+ years old with collectible value, but it's more commercial than scholarly. \"Historic\" better captures the civilizational significance."
+      }
+    ],
+    "correctAnswer": "B",
+    "currentExplanation": "Precision matters in describing museum collections. \"Historic\" indicates significance and scholarly importance, while \"old\" is too vague for ancient artifacts.",
+    "hasGeneric": false
+  },
+  {
+    "id": "2ff6aa21-bf7f-4414-87e7-ab9a0f0d9bf5",
+    "position": 15,
+    "title": "Nuanced Verb Distinction",
+    "problemText": "The data <u>suggests</u> that climate patterns are shifting more rapidly than previously predicted.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Suggests\" correctly conveys that data points toward a conclusion without claiming absolute certainty, appropriate for scientific findings that may have limitations."
+      },
+      {
+        "text": "proves",
+        "letter": "B",
+        "explanation": "\"Proves\" claims absolute certainty that data cannot provide, especially in complex systems like climate. Scientific data suggests or supports conclusions but rarely \"proves\" them definitively."
+      },
+      {
+        "text": "thinks",
+        "letter": "C",
+        "explanation": "\"Thinks\" anthropomorphizes data, attributing human mental processes to inanimate information. Data cannot think; it can only indicate, suggest, or show patterns."
+      },
+      {
+        "text": "believes",
+        "letter": "D",
+        "explanation": "\"Believes\" also inappropriately attributes human consciousness to data. Additionally, \"belief\" implies opinion or faith rather than evidence-based indication."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Scientific writing requires precise verbs. Data can \"suggest\" conclusions without claiming certainty, but cannot \"prove\" complex phenomena or perform human mental processes like \"think\" or \"believe.\"",
+    "hasGeneric": false
+  },
+  {
+    "id": "fcf35f12-a105-47c4-aa18-6e027d87d61f",
+    "position": 16,
+    "title": "Context-Specific Vocabulary",
+    "problemText": "The architect <u>made</u> a blueprint for the new community center.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Made\" is generic and doesn't reflect the professional, technical nature of architectural work. Blueprints are designed through specific professional processes."
+      },
+      {
+        "text": "created",
+        "letter": "B",
+        "explanation": "\"Created\" is slightly better than \"made\" but still doesn't capture the technical, methodical process architects use when developing blueprints."
+      },
+      {
+        "text": "drafted",
+        "letter": "C",
+        "explanation": "\"Drafted\" is the precise term for creating architectural plans and blueprints, reflecting the technical drawing and specification process architects use."
+      },
+      {
+        "text": "built",
+        "letter": "D",
+        "explanation": "\"Built\" refers to physical construction, not the design process. Architects draft blueprints; contractors build structures based on those plans."
+      }
+    ],
+    "correctAnswer": "C",
+    "currentExplanation": "Professional contexts require field-specific vocabulary. Architects \"draft\" blueprints using technical processes, not simply \"make\" or \"create\" them.",
+    "hasGeneric": false
+  },
+  {
+    "id": "a4b2d62e-8fe3-4917-96f1-4025db28f818",
+    "position": 17,
+    "title": "Practice Question 18",
+    "problemText": "Which of the following true statements best concludes this paragraph and the essay by suggesting that the scientific study of manta rays will continue?",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "F"
+      },
+      {
+        "text": "A 2009 documentary film about Dr. Marshall related the story of her manta-species discovery.",
+        "letter": "G"
+      },
+      {
+        "text": "Dr. Marshall once described the manta ray as like the largest, most beautiful underwater bird.",
+        "letter": "H"
+      },
+      {
+        "text": "Fortunately, mantas have a devoted and expert researcher in Dr. Marshall.",
+        "letter": "J"
+      }
+    ],
+    "correctAnswer": "J",
+    "currentExplanation": "<div style=\"line-height: 1.6; margin-bottom: 0.75rem; color: #374151;\">\n\"Fortunately, mantas have a devoted and expert researcher in Dr.\n</div>\n\n<div>\n<strong style=\"font-size: 0.875rem; color: #6b7280;\">Why Other Answers Are Wrong:</strong>\n<div style=\"margin-top: 0.5rem; line-height: 1.6; color: #374151;\">\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice F:</strong> At the moment, manta ray populations face an array of threats worldwide\" introduces a n.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice G:</strong> A 2009 documentary film about Dr.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice H:</strong> Dr.</div>\n</div>\n</div>",
+    "hasGeneric": false
+  },
+  {
+    "id": "d1d8de93-e8e5-48fe-a413-1513dd738a28",
+    "position": 18,
+    "title": "Practice Question 19",
+    "problemText": "Suppose that the writer's purpose had been to survey\r\nthe scientific community's response to the identification\r\nof the two manta species. Would this essay accomplish\r\nthat purpose?",
+    "choices": [
+      {
+        "text": "Yes, because it explains that the scientific community enthusiastically accepted the identification of the two manta species.",
+        "letter": "A"
+      },
+      {
+        "text": "Yes, because it relates that Marshall's research was thorough and well documented.",
+        "letter": "B"
+      },
+      {
+        "text": "No, because it presents only one scientist's response to the identification of the two manta species.",
+        "letter": "C"
+      },
+      {
+        "text": "No, because it focuses on how Marshall's research led to the discovery of the two manta species.",
+        "letter": "D"
+      }
+    ],
+    "correctAnswer": "D",
+    "currentExplanation": "<div style=\"line-height: 1.6; margin-bottom: 0.75rem; color: #374151;\">\nNo, the essay would not accomplish the purpose of surveying the scientific community's response because it focuses on how Marshall's research led to the disc.\n</div>\n\n<div>\n<strong style=\"font-size: 0.875rem; color: #6b7280;\">Why Other Answers Are Wrong:</strong>\n<div style=\"margin-top: 0.5rem; line-height: 1.6; color: #374151;\">\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice B:</strong> because the essay does relate that Marshall's research was thorough.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice C:</strong> essay doesn't even present one scientist's response to the identification—it presents M.</div>\n</div>\n</div>",
+    "hasGeneric": false
+  },
+  {
+    "id": "f3a725fa-8ef8-4d67-990b-0b9c774a0325",
+    "position": 19,
+    "title": "Tone Consistency",
+    "problemText": "The documentary <u>talks about</u> the devastating effects of deforestation on biodiversity.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Talks about\" is conversational and too informal for describing serious documentary content about environmental devastation."
+      },
+      {
+        "text": "examines",
+        "letter": "B",
+        "explanation": "\"Examines\" matches the serious tone appropriate for discussing devastating environmental effects, suggesting thorough, analytical treatment of the subject."
+      },
+      {
+        "text": "mentions",
+        "letter": "C",
+        "explanation": "\"Mentions\" suggests superficial or passing reference, minimizing the documentary's treatment of such a serious topic about devastation and biodiversity loss."
+      },
+      {
+        "text": "chats about",
+        "letter": "D",
+        "explanation": "\"Chats about\" is extremely casual, suggesting light conversation. It's completely inappropriate for serious environmental documentary content."
+      }
+    ],
+    "correctAnswer": "B",
+    "currentExplanation": "Tone must match content seriousness. A documentary about devastating environmental effects \"examines\" the topic formally, not \"talks about\" or \"chats about\" it casually.",
+    "hasGeneric": false
+  },
+  {
+    "id": "1342f83b-ba30-471f-b2dc-f822364ece1d",
+    "position": 20,
+    "title": "Subtle Connotation Differences",
+    "problemText": "The committee <u>rejected</u> the proposal after careful consideration.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Rejected\" is neutral and appropriate for formal decision-making, indicating the committee declined the proposal after deliberation."
+      },
+      {
+        "text": "dismissed",
+        "letter": "B",
+        "explanation": "\"Dismissed\" suggests the proposal was given little consideration or was frivolous, contradicting \"after careful consideration.\""
+      },
+      {
+        "text": "threw out",
+        "letter": "C",
+        "explanation": "\"Threw out\" is too informal and suggests hasty, perhaps disrespectful treatment inconsistent with \"careful consideration.\""
+      },
+      {
+        "text": "denied",
+        "letter": "D",
+        "explanation": "\"Denied\" often implies someone was requesting permission or making a claim, which is less precise than \"rejected\" for a proposal being evaluated."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Subtle connotation matters. \"Rejected\" neutrally describes a formal decision after deliberation, while \"dismissed\" implies inadequate consideration and \"threw out\" is too casual.",
+    "hasGeneric": false
+  },
+  {
+    "id": "b2489cbe-1767-4010-8485-463f4c1edc73",
+    "position": 21,
+    "title": "Degree of Certainty",
+    "problemText": "The evidence <u>definitely proves</u> the defendant's innocence.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Definitely proves\" claims absolute certainty that legal evidence rarely provides. Even strong evidence typically \"strongly suggests\" or \"indicates\" rather than \"definitely proves.\""
+      },
+      {
+        "text": "strongly suggests",
+        "letter": "B",
+        "explanation": "\"Strongly suggests\" appropriately conveys that evidence points toward innocence without claiming the absolute certainty that legal proceedings cannot usually establish."
+      },
+      {
+        "text": "might indicate",
+        "letter": "C",
+        "explanation": "\"Might indicate\" is too weak if the evidence genuinely supports innocence. It suggests mere possibility rather than substantial support."
+      },
+      {
+        "text": "could possibly show",
+        "letter": "D",
+        "explanation": "\"Could possibly show\" is tentative to the point of hedging, appropriate only if evidence is very weak. The double qualification (\"could\" + \"possibly\") signals uncertainty."
+      }
+    ],
+    "correctAnswer": "B",
+    "currentExplanation": "Legal and scientific contexts require calibrated certainty language. Evidence \"strongly suggests\" conclusions without claiming the absolute certainty implied by \"definitely proves.\"",
+    "hasGeneric": false
+  },
+  {
+    "id": "b9f1cdbf-007a-4e04-bb83-eab39a5ad500",
+    "position": 22,
+    "title": "Practice Question 23",
+    "problemText": "Suppose the writer’s primary purpose had been to outline the development of a common medicine. Would this essay accomplish that purpose?",
+    "choices": [
+      {
+        "text": "Yes, because the essay describes how Egyptians used to administer willow bark and how this process evolved from ancient Sumerian practices.",
+        "letter": "F"
+      },
+      {
+        "text": "Yes, because the essay documents the historical use of willow bark as a medicine and traces its gradual refinement into modern aspirin.",
+        "letter": "G"
+      },
+      {
+        "text": "No, because the essay primarily explains the function of salicylates in willow bark and how aspirin affects the human body.",
+        "letter": "H"
+      },
+      {
+        "text": "No, because the essay primarily compares the use of willow bark to the use of cinchona bark in eighteenth-century European medicine.",
+        "letter": "J"
+      }
+    ],
+    "correctAnswer": "G",
+    "currentExplanation": "<div style=\"line-height: 1.6; margin-bottom: 0.75rem; color: #374151;\">\nYes, the essay accomplishes the purpose of outlining the development of a common medicine because it documents the historical use of willow bark as a medicin.\n</div>\n\n<div>\n<strong style=\"font-size: 0.875rem; color: #6b7280;\">Why Other Answers Are Wrong:</strong>\n<div style=\"margin-top: 0.5rem; line-height: 1.6; color: #374151;\">\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice H:</strong> essay doesn't primarily explain the biological function of salicylates in plants or how.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice J:</strong> because the essay does mention the comparison between willow.</div>\n</div>\n</div>",
+    "hasGeneric": false
+  },
+  {
+    "id": "d784491b-ca10-4442-bdd8-de6381582d9e",
+    "position": 23,
+    "title": "Technical Precision",
+    "problemText": "The medication <u>helps</u> reduce inflammation in patients with arthritis.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Helps reduce\" is vague about the medication's effectiveness and mechanism. Medical writing benefits from more precise terminology."
+      },
+      {
+        "text": "alleviates",
+        "letter": "B",
+        "explanation": "\"Alleviates\" is the precise medical term for reducing symptoms or severity, appropriate for professional discussion of medication effects on inflammation."
+      },
+      {
+        "text": "makes better",
+        "letter": "C",
+        "explanation": "\"Makes better\" is too colloquial and imprecise for medical contexts. It doesn't specify what aspect improves or how."
+      },
+      {
+        "text": "fixes",
+        "letter": "D",
+        "explanation": "\"Fixes\" suggests complete cure, which is misleading for arthritis medication that manages symptoms rather than curing the condition."
+      }
+    ],
+    "correctAnswer": "B",
+    "currentExplanation": "Medical contexts require technical precision. \"Alleviates\" is the standard medical term for symptom reduction, more precise than casual alternatives.",
+    "hasGeneric": false
+  },
+  {
+    "id": "3a7b2f22-ed7d-46d7-8b2d-15f81671fbb9",
+    "position": 24,
+    "title": "Formality Level Matching",
+    "problemText": "The study's findings <u>contradict</u> previous research on the topic.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Contradict\" is appropriately formal for academic writing, precisely indicating that findings oppose or disagree with previous research."
+      },
+      {
+        "text": "go against",
+        "letter": "B",
+        "explanation": "\"Go against\" is too informal for academic research discussion. It's conversational phrasing that lacks the precision expected in scholarly writing."
+      },
+      {
+        "text": "fight with",
+        "letter": "C",
+        "explanation": "\"Fight with\" anthropomorphizes research findings and is far too colloquial. Research findings don't \"fight\"; they contradict, challenge, or diverge from previous work."
+      },
+      {
+        "text": "don't match up with",
+        "letter": "D",
+        "explanation": "\"Don't match up with\" is conversational and vague. It lacks the precision and formality required for describing relationships between research findings."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Academic writing requires formal, precise vocabulary. \"Contradict\" is the standard term for opposing findings, while alternatives are too casual or vague.",
+    "hasGeneric": false
+  },
+  {
+    "id": "00c5f9e4-c6df-44be-9043-0607c84511a7",
+    "position": 25,
+    "title": "Practice Question 26",
+    "problemText": "Which of the following quotations from Klimas provides the most relevant information at this point in the essay?",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "F"
+      },
+      {
+        "text": "\"The most annoying thing was cleaning up the set thoroughly after every single shot,\"",
+        "letter": "G"
+      },
+      {
+        "text": "\"In general, I use normal photographic equipment and common music stuff,\"",
+        "letter": "H"
+      },
+      {
+        "text": "\"The shooting is mostly about repeating the process again and again,\"",
+        "letter": "J"
+      }
+    ],
+    "correctAnswer": "F",
+    "currentExplanation": "<div style=\"line-height: 1.6; margin-bottom: 0.75rem; color: #374151;\">\n\"I leave the creation of the picture to the sound itself,\" s the most relevant quotation because it directly explains Klimas's artistic philosophy—that the sound, not the photographer, creates the image.\n</div>\n\n<div>\n<strong style=\"font-size: 0.875rem; color: #6b7280;\">Why Other Answers Are Wrong:</strong>\n<div style=\"margin-top: 0.5rem; line-height: 1.6; color: #374151;\">\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice G:</strong> most annoying thing was cleaning up the set thoroughly after every single shot,\" discus.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice H:</strong> In general, I use normal photographic equipment.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice J:</strong> shooting is mostly about repeating the process again.</div>\n</div>\n</div>",
+    "hasGeneric": false
+  },
+  {
+    "id": "e762d003-1825-42c4-a6e2-171db2417849",
+    "position": 26,
+    "title": "Practice Question 27",
+    "problemText": "At this point, the writer is considering dividing the paragraph into two. Should the writer begin or not begin a new paragraph here, and why?",
+    "choices": [
+      {
+        "text": "Begin new paragraph because essay shifts from harmonics explanation to Klimas's taste in music",
+        "letter": "F"
+      },
+      {
+        "text": "Begin new paragraph because essay shifts from Jenny's experiments to music Klimas uses for his artwork.",
+        "letter": "G"
+      },
+      {
+        "text": "DO NOT begin new paragraph because it would interrupt Jenny's experiments analysis of Jenny's experiments.",
+        "letter": "H"
+      },
+      {
+        "text": "O NOT begin a new paragraph because doing so would interrupt a description of Klimas’s scientific background.",
+        "letter": "J"
+      }
+    ],
+    "correctAnswer": "G",
+    "currentExplanation": "<div style=\"line-height: 1.6; margin-bottom: 0.75rem; color: #374151;\">\nBegin a new paragraph because the essay shifts from Jenny's experiments (described in the previous sentences about how sound vibrations affect materials) to .\n</div>\n\n<div>\n<strong style=\"font-size: 0.875rem; color: #6b7280;\">Why Other Answers Are Wrong:</strong>\n<div style=\"margin-top: 0.5rem; line-height: 1.6; color: #374151;\">\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice H:</strong> there is no interruption of Jenny's experiments—the previous paragraph has already conc.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice J:</strong> previous paragraph wasn't describing \"Klimas's scientific background\"—it was describing.</div>\n</div>\n</div>",
+    "hasGeneric": false
+  },
+  {
+    "id": "4766ca39-a21c-4450-a7ef-bbf7839eab98",
+    "position": 27,
+    "title": "Practice Question 28",
+    "problemText": "Which sentence most effectively leads the reader from the Klimas quotation to the concluding sentence of the\r\nessay?",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "F"
+      },
+      {
+        "text": "That's simply a matter of taste.",
+        "letter": "G"
+      },
+      {
+        "text": "That seems unwise.",
+        "letter": "H"
+      },
+      {
+        "text": "That makes sense.",
+        "letter": "J"
+      }
+    ],
+    "correctAnswer": "J",
+    "currentExplanation": "<div style=\"line-height: 1.6; margin-bottom: 0.75rem; color: #374151;\">\n\"That makes sense.\n</div>\n\n<div>\n<strong style=\"font-size: 0.875rem; color: #6b7280;\">Why Other Answers Are Wrong:</strong>\n<div style=\"margin-top: 0.5rem; line-height: 1.6; color: #374151;\">\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice G:</strong> That's simply a matter of taste.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice H:</strong> That seems unwise.</div>\n</div>\n</div>",
+    "hasGeneric": false
+  },
+  {
+    "id": "4779d340-3fde-40dc-84aa-40ee6cb9d04a",
+    "position": 28,
+    "title": "Practice Question 29",
+    "problemText": "Suppose the writer's primary purpose had been to doc\r\nument the process of an artist. Would this essay\r\naccomplish that purpose?",
+    "choices": [
+      {
+        "text": "Yes, because it focuses on how Jenny used artistic process similar to Klimas process.",
+        "letter": "A"
+      },
+      {
+        "text": "Yes, because it describes how Klimas photographs effects of vibrations created by music on paint",
+        "letter": "B"
+      },
+      {
+        "text": "No, because it focuses on cultural significance of Klimas's artwork",
+        "letter": "C"
+      },
+      {
+        "text": "No, because the essay provides a general overview of how Jenny’s experiments have inspired visual artists like Klimas.",
+        "letter": "D"
+      }
+    ],
+    "correctAnswer": "B",
+    "currentExplanation": "<div style=\"line-height: 1.6; margin-bottom: 0.75rem; color: #374151;\">\nYes, the essay accomplishes the purpose of explaining how Klimas photographs the effects of sound on paint.\n</div>\n\n<div>\n<strong style=\"font-size: 0.875rem; color: #6b7280;\">Why Other Answers Are Wrong:</strong>\n<div style=\"margin-top: 0.5rem; line-height: 1.6; color: #374151;\">\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice C:</strong> essay doesn't focus on the \"cultural significance\" of Klimas's artwork.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice D:</strong> essay doesn't provide a \"general overview\" of multiple visual artists inspired by Jenny.</div>\n</div>\n</div>",
+    "hasGeneric": false
+  },
+  {
+    "id": "9c2ee73a-3a57-4d13-a1e3-130f4a32ca8c",
+    "position": 29,
+    "title": "Sophisticated Nuance",
+    "problemText": "The author's argument is <u>convincing</u> due to its logical structure and supporting evidence.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Convincing\" appropriately describes an argument that persuades through logic and evidence, matching the sophisticated context of analytical writing."
+      },
+      {
+        "text": "good",
+        "letter": "B",
+        "explanation": "\"Good\" is too vague and doesn't specify what makes the argument effective. It lacks the precision needed for literary or rhetorical analysis."
+      },
+      {
+        "text": "nice",
+        "letter": "C",
+        "explanation": "\"Nice\" is casual and subjective, inappropriate for evaluating argument quality. It suggests superficial appeal rather than logical persuasiveness."
+      },
+      {
+        "text": "okay",
+        "letter": "D",
+        "explanation": "\"Okay\" suggests mere adequacy, contradicting the praise implied by noting \"logical structure and supporting evidence.\" It's also too informal."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Analytical writing requires precise evaluative terms. \"Convincing\" specifically addresses persuasive power, while \"good,\" \"nice,\" and \"okay\" are too vague or casual.",
+    "hasGeneric": false
+  },
+  {
+    "id": "4eedde8f-4ddd-43e4-8b66-ea95d7acae02",
+    "position": 30,
+    "title": "Practice Question 31",
+    "problemText": "At this point, the writer is considering adding the following accurate phrase:\r\n\r\nan unprecedented five\r\n\r\nShould the writer make this addition here?",
+    "choices": [
+      {
+        "text": "Yes, because it adds a detail that highlights the impressive design of the highway.",
+        "letter": "A"
+      },
+      {
+        "text": "Yes, because it hints at how the engineers were able to make openings in the tunnel.",
+        "letter": "B"
+      },
+      {
+        "text": "No, because it provides information that is unrelated to the sentence.",
+        "letter": "C"
+      },
+      {
+        "text": "No, because it suggests that creating intricate tunnels was easy for road engineers.",
+        "letter": "D"
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "<div style=\"line-height: 1.6; margin-bottom: 0.75rem; color: #374151;\">\nYes, because the detail \"made of local rock\" highlights impressive design.\n</div>\n\n<div>\n<strong style=\"font-size: 0.875rem; color: #6b7280;\">Why Other Answers Are Wrong:</strong>\n<div style=\"margin-top: 0.5rem; line-height: 1.6; color: #374151;\">\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice B:</strong> made of local rock\" doesn't hint at how engineers made tunnel openings.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice C:</strong> detail is related to the sentence's point about blurring \"the distinction between road.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice D:</strong> phrase doesn't suggest creating tunnels was \"easy.</div>\n</div>\n</div>",
+    "hasGeneric": false
+  },
+  {
+    "id": "9b8a25c7-259b-4643-8fca-979ee7b7994c",
+    "position": 31,
+    "title": "Practice Question 32",
+    "problemText": "Which choice most closely maintains the sentence pattern the writer has established in the previous two\r\nsentences?",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "F"
+      },
+      {
+        "text": "Rubble-filled tunnels have been emptied and strengthened.",
+        "letter": "G"
+      },
+      {
+        "text": "The tunnels have had the rubble removed from them, and people have strengthened them.",
+        "letter": "H"
+      },
+      {
+        "text": "Once filled with rubble, tunnels have been emptied and strengthened.",
+        "letter": "J"
+      }
+    ],
+    "correctAnswer": "G",
+    "currentExplanation": "<div style=\"line-height: 1.6; margin-bottom: 0.75rem; color: #374151;\">\n\"Rubble-filled tunnels have been emptied and strengthened.\n</div>\n\n<div>\n<strong style=\"font-size: 0.875rem; color: #6b7280;\">Why Other Answers Are Wrong:</strong>\n<div style=\"margin-top: 0.5rem; line-height: 1.6; color: #374151;\">\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice H:</strong> tunnels have had the rubble removed from them, and people have strengthened them.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice J:</strong> Once filled with rubble, tunnels have been emptied and strengthened.</div>\n</div>\n</div>",
+    "hasGeneric": false
+  },
+  {
+    "id": "1d3e3d26-62ec-4447-8240-69657e794e2a",
+    "position": 32,
+    "title": "Practice Question 33",
+    "problemText": "At this point, the writer is considering adding the following true statement:\r\n\r\nRobinson and her husband would go on to\r\nform other record labels as well.\r\n\r\nShould the writer make this addition here?",
+    "choices": [
+      {
+        "text": "Yes, because it suggests that the Sugarhill Gang was able to choose where they wanted to record “Rapper's Delight.”",
+        "letter": "A"
+      },
+      {
+        "text": "Yes, because it helps explain why Big Bank Hank, Master Gee, and Wonder Mike decided to record with Robinson.",
+        "letter": "B"
+      },
+      {
+        "text": "No, interrupts the paragraph’s discussion of how \"Rapper's Delight\" was created",
+        "letter": "C"
+      },
+      {
+        "text": "No, because it fails to specify the time period in which Robinson and her husband started their labels.",
+        "letter": "D"
+      }
+    ],
+    "correctAnswer": "C",
+    "currentExplanation": "<div style=\"line-height: 1.6; margin-bottom: 0.75rem; color: #374151;\">\nNo, adding the sentence would interrupt the paragraph's discussion of how \"Rapper's Delight\" was created.\n</div>\n\n<div>\n<strong style=\"font-size: 0.875rem; color: #6b7280;\">Why Other Answers Are Wrong:</strong>\n<div style=\"margin-top: 0.5rem; line-height: 1.6; color: #374151;\">\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice B:</strong> sentence wouldn't explain why the rappers decided to record with Robinson.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice D:</strong> because the sentence may fail to specify time periods, this isn't the main reason to de.</div>\n</div>\n</div>",
+    "hasGeneric": false
+  },
+  {
+    "id": "296a0252-a751-402f-a03b-71cb3432dab7",
+    "position": 33,
+    "title": "Professional Register",
+    "problemText": "The CEO <u>announced</u> a major restructuring of the company.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Announced\" is appropriately formal for corporate communications, precisely indicating official public disclosure of significant organizational changes."
+      },
+      {
+        "text": "told people about",
+        "letter": "B",
+        "explanation": "\"Told people about\" is too informal and vague for corporate contexts. It doesn't capture the official, formal nature of CEO communications about restructuring."
+      },
+      {
+        "text": "said",
+        "letter": "C",
+        "explanation": "\"Said\" is too casual and doesn't convey the formal, official nature of a CEO's public declaration about major company changes."
+      },
+      {
+        "text": "mentioned",
+        "letter": "D",
+        "explanation": "\"Mentioned\" suggests a casual or passing reference, inappropriate for a major restructuring announcement. It minimizes the significance and formality of the communication."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Corporate contexts require professional vocabulary. CEOs \"announce\" major changes formally, not \"tell people about\" or casually \"mention\" them.",
+    "hasGeneric": false
+  },
+  {
+    "id": "5cf9c657-6263-4a24-b2a2-c2e983307745",
+    "position": 34,
+    "title": "Precision in Description",
+    "problemText": "The artist's use of color is <u>different</u> from traditional approaches.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Different\" merely states a contrast without specifying its nature or value. For art criticism, more descriptive language would be more informative."
+      },
+      {
+        "text": "innovative",
+        "letter": "B",
+        "explanation": "\"Innovative\" specifically indicates that the color use introduces new techniques or approaches, providing meaningful evaluation beyond mere difference."
+      },
+      {
+        "text": "not the same as",
+        "letter": "C",
+        "explanation": "\"Not the same as\" is wordy and adds no information beyond \"different.\" It's also more casual than appropriate for art criticism."
+      },
+      {
+        "text": "weird",
+        "letter": "D",
+        "explanation": "\"Weird\" is informal and carries negative connotation, suggesting strangeness rather than evaluating artistic merit or approach."
+      }
+    ],
+    "correctAnswer": "B",
+    "currentExplanation": "Descriptive writing benefits from specific, evaluative language. \"Innovative\" describes the nature of the difference, while \"different\" merely notes it exists.",
+    "hasGeneric": false
+  },
+  {
+    "id": "1a08fcbe-d744-4eaf-8d6a-039f0d491c06",
+    "position": 35,
+    "title": "Subtle Register Shift",
+    "problemText": "The laboratory's findings <u>indicate</u> a potential breakthrough in cancer treatment.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Indicate\" appropriately conveys scientific findings that point toward but don't definitively establish a breakthrough, maintaining proper scientific caution."
+      },
+      {
+        "text": "show",
+        "letter": "B",
+        "explanation": "\"Show\" is acceptable but less precise than \"indicate\" for scientific contexts where findings suggest possibilities rather than demonstrating certainties."
+      },
+      {
+        "text": "hint at",
+        "letter": "C",
+        "explanation": "\"Hint at\" is too informal and weak for scientific findings. It suggests vague possibility rather than evidence-supported indication."
+      },
+      {
+        "text": "prove",
+        "letter": "D",
+        "explanation": "\"Prove\" overclaims what laboratory findings typically establish. Scientific findings indicate or suggest possibilities; proof requires extensive validation and replication."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Scientific writing requires precise calibration. \"Indicate\" appropriately suggests evidence-based possibility without the weakness of \"hint at\" or overclaiming certainty like \"prove.\"",
+    "hasGeneric": false
+  },
+  {
+    "id": "9668f9a6-fac4-4a2d-b0b8-d323e8e1c0f8",
+    "position": 36,
+    "title": "Complex Connotation Selection",
+    "problemText": "The diplomat's <u>persistent</u> efforts led to a peace agreement.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Persistent\" has positive connotation here, suggesting admirable determination in pursuing peace, appropriate for praising diplomatic success."
+      },
+      {
+        "text": "stubborn",
+        "letter": "B",
+        "explanation": "\"Stubborn\" carries negative connotation of inflexibility or unreasonable resistance to change, inappropriate for praising diplomatic achievement."
+      },
+      {
+        "text": "obsessive",
+        "letter": "C",
+        "explanation": "\"Obsessive\" suggests unhealthy fixation or excessive preoccupation, carrying negative connotation inappropriate for describing successful diplomatic work."
+      },
+      {
+        "text": "constant",
+        "letter": "D",
+        "explanation": "\"Constant\" is neutral but emphasizes continuity rather than the determination and effort implied by \"persistent.\" It's less descriptive of the diplomat's active work."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Connotation profoundly affects meaning. \"Persistent\" carries positive determination, while \"stubborn\" and \"obsessive\" suggest negative inflexibility or fixation.",
+    "hasGeneric": false
+  },
+  {
+    "id": "b9f168ae-40f4-464d-b5b3-014dd7e7183a",
+    "position": 37,
+    "title": "Practice Question 38",
+    "problemText": "Which choice most effectively indicates that Robinson had to convince Grandmaster Flash and the Furious Five to record “The Message\"?",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "F"
+      },
+      {
+        "text": "pressured",
+        "letter": "G"
+      },
+      {
+        "text": "helped",
+        "letter": "H"
+      },
+      {
+        "text": "asked,",
+        "letter": "J"
+      }
+    ],
+    "correctAnswer": "G",
+    "currentExplanation": "<div style=\"line-height: 1.6; margin-bottom: 0.75rem; color: #374151;\">\n\"helped\" best conveys Robinson's supportive role.\n</div>\n\n<div>\n<strong style=\"font-size: 0.875rem; color: #6b7280;\">Why Other Answers Are Wrong:</strong>\n<div style=\"margin-top: 0.5rem; line-height: 1.6; color: #374151;\">\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice G:</strong> pressured\" has negative connotations of force or coercion.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice J:</strong> asked\" uses a comma and suggests Robinson was requesting rather than enabling.</div>\n</div>\n</div>",
+    "hasGeneric": false
+  },
+  {
+    "id": "c9137693-5f26-4767-9606-430462a72828",
+    "position": 38,
+    "title": "Advanced Precision",
+    "problemText": "The economist <u>predicted</u> that inflation would decrease within six months.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Predicted\" appropriately indicates a forecast based on economic analysis, acknowledging inherent uncertainty in economic projections."
+      },
+      {
+        "text": "guaranteed",
+        "letter": "B",
+        "explanation": "\"Guaranteed\" claims certainty that economic predictions cannot provide. Economic forecasts are analytical projections, not assured outcomes."
+      },
+      {
+        "text": "guessed",
+        "letter": "C",
+        "explanation": "\"Guessed\" suggests random speculation without analytical basis, undermining the economist's professional expertise and methodology."
+      },
+      {
+        "text": "hoped",
+        "letter": "D",
+        "explanation": "\"Hoped\" suggests personal desire rather than analytical projection. Economists make predictions based on data, not express wishes."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Professional contexts require distinguishing prediction from certainty or speculation. \"Predicted\" indicates analytical forecast, while \"guaranteed\" overclaims and \"guessed\" underclaims expertise.",
+    "hasGeneric": false
+  },
+  {
+    "id": "8a1f4a88-1706-44cb-8e0b-bed7a4c0f459",
+    "position": 39,
+    "title": "Sophisticated Context Matching",
+    "problemText": "The novel's protagonist <u>struggles</u> with moral ambiguity throughout the narrative.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Struggles\" appropriately conveys ongoing difficulty and internal conflict with moral ambiguity, matching the serious literary context."
+      },
+      {
+        "text": "deals with",
+        "letter": "B",
+        "explanation": "\"Deals with\" is vague about whether the protagonist finds this easy or difficult. It lacks the specificity of \"struggles\" in conveying internal conflict."
+      },
+      {
+        "text": "has problems with",
+        "letter": "C",
+        "explanation": "\"Has problems with\" is too casual for literary analysis and less precise than \"struggles\" about the nature of the protagonist's engagement with moral ambiguity."
+      },
+      {
+        "text": "faces",
+        "letter": "D",
+        "explanation": "\"Faces\" suggests mere encountering rather than the ongoing internal conflict implied by \"struggles.\" It doesn't capture the difficulty and emotional depth."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Literary analysis requires precise descriptive verbs. \"Struggles\" specifically conveys ongoing difficulty and conflict, while alternatives are too casual or less specific.",
+    "hasGeneric": false
+  },
+  {
+    "id": "9c6f6d53-c893-4d50-a653-cf39a8664600",
+    "position": 40,
+    "title": "Nuanced Intensity",
+    "problemText": "The critic <u>praised</u> the film's cinematography as revolutionary.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Praised\" appropriately indicates strong approval consistent with calling something \"revolutionary,\" matching the enthusiasm of the evaluation."
+      },
+      {
+        "text": "mentioned",
+        "letter": "B",
+        "explanation": "\"Mentioned\" is too neutral and weak for describing an evaluation as \"revolutionary.\" It suggests passing reference rather than enthusiastic approval."
+      },
+      {
+        "text": "noted",
+        "letter": "C",
+        "explanation": "\"Noted\" is neutral and clinical, inconsistent with the enthusiasm required to describe cinematography as revolutionary. It suggests mere observation."
+      },
+      {
+        "text": "commented on",
+        "letter": "D",
+        "explanation": "\"Commented on\" is too neutral for strong positive evaluation. It doesn't convey the approval suggested by \"revolutionary.\""
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Intensity must match context. Calling cinematography \"revolutionary\" requires the enthusiasm of \"praised,\" not the neutrality of \"mentioned,\" \"noted,\" or \"commented on.\"",
+    "hasGeneric": false
+  },
+  {
+    "id": "c1027e1a-a096-4a71-8358-f3c15ce42dd7",
+    "position": 41,
+    "title": "Complex Professional Terminology",
+    "problemText": "The surgeon <u>performed</u> a complex procedure to repair the damaged heart valve.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Performed\" is the standard medical term for executing surgical procedures, appropriately formal and precise for medical contexts."
+      },
+      {
+        "text": "did",
+        "letter": "B",
+        "explanation": "\"Did\" is too casual and generic for describing surgical procedures. Medical writing requires more precise, professional vocabulary."
+      },
+      {
+        "text": "carried out",
+        "letter": "C",
+        "explanation": "\"Carried out\" is acceptable but less precise than \"performed\" in medical contexts. \"Performed\" is the conventional term for surgical procedures."
+      },
+      {
+        "text": "tried",
+        "letter": "D",
+        "explanation": "\"Tried\" suggests uncertainty or potential failure, undermining professional confidence. Surgeons \"perform\" procedures; \"tried\" questions their capability or success."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Medical contexts have standard terminology. Surgeons \"perform\" procedures using established medical vocabulary, not \"do\" or \"try\" them using casual language.",
+    "hasGeneric": false
+  },
+  {
+    "id": "3ac61ebe-59ba-424b-9c10-796736011b3e",
+    "position": 42,
+    "title": "Practice Question 43",
+    "problemText": "Which of the following alternatives to the underlined\r\nportion would NOT be acceptable?",
+    "choices": [
+      {
+        "text": "artists, and it secured",
+        "letter": "A"
+      },
+      {
+        "text": "artists and securing",
+        "letter": "B"
+      },
+      {
+        "text": "artists and secure",
+        "letter": "C"
+      },
+      {
+        "text": "artists, securing",
+        "letter": "D"
+      }
+    ],
+    "correctAnswer": "B",
+    "currentExplanation": "<div style=\"line-height: 1.6; margin-bottom: 0.75rem; color: #374151;\">\n\"artists and securing\" correctly uses parallel gerunds (verb forms ending in -ing used as nouns) in the construction \"helped usher in a new generation of artists and securing Robinson's legacy.\n</div>\n\n<div>\n<strong style=\"font-size: 0.875rem; color: #6b7280;\">Why Other Answers Are Wrong:</strong>\n<div style=\"margin-top: 0.5rem; line-height: 1.6; color: #374151;\">\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice A:</strong> Breaks parallel structure.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice C:</strong> Breaks parallel structure.</div>\n<div style=\"margin-bottom: 0.375rem;\"><strong>Choice D:</strong> artists, securing\" creates a participial phrase that could be misread as modifying \"art.</div>\n</div>\n</div>",
+    "hasGeneric": false
+  },
+  {
+    "id": "22d86fe8-9eaa-4acf-b15a-0efe76e36049",
+    "position": 43,
+    "title": "Advanced Formal Distinction",
+    "problemText": "The researcher <u>obtained</u> permission to access the historical archives.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Obtained\" is appropriately formal for academic and professional contexts, precisely indicating the researcher secured official permission."
+      },
+      {
+        "text": "got",
+        "letter": "B",
+        "explanation": "\"Got\" is too informal for academic writing about research procedures. Professional contexts require more formal vocabulary like \"obtained\" or \"secured.\""
+      },
+      {
+        "text": "picked up",
+        "letter": "C",
+        "explanation": "\"Picked up\" is highly informal and suggests casual acquisition, inappropriate for describing formal permission processes in research."
+      },
+      {
+        "text": "grabbed",
+        "letter": "D",
+        "explanation": "\"Grabbed\" is slang suggesting hasty or aggressive taking, completely inappropriate for describing formal permission processes."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Academic and professional writing requires formal vocabulary. \"Obtained\" appropriately describes securing official permission, while \"got,\" \"picked up,\" and \"grabbed\" are too informal.",
+    "hasGeneric": false
+  },
+  {
+    "id": "e6f759d2-bca7-447b-9816-8a3bbc4cd2c1",
+    "position": 44,
+    "title": "Sophisticated Evaluative Language",
+    "problemText": "The speaker's presentation was <u>compelling</u> due to its combination of personal narrative and statistical evidence.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Compelling\" precisely describes a presentation that effectively persuades or engages through its evidence and narrative, matching the context praising its combination of elements."
+      },
+      {
+        "text": "interesting",
+        "letter": "B",
+        "explanation": "\"Interesting\" is too weak for a presentation praised for effectively combining narrative and evidence. It suggests mere engagement, not persuasive power."
+      },
+      {
+        "text": "fine",
+        "letter": "C",
+        "explanation": "\"Fine\" suggests mere adequacy, contradicting the praise implied by highlighting the effective combination of narrative and evidence."
+      },
+      {
+        "text": "cool",
+        "letter": "D",
+        "explanation": "\"Cool\" is far too informal and vague for evaluating professional presentations. It lacks the specificity and formality required in professional contexts."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Evaluative language must match the sophistication of what's being evaluated. \"Compelling\" specifically describes persuasive power, while alternatives are too weak or informal.",
+    "hasGeneric": false
+  },
+  {
+    "id": "e8a44d39-4d87-4c6f-8c05-7955982ea617",
+    "position": 45,
+    "title": "Practice Question 46",
+    "problemText": "If the writer were to delete the underlined portion, the sentence would primarily lose: ",
+    "choices": [
+      {
+        "text": "a description that emphasizes the difficulty of puirt-a-beul.",
+        "letter": "F"
+      },
+      {
+        "text": "information about writing lyrics for puirt-a-beul music.",
+        "letter": "G"
+      },
+      {
+        "text": "an indication of how often puirt-a-beul is performed in the Celtic culture.",
+        "letter": "H"
+      },
+      {
+        "text": "an example of a training exercise puirt-a-beul singers use to practice lyrics.",
+        "letter": "J"
+      }
+    ],
+    "correctAnswer": "TBD\"",
+    "currentExplanation": "",
+    "hasGeneric": false
+  },
+  {
+    "id": "dc5a18d4-caec-4da3-82cf-5bd00ec9a826",
+    "position": 46,
+    "title": "Complex Contextual Precision",
+    "problemText": "The lawyer's argument <u>undermined</u> the prosecution's case.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Undermined\" precisely describes weakening the foundation or credibility of the prosecution's case, appropriate for legal contexts."
+      },
+      {
+        "text": "hurt",
+        "letter": "B",
+        "explanation": "\"Hurt\" is too informal and vague for legal writing. It doesn't specifically describe the strategic weakening of a legal argument."
+      },
+      {
+        "text": "damaged",
+        "letter": "C",
+        "explanation": "\"Damaged\" suggests physical harm or destruction rather than the strategic weakening of logical foundations implied by \"undermined\" in legal contexts."
+      },
+      {
+        "text": "attacked",
+        "letter": "D",
+        "explanation": "\"Attacked\" suggests aggressive confrontation rather than the analytical dismantling of logical foundations that \"undermined\" conveys in legal argument."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Legal contexts require precise strategic vocabulary. \"Undermined\" specifically describes weakening logical foundations, more precise than \"hurt,\" \"damaged,\" or \"attacked.\"",
+    "hasGeneric": false
+  },
+  {
+    "id": "51307741-b8ea-493d-9034-b8a2b6dcfa49",
+    "position": 47,
+    "title": "Advanced Register Calibration",
+    "problemText": "The study <u>examined</u> the relationship between social media use and adolescent mental health.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Examined\" is the standard academic term for systematic investigation, appropriately formal and precise for scholarly research."
+      },
+      {
+        "text": "looked at",
+        "letter": "B",
+        "explanation": "\"Looked at\" is too informal for academic writing. It's conversational and lacks the precision expected in scholarly research description."
+      },
+      {
+        "text": "checked out",
+        "letter": "C",
+        "explanation": "\"Checked out\" is highly informal, almost slang, completely inappropriate for describing systematic academic research."
+      },
+      {
+        "text": "investigated",
+        "letter": "D",
+        "explanation": "\"Investigated\" is acceptable but typically implies searching for wrongdoing or solving mysteries. \"Examined\" is more neutral and standard for academic research."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Academic research requires standard scholarly vocabulary. \"Examined\" is the conventional term for systematic study, while \"looked at\" and \"checked out\" are too informal.",
+    "hasGeneric": false
+  },
+  {
+    "id": "77d8b7ca-7c01-4618-830c-b0a166c897c8",
+    "position": 48,
+    "title": "Sophisticated Tone Matching",
+    "problemText": "The conservation effort <u>preserved</u> thousands of acres of endangered wetlands.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Preserved\" precisely describes protective conservation action preventing harm or destruction, appropriate for formal environmental writing."
+      },
+      {
+        "text": "saved",
+        "letter": "B",
+        "explanation": "\"Saved\" is more casual than \"preserved\" and less precise about the nature of conservation action. \"Preserved\" better captures systematic protection."
+      },
+      {
+        "text": "kept",
+        "letter": "C",
+        "explanation": "\"Kept\" is too casual and vague about the conservation process. It doesn't capture the systematic protective measures implied by conservation efforts."
+      },
+      {
+        "text": "held onto",
+        "letter": "D",
+        "explanation": "\"Held onto\" is informal and suggests physical grasping rather than the systematic environmental protection that \"preserved\" conveys."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Environmental and conservation writing requires precise formal vocabulary. \"Preserved\" specifically describes systematic protection, more precise than casual alternatives.",
+    "hasGeneric": false
+  },
+  {
+    "id": "cb5d0c45-fcb8-4d0c-bd22-bcd195a8718e",
+    "position": 49,
+    "title": "Complex Professional Nuance",
+    "problemText": "The editor <u>refined</u> the manuscript before publication.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Refined\" precisely describes the editorial process of improving and polishing writing, appropriate for publishing contexts."
+      },
+      {
+        "text": "fixed up",
+        "letter": "B",
+        "explanation": "\"Fixed up\" is too informal for publishing contexts and suggests repairs to broken things rather than professional editorial improvement."
+      },
+      {
+        "text": "changed",
+        "letter": "C",
+        "explanation": "\"Changed\" is too vague about whether modifications improved the manuscript. \"Refined\" specifically indicates improvement through expert editorial work."
+      },
+      {
+        "text": "messed with",
+        "letter": "D",
+        "explanation": "\"Messed with\" is highly informal and carries negative connotation of interfering or tampering, inappropriate for professional editorial processes."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Publishing contexts require professional terminology. \"Refined\" precisely describes expert editorial improvement, while alternatives are too informal or vague.",
+    "hasGeneric": false
+  },
+  {
+    "id": "733c7611-7aad-445e-bc87-e69f35491cdd",
+    "position": 50,
+    "title": "Advanced Contextual Sophistication",
+    "problemText": "The philosopher's treatise <u>elucidates</u> complex ethical questions.",
+    "choices": [
+      {
+        "text": "NO CHANGE",
+        "letter": "A",
+        "explanation": "\"Elucidates\" is sophisticated vocabulary appropriate for philosophical writing, precisely meaning to make clear or explain complex ideas."
+      },
+      {
+        "text": "explains",
+        "letter": "B",
+        "explanation": "\"Explains\" is acceptable but less sophisticated than \"elucidates\" for philosophical contexts. \"Elucidates\" better matches the formal register of treatises."
+      },
+      {
+        "text": "talks about",
+        "letter": "C",
+        "explanation": "\"Talks about\" is far too informal for philosophical treatises. It's conversational and lacks the precision required for scholarly philosophical writing."
+      },
+      {
+        "text": "goes into",
+        "letter": "D",
+        "explanation": "\"Goes into\" is informal and vague about the nature of the philosophical treatment. It lacks the precision and formality appropriate for philosophical treatises."
+      }
+    ],
+    "correctAnswer": "A",
+    "currentExplanation": "Philosophical writing requires sophisticated vocabulary matching its register. \"Elucidates\" precisely describes clarifying complex ideas, more appropriate than simpler or informal alternatives.",
+    "hasGeneric": false
+  }
+]

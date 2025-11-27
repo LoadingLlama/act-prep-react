@@ -10,7 +10,7 @@ import { validatePassword, validateEmail, sanitizeInput } from '../../utils/secu
 import Logo from '../common/Logo';
 
 const InlineAuth = () => {
-  const { signUp, signIn, signInWithGoogle, signInWithFacebook, signInWithApple, user } = useAuth();
+  const { signUp, signIn, signInWithGoogle, user } = useAuth();
   const [showEmailForm, setShowEmailForm] = useState(false);
   const [isSignup, setIsSignup] = useState(false); // Default to login mode
   const [formData, setFormData] = useState({
@@ -59,42 +59,6 @@ const InlineAuth = () => {
 
       if (googleError) {
         setError(googleError.message || 'Failed to sign in with Google');
-        setLoading(false);
-        return;
-      }
-    } catch (err) {
-      setError('An unexpected error occurred');
-      setLoading(false);
-    }
-  };
-
-  const handleFacebookAuth = async () => {
-    setError('');
-    setLoading(true);
-
-    try {
-      const { error: facebookError } = await signInWithFacebook();
-
-      if (facebookError) {
-        setError(facebookError.message || 'Failed to sign in with Facebook');
-        setLoading(false);
-        return;
-      }
-    } catch (err) {
-      setError('An unexpected error occurred');
-      setLoading(false);
-    }
-  };
-
-  const handleAppleAuth = async () => {
-    setError('');
-    setLoading(true);
-
-    try {
-      const { error: appleError } = await signInWithApple();
-
-      if (appleError) {
-        setError(appleError.message || 'Failed to sign in with Apple');
         setLoading(false);
         return;
       }
@@ -163,8 +127,9 @@ const InlineAuth = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.card}>
+    <div style={styles.overlay}>
+      <div style={styles.container}>
+        <div style={styles.card}>
         {/* Logo */}
         <div style={styles.logo}>
           <Logo size="medium" />
@@ -206,40 +171,6 @@ const InlineAuth = () => {
               />
             </svg>
             Login with Google
-          </button>
-
-          <button
-            onClick={handleFacebookAuth}
-            disabled={loading}
-            onMouseEnter={() => setHoveredButton('facebook')}
-            onMouseLeave={() => setHoveredButton(null)}
-            style={{
-              ...styles.socialButton,
-              ...styles.facebookButton,
-              ...(hoveredButton === 'facebook' ? styles.facebookButtonHover : {}),
-            }}
-          >
-            <svg style={styles.socialIcon} viewBox="0 0 24 24" fill="#ffffff">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-            Login with Facebook
-          </button>
-
-          <button
-            onClick={handleAppleAuth}
-            disabled={loading}
-            onMouseEnter={() => setHoveredButton('apple')}
-            onMouseLeave={() => setHoveredButton(null)}
-            style={{
-              ...styles.socialButton,
-              ...styles.appleButton,
-              ...(hoveredButton === 'apple' ? styles.appleButtonHover : {}),
-            }}
-          >
-            <svg style={styles.socialIcon} viewBox="0 0 24 24" fill="#ffffff">
-              <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-            </svg>
-            Login with Apple
           </button>
         </div>
 
@@ -358,53 +289,56 @@ const InlineAuth = () => {
         </span>
       </div>
     </div>
+    </div>
   );
 };
 
 const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    minHeight: '100vh',
-    maxHeight: '100vh',
-    width: '100vw',
-    maxWidth: '100vw',
-    padding: '0',
-    margin: '0',
-    background: 'transparent',
-    overflow: 'hidden',
-    boxSizing: 'border-box',
+  overlay: {
     position: 'fixed',
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    zIndex: 1,
+    background: 'rgba(0, 0, 0, 0.5)',
+    backdropFilter: 'blur(8px)',
+    WebkitBackdropFilter: 'blur(8px)',
+    zIndex: 9999,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '20px',
+    boxSizing: 'border-box',
+  },
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    overflow: 'auto',
   },
   card: {
     width: '100%',
     maxWidth: '400px',
     background: '#ffffff',
-    borderRadius: '12px',
+    borderRadius: '16px',
     padding: '28px 24px',
-    boxShadow: '0 4px 24px rgba(0, 0, 0, 0.08)',
-    border: '1px solid #e2e8f0',
+    boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+    border: 'none',
     boxSizing: 'border-box',
-    maxHeight: '85vh',
+    maxHeight: '90vh',
     overflowY: 'auto',
     overflowX: 'hidden',
     display: 'flex',
     flexDirection: 'column',
     '@media (max-width: 480px)': {
-      maxWidth: 'calc(100% - 24px)',
-      width: 'calc(100% - 24px)',
-      padding: '24px 24px',
-      maxHeight: '90vh',
-      margin: '0',
-      borderRadius: '16px',
+      maxWidth: 'calc(100% - 40px)',
+      width: 'calc(100% - 40px)',
+      padding: '24px 20px',
+      maxHeight: '85vh',
+      borderRadius: '12px',
     },
   },
   logo: {
@@ -465,24 +399,6 @@ const styles = {
   socialButtonHover: {
     transform: 'translateY(-2px)',
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-  },
-  facebookButton: {
-    background: '#1877F2',
-    color: '#ffffff',
-    border: '1.5px solid #1877F2',
-  },
-  facebookButtonHover: {
-    transform: 'translateY(-2px)',
-    boxShadow: '0 4px 12px rgba(24, 119, 242, 0.25)',
-  },
-  appleButton: {
-    background: '#000000',
-    color: '#ffffff',
-    border: '1.5px solid #000000',
-  },
-  appleButtonHover: {
-    transform: 'translateY(-2px)',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)',
   },
   socialIcon: {
     width: '20px',

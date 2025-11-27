@@ -68,12 +68,15 @@ const useStyles = createUseStyles({
   }
 });
 
-const AllLessonsNavigator = ({ onBackClick }) => {
+const AllLessonsNavigator = ({ onBackClick, onClose }) => {
   const classes = useStyles();
 
   const handleBackClick = () => {
     soundEffects.playClick();
-    if (onBackClick) {
+    // Use onClose if available, otherwise fall back to onBackClick
+    if (onClose) {
+      onClose();
+    } else if (onBackClick) {
       onBackClick();
     }
   };
@@ -82,7 +85,7 @@ const AllLessonsNavigator = ({ onBackClick }) => {
     <div className={classes.navigator}>
       {/* Logo */}
       <div className={classes.logoSection}>
-        <Logo size="large" style={{ color: '#ffffff', textTransform: 'lowercase' }} />
+        <Logo size="small" style={{ color: '#ffffff', textTransform: 'lowercase' }} />
       </div>
 
       {/* Back Button */}

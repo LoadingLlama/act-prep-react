@@ -5,10 +5,11 @@
 
 export const settingsStyles = {
   container: {
-    maxWidth: '900px',
-    margin: '0 auto',
-    padding: '0',
+    maxWidth: '700px',
+    margin: '0',
+    padding: '1.5rem 1.5rem 0 1.5rem',
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    width: '100%',
   },
 
   loading: {
@@ -16,24 +17,27 @@ export const settingsStyles = {
     alignItems: 'center',
     justifyContent: 'center',
     height: '400px',
-    fontSize: '16px',
+    fontSize: '0.875rem',
     color: '#64748b',
   },
 
   header: {
-    marginBottom: '2rem',
+    marginBottom: '1rem',
   },
 
   title: {
-    fontSize: '2.5rem',
-    fontWeight: '900',
-    color: '#000000',
+    fontSize: '1.75rem',
+    fontWeight: '700',
+    background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
     margin: '0 0 0.5rem 0',
-    letterSpacing: '-0.04em',
+    letterSpacing: '-0.02em',
   },
 
   subtitle: {
-    fontSize: '1rem',
+    fontSize: '0.875rem',
     color: '#64748b',
     margin: 0,
   },
@@ -41,14 +45,14 @@ export const settingsStyles = {
   content: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '1.5rem',
+    gap: '1rem',
   },
 
   message: {
-    padding: '12px 16px',
+    padding: '0.75rem 1rem',
     borderRadius: '6px',
-    fontSize: '14px',
-    marginBottom: '1.5rem',
+    fontSize: '0.8125rem',
+    marginBottom: '1rem',
   },
 
   successMessage: {
@@ -64,7 +68,7 @@ export const settingsStyles = {
   },
 
   section: {
-    padding: '2rem',
+    padding: '1.5rem',
     background: '#ffffff',
     border: '1px solid #e2e8f0',
     borderRadius: '8px',
@@ -78,21 +82,21 @@ export const settingsStyles = {
   sectionHeader: {
     display: 'flex',
     alignItems: 'flex-start',
-    gap: '1rem',
-    marginBottom: '1.5rem',
+    gap: '0.75rem',
+    marginBottom: '1rem',
     color: '#0f172a',
   },
 
   sectionTitle: {
-    fontSize: '1.125rem',
-    fontWeight: '700',
+    fontSize: '0.9375rem',
+    fontWeight: '600',
     color: '#0f172a',
     margin: '0 0 0.25rem 0',
     letterSpacing: '-0.01em',
   },
 
   sectionDescription: {
-    fontSize: '0.875rem',
+    fontSize: '0.75rem',
     color: '#64748b',
     margin: 0,
   },
@@ -100,14 +104,14 @@ export const settingsStyles = {
   settingsList: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '1rem',
+    gap: '0.75rem',
   },
 
   settingItem: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '1rem',
+    padding: '0.875rem',
     background: '#f8fafc',
     border: '1px solid #e2e8f0',
     borderRadius: '6px',
@@ -118,14 +122,14 @@ export const settingsStyles = {
   },
 
   settingLabel: {
-    fontSize: '0.95rem',
+    fontSize: '0.8125rem',
     fontWeight: '600',
     color: '#0f172a',
     margin: '0 0 0.25rem 0',
   },
 
   settingDescription: {
-    fontSize: '0.85rem',
+    fontSize: '0.75rem',
     color: '#64748b',
     margin: 0,
   },
@@ -181,8 +185,8 @@ export const settingsStyles = {
     display: 'flex',
     alignItems: 'center',
     gap: '0.5rem',
-    padding: '10px 20px',
-    fontSize: '0.875rem',
+    padding: '0.625rem 1.25rem',
+    fontSize: '0.8125rem',
     fontWeight: '600',
     color: '#0f172a',
     background: '#ffffff',
@@ -208,8 +212,8 @@ export const settingsStyles = {
     display: 'flex',
     alignItems: 'center',
     gap: '0.5rem',
-    padding: '10px 20px',
-    fontSize: '0.875rem',
+    padding: '0.625rem 1.25rem',
+    fontSize: '0.8125rem',
     fontWeight: '600',
     color: '#ffffff',
     background: '#dc2626',

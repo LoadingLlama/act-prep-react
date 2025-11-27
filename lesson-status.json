@@ -1,0 +1,155 @@
+[
+  {
+    "lessonKey": "english-intro",
+    "title": "English Section Fundamentals",
+    "lessonId": "2d597464-0463-4593-b621-cc3234b87947",
+    "questionCount": 0,
+    "genericExplanations": 0,
+    "needsQuestions": 50,
+    "status": "✗ Empty"
+  },
+  {
+    "lessonKey": "getting-started",
+    "title": "ACT Test Basics & Overview",
+    "lessonId": "749af103-4c42-4b62-9b8b-5448836e8804",
+    "questionCount": 0,
+    "genericExplanations": 0,
+    "needsQuestions": 50,
+    "status": "✗ Empty"
+  },
+  {
+    "lessonKey": "grammar-review",
+    "title": "Topic 1.9 - Grammar Review",
+    "lessonId": "a2e663e5-60b8-402a-ab1f-1d1bf2d93336",
+    "questionCount": 0,
+    "genericExplanations": 0,
+    "needsQuestions": 50,
+    "status": "✗ Empty"
+  },
+  {
+    "lessonKey": "adding-deleting",
+    "title": "Topic 2.5 - Adding or Deleting Information",
+    "lessonId": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+    "questionCount": 50,
+    "genericExplanations": 4,
+    "needsQuestions": 0,
+    "status": "✓ Complete"
+  },
+  {
+    "lessonKey": "commas",
+    "title": "Topic 1.2 - Essential Comma Rules",
+    "lessonId": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+    "questionCount": 50,
+    "genericExplanations": 4,
+    "needsQuestions": 0,
+    "status": "✓ Complete"
+  },
+  {
+    "lessonKey": "logical-placement",
+    "title": "Topic 2.6 - Logical Placement",
+    "lessonId": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+    "questionCount": 50,
+    "genericExplanations": 4,
+    "needsQuestions": 0,
+    "status": "✓ Complete"
+  },
+  {
+    "lessonKey": "misc-topics",
+    "title": "Topic 1.8 - Miscellaneous Topics",
+    "lessonId": "4a9e06f8-5ee5-4e5d-9e5d-2ce9b7c6bf16",
+    "questionCount": 50,
+    "genericExplanations": 6,
+    "needsQuestions": 0,
+    "status": "✓ Complete"
+  },
+  {
+    "lessonKey": "modifiers",
+    "title": "Topic 1.6 - Misplaced Modifiers",
+    "lessonId": "f7ac1d6c-6416-47fd-9720-807224100517",
+    "questionCount": 50,
+    "genericExplanations": 4,
+    "needsQuestions": 0,
+    "status": "✓ Complete"
+  },
+  {
+    "lessonKey": "parallel-structure",
+    "title": "Topic 1.7 - Parallel Structure",
+    "lessonId": "e6153221-e330-4db4-8cc7-9c5a1d51a301",
+    "questionCount": 50,
+    "genericExplanations": 4,
+    "needsQuestions": 0,
+    "status": "✓ Complete"
+  },
+  {
+    "lessonKey": "pronouns",
+    "title": "Topic 1.5 - Pronouns",
+    "lessonId": "3c3585a1-f137-4331-8390-29ef1f5e889f",
+    "questionCount": 50,
+    "genericExplanations": 4,
+    "needsQuestions": 0,
+    "status": "✓ Complete"
+  },
+  {
+    "lessonKey": "punctuation",
+    "title": "Topic 1.3 - Advanced Punctuation",
+    "lessonId": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+    "questionCount": 50,
+    "genericExplanations": 5,
+    "needsQuestions": 0,
+    "status": "✓ Complete"
+  },
+  {
+    "lessonKey": "redundancy",
+    "title": "Topic 2.1 - Redundancy & Wordiness",
+    "lessonId": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+    "questionCount": 50,
+    "genericExplanations": 4,
+    "needsQuestions": 0,
+    "status": "✓ Complete"
+  },
+  {
+    "lessonKey": "sentence-structure",
+    "title": "Topic 1.1 - Building Complete Sentences",
+    "lessonId": "a5fd241f-9832-4a5d-a7e9-90cb6232c4ac",
+    "questionCount": 50,
+    "genericExplanations": 0,
+    "needsQuestions": 0,
+    "status": "✓ Complete"
+  },
+  {
+    "lessonKey": "transitions",
+    "title": "Topic 2.3 - Transitions",
+    "lessonId": "7aae3763-017b-4762-ad5a-346aac1f027b",
+    "questionCount": 50,
+    "genericExplanations": 4,
+    "needsQuestions": 0,
+    "status": "✓ Complete"
+  },
+  {
+    "lessonKey": "verbs",
+    "title": "Topic 1.4 - Verbs",
+    "lessonId": "10fff941-59e1-4d3a-84b7-d0fe8f9985ef",
+    "questionCount": 50,
+    "genericExplanations": 4,
+    "needsQuestions": 0,
+    "status": "✓ Complete"
+  },
+  {
+    "lessonKey": "which-choice",
+    "title": "Topic 2.4 - Which Choice Questions",
+    "lessonId": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+    "questionCount": 50,
+    "genericExplanations": 4,
+    "needsQuestions": 0,
+    "status": "✓ Complete"
+  },
+  {
+    "lessonKey": "word-choice",
+    "title": "Topic 2.2 - Word Choice",
+    "lessonId": "04df2a09-a910-4456-8fe5-2f8e7f62c50f",
+    "questionCount": 50,
+    "genericExplanations": 4,
+    "needsQuestions": 0,
+    "status": "✓ Complete"
+  }
+]

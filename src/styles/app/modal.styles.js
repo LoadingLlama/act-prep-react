@@ -21,12 +21,13 @@ export const modalStyles = {
   lessonContent: {
     background: '#ffffff',
     width: '100%',
-    height: '100vh',
+    height: '100%',
     display: 'flex',
     lineHeight: '1.6',
     fontSize: '15px',
     color: '#6d6e75',
-    fontFamily: 'ui-sans-serif, system-ui, sans-serif'
+    fontFamily: 'ui-sans-serif, system-ui, sans-serif',
+    overflow: 'hidden'
   },
   lessonSidebar: {
     width: '280px',
@@ -45,9 +46,10 @@ export const modalStyles = {
   },
   lessonMain: {
     flex: 1,
-    overflowY: 'auto',
-    display: 'flex',
-    flexDirection: 'column'
+    width: '100%',
+    height: '100%',
+    overflow: 'hidden',
+    position: 'relative'
   },
   lessonHeader: {
     padding: '1.5rem 2.5rem 1rem',

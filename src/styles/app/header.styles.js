@@ -72,7 +72,7 @@ export const headerStyles = {
   tabIndicator: {
     display: 'none'
   },
-  content: {
+  legacyContent: {
     flex: 1,
     padding: '0.25rem 4rem 2rem 4rem',
     maxWidth: '1400px',
@@ -217,7 +217,8 @@ export const headerStyles = {
     fontWeight: '600',
     letterSpacing: '0.02em',
     fontSize: '0.7rem',
-    padding: '0.3rem 0.6rem',
+    padding: '0 0.6rem',
+    height: '26px',
     borderRadius: '6px',
     display: 'flex',
     alignItems: 'center',

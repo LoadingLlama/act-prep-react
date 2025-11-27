@@ -81,7 +81,7 @@ export const layoutStyles = {
     width: '100%',
     boxSizing: 'border-box',
     flex: 1,
-    overflow: 'hidden',
+    overflow: 'auto',
     display: 'flex',
     flexDirection: 'column',
     '@media (max-width: 768px)': {

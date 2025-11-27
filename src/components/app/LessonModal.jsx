@@ -41,7 +41,6 @@ const LessonModal = ({
 }) => {
   const lesson = lessonContent;
   const currentLessonData = lessonStructure.find(item => item.id === currentLesson);
-  const currentSection = currentLessonData?.section;
   const [practiceState, setPracticeState] = React.useState({
     questions: [],
     currentQuestionIndex: 0,
@@ -64,61 +63,48 @@ const LessonModal = ({
 
   return (
     <div className={`${classes.lessonModal} ${lessonModalOpen ? 'active' : ''}`}>
-      {/* Always render AllLessonsNavigator sidebar */}
-      <AllLessonsNavigator
-        lessonStructure={allLessonStructure}
-        currentLessonId={currentLesson}
-        lessonProgress={lessonProgress}
-        lessonMode={lessonMode}
-        setLessonMode={setLessonMode}
-        onLessonChange={openLesson}
-        onBackClick={closeLessonModal}
-        practiceQuestions={practiceState.questions}
-        currentQuestionIndex={practiceState.currentQuestionIndex}
-        questionResults={practiceState.results}
-        onQuestionChange={(index) => {
-          setPracticeState(prev => ({ ...prev, currentQuestionIndex: index }));
-        }}
-      />
+      <div className={classes.lessonContent}>
+        {/* Left Sidebar - All Lessons Navigator */}
+        <AllLessonsNavigator
+          lessons={allLessonStructure}
+          currentLessonId={currentLesson}
+          onLessonSelect={(lessonId) => openLesson(lessonId)}
+          onClose={closeLessonModal}
+          currentSection={currentLessonData?.section}
+        />
 
-      <div style={{
-        position: 'fixed',
-        top: '0',
-        left: '0',
-        right: '0',
-        bottom: '0',
-        overflowY: 'auto',
-        background: '#ffffff'
-      }}>
-        {/* Review Mode - Always mounted but hidden when not active */}
-        <div style={{ display: lessonMode === 'review' ? 'block' : 'none' }}>
+        <div className={classes.lessonMain}>
+          {/* Review Mode - Always mounted but hidden when not active */}
+          <div style={{ display: lessonMode === 'review' ? 'flex' : 'none', flexDirection: 'column', height: '100%', overflow: 'hidden' }}>
           {lesson && currentLessonData ? (
-            <ProgressiveLessonRenderer
-              lesson={{...lesson, id: currentLessonData.id}}
-              initialStatus={lessonProgress[currentLesson] || 'not-started'}
-              lessonProgress={lessonProgress}
-              lessonMode={lessonMode}
-              setLessonMode={setLessonMode}
-              hideNavigator={true}
-              onNavigate={(type, lessonId) => {
-                if (type === 'home') {
-                  closeLessonModal();
-                } else if (type === 'lesson' && lessonId) {
-                  openLesson(lessonId);
-                } else if (type === 'next') {
-                  const currentIndex = lessonStructure.findIndex(l => l.id === currentLessonData.id);
-                  if (currentIndex >= 0 && currentIndex < lessonStructure.length - 1) {
-                    openLesson(lessonStructure[currentIndex + 1].id);
+            <div style={{ flex: 1, overflowY: 'auto', padding: '0' }}>
+              <ProgressiveLessonRenderer
+                lesson={{...lesson, id: currentLessonData.id}}
+                initialStatus={lessonProgress[currentLesson] || 'not-started'}
+                lessonProgress={lessonProgress}
+                lessonMode={lessonMode}
+                setLessonMode={setLessonMode}
+                hideNavigator={true}
+                onNavigate={(type, lessonId) => {
+                  if (type === 'home') {
+                    closeLessonModal();
+                  } else if (type === 'lesson' && lessonId) {
+                    openLesson(lessonId);
+                  } else if (type === 'next') {
+                    const currentIndex = lessonStructure.findIndex(l => l.id === currentLessonData.id);
+                    if (currentIndex >= 0 && currentIndex < lessonStructure.length - 1) {
+                      openLesson(lessonStructure[currentIndex + 1].id);
+                    }
+                  } else if (type === 'previous') {
+                    const currentIndex = lessonStructure.findIndex(l => l.id === currentLessonData.id);
+                    if (currentIndex > 0) {
+                      openLesson(lessonStructure[currentIndex - 1].id);
+                    }
                   }
-                } else if (type === 'previous') {
-                  const currentIndex = lessonStructure.findIndex(l => l.id === currentLessonData.id);
-                  if (currentIndex > 0) {
-                    openLesson(lessonStructure[currentIndex - 1].id);
-                  }
-                }
-              }}
-              onStatusChange={(status) => updateLessonProgress(currentLesson, status)}
-            />
+                }}
+                onStatusChange={(status) => updateLessonProgress(currentLesson, status)}
+              />
+            </div>
           ) : (
             <div style={{
               textAlign: 'center',
@@ -129,26 +115,28 @@ const LessonModal = ({
               <p>This lesson content is being prepared. Check back soon!</p>
             </div>
           )}
-        </div>
+          </div>
 
-        {/* Practice Mode - Always mounted but hidden when not active */}
-        <div style={{ display: lessonMode === 'practice' ? 'block' : 'none' }}>
+          {/* Practice Mode - Always mounted but hidden when not active */}
+          <div style={{ display: lessonMode === 'practice' ? 'flex' : 'none', flexDirection: 'column', height: '100%', overflow: 'hidden' }}>
           {lesson && currentLessonData ? (
-            <PracticeSession
-              lesson={{...lesson, id: currentLessonData.id, title: currentLessonData.title}}
-              onClose={closeLessonModal}
-              onComplete={(rating) => {
-                console.log('Practice completed with rating:', rating);
-                updateLessonProgress(currentLesson, 'completed');
-              }}
-              lessonProgress={lessonProgress}
-              lessonMode={lessonMode}
-              setLessonMode={setLessonMode}
-              useExternalSidebar={true}
-              currentQuestionIndex={practiceState.currentQuestionIndex}
-              onPracticeStateChange={setPracticeState}
-              updateLessonProgress={updateLessonProgress}
-            />
+            <div style={{ flex: 1, overflowY: 'auto', padding: '0' }}>
+              <PracticeSession
+                lesson={{...lesson, id: currentLessonData.id, title: currentLessonData.title}}
+                onClose={closeLessonModal}
+                onComplete={(rating) => {
+                  console.log('Practice completed with rating:', rating);
+                  updateLessonProgress(currentLesson, 'completed');
+                }}
+                lessonProgress={lessonProgress}
+                lessonMode={lessonMode}
+                setLessonMode={setLessonMode}
+                useExternalSidebar={true}
+                currentQuestionIndex={practiceState.currentQuestionIndex}
+                onPracticeStateChange={setPracticeState}
+                updateLessonProgress={updateLessonProgress}
+              />
+            </div>
           ) : (
             <div style={{
               textAlign: 'center',
@@ -159,6 +147,7 @@ const LessonModal = ({
               <p>This lesson content is being prepared. Check back soon!</p>
             </div>
           )}
+          </div>
         </div>
       </div>
     </div>

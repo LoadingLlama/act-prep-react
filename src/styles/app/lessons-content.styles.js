@@ -9,15 +9,143 @@ export const useLessonsContentStyles = createUseStyles({
   lessonsContainer: {
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     padding: '0.5rem 0',
-    margin: '0 auto',
-    minHeight: '100vh',
+    margin: '0',
     background: '#ffffff',
-    maxWidth: '1200px',
+    maxWidth: '100%',
+    width: '100%',
+    display: 'flex',
+    gap: '2.5rem',
+    alignItems: 'flex-start',
     '@media (max-width: 768px)': {
-      padding: '0.375rem 0'
+      padding: '0.375rem 0',
+      flexDirection: 'column'
     },
     '@media (max-width: 480px)': {
       padding: '0.25rem 0'
+    }
+  },
+  lessonsMainContent: {
+    flex: 1,
+    maxWidth: '700px',
+    minWidth: 0,
+    padding: '1.5rem 1.5rem 0 1.5rem'
+  },
+  progressSidebar: {
+    width: '280px',
+    flexShrink: 0,
+    marginLeft: 'auto',
+    padding: '1.5rem 2rem 0 0',
+    position: 'sticky',
+    top: '1.5rem',
+    alignSelf: 'flex-start',
+    height: 'fit-content',
+    '@media (max-width: 768px)': {
+      width: '100%',
+      padding: '0',
+      position: 'relative'
+    }
+  },
+  progressCard: {
+    background: '#ffffff',
+    border: '1px solid #e5e7eb',
+    borderRadius: '12px',
+    padding: '1.5rem 1.5rem 1rem 1.5rem',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  progressTitle: {
+    fontSize: '1.1rem',
+    fontWeight: '700',
+    color: '#1a1a1a',
+    marginBottom: '1.25rem',
+    textAlign: 'center'
+  },
+  progressCircleContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: '1.5rem'
+  },
+  progressCircle: {
+    position: 'relative',
+    width: '180px',
+    height: '180px'
+  },
+  progressCircleSvg: {
+    transform: 'rotate(-90deg)'
+  },
+  progressCircleBackground: {
+    fill: 'none',
+    stroke: '#e5e7eb',
+    strokeWidth: '8'
+  },
+  progressCircleProgress: {
+    fill: 'none',
+    stroke: '#08245b',
+    strokeWidth: '8',
+    strokeLinecap: 'round',
+    transition: 'stroke-dashoffset 0.5s ease'
+  },
+  progressText: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    textAlign: 'center'
+  },
+  progressPercentage: {
+    fontSize: '2rem',
+    fontWeight: '700',
+    color: '#08245b',
+    lineHeight: '1',
+    textAlign: 'center'
+  },
+  progressFraction: {
+    fontSize: '0.875rem',
+    color: '#6b7280',
+    marginTop: '0.25rem',
+    textAlign: 'center'
+  },
+  progressStats: {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '3rem',
+    marginBottom: '0',
+    width: '100%'
+  },
+  progressStat: {
+    textAlign: 'center'
+  },
+  progressStatLabel: {
+    fontSize: '0.75rem',
+    color: '#6b7280',
+    marginBottom: '0.25rem',
+    textTransform: 'uppercase',
+    letterSpacing: '0.05em'
+  },
+  progressStatValue: {
+    fontSize: '1.25rem',
+    fontWeight: '700'
+  },
+  viewHistoryButton: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.5rem',
+    width: '100%',
+    padding: '0.75rem',
+    background: '#ffffff',
+    border: '1px solid #e5e7eb',
+    borderRadius: '8px',
+    fontSize: '0.875rem',
+    fontWeight: '600',
+    color: '#1a1a1a',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    '&:hover': {
+      background: '#f9fafb',
+      borderColor: '#d1d5db'
     }
   },
   pageHeader: {
@@ -48,6 +176,9 @@ export const useLessonsContentStyles = createUseStyles({
     transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
     background: 'transparent',
     color: '#64748b',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
     whiteSpace: 'nowrap',
     '&:hover': {
       color: '#1a1a1a',
@@ -193,125 +324,82 @@ export const useLessonsContentStyles = createUseStyles({
     gap: '0'
   },
   lessonsList: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '0.75rem',
-    padding: '1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0',
+    padding: '0',
     '@media (max-width: 1024px)': {
-      gridTemplateColumns: 'repeat(2, 1fr)'
+      gap: '0'
     },
     '@media (max-width: 640px)': {
-      gridTemplateColumns: '1fr'
+      gap: '0'
     }
   },
   lessonsListView: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.35rem',
-    padding: '0.5rem 1rem'
+    gap: '0',
+    padding: '0'
   },
   lessonCard: {
-    background: '#ffffff',
-    border: '1px solid #e5e7eb',
-    borderLeft: '3px solid #e5e7eb',
-    borderRadius: '6px',
-    padding: '0.75rem',
+    background: 'transparent',
+    border: 'none',
+    borderRadius: '0',
+    padding: '0.75rem 1rem',
     cursor: 'pointer',
     transition: 'all 0.15s ease',
     position: 'relative',
-    minHeight: '95px',
+    minHeight: '50px',
     display: 'flex',
-    flexDirection: 'column',
-    gap: '0.4rem',
+    alignItems: 'center',
+    gap: '0.75rem',
     '&:hover': {
-      borderColor: '#cbd5e1',
-      borderLeftColor: '#08245b',
-      boxShadow: '0 4px 12px rgba(8, 36, 91, 0.12)',
-      transform: 'translateY(-2px)'
-    },
-    '&:active': {
-      transform: 'translateY(0)'
+      background: '#f9fafb'
     },
     '&.completed': {
-      borderColor: '#86efac',
-      borderLeftColor: '#10b981',
-      background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
       '&:hover': {
-        borderColor: '#6ee7b7',
-        borderLeftColor: '#059669',
-        boxShadow: '0 4px 12px rgba(16, 185, 129, 0.2)',
-        transform: 'translateY(-2px)'
+        background: '#f9fafb'
       }
     },
     '&.in-progress': {
-      borderColor: '#fcd34d',
-      borderLeftColor: '#f59e0b',
-      background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)',
       '&:hover': {
-        borderColor: '#fbbf24',
-        borderLeftColor: '#d97706',
-        boxShadow: '0 4px 12px rgba(245, 158, 11, 0.2)',
-        transform: 'translateY(-2px)'
+        background: '#f9fafb'
       }
     },
     '&.golden': {
-      borderColor: '#fcd34d',
-      borderLeftColor: '#f59e0b',
-      background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)',
-      boxShadow: '0 2px 8px rgba(245, 158, 11, 0.2)',
       '&:hover': {
-        borderColor: '#fbbf24',
-        borderLeftColor: '#d97706',
-        boxShadow: '0 4px 16px rgba(245, 158, 11, 0.3)',
-        transform: 'translateY(-2px)'
+        background: '#f9fafb'
       }
     }
   },
   lessonCardListView: {
-    background: '#ffffff',
-    border: '1px solid #e2e8f0',
-    borderRadius: '6px',
-    padding: '0.5rem 0.75rem',
+    background: 'transparent',
+    border: 'none',
+    borderRadius: '0',
+    padding: '0.75rem 1rem',
     cursor: 'pointer',
-    transition: 'all 0.2s ease',
+    transition: 'all 0.15s ease',
     display: 'flex',
     alignItems: 'center',
     gap: '0.75rem',
-    minHeight: '42px',
+    minHeight: '50px',
     position: 'relative',
     '&:hover': {
-      borderColor: '#cbd5e1',
-      transform: 'translateX(4px)',
-      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
-    },
-    '&:active': {
-      transform: 'translateX(2px)'
+      background: '#f9fafb'
     },
     '&.completed': {
-      borderColor: '#10b981',
-      background: '#d1fae5',
-      boxShadow: '0 2px 4px rgba(16, 185, 129, 0.1)',
       '&:hover': {
-        borderColor: '#059669',
-        boxShadow: '0 3px 6px rgba(16, 185, 129, 0.15)'
+        background: '#f9fafb'
       }
     },
     '&.in-progress': {
-      borderColor: '#f59e0b',
-      background: '#fef3c7',
-      boxShadow: '0 2px 4px rgba(245, 158, 11, 0.1)',
       '&:hover': {
-        borderColor: '#d97706',
-        boxShadow: '0 3px 6px rgba(245, 158, 11, 0.15)'
+        background: '#f9fafb'
       }
     },
     '&.golden': {
-      borderColor: '#f59e0b',
-      background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)',
-      boxShadow: '0 4px 8px rgba(245, 158, 11, 0.2)',
       '&:hover': {
-        borderColor: '#d97706',
-        boxShadow: '0 6px 12px rgba(245, 158, 11, 0.3)'
+        background: '#f9fafb'
       }
     }
   },
@@ -341,7 +429,7 @@ export const useLessonsContentStyles = createUseStyles({
     marginBottom: '0.3rem'
   },
   lessonTitle: {
-    fontSize: '0.9rem',
+    fontSize: '0.85rem',
     fontWeight: '600',
     color: '#1a1a1a',
     lineHeight: '1.25',
@@ -358,16 +446,17 @@ export const useLessonsContentStyles = createUseStyles({
     textOverflow: 'ellipsis'
   },
   unitHeader: {
-    padding: '1rem 1.25rem',
-    background: '#ffffff',
-    borderRadius: '8px 8px 0 0',
-    borderBottom: '1px solid #e5e7eb',
+    padding: '0.75rem 1rem',
+    background: 'transparent',
+    borderRadius: '0',
+    borderBottom: 'none',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginBottom: '0.5rem'
   },
   unitTitle: {
-    fontSize: '0.875rem',
+    fontSize: '0.8125rem',
     fontWeight: '700',
     background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
     WebkitBackgroundClip: 'text',
@@ -377,17 +466,12 @@ export const useLessonsContentStyles = createUseStyles({
     margin: 0
   },
   unitBox: {
-    background: '#ffffff',
-    border: '1px solid #e5e7eb',
-    borderTop: '3px solid #e5e7eb',
-    borderRadius: '8px',
-    marginBottom: '1.5rem',
-    overflow: 'hidden',
-    transition: 'all 0.2s ease',
-    '&:hover': {
-      borderTopColor: '#08245b',
-      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.06)'
-    },
+    background: 'transparent',
+    border: 'none',
+    borderRadius: '0',
+    marginBottom: '2rem',
+    overflow: 'visible',
+    transition: 'none',
     '&:first-child': {
       marginTop: 0
     }

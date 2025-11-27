@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useRef, useEffect } from 'react';
-import { useOutletContext, useNavigate } from 'react-router-dom';
+import { useOutletContext, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { useLessonsContentStyles } from '../../styles/app/lessons-content.styles';
 import { getFeatureAccess } from '../../services/subscription.service';
@@ -29,7 +29,12 @@ import {
   HiQuestionMarkCircle,
   HiRocketLaunch,
   HiPuzzlePiece,
-  HiLockClosed
+  HiLockClosed,
+  HiBolt,
+  HiCheckCircle,
+  HiChevronDown,
+  HiChevronUp,
+  HiClock
 } from 'react-icons/hi2';
 import soundEffects from '../../services/soundEffects';
 
@@ -37,6 +42,7 @@ const LessonsContent = () => {
   const classes = useLessonsContentStyles();
   const { user } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const {
     lessonStructure = [],
     lessonContent = {},
@@ -45,23 +51,80 @@ const LessonsContent = () => {
     getLessonStatus,
     onLessonOpen: openLesson,
     setHoveredMoreTag,
-    setMoreTagPosition
+    setMoreTagPosition,
+    setHeaderControls
   } = useOutletContext();
 
   // Local state for filtering
-  const [activeSection, setActiveSection] = useState(() => {
-    const saved = localStorage.getItem('selectedSubject');
-    return saved || 'english';
-  });
   const [viewMode, setViewMode] = useState('grid');
-  const [mode, setMode] = useState('lessons'); // 'lessons' or 'practice'
-  const [sliderStyle, setSliderStyle] = useState({});
+  const [mode, setMode] = useState(() => {
+    // Check URL parameter for initial mode
+    const params = new URLSearchParams(location.search);
+    return params.get('mode') === 'drills' ? 'drills' : 'lessons';
+  });
   const [featureAccess, setFeatureAccess] = useState(null);
   const [previewLesson, setPreviewLesson] = useState(null);
+  const [expandedCategories, setExpandedCategories] = useState({});
+  const [isInitialRender, setIsInitialRender] = useState(true);
 
-  // Refs for filter buttons
-  const filterButtonsRef = useRef({});
-  const filterContainerRef = useRef(null);
+
+  // Check for mode parameter in URL
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const urlMode = params.get('mode');
+    if (urlMode === 'drills') {
+      setMode('drills');
+    } else {
+      // If no mode parameter or mode=lessons, default to lessons
+      setMode('lessons');
+    }
+  }, [location.search]);
+
+  // Set header controls for mode toggle
+  useEffect(() => {
+    if (setHeaderControls) {
+      setHeaderControls(
+        <div className={classes.modeToggle} style={{ marginLeft: '-2rem' }}>
+          <button
+            className={`${classes.modeButton} ${mode === 'lessons' ? 'active' : ''}`}
+            style={isInitialRender ? { transition: 'none' } : {}}
+            onClick={() => {
+              soundEffects.playToggle();
+              setMode('lessons');
+              navigate('/app/lessons');
+            }}
+          >
+            <HiBookOpen style={{ fontSize: '1rem' }} />
+            Lessons
+          </button>
+          <button
+            className={`${classes.modeButton} ${mode === 'drills' ? 'active' : ''}`}
+            style={isInitialRender ? { transition: 'none' } : {}}
+            onClick={() => {
+              soundEffects.playToggle();
+              setMode('drills');
+              navigate('/app/lessons?mode=drills');
+            }}
+          >
+            <HiBolt style={{ fontSize: '1rem' }} />
+            Drills
+          </button>
+        </div>
+      );
+    }
+
+    // Disable initial render flag after first render
+    if (isInitialRender) {
+      setTimeout(() => setIsInitialRender(false), 50);
+    }
+
+    // Clean up on unmount
+    return () => {
+      if (setHeaderControls) {
+        setHeaderControls(null);
+      }
+    };
+  }, [mode, setHeaderControls, classes, navigate, isInitialRender]);
 
   // Check feature access
   useEffect(() => {
@@ -69,11 +132,6 @@ const LessonsContent = () => {
       checkFeatureAccess();
     }
   }, [user]);
-
-  // Save selected subject to localStorage
-  useEffect(() => {
-    localStorage.setItem('selectedSubject', activeSection);
-  }, [activeSection]);
 
   const checkFeatureAccess = async () => {
     try {
@@ -117,82 +175,14 @@ const LessonsContent = () => {
     return '#10b981';
   };
 
-  // Update slider position when active section changes
-  useEffect(() => {
-    const updateSliderPosition = () => {
-      // Use requestAnimationFrame to ensure DOM is fully updated
-      requestAnimationFrame(() => {
-        const activeButton = filterButtonsRef.current[activeSection];
-        const container = filterContainerRef.current;
-        if (activeButton && container) {
-          // Get computed styles
-          const containerStyles = window.getComputedStyle(container);
-          const buttonStyles = window.getComputedStyle(activeButton);
-
-          // Get container padding and gap
-          const containerPadding = parseFloat(containerStyles.paddingLeft);
-          const gap = parseFloat(containerStyles.gap) || 4;
-
-          // Calculate position by counting buttons before the active one
-          const buttons = Object.keys(filterButtonsRef.current);
-          const activeIndex = buttons.indexOf(activeSection);
-
-          // Calculate offset by summing widths of previous buttons
-          let offsetLeft = containerPadding;
-          for (let i = 0; i < activeIndex; i++) {
-            const btn = filterButtonsRef.current[buttons[i]];
-            if (btn) {
-              offsetLeft += btn.offsetWidth + gap;
-            }
-          }
-
-          setSliderStyle({
-            width: `${activeButton.offsetWidth}px`,
-            left: `${offsetLeft}px`
-          });
-        }
-      });
-    };
-
-    updateSliderPosition();
-
-    // Add a small delay for initial render
-    const timeout = setTimeout(updateSliderPosition, 50);
-
-    window.addEventListener('resize', updateSliderPosition);
-    return () => {
-      window.removeEventListener('resize', updateSliderPosition);
-      clearTimeout(timeout);
-    };
-  }, [activeSection]);
-
-  const handleSectionFilter = (section) => {
+  const toggleCategory = (categoryKey) => {
     soundEffects.playToggle();
-    setActiveSection(section);
+    setExpandedCategories(prev => ({
+      ...prev,
+      [categoryKey]: !prev[categoryKey]
+    }));
   };
 
-  const getFilteredLessons = () => {
-    // Merge durations from database into lesson structure
-    const sectionLessons = lessonStructure
-      .filter(lesson => {
-        // Filter by section
-        if (lesson.section !== activeSection) return false;
-
-        // In practice mode, exclude Introduction lessons
-        if (mode === 'practice' && lesson.category === 'Introduction') return false;
-
-        return true;
-      })
-      .map((lesson, index) => {
-        const isLocked = featureAccess && !featureAccess.isPro && index >= featureAccess.lessonsPerSection;
-        return {
-          ...lesson,
-          duration: lessonContent[lesson.id]?.duration || lesson.duration,
-          isLocked
-        };
-      });
-    return sectionLessons;
-  };
 
   const getCategoryIcon = (category, section) => {
     const iconMap = {
@@ -248,19 +238,46 @@ const LessonsContent = () => {
     );
   };
 
-  const getLessonsByCategory = () => {
-    const filtered = getFilteredLessons();
-    const grouped = {};
 
-    filtered.forEach(lesson => {
-      const category = lesson.category || 'Other';
-      if (!grouped[category]) {
-        grouped[category] = [];
+  // New function to get all lessons grouped by section and category
+  const getAllLessonsBySection = () => {
+    const sections = {
+      english: { title: 'English', lessons: [] },
+      math: { title: 'Math', lessons: [] },
+      reading: { title: 'Reading', lessons: [] },
+      science: { title: 'Science', lessons: [] }
+    };
+
+    lessonStructure.forEach((lesson, index) => {
+      // In drills mode, exclude Introduction lessons
+      if (mode === 'drills' && lesson.category === 'Introduction') return;
+
+      const isLocked = featureAccess && !featureAccess.isPro && index >= featureAccess.lessonsPerSection;
+      const enhancedLesson = {
+        ...lesson,
+        duration: lessonContent[lesson.id]?.duration || lesson.duration,
+        isLocked
+      };
+
+      if (sections[lesson.section]) {
+        sections[lesson.section].lessons.push(enhancedLesson);
       }
-      grouped[category].push(lesson);
     });
 
-    return grouped;
+    // Group lessons within each section by category
+    Object.keys(sections).forEach(sectionKey => {
+      const categoryGroups = {};
+      sections[sectionKey].lessons.forEach(lesson => {
+        const category = lesson.category || 'Other';
+        if (!categoryGroups[category]) {
+          categoryGroups[category] = [];
+        }
+        categoryGroups[category].push(lesson);
+      });
+      sections[sectionKey].categoryGroups = categoryGroups;
+    });
+
+    return sections;
   };
 
   const renderLessonCard = (lesson) => {
@@ -393,7 +410,7 @@ const LessonsContent = () => {
         className={`${isGridView ? classes.lessonCard : classes.lessonCardListView} ${isGolden ? 'golden' : ''}`}
         onClick={() => {
           soundEffects.playClick();
-          openLesson(lesson.id, 'practice');
+          openLesson(lesson.id, 'drills');
         }}
         onMouseLeave={() => setHoveredMoreTag(null)}
       >
@@ -456,195 +473,359 @@ const LessonsContent = () => {
     );
   };
 
-  const renderPracticeView = () => {
-    const grouped = getLessonsByCategory();
-    return (
-      <div>
-        {Object.entries(grouped).map(([category, lessons], idx) => (
-          <div key={category} className={classes.unitBox}>
-            <div className={classes.unitHeader}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                {getCategoryIcon(category, activeSection)}
-                <h3 className={classes.unitTitle}>{category}</h3>
-              </div>
-              <span style={{
-                fontSize: '0.75rem',
-                fontWeight: '700',
-                color: activeSection === 'science' ? '#10b981' : activeSection === 'math' ? '#b91c1c' : activeSection === 'reading' ? '#713f12' : '#08245b',
-                background: activeSection === 'science' ? '#d1fae5' : activeSection === 'math' ? '#fecaca' : activeSection === 'reading' ? '#fef3c7' : '#f0f9ff',
-                padding: '0.25rem 0.5rem',
-                borderRadius: '4px'
-              }}>
-                Unit {idx + 1}
-              </span>
-            </div>
-            <div className={classes.unitContent}>
-              <div className={classes.lessonsList}>
-                {lessons.map(lesson => renderPracticeCard(lesson))}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    );
+
+  // Calculate progress stats across all sections
+  const calculateProgress = () => {
+    let allLessons = lessonStructure;
+
+    // In drills mode, exclude Introduction lessons
+    if (mode === 'drills') {
+      allLessons = allLessons.filter(lesson => lesson.category !== 'Introduction');
+    }
+
+    const completedCount = allLessons.filter(lesson => getLessonStatus(lesson.id) === 'completed').length;
+    const totalCount = allLessons.length;
+    const percentage = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
+
+    return {
+      percentage,
+      completed: completedCount,
+      total: totalCount
+    };
   };
+
+  const progress = calculateProgress();
+  const radius = 86;
+  const circumference = 2 * Math.PI * radius;
+  const strokeDashoffset = circumference - (progress.percentage / 100) * circumference;
 
   return (
     <div className={classes.lessonsContainer}>
-      <div className={classes.pageHeader}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-          <div>
-            <h1 className={classes.pageTitle}>Lessons</h1>
-            <p className={classes.pageSubtitle}>Master every concept with structured lessons and practice</p>
-          </div>
+      {/* Main Content */}
+      <div className={classes.lessonsMainContent}>
+      {/* Mode Toggle moved to AppLayout header */}
+      <div className={classes.contentSection}>
+        {/* Render all sections with collapsible categories */}
+        <div>
+          {Object.entries(getAllLessonsBySection()).map(([sectionKey, sectionData]) => {
+            if (!sectionData.lessons.length) return null;
 
-          {/* Mode Toggle */}
-          <div className={classes.modeToggle}>
-            <button
-              className={`${classes.modeButton} ${mode === 'lessons' ? 'active' : ''}`}
-              onClick={() => {
-                soundEffects.playToggle();
-                setMode('lessons');
-              }}
-            >
-              Lessons
-            </button>
-            <button
-              className={`${classes.modeButton} ${mode === 'practice' ? 'active' : ''}`}
-              onClick={() => {
-                soundEffects.playToggle();
-                setMode('practice');
-              }}
-            >
-              Practice
-            </button>
-          </div>
+            return (
+              <div key={sectionKey} style={{ marginBottom: '2rem' }}>
+                {/* Section Header */}
+                <h2 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1a1a1a',
+                  marginBottom: '1rem'
+                }}>
+                  {sectionData.title}
+                </h2>
+
+                {/* Categories within section */}
+                {Object.entries(sectionData.categoryGroups).map(([category, lessons]) => {
+                  const categoryKey = `${sectionKey}-${category}`;
+                  const isExpanded = expandedCategories[categoryKey];
+                  const completedCount = lessons.filter(l => getLessonStatus(l.id) === 'completed').length;
+                  const totalCount = lessons.length;
+                  const isAllCompleted = completedCount === totalCount;
+
+                  // Calculate total questions from lesson content
+                  const totalQuestions = lessons.reduce((sum, l) => {
+                    const content = lessonContent[l.id];
+                    const questionCount = content?.questions?.length || 0;
+                    return sum + questionCount;
+                  }, 0);
+
+                  return (
+                    <div key={categoryKey} style={{
+                      marginBottom: '0.5rem',
+                      border: isExpanded ? '1px solid #e5e7eb' : 'none',
+                      borderRadius: '8px',
+                      overflow: 'hidden'
+                    }}>
+                      {/* Category Header (clickable) */}
+                      <button
+                        onClick={() => {
+                          soundEffects.playClick();
+                          toggleCategory(categoryKey);
+                        }}
+                        style={{
+                          width: '100%',
+                          padding: '1rem 1.25rem',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          cursor: 'pointer',
+                          background: 'white',
+                          border: 'none',
+                          transition: 'background 0.15s',
+                          textAlign: 'left'
+                        }}
+                        onMouseOver={(e) => e.currentTarget.style.background = '#f9fafb'}
+                        onMouseOut={(e) => e.currentTarget.style.background = 'white'}
+                      >
+                        <div>
+                          <div style={{
+                            fontSize: '1rem',
+                            fontWeight: '600',
+                            color: '#1a1a1a',
+                            marginBottom: '0.25rem'
+                          }}>
+                            {category}
+                          </div>
+                          <div style={{
+                            fontSize: '0.875rem',
+                            color: '#6b7280'
+                          }}>
+                            {mode === 'lessons'
+                              ? `${lessons.length} lesson${lessons.length !== 1 ? 's' : ''}`
+                              : `${totalQuestions} question${totalQuestions !== 1 ? 's' : ''}`
+                            }
+                          </div>
+                        </div>
+                        <div style={{
+                          fontSize: '1.25rem',
+                          color: '#6b7280'
+                        }}>
+                          {isExpanded ? <HiChevronUp /> : <HiChevronDown />}
+                        </div>
+                      </button>
+
+                      {/* Expanded Lessons List */}
+                      {isExpanded && (
+                        <div style={{
+                          padding: '0.5rem 1.25rem 1rem',
+                          borderTop: '1px solid #e5e7eb'
+                        }}>
+                          {lessons.map(lesson => {
+                            const status = getLessonStatus(lesson.id);
+                            const isCompleted = status === 'completed';
+                            const isInProgress = status === 'in-progress';
+                            const showCheckmark = isCompleted || isInProgress;
+
+                            return (
+                              <div
+                                key={lesson.id}
+                                onClick={() => {
+                                  if (!lesson.isLocked) {
+                                    soundEffects.playClick();
+                                    openLesson(lesson.id, mode === 'drills' ? 'practice' : 'review');
+                                  }
+                                }}
+                                style={{
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  gap: '0.75rem',
+                                  padding: '0.625rem 0.75rem',
+                                  margin: '0.25rem 0',
+                                  cursor: lesson.isLocked ? 'not-allowed' : 'pointer',
+                                  opacity: lesson.isLocked ? 0.5 : 1,
+                                  borderRadius: '6px',
+                                  transition: 'background 0.15s'
+                                }}
+                                onMouseOver={(e) => {
+                                  if (!lesson.isLocked) e.currentTarget.style.background = '#f3f4f6';
+                                }}
+                                onMouseOut={(e) => e.currentTarget.style.background = 'transparent'}
+                              >
+                                {/* Checkbox */}
+                                <div style={{
+                                  width: '20px',
+                                  height: '20px',
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  justifyContent: 'center',
+                                  flexShrink: 0
+                                }}>
+                                  {showCheckmark ? (
+                                    <HiCheckCircle style={{
+                                      fontSize: '1.25rem',
+                                      color: '#3b82f6'
+                                    }} />
+                                  ) : (
+                                    <div style={{
+                                      width: '18px',
+                                      height: '18px',
+                                      border: '2px solid #d1d5db',
+                                      borderRadius: '4px'
+                                    }} />
+                                  )}
+                                </div>
+
+                                {/* Lesson Title */}
+                                <div style={{
+                                  flex: 1,
+                                  fontSize: '0.9rem',
+                                  color: '#374151',
+                                  fontWeight: '500'
+                                }}>
+                                  {lesson.title}
+                                </div>
+
+                                {/* Duration for Lessons, Question Count for Drills, or Lock Icon */}
+                                {lesson.isLocked ? (
+                                  <HiLockClosed style={{ color: '#9ca3af', fontSize: '1rem' }} />
+                                ) : mode === 'lessons' ? (
+                                  <div style={{
+                                    fontSize: '0.875rem',
+                                    color: '#6b7280',
+                                    fontWeight: '500'
+                                  }}>
+                                    {lessonContent[lesson.id]?.duration || ''}
+                                  </div>
+                                ) : (
+                                  <div style={{
+                                    fontSize: '0.875rem',
+                                    color: '#6b7280',
+                                    fontWeight: '500'
+                                  }}>
+                                    0/{lessonContent[lesson.id]?.questions?.length || 0}
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })}
+
+                          {/* Start Button at Bottom */}
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              soundEffects.playClick();
+                              const firstLesson = lessons[0];
+                              if (firstLesson && !firstLesson.isLocked) {
+                                openLesson(firstLesson.id, mode === 'drills' ? 'practice' : 'review');
+                              }
+                            }}
+                            style={{
+                              display: 'block',
+                              marginTop: '1rem',
+                              marginLeft: 'auto',
+                              marginRight: 'auto',
+                              padding: '0.625rem 1.25rem',
+                              background: 'white',
+                              border: '1px solid #e5e7eb',
+                              borderRadius: '6px',
+                              fontSize: '0.875rem',
+                              fontWeight: '500',
+                              color: '#374151',
+                              cursor: 'pointer',
+                              transition: 'all 0.15s',
+                              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+                            }}
+                            onMouseOver={(e) => {
+                              e.currentTarget.style.background = '#f9fafb';
+                              e.currentTarget.style.borderColor = '#d1d5db';
+                              e.currentTarget.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.12)';
+                            }}
+                            onMouseOut={(e) => {
+                              e.currentTarget.style.background = 'white';
+                              e.currentTarget.style.borderColor = '#e5e7eb';
+                              e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+                            }}
+                          >
+                            {mode === 'drills' ? 'Start practice' : 'Start lesson'}
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
         </div>
       </div>
-      <div className={classes.contentSection}>
-        <div className={classes.controlsBar}>
-          <div className={classes.filterButtons} ref={filterContainerRef}>
-            <div className={`${classes.filterSlider} ${activeSection}`} style={sliderStyle} />
-            <button
-              ref={el => filterButtonsRef.current['getting-started'] = el}
-              className={`${classes.filterButton} getting-started ${activeSection === 'getting-started' ? 'active' : ''}`}
-              onClick={() => handleSectionFilter('getting-started')}
-            >
-              Getting Started
-            </button>
-            <button
-              ref={el => filterButtonsRef.current['english'] = el}
-              className={`${classes.filterButton} english ${activeSection === 'english' ? 'active' : ''}`}
-              onClick={() => handleSectionFilter('english')}
-            >
-              English
-            </button>
-            <button
-              ref={el => filterButtonsRef.current['math'] = el}
-              className={`${classes.filterButton} math ${activeSection === 'math' ? 'active' : ''}`}
-              onClick={() => handleSectionFilter('math')}
-            >
-              Math
-            </button>
-            <button
-              ref={el => filterButtonsRef.current['reading'] = el}
-              className={`${classes.filterButton} reading ${activeSection === 'reading' ? 'active' : ''}`}
-              onClick={() => handleSectionFilter('reading')}
-            >
-              Reading
-            </button>
-            <button
-              ref={el => filterButtonsRef.current['science'] = el}
-              className={`${classes.filterButton} science ${activeSection === 'science' ? 'active' : ''}`}
-              onClick={() => handleSectionFilter('science')}
-            >
-              Science
-            </button>
+      </div>
+
+      {/* Progress Sidebar */}
+      <div className={classes.progressSidebar}>
+        <div className={classes.progressCard}>
+          <h3 className={classes.progressTitle}>Progress</h3>
+
+          {/* Circular Progress */}
+          <div className={classes.progressCircleContainer}>
+            <div className={classes.progressCircle}>
+              <svg className={classes.progressCircleSvg} width="180" height="180">
+                <circle
+                  className={classes.progressCircleBackground}
+                  cx="90"
+                  cy="90"
+                  r={radius}
+                />
+                <circle
+                  className={classes.progressCircleProgress}
+                  cx="90"
+                  cy="90"
+                  r={radius}
+                  strokeDasharray={circumference}
+                  strokeDashoffset={strokeDashoffset}
+                />
+              </svg>
+              <div className={classes.progressText}>
+                <div className={classes.progressPercentage}>{progress.percentage}%</div>
+                <div className={classes.progressFraction}>{progress.completed}/{progress.total}</div>
+              </div>
+            </div>
           </div>
 
-          <div className={classes.viewToggle}>
-            <button
-              className={`${classes.viewButton} ${viewMode === 'grid' ? 'active' : ''}`}
-              onClick={() => {
-                soundEffects.playToggle();
-                setViewMode('grid');
-              }}
-              title="Grid view"
-              style={viewMode === 'grid' ? {
-                background: activeSection === 'science' ? '#10b981' : activeSection === 'math' ? '#b91c1c' : activeSection === 'reading' ? '#713f12' : '#08245b',
-                color: '#ffffff',
-                boxShadow: activeSection === 'science' ? '0 2px 4px rgba(16, 185, 129, 0.25), 0 1px 2px rgba(16, 185, 129, 0.15)' :
-                           activeSection === 'math' ? '0 2px 4px rgba(185, 28, 28, 0.25), 0 1px 2px rgba(185, 28, 28, 0.15)' :
-                           activeSection === 'reading' ? '0 2px 4px rgba(113, 63, 18, 0.25), 0 1px 2px rgba(113, 63, 18, 0.15)' :
-                           '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)'
-              } : {}}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="3" width="7" height="7"></rect>
-                <rect x="14" y="3" width="7" height="7"></rect>
-                <rect x="14" y="14" width="7" height="7"></rect>
-                <rect x="3" y="14" width="7" height="7"></rect>
-              </svg>
-            </button>
-            <button
-              className={`${classes.viewButton} ${viewMode === 'list' ? 'active' : ''}`}
-              onClick={() => {
-                soundEffects.playToggle();
-                setViewMode('list');
-              }}
-              title="List view"
-              style={viewMode === 'list' ? {
-                background: activeSection === 'science' ? '#10b981' : activeSection === 'math' ? '#b91c1c' : activeSection === 'reading' ? '#713f12' : '#08245b',
-                color: '#ffffff',
-                boxShadow: activeSection === 'science' ? '0 2px 4px rgba(16, 185, 129, 0.25), 0 1px 2px rgba(16, 185, 129, 0.15)' :
-                           activeSection === 'math' ? '0 2px 4px rgba(185, 28, 28, 0.25), 0 1px 2px rgba(185, 28, 28, 0.15)' :
-                           activeSection === 'reading' ? '0 2px 4px rgba(113, 63, 18, 0.25), 0 1px 2px rgba(113, 63, 18, 0.15)' :
-                           '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)'
-              } : {}}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="8" y1="6" x2="21" y2="6"></line>
-                <line x1="8" y1="12" x2="21" y2="12"></line>
-                <line x1="8" y1="18" x2="21" y2="18"></line>
-                <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                <line x1="3" y1="18" x2="3.01" y2="18"></line>
-              </svg>
-            </button>
+          {/* Stats */}
+          <div className={classes.progressStats}>
+            <div className={classes.progressStat}>
+              <div className={classes.progressStatLabel}>Completed</div>
+              <div className={classes.progressStatValue} style={{ color: '#10b981' }}>
+                {progress.completed}
+              </div>
+            </div>
+            <div className={classes.progressStat}>
+              <div className={classes.progressStatLabel}>Remaining</div>
+              <div className={classes.progressStatValue} style={{ color: '#ef4444' }}>
+                {progress.total - progress.completed}
+              </div>
+            </div>
           </div>
         </div>
 
-        {mode === 'practice' ? (
-          renderPracticeView()
-        ) : (
-          <div>
-            {Object.entries(getLessonsByCategory()).map(([category, lessons], idx) => (
-            <div key={category} className={classes.unitBox}>
-              <div className={classes.unitHeader}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                  {getCategoryIcon(category, activeSection)}
-                  <h3 className={classes.unitTitle}>{category}</h3>
-                </div>
-                <span style={{
-                  fontSize: '0.75rem',
-                  fontWeight: '700',
-                  color: activeSection === 'science' ? '#10b981' : activeSection === 'math' ? '#b91c1c' : activeSection === 'reading' ? '#713f12' : '#08245b',
-                  background: activeSection === 'science' ? '#d1fae5' : activeSection === 'math' ? '#fecaca' : activeSection === 'reading' ? '#fef3c7' : '#f0f9ff',
-                  padding: '0.25rem 0.5rem',
-                  borderRadius: '4px'
-                }}>
-                  Unit {idx + 1}
-                </span>
-              </div>
-              <div className={classes.unitContent}>
-                <div className={viewMode === 'grid' ? classes.lessonsList : classes.lessonsListView}>
-                  {lessons.map(lesson => renderLessonCard(lesson))}
-                </div>
-              </div>
-            </div>
-          ))}
-          </div>
-        )}
+        {/* View Session History Button */}
+        <button
+          onClick={() => {
+            soundEffects.playClick();
+            navigate('/app/insights');
+          }}
+          style={{
+            width: '100%',
+            marginTop: '1rem',
+            padding: '0.625rem 1.5rem',
+            background: 'white',
+            border: '1px solid #e5e7eb',
+            borderRadius: '100px',
+            fontSize: '0.8125rem',
+            fontWeight: '500',
+            color: '#64748b',
+            cursor: 'pointer',
+            transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0.5rem',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.background = '#f9fafb';
+            e.currentTarget.style.borderColor = '#d1d5db';
+            e.currentTarget.style.color = '#1a1a1a';
+            e.currentTarget.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.12)';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.background = 'white';
+            e.currentTarget.style.borderColor = '#e5e7eb';
+            e.currentTarget.style.color = '#64748b';
+            e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+          }}
+        >
+          <HiClock style={{ fontSize: '1rem' }} />
+          <span>View session history</span>
+        </button>
       </div>
 
       {/* Lesson Preview Modal */}

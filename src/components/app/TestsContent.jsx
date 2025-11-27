@@ -83,7 +83,6 @@ const TestsContent = () => {
     <div className={classes.testsContainer}>
       <div className={classes.pageHeader}>
         <h1 className={classes.pageTitle}>Tests</h1>
-        <p className={classes.subtitle}>Take full-length tests and track your progress</p>
       </div>
       <div className={classes.contentSection}>
         {/* Only show diagnostic CTA if user hasn't completed it (and status is loaded) */}
@@ -96,9 +95,6 @@ const TestsContent = () => {
 
         <div className={classes.sectionHeader}>
           <h2 className={classes.sectionTitle}>Full-Length Tests</h2>
-          <p className={classes.sectionDescription}>
-            Complete ACT tests with all four sections
-          </p>
         </div>
         <div className={classes.testsGrid}>
           {practiceTests.map(test => {
@@ -129,9 +125,6 @@ const TestsContent = () => {
                     {isLocked && <span style={{ marginLeft: '0.5rem', fontSize: '0.875rem', color: '#3b82f6' }}>Pro</span>}
                   </h3>
                 </div>
-                <p className={classes.testDescription}>
-                  {isLocked ? 'Upgrade to unlock' : test.description}
-                </p>
               </div>
             );
           })}
@@ -139,9 +132,6 @@ const TestsContent = () => {
 
         <div className={classes.sectionHeader}>
           <h2 className={classes.sectionTitle}>Section-Specific Practice</h2>
-          <p className={classes.sectionDescription}>
-            Focus on individual sections to target your practice
-          </p>
         </div>
         <div className={classes.testsGrid}>
           {sectionTests.map((test, index) => (
@@ -153,7 +143,6 @@ const TestsContent = () => {
                 <div className={classes.testIcon}>{test.icon}</div>
                 <h3 className={classes.testTitle}>{test.title}</h3>
               </div>
-              <p className={classes.testDescription}>{test.description}</p>
             </div>
           ))}
         </div>

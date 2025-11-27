@@ -11,7 +11,10 @@ export const useCourseStyles = createUseStyles({
     maxWidth: '100%',
     margin: '0',
     padding: '0',
-    minHeight: '100vh',
+    flex: 1,
+    overflow: 'hidden',
+    display: 'flex',
+    flexDirection: 'column',
     background: '#ffffff',
     '@media (max-width: 768px)': {
       padding: '0'

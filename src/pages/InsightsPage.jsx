@@ -18,14 +18,15 @@ import { lessonStructure } from '../data/lessonStructure';
 
 const useStyles = createUseStyles({
   container: {
-    maxWidth: '1400px',
-    margin: '0 auto',
-    padding: '0.5rem 0',
+    maxWidth: '700px',
+    margin: '0',
+    padding: '1.5rem 1.5rem 0 1.5rem',
+    width: '100%',
     '@media (max-width: 768px)': {
-      padding: '0.375rem 0'
+      padding: '1.5rem 1rem 0 1rem'
     },
     '@media (max-width: 480px)': {
-      padding: '0.25rem 0'
+      padding: '1rem 0.75rem 0 0.75rem'
     }
   },
   header: {
@@ -467,13 +468,35 @@ const InsightsPage = () => {
   const navigate = useNavigate();
   const outletContext = useOutletContext();
   const { setDiagnosticTestOpen } = outletContext || {};
-  const [insights, setInsights] = useState(null);
-  const [weakAreas, setWeakAreas] = useState([]);
+
+  // Check cache immediately to avoid loading state
+  const getCachedInsights = () => {
+    if (!user) return null;
+    const cacheKey = `insights_${user.id}`;
+    const cached = sessionStorage.getItem(cacheKey);
+    const cacheTimestamp = sessionStorage.getItem(`${cacheKey}_timestamp`);
+    const now = Date.now();
+
+    if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 300000) {
+      return JSON.parse(cached);
+    }
+    return null;
+  };
+
+  const getCachedWeakAreas = () => {
+    if (!user) return [];
+    const weakAreasCacheKey = `weak_areas_${user.id}`;
+    const cached = sessionStorage.getItem(weakAreasCacheKey);
+    return cached ? JSON.parse(cached) : [];
+  };
+
+  const [insights, setInsights] = useState(getCachedInsights());
+  const [weakAreas, setWeakAreas] = useState(getCachedWeakAreas());
   const [strengths, setStrengths] = useState([]);
   const [featureAccess, setFeatureAccess] = useState(null);
   const [viewingDiagnosticReview, setViewingDiagnosticReview] = useState(false);
   const [lessonMetadataMap, setLessonMetadataMap] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(!getCachedInsights());
 
   useEffect(() => {
     if (user) {
@@ -516,142 +539,47 @@ const InsightsPage = () => {
 
       // Check cache first
       const cacheKey = `insights_${user.id}`;
+      const weakAreasCacheKey = `weak_areas_${user.id}`;
       const cached = sessionStorage.getItem(cacheKey);
+      const cachedWeakAreas = sessionStorage.getItem(weakAreasCacheKey);
       const cacheTimestamp = sessionStorage.getItem(`${cacheKey}_timestamp`);
       const now = Date.now();
 
-      // Use cache if less than 30 seconds old
-      if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 30000) {
+      // Use cache if less than 5 minutes old (increased from 30 seconds)
+      if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 300000) {
         const cachedData = JSON.parse(cached);
         setInsights(cachedData);
         setIsLoading(false);
         console.log('📊 Using cached insights data');
 
-        // Still refresh in background
-        refreshInsightsInBackground(cacheKey);
+        // Load cached weak areas if available
+        if (cachedWeakAreas) {
+          setWeakAreas(JSON.parse(cachedWeakAreas));
+        }
+
+        // Still refresh in background but don't await
+        refreshInsightsInBackground(cacheKey, weakAreasCacheKey);
         return;
       }
 
-      // Only set loading if we don't have cached data
-      setIsLoading(true);
+      // Set loading false immediately to show UI - we'll populate data as it loads
+      setIsLoading(false);
 
       // Load insights data
       const insightsData = await InsightsService.getUserInsights(user.id);
+      setInsights(insightsData);
+
+      // Cache the basic insights immediately
+      sessionStorage.setItem(cacheKey, JSON.stringify(insightsData));
+      sessionStorage.setItem(`${cacheKey}_timestamp`, String(Date.now()));
 
       // Get the diagnostic session to analyze
       const diagnosticSession = insightsData.diagnostic?.latestSession;
 
       if (diagnosticSession) {
-        console.log('📊 Analyzing diagnostic test results for weak areas...');
-
-        // Get all question results from the diagnostic
-        const { data: questionResults, error: resultsError } = await supabase
-          .from('diagnostic_test_results')
-          .select('*')
-          .eq('diagnostic_session_id', diagnosticSession.id);
-
-        if (!resultsError && questionResults) {
-          console.log(`   Found ${questionResults.length} question results`);
-
-          // Get question details to map to lessons
-          const questionIds = questionResults.map(r => r.question_id);
-          const sections = ['english', 'math', 'reading', 'science'];
-          const questionMap = new Map();
-          const lessonIdToTitleMap = new Map();
-
-          // Fetch question details from all sections
-          for (const section of sections) {
-            const { data: questions } = await supabase
-              .from(`practice_test_${section}_questions`)
-              .select('id, lesson_id, chapter')
-              .in('id', questionIds);
-
-            if (questions) {
-              questions.forEach(q => {
-                questionMap.set(q.id, { lesson_id: q.lesson_id, chapter: q.chapter, section });
-              });
-            }
-          }
-
-          // Fetch lesson titles from the lessons table
-          const uniqueLessonIds = [...new Set(
-            Array.from(questionMap.values())
-              .map(q => q.lesson_id)
-              .filter(Boolean)
-          )];
-
-          if (uniqueLessonIds.length > 0) {
-            const { data: lessons } = await supabase
-              .from('lessons')
-              .select('id, title, lesson_key, subject')
-              .in('id', uniqueLessonIds);
-
-            if (lessons) {
-              lessons.forEach(lesson => {
-                lessonIdToTitleMap.set(lesson.id, {
-                  title: lesson.title,
-                  lesson_key: lesson.lesson_key,
-                  subject: lesson.subject
-                });
-              });
-            }
-          }
-
-          console.log(`   Built mapping for ${lessonIdToTitleMap.size} lesson IDs to titles`);
-
-          // Group results by lesson and calculate performance
-          const lessonStats = {};
-
-          questionResults.forEach(result => {
-            const questionInfo = questionMap.get(result.question_id);
-            if (!questionInfo?.lesson_id) return;
-
-            const lessonId = questionInfo.lesson_id;
-            if (!lessonStats[lessonId]) {
-              const lessonInfo = lessonIdToTitleMap.get(lessonId);
-              lessonStats[lessonId] = {
-                lesson_id: lessonId,
-                chapter: questionInfo.chapter,
-                section: questionInfo.section,
-                lesson_title: lessonInfo?.title,
-                lesson_key: lessonInfo?.lesson_key,
-                subject: lessonInfo?.subject,
-                correct: 0,
-                total: 0
-              };
-            }
-
-            lessonStats[lessonId].total++;
-            if (result.is_correct) {
-              lessonStats[lessonId].correct++;
-            }
-          });
-
-          // Calculate accuracy and find weak areas (< 60%)
-          const weakAreasFromDiagnostic = Object.values(lessonStats)
-            .map(stat => ({
-              ...stat,
-              accuracy: (stat.correct / stat.total) * 100
-            }))
-            .filter(stat => stat.accuracy < 60 && stat.total >= 2) // At least 2 questions
-            .sort((a, b) => a.accuracy - b.accuracy)
-            .slice(0, 10);
-
-          console.log(`   Found ${weakAreasFromDiagnostic.length} weak areas (< 60% accuracy)`);
-          weakAreasFromDiagnostic.forEach(area => {
-            console.log(`     - ${area.lesson_title || area.chapter}: ${area.accuracy.toFixed(0)}%`);
-          });
-
-          setWeakAreas(weakAreasFromDiagnostic);
-          setStrengths([]); // We'll compute strengths later if needed
-        }
+        // Load weak areas asynchronously in background
+        loadWeakAreasAsync(diagnosticSession.id, weakAreasCacheKey);
       }
-
-      setInsights(insightsData);
-
-      // Cache the insights
-      sessionStorage.setItem(cacheKey, JSON.stringify(insightsData));
-      sessionStorage.setItem(`${cacheKey}_timestamp`, String(Date.now()));
 
       logger.info('InsightsPage', 'loadInsightsComplete', {
         hasDiagnostic: insightsData.diagnostic.hasCompletedDiagnostic
@@ -659,12 +587,142 @@ const InsightsPage = () => {
     } catch (error) {
       logger.error('InsightsPage', 'loadInsightsFailed', { error });
       console.error('Failed to load insights:', error);
-    } finally {
       setIsLoading(false);
     }
   };
 
-  const refreshInsightsInBackground = async (cacheKey) => {
+  const loadWeakAreasAsync = async (diagnosticSessionId, cacheKey) => {
+    try {
+      console.log('📊 Analyzing diagnostic test results for weak areas...');
+
+      // Run all database queries in parallel for maximum performance
+      const [resultsResponse, ...sectionResponses] = await Promise.all([
+        supabase
+          .from('diagnostic_test_results')
+          .select('*')
+          .eq('diagnostic_session_id', diagnosticSessionId),
+        supabase
+          .from('practice_test_english_questions')
+          .select('id, lesson_id, chapter'),
+        supabase
+          .from('practice_test_math_questions')
+          .select('id, lesson_id, chapter'),
+        supabase
+          .from('practice_test_reading_questions')
+          .select('id, lesson_id, chapter'),
+        supabase
+          .from('practice_test_science_questions')
+          .select('id, lesson_id, chapter')
+      ]);
+
+      const { data: questionResults, error: resultsError } = resultsResponse;
+
+      if (resultsError || !questionResults) {
+        console.error('Error fetching question results:', resultsError);
+        return;
+      }
+
+      console.log(`   Found ${questionResults.length} question results`);
+
+      // Build question map from all sections in parallel
+      const questionIds = new Set(questionResults.map(r => r.question_id));
+      const questionMap = new Map();
+      const sections = ['english', 'math', 'reading', 'science'];
+
+      sectionResponses.forEach((response, index) => {
+        if (response.data) {
+          const section = sections[index];
+          response.data
+            .filter(q => questionIds.has(q.id))
+            .forEach(q => {
+              questionMap.set(q.id, { lesson_id: q.lesson_id, chapter: q.chapter, section });
+            });
+        }
+      });
+
+      // Fetch lesson titles in one query
+      const uniqueLessonIds = [...new Set(
+        Array.from(questionMap.values())
+          .map(q => q.lesson_id)
+          .filter(Boolean)
+      )];
+
+      const lessonIdToTitleMap = new Map();
+
+      if (uniqueLessonIds.length > 0) {
+        const { data: lessons } = await supabase
+          .from('lessons')
+          .select('id, title, lesson_key, subject')
+          .in('id', uniqueLessonIds);
+
+        if (lessons) {
+          lessons.forEach(lesson => {
+            lessonIdToTitleMap.set(lesson.id, {
+              title: lesson.title,
+              lesson_key: lesson.lesson_key,
+              subject: lesson.subject
+            });
+          });
+        }
+      }
+
+      console.log(`   Built mapping for ${lessonIdToTitleMap.size} lesson IDs to titles`);
+
+      // Group results by lesson and calculate performance
+      const lessonStats = {};
+
+      questionResults.forEach(result => {
+        const questionInfo = questionMap.get(result.question_id);
+        if (!questionInfo?.lesson_id) return;
+
+        const lessonId = questionInfo.lesson_id;
+        if (!lessonStats[lessonId]) {
+          const lessonInfo = lessonIdToTitleMap.get(lessonId);
+          lessonStats[lessonId] = {
+            lesson_id: lessonId,
+            chapter: questionInfo.chapter,
+            section: questionInfo.section,
+            lesson_title: lessonInfo?.title,
+            lesson_key: lessonInfo?.lesson_key,
+            subject: lessonInfo?.subject,
+            correct: 0,
+            total: 0
+          };
+        }
+
+        lessonStats[lessonId].total++;
+        if (result.is_correct) {
+          lessonStats[lessonId].correct++;
+        }
+      });
+
+      // Calculate accuracy and find weak areas (< 60%)
+      const weakAreasFromDiagnostic = Object.values(lessonStats)
+        .map(stat => ({
+          ...stat,
+          accuracy: (stat.correct / stat.total) * 100
+        }))
+        .filter(stat => stat.accuracy < 60 && stat.total >= 2) // At least 2 questions
+        .sort((a, b) => a.accuracy - b.accuracy)
+        .slice(0, 10);
+
+      console.log(`   Found ${weakAreasFromDiagnostic.length} weak areas (< 60% accuracy)`);
+      weakAreasFromDiagnostic.forEach(area => {
+        console.log(`     - ${area.lesson_title || area.chapter}: ${area.accuracy.toFixed(0)}%`);
+      });
+
+      setWeakAreas(weakAreasFromDiagnostic);
+
+      // Cache weak areas separately
+      sessionStorage.setItem(cacheKey, JSON.stringify(weakAreasFromDiagnostic));
+
+      setStrengths([]); // We'll compute strengths later if needed
+    } catch (error) {
+      console.error('Error loading weak areas:', error);
+    }
+  };
+
+  const refreshInsightsInBackground = async (cacheKey, weakAreasCacheKey) => {
     try {
       const insightsData = await InsightsService.getUserInsights(user.id);
 
@@ -675,6 +733,12 @@ const InsightsPage = () => {
       // Update state
       setInsights(insightsData);
       console.log('📊 Refreshed insights in background');
+
+      // Refresh weak areas in background if we have a diagnostic session
+      const diagnosticSession = insightsData.diagnostic?.latestSession;
+      if (diagnosticSession) {
+        loadWeakAreasAsync(diagnosticSession.id, weakAreasCacheKey);
+      }
     } catch (error) {
       console.error('Background insights refresh error:', error);
     }
@@ -900,12 +964,6 @@ const InsightsPage = () => {
                 setViewingDiagnosticReview(true);
               }}
             >
-              <div className={classes.diagnosticCardHeader}>
-                <div className={classes.diagnosticBadge}>
-                  DIAGNOSTIC TEST
-                </div>
-                <HiClipboardDocumentList className={classes.diagnosticIcon} />
-              </div>
               <h3 className={classes.diagnosticTitle}>
                 Diagnostic Test
               </h3>
@@ -931,42 +989,6 @@ const InsightsPage = () => {
       <div className={classes.section}>
         <div className={classes.grid}>
           {/* Weak Areas */}
-          {weakAreas.length > 0 && (
-            <div className={`${classes.card} ${showBlurOverlay ? classes.lockedCard : ''}`}>
-              {showBlurOverlay && (
-                <div className={classes.lockBadge}>
-                  <HiLockClosed style={{ fontSize: '0.875rem' }} />
-                  Pro
-                </div>
-              )}
-              <h3 className={classes.sectionTitle}>
-                <HiExclamationTriangle className={classes.sectionIcon} style={{ color: '#dc2626' }} />
-                Areas to Improve
-              </h3>
-              <div className={classes.weakAreasList}>
-                {weakAreas.slice(0, 5).map((area, idx) => (
-                  <div
-                    key={area.lesson_id || idx}
-                    className={classes.weakAreaItem}
-                    onClick={() => {
-                      if (area.lesson_key && area.subject) {
-                        navigate(`/app/lessons/${area.subject}/${area.lesson_key}`);
-                      }
-                    }}
-                    style={{ cursor: area.lesson_key ? 'pointer' : 'default' }}
-                  >
-                    <div className={classes.weakAreaName}>
-                      {getLessonTitle(area)}
-                    </div>
-                    <div className={classes.weakAreaAccuracy}>
-                      {area.accuracy?.toFixed(0)}%
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Strengths */}
           {strengths.length > 0 && (
             <div className={`${classes.card} ${showBlurOverlay ? classes.lockedCard : ''}`}>

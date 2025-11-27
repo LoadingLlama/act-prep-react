@@ -5,10 +5,11 @@
 
 export const profileStyles = {
   container: {
-    maxWidth: '900px',
-    margin: '0 auto',
-    padding: '0',
+    maxWidth: '700px',
+    margin: '0',
+    padding: '1.5rem 1.5rem 0 1.5rem',
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    width: '100%',
   },
 
   loading: {
@@ -16,24 +17,27 @@ export const profileStyles = {
     alignItems: 'center',
     justifyContent: 'center',
     height: '400px',
-    fontSize: '16px',
+    fontSize: '0.875rem',
     color: '#64748b',
   },
 
   header: {
-    marginBottom: '2rem',
+    marginBottom: '1rem',
   },
 
   title: {
-    fontSize: '2.5rem',
-    fontWeight: '900',
-    color: '#000000',
+    fontSize: '1.75rem',
+    fontWeight: '700',
+    background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
     margin: '0 0 0.5rem 0',
-    letterSpacing: '-0.04em',
+    letterSpacing: '-0.02em',
   },
 
   subtitle: {
-    fontSize: '1rem',
+    fontSize: '0.875rem',
     color: '#64748b',
     margin: 0,
   },
@@ -41,14 +45,14 @@ export const profileStyles = {
   content: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '1.5rem',
+    gap: '1rem',
   },
 
   message: {
-    padding: '12px 16px',
+    padding: '0.75rem 1rem',
     borderRadius: '6px',
-    fontSize: '14px',
-    marginBottom: '1.5rem',
+    fontSize: '0.8125rem',
+    marginBottom: '1rem',
   },
 
   successMessage: {
@@ -66,8 +70,8 @@ export const profileStyles = {
   avatarSection: {
     display: 'flex',
     alignItems: 'center',
-    gap: '2rem',
-    padding: '2rem',
+    gap: '1.5rem',
+    padding: '1.5rem',
     background: '#ffffff',
     border: '1px solid #e2e8f0',
     borderRadius: '8px',
@@ -78,19 +82,19 @@ export const profileStyles = {
   },
 
   avatar: {
-    width: '120px',
-    height: '120px',
+    width: '80px',
+    height: '80px',
     borderRadius: '50%',
     objectFit: 'cover',
-    border: '3px solid #e2e8f0',
+    border: '2px solid #e2e8f0',
   },
 
   avatarPlaceholder: {
-    width: '120px',
-    height: '120px',
+    width: '80px',
+    height: '80px',
     borderRadius: '50%',
     background: '#f1f5f9',
-    border: '3px solid #e2e8f0',
+    border: '2px solid #e2e8f0',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -126,15 +130,15 @@ export const profileStyles = {
   },
 
   userName: {
-    fontSize: '1.5rem',
-    fontWeight: '700',
+    fontSize: '1.125rem',
+    fontWeight: '600',
     color: '#0f172a',
     margin: '0 0 0.25rem 0',
-    letterSpacing: '-0.02em',
+    letterSpacing: '-0.01em',
   },
 
   userEmail: {
-    fontSize: '0.95rem',
+    fontSize: '0.8125rem',
     color: '#64748b',
     margin: 0,
   },
@@ -142,21 +146,21 @@ export const profileStyles = {
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '1.5rem',
+    gap: '1rem',
   },
 
   formSection: {
-    padding: '2rem',
+    padding: '1.5rem',
     background: '#ffffff',
     border: '1px solid #e2e8f0',
     borderRadius: '8px',
   },
 
   sectionTitle: {
-    fontSize: '1.125rem',
-    fontWeight: '700',
+    fontSize: '0.9375rem',
+    fontWeight: '600',
     color: '#0f172a',
-    margin: '0 0 1.5rem 0',
+    margin: '0 0 1rem 0',
     display: 'flex',
     alignItems: 'center',
     gap: '0.5rem',
@@ -166,18 +170,18 @@ export const profileStyles = {
   formRow: {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-    gap: '1rem',
+    gap: '0.75rem',
   },
 
   formGroup: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.5rem',
-    marginBottom: '1rem',
+    gap: '0.375rem',
+    marginBottom: '0.75rem',
   },
 
   label: {
-    fontSize: '0.875rem',
+    fontSize: '0.75rem',
     fontWeight: '600',
     color: '#0f172a',
     display: 'flex',
@@ -186,8 +190,8 @@ export const profileStyles = {
   },
 
   input: {
-    padding: '12px 16px',
-    fontSize: '15px',
+    padding: '0.625rem 0.875rem',
+    fontSize: '0.8125rem',
     border: '1px solid #e2e8f0',
     borderRadius: '6px',
     outline: 'none',
@@ -208,8 +212,8 @@ export const profileStyles = {
   },
 
   select: {
-    padding: '12px 16px',
-    fontSize: '15px',
+    padding: '0.625rem 0.875rem',
+    fontSize: '0.8125rem',
     border: '1px solid #e2e8f0',
     borderRadius: '6px',
     outline: 'none',
@@ -225,7 +229,7 @@ export const profileStyles = {
   },
 
   helpText: {
-    fontSize: '0.75rem',
+    fontSize: '0.6875rem',
     color: '#94a3b8',
     marginTop: '-0.25rem',
   },

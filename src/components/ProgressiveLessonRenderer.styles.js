@@ -263,15 +263,15 @@ export const useProgressiveLessonStyles = createUseStyles({
     gap: '0.4rem'
   },
   enterKey: {
-    background: 'linear-gradient(135deg, #1a73e8 0%, #2b77c9 100%)',
-    border: '1px solid #1a73e8',
+    background: 'transparent',
+    border: 'none',
     borderRadius: '6px',
     padding: '0.2rem 0.6rem',
     fontSize: '0.75rem',
     fontWeight: '600',
-    color: 'white',
+    color: '#000000',
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    boxShadow: '0 2px 4px rgba(26, 115, 232, 0.2)',
+    boxShadow: 'none',
     '.autoCompleteHint &': {
       background: 'rgba(156, 163, 175, 0.2)',
       border: '1px solid rgba(156, 163, 175, 0.3)',
@@ -281,11 +281,11 @@ export const useProgressiveLessonStyles = createUseStyles({
       boxShadow: 'none'
     },
     '.continuePrompt &': {
-      background: 'rgba(156, 163, 175, 0.15)',
-      border: '1px solid rgba(156, 163, 175, 0.25)',
-      color: '#9ca3af',
-      fontSize: '0.65rem',
-      padding: '0.15rem 0.4rem',
+      background: 'transparent',
+      border: 'none',
+      color: '#000000',
+      fontSize: '0.75rem',
+      padding: '0.2rem 0.6rem',
       boxShadow: 'none'
     }
   },

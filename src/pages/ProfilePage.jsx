@@ -16,16 +16,53 @@ import { HiUser, HiCamera, HiAcademicCap, HiCalendar, HiPhone, HiEnvelope, HiChe
 const ProfilePage = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
-  const [profile, setProfile] = useState(null);
-  const [loading, setLoading] = useState(true);
+
+  // Cache helper functions
+  const getCachedProfile = () => {
+    if (!user) return null;
+    const cacheKey = `profile_${user.id}`;
+    const cached = sessionStorage.getItem(cacheKey);
+    const cacheTimestamp = sessionStorage.getItem(`${cacheKey}_timestamp`);
+    const now = Date.now();
+    if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 60000) {
+      return JSON.parse(cached);
+    }
+    return null;
+  };
+
+  const getCachedSubscription = () => {
+    if (!user) return { isPro: false, hasStripe: false, featureAccess: null, accountCreated: null };
+    const cacheKey = `subscription_${user.id}`;
+    const cached = sessionStorage.getItem(cacheKey);
+    const cacheTimestamp = sessionStorage.getItem(`${cacheKey}_timestamp`);
+    const now = Date.now();
+    if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 300000) {
+      return JSON.parse(cached);
+    }
+    return { isPro: false, hasStripe: false, featureAccess: null, accountCreated: null };
+  };
+
+  const cachedProfile = getCachedProfile();
+  const cachedSub = getCachedSubscription();
+
+  const [profile, setProfile] = useState(cachedProfile);
+  const [loading, setLoading] = useState(!cachedProfile);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState('');
-  const [isPro, setIsPro] = useState(false);
-  const [hasStripeSubscription, setHasStripeSubscription] = useState(false);
+  const [isPro, setIsPro] = useState(cachedSub.isPro);
+  const [hasStripeSubscription, setHasStripeSubscription] = useState(cachedSub.hasStripe);
   const [trialDaysLeft, setTrialDaysLeft] = useState(14);
-  const [accountCreatedAt, setAccountCreatedAt] = useState(null);
-  const [featureAccess, setFeatureAccess] = useState(null);
-  const [formData, setFormData] = useState({
+  const [accountCreatedAt, setAccountCreatedAt] = useState(cachedSub.accountCreated ? new Date(cachedSub.accountCreated) : null);
+  const [featureAccess, setFeatureAccess] = useState(cachedSub.featureAccess);
+  const [formData, setFormData] = useState(cachedProfile ? {
+    full_name: cachedProfile.full_name || '',
+    phone: cachedProfile.phone || '',
+    school: cachedProfile.school || '',
+    grade: cachedProfile.grade || '',
+    current_score: cachedProfile.current_score || '',
+    target_score: cachedProfile.target_score || '',
+    test_date: cachedProfile.test_date || '',
+  } : {
     full_name: '',
     phone: '',
     school: '',
@@ -46,6 +83,24 @@ const ProfilePage = () => {
     if (!user) return;
 
     try {
+      // Check cache first
+      const cacheKey = `subscription_${user.id}`;
+      const cached = sessionStorage.getItem(cacheKey);
+      const cacheTimestamp = sessionStorage.getItem(`${cacheKey}_timestamp`);
+      const now = Date.now();
+
+      if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 300000) {
+        const cachedData = JSON.parse(cached);
+        setIsPro(cachedData.isPro);
+        setHasStripeSubscription(cachedData.hasStripe);
+        setFeatureAccess(cachedData.featureAccess);
+        if (cachedData.accountCreated) {
+          setAccountCreatedAt(new Date(cachedData.accountCreated));
+        }
+        console.log('📊 Using cached subscription data');
+        return;
+      }
+
       // Check if user is Pro
       const proStatus = await hasProSubscription(user.id);
       setIsPro(proStatus);
@@ -60,14 +115,25 @@ const ProfilePage = () => {
 
       // Get account creation date and calculate trial days
       const { data: userData } = await supabase.auth.getUser();
+      let createdAt = null;
       if (userData?.user?.created_at) {
-        const createdAt = new Date(userData.user.created_at);
+        createdAt = new Date(userData.user.created_at);
         setAccountCreatedAt(createdAt);
 
         if (!proStatus && access.trialDaysRemaining !== null) {
           setTrialDaysLeft(access.trialDaysRemaining);
         }
       }
+
+      // Cache the subscription data
+      const subscriptionData = {
+        isPro: proStatus,
+        hasStripe: !!subscription,
+        featureAccess: access,
+        accountCreated: createdAt ? createdAt.toISOString() : null
+      };
+      sessionStorage.setItem(cacheKey, JSON.stringify(subscriptionData));
+      sessionStorage.setItem(`${cacheKey}_timestamp`, String(now));
     } catch (error) {
       console.error('Error loading subscription status:', error);
     }
@@ -181,9 +247,14 @@ const ProfilePage = () => {
     const { error } = await ProfileService.updateProfile(user.id, updates);
 
     if (error) {
-      setMessage('Failed to update profile');
+      console.error('Profile update error:', error);
+      setMessage(`Failed to update profile: ${error.message || 'Unknown error'}`);
     } else {
       setMessage('Profile updated successfully!');
+      // Clear cache to force refresh
+      const cacheKey = `profile_${user.id}`;
+      sessionStorage.removeItem(cacheKey);
+      sessionStorage.removeItem(`${cacheKey}_timestamp`);
       await loadProfile();
     }
 
@@ -200,12 +271,18 @@ const ProfilePage = () => {
     }
 
     setSaving(true);
+    setMessage('Uploading avatar...');
     const { error } = await ProfileService.uploadAvatar(user.id, file);
 
     if (error) {
-      setMessage('Failed to upload avatar');
+      console.error('Avatar upload error:', error);
+      setMessage(`Failed to upload avatar: ${error.message || 'Unknown error'}`);
     } else {
       setMessage('Avatar uploaded successfully!');
+      // Clear cache to force refresh
+      const cacheKey = `profile_${user.id}`;
+      sessionStorage.removeItem(cacheKey);
+      sessionStorage.removeItem(`${cacheKey}_timestamp`);
       await loadProfile();
     }
 
@@ -321,48 +398,46 @@ const ProfilePage = () => {
                 </p>
               )}
             </div>
-            {hasStripeSubscription && (
-              <button
-                onClick={async () => {
-                  try {
-                    await redirectToCustomerPortal(user.id);
-                  } catch (error) {
-                    setMessage('Failed to open portal');
-                  }
-                }}
-                style={{
-                  padding: '0.5rem 0.875rem',
-                  background: '#111',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '4px',
-                  fontSize: '0.75rem',
-                  fontWeight: '500',
-                  cursor: 'pointer'
-                }}
-              >
-                Manage
-              </button>
-            )}
+            <button
+              onClick={async () => {
+                try {
+                  await redirectToCustomerPortal(user.id);
+                } catch (error) {
+                  setMessage('Failed to open portal');
+                }
+              }}
+              style={{
+                padding: '0.5rem 0.875rem',
+                background: '#111',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
+                fontSize: '0.75rem',
+                fontWeight: '500',
+                cursor: 'pointer'
+              }}
+            >
+              Manage Subscription
+            </button>
           </div>
           {featureAccess && (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.5rem', fontSize: '0.75rem' }}>
               <div style={{ padding: '0.5rem', background: '#fafafa', borderRadius: '4px' }}>
                 <div style={{ color: '#999', marginBottom: '0.125rem' }}>Lessons</div>
                 <div style={{ fontWeight: '500', color: '#111' }}>
-                  {isPro ? 'Unlimited' : `${featureAccess.lessonsPerSection}/section`}
+                  {isPro ? 'Full Access' : `${featureAccess.lessonsPerSection}/section`}
                 </div>
               </div>
               <div style={{ padding: '0.5rem', background: '#fafafa', borderRadius: '4px' }}>
                 <div style={{ color: '#999', marginBottom: '0.125rem' }}>Tests</div>
                 <div style={{ fontWeight: '500', color: '#111' }}>
-                  {isPro ? 'Unlimited' : `${featureAccess.practiceTests}`}
+                  {isPro ? 'Full Access' : `${featureAccess.practiceTests}`}
                 </div>
               </div>
               <div style={{ padding: '0.5rem', background: '#fafafa', borderRadius: '4px' }}>
                 <div style={{ color: '#999', marginBottom: '0.125rem' }}>Questions</div>
                 <div style={{ fontWeight: '500', color: '#111' }}>
-                  {isPro ? 'Unlimited' : `${featureAccess.practiceQuestionsPerLesson}/lesson`}
+                  {isPro ? 'Full Access' : `${featureAccess.practiceQuestionsPerLesson}/lesson`}
                 </div>
               </div>
               <div style={{ padding: '0.5rem', background: '#fafafa', borderRadius: '4px' }}>

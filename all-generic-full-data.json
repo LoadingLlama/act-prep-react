@@ -1,0 +1,1910 @@
+[
+  {
+    "lessonKey": "adding-deleting",
+    "lessonTitle": "Topic 2.5 - Adding or Deleting Information",
+    "questions": [
+      {
+        "id": "3d06bded-490f-4dc0-bd09-57566f14d8f4",
+        "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "position": 1,
+        "title": "Adding Information - Read Paragraph Twice",
+        "problem_text": "The following sentence discusses Dr. Martinez's research methods: <u>\"She spent months analyzing data from thousands of patients across multiple hospitals.\"</u>\n\nShould the writer add this sentence about Dr. Martinez's educational background at this point?\n\nProposed addition: \"Dr. Martinez graduated from Harvard Medical School in 2005.\"",
+        "choices": [
+          {
+            "text": "Yes, because it establishes Dr. Martinez's qualifications.",
+            "letter": "A",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "Yes, because it indicates where Dr. Martinez received her training.",
+            "letter": "B",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "No, because it does not relate to the paragraph's discussion of her research methods.",
+            "letter": "C",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          },
+          {
+            "text": "No, because it does not indicate what she studied in medical school.",
+            "letter": "D",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          }
+        ],
+        "correct_answer": "C",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"Yes, because it establishes Dr. Martinez's qualifications.\"**\nThis choice is incorrect. While \"Yes, because it establishes Dr. Martinez's qualifications.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice B: \"Yes, because it indicates where Dr. Martinez received her training.\"**\nThis choice is incorrect. While \"Yes, because it indicates where Dr. Martinez received her training.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"No, because it does not relate to the paragraph's discussion of her research methods.\"**\nThis is the correct answer. The choice \"No, because it does not relate to the paragraph's discussion of her research methods.\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice D: \"No, because it does not indicate what she studied in medical school.\"**\nThis choice is incorrect. While \"No, because it does not indicate what she studied in medical school.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is C.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:47:25.603368+00:00",
+        "updated_at": "2025-10-21T00:47:25.603368+00:00"
+      },
+      {
+        "id": "6b0eaa74-6639-4eff-89d5-c8421d219aff",
+        "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "position": 2,
+        "title": "Only Consider What the Sentence Says",
+        "problem_text": "The passage discusses the economic impact of the new highway.\n\nShould the writer add this sentence: <u>\"The highway construction created 500 jobs.\"</u>",
+        "choices": [
+          {
+            "text": "Yes, because it proves the highway was beneficial to the entire region.",
+            "letter": "A",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "Yes, because it provides specific detail about employment created by the project.",
+            "letter": "B",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          },
+          {
+            "text": "No, because it does not mention what types of jobs were created.",
+            "letter": "C",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "No, because it is not relevant to the economic discussion.",
+            "letter": "D",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"Yes, because it proves the highway was beneficial to the entire region.\"**\nThis choice is incorrect. While \"Yes, because it proves the highway was beneficial to the entire region.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice B: \"Yes, because it provides specific detail about employment created by the project.\"**\nThis is the correct answer. The choice \"Yes, because it provides specific detail about employment created by the project.\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"No, because it does not mention what types of jobs were created.\"**\nThis choice is incorrect. While \"No, because it does not mention what types of jobs were created.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"No, because it is not relevant to the economic discussion.\"**\nThis choice is incorrect. While \"No, because it is not relevant to the economic discussion.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:47:25.706532+00:00",
+        "updated_at": "2025-10-21T00:47:25.706532+00:00"
+      },
+      {
+        "id": "fe2c662a-edd3-46c8-a438-483705bbaeb5",
+        "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "position": 3,
+        "title": "When to Delete Information",
+        "problem_text": "The paragraph discusses how bees communicate through dance patterns to share location information about flowers.\n\nShould the writer delete this sentence: <u>\"Bees also produce honey, which has been valued by humans for thousands of years.\"</u>",
+        "choices": [
+          {
+            "text": "Yes, because the information about honey production is irrelevant to the paragraph's focus on bee communication.",
+            "letter": "A",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          },
+          {
+            "text": "Yes, because it does not specify how much honey bees produce.",
+            "letter": "B",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "No, because it provides important context about why bees are studied.",
+            "letter": "C",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "No, because it connects bee behavior to human interests.",
+            "letter": "D",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          }
+        ],
+        "correct_answer": "A",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"Yes, because the information about honey production is irrelevant to the paragraph's focus on bee communication.\"**\nThis is the correct answer. The choice \"Yes, because the information about honey production is irrelevant to the paragraph's focus on bee communication.\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice B: \"Yes, because it does not specify how much honey bees produce.\"**\nThis choice is incorrect. While \"Yes, because it does not specify how much honey bees produce.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"No, because it provides important context about why bees are studied.\"**\nThis choice is incorrect. While \"No, because it provides important context about why bees are studied.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"No, because it connects bee behavior to human interests.\"**\nThis choice is incorrect. While \"No, because it connects bee behavior to human interests.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is A.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:47:25.822894+00:00",
+        "updated_at": "2025-10-21T00:47:25.822894+00:00"
+      },
+      {
+        "id": "ef76b1ae-aa8c-48d5-a0b9-1a3bfcc66b62",
+        "lesson_id": "784a146b-8809-4189-a1b4-4b2fdcaf8199",
+        "position": 4,
+        "title": "Avoid Wrong Answer Traps",
+        "problem_text": "The passage discusses Maria's career as a chef.\n\nShould the writer add this sentence: <u>\"Maria won first place in a regional cooking competition in 2018.\"</u>",
+        "choices": [
+          {
+            "text": "Yes, because it proves Maria is the best chef in her field.",
+            "letter": "A",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "Yes, because it provides specific detail about an achievement in her career.",
+            "letter": "B",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          },
+          {
+            "text": "No, because it does not mention what dish she prepared for the competition.",
+            "letter": "C",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "No, because it focuses on competition rather than her restaurant work.",
+            "letter": "D",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"Yes, because it proves Maria is the best chef in her field.\"**\nThis choice is incorrect. While \"Yes, because it proves Maria is the best chef in her field.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice B: \"Yes, because it provides specific detail about an achievement in her career.\"**\nThis is the correct answer. The choice \"Yes, because it provides specific detail about an achievement in her career.\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"No, because it does not mention what dish she prepared for the competition.\"**\nThis choice is incorrect. While \"No, because it does not mention what dish she prepared for the competition.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"No, because it focuses on competition rather than her restaurant work.\"**\nThis choice is incorrect. While \"No, because it focuses on competition rather than her restaurant work.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:47:25.938325+00:00",
+        "updated_at": "2025-10-21T00:47:25.938325+00:00"
+      }
+    ]
+  },
+  {
+    "lessonKey": "commas",
+    "lessonTitle": "Topic 1.2 - Essential Comma Rules",
+    "questions": [
+      {
+        "id": "b5130bfe-7cb5-4e6c-baaf-6f61db735ee4",
+        "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "position": 1,
+        "title": "Identifying Comma + FANBOYS",
+        "problem_text": "The debate team took first place in California<u>, and then</u> won the grand prize for the entire nation.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This choice lacks the required comma before the coordinating conjunction <em>\"but\"</em> when joining two independent clauses."
+          },
+          {
+            "text": ", and then it",
+            "letter": "B",
+            "explanation": "This choice correctly places a comma before <em>\"but\"</em> when joining the two independent clauses."
+          },
+          {
+            "text": " and then",
+            "letter": "C",
+            "explanation": "This choice incorrectly uses a semicolon. FANBOYS conjunctions require a comma, not a semicolon."
+          },
+          {
+            "text": ", yet then it",
+            "letter": "D",
+            "explanation": "This choice incorrectly uses a dash instead of a comma before the conjunction."
+          }
+        ],
+        "correct_answer": "C",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe comma before \"and then\" is unnecessary. You only need a comma before coordinating conjunctions (FANBOYS: for, and, nor, but, or, yet, so) when they're joining two independent clauses. Here, \"won the grand prize\" can't stand alone as a complete sentence, so no comma is needed before \"and.\"\n✗ Incorrect\n\n**Choice B: \", and then it\"**\nThis choice is incorrect. While \", and then it\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \" and then\"**\nThis is the correct answer. The choice \" and then\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice D: \", yet then it\"**\nThis choice is incorrect. While \", yet then it\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is C.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:16:47.170518+00:00",
+        "updated_at": "2025-10-20T23:16:47.170518+00:00"
+      },
+      {
+        "id": "7a292371-2130-450b-aa0b-33ec3502b2ba",
+        "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "position": 2,
+        "title": "Unnecessary Information with Names",
+        "problem_text": "Mr. Alvin<u> a very popular</u> teacher among the students cancelled the final exam.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This choice incorrectly uses commas around the essential name, suggesting the speaker has only one brother."
+          },
+          {
+            "text": ", a very popular,",
+            "letter": "B",
+            "explanation": "This choice correctly omits commas because the name is essential to identify which brother is meant."
+          },
+          {
+            "text": " a very popular,",
+            "letter": "C",
+            "explanation": "This choice incorrectly adds only an opening comma, creating inconsistent punctuation."
+          },
+          {
+            "text": ", a very popular",
+            "letter": "D",
+            "explanation": "This choice incorrectly adds only a closing comma, creating inconsistent punctuation."
+          }
+        ],
+        "correct_answer": "D",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"a very popular teacher among the students\" is missing punctuation. This descriptive phrase should be set off with commas on both sides (\", a very popular teacher among the students,\") because it's non-essential information interrupting the main sentence structure.\n✗ Incorrect\n\n**Choice B: \", a very popular,\"**\nThis choice is incorrect. While \", a very popular,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \" a very popular,\"**\nThis choice is incorrect. While \" a very popular,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \", a very popular\"**\nThis is the correct answer. The choice \", a very popular\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\nThe answer is D.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:16:47.326171+00:00",
+        "updated_at": "2025-10-20T23:16:47.326171+00:00"
+      },
+      {
+        "id": "ef765798-1b03-44b8-a754-4c4644a67043",
+        "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "position": 3,
+        "title": "Transitional Words (However)",
+        "problem_text": "I expected to pay over $100 for my new hiking boots<u>; however,</u> I found a sale and got them for half of the original price.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This choice lacks the required commas around the parenthetical conjunctive adverb <em>\"however\"</em> in the middle of the sentence."
+          },
+          {
+            "text": ", however,",
+            "letter": "B",
+            "explanation": "This choice correctly sets off the interrupter <em>\"however\"</em> with commas on both sides."
+          },
+          {
+            "text": ", however",
+            "letter": "C",
+            "explanation": "This choice lacks the opening comma before <em>\"however.\"</em>"
+          },
+          {
+            "text": "; however",
+            "letter": "D",
+            "explanation": "This choice lacks the closing comma after <em>\"however.\"</em>"
+          }
+        ],
+        "correct_answer": "A",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe semicolon before \"however\" and the comma after are both correct. Since \"however\" is joining two independent clauses that could each stand alone as complete sentences, it requires a semicolon before and a comma after, which matches the punctuation we have.\n✓ CORRECT\n\n**Choice B: \", however,\"**\nThis choice is incorrect. While \", however,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \", however\"**\nThis choice is incorrect. While \", however\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"; however\"**\nThis choice is incorrect. While \"; however\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is A.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:16:47.456653+00:00",
+        "updated_at": "2025-10-20T23:16:47.456653+00:00"
+      },
+      {
+        "id": "995b8159-aaa0-473c-b16b-74b54a6f72d1",
+        "lesson_id": "3e8f0696-1bf7-4b5c-880d-fb5359923b7d",
+        "position": 4,
+        "title": "Unnecessary Information (Crossing-Out Trick)",
+        "problem_text": "Electric vehicles<u>, thousands of them,</u> already on the road in America, are one of the fastest growing industries in the world.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This choice lacks commas around the non-essential appositive phrase describing the novel."
+          },
+          {
+            "text": ", thousands, of them",
+            "letter": "B",
+            "explanation": "This choice correctly sets off the non-essential appositive phrase <em>\"a bestselling thriller\"</em> with commas on both sides."
+          },
+          {
+            "text": " thousands of them",
+            "letter": "C",
+            "explanation": "This choice lacks the opening comma before the appositive phrase."
+          },
+          {
+            "text": " thousands of, them",
+            "letter": "D",
+            "explanation": "This choice lacks the closing comma after the appositive phrase."
+          }
+        ],
+        "correct_answer": "C",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe commas around \"thousands of them\" make it removable from the sentence. If you cross out this phrase, you get \"Electric vehicles, already on the road...\" which shows it's creating an awkward interruption. Removing the commas makes \"thousands of them\" flow naturally as part of the sentence structure.\n✗ Incorrect\n\n**Choice B: \", thousands, of them\"**\nThis choice is incorrect. While \", thousands, of them\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \" thousands of them\"**\nThis is the correct answer. The choice \" thousands of them\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice D: \" thousands of, them\"**\nThis choice is incorrect. While \" thousands of, them\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is C.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:16:47.575483+00:00",
+        "updated_at": "2025-10-20T23:16:47.575483+00:00"
+      }
+    ]
+  },
+  {
+    "lessonKey": "logical-placement",
+    "lessonTitle": "Topic 2.6 - Logical Placement",
+    "questions": [
+      {
+        "id": "ea6c1614-bd47-414e-aae3-98442418f693",
+        "lesson_id": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "position": 1,
+        "title": "Bracketed Numbers - Read Carefully",
+        "problem_text": "[1] Most Americans have never tried truly great chocolate. [2] Sure, we have Hershey's chocolate bars, which are delicious. [3] But have you ever had chocolate from Switzerland? [4] Take a real Swiss chocolate like Lindt, for example. [5] The higher percentage of cacao, 23 percent in Lindt chocolate in comparison with only 11 percent in Hershey's, results in a much darker, richer taste, and the lower sugar content brings out the natural bitterness of the chocolate. [6] The Swiss really know how to make chocolate properly. [7] <u>It just melts in your mouth and has such a rich, bold flavor with just the right amount of bitterness.</u>\n\nFor the sake of logic and coherence, Sentence 7 should be placed:",
+        "choices": [
+          {
+            "text": "where it is now",
+            "letter": "A",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "after sentence 2",
+            "letter": "B",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "after sentence 4",
+            "letter": "C",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "after sentence 5",
+            "letter": "D",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          }
+        ],
+        "correct_answer": "D",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"where it is now\"**\nThis choice is incorrect. While \"where it is now\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice B: \"after sentence 2\"**\nThis choice is incorrect. While \"after sentence 2\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"after sentence 4\"**\nThis choice is incorrect. While \"after sentence 4\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"after sentence 5\"**\nThis is the correct answer. The choice \"after sentence 5\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\nThe answer is D.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:49:56.450273+00:00",
+        "updated_at": "2025-10-21T00:49:56.450273+00:00"
+      },
+      {
+        "id": "f6dde1da-2675-4f7b-9142-8b4d2f448de6",
+        "lesson_id": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "position": 2,
+        "title": "Pronoun References - Must Come After",
+        "problem_text": "[1] Cancer occurs when cells undergo a DNA mutation and begin to replicate uncontrollably. [2] <u>Most mutations are \"silent\" mutations that have no tangible effects.</u> [3] These cancerous cells begin to divide uncontrollably and form dangerous tumors. [4] What most people do not know is that mutations occur in our cells all the time. [5] Only mutations to specific parts of certain genes, like the p-53 gene, can lead to cells becoming cancerous. [6] As a result, most cancer research to date has focused on p-53 and other similar genes.\n\nFor the sake of logic and coherence, Sentence 2 should be placed:",
+        "choices": [
+          {
+            "text": "where it is now",
+            "letter": "A",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "before sentence 1",
+            "letter": "B",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "after sentence 4",
+            "letter": "C",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          },
+          {
+            "text": "before sentence 6",
+            "letter": "D",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          }
+        ],
+        "correct_answer": "C",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"where it is now\"**\nThis choice is incorrect. While \"where it is now\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice B: \"before sentence 1\"**\nThis choice is incorrect. While \"before sentence 1\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"after sentence 4\"**\nThis is the correct answer. The choice \"after sentence 4\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice D: \"before sentence 6\"**\nThis choice is incorrect. While \"before sentence 6\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is C.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:49:56.532857+00:00",
+        "updated_at": "2025-10-21T00:49:56.532857+00:00"
+      },
+      {
+        "id": "9e144b32-d7a1-498b-a765-445c0bf2f5d1",
+        "lesson_id": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "position": 3,
+        "title": "Topic Continuity - Group Related Ideas",
+        "problem_text": "[1] Carnivorous pitcher plants have many symbiotic relationships in the animal kingdom. [2] Some have relationships with parasites and fungi. [3] However, only N. hemsleyana pitchers have acquired traits to attract bats. [4] They do not eat the bats but rather benefit from the bat's guano. [5] The bats benefit because the plants provide a perfectly sized shelter to rest in. [6] <u>These tropical pitcher plants have evolved in shape to stand out against a bat's echolocations.</u>\n\nFor the sake of logic and coherence, Sentence 6 should be placed:",
+        "choices": [
+          {
+            "text": "where it is now",
+            "letter": "A",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "after sentence 1",
+            "letter": "B",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "after sentence 2",
+            "letter": "C",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "after sentence 3",
+            "letter": "D",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          }
+        ],
+        "correct_answer": "D",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"where it is now\"**\nThis choice is incorrect. While \"where it is now\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice B: \"after sentence 1\"**\nThis choice is incorrect. While \"after sentence 1\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"after sentence 2\"**\nThis choice is incorrect. While \"after sentence 2\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"after sentence 3\"**\nThis is the correct answer. The choice \"after sentence 3\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\nThe answer is D.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:49:56.590161+00:00",
+        "updated_at": "2025-10-21T00:49:56.590161+00:00"
+      },
+      {
+        "id": "48ccbed3-7abf-4685-9a37-ad2a1d979efc",
+        "lesson_id": "7dd5f9a2-c597-4d33-a0a0-e98d58075eb4",
+        "position": 4,
+        "title": "Chronological Order and Context",
+        "problem_text": "The writer wants to add the following sentence to the paragraph about Jackie Chan:\n\n<u>\"As a child, he had always loved the slapstick comedy of Buster Keaton and Charlie Chaplin.\"</u>\n\n[1] When he was born in Hong Kong to poor parents, no one could have imagined Jackie Chan would grow up to be an American movie star. [2] It all started with his passion for Kung Fu and his academic struggles as a child. [3] This ultimately resulted in him joining the China Drama Academy where children were trained to be in Chinese movies. [4] The school was brutal, with daily training lasting 17-19 hours with little room for pleasure. [5] After over ten years in the school, Jackie graduated and, free to take roles of his own choosing, would often select roles that involved doing stunts no other actors dreamed of attempting. [6] After experiencing many failures and injuries, Jackie finally earned his first break as Bruce Lee's stunt double. [7] After Bruce Lee's death, Jackie tried to replicate Lee's onscreen persona but failed and realized he needed to do something different. [8] So, he decided to blend comedy and stunts and his career began to take off.\n\nThe sentence would most logically be placed:",
+        "choices": [
+          {
+            "text": "after sentence 1",
+            "letter": "A",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "after sentence 2",
+            "letter": "B",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "after sentence 4",
+            "letter": "C",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "after sentence 7",
+            "letter": "D",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          }
+        ],
+        "correct_answer": "D",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"after sentence 1\"**\nThis choice is incorrect. While \"after sentence 1\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice B: \"after sentence 2\"**\nThis choice is incorrect. While \"after sentence 2\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"after sentence 4\"**\nThis choice is incorrect. While \"after sentence 4\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"after sentence 7\"**\nThis is the correct answer. The choice \"after sentence 7\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\nThe answer is D.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:49:56.670927+00:00",
+        "updated_at": "2025-10-21T00:49:56.670927+00:00"
+      }
+    ]
+  },
+  {
+    "lessonKey": "misc-topics",
+    "lessonTitle": "Topic 1.8 - Miscellaneous Topics",
+    "questions": [
+      {
+        "id": "3ce9780f-61f7-40d6-8423-c4db6a7e6b2a",
+        "lesson_id": "4a9e06f8-5ee5-4e5d-9e5d-2ce9b7c6bf16",
+        "position": 1,
+        "title": "Affect vs. Effect",
+        "problem_text": "The documentary explored the effect that social media has on teenagers, showing how constant connectivity <u>affects</u> their mental health and self-esteem.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This correctly uses <em>\"affects\"</em> as a verb meaning <em>\"influences\"</em> or <em>\"has an impact on.\"</em> The sentence describes how connectivity influences mental health, requiring the verb form."
+          },
+          {
+            "text": "effects",
+            "letter": "B",
+            "explanation": "<em>\"Effects\"</em> is primarily a noun meaning <em>\"results\"</em> or <em>\"consequences.\"</em> Here we need a verb to describe the action of influencing, not a noun."
+          },
+          {
+            "text": "has an affect on",
+            "letter": "C",
+            "explanation": "<em>\"Affect\"</em> as a noun is a psychology term meaning emotional expression, not the impact we're discussing here. This phrase is incorrect in this context."
+          },
+          {
+            "text": "effecting",
+            "letter": "D",
+            "explanation": "<em>\"Effecting\"</em> means <em>\"bringing about\"</em> or <em>\"causing to exist.\"</em> We need <em>\"affecting\"</em> (influencing), not <em>\"effecting\"</em> (creating)."
+          }
+        ],
+        "correct_answer": "A",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe original text is grammatically correct and effectively expresses the intended meaning. Making changes would either introduce errors or make the sentence less clear.\n✓ CORRECT\n\n**Choice B: \"effects\"**\nThis choice is incorrect. While \"effects\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"has an affect on\"**\nThis choice is incorrect. While \"has an affect on\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"effecting\"**\nThis choice is incorrect. While \"effecting\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is A.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:19:03.011469+00:00",
+        "updated_at": "2025-10-21T00:19:03.011469+00:00"
+      },
+      {
+        "id": "4a312610-e89e-4408-b7ab-9aae7169660d",
+        "lesson_id": "4a9e06f8-5ee5-4e5d-9e5d-2ce9b7c6bf16",
+        "position": 2,
+        "title": "Than vs. Then",
+        "problem_text": "The coach explained that winning requires more practice <u>than</u> natural talent alone can provide.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This correctly uses <em>\"than\"</em> for making a comparison. <em>\"More...than\"</em> is the proper construction when comparing two things—here, practice versus natural talent."
+          },
+          {
+            "text": "then",
+            "letter": "B",
+            "explanation": "<em>\"Then\"</em> relates to time or sequence (<em>\"first this, then that\"</em>). We're making a comparison, not describing a sequence, so we need <em>\"than,\"</em> not <em>\"then.\"</em>"
+          },
+          {
+            "text": "compared to when there is",
+            "letter": "C",
+            "explanation": "This wordy phrase changes the meaning and creates awkward phrasing. The concise <em>\"more...than\"</em> construction is clearer and more direct."
+          },
+          {
+            "text": "as opposed to",
+            "letter": "D",
+            "explanation": "<em>\"As opposed to\"</em> emphasizes contrast rather than degree. <em>\"More...than\"</em> is the standard construction for comparing quantities or degrees."
+          }
+        ],
+        "correct_answer": "A",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe original text is grammatically correct and effectively expresses the intended meaning. Making changes would either introduce errors or make the sentence less clear.\n✓ CORRECT\n\n**Choice B: \"then\"**\nThis choice is incorrect. While \"then\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"compared to when there is\"**\nThis choice is incorrect. While \"compared to when there is\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"as opposed to\"**\nThis choice is incorrect. While \"as opposed to\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is A.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:19:03.115581+00:00",
+        "updated_at": "2025-10-21T00:19:03.115581+00:00"
+      },
+      {
+        "id": "78e8c18a-ab06-47b7-8a2b-3321d0c576ba",
+        "lesson_id": "4a9e06f8-5ee5-4e5d-9e5d-2ce9b7c6bf16",
+        "position": 3,
+        "title": "Have vs. Of",
+        "problem_text": "If Sarah had studied more diligently, she <u>could of</u> earned a higher score on the exam.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "<em>\"Could of\"</em> is always incorrect. This error comes from mishearing <em>\"could've\"</em> (the contraction of \"could have\"). <em>\"Of\"</em> is never part of a verb phrase."
+          },
+          {
+            "text": "could have",
+            "letter": "B",
+            "explanation": "This correctly uses <em>\"could have,\"</em> which forms the conditional perfect tense. <em>\"Have\"</em> (not \"of\") is the helping verb needed after modal verbs like \"could,\" \"should,\" and \"would.\""
+          },
+          {
+            "text": "might of",
+            "letter": "C",
+            "explanation": "<em>\"Might of\"</em> has the same error as \"could of.\" The correct form is <em>\"might have.\"</em> Never use <em>\"of\"</em> after modal verbs."
+          },
+          {
+            "text": "would of",
+            "letter": "D",
+            "explanation": "<em>\"Would of\"</em> is incorrect for the same reason. The correct form is <em>\"would have.\"</em> <em>\"Of\"</em> is a preposition, not a verb."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"could of\" is incorrect. The verb is \"could have\" (or \"could've\" as a contraction), not \"could of.\" This is a common error that comes from mishearing the contraction \"could've\" and writing it as \"could of,\" but \"of\" is never part of a verb phrase.\n✗ Incorrect\n\n**Choice B: \"could have\"**\nThis is the correct answer. The choice \"could have\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"might of\"**\nThis choice is incorrect. While \"might of\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"would of\"**\nThis choice is incorrect. While \"would of\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:19:03.194355+00:00",
+        "updated_at": "2025-10-21T00:19:03.194355+00:00"
+      },
+      {
+        "id": "149cd22b-70d5-448e-83a6-9f94f0cbeb35",
+        "lesson_id": "4a9e06f8-5ee5-4e5d-9e5d-2ce9b7c6bf16",
+        "position": 4,
+        "title": "Countable vs. Non-countable",
+        "problem_text": "The research showed that the <u>amount of students</u> participating in after-school programs has increased significantly.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "<em>\"Amount\"</em> is used for non-countable nouns (money, water, time). Students are countable individuals, so we need <em>\"number,\"</em> not <em>\"amount.\"</em>"
+          },
+          {
+            "text": "number of students",
+            "letter": "B",
+            "explanation": "This correctly uses <em>\"number of students\"</em> for countable nouns. Use <em>\"number\"</em> when you can count individual items (students, books, cars)."
+          },
+          {
+            "text": "less students",
+            "letter": "C",
+            "explanation": "<em>\"Less\"</em> is used with non-countable nouns (less water, less time). For countable nouns like students, use <em>\"fewer\"</em> or <em>\"number,\"</em> not <em>\"less.\"</em>"
+          },
+          {
+            "text": "much students",
+            "letter": "D",
+            "explanation": "<em>\"Much\"</em> is used with non-countable nouns (much water, much time). For countable nouns like students, use <em>\"many\"</em> or <em>\"number,\"</em> not <em>\"much.\"</em>"
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"amount of students\" is incorrect because \"students\" are countable individuals. We use \"amount\" only for non-countable nouns like water or money, not for things you can count one by one like students. The correct phrase should use \"number of students\" instead.\n✗ Incorrect\n\n**Choice B: \"number of students\"**\nThis is the correct answer. The choice \"number of students\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"less students\"**\nThis choice is incorrect. While \"less students\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"much students\"**\nThis choice is incorrect. While \"much students\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:19:03.276046+00:00",
+        "updated_at": "2025-10-21T00:19:03.276046+00:00"
+      },
+      {
+        "id": "ffb524f1-dfec-4527-a39f-2bccdc1c9efd",
+        "lesson_id": "4a9e06f8-5ee5-4e5d-9e5d-2ce9b7c6bf16",
+        "position": 5,
+        "title": "Active vs. Passive Voice",
+        "problem_text": "The new policy <u>was announced by the principal</u> during the morning assembly.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This passive voice construction (<em>\"was announced by\"</em>) is wordy and less direct. Active voice (<em>\"the principal announced\"</em>) is usually clearer and more concise."
+          },
+          {
+            "text": "the principal announced",
+            "letter": "B",
+            "explanation": "This correctly uses active voice, making the principal the subject performing the action. Active voice is generally preferred on the ACT for being more direct and concise."
+          },
+          {
+            "text": "being announced, the principal spoke about it",
+            "letter": "C",
+            "explanation": "This awkwardly combines a participial phrase with redundant phrasing. It's wordy and unclear compared to the straightforward active voice option."
+          },
+          {
+            "text": "had been made an announcement by the principal",
+            "letter": "D",
+            "explanation": "This is grammatically incorrect and creates an awkward double passive construction with <em>\"had been made an announcement.\"</em> The phrasing is convoluted and unclear."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"was announced by the principal\" contains an error. One of the other answer choices provides the grammatically correct or more effective wording.\n✗ Incorrect\n\n**Choice B: \"the principal announced\"**\nThis is the correct answer. The choice \"the principal announced\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"being announced, the principal spoke about it\"**\nThis choice is incorrect. While \"being announced, the principal spoke about it\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"had been made an announcement by the principal\"**\nThis choice is incorrect. While \"had been made an announcement by the principal\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:19:03.362141+00:00",
+        "updated_at": "2025-10-21T00:19:03.362141+00:00"
+      },
+      {
+        "id": "a7ad0e13-84a9-4772-aba7-88b4ccc5f47e",
+        "lesson_id": "4a9e06f8-5ee5-4e5d-9e5d-2ce9b7c6bf16",
+        "position": 6,
+        "title": "Prepositional Idioms",
+        "problem_text": "The young child was afraid <u>by</u> the thunderstorm and hid under the bed.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "<em>\"Afraid by\"</em> is not idiomatic English. The standard expression is <em>\"afraid of\"</em> when describing fear of something specific."
+          },
+          {
+            "text": "about",
+            "letter": "B",
+            "explanation": "<em>\"Afraid about\"</em> is not standard. While we might worry <em>\"about\"</em> something, we're <em>\"afraid of\"</em> something that scares us."
+          },
+          {
+            "text": "of",
+            "letter": "C",
+            "explanation": "This correctly uses the idiomatic expression <em>\"afraid of.\"</em> Certain adjectives require specific prepositions—<em>\"afraid\"</em> always pairs with <em>\"of.\"</em>"
+          },
+          {
+            "text": "from",
+            "letter": "D",
+            "explanation": "<em>\"Afraid from\"</em> is not idiomatic. The preposition <em>\"from\"</em> doesn't pair with <em>\"afraid\"</em> in standard English—the correct pairing is <em>\"afraid of.\"</em>"
+          }
+        ],
+        "correct_answer": "C",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"by\" contains an error. One of the other answer choices provides the grammatically correct or more effective wording.\n✗ Incorrect\n\n**Choice B: \"about\"**\nThis choice is incorrect. While \"about\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"of\"**\nThis is the correct answer. The choice \"of\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice D: \"from\"**\nThis choice is incorrect. While \"from\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is C.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:19:03.453175+00:00",
+        "updated_at": "2025-10-21T00:19:03.453175+00:00"
+      }
+    ]
+  },
+  {
+    "lessonKey": "modifiers",
+    "lessonTitle": "Topic 1.6 - Misplaced Modifiers",
+    "questions": [
+      {
+        "id": "08176456-4ba3-4732-a1ca-11b75633adbe",
+        "lesson_id": "f7ac1d6c-6416-47fd-9720-807224100517",
+        "position": 1,
+        "title": "Basic Misplaced Modifier",
+        "problem_text": "<u>Consistently erupting, Jack</u> loves taking pictures of the Old Faithful geyser at Yellowstone National Park.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This creates a misplaced modifier. <em>\"Consistently erupting\"</em> should describe what comes right after the comma, but it's followed by <em>\"Jack,\"</em> making it seem like Jack is erupting—which is illogical."
+          },
+          {
+            "text": "Consistently erupting, the Old Faithful geyser at Yellowstone National Park",
+            "letter": "B",
+            "explanation": "This correctly places <em>\"the Old Faithful geyser\"</em> immediately after <em>\"Consistently erupting,\"</em> making it clear that the geyser (not Jack) is what's erupting. Modifiers should be next to what they describe."
+          },
+          {
+            "text": "Jack, consistently erupting,",
+            "letter": "C",
+            "explanation": "This still creates the same misplaced modifier problem. Placing <em>\"consistently erupting\"</em> between commas after <em>\"Jack\"</em> still incorrectly suggests Jack is erupting."
+          },
+          {
+            "text": "Erupting consistently, Jack",
+            "letter": "D",
+            "explanation": "Changing the word order doesn't fix the problem. <em>\"Erupting consistently\"</em> still incorrectly modifies <em>\"Jack,\"</em> creating the same illogical meaning."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"Consistently erupting, Jack\" creates a misplaced modifier. The opening phrase \"Consistently erupting\" should describe what comes immediately after the comma, but Jack is not erupting - the volcano is. The sentence structure makes it seem like Jack is consistently erupting, which is illogical. The volcano should come immediately after the comma.\n✗ Incorrect\n\n**Choice B: \"Consistently erupting, the Old Faithful geyser at Yellowstone National Park\"**\nThis is the correct answer. The choice \"Consistently erupting, the Old Faithful geyser at Yellowstone National Park\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"Jack, consistently erupting,\"**\nThis choice is incorrect. While \"Jack, consistently erupting,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"Erupting consistently, Jack\"**\nThis choice is incorrect. While \"Erupting consistently, Jack\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:06:03.807182+00:00",
+        "updated_at": "2025-10-21T00:06:03.807182+00:00"
+      },
+      {
+        "id": "e9a4fca6-ad50-48df-8bd4-9f416895e32a",
+        "lesson_id": "f7ac1d6c-6416-47fd-9720-807224100517",
+        "position": 2,
+        "title": "Front Modifier with Multiple Nouns",
+        "problem_text": "A brand new approach to automobile manufacturing, <u>Henry Ford and Ford Motor Company installed</u> the first moving assembly line in 1913.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "The opening phrase <em>\"A brand new approach\"</em> should describe what comes after the comma, but <em>\"Henry Ford and Ford Motor Company\"</em> are people, not an approach. The assembly line is the approach, not the people."
+          },
+          {
+            "text": "the Ford Motor Company, owned by Henry Ford, installed",
+            "letter": "B",
+            "explanation": "This still incorrectly places <em>\"the Ford Motor Company\"</em> after the modifier. A company isn't an <em>\"approach to automobile manufacturing\"</em>—the assembly line is."
+          },
+          {
+            "text": "the first moving assembly line was installed by Henry Ford and Ford Motor Company in",
+            "letter": "C",
+            "explanation": "This correctly places <em>\"the first moving assembly line\"</em> right after the opening modifier, making it clear that the assembly line (not the people or company) was the new approach to manufacturing."
+          },
+          {
+            "text": "1913 was the first year that Henry Ford and the Ford Motor Company installed",
+            "letter": "D",
+            "explanation": "This incorrectly suggests that <em>\"1913\"</em> (a year) was <em>\"a brand new approach to automobile manufacturing.\"</em> A year cannot be an approach—only the assembly line can be."
+          }
+        ],
+        "correct_answer": "C",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe opening phrase \"A brand new approach to automobile manufacturing\" creates a dangling modifier. This phrase should describe what comes immediately after the comma, but it's followed by \"Henry Ford and Ford Motor Company,\" making it incorrectly seem like the people were an approach to manufacturing. The sentence needs to be restructured so \"assembly line\" (the actual approach) comes right after the modifier.\n✗ Incorrect\n\n**Choice B: \"the Ford Motor Company, owned by Henry Ford, installed\"**\nThis choice is incorrect. While \"the Ford Motor Company, owned by Henry Ford, installed\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"the first moving assembly line was installed by Henry Ford and Ford Motor Company in\"**\nThis is the correct answer. The choice \"the first moving assembly line was installed by Henry Ford and Ford Motor Company in\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice D: \"1913 was the first year that Henry Ford and the Ford Motor Company installed\"**\nThis choice is incorrect. While \"1913 was the first year that Henry Ford and the Ford Motor Company installed\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is C.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:06:04.024195+00:00",
+        "updated_at": "2025-10-21T00:06:04.024195+00:00"
+      },
+      {
+        "id": "8939f5bb-1a0a-4ff5-a399-7d753515c301",
+        "lesson_id": "f7ac1d6c-6416-47fd-9720-807224100517",
+        "position": 3,
+        "title": "Middle/End Modifier with \"which\"",
+        "problem_text": "The research team, <u>which arrived at their nesting grounds early this year,</u> tracked the movements of the blue storks.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "The clause <em>\"which arrived at their nesting grounds\"</em> incorrectly modifies <em>\"research team.\"</em> Research teams don't have nesting grounds—storks do. The modifier needs to clearly refer to the storks."
+          },
+          {
+            "text": "which tracked the movements of the blue storks,",
+            "letter": "B",
+            "explanation": "This correctly restructures the sentence so <em>\"which tracked the movements\"</em> describes the research team, and the phrase about arriving at nesting grounds logically refers to the storks later in the sentence."
+          },
+          {
+            "text": "arriving at their nesting grounds early this year,",
+            "letter": "C",
+            "explanation": "While <em>\"arriving\"</em> creates a participial phrase, it still ambiguously modifies <em>\"research team\"</em> when it should refer to the storks' nesting grounds. The modifier placement remains unclear."
+          },
+          {
+            "text": "having arrived early at the nesting grounds,",
+            "letter": "D",
+            "explanation": "<em>\"Having arrived early\"</em> still incorrectly suggests the research team has nesting grounds. The modifier needs to be repositioned to clearly describe the storks, not the team."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"which arrived at their nesting grounds early this year\" incorrectly modifies \"research team\" when it should describe \"blue storks.\" As written, it sounds like the research team arrived at nesting grounds, but research teams don't have nesting grounds—storks do. The clause needs to be repositioned to clearly refer to the storks.\n✗ Incorrect\n\n**Choice B: \"which tracked the movements of the blue storks,\"**\nThis is the correct answer. The choice \"which tracked the movements of the blue storks,\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"arriving at their nesting grounds early this year,\"**\nThis choice is incorrect. While \"arriving at their nesting grounds early this year,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"having arrived early at the nesting grounds,\"**\nThis choice is incorrect. While \"having arrived early at the nesting grounds,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:06:04.126584+00:00",
+        "updated_at": "2025-10-21T00:06:04.126584+00:00"
+      },
+      {
+        "id": "6eedb76a-22a7-4010-8cd6-5f3718c6c857",
+        "lesson_id": "f7ac1d6c-6416-47fd-9720-807224100517",
+        "position": 4,
+        "title": "Modifier without Commas",
+        "problem_text": "The dog <u>chasing the cat ran</u> into the street.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This is correct. <em>\"Chasing the cat\"</em> is a restrictive modifier (essential information) that specifies which dog ran into the street, so no commas are needed. The sentence is clear and grammatically correct."
+          },
+          {
+            "text": "chasing the cat, ran",
+            "letter": "B",
+            "explanation": "Adding a comma incorrectly makes <em>\"chasing the cat\"</em> nonrestrictive (extra information), changing the meaning. This suggests all dogs ran into the street and happens to be chasing the cat, which isn't the intended meaning."
+          },
+          {
+            "text": "that was chasing the cat ran",
+            "letter": "C",
+            "explanation": "<em>\"That was chasing\"</em> is wordy and awkward. The original participial phrase <em>\"chasing the cat\"</em> is more concise and equally clear without the extra words."
+          },
+          {
+            "text": ", chasing the cat, ran",
+            "letter": "D",
+            "explanation": "Adding commas on both sides makes <em>\"chasing the cat\"</em> nonrestrictive (extra, removable information). This changes the meaning—we need this phrase to identify which specific dog ran into the street."
+          }
+        ],
+        "correct_answer": "A",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe original text is grammatically correct and effectively expresses the intended meaning. Making changes would either introduce errors or make the sentence less clear.\n✓ CORRECT\n\n**Choice B: \"chasing the cat, ran\"**\nThis choice is incorrect. While \"chasing the cat, ran\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"that was chasing the cat ran\"**\nThis choice is incorrect. While \"that was chasing the cat ran\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \", chasing the cat, ran\"**\nThis choice is incorrect. While \", chasing the cat, ran\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is A.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:06:04.223743+00:00",
+        "updated_at": "2025-10-21T00:06:04.223743+00:00"
+      }
+    ]
+  },
+  {
+    "lessonKey": "parallel-structure",
+    "lessonTitle": "Topic 1.7 - Parallel Structure",
+    "questions": [
+      {
+        "id": "52e737b1-3df8-48c3-ad18-4343f4d5d168",
+        "lesson_id": "e6153221-e330-4db4-8cc7-9c5a1d51a301",
+        "position": 1,
+        "title": "Basic List Parallelism",
+        "problem_text": "Theresa was expecting a visit from her mother, so she made her bed, <u>cleaning the shelves</u> of the refrigerator, and swept the kitchen floor.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "<em>\"Cleaning the shelves\"</em> breaks parallel structure. The list contains <em>\"made\"</em> (past tense) and <em>\"swept\"</em> (past tense), so the middle item needs to match: <em>\"cleaned\"</em> (past tense), not <em>\"cleaning\"</em> (gerund)."
+          },
+          {
+            "text": "cleaned the shelves",
+            "letter": "B",
+            "explanation": "This correctly maintains parallel structure by using three past tense verbs in the list: <em>\"made,\"</em> <em>\"cleaned,\"</em> and <em>\"swept.\"</em> All items in a list must use the same grammatical form."
+          },
+          {
+            "text": "she cleaned the shelves",
+            "letter": "C",
+            "explanation": "Adding <em>\"she\"</em> before <em>\"cleaned\"</em> breaks parallelism. The first and third items don't include the subject (<em>\"she made\"</em> and <em>\"swept\"</em>), so the middle item shouldn't either."
+          },
+          {
+            "text": "was cleaning the shelves",
+            "letter": "D",
+            "explanation": "<em>\"Was cleaning\"</em> uses progressive tense while the other verbs (<em>\"made\"</em> and <em>\"swept\"</em>) use simple past. All three verbs in the list must have the same tense and form."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"cleaning the shelves\" contains an error. One of the other answer choices provides the grammatically correct or more effective wording.\n✗ Incorrect\n\n**Choice B: \"cleaned the shelves\"**\nThis is the correct answer. The choice \"cleaned the shelves\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"she cleaned the shelves\"**\nThis choice is incorrect. While \"she cleaned the shelves\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"was cleaning the shelves\"**\nThis choice is incorrect. While \"was cleaning the shelves\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:09:15.98371+00:00",
+        "updated_at": "2025-10-21T00:09:15.98371+00:00"
+      },
+      {
+        "id": "c51d3842-1f25-4eeb-a246-65667f7a52c8",
+        "lesson_id": "e6153221-e330-4db4-8cc7-9c5a1d51a301",
+        "position": 2,
+        "title": "Two-Item List Comparison",
+        "problem_text": "I would rather <u>get free music with commercials than paying</u> for music with no commercials.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This mixes verb forms: <em>\"get\"</em> (infinitive without \"to\") and <em>\"paying\"</em> (gerund). In <em>\"would rather...than\"</em> constructions, both sides must use the same form—either both infinitives or both gerunds."
+          },
+          {
+            "text": "get free music with commercials than to pay",
+            "letter": "B",
+            "explanation": "This correctly uses parallel infinitives: <em>\"get\"</em> (implied infinitive after \"would rather\") is balanced with <em>\"to pay\"</em> (infinitive). Both sides of the comparison now use infinitive forms."
+          },
+          {
+            "text": "getting free music with commercials than paying",
+            "letter": "C",
+            "explanation": "While this maintains parallel structure using two gerunds (<em>\"getting\"</em> and <em>\"paying\"</em>), it doesn't work with <em>\"would rather,\"</em> which requires infinitive forms, not gerunds."
+          },
+          {
+            "text": "to get free music with commercials than to pay",
+            "letter": "D",
+            "explanation": "Using <em>\"to get\"</em> creates redundancy with <em>\"would rather,\"</em> which already implies the infinitive. The construction is <em>\"would rather [verb]...than [verb],\"</em> not <em>\"would rather to [verb].\"</em>"
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"get free music with commercials than paying\" contains an error. One of the other answer choices provides the grammatically correct or more effective wording.\n✗ Incorrect\n\n**Choice B: \"get free music with commercials than to pay\"**\nThis is the correct answer. The choice \"get free music with commercials than to pay\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"getting free music with commercials than paying\"**\nThis choice is incorrect. While \"getting free music with commercials than paying\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"to get free music with commercials than to pay\"**\nThis choice is incorrect. While \"to get free music with commercials than to pay\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:09:16.041146+00:00",
+        "updated_at": "2025-10-21T00:09:16.041146+00:00"
+      },
+      {
+        "id": "608cc74c-5df6-4e48-807e-b71b501f59ea",
+        "lesson_id": "e6153221-e330-4db4-8cc7-9c5a1d51a301",
+        "position": 3,
+        "title": "Not Only/But Also",
+        "problem_text": "My mother not only took away my keys <u>but also she locked</u> them in the safe.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "Adding <em>\"she\"</em> after <em>\"but also\"</em> breaks parallel structure. After <em>\"not only,\"</em> there's no pronoun before <em>\"took,\"</em> so <em>\"but also\"</em> should directly precede <em>\"locked\"</em> without a pronoun."
+          },
+          {
+            "text": "but also locked",
+            "letter": "B",
+            "explanation": "This correctly maintains parallel structure: <em>\"not only took...but also locked.\"</em> Both verbs appear in the same position relative to their conjunctions, creating balanced, parallel phrasing."
+          },
+          {
+            "text": "but she also locked",
+            "letter": "C",
+            "explanation": "Placing <em>\"she\"</em> before <em>\"also\"</em> still breaks parallelism. The structure after <em>\"not only\"</em> is simply the verb <em>\"took,\"</em> so the structure after <em>\"but also\"</em> should be simply the verb <em>\"locked.\"</em>"
+          },
+          {
+            "text": "but was also locking",
+            "letter": "D",
+            "explanation": "<em>\"Was also locking\"</em> uses progressive tense while <em>\"took\"</em> uses simple past. The verb forms must match in <em>\"not only...but also\"</em> constructions to maintain parallelism."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"but also she locked\" breaks the parallel structure of the \"not only...but also\" construction. After \"not only,\" if you have a verb (like \"did she lock\"), then after \"but also\" you need the same structure (another verb with \"she\"). The current phrasing doesn't maintain this parallelism, making the sentence awkward and grammatically inconsistent.\n✗ Incorrect\n\n**Choice B: \"but also locked\"**\nThis is the correct answer. The choice \"but also locked\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"but she also locked\"**\nThis choice is incorrect. While \"but she also locked\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"but was also locking\"**\nThis choice is incorrect. While \"but was also locking\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:09:16.115885+00:00",
+        "updated_at": "2025-10-21T00:09:16.115885+00:00"
+      },
+      {
+        "id": "87a5dc28-cafd-419f-884d-01275d3e1e17",
+        "lesson_id": "e6153221-e330-4db4-8cc7-9c5a1d51a301",
+        "position": 4,
+        "title": "Both/And Structure",
+        "problem_text": "<u>Both a scholar and quite athletic,</u> Sylvia got a scholarship to row crew in college.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This mixes a noun (<em>\"a scholar\"</em>) with an adjective phrase (<em>\"quite athletic\"</em>). In <em>\"both...and\"</em> constructions, the two elements must be the same grammatical type—both nouns or both adjectives."
+          },
+          {
+            "text": "Both a scholar and an athlete,",
+            "letter": "B",
+            "explanation": "This correctly uses two parallel nouns: <em>\"a scholar\"</em> and <em>\"an athlete.\"</em> Both elements in the <em>\"both...and\"</em> structure are now nouns with articles, creating perfect parallel structure."
+          },
+          {
+            "text": "Both scholarly and quite athletic,",
+            "letter": "C",
+            "explanation": "While this uses two adjectives (<em>\"scholarly\"</em> and <em>\"athletic\"</em>) which creates parallelism, <em>\"quite athletic\"</em> includes the modifier <em>\"quite\"</em> while <em>\"scholarly\"</em> has no modifier, creating slight imbalance."
+          },
+          {
+            "text": "A scholar and quite athletic,",
+            "letter": "D",
+            "explanation": "Removing <em>\"Both\"</em> eliminates the parallel construction entirely and keeps the problematic mixing of a noun (<em>\"scholar\"</em>) with an adjective phrase (<em>\"quite athletic\"</em>)."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe punctuation in \"Both a scholar and quite athletic,\" is incorrect. Check for missing commas, unnecessary commas, or comma splices that join independent clauses incorrectly.\n✗ Incorrect\n\n**Choice B: \"Both a scholar and an athlete,\"**\nThis is the correct answer. The choice \"Both a scholar and an athlete,\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"Both scholarly and quite athletic,\"**\nThis choice is incorrect. While \"Both scholarly and quite athletic,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"A scholar and quite athletic,\"**\nThis choice is incorrect. While \"A scholar and quite athletic,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:09:16.186523+00:00",
+        "updated_at": "2025-10-21T00:09:16.186523+00:00"
+      }
+    ]
+  },
+  {
+    "lessonKey": "pronouns",
+    "lessonTitle": "Topic 1.5 - Pronouns",
+    "questions": [
+      {
+        "id": "4e109097-8c62-4b1d-b64f-150e911693c0",
+        "lesson_id": "3c3585a1-f137-4331-8390-29ef1f5e889f",
+        "position": 1,
+        "title": "Who vs. Whom in Descriptive Phrases",
+        "problem_text": "I could not believe how much the florists <u>who</u> opened up a shop down the street charge for their roses.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "<em>\"Who\"</em> is correct because it's the subject of the verb <em>\"opened\"</em> in the relative clause. The florists are performing the action, so we use <em>\"who\"</em> (subject form) rather than <em>\"whom\"</em> (object form)."
+          },
+          {
+            "text": "whom",
+            "letter": "B",
+            "explanation": "<em>\"Whom\"</em> is the object form, used when the pronoun receives the action. Here, the florists are performing the action of opening, so we need the subject form <em>\"who.\"</em>"
+          },
+          {
+            "text": "which",
+            "letter": "C",
+            "explanation": "<em>\"Which\"</em> is used for things or animals, not people. Since we're referring to florists (people), we need <em>\"who.\"</em>"
+          },
+          {
+            "text": "that",
+            "letter": "D",
+            "explanation": "While <em>\"that\"</em> can refer to people in some contexts, <em>\"who\"</em> is more appropriate and precise when referring to specific people performing an action."
+          }
+        ],
+        "correct_answer": "A",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\n\"Who\" is correct because it's the subject of the verb \"opened\" in the relative clause. The florists are performing the action of opening the shop, so we use \"who\" (subject form) rather than \"whom\" (object form).\n✓ CORRECT\n\n**Choice B: \"whom\"**\nThis choice is incorrect. While \"whom\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"which\"**\nThis choice is incorrect. While \"which\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"that\"**\nThis choice is incorrect. While \"that\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is A.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:40:33.967672+00:00",
+        "updated_at": "2025-10-20T23:40:33.967672+00:00"
+      },
+      {
+        "id": "b85b3394-4dc7-48b4-8d49-4c6afdc69ad2",
+        "lesson_id": "3c3585a1-f137-4331-8390-29ef1f5e889f",
+        "position": 2,
+        "title": "Possessive Pronouns with Group Nouns",
+        "problem_text": "The entire team went on stage to pick up <u>their</u> trophy.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "<em>\"Their\"</em> is plural, but <em>\"team\"</em> acts as a single unit here. When a collective noun performs one action together (picking up one trophy), treat it as singular and use <em>\"its.\"</em>"
+          },
+          {
+            "text": "its",
+            "letter": "B",
+            "explanation": "This correctly uses the singular possessive <em>\"its\"</em> to match the collective noun <em>\"team.\"</em> The team is acting as one unit, not as individual members, so singular agreement is needed."
+          },
+          {
+            "text": "it's",
+            "letter": "C",
+            "explanation": "<em>\"It's\"</em> is a contraction meaning <em>\"it is\"</em> or <em>\"it has,\"</em> not a possessive pronoun. We need the possessive form <em>\"its\"</em> (no apostrophe)."
+          },
+          {
+            "text": "there",
+            "letter": "D",
+            "explanation": "<em>\"There\"</em> indicates location or existence, not possession. We need a possessive pronoun to show the trophy belongs to the team."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe pronoun \"their\" doesn't agree with \"team.\" When a collective noun like \"team\" acts as a single unit (picking up one trophy together), we treat it as singular and use \"its\" rather than \"their.\" The team is acting as one entity, not as individual members.\n✗ Incorrect\n\n**Choice B: \"its\"**\nThis is the correct answer. The choice \"its\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"it's\"**\nThis choice is incorrect. While \"it's\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"there\"**\nThis choice is incorrect. While \"there\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:40:34.035796+00:00",
+        "updated_at": "2025-10-20T23:40:34.035796+00:00"
+      },
+      {
+        "id": "aeeab69d-9f09-46d3-936a-f9ae99d82062",
+        "lesson_id": "3c3585a1-f137-4331-8390-29ef1f5e889f",
+        "position": 3,
+        "title": "Pronoun Agreement with Singular Antecedents",
+        "problem_text": "Each member of the women's track team improved <u>their</u> time.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "<em>\"Their\"</em> is plural, but the antecedent is <em>\"each member,\"</em> which is grammatically singular. <em>\"Each\"</em> treats members individually, requiring a singular pronoun."
+          },
+          {
+            "text": "her",
+            "letter": "B",
+            "explanation": "This correctly uses the singular feminine pronoun <em>\"her\"</em> to agree with <em>\"each member.\"</em> Since it's the women's track team, <em>\"her\"</em> is appropriate and agrees with the singular <em>\"each.\"</em>"
+          },
+          {
+            "text": "his or her",
+            "letter": "C",
+            "explanation": "<em>\"His or her\"</em> is unnecessarily wordy when the context clearly identifies the gender. Since it's the women's track team, <em>\"her\"</em> alone is sufficient and more concise."
+          },
+          {
+            "text": "its",
+            "letter": "D",
+            "explanation": "<em>\"Its\"</em> is used for things or animals, not people. We need a personal pronoun (<em>\"her\"</em>) to refer to human team members."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe pronoun \"their\" doesn't agree with \"each member.\" Even though we're talking about multiple team members, \"each\" is grammatically singular—it treats the members individually. Since this is the women's track team, we need the singular feminine pronoun \"her\" to match \"each member.\"\n✗ Incorrect\n\n**Choice B: \"her\"**\nThis is the correct answer. The choice \"her\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"his or her\"**\nThis choice is incorrect. While \"his or her\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"its\"**\nThis choice is incorrect. While \"its\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:40:34.111735+00:00",
+        "updated_at": "2025-10-20T23:40:34.111735+00:00"
+      },
+      {
+        "id": "909a2c6e-014a-47a0-a68d-fa64119da870",
+        "lesson_id": "3c3585a1-f137-4331-8390-29ef1f5e889f",
+        "position": 4,
+        "title": "Ambiguous Pronouns",
+        "problem_text": "When the owner of Pizza Port greets a customer, <u>he</u> always smiles.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "<em>\"He\"</em> is ambiguous because both <em>\"owner\"</em> and <em>\"customer\"</em> could be male. The reader cannot tell who is smiling, making this pronoun reference unclear."
+          },
+          {
+            "text": "the owner",
+            "letter": "B",
+            "explanation": "This correctly replaces the ambiguous pronoun <em>\"he\"</em> with the specific noun <em>\"the owner,\"</em> making it clear who is performing the action of smiling."
+          },
+          {
+            "text": "they",
+            "letter": "C",
+            "explanation": "<em>\"They\"</em> is plural and doesn't make sense in this context. We're referring to a single person (either the owner or the customer), so we need a singular form."
+          },
+          {
+            "text": "the customer",
+            "letter": "D",
+            "explanation": "While this removes ambiguity, the context suggests the owner is the one who always smiles when greeting customers, not the customer. <em>\"The owner\"</em> makes more logical sense."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe pronoun \"he\" is ambiguous in this context. There are multiple male individuals mentioned in the surrounding sentences, so it's unclear which person \"he\" refers to. The pronoun reference is confusing and needs to be replaced with the actual name to make the meaning clear to the reader.\n✗ Incorrect\n\n**Choice B: \"the owner\"**\nThis is the correct answer. The choice \"the owner\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"they\"**\nThis choice is incorrect. While \"they\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"the customer\"**\nThis choice is incorrect. While \"the customer\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:40:34.175297+00:00",
+        "updated_at": "2025-10-20T23:40:34.175297+00:00"
+      }
+    ]
+  },
+  {
+    "lessonKey": "punctuation",
+    "lessonTitle": "Topic 1.3 - Advanced Punctuation",
+    "questions": [
+      {
+        "id": "2269fa9d-eaab-4a64-b0ce-edacd9b2dd78",
+        "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "position": 1,
+        "title": "Testing Semicolons Between Clauses",
+        "problem_text": "Strawberries are supposed to be easy to grow<u>; however,</u> the ones in my garden die every year.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This correctly uses a semicolon before <em>\"however\"</em> and a comma after it to join two independent clauses with a transitional word."
+          },
+          {
+            "text": ", however,",
+            "letter": "B",
+            "explanation": "A comma alone cannot join two independent clauses; this creates a comma splice."
+          },
+          {
+            "text": "; however",
+            "letter": "C",
+            "explanation": "A comma is required after <em>\"however\"</em> when it introduces an independent clause."
+          },
+          {
+            "text": ", however",
+            "letter": "D",
+            "explanation": "A semicolon or period is needed before <em>\"however\"</em> to properly separate the two independent clauses."
+          }
+        ],
+        "correct_answer": "A",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe semicolon before \"however\" and the comma after it are both correct. When \"however\" connects two independent clauses (complete sentences), it requires a semicolon before it and a comma after it, which is exactly what we have here.\n✓ CORRECT\n\n**Choice B: \", however,\"**\nThis choice is incorrect. While \", however,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"; however\"**\nThis choice is incorrect. While \"; however\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \", however\"**\nThis choice is incorrect. While \", however\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is A.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:32:29.641913+00:00",
+        "updated_at": "2025-10-20T23:32:29.641913+00:00"
+      },
+      {
+        "id": "834384bf-460b-4304-869f-a90037612c30",
+        "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "position": 2,
+        "title": "Colon Introducing a List",
+        "problem_text": "I have always found surfing difficult, but it can be broken down into three simple <u>steps paddle</u> hard, stand up, and ride the wave.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "A colon should not follow a verb directly. What comes before a colon must be a complete sentence."
+          },
+          {
+            "text": "steps: paddle",
+            "letter": "B",
+            "explanation": "This correctly uses a colon after a complete sentence (<em>\"The museum features work from several periods\"</em>) to introduce the list."
+          },
+          {
+            "text": "steps, including: paddle",
+            "letter": "C",
+            "explanation": "Adding <em>\"including\"</em> makes the colon unnecessary and creates wordiness."
+          },
+          {
+            "text": "steps paddle",
+            "letter": "D",
+            "explanation": "A semicolon is used to join independent clauses, not to introduce a list."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"steps paddle\" contains an error. One of the other answer choices provides the grammatically correct or more effective wording.\n✗ Incorrect\n\n**Choice B: \"steps: paddle\"**\nThis is the correct answer. The choice \"steps: paddle\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"steps, including: paddle\"**\nThis choice is incorrect. While \"steps, including: paddle\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"steps paddle\"**\nThis choice is incorrect. While \"steps paddle\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:32:29.906857+00:00",
+        "updated_at": "2025-10-20T23:32:29.906857+00:00"
+      },
+      {
+        "id": "a808129f-6611-4c53-9f2f-bd09284fa0cb",
+        "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "position": 3,
+        "title": "Pair of Dashes for Unnecessary Information",
+        "problem_text": "All of Tommy's favorite toys<u>, his toy cars, his</u> marbles, and his Legos - were lost during the move.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This correctly uses a pair of em dashes to set off the parenthetical phrase with emphasis."
+          },
+          {
+            "text": " - his toy cars, his",
+            "letter": "B",
+            "explanation": "Mixing a dash with a comma is inconsistent. Use matching punctuation for both sides of a parenthetical element."
+          },
+          {
+            "text": " his toy cars, his",
+            "letter": "C",
+            "explanation": "While commas work, dashes create more emphasis for this significant biographical detail."
+          },
+          {
+            "text": ": his toy cars, his",
+            "letter": "D",
+            "explanation": "Parentheses would de-emphasize this important information about the author's prolific career."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \", his toy cars, his\" uses commas inconsistently for nonessential information. If \"his toy cars\" is extra information that can be removed from the sentence, it needs to be set off with a matching pair of punctuation marks - either commas on both sides or dashes on both sides. Mixing them creates confusion about where the interruption begins and ends.\n✗ Incorrect\n\n**Choice B: \" - his toy cars, his\"**\nThis is the correct answer. The choice \" - his toy cars, his\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \" his toy cars, his\"**\nThis choice is incorrect. While \" his toy cars, his\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \": his toy cars, his\"**\nThis choice is incorrect. While \": his toy cars, his\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:32:30.079066+00:00",
+        "updated_at": "2025-10-20T23:32:30.079066+00:00"
+      },
+      {
+        "id": "128d0807-8b9a-47c3-8bdc-91053f113257",
+        "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "position": 4,
+        "title": "Possessive vs. Plural Nouns",
+        "problem_text": "As a young boy, Raheem became enthralled with pro soccer <u>player's and</u> their signature moves.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This is possessive, showing that something belongs to the student, but the sentence simply needs a plural (multiple students)."
+          },
+          {
+            "text": "players' and",
+            "letter": "B",
+            "explanation": "This correctly uses the simple plural form without an apostrophe to refer to multiple students."
+          },
+          {
+            "text": "players",
+            "letter": "C",
+            "explanation": "This is plural possessive, but nothing belongs to the students in this sentence."
+          },
+          {
+            "text": "players'",
+            "letter": "D",
+            "explanation": "This is singular, but the sentence refers to multiple students based on the verb <em>\"were.\"</em>"
+          }
+        ],
+        "correct_answer": "C",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe apostrophe in \"player's\" is incorrect here. The sentence isn't showing possession—it's saying Raheem was interested in the players themselves (plural) and their moves (two separate things). We need the simple plural \"players\" without any apostrophe, not the possessive \"player's.\"\n✗ Incorrect\n\n**Choice B: \"players' and\"**\nThis choice is incorrect. While \"players' and\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"players\"**\nThis is the correct answer. The choice \"players\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice D: \"players'\"**\nThis choice is incorrect. While \"players'\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is C.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:32:30.198158+00:00",
+        "updated_at": "2025-10-20T23:32:30.198158+00:00"
+      },
+      {
+        "id": "c1b71e74-1738-4d03-8765-e9ddd5d35707",
+        "lesson_id": "66776383-9334-4efb-bd72-74b1bbeab8ac",
+        "position": 5,
+        "title": "Quotation Marks with Spoken Dialogue",
+        "problem_text": "As the driver approached, the crossing guard said to <u>herself, \"who</u> would buy a purple car?\"",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This correctly places the comma inside the closing quotation mark, which is standard American English style."
+          },
+          {
+            "text": "herself, \"who",
+            "letter": "B",
+            "explanation": "The comma should come before the closing quotation mark, not after."
+          },
+          {
+            "text": "herself \"who",
+            "letter": "C",
+            "explanation": "A period would end the sentence entirely, but <em>\"she said\"</em> continues it."
+          },
+          {
+            "text": "herself \"who",
+            "letter": "D",
+            "explanation": "A comma is needed before the dialogue tag <em>\"she said\"</em> to properly connect it to the quotation."
+          }
+        ],
+        "correct_answer": "A",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe comma before the quotation mark and the lowercase \"who\" are both correct. When dialogue or thoughts are introduced with phrases like \"said to herself,\" you need a comma before opening the quotation marks. The lowercase \"who\" is correct because it's continuing the sentence structure within the dialogue.\n✓ CORRECT\n\n**Choice B: \"herself, \"who\"**\nThis choice is incorrect. While \"herself, \"who\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"herself \"who\"**\nThis choice is incorrect. While \"herself \"who\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"herself \"who\"**\nThis choice is incorrect. While \"herself \"who\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is A.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:32:30.310989+00:00",
+        "updated_at": "2025-10-20T23:32:30.310989+00:00"
+      }
+    ]
+  },
+  {
+    "lessonKey": "redundancy",
+    "lessonTitle": "Topic 2.1 - Redundancy & Wordiness",
+    "questions": [
+      {
+        "id": "a9c41b1b-3533-4fcf-92b7-e4ed885c56eb",
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "position": 1,
+        "title": "Redundancy in Context",
+        "problem_text": "After two years of traveling abroad, Jerome finally <u>returned back home</u> to his family in California.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "<em>\"Returned back\"</em> is redundant. <em>\"Returned\"</em> already means to go back, so adding <em>\"back\"</em> is unnecessary repetition. Use either <em>\"returned home\"</em> or <em>\"went back home.\"</em>"
+          },
+          {
+            "text": "returned home",
+            "letter": "B",
+            "explanation": "This correctly eliminates redundancy by using only <em>\"returned home.\"</em> Since <em>\"return\"</em> means to go back, no additional <em>\"back\"</em> is needed."
+          },
+          {
+            "text": "came back home",
+            "letter": "C",
+            "explanation": "While not redundant, <em>\"came back\"</em> is less precise than <em>\"returned.\"</em> <em>\"Returned\"</em> specifically means going back to a previous place, making it the better choice here."
+          },
+          {
+            "text": "returned back",
+            "letter": "D",
+            "explanation": "This keeps the redundancy problem by using <em>\"returned back\"</em> together, and it also omits <em>\"home,\"</em> leaving the destination unclear."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"returned back home\" is redundant. The word \"returned\" already means to go back to a place, so adding \"back\" is unnecessary and repetitive. It should be either \"returned home\" or \"went back home,\" but not both \"returned\" and \"back\" together.\n✗ Incorrect\n\n**Choice B: \"returned home\"**\nThis is the correct answer. The choice \"returned home\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"came back home\"**\nThis choice is incorrect. While \"came back home\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"returned back\"**\nThis choice is incorrect. While \"returned back\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:27:07.692901+00:00",
+        "updated_at": "2025-10-21T00:27:07.692901+00:00"
+      },
+      {
+        "id": "dd8c9bff-8865-4d9e-b6a2-3fdd84567419",
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "position": 2,
+        "title": "Eliminating Wordiness",
+        "problem_text": "The committee met <u>at this point in time</u> to discuss the upcoming budget proposals.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "<em>\"At this point in time\"</em> is unnecessarily wordy—it uses five words to say what <em>\"now\"</em> says in one. The ACT prefers concise, direct language."
+          },
+          {
+            "text": "currently at the present moment",
+            "letter": "B",
+            "explanation": "This is even wordier than the original, using six words (<em>\"currently at the present moment\"</em>) to express a simple concept. Both <em>\"currently\"</em> and <em>\"at the present moment\"</em> mean the same thing."
+          },
+          {
+            "text": "now",
+            "letter": "C",
+            "explanation": "This correctly replaces the wordy phrase with the concise <em>\"now.\"</em> Always choose the shortest option that preserves the original meaning."
+          },
+          {
+            "text": "in the current time period",
+            "letter": "D",
+            "explanation": "<em>\"In the current time period\"</em> is also wordy, using five words where one (<em>\"now\"</em>) would suffice. This adds no additional meaning or clarity."
+          }
+        ],
+        "correct_answer": "C",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"at this point in time\" is unnecessarily wordy. It uses five words to express what can be said in one word: \"now\" or two words: \"at present.\" This verbose phrasing doesn't add any additional meaning or clarity - it just makes the sentence longer and less direct.\n✗ Incorrect\n\n**Choice B: \"currently at the present moment\"**\nThis choice is incorrect. While \"currently at the present moment\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"now\"**\nThis is the correct answer. The choice \"now\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice D: \"in the current time period\"**\nThis choice is incorrect. While \"in the current time period\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is C.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:27:07.770956+00:00",
+        "updated_at": "2025-10-21T00:27:07.770956+00:00"
+      },
+      {
+        "id": "a899710b-c79c-4a6c-bcef-dd833add45bf",
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "position": 3,
+        "title": "Removing Irrelevant Information",
+        "problem_text": "The marathon runner crossed the finish line in first place. <u>Marathon running became an Olympic sport in 1896.</u> The crowd erupted in cheers as she raised her arms in victory.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This historical fact about 1896 is completely irrelevant to the narrative about a specific runner winning a race. It interrupts the flow without adding value to the story being told."
+          },
+          {
+            "text": "Marathons are 26.2 miles long.",
+            "letter": "B",
+            "explanation": "The marathon distance is also irrelevant to this specific moment of the runner crossing the finish line and the crowd's reaction. This fact doesn't connect to the narrative."
+          },
+          {
+            "text": "She had trained for months for this moment.",
+            "letter": "C",
+            "explanation": "While this mentions training, it shifts focus away from the immediate moment being described. The paragraph is about the finish, not preparation. Though better than A or B, it still interrupts the flow."
+          },
+          {
+            "text": "DELETE the underlined sentence.",
+            "letter": "D",
+            "explanation": "This correctly deletes the irrelevant sentence. The paragraph flows naturally from finishing first to the crowd's reaction without the interrupting historical fact."
+          }
+        ],
+        "correct_answer": "D",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe sentence \"Marathon running became an Olympic sport in 1896\" is completely irrelevant to the narrative. We're reading about a specific runner finishing a race and the crowd's reaction—this random historical fact about 1896 interrupts the flow and doesn't connect to anything before or after it. It should be deleted.\n✗ Incorrect\n\n**Choice B: \"Marathons are 26.2 miles long.\"**\nThis choice is incorrect. While \"Marathons are 26.2 miles long.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"She had trained for months for this moment.\"**\nThis choice is incorrect. While \"She had trained for months for this moment.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"DELETE the underlined sentence.\"**\nThis is the correct answer. The choice \"DELETE the underlined sentence.\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\nThe answer is D.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:27:07.867539+00:00",
+        "updated_at": "2025-10-21T00:27:07.867539+00:00"
+      },
+      {
+        "id": "4482b574-6a31-4a38-b931-afca6e13c733",
+        "lesson_id": "9eef3d0e-d5a2-4104-b9a9-3e575e8e6734",
+        "position": 4,
+        "title": "Identifying Question Type",
+        "problem_text": "The July 4th \"Walk for Wags\" event raised over $10,000 <u>this year for local dog shelters</u>.\n\nWhich choice is the least redundant in context?",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "<em>\"For local dog shelters\"</em> is redundant because <em>\"Walk for Wags\"</em> (a play on \"dogs\") already implies it's for dogs/shelters. The context makes this information unnecessary."
+          },
+          {
+            "text": "this year",
+            "letter": "B",
+            "explanation": "This is the least redundant option. <em>\"This year\"</em> provides useful temporal information that isn't implied elsewhere in the sentence. The event name and amount raised don't tell us when it happened."
+          },
+          {
+            "text": "for local dog shelters",
+            "letter": "C",
+            "explanation": "Keeping only <em>\"for local dog shelters\"</em> is redundant for the same reason as Choice A—the event name <em>\"Walk for Wags\"</em> already indicates it's dog-related."
+          },
+          {
+            "text": "in July",
+            "letter": "D",
+            "explanation": "<em>\"In July\"</em> is redundant because <em>\"July 4th\"</em> already appears in the event name, making it unnecessary to repeat the month."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"this year for local dog shelters\" contains an error: it uses more words than necessary to express the idea. One of the other answer choices provides the grammatically correct or more effective wording.\n✗ Incorrect\n\n**Choice B: \"this year\"**\nThis is the correct answer. The choice \"this year\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"for local dog shelters\"**\nThis choice is incorrect. While \"for local dog shelters\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"in July\"**\nThis choice is incorrect. While \"in July\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:27:07.934437+00:00",
+        "updated_at": "2025-10-21T00:27:07.934437+00:00"
+      }
+    ]
+  },
+  {
+    "lessonKey": "transitions",
+    "lessonTitle": "Topic 2.3 - Transitions",
+    "questions": [
+      {
+        "id": "de630024-8c23-4de5-8b16-f99811792636",
+        "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "position": 1,
+        "title": "Reading for Context",
+        "problem_text": "The new restaurant received excellent reviews. <u>However,</u> the chef had trained at the finest culinary schools in France.\n\nWhich transition word is the most logical in context?",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "In fact,",
+            "letter": "B",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          },
+          {
+            "text": "For example,",
+            "letter": "C",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "Therefore,",
+            "letter": "D",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe transition \"However,\" doesn't logically connect the ideas in context. The relationship between sentences requires a different transitional word or phrase.\n✗ Incorrect\n\n**Choice B: \"In fact,\"**\nThis is the correct answer. The choice \"In fact,\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"For example,\"**\nThis choice is incorrect. While \"For example,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"Therefore,\"**\nThis choice is incorrect. While \"Therefore,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:34:31.973538+00:00",
+        "updated_at": "2025-10-21T00:34:31.973538+00:00"
+      },
+      {
+        "id": "e3b6794c-27d8-4882-9bc2-94a74f3785f6",
+        "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "position": 2,
+        "title": "All Transitions Type",
+        "problem_text": "From a distance, the ocean looked pretty calm today even though a storm had arrived last night. <u>Under the circumstances,</u> the scene was much more chaotic with big waves and strong riptides.\n\nWhich transition word is the most logical in context?",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "For instance,",
+            "letter": "B",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "Up close,",
+            "letter": "C",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          },
+          {
+            "text": "For example,",
+            "letter": "D",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          }
+        ],
+        "correct_answer": "C",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"Under the circumstances\" doesn't make sense here. That phrase refers to specific situational conditions, not physical location. The passage is contrasting a distant view with a close-up view of the ocean, so we need a transition indicating physical proximity (like \"Up close\") rather than situational context.\n✗ Incorrect\n\n**Choice B: \"For instance,\"**\nThis choice is incorrect. While \"For instance,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"Up close,\"**\nThis is the correct answer. The choice \"Up close,\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice D: \"For example,\"**\nThis choice is incorrect. While \"For example,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is C.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:34:32.07002+00:00",
+        "updated_at": "2025-10-21T00:34:32.07002+00:00"
+      },
+      {
+        "id": "4eae9bc2-b7ca-41a0-a6c5-6eea79ecef41",
+        "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "position": 3,
+        "title": "No Transition Option",
+        "problem_text": "Stepping out on the island's port on Monday, the new couple debuted their own classic take on beach attire. <u>As a result,</u> the actor opted for a classic white tee and board shorts while his model counterpart wore a floral print coverup and strappy sandals.\n\nWhich transition word, if any, is the most logical in context?",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "In other words, the",
+            "letter": "B",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "Consequently, the",
+            "letter": "C",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "The",
+            "letter": "D",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          }
+        ],
+        "correct_answer": "D",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe transition \"As a result,\" doesn't logically connect the ideas in context. The relationship between sentences requires a different transitional word or phrase.\n✗ Incorrect\n\n**Choice B: \"In other words, the\"**\nThis choice is incorrect. While \"In other words, the\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"Consequently, the\"**\nThis choice is incorrect. While \"Consequently, the\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"The\"**\nThis is the correct answer. The choice \"The\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\nThe answer is D.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:34:32.153953+00:00",
+        "updated_at": "2025-10-21T00:34:32.153953+00:00"
+      },
+      {
+        "id": "36374a93-542d-4499-b916-6865a8c1d337",
+        "lesson_id": "7aae3763-017b-4762-ad5a-346aac1f027b",
+        "position": 4,
+        "title": "Transition Categories",
+        "problem_text": "The study showed that exercise improves cardiovascular health. <u>For instance,</u> regular exercise can reduce the risk of heart disease by up to 35%.\n\nWhich transition word is the most logical in context?",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          },
+          {
+            "text": "Nevertheless,",
+            "letter": "B",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "In contrast,",
+            "letter": "C",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "Otherwise,",
+            "letter": "D",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          }
+        ],
+        "correct_answer": "A",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe original text is grammatically correct and effectively expresses the intended meaning. Making changes would either introduce errors or make the sentence less clear.\n✓ CORRECT\n\n**Choice B: \"Nevertheless,\"**\nThis choice is incorrect. While \"Nevertheless,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"In contrast,\"**\nThis choice is incorrect. While \"In contrast,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"Otherwise,\"**\nThis choice is incorrect. While \"Otherwise,\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is A.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:34:32.268394+00:00",
+        "updated_at": "2025-10-21T00:34:32.268394+00:00"
+      }
+    ]
+  },
+  {
+    "lessonKey": "verbs",
+    "lessonTitle": "Topic 1.4 - Verbs",
+    "questions": [
+      {
+        "id": "1e83b0a0-2020-4f25-b209-634cdc118b1d",
+        "lesson_id": "10fff941-59e1-4d3a-84b7-d0fe8f9985ef",
+        "position": 1,
+        "title": "Subject-Verb Agreement with Prepositional Phrases",
+        "problem_text": "The stable hand hired by the farm owners <u>groom</u> the horses every morning.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "The base form <em>\"groom\"</em> is only correct with plural subjects. Here, the subject is <em>\"stable hand\"</em> (singular), not <em>\"owners,\"</em> which is part of a prepositional phrase."
+          },
+          {
+            "text": "grooms",
+            "letter": "B",
+            "explanation": "This correctly uses the singular verb <em>\"grooms\"</em> to agree with the singular subject <em>\"stable hand.\"</em> The phrase <em>\"hired by the farm owners\"</em> is descriptive and doesn't affect subject-verb agreement."
+          },
+          {
+            "text": "have groomed",
+            "letter": "C",
+            "explanation": "This plural verb form doesn't agree with the singular subject <em>\"stable hand.\"</em> Don't be fooled by <em>\"owners\"</em> in the middle—it's part of a descriptive phrase."
+          },
+          {
+            "text": "are grooming",
+            "letter": "D",
+            "explanation": "This plural verb form doesn't agree with the singular subject <em>\"stable hand.\"</em> The progressive tense is also unnecessary here."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe verb form in this context needs to be checked against its subject. If the subject is singular (like \"bride\" or \"groom\" as a single person), the verb should be \"grooms\" with an -s ending. The base form \"groom\" is only correct with plural subjects or with \"I/you/we/they.\"\n✗ Incorrect\n\n**Choice B: \"grooms\"**\nThis is the correct answer. The choice \"grooms\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"have groomed\"**\nThis choice is incorrect. While \"have groomed\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"are grooming\"**\nThis choice is incorrect. While \"are grooming\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:37:06.872851+00:00",
+        "updated_at": "2025-10-20T23:37:06.872851+00:00"
+      },
+      {
+        "id": "7bc8aa77-89d3-4906-b6cb-518da8bc54b0",
+        "lesson_id": "10fff941-59e1-4d3a-84b7-d0fe8f9985ef",
+        "position": 2,
+        "title": "Verb Tense Matching Context",
+        "problem_text": "The car accident on the freeway delayed my commute and <u>causes</u> me to be late for the job interview.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "Present tense <em>\"causes\"</em> doesn't match the past tense context. The sentence uses <em>\"delayed\"</em> (past tense) to describe a completed event."
+          },
+          {
+            "text": "caused",
+            "letter": "B",
+            "explanation": "This correctly uses past tense <em>\"caused\"</em> to match <em>\"delayed.\"</em> Both verbs describe actions that happened in the past and must use the same tense."
+          },
+          {
+            "text": "will cause",
+            "letter": "C",
+            "explanation": "Future tense <em>\"will cause\"</em> doesn't match the past tense context established by <em>\"delayed.\"</em> The accident already happened."
+          },
+          {
+            "text": "has caused",
+            "letter": "D",
+            "explanation": "Present perfect <em>\"has caused\"</em> emphasizes ongoing effects, but the sentence simply describes two past actions that happened together, requiring simple past tense."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"causes\" contains an error. One of the other answer choices provides the grammatically correct or more effective wording.\n✗ Incorrect\n\n**Choice B: \"caused\"**\nThis is the correct answer. The choice \"caused\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"will cause\"**\nThis choice is incorrect. While \"will cause\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"has caused\"**\nThis choice is incorrect. While \"has caused\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:37:06.975962+00:00",
+        "updated_at": "2025-10-20T23:37:06.975962+00:00"
+      },
+      {
+        "id": "7cb0838e-8047-44f5-9073-c90cc739c01d",
+        "lesson_id": "10fff941-59e1-4d3a-84b7-d0fe8f9985ef",
+        "position": 3,
+        "title": "Irregular Verbs - \"a\" vs. \"u\" Rule",
+        "problem_text": "Before I woke up, Chris had already <u>swam</u> twenty laps.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "<em>\"Swam\"</em> is the simple past form (e.g., <em>\"I swam yesterday\"</em>). With <em>\"had\"</em> (past perfect), you need the past participle, which uses <em>\"u\"</em> instead of <em>\"a.\"</em>"
+          },
+          {
+            "text": "swum",
+            "letter": "B",
+            "explanation": "This correctly uses the past participle <em>\"swum\"</em> after <em>\"had.\"</em> The <em>\"a\"</em> vs. <em>\"u\"</em> rule: simple past uses <em>\"a\"</em> (swam), past participle uses <em>\"u\"</em> (swum)."
+          },
+          {
+            "text": "swimming",
+            "letter": "C",
+            "explanation": "The present participle <em>\"swimming\"</em> would require a helping verb like <em>\"was\"</em> or <em>\"been,\"</em> not <em>\"had.\"</em>"
+          },
+          {
+            "text": "swims",
+            "letter": "D",
+            "explanation": "Present tense <em>\"swims\"</em> doesn't work with <em>\"had,\"</em> which requires a past participle to form the past perfect tense."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"swam\" contains an error. One of the other answer choices provides the grammatically correct or more effective wording.\n✗ Incorrect\n\n**Choice B: \"swum\"**\nThis is the correct answer. The choice \"swum\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"swimming\"**\nThis choice is incorrect. While \"swimming\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"swims\"**\nThis choice is incorrect. While \"swims\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:37:07.052389+00:00",
+        "updated_at": "2025-10-20T23:37:07.052389+00:00"
+      },
+      {
+        "id": "60bc14d2-a169-4705-a697-01da657af929",
+        "lesson_id": "10fff941-59e1-4d3a-84b7-d0fe8f9985ef",
+        "position": 4,
+        "title": "Identifying Subject-Verb Agreement vs. Tense Questions",
+        "problem_text": "The first row of the townhouses for sale in my neighborhood <u>has</u> the best view of the beach.",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "<em>\"Has\"</em> correctly agrees with the singular subject <em>\"row.\"</em> Though <em>\"townhouses\"</em> appears right before the verb, it's part of the prepositional phrase <em>\"of the townhouses,\"</em> not the subject."
+          },
+          {
+            "text": "having",
+            "letter": "B",
+            "explanation": "The gerund <em>\"having\"</em> cannot function as the main verb of the sentence. It would need a helping verb to be grammatically correct."
+          },
+          {
+            "text": "have",
+            "letter": "C",
+            "explanation": "Plural <em>\"have\"</em> doesn't agree with the singular subject <em>\"row.\"</em> This is a common trap—the plural noun closest to the verb isn't always the subject."
+          },
+          {
+            "text": "would have",
+            "letter": "D",
+            "explanation": "The conditional <em>\"would have\"</em> is unnecessary here. The sentence states a fact about the present, not a hypothetical situation."
+          }
+        ],
+        "correct_answer": "A",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe verb \"has\" correctly agrees with the singular subject \"row.\" Even though \"townhouses\" appears right before the verb, it's part of the prepositional phrase \"of the townhouses,\" not the subject. The subject is \"row\" (singular), so \"has\" is correct.\n✓ CORRECT\n\n**Choice B: \"having\"**\nThis choice is incorrect. While \"having\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"have\"**\nThis choice is incorrect. While \"have\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"would have\"**\nThis choice is incorrect. While \"would have\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is A.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-20T23:37:07.118587+00:00",
+        "updated_at": "2025-10-20T23:37:07.118587+00:00"
+      }
+    ]
+  },
+  {
+    "lessonKey": "which-choice",
+    "lessonTitle": "Topic 2.4 - Which Choice Questions",
+    "questions": [
+      {
+        "id": "2babbcec-aa65-446d-92e3-d57c6fe843bf",
+        "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "position": 1,
+        "title": "Specific Description",
+        "problem_text": "Before refrigerators, Americans kept food cold in <u>iceboxes, which required ice to be bought and placed into the box each week</u>.\n\nWhich choice most specifically describes what was used to build iceboxes?",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "iceboxes, which were only cold enough to keep food cool but not freeze anything.",
+            "letter": "B",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "wooden boxes with tin and insulated with cork and sawdust.",
+            "letter": "C",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          },
+          {
+            "text": "the very first invention that allowed people to keep food cold in their houses.",
+            "letter": "D",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          }
+        ],
+        "correct_answer": "C",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe punctuation in \"iceboxes, which required ice to be bought and placed into the box each week\" is incorrect. Check for missing commas, unnecessary commas, or comma splices that join independent clauses incorrectly.\n✗ Incorrect\n\n**Choice B: \"iceboxes, which were only cold enough to keep food cool but not freeze anything.\"**\nThis choice is incorrect. While \"iceboxes, which were only cold enough to keep food cool but not freeze anything.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"wooden boxes with tin and insulated with cork and sawdust.\"**\nThis is the correct answer. The choice \"wooden boxes with tin and insulated with cork and sawdust.\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice D: \"the very first invention that allowed people to keep food cold in their houses.\"**\nThis choice is incorrect. While \"the very first invention that allowed people to keep food cold in their houses.\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is C.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:43:56.616223+00:00",
+        "updated_at": "2025-10-21T00:43:56.616223+00:00"
+      },
+      {
+        "id": "ca93e028-348d-449b-8355-da659eb75061",
+        "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "position": 2,
+        "title": "Emphasis Question",
+        "problem_text": "Harold always begged for grow-in-water dinosaurs that <u>sprawl</u> when placed into water.\n\nWhich choice most clearly emphasizes how the dinosaurs increase in size?",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "change in size",
+            "letter": "B",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "expand",
+            "letter": "C",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          },
+          {
+            "text": "soak",
+            "letter": "D",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          }
+        ],
+        "correct_answer": "C",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"sprawl\" contains an error. One of the other answer choices provides the grammatically correct or more effective wording.\n✗ Incorrect\n\n**Choice B: \"change in size\"**\nThis choice is incorrect. While \"change in size\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"expand\"**\nThis is the correct answer. The choice \"expand\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice D: \"soak\"**\nThis choice is incorrect. While \"soak\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is C.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:43:56.783346+00:00",
+        "updated_at": "2025-10-21T00:43:56.783346+00:00"
+      },
+      {
+        "id": "b5a67adc-d18b-4d3d-8c55-6e5077f2042c",
+        "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "position": 3,
+        "title": "Don't Overthink It",
+        "problem_text": "The scientist discovered <u>a new species of butterfly in the rainforest</u>.\n\nWhich choice provides the most relevant detail about where in the rainforest the discovery was made?",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "a new species of butterfly near the river in the lower canopy of the rainforest",
+            "letter": "B",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          },
+          {
+            "text": "a new species of butterfly, which was very colorful",
+            "letter": "C",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "a beautiful new species of butterfly in the rainforest",
+            "letter": "D",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          }
+        ],
+        "correct_answer": "B",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"a new species of butterfly in the rainforest\" is missing a verb. The sentence structure requires a verb between these words to be grammatically correct. Without it, the sentence is incomplete and confusing.\n✗ Incorrect\n\n**Choice B: \"a new species of butterfly near the river in the lower canopy of the rainforest\"**\nThis is the correct answer. The choice \"a new species of butterfly near the river in the lower canopy of the rainforest\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice C: \"a new species of butterfly, which was very colorful\"**\nThis choice is incorrect. While \"a new species of butterfly, which was very colorful\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice D: \"a beautiful new species of butterfly in the rainforest\"**\nThis choice is incorrect. While \"a beautiful new species of butterfly in the rainforest\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is B.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:43:56.91649+00:00",
+        "updated_at": "2025-10-21T00:43:56.91649+00:00"
+      },
+      {
+        "id": "6882854e-be3d-4b3e-a77a-b3d0fe3a8a59",
+        "lesson_id": "29b59c9d-ef2e-4f7f-aae2-464222884d3a",
+        "position": 4,
+        "title": "Just Answer What's Asked",
+        "problem_text": "The concert was <u>loud and energetic</u>.\n\nWhich choice best conveys the overwhelming intensity of the concert experience?",
+        "choices": [
+          {
+            "text": "NO CHANGE",
+            "letter": "A",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "fun",
+            "letter": "B",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          },
+          {
+            "text": "an assault on the senses",
+            "letter": "C",
+            "explanation": "This is the correct answer. It properly addresses the question requirements and provides the most effective solution in context."
+          },
+          {
+            "text": "attended by many people",
+            "letter": "D",
+            "explanation": "This choice doesn't best fulfill the requirements of the question. The correct answer provides a more effective or accurate solution in this context."
+          }
+        ],
+        "correct_answer": "C",
+        "solution_steps": [],
+        "answer_explanation": "**Choice A: \"NO CHANGE\"**\nThe phrase \"loud and energetic\" contains an error. One of the other answer choices provides the grammatically correct or more effective wording.\n✗ Incorrect\n\n**Choice B: \"fun\"**\nThis choice is incorrect. While \"fun\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\n**Choice C: \"an assault on the senses\"**\nThis is the correct answer. The choice \"an assault on the senses\" properly addresses the question and meets all the requirements. It provides the accurate solution based on the information given in the problem.\n✓ CORRECT\n\n**Choice D: \"attended by many people\"**\nThis choice is incorrect. While \"attended by many people\" might seem plausible at first, it doesn't satisfy the requirements of the problem. The correct answer needs to meet different criteria.\n✗ Incorrect\n\nThe answer is C.",
+        "diagram_svg": null,
+        "is_worked_example": false,
+        "created_at": "2025-10-21T00:43:57.094549+00:00",
+        "updated_at": "2025-10-21T00:43:57.094549+00:00"
+      }
+    ]
+  }
+]
