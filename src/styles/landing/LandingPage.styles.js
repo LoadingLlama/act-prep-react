@@ -232,20 +232,18 @@ export const useLandingPageStyles = createUseStyles({
     alignItems: 'center',
     justifyContent: 'center',
     gap: '0',
-    background: 'rgba(239, 246, 255, 0.6)',
-    backdropFilter: 'blur(10px)',
-    WebkitBackdropFilter: 'blur(10px)',
-    border: '1px solid rgba(147, 197, 253, 0.3)',
+    background: 'transparent',
+    border: 'none',
     padding: '8px 16px',
     borderRadius: '100px',
-    fontSize: '11px',
-    fontWeight: '600',
-    color: '#1e40af',
+    fontSize: '10px',
+    fontWeight: '500',
+    color: '#1e3a8a',
     marginBottom: '20px',
-    boxShadow: '0 2px 8px rgba(59, 130, 246, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5)',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    cursor: 'default',
+    pointerEvents: 'none',
     '@media (max-width: 768px)': {
-      fontSize: '10px',
+      fontSize: '9px',
       padding: '5px 12px',
       marginTop: '20px',
       marginBottom: '20px',
@@ -295,7 +293,7 @@ export const useLandingPageStyles = createUseStyles({
 
   subheadline: {
     fontSize: '16px',
-    color: '#64748b',
+    color: '#1e3a8a',
     lineHeight: '1.6',
     marginBottom: '36px',
     fontWeight: '400',
@@ -439,7 +437,7 @@ export const useLandingPageStyles = createUseStyles({
 
   trustNote: {
     fontSize: '13px',
-    color: '#94a3b8',
+    color: '#1e3a8a',
     marginTop: '10px',
     fontWeight: '500',
   },
@@ -671,7 +669,7 @@ export const useLandingPageStyles = createUseStyles({
 
   universitiesLabel: {
     fontSize: '12px',
-    color: '#94a3b8',
+    color: '#1e3a8a',
     fontWeight: '500',
     textTransform: 'uppercase',
     letterSpacing: '0.05em',
@@ -691,9 +689,9 @@ export const useLandingPageStyles = createUseStyles({
     display: 'flex',
     overflow: 'hidden',
     position: 'relative',
-    width: '100%',
-    maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-    WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+    width: '100vw',
+    marginLeft: 'calc(-50vw + 50%)',
+    marginRight: 'calc(-50vw + 50%)',
   },
 
   '@keyframes scroll': {
@@ -715,7 +713,7 @@ export const useLandingPageStyles = createUseStyles({
   universityLogo: {
     height: '40px',
     width: 'auto',
-    opacity: 0.5,
+    opacity: 0.6,
     filter: 'grayscale(100%)',
     transition: 'all 0.3s ease',
     flexShrink: 0,
@@ -724,7 +722,7 @@ export const useLandingPageStyles = createUseStyles({
       height: '32px',
     },
     '&:hover': {
-      opacity: 0.8,
+      opacity: 1,
       filter: 'grayscale(0%)',
     },
   },
@@ -747,7 +745,7 @@ export const useLandingPageStyles = createUseStyles({
 
   statisticsLabel: {
     fontSize: '12px',
-    color: '#94a3b8',
+    color: '#1e3a8a',
     fontWeight: '600',
     textTransform: 'uppercase',
     letterSpacing: '0.05em',
@@ -760,7 +758,7 @@ export const useLandingPageStyles = createUseStyles({
 
   statisticsDescription: {
     fontSize: '13px',
-    color: '#64748b',
+    color: '#1e3a8a',
     lineHeight: '1.5',
     marginBottom: '24px',
     textAlign: 'center',
@@ -916,7 +914,7 @@ export const useLandingPageStyles = createUseStyles({
     padding: '0 0 24px 0',
     fontSize: '15px',
     lineHeight: '1.7',
-    color: '#6b7280',
+    color: '#1e3a8a',
     animation: '$fadeIn 0.3s ease',
     '@media (max-width: 768px)': {
       padding: '0 0 18px 0',
@@ -1114,7 +1112,7 @@ export const useLandingPageStyles = createUseStyles({
 
   footerText: {
     fontSize: '13px',
-    color: '#94a3b8',
+    color: '#1e3a8a',
     marginBottom: '6px',
     fontWeight: '400',
   },
@@ -1190,7 +1188,7 @@ export const useLandingPageStyles = createUseStyles({
     cursor: 'pointer',
     padding: '8px',
     fontSize: '24px',
-    color: '#6b7280',
+    color: '#1e3a8a',
     transition: 'color 0.2s ease',
     '&:hover': {
       color: '#1a1a1a',

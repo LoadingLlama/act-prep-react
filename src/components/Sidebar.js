@@ -1,7 +1,7 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useRef, useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
-import { HiHome, HiDocumentText, HiBookOpen, HiChartBar, HiUser, HiCog6Tooth, HiArrowRightOnRectangle, HiArrowLeftOnRectangle, HiXMark, HiLockClosed } from 'react-icons/hi2';
+import { HiHome, HiDocumentText, HiBookOpen, HiChartBar, HiUser, HiCog6Tooth, HiArrowRightOnRectangle, HiArrowLeftOnRectangle, HiXMark, HiLockClosed, HiBolt, HiAcademicCap, HiSquares2X2 } from 'react-icons/hi2';
 import { useAuth } from '../contexts/AuthContext';
 import soundEffects from '../services/soundEffects';
 import Logo from './common/Logo';
@@ -30,25 +30,12 @@ const useStyles = createUseStyles({
     height: '100vh',
     background: '#08245b',
     padding: '0',
-    overflowY: 'auto',
+    overflow: 'hidden',
     zIndex: 1000,
     display: 'flex',
     flexDirection: 'column',
     borderRight: 'none',
     transition: 'transform 0.3s ease',
-    '&::-webkit-scrollbar': {
-      width: '2px'
-    },
-    '&::-webkit-scrollbar-track': {
-      background: '#08245b'
-    },
-    '&::-webkit-scrollbar-thumb': {
-      background: 'rgba(255, 255, 255, 0.2)',
-      borderRadius: '2px',
-      '&:hover': {
-        background: 'rgba(255, 255, 255, 0.3)'
-      }
-    },
     '@media (max-width: 1024px)': {
       transform: 'translateX(-100%)',
       boxShadow: '2px 0 8px rgba(0, 0, 0, 0.15)',
@@ -141,24 +128,27 @@ const useStyles = createUseStyles({
     minHeight: '44px',
     borderRadius: '22px',
     margin: '0 0.5rem',
+    zIndex: 1,
     '@media (max-width: 1024px)': {
       padding: '0.5rem 0.75rem',
       fontSize: '0.85rem',
       minHeight: '36px'
     },
-    '&:hover': {
+    '&:hover:not(.active)': {
       background: 'rgba(255, 255, 255, 0.1)',
       color: '#ffffff'
     },
     '&:active': {
-      background: 'rgba(255, 255, 255, 0.15)',
       transform: 'scale(0.98)'
-    },
-    '&.active': {
-      background: 'rgba(255, 255, 255, 0.15)',
-      color: '#ffffff',
-      fontWeight: '700'
     }
+  },
+  activeIndicator: {
+    position: 'absolute',
+    background: 'rgba(255, 255, 255, 0.15)',
+    borderRadius: '22px',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    pointerEvents: 'none',
+    zIndex: 0
   },
   icon: {
     width: '20px',
@@ -217,13 +207,59 @@ const useStyles = createUseStyles({
     fontSize: '0.8rem',
     color: '#fca5a5',
     opacity: 0.9
-  }
+  },
 });
 
 const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft, isTrialExpired }) => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const location = useLocation();
   const { signOut, user } = useAuth();
+
+  // Refs for nav items
+  const navRefs = useRef({});
+  const navSectionRef = useRef(null);
+  const bottomSectionRef = useRef(null);
+
+  // State for sliding indicator
+  const [indicatorStyle, setIndicatorStyle] = useState({
+    top: 0,
+    left: 0,
+    width: 0,
+    height: 0,
+    opacity: 0
+  });
+  const [activeSection, setActiveSection] = useState(null); // 'nav' or 'bottom'
+
+  // Check if we're in drills mode
+  const isDrillsMode = location.pathname === '/app/lessons' && new URLSearchParams(location.search).get('mode') === 'drills';
+
+  // Update indicator position when activeView changes
+  useEffect(() => {
+    // If we're in drills mode, highlight the drills button instead of lessons
+    const effectiveView = isDrillsMode ? 'drills' : activeView;
+    const activeRef = navRefs.current[effectiveView];
+    if (activeRef && (navSectionRef.current || bottomSectionRef.current)) {
+      const rect = activeRef.getBoundingClientRect();
+      const parentRect = activeRef.closest('[data-nav-section]')?.getBoundingClientRect();
+
+      if (parentRect) {
+        // Determine which section this is
+        const isNavSection = navSectionRef.current?.contains(activeRef);
+        const isBottomSection = bottomSectionRef.current?.contains(activeRef);
+
+        setActiveSection(isNavSection ? 'nav' : isBottomSection ? 'bottom' : null);
+
+        setIndicatorStyle({
+          top: rect.top - parentRect.top,
+          left: rect.left - parentRect.left,
+          width: rect.width,
+          height: rect.height,
+          opacity: 1
+        });
+      }
+    }
+  }, [activeView, isOpen, isDrillsMode]);
 
   const handleLogout = async () => {
     await signOut();
@@ -289,35 +325,86 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
           <Logo size="small" clickable onClick={handleLogoClick} style={{ color: '#ffffff', textTransform: 'lowercase' }} />
         </div>
 
-      <div className={classes.navSection}>
+      <div className={classes.navSection} data-nav-section ref={navSectionRef} style={{ position: 'relative' }}>
+        {/* Sliding indicator */}
+        <div
+          className={classes.activeIndicator}
+          style={{
+            ...indicatorStyle,
+            opacity: activeSection === 'nav' ? indicatorStyle.opacity : 0
+          }}
+        />
+
         <button
+          ref={el => navRefs.current['home'] = el}
           className={`${classes.navItem} ${activeView === 'home' ? 'active' : ''}`}
           onClick={() => handleNavigate('home')}
           style={{ opacity: isTrialExpired && !isPro ? 0.5 : 1 }}
         >
-          <span className={classes.icon}><HiHome /></span>
+          <span className={classes.icon}><HiAcademicCap /></span>
           Study plan
           {isTrialExpired && !isPro && <HiLockClosed className={classes.lockIcon} />}
         </button>
         <button
-          className={`${classes.navItem} ${activeView === 'lessons' ? 'active' : ''}`}
-          onClick={() => handleNavigate('lessons')}
+          ref={el => navRefs.current['lessons'] = el}
+          className={`${classes.navItem} ${activeView === 'lessons' && !isDrillsMode ? 'active' : ''}`}
+          onClick={() => {
+            if (isTrialExpired && !isPro) {
+              soundEffects.playNavigation();
+              onNavigate('upgrade');
+              if (onClose) {
+                onClose();
+              }
+              return;
+            }
+            soundEffects.playNavigation();
+            navigate('/app/lessons');
+            if (onClose) {
+              onClose();
+            }
+          }}
           style={{ opacity: isTrialExpired && !isPro ? 0.5 : 1 }}
         >
-          <span className={classes.icon}><HiBookOpen /></span>
-          Lessons
+          <span className={classes.icon}><HiSquares2X2 /></span>
+          Courses
           {isTrialExpired && !isPro && <HiLockClosed className={classes.lockIcon} />}
         </button>
         <button
+          ref={el => navRefs.current['drills'] = el}
+          className={`${classes.navItem} ${isDrillsMode ? 'active' : ''}`}
+          onClick={() => {
+            if (isTrialExpired && !isPro) {
+              soundEffects.playNavigation();
+              onNavigate('upgrade');
+              if (onClose) {
+                onClose();
+              }
+              return;
+            }
+            soundEffects.playNavigation();
+            navigate('/app/lessons?mode=drills');
+            if (onClose) {
+              onClose();
+            }
+          }}
+          style={{ opacity: isTrialExpired && !isPro ? 0.5 : 1 }}
+        >
+          <span className={classes.icon}><HiBolt /></span>
+          Drills
+          {isTrialExpired && !isPro && <HiLockClosed className={classes.lockIcon} />}
+        </button>
+        <button
+          ref={el => navRefs.current['tests'] = el}
           className={`${classes.navItem} ${activeView === 'tests' ? 'active' : ''}`}
           onClick={() => handleNavigate('tests')}
           style={{ opacity: isTrialExpired && !isPro ? 0.5 : 1 }}
         >
           <span className={classes.icon}><HiDocumentText /></span>
-          Tests
+          Mock tests
           {isTrialExpired && !isPro && <HiLockClosed className={classes.lockIcon} />}
         </button>
         <button
+          ref={el => navRefs.current['insights'] = el}
           className={`${classes.navItem} ${activeView === 'insights' ? 'active' : ''}`}
           onClick={() => handleNavigate('insights')}
           style={{ opacity: isTrialExpired && !isPro ? 0.5 : 1 }}
@@ -330,9 +417,19 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
 
       <div className={classes.spacer} />
 
-      <div className={classes.bottomSection}>
+      <div className={classes.bottomSection} data-nav-section ref={bottomSectionRef} style={{ position: 'relative' }}>
+        {/* Sliding indicator */}
+        <div
+          className={classes.activeIndicator}
+          style={{
+            ...indicatorStyle,
+            opacity: activeSection === 'bottom' ? indicatorStyle.opacity : 0
+          }}
+        />
+
         {user && (
           <button
+            ref={el => navRefs.current['profile'] = el}
             className={`${classes.navItem} ${activeView === 'profile' ? 'active' : ''}`}
             onClick={() => handleNavigate('profile')}
           >
@@ -342,6 +439,7 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
         )}
         {user && (
           <button
+            ref={el => navRefs.current['settings'] = el}
             className={`${classes.navItem} ${activeView === 'settings' ? 'active' : ''}`}
             onClick={() => handleNavigate('settings')}
           >
