@@ -5,12 +5,15 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { HiArrowLeft } from 'react-icons/hi2';
 import { useAuth } from '../../contexts/AuthContext';
 import { validatePassword, validateEmail, sanitizeInput } from '../../utils/security';
 import Logo from '../common/Logo';
 
 const InlineAuth = () => {
   const { signUp, signIn, signInWithGoogle, user } = useAuth();
+  const navigate = useNavigate();
   const [showEmailForm, setShowEmailForm] = useState(false);
   const [isSignup, setIsSignup] = useState(false); // Default to login mode
   const [formData, setFormData] = useState({
@@ -21,6 +24,7 @@ const InlineAuth = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [hoveredButton, setHoveredButton] = useState(null);
+  const [isBackHovered, setIsBackHovered] = useState(false);
 
   // Prevent body scrolling when auth is shown
   useEffect(() => {
@@ -126,10 +130,27 @@ const InlineAuth = () => {
     }
   };
 
+  const handleBack = () => {
+    navigate('/');
+  };
+
   return (
     <div style={styles.overlay}>
       <div style={styles.container}>
         <div style={styles.card}>
+        {/* Back Button */}
+        <button
+          onClick={handleBack}
+          onMouseEnter={() => setIsBackHovered(true)}
+          onMouseLeave={() => setIsBackHovered(false)}
+          style={{
+            ...styles.backButton,
+            ...(isBackHovered ? styles.backButtonHover : {})
+          }}
+        >
+          <HiArrowLeft style={{ width: '20px', height: '20px' }} />
+        </button>
+
         {/* Logo */}
         <div style={styles.logo}>
           <Logo size="medium" />
@@ -333,6 +354,7 @@ const styles = {
     overflowX: 'hidden',
     display: 'flex',
     flexDirection: 'column',
+    position: 'relative',
     '@media (max-width: 480px)': {
       maxWidth: 'calc(100% - 40px)',
       width: 'calc(100% - 40px)',
@@ -340,6 +362,25 @@ const styles = {
       maxHeight: '85vh',
       borderRadius: '12px',
     },
+  },
+  backButton: {
+    position: 'absolute',
+    top: '20px',
+    left: '20px',
+    background: 'transparent',
+    border: 'none',
+    cursor: 'pointer',
+    padding: '8px',
+    borderRadius: '8px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#6b7280',
+    transition: 'all 0.2s ease',
+  },
+  backButtonHover: {
+    background: '#f3f4f6',
+    color: '#374151',
   },
   logo: {
     textAlign: 'center',
