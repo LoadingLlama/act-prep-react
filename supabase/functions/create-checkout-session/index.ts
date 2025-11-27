@@ -70,9 +70,11 @@ serve(async (req) => {
       customer_update: {
         address: 'auto',
       },
-      // Use automatic payment methods - Stripe will show all enabled payment methods
-      // including card, Apple Pay, Google Pay, Link, and any others enabled in Dashboard
-      payment_method_types: undefined,
+      // Automatically enable all payment methods available in your region
+      // This includes: cards, Apple Pay, Google Pay, Link, and digital wallets
+      automatic_payment_methods: {
+        enabled: true,
+      },
       metadata: {
         supabase_user_id: userId
       }
