@@ -21,12 +21,13 @@ import Sidebar from '../components/Sidebar';
 import LessonModal from '../components/app/LessonModal';
 import DiagnosticTest from '../components/DiagnosticTest';
 import PracticeTestPage from '../pages/PracticeTestPage';
+import UpgradeModal from '../components/UpgradeModal';
 
 /**
  * AppLayout - Protected area wrapper with sidebar and routing
  */
 export default function AppLayout() {
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const classes = useAppStyles();
@@ -40,6 +41,8 @@ export default function AppLayout() {
   const [isPro, setIsPro] = useState(false);
   const [trialDaysLeft, setTrialDaysLeft] = useState(3);
   const [isTrialExpired, setIsTrialExpired] = useState(false);
+  const [streak, setStreak] = useState(0);
+  const [showStreakTooltip, setShowStreakTooltip] = useState(false);
 
   // Debug logging for diagnostic state changes
   useEffect(() => {
@@ -132,13 +135,63 @@ export default function AppLayout() {
     checkSubscription();
   }, [user]);
 
-  // Redirect to upgrade page if trial expired
+  // Calculate activity streak
   useEffect(() => {
-    if (!isPro && isTrialExpired && location.pathname !== '/app/upgrade') {
-      console.log('🚫 Trial expired, redirecting to upgrade page');
-      navigate('/app/upgrade', { replace: true });
-    }
-  }, [isPro, isTrialExpired, location.pathname, navigate]);
+    const fetchStreak = async () => {
+      if (!user) {
+        setStreak(0);
+        return;
+      }
+
+      try {
+        const { data, error } = await supabase
+          .from('session_history')
+          .select('created_at')
+          .eq('user_id', user.id)
+          .order('created_at', { ascending: false });
+
+        if (error) throw error;
+        if (!data || data.length === 0) {
+          setStreak(0);
+          return;
+        }
+
+        // Calculate streak by counting consecutive days
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const uniqueDates = [...new Set(data.map(session => {
+          const date = new Date(session.created_at);
+          date.setHours(0, 0, 0, 0);
+          return date.getTime();
+        }))].sort((a, b) => b - a);
+
+        let currentStreak = 0;
+        let checkDate = today.getTime();
+
+        for (const activityDate of uniqueDates) {
+          const daysDiff = Math.floor((checkDate - activityDate) / (1000 * 60 * 60 * 24));
+          if (daysDiff === 0 || daysDiff === 1) {
+            currentStreak++;
+            checkDate = activityDate;
+          } else if (daysDiff > 1) {
+            break;
+          }
+        }
+        setStreak(currentStreak);
+      } catch (error) {
+        console.error('Error fetching streak:', error);
+        setStreak(0);
+      }
+    };
+    fetchStreak();
+  }, [user]);
+
+  // Sign out handler for upgrade modal
+  const handleSignOut = async () => {
+    await signOut();
+    navigate('/', { replace: true });
+  };
 
   // Get user initials from email
   const getUserInitials = () => {
@@ -283,10 +336,79 @@ export default function AppLayout() {
             <div style={{ flex: 1, display: 'flex', alignItems: 'center' }}>
               {headerControls}
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              {user && isPro && (
-                <div className={classes.proBadge}>
-                  Pro
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              {user && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '0.25rem',
+                      padding: '0 0.6rem',
+                      height: '26px',
+                      borderRadius: '6px',
+                      background: streak === 0
+                        ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(147, 197, 253, 0.15) 50%, rgba(191, 219, 254, 0.1) 100%)'
+                        : 'linear-gradient(135deg, rgba(234, 88, 12, 0.2) 0%, rgba(251, 146, 60, 0.15) 50%, rgba(254, 215, 170, 0.1) 100%)',
+                      border: 'none',
+                      position: 'relative',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                      fontSize: '0.7rem',
+                      fontWeight: '600',
+                      letterSpacing: '0.02em'
+                    }}
+                    onMouseEnter={() => setShowStreakTooltip(true)}
+                    onMouseLeave={() => setShowStreakTooltip(false)}
+                  >
+                    <span style={{ fontSize: '0.85rem', lineHeight: '1' }}>{streak === 0 ? '❄️' : '🔥'}</span>
+                    <span style={{
+                      fontSize: '0.7rem',
+                      fontWeight: '600',
+                      color: streak === 0 ? '#1e40af' : '#ea580c',
+                      lineHeight: '1'
+                    }}>
+                      {streak}
+                    </span>
+                    {showStreakTooltip && (
+                      <div style={{
+                        position: 'absolute',
+                        top: 'calc(100% + 8px)',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        background: 'rgba(15, 23, 42, 0.95)',
+                        backdropFilter: 'blur(8px)',
+                        color: '#ffffff',
+                        padding: '0.5rem 0.75rem',
+                        borderRadius: '6px',
+                        fontSize: '0.75rem',
+                        fontWeight: '500',
+                        whiteSpace: 'nowrap',
+                        zIndex: 1000,
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+                        pointerEvents: 'none'
+                      }}>
+                        {streak === 0 ? 'No active streak' : `${streak} day${streak !== 1 ? 's' : ''} of activity`}
+                        <div style={{
+                          position: 'absolute',
+                          top: '-4px',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          width: 0,
+                          height: 0,
+                          borderLeft: '4px solid transparent',
+                          borderRight: '4px solid transparent',
+                          borderBottom: '4px solid rgba(15, 23, 42, 0.95)'
+                        }} />
+                      </div>
+                    )}
+                  </div>
+                  {isPro && (
+                    <div className={classes.proBadge}>
+                      Pro
+                    </div>
+                  )}
                 </div>
               )}
               <div
@@ -390,6 +512,14 @@ export default function AppLayout() {
             ))}
           </div>
         </div>
+      )}
+
+      {/* Blocking Upgrade Modal - shown when trial expires */}
+      {!isPro && isTrialExpired && (
+        <UpgradeModal
+          trialDaysLeft={trialDaysLeft}
+          onSignOut={handleSignOut}
+        />
       )}
 
     </div>
