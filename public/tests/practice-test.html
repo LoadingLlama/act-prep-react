@@ -84,7 +84,7 @@
     <!-- Header outside container for full width -->
     <div class="test-header">
         <div class="header-content">
-            <a href="/" class="logo">Nomi Academy</a>
+            <a href="/" class="logo" id="headerLogo">Nomi Academy</a>
             <div class="header-center"></div>
             <div class="header-right">
                 <span class="question-counter">
@@ -95,7 +95,36 @@
                     <span class="timer-label">Total Time Left</span>
                     <div class="timer" id="timer">--:--</div>
                 </div>
-                <button class="end-section-link" onclick="confirmEndSection()">
+                <div id="sectionSwitcher" style="display: none;">
+                    <select
+                        id="sectionDropdown"
+                        onchange="switchSection(this.value)"
+                        style="
+                            background: #ffffff;
+                            border: 1px solid #e2e8f0;
+                            color: #0f172a;
+                            font-size: 0.875rem;
+                            font-weight: 600;
+                            padding: 0.5rem 2rem 0.5rem 0.75rem;
+                            border-radius: 6px;
+                            cursor: pointer;
+                            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                            appearance: none;
+                            background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg width=\"12\" height=\"8\" viewBox=\"0 0 12 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3e%3cpath d=\"M1 1.5L6 6.5L11 1.5\" stroke=\"%230f172a\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/%3e%3c/svg%3e');
+                            background-repeat: no-repeat;
+                            background-position: right 0.5rem center;
+                            transition: all 0.2s ease;
+                        "
+                        onmouseover="this.style.background='#f8fafc'; this.style.borderColor='#cbd5e1';"
+                        onmouseout="this.style.background='#ffffff'; this.style.borderColor='#e2e8f0';"
+                    >
+                        <option value="english">English</option>
+                        <option value="math">Mathematics</option>
+                        <option value="reading">Reading</option>
+                        <option value="science">Science</option>
+                    </select>
+                </div>
+                <button class="end-section-link" id="endButton" onclick="confirmEndSection()">
                     <span>End</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none">
                         <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
@@ -123,8 +152,8 @@
                 <div class="flag-bar">
                     <span class="item-number" id="itemNumber">Item 1</span>
                     <button class="flag-button" id="flagBtn" onclick="toggleFlag()">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-                            <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"></path>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="margin-right: 0.25rem;">
+                            <path d="M4 3C4 2.44772 4.44772 2 5 2C5.55228 2 6 2.44772 6 3V4H15C15.3466 4 15.6684 4.17959 15.8507 4.47427C16.0329 4.76894 16.0494 5.13681 15.8944 5.44721L13.618 10L15.8944 14.5528C16.0494 14.8632 16.0329 15.2311 15.8507 15.5257C15.6684 15.8204 15.3466 16 15 16H6V21C6 21.5523 5.55228 22 5 22C4.44772 22 4 21.5523 4 21V3Z"/>
                         </svg>
                         Flag
                     </button>
@@ -150,9 +179,28 @@
                 </div>
 
                 <!-- Navigation inside content -->
-                <div class="navigation">
-                    <button class="nav-button" id="prevBtn" onclick="previousQuestion()" disabled>‹ PREV</button>
-                    <button class="nav-button primary" id="nextBtn" onclick="nextQuestion()">NEXT ›</button>
+                <div class="navigation" style="display: flex; align-items: center; justify-content: space-between;">
+                    <div style="flex: 1;"></div>
+                    <div id="questionStatusIndicator" style="display: none; flex-direction: row; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 700; color: #ef4444; flex: 1; text-align: center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0;">
+                            <circle cx="12" cy="12" r="10" fill="currentColor"/>
+                            <path d="M15 9l-6 6M9 9l6 6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span id="questionStatusText" style="line-height: 1;">Wrong</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; flex: 1; justify-content: flex-end;">
+                        <button
+                            id="explanationNavBtn"
+                            onclick="toggleCurrentExplanation()"
+                            style="display: none; background: #ffffff; border: 1px solid #e2e8f0; color: #0f172a; font-size: 0.875rem; font-weight: 600; cursor: pointer; padding: 0.5rem 1rem; border-radius: 6px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; transition: all 0.2s ease;"
+                            onmouseover="this.style.background='#f8fafc'; this.style.borderColor='#cbd5e1';"
+                            onmouseout="this.style.background='#ffffff'; this.style.borderColor='#e2e8f0';"
+                        >
+                            Explanation
+                        </button>
+                        <button class="nav-button" id="prevBtn" onclick="previousQuestion()" disabled style="padding: 0.5rem 1rem; font-size: 0.875rem;">‹ PREV</button>
+                        <button class="nav-button primary" id="nextBtn" onclick="nextQuestion()" style="padding: 0.5rem 1rem; font-size: 0.875rem;">NEXT ›</button>
+                    </div>
                 </div>
             </div>
 
@@ -247,6 +295,12 @@
                 reviewMode = true;
                 reviewModeData = event.data;
 
+                // Hide logo in review mode
+                const headerLogo = document.getElementById('headerLogo');
+                if (headerLogo) {
+                    headerLogo.style.display = 'none';
+                }
+
                 // Override test data with review data
                 questions = event.data.questions;
                 section = event.data.section;
@@ -273,6 +327,26 @@
 
                 // Initialize test with review data
                 initTest();
+
+                // Jump to specific question if provided
+                if (event.data.startingQuestion !== undefined && event.data.startingQuestion > 0) {
+                    console.log('🎯 Jumping to question:', event.data.startingQuestion);
+                    currentQuestion = event.data.startingQuestion;
+                    sessionStorage.setItem('currentQuestion', currentQuestion);
+                    console.log('📍 currentQuestion set to:', currentQuestion);
+                    // Small delay to ensure DOM is ready
+                    setTimeout(() => {
+                        updateDisplay();
+                        console.log('✅ Display updated to question:', currentQuestion);
+                    }, 50);
+                }
+            } else if (event.data.type === 'JUMP_TO_QUESTION') {
+                // Handle jump to specific question
+                if (event.data.questionIndex !== undefined && event.data.questionIndex >= 0 && event.data.questionIndex < questions.length) {
+                    currentQuestion = event.data.questionIndex;
+                    sessionStorage.setItem('currentQuestion', currentQuestion);
+                    updateDisplay();
+                }
             } else if (event.data.type === 'LOAD_NEXT_SECTION') {
                 console.log('📨 Received LOAD_NEXT_SECTION message - reloading from sessionStorage');
                 console.log('   Current state before reload:', {
@@ -394,7 +468,16 @@
             // Recalculate these values based on current questions array
             hasPassages = questions.some(q => q.passage);
             totalQuestions = questions.length;
-            currentQuestion = questions.length > 0 ? (questions[0].question_number || 1) : 1;
+
+            // Try to restore saved question position
+            const savedQuestion = sessionStorage.getItem('currentQuestion');
+            if (savedQuestion && parseInt(savedQuestion) > 0 && parseInt(savedQuestion) <= totalQuestions) {
+                currentQuestion = parseInt(savedQuestion);
+                console.log('📍 Restored saved question position:', currentQuestion);
+            } else {
+                currentQuestion = questions.length > 0 ? (questions[0].question_number || 1) : 1;
+            }
+
             timeLeft = duration * 60;
 
             console.log('📊 Test configuration:', {
@@ -410,12 +493,16 @@
                 answers = { ...reviewModeData.userAnswers };
                 console.log('✅ Pre-filled answers:', answers);
 
-                // Update timer text for review mode
-                const timerEl = document.getElementById('timer');
-                const timerLabel = document.querySelector('.timer-label');
-                if (timerEl && timerLabel) {
-                    timerLabel.textContent = 'Review Mode';
-                    timerEl.textContent = '--:--';
+                // Hide timer in review mode
+                const timerContainer = document.querySelector('.timer-container');
+                if (timerContainer) {
+                    timerContainer.style.display = 'none';
+                }
+
+                // Hide "Answered" label in review mode
+                const counterLabel = document.querySelector('.question-counter-label');
+                if (counterLabel) {
+                    counterLabel.style.display = 'none';
                 }
 
                 // Update header for review mode
@@ -438,19 +525,6 @@
             // Only start timer if not in review mode
             if (!reviewMode) {
                 startTimer();
-            } else {
-                // Auto-open navigator in review mode
-                setTimeout(() => {
-                    const panel = document.getElementById('navigatorPanel');
-                    const testMain = document.querySelector('.test-main');
-                    const sidebar = document.querySelector('.question-sidebar');
-                    if (panel && !panel.classList.contains('open')) {
-                        panel.classList.add('open');
-                        if (testMain) testMain.classList.add('navigator-open');
-                        if (sidebar) sidebar.classList.add('navigator-open');
-                        populateNavigator();
-                    }
-                }, 500);
             }
         }
 
@@ -686,7 +760,7 @@
                                 }
 
                                 return `
-                                    <label class="${choiceClass}" for="q${questionNum}_${key}" style="${inlineStyle}">
+                                    <label class="${choiceClass}" for="q${questionNum}_${key}" style="${inlineStyle}; ${reviewMode && isCorrectAnswer ? 'border: 2px solid #10b981 !important;' : ''}">
                                         <input
                                             type="radio"
                                             name="question${questionNum}"
@@ -696,64 +770,45 @@
                                             ${isUserAnswer ? 'checked' : ''}
                                             onchange="selectAnswer(${questionNum}, '${key}')"
                                         >
-                                        <span class="answer-text">
-                                            <strong>${key}.</strong> ${q.answers[key]}
-                                            ${reviewMode && isCorrectAnswer ? ' <span class="answer-indicator" style="display: inline-flex; align-items: center; gap: 0.25rem; font-size: 0.75rem; font-weight: 600; padding: 0.125rem 0.5rem; border-radius: 4px; margin-left: 0.5rem; background: #10b981; color: white;"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8 6 11 13 4"></polyline></svg> Correct</span>' : ''}
-                                            ${reviewMode && isUserAnswer && !isCorrect ? ' <span class="answer-indicator wrong" style="display: inline-flex; align-items: center; gap: 0.25rem; font-size: 0.75rem; font-weight: 600; padding: 0.125rem 0.5rem; border-radius: 4px; margin-left: 0.5rem; background: #ef4444; color: white;"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="4" x2="12" y2="12"></line><line x1="12" y1="4" x2="4" y2="12"></line></svg> Your answer</span>' : ''}
-                                            ${reviewMode && isUserAnswer && isCorrect ? ' <span class="answer-indicator" style="display: inline-flex; align-items: center; gap: 0.25rem; font-size: 0.75rem; font-weight: 600; padding: 0.125rem 0.5rem; border-radius: 4px; margin-left: 0.5rem; background: #10b981; color: white;"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 8 6 11 13 4"></polyline></svg> Your answer</span>' : ''}
+                                        <span class="answer-text" style="display: flex; align-items: flex-start; width: 100%;">
+                                            <span style="flex: 1; display: flex; align-items: flex-start; gap: 0.5rem;">
+                                                <strong style="color: ${reviewMode && isCorrectAnswer ? '#10b981' : '#000000'}; flex-shrink: 0;">${key})</strong>
+                                                <span style="color: #000000; flex: 1;">${q.answers[key]}</span>
+                                            </span>
+                                            <span style="width: 28px; display: flex; align-items: flex-start; justify-content: center; flex-shrink: 0; margin-left: 0.5rem; padding-top: 0.125rem;">
+                                                ${reviewMode && isCorrectAnswer ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' : ''}
+                                                ${reviewMode && isUserAnswer && !isCorrect ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>' : ''}
+                                            </span>
                                         </span>
                                     </label>
                                 `;
                             }).join('')}
                         </div>
                         ${reviewMode ? `
-                            <div class="review-explanation" style="margin-top: 1rem; padding: 0.875rem 1rem; background: ${isCorrect ? '#f0fdf4' : userAnswer ? '#fef2f2' : '#fff7ed'}; border: 1px solid ${isCorrect ? '#dcfce7' : userAnswer ? '#fee2e2' : '#fed7aa'}; border-left: 3px solid ${isCorrect ? '#10b981' : userAnswer ? '#ef4444' : '#f59e0b'}; border-radius: 6px;">
-                                <!-- Result Header -->
-                                <div style="display: flex; align-items: center; gap: 0.625rem;">
-                                    <div style="display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: ${isCorrect ? '#dcfce7' : userAnswer ? '#fee2e2' : '#fed7aa'}; flex-shrink: 0;">
-                                        ${isCorrect ? `
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                                <polyline points="20 6 9 17 4 12"></polyline>
-                                            </svg>
-                                        ` : userAnswer ? `
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                                            </svg>
-                                        ` : `
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                                <circle cx="12" cy="12" r="10"></circle>
-                                                <line x1="12" y1="16" x2="12" y2="12"></line>
-                                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                                            </svg>
-                                        `}
-                                    </div>
-                                    <div style="flex: 1; min-width: 0;">
-                                        <div style="font-size: 0.8125rem; font-weight: 600; color: ${isCorrect ? '#166534' : userAnswer ? '#991b1b' : '#ea580c'}; margin-bottom: 0.125rem;">
-                                            ${userAnswer ? (isCorrect ? 'Correct' : 'Incorrect') : 'Not Answered'}
-                                        </div>
-                                        <div style="font-size: 0.8125rem; color: #374151; line-height: 1.4;">
-                                            ${userAnswer ? (
-                                                isCorrect
-                                                    ? `Answer: <strong style="color: #10b981;">${userAnswer}</strong>`
-                                                    : `Your answer: <strong style="color: #ef4444; text-decoration: line-through;">${userAnswer}</strong> · Correct: <strong style="color: #10b981; background: #dcfce7; padding: 0.0625rem 0.375rem; border-radius: 3px;">${correctAnswer}</strong>`
-                                            ) : `Correct answer: <strong style="color: #10b981; background: #dcfce7; padding: 0.0625rem 0.375rem; border-radius: 3px;">${correctAnswer}</strong>`}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Explanation -->
-                                ${q.explanation ? `
-                                    <div style="margin-top: 0.875rem; padding-top: 0.875rem; border-top: 1px solid ${isCorrect ? '#dcfce7' : userAnswer ? '#fee2e2' : '#fed7aa'};">
-                                        <div style="font-size: 0.9375rem; font-weight: 600; color: #000000; margin-bottom: 0.75rem; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
-                                            Explanation
-                                        </div>
-                                        <div style="font-size: 0.9375rem; line-height: 1.6; color: #000000; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-weight: 400;">
-                                            ${q.explanation}
-                                        </div>
-                                    </div>
+                            <!-- Result Status -->
+                            <div style="margin-top: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                ${userAnswer && isCorrect ? `
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <span style="font-size: 1rem; font-weight: 700; color: #10b981;">Good Job!</span>
+                                ` : userAnswer && !isCorrect ? `
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                    <span style="font-size: 1rem; font-weight: 700; color: #ef4444;">Wrong</span>
                                 ` : ''}
                             </div>
+
+                            <!-- Explanation Content (hidden by default) -->
+                            ${q.explanation ? `
+                                <div id="explanation-content-${questionNum}" style="display: none; margin-top: 0.75rem; padding: 1rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
+                                    <div style="font-size: 0.875rem; line-height: 1.7; color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+                                        ${q.explanation.replace(/\n/g, '<br>')}
+                                    </div>
+                                </div>
+                            ` : ''}
                         ` : ''}
                     </div>
                 `;
@@ -807,6 +862,47 @@
             updateQuestionGrid();
         }
 
+        function toggleExplanation(questionNum) {
+            const content = document.getElementById(`explanation-content-${questionNum}`);
+            const btn = document.getElementById(`explanation-btn-${questionNum}`);
+
+            if (content && btn) {
+                if (content.style.display === 'none') {
+                    content.style.display = 'block';
+                    btn.textContent = 'Hide Explanation';
+                } else {
+                    content.style.display = 'none';
+                    btn.textContent = 'Explanation';
+                }
+            }
+        }
+
+        function toggleCurrentExplanation() {
+            console.log('🔘 Toggle explanation clicked for question', currentQuestion);
+            const content = document.getElementById(`explanation-content-${currentQuestion}`);
+            const btn = document.getElementById('explanationNavBtn');
+
+            console.log('📦 Content element:', content ? 'found' : 'NOT FOUND');
+            console.log('🔘 Button element:', btn ? 'found' : 'NOT FOUND');
+
+            if (content && btn) {
+                const isHidden = content.style.display === 'none' || content.style.display === '';
+                console.log('👁️ Current display:', content.style.display, '- Will show?', isHidden);
+
+                if (isHidden) {
+                    content.style.display = 'block';
+                    btn.textContent = 'Hide Explanation';
+                    console.log('✅ Explanation shown');
+                } else {
+                    content.style.display = 'none';
+                    btn.textContent = 'Explanation';
+                    console.log('✅ Explanation hidden');
+                }
+            } else {
+                console.error('❌ Could not find content or button element');
+            }
+        }
+
         function updateDisplay() {
             // Hide all questions and passages
             document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
@@ -819,8 +915,15 @@
 
             // Show current question
             const questionElement = document.getElementById(`question${currentQuestion}`);
+            console.log('🎯 Looking for question element:', `question${currentQuestion}`, 'found:', !!questionElement);
+
             if (questionElement) {
                 questionElement.classList.add('active');
+                console.log('✅ Activated question:', currentQuestion);
+                console.log('   Question element display:', window.getComputedStyle(questionElement).display);
+                console.log('   Question element visibility:', window.getComputedStyle(questionElement).visibility);
+                console.log('   Question element classes:', questionElement.className);
+                console.log('   Question has content:', questionElement.innerHTML.length > 0 ? 'yes' : 'no', questionElement.innerHTML.length, 'chars');
 
                 // Show corresponding passage
                 if (hasPassages) {
@@ -844,12 +947,17 @@
                         }, 100);
                     }
                 }
+            } else {
+                console.error('❌ Question element not found for question:', currentQuestion);
+                console.error('   Available question elements:', Array.from(document.querySelectorAll('.question')).map(el => el.id));
             }
 
             // Update navigation
-            const currentIdx = questions.findIndex(q => (q.question_number || 0) === currentQuestion);
+            const currentIdx = questions.findIndex((q, idx) => (q.question_number || (idx + 1)) === currentQuestion);
             const isFirstQuestion = currentIdx === 0;
             const isLastQuestion = currentIdx === questions.length - 1;
+
+            console.log('🔍 Navigation update:', { currentQuestion, currentIdx, isFirstQuestion, isLastQuestion });
 
             document.getElementById('prevBtn').disabled = isFirstQuestion;
 
@@ -887,37 +995,20 @@
                 });
 
                 document.getElementById('questionCounter').innerHTML = `
-                    <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 500;">
-                        <span style="display: inline-flex; align-items: center; gap: 0.25rem;">
-                            <span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; background: #dcfce7;">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                            </span>
-                            <span style="color: rgba(255, 255, 255, 0.95);">${correctCount}</span>
-                            <span style="color: rgba(255, 255, 255, 0.6); font-weight: 400;">correct</span>
+                    <div style="display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.875rem; font-weight: 500;">
+                        <span style="display: inline-flex; align-items: center; gap: 0.375rem;">
+                            <span style="color: #ffffff; font-weight: 600;">${correctCount}</span>
+                            <span style="color: #ffffff; font-weight: 400;">correct</span>
                         </span>
-                        <span style="color: rgba(255, 255, 255, 0.3);">·</span>
-                        <span style="display: inline-flex; align-items: center; gap: 0.25rem;">
-                            <span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; background: #fee2e2;">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                                </svg>
-                            </span>
-                            <span style="color: rgba(255, 255, 255, 0.95);">${incorrectCount}</span>
-                            <span style="color: rgba(255, 255, 255, 0.6); font-weight: 400;">incorrect</span>
+                        <span style="color: rgba(255, 255, 255, 0.5);">·</span>
+                        <span style="display: inline-flex; align-items: center; gap: 0.375rem;">
+                            <span style="color: #ffffff; font-weight: 600;">${incorrectCount}</span>
+                            <span style="color: #ffffff; font-weight: 400;">incorrect</span>
                         </span>
-                        <span style="color: rgba(255, 255, 255, 0.3);">·</span>
-                        <span style="display: inline-flex; align-items: center; gap: 0.25rem;">
-                            <span style="display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; background: rgba(255, 255, 255, 0.15);">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.6)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <line x1="4" y1="12" x2="20" y2="12"></line>
-                                </svg>
-                            </span>
-                            <span style="color: rgba(255, 255, 255, 0.95);">${unansweredCount}</span>
-                            <span style="color: rgba(255, 255, 255, 0.6); font-weight: 400;">unanswered</span>
+                        <span style="color: rgba(255, 255, 255, 0.5);">·</span>
+                        <span style="display: inline-flex; align-items: center; gap: 0.375rem;">
+                            <span style="color: #ffffff; font-weight: 600;">${unansweredCount}</span>
+                            <span style="color: #ffffff; font-weight: 400;">unanswered</span>
                         </span>
                     </div>
                 `;
@@ -926,6 +1017,49 @@
             }
 
             document.getElementById('itemNumber').textContent = `Item ${currentQuestion}`;
+
+            // Show/hide explanation button in review mode
+            const explanationBtn = document.getElementById('explanationNavBtn');
+            if (reviewMode && explanationBtn) {
+                const currentQuestionObj = questions.find((q, idx) => (q.question_number || (idx + 1)) === currentQuestion);
+                console.log('🔍 Looking for question', currentQuestion, 'found:', currentQuestionObj ? 'yes' : 'no', 'has explanation:', currentQuestionObj?.explanation ? 'yes' : 'no');
+                if (currentQuestionObj && currentQuestionObj.explanation) {
+                    explanationBtn.style.display = 'block';
+                    // Reset button text when changing questions
+                    const explanationContent = document.getElementById(`explanation-content-${currentQuestion}`);
+                    if (explanationContent) {
+                        explanationBtn.textContent = explanationContent.style.display === 'none' ? 'Explanation' : 'Hide Explanation';
+                    } else {
+                        explanationBtn.textContent = 'Explanation';
+                    }
+                } else {
+                    explanationBtn.style.display = 'none';
+                }
+            }
+
+            // Show/hide question status indicator in review mode
+            const statusIndicator = document.getElementById('questionStatusIndicator');
+            const statusText = document.getElementById('questionStatusText');
+            if (reviewMode && statusIndicator && statusText && reviewModeData) {
+                const userAnswerKey = `q${currentQuestion}`;
+                const userAnswer = reviewModeData.userAnswers[userAnswerKey];
+                const isCorrect = reviewModeData.correctnessMap[userAnswerKey];
+
+                if (!userAnswer) {
+                    // Unanswered
+                    statusIndicator.style.display = 'flex';
+                    statusText.textContent = 'Unanswered';
+                } else if (!isCorrect) {
+                    // Wrong
+                    statusIndicator.style.display = 'flex';
+                    statusText.textContent = 'Wrong';
+                } else {
+                    // Correct - hide indicator
+                    statusIndicator.style.display = 'none';
+                }
+            } else if (statusIndicator) {
+                statusIndicator.style.display = 'none';
+            }
 
             updateFlagButton();
 
@@ -943,30 +1077,50 @@
         }
 
         function nextQuestion() {
-            // Find current question index
-            const currentIdx = questions.findIndex(q => (q.question_number || 0) === currentQuestion);
+            console.log('🔜 Next button clicked, current question:', currentQuestion);
+            // Find current question index using same logic as rendering
+            const currentIdx = questions.findIndex((q, idx) => (q.question_number || (idx + 1)) === currentQuestion);
+            console.log('📍 Current index:', currentIdx, 'Total questions:', questions.length);
+
             if (currentIdx >= 0 && currentIdx < questions.length - 1) {
-                currentQuestion = questions[currentIdx + 1].question_number || (currentIdx + 2);
+                const nextQ = questions[currentIdx + 1];
+                currentQuestion = nextQ.question_number || (currentIdx + 2);
+                console.log('➡️ Moving to question:', currentQuestion);
+                sessionStorage.setItem('currentQuestion', currentQuestion);
                 updateDisplay();
+            } else {
+                console.log('⚠️ Cannot go to next question - at end or invalid index');
             }
         }
 
         function previousQuestion() {
-            // Find current question index
-            const currentIdx = questions.findIndex(q => (q.question_number || 0) === currentQuestion);
+            console.log('🔙 Previous button clicked, current question:', currentQuestion);
+            // Find current question index using same logic as rendering
+            const currentIdx = questions.findIndex((q, idx) => (q.question_number || (idx + 1)) === currentQuestion);
+            console.log('📍 Current index:', currentIdx);
+
             if (currentIdx > 0) {
-                currentQuestion = questions[currentIdx - 1].question_number || currentIdx;
+                const prevQ = questions[currentIdx - 1];
+                currentQuestion = prevQ.question_number || currentIdx;
+                console.log('⬅️ Moving to question:', currentQuestion);
+                sessionStorage.setItem('currentQuestion', currentQuestion);
                 updateDisplay();
+            } else {
+                console.log('⚠️ Cannot go to previous question - at beginning or invalid index');
             }
         }
 
         function goToQuestion(questionNum) {
-            // Check if question exists in questions array
-            const questionExists = questions.some(q => (q.question_number || 0) === questionNum);
+            console.log('🎯 Going to question:', questionNum);
+            // Check if question exists using same logic as rendering
+            const questionExists = questions.some((q, idx) => (q.question_number || (idx + 1)) === questionNum);
             if (questionExists) {
                 currentQuestion = questionNum;
+                sessionStorage.setItem('currentQuestion', currentQuestion);
                 updateDisplay();
                 closeQuestionModal();
+            } else {
+                console.log('⚠️ Question', questionNum, 'not found');
             }
         }
 
@@ -982,11 +1136,9 @@
 
         function updateFlagButton() {
             const flagBtn = document.getElementById('flagBtn');
-            const flagIcon = `<span class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                    <path d="M3 2C3 1.44772 3.44772 1 4 1C4.55228 1 5 1.44772 5 2V3H13C13.3466 3 13.6684 3.17959 13.8507 3.47427C14.0329 3.76894 14.0494 4.13681 13.8944 4.44721L11.618 9L13.8944 13.5528C14.0494 13.8632 14.0329 14.2311 13.8507 14.5257C13.6684 14.8204 13.3466 15 13 15H5V16C5 16.5523 4.55228 17 4 17C3.44772 17 3 16.5523 3 16V2Z"/>
-                </svg>
-            </span>`;
+            const flagIcon = `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="margin-right: 0.25rem;">
+                <path d="M4 3C4 2.44772 4.44772 2 5 2C5.55228 2 6 2.44772 6 3V4H15C15.3466 4 15.6684 4.17959 15.8507 4.47427C16.0329 4.76894 16.0494 5.13681 15.8944 5.44721L13.618 10L15.8944 14.5528C16.0494 14.8632 16.0329 15.2311 15.8507 15.5257C15.6684 15.8204 15.3466 16 15 16H6V21C6 21.5523 5.55228 22 5 22C4.44772 22 4 21.5523 4 21V3Z"/>
+            </svg>`;
 
             if (flaggedQuestions.has(currentQuestion)) {
                 flagBtn.innerHTML = flagIcon + 'Unflag';
@@ -1273,17 +1425,8 @@
             console.log('Review mode:', reviewMode);
             console.log('Review mode data:', reviewModeData);
 
-            // Add a header to show it's working
-            const headerDiv = document.createElement('div');
-            headerDiv.style.padding = '0.5rem';
-            headerDiv.style.background = '#f9fafb';
-            headerDiv.style.marginBottom = '0.5rem';
-            headerDiv.style.borderRadius = '4px';
-            headerDiv.style.fontSize = '0.75rem';
-            headerDiv.style.color = '#6b7280';
-            headerDiv.textContent = `${questions.length} questions loaded`;
-            navigatorContent.appendChild(headerDiv);
-            console.log('✅ Header added');
+            // Stats header removed for cleaner design
+            console.log('✅ Starting question population');
 
             let itemsCreated = 0;
             let errorCount = 0;
@@ -1388,8 +1531,6 @@
                             statusIndicator = '<div style="width: 20px; height: 20px; border-radius: 50%; background: #dcfce7; border: 2px solid #86efac; display: flex; align-items: center; justify-content: center; color: #10b981; font-size: 0.75rem; font-weight: 600;">✓</div>';
                         } else if (isIncorrect) {
                             statusIndicator = '<div style="width: 20px; height: 20px; border-radius: 50%; background: #fee2e2; border: 2px solid #fecaca; display: flex; align-items: center; justify-content: center; color: #ef4444; font-size: 0.75rem; font-weight: 600;">✗</div>';
-                        } else if (isSkipped) {
-                            statusIndicator = '<div style="width: 20px; height: 20px; border-radius: 50%; background: #fef3c7; border: 2px solid #fde68a; display: flex; align-items: center; justify-content: center; color: #f59e0b; font-size: 0.75rem; font-weight: 600;">−</div>';
                         }
                     }
 
@@ -1409,6 +1550,7 @@
 
                     item.onclick = () => {
                         currentQuestion = questionNum;
+                        sessionStorage.setItem('currentQuestion', currentQuestion);
                         updateDisplay();
                         toggleNavigator();
                     };

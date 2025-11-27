@@ -4,19 +4,24 @@
  */
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { HiArrowLeft, HiChartBar } from 'react-icons/hi2';
+import { HiArrowLeft, HiChartBar, HiChevronDown } from 'react-icons/hi2';
+import { useSearchParams } from 'react-router-dom';
 import DiagnosticService from '../services/api/diagnostic.service';
 import { supabase } from '../supabaseClient';
 import logger from '../services/logging/logger';
 import Logo from './common/Logo';
 
 export default function DiagnosticTestReview({ sessionId, onClose }) {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [testData, setTestData] = useState(null);
   const [selectedSection, setSelectedSection] = useState(null);
-  const [expandedSections, setExpandedSections] = useState({});
+  const [startingQuestionIndex, setStartingQuestionIndex] = useState(0);
+  const [expandedSection, setExpandedSection] = useState('english');
+  const [sectionDropdownOpen, setSectionDropdownOpen] = useState(false);
   const iframeRef = useRef(null);
+  const dropdownRef = useRef(null);
 
   // Section configurations - all using consistent blue theme
   const sectionConfig = {
@@ -73,6 +78,62 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
   useEffect(() => {
     loadDiagnosticData();
   }, [sessionId]);
+
+  // Restore section and question from URL on mount
+  useEffect(() => {
+    if (testData) {
+      const urlSection = searchParams.get('section');
+      const urlQuestion = searchParams.get('question');
+
+      if (urlSection) {
+        console.log('📍 Restoring section from URL:', urlSection);
+        setSelectedSection(urlSection);
+      }
+
+      if (urlQuestion) {
+        console.log('📍 Restoring question from URL:', urlQuestion);
+        setStartingQuestionIndex(parseInt(urlQuestion));
+      }
+    }
+  }, [testData, searchParams]);
+
+  // Update URL when section changes
+  useEffect(() => {
+    if (selectedSection) {
+      const newParams = new URLSearchParams(searchParams);
+      newParams.set('section', selectedSection);
+      if (startingQuestionIndex > 0) {
+        newParams.set('question', startingQuestionIndex.toString());
+      }
+      setSearchParams(newParams, { replace: true });
+      console.log('🔗 Updated URL with section:', selectedSection);
+    }
+  }, [selectedSection]);
+
+  // Update URL when question changes
+  useEffect(() => {
+    if (selectedSection && startingQuestionIndex > 0) {
+      const newParams = new URLSearchParams(searchParams);
+      newParams.set('section', selectedSection);
+      newParams.set('question', startingQuestionIndex.toString());
+      setSearchParams(newParams, { replace: true });
+      console.log('🔗 Updated URL with question:', startingQuestionIndex);
+    }
+  }, [startingQuestionIndex]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setSectionDropdownOpen(false);
+      }
+    };
+
+    if (sectionDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [sectionDropdownOpen]);
 
   const loadDiagnosticData = async () => {
     try {
@@ -183,46 +244,23 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
     }
   };
 
-  // Toggle section expansion
+  // Toggle section expansion - only one section at a time
   const toggleSection = (section) => {
-    setExpandedSections(prev => ({
-      ...prev,
-      [section]: !prev[section]
-    }));
+    setExpandedSection(prev => prev === section ? null : section);
   };
 
   // Handle question click
   const handleQuestionClick = (section, questionIndex) => {
+    setStartingQuestionIndex(questionIndex);
     setSelectedSection(section);
-
-    setTimeout(() => {
-      if (iframeRef.current?.contentWindow) {
-        loadSectionIntoIframe(section);
-
-        setTimeout(() => {
-          iframeRef.current?.contentWindow?.postMessage({
-            type: 'JUMP_TO_QUESTION',
-            questionIndex: questionIndex
-          }, '*');
-        }, 500);
-      }
-    }, 100);
   };
 
   // Handle section selection
   const handleSectionSelect = useCallback((section) => {
     if (!testData) return;
+    setStartingQuestionIndex(0);
     setSelectedSection(section);
-
-    setTimeout(() => {
-      if (iframeRef.current?.contentWindow) {
-        loadSectionIntoIframe(section);
-      }
-    }, 100);
-
-    // Close modal after selecting section to review
-    onClose();
-  }, [testData, onClose]);
+  }, [testData]);
 
   // Load section data into the iframe
   const loadSectionIntoIframe = useCallback((section) => {
@@ -307,11 +345,23 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
       questions: questions,
       userAnswers: userAnswers,
       correctnessMap: correctnessMap,
-      reviewMode: true
+      reviewMode: true,
+      startingQuestion: startingQuestionIndex
     };
 
     iframeRef.current.contentWindow.postMessage(message, '*');
-  }, [testData]);
+  }, [testData, startingQuestionIndex]);
+
+  // Load section when selectedSection changes (but not when question changes)
+  useEffect(() => {
+    if (selectedSection && iframeRef.current?.contentWindow && testData) {
+      // Small delay to ensure iframe is ready
+      const timer = setTimeout(() => {
+        loadSectionIntoIframe(selectedSection);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [selectedSection, testData, loadSectionIntoIframe]);
 
   // Handle messages from iframe
   useEffect(() => {
@@ -322,6 +372,7 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
 
       if (type === 'PRACTICE_TEST_CLOSE') {
         setSelectedSection(null);
+        setSearchParams({}, { replace: true });
       } else if (type === 'IFRAME_READY') {
         if (selectedSection) {
           loadSectionIntoIframe(selectedSection);
@@ -358,7 +409,7 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
           borderRadius: '50%',
           animation: 'spin 0.8s linear infinite'
         }} />
-        <div style={{ fontSize: '0.875rem', color: '#64748b' }}>
+        <div style={{ fontSize: '0.875rem', color: '#0f172a' }}>
           Loading test review...
         </div>
       </div>
@@ -382,7 +433,7 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
         flexDirection: 'column',
         gap: '1rem'
       }}>
-        <div style={{ fontSize: '0.875rem', color: '#64748b' }}>
+        <div style={{ fontSize: '0.875rem', color: '#0f172a' }}>
           {error || 'Failed to load test data'}
         </div>
         <button
@@ -424,27 +475,31 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
           zIndex: 3001
         }}>
           <button
-            onClick={() => setSelectedSection(null)}
+            onClick={() => {
+              setSelectedSection(null);
+              setSearchParams({}, { replace: true });
+            }}
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: '0.375rem',
               padding: '0.5rem 0.75rem',
-              background: '#ffffff',
-              border: '1px solid #e2e8f0',
-              fontSize: '0.8125rem',
+              background: 'transparent',
+              border: 'none',
+              fontSize: '0.875rem',
               fontWeight: '600',
-              color: '#08245b',
+              color: '#ffffff',
               cursor: 'pointer',
               borderRadius: '6px',
-              transition: 'all 0.2s ease',
-              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+              transition: 'all 0.2s ease'
             }}
             onMouseOver={(e) => {
-              e.currentTarget.style.background = '#f8fafc';
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
+              e.currentTarget.style.backdropFilter = 'blur(10px)';
             }}
             onMouseOut={(e) => {
-              e.currentTarget.style.background = '#ffffff';
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.backdropFilter = 'none';
             }}
           >
             <HiArrowLeft size={16} />
@@ -481,8 +536,25 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '2rem'
+      padding: '2rem',
+      animation: 'fadeIn 0.2s ease-out'
     }}>
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+          from {
+            opacity: 0;
+            transform: scale(0.95) translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
+        }
+      `}</style>
       {/* Modal Content */}
       <div style={{
         width: '100%',
@@ -491,14 +563,15 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
         background: '#ffffff',
         borderRadius: '16px',
         overflow: 'hidden',
-        boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        border: '0.5px solid #e2e8f0',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        animation: 'scaleIn 0.3s ease-out'
       }}>
         {/* Header with close button */}
         <div style={{
           padding: '1rem 1.5rem',
-          borderBottom: '1px solid #f1f5f9',
+          borderBottom: '0.5px solid #e2e8f0',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between'
@@ -512,109 +585,231 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
           }}>
             Diagnostic Test
           </h1>
-          <button
-            onClick={onClose}
-            style={{
-              background: 'transparent',
-              border: 'none',
-              padding: '0.5rem',
-              cursor: 'pointer',
-              borderRadius: '6px',
-              transition: 'background 0.2s ease',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.background = '#f8fafc';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.background = 'transparent';
-            }}
-          >
-            <HiArrowLeft size={24} style={{ color: '#64748b' }} />
-          </button>
+
+          {/* Section Navigation Dropdown */}
+          <div ref={dropdownRef} style={{ position: 'relative' }}>
+            <button
+              onClick={() => setSectionDropdownOpen(!sectionDropdownOpen)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.5rem 0.75rem',
+                background: sectionDropdownOpen ? '#f8fafc' : 'transparent',
+                border: '1px solid #e2e8f0',
+                borderRadius: '6px',
+                fontSize: '0.875rem',
+                fontWeight: '500',
+                color: '#0f172a',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseOver={(e) => {
+                if (!sectionDropdownOpen) {
+                  e.currentTarget.style.background = '#f8fafc';
+                }
+              }}
+              onMouseOut={(e) => {
+                if (!sectionDropdownOpen) {
+                  e.currentTarget.style.background = 'transparent';
+                }
+              }}
+            >
+              <span>Navigate Sections</span>
+              <HiChevronDown
+                size={16}
+                style={{
+                  color: '#64748b',
+                  transform: sectionDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                  transition: 'transform 0.2s ease'
+                }}
+              />
+            </button>
+
+            {/* Dropdown Menu */}
+            {sectionDropdownOpen && (
+              <div style={{
+                position: 'absolute',
+                top: 'calc(100% + 0.5rem)',
+                right: 0,
+                background: '#ffffff',
+                border: '1px solid #e2e8f0',
+                borderRadius: '8px',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                minWidth: '200px',
+                zIndex: 10000,
+                overflow: 'hidden'
+              }}>
+                {Object.entries(sectionConfig).map(([key, config]) => {
+                  const sectionResults = testData?.questionsBySection[key] || [];
+                  const correct = sectionResults.filter(r => r.is_correct).length;
+                  const total = sectionResults.length;
+                  const accuracy = total > 0 ? (correct / total) * 100 : 0;
+
+                  return (
+                    <button
+                      key={key}
+                      onClick={() => {
+                        handleSectionSelect(key);
+                        setSectionDropdownOpen(false);
+                      }}
+                      style={{
+                        width: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        padding: '0.75rem 1rem',
+                        background: 'transparent',
+                        border: 'none',
+                        borderBottom: '1px solid #f1f5f9',
+                        fontSize: '0.875rem',
+                        color: '#0f172a',
+                        cursor: 'pointer',
+                        transition: 'background 0.15s ease',
+                        textAlign: 'left'
+                      }}
+                      onMouseOver={(e) => {
+                        e.currentTarget.style.background = '#f8fafc';
+                      }}
+                      onMouseOut={(e) => {
+                        e.currentTarget.style.background = 'transparent';
+                      }}
+                    >
+                      <div>
+                        <div style={{ fontWeight: '600', marginBottom: '2px' }}>
+                          {config.name}
+                        </div>
+                        <div style={{ fontSize: '0.75rem', color: '#64748b' }}>
+                          {correct}/{total} correct
+                        </div>
+                      </div>
+                      <div style={{
+                        fontSize: '1rem',
+                        fontWeight: '700',
+                        color: '#08245b'
+                      }}>
+                        {percentageToACTScore(accuracy)}
+                      </div>
+                    </button>
+                  );
+                })}
+
+                {/* Close option at bottom */}
+                <button
+                  onClick={() => {
+                    setSectionDropdownOpen(false);
+                    onClose();
+                  }}
+                  style={{
+                    width: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    padding: '0.75rem 1rem',
+                    background: 'transparent',
+                    border: 'none',
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
+                    color: '#64748b',
+                    cursor: 'pointer',
+                    transition: 'background 0.15s ease'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.background = '#fef2f2';
+                    e.currentTarget.style.color = '#dc2626';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.background = 'transparent';
+                    e.currentTarget.style.color = '#64748b';
+                  }}
+                >
+                  <HiArrowLeft size={16} />
+                  <span>Close Review</span>
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Scrollable Content */}
         <div style={{
           flex: 1,
           overflowY: 'auto',
-          background: '#f8fafc'
+          background: '#ffffff'
         }}>
           <div style={{
             maxWidth: '1100px',
             margin: '0 auto',
             padding: '1.5rem'
           }}>
-          {/* Score Summary - Circular Display */}
+          {/* Score Summary - Compact */}
           <div style={{
-            marginBottom: '2rem',
+            marginBottom: '1.5rem',
+            padding: '1rem',
             background: '#ffffff',
-            borderRadius: '12px',
-            padding: '1.5rem',
-            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.04)'
+            borderRadius: '8px',
+            border: '0.5px solid #e2e8f0',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '2rem'
           }}>
-            {/* Composite Score - Large and Prominent */}
+            {/* Composite Score */}
             <div style={{
-              textAlign: 'center',
-              marginBottom: '1.5rem'
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.75rem',
+              paddingRight: '2rem',
+              borderRight: '0.5px solid #e2e8f0'
             }}>
               <div style={{
-                fontSize: '0.75rem',
-                color: '#64748b',
+                fontSize: '0.6875rem',
+                color: '#0f172a',
                 fontWeight: '600',
-                marginBottom: '0.5rem',
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase'
               }}>
                 Composite Score
               </div>
               <div style={{
-                display: 'inline-flex',
+                width: '56px',
+                height: '56px',
+                borderRadius: '50%',
+                background: '#08245b',
+                display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: '100px',
-                height: '100px',
-                borderRadius: '50%',
-                background: 'linear-gradient(135deg, #08245b 0%, #0f3a7a 100%)',
-                boxShadow: '0 4px 12px rgba(8, 36, 91, 0.2)'
+                fontSize: '1.5rem',
+                fontWeight: '700',
+                color: '#ffffff',
+                letterSpacing: '-0.02em'
               }}>
-                <div style={{
-                  fontSize: '2.5rem',
-                  fontWeight: '700',
-                  color: '#ffffff',
-                  letterSpacing: '-0.02em'
-                }}>
-                  {(() => {
-                    // Calculate composite ACT score (average of all 4 sections)
-                    const sections = Object.keys(sectionConfig);
-                    const sectionScores = sections.map(key => {
-                      const sectionResults = testData.questionsBySection[key] || [];
-                      const total = sectionResults.length;
-                      const correct = sectionResults.filter(r => r.is_correct).length;
-                      const accuracy = total > 0 ? (correct / total) * 100 : 0;
-                      return percentageToACTScore(accuracy);
-                    });
-                    const composite = Math.round(sectionScores.reduce((a, b) => a + b, 0) / sectionScores.length);
-                    return composite;
-                  })()}
-                </div>
+                {(() => {
+                  const sections = Object.keys(sectionConfig);
+                  const sectionScores = sections.map(key => {
+                    const sectionResults = testData.questionsBySection[key] || [];
+                    const total = sectionResults.length;
+                    const correct = sectionResults.filter(r => r.is_correct).length;
+                    const accuracy = total > 0 ? (correct / total) * 100 : 0;
+                    return percentageToACTScore(accuracy);
+                  });
+                  const composite = Math.round(sectionScores.reduce((a, b) => a + b, 0) / sectionScores.length);
+                  return composite;
+                })()}
               </div>
               <div style={{
                 fontSize: '0.6875rem',
-                color: '#64748b',
-                marginTop: '0.5rem'
+                color: '#0f172a'
               }}>
                 {testData.correctAnswers} of {testData.totalQuestions} correct
               </div>
             </div>
 
-            {/* Section Scores - Circular Display */}
+            {/* Section Scores - Inline */}
             <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: '1rem'
+              display: 'flex',
+              gap: '2rem',
+              flex: 1,
+              alignItems: 'center'
             }}>
               {Object.entries(sectionConfig).map(([key, config]) => {
                 const sectionResults = testData.questionsBySection[key] || [];
@@ -625,41 +820,42 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
 
                 return (
                   <div key={key} style={{
-                    textAlign: 'center'
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.625rem'
                   }}>
                     <div style={{
-                      display: 'inline-flex',
+                      width: '44px',
+                      height: '44px',
+                      borderRadius: '50%',
+                      background: '#08245b',
+                      display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      width: '70px',
-                      height: '70px',
-                      borderRadius: '50%',
-                      background: '#f8fafc',
-                      border: '3px solid #08245b',
-                      marginBottom: '0.5rem'
+                      fontSize: '1.125rem',
+                      fontWeight: '700',
+                      color: '#ffffff',
+                      letterSpacing: '-0.02em'
                     }}>
+                      {score}
+                    </div>
+                    <div>
                       <div style={{
-                        fontSize: '1.75rem',
-                        fontWeight: '700',
-                        color: '#08245b',
-                        letterSpacing: '-0.02em'
+                        fontSize: '0.75rem',
+                        fontWeight: '600',
+                        color: '#0f172a',
+                        lineHeight: '1.3',
+                        marginBottom: '2px'
                       }}>
-                        {score}
+                        {config.name}
                       </div>
-                    </div>
-                    <div style={{
-                      fontSize: '0.75rem',
-                      fontWeight: '600',
-                      color: '#0f172a',
-                      marginBottom: '0.125rem'
-                    }}>
-                      {config.name}
-                    </div>
-                    <div style={{
-                      fontSize: '0.6875rem',
-                      color: '#64748b'
-                    }}>
-                      {correct}/{total}
+                      <div style={{
+                        fontSize: '0.6875rem',
+                        color: '#0f172a',
+                        lineHeight: '1.3'
+                      }}>
+                        {correct}/{total}
+                      </div>
                     </div>
                   </div>
                 );
@@ -669,11 +865,18 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
 
           {/* Sections */}
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: '0.75rem',
-            marginBottom: '1.5rem'
+            display: 'flex',
+            gap: '1rem',
+            marginBottom: '1.5rem',
+            alignItems: 'flex-start'
           }}>
+            {/* Section List - Fixed Width */}
+            <div style={{
+              flex: '0 0 600px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.5rem'
+            }}>
             {Object.entries(sectionConfig).map(([key, config]) => {
               const sectionResults = testData.questionsBySection[key] || [];
               const correct = sectionResults.filter(r => r.is_correct).length;
@@ -681,105 +884,105 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
               const skipped = sectionResults.filter(r => r.user_answer === null).length;
               const total = sectionResults.length;
               const accuracy = total > 0 ? (correct / total) * 100 : 0;
-              const isExpanded = expandedSections[key];
+              const isExpanded = expandedSection === key;
 
               return (
                 <div
                   key={key}
                   style={{
                     background: '#ffffff',
-                    border: 'none',
+                    border: '0.5px solid #e2e8f0',
                     borderRadius: '8px',
-                    padding: '1rem',
+                    padding: '1rem 1.25rem',
                     transition: 'all 0.2s ease',
-                    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.04)'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.04)';
-                  }}
-                >
-                  {/* Section Header */}
-                  <div style={{
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between',
-                    marginBottom: '0.75rem'
+                    gap: '1.25rem'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#cbd5e1';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = '#e2e8f0';
+                  }}
+                >
+                  {/* Section Name */}
+                  <h3 style={{
+                    fontSize: '0.875rem',
+                    fontWeight: '600',
+                    color: '#0f172a',
+                    margin: 0,
+                    letterSpacing: '-0.01em',
+                    minWidth: '100px',
+                    flex: '0 0 100px'
                   }}>
-                    <h3 style={{
-                      fontSize: '0.875rem',
-                      fontWeight: '600',
-                      color: '#0f172a',
-                      margin: 0,
-                      letterSpacing: '-0.01em'
-                    }}>
-                      {config.name}
-                    </h3>
-                    <div style={{
-                      fontSize: '1.25rem',
-                      fontWeight: '600',
-                      color: '#08245b',
-                      letterSpacing: '-0.02em'
-                    }}>
-                      {percentageToACTScore(accuracy)}
-                    </div>
+                    {config.name}
+                  </h3>
+
+                  {/* Score */}
+                  <div style={{
+                    fontSize: '1.25rem',
+                    fontWeight: '700',
+                    color: '#08245b',
+                    letterSpacing: '-0.02em',
+                    minWidth: '36px',
+                    textAlign: 'center',
+                    flex: '0 0 36px'
+                  }}>
+                    {percentageToACTScore(accuracy)}
                   </div>
 
-                  {/* Stats */}
+                  {/* Stats - Inline */}
                   <div style={{
                     display: 'flex',
-                    gap: '0.5rem',
-                    marginBottom: '0.75rem'
+                    gap: '1.25rem',
+                    flex: 1,
+                    alignItems: 'center'
                   }}>
-                    <div style={{
-                      flex: 1,
-                      textAlign: 'center'
-                    }}>
-                      <div style={{
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
+                      <span style={{
                         fontSize: '0.6875rem',
-                        color: '#64748b',
-                        marginBottom: '0.125rem',
-                        fontWeight: '500'
-                      }}>Correct</div>
-                      <div style={{
+                        color: '#0f172a',
+                        fontWeight: '500',
+                        minWidth: '48px'
+                      }}>Correct</span>
+                      <span style={{
                         fontSize: '0.875rem',
                         fontWeight: '600',
-                        color: '#0f172a'
-                      }}>{correct}</div>
+                        color: '#16a34a',
+                        minWidth: '20px',
+                        textAlign: 'right'
+                      }}>{correct}</span>
                     </div>
-                    <div style={{
-                      flex: 1,
-                      textAlign: 'center'
-                    }}>
-                      <div style={{
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
+                      <span style={{
                         fontSize: '0.6875rem',
-                        color: '#64748b',
-                        marginBottom: '0.125rem',
-                        fontWeight: '500'
-                      }}>Wrong</div>
-                      <div style={{
+                        color: '#0f172a',
+                        fontWeight: '500',
+                        minWidth: '48px'
+                      }}>Wrong</span>
+                      <span style={{
                         fontSize: '0.875rem',
                         fontWeight: '600',
-                        color: '#0f172a'
-                      }}>{incorrect}</div>
+                        color: '#dc2626',
+                        minWidth: '20px',
+                        textAlign: 'right'
+                      }}>{incorrect}</span>
                     </div>
-                    <div style={{
-                      flex: 1,
-                      textAlign: 'center'
-                    }}>
-                      <div style={{
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
+                      <span style={{
                         fontSize: '0.6875rem',
-                        color: '#64748b',
-                        marginBottom: '0.125rem',
-                        fontWeight: '500'
-                      }}>Skipped</div>
-                      <div style={{
+                        color: '#0f172a',
+                        fontWeight: '500',
+                        minWidth: '48px'
+                      }}>Skipped</span>
+                      <span style={{
                         fontSize: '0.875rem',
                         fontWeight: '600',
-                        color: '#0f172a'
-                      }}>{skipped}</div>
+                        color: '#0f172a',
+                        minWidth: '20px',
+                        textAlign: 'right'
+                      }}>{skipped}</span>
                     </div>
                   </div>
 
@@ -788,11 +991,11 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
+                        setExpandedSection(null);
                         handleSectionSelect(key);
                       }}
                       style={{
-                        flex: 1,
-                        padding: '0.5rem 0.75rem',
+                        padding: '0.5rem 1rem',
                         background: '#0f172a',
                         color: '#ffffff',
                         border: 'none',
@@ -801,7 +1004,8 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                         fontWeight: '600',
                         cursor: 'pointer',
                         transition: 'all 0.2s ease',
-                        letterSpacing: '-0.01em'
+                        letterSpacing: '-0.01em',
+                        whiteSpace: 'nowrap'
                       }}
                       onMouseOver={(e) => {
                         e.currentTarget.style.background = '#1e293b';
@@ -819,92 +1023,114 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                       }}
                       style={{
                         padding: '0.5rem 0.75rem',
-                        background: 'transparent',
-                        color: '#64748b',
+                        background: isExpanded ? '#f8fafc' : 'transparent',
+                        color: isExpanded ? '#0f172a' : '#64748b',
                         border: 'none',
                         borderRadius: '6px',
                         fontSize: '0.75rem',
                         fontWeight: '600',
                         cursor: 'pointer',
                         transition: 'all 0.2s ease',
-                        letterSpacing: '-0.01em'
+                        letterSpacing: '-0.01em',
+                        whiteSpace: 'nowrap'
                       }}
                       onMouseOver={(e) => {
                         e.currentTarget.style.background = '#f8fafc';
                         e.currentTarget.style.color = '#0f172a';
                       }}
                       onMouseOut={(e) => {
-                        e.currentTarget.style.background = 'transparent';
-                        e.currentTarget.style.color = '#64748b';
+                        if (!isExpanded) {
+                          e.currentTarget.style.background = 'transparent';
+                          e.currentTarget.style.color = '#64748b';
+                        }
                       }}
                     >
                       {isExpanded ? 'Hide' : 'Show'}
                     </button>
                   </div>
-
-                  {/* Question Grid */}
-                  {isExpanded && (
-                    <div style={{
-                      marginTop: '1rem',
-                      paddingTop: '1rem',
-                      borderTop: '1px solid #f1f5f9'
-                    }}>
-                      <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(32px, 1fr))',
-                        gap: '0.375rem'
-                      }}>
-                        {sectionResults.map((result, idx) => {
-                          const isCorrect = result.is_correct;
-                          const isAnswered = result.user_answer !== null;
-                          const questionNum = result.question?.question_number || idx + 1;
-
-                          return (
-                            <button
-                              key={idx}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleQuestionClick(key, idx);
-                              }}
-                              style={{
-                                width: '32px',
-                                height: '32px',
-                                borderRadius: '6px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                fontSize: '0.75rem',
-                                fontWeight: '600',
-                                cursor: 'pointer',
-                                border: 'none',
-                                background: !isAnswered ? '#f8fafc' : isCorrect ? '#f0fdf4' : '#fef2f2',
-                                color: !isAnswered ? '#94a3b8' : isCorrect ? '#16a34a' : '#dc2626',
-                                transition: 'all 0.2s ease'
-                              }}
-                              onMouseOver={(e) => {
-                                e.currentTarget.style.transform = 'scale(1.05)';
-                                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
-                              }}
-                              onMouseOut={(e) => {
-                                e.currentTarget.style.transform = 'scale(1)';
-                                e.currentTarget.style.boxShadow = 'none';
-                              }}
-                              title={`Question ${questionNum}: ${!isAnswered ? 'Skipped' : isCorrect ? 'Correct' : 'Incorrect'}`}
-                            >
-                              {questionNum}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
                 </div>
               );
             })}
+            </div>
+
+            {/* Question Grid - Right Side */}
+            {expandedSection && (
+              <div style={{
+                flex: 1,
+                background: '#ffffff',
+                borderRadius: '8px',
+                padding: '1rem 1.25rem',
+                border: '0.5px solid #e2e8f0',
+                alignSelf: 'flex-start'
+              }}>
+                <h4 style={{
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  color: '#0f172a',
+                  margin: '0 0 0.75rem 0',
+                  letterSpacing: '-0.01em'
+                }}>
+                  {sectionConfig[expandedSection].name} Questions
+                </h4>
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(15, 24px)',
+                  gap: '0.25rem'
+                }}>
+                  {(testData.questionsBySection[expandedSection] || []).map((result, idx) => {
+                    const isCorrect = result.is_correct;
+                    const isAnswered = result.user_answer !== null;
+                    const questionNum = result.question?.question_number || idx + 1;
+
+                    return (
+                      <button
+                        key={idx}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setExpandedSection(null);
+                          handleQuestionClick(expandedSection, questionNum);
+                        }}
+                        style={{
+                          width: '24px',
+                          height: '24px',
+                          borderRadius: '4px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '0.625rem',
+                          fontWeight: '600',
+                          cursor: 'pointer',
+                          border: 'none',
+                          background: !isAnswered ? '#f8fafc' : isCorrect ? '#f0fdf4' : '#fef2f2',
+                          color: !isAnswered ? '#94a3b8' : isCorrect ? '#16a34a' : '#dc2626',
+                          transition: 'all 0.2s ease'
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.transform = 'scale(1.1)';
+                          e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.transform = 'scale(1)';
+                          e.currentTarget.style.boxShadow = 'none';
+                        }}
+                        title={`Question ${questionNum}: ${!isAnswered ? 'Skipped' : isCorrect ? 'Correct' : 'Incorrect'}`}
+                      >
+                        {questionNum}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Topic Breakdown - Top Weak Areas */}
-          <div>
+          <div style={{
+            border: '0.5px solid #e2e8f0',
+            borderRadius: '8px',
+            padding: '1rem',
+            background: '#ffffff'
+          }}>
             <h3 style={{
               fontSize: '0.875rem',
               fontWeight: '600',
@@ -955,7 +1181,7 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                     <div style={{
                       fontSize: '0.75rem',
                       fontWeight: '600',
-                      color: '#64748b',
+                      color: '#0f172a',
                       marginBottom: '0.5rem',
                       letterSpacing: '-0.01em'
                     }}>
@@ -985,7 +1211,7 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                           }}>{area.type}</span>
                           <span style={{
                             fontWeight: '600',
-                            color: '#64748b',
+                            color: '#0f172a',
                             fontSize: '0.75rem',
                             marginLeft: '0.5rem'
                           }}>
