@@ -3712,7 +3712,7 @@ const CourseContent = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'rgba(0, 0, 0, 0.5)',
+            background: 'rgba(0, 0, 0, 0.4)',
             zIndex: 3000,
             display: 'flex',
             alignItems: 'center',
@@ -3721,25 +3721,24 @@ const CourseContent = () => {
             overflowY: 'auto'
           }}>
             <div style={{
-              background: 'white',
-              borderRadius: '12px',
-              padding: '2rem',
-              maxWidth: '900px',
+              background: '#fff',
+              borderRadius: '8px',
+              padding: '1.5rem',
+              maxWidth: '700px',
               width: '100%',
-              margin: '2rem auto',
-              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)'
+              maxHeight: '90vh',
+              overflowY: 'auto'
             }}>
-              <h2 style={{ margin: '0 0 1.5rem', fontSize: '1.5rem', fontWeight: '600', color: '#1a1a1a' }}>
-                Edit Learning Path Goals
+              <h2 style={{ margin: '0 0 1rem', fontSize: '1.125rem', fontWeight: '600', color: '#111', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+                Edit Study Plan
               </h2>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              {/* Basic Info Section */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1.25rem' }}>
-                {/* Target Exam Date */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              {/* Basic Info */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
-                    Target Exam Date
+                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', color: '#111', marginBottom: '0.25rem', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+                    Exam Date
                   </label>
                   <input
                     type="date"
@@ -3747,132 +3746,88 @@ const CourseContent = () => {
                     onChange={(e) => setEditForm({ ...editForm, target_exam_date: e.target.value })}
                     style={{
                       width: '100%',
-                      padding: '0.625rem',
-                      border: '1px solid #d1d5db',
-                      borderRadius: '6px',
-                      fontSize: '0.875rem',
-                      fontFamily: 'inherit'
+                      padding: '0.5rem',
+                      border: 'none',
+                      borderBottom: '1px solid #e0e0e0',
+                      fontSize: '0.8125rem',
+                      outline: 'none',
+                      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                      color: '#111'
                     }}
                   />
                 </div>
-
-                {/* Current Score */}
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
-                    Current ACT Score (Optional)
+                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', color: '#111', marginBottom: '0.25rem', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+                    Current Score
                   </label>
                   <input
                     type="number"
                     min="1"
                     max="36"
-                    placeholder="1-36"
+                    placeholder="Optional"
                     value={editForm.current_score}
                     onChange={(e) => setEditForm({ ...editForm, current_score: e.target.value })}
                     style={{
                       width: '100%',
-                      padding: '0.625rem',
-                      border: '1px solid #d1d5db',
-                      borderRadius: '6px',
-                      fontSize: '0.875rem',
-                      fontFamily: 'inherit'
+                      padding: '0.5rem',
+                      border: 'none',
+                      borderBottom: '1px solid #e0e0e0',
+                      fontSize: '0.8125rem',
+                      outline: 'none',
+                      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                      color: '#111'
                     }}
                   />
                 </div>
-
-                {/* Target Score */}
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
-                    Target ACT Score
+                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', color: '#111', marginBottom: '0.25rem', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+                    Target Score
                   </label>
                   <input
                     type="number"
                     min="1"
                     max="36"
-                    placeholder="1-36"
                     value={editForm.target_score}
                     onChange={(e) => setEditForm({ ...editForm, target_score: e.target.value })}
                     style={{
                       width: '100%',
-                      padding: '0.625rem',
-                      border: '1px solid #d1d5db',
-                      borderRadius: '6px',
-                      fontSize: '0.875rem',
-                      fontFamily: 'inherit'
+                      padding: '0.5rem',
+                      border: 'none',
+                      borderBottom: '1px solid #e0e0e0',
+                      fontSize: '0.8125rem',
+                      outline: 'none',
+                      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                      color: '#111'
                     }}
                   />
                 </div>
               </div>
 
-              {/* Alternating Weeks Checkbox */}
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.75rem',
-                padding: '1rem',
-                background: '#f9fafb',
-                borderRadius: '8px',
-                border: '1px solid #e5e7eb'
-              }}>
+              {/* Alternating Weeks */}
+              <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8125rem', cursor: 'pointer', color: '#111', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
                 <input
                   type="checkbox"
-                  id="use_alternating_weeks"
                   checked={editForm.use_alternating_weeks}
                   onChange={(e) => setEditForm({ ...editForm, use_alternating_weeks: e.target.checked })}
-                  style={{
-                    width: '18px',
-                    height: '18px',
-                    cursor: 'pointer'
-                  }}
+                  style={{ cursor: 'pointer' }}
                 />
-                <label htmlFor="use_alternating_weeks" style={{
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  color: '#374151',
-                  cursor: 'pointer'
-                }}>
-                  Use Alternating Weeks (Different schedule for Week 1 vs Week 2)
-                </label>
-              </div>
+                <span>Alternating Weeks</span>
+              </label>
 
               {/* Week 1 Schedule */}
-              <div style={{
-                padding: '1.25rem',
-                background: '#ffffff',
-                borderRadius: '8px',
-                border: hoursMismatch ? '1px solid #ef4444' : '1px solid #e5e7eb',
-                borderLeft: hoursMismatch ? '3px solid #ef4444' : '1px solid #e5e7eb'
-              }}>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  marginBottom: '1rem'
-                }}>
-                  <h3 style={{
-                    margin: 0,
-                    fontSize: '1rem',
-                    fontWeight: '600',
-                    color: '#1a1a1a'
-                  }}>
-                    Week 1 Schedule - Daily Study Hours
-                  </h3>
-                  <span style={{
-                    fontSize: '0.75rem',
-                    color: '#6b7280',
-                    fontWeight: '500',
-                    padding: '0.25rem 0.5rem',
-                    background: '#f3f4f6',
-                    borderRadius: '4px'
-                  }}>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                  <label style={{ fontSize: '0.75rem', fontWeight: '500', color: '#111', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+                    Week 1
+                  </label>
+                  <span style={{ fontSize: '0.75rem', color: '#111', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
                     {(() => {
                       const studyHoursTotal = Object.values(editForm.study_hours).reduce((sum, hours) => sum + (hours || 0), 0);
-                      const practiceTestHours = 3; // Practice tests count as 3 hours
-                      const reviewHours = 2; // Review day counts as 2 hours
-                      return (studyHoursTotal + practiceTestHours + reviewHours).toFixed(1);
-                    })()}h total (includes 3h practice test + 2h review)
+                      return (studyHoursTotal + 5).toFixed(1);
+                    })()}h total
                   </span>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.75rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.5rem' }}>
                   {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => {
                     const isMockExamDay = day === (editForm.mock_exam_day || 'saturday');
                     const isReviewDay = day === (editForm.review_day || 'sunday');
@@ -3880,16 +3835,14 @@ const CourseContent = () => {
                     <div key={day}>
                       <label style={{
                         display: 'block',
-                        fontSize: '0.75rem',
-                        fontWeight: '600',
-                        color: isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#6b7280',
-                        marginBottom: '0.375rem',
+                        fontSize: '0.6875rem',
+                        fontWeight: '500',
+                        color: '#111',
+                        marginBottom: '0.25rem',
                         textTransform: 'capitalize',
-                        opacity: (isMockExamDay || isReviewDay) ? 0.6 : 1
+                        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
                       }}>
                         {day.slice(0, 3)}
-                        {isMockExamDay && ' 🎯'}
-                        {isReviewDay && ' ✓'}
                       </label>
                       <input
                         type="number"
@@ -3907,82 +3860,39 @@ const CourseContent = () => {
                         })}
                         style={{
                           width: '100%',
-                          padding: '0.5rem',
-                          border: `1px solid ${isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#d1d5db'}`,
-                          borderRadius: '6px',
-                          fontSize: '0.875rem',
-                          fontFamily: 'inherit',
+                          padding: '0.375rem',
+                          border: 'none',
+                          borderBottom: '1px solid #e0e0e0',
+                          fontSize: '0.8125rem',
                           textAlign: 'center',
-                          background: isMockExamDay ? '#eff6ff' : isReviewDay ? '#d1fae5' : 'white',
+                          background: 'transparent',
+                          outline: 'none',
                           cursor: (isMockExamDay || isReviewDay) ? 'not-allowed' : 'text',
-                          fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400',
-                          opacity: (isMockExamDay || isReviewDay) ? 0.6 : 1
+                          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                          color: '#111'
                         }}
                       />
-                      <div style={{
-                        fontSize: '0.625rem',
-                        color: isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#9ca3af',
-                        marginTop: '0.25rem',
-                        textAlign: 'center',
-                        fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400',
-                        opacity: (isMockExamDay || isReviewDay) ? 0.6 : 1
-                      }}>
-                        {isMockExamDay ? '3h' : isReviewDay ? '2h' : `${editForm.study_hours[day] || 0}h`}
-                      </div>
                     </div>
                   );
                   })}
-                </div>
-                <div style={{
-                  fontSize: '0.7rem',
-                  color: '#6b7280',
-                  marginTop: '0.75rem',
-                  fontStyle: 'italic',
-                  textAlign: 'center'
-                }}>
-                  💡 Recommended: Schedule your review day (✓) the day after taking practice tests (🎯)
                 </div>
               </div>
 
               {/* Week 2 Schedule (only if alternating weeks is checked) */}
               {editForm.use_alternating_weeks && (
-                <div style={{
-                  padding: '1.25rem',
-                  background: '#eff6ff',
-                  borderRadius: '8px',
-                  border: '1px solid #bfdbfe'
-                }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    marginBottom: '1rem'
-                  }}>
-                    <h3 style={{
-                      margin: 0,
-                      fontSize: '1rem',
-                      fontWeight: '600',
-                      color: '#1e40af'
-                    }}>
-                      Week 2 Schedule - Daily Study Hours
-                    </h3>
-                    <span style={{
-                      fontSize: '0.75rem',
-                      color: '#1e40af',
-                      fontWeight: '500',
-                      padding: '0.25rem 0.5rem',
-                      background: '#eff6ff',
-                      borderRadius: '4px'
-                    }}>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                    <label style={{ fontSize: '0.75rem', fontWeight: '500', color: '#111', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+                      Week 2
+                    </label>
+                    <span style={{ fontSize: '0.75rem', color: '#111', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
                       {(() => {
                         const studyHoursTotal = Object.values(editForm.study_hours_week2).reduce((sum, hours) => sum + (hours || 0), 0);
-                        const practiceTestHours = 3;
-                        const reviewHours = 2;
-                        return (studyHoursTotal + practiceTestHours + reviewHours).toFixed(1);
-                      })()}h total (includes 3h practice test + 2h review)
+                        return (studyHoursTotal + 5).toFixed(1);
+                      })()}h total
                     </span>
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.75rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.5rem' }}>
                     {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => {
                       const isMockExamDay = day === (editForm.mock_exam_day || 'saturday');
                       const isReviewDay = day === (editForm.review_day || 'sunday');
@@ -3990,16 +3900,14 @@ const CourseContent = () => {
                         <div key={day}>
                           <label style={{
                             display: 'block',
-                            fontSize: '0.75rem',
-                            fontWeight: '600',
-                            color: isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#1e40af',
-                            marginBottom: '0.375rem',
+                            fontSize: '0.6875rem',
+                            fontWeight: '500',
+                            color: '#111',
+                            marginBottom: '0.25rem',
                             textTransform: 'capitalize',
-                            opacity: (isMockExamDay || isReviewDay) ? 0.6 : 1
+                            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
                           }}>
                             {day.slice(0, 3)}
-                            {isMockExamDay && ' 🎯'}
-                            {isReviewDay && ' ✓'}
                           </label>
                           <input
                             type="number"
@@ -4017,117 +3925,46 @@ const CourseContent = () => {
                             })}
                             style={{
                               width: '100%',
-                              padding: '0.5rem',
-                              border: `1px solid ${isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#bfdbfe'}`,
-                              borderRadius: '6px',
-                              fontSize: '0.875rem',
-                              fontFamily: 'inherit',
+                              padding: '0.375rem',
+                              border: 'none',
+                              borderBottom: '1px solid #e0e0e0',
+                              fontSize: '0.8125rem',
                               textAlign: 'center',
-                              background: isMockExamDay ? '#eff6ff' : isReviewDay ? '#d1fae5' : '#ffffff',
+                              background: 'transparent',
+                              outline: 'none',
                               cursor: (isMockExamDay || isReviewDay) ? 'not-allowed' : 'text',
-                              fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400',
-                              opacity: (isMockExamDay || isReviewDay) ? 0.6 : 1
+                              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                              color: '#111'
                             }}
                           />
-                          <div style={{
-                            fontSize: '0.625rem',
-                            color: isMockExamDay ? '#3b82f6' : isReviewDay ? '#10b981' : '#1e40af',
-                            marginTop: '0.25rem',
-                            textAlign: 'center',
-                            fontWeight: (isMockExamDay || isReviewDay) ? '700' : '400',
-                            opacity: (isMockExamDay || isReviewDay) ? 0.6 : 1
-                          }}>
-                            {isMockExamDay ? '3h' : isReviewDay ? '2h' : `${editForm.study_hours_week2[day] || 0}h`}
-                          </div>
                         </div>
                       );
                     })}
-                  </div>
-                  <div style={{
-                    fontSize: '0.7rem',
-                    color: '#6b7280',
-                    marginTop: '0.75rem',
-                    fontStyle: 'italic',
-                    textAlign: 'center'
-                  }}>
-                    💡 Recommended: Schedule your review day (✓) the day after taking practice tests (🎯)
                   </div>
                 </div>
               )}
 
               {/* Special Days Section */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
                 {/* Mock Exam Day */}
-                <div style={{ position: 'relative' }}>
-                  <label style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                    color: '#3b82f6',
-                    marginBottom: '0.5rem'
-                  }}>
-                    🎯 Mock Exam Day (3h)
-                    <div style={{ position: 'relative', display: 'inline-block' }}>
-                      <HiQuestionMarkCircle
-                        onMouseEnter={() => setShowMockExamTooltipModal(true)}
-                        onMouseLeave={() => setShowMockExamTooltipModal(false)}
-                        style={{
-                          fontSize: '1rem',
-                          color: '#6b7280',
-                          cursor: 'help',
-                          transition: 'color 0.2s'
-                        }}
-                      />
-                      {showMockExamTooltipModal && (
-                        <div style={{
-                          position: 'absolute',
-                          bottom: '100%',
-                          left: '50%',
-                          transform: 'translateX(-50%)',
-                          marginBottom: '0.5rem',
-                          padding: '0.75rem',
-                          backgroundColor: '#111827',
-                          color: '#ffffff',
-                          borderRadius: '8px',
-                          fontSize: '0.75rem',
-                          lineHeight: '1.5',
-                          zIndex: 1000,
-                          boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-                          width: '280px',
-                          whiteSpace: 'normal'
-                        }}>
-                          Choose a day when you have 3 uninterrupted hours to take a full practice test. Saturday is recommended as it mimics real ACT test day conditions.
-                          <div style={{
-                            position: 'absolute',
-                            top: '100%',
-                            left: '50%',
-                            transform: 'translateX(-50%)',
-                            width: '0',
-                            height: '0',
-                            borderLeft: '6px solid transparent',
-                            borderRight: '6px solid transparent',
-                            borderTop: '6px solid #111827'
-                          }} />
-                        </div>
-                      )}
-                    </div>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', color: '#111', marginBottom: '0.25rem', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+                    Mock Exam Day
                   </label>
                   <select
                     value={editForm.mock_exam_day}
                     onChange={(e) => setEditForm({ ...editForm, mock_exam_day: e.target.value })}
                     style={{
                       width: '100%',
-                      padding: '0.625rem',
-                      border: dayConflict ? '2px solid #ef4444' : '2px solid #3b82f6',
-                      borderRadius: '6px',
-                      fontSize: '0.875rem',
-                      fontFamily: 'inherit',
-                      backgroundColor: '#eff6ff',
-                      color: '#1e40af',
-                      fontWeight: '400',
-                      cursor: 'pointer'
+                      padding: '0.5rem',
+                      border: 'none',
+                      borderBottom: '1px solid #e0e0e0',
+                      fontSize: '0.8125rem',
+                      background: 'transparent',
+                      outline: 'none',
+                      cursor: 'pointer',
+                      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                      color: '#111'
                     }}
                   >
                     <option value="sunday">Sunday</option>
@@ -4138,83 +3975,27 @@ const CourseContent = () => {
                     <option value="friday">Friday</option>
                     <option value="saturday">Saturday</option>
                   </select>
-                  <small style={{ fontSize: '0.75rem', color: '#2563eb', marginTop: '0.25rem', display: 'block', fontWeight: '400' }}>
-                    Automatically set to 3 hours
-                  </small>
                 </div>
 
                 {/* Review Day */}
-                <div style={{ position: 'relative' }}>
-                  <label style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                    color: '#10b981',
-                    marginBottom: '0.5rem'
-                  }}>
-                    <HiCheckCircle style={{ display: 'inline' }} />
-                    Weekly Review Day (2h)
-                    <div style={{ position: 'relative', display: 'inline-block' }}>
-                      <HiQuestionMarkCircle
-                        onMouseEnter={() => setShowReviewTooltipModal(true)}
-                        onMouseLeave={() => setShowReviewTooltipModal(false)}
-                        style={{
-                          fontSize: '1rem',
-                          color: '#6b7280',
-                          cursor: 'help',
-                          transition: 'color 0.2s'
-                        }}
-                      />
-                      {showReviewTooltipModal && (
-                        <div style={{
-                          position: 'absolute',
-                          bottom: '100%',
-                          left: '50%',
-                          transform: 'translateX(-50%)',
-                          marginBottom: '0.5rem',
-                          padding: '0.75rem',
-                          backgroundColor: '#111827',
-                          color: '#ffffff',
-                          borderRadius: '8px',
-                          fontSize: '0.75rem',
-                          lineHeight: '1.5',
-                          zIndex: 1000,
-                          boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-                          width: '280px',
-                          whiteSpace: 'normal'
-                        }}>
-                          💡 Schedule this the day after your practice test (🎯). This lets you review mistakes while fresh, turning weak areas into learning opportunities.
-                          <div style={{
-                            position: 'absolute',
-                            top: '100%',
-                            left: '50%',
-                            transform: 'translateX(-50%)',
-                            width: '0',
-                            height: '0',
-                            borderLeft: '6px solid transparent',
-                            borderRight: '6px solid transparent',
-                            borderTop: '6px solid #111827'
-                          }} />
-                        </div>
-                      )}
-                    </div>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', color: '#111', marginBottom: '0.25rem', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+                    Review Day
                   </label>
                   <select
                     value={editForm.review_day}
                     onChange={(e) => setEditForm({ ...editForm, review_day: e.target.value })}
                     style={{
                       width: '100%',
-                      padding: '0.625rem',
-                      border: dayConflict ? '2px solid #ef4444' : '2px solid #10b981',
-                      borderRadius: '6px',
-                      fontSize: '0.875rem',
-                      fontFamily: 'inherit',
-                      backgroundColor: '#d1fae5',
-                      color: '#065f46',
-                      fontWeight: '400',
-                      cursor: 'pointer'
+                      padding: '0.5rem',
+                      border: 'none',
+                      borderBottom: '1px solid #e0e0e0',
+                      fontSize: '0.8125rem',
+                      background: 'transparent',
+                      outline: 'none',
+                      cursor: 'pointer',
+                      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                      color: '#111'
                     }}
                   >
                     <option value="sunday">Sunday</option>
@@ -4225,50 +4006,43 @@ const CourseContent = () => {
                     <option value="friday">Friday</option>
                     <option value="saturday">Saturday</option>
                   </select>
-                  <small style={{ fontSize: '0.75rem', color: '#059669', marginTop: '0.25rem', display: 'block', fontWeight: '400' }}>
-                    Automatically set to 2 hours
-                  </small>
                 </div>
               </div>
               {dayConflict && (
-                <p style={{ fontSize: '0.75rem', color: '#ef4444', marginTop: '0.5rem', fontWeight: '500' }}>
-                  Review Day and Mock Exam Day cannot be the same day
+                <p style={{ fontSize: '0.6875rem', color: '#ef4444', marginTop: '0.25rem', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+                  Days cannot be the same
                 </p>
               )}
 
               {/* Weekly Hours Tier */}
-              <div style={{ marginTop: '1.5rem' }}>
-                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.5rem' }}>
-                  Weekly Study Commitment
+              <div>
+                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', color: '#111', marginBottom: '0.25rem', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+                  Study Commitment
                 </label>
                 <select
                   value={editForm.weekly_hours_tier}
                   onChange={(e) => setEditForm({ ...editForm, weekly_hours_tier: e.target.value })}
                   style={{
                     width: '100%',
-                    padding: '0.625rem',
-                    border: hoursMismatch ? '1px solid #ef4444' : '1px solid #d1d5db',
-                    borderLeft: hoursMismatch ? '3px solid #ef4444' : '1px solid #d1d5db',
-                    borderRadius: '6px',
-                    fontSize: '0.875rem',
-                    fontFamily: 'inherit',
-                    background: 'white'
+                    padding: '0.5rem',
+                    border: 'none',
+                    borderBottom: '1px solid #e0e0e0',
+                    fontSize: '0.8125rem',
+                    background: 'transparent',
+                    outline: 'none',
+                    cursor: 'pointer',
+                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                    color: '#111'
                   }}
                 >
-                  <option value="light" disabled={totalWeeklyHours > 5}>Light (1-5 hours/week)</option>
-                  <option value="moderate" disabled={totalWeeklyHours < 5 || totalWeeklyHours > 10}>Moderate (5-10 hours/week)</option>
-                  <option value="intensive" disabled={totalWeeklyHours < 10 || totalWeeklyHours > 15}>Intensive (10-15 hours/week)</option>
-                  <option value="extreme" disabled={totalWeeklyHours < 15}>Extreme (15+ hours/week)</option>
+                  <option value="light" disabled={totalWeeklyHours > 5}>Light (1-5h/week)</option>
+                  <option value="moderate" disabled={totalWeeklyHours < 5 || totalWeeklyHours > 10}>Moderate (5-10h/week)</option>
+                  <option value="intensive" disabled={totalWeeklyHours < 10 || totalWeeklyHours > 15}>Intensive (10-15h/week)</option>
+                  <option value="extreme" disabled={totalWeeklyHours < 15}>Extreme (15+h/week)</option>
                 </select>
-                <p style={{ fontSize: '0.75rem', color: '#6b7280', marginTop: '0.5rem' }}>
-                  {editForm.use_alternating_weeks
-                    ? `Average: ${totalWeeklyHours.toFixed(1)}h/week (both weeks include 3h practice test + 2h review)`
-                    : `Total: ${totalWeeklyHours.toFixed(1)}h/week (includes 3h practice test + 2h review)`
-                  }
-                </p>
                 {hoursMismatch && (
-                  <p style={{ fontSize: '0.75rem', color: '#ef4444', marginTop: '0.5rem', fontWeight: '500' }}>
-                    Your {editForm.use_alternating_weeks ? 'average' : 'total'} hours ({totalWeeklyHours.toFixed(1)}h/week) don't match {selectedTier.toUpperCase()} ({range.label})
+                  <p style={{ fontSize: '0.6875rem', color: '#ef4444', marginTop: '0.25rem', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+                    Hours mismatch ({totalWeeklyHours.toFixed(1)}h)
                   </p>
                 )}
               </div>
@@ -4277,46 +4051,23 @@ const CourseContent = () => {
             {/* Save Error Display */}
             {validationError && (
               <div style={{
-                marginTop: '1.5rem',
-                padding: '1rem',
+                marginTop: '1rem',
+                padding: '0.75rem',
                 background: '#fef2f2',
-                border: '1px solid #fecaca',
-                borderLeft: '3px solid #ef4444',
-                borderRadius: '8px'
+                borderRadius: '4px'
               }}>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '0.75rem'
-                }}>
-                  <span style={{ fontSize: '1.25rem' }}>❌</span>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
                   <div style={{ flex: 1 }}>
-                    <h4 style={{
-                      margin: 0,
-                      fontSize: '0.875rem',
-                      fontWeight: '600',
-                      color: '#991b1b',
-                      marginBottom: '0.5rem'
-                    }}>
+                    <p style={{ margin: 0, fontSize: '0.75rem', fontWeight: '500', color: '#dc2626', marginBottom: '0.25rem' }}>
                       {validationError.title}
-                    </h4>
-                    <p style={{
-                      margin: 0,
-                      fontSize: '0.8125rem',
-                      color: '#7f1d1d',
-                      marginBottom: validationError.suggestions ? '0.75rem' : 0
-                    }}>
+                    </p>
+                    <p style={{ margin: 0, fontSize: '0.6875rem', color: '#991b1b' }}>
                       {validationError.message}
                     </p>
                     {validationError.suggestions && (
-                      <ul style={{
-                        margin: 0,
-                        paddingLeft: '1.25rem',
-                        fontSize: '0.8125rem',
-                        color: '#7f1d1d'
-                      }}>
+                      <ul style={{ margin: '0.25rem 0 0 1rem', paddingLeft: 0, fontSize: '0.6875rem', color: '#991b1b' }}>
                         {validationError.suggestions.map((suggestion, idx) => (
-                          <li key={idx} style={{ marginBottom: '0.25rem' }}>{suggestion}</li>
+                          <li key={idx}>{suggestion}</li>
                         ))}
                       </ul>
                     )}
@@ -4324,12 +4075,12 @@ const CourseContent = () => {
                   <button
                     onClick={() => setValidationError(null)}
                     style={{
-                      padding: '0.25rem',
+                      padding: '0.125rem',
                       background: 'none',
                       border: 'none',
                       cursor: 'pointer',
                       color: '#991b1b',
-                      fontSize: '1.25rem',
+                      fontSize: '1rem',
                       lineHeight: 1
                     }}
                   >
@@ -4339,22 +4090,22 @@ const CourseContent = () => {
               </div>
             )}
 
-            <div style={{ display: 'flex', gap: '0.75rem', marginTop: '2rem' }}>
+            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1.25rem' }}>
               <button
                 onClick={() => setEditModalOpen(false)}
                 disabled={savingGoals}
                 style={{
                   flex: 1,
-                  padding: '0.75rem',
-                  border: '1px solid #d1d5db',
-                  borderRadius: '6px',
+                  padding: '0.625rem',
+                  border: '1px solid #e0e0e0',
+                  borderRadius: '4px',
                   background: 'white',
-                  color: '#374151',
-                  fontSize: '0.875rem',
+                  color: '#111',
+                  fontSize: '0.8125rem',
                   fontWeight: '500',
                   cursor: savingGoals ? 'not-allowed' : 'pointer',
-                  transition: 'all 0.15s ease',
-                  opacity: savingGoals ? 0.5 : 1
+                  opacity: savingGoals ? 0.5 : 1,
+                  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
                 }}
               >
                 Cancel
@@ -4364,20 +4115,20 @@ const CourseContent = () => {
                 disabled={savingGoals}
                 style={{
                   flex: 1,
-                  padding: '0.75rem',
+                  padding: '0.625rem',
                   border: 'none',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   background: savingGoals ? '#9ca3af' : '#1a1a1a',
                   color: 'white',
-                  fontSize: '0.875rem',
+                  fontSize: '0.8125rem',
                   fontWeight: '500',
                   cursor: savingGoals ? 'not-allowed' : 'pointer',
-                  transition: 'all 0.15s ease',
                   opacity: savingGoals ? 0.7 : 1,
-                  animation: saveButtonShake ? 'shake 0.5s' : 'none'
+                  animation: saveButtonShake ? 'shake 0.5s' : 'none',
+                  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
                 }}
               >
-                {savingGoals ? 'Saving...' : 'Save Changes'}
+                {savingGoals ? 'Saving...' : 'Save'}
               </button>
             </div>
 

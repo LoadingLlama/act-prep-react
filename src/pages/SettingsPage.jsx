@@ -173,209 +173,133 @@ const SettingsPage = () => {
   }
 
   return (
-    <div style={settingsStyles.container}>
-      <div style={settingsStyles.header}>
-        <h1 style={settingsStyles.title}>Settings</h1>
-        <p style={settingsStyles.subtitle}>Manage your account preferences and notifications</p>
+    <div style={{ padding: '2rem' }}>
+      <div style={{ marginBottom: '2rem' }}>
+        <h1 style={{ margin: '0 0 0.25rem', fontSize: '1.5rem', fontWeight: '600', color: '#111' }}>Settings</h1>
+        <p style={{ margin: 0, fontSize: '0.8125rem', color: '#111' }}>Manage your preferences</p>
       </div>
 
       {message && (
-        <div
-          style={{
-            ...settingsStyles.message,
-            ...(message.includes('saved') || message.includes('sent')
-              ? settingsStyles.successMessage
-              : settingsStyles.errorMessage),
-          }}
-        >
+        <div style={{
+          padding: '0.75rem',
+          marginBottom: '1rem',
+          background: (message.includes('saved') || message.includes('sent')) ? '#f0fdf4' : '#fef2f2',
+          color: (message.includes('saved') || message.includes('sent')) ? '#16a34a' : '#dc2626',
+          borderRadius: '4px',
+          fontSize: '0.8125rem'
+        }}>
           {message}
         </div>
       )}
 
-      <div style={settingsStyles.content}>
-        {/* Subscription Management */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+        {/* Subscription */}
         {isPro && subscription && (
-          <div style={settingsStyles.section}>
-            <div style={settingsStyles.sectionHeader}>
-              <HiCreditCard size={24} />
+          <div>
+            <h3 style={{ margin: '0 0 0.75rem', fontSize: '0.875rem', fontWeight: '600', color: '#111' }}>
+              Subscription
+            </h3>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div>
-                <h3 style={settingsStyles.sectionTitle}>Subscription</h3>
-                <p style={settingsStyles.sectionDescription}>
-                  Manage your Pro subscription and billing
+                <div style={{ fontSize: '0.8125rem', fontWeight: '500', color: '#111', marginBottom: '0.25rem' }}>
+                  Pro Member
+                </div>
+                <p style={{ margin: 0, fontSize: '0.75rem', color: '#999' }}>
+                  {subscription.subscription_status === 'active' && subscription.current_period_end
+                    ? `Renews ${new Date(subscription.current_period_end).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`
+                    : 'Active'}
                 </p>
               </div>
-            </div>
-
-            <div style={{
-              padding: '1.5rem',
-              background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
-              borderRadius: '12px',
-              border: '2px solid #bae6fd',
-              marginTop: '1rem'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-                <HiCheckBadge size={28} color="#0ea5e9" />
-                <div>
-                  <h4 style={{ fontSize: '1.125rem', fontWeight: '700', color: '#0c4a6e', marginBottom: '0.25rem' }}>
-                    Pro Member
-                  </h4>
-                  <p style={{ fontSize: '0.875rem', color: '#0369a1' }}>
-                    {subscription.subscription_status === 'active' && subscription.current_period_end
-                      ? `Renews on ${new Date(subscription.current_period_end).toLocaleDateString()}`
-                      : 'Active subscription'}
-                  </p>
-                </div>
-              </div>
-
               <button
                 onClick={async () => {
                   try {
                     await redirectToCustomerPortal(user.id);
                   } catch (error) {
-                    setMessage('Failed to open customer portal. Please try again.');
+                    setMessage('Failed to open portal');
                   }
                 }}
                 style={{
-                  padding: '0.75rem 1.5rem',
-                  background: '#0ea5e9',
+                  padding: '0.5rem 0.875rem',
+                  background: '#111',
                   color: 'white',
                   border: 'none',
-                  borderRadius: '8px',
-                  fontSize: '0.9375rem',
-                  fontWeight: '600',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem'
+                  borderRadius: '4px',
+                  fontSize: '0.75rem',
+                  fontWeight: '500',
+                  cursor: 'pointer'
                 }}
-                onMouseOver={(e) => e.currentTarget.style.background = '#0284c7'}
-                onMouseOut={(e) => e.currentTarget.style.background = '#0ea5e9'}
               >
-                <HiCreditCard size={20} />
-                Manage Billing & Payment
+                Manage Billing
               </button>
             </div>
           </div>
         )}
 
         {/* Notifications */}
-        <div style={settingsStyles.section}>
-          <div style={settingsStyles.sectionHeader}>
-            <HiBell size={24} />
-            <div>
-              <h3 style={settingsStyles.sectionTitle}>Notifications</h3>
-              <p style={settingsStyles.sectionDescription}>
-                Choose how you want to be notified about your progress
-              </p>
-            </div>
-          </div>
-
-          <div style={settingsStyles.settingsList}>
-            <div style={settingsStyles.settingItem}>
-              <div style={settingsStyles.settingInfo}>
-                <h4 style={settingsStyles.settingLabel}>Email Notifications</h4>
-                <p style={settingsStyles.settingDescription}>
-                  Receive emails about your account and progress
-                </p>
-              </div>
-              <label className="settings-toggle">
-                <input
-                  type="checkbox"
-                  checked={preferences.emailNotifications}
-                  onChange={() => handleToggle('emailNotifications')}
-                  disabled={saving}
-                />
-                <span className="settings-toggle-slider"></span>
-              </label>
-            </div>
-
-            <div style={settingsStyles.settingItem}>
-              <div style={settingsStyles.settingInfo}>
-                <h4 style={settingsStyles.settingLabel}>Practice Reminders</h4>
-                <p style={settingsStyles.settingDescription}>
-                  Get reminders to complete your daily practice
-                </p>
-              </div>
-              <label className="settings-toggle">
-                <input
-                  type="checkbox"
-                  checked={preferences.practiceReminders}
-                  onChange={() => handleToggle('practiceReminders')}
-                  disabled={saving}
-                />
-                <span className="settings-toggle-slider"></span>
-              </label>
-            </div>
-
-            <div style={settingsStyles.settingItem}>
-              <div style={settingsStyles.settingInfo}>
-                <h4 style={settingsStyles.settingLabel}>Weekly Reports</h4>
-                <p style={settingsStyles.settingDescription}>
-                  Receive weekly progress reports via email
-                </p>
-              </div>
-              <label className="settings-toggle">
-                <input
-                  type="checkbox"
-                  checked={preferences.weeklyReports}
-                  onChange={() => handleToggle('weeklyReports')}
-                  disabled={saving}
-                />
-                <span className="settings-toggle-slider"></span>
-              </label>
-            </div>
+        <div>
+          <h3 style={{ margin: '0 0 0.75rem', fontSize: '0.875rem', fontWeight: '600', color: '#111' }}>
+            Notifications
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
+              <span style={{ fontSize: '0.8125rem', color: '#111' }}>Email Notifications</span>
+              <input
+                type="checkbox"
+                checked={preferences.emailNotifications}
+                onChange={() => handleToggle('emailNotifications')}
+                disabled={saving}
+                style={{ width: '16px', height: '16px', cursor: 'pointer' }}
+              />
+            </label>
+            <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
+              <span style={{ fontSize: '0.8125rem', color: '#111' }}>Practice Reminders</span>
+              <input
+                type="checkbox"
+                checked={preferences.practiceReminders}
+                onChange={() => handleToggle('practiceReminders')}
+                disabled={saving}
+                style={{ width: '16px', height: '16px', cursor: 'pointer' }}
+              />
+            </label>
+            <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
+              <span style={{ fontSize: '0.8125rem', color: '#111' }}>Weekly Reports</span>
+              <input
+                type="checkbox"
+                checked={preferences.weeklyReports}
+                onChange={() => handleToggle('weeklyReports')}
+                disabled={saving}
+                style={{ width: '16px', height: '16px', cursor: 'pointer' }}
+              />
+            </label>
           </div>
         </div>
 
         {/* Preferences */}
-        <div style={settingsStyles.section}>
-          <div style={settingsStyles.sectionHeader}>
-            <HiMoon size={24} />
-            <div>
-              <h3 style={settingsStyles.sectionTitle}>Preferences</h3>
-              <p style={settingsStyles.sectionDescription}>
-                Customize your learning experience
-              </p>
-            </div>
-          </div>
-
-          <div style={settingsStyles.settingsList}>
-            <div style={settingsStyles.settingItem}>
-              <div style={settingsStyles.settingInfo}>
-                <h4 style={settingsStyles.settingLabel}>Auto-Save Progress</h4>
-                <p style={settingsStyles.settingDescription}>
-                  Automatically save your progress as you learn
-                </p>
-              </div>
-              <label className="settings-toggle">
-                <input
-                  type="checkbox"
-                  checked={preferences.autoSave}
-                  onChange={() => handleToggle('autoSave')}
-                  disabled={saving}
-                />
-                <span className="settings-toggle-slider"></span>
-              </label>
-            </div>
-
-            <div style={settingsStyles.settingItem}>
-              <div style={settingsStyles.settingInfo}>
-                <h4 style={settingsStyles.settingLabel}>Show Hints</h4>
-                <p style={settingsStyles.settingDescription}>
-                  Display hints and tips during practice questions
-                </p>
-              </div>
-              <label className="settings-toggle">
-                <input
-                  type="checkbox"
-                  checked={preferences.showHints}
-                  onChange={() => handleToggle('showHints')}
-                  disabled={saving}
-                />
-                <span className="settings-toggle-slider"></span>
-              </label>
-            </div>
+        <div>
+          <h3 style={{ margin: '0 0 0.75rem', fontSize: '0.875rem', fontWeight: '600', color: '#111' }}>
+            Preferences
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
+              <span style={{ fontSize: '0.8125rem', color: '#111' }}>Auto-Save Progress</span>
+              <input
+                type="checkbox"
+                checked={preferences.autoSave}
+                onChange={() => handleToggle('autoSave')}
+                disabled={saving}
+                style={{ width: '16px', height: '16px', cursor: 'pointer' }}
+              />
+            </label>
+            <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}>
+              <span style={{ fontSize: '0.8125rem', color: '#111' }}>Show Hints</span>
+              <input
+                type="checkbox"
+                checked={preferences.showHints}
+                onChange={() => handleToggle('showHints')}
+                disabled={saving}
+                style={{ width: '16px', height: '16px', cursor: 'pointer' }}
+              />
+            </label>
           </div>
         </div>
 
@@ -383,45 +307,44 @@ const SettingsPage = () => {
         <GoalsSettings />
 
         {/* Security */}
-        <div style={settingsStyles.section}>
-          <div style={settingsStyles.sectionHeader}>
-            <HiShieldCheck size={24} />
-            <div>
-              <h3 style={settingsStyles.sectionTitle}>Security</h3>
-              <p style={settingsStyles.sectionDescription}>
-                Manage your account security settings
-              </p>
-            </div>
-          </div>
-
-          <div style={settingsStyles.settingsList}>
-            <div style={settingsStyles.settingItem}>
-              <div style={settingsStyles.settingInfo}>
-                <h4 style={settingsStyles.settingLabel}>Password</h4>
-                <p style={settingsStyles.settingDescription}>
-                  Reset your account password
-                </p>
-              </div>
+        <div>
+          <h3 style={{ margin: '0 0 0.75rem', fontSize: '0.875rem', fontWeight: '600', color: '#111' }}>
+            Security
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span style={{ fontSize: '0.8125rem', color: '#111' }}>Password</span>
               <button
                 onClick={handlePasswordReset}
-                style={settingsStyles.secondaryButton}
                 disabled={saving}
+                style={{
+                  padding: '0.5rem 0.875rem',
+                  background: 'white',
+                  color: '#111',
+                  border: '1px solid #e0e0e0',
+                  borderRadius: '4px',
+                  fontSize: '0.75rem',
+                  fontWeight: '500',
+                  cursor: saving ? 'not-allowed' : 'pointer'
+                }}
               >
-                <HiEnvelope size={18} />
-                Send Reset Email
+                Reset
               </button>
             </div>
-
-            <div style={settingsStyles.settingItem}>
-              <div style={settingsStyles.settingInfo}>
-                <h4 style={settingsStyles.settingLabel}>Sign Out</h4>
-                <p style={settingsStyles.settingDescription}>
-                  Sign out of your account on this device
-                </p>
-              </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span style={{ fontSize: '0.8125rem', color: '#111' }}>Sign Out</span>
               <button
                 onClick={signOut}
-                style={settingsStyles.secondaryButton}
+                style={{
+                  padding: '0.5rem 0.875rem',
+                  background: 'white',
+                  color: '#dc2626',
+                  border: '1px solid #e0e0e0',
+                  borderRadius: '4px',
+                  fontSize: '0.75rem',
+                  fontWeight: '500',
+                  cursor: 'pointer'
+                }}
               >
                 Sign Out
               </button>

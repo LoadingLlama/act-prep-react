@@ -221,252 +221,257 @@ const ProfilePage = () => {
   }
 
   return (
-    <div style={profileStyles.container}>
-      <div style={profileStyles.header}>
-        <h1 style={profileStyles.title}>My Profile</h1>
-        <p style={profileStyles.subtitle}>Manage your personal information and ACT prep goals</p>
+    <div style={{ padding: '2rem' }}>
+      <div style={{ marginBottom: '2rem' }}>
+        <h1 style={{ margin: '0 0 0.25rem', fontSize: '1.5rem', fontWeight: '600', color: '#111' }}>Profile</h1>
+        <p style={{ margin: 0, fontSize: '0.8125rem', color: '#111' }}>Manage your account</p>
       </div>
 
       {message && (
-        <div
-          style={{
-            ...profileStyles.message,
-            ...(message.includes('success') ? profileStyles.successMessage : profileStyles.errorMessage),
-          }}
-        >
+        <div style={{
+          padding: '0.75rem',
+          marginBottom: '1rem',
+          background: message.includes('success') ? '#f0fdf4' : '#fef2f2',
+          color: message.includes('success') ? '#16a34a' : '#dc2626',
+          borderRadius: '4px',
+          fontSize: '0.8125rem'
+        }}>
           {message}
         </div>
       )}
 
-      <div style={profileStyles.content}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
         {/* Avatar Section */}
-        <div style={profileStyles.avatarSection}>
-          <div style={profileStyles.avatarContainer}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div style={{ position: 'relative' }}>
             {profile?.avatar_url ? (
               <img
                 src={profile.avatar_url}
                 alt="Profile"
-                style={profileStyles.avatar}
+                style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover' }}
               />
             ) : (
-              <div style={profileStyles.avatarPlaceholder}>
-                <HiUser size={48} color="#94a3b8" />
+              <div style={{
+                width: '80px',
+                height: '80px',
+                borderRadius: '50%',
+                background: '#f5f5f5',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <HiUser size={40} color="#ccc" />
               </div>
             )}
-            <label style={profileStyles.avatarUpload}>
-              <HiCamera size={18} />
+            <label style={{
+              position: 'absolute',
+              bottom: 0,
+              right: 0,
+              width: '28px',
+              height: '28px',
+              borderRadius: '50%',
+              background: '#111',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              color: 'white'
+            }}>
+              <HiCamera size={14} />
               <input
                 type="file"
                 accept="image/*"
                 onChange={handleAvatarUpload}
-                style={profileStyles.avatarInput}
+                style={{ display: 'none' }}
               />
             </label>
           </div>
-          <div style={profileStyles.avatarInfo}>
-            <h3 style={profileStyles.userName}>{formData.full_name || 'No name set'}</h3>
-            <p style={profileStyles.userEmail}>{user?.email}</p>
+          <div>
+            <h3 style={{ margin: '0 0 0.25rem', fontSize: '1rem', fontWeight: '600', color: '#111' }}>
+              {formData.full_name || 'No name set'}
+            </h3>
+            <p style={{ margin: 0, fontSize: '0.8125rem', color: '#999' }}>{user?.email}</p>
           </div>
         </div>
 
-        {/* Subscription Management Section */}
-        <div style={profileStyles.formSection}>
-          <h3 style={profileStyles.sectionTitle}>
-            {isPro ? <HiCheckBadge size={20} /> : <HiClock size={20} />}
-            Subscription Status
+        {/* Subscription Status */}
+        <div>
+          <h3 style={{ margin: '0 0 0.75rem', fontSize: '0.875rem', fontWeight: '600', color: '#111' }}>
+            Subscription
           </h3>
-
-          <div style={profileStyles.subscriptionCard}>
-            <div style={profileStyles.subscriptionHeader}>
-              <div>
-                <div style={{
-                  ...profileStyles.statusBadge,
-                  ...(isPro ? profileStyles.proBadge : profileStyles.trialBadge)
-                }}>
-                  {isPro ? (
-                    <>
-                      <HiCheckBadge size={16} />
-                      <span>Pro Member</span>
-                    </>
-                  ) : (
-                    <>
-                      <HiClock size={16} />
-                      <span>Free Trial</span>
-                    </>
-                  )}
-                </div>
-                {accountCreatedAt && (
-                  <p style={profileStyles.accountDate}>
-                    Member since {accountCreatedAt.toLocaleDateString('en-US', {
-                      month: 'long',
-                      day: 'numeric',
-                      year: 'numeric'
-                    })}
-                  </p>
-                )}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+            <div>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.375rem',
+                padding: '0.25rem 0.625rem',
+                background: isPro ? '#f0fdf4' : '#fef3c7',
+                color: isPro ? '#16a34a' : '#d97706',
+                borderRadius: '12px',
+                fontSize: '0.75rem',
+                fontWeight: '600',
+                marginBottom: '0.375rem'
+              }}>
+                {isPro ? 'Pro' : 'Free Trial'}
               </div>
-              {!isPro && trialDaysLeft > 0 && (
-                <div style={profileStyles.trialWarning}>
-                  <strong>{trialDaysLeft} days</strong> remaining in your trial
-                </div>
-              )}
-              {!isPro && trialDaysLeft === 0 && (
-                <div style={profileStyles.trialExpired}>
-                  Your trial has expired
-                </div>
+              {accountCreatedAt && (
+                <p style={{ margin: 0, fontSize: '0.75rem', color: '#999' }}>
+                  Since {accountCreatedAt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                </p>
               )}
             </div>
-
-            {featureAccess && (
-              <div style={profileStyles.featureGrid}>
-                <div style={profileStyles.featureCard}>
-                  <div style={profileStyles.featureIcon}>
-                    <HiAcademicCap size={18} color="#3b82f6" />
-                  </div>
-                  <div style={profileStyles.featureContent}>
-                    <div style={profileStyles.featureLabel}>Lessons</div>
-                    <div style={profileStyles.featureValue}>
-                      {isPro ? 'Unlimited' : `${featureAccess.lessonsPerSection} per section`}
-                    </div>
-                  </div>
-                </div>
-
-                <div style={profileStyles.featureCard}>
-                  <div style={profileStyles.featureIcon}>
-                    <HiDocumentText size={18} color="#3b82f6" />
-                  </div>
-                  <div style={profileStyles.featureContent}>
-                    <div style={profileStyles.featureLabel}>Tests</div>
-                    <div style={profileStyles.featureValue}>
-                      {isPro ? 'Unlimited' : `${featureAccess.practiceTests} test`}
-                    </div>
-                  </div>
-                </div>
-
-                <div style={profileStyles.featureCard}>
-                  <div style={profileStyles.featureIcon}>
-                    <HiBookOpen size={18} color="#3b82f6" />
-                  </div>
-                  <div style={profileStyles.featureContent}>
-                    <div style={profileStyles.featureLabel}>Questions</div>
-                    <div style={profileStyles.featureValue}>
-                      {isPro ? 'Unlimited' : `${featureAccess.practiceQuestionsPerLesson}/lesson`}
-                    </div>
-                  </div>
-                </div>
-
-                <div style={profileStyles.featureCard}>
-                  <div style={profileStyles.featureIcon}>
-                    <HiChartBar size={18} color="#3b82f6" />
-                  </div>
-                  <div style={profileStyles.featureContent}>
-                    <div style={profileStyles.featureLabel}>Insights</div>
-                    <div style={profileStyles.featureValue}>
-                      {isPro ? 'Full access' : 'Locked'}
-                    </div>
-                  </div>
-                </div>
-
-                <div style={profileStyles.featureCard}>
-                  <div style={profileStyles.featureIcon}>
-                    <HiSparkles size={18} color="#3b82f6" />
-                  </div>
-                  <div style={profileStyles.featureContent}>
-                    <div style={profileStyles.featureLabel}>AI Path</div>
-                    <div style={profileStyles.featureValue}>
-                      {isPro ? 'Enabled' : 'Locked'}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {!isPro ? (
+            {hasStripeSubscription && (
               <button
-                style={profileStyles.upgradeButton}
-                onClick={() => navigate('/app/upgrade')}
-              >
-                <HiRocketLaunch size={20} />
-                Upgrade to Pro
-              </button>
-            ) : hasStripeSubscription ? (
-              <button
-                style={profileStyles.manageButton}
                 onClick={async () => {
                   try {
                     await redirectToCustomerPortal(user.id);
                   } catch (error) {
-                    console.error('Error opening customer portal:', error);
-                    setMessage('Failed to open customer portal. Please try again.');
+                    setMessage('Failed to open portal');
                   }
                 }}
+                style={{
+                  padding: '0.5rem 0.875rem',
+                  background: '#111',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '4px',
+                  fontSize: '0.75rem',
+                  fontWeight: '500',
+                  cursor: 'pointer'
+                }}
               >
-                <HiCog6Tooth size={20} />
-                Manage Subscription
+                Manage
               </button>
-            ) : null}
+            )}
           </div>
+          {featureAccess && (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.5rem', fontSize: '0.75rem' }}>
+              <div style={{ padding: '0.5rem', background: '#fafafa', borderRadius: '4px' }}>
+                <div style={{ color: '#999', marginBottom: '0.125rem' }}>Lessons</div>
+                <div style={{ fontWeight: '500', color: '#111' }}>
+                  {isPro ? 'Unlimited' : `${featureAccess.lessonsPerSection}/section`}
+                </div>
+              </div>
+              <div style={{ padding: '0.5rem', background: '#fafafa', borderRadius: '4px' }}>
+                <div style={{ color: '#999', marginBottom: '0.125rem' }}>Tests</div>
+                <div style={{ fontWeight: '500', color: '#111' }}>
+                  {isPro ? 'Unlimited' : `${featureAccess.practiceTests}`}
+                </div>
+              </div>
+              <div style={{ padding: '0.5rem', background: '#fafafa', borderRadius: '4px' }}>
+                <div style={{ color: '#999', marginBottom: '0.125rem' }}>Questions</div>
+                <div style={{ fontWeight: '500', color: '#111' }}>
+                  {isPro ? 'Unlimited' : `${featureAccess.practiceQuestionsPerLesson}/lesson`}
+                </div>
+              </div>
+              <div style={{ padding: '0.5rem', background: '#fafafa', borderRadius: '4px' }}>
+                <div style={{ color: '#999', marginBottom: '0.125rem' }}>Insights</div>
+                <div style={{ fontWeight: '500', color: '#111' }}>
+                  {isPro ? 'Full' : 'Locked'}
+                </div>
+              </div>
+              <div style={{ padding: '0.5rem', background: '#fafafa', borderRadius: '4px' }}>
+                <div style={{ color: '#999', marginBottom: '0.125rem' }}>AI Path</div>
+                <div style={{ fontWeight: '500', color: '#111' }}>
+                  {isPro ? 'Yes' : 'No'}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* Profile Form */}
-        <form onSubmit={handleSubmit} style={profileStyles.form}>
-          <div style={profileStyles.formSection}>
-            <h3 style={profileStyles.sectionTitle}>
-              <HiUser size={20} />
-              Personal Information
-            </h3>
+        {/* Personal Information */}
+        <form onSubmit={handleSubmit}>
+          <h3 style={{ margin: '0 0 0.75rem', fontSize: '0.875rem', fontWeight: '600', color: '#111' }}>
+            Personal Information
+          </h3>
 
-            <div style={profileStyles.formRow}>
-              <div style={profileStyles.formGroup}>
-                <label style={profileStyles.label}>Full Name</label>
-                <input
-                  type="text"
-                  name="full_name"
-                  value={formData.full_name}
-                  onChange={handleChange}
-                  style={profileStyles.input}
-                  placeholder="Enter your full name"
-                />
-              </div>
-
-              <div style={profileStyles.formGroup}>
-                <label style={profileStyles.label}>
-                  <HiPhone size={16} style={{ marginBottom: -2 }} /> Phone Number
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  style={profileStyles.input}
-                  placeholder="(555) 123-4567"
-                />
-              </div>
-            </div>
-
-            <div style={profileStyles.formGroup}>
-              <label style={profileStyles.label}>
-                <HiEnvelope size={16} style={{ marginBottom: -2 }} /> Email Address
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '0.75rem' }}>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', color: '#666', marginBottom: '0.25rem' }}>
+                Full Name
               </label>
               <input
-                type="email"
-                value={user?.email}
-                style={{ ...profileStyles.input, ...profileStyles.inputDisabled }}
-                disabled
+                type="text"
+                name="full_name"
+                value={formData.full_name}
+                onChange={handleChange}
+                style={{
+                  width: '100%',
+                  padding: '0.5rem',
+                  border: 'none',
+                  borderBottom: '1px solid #e0e0e0',
+                  fontSize: '0.8125rem',
+                  background: 'transparent',
+                  outline: 'none'
+                }}
+                placeholder="Enter your name"
               />
-              <small style={profileStyles.helpText}>Email cannot be changed</small>
+            </div>
+
+            <div>
+              <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', color: '#666', marginBottom: '0.25rem' }}>
+                Phone
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                style={{
+                  width: '100%',
+                  padding: '0.5rem',
+                  border: 'none',
+                  borderBottom: '1px solid #e0e0e0',
+                  fontSize: '0.8125rem',
+                  background: 'transparent',
+                  outline: 'none'
+                }}
+                placeholder="(555) 123-4567"
+              />
             </div>
           </div>
 
-          <div style={profileStyles.formActions}>
-            <button
-              type="submit"
-              style={profileStyles.submitButton}
-              disabled={saving}
-            >
-              {saving ? 'Saving...' : 'Save Changes'}
-            </button>
+          <div style={{ marginBottom: '1rem' }}>
+            <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', color: '#666', marginBottom: '0.25rem' }}>
+              Email
+            </label>
+            <input
+              type="email"
+              value={user?.email}
+              style={{
+                width: '100%',
+                padding: '0.5rem',
+                border: 'none',
+                borderBottom: '1px solid #e0e0e0',
+                fontSize: '0.8125rem',
+                background: 'transparent',
+                outline: 'none',
+                opacity: 0.5,
+                cursor: 'not-allowed'
+              }}
+              disabled
+            />
+            <small style={{ fontSize: '0.6875rem', color: '#999' }}>Cannot be changed</small>
           </div>
+
+          <button
+            type="submit"
+            disabled={saving}
+            style={{
+              padding: '0.625rem 1rem',
+              background: saving ? '#ccc' : '#111',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              fontSize: '0.8125rem',
+              fontWeight: '500',
+              cursor: saving ? 'not-allowed' : 'pointer'
+            }}
+          >
+            {saving ? 'Saving...' : 'Save'}
+          </button>
         </form>
       </div>
     </div>

@@ -165,77 +165,29 @@ const GoalsSettings = () => {
   }
 
   return (
-    <div style={{
-      padding: '2rem',
-      background: '#ffffff',
-      border: '1px solid #e2e8f0',
-      borderRadius: '8px',
-    }}>
-      <div style={{
-        display: 'flex',
-        alignItems: 'flex-start',
-        gap: '1rem',
-        marginBottom: '1.5rem',
-        color: '#0f172a',
-      }}>
-        <HiAcademicCap size={24} />
-        <div>
-          <h3 style={{
-            fontSize: '1.125rem',
-            fontWeight: '700',
-            color: '#0f172a',
-            margin: '0 0 0.25rem 0',
-            letterSpacing: '-0.01em',
-          }}>
-            Study Goals & Preferences
-          </h3>
-          <p style={{
-            fontSize: '0.875rem',
-            color: '#64748b',
-            margin: 0,
-          }}>
-            Update your goals to personalize your learning path
-          </p>
-        </div>
-      </div>
+    <div>
+      <h3 style={{ margin: '0 0 0.75rem', fontSize: '0.875rem', fontWeight: '600', color: '#111' }}>
+        Study Goals
+      </h3>
 
       {message.text && (
         <div style={{
-          padding: '1rem',
-          marginBottom: '1.5rem',
-          borderRadius: '8px',
-          backgroundColor: message.type === 'success' ? '#d1fae5' : '#fee2e2',
-          border: `1px solid ${message.type === 'success' ? '#10b981' : '#ef4444'}`,
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem'
+          padding: '0.75rem',
+          marginBottom: '1rem',
+          background: message.type === 'success' ? '#f0fdf4' : '#fef2f2',
+          color: message.type === 'success' ? '#16a34a' : '#dc2626',
+          borderRadius: '4px',
+          fontSize: '0.8125rem'
         }}>
-          {message.type === 'success' ? (
-            <HiCheckCircle style={{ fontSize: '1.25rem', color: '#10b981' }} />
-          ) : (
-            <HiXCircle style={{ fontSize: '1.25rem', color: '#ef4444' }} />
-          )}
-          <span style={{
-            fontSize: '0.875rem',
-            color: message.type === 'success' ? '#065f46' : '#991b1b'
-          }}>
-            {message.text}
-          </span>
+          {message.text}
         </div>
       )}
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         {/* Test Date and Scores */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem' }}>
           <div>
-            <label style={{
-              display: 'block',
-              fontSize: '0.875rem',
-              fontWeight: '600',
-              color: '#374151',
-              marginBottom: '0.5rem'
-            }}>
-              <HiCalendar style={{ display: 'inline', marginRight: '0.25rem' }} />
+            <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', color: '#666', marginBottom: '0.25rem' }}>
               Test Date
             </label>
             <input
@@ -244,23 +196,19 @@ const GoalsSettings = () => {
               onChange={(e) => handleChange('target_exam_date', e.target.value)}
               style={{
                 width: '100%',
-                padding: '0.65rem',
-                borderRadius: '8px',
-                border: '1px solid #d1d5db',
-                fontSize: '0.95rem'
+                padding: '0.5rem',
+                border: 'none',
+                borderBottom: '1px solid #e0e0e0',
+                fontSize: '0.8125rem',
+                background: 'transparent',
+                outline: 'none'
               }}
             />
           </div>
 
           <div>
-            <label style={{
-              display: 'block',
-              fontSize: '0.875rem',
-              fontWeight: '600',
-              color: '#374151',
-              marginBottom: '0.5rem'
-            }}>
-              Current ACT Score
+            <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', color: '#666', marginBottom: '0.25rem' }}>
+              Current Score
             </label>
             <input
               type="number"
@@ -268,27 +216,22 @@ const GoalsSettings = () => {
               max="36"
               value={goals.current_score}
               onChange={(e) => handleChange('current_score', e.target.value)}
-              placeholder="Leave blank if not taken"
+              placeholder="If taken"
               style={{
                 width: '100%',
-                padding: '0.65rem',
-                borderRadius: '8px',
-                border: '1px solid #d1d5db',
-                fontSize: '0.95rem'
+                padding: '0.5rem',
+                border: 'none',
+                borderBottom: '1px solid #e0e0e0',
+                fontSize: '0.8125rem',
+                background: 'transparent',
+                outline: 'none'
               }}
             />
           </div>
 
           <div>
-            <label style={{
-              display: 'block',
-              fontSize: '0.875rem',
-              fontWeight: '600',
-              color: '#374151',
-              marginBottom: '0.5rem'
-            }}>
-              <HiAcademicCap style={{ display: 'inline', marginRight: '0.25rem' }} />
-              Target ACT Score
+            <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', color: '#666', marginBottom: '0.25rem' }}>
+              Target Score
             </label>
             <input
               type="number"
@@ -298,44 +241,45 @@ const GoalsSettings = () => {
               onChange={(e) => handleChange('target_score', e.target.value)}
               style={{
                 width: '100%',
-                padding: '0.65rem',
-                borderRadius: '8px',
-                border: '1px solid #d1d5db',
-                fontSize: '0.95rem'
+                padding: '0.5rem',
+                border: 'none',
+                borderBottom: '1px solid #e0e0e0',
+                fontSize: '0.8125rem',
+                background: 'transparent',
+                outline: 'none'
               }}
             />
           </div>
         </div>
 
         {/* Daily Study Hours */}
-        <div style={{ marginTop: '0.5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-            <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.875rem', fontWeight: '600', color: '#374151' }}>
-              Daily Study Hours
-              <Tooltip id="daily-study-hours" text="Customize your study schedule—set different hours for each day, rest days, or alternate weeks." />
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+            <label style={{ fontSize: '0.75rem', fontWeight: '500', color: '#666' }}>
+              Study Hours
             </label>
-            <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.8rem', color: '#6b7280', cursor: 'pointer' }}>
+            <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.75rem', color: '#666', cursor: 'pointer' }}>
               <input
                 type="checkbox"
                 checked={goals.use_alternating_weeks}
                 onChange={(e) => handleChange('use_alternating_weeks', e.target.checked)}
-                style={{ marginRight: '0.5rem', cursor: 'pointer' }}
+                style={{ marginRight: '0.375rem', cursor: 'pointer', width: '14px', height: '14px' }}
               />
-              Use alternating weeks
+              Alternating weeks
             </label>
           </div>
 
-          {/* Week 1 Schedule */}
-          <div style={{ marginBottom: goals.use_alternating_weeks ? '1rem' : '0' }}>
+          {/* Week 1 */}
+          <div style={{ marginBottom: goals.use_alternating_weeks ? '0.75rem' : '0' }}>
             {goals.use_alternating_weeks && (
-              <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#6b7280', marginBottom: '0.5rem' }}>
-                Week 1 Schedule
+              <div style={{ fontSize: '0.6875rem', fontWeight: '500', color: '#999', marginBottom: '0.375rem' }}>
+                Week 1
               </div>
             )}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '1rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.5rem' }}>
               {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => (
                 <div key={day}>
-                  <label style={{ fontSize: '0.75rem', fontWeight: '600', color: '#6b7280', marginBottom: '0.5rem', display: 'block', textTransform: 'capitalize' }}>
+                  <label style={{ fontSize: '0.6875rem', fontWeight: '500', color: '#999', marginBottom: '0.25rem', display: 'block', textTransform: 'capitalize' }}>
                     {day.slice(0, 3)}
                   </label>
                   <input
@@ -345,23 +289,32 @@ const GoalsSettings = () => {
                     step="0.25"
                     value={goals.study_hours[day] || 0}
                     onChange={(e) => handleStudyHoursChange(day, e.target.value, 1)}
-                    style={{ width: '100%', padding: '0.65rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit' }}
+                    style={{
+                      width: '100%',
+                      padding: '0.375rem',
+                      border: 'none',
+                      borderBottom: '1px solid #e0e0e0',
+                      fontSize: '0.8125rem',
+                      textAlign: 'center',
+                      background: 'transparent',
+                      outline: 'none'
+                    }}
                   />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Week 2 Schedule */}
+          {/* Week 2 */}
           {goals.use_alternating_weeks && (
             <div>
-              <div style={{ fontSize: '0.75rem', fontWeight: '600', color: '#6b7280', marginBottom: '0.5rem' }}>
-                Week 2 Schedule
+              <div style={{ fontSize: '0.6875rem', fontWeight: '500', color: '#999', marginBottom: '0.375rem' }}>
+                Week 2
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.5rem' }}>
                 {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => (
                   <div key={day}>
-                    <label style={{ fontSize: '0.75rem', fontWeight: '600', color: '#6b7280', marginBottom: '0.5rem', display: 'block', textTransform: 'capitalize' }}>
+                    <label style={{ fontSize: '0.6875rem', fontWeight: '500', color: '#999', marginBottom: '0.25rem', display: 'block', textTransform: 'capitalize' }}>
                       {day.slice(0, 3)}
                     </label>
                     <input
@@ -371,7 +324,16 @@ const GoalsSettings = () => {
                       step="0.25"
                       value={goals.study_hours_week2[day] || 0}
                       onChange={(e) => handleStudyHoursChange(day, e.target.value, 2)}
-                      style={{ width: '100%', padding: '0.65rem', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.95rem', fontFamily: 'inherit' }}
+                      style={{
+                        width: '100%',
+                        padding: '0.375rem',
+                        border: 'none',
+                        borderBottom: '1px solid #e0e0e0',
+                        fontSize: '0.8125rem',
+                        textAlign: 'center',
+                        background: 'transparent',
+                        outline: 'none'
+                      }}
                     />
                   </div>
                 ))}
@@ -381,32 +343,22 @@ const GoalsSettings = () => {
         </div>
 
         {/* Review Day and Mock Exam Day */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem' }}>
           <div>
-            <label style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              fontSize: '0.875rem',
-              fontWeight: '500',
-              color: '#10b981',
-              marginBottom: '0.5rem'
-            }}>
-              <HiCheckCircle style={{ display: 'inline' }} />
-              Weekly Review Day (2h)
+            <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', color: '#666', marginBottom: '0.25rem' }}>
+              Review Day
             </label>
             <select
               value={goals.review_day}
               onChange={(e) => handleChange('review_day', e.target.value)}
               style={{
                 width: '100%',
-                padding: '0.65rem',
-                borderRadius: '8px',
-                border: '2px solid #10b981',
-                fontSize: '0.95rem',
-                backgroundColor: '#d1fae5',
-                color: '#065f46',
-                fontWeight: '400',
+                padding: '0.5rem',
+                border: 'none',
+                borderBottom: '1px solid #e0e0e0',
+                fontSize: '0.8125rem',
+                background: 'transparent',
+                outline: 'none',
                 cursor: 'pointer'
               }}
             >
@@ -418,35 +370,23 @@ const GoalsSettings = () => {
               <option value="friday">Friday</option>
               <option value="saturday">Saturday</option>
             </select>
-            <small style={{ fontSize: '0.75rem', color: '#059669', marginTop: '0.25rem', display: 'block', fontWeight: '400' }}>
-              Day you'll review your practice exam results
-            </small>
           </div>
 
           <div>
-            <label style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              fontSize: '0.875rem',
-              fontWeight: '500',
-              color: '#3b82f6',
-              marginBottom: '0.5rem'
-            }}>
-              🎯 Mock Exam Day (3h)
+            <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: '500', color: '#666', marginBottom: '0.25rem' }}>
+              Mock Exam Day
             </label>
             <select
               value={goals.mock_exam_day}
               onChange={(e) => handleChange('mock_exam_day', e.target.value)}
               style={{
                 width: '100%',
-                padding: '0.65rem',
-                borderRadius: '8px',
-                border: '2px solid #3b82f6',
-                fontSize: '0.95rem',
-                backgroundColor: '#eff6ff',
-                color: '#1e40af',
-                fontWeight: '400',
+                padding: '0.5rem',
+                border: 'none',
+                borderBottom: '1px solid #e0e0e0',
+                fontSize: '0.8125rem',
+                background: 'transparent',
+                outline: 'none',
                 cursor: 'pointer'
               }}
             >
@@ -458,36 +398,26 @@ const GoalsSettings = () => {
               <option value="friday">Friday</option>
               <option value="saturday">Saturday</option>
             </select>
-            <small style={{ fontSize: '0.75rem', color: '#2563eb', marginTop: '0.25rem', display: 'block', fontWeight: '400' }}>
-              Day you'll take a full-length practice test
-            </small>
           </div>
         </div>
 
         {/* Save Button */}
-        <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'flex-end' }}>
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <button
             onClick={handleSave}
             disabled={saving}
             style={{
-              padding: '0.75rem 2rem',
-              backgroundColor: saving ? '#9ca3af' : '#3b82f6',
-              color: '#ffffff',
+              padding: '0.625rem 1rem',
+              background: saving ? '#ccc' : '#111',
+              color: 'white',
               border: 'none',
-              borderRadius: '8px',
-              fontSize: '0.875rem',
+              borderRadius: '4px',
+              fontSize: '0.8125rem',
               fontWeight: '500',
-              cursor: saving ? 'not-allowed' : 'pointer',
-              transition: 'background-color 0.2s'
-            }}
-            onMouseEnter={(e) => {
-              if (!saving) e.target.style.backgroundColor = '#2563eb';
-            }}
-            onMouseLeave={(e) => {
-              if (!saving) e.target.style.backgroundColor = '#3b82f6';
+              cursor: saving ? 'not-allowed' : 'pointer'
             }}
           >
-            {saving ? 'Saving...' : 'Save Goals'}
+            {saving ? 'Saving...' : 'Save'}
           </button>
         </div>
       </div>
