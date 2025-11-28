@@ -10,12 +10,20 @@ export const lessonsGridStyles = {
     alignItems: 'center',
     gap: '0.75rem',
     marginBottom: '2rem',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    '@media (max-width: 640px)': {
+      gap: '0.5rem',
+      marginBottom: '1.5rem'
+    }
   },
   filterButtons: {
     display: 'flex',
     gap: '0.75rem',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    '@media (max-width: 640px)': {
+      gap: '0.5rem',
+      width: '100%'
+    }
   },
   sectionFilter: {
     background: 'transparent',
@@ -27,6 +35,15 @@ export const lessonsGridStyles = {
     fontSize: '0.95rem',
     fontWeight: 500,
     transition: 'all 0.2s ease',
+    minHeight: '44px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    '@media (max-width: 640px)': {
+      flex: '1 1 calc(50% - 0.25rem)',
+      padding: '0.5rem 0.75rem',
+      fontSize: '0.875rem'
+    },
     '&:hover': {
       background: '#f9fafb',
       borderColor: '#d1d5db',
@@ -82,6 +99,10 @@ export const lessonsGridStyles = {
     padding: '1.5rem',
     transition: 'all 0.2s ease',
     marginTop: '0.75rem',
+    '@media (max-width: 640px)': {
+      padding: '1rem',
+      borderRadius: '6px'
+    },
     '&:first-of-type': {
       marginTop: '0.75rem'
     }
@@ -131,7 +152,14 @@ export const lessonsGridStyles = {
   lessonsList: {
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '0.75rem'
+    gap: '0.75rem',
+    '@media (max-width: 1024px)': {
+      gridTemplateColumns: 'repeat(2, 1fr)'
+    },
+    '@media (max-width: 640px)': {
+      gridTemplateColumns: '1fr',
+      gap: '0.5rem'
+    }
   },
   lessonsListView: {
     display: 'flex',
@@ -151,6 +179,11 @@ export const lessonsGridStyles = {
     cursor: 'pointer',
     position: 'relative',
     overflow: 'hidden',
+    '@media (max-width: 640px)': {
+      padding: '0.875rem',
+      minHeight: '110px',
+      borderRadius: '6px'
+    },
     '&:hover': {
       borderColor: '#14b8a6',
       boxShadow: '0 4px 12px rgba(20, 184, 166, 0.18)',

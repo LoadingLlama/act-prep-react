@@ -126,7 +126,15 @@ export const headerStyles = {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
     gap: '1.5rem',
-    marginTop: '0'
+    marginTop: '0',
+    '@media (max-width: 768px)': {
+      gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+      gap: '1rem'
+    },
+    '@media (max-width: 640px)': {
+      gridTemplateColumns: '1fr',
+      gap: '0.75rem'
+    }
   },
   card: {
     background: '#ffffff',
@@ -135,6 +143,11 @@ export const headerStyles = {
     padding: '1.75rem 1.5rem',
     transition: 'all 0.2s ease',
     cursor: 'pointer',
+    minHeight: '44px',
+    '@media (max-width: 640px)': {
+      padding: '1.25rem 1rem',
+      borderRadius: '8px'
+    },
     '&:hover': {
       background: '#f9fafb',
       borderColor: '#d1d5db',
@@ -146,14 +159,20 @@ export const headerStyles = {
       fontWeight: 700,
       marginBottom: '0.5rem',
       color: '#000000',
-      letterSpacing: '-0.01em'
+      letterSpacing: '-0.01em',
+      '@media (max-width: 640px)': {
+        fontSize: '1rem'
+      }
     },
     '& p': {
       color: '#6b7280',
       marginBottom: '0',
       fontSize: '0.95rem',
       lineHeight: '1.5',
-      display: 'none'
+      display: 'none',
+      '@media (max-width: 640px)': {
+        fontSize: '0.875rem'
+      }
     }
   },
   topHeader: {

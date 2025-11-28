@@ -446,7 +446,11 @@ export default function AppLayout() {
       <LessonModal
         classes={classes}
         lessonModalOpen={lessonModalOpen}
-        lessonContent={lessonContent[currentLesson]}
+        lessonContent={(() => {
+          // Find the lesson in lessonStructure to get its lesson_key
+          const lesson = lessonStructure.find(l => l.id === currentLesson);
+          return lesson ? lessonContent[lesson.lesson_key] : null;
+        })()}
         currentLesson={currentLesson}
         lessonStructure={lessonStructure}
         lessonMode={lessonMode}

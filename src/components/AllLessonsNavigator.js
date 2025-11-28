@@ -69,6 +69,10 @@ const useStyles = createUseStyles({
 });
 
 const AllLessonsNavigator = ({
+  lessons,
+  currentLessonId,
+  onLessonSelect,
+  currentSection,
   onBackClick,
   onClose,
   practiceMode = false,
