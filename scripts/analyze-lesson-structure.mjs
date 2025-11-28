@@ -1,102 +1,80 @@
-#!/usr/bin/env node
+/**
+ * Analyze how lessons use examples - embedded vs external
+ */
 
 import { createClient } from '@supabase/supabase-js';
-import dotenv from 'dotenv';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import * as cheerio from 'cheerio';
-import fs from 'fs';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-dotenv.config({ path: path.join(__dirname, '../.env') });
+const supabaseUrl = 'https://rabavobdklnwvwsldbix.supabase.co';
+const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJhYmF2b2Jka2xud3Z3c2xkYml4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk3NjU0NzgsImV4cCI6MjA3NTM0MTQ3OH0.z_1N3TG-cS9Bc1s7UAif91PkIjhBKvicrUqupiNP80Y';
 
-const supabaseUrl = process.env.REACT_APP_SUPABASE_URL || process.env.VITE_SUPABASE_URL;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY;
-
-const supabase = createClient(supabaseUrl, supabaseServiceKey);
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 async function analyzeLessonStructure() {
-  console.log('\n╔═══════════════════════════════════════════════════╗');
-  console.log('║    Analyzing Current Lesson Structure            ║');
-  console.log('╚═══════════════════════════════════════════════════╝\n');
+  console.log('🔍 ANALYZING LESSON STRUCTURE\n');
 
-  // Get a few sample lessons from different subjects
+  // Check an English lesson with examples
   const { data: lessons } = await supabase
-    .from('lesson_metadata')
-    .select('id, lesson_key, title, subject')
-    .in('subject', ['math', 'english', 'science', 'reading'])
-    .limit(8);
+    .from('lessons')
+    .select('*')
+    .eq('lesson_key', 'commas')
+    .single();
 
-  console.log(`Analyzing ${lessons.length} sample lessons:\n`);
-
-  for (const lesson of lessons.slice(0, 4)) {
-    console.log(`\n${'='.repeat(60)}`);
-    console.log(`📚 ${lesson.subject.toUpperCase()}: ${lesson.title}`);
-    console.log(`   Lesson Key: ${lesson.lesson_key}`);
-    console.log('='.repeat(60));
-
-    // Get sections
-    const { data: sections } = await supabase
-      .from('lesson_sections')
-      .select('id, title')
-      .eq('lesson_id', lesson.id);
-
-    if (sections && sections.length > 0) {
-      // Get content
-      const { data: content } = await supabase
-        .from('lesson_section_content')
-        .select('content')
-        .eq('section_id', sections[0].id)
-        .limit(1);
-
-      if (content && content.length > 0) {
-        const html = content[0].content;
-        const $ = cheerio.load(html);
-
-        // Analyze structure
-        const analysis = {
-          totalLength: html.length,
-          h3Count: $('h3').length,
-          h4Count: $('h4').length,
-          paragraphCount: $('p').length,
-          listCount: $('ul').length,
-          exampleCount: $('h4').filter((i, el) => $(el).text().toLowerCase().includes('example')).length,
-          hasKeyTakeaways: $('h3').filter((i, el) => $(el).text().toLowerCase().includes('key takeaway')).length > 0,
-          hasNumberedSections: $('h3').first().text().match(/^\d+\./) !== null
-        };
-
-        console.log('\n📊 Structure Analysis:');
-        console.log(`   Total length: ${analysis.totalLength} chars`);
-        console.log(`   H3 sections: ${analysis.h3Count}`);
-        console.log(`   H4 subsections: ${analysis.h4Count}`);
-        console.log(`   Paragraphs: ${analysis.paragraphCount}`);
-        console.log(`   Lists: ${analysis.listCount}`);
-        console.log(`   Examples: ${analysis.exampleCount}`);
-        console.log(`   Has Key Takeaways: ${analysis.hasKeyTakeaways ? 'YES' : 'NO'}`);
-        console.log(`   Has numbered sections: ${analysis.hasNumberedSections ? 'YES' : 'NO'}`);
-
-        // Show first H3 section
-        const firstH3 = $('h3').first();
-        console.log(`\n📝 First H3: "${firstH3.text()}"`);
-
-        // Check opening paragraph
-        const firstP = $('p').first();
-        const hasBlueTerms = firstP.html()?.includes('color: #2563eb') || false;
-        console.log(`   Opening has blue key terms: ${hasBlueTerms ? 'YES' : 'NO'}`);
-
-        // Save sample for review
-        const samplePath = path.join(__dirname, `../samples/lesson-${lesson.lesson_key}.html`);
-        if (!fs.existsSync(path.dirname(samplePath))) {
-          fs.mkdirSync(path.dirname(samplePath), { recursive: true });
-        }
-        fs.writeFileSync(samplePath, html);
-        console.log(`   Saved to: samples/lesson-${lesson.lesson_key}.html`);
-      }
-    }
+  if (!lessons) {
+    console.log('No lesson found');
+    return;
   }
 
-  console.log('\n' + '='.repeat(60));
-  console.log('\n✅ Analysis complete! Check samples/ folder for HTML files.\n');
+  console.log(`📝 Lesson: ${lessons.lesson_key} - "${lessons.title}"`);
+  console.log(`Subject: ${lessons.subject}\n`);
+
+  // Get examples count
+  const { data: examples } = await supabase
+    .from('lesson_examples')
+    .select('*')
+    .eq('lesson_id', lessons.id);
+
+  console.log(`Total examples in DB: ${examples?.length || 0}\n`);
+
+  // Analyze HTML content
+  if (lessons.content) {
+    const content = lessons.content;
+
+    // Check if examples are embedded in HTML or just referenced
+    const hasExampleDivs = content.includes('class="example"') || content.includes('class=\\"example\\"');
+    const hasQuestionDivs = content.includes('class="question"') || content.includes('class=\\"question\\"');
+
+    console.log('HTML Content Analysis:');
+    console.log(`- Content length: ${content.length} characters`);
+    console.log(`- Has example divs: ${hasExampleDivs}`);
+    console.log(`- Has question divs: ${hasQuestionDivs}`);
+
+    // Count <p>, <h3>, <h4> tags (teaching content markers)
+    const pTags = (content.match(/<p>/g) || []).length;
+    const h3Tags = (content.match(/<h3>/g) || []).length;
+    const h4Tags = (content.match(/<h4>/g) || []).length;
+
+    console.log(`- Paragraph tags: ${pTags}`);
+    console.log(`- H3 headers: ${h3Tags}`);
+    console.log(`- H4 headers: ${h4Tags}\n`);
+
+    // Check if content has actual teaching vs just headers
+    const firstSection = content.substring(0, 500);
+    console.log('First 500 chars of content:');
+    console.log(firstSection);
+    console.log('\n');
+  }
+
+  // Check what practice session does
+  console.log('🎯 Understanding Practice vs Lesson Split:\n');
+  console.log('Current situation:');
+  console.log('- Lessons load from: lesson_examples table');
+  console.log('- Practice loads from: practice_questions table (after our changes)');
+  console.log('\nFor English lessons with 50 examples:');
+  console.log('Option A: ALL 50 are practice questions → move all to practice_questions');
+  console.log('Option B: Some are teaching, some are practice → split them');
+  console.log('\nFor Math lessons:');
+  console.log('- We already moved all 30 to practice_questions');
+  console.log('- Lessons have NO examples in lesson_examples (pure teaching content)');
 }
 
 analyzeLessonStructure();
