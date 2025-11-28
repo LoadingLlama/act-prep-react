@@ -12,6 +12,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import soundEffects from '../../services/soundEffects';
 import LearningPathService from '../../services/api/learning-path.service';
 import { getHolidays } from '../../utils/calendar/holidays';
+import { parseLocalDate, formatLocalDate, cleanLessonTitle } from '../../utils/calendar/dateHelpers';
 
 const CourseContent = () => {
   const classes = useCourseStyles();
@@ -725,13 +726,6 @@ const CourseContent = () => {
     'Science': diagnosticResults?.session?.section_scores?.science || 0
   };
 
-  // Parse exam date in local timezone (avoid UTC conversion)
-  const parseLocalDate = (dateString) => {
-    if (!dateString) return null;
-    const [year, month, day] = dateString.split('-').map(Number);
-    return new Date(year, month - 1, day);
-  };
-
   // Use user's target exam date or learning path exam date
   const testDate = userGoals?.target_exam_date
     ? parseLocalDate(userGoals.target_exam_date)
@@ -743,13 +737,6 @@ const CourseContent = () => {
 
   const getLessonStatus = (itemId) => {
     return lessonProgress[itemId] || 'not-started';
-  };
-
-  // Helper to clean lesson titles
-  const cleanLessonTitle = (title) => {
-    if (!title) return 'Lesson';
-    // Remove "Topic X.X - " prefix for consistent formatting
-    return title.replace(/^Topic\s+[\d.]+\s+-\s+/, '');
   };
 
   // Transform learning path data from database into display format
@@ -1049,14 +1036,6 @@ const CourseContent = () => {
         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
       </svg>
     );
-  };
-
-  // Helper to format date as YYYY-MM-DD in local timezone (no UTC conversion)
-  const formatLocalDate = (date) => {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
   };
 
   // Generate Apple-style calendar view data
