@@ -15,11 +15,17 @@ export const useResultsStyles = createUseStyles({
     maxWidth: '1400px',
     '@media (max-width: 768px)': {
       padding: '1rem'
+    },
+    '@media (max-width: 640px)': {
+      padding: '0.75rem'
     }
   },
   pageHeader: {
     padding: '0',
-    marginBottom: '2rem'
+    marginBottom: '2rem',
+    '@media (max-width: 640px)': {
+      marginBottom: '1.5rem'
+    }
   },
   pageTitle: {
     fontSize: '2.5rem',
@@ -29,12 +35,18 @@ export const useResultsStyles = createUseStyles({
     letterSpacing: '-0.04em',
     '@media (max-width: 768px)': {
       fontSize: '2rem'
+    },
+    '@media (max-width: 640px)': {
+      fontSize: '1.75rem'
     }
   },
   pageSubtitle: {
     fontSize: '1rem',
     color: '#64748b',
-    margin: 0
+    margin: 0,
+    '@media (max-width: 640px)': {
+      fontSize: '0.875rem'
+    }
   },
   statsGrid: {
     display: 'grid',
@@ -45,7 +57,9 @@ export const useResultsStyles = createUseStyles({
       gridTemplateColumns: 'repeat(2, 1fr)'
     },
     '@media (max-width: 640px)': {
-      gridTemplateColumns: '1fr'
+      gridTemplateColumns: '1fr',
+      gap: '0.75rem',
+      marginBottom: '1.5rem'
     }
   },
   statCard: {
@@ -57,6 +71,10 @@ export const useResultsStyles = createUseStyles({
     flexDirection: 'column',
     gap: '0.75rem',
     transition: 'all 0.2s ease',
+    '@media (max-width: 640px)': {
+      padding: '1rem',
+      gap: '0.5rem'
+    },
     '&:hover': {
       borderColor: '#08245b',
       boxShadow: '0 4px 12px rgba(8, 36, 91, 0.08)',
@@ -75,9 +93,17 @@ export const useResultsStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    '@media (max-width: 640px)': {
+      width: '36px',
+      height: '36px'
+    },
     '& svg': {
       width: '20px',
-      height: '20px'
+      height: '20px',
+      '@media (max-width: 640px)': {
+        width: '18px',
+        height: '18px'
+      }
     },
     '&.score': {
       background: '#eff6ff',
@@ -101,7 +127,10 @@ export const useResultsStyles = createUseStyles({
     fontWeight: '600',
     color: '#64748b',
     textTransform: 'uppercase',
-    letterSpacing: '0.05em'
+    letterSpacing: '0.05em',
+    '@media (max-width: 640px)': {
+      fontSize: '0.75rem'
+    }
   },
   statValue: {
     fontSize: '2.5rem',
@@ -110,6 +139,9 @@ export const useResultsStyles = createUseStyles({
     lineHeight: '1',
     '@media (max-width: 768px)': {
       fontSize: '2rem'
+    },
+    '@media (max-width: 640px)': {
+      fontSize: '1.75rem'
     }
   },
   statChange: {
@@ -118,6 +150,9 @@ export const useResultsStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     gap: '0.25rem',
+    '@media (max-width: 640px)': {
+      fontSize: '0.75rem'
+    },
     '&.positive': {
       color: '#16a34a'
     },
@@ -135,13 +170,21 @@ export const useResultsStyles = createUseStyles({
     marginBottom: '2rem',
     '@media (max-width: 1024px)': {
       gridTemplateColumns: '1fr'
+    },
+    '@media (max-width: 640px)': {
+      gap: '0.75rem',
+      marginBottom: '1.5rem'
     }
   },
   card: {
     background: '#ffffff',
     border: '1px solid #e2e8f0',
     borderRadius: '8px',
-    padding: '1.5rem'
+    padding: '1.5rem',
+    '@media (max-width: 640px)': {
+      padding: '1rem',
+      borderRadius: '6px'
+    }
   },
   cardTitle: {
     fontSize: '1.25rem',
@@ -150,12 +193,19 @@ export const useResultsStyles = createUseStyles({
     marginBottom: '1.5rem',
     display: 'flex',
     alignItems: 'center',
-    gap: '0.5rem'
+    gap: '0.5rem',
+    '@media (max-width: 640px)': {
+      fontSize: '1.1rem',
+      marginBottom: '1rem'
+    }
   },
   scoreHistory: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '1rem'
+    gap: '1rem',
+    '@media (max-width: 640px)': {
+      gap: '0.75rem'
+    }
   },
   scoreEntry: {
     display: 'flex',
@@ -172,7 +222,9 @@ export const useResultsStyles = createUseStyles({
     },
     '@media (max-width: 640px)': {
       flexDirection: 'column',
-      alignItems: 'flex-start'
+      alignItems: 'flex-start',
+      padding: '0.875rem',
+      gap: '0.75rem'
     }
   },
   scoreInfo: {
@@ -184,11 +236,17 @@ export const useResultsStyles = createUseStyles({
   scoreTestName: {
     fontSize: '0.95rem',
     fontWeight: '600',
-    color: '#1a1a1a'
+    color: '#1a1a1a',
+    '@media (max-width: 640px)': {
+      fontSize: '0.875rem'
+    }
   },
   scoreDate: {
     fontSize: '0.8rem',
-    color: '#64748b'
+    color: '#64748b',
+    '@media (max-width: 640px)': {
+      fontSize: '0.75rem'
+    }
   },
   scoreValue: {
     fontSize: '1.75rem',
@@ -203,7 +261,8 @@ export const useResultsStyles = createUseStyles({
     gap: '0.5rem',
     '@media (max-width: 640px)': {
       width: '100%',
-      flexWrap: 'wrap'
+      flexWrap: 'wrap',
+      gap: '0.4rem'
     }
   },
   sectionScore: {
@@ -214,23 +273,37 @@ export const useResultsStyles = createUseStyles({
     background: '#ffffff',
     border: '1px solid #e2e8f0',
     borderRadius: '4px',
-    minWidth: '60px'
+    minWidth: '60px',
+    '@media (max-width: 640px)': {
+      padding: '0.4rem',
+      minWidth: '52px',
+      flex: '1 1 calc(25% - 0.3rem)'
+    }
   },
   sectionLabel: {
     fontSize: '0.7rem',
     color: '#64748b',
     textTransform: 'uppercase',
-    letterSpacing: '0.05em'
+    letterSpacing: '0.05em',
+    '@media (max-width: 640px)': {
+      fontSize: '0.65rem'
+    }
   },
   sectionValue: {
     fontSize: '1rem',
     fontWeight: '700',
-    color: '#1a1a1a'
+    color: '#1a1a1a',
+    '@media (max-width: 640px)': {
+      fontSize: '0.9rem'
+    }
   },
   weakAreasList: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.75rem'
+    gap: '0.75rem',
+    '@media (max-width: 640px)': {
+      gap: '0.6rem'
+    }
   },
   weakAreaItem: {
     display: 'flex',
@@ -239,7 +312,13 @@ export const useResultsStyles = createUseStyles({
     padding: '0.75rem',
     background: '#fef2f2',
     border: '1px solid #fecaca',
-    borderRadius: '6px'
+    borderRadius: '6px',
+    '@media (max-width: 640px)': {
+      flexDirection: 'column',
+      alignItems: 'stretch',
+      padding: '0.75rem',
+      gap: '0.5rem'
+    }
   },
   weakAreaInfo: {
     flex: 1
@@ -248,11 +327,17 @@ export const useResultsStyles = createUseStyles({
     fontSize: '0.9rem',
     fontWeight: '600',
     color: '#991b1b',
-    marginBottom: '0.25rem'
+    marginBottom: '0.25rem',
+    '@media (max-width: 640px)': {
+      fontSize: '0.85rem'
+    }
   },
   weakAreaStats: {
     fontSize: '0.75rem',
-    color: '#64748b'
+    color: '#64748b',
+    '@media (max-width: 640px)': {
+      fontSize: '0.7rem'
+    }
   },
   weakAreaButton: {
     background: '#dc2626',
@@ -269,6 +354,11 @@ export const useResultsStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    '@media (max-width: 640px)': {
+      width: '100%',
+      fontSize: '0.875rem',
+      padding: '0.75rem 1rem'
+    },
     '&:hover': {
       background: '#b91c1c',
       transform: 'translateY(-1px)',
@@ -282,22 +372,35 @@ export const useResultsStyles = createUseStyles({
   emptyState: {
     textAlign: 'center',
     padding: '3rem 1rem',
-    color: '#64748b'
+    color: '#64748b',
+    '@media (max-width: 640px)': {
+      padding: '2rem 0.75rem'
+    }
   },
   emptyStateIcon: {
     fontSize: '3rem',
     marginBottom: '1rem',
-    opacity: 0.5
+    opacity: 0.5,
+    '@media (max-width: 640px)': {
+      fontSize: '2.5rem'
+    }
   },
   emptyStateTitle: {
     fontSize: '1.25rem',
     fontWeight: '600',
     color: '#1a1a1a',
-    marginBottom: '0.5rem'
+    marginBottom: '0.5rem',
+    '@media (max-width: 640px)': {
+      fontSize: '1.1rem'
+    }
   },
   emptyStateText: {
     fontSize: '0.95rem',
-    marginBottom: '1.5rem'
+    marginBottom: '1.5rem',
+    '@media (max-width: 640px)': {
+      fontSize: '0.875rem',
+      marginBottom: '1.25rem'
+    }
   },
   ctaButton: {
     background: '#08245b',
@@ -313,6 +416,11 @@ export const useResultsStyles = createUseStyles({
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
+    '@media (max-width: 640px)': {
+      fontSize: '0.875rem',
+      padding: '0.875rem 1.5rem',
+      minHeight: '44px'
+    },
     '&:hover': {
       background: '#0a2f73',
       transform: 'translateY(-2px)',
