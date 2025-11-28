@@ -51,7 +51,10 @@ const useStyles = createUseStyles({
   subtitle: {
     fontSize: '1rem',
     color: '#6b7280',
-    lineHeight: '1.5'
+    lineHeight: '1.5',
+    '@media (max-width: 640px)': {
+      fontSize: '0.875rem'
+    }
   },
   loadingContainer: {
     display: 'flex',
@@ -78,26 +81,43 @@ const useStyles = createUseStyles({
     padding: '4rem 2rem',
     background: '#ffffff',
     borderRadius: '12px',
-    border: '1px solid #e5e7eb'
+    border: '1px solid #e5e7eb',
+    '@media (max-width: 640px)': {
+      padding: '2.5rem 1rem',
+      borderRadius: '8px'
+    }
   },
   emptyStateIcon: {
     fontSize: '4rem',
     color: '#d1d5db',
-    marginBottom: '1rem'
+    marginBottom: '1rem',
+    '@media (max-width: 640px)': {
+      fontSize: '3rem'
+    }
   },
   emptyStateTitle: {
     fontSize: '1.5rem',
     fontWeight: '600',
     color: '#374151',
-    marginBottom: '0.5rem'
+    marginBottom: '0.5rem',
+    '@media (max-width: 640px)': {
+      fontSize: '1.25rem'
+    }
   },
   emptyStateText: {
     fontSize: '1rem',
     color: '#6b7280',
-    marginBottom: '2rem'
+    marginBottom: '2rem',
+    '@media (max-width: 640px)': {
+      fontSize: '0.875rem',
+      marginBottom: '1.5rem'
+    }
   },
   section: {
-    marginBottom: '2rem'
+    marginBottom: '2rem',
+    '@media (max-width: 640px)': {
+      marginBottom: '1.5rem'
+    }
   },
   sectionTitle: {
     fontSize: '1.25rem',
@@ -106,11 +126,18 @@ const useStyles = createUseStyles({
     marginBottom: '1rem',
     display: 'flex',
     alignItems: 'center',
-    gap: '0.5rem'
+    gap: '0.5rem',
+    '@media (max-width: 640px)': {
+      fontSize: '1.1rem',
+      marginBottom: '0.875rem'
+    }
   },
   sectionIcon: {
     fontSize: '1.5rem',
-    color: '#08245b'
+    color: '#08245b',
+    '@media (max-width: 640px)': {
+      fontSize: '1.25rem'
+    }
   },
   grid: {
     display: 'grid',
@@ -118,6 +145,9 @@ const useStyles = createUseStyles({
     gap: '1.5rem',
     '@media (max-width: 768px)': {
       gridTemplateColumns: '1fr'
+    },
+    '@media (max-width: 640px)': {
+      gap: '1rem'
     }
   },
   card: {
@@ -126,6 +156,10 @@ const useStyles = createUseStyles({
     borderRadius: '12px',
     border: '1px solid #e5e7eb',
     transition: 'all 0.2s ease',
+    '@media (max-width: 640px)': {
+      padding: '1rem',
+      borderRadius: '8px'
+    },
     '&:hover': {
       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
       transform: 'translateY(-2px)'
@@ -135,29 +169,45 @@ const useStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: '1rem'
+    marginBottom: '1rem',
+    '@media (max-width: 640px)': {
+      marginBottom: '0.75rem'
+    }
   },
   cardTitle: {
     fontSize: '0.875rem',
     fontWeight: '600',
     color: '#6b7280',
     textTransform: 'uppercase',
-    letterSpacing: '0.05em'
+    letterSpacing: '0.05em',
+    '@media (max-width: 640px)': {
+      fontSize: '0.75rem'
+    }
   },
   cardValue: {
     fontSize: '2.5rem',
     fontWeight: '700',
     color: '#08245b',
-    lineHeight: '1'
+    lineHeight: '1',
+    '@media (max-width: 640px)': {
+      fontSize: '2rem'
+    }
   },
   cardSubtext: {
     fontSize: '0.875rem',
     color: '#6b7280',
-    marginTop: '0.5rem'
+    marginTop: '0.5rem',
+    '@media (max-width: 640px)': {
+      fontSize: '0.8rem'
+    }
   },
   diagnosticSection: {
     maxWidth: '400px', // Compact width like a test card
-    marginBottom: '2rem'
+    marginBottom: '2rem',
+    '@media (max-width: 640px)': {
+      maxWidth: '100%',
+      marginBottom: '1.5rem'
+    }
   },
   diagnosticCard: {
     background: '#ffffff',
@@ -168,6 +218,10 @@ const useStyles = createUseStyles({
     cursor: 'pointer',
     transition: 'all 0.2s ease',
     boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)',
+    '@media (max-width: 640px)': {
+      padding: '1rem',
+      borderRadius: '6px'
+    },
     '&:hover': {
       borderColor: '#cbd5e1',
       borderLeftColor: '#b91c1c',
@@ -201,24 +255,38 @@ const useStyles = createUseStyles({
     fontSize: '1.125rem',
     fontWeight: '600',
     color: '#1a1a1a',
-    marginBottom: '0.35rem'
+    marginBottom: '0.35rem',
+    '@media (max-width: 640px)': {
+      fontSize: '1rem'
+    }
   },
   diagnosticMeta: {
     fontSize: '0.8rem',
     color: '#6b7280',
-    marginBottom: '1rem'
+    marginBottom: '1rem',
+    '@media (max-width: 640px)': {
+      fontSize: '0.75rem',
+      marginBottom: '0.875rem'
+    }
   },
   diagnosticScore: {
     fontSize: '2.5rem',
     fontWeight: '700',
     color: '#b91c1c',
     lineHeight: '1',
-    marginBottom: '0.5rem'
+    marginBottom: '0.5rem',
+    '@media (max-width: 640px)': {
+      fontSize: '2rem'
+    }
   },
   diagnosticScoreLabel: {
     fontSize: '0.8rem',
     color: '#6b7280',
-    marginBottom: '1rem'
+    marginBottom: '1rem',
+    '@media (max-width: 640px)': {
+      fontSize: '0.75rem',
+      marginBottom: '0.875rem'
+    }
   },
   diagnosticButton: {
     width: '100%',
@@ -232,6 +300,12 @@ const useStyles = createUseStyles({
     cursor: 'pointer',
     transition: 'all 0.15s ease',
     boxShadow: '0 3px 0 0 rgba(37, 99, 235, 0.4)',
+    minHeight: '44px',
+    '@media (max-width: 640px)': {
+      fontSize: '0.875rem',
+      padding: '0.75rem 1.25rem',
+      borderRadius: '8px'
+    },
     '&:hover': {
       background: '#1d4ed8',
       boxShadow: '0 3px 0 0 rgba(29, 78, 216, 0.5)'
@@ -257,30 +331,47 @@ const useStyles = createUseStyles({
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)',
     gap: '1rem',
-    marginTop: '1.5rem'
+    marginTop: '1.5rem',
+    '@media (max-width: 640px)': {
+      gap: '0.75rem',
+      marginTop: '1rem'
+    }
   },
   sectionItem: {
     padding: '1rem',
     background: '#f9fafb',
     borderRadius: '8px',
-    border: '1px solid #e5e7eb'
+    border: '1px solid #e5e7eb',
+    '@media (max-width: 640px)': {
+      padding: '0.875rem',
+      borderRadius: '6px'
+    }
   },
   sectionName: {
     fontSize: '0.875rem',
     fontWeight: '600',
     color: '#374151',
     textTransform: 'capitalize',
-    marginBottom: '0.5rem'
+    marginBottom: '0.5rem',
+    '@media (max-width: 640px)': {
+      fontSize: '0.8rem'
+    }
   },
   sectionScore: {
     fontSize: '1.75rem',
     fontWeight: '700',
-    color: '#08245b'
+    color: '#08245b',
+    '@media (max-width: 640px)': {
+      fontSize: '1.5rem'
+    }
   },
   sectionDetails: {
     fontSize: '0.75rem',
     color: '#6b7280',
-    marginTop: '0.25rem'
+    marginTop: '0.25rem',
+    '@media (max-width: 640px)': {
+      fontSize: '0.7rem'
+    }
   },
   progressBar: {
     width: '100%',
@@ -298,7 +389,10 @@ const useStyles = createUseStyles({
   weakAreasList: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.75rem'
+    gap: '0.75rem',
+    '@media (max-width: 640px)': {
+      gap: '0.6rem'
+    }
   },
   weakAreaItem: {
     padding: '1rem',
@@ -306,6 +400,10 @@ const useStyles = createUseStyles({
     borderRadius: '8px',
     border: '1px solid #fee2e2',
     transition: 'all 0.2s ease',
+    '@media (max-width: 640px)': {
+      padding: '0.875rem',
+      borderRadius: '6px'
+    },
     '&:hover': {
       background: '#fee2e2',
       transform: 'translateY(-2px)',
@@ -318,7 +416,10 @@ const useStyles = createUseStyles({
   weakAreaName: {
     fontSize: '0.875rem',
     fontWeight: '600',
-    color: '#374151'
+    color: '#374151',
+    '@media (max-width: 640px)': {
+      fontSize: '0.8rem'
+    }
   },
   weakAreaAccuracy: {
     fontSize: '0.875rem',
@@ -326,12 +427,19 @@ const useStyles = createUseStyles({
     color: '#dc2626',
     padding: '0.25rem 0.75rem',
     background: '#ffffff',
-    borderRadius: '6px'
+    borderRadius: '6px',
+    '@media (max-width: 640px)': {
+      fontSize: '0.8rem',
+      padding: '0.2rem 0.6rem'
+    }
   },
   strengthsList: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.75rem'
+    gap: '0.75rem',
+    '@media (max-width: 640px)': {
+      gap: '0.6rem'
+    }
   },
   strengthItem: {
     padding: '1rem',
@@ -340,12 +448,19 @@ const useStyles = createUseStyles({
     border: '1px solid #bbf7d0',
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    '@media (max-width: 640px)': {
+      padding: '0.875rem',
+      borderRadius: '6px'
+    }
   },
   strengthName: {
     fontSize: '0.875rem',
     fontWeight: '600',
-    color: '#374151'
+    color: '#374151',
+    '@media (max-width: 640px)': {
+      fontSize: '0.8rem'
+    }
   },
   strengthAccuracy: {
     fontSize: '0.875rem',
@@ -353,7 +468,11 @@ const useStyles = createUseStyles({
     color: '#16a34a',
     padding: '0.25rem 0.75rem',
     background: '#ffffff',
-    borderRadius: '6px'
+    borderRadius: '6px',
+    '@media (max-width: 640px)': {
+      fontSize: '0.8rem',
+      padding: '0.2rem 0.6rem'
+    }
   },
   learningPathCard: {
     gridColumn: '1 / -1'
@@ -362,25 +481,40 @@ const useStyles = createUseStyles({
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
     gap: '1rem',
-    marginTop: '1rem'
+    marginTop: '1rem',
+    '@media (max-width: 640px)': {
+      gridTemplateColumns: '1fr',
+      gap: '0.75rem',
+      marginTop: '0.875rem'
+    }
   },
   pathStatItem: {
     padding: '1.25rem',
     background: '#f9fafb',
     borderRadius: '8px',
     border: '1px solid #e5e7eb',
-    textAlign: 'center'
+    textAlign: 'center',
+    '@media (max-width: 640px)': {
+      padding: '1rem',
+      borderRadius: '6px'
+    }
   },
   pathStatValue: {
     fontSize: '2rem',
     fontWeight: '700',
     color: '#08245b',
-    marginBottom: '0.25rem'
+    marginBottom: '0.25rem',
+    '@media (max-width: 640px)': {
+      fontSize: '1.75rem'
+    }
   },
   pathStatLabel: {
     fontSize: '0.875rem',
     color: '#6b7280',
-    fontWeight: '500'
+    fontWeight: '500',
+    '@media (max-width: 640px)': {
+      fontSize: '0.8rem'
+    }
   },
   lockedCard: {
     position: 'relative',
@@ -426,6 +560,12 @@ const useStyles = createUseStyles({
     '@media (max-width: 768px)': {
       flexDirection: 'column',
       textAlign: 'center'
+    },
+    '@media (max-width: 640px)': {
+      padding: '1.25rem',
+      marginBottom: '1.5rem',
+      gap: '1rem',
+      borderRadius: '8px'
     }
   },
   upgradePromptContent: {
@@ -438,12 +578,19 @@ const useStyles = createUseStyles({
     marginBottom: '0.35rem',
     display: 'flex',
     alignItems: 'center',
-    gap: '0.5rem'
+    gap: '0.5rem',
+    '@media (max-width: 640px)': {
+      fontSize: '1rem',
+      justifyContent: 'center'
+    }
   },
   upgradePromptText: {
     fontSize: '0.875rem',
     color: '#1e40af',
-    lineHeight: '1.5'
+    lineHeight: '1.5',
+    '@media (max-width: 640px)': {
+      fontSize: '0.8rem'
+    }
   },
   upgradeButton: {
     padding: '0.75rem 1.5rem',
@@ -460,6 +607,12 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     gap: '0.5rem',
     whiteSpace: 'nowrap',
+    minHeight: '44px',
+    '@media (max-width: 640px)': {
+      fontSize: '0.875rem',
+      padding: '0.75rem 1.25rem',
+      width: '100%'
+    },
     '&:hover': {
       transform: 'translateY(-2px)',
       boxShadow: '0 8px 16px rgba(8, 36, 91, 0.3)'
