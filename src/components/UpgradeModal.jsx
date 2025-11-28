@@ -26,6 +26,11 @@ const useStyles = createUseStyles({
     animation: '$fadeIn 0.2s ease',
     '@media (max-width: 768px)': {
       padding: '1rem'
+    },
+    '@media (max-width: 640px)': {
+      padding: '0.5rem',
+      alignItems: 'flex-start',
+      paddingTop: '1rem'
     }
   },
   '@keyframes fadeIn': {
@@ -45,6 +50,12 @@ const useStyles = createUseStyles({
       maxHeight: '95vh',
       borderRadius: '12px',
       maxWidth: '90%'
+    },
+    '@media (max-width: 640px)': {
+      maxHeight: '98vh',
+      borderRadius: '8px',
+      maxWidth: '100%',
+      margin: '0'
     }
   },
   '@keyframes slideUp': {
@@ -62,6 +73,9 @@ const useStyles = createUseStyles({
     textAlign: 'center',
     '@media (max-width: 768px)': {
       padding: '1rem 1rem 0.5rem'
+    },
+    '@media (max-width: 640px)': {
+      padding: '0.875rem 0.75rem 0.5rem'
     }
   },
   title: {
@@ -71,6 +85,10 @@ const useStyles = createUseStyles({
     marginBottom: '0.5rem',
     '@media (max-width: 768px)': {
       fontSize: '1.25rem'
+    },
+    '@media (max-width: 640px)': {
+      fontSize: '1.125rem',
+      marginBottom: '0.375rem'
     }
   },
   subtitle: {
@@ -79,6 +97,10 @@ const useStyles = createUseStyles({
     marginBottom: '1rem',
     '@media (max-width: 768px)': {
       fontSize: '0.75rem'
+    },
+    '@media (max-width: 640px)': {
+      fontSize: '0.6875rem',
+      marginBottom: '0.75rem'
     }
   },
   durationTabs: {
@@ -127,6 +149,10 @@ const useStyles = createUseStyles({
       gridTemplateColumns: '1fr',
       padding: '0.5rem 1rem',
       gap: '0.75rem'
+    },
+    '@media (max-width: 640px)': {
+      padding: '0.5rem 0.75rem 1rem',
+      gap: '0.625rem'
     }
   },
   planCard: {
@@ -138,6 +164,10 @@ const useStyles = createUseStyles({
     transition: 'all 0.2s ease',
     '@media (max-width: 768px)': {
       padding: '1rem 0.875rem'
+    },
+    '@media (max-width: 640px)': {
+      padding: '0.875rem 0.75rem',
+      borderRadius: '8px'
     }
   },
   planCardPro: {
@@ -157,7 +187,12 @@ const useStyles = createUseStyles({
     fontSize: '0.625rem',
     fontWeight: '700',
     textTransform: 'uppercase',
-    letterSpacing: '0.05em'
+    letterSpacing: '0.05em',
+    '@media (max-width: 640px)': {
+      fontSize: '0.5625rem',
+      padding: '0.1875rem 0.625rem',
+      top: '-8px'
+    }
   },
   planName: {
     fontSize: '0.9375rem',
@@ -165,6 +200,10 @@ const useStyles = createUseStyles({
     marginBottom: '0.375rem',
     '@media (max-width: 768px)': {
       fontSize: '0.875rem'
+    },
+    '@media (max-width: 640px)': {
+      fontSize: '0.8125rem',
+      marginBottom: '0.25rem'
     }
   },
   planPrice: {
@@ -174,6 +213,9 @@ const useStyles = createUseStyles({
     letterSpacing: '-0.02em',
     '@media (max-width: 768px)': {
       fontSize: '1.5rem'
+    },
+    '@media (max-width: 640px)': {
+      fontSize: '1.375rem'
     }
   },
   planPeriod: {
@@ -182,6 +224,9 @@ const useStyles = createUseStyles({
     opacity: 0.9,
     '@media (max-width: 768px)': {
       fontSize: '0.875rem'
+    },
+    '@media (max-width: 640px)': {
+      fontSize: '0.8125rem'
     }
   },
   planBilling: {
@@ -191,6 +236,10 @@ const useStyles = createUseStyles({
     lineHeight: '1.3',
     '@media (max-width: 768px)': {
       fontSize: '0.625rem'
+    },
+    '@media (max-width: 640px)': {
+      fontSize: '0.5625rem',
+      marginBottom: '0.75rem'
     }
   },
   ctaButton: {
@@ -205,9 +254,16 @@ const useStyles = createUseStyles({
     cursor: 'pointer',
     transition: 'all 0.2s ease',
     marginBottom: '1rem',
+    minHeight: '44px',
     '@media (max-width: 768px)': {
       padding: '0.5rem 0.875rem',
       fontSize: '0.75rem'
+    },
+    '@media (max-width: 640px)': {
+      padding: '0.5rem 0.75rem',
+      fontSize: '0.6875rem',
+      marginBottom: '0.75rem',
+      borderRadius: '6px'
     },
     '&:hover': {
       background: '#1e293b',
@@ -232,6 +288,10 @@ const useStyles = createUseStyles({
     marginBottom: '0.5rem',
     '@media (max-width: 768px)': {
       fontSize: '0.6875rem'
+    },
+    '@media (max-width: 640px)': {
+      fontSize: '0.625rem',
+      marginBottom: '0.375rem'
     }
   },
   featuresList: {
@@ -243,6 +303,9 @@ const useStyles = createUseStyles({
     gap: '0.375rem',
     '@media (max-width: 768px)': {
       gap: '0.1875rem'
+    },
+    '@media (max-width: 640px)': {
+      gap: '0.25rem'
     }
   },
   feature: {
@@ -254,6 +317,11 @@ const useStyles = createUseStyles({
     '@media (max-width: 768px)': {
       fontSize: '0.625rem',
       gap: '0.3125rem'
+    },
+    '@media (max-width: 640px)': {
+      fontSize: '0.5625rem',
+      gap: '0.25rem',
+      lineHeight: '1.4'
     }
   },
   featureIcon: {
@@ -263,6 +331,9 @@ const useStyles = createUseStyles({
     color: '#94a3b8',
     '@media (max-width: 768px)': {
       fontSize: '0.8125rem'
+    },
+    '@media (max-width: 640px)': {
+      fontSize: '0.75rem'
     }
   },
   featureIconPro: {
@@ -281,6 +352,11 @@ const useStyles = createUseStyles({
       gap: '0.5rem',
       padding: '0.75rem 1rem',
       fontSize: '0.625rem'
+    },
+    '@media (max-width: 640px)': {
+      padding: '0.625rem 0.75rem 0.875rem',
+      gap: '0.375rem',
+      fontSize: '0.5625rem'
     }
   },
   supportLink: {
@@ -298,8 +374,13 @@ const useStyles = createUseStyles({
     cursor: 'pointer',
     padding: 0,
     textDecoration: 'underline',
+    minHeight: '44px',
     '@media (max-width: 768px)': {
       fontSize: '0.625rem'
+    },
+    '@media (max-width: 640px)': {
+      fontSize: '0.5625rem',
+      minHeight: '36px'
     },
     '&:hover': {
       color: '#0f172a'
