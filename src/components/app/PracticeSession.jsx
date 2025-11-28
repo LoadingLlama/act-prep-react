@@ -1435,7 +1435,7 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
         </div>
 
       {/* Question - centered single column layout */}
-      <div style={{
+      <div className="practice-question-container" style={{
         padding: '0 3rem',
         position: 'relative',
         display: 'flex',

@@ -22,6 +22,22 @@ export const layoutStyles = {
       background: '#ffffff',
       margin: 0,
       padding: 0
+    },
+    '.practice-question-container': {
+      '@media (max-width: 1024px)': {
+        padding: '0 2rem !important'
+      },
+      '@media (max-width: 640px)': {
+        padding: '0 1rem !important',
+        minHeight: 'auto !important'
+      }
+    },
+    '.passage-content': {
+      '@media (max-width: 640px)': {
+        fontSize: '15px !important',
+        lineHeight: '1.6 !important',
+        marginBottom: '1.5rem !important'
+      }
     }
   },
   container: {
