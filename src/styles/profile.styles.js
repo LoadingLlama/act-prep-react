@@ -10,6 +10,12 @@ export const profileStyles = {
     padding: '1.5rem 1.5rem 0 1.5rem',
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     width: '100%',
+    '@media (max-width: 768px)': {
+      padding: '1.25rem 1rem 0 1rem'
+    },
+    '@media (max-width: 640px)': {
+      padding: '1rem 0.75rem 0 0.75rem'
+    }
   },
 
   loading: {
@@ -19,6 +25,10 @@ export const profileStyles = {
     height: '400px',
     fontSize: '0.875rem',
     color: '#64748b',
+    '@media (max-width: 640px)': {
+      height: '300px',
+      fontSize: '0.8rem'
+    }
   },
 
   header: {

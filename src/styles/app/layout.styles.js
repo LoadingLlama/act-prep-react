@@ -38,6 +38,35 @@ export const layoutStyles = {
         lineHeight: '1.6 !important',
         marginBottom: '1.5rem !important'
       }
+    },
+    /* Mobile-friendly form inputs */
+    'input, textarea, select': {
+      '@media (max-width: 640px)': {
+        fontSize: '16px !important' // Prevents zoom on iOS
+      }
+    },
+    /* Mobile-friendly headings */
+    'h1': {
+      '@media (max-width: 640px)': {
+        fontSize: '1.75rem !important'
+      }
+    },
+    'h2': {
+      '@media (max-width: 640px)': {
+        fontSize: '1.5rem !important'
+      }
+    },
+    'h3': {
+      '@media (max-width: 640px)': {
+        fontSize: '1.25rem !important'
+      }
+    },
+    /* Mobile-optimized buttons */
+    'button': {
+      '@media (max-width: 640px)': {
+        minHeight: '44px',
+        touchAction: 'manipulation' // Removes 300ms tap delay
+      }
     }
   },
   container: {

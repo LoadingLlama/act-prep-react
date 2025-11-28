@@ -20,7 +20,10 @@ export const lessonsItemsStyles = {
       letterSpacing: '-0.01em',
       lineHeight: '1.4',
       width: '100%',
-      textAlign: 'left'
+      textAlign: 'left',
+      '@media (max-width: 640px)': {
+        fontSize: '0.875rem'
+      }
     },
     '& p': {
       display: 'none'
