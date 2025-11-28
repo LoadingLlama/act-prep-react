@@ -212,12 +212,44 @@ export default function AppLayout() {
   };
 
   // Lesson handlers
-  const openLesson = (lessonId, mode = 'review') => {
+  const openLesson = async (lessonId, mode = 'review') => {
+    console.log('📖 Opening lesson:', lessonId, 'mode:', mode);
     setCurrentLesson(lessonId);
     setLessonModalOpen(true);
     setLessonMode(mode);
     setHoveredMoreTag(null);
     domUtils.preventBodyScroll();
+
+    // Fetch lesson content if not already loaded
+    const lesson = lessonStructure.find(l => l.id === lessonId);
+    console.log('📚 Found lesson structure:', lesson);
+
+    if (lesson && lesson.lesson_key && !lessonContent[lesson.lesson_key]) {
+      console.log('🔄 Fetching lesson content for lesson_key:', lesson.lesson_key);
+      try {
+        // Get all lessons from the database (async)
+        const allLessons = await getAllLessons();
+        console.log('📦 Total lessons fetched:', allLessons?.length);
+
+        // Try to find by lesson_key
+        const lessonData = allLessons?.find(l => l.lesson_key === lesson.lesson_key);
+
+        if (lessonData) {
+          console.log('✅ Found lesson content for:', lesson.lesson_key, lessonData);
+          setLessonContent(prev => ({
+            ...prev,
+            [lesson.lesson_key]: lessonData
+          }));
+        } else {
+          console.warn('⚠️ No lesson content found for lesson_key:', lesson.lesson_key);
+          console.log('Available lesson_keys:', allLessons?.map(l => l.lesson_key).slice(0, 10));
+        }
+      } catch (error) {
+        console.error('❌ Error fetching lesson content:', error);
+      }
+    } else if (lessonContent[lesson?.lesson_key]) {
+      console.log('✨ Lesson content already cached for:', lesson.lesson_key);
+    }
   };
 
   const closeLessonModal = () => {
