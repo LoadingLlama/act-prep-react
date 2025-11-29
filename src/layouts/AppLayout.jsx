@@ -64,24 +64,66 @@ export default function AppLayout() {
   // Get active view from URL
   const activeView = location.pathname.split('/')[2] || 'home';
 
+  // Get lesson ID from URL if on lesson route
+  const urlLessonId = activeView === 'lesson' ? location.pathname.split('/')[3] : null;
+
+  // Open lesson from URL if present
+  useEffect(() => {
+    if (urlLessonId && urlLessonId !== currentLesson) {
+      console.log('🔗 Opening lesson from URL:', urlLessonId);
+      setCurrentLesson(urlLessonId);
+      setLessonModalOpen(true);
+      domUtils.preventBodyScroll();
+
+      // Fetch lesson content
+      const lesson = lessonStructure.find(l => l.id === urlLessonId);
+      if (lesson && lesson.lesson_key && !lessonContent[lesson.lesson_key]) {
+        console.log('🔄 Fetching lesson content for URL lesson:', lesson.lesson_key);
+        getAllLessons().then(allLessons => {
+          const lessonData = allLessons?.find(l => l.lesson_key === lesson.lesson_key);
+          if (lessonData) {
+            setLessonContent(prev => ({
+              ...prev,
+              [lesson.lesson_key]: lessonData
+            }));
+          }
+        });
+      }
+    } else if (!urlLessonId && lessonModalOpen) {
+      // If URL doesn't have lesson but modal is open, close it
+      setLessonModalOpen(false);
+      setCurrentLesson(null);
+      domUtils.restoreBodyScroll();
+    }
+  }, [urlLessonId]); // Run when URL lesson ID changes
+
   // Load lessons from Supabase
   useEffect(() => {
     const loadLessonsFromSupabase = async () => {
       console.log('📚 AppLayout: Loading lessons from Supabase...');
-      const data = await getAllLessons();
-      if (data) {
-        const lessonsObj = {};
-        data.forEach(lesson => {
-          lessonsObj[lesson.lesson_key] = {
-            title: lesson.title,
-            content: lesson.content,
-            content_json: lesson.content_json,
-            duration: lesson.duration,
-            interactiveData: { practiceSections: [] }
-          };
-        });
-        console.log('✅ AppLayout: All lessons loaded');
-        setLessonContent(lessonsObj);
+      try {
+        const data = await getAllLessons();
+        console.log('📦 Raw lesson data received:', data?.length, 'lessons');
+
+        if (data && data.length > 0) {
+          const lessonsObj = {};
+          data.forEach(lesson => {
+            console.log(`  - Loading lesson_key: ${lesson.lesson_key}`);
+            lessonsObj[lesson.lesson_key] = {
+              title: lesson.title,
+              content: lesson.content,
+              content_json: lesson.content_json,
+              duration: lesson.duration,
+              interactiveData: { practiceSections: [] }
+            };
+          });
+          console.log('✅ AppLayout: All lessons loaded, keys:', Object.keys(lessonsObj));
+          setLessonContent(lessonsObj);
+        } else {
+          console.error('❌ No lessons returned from database!');
+        }
+      } catch (error) {
+        console.error('❌ Error loading lessons:', error);
       }
     };
 
@@ -214,35 +256,36 @@ export default function AppLayout() {
   // Lesson handlers
   const openLesson = async (lessonId, mode = 'review') => {
     console.log('📖 Opening lesson:', lessonId, 'mode:', mode);
+
+    // Navigate to lesson URL
+    navigate(`/app/lesson/${lessonId}`);
+
+    const lesson = lessonStructure.find(l => l.id === lessonId);
+    console.log('📚 Found lesson structure:', lesson);
+
+    // Open modal immediately for instant UI feedback
     setCurrentLesson(lessonId);
     setLessonModalOpen(true);
     setLessonMode(mode);
     setHoveredMoreTag(null);
     domUtils.preventBodyScroll();
 
-    // Fetch lesson content if not already loaded
-    const lesson = lessonStructure.find(l => l.id === lessonId);
-    console.log('📚 Found lesson structure:', lesson);
-
+    // Fetch lesson content in background if not already loaded (should already be cached from initial load)
     if (lesson && lesson.lesson_key && !lessonContent[lesson.lesson_key]) {
       console.log('🔄 Fetching lesson content for lesson_key:', lesson.lesson_key);
       try {
-        // Get all lessons from the database (async)
+        // Get all lessons from the database (should be cached)
         const allLessons = await getAllLessons();
-        console.log('📦 Total lessons fetched:', allLessons?.length);
-
-        // Try to find by lesson_key
         const lessonData = allLessons?.find(l => l.lesson_key === lesson.lesson_key);
 
         if (lessonData) {
-          console.log('✅ Found lesson content for:', lesson.lesson_key, lessonData);
+          console.log('✅ Found lesson content for:', lesson.lesson_key);
           setLessonContent(prev => ({
             ...prev,
             [lesson.lesson_key]: lessonData
           }));
         } else {
           console.warn('⚠️ No lesson content found for lesson_key:', lesson.lesson_key);
-          console.log('Available lesson_keys:', allLessons?.map(l => l.lesson_key).slice(0, 10));
         }
       } catch (error) {
         console.error('❌ Error fetching lesson content:', error);
@@ -253,6 +296,9 @@ export default function AppLayout() {
   };
 
   const closeLessonModal = () => {
+    // Navigate back to lessons page
+    navigate('/app/lessons');
+
     setLessonModalOpen(false);
     setCurrentLesson(null);
     domUtils.restoreBodyScroll();

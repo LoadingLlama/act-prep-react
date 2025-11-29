@@ -3,7 +3,7 @@
  * Gamified practice interface with 5-star capability rating system
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { HiStar, HiUser } from 'react-icons/hi2';
 import { useAuth } from '../../contexts/AuthContext';
@@ -217,7 +217,7 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
     }
   }, [externalFlaggedQuestions]);
 
-  // Update parent component with practice state changes
+  // Update parent component with practice state changes (excluding flagged questions to prevent loops)
   useEffect(() => {
     if (onPracticeStateChange) {
       onPracticeStateChange({
@@ -227,7 +227,25 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
         flaggedQuestions
       });
     }
-  }, [questions, currentQuestionIndex, results, flaggedQuestions, onPracticeStateChange]);
+  }, [questions, currentQuestionIndex, results]); // Removed onPracticeStateChange and flaggedQuestions to prevent infinite loop
+
+  // Separate useEffect for flagged questions changes (manual flag toggles only)
+  const flaggedQuestionsRef = useRef(flaggedQuestions);
+  useEffect(() => {
+    // Only update if the Set actually changed (not just a new reference)
+    const prevSize = flaggedQuestionsRef.current?.size || 0;
+    const currSize = flaggedQuestions?.size || 0;
+
+    if (prevSize !== currSize && onPracticeStateChange) {
+      flaggedQuestionsRef.current = flaggedQuestions;
+      onPracticeStateChange({
+        questions,
+        currentQuestionIndex,
+        results,
+        flaggedQuestions
+      });
+    }
+  }, [flaggedQuestions?.size]); // Only trigger when the size changes
 
   const handleAnswerSelect = (choiceIndex) => {
     if (showExplanation) return; // Prevent changing answer after checking
@@ -943,14 +961,8 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
   // Parse question text to separate passage from question
   const { passage, question } = parseQuestionText(currentQuestion.text);
 
-  // Debug logging to help identify parsing issues
-  if (!passage || !question) {
-    console.warn('⚠️ PracticeSession: Question parsing issue', {
-      hasPassage: !!passage,
-      hasQuestion: !!question,
-      fullText: currentQuestion.text?.substring(0, 100) + '...'
-    });
-  }
+  // Debug logging removed - was causing console spam
+  // Questions without clear passage/question separation are handled gracefully below
 
   return (
     <>

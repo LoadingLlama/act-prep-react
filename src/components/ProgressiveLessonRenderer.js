@@ -21,9 +21,9 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
   const [textCompletionStatus, setTextCompletionStatus] = useState({});
   const [exampleCompletionStatus, setExampleCompletionStatus] = useState({});
   const [sectionStatusOverride, setSectionStatusOverride] = useState({});
-  const [typingSpeed, setTypingSpeed] = useState(20); // Slower, more readable typing speed
+  const [typingSpeed, setTypingSpeed] = useState(5); // Faster typing speed for quicker rendering
   const [isCompleting, setIsCompleting] = useState(false);
-  const [hasStarted, setHasStarted] = useState(false);
+  const [hasStarted, setHasStarted] = useState(true); // Auto-start lessons immediately
   const typewriterRef = React.useRef(null);
   const sectionRefs = React.useRef([]);
 

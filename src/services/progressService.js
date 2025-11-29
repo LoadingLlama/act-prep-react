@@ -80,18 +80,24 @@ export async function updateProgress(userId, lessonId, status) {
     }
 
     console.log(`📤 Sending upsert request for ${lessonId}...`);
+    console.log('Update data being sent:', JSON.stringify(updateData, null, 2));
 
     // Upsert (insert or update)
+    // Specify ignoreDuplicates: false to update on conflict
     const { data, error } = await supabase
       .from('lesson_progress')
       .upsert(updateData, {
-        onConflict: 'user_id,lesson_id'
+        onConflict: 'user_id,lesson_id',
+        ignoreDuplicates: false
       })
       .select();
 
     if (error) {
       console.error(`❌ [${new Date().toISOString()}] Error updating progress:`, error);
-      console.error('Error details:', error);
+      console.error('Error details:', JSON.stringify(error, null, 2));
+      console.error('Error message:', error.message);
+      console.error('Error code:', error.code);
+      console.error('Error hint:', error.hint);
       return false;
     }
 

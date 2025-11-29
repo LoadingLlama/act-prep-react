@@ -1,0 +1,1130 @@
+/**
+ * Diagnostic Test Component
+ * Displays the diagnostic test using the same interface as practice tests
+ * Integrates with adaptive learning algorithm for personalized recommendations
+ */
+
+import React, { useState, useEffect, useRef } from 'react';
+import { HiXMark, HiArrowRight } from 'react-icons/hi2';
+import { usePracticeTestStyles } from '../styles/pages/practice-test.styles';
+import DiagnosticService from '../services/api/diagnostic.service';
+import { supabase } from '../services/api/supabase.service';
+import logger from '../services/logging/logger';
+import errorTracker from '../services/logging/errorTracker';
+import { convertDiagnosticToACT, getPerformanceLevel } from '../utils/actScoreConversion';
+import { processTestResultsInBackground as processResults } from '../services/diagnostic/diagnosticResultProcessor';
+import DiagnosticInsightsModal from './diagnostic/DiagnosticInsightsModal';
+import DiagnosticResultsView from './diagnostic/DiagnosticResultsView';
+import DiagnosticOnboardingForm from './diagnostic/DiagnosticOnboardingForm';
+import DiagnosticIntroScreen from './diagnostic/DiagnosticIntroScreen';
+
+const DiagnosticTest = ({ onClose }) => {
+  const classes = usePracticeTestStyles();
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [questions, setQuestions] = useState([]); // Current section questions
+  const [testStarted, setTestStarted] = useState(false);
+  const [sessionId, setSessionId] = useState(null);
+  const [userId, setUserId] = useState(null);
+  const [analyzing, setAnalyzing] = useState(false);
+  const [showOnboarding, setShowOnboarding] = useState(false);
+  const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState(false);
+  const [showIntro, setShowIntro] = useState(false);
+  const [currentSection, setCurrentSection] = useState('english'); // Track current section
+  const [processing, setProcessing] = useState(false);
+  const [processingStep, setProcessingStep] = useState('');
+  const [processingProgress, setProcessingProgress] = useState(0);
+  const [showResults, setShowResults] = useState(false);
+  const [analysisData, setAnalysisData] = useState(null);
+  const [userGoalsData, setUserGoalsData] = useState(null);
+  const [learningPathData, setLearningPathData] = useState(null);
+  const [onboardingData, setOnboardingData] = useState({
+    target_exam_date: '',
+    current_score: '',
+    target_score: 34,
+    use_alternating_weeks: false,
+    study_hours: {
+      monday: 1,
+      tuesday: 1,
+      wednesday: 1,
+      thursday: 1,
+      friday: 1,
+      saturday: 3,
+      sunday: 2
+    },
+    study_hours_week2: {
+      monday: 1,
+      tuesday: 1,
+      wednesday: 1,
+      thursday: 1,
+      friday: 1,
+      saturday: 3,
+      sunday: 2
+    },
+    weakest_section: '',
+    review_day: 'sunday',
+    mock_exam_day: 'saturday',
+    weekly_hours_tier: 'moderate'
+  });
+  const [hoveredTooltip, setHoveredTooltip] = useState(null);
+  const [confirmStart, setConfirmStart] = useState(false);
+  const [showCountdown, setShowCountdown] = useState(false);
+  const [countdown, setCountdown] = useState(3);
+  const [showInsights, setShowInsights] = useState(false);
+  const [insightsData, setInsightsData] = useState(null);
+
+  // Ref for iframe to send messages
+  const iframeRef = useRef(null);
+
+  // Countdown timer effect
+  useEffect(() => {
+    if (showCountdown && countdown > 0) {
+      const timer = setTimeout(() => {
+        setCountdown(countdown - 1);
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else if (showCountdown && countdown === 0) {
+      // Hide countdown and start the test
+      setShowCountdown(false);
+      if (!testStarted) {
+        beginDiagnosticTest();
+      }
+    }
+  }, [showCountdown, countdown, testStarted]);
+
+  // Section configurations
+  const sectionConfig = {
+    english: {
+      name: 'English',
+      emoji: '📝',
+      timeMinutes: 45,
+      description: '75 questions covering grammar, punctuation, and rhetorical skills',
+      nextSection: 'math'
+    },
+    math: {
+      name: 'Mathematics',
+      emoji: '🔢',
+      timeMinutes: 60,
+      description: '60 questions covering algebra, geometry, and trigonometry',
+      nextSection: 'reading'
+    },
+    reading: {
+      name: 'Reading',
+      emoji: '📖',
+      timeMinutes: 35,
+      description: '40 questions across 4 passages',
+      nextSection: 'science'
+    },
+    science: {
+      name: 'Science',
+      emoji: '🔬',
+      timeMinutes: 35,
+      description: '40 questions testing scientific reasoning',
+      nextSection: null // Last section
+    }
+  };
+
+  // Verify user on mount only
+  useEffect(() => {
+    const getCurrentUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        setUserId(user.id);
+      } else {
+        setError('You must be logged in to take the diagnostic test.');
+      }
+      setLoading(false);
+    };
+    getCurrentUser();
+  }, []);
+
+  /**
+   * Load questions for a specific section
+   */
+  const loadSectionQuestions = async (section) => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      logger.info('DiagnosticTest', 'loadSectionQuestions', { section });
+
+      const sectionQuestions = await DiagnosticService.getDiagnosticQuestions(section);
+
+      if (!sectionQuestions || sectionQuestions.length === 0) {
+        throw new Error(`No ${section} questions found`);
+      }
+
+      console.log(`✅ Loaded ${section} section:`, {
+        count: sectionQuestions.length,
+        questionNumbers: sectionQuestions.map(q => q.question_number).join(', '),
+        fromTest: 'Practice Test #1 (Diagnostic)'
+      });
+
+      // Questions are already in the correct format from the service
+      setQuestions(sectionQuestions);
+      setCurrentSection(section);
+
+      logger.info('DiagnosticTest', 'loadSectionQuestions', {
+        section,
+        count: sectionQuestions.length
+      });
+
+    } catch (err) {
+      console.error(`Error loading ${section} questions:`, err);
+      errorTracker.trackError(
+        'DiagnosticTest',
+        'loadSectionQuestions',
+        { section },
+        err
+      );
+      setError(`Failed to load ${section} section. Please try again.`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  /**
+   * Start the diagnostic test
+   * Creates a diagnostic session before loading the test
+   */
+  /**
+   * Save onboarding data - just move to intro screen without persisting
+   * Data will be saved when test is completed
+   */
+  const saveOnboardingData = async () => {
+    try {
+      console.log('📝 Onboarding data collected (will save after test completion)');
+      setHasCompletedOnboarding(true);
+      setShowOnboarding(false);
+
+      // Show intro screen before starting test
+      setShowIntro(true);
+    } catch (error) {
+      console.error('Error processing onboarding:', error);
+      logger.error('DiagnosticTest', 'saveOnboardingDataFailed', { error: error.message });
+      setError(`Failed to process your information: ${error.message || 'Unknown error'}. Please try again.`);
+    }
+  };
+
+  /**
+   * Begin diagnostic test - starts with English section
+   */
+  const beginDiagnosticTest = async () => {
+    try {
+      logger.info('DiagnosticTest', 'beginDiagnosticTest', { userId });
+
+      console.log('📝 Creating diagnostic session in database...');
+
+      // Create actual diagnostic session in database to get proper UUID
+      const session = await DiagnosticService.createDiagnosticSession(
+        userId,
+        'full', // All sections
+        215 // Total questions (75 English + 60 Math + 40 Reading + 40 Science)
+      );
+
+      if (!session || !session.id) {
+        throw new Error('Failed to create diagnostic session');
+      }
+
+      console.log('✅ Diagnostic session created:', session.id);
+      setSessionId(session.id);
+      sessionStorage.setItem('diagnosticSessionId', session.id);
+
+      // Load English section first
+      await loadSectionQuestions('english');
+      setTestStarted(true);
+
+      logger.info('DiagnosticTest', 'testStarted', { sessionId: session.id, section: 'english' });
+
+    } catch (error) {
+      logger.error('DiagnosticTest', 'beginDiagnosticTestFailed', { error });
+      setError(error.message || 'Failed to start the diagnostic test');
+    }
+  };
+
+  /**
+   * Store current section questions in sessionStorage when they change
+   */
+  useEffect(() => {
+    if (testStarted && questions.length > 0 && currentSection) {
+      const duration = sectionConfig[currentSection]?.timeMinutes || 45;
+
+      sessionStorage.setItem('practiceTestQuestions', JSON.stringify(questions));
+      sessionStorage.setItem('practiceTestSection', currentSection);
+      sessionStorage.setItem('practiceTestNumber', 'diagnostic');
+      sessionStorage.setItem('practiceTestDuration', duration);
+
+      console.log('📦 Storing section in sessionStorage:', {
+        section: currentSection,
+        questionsCount: questions.length,
+        duration
+      });
+
+      // Tell iframe to reload questions from sessionStorage
+      // (Skip for initial English load - iframe will load on its own)
+      if (currentSection !== 'english' && iframeRef.current?.contentWindow) {
+        console.log('📤 Sending LOAD_NEXT_SECTION message to iframe:', {
+          section: currentSection,
+          questionsCount: questions.length,
+          iframeExists: !!iframeRef.current,
+          contentWindowExists: !!iframeRef.current?.contentWindow
+        });
+
+        // Add small delay to ensure sessionStorage is fully written
+        setTimeout(() => {
+          iframeRef.current.contentWindow.postMessage({
+            type: 'LOAD_NEXT_SECTION'
+          }, '*');
+          console.log('✅ LOAD_NEXT_SECTION message sent');
+        }, 100);
+      } else {
+        console.log('⏭️ Skipping LOAD_NEXT_SECTION (English section or iframe not ready):', {
+          currentSection,
+          isEnglish: currentSection === 'english',
+          iframeExists: !!iframeRef.current,
+          contentWindowExists: !!iframeRef.current?.contentWindow
+        });
+      }
+    }
+  }, [testStarted, questions, currentSection]);
+
+  /**
+   * Handle "Begin Diagnostic Test" button click
+   */
+  const startTest = async () => {
+    // Check if user needs to complete onboarding first
+    if (!hasCompletedOnboarding) {
+      setShowOnboarding(true);
+      return;
+    }
+
+    // Otherwise, start test directly
+    await beginDiagnosticTest();
+  };
+
+  // Listen for section completion and test completion messages from iframe
+  useEffect(() => {
+    const handleMessage = async (event) => {
+      console.log('📨 Diagnostic Test Message received:', event.data);
+
+      if (event.data?.type === 'PRACTICE_TEST_NEXT_SECTION') {
+        // Move to next section
+        const nextSection = sectionConfig[currentSection]?.nextSection;
+        console.log(`🔄 Moving to next section: ${currentSection} → ${nextSection}`);
+
+        if (nextSection) {
+          logger.info('DiagnosticTest', 'loadingNextSection', { nextSection });
+          await loadSectionQuestions(nextSection);
+        } else {
+          console.log('✅ All sections complete - processing results');
+          await handleTestCompletion();
+        }
+      } else if (event.data?.type === 'PRACTICE_TEST_COMPLETE') {
+        console.log('✅ Diagnostic test complete - processing results');
+        await handleTestCompletion();
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, [onClose, sessionId, userId, questions, currentSection]);
+
+  /**
+   * Check onboarding and auto-show it if not completed
+   */
+  useEffect(() => {
+    if (userId && !testStarted && !loading) {
+      const checkOnboarding = async () => {
+        const { data: goals } = await supabase
+          .from('user_goals')
+          .select('*')
+          .eq('user_id', userId)
+          .maybeSingle();
+
+        if (goals) {
+          // User has completed onboarding before
+          setHasCompletedOnboarding(true);
+          // Pre-fill onboarding data if it exists
+          setOnboardingData({
+            target_exam_date: goals.target_exam_date || '',
+            current_score: goals.current_score || '',
+            target_score: goals.target_score || 28,
+            use_alternating_weeks: false,
+            study_hours: onboardingData.study_hours,
+            study_hours_week2: onboardingData.study_hours_week2,
+            weakest_section: goals.weakest_section || '',
+            review_day: goals.review_day || 'sunday',
+            mock_exam_day: goals.mock_exam_day || 'saturday'
+          });
+          // Show intro screen directly since they've done onboarding
+          setShowIntro(true);
+        } else {
+          // No onboarding completed - show it immediately
+          setHasCompletedOnboarding(false);
+          setShowOnboarding(true);
+        }
+      };
+      checkOnboarding();
+    }
+  }, [userId, testStarted, loading]);
+
+  /**
+   * Prevent scrolling on intro and onboarding screens
+   */
+  useEffect(() => {
+    if (showIntro || showOnboarding) {
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = 'unset';
+      };
+    }
+  }, [showIntro, showOnboarding]);
+
+  /**
+   * Process test results with progress updates
+   */
+  const processTestResultsInBackground = async (allSections) => {
+    try {
+      console.log('🔄 Processing started...');
+      setProcessingStep('Loading your test questions...');
+      setProcessingProgress(5);
+
+      // Load all questions from all sections for review
+      console.log('📚 Loading all questions from all sections for review...');
+      const allDiagnosticQuestions = await DiagnosticService.getDiagnosticQuestions(); // Gets all sections
+      console.log('✅ Loaded all diagnostic questions:', allDiagnosticQuestions.length);
+      setProcessingProgress(20);
+      setProcessingStep('Preparing to save your answers...');
+
+      // Flatten all question results from all sections
+      // CRITICAL: Preserve section information for each question
+      const allQuestionResults = [];
+      allSections.forEach(sectionResult => {
+        sectionResult.questions.forEach(q => {
+          allQuestionResults.push({
+            ...q,
+            section: sectionResult.section  // Add section to each question
+          });
+        });
+      });
+
+      // Verify section distribution
+      const questionsBySection = allQuestionResults.reduce((acc, q) => {
+        acc[q.section] = (acc[q.section] || 0) + 1;
+        return acc;
+      }, {});
+      console.log('📊 Questions by section before saving:', questionsBySection);
+
+      logger.info('DiagnosticTest', 'savingAnswers', {
+        totalAnswers: allQuestionResults.length
+      });
+
+      setProcessingProgress(25);
+
+      // Calculate final scores
+      setProcessingProgress(45);
+      setProcessingStep('Calculating your scores...');
+
+      const totalQuestions = allQuestionResults.length;
+      const correctAnswers = allQuestionResults.filter(q => q.isCorrect).length;
+      const scorePercentage = (correctAnswers / totalQuestions) * 100;
+
+      logger.info('DiagnosticTest', 'completingSession', {
+        correctAnswers,
+        totalQuestions,
+        scorePercentage: scorePercentage.toFixed(2)
+      });
+
+      console.log('✅ Question results saved. Completing session...');
+      setProcessingProgress(55);
+
+      // Complete diagnostic session
+      await DiagnosticService.completeDiagnosticSession(
+        sessionId,
+        correctAnswers,
+        scorePercentage
+      );
+
+      console.log('✅ Session completed. Saving user goals...');
+      setProcessingStep('Saving your study preferences...');
+      setProcessingProgress(65);
+
+      // Save user goals from onboarding data
+      logger.info('DiagnosticTest', 'savingUserGoals', { userId });
+
+      // Calculate study metrics from individual day hours
+      let totalWeeklyHours, studyDaysCount, avgDailyMinutes;
+
+      if (onboardingData.use_alternating_weeks) {
+        // Calculate average across both weeks
+        const week1Hours = Object.values(onboardingData.study_hours);
+        const week2Hours = Object.values(onboardingData.study_hours_week2);
+        const totalWeek1 = week1Hours.reduce((sum, hours) => sum + hours, 0);
+        const totalWeek2 = week2Hours.reduce((sum, hours) => sum + hours, 0);
+        totalWeeklyHours = (totalWeek1 + totalWeek2) / 2; // Average of two weeks
+
+        const week1Days = week1Hours.filter(hours => hours > 0).length;
+        const week2Days = week2Hours.filter(hours => hours > 0).length;
+        studyDaysCount = Math.round((week1Days + week2Days) / 2);
+
+        avgDailyMinutes = studyDaysCount > 0 ? Math.round((totalWeeklyHours / studyDaysCount) * 60) : 0;
+      } else {
+        // Single week schedule
+        const studyHours = Object.values(onboardingData.study_hours);
+        totalWeeklyHours = studyHours.reduce((sum, hours) => sum + hours, 0);
+        studyDaysCount = studyHours.filter(hours => hours > 0).length;
+        avgDailyMinutes = studyDaysCount > 0 ? Math.round((totalWeeklyHours / studyDaysCount) * 60) : 0;
+      }
+
+      // Default to 12 weeks (84 days) if no exam date is set
+      const defaultExamDate = new Date();
+      defaultExamDate.setDate(defaultExamDate.getDate() + 84); // 12 weeks = 84 days
+
+      const userGoalsData = {
+        user_id: userId,
+        target_exam_date: onboardingData.target_exam_date || defaultExamDate.toISOString().split('T')[0],
+        current_score: onboardingData.current_score ? parseInt(onboardingData.current_score) : null,
+        target_score: onboardingData.target_score,
+        daily_study_minutes: avgDailyMinutes,
+        study_days_per_week: studyDaysCount,
+        study_hours: onboardingData.study_hours,
+        study_hours_week2: onboardingData.study_hours_week2,
+        use_alternating_weeks: onboardingData.use_alternating_weeks || false,
+        review_day: onboardingData.review_day,
+        mock_exam_day: onboardingData.mock_exam_day,
+        weekly_hours_tier: onboardingData.weekly_hours_tier || 'moderate',
+        updated_at: new Date().toISOString()
+      };
+
+      console.log('💾 Saving user goals from onboarding:', {
+        target_exam_date: userGoalsData.target_exam_date,
+        target_score: userGoalsData.target_score,
+        daily_study_minutes: userGoalsData.daily_study_minutes,
+        study_days_per_week: userGoalsData.study_days_per_week,
+        study_hours: userGoalsData.study_hours,
+        study_hours_week2: userGoalsData.study_hours_week2,
+        use_alternating_weeks: userGoalsData.use_alternating_weeks,
+        review_day: userGoalsData.review_day,
+        mock_exam_day: userGoalsData.mock_exam_day
+      });
+
+      await supabase
+        .from('user_goals')
+        .upsert(userGoalsData, {
+          onConflict: 'user_id'
+        });
+
+      logger.info('DiagnosticTest', 'userGoalsSaved', { userId });
+
+      setProcessingStep('Saving your test results...');
+      setProcessingProgress(70);
+
+      // Save each question result to diagnostic_test_results table (deduplicated)
+      // Remove duplicates by section + question number (e.g., "english:1", "math:1")
+      const uniqueResults = [];
+      const seenQuestions = new Set();
+
+      allQuestionResults.forEach(result => {
+        const uniqueKey = `${result.section}:${result.questionNum}`;
+        if (!seenQuestions.has(uniqueKey)) {
+          seenQuestions.add(uniqueKey);
+          uniqueResults.push(result);
+        }
+      });
+
+      console.log('💾 Saving', uniqueResults.length, 'unique question results to database (removed', allQuestionResults.length - uniqueResults.length, 'duplicates)');
+      logger.info('DiagnosticTest', 'savingResults', { sessionId, resultsCount: uniqueResults.length, duplicatesRemoved: allQuestionResults.length - uniqueResults.length });
+
+      // VALIDATION: Count expected questions per section
+      const expectedCounts = {
+        english: uniqueResults.filter(r => r.section === 'english').length,
+        math: uniqueResults.filter(r => r.section === 'math').length,
+        reading: uniqueResults.filter(r => r.section === 'reading').length,
+        science: uniqueResults.filter(r => r.section === 'science').length
+      };
+
+      console.log('\n📋 EXPECTED QUESTION COUNTS BY SECTION:');
+      console.log(`  English:  ${expectedCounts.english} questions (should be ~75)`);
+      console.log(`  Math:     ${expectedCounts.math} questions (should be ~60)`);
+      console.log(`  Reading:  ${expectedCounts.reading} questions (should be ~40)`);
+      console.log(`  Science:  ${expectedCounts.science} questions (should be ~40)`);
+      console.log(`  TOTAL:    ${uniqueResults.length} questions (should be 215)\n`);
+
+      if (uniqueResults.length !== 215) {
+        console.warn(`⚠️  WARNING: Expected 215 questions but got ${uniqueResults.length}!`);
+      }
+
+      // Create efficient lookup map: section:questionNum -> question
+      const questionLookup = new Map();
+      allDiagnosticQuestions.forEach(q => {
+        const key = `${q.section}:${q.question_number}`;
+        questionLookup.set(key, q);
+      });
+
+      console.log(`📚 Question lookup map created: ${questionLookup.size} entries`);
+      console.log('📋 Sample lookup keys:', Array.from(questionLookup.keys()).slice(0, 10).join(', '));
+
+      // Track saving statistics by section
+      const saveStats = {
+        english: { attempted: 0, saved: 0, failed: 0, questionNumbers: [] },
+        math: { attempted: 0, saved: 0, failed: 0, questionNumbers: [] },
+        reading: { attempted: 0, saved: 0, failed: 0, questionNumbers: [] },
+        science: { attempted: 0, saved: 0, failed: 0, questionNumbers: [] }
+      };
+
+      // Save each question result
+      console.log('\n💾 Starting to save answers to database...\n');
+
+      let progressCounter = 0;
+      for (const result of uniqueResults) {
+        const section = result.section;
+
+        if (!section) {
+          console.error('❌ CRITICAL: Result missing section!', result);
+          continue;
+        }
+
+        saveStats[section].attempted++;
+
+        // Look up question using section:questionNum key
+        const lookupKey = `${section}:${result.questionNum}`;
+        const question = questionLookup.get(lookupKey);
+
+        if (!question?.id) {
+          console.error(`❌ Question not found - Key: ${lookupKey}`, result);
+          saveStats[section].failed++;
+          continue;
+        }
+
+        try {
+          const saveResult = await DiagnosticService.saveDiagnosticAnswer(
+            userId,
+            sessionId,
+            question.id,
+            result.userAnswer,
+            result.isCorrect,
+            result.timeSpent || 0
+          );
+
+          if (saveResult === null) {
+            console.error(`❌ Failed to save answer for ${lookupKey}`);
+            saveStats[section].failed++;
+          } else {
+            saveStats[section].saved++;
+            saveStats[section].questionNumbers.push(result.questionNum);
+          }
+        } catch (error) {
+          console.error(`❌ Exception saving answer for ${lookupKey}:`, error);
+          saveStats[section].failed++;
+        }
+
+        // Progress logging every 50 questions
+        progressCounter++;
+        if (progressCounter % 50 === 0) {
+          const totalSoFar = Object.values(saveStats).reduce((sum, s) => sum + s.saved, 0);
+          console.log(`📊 Progress: ${totalSoFar}/${uniqueResults.length} questions saved (${((totalSoFar/uniqueResults.length)*100).toFixed(1)}%)`);
+        }
+      }
+
+      // Log final statistics
+      console.log('\n═══════════════════════════════════════════════════════');
+      console.log('📊 FINAL SAVE STATISTICS BY SECTION');
+      console.log('═══════════════════════════════════════════════════════\n');
+
+      Object.keys(saveStats).forEach(section => {
+        const stats = saveStats[section];
+        if (stats.attempted > 0) {
+          const sectionName = section.toUpperCase();
+          const percentage = ((stats.saved / stats.attempted) * 100).toFixed(1);
+          console.log(`${sectionName}:`);
+          console.log(`  Attempted: ${stats.attempted}`);
+          console.log(`  Saved:     ${stats.saved} (${percentage}%)`);
+          console.log(`  Failed:    ${stats.failed}`);
+
+          // Show question number ranges
+          if (stats.questionNumbers.length > 0) {
+            const sortedQs = stats.questionNumbers.sort((a, b) => a - b);
+            const ranges = [];
+            let rangeStart = sortedQs[0];
+            let rangeEnd = sortedQs[0];
+
+            for (let i = 1; i < sortedQs.length; i++) {
+              if (sortedQs[i] === rangeEnd + 1) {
+                rangeEnd = sortedQs[i];
+              } else {
+                ranges.push(rangeStart === rangeEnd ? `${rangeStart}` : `${rangeStart}-${rangeEnd}`);
+                rangeStart = sortedQs[i];
+                rangeEnd = sortedQs[i];
+              }
+            }
+            ranges.push(rangeStart === rangeEnd ? `${rangeStart}` : `${rangeStart}-${rangeEnd}`);
+
+            console.log(`  Questions: ${ranges.join(', ')}`);
+          }
+          console.log();
+        }
+      });
+
+      const totalSaved = Object.values(saveStats).reduce((sum, s) => sum + s.saved, 0);
+      const totalFailed = Object.values(saveStats).reduce((sum, s) => sum + s.failed, 0);
+      const totalPercentage = ((totalSaved / uniqueResults.length) * 100).toFixed(1);
+
+      console.log('═══════════════════════════════════════════════════════');
+      console.log(`TOTAL: ${totalSaved}/${uniqueResults.length} saved (${totalPercentage}%)`);
+      console.log('═══════════════════════════════════════════════════════\n');
+
+      if (totalSaved === 215) {
+        console.log('✅✅✅ SUCCESS: ALL 215 QUESTIONS SAVED TO DATABASE! ✅✅✅\n');
+      } else if (totalSaved >= 200) {
+        console.log(`✅ GOOD: ${totalSaved} questions saved (${215 - totalSaved} missing)\n`);
+      } else {
+        console.warn(`⚠️  WARNING: Only ${totalSaved}/215 questions saved!\n`);
+      }
+
+      if (totalFailed > 0) {
+        console.error(`❌ CRITICAL: ${totalFailed} answers failed to save!`);
+        throw new Error(`Failed to save ${totalFailed} diagnostic answers`);
+      }
+
+      console.log('✅ All question results saved to database successfully\n');
+
+      setProcessingStep('Analyzing your performance across all sections...');
+      setProcessingProgress(73);
+
+      // Trigger diagnostic analysis algorithm (it will load results from DB)
+      logger.info('DiagnosticTest', 'analyzingResults', { sessionId });
+      const analysis = await DiagnosticAnalysisService.analyzeDiagnosticResults(
+        userId,
+        sessionId
+        // No third parameter - let it load from diagnostic_test_results table
+      );
+
+      setProcessingProgress(75);
+      setProcessingStep('Identifying your strengths and weaknesses...');
+
+      logger.info('DiagnosticTest', 'analysisComplete', {
+        weakLessons: analysis.weak_lessons?.length || 0,
+        overallScore: analysis.overall_score
+      });
+
+      setProcessingProgress(80);
+
+      // Get user goals from onboarding data
+      const userGoals = await getUserGoals(userId);
+
+      // Merge onboarding data with user goals to ensure all new fields are included
+      const mergedGoals = {
+        ...userGoals,
+        review_day: userGoals.review_day || onboardingData.review_day,
+        mock_exam_day: userGoals.mock_exam_day || onboardingData.mock_exam_day,
+        study_hours: userGoals.study_hours || onboardingData.study_hours,
+        study_hours_week2: userGoals.study_hours_week2 || onboardingData.study_hours_week2,
+        use_alternating_weeks: userGoals.use_alternating_weeks || onboardingData.use_alternating_weeks
+      };
+
+      console.log('🎯 User goals for learning path generation:', {
+        target_score: mergedGoals.target_score,
+        daily_study_minutes: mergedGoals.daily_study_minutes,
+        study_days_per_week: mergedGoals.study_days_per_week,
+        exam_date: mergedGoals.exam_date,
+        review_day: mergedGoals.review_day,
+        mock_exam_day: mergedGoals.mock_exam_day,
+        study_hours: mergedGoals.study_hours,
+        use_alternating_weeks: mergedGoals.use_alternating_weeks
+      });
+
+      console.log('📊 Diagnostic analysis for learning path:', {
+        overall_score: analysis.overall_score,
+        weak_lessons_count: analysis.weak_lessons?.length || 0,
+        strong_lessons_count: analysis.strong_lessons?.length || 0,
+        weak_sections: analysis.weak_sections || []
+      });
+
+      setProcessingStep('Creating your personalized learning path...');
+      setProcessingProgress(85);
+
+      // Generate personalized learning path
+      logger.info('DiagnosticTest', 'generatingLearningPath', { userId });
+      const learningPath = await LearningPathService.generateLearningPath(
+        userId,
+        mergedGoals,
+        analysis
+      );
+
+      logger.info('DiagnosticTest', 'learningPathComplete', {
+        pathId: learningPath.id,
+        itemsCount: learningPath.items?.length || 0
+      });
+
+      console.log('✨ Learning path generated successfully:', {
+        pathId: learningPath.id,
+        totalItems: learningPath.items?.length || 0,
+        schedule: learningPath.schedule
+      });
+
+      // Mark diagnostic as completed in profile to unlock learning path
+      console.log('🔓 Marking diagnostic test as completed to unlock learning path...');
+      await supabase
+        .from('profiles')
+        .update({
+          diagnostic_completed: true,
+          updated_at: new Date().toISOString()
+        })
+        .eq('id', userId);
+
+      console.log('✅ Diagnostic test completed - Learning path is now unlocked!');
+
+      setProcessingStep('Finalizing your results...');
+      setProcessingProgress(95);
+
+      // Store insights data with full question details
+      console.log('📊 Processing complete. Preparing results...');
+
+      console.log('📚 Learning path generated with items:', {
+        pathId: learningPath.id,
+        itemsCount: learningPath.items?.length || 0,
+        hasItems: !!learningPath.items
+      });
+
+      // Store analysis, user goals, and learning path data for results screen
+      setAnalysisData(analysis);
+      setUserGoalsData(mergedGoals);
+      setLearningPathData(learningPath);
+
+      // Clean up sessionStorage
+      sessionStorage.removeItem('diagnosticSessionId');
+      sessionStorage.removeItem('practiceTestQuestions');
+      sessionStorage.removeItem('practiceTestResults');
+
+      console.log('✅ All processing completed successfully!');
+
+      // Clear processing flag and show results
+      localStorage.removeItem('diagnosticProcessing');
+
+      // Clear session storage caches to force data refresh
+      Object.keys(sessionStorage).forEach(key => {
+        if (key.startsWith('diagnostic_completed_') || key.startsWith('insights_') || key.startsWith('learning_path_')) {
+          sessionStorage.removeItem(key);
+          console.log('🗑️ Cleared cache:', key);
+        }
+      });
+
+      setProcessingProgress(100);
+      setProcessing(false);
+      setShowResults(true);
+    } catch (err) {
+      console.error('❌ Error in background processing:', err);
+      console.error('Error details:', {
+        message: err.message,
+        stack: err.stack,
+        sessionId,
+        userId
+      });
+      errorTracker.trackError('DiagnosticTest', 'processTestResultsInBackground', { sessionId }, err);
+
+      // Clear processing flag and caches even on error
+      localStorage.removeItem('diagnosticProcessing');
+      Object.keys(sessionStorage).forEach(key => {
+        if (key.startsWith('diagnostic_completed_') || key.startsWith('insights_') || key.startsWith('learning_path_')) {
+          sessionStorage.removeItem(key);
+        }
+      });
+      // Don't set error state since user has already navigated away
+    }
+  };
+
+  /**
+   * Handle test completion
+   * Keep modal open and process results with progress updates
+   */
+  const handleTestCompletion = async () => {
+    try {
+      logger.info('DiagnosticTest', 'handleTestCompletion', { sessionId, userId });
+
+      // Get results from sessionStorage (set by practice-test.html)
+      const resultsData = sessionStorage.getItem('practiceTestResults');
+      if (!resultsData) {
+        throw new Error('No test results found');
+      }
+
+      const results = JSON.parse(resultsData);
+      const allSections = results.allSections || [];
+
+      console.log('📊 Test complete! Processing results...');
+      console.log('📦 Raw results from sessionStorage:', {
+        hasAllSections: !!results.allSections,
+        allSectionsCount: allSections.length,
+        allSections: allSections.map(s => ({
+          section: s.section,
+          questionsCount: s.questions?.length || 0,
+          correct: s.correct,
+          total: s.total
+        })),
+        totalCorrect: results.totalCorrect,
+        totalQuestions: results.totalQuestions
+      });
+
+      // Set localStorage flag to indicate processing has started
+      localStorage.setItem('diagnosticProcessing', 'true');
+
+      // Keep modal open and show processing screen
+      setProcessing(true);
+      setProcessingStep('Starting analysis...');
+      setProcessingProgress(0);
+
+      // Process results (NOT in background - keep modal open)
+      await processTestResultsInBackground(allSections);
+
+    } catch (err) {
+      console.error('❌ Error processing test:', err);
+      errorTracker.trackError('DiagnosticTest', 'handleTestCompletion', { sessionId }, err);
+      setError(`Failed to process test results: ${err.message}`);
+      setProcessing(false);
+      localStorage.removeItem('diagnosticProcessing');
+    }
+  };
+
+  /**
+   * Render loading state
+   */
+  if (loading) {
+    return (
+      <div className={classes.container}>
+        <div className={classes.loadingContainer}>
+          <div className={classes.loadingSpinner} />
+          <div className={classes.loadingText}>Loading Diagnostic Test...</div>
+        </div>
+      </div>
+    );
+  }
+
+  /**
+   * Render processing screen with progress bar
+   */
+  if (processing) {
+    return (
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        width: '100%',
+        backgroundColor: 'transparent'
+      }}>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '3rem 2rem',
+          textAlign: 'center'
+        }}>
+          <div style={{
+            width: '80px',
+            height: '80px',
+            border: '4px solid #fee2e2',
+            borderTop: '4px solid #dc2626',
+            borderRadius: '50%',
+            animation: 'spin 1s linear infinite',
+            marginBottom: '2rem'
+          }} />
+
+          <h2 style={{
+            fontSize: '1.5rem',
+            fontWeight: '600',
+            color: '#1a1a1a',
+            marginBottom: '0.5rem'
+          }}>
+            Analyzing Your Results
+          </h2>
+
+          <p style={{
+            fontSize: '1rem',
+            color: '#6b7280',
+            marginBottom: '2rem',
+            maxWidth: '500px'
+          }}>
+            {processingStep}
+          </p>
+
+          {/* Progress bar */}
+          <div style={{
+            width: '100%',
+            maxWidth: '400px',
+            height: '8px',
+            background: '#f3f4f6',
+            borderRadius: '9999px',
+            overflow: 'hidden'
+          }}>
+            <div style={{
+              height: '100%',
+              background: 'linear-gradient(90deg, #b91c1c 0%, #dc2626 100%)',
+              width: `${processingProgress}%`,
+              transition: 'width 0.5s ease'
+            }} />
+          </div>
+
+          <p style={{
+            fontSize: '0.875rem',
+            color: '#9ca3af',
+            marginTop: '2rem',
+            fontStyle: 'italic'
+          }}>
+            Please don't close this window...
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  /**
+   * Render results view
+   */
+  if (showResults && analysisData) {
+    return <DiagnosticResultsView
+      analysisData={analysisData}
+      userGoalsData={userGoalsData}
+      onboardingData={onboardingData}
+      setShowInsights={setShowInsights}
+      show={showResults}
+    />;
+  }
+
+  /**
+   * Render insights modal
+   */
+  if (showInsights && insightsData) {
+    return <DiagnosticInsightsModal
+      insightsData={insightsData}
+      onClose={onClose}
+      show={showInsights}
+    />;
+  }
+
+  /**
+   * Render error state
+   */
+  if (error) {
+    return (
+      <div className={classes.container}>
+        <div className={classes.errorContainer}>
+          <div className={classes.errorTitle}>Error</div>
+          <div className={classes.errorMessage}>{error}</div>
+          <button onClick={onClose} className={classes.backButton}>
+            Back to Home
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  /**
+   * Render onboarding form
+   */
+  if (showOnboarding) {
+    return <DiagnosticOnboardingForm
+      onboardingData={onboardingData}
+      setOnboardingData={setOnboardingData}
+      saveOnboardingData={saveOnboardingData}
+      onClose={onClose}
+      show={showOnboarding}
+    />;
+  }
+
+  /**
+   * Render test in progress (with countdown or actual test)
+   */
+  if (testStarted || showCountdown) {
+    return (
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: 'white',
+        zIndex: 2000
+      }}>
+        <iframe
+          ref={iframeRef}
+          key="diagnostic-test"
+          src="/tests/practice-test.html"
+          style={{
+            width: '100%',
+            height: '100%',
+            border: 'none',
+            background: 'white'
+          }}
+          title="ACT Diagnostic Test"
+        />
+        {showCountdown && (
+          <div style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(255, 255, 255, 0.98)',
+            zIndex: 2001,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{
+                fontSize: '8rem',
+                fontWeight: '700',
+                color: '#08245b',
+                marginBottom: '1rem'
+              }}>
+                {countdown}
+              </div>
+              <div style={{
+                fontSize: '1.5rem',
+                fontWeight: '600',
+                color: '#6b7280',
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase'
+              }}>
+                Starting Test...
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  /**
+   * Render intro screen
+   */
+  if (showIntro) {
+    return <DiagnosticIntroScreen
+      show={showIntro}
+      onClose={onClose}
+      confirmStart={confirmStart}
+      setConfirmStart={setConfirmStart}
+      setCountdown={setCountdown}
+      setShowCountdown={setShowCountdown}
+    />;
+  }
+
+  /**
+   * Default loading state (while checking onboarding status)
+   */
+  return (
+    <div className={classes.container}>
+      <button onClick={onClose} className={classes.closeButton}>
+        <HiXMark style={{ fontSize: '1.125rem' }} />
+        Close
+      </button>
+      <div className={classes.loadingContainer}>
+        <div className={classes.loadingSpinner} />
+        <div className={classes.loadingText}>Loading...</div>
+      </div>
+    </div>
+  );
+};
+
+export default DiagnosticTest;

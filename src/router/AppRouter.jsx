@@ -163,6 +163,13 @@ export default function AppRouter() {
                 </Suspense>
               </ProtectedRoute>
             } />
+            <Route path="lesson/:lessonId" element={
+              <ProtectedRoute>
+                <Suspense fallback={<RouteLoader />}>
+                  <CourseContent />
+                </Suspense>
+              </ProtectedRoute>
+            } />
           </Route>
 
           {/* Catch all - redirect to landing */}

@@ -1,0 +1,8 @@
+            // LIST VIEW - Collapsible Week Sections
+            <ListViewContent
+              learningPath={learningPath}
+              expandedWeeks={expandedWeeks}
+              toggleWeek={toggleWeek}
+              getLessonStatus={getLessonStatus}
+              handleItemClick={handleItemClick}
+            />
