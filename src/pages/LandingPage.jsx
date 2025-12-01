@@ -262,6 +262,18 @@ const LandingPage = () => {
         </button>
       </div>
 
+      {/* Mobile Typeform - Full Screen */}
+      <div className={classes.mobileTypeformContainer}>
+        <iframe
+          src="https://form.typeform.com/to/okRIME6U"
+          width="100%"
+          height="100%"
+          frameBorder="0"
+          title="Free Training Signup"
+          style={{ border: 'none' }}
+        />
+      </div>
+
       {/* Main Content */}
       <div className={classes.mainContent}>
         <div className={classes.heroSection}>

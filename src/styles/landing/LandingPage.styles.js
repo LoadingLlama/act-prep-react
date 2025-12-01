@@ -235,6 +235,26 @@ export const useLandingPageStyles = createUseStyles({
     },
   },
 
+  // Mobile Typeform Container - Full Screen
+  mobileTypeformContainer: {
+    display: 'none',
+    '@media (max-width: 768px)': {
+      display: 'block',
+      position: 'fixed',
+      top: '32px',
+      left: 0,
+      right: 0,
+      bottom: 0,
+      width: '100%',
+      height: 'calc(100vh - 32px)',
+      zIndex: 10,
+    },
+    '@media (max-width: 480px)': {
+      top: '28px',
+      height: 'calc(100vh - 28px)',
+    },
+  },
+
   // Main Content - Centered and Premium
   mainContent: {
     flex: 1,
@@ -251,10 +271,10 @@ export const useLandingPageStyles = createUseStyles({
     boxSizing: 'border-box',
     minHeight: '100vh',
     '@media (max-width: 768px)': {
-      padding: '0 12px 20px',
+      display: 'none',
     },
     '@media (max-width: 480px)': {
-      padding: '0 10px 16px',
+      display: 'none',
     },
   },
 
