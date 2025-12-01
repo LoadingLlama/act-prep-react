@@ -3,8 +3,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
 import { HiHome, HiDocumentText, HiBookOpen, HiChartBar, HiUser, HiCog6Tooth, HiArrowRightOnRectangle, HiArrowLeftOnRectangle, HiXMark, HiLockClosed, HiBolt, HiAcademicCap, HiSquares2X2 } from 'react-icons/hi2';
 import { useAuth } from '../contexts/AuthContext';
-import soundEffects from '../services/soundEffects';
-import Logo from './common/Logo';
+// import soundEffects from '../services/soundEffects';
+import AppLogo from './common/AppLogo';
 
 const useStyles = createUseStyles({
   overlay: {
@@ -28,7 +28,7 @@ const useStyles = createUseStyles({
     top: 0,
     width: '240px',
     height: '100vh',
-    background: '#08245b',
+    background: '#b91c1c',
     padding: '0',
     overflow: 'hidden',
     zIndex: 1000,
@@ -193,9 +193,9 @@ const useStyles = createUseStyles({
     letterSpacing: '0.05em'
   },
   trialBadge: {
-    background: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)',
-    color: '#1e40af',
-    border: '1px solid #93c5fd'
+    background: 'linear-gradient(135deg, #fee2e2 0%, #fecaca 100%)',
+    color: '#b91c1c',
+    border: '1px solid #fca5a5'
   },
   lockedBadge: {
     background: 'linear-gradient(135deg, #fecaca 0%, #fca5a5 100%)',
@@ -270,7 +270,7 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
 
   const handleLogin = () => {
     // Just navigate to profile which will show the inline auth
-    soundEffects.playNavigation();
+    // soundEffects.playNavigation();
     onNavigate('home');
     if (onClose) {
       onClose();
@@ -278,7 +278,7 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
   };
 
   const handleLogoClick = () => {
-    soundEffects.playNavigation();
+    // soundEffects.playNavigation();
     navigate('/');
     if (onClose) {
       onClose();
@@ -290,7 +290,7 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
     const allowedViews = ['profile', 'settings', 'upgrade'];
     if (isTrialExpired && !isPro && !allowedViews.includes(view)) {
       // Redirect to upgrade page if trying to access locked content
-      soundEffects.playNavigation();
+      // soundEffects.playNavigation();
       onNavigate('upgrade');
       if (onClose) {
         onClose();
@@ -298,7 +298,7 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
       return;
     }
 
-    soundEffects.playNavigation();
+    // soundEffects.playNavigation();
     onNavigate(view);
     // Close sidebar on mobile after navigation
     if (onClose) {
@@ -322,7 +322,7 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
         </button>
 
         <div className={classes.logoSection}>
-          <Logo size="small" clickable onClick={handleLogoClick} style={{ color: '#ffffff', textTransform: 'lowercase' }} />
+          <AppLogo size="small" clickable onClick={handleLogoClick} style={{ color: '#ffffff' }} />
         </div>
 
       <div className={classes.navSection} data-nav-section ref={navSectionRef} style={{ position: 'relative' }}>
@@ -350,14 +350,14 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
           className={`${classes.navItem} ${activeView === 'lessons' && !isDrillsMode ? 'active' : ''}`}
           onClick={() => {
             if (isTrialExpired && !isPro) {
-              soundEffects.playNavigation();
+              // soundEffects.playNavigation();
               onNavigate('upgrade');
               if (onClose) {
                 onClose();
               }
               return;
             }
-            soundEffects.playNavigation();
+            // soundEffects.playNavigation();
             navigate('/app/lessons');
             if (onClose) {
               onClose();
@@ -374,14 +374,14 @@ const Sidebar = ({ activeView, onNavigate, isOpen, onClose, isPro, trialDaysLeft
           className={`${classes.navItem} ${isDrillsMode ? 'active' : ''}`}
           onClick={() => {
             if (isTrialExpired && !isPro) {
-              soundEffects.playNavigation();
+              // soundEffects.playNavigation();
               onNavigate('upgrade');
               if (onClose) {
                 onClose();
               }
               return;
             }
-            soundEffects.playNavigation();
+            // soundEffects.playNavigation();
             navigate('/app/lessons?mode=drills');
             if (onClose) {
               onClose();

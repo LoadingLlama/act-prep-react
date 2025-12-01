@@ -9,7 +9,7 @@ import { HiPencilSquare, HiQuestionMarkCircle, HiCheckCircle, HiChevronDown, HiC
 import { useCourseStyles } from '../../styles/app/course.styles';
 import { supabase } from '../../services/api/supabase.service';
 import { useAuth } from '../../contexts/AuthContext';
-import soundEffects from '../../services/soundEffects';
+// import soundEffects from '../../services/soundEffects';
 import LearningPathService from '../../services/api/learning-path.service';
 import { getHolidays } from '../../utils/calendar/holidays';
 import { parseLocalDate, formatLocalDate, cleanLessonTitle } from '../../utils/calendar/dateHelpers';
@@ -163,7 +163,7 @@ const CourseContent = () => {
           {/* Today Button */}
           <button
             onClick={() => {
-              soundEffects.playClick();
+              // soundEffects.playClick();
               goToToday();
             }}
             style={{
@@ -204,11 +204,11 @@ const CourseContent = () => {
           }}>
             <button
               onClick={() => {
-                soundEffects.playClick();
+                // soundEffects.playClick();
                 setViewMode('calendar');
               }}
               style={{
-                background: viewMode === 'calendar' ? '#08245b' : 'transparent',
+                background: viewMode === 'calendar' ? '#b91c1c' : 'transparent',
                 border: 'none',
                 borderRadius: '100px',
                 padding: '0.625rem 1.5rem',
@@ -217,7 +217,7 @@ const CourseContent = () => {
                 color: viewMode === 'calendar' ? '#ffffff' : '#64748b',
                 cursor: 'pointer',
                 transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
-                boxShadow: viewMode === 'calendar' ? '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)' : 'none'
+                boxShadow: viewMode === 'calendar' ? '0 2px 4px rgba(185, 28, 28, 0.25), 0 1px 2px rgba(185, 28, 28, 0.15)' : 'none'
               }}
               onMouseEnter={(e) => {
                 if (viewMode !== 'calendar') {
@@ -236,11 +236,11 @@ const CourseContent = () => {
             </button>
             <button
               onClick={() => {
-                soundEffects.playClick();
+                // soundEffects.playClick();
                 setViewMode('list');
               }}
               style={{
-                background: viewMode === 'list' ? '#08245b' : 'transparent',
+                background: viewMode === 'list' ? '#b91c1c' : 'transparent',
                 border: 'none',
                 borderRadius: '100px',
                 padding: '0.625rem 1.5rem',
@@ -249,7 +249,7 @@ const CourseContent = () => {
                 color: viewMode === 'list' ? '#ffffff' : '#64748b',
                 cursor: 'pointer',
                 transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
-                boxShadow: viewMode === 'list' ? '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)' : 'none'
+                boxShadow: viewMode === 'list' ? '0 2px 4px rgba(185, 28, 28, 0.25), 0 1px 2px rgba(185, 28, 28, 0.15)' : 'none'
               }}
               onMouseEnter={(e) => {
                 if (viewMode !== 'list') {
@@ -350,7 +350,7 @@ const CourseContent = () => {
 
 
   const handleItemClick = (item) => {
-    soundEffects.playClick();
+    // soundEffects.playClick();
     if (item.type === 'lesson') {
       onLessonOpen(item.id, 'review');
     } else if (item.type === 'practice') {
@@ -380,7 +380,7 @@ const CourseContent = () => {
     const newStatus = currentStatus === 'completed' ? 'not-started' : 'completed';
 
     console.log(`Toggle completion for ${itemId}: ${currentStatus} → ${newStatus}`);
-    soundEffects.playClick();
+    // soundEffects.playClick();
 
     try {
       await updateLessonProgress(itemId, newStatus);
@@ -918,7 +918,7 @@ const CourseContent = () => {
   };
 
   const toggleWeek = (weekKey) => {
-    soundEffects.playToggle();
+    // soundEffects.playToggle();
     setExpandedWeeks(prev => ({
       ...prev,
       [weekKey]: !prev[weekKey]
@@ -1012,11 +1012,11 @@ const CourseContent = () => {
             <div style={{ textAlign: 'center' }}>
               <button
                 onClick={() => {
-                  soundEffects.playSuccess();
+                  // soundEffects.playSuccess();
                   setDiagnosticTestOpen(true);
                 }}
                 style={{
-                  background: '#2563eb',
+                  background: '#b91c1c',
                   color: 'white',
                   border: 'none',
                   borderRadius: '12px',
@@ -1025,15 +1025,15 @@ const CourseContent = () => {
                   fontWeight: '600',
                   cursor: 'pointer',
                   transition: 'all 0.15s ease',
-                  boxShadow: '0 3px 0 0 rgba(37, 99, 235, 0.4)'
+                  boxShadow: '0 3px 0 0 rgba(185, 28, 28, 0.4)'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.background = '#1d4ed8';
-                  e.target.style.boxShadow = '0 3px 0 0 rgba(29, 78, 216, 0.5)';
+                  e.target.style.background = '#991b1b';
+                  e.target.style.boxShadow = '0 3px 0 0 rgba(153, 27, 27, 0.5)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.background = '#2563eb';
-                  e.target.style.boxShadow = '0 3px 0 0 rgba(37, 99, 235, 0.4)';
+                  e.target.style.background = '#b91c1c';
+                  e.target.style.boxShadow = '0 3px 0 0 rgba(185, 28, 28, 0.4)';
                 }}
                 onMouseDown={(e) => {
                   e.target.style.transform = 'translateY(1px)';
@@ -1096,7 +1096,6 @@ const CourseContent = () => {
                 setCustomEventForm={setCustomEventForm}
                 calendarDropdownOpen={calendarDropdownOpen}
                 setCalendarDropdownOpen={setCalendarDropdownOpen}
-                soundEffects={soundEffects}
               />
 
               {/* Calendar Grid - Day, Week, Month, or Year View */}
@@ -1110,7 +1109,6 @@ const CourseContent = () => {
                   customEventForm={customEventForm}
                   setCustomEventForm={setCustomEventForm}
                   setAddEventModalOpen={setAddEventModalOpen}
-                  soundEffects={soundEffects}
                 />
               ) : calendarViewType === 'year' ? (
                 <YearCalendarView
@@ -1118,7 +1116,6 @@ const CourseContent = () => {
                   getHolidays={getHolidays}
                   setCurrentDay={setCurrentDay}
                   setCalendarViewType={setCalendarViewType}
-                  soundEffects={soundEffects}
                 />
               ) : calendarViewType === 'month' ? (
                 <MonthCalendarView
@@ -1130,7 +1127,6 @@ const CourseContent = () => {
                   setAddEventModalOpen={setAddEventModalOpen}
                   setPreviewItem={setPreviewItem}
                   getHolidays={getHolidays}
-                  soundEffects={soundEffects}
                 />
               ) : (
               // WEEK VIEW
@@ -1143,7 +1139,6 @@ const CourseContent = () => {
                 setAddEventModalOpen={setAddEventModalOpen}
                 setPreviewItem={setPreviewItem}
                 getLessonStatus={getLessonStatus}
-                soundEffects={soundEffects}
               />
             )}
             </div>
@@ -1163,7 +1158,7 @@ const CourseContent = () => {
               </p>
               <button
                 onClick={() => {
-                  soundEffects.playSuccess();
+                  // soundEffects.playSuccess();
                   setDiagnosticTestOpen(true);
                 }}
                 style={{

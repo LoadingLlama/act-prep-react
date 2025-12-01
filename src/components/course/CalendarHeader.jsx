@@ -74,8 +74,8 @@ const CalendarHeader = ({
   setAddEventModalOpen,
   setCustomEventForm,
   calendarDropdownOpen,
-  setCalendarDropdownOpen,
-  soundEffects
+  setCalendarDropdownOpen
+  // soundEffects - removed
 }) => {
   return (
     <>
@@ -101,7 +101,7 @@ const CalendarHeader = ({
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <button
             onClick={() => {
-              soundEffects.playClick();
+              // soundEffects.playClick();
               navigateCalendar(-1);
             }}
             style={{
@@ -143,7 +143,7 @@ const CalendarHeader = ({
           </h2>
           <button
             onClick={() => {
-              soundEffects.playClick();
+              // soundEffects.playClick();
               navigateCalendar(1);
             }}
             style={{
@@ -176,7 +176,7 @@ const CalendarHeader = ({
           {/* Add Event Button */}
           <button
             onClick={() => {
-              soundEffects.playClick();
+              // soundEffects.playClick();
               setAddEventModalOpen(true);
             }}
             style={{
@@ -213,7 +213,7 @@ const CalendarHeader = ({
           <div style={{ position: 'relative' }}>
             <button
               onClick={() => {
-                soundEffects.playClick();
+                // soundEffects.playClick();
                 setCalendarDropdownOpen(!calendarDropdownOpen);
               }}
               style={{
@@ -279,7 +279,7 @@ const CalendarHeader = ({
                 }}>
                   <button
                     onClick={() => {
-                      soundEffects.playClick();
+                      // soundEffects.playClick();
                       setCalendarViewType('day');
                       setCalendarDropdownOpen(false);
                     }}
@@ -306,7 +306,7 @@ const CalendarHeader = ({
                   </button>
                   <button
                     onClick={() => {
-                      soundEffects.playClick();
+                      // soundEffects.playClick();
                       setCalendarViewType('week');
                       setCalendarDropdownOpen(false);
                     }}
@@ -333,7 +333,7 @@ const CalendarHeader = ({
                   </button>
                   <button
                     onClick={() => {
-                      soundEffects.playClick();
+                      // soundEffects.playClick();
                       setCalendarViewType('month');
                       setCalendarDropdownOpen(false);
                     }}
@@ -360,7 +360,7 @@ const CalendarHeader = ({
                   </button>
                   <button
                     onClick={() => {
-                      soundEffects.playClick();
+                      // soundEffects.playClick();
                       setCalendarViewType('year');
                       setCalendarDropdownOpen(false);
                     }}

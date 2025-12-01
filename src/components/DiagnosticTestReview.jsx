@@ -573,167 +573,42 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
         flexDirection: 'column',
         animation: 'scaleIn 0.3s ease-out'
       }}>
-        {/* Header with close button */}
+        {/* Header with back button */}
         <div style={{
           padding: '1rem 1.5rem',
-          borderBottom: '0.5px solid #e2e8f0',
+          borderBottom: 'none',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between'
+          justifyContent: 'flex-start'
         }}>
-          <h1 style={{
-            fontSize: '1.125rem',
-            fontWeight: '600',
-            color: '#0f172a',
-            margin: 0,
-            letterSpacing: '-0.02em'
-          }}>
-            Diagnostic Test
-          </h1>
-
-          {/* Section Navigation Dropdown */}
-          <div ref={dropdownRef} style={{ position: 'relative' }}>
-            <button
-              onClick={() => setSectionDropdownOpen(!sectionDropdownOpen)}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                padding: '0.5rem 0.75rem',
-                background: sectionDropdownOpen ? '#f8fafc' : 'transparent',
-                border: '1px solid #e2e8f0',
-                borderRadius: '6px',
-                fontSize: '0.875rem',
-                fontWeight: '500',
-                color: '#0f172a',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseOver={(e) => {
-                if (!sectionDropdownOpen) {
-                  e.currentTarget.style.background = '#f8fafc';
-                }
-              }}
-              onMouseOut={(e) => {
-                if (!sectionDropdownOpen) {
-                  e.currentTarget.style.background = 'transparent';
-                }
-              }}
-            >
-              <span>Navigate Sections</span>
-              <HiChevronDown
-                size={16}
-                style={{
-                  color: '#64748b',
-                  transform: sectionDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                  transition: 'transform 0.2s ease'
-                }}
-              />
-            </button>
-
-            {/* Dropdown Menu */}
-            {sectionDropdownOpen && (
-              <div style={{
-                position: 'absolute',
-                top: 'calc(100% + 0.5rem)',
-                right: 0,
-                background: '#ffffff',
-                border: '1px solid #e2e8f0',
-                borderRadius: '8px',
-                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                minWidth: '200px',
-                zIndex: 10000,
-                overflow: 'hidden'
-              }}>
-                {Object.entries(sectionConfig).map(([key, config]) => {
-                  const sectionResults = testData?.questionsBySection[key] || [];
-                  const correct = sectionResults.filter(r => r.is_correct).length;
-                  const total = sectionResults.length;
-                  const accuracy = total > 0 ? (correct / total) * 100 : 0;
-
-                  return (
-                    <button
-                      key={key}
-                      onClick={() => {
-                        handleSectionSelect(key);
-                        setSectionDropdownOpen(false);
-                      }}
-                      style={{
-                        width: '100%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        padding: '0.75rem 1rem',
-                        background: 'transparent',
-                        border: 'none',
-                        borderBottom: '1px solid #f1f5f9',
-                        fontSize: '0.875rem',
-                        color: '#0f172a',
-                        cursor: 'pointer',
-                        transition: 'background 0.15s ease',
-                        textAlign: 'left'
-                      }}
-                      onMouseOver={(e) => {
-                        e.currentTarget.style.background = '#f8fafc';
-                      }}
-                      onMouseOut={(e) => {
-                        e.currentTarget.style.background = 'transparent';
-                      }}
-                    >
-                      <div>
-                        <div style={{ fontWeight: '600', marginBottom: '2px' }}>
-                          {config.name}
-                        </div>
-                        <div style={{ fontSize: '0.75rem', color: '#64748b' }}>
-                          {correct}/{total} correct
-                        </div>
-                      </div>
-                      <div style={{
-                        fontSize: '1rem',
-                        fontWeight: '700',
-                        color: '#08245b'
-                      }}>
-                        {percentageToACTScore(accuracy)}
-                      </div>
-                    </button>
-                  );
-                })}
-
-                {/* Close option at bottom */}
-                <button
-                  onClick={() => {
-                    setSectionDropdownOpen(false);
-                    onClose();
-                  }}
-                  style={{
-                    width: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    padding: '0.75rem 1rem',
-                    background: 'transparent',
-                    border: 'none',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                    color: '#64748b',
-                    cursor: 'pointer',
-                    transition: 'background 0.15s ease'
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.background = '#fef2f2';
-                    e.currentTarget.style.color = '#dc2626';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.background = 'transparent';
-                    e.currentTarget.style.color = '#64748b';
-                  }}
-                >
-                  <HiArrowLeft size={16} />
-                  <span>Close Review</span>
-                </button>
-              </div>
-            )}
-          </div>
+          <button
+            onClick={onClose}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.5rem 0.75rem',
+              background: 'transparent',
+              border: 'none',
+              borderRadius: '6px',
+              fontSize: '0.875rem',
+              fontWeight: '500',
+              color: '#0f172a',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.background = '#f8fafc';
+              e.currentTarget.style.color = '#b91c1c';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.color = '#0f172a';
+            }}
+          >
+            <HiArrowLeft size={16} />
+            <span>Back</span>
+          </button>
         </div>
 
         {/* Scrollable Content */}
@@ -753,7 +628,7 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
             padding: '1rem',
             background: '#ffffff',
             borderRadius: '8px',
-            border: '0.5px solid #e2e8f0',
+            border: 'none',
             display: 'flex',
             alignItems: 'center',
             gap: '2rem'
@@ -761,20 +636,12 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
             {/* Composite Score */}
             <div style={{
               display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
-              gap: '0.75rem',
+              gap: '0.5rem',
               paddingRight: '2rem',
               borderRight: '0.5px solid #e2e8f0'
             }}>
-              <div style={{
-                fontSize: '0.6875rem',
-                color: '#0f172a',
-                fontWeight: '600',
-                letterSpacing: '0.05em',
-                textTransform: 'uppercase'
-              }}>
-                Composite Score
-              </div>
               <div style={{
                 width: '56px',
                 height: '56px',
@@ -803,7 +670,18 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
               </div>
               <div style={{
                 fontSize: '0.6875rem',
-                color: '#0f172a'
+                color: '#0f172a',
+                fontWeight: '600',
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
+                textAlign: 'center'
+              }}>
+                Composite Score
+              </div>
+              <div style={{
+                fontSize: '0.6875rem',
+                color: '#0f172a',
+                textAlign: 'center'
               }}>
                 {testData.correctAnswers} of {testData.totalQuestions} correct
               </div>
@@ -826,8 +704,9 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                 return (
                   <div key={key} style={{
                     display: 'flex',
+                    flexDirection: 'column',
                     alignItems: 'center',
-                    gap: '0.625rem'
+                    gap: '0.5rem'
                   }}>
                     <div style={{
                       width: '44px',
@@ -844,23 +723,22 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                     }}>
                       {score}
                     </div>
-                    <div>
-                      <div style={{
-                        fontSize: '0.75rem',
-                        fontWeight: '600',
-                        color: '#0f172a',
-                        lineHeight: '1.3',
-                        marginBottom: '2px'
-                      }}>
-                        {config.name}
-                      </div>
-                      <div style={{
-                        fontSize: '0.6875rem',
-                        color: '#0f172a',
-                        lineHeight: '1.3'
+                    <div style={{
+                      fontSize: '0.75rem',
+                      fontWeight: '600',
+                      color: '#0f172a',
+                      lineHeight: '1.3',
+                      textAlign: 'center'
+                    }}>
+                      {config.name}
+                    </div>
+                    <div style={{
+                      fontSize: '0.6875rem',
+                      color: '#0f172a',
+                      lineHeight: '1.3',
+                      textAlign: 'center'
                       }}>
                         {correct}/{total}
-                      </div>
                     </div>
                   </div>
                 );
@@ -1079,7 +957,7 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                 background: '#ffffff',
                 borderRadius: '8px',
                 padding: '1rem 1.25rem',
-                border: '0.5px solid #e2e8f0',
+                border: 'none',
                 alignSelf: 'flex-start'
               }}>
                 <h4 style={{
@@ -1145,7 +1023,7 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
 
           {/* Topic Breakdown - Top Weak Areas */}
           <div style={{
-            border: '0.5px solid #e2e8f0',
+            border: 'none',
             borderRadius: '8px',
             padding: '1rem',
             background: '#ffffff'
@@ -1154,16 +1032,16 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
               fontSize: '0.875rem',
               fontWeight: '600',
               color: '#0f172a',
-              margin: '0 0 0.75rem 0',
+              margin: '0 0 1rem 0',
               letterSpacing: '-0.01em'
             }}>
               Areas to improve
             </h3>
 
             <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: '0.75rem'
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1.25rem'
             }}>
               {Object.entries(sectionConfig).map(([key, config]) => {
                 const sectionResults = testData.questionsBySection[key] || [];
@@ -1196,12 +1074,15 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                 if (weakAreas.length === 0) return null;
 
                 return (
-                  <div key={key}>
+                  <div key={key} style={{
+                    paddingBottom: '1rem',
+                    borderBottom: '1px solid #f1f5f9'
+                  }}>
                     <div style={{
-                      fontSize: '0.75rem',
-                      fontWeight: '600',
+                      fontSize: '0.8125rem',
+                      fontWeight: '700',
                       color: '#0f172a',
-                      marginBottom: '0.5rem',
+                      marginBottom: '0.625rem',
                       letterSpacing: '-0.01em'
                     }}>
                       {config.name}
@@ -1209,7 +1090,7 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                     <div style={{
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '0.25rem'
+                      gap: '0.375rem'
                     }}>
                       {weakAreas.map((area, idx) => (
                         <div
@@ -1218,8 +1099,7 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'space-between',
-                            padding: '0.5rem 0',
-                            borderBottom: idx < weakAreas.length - 1 ? '1px solid #f1f5f9' : 'none'
+                            padding: '0.375rem 0'
                           }}
                         >
                           <span style={{

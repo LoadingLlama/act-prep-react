@@ -188,10 +188,10 @@ export const useLessonsContentStyles = createUseStyles({
       background: '#e2e8f0'
     },
     '&.active': {
-      background: '#08245b',
+      background: '#b91c1c',
       color: '#ffffff',
       fontWeight: '500',
-      boxShadow: '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)'
+      boxShadow: '0 2px 4px rgba(185, 28, 28, 0.25), 0 1px 2px rgba(185, 28, 28, 0.15)'
     }
   },
   pageTitle: {
@@ -315,10 +315,10 @@ export const useLessonsContentStyles = createUseStyles({
       background: '#e2e8f0'
     },
     '&.active': {
-      background: '#08245b',
+      background: '#b91c1c',
       color: '#ffffff',
       fontWeight: '500',
-      boxShadow: '0 2px 4px rgba(8, 36, 91, 0.25), 0 1px 2px rgba(8, 36, 91, 0.15)'
+      boxShadow: '0 2px 4px rgba(185, 28, 28, 0.25), 0 1px 2px rgba(185, 28, 28, 0.15)'
     }
   },
   lessonsGrid: {

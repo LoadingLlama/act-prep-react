@@ -87,7 +87,7 @@ const ListViewContent = ({
                       marginLeft: '0.5rem',
                       fontSize: '0.75rem',
                       fontWeight: '500',
-                      color: '#3b82f6',
+                      color: '#1e3a8a',
                       background: '#dbeafe',
                       padding: '0.125rem 0.5rem',
                       borderRadius: '999px'

@@ -154,7 +154,7 @@ const useStyles = createUseStyles({
     background: '#ffffff',
     padding: '1.5rem',
     borderRadius: '12px',
-    border: '1px solid #e5e7eb',
+    border: 'none',
     transition: 'all 0.2s ease',
     '@media (max-width: 640px)': {
       padding: '1rem',
@@ -212,21 +212,17 @@ const useStyles = createUseStyles({
   diagnosticCard: {
     background: '#ffffff',
     border: '1px solid #e2e8f0',
-    borderLeft: '3px solid #fee2e2',
     borderRadius: '8px',
-    padding: '1.25rem',
+    padding: '0.875rem 1rem',
     cursor: 'pointer',
-    transition: 'all 0.2s ease',
-    boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)',
+    transition: 'all 0.15s ease',
     '@media (max-width: 640px)': {
-      padding: '1rem',
+      padding: '0.75rem 0.875rem',
       borderRadius: '6px'
     },
     '&:hover': {
-      borderColor: '#cbd5e1',
-      borderLeftColor: '#b91c1c',
-      boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.15)',
-      transform: 'none'
+      background: '#f9fafb',
+      borderColor: '#cbd5e1'
     }
   },
   diagnosticBadge: {
@@ -252,40 +248,39 @@ const useStyles = createUseStyles({
     color: '#b91c1c'
   },
   diagnosticTitle: {
-    fontSize: '1.125rem',
+    fontSize: '0.875rem',
     fontWeight: '600',
     color: '#1a1a1a',
-    marginBottom: '0.35rem',
+    marginBottom: '0.25rem',
     '@media (max-width: 640px)': {
-      fontSize: '1rem'
+      fontSize: '0.8125rem'
     }
   },
   diagnosticMeta: {
-    fontSize: '0.8rem',
-    color: '#6b7280',
-    marginBottom: '1rem',
+    fontSize: '0.75rem',
+    color: '#9ca3af',
+    marginBottom: '0.75rem',
     '@media (max-width: 640px)': {
-      fontSize: '0.75rem',
-      marginBottom: '0.875rem'
+      fontSize: '0.7rem',
+      marginBottom: '0.625rem'
     }
   },
   diagnosticScore: {
-    fontSize: '2.5rem',
+    fontSize: '1.5rem',
     fontWeight: '700',
     color: '#b91c1c',
     lineHeight: '1',
-    marginBottom: '0.5rem',
+    marginBottom: '0.25rem',
     '@media (max-width: 640px)': {
-      fontSize: '2rem'
+      fontSize: '1.25rem'
     }
   },
   diagnosticScoreLabel: {
-    fontSize: '0.8rem',
-    color: '#6b7280',
-    marginBottom: '1rem',
+    fontSize: '0.75rem',
+    color: '#9ca3af',
+    marginBottom: 0,
     '@media (max-width: 640px)': {
-      fontSize: '0.75rem',
-      marginBottom: '0.875rem'
+      fontSize: '0.7rem'
     }
   },
   diagnosticButton: {
@@ -1144,9 +1139,6 @@ const InsightsPage = () => {
               <div className={classes.diagnosticScoreLabel}>
                 {insights.diagnostic.correctAnswers} out of {insights.diagnostic.totalQuestions} questions correct
               </div>
-              <button className={classes.diagnosticButton}>
-                View Results
-              </button>
             </div>
           )}
         </div>

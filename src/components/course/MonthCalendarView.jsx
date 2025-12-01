@@ -31,7 +31,7 @@
  *   - Mock Exam: Red (#dc2626)
  *   - Practice: Amber (#f59e0b)
  *   - Review: Green (#10b981)
- *   - Lesson: Blue (#3b82f6)
+ *   - Lesson: Blue (#b91c1c)
  * - Interactive hover states for adding new events
  * - Click handlers for viewing item details
  * - Overflow indicators ("+N more") when too many items
@@ -188,7 +188,7 @@ const MonthCalendarView = ({
                   : isMockExam ? '#dc2626'
                   : isPractice ? '#f59e0b'
                   : isReview ? '#10b981'
-                  : '#3b82f6';
+                  : '#b91c1c';
 
                 const textColor = isExamDay ? '#ffffff'
                   : isDiagnostic ? '#b91c1c'
