@@ -54,10 +54,10 @@ export const useLandingPageStyles = createUseStyles({
     boxSizing: 'border-box',
     overflow: 'visible',
     '@media (max-width: 768px)': {
-      padding: '0 16px',
+      padding: '0 12px',
     },
     '@media (max-width: 480px)': {
-      padding: '0 12px',
+      padding: '0 10px',
     },
   },
 
@@ -70,10 +70,10 @@ export const useLandingPageStyles = createUseStyles({
     transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease',
     cursor: 'pointer',
     '@media (max-width: 768px)': {
-      fontSize: '15px',
+      fontSize: '14px',
     },
     '@media (max-width: 480px)': {
-      fontSize: '14px',
+      fontSize: '13px',
     },
     '&:hover': {
       transform: 'scale(1.02)',
@@ -183,8 +183,13 @@ export const useLandingPageStyles = createUseStyles({
     transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
     borderRadius: '8px',
     '@media (max-width: 768px)': {
-      padding: '7px 14px',
-      fontSize: '13px',
+      padding: '5px 10px',
+      fontSize: '11px',
+      borderRadius: '6px',
+    },
+    '@media (max-width: 480px)': {
+      padding: '4px 8px',
+      fontSize: '10px',
     },
     '&:hover': {
       background: 'rgba(255, 255, 255, 0.9)',
@@ -208,8 +213,14 @@ export const useLandingPageStyles = createUseStyles({
     transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
     boxShadow: '0 3px 0 0 rgba(185, 28, 28, 0.4)',
     '@media (max-width: 768px)': {
-      padding: '7px 14px',
-      fontSize: '13px',
+      padding: '5px 10px',
+      fontSize: '11px',
+      borderRadius: '6px',
+      boxShadow: '0 2px 0 0 rgba(185, 28, 28, 0.4)',
+    },
+    '@media (max-width: 480px)': {
+      padding: '4px 8px',
+      fontSize: '10px',
     },
     '&:hover': {
       background: '#991b1b',
@@ -236,19 +247,19 @@ export const useLandingPageStyles = createUseStyles({
     boxSizing: 'border-box',
     minHeight: '100vh',
     '@media (max-width: 768px)': {
-      padding: '0 20px 30px',
+      padding: '0 12px 20px',
     },
     '@media (max-width: 480px)': {
-      padding: '0 20px 32px',
+      padding: '0 10px 16px',
     },
   },
 
   heroSection: {
     textAlign: 'center',
-    maxWidth: '100vw',
-    width: '100vw',
-    marginLeft: 'calc(-50vw + 50%)',
-    marginRight: 'calc(-50vw + 50%)',
+    maxWidth: '100%',
+    width: '100%',
+    marginLeft: '0',
+    marginRight: '0',
     marginTop: '60px',
     padding: '155px 32px 140px 32px',
     position: 'relative',
@@ -258,12 +269,12 @@ export const useLandingPageStyles = createUseStyles({
     backgroundRepeat: 'no-repeat',
     minHeight: 'auto',
     '@media (max-width: 768px)': {
-      marginTop: '50px',
-      padding: '100px 24px 100px 24px',
+      marginTop: '48px',
+      padding: '60px 12px 60px 12px',
     },
     '@media (max-width: 480px)': {
-      marginTop: '50px',
-      padding: '80px 20px 80px 20px',
+      marginTop: '48px',
+      padding: '40px 10px 40px 10px',
     },
     '&::before': {
       content: '""',
@@ -287,13 +298,14 @@ export const useLandingPageStyles = createUseStyles({
     margin: '0 auto 32px',
     display: 'block',
     '@media (max-width: 768px)': {
-      marginBottom: '32px',
+      marginBottom: '16px',
       maxWidth: '100%',
-      padding: '0',
+      padding: '0 8px',
       display: 'block',
     },
     '@media (max-width: 480px)': {
-      marginBottom: '44px',
+      marginBottom: '12px',
+      padding: '0 4px',
     },
   },
 
@@ -338,16 +350,16 @@ export const useLandingPageStyles = createUseStyles({
     cursor: 'default',
     pointerEvents: 'none',
     '@media (max-width: 768px)': {
-      fontSize: '11px',
-      padding: '6px 14px',
-      marginTop: '20px',
-      marginBottom: '16px',
+      fontSize: '9px',
+      padding: '4px 10px',
+      marginTop: '0',
+      marginBottom: '10px',
     },
     '@media (max-width: 480px)': {
-      fontSize: '12px',
-      marginTop: '24px',
-      marginBottom: '12px',
-      padding: '8px 16px',
+      fontSize: '8px',
+      marginTop: '0',
+      marginBottom: '8px',
+      padding: '4px 8px',
     },
     '&:hover': {
       transform: 'translateY(-1px)',
@@ -369,14 +381,17 @@ export const useLandingPageStyles = createUseStyles({
     textAlign: 'center',
     textTransform: 'uppercase',
     '@media (max-width: 768px)': {
-      fontSize: '38px',
-      marginBottom: '20px',
+      fontSize: '28px',
+      marginBottom: '12px',
       lineHeight: '1.1',
+      maxWidth: '100%',
+      padding: '0 8px',
     },
     '@media (max-width: 480px)': {
-      fontSize: '32px',
-      marginBottom: '16px',
+      fontSize: '24px',
+      marginBottom: '10px',
       lineHeight: '1.15',
+      padding: '0 4px',
     },
   },
 
@@ -401,13 +416,16 @@ export const useLandingPageStyles = createUseStyles({
     maxWidth: '550px',
     margin: '0 auto 36px auto',
     '@media (max-width: 768px)': {
-      fontSize: '14px',
-      marginBottom: '40px',
+      fontSize: '12px',
+      marginBottom: '16px',
       lineHeight: '1.5',
+      maxWidth: '100%',
+      padding: '0 8px',
     },
     '@media (max-width: 480px)': {
-      fontSize: '13px',
-      marginBottom: '24px',
+      fontSize: '11px',
+      marginBottom: '12px',
+      padding: '0 4px',
     },
   },
 
@@ -422,18 +440,21 @@ export const useLandingPageStyles = createUseStyles({
     maxWidth: '700px',
     margin: '0 auto 32px auto',
     '@media (max-width: 768px)': {
-      fontSize: '18px',
-      marginBottom: '28px',
+      fontSize: '13px',
+      marginBottom: '16px',
       marginTop: '0',
       fontWeight: '500',
       color: '#ffffff',
-      lineHeight: '1.6',
+      lineHeight: '1.5',
+      maxWidth: '100%',
+      padding: '0 8px',
     },
     '@media (max-width: 480px)': {
-      fontSize: '16px',
-      marginBottom: '24px',
+      fontSize: '12px',
+      marginBottom: '12px',
       marginTop: '0',
-      lineHeight: '1.6',
+      lineHeight: '1.5',
+      padding: '0 4px',
     },
   },
 
@@ -445,12 +466,15 @@ export const useLandingPageStyles = createUseStyles({
     marginBottom: '60px',
     '@media (max-width: 768px)': {
       flexDirection: 'column',
-      gap: '8px',
+      gap: '6px',
       width: '100%',
-      marginBottom: '50px',
+      maxWidth: '280px',
+      margin: '0 auto 24px auto',
     },
     '@media (max-width: 480px)': {
-      marginBottom: '40px',
+      maxWidth: '240px',
+      marginBottom: '20px',
+      gap: '5px',
     },
   },
 
@@ -472,9 +496,16 @@ export const useLandingPageStyles = createUseStyles({
     '@media (max-width: 768px)': {
       width: '100%',
       maxWidth: '100%',
-      fontSize: '16px',
-      padding: '16px 28px',
+      fontSize: '12px',
+      padding: '10px 16px',
       display: 'block',
+      borderRadius: '8px',
+      boxShadow: '0 2px 0 0 rgba(185, 28, 28, 0.4)',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '11px',
+      padding: '8px 14px',
+      borderRadius: '6px',
     },
     '&:hover': {
       background: '#991b1b',
@@ -503,10 +534,17 @@ export const useLandingPageStyles = createUseStyles({
     '@media (max-width: 768px)': {
       width: '100%',
       maxWidth: '100%',
-      fontSize: '15px',
-      padding: '14px 24px',
+      fontSize: '12px',
+      padding: '10px 16px',
       display: 'block',
       margin: '0 auto',
+      borderRadius: '8px',
+      boxShadow: '0 2px 0 0 rgba(0, 0, 0, 0.1)',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '11px',
+      padding: '8px 14px',
+      borderRadius: '6px',
     },
     '&:hover': {
       background: '#f9fafb',
@@ -1316,6 +1354,11 @@ export const useLandingPageStyles = createUseStyles({
     background: 'transparent',
     position: 'relative',
     zIndex: 1,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    maxWidth: '1200px',
+    margin: '0 auto',
     '@media (max-width: 768px)': {
       padding: '20px 20px 65px',
     },
@@ -1325,9 +1368,23 @@ export const useLandingPageStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     gap: '4px',
-    maxWidth: '1200px',
-    margin: '0 auto',
     textAlign: 'left',
+    flex: 1,
+  },
+
+  footerLearnLink: {
+    fontSize: '10px',
+    color: 'rgba(255, 255, 255, 0.3)',
+    textDecoration: 'none',
+    fontWeight: '300',
+    transition: 'color 0.2s ease',
+    alignSelf: 'flex-start',
+    '&:hover': {
+      color: 'rgba(255, 255, 255, 0.5)',
+    },
+    '@media (max-width: 768px)': {
+      fontSize: '9px',
+    },
   },
 
   footerTitle: {
