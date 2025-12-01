@@ -7,10 +7,12 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { HiXMark } from 'react-icons/hi2';
 import { usePracticeTestStyles } from '../styles/pages/practice-test.styles';
 import PracticeTestsService from '../services/api/practiceTests.service';
+import { supabase } from '../services/api/supabase.service';
+import { processPracticeTestResults } from '../services/practice/practiceTestResultProcessor';
 import logger from '../services/logging/logger';
 import errorTracker from '../services/logging/errorTracker';
 
-const PracticeTestPage = ({ testId, onClose }) => {
+const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
   const classes = usePracticeTestStyles();
 
   const [loading, setLoading] = useState(true);
@@ -18,6 +20,12 @@ const PracticeTestPage = ({ testId, onClose }) => {
   const [testStructure, setTestStructure] = useState(null);
   const [selectedSection, setSelectedSection] = useState(null);
   const [questions, setQuestions] = useState([]);
+  const [userId, setUserId] = useState(null);
+  const [processing, setProcessing] = useState(false);
+  const [processingStep, setProcessingStep] = useState('');
+  const [processingProgress, setProcessingProgress] = useState(0);
+  const [showResults, setShowResults] = useState(false);
+  const [testResults, setTestResults] = useState(null);
 
   const testNumber = parseInt(testId, 10); // Actual DB test number (2-7)
   const displayTestNumber = testNumber - 1; // Display number to user (1-6)
@@ -66,6 +74,9 @@ const PracticeTestPage = ({ testId, onClose }) => {
       setLoading(true);
       setError(null);
 
+      // Clear saved question position when loading a new section
+      sessionStorage.removeItem('currentQuestion');
+
       logger.info('PracticeTestPage', 'loadSectionQuestions', { testNumber, section });
 
       const sectionQuestions = await PracticeTestsService.getPracticeTestSection(
@@ -101,6 +112,17 @@ const PracticeTestPage = ({ testId, onClose }) => {
     }
   }, [testNumber]);
 
+  // Get current user
+  useEffect(() => {
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        setUserId(user.id);
+      }
+    };
+    getUser();
+  }, []);
+
   useEffect(() => {
     loadTestStructure();
   }, [testNumber]);
@@ -110,14 +132,73 @@ const PracticeTestPage = ({ testId, onClose }) => {
     loadSectionQuestions('english');
   }, [testNumber, loadSectionQuestions]);
 
+  /**
+   * Handle test completion and process results
+   */
+  const handleTestCompletion = async () => {
+    try {
+      logger.info('PracticeTestPage', 'handleTestCompletion', { testNumber, userId });
+
+      const resultsData = sessionStorage.getItem('practiceTestResults');
+      if (!resultsData) {
+        throw new Error('No test results found');
+      }
+
+      const results = JSON.parse(resultsData);
+      const allSections = results.allSections || [];
+
+      console.log('📊 Practice test complete! Processing results...');
+      console.log('📦 Raw results:', {
+        hasAllSections: !!results.allSections,
+        allSectionsCount: allSections.length,
+        totalCorrect: results.totalCorrect,
+        totalQuestions: results.totalQuestions
+      });
+
+      setProcessing(true);
+      setProcessingStep('Starting analysis...');
+      setProcessingProgress(0);
+
+      // Process results
+      const processedResults = await processPracticeTestResults(
+        allSections,
+        testNumber,
+        userId,
+        {
+          setProcessingStep,
+          setProcessingProgress,
+          setProcessing,
+          setShowResults
+        }
+      );
+
+      setTestResults(processedResults);
+
+      // Navigate to insights after a brief delay
+      setTimeout(() => {
+        if (onShowInsights) {
+          onShowInsights();
+        } else {
+          onClose();
+        }
+      }, 2000);
+
+    } catch (err) {
+      console.error('❌ Error processing practice test:', err);
+      errorTracker.trackError('PracticeTestPage', 'handleTestCompletion', { testNumber }, err);
+      setError(`Failed to process test results: ${err.message}`);
+      setProcessing(false);
+    }
+  };
+
   // Listen for test completion message from iframe
   useEffect(() => {
-    const handleMessage = (event) => {
+    const handleMessage = async (event) => {
       console.log('📨 Message received:', event.data);
 
       if (event.data?.type === 'PRACTICE_TEST_COMPLETE') {
-        console.log('✅ Test complete - returning to selection');
-        handleBackToSelection();
+        console.log('✅ Test complete - processing results');
+        await handleTestCompletion();
       } else if (event.data?.type === 'PRACTICE_TEST_NEXT_SECTION') {
         // Load next section
         const nextSection = event.data.nextSection;
@@ -129,7 +210,7 @@ const PracticeTestPage = ({ testId, onClose }) => {
 
     window.addEventListener('message', handleMessage);
     return () => window.removeEventListener('message', handleMessage);
-  }, [loadSectionQuestions, handleBackToSelection]);
+  }, [loadSectionQuestions, testNumber, userId]);
 
   /**
    * Load the test structure (question counts by section)
@@ -192,6 +273,45 @@ const PracticeTestPage = ({ testId, onClose }) => {
       setLoading(false);
     }
   };
+
+  /**
+   * Render processing screen
+   */
+  if (processing) {
+    return (
+      <div className={classes.container}>
+        <div className={classes.loadingContainer}>
+          <div className={classes.loadingSpinner} />
+          <div className={classes.loadingText}>{processingStep}</div>
+          <div style={{ width: '80%', maxWidth: '400px', marginTop: '1rem' }}>
+            <div style={{
+              width: '100%',
+              height: '8px',
+              background: '#e5e7eb',
+              borderRadius: '4px',
+              overflow: 'hidden'
+            }}>
+              <div style={{
+                width: `${processingProgress}%`,
+                height: '100%',
+                background: '#08245b',
+                transition: 'width 0.3s ease',
+                borderRadius: '4px'
+              }} />
+            </div>
+            <div style={{
+              textAlign: 'center',
+              marginTop: '0.5rem',
+              fontSize: '0.875rem',
+              color: '#6b7280'
+            }}>
+              {processingProgress}%
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   /**
    * Render loading state

@@ -67,12 +67,17 @@ export default function AppLayout() {
   // Get lesson ID from URL if on lesson route
   const urlLessonId = activeView === 'lesson' ? location.pathname.split('/')[3] : null;
 
+  // Get mode from URL query parameter
+  const urlParams = new URLSearchParams(location.search);
+  const urlMode = urlParams.get('mode') || 'review';
+
   // Open lesson from URL if present
   useEffect(() => {
     if (urlLessonId && urlLessonId !== currentLesson) {
-      console.log('🔗 Opening lesson from URL:', urlLessonId);
+      console.log('🔗 Opening lesson from URL:', urlLessonId, 'mode:', urlMode);
       setCurrentLesson(urlLessonId);
       setLessonModalOpen(true);
+      setLessonMode(urlMode);
       domUtils.preventBodyScroll();
 
       // Fetch lesson content
@@ -95,7 +100,7 @@ export default function AppLayout() {
       setCurrentLesson(null);
       domUtils.restoreBodyScroll();
     }
-  }, [urlLessonId]); // Run when URL lesson ID changes
+  }, [urlLessonId, urlMode]); // Run when URL lesson ID or mode changes
 
   // Load lessons from Supabase
   useEffect(() => {
@@ -257,8 +262,8 @@ export default function AppLayout() {
   const openLesson = async (lessonId, mode = 'review') => {
     console.log('📖 Opening lesson:', lessonId, 'mode:', mode);
 
-    // Navigate to lesson URL
-    navigate(`/app/lesson/${lessonId}`);
+    // Navigate to lesson URL with mode parameter
+    navigate(`/app/lesson/${lessonId}?mode=${mode}`);
 
     const lesson = lessonStructure.find(l => l.id === lessonId);
     console.log('📚 Found lesson structure:', lesson);
@@ -444,7 +449,7 @@ export default function AppLayout() {
                     <span style={{
                       fontSize: '0.7rem',
                       fontWeight: '600',
-                      color: streak === 0 ? '#1e40af' : '#ea580c',
+                      color: streak === 0 ? '#1e3a8a' : '#ea580c',
                       lineHeight: '1'
                     }}>
                       {streak}
@@ -571,7 +576,14 @@ export default function AppLayout() {
           zIndex: 2000,
           overflow: 'auto'
         }}>
-          <PracticeTestPage testId={practiceTestNumber} onClose={closePracticeTest} />
+          <PracticeTestPage
+            testId={practiceTestNumber}
+            onClose={closePracticeTest}
+            onShowInsights={() => {
+              closePracticeTest();
+              handleNavigate('insights');
+            }}
+          />
         </div>
       )}
 

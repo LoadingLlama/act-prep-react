@@ -9,11 +9,13 @@ import { HiChartBar, HiAcademicCap, HiTrophy, HiExclamationTriangle, HiArrowTren
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate, useOutletContext, useSearchParams } from 'react-router-dom';
 import InsightsService from '../services/api/insights.service';
+import PracticeTestsService from '../services/api/practiceTests.service';
 import { supabase } from '../services/api/supabase.service';
 import { getFeatureAccess } from '../services/subscription.service';
 import logger from '../services/logging/logger';
 import DiagnosticTestCTA from '../components/DiagnosticTestCTA';
 import DiagnosticTestReview from '../components/DiagnosticTestReview';
+import PracticeTestReview from '../components/PracticeTestReview';
 import { lessonStructure } from '../data/lessonStructure';
 
 const useStyles = createUseStyles({
@@ -627,11 +629,11 @@ const InsightsPage = () => {
   const getCachedInsights = () => {
     if (!user) return null;
     const cacheKey = `insights_${user.id}`;
-    const cached = sessionStorage.getItem(cacheKey);
-    const cacheTimestamp = sessionStorage.getItem(`${cacheKey}_timestamp`);
+    const cached = localStorage.getItem(cacheKey);
+    const cacheTimestamp = localStorage.getItem(`${cacheKey}_timestamp`);
     const now = Date.now();
 
-    if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 300000) {
+    if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 600000) { // 10 minutes
       return JSON.parse(cached);
     }
     return null;
@@ -640,7 +642,7 @@ const InsightsPage = () => {
   const getCachedWeakAreas = () => {
     if (!user) return [];
     const weakAreasCacheKey = `weak_areas_${user.id}`;
-    const cached = sessionStorage.getItem(weakAreasCacheKey);
+    const cached = localStorage.getItem(weakAreasCacheKey);
     return cached ? JSON.parse(cached) : [];
   };
 
@@ -649,8 +651,10 @@ const InsightsPage = () => {
   const [strengths, setStrengths] = useState([]);
   const [featureAccess, setFeatureAccess] = useState(null);
   const [viewingDiagnosticReview, setViewingDiagnosticReview] = useState(false);
+  const [viewingPracticeTestReview, setViewingPracticeTestReview] = useState(null);
   const [lessonMetadataMap, setLessonMetadataMap] = useState({});
   const [isLoading, setIsLoading] = useState(!getCachedInsights());
+  const [practiceTests, setPracticeTests] = useState([]);
 
   // Check URL params to restore diagnostic review state
   useEffect(() => {
@@ -665,6 +669,7 @@ const InsightsPage = () => {
     if (user) {
       loadInsights();
       checkFeatureAccess();
+      loadPracticeTests();
     }
   }, [user]);
 
@@ -696,6 +701,40 @@ const InsightsPage = () => {
     }
   };
 
+  const loadPracticeTests = async () => {
+    try {
+      logger.info('InsightsPage', 'loadPracticeTests', { userId: user.id });
+
+      // Fetch all completed practice test sessions for the user
+      const sessions = await PracticeTestsService.getUserPracticeTestHistory(user.id);
+
+      if (sessions) {
+        // Filter for completed full tests and group by test number (keep only latest)
+        const completedFullTests = sessions.filter(s => s.completed && s.section === 'full');
+
+        // Group by test_number and keep only the latest session for each test
+        const latestByTestNumber = {};
+        completedFullTests.forEach(session => {
+          const testNum = session.test_number;
+          if (!latestByTestNumber[testNum] ||
+              new Date(session.session_start) > new Date(latestByTestNumber[testNum].session_start)) {
+            latestByTestNumber[testNum] = session;
+          }
+        });
+
+        // Convert to array and sort by test number
+        const practiceTestsArray = Object.values(latestByTestNumber)
+          .sort((a, b) => a.test_number - b.test_number);
+
+        setPracticeTests(practiceTestsArray);
+        logger.info('InsightsPage', 'loadPracticeTests', { count: practiceTestsArray.length });
+      }
+    } catch (error) {
+      logger.error('InsightsPage', 'loadPracticeTests', { error });
+      console.error('Failed to load practice tests:', error);
+    }
+  };
+
   const loadInsights = async () => {
     try {
       logger.info('InsightsPage', 'loadInsights', { userId: user.id });
@@ -703,13 +742,13 @@ const InsightsPage = () => {
       // Check cache first
       const cacheKey = `insights_${user.id}`;
       const weakAreasCacheKey = `weak_areas_${user.id}`;
-      const cached = sessionStorage.getItem(cacheKey);
-      const cachedWeakAreas = sessionStorage.getItem(weakAreasCacheKey);
-      const cacheTimestamp = sessionStorage.getItem(`${cacheKey}_timestamp`);
+      const cached = localStorage.getItem(cacheKey);
+      const cachedWeakAreas = localStorage.getItem(weakAreasCacheKey);
+      const cacheTimestamp = localStorage.getItem(`${cacheKey}_timestamp`);
       const now = Date.now();
 
-      // Use cache if less than 5 minutes old (increased from 30 seconds)
-      if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 300000) {
+      // Use cache if less than 10 minutes old
+      if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 600000) {
         const cachedData = JSON.parse(cached);
         setInsights(cachedData);
         setIsLoading(false);
@@ -733,8 +772,8 @@ const InsightsPage = () => {
       setInsights(insightsData);
 
       // Cache the basic insights immediately
-      sessionStorage.setItem(cacheKey, JSON.stringify(insightsData));
-      sessionStorage.setItem(`${cacheKey}_timestamp`, String(Date.now()));
+      localStorage.setItem(cacheKey, JSON.stringify(insightsData));
+      localStorage.setItem(`${cacheKey}_timestamp`, String(Date.now()));
 
       // Get the diagnostic session to analyze
       const diagnosticSession = insightsData.diagnostic?.latestSession;
@@ -877,7 +916,7 @@ const InsightsPage = () => {
       setWeakAreas(weakAreasFromDiagnostic);
 
       // Cache weak areas separately
-      sessionStorage.setItem(cacheKey, JSON.stringify(weakAreasFromDiagnostic));
+      localStorage.setItem(cacheKey, JSON.stringify(weakAreasFromDiagnostic));
 
       setStrengths([]); // We'll compute strengths later if needed
     } catch (error) {
@@ -890,8 +929,8 @@ const InsightsPage = () => {
       const insightsData = await InsightsService.getUserInsights(user.id);
 
       // Update cache
-      sessionStorage.setItem(cacheKey, JSON.stringify(insightsData));
-      sessionStorage.setItem(`${cacheKey}_timestamp`, String(Date.now()));
+      localStorage.setItem(cacheKey, JSON.stringify(insightsData));
+      localStorage.setItem(`${cacheKey}_timestamp`, String(Date.now()));
 
       // Update state
       setInsights(insightsData);
@@ -1043,6 +1082,15 @@ const InsightsPage = () => {
         />
       )}
 
+      {/* Practice Test Review Modal */}
+      {viewingPracticeTestReview && (
+        <PracticeTestReview
+          sessionId={viewingPracticeTestReview.id}
+          testNumber={viewingPracticeTestReview.test_number}
+          onClose={() => setViewingPracticeTestReview(null)}
+        />
+      )}
+
       <div className={classes.container}>
         <div className={classes.header}>
           <h1 className={classes.title}>Test Insights</h1>
@@ -1141,6 +1189,44 @@ const InsightsPage = () => {
               </div>
             </div>
           )}
+        </div>
+      )}
+
+      {/* Practice Tests Section */}
+      {practiceTests.length > 0 && (
+        <div className={classes.section}>
+          <h2 className={classes.sectionTitle}>
+            <HiClipboardDocumentList className={classes.sectionIcon} />
+            Practice Tests
+          </h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', maxWidth: '400px' }}>
+            {practiceTests.map((test) => {
+              const displayNumber = test.test_number - 1; // Test 2 = Practice Test 1
+              return (
+                <div
+                  key={test.id}
+                  className={classes.diagnosticCard}
+                  onClick={() => {
+                    console.log('🔍 Opening practice test review:', test);
+                    setViewingPracticeTestReview(test);
+                  }}
+                >
+                  <h3 className={classes.diagnosticTitle}>
+                    Practice Test {displayNumber}
+                  </h3>
+                  <p className={classes.diagnosticMeta}>
+                    {test.total_questions} questions • Completed {formatDate(test.session_start)}
+                  </p>
+                  <div className={classes.diagnosticScore} style={{ color: '#08245b' }}>
+                    {test.score_percentage?.toFixed(1)}%
+                  </div>
+                  <div className={classes.diagnosticScoreLabel}>
+                    {test.correct_answers} out of {test.total_questions} questions correct
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
 
