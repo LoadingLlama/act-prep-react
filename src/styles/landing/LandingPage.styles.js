@@ -359,18 +359,10 @@ export const useLandingPageStyles = createUseStyles({
     cursor: 'default',
     pointerEvents: 'none',
     '@media (max-width: 768px)': {
-      fontSize: '9px',
-      padding: '6px 12px',
-      marginTop: '0',
-      marginBottom: '12px',
-      gap: '5px',
+      display: 'none',
     },
     '@media (max-width: 480px)': {
-      fontSize: '8px',
-      marginTop: '0',
-      marginBottom: '10px',
-      padding: '5px 10px',
-      gap: '4px',
+      display: 'none',
     },
     '&:hover': {
       transform: 'translateY(-1px)',
