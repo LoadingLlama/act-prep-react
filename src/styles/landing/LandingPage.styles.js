@@ -1071,22 +1071,28 @@ export const useLandingPageStyles = createUseStyles({
 
   statCard: {
     padding: '12px 0',
-    background: 'transparent',
+    background: 'radial-gradient(ellipse 200px 150px at center top, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 30%, transparent 70%)',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center',
     borderBottom: '1px solid rgba(185, 28, 28, 0.3)',
     transition: 'all 0.2s ease',
+    position: 'relative',
     '@media (max-width: 768px)': {
       padding: '10px 0',
+      background: 'radial-gradient(ellipse 250px 180px at center top, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 30%, transparent 70%)',
     },
     '&:last-child': {
       borderBottom: 'none',
     },
     '&:hover': {
+      background: 'radial-gradient(ellipse 200px 150px at center top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.12) 30%, transparent 70%)',
       '& $statNumber': {
         transform: 'scale(1.05)',
+      },
+      '@media (max-width: 768px)': {
+        background: 'radial-gradient(ellipse 250px 180px at center top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.12) 30%, transparent 70%)',
       },
     },
   },
@@ -1110,11 +1116,10 @@ export const useLandingPageStyles = createUseStyles({
     color: '#ffffff',
     lineHeight: '1',
     letterSpacing: '-0.02em',
-    transition: 'transform 0.2s ease, text-shadow 0.3s ease',
-    textShadow: '0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3)',
+    transition: 'transform 0.2s ease',
+    textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
     '@media (max-width: 768px)': {
       fontSize: '48px',
-      textShadow: '0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.6), 0 0 75px rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3)',
     },
   },
 
