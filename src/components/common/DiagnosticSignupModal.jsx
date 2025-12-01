@@ -3,7 +3,7 @@
  * Shows Typeform when user clicks "Free Diagnostic Test"
  */
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 import { HiXMark } from 'react-icons/hi2';
 
@@ -63,11 +63,36 @@ const useStyles = createUseStyles({
   },
 
   modalHeader: {
-    padding: '32px 32px 20px 32px',
+    padding: '24px 32px 20px 32px',
     borderBottom: '1px solid #e5e7eb',
     '@media (max-width: 768px)': {
-      padding: '24px 20px 16px 20px',
+      padding: '20px 20px 16px 20px',
     },
+  },
+
+  timer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '6px',
+    marginBottom: '12px',
+    fontSize: '13px',
+    fontWeight: '500',
+    color: '#6b7280',
+    '@media (max-width: 768px)': {
+      fontSize: '12px',
+      marginBottom: '10px',
+    },
+  },
+
+  timerIcon: {
+    fontSize: '14px',
+    color: '#b91c1c',
+  },
+
+  timerText: {
+    color: '#b91c1c',
+    fontWeight: '600',
   },
 
   modalTitle: {
@@ -131,6 +156,23 @@ const useStyles = createUseStyles({
 
 const DiagnosticSignupModal = ({ isOpen, onClose }) => {
   const classes = useStyles();
+  const [timeLeft, setTimeLeft] = useState(30 * 60); // 30 minutes in seconds
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -140,6 +182,12 @@ const DiagnosticSignupModal = ({ isOpen, onClose }) => {
     }
   };
 
+  const formatTime = (seconds) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
+
   return (
     <div className={classes.overlay} onClick={handleOverlayClick}>
       <div className={classes.modal}>
@@ -147,6 +195,10 @@ const DiagnosticSignupModal = ({ isOpen, onClose }) => {
           <HiXMark />
         </button>
         <div className={classes.modalHeader}>
+          <div className={classes.timer}>
+            <span className={classes.timerIcon}>⏱</span>
+            <span>Offer expires in <span className={classes.timerText}>{formatTime(timeLeft)}</span></span>
+          </div>
           <h2 className={classes.modalTitle}>
             Just a few quick questions to unlock your 34+ <span className={classes.freeText}>free</span> training!
           </h2>
