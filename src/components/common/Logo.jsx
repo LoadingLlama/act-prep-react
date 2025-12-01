@@ -21,9 +21,9 @@ const Logo = ({ size = 'medium', style = {}, onClick, clickable = false }) => {
 
   const defaultStyle = {
     fontWeight: '600',
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    color: '#1e3a8a',
-    letterSpacing: '-0.04em',
+    fontFamily: '"Times New Roman", Times, serif',
+    color: '#ffffff',
+    letterSpacing: '-0.05em',
     margin: 0,
     cursor: clickable ? 'pointer' : 'default',
     transition: 'opacity 0.2s ease',
@@ -47,7 +47,7 @@ const Logo = ({ size = 'medium', style = {}, onClick, clickable = false }) => {
       onMouseEnter={() => clickable && setIsHovered(true)}
       onMouseLeave={() => clickable && setIsHovered(false)}
     >
-      Nomi Academy
+      NomiAcademy
     </div>
   );
 };

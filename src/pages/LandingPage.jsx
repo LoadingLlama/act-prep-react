@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLandingPageStyles } from '../styles/landing/LandingPage.styles';
 import { HiBars3, HiXMark } from 'react-icons/hi2';
 import Logo from '../components/common/Logo';
-import SocialBrowserWarning from '../components/auth/SocialBrowserWarning';
+import DiagnosticSignupModal from '../components/common/DiagnosticSignupModal';
 
 const LandingPage = () => {
   const classes = useLandingPageStyles();
@@ -18,8 +18,8 @@ const LandingPage = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [showSocialWarning, setShowSocialWarning] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showSignupModal, setShowSignupModal] = useState(false);
 
   const testimonials = [
     [
@@ -86,24 +86,24 @@ const LandingPage = () => {
 
   const faqs = [
     {
-      question: "Who created Nomi Academy?",
-      answer: "Nomi Academy was founded by Ivy League students who scored a perfect 36 on the ACT. We built this platform to share the exact strategies and techniques that helped us achieve top scores, making elite test prep accessible to everyone."
+      question: "What makes this program different from traditional ACT prep?",
+      answer: "Nomi Academy was engineered by perfect scorers who earned admission to Ivy League institutions. Our methodology isn't theory—it's proven strategy refined through real results. We've distilled years of elite test preparation into an accelerated system that delivers measurable score improvements in weeks, not months."
     },
     {
-      question: "Is the diagnostic test really free?",
-      answer: "Yes! Our diagnostic test is 100% free with no credit card required. We believe every student should have access to quality ACT prep tools to identify their strengths and weaknesses before investing in a study plan."
+      question: "How quickly can I expect to see results?",
+      answer: "Our students typically see a 3-5 point improvement within the first month. The system is designed for rapid skill acquisition through targeted practice and strategic preparation. 96% of our students achieve a 4+ point increase, with many reaching 34+ composite scores within 8-12 weeks of focused training."
     },
     {
-      question: "What's included in Nomi Academy?",
-      answer: "Beyond the free diagnostic test, Nomi Academy offers comprehensive ACT prep including written lessons covering all four sections (English, Math, Reading, Science), thousands of practice questions, full-length practice tests, detailed explanations, and personalized study plans that adapt to your progress."
+      question: "Is this suitable for high-achieving students aiming for top universities?",
+      answer: "Absolutely. Our program was specifically designed for ambitious students targeting elite institutions. Over 52% of our students score 33+, and 22% achieve 35+. The strategies taught here are the same ones that earned our founders admission to Stanford, MIT, Yale, and other top-tier universities."
     },
     {
-      question: "How do the lessons work?",
-      answer: "Our lessons are taught using the same methods that helped our founders score 36. Each lesson breaks down complex concepts into easy-to-understand steps, includes practice problems, and provides detailed explanations. You'll learn test-taking strategies, time management techniques, and subject-specific tips that actually work."
+      question: "What does the training include?",
+      answer: "You'll receive comprehensive instruction across all four ACT sections—English, Math, Reading, and Science. This includes advanced test-taking strategies, time optimization techniques, thousands of practice questions, full-length diagnostic assessments, and a personalized study roadmap calibrated to your target score and timeline."
     },
     {
-      question: "What makes Nomi Academy different from other ACT prep?",
-      answer: "Unlike expensive tutoring or generic prep courses, Nomi Academy combines personalized learning with strategies developed by perfect scorers. Our platform adapts to your specific needs, focusing your time on areas where you'll see the biggest score improvements. Plus, you can start with a free diagnostic test to see exactly where you stand."
+      question: "Why is the initial training free?",
+      answer: "We believe in demonstrating value before asking for commitment. The free training provides immediate actionable insights and a complete diagnostic assessment of your current abilities. It's designed to show you exactly what's possible when you apply proven, systematic preparation strategies."
     }
   ];
 
@@ -150,23 +150,8 @@ const LandingPage = () => {
   }, []);
 
   const handleGetStarted = () => {
-    // Check if in social media in-app browser
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    const isInAppBrowser =
-      userAgent.includes('Instagram') ||
-      userAgent.includes('TikTok') ||
-      userAgent.includes('musical_ly') ||
-      userAgent.includes('Bytedance') ||
-      userAgent.includes('FBAN') ||
-      userAgent.includes('FBAV');
-
-    if (isInAppBrowser) {
-      // Show social browser warning instead of navigating
-      setShowSocialWarning(true);
-    } else {
-      // Navigate to app - will show auth if not logged in
-      navigate('/app/home');
-    }
+    // Show the signup modal instead of navigating
+    setShowSignupModal(true);
   };
 
   const handleAboutUs = () => {
@@ -182,11 +167,6 @@ const LandingPage = () => {
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
-
-  // Show social browser warning if user clicked get started in social browser
-  if (showSocialWarning) {
-    return <SocialBrowserWarning />;
-  }
 
   return (
     <div
@@ -214,13 +194,10 @@ const LandingPage = () => {
             <button className={classes.navLink} onClick={() => document.querySelector('#faq')?.scrollIntoView({ behavior: 'smooth' })}>
               FAQ
             </button>
-            <button className={classes.navLink} onClick={handleAboutUs}>
-              About Us
-            </button>
           </div>
           <div className={classes.navRight}>
             <button className={classes.getStartedButton} onClick={handleGetStarted}>
-              Get started
+              Join <span style={{ fontFamily: '"Times New Roman", Times, serif', letterSpacing: '-0.05em' }}>NomiAcademy</span>
             </button>
             <button className={classes.hamburgerButton} onClick={() => setMobileMenuOpen(true)}>
               <HiBars3 />
@@ -256,12 +233,9 @@ const LandingPage = () => {
           <button className={classes.mobileMenuLink} onClick={() => { document.querySelector('#faq')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>
             FAQ
           </button>
-          <button className={classes.mobileMenuLink} onClick={() => { handleAboutUs(); setMobileMenuOpen(false); }}>
-            About Us
-          </button>
         </div>
         <button className={classes.mobileMenuButton} onClick={() => { handleGetStarted(); setMobileMenuOpen(false); }}>
-          Get started
+          Join <span style={{ fontFamily: '"Times New Roman", Times, serif', letterSpacing: '-0.05em' }}>NomiAcademy</span>
         </button>
       </div>
 
@@ -339,32 +313,18 @@ const LandingPage = () => {
             Trusted by 20k+ students across 20+ countries | 21% of users scored 32+
           </div>
 
-          {/* Product Demo Screenshot */}
-          <div className={classes.productDemoContainer}>
-            <img
-              src={`${process.env.PUBLIC_URL}/productdemo.png`}
-              alt="Nomi Academy Platform Demo"
-              className={classes.productDemoImage}
-              loading="eager"
-              onError={(e) => {
-                console.error('Image failed to load:', e);
-                e.target.style.display = 'block';
-              }}
-            />
-          </div>
-
           <h1 className={classes.headline}>
-            Want to improve your <span className={classes.highlightText}>ACT Score?</span>
+            Claim Your <span className={classes.highlightText}>FREE</span> 34+ ACT Training to Get Into The Ivy League!
           </h1>
 
           <p className={classes.ctaSubtext}>
-            Get started with a free diagnostic test!
+            This FREE Training Teaches You Everything You Need To Know To Get a 34+!
           </p>
 
           <div className={classes.ctaButtonContainer}>
             <button className={classes.ctaButton} onClick={handleGetStarted}>
               <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-                Free Diagnostic Test
+                Get FREE Training
                 <svg width="20" height="14" viewBox="0 0 28 16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M2 8h24M20 2l6 6-6 6"/>
                 </svg>
@@ -385,9 +345,27 @@ const LandingPage = () => {
               </span>
             </a>
           </div>
+        </div>
 
-          {/* Statistics */}
-          <div id="statistics" className={classes.statisticsSection}>
+        {/* Video Section */}
+        <div className={classes.videoSection}>
+          <div className={classes.videoContainer}>
+            <iframe
+              className={classes.videoIframe}
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="ACT Prep Training Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+
+          <p className={classes.spotsRemaining}>
+            Only 47 free trainings remaining this month!
+          </p>
+        </div>
+
+        {/* Statistics */}
+        <div id="statistics" className={classes.statisticsSection}>
             <div className={classes.statisticsLabel}>Student Track Record</div>
             <div className={classes.statisticsDescription}>
               The percentage of Nomi Academy's students over the last 2 years who achieved the following metrics with their ACT scores.
@@ -472,7 +450,25 @@ const LandingPage = () => {
                 <img src="https://logo.clearbit.com/columbia.edu" alt="Columbia" className={classes.universityLogo} />
                 <img src="https://logo.clearbit.com/duke.edu" alt="Duke" className={classes.universityLogo} />
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Seal_of_University_of_California%2C_Berkeley.svg/120px-Seal_of_University_of_California%2C_Berkeley.svg.png" alt="UC Berkeley" className={classes.universityLogo} />
-                {/* Duplicate for infinite scroll */}
+                {/* Duplicate set 1 */}
+                <img src="https://logo.clearbit.com/ucla.edu" alt="UCLA" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/120px-MIT_logo.svg.png" alt="MIT" className={classes.universityLogo} />
+                <img src="https://logo.clearbit.com/stanford.edu" alt="Stanford" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Yale_University_Shield_1.svg/120px-Yale_University_Shield_1.svg.png" alt="Yale" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/120px-Princeton_seal.svg.png" alt="Princeton" className={classes.universityLogo} />
+                <img src="https://logo.clearbit.com/columbia.edu" alt="Columbia" className={classes.universityLogo} />
+                <img src="https://logo.clearbit.com/duke.edu" alt="Duke" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Seal_of_University_of_California%2C_Berkeley.svg/120px-Seal_of_University_of_California%2C_Berkeley.svg.png" alt="UC Berkeley" className={classes.universityLogo} />
+                {/* Duplicate set 2 */}
+                <img src="https://logo.clearbit.com/ucla.edu" alt="UCLA" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/120px-MIT_logo.svg.png" alt="MIT" className={classes.universityLogo} />
+                <img src="https://logo.clearbit.com/stanford.edu" alt="Stanford" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Yale_University_Shield_1.svg/120px-Yale_University_Shield_1.svg.png" alt="Yale" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/120px-Princeton_seal.svg.png" alt="Princeton" className={classes.universityLogo} />
+                <img src="https://logo.clearbit.com/columbia.edu" alt="Columbia" className={classes.universityLogo} />
+                <img src="https://logo.clearbit.com/duke.edu" alt="Duke" className={classes.universityLogo} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Seal_of_University_of_California%2C_Berkeley.svg/120px-Seal_of_University_of_California%2C_Berkeley.svg.png" alt="UC Berkeley" className={classes.universityLogo} />
+                {/* Duplicate set 3 */}
                 <img src="https://logo.clearbit.com/ucla.edu" alt="UCLA" className={classes.universityLogo} />
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/120px-MIT_logo.svg.png" alt="MIT" className={classes.universityLogo} />
                 <img src="https://logo.clearbit.com/stanford.edu" alt="Stanford" className={classes.universityLogo} />
@@ -514,14 +510,14 @@ const LandingPage = () => {
           {/* Bottom CTA Section */}
           <div className={classes.bottomCtaSection}>
             <h2 className={classes.bottomCtaHeadline}>
-              Let's get you started with a <span className={classes.highlightText}>free diagnostic test.</span>
+              Let's get you started with a <span className={classes.highlightText}>FREE training.</span>
             </h2>
             <p className={classes.bottomCtaSubtext}>
-              Click below to claim your test before resources run out!
+              Click below to claim your FREE training before resources run out!
             </p>
             <button className={classes.bottomCtaButton} onClick={handleGetStarted}>
               <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-                Free Diagnostic Test
+                Get FREE Training
                 <svg width="20" height="14" viewBox="0 0 28 16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M2 8h24M20 2l6 6-6 6"/>
                 </svg>
@@ -529,16 +525,9 @@ const LandingPage = () => {
             </button>
           </div>
         </div>
-      </div>
 
       {/* Footer */}
       <footer className={classes.footer}>
-        <p className={classes.footerText}>
-          Already have an account?{' '}
-          <button className={classes.signInButton} onClick={handleGetStarted}>
-            Sign in
-          </button>
-        </p>
         <p className={classes.footerText}>
           &copy; 2024 Nomi Academy. All rights reserved.
         </p>
@@ -548,11 +537,11 @@ const LandingPage = () => {
       {showStickyBar && (
         <div className={classes.stickyBottomBar}>
           <div className={classes.stickyBarText}>
-            {isMobile ? 'Get your free diagnostic test!' : 'Claim your free diagnostic test for immediate feedback!'}
+            {isMobile ? 'Get your FREE training!' : 'Claim your FREE training for immediate results!'}
           </div>
           <button className={classes.stickyBarButton} onClick={handleGetStarted}>
             <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-              Free Diagnostic Test
+              Get FREE Training
               <svg width="20" height="14" viewBox="0 0 28 16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M2 8h24M20 2l6 6-6 6"/>
               </svg>
@@ -560,6 +549,12 @@ const LandingPage = () => {
           </button>
         </div>
       )}
+
+      {/* Diagnostic Signup Modal with Typeform */}
+      <DiagnosticSignupModal
+        isOpen={showSignupModal}
+        onClose={() => setShowSignupModal(false)}
+      />
     </div>
   );
 };

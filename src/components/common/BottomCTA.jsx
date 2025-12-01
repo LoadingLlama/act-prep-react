@@ -4,7 +4,6 @@
  */
 
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
@@ -62,13 +61,13 @@ const useStyles = createUseStyles({
     fontSize: '16px',
     fontWeight: '600',
     color: '#ffffff',
-    background: '#2563eb',
+    background: '#1e3a8a',
     border: 'none',
     padding: '16px 40px',
     borderRadius: '12px',
     cursor: 'pointer',
     transition: 'all 0.15s ease',
-    boxShadow: '0 3px 0 0 rgba(37, 99, 235, 0.4)',
+    boxShadow: '0 3px 0 0 rgba(30, 58, 138, 0.4)',
     display: 'inline-block',
     '@media (max-width: 768px)': {
       width: '100%',
@@ -76,12 +75,12 @@ const useStyles = createUseStyles({
       padding: '12px 24px',
     },
     '&:hover': {
-      background: '#1d4ed8',
-      boxShadow: '0 3px 0 0 rgba(29, 78, 216, 0.5)',
+      background: '#1e40af',
+      boxShadow: '0 3px 0 0 rgba(30, 64, 175, 0.5)',
     },
     '&:active': {
       transform: 'translateY(1px)',
-      boxShadow: '0 2px 0 0 rgba(29, 78, 216, 0.5)',
+      boxShadow: '0 2px 0 0 rgba(30, 64, 175, 0.5)',
     },
   },
 
@@ -94,29 +93,8 @@ const useStyles = createUseStyles({
   },
 });
 
-const BottomCTA = () => {
+const BottomCTA = ({ onClick }) => {
   const classes = useStyles();
-  const navigate = useNavigate();
-
-  const handleGetStarted = () => {
-    // Check if in social media in-app browser
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    const isInAppBrowser =
-      userAgent.includes('Instagram') ||
-      userAgent.includes('TikTok') ||
-      userAgent.includes('musical_ly') ||
-      userAgent.includes('Bytedance') ||
-      userAgent.includes('FBAN') ||
-      userAgent.includes('FBAV');
-
-    if (isInAppBrowser) {
-      // Navigate to /diagnostic if in-app browser
-      navigate('/diagnostic');
-    } else {
-      // Navigate to app home
-      navigate('/app/home');
-    }
-  };
 
   return (
     <div className={classes.bottomCtaSection}>
@@ -126,7 +104,7 @@ const BottomCTA = () => {
       <p className={classes.bottomCtaSubtext}>
         Click below to claim your test before resources run out!
       </p>
-      <button className={classes.bottomCtaButton} onClick={handleGetStarted}>
+      <button className={classes.bottomCtaButton} onClick={onClick}>
         <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
           Free Diagnostic Test
           <svg width="20" height="14" viewBox="0 0 28 16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
