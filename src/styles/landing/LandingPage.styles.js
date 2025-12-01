@@ -1162,7 +1162,7 @@ export const useLandingPageStyles = createUseStyles({
 
   faqItem: {
     background: 'transparent',
-    borderBottom: '1px solid rgba(185, 28, 28, 0.3)',
+    borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
     overflow: 'hidden',
     transition: 'all 0.2s ease',
   },
@@ -1183,7 +1183,8 @@ export const useLandingPageStyles = createUseStyles({
     transition: 'all 0.2s ease',
     fontFamily: 'inherit',
     '&:hover': {
-      color: '#b91c1c',
+      color: '#ffffff',
+      opacity: 0.8,
     },
     '@media (max-width: 768px)': {
       padding: '20px 0',
@@ -1194,7 +1195,7 @@ export const useLandingPageStyles = createUseStyles({
   faqIcon: {
     fontSize: '24px',
     fontWeight: '300',
-    color: '#b91c1c',
+    color: '#ffffff',
     marginLeft: '16px',
     flexShrink: 0,
     lineHeight: '1',
