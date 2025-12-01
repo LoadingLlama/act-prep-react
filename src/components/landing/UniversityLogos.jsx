@@ -22,14 +22,10 @@ const useStyles = createUseStyles({
     paddingTop: '48px',
     paddingBottom: '48px',
     '@media (max-width: 768px)': {
-      marginTop: '56px',
-      paddingTop: '52px',
-      paddingBottom: '52px',
+      display: 'none',
     },
     '@media (max-width: 480px)': {
-      marginTop: '68px',
-      paddingTop: '56px',
-      paddingBottom: '56px',
+      display: 'none',
     },
   },
 
