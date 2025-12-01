@@ -20,6 +20,7 @@ const LandingPage = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showSignupModal, setShowSignupModal] = useState(false);
+  const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
 
   const testimonials = [
     [
@@ -86,24 +87,24 @@ const LandingPage = () => {
 
   const faqs = [
     {
-      question: "What makes this program different from traditional ACT prep?",
-      answer: "Nomi Academy was engineered by perfect scorers who earned admission to Ivy League institutions. Our methodology isn't theory—it's proven strategy refined through real results. We've distilled years of elite test preparation into an accelerated system that delivers measurable score improvements in weeks, not months."
+      question: "What is this free diagnostic assessment?",
+      answer: "It's a personalized analysis that shows you exactly where you stand with the ACT and what score you can realistically achieve. Created by students who scored 36 and got into schools like Stanford and MIT, this diagnostic helps you understand your strengths, weaknesses, and the fastest path to your target score—completely free, no strings attached."
     },
     {
-      question: "How quickly can I expect to see results?",
-      answer: "Our students typically see a 3-5 point improvement within the first month. The system is designed for rapid skill acquisition through targeted practice and strategic preparation. 96% of our students achieve a 4+ point increase, with many reaching 34+ composite scores within 8-12 weeks of focused training."
+      question: "How does the diagnostic work?",
+      answer: "After answering a few quick questions about your goals and current skill level, you'll get a customized breakdown of what to focus on for each ACT section. We'll show you the exact strategies that helped our founders score perfect 36s, and create a personalized study roadmap based on your timeline and target score."
     },
     {
-      question: "Is this suitable for high-achieving students aiming for top universities?",
-      answer: "Absolutely. Our program was specifically designed for ambitious students targeting elite institutions. Over 52% of our students score 33+, and 22% achieve 35+. The strategies taught here are the same ones that earned our founders admission to Stanford, MIT, Yale, and other top-tier universities."
+      question: "Is this really free? What's the catch?",
+      answer: "Yes, it's 100% free! No credit card needed, no hidden fees. We built this because we wish something like this existed when we were studying for the ACT. Our goal is to help you see what's possible—if you find it valuable and want more, great. If not, you still walk away with a clear game plan for improving your score."
     },
     {
-      question: "What does the training include?",
-      answer: "You'll receive comprehensive instruction across all four ACT sections—English, Math, Reading, and Science. This includes advanced test-taking strategies, time optimization techniques, thousands of practice questions, full-length diagnostic assessments, and a personalized study roadmap calibrated to your target score and timeline."
+      question: "What will I learn from the diagnostic?",
+      answer: "You'll discover your current scoring potential across all four ACT sections—English, Math, Reading, and Science. We'll identify your biggest opportunities for quick score gains, show you proven test-taking strategies that work, and give you a personalized study plan. Think of it as a roadmap that shows you exactly how to get from where you are now to a 34+ score."
     },
     {
-      question: "Why is the initial training free?",
-      answer: "We believe in demonstrating value before asking for commitment. The free training provides immediate actionable insights and a complete diagnostic assessment of your current abilities. It's designed to show you exactly what's possible when you apply proven, systematic preparation strategies."
+      question: "Who is this for?",
+      answer: "This diagnostic is perfect for any student who wants to improve their ACT score, whether you're just starting out or aiming for a perfect 36. It's especially helpful for students targeting competitive schools who want a clear, proven strategy instead of generic study tips. Our approach has helped students get into Harvard, Stanford, MIT, and other top universities."
     }
   ];
 
@@ -168,6 +169,20 @@ const LandingPage = () => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (coursesDropdownOpen && !event.target.closest(`.${classes.coursesDropdown}`)) {
+        setCoursesDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [coursesDropdownOpen, classes.coursesDropdown]);
+
   return (
     <div
       className={classes.container}
@@ -181,21 +196,31 @@ const LandingPage = () => {
           <div className={classes.navLogo}>
             <Logo size="medium" clickable onClick={handleLogoClick} />
           </div>
-          <div className={classes.navLinks}>
-            <button className={classes.navLink} onClick={() => document.querySelector('#statistics')?.scrollIntoView({ behavior: 'smooth' })}>
-              Results
-            </button>
-            <button className={classes.navLink} onClick={() => document.querySelector('#testimonials')?.scrollIntoView({ behavior: 'smooth' })}>
-              Testimonials
-            </button>
-            <button className={classes.navLink} onClick={() => document.querySelector('#universities')?.scrollIntoView({ behavior: 'smooth' })}>
-              Universities
-            </button>
-            <button className={classes.navLink} onClick={() => document.querySelector('#faq')?.scrollIntoView({ behavior: 'smooth' })}>
-              FAQ
-            </button>
-          </div>
           <div className={classes.navRight}>
+            <div className={classes.coursesDropdown}>
+              <button
+                className={`${classes.coursesDropdownButton} ${coursesDropdownOpen ? classes.coursesDropdownButtonActive : ''}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCoursesDropdownOpen(!coursesDropdownOpen);
+                }}
+              >
+                Courses
+                <svg className={classes.dropdownArrow} width="10" height="6" viewBox="0 0 10 6" fill="none">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              {coursesDropdownOpen && (
+                <div className={classes.coursesDropdownMenu}>
+                  <button className={classes.coursesDropdownItem} onClick={() => setCoursesDropdownOpen(false)}>
+                    ACT
+                  </button>
+                  <button className={classes.coursesDropdownItemDisabled} disabled>
+                    SAT - Coming Soon
+                  </button>
+                </div>
+              )}
+            </div>
             <button className={classes.getStartedButton} onClick={handleGetStarted}>
               Join <span style={{ fontFamily: '"Times New Roman", Times, serif', letterSpacing: '-0.05em' }}>NomiAcademy</span>
             </button>
@@ -221,18 +246,15 @@ const LandingPage = () => {
           </button>
         </div>
         <div className={classes.mobileMenuLinks}>
-          <button className={classes.mobileMenuLink} onClick={() => { document.querySelector('#statistics')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>
-            Results
-          </button>
-          <button className={classes.mobileMenuLink} onClick={() => { document.querySelector('#testimonials')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>
-            Testimonials
-          </button>
-          <button className={classes.mobileMenuLink} onClick={() => { document.querySelector('#universities')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>
-            Universities
-          </button>
-          <button className={classes.mobileMenuLink} onClick={() => { document.querySelector('#faq')?.scrollIntoView({ behavior: 'smooth' }); setMobileMenuOpen(false); }}>
-            FAQ
-          </button>
+          <div className={classes.mobileCoursesSection}>
+            <div className={classes.mobileCoursesHeader}>Courses</div>
+            <button className={classes.mobileMenuLink} onClick={() => setMobileMenuOpen(false)}>
+              ACT
+            </button>
+            <button className={classes.mobileMenuLinkDisabled} disabled>
+              SAT - Coming Soon
+            </button>
+          </div>
         </div>
         <button className={classes.mobileMenuButton} onClick={() => { handleGetStarted(); setMobileMenuOpen(false); }}>
           Join <span style={{ fontFamily: '"Times New Roman", Times, serif', letterSpacing: '-0.05em' }}>NomiAcademy</span>
@@ -528,9 +550,24 @@ const LandingPage = () => {
 
       {/* Footer */}
       <footer className={classes.footer}>
-        <p className={classes.footerText}>
-          &copy; 2024 Nomi Academy. All rights reserved.
-        </p>
+        <div className={classes.footerContent}>
+          <div className={classes.footerTitle}>NomiAcademy</div>
+          <div className={classes.footerText}>Premiere ACT prep for all students.</div>
+          <div className={classes.footerText}>&copy; 2025 The Student Society Co LLC</div>
+          <div className={classes.footerEmail}>
+            <a href="mailto:cadenatnomi@gmail.com">cadenatnomi@gmail.com</a>
+          </div>
+          <div className={classes.footerDisclaimer}>
+            ACT® is a trademark registered by ACT, Inc., which is not affiliated with, and does not endorse, this product.
+          </div>
+          <div className={classes.footerSocial}>
+            <a href="https://discord.gg/uJ3C7ee5" target="_blank" rel="noopener noreferrer" className={classes.socialIcon} aria-label="Discord">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
       </footer>
 
       {/* Sticky Bottom CTA Bar - Only shows after scrolling */}

@@ -30,10 +30,11 @@ export const useLandingPageStyles = createUseStyles({
     background: 'rgba(0, 0, 0, 0.85)',
     backdropFilter: 'blur(24px) saturate(200%)',
     WebkitBackdropFilter: 'blur(24px) saturate(200%)',
-    zIndex: 1000,
+    zIndex: 9999,
     padding: '12px 0',
     boxSizing: 'border-box',
-    overflowX: 'hidden',
+    overflowX: 'visible',
+    overflow: 'visible',
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     '@media (max-width: 768px)': {
       padding: '10px 0',
@@ -51,6 +52,7 @@ export const useLandingPageStyles = createUseStyles({
     position: 'relative',
     zIndex: 1,
     boxSizing: 'border-box',
+    overflow: 'visible',
     '@media (max-width: 768px)': {
       padding: '0 16px',
     },
@@ -79,34 +81,93 @@ export const useLandingPageStyles = createUseStyles({
     },
   },
 
-  navLinks: {
+  navRight: {
     display: 'flex',
-    gap: '28px',
+    gap: '12px',
     alignItems: 'center',
+    marginLeft: 'auto',
+    overflow: 'visible',
+    position: 'relative',
+    zIndex: 10001,
+  },
+
+  coursesDropdown: {
+    position: 'relative',
+    display: 'inline-block',
+    zIndex: 10002,
     '@media (max-width: 768px)': {
       display: 'none',
     },
   },
 
-  navLink: {
+  coursesDropdownButton: {
     fontSize: '14px',
     fontWeight: '500',
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     color: '#ffffff',
     background: 'none',
     border: 'none',
     cursor: 'pointer',
-    transition: 'color 0.2s ease',
-    padding: '0',
-    '&:hover': {
-      color: '#b91c1c',
-    },
+    transition: 'none',
+    padding: '8px 12px',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '4px',
+    borderRadius: '0',
   },
 
-  navRight: {
+  coursesDropdownButtonActive: {
+    color: '#ffffff !important',
+    background: 'none !important',
+  },
+
+  dropdownArrow: {
+    transition: 'transform 0.2s ease',
     display: 'flex',
-    gap: '12px',
     alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  coursesDropdownMenu: {
+    position: 'absolute',
+    top: 'calc(100% + 4px)',
+    left: 0,
+    minWidth: '120px',
+    background: 'rgba(0, 0, 0, 0.95)',
+    backdropFilter: 'blur(24px)',
+    WebkitBackdropFilter: 'blur(24px)',
+    border: 'none',
+    borderRadius: '0',
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
+    padding: '4px 0',
+    zIndex: 99999,
+    animation: '$fadeIn 0.2s ease',
+  },
+
+  coursesDropdownItem: {
+    width: '100%',
+    padding: '8px 12px',
+    fontSize: '13px',
+    fontWeight: '400',
+    color: '#ffffff',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    textAlign: 'left',
+    transition: 'none',
+  },
+
+  coursesDropdownItemDisabled: {
+    width: '100%',
+    padding: '8px 12px',
+    fontSize: '13px',
+    fontWeight: '400',
+    color: '#ffffff',
+    background: 'none',
+    border: 'none',
+    cursor: 'default',
+    textAlign: 'left',
+    transition: 'none',
+    opacity: 0.3,
   },
 
   signInButton: {
@@ -295,7 +356,7 @@ export const useLandingPageStyles = createUseStyles({
   },
 
   headline: {
-    fontSize: '56px',
+    fontSize: '64px',
     fontWeight: '900',
     fontFamily: 'Impact, "Anton", "Oswald", -apple-system, BlinkMacSystemFont, sans-serif',
     color: '#ffffff',
@@ -1247,27 +1308,99 @@ export const useLandingPageStyles = createUseStyles({
     },
   },
 
-  // Footer - Minimal and Clean
+  // Footer - Ultra Simple and Minimal
   footer: {
     width: '100%',
-    padding: '32px 32px 70px',
-    borderTop: '1px solid rgba(185, 28, 28, 0.3)',
-    textAlign: 'center',
-    background: 'rgba(0, 0, 0, 0.5)',
-    backdropFilter: 'blur(10px)',
-    WebkitBackdropFilter: 'blur(10px)',
+    padding: '24px 32px 70px',
+    borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+    background: 'transparent',
     position: 'relative',
     zIndex: 1,
     '@media (max-width: 768px)': {
-      padding: '24px 20px 65px',
+      padding: '20px 20px 65px',
+    },
+  },
+
+  footerContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '4px',
+    maxWidth: '1200px',
+    margin: '0 auto',
+    textAlign: 'left',
+  },
+
+  footerTitle: {
+    fontSize: '11px',
+    fontWeight: '400',
+    fontFamily: '"Times New Roman", Times, serif',
+    color: 'rgba(255, 255, 255, 0.5)',
+    letterSpacing: '-0.05em',
+    marginBottom: '4px',
+    '@media (max-width: 768px)': {
+      fontSize: '10px',
     },
   },
 
   footerText: {
-    fontSize: '13px',
-    color: '#ffffff',
-    marginBottom: '6px',
-    fontWeight: '400',
+    fontSize: '10px',
+    color: 'rgba(255, 255, 255, 0.4)',
+    fontWeight: '300',
+    lineHeight: '1.5',
+    '@media (max-width: 768px)': {
+      fontSize: '9px',
+    },
+  },
+
+  footerEmail: {
+    fontSize: '10px',
+    '& a': {
+      color: 'rgba(255, 255, 255, 0.4)',
+      textDecoration: 'none',
+      fontWeight: '300',
+      transition: 'color 0.2s ease',
+      '&:hover': {
+        color: 'rgba(255, 255, 255, 0.6)',
+      },
+    },
+    '@media (max-width: 768px)': {
+      fontSize: '9px',
+    },
+  },
+
+  footerDisclaimer: {
+    fontSize: '9px',
+    color: 'rgba(255, 255, 255, 0.3)',
+    fontWeight: '300',
+    lineHeight: '1.4',
+    maxWidth: '600px',
+    marginTop: '8px',
+    '@media (max-width: 768px)': {
+      fontSize: '8px',
+    },
+  },
+
+  footerSocial: {
+    display: 'flex',
+    gap: '8px',
+    marginTop: '8px',
+  },
+
+  socialIcon: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'rgba(255, 255, 255, 0.4)',
+    textDecoration: 'none',
+    transition: 'color 0.2s ease',
+    '&:hover': {
+      color: 'rgba(255, 255, 255, 0.6)',
+    },
+    '& svg': {
+      width: '16px',
+      height: '16px',
+      fill: 'currentColor',
+    },
   },
 
   // Mobile Menu
@@ -1370,6 +1503,18 @@ export const useLandingPageStyles = createUseStyles({
     },
   },
 
+  mobileMenuLinkDisabled: {
+    padding: '14px 24px',
+    fontSize: '16px',
+    fontWeight: '500',
+    color: '#ffffff',
+    background: 'none',
+    border: 'none',
+    textAlign: 'left',
+    cursor: 'default',
+    opacity: 0.3,
+  },
+
   mobileMenuButton: {
     margin: '16px 24px',
     padding: '12px 20px',
@@ -1387,4 +1532,20 @@ export const useLandingPageStyles = createUseStyles({
       transform: 'scale(0.98)',
     },
   },
+
+  mobileCoursesSection: {
+    display: 'flex',
+    flexDirection: 'column',
+    paddingTop: '8px',
+  },
+
+  mobileCoursesHeader: {
+    padding: '12px 24px 8px 24px',
+    fontSize: '12px',
+    fontWeight: '700',
+    color: '#b91c1c',
+    textTransform: 'uppercase',
+    letterSpacing: '0.05em',
+  },
 });
+

@@ -96,14 +96,14 @@ const useStyles = createUseStyles({
   },
 
   modalTitle: {
-    fontSize: '24px',
+    fontSize: '22px',
     fontWeight: '700',
     color: '#000000',
     margin: 0,
     textAlign: 'center',
     lineHeight: '1.3',
     '@media (max-width: 768px)': {
-      fontSize: '20px',
+      fontSize: '18px',
       paddingRight: '40px',
     },
   },
@@ -200,7 +200,7 @@ const DiagnosticSignupModal = ({ isOpen, onClose }) => {
             <span>Offer expires in <span className={classes.timerText}>{formatTime(timeLeft)}</span></span>
           </div>
           <h2 className={classes.modalTitle}>
-            Just a few quick questions to unlock your 34+ <span className={classes.freeText}>free</span> training!
+            Just a few quick questions to unlock your 34+ <span className={classes.freeText}>FREE</span> training!
           </h2>
         </div>
         <div className={classes.typeformContainer}>
