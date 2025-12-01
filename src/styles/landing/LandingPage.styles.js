@@ -37,7 +37,7 @@ export const useLandingPageStyles = createUseStyles({
     overflow: 'visible',
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     '@media (max-width: 768px)': {
-      padding: '10px 0',
+      padding: '6px 0',
     },
   },
 
@@ -269,17 +269,17 @@ export const useLandingPageStyles = createUseStyles({
     backgroundRepeat: 'no-repeat',
     minHeight: 'auto',
     '@media (max-width: 768px)': {
-      marginTop: '44px',
+      marginTop: '36px',
       padding: '60px 20px 60px 20px',
-      minHeight: 'calc(100vh - 44px)',
+      minHeight: 'calc(100vh - 36px)',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
     },
     '@media (max-width: 480px)': {
-      marginTop: '42px',
+      marginTop: '36px',
       padding: '50px 16px 50px 16px',
-      minHeight: 'calc(100vh - 42px)',
+      minHeight: 'calc(100vh - 36px)',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
