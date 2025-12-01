@@ -544,7 +544,7 @@ export const useLandingPageStyles = createUseStyles({
     fontWeight: '700',
     color: '#ffffff',
     background: '#b91c1c',
-    border: 'none',
+    border: '1px solid transparent',
     padding: '16px 28px',
     borderRadius: '12px',
     cursor: 'pointer',
@@ -580,7 +580,7 @@ export const useLandingPageStyles = createUseStyles({
 
   discordButton: {
     fontSize: '16px',
-    fontWeight: '600',
+    fontWeight: '700',
     color: '#000000',
     background: '#ffffff',
     border: '1px solid #e5e7eb',
@@ -596,7 +596,7 @@ export const useLandingPageStyles = createUseStyles({
       width: '100%',
       maxWidth: '100%',
       fontSize: '14px',
-      fontWeight: '500',
+      fontWeight: '600',
       padding: '14px 20px',
       display: 'block',
       margin: '0 auto',
@@ -1077,6 +1077,14 @@ export const useLandingPageStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     gap: '12px',
+    '@media (max-width: 768px)': {
+      width: '100%',
+      maxWidth: '600px',
+    },
+    '@media (max-width: 480px)': {
+      width: '100%',
+      maxWidth: '500px',
+    },
   },
 
   faqItem: {
