@@ -268,10 +268,6 @@ const LandingPage = () => {
           <h1 className={classes.mobileTypeformTitle}>
             Want Your FREE 1-1 ACT Tutoring Session?
           </h1>
-          <div className={classes.mobileTypeformTimer}>
-            <span className={classes.mobileTimerIcon}>⏱</span>
-            <span>Offer expires in <span className={classes.mobileTimerText}>29:58</span></span>
-          </div>
           <p className={classes.mobileTypeformSubtitle}>
             Just a few quick questions to unlock your FREE 1-1 ACT Tutoring Call
           </p>

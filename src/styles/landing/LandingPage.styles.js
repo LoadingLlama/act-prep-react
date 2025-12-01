@@ -257,60 +257,35 @@ export const useLandingPageStyles = createUseStyles({
   mobileTypeformHeader: {
     flexShrink: 0,
     background: '#ffffff',
-    padding: '20px 20px 16px 20px',
+    padding: '16px 20px',
     borderBottom: '1px solid #e5e7eb',
     '@media (max-width: 480px)': {
-      padding: '16px 16px 12px 16px',
+      padding: '12px 16px',
     },
   },
 
   mobileTypeformTitle: {
-    fontSize: '22px',
+    fontSize: '20px',
     fontWeight: '700',
     color: '#000000',
     textAlign: 'center',
-    margin: '0 0 12px 0',
+    margin: '0 0 10px 0',
     lineHeight: '1.3',
     '@media (max-width: 480px)': {
-      fontSize: '18px',
-      marginBottom: '10px',
-    },
-  },
-
-  mobileTypeformTimer: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '6px',
-    fontSize: '12px',
-    fontWeight: '500',
-    color: '#6b7280',
-    marginBottom: '10px',
-    '@media (max-width: 480px)': {
-      fontSize: '11px',
+      fontSize: '17px',
       marginBottom: '8px',
     },
   },
 
-  mobileTimerIcon: {
-    fontSize: '14px',
-    color: '#1e40af',
-  },
-
-  mobileTimerText: {
-    color: '#1e40af',
-    fontWeight: '600',
-  },
-
   mobileTypeformSubtitle: {
-    fontSize: '14px',
+    fontSize: '13px',
     fontWeight: '500',
     color: '#000000',
     textAlign: 'center',
     margin: 0,
     lineHeight: '1.4',
     '@media (max-width: 480px)': {
-      fontSize: '13px',
+      fontSize: '12px',
     },
   },
 
