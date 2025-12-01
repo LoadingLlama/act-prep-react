@@ -263,7 +263,7 @@ export const useLandingPageStyles = createUseStyles({
     marginTop: '60px',
     padding: '155px 32px 140px 32px',
     position: 'relative',
-    backgroundImage: 'url(/assets/studentpic.jpg)',
+    backgroundImage: 'url(/assets/ivyleague.jpg)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
