@@ -17,6 +17,10 @@ export const useLandingPageStyles = createUseStyles({
     fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Helvetica, Arial, sans-serif',
     position: 'relative',
     boxSizing: 'border-box',
+    '@media (max-width: 768px)': {
+      height: '100vh',
+      overflow: 'hidden',
+    },
   },
 
   // Navigation - Glassy and floating
@@ -430,16 +434,16 @@ export const useLandingPageStyles = createUseStyles({
   },
 
   headline: {
-    fontSize: '64px',
+    fontSize: '80px',
     fontWeight: '900',
     fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Helvetica, Arial, sans-serif',
     color: '#ffffff',
     marginTop: '0',
-    marginBottom: '24px',
+    marginBottom: '28px',
     lineHeight: '1.05',
     letterSpacing: '-0.02em',
-    maxWidth: '700px',
-    margin: '0 auto 24px auto',
+    maxWidth: '900px',
+    margin: '0 auto 28px auto',
     textAlign: 'center',
     '@media (max-width: 768px)': {
       fontSize: '32px',
@@ -492,16 +496,16 @@ export const useLandingPageStyles = createUseStyles({
   },
 
   ctaSubtext: {
-    fontSize: '20px',
+    fontSize: '26px',
     fontWeight: '500',
     fontFamily: '"Times New Roman", Times, serif',
     color: '#ffffff',
-    marginBottom: '32px',
+    marginBottom: '36px',
     marginTop: '0',
     lineHeight: '1.5',
     textAlign: 'center',
-    maxWidth: '700px',
-    margin: '0 auto 32px auto',
+    maxWidth: '900px',
+    margin: '0 auto 36px auto',
     '@media (max-width: 768px)': {
       fontSize: '15px',
       marginBottom: '20px',
@@ -1258,15 +1262,10 @@ export const useLandingPageStyles = createUseStyles({
       width: 'calc(100% - 48px)',
     },
     '@media (max-width: 768px)': {
-      padding: '16px 20px',
-      gap: '12px',
-      width: 'calc(100% - 48px)',
+      display: 'none',
     },
     '@media (max-width: 480px)': {
-      padding: '14px 16px',
-      gap: '10px',
-      width: 'calc(100% - 32px)',
-      borderRadius: '8px 8px 0 0',
+      display: 'none',
     },
   },
 
@@ -1331,7 +1330,7 @@ export const useLandingPageStyles = createUseStyles({
     maxWidth: '1200px',
     margin: '0 auto',
     '@media (max-width: 768px)': {
-      padding: '20px 20px 65px',
+      display: 'none',
     },
   },
 
