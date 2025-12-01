@@ -485,6 +485,7 @@ export const useLandingPageStyles = createUseStyles({
   ctaSubtext: {
     fontSize: '20px',
     fontWeight: '500',
+    fontFamily: '"Times New Roman", Times, serif',
     color: '#ffffff',
     marginBottom: '32px',
     marginTop: '0',
