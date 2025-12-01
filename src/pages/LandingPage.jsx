@@ -264,9 +264,18 @@ const LandingPage = () => {
 
       {/* Mobile Typeform - Full Screen */}
       <div className={classes.mobileTypeformContainer}>
-        <h1 className={classes.mobileTypeformTitle}>
-          Want Your FREE 1-1 ACT Tutoring Session?
-        </h1>
+        <div className={classes.mobileTypeformHeader}>
+          <h1 className={classes.mobileTypeformTitle}>
+            Want Your FREE 1-1 ACT Tutoring Session?
+          </h1>
+          <div className={classes.mobileTypeformTimer}>
+            <span className={classes.mobileTimerIcon}>⏱</span>
+            <span>Offer expires in <span className={classes.mobileTimerText}>29:58</span></span>
+          </div>
+          <p className={classes.mobileTypeformSubtitle}>
+            Just a few quick questions to unlock your FREE 1-1 ACT Tutoring Call
+          </p>
+        </div>
         <iframe
           src="https://form.typeform.com/to/okRIME6U"
           width="100%"
