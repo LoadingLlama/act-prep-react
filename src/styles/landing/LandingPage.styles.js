@@ -336,7 +336,8 @@ export const useLandingPageStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '0',
+    flexWrap: 'wrap',
+    gap: '6px',
     background: 'transparent',
     border: 'none',
     padding: '8px 16px',
@@ -354,16 +355,67 @@ export const useLandingPageStyles = createUseStyles({
       padding: '3px 8px',
       marginTop: '0',
       marginBottom: '8px',
+      gap: '4px',
     },
     '@media (max-width: 480px)': {
       fontSize: '7px',
       marginTop: '0',
       marginBottom: '6px',
       padding: '2px 6px',
+      gap: '3px',
     },
     '&:hover': {
       transform: 'translateY(-1px)',
       boxShadow: '0 4px 12px rgba(185, 28, 28, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.6)',
+    },
+  },
+
+  badgeAvatars: {
+    display: 'flex',
+    alignItems: 'center',
+    marginRight: '2px',
+    '@media (max-width: 480px)': {
+      marginRight: '0',
+    },
+  },
+
+  badgeAvatar: {
+    width: '20px',
+    height: '20px',
+    borderRadius: '50%',
+    border: '1.5px solid #ffffff',
+    marginLeft: '-6px',
+    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+    objectFit: 'cover',
+    flexShrink: 0,
+    '&:first-child': {
+      marginLeft: '-2px',
+    },
+    '@media (max-width: 768px)': {
+      width: '16px',
+      height: '16px',
+      border: '1.2px solid #ffffff',
+      marginLeft: '-5px',
+      '&:first-child': {
+        marginLeft: '-2px',
+      },
+    },
+    '@media (max-width: 480px)': {
+      width: '14px',
+      height: '14px',
+      border: '1px solid #ffffff',
+      marginLeft: '-4px',
+      '&:first-child': {
+        marginLeft: '-1px',
+      },
+    },
+  },
+
+  badgeText: {
+    display: 'inline-block',
+    textAlign: 'center',
+    '@media (max-width: 480px)': {
+      lineHeight: '1.3',
     },
   },
 
@@ -931,11 +983,11 @@ export const useLandingPageStyles = createUseStyles({
     alignItems: 'center',
     '@media (max-width: 768px)': {
       margin: '-35px auto 0 auto',
-      padding: '0 24px 60px 24px',
+      padding: '0 16px 60px 16px',
     },
     '@media (max-width: 480px)': {
       margin: '-15px auto 0 auto',
-      padding: '0 20px 40px 20px',
+      padding: '0 12px 40px 12px',
     },
   },
 

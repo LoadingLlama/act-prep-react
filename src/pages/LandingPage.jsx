@@ -265,74 +265,16 @@ const LandingPage = () => {
       <div className={classes.mainContent}>
         <div className={classes.heroSection}>
           <div className={classes.badge}>
-            <div style={{ display: 'flex', alignItems: 'center', marginRight: '8px' }}>
-              <img
-                src="https://i.pravatar.cc/150?img=1"
-                alt="Student"
-                style={{
-                  width: '20px',
-                  height: '20px',
-                  borderRadius: '50%',
-                  border: '1.5px solid #ffffff',
-                  marginLeft: '-2px',
-                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
-                  objectFit: 'cover'
-                }}
-              />
-              <img
-                src="https://i.pravatar.cc/150?img=5"
-                alt="Student"
-                style={{
-                  width: '20px',
-                  height: '20px',
-                  borderRadius: '50%',
-                  border: '1.5px solid #ffffff',
-                  marginLeft: '-6px',
-                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
-                  objectFit: 'cover'
-                }}
-              />
-              <img
-                src="https://i.pravatar.cc/150?img=9"
-                alt="Student"
-                style={{
-                  width: '20px',
-                  height: '20px',
-                  borderRadius: '50%',
-                  border: '1.5px solid #ffffff',
-                  marginLeft: '-6px',
-                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
-                  objectFit: 'cover'
-                }}
-              />
-              <img
-                src="https://i.pravatar.cc/150?img=15"
-                alt="Student"
-                style={{
-                  width: '20px',
-                  height: '20px',
-                  borderRadius: '50%',
-                  border: '1.5px solid #ffffff',
-                  marginLeft: '-6px',
-                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
-                  objectFit: 'cover'
-                }}
-              />
-              <img
-                src="https://i.pravatar.cc/150?img=20"
-                alt="Student"
-                style={{
-                  width: '20px',
-                  height: '20px',
-                  borderRadius: '50%',
-                  border: '1.5px solid #ffffff',
-                  marginLeft: '-6px',
-                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
-                  objectFit: 'cover'
-                }}
-              />
+            <div className={classes.badgeAvatars}>
+              <img src="https://i.pravatar.cc/150?img=1" alt="Student" className={classes.badgeAvatar} />
+              <img src="https://i.pravatar.cc/150?img=5" alt="Student" className={classes.badgeAvatar} />
+              <img src="https://i.pravatar.cc/150?img=9" alt="Student" className={classes.badgeAvatar} />
+              <img src="https://i.pravatar.cc/150?img=15" alt="Student" className={classes.badgeAvatar} />
+              <img src="https://i.pravatar.cc/150?img=20" alt="Student" className={classes.badgeAvatar} />
             </div>
-            Trusted by 20k+ students across 20+ countries | 21% of users scored 32+
+            <span className={classes.badgeText}>
+              Trusted by 20k+ students across 20+ countries | 21% of users scored 32+
+            </span>
           </div>
 
           <h1 className={classes.headline}>
@@ -568,6 +510,7 @@ const LandingPage = () => {
             </a>
           </div>
         </div>
+        <a href="/app/home" className={classes.footerLearnLink}>Learn</a>
       </footer>
 
       {/* Sticky Bottom CTA Bar - Only shows after scrolling */}
