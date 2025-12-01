@@ -264,6 +264,9 @@ const LandingPage = () => {
 
       {/* Mobile Typeform - Full Screen */}
       <div className={classes.mobileTypeformContainer}>
+        <h1 className={classes.mobileTypeformTitle}>
+          Want Your FREE 1-1 ACT Tutoring Session?
+        </h1>
         <iframe
           src="https://form.typeform.com/to/okRIME6U"
           width="100%"
@@ -271,6 +274,7 @@ const LandingPage = () => {
           frameBorder="0"
           title="Free Training Signup"
           style={{ border: 'none' }}
+          className={classes.mobileTypeformIframe}
         />
       </div>
 

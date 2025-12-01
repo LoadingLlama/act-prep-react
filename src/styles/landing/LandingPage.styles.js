@@ -41,7 +41,7 @@ export const useLandingPageStyles = createUseStyles({
     overflow: 'visible',
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     '@media (max-width: 768px)': {
-      padding: '4px 0',
+      display: 'none',
     },
   },
 
@@ -239,20 +239,39 @@ export const useLandingPageStyles = createUseStyles({
   mobileTypeformContainer: {
     display: 'none',
     '@media (max-width: 768px)': {
-      display: 'block',
+      display: 'flex',
+      flexDirection: 'column',
       position: 'fixed',
-      top: '32px',
+      top: 0,
       left: 0,
       right: 0,
       bottom: 0,
       width: '100%',
-      height: 'calc(100vh - 32px)',
+      height: '100vh',
       zIndex: 10,
+      background: '#000000',
     },
+  },
+
+  mobileTypeformTitle: {
+    fontSize: '24px',
+    fontWeight: '700',
+    color: '#ffffff',
+    textAlign: 'center',
+    padding: '16px 20px',
+    margin: 0,
+    background: '#000000',
+    lineHeight: '1.3',
     '@media (max-width: 480px)': {
-      top: '28px',
-      height: 'calc(100vh - 28px)',
+      fontSize: '20px',
+      padding: '12px 16px',
     },
+  },
+
+  mobileTypeformIframe: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
   },
 
   // Main Content - Centered and Premium
