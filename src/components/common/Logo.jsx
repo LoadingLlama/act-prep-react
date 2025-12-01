@@ -5,47 +5,63 @@
  */
 
 import React from 'react';
+import { createUseStyles } from 'react-jss';
 
-const Logo = ({ size = 'medium', style = {}, onClick, clickable = false }) => {
-  const sizes = {
-    small: {
-      fontSize: '20px',
-    },
-    medium: {
-      fontSize: '24px',
-    },
-    large: {
-      fontSize: '28px',
-    },
-  };
-
-  const defaultStyle = {
+const useStyles = createUseStyles({
+  logo: {
     fontWeight: '600',
     fontFamily: '"Times New Roman", Times, serif',
     color: '#ffffff',
     letterSpacing: '-0.05em',
     margin: 0,
-    cursor: clickable ? 'pointer' : 'default',
     transition: 'opacity 0.2s ease',
-    ...sizes[size],
-    ...style,
-  };
+  },
+  small: {
+    fontSize: '20px',
+    '@media (max-width: 768px)': {
+      fontSize: '9px',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '8px',
+    },
+  },
+  medium: {
+    fontSize: '24px',
+    '@media (max-width: 768px)': {
+      fontSize: '10px',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '9px',
+    },
+  },
+  large: {
+    fontSize: '28px',
+    '@media (max-width: 768px)': {
+      fontSize: '12px',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '11px',
+    },
+  },
+  clickable: {
+    cursor: 'pointer',
+    '&:hover': {
+      opacity: 0.7,
+    },
+  },
+  notClickable: {
+    cursor: 'default',
+  },
+});
 
-  const hoverStyle = clickable ? {
-    opacity: 0.7,
-  } : {};
-
-  const [isHovered, setIsHovered] = React.useState(false);
+const Logo = ({ size = 'medium', style = {}, onClick, clickable = false }) => {
+  const classes = useStyles();
 
   return (
     <div
-      style={{
-        ...defaultStyle,
-        ...(isHovered ? hoverStyle : {}),
-      }}
+      className={`${classes.logo} ${classes[size]} ${clickable ? classes.clickable : classes.notClickable}`}
+      style={style}
       onClick={onClick}
-      onMouseEnter={() => clickable && setIsHovered(true)}
-      onMouseLeave={() => clickable && setIsHovered(false)}
     >
       NomiAcademy
     </div>

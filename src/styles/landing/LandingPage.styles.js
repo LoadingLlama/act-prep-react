@@ -37,7 +37,7 @@ export const useLandingPageStyles = createUseStyles({
     overflow: 'visible',
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     '@media (max-width: 768px)': {
-      padding: '6px 0',
+      padding: '4px 0',
     },
   },
 
@@ -70,10 +70,10 @@ export const useLandingPageStyles = createUseStyles({
     transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease',
     cursor: 'pointer',
     '@media (max-width: 768px)': {
-      fontSize: '14px',
+      fontSize: '11px',
     },
     '@media (max-width: 480px)': {
-      fontSize: '13px',
+      fontSize: '10px',
     },
     '&:hover': {
       transform: 'scale(1.02)',
@@ -213,14 +213,14 @@ export const useLandingPageStyles = createUseStyles({
     transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
     boxShadow: '0 3px 0 0 rgba(185, 28, 28, 0.4)',
     '@media (max-width: 768px)': {
-      padding: '5px 10px',
-      fontSize: '11px',
-      borderRadius: '6px',
-      boxShadow: '0 2px 0 0 rgba(185, 28, 28, 0.4)',
+      padding: '4px 8px',
+      fontSize: '9px',
+      borderRadius: '4px',
+      boxShadow: '0 1px 0 0 rgba(185, 28, 28, 0.4)',
     },
     '@media (max-width: 480px)': {
-      padding: '4px 8px',
-      fontSize: '10px',
+      padding: '3px 6px',
+      fontSize: '8px',
     },
     '&:hover': {
       background: '#991b1b',
