@@ -422,7 +422,7 @@ export const useLandingPageStyles = createUseStyles({
   headline: {
     fontSize: '64px',
     fontWeight: '400',
-    fontFamily: 'Impact, "Anton", "Oswald", -apple-system, BlinkMacSystemFont, sans-serif',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif',
     color: '#ffffff',
     marginTop: '0',
     marginBottom: '24px',
