@@ -9,6 +9,7 @@ import { useLandingPageStyles } from '../styles/landing/LandingPage.styles';
 import { HiBars3, HiXMark } from 'react-icons/hi2';
 import Logo from '../components/common/Logo';
 import DiagnosticSignupModal from '../components/common/DiagnosticSignupModal';
+import UniversityLogos from '../components/landing/UniversityLogos';
 
 const LandingPage = () => {
   const classes = useLandingPageStyles();
@@ -402,48 +403,7 @@ const LandingPage = () => {
           </div>
 
           {/* University Logos - Scrolling */}
-          <div id="universities" className={classes.universitiesSection}>
-            <div className={classes.universitiesLabel}>Students accepted to top universities</div>
-            <div className={classes.universitiesScroller}>
-              <div className={classes.universitiesTrack}>
-                <img src="https://logo.clearbit.com/ucla.edu" alt="UCLA" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/120px-MIT_logo.svg.png" alt="MIT" className={classes.universityLogo} />
-                <img src="https://logo.clearbit.com/stanford.edu" alt="Stanford" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Yale_University_Shield_1.svg/120px-Yale_University_Shield_1.svg.png" alt="Yale" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/120px-Princeton_seal.svg.png" alt="Princeton" className={classes.universityLogo} />
-                <img src="https://logo.clearbit.com/columbia.edu" alt="Columbia" className={classes.universityLogo} />
-                <img src="https://logo.clearbit.com/duke.edu" alt="Duke" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Seal_of_University_of_California%2C_Berkeley.svg/120px-Seal_of_University_of_California%2C_Berkeley.svg.png" alt="UC Berkeley" className={classes.universityLogo} />
-                {/* Duplicate set 1 */}
-                <img src="https://logo.clearbit.com/ucla.edu" alt="UCLA" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/120px-MIT_logo.svg.png" alt="MIT" className={classes.universityLogo} />
-                <img src="https://logo.clearbit.com/stanford.edu" alt="Stanford" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Yale_University_Shield_1.svg/120px-Yale_University_Shield_1.svg.png" alt="Yale" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/120px-Princeton_seal.svg.png" alt="Princeton" className={classes.universityLogo} />
-                <img src="https://logo.clearbit.com/columbia.edu" alt="Columbia" className={classes.universityLogo} />
-                <img src="https://logo.clearbit.com/duke.edu" alt="Duke" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Seal_of_University_of_California%2C_Berkeley.svg/120px-Seal_of_University_of_California%2C_Berkeley.svg.png" alt="UC Berkeley" className={classes.universityLogo} />
-                {/* Duplicate set 2 */}
-                <img src="https://logo.clearbit.com/ucla.edu" alt="UCLA" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/120px-MIT_logo.svg.png" alt="MIT" className={classes.universityLogo} />
-                <img src="https://logo.clearbit.com/stanford.edu" alt="Stanford" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Yale_University_Shield_1.svg/120px-Yale_University_Shield_1.svg.png" alt="Yale" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/120px-Princeton_seal.svg.png" alt="Princeton" className={classes.universityLogo} />
-                <img src="https://logo.clearbit.com/columbia.edu" alt="Columbia" className={classes.universityLogo} />
-                <img src="https://logo.clearbit.com/duke.edu" alt="Duke" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Seal_of_University_of_California%2C_Berkeley.svg/120px-Seal_of_University_of_California%2C_Berkeley.svg.png" alt="UC Berkeley" className={classes.universityLogo} />
-                {/* Duplicate set 3 */}
-                <img src="https://logo.clearbit.com/ucla.edu" alt="UCLA" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/120px-MIT_logo.svg.png" alt="MIT" className={classes.universityLogo} />
-                <img src="https://logo.clearbit.com/stanford.edu" alt="Stanford" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Yale_University_Shield_1.svg/120px-Yale_University_Shield_1.svg.png" alt="Yale" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/120px-Princeton_seal.svg.png" alt="Princeton" className={classes.universityLogo} />
-                <img src="https://logo.clearbit.com/columbia.edu" alt="Columbia" className={classes.universityLogo} />
-                <img src="https://logo.clearbit.com/duke.edu" alt="Duke" className={classes.universityLogo} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Seal_of_University_of_California%2C_Berkeley.svg/120px-Seal_of_University_of_California%2C_Berkeley.svg.png" alt="UC Berkeley" className={classes.universityLogo} />
-              </div>
-            </div>
-          </div>
+          <UniversityLogos />
 
           {/* FAQ Section */}
           <div id="faq" className={classes.faqSection}>
