@@ -47,9 +47,9 @@ const useStyles = createUseStyles({
   modal: {
     background: '#ffffff',
     borderRadius: '24px',
-    maxWidth: '1000px',
+    maxWidth: '1200px',
     width: '100%',
-    height: '700px',
+    height: '800px',
     boxShadow: '0 32px 64px rgba(0, 0, 0, 0.3)',
     position: 'relative',
     animation: '$slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -76,11 +76,11 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     gap: '6px',
     marginBottom: '12px',
-    fontSize: '13px',
+    fontSize: '12px',
     fontWeight: '500',
     color: '#6b7280',
     '@media (max-width: 768px)': {
-      fontSize: '12px',
+      fontSize: '11px',
       marginBottom: '10px',
     },
   },
@@ -96,14 +96,14 @@ const useStyles = createUseStyles({
   },
 
   modalTitle: {
-    fontSize: '18px',
+    fontSize: '16px',
     fontWeight: '700',
     color: '#000000',
     margin: 0,
     textAlign: 'center',
     lineHeight: '1.3',
     '@media (max-width: 768px)': {
-      fontSize: '15px',
+      fontSize: '14px',
       paddingRight: '40px',
     },
   },
