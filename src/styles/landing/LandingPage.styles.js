@@ -314,12 +314,8 @@ export const useLandingPageStyles = createUseStyles({
 
   mobileTypeformIframe: {
     flex: 1,
-    width: '125%',
-    height: '125%',
-    transform: 'scale(0.8)',
-    transformOrigin: 'top left',
-    marginLeft: '-12.5%',
-    marginTop: '-12.5%',
+    width: '100%',
+    height: '100%',
   },
 
   // Main Content - Centered and Premium
