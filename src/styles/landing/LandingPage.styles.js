@@ -1107,12 +1107,14 @@ export const useLandingPageStyles = createUseStyles({
     fontSize: '36px',
     fontWeight: '900',
     fontFamily: 'Impact, "Anton", "Oswald", -apple-system, BlinkMacSystemFont, sans-serif',
-    color: '#b91c1c',
+    color: '#ffffff',
     lineHeight: '1',
     letterSpacing: '-0.02em',
-    transition: 'transform 0.2s ease',
+    transition: 'transform 0.2s ease, text-shadow 0.3s ease',
+    textShadow: '0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3)',
     '@media (max-width: 768px)': {
       fontSize: '48px',
+      textShadow: '0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.6), 0 0 75px rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3)',
     },
   },
 
