@@ -800,9 +800,8 @@ export const useLandingPageStyles = createUseStyles({
     backdropFilter: 'blur(20px) saturate(180%)',
     WebkitBackdropFilter: 'blur(20px) saturate(180%)',
     borderRadius: '14px',
-    border: '1px solid rgba(185, 28, 28, 0.3)',
+    border: 'none',
     boxShadow: '0 4px 16px rgba(0, 0, 0, 0.3)',
-    transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
     '@media (max-width: 768px)': {
       padding: '16px 14px',
       flex: '1 1 0',
@@ -810,10 +809,6 @@ export const useLandingPageStyles = createUseStyles({
       '&:nth-child(3)': {
         display: 'none',
       },
-    },
-    '&:hover': {
-      transform: 'translateY(-2px)',
-      boxShadow: '0 8px 24px rgba(185, 28, 28, 0.2)',
     },
   },
 
