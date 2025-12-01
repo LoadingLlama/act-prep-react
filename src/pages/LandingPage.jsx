@@ -278,11 +278,8 @@ const LandingPage = () => {
         </div>
         <iframe
           src="https://form.typeform.com/to/okRIME6U"
-          width="100%"
-          height="100%"
           frameBorder="0"
           title="Free Training Signup"
-          style={{ border: 'none' }}
           className={classes.mobileTypeformIframe}
         />
       </div>
