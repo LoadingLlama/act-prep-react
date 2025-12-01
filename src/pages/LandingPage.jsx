@@ -282,7 +282,7 @@ const LandingPage = () => {
           </h1>
 
           <p className={classes.ctaSubtext}>
-            Get FREE access to proven ACT strategies from students who scored perfect 36s.
+            FREE strategies from students who scored perfect 36s.
           </p>
 
           <div className={classes.ctaButtonContainer}>
