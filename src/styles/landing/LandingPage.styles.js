@@ -1066,25 +1066,21 @@ export const useLandingPageStyles = createUseStyles({
 
   statCard: {
     padding: '20px 0',
-    background: 'radial-gradient(ellipse 200px 150px at center top, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 30%, rgba(0, 0, 0, 0) 60%)',
+    background: 'radial-gradient(ellipse 300px 200px at center top, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 20%, rgba(255, 255, 255, 0.01) 35%, transparent 50%)',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center',
     borderBottom: 'none',
-    transition: 'all 0.2s ease',
     position: 'relative',
+    overflow: 'hidden',
     '@media (max-width: 768px)': {
       padding: '16px 0',
-      background: 'radial-gradient(ellipse 250px 180px at center top, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 30%, rgba(0, 0, 0, 0) 60%)',
+      background: 'radial-gradient(ellipse 350px 220px at center top, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 20%, rgba(255, 255, 255, 0.01) 35%, transparent 50%)',
     },
     '&:hover': {
-      background: 'radial-gradient(ellipse 200px 150px at center top, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 30%, rgba(0, 0, 0, 0) 60%)',
       '& $statNumber': {
         transform: 'scale(1.05)',
-      },
-      '@media (max-width: 768px)': {
-        background: 'radial-gradient(ellipse 250px 180px at center top, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 30%, rgba(0, 0, 0, 0) 60%)',
       },
     },
   },
