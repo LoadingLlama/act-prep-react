@@ -96,14 +96,14 @@ const useStyles = createUseStyles({
   },
 
   modalTitle: {
-    fontSize: '22px',
+    fontSize: '18px',
     fontWeight: '700',
     color: '#000000',
     margin: 0,
     textAlign: 'center',
     lineHeight: '1.3',
     '@media (max-width: 768px)': {
-      fontSize: '18px',
+      fontSize: '15px',
       paddingRight: '40px',
     },
   },
@@ -134,7 +134,7 @@ const useStyles = createUseStyles({
     zIndex: 10,
     '&:hover': {
       background: '#e5e7eb',
-      color: '#1e3a8a',
+      color: '#b91c1c',
       transform: 'scale(1.05)',
     },
     '@media (max-width: 768px)': {
