@@ -291,7 +291,7 @@ export const useLandingPageStyles = createUseStyles({
       left: 0,
       right: 0,
       bottom: 0,
-      background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.4) 15%, rgba(0, 0, 0, 0.45) 70%, rgba(0, 0, 0, 0.7) 90%, rgba(0, 0, 0, 0.85) 100%)',
+      background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.5) 15%, rgba(0, 0, 0, 0.55) 70%, rgba(0, 0, 0, 0.8) 90%, rgba(0, 0, 0, 0.9) 100%)',
       zIndex: 0,
     },
     '& > *': {
