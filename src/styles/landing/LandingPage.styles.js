@@ -203,7 +203,7 @@ export const useLandingPageStyles = createUseStyles({
 
   getStartedButton: {
     fontSize: '14px',
-    fontWeight: '600',
+    fontWeight: '500',
     color: '#ffffff',
     background: '#b91c1c',
     border: 'none',
