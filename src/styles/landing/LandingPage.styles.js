@@ -257,35 +257,35 @@ export const useLandingPageStyles = createUseStyles({
   mobileTypeformHeader: {
     flexShrink: 0,
     background: '#ffffff',
-    padding: '16px 20px',
+    padding: '32px 24px 28px 24px',
     borderBottom: '1px solid #e5e7eb',
     '@media (max-width: 480px)': {
-      padding: '12px 16px',
+      padding: '28px 20px 24px 20px',
     },
   },
 
   mobileTypeformTitle: {
-    fontSize: '20px',
+    fontSize: '26px',
     fontWeight: '700',
     color: '#000000',
     textAlign: 'center',
-    margin: '0 0 10px 0',
-    lineHeight: '1.3',
+    margin: '0 0 16px 0',
+    lineHeight: '1.2',
     '@media (max-width: 480px)': {
-      fontSize: '17px',
-      marginBottom: '8px',
+      fontSize: '22px',
+      marginBottom: '14px',
     },
   },
 
   mobileTypeformSubtitle: {
-    fontSize: '13px',
+    fontSize: '16px',
     fontWeight: '500',
     color: '#000000',
     textAlign: 'center',
     margin: 0,
     lineHeight: '1.4',
     '@media (max-width: 480px)': {
-      fontSize: '12px',
+      fontSize: '14px',
     },
   },
 
