@@ -278,11 +278,11 @@ const LandingPage = () => {
           </div>
 
           <h1 className={classes.headline}>
-            Claim Your <span className={classes.highlightText}>FREE</span> 34+ ACT Training to Get Into The Ivy League!
+            Learn from the <span className={classes.highlightText}>best</span>, be your best.
           </h1>
 
           <p className={classes.ctaSubtext}>
-            This FREE Training Teaches You Everything You Need To Know To Get a 34+!
+            Get FREE access to proven ACT strategies from students who scored perfect 36s.
           </p>
 
           <div className={classes.ctaButtonContainer}>
