@@ -341,7 +341,7 @@ export const useLandingPageStyles = createUseStyles({
   },
 
   badge: {
-    display: 'flex',
+    display: 'none',
     alignItems: 'center',
     justifyContent: 'center',
     flexWrap: 'wrap',
@@ -431,7 +431,6 @@ export const useLandingPageStyles = createUseStyles({
     maxWidth: '700px',
     margin: '0 auto 24px auto',
     textAlign: 'center',
-    textTransform: 'uppercase',
     '@media (max-width: 768px)': {
       fontSize: '32px',
       marginBottom: '16px',
