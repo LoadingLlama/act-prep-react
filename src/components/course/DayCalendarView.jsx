@@ -29,7 +29,7 @@
  *   - Mock Exam: Red background (#dc2626) with red text
  *   - Practice: Amber background (#f59e0b) with amber text
  *   - Review: Green background (#10b981) with green text
- *   - Lesson: Blue background (#3b82f6) with blue text
+ *   - Lesson: Blue background (#b91c1c) with blue text
  * - Each item displays title and optional duration
  * - Completed items shown with line-through text decoration
  * - Interactive hover states for better UX
@@ -156,7 +156,7 @@ const DayCalendarView = ({
               : isDiagnostic ? '#b91c1c'
               : isPractice ? '#f59e0b'
               : isReview ? '#10b981'
-              : '#3b82f6';
+              : '#b91c1c';
 
             if (isExamDay) {
               return (

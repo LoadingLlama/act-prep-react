@@ -31,7 +31,7 @@
  *   - Mock Exam: Red (#dc2626)
  *   - Practice: Amber (#f59e0b)
  *   - Review: Green (#10b981)
- *   - Lesson: Blue (#3b82f6)
+ *   - Lesson: Blue (#b91c1c)
  * - Interactive hover states for adding new events
  * - Click handlers for viewing item details
  * - Fixed height (500px) with scrollable content area
@@ -112,7 +112,7 @@ const WeekCalendarView = ({
               fontSize: '1.125rem',
               fontWeight: day.isToday ? '700' : '600',
               color: day.isToday ? '#ffffff' : '#1a1a1a',
-              background: day.isToday ? '#3b82f6' : 'transparent',
+              background: day.isToday ? '#b91c1c' : 'transparent',
               borderRadius: '50%'
             }}>
               {day.dayNumber}
@@ -228,7 +228,7 @@ const WeekCalendarView = ({
                 : isDiagnostic ? '#b91c1c'
                 : isPractice ? '#f59e0b'
                 : isReview ? '#10b981'
-                : '#3b82f6';
+                : '#b91c1c';
 
               return (
                 <div

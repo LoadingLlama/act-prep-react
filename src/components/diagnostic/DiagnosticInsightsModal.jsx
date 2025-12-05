@@ -499,14 +499,14 @@ const DiagnosticInsightsModal = ({ insightsData, onClose, show }) => {
           <div style={{
             fontSize: '1.25rem',
             fontWeight: '700',
-            color: '#1e40af',
+            color: '#b91c1c',
             marginBottom: '0.5rem'
           }}>
             Your Personalized Learning Path is Ready!
           </div>
           <div style={{
             fontSize: '0.95rem',
-            color: '#1e3a8a',
+            color: '#b91c1c',
             lineHeight: '1.6'
           }}>
             Based on your diagnostic results and study preferences, we've created a customized plan with lessons prioritized for your weak areas. Your learning path includes:
@@ -517,7 +517,7 @@ const DiagnosticInsightsModal = ({ insightsData, onClose, show }) => {
             gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
             gap: '1rem',
             fontSize: '0.875rem',
-            color: '#1e3a8a'
+            color: '#b91c1c'
           }}>
             <div>
               <div style={{ fontWeight: '600' }}>📅 Study Schedule</div>
@@ -735,7 +735,7 @@ const DiagnosticInsightsModal = ({ insightsData, onClose, show }) => {
                 <div style={{
                   fontSize: '0.875rem',
                   fontWeight: '600',
-                  color: '#1e40af',
+                  color: '#b91c1c',
                   marginBottom: '0.5rem',
                   textTransform: 'uppercase',
                   letterSpacing: '0.05em'
@@ -744,7 +744,7 @@ const DiagnosticInsightsModal = ({ insightsData, onClose, show }) => {
                 </div>
                 <div style={{
                   fontSize: '0.95rem',
-                  color: '#1e3a8a',
+                  color: '#b91c1c',
                   lineHeight: '1.6'
                 }}>
                   {selectedQuestion.explanation}

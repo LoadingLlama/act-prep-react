@@ -106,7 +106,7 @@ const useStyles = createUseStyles({
     width: '100%',
     height: '6px',
     borderRadius: '3px',
-    background: 'linear-gradient(90deg, #2c5aa0 0%, #1a73e8 50%, #10a37f 100%)',
+    background: 'linear-gradient(90deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%)',
     outline: 'none',
     opacity: 0.9,
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -120,24 +120,24 @@ const useStyles = createUseStyles({
       width: '16px',
       height: '16px',
       borderRadius: '50%',
-      background: '#1a73e8',
+      background: '#b91c1c',
       cursor: 'pointer',
-      boxShadow: '0 2px 4px rgba(26, 115, 232, 0.3)',
+      boxShadow: '0 2px 4px rgba(185, 28, 28, 0.3)',
       border: '2px solid white',
       '&:hover': {
-        background: '#2c5aa0',
+        background: '#dc2626',
         transform: 'scale(1.15)',
-        boxShadow: '0 0 0 8px rgba(26, 115, 232, 0.2)'
+        boxShadow: '0 0 0 8px rgba(185, 28, 28, 0.2)'
       }
     },
     '&::-moz-range-thumb': {
       width: '16px',
       height: '16px',
       borderRadius: '50%',
-      background: '#1a73e8',
+      background: '#b91c1c',
       cursor: 'pointer',
       border: '2px solid white',
-      boxShadow: '0 2px 4px rgba(26, 115, 232, 0.3)'
+      boxShadow: '0 2px 4px rgba(185, 28, 28, 0.3)'
     }
   },
 

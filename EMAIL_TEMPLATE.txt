@@ -1,0 +1,187 @@
+===========================================
+EMAILJS TEMPLATE - Copy this into EmailJS
+===========================================
+
+Template Name: diagnostic_welcome_email
+From Name: Nomi Academy
+From Email: cadenatnomi@gmail.com
+Reply To: cadenatnomi@gmail.com
+Subject: Your ACT Diagnostic Test + A Special Bonus for You!
+
+---
+
+TEMPLATE CONTENT (Plain Text):
+Copy everything below this line
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+Hey {{to_name}},
+
+Thanks for requesting your Free Diagnostic Test! You can grab it right here: {{diagnostic_link}}
+
+Now, here's the exciting part: You're also qualified for a FREE 35+ ACT Training!
+
+This is an exclusive opportunity to get personalized strategies and tips to boost your ACT score.
+
+👉 Click here to claim your FREE 35+ TRAINING now: {{training_link}}
+
+Secure your free training today before it's gone!
+
+But don't wait—this special offer is only available for a limited time, and spots are filling up fast.
+
+Best wishes,
+{{from_name}}
+{{from_title}}
+
+---
+
+If you no longer wish to receive these emails you may unsubscribe.
+
+↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+Copy everything above this line
+
+===========================================
+HTML VERSION (Better formatting - RECOMMENDED)
+===========================================
+
+Copy everything below this line
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+    .header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      color: white;
+      padding: 40px 30px;
+      text-align: center;
+      border-radius: 0;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .content {
+      padding: 40px 30px;
+      background: #ffffff;
+    }
+    .content p {
+      margin: 0 0 16px 0;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .button {
+      display: inline-block;
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      color: white !important;
+      padding: 16px 32px;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 700;
+      margin: 20px 0;
+      font-size: 16px;
+      box-shadow: 0 8px 24px rgba(30, 58, 138, 0.3);
+    }
+    .button-container {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .highlight {
+      background: #fef3c7;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid #f59e0b;
+      margin: 25px 0;
+    }
+    .signature {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #e5e7eb;
+    }
+    .footer {
+      text-align: center;
+      padding: 30px;
+      background: #f9fafb;
+      color: #6b7280;
+      font-size: 13px;
+      border-top: 1px solid #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎯 Your Free ACT Diagnostic Test Awaits!</h1>
+    </div>
+
+    <div class="content">
+      <p>Hey {{to_name}},</p>
+
+      <p>Thanks for requesting your Free Diagnostic Test! You can grab it right here:</p>
+
+      <div class="button-container">
+        <a href="{{diagnostic_link}}" class="button">📝 Start Your Diagnostic Test</a>
+      </div>
+
+      <div class="highlight">
+        <p style="margin: 0; font-weight: 600; font-size: 18px;">🎉 Now, here's the exciting part:</p>
+        <p style="margin: 10px 0 0 0;">You're also qualified for a <strong>FREE 35+ ACT Training!</strong></p>
+      </div>
+
+      <p>This is an exclusive opportunity to get personalized strategies and tips to boost your ACT score.</p>
+
+      <div class="button-container">
+        <a href="{{training_link}}" class="button">🚀 Claim Your FREE 35+ TRAINING</a>
+      </div>
+
+      <p style="font-weight: 600; color: #1e3a8a;">Secure your free training today before it's gone!</p>
+
+      <p style="font-size: 14px; color: #6b7280;">But don't wait—this special offer is only available for a limited time, and spots are filling up fast.</p>
+
+      <div class="signature">
+        <p>Best wishes,<br>
+        <strong>{{from_name}}</strong><br>
+        <em style="color: #6b7280;">{{from_title}}</em></p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Nomi Academy | Your Path to ACT Success</p>
+      <p style="margin-top: 10px; font-size: 12px;">If you no longer wish to receive these emails you may <a href="#" style="color: #1e3a8a;">unsubscribe</a>.</p>
+    </div>
+  </div>
+</body>
+</html>
+
+↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+Copy everything above this line
+
+===========================================
+TEMPLATE VARIABLES (Auto-filled by code)
+===========================================
+
+These variables are automatically filled when the email is sent:
+
+{{to_name}} = User's first name (e.g., "Ashley")
+{{to_email}} = User's email address
+{{from_name}} = "Caden Chiang"
+{{from_title}} = "Student Success Manager - Nomi Academy"
+{{diagnostic_link}} = Link to diagnostic test
+{{training_link}} = Link to training
+{{user_phone}} = User's phone number
+{{user_location}} = "United States" or "International"
+
+===========================================

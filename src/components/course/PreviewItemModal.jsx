@@ -134,7 +134,7 @@ const PreviewItemModal = ({
             fontSize: '1.75rem',
             fontWeight: '700',
             lineHeight: '1.2',
-            color: '#3b82f6'
+            color: '#b91c1c'
           }}>
             {previewItem.title}
           </h2>
@@ -486,7 +486,7 @@ const PreviewItemModal = ({
                   ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
                   : isPractice
                   ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
-                  : 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
+                  : 'linear-gradient(135deg, #08245b 0%, #b91c1c 100%)',
                 color: 'white',
                 fontSize: '0.9375rem',
                 fontWeight: '600',

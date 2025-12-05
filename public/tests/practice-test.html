@@ -1382,6 +1382,12 @@
 
         function endSection() {
             console.log('🟢 endSection called');
+            console.log('🔍 Current section value:', {
+                section,
+                type: typeof section,
+                length: section?.length,
+                charCodes: section ? [...section].map(c => c.charCodeAt(0)) : []
+            });
             closeConfirmModal();
 
             // Calculate score for current section
@@ -1419,6 +1425,8 @@
             allResults.push(currentResults);
             sessionStorage.setItem('practiceTestAllResults', JSON.stringify(allResults));
 
+            console.log('📚 All completed sections:', allResults.map(r => r.section));
+
             // Determine next section
             const sectionOrder = ['english', 'math', 'reading', 'science'];
             const normalizedSection = section.toLowerCase().trim();
@@ -1432,7 +1440,12 @@
                 currentIndex,
                 sectionOrder,
                 isLastSection: currentIndex === sectionOrder.length - 1,
-                nextAvailable: currentIndex < sectionOrder.length - 1
+                nextAvailable: currentIndex < sectionOrder.length - 1,
+                comparison: {
+                    'currentIndex < 3': currentIndex < 3,
+                    'currentIndex === 3': currentIndex === 3,
+                    'will_go_to': currentIndex < 3 ? 'NEXT_SECTION' : 'COMPLETE'
+                }
             });
 
             // Always progress through sections (full test simulation)

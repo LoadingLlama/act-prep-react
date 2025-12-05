@@ -726,7 +726,7 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
               <div style={{
                 fontSize: '2rem',
                 fontWeight: '700',
-                color: accuracy >= 80 ? '#10b981' : accuracy >= 60 ? '#3b82f6' : '#64748b'
+                color: accuracy >= 80 ? '#10b981' : accuracy >= 60 ? '#b91c1c' : '#64748b'
               }}>{accuracy}%</div>
             </div>
           </div>
@@ -923,7 +923,7 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
             style={{
               width: '100%',
               padding: '1rem',
-              background: '#2563eb',
+              background: '#b91c1c',
               color: 'white',
               border: 'none',
               borderRadius: '12px',
@@ -938,7 +938,7 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
               e.target.style.boxShadow = '0 3px 0 0 rgba(29, 78, 216, 0.5)';
             }}
             onMouseLeave={(e) => {
-              e.target.style.backgroundColor = '#2563eb';
+              e.target.style.backgroundColor = '#b91c1c';
               e.target.style.boxShadow = '0 3px 0 0 rgba(37, 99, 235, 0.4)';
             }}
             onMouseDown={(e) => {
@@ -978,7 +978,7 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
         borderRight: '1px solid #e5e7eb',
         overflowY: 'auto',
         transition: 'width 0.3s ease',
-        zIndex: 50
+        zIndex: 1001
       }}>
         {/* Header */}
         <div style={{
@@ -1140,7 +1140,7 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                       alignItems: 'center',
                       gap: '0.5rem',
                       background: isCurrent ? '#e0f2fe' : 'transparent',
-                      borderLeft: isCurrent ? '3px solid #3b82f6' : '3px solid transparent',
+                      borderLeft: isCurrent ? '3px solid #b91c1c' : '3px solid transparent',
                       borderRadius: '6px',
                       padding: '0.5rem 0.5rem 0.5rem 0.25rem',
                       transition: 'all 0.2s ease'
@@ -1192,7 +1192,7 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                           : (isCurrent ? '#dbeafe' : '#f1f5f9'),
                         color: isAnswered
                           ? (isCorrect ? '#16a34a' : '#dc2626')
-                          : (isCurrent ? '#3b82f6' : '#64748b')
+                          : (isCurrent ? '#b91c1c' : '#64748b')
                       }}>
                         {isAnswered
                           ? (isCorrect ? '✓' : '✗')
@@ -1289,7 +1289,7 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                       padding: '0.75rem',
                       background: isCurrent ? '#e0f2fe' : 'transparent',
                       border: 'none',
-                      borderLeft: isCurrent ? '3px solid #3b82f6' : '3px solid transparent',
+                      borderLeft: isCurrent ? '3px solid #b91c1c' : '3px solid transparent',
                       borderRadius: '6px',
                       cursor: 'pointer',
                       textAlign: 'left',
@@ -1318,7 +1318,7 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                       fontSize: '0.75rem',
                       fontWeight: '600',
                       background: isCurrent ? '#dbeafe' : '#f1f5f9',
-                      color: isCurrent ? '#3b82f6' : '#64748b'
+                      color: isCurrent ? '#b91c1c' : '#64748b'
                     }}>
                       {index + 1}
                     </div>
@@ -1370,35 +1370,35 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
       <div style={{
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
         padding: '0',
-        marginLeft: useExternalSidebar ? (sidebarCollapsed ? '64px' : '320px') : (sidebarCollapsed ? '64px' : '320px'),
+        marginLeft: useExternalSidebar ? (sidebarCollapsed ? '64px' : '240px') : (sidebarCollapsed ? '64px' : '320px'),
         minHeight: '100vh',
         background: '#ffffff',
-        maxWidth: useExternalSidebar ? (sidebarCollapsed ? 'calc(100% - 64px)' : 'calc(100% - 320px)') : (sidebarCollapsed ? 'calc(100% - 64px)' : 'calc(100% - 320px)'),
+        maxWidth: useExternalSidebar ? (sidebarCollapsed ? 'calc(100% - 64px)' : 'calc(100% - 240px)') : (sidebarCollapsed ? 'calc(100% - 64px)' : 'calc(100% - 320px)'),
         transition: 'margin-left 0.3s ease, max-width 0.3s ease'
       }}>
         {/* Top Header Bar matching home page */}
         <div style={{
-          width: `calc(100% + ${useExternalSidebar ? (sidebarCollapsed ? '64px' : '240px') : (sidebarCollapsed ? '64px' : '320px')})`,
-          marginLeft: useExternalSidebar ? (sidebarCollapsed ? '-64px' : '-240px') : (sidebarCollapsed ? '-64px' : '-320px'),
+          width: '100%',
+          marginLeft: 0,
           background: '#ffffff',
           borderBottom: '1px solid #e5e7eb',
           position: 'sticky',
           top: 0,
-          zIndex: 100,
+          zIndex: 50,
           transition: 'width 0.3s ease, margin-left 0.3s ease'
         }}>
           <div style={{
             width: '100%',
             paddingTop: '0.625rem',
             paddingBottom: '0.625rem',
-            paddingLeft: useExternalSidebar ? (sidebarCollapsed ? 'calc(64px + 1rem)' : 'calc(240px + 1rem)') : (sidebarCollapsed ? 'calc(64px + 1rem)' : 'calc(320px + 1rem)'),
+            paddingLeft: '1rem',
             paddingRight: '2rem',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
             transition: 'padding-left 0.3s ease'
           }}>
-            <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <div style={{ flex: 1, display: 'flex', alignItems: 'center' }}>
               <div style={{
                 fontSize: '1.125rem',
                 fontWeight: '600',
@@ -1406,17 +1406,20 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
               }}>
                 {lesson?.title || 'Practice Session'}
               </div>
-              <div style={{
-                fontSize: '0.875rem',
-                color: '#1a1a1a',
-                fontWeight: '500',
-                display: 'flex',
-                alignItems: 'center'
-              }}>
-                Question {currentQuestionIndex + 1} of {questions.length}
-              </div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <div style={{
+              position: 'absolute',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              fontSize: '0.875rem',
+              color: '#1a1a1a',
+              fontWeight: '500',
+              display: 'flex',
+              alignItems: 'center'
+            }}>
+              Question {currentQuestionIndex + 1} of {questions.length}
+            </div>
+            <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: '0.75rem', justifyContent: 'flex-end' }}>
               {user && isPro && (
                 <div className={classes.proBadge}>
                   Pro
@@ -1534,7 +1537,7 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                     onClick={() => handleAnswerSelect(index)}
                     style={{
                       cursor: showExplanation ? 'default' : 'pointer',
-                      border: isSelected && answeredCorrectly === null ? '2px solid #3b82f6' :
+                      border: isSelected && answeredCorrectly === null ? '2px solid #b91c1c' :
                               answeredCorrectly === true && isCorrectAnswer ? '2px solid #48bb78' : '2px solid #e5e7eb',
                       backgroundColor: answeredCorrectly === true && isCorrectAnswer ? 'rgba(72, 187, 120, 0.08)' :
                                        isSelected && answeredCorrectly === null ? 'rgba(59, 130, 246, 0.05)' : '#ffffff',
@@ -1582,7 +1585,7 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                         fontSize: '0.8rem',
                         color: isSelected && answeredCorrectly === null ? '#ffffff' :
                                 answeredCorrectly === true && isCorrectAnswer ? '#ffffff' : '#64748b',
-                        backgroundColor: isSelected && answeredCorrectly === null ? '#3b82f6' :
+                        backgroundColor: isSelected && answeredCorrectly === null ? '#08245b' :
                                          answeredCorrectly === true && isCorrectAnswer ? '#48bb78' : '#f1f5f9',
                         transition: 'all 0.2s ease'
                       }}>
@@ -1716,7 +1719,7 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                   onClick={handleCheckAnswer}
                   disabled={selectedAnswer === null}
                   style={{
-                    backgroundColor: selectedAnswer === null ? '#cbd5e1' : '#2563eb',
+                    backgroundColor: selectedAnswer === null ? '#cbd5e1' : '#08245b',
                     color: '#ffffff',
                     padding: '0.875rem 2rem',
                     fontSize: '1rem',
@@ -1725,7 +1728,7 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                     border: 'none',
                     cursor: selectedAnswer === null ? 'not-allowed' : 'pointer',
                     transition: 'all 0.15s ease',
-                    boxShadow: selectedAnswer === null ? '0 2px 0 0 rgba(0, 0, 0, 0.1)' : '0 3px 0 0 rgba(37, 99, 235, 0.4)',
+                    boxShadow: selectedAnswer === null ? '0 2px 0 0 rgba(0, 0, 0, 0.1)' : '0 3px 0 0 rgba(8, 36, 91, 0.4)',
                     userSelect: 'none',
                     WebkitUserSelect: 'none',
                     MozUserSelect: 'none',
@@ -1733,26 +1736,26 @@ const PracticeSession = ({ lesson, onClose, onComplete, lessonMode, setLessonMod
                   }}
                   onMouseEnter={(e) => {
                     if (selectedAnswer !== null) {
-                      e.target.style.backgroundColor = '#1d4ed8';
-                      e.target.style.boxShadow = '0 3px 0 0 rgba(29, 78, 216, 0.5)';
+                      e.target.style.backgroundColor = '#0a2f7a';
+                      e.target.style.boxShadow = '0 3px 0 0 rgba(10, 47, 122, 0.5)';
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (selectedAnswer !== null) {
-                      e.target.style.backgroundColor = '#2563eb';
-                      e.target.style.boxShadow = '0 3px 0 0 rgba(37, 99, 235, 0.4)';
+                      e.target.style.backgroundColor = '#08245b';
+                      e.target.style.boxShadow = '0 3px 0 0 rgba(8, 36, 91, 0.4)';
                     }
                   }}
                   onMouseDown={(e) => {
                     if (selectedAnswer !== null) {
                       e.target.style.transform = 'translateY(1px)';
-                      e.target.style.boxShadow = '0 2px 0 0 rgba(29, 78, 216, 0.5)';
+                      e.target.style.boxShadow = '0 2px 0 0 rgba(10, 47, 122, 0.5)';
                     }
                   }}
                   onMouseUp={(e) => {
                     if (selectedAnswer !== null) {
                       e.target.style.transform = 'translateY(0)';
-                      e.target.style.boxShadow = '0 3px 0 0 rgba(29, 78, 216, 0.5)';
+                      e.target.style.boxShadow = '0 3px 0 0 rgba(10, 47, 122, 0.5)';
                     }
                   }}
                 >

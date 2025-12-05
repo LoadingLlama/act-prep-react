@@ -124,7 +124,7 @@ const YearCalendarView = ({
                     fontSize: '0.7rem',
                     fontWeight: day.isToday ? '700' : '500',
                     color: day.isToday ? '#ffffff' : '#1a1a1a',
-                    background: day.isToday ? '#3b82f6' : 'transparent',
+                    background: day.isToday ? '#b91c1c' : 'transparent',
                     borderRadius: '4px',
                     textAlign: 'center',
                     cursor: 'pointer',
@@ -175,7 +175,7 @@ const YearCalendarView = ({
                       width: '3px',
                       height: '3px',
                       borderRadius: '50%',
-                      background: day.isToday ? '#ffffff' : '#3b82f6'
+                      background: day.isToday ? '#ffffff' : '#b91c1c'
                     }} />
                   )}
                 </div>

@@ -26,7 +26,7 @@ const Tooltip = ({ text, id, hoveredTooltip, setHoveredTooltip }) => (
       width: '16px',
       height: '16px',
       borderRadius: '50%',
-      background: '#3b82f6',
+      background: '#b91c1c',
       color: 'white',
       display: 'flex',
       alignItems: 'center',
@@ -45,7 +45,7 @@ const Tooltip = ({ text, id, hoveredTooltip, setHoveredTooltip }) => (
         transform: 'translateX(-50%)',
         marginBottom: '0.5rem',
         padding: '0.5rem 0.75rem',
-        background: '#3b82f6',
+        background: '#b91c1c',
         color: 'white',
         borderRadius: '6px',
         fontSize: '0.75rem',
@@ -64,7 +64,7 @@ const Tooltip = ({ text, id, hoveredTooltip, setHoveredTooltip }) => (
           height: 0,
           borderLeft: '6px solid transparent',
           borderRight: '6px solid transparent',
-          borderTop: '6px solid #3b82f6'
+          borderTop: '6px solid #b91c1c'
         }} />
       </div>
     )}

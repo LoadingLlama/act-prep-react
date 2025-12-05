@@ -575,7 +575,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
             display: 'flex',
             alignItems: 'center',
             gap: '0.5rem',
-            color: '#2563eb',
+            color: '#b91c1c',
             fontSize: '0.875rem'
           }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -803,7 +803,7 @@ const ProgressiveLessonRenderer = ({ lesson, initialStatus, onComplete, onStatus
                   }}
                   style={{
                     backgroundColor: '#ffffff',
-                    color: '#2563eb',
+                    color: '#b91c1c',
                     padding: '0.625rem 1.25rem',
                     fontSize: '0.875rem',
                     fontWeight: '500',

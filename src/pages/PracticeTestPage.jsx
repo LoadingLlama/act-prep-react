@@ -194,22 +194,32 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
   // Listen for test completion message from iframe
   useEffect(() => {
     const handleMessage = async (event) => {
-      console.log('📨 Message received:', event.data);
+      console.log('📨 React: Message received from iframe:', {
+        type: event.data?.type,
+        fullData: event.data,
+        origin: event.origin
+      });
 
       if (event.data?.type === 'PRACTICE_TEST_COMPLETE') {
-        console.log('✅ Test complete - processing results');
+        console.log('✅ React: Test complete message received - calling handleTestCompletion');
         await handleTestCompletion();
       } else if (event.data?.type === 'PRACTICE_TEST_NEXT_SECTION') {
         // Load next section
         const nextSection = event.data.nextSection;
-        console.log('🔄 Loading next section:', nextSection);
+        console.log('🔄 React: Loading next section:', nextSection);
         logger.info('PracticeTestPage', 'loadingNextSection', { nextSection });
         loadSectionQuestions(nextSection);
+      } else {
+        console.log('⚠️ React: Unknown message type or missing type:', event.data);
       }
     };
 
+    console.log('🎧 React: Message listener attached');
     window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
+    return () => {
+      console.log('🔌 React: Message listener removed');
+      window.removeEventListener('message', handleMessage);
+    };
   }, [loadSectionQuestions, handleTestCompletion]);
 
   /**

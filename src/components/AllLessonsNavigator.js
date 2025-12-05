@@ -1,7 +1,7 @@
 import React from 'react';
 import { HiArrowLeft, HiFlag } from 'react-icons/hi2';
 import { createUseStyles } from 'react-jss';
-import Logo from './common/Logo';
+import AppLogo from './common/AppLogo';
 import soundEffects from '../services/soundEffects';
 
 const useStyles = createUseStyles({
@@ -99,7 +99,7 @@ const AllLessonsNavigator = ({
     <div className={classes.navigator}>
       {/* Logo */}
       <div className={classes.logoSection}>
-        <Logo size="small" style={{ color: '#ffffff', textTransform: 'lowercase' }} />
+        <AppLogo size="small" style={{ color: '#ffffff' }} />
       </div>
 
       {/* Back Button */}
@@ -117,7 +117,7 @@ const AllLessonsNavigator = ({
               fontWeight: '600',
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
-              color: 'rgba(255, 255, 255, 0.6)',
+              color: '#ffffff',
               marginBottom: '0.5rem',
               paddingLeft: '0.25rem',
               display: 'flex',
@@ -189,7 +189,7 @@ const AllLessonsNavigator = ({
                         fontWeight: '600',
                         background: isAnswered
                           ? (isCorrect ? '#059669' : '#dc2626')
-                          : (isCurrent ? '#3b82f6' : 'rgba(255, 255, 255, 0.1)'),
+                          : (isCurrent ? '#3b82f6' : 'rgba(255, 255, 255, 0.25)'),
                         color: '#ffffff'
                       }}>
                         {isAnswered
@@ -199,8 +199,8 @@ const AllLessonsNavigator = ({
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{
                           fontSize: '0.75rem',
-                          fontWeight: isCurrent ? '600' : '400',
-                          color: isCurrent ? '#ffffff' : 'rgba(255, 255, 255, 0.8)',
+                          fontWeight: isCurrent ? '600' : '500',
+                          color: '#ffffff',
                           overflow: 'hidden',
                           textOverflow: 'ellipsis',
                           whiteSpace: 'nowrap'
