@@ -1017,6 +1017,34 @@ i strong {
     font-weight: 400;
 }
 
+/* Answer choice images (for questions with image-based answers like matrices) */
+.answer-choice-image {
+    display: block;
+    max-width: 250px;
+    max-height: 120px;
+    height: auto;
+    object-fit: contain;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 0.5rem;
+    background: #f9fafb;
+}
+
+/* Ensure answer choice containers accommodate images properly */
+.answer-choice:has(.answer-choice-image) {
+    min-height: auto;
+    padding: 0.75rem 1.25rem;
+}
+
+.answer-choice.selected:has(.answer-choice-image) {
+    border-color: #0f172a;
+    background: #ffffff;
+}
+
+.answer-choice:hover:has(.answer-choice-image) {
+    border-color: #cbd5e1;
+}
+
 /* Review Mode Styles */
 .answer-choice input:disabled {
     cursor: not-allowed;

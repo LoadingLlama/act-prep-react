@@ -782,6 +782,11 @@
                                     });
                                 }
 
+                                // Check if answer is an image URL
+                                const answerText = q.answers[key];
+                                const isImageUrl = answerText && (answerText.startsWith('http') || answerText.startsWith('/')) &&
+                                                   (answerText.includes('.jpg') || answerText.includes('.png') || answerText.includes('.jpeg') || answerText.includes('.gif') || answerText.includes('.svg'));
+
                                 return `
                                     <label class="${choiceClass}" for="q${questionNum}_${key}" style="${inlineStyle}">
                                         <input
@@ -793,10 +798,13 @@
                                             ${isUserAnswer ? 'checked' : ''}
                                             onchange="selectAnswer(${questionNum}, '${key}')"
                                         >
-                                        <span class="answer-text" style="display: flex; align-items: flex-start; width: 100%;">
-                                            <span style="flex: 1; display: flex; align-items: flex-start; gap: 0.5rem;">
+                                        <span class="answer-text" style="display: flex; align-items: ${isImageUrl ? 'center' : 'flex-start'}; width: 100%;">
+                                            <span style="flex: 1; display: flex; align-items: ${isImageUrl ? 'center' : 'flex-start'}; gap: 0.5rem;">
                                                 <strong style="color: ${reviewMode && isCorrectAnswer ? '#10b981' : '#000000'}; flex-shrink: 0;">${key})</strong>
-                                                <span style="color: #000000; flex: 1;">${q.answers[key]}</span>
+                                                ${isImageUrl
+                                                    ? `<img src="${answerText}" alt="Answer choice ${key}" class="answer-choice-image" style="max-width: 200px; max-height: 100px; object-fit: contain;" onerror="console.error('Failed to load answer image:', this.src)" onload="console.log('✓ Answer choice image loaded:', this.src.substring(0, 60) + '...')" />`
+                                                    : `<span style="color: #000000; flex: 1;">${answerText}</span>`
+                                                }
                                             </span>
                                             <span style="width: 28px; display: flex; align-items: flex-start; justify-content: center; flex-shrink: 0; margin-left: 0.5rem; padding-top: 0.125rem;">
                                                 ${reviewMode && isCorrectAnswer ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' : ''}
