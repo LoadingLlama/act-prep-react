@@ -59,6 +59,50 @@ const currentSection = sessionStorage.getItem('practiceTestSection') || section;
 - Validate questions have questionId and selectedAnswer fields
 - Provide clear error messages indicating which section/field is missing
 
+### 5. Browser Caching Old HTML File
+**Problem:** Browser serving cached version of practice-test.html with old code
+**Location:** `src/pages/PracticeTestPage.jsx:499`
+**Fix Applied:**
+```javascript
+// BEFORE - No cache busting
+src="/tests/practice-test.html"
+
+// AFTER - Force reload latest version
+src={`/tests/practice-test.html?v=${Date.now()}`}
+```
+
+### 6. Incomplete SessionStorage Clearing
+**Problem:** Not clearing all test-related sessionStorage keys
+**Location:** `src/pages/PracticeTestPage.jsx:133-138`
+**Fix Applied:**
+```javascript
+// Added clearing of all test-related keys
+sessionStorage.removeItem('practiceTestAllResults');
+sessionStorage.removeItem('practiceTestResults');
+sessionStorage.removeItem('practiceTestQuestions');
+sessionStorage.removeItem('practiceTestSection');
+sessionStorage.removeItem('currentQuestion');
+```
+
+### 7. Validation Rejecting Unanswered Questions
+**Problem:** Validation checking if selectedAnswer has a value, not if field exists
+**Location:** `src/pages/PracticeTestPage.jsx:185-189`
+**Fix Applied:**
+```javascript
+// BEFORE - Rejects undefined values
+if (firstQ.selectedAnswer === undefined) {
+  console.warn('Skipping section - missing answer');
+  continue;
+}
+
+// AFTER - Only rejects if property doesn't exist
+const hasAnswerField = 'selectedAnswer' in firstQ || 'userAnswer' in firstQ;
+if (!hasAnswerField) {
+  console.warn('Skipping section - missing answer field property (old format)');
+  continue;
+}
+```
+
 ---
 
 ## 📋 Complete Test Flow Checklist

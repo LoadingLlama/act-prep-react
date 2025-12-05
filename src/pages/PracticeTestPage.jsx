@@ -133,6 +133,9 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
     console.log('🧹 Clearing stale test data on component mount');
     sessionStorage.removeItem('practiceTestAllResults');
     sessionStorage.removeItem('practiceTestResults');
+    sessionStorage.removeItem('practiceTestQuestions');
+    sessionStorage.removeItem('practiceTestSection');
+    sessionStorage.removeItem('currentQuestion');
   }, []);
 
   useEffect(() => {
@@ -180,9 +183,11 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
           continue;
         }
 
-        // Accept both old (userAnswer) and new (selectedAnswer) field names for backward compatibility
-        if (firstQ.selectedAnswer === undefined && firstQ.userAnswer === undefined) {
-          console.warn(`⚠️ Skipping section ${section.section} - missing answer field (old format, can't save to DB)`);
+        // Check if the question has the answer field (even if undefined/null is okay - means no answer)
+        // Only skip if the field doesn't exist at all (old format)
+        const hasAnswerField = 'selectedAnswer' in firstQ || 'userAnswer' in firstQ;
+        if (!hasAnswerField) {
+          console.warn(`⚠️ Skipping section ${section.section} - missing answer field property (old format, can't save to DB)`);
           continue;
         }
 
@@ -494,7 +499,7 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
       }}>
         <iframe
           key={`${testNumber}-${selectedSection}`}
-          src="/tests/practice-test.html"
+          src={`/tests/practice-test.html?v=${Date.now()}`}
           style={{
             width: '100%',
             height: '100%',
