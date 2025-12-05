@@ -159,12 +159,9 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
       const results = JSON.parse(resultsData);
       const allSections = results.allSections || [];
 
-      // Validate results structure
-      if (allSections.length === 0) {
-        throw new Error('No section results found');
-      }
+      console.log(`📊 Found ${allSections.length} section results to process`);
 
-      // Filter and validate sections - skip invalid old data
+      // Filter and validate sections - skip invalid old data but DON'T throw errors
       const validSections = [];
       for (const section of allSections) {
         if (!section.questions || section.questions.length === 0) {
@@ -179,13 +176,13 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
         console.log(`🔍 Section ${section.section} first question fields:`, Object.keys(firstQ));
 
         if (!firstQ.questionId) {
-          console.warn(`⚠️ Skipping section ${section.section} - missing questionId (old format)`);
+          console.warn(`⚠️ Skipping section ${section.section} - missing questionId (old format, can't save to DB)`);
           continue;
         }
 
         // Accept both old (userAnswer) and new (selectedAnswer) field names for backward compatibility
         if (firstQ.selectedAnswer === undefined && firstQ.userAnswer === undefined) {
-          console.warn(`⚠️ Skipping section ${section.section} - missing answer field (old format)`);
+          console.warn(`⚠️ Skipping section ${section.section} - missing answer field (old format, can't save to DB)`);
           continue;
         }
 
@@ -199,12 +196,23 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
         validSections.push(section);
       }
 
-      // Use only valid sections
-      if (validSections.length === 0) {
-        throw new Error('No valid section results found - please start a fresh test');
-      }
-
       console.log(`✅ Using ${validSections.length} valid sections out of ${allSections.length} total`);
+
+      // If NO valid sections, skip database save but still show insights
+      if (validSections.length === 0) {
+        console.warn('⚠️ No valid sections to save to database (old data format)');
+        console.log('✅ Completing test without database save and showing insights');
+
+        // Navigate to insights immediately
+        setTimeout(() => {
+          if (onShowInsights) {
+            onShowInsights();
+          } else {
+            onClose();
+          }
+        }, 500);
+        return;
+      }
 
       // Replace allSections with filtered valid sections
       allSections.length = 0;
@@ -223,22 +231,29 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
       setProcessingStep('Starting analysis...');
       setProcessingProgress(0);
 
-      // Process results
-      const processedResults = await processPracticeTestResults(
-        allSections,
-        testNumber,
-        userId,
-        {
-          setProcessingStep,
-          setProcessingProgress,
-          setProcessing,
-          setShowResults
-        }
-      );
+      // Process results - wrap in try-catch to ensure we navigate even if processing fails
+      try {
+        const processedResults = await processPracticeTestResults(
+          allSections,
+          testNumber,
+          userId,
+          {
+            setProcessingStep,
+            setProcessingProgress,
+            setProcessing,
+            setShowResults
+          }
+        );
 
-      setTestResults(processedResults);
+        setTestResults(processedResults);
+        console.log('✅ Results processed successfully');
+      } catch (processingError) {
+        console.error('⚠️ Error during results processing:', processingError);
+        console.log('✅ Continuing to insights despite processing error');
+        // Don't throw - still navigate to insights
+      }
 
-      // Navigate to insights after a brief delay
+      // ALWAYS navigate to insights after processing (success or failure)
       setTimeout(() => {
         if (onShowInsights) {
           onShowInsights();
@@ -250,8 +265,18 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
     } catch (err) {
       console.error('❌ Error processing practice test:', err);
       errorTracker.trackError('PracticeTestPage', 'handleTestCompletion', { testNumber }, err);
-      setError(`Failed to process test results: ${err.message}`);
+
+      // Even if there's an error, still navigate to insights
+      console.log('✅ Navigating to insights despite error');
       setProcessing(false);
+
+      setTimeout(() => {
+        if (onShowInsights) {
+          onShowInsights();
+        } else {
+          onClose();
+        }
+      }, 1000);
     }
   }, [testNumber, userId, onShowInsights, onClose]);
 
