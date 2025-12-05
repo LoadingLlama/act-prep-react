@@ -1209,6 +1209,11 @@ const InsightsPage = () => {
               }}
               onClick={() => {
                 console.log('🔍 Opening diagnostic review with session:', insights.diagnostic.latestSession);
+                // Clear any section/question URL params before opening modal
+                const newUrl = new URL(window.location);
+                newUrl.searchParams.delete('section');
+                newUrl.searchParams.delete('question');
+                window.history.replaceState({}, '', newUrl);
                 setViewingDiagnosticReview(true);
               }}
             />
@@ -1235,6 +1240,11 @@ const InsightsPage = () => {
                   console.log('   Test Number (DB):', test.test_number);
                   console.log('   Test Name:', test.test_name);
                   console.log('   Display Number:', test.test_number ? test.test_number - 1 : 'unknown');
+                  // Clear any section/question URL params before opening modal
+                  const newUrl = new URL(window.location);
+                  newUrl.searchParams.delete('section');
+                  newUrl.searchParams.delete('question');
+                  window.history.replaceState({}, '', newUrl);
                   setViewingPracticeTestReview(test);
                 }}
               />

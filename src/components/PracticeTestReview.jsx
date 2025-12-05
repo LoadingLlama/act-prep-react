@@ -331,7 +331,17 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
 
   // Load section data into the iframe
   const loadSectionIntoIframe = useCallback((section) => {
-    if (!iframeRef.current?.contentWindow || !testData) return;
+    console.log('🔧 loadSectionIntoIframe called with:', {
+      section,
+      testNumber,
+      hasIframe: !!iframeRef.current?.contentWindow,
+      hasTestData: !!testData
+    });
+
+    if (!iframeRef.current?.contentWindow || !testData) {
+      console.log('⚠️ Skipping loadSectionIntoIframe - iframe or testData not ready');
+      return;
+    }
 
     const sectionQuestions = testData.sections[section] || [];
 
@@ -415,9 +425,17 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
 
   // Load section when selectedSection changes
   useEffect(() => {
+    console.log('⚡ selectedSection changed, checking if should load:', {
+      selectedSection,
+      hasIframe: !!iframeRef.current?.contentWindow,
+      hasTestData: !!testData
+    });
+
     if (selectedSection && iframeRef.current?.contentWindow && testData) {
+      console.log('⏱️ Starting 100ms timer to load section into iframe');
       // Small delay to ensure iframe is ready
       const timer = setTimeout(() => {
+        console.log('⏰ Timer fired, calling loadSectionIntoIframe');
         loadSectionIntoIframe(selectedSection);
       }, 100);
       return () => clearTimeout(timer);
@@ -432,10 +450,13 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
       const { type, section } = event.data;
 
       if (type === 'PRACTICE_TEST_CLOSE') {
+        console.log('📨 Received PRACTICE_TEST_CLOSE message');
         setSelectedSection(null);
         setSearchParams({}, { replace: true });
       } else if (type === 'IFRAME_READY') {
+        console.log('📨 Received IFRAME_READY message, selectedSection:', selectedSection);
         if (selectedSection) {
+          console.log('🔄 Calling loadSectionIntoIframe from IFRAME_READY handler');
           loadSectionIntoIframe(selectedSection);
         }
       } else if (type === 'SWITCH_SECTION') {
