@@ -57,9 +57,9 @@ const TestsContent = () => {
 
   const checkCompletedTests = useCallback(async () => {
     try {
-      const { data, error } = await supabase
+      const { data, error} = await supabase
         .from('practice_test_sessions')
-        .select('test_number')
+        .select('test_name')
         .eq('user_id', user.id)
         .eq('is_completed', true);
 
@@ -68,9 +68,24 @@ const TestsContent = () => {
         return;
       }
 
-      // Create a Set of unique completed test numbers
-      const completed = new Set(data.map(session => session.test_number));
-      console.log('✅ Completed practice tests:', Array.from(completed));
+      // Extract test numbers from test names (e.g., "Practice Test 1" -> 2, "Practice Test 2" -> 3)
+      // Database test_number = display number + 1 (because test 1 is diagnostic)
+      const completed = new Set(
+        data
+          .map(session => {
+            // Extract number from "Practice Test X" -> X is display number
+            const match = session.test_name?.match(/Practice Test (\d+)/i);
+            if (match) {
+              const displayNum = parseInt(match[1], 10);
+              const dbTestNumber = displayNum + 1; // Convert display number to database test number
+              return dbTestNumber;
+            }
+            return null;
+          })
+          .filter(num => num !== null)
+      );
+
+      console.log('✅ Completed practice tests (DB numbers):', Array.from(completed));
       setCompletedTests(completed);
     } catch (error) {
       console.error('Error checking completed tests:', error);
