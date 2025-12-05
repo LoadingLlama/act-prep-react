@@ -1382,12 +1382,17 @@
 
         function endSection() {
             console.log('🟢 endSection called');
-            console.log('🔍 Current section value:', {
-                section,
-                type: typeof section,
-                length: section?.length,
-                charCodes: section ? [...section].map(c => c.charCodeAt(0)) : []
+
+            // IMPORTANT: Re-read section from sessionStorage to get current value
+            // The section variable at top of script is stale when sections change
+            const currentSection = sessionStorage.getItem('practiceTestSection') || section;
+
+            console.log('🔍 Section values:', {
+                oldSectionVariable: section,
+                sessionStorageSection: sessionStorage.getItem('practiceTestSection'),
+                usingSection: currentSection
             });
+
             closeConfirmModal();
 
             // Calculate score for current section
@@ -1406,7 +1411,7 @@
 
             // Store current section results
             const currentResults = {
-                section,
+                section: currentSection,
                 correct,
                 total: totalQuestions,
                 percentage,
@@ -1438,11 +1443,11 @@
                 requiredSections: sectionOrder
             });
 
-            const normalizedSection = section.toLowerCase().trim();
+            const normalizedSection = currentSection.toLowerCase().trim();
             const currentIndex = sectionOrder.indexOf(normalizedSection);
 
             console.log('🎯 Section ended:', {
-                section,
+                section: currentSection,
                 normalizedSection,
                 currentIndex,
                 allSectionsComplete,
