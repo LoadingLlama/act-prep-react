@@ -1418,10 +1418,13 @@
                 answers,
                 flagged: Array.from(flaggedQuestions),
                 questions: questions.map((q, idx) => ({
-                    questionNum: q.question_number, // Use actual question_number from database
-                    userAnswer: answers[`q${idx + 1}`],
+                    questionId: q.id, // Database ID for answer saves
+                    questionNum: q.question_number, // Actual question number from database
+                    section: currentSection, // Section for each question
+                    selectedAnswer: answers[`q${idx + 1}`], // User's answer (renamed from userAnswer)
                     correctAnswer: q.correctAnswer,
-                    isCorrect: answers[`q${idx + 1}`] === q.correctAnswer
+                    isCorrect: answers[`q${idx + 1}`] === q.correctAnswer,
+                    timeSpent: 0 // TODO: Add time tracking
                 }))
             };
 

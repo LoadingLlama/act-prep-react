@@ -159,12 +159,34 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
       const results = JSON.parse(resultsData);
       const allSections = results.allSections || [];
 
+      // Validate results structure
+      if (allSections.length === 0) {
+        throw new Error('No section results found');
+      }
+
+      // Validate each section has required fields
+      for (const section of allSections) {
+        if (!section.questions || section.questions.length === 0) {
+          throw new Error(`Section ${section.section} has no questions`);
+        }
+
+        // Check first question has required fields
+        const firstQ = section.questions[0];
+        if (!firstQ.questionId) {
+          throw new Error(`Questions missing questionId field in section ${section.section}`);
+        }
+        if (firstQ.selectedAnswer === undefined) {
+          throw new Error(`Questions missing selectedAnswer field in section ${section.section}`);
+        }
+      }
+
       console.log('📊 Practice test complete! Processing results...');
       console.log('📦 Raw results:', {
         hasAllSections: !!results.allSections,
         allSectionsCount: allSections.length,
         totalCorrect: results.totalCorrect,
-        totalQuestions: results.totalQuestions
+        totalQuestions: results.totalQuestions,
+        firstSectionSample: allSections[0]?.questions?.[0]
       });
 
       setProcessing(true);
@@ -206,23 +228,43 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
   // Listen for test completion message from iframe
   useEffect(() => {
     const handleMessage = async (event) => {
+      // Ignore messages from other sources
+      if (event.origin !== window.location.origin) {
+        return;
+      }
+
       console.log('📨 React: Message received from iframe:', {
         type: event.data?.type,
         fullData: event.data,
         origin: event.origin
       });
 
-      if (event.data?.type === 'PRACTICE_TEST_COMPLETE') {
-        console.log('✅ React: Test complete message received - calling handleTestCompletion');
-        await handleTestCompletion();
-      } else if (event.data?.type === 'PRACTICE_TEST_NEXT_SECTION') {
-        // Load next section
-        const nextSection = event.data.nextSection;
-        console.log('🔄 React: Loading next section:', nextSection);
-        logger.info('PracticeTestPage', 'loadingNextSection', { nextSection });
-        loadSectionQuestions(nextSection);
-      } else {
-        console.log('⚠️ React: Unknown message type or missing type:', event.data);
+      try {
+        if (event.data?.type === 'PRACTICE_TEST_COMPLETE') {
+          console.log('✅ React: Test complete message received - calling handleTestCompletion');
+          await handleTestCompletion();
+        } else if (event.data?.type === 'PRACTICE_TEST_NEXT_SECTION') {
+          // Load next section
+          const nextSection = event.data.nextSection;
+          if (!nextSection) {
+            console.error('❌ React: NEXT_SECTION message missing nextSection field');
+            return;
+          }
+          console.log('🔄 React: Loading next section:', nextSection);
+          logger.info('PracticeTestPage', 'loadingNextSection', { nextSection });
+          await loadSectionQuestions(nextSection);
+        } else if (event.data?.type === 'IFRAME_READY') {
+          // Iframe loaded and ready
+          console.log('✅ React: Iframe ready');
+        } else {
+          console.log('⚠️ React: Unknown message type:', event.data?.type);
+        }
+      } catch (error) {
+        console.error('❌ React: Error handling message:', error);
+        errorTracker.trackError('PracticeTestPage', 'handleMessage', {
+          messageType: event.data?.type
+        }, error);
+        setError(`Error processing test: ${error.message}`);
       }
     };
 
