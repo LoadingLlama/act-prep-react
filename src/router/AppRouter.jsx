@@ -4,8 +4,8 @@
  * Uses lazy loading for better performance
  */
 
-import React, { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import React, { lazy, Suspense, useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { storage } from '../utils/helpers';
 import InlineAuth from '../components/auth/InlineAuth';
@@ -28,23 +28,68 @@ const SettingsPage = lazy(() => import('../pages/SettingsPage'));
 
 /**
  * Loading component for route transitions
+ * Uses overlay to prevent white flash - keeps previous content visible
  */
 function RouteLoader() {
   return (
     <div style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      minHeight: '100vh',
-      background: '#ffffff'
+      background: 'rgba(255, 255, 255, 0.8)',
+      backdropFilter: 'blur(4px)',
+      zIndex: 9999,
+      pointerEvents: 'none'
     }}>
       <div style={{
-        color: '#1a1a1a',
-        fontSize: '1.2rem',
-        animation: 'pulse 1.5s ease-in-out infinite'
+        background: '#08245b',
+        color: '#ffffff',
+        padding: '1rem 2rem',
+        borderRadius: '8px',
+        fontSize: '1rem',
+        fontWeight: '500',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
       }}>
         Loading...
       </div>
+    </div>
+  );
+}
+
+/**
+ * Page transition wrapper for smooth fade effects
+ */
+function PageTransition({ children }) {
+  const location = useLocation();
+  const [displayLocation, setDisplayLocation] = useState(location);
+  const [transitionStage, setTransitionStage] = useState('fadeIn');
+
+  useEffect(() => {
+    if (location !== displayLocation) {
+      setTransitionStage('fadeOut');
+    }
+  }, [location, displayLocation]);
+
+  return (
+    <div
+      style={{
+        animation: `${transitionStage} 0.2s ease-in-out`,
+        width: '100%',
+        height: '100%'
+      }}
+      onAnimationEnd={() => {
+        if (transitionStage === 'fadeOut') {
+          setTransitionStage('fadeIn');
+          setDisplayLocation(location);
+        }
+      }}
+    >
+      {children}
     </div>
   );
 }

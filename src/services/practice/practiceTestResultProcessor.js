@@ -87,7 +87,7 @@ export async function processPracticeTestResults(
     for (const question of allQuestionResults) {
       await PracticeTestsService.savePracticeTestAnswer(
         userId,
-        testNumber,
+        sessionId,
         question.section,
         question.questionId,
         question.selectedAnswer,
