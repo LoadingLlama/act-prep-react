@@ -164,20 +164,29 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
         throw new Error('No section results found');
       }
 
-      // Validate each section has required fields
+      // Filter and validate sections - skip invalid old data
+      const validSections = [];
       for (const section of allSections) {
         if (!section.questions || section.questions.length === 0) {
-          throw new Error(`Section ${section.section} has no questions`);
+          console.warn(`⚠️ Skipping section ${section.section} - no questions`);
+          continue;
         }
 
         // Check first question has required fields
         const firstQ = section.questions[0];
+
+        // Log what fields we have for debugging
+        console.log(`🔍 Section ${section.section} first question fields:`, Object.keys(firstQ));
+
         if (!firstQ.questionId) {
-          throw new Error(`Questions missing questionId field in section ${section.section}`);
+          console.warn(`⚠️ Skipping section ${section.section} - missing questionId (old format)`);
+          continue;
         }
+
         // Accept both old (userAnswer) and new (selectedAnswer) field names for backward compatibility
         if (firstQ.selectedAnswer === undefined && firstQ.userAnswer === undefined) {
-          throw new Error(`Questions missing answer field in section ${section.section}`);
+          console.warn(`⚠️ Skipping section ${section.section} - missing answer field (old format)`);
+          continue;
         }
 
         // Normalize old results to new format
@@ -186,7 +195,20 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
             q.selectedAnswer = q.userAnswer;
           }
         });
+
+        validSections.push(section);
       }
+
+      // Use only valid sections
+      if (validSections.length === 0) {
+        throw new Error('No valid section results found - please start a fresh test');
+      }
+
+      console.log(`✅ Using ${validSections.length} valid sections out of ${allSections.length} total`);
+
+      // Replace allSections with filtered valid sections
+      allSections.length = 0;
+      allSections.push(...validSections);
 
       console.log('📊 Practice test complete! Processing results...');
       console.log('📦 Raw results:', {
