@@ -946,6 +946,30 @@ body {
     font-weight: 400;
 }
 
+/* Ensure italics render with proper spacing and don't collapse whitespace */
+.question-text i,
+.passage-text i,
+.answer-text i,
+.passage-content i,
+strong i,
+i strong {
+    font-style: italic;
+    white-space: normal; /* Prevent whitespace collapse */
+    display: inline; /* Ensure inline behavior */
+}
+
+/* Prevent line breaks within italicized variables/text unless absolutely necessary */
+.question-text i,
+.answer-text i {
+    white-space: nowrap; /* Keep variables together */
+}
+
+/* But allow wrapping for longer italic text in passages */
+.passage-text i,
+.passage-content i {
+    white-space: normal;
+}
+
 .answer-choices {
     display: flex;
     flex-direction: column;
