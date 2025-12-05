@@ -85,6 +85,7 @@ const MonthCalendarView = ({
       display: 'grid',
       gridTemplateColumns: 'repeat(7, 1fr)',
       flex: 1,
+      minWidth: '700px',
       gridTemplateRows: `repeat(${totalWeeks}, 1fr)`,
       overflow: 'hidden'
     }}>
