@@ -56,6 +56,8 @@ const PracticeTestsService = {
       return null;
     }
 
+    console.log(`🗄️ Querying ${tables.questions} for test_number=${testNumber}`);
+
     try {
       // Fetch questions
       const { data: questions, error: questionsError } = await supabase
@@ -63,6 +65,8 @@ const PracticeTestsService = {
         .select('*')
         .eq('test_number', testNumber)
         .order('question_number', { ascending: true });
+
+      console.log(`📦 Got ${questions?.length || 0} questions from ${tables.questions}`);
 
       if (questionsError) {
         errorTracker.trackError(
@@ -169,6 +173,7 @@ const PracticeTestsService = {
 
         return {
           id: q.id,
+          question_number: q.question_number, // Include question number for review mode
           text: q.question_text, // SequentialTest expects 'text'
           passage: q.passage,
           passage_title: q.passage_title, // Include passage title
@@ -343,7 +348,7 @@ const PracticeTestsService = {
    */
   async savePracticeTestAnswer(
     userId,
-    testNumber,
+    sessionId,
     section,
     questionId,
     userAnswer,
@@ -352,7 +357,7 @@ const PracticeTestsService = {
   ) {
     logger.debug('PracticeTestsService', 'savePracticeTestAnswer', {
       userId,
-      testNumber,
+      sessionId,
       section,
       questionId,
       isCorrect,
@@ -361,13 +366,13 @@ const PracticeTestsService = {
 
     const { data, error } = await supabase.from('practice_test_results').insert([
       {
+        practice_session_id: sessionId,
         user_id: userId,
-        test_number: testNumber,
         section: section,
         question_id: questionId,
         user_answer: userAnswer,
         is_correct: isCorrect,
-        time_spent_seconds: timeSpent
+        time_spent: timeSpent // milliseconds, not seconds
       }
     ]);
 
@@ -375,7 +380,7 @@ const PracticeTestsService = {
       errorTracker.trackError(
         'PracticeTestsService',
         'savePracticeTestAnswer',
-        { userId, testNumber, section, questionId },
+        { userId, sessionId, section, questionId },
         error
       );
       return null;
@@ -383,7 +388,7 @@ const PracticeTestsService = {
 
     logger.info('PracticeTestsService', 'savePracticeTestAnswer', {
       userId,
-      testNumber,
+      sessionId,
       section,
       questionId,
       isCorrect
@@ -407,13 +412,19 @@ const PracticeTestsService = {
       totalQuestions
     });
 
+    // Store testNumber in test_name as "Practice Test X (Test #Y)" for retrieval
+    const displayNumber = testNumber - 1; // 2-7 becomes 1-6
     const { data, error } = await supabase
       .from('practice_test_sessions')
       .insert([
         {
           user_id: userId,
-          test_number: testNumber,
-          total_questions: totalQuestions
+          test_number: testNumber, // Store the actual DB test number (2-7)
+          test_name: `Practice Test ${displayNumber}`,
+          test_type: 'full',
+          sections_included: ['english', 'math', 'reading', 'science'],
+          total_questions: totalQuestions,
+          time_limit_minutes: 175 // Full ACT is 175 minutes
         }
       ])
       .select();
@@ -462,10 +473,9 @@ const PracticeTestsService = {
     const { data, error } = await supabase
       .from('practice_test_sessions')
       .update({
-        session_end: new Date().toISOString(),
-        correct_answers: correctAnswers,
+        completed_at: new Date().toISOString(),
         score_percentage: scorePercentage,
-        completed: true
+        is_completed: true
       })
       .eq('id', sessionId);
 
@@ -598,6 +608,76 @@ const PracticeTestsService = {
       count: uniqueTests.length
     });
     return uniqueTests.length;
+  },
+
+  /**
+   * Get section breakdown for a practice test session
+   * Aggregates results by section from practice_test_results table
+   * @param {string} sessionId - Practice test session ID
+   * @returns {Promise<Object|null>} Section scores object {english: {correct, total}, ...}
+   */
+  async getSessionSectionBreakdown(sessionId) {
+    logger.debug('PracticeTestsService', 'getSessionSectionBreakdown', { sessionId });
+
+    try {
+      // Fetch all results for this session
+      const { data: results, error } = await supabase
+        .from('practice_test_results')
+        .select('section, is_correct')
+        .eq('practice_session_id', sessionId);
+
+      if (error) {
+        errorTracker.trackError(
+          'PracticeTestsService',
+          'getSessionSectionBreakdown',
+          { sessionId },
+          error
+        );
+        return null;
+      }
+
+      // Define total questions per section
+      const sectionTotals = {
+        english: 75,
+        math: 60,
+        reading: 40,
+        science: 40
+      };
+
+      // Aggregate by section
+      const sectionBreakdown = {};
+
+      results.forEach(result => {
+        const section = result.section.toLowerCase();
+        if (!sectionBreakdown[section]) {
+          sectionBreakdown[section] = {
+            correct: 0,
+            total: sectionTotals[section] || 0,
+            answered: 0
+          };
+        }
+
+        sectionBreakdown[section].answered++;
+        if (result.is_correct) {
+          sectionBreakdown[section].correct++;
+        }
+      });
+
+      logger.info('PracticeTestsService', 'getSessionSectionBreakdown', {
+        sessionId,
+        sections: Object.keys(sectionBreakdown).length
+      });
+
+      return sectionBreakdown;
+    } catch (error) {
+      errorTracker.trackError(
+        'PracticeTestsService',
+        'getSessionSectionBreakdown',
+        { sessionId },
+        error
+      );
+      return null;
+    }
   }
 };
 

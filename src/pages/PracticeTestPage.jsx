@@ -26,6 +26,7 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
   const [processingProgress, setProcessingProgress] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [testResults, setTestResults] = useState(null);
+  const [cacheBuster] = useState(Date.now()); // Cache buster set once on mount
 
   const testNumber = parseInt(testId, 10); // Actual DB test number (2-7)
   const displayTestNumber = testNumber - 1; // Display number to user (1-6)
@@ -318,6 +319,13 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
           console.log('🔄 React: Loading next section:', nextSection);
           logger.info('PracticeTestPage', 'loadingNextSection', { nextSection });
           await loadSectionQuestions(nextSection);
+
+          // Tell iframe to reload with new section data
+          console.log('📤 React: Telling iframe to reload with new section');
+          const iframe = document.querySelector('iframe[title*="Practice Test"]');
+          if (iframe && iframe.contentWindow) {
+            iframe.contentWindow.postMessage({ type: 'LOAD_NEXT_SECTION' }, '*');
+          }
         } else if (event.data?.type === 'IFRAME_READY') {
           // Iframe loaded and ready
           console.log('✅ React: Iframe ready');
@@ -503,15 +511,15 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
         zIndex: 2000
       }}>
         <iframe
-          key={`${testNumber}-${selectedSection}`}
-          src={`/tests/practice-test.html?v=${Date.now()}`}
+          key={`practice-test-${testNumber}`}
+          src={`/tests/practice-test.html?v=${cacheBuster}`}
           style={{
             width: '100%',
             height: '100%',
             border: 'none',
             background: 'white'
           }}
-          title={`Practice Test ${displayTestNumber} - ${selectedSection}`}
+          title={`Practice Test ${displayTestNumber}`}
         />
       </div>
     );

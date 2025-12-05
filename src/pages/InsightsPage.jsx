@@ -16,11 +16,12 @@ import logger from '../services/logging/logger';
 import DiagnosticTestCTA from '../components/DiagnosticTestCTA';
 import DiagnosticTestReview from '../components/DiagnosticTestReview';
 import PracticeTestReview from '../components/PracticeTestReview';
+import TestResultsCard from '../components/insights/TestResultsCard';
 import { lessonStructure } from '../data/lessonStructure';
 
 const useStyles = createUseStyles({
   container: {
-    maxWidth: '700px',
+    maxWidth: '900px',
     margin: '0',
     padding: '1.5rem 1.5rem 0 1.5rem',
     width: '100%',
@@ -709,22 +710,41 @@ const InsightsPage = () => {
       const sessions = await PracticeTestsService.getUserPracticeTestHistory(user.id);
 
       if (sessions) {
-        // Filter for completed tests and group by test number (keep only latest)
-        const completedTests = sessions.filter(s => s.completed);
+        // Filter for completed tests
+        const completedTests = sessions.filter(s => s.is_completed);
+
+        // For backward compatibility, extract test number from test_name if not stored
+        completedTests.forEach(session => {
+          if (!session.test_number && session.test_name) {
+            // test_name is "Practice Test X" where X is 1-6
+            const match = session.test_name.match(/Practice Test (\d+)/);
+            if (match) {
+              session.test_number = parseInt(match[1]) + 1; // Convert display number back to DB number (1-6 -> 2-7)
+            }
+          }
+        });
 
         // Group by test_number and keep only the latest session for each test
         const latestByTestNumber = {};
         completedTests.forEach(session => {
           const testNum = session.test_number;
-          if (!latestByTestNumber[testNum] ||
-              new Date(session.created_at) > new Date(latestByTestNumber[testNum].created_at)) {
+          if (testNum && (!latestByTestNumber[testNum] ||
+              new Date(session.created_at) > new Date(latestByTestNumber[testNum].created_at))) {
             latestByTestNumber[testNum] = session;
           }
         });
 
-        // Convert to array and sort by test number
+        // Convert to array and fetch section breakdown for each
         const practiceTestsArray = Object.values(latestByTestNumber)
           .sort((a, b) => a.test_number - b.test_number);
+
+        // Fetch section breakdown for each session
+        for (const test of practiceTestsArray) {
+          const sectionBreakdown = await PracticeTestsService.getSessionSectionBreakdown(test.id);
+          if (sectionBreakdown) {
+            test.section_scores = sectionBreakdown;
+          }
+        }
 
         setPracticeTests(practiceTestsArray);
         logger.info('InsightsPage', 'loadPracticeTests', { count: practiceTestsArray.length });
@@ -1166,28 +1186,20 @@ const InsightsPage = () => {
               </div>
             </div>
           ) : (
-            /* Diagnostic Test Card - Clickable */
-            <div
-              className={classes.diagnosticCard}
+            /* Diagnostic Test Card using TestResultsCard */
+            <TestResultsCard
+              type="diagnostic"
+              testData={{
+                sectionResults: insights.diagnostic.sectionBreakdown || [],
+                totalQuestions: insights.diagnostic.totalQuestions,
+                correctAnswers: insights.diagnostic.correctAnswers,
+                completedAt: insights.diagnostic.completedAt
+              }}
               onClick={() => {
                 console.log('🔍 Opening diagnostic review with session:', insights.diagnostic.latestSession);
-                console.log('Session ID:', insights.diagnostic.latestSession?.id);
                 setViewingDiagnosticReview(true);
               }}
-            >
-              <h3 className={classes.diagnosticTitle}>
-                Diagnostic Test
-              </h3>
-              <p className={classes.diagnosticMeta}>
-                {insights.diagnostic.totalQuestions} questions • Completed {formatDate(insights.diagnostic.completedAt)}
-              </p>
-              <div className={classes.diagnosticScore}>
-                {insights.diagnostic.latestScore?.toFixed(1)}%
-              </div>
-              <div className={classes.diagnosticScoreLabel}>
-                {insights.diagnostic.correctAnswers} out of {insights.diagnostic.totalQuestions} questions correct
-              </div>
-            </div>
+            />
           )}
         </div>
       )}
@@ -1199,33 +1211,18 @@ const InsightsPage = () => {
             <HiClipboardDocumentList className={classes.sectionIcon} />
             Practice Tests
           </h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', maxWidth: '400px' }}>
-            {practiceTests.map((test) => {
-              const displayNumber = test.test_number - 1; // Test 2 = Practice Test 1
-              return (
-                <div
-                  key={test.id}
-                  className={classes.diagnosticCard}
-                  onClick={() => {
-                    console.log('🔍 Opening practice test review:', test);
-                    setViewingPracticeTestReview(test);
-                  }}
-                >
-                  <h3 className={classes.diagnosticTitle}>
-                    Practice Test {displayNumber}
-                  </h3>
-                  <p className={classes.diagnosticMeta}>
-                    {test.total_questions} questions • Completed {formatDate(test.created_at)}
-                  </p>
-                  <div className={classes.diagnosticScore} style={{ color: '#08245b' }}>
-                    {test.score_percentage?.toFixed(1)}%
-                  </div>
-                  <div className={classes.diagnosticScoreLabel}>
-                    {test.correct_answers} out of {test.total_questions} questions correct
-                  </div>
-                </div>
-              );
-            })}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px' }}>
+            {practiceTests.map((test) => (
+              <TestResultsCard
+                key={test.id}
+                type="practice"
+                testData={test}
+                onClick={() => {
+                  console.log('🔍 Opening practice test review:', test);
+                  setViewingPracticeTestReview(test);
+                }}
+              />
+            ))}
           </div>
         </div>
       )}
