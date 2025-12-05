@@ -1421,14 +1421,17 @@
 
             // Determine next section
             const sectionOrder = ['english', 'math', 'reading', 'science'];
-            const currentIndex = sectionOrder.indexOf(section);
-            const isFullTest = section === 'full';
+            const normalizedSection = section.toLowerCase().trim();
+            const currentIndex = sectionOrder.indexOf(normalizedSection);
+            const isFullTest = normalizedSection === 'full';
 
             console.log('🎯 Section ended:', {
                 section,
+                normalizedSection,
                 sectionType: typeof section,
                 currentIndex,
                 sectionOrder,
+                isLastSection: currentIndex === sectionOrder.length - 1,
                 nextAvailable: currentIndex < sectionOrder.length - 1
             });
 
@@ -1446,15 +1449,19 @@
                 window.parent.postMessage(message, '*');
                 console.log('✅ Message posted to parent');
             } else {
-                // Test complete - all 4 sections done
-                console.log('📤 Sending COMPLETE message - All sections finished');
+                // Test complete - all 4 sections done OR invalid section
+                console.log('📤 Sending COMPLETE message - Test finished');
+                console.log('   Reason:', currentIndex === sectionOrder.length - 1 ? 'Last section (science) completed' : 'Invalid section or full test');
+
                 sessionStorage.setItem('practiceTestResults', JSON.stringify({
                     allSections: allResults,
                     totalCorrect: allResults.reduce((sum, r) => sum + r.correct, 0),
                     totalQuestions: allResults.reduce((sum, r) => sum + r.total, 0)
                 }));
 
-                window.parent.postMessage({ type: 'PRACTICE_TEST_COMPLETE' }, '*');
+                const completeMessage = { type: 'PRACTICE_TEST_COMPLETE' };
+                console.log('📤 Posting COMPLETE message to parent:', completeMessage);
+                window.parent.postMessage(completeMessage, '*');
                 console.log('✅ Complete message posted to parent');
             }
         }

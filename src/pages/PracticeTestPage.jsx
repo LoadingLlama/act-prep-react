@@ -135,7 +135,7 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
   /**
    * Handle test completion and process results
    */
-  const handleTestCompletion = async () => {
+  const handleTestCompletion = useCallback(async () => {
     try {
       logger.info('PracticeTestPage', 'handleTestCompletion', { testNumber, userId });
 
@@ -189,7 +189,7 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
       setError(`Failed to process test results: ${err.message}`);
       setProcessing(false);
     }
-  };
+  }, [testNumber, userId, onShowInsights, onClose]);
 
   // Listen for test completion message from iframe
   useEffect(() => {
@@ -210,7 +210,7 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
 
     window.addEventListener('message', handleMessage);
     return () => window.removeEventListener('message', handleMessage);
-  }, [loadSectionQuestions, testNumber, userId]);
+  }, [loadSectionQuestions, handleTestCompletion]);
 
   /**
    * Load the test structure (question counts by section)
