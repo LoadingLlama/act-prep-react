@@ -1428,6 +1428,14 @@
                 }))
             };
 
+            // Debug: Log first question to verify structure
+            if (currentResults.questions.length > 0) {
+                console.log('🔍 First question structure:', {
+                    fields: Object.keys(currentResults.questions[0]),
+                    sample: currentResults.questions[0]
+                });
+            }
+
             // Get all previous results
             const allResults = JSON.parse(sessionStorage.getItem('practiceTestAllResults') || '[]');
             allResults.push(currentResults);

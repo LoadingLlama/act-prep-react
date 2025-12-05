@@ -176,7 +176,12 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
         const firstQ = section.questions[0];
 
         // Log what fields we have for debugging
-        console.log(`🔍 Section ${section.section} first question fields:`, Object.keys(firstQ));
+        console.log(`🔍 Section ${section.section} first question:`, {
+          fields: Object.keys(firstQ),
+          hasSelectedAnswer: 'selectedAnswer' in firstQ,
+          selectedAnswerValue: firstQ.selectedAnswer,
+          sample: firstQ
+        });
 
         if (!firstQ.questionId) {
           console.warn(`⚠️ Skipping section ${section.section} - missing questionId (old format, can't save to DB)`);
