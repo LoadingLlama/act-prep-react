@@ -738,8 +738,8 @@
                 questionHTML += `
                     <div class="question" id="question${questionNum}" data-passage="${hasPassages ? (questions.findIndex(x => x.passage === q.passage) + 1) : ''}">
                         ${underlinedContext}
-                        ${questionPrompt ? `<div class="question-text">${questionPrompt}</div>` : ''}
                         ${q.image_url ? `<div class="question-image"><img src="${q.image_url}" alt="Question ${questionNum} diagram" /></div>` : ''}
+                        ${questionPrompt ? `<div class="question-text">${questionPrompt}</div>` : ''}
                         <div class="answer-choices">
                             ${answerKeys.map(key => {
                                 const isUserAnswer = reviewMode && userAnswer === key;
