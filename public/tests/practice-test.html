@@ -304,10 +304,11 @@
                 // Override test data with review data
                 questions = event.data.questions;
                 section = event.data.section;
+                console.log('📨 Iframe received postMessage with testNumber:', event.data.testNumber);
                 testNumber = event.data.testNumber || '1'; // Use provided test number, default to 1 for diagnostic
                 duration = 0; // No timer in review mode
 
-                console.log('🔢 Using testNumber:', testNumber, 'for review mode');
+                console.log('🔢 Using testNumber:', testNumber, 'for review mode (1=diagnostic, 2-7=practice tests 1-6)');
 
                 console.log('✅ Review mode enabled with', questions.length, 'questions');
 

@@ -710,6 +710,16 @@ const InsightsPage = () => {
       const sessions = await PracticeTestsService.getUserPracticeTestHistory(user.id);
 
       if (sessions) {
+        console.log('📦 Loaded practice test sessions from DB:', sessions.length);
+        sessions.forEach((s, i) => {
+          console.log(`   Session ${i + 1}:`, {
+            id: s.id,
+            test_name: s.test_name,
+            test_number: s.test_number,
+            is_completed: s.is_completed
+          });
+        });
+
         // Filter for completed tests
         const completedTests = sessions.filter(s => s.is_completed);
 
@@ -719,7 +729,9 @@ const InsightsPage = () => {
             // test_name is "Practice Test X" where X is 1-6
             const match = session.test_name.match(/Practice Test (\d+)/);
             if (match) {
-              session.test_number = parseInt(match[1]) + 1; // Convert display number back to DB number (1-6 -> 2-7)
+              const displayNum = parseInt(match[1]);
+              session.test_number = displayNum + 1; // Convert display number back to DB number (1-6 -> 2-7)
+              console.log(`🔄 Backward compat: "${session.test_name}" -> test_number = ${session.test_number}`);
             }
           }
         });
@@ -1219,6 +1231,10 @@ const InsightsPage = () => {
                 testData={test}
                 onClick={() => {
                   console.log('🔍 Opening practice test review:', test);
+                  console.log('   Session ID:', test.id);
+                  console.log('   Test Number (DB):', test.test_number);
+                  console.log('   Test Name:', test.test_name);
+                  console.log('   Display Number:', test.test_number ? test.test_number - 1 : 'unknown');
                   setViewingPracticeTestReview(test);
                 }}
               />

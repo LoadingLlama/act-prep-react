@@ -12,6 +12,12 @@ import logger from '../services/logging/logger';
 import Logo from './common/Logo';
 
 export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
+  console.log('🎬 PracticeTestReview component mounted with props:', {
+    sessionId,
+    testNumber,
+    displayNumber: testNumber ? testNumber - 1 : 'unknown'
+  });
+
   const [searchParams, setSearchParams] = useSearchParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -405,7 +411,7 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
 
     iframeRef.current.contentWindow.postMessage(message, '*');
     console.log('✅ postMessage sent successfully');
-  }, [testData, startingQuestionIndex]);
+  }, [testData, startingQuestionIndex, testNumber]);
 
   // Load section when selectedSection changes
   useEffect(() => {

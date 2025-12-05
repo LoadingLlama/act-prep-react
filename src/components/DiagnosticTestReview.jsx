@@ -481,8 +481,8 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
         }}>
           <button
             onClick={() => {
-              setSelectedSection(null);
-              setSearchParams({}, { replace: true });
+              // Go straight back to insights, not to modal overview
+              onClose();
             }}
             style={{
               display: 'flex',
