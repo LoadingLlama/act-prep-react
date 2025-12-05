@@ -305,8 +305,16 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
 
   const handleSectionClick = (section) => {
     console.log('📖 Opening section:', section);
+
+    // Find first wrong answer in this section, or start at question 1
+    const sectionQuestions = testData?.sections[section] || [];
+    const firstWrongQuestion = sectionQuestions.find(q => q.isCorrect === false);
+
+    const startingQuestion = firstWrongQuestion ? firstWrongQuestion.question_number : 1;
+    console.log('🎯 Starting at question:', startingQuestion, firstWrongQuestion ? '(first wrong answer)' : '(default)');
+
     setSelectedSection(section);
-    setStartingQuestionIndex(0);
+    setStartingQuestionIndex(startingQuestion);
     setSectionDropdownOpen(false);
   };
 

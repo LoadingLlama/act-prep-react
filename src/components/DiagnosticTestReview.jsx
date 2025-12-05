@@ -258,7 +258,15 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
   // Handle section selection
   const handleSectionSelect = useCallback((section) => {
     if (!testData) return;
-    setStartingQuestionIndex(0);
+
+    // Find first wrong answer in this section, or start at question 1
+    const sectionQuestions = testData.questionsBySection[section] || [];
+    const firstWrongQuestion = sectionQuestions.find(q => q.isCorrect === false);
+
+    const startingQuestion = firstWrongQuestion ? firstWrongQuestion.question_number : 1;
+    console.log('🎯 Starting at question:', startingQuestion, firstWrongQuestion ? '(first wrong answer)' : '(default)');
+
+    setStartingQuestionIndex(startingQuestion);
     setSelectedSection(section);
   }, [testData]);
 
