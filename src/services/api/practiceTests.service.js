@@ -413,7 +413,6 @@ const PracticeTestsService = {
         {
           user_id: userId,
           test_number: testNumber,
-          section: section,
           total_questions: totalQuestions
         }
       ])
