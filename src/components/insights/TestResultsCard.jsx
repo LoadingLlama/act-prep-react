@@ -25,7 +25,8 @@ const useStyles = createUseStyles({
       background: '#f9fafb',
       borderColor: '#cbd5e1',
       transform: 'translateY(-1px)',
-      boxShadow: '0 2px 6px rgba(0,0,0,0.05)'
+      boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
+      opacity: '1 !important'
     }
   },
   header: {
@@ -315,17 +316,36 @@ const TestResultsCard = ({ type, testData, onClick }) => {
     : testData.created_at || testData.completed_at;
 
   return (
-    <div className={classes.card} onClick={onClick}>
-      {/* Badge */}
-      <div className={type === 'diagnostic' ? classes.diagnosticBadge : classes.practiceTestBadge}>
-        {type === 'diagnostic' ? 'DIAGNOSTIC' : 'PRACTICE TEST'}
+    <div className={classes.card} onClick={onClick} style={{ opacity: 0.85 }}>
+      {/* Badge and Completed Indicator */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+        <div className={type === 'diagnostic' ? classes.diagnosticBadge : classes.practiceTestBadge}>
+          {type === 'diagnostic' ? 'DIAGNOSTIC' : 'PRACTICE TEST'}
+        </div>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.25rem',
+          fontSize: '0.6875rem',
+          fontWeight: '600',
+          color: '#10b981',
+          background: '#f0fdf4',
+          padding: '0.1875rem 0.5rem',
+          borderRadius: '999px',
+          border: '1px solid #86efac'
+        }}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Completed
+        </div>
       </div>
 
       {/* Header */}
       <div className={classes.header}>
         <h3 className={classes.title}>{testTitle}</h3>
         <p className={classes.meta}>
-          Completed {formatDate(completedDate)}
+          Taken on {formatDate(completedDate)}
         </p>
       </div>
 

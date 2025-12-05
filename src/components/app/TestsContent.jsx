@@ -24,6 +24,7 @@ const TestsContent = () => {
   const [featureAccess, setFeatureAccess] = useState(null);
   const [previewTest, setPreviewTest] = useState(null);
   const [hasCompletedDiagnostic, setHasCompletedDiagnostic] = useState(null); // null = loading, true/false = known status
+  const [completedTests, setCompletedTests] = useState(new Set()); // Set of completed test numbers
 
   const checkFeatureAccess = useCallback(async () => {
     try {
@@ -54,12 +55,35 @@ const TestsContent = () => {
     }
   }, [user?.id]);
 
+  const checkCompletedTests = useCallback(async () => {
+    try {
+      const { data, error } = await supabase
+        .from('practice_test_sessions')
+        .select('test_number')
+        .eq('user_id', user.id)
+        .eq('is_completed', true);
+
+      if (error) {
+        console.error('Error checking completed tests:', error);
+        return;
+      }
+
+      // Create a Set of unique completed test numbers
+      const completed = new Set(data.map(session => session.test_number));
+      console.log('✅ Completed practice tests:', Array.from(completed));
+      setCompletedTests(completed);
+    } catch (error) {
+      console.error('Error checking completed tests:', error);
+    }
+  }, [user?.id]);
+
   useEffect(() => {
     if (user) {
       checkFeatureAccess();
       checkDiagnosticStatus();
+      checkCompletedTests();
     }
-  }, [user, checkFeatureAccess, checkDiagnosticStatus]);
+  }, [user, checkFeatureAccess, checkDiagnosticStatus, checkCompletedTests]);
 
   // Note: Test 1 in database is the Diagnostic Test, so practice tests start at 2
   // Memoized to prevent recreating array on every render
@@ -100,6 +124,7 @@ const TestsContent = () => {
           {practiceTests.map(test => {
             // Use displayNumber for access check (Test 1 display = 1st practice test available)
             const isLocked = featureAccess && !featureAccess.isPro && test.displayNumber > featureAccess.practiceTests;
+            const isCompleted = completedTests.has(test.number);
 
             return (
               <div
@@ -114,9 +139,29 @@ const TestsContent = () => {
                     setPreviewTest(test);
                   }
                 }}
-                style={isLocked ? { opacity: 0.6, cursor: 'pointer' } : {}}
+                style={isLocked ? { opacity: 0.6, cursor: 'pointer' } : isCompleted ? { opacity: 0.7 } : {}}
               >
                 <div>
+                  {isCompleted && (
+                    <div style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.25rem',
+                      fontSize: '0.6875rem',
+                      fontWeight: '600',
+                      color: '#10b981',
+                      background: '#f0fdf4',
+                      padding: '0.1875rem 0.5rem',
+                      borderRadius: '999px',
+                      border: '1px solid #86efac',
+                      marginBottom: '0.5rem'
+                    }}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Completed
+                    </div>
+                  )}
                   <div className={classes.testIcon}>
                     {isLocked ? <HiLockClosed /> : test.icon}
                   </div>
