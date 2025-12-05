@@ -657,6 +657,31 @@
                 return match ? match[1] : text; // Return bracketed text if exists, otherwise full text
             }
 
+            // Helper function to extract inline images from question text
+            function extractInlineImages(text) {
+                if (!text) return { cleanText: text, images: [] };
+
+                // Match image URLs in the text (https://...jpg, https://...png, etc.)
+                const imageUrlPattern = /(https?:\/\/[^\s]+\.(?:jpg|jpeg|png|gif|svg))/gi;
+                const images = [];
+                let cleanText = text;
+
+                // Find all image URLs
+                const matches = text.match(imageUrlPattern);
+                if (matches) {
+                    matches.forEach(url => {
+                        images.push(url);
+                        // Remove the URL from the text
+                        cleanText = cleanText.replace(url, '');
+                    });
+                }
+
+                // Clean up any double spaces left behind
+                cleanText = cleanText.replace(/\s{2,}/g, ' ').trim();
+
+                return { cleanText, images };
+            }
+
             // Render questions
             console.log('📝 Starting question rendering. reviewMode:', reviewMode, 'questions:', questions.length);
 
@@ -672,6 +697,10 @@
 
                 const answerKeys = Object.keys(q.answers || {}).sort();
                 let questionPrompt = extractQuestionPrompt(q.text);
+
+                // Extract inline images from question text
+                const { cleanText, images: inlineImages } = extractInlineImages(questionPrompt);
+                questionPrompt = cleanText;
 
                 // Replace image placeholders in question text (for Math/Science)
                 if (q.image_url && questionPrompt) {
@@ -739,6 +768,7 @@
                     <div class="question" id="question${questionNum}" data-passage="${hasPassages ? (questions.findIndex(x => x.passage === q.passage) + 1) : ''}">
                         ${underlinedContext}
                         ${q.image_url ? `<div class="question-image"><img src="${q.image_url}" alt="Question ${questionNum} diagram" /></div>` : ''}
+                        ${inlineImages.length > 0 ? inlineImages.map(url => `<div class="question-image"><img src="${url}" alt="Question ${questionNum} figure" class="inline-question-image" onerror="console.error('Failed to load inline image:', this.src)" onload="console.log('✓ Inline image loaded:', this.src.substring(0, 60) + '...')" /></div>`).join('') : ''}
                         ${questionPrompt ? `<div class="question-text">${questionPrompt}</div>` : ''}
                         <div class="answer-choices">
                             ${answerKeys.map(key => {
