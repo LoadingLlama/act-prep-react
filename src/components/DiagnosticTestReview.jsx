@@ -79,23 +79,23 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
     loadDiagnosticData();
   }, [sessionId]);
 
-  // Restore section and question from URL on mount
-  useEffect(() => {
-    if (testData) {
-      const urlSection = searchParams.get('section');
-      const urlQuestion = searchParams.get('question');
+  // Restore section and question from URL (disabled - causes modal to be skipped)
+  // useEffect(() => {
+  //   if (testData) {
+  //     const urlSection = searchParams.get('section');
+  //     const urlQuestion = searchParams.get('question');
 
-      if (urlSection) {
-        console.log('📍 Restoring section from URL:', urlSection);
-        setSelectedSection(urlSection);
-      }
+  //     if (urlSection) {
+  //       console.log('📍 Restoring section from URL:', urlSection);
+  //       setSelectedSection(urlSection);
+  //     }
 
-      if (urlQuestion) {
-        console.log('📍 Restoring question from URL:', urlQuestion);
-        setStartingQuestionIndex(parseInt(urlQuestion));
-      }
-    }
-  }, [testData, searchParams]);
+  //     if (urlQuestion) {
+  //       console.log('📍 Restoring question from URL:', urlQuestion);
+  //       setStartingQuestionIndex(parseInt(urlQuestion));
+  //     }
+  //   }
+  // }, [testData, searchParams]);
 
   // Update URL when section changes
   useEffect(() => {
