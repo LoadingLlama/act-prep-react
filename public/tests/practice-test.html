@@ -865,11 +865,20 @@
                                 ` : ''}
                             </div>
 
-                            <!-- Explanation Content (hidden by default) -->
+                            <!-- Explanation Button and Content -->
                             ${q.explanation ? `
+                                <button
+                                    id="explanation-btn-${questionNum}"
+                                    onclick="toggleExplanation(${questionNum})"
+                                    style="margin-top: 1rem; padding: 0.625rem 1.25rem; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; color: #475569; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);"
+                                    onmouseover="this.style.background='#e2e8f0'; this.style.borderColor='#94a3b8'; this.style.boxShadow='0 2px 6px rgba(0, 0, 0, 0.12)';"
+                                    onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#cbd5e1'; this.style.boxShadow='0 1px 3px rgba(0, 0, 0, 0.08)';"
+                                >
+                                    Show Explanation
+                                </button>
                                 <div id="explanation-content-${questionNum}" style="display: none; margin-top: 0.75rem; padding: 1rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
-                                    <div style="font-size: 0.875rem; line-height: 1.7; color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
-                                        ${q.explanation.replace(/\n\n+/g, '<br><br>').replace(/\n/g, ' ')}
+                                    <div class="review-explanation">
+                                        ${q.explanation}
                                     </div>
                                 </div>
                             ` : ''}
@@ -936,7 +945,7 @@
                     btn.textContent = 'Hide Explanation';
                 } else {
                     content.style.display = 'none';
-                    btn.textContent = 'Explanation';
+                    btn.textContent = 'Show Explanation';
                 }
             }
         }
