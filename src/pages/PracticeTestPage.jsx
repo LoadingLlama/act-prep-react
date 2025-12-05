@@ -119,7 +119,7 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
     }
   }, [testNumber]);
 
-  // Get current user
+  // Get current user and clear old test data
   useEffect(() => {
     const getUser = async () => {
       const { data: { user } } = await supabase.auth.getUser();
@@ -128,6 +128,11 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
       }
     };
     getUser();
+
+    // Clear any stale test results from previous attempts
+    console.log('🧹 Clearing stale test data on component mount');
+    sessionStorage.removeItem('practiceTestAllResults');
+    sessionStorage.removeItem('practiceTestResults');
   }, []);
 
   useEffect(() => {
