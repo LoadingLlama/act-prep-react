@@ -1421,7 +1421,7 @@
                     questionId: q.id, // Database ID for answer saves
                     questionNum: q.question_number, // Actual question number from database
                     section: currentSection, // Section for each question
-                    selectedAnswer: answers[`q${idx + 1}`], // User's answer (renamed from userAnswer)
+                    selectedAnswer: answers[`q${idx + 1}`] ?? null, // User's answer (null if unanswered so it survives JSON.stringify)
                     correctAnswer: q.correctAnswer,
                     isCorrect: answers[`q${idx + 1}`] === q.correctAnswer,
                     timeSpent: 0 // TODO: Add time tracking
