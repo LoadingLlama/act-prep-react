@@ -709,15 +709,15 @@ const InsightsPage = () => {
       const sessions = await PracticeTestsService.getUserPracticeTestHistory(user.id);
 
       if (sessions) {
-        // Filter for completed full tests and group by test number (keep only latest)
-        const completedFullTests = sessions.filter(s => s.completed && s.section === 'full');
+        // Filter for completed tests and group by test number (keep only latest)
+        const completedTests = sessions.filter(s => s.completed);
 
         // Group by test_number and keep only the latest session for each test
         const latestByTestNumber = {};
-        completedFullTests.forEach(session => {
+        completedTests.forEach(session => {
           const testNum = session.test_number;
           if (!latestByTestNumber[testNum] ||
-              new Date(session.session_start) > new Date(latestByTestNumber[testNum].session_start)) {
+              new Date(session.created_at) > new Date(latestByTestNumber[testNum].created_at)) {
             latestByTestNumber[testNum] = session;
           }
         });
@@ -1215,7 +1215,7 @@ const InsightsPage = () => {
                     Practice Test {displayNumber}
                   </h3>
                   <p className={classes.diagnosticMeta}>
-                    {test.total_questions} questions • Completed {formatDate(test.session_start)}
+                    {test.total_questions} questions • Completed {formatDate(test.created_at)}
                   </p>
                   <div className={classes.diagnosticScore} style={{ color: '#08245b' }}>
                     {test.score_percentage?.toFixed(1)}%
