@@ -1427,29 +1427,59 @@
 
             console.log('📚 All completed sections:', allResults.map(r => r.section));
 
-            // Determine next section
+            // Check if all 4 sections have been completed
             const sectionOrder = ['english', 'math', 'reading', 'science'];
+            const completedSections = new Set(allResults.map(r => r.section.toLowerCase().trim()));
+            const allSectionsComplete = sectionOrder.every(s => completedSections.has(s));
+
+            console.log('🔍 Completion check:', {
+                completedSections: Array.from(completedSections),
+                allSectionsComplete,
+                requiredSections: sectionOrder
+            });
+
             const normalizedSection = section.toLowerCase().trim();
             const currentIndex = sectionOrder.indexOf(normalizedSection);
-            const isFullTest = normalizedSection === 'full';
 
             console.log('🎯 Section ended:', {
                 section,
                 normalizedSection,
-                sectionType: typeof section,
                 currentIndex,
-                sectionOrder,
-                isLastSection: currentIndex === sectionOrder.length - 1,
-                nextAvailable: currentIndex < sectionOrder.length - 1,
-                comparison: {
-                    'currentIndex < 3': currentIndex < 3,
-                    'currentIndex === 3': currentIndex === 3,
-                    'will_go_to': currentIndex < 3 ? 'NEXT_SECTION' : 'COMPLETE'
-                }
+                allSectionsComplete,
+                willComplete: allSectionsComplete
             });
 
-            // Always progress through sections (full test simulation)
-            if (currentIndex >= 0 && currentIndex < sectionOrder.length - 1) {
+            // Check if all 4 sections are complete
+            if (allSectionsComplete) {
+                // Test complete - all 4 sections done
+                console.log('📤 Sending COMPLETE message - All 4 sections finished');
+                console.log('   Completed sections:', Array.from(completedSections));
+
+                // Keep only the LAST result for each section (in case sections were redone)
+                const uniqueResults = [];
+                sectionOrder.forEach(sectionName => {
+                    // Find the last result for this section
+                    for (let i = allResults.length - 1; i >= 0; i--) {
+                        if (allResults[i].section.toLowerCase().trim() === sectionName) {
+                            uniqueResults.push(allResults[i]);
+                            break;
+                        }
+                    }
+                });
+
+                console.log('📊 Final results (last attempt per section):', uniqueResults.map(r => r.section));
+
+                sessionStorage.setItem('practiceTestResults', JSON.stringify({
+                    allSections: uniqueResults,
+                    totalCorrect: uniqueResults.reduce((sum, r) => sum + r.correct, 0),
+                    totalQuestions: uniqueResults.reduce((sum, r) => sum + r.total, 0)
+                }));
+
+                const completeMessage = { type: 'PRACTICE_TEST_COMPLETE' };
+                console.log('📤 Posting COMPLETE message to parent:', completeMessage);
+                window.parent.postMessage(completeMessage, '*');
+                console.log('✅ Complete message posted to parent');
+            } else if (currentIndex >= 0 && currentIndex < sectionOrder.length - 1) {
                 // Load next section
                 const nextSection = sectionOrder[currentIndex + 1];
                 console.log('📤 Sending NEXT_SECTION message:', nextSection);
@@ -1462,20 +1492,28 @@
                 window.parent.postMessage(message, '*');
                 console.log('✅ Message posted to parent');
             } else {
-                // Test complete - all 4 sections done OR invalid section
-                console.log('📤 Sending COMPLETE message - Test finished');
-                console.log('   Reason:', currentIndex === sectionOrder.length - 1 ? 'Last section (science) completed' : 'Invalid section or full test');
+                // Edge case: current section is last but not all sections complete
+                console.log('⚠️ Edge case: Last section but not all complete, sending COMPLETE anyway');
+
+                // Keep only the LAST result for each section
+                const uniqueResults = [];
+                sectionOrder.forEach(sectionName => {
+                    for (let i = allResults.length - 1; i >= 0; i--) {
+                        if (allResults[i].section.toLowerCase().trim() === sectionName) {
+                            uniqueResults.push(allResults[i]);
+                            break;
+                        }
+                    }
+                });
 
                 sessionStorage.setItem('practiceTestResults', JSON.stringify({
-                    allSections: allResults,
-                    totalCorrect: allResults.reduce((sum, r) => sum + r.correct, 0),
-                    totalQuestions: allResults.reduce((sum, r) => sum + r.total, 0)
+                    allSections: uniqueResults,
+                    totalCorrect: uniqueResults.reduce((sum, r) => sum + r.correct, 0),
+                    totalQuestions: uniqueResults.reduce((sum, r) => sum + r.total, 0)
                 }));
 
                 const completeMessage = { type: 'PRACTICE_TEST_COMPLETE' };
-                console.log('📤 Posting COMPLETE message to parent:', completeMessage);
                 window.parent.postMessage(completeMessage, '*');
-                console.log('✅ Complete message posted to parent');
             }
         }
 

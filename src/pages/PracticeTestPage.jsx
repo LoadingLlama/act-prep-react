@@ -77,6 +77,13 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
       // Clear saved question position when loading a new section
       sessionStorage.removeItem('currentQuestion');
 
+      // If loading English (first section), clear all previous test results
+      if (section === 'english') {
+        console.log('🔄 Starting fresh test - clearing previous results');
+        sessionStorage.removeItem('practiceTestAllResults');
+        sessionStorage.removeItem('practiceTestResults');
+      }
+
       logger.info('PracticeTestPage', 'loadSectionQuestions', { testNumber, section });
 
       const sectionQuestions = await PracticeTestsService.getPracticeTestSection(
