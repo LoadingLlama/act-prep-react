@@ -257,10 +257,18 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
 
   // Handle section selection
   const handleSectionSelect = useCallback((section) => {
-    if (!testData) return;
+    console.log('🔵 handleSectionSelect called with section:', section);
+    console.log('   testData exists:', !!testData);
+
+    if (!testData) {
+      console.warn('⚠️ testData is null, cannot select section');
+      return;
+    }
 
     // Find first wrong answer in this section, or start at question 1
     const sectionQuestions = testData.questionsBySection[section] || [];
+    console.log(`   Section ${section} has ${sectionQuestions.length} questions`);
+
     const firstWrongQuestion = sectionQuestions.find(q => q.isCorrect === false);
 
     const startingQuestion = firstWrongQuestion ? firstWrongQuestion.question_number : 1;
@@ -268,6 +276,7 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
 
     setStartingQuestionIndex(startingQuestion);
     setSelectedSection(section);
+    console.log('✅ Set selectedSection to:', section);
   }, [testData]);
 
   // Load section data into the iframe
@@ -468,8 +477,22 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
     );
   }
 
+  // Log selectedSection changes
+  useEffect(() => {
+    console.log('🔄 selectedSection state changed to:', selectedSection);
+  }, [selectedSection]);
+
+  // Log render state
+  console.log('🎨 DiagnosticTestReview rendering:', {
+    selectedSection,
+    hasTestData: !!testData,
+    loading,
+    error
+  });
+
   // If section is selected, show the test interface
   if (selectedSection) {
+    console.log('📺 Rendering iframe view for section:', selectedSection);
     return (
       <div style={{
         position: 'fixed',
@@ -897,6 +920,7 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                   <div style={{ display: 'flex', gap: '0.375rem' }}>
                     <button
                       onClick={(e) => {
+                        console.log('🔘 Review button clicked for section:', key);
                         e.stopPropagation();
                         setExpandedSection(null);
                         handleSectionSelect(key);
