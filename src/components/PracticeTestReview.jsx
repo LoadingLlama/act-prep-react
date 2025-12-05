@@ -458,7 +458,7 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
           fontSize: '0.875rem',
           marginBottom: '2rem'
         }}>
-          Completed {new Date(testData.session.session_start).toLocaleDateString()}
+          Completed {new Date(testData.session.created_at).toLocaleDateString()}
         </p>
 
         {/* Composite Score */}
