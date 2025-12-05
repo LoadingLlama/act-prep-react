@@ -662,13 +662,14 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
         flexDirection: 'column',
         animation: 'scaleIn 0.3s ease-out'
       }}>
-        {/* Header with back button */}
+        {/* Header with back button and title */}
         <div style={{
           padding: '1rem 1.5rem',
-          borderBottom: 'none',
+          borderBottom: '1px solid #f1f5f9',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'flex-start'
+          justifyContent: 'space-between',
+          position: 'relative'
         }}>
           <button
             onClick={onClose}
@@ -698,6 +699,21 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
             <HiArrowLeft size={16} />
             <span>Back</span>
           </button>
+
+          <h2 style={{
+            position: 'absolute',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            margin: 0,
+            fontSize: '1rem',
+            fontWeight: '700',
+            color: '#0f172a',
+            letterSpacing: '-0.01em'
+          }}>
+            Practice Test {testNumber - 1}
+          </h2>
+
+          <div style={{ width: '80px' }} /> {/* Spacer for balance */}
         </div>
 
         {/* Scrollable Content */}
