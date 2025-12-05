@@ -406,6 +406,19 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
     return () => window.removeEventListener('message', handleMessage);
   }, [selectedSection, testData, loadSectionIntoIframe, handleSectionSelect]);
 
+  // Log selectedSection changes for debugging
+  useEffect(() => {
+    console.log('🔄 selectedSection state changed to:', selectedSection);
+  }, [selectedSection]);
+
+  // Log render state
+  console.log('🎨 DiagnosticTestReview rendering:', {
+    selectedSection,
+    hasTestData: !!testData,
+    loading,
+    error
+  });
+
   // Loading state
   if (loading) {
     return (
@@ -476,19 +489,6 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
       </div>
     );
   }
-
-  // Log selectedSection changes
-  useEffect(() => {
-    console.log('🔄 selectedSection state changed to:', selectedSection);
-  }, [selectedSection]);
-
-  // Log render state
-  console.log('🎨 DiagnosticTestReview rendering:', {
-    selectedSection,
-    hasTestData: !!testData,
-    loading,
-    error
-  });
 
   // If section is selected, show the test interface
   if (selectedSection) {
