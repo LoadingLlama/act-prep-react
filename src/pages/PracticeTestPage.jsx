@@ -175,9 +175,17 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
         if (!firstQ.questionId) {
           throw new Error(`Questions missing questionId field in section ${section.section}`);
         }
-        if (firstQ.selectedAnswer === undefined) {
-          throw new Error(`Questions missing selectedAnswer field in section ${section.section}`);
+        // Accept both old (userAnswer) and new (selectedAnswer) field names for backward compatibility
+        if (firstQ.selectedAnswer === undefined && firstQ.userAnswer === undefined) {
+          throw new Error(`Questions missing answer field in section ${section.section}`);
         }
+
+        // Normalize old results to new format
+        section.questions.forEach(q => {
+          if (q.userAnswer !== undefined && q.selectedAnswer === undefined) {
+            q.selectedAnswer = q.userAnswer;
+          }
+        });
       }
 
       console.log('📊 Practice test complete! Processing results...');
