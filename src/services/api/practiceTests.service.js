@@ -491,7 +491,7 @@ const PracticeTestsService = {
       .from('practice_test_sessions')
       .select('*')
       .eq('user_id', userId)
-      .order('session_start', { ascending: false });
+      .order('created_at', { ascending: false });
 
     if (testNumber) {
       query = query.eq('test_number', testNumber);
@@ -532,7 +532,7 @@ const PracticeTestsService = {
       .eq('user_id', userId)
       .eq('test_number', testNumber)
       .eq('completed', true)
-      .order('session_start', { ascending: false });
+      .order('created_at', { ascending: false });
 
     if (error) {
       errorTracker.trackError(
