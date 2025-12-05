@@ -1223,7 +1223,12 @@ const InsightsPage = () => {
             <HiClipboardDocumentList className={classes.sectionIcon} />
             Practice Tests
           </h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '1rem',
+            maxWidth: '700px'
+          }}>
             {practiceTests.map((test) => (
               <TestResultsCard
                 key={test.id}

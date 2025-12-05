@@ -16,7 +16,7 @@ const useStyles = createUseStyles({
     padding: '0.75rem 0.875rem',
     cursor: 'pointer',
     transition: 'all 0.15s ease',
-    maxWidth: '500px',
+    width: '100%',
     '@media (max-width: 640px)': {
       padding: '0.625rem 0.75rem',
       borderRadius: '5px'
