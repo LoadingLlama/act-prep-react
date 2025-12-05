@@ -620,17 +620,32 @@
 
             // Helper function to replace image placeholders with actual image tags
             function replaceImagePlaceholders(text, imageUrls) {
-                if (!text || !imageUrls) return text;
+                if (!text || !imageUrls) {
+                    console.log('⚠️ replaceImagePlaceholders: missing text or imageUrls', { hasText: !!text, hasUrls: !!imageUrls });
+                    return text;
+                }
+
+                console.log('🖼️ replaceImagePlaceholders called with', Object.keys(imageUrls).length, 'image URLs');
 
                 // Replace {{key}} placeholders with actual <img> tags
                 let result = text;
+                let replacementCount = 0;
+
                 Object.keys(imageUrls).forEach(key => {
                     const placeholder = `{{${key}}}`;
                     const url = imageUrls[key];
-                    const imgTag = `<img src="${url}" alt="Figure or Table" class="passage-image" />`;
-                    result = result.replace(new RegExp(placeholder, 'g'), imgTag);
+
+                    if (text.includes(placeholder)) {
+                        const imgTag = `<img src="${url}" alt="Figure or Table" class="passage-image" onerror="console.error('Failed to load image:', this.src)" onload="console.log('✓ Image loaded:', this.src.substring(0, 60) + '...')" />`;
+                        result = result.replace(new RegExp(placeholder, 'g'), imgTag);
+                        replacementCount++;
+                        console.log(`  ✓ Replaced ${placeholder} with image from ${url.substring(0, 60)}...`);
+                    } else {
+                        console.log(`  ⚠️ Placeholder ${placeholder} not found in text`);
+                    }
                 });
 
+                console.log(`✅ Replaced ${replacementCount} image placeholders`);
                 return result;
             }
 

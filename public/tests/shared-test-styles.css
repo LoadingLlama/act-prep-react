@@ -840,7 +840,7 @@ body {
 
 /* Images in science passages (figures and tables) */
 .passage-image {
-    display: block;
+    display: block !important;
     width: 90%;
     max-width: 800px;
     min-width: 400px;
@@ -849,6 +849,17 @@ body {
     border: 1px solid #ddd;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #f9fafb;
+    padding: 0.5rem;
+}
+
+/* Ensure all passage images are visible */
+.passage-content img,
+.passage-text img {
+    display: block !important;
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem auto;
 }
 
 /* Make images responsive on smaller screens */
