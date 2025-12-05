@@ -53,6 +53,11 @@ export function convertToACTScore(section, rawScore) {
     return Math.round((rawScore / getMaxScore(section)) * 36);
   }
 
+  // Handle 0 correct answers - lowest possible ACT score is 1
+  if (rawScore <= 0) {
+    return 1;
+  }
+
   // Find closest raw score in table
   let scaleScore = table[rawScore];
 
