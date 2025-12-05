@@ -767,9 +767,9 @@
                 questionHTML += `
                     <div class="question" id="question${questionNum}" data-passage="${hasPassages ? (questions.findIndex(x => x.passage === q.passage) + 1) : ''}">
                         ${underlinedContext}
+                        ${questionPrompt ? `<div class="question-text">${questionPrompt}</div>` : ''}
                         ${q.image_url ? `<div class="question-image"><img src="${q.image_url}" alt="Question ${questionNum} diagram" /></div>` : ''}
                         ${inlineImages.length > 0 ? inlineImages.map(url => `<div class="question-image"><img src="${url}" alt="Question ${questionNum} figure" class="inline-question-image" onerror="console.error('Failed to load inline image:', this.src)" onload="console.log('✓ Inline image loaded:', this.src.substring(0, 60) + '...')" /></div>`).join('') : ''}
-                        ${questionPrompt ? `<div class="question-text">${questionPrompt}</div>` : ''}
                         <div class="answer-choices">
                             ${answerKeys.map(key => {
                                 const isUserAnswer = reviewMode && userAnswer === key;
