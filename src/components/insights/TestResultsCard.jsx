@@ -220,7 +220,9 @@ function calculatePracticeTestSections(sessionData) {
  */
 function calculateDiagnosticSections(diagnosticData) {
   // Diagnostic data already has section breakdown
-  if (!diagnosticData.sectionResults) {
+  if (!diagnosticData.sectionResults || diagnosticData.sectionResults.length === 0) {
+    console.warn('⚠️ No sectionResults found in diagnostic data, returning empty array');
+    console.log('   Available fields:', Object.keys(diagnosticData));
     return [];
   }
 
@@ -247,10 +249,22 @@ const TestResultsCard = ({ type, testData, onClick }) => {
 
   if (!testData) return null;
 
+  console.log('🎴 TestResultsCard rendering:', {
+    type,
+    testData: {
+      sectionResults: testData.sectionResults,
+      totalQuestions: testData.totalQuestions,
+      correctAnswers: testData.correctAnswers,
+      completedAt: testData.completedAt
+    }
+  });
+
   // Calculate section scores based on test type
   const sections = type === 'diagnostic'
     ? calculateDiagnosticSections(testData)
     : calculatePracticeTestSections(testData);
+
+  console.log('📊 Calculated sections:', sections);
 
   // Calculate composite ACT score
   const actScores = {};
@@ -260,9 +274,27 @@ const TestResultsCard = ({ type, testData, onClick }) => {
   const compositeScore = calculateComposite(actScores);
 
   // Calculate totals
-  const totalCorrect = sections.reduce((sum, s) => sum + s.correct, 0);
-  const totalQuestions = sections.reduce((sum, s) => sum + s.total, 0);
-  const overallPercentage = ((totalCorrect / totalQuestions) * 100).toFixed(1);
+  let totalCorrect = sections.reduce((sum, s) => sum + s.correct, 0);
+  let totalQuestions = sections.reduce((sum, s) => sum + s.total, 0);
+
+  // Fallback: If sections are empty but we have totalQuestions/correctAnswers in testData, use those
+  if (totalQuestions === 0 && type === 'diagnostic' && testData.totalQuestions) {
+    console.warn('⚠️ Using fallback totalQuestions from testData');
+    totalQuestions = testData.totalQuestions || 0;
+    totalCorrect = testData.correctAnswers || 0;
+  }
+
+  const overallPercentage = totalQuestions > 0
+    ? ((totalCorrect / totalQuestions) * 100).toFixed(1)
+    : '0.0';
+
+  console.log('📈 Score calculation:', {
+    totalCorrect,
+    totalQuestions,
+    overallPercentage,
+    compositeScore,
+    isNaN: isNaN(compositeScore)
+  });
 
   // Format date
   const formatDate = (dateString) => {
