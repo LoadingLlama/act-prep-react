@@ -25,6 +25,7 @@ export const useLandingPageStyles = createUseStyles({
 
   // Navigation - Glassy and floating
   navbar: {
+    display: 'none',
     position: 'fixed',
     top: 0,
     left: 0,
@@ -40,9 +41,6 @@ export const useLandingPageStyles = createUseStyles({
     overflowX: 'visible',
     overflow: 'visible',
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-    '@media (max-width: 768px)': {
-      display: 'none',
-    },
   },
 
   navContent: {
@@ -237,21 +235,18 @@ export const useLandingPageStyles = createUseStyles({
 
   // Mobile Typeform Container - Full Screen
   mobileTypeformContainer: {
-    display: 'none',
-    '@media (max-width: 768px)': {
-      display: 'flex',
-      flexDirection: 'column',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      width: '100vw',
-      height: '100vh',
-      zIndex: 10,
-      background: '#000000',
-      overflow: 'hidden',
-    },
+    display: 'flex',
+    flexDirection: 'column',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    width: '100vw',
+    height: '100vh',
+    zIndex: 10,
+    background: '#000000',
+    overflow: 'hidden',
   },
 
   mobileTypeformHeader: {
@@ -297,8 +292,8 @@ export const useLandingPageStyles = createUseStyles({
 
   // Main Content - Centered and Premium
   mainContent: {
+    display: 'none',
     flex: 1,
-    display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
