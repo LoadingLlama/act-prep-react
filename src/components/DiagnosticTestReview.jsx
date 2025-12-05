@@ -501,14 +501,14 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
         right: 0,
         bottom: 0,
         background: 'white',
-        zIndex: 3000
+        zIndex: 10000
       }}>
         {/* Back Button Overlay */}
         <div style={{
           position: 'absolute',
           top: '0.75rem',
           left: '1rem',
-          zIndex: 3001
+          zIndex: 10001
         }}>
           <button
             onClick={() => {
