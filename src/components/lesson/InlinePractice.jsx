@@ -21,18 +21,25 @@ export const QuickCheck = ({ question, choices, correctAnswer, explanation }) =>
 
   return (
     <div style={{
-      margin: '2rem 0 2rem 1.5rem'
+      margin: '2rem 0',
+      padding: '1rem 1rem 1rem 1.25rem',
+      borderLeft: '3px solid #dc2626',
+      border: '1px solid #e5e7eb',
+      borderLeftWidth: '3px',
+      borderLeftColor: '#dc2626',
+      borderRadius: '4px',
+      backgroundColor: '#fafafa'
     }}>
       <div style={{
         fontSize: '15px',
         fontWeight: '600',
         color: '#1f2937',
-        marginBottom: '1rem'
+        marginBottom: '0.75rem'
       }}>
         Exercise: {question}
       </div>
 
-      <div style={{ marginLeft: '1.5rem' }}>
+      <div>
         {choices.map((choice, index) => (
           <div
             key={index}
@@ -65,8 +72,7 @@ export const QuickCheck = ({ question, choices, correctAnswer, explanation }) =>
 
       {showFeedback && (
         <div style={{
-          marginTop: '1rem',
-          marginLeft: '1.5rem',
+          marginTop: '0.75rem',
           fontSize: '14px',
           lineHeight: '1.6',
           color: '#374151',
@@ -95,7 +101,14 @@ export const IdentifyError = ({ sentence, parts, correctPart, explanation }) => 
 
   return (
     <div style={{
-      margin: '2rem 0 2rem 1.5rem'
+      margin: '2rem 0',
+      padding: '1rem 1rem 1rem 1.25rem',
+      borderLeft: '3px solid #dc2626',
+      border: '1px solid #e5e7eb',
+      borderLeftWidth: '3px',
+      borderLeftColor: '#dc2626',
+      borderRadius: '4px',
+      backgroundColor: '#fafafa'
     }}>
       <div style={{
         fontSize: '15px',
@@ -110,13 +123,12 @@ export const IdentifyError = ({ sentence, parts, correctPart, explanation }) => 
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#1f2937',
-        marginBottom: '1rem',
-        marginLeft: '1.5rem'
+        marginBottom: '0.75rem'
       }}>
         {sentence}
       </div>
 
-      <div style={{ marginLeft: '1.5rem' }}>
+      <div>
         {parts.map((part, index) => (
           <div
             key={index}
@@ -146,8 +158,7 @@ export const IdentifyError = ({ sentence, parts, correctPart, explanation }) => 
 
       {showFeedback && (
         <div style={{
-          marginTop: '1rem',
-          marginLeft: '1.5rem',
+          marginTop: '0.75rem',
           fontSize: '14px',
           lineHeight: '1.6',
           color: '#374151',
@@ -176,13 +187,20 @@ export const TrueFalse = ({ statement, correctAnswer, explanation }) => {
 
   return (
     <div style={{
-      margin: '2rem 0 2rem 1.5rem'
+      margin: '2rem 0',
+      padding: '1rem 1rem 1rem 1.25rem',
+      borderLeft: '3px solid #dc2626',
+      border: '1px solid #e5e7eb',
+      borderLeftWidth: '3px',
+      borderLeftColor: '#dc2626',
+      borderRadius: '4px',
+      backgroundColor: '#fafafa'
     }}>
       <div style={{
         fontSize: '15px',
         fontWeight: '600',
         color: '#1f2937',
-        marginBottom: '1rem'
+        marginBottom: '0.75rem'
       }}>
         Exercise: True or False?
       </div>
@@ -191,13 +209,12 @@ export const TrueFalse = ({ statement, correctAnswer, explanation }) => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#1f2937',
-        marginBottom: '1rem',
-        marginLeft: '1.5rem'
+        marginBottom: '0.75rem'
       }}>
         {statement}
       </div>
 
-      <div style={{ marginLeft: '1.5rem', display: 'flex', gap: '2rem' }}>
+      <div style={{ display: 'flex', gap: '2rem' }}>
         <div
           onClick={() => !showFeedback && handleChoice(true)}
           style={{
@@ -244,8 +261,7 @@ export const TrueFalse = ({ statement, correctAnswer, explanation }) => {
 
       {showFeedback && (
         <div style={{
-          marginTop: '1rem',
-          marginLeft: '1.5rem',
+          marginTop: '0.75rem',
           fontSize: '14px',
           lineHeight: '1.6',
           color: '#374151',
@@ -274,18 +290,25 @@ export const ApplyTheRule = ({ title, question, options, correctAnswer, explanat
 
   return (
     <div style={{
-      margin: '2rem 0 2rem 1.5rem'
+      margin: '2rem 0',
+      padding: '1rem 1rem 1rem 1.25rem',
+      borderLeft: '3px solid #dc2626',
+      border: '1px solid #e5e7eb',
+      borderLeftWidth: '3px',
+      borderLeftColor: '#dc2626',
+      borderRadius: '4px',
+      backgroundColor: '#fafafa'
     }}>
       <div style={{
         fontSize: '15px',
         fontWeight: '600',
         color: '#1f2937',
-        marginBottom: '1rem'
+        marginBottom: '0.75rem'
       }}>
         Exercise: {question}
       </div>
 
-      <div style={{ marginLeft: '1.5rem' }}>
+      <div>
         {options.map((option, index) => (
           <div
             key={index}
@@ -318,8 +341,7 @@ export const ApplyTheRule = ({ title, question, options, correctAnswer, explanat
 
       {showFeedback && (
         <div style={{
-          marginTop: '1rem',
-          marginLeft: '1.5rem',
+          marginTop: '0.75rem',
           fontSize: '14px',
           lineHeight: '1.6',
           color: '#374151',

@@ -96,7 +96,7 @@ export const PacketHeader = ({ chapterNum, title, readingTime, verified = true }
 export const TipBox = ({ title = "TIP", children }) => {
   return (
     <div style={{
-      margin: '2rem 0 2rem 1.5rem',
+      margin: '2rem 0',
       padding: '1.25rem 1.5rem',
       border: '3px solid #9ca3af',
       borderRadius: '6px'
@@ -195,7 +195,7 @@ export const ExerciseHeader = ({ number, title }) => {
 export const ConceptBox = ({ title, items, columns = 2 }) => {
   return (
     <div style={{
-      margin: '1.5rem 0 1.5rem 1.5rem',
+      margin: '1.5rem 0',
       padding: '1.25rem',
       borderRadius: '6px',
       border: '3px solid #9ca3af'
