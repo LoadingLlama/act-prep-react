@@ -11,6 +11,7 @@ import AllLessonsNavigator from '../AllLessonsNavigator';
 import { lessonStructure as allLessonStructure } from '../../data/lessonStructure';
 import { supabase } from '../../services/api/supabase.service';
 import LessonsService from '../../services/api/lessons.service';
+import PacketLesson_1_1 from '../lesson/PacketLesson_1_1';
 
 /**
  * LessonModal - Full-screen modal for lesson viewing
@@ -182,32 +183,37 @@ const LessonModal = ({
           <div style={{ display: lessonMode === 'review' ? 'flex' : 'none', flexDirection: 'column', height: '100%', overflow: 'hidden' }}>
           {lesson && currentLessonData ? (
             <div style={{ flex: 1, overflowY: 'auto', padding: '0' }}>
-              <ProgressiveLessonRenderer
-                lesson={{...lesson, id: currentLessonData.id}}
-                initialStatus={lessonProgress[currentLesson] || 'not-started'}
-                lessonProgress={lessonProgress}
-                lessonMode={lessonMode}
-                setLessonMode={setLessonMode}
-                hideNavigator={true}
-                onNavigate={(type, lessonId) => {
-                  if (type === 'home') {
-                    closeLessonModal();
-                  } else if (type === 'lesson' && lessonId) {
-                    openLesson(lessonId);
-                  } else if (type === 'next') {
-                    const currentIndex = lessonStructure.findIndex(l => l.id === currentLessonData.id);
-                    if (currentIndex >= 0 && currentIndex < lessonStructure.length - 1) {
-                      openLesson(lessonStructure[currentIndex + 1].id);
+              {/* Use packet format for sentence-structure lesson */}
+              {currentLesson === 'sentence-structure' ? (
+                <PacketLesson_1_1 />
+              ) : (
+                <ProgressiveLessonRenderer
+                  lesson={{...lesson, id: currentLessonData.id}}
+                  initialStatus={lessonProgress[currentLesson] || 'not-started'}
+                  lessonProgress={lessonProgress}
+                  lessonMode={lessonMode}
+                  setLessonMode={setLessonMode}
+                  hideNavigator={true}
+                  onNavigate={(type, lessonId) => {
+                    if (type === 'home') {
+                      closeLessonModal();
+                    } else if (type === 'lesson' && lessonId) {
+                      openLesson(lessonId);
+                    } else if (type === 'next') {
+                      const currentIndex = lessonStructure.findIndex(l => l.id === currentLessonData.id);
+                      if (currentIndex >= 0 && currentIndex < lessonStructure.length - 1) {
+                        openLesson(lessonStructure[currentIndex + 1].id);
+                      }
+                    } else if (type === 'previous') {
+                      const currentIndex = lessonStructure.findIndex(l => l.id === currentLessonData.id);
+                      if (currentIndex > 0) {
+                        openLesson(lessonStructure[currentIndex - 1].id);
+                      }
                     }
-                  } else if (type === 'previous') {
-                    const currentIndex = lessonStructure.findIndex(l => l.id === currentLessonData.id);
-                    if (currentIndex > 0) {
-                      openLesson(lessonStructure[currentIndex - 1].id);
-                    }
-                  }
-                }}
-                onStatusChange={(status) => updateLessonProgress(currentLesson, status)}
-              />
+                  }}
+                  onStatusChange={(status) => updateLessonProgress(currentLesson, status)}
+                />
+              )}
             </div>
           ) : (
             <div style={{
