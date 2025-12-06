@@ -51,11 +51,11 @@ const PacketLesson_1_2 = () => {
 
       {/* Section 1: The Four Types */}
       <h2 style={{
-        fontSize: '20px',
+        fontSize: '22px',
         fontWeight: '700',
         color: '#1f2937',
         marginTop: '3rem',
-        marginBottom: '2rem'
+        marginBottom: '0.75rem'
       }}>
         1. The Four Types of Commas
       </h2>
@@ -64,8 +64,7 @@ const PacketLesson_1_2 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '2rem',
-        marginLeft: '1rem'
+        marginBottom: '1.5rem'
       }}>
         The ACT tests exactly 4 comma rules—master these and you'll handle every comma question.
         Each type has a specific purpose and can't be substituted with another. Understanding when to use
@@ -77,7 +76,7 @@ const PacketLesson_1_2 = () => {
         fontWeight: '600',
         color: '#1f2937',
         marginTop: '2.5rem',
-        marginBottom: '1rem'
+        marginBottom: '0.375rem'
       }}>
         Type 1: Comma + FANBOYS
       </h3>
@@ -86,8 +85,7 @@ const PacketLesson_1_2 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '1rem',
-        marginLeft: '1rem'
+        marginBottom: '0.75rem'
       }}>
         Use a comma and a <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>FANBOYS</strong> word to join two independent clauses.
         Remember from the previous lesson: FANBOYS = For, And, Nor, But, Or, Yet, So.
@@ -95,8 +93,8 @@ const PacketLesson_1_2 = () => {
       </div>
 
       <div style={{
-        marginLeft: '3rem',
-        marginBottom: '2rem'
+        marginLeft: '2rem',
+        marginBottom: '1.5rem'
       }}>
         <div style={{ fontSize: '15px', color: '#1f2937' }}>
           My alarm clock did not go off this morning, so I arrived late at school.
@@ -108,7 +106,7 @@ const PacketLesson_1_2 = () => {
         fontWeight: '600',
         color: '#1f2937',
         marginTop: '2.5rem',
-        marginBottom: '1rem'
+        marginBottom: '0.375rem'
       }}>
         Type 2: Dependent Clause Followed by Independent Clause
       </h3>
@@ -117,8 +115,7 @@ const PacketLesson_1_2 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '1rem',
-        marginLeft: '1rem'
+        marginBottom: '0.75rem'
       }}>
         When a dependent clause comes before an independent clause, use a comma to separate them.
         The dependent clause starts with subordinating conjunctions like while, although, because, if.
@@ -126,8 +123,8 @@ const PacketLesson_1_2 = () => {
       </div>
 
       <div style={{
-        marginLeft: '3rem',
-        marginBottom: '2rem'
+        marginLeft: '2rem',
+        marginBottom: '1.5rem'
       }}>
         <div style={{ fontSize: '15px', color: '#1f2937' }}>
           While electronic music has become very popular, many people still prefer classic rock.
@@ -139,7 +136,7 @@ const PacketLesson_1_2 = () => {
         fontWeight: '600',
         color: '#1f2937',
         marginTop: '2.5rem',
-        marginBottom: '1rem'
+        marginBottom: '0.375rem'
       }}>
         Type 3: Unnecessary Information
       </h3>
@@ -148,8 +145,7 @@ const PacketLesson_1_2 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '1rem',
-        marginLeft: '1rem'
+        marginBottom: '0.75rem'
       }}>
         Commas separate <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>unnecessary information</strong> from the rest of the sentence.
         Information is unnecessary if you can remove it without fundamentally changing the sentence's meaning.
@@ -157,7 +153,7 @@ const PacketLesson_1_2 = () => {
       </div>
 
       <div style={{
-        marginLeft: '3rem',
+        marginLeft: '2rem',
         marginBottom: '1rem'
       }}>
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
@@ -183,7 +179,7 @@ const PacketLesson_1_2 = () => {
         fontWeight: '600',
         color: '#1f2937',
         marginTop: '2.5rem',
-        marginBottom: '1rem'
+        marginBottom: '0.375rem'
       }}>
         Type 4: Listing
       </h3>
@@ -192,16 +188,15 @@ const PacketLesson_1_2 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '1rem',
-        marginLeft: '1rem'
+        marginBottom: '0.75rem'
       }}>
         Use commas when listing more than two items or with multiple adjectives modifying the same noun.
         Always use commas between all items in a series, including before the final "and" or "or".
       </div>
 
       <div style={{
-        marginLeft: '3rem',
-        marginBottom: '2rem'
+        marginLeft: '2rem',
+        marginBottom: '1.5rem'
       }}>
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
           List example: The group ordered coconut shrimp, hot wings, and onion rings.
@@ -233,7 +228,7 @@ const PacketLesson_1_2 = () => {
         fontSize: '20px',
         fontWeight: '700',
         color: '#1f2937',
-        marginBottom: '1.25rem'
+        marginBottom: '0.75rem'
       }}>
         2. Unnecessary Information Commas
       </h2>
@@ -242,8 +237,7 @@ const PacketLesson_1_2 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '2rem',
-        marginLeft: '1rem'
+        marginBottom: '1.5rem'
       }}>
         The most common comma type on the ACT separates unnecessary information. Information is unnecessary
         if removing it doesn't fundamentally change the sentence's meaning. Unnecessary information can appear
@@ -256,7 +250,7 @@ const PacketLesson_1_2 = () => {
         fontWeight: '600',
         color: '#1f2937',
         marginTop: '2.5rem',
-        marginBottom: '1rem'
+        marginBottom: '0.375rem'
       }}>
         The "Crossing-Out" Trick
       </h3>
@@ -265,8 +259,7 @@ const PacketLesson_1_2 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '1rem',
-        marginLeft: '1rem'
+        marginBottom: '0.75rem'
       }}>
         To test if information is unnecessary, cross it out and read what remains. If the sentence is still
         complete and makes sense, the information is unnecessary. If the sentence becomes incomplete or loses
@@ -290,7 +283,7 @@ const PacketLesson_1_2 = () => {
         fontWeight: '600',
         color: '#1f2937',
         marginTop: '2.5rem',
-        marginBottom: '1rem'
+        marginBottom: '0.375rem'
       }}>
         The Names Rule
       </h3>
@@ -299,8 +292,7 @@ const PacketLesson_1_2 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '1rem',
-        marginLeft: '1rem'
+        marginBottom: '0.75rem'
       }}>
         The ACT loves testing comma usage with names—you'll see at least one question on this every test.
         The rule depends on whether the identifier is specific to one person or not.
@@ -373,7 +365,7 @@ const PacketLesson_1_2 = () => {
         fontWeight: '600',
         color: '#1f2937',
         marginTop: '2.5rem',
-        marginBottom: '1rem'
+        marginBottom: '0.375rem'
       }}>
         "That" vs. "Which" Phrases
       </h3>
@@ -382,8 +374,7 @@ const PacketLesson_1_2 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '1rem',
-        marginLeft: '1rem'
+        marginBottom: '0.75rem'
       }}>
         Phrases starting with <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>that</strong> never get commas—phrases starting with <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>which</strong> always get commas.
         This is one of the easiest rules to apply on the ACT.
@@ -429,7 +420,7 @@ const PacketLesson_1_2 = () => {
         fontWeight: '600',
         color: '#1f2937',
         marginTop: '2.5rem',
-        marginBottom: '1rem'
+        marginBottom: '0.375rem'
       }}>
         "ing" and "ed" Phrases
       </h3>
@@ -438,8 +429,7 @@ const PacketLesson_1_2 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '1rem',
-        marginLeft: '1rem'
+        marginBottom: '0.75rem'
       }}>
         <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>Participle phrases</strong> starting with "ing" or "ed" may or may not need commas.
         On the ACT, "ing" and "ed" phrases most commonly appear with commas as unnecessary information.
@@ -473,7 +463,7 @@ const PacketLesson_1_2 = () => {
         fontWeight: '600',
         color: '#1f2937',
         marginTop: '2.5rem',
-        marginBottom: '1rem'
+        marginBottom: '0.375rem'
       }}>
         Prepositional Phrases
       </h3>
@@ -482,8 +472,7 @@ const PacketLesson_1_2 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '1rem',
-        marginLeft: '1rem'
+        marginBottom: '0.75rem'
       }}>
         <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>Prepositional phrases</strong> consist of a preposition and its object.
         The comma rule depends on where the phrase appears in the sentence.
@@ -537,10 +526,10 @@ const PacketLesson_1_2 = () => {
       }} />
 
       <h2 style={{
-        fontSize: '20px',
+        fontSize: '22px',
         fontWeight: '700',
         color: '#1f2937',
-        marginBottom: '1.25rem'
+        marginBottom: '0.75rem'
       }}>
         3. Transitional Words Like "However"
       </h2>
@@ -549,8 +538,7 @@ const PacketLesson_1_2 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '2rem',
-        marginLeft: '1rem'
+        marginBottom: '1.5rem'
       }}>
         <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>Transitional words</strong> (also called conjunctive adverbs) require specific punctuation.
         These are NOT FANBOYS—they require different punctuation rules.
@@ -571,47 +559,46 @@ const PacketLesson_1_2 = () => {
         fontWeight: '600',
         color: '#1f2937',
         marginTop: '2.5rem',
-        marginBottom: '1rem'
+        marginBottom: '0.375rem'
       }}>
         Three Ways to Punctuate Transitional Words
       </h3>
 
       <div style={{
-        marginLeft: '2rem',
-        marginBottom: '2rem'
+        marginBottom: '1.5rem'
       }}>
-        <div style={{ marginBottom: '1.5rem' }}>
-          <div style={{ fontWeight: '700', fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
+        <div style={{ marginBottom: '1rem' }}>
+          <div style={{ fontWeight: '600', fontSize: '15px', color: '#1f2937', marginBottom: '0.25rem' }}>
             Position 1: At the front of the sentence followed by a comma
           </div>
-          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
+          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '2rem', marginBottom: '0.25rem' }}>
             However, the truth would not be revealed until next week.
           </div>
-          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '1.5rem' }}>
+          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '2rem' }}>
             As a result, the student was sent to the principal's office.
           </div>
         </div>
 
-        <div style={{ marginBottom: '1.5rem' }}>
-          <div style={{ fontWeight: '700', fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
+        <div style={{ marginBottom: '1rem' }}>
+          <div style={{ fontWeight: '600', fontSize: '15px', color: '#1f2937', marginBottom: '0.25rem' }}>
             Position 2: Separated by commas in the middle of a sentence
           </div>
-          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
+          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '2rem', marginBottom: '0.25rem' }}>
             The truth, however, would not be revealed until next week.
           </div>
-          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '1.5rem' }}>
+          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '2rem' }}>
             The student, as a result, was sent to the principal's office.
           </div>
         </div>
 
-        <div style={{ marginBottom: '1.5rem' }}>
-          <div style={{ fontWeight: '700', fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
+        <div style={{ marginBottom: '1rem' }}>
+          <div style={{ fontWeight: '600', fontSize: '15px', color: '#1f2937', marginBottom: '0.25rem' }}>
             Position 3: Semicolon before + comma after (between two independent clauses)
           </div>
-          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
+          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '2rem', marginBottom: '0.25rem' }}>
             I expected to pay over $100 for my new hiking boots; however, I found a sale and got them for half price.
           </div>
-          <div style={{ fontSize: '13px', color: '#6b7280', marginLeft: '1.5rem', fontStyle: 'italic' }}>
+          <div style={{ fontSize: '13px', color: '#6b7280', marginLeft: '2rem', fontStyle: 'italic' }}>
             Structure: Independent clause + semicolon + transitional word + comma + Independent clause
           </div>
         </div>
@@ -651,10 +638,10 @@ const PacketLesson_1_2 = () => {
       }} />
 
       <h2 style={{
-        fontSize: '20px',
+        fontSize: '22px',
         fontWeight: '700',
         color: '#1f2937',
-        marginBottom: '1.25rem'
+        marginBottom: '0.75rem'
       }}>
         4. Spotting and Solving Comma Questions
       </h2>
@@ -663,8 +650,7 @@ const PacketLesson_1_2 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '2rem',
-        marginLeft: '1rem'
+        marginBottom: '1.5rem'
       }}>
         Now that you understand the four comma types, let's learn how to identify and solve comma questions on the ACT.
         Most comma questions test unnecessary information, so recognizing this pattern quickly is essential.
@@ -675,7 +661,7 @@ const PacketLesson_1_2 = () => {
         fontWeight: '600',
         color: '#1f2937',
         marginTop: '2rem',
-        marginBottom: '0.75rem'
+        marginBottom: '0.375rem'
       }}>
         How to Identify Unnecessary Information Questions
       </h3>
@@ -684,8 +670,7 @@ const PacketLesson_1_2 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginLeft: '1rem',
-        marginBottom: '1.5rem'
+        marginBottom: '0.5rem'
       }}>
         Unnecessary information comma questions have two defining characteristics:
       </div>
@@ -693,17 +678,16 @@ const PacketLesson_1_2 = () => {
       <div style={{
         fontSize: '15px',
         lineHeight: '1.7',
-        color: '#374151',
-        marginLeft: '1rem'
+        color: '#374151'
       }}>
         <ul style={{ paddingLeft: '2rem' }}>
-          <li style={{ marginBottom: '0.75rem' }}>
+          <li style={{ marginBottom: '0.5rem' }}>
             The words in all 4 answer choices are exactly the same
           </li>
-          <li style={{ marginBottom: '0.75rem' }}>
+          <li style={{ marginBottom: '0.5rem' }}>
             The only difference is where commas are located
           </li>
-          <li style={{ marginBottom: '0.75rem' }}>
+          <li style={{ marginBottom: '0.5rem' }}>
             When you see this pattern, immediately use the "crossing-out" trick
           </li>
         </ul>
@@ -714,39 +698,39 @@ const PacketLesson_1_2 = () => {
         fontWeight: '600',
         color: '#1f2937',
         marginTop: '2rem',
-        marginBottom: '1rem'
+        marginBottom: '0.375rem'
       }}>
         Step-by-Step Approach
       </h3>
 
       <div style={{
-        marginLeft: '2rem'
+        marginBottom: '1.5rem'
       }}>
-        <div style={{ marginBottom: '1.5rem' }}>
-          <div style={{ fontWeight: '700', fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
+        <div style={{ marginBottom: '1rem' }}>
+          <div style={{ fontWeight: '600', fontSize: '15px', color: '#1f2937', marginBottom: '0.25rem' }}>
             1. Read the entire sentence carefully
           </div>
-          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '1.5rem', lineHeight: '1.7' }}>
+          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '2rem', lineHeight: '1.7' }}>
             Pay attention to any commas NOT in the underlined portion. These fixed commas are often important
             clues for finding the correct answer. Look out for sentence structure rules from Chapter 1 that may also apply.
           </div>
         </div>
 
-        <div style={{ marginBottom: '1.5rem' }}>
-          <div style={{ fontWeight: '700', fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
+        <div style={{ marginBottom: '1rem' }}>
+          <div style={{ fontWeight: '600', fontSize: '15px', color: '#1f2937', marginBottom: '0.25rem' }}>
             2. Use the crossing-out trick systematically
           </div>
-          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '1.5rem', lineHeight: '1.7' }}>
+          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '2rem', lineHeight: '1.7' }}>
             Test each answer choice by crossing out what the comma(s) would separate. The correct answer
             leaves a complete, grammatical sentence after crossing out.
           </div>
         </div>
 
-        <div style={{ marginBottom: '1.5rem' }}>
-          <div style={{ fontWeight: '700', fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
+        <div style={{ marginBottom: '1rem' }}>
+          <div style={{ fontWeight: '600', fontSize: '15px', color: '#1f2937', marginBottom: '0.25rem' }}>
             3. Apply the specific rules you've learned
           </div>
-          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '1.5rem', lineHeight: '1.7' }}>
+          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '2rem', lineHeight: '1.7' }}>
             Use the Names Rule, that/which rule, prepositional phrase rules, or transitional word rules as needed.
           </div>
         </div>
@@ -776,10 +760,10 @@ const PacketLesson_1_2 = () => {
         marginBottom: '2rem'
       }} />
       <h2 style={{
-        fontSize: '20px',
+        fontSize: '22px',
         fontWeight: '700',
         color: '#1f2937',
-        marginBottom: '1.25rem'
+        marginBottom: '0.75rem'
       }}>
         Key Takeaways
       </h2>
@@ -788,8 +772,7 @@ const PacketLesson_1_2 = () => {
         backgroundColor: '#f0fdf4',
         border: '3px solid #86efac',
         borderRadius: '8px',
-        padding: '1.5rem 2rem',
-        marginLeft: '1rem'
+        padding: '1.5rem 2rem'
       }}>
         <div style={{
           display: 'flex',

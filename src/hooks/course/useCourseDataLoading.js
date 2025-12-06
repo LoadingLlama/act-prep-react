@@ -22,7 +22,8 @@ export const useCourseDataLoading = (user, setters, editForm) => {
     setSavingGoals,
     setEditModalOpen,
     setSaveButtonShake,
-    setValidationError
+    setValidationError,
+    setIsRegeneratingPath
   } = setters;
 
   /**
@@ -295,6 +296,11 @@ export const useCourseDataLoading = (user, setters, editForm) => {
         weekly_hours_tier: editForm.weekly_hours_tier
       });
 
+      // Set loading state for calendar
+      if (setIsRegeneratingPath) {
+        setIsRegeneratingPath(true);
+      }
+
       // Get diagnostic results (optional - used for prioritization)
       const diagnosticResults = await loadDiagnosticResults();
 
@@ -332,9 +338,19 @@ export const useCourseDataLoading = (user, setters, editForm) => {
         // Close modal
         setEditModalOpen(false);
         setSavingGoals(false);
+
+        // Clear loading state after a brief delay to show the new calendar
+        setTimeout(() => {
+          if (setIsRegeneratingPath) {
+            setIsRegeneratingPath(false);
+          }
+        }, 300);
       } catch (genError) {
         console.error('❌ Learning path generation failed:', genError);
         setSavingGoals(false);
+        if (setIsRegeneratingPath) {
+          setIsRegeneratingPath(false);
+        }
         setValidationError({
           title: 'Learning Path Generation Failed',
           message: genError.message || 'The algorithm took too long to complete.',
@@ -349,6 +365,9 @@ export const useCourseDataLoading = (user, setters, editForm) => {
     } catch (error) {
       console.error('❌ Exception saving user goals:', error);
       setSavingGoals(false);
+      if (setIsRegeneratingPath) {
+        setIsRegeneratingPath(false);
+      }
       setValidationError({
         title: 'Unexpected Error',
         message: `An error occurred while saving: ${error.message}`,

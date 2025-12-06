@@ -75,6 +75,7 @@ const CourseContent = () => {
     customColor: '#6b7280'
   });
   const [expandedWeeks, setExpandedWeeks] = useState({});
+  const [isRegeneratingPath, setIsRegeneratingPath] = useState(false);
   const [editForm, setEditForm] = useState({
     target_exam_date: '',
     current_score: '',
@@ -120,7 +121,8 @@ const CourseContent = () => {
     setSavingGoals,
     setEditModalOpen,
     setSaveButtonShake,
-    setValidationError
+    setValidationError,
+    setIsRegeneratingPath
   }, editForm);
 
   // Load user goals and check diagnostic completion on mount
@@ -1079,8 +1081,54 @@ const CourseContent = () => {
               minHeight: 0,
               maxHeight: 'calc(100vh - 100px)',
               maxWidth: '900px',
-              margin: '0 auto'
+              margin: '0 auto',
+              position: 'relative',
+              opacity: isRegeneratingPath ? 0.6 : 1,
+              transition: 'opacity 0.3s ease',
+              pointerEvents: isRegeneratingPath ? 'none' : 'auto'
             }}>
+              {/* Loading Overlay */}
+              {isRegeneratingPath && (
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: 'rgba(255, 255, 255, 0.8)',
+                  backdropFilter: 'blur(2px)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  zIndex: 1000,
+                  borderRadius: '12px'
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '1rem'
+                  }}>
+                    <div style={{
+                      width: '40px',
+                      height: '40px',
+                      border: '3px solid #f3f4f6',
+                      borderTop: '3px solid #b91c1c',
+                      borderRadius: '50%',
+                      animation: 'spin 0.8s linear infinite'
+                    }}></div>
+                    <div style={{
+                      fontSize: '0.875rem',
+                      fontWeight: '500',
+                      color: '#1a1a1a',
+                      textAlign: 'center'
+                    }}>
+                      Updating calendar...
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Calendar Header with Navigation */}
               <CalendarHeader
                 calendarViewType={calendarViewType}

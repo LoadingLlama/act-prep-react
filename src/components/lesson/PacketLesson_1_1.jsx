@@ -52,11 +52,11 @@ const PacketLesson_1_1 = () => {
 
       {/* Section 1: Understanding Clauses */}
       <h2 style={{
-        fontSize: '20px',
+        fontSize: '22px',
         fontWeight: '700',
         color: '#1f2937',
         marginTop: '3rem',
-        marginBottom: '2rem'
+        marginBottom: '0.75rem'
       }}>
         1. Clauses, Phrases, and Fragments
       </h2>
@@ -65,8 +65,7 @@ const PacketLesson_1_1 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '2rem',
-        marginLeft: '1rem'
+        marginBottom: '1.5rem'
       }}>
         To succeed on the ACT English, you need to understand the three building blocks of sentences.
         Let's start by learning how to identify each type.
@@ -78,7 +77,7 @@ const PacketLesson_1_1 = () => {
         fontWeight: '600',
         color: '#1f2937',
         marginTop: '2.5rem',
-        marginBottom: '1rem'
+        marginBottom: '0.375rem'
       }}>
         Independent Clauses
       </h3>
@@ -87,8 +86,7 @@ const PacketLesson_1_1 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '1.5rem',
-        marginLeft: '1rem'
+        marginBottom: '0.75rem'
       }}>
         The first building block is the <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>independent clause</strong>. An independent clause can stand as a sentence by itself
         because it has both a subject and a verb, and it expresses a complete thought.
@@ -98,8 +96,7 @@ const PacketLesson_1_1 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '1.5rem',
-        marginLeft: '1rem'
+        marginBottom: '0.5rem'
       }}>
         How to identify: Read the clause out loud. If you can stop talking at the end and it feels complete, it's an independent clause.
       </div>
@@ -108,14 +105,13 @@ const PacketLesson_1_1 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '1rem',
-        marginLeft: '1rem'
+        marginBottom: '0.5rem'
       }}>
         Here are some examples of independent clauses:
       </div>
 
       <div style={{
-        marginLeft: '3rem',
+        marginLeft: '2rem',
         marginBottom: '1.5rem'
       }}>
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
@@ -197,7 +193,7 @@ const PacketLesson_1_1 = () => {
       </div>
 
       <div style={{
-        marginLeft: '3rem',
+        marginLeft: '2rem',
         marginBottom: '1.5rem'
       }}>
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
@@ -244,7 +240,7 @@ const PacketLesson_1_1 = () => {
       </div>
 
       <div style={{
-        marginLeft: '3rem',
+        marginLeft: '2rem',
         marginBottom: '1.5rem'
       }}>
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
@@ -363,7 +359,7 @@ const PacketLesson_1_1 = () => {
         marginBottom: '2rem'
       }} />
       <h2 style={{
-        fontSize: '20px',
+        fontSize: '22px',
         fontWeight: '700',
         color: '#1f2937',
         marginBottom: '1.25rem'
@@ -498,7 +494,7 @@ const PacketLesson_1_1 = () => {
         marginBottom: '2rem'
       }} />
       <h2 style={{
-        fontSize: '20px',
+        fontSize: '22px',
         fontWeight: '700',
         color: '#1f2937',
         marginBottom: '1.25rem'
@@ -618,7 +614,7 @@ const PacketLesson_1_1 = () => {
         marginBottom: '2rem'
       }} />
       <h2 style={{
-        fontSize: '20px',
+        fontSize: '22px',
         fontWeight: '700',
         color: '#1f2937',
         marginBottom: '1.25rem'
@@ -756,7 +752,7 @@ const PacketLesson_1_1 = () => {
         marginBottom: '2rem'
       }} />
       <h2 style={{
-        fontSize: '20px',
+        fontSize: '22px',
         fontWeight: '700',
         color: '#1f2937',
         marginBottom: '1.25rem'

@@ -615,6 +615,14 @@ const useStyles = createUseStyles({
       transform: 'translateY(-2px)',
       boxShadow: '0 8px 16px rgba(8, 36, 91, 0.3)'
     }
+  },
+  '@keyframes shimmer': {
+    '0%': {
+      backgroundPosition: '200% 0'
+    },
+    '100%': {
+      backgroundPosition: '-200% 0'
+    }
   }
 });
 
@@ -655,6 +663,7 @@ const InsightsPage = () => {
   const [viewingPracticeTestReview, setViewingPracticeTestReview] = useState(null);
   const [lessonMetadataMap, setLessonMetadataMap] = useState({});
   const [isLoading, setIsLoading] = useState(!getCachedInsights());
+  const [isLoadingPracticeTests, setIsLoadingPracticeTests] = useState(true);
   const [practiceTests, setPracticeTests] = useState([]);
 
   // Check URL params to restore diagnostic review state
@@ -704,6 +713,7 @@ const InsightsPage = () => {
 
   const loadPracticeTests = async () => {
     try {
+      setIsLoadingPracticeTests(true);
       logger.info('InsightsPage', 'loadPracticeTests', { userId: user.id });
 
       // Fetch all completed practice test sessions for the user
@@ -764,6 +774,8 @@ const InsightsPage = () => {
     } catch (error) {
       logger.error('InsightsPage', 'loadPracticeTests', { error });
       console.error('Failed to load practice tests:', error);
+    } finally {
+      setIsLoadingPracticeTests(false);
     }
   };
 
@@ -1217,7 +1229,7 @@ const InsightsPage = () => {
       )}
 
       {/* Practice Tests Section */}
-      {practiceTests.length > 0 && (
+      {(isLoadingPracticeTests || practiceTests.length > 0) && (
         <div className={classes.section}>
           <h2 className={classes.sectionTitle}>
             <HiClipboardDocumentList className={classes.sectionIcon} />
@@ -1229,21 +1241,63 @@ const InsightsPage = () => {
             gap: '1rem',
             maxWidth: '700px'
           }}>
-            {practiceTests.map((test) => (
-              <TestResultsCard
-                key={test.id}
-                type="practice"
-                testData={test}
-                onClick={() => {
-                  console.log('🔍 Opening practice test review:', test);
-                  console.log('   Session ID:', test.id);
-                  console.log('   Test Number (DB):', test.test_number);
-                  console.log('   Test Name:', test.test_name);
-                  console.log('   Display Number:', test.test_number ? test.test_number - 1 : 'unknown');
-                  setViewingPracticeTestReview(test);
-                }}
-              />
-            ))}
+            {isLoadingPracticeTests && practiceTests.length === 0 ? (
+              // Show skeleton loaders while loading
+              [...Array(3)].map((_, i) => (
+                <div key={i} style={{
+                  background: '#ffffff',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: '8px',
+                  padding: '0.875rem 1rem',
+                  minHeight: '120px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.75rem'
+                }}>
+                  <div style={{
+                    width: '60%',
+                    height: '14px',
+                    background: 'linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%)',
+                    backgroundSize: '200% 100%',
+                    animation: 'shimmer 1.5s infinite',
+                    borderRadius: '3px'
+                  }}></div>
+                  <div style={{
+                    width: '40%',
+                    height: '12px',
+                    background: 'linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%)',
+                    backgroundSize: '200% 100%',
+                    animation: 'shimmer 1.5s infinite',
+                    borderRadius: '3px'
+                  }}></div>
+                  <div style={{
+                    width: '80%',
+                    height: '20px',
+                    background: 'linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%)',
+                    backgroundSize: '200% 100%',
+                    animation: 'shimmer 1.5s infinite',
+                    borderRadius: '3px',
+                    marginTop: '0.5rem'
+                  }}></div>
+                </div>
+              ))
+            ) : (
+              practiceTests.map((test) => (
+                <TestResultsCard
+                  key={test.id}
+                  type="practice"
+                  testData={test}
+                  onClick={() => {
+                    console.log('🔍 Opening practice test review:', test);
+                    console.log('   Session ID:', test.id);
+                    console.log('   Test Number (DB):', test.test_number);
+                    console.log('   Test Name:', test.test_name);
+                    console.log('   Display Number:', test.test_number ? test.test_number - 1 : 'unknown');
+                    setViewingPracticeTestReview(test);
+                  }}
+                />
+              ))
+            )}
           </div>
         </div>
       )}

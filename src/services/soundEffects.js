@@ -7,7 +7,7 @@ class SoundEffectsService {
   constructor() {
     this.audioContext = null;
     this.sounds = {};
-    this.enabled = true;
+    this.enabled = false; // Disabled globally
     this.volume = 0.3;
 
     // Initialize on first user interaction

@@ -66,7 +66,24 @@ const LessonsContent = () => {
   const [previewLesson, setPreviewLesson] = useState(null);
   const [expandedCategories, setExpandedCategories] = useState({});
   const [isInitialRender, setIsInitialRender] = useState(true);
-  const [practiceQuestionCounts, setPracticeQuestionCounts] = useState({});
+  const [practiceQuestionCounts, setPracticeQuestionCounts] = useState(() => {
+    // Load cached counts from localStorage for instant rendering
+    try {
+      const cached = localStorage.getItem('practiceQuestionCounts');
+      if (cached) {
+        const { data, timestamp } = JSON.parse(cached);
+        // Cache valid for 1 hour
+        if (Date.now() - timestamp < 3600000) {
+          console.log('📊 Using cached practice question counts');
+          return data;
+        }
+      }
+    } catch (e) {
+      console.error('Error loading cached question counts:', e);
+    }
+    return {};
+  });
+  const [isLoadingCounts, setIsLoadingCounts] = useState(false);
 
 
   // Check for mode parameter in URL
@@ -147,6 +164,7 @@ const LessonsContent = () => {
   useEffect(() => {
     const loadPracticeQuestionCounts = async () => {
       try {
+        setIsLoadingCounts(true);
         const { supabase } = await import('../../services/api/supabase.service');
 
         console.log('📊 Loading practice question counts...');
@@ -185,9 +203,23 @@ const LessonsContent = () => {
 
         console.log('📊 Practice question counts loaded:', Object.keys(counts).length, 'lessons with questions');
         console.log('📊 Sample counts:', Object.entries(counts).slice(0, 5));
+
+        // Cache the counts in localStorage
+        try {
+          localStorage.setItem('practiceQuestionCounts', JSON.stringify({
+            data: counts,
+            timestamp: Date.now()
+          }));
+          console.log('📊 Cached practice question counts to localStorage');
+        } catch (e) {
+          console.error('Error caching question counts:', e);
+        }
+
         setPracticeQuestionCounts(counts);
       } catch (error) {
         console.error('❌ Error loading practice question counts:', error);
+      } finally {
+        setIsLoadingCounts(false);
       }
     };
 
@@ -631,7 +663,19 @@ const LessonsContent = () => {
                           }}>
                             {mode === 'lessons'
                               ? `${lessons.length} lesson${lessons.length !== 1 ? 's' : ''}`
-                              : `${totalQuestions} question${totalQuestions !== 1 ? 's' : ''}`
+                              : isLoadingCounts && Object.keys(practiceQuestionCounts).length === 0
+                                ? (
+                                  <span style={{
+                                    display: 'inline-block',
+                                    width: '80px',
+                                    height: '14px',
+                                    background: 'linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%)',
+                                    backgroundSize: '200% 100%',
+                                    animation: 'shimmer 1.5s infinite',
+                                    borderRadius: '3px'
+                                  }}></span>
+                                )
+                                : `${totalQuestions} question${totalQuestions !== 1 ? 's' : ''}`
                             }
                           </div>
                         </div>
@@ -725,6 +769,16 @@ const LessonsContent = () => {
                                   }}>
                                     {lessonContent[lesson.id]?.duration || ''}
                                   </div>
+                                ) : isLoadingCounts && Object.keys(practiceQuestionCounts).length === 0 ? (
+                                  <span style={{
+                                    display: 'inline-block',
+                                    width: '40px',
+                                    height: '14px',
+                                    background: 'linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%)',
+                                    backgroundSize: '200% 100%',
+                                    animation: 'shimmer 1.5s infinite',
+                                    borderRadius: '3px'
+                                  }}></span>
                                 ) : (
                                   <div style={{
                                     fontSize: '0.875rem',

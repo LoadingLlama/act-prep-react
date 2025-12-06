@@ -235,7 +235,7 @@ export const ConceptBox = ({ title, items, columns = 2 }) => {
 export const ComparisonTable = ({ columns }) => {
   return (
     <div style={{
-      margin: '1.5rem 0 1.5rem 1.5rem',
+      margin: '1.5rem 0',
       border: '1px solid #e5e7eb',
       borderRadius: '8px',
       overflow: 'hidden'
@@ -252,7 +252,7 @@ export const ComparisonTable = ({ columns }) => {
             borderRight: index < columns.length - 1 ? '1px solid #e5e7eb' : 'none',
             fontWeight: '700',
             fontSize: '0.875rem',
-            color: '#374151',
+            color: '#1f2937',
             textAlign: 'center'
           }}>
             {col.header}

@@ -23,8 +23,32 @@ const TestsContent = () => {
   } = useOutletContext();
   const [featureAccess, setFeatureAccess] = useState(null);
   const [previewTest, setPreviewTest] = useState(null);
-  const [hasCompletedDiagnostic, setHasCompletedDiagnostic] = useState(null); // null = loading, true/false = known status
-  const [completedTests, setCompletedTests] = useState(new Set()); // Set of completed test numbers
+  const [hasCompletedDiagnostic, setHasCompletedDiagnostic] = useState(() => {
+    // Load from cache for instant rendering
+    try {
+      const cached = localStorage.getItem(`hasCompletedDiagnostic_${user?.id}`);
+      return cached ? JSON.parse(cached) : null;
+    } catch (e) {
+      return null;
+    }
+  });
+  const [completedTests, setCompletedTests] = useState(() => {
+    // Load from cache for instant rendering
+    try {
+      const cached = localStorage.getItem(`completedTests_${user?.id}`);
+      if (cached) {
+        const { data, timestamp } = JSON.parse(cached);
+        // Cache valid for 5 minutes
+        if (Date.now() - timestamp < 300000) {
+          console.log('✅ Using cached completed tests');
+          return new Set(data);
+        }
+      }
+    } catch (e) {
+      console.error('Error loading cached completed tests:', e);
+    }
+    return new Set();
+  });
 
   const checkFeatureAccess = useCallback(async () => {
     try {
@@ -49,7 +73,15 @@ const TestsContent = () => {
         return;
       }
 
-      setHasCompletedDiagnostic(data && data.length > 0);
+      const hasCompleted = data && data.length > 0;
+      setHasCompletedDiagnostic(hasCompleted);
+
+      // Cache the result
+      try {
+        localStorage.setItem(`hasCompletedDiagnostic_${user.id}`, JSON.stringify(hasCompleted));
+      } catch (e) {
+        console.error('Error caching diagnostic status:', e);
+      }
     } catch (error) {
       console.error('Error checking diagnostic status:', error);
     }
@@ -87,6 +119,17 @@ const TestsContent = () => {
 
       console.log('✅ Completed practice tests (DB numbers):', Array.from(completed));
       setCompletedTests(completed);
+
+      // Cache the results
+      try {
+        localStorage.setItem(`completedTests_${user.id}`, JSON.stringify({
+          data: Array.from(completed),
+          timestamp: Date.now()
+        }));
+        console.log('✅ Cached completed tests to localStorage');
+      } catch (e) {
+        console.error('Error caching completed tests:', e);
+      }
     } catch (error) {
       console.error('Error checking completed tests:', error);
     }
@@ -154,29 +197,36 @@ const TestsContent = () => {
                     setPreviewTest(test);
                   }
                 }}
-                style={isLocked ? { opacity: 0.6, cursor: 'pointer' } : isCompleted ? { opacity: 0.7 } : {}}
+                style={{
+                  ...(isLocked ? { opacity: 0.6, cursor: 'pointer' } : isCompleted ? { opacity: 0.7 } : {}),
+                  position: 'relative'
+                }}
               >
+                {/* Completed badge - positioned absolutely */}
+                {isCompleted && (
+                  <div style={{
+                    position: 'absolute',
+                    top: '0.875rem',
+                    right: '0.875rem',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.25rem',
+                    fontSize: '0.6875rem',
+                    fontWeight: '600',
+                    color: '#10b981',
+                    background: '#f0fdf4',
+                    padding: '0.1875rem 0.5rem',
+                    borderRadius: '999px',
+                    border: '1px solid #86efac',
+                    zIndex: 1
+                  }}>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Completed
+                  </div>
+                )}
                 <div>
-                  {isCompleted && (
-                    <div style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.25rem',
-                      fontSize: '0.6875rem',
-                      fontWeight: '600',
-                      color: '#10b981',
-                      background: '#f0fdf4',
-                      padding: '0.1875rem 0.5rem',
-                      borderRadius: '999px',
-                      border: '1px solid #86efac',
-                      marginBottom: '0.5rem'
-                    }}>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      Completed
-                    </div>
-                  )}
                   <div className={classes.testIcon}>
                     {isLocked ? <HiLockClosed /> : test.icon}
                   </div>
