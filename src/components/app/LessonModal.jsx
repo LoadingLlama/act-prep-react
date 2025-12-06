@@ -12,6 +12,7 @@ import { lessonStructure as allLessonStructure } from '../../data/lessonStructur
 import { supabase } from '../../services/api/supabase.service';
 import LessonsService from '../../services/api/lessons.service';
 import PacketLesson_1_1 from '../lesson/PacketLesson_1_1';
+import PacketLesson_1_2 from '../lesson/PacketLesson_1_2';
 
 /**
  * LessonModal - Full-screen modal for lesson viewing
@@ -183,9 +184,11 @@ const LessonModal = ({
           <div style={{ display: lessonMode === 'review' ? 'flex' : 'none', flexDirection: 'column', height: '100%', overflow: 'hidden' }}>
           {lesson && currentLessonData ? (
             <div style={{ flex: 1, overflowY: 'auto', padding: '0' }}>
-              {/* Use packet format for sentence-structure lesson */}
+              {/* Use packet format for specific lessons */}
               {currentLesson === 'sentence-structure' ? (
                 <PacketLesson_1_1 />
+              ) : currentLesson === 'commas' ? (
+                <PacketLesson_1_2 />
               ) : (
                 <ProgressiveLessonRenderer
                   lesson={{...lesson, id: currentLessonData.id}}
