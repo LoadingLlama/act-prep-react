@@ -12,6 +12,7 @@ import {
   ComparisonTable,
   RuleBox
 } from './PacketComponents';
+import { QuickCheck, IdentifyError, TrueFalse, ApplyTheRule } from './InlinePractice';
 import ExampleCard from '../ExampleCard';
 import { useTermTooltips } from '../../hooks/useTermTooltips';
 
@@ -467,6 +468,18 @@ const PacketLesson_1_1 = () => {
         When the independent clause comes <strong>before</strong> the dependent clause, do NOT use a comma.
       </TipBox>
 
+      <QuickCheck
+        question="Which of the following sentences is correctly punctuated?"
+        choices={[
+          "The movie was excellent, I would recommend it to anyone.",
+          "The movie was excellent; I would recommend it to anyone.",
+          "The movie was excellent I would recommend it to anyone.",
+          "The movie was excellent, and I would recommend it to anyone."
+        ]}
+        correctAnswer={3}
+        explanation="This sentence joins two independent clauses using comma + FANBOYS (Rule #2). Answer A is a comma splice (incorrect). Answer B uses a semicolon (correct but not the only option). Answer C has no punctuation (run-on). Answer D uses comma + 'and' which follows Rule #2 perfectly."
+      />
+
       {/* PAGE 4 - Comma Splices */}
       <div style={{
         textAlign: 'center',
@@ -575,6 +588,17 @@ const PacketLesson_1_1 = () => {
           </div>
         </div>
       </div>
+
+      <IdentifyError
+        sentence="The students studied hard for the exam, they all passed with flying colors, it was a proud moment for the teacher."
+        parts={[
+          "The students studied hard for the exam,",
+          "they all passed with flying colors,",
+          "it was a proud moment for the teacher."
+        ]}
+        correctPart={1}
+        explanation="This is a comma splice. The sentence incorrectly uses commas to join three independent clauses. To fix it, you could use: (1) periods between clauses, (2) semicolons, or (3) comma + FANBOYS. For example: 'The students studied hard for the exam, and they all passed with flying colors. It was a proud moment for the teacher.'"
+      />
 
       {/* PAGE 5 - Solving Sentence Structure Questions */}
       <div style={{
@@ -700,6 +724,19 @@ const PacketLesson_1_1 = () => {
           </div>
         </div>
       </div>
+
+      <ApplyTheRule
+        title="Three-Step Approach Practice"
+        question="Identify the clause types: 'Although the concert was sold out we managed to get tickets.'"
+        options={[
+          "Both clauses are independent (missing comma)",
+          "Dependent clause → Independent clause (missing comma after 'out')",
+          "Independent clause → Dependent clause (comma not needed)",
+          "This is a sentence fragment"
+        ]}
+        correctAnswer={1}
+        explanation="'Although the concert was sold out' is a dependent clause (starts with 'although'), and 'we managed to get tickets' is an independent clause. When a dependent clause comes before an independent clause, you need a comma between them (Rule #4). The correct punctuation is: 'Although the concert was sold out, we managed to get tickets.'"
+      />
 
       {/* Key Takeaways */}
       <div style={{

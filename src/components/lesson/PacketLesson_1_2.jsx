@@ -12,6 +12,7 @@ import {
   ComparisonTable,
   RuleBox
 } from './PacketComponents';
+import { QuickCheck, IdentifyError, TrueFalse, ApplyTheRule } from './InlinePractice';
 import { useTermTooltips } from '../../hooks/useTermTooltips';
 
 const PacketLesson_1_2 = () => {
@@ -170,6 +171,12 @@ const PacketLesson_1_2 = () => {
       <TipBox title="TIP">
         This is the most common comma type on the ACT. You'll see 5-8 questions testing unnecessary information commas on every test.
       </TipBox>
+
+      <TrueFalse
+        statement="A comma is needed in this sentence: 'The book that I borrowed from the library was fascinating.'"
+        correctAnswer={false}
+        explanation="FALSE. The phrase 'that I borrowed from the library' is necessary information specifying which book. Necessary information (using 'that') does NOT get commas. If it said 'The book, which I borrowed from the library, was fascinating' then commas would be needed because 'which' phrases are always unnecessary information."
+      />
 
       <h3 style={{
         fontSize: '17px',
@@ -348,6 +355,19 @@ const PacketLesson_1_2 = () => {
         ]}
       />
 
+      <ApplyTheRule
+        title="Names Rule Practice"
+        question="Which sentence is correctly punctuated?"
+        options={[
+          "My sister, Emma, is studying engineering at MIT.",
+          "My sister Emma is studying engineering at MIT.",
+          "Both are correct depending on context",
+          "Neither is correct"
+        ]}
+        correctAnswer={2}
+        explanation="Both can be correct! If you have only one sister, use commas: 'My sister, Emma, is studying...' (Emma is unnecessary because 'my sister' is specific to one person). If you have multiple sisters, don't use commas: 'My sister Emma is studying...' (Emma is necessary to specify which sister). The Names Rule depends on whether the identifier is specific to one person or not."
+      />
+
       <h3 style={{
         fontSize: '17px',
         fontWeight: '600',
@@ -391,6 +411,18 @@ const PacketLesson_1_2 = () => {
       <TipBox title="EXCEPTION">
         Prepositional phrases like "on which," "in which," or "of which" don't use commas before them.
       </TipBox>
+
+      <QuickCheck
+        question="Which sentence correctly uses 'that' or 'which'?"
+        choices={[
+          "The documents, that need signatures, are on the desk.",
+          "The documents which need signatures are on the desk.",
+          "The documents that need signatures are on the desk.",
+          "The documents, which need signatures are on the desk."
+        ]}
+        correctAnswer={2}
+        explanation="'That' phrases never get commas and indicate necessary information. Since we need to know WHICH documents (the ones needing signatures), this is necessary information. Answer C is correct. If we were adding extra information about all the documents, we'd say: 'The documents, which need signatures, are on the desk' (both commas required)."
+      />
 
       <h3 style={{
         fontSize: '17px',
@@ -588,6 +620,17 @@ const PacketLesson_1_2 = () => {
       <TipBox title="CRITICAL">
         For Position 3, you need BOTH the semicolon (before) AND the comma (after) the transitional word. Missing either one makes the sentence incorrect.
       </TipBox>
+
+      <IdentifyError
+        sentence="The team practiced every day however they still lost the championship game."
+        parts={[
+          "The team practiced every day",
+          "however",
+          "they still lost the championship game."
+        ]}
+        correctPart={1}
+        explanation="The error is missing punctuation around 'however'. Since 'however' appears between two independent clauses, you need: semicolon BEFORE + comma AFTER. Correct version: 'The team practiced every day; however, they still lost the championship game.' You could also write: 'The team, however, practiced every day...' (Position 2) or 'However, the team practiced every day...' (Position 1)."
+      />
 
       {/* SECTION 4 */}
       <div style={{
