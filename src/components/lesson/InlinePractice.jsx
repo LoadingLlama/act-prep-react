@@ -1,6 +1,6 @@
 /**
  * Inline Practice Components
- * Seamlessly integrated practice questions with varied styles
+ * Seamlessly integrated practice questions with minimal styling
  */
 
 import React, { useState } from 'react';
@@ -21,93 +21,58 @@ export const QuickCheck = ({ question, choices, correctAnswer, explanation }) =>
 
   return (
     <div style={{
-      margin: '2rem 0 2rem 1rem',
-      padding: '1.5rem',
-      backgroundColor: '#fafafa',
-      borderLeft: '4px solid #3b82f6',
-      borderRadius: '4px'
+      margin: '2rem 0 2rem 1.5rem'
     }}>
-      <div style={{
-        fontSize: '13px',
-        fontWeight: '700',
-        letterSpacing: '0.05em',
-        color: '#3b82f6',
-        marginBottom: '1rem'
-      }}>
-        ✏️ QUICK CHECK
-      </div>
-
       <div style={{
         fontSize: '15px',
         fontWeight: '600',
         color: '#1f2937',
-        marginBottom: '1rem',
-        lineHeight: '1.6'
+        marginBottom: '1rem'
       }}>
-        {question}
+        Exercise: {question}
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+      <div style={{ marginLeft: '1.5rem' }}>
         {choices.map((choice, index) => (
-          <button
+          <div
             key={index}
-            onClick={() => handleChoice(index)}
-            disabled={showFeedback}
+            onClick={() => !showFeedback && handleChoice(index)}
             style={{
-              padding: '0.75rem 1rem',
-              textAlign: 'left',
-              border: showFeedback
-                ? (index === correctAnswer ? '2px solid #16a34a' : index === selected ? '2px solid #dc2626' : '1px solid #d1d5db')
-                : '1px solid #d1d5db',
-              borderRadius: '6px',
-              backgroundColor: showFeedback
-                ? (index === correctAnswer ? '#f0fdf4' : index === selected ? '#fef2f2' : '#ffffff')
-                : (selected === index ? '#f3f4f6' : '#ffffff'),
+              padding: '0.5rem 0',
               cursor: showFeedback ? 'default' : 'pointer',
-              fontSize: '14px',
+              fontSize: '15px',
               color: '#1f2937',
-              transition: 'all 0.2s',
-              position: 'relative'
+              lineHeight: '1.6'
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <span style={{
-                fontWeight: '600',
-                minWidth: '20px'
-              }}>
-                {String.fromCharCode(65 + index)}.
-              </span>
-              <span style={{ flex: 1 }}>{choice}</span>
-              {showFeedback && index === correctAnswer && (
-                <span style={{ color: '#16a34a', fontWeight: '700' }}>✓</span>
-              )}
-              {showFeedback && index === selected && index !== correctAnswer && (
-                <span style={{ color: '#dc2626', fontWeight: '700' }}>✗</span>
-              )}
-            </div>
-          </button>
+            <span style={{ fontWeight: '600', marginRight: '0.5rem' }}>
+              {index + 1})
+            </span>
+            <span style={{
+              textDecoration: selected === index ? 'underline' : 'none'
+            }}>
+              {choice}
+            </span>
+            {showFeedback && index === correctAnswer && (
+              <span style={{ marginLeft: '0.5rem', color: '#16a34a' }}>✓</span>
+            )}
+            {showFeedback && index === selected && index !== correctAnswer && (
+              <span style={{ marginLeft: '0.5rem', color: '#dc2626' }}>✗</span>
+            )}
+          </div>
         ))}
       </div>
 
       {showFeedback && (
         <div style={{
           marginTop: '1rem',
-          padding: '1rem',
-          backgroundColor: isCorrect ? '#f0fdf4' : '#fef2f2',
-          border: isCorrect ? '1px solid #86efac' : '1px solid #fecaca',
-          borderRadius: '6px',
+          marginLeft: '1.5rem',
           fontSize: '14px',
           lineHeight: '1.6',
-          color: '#1f2937'
+          color: '#374151',
+          fontStyle: 'italic'
         }}>
-          <div style={{
-            fontWeight: '700',
-            marginBottom: '0.5rem',
-            color: isCorrect ? '#16a34a' : '#dc2626'
-          }}>
-            {isCorrect ? '✓ Correct!' : '✗ Not quite.'}
-          </div>
-          <div>{explanation}</div>
+          {explanation}
         </div>
       )}
     </div>
@@ -130,96 +95,65 @@ export const IdentifyError = ({ sentence, parts, correctPart, explanation }) => 
 
   return (
     <div style={{
-      margin: '2rem 0 2rem 1rem',
-      padding: '1.5rem',
-      backgroundColor: '#fffbeb',
-      border: '2px solid #fbbf24',
-      borderRadius: '6px'
+      margin: '2rem 0 2rem 1.5rem'
     }}>
-      <div style={{
-        fontSize: '13px',
-        fontWeight: '700',
-        letterSpacing: '0.05em',
-        color: '#d97706',
-        marginBottom: '1rem'
-      }}>
-        🔍 SPOT THE ERROR
-      </div>
-
       <div style={{
         fontSize: '15px',
         fontWeight: '600',
         color: '#1f2937',
-        marginBottom: '1rem'
+        marginBottom: '0.75rem'
       }}>
-        Which part of this sentence is incorrect?
+        Exercise: Identify which part of this sentence contains an error.
       </div>
 
       <div style={{
         fontSize: '15px',
-        lineHeight: '1.8',
+        lineHeight: '1.7',
         color: '#1f2937',
-        marginBottom: '1.5rem',
-        padding: '1rem',
-        backgroundColor: '#ffffff',
-        borderRadius: '4px'
+        marginBottom: '1rem',
+        marginLeft: '1.5rem'
       }}>
         {sentence}
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <div style={{ marginLeft: '1.5rem' }}>
         {parts.map((part, index) => (
-          <button
+          <div
             key={index}
-            onClick={() => handleSelect(index)}
-            disabled={showFeedback}
+            onClick={() => !showFeedback && handleSelect(index)}
             style={{
-              padding: '0.5rem 1rem',
-              textAlign: 'left',
-              border: showFeedback
-                ? (index === correctPart ? '2px solid #dc2626' : index === selected ? '2px solid #9ca3af' : '1px solid #d1d5db')
-                : '1px solid #d1d5db',
-              borderRadius: '4px',
-              backgroundColor: showFeedback
-                ? (index === correctPart ? '#fef2f2' : index === selected ? '#f3f4f6' : '#ffffff')
-                : (selected === index ? '#f3f4f6' : '#ffffff'),
+              padding: '0.5rem 0',
               cursor: showFeedback ? 'default' : 'pointer',
-              fontSize: '13px',
-              color: '#1f2937'
+              fontSize: '15px',
+              color: '#1f2937',
+              lineHeight: '1.6'
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span style={{ fontWeight: '600', color: '#6b7280' }}>
-                Part {index + 1}:
-              </span>
-              <span>{part}</span>
-              {showFeedback && index === correctPart && (
-                <span style={{ marginLeft: 'auto', color: '#dc2626', fontWeight: '700' }}>← Error here</span>
-              )}
-            </div>
-          </button>
+            <span style={{ fontWeight: '600', marginRight: '0.5rem' }}>
+              {index + 1})
+            </span>
+            <span style={{
+              textDecoration: selected === index ? 'underline' : 'none'
+            }}>
+              {part}
+            </span>
+            {showFeedback && index === correctPart && (
+              <span style={{ marginLeft: '0.5rem', color: '#dc2626' }}>← Error</span>
+            )}
+          </div>
         ))}
       </div>
 
       {showFeedback && (
         <div style={{
           marginTop: '1rem',
-          padding: '1rem',
-          backgroundColor: isCorrect ? '#f0fdf4' : '#fef2f2',
-          border: isCorrect ? '1px solid #86efac' : '1px solid #fecaca',
-          borderRadius: '6px',
+          marginLeft: '1.5rem',
           fontSize: '14px',
           lineHeight: '1.6',
-          color: '#1f2937'
+          color: '#374151',
+          fontStyle: 'italic'
         }}>
-          <div style={{
-            fontWeight: '700',
-            marginBottom: '0.5rem',
-            color: isCorrect ? '#16a34a' : '#dc2626'
-          }}>
-            {isCorrect ? '✓ Correct!' : '✗ Not quite.'}
-          </div>
-          <div>{explanation}</div>
+          {explanation}
         </div>
       )}
     </div>
@@ -242,98 +176,82 @@ export const TrueFalse = ({ statement, correctAnswer, explanation }) => {
 
   return (
     <div style={{
-      margin: '2rem 0 2rem 1rem',
-      padding: '1.5rem',
-      backgroundColor: '#f0f9ff',
-      border: '2px solid #38bdf8',
-      borderRadius: '6px'
+      margin: '2rem 0 2rem 1.5rem'
     }}>
       <div style={{
-        fontSize: '13px',
-        fontWeight: '700',
-        letterSpacing: '0.05em',
-        color: '#0284c7',
+        fontSize: '15px',
+        fontWeight: '600',
+        color: '#1f2937',
         marginBottom: '1rem'
       }}>
-        ✓✗ TRUE OR FALSE?
+        Exercise: True or False?
       </div>
 
       <div style={{
         fontSize: '15px',
-        fontWeight: '500',
+        lineHeight: '1.7',
         color: '#1f2937',
-        marginBottom: '1.5rem',
-        lineHeight: '1.6'
+        marginBottom: '1rem',
+        marginLeft: '1.5rem'
       }}>
         {statement}
       </div>
 
-      <div style={{ display: 'flex', gap: '1rem' }}>
-        <button
-          onClick={() => handleChoice(true)}
-          disabled={showFeedback}
+      <div style={{ marginLeft: '1.5rem', display: 'flex', gap: '2rem' }}>
+        <div
+          onClick={() => !showFeedback && handleChoice(true)}
           style={{
-            flex: 1,
-            padding: '0.75rem',
-            border: showFeedback
-              ? (correctAnswer === true ? '2px solid #16a34a' : selected === true ? '2px solid #dc2626' : '1px solid #d1d5db')
-              : '1px solid #d1d5db',
-            borderRadius: '6px',
-            backgroundColor: showFeedback
-              ? (correctAnswer === true ? '#f0fdf4' : selected === true ? '#fef2f2' : '#ffffff')
-              : (selected === true ? '#e0f2fe' : '#ffffff'),
             cursor: showFeedback ? 'default' : 'pointer',
             fontSize: '15px',
-            fontWeight: '600',
-            color: '#1f2937'
+            color: '#1f2937',
+            fontWeight: '600'
           }}
         >
-          TRUE
-          {showFeedback && correctAnswer === true && <span style={{ marginLeft: '0.5rem', color: '#16a34a' }}>✓</span>}
-        </button>
-        <button
-          onClick={() => handleChoice(false)}
-          disabled={showFeedback}
+          <span style={{
+            textDecoration: selected === true ? 'underline' : 'none'
+          }}>
+            TRUE
+          </span>
+          {showFeedback && correctAnswer === true && (
+            <span style={{ marginLeft: '0.5rem', color: '#16a34a' }}>✓</span>
+          )}
+          {showFeedback && selected === true && correctAnswer === false && (
+            <span style={{ marginLeft: '0.5rem', color: '#dc2626' }}>✗</span>
+          )}
+        </div>
+        <div
+          onClick={() => !showFeedback && handleChoice(false)}
           style={{
-            flex: 1,
-            padding: '0.75rem',
-            border: showFeedback
-              ? (correctAnswer === false ? '2px solid #16a34a' : selected === false ? '2px solid #dc2626' : '1px solid #d1d5db')
-              : '1px solid #d1d5db',
-            borderRadius: '6px',
-            backgroundColor: showFeedback
-              ? (correctAnswer === false ? '#f0fdf4' : selected === false ? '#fef2f2' : '#ffffff')
-              : (selected === false ? '#e0f2fe' : '#ffffff'),
             cursor: showFeedback ? 'default' : 'pointer',
             fontSize: '15px',
-            fontWeight: '600',
-            color: '#1f2937'
+            color: '#1f2937',
+            fontWeight: '600'
           }}
         >
-          FALSE
-          {showFeedback && correctAnswer === false && <span style={{ marginLeft: '0.5rem', color: '#16a34a' }}>✓</span>}
-        </button>
+          <span style={{
+            textDecoration: selected === false ? 'underline' : 'none'
+          }}>
+            FALSE
+          </span>
+          {showFeedback && correctAnswer === false && (
+            <span style={{ marginLeft: '0.5rem', color: '#16a34a' }}>✓</span>
+          )}
+          {showFeedback && selected === false && correctAnswer === true && (
+            <span style={{ marginLeft: '0.5rem', color: '#dc2626' }}>✗</span>
+          )}
+        </div>
       </div>
 
       {showFeedback && (
         <div style={{
           marginTop: '1rem',
-          padding: '1rem',
-          backgroundColor: isCorrect ? '#f0fdf4' : '#fef2f2',
-          border: isCorrect ? '1px solid #86efac' : '1px solid #fecaca',
-          borderRadius: '6px',
+          marginLeft: '1.5rem',
           fontSize: '14px',
           lineHeight: '1.6',
-          color: '#1f2937'
+          color: '#374151',
+          fontStyle: 'italic'
         }}>
-          <div style={{
-            fontWeight: '700',
-            marginBottom: '0.5rem',
-            color: isCorrect ? '#16a34a' : '#dc2626'
-          }}>
-            {isCorrect ? '✓ Correct!' : '✗ Not quite.'}
-          </div>
-          <div>{explanation}</div>
+          {explanation}
         </div>
       )}
     </div>
@@ -356,94 +274,58 @@ export const ApplyTheRule = ({ title, question, options, correctAnswer, explanat
 
   return (
     <div style={{
-      margin: '2rem 0 2rem 1rem',
-      padding: '1.5rem',
-      backgroundColor: '#faf5ff',
-      border: '2px solid #a78bfa',
-      borderRadius: '6px'
+      margin: '2rem 0 2rem 1.5rem'
     }}>
       <div style={{
-        fontSize: '13px',
-        fontWeight: '700',
-        letterSpacing: '0.05em',
-        color: '#7c3aed',
-        marginBottom: '0.5rem'
-      }}>
-        📝 APPLY THE RULE
-      </div>
-
-      {title && (
-        <div style={{
-          fontSize: '12px',
-          fontWeight: '600',
-          color: '#6b7280',
-          marginBottom: '1rem',
-          fontStyle: 'italic'
-        }}>
-          {title}
-        </div>
-      )}
-
-      <div style={{
         fontSize: '15px',
-        fontWeight: '500',
+        fontWeight: '600',
         color: '#1f2937',
-        marginBottom: '1.25rem',
-        lineHeight: '1.6'
+        marginBottom: '1rem'
       }}>
-        {question}
+        Exercise: {question}
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <div style={{ marginLeft: '1.5rem' }}>
         {options.map((option, index) => (
-          <button
+          <div
             key={index}
-            onClick={() => handleSelect(index)}
-            disabled={showFeedback}
+            onClick={() => !showFeedback && handleSelect(index)}
             style={{
-              padding: '0.75rem 1rem',
-              textAlign: 'left',
-              border: showFeedback
-                ? (index === correctAnswer ? '2px solid #16a34a' : index === selected ? '2px solid #dc2626' : '1px solid #d1d5db')
-                : '1px solid #d1d5db',
-              borderRadius: '6px',
-              backgroundColor: showFeedback
-                ? (index === correctAnswer ? '#f0fdf4' : index === selected ? '#fef2f2' : '#ffffff')
-                : (selected === index ? '#faf5ff' : '#ffffff'),
+              padding: '0.5rem 0',
               cursor: showFeedback ? 'default' : 'pointer',
-              fontSize: '14px',
+              fontSize: '15px',
               color: '#1f2937',
-              fontFamily: 'monospace',
-              lineHeight: '1.5'
+              lineHeight: '1.6'
             }}
           >
-            {option}
+            <span style={{ fontWeight: '600', marginRight: '0.5rem' }}>
+              {index + 1})
+            </span>
+            <span style={{
+              textDecoration: selected === index ? 'underline' : 'none'
+            }}>
+              {option}
+            </span>
             {showFeedback && index === correctAnswer && (
-              <span style={{ marginLeft: '0.75rem', color: '#16a34a', fontWeight: '700' }}>✓</span>
+              <span style={{ marginLeft: '0.5rem', color: '#16a34a' }}>✓</span>
             )}
-          </button>
+            {showFeedback && index === selected && index !== correctAnswer && (
+              <span style={{ marginLeft: '0.5rem', color: '#dc2626' }}>✗</span>
+            )}
+          </div>
         ))}
       </div>
 
       {showFeedback && (
         <div style={{
           marginTop: '1rem',
-          padding: '1rem',
-          backgroundColor: isCorrect ? '#f0fdf4' : '#fef2f2',
-          border: isCorrect ? '1px solid #86efac' : '1px solid #fecaca',
-          borderRadius: '6px',
+          marginLeft: '1.5rem',
           fontSize: '14px',
           lineHeight: '1.6',
-          color: '#1f2937'
+          color: '#374151',
+          fontStyle: 'italic'
         }}>
-          <div style={{
-            fontWeight: '700',
-            marginBottom: '0.5rem',
-            color: isCorrect ? '#16a34a' : '#dc2626'
-          }}>
-            {isCorrect ? '✓ Correct!' : '✗ Not quite.'}
-          </div>
-          <div>{explanation}</div>
+          {explanation}
         </div>
       )}
     </div>
