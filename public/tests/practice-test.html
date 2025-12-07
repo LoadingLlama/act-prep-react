@@ -889,10 +889,19 @@
                 // Log first question HTML to see what's being generated
                 if (idx === 0) {
                     console.log('🔍 First question HTML (first 500 chars):', questionHTML.substring(0, 500));
+                    console.log('📝 First question data:', {
+                        id: q.id,
+                        hasExplanation: !!q.explanation,
+                        explanationLength: q.explanation ? q.explanation.length : 0,
+                        explanationPreview: q.explanation ? q.explanation.substring(0, 100) : 'NO EXPLANATION'
+                    });
                 }
             });
 
+            // Log explanation stats
+            const questionsWithExplanations = questions.filter(q => q.explanation && q.explanation.length > 0).length;
             console.log('✅ Finished rendering', questions.length, 'questions. Review mode:', reviewMode);
+            console.log(`📊 Explanation stats: ${questionsWithExplanations}/${questions.length} questions have explanations`);
             questionSection.innerHTML = questionHTML;
 
             // Typeset math after content is rendered
