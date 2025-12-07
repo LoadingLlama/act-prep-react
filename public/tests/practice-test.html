@@ -189,15 +189,6 @@
                         <span id="questionStatusText" style="line-height: 1;">Wrong</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 0.5rem; flex: 1; justify-content: flex-end;">
-                        <button
-                            id="explanationNavBtn"
-                            onclick="toggleCurrentExplanation()"
-                            style="display: none; background: #ffffff; border: 1px solid #e2e8f0; color: #0f172a; font-size: 0.875rem; font-weight: 600; cursor: pointer; padding: 0.5rem 1rem; border-radius: 8px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; transition: all 0.2s ease; box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.1);"
-                            onmouseover="this.style.background='#f8fafc'; this.style.borderColor='#cbd5e1'; this.style.boxShadow='0 3px 0 0 rgba(0, 0, 0, 0.15)';"
-                            onmouseout="this.style.background='#ffffff'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 3px 0 0 rgba(0, 0, 0, 0.1)';"
-                        >
-                            Explanation
-                        </button>
                         <button class="nav-button" id="prevBtn" onclick="previousQuestion()" disabled style="padding: 0.5rem 1rem; font-size: 0.875rem;">‹ PREV</button>
                         <button class="nav-button primary" id="nextBtn" onclick="nextQuestion()" style="padding: 0.5rem 1rem; font-size: 0.875rem;">NEXT ›</button>
                     </div>
@@ -959,32 +950,6 @@
             }
         }
 
-        function toggleCurrentExplanation() {
-            console.log('🔘 Toggle explanation clicked for question', currentQuestion);
-            const content = document.getElementById(`explanation-content-${currentQuestion}`);
-            const btn = document.getElementById('explanationNavBtn');
-
-            console.log('📦 Content element:', content ? 'found' : 'NOT FOUND');
-            console.log('🔘 Button element:', btn ? 'found' : 'NOT FOUND');
-
-            if (content && btn) {
-                const isHidden = content.style.display === 'none' || content.style.display === '';
-                console.log('👁️ Current display:', content.style.display, '- Will show?', isHidden);
-
-                if (isHidden) {
-                    content.style.display = 'block';
-                    btn.textContent = 'Hide Explanation';
-                    console.log('✅ Explanation shown');
-                } else {
-                    content.style.display = 'none';
-                    btn.textContent = 'Explanation';
-                    console.log('✅ Explanation hidden');
-                }
-            } else {
-                console.error('❌ Could not find content or button element');
-            }
-        }
-
         function updateDisplay() {
             // Hide all questions and passages
             document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
@@ -1099,25 +1064,6 @@
             }
 
             document.getElementById('itemNumber').textContent = `Item ${currentQuestion}`;
-
-            // Show/hide explanation button in review mode
-            const explanationBtn = document.getElementById('explanationNavBtn');
-            if (reviewMode && explanationBtn) {
-                const currentQuestionObj = questions.find((q, idx) => (q.question_number || (idx + 1)) === currentQuestion);
-                console.log('🔍 Looking for question', currentQuestion, 'found:', currentQuestionObj ? 'yes' : 'no', 'has explanation:', currentQuestionObj?.explanation ? 'yes' : 'no');
-                if (currentQuestionObj && currentQuestionObj.explanation) {
-                    explanationBtn.style.display = 'block';
-                    // Reset button text when changing questions
-                    const explanationContent = document.getElementById(`explanation-content-${currentQuestion}`);
-                    if (explanationContent) {
-                        explanationBtn.textContent = explanationContent.style.display === 'none' ? 'Explanation' : 'Hide Explanation';
-                    } else {
-                        explanationBtn.textContent = 'Explanation';
-                    }
-                } else {
-                    explanationBtn.style.display = 'none';
-                }
-            }
 
             // Show/hide question status indicator in review mode
             const statusIndicator = document.getElementById('questionStatusIndicator');
