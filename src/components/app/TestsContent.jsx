@@ -194,7 +194,7 @@ const TestsContent = () => {
                     navigate('/app/upgrade');
                   } else {
                     soundEffects.playClick();
-                    setPreviewTest(test);
+                    setPracticeTestOpen(test.number);
                   }
                 }}
                 style={{
