@@ -12,7 +12,7 @@ import {
   ComparisonTable,
   RuleBox
 } from './PacketComponents';
-import { QuickCheck, IdentifyError, TrueFalse, ApplyTheRule } from './InlinePractice';
+import { QuickCheck, IdentifyError, TrueFalse, ApplyTheRule, CommaCorrectness } from './InlinePractice';
 import { useTermTooltips } from '../../hooks/useTermTooltips';
 
 const PacketLesson_1_2 = () => {
@@ -45,8 +45,7 @@ const PacketLesson_1_2 = () => {
         color: '#374151',
         marginBottom: '3rem'
       }}>
-        Commas are the most common punctuation on the ACT English Test, appearing in 15-20 questions per test.
-        To master comma questions, you need to understand the 4 types of commas and when each one should be used.
+        <strong>Commas are the most common punctuation on the ACT English Test, appearing in 15-20 questions per test.</strong> To master comma questions, you need to understand the <strong>4 types of commas</strong> and when each one should be used.
       </div>
 
       {/* Section 1: The Four Types */}
@@ -66,8 +65,8 @@ const PacketLesson_1_2 = () => {
         color: '#374151',
         marginBottom: '1.5rem'
       }}>
-        The ACT tests exactly 4 comma rules—master these and you'll handle every comma question.
-        Each type has a specific purpose and can't be substituted with another. Understanding when to use
+        <strong>The ACT tests exactly 4 comma rules.</strong> Master these and you'll handle every comma question.{' '}
+        <strong>Each type has a specific purpose and can't be substituted with another.</strong> Understanding when to use
         each type is critical for avoiding comma errors.
       </div>
 
@@ -88,16 +87,22 @@ const PacketLesson_1_2 = () => {
         marginBottom: '0.75rem'
       }}>
         Use a comma and a <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>FANBOYS</strong> word to join two independent clauses.
-        Remember from the previous lesson: FANBOYS = For, And, Nor, But, Or, Yet, So.
-        Both sides of the FANBOYS word must be independent clauses (complete sentences).
+        Remember from the previous lesson: <strong>FANBOYS = For, And, Nor, But, Or, Yet, So.</strong>{' '}
+        <strong>Both sides of the FANBOYS word must be independent clauses (complete sentences).</strong>
       </div>
 
       <div style={{
         marginLeft: '2rem',
         marginBottom: '1.5rem'
       }}>
-        <div style={{ fontSize: '15px', color: '#1f2937' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
           My alarm clock did not go off this morning, so I arrived late at school.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
+          The weather forecast predicted rain, but the sun shone brightly all day.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937' }}>
+          I wanted to join the study group, yet I had a conflicting commitment.
         </div>
       </div>
 
@@ -117,7 +122,7 @@ const PacketLesson_1_2 = () => {
         color: '#374151',
         marginBottom: '0.75rem'
       }}>
-        When a dependent clause comes before an independent clause, use a comma to separate them.
+        <strong>When a dependent clause comes before an independent clause, use a comma to separate them.</strong>{' '}
         The dependent clause starts with subordinating conjunctions like while, although, because, if.
         This is Rule #4 from the previous lesson on compound sentences.
       </div>
@@ -126,8 +131,14 @@ const PacketLesson_1_2 = () => {
         marginLeft: '2rem',
         marginBottom: '1.5rem'
       }}>
-        <div style={{ fontSize: '15px', color: '#1f2937' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
           While electronic music has become very popular, many people still prefer classic rock.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
+          Because the library closes at 9 PM, students must finish their research by then.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937' }}>
+          Although she had never visited France, she spoke French fluently.
         </div>
       </div>
 
@@ -147,9 +158,9 @@ const PacketLesson_1_2 = () => {
         color: '#374151',
         marginBottom: '0.75rem'
       }}>
-        Commas separate <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>unnecessary information</strong> from the rest of the sentence.
-        Information is unnecessary if you can remove it without fundamentally changing the sentence's meaning.
-        Unnecessary information can be as short as one word or as long as a lengthy phrase.
+        Commas separate <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>unnecessary information</strong> from the rest of the sentence.{' '}
+        <strong>Information is unnecessary if you can remove it without fundamentally changing the sentence's meaning.</strong>
+        {' '}Unnecessary information can be as short as one word or as long as a lengthy phrase.
       </div>
 
       <div style={{
@@ -159,8 +170,11 @@ const PacketLesson_1_2 = () => {
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
           Mrs. Ellison, who is known for giving pop quizzes, is my least favorite teacher.
         </div>
-        <div style={{ fontSize: '15px', color: '#1f2937' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
           The basketball team, though, did not mount a comeback this week.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937' }}>
+          My car, a 2015 Honda Civic, needs new tires before winter.
         </div>
       </div>
 
@@ -191,7 +205,7 @@ const PacketLesson_1_2 = () => {
         marginBottom: '0.75rem'
       }}>
         Use commas when listing more than two items or with multiple adjectives modifying the same noun.
-        Always use commas between all items in a series, including before the final "and" or "or".
+        <strong>Always use commas between all items in a series, including before the final "and" or "or".</strong>
       </div>
 
       <div style={{
@@ -199,10 +213,13 @@ const PacketLesson_1_2 = () => {
         marginBottom: '1.5rem'
       }}>
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
-          List example: The group ordered coconut shrimp, hot wings, and onion rings.
+          The group ordered coconut shrimp, hot wings, and onion rings.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
+          The old, limping dog still managed to complete the 3-mile hike.
         </div>
         <div style={{ fontSize: '15px', color: '#1f2937' }}>
-          Adjectives example: The old, limping dog still managed to complete the 3-mile hike.
+          She packed her laptop, notebooks, pens, and a water bottle for the study session.
         </div>
       </div>
 
@@ -239,10 +256,10 @@ const PacketLesson_1_2 = () => {
         color: '#374151',
         marginBottom: '1.5rem'
       }}>
-        The most common comma type on the ACT separates unnecessary information. Information is unnecessary
+        <strong>The most common comma type on the ACT separates unnecessary information.</strong> Information is unnecessary
         if removing it doesn't fundamentally change the sentence's meaning. Unnecessary information can appear
-        before a comma, after a comma, or between two commas. After removing unnecessary information, what
-        remains must still be a complete sentence.
+        before a comma, after a comma, or between two commas.{' '}
+        <strong>After removing unnecessary information, what remains must still be a complete sentence.</strong>
       </div>
 
       <h3 style={{
@@ -261,9 +278,9 @@ const PacketLesson_1_2 = () => {
         color: '#374151',
         marginBottom: '0.75rem'
       }}>
-        To test if information is unnecessary, cross it out and read what remains. If the sentence is still
-        complete and makes sense, the information is unnecessary. If the sentence becomes incomplete or loses
-        critical meaning, the information is necessary (no commas).
+        <strong>To test if information is unnecessary, cross it out and read what remains.</strong> If the sentence is still
+        complete and makes sense, the information is unnecessary.{' '}
+        <strong>If the sentence becomes incomplete or loses critical meaning, the information is necessary (no commas).</strong>
       </div>
 
       <div style={{
@@ -294,7 +311,7 @@ const PacketLesson_1_2 = () => {
         color: '#374151',
         marginBottom: '0.75rem'
       }}>
-        The ACT loves testing comma usage with names—you'll see at least one question on this every test.
+        <strong>The ACT loves testing comma usage with names. You'll see at least one question on this every test.</strong>{' '}
         The rule depends on whether the identifier is specific to one person or not.
       </div>
 
@@ -307,7 +324,7 @@ const PacketLesson_1_2 = () => {
                 <div style={{ marginBottom: '1rem' }}>
                   <div style={{ fontWeight: '600', marginBottom: '0.5rem' }}>Rule:</div>
                   <div style={{ fontSize: '0.875rem', lineHeight: '1.6' }}>
-                    If the identifier is NOT specific to one person (friend, teacher, physicist), the name is necessary—no commas.
+                    If the identifier is NOT specific to one person (friend, teacher, physicist), the name is necessary, so no commas.
                   </div>
                 </div>
                 <div>
@@ -329,7 +346,7 @@ const PacketLesson_1_2 = () => {
                 <div style={{ marginBottom: '1rem' }}>
                   <div style={{ fontWeight: '600', marginBottom: '0.5rem' }}>Rule:</div>
                   <div style={{ fontSize: '0.875rem', lineHeight: '1.6' }}>
-                    If the identifier IS specific to one person (best friend, youngest sister, CEO), the name is unnecessary—use commas.
+                    If the identifier IS specific to one person (best friend, youngest sister, CEO), the name is unnecessary, so use commas.
                   </div>
                 </div>
                 <div>
@@ -376,7 +393,7 @@ const PacketLesson_1_2 = () => {
         color: '#374151',
         marginBottom: '0.75rem'
       }}>
-        Phrases starting with <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>that</strong> never get commas—phrases starting with <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>which</strong> always get commas.
+        Phrases starting with <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>that</strong> never get commas. Phrases starting with <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>which</strong> always get commas.
         This is one of the easiest rules to apply on the ACT.
       </div>
 
@@ -387,8 +404,14 @@ const PacketLesson_1_2 = () => {
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem' }}>
           <strong>"That"</strong> phrases are always necessary (no commas):
         </div>
-        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '1rem' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
           The dogs that live down the street are always barking.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
+          The book that I recommended is now a bestseller.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '1rem' }}>
+          Students that complete the assignment early can leave class.
         </div>
 
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem' }}>
@@ -396,6 +419,12 @@ const PacketLesson_1_2 = () => {
         </div>
         <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
           My neighbor's dogs, which are always barking, love to play fetch.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
+          The novel, which was published last year, won several awards.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
+          Her laptop, which she bought in 2020, still works perfectly.
         </div>
       </div>
 
@@ -446,15 +475,24 @@ const PacketLesson_1_2 = () => {
         <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
           Excited for the car ride, Jane's bulldog started to jump up and down.
         </div>
-        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '1rem' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
           Marcus applied for the internship, hoping that he would get the position.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '1rem' }}>
+          Frustrated by the delay, the passengers demanded answers from the airline.
         </div>
 
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem' }}>
           Necessary (no commas):
         </div>
-        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
           The politician waving to the crowd is predicted to win the election.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
+          Students completing the exam early should wait quietly.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem' }}>
+          The package delivered yesterday contained all the missing parts.
         </div>
       </div>
 
@@ -495,15 +533,27 @@ const PacketLesson_1_2 = () => {
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem' }}>
           <strong>At the FRONT:</strong> Always followed by a comma
         </div>
-        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '1rem' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
           On my way to work, I listened to my new favorite podcast.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
+          After the concert, we grabbed dinner at a nearby restaurant.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '1rem' }}>
+          During the summer months, the park stays open until 10 PM.
         </div>
 
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem' }}>
           <strong>In the MIDDLE or END:</strong> Almost never have commas (99% of the time)
         </div>
-        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
           The clothing on the bed is for vacation.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
+          The students walked to the library after school.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem' }}>
+          She found her keys under the couch cushions.
         </div>
       </div>
 
@@ -540,8 +590,8 @@ const PacketLesson_1_2 = () => {
         color: '#374151',
         marginBottom: '1.5rem'
       }}>
-        <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>Transitional words</strong> (also called conjunctive adverbs) require specific punctuation.
-        These are NOT FANBOYS—they require different punctuation rules.
+        <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>Transitional words</strong> (also called conjunctive adverbs) require specific punctuation.{' '}
+        <strong>These are NOT FANBOYS. They require different punctuation rules.</strong>
       </div>
 
       <ConceptBox
@@ -738,9 +788,91 @@ const PacketLesson_1_2 = () => {
 
       <TipBox title="BACKUP METHOD">
         Read the sentence out loud (or "out loud" in your head on test day). If you need to take a short pause for
-        a breath, you likely need a comma. This is a backup method—always verify with the crossing-out trick first.
+        a breath, you likely need a comma. This is a backup method. Always verify with the crossing-out trick first.
         Natural pauses often correspond to where unnecessary information appears.
       </TipBox>
+
+      {/* Comprehensive Comma Correctness Exercise */}
+      <CommaCorrectness
+        sentences={[
+          {
+            text: "The students studied hard for the exam, and they all passed with flying colors.",
+            isCorrect: true
+          },
+          {
+            text: "Although the weather was terrible, the game continued as scheduled.",
+            isCorrect: true
+          },
+          {
+            text: "My brother, who lives in Chicago, is visiting us next week.",
+            isCorrect: true
+          },
+          {
+            text: "She bought apples, oranges, bananas, and grapes at the market.",
+            isCorrect: true
+          },
+          {
+            text: "The teacher was absent, the substitute arrived late.",
+            isCorrect: false,
+            correctedVersion: "The teacher was absent, so the substitute arrived late.",
+            explanation: "This is a comma splice. Two independent clauses cannot be joined with just a comma. Add a FANBOYS word (like 'so'), use a semicolon, or make them separate sentences."
+          },
+          {
+            text: "She enjoys reading, writing and painting.",
+            isCorrect: false,
+            correctedVersion: "She enjoys reading, writing, and painting.",
+            explanation: "Missing the Oxford comma before 'and' in a list. The ACT requires commas between all items in a series."
+          },
+          {
+            text: "My sister Emma is studying engineering.",
+            isCorrect: false,
+            correctedVersion: "My sister, Emma, is studying engineering. (if you have one sister) OR My sister Emma is studying engineering. (if you have multiple sisters)",
+            explanation: "If 'my sister' refers to only one person, then 'Emma' is unnecessary information and needs commas. Context determines correctness."
+          },
+          {
+            text: "The book, that I borrowed from the library, was fascinating.",
+            isCorrect: false,
+            correctedVersion: "The book that I borrowed from the library was fascinating.",
+            explanation: "'That' phrases never get commas. They indicate necessary information."
+          },
+          {
+            text: "When I arrived home I found a package on my doorstep.",
+            isCorrect: false,
+            correctedVersion: "When I arrived home, I found a package on my doorstep.",
+            explanation: "When a dependent clause comes before an independent clause, use a comma to separate them."
+          },
+          {
+            text: "The students however were not pleased with the decision.",
+            isCorrect: false,
+            correctedVersion: "The students, however, were not pleased with the decision.",
+            explanation: "Transitional words like 'however' in the middle of a sentence must be separated by commas on both sides."
+          },
+          {
+            text: "I wanted to join the study group, but I had a conflicting commitment.",
+            isCorrect: true
+          },
+          {
+            text: "The old, limping dog still managed to complete the 3-mile hike.",
+            isCorrect: true
+          },
+          {
+            text: "My alarm clock did not go off this morning I arrived late at school.",
+            isCorrect: false,
+            correctedVersion: "My alarm clock did not go off this morning, so I arrived late at school.",
+            explanation: "Missing comma and coordinating conjunction. Two independent clauses need a comma + FANBOYS, semicolon, or period between them."
+          },
+          {
+            text: "The scientist which won the Nobel Prize spoke at our university.",
+            isCorrect: false,
+            correctedVersion: "The scientist who won the Nobel Prize spoke at our university.",
+            explanation: "Use 'who' for people, not 'which'. Also, this is necessary information (specifying which scientist), so if it were 'which', it would need commas - but it should be 'who' with no commas."
+          },
+          {
+            text: "After the concert, we grabbed dinner at a nearby restaurant.",
+            isCorrect: true
+          }
+        ]}
+      />
 
       {/* Key Takeaways */}
       <div style={{
@@ -762,23 +894,17 @@ const PacketLesson_1_2 = () => {
       <h2 style={{
         fontSize: '22px',
         fontWeight: '700',
-        color: '#1f2937',
-        marginBottom: '0.75rem'
+        color: '#16a34a',
+        marginBottom: '1rem'
       }}>
         Key Takeaways
       </h2>
 
       <div style={{
-        backgroundColor: '#f0fdf4',
-        border: '3px solid #86efac',
-        borderRadius: '8px',
-        padding: '1.5rem 2rem'
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem'
       }}>
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1rem'
-        }}>
           <div style={{
             display: 'flex',
             gap: '0.75rem',
@@ -798,7 +924,7 @@ const PacketLesson_1_2 = () => {
             color: '#166534'
           }}>
             <span style={{ fontSize: '18px', marginTop: '2px' }}>✓</span>
-            <span>Use the "crossing-out" trick for unnecessary information commas—if you can remove the information and still have a complete sentence, it's unnecessary and needs commas to separate it.</span>
+            <span>Use the "crossing-out" trick for unnecessary information commas. If you can remove the information and still have a complete sentence, it's unnecessary and needs commas to separate it.</span>
           </div>
 
           <div style={{
@@ -809,7 +935,7 @@ const PacketLesson_1_2 = () => {
             color: '#166534'
           }}>
             <span style={{ fontSize: '18px', marginTop: '2px' }}>✓</span>
-            <span>"That" phrases never get commas while "which" phrases always get commas—for names, use commas only when the identifier is specific to one person (best friend, CEO) but not for general identifiers (friend, teacher).</span>
+            <span>"That" phrases never get commas while "which" phrases always get commas. For names, use commas only when the identifier is specific to one person (best friend, CEO) but not for general identifiers (friend, teacher).</span>
           </div>
 
           <div style={{
@@ -822,7 +948,6 @@ const PacketLesson_1_2 = () => {
             <span style={{ fontSize: '18px', marginTop: '2px' }}>✓</span>
             <span>Transitional words like "however" require specific punctuation: at the front with a comma after, in the middle between two commas, or between independent clauses with a semicolon before and comma after.</span>
           </div>
-        </div>
       </div>
     </div>
   );

@@ -76,8 +76,7 @@ export const PacketHeader = ({ chapterNum, title, readingTime, verified = true }
             borderRadius: '6px',
             fontSize: '0.875rem',
             fontWeight: '500',
-            color: '#166534',
-            border: '1px solid #86efac'
+            color: '#166534'
           }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <polyline points="20 6 9 17 4 12"/>
