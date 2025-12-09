@@ -98,7 +98,7 @@ export const TipBox = ({ title = "TIP", children }) => {
     <div style={{
       margin: '2rem 0',
       padding: '1.25rem 1.5rem',
-      border: '3px solid #9ca3af',
+      border: '3px solid #000000',
       borderRadius: '6px'
     }}>
       <div style={{
@@ -198,7 +198,7 @@ export const ConceptBox = ({ title, items, columns = 2 }) => {
       margin: '1.5rem 0',
       padding: '1.25rem',
       borderRadius: '6px',
-      border: '3px solid #9ca3af'
+      border: '3px solid #000000'
     }}>
       {title && (
         <div style={{

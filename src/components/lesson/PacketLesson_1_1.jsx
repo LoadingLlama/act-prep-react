@@ -140,8 +140,8 @@ const PacketLesson_1_1 = () => {
         marginBottom: '1.5rem',
         marginLeft: '1rem'
       }}>
-        Unlike independent clauses, a <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>dependent clause</strong> cannot stand alone as a complete sentence.
-        Dependent clauses are most often created by adding a <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>subordinating conjunction</strong> to the front of an independent clause.
+        A <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>dependent clause</strong> has a subject and verb but cannot stand alone.
+        Dependent clauses are created when a <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>subordinating conjunction</strong> is placed at the beginning—these words act as signals that the clause is incomplete and must be attached to an independent clause.
       </div>
 
       <div style={{
@@ -151,7 +151,7 @@ const PacketLesson_1_1 = () => {
         marginBottom: '1.5rem',
         marginLeft: '1rem'
       }}>
-        How to identify: Read the clause out loud. If you feel like you need to keep talking after reading it—like something is missing—it's a dependent clause.
+        Memorize these subordinating conjunctions—when you see one starting a clause, it's dependent:
       </div>
 
       <ConceptBox
@@ -180,6 +180,17 @@ const PacketLesson_1_1 = () => {
           'whatever'
         ]}
       />
+
+      <div style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginBottom: '1.5rem',
+        marginLeft: '1rem',
+        marginTop: '1.5rem'
+      }}>
+        How to identify: Read the clause out loud. If it feels incomplete—like you need to keep talking—it's a dependent clause.
+      </div>
 
       <div style={{
         fontSize: '15px',
@@ -402,8 +413,19 @@ const PacketLesson_1_1 = () => {
         exampleLabels={['Independent', 'Independent']}
       />
 
+      <div style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginTop: '1.5rem',
+        marginBottom: '1.5rem',
+        marginLeft: '1rem'
+      }}>
+        Unlike subordinating conjunctions, <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>coordinating conjunctions</strong> (FANBOYS) join two independent clauses as equals. When used with a comma, both clauses remain independent.
+      </div>
+
       <TipBox title="TIP - FANBOYS">
-        Memorize these 7 special words!
+        These 7 words are the ONLY ones that can join two independent clauses with a comma:
         <div style={{ marginTop: '0.75rem', lineHeight: '1.9' }}>
           <strong>F</strong> or<br/>
           <strong>A</strong> nd<br/>
