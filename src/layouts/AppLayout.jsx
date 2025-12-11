@@ -304,9 +304,9 @@ export default function AppLayout() {
   };
 
   const closeLessonModal = () => {
-    // Navigate back to previous page or home
-    // Check if we came from a specific page, otherwise go to home
-    const previousPath = location.state?.from || '/app/home';
+    // Navigate back to previous page
+    // Default to /app/lessons instead of /app/home to avoid calendar flash
+    const previousPath = location.state?.from || '/app/lessons';
     navigate(previousPath);
 
     // Smooth cleanup with slight delay for better UX
