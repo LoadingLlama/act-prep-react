@@ -79,6 +79,7 @@ function ScrollToTop() {
 /**
  * Page transition wrapper for smooth fade effects
  * Only transitions on actual route changes, not tab visibility
+ * Skips animation for internal /app/* navigation
  */
 function PageTransition({ children }) {
   const location = useLocation();
@@ -88,14 +89,25 @@ function PageTransition({ children }) {
   useEffect(() => {
     // Only transition if the pathname actually changed
     if (prevPathnameRef.current !== location.pathname) {
-      setIsTransitioning(true);
+      const prevPath = prevPathnameRef.current;
+      const currentPath = location.pathname;
 
-      const timer = setTimeout(() => {
-        setIsTransitioning(false);
-        prevPathnameRef.current = location.pathname;
-      }, 150);
+      // Skip transition if both paths are internal /app/* routes
+      const bothAreAppRoutes = prevPath.startsWith('/app') && currentPath.startsWith('/app');
 
-      return () => clearTimeout(timer);
+      if (!bothAreAppRoutes) {
+        setIsTransitioning(true);
+
+        const timer = setTimeout(() => {
+          setIsTransitioning(false);
+          prevPathnameRef.current = location.pathname;
+        }, 150);
+
+        return () => clearTimeout(timer);
+      }
+
+      // Update ref immediately for app-to-app navigation (no transition)
+      prevPathnameRef.current = location.pathname;
     }
   }, [location.pathname]);
 
