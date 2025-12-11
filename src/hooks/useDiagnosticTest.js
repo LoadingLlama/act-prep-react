@@ -368,6 +368,38 @@ export const useDiagnosticTest = () => {
     return () => window.removeEventListener('message', handleMessage);
   }, [sessionId, userId, questions, currentSection]);
 
+  // Load insights data when user requests detailed results
+  useEffect(() => {
+    if (showInsights && !insightsData) {
+      console.log('📊 Loading insights data...');
+
+      try {
+        const resultsData = sessionStorage.getItem('practiceTestResults');
+        if (resultsData) {
+          const results = JSON.parse(resultsData);
+
+          // Prepare insights data with all test results
+          const insights = {
+            results: results.allSections || [],
+            analysis: analysisData,
+            correctAnswers: results.totalCorrect || 0,
+            totalQuestions: results.totalQuestions || 215,
+            scorePercentage: ((results.totalCorrect || 0) / (results.totalQuestions || 215)) * 100,
+            allQuestionResults: results.allQuestionResults || [],
+            questions: results.questions || []
+          };
+
+          console.log('✅ Insights data loaded:', insights);
+          setInsightsData(insights);
+        } else {
+          console.warn('⚠️ No test results found in sessionStorage');
+        }
+      } catch (error) {
+        console.error('❌ Error loading insights data:', error);
+      }
+    }
+  }, [showInsights, insightsData, analysisData]);
+
   return {
     // State
     loading,

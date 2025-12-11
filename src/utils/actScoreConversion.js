@@ -96,9 +96,19 @@ export function getMaxScore(section) {
  * @returns {number} Composite ACT score (rounded to nearest integer)
  */
 export function calculateComposite(sectionScores) {
-  const { english, math, reading, science } = sectionScores;
+  const { english = 0, math = 0, reading = 0, science = 0 } = sectionScores || {};
+
+  // If all scores are 0 or undefined, return 0 instead of NaN
+  if (!english && !math && !reading && !science) {
+    console.warn('⚠️ calculateComposite called with empty/invalid scores, returning 0');
+    return 0;
+  }
+
   const sum = english + math + reading + science;
-  return Math.round(sum / 4);
+  const composite = Math.round(sum / 4);
+
+  // Additional safety check for NaN
+  return isNaN(composite) ? 0 : composite;
 }
 
 /**
