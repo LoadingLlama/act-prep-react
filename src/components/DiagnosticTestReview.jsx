@@ -1024,8 +1024,27 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                 }}>
                   {(testData.questionsBySection[expandedSection] || []).map((result, idx) => {
                     const isCorrect = result.is_correct;
-                    const isAnswered = result.user_answer !== null;
+                    const isAnswered = result.user_answer !== null && result.user_answer !== undefined;
                     const questionNum = result.question?.question_number || idx + 1;
+
+                    // Determine colors based on answer status
+                    let bgColor, textColor, borderColor;
+                    if (!isAnswered) {
+                      // Unanswered/Skipped - Gray
+                      bgColor = '#f1f5f9';
+                      textColor = '#64748b';
+                      borderColor = '#cbd5e1';
+                    } else if (isCorrect) {
+                      // Correct - Green
+                      bgColor = '#dcfce7';
+                      textColor = '#166534';
+                      borderColor = '#86efac';
+                    } else {
+                      // Incorrect - Red
+                      bgColor = '#fee2e2';
+                      textColor = '#991b1b';
+                      borderColor = '#fca5a5';
+                    }
 
                     return (
                       <button
@@ -1045,14 +1064,14 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                           fontSize: '0.625rem',
                           fontWeight: '600',
                           cursor: 'pointer',
-                          border: 'none',
-                          background: !isAnswered ? '#f8fafc' : isCorrect ? '#f0fdf4' : '#fef2f2',
-                          color: !isAnswered ? '#94a3b8' : isCorrect ? '#16a34a' : '#dc2626',
+                          border: `1.5px solid ${borderColor}`,
+                          background: bgColor,
+                          color: textColor,
                           transition: 'all 0.2s ease'
                         }}
                         onMouseOver={(e) => {
                           e.currentTarget.style.transform = 'scale(1.1)';
-                          e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+                          e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.15)';
                         }}
                         onMouseOut={(e) => {
                           e.currentTarget.style.transform = 'scale(1)';
