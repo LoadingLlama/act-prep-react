@@ -304,13 +304,13 @@ export default function AppLayout() {
   };
 
   const closeLessonModal = () => {
-    // Always navigate to /app/lessons (not back to where we came from)
-    // The button literally says "Back to Lessons" - should always go to lessons page
-    navigate('/app/lessons');
-
-    // Smooth cleanup with slight delay for better UX
+    // Close modal first to prevent flash
     setLessonModalOpen(false);
     setCurrentLesson(null);
+
+    // Navigate immediately after state update
+    // Use replace to avoid adding to history stack
+    navigate('/app/lessons', { replace: true });
 
     // Restore scroll after modal fully closes
     setTimeout(() => {
