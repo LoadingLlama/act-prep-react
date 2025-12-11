@@ -184,6 +184,7 @@ const LessonModal = ({
           onClose={closeLessonModal}
           currentSection={currentLessonData?.section}
           practiceMode={lessonMode === 'practice'}
+          lessonMode={lessonMode}
           questions={practiceState.questions || []}
           currentQuestionIndex={practiceState.currentQuestionIndex || 0}
           results={practiceState.results || []}

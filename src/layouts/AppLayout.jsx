@@ -308,8 +308,9 @@ export default function AppLayout() {
     // Show transition overlay to cover everything during navigation
     setIsTransitioning(true);
 
-    // Navigate with replace
-    navigate('/app/lessons', { replace: true });
+    // Navigate based on mode: drills or regular lessons
+    const destination = lessonMode === 'drills' ? '/app/lessons?mode=drills' : '/app/lessons';
+    navigate(destination, { replace: true });
 
     // Close modal and remove overlay after a brief delay
     // This ensures the new route is fully loaded before showing it

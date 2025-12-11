@@ -131,16 +131,11 @@ const TestsContent = () => {
   useEffect(() => {
     if (user) {
       checkFeatureAccess();
-
-      // Only fetch if we don't have cached data
-      if (hasCompletedDiagnostic === null) {
-        checkDiagnosticStatus();
-      }
-      if (completedTests.size === 0) {
-        checkCompletedTests();
-      }
+      checkDiagnosticStatus();
+      checkCompletedTests();
     }
-  }, [user]); // Remove dependencies to prevent re-fetching
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]); // Only re-run when user changes
 
   // Note: Test 1 in database is the Diagnostic Test, so practice tests start at 2
   // Memoized to prevent recreating array on every render

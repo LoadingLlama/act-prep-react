@@ -675,7 +675,8 @@ const InsightsPage = () => {
       checkFeatureAccess();
       loadPracticeTests();
     }
-  }, [user]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]); // Only re-run when user changes
 
   // Poll for diagnostic completion when processing
   useEffect(() => {
@@ -709,6 +710,17 @@ const InsightsPage = () => {
     try {
       setIsLoadingPracticeTests(true);
       logger.info('InsightsPage', 'loadPracticeTests', { userId: user.id });
+
+      // Check session cache first
+      const cacheKey = `practice_tests_${user.id}`;
+      const cached = sessionStorage.getItem(cacheKey);
+      if (cached) {
+        const cachedTests = JSON.parse(cached);
+        console.log('📦 Using cached practice tests:', cachedTests.length);
+        setPracticeTests(cachedTests);
+        setIsLoadingPracticeTests(false);
+        return;
+      }
 
       // Fetch all completed practice test sessions for the user
       const sessions = await PracticeTestsService.getUserPracticeTestHistory(user.id);
@@ -763,6 +775,11 @@ const InsightsPage = () => {
         }
 
         setPracticeTests(practiceTestsArray);
+
+        // Cache for session
+        sessionStorage.setItem(cacheKey, JSON.stringify(practiceTestsArray));
+        console.log('✅ Cached practice tests to sessionStorage');
+
         logger.info('InsightsPage', 'loadPracticeTests', { count: practiceTestsArray.length });
       }
     } catch (error) {

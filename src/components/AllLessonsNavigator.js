@@ -76,6 +76,7 @@ const AllLessonsNavigator = ({
   onBackClick,
   onClose,
   practiceMode = false,
+  lessonMode = 'review',
   questions = [],
   currentQuestionIndex = 0,
   results = [],
@@ -95,6 +96,14 @@ const AllLessonsNavigator = ({
     }
   };
 
+  // Determine button text based on lesson mode
+  const getBackButtonText = () => {
+    if (lessonMode === 'drills' || lessonMode === 'practice') {
+      return 'Back to Drills';
+    }
+    return 'Back to Lessons';
+  };
+
   return (
     <div className={classes.navigator}>
       {/* Logo */}
@@ -106,7 +115,7 @@ const AllLessonsNavigator = ({
       <div className={classes.navSection}>
         <button className={classes.backButton} onClick={handleBackClick}>
           <HiArrowLeft />
-          <span>Back to Lessons</span>
+          <span>{getBackButtonText()}</span>
         </button>
 
         {/* Practice Questions Navigator */}

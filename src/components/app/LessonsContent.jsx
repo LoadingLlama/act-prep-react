@@ -34,7 +34,8 @@ import {
   HiCheckCircle,
   HiChevronDown,
   HiChevronUp,
-  HiClock
+  HiClock,
+  HiArrowLeft
 } from 'react-icons/hi2';
 import soundEffects from '../../services/soundEffects';
 
@@ -290,36 +291,7 @@ const LessonsContent = () => {
     };
     const IconComponent = iconMap[category] || HiDocumentText;
 
-    // Determine icon color based on section
-    let iconColor = '#08245b';
-    let bgColor = '#dbeafe';
-
-    if (section === 'science') {
-      iconColor = '#10b981';
-      bgColor = '#d1fae5';
-    } else if (section === 'math') {
-      iconColor = '#b91c1c';
-      bgColor = '#fecaca';
-    } else if (section === 'reading') {
-      iconColor = '#713f12';
-      bgColor = '#fef3c7';
-    }
-
-    return (
-      <div style={{
-        width: '36px',
-        height: '36px',
-        borderRadius: '6px',
-        background: bgColor,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: iconColor,
-        fontSize: '1.125rem'
-      }}>
-        <IconComponent />
-      </div>
-    );
+    return <IconComponent />;
   };
 
 
@@ -589,110 +561,214 @@ const LessonsContent = () => {
       <div className={classes.lessonsMainContent}>
       {/* Mode Toggle moved to AppLayout header */}
       <div className={classes.contentSection}>
-        {/* Render all sections with collapsible categories */}
-        <div>
+        {/* Render section cards in grid */}
+        <div className={classes.categoriesGrid}>
           {Object.entries(getAllLessonsBySection()).map(([sectionKey, sectionData]) => {
             if (!sectionData.lessons.length) return null;
 
+            const isExpanded = expandedCategories[sectionKey];
+
+            // Check if any section is expanded
+            const anyExpanded = Object.values(expandedCategories).some(val => val === true);
+
+            // Hide this card if another section is expanded
+            if (anyExpanded && !isExpanded) return null;
+            const totalLessons = sectionData.lessons.length;
+            const completedCount = sectionData.lessons.filter(l => getLessonStatus(l.id) === 'completed').length;
+
+            // Calculate total questions
+            const totalQuestions = sectionData.lessons.reduce((sum, l) => {
+              const questionCount = practiceQuestionCounts[l.id] || 0;
+              return sum + questionCount;
+            }, 0);
+
+            // Calculate progress percentage
+            const progressPercentage = totalLessons > 0 ? Math.round((completedCount / totalLessons) * 100) : 0;
+
+            // Get section icon and colors
+            let SectionIcon = HiPencilSquare;
+            let iconColor = '#ffffff';
+            let bgColor = '#3b82f6';
+            let borderColor = '#2563eb';
+            let progressBarColor = '#1e40af';
+
+            if (sectionKey === 'science') {
+              SectionIcon = HiBeaker;
+              iconColor = '#ffffff';
+              bgColor = '#10b981';
+              borderColor = '#059669';
+              progressBarColor = '#047857';
+            } else if (sectionKey === 'math') {
+              SectionIcon = HiCalculator;
+              iconColor = '#ffffff';
+              bgColor = '#dc2626';
+              borderColor = '#b91c1c';
+              progressBarColor = '#991b1b';
+            } else if (sectionKey === 'reading') {
+              SectionIcon = HiBookOpen;
+              iconColor = '#ffffff';
+              bgColor = '#d97706';
+              borderColor = '#b45309';
+              progressBarColor = '#92400e';
+            }
+
             return (
-              <div key={sectionKey} style={{ marginBottom: '2rem' }}>
-                {/* Section Header */}
-                <h2 style={{
-                  fontSize: '1.5rem',
-                  fontWeight: '700',
-                  color: '#1a1a1a',
-                  marginBottom: '1rem'
-                }}>
-                  {sectionData.title}
-                </h2>
+              <React.Fragment key={sectionKey}>
+                {/* Section Card */}
+                <div
+                  className={classes.categoryCard}
+                  onClick={() => {
+                    soundEffects.playClick();
+                    toggleCategory(sectionKey);
+                  }}
+                  style={{
+                    gridColumn: isExpanded ? '1 / -1' : 'auto'
+                  }}
+                >
+                  {/* Top colored section with icon */}
+                  <div
+                    className={classes.categoryCardHeader}
+                    style={{
+                      background: bgColor,
+                      borderBottom: `1px solid ${borderColor}`
+                    }}
+                  >
+                    <div
+                      className={classes.categoryIcon}
+                      style={{
+                        color: iconColor
+                      }}
+                    >
+                      <SectionIcon />
+                    </div>
+                  </div>
 
-                {/* Categories within section */}
-                {Object.entries(sectionData.categoryGroups).map(([category, lessons]) => {
-                  const categoryKey = `${sectionKey}-${category}`;
-                  const isExpanded = expandedCategories[categoryKey];
-                  const completedCount = lessons.filter(l => getLessonStatus(l.id) === 'completed').length;
-                  const totalCount = lessons.length;
-                  const isAllCompleted = completedCount === totalCount;
+                  {/* Bottom white section with text */}
+                  {!isExpanded && (
+                    <div className={classes.categoryInfo}>
+                      <div className={classes.categoryTitle}>{sectionData.title}</div>
+                      <div className={classes.categorySubtitle}>
+                        {mode === 'lessons'
+                          ? `${totalLessons} lesson${totalLessons !== 1 ? 's' : ''}`
+                          : isLoadingCounts && Object.keys(practiceQuestionCounts).length === 0
+                            ? (
+                              <span style={{
+                                display: 'inline-block',
+                                width: '60px',
+                                height: '12px',
+                                background: 'linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%)',
+                                backgroundSize: '200% 100%',
+                                animation: 'shimmer 1.5s infinite',
+                                borderRadius: '3px'
+                              }}></span>
+                            )
+                            : `${totalQuestions} question${totalQuestions !== 1 ? 's' : ''}`
+                        }
+                      </div>
 
-                  // Calculate total questions from practice_questions table
-                  const totalQuestions = lessons.reduce((sum, l) => {
-                    const questionCount = practiceQuestionCounts[l.id] || 0;
-                    return sum + questionCount;
-                  }, 0);
+                      {/* Progress Bar */}
+                      <div style={{
+                        width: '100%',
+                        height: '24px',
+                        background: '#e5e7eb',
+                        borderRadius: '999px',
+                        overflow: 'hidden',
+                        marginTop: '0.75rem',
+                        position: 'relative',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'flex-start',
+                        paddingLeft: '0.75rem'
+                      }}>
+                        <div style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: 0,
+                          bottom: 0,
+                          width: `${progressPercentage}%`,
+                          background: progressBarColor,
+                          borderRadius: '999px',
+                          transition: 'width 0.3s ease'
+                        }} />
+                        <div style={{
+                          position: 'relative',
+                          zIndex: 1,
+                          fontSize: '0.75rem',
+                          color: progressPercentage > 10 ? '#ffffff' : '#374151',
+                          fontWeight: '700',
+                          textShadow: progressPercentage > 10 ? '0 1px 2px rgba(0, 0, 0, 0.2)' : 'none'
+                        }}>
+                          {progressPercentage}%
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
-                  return (
-                    <div key={categoryKey} style={{
-                      marginBottom: '0.5rem',
-                      border: isExpanded ? '1px solid #e5e7eb' : 'none',
-                      borderRadius: '8px',
-                      overflow: 'hidden'
+                  {/* Expanded Lessons List */}
+                  {isExpanded && (
+                    <div style={{
+                      padding: '1.25rem',
+                      paddingTop: '1rem',
+                      borderTop: '1px solid #e5e7eb',
+                      background: '#ffffff'
                     }}>
-                      {/* Category Header (clickable) */}
+                      {/* Back Button */}
                       <button
-                        onClick={() => {
+                        onClick={(e) => {
+                          e.stopPropagation();
                           soundEffects.playClick();
-                          toggleCategory(categoryKey);
+                          toggleCategory(sectionKey);
                         }}
                         style={{
-                          width: '100%',
-                          padding: '1rem 1.25rem',
                           display: 'flex',
                           alignItems: 'center',
-                          justifyContent: 'space-between',
-                          cursor: 'pointer',
-                          background: 'white',
+                          gap: '0.5rem',
+                          padding: '0.5rem 0',
+                          marginBottom: '0.5rem',
+                          background: 'transparent',
                           border: 'none',
-                          transition: 'background 0.15s',
-                          textAlign: 'left'
+                          fontSize: '0.875rem',
+                          fontWeight: '500',
+                          color: '#6b7280',
+                          cursor: 'pointer',
+                          transition: 'color 0.15s'
                         }}
-                        onMouseOver={(e) => e.currentTarget.style.background = '#f9fafb'}
-                        onMouseOut={(e) => e.currentTarget.style.background = 'white'}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.color = '#1a1a1a';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.color = '#6b7280';
+                        }}
                       >
-                        <div>
+                        <HiArrowLeft style={{ fontSize: '1rem' }} />
+                        Back to Courses
+                      </button>
+
+                      {/* Section Title */}
+                      <div style={{
+                        fontSize: '1.5rem',
+                        fontWeight: '700',
+                        color: '#1a1a1a',
+                        marginBottom: '1.5rem'
+                      }}>
+                        {sectionData.title}
+                      </div>
+
+                      {Object.entries(sectionData.categoryGroups).map(([category, lessons]) => (
+                        <div key={category} style={{ marginBottom: '1.5rem' }}>
+                          {/* Category Header */}
                           <div style={{
-                            fontSize: '1rem',
+                            fontSize: '0.875rem',
                             fontWeight: '600',
                             color: '#1a1a1a',
-                            marginBottom: '0.25rem'
+                            marginBottom: '0.5rem',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.05em'
                           }}>
                             {category}
                           </div>
-                          <div style={{
-                            fontSize: '0.875rem',
-                            color: '#6b7280'
-                          }}>
-                            {mode === 'lessons'
-                              ? `${lessons.length} lesson${lessons.length !== 1 ? 's' : ''}`
-                              : isLoadingCounts && Object.keys(practiceQuestionCounts).length === 0
-                                ? (
-                                  <span style={{
-                                    display: 'inline-block',
-                                    width: '80px',
-                                    height: '14px',
-                                    background: 'linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%)',
-                                    backgroundSize: '200% 100%',
-                                    animation: 'shimmer 1.5s infinite',
-                                    borderRadius: '3px'
-                                  }}></span>
-                                )
-                                : `${totalQuestions} question${totalQuestions !== 1 ? 's' : ''}`
-                            }
-                          </div>
-                        </div>
-                        <div style={{
-                          fontSize: '1.25rem',
-                          color: '#6b7280'
-                        }}>
-                          {isExpanded ? <HiChevronUp /> : <HiChevronDown />}
-                        </div>
-                      </button>
 
-                      {/* Expanded Lessons List */}
-                      {isExpanded && (
-                        <div style={{
-                          padding: '0.5rem 1.25rem 1rem',
-                          borderTop: '1px solid #e5e7eb'
-                        }}>
+                          {/* Lessons in Category */}
                           {lessons.map(lesson => {
                             const status = getLessonStatus(lesson.id);
                             const isCompleted = status === 'completed';
@@ -702,10 +778,13 @@ const LessonsContent = () => {
                             return (
                               <div
                                 key={lesson.id}
-                                onClick={() => {
+                                onClick={(e) => {
+                                  e.stopPropagation();
                                   if (!lesson.isLocked) {
                                     soundEffects.playClick();
                                     openLesson(lesson.id, mode === 'drills' ? 'practice' : 'review');
+                                  } else {
+                                    navigate('/app/upgrade');
                                   }
                                 }}
                                 style={{
@@ -751,7 +830,7 @@ const LessonsContent = () => {
                                 {/* Lesson Title */}
                                 <div style={{
                                   flex: 1,
-                                  fontSize: '0.9rem',
+                                  fontSize: '0.875rem',
                                   color: '#374151',
                                   fontWeight: '500'
                                 }}>
@@ -791,52 +870,12 @@ const LessonsContent = () => {
                               </div>
                             );
                           })}
-
-                          {/* Start Button at Bottom */}
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              soundEffects.playClick();
-                              const firstLesson = lessons[0];
-                              if (firstLesson && !firstLesson.isLocked) {
-                                openLesson(firstLesson.id, mode === 'drills' ? 'practice' : 'review');
-                              }
-                            }}
-                            style={{
-                              display: 'block',
-                              marginTop: '1rem',
-                              marginLeft: 'auto',
-                              marginRight: 'auto',
-                              padding: '0.625rem 1.25rem',
-                              background: 'white',
-                              border: '1px solid #e5e7eb',
-                              borderRadius: '6px',
-                              fontSize: '0.875rem',
-                              fontWeight: '500',
-                              color: '#374151',
-                              cursor: 'pointer',
-                              transition: 'all 0.15s',
-                              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
-                            }}
-                            onMouseOver={(e) => {
-                              e.currentTarget.style.background = '#f9fafb';
-                              e.currentTarget.style.borderColor = '#d1d5db';
-                              e.currentTarget.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.12)';
-                            }}
-                            onMouseOut={(e) => {
-                              e.currentTarget.style.background = 'white';
-                              e.currentTarget.style.borderColor = '#e5e7eb';
-                              e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
-                            }}
-                          >
-                            {mode === 'drills' ? 'Start practice' : 'Start lesson'}
-                          </button>
                         </div>
-                      )}
+                      ))}
                     </div>
-                  );
-                })}
-              </div>
+                  )}
+                </div>
+              </React.Fragment>
             );
           })}
         </div>

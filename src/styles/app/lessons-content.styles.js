@@ -26,7 +26,7 @@ export const useLessonsContentStyles = createUseStyles({
   },
   lessonsMainContent: {
     flex: 1,
-    maxWidth: '700px',
+    maxWidth: '900px',
     minWidth: 0,
     padding: '1.5rem 1.5rem 0 1.5rem'
   },
@@ -489,5 +489,74 @@ export const useLessonsContentStyles = createUseStyles({
     '100%': {
       backgroundPosition: '-200% 0'
     }
+  },
+  categoriesGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    gap: '1rem',
+    marginBottom: '2rem',
+    '@media (max-width: 768px)': {
+      gridTemplateColumns: '1fr',
+      gap: '0.75rem'
+    }
+  },
+  categoryCard: {
+    background: '#ffffff',
+    border: '1px solid #e5e7eb',
+    borderRadius: '12px',
+    padding: '0',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    display: 'flex',
+    flexDirection: 'column',
+    overflow: 'hidden',
+    '&:hover': {
+      borderColor: '#d1d5db',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+      transform: 'translateY(-2px)'
+    }
+  },
+  categoryCardHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '2rem 1.25rem',
+    position: 'relative',
+    minHeight: '140px'
+  },
+  categoryIcon: {
+    fontSize: '3.5rem',
+    flexShrink: 0,
+    filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1))'
+  },
+  categoryInfo: {
+    padding: '1rem 1.25rem 1.25rem',
+    background: '#ffffff',
+    textAlign: 'center'
+  },
+  categoryTitle: {
+    fontSize: '1.125rem',
+    fontWeight: '700',
+    color: '#1a1a1a',
+    marginBottom: '0.25rem',
+    lineHeight: '1.3'
+  },
+  categorySubtitle: {
+    fontSize: '0.875rem',
+    color: '#6b7280',
+    fontWeight: '500'
+  },
+  sectionHeader: {
+    marginBottom: '1rem',
+    marginTop: '2rem',
+    '&:first-child': {
+      marginTop: 0
+    }
+  },
+  sectionTitle: {
+    fontSize: '1.5rem',
+    fontWeight: '700',
+    color: '#1a1a1a',
+    margin: 0
   }
 });
