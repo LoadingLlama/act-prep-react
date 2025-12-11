@@ -43,6 +43,7 @@ export default function AppLayout() {
   const [isTrialExpired, setIsTrialExpired] = useState(false);
   const [streak, setStreak] = useState(0);
   const [showStreakTooltip, setShowStreakTooltip] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Debug logging for diagnostic state changes
   useEffect(() => {
@@ -304,17 +305,20 @@ export default function AppLayout() {
   };
 
   const closeLessonModal = () => {
-    // Navigate FIRST with replace to swap routes immediately
-    // This prevents the flash by replacing the route before the modal closes
+    // Show transition overlay to cover everything during navigation
+    setIsTransitioning(true);
+
+    // Navigate with replace
     navigate('/app/lessons', { replace: true });
 
-    // Then close modal state in next frame (after navigation starts)
-    // This keeps modal visible during route transition
-    requestAnimationFrame(() => {
+    // Close modal and remove overlay after a brief delay
+    // This ensures the new route is fully loaded before showing it
+    setTimeout(() => {
       setLessonModalOpen(false);
       setCurrentLesson(null);
       domUtils.restoreBodyScroll();
-    });
+      setIsTransitioning(false);
+    }, 100);
   };
 
   const updateLessonProgress = async (lessonId, status) => {
@@ -614,6 +618,20 @@ export default function AppLayout() {
             ))}
           </div>
         </div>
+      )}
+
+      {/* Transition Overlay - prevents flash during navigation */}
+      {isTransitioning && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: '#ffffff',
+          zIndex: 99999,
+          pointerEvents: 'none'
+        }} />
       )}
 
       {/* Blocking Upgrade Modal - shown when trial expires */}
