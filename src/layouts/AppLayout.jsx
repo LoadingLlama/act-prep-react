@@ -304,18 +304,17 @@ export default function AppLayout() {
   };
 
   const closeLessonModal = () => {
-    // Close modal first to prevent flash
-    setLessonModalOpen(false);
-    setCurrentLesson(null);
-
-    // Navigate immediately after state update
-    // Use replace to avoid adding to history stack
+    // Navigate FIRST with replace to swap routes immediately
+    // This prevents the flash by replacing the route before the modal closes
     navigate('/app/lessons', { replace: true });
 
-    // Restore scroll after modal fully closes
-    setTimeout(() => {
+    // Then close modal state in next frame (after navigation starts)
+    // This keeps modal visible during route transition
+    requestAnimationFrame(() => {
+      setLessonModalOpen(false);
+      setCurrentLesson(null);
       domUtils.restoreBodyScroll();
-    }, 100);
+    });
   };
 
   const updateLessonProgress = async (lessonId, status) => {
