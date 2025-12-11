@@ -304,10 +304,9 @@ export default function AppLayout() {
   };
 
   const closeLessonModal = () => {
-    // Navigate back to previous page
-    // Default to /app/lessons instead of /app/home to avoid calendar flash
-    const previousPath = location.state?.from || '/app/lessons';
-    navigate(previousPath);
+    // Always navigate to /app/lessons (not back to where we came from)
+    // The button literally says "Back to Lessons" - should always go to lessons page
+    navigate('/app/lessons');
 
     // Smooth cleanup with slight delay for better UX
     setLessonModalOpen(false);
