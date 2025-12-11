@@ -263,7 +263,10 @@ export default function AppLayout() {
     console.log('📖 Opening lesson:', lessonId, 'mode:', mode);
 
     // Navigate to lesson URL with mode parameter
-    navigate(`/app/lesson/${lessonId}?mode=${mode}`);
+    // Save current location so we can return to it
+    navigate(`/app/lesson/${lessonId}?mode=${mode}`, {
+      state: { from: location.pathname }
+    });
 
     const lesson = lessonStructure.find(l => l.id === lessonId);
     console.log('📚 Found lesson structure:', lesson);
@@ -301,12 +304,19 @@ export default function AppLayout() {
   };
 
   const closeLessonModal = () => {
-    // Navigate back to lessons page
-    navigate('/app/lessons');
+    // Navigate back to previous page or home
+    // Check if we came from a specific page, otherwise go to home
+    const previousPath = location.state?.from || '/app/home';
+    navigate(previousPath);
 
+    // Smooth cleanup with slight delay for better UX
     setLessonModalOpen(false);
     setCurrentLesson(null);
-    domUtils.restoreBodyScroll();
+
+    // Restore scroll after modal fully closes
+    setTimeout(() => {
+      domUtils.restoreBodyScroll();
+    }, 100);
   };
 
   const updateLessonProgress = async (lessonId, status) => {

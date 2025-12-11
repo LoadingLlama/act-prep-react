@@ -115,33 +115,41 @@ export const useTermTooltips = (containerRef, lessonKey = null) => {
     const container = containerRef.current;
     console.log('useTermTooltips: Container found, definitions loaded:', Object.keys(definitions).length);
 
-    // Try multiple selectors to find blue underlined strong tags
-    let blueUnderlinedTerms = container.querySelectorAll('strong[style*="color: rgb(37, 99, 235)"][style*="text-decoration: underline"]');
-    console.log('useTermTooltips: Selector 1 (rgb) found:', blueUnderlinedTerms.length);
+    // Find all blue underlined terms using data attribute or style matching
+    let blueUnderlinedTerms = container.querySelectorAll('[data-term]');
+    console.log('useTermTooltips: Found', blueUnderlinedTerms.length, 'terms with data-term attribute');
 
+    // Fallback: Try multiple selectors if no data attributes found
     if (blueUnderlinedTerms.length === 0) {
-      blueUnderlinedTerms = container.querySelectorAll('strong[style*="color:#2563eb"][style*="text-decoration: underline"]');
-      console.log('useTermTooltips: Selector 2 (#2563eb) found:', blueUnderlinedTerms.length);
-    }
+      blueUnderlinedTerms = container.querySelectorAll('strong[style*="color: rgb(37, 99, 235)"][style*="text-decoration: underline"], strong[style*="color:rgb(37,99,235)"][style*="text-decoration:underline"]');
+      console.log('useTermTooltips: Selector 1 (rgb variants) found:', blueUnderlinedTerms.length);
 
-    if (blueUnderlinedTerms.length === 0) {
-      blueUnderlinedTerms = container.querySelectorAll('strong[style*="2563eb"][style*="underline"]');
-      console.log('useTermTooltips: Selector 3 (looser) found:', blueUnderlinedTerms.length);
-    }
+      if (blueUnderlinedTerms.length === 0) {
+        blueUnderlinedTerms = container.querySelectorAll('strong[style*="color:#2563eb"][style*="text-decoration: underline"], strong[style*="color: #2563eb"][style*="text-decoration: underline"]');
+        console.log('useTermTooltips: Selector 2 (#2563eb variants) found:', blueUnderlinedTerms.length);
+      }
 
-    // Log all strong tags to debug
-    const allStrong = container.querySelectorAll('strong');
-    console.log('useTermTooltips: Total strong tags:', allStrong.length);
-    if (allStrong.length > 0 && allStrong.length < 10) {
-      allStrong.forEach((s, i) => {
-        console.log(`Strong ${i}:`, s.outerHTML.substring(0, 100));
-      });
+      if (blueUnderlinedTerms.length === 0) {
+        blueUnderlinedTerms = container.querySelectorAll('strong[style*="2563eb"][style*="underline"]');
+        console.log('useTermTooltips: Selector 3 (looser) found:', blueUnderlinedTerms.length);
+      }
+
+      // Log all strong tags to debug
+      const allStrong = container.querySelectorAll('strong');
+      console.log('useTermTooltips: Total strong tags:', allStrong.length);
+      if (allStrong.length > 0 && allStrong.length <= 20) {
+        console.log('useTermTooltips: Sample strong tags:');
+        Array.from(allStrong).slice(0, 5).forEach((s, i) => {
+          console.log(`  [${i}]`, s.outerHTML.substring(0, 150));
+        });
+      }
     }
 
     const cleanupFunctions = [];
 
     blueUnderlinedTerms.forEach((element) => {
-      const termText = element.textContent.trim();
+      // Get term text from data attribute or text content
+      const termText = element.getAttribute('data-term') || element.textContent.trim();
 
       // Case-insensitive lookup: find matching term in definitions
       const termData = Object.entries(definitions).find(
@@ -150,7 +158,10 @@ export const useTermTooltips = (containerRef, lessonKey = null) => {
 
       console.log('useTermTooltips: Processing term:', termText, 'Has data:', !!termData);
 
-      if (!termData) return;
+      if (!termData) {
+        console.log('useTermTooltips: No definition found for:', termText);
+        return;
+      }
 
       // Wrap element in a positioned container if not already wrapped
       if (!element.parentElement.classList.contains('term-wrapper')) {
@@ -158,7 +169,7 @@ export const useTermTooltips = (containerRef, lessonKey = null) => {
         wrapper.className = 'term-wrapper';
         wrapper.style.position = 'relative';
         wrapper.style.display = 'inline';
-        wrapper.style.cursor = 'help';
+        wrapper.style.cursor = 'pointer';
         element.parentNode.insertBefore(wrapper, element);
         wrapper.appendChild(element);
       }
@@ -166,7 +177,12 @@ export const useTermTooltips = (containerRef, lessonKey = null) => {
       const wrapper = element.parentElement;
       let tooltip = null;
 
+      // Store original color
+      const originalColor = element.style.color;
+
       const showTooltip = () => {
+        // Darken the blue color on hover
+        element.style.color = '#1d4ed8';
         if (!tooltip) {
           const tempDiv = document.createElement('div');
           tempDiv.innerHTML = createTooltipHTML(termText, termData);
@@ -204,6 +220,9 @@ export const useTermTooltips = (containerRef, lessonKey = null) => {
       };
 
       const hideTooltip = () => {
+        // Restore original color
+        element.style.color = originalColor;
+
         if (tooltip) {
           tooltip.style.opacity = '0';
           tooltip.style.transform = 'translateX(-50%) translateY(4px)';
@@ -233,7 +252,10 @@ export const useTermTooltips = (containerRef, lessonKey = null) => {
     const observer = new MutationObserver(() => {
       console.log('useTermTooltips: Content changed, re-scanning...');
       // Re-run the setup when content changes
-      const newBlueTerms = container.querySelectorAll('strong[style*="2563eb"][style*="underline"]');
+      let newBlueTerms = container.querySelectorAll('[data-term]');
+      if (newBlueTerms.length === 0) {
+        newBlueTerms = container.querySelectorAll('strong[style*="2563eb"][style*="underline"]');
+      }
       console.log('useTermTooltips: Found', newBlueTerms.length, 'terms after mutation');
 
       newBlueTerms.forEach((element) => {
@@ -242,7 +264,7 @@ export const useTermTooltips = (containerRef, lessonKey = null) => {
           return;
         }
 
-        const termText = element.textContent.trim();
+        const termText = element.getAttribute('data-term') || element.textContent.trim();
 
         // Case-insensitive lookup: find matching term in definitions
         const termData = Object.entries(definitions).find(
@@ -256,13 +278,18 @@ export const useTermTooltips = (containerRef, lessonKey = null) => {
         wrapper.className = 'term-wrapper';
         wrapper.style.position = 'relative';
         wrapper.style.display = 'inline';
-        wrapper.style.cursor = 'help';
+        wrapper.style.cursor = 'pointer';
         element.parentNode.insertBefore(wrapper, element);
         wrapper.appendChild(element);
 
         let tooltip = null;
 
+        // Store original color
+        const originalColor = element.style.color;
+
         const showTooltip = () => {
+          // Darken the blue color on hover
+          element.style.color = '#1d4ed8';
           if (!tooltip) {
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = createTooltipHTML(termText, termData);
@@ -293,6 +320,9 @@ export const useTermTooltips = (containerRef, lessonKey = null) => {
         };
 
         const hideTooltip = () => {
+          // Restore original color
+          element.style.color = originalColor;
+
           if (tooltip) {
             tooltip.style.opacity = '0';
             tooltip.style.transform = 'translateX(-50%) translateY(4px)';

@@ -4,7 +4,7 @@
  * Uses lazy loading for better performance
  */
 
-import React, { lazy, Suspense, useState, useEffect } from 'react';
+import React, { lazy, Suspense, useState, useEffect, useLayoutEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { storage } from '../utils/helpers';
@@ -62,31 +62,46 @@ function RouteLoader() {
 }
 
 /**
+ * Scroll restoration component
+ * Scrolls to top on route change
+ */
+function ScrollToTop() {
+  const location = useLocation();
+
+  useLayoutEffect(() => {
+    // Scroll to top immediately when location changes
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [location.pathname]);
+
+  return null;
+}
+
+/**
  * Page transition wrapper for smooth fade effects
  */
 function PageTransition({ children }) {
   const location = useLocation();
-  const [displayLocation, setDisplayLocation] = useState(location);
-  const [transitionStage, setTransitionStage] = useState('fadeIn');
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    if (location !== displayLocation) {
-      setTransitionStage('fadeOut');
-    }
-  }, [location, displayLocation]);
+    // Start fade out
+    setIsTransitioning(true);
+
+    // After a short delay, fade back in
+    const timer = setTimeout(() => {
+      setIsTransitioning(false);
+    }, 150);
+
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
 
   return (
     <div
       style={{
-        animation: `${transitionStage} 0.2s ease-in-out`,
+        opacity: isTransitioning ? 0 : 1,
+        transition: 'opacity 0.15s ease-in-out',
         width: '100%',
-        height: '100%'
-      }}
-      onAnimationEnd={() => {
-        if (transitionStage === 'fadeOut') {
-          setTransitionStage('fadeIn');
-          setDisplayLocation(location);
-        }
+        minHeight: '100vh'
       }}
     >
       {children}
@@ -139,10 +154,12 @@ export default function AppRouter() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Suspense fallback={<RouteLoader />}>
-        <Routes>
-          {/* Landing Page - Always accessible */}
-          <Route path="/" element={<LandingPage />} />
+        <PageTransition>
+          <Routes>
+            {/* Landing Page - Always accessible */}
+            <Route path="/" element={<LandingPage />} />
 
           {/* About Us Page - Always accessible */}
           <Route path="/about" element={<AboutUs />} />
@@ -217,9 +234,10 @@ export default function AppRouter() {
             } />
           </Route>
 
-          {/* Catch all - redirect to landing */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+            {/* Catch all - redirect to landing */}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </PageTransition>
       </Suspense>
     </BrowserRouter>
   );

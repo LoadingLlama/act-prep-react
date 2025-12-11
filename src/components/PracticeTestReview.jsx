@@ -26,6 +26,7 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
   const [startingQuestionIndex, setStartingQuestionIndex] = useState(0);
   const [expandedSection, setExpandedSection] = useState('english');
   const [sectionDropdownOpen, setSectionDropdownOpen] = useState(false);
+  const [sectionLoading, setSectionLoading] = useState(false);
   const iframeRef = useRef(null);
   const dropdownRef = useRef(null);
 
@@ -333,6 +334,8 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
   // Handle section selection
   const handleSectionSelect = useCallback((section) => {
     if (!testData) return;
+    console.log('🔄 handleSectionSelect: Switching to section', section);
+    setSectionLoading(true);
     setStartingQuestionIndex(0);
     setSelectedSection(section);
   }, [testData]);
@@ -472,6 +475,12 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
         if (section && section !== selectedSection) {
           handleSectionSelect(section);
         }
+      } else if (type === 'SECTION_LOADED') {
+        console.log('📨 Received SECTION_LOADED message');
+        // Small delay for smooth fade-out and ensure content is fully rendered
+        setTimeout(() => {
+          setSectionLoading(false);
+        }, 200);
       }
     };
 
@@ -590,16 +599,81 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
 
         <iframe
           ref={iframeRef}
-          key={selectedSection}
           src="/tests/practice-test.html"
           style={{
             width: '100%',
             height: '100%',
             border: 'none',
-            display: 'block'
+            display: 'block',
+            visibility: sectionLoading ? 'hidden' : 'visible',
+            opacity: sectionLoading ? 0 : 1,
+            transition: 'opacity 0.3s ease-in-out, visibility 0s linear ' + (sectionLoading ? '0s' : '0.3s')
           }}
           title={`Practice Test ${testNumber - 1} - ${sectionConfig[selectedSection]?.name} Review`}
         />
+
+        {/* Section Loading Overlay */}
+        {sectionLoading && (
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: '#ffffff',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 3002,
+            animation: 'fadeIn 0.15s ease-out'
+          }}>
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '1rem',
+              animation: 'scaleIn 0.2s ease-out'
+            }}>
+              <div style={{
+                width: '48px',
+                height: '48px',
+                border: '4px solid #e5e7eb',
+                borderTop: '4px solid #dc2626',
+                borderRadius: '50%',
+                animation: 'spin 1s linear infinite'
+              }} />
+              <div style={{
+                fontSize: '0.9375rem',
+                fontWeight: '500',
+                color: '#6b7280'
+              }}>
+                Loading {sectionConfig[selectedSection]?.name}...
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Add keyframes for animations */}
+        <style>{`
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          @keyframes scaleIn {
+            from {
+              opacity: 0;
+              transform: scale(0.95);
+            }
+            to {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+        `}</style>
       </div>
     );
   }
@@ -1077,7 +1151,9 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
                         key={idx}
                         onClick={(e) => {
                           e.stopPropagation();
+                          console.log('📍 Question clicked:', questionNum, 'in section:', expandedSection);
                           setExpandedSection(null);
+                          setSectionLoading(true);
                           setSelectedSection(expandedSection);
                           setStartingQuestionIndex(questionNum);
                         }}

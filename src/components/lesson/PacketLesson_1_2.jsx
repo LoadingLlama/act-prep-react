@@ -14,6 +14,7 @@ import {
 } from './PacketComponents';
 import { QuickCheck, IdentifyError, TrueFalse, ApplyTheRule, CommaCorrectness } from './InlinePractice';
 import { useTermTooltips } from '../../hooks/useTermTooltips';
+import Term from './Term';
 
 const PacketLesson_1_2 = () => {
   const contentRef = useRef(null);
@@ -86,7 +87,7 @@ const PacketLesson_1_2 = () => {
         color: '#374151',
         marginBottom: '0.75rem'
       }}>
-        Use a comma and a <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>FANBOYS</strong> word to join two independent clauses.
+        Use a comma and a <Term>FANBOYS</Term> word to join two independent clauses.
         Remember from the previous lesson: <strong>FANBOYS = For, And, Nor, But, Or, Yet, So.</strong>{' '}
         <strong>Both sides of the FANBOYS word must be independent clauses (complete sentences).</strong>
       </div>
@@ -158,7 +159,7 @@ const PacketLesson_1_2 = () => {
         color: '#374151',
         marginBottom: '0.75rem'
       }}>
-        Commas separate <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>unnecessary information</strong> from the rest of the sentence.{' '}
+        Commas separate <Term>unnecessary information</Term> from the rest of the sentence.{' '}
         <strong>Information is unnecessary if you can remove it without fundamentally changing the sentence's meaning.</strong>
         {' '}Unnecessary information can be as short as one word or as long as a lengthy phrase.
       </div>
@@ -229,17 +230,12 @@ const PacketLesson_1_2 = () => {
         fontSize: '0.75rem',
         fontWeight: '600',
         color: '#9ca3af',
-        letterSpacing: '0.1em',
-        marginTop: '3rem',
-        marginBottom: '0.5rem'
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
       }}>
-        SECTION 2
+        • • •
       </div>
-      <div style={{
-        height: '2px',
-        backgroundColor: '#d1d5db',
-        marginBottom: '2rem'
-      }} />
 
       <h2 style={{
         fontSize: '20px',
@@ -393,7 +389,7 @@ const PacketLesson_1_2 = () => {
         color: '#374151',
         marginBottom: '0.75rem'
       }}>
-        Phrases starting with <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>that</strong> never get commas. Phrases starting with <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>which</strong> always get commas.
+        Phrases starting with <Term>that</Term> never get commas. Phrases starting with <Term>which</Term> always get commas.
         This is one of the easiest rules to apply on the ACT.
       </div>
 
@@ -460,7 +456,7 @@ const PacketLesson_1_2 = () => {
         color: '#374151',
         marginBottom: '0.75rem'
       }}>
-        <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>Participle phrases</strong> starting with "ing" or "ed" may or may not need commas.
+        <Term>Participle phrases</Term> starting with "ing" or "ed" may or may not need commas.
         On the ACT, "ing" and "ed" phrases most commonly appear with commas as unnecessary information.
         If the phrase helps specify which noun, it's necessary (no commas).
       </div>
@@ -512,7 +508,7 @@ const PacketLesson_1_2 = () => {
         color: '#374151',
         marginBottom: '0.75rem'
       }}>
-        <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>Prepositional phrases</strong> consist of a preposition and its object.
+        <Term>Prepositional phrases</Term> consist of a preposition and its object.
         The comma rule depends on where the phrase appears in the sentence.
       </div>
 
@@ -563,17 +559,12 @@ const PacketLesson_1_2 = () => {
         fontSize: '0.75rem',
         fontWeight: '600',
         color: '#9ca3af',
-        letterSpacing: '0.1em',
-        marginTop: '3rem',
-        marginBottom: '0.5rem'
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
       }}>
-        SECTION 3
+        • • •
       </div>
-      <div style={{
-        height: '2px',
-        backgroundColor: '#d1d5db',
-        marginBottom: '2rem'
-      }} />
 
       <h2 style={{
         fontSize: '22px',
@@ -590,7 +581,7 @@ const PacketLesson_1_2 = () => {
         color: '#374151',
         marginBottom: '1.5rem'
       }}>
-        <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>Transitional words</strong> (also called conjunctive adverbs) require specific punctuation.{' '}
+        <Term>Transitional words</Term> (also called conjunctive adverbs) require specific punctuation.{' '}
         <strong>These are NOT FANBOYS. They require different punctuation rules.</strong>
       </div>
 
@@ -675,17 +666,12 @@ const PacketLesson_1_2 = () => {
         fontSize: '0.75rem',
         fontWeight: '600',
         color: '#9ca3af',
-        letterSpacing: '0.1em',
-        marginTop: '3rem',
-        marginBottom: '0.5rem'
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
       }}>
-        SECTION 4
+        • • •
       </div>
-      <div style={{
-        height: '2px',
-        backgroundColor: '#d1d5db',
-        marginBottom: '2rem'
-      }} />
 
       <h2 style={{
         fontSize: '22px',
@@ -880,17 +866,12 @@ const PacketLesson_1_2 = () => {
         fontSize: '0.75rem',
         fontWeight: '600',
         color: '#9ca3af',
-        letterSpacing: '0.1em',
-        marginTop: '3rem',
-        marginBottom: '0.5rem'
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
       }}>
-        SUMMARY
+        • • •
       </div>
-      <div style={{
-        height: '2px',
-        backgroundColor: '#d1d5db',
-        marginBottom: '2rem'
-      }} />
       <h2 style={{
         fontSize: '22px',
         fontWeight: '700',

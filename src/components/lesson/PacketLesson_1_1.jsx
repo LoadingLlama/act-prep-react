@@ -12,9 +12,10 @@ import {
   ComparisonTable,
   RuleBox
 } from './PacketComponents';
-import { QuickCheck, IdentifyError, TrueFalse, ApplyTheRule } from './InlinePractice';
+import { QuickCheck, IdentifyError, TrueFalse, ApplyTheRule, LabelSentences } from './InlinePractice';
 import ExampleCard from '../ExampleCard';
 import { useTermTooltips } from '../../hooks/useTermTooltips';
+import Term from './Term';
 
 const PacketLesson_1_1 = () => {
   const contentRef = useRef(null);
@@ -46,7 +47,7 @@ const PacketLesson_1_1 = () => {
         color: '#374151',
         marginBottom: '3rem'
       }}>
-        Sentence structure questions make up 15-20% of the ACT English Test—that's 11-15 questions per test!
+        Sentence structure questions make up 15-20% of the ACT English Test. That's 11-15 questions per test!
         To master these questions, you must understand how to identify and properly combine clauses, fix fragments, and avoid comma splices.
       </div>
 
@@ -67,8 +68,8 @@ const PacketLesson_1_1 = () => {
         color: '#374151',
         marginBottom: '1.5rem'
       }}>
-        To succeed on the ACT English, you need to understand the three building blocks of sentences.
-        Let's start by learning how to identify each type.
+        <strong>To succeed on the ACT English, you need to understand the three building blocks of sentences.</strong>
+        {' '}Let's start by learning how to identify each type.
       </p>
 
       {/* Independent Clauses */}
@@ -88,7 +89,7 @@ const PacketLesson_1_1 = () => {
         color: '#374151',
         marginBottom: '0.75rem'
       }}>
-        The first building block is the <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>independent clause</strong>. An independent clause can stand as a sentence by itself
+        The first building block is the <Term>independent clause</Term>. An independent clause can stand as a sentence by itself
         because it has both a subject and a verb, and it expresses a complete thought.
       </div>
 
@@ -98,7 +99,7 @@ const PacketLesson_1_1 = () => {
         color: '#374151',
         marginBottom: '0.5rem'
       }}>
-        How to identify: Read the clause out loud. If you can stop talking at the end and it feels complete, it's an independent clause.
+        <strong>How to identify:</strong> Read the clause out loud. If you can stop talking at the end and it feels complete, it's an independent clause.
       </div>
 
       <div style={{
@@ -111,14 +112,20 @@ const PacketLesson_1_1 = () => {
       </div>
 
       <div style={{
-        marginLeft: '2rem',
-        marginBottom: '1.5rem'
+        marginBottom: '1.5rem',
+        marginLeft: '2rem'
       }}>
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
           The dog chased its tail.
         </div>
-        <div style={{ fontSize: '15px', color: '#1f2937' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
           He picked it up.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
+          The students studied for the exam.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937' }}>
+          She walked to the store.
         </div>
       </div>
 
@@ -138,10 +145,9 @@ const PacketLesson_1_1 = () => {
         lineHeight: '1.7',
         color: '#374151',
         marginBottom: '1.5rem',
-        marginLeft: '1rem'
       }}>
-        A <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>dependent clause</strong> has a subject and verb but cannot stand alone.
-        Dependent clauses are created when a <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>subordinating conjunction</strong> is placed at the beginning—these words act as signals that the clause is incomplete and must be attached to an independent clause.
+        A <Term>dependent clause</Term> has a subject and verb but cannot stand alone.
+        Dependent clauses are created when a <Term>subordinating conjunction</Term> is placed at the beginning. These words act as signals that the clause is incomplete and must be attached to an independent clause.
       </div>
 
       <div style={{
@@ -149,9 +155,8 @@ const PacketLesson_1_1 = () => {
         lineHeight: '1.7',
         color: '#374151',
         marginBottom: '1.5rem',
-        marginLeft: '1rem'
       }}>
-        Memorize these subordinating conjunctions—when you see one starting a clause, it's dependent:
+        Memorize these subordinating conjunctions. When you see one starting a clause, it's dependent:
       </div>
 
       <ConceptBox
@@ -186,10 +191,9 @@ const PacketLesson_1_1 = () => {
         lineHeight: '1.7',
         color: '#374151',
         marginBottom: '1.5rem',
-        marginLeft: '1rem',
         marginTop: '1.5rem'
       }}>
-        How to identify: Read the clause out loud. If it feels incomplete—like you need to keep talking—it's a dependent clause.
+        <strong>How to identify:</strong> Read the clause out loud. If it feels incomplete, like you need to keep talking, it's a dependent clause.
       </div>
 
       <div style={{
@@ -197,21 +201,26 @@ const PacketLesson_1_1 = () => {
         lineHeight: '1.7',
         color: '#374151',
         marginBottom: '1rem',
-        marginLeft: '1rem',
         marginTop: '1.5rem'
       }}>
         Here are some examples of dependent clauses. Notice how each one begins with a subordinating conjunction and leaves you waiting for more information:
       </div>
 
       <div style={{
-        marginLeft: '2rem',
-        marginBottom: '1.5rem'
+        marginBottom: '1.5rem',
+        marginLeft: '2rem'
       }}>
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
           While the dog chased its tail...
         </div>
-        <div style={{ fontSize: '15px', color: '#1f2937' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
           Because he picked it up...
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
+          Although the students studied for the exam...
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937' }}>
+          When she walked to the store...
         </div>
       </div>
 
@@ -233,9 +242,8 @@ const PacketLesson_1_1 = () => {
         lineHeight: '1.7',
         color: '#374151',
         marginBottom: '1.5rem',
-        marginLeft: '1rem'
       }}>
-        The third building block is a <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>phrase</strong>. Unlike clauses, a phrase lacks a subject or verb (or both).
+        The third building block is a <Term>phrase</Term>. Unlike clauses, a phrase lacks a subject or verb (or both).
         Phrases cannot express a complete thought and can never stand alone as sentences.
         Instead, they provide additional descriptive information within a sentence.
       </div>
@@ -245,20 +253,25 @@ const PacketLesson_1_1 = () => {
         lineHeight: '1.7',
         color: '#374151',
         marginBottom: '1rem',
-        marginLeft: '1rem'
       }}>
         Here are some examples of phrases:
       </div>
 
       <div style={{
-        marginLeft: '2rem',
-        marginBottom: '1.5rem'
+        marginBottom: '1.5rem',
+        marginLeft: '2rem'
       }}>
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
           Chasing its tail...
         </div>
-        <div style={{ fontSize: '15px', color: '#1f2937' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
           Excited to open up his present...
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
+          In the morning...
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937' }}>
+          Running through the park...
         </div>
       </div>
 
@@ -267,7 +280,6 @@ const PacketLesson_1_1 = () => {
         lineHeight: '1.7',
         color: '#374151',
         marginBottom: '1.5rem',
-        marginLeft: '1rem'
       }}>
         Let's compare all three building blocks side by side to see the key differences:
       </div>
@@ -324,10 +336,9 @@ const PacketLesson_1_1 = () => {
         lineHeight: '1.7',
         color: '#374151',
         marginBottom: '1.5rem',
-        marginLeft: '1rem'
       }}>
         Now that you understand the difference between clauses and phrases, let's look at a common error on the ACT:
-        the <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>sentence fragment</strong>. A sentence fragment occurs when a phrase or dependent clause is incorrectly
+        the <Term>sentence fragment</Term>. A sentence fragment occurs when a phrase or dependent clause is incorrectly
         punctuated as if it were a complete sentence. Fragments are missing a subject or verb (or both) and cannot stand alone.
       </div>
 
@@ -336,7 +347,6 @@ const PacketLesson_1_1 = () => {
         lineHeight: '1.7',
         color: '#374151',
         marginBottom: '1rem',
-        marginLeft: '1rem'
       }}>
         Here's an example of how to fix a sentence fragment:
       </div>
@@ -352,23 +362,38 @@ const PacketLesson_1_1 = () => {
         </div>
       </div>
 
+      <LabelSentences
+        sentences={[
+          { text: "A collection of rare stamps from countries that no longer exist", correctLabel: "P" },
+          { text: "The documentary about climate change won three awards at the film festival", correctLabel: "I" },
+          { text: "Although the recipe called for fresh basil and oregano from the garden", correctLabel: "D" },
+          { text: "Walking through the abandoned warehouse with a sense of unease", correctLabel: "P" },
+          { text: "Students organized a fundraiser to help rebuild the damaged community center", correctLabel: "I" },
+          { text: "Since the library closed early on Saturdays during the summer months", correctLabel: "D" },
+          { text: "To prepare for the chemistry exam scheduled for next Monday morning", correctLabel: "P" },
+          { text: "My grandmother still remembers her childhood home in rural Montana", correctLabel: "I" },
+          { text: "When the orchestra performed Beethoven's Fifth Symphony at the concert hall", correctLabel: "D" },
+          { text: "Without considering the long-term consequences of his hasty decision", correctLabel: "P" },
+          { text: "The scientist discovered a new species of beetle in the Amazon rainforest", correctLabel: "I" },
+          { text: "Because my brother forgot to submit his college application before the deadline", correctLabel: "D" },
+          { text: "Studying late into the night for the upcoming calculus final", correctLabel: "P" },
+          { text: "Ordering food online has become increasingly popular during the past year", correctLabel: "I" },
+          { text: "If the weather forecast predicts heavy snowfall throughout the weekend", correctLabel: "D" }
+        ]}
+      />
+
       {/* PAGE 3 - Five Types of Compound Sentences */}
       <div style={{
         textAlign: 'center',
         fontSize: '0.75rem',
         fontWeight: '600',
         color: '#9ca3af',
-        letterSpacing: '0.1em',
-        marginTop: '3rem',
-        marginBottom: '0.5rem'
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
       }}>
-        SECTION 2
+        • • •
       </div>
-      <div style={{
-        height: '2px',
-        backgroundColor: '#d1d5db',
-        marginBottom: '2rem'
-      }} />
       <h2 style={{
         fontSize: '22px',
         fontWeight: '700',
@@ -383,12 +408,10 @@ const PacketLesson_1_1 = () => {
         lineHeight: '1.7',
         color: '#374151',
         marginBottom: '2rem',
-        marginLeft: '1rem'
       }}>
         Now that you can identify independent clauses, dependent clauses, and phrases, you need to learn how to combine them correctly.
         On the ACT, there are <strong>exactly 5 ways</strong> to combine multiple clauses to form grammatically correct sentences.
-        These five patterns appear repeatedly on every ACT English test. Memorize all 5—answer choices that "sound good"
-        but break these rules are always wrong.
+        These five patterns appear repeatedly on every ACT English test. <strong>Memorize all 5. Answer choices that "sound good" but break these rules are always wrong.</strong>
       </div>
 
       <RuleBox
@@ -419,9 +442,8 @@ const PacketLesson_1_1 = () => {
         color: '#374151',
         marginTop: '1.5rem',
         marginBottom: '1.5rem',
-        marginLeft: '1rem'
       }}>
-        Unlike subordinating conjunctions, <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>coordinating conjunctions</strong> (FANBOYS) join two independent clauses as equals. When used with a comma, both clauses remain independent.
+        Unlike subordinating conjunctions, <Term>coordinating conjunctions</Term> (FANBOYS) join two independent clauses as equals. When used with a comma, both clauses remain independent.
       </div>
 
       <TipBox title="TIP - FANBOYS">
@@ -451,9 +473,9 @@ const PacketLesson_1_1 = () => {
       <div style={{
         fontSize: '14px',
         color: '#374151',
-        marginLeft: '3.5rem',
         marginTop: '0.5rem',
         marginBottom: '1.5rem',
+        marginLeft: '2rem',
         fontStyle: 'italic'
       }}>
         * A semicolon is the same as a period on the ACT.
@@ -504,17 +526,12 @@ const PacketLesson_1_1 = () => {
         fontSize: '0.75rem',
         fontWeight: '600',
         color: '#9ca3af',
-        letterSpacing: '0.1em',
-        marginTop: '3rem',
-        marginBottom: '0.5rem'
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
       }}>
-        SECTION 3
+        • • •
       </div>
-      <div style={{
-        height: '2px',
-        backgroundColor: '#d1d5db',
-        marginBottom: '2rem'
-      }} />
       <h2 style={{
         fontSize: '22px',
         fontWeight: '700',
@@ -529,11 +546,10 @@ const PacketLesson_1_1 = () => {
         lineHeight: '1.7',
         color: '#374151',
         marginBottom: '1.5rem',
-        marginLeft: '1rem'
       }}>
         Now that you know the 5 correct ways to combine clauses, let's look at the most common <strong>incorrect</strong> way:
-        the <strong style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>comma splice</strong>. A comma splice occurs when two independent clauses are joined with only a comma.
-        This violates the five rules above and is ALWAYS incorrect on the ACT. This is the most common sentence structure
+        the <Term>comma splice</Term>. A comma splice occurs when two independent clauses are joined with only a comma.
+        <strong>This violates the five rules above and is ALWAYS incorrect on the ACT.</strong> This is the most common sentence structure
         error students make.
       </div>
 
@@ -542,7 +558,6 @@ const PacketLesson_1_1 = () => {
         lineHeight: '1.7',
         color: '#374151',
         marginBottom: '1rem',
-        marginLeft: '1rem'
       }}>
         Here are two examples of comma splices. Notice how each sentence incorrectly joins two independent clauses with only a comma:
       </div>
@@ -563,7 +578,6 @@ const PacketLesson_1_1 = () => {
       <div style={{
         fontSize: '15px',
         color: '#374151',
-        marginLeft: '1rem',
         marginTop: '1.5rem',
         marginBottom: '1rem'
       }}>
@@ -624,17 +638,12 @@ const PacketLesson_1_1 = () => {
         fontSize: '0.75rem',
         fontWeight: '600',
         color: '#9ca3af',
-        letterSpacing: '0.1em',
-        marginTop: '3rem',
-        marginBottom: '0.5rem'
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
       }}>
-        SECTION 4
+        • • •
       </div>
-      <div style={{
-        height: '2px',
-        backgroundColor: '#d1d5db',
-        marginBottom: '2rem'
-      }} />
       <h2 style={{
         fontSize: '22px',
         fontWeight: '700',
@@ -649,10 +658,9 @@ const PacketLesson_1_1 = () => {
         lineHeight: '1.7',
         color: '#374151',
         marginBottom: '2rem',
-        marginLeft: '1rem'
       }}>
-        You now understand the building blocks of sentences and the rules for combining them. The final step is learning
-        how to apply this knowledge on the actual ACT. Let's look at how to identify sentence structure questions and
+        You now understand the building blocks of sentences and the rules for combining them. <strong>The final step is learning
+        how to apply this knowledge on the actual ACT.</strong> Let's look at how to identify sentence structure questions and
         solve them systematically.
       </div>
 
@@ -670,7 +678,6 @@ const PacketLesson_1_1 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginLeft: '1rem',
         marginBottom: '1.5rem'
       }}>
         Sentence structure questions have specific patterns in their answer choices:
@@ -680,7 +687,6 @@ const PacketLesson_1_1 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginLeft: '1rem'
       }}>
         <ul style={{ paddingLeft: '2rem' }}>
           <li style={{ marginBottom: '0.75rem' }}>
@@ -706,7 +712,6 @@ const PacketLesson_1_1 = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginLeft: '1rem',
         marginBottom: '1.5rem'
       }}>
         Once you've identified a sentence structure question, follow these three steps to solve it:
@@ -719,7 +724,7 @@ const PacketLesson_1_1 = () => {
           <div style={{ fontWeight: '700', fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
             1. Find where the sentence is being "split"
           </div>
-          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '1.5rem' }}>
+          <div style={{ fontSize: '15px', color: '#374151' }}>
             Look for the punctuation point in the underlined portion
           </div>
         </div>
@@ -728,7 +733,7 @@ const PacketLesson_1_1 = () => {
           <div style={{ fontWeight: '700', fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
             2. Look left and right of the split point
           </div>
-          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '1.5rem' }}>
+          <div style={{ fontSize: '15px', color: '#374151' }}>
             Identify whether each side is independent, dependent, or a phrase. Read each side separately to test if it can stand alone.
           </div>
         </div>
@@ -737,7 +742,7 @@ const PacketLesson_1_1 = () => {
           <div style={{ fontWeight: '700', fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
             3. Apply the sentence structure rules
           </div>
-          <div style={{ fontSize: '15px', color: '#374151', marginLeft: '1.5rem' }}>
+          <div style={{ fontSize: '15px', color: '#374151' }}>
             Use the 5 compound sentence types to determine the correct answer. Eliminate choices that break the rules.
           </div>
         </div>
@@ -762,81 +767,72 @@ const PacketLesson_1_1 = () => {
         fontSize: '0.75rem',
         fontWeight: '600',
         color: '#9ca3af',
-        letterSpacing: '0.1em',
-        marginTop: '3rem',
-        marginBottom: '0.5rem'
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
       }}>
-        SUMMARY
+        • • •
       </div>
-      <div style={{
-        height: '2px',
-        backgroundColor: '#d1d5db',
-        marginBottom: '2rem'
-      }} />
       <h2 style={{
         fontSize: '22px',
         fontWeight: '700',
-        color: '#1f2937',
-        marginBottom: '1.25rem'
+        color: '#16a34a',
+        marginBottom: '1rem'
       }}>
         Key Takeaways
       </h2>
 
       <div style={{
-        backgroundColor: '#f0fdf4',
-        border: '3px solid #86efac',
-        borderRadius: '8px',
-        padding: '1.5rem 2rem',
-        marginLeft: '1rem'
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem'
       }}>
         <div style={{
           display: 'flex',
-          flexDirection: 'column',
-          gap: '1rem'
+          gap: '0.75rem',
+          alignItems: 'flex-start',
+          fontSize: '15px',
+          lineHeight: '1.7',
+          color: '#16a34a'
         }}>
-          <div style={{
-            display: 'flex',
-            gap: '0.75rem',
-            fontSize: '15px',
-            lineHeight: '1.7',
-            color: '#166534'
-          }}>
-            <span style={{ fontSize: '18px', marginTop: '2px' }}>✓</span>
-            <span>Independent clauses can stand alone as complete sentences, while dependent clauses (starting with subordinating conjunctions) cannot.</span>
-          </div>
+          <span style={{ fontSize: '18px', marginTop: '2px', flexShrink: 0 }}>✓</span>
+          <span>Independent clauses can stand alone as complete sentences, while dependent clauses (starting with subordinating conjunctions) cannot.</span>
+        </div>
 
-          <div style={{
-            display: 'flex',
-            gap: '0.75rem',
-            fontSize: '15px',
-            lineHeight: '1.7',
-            color: '#166534'
-          }}>
-            <span style={{ fontSize: '18px', marginTop: '2px' }}>✓</span>
-            <span>There are exactly 5 ways to combine clauses correctly: period, comma + FANBOYS, semicolon, dependent → independent (comma), and independent → dependent (no comma).</span>
-          </div>
+        <div style={{
+          display: 'flex',
+          gap: '0.75rem',
+          alignItems: 'flex-start',
+          fontSize: '15px',
+          lineHeight: '1.7',
+          color: '#16a34a'
+        }}>
+          <span style={{ fontSize: '18px', marginTop: '2px', flexShrink: 0 }}>✓</span>
+          <span>There are exactly 5 ways to combine clauses correctly: period, comma + FANBOYS, semicolon, dependent → independent (comma), and independent → dependent (no comma).</span>
+        </div>
 
-          <div style={{
-            display: 'flex',
-            gap: '0.75rem',
-            fontSize: '15px',
-            lineHeight: '1.7',
-            color: '#166534'
-          }}>
-            <span style={{ fontSize: '18px', marginTop: '2px' }}>✓</span>
-            <span>A comma by itself CANNOT join two independent clauses—this creates a comma splice, which is always incorrect.</span>
-          </div>
+        <div style={{
+          display: 'flex',
+          gap: '0.75rem',
+          alignItems: 'flex-start',
+          fontSize: '15px',
+          lineHeight: '1.7',
+          color: '#16a34a'
+        }}>
+          <span style={{ fontSize: '18px', marginTop: '2px', flexShrink: 0 }}>✓</span>
+          <span>A comma by itself CANNOT join two independent clauses. This creates a comma splice, which is always incorrect.</span>
+        </div>
 
-          <div style={{
-            display: 'flex',
-            gap: '0.75rem',
-            fontSize: '15px',
-            lineHeight: '1.7',
-            color: '#166534'
-          }}>
-            <span style={{ fontSize: '18px', marginTop: '2px' }}>✓</span>
-            <span>To solve sentence structure questions: find the split point, identify clause types on each side, and apply the 5 compound sentence rules.</span>
-          </div>
+        <div style={{
+          display: 'flex',
+          gap: '0.75rem',
+          alignItems: 'flex-start',
+          fontSize: '15px',
+          lineHeight: '1.7',
+          color: '#16a34a'
+        }}>
+          <span style={{ fontSize: '18px', marginTop: '2px', flexShrink: 0 }}>✓</span>
+          <span>To solve sentence structure questions: find the split point, identify clause types on each side, and apply the 5 compound sentence rules.</span>
         </div>
       </div>
     </div>

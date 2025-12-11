@@ -12,6 +12,7 @@ import {
 } from './PacketComponents';
 import { QuickCheck, TrueFalse, CommaCorrectness } from './InlinePractice';
 import { useTermTooltips } from '../../hooks/useTermTooltips';
+import Term from './Term';
 
 const PacketLesson_1_3 = () => {
   const contentRef = useRef(null);
@@ -63,8 +64,8 @@ const PacketLesson_1_3 = () => {
         color: '#374151',
         marginBottom: '1.5rem'
       }}>
-        <strong>The most important rule: A <span style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>semicolon</span> can replace a period.</strong>{' '}
-        Both sides of the semicolon must be independent clauses (complete sentences). If you can replace the semicolon with a period and both halves make sense as separate sentences, the semicolon is correct.
+        <strong>The most important rule: A <Term>semicolon</Term> can replace a period.</strong>{' '}
+        Both sides of the <Term>semicolon</Term> must be <Term>independent clauses</Term> (complete sentences). If you can replace the <Term>semicolon</Term> with a period and both halves make sense as separate sentences, the <Term>semicolon</Term> is correct.
       </div>
 
       <div style={{
@@ -79,51 +80,6 @@ const PacketLesson_1_3 = () => {
         </div>
         <div style={{ fontSize: '15px', color: '#1f2937' }}>
           She loves reading mystery novels; her favorite author is Agatha Christie.
-        </div>
-      </div>
-
-      <h3 style={{
-        fontSize: '17px',
-        fontWeight: '600',
-        color: '#1f2937',
-        marginTop: '2.5rem',
-        marginBottom: '0.375rem'
-      }}>
-        Common Semicolon Errors to Avoid
-      </h3>
-
-      <div style={{
-        marginLeft: '2rem',
-        marginBottom: '1.5rem'
-      }}>
-        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem' }}>
-          <strong>Error: Second half is not an independent clause</strong>
-        </div>
-        <div style={{ fontSize: '15px', color: '#991b1b', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
-          ❌ Incorrect: My boss called me; asking that I pick up coffee for him.
-        </div>
-        <div style={{ fontSize: '15px', color: '#6b7280', marginLeft: '1.5rem', marginBottom: '1rem', fontStyle: 'italic' }}>
-          "Asking that I pick up coffee for him" is not an independent clause
-        </div>
-
-        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem' }}>
-          <strong>Error: First half is not an independent clause</strong>
-        </div>
-        <div style={{ fontSize: '15px', color: '#991b1b', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
-          ❌ Incorrect: After my boss called me; he asked that I pick up coffee for him.
-        </div>
-        <div style={{ fontSize: '15px', color: '#6b7280', marginLeft: '1.5rem', marginBottom: '1rem', fontStyle: 'italic' }}>
-          "After my boss called me" is a dependent clause, not independent
-        </div>
-
-        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem' }}>
-          <strong>Error: Using a comma instead (comma splice)</strong>
-        </div>
-        <div style={{ fontSize: '15px', color: '#991b1b', marginLeft: '1.5rem', marginBottom: '0.5rem' }}>
-          ❌ Incorrect: My boss called me, he asked that I pick up coffee for him.
-        </div>
-        <div style={{ fontSize: '15px', color: '#6b7280', marginLeft: '1.5rem', fontStyle: 'italic' }}>
-          This is a <span style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>comma splice</span> Cannot connect two independent clauses with just a comma
         </div>
       </div>
 
@@ -149,17 +105,12 @@ const PacketLesson_1_3 = () => {
         fontSize: '0.75rem',
         fontWeight: '600',
         color: '#9ca3af',
-        letterSpacing: '0.1em',
-        marginTop: '3rem',
-        marginBottom: '0.5rem'
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
       }}>
-        SECTION 2
+        • • •
       </div>
-      <div style={{
-        height: '2px',
-        backgroundColor: '#d1d5db',
-        marginBottom: '2rem'
-      }} />
 
       <h2 style={{
         fontSize: '22px',
@@ -176,8 +127,8 @@ const PacketLesson_1_3 = () => {
         color: '#374151',
         marginBottom: '1.5rem'
       }}>
-        A <span style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>colon</span> introduces a list, an example, an explanation, a clarification, or a definition.{' '}
-        <strong>The part before the colon must always be an independent clause.</strong>
+        A <Term>colon</Term> introduces a list, an example, an explanation, a clarification, or a definition.{' '}
+        <strong>The part before the <Term>colon</Term> must always be an <Term>independent clause</Term>.</strong>
       </div>
 
       <div style={{
@@ -195,85 +146,17 @@ const PacketLesson_1_3 = () => {
         </div>
       </div>
 
-      <h3 style={{
-        fontSize: '17px',
-        fontWeight: '600',
-        color: '#1f2937',
-        marginTop: '2.5rem',
-        marginBottom: '0.375rem'
-      }}>
-        Three Critical Colon Rules
-      </h3>
-
-      <div style={{
-        marginBottom: '1.5rem'
-      }}>
-        <div style={{ marginBottom: '1.5rem' }}>
-          <div style={{ fontWeight: '600', fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
-            Rule 1: The part before the colon must be an independent clause
-          </div>
-          <div style={{ fontSize: '15px', color: '#374151', marginBottom: '0.75rem' }}>
-            The part before the colon must be a complete sentence by itself.
-          </div>
-          <div style={{ marginLeft: '2rem' }}>
-            <div style={{ fontSize: '15px', color: '#991b1b', marginBottom: '0.375rem' }}>
-              ❌ Incorrect: The slide showing the most popular car colors in 2018: white, gray, and black.
-            </div>
-            <div style={{ fontSize: '15px', color: '#166534', marginBottom: '0.5rem' }}>
-              ✓ Correct: The slide shows the most popular car colors in 2018: white, gray, and black.
-            </div>
-            <div style={{ fontSize: '15px', color: '#991b1b', marginBottom: '0.375rem' }}>
-              ❌ Incorrect: The hairstylist excelled in: cuts, coloring, and highlights.
-            </div>
-            <div style={{ fontSize: '15px', color: '#166534' }}>
-              ✓ Correct: The hairstylist excelled in cuts, coloring, and highlights. (no colon needed)
-            </div>
-          </div>
+      <TipBox title="THREE CRITICAL COLON RULES">
+        <div style={{ marginBottom: '1rem' }}>
+          <strong>Rule 1:</strong> The part before the colon must be an independent clause (a complete sentence).
         </div>
-
-        <div style={{ marginBottom: '1.5rem' }}>
-          <div style={{ fontWeight: '600', fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
-            Rule 2: Everything after the colon must be only the list, example, explanation, clarification, or definition
-          </div>
-          <div style={{ fontSize: '15px', color: '#374151', marginBottom: '0.75rem' }}>
-            The sentence cannot continue to other topics after the colon.
-          </div>
-          <div style={{ marginLeft: '2rem' }}>
-            <div style={{ fontSize: '15px', color: '#991b1b', marginBottom: '0.375rem' }}>
-              ❌ Incorrect: Will brought his lunch to the beach: a roast beef sandwich, and he brought his friend Joey a turkey club.
-            </div>
-            <div style={{ fontSize: '15px', color: '#166534' }}>
-              ✓ Correct: Will brought his lunch to the beach: a roast beef sandwich. He brought his friend Joey a turkey club.
-            </div>
-          </div>
+        <div style={{ marginBottom: '1rem' }}>
+          <strong>Rule 2:</strong> Everything after the colon must be only the list, example, explanation, clarification, or definition. The sentence cannot continue to other topics.
         </div>
-
         <div>
-          <div style={{ fontWeight: '600', fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
-            Rule 3: NEVER use colons with "including," "such as," or "for example"
-          </div>
-          <div style={{ fontSize: '15px', color: '#374151', marginBottom: '0.75rem' }}>
-            <strong>If you see a colon before OR after these phrases, it is always incorrect.</strong>
-          </div>
-          <div style={{ marginLeft: '2rem' }}>
-            <div style={{ fontSize: '15px', color: '#991b1b', marginBottom: '0.375rem' }}>
-              ❌ Incorrect: I went to the grocery store to pick up some items for dinner, including: chicken, cheese, and onions.
-            </div>
-            <div style={{ fontSize: '15px', color: '#991b1b', marginBottom: '0.375rem' }}>
-              ❌ Incorrect: I went to the grocery store to pick up some items for dinner: including chicken, cheese, and onions.
-            </div>
-            <div style={{ fontSize: '15px', color: '#166534', marginBottom: '0.5rem' }}>
-              ✓ Correct: I went to the grocery store to pick up some items for dinner, including chicken, cheese, and onions.
-            </div>
-            <div style={{ fontSize: '15px', color: '#991b1b', marginBottom: '0.375rem' }}>
-              ❌ Incorrect: The study relied on techniques such as: direct observation and surveying.
-            </div>
-            <div style={{ fontSize: '15px', color: '#166534' }}>
-              ✓ Correct: The study relied on techniques such as direct observation and surveying.
-            </div>
-          </div>
+          <strong>Rule 3:</strong> NEVER use colons with "including," "such as," or "for example." If you see a colon before OR after these phrases, it is always incorrect.
         </div>
-      </div>
+      </TipBox>
 
       <TipBox title="ADVANCED TIP">
         A colon can join two independent clauses if the second clause acts as a definition, example, explanation, or clarification of the first. Example: "Buddy got what he worked for: he really deserved that promotion." This is an advanced grammar rule that rarely appears on the ACT.
@@ -297,17 +180,12 @@ const PacketLesson_1_3 = () => {
         fontSize: '0.75rem',
         fontWeight: '600',
         color: '#9ca3af',
-        letterSpacing: '0.1em',
-        marginTop: '3rem',
-        marginBottom: '0.5rem'
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
       }}>
-        SECTION 3
+        • • •
       </div>
-      <div style={{
-        height: '2px',
-        backgroundColor: '#d1d5db',
-        marginBottom: '2rem'
-      }} />
 
       <h2 style={{
         fontSize: '22px',
@@ -324,9 +202,9 @@ const PacketLesson_1_3 = () => {
         color: '#374151',
         marginBottom: '1.5rem'
       }}>
-        <span style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>Dashes</span> can function like unnecessary information commas, parentheses, or colons.{' '}
-        <strong>Most commonly, a pair of dashes sets apart unnecessary information in the middle of a sentence.</strong>{' '}
-        Think of dashes as a stronger, more dramatic version of commas or parentheses.
+        <Term>Dashes</Term> can function like unnecessary information commas, <Term>parentheses</Term>, or <Term>colons</Term>.{' '}
+        <strong>Most commonly, a pair of <Term>dashes</Term> sets apart unnecessary information in the middle of a sentence.</strong>{' '}
+        Think of <Term>dashes</Term> as a stronger, more dramatic version of commas or <Term>parentheses</Term>.
       </div>
 
       <h3 style={{
@@ -366,24 +244,6 @@ const PacketLesson_1_3 = () => {
       <TipBox title="CRITICAL RULE">
         You cannot mix punctuation! Must be a pair of commas, a pair of dashes, OR a pair of parentheses. Never mix them (like using one dash and one comma).
       </TipBox>
-
-      <div style={{
-        marginLeft: '2rem',
-        marginBottom: '1.5rem'
-      }}>
-        <div style={{ fontSize: '15px', color: '#991b1b', marginBottom: '0.375rem' }}>
-          ❌ Incorrect: Deep-dish pizza - a famous meal in Chicago, does not exist in Italy. (mixing dash and comma)
-        </div>
-        <div style={{ fontSize: '15px', color: '#166534', marginBottom: '0.375rem' }}>
-          ✓ Correct: Deep-dish pizza, a famous meal in Chicago, does not exist in Italy. (pair of commas)
-        </div>
-        <div style={{ fontSize: '15px', color: '#166534', marginBottom: '0.375rem' }}>
-          ✓ Correct: Deep-dish pizza - a famous meal in Chicago - does not exist in Italy. (pair of dashes)
-        </div>
-        <div style={{ fontSize: '15px', color: '#166534' }}>
-          ✓ Correct: Deep-dish pizza (a famous meal in Chicago) does not exist in Italy. (pair of parentheses)
-        </div>
-      </div>
 
       <h3 style={{
         fontSize: '17px',
@@ -431,17 +291,12 @@ const PacketLesson_1_3 = () => {
         fontSize: '0.75rem',
         fontWeight: '600',
         color: '#9ca3af',
-        letterSpacing: '0.1em',
-        marginTop: '3rem',
-        marginBottom: '0.5rem'
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
       }}>
-        SECTION 4
+        • • •
       </div>
-      <div style={{
-        height: '2px',
-        backgroundColor: '#d1d5db',
-        marginBottom: '2rem'
-      }} />
 
       <h2 style={{
         fontSize: '22px',
@@ -458,8 +313,8 @@ const PacketLesson_1_3 = () => {
         color: '#374151',
         marginBottom: '1.5rem'
       }}>
-        <span style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>Apostrophes</span> on the ACT have two functions: possession and contractions.{' '}
-        <strong>Most apostrophe questions test whether you can identify the correct possessive form.</strong>
+        <Term>Apostrophes</Term> on the ACT have two functions: possession and <Term>contractions</Term>.{' '}
+        <strong>Most <Term>apostrophe</Term> questions test whether you can identify the correct possessive form.</strong>
       </div>
 
       <h3 style={{
@@ -543,9 +398,13 @@ const PacketLesson_1_3 = () => {
         color: '#374151',
         marginBottom: '0.75rem'
       }}>
-        <strong><span style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>Possessive pronouns</span> (its, hers, yours, ours, theirs) end in "s" but NEVER use an apostrophe.</strong>{' '}
-        <span style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>Contractions</span> use an apostrophe to show where letters are removed.
+        <strong><Term>Possessive pronouns</Term> (its, hers, yours, ours, theirs) end in "s" but NEVER use an <Term>apostrophe</Term>.</strong>{' '}
+        <Term>Contractions</Term> use an <Term>apostrophe</Term> to show where letters are removed.
       </div>
+
+      <TipBox title="THE PLUG-IN TEST">
+        When choosing between a possessive pronoun and a contraction, expand the contraction. If it makes sense, use the apostrophe. If it doesn't make sense, use the possessive pronoun (no apostrophe). Example: "The cat loves (its/it's) toy" → Try "it is" → Doesn't work! Use "its" (possessive).
+      </TipBox>
 
       <div style={{
         marginLeft: '2rem',
@@ -554,21 +413,8 @@ const PacketLesson_1_3 = () => {
         <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
           <strong>Possessive pronouns (no apostrophe):</strong> its, hers, yours, ours, theirs, whose
         </div>
-        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '1rem' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937' }}>
           <strong>Contractions (with apostrophe):</strong> it's (it is), you're (you are), they're (they are), who's (who is)
-        </div>
-
-        <div style={{ fontSize: '15px', color: '#374151', marginBottom: '0.5rem', fontWeight: '600' }}>
-          The plug-in test: Expand the contraction and see if it makes sense
-        </div>
-        <div style={{ fontSize: '15px', color: '#1f2937', marginLeft: '1.5rem', marginBottom: '0.375rem' }}>
-          Example: "The cat loves playing with (its/it's) new toy."
-        </div>
-        <div style={{ fontSize: '15px', color: '#991b1b', marginLeft: '1.5rem', marginBottom: '0.375rem' }}>
-          Test: "The cat loves playing with it is new toy." ❌ This doesn't work!
-        </div>
-        <div style={{ fontSize: '15px', color: '#166534', marginLeft: '1.5rem' }}>
-          Answer: "The cat loves playing with its new toy." ✓ Correct (possessive pronoun)
         </div>
       </div>
 
@@ -617,7 +463,7 @@ const PacketLesson_1_3 = () => {
         color: '#374151',
         marginBottom: '1.5rem'
       }}>
-        <span style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'underline' }}>Quotation marks</span> are most commonly used for direct quotes. They can also be used to show a word is being used as a technical term, slang, or in an unusual way.
+        <Term>Quotation marks</Term> are most commonly used for direct quotes. They can also be used to show a word is being used as a technical term, slang, or in an unusual way.
       </div>
 
       <h3 style={{
@@ -677,14 +523,14 @@ const PacketLesson_1_3 = () => {
         marginLeft: '2rem',
         marginBottom: '1.5rem'
       }}>
-        <div style={{ fontSize: '15px', color: '#991b1b', marginBottom: '0.375rem' }}>
-          ❌ Incorrect: My grandfather described the shells as, "beautiful souvenirs from a past life."
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
+          My grandfather described the shells as "beautiful souvenirs from a past life."
         </div>
-        <div style={{ fontSize: '15px', color: '#166534', marginBottom: '0.5rem' }}>
-          ✓ Correct: My grandfather described the shells as "beautiful souvenirs from a past life."
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.5rem' }}>
+          The article called the discovery "a breakthrough in modern science."
         </div>
-        <div style={{ fontSize: '15px', color: '#6b7280', fontStyle: 'italic' }}>
-          The quotation marks show these are the grandfather's words, but he's not actively speaking them in the scene.
+        <div style={{ fontSize: '15px', color: '#1f2937' }}>
+          The sign warned visitors about "dangerous wildlife" in the area.
         </div>
       </div>
 

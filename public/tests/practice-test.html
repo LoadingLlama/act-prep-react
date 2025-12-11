@@ -96,33 +96,54 @@
                     <div class="timer" id="timer">--:--</div>
                 </div>
                 <div id="sectionSwitcher" style="display: none;">
-                    <select
-                        id="sectionDropdown"
-                        onchange="switchSection(this.value)"
-                        style="
-                            background: transparent;
-                            border: 1px solid rgba(255, 255, 255, 0.3);
-                            color: #ffffff;
-                            font-size: 0.875rem;
-                            font-weight: 600;
-                            padding: 0.5rem 2.25rem 0.5rem 0.75rem;
-                            border-radius: 6px;
-                            cursor: pointer;
-                            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-                            appearance: none;
-                            background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg width=\"14\" height=\"10\" viewBox=\"0 0 14 10\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3e%3cpath d=\"M1 1.5L7 8L13 1.5\" stroke=\"%23ffffff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/%3e%3c/svg%3e');
-                            background-repeat: no-repeat;
-                            background-position: right 0.75rem center;
-                            transition: all 0.2s ease;
-                        "
-                        onmouseover="this.style.background='rgba(255, 255, 255, 0.15)'; this.style.border='1px solid rgba(255, 255, 255, 0.5)'; this.style.backgroundImage='url(\'data:image/svg+xml;charset=UTF-8,%3csvg width=\"14\" height=\"10\" viewBox=\"0 0 14 10\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3e%3cpath d=\"M1 1.5L7 8L13 1.5\" stroke=\"%23ffffff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/%3e%3c/svg%3e\'); this.style.backgroundRepeat='no-repeat'; this.style.backgroundPosition='right 0.75rem center'; this.style.backdropFilter='blur(10px)';"
-                        onmouseout="this.style.background='transparent'; this.style.border='1px solid rgba(255, 255, 255, 0.3)'; this.style.backgroundImage='url(\'data:image/svg+xml;charset=UTF-8,%3csvg width=\"14\" height=\"10\" viewBox=\"0 0 14 10\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3e%3cpath d=\"M1 1.5L7 8L13 1.5\" stroke=\"%23ffffff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/%3e%3c/svg%3e\'); this.style.backgroundRepeat='no-repeat'; this.style.backgroundPosition='right 0.75rem center'; this.style.backdropFilter='none';"
-                    >
-                        <option value="english" style="background: #0f172a; color: #ffffff;">English</option>
-                        <option value="math" style="background: #0f172a; color: #ffffff;">Mathematics</option>
-                        <option value="reading" style="background: #0f172a; color: #ffffff;">Reading</option>
-                        <option value="science" style="background: #0f172a; color: #ffffff;">Science</option>
-                    </select>
+                    <div style="position: relative; display: inline-block;">
+                        <select
+                            id="sectionDropdown"
+                            onchange="switchSection(this.value)"
+                            style="
+                                background: rgba(255, 255, 255, 0.1);
+                                border: 1px solid rgba(255, 255, 255, 0.3);
+                                color: #ffffff;
+                                font-size: 0.875rem;
+                                font-weight: 600;
+                                padding: 0.5rem 2rem 0.5rem 0.75rem;
+                                border-radius: 6px;
+                                cursor: pointer;
+                                font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                                appearance: none;
+                                -webkit-appearance: none;
+                                -moz-appearance: none;
+                                transition: all 0.2s ease;
+                                outline: none;
+                                min-width: 120px;
+                            "
+                            onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.borderColor='rgba(255, 255, 255, 0.5)';"
+                            onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.borderColor='rgba(255, 255, 255, 0.3)';"
+                            onfocus="this.style.background='rgba(255, 255, 255, 0.15)'; this.style.borderColor='rgba(255, 255, 255, 0.5)';"
+                            onblur="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.borderColor='rgba(255, 255, 255, 0.3)';"
+                        >
+                            <option value="english">English</option>
+                            <option value="math">Mathematics</option>
+                            <option value="reading">Reading</option>
+                            <option value="science">Science</option>
+                        </select>
+                        <svg
+                            width="12"
+                            height="8"
+                            viewBox="0 0 12 8"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style="
+                                position: absolute;
+                                right: 0.625rem;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                pointer-events: none;
+                            "
+                        >
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
                 <button class="end-section-link" id="endButton" onclick="confirmEndSection()">
                     <span>End</span>
@@ -280,6 +301,7 @@
         // Review mode state
         let reviewMode = false;
         let reviewModeData = null;
+        let isLoadingSection = false; // Flag to prevent error messages during section switches
 
         // Load test data from sessionStorage
         let questions = JSON.parse(sessionStorage.getItem('practiceTestQuestions') || '[]');
@@ -292,6 +314,20 @@
         window.addEventListener('message', function(event) {
             if (event.data.type === 'LOAD_REVIEW_MODE') {
                 console.log('📨 Received LOAD_REVIEW_MODE message:', event.data);
+
+                // Set loading flag to prevent error messages
+                isLoadingSection = true;
+
+                // Hide content during loading to prevent flash
+                const questionSection = document.getElementById('questionSection');
+                const passageSection = document.getElementById('passageSection');
+                if (questionSection) {
+                    questionSection.style.visibility = 'hidden';
+                }
+                if (passageSection) {
+                    passageSection.style.visibility = 'hidden';
+                }
+
                 reviewMode = true;
                 reviewModeData = event.data;
 
@@ -437,8 +473,11 @@
         let flaggedQuestions = new Set();
         let timeLeft = duration * 60; // Convert to seconds
 
-        // If no questions on initial load and not waiting for review mode, show error
-        if (questions.length === 0 && !sessionStorage.getItem('waitingForReviewMode')) {
+        // Check if we're in an iframe (review mode context)
+        const isInIframe = window.self !== window.top;
+
+        // If no questions on initial load and not in iframe, show error
+        if (questions.length === 0 && !sessionStorage.getItem('waitingForReviewMode') && !isInIframe) {
             console.error('❌ NO QUESTIONS LOADED');
             console.error('SessionStorage keys:', Object.keys(sessionStorage));
             console.error('SessionStorage practiceTestQuestions:', sessionStorage.getItem('practiceTestQuestions'));
@@ -453,17 +492,27 @@
                     </button>
                 </div>
             `;
+        } else if (questions.length === 0 && isInIframe) {
+            // In iframe, just show loading state - data will come via postMessage
+            console.log('⏳ Iframe waiting for review mode data...');
+            document.getElementById('questionSection').innerHTML = '';
+            document.getElementById('questionSection').style.visibility = 'hidden';
         }
 
         // Initialize test
         function initTest() {
-            console.log('🚀 initTest called, questions.length:', questions.length);
+            console.log('🚀 initTest called, questions.length:', questions.length, 'isLoadingSection:', isLoadingSection);
 
-            if (questions.length === 0) {
+            if (questions.length === 0 && !isLoadingSection) {
                 console.log('❌ No questions found - timer will NOT start');
                 document.getElementById('questionSection').innerHTML =
                     '<div style="padding: 2rem; text-align: center; color: #6b7280;">No questions loaded. Please go back and select a test.</div>';
                 return;
+            }
+
+            if (questions.length === 0 && isLoadingSection) {
+                console.log('⏳ Waiting for section data to load...');
+                return; // Don't show error during loading
             }
 
             console.log('✅ Questions loaded, initializing test...');
@@ -895,10 +944,27 @@
             console.log(`📊 Explanation stats: ${questionsWithExplanations}/${questions.length} questions have explanations`);
             questionSection.innerHTML = questionHTML;
 
+            // Show content now that it's ready
+            if (questionSection) questionSection.style.visibility = 'visible';
+            if (passageSection) passageSection.style.visibility = 'visible';
+
+            // Clear loading flag
+            isLoadingSection = false;
+
             // Typeset math after content is rendered
             if (window.MathJax) {
                 MathJax.typesetPromise([passageSection, questionSection]).catch(err => {
                     console.error('MathJax typesetting failed:', err);
+                });
+            }
+
+            // Send section loaded message in review mode
+            if (reviewMode && window.parent) {
+                requestAnimationFrame(() => {
+                    window.parent.postMessage({
+                        type: 'SECTION_LOADED'
+                    }, '*');
+                    console.log('✅ Sent SECTION_LOADED message to parent');
                 });
             }
         }
@@ -1021,7 +1087,8 @@
 
             const nextBtn = document.getElementById('nextBtn');
 
-            if (isLastQuestion) {
+            // In review mode, always show NEXT button (no "Review Answers" modal)
+            if (isLastQuestion && !reviewMode) {
                 nextBtn.textContent = 'Review Answers';
                 nextBtn.onclick = showQuestionModal;
             } else {

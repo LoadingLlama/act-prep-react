@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-/* Smooth page transition animations */
+/* Smooth page transitions */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -29,4 +29,15 @@ code {
   to {
     opacity: 0;
   }
+}
+
+/* Optimize rendering performance */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent layout shift during route transitions */
+#root {
+  min-height: 100vh;
 }

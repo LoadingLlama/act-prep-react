@@ -13,6 +13,19 @@ import { supabase } from '../../services/api/supabase.service';
 import LessonsService from '../../services/api/lessons.service';
 import PacketLesson_1_1 from '../lesson/PacketLesson_1_1';
 import PacketLesson_1_2 from '../lesson/PacketLesson_1_2';
+import PacketLesson_1_3 from '../lesson/PacketLesson_1_3';
+import PacketLesson_1_4 from '../lesson/PacketLesson_1_4';
+import PacketLesson_1_5 from '../lesson/PacketLesson_1_5';
+import PacketLesson_1_6 from '../lesson/PacketLesson_1_6';
+import PacketLesson_1_7 from '../lesson/PacketLesson_1_7';
+import PacketLesson_1_8 from '../lesson/PacketLesson_1_8';
+import PacketLesson_1_9 from '../lesson/PacketLesson_1_9';
+import PacketLesson_2_1 from '../lesson/PacketLesson_2_1';
+import PacketLesson_2_2 from '../lesson/PacketLesson_2_2';
+import PacketLesson_2_3 from '../lesson/PacketLesson_2_3';
+import PacketLesson_2_4 from '../lesson/PacketLesson_2_4';
+import PacketLesson_2_5 from '../lesson/PacketLesson_2_5';
+import PacketLesson_2_6 from '../lesson/PacketLesson_2_6';
 
 /**
  * LessonModal - Full-screen modal for lesson viewing
@@ -189,6 +202,32 @@ const LessonModal = ({
                 <PacketLesson_1_1 />
               ) : currentLesson === 'commas' ? (
                 <PacketLesson_1_2 />
+              ) : currentLesson === 'punctuation' ? (
+                <PacketLesson_1_3 />
+              ) : currentLesson === 'verbs' ? (
+                <PacketLesson_1_4 />
+              ) : currentLesson === 'pronouns' ? (
+                <PacketLesson_1_5 />
+              ) : currentLesson === 'modifiers' ? (
+                <PacketLesson_1_6 />
+              ) : currentLesson === 'parallel-structure' ? (
+                <PacketLesson_1_7 />
+              ) : currentLesson === 'misc-topics' ? (
+                <PacketLesson_1_8 />
+              ) : currentLesson === 'grammar-review' ? (
+                <PacketLesson_1_9 />
+              ) : currentLesson === 'redundancy' ? (
+                <PacketLesson_2_1 />
+              ) : currentLesson === 'word-choice' ? (
+                <PacketLesson_2_2 />
+              ) : currentLesson === 'transitions' ? (
+                <PacketLesson_2_3 />
+              ) : currentLesson === 'which-choice' ? (
+                <PacketLesson_2_4 />
+              ) : currentLesson === 'adding-deleting' ? (
+                <PacketLesson_2_5 />
+              ) : currentLesson === 'logical-placement' ? (
+                <PacketLesson_2_6 />
               ) : (
                 <ProgressiveLessonRenderer
                   lesson={{...lesson, id: currentLessonData.id}}
