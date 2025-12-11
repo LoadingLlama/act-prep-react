@@ -33,16 +33,12 @@ const TestsContent = () => {
     }
   });
   const [completedTests, setCompletedTests] = useState(() => {
-    // Load from cache for instant rendering
+    // Load from cache for instant rendering - cache persists for entire session
     try {
-      const cached = localStorage.getItem(`completedTests_${user?.id}`);
+      const cached = sessionStorage.getItem(`completedTests_${user?.id}`);
       if (cached) {
-        const { data, timestamp } = JSON.parse(cached);
-        // Cache valid for 5 minutes
-        if (Date.now() - timestamp < 300000) {
-          console.log('✅ Using cached completed tests');
-          return new Set(data);
-        }
+        console.log('✅ Using cached completed tests from session');
+        return new Set(JSON.parse(cached));
       }
     } catch (e) {
       console.error('Error loading cached completed tests:', e);
@@ -120,13 +116,10 @@ const TestsContent = () => {
       console.log('✅ Completed practice tests (DB numbers):', Array.from(completed));
       setCompletedTests(completed);
 
-      // Cache the results
+      // Cache the results for the session
       try {
-        localStorage.setItem(`completedTests_${user.id}`, JSON.stringify({
-          data: Array.from(completed),
-          timestamp: Date.now()
-        }));
-        console.log('✅ Cached completed tests to localStorage');
+        sessionStorage.setItem(`completedTests_${user.id}`, JSON.stringify(Array.from(completed)));
+        console.log('✅ Cached completed tests to sessionStorage');
       } catch (e) {
         console.error('Error caching completed tests:', e);
       }
@@ -138,10 +131,16 @@ const TestsContent = () => {
   useEffect(() => {
     if (user) {
       checkFeatureAccess();
-      checkDiagnosticStatus();
-      checkCompletedTests();
+
+      // Only fetch if we don't have cached data
+      if (hasCompletedDiagnostic === null) {
+        checkDiagnosticStatus();
+      }
+      if (completedTests.size === 0) {
+        checkCompletedTests();
+      }
     }
-  }, [user, checkFeatureAccess, checkDiagnosticStatus, checkCompletedTests]);
+  }, [user]); // Remove dependencies to prevent re-fetching
 
   // Note: Test 1 in database is the Diagnostic Test, so practice tests start at 2
   // Memoized to prevent recreating array on every render

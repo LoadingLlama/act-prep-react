@@ -28,7 +28,7 @@ const useStyles = createUseStyles({
     top: 0,
     width: '240px',
     height: '100vh',
-    background: '#b91c1c',
+    background: '#08245b',
     padding: '0',
     overflow: 'hidden',
     zIndex: 1000,

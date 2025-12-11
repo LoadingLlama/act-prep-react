@@ -634,24 +634,18 @@ const InsightsPage = () => {
   const outletContext = useOutletContext();
   const { setDiagnosticTestOpen } = outletContext || {};
 
-  // Check cache immediately to avoid loading state
+  // Check session cache immediately to avoid loading state
   const getCachedInsights = () => {
     if (!user) return null;
     const cacheKey = `insights_${user.id}`;
-    const cached = localStorage.getItem(cacheKey);
-    const cacheTimestamp = localStorage.getItem(`${cacheKey}_timestamp`);
-    const now = Date.now();
-
-    if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 600000) { // 10 minutes
-      return JSON.parse(cached);
-    }
-    return null;
+    const cached = sessionStorage.getItem(cacheKey);
+    return cached ? JSON.parse(cached) : null;
   };
 
   const getCachedWeakAreas = () => {
     if (!user) return [];
     const weakAreasCacheKey = `weak_areas_${user.id}`;
-    const cached = localStorage.getItem(weakAreasCacheKey);
+    const cached = sessionStorage.getItem(weakAreasCacheKey);
     return cached ? JSON.parse(cached) : [];
   };
 
@@ -783,28 +777,25 @@ const InsightsPage = () => {
     try {
       logger.info('InsightsPage', 'loadInsights', { userId: user.id });
 
-      // Check cache first
+      // Check session cache first - persists for entire session
       const cacheKey = `insights_${user.id}`;
       const weakAreasCacheKey = `weak_areas_${user.id}`;
-      const cached = localStorage.getItem(cacheKey);
-      const cachedWeakAreas = localStorage.getItem(weakAreasCacheKey);
-      const cacheTimestamp = localStorage.getItem(`${cacheKey}_timestamp`);
-      const now = Date.now();
+      const cached = sessionStorage.getItem(cacheKey);
+      const cachedWeakAreas = sessionStorage.getItem(weakAreasCacheKey);
 
-      // Use cache if less than 10 minutes old
-      if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < 600000) {
+      // Use cache if available (no expiry - lasts entire session)
+      if (cached) {
         const cachedData = JSON.parse(cached);
         setInsights(cachedData);
         setIsLoading(false);
-        console.log('📊 Using cached insights data');
+        console.log('📊 Using cached insights data from session');
 
         // Load cached weak areas if available
         if (cachedWeakAreas) {
           setWeakAreas(JSON.parse(cachedWeakAreas));
         }
 
-        // Still refresh in background but don't await
-        refreshInsightsInBackground(cacheKey, weakAreasCacheKey);
+        // Don't refresh in background - data stays static for session
         return;
       }
 
@@ -815,9 +806,8 @@ const InsightsPage = () => {
       const insightsData = await InsightsService.getUserInsights(user.id);
       setInsights(insightsData);
 
-      // Cache the basic insights immediately
-      localStorage.setItem(cacheKey, JSON.stringify(insightsData));
-      localStorage.setItem(`${cacheKey}_timestamp`, String(Date.now()));
+      // Cache the basic insights for the session
+      sessionStorage.setItem(cacheKey, JSON.stringify(insightsData));
 
       // Get the diagnostic session to analyze
       const diagnosticSession = insightsData.diagnostic?.latestSession;
@@ -959,8 +949,8 @@ const InsightsPage = () => {
 
       setWeakAreas(weakAreasFromDiagnostic);
 
-      // Cache weak areas separately
-      localStorage.setItem(cacheKey, JSON.stringify(weakAreasFromDiagnostic));
+      // Cache weak areas for the session
+      sessionStorage.setItem(cacheKey, JSON.stringify(weakAreasFromDiagnostic));
 
       setStrengths([]); // We'll compute strengths later if needed
     } catch (error) {
