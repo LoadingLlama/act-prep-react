@@ -41,3 +41,13 @@ code {
 #root {
   min-height: 100vh;
 }
+
+/* Prevent flash on tab visibility change */
+body {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  transform: translateZ(0);
+}

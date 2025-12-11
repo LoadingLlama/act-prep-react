@@ -78,30 +78,35 @@ function ScrollToTop() {
 
 /**
  * Page transition wrapper for smooth fade effects
+ * Only transitions on actual route changes, not tab visibility
  */
 function PageTransition({ children }) {
   const location = useLocation();
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const prevPathnameRef = React.useRef(location.pathname);
 
   useEffect(() => {
-    // Start fade out
-    setIsTransitioning(true);
+    // Only transition if the pathname actually changed
+    if (prevPathnameRef.current !== location.pathname) {
+      setIsTransitioning(true);
 
-    // After a short delay, fade back in
-    const timer = setTimeout(() => {
-      setIsTransitioning(false);
-    }, 150);
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        prevPathnameRef.current = location.pathname;
+      }, 150);
 
-    return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
+    }
   }, [location.pathname]);
 
   return (
     <div
       style={{
         opacity: isTransitioning ? 0 : 1,
-        transition: 'opacity 0.15s ease-in-out',
+        transition: isTransitioning ? 'opacity 0.15s ease-in-out' : 'none',
         width: '100%',
-        minHeight: '100vh'
+        minHeight: '100vh',
+        willChange: isTransitioning ? 'opacity' : 'auto'
       }}
     >
       {children}
