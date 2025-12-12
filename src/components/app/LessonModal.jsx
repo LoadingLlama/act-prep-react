@@ -26,6 +26,7 @@ import PacketLesson_2_3 from '../lesson/PacketLesson_2_3';
 import PacketLesson_2_4 from '../lesson/PacketLesson_2_4';
 import PacketLesson_2_5 from '../lesson/PacketLesson_2_5';
 import PacketLesson_2_6 from '../lesson/PacketLesson_2_6';
+import PacketLesson_1_1_Math from '../lesson/PacketLesson_1_1_Math';
 
 /**
  * LessonModal - Full-screen modal for lesson viewing
@@ -229,6 +230,8 @@ const LessonModal = ({
                 <PacketLesson_2_5 />
               ) : currentLesson === 'logical-placement' ? (
                 <PacketLesson_2_6 />
+              ) : currentLesson === 'backsolving' ? (
+                <PacketLesson_1_1_Math />
               ) : (
                 <ProgressiveLessonRenderer
                   lesson={{...lesson, id: currentLessonData.id}}
