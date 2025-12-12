@@ -12,9 +12,11 @@ from matplotlib.patches import Arc, FancyBboxPatch, Polygon, Wedge, Circle
 from matplotlib.patches import FancyArrowPatch
 import os
 
-# Create output directory
+# Create output directories
 OUTPUT_DIR = '../public/images/math/geometry'
+ALGEBRA_DIR = '../public/images/math/algebra'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+os.makedirs(ALGEBRA_DIR, exist_ok=True)
 
 # ACT-style colors
 ACT_BLUE = '#08245b'
@@ -394,18 +396,151 @@ def generate_30_60_90_triangle():
     print('✓ Generated: triangle-30-60-90.svg')
 
 # ============================================================================
+# ALGEBRA DIAGRAMS: Parabolas
+# ============================================================================
+
+def setup_coordinate_axes(fig_size=(8, 6), xlim=(-5, 5), ylim=(-2, 10)):
+    """
+    Create a coordinate plane with clean axes
+    """
+    fig, ax = plt.subplots(figsize=fig_size, dpi=150)
+    ax.set_xlim(xlim)
+    ax.set_ylim(ylim)
+
+    # Draw axes
+    ax.axhline(y=0, color='black', linewidth=1.5)
+    ax.axvline(x=0, color='black', linewidth=1.5)
+
+    # Grid
+    ax.grid(True, alpha=0.2, linestyle='--', linewidth=0.5)
+
+    # Ticks
+    ax.tick_params(labelsize=10)
+
+    return fig, ax
+
+def generate_standard_parabola():
+    """
+    Generate y = x^2 parabola
+    """
+    fig, ax = setup_coordinate_axes(xlim=(-4, 4), ylim=(-1, 8))
+
+    # Generate parabola points
+    x = np.linspace(-3, 3, 200)
+    y = x**2
+
+    # Plot parabola
+    ax.plot(x, y, color=ACT_BLUE, linewidth=3, label='y = x²')
+
+    # Mark vertex
+    ax.plot(0, 0, 'o', color='#ef4444', markersize=10, zorder=5)
+    ax.text(0.3, 0.3, 'Vertex (0, 0)', fontsize=11, color='#ef4444', fontweight='bold')
+
+    # Mark axis of symmetry
+    ax.axvline(x=0, color=ACT_ACCENT, linewidth=2, linestyle='--', alpha=0.7, label='Axis of symmetry: x = 0')
+
+    # Labels
+    ax.set_xlabel('x', fontsize=12, fontweight='bold')
+    ax.set_ylabel('y', fontsize=12, fontweight='bold')
+    ax.set_title('Standard Parabola: y = x²', fontsize=14, fontweight='bold', color=ACT_BLUE, pad=15)
+    ax.legend(loc='upper right', fontsize=10)
+
+    plt.tight_layout()
+    plt.savefig(f'{ALGEBRA_DIR}/parabola-standard.svg', format='svg', bbox_inches='tight')
+    plt.close()
+    print('✓ Generated: parabola-standard.svg')
+
+def generate_parabola_vertex_form():
+    """
+    Generate parabola showing vertex form transformations
+    """
+    fig, ax = setup_coordinate_axes(xlim=(-5, 5), ylim=(-2, 10))
+
+    # Generate multiple parabolas
+    x = np.linspace(-5, 5, 200)
+
+    # y = x^2 (reference)
+    y1 = x**2
+    ax.plot(x, y1, color=ACT_GRAY, linewidth=2, linestyle='--', alpha=0.5, label='y = x²')
+
+    # y = (x - 2)^2 + 1 (vertex at (2, 1))
+    y2 = (x - 2)**2 + 1
+    ax.plot(x, y2, color=ACT_BLUE, linewidth=3, label='y = (x - 2)² + 1')
+
+    # Mark vertices
+    ax.plot(0, 0, 'o', color=ACT_GRAY, markersize=8, zorder=5)
+    ax.text(0.3, 0.3, '(0, 0)', fontsize=10, color=ACT_GRAY)
+
+    ax.plot(2, 1, 'o', color='#ef4444', markersize=10, zorder=5)
+    ax.text(2.3, 1.3, 'Vertex (2, 1)', fontsize=11, color='#ef4444', fontweight='bold')
+
+    # Axis of symmetry
+    ax.axvline(x=2, color=ACT_ACCENT, linewidth=2, linestyle='--', alpha=0.7)
+    ax.text(2, 9.3, 'x = 2', fontsize=10, color=ACT_ACCENT, ha='center', fontweight='bold')
+
+    # Labels
+    ax.set_xlabel('x', fontsize=12, fontweight='bold')
+    ax.set_ylabel('y', fontsize=12, fontweight='bold')
+    ax.set_title('Vertex Form: y = (x - h)² + k', fontsize=14, fontweight='bold', color=ACT_BLUE, pad=15)
+    ax.legend(loc='upper left', fontsize=10)
+
+    plt.tight_layout()
+    plt.savefig(f'{ALGEBRA_DIR}/parabola-vertex-form.svg', format='svg', bbox_inches='tight')
+    plt.close()
+    print('✓ Generated: parabola-vertex-form.svg')
+
+def generate_parabola_upward_downward():
+    """
+    Generate parabolas opening up and down
+    """
+    fig, ax = setup_coordinate_axes(xlim=(-4, 4), ylim=(-8, 8))
+
+    # Generate parabolas
+    x = np.linspace(-4, 4, 200)
+
+    # y = x^2 (opens up)
+    y_up = x**2
+    ax.plot(x, y_up, color=ACT_BLUE, linewidth=3, label='y = x² (a > 0)')
+    ax.plot(0, 0, 'o', color=ACT_BLUE, markersize=10, zorder=5)
+    ax.text(0.3, 0.5, 'Min', fontsize=10, color=ACT_BLUE, fontweight='bold')
+
+    # y = -x^2 (opens down)
+    y_down = -x**2
+    ax.plot(x, y_down, color='#ef4444', linewidth=3, label='y = -x² (a < 0)')
+    ax.plot(0, 0, 'o', color='#ef4444', markersize=10, zorder=5)
+    ax.text(0.3, -0.5, 'Max', fontsize=10, color='#ef4444', fontweight='bold')
+
+    # Labels
+    ax.set_xlabel('x', fontsize=12, fontweight='bold')
+    ax.set_ylabel('y', fontsize=12, fontweight='bold')
+    ax.set_title('Parabola Direction: a > 0 vs a < 0', fontsize=14, fontweight='bold', color=ACT_BLUE, pad=15)
+    ax.legend(loc='upper right', fontsize=10)
+
+    plt.tight_layout()
+    plt.savefig(f'{ALGEBRA_DIR}/parabola-direction.svg', format='svg', bbox_inches='tight')
+    plt.close()
+    print('✓ Generated: parabola-direction.svg')
+
+# ============================================================================
 # Main execution
 # ============================================================================
 if __name__ == '__main__':
-    print('Generating ACT Math Geometry Diagrams...')
+    print('Generating ACT Math Diagrams...')
     print('=' * 60)
 
+    print('\n[Geometry Diagrams]')
     generate_vertical_angles()
     generate_parallel_lines_transversal()
     generate_right_triangle()
     generate_45_45_90_triangle()
     generate_30_60_90_triangle()
 
+    print('\n[Algebra Diagrams]')
+    generate_standard_parabola()
+    generate_parabola_vertex_form()
+    generate_parabola_upward_downward()
+
     print('=' * 60)
-    print(f'All diagrams generated successfully in {OUTPUT_DIR}/')
-    print('Total diagrams: 5')
+    print(f'Geometry diagrams saved to: {OUTPUT_DIR}/')
+    print(f'Algebra diagrams saved to: {ALGEBRA_DIR}/')
+    print('Total diagrams: 8')
