@@ -22,8 +22,8 @@ def compile_tikz_to_svg(tikz_code, output_filename):
     """
     Compile TikZ code to SVG
     """
-    # Create LaTeX document
-    latex_doc = r'''\documentclass[tikz,border=10pt]{standalone}
+    # Create LaTeX document with no border
+    latex_doc = r'''\documentclass[tikz,border=0pt]{standalone}
 \usepackage{tikz}
 \usepackage{amsmath}
 \usetikzlibrary{angles,arrows.meta,calc,decorations.markings,patterns,positioning,quotes}
@@ -68,70 +68,60 @@ def compile_tikz_to_svg(tikz_code, output_filename):
 def generate_vertical_angles():
     """Generate vertical angles diagram"""
     tikz_code = r'''
-\begin{tikzpicture}[scale=1.5, line width=1.5pt]
+\begin{tikzpicture}[scale=1.0, line width=1.2pt]
     % Two intersecting lines
-    \draw[blue!70!black] (-2,0) -- (2,0);
-    \draw[blue!70!black] (0,-2) -- (0,2);
+    \draw[black!80] (-2.2,0) -- (2.2,0);
+    \draw[black!80] (0,-2.2) -- (0,2.2);
 
-    % Mark angles
-    \node[font=\Large\bfseries] at (-0.5, 0.5) {$a$};
-    \node[font=\Large\bfseries] at (0.5, 0.5) {$b$};
-    \node[font=\Large\bfseries] at (0.5, -0.5) {$c$};
-    \node[font=\Large\bfseries] at (-0.5, -0.5) {$d$};
+    % Mark angles with better placement
+    \node[font=\large] at (-0.6, 0.6) {$a$};
+    \node[font=\large] at (0.6, 0.6) {$b$};
+    \node[font=\large] at (0.6, -0.6) {$c$};
+    \node[font=\large] at (-0.6, -0.6) {$d$};
 
     % Mark the intersection point
-    \fill (0,0) circle (2pt);
-
-    % Title
-    \node[font=\Large\bfseries, blue!70!black] at (0, 2.5) {Vertical Angles};
-
-    % Caption
-    \node[font=\small, gray] at (0, -2.5) {$a = c$ and $b = d$};
+    \fill[black] (0,0) circle (1.5pt);
 \end{tikzpicture}
 '''
     compile_tikz_to_svg(tikz_code, f'{GEOMETRY_DIR}/vertical-angles.svg')
 
 def generate_parallel_lines_transversal():
-    """Generate parallel lines cut by transversal"""
+    """Generate parallel lines cut by transversal with CORRECT angle numbering"""
     tikz_code = r'''
-\begin{tikzpicture}[scale=1.2, line width=1.5pt]
-    % Parallel lines
-    \draw[blue!70!black] (-3, 2) -- (3, 2);
-    \draw[blue!70!black] (-3, 0) -- (3, 0);
+\begin{tikzpicture}[scale=1.1, line width=1.2pt]
+    % Parallel lines (horizontal)
+    \draw[black!80] (-3.5, 2) -- (3.5, 2);
+    \draw[black!80] (-3.5, 0) -- (3.5, 0);
 
-    % Transversal
-    \draw[red!70!black] (-2, -0.5) -- (2, 2.5);
+    % Transversal (diagonal line crossing both parallel lines)
+    % Top intersection at (-0.5, 2), bottom intersection at (0.5, 0)
+    \draw[black!80] (-2.5, -0.5) -- (2.5, 2.5);
 
-    % Intersection points
-    \coordinate (A) at (-0.8, 2);
-    \coordinate (B) at (0.8, 0);
+    % TOP INTERSECTION angles - placed INSIDE each angle region
+    % Angle 1: upper-left (above line, left of transversal)
+    \node[font=\normalsize] at (-1.3, 2.35) {1};
+    % Angle 2: upper-right (above line, right of transversal)
+    \node[font=\normalsize] at (0.3, 2.35) {2};
+    % Angle 3: lower-right (below line, right of transversal)
+    \node[font=\normalsize] at (0.1, 1.65) {3};
+    % Angle 4: lower-left (below line, left of transversal)
+    \node[font=\normalsize] at (-1.1, 1.65) {4};
 
-    % Mark angles at top intersection
-    \node[font=\normalsize\bfseries, fill=white, inner sep=1pt] at (-1.1, 2.2) {1};
-    \node[font=\normalsize\bfseries, fill=white, inner sep=1pt] at (-0.5, 2.2) {2};
-    \node[font=\normalsize\bfseries, fill=white, inner sep=1pt] at (-0.5, 1.8) {3};
-    \node[font=\normalsize\bfseries, fill=white, inner sep=1pt] at (-1.1, 1.8) {4};
-
-    % Mark angles at bottom intersection
-    \node[font=\normalsize\bfseries, fill=white, inner sep=1pt] at (0.5, 0.2) {5};
-    \node[font=\normalsize\bfseries, fill=white, inner sep=1pt] at (1.1, 0.2) {6};
-    \node[font=\normalsize\bfseries, fill=white, inner sep=1pt] at (1.1, -0.2) {7};
-    \node[font=\normalsize\bfseries, fill=white, inner sep=1pt] at (0.5, -0.2) {8};
+    % BOTTOM INTERSECTION angles - placed INSIDE each angle region
+    % Angle 5: upper-left (above line, left of transversal)
+    \node[font=\normalsize] at (-0.1, 0.35) {5};
+    % Angle 6: upper-right (above line, right of transversal)
+    \node[font=\normalsize] at (1.3, 0.35) {6};
+    % Angle 7: lower-right (below line, right of transversal)
+    \node[font=\normalsize] at (1.1, -0.35) {7};
+    % Angle 8: lower-left (below line, left of transversal)
+    \node[font=\normalsize] at (-0.3, -0.35) {8};
 
     % Parallel markers
-    \draw[very thick] (2.5, 2.1) -- (2.6, 2.1);
-    \draw[very thick] (2.5, 1.9) -- (2.6, 1.9);
-    \draw[very thick] (2.5, 0.1) -- (2.6, 0.1);
-    \draw[very thick] (2.5, -0.1) -- (2.6, -0.1);
-
-    % Title
-    \node[font=\Large\bfseries, blue!70!black] at (0, 3.2) {Parallel Lines \& Transversal};
-
-    % Caption
-    \node[font=\small, gray, align=center] at (0, -1) {
-        Corresponding: $\angle1=\angle5$, $\angle2=\angle6$ \\
-        Alternate Interior: $\angle3=\angle6$, $\angle4=\angle5$
-    };
+    \draw[line width=1pt] (3.0, 2.05) -- (3.2, 2.05);
+    \draw[line width=1pt] (3.0, 1.95) -- (3.2, 1.95);
+    \draw[line width=1pt] (3.0, 0.05) -- (3.2, 0.05);
+    \draw[line width=1pt] (3.0, -0.05) -- (3.2, -0.05);
 \end{tikzpicture}
 '''
     compile_tikz_to_svg(tikz_code, f'{GEOMETRY_DIR}/parallel-lines-transversal.svg')
@@ -139,33 +129,22 @@ def generate_parallel_lines_transversal():
 def generate_right_triangle():
     """Generate right triangle"""
     tikz_code = r'''
-\begin{tikzpicture}[scale=2, line width=1.5pt]
+\begin{tikzpicture}[scale=1.3, line width=1.2pt]
     % Define triangle vertices
     \coordinate (A) at (0, 0);
     \coordinate (B) at (3, 0);
-    \coordinate (C) at (0, 2);
+    \coordinate (C) at (0, 2.5);
 
     % Draw triangle
-    \draw[blue!70!black, fill=blue!10] (A) -- (B) -- (C) -- cycle;
+    \draw[black!80, fill=black!5] (A) -- (B) -- (C) -- cycle;
 
     % Right angle marker
-    \draw[thick] (0, 0.15) -- (0.15, 0.15) -- (0.15, 0);
+    \draw[line width=1pt] (0, 0.18) -- (0.18, 0.18) -- (0.18, 0);
 
-    % Labels
-    \node[below left] at (A) {$A$};
-    \node[below right] at (B) {$B$};
-    \node[above left] at (C) {$C$};
-
-    % Side labels
-    \node[below] at (1.5, 0) {$b$};
-    \node[left] at (0, 1) {$a$};
-    \node[above right] at (1.5, 1) {$c$};
-
-    % Title
-    \node[font=\Large\bfseries, blue!70!black] at (1.5, 2.8) {Right Triangle};
-
-    % Caption
-    \node[font=\normalsize, gray] at (1.5, -0.7) {$a^2 + b^2 = c^2$};
+    % Side labels - optimally placed
+    \node[below, font=\normalsize] at (1.5, -0.15) {$b$};
+    \node[left, font=\normalsize] at (-0.15, 1.25) {$a$};
+    \node[above right, font=\normalsize] at (1.6, 1.3) {$c$};
 \end{tikzpicture}
 '''
     compile_tikz_to_svg(tikz_code, f'{GEOMETRY_DIR}/right-triangle.svg')
@@ -173,33 +152,26 @@ def generate_right_triangle():
 def generate_45_45_90_triangle():
     """Generate 45-45-90 special right triangle"""
     tikz_code = r'''
-\begin{tikzpicture}[scale=2.5, line width=1.5pt]
+\begin{tikzpicture}[scale=1.4, line width=1.2pt]
     % Define triangle vertices (isosceles right triangle)
     \coordinate (A) at (0, 0);
-    \coordinate (B) at (2, 0);
-    \coordinate (C) at (0, 2);
+    \coordinate (B) at (2.5, 0);
+    \coordinate (C) at (0, 2.5);
 
     % Draw triangle
-    \draw[blue!70!black, fill=green!10] (A) -- (B) -- (C) -- cycle;
+    \draw[black!80, fill=black!5] (A) -- (B) -- (C) -- cycle;
 
     % Right angle marker
-    \draw[thick] (0, 0.2) -- (0.2, 0.2) -- (0.2, 0);
+    \draw[line width=1pt] (0, 0.2) -- (0.2, 0.2) -- (0.2, 0);
 
-    % Angle markers
-    \node[font=\small] at (0.4, 0.15) {$45°$};
-    \node[font=\small] at (1.6, 0.3) {$45°$};
-    \node[font=\small] at (0.15, 1.6) {$90°$};
+    % Angle markers - optimally placed
+    \node[font=\small] at (0.5, 0.12) {$45°$};
+    \node[font=\small] at (2.0, 0.25) {$45°$};
 
-    % Side labels
-    \node[below] at (1, 0) {$x$};
-    \node[left] at (0, 1) {$x$};
-    \node[above right] at (1, 1.1) {$x\sqrt{2}$};
-
-    % Title
-    \node[font=\Large\bfseries, blue!70!black] at (1, 2.8) {45-45-90 Triangle};
-
-    % Caption
-    \node[font=\small, gray] at (1, -0.6) {Sides: $x : x : x\sqrt{2}$};
+    % Side labels - clean placement
+    \node[below, font=\normalsize] at (1.25, -0.15) {$x$};
+    \node[left, font=\normalsize] at (-0.15, 1.25) {$x$};
+    \node[above right, font=\normalsize] at (1.3, 1.35) {$x\sqrt{2}$};
 \end{tikzpicture}
 '''
     compile_tikz_to_svg(tikz_code, f'{GEOMETRY_DIR}/triangle-45-45-90.svg')
@@ -207,33 +179,26 @@ def generate_45_45_90_triangle():
 def generate_30_60_90_triangle():
     """Generate 30-60-90 special right triangle"""
     tikz_code = r'''
-\begin{tikzpicture}[scale=2.5, line width=1.5pt]
+\begin{tikzpicture}[scale=1.2, line width=1.2pt]
     % Define triangle vertices
     \coordinate (A) at (0, 0);
-    \coordinate (B) at (2, 0);
-    \coordinate (C) at (0, 3.464);  % sqrt(3) * 2
+    \coordinate (B) at (2.5, 0);
+    \coordinate (C) at (0, 4.33);  % sqrt(3) * 2.5
 
     % Draw triangle
-    \draw[blue!70!black, fill=orange!10] (A) -- (B) -- (C) -- cycle;
+    \draw[black!80, fill=black!5] (A) -- (B) -- (C) -- cycle;
 
     % Right angle marker
-    \draw[thick] (0, 0.2) -- (0.2, 0.2) -- (0.2, 0);
+    \draw[line width=1pt] (0, 0.2) -- (0.2, 0.2) -- (0.2, 0);
 
-    % Angle markers
-    \node[font=\small] at (0.15, 0.5) {$90°$};
-    \node[font=\small] at (1.5, 0.25) {$30°$};
-    \node[font=\small] at (0.3, 3.0) {$60°$};
+    % Angle markers - optimally placed
+    \node[font=\small] at (1.8, 0.2) {$30°$};
+    \node[font=\small] at (0.25, 3.8) {$60°$};
 
-    % Side labels
-    \node[below] at (1, 0) {$x\sqrt{3}$};
-    \node[left] at (0, 1.7) {$2x$};
-    \node[above right] at (1, 1.8) {$x$};
-
-    % Title
-    \node[font=\Large\bfseries, blue!70!black] at (1, 4.2) {30-60-90 Triangle};
-
-    % Caption
-    \node[font=\small, gray] at (1, -0.6) {Sides: $x : x\sqrt{3} : 2x$};
+    % Side labels - clean placement
+    \node[below, font=\normalsize] at (1.25, -0.15) {$x\sqrt{3}$};
+    \node[left, font=\normalsize] at (-0.2, 2.15) {$2x$};
+    \node[above right, font=\normalsize] at (1.3, 2.2) {$x$};
 \end{tikzpicture}
 '''
     compile_tikz_to_svg(tikz_code, f'{GEOMETRY_DIR}/triangle-30-60-90.svg')
@@ -245,28 +210,24 @@ def generate_30_60_90_triangle():
 def generate_standard_parabola():
     """Generate standard parabola y = x^2"""
     tikz_code = r'''
-\begin{tikzpicture}[scale=1.2, line width=1.5pt]
+\begin{tikzpicture}[scale=0.85, line width=1.2pt]
     % Axes
-    \draw[->] (-3.5, 0) -- (3.5, 0) node[right] {$x$};
-    \draw[->] (0, -0.5) -- (0, 5) node[above] {$y$};
+    \draw[->, line width=1pt] (-3.2, 0) -- (3.2, 0) node[right, font=\small] {$x$};
+    \draw[->, line width=1pt] (0, -0.3) -- (0, 4.2) node[above, font=\small] {$y$};
 
-    % Grid
-    \draw[gray!30, thin] (-3, -0) grid (3, 4);
+    % Grid - lighter
+    \draw[gray!20, very thin] (-3, 0) grid (3, 4);
 
     % Parabola
-    \draw[blue!70!black, very thick, smooth, domain=-2.8:2.8, samples=100]
+    \draw[black!70, very thick, smooth, domain=-2.5:2.5, samples=80]
         plot (\x, {\x*\x});
 
     % Vertex
-    \fill[red] (0, 0) circle (3pt);
-    \node[below right, red, font=\small\bfseries] at (0.1, 0.1) {Vertex $(0, 0)$};
+    \fill[black] (0, 0) circle (2pt);
+    \node[below right, font=\footnotesize] at (0.15, 0.1) {$(0, 0)$};
 
-    % Axis of symmetry
-    \draw[blue, dashed, thick] (0, -0.3) -- (0, 4.5);
-    \node[blue, font=\small] at (0.5, 4.2) {$x = 0$};
-
-    % Title
-    \node[font=\Large\bfseries, blue!70!black] at (0, 5.5) {$y = x^2$};
+    % Axis of symmetry - subtle
+    \draw[black!40, dashed, line width=0.8pt] (0, 0) -- (0, 4);
 \end{tikzpicture}
 '''
     compile_tikz_to_svg(tikz_code, f'{ALGEBRA_DIR}/parabola-standard.svg')
@@ -274,39 +235,31 @@ def generate_standard_parabola():
 def generate_parabola_vertex_form():
     """Generate parabola showing vertex form"""
     tikz_code = r'''
-\begin{tikzpicture}[scale=1.0, line width=1.5pt]
+\begin{tikzpicture}[scale=0.75, line width=1.2pt]
     % Axes
-    \draw[->] (-1, 0) -- (5, 0) node[right] {$x$};
-    \draw[->] (0, -0.5) -- (0, 6) node[above] {$y$};
+    \draw[->, line width=1pt] (-0.8, 0) -- (4.8, 0) node[right, font=\small] {$x$};
+    \draw[->, line width=1pt] (0, -0.3) -- (0, 5.5) node[above, font=\small] {$y$};
 
-    % Grid
-    \draw[gray!30, thin] (-1, 0) grid (5, 6);
+    % Grid - lighter
+    \draw[gray!20, very thin] (0, 0) grid (4.5, 5);
 
-    % Reference parabola y = x^2
-    \draw[gray, thick, dashed, smooth, domain=-0.8:0.8, samples=50]
+    % Reference parabola y = x^2 - subtle
+    \draw[gray!50, thick, dashed, smooth, domain=-0.5:0.5, samples=40]
         plot (\x, {\x*\x});
 
     % Shifted parabola y = (x-2)^2 + 1
-    \draw[blue!70!black, very thick, smooth, domain=0.2:3.8, samples=100]
+    \draw[black!70, very thick, smooth, domain=0.3:3.7, samples=80]
         plot (\x, {(\x-2)*(\x-2) + 1});
 
     % Vertices
-    \fill[gray] (0, 0) circle (2pt);
-    \node[below left, gray, font=\small] at (0, 0) {$(0, 0)$};
+    \fill[gray!50] (0, 0) circle (1.5pt);
+    \node[below left, gray!70, font=\footnotesize] at (0, 0) {$(0, 0)$};
 
-    \fill[red] (2, 1) circle (3pt);
-    \node[above right, red, font=\small\bfseries] at (2.1, 1.1) {Vertex $(2, 1)$};
+    \fill[black] (2, 1) circle (2pt);
+    \node[above right, font=\footnotesize] at (2.1, 1.1) {$(2, 1)$};
 
-    % Axis of symmetry
-    \draw[blue, dashed, thick] (2, 0) -- (2, 5.5);
-    \node[blue, font=\small] at (2, 5.8) {$x = 2$};
-
-    % Legend
-    \node[gray, font=\small] at (4, 5.5) {$y = x^2$};
-    \node[blue!70!black, font=\normalsize\bfseries] at (4, 5) {$y = (x-2)^2 + 1$};
-
-    % Title
-    \node[font=\Large\bfseries, blue!70!black] at (2.5, 6.8) {Vertex Form};
+    % Axis of symmetry - subtle
+    \draw[black!40, dashed, line width=0.8pt] (2, 0.3) -- (2, 5);
 \end{tikzpicture}
 '''
     compile_tikz_to_svg(tikz_code, f'{ALGEBRA_DIR}/parabola-vertex-form.svg')
@@ -314,38 +267,31 @@ def generate_parabola_vertex_form():
 def generate_parabola_direction():
     """Generate parabolas opening up and down"""
     tikz_code = r'''
-\begin{tikzpicture}[scale=1.0, line width=1.5pt]
+\begin{tikzpicture}[scale=0.75, line width=1.2pt]
     % Axes
-    \draw[->] (-3.5, 0) -- (3.5, 0) node[right] {$x$};
-    \draw[->] (0, -5) -- (0, 5) node[above] {$y$};
+    \draw[->, line width=1pt] (-3.5, 0) -- (3.5, 0) node[right, font=\small] {$x$};
+    \draw[->, line width=1pt] (0, -4.5) -- (0, 4.5) node[above, font=\small] {$y$};
 
-    % Grid
-    \draw[gray!30, thin] (-3, -4) grid (3, 4);
+    % Grid - lighter
+    \draw[gray!20, very thin] (-3, -4) grid (3, 4);
 
     % Parabola opening up (y = x^2)
-    \draw[blue!70!black, very thick, smooth, domain=-2.5:2.5, samples=100]
+    \draw[black!70, very thick, smooth, domain=-2.3:2.3, samples=70]
         plot (\x, {\x*\x});
 
     % Parabola opening down (y = -x^2)
-    \draw[red!70!black, very thick, smooth, domain=-2.5:2.5, samples=100]
+    \draw[black!70, very thick, smooth, domain=-2.3:2.3, samples=70]
         plot (\x, {-\x*\x});
 
-    % Vertices
-    \fill[blue] (0, 0) circle (3pt);
-    \node[right, blue, font=\small\bfseries] at (0.3, 0.3) {Min};
+    % Vertex marker
+    \fill[black] (0, 0) circle (2pt);
 
-    \fill[red] (0, 0) circle (3pt);
-    \node[right, red, font=\small\bfseries] at (0.3, -0.3) {Max};
+    % Labels - clean placement
+    \node[font=\normalsize] at (1.8, 3.2) {$y = x^2$};
+    \node[font=\footnotesize, gray!70] at (1.8, 2.7) {$(a > 0)$};
 
-    % Labels
-    \node[blue!70!black, font=\normalsize\bfseries] at (2, 3.5) {$y = x^2$};
-    \node[blue!70!black, font=\small] at (2, 3) {$(a > 0)$};
-
-    \node[red!70!black, font=\normalsize\bfseries] at (2, -3.5) {$y = -x^2$};
-    \node[red!70!black, font=\small] at (2, -3) {$(a < 0)$};
-
-    % Title
-    \node[font=\Large\bfseries, blue!70!black] at (0, 5.8) {Parabola Direction};
+    \node[font=\normalsize] at (1.8, -3.2) {$y = -x^2$};
+    \node[font=\footnotesize, gray!70] at (1.8, -2.7) {$(a < 0)$};
 \end{tikzpicture}
 '''
     compile_tikz_to_svg(tikz_code, f'{ALGEBRA_DIR}/parabola-direction.svg')
