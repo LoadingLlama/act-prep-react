@@ -1,23 +1,16 @@
 /**
  * Packet Lesson 1.1 Math - Working Backwards Strategy (Backsolving)
- * Custom packet-style layout for ACT Math test-taking strategy
- * Clean, left-aligned design with examples properly indented
+ * REDESIGNED to match English lesson structure exactly
+ * Minimal boxes, clean flow, left-aligned
  */
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import {
   PacketHeader,
   TipBox,
   ConceptBox,
-  SectionDivider
+  RuleBox
 } from './PacketComponents';
-import {
-  FormulaBox,
-  StrategyBox,
-  StepByStepBox,
-  CalculatorTipBox,
-  CommonMistakeBox
-} from './MathPacketComponents';
 import MathText from '../MathText';
 import Term from './Term';
 import { useTermTooltips } from '../../hooks/useTermTooltips';
@@ -57,7 +50,7 @@ const PacketLesson_1_1_Math = () => {
         This technique works on 30-40% of ACT Math questions and can save you critical time on test day.
       </div>
 
-      {/* Section 1: What is Backsolving? */}
+      {/* Section 1 */}
       <h2 style={{
         fontSize: '22px',
         fontWeight: '700',
@@ -87,20 +80,34 @@ const PacketLesson_1_1_Math = () => {
         Think of it like trying keys on a keyring. You don't need to figure out which key fits—you just try each one until the door opens.
       </p>
 
-      {/* Strategy Box */}
-      <StrategyBox title="WHY THIS WORKS" icon="💡">
-        The ACT always provides exactly one correct answer among the five choices. If you test an answer and it works perfectly,
-        you're guaranteed it's correct—no need to check the others. This turns algebra problems into simple arithmetic checks.
-      </StrategyBox>
+      <p style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginBottom: '1.5rem'
+      }}>
+        <strong>Why this works:</strong> The ACT always provides exactly one correct answer among the five choices. If you test an answer and it works perfectly,
+        you're guaranteed it's correct—no need to check the others.
+      </p>
 
-      <SectionDivider />
+      {/* Section divider */}
+      <div style={{
+        textAlign: 'center',
+        fontSize: '0.75rem',
+        fontWeight: '600',
+        color: '#9ca3af',
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
+      }}>
+        • • •
+      </div>
 
-      {/* Section 2: When to Use Backsolving */}
+      {/* Section 2 */}
       <h2 style={{
         fontSize: '22px',
         fontWeight: '700',
         color: '#1f2937',
-        marginTop: '3rem',
         marginBottom: '0.75rem'
       }}>
         2. When to Use Backsolving
@@ -142,7 +149,7 @@ const PacketLesson_1_1_Math = () => {
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginBottom: '1.5rem'
+        marginBottom: '0.5rem'
       }}>
         <strong>Look for questions that give you concrete numbers as answer choices.</strong> If you see answer choices like:
       </p>
@@ -164,14 +171,24 @@ const PacketLesson_1_1_Math = () => {
         You can backsolve! Each number can be tested in the original problem.
       </p>
 
-      <SectionDivider />
+      {/* Section divider */}
+      <div style={{
+        textAlign: 'center',
+        fontSize: '0.75rem',
+        fontWeight: '600',
+        color: '#9ca3af',
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
+      }}>
+        • • •
+      </div>
 
-      {/* Section 3: The Backsolving Process */}
+      {/* Section 3 */}
       <h2 style={{
         fontSize: '22px',
         fontWeight: '700',
         color: '#1f2937',
-        marginTop: '3rem',
         marginBottom: '0.75rem'
       }}>
         3. The Backsolving Process
@@ -186,50 +203,54 @@ const PacketLesson_1_1_Math = () => {
         Follow these steps every time you backsolve:
       </p>
 
-      <StepByStepBox
-        title="Backsolving Method"
-        steps={[
-          {
-            label: 'Step 1',
-            text: 'Read the problem carefully and identify what the question is asking for',
-            math: null
-          },
-          {
-            label: 'Step 2',
-            text: 'Start with answer choice C (the middle value)',
-            math: null
-          },
-          {
-            label: 'Step 3',
-            text: 'Plug choice C into the problem and check if it satisfies all conditions',
-            math: null
-          },
-          {
-            label: 'Step 4',
-            text: 'If C works perfectly, you\'re done! If C is too large, try A or B. If C is too small, try D or E.',
-            math: null
-          },
-          {
-            label: 'Step 5',
-            text: 'Repeat until you find the answer that works',
-            math: null
-          }
-        ]}
+      <RuleBox
+        number="1"
+        title="Read the problem carefully and identify what the question is asking for"
       />
 
-      <TipBox title="PRO TIP">
+      <RuleBox
+        number="2"
+        title="Start with answer choice C (the middle value)"
+      />
+
+      <RuleBox
+        number="3"
+        title="Plug choice C into the problem and check if it satisfies all conditions"
+      />
+
+      <RuleBox
+        number="4"
+        title="If C works perfectly, you're done! If C is too large, try A or B. If C is too small, try D or E."
+      />
+
+      <RuleBox
+        number="5"
+        title="Repeat until you find the answer that works"
+      />
+
+      <TipBox title="TIP">
         <strong>Always start with choice C.</strong> ACT answer choices are usually arranged in order (smallest to largest or largest to smallest).
         If C doesn't work, you'll know whether to try a larger or smaller value, eliminating 2-3 choices immediately.
       </TipBox>
 
-      <SectionDivider />
+      {/* Section divider */}
+      <div style={{
+        textAlign: 'center',
+        fontSize: '0.75rem',
+        fontWeight: '600',
+        color: '#9ca3af',
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
+      }}>
+        • • •
+      </div>
 
-      {/* Section 4: Example Problems */}
+      {/* Section 4 */}
       <h2 style={{
         fontSize: '22px',
         fontWeight: '700',
         color: '#1f2937',
-        marginTop: '3rem',
         marginBottom: '0.75rem'
       }}>
         4. Worked Examples
@@ -245,54 +266,52 @@ const PacketLesson_1_1_Math = () => {
         Example 1: Simple Equation
       </h3>
 
-      <div style={{
-        padding: '1.5rem',
-        backgroundColor: '#f9fafb',
-        borderRadius: '8px',
-        border: '2px solid #e5e7eb',
-        marginBottom: '1.5rem'
+      <p style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginBottom: '0.5rem'
       }}>
-        <div style={{ fontSize: '15px', fontWeight: '600', color: '#1f2937', marginBottom: '1rem' }}>
-          If 3x + 7 = 22, what is the value of x?
-        </div>
-        <div style={{ marginLeft: '1rem' }}>
-          <div style={{ fontSize: '14px', color: '#4b5563', marginBottom: '0.25rem' }}>A. 3</div>
-          <div style={{ fontSize: '14px', color: '#4b5563', marginBottom: '0.25rem' }}>B. 5</div>
-          <div style={{ fontSize: '14px', color: '#4b5563', marginBottom: '0.25rem' }}>C. 7</div>
-          <div style={{ fontSize: '14px', color: '#4b5563', marginBottom: '0.25rem' }}>D. 9</div>
-          <div style={{ fontSize: '14px', color: '#4b5563' }}>E. 15</div>
-        </div>
+        If <MathText>3x + 7 = 22</MathText>, what is the value of x?
+      </p>
+
+      <div style={{ marginBottom: '1.5rem', marginLeft: '2rem' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.25rem' }}>A. 3</div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.25rem' }}>B. 5</div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.25rem' }}>C. 7</div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.25rem' }}>D. 9</div>
+        <div style={{ fontSize: '15px', color: '#1f2937' }}>E. 15</div>
       </div>
 
-      <StepByStepBox
-        title="Solution Using Backsolving"
-        steps={[
-          {
-            label: 'Start with C',
-            text: 'Try x = 7',
-            math: '3(7) + 7 = 21 + 7 = 28'
-          },
-          {
-            label: 'Check',
-            text: '28 ≠ 22, so C is too large. We need a smaller value.',
-            math: null
-          },
-          {
-            label: 'Try B',
-            text: 'Try x = 5',
-            math: '3(5) + 7 = 15 + 7 = 22 ✓'
-          },
-          {
-            label: 'Verify',
-            text: 'This equals 22! The answer is B.',
-            math: null
-          }
-        ]}
-      />
+      <p style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginBottom: '0.5rem'
+      }}>
+        <strong>Solution using backsolving:</strong>
+      </p>
 
-      <CalculatorTipBox type="allowed">
-        You can use your calculator to check arithmetic quickly: 3 × 5 + 7 = ?
-      </CalculatorTipBox>
+      <div style={{ margin: '1.5rem 0 2rem 2rem' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem' }}>
+          <strong>Step 1:</strong> Start with C. Try x = 7.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem', marginLeft: '2rem' }}>
+          <MathText>3(7) + 7 = 21 + 7 = 28</MathText>
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem' }}>
+          <strong>Step 2:</strong> Check. 28 ≠ 22, so C is too large. We need a smaller value.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem' }}>
+          <strong>Step 3:</strong> Try B. Try x = 5.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem', marginLeft: '2rem' }}>
+          <MathText>3(5) + 7 = 15 + 7 = 22 ✓</MathText>
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937' }}>
+          <strong>Step 4:</strong> This equals 22! The answer is B.
+        </div>
+      </div>
 
       <h3 style={{
         fontSize: '17px',
@@ -304,57 +323,58 @@ const PacketLesson_1_1_Math = () => {
         Example 2: Word Problem
       </h3>
 
-      <div style={{
-        padding: '1.5rem',
-        backgroundColor: '#f9fafb',
-        borderRadius: '8px',
-        border: '2px solid #e5e7eb',
-        marginBottom: '1.5rem'
+      <p style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginBottom: '0.5rem'
       }}>
-        <div style={{ fontSize: '15px', fontWeight: '600', color: '#1f2937', marginBottom: '1rem' }}>
-          Sarah has 3 times as many books as Tom. Together they have 48 books. How many books does Tom have?
-        </div>
-        <div style={{ marginLeft: '1rem' }}>
-          <div style={{ fontSize: '14px', color: '#4b5563', marginBottom: '0.25rem' }}>A. 8</div>
-          <div style={{ fontSize: '14px', color: '#4b5563', marginBottom: '0.25rem' }}>B. 10</div>
-          <div style={{ fontSize: '14px', color: '#4b5563', marginBottom: '0.25rem' }}>C. 12</div>
-          <div style={{ fontSize: '14px', color: '#4b5563', marginBottom: '0.25rem' }}>D. 16</div>
-          <div style={{ fontSize: '14px', color: '#4b5563' }}>E. 18</div>
-        </div>
-      </div>
+        Sarah has 3 times as many books as Tom. Together they have 48 books. How many books does Tom have?
+      </p>
 
-      <StepByStepBox
-        title="Solution Using Backsolving"
-        steps={[
-          {
-            label: 'Start with C',
-            text: 'Try Tom = 12 books',
-            math: null
-          },
-          {
-            label: 'Calculate Sarah',
-            text: 'Sarah has 3 times as many',
-            math: 'Sarah = 3 × 12 = 36 books'
-          },
-          {
-            label: 'Check Total',
-            text: 'Do they add up to 48?',
-            math: '12 + 36 = 48 ✓'
-          },
-          {
-            label: 'Answer',
-            text: 'Yes! The answer is C.',
-            math: null
-          }
-        ]}
-      />
+      <div style={{ marginBottom: '1.5rem', marginLeft: '2rem' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.25rem' }}>A. 8</div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.25rem' }}>B. 10</div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.25rem' }}>C. 12</div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.25rem' }}>D. 16</div>
+        <div style={{ fontSize: '15px', color: '#1f2937' }}>E. 18</div>
+      </div>
 
       <p style={{
         fontSize: '15px',
         lineHeight: '1.7',
         color: '#374151',
-        marginTop: '1.5rem',
-        marginBottom: '1.5rem'
+        marginBottom: '0.5rem'
+      }}>
+        <strong>Solution using backsolving:</strong>
+      </p>
+
+      <div style={{ margin: '1.5rem 0 2rem 2rem' }}>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem' }}>
+          <strong>Step 1:</strong> Start with C. Try Tom = 12 books.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem' }}>
+          <strong>Step 2:</strong> Calculate Sarah. Sarah has 3 times as many.
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem', marginLeft: '2rem' }}>
+          Sarah = 3 × 12 = 36 books
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem' }}>
+          <strong>Step 3:</strong> Check total. Do they add up to 48?
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937', marginBottom: '0.75rem', marginLeft: '2rem' }}>
+          12 + 36 = 48 ✓
+        </div>
+        <div style={{ fontSize: '15px', color: '#1f2937' }}>
+          <strong>Step 4:</strong> Yes! The answer is C.
+        </div>
+      </div>
+
+      <p style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginBottom: '0.5rem'
       }}>
         <strong>Notice how much faster this was than setting up algebra!</strong> We didn't need to write:
       </p>
@@ -364,7 +384,8 @@ const PacketLesson_1_1_Math = () => {
           fontSize: '15px',
           color: '#6b7280',
           fontStyle: 'italic',
-          textDecoration: 'line-through'
+          textDecoration: 'line-through',
+          marginBottom: '0.25rem'
         }}>
           Let t = Tom's books, then Sarah has 3t
         </div>
@@ -372,7 +393,8 @@ const PacketLesson_1_1_Math = () => {
           fontSize: '15px',
           color: '#6b7280',
           fontStyle: 'italic',
-          textDecoration: 'line-through'
+          textDecoration: 'line-through',
+          marginBottom: '0.25rem'
         }}>
           t + 3t = 48
         </div>
@@ -395,52 +417,159 @@ const PacketLesson_1_1_Math = () => {
         We just tested the number and it worked!
       </p>
 
-      <SectionDivider />
+      {/* Section divider */}
+      <div style={{
+        textAlign: 'center',
+        fontSize: '0.75rem',
+        fontWeight: '600',
+        color: '#9ca3af',
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
+      }}>
+        • • •
+      </div>
 
-      {/* Section 5: Common Mistakes */}
+      {/* Section 5 */}
       <h2 style={{
         fontSize: '22px',
         fontWeight: '700',
         color: '#1f2937',
-        marginTop: '3rem',
         marginBottom: '0.75rem'
       }}>
         5. Common Mistakes to Avoid
       </h2>
 
-      <CommonMistakeBox>
-        <strong>Mistake:</strong> Testing answer choices in random order instead of starting with C.
-        <br /><br />
+      <h3 style={{
+        fontSize: '17px',
+        fontWeight: '600',
+        color: '#1f2937',
+        marginTop: '2.5rem',
+        marginBottom: '1rem'
+      }}>
+        Mistake #1: Testing Choices in Random Order
+      </h3>
+
+      <p style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginBottom: '0.5rem'
+      }}>
+        <strong>The error:</strong> Testing answer choices in random order instead of starting with C.
+      </p>
+
+      <p style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginBottom: '0.5rem'
+      }}>
         <strong>Why it's bad:</strong> You waste time checking unnecessary answers. If you start with C and it's too big,
         you immediately know to try A or B—eliminating 2 choices.
-        <br /><br />
-        <strong>Solution:</strong> Always start with C (the middle value).
-      </CommonMistakeBox>
+      </p>
 
-      <CommonMistakeBox>
-        <strong>Mistake:</strong> Stopping too early and not verifying your answer.
-        <br /><br />
+      <p style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginBottom: '1.5rem'
+      }}>
+        <strong>The fix:</strong> Always start with C (the middle value).
+      </p>
+
+      <h3 style={{
+        fontSize: '17px',
+        fontWeight: '600',
+        color: '#1f2937',
+        marginTop: '2.5rem',
+        marginBottom: '1rem'
+      }}>
+        Mistake #2: Stopping Too Early
+      </h3>
+
+      <p style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginBottom: '0.5rem'
+      }}>
+        <strong>The error:</strong> Stopping before verifying your answer.
+      </p>
+
+      <p style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginBottom: '0.5rem'
+      }}>
         <strong>Why it's bad:</strong> You might think an answer works but miss a condition.
-        <br /><br />
-        <strong>Solution:</strong> Always check that your answer satisfies ALL conditions in the problem.
-      </CommonMistakeBox>
+      </p>
 
-      <CommonMistakeBox>
-        <strong>Mistake:</strong> Using backsolving on problems where it's faster to solve algebraically.
-        <br /><br />
-        <strong>Why it's bad:</strong> Simple one-step equations like <MathText>x + 5 = 12</MathText> are faster to solve directly.
-        <br /><br />
-        <strong>Solution:</strong> Use backsolving for multi-step problems or when algebra isn't obvious. For simple equations, solve directly.
-      </CommonMistakeBox>
+      <p style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginBottom: '1.5rem'
+      }}>
+        <strong>The fix:</strong> Always check that your answer satisfies ALL conditions in the problem.
+      </p>
 
-      <SectionDivider />
+      <h3 style={{
+        fontSize: '17px',
+        fontWeight: '600',
+        color: '#1f2937',
+        marginTop: '2.5rem',
+        marginBottom: '1rem'
+      }}>
+        Mistake #3: Using Backsolving When Algebra is Faster
+      </h3>
 
-      {/* Section 6: When NOT to Backsolve */}
+      <p style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginBottom: '0.5rem'
+      }}>
+        <strong>The error:</strong> Using backsolving on simple one-step equations like <MathText>x + 5 = 12</MathText>.
+      </p>
+
+      <p style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginBottom: '0.5rem'
+      }}>
+        <strong>Why it's bad:</strong> Simple equations are faster to solve directly.
+      </p>
+
+      <p style={{
+        fontSize: '15px',
+        lineHeight: '1.7',
+        color: '#374151',
+        marginBottom: '1.5rem'
+      }}>
+        <strong>The fix:</strong> Use backsolving for multi-step problems or when algebra isn't obvious. For simple equations, solve directly.
+      </p>
+
+      {/* Section divider */}
+      <div style={{
+        textAlign: 'center',
+        fontSize: '0.75rem',
+        fontWeight: '600',
+        color: '#9ca3af',
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
+      }}>
+        • • •
+      </div>
+
+      {/* Section 6 */}
       <h2 style={{
         fontSize: '22px',
         fontWeight: '700',
         color: '#1f2937',
-        marginTop: '3rem',
         marginBottom: '0.75rem'
       }}>
         6. When NOT to Backsolve
@@ -466,102 +595,29 @@ const PacketLesson_1_1_Math = () => {
         columns={1}
       />
 
-      <TipBox title="WHEN TO CHOOSE ALGEBRA">
+      <TipBox title="TIP">
         If you can solve the problem in 2-3 algebraic steps, just do it. Backsolving shines on complex multi-step problems
         where setting up equations is confusing.
       </TipBox>
 
-      <SectionDivider />
-
-      {/* Section 7: Practice Strategy */}
-      <h2 style={{
-        fontSize: '22px',
-        fontWeight: '700',
-        color: '#1f2937',
-        marginTop: '3rem',
-        marginBottom: '0.75rem'
+      {/* Section divider */}
+      <div style={{
+        textAlign: 'center',
+        fontSize: '0.75rem',
+        fontWeight: '600',
+        color: '#9ca3af',
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        margin: '4rem 0 1.5rem 0'
       }}>
-        7. How to Practice This Strategy
-      </h2>
-
-      <p style={{
-        fontSize: '15px',
-        lineHeight: '1.7',
-        color: '#374151',
-        marginBottom: '1.5rem'
-      }}>
-        To master backsolving:
-      </p>
-
-      <div style={{ marginLeft: '1.5rem', marginBottom: '1.5rem' }}>
-        <div style={{
-          fontSize: '15px',
-          lineHeight: '1.7',
-          color: '#374151',
-          marginBottom: '0.75rem',
-          display: 'flex',
-          gap: '0.75rem'
-        }}>
-          <span style={{ fontWeight: '700', color: '#3b82f6' }}>1.</span>
-          <span>
-            <strong>Start practicing on easy problems.</strong> Use backsolving even when algebra is simpler,
-            just to build the habit and speed.
-          </span>
-        </div>
-
-        <div style={{
-          fontSize: '15px',
-          lineHeight: '1.7',
-          color: '#374151',
-          marginBottom: '0.75rem',
-          display: 'flex',
-          gap: '0.75rem'
-        }}>
-          <span style={{ fontWeight: '700', color: '#3b82f6' }}>2.</span>
-          <span>
-            <strong>Time yourself.</strong> Track how long it takes to backsolve vs. solve algebraically.
-            You'll notice backsolving is often faster on complex problems.
-          </span>
-        </div>
-
-        <div style={{
-          fontSize: '15px',
-          lineHeight: '1.7',
-          color: '#374151',
-          marginBottom: '0.75rem',
-          display: 'flex',
-          gap: '0.75rem'
-        }}>
-          <span style={{ fontWeight: '700', color: '#3b82f6' }}>3.</span>
-          <span>
-            <strong>Look for patterns.</strong> After solving 10-15 problems using backsolving,
-            you'll develop intuition for which problems are perfect candidates.
-          </span>
-        </div>
-
-        <div style={{
-          fontSize: '15px',
-          lineHeight: '1.7',
-          color: '#374151',
-          display: 'flex',
-          gap: '0.75rem'
-        }}>
-          <span style={{ fontWeight: '700', color: '#3b82f6' }}>4.</span>
-          <span>
-            <strong>Build confidence.</strong> Use this strategy on practice tests until it feels natural.
-            On test day, you'll automatically recognize when to backsolve.
-          </span>
-        </div>
+        • • •
       </div>
-
-      <SectionDivider />
 
       {/* Key Takeaways */}
       <h2 style={{
         fontSize: '22px',
         fontWeight: '700',
         color: '#1f2937',
-        marginTop: '3rem',
         marginBottom: '1.5rem'
       }}>
         Key Takeaways
