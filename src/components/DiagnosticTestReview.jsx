@@ -11,7 +11,7 @@ import { supabase } from '../supabaseClient';
 import logger from '../services/logging/logger';
 import Logo from './common/Logo';
 
-export default function DiagnosticTestReview({ sessionId, onClose }) {
+export default function DiagnosticTestReview({ sessionId, onClose, onReady }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -137,16 +137,8 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
 
   const loadDiagnosticData = async () => {
     try {
-      // Check cache first for instant loading
-      const cacheKey = `diagnostic_review_${sessionId}`;
-      const cached = sessionStorage.getItem(cacheKey);
-      if (cached) {
-        setTestData(JSON.parse(cached));
-        setLoading(false);
-        console.log('📊 Using cached diagnostic review data');
-        return;
-      }
-
+      // Don't cache diagnostic review data - too large for sessionStorage
+      // Data loads quickly from database with parallel queries anyway
       setLoading(true);
       logger.info('DiagnosticTestReview', 'loadDiagnosticData', { sessionId });
 
@@ -232,15 +224,17 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
 
       setTestData(data);
 
-      // Cache the data for instant loading next time
-      sessionStorage.setItem(cacheKey, JSON.stringify(data));
-      console.log('💾 Cached diagnostic review data');
+      // Don't cache in sessionStorage - the full questions with explanations/passages are too large
+      // and would cause QuotaExceededError. Data loads quickly from database anyway.
+      console.log('✅ Loaded diagnostic review data (not caching due to size)');
 
       setLoading(false);
+      if (onReady) onReady();
     } catch (err) {
       console.error('Error loading diagnostic data:', err);
       setError('Failed to load diagnostic test data');
       setLoading(false);
+      if (onReady) onReady();
     }
   };
 
@@ -419,36 +413,9 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
     error
   });
 
-  // Loading state
+  // Loading state - skip rendering, handled at card level
   if (loading) {
-    return (
-      <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: '#ffffff',
-        zIndex: 3000,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        gap: '1rem'
-      }}>
-        <div style={{
-          width: '48px',
-          height: '48px',
-          border: '4px solid #f3f4f6',
-          borderTop: '4px solid #08245b',
-          borderRadius: '50%',
-          animation: 'spin 0.8s linear infinite'
-        }} />
-        <div style={{ fontSize: '0.875rem', color: '#0f172a' }}>
-          Loading test review...
-        </div>
-      </div>
-    );
+    return null;
   }
 
   // Error state
@@ -461,7 +428,7 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
         right: 0,
         bottom: 0,
         background: '#ffffff',
-        zIndex: 3000,
+        zIndex: 10000,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -1028,22 +995,19 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                     const questionNum = result.question?.question_number || idx + 1;
 
                     // Determine colors based on answer status
-                    let bgColor, textColor, borderColor;
+                    let bgColor, textColor;
                     if (!isAnswered) {
                       // Unanswered/Skipped - Gray
                       bgColor = '#f1f5f9';
                       textColor = '#64748b';
-                      borderColor = '#cbd5e1';
                     } else if (isCorrect) {
                       // Correct - Green
                       bgColor = '#dcfce7';
                       textColor = '#166534';
-                      borderColor = '#86efac';
                     } else {
                       // Incorrect - Red
                       bgColor = '#fee2e2';
                       textColor = '#991b1b';
-                      borderColor = '#fca5a5';
                     }
 
                     return (
@@ -1064,7 +1028,8 @@ export default function DiagnosticTestReview({ sessionId, onClose }) {
                           fontSize: '0.625rem',
                           fontWeight: '600',
                           cursor: 'pointer',
-                          border: `1.5px solid ${borderColor}`,
+                          border: 'none',
+                          outline: 'none',
                           background: bgColor,
                           color: textColor,
                           transition: 'all 0.2s ease'

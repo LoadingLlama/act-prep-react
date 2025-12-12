@@ -153,17 +153,31 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
    */
   const handleTestCompletion = useCallback(async () => {
     try {
+      console.log('\n' + '='.repeat(80));
+      console.log('🔄 handleTestCompletion STARTED');
+      console.log('='.repeat(80));
+
       logger.info('PracticeTestPage', 'handleTestCompletion', { testNumber, userId });
 
       const resultsData = sessionStorage.getItem('practiceTestResults');
+      console.log('📦 SessionStorage practiceTestResults:', resultsData ? 'Found' : 'NOT FOUND');
+
       if (!resultsData) {
+        console.error('❌ NO RESULTS IN SESSIONSTORAGE!');
         throw new Error('No test results found');
       }
 
       const results = JSON.parse(resultsData);
       const allSections = results.allSections || [];
 
-      console.log(`📊 Found ${allSections.length} section results to process`);
+      console.log(`📊 RESULTS SUMMARY:`);
+      console.log(`   Sections: ${allSections.length}`);
+      console.log(`   Total Correct: ${results.totalCorrect}`);
+      console.log(`   Total Questions: ${results.totalQuestions}`);
+      console.log(`   Section Details:`, allSections.map(s => ({
+        section: s.section,
+        questionCount: s.questions?.length || 0
+      })));
 
       // Filter and validate sections - skip invalid old data but DON'T throw errors
       const validSections = [];
@@ -307,7 +321,13 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
 
       try {
         if (event.data?.type === 'PRACTICE_TEST_COMPLETE') {
-          console.log('✅ React: Test complete message received - calling handleTestCompletion');
+          console.log('\n' + '='.repeat(80));
+          console.log('🎉 REACT: TEST COMPLETE MESSAGE RECEIVED');
+          console.log('='.repeat(80));
+          console.log('Test Number:', testNumber);
+          console.log('User ID:', userId);
+          console.log('Calling handleTestCompletion...');
+          console.log('='.repeat(80) + '\n');
           await handleTestCompletion();
         } else if (event.data?.type === 'PRACTICE_TEST_NEXT_SECTION') {
           // Load next section
@@ -485,20 +505,56 @@ const PracticeTestPage = ({ testId, onClose, onShowInsights }) => {
    * Render test in progress
    */
   if (selectedSection && questions.length > 0) {
-    // Store questions in sessionStorage for the test to access
+    // Store lightweight questions in sessionStorage to avoid QuotaExceededError
     const duration = selectedSection === 'full' ? 175 : sectionConfig[selectedSection]?.timeMinutes || 45;
 
-    sessionStorage.setItem('practiceTestQuestions', JSON.stringify(questions));
-    sessionStorage.setItem('practiceTestSection', selectedSection);
-    sessionStorage.setItem('practiceTestNumber', testNumber);
-    sessionStorage.setItem('practiceTestDuration', duration);
+    // Create lightweight version (remove heavy explanations, truncate long passages)
+    const lightweightQuestions = questions.map(q => ({
+      id: q.id,
+      question_number: q.question_number,
+      section: q.section,
+      text: q.text,
+      answers: q.answers,
+      correctAnswer: q.correctAnswer,
+      difficulty: q.difficulty,
+      lesson_id: q.lesson_id,
+      question_type: q.question_type,
+      // Truncate long passages to avoid quota issues
+      passage: q.passage && q.passage.length < 2000 ? q.passage : (q.passage ? q.passage.substring(0, 2000) + '...' : null),
+      passage_title: q.passage_title,
+      image_url: q.image_url,
+      passage_image_urls: q.passage_image_urls,
+      // Don't include: explanation (not needed during test)
+    }));
 
-    console.log('📦 React: Storing in sessionStorage:', {
-      section: selectedSection,
-      questionsCount: questions.length,
-      duration: duration,
-      testNumber: testNumber
-    });
+    try {
+      sessionStorage.setItem('practiceTestQuestions', JSON.stringify(lightweightQuestions));
+      sessionStorage.setItem('practiceTestSection', selectedSection);
+      sessionStorage.setItem('practiceTestNumber', testNumber);
+      sessionStorage.setItem('practiceTestDuration', duration);
+
+      console.log('📦 React: Storing lightweight questions in sessionStorage:', {
+        section: selectedSection,
+        questionsCount: lightweightQuestions.length,
+        duration: duration,
+        testNumber: testNumber,
+        dataSize: (JSON.stringify(lightweightQuestions).length / 1024).toFixed(2) + ' KB'
+      });
+    } catch (e) {
+      console.error('❌ Failed to store questions:', e);
+      // Fallback to ultra-minimal if still too large
+      const minimalQuestions = questions.map(q => ({
+        id: q.id,
+        question_number: q.question_number,
+        section: q.section,
+        text: q.text?.substring(0, 200) || '',
+        answers: q.answers,
+        correctAnswer: q.correctAnswer,
+        image_url: q.image_url
+      }));
+      sessionStorage.setItem('practiceTestQuestions', JSON.stringify(minimalQuestions));
+      console.log('⚠️ Stored ultra-minimal questions due to quota');
+    }
 
     return (
       <div style={{

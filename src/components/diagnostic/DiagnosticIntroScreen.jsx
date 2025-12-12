@@ -29,20 +29,73 @@ const DiagnosticIntroScreen = ({
   if (!show) return null;
 
   return (
-    <div className={classes.container} style={{ overflow: 'hidden', height: '100vh' }}>
-      <button onClick={onClose} className={classes.closeButton}>
-        <HiXMark style={{ fontSize: '1.125rem' }} />
-        Close
-      </button>
-      <div style={{
-        maxWidth: '700px',
-        margin: '0 auto',
-        padding: '1.5rem 1.5rem',
-        minHeight: '100vh',
+    <div
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: 'rgba(0, 0, 0, 0.7)',
+        backdropFilter: 'blur(4px)',
         display: 'flex',
-        flexDirection: 'column',
-        overflow: 'hidden'
-      }}>
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '1rem',
+        zIndex: 9999,
+        overflow: 'auto'
+      }}
+      onClick={onClose}
+    >
+      <div
+        style={{
+          background: '#ffffff',
+          borderRadius: '16px',
+          boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+          maxWidth: '700px',
+          width: '100%',
+          maxHeight: '90vh',
+          overflow: 'auto',
+          position: 'relative',
+          margin: '2rem auto'
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          style={{
+            position: 'absolute',
+            top: '1rem',
+            right: '1rem',
+            background: '#f3f4f6',
+            border: 'none',
+            borderRadius: '8px',
+            padding: '0.5rem 0.75rem',
+            fontSize: '0.875rem',
+            fontWeight: '500',
+            color: '#374151',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.25rem',
+            transition: 'all 0.15s ease',
+            zIndex: 10
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.background = '#e5e7eb';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.background = '#f3f4f6';
+          }}
+        >
+          <HiXMark style={{ fontSize: '1.125rem' }} />
+          Close
+        </button>
+        <div style={{
+          padding: '2rem 1.5rem 1.5rem',
+          display: 'flex',
+          flexDirection: 'column'
+        }}>
         {/* Header */}
         <div style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
           <h1 style={{
@@ -252,6 +305,7 @@ const DiagnosticIntroScreen = ({
             Click the button again to confirm and start the test
           </p>
         )}
+        </div>
       </div>
     </div>
   );

@@ -12,6 +12,9 @@ import logger from '../logging/logger';
 import errorTracker from '../logging/errorTracker';
 import { getUserGoals } from '../../utils/diagnostic/userGoalsHelpers';
 
+// Track if processing is already running to prevent duplicates
+let isProcessing = false;
+
 /**
  * Process diagnostic test results in background
  * @param {Array} allSections - All test sections with questions and answers
@@ -25,7 +28,7 @@ import { getUserGoals } from '../../utils/diagnostic/userGoalsHelpers';
  * @param {function} callbacks.setUserGoalsData - Set user goals data
  * @param {function} callbacks.setLearningPathData - Set learning path data
  * @param {function} callbacks.setProcessing - Set processing state
- * @param {function} callbacks.setShowResults - Set show results state
+ * @param {function} callbacks.setShowInsights - Set show insights modal state
  * @returns {Promise<void>}
  */
 export async function processTestResultsInBackground(
@@ -42,11 +45,28 @@ export async function processTestResultsInBackground(
     setUserGoalsData,
     setLearningPathData,
     setProcessing,
-    setShowResults
+    setShowInsights
   } = callbacks;
 
+  // Prevent duplicate processing
+  if (isProcessing) {
+    console.warn('⚠️ Processing already in progress, ignoring duplicate call');
+    return;
+  }
+
+  isProcessing = true;
+  const processingStartTime = Date.now();
+
+  // Add timeout to prevent infinite hanging
+  const timeoutId = setTimeout(() => {
+    console.error('❌ Processing timeout after 2 minutes - forcing completion');
+    isProcessing = false;
+    setProcessing(false);
+    setShowInsights(true);
+  }, 120000); // 2 minute timeout
+
   try {
-    console.log('🔄 Processing started...');
+    console.log('🔄 Processing started at:', new Date().toLocaleTimeString());
     setProcessingStep('Loading your test questions...');
     setProcessingProgress(5);
 
@@ -75,6 +95,30 @@ export async function processTestResultsInBackground(
       return acc;
     }, {});
     console.log('📊 Questions by section before saving:', questionsBySection);
+
+    // VALIDATION: Ensure we have exactly 215 questions
+    const expectedCounts = { english: 75, math: 60, reading: 40, science: 40 };
+    const validationErrors = [];
+
+    Object.keys(expectedCounts).forEach(section => {
+      const expected = expectedCounts[section];
+      const actual = questionsBySection[section] || 0;
+      if (actual !== expected) {
+        validationErrors.push(`${section}: expected ${expected}, got ${actual}`);
+      }
+    });
+
+    if (validationErrors.length > 0) {
+      console.error('❌ VALIDATION FAILED - Incomplete test data:');
+      validationErrors.forEach(err => console.error(`   ${err}`));
+      throw new Error(
+        `Incomplete test: ${validationErrors.join(', ')}. ` +
+        `Expected 215 total questions, got ${allQuestionResults.length}. ` +
+        `Please retake the diagnostic test and complete all sections.`
+      );
+    }
+
+    console.log('✅ Validation passed: All 215 questions present');
 
     logger.info('DiagnosticResultProcessor', 'savingAnswers', {
       totalAnswers: allQuestionResults.length
@@ -196,24 +240,20 @@ export async function processTestResultsInBackground(
     console.log('💾 Saving', uniqueResults.length, 'unique question results to database (removed', allQuestionResults.length - uniqueResults.length, 'duplicates)');
     logger.info('DiagnosticResultProcessor', 'savingResults', { sessionId, resultsCount: uniqueResults.length, duplicatesRemoved: allQuestionResults.length - uniqueResults.length });
 
-    // VALIDATION: Count expected questions per section
-    const expectedCounts = {
+    // Log actual counts per section
+    const actualCounts = {
       english: uniqueResults.filter(r => r.section === 'english').length,
       math: uniqueResults.filter(r => r.section === 'math').length,
       reading: uniqueResults.filter(r => r.section === 'reading').length,
       science: uniqueResults.filter(r => r.section === 'science').length
     };
 
-    console.log('\n📋 EXPECTED QUESTION COUNTS BY SECTION:');
-    console.log(`  English:  ${expectedCounts.english} questions (should be ~75)`);
-    console.log(`  Math:     ${expectedCounts.math} questions (should be ~60)`);
-    console.log(`  Reading:  ${expectedCounts.reading} questions (should be ~40)`);
-    console.log(`  Science:  ${expectedCounts.science} questions (should be ~40)`);
-    console.log(`  TOTAL:    ${uniqueResults.length} questions (should be 215)\n`);
-
-    if (uniqueResults.length !== 215) {
-      console.warn(`⚠️  WARNING: Expected 215 questions but got ${uniqueResults.length}!`);
-    }
+    console.log('\n📋 ACTUAL QUESTION COUNTS BY SECTION:');
+    console.log(`  English:  ${actualCounts.english} questions (expected 75)`);
+    console.log(`  Math:     ${actualCounts.math} questions (expected 60)`);
+    console.log(`  Reading:  ${actualCounts.reading} questions (expected 40)`);
+    console.log(`  Science:  ${actualCounts.science} questions (expected 40)`);
+    console.log(`  TOTAL:    ${uniqueResults.length} questions (expected 215)\n`);
 
     // Create efficient lookup map: section:questionNum -> question
     const questionLookup = new Map();
@@ -233,15 +273,17 @@ export async function processTestResultsInBackground(
       science: { attempted: 0, saved: 0, failed: 0, questionNumbers: [] }
     };
 
-    // Save each question result
-    console.log('\n💾 Starting to save answers to database...\n');
+    // Prepare all answers for batch insert (MUCH faster than one-by-one)
+    console.log('\n💾 Preparing batch insert for all answers...\n');
 
-    let progressCounter = 0;
+    const answersToSave = [];
+
     for (const result of uniqueResults) {
       const section = result.section;
 
       if (!section) {
         console.error('❌ CRITICAL: Result missing section!', result);
+        saveStats[section || 'unknown'].failed++;
         continue;
       }
 
@@ -257,35 +299,71 @@ export async function processTestResultsInBackground(
         continue;
       }
 
-      try {
-        const saveResult = await DiagnosticService.saveDiagnosticAnswer(
-          userId,
-          sessionId,
-          question.id,
-          result.userAnswer,
-          result.isCorrect,
-          result.timeSpent || 0
-        );
+      // Add to batch array instead of saving immediately
+      answersToSave.push({
+        user_id: userId,
+        diagnostic_session_id: sessionId,
+        question_id: question.id,
+        user_answer: result.userAnswer,
+        is_correct: result.isCorrect,
+        time_spent_seconds: result.timeSpent || 0,
+        created_at: new Date().toISOString()
+      });
 
-        if (saveResult === null) {
-          console.error(`❌ Failed to save answer for ${lookupKey}`);
-          saveStats[section].failed++;
-        } else {
-          saveStats[section].saved++;
-          saveStats[section].questionNumbers.push(result.questionNum);
-        }
-      } catch (error) {
-        console.error(`❌ Exception saving answer for ${lookupKey}:`, error);
-        saveStats[section].failed++;
-      }
-
-      // Progress logging every 50 questions
-      progressCounter++;
-      if (progressCounter % 50 === 0) {
-        const totalSoFar = Object.values(saveStats).reduce((sum, s) => sum + s.saved, 0);
-        console.log(`📊 Progress: ${totalSoFar}/${uniqueResults.length} questions saved (${((totalSoFar/uniqueResults.length)*100).toFixed(1)}%)`);
-      }
+      saveStats[section].questionNumbers.push(result.questionNum);
     }
+
+    // Batch insert all answers at once (10-20x faster!)
+    console.log(`💾 Saving ${answersToSave.length} answers in single batch insert...`);
+    setProcessingStep(`Saving ${answersToSave.length} answers to database...`);
+
+    const { data: savedAnswers, error: batchError } = await supabase
+      .from('diagnostic_test_results')
+      .upsert(answersToSave, {
+        onConflict: 'diagnostic_session_id,question_id',
+        ignoreDuplicates: false
+      })
+      .select('id');
+
+    if (batchError) {
+      console.error('❌ Batch insert failed:', batchError);
+      throw new Error(`Failed to save answers: ${batchError.message}`);
+    }
+
+    // CRITICAL: Verify batch insert actually returned data
+    console.log('\n🔍 BATCH INSERT VERIFICATION:');
+    console.log(`  Session ID: ${sessionId}`);
+    console.log(`  User ID: ${userId}`);
+    console.log(`  Answers prepared: ${answersToSave.length}`);
+    console.log(`  Answers returned from DB: ${savedAnswers?.length || 0}`);
+
+    if (!savedAnswers || savedAnswers.length === 0) {
+      console.error('❌❌❌ CRITICAL ERROR: Batch insert returned NO DATA!');
+      console.error('This means the answers were NOT saved to the database.');
+      console.error('Supabase response:', { data: savedAnswers, error: batchError });
+      throw new Error('Batch insert failed: No data returned from database');
+    }
+
+    if (savedAnswers.length !== answersToSave.length) {
+      console.warn(`⚠️ WARNING: Expected ${answersToSave.length} saves but got ${savedAnswers.length}`);
+    } else {
+      console.log(`✅✅✅ SUCCESS: ALL ${savedAnswers.length} ANSWERS CONFIRMED SAVED! ✅✅✅`);
+    }
+
+    // Update stats with successful saves
+    const savedCount = savedAnswers?.length || answersToSave.length;
+    answersToSave.forEach(answer => {
+      // Find which section this belongs to
+      const question = questionLookup.get(
+        Array.from(questionLookup.entries())
+          .find(([key, q]) => q.id === answer.question_id)?.[0] || ''
+      );
+      if (question?.section) {
+        saveStats[question.section].saved++;
+      }
+    });
+
+    console.log(`✅ Batch insert complete: ${savedCount} answers saved`);
 
     // Log final statistics
     console.log('\n═══════════════════════════════════════════════════════');
@@ -452,29 +530,48 @@ export async function processTestResultsInBackground(
     setUserGoalsData(mergedGoals);
     setLearningPathData(learningPath);
 
-    // Clean up sessionStorage
-    sessionStorage.removeItem('diagnosticSessionId');
+    // Store diagnostic session ID for insights page
+    console.log('\n🔑 STORING SESSION ID FOR INSIGHTS PAGE:');
+    console.log(`  Session ID: ${sessionId}`);
+    console.log(`  This will be used by InsightsPage to fetch data from database`);
+    sessionStorage.setItem('latestDiagnosticSessionId', sessionId);
+    sessionStorage.setItem('diagnosticJustCompleted', 'true');
+    console.log('✅ Session ID stored in sessionStorage as "latestDiagnosticSessionId"');
+
+    // Clean up test questions from sessionStorage (no longer needed after processing)
+    // Keep practiceTestResults for insights modal
     sessionStorage.removeItem('practiceTestQuestions');
-    sessionStorage.removeItem('practiceTestResults');
 
     console.log('✅ All processing completed successfully!');
 
     // Clear processing flag and show results
     localStorage.removeItem('diagnosticProcessing');
 
-    // Clear session storage caches to force data refresh
+    // Clear session storage caches to force data refresh across all pages
     Object.keys(sessionStorage).forEach(key => {
-      if (key.startsWith('diagnostic_completed_') || key.startsWith('insights_') || key.startsWith('learning_path_')) {
+      if (key.startsWith('diagnostic_completed_') ||
+          key.startsWith('insights_') ||
+          key.startsWith('learning_path_') ||
+          key.startsWith('weak_areas_')) {
         sessionStorage.removeItem(key);
         console.log('🗑️ Cleared cache:', key);
       }
     });
 
+    console.log('✅ All caches cleared - forcing fresh data load on all pages');
+
     setProcessingProgress(100);
     setProcessing(false);
-    setShowResults(true);
+    setShowInsights(true);
+
+    clearTimeout(timeoutId); // Clear timeout on success
+    const totalTime = ((Date.now() - processingStartTime) / 1000).toFixed(2);
+    console.log(`✅ Processing completed in ${totalTime}s`);
+    isProcessing = false; // Reset flag
   } catch (err) {
+    clearTimeout(timeoutId); // Clear timeout on error
     console.error('❌ Error in background processing:', err);
+    isProcessing = false; // Reset flag on error
     console.error('Error details:', {
       message: err.message,
       stack: err.stack,
@@ -490,6 +587,10 @@ export async function processTestResultsInBackground(
         sessionStorage.removeItem(key);
       }
     });
-    // Don't set error state since user has already navigated away
+
+    // ALWAYS show insights even on error - the data might be partially saved
+    console.log('⚠️ Showing insights despite error - data may be partial');
+    setProcessing(false);
+    setShowInsights(true);
   }
 }

@@ -322,9 +322,15 @@ export const useLessonsContentStyles = createUseStyles({
     }
   },
   lessonsGrid: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '0'
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gap: '1rem',
+    '@media (max-width: 900px)': {
+      gridTemplateColumns: 'repeat(2, 1fr)'
+    },
+    '@media (max-width: 600px)': {
+      gridTemplateColumns: '1fr'
+    }
   },
   lessonsList: {
     display: 'flex',
@@ -492,9 +498,12 @@ export const useLessonsContentStyles = createUseStyles({
   },
   categoriesGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
+    gridTemplateColumns: 'repeat(3, 1fr)',
     gap: '1rem',
     marginBottom: '2rem',
+    '@media (max-width: 1024px)': {
+      gridTemplateColumns: 'repeat(2, 1fr)'
+    },
     '@media (max-width: 768px)': {
       gridTemplateColumns: '1fr',
       gap: '0.75rem'

@@ -228,7 +228,8 @@ export default function AppLayout() {
         }
         setStreak(currentStreak);
       } catch (error) {
-        console.error('Error fetching streak:', error);
+        // Silently fail if session_history table doesn't exist (PGRST205 error)
+        // Don't log anything - this table is optional
         setStreak(0);
       }
     };
@@ -305,21 +306,30 @@ export default function AppLayout() {
   };
 
   const closeLessonModal = () => {
+    console.log('🔙 closeLessonModal called, lessonMode:', lessonMode);
+
     // Show transition overlay to cover everything during navigation
     setIsTransitioning(true);
 
-    // Navigate based on mode: drills or regular lessons
-    const destination = lessonMode === 'drills' ? '/app/lessons?mode=drills' : '/app/lessons';
+    // Navigate based on mode: drills, practice, or regular lessons
+    let destination = '/app/lessons';
+    if (lessonMode === 'drills' || lessonMode === 'practice') {
+      destination = '/app/lessons?mode=drills';
+      console.log('📍 Navigating back to drills page');
+    } else {
+      console.log('📍 Navigating back to lessons page');
+    }
+
     navigate(destination, { replace: true });
 
-    // Close modal and remove overlay after a brief delay
-    // This ensures the new route is fully loaded before showing it
+    // Close modal and remove overlay after the navigation completes
+    // Longer delay ensures smooth transition without flash
     setTimeout(() => {
       setLessonModalOpen(false);
       setCurrentLesson(null);
       domUtils.restoreBodyScroll();
       setIsTransitioning(false);
-    }, 100);
+    }, 150);
   };
 
   const updateLessonProgress = async (lessonId, status) => {
@@ -629,9 +639,11 @@ export default function AppLayout() {
           left: 0,
           right: 0,
           bottom: 0,
-          background: '#ffffff',
-          zIndex: 99999,
-          pointerEvents: 'none'
+          background: '#f9fafb',
+          zIndex: 999999,
+          pointerEvents: 'none',
+          opacity: 1,
+          transition: 'opacity 0.1s ease-in'
         }} />
       )}
 

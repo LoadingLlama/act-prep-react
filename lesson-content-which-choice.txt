@@ -1,0 +1,137 @@
+<!--
+LESSON TEMPLATE v4.0
+Subject: English
+Topic Number: 1.13
+Topic: Which Choice Questions
+Lesson Key: which-choice
+-->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+"Which choice" questions ask you to make specific changes to a sentence, and the question itself tells you exactly what to do. These questions are easy to spot—they always include the words "which choice" or "which one" in the question.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. How to Identify and Approach These Questions
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Easy to spot: Look for <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">"which choice"</strong> or "which one" in the question
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">The question tells you exactly what change to make</li>
+      <li style="margin: 0.2rem 0;">All answer choices are usually grammatically correct</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Your job: Figure out what the question asks and do exactly that
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Don't worry about grammar, conciseness, or style unless the question specifically asks</li>
+      <li style="margin: 0.2rem 0;">Shorter is NOT always better on these questions</li>
+      <li style="margin: 0.2rem 0;">Just answer the question—don't overthink it!</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Type 1: Specific Detail Questions
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">These ask you to provide or emphasize a <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">specific detail</strong>
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Common phrasing: "most specifically describes," "most clearly emphasizes," "provides the most relevant detail"</li>
+      <li style="margin: 0.2rem 0;">Focus on the sentence you're editing</li>
+      <li style="margin: 0.2rem 0;">Read sentences before and after for context, but don't rely on them too heavily</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Example: Specific Description
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Question: "Which choice most specifically describes what was used to build iceboxes?"</li>
+  <li style="margin: 0.3rem 0;">Context: "Americans kept their food cold in iceboxes, <u>which required ice to be bought and placed into the box each week</u>."
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">A. NO CHANGE</li>
+      <li style="margin: 0.2rem 0;">B. which were only cold enough to keep food cool but not freeze anything</li>
+      <li style="margin: 0.2rem 0;">C. wooden boxes with tin and insulated with cork and sawdust</li>
+      <li style="margin: 0.2rem 0;">D. the very first invention that allowed people to keep food cold</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">✓ Answer: C—it's the only choice that describes the materials used to build iceboxes</li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Type 2: Emphasis and Tone Questions
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">These ask you to <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">emphasize a particular aspect</strong> or create a certain tone
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Common phrasing: "most clearly emphasizes," "best conveys," "creates the most vivid image"</li>
+      <li style="margin: 0.2rem 0;">Focus on which word choice highlights the specific quality mentioned</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Example: Emphasis
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Question: "Which choice most clearly emphasizes how the dinosaurs increase in size?"</li>
+  <li style="margin: 0.3rem 0;">Context: "Harold always begged for grow-in-water dinosaurs that <u>sprawl</u> when placed into water."
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">A. NO CHANGE (sprawl)</li>
+      <li style="margin: 0.2rem 0;">B. change in size</li>
+      <li style="margin: 0.2rem 0;">C. expand</li>
+      <li style="margin: 0.2rem 0;">D. soak</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">✓ Answer: C—"expand" most clearly emphasizes the size increase</li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Common Question Phrasings
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Questions asking for specific details
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">"Which choice most specifically describes..."</li>
+      <li style="margin: 0.2rem 0;">"Which choice provides the most relevant detail about..."</li>
+      <li style="margin: 0.2rem 0;">"Which choice best supports the claim that..."</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Questions asking for emphasis or tone
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">"Which choice most clearly emphasizes..."</li>
+      <li style="margin: 0.2rem 0;">"Which choice best conveys..."</li>
+      <li style="margin: 0.2rem 0;">"Which choice creates the most vivid image of..."</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">The key strategy: Read the question carefully and give it exactly what it asks for—nothing more, nothing less</li>
+</ul>
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>"Which choice" questions are easy to spot—they always include "which choice" or "which one" in the question.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>All answer choices are usually grammatically correct.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Specific detail questions ask for information about a particular aspect .
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Emphasis and tone questions ask you to highlight a particular quality or create a certain feeling.
+  </li>
+</ul>

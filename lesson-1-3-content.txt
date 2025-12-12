@@ -1,0 +1,372 @@
+<!--
+LESSON TEMPLATE v4.0
+Subject: English
+Topic Number: 1.3
+Topic: Punctuation
+Lesson Key: punctuation
+-->
+
+<!-- ========================================
+     SECTION 1: OPENING (2 SENTENCES MAX)
+     CRITICAL: Must have:
+     - MAXIMUM 2 sentences
+     - ACT context (# of questions or %)
+     - NO blue underlined terms here
+     ======================================== -->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Punctuation questions account for about 13% of the ACT English Test—roughly 10 questions per test! To master these questions, you need to understand the specific rules for semicolons, colons, dashes, apostrophes, and quotation marks.
+</p>
+
+<!-- ========================================
+     SECTION 2: CONTENT (5 H3 SECTIONS)
+     Each H3 = Major Concept
+     Use BULLET POINTS with indents, NOT paragraphs
+     ======================================== -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. Semicolons
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">The most important rule: A <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">semicolon</strong> can replace a period
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Both sides of the semicolon must be independent clauses (complete sentences)</li>
+      <li style="margin: 0.2rem 0;">If you can replace the semicolon with a period and both halves make sense as separate sentences, the semicolon is correct</li>
+      <li style="margin: 0.2rem 0;">Example: "My boss called me; he asked that I pick up coffee for him."</li>
+    </ul>
+  </li>
+</ul>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Common semicolon errors to avoid
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">❌ Incorrect: "My boss called me; asking that I pick up coffee for him." (second half is not an independent clause)</li>
+      <li style="margin: 0.2rem 0;">❌ Incorrect: "After my boss called me; he asked that I pick up coffee for him." (first half is not an independent clause)</li>
+      <li style="margin: 0.2rem 0;">❌ Incorrect: "My boss called me, he asked that I pick up coffee for him." (this is a <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">comma splice</strong>—cannot connect two independent clauses with just a comma)</li>
+    </ul>
+  </li>
+</ul>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">The test: Replace the semicolon with a period
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If both halves stand alone as complete sentences, the semicolon is correct</li>
+      <li style="margin: 0.2rem 0;">If either half cannot stand alone, the semicolon is wrong</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 1 will be inserted here by ExampleCard component -->
+<!-- Database: position=1, lesson_id=[UUID], shown AFTER teaching concept -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Colons
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">A <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">colon</strong> introduces a list, an example, an explanation, a clarification, or a definition
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">List of multiple items: "I went to the grocery store to pick up some items for dinner: chicken, cheese, and onions."</li>
+      <li style="margin: 0.2rem 0;">List of one item: "I went to the market to get lunch: a turkey sandwich."</li>
+      <li style="margin: 0.2rem 0;">Example or explanation: "He got what he deserved: a one-week suspension without pay."</li>
+      <li style="margin: 0.2rem 0;">Clarification: "Chocolate milk is a great recovery drink after a hard workout: it has the carbohydrates and proteins that muscles need to recover."</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Three Critical Colon Rules
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Rule 1: The part before the colon must be an independent clause
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">The part before the colon must be a complete sentence by itself</li>
+      <li style="margin: 0.2rem 0;">❌ Incorrect: "The slide showing the most popular car colors in 2018: white, gray, and black."</li>
+      <li style="margin: 0.2rem 0;">✓ Correct: "The slide shows the most popular car colors in 2018: white, gray, and black."</li>
+      <li style="margin: 0.2rem 0;">❌ Incorrect: "The hairstylist excelled in: cuts, coloring, and highlights."</li>
+      <li style="margin: 0.2rem 0;">✓ Correct: "The hairstylist excelled in cuts, coloring, and highlights." (no colon needed)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Rule 2: Everything after the colon must be only the list, example, explanation, clarification, or definition
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">The sentence cannot continue to other topics after the colon</li>
+      <li style="margin: 0.2rem 0;">❌ Incorrect: "Will brought his lunch to the beach: a roast beef sandwich, and he brought his friend Joey a turkey club."</li>
+      <li style="margin: 0.2rem 0;">✓ Correct: "Will brought his lunch to the beach: a roast beef sandwich. He brought his friend Joey a turkey club."</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Rule 3: NEVER use colons with "including," "such as," or "for example"
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If you see a colon before OR after these phrases, it is always incorrect</li>
+      <li style="margin: 0.2rem 0;">❌ Incorrect: "I went to the grocery store to pick up some items for dinner, including: chicken, cheese, and onions."</li>
+      <li style="margin: 0.2rem 0;">❌ Incorrect: "I went to the grocery store to pick up some items for dinner: including chicken, cheese, and onions."</li>
+      <li style="margin: 0.2rem 0;">✓ Correct: "I went to the grocery store to pick up some items for dinner, including chicken, cheese, and onions." (use a comma instead)</li>
+      <li style="margin: 0.2rem 0;">❌ Incorrect: "The study relied on techniques such as: direct observation and surveying."</li>
+      <li style="margin: 0.2rem 0;">✓ Correct: "The study relied on techniques such as direct observation and surveying." (no comma or colon needed)</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Advanced: Colons Joining Two Independent Clauses
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">A colon can join two independent clauses if the second clause acts as a definition, example, explanation, or clarification of the first
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "Buddy got what he worked for: he really deserved that promotion."</li>
+      <li style="margin: 0.2rem 0;">Example: "My father gave me one rule to live by: honesty is always the best policy."</li>
+      <li style="margin: 0.2rem 0;">This is an advanced grammar rule that rarely appears on the ACT</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 2 will be inserted here by ExampleCard component -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Dashes
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Dashes</strong> can function like unnecessary information commas, parentheses, or colons
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Most commonly, a pair of dashes sets apart unnecessary information in the middle of a sentence</li>
+      <li style="margin: 0.2rem 0;">Think of dashes as a stronger, more dramatic version of commas or parentheses</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Pair of Dashes for Unnecessary Information
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Two dashes function exactly like unnecessary information commas
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "Residents of Washington D.C. - the capital of the United States - are still trying to get representation in Congress."</li>
+      <li style="margin: 0.2rem 0;">Example: "Glazed donuts - even if they are unhealthy - are my favorite."</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">CRITICAL: You cannot mix punctuation!
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Must be a pair of commas, a pair of dashes, OR a pair of parentheses</li>
+      <li style="margin: 0.2rem 0;">❌ Incorrect: "Deep-dish pizza - a famous meal in Chicago, does not exist in Italy." (mixing dash and comma)</li>
+      <li style="margin: 0.2rem 0;">✓ Correct: "Deep-dish pizza, a famous meal in Chicago, does not exist in Italy." (pair of commas)</li>
+      <li style="margin: 0.2rem 0;">✓ Correct: "Deep-dish pizza - a famous meal in Chicago - does not exist in Italy." (pair of dashes)</li>
+      <li style="margin: 0.2rem 0;">✓ Correct: "Deep-dish pizza (a famous meal in Chicago) does not exist in Italy." (pair of parentheses)</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Single Dash Acting Like a Colon
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">A single dash can introduce a list, example, explanation, definition, or clarification
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">When acting as a colon, the dash must follow the same 3 colon rules</li>
+      <li style="margin: 0.2rem 0;">Example: "You will need the following ingredients - milk, butter, flour, and eggs."</li>
+      <li style="margin: 0.2rem 0;">Example: "In order to establish his dominance, the male lion relied on one thing - his thunderous roar."</li>
+      <li style="margin: 0.2rem 0;">Example: "The study declared that the results were conclusive - mice will complete the maze faster if they are given soda instead of water."</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Advanced: Single Dash Like Parentheses
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">A single dash in the middle of a sentence can separate information at the end just like parentheses
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "After three weeks, the patient was fed up with his doctor's plan (or lack of a plan)."</li>
+      <li style="margin: 0.2rem 0;">Example: "After three weeks, the patient was fed up with his doctor's plan - or lack of a plan."</li>
+      <li style="margin: 0.2rem 0;">This rule has been very rarely tested on the ACT English Test</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 3 will be inserted here by ExampleCard component -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Apostrophes
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Apostrophes</strong> on the ACT have two functions: possession and contractions
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Most apostrophe questions test whether you can identify the correct possessive form</li>
+      <li style="margin: 0.2rem 0;">Other questions test whether you can distinguish between possessive pronouns and contractions</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Possession Rules
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">For singular nouns: Add apostrophe + "s"
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "Terrence's bike is much faster than my brother's roller blades."</li>
+      <li style="margin: 0.2rem 0;">For singular words ending in "s" (like "bus"): You can add apostrophe + "s" OR just an apostrophe (both are correct)</li>
+      <li style="margin: 0.2rem 0;">Example: "The bus's driver" OR "The bus' driver"</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">For plural nouns ending in "s": Add apostrophe after the "s"
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "The boys' jerseys were all covered in mud after the game."</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">For plural nouns NOT ending in "s": Add apostrophe + "s"
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "Our women's basketball team won the championship last year."</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Possessive vs. Plural
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">The ACT tests whether you can distinguish between singular possessive, plural possessive, and non-possessive plural
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Singular possessive: "I accidentally stepped on the dog's bone." (one dog possessing the bone)</li>
+      <li style="margin: 0.2rem 0;">Plural possessive: "The dogs' collars are in the basket by the door." (multiple dogs possessing collars)</li>
+      <li style="margin: 0.2rem 0;">Non-possessive plural: "I watched as the dogs played in the yard." (multiple dogs, but no possession)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">The trick: Check if the next word is being possessed
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If the noun owns or possesses something, use an apostrophe</li>
+      <li style="margin: 0.2rem 0;">If there's no possession, don't use an apostrophe</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Possessive Pronouns vs. Contractions
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Possessive pronouns</strong> (its, hers, yours, ours, theirs) end in "s" but NEVER use an apostrophe
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">✓ Correct: its, hers, yours, ours, theirs</li>
+      <li style="margin: 0.2rem 0;">❌ Incorrect: it's (contraction for "it is"), her's, your's, our's, their's</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Contractions</strong> use an apostrophe to show where letters are removed
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">"it's" = "it is" (contraction)</li>
+      <li style="margin: 0.2rem 0;">"you're" = "you are" (contraction)</li>
+      <li style="margin: 0.2rem 0;">"they're" = "they are" (contraction)</li>
+      <li style="margin: 0.2rem 0;">"who's" = "who is" (contraction)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">The plug-in test: Expand the contraction and see if it makes sense
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "The cat loves playing with (its/it's) new toy."</li>
+      <li style="margin: 0.2rem 0;">Test: "The cat loves playing with it is new toy." ❌ This doesn't work!</li>
+      <li style="margin: 0.2rem 0;">Answer: "The cat loves playing with its new toy." ✓ Correct (possessive pronoun)</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 4 will be inserted here by ExampleCard component -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+5. Quotation Marks
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Quotation marks</strong> are most commonly used for direct quotes
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">They can also be used to show a word is being used as a technical term, slang, or in an unusual way</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Direct Quotes That Are Spoken
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Direct quotes that are spoken are offset by a comma
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Anytime the quote is being spoken (said, yelled, whispered, exclaimed, etc.), use a comma before or after the quotation</li>
+      <li style="margin: 0.2rem 0;">Example: "Abigail said, 'I will not pay until the painting is completed.'"</li>
+      <li style="margin: 0.2rem 0;">Example: "'The thunderstorm last night woke me up,' Paul whispered."</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Direct Quotes That Are NOT Spoken
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Direct quotes that are not spoken have NO commas
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If the quote is just a phrase or part of the sentence (not being actively spoken), there is no punctuation before the quotation marks</li>
+      <li style="margin: 0.2rem 0;">❌ Incorrect: "My grandfather described the shells as, 'beautiful souvenirs from a past life.'"</li>
+      <li style="margin: 0.2rem 0;">✓ Correct: "My grandfather described the shells as 'beautiful souvenirs from a past life.'"</li>
+      <li style="margin: 0.2rem 0;">The quotation marks show these are the grandfather's words, but he's not actively speaking them in the scene</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Technical Terms, Slang, or Unusual Usage
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Quotation marks can show a word is being used as a technical term, in an unusual way, or as slang
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Technical term: "Having defined the term 'contact variance,' Dr. Chen continued his lecture."</li>
+      <li style="margin: 0.2rem 0;">Slang or sarcasm: "Sven refers to himself as a 'professional' influencer."</li>
+      <li style="margin: 0.2rem 0;">Unusual usage: "This 'revolutionary' program has left thousands of children without a basic education."</li>
+      <li style="margin: 0.2rem 0;">Irony: "Allie could smell the 'fresh' fish from across the room."</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 5 will be inserted here by ExampleCard component -->
+
+<!-- ========================================
+     SECTION 3: HIDDEN SEPARATOR
+     CRITICAL: Parser needs this!
+     ======================================== -->
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<!-- ========================================
+     SECTION 4: KEY TAKEAWAYS
+     EXACTLY 4 BULLET POINTS - NO MORE, NO LESS
+     ======================================== -->
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Semicolons can replace periods—both sides must be independent clauses .
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Dashes can function like unnecessary information commas or parentheses when used in pairs.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Apostrophes show possession or contractions.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Quotation marks are used for direct quotes and.
+  </li>
+</ul>
+
+<!-- MASTERY QUIZ: Stored in database, NOT in HTML -->
+<!-- Create separately using quiz creation script -->

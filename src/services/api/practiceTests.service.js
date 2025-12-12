@@ -352,6 +352,7 @@ const PracticeTestsService = {
     section,
     questionId,
     userAnswer,
+    correctAnswer,
     isCorrect,
     timeSpent
   ) {
@@ -364,25 +365,41 @@ const PracticeTestsService = {
       timeSpent
     });
 
-    const { data, error } = await supabase.from('practice_test_results').insert([
+    // Use upsert to prevent duplicates
+    const { data, error } = await supabase.from('practice_test_results').upsert([
       {
         practice_session_id: sessionId,
         user_id: userId,
         section: section,
         question_id: questionId,
         user_answer: userAnswer,
+        correct_answer: correctAnswer,
         is_correct: isCorrect,
         time_spent: timeSpent // milliseconds, not seconds
       }
-    ]);
+    ], {
+      onConflict: 'practice_session_id,question_id',
+      ignoreDuplicates: false // Update if exists
+    }).select(); // Return inserted data for verification
 
     if (error) {
+      console.error(`❌ FAILED TO SAVE PRACTICE TEST ANSWER - Question ${questionId}:`, {
+        message: error.message,
+        details: error.details,
+        hint: error.hint,
+        code: error.code
+      });
       errorTracker.trackError(
         'PracticeTestsService',
         'savePracticeTestAnswer',
         { userId, sessionId, section, questionId },
         error
       );
+      return null;
+    }
+
+    if (!data || data.length === 0) {
+      console.error(`❌ SAVE RETURNED NO DATA - Question ${questionId}`);
       return null;
     }
 

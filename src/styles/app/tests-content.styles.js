@@ -33,10 +33,7 @@ export const useTestsContentStyles = createUseStyles({
   pageTitle: {
     fontSize: '1.75rem',
     fontWeight: '700',
-    background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
+    color: '#000000',
     margin: '0 0 0.5rem 0',
     letterSpacing: '-0.02em',
     '@media (max-width: 768px)': {

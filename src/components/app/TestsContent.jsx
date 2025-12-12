@@ -23,6 +23,8 @@ const TestsContent = () => {
   } = useOutletContext();
   const [featureAccess, setFeatureAccess] = useState(null);
   const [previewTest, setPreviewTest] = useState(null);
+  const [showDiagnosticWarning, setShowDiagnosticWarning] = useState(false);
+  const [retakeButtonClicked, setRetakeButtonClicked] = useState(false);
   const [hasCompletedDiagnostic, setHasCompletedDiagnostic] = useState(() => {
     // Load from cache for instant rendering
     try {
@@ -155,20 +157,92 @@ const TestsContent = () => {
     { title: 'Science Practice', icon: <HiBeaker />, description: 'Coming soon', disabled: true }
   ], []);
 
+  const handleDiagnosticClick = () => {
+    if (hasCompletedDiagnostic) {
+      // Show warning modal if they've already completed it
+      setShowDiagnosticWarning(true);
+    } else {
+      // Directly open diagnostic if not completed
+      soundEffects.playSuccess();
+      setDiagnosticTestOpen(true);
+    }
+  };
+
+  const handleConfirmRetakeDiagnostic = () => {
+    if (!retakeButtonClicked) {
+      // First click - mark as clicked and wait for second click
+      setRetakeButtonClicked(true);
+      return;
+    }
+
+    // Second click - proceed with retake
+    setShowDiagnosticWarning(false);
+    setRetakeButtonClicked(false);
+    soundEffects.playSuccess();
+    setDiagnosticTestOpen(true);
+  };
+
   return (
     <div className={classes.testsContainer}>
       <div className={classes.pageHeader}>
         <h1 className={classes.pageTitle}>Tests</h1>
       </div>
-      <div className={classes.contentSection}>
-        {/* Only show diagnostic CTA if user hasn't completed it (and status is loaded) */}
-        {hasCompletedDiagnostic === false && !localStorage.getItem('diagnosticProcessing') && (
-          <DiagnosticTestCTA onClick={() => {
-            soundEffects.playSuccess();
-            setDiagnosticTestOpen(true);
-          }} />
-        )}
 
+      {/* Diagnostic Test Section */}
+      <div className={classes.contentSection}>
+        <div className={classes.sectionHeader}>
+          <h2 className={classes.sectionTitle}>Diagnostic Test</h2>
+        </div>
+        <div className={classes.testsGrid}>
+          <div
+            className={classes.testCard}
+            onClick={handleDiagnosticClick}
+            style={{
+              opacity: hasCompletedDiagnostic ? 0.7 : 1,
+              position: 'relative',
+              borderLeft: '3px solid #dc2626'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.borderLeftColor = '#dc2626'}
+            onMouseLeave={(e) => e.currentTarget.style.borderLeftColor = '#dc2626'}
+          >
+            {/* Completed badge if diagnostic is done */}
+            {hasCompletedDiagnostic && (
+              <div style={{
+                position: 'absolute',
+                top: '0.875rem',
+                right: '0.875rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.25rem',
+                fontSize: '0.6875rem',
+                fontWeight: '600',
+                color: '#10b981',
+                background: '#f0fdf4',
+                padding: '0.1875rem 0.5rem',
+                borderRadius: '999px',
+                border: '1px solid #86efac',
+                zIndex: 1
+              }}>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Completed
+              </div>
+            )}
+            <div>
+              <div className={classes.testIcon} style={{ background: '#dc2626' }}>
+                <HiDocumentText />
+              </div>
+              <h3 className={classes.testTitle} style={{ color: '#dc2626' }}>
+                Diagnostic Test
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Full-Length Tests Section */}
+      <div className={classes.contentSection}>
         <div className={classes.sectionHeader}>
           <h2 className={classes.sectionTitle}>Full-Length Tests</h2>
         </div>
@@ -386,6 +460,214 @@ const TestsContent = () => {
                 }}
               >
                 Start Test
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Diagnostic Retake Warning Modal */}
+      {showDiagnosticWarning && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'rgba(0, 0, 0, 0.5)',
+          zIndex: 3000,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '1rem',
+          animation: 'fadeIn 0.2s ease-out'
+        }}
+        onClick={() => setShowDiagnosticWarning(false)}
+        >
+          <style>{`
+            @keyframes fadeIn {
+              from { opacity: 0; }
+              to { opacity: 1; }
+            }
+            @keyframes scaleIn {
+              from {
+                opacity: 0;
+                transform: scale(0.95) translateY(10px);
+              }
+              to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+              }
+            }
+          `}</style>
+          <div style={{
+            background: 'white',
+            borderRadius: '12px',
+            padding: '2rem',
+            maxWidth: '480px',
+            width: '100%',
+            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+            position: 'relative',
+            animation: 'scaleIn 0.3s ease-out'
+          }}
+          onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowDiagnosticWarning(false)}
+              style={{
+                position: 'absolute',
+                top: '1rem',
+                right: '1rem',
+                background: 'transparent',
+                border: 'none',
+                fontSize: '1.5rem',
+                color: '#6b7280',
+                cursor: 'pointer',
+                padding: '0.25rem',
+                lineHeight: 1,
+                transition: 'color 0.2s ease'
+              }}
+              onMouseOver={(e) => e.currentTarget.style.color = '#1f2937'}
+              onMouseOut={(e) => e.currentTarget.style.color = '#6b7280'}
+            >
+              ×
+            </button>
+
+            {/* Warning Icon */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '56px',
+              height: '56px',
+              borderRadius: '50%',
+              background: '#fef2f2',
+              margin: '0 auto 1.5rem'
+            }}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </div>
+
+            <h2 style={{
+              margin: '0 0 1rem',
+              fontSize: '1.25rem',
+              fontWeight: '700',
+              color: '#1a1a1a',
+              textAlign: 'center',
+              letterSpacing: '-0.01em'
+            }}>
+              Retake Diagnostic Test?
+            </h2>
+
+            <div style={{
+              padding: '1rem',
+              background: '#fef2f2',
+              border: '1px solid #fecaca',
+              borderRadius: '8px',
+              marginBottom: '1.5rem'
+            }}>
+              <p style={{
+                margin: '0 0 0.75rem',
+                fontSize: '0.875rem',
+                color: '#991b1b',
+                fontWeight: '600',
+                lineHeight: '1.5'
+              }}>
+                ⚠️ Warning: This will reset your learning path
+              </p>
+              <p style={{
+                margin: 0,
+                fontSize: '0.8125rem',
+                color: '#7f1d1d',
+                lineHeight: '1.5'
+              }}>
+                Retaking the diagnostic test will create a new personalized learning path based on your latest results. Your previous diagnostic results and current learning path will be replaced.
+              </p>
+            </div>
+
+            <div style={{
+              marginBottom: '1.5rem',
+              padding: '0.75rem',
+              background: '#f9fafb',
+              borderRadius: '6px',
+              border: '1px solid #e5e7eb'
+            }}>
+              <p style={{
+                margin: '0 0 0.5rem',
+                fontSize: '0.8125rem',
+                fontWeight: '600',
+                color: '#374151'
+              }}>
+                What will happen:
+              </p>
+              <ul style={{
+                margin: 0,
+                paddingLeft: '1.25rem',
+                fontSize: '0.8125rem',
+                color: '#6b7280',
+                lineHeight: '1.6'
+              }}>
+                <li>Your new diagnostic results will replace the old ones</li>
+                <li>A fresh learning path will be generated</li>
+                <li>Course recommendations will be updated</li>
+                <li>Progress on your current path will be saved separately</li>
+              </ul>
+            </div>
+
+            <div style={{ display: 'flex', gap: '0.75rem', marginTop: '2rem' }}>
+              <button
+                onClick={() => {
+                  setShowDiagnosticWarning(false);
+                  setRetakeButtonClicked(false);
+                }}
+                style={{
+                  flex: 1,
+                  padding: '0.75rem 1rem',
+                  border: '1px solid #d1d5db',
+                  borderRadius: '8px',
+                  background: 'white',
+                  color: '#374151',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.background = '#f9fafb';
+                  e.currentTarget.style.borderColor = '#9ca3af';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.background = 'white';
+                  e.currentTarget.style.borderColor = '#d1d5db';
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleConfirmRetakeDiagnostic}
+                style={{
+                  flex: 1,
+                  padding: '0.75rem 1rem',
+                  border: 'none',
+                  borderRadius: '8px',
+                  background: retakeButtonClicked ? '#16a34a' : '#dc2626',
+                  color: 'white',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.background = retakeButtonClicked ? '#15803d' : '#b91c1c';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.background = retakeButtonClicked ? '#16a34a' : '#dc2626';
+                }}
+              >
+                {retakeButtonClicked ? 'Click Again to Confirm' : 'Continue & Retake'}
               </button>
             </div>
           </div>

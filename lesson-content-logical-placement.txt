@@ -1,0 +1,180 @@
+<!--
+LESSON TEMPLATE v4.0
+Subject: English
+Topic Number: 1.15
+Topic: Logical Placement
+Lesson Key: logical-placement
+-->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Logical placement questions ask you to place a sentence in the paragraph based on context and logical flow. These questions test your ability to recognize where information fits best by reading the sentences before and after each potential placement spot.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. How to Identify These Questions
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Logical placement questions are easy to spot because they always ask <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">where to place a sentence</strong>
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Common phrasing: "For the sake of logic and coherence, Sentence X should be placed..."</li>
+      <li style="margin: 0.2rem 0;">Or: "The sentence would most logically be placed..."</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Look for <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">bracketed numbers [1] [2] [3]</strong> at the beginning of sentences
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Bracketed numbers only appear when there's a logical placement question</li>
+      <li style="margin: 0.2rem 0;">Read these paragraphs more carefully—they may currently be out of order</li>
+      <li style="margin: 0.2rem 0;">The paragraph may seem confusing at first because sentences are misplaced</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Bracketed letters [A] [B] [C] appear for end-of-passage placement questions
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Don't worry about the letters while reading—just note there will be a placement question</li>
+      <li style="margin: 0.2rem 0;">The question will ask where to place a new sentence in the passage</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. The Critical Strategy: Plug and Read
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">To find the correct answer, <strong>plug the sentence into each potential spot</strong> and re-read
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Don't just read the sentence before the placement—this is the most common mistake</li>
+      <li style="margin: 0.2rem 0;">You MUST read the sentence(s) before AND after where you're placing it</li>
+      <li style="margin: 0.2rem 0;">The correct placement should flow smoothly in both directions</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Step-by-Step Approach
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Step 1: Read the entire paragraph first to understand the overall context
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Even if it seems confusing, get a sense of the topic and flow</li>
+      <li style="margin: 0.2rem 0;">Identify what the paragraph is discussing</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Step 2: Identify the sentence you need to place
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">What specific information does it contain?</li>
+      <li style="margin: 0.2rem 0;">What does it refer to or connect to?</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Step 3: Test each answer choice by plugging in the sentence
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Read from the sentence before → through the placed sentence → to the sentence after</li>
+      <li style="margin: 0.2rem 0;">Does it create smooth, logical flow?</li>
+      <li style="margin: 0.2rem 0;">Do pronouns have clear references?</li>
+      <li style="margin: 0.2rem 0;">Does the information follow a logical sequence?</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. What Makes a Placement Correct
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">The correct placement creates <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">logical flow and coherence</strong>
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Information should follow a natural, chronological, or logical order</li>
+      <li style="margin: 0.2rem 0;">Pronouns should refer to clearly established nouns</li>
+      <li style="margin: 0.2rem 0;">Transition words should make sense in context</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Look for These Clues
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Pronouns and references
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If the sentence says "This ultimately resulted in..." it must come after what caused the result</li>
+      <li style="margin: 0.2rem 0;">If it says "he" or "she," the person must be introduced before</li>
+      <li style="margin: 0.2rem 0;">Words like "this," "that," "these," "those" refer back to previously mentioned concepts</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Chronological order
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Events should follow time order unless context suggests otherwise</li>
+      <li style="margin: 0.2rem 0;">Time markers like "first," "then," "after," "before" help establish sequence</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Topic continuity
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Sentences discussing the same subtopic should be grouped together</li>
+      <li style="margin: 0.2rem 0;">Don't interrupt one idea with an unrelated sentence</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Transition words and phrases
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">"However," "in contrast," "on the other hand" signal a shift or contrast</li>
+      <li style="margin: 0.2rem 0;">"For example," "such as" provide examples of previous statements</li>
+      <li style="margin: 0.2rem 0;">"Further," "additionally," "moreover" add to previous points</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Common Mistakes to Avoid
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Not reading the sentence AFTER the placement
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">This is the #1 mistake students make</li>
+      <li style="margin: 0.2rem 0;">You must check that the sentence flows into what comes next</li>
+      <li style="margin: 0.2rem 0;">A sentence might connect well to what comes before but not to what comes after</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Not reading the entire paragraph first
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">You need context to understand where the sentence fits</li>
+      <li style="margin: 0.2rem 0;">Without reading the whole paragraph, you might miss important clues</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Choosing based on topic similarity alone
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Just because two sentences discuss the same topic doesn't mean they belong together</li>
+      <li style="margin: 0.2rem 0;">Check for logical sequence and smooth transitions</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Rushing through the answer choices
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Take time to actually plug in the sentence at each spot</li>
+      <li style="margin: 0.2rem 0;">Read the surrounding sentences carefully for each option</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Logical placement questions ask "where should this sentence be placed?" Look for bracketed numbers [1] [2] [3] at the beginning of sentences—these only appear when there's a logical placement question.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>The critical strategy: plug the sentence into each potential spot and re-read the sentences before AND after.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Look for clues: pronouns and references (words like "this," "that," "he," "she" must refer.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Read the entire paragraph first to understand context, then test each answer choice.
+  </li>
+</ul>

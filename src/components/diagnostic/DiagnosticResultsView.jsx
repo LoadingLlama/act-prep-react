@@ -5,6 +5,8 @@
  */
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { HiXMark } from 'react-icons/hi2';
 import { usePracticeTestStyles } from '../../styles/pages/practice-test.styles';
 
 /**
@@ -23,8 +25,14 @@ const DiagnosticResultsView = ({
   show
 }) => {
   const classes = usePracticeTestStyles();
+  const navigate = useNavigate();
 
   if (!show || !analysisData) return null;
+
+  const handleClose = () => {
+    // Navigate back to home/dashboard
+    navigate('/app');
+  };
 
   const weeksUntilExam = userGoalsData?.target_exam_date
     ? Math.ceil((new Date(userGoalsData.target_exam_date) - new Date()) / (1000 * 60 * 60 * 24 * 7))
@@ -34,30 +42,63 @@ const DiagnosticResultsView = ({
 
   return (
     <div className={classes.container}>
+      {/* Close Button */}
+      <button
+        onClick={handleClose}
+        style={{
+          position: 'fixed',
+          top: '1.5rem',
+          right: '1.5rem',
+          background: '#f3f4f6',
+          border: 'none',
+          borderRadius: '8px',
+          padding: '0.5rem 0.75rem',
+          fontSize: '0.875rem',
+          fontWeight: '500',
+          color: '#374151',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.25rem',
+          transition: 'all 0.15s ease',
+          zIndex: 1000,
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+        }}
+        onMouseEnter={(e) => {
+          e.target.style.background = '#e5e7eb';
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.background = '#f3f4f6';
+        }}
+      >
+        <HiXMark style={{ fontSize: '1.125rem' }} />
+        Close
+      </button>
+
       <div style={{
-        padding: '2rem 1.5rem',
+        padding: '1.5rem 1.5rem',
         maxWidth: '900px',
         margin: '0 auto'
       }}>
         {/* Success Header */}
-        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
           <div style={{
-            width: '60px',
-            height: '60px',
-            margin: '0 auto 1rem',
+            width: '48px',
+            height: '48px',
+            margin: '0 auto 0.75rem',
             background: '#dcfce7',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="20 6 9 17 4 12"></polyline>
             </svg>
           </div>
 
           <h2 style={{
-            fontSize: '1.75rem',
+            fontSize: '1.5rem',
             fontWeight: '700',
             color: '#1a1a1a',
             marginBottom: '0.5rem'
@@ -66,9 +107,9 @@ const DiagnosticResultsView = ({
           </h2>
 
           <p style={{
-            fontSize: '1rem',
+            fontSize: '0.9375rem',
             color: '#6b7280',
-            lineHeight: '1.5'
+            lineHeight: '1.4'
           }}>
             We've created a custom study plan based on your diagnostic test results.
           </p>
@@ -78,15 +119,15 @@ const DiagnosticResultsView = ({
         <div style={{
           background: 'linear-gradient(135deg, #08245b 0%, #0a2f6e 100%)',
           borderRadius: '12px',
-          padding: '2rem',
-          marginBottom: '2rem',
+          padding: '1.5rem',
+          marginBottom: '1.5rem',
           color: 'white'
         }}>
-          <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
             <div style={{ fontSize: '0.875rem', fontWeight: '600', opacity: 0.9, marginBottom: '0.5rem' }}>
               Your Estimated ACT Composite Score
             </div>
-            <div style={{ fontSize: '4rem', fontWeight: '700' }}>
+            <div style={{ fontSize: '3rem', fontWeight: '700' }}>
               {analysisData.overall_score || 0}
             </div>
             <div style={{ fontSize: '0.875rem', opacity: 0.8 }}>
@@ -98,50 +139,50 @@ const DiagnosticResultsView = ({
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: '1rem',
+            gap: '0.75rem',
             fontSize: '0.875rem'
           }}>
             <div style={{
               background: 'rgba(255, 255, 255, 0.1)',
               borderRadius: '8px',
-              padding: '1rem',
+              padding: '0.75rem',
               textAlign: 'center'
             }}>
               <div style={{ opacity: 0.9, marginBottom: '0.25rem' }}>English</div>
-              <div style={{ fontSize: '1.5rem', fontWeight: '700' }}>
+              <div style={{ fontSize: '1.25rem', fontWeight: '700' }}>
                 {analysisData.english_score || 0}
               </div>
             </div>
             <div style={{
               background: 'rgba(255, 255, 255, 0.1)',
               borderRadius: '8px',
-              padding: '1rem',
+              padding: '0.75rem',
               textAlign: 'center'
             }}>
               <div style={{ opacity: 0.9, marginBottom: '0.25rem' }}>Math</div>
-              <div style={{ fontSize: '1.5rem', fontWeight: '700' }}>
+              <div style={{ fontSize: '1.25rem', fontWeight: '700' }}>
                 {analysisData.math_score || 0}
               </div>
             </div>
             <div style={{
               background: 'rgba(255, 255, 255, 0.1)',
               borderRadius: '8px',
-              padding: '1rem',
+              padding: '0.75rem',
               textAlign: 'center'
             }}>
               <div style={{ opacity: 0.9, marginBottom: '0.25rem' }}>Reading</div>
-              <div style={{ fontSize: '1.5rem', fontWeight: '700' }}>
+              <div style={{ fontSize: '1.25rem', fontWeight: '700' }}>
                 {analysisData.reading_score || 0}
               </div>
             </div>
             <div style={{
               background: 'rgba(255, 255, 255, 0.1)',
               borderRadius: '8px',
-              padding: '1rem',
+              padding: '0.75rem',
               textAlign: 'center'
             }}>
               <div style={{ opacity: 0.9, marginBottom: '0.25rem' }}>Science</div>
-              <div style={{ fontSize: '1.5rem', fontWeight: '700' }}>
+              <div style={{ fontSize: '1.25rem', fontWeight: '700' }}>
                 {analysisData.science_score || 0}
               </div>
             </div>
@@ -153,14 +194,14 @@ const DiagnosticResultsView = ({
           background: '#f9fafb',
           border: '1px solid #e5e7eb',
           borderRadius: '12px',
-          padding: '2rem',
-          marginBottom: '2rem'
+          padding: '1.5rem',
+          marginBottom: '1.5rem'
         }}>
           <h3 style={{
-            fontSize: '1.25rem',
+            fontSize: '1.125rem',
             fontWeight: '700',
             color: '#1a1a1a',
-            marginBottom: '1.5rem'
+            marginBottom: '1rem'
           }}>
             Your Study Plan
           </h3>
@@ -168,7 +209,7 @@ const DiagnosticResultsView = ({
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '1.5rem'
+            gap: '1rem'
           }}>
             {/* Study Duration */}
             <div>
@@ -176,7 +217,7 @@ const DiagnosticResultsView = ({
                 Study Duration
               </div>
               <div style={{
-                fontSize: '1.5rem',
+                fontSize: '1.25rem',
                 fontWeight: '700',
                 color: '#08245b'
               }}>
@@ -195,7 +236,7 @@ const DiagnosticResultsView = ({
                 Target Score
               </div>
               <div style={{
-                fontSize: '1.5rem',
+                fontSize: '1.25rem',
                 fontWeight: '700',
                 color: '#08245b'
               }}>
@@ -209,7 +250,7 @@ const DiagnosticResultsView = ({
                 Daily Study Time
               </div>
               <div style={{
-                fontSize: '1.5rem',
+                fontSize: '1.25rem',
                 fontWeight: '700',
                 color: '#08245b'
               }}>
@@ -223,7 +264,7 @@ const DiagnosticResultsView = ({
                 Focus Areas
               </div>
               <div style={{
-                fontSize: '1.5rem',
+                fontSize: '1.25rem',
                 fontWeight: '700',
                 color: '#08245b'
               }}>
@@ -234,12 +275,12 @@ const DiagnosticResultsView = ({
 
           {/* Weak Areas Preview */}
           {analysisData.weak_lessons && analysisData.weak_lessons.length > 0 && (
-            <div style={{ marginTop: '1.5rem' }}>
+            <div style={{ marginTop: '1rem' }}>
               <div style={{
                 fontSize: '0.875rem',
                 fontWeight: '600',
                 color: '#1a1a1a',
-                marginBottom: '0.75rem'
+                marginBottom: '0.5rem'
               }}>
                 Priority Topics to Master
               </div>
@@ -280,13 +321,13 @@ const DiagnosticResultsView = ({
         {/* View Results Button */}
         <div style={{ textAlign: 'center' }}>
           <button
-            onClick={() => setShowInsights(true)}
+            onClick={() => navigate('/app/insights')}
             style={{
               background: '#08245b',
               color: 'white',
               border: 'none',
               borderRadius: '6px',
-              padding: '0.875rem 2rem',
+              padding: '0.75rem 1.75rem',
               fontSize: '1rem',
               fontWeight: '600',
               cursor: 'pointer',
@@ -308,7 +349,7 @@ const DiagnosticResultsView = ({
           </button>
 
           <div style={{
-            marginTop: '1rem',
+            marginTop: '0.75rem',
             fontSize: '0.875rem',
             color: '#6b7280'
           }}>

@@ -8,7 +8,7 @@ import React from 'react';
 import { HiXMark } from 'react-icons/hi2';
 import { usePracticeTestStyles } from '../styles/pages/practice-test.styles';
 import { useDiagnosticTest } from '../hooks/useDiagnosticTest';
-import DiagnosticInsightsModal from './diagnostic/DiagnosticInsightsModal';
+import DiagnosticTestReview from './DiagnosticTestReview';
 import DiagnosticResultsView from './diagnostic/DiagnosticResultsView';
 import DiagnosticOnboardingForm from './diagnostic/DiagnosticOnboardingForm';
 import DiagnosticIntroScreen from './diagnostic/DiagnosticIntroScreen';
@@ -23,6 +23,7 @@ const DiagnosticTest = ({ onClose }) => {
     loading,
     error,
     testStarted,
+    sessionId,
     showOnboarding,
     showIntro,
     processing,
@@ -36,7 +37,6 @@ const DiagnosticTest = ({ onClose }) => {
     showCountdown,
     countdown,
     showInsights,
-    insightsData,
     iframeRef,
     setOnboardingData,
     setShowInsights,
@@ -85,13 +85,13 @@ const DiagnosticTest = ({ onClose }) => {
   }
 
   /**
-   * Render insights modal
+   * Render diagnostic test review modal (same as insights page)
    */
-  if (showInsights && insightsData) {
-    return <DiagnosticInsightsModal
-      insightsData={insightsData}
-      onClose={onClose}
+  if (showInsights) {
+    return <DiagnosticTestReview
       show={showInsights}
+      onClose={onClose}
+      sessionId={sessionId}
     />;
   }
 

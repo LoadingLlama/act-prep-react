@@ -3,7 +3,9 @@
  * Matches app theme with clean, professional design
  */
 
-export const profileStyles = {
+import { createUseStyles } from 'react-jss';
+
+export const useProfileStyles = createUseStyles({
   container: {
     maxWidth: '700px',
     margin: '0',
@@ -448,4 +450,23 @@ export const profileStyles = {
       transform: 'translateY(0)',
     },
   },
+});
+
+// Legacy export for backwards compatibility (remove @media queries for inline styles)
+export const profileStyles = {
+  container: {
+    maxWidth: '700px',
+    margin: '0',
+    padding: '1.5rem 1.5rem 0 1.5rem',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    width: '100%'
+  },
+  loading: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '400px',
+    fontSize: '0.875rem',
+    color: '#64748b'
+  }
 };

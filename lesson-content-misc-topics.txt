@@ -1,0 +1,223 @@
+<!--
+LESSON TEMPLATE v4.0
+Subject: English
+Topic Number: 1.8
+Topic: Other Miscellaneous Topics
+Lesson Key: miscellaneous
+-->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Miscellaneous grammar questions make up about 8-10% of the ACT English Test—roughly 6-8 questions per test! This chapter covers commonly confused words, active vs. passive voice, and other important grammar rules that don't fit into other categories.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. Commonly Confused Words
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">The ACT tests many commonly confused words
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">The most common is "affect" vs. "effect"</li>
+      <li style="margin: 0.2rem 0;">If you're unsure, go with your gut—you'll usually be correct</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Affect vs. Effect
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Affect</strong> = verb meaning to act on or produce a change in
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "Sunshine and palm trees affect my mood positively."</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Effect</strong> = noun meaning the result of a change
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "Sunshine and palm trees have a positive effect on my mood."</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Other Commonly Confused Words
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Accept (receive) vs. Except (exclude)</li>
+  <li style="margin: 0.3rem 0;">Advice (noun - recommendation) vs. Advise (verb - to recommend)</li>
+  <li style="margin: 0.3rem 0;">Lie (to lie down) vs. Lay (to place)</li>
+  <li style="margin: 0.3rem 0;">Lose (to misplace) vs. Loose (not tight)</li>
+  <li style="margin: 0.3rem 0;">Passed (moved beyond) vs. Past (gone by in time)</li>
+  <li style="margin: 0.3rem 0;">Principal (head of school) vs. Principle (a rule)</li>
+  <li style="margin: 0.3rem 0;">Their (possessive) vs. There (location) vs. They're (they are)</li>
+  <li style="margin: 0.3rem 0;">To (toward) vs. Too (also) vs. Two (2)</li>
+</ul>
+
+<!-- Example 1 -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Than vs. Then
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Than</strong> is ONLY used for comparisons
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "I think that chocolate with almonds is much better than ice cream."</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Then</strong> has multiple meanings
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Used when dealing with time: "First we eat, then we clean up."</li>
+      <li style="margin: 0.2rem 0;">Means "in addition to": "I need to call my mother, and then we can leave."</li>
+      <li style="margin: 0.2rem 0;">Used with if/then statements: "If it rains, then we'll stay inside."</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Quick rule: For a comparison, use "than." Otherwise, use "then."</li>
+</ul>
+
+<!-- Example 2 -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Have vs. Of
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Many people mistakenly use "could of" or "would of"
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">This is ALWAYS incorrect!</li>
+      <li style="margin: 0.2rem 0;">The correct forms are "could have" or "would have"</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">The words "could," "should," "would," and "might" should always be followed by "have," not "of"
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">The reason for this mistake: The contraction "could've" (short for "could have") is pronounced like "could of"</li>
+      <li style="margin: 0.2rem 0;">❌ Incorrect: "If we left the show earlier, we could of avoided the traffic."</li>
+      <li style="margin: 0.2rem 0;">✓ Correct: "If we left the show earlier, we could have avoided the traffic."</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 3 -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Countable vs. Non-countable Adjectives
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">A <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">countable noun</strong> is something you can count
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Examples: bottles of milk, hours, trophies, calories</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">A <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">non-countable noun</strong> is something that cannot be expressed in plural form
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Examples: time, air, milk, significance</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Which Adjectives to Use
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">For COUNTABLE nouns, use: number, many, fewer, few
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "The number of ingredients" (you can count ingredients)</li>
+      <li style="margin: 0.2rem 0;">Example: "How many trophies" (you can count trophies)</li>
+      <li style="margin: 0.2rem 0;">Example: "Fewer calories" (you can count calories)</li>
+      <li style="margin: 0.2rem 0;">Example: "A few minutes" (you can count minutes)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">For NON-COUNTABLE nouns, use: amount, much, less, little
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "The amount of time" (you can't count time itself)</li>
+      <li style="margin: 0.2rem 0;">Example: "How much significance" (you can't count significance)</li>
+      <li style="margin: 0.2rem 0;">Example: "Less whole milk" (you can't count milk itself, only containers)</li>
+      <li style="margin: 0.2rem 0;">Example: "A little time" (you can't count time itself)</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 4 -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+5. Active Voice vs. Passive Voice
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Active voice</strong> means the subject performs the verb's action
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "I picked up the pencil." (I performed the action)</li>
+      <li style="margin: 0.2rem 0;">Example: "The police chief announced the list of suspects." (The police chief performed the action)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Passive voice</strong> means the subject is acted upon by the verb
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "The pencil was picked up by me." (The pencil didn't do the action)</li>
+      <li style="margin: 0.2rem 0;">Example: "The list of suspects was announced by the police chief." (The list didn't do the action)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">On the ACT, NEVER select an answer choice in passive voice
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Active voice is always better than passive voice</li>
+      <li style="margin: 0.2rem 0;">Active voice is clearer, more direct, and stronger</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 5 -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+6. Prepositional Idioms
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Idioms</strong> are expressions stated in a certain way because it's widely accepted practice
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Certain words must be paired with certain prepositions to be correct</li>
+      <li style="margin: 0.2rem 0;">These questions don't come up often on the ACT</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">When prepositional idioms appear, rely on what sounds best
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">❌ Incorrect: "Bobby was afraid by the dark."</li>
+      <li style="margin: 0.2rem 0;">✓ Correct: "Bobby was afraid of the dark."</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Common prepositional idioms to know
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Afraid of (not afraid by)</li>
+      <li style="margin: 0.2rem 0;">Anxious about (not anxious of)</li>
+      <li style="margin: 0.2rem 0;">Different from (not different than)</li>
+      <li style="margin: 0.2rem 0;">Responsible for (not responsible of)</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 6 -->
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>"Affect" is a verb , while "effect" is a noun .
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>countable nouns , use number, many, fewer.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Active voice is better than passive voice .
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Prepositional idioms pair specific words.
+  </li>
+</ul>

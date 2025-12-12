@@ -1,0 +1,336 @@
+<!--
+LESSON TEMPLATE v4.0
+Subject: English
+Topic Number: 1.6
+Topic: Misplaced Modifiers
+Lesson Key: misplaced-modifiers
+-->
+
+<!-- ========================================
+     SECTION 1: OPENING (2 SENTENCES MAX)
+     CRITICAL: Must have:
+     - MAXIMUM 2 sentences
+     - ACT context (# of questions or %)
+     - NO blue underlined terms here
+     ======================================== -->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Misplaced modifier questions make up about 5-7% of the ACT English Test—roughly 4-5 questions per test! These questions test whether descriptive words, phrases, or clauses are placed next to the nouns they're supposed to modify.
+</p>
+
+<!-- ========================================
+     SECTION 2: CONTENT (4 H3 SECTIONS)
+     Each H3 = Major Concept
+     Use BULLET POINTS with indents, NOT paragraphs
+     ======================================== -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. What is a Misplaced Modifier?
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">A <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">misplaced modifier</strong> is a word, phrase, or clause that is improperly separated from the noun it modifies
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">This leads to a sentence with an incorrect or unintended meaning</li>
+      <li style="margin: 0.2rem 0;">Misplaced modifiers are hard to spot because we usually know what the sentence is really supposed to be saying</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Example of a Misplaced Modifier
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">❌ Incorrect: "Consistently erupting, Jack loves taking pictures of the Old Faithful geyser at Yellowstone National Park."
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">What's wrong? The modifier "consistently erupting" is supposed to modify the Old Faithful geyser, but instead it's modifying Jack!</li>
+      <li style="margin: 0.2rem 0;">This sentence suggests Jack is consistently erupting (which doesn't make sense)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">When a sentence begins with a modifying phrase, the phrase must modify the very first noun that follows the comma</li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+How to Fix Misplaced Modifiers
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Option 1: Put the modifier right next to what it's describing
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">✓ Correct: "Consistently erupting, the Old Faithful geyser at Yellowstone National Park is one of Jack's favorite things to take pictures of."</li>
+      <li style="margin: 0.2rem 0;">Now "consistently erupting" is right next to "the Old Faithful geyser"</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Option 2: Change the modifier from a phrase to a dependent clause
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">✓ Correct: "Since it is consistently erupting, Jack loves taking pictures of the Old Faithful geyser at Yellowstone National Park."</li>
+      <li style="margin: 0.2rem 0;">Adding "it is" changes the modifier to a dependent clause, making it clear the geyser is erupting</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+The "Next-Door Neighbor" Rule
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">For a modifier to be properly placed, it must be right "next-door" to the noun it's describing
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Modifiers can be at the beginning, middle, or end of a sentence</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">If the modifier is at the beginning of the sentence, the first noun after it must be the word being modified
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "Running from the police, Eric hopped the fence and hid underneath a car."</li>
+      <li style="margin: 0.2rem 0;">"Running from the police" modifies "Eric" (the first noun after the comma)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">If the modifier is in the middle or end of the sentence, it must be modifying the noun directly before it
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "Dr. Anderson, a world-renowned surgeon, fixed my broken leg."</li>
+      <li style="margin: 0.2rem 0;">"A world-renowned surgeon" modifies "Dr. Anderson" (the noun directly before it)</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 1 will be inserted here by ExampleCard component -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Front of the Sentence Modifiers with a Comma
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">On the ACT, most misplaced modifier questions have a modifier at the front of the sentence separated by a comma
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">For this type of question, consider who or what the modifier is describing</li>
+      <li style="margin: 0.2rem 0;">Then make sure that person, place, or thing is the first noun in the rest of the sentence</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Example: Front Modifier Error
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">❌ Incorrect: "Not popular since the early 1980s, the documentary about mullets explored the origins of the wildly popular hairstyle."
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">The modifier is "not popular since the early 1980s"</li>
+      <li style="margin: 0.2rem 0;">What is "not popular since the early 1980s"? Mullets, not documentaries!</li>
+      <li style="margin: 0.2rem 0;">But the first noun after the comma is "documentary," which is wrong</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">✓ Correct: "Not popular since the early 1980s, mullets were the topic of a recently released documentary."
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Now "mullets" (the thing that's not popular since the 1980s) is the first noun after the comma</li>
+      <li style="margin: 0.2rem 0;">The modifier is right "next-door" to what it describes</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Strategy for Front Modifiers
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Step 1: Identify the modifying phrase at the beginning (before the comma)
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Look for descriptive phrases before the first comma</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Step 2: Ask yourself: Who or what is being described by this modifier?
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Think about what noun makes logical sense with the description</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Step 3: Find the first noun after the comma
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">This is what the modifier is currently describing</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Step 4: Make sure the first noun matches who or what should be described
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If it doesn't match, the modifier is misplaced</li>
+      <li style="margin: 0.2rem 0;">Choose the answer that puts the correct noun first</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 2 will be inserted here by ExampleCard component -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Middle or End of the Sentence Modifiers with Commas
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">A modifier in the middle or at the end of the sentence must be directly after whoever or whatever it is modifying
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">These modifiers are often set off by commas or use "which" or "that"</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Example: Middle Modifier Error
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">❌ Incorrect: "The research team, which arrived at their nesting grounds early this year, tracked the movements of the blue storks."
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">The modifier is "which arrived at their nesting grounds early this year"</li>
+      <li style="margin: 0.2rem 0;">This is placed right after "research team," so it's describing the research team</li>
+      <li style="margin: 0.2rem 0;">But the blue storks (not the research team) arrived at their nesting grounds early!</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+How to Fix Middle/End Modifiers
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Option 1: Move the modifier to be right after what it describes
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">✓ Correct: "The research team tracked the movements of the blue storks, which arrived at their nesting grounds early this year."</li>
+      <li style="margin: 0.2rem 0;">Now the modifier is right after "blue storks"</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Option 2: Change the modifier to describe what's actually before it
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">✓ Correct: "The research team, which tracked the movement of the blue storks, noted that the birds arrived at their nesting grounds early."</li>
+      <li style="margin: 0.2rem 0;">Now the modifier correctly describes the research team</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Strategy for Middle/End Modifiers
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Step 1: Identify the modifying phrase (often with "which," "that," or set off by commas)
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Look for descriptive phrases in the middle or end of the sentence</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Step 2: Ask: What noun is the modifier describing?
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Think logically about what makes sense</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Step 3: Check what noun comes right before the modifier
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">This is what the modifier is currently describing</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Step 4: Make sure the noun before the modifier is what should be described
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If not, choose the answer that moves the modifier or changes the sentence structure</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 3 will be inserted here by ExampleCard component -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Modifiers without Commas
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">In some questions, the modifier will not be separated by any commas
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">These are harder to spot, but the "next-door neighbor" rule still applies</li>
+      <li style="margin: 0.2rem 0;">Keep an eye out for phrases starting with "that" or words ending in "-ing" and "-ed"</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Common Patterns without Commas
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Phrases starting with "that"
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "The book that I borrowed from the library is overdue."</li>
+      <li style="margin: 0.2rem 0;">"That I borrowed from the library" modifies "book" (right before it)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Words ending in "-ing" (present participles)
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "The dog chasing the cat ran into the street."</li>
+      <li style="margin: 0.2rem 0;">"Chasing the cat" modifies "dog" (right before it)</li>
+      <li style="margin: 0.2rem 0;">❌ Incorrect: "Chasing the cat, the street was where the dog ran."</li>
+      <li style="margin: 0.2rem 0;">This suggests the street is chasing the cat!</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Words ending in "-ed" (past participles)
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Example: "The cake baked by my grandmother was delicious."</li>
+      <li style="margin: 0.2rem 0;">"Baked by my grandmother" modifies "cake" (right before it)</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Strategy for Modifiers without Commas
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Look for descriptive phrases that aren't set off by commas
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Watch for "that," "-ing," and "-ed" words</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Apply the same "next-door neighbor" rule
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">The modifier should be right next to what it's describing</li>
+      <li style="margin: 0.2rem 0;">If it's at the beginning, check the first noun after it</li>
+      <li style="margin: 0.2rem 0;">If it's in the middle or end, check the noun right before it</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Ask yourself: Does the modifier logically describe the noun next to it?
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If not, it's misplaced</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 4 will be inserted here by ExampleCard component -->
+
+<!-- ========================================
+     SECTION 3: HIDDEN SEPARATOR
+     CRITICAL: Parser needs this!
+     ======================================== -->
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<!-- ========================================
+     SECTION 4: KEY TAKEAWAYS
+     EXACTLY 4 BULLET POINTS - NO MORE, NO LESS
+     ======================================== -->
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>A misplaced modifier is a word, phrase.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>front-of-sentence modifiers separated by a comma.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>middle or end-of-sentence modifiers with commas .
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Modifiers without commas follow the same "next-door neighbor" rule.
+  </li>
+</ul>
+
+<!-- MASTERY QUIZ: Stored in database, NOT in HTML -->
+<!-- Create separately using quiz creation script -->

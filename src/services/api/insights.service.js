@@ -45,6 +45,10 @@ const InsightsService = {
    */
   async getDiagnosticInsights(userId) {
     try {
+      console.log('\n🔍 INSIGHTS SERVICE - FETCHING DIAGNOSTIC DATA:');
+      console.log(`  User ID: ${userId}`);
+      console.log(`  Querying diagnostic_test_sessions table...`);
+
       // Get all completed diagnostic sessions
       const { data: sessions, error: sessionsError } = await supabase
         .from('diagnostic_test_sessions')
@@ -53,9 +57,20 @@ const InsightsService = {
         .eq('completed', true)
         .order('created_at', { ascending: false });
 
-      if (sessionsError) throw sessionsError;
+      if (sessionsError) {
+        console.error('❌ Error fetching diagnostic sessions:', sessionsError);
+        throw sessionsError;
+      }
+
+      console.log(`  Found ${sessions?.length || 0} completed diagnostic session(s)`);
+      if (sessions && sessions.length > 0) {
+        console.log(`  Latest session ID: ${sessions[0].id}`);
+        console.log(`  Session completed at: ${sessions[0].session_end}`);
+        console.log(`  Session score: ${sessions[0].score_percentage}%`);
+      }
 
       if (!sessions || sessions.length === 0) {
+        console.log('⚠️ No completed diagnostic sessions found for this user');
         return {
           hasCompletedDiagnostic: false,
           sessions: [],
@@ -66,14 +81,19 @@ const InsightsService = {
 
       // Get latest diagnostic session details with question-level results
       const latestSession = sessions[0];
+      console.log(`\n📋 FETCHING RESULTS FOR SESSION: ${latestSession.id}`);
+      console.log(`  Querying diagnostic_test_results table...`);
+
       const { data: results, error: resultsError } = await supabase
         .from('diagnostic_test_results')
         .select('*')
         .eq('diagnostic_session_id', latestSession.id);
 
+      console.log(`  Found ${results?.length || 0} answer records in database`);
+
       if (resultsError) throw resultsError;
 
-      // Fetch question details from practice test tables
+      // Fetch question details from practice test tables (diagnostic test is test_number = 1)
       const questionIds = results.map(r => r.question_id);
       const sections = ['english', 'math', 'reading', 'science'];
       const questionDetails = new Map();
@@ -82,14 +102,14 @@ const InsightsService = {
         const tableName = `practice_test_${section}_questions`;
         const { data: sectionQuestions, error: questionsError } = await supabase
           .from(tableName)
-          .select('id, lesson_id, section, difficulty, question_type')
+          .select('id, lesson_id, difficulty, question_type')
           .in('id', questionIds);
 
         if (!questionsError && sectionQuestions) {
           sectionQuestions.forEach(q => {
             questionDetails.set(q.id, {
               lesson_id: q.lesson_id,
-              section: section,
+              section: section, // Use section from loop, not from database
               difficulty: q.difficulty,
               question_type: q.question_type
             });
@@ -110,6 +130,14 @@ const InsightsService = {
 
       // Calculate difficulty breakdown
       const difficultyBreakdown = this._calculateDifficultyBreakdown(results);
+
+      console.log('📊 InsightsService.getDiagnosticInsights - Returning data:');
+      console.log('   Session ID:', latestSession.id);
+      console.log('   Total Questions:', latestSession.total_questions);
+      console.log('   Correct Answers:', latestSession.correct_answers);
+      console.log('   Results count:', results.length);
+      console.log('   Section breakdown:', sectionBreakdown);
+      console.log('   Difficulty breakdown:', difficultyBreakdown);
 
       return {
         hasCompletedDiagnostic: true,
@@ -133,16 +161,30 @@ const InsightsService = {
    * @private
    */
   _calculateSectionBreakdown(results) {
+    console.log('🔍 _calculateSectionBreakdown called with', results.length, 'results');
+
     const sections = { english: [], math: [], reading: [], science: [] };
 
     results.forEach(result => {
       const section = result.question?.section;
       if (section && sections[section]) {
         sections[section].push(result);
+      } else {
+        console.warn('⚠️ Result missing section or invalid section:', {
+          questionId: result.question_id,
+          section,
+          hasQuestion: !!result.question
+        });
       }
     });
 
-    return Object.keys(sections).map(sectionName => {
+    console.log('📊 Results grouped by section:');
+    console.log('   English:', sections.english.length);
+    console.log('   Math:', sections.math.length);
+    console.log('   Reading:', sections.reading.length);
+    console.log('   Science:', sections.science.length);
+
+    const breakdown = Object.keys(sections).map(sectionName => {
       const sectionResults = sections[sectionName];
       const total = sectionResults.length;
       const correct = sectionResults.filter(r => r.is_correct).length;
@@ -156,6 +198,10 @@ const InsightsService = {
         accuracy: parseFloat(accuracy.toFixed(2))
       };
     }).filter(s => s.total > 0);
+
+    console.log('✅ Section breakdown calculated:', breakdown);
+
+    return breakdown;
   },
 
   /**

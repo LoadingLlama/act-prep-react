@@ -11,7 +11,7 @@ import { supabase } from '../supabaseClient';
 import logger from '../services/logging/logger';
 import Logo from './common/Logo';
 
-export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
+export default function PracticeTestReview({ sessionId, testNumber, onClose, onReady }) {
   console.log('🎬 PracticeTestReview component mounted with props:', {
     sessionId,
     testNumber,
@@ -288,6 +288,7 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
 
       setTestData(data);
       setLoading(false);
+      if (onReady) onReady();
 
       // Cache for instant reload
       sessionStorage.setItem(cacheKey, JSON.stringify(data));
@@ -301,6 +302,7 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
       logger.error('PracticeTestReview', 'loadPracticeTestData', { sessionId }, err);
       setError('Failed to load practice test data');
       setLoading(false);
+      if (onReady) onReady();
     }
   };
 
@@ -488,31 +490,9 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
     return () => window.removeEventListener('message', handleMessage);
   }, [selectedSection, testData, loadSectionIntoIframe, handleSectionSelect, setSearchParams]);
 
+  // Loading state - skip rendering, handled at card level
   if (loading) {
-    return (
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        minHeight: '100vh',
-        background: '#ffffff'
-      }}>
-        <div style={{ textAlign: 'center' }}>
-          <div style={{
-            width: '48px',
-            height: '48px',
-            border: '4px solid #f3f4f6',
-            borderTop: '4px solid #08245b',
-            borderRadius: '50%',
-            animation: 'spin 0.8s linear infinite',
-            margin: '0 auto 1rem'
-          }} />
-          <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>
-            Loading practice test results...
-          </p>
-        </div>
-      </div>
-    );
+    return null;
   }
 
   if (error || !testData) {
@@ -555,7 +535,7 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
         right: 0,
         bottom: 0,
         background: 'white',
-        zIndex: 3000
+        zIndex: 10000
       }}>
         {/* Back Button Overlay */}
         <div style={{
@@ -700,7 +680,7 @@ export default function PracticeTestReview({ sessionId, testNumber, onClose }) {
       right: 0,
       bottom: 0,
       background: 'rgba(0, 0, 0, 0.5)',
-      zIndex: 9999,
+      zIndex: 10000,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',

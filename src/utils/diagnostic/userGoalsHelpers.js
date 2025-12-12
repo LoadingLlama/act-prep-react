@@ -147,7 +147,7 @@ export const getUserGoals = async (userId) => {
 
     if (existingGoals) {
       return {
-        exam_date: existingGoals.target_exam_date,
+        exam_date: existingGoals.target_exam_date || null, // Ensure null instead of undefined
         current_score: existingGoals.current_score,
         daily_study_minutes: existingGoals.daily_study_minutes,
         target_score: existingGoals.target_score,

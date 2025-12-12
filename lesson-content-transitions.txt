@@ -1,0 +1,125 @@
+<!--
+LESSON TEMPLATE v4.0
+Subject: English
+Topic Number: 1.12
+Topic: Transitions
+Lesson Key: transitions
+-->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Transition questions test your reading comprehension by asking you to select the word or phrase that best connects ideas between sentences. All answer choices will be grammatically correct, so you must read for context to determine which transition logically relates the ideas.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. How to Approach Transition Questions
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Follow this three-step process
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;"><strong>Step 1:</strong> Ignore the transition currently in the passage—cover it up</li>
+      <li style="margin: 0.2rem 0;"><strong>Step 2:</strong> Read the sentence(s) before and after to determine their relationship</li>
+      <li style="margin: 0.2rem 0;"><strong>Step 3:</strong> Select the transition that correctly relates the ideas</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Context is everything
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">You cannot determine the correct transition by reading only one sentence</li>
+      <li style="margin: 0.2rem 0;">Always read both the previous and following sentences</li>
+      <li style="margin: 0.2rem 0;">Ask: What is the relationship between these ideas?</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Type 1: All Four Choices Are Transitions
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">When all 4 answer choices are transitions, you're only being tested on selecting the correct one
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Read for context to understand the relationship</li>
+      <li style="margin: 0.2rem 0;">Match the transition to the logical connection between ideas</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Example
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">"From a distance, the ocean looked pretty calm today even though a storm had arrived last night. <u>Under the circumstances,</u> the scene was much more chaotic with big waves and strong riptides."
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">A. NO CHANGE (Under the circumstances)</li>
+      <li style="margin: 0.2rem 0;">B. For instance</li>
+      <li style="margin: 0.2rem 0;">C. Up close</li>
+      <li style="margin: 0.2rem 0;">D. For example</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">✓ Correct: C. "Up close" creates a contrast with "from a distance" in the previous sentence</li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Type 2: Three Transitions and One "No Transition" Option
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">When one choice has <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">no transition</strong>, the ACT is asking whether a transition is even necessary
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Most often, the correct answer is the one that removes the transition entirely</li>
+      <li style="margin: 0.2rem 0;">Only use a transition if it properly links the sentences</li>
+      <li style="margin: 0.2rem 0;">If the ideas flow naturally without a transition, choose the "no transition" option</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+When to Remove Transitions
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Remove the transition if:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">The sentences are simply continuing the same idea</li>
+      <li style="margin: 0.2rem 0;">The relationship is already clear without a transition word</li>
+      <li style="margin: 0.2rem 0;">Adding a transition makes the connection awkward or incorrect</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Common Transition Categories
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Contrast/Opposition:</strong> However, Nevertheless, On the other hand, In contrast, Despite this</li>
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Example/Illustration:</strong> For example, For instance, Specifically, In particular</li>
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Cause/Effect:</strong> Therefore, Consequently, As a result, Thus, Hence</li>
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Addition:</strong> Furthermore, Moreover, Additionally, In addition, Also</li>
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Time Sequence:</strong> Meanwhile, Subsequently, Previously, Ultimately, Finally</li>
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Emphasis:</strong> Indeed, In fact, Certainly, Undoubtedly</li>
+</ul>
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>the three-step approach: Ignore the current transition, Read sentences before and after.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>When all 4 choices are transitions, you're choosing.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Remove transitions when sentences simply continue the same idea, the relationship is already clear.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Know the main transition categories: Contrast , Example , Cause/Effect , Addition , Time .
+  </li>
+</ul>

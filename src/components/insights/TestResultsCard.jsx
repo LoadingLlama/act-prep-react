@@ -17,6 +17,7 @@ const useStyles = createUseStyles({
     cursor: 'pointer',
     transition: 'all 0.15s ease',
     width: '100%',
+    boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)',
     '@media (max-width: 640px)': {
       padding: '0.625rem 0.75rem',
       borderRadius: '5px'
@@ -24,8 +25,8 @@ const useStyles = createUseStyles({
     '&:hover': {
       background: '#f9fafb',
       borderColor: '#cbd5e1',
-      transform: 'translateY(-1px)',
-      boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
+      transform: 'translateY(-2px)',
+      boxShadow: '0 5px 0 0 rgba(0, 0, 0, 0.12)',
       opacity: '1 !important'
     }
   },
@@ -244,8 +245,9 @@ function calculateDiagnosticSections(diagnosticData) {
  * @param {string} type - 'diagnostic' or 'practice'
  * @param {Object} testData - Test data object
  * @param {Function} onClick - Click handler to view detailed results
+ * @param {boolean} isLoading - Whether the card is in loading state
  */
-const TestResultsCard = ({ type, testData, onClick }) => {
+const TestResultsCard = ({ type, testData, onClick, isLoading = false }) => {
   const classes = useStyles();
 
   if (!testData) return null;
@@ -254,11 +256,18 @@ const TestResultsCard = ({ type, testData, onClick }) => {
     type,
     testData: {
       sectionResults: testData.sectionResults,
+      sectionResultsLength: testData.sectionResults?.length || 0,
       totalQuestions: testData.totalQuestions,
       correctAnswers: testData.correctAnswers,
-      completedAt: testData.completedAt
+      completedAt: testData.completedAt,
+      allFields: Object.keys(testData)
     }
   });
+
+  // Log section results in detail for debugging
+  if (type === 'diagnostic' && testData.sectionResults) {
+    console.log('📊 Diagnostic section results detail:', testData.sectionResults);
+  }
 
   // Calculate section scores based on test type
   const sections = type === 'diagnostic'
@@ -289,21 +298,33 @@ const TestResultsCard = ({ type, testData, onClick }) => {
     ? ((totalCorrect / totalQuestions) * 100).toFixed(1)
     : '0.0';
 
+  // Check if test data is missing (0/0 or 0/215 indicates no results saved)
+  const hasNoData = totalCorrect === 0 && (totalQuestions === 0 || sections.length === 0);
+
   console.log('📈 Score calculation:', {
     totalCorrect,
     totalQuestions,
     overallPercentage,
     compositeScore,
-    isNaN: isNaN(compositeScore)
+    isNaN: isNaN(compositeScore),
+    hasNoData,
+    sectionsCount: sections.length
   });
 
-  // Format date
+  // Format date with time
   const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
+    const date = new Date(dateString);
+    const dateStr = date.toLocaleDateString('en-US', {
       month: 'numeric',
       day: 'numeric',
       year: 'numeric'
     });
+    const timeStr = date.toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    });
+    return `${dateStr} at ${timeStr}`;
   };
 
   // Get test title
@@ -316,29 +337,77 @@ const TestResultsCard = ({ type, testData, onClick }) => {
     : testData.created_at || testData.completed_at;
 
   return (
-    <div className={classes.card} onClick={onClick} style={{ opacity: 0.85 }}>
+    <div className={classes.card} onClick={onClick} style={{ opacity: hasNoData ? 0.6 : 0.85, position: 'relative' }}>
+      {/* Loading Overlay */}
+      {isLoading && (
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'rgba(255, 255, 255, 0.9)',
+          borderRadius: '6px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 10
+        }}>
+          <div style={{
+            width: '32px',
+            height: '32px',
+            border: '3px solid #f3f4f6',
+            borderTop: '3px solid #08245b',
+            borderRadius: '50%',
+            animation: 'spin 0.8s linear infinite'
+          }} />
+        </div>
+      )}
+
       {/* Badge and Completed Indicator */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
         <div className={type === 'diagnostic' ? classes.diagnosticBadge : classes.practiceTestBadge}>
           {type === 'diagnostic' ? 'DIAGNOSTIC' : 'PRACTICE TEST'}
         </div>
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.25rem',
-          fontSize: '0.6875rem',
-          fontWeight: '600',
-          color: '#10b981',
-          background: '#f0fdf4',
-          padding: '0.1875rem 0.5rem',
-          borderRadius: '999px',
-          border: '1px solid #86efac'
-        }}>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-          Completed
-        </div>
+        {hasNoData ? (
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.25rem',
+            fontSize: '0.6875rem',
+            fontWeight: '600',
+            color: '#dc2626',
+            background: '#fef2f2',
+            padding: '0.1875rem 0.5rem',
+            borderRadius: '999px',
+            border: '1px solid #fca5a5'
+          }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            No Data
+          </div>
+        ) : (
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.25rem',
+            fontSize: '0.6875rem',
+            fontWeight: '600',
+            color: '#10b981',
+            background: '#f0fdf4',
+            padding: '0.1875rem 0.5rem',
+            borderRadius: '999px',
+            border: '1px solid #86efac'
+          }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Completed
+          </div>
+        )}
       </div>
 
       {/* Header */}
@@ -349,16 +418,36 @@ const TestResultsCard = ({ type, testData, onClick }) => {
         </p>
       </div>
 
-      {/* Composite Score - Compact */}
-      <div className={classes.compositeSection}>
-        <div>
-          <div className={classes.compositeLabel}>Score</div>
-          <div className={classes.compositeSubtext}>
-            {totalCorrect}/{totalQuestions}
+      {hasNoData ? (
+        /* No Data Warning */
+        <div style={{
+          padding: '0.75rem',
+          background: '#fef2f2',
+          border: '1px solid #fca5a5',
+          borderRadius: '6px',
+          marginTop: '0.5rem'
+        }}>
+          <div style={{ fontSize: '0.6875rem', fontWeight: '600', color: '#991b1b', marginBottom: '0.25rem' }}>
+            ⚠️ Results Missing
+          </div>
+          <div style={{ fontSize: '0.625rem', color: '#7f1d1d', lineHeight: '1.4' }}>
+            No answer data was saved for this test. Please retake the test to see your results.
           </div>
         </div>
-        <div className={classes.compositeScore}>{compositeScore}</div>
-      </div>
+      ) : (
+        <>
+          {/* Composite Score */}
+          <div className={classes.compositeSection}>
+            <div>
+              <div className={classes.compositeLabel}>ACT Composite</div>
+              <div className={classes.compositeSubtext}>
+                {overallPercentage}% Correct
+              </div>
+            </div>
+            <div className={classes.compositeScore}>{compositeScore}</div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

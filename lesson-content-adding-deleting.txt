@@ -1,0 +1,168 @@
+<!--
+LESSON TEMPLATE v4.0
+Subject: English
+Topic Number: 1.14
+Topic: Adding or Deleting Information
+Lesson Key: adding-deleting
+-->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Adding or deleting information questions ask whether specific information should be included in a passage or not. For these questions, you must read for context—we recommend reading the entire paragraph where the question appears to determine if the information fits.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. How to Approach These Questions
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Read the paragraph <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">twice</strong>: once with the information included and once with it deleted
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">This makes it clear whether the information should be included</li>
+      <li style="margin: 0.2rem 0;">Consider: Does the information fit the paragraph's focus?</li>
+      <li style="margin: 0.2rem 0;">Depending on the question, you may need to read more than one paragraph</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Context is critical
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">You must understand what the paragraph is discussing</li>
+      <li style="margin: 0.2rem 0;">The information should support or relate to the main idea</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Adding Information Questions
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">These questions give you a sentence or phrase and ask if it should be added
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Answer choices have two parts: (1) Yes or No, (2) Justification why</li>
+      <li style="margin: 0.2rem 0;">First decide yes or no, then pick the correct justification</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Critical Strategy: Only Consider What the Sentence Says
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">When evaluating justifications, <strong>only consider the sentence being added</strong>
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Many students pick justifications that go far beyond what the sentence says</li>
+      <li style="margin: 0.2rem 0;">Don't include details that have nothing to do with the sentence itself</li>
+      <li style="margin: 0.2rem 0;">The justification must accurately describe what that specific sentence provides</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Example Structure
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Question: "Should the writer add this sentence about Dr. Anderson's education?"
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">A. Yes, because it establishes Dr. Paul's mentor's qualifications</li>
+      <li style="margin: 0.2rem 0;">B. Yes, because it indicates Dr. Anderson had a top-notch education</li>
+      <li style="margin: 0.2rem 0;">C. No, because it does not indicate where Dr. Paul studied</li>
+      <li style="margin: 0.2rem 0;">D. No, because it is not relevant to the passage's discussion of Dr. Paul's career</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">If the passage is about Dr. Paul's career, not his mentor's, the answer is D</li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Deleting Information Questions
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">These ask if <strong>existing information should be removed</strong>
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Same format: Yes/No + Justification</li>
+      <li style="margin: 0.2rem 0;">Consider whether the information is relevant and necessary</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+When to Delete Information
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Delete when the information:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Is irrelevant to the paragraph's main idea</li>
+      <li style="margin: 0.2rem 0;">Repeats information already stated</li>
+      <li style="margin: 0.2rem 0;">Distracts from the paragraph's focus</li>
+      <li style="margin: 0.2rem 0;">Doesn't add anything meaningful</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Keep when the information:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Supports the main idea</li>
+      <li style="margin: 0.2rem 0;">Provides necessary detail or clarification</li>
+      <li style="margin: 0.2rem 0;">Connects ideas within the paragraph</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Common Answer Choice Patterns
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Good justifications are <strong>specific and accurate</strong>
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">They describe exactly what the sentence provides</li>
+      <li style="margin: 0.2rem 0;">They relate to the paragraph's focus</li>
+      <li style="margin: 0.2rem 0;">Example: "provides specific detail about the location" (if the sentence actually does that)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Bad justifications are vague or go too far
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">They claim the sentence says more than it actually does</li>
+      <li style="margin: 0.2rem 0;">They focus on irrelevant details</li>
+      <li style="margin: 0.2rem 0;">Example: "proves the scientist was the best in his field" (when sentence only mentions one achievement)</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Common Wrong Answer Traps
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Watch out for justifications that:
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Reference information NOT in the sentence being added/deleted</li>
+      <li style="margin: 0.2rem 0;">Make logical leaps beyond what the sentence states</li>
+      <li style="margin: 0.2rem 0;">Focus on the wrong person, topic, or idea</li>
+      <li style="margin: 0.2rem 0;">Use absolute language ("proves," "always," "never") when the sentence is less definitive</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Read the paragraph twice—once with the information included and once with it deleted.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Answer choices have two parts: Yes or No, Justification.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Delete information when it's irrelevant to the main idea, repeats what's already stated.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Avoid justifications that reference information NOT in the sentence.
+  </li>
+</ul>

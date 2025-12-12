@@ -1,0 +1,311 @@
+<!--
+LESSON TEMPLATE v4.0
+Subject: English
+Topic Number: 1.4
+Topic: Verbs
+Lesson Key: verbs
+-->
+
+<!-- ========================================
+     SECTION 1: OPENING (2 SENTENCES MAX)
+     CRITICAL: Must have:
+     - MAXIMUM 2 sentences
+     - ACT context (# of questions or %)
+     - NO blue underlined terms here
+     ======================================== -->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Verb questions make up about 11% of the ACT English Test—roughly 8 questions per test! These questions test you on two major topics: subject-verb agreement and verb tense.
+</p>
+
+<!-- ========================================
+     SECTION 2: CONTENT (4 H3 SECTIONS)
+     Each H3 = Major Concept
+     Use BULLET POINTS with indents, NOT paragraphs
+     ======================================== -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. Subject-Verb Agreement Basics
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">The <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">subject</strong> is the person, place, or thing doing the action
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Usually at the beginning of the sentence</li>
+      <li style="margin: 0.2rem 0;">Example: "Cats love to sit in empty boxes." (subject = "Cats")</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">The subject must agree with the verb in number
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If the subject is singular, the verb must be singular</li>
+      <li style="margin: 0.2rem 0;">If the subject is plural, the verb must be plural</li>
+      <li style="margin: 0.2rem 0;">Example: "My dog barks at the mailman every day." (singular subject "dog" → singular verb "barks")</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Three Ways the ACT Tricks You
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Trick #1: Unnecessary information phrases between subject and verb
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Unnecessary information phrases NEVER contain the subject</li>
+      <li style="margin: 0.2rem 0;">Cross out unnecessary information to find the subject</li>
+      <li style="margin: 0.2rem 0;">Example: "Tortoises, known to live to over 150 years old, are sold at the local pet shop."</li>
+      <li style="margin: 0.2rem 0;">Cross out "known to live to over 150 years old" → Subject is "Tortoises" (plural) → verb is "are" (plural)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Trick #2: Prepositional phrases between subject and verb (MOST COMMON)
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Prepositional phrases</strong> NEVER contain the subject or verb</li>
+      <li style="margin: 0.2rem 0;">Cross out prepositional phrases (like "of students," "in the park," "on the table") to find the subject</li>
+      <li style="margin: 0.2rem 0;">Example: "The entire group of students is organizing a bake sale to raise money."</li>
+      <li style="margin: 0.2rem 0;">Cross out "of students" → Subject is "group" (singular) → verb is "is" (singular)</li>
+      <li style="margin: 0.2rem 0;">Example: "The pod of dolphins hunts as a team."</li>
+      <li style="margin: 0.2rem 0;">Cross out "of dolphins" → Subject is "pod" (singular) → verb is "hunts" (singular)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Trick #3: Group nouns that sound plural but are singular
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Group nouns</strong> (class, committee, team, herd, jury, etc.) are SINGULAR even though the group consists of more than one person or thing</li>
+      <li style="margin: 0.2rem 0;">Example: "The sheep herd waits to be sheared." (herd = singular)</li>
+      <li style="margin: 0.2rem 0;">Example: "The jury agrees that the defendant deserves to be put in jail." (jury = singular)</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Helpful Tricks
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Read the subject and verb side-by-side
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Once you find the subject and verb, read them next to each other and ignore the information in between</li>
+      <li style="margin: 0.2rem 0;">Example: "A large percentage of the voters, many of whom are under the age of 30, prefers the new housing proposal."</li>
+      <li style="margin: 0.2rem 0;">Cross out unnecessary phrases → "A percentage prefers the new housing proposal."</li>
+      <li style="margin: 0.2rem 0;">Now it's clear: "percentage" (singular) → "prefers" (singular)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Plug in "he/she/it" for singular subjects and "they" for plural subjects
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Sometimes it's difficult to "hear" which verb matches the subject</li>
+      <li style="margin: 0.2rem 0;">For singular words, plug in "he," "she," or "it"</li>
+      <li style="margin: 0.2rem 0;">For plural words, plug in "they"</li>
+      <li style="margin: 0.2rem 0;">Example: "The exact time for the meeting with the softball coach and location for the showcase have not been finalized."</li>
+      <li style="margin: 0.2rem 0;">Cross out prepositional phrases → Subjects are "time" and "location" (plural)</li>
+      <li style="margin: 0.2rem 0;">Replace with "they" → "They (has/have) not been finalized."</li>
+      <li style="margin: 0.2rem 0;">Now it's obvious: "have" is correct</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 1 will be inserted here by ExampleCard component -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. Verb Tense
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">For verb tense questions, trust your ear
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">As a native English speaker, you'll know what sounds right or wrong</li>
+      <li style="margin: 0.2rem 0;">Read for context by looking at the previous sentence(s) and finding other verbs</li>
+      <li style="margin: 0.2rem 0;">Match the tense in the rest of the paragraph</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Do NOT pick a complicated tense when a simple tense works
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Avoid unnecessary complicated forms (has run, had ran, had been running, would have run) when simple tenses work</li>
+      <li style="margin: 0.2rem 0;">Example: "Last year, Margot designed a new line of summer dresses." (simple past tense, not "was designing")</li>
+      <li style="margin: 0.2rem 0;">Example: "Before he votes tomorrow, Dale will research each candidate's positions on the major issues." (simple future tense)</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Perfect Tense (has/have/had + verb)
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Use <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">perfect tense</strong> when there are multiple timelines in a sentence
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Perfect tense = "has," "have," or "had" + verb</li>
+      <li style="margin: 0.2rem 0;">Example: "Many surfers enjoy paddling out, but few have ridden waves over ten feet tall."</li>
+      <li style="margin: 0.2rem 0;">Example: "While the group of entrepreneurs claimed to all be successful, only a few have started their own businesses."</li>
+      <li style="margin: 0.2rem 0;">Example: "The bison had been eating when the lions began their attack." (shows the bison were already eating before the attack started)</li>
+      <li style="margin: 0.2rem 0;">Example: "By the beginning of next year, the doctors will have finished their preliminary research on lung cancer."</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Conditional Tense (would/could)
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Conditional tense</strong> describes what would or could happen
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">The verb conjugation depends on how likely the outcome is (probable, improbable, impossible)</li>
+      <li style="margin: 0.2rem 0;">Probable: "If I make the free throw, we will win the game."</li>
+      <li style="margin: 0.2rem 0;">Improbable: "If I made the free throw, we would win the game."</li>
+      <li style="margin: 0.2rem 0;">Impossible (past): "If I had made the free throw, we would have won the game."</li>
+      <li style="margin: 0.2rem 0;">Trust your ear and go with what sounds right</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Irregular Verbs
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;"><strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">Irregular verbs</strong> don't follow normal patterns
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Trust your ear and go with what sounds correct</li>
+      <li style="margin: 0.2rem 0;">Example: "Before the show began, the lights were dimmed." (not "begun")</li>
+      <li style="margin: 0.2rem 0;">Example: "The deliveryman had rung the doorbell before dropping off the package." (not "rang")</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">The "a" vs. "u" rule for irregular verbs
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Many irregular verbs have an "a" version (swam, began, drank) and a "u" version (swum, begun, drunk)</li>
+      <li style="margin: 0.2rem 0;">With "has," "have," or "had" (perfect tense) → Use the "u" version</li>
+      <li style="margin: 0.2rem 0;">Example: "Before you arrived, I had swum some laps." (perfect tense → "swum")</li>
+      <li style="margin: 0.2rem 0;">With no "has," "have," or "had" (past tense) → Use the "a" version</li>
+      <li style="margin: 0.2rem 0;">Example: "I swam some laps this morning." (past tense → "swam")</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 2 will be inserted here by ExampleCard component -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Common Irregular Verbs
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">The most commonly tested irregular verbs on the ACT
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">begin → began (past tense) → has/have/had begun (perfect tense)</li>
+      <li style="margin: 0.2rem 0;">drink → drank (past tense) → has/have/had drunk (perfect tense)</li>
+      <li style="margin: 0.2rem 0;">sink → sank (past tense) → has/have/had sunk (perfect tense)</li>
+      <li style="margin: 0.2rem 0;">swim → swam (past tense) → has/have/had swum (perfect tense)</li>
+      <li style="margin: 0.2rem 0;">run → ran (past tense) → has/have/had run (perfect tense)</li>
+      <li style="margin: 0.2rem 0;">sing → sang (past tense) → has/have/had sung (perfect tense)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Remember the pattern
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Past tense (no helping verb) = "a" version</li>
+      <li style="margin: 0.2rem 0;">Perfect tense (with has/have/had) = "u" version</li>
+      <li style="margin: 0.2rem 0;">This pattern applies to begin, drink, sink, swim, and sing</li>
+      <li style="margin: 0.2rem 0;">Note: "run" is irregular—both versions are "run" (I ran, I have run)</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 3 will be inserted here by ExampleCard component -->
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. How to Spot Subject-Verb Agreement vs. Verb Tense Questions
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Both question types show different forms of the same verb in answer choices
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">You need to know which type you're dealing with to answer correctly</li>
+      <li style="margin: 0.2rem 0;">The answer choices tell you what's being tested</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Subject-Verb Agreement Questions
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Look for singular and plural versions of verbs in the answer choices
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Look for "is" vs. "are"</li>
+      <li style="margin: 0.2rem 0;">Look for "has" vs. "have"</li>
+      <li style="margin: 0.2rem 0;">Look for "was" vs. "were"</li>
+      <li style="margin: 0.2rem 0;">Look for any verb with singular (like "runs") vs. plural (like "run")</li>
+      <li style="margin: 0.2rem 0;">Anytime you see singular and plural versions, the question is testing subject-verb agreement</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">"The addition of solar panels to the roof of a house in Nevada makes the house on average 20% more energy efficient."</li>
+      <li style="margin: 0.2rem 0;">Answer choices: make (NO CHANGE), makes, have made, were making</li>
+      <li style="margin: 0.2rem 0;">Subject = "addition" (singular) → verb must be "makes" (singular)</li>
+      <li style="margin: 0.2rem 0;">Even though there are different tenses, we only need subject-verb agreement to find the answer</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Verb Tense Questions
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Look for different tenses in the answer choices
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">For example: "requires" (present), "required" (past), "will require" (future)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Check that answer choices do NOT have singular and plural versions
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If there are no options for singular vs. plural, subject-verb agreement is not being tested</li>
+      <li style="margin: 0.2rem 0;">The question is testing verb tense only</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Example
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">"The girl scouts are hosting a bake sale tomorrow to raise money. To get ready, Adya needs to bake two trays of blondies and a box of donut holes."</li>
+      <li style="margin: 0.2rem 0;">Answer choices: would need (NO CHANGE), was needing, needed, needs</li>
+      <li style="margin: 0.2rem 0;">Previous sentence uses "are" (present tense), so this sentence should be present tense too</li>
+      <li style="margin: 0.2rem 0;">Answer: "needs" (present tense)</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Example 4 will be inserted here by ExampleCard component -->
+
+<!-- ========================================
+     SECTION 3: HIDDEN SEPARATOR
+     CRITICAL: Parser needs this!
+     ======================================== -->
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<!-- ========================================
+     SECTION 4: KEY TAKEAWAYS
+     EXACTLY 4 BULLET POINTS - NO MORE, NO LESS
+     ======================================== -->
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>subject-verb agreement, find the subject.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>the "plug-in" trick for subject-verb agreement: replace singular subjects.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>verb tense questions, trust your ear and read for context.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Identify question type by looking at answer choices: if you see singular vs.
+  </li>
+</ul>
+
+<!-- MASTERY QUIZ: Stored in database, NOT in HTML -->
+<!-- Create separately using quiz creation script -->

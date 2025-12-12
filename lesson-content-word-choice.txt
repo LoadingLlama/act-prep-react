@@ -1,0 +1,164 @@
+<!--
+LESSON TEMPLATE v4.0
+Subject: English
+Topic Number: 1.11
+Topic: Word Choice
+Lesson Key: word-choice
+-->
+
+<p style="font-size: 16px; line-height: 1.7; margin: 0.5rem 0 1rem 0;">
+Word choice questions appear on the ACT English Test and ask you to select the word that is clearest and most precise in context. These questions test your ability to read for context and choose the word that best conveys the intended meaning of the sentence.
+</p>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+1. Identifying Word Choice Questions
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Word choice questions always have <strong style="color: #2563eb; font-weight: 600; text-decoration: underline;">4 words with no punctuation</strong> or the same punctuation
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">The question asks: "Which choice is clearest and most precise in context?"</li>
+      <li style="margin: 0.2rem 0;">All choices are grammatically correct</li>
+      <li style="margin: 0.2rem 0;">You must select the word that best fits the meaning and tone</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">These questions test both vocabulary and context
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Some test word definitions (knowing what words mean)</li>
+      <li style="margin: 0.2rem 0;">Others test which word makes the most sense in this specific sentence</li>
+      <li style="margin: 0.2rem 0;">Context is always the key to finding the right answer</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+2. How to Approach Word Choice Questions
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Follow this three-step process
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;"><strong>Step 1:</strong> Read the sentence and surrounding sentences for context</li>
+      <li style="margin: 0.2rem 0;"><strong>Step 2:</strong> Plug each word into the sentence one at a time</li>
+      <li style="margin: 0.2rem 0;"><strong>Step 3:</strong> Pick the word that makes the most sense in context</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Context includes both meaning and tone
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Does the word's definition fit logically?</li>
+      <li style="margin: 0.2rem 0;">Does the word's formality level match the passage?</li>
+      <li style="margin: 0.2rem 0;">Does it create the intended relationship between ideas?</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Example Approach
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Question: "Adding solar panels to your house can <u>emit</u> huge savings on energy bills."
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">A. emit</li>
+      <li style="margin: 0.2rem 0;">B. claim</li>
+      <li style="margin: 0.2rem 0;">C. gift</li>
+      <li style="margin: 0.2rem 0;">D. result in</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Analysis
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">"Emit" means to send out or release—doesn't fit with savings</li>
+      <li style="margin: 0.2rem 0;">"Claim" means to assert or demand—doesn't make sense here</li>
+      <li style="margin: 0.2rem 0;">"Gift" is a noun, not a verb that fits this context</li>
+      <li style="margin: 0.2rem 0;">"Result in" means to cause or produce—this fits perfectly!</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">The answer is D because "result in" is the only phrase that logically completes the meaning</li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+3. Vocabulary Strategy
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Don't assume the hardest word is correct
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Sometimes the ACT includes challenging vocabulary you need to know</li>
+      <li style="margin: 0.2rem 0;">Other times, challenging words are incorrect answer choices</li>
+      <li style="margin: 0.2rem 0;">The difficulty level of the word doesn't indicate if it's right or wrong</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">What to do when you don't know a word
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If you know a word works, pick it—even if it seems easy</li>
+      <li style="margin: 0.2rem 0;">Eliminate words you know are wrong</li>
+      <li style="margin: 0.2rem 0;">If you don't know a word and have to guess, make your best guess and move on</li>
+      <li style="margin: 0.2rem 0;">Don't spend too much time on vocabulary you don't know</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 style="margin-top: 2rem; margin-bottom: 0.3rem; font-weight: 600;">
+Trust What You Know
+</h4>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Your instinct about common words is usually correct
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">If a simple word like "make" or "show" fits perfectly, it's likely correct</li>
+      <li style="margin: 0.2rem 0;">Don't overthink or assume you need a fancier word</li>
+      <li style="margin: 0.2rem 0;">The ACT values precision and clarity, not complexity</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="margin-top: 5rem; margin-bottom: 0.75rem; font-weight: 700;">
+4. Common Word Choice Patterns
+</h3>
+
+<ul style="margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; line-height: 1.7;">
+  <li style="margin: 0.3rem 0;">Similar-sounding words with different meanings
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Affect (verb - to influence) vs. Effect (noun - result)</li>
+      <li style="margin: 0.2rem 0;">Elicit (to draw out) vs. Illicit (illegal)</li>
+      <li style="margin: 0.2rem 0;">Complement (to complete) vs. Compliment (to praise)</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Words with similar meanings but different connotations
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">Dispassionate (unemotional) vs. Disinterested (unbiased) vs. Unbiased (neutral)</li>
+      <li style="margin: 0.2rem 0;">Display (to show) vs. Reveal (to uncover) vs. Exhibit (to demonstrate)</li>
+      <li style="margin: 0.2rem 0;">Context determines which shade of meaning is correct</li>
+    </ul>
+  </li>
+  <li style="margin: 0.3rem 0;">Phrasal verbs and preposition choices
+    <ul style="margin: 0.3rem 0; padding-left: 1.5rem;">
+      <li style="margin: 0.2rem 0;">"Improved over" vs. "improved upon" vs. "improved above"</li>
+      <li style="margin: 0.2rem 0;">The correct preposition changes the meaning</li>
+      <li style="margin: 0.2rem 0;">Trust what sounds natural in standard English</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 style="visibility: hidden; margin: 0; padding: 0; line-height: 0; height: 0;">
+Hidden Separator
+</h3>
+
+<h3 style="color: #2e7d32; font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem 0;">
+Key Takeaways
+</h3>
+
+<ul style="list-style: none; padding: 0; margin: 0;">
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Word choice questions ask "Which choice is clearest and most precise ?" and provide 4 words.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>the three-step approach: surrounding context, Plug each word into the sentence, Pick the word.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Don't assume the hardest vocabulary word is correct—sometimes challenging words are wrong answers.
+  </li>
+  <li style="margin-bottom: 0.8rem; color: #2e7d32; font-size: 16px; line-height: 1.6;">
+    <span style="color: #4caf50; font-weight: bold; margin-right: 0.5rem;">✓</span>Watch for similar-sounding words with different meanings .
+  </li>
+</ul>

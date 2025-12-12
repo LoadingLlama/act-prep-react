@@ -38,10 +38,7 @@ const useStyles = createUseStyles({
   title: {
     fontSize: '1.75rem',
     fontWeight: '700',
-    background: 'linear-gradient(135deg, #08245b 0%, #1e3a8a 100%)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
+    color: '#000000',
     marginBottom: '0.5rem',
     letterSpacing: '-0.02em',
     '@media (max-width: 768px)': {
@@ -638,14 +635,16 @@ const InsightsPage = () => {
   const getCachedInsights = () => {
     if (!user) return null;
     const cacheKey = `insights_${user.id}`;
-    const cached = sessionStorage.getItem(cacheKey);
+    // Try localStorage first for persistent cache, fallback to sessionStorage
+    const cached = localStorage.getItem(cacheKey) || sessionStorage.getItem(cacheKey);
     return cached ? JSON.parse(cached) : null;
   };
 
   const getCachedWeakAreas = () => {
     if (!user) return [];
     const weakAreasCacheKey = `weak_areas_${user.id}`;
-    const cached = sessionStorage.getItem(weakAreasCacheKey);
+    // Try localStorage first for persistent cache, fallback to sessionStorage
+    const cached = localStorage.getItem(weakAreasCacheKey) || sessionStorage.getItem(weakAreasCacheKey);
     return cached ? JSON.parse(cached) : [];
   };
 
@@ -659,6 +658,8 @@ const InsightsPage = () => {
   const [isLoading, setIsLoading] = useState(!getCachedInsights());
   const [isLoadingPracticeTests, setIsLoadingPracticeTests] = useState(true);
   const [practiceTests, setPracticeTests] = useState([]);
+  const [loadingDiagnostic, setLoadingDiagnostic] = useState(false);
+  const [loadingPracticeTest, setLoadingPracticeTest] = useState(null);
 
   // Check URL params to restore diagnostic review state
   useEffect(() => {
@@ -794,26 +795,75 @@ const InsightsPage = () => {
     try {
       logger.info('InsightsPage', 'loadInsights', { userId: user.id });
 
+      // Check if diagnostic was just completed - if so, force fresh load
+      const diagnosticJustCompleted = sessionStorage.getItem('diagnosticJustCompleted');
+      const latestDiagnosticSessionId = sessionStorage.getItem('latestDiagnosticSessionId');
+
+      console.log('\n🔑 INSIGHTS PAGE - CHECKING SESSION STORAGE:');
+      console.log(`  diagnosticJustCompleted: ${diagnosticJustCompleted}`);
+      console.log(`  latestDiagnosticSessionId: ${latestDiagnosticSessionId}`);
+
       // Check session cache first - persists for entire session
       const cacheKey = `insights_${user.id}`;
       const weakAreasCacheKey = `weak_areas_${user.id}`;
       const cached = sessionStorage.getItem(cacheKey);
       const cachedWeakAreas = sessionStorage.getItem(weakAreasCacheKey);
 
-      // Use cache if available (no expiry - lasts entire session)
-      if (cached) {
-        const cachedData = JSON.parse(cached);
-        setInsights(cachedData);
-        setIsLoading(false);
-        console.log('📊 Using cached insights data from session');
-
-        // Load cached weak areas if available
-        if (cachedWeakAreas) {
-          setWeakAreas(JSON.parse(cachedWeakAreas));
+      // Check if we have a new diagnostic session that isn't in the cache
+      let shouldForceRefresh = false;
+      if (latestDiagnosticSessionId && cached) {
+        try {
+          const cachedData = JSON.parse(cached);
+          const cachedSessionId = cachedData.diagnostic?.latestSession?.id;
+          if (cachedSessionId !== latestDiagnosticSessionId) {
+            console.log('🆕 New diagnostic session detected - forcing refresh');
+            console.log('   Cached session:', cachedSessionId);
+            console.log('   Latest session:', latestDiagnosticSessionId);
+            shouldForceRefresh = true;
+          }
+        } catch (e) {
+          console.warn('Failed to parse cached data, will refresh');
+          shouldForceRefresh = true;
         }
+      }
 
-        // Don't refresh in background - data stays static for session
-        return;
+      // Use cache if available (no expiry - lasts entire session) UNLESS diagnostic just completed or new session detected
+      if (cached && !diagnosticJustCompleted && !shouldForceRefresh) {
+        const cachedData = JSON.parse(cached);
+
+        // Check if cached data has valid sectionBreakdown (not empty array from old bug)
+        // If sectionBreakdown is empty but we have a completed diagnostic, cache is stale
+        const hasDiagnostic = cachedData.diagnostic?.hasCompletedDiagnostic;
+        const hasSectionBreakdown = cachedData.diagnostic?.sectionBreakdown?.length > 0;
+
+        if (hasDiagnostic && !hasSectionBreakdown) {
+          console.log('⚠️ Cached data has empty sectionBreakdown - cache is stale, forcing refresh');
+          shouldForceRefresh = true;
+          sessionStorage.removeItem(cacheKey);
+        } else {
+          setInsights(cachedData);
+          setIsLoading(false);
+          console.log('📊 Using cached insights data from session');
+
+          // Load cached weak areas if available
+          if (cachedWeakAreas) {
+            setWeakAreas(JSON.parse(cachedWeakAreas));
+          }
+
+          // Don't refresh in background - data stays static for session
+          return;
+        }
+      }
+
+      // Clear the flag after checking
+      if (diagnosticJustCompleted || shouldForceRefresh) {
+        console.log('🆕 Diagnostic just completed or new session - forcing fresh data load');
+        sessionStorage.removeItem('diagnosticJustCompleted');
+        // Clear old caches to force refresh (both localStorage and sessionStorage)
+        localStorage.removeItem(cacheKey);
+        localStorage.removeItem(weakAreasCacheKey);
+        sessionStorage.removeItem(cacheKey);
+        sessionStorage.removeItem(weakAreasCacheKey);
       }
 
       // Set loading false immediately to show UI - we'll populate data as it loads
@@ -823,7 +873,8 @@ const InsightsPage = () => {
       const insightsData = await InsightsService.getUserInsights(user.id);
       setInsights(insightsData);
 
-      // Cache the basic insights for the session
+      // Cache the basic insights in both localStorage (persistent) and sessionStorage
+      localStorage.setItem(cacheKey, JSON.stringify(insightsData));
       sessionStorage.setItem(cacheKey, JSON.stringify(insightsData));
 
       // Get the diagnostic session to analyze
@@ -966,7 +1017,8 @@ const InsightsPage = () => {
 
       setWeakAreas(weakAreasFromDiagnostic);
 
-      // Cache weak areas for the session
+      // Cache weak areas in both localStorage (persistent) and sessionStorage
+      localStorage.setItem(cacheKey, JSON.stringify(weakAreasFromDiagnostic));
       sessionStorage.setItem(cacheKey, JSON.stringify(weakAreasFromDiagnostic));
 
       setStrengths([]); // We'll compute strengths later if needed
@@ -1130,6 +1182,7 @@ const InsightsPage = () => {
         <DiagnosticTestReview
           sessionId={insights.diagnostic.latestSession.id}
           onClose={() => setViewingDiagnosticReview(false)}
+          onReady={() => setLoadingDiagnostic(false)}
         />
       )}
 
@@ -1139,9 +1192,12 @@ const InsightsPage = () => {
           sessionId={viewingPracticeTestReview.id}
           testNumber={viewingPracticeTestReview.test_number}
           onClose={() => setViewingPracticeTestReview(null)}
+          onReady={() => setLoadingPracticeTest(null)}
         />
       )}
 
+      {/* Hide insights page when viewing review modals */}
+      {!viewingDiagnosticReview && !viewingPracticeTestReview && (
       <div className={classes.container}>
         <div className={classes.header}>
           <h1 className={classes.title}>Test Insights</h1>
@@ -1173,7 +1229,17 @@ const InsightsPage = () => {
 
       {/* Diagnostic Test Results or Loading Card */}
       {(insights.diagnostic.hasCompletedDiagnostic || localStorage.getItem('diagnosticProcessing')) && (
-        <div className={classes.diagnosticSection}>
+        <div className={classes.section}>
+          <h2 className={classes.sectionTitle}>
+            <HiClipboardDocumentCheck className={classes.sectionIcon} />
+            Diagnostic Test
+          </h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '1rem',
+            maxWidth: '100%'
+          }}>
           {/* Loading Card */}
           {!insights.diagnostic.hasCompletedDiagnostic && localStorage.getItem('diagnosticProcessing') ? (
             <div className={classes.diagnosticCard}>
@@ -1228,10 +1294,13 @@ const InsightsPage = () => {
               }}
               onClick={() => {
                 console.log('🔍 Opening diagnostic review with session:', insights.diagnostic.latestSession);
+                setLoadingDiagnostic(true);
                 setViewingDiagnosticReview(true);
               }}
+              isLoading={loadingDiagnostic}
             />
           )}
+          </div>
         </div>
       )}
 
@@ -1244,9 +1313,9 @@ const InsightsPage = () => {
           </h2>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(3, 1fr)',
             gap: '1rem',
-            maxWidth: '700px'
+            maxWidth: '100%'
           }}>
             {isLoadingPracticeTests && practiceTests.length === 0 ? (
               // Show skeleton loaders while loading
@@ -1300,8 +1369,10 @@ const InsightsPage = () => {
                     console.log('   Test Number (DB):', test.test_number);
                     console.log('   Test Name:', test.test_name);
                     console.log('   Display Number:', test.test_number ? test.test_number - 1 : 'unknown');
+                    setLoadingPracticeTest(test.id);
                     setViewingPracticeTestReview(test);
                   }}
+                  isLoading={loadingPracticeTest === test.id}
                 />
               ))
             )}
@@ -1345,13 +1416,6 @@ const InsightsPage = () => {
       </div>
 
       </div>
-
-      {/* Diagnostic Test Review Modal */}
-      {viewingDiagnosticReview && insights?.diagnostic?.latestSession?.id && (
-        <DiagnosticTestReview
-          sessionId={insights.diagnostic.latestSession.id}
-          onClose={() => setViewingDiagnosticReview(false)}
-        />
       )}
     </>
   );

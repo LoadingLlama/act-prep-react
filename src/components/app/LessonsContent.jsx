@@ -357,6 +357,20 @@ const LessonsContent = () => {
       setHoveredMoreTag(lesson);
     };
 
+    const cardStyle = {
+      ...(lesson.isLocked ? { opacity: 0.6, cursor: 'pointer' } : {}),
+      ...(lesson.cover_image_url && isGridView ? {
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.6)), url(${lesson.cover_image_url})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        color: '#ffffff',
+        minHeight: '180px',
+        borderRadius: '12px',
+        padding: '1rem',
+        border: '1px solid rgba(255, 255, 255, 0.1)'
+      } : {})
+    };
+
     return (
       <div
         key={lesson.id}
@@ -370,21 +384,33 @@ const LessonsContent = () => {
           }
         }}
         onMouseLeave={() => setHoveredMoreTag(null)}
-        style={lesson.isLocked ? { opacity: 0.6, cursor: 'pointer' } : {}}
+        style={cardStyle}
       >
         <div className={classes.lessonStatus} style={!isGridView ? { position: 'relative', top: 'auto', right: 'auto' } : {}}>
           {lesson.isLocked ? <HiLockClosed style={{ fontSize: '1.125rem', color: '#3b82f6' }} /> : <StatusIcon status={status} />}
         </div>
         <div className={classes.lessonInfo} style={!isGridView ? { paddingRight: 0 } : {}}>
-          <div className={classes.lessonTitle} style={!isGridView ? { fontSize: '0.8rem', marginBottom: '0.15rem', lineHeight: '1.2' } : {}}>
+          <div className={classes.lessonTitle} style={{
+            ...(!isGridView ? { fontSize: '0.8rem', marginBottom: '0.15rem', lineHeight: '1.2' } : {}),
+            ...(lesson.cover_image_url && isGridView ? { color: '#ffffff', textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)' } : {})
+          }}>
             {lesson.title}
             {lesson.isLocked && <span style={{ marginLeft: '0.5rem', fontSize: '0.75rem', color: '#3b82f6', fontWeight: '600' }}>Pro</span>}
           </div>
           {lesson.chapterNum && isGridView && (
-            <div className={classes.lessonChapter}>{lesson.chapterNum}</div>
+            <div className={classes.lessonChapter} style={lesson.cover_image_url ? {
+              background: 'rgba(255, 255, 255, 0.95)',
+              WebkitBackgroundClip: 'unset',
+              WebkitTextFillColor: 'unset',
+              backgroundClip: 'unset',
+              color: '#08245b',
+              padding: '0.125rem 0.5rem',
+              borderRadius: '4px',
+              display: 'inline-block'
+            } : {}}>{lesson.chapterNum}</div>
           )}
           {lesson.keyTerms && lesson.keyTerms.length > 0 && isGridView && (
-            <div className={classes.keyTermsTags}>
+            <div className={classes.keyTermsTags} style={lesson.cover_image_url ? { color: 'rgba(255, 255, 255, 0.9)', textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)' } : {}}>
               {lesson.keyTerms.slice(0, 2).join(' • ')}
               {lesson.keyTerms.length > 2 && (
                 <span
@@ -399,11 +425,12 @@ const LessonsContent = () => {
           {lesson.duration && isGridView && (
             <div style={{
               fontSize: '0.75rem',
-              color: '#64748b',
+              color: lesson.cover_image_url ? 'rgba(255, 255, 255, 0.85)' : '#64748b',
               marginTop: '0.5rem',
               display: 'flex',
               alignItems: 'center',
-              gap: '0.25rem'
+              gap: '0.25rem',
+              ...(lesson.cover_image_url ? { textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)' } : {})
             }}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -585,12 +612,13 @@ const LessonsContent = () => {
             // Calculate progress percentage
             const progressPercentage = totalLessons > 0 ? Math.round((completedCount / totalLessons) * 100) : 0;
 
-            // Get section icon and colors
+            // Get section icon, colors, and cover images
             let SectionIcon = HiPencilSquare;
             let iconColor = '#ffffff';
             let bgColor = '#3b82f6';
             let borderColor = '#2563eb';
             let progressBarColor = '#1e40af';
+            let coverImage = 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80'; // Classic library for English
 
             if (sectionKey === 'science') {
               SectionIcon = HiBeaker;
@@ -598,18 +626,21 @@ const LessonsContent = () => {
               bgColor = '#10b981';
               borderColor = '#059669';
               progressBarColor = '#047857';
+              coverImage = 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80'; // Science laboratory
             } else if (sectionKey === 'math') {
               SectionIcon = HiCalculator;
               iconColor = '#ffffff';
               bgColor = '#dc2626';
               borderColor = '#b91c1c';
               progressBarColor = '#991b1b';
+              coverImage = 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80'; // Mathematics formulas
             } else if (sectionKey === 'reading') {
               SectionIcon = HiBookOpen;
               iconColor = '#ffffff';
               bgColor = '#d97706';
               borderColor = '#b45309';
               progressBarColor = '#92400e';
+              coverImage = 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80'; // Old books
             }
 
             return (
@@ -625,18 +656,21 @@ const LessonsContent = () => {
                     gridColumn: isExpanded ? '1 / -1' : 'auto'
                   }}
                 >
-                  {/* Top colored section with icon */}
+                  {/* Top colored section with icon and background image */}
                   <div
                     className={classes.categoryCardHeader}
                     style={{
-                      background: bgColor,
+                      background: `linear-gradient(rgba(0, 0, 0, 0.15), ${bgColor}dd), url(${coverImage})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
                       borderBottom: `1px solid ${borderColor}`
                     }}
                   >
                     <div
                       className={classes.categoryIcon}
                       style={{
-                        color: iconColor
+                        color: iconColor,
+                        filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3))'
                       }}
                     >
                       <SectionIcon />

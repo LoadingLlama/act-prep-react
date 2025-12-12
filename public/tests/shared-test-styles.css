@@ -492,11 +492,17 @@ body {
     padding: 1rem;
     margin-bottom: 0.75rem;
     background: white;
-    border: none;
+    border: none !important;
+    outline: none !important;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.navigator-question-item:focus {
+    outline: none !important;
+    border: none !important;
 }
 
 .navigator-question-item:hover {
@@ -629,7 +635,8 @@ body {
 
 .question-nav-item {
     aspect-ratio: 1;
-    border: none;
+    border: none !important;
+    outline: none !important;
     border-radius: 8px;
     background: #f8fafc;
     color: #64748b;
@@ -640,6 +647,11 @@ body {
     justify-content: center;
     font-weight: 600;
     font-size: 0.9375rem;
+}
+
+.question-nav-item:focus {
+    outline: none !important;
+    border: none !important;
 }
 
 .question-nav-item:hover {
@@ -1136,18 +1148,24 @@ i strong {
     background: #f0fdf4 !important;
     color: #16a34a !important;
     border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .question-nav-item.review-incorrect {
     background: #fef2f2 !important;
     color: #dc2626 !important;
     border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .question-nav-item.review-unanswered {
     background: #f8fafc !important;
     color: #94a3b8 !important;
     border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .navigator-question-item.review-correct {
@@ -1273,3 +1291,22 @@ i {
 .passage-content img {
     max-height: 400px;
 }
+/* Force remove all outlines and box-shadows from question navigation */
+.question-nav-item *,
+.navigator-question-item *,
+button.question-nav-item,
+div.question-nav-item,
+button.navigator-question-item,
+div.navigator-question-item {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.question-nav-item:focus-visible,
+.navigator-question-item:focus-visible {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
