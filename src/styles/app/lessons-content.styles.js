@@ -519,9 +519,10 @@ export const useLessonsContentStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden',
+    boxShadow: '0 3px 0 0 rgba(0, 0, 0, 0.1)',
     '&:hover': {
       borderColor: '#d1d5db',
-      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+      boxShadow: '0 5px 0 0 rgba(0, 0, 0, 0.12)',
       transform: 'translateY(-2px)'
     }
   },

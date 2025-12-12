@@ -660,10 +660,10 @@ const LessonsContent = () => {
                   <div
                     className={classes.categoryCardHeader}
                     style={{
-                      background: `linear-gradient(rgba(0, 0, 0, 0.15), ${bgColor}dd), url(${coverImage})`,
+                      background: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${coverImage})`,
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
-                      borderBottom: `1px solid ${borderColor}`
+                      borderBottom: `1px solid #e5e7eb`
                     }}
                   >
                     <div
