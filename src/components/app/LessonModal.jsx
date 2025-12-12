@@ -28,6 +28,7 @@ import PacketLesson_2_5 from '../lesson/PacketLesson_2_5';
 import PacketLesson_2_6 from '../lesson/PacketLesson_2_6';
 import PacketLesson_1_1_Math from '../lesson/PacketLesson_1_1_Math';
 import PacketLesson_1_2_Math from '../lesson/PacketLesson_1_2_Math';
+import PacketLesson_2_1_Math from '../lesson/PacketLesson_2_1_Math';
 
 /**
  * LessonModal - Full-screen modal for lesson viewing
@@ -235,6 +236,8 @@ const LessonModal = ({
                 <PacketLesson_1_1_Math />
               ) : currentLesson === 'substitution' ? (
                 <PacketLesson_1_2_Math />
+              ) : currentLesson === 'angles-lines' ? (
+                <PacketLesson_2_1_Math />
               ) : (
                 <ProgressiveLessonRenderer
                   lesson={{...lesson, id: currentLessonData.id}}
