@@ -67,7 +67,20 @@ const PacketLesson_4_2_Math = () => {
         </p>
       </div>
 
-      <ConceptBox title="STANDARD FORM">
+      <div style={{
+        margin: '1.5rem 0',
+        padding: '1.25rem',
+        borderRadius: '6px',
+        border: '3px solid #000000'
+      }}>
+        <div style={{
+          fontWeight: '600',
+          fontSize: '0.9375rem',
+          color: '#374151',
+          marginBottom: '0.75rem'
+        }}>
+          STANDARD FORM
+        </div>
         <div style={{ fontSize: '15px', lineHeight: '1.8', color: '#374151' }}>
           <p style={{ marginBottom: '0.75rem' }}>
             The standard form of a quadratic equation is:
@@ -96,7 +109,7 @@ const PacketLesson_4_2_Math = () => {
             • <MathText>c</MathText> is the y-intercept (where the parabola crosses the y-axis)
           </p>
         </div>
-      </ConceptBox>
+      </div>
 
       {/* Parabola Direction Diagram */}
       <div style={{
@@ -192,7 +205,20 @@ const PacketLesson_4_2_Math = () => {
         </p>
       </div>
 
-      <ConceptBox title="VERTEX FORM">
+      <div style={{
+        margin: '1.5rem 0',
+        padding: '1.25rem',
+        borderRadius: '6px',
+        border: '3px solid #000000'
+      }}>
+        <div style={{
+          fontWeight: '600',
+          fontSize: '0.9375rem',
+          color: '#374151',
+          marginBottom: '0.75rem'
+        }}>
+          VERTEX FORM
+        </div>
         <div style={{ fontSize: '15px', lineHeight: '1.8', color: '#374151' }}>
           <p style={{ marginBottom: '0.75rem' }}>
             The vertex form of a quadratic equation is:
@@ -221,7 +247,7 @@ const PacketLesson_4_2_Math = () => {
             • <MathText>a</MathText> still determines direction (up if positive, down if negative)
           </p>
         </div>
-      </ConceptBox>
+      </div>
 
       {/* Vertex Form Diagram */}
       <div style={{

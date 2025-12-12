@@ -67,22 +67,16 @@ const PacketLesson_2_1_Math = () => {
         </p>
       </div>
 
-      <ConceptBox title="ANGLE TYPES">
-        <div style={{ fontSize: '15px', lineHeight: '1.8', color: '#374151' }}>
-          <p style={{ marginBottom: '0.75rem' }}>
-            <strong>Acute angle:</strong> Measures less than 90°
-          </p>
-          <p style={{ marginBottom: '0.75rem' }}>
-            <strong>Right angle:</strong> Measures exactly 90°
-          </p>
-          <p style={{ marginBottom: '0.75rem' }}>
-            <strong>Obtuse angle:</strong> Measures between 90° and 180°
-          </p>
-          <p style={{ marginBottom: '0' }}>
-            <strong>Straight angle:</strong> Measures exactly 180° (forms a line)
-          </p>
-        </div>
-      </ConceptBox>
+      <ConceptBox
+        title="ANGLE TYPES"
+        columns={2}
+        items={[
+          'Acute angle: Measures less than 90°',
+          'Right angle: Measures exactly 90°',
+          'Obtuse angle: Measures between 90° and 180°',
+          'Straight angle: Measures exactly 180° (forms a line)'
+        ]}
+      />
 
       {/* Section Divider */}
       <div style={{
