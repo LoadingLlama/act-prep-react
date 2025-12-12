@@ -631,7 +631,7 @@ const PacketLesson_1_1_Math = () => {
           alignItems: 'flex-start'
         }}>
           <span style={{ color: '#10b981', fontSize: '20px' }}>✓</span>
-          <span style={{ fontSize: '15px', lineHeight: '1.7', color: '#374151' }}>
+          <span style={{ fontSize: '15px', lineHeight: '1.7', color: '#10b981' }}>
             <strong>Backsolving means testing answer choices</strong> instead of solving algebraically.
             It works on 30-40% of ACT Math problems.
           </span>
@@ -644,7 +644,7 @@ const PacketLesson_1_1_Math = () => {
           alignItems: 'flex-start'
         }}>
           <span style={{ color: '#10b981', fontSize: '20px' }}>✓</span>
-          <span style={{ fontSize: '15px', lineHeight: '1.7', color: '#374151' }}>
+          <span style={{ fontSize: '15px', lineHeight: '1.7', color: '#10b981' }}>
             <strong>Always start with choice C</strong> (the middle value). This lets you eliminate 2-3 choices
             immediately if C is too large or too small.
           </span>
@@ -657,7 +657,7 @@ const PacketLesson_1_1_Math = () => {
           alignItems: 'flex-start'
         }}>
           <span style={{ color: '#10b981', fontSize: '20px' }}>✓</span>
-          <span style={{ fontSize: '15px', lineHeight: '1.7', color: '#374151' }}>
+          <span style={{ fontSize: '15px', lineHeight: '1.7', color: '#10b981' }}>
             <strong>Use backsolving for multi-step problems</strong> where setting up equations is complicated
             or unclear. Skip it for simple one-step equations.
           </span>
@@ -670,7 +670,7 @@ const PacketLesson_1_1_Math = () => {
           alignItems: 'flex-start'
         }}>
           <span style={{ color: '#10b981', fontSize: '20px' }}>✓</span>
-          <span style={{ fontSize: '15px', lineHeight: '1.7', color: '#374151' }}>
+          <span style={{ fontSize: '15px', lineHeight: '1.7', color: '#10b981' }}>
             <strong>Always verify your answer</strong> by checking that it satisfies ALL conditions in the problem.
             Don't stop after the first thing that "looks right."
           </span>
@@ -682,7 +682,7 @@ const PacketLesson_1_1_Math = () => {
           alignItems: 'flex-start'
         }}>
           <span style={{ color: '#10b981', fontSize: '20px' }}>✓</span>
-          <span style={{ fontSize: '15px', lineHeight: '1.7', color: '#374151' }}>
+          <span style={{ fontSize: '15px', lineHeight: '1.7', color: '#10b981' }}>
             <strong>Practice this strategy until it's automatic.</strong> The more you use it,
             the faster you'll recognize which problems are perfect for backsolving.
           </span>
