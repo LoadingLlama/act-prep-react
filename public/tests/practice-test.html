@@ -914,9 +914,9 @@
                                 ` : ''}
                             </div>
 
-                            <!-- Explanation Content (hidden, toggled by nav button) -->
+                            <!-- Explanation Content (always shown by default) -->
                             ${q.explanation ? `
-                                <div id="explanation-content-${questionNum}" style="display: none; margin-top: 0.75rem; padding: 1rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
+                                <div id="explanation-content-${questionNum}" style="display: block; margin-top: 0.75rem; padding: 1rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
                                     <div class="review-explanation">
                                         ${q.explanation}
                                     </div>
@@ -952,9 +952,18 @@
             isLoadingSection = false;
 
             // Typeset math after content is rendered
-            if (window.MathJax) {
+            if (window.MathJax && window.MathJax.typesetPromise) {
                 MathJax.typesetPromise([passageSection, questionSection]).catch(err => {
                     console.error('MathJax typesetting failed:', err);
+                });
+            } else if (window.MathJax && window.MathJax.startup && window.MathJax.startup.promise) {
+                // Wait for MathJax to be ready
+                MathJax.startup.promise.then(() => {
+                    if (MathJax.typesetPromise) {
+                        MathJax.typesetPromise([passageSection, questionSection]).catch(err => {
+                            console.error('MathJax typesetting failed:', err);
+                        });
+                    }
                 });
             }
 
@@ -985,6 +994,8 @@
 
         function selectAnswer(questionNum, answer) {
             answers[`q${questionNum}`] = answer;
+            console.log(`✅ Answer saved: q${questionNum} = ${answer}`);
+            console.log(`   Total answers so far: ${Object.keys(answers).length}`);
 
             // Add visual feedback - highlight selected answer
             const questionElement = document.getElementById(`question${questionNum}`);
@@ -1150,12 +1161,12 @@
                 console.log('🔍 Looking for question', currentQuestion, 'found:', currentQuestionObj ? 'yes' : 'no', 'has explanation:', currentQuestionObj?.explanation ? 'yes' : 'no');
                 if (currentQuestionObj && currentQuestionObj.explanation) {
                     explanationBtn.style.display = 'block';
-                    // Reset button text when changing questions
+                    // Reset button text when changing questions - since explanations are shown by default, button should say "Hide Explanation"
                     const explanationContent = document.getElementById(`explanation-content-${currentQuestion}`);
                     if (explanationContent) {
                         explanationBtn.textContent = explanationContent.style.display === 'none' ? 'Explanation' : 'Hide Explanation';
                     } else {
-                        explanationBtn.textContent = 'Explanation';
+                        explanationBtn.textContent = 'Hide Explanation';  // Default to "Hide" since they're shown by default
                     }
                 } else {
                     explanationBtn.style.display = 'none';
@@ -1189,7 +1200,7 @@
             updateFlagButton();
 
             // Typeset math in the currently visible question and passage
-            if (window.MathJax) {
+            if (window.MathJax && window.MathJax.typesetPromise) {
                 const questionElement = document.getElementById(`question${currentQuestion}`);
                 const activePassage = document.querySelector('.passage-content.active');
                 const elementsToTypeset = [questionElement, activePassage].filter(el => el);
@@ -1198,6 +1209,20 @@
                         console.error('MathJax typesetting failed:', err);
                     });
                 }
+            } else if (window.MathJax && window.MathJax.startup && window.MathJax.startup.promise) {
+                // Wait for MathJax to be ready
+                MathJax.startup.promise.then(() => {
+                    if (MathJax.typesetPromise) {
+                        const questionElement = document.getElementById(`question${currentQuestion}`);
+                        const activePassage = document.querySelector('.passage-content.active');
+                        const elementsToTypeset = [questionElement, activePassage].filter(el => el);
+                        if (elementsToTypeset.length > 0) {
+                            MathJax.typesetPromise(elementsToTypeset).catch(err => {
+                                console.error('MathJax typesetting failed:', err);
+                            });
+                        }
+                    }
+                });
             }
         }
 
@@ -1462,7 +1487,7 @@
             // Calculate score for current section
             let correct = 0;
             questions.forEach((q, idx) => {
-                const questionNum = idx + 1;
+                const questionNum = q.question_number || (idx + 1);  // Use same logic as selectAnswer
                 const userAnswer = answers[`q${questionNum}`];
                 if (userAnswer === q.correctAnswer) {
                     correct++;
@@ -1472,6 +1497,8 @@
             const percentage = Math.round((correct / totalQuestions) * 100);
 
             console.log('📈 Score calculated:', { correct, total: totalQuestions, percentage });
+            console.log('📝 Answers object at section end:', answers);
+            console.log(`   Answered: ${Object.keys(answers).length} out of ${totalQuestions}`);
 
             // Store current section results
             const currentResults = {
@@ -1481,15 +1508,19 @@
                 percentage,
                 answers,
                 flagged: Array.from(flaggedQuestions),
-                questions: questions.map((q, idx) => ({
-                    questionId: q.id, // Database ID for answer saves
-                    questionNum: q.question_number, // Actual question number from database
-                    section: currentSection, // Section for each question
-                    selectedAnswer: answers[`q${idx + 1}`] ?? null, // User's answer (null if unanswered so it survives JSON.stringify)
-                    correctAnswer: q.correctAnswer,
-                    isCorrect: answers[`q${idx + 1}`] === q.correctAnswer,
-                    timeSpent: 0 // TODO: Add time tracking
-                }))
+                questions: questions.map((q, idx) => {
+                    const questionNum = q.question_number || (idx + 1);
+                    const userAnswer = answers[`q${questionNum}`] ?? null;
+                    return {
+                        questionId: q.id, // Database ID for answer saves
+                        questionNum: questionNum, // Actual question number from database
+                        section: currentSection, // Section for each question
+                        userAnswer: userAnswer, // FIXED: Changed from selectedAnswer to match processor expectation
+                        correctAnswer: q.correctAnswer,
+                        isCorrect: userAnswer === q.correctAnswer,
+                        timeSpent: 0 // TODO: Add time tracking
+                    };
+                })
             };
 
             // Debug: Log first question to verify structure
@@ -1500,10 +1531,23 @@
                 });
             }
 
+            // Verify data integrity before saving
+            console.log('✅ DATA VALIDATION:', {
+                section: currentResults.section,
+                totalQuestions: currentResults.questions.length,
+                questionsWithAnswers: currentResults.questions.filter(q => q.userAnswer !== null).length,
+                questionsSkipped: currentResults.questions.filter(q => q.userAnswer === null).length,
+                correctAnswers: currentResults.questions.filter(q => q.isCorrect).length,
+                allHaveQuestionId: currentResults.questions.every(q => q.questionId),
+                allHaveUserAnswer: currentResults.questions.every(q => 'userAnswer' in q),
+                allHaveIsCorrect: currentResults.questions.every(q => 'isCorrect' in q)
+            });
+
             // Get all previous results
             const allResults = JSON.parse(sessionStorage.getItem('practiceTestAllResults') || '[]');
             allResults.push(currentResults);
             sessionStorage.setItem('practiceTestAllResults', JSON.stringify(allResults));
+            console.log('💾 Saved results to sessionStorage, total sections:', allResults.length);
 
             console.log('📚 All completed sections:', allResults.map(r => r.section));
 
@@ -1549,11 +1593,22 @@
 
                 console.log('📊 Final results (last attempt per section):', uniqueResults.map(r => r.section));
 
-                sessionStorage.setItem('practiceTestResults', JSON.stringify({
+                const finalResults = {
                     allSections: uniqueResults,
                     totalCorrect: uniqueResults.reduce((sum, r) => sum + r.correct, 0),
                     totalQuestions: uniqueResults.reduce((sum, r) => sum + r.total, 0)
-                }));
+                };
+
+                sessionStorage.setItem('practiceTestResults', JSON.stringify(finalResults));
+
+                console.log('🎉 TEST COMPLETE - FINAL RESULTS:', {
+                    sectionsCount: finalResults.allSections.length,
+                    sections: finalResults.allSections.map(s => s.section),
+                    totalQuestions: finalResults.totalQuestions,
+                    totalCorrect: finalResults.totalCorrect,
+                    percentage: ((finalResults.totalCorrect / finalResults.totalQuestions) * 100).toFixed(1) + '%',
+                    totalAnswersInAllSections: finalResults.allSections.reduce((sum, s) => sum + s.questions.length, 0)
+                });
 
                 const completeMessage = { type: 'PRACTICE_TEST_COMPLETE' };
                 console.log('📤 Posting COMPLETE message to parent:', completeMessage);
@@ -1645,7 +1700,7 @@
 
             questions.forEach((q, idx) => {
                 try {
-                    const questionNum = idx + 1;
+                    const questionNum = q.question_number || (idx + 1);  // CRITICAL: Must match selectAnswer
 
                     // Check if in review mode
                     const userAnswerKey = `q${questionNum}`;
