@@ -25,7 +25,7 @@ export const useLandingPageStyles = createUseStyles({
 
   // Navigation - Glassy and floating
   navbar: {
-    display: 'none',
+    display: 'none !important',
     position: 'fixed',
     top: 0,
     left: 0,
@@ -84,7 +84,7 @@ export const useLandingPageStyles = createUseStyles({
   },
 
   navRight: {
-    display: 'flex',
+    display: 'none !important',
     gap: '12px',
     alignItems: 'center',
     marginLeft: 'auto',
@@ -507,8 +507,8 @@ export const useLandingPageStyles = createUseStyles({
     width: '100vw',
     marginLeft: 'calc(-50vw + 50%)',
     marginRight: 'calc(-50vw + 50%)',
-    marginTop: '60px',
-    padding: '155px 32px 140px 32px',
+    marginTop: '0',
+    padding: '100px 20px 80px 20px',
     position: 'relative',
     minHeight: 'auto',
     '&::after': {
@@ -526,17 +526,17 @@ export const useLandingPageStyles = createUseStyles({
       zIndex: -1,
     },
     '@media (max-width: 768px)': {
-      marginTop: '36px',
+      marginTop: '0',
       padding: '60px 20px 60px 20px',
-      minHeight: 'calc(100vh - 36px)',
+      minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
     },
     '@media (max-width: 480px)': {
-      marginTop: '36px',
+      marginTop: '0',
       padding: '50px 16px 50px 16px',
-      minHeight: 'calc(100vh - 36px)',
+      minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -1675,9 +1675,9 @@ export const useLandingPageStyles = createUseStyles({
 
   // Mobile Menu
   hamburgerButton: {
-    display: 'none',
+    display: 'none !important',
     '@media (max-width: 768px)': {
-      display: 'flex',
+      display: 'none !important',
       alignItems: 'center',
       justifyContent: 'center',
       background: 'none',
