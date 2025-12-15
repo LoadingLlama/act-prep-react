@@ -9,7 +9,7 @@ export const useLandingPageStyles = createUseStyles({
   container: {
     minHeight: '100vh',
     width: '100%',
-    maxWidth: '100%',
+    maxWidth: '100vw',
     overflowX: 'hidden',
     background: '#000000',
     display: 'flex',
@@ -19,7 +19,9 @@ export const useLandingPageStyles = createUseStyles({
     boxSizing: 'border-box',
     '@media (max-width: 768px)': {
       height: 'auto',
-      overflow: 'auto',
+      overflowY: 'auto',
+      overflowX: 'hidden',
+      width: '100vw',
     },
   },
 
@@ -241,10 +243,11 @@ export const useLandingPageStyles = createUseStyles({
     width: '100%',
     maxWidth: '100%',
     margin: '0 auto',
-    padding: '40px 16px',
+    padding: '40px 20px',
     background: 'transparent',
     position: 'relative',
     zIndex: 100,
+    boxSizing: 'border-box',
     '@media (min-width: 769px)': {
       maxWidth: '1100px',
       padding: '40px 20px',
@@ -284,9 +287,10 @@ export const useLandingPageStyles = createUseStyles({
     margin: '20px auto 12px',
     lineHeight: '1.3',
     letterSpacing: '-0.02em',
-    padding: '0 16px',
+    padding: '0 8px',
     maxWidth: '100%',
     width: '100%',
+    boxSizing: 'border-box',
     '@media (min-width: 769px)': {
       fontSize: '64px',
       margin: '60px 0 20px 0',
@@ -310,9 +314,10 @@ export const useLandingPageStyles = createUseStyles({
     textAlign: 'center',
     margin: '0 auto',
     lineHeight: '1.5',
-    padding: '0 16px',
+    padding: '0 8px',
     maxWidth: '100%',
     width: '100%',
+    boxSizing: 'border-box',
     '@media (min-width: 769px)': {
       fontSize: '20px',
       padding: '0',
@@ -328,6 +333,8 @@ export const useLandingPageStyles = createUseStyles({
     minHeight: '1000px',
     marginBottom: '20px',
     width: '100%',
+    maxWidth: '100%',
+    overflow: 'hidden',
     '@media (min-width: 769px)': {
       minHeight: 'auto',
       marginBottom: '0',
@@ -394,9 +401,10 @@ export const useLandingPageStyles = createUseStyles({
     width: '100%',
     maxWidth: '100%',
     margin: '0 auto',
-    padding: '20px 16px 40px',
+    padding: '20px 20px 40px',
     textAlign: 'center',
     background: '#000000',
+    boxSizing: 'border-box',
     '@media (min-width: 769px)': {
       maxWidth: '1200px',
       padding: '40px 32px 80px',
@@ -433,6 +441,7 @@ export const useLandingPageStyles = createUseStyles({
   imageTestimonialsWrapper: {
     overflow: 'hidden',
     width: '100%',
+    maxWidth: '100%',
     position: 'relative',
   },
 
@@ -522,14 +531,20 @@ export const useLandingPageStyles = createUseStyles({
 
   heroSection: {
     textAlign: 'center',
-    maxWidth: '100vw',
-    width: '100vw',
-    marginLeft: 'calc(-50vw + 50%)',
-    marginRight: 'calc(-50vw + 50%)',
+    maxWidth: '100%',
+    width: '100%',
+    marginLeft: '0',
+    marginRight: '0',
     marginTop: '0',
-    padding: '100px 20px 80px 20px',
+    padding: '100px 24px 80px 24px',
     position: 'relative',
     minHeight: 'auto',
+    '@media (min-width: 769px)': {
+      maxWidth: '100vw',
+      width: '100vw',
+      marginLeft: 'calc(-50vw + 50%)',
+      marginRight: 'calc(-50vw + 50%)',
+    },
     '&::after': {
       content: '""',
       position: 'absolute',
@@ -546,7 +561,7 @@ export const useLandingPageStyles = createUseStyles({
     },
     '@media (max-width: 768px)': {
       marginTop: '0',
-      padding: '60px 20px 60px 20px',
+      padding: '60px 24px 60px 24px',
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
@@ -554,7 +569,7 @@ export const useLandingPageStyles = createUseStyles({
     },
     '@media (max-width: 480px)': {
       marginTop: '0',
-      padding: '50px 16px 50px 16px',
+      padding: '50px 20px 50px 20px',
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
@@ -712,13 +727,13 @@ export const useLandingPageStyles = createUseStyles({
       marginBottom: '16px',
       lineHeight: '1.1',
       maxWidth: '100%',
-      padding: '0 8px',
+      padding: '0 12px',
     },
     '@media (max-width: 480px)': {
       fontSize: '28px',
       marginBottom: '14px',
       lineHeight: '1.15',
-      padding: '0 6px',
+      padding: '0 8px',
     },
   },
 
@@ -776,14 +791,14 @@ export const useLandingPageStyles = createUseStyles({
       color: '#ffffff',
       lineHeight: '1.4',
       maxWidth: '100%',
-      padding: '0 12px',
+      padding: '0 16px',
     },
     '@media (max-width: 480px)': {
       fontSize: '14px',
       marginBottom: '18px',
       marginTop: '0',
       lineHeight: '1.4',
-      padding: '0 8px',
+      padding: '0 12px',
     },
   },
 
