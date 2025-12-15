@@ -315,7 +315,7 @@ const LandingPage = () => {
             data-url="https://calendly.com/cadenatnomi/30min?primary_color=003888"
             style={{
               minWidth: '320px',
-              height: isMobile ? '600px' : '750px',
+              height: isMobile ? '500px' : '750px',
               width: '100%'
             }}
           />
