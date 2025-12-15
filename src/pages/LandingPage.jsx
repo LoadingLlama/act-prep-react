@@ -22,6 +22,7 @@ const LandingPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showSignupModal, setShowSignupModal] = useState(false);
   const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
+  const [calendlyLoaded, setCalendlyLoaded] = useState(false);
 
   const testimonials = [
     [
@@ -119,6 +120,42 @@ const LandingPage = () => {
       window.location.replace(`/auth/callback${hash}`);
     }
   }, [navigate]);
+
+  // Load Calendly script
+  useEffect(() => {
+    // Check if script already exists
+    const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+    if (existingScript) {
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.type = 'text/javascript';
+    script.async = false; // Load synchronously to ensure it's ready
+
+    script.onload = () => {
+      console.log('Calendly script loaded successfully');
+      setCalendlyLoaded(true);
+      // Initialize Calendly if the global function exists
+      if (window.Calendly) {
+        console.log('Calendly object is available');
+      }
+    };
+
+    script.onerror = () => {
+      console.error('Failed to load Calendly script');
+    };
+
+    document.head.appendChild(script);
+
+    return () => {
+      // Only remove if it exists
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -262,22 +299,93 @@ const LandingPage = () => {
         </button>
       </div>
 
-      {/* Mobile Typeform - Full Screen */}
-      <div className={classes.mobileTypeformContainer}>
-        <div className={classes.mobileTypeformHeader}>
-          <h1 className={classes.mobileTypeformTitle}>
-            Want Your FREE 1-1 ACT Tutoring Session?
+      {/* Calendly Scheduling Widget */}
+      <div className={classes.calendlyContainer}>
+        <div className={classes.calendlyHeader}>
+          <h1 className={classes.calendlyTitle}>
+            Want Your <span className={classes.freeHighlight}>FREE</span> 1-1 ACT Tutoring Session?
           </h1>
-          <p className={classes.mobileTypeformSubtitle}>
-            Just a few quick questions to unlock your FREE 1-1 ACT Tutoring Call
+          <p className={classes.calendlySubtitle}>
+            Pick a Time That Works Best With Our Tutors Below!
           </p>
         </div>
-        <iframe
-          src="https://form.typeform.com/to/okRIME6U"
-          frameBorder="0"
-          title="Free Training Signup"
-          className={classes.mobileTypeformIframe}
-        />
+        <div className={classes.calendlyWidget}>
+          <div
+            className="calendly-inline-widget"
+            data-url="https://calendly.com/cadenatnomi/30min?primary_color=003888"
+            style={{
+              minWidth: '320px',
+              height: isMobile ? '600px' : '750px',
+              width: '100%'
+            }}
+          />
+        </div>
+        <div className={classes.calendlyFooter}>
+          <h3 className={classes.calendlyFooterTitle}>
+            Next Step: Book Your FREE 1-1 Tutoring Above Before Spots Run Out!
+          </h3>
+          <p className={classes.calendlyFooterSubtitle}>
+            (98/100 Spots Taken!)
+          </p>
+        </div>
+      </div>
+
+      {/* Real Student Results - Image Testimonials */}
+      <div className={classes.imageTestimonialsSection}>
+        <h2 className={classes.imageTestimonialsHeadline}>
+          Real Students. Real Results.
+        </h2>
+        <p className={classes.imageTestimonialsSubtext}>
+          See the actual ACT scores our students have achieved
+        </p>
+        <div className={classes.imageTestimonialsWrapper}>
+          <div className={classes.imageTestimonialsGrid}>
+            {/* First set of images */}
+            <div className={classes.testimonialImageCard}>
+              <img src="/testimonials/score-36-1.jpg" alt="Student scored 36 on ACT" className={classes.testimonialImage} />
+            </div>
+            <div className={classes.testimonialImageCard}>
+              <img src="/testimonials/score-36-3.png" alt="Perfect 36 on all sections" className={classes.testimonialImage} />
+            </div>
+            <div className={classes.testimonialImageCard}>
+              <img src="/testimonials/score-36-2.jpg" alt="Another perfect 36 score" className={classes.testimonialImage} />
+            </div>
+            <div className={classes.testimonialImageCard}>
+              <img src="/testimonials/score-35-2.png" alt="Student scored 35 on ACT" className={classes.testimonialImage} />
+            </div>
+            <div className={classes.testimonialImageCard}>
+              <img src="/testimonials/score-35-1.jpg" alt="35 composite score" className={classes.testimonialImage} />
+            </div>
+            <div className={classes.testimonialImageCard}>
+              <img src="/testimonials/score-34.jpg" alt="Student scored 34 on ACT" className={classes.testimonialImage} />
+            </div>
+            <div className={classes.testimonialImageCard}>
+              <img src="/testimonials/score-36-4.jpg" alt="Perfect score achievement" className={classes.testimonialImage} />
+            </div>
+            {/* Duplicate set for seamless loop */}
+            <div className={classes.testimonialImageCard}>
+              <img src="/testimonials/score-36-1.jpg" alt="Student scored 36 on ACT" className={classes.testimonialImage} />
+            </div>
+            <div className={classes.testimonialImageCard}>
+              <img src="/testimonials/score-36-3.png" alt="Perfect 36 on all sections" className={classes.testimonialImage} />
+            </div>
+            <div className={classes.testimonialImageCard}>
+              <img src="/testimonials/score-36-2.jpg" alt="Another perfect 36 score" className={classes.testimonialImage} />
+            </div>
+            <div className={classes.testimonialImageCard}>
+              <img src="/testimonials/score-35-2.png" alt="Student scored 35 on ACT" className={classes.testimonialImage} />
+            </div>
+            <div className={classes.testimonialImageCard}>
+              <img src="/testimonials/score-35-1.jpg" alt="35 composite score" className={classes.testimonialImage} />
+            </div>
+            <div className={classes.testimonialImageCard}>
+              <img src="/testimonials/score-34.jpg" alt="Student scored 34 on ACT" className={classes.testimonialImage} />
+            </div>
+            <div className={classes.testimonialImageCard}>
+              <img src="/testimonials/score-36-4.jpg" alt="Perfect score achievement" className={classes.testimonialImage} />
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Main Content */}
@@ -297,11 +405,11 @@ const LandingPage = () => {
           </div>
 
           <h1 className={classes.headline}>
-            Claim Your <span className={classes.highlightText}>FREE</span> 34+ ACT Training to Get Into The Ivy League!
+            Want Your <span className={classes.highlightText}>FREE</span> 1-1 ACT Tutoring Session?
           </h1>
 
           <p className={classes.ctaSubtext}>
-            This FREE Training Teaches You Everything You Need To Know To Get a 34+!
+            Pick a Time That Works Best With Our Tutors Below!
           </p>
 
           <div className={classes.ctaButtonContainer}>
@@ -454,45 +562,6 @@ const LandingPage = () => {
           </div>
         </div>
 
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <div className={classes.footerContent}>
-          <div className={classes.footerTitle}>NomiAcademy</div>
-          <div className={classes.footerText}>Premiere ACT prep for all students.</div>
-          <div className={classes.footerText}>&copy; 2025 The Student Society Co LLC</div>
-          <div className={classes.footerEmail}>
-            <a href="mailto:cadenatnomi@gmail.com">cadenatnomi@gmail.com</a>
-          </div>
-          <div className={classes.footerDisclaimer}>
-            ACT® is a trademark registered by ACT, Inc., which is not affiliated with, and does not endorse, this product.
-          </div>
-          <div className={classes.footerSocial}>
-            <a href="https://discord.gg/uJ3C7ee5" target="_blank" rel="noopener noreferrer" className={classes.socialIcon} aria-label="Discord">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <a href="/app/home" className={classes.footerLearnLink}>Learn</a>
-      </footer>
-
-      {/* Sticky Bottom CTA Bar - Only shows after scrolling */}
-      {showStickyBar && (
-        <div className={classes.stickyBottomBar}>
-          <div className={classes.stickyBarText}>
-            {isMobile ? 'Get your FREE training!' : 'Claim your FREE training for immediate results!'}
-          </div>
-          <button className={classes.stickyBarButton} onClick={handleGetStarted}>
-            <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-              Get FREE Training
-              <svg width="20" height="14" viewBox="0 0 28 16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M2 8h24M20 2l6 6-6 6"/>
-              </svg>
-            </span>
-          </button>
-        </div>
-      )}
 
       {/* Diagnostic Signup Modal with Typeform */}
       <DiagnosticSignupModal

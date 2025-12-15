@@ -233,61 +233,249 @@ export const useLandingPageStyles = createUseStyles({
     },
   },
 
-  // Mobile Typeform Container - Full Screen
-  mobileTypeformContainer: {
+  // Calendly Container - Centered with Max Width
+  calendlyContainer: {
     display: 'flex',
     flexDirection: 'column',
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    width: '100vw',
-    height: '100vh',
-    zIndex: 10,
-    background: '#000000',
-    overflow: 'hidden',
-  },
-
-  mobileTypeformHeader: {
-    flexShrink: 0,
-    background: '#ffffff',
-    padding: '32px 24px 28px 24px',
-    borderBottom: '1px solid #e5e7eb',
-    '@media (max-width: 480px)': {
-      padding: '28px 20px 24px 20px',
+    width: '100%',
+    maxWidth: '100%',
+    margin: '0 auto',
+    padding: '40px 16px',
+    background: 'transparent',
+    position: 'relative',
+    zIndex: 100,
+    '@media (min-width: 769px)': {
+      maxWidth: '1100px',
+      padding: '40px 20px',
     },
   },
 
-  mobileTypeformTitle: {
-    fontSize: '26px',
-    fontWeight: '700',
-    color: '#000000',
+  calendlyHeader: {
+    marginBottom: '16px',
     textAlign: 'center',
-    margin: '0 0 16px 0',
+    maxWidth: '800px',
+    margin: '0 auto 16px auto',
+  },
+
+  calendlyLogoContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginBottom: '24px',
+  },
+
+  calendlyLogo: {
+    width: '120px',
+    height: '120px',
+    borderRadius: '50%',
+    objectFit: 'cover',
+    boxShadow: '0 8px 24px rgba(255, 255, 255, 0.1)',
+  },
+
+  calendlyTitle: {
+    fontSize: '28px',
+    fontWeight: '800',
+    color: '#ffffff',
+    textAlign: 'center',
+    margin: '20px 0 16px 0',
     lineHeight: '1.2',
-    '@media (max-width: 480px)': {
-      fontSize: '22px',
-      marginBottom: '14px',
+    letterSpacing: '-0.02em',
+    '@media (min-width: 769px)': {
+      fontSize: '64px',
+      margin: '60px 0 20px 0',
     },
   },
 
-  mobileTypeformSubtitle: {
+  freeHighlight: {
+    color: '#003888',
+    textDecoration: 'underline',
+    textDecorationColor: '#003888',
+    textDecorationThickness: '3px',
+    textUnderlineOffset: '4px',
+  },
+
+  calendlySubtitle: {
     fontSize: '16px',
     fontWeight: '500',
-    color: '#000000',
+    color: 'rgba(255, 255, 255, 0.9)',
     textAlign: 'center',
     margin: 0,
     lineHeight: '1.4',
-    '@media (max-width: 480px)': {
-      fontSize: '14px',
+    '@media (min-width: 769px)': {
+      fontSize: '20px',
     },
   },
 
-  mobileTypeformIframe: {
-    flex: 1,
-    width: '100%',
+  calendlyWidget: {
+    background: 'transparent',
+    borderRadius: '0',
+    padding: '0',
     border: 'none',
+    minHeight: '600px',
+    marginBottom: '0',
+    '@media (min-width: 769px)': {
+      minHeight: 'auto',
+    },
+  },
+
+  calendlyFooter: {
+    marginTop: '-20px',
+    textAlign: 'center',
+    '@media (min-width: 769px)': {
+      marginTop: '-100px',
+    },
+  },
+
+  calendlyFooterTitle: {
+    fontSize: '18px',
+    fontWeight: '700',
+    color: '#ffffff',
+    margin: '0',
+    marginBottom: '8px',
+    lineHeight: '1.3',
+    '@media (min-width: 769px)': {
+      fontSize: '24px',
+      marginBottom: '12px',
+    },
+  },
+
+  calendlyFooterSubtitle: {
+    fontSize: '14px',
+    fontWeight: '600',
+    color: '#ffffff',
+    margin: '16px auto 0',
+    lineHeight: '1.4',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '8px',
+    padding: '12px 24px',
+    background: 'rgba(0, 0, 0, 0.6)',
+    backdropFilter: 'blur(10px)',
+    WebkitBackdropFilter: 'blur(10px)',
+    borderRadius: '100px',
+    border: '1px solid rgba(255, 255, 255, 0.1)',
+    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.3)',
+    '@media (min-width: 769px)': {
+      fontSize: '16px',
+      padding: '14px 28px',
+    },
+    '&::before': {
+      content: '""',
+      width: '8px',
+      height: '8px',
+      borderRadius: '50%',
+      background: '#00ff9f',
+      boxShadow: '0 0 8px rgba(0, 255, 159, 0.8)',
+      animation: '$pulse 2s ease-in-out infinite',
+    },
+  },
+
+  // Image Testimonials Section - Real Student Results
+  imageTestimonialsSection: {
+    display: 'block',
+    width: '100%',
+    maxWidth: '100%',
+    margin: '0 auto',
+    padding: '20px 16px 40px',
+    textAlign: 'center',
+    background: '#000000',
+    '@media (min-width: 769px)': {
+      maxWidth: '1200px',
+      padding: '40px 32px 80px',
+    },
+  },
+
+  imageTestimonialsHeadline: {
+    fontSize: '28px',
+    fontWeight: '700',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Helvetica, Arial, sans-serif',
+    color: '#ffffff',
+    marginBottom: '12px',
+    lineHeight: '1.1',
+    letterSpacing: '-0.02em',
+    '@media (min-width: 769px)': {
+      fontSize: '48px',
+      marginBottom: '16px',
+    },
+  },
+
+  imageTestimonialsSubtext: {
+    fontSize: '14px',
+    fontWeight: '400',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Helvetica, Arial, sans-serif',
+    color: 'rgba(255, 255, 255, 0.8)',
+    marginBottom: '24px',
+    lineHeight: '1.5',
+    '@media (min-width: 769px)': {
+      fontSize: '18px',
+      marginBottom: '48px',
+    },
+  },
+
+  imageTestimonialsWrapper: {
+    overflow: 'hidden',
+    width: '100%',
+    position: 'relative',
+  },
+
+  imageTestimonialsGrid: {
+    display: 'flex',
+    flexWrap: 'nowrap',
+    gap: '16px',
+    padding: '20px 0',
+    animation: '$scroll 40s linear infinite',
+    width: 'fit-content',
+    '@media (min-width: 769px)': {
+      animation: '$scrollDesktop 40s linear infinite',
+    },
+    '&:hover': {
+      animationPlayState: 'paused',
+    },
+  },
+
+  '@keyframes scroll': {
+    '0%': {
+      transform: 'translateX(0)',
+    },
+    '100%': {
+      transform: 'translateX(calc(-296px * 7))',
+    },
+  },
+
+  '@keyframes scrollDesktop': {
+    '0%': {
+      transform: 'translateX(0)',
+    },
+    '100%': {
+      transform: 'translateX(calc(-366px * 7))',
+    },
+  },
+
+  testimonialImageCard: {
+    flexShrink: 0,
+    width: '280px',
+    height: '200px',
+    background: 'transparent',
+    borderRadius: '8px',
+    overflow: 'hidden',
+    transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+    border: '1px solid rgba(255, 255, 255, 0.1)',
+    '@media (min-width: 769px)': {
+      width: '350px',
+      height: '250px',
+    },
+    '&:hover': {
+      transform: 'translateY(-4px) scale(1.02)',
+      boxShadow: '0 8px 24px rgba(0, 0, 0, 0.5)',
+      borderColor: 'rgba(255, 255, 255, 0.3)',
+    },
+  },
+
+  testimonialImage: {
+    width: '100%',
+    height: '100%',
+    display: 'block',
+    objectFit: 'cover',
   },
 
   // Main Content - Centered and Premium
@@ -489,16 +677,16 @@ export const useLandingPageStyles = createUseStyles({
   },
 
   headline: {
-    fontSize: '80px',
+    fontSize: '96px',
     fontWeight: '900',
     fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Helvetica, Arial, sans-serif',
     color: '#ffffff',
     marginTop: '0',
-    marginBottom: '28px',
+    marginBottom: '32px',
     lineHeight: '1.05',
     letterSpacing: '-0.02em',
-    maxWidth: '900px',
-    margin: '0 auto 28px auto',
+    maxWidth: '1100px',
+    margin: '0 auto 32px auto',
     textAlign: 'center',
     '@media (max-width: 768px)': {
       fontSize: '32px',
@@ -551,16 +739,16 @@ export const useLandingPageStyles = createUseStyles({
   },
 
   ctaSubtext: {
-    fontSize: '26px',
-    fontWeight: '500',
-    fontFamily: '"Times New Roman", Times, serif',
+    fontSize: '36px',
+    fontWeight: '600',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Helvetica, Arial, sans-serif',
     color: '#ffffff',
-    marginBottom: '36px',
+    marginBottom: '48px',
     marginTop: '0',
-    lineHeight: '1.5',
+    lineHeight: '1.4',
     textAlign: 'center',
-    maxWidth: '900px',
-    margin: '0 auto 36px auto',
+    maxWidth: '1000px',
+    margin: '0 auto 48px auto',
     '@media (max-width: 768px)': {
       fontSize: '15px',
       marginBottom: '20px',
