@@ -237,6 +237,7 @@ export const useLandingPageStyles = createUseStyles({
   calendlyContainer: {
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'center',
     width: '100%',
     maxWidth: '100%',
     margin: '0 auto',
@@ -253,8 +254,12 @@ export const useLandingPageStyles = createUseStyles({
   calendlyHeader: {
     marginBottom: '16px',
     textAlign: 'center',
-    maxWidth: '800px',
+    maxWidth: '100%',
+    width: '100%',
     margin: '0 auto 16px auto',
+    '@media (min-width: 769px)': {
+      maxWidth: '800px',
+    },
   },
 
   calendlyLogoContainer: {
@@ -272,18 +277,21 @@ export const useLandingPageStyles = createUseStyles({
   },
 
   calendlyTitle: {
-    fontSize: '24px',
+    fontSize: '20px',
     fontWeight: '800',
     color: '#ffffff',
     textAlign: 'center',
-    margin: '20px 0 12px 0',
-    lineHeight: '1.2',
+    margin: '20px auto 12px',
+    lineHeight: '1.3',
     letterSpacing: '-0.02em',
-    padding: '0 12px',
+    padding: '0 16px',
+    maxWidth: '100%',
+    width: '100%',
     '@media (min-width: 769px)': {
       fontSize: '64px',
       margin: '60px 0 20px 0',
       padding: '0',
+      maxWidth: 'none',
     },
   },
 
@@ -300,12 +308,15 @@ export const useLandingPageStyles = createUseStyles({
     fontWeight: '500',
     color: 'rgba(255, 255, 255, 0.9)',
     textAlign: 'center',
-    margin: 0,
-    lineHeight: '1.4',
-    padding: '0 12px',
+    margin: '0 auto',
+    lineHeight: '1.5',
+    padding: '0 16px',
+    maxWidth: '100%',
+    width: '100%',
     '@media (min-width: 769px)': {
       fontSize: '20px',
       padding: '0',
+      maxWidth: 'none',
     },
   },
 
@@ -314,8 +325,9 @@ export const useLandingPageStyles = createUseStyles({
     borderRadius: '0',
     padding: '0',
     border: 'none',
-    minHeight: '500px',
+    minHeight: '1000px',
     marginBottom: '20px',
+    width: '100%',
     '@media (min-width: 769px)': {
       minHeight: 'auto',
       marginBottom: '0',
